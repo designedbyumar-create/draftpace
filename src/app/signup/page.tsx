@@ -1,9 +1,10 @@
 'use client'
-
+export const dynamic = 'force-dynamic'
 import { useState, useEffect } from 'react'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import { supabase } from '@/lib/supabase'
 import Link from 'next/link'
+
 
 const BoltIcon = ({ size = 16 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
@@ -34,7 +35,6 @@ const GoogleIcon = () => (
 
 export default function Signup() {
   const router = useRouter()
-  const searchParams = useSearchParams()
   const [step, setStep] = useState(1)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -43,13 +43,17 @@ export default function Signup() {
   const [loading, setLoading] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
 
-  useEffect(() => {
-    const emailFromUrl = searchParams.get('email')
-    if (emailFromUrl) {
-      setEmail(emailFromUrl)
-      setStep(2)
-    }
-  }, [searchParams])
+ useEffect(() => {
+  if (typeof window === 'undefined') return
+
+  const params = new URLSearchParams(window.location.search)
+  const emailFromUrl = params.get('email')
+
+  if (emailFromUrl) {
+    setEmail(emailFromUrl)
+    setStep(2)
+  }
+}, [])
 
   const handleSignup = async () => {
     setLoading(true)
