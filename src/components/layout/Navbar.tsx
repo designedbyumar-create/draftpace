@@ -61,7 +61,7 @@ export default function Navbar() {
   const firstName = userName.split(" ")[0];
 
   const NAV_LINKS = [
-    { label: "Features", href: "/#features" },
+    { label: "Features", href: "/features" },
     { label: "Store",    href: "/store"      },
     { label: "Pricing",  href: "/pricing"    },
   ];

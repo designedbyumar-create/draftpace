@@ -80,11 +80,15 @@ export default function Login() {
 
       {/* Logo */}
       <Link href="/" className="flex items-center gap-2.5 mb-10">
-        <div className="w-9 h-9 rounded-xl bg-indigo-600 flex items-center justify-center">
-          <BoltIcon size={15} />
-        </div>
-        <span className="text-[16px] font-bold text-gray-950">Draftpace</span>
-      </Link>
+  <img
+    src="/logo/dp-mono.svg"
+    alt="Draftpace"
+    className="w-9 h-9"
+  />
+  <span className="text-[16px] font-bold text-gray-950">
+    Draftpace
+  </span>
+</Link>
 
       {/* Card */}
       <div className="w-full max-w-sm bg-white border border-gray-200 rounded-3xl shadow-sm p-8">
