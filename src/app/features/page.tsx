@@ -3,12 +3,12 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-// ── Animation helper ──────────────────────────────────────────────────────────
+// ── Animation helpers ─────────────────────────────────────────────────────────
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, margin: "-60px" },
-  transition: { duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] },
+  transition: { duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
 });
 
 const fadeIn = (delay = 0) => ({
@@ -32,14 +32,12 @@ const GridBg = () => (
 function ProgressMockup() {
   return (
     <div className="relative">
-      {/* Floating badge — top left */}
       <motion.div {...fadeIn(0.4)}
         className="absolute -left-4 -top-4 z-10 bg-white border border-gray-200 rounded-2xl px-4 py-2.5 shadow-lg flex items-center gap-2">
         <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"/>
         <span className="text-[12px] font-semibold text-gray-700">Live progress</span>
       </motion.div>
 
-      {/* Main card */}
       <motion.div {...fadeUp(0.1)}
         className="bg-white rounded-3xl border border-gray-200 shadow-xl overflow-hidden">
         <div className="h-[3px] bg-indigo-500"/>
@@ -86,7 +84,6 @@ function ProgressMockup() {
         </div>
       </motion.div>
 
-      {/* Floating badge — bottom right */}
       <motion.div {...fadeIn(0.6)}
         className="absolute -right-4 -bottom-4 z-10 bg-white border border-gray-200 rounded-2xl px-4 py-3 shadow-lg">
         <p className="text-[11px] text-gray-400 mb-1">7 completed</p>
@@ -106,10 +103,8 @@ function ProgressMockup() {
 function StreakMockup() {
   return (
     <div className="relative">
-      {/* Main streak card */}
       <motion.div {...fadeUp(0.1)}
         className="bg-white rounded-3xl border border-gray-200 shadow-xl overflow-hidden p-6">
-        {/* Header */}
         <div className="flex items-center gap-3 mb-5">
           <div className="w-12 h-12 bg-indigo-600 rounded-2xl flex items-center justify-center shrink-0">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -126,7 +121,6 @@ function StreakMockup() {
           </div>
         </div>
 
-        {/* Last 14 days grid */}
         <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">Last 14 days</p>
         <div className="grid grid-cols-7 gap-1.5 mb-5">
           {[1,1,1,1,1,1,1,1,1,1,1,1,1,0].map((done, i) => (
@@ -142,13 +136,11 @@ function StreakMockup() {
           ))}
         </div>
 
-        {/* Motivational line */}
         <div className="bg-orange-50 border border-orange-200 rounded-2xl p-4 mb-4">
           <p className="text-[13px] font-semibold text-orange-800 mb-0.5">Don't break it today.</p>
           <p className="text-[12px] text-orange-600">7 more days to beat your personal best.</p>
         </div>
 
-        {/* Mini habits */}
         <div className="space-y-2.5">
           {[
             { name:"Morning pages", days:[1,1,1,1,1,0,0], color:"#4f46e5" },
@@ -167,7 +159,6 @@ function StreakMockup() {
         </div>
       </motion.div>
 
-      {/* Milestone pill */}
       <motion.div {...fadeIn(0.5)}
         className="absolute -top-4 -right-4 z-10 bg-orange-500 rounded-2xl px-4 py-2.5 shadow-lg">
         <p className="text-[11px] font-bold text-white">🔥 New record incoming</p>
@@ -181,15 +172,14 @@ function StreakMockup() {
 // ─────────────────────────────────────────────────────────────────────────────
 function IntegrationMockup() {
   const items = [
-    { title:"Monthly Budget Reset", source:"Gumroad", sourceBg:"#fff0f7", sourceColor:"#be185d", amount:"$12", status:"Active", statusBg:"#eef2ff", statusColor:"#4338ca", progress:68, barColor:"#4f46e5" },
-    { title:"30-Day Habit Builder",  source:"Etsy",    sourceBg:"#fff7ed", sourceColor:"#c2410c", amount:"$8",  status:"Active", statusBg:"#eef2ff", statusColor:"#4338ca", progress:53, barColor:"#7c3aed" },
+    { title:"Monthly Budget Reset", source:"Gumroad", sourceBg:"#fff0f7", sourceColor:"#be185d", amount:"$12", status:"Active", statusBg:"#eef2ff", statusColor:"#4338ca", progress:68,  barColor:"#4f46e5" },
+    { title:"30-Day Habit Builder",  source:"Etsy",    sourceBg:"#fff7ed", sourceColor:"#c2410c", amount:"$8",  status:"Active", statusBg:"#eef2ff", statusColor:"#4338ca", progress:53,  barColor:"#7c3aed" },
     { title:"Savings Goal Tracker",  source:"Gumroad", sourceBg:"#fff0f7", sourceColor:"#be185d", amount:"$9",  status:"Done",   statusBg:"#ecfdf5", statusColor:"#065f46", progress:100, barColor:"#059669" },
-    { title:"Side Hustle Starter",   source:"Gumroad", sourceBg:"#fff0f7", sourceColor:"#be185d", amount:"$12", status:"Active", statusBg:"#eef2ff", statusColor:"#4338ca", progress:34, barColor:"#f59e0b" },
+    { title:"Side Hustle Starter",   source:"Gumroad", sourceBg:"#fff0f7", sourceColor:"#be185d", amount:"$12", status:"Active", statusBg:"#eef2ff", statusColor:"#4338ca", progress:34,  barColor:"#f59e0b" },
   ];
 
   return (
     <div className="relative">
-      {/* Auto-sync badge */}
       <motion.div {...fadeIn(0.4)}
         className="absolute -top-4 -left-4 z-10 bg-white border border-gray-200 rounded-2xl px-4 py-2.5 shadow-lg flex items-center gap-2">
         <div className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"/>
@@ -198,13 +188,10 @@ function IntegrationMockup() {
 
       <motion.div {...fadeUp(0.1)}
         className="bg-white rounded-3xl border border-gray-200 shadow-xl overflow-hidden">
-        {/* Header */}
         <div className="px-6 pt-6 pb-4 border-b border-gray-100">
           <h3 className="text-[16px] font-semibold text-gray-950 mb-1">Your purchases</h3>
           <p className="text-[12px] text-gray-400">4 items imported from Gumroad & Etsy</p>
         </div>
-
-        {/* Connected sources */}
         <div className="px-6 py-3 flex items-center gap-3 border-b border-gray-100 bg-gray-50">
           <div className="flex items-center gap-2 px-3 py-1.5 bg-white border border-gray-200 rounded-full text-[11px] font-semibold text-gray-600">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#ff90e8"/><text x="12" y="16" textAnchor="middle" fontSize="10" fontWeight="700" fill="#000">G</text></svg>
@@ -217,12 +204,9 @@ function IntegrationMockup() {
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2.5" strokeLinecap="round"><path d="M20 6L9 17l-5-5"/></svg>
           </div>
         </div>
-
-        {/* Items */}
         <div className="divide-y divide-gray-50">
           {items.map((item, i) => (
-            <motion.div key={item.title} {...fadeIn(i * 0.08 + 0.2)}
-              className="px-6 py-4">
+            <motion.div key={item.title} {...fadeIn(i * 0.08 + 0.2)} className="px-6 py-4">
               <div className="flex items-center justify-between mb-2">
                 <div className="flex-1 min-w-0 mr-3">
                   <p className="text-[13px] font-semibold text-gray-900 truncate">{item.title}</p>
@@ -253,7 +237,7 @@ function IntegrationMockup() {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// BEFORE / AFTER SECTION
+// BEFORE / AFTER
 // ─────────────────────────────────────────────────────────────────────────────
 function BeforeAfter() {
   const before = [
@@ -288,9 +272,7 @@ function BeforeAfter() {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* Before */}
-          <motion.div {...fadeUp(0.1)}
-            className="bg-white border border-gray-200 rounded-3xl overflow-hidden">
+          <motion.div {...fadeUp(0.1)} className="bg-white border border-gray-200 rounded-3xl overflow-hidden">
             <div className="px-6 py-4 border-b border-gray-100 flex items-center gap-3 bg-gray-50">
               <div className="flex gap-1.5">
                 <div className="w-3 h-3 rounded-full bg-red-400"/>
@@ -301,8 +283,7 @@ function BeforeAfter() {
             </div>
             <div className="p-6 space-y-3">
               {before.map((item, i) => (
-                <motion.div key={i} {...fadeIn(i * 0.06 + 0.2)}
-                  className="flex items-start gap-3">
+                <motion.div key={i} {...fadeIn(i * 0.06 + 0.2)} className="flex items-start gap-3">
                   <div className="w-5 h-5 rounded-lg bg-red-50 border border-red-100 flex items-center justify-center shrink-0 mt-0.5">
                     <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#ef4444" strokeWidth="3" strokeLinecap="round">
                       <path d="M18 6L6 18M6 6l12 12"/>
@@ -314,7 +295,6 @@ function BeforeAfter() {
             </div>
           </motion.div>
 
-          {/* After */}
           <motion.div {...fadeUp(0.2)}
             className="bg-white border border-indigo-200 rounded-3xl overflow-hidden shadow-md"
             style={{ boxShadow:"0 0 0 1px rgba(99,102,241,0.1), 0 20px 40px rgba(99,102,241,0.08)" }}>
@@ -328,8 +308,7 @@ function BeforeAfter() {
             </div>
             <div className="p-6 space-y-3">
               {after.map((item, i) => (
-                <motion.div key={i} {...fadeIn(i * 0.06 + 0.3)}
-                  className="flex items-start gap-3">
+                <motion.div key={i} {...fadeIn(i * 0.06 + 0.3)} className="flex items-start gap-3">
                   <div className="w-5 h-5 rounded-lg bg-emerald-50 border border-emerald-100 flex items-center justify-center shrink-0 mt-0.5">
                     <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="3" strokeLinecap="round">
                       <path d="M20 6L9 17l-5-5"/>
@@ -350,42 +329,12 @@ function BeforeAfter() {
 // FEATURE GRID
 // ─────────────────────────────────────────────────────────────────────────────
 const GRID_FEATURES = [
-  {
-    icon: "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5",
-    color: "#4f46e5", bg: "#eef2ff",
-    title: "All content types",
-    desc: "Planners, checklists, ebooks, guides — every format works the same way.",
-  },
-  {
-    icon: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z",
-    color: "#059669", bg: "#ecfdf5",
-    title: "Secure & private",
-    desc: "Your progress data is yours. We don't sell it, share it, or look at it.",
-  },
-  {
-    icon: "M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0",
-    color: "#f59e0b", bg: "#fff7ed",
-    title: "Smart reminders",
-    desc: "Notified when you're likely to forget — not every hour like a fitness app.",
-  },
-  {
-    icon: "M22 12h-4l-3 9L9 3l-3 9H2",
-    color: "#7c3aed", bg: "#fdf4ff",
-    title: "Completion analytics",
-    desc: "12-week heatmaps, monthly averages, and patterns you can actually use.",
-  },
-  {
-    icon: "M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71",
-    color: "#be185d", bg: "#fff0f7",
-    title: "Gumroad & Etsy sync",
-    desc: "Connect once. Every purchase auto-imports without you lifting a finger.",
-  },
-  {
-    icon: "M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z",
-    color: "#0d9488", bg: "#f0fdfa",
-    title: "Native mobile feel",
-    desc: "Bottom nav, swipeable cards, safe-area support. Feels like an app, not a website.",
-  },
+  { icon:"M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5",                                                                                                              color:"#4f46e5", bg:"#eef2ff", title:"All content types",      desc:"Planners, checklists, ebooks, guides — every format works the same way."                             },
+  { icon:"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z",                                                                                                                          color:"#059669", bg:"#ecfdf5", title:"Secure & private",        desc:"Your progress data is yours. We don't sell it, share it, or look at it."                             },
+  { icon:"M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0",                                                                                                   color:"#f59e0b", bg:"#fff7ed", title:"Smart reminders",          desc:"Notified when you're likely to forget — not every hour like a fitness app."                          },
+  { icon:"M22 12h-4l-3 9L9 3l-3 9H2",                                                                                                                                             color:"#7c3aed", bg:"#fdf4ff", title:"Completion analytics",     desc:"12-week heatmaps, monthly averages, and patterns you can actually use."                              },
+  { icon:"M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71",                                                   color:"#be185d", bg:"#fff0f7", title:"Gumroad & Etsy sync",      desc:"Connect once. Every purchase auto-imports without you lifting a finger."                             },
+  { icon:"M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z",                                                                                         color:"#0d9488", bg:"#f0fdfa", title:"Native mobile feel",       desc:"Bottom nav, swipeable cards, safe-area support. Feels like an app, not a website."                   },
 ];
 
 function FeatureGrid() {
@@ -409,8 +358,7 @@ function FeatureGrid() {
           {GRID_FEATURES.map((f, i) => (
             <motion.div key={f.title} {...fadeUp(i * 0.07)}
               className="bg-[#fafaf9] border border-gray-100 rounded-2xl p-5 hover:border-gray-200 hover:shadow-sm transition-all">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
-                style={{ background:f.bg }}>
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style={{ background:f.bg }}>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={f.color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                   <path d={f.icon}/>
                 </svg>
@@ -432,7 +380,7 @@ export default function FeaturesPage() {
   return (
     <div className="bg-[#fafaf9] overflow-hidden">
 
-      {/* ── HERO ── */}
+      {/* Hero */}
       <section className="relative pt-[100px] pb-20 px-6 lg:px-8 border-b border-gray-100">
         <GridBg/>
         <div className="relative max-w-5xl mx-auto text-center">
@@ -472,12 +420,10 @@ export default function FeaturesPage() {
             </Link>
           </motion.div>
 
-          {/* Stats row */}
-          <motion.div {...fadeIn(0.5)}
-            className="flex items-center justify-center gap-8 mt-12 flex-wrap">
+          <motion.div {...fadeIn(0.5)} className="flex items-center justify-center gap-8 mt-12 flex-wrap">
             {[
-              ["2,400+", "planners started this week"],
-              ["86%",    "avg completion rate"],
+              ["2,400+","planners started this week"],
+              ["86%","avg completion rate"],
               ["14 days","avg streak length"],
             ].map(([val, label]) => (
               <div key={label} className="text-center">
@@ -489,7 +435,7 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      {/* ── FEATURE 1: Progress ── */}
+      {/* Feature 1: Progress */}
       <section className="py-24 px-6 lg:px-8">
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
@@ -502,9 +448,8 @@ export default function FeaturesPage() {
               className="text-[32px] lg:text-[40px] font-black text-gray-950 tracking-[-0.03em] leading-tight mb-5">
               Progress that actually <span className="text-indigo-600">means something.</span>
             </motion.h2>
-            <motion.p {...fadeUp(0.2)}
-              className="text-[16px] text-gray-400 leading-relaxed mb-6">
-              Every planner becomes a live experience. Checkboxes check. Progress bars fill. Day 14 of 30 feels real when you can see it moving — not just a number on a PDF you haven't opened in two weeks.
+            <motion.p {...fadeUp(0.2)} className="text-[16px] text-gray-400 leading-relaxed mb-6">
+              Every planner becomes a live experience. Checkboxes check. Progress bars fill. Day 14 of 30 feels real when you can see it moving.
             </motion.p>
             <motion.div {...fadeUp(0.3)} className="space-y-3">
               {[
@@ -528,7 +473,7 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      {/* ── FEATURE 2: Streaks ── */}
+      {/* Feature 2: Streaks */}
       <section className="py-24 px-6 lg:px-8 bg-white border-y border-gray-100">
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="lg:order-2">
@@ -541,9 +486,8 @@ export default function FeaturesPage() {
               className="text-[32px] lg:text-[40px] font-black text-gray-950 tracking-[-0.03em] leading-tight mb-5">
               Streaks that keep <span className="text-orange-500">you honest.</span>
             </motion.h2>
-            <motion.p {...fadeUp(0.2)}
-              className="text-[16px] text-gray-400 leading-relaxed mb-6">
-              Miss a day and you feel it. Hit 14 days and you want 15. The streak system is the reason people come back daily instead of forgetting they own the planner at all.
+            <motion.p {...fadeUp(0.2)} className="text-[16px] text-gray-400 leading-relaxed mb-6">
+              Miss a day and you feel it. Hit 14 days and you want 15. The streak system is the reason people come back daily.
             </motion.p>
             <motion.div {...fadeUp(0.3)} className="space-y-3">
               {[
@@ -563,13 +507,11 @@ export default function FeaturesPage() {
               ))}
             </motion.div>
           </div>
-          <div className="lg:order-1">
-            <StreakMockup/>
-          </div>
+          <div className="lg:order-1"><StreakMockup/></div>
         </div>
       </section>
 
-      {/* ── FEATURE 3: Integration ── */}
+      {/* Feature 3: Integration */}
       <section className="py-24 px-6 lg:px-8">
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
@@ -582,9 +524,8 @@ export default function FeaturesPage() {
               className="text-[32px] lg:text-[40px] font-black text-gray-950 tracking-[-0.03em] leading-tight mb-5">
               Everything you've bought.<br/><span className="text-pink-500">One place.</span>
             </motion.h2>
-            <motion.p {...fadeUp(0.2)}
-              className="text-[16px] text-gray-400 leading-relaxed mb-6">
-              Connect Gumroad or Etsy once and every planner you've ever purchased appears automatically. No receipt hunting. No manual uploads. It's just there.
+            <motion.p {...fadeUp(0.2)} className="text-[16px] text-gray-400 leading-relaxed mb-6">
+              Connect Gumroad or Etsy once and every planner you've ever purchased appears automatically. No receipt hunting. No manual uploads.
             </motion.p>
             <motion.div {...fadeUp(0.3)} className="space-y-3">
               {[
@@ -608,13 +549,10 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      {/* ── FEATURE GRID ── */}
       <FeatureGrid/>
-
-      {/* ── BEFORE / AFTER ── */}
       <BeforeAfter/>
 
-      {/* ── FINAL CTA ── */}
+      {/* Final CTA */}
       <section className="relative py-24 px-6 lg:px-8 border-t border-gray-100 overflow-hidden">
         <GridBg/>
         <div className="relative max-w-3xl mx-auto text-center">
@@ -640,14 +578,11 @@ export default function FeaturesPage() {
                   <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
               </Link>
-              <Link href="/pricing"
-                className="text-[14px] font-semibold text-gray-500 hover:text-gray-900 transition-colors">
+              <Link href="/pricing" className="text-[14px] font-semibold text-gray-500 hover:text-gray-900 transition-colors">
                 View pricing →
               </Link>
             </div>
-            <p className="text-[12px] text-gray-400 mt-5">
-              2,400+ people this week · No credit card · Cancel anytime
-            </p>
+            <p className="text-[12px] text-gray-400 mt-5">2,400+ people this week · No credit card · Cancel anytime</p>
           </motion.div>
         </div>
       </section>
