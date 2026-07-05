@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Heart } from "@/components/ui/Icon";
+import { MarketingButton } from "@/components/marketing/ui";
 
 const LINKS = {
   Product: [
@@ -40,28 +41,19 @@ export default function Footer() {
           <div className="w-full lg:w-64 shrink-0">
             <Link href="/" className="flex items-center gap-2.5 mb-5 group w-fit">
               <Image
-                src="/logo/dp-mono.svg"
+                src="/logo/draftpace-brand-logo.svg"
                 alt="Draftpace"
-                width={36}
-                height={36}
-                className="shrink-0"
+                width={180}
+                height={56}
+                className="h-auto w-[180px] shrink-0"
               />
-              <div>
-                <p className="text-[15px] font-bold text-gray-950 leading-none group-hover:text-indigo-600 transition-colors">
-                  Draftpace
-                </p>
-                <p className="text-[11px] text-gray-400 mt-0.5">Momentum OS</p>
-              </div>
             </Link>
             <p className="text-sm text-gray-400 leading-relaxed mb-6">
               Interactive planners for money, goals, and habits. Built for people who want to stay consistent — not just start strong.
             </p>
-            <Link
-              href="/signup"
-              className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition-all active:scale-[0.98]"
-            >
-              Start for free <ArrowRight size={14} />
-            </Link>
+            <MarketingButton href="/signup" iconRight={<ArrowRight size={14} />}>
+              Start for free
+            </MarketingButton>
           </div>
 
           {/* Link columns — always 2 cols on mobile, 4 on sm+ */}
@@ -98,7 +90,7 @@ export default function Footer() {
             <Link href="/privacy" className="hover:text-gray-600 transition-colors">Privacy</Link>
             <Link href="/terms"   className="hover:text-gray-600 transition-colors">Terms</Link>
             <span className="flex items-center gap-1.5">
-              Built with <span className="text-rose-400">♥</span> for consistency
+              Built with <Heart size={12} filled className="text-rose-400" /> for consistency
             </span>
           </div>
         </div>

@@ -1,39 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Library } from "lucide-react";
+import { ArrowRight, Article, Bell, BookOpen, CheckSquare, Library, Lightning, Smartphone, TrendingUp } from "@/components/ui/Icon";
+import { marketingButtonClassName } from "@/components/marketing/ui";
 
 const BoltIcon = ({ size = 16 }: { size?: number }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
-    <path d="M13 2L4.5 13.5H11L10 22L19.5 10.5H13L13 2Z" fill="#4f46e5" stroke="#4338ca" strokeWidth="1.5" strokeLinejoin="round"/>
-  </svg>
+  <Lightning size={size} color="#3730A3" filled />
 );
 
 const liveItems = [
   {
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" strokeWidth="2" strokeLinecap="round">
-        <rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 9h6M9 12h6M9 15h4"/>
-      </svg>
-    ),
+    icon: <Article size={18} color="#4f46e5" />,
     iconBg: "#eef2ff", name: "Budget Reset Planner", tag: "Planner",
     tagBg: "#eef2ff", tagColor: "#4f46e5", progress: 68, color: "#4f46e5", meta: "Day 14",
   },
   {
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2" strokeLinecap="round">
-        <path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>
-      </svg>
-    ),
+    icon: <BookOpen size={18} color="#059669" />,
     iconBg: "#ecfdf5", name: "Atomic Habits Guide", tag: "eBook",
     tagBg: "#ecfdf5", tagColor: "#059669", progress: 52, color: "#059669", meta: "Ch. 8 of 15",
   },
   {
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a855f7" strokeWidth="2" strokeLinecap="round">
-        <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
-      </svg>
-    ),
+    icon: <CheckSquare size={18} color="#a855f7" />,
     iconBg: "#fdf4ff", name: "2026 Life Audit Checklist", tag: "Checklist",
     tagBg: "#fdf4ff", tagColor: "#a855f7", progress: 83, color: "#a855f7", meta: "20 of 24 done",
   },
@@ -41,41 +28,25 @@ const liveItems = [
 
 const supporting = [
   {
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f97316" strokeWidth="2" strokeLinecap="round">
-        <path d="M13 2L4.5 13.5H11L10 22L19.5 10.5H13L13 2Z" fill="#f97316" stroke="#ea580c" strokeWidth="1.5" strokeLinejoin="round"/>
-      </svg>
-    ),
+    icon: <Lightning size={18} color="#f97316" filled />,
     bg: "bg-orange-50", border: "border-orange-100",
     title: "Streak system that sticks",
     desc: "Show up daily, watch the dots fill. Miss a day? No shame — just pick up where you left off.",
   },
   {
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" strokeWidth="2" strokeLinecap="round">
-        <path d="M3 3v18h18"/><path d="M18 9l-5 5-4-4-3 3"/>
-      </svg>
-    ),
+    icon: <TrendingUp size={18} color="#7c3aed" />,
     bg: "bg-violet-50", border: "border-violet-100",
     title: "Progress you can actually see",
     desc: "Every item moves from 0% to done. Watch your library transform from untouched to finished.",
   },
   {
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d97706" strokeWidth="2" strokeLinecap="round">
-        <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/>
-      </svg>
-    ),
+    icon: <Bell size={18} color="#d97706" />,
     bg: "bg-amber-50", border: "border-amber-100",
     title: "Reminders that feel human",
     desc: "Gentle nudges that bring you back without guilt. It chases you — not the other way around.",
   },
   {
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d9488" strokeWidth="2" strokeLinecap="round">
-        <rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/>
-      </svg>
-    ),
+    icon: <Smartphone size={18} color="#0d9488" />,
     bg: "bg-teal-50", border: "border-teal-100",
     title: "Works on every device",
     desc: "Phone, tablet, desktop — your progress is always synced, always waiting where you left off.",
@@ -234,7 +205,11 @@ export default function Features() {
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="mt-1 flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white py-3.5 rounded-2xl text-[14px] font-bold transition-colors"
+                className={marketingButtonClassName({
+                  size: "lg",
+                  fullWidth: true,
+                  className: "mt-1 rounded-2xl font-bold",
+                })}
               >
                 See your library <ArrowRight size={15} />
               </motion.button>

@@ -1,0 +1,300 @@
+{
+  "id": "money-momentum-savings-challenge",
+  "slug": "money-momentum-savings-challenge",
+  "name": "Money Momentum Savings Challenge",
+  "shortName": "Savings Challenge",
+  "category": "money",
+  "status": "coming_soon",
+  "visibility": "public",
+  "access": "paid",
+  "priceCents": 1200,
+  "promise": "Move the money first, then mark the progress.",
+  "description": "A guided savings challenge system for envelope-style deposits, stash milestones, no-spend resets, and sustainable pace.",
+  "duration": "30-100 deposits",
+  "estimatedMinutes": 6,
+  "productType": "draftpace-system",
+  "visualTheme": {
+    "accent": "#3730a3",
+    "secondary": "#0d9488",
+    "visualKind": "savings"
+  },
+  "paths": [
+    {
+      "id": "starter-stash",
+      "name": "$500 Starter Fund",
+      "shortName": "Starter Fund",
+      "recommended": true,
+      "modeLabel": "Challenge",
+      "description": "A 20-deposit challenge for building an early savings buffer.",
+      "sessionTemplates": [
+        {
+          "id": "starter-stash-session",
+          "title": "Move the next stash deposit",
+          "lead": "Intentions do not get colored in. Move the money first, then mark the envelope.",
+          "recommendedAction": "Move a real deposit and confirm it happened.",
+          "completionLabel": "Mark envelope",
+          "companionFrame": "Progress only counts after the money moves. That rule protects the challenge.",
+          "actions": [
+            {
+              "id": "money_value",
+              "type": "amount",
+              "label": "Deposit moved",
+              "helper": "Enter the amount after it is actually moved.",
+              "unit": "$",
+              "placeholder": "25",
+              "targetValue": 25,
+              "required": true,
+              "metricId": "saved_value"
+            },
+            {
+              "id": "money_moved",
+              "type": "progress-mark",
+              "label": "The money has actually moved",
+              "helper": "Only then does the envelope count.",
+              "required": true
+            },
+            {
+              "id": "reflection",
+              "type": "reflection",
+              "label": "Stash note",
+              "placeholder": "What made this deposit possible?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "emergency-fund-sprint",
+      "name": "$1,000 Emergency Fund Sprint",
+      "shortName": "Emergency Sprint",
+      "modeLabel": "Sprint",
+      "description": "A focused emergency buffer path with sustainability checks.",
+      "sessionTemplates": [
+        {
+          "id": "emergency-sprint-session",
+          "title": "Protect the emergency fund pace",
+          "lead": "Make the next deposit real, then decide whether the current pace still fits normal life.",
+          "recommendedAction": "Move a deposit and choose whether to keep or soften the pace.",
+          "completionLabel": "Mark sprint progress",
+          "actions": [
+            {
+              "id": "money_value",
+              "type": "amount",
+              "label": "Deposit moved",
+              "unit": "$",
+              "placeholder": "25",
+              "targetValue": 25,
+              "required": true,
+              "metricId": "saved_value"
+            },
+            {
+              "id": "pace_check",
+              "type": "choice",
+              "label": "Pace check",
+              "options": ["Still sustainable", "Needs to soften", "Can increase carefully"],
+              "required": true
+            },
+            {
+              "id": "reflection",
+              "type": "reflection",
+              "label": "Emergency fund note",
+              "placeholder": "What helped or blocked this deposit?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "custom-stash-builder",
+      "name": "Custom Stash Builder",
+      "shortName": "Custom Stash",
+      "modeLabel": "Custom",
+      "description": "Set your own deposit amount and repeatable savings rhythm.",
+      "sessionTemplates": [
+        {
+          "id": "custom-stash-session",
+          "title": "Move a custom stash amount",
+          "lead": "Choose the smallest honest deposit that keeps the challenge alive.",
+          "recommendedAction": "Move a custom deposit and mark only what happened.",
+          "completionLabel": "Mark stash progress",
+          "actions": [
+            {
+              "id": "money_value",
+              "type": "amount",
+              "label": "Deposit moved",
+              "unit": "$",
+              "placeholder": "10",
+              "required": true,
+              "metricId": "saved_value"
+            },
+            {
+              "id": "stash_goal",
+              "type": "text",
+              "label": "What is this stash for?",
+              "placeholder": "Emergency buffer, trip, car repair..."
+            },
+            {
+              "id": "money_moved",
+              "type": "progress-mark",
+              "label": "The money has actually moved",
+              "required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "no-spend-challenge",
+      "name": "No-Spend Challenge",
+      "shortName": "No Spend",
+      "modeLabel": "Reset",
+      "description": "A reset path for reducing spending leakage and protecting the stash.",
+      "sessionTemplates": [
+        {
+          "id": "no-spend-savings-session",
+          "title": "Protect the stash today",
+          "lead": "A no-spend day is not about perfection. It is about making one leak visible and choosing a replacement.",
+          "recommendedAction": "Name the leak and mark the protection action.",
+          "completionLabel": "Mark reset progress",
+          "actions": [
+            {
+              "id": "trigger",
+              "type": "text",
+              "label": "Spending leak",
+              "placeholder": "Impulse cart, delivery, subscription...",
+              "required": true
+            },
+            {
+              "id": "replacement",
+              "type": "custom-task",
+              "label": "Replacement move",
+              "placeholder": "Wait 24 hours, use pantry food, cancel one trial...",
+              "required": true
+            },
+            {
+              "id": "progress_mark",
+              "type": "progress-mark",
+              "label": "I protected the stash today",
+              "required": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "rhythmOptions": [
+    {
+      "id": "daily",
+      "label": "Daily",
+      "kind": "daily",
+      "sessionLabel": "Today",
+      "description": "A small daily session that keeps money visible."
+    },
+    {
+      "id": "weekly",
+      "label": "Weekly",
+      "kind": "weekly",
+      "sessionLabel": "This Week",
+      "description": "A weekly session for a deeper review without daily pressure."
+    },
+    {
+      "id": "sprint",
+      "label": "Sprint",
+      "kind": "sprint",
+      "sessionLabel": "Current Sprint",
+      "description": "A focused push for a short money goal or reset."
+    },
+    {
+      "id": "custom",
+      "label": "Custom",
+      "kind": "custom",
+      "sessionLabel": "Custom Session",
+      "description": "Use Draftpace when your schedule actually allows it."
+    }
+  ],
+  "intensityOptions": [
+    {
+      "id": "gentle",
+      "label": "Gentle",
+      "description": "One minimum action. Best when you are rebuilding trust.",
+      "suggestedActionCount": 1,
+      "companionModifier": "Keep the action small enough to repeat.",
+      "recoveryLine": "Minimum progress still keeps the system alive."
+    },
+    {
+      "id": "balanced",
+      "label": "Steady",
+      "description": "A complete but calm session for normal weeks.",
+      "suggestedActionCount": 2,
+      "companionModifier": "Aim for consistency before volume.",
+      "recoveryLine": "Return with one clean action and one note."
+    },
+    {
+      "id": "focused",
+      "label": "Intense",
+      "description": "A stronger session when you have capacity.",
+      "suggestedActionCount": 3,
+      "companionModifier": "Use the extra capacity without turning it into pressure.",
+      "recoveryLine": "Compress back to the core action if the week shifts."
+    }
+  ],
+  "progressMetrics": [
+    {
+      "id": "sessions",
+      "label": "Sessions marked",
+      "kind": "completed-sessions",
+      "goal": 30,
+      "weight": 0.5
+    },
+    {
+      "id": "saved_value",
+      "label": "Money moved",
+      "kind": "sum-action",
+      "actionId": "money_value",
+      "unit": "$",
+      "weight": 0.3
+    },
+    {
+      "id": "streak",
+      "label": "Momentum streak",
+      "kind": "streak",
+      "weight": 0.2
+    }
+  ],
+  "companionTone": {
+    "default": "Calm",
+    "options": ["Calm", "Direct", "Encouraging"]
+  },
+  "customizationOptions": [
+    {
+      "id": "stash_storage",
+      "label": "Storage method",
+      "description": "Where the moved money will live.",
+      "type": "choice",
+      "options": ["Savings account", "Cash envelope", "Separate bank pocket", "Other"]
+    }
+  ],
+  "recoveryBehavior": {
+    "title": "Minimum stash save",
+    "trigger": "Missed deposit, low momentum, or challenge pressure.",
+    "minimumAction": "Move the smallest honest amount and mark only that.",
+    "companionLine": "You are still in the challenge. A smaller deposit protects the rhythm."
+  },
+  "storeCard": {
+    "badge": "Coming Soon",
+    "ctaLabel": "Notify Me",
+    "featured": true,
+    "highlights": ["Starter fund challenge", "Emergency fund sprint", "Custom stash builder"],
+    "sortOrder": 10,
+    "summary": "A savings challenge system built around real deposits, visible tracks, and recovery when life interrupts."
+  },
+  "dashboardCard": {
+    "ctaLabel": "Preview System",
+    "statusLine": "Coming soon",
+    "summary": "Savings paths, stash tracking, and recovery behavior are being prepared."
+  },
+  "assets": {
+    "cover": "/systems/money-momentum-savings-challenge/cover.png",
+    "preview": "/systems/money-momentum-savings-challenge/preview.png"
+  }
+}

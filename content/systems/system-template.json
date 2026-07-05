@@ -1,0 +1,106 @@
+{
+  "id": "system-slug",
+  "slug": "system-slug",
+  "name": "Draftpace System Name",
+  "shortName": "Short Name",
+  "category": "money",
+  "status": "draft",
+  "visibility": "internal",
+  "access": "paid",
+  "priceCents": 0,
+  "promise": "One clear promise this System helps the user fulfill.",
+  "description": "A concise description of what this interactive System will guide.",
+  "duration": "30 days",
+  "estimatedMinutes": 7,
+  "productType": "draftpace-system",
+  "visualTheme": {
+    "accent": "#3730a3",
+    "secondary": "#0d9488",
+    "visualKind": "custom"
+  },
+  "paths": [
+    {
+      "id": "path-id",
+      "name": "Primary Path",
+      "shortName": "Primary",
+      "recommended": true,
+      "modeLabel": "Mode",
+      "description": "What this path helps the user do.",
+      "sessionTemplates": [
+        {
+          "id": "starter-session",
+          "title": "Session title",
+          "lead": "What the user is doing in this session.",
+          "recommendedAction": "The next concrete action.",
+          "completionLabel": "Mark progress",
+          "companionFrame": "A companion line that frames the session.",
+          "actions": [
+            {
+              "id": "action_id",
+              "type": "text",
+              "label": "Action label",
+              "placeholder": "User input placeholder",
+              "required": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "rhythmOptions": [
+    {
+      "id": "daily",
+      "label": "Daily",
+      "kind": "daily",
+      "sessionLabel": "Today",
+      "description": "A small daily session."
+    }
+  ],
+  "intensityOptions": [
+    {
+      "id": "gentle",
+      "label": "Gentle",
+      "description": "One minimum action.",
+      "suggestedActionCount": 1,
+      "companionModifier": "Keep the action repeatable.",
+      "recoveryLine": "Minimum progress keeps the System alive."
+    }
+  ],
+  "progressMetrics": [
+    {
+      "id": "sessions",
+      "label": "Sessions marked",
+      "kind": "completed-sessions",
+      "goal": 30,
+      "weight": 1
+    }
+  ],
+  "companionTone": {
+    "default": "Calm",
+    "options": ["Calm", "Direct", "Encouraging"]
+  },
+  "customizationOptions": [],
+  "recoveryBehavior": {
+    "title": "Recovery Mode",
+    "trigger": "Skipped session or low momentum.",
+    "minimumAction": "Complete one tiny action.",
+    "companionLine": "Come back small. The System is designed for real life."
+  },
+  "storeCard": {
+    "badge": "Coming Soon",
+    "ctaLabel": "Notify Me",
+    "featured": false,
+    "highlights": ["Path one", "Daily Page", "Companion guidance"],
+    "sortOrder": 100,
+    "summary": "Store-facing summary."
+  },
+  "dashboardCard": {
+    "ctaLabel": "Preview",
+    "statusLine": "Coming soon",
+    "summary": "Dashboard-facing summary."
+  },
+  "assets": {
+    "cover": "/systems/system-slug/cover.png",
+    "preview": "/systems/system-slug/preview.png"
+  }
+}

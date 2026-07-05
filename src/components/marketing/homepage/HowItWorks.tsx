@@ -2,30 +2,23 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Article, BookOpen, Check, CheckSquare, Lightning } from "@/components/ui/Icon";
 import { useRouter } from "next/navigation";
+import { marketingButtonClassName } from "@/components/marketing/ui";
 
 const BoltIcon = ({ size = 16 }: { size?: number }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
-    <path d="M13 2L4.5 13.5H11L10 22L19.5 10.5H13L13 2Z" fill="#4f46e5" stroke="#4338ca" strokeWidth="1.5" strokeLinejoin="round"/>
-  </svg>
+  <Lightning size={size} color="#3730A3" filled />
 );
 
 const CheckIcon = () => (
-  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round">
-    <path d="M20 6L9 17l-5-5"/>
-  </svg>
+  <Check size={10} color="white" />
 );
 
 const tabs = [
   {
     id: "budget",
     label: "Budget Planner",
-    icon: (
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" strokeWidth="2.5" strokeLinecap="round">
-        <rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 9h6M9 12h6M9 15h4"/>
-      </svg>
-    ),
+    icon: <Article size={12} color="#4f46e5" />,
     iconBg: "#eef2ff",
     tag: "Planner",
     tagColor: "#4f46e5",
@@ -34,11 +27,7 @@ const tabs = [
   {
     id: "audit",
     label: "Life Audit",
-    icon: (
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#a855f7" strokeWidth="2.5" strokeLinecap="round">
-        <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
-      </svg>
-    ),
+    icon: <CheckSquare size={12} color="#a855f7" />,
     iconBg: "#fdf4ff",
     tag: "Checklist",
     tagColor: "#a855f7",
@@ -47,11 +36,7 @@ const tabs = [
   {
     id: "habits",
     label: "Habit Tracker",
-    icon: (
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2.5" strokeLinecap="round">
-        <path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>
-      </svg>
-    ),
+    icon: <BookOpen size={12} color="#059669" />,
     iconBg: "#ecfdf5",
     tag: "eBook",
     tagColor: "#059669",
@@ -79,7 +64,6 @@ export default function HowItWorks() {
     "Write a personal mission",
   ];
 
-  const [habitDays, setHabitDays] = useState([true, true, true, false, false, false, false]);
   const habits = ["Morning pages", "No-spend day", "Read 20 mins"];
   const [habitChecks, setHabitChecks] = useState([[true, true, true, false, false, false, false], [true, false, true, true, false, false, false], [true, true, false, false, false, false, false]]);
 
@@ -190,9 +174,7 @@ export default function HowItWorks() {
                   <motion.div key="budget" initial={{ opacity: 0, x: -8 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 8 }} transition={{ duration: 0.25 }}>
                     <div className="flex items-center gap-3 mb-6">
                       <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" strokeWidth="2" strokeLinecap="round">
-                          <rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 9h6M9 12h6M9 15h4"/>
-                        </svg>
+                        <Article size={18} color="#4f46e5" />
                       </div>
                       <div>
                         <p className="text-[15px] font-bold text-gray-900 leading-none mb-0.5">Monthly Budget Reset</p>
@@ -246,9 +228,7 @@ export default function HowItWorks() {
                   <motion.div key="audit" initial={{ opacity: 0, x: -8 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 8 }} transition={{ duration: 0.25 }}>
                     <div className="flex items-center gap-3 mb-6">
                       <div className="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a855f7" strokeWidth="2" strokeLinecap="round">
-                          <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
-                        </svg>
+                        <CheckSquare size={18} color="#a855f7" />
                       </div>
                       <div>
                         <p className="text-[15px] font-bold text-gray-900 leading-none mb-0.5">2026 Life Audit</p>
@@ -278,9 +258,7 @@ export default function HowItWorks() {
                   <motion.div key="habits" initial={{ opacity: 0, x: -8 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 8 }} transition={{ duration: 0.25 }}>
                     <div className="flex items-center gap-3 mb-6">
                       <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2" strokeLinecap="round">
-                          <path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>
-                        </svg>
+                        <BookOpen size={18} color="#059669" />
                       </div>
                       <div>
                         <p className="text-[15px] font-bold text-gray-900 leading-none mb-0.5">Habit Builder</p>
@@ -309,9 +287,7 @@ export default function HowItWorks() {
                               }`}
                             >
                               {checked && (
-                                <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round">
-                                  <path d="M20 6L9 17l-5-5"/>
-                                </svg>
+                                <Check size={8} color="white" />
                               )}
                             </button>
                           ))}
@@ -430,13 +406,20 @@ export default function HowItWorks() {
               <div className="flex gap-3 mt-auto">
                 <button
                   onClick={() => router.push("/signup")}
-                  className="flex-1 flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white py-3.5 rounded-xl text-[13px] font-bold transition-all active:scale-[0.98]"
+                  className={marketingButtonClassName({
+                    size: "md",
+                    className: "flex-1 py-3.5 text-[13px] font-bold",
+                  })}
                 >
                   Save & continue <ArrowRight size={13} />
                 </button>
                 <button
                   onClick={() => router.push("/pricing")}
-                  className="flex-1 flex items-center justify-center gap-2 bg-white border border-gray-200 hover:border-gray-300 text-gray-700 py-3.5 rounded-xl text-[13px] font-semibold transition-all"
+                  className={marketingButtonClassName({
+                    variant: "secondary",
+                    size: "md",
+                    className: "flex-1 py-3.5 text-[13px] font-semibold",
+                  })}
                 >
                   Unlock full version
                 </button>
@@ -451,9 +434,7 @@ export default function HowItWorks() {
               Trying: <span className="font-semibold text-gray-600">{tabs.find(t => t.id === activeTab)?.label}</span> — free preview
             </p>
             <div className="flex items-center gap-1.5 text-[11px] text-emerald-600 font-semibold">
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round">
-                <path d="M20 6L9 17l-5-5"/>
-              </svg>
+              <Check size={10} />
               Auto-saved
             </div>
           </div>

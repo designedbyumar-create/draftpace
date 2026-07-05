@@ -1,0 +1,41 @@
+{
+  "name": "Draftpace",
+  "short_name": "Draftpace",
+  "description": "Interactive Draftpace Systems for money momentum, daily progress, and sustainable recovery.",
+  "start_url": "/dashboard",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui", "browser"],
+  "background_color": "#FAFAF7",
+  "theme_color": "#3730A3",
+  "orientation": "portrait-primary",
+  "categories": ["productivity", "lifestyle", "finance"],
+  "icons": [
+    {
+      "src": "/logo/dp-monogram-indigo.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo/dp-monogram-dark.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Today",
+      "short_name": "Today",
+      "url": "/dashboard",
+      "description": "Open today's System focus"
+    },
+    {
+      "name": "Systems",
+      "short_name": "Systems",
+      "url": "/dashboard/drafts",
+      "description": "Open your active Systems"
+    }
+  ]
+}

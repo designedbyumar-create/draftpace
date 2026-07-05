@@ -2,17 +2,10 @@
 
 import { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { ArrowRight, Barbell, BookOpen, CalendarCheck, Check, Clock, Flower, Heart, Lightning } from "@/components/ui/Icon";
 
 const BoltIcon = ({ size = 16 }: { size?: number }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
-    <path
-      d="M13 2L4.5 13.5H11L10 22L19.5 10.5H13L13 2Z"
-      fill="#4f46e5"
-      stroke="#4338ca"
-      strokeWidth="1.5"
-      strokeLinejoin="round"
-    />
-  </svg>
+  <Lightning size={size} color="#4f46e5" filled />
 );
 
 const RocketCursor = () => (
@@ -66,12 +59,7 @@ const categories = [
     ],
     includes: [] as string[],
     progress: 0,
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2a7 7 0 1 0 0 14A7 7 0 0 0 12 2z" />
-        <path d="M12 16v6" /><path d="M8 20h8" />
-      </svg>
-    ),
+    icon: <Flower size={20} color="#4f46e5" />,
   },
   {
     id: "productivity",
@@ -93,13 +81,7 @@ const categories = [
     items: [],
     includes: ["Deep Work Systems", "Weekly Planning", "Focus Sessions"],
     progress: 72,
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d97706" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="4" width="18" height="18" rx="2" />
-        <line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" />
-        <line x1="3" y1="10" x2="21" y2="10" />
-      </svg>
-    ),
+    icon: <CalendarCheck size={18} color="#d97706" />,
   },
   {
     id: "fitness",
@@ -121,12 +103,7 @@ const categories = [
     items: [],
     includes: ["Workout Trackers", "Meal Planning", "Progress Systems"],
     progress: 45,
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M6 4v6a6 6 0 0 0 12 0V4" />
-        <line x1="4" y1="4" x2="8" y2="4" /><line x1="16" y1="4" x2="20" y2="4" />
-      </svg>
-    ),
+    icon: <Barbell size={18} color="#059669" />,
   },
   {
     id: "mental-wellness",
@@ -148,11 +125,7 @@ const categories = [
     items: [],
     includes: ["Mood Tracking", "Stress Journaling", "Self Care"],
     progress: 30,
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e11d48" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-      </svg>
-    ),
+    icon: <Heart size={18} color="#e11d48" />,
   },
   {
     id: "learning",
@@ -174,12 +147,7 @@ const categories = [
     items: [],
     includes: ["Reading Trackers", "Study Flow", "Knowledge Capture"],
     progress: 58,
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-      </svg>
-    ),
+    icon: <BookOpen size={18} color="#7c3aed" />,
   },
   {
     id: "lifestyle",
@@ -202,11 +170,7 @@ const categories = [
     includes: ["Morning Routines", "Daily Planning", "Life Organization"],
     progress: 0,
     isWide: true,
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10" /><path d="M12 8v4l3 3" />
-      </svg>
-    ),
+    icon: <Clock size={18} color="#059669" />,
   },
 ];
 
@@ -414,9 +378,7 @@ export default function PlannerCategories() {
                       }}
                     >
                       {itemStates[idx] && (
-                        <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" strokeWidth="2.5" strokeLinecap="round">
-                          <polyline points="2,6 5,9 10,3" />
-                        </svg>
+                        <Check size={10} color="white" />
                       )}
                     </div>
                   </div>
@@ -430,10 +392,7 @@ export default function PlannerCategories() {
               style={{ background: hero.accent }}
             >
               Explore category
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.5" strokeLinecap="round">
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <polyline points="12,5 19,12 12,19" />
-              </svg>
+              <ArrowRight size={12} />
             </button>
 
             {/* Rocket cursor */}
@@ -562,10 +521,7 @@ export default function PlannerCategories() {
                 </span>
               ))}
               <div className="w-8 h-8 rounded-xl bg-white border border-gray-100 flex items-center justify-center">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6b7280" strokeWidth="2.5" strokeLinecap="round">
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12,5 19,12 12,19" />
-                </svg>
+                <ArrowRight size={13} color="#6b7280" />
               </div>
             </div>
           </motion.div>

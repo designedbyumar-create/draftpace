@@ -5,19 +5,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { supabase } from '@/lib/supabase'
 import Link from 'next/link'
-
-// ── Icons ─────────────────────────────────────────────────────────────────────
-const ArrowRight = ({ size = 14 }: { size?: number }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-    <path d="M5 12h14M12 5l7 7-7 7"/>
-  </svg>
-)
-
-const CheckIcon = () => (
-  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round">
-    <path d="M20 6L9 17l-5-5"/>
-  </svg>
-)
+import { ArrowRight, Check } from '@/components/ui/Icon'
 
 const GoogleIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24">
@@ -38,15 +26,15 @@ export default function Signup() {
   const [error,        setError]        = useState('')
   const [loading,      setLoading]      = useState(false)
   const [showPassword, setShowPassword] = useState(false)
+  const [redirectTo,   setRedirectTo]   = useState('/dashboard')
 
   useEffect(() => {
-    const emailFromUrl = new URLSearchParams(window.location.search).get('email')
-    if (!emailFromUrl) return
-
-    queueMicrotask(() => {
-      setEmail(emailFromUrl)
-      setStep(2)
-    })
+    if (typeof window === 'undefined') return
+    const params = new URLSearchParams(window.location.search)
+    const emailFromUrl = params.get('email')
+    const redirectFromUrl = params.get('redirect')
+    if (emailFromUrl) { setEmail(emailFromUrl); setStep(2) }
+    if (redirectFromUrl?.startsWith('/')) setRedirectTo(redirectFromUrl)
   }, [])
 
   const handleSignup = async () => {
@@ -59,7 +47,7 @@ export default function Signup() {
     })
     setLoading(false)
     if (error) { setError(error.message || "Something went wrong — please try again"); return }
-    router.push('/dashboard')
+    router.push(redirectTo)
   }
 
   const handleGoogle = async () => {
@@ -238,7 +226,7 @@ export default function Signup() {
                   ].map(item => (
                     <div key={item} className="flex items-center gap-2.5">
                       <div className="w-5 h-5 rounded-md bg-indigo-100 flex items-center justify-center shrink-0">
-                        <CheckIcon/>
+                        <Check size={12} />
                       </div>
                       <span className="text-[13px] text-indigo-800 font-medium">{item}</span>
                     </div>

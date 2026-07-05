@@ -1,6 +1,6 @@
-import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight } from "@/components/ui/Icon";
+import { MarketingButton } from "@/components/marketing/ui";
 
 const FAQS = [
   {
@@ -69,12 +69,14 @@ export default function SupportPage() {
           <p className="text-[14px] text-gray-500">
             Can't find what you need?
           </p>
-          <Link
+          <MarketingButton
             href="mailto:support@draftpace.com"
-            className="inline-flex items-center gap-2 bg-gray-950 hover:bg-gray-800 text-white px-5 py-2.5 rounded-xl text-[13px] font-bold transition-all"
+            size="sm"
+            iconRight={<ArrowRight size={13} />}
+            className="font-bold"
           >
-            Email support@draftpace.com <ArrowRight size={13}/>
-          </Link>
+            Email support@draftpace.com
+          </MarketingButton>
         </div>
       </section>
 
@@ -101,12 +103,13 @@ export default function SupportPage() {
             <p className="text-[13px] text-gray-500 mb-5">
               We read every email. Usually reply within a few hours.
             </p>
-            <Link
+            <MarketingButton
               href="mailto:support@draftpace.com"
-              className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl text-[13px] font-bold transition-all"
+              iconRight={<ArrowRight size={13} />}
+              className="font-bold"
             >
-              support@draftpace.com <ArrowRight size={13}/>
-            </Link>
+              support@draftpace.com
+            </MarketingButton>
           </div>
         </div>
       </section>

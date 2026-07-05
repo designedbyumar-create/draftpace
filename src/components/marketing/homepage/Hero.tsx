@@ -1,9 +1,10 @@
 "use client";
 
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, Lightning } from "@/components/ui/Icon";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { marketingButtonClassName } from "@/components/marketing/ui";
 
 // ── Avatars ───────────────────────────────────────────────────────────────
 
@@ -70,9 +71,7 @@ function Widget({
 // ── Bolt icon ─────────────────────────────────────────────────────────────
 
 const BoltIcon = ({ size = 15 }: { size?: number }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
-    <path d="M13 2L4.5 13.5H11L10 22L19.5 10.5H13L13 2Z" fill="white"/>
-  </svg>
+  <Lightning size={size} color="white" filled />
 );
 
 // ── Hero ──────────────────────────────────────────────────────────────────
@@ -145,7 +144,7 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.25 }}
-              className="flex mb-6 bg-white border-[1.5px] border-gray-200 rounded-2xl overflow-hidden shadow-sm focus-within:border-indigo-400 transition-colors"
+              className="flex mb-6 bg-white border-[1.5px] border-gray-200 rounded-2xl overflow-hidden shadow-sm focus-within:border-[var(--marketing-primary)] transition-colors"
               style={{ maxWidth: "440px" }}
             >
               <input
@@ -158,7 +157,10 @@ export default function Hero() {
               />
               <button
                 onClick={handleStart}
-                className="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-3 m-1.5 rounded-xl text-[13px] font-bold transition-all active:scale-[0.97] whitespace-nowrap flex items-center gap-2 shrink-0"
+                className={marketingButtonClassName({
+                  size: "sm",
+                  className: "m-1.5 shrink-0 px-5 py-3 font-bold",
+                })}
               >
                 Claim free access <ArrowRight size={13} />
               </button>

@@ -1,6 +1,6 @@
-import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight } from "@/components/ui/Icon";
+import { MarketingButton } from "@/components/marketing/ui";
 
 const TOPICS = [
   "Building streaks that stick",
@@ -50,9 +50,13 @@ export default function BlogPage() {
               placeholder="your@email.com"
               className="flex-1 h-12 bg-white border border-gray-200 focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-100 rounded-xl px-4 text-[14px] text-gray-900 placeholder-gray-400 transition-all"
             />
-            <button className="h-12 px-5 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl text-[14px] transition-all whitespace-nowrap flex items-center gap-2">
-              Notify me <ArrowRight size={14}/>
-            </button>
+            <MarketingButton
+              size="md"
+              iconRight={<ArrowRight size={14} />}
+              className="h-12 px-5"
+            >
+              Notify me
+            </MarketingButton>
           </div>
           <p className="text-[11px] text-gray-400 mt-3">No spam. One email when we publish.</p>
         </div>

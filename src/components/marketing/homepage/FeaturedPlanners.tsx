@@ -1,7 +1,8 @@
 "use client";
 
-import { BookOpen, Target, Flame, ArrowRight, Lock, Check } from "lucide-react";
+import { BookOpen, Target, Flame, ArrowRight, Lock, Check } from "@/components/ui/Icon";
 import { motion } from "framer-motion";
+import { MarketingButton } from "@/components/marketing/ui";
 
 const freePlanners = [
   {
@@ -15,8 +16,7 @@ const freePlanners = [
     progress: 68,
     progressColor: "#4f46e5",
     meta: "6 sections · 12 inputs · Auto-totals",
-    cta: "Use now →",
-    ctaStyle: "bg-indigo-600 text-white hover:bg-indigo-700",
+    cta: "Use now",
   },
   {
     icon: Target,
@@ -29,8 +29,7 @@ const freePlanners = [
     progress: 41,
     progressColor: "#0d9488",
     meta: "4 sections · Auto-calculates · Visual goal bar",
-    cta: "Use now →",
-    ctaStyle: "bg-teal-600 text-white hover:bg-teal-700",
+    cta: "Use now",
   },
   {
     icon: Flame,
@@ -43,8 +42,7 @@ const freePlanners = [
     progress: 100,
     progressColor: "#059669",
     meta: "7-day grid · Streak counter · 5 habits",
-    cta: "Use now →",
-    ctaStyle: "bg-orange-500 text-white hover:bg-orange-600",
+    cta: "Use now",
   },
 ];
 
@@ -129,9 +127,9 @@ export default function FeaturedPlanners() {
                 </div>
 
                 {/* CTA */}
-                <button className={`w-full flex items-center justify-center gap-2 py-3 rounded-xl text-[14px] font-semibold transition-all ${p.ctaStyle}`}>
+                <MarketingButton fullWidth iconRight={<ArrowRight size={14} />}>
                   {p.cta}
-                </button>
+                </MarketingButton>
 
               </motion.div>
             );
@@ -155,9 +153,13 @@ export default function FeaturedPlanners() {
                 200+ more planners waiting for you
               </p>
             </div>
-            <button className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl text-sm font-semibold transition-all shrink-0">
-              Unlock everything <ArrowRight size={14} />
-            </button>
+            <MarketingButton
+              href="/signup?plan=membership"
+              iconRight={<ArrowRight size={14} />}
+              className="shrink-0"
+            >
+              Unlock everything
+            </MarketingButton>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">

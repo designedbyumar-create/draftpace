@@ -1,6 +1,6 @@
-import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight } from "@/components/ui/Icon";
+import { MarketingButton } from "@/components/marketing/ui";
 
 // ── Custom principle icons ─────────────────────────────────────────────────
 
@@ -150,14 +150,12 @@ export default function AboutPage() {
           </p>
 
           <div className="flex flex-wrap items-center gap-4">
-            <Link href="/signup"
-              className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl text-[15px] font-bold transition-all active:scale-[0.98]">
-              Start for free <ArrowRight size={15}/>
-            </Link>
-            <Link href="/store"
-              className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 text-[15px] font-semibold transition-colors">
-              Browse planners <ArrowRight size={14}/>
-            </Link>
+            <MarketingButton href="/signup" size="lg" iconRight={<ArrowRight size={15} />}>
+              Start for free
+            </MarketingButton>
+            <MarketingButton href="/store" variant="ghost" iconRight={<ArrowRight size={14} />}>
+              Browse planners
+            </MarketingButton>
           </div>
         </div>
       </section>
@@ -333,14 +331,12 @@ export default function AboutPage() {
               <p className="text-[14px] text-gray-500">Pick a planner, start today, build your first streak.</p>
             </div>
             <div className="relative flex flex-col gap-3 shrink-0 w-full lg:w-auto">
-              <Link href="/signup"
-                className="flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-2xl text-[15px] font-bold transition-all active:scale-[0.98]">
-                Create free account <ArrowRight size={15}/>
-              </Link>
-              <Link href="/store"
-                className="text-center text-[13px] text-indigo-600 font-semibold hover:underline">
+              <MarketingButton href="/signup" size="lg" iconRight={<ArrowRight size={15} />}>
+                Create free account
+              </MarketingButton>
+              <MarketingButton href="/store" variant="ghost">
                 Browse the store first →
-              </Link>
+              </MarketingButton>
             </div>
           </div>
         </div>

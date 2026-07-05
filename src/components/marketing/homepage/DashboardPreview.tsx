@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { CheckCircle2, Flame, HandWaving, Heart, TrendingUp } from "@/components/ui/Icon";
 
 // ── Icons ─────────────────────────────────────────────────────────────────────
 
@@ -96,7 +97,6 @@ const TAB_CFG: Record<Tab, { color: string; bg: string; border: string; text: st
 // ─────────────────────────────────────────────────────────────────────────────
 function DesktopPreview() {
   const [activeTab, setActiveTab] = useState<Tab>("Active");
-  const tc = TAB_CFG[activeTab];
 
   return (
     <div className="rounded-3xl overflow-hidden border border-gray-200 bg-white"
@@ -180,7 +180,9 @@ function DesktopPreview() {
           <div className="flex items-end justify-between mb-5">
             <div>
               <p className="text-[11px] text-gray-400">Good morning</p>
-              <h2 className="text-[22px] font-bold text-gray-950 leading-none tracking-tight">Jamie 👋</h2>
+              <h2 className="flex items-center gap-1.5 text-[22px] font-bold text-gray-950 leading-none tracking-tight">
+                Jamie <HandWaving size={20} className="text-amber-500" />
+              </h2>
               <p className="text-[12px] text-gray-400 mt-1">14 days straight. You're in the top 5% of finishers.</p>
             </div>
             <div className="flex items-center gap-2">
@@ -198,10 +200,10 @@ function DesktopPreview() {
           {/* Stats */}
           <div className="grid grid-cols-4 gap-2.5 mb-5">
             {[
-              { label:"Streak",    value:"12",  sub:"days in a row", color:"#ea580c", bg:"#fff7ed", border:"#fed7aa", icon:"🔥" },
-              { label:"Active",    value:"3",   sub:"in progress",   color:"#4f46e5", bg:"#eef2ff", border:"#c7d2fe", icon:"📈" },
-              { label:"Completed", value:"7",   sub:"all time",      color:"#059669", bg:"#ecfdf5", border:"#bbf7d0", icon:"✅" },
-              { label:"Avg done",  value:"86%", sub:"this month",    color:"#7c3aed", bg:"#fdf4ff", border:"#ddd6fe", icon:"💜" },
+              { label:"Streak",    value:"12",  sub:"days in a row", color:"#ea580c", bg:"#fff7ed", border:"#fed7aa", Icon: Flame },
+              { label:"Active",    value:"3",   sub:"in progress",   color:"#4f46e5", bg:"#eef2ff", border:"#c7d2fe", Icon: TrendingUp },
+              { label:"Completed", value:"7",   sub:"all time",      color:"#059669", bg:"#ecfdf5", border:"#bbf7d0", Icon: CheckCircle2 },
+              { label:"Avg done",  value:"86%", sub:"this month",    color:"#7c3aed", bg:"#fdf4ff", border:"#ddd6fe", Icon: Heart },
             ].map((s, i) => (
               <motion.div key={s.label}
                 initial={{ opacity:0, y:10 }} whileInView={{ opacity:1, y:0 }}
@@ -209,7 +211,7 @@ function DesktopPreview() {
                 className="rounded-2xl p-3 border" style={{ background:s.bg, borderColor:s.border }}>
                 <div className="flex items-start justify-between mb-1">
                   <p className="text-[8px] font-bold uppercase tracking-widest text-gray-400">{s.label}</p>
-                  <span className="text-[13px] leading-none">{s.icon}</span>
+                  <s.Icon size={13} style={{ color: s.color }} />
                 </div>
                 <p className="text-[22px] font-black leading-none mb-0.5" style={{ color:s.color, letterSpacing:"-0.03em" }}>{s.value}</p>
                 <p className="text-[9px] font-medium" style={{ color:s.color, opacity:0.65 }}>{s.sub}</p>
@@ -404,22 +406,24 @@ function MobilePreview() {
               {/* Greeting */}
               <div className="mb-4">
                 <p className="text-[11px] text-gray-400">Good morning</p>
-                <h2 className="text-[20px] font-bold text-gray-950 leading-none tracking-tight">Jamie 👋</h2>
+                <h2 className="flex items-center gap-1.5 text-[20px] font-bold text-gray-950 leading-none tracking-tight">
+                  Jamie <HandWaving size={18} className="text-amber-500" />
+                </h2>
                 <p className="text-[11px] text-gray-400 mt-1">14 days straight. Top 5% of finishers.</p>
               </div>
 
               {/* Stats 2x2 */}
               <div className="grid grid-cols-2 gap-2 mb-4">
                 {[
-                  { label:"Streak",    value:"12",  color:"#ea580c", bg:"#fff7ed", border:"#fed7aa", icon:"🔥" },
-                  { label:"Active",    value:"3",   color:"#4f46e5", bg:"#eef2ff", border:"#c7d2fe", icon:"📈" },
-                  { label:"Completed", value:"7",   color:"#059669", bg:"#ecfdf5", border:"#bbf7d0", icon:"✅" },
-                  { label:"Avg done",  value:"86%", color:"#7c3aed", bg:"#fdf4ff", border:"#ddd6fe", icon:"💜" },
+                  { label:"Streak",    value:"12",  color:"#ea580c", bg:"#fff7ed", border:"#fed7aa", Icon: Flame },
+                  { label:"Active",    value:"3",   color:"#4f46e5", bg:"#eef2ff", border:"#c7d2fe", Icon: TrendingUp },
+                  { label:"Completed", value:"7",   color:"#059669", bg:"#ecfdf5", border:"#bbf7d0", Icon: CheckCircle2 },
+                  { label:"Avg done",  value:"86%", color:"#7c3aed", bg:"#fdf4ff", border:"#ddd6fe", Icon: Heart },
                 ].map(s => (
                   <div key={s.label} className="rounded-2xl p-3 border" style={{ background:s.bg, borderColor:s.border }}>
                     <div className="flex justify-between mb-1">
                       <span className="text-[8px] font-bold uppercase tracking-widest text-gray-400">{s.label}</span>
-                      <span className="text-[11px]">{s.icon}</span>
+                      <s.Icon size={12} style={{ color: s.color }} />
                     </div>
                     <p className="text-[20px] font-black leading-none" style={{ color:s.color, letterSpacing:"-0.03em" }}>{s.value}</p>
                   </div>

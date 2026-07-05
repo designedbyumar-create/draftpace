@@ -3,17 +3,11 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import { ArrowRight, Check, Flame, Lightning } from "@/components/ui/Icon";
+import { marketingButtonClassName } from "@/components/marketing/ui";
 
 const BoltIcon = ({ size = 16 }: { size?: number }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
-    <path
-      d="M13 2L4.5 13.5H11L10 22L19.5 10.5H13L13 2Z"
-      fill="#4f46e5"
-      stroke="#4338ca"
-      strokeWidth="1.5"
-      strokeLinejoin="round"
-    />
-  </svg>
+  <Lightning size={size} color="#3730A3" filled />
 );
 
 const habits = [
@@ -51,7 +45,7 @@ function MiniPlanner() {
           <p className="text-[13px] font-black tracking-[-0.02em] text-gray-900">
             Habit Builder — Week 1
           </p>
-          <p className="text-[13px] font-black" style={{ color: "#4f46e5" }}>
+          <p className="text-[13px] font-black" style={{ color: "#3730A3" }}>
             {pct}%
           </p>
         </div>
@@ -60,7 +54,7 @@ function MiniPlanner() {
         <div className="h-1.5 rounded-full overflow-hidden mb-3" style={{ background: "#eef2ff" }}>
           <motion.div
             className="h-full rounded-full"
-            style={{ background: "#4f46e5" }}
+            style={{ background: "#3730A3" }}
             animate={{ width: `${pct}%` }}
             transition={{ duration: 0.4, ease: "easeOut" }}
           />
@@ -82,14 +76,12 @@ function MiniPlanner() {
               <div
                 className="w-4 h-4 rounded-[5px] flex items-center justify-center flex-shrink-0 transition-all duration-150"
                 style={{
-                  background: checked[idx] ? "#4f46e5" : "transparent",
-                  border: `1.5px solid ${checked[idx] ? "#4f46e5" : "#c7d2fe"}`,
+                  background: checked[idx] ? "#3730A3" : "transparent",
+                  border: `1.5px solid ${checked[idx] ? "#3730A3" : "#c7d2fe"}`,
                 }}
               >
                 {checked[idx] && (
-                  <svg width="8" height="8" viewBox="0 0 12 12" fill="none" stroke="#fff" strokeWidth="2.5" strokeLinecap="round">
-                    <polyline points="2,6 5,9 10,3" />
-                  </svg>
+                  <Check size={8} color="white" />
                 )}
               </div>
 
@@ -114,9 +106,7 @@ function MiniPlanner() {
         style={{ background: "#fff7ed", border: "1px solid #fed7aa" }}
       >
         <div className="flex items-center gap-2.5">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f97316">
-            <path d="M12 2C8 8 4 10 4 15a8 8 0 0 0 16 0c0-5-4-7-8-13z" />
-          </svg>
+          <Flame size={16} color="#f97316" filled />
           <div>
             <motion.p
               key={streak}
@@ -201,21 +191,26 @@ export default function CTASection() {
                 whileHover={{ scale: 1.01 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => router.push("/signup")}
-                className="flex items-center justify-center gap-2 rounded-xl px-6 py-4 text-[14px] font-bold text-white transition-opacity hover:opacity-90"
-                style={{ background: "#4f46e5" }}
+                className={marketingButtonClassName({
+                  size: "lg",
+                  fullWidth: true,
+                  className: "font-bold",
+                })}
               >
                 Claim free access
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.5" strokeLinecap="round">
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12,5 19,12 12,19" />
-                </svg>
+                <ArrowRight size={14} />
               </motion.button>
 
               <motion.button
                 whileHover={{ scale: 1.01 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => router.push("/pricing")}
-                className="flex items-center justify-center gap-2 rounded-xl px-6 py-4 text-[14px] font-semibold text-gray-500 border border-gray-200 transition-all hover:border-gray-300 hover:text-gray-700"
+                className={marketingButtonClassName({
+                  variant: "secondary",
+                  size: "lg",
+                  fullWidth: true,
+                  className: "font-semibold",
+                })}
               >
                 See pricing →
               </motion.button>

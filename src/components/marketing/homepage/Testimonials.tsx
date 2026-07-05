@@ -2,23 +2,14 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
+import { CalendarCheck, Check, Clock, Flame, Lightning, Star, TrendingUp, User } from "@/components/ui/Icon";
 
 const BoltIcon = ({ size = 16 }: { size?: number }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
-    <path
-      d="M13 2L4.5 13.5H11L10 22L19.5 10.5H13L13 2Z"
-      fill="#4f46e5"
-      stroke="#4338ca"
-      strokeWidth="1.5"
-      strokeLinejoin="round"
-    />
-  </svg>
+  <Lightning size={size} color="#4f46e5" filled />
 );
 
 const StarIcon = () => (
-  <svg width="12" height="12" viewBox="0 0 24 24" fill="#fbbf24">
-    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-  </svg>
+  <Star size={12} color="#fbbf24" filled />
 );
 
 const featured = {
@@ -28,21 +19,9 @@ const featured = {
   tag: "Monthly Budget Reset · Planner",
   tagBg: "#eef2ff",
   tagColor: "#4338ca",
-  tagIcon: (
-    <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" strokeWidth="2.5" strokeLinecap="round">
-      <rect x="3" y="4" width="18" height="18" rx="2" />
-      <line x1="16" y1="2" x2="16" y2="6" />
-      <line x1="8" y1="2" x2="8" y2="6" />
-      <line x1="3" y1="10" x2="21" y2="10" />
-    </svg>
-  ),
+  tagIcon: <CalendarCheck size={9} color="#4f46e5" />,
   text: "I've tried every budgeting app out there. Draftpace is the first one that actually made me look forward to checking my numbers. Finished my first full month — something I've never done before.",
-  avatarIcon: (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" strokeWidth="1.8" strokeLinecap="round">
-      <circle cx="12" cy="8" r="4" />
-      <path d="M6 20v-2a6 6 0 0 1 12 0v2" />
-    </svg>
-  ),
+  avatarIcon: <User size={20} color="#7c3aed" />,
 };
 
 const testimonials = [
@@ -55,11 +34,7 @@ const testimonials = [
     tag: "Habit Builder · 14-day streak",
     tagBg: "#fff7ed",
     tagColor: "#b45309",
-    tagIcon: (
-      <svg width="9" height="9" viewBox="0 0 24 24" fill="#f97316">
-        <path d="M12 2C8 8 4 10 4 15a8 8 0 0 0 16 0c0-5-4-7-8-13z" />
-      </svg>
-    ),
+    tagIcon: <Flame size={9} color="#f97316" filled />,
     text: "The streak system is no joke. I missed one day in week two and genuinely felt bad about it — in a good way. That's how you know it's working.",
   },
   {
@@ -71,11 +46,7 @@ const testimonials = [
     tag: "Savings Goal · $3,000 hit",
     tagBg: "#f0fdfa",
     tagColor: "#0f766e",
-    tagIcon: (
-      <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#0d9488" strokeWidth="2.5" strokeLinecap="round">
-        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
-      </svg>
-    ),
+    tagIcon: <TrendingUp size={9} color="#0d9488" />,
     text: "Set a $5,000 goal in January. Hit $3,000 by March. Having the progress bar in front of me every day made it real instead of just a number I told myself.",
   },
   {
@@ -87,14 +58,7 @@ const testimonials = [
     tag: "Focus Planner · Freelancer",
     tagBg: "#eef2ff",
     tagColor: "#4338ca",
-    tagIcon: (
-      <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" strokeWidth="2.5" strokeLinecap="round">
-        <rect x="3" y="4" width="18" height="18" rx="2" />
-        <line x1="16" y1="2" x2="16" y2="6" />
-        <line x1="8" y1="2" x2="8" y2="6" />
-        <line x1="3" y1="10" x2="21" y2="10" />
-      </svg>
-    ),
+    tagIcon: <CalendarCheck size={9} color="#4f46e5" />,
     text: "Draftpace replaced my chaotic sticky-note system completely. My output is up, my stress is down. It pays for itself.",
   },
   {
@@ -106,12 +70,7 @@ const testimonials = [
     tag: "Morning Routine · 21 days",
     tagBg: "#fff1f2",
     tagColor: "#9f1239",
-    tagIcon: (
-      <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#e11d48" strokeWidth="2.5" strokeLinecap="round">
-        <circle cx="12" cy="12" r="10" />
-        <path d="M12 8v4l3 3" />
-      </svg>
-    ),
+    tagIcon: <Clock size={9} color="#e11d48" />,
     text: "I'm not a morning person. Was not a morning person. Three weeks in and I've got a routine that actually sticks. The planner made it feel like a game, not a chore.",
   },
 ];
@@ -291,9 +250,7 @@ export default function Testimonials() {
               <p className="text-xs text-gray-400">{featured.role}</p>
             </div>
             <div className="ml-auto flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[10px] font-bold bg-green-50 text-green-700 border border-green-100">
-              <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2.5" strokeLinecap="round">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
+              <Check size={9} color="#059669" />
               Completed
             </div>
           </div>

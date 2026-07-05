@@ -2,25 +2,21 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { ArrowRight, Check, Lightning } from "@/components/ui/Icon";
+import { MarketingButton } from "@/components/marketing/ui";
 
 // ── Icons ─────────────────────────────────────────────────────────────────────
 
 const BoltIcon = ({ size = 14 }: { size?: number }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
-    <path d="M13 2L4.5 13.5H11L10 22L19.5 10.5H13L13 2Z" fill="#4f46e5" stroke="#4338ca" strokeWidth="1.5" strokeLinejoin="round" />
-  </svg>
+  <Lightning size={size} color="#3730A3" filled />
 );
 
 const CheckIcon = ({ size = 11, color = "#6b7280" }: { size?: number; color?: string }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="3" strokeLinecap="round">
-    <path d="M5 12l5 5L20 7" />
-  </svg>
+  <Check size={size} color={color} />
 );
 
 const ArrowRightIcon = ({ size = 15 }: { size?: number }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-    <path d="M5 12h14M12 5l7 7-7 7" />
-  </svg>
+  <ArrowRight size={size} />
 );
 
 // ── Data ──────────────────────────────────────────────────────────────────────
@@ -72,10 +68,10 @@ const plans = [
     cta: "Unlock everything",
     href: "/signup?plan=membership",
     popular: true,
-    accent: "#4f46e5",
+    accent: "#3730A3",
     accentBg: "#eef2ff",
     accentBorder: "#c7d2fe",
-    checkColor: "#4f46e5",
+    checkColor: "#3730A3",
     checkBg: "#e0e7ff",
     features: [
       "All 200+ planners, instantly",
@@ -130,7 +126,7 @@ export default function PricingPreview() {
               {/* Popular pill */}
               {plan.popular && (
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                  <span className="bg-indigo-600 text-white text-[11px] font-bold px-4 py-1.5 rounded-full whitespace-nowrap">
+                  <span className="bg-[var(--marketing-primary)] text-white text-[11px] font-bold px-4 py-1.5 rounded-full whitespace-nowrap">
                     Most popular
                   </span>
                 </div>
@@ -173,18 +169,14 @@ export default function PricingPreview() {
               </ul>
 
               {/* CTA */}
-              <Link
+              <MarketingButton
                 href={plan.href}
-                className="w-full flex items-center justify-center gap-2 py-3 rounded-xl text-[14px] font-bold transition-all"
-                style={
-                  plan.popular
-                    ? { background: plan.accent, color: "#fff" }
-                    : { background: "#f3f4f6", color: "#374151" }
-                }
+                fullWidth
+                variant={plan.popular ? "primary" : "secondary"}
+                iconRight={<ArrowRightIcon size={13} />}
               >
                 {plan.cta}
-                <ArrowRightIcon size={13} />
-              </Link>
+              </MarketingButton>
             </motion.div>
           ))}
         </div>

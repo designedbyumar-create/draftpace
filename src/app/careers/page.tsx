@@ -1,6 +1,6 @@
-import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight } from "@/components/ui/Icon";
+import { MarketingButton } from "@/components/marketing/ui";
 
 const VALUES = [
   { label: "Small on purpose",   body: "We're not optimizing for headcount. We're optimizing for impact per person." },
@@ -68,12 +68,14 @@ export default function CareersPage() {
             <p className="text-[13px] text-gray-500 mb-4">
               We're not hiring right now, but we're always open to a conversation.
             </p>
-            <Link
+            <MarketingButton
               href="mailto:team@draftpace.com"
-              className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-xl text-[13px] font-bold transition-all"
+              size="sm"
+              iconRight={<ArrowRight size={13} />}
+              className="font-bold"
             >
-              Say hello <ArrowRight size={13}/>
-            </Link>
+              Say hello
+            </MarketingButton>
           </div>
         </div>
       </section>

@@ -1,0 +1,266 @@
+{
+  "id": "money-momentum-budget-system",
+  "slug": "money-momentum-budget-system",
+  "name": "Money Momentum Budget System",
+  "shortName": "Budget System",
+  "category": "money",
+  "status": "coming_soon",
+  "visibility": "public",
+  "access": "paid",
+  "priceCents": 1900,
+  "promise": "Track reality, adjust calmly, and keep money momentum visible.",
+  "description": "A guided money operating system for spending awareness, budget resets, weekly check-ins, and calm recovery.",
+  "duration": "30 days",
+  "estimatedMinutes": 7,
+  "productType": "draftpace-system",
+  "visualTheme": {
+    "accent": "#0d9488",
+    "secondary": "#3730a3",
+    "visualKind": "budget"
+  },
+  "paths": [
+    {
+      "id": "monthly-money-reset",
+      "name": "Monthly Money Reset",
+      "shortName": "Monthly Reset",
+      "recommended": true,
+      "modeLabel": "Reset",
+      "description": "Set the month, catch category drift, and make one clean correction.",
+      "sessionTemplates": [
+        {
+          "id": "money-reset-session",
+          "title": "Reset the next money move",
+          "lead": "Capture one real number, then choose one adjustment that keeps the month usable.",
+          "recommendedAction": "Track one real expense and make one small adjustment.",
+          "completionLabel": "Mark money progress",
+          "companionFrame": "The number is information. The adjustment is the system doing its job.",
+          "actions": [
+            {
+              "id": "money_value",
+              "type": "amount",
+              "label": "Amount reviewed",
+              "helper": "Use one real transaction, category total, or bill.",
+              "unit": "$",
+              "placeholder": "42",
+              "required": true,
+              "metricId": "tracked_value"
+            },
+            {
+              "id": "money_category",
+              "type": "choice",
+              "label": "Category",
+              "options": ["Food", "Bills", "Transport", "Savings", "Shopping", "Other"],
+              "required": true
+            },
+            {
+              "id": "money_adjustment",
+              "type": "text",
+              "label": "One adjustment",
+              "helper": "Small and realistic beats dramatic.",
+              "placeholder": "Pause delivery, move $20, reduce one category..."
+            },
+            {
+              "id": "reflection",
+              "type": "reflection",
+              "label": "Money note",
+              "placeholder": "What did this number make clearer?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "weekly-check-in",
+      "name": "Weekly Check In",
+      "shortName": "Weekly",
+      "modeLabel": "Review",
+      "description": "Review the week without rebuilding the entire budget.",
+      "sessionTemplates": [
+        {
+          "id": "weekly-check-session",
+          "title": "Review the week cleanly",
+          "lead": "Look at the week as a signal, not a verdict.",
+          "recommendedAction": "Choose one category and decide what needs to change next week.",
+          "completionLabel": "Mark weekly check-in",
+          "actions": [
+            {
+              "id": "money_value",
+              "type": "amount",
+              "label": "Amount reviewed",
+              "unit": "$",
+              "placeholder": "125",
+              "required": true,
+              "metricId": "tracked_value"
+            },
+            {
+              "id": "money_category",
+              "type": "choice",
+              "label": "Category reviewed",
+              "options": ["Food", "Bills", "Transport", "Savings", "Shopping", "Other"],
+              "required": true
+            },
+            {
+              "id": "reflection",
+              "type": "reflection",
+              "label": "Weekly money signal",
+              "placeholder": "What pattern is worth noticing?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "no-spend-check",
+      "name": "No Spend Check",
+      "shortName": "No Spend",
+      "modeLabel": "Reset",
+      "description": "Use a short reset when spending needs a calmer boundary.",
+      "sessionTemplates": [
+        {
+          "id": "no-spend-session",
+          "title": "Hold the line gently",
+          "lead": "Make the boundary visible and pick the replacement action before impulse shows up.",
+          "recommendedAction": "Name the spending trigger and choose the replacement move.",
+          "completionLabel": "Mark reset progress",
+          "actions": [
+            {
+              "id": "trigger",
+              "type": "text",
+              "label": "Likely trigger",
+              "placeholder": "Delivery, late-night scrolling, boredom...",
+              "required": true
+            },
+            {
+              "id": "replacement",
+              "type": "custom-task",
+              "label": "Replacement move",
+              "placeholder": "Make coffee at home, wait 24 hours, walk instead...",
+              "required": true
+            },
+            {
+              "id": "progress_mark",
+              "type": "progress-mark",
+              "label": "I protected the reset today",
+              "required": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "rhythmOptions": [
+    {
+      "id": "daily",
+      "label": "Daily",
+      "kind": "daily",
+      "sessionLabel": "Today",
+      "description": "A small daily session that keeps money visible."
+    },
+    {
+      "id": "weekly",
+      "label": "Weekly",
+      "kind": "weekly",
+      "sessionLabel": "This Week",
+      "description": "A weekly session for a deeper review without daily pressure."
+    },
+    {
+      "id": "sprint",
+      "label": "Sprint",
+      "kind": "sprint",
+      "sessionLabel": "Current Sprint",
+      "description": "A focused push for a short money goal or reset."
+    },
+    {
+      "id": "custom",
+      "label": "Custom",
+      "kind": "custom",
+      "sessionLabel": "Custom Session",
+      "description": "Use Draftpace when your schedule actually allows it."
+    }
+  ],
+  "intensityOptions": [
+    {
+      "id": "gentle",
+      "label": "Gentle",
+      "description": "One minimum action. Best when you are rebuilding trust.",
+      "suggestedActionCount": 1,
+      "companionModifier": "Keep the action small enough to repeat.",
+      "recoveryLine": "Minimum progress still keeps the system alive."
+    },
+    {
+      "id": "balanced",
+      "label": "Steady",
+      "description": "A complete but calm session for normal weeks.",
+      "suggestedActionCount": 2,
+      "companionModifier": "Aim for consistency before volume.",
+      "recoveryLine": "Return with one clean action and one note."
+    },
+    {
+      "id": "focused",
+      "label": "Intense",
+      "description": "A stronger session when you have capacity.",
+      "suggestedActionCount": 3,
+      "companionModifier": "Use the extra capacity without turning it into pressure.",
+      "recoveryLine": "Compress back to the core action if the week shifts."
+    }
+  ],
+  "progressMetrics": [
+    {
+      "id": "sessions",
+      "label": "Sessions marked",
+      "kind": "completed-sessions",
+      "goal": 30,
+      "weight": 0.55
+    },
+    {
+      "id": "tracked_value",
+      "label": "Money reviewed",
+      "kind": "sum-action",
+      "actionId": "money_value",
+      "unit": "$",
+      "weight": 0.25
+    },
+    {
+      "id": "streak",
+      "label": "Momentum streak",
+      "kind": "streak",
+      "weight": 0.2
+    }
+  ],
+  "companionTone": {
+    "default": "Calm",
+    "options": ["Calm", "Direct", "Encouraging"]
+  },
+  "customizationOptions": [
+    {
+      "id": "budget_focus",
+      "label": "Budget focus",
+      "description": "The money area this System should keep surfacing.",
+      "type": "choice",
+      "options": ["Food", "Bills", "Savings", "Debt", "Impulse spending", "Custom"]
+    }
+  ],
+  "recoveryBehavior": {
+    "title": "Minimum budget reset",
+    "trigger": "Skipped session, low momentum, or budget drift.",
+    "minimumAction": "Track one transaction. Ignore the rest for now.",
+    "companionLine": "Awareness brings you back. The number is information, not a verdict."
+  },
+  "storeCard": {
+    "badge": "Coming Soon",
+    "ctaLabel": "Notify Me",
+    "featured": true,
+    "highlights": ["Monthly reset path", "Weekly money review", "No-spend recovery path"],
+    "sortOrder": 20,
+    "summary": "A guided budgeting system for seeing real numbers without turning the month into a spreadsheet."
+  },
+  "dashboardCard": {
+    "ctaLabel": "Preview System",
+    "statusLine": "Coming soon",
+    "summary": "Budget resets, weekly reviews, and recovery behavior are being prepared."
+  },
+  "assets": {
+    "cover": "/systems/money-momentum-budget-system/cover.png",
+    "preview": "/systems/money-momentum-budget-system/preview.png"
+  }
+}
