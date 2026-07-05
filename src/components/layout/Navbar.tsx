@@ -6,6 +6,18 @@ import { usePathname, useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import Image from "next/image";
 
+const NAV_LINKS = [
+  { label: "Features", href: "/features" },
+  { label: "Store", href: "/store" },
+  { label: "Pricing", href: "/pricing" },
+];
+
+const MenuArrow = ({ size = 13 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M5 12h14M12 5l7 7-7 7"/>
+  </svg>
+);
+
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropOpen, setDropOpen] = useState(false);
@@ -59,18 +71,6 @@ export default function Navbar() {
 
   const initials = userName.slice(0, 2).toUpperCase() || "U";
   const firstName = userName.split(" ")[0];
-
-  const NAV_LINKS = [
-    { label: "Features", href: "/features" },
-    { label: "Store",    href: "/store"      },
-    { label: "Pricing",  href: "/pricing"    },
-  ];
-
-  const MenuArrow = ({ size = 13 }: { size?: number }) => (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M5 12h14M12 5l7 7-7 7"/>
-    </svg>
-  );
 
   return (
     <header className="fixed left-0 top-0 z-50 w-full px-4 pt-4">

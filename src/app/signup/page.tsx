@@ -40,9 +40,13 @@ export default function Signup() {
   const [showPassword, setShowPassword] = useState(false)
 
   useEffect(() => {
-    if (typeof window === 'undefined') return
     const emailFromUrl = new URLSearchParams(window.location.search).get('email')
-    if (emailFromUrl) { setEmail(emailFromUrl); setStep(2) }
+    if (!emailFromUrl) return
+
+    queueMicrotask(() => {
+      setEmail(emailFromUrl)
+      setStep(2)
+    })
   }, [])
 
   const handleSignup = async () => {
