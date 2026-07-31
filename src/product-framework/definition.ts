@@ -38,6 +38,8 @@ export const productDefinitionSchema = z.object({
     .string()
     .regex(/^[a-z0-9][a-z0-9-]*$/, "Slugs must be lowercase, alphanumeric, and hyphenated."),
   title: z.string().min(1),
+  /** One-line promise shown on the Start destination — not marketing copy, just what this product is for. */
+  tagline: z.string().optional(),
   family: z.string().min(1),
   version: z.string().regex(/^\d+\.\d+\.\d+$/, "Version must be semver, e.g. \"0.1.0\"."),
   status: z.enum(["draft", "active", "coming_soon", "archived"]),

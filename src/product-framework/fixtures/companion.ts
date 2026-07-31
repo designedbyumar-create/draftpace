@@ -9,6 +9,7 @@ export const internalCompanionFixture: ProductDefinitionInput = {
   id: "internal-companion-fixture",
   slug: "internal-companion-fixture",
   title: "Internal Companion Fixture",
+  tagline: "Proves the Companion family: next action, momentum, and recovery.",
   family: "companion",
   version: "0.1.0",
   status: "draft",

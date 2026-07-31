@@ -9,6 +9,7 @@ export const internalLearningFixture: ProductDefinitionInput = {
   id: "internal-learning-fixture",
   slug: "internal-learning-fixture",
   title: "Internal Learning Fixture",
+  tagline: "Proves the Learning family: lessons, assessment, and completion.",
   family: "learning",
   version: "0.1.0",
   status: "draft",

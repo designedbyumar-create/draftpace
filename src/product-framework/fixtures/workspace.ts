@@ -10,6 +10,7 @@ export const internalWorkspaceFixture: ProductDefinitionInput = {
   id: "internal-workspace-fixture",
   slug: "internal-workspace-fixture",
   title: "Internal Workspace Fixture",
+  tagline: "Proves the Tool/Workspace family: structured input and saved output.",
   family: "workspace",
   version: "0.1.0",
   status: "draft",

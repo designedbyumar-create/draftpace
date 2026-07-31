@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { productRegistry } from "@/product-framework/registry";
-import DestinationPlaceholder from "@/components/product-shell/DestinationPlaceholder";
+import EmptyState from "@/design-system/EmptyState";
+import { Clock } from "@/design-system/Icon";
 
 export default async function ProductHistoryPage({
   params,
@@ -12,10 +13,21 @@ export default async function ProductHistoryPage({
   if (!definition) notFound();
 
   return (
-    <DestinationPlaceholder
-      definition={definition}
-      eyebrow="History"
-      description="Family-appropriate history — sessions, outcomes, reports, automation runs, completed lessons, saved calculations, previous cycles, or exports."
-    />
+    <div>
+      <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--primary)]">History</p>
+      <h2 className="mt-2 text-lg font-semibold text-[var(--text)]">
+        {definition.history.kinds.length > 0
+          ? `Supports: ${definition.history.kinds.join(", ")}`
+          : "No history kinds declared"}
+      </h2>
+
+      <div className="mt-6">
+        <EmptyState
+          icon={Clock}
+          title="No history yet"
+          description="Sessions, runs, reports, or saved outputs will appear here once something has actually happened."
+        />
+      </div>
+    </div>
   );
 }

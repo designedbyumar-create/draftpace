@@ -9,6 +9,7 @@ export const internalAutomationFixture: ProductDefinitionInput = {
   id: "internal-automation-fixture",
   slug: "internal-automation-fixture",
   title: "Internal Automation Fixture",
+  tagline: "Proves the Automation family: triggers, actions, and run history.",
   family: "automation",
   version: "0.1.0",
   status: "draft",

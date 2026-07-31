@@ -36,12 +36,14 @@ import {
   Flower as PhosphorFlower,
   FloppyDisk as PhosphorFloppyDisk,
   GearSix as PhosphorGearSix,
+  GraduationCap as PhosphorGraduationCap,
   HandWaving as PhosphorHandWaving,
   Heart as PhosphorHeart,
   House as PhosphorHouse,
   Lifebuoy as PhosphorLifebuoy,
   LinkSimple as PhosphorLinkSimple,
   List as PhosphorList,
+  ListChecks as PhosphorListChecks,
   Lightning as PhosphorLightning,
   Lock as PhosphorLock,
   LockKey as PhosphorLockKey,
@@ -123,6 +125,7 @@ export const ChevronRight = createIcon(PhosphorCaretRight, "ChevronRight");
 export const Circle = createIcon(PhosphorCircle, "Circle");
 export const Clock = createIcon(PhosphorClock, "Clock");
 export const Compass = createIcon(PhosphorCompass, "Compass");
+export const GraduationCap = createIcon(PhosphorGraduationCap, "GraduationCap");
 export const CreditCard = createIcon(PhosphorCreditCard, "CreditCard");
 export const Desktop = createIcon(PhosphorDesktop, "Desktop");
 export const Download = createIcon(PhosphorDownload, "Download");
@@ -137,6 +140,7 @@ export const Landmark = createIcon(PhosphorBank, "Landmark");
 export const Layers3 = createIcon(PhosphorStack, "Layers3");
 export const LifeBuoy = createIcon(PhosphorLifebuoy, "LifeBuoy");
 export const Library = createIcon(PhosphorBooks, "Library");
+export const ListChecks = createIcon(PhosphorListChecks, "ListChecks");
 export const LinkSimple = createIcon(PhosphorLinkSimple, "LinkSimple");
 export const Lightning = createIcon(PhosphorLightning, "Lightning");
 export const Lock = createIcon(PhosphorLock, "Lock");
