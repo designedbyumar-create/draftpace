@@ -70,6 +70,7 @@ import {
   WarningCircle as PhosphorWarningCircle,
   WifiHigh as PhosphorWifiHigh,
   WifiX as PhosphorWifiX,
+  Wrench as PhosphorWrench,
   X as PhosphorX,
 } from "@phosphor-icons/react";
 
@@ -169,4 +170,5 @@ export const Wallet = createIcon(PhosphorWallet, "Wallet");
 export const WarningCircle = createIcon(PhosphorWarningCircle, "WarningCircle");
 export const Wifi = createIcon(PhosphorWifiHigh, "Wifi");
 export const WifiOff = createIcon(PhosphorWifiX, "WifiOff");
+export const Wrench = createIcon(PhosphorWrench, "Wrench");
 export const X = createIcon(PhosphorX, "X");
