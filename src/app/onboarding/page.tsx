@@ -84,7 +84,7 @@ export default function OnboardingPage() {
       title: `Let's set up Draftpace, ${name}.`,
       body: "A few platform preferences — theme, focus, and reminders. This takes under a minute.",
       content: (
-        <div className="rounded-3xl border border-[var(--border)] bg-[var(--surface-muted)] p-4">
+        <div className="rounded-xl border border-[var(--border)] bg-[var(--surface-muted)] p-4">
           <p className="text-sm font-bold text-[var(--text)]">These preferences apply across every product:</p>
           <div className="mt-3 grid gap-2 text-sm text-[var(--muted)]">
             {["System, Light, or Dark theme", "A reminder rhythm", "What you want to focus on first"].map((item) => (
@@ -110,7 +110,7 @@ export default function OnboardingPage() {
                 key={area}
                 type="button"
                 onClick={() => toggleFocus(area)}
-                className={`rounded-2xl border px-4 py-4 text-left text-sm font-bold transition ${
+                className={`rounded-lg border px-4 py-4 text-left text-sm font-bold transition ${
                   active
                     ? "border-[var(--primary)] bg-[var(--primary-soft)] text-[var(--primary)]"
                     : "border-[var(--border)] bg-[var(--surface)] text-[var(--text)]"
@@ -134,7 +134,7 @@ export default function OnboardingPage() {
               key={item}
               type="button"
               onClick={() => setGoal(item)}
-              className={`flex items-center justify-between rounded-2xl border px-4 py-3 text-left text-sm font-bold ${
+              className={`flex items-center justify-between rounded-lg border px-4 py-3 text-left text-sm font-bold ${
                 goal === item
                   ? "border-[var(--primary)] bg-[var(--primary-soft)] text-[var(--primary)]"
                   : "border-[var(--border)] bg-[var(--surface)] text-[var(--text)]"
@@ -159,7 +159,7 @@ export default function OnboardingPage() {
                 key={time}
                 type="button"
                 onClick={() => setReminderTime(time)}
-                className={`rounded-2xl border px-4 py-3 text-sm font-bold ${
+                className={`rounded-lg border px-4 py-3 text-sm font-bold ${
                   reminderTime === time
                     ? "border-[var(--primary)] bg-[var(--primary-soft)] text-[var(--primary)]"
                     : "border-[var(--border)] bg-[var(--surface)] text-[var(--text)]"
@@ -172,7 +172,7 @@ export default function OnboardingPage() {
           <button
             type="button"
             onClick={requestNotifications}
-            className="flex items-center justify-center gap-2 rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-sm font-bold text-[var(--text)]"
+            className="flex items-center justify-center gap-2 rounded-lg border border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-sm font-bold text-[var(--text)]"
           >
             <Bell size={16} aria-hidden />
             {notifications === "granted"
@@ -201,13 +201,13 @@ export default function OnboardingPage() {
               key={value}
               type="button"
               onClick={() => setTheme(value)}
-              className={`flex items-center gap-3 rounded-3xl border p-4 text-left ${
+              className={`flex items-center gap-3 rounded-xl border p-4 text-left ${
                 theme === value
                   ? "border-[var(--primary)] bg-[var(--primary-soft)]"
                   : "border-[var(--border)] bg-[var(--surface)]"
               }`}
             >
-              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[var(--surface-muted)] text-[var(--primary)]">
+              <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-[var(--surface-muted)] text-[var(--primary)]">
                 <Icon size={18} aria-hidden />
               </div>
               <div>
@@ -244,7 +244,7 @@ export default function OnboardingPage() {
           ))}
         </div>
 
-        <section className="mt-6 rounded-[28px] border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[var(--shadow-soft)]">
+        <section className="mt-6 rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[var(--shadow-soft)]">
           <p className="text-[11px] font-black uppercase tracking-[0.18em] text-[var(--primary)]">{current.eyebrow}</p>
           <h1 className="mt-3 text-[28px] font-black leading-tight tracking-tight">{current.title}</h1>
           <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{current.body}</p>
@@ -256,14 +256,14 @@ export default function OnboardingPage() {
             type="button"
             disabled={step === 0}
             onClick={() => setStep((currentStep) => Math.max(0, currentStep - 1))}
-            className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-5 py-3 text-sm font-bold text-[var(--muted)] disabled:opacity-40"
+            className="rounded-lg border border-[var(--border)] bg-[var(--surface)] px-5 py-3 text-sm font-bold text-[var(--muted)] disabled:opacity-40"
           >
             Back
           </button>
           <button
             type="button"
             onClick={() => (last ? finish() : setStep((currentStep) => currentStep + 1))}
-            className="flex items-center justify-center gap-2 rounded-2xl bg-[var(--primary)] px-5 py-3 text-sm font-black text-[var(--primary-contrast)]"
+            className="flex items-center justify-center gap-2 rounded-lg bg-[var(--primary)] px-5 py-3 text-sm font-black text-[var(--primary-contrast)]"
           >
             {last ? "Enter Draftpace" : "Continue"}
             <ArrowRight size={16} aria-hidden />
