@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { ArrowRight, Bell, Check, Desktop, Moon, Sun } from "@/design-system/Icon";
-import { supabase } from "@/lib/supabase";
+import { supabase } from "@/lib/supabase/client";
 import { ThemeMode, useTheme } from "@/design-system/theme/ThemeProvider";
 
 const focusAreas = ["Money", "Habits", "Focus", "Productivity", "Health", "Learning"];

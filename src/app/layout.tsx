@@ -5,10 +5,11 @@ import AppProviders from "@/components/providers/AppProviders";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.draftpace.com"),
   title: {
-    default: "Draftpace is launching soon",
+    default: "Draftpace — Digital products that remember you",
     template: "%s | Draftpace",
   },
-  description: "Join the Draftpace launch list and get a free planner when we open.",
+  description:
+    "Draftpace is a platform for personalized, adaptive digital products — Companions, learning products, automation tools, guided programs, and trackers.",
   manifest: "/manifest.webmanifest",
   applicationName: "Draftpace",
   appleWebApp: {
@@ -17,8 +18,9 @@ export const metadata: Metadata = {
     title: "Draftpace",
   },
   openGraph: {
-    title: "Draftpace",
-    description: "Join the Draftpace launch list and get a free planner when we open.",
+    title: "Draftpace — Digital products that remember you",
+    description:
+      "A platform for personalized, adaptive digital products that adapt, guide the next action, and pick up where you left off.",
     url: "https://www.draftpace.com",
     siteName: "Draftpace",
     type: "website",

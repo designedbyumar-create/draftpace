@@ -39,6 +39,7 @@ import {
   HandWaving as PhosphorHandWaving,
   Heart as PhosphorHeart,
   House as PhosphorHouse,
+  Lifebuoy as PhosphorLifebuoy,
   LinkSimple as PhosphorLinkSimple,
   List as PhosphorList,
   Lightning as PhosphorLightning,
@@ -133,6 +134,7 @@ export const Heart = createIcon(PhosphorHeart, "Heart");
 export const Home = createIcon(PhosphorHouse, "Home");
 export const Landmark = createIcon(PhosphorBank, "Landmark");
 export const Layers3 = createIcon(PhosphorStack, "Layers3");
+export const LifeBuoy = createIcon(PhosphorLifebuoy, "LifeBuoy");
 export const Library = createIcon(PhosphorBooks, "Library");
 export const LinkSimple = createIcon(PhosphorLinkSimple, "LinkSimple");
 export const Lightning = createIcon(PhosphorLightning, "Lightning");

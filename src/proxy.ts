@@ -1,66 +1,64 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { getLaunchMode, isAdminEnabled } from "@/product-framework/environment";
+import { createServerClient } from "@supabase/ssr";
+import { isAdminEnabled } from "@/product-framework/environment";
 
-// Always reachable regardless of launch mode: static assets, the waitlist
-// API, and the files a browser/PWA requests before any routing decision.
-const alwaysAllowedPrefixes = ["/_next", "/logo", "/images"];
-const alwaysAllowedPaths = [
-  "/",
-  "/favicon.ico",
-  "/manifest.webmanifest",
-  "/robots.txt",
-  "/sitemap.xml",
-  "/sw.js",
-  "/api/waitlist",
-];
-
-// Reachable once launch mode is "beta" or "full" (see docs/ROUTE-MAP.md).
-const gatedPublicContentPaths = ["/careers", "/blog", "/privacy", "/terms", "/cookies", "/offline"];
-const gatedAuthPaths = ["/login", "/signup", "/forgot-password", "/auth/callback"];
-
-function redirectHome(request: NextRequest) {
+function redirectTo(request: NextRequest, pathname: string, search?: Record<string, string>) {
   const url = request.nextUrl.clone();
-  url.pathname = "/";
+  url.pathname = pathname;
   url.search = "";
+  if (search) {
+    for (const [key, value] of Object.entries(search)) url.searchParams.set(key, value);
+  }
   return NextResponse.redirect(url);
 }
 
-export function proxy(request: NextRequest) {
+/**
+ * Real server-side session protection for /app and /admin, using
+ * @supabase/ssr so the session is verified before any protected content is
+ * ever sent (docs/DECISIONS.md — this replaces the Phase 1 client-side-only
+ * AuthGate). /admin also requires isAdminEnabled() independent of session
+ * state — architecture scaffolding, unavailable in ordinary production
+ * configuration regardless of who's signed in.
+ */
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
+  const isAdminPath = pathname === "/admin" || pathname.startsWith("/admin/");
 
-  if (
-    alwaysAllowedPaths.includes(pathname) ||
-    alwaysAllowedPrefixes.some((prefix) => pathname.startsWith(prefix))
-  ) {
-    return NextResponse.next();
+  if (isAdminPath && !isAdminEnabled()) {
+    return redirectTo(request, "/");
   }
 
-  // /admin is gated independently of launch mode — architecture scaffolding
-  // only, unavailable in ordinary production configuration.
-  if (pathname === "/admin" || pathname.startsWith("/admin/")) {
-    return isAdminEnabled() ? NextResponse.next() : redirectHome(request);
+  let response = NextResponse.next({ request });
+
+  const supabase = createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL || "https://placeholder.supabase.co",
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "placeholder-anon-key",
+    {
+      cookies: {
+        getAll() {
+          return request.cookies.getAll();
+        },
+        setAll(cookiesToSet) {
+          cookiesToSet.forEach(({ name, value }) => request.cookies.set(name, value));
+          response = NextResponse.next({ request });
+          cookiesToSet.forEach(({ name, value, options }) => response.cookies.set(name, value, options));
+        },
+      },
+    }
+  );
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) {
+    return redirectTo(request, "/login", { redirectTo: pathname });
   }
 
-  const launchMode = getLaunchMode();
-
-  if (launchMode === "waitlist") {
-    return redirectHome(request);
-  }
-
-  // beta / full: public content, auth, and the authenticated platform.
-  if (
-    gatedPublicContentPaths.includes(pathname) ||
-    gatedAuthPaths.includes(pathname) ||
-    pathname === "/app" ||
-    pathname.startsWith("/app/")
-  ) {
-    return NextResponse.next();
-  }
-
-  return redirectHome(request);
+  return response;
 }
 
 export const config = {
-  matcher: ["/((?!.*\\..*).*)", "/manifest.webmanifest", "/sw.js"],
+  matcher: ["/app/:path*", "/admin/:path*"],
 };

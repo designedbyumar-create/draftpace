@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { supabase } from '@/lib/supabase'
+import { supabase } from '@/lib/supabase/client'
 import Link from 'next/link'
 import { ArrowRight, Envelope, Lock, WarningCircle } from '@/design-system/Icon'
 

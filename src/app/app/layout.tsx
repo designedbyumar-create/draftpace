@@ -1,16 +1,26 @@
 import type { Metadata } from "next";
-import AuthGate from "@/design-system/shell/AuthGate";
+import { redirect } from "next/navigation";
+import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { SessionProvider } from "@/design-system/shell/SessionProvider";
 import { registerDevFixtures } from "@/product-framework/fixtures";
 
 export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-// Registers the internal development fixtures (no-op outside dev/beta with
-// fixtures enabled — see docs/DATA-BOUNDARIES.md) before any /app route,
-// including nested /app/products/[productSlug]/*, can read the registry.
-registerDevFixtures();
+export default async function AppLayout({ children }: { children: React.ReactNode }) {
+  registerDevFixtures();
 
-export default function AppLayout({ children }: { children: React.ReactNode }) {
-  return <AuthGate>{children}</AuthGate>;
+  const supabase = await createSupabaseServerClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  // Defense in depth — src/proxy.ts already verifies this for every /app/*
+  // request before it reaches here.
+  if (!user) redirect("/login");
+
+  if (!user.user_metadata?.onboarding_complete) redirect("/onboarding");
+
+  return <SessionProvider user={user}>{children}</SessionProvider>;
 }

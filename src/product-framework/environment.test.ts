@@ -1,34 +1,8 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { areDevFixturesEnabled, getLaunchMode, isAdminEnabled } from "./environment";
+import { areDevFixturesEnabled, isAdminEnabled } from "./environment";
 
 afterEach(() => {
   vi.unstubAllEnvs();
-});
-
-describe("getLaunchMode", () => {
-  it("defaults to waitlist in production with no override — the real production default", () => {
-    vi.stubEnv("NODE_ENV", "production");
-    vi.stubEnv("NEXT_PUBLIC_LAUNCH_MODE", "");
-    expect(getLaunchMode()).toBe("waitlist");
-  });
-
-  it("defaults to beta outside production so /app is reachable in local dev without configuration", () => {
-    vi.stubEnv("NODE_ENV", "development");
-    vi.stubEnv("NEXT_PUBLIC_LAUNCH_MODE", "");
-    expect(getLaunchMode()).toBe("beta");
-  });
-
-  it("respects an explicit override even in production (a real beta deploy)", () => {
-    vi.stubEnv("NODE_ENV", "production");
-    vi.stubEnv("NEXT_PUBLIC_LAUNCH_MODE", "beta");
-    expect(getLaunchMode()).toBe("beta");
-  });
-
-  it("ignores an invalid override and falls back to the NODE_ENV default", () => {
-    vi.stubEnv("NODE_ENV", "production");
-    vi.stubEnv("NEXT_PUBLIC_LAUNCH_MODE", "not-a-real-mode");
-    expect(getLaunchMode()).toBe("waitlist");
-  });
 });
 
 describe("isAdminEnabled", () => {

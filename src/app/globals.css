@@ -1,5 +1,5 @@
 /* stylelint-disable */
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Hanken+Grotesk:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -9,91 +9,151 @@
   box-sizing: border-box;
 }
 
+/*
+ * Draftpace design tokens. One shared system for the public site, the
+ * platform, product shell and admin. See docs/DESIGN-SYSTEM.md.
+ *
+ * Theme modes are exactly system | light | dark (docs/DECISIONS.md). "light"
+ * needs no explicit block below — these are already the light palette.
+ * "dark" applies explicitly; "system" applies the same dark tokens only when
+ * the OS prefers dark, via the media query further down.
+ */
 html {
+  /* Surfaces */
   --bg: #ffffff;
-  --app-bg: #fafaf7;
+  --app-bg: #faf9f7;
   --surface: #ffffff;
-  --surface-muted: #f8fafc;
-  --surface-strong: #f1f5f9;
-  --text: #0f172a;
-  --muted: #64748b;
-  --faint: #94a3b8;
-  --border: #e5e7eb;
+  --surface-muted: #f7f6f4;
+  --surface-strong: #efeeea;
+  --overlay: rgba(15, 15, 20, 0.44);
+
+  /* Text */
+  --text: #16151a;
+  --muted: #62606b;
+  --faint: #97949e;
+
+  /* Borders */
+  --border: #e6e4df;
+  --border-strong: #d3d0c9;
+
+  /* Brand + semantic */
   --primary: #3730a3;
-  --primary-strong: #312e81;
-  --primary-soft: #eef2ff;
+  --primary-strong: #2c2680;
+  --primary-soft: #edecf9;
   --primary-contrast: #ffffff;
-  --teal: #0d9488;
-  --green: #059669;
-  --orange: #f97316;
-  --violet: #7c3aed;
-  --danger: #dc2626;
-  --shadow-soft: 0 18px 55px rgba(15, 23, 42, 0.08);
-  --marketing-primary: #3730a3;
-  --marketing-primary-hover: #312e81;
-  --marketing-primary-soft: #eef2ff;
-  --marketing-primary-soft-border: #c7d2fe;
-  --marketing-bg: #fafaf9;
-  --marketing-surface: #ffffff;
-  --marketing-surface-muted: #f8fafc;
-  --marketing-text: #0f172a;
-  --marketing-muted: #64748b;
-  --marketing-border: #e5e7eb;
-  --marketing-border-strong: #cbd5e1;
-  --marketing-focus-ring: rgba(55, 48, 163, 0.28);
-  --marketing-button-shadow: 0 12px 26px rgba(55, 48, 163, 0.22);
+  --link: #3730a3;
+  --success: #0d7a5f;
+  --success-soft: #e6f4ef;
+  --warning: #a15c07;
+  --warning-soft: #fbf0dd;
+  --danger: #b3261e;
+  --danger-soft: #fbeceb;
+  --info: #1d5fa8;
+  --info-soft: #e8f0fb;
+
+  /* Legacy aliases kept for existing usages */
+  --teal: #0d7a5f;
+  --green: #0d7a5f;
+  --orange: #a15c07;
+  --violet: #6d4fce;
+
+  /* Elevation */
+  --shadow-xs: 0 1px 2px rgba(22, 21, 26, 0.06);
+  --shadow-soft: 0 12px 32px rgba(22, 21, 26, 0.08);
+  --shadow-md: 0 24px 64px rgba(22, 21, 26, 0.16);
+
+  /* Focus */
+  --focus-ring: rgba(55, 48, 163, 0.35);
+
   background: var(--bg);
+  color-scheme: light;
 }
 
-/*
- * Platform theme modes are exactly system | light | dark (docs/DECISIONS.md).
- * "light" needs no explicit block — the base html{} tokens above are already
- * the light palette. "dark" applies explicitly; "system" applies the same
- * dark tokens only when the OS prefers dark, via the media query below.
- */
 html[data-theme="dark"] {
-  --bg: #0f172a;
-  --app-bg: #111827;
-  --surface: #1e293b;
-  --surface-muted: #243044;
-  --surface-strong: #2f3d55;
-  --text: #f8fafc;
-  --muted: #cbd5e1;
-  --faint: #94a3b8;
-  --border: rgba(255, 255, 255, 0.09);
-  --primary: #a5b4fc;
-  --primary-strong: #c4b5fd;
-  --primary-soft: rgba(165, 180, 252, 0.14);
-  --primary-contrast: #111827;
-  --teal: #5eead4;
-  --green: #86efac;
-  --orange: #fdba74;
-  --violet: #c4b5fd;
-  --danger: #fca5a5;
-  --shadow-soft: 0 20px 70px rgba(0, 0, 0, 0.32);
+  --bg: #121116;
+  --app-bg: #0e0d11;
+  --surface: #1a191f;
+  --surface-muted: #201f26;
+  --surface-strong: #2a2932;
+  --overlay: rgba(0, 0, 0, 0.6);
+
+  --text: #f4f3f6;
+  --muted: #ada9b6;
+  --faint: #7d7986;
+
+  --border: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.16);
+
+  --primary: #b3aaff;
+  --primary-strong: #cfc8ff;
+  --primary-soft: rgba(179, 170, 255, 0.16);
+  --primary-contrast: #171426;
+  --link: #b3aaff;
+  --success: #6fd3b3;
+  --success-soft: rgba(111, 211, 179, 0.14);
+  --warning: #e8b567;
+  --warning-soft: rgba(232, 181, 103, 0.14);
+  --danger: #f0a099;
+  --danger-soft: rgba(240, 160, 153, 0.14);
+  --info: #8fbdec;
+  --info-soft: rgba(143, 189, 236, 0.14);
+
+  --teal: #6fd3b3;
+  --green: #6fd3b3;
+  --orange: #e8b567;
+  --violet: #b9a6f5;
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-soft: 0 16px 40px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 28px 72px rgba(0, 0, 0, 0.55);
+
+  --focus-ring: rgba(179, 170, 255, 0.45);
+
+  color-scheme: dark;
 }
 
 @media (prefers-color-scheme: dark) {
   html[data-theme="system"] {
-    --bg: #0f172a;
-    --app-bg: #111827;
-    --surface: #1e293b;
-    --surface-muted: #243044;
-    --surface-strong: #2f3d55;
-    --text: #f8fafc;
-    --muted: #cbd5e1;
-    --faint: #94a3b8;
-    --border: rgba(255, 255, 255, 0.09);
-    --primary: #a5b4fc;
-    --primary-strong: #c4b5fd;
-    --primary-soft: rgba(165, 180, 252, 0.14);
-    --primary-contrast: #111827;
-    --teal: #5eead4;
-    --green: #86efac;
-    --orange: #fdba74;
-    --violet: #c4b5fd;
-    --danger: #fca5a5;
-    --shadow-soft: 0 20px 70px rgba(0, 0, 0, 0.32);
+    --bg: #121116;
+    --app-bg: #0e0d11;
+    --surface: #1a191f;
+    --surface-muted: #201f26;
+    --surface-strong: #2a2932;
+    --overlay: rgba(0, 0, 0, 0.6);
+
+    --text: #f4f3f6;
+    --muted: #ada9b6;
+    --faint: #7d7986;
+
+    --border: rgba(255, 255, 255, 0.1);
+    --border-strong: rgba(255, 255, 255, 0.16);
+
+    --primary: #b3aaff;
+    --primary-strong: #cfc8ff;
+    --primary-soft: rgba(179, 170, 255, 0.16);
+    --primary-contrast: #171426;
+    --link: #b3aaff;
+    --success: #6fd3b3;
+    --success-soft: rgba(111, 211, 179, 0.14);
+    --warning: #e8b567;
+    --warning-soft: rgba(232, 181, 103, 0.14);
+    --danger: #f0a099;
+    --danger-soft: rgba(240, 160, 153, 0.14);
+    --info: #8fbdec;
+    --info-soft: rgba(143, 189, 236, 0.14);
+
+    --teal: #6fd3b3;
+    --green: #6fd3b3;
+    --orange: #e8b567;
+    --violet: #b9a6f5;
+
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-soft: 0 16px 40px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 28px 72px rgba(0, 0, 0, 0.55);
+
+    --focus-ring: rgba(179, 170, 255, 0.45);
+
+    color-scheme: dark;
   }
 }
 
@@ -111,6 +171,28 @@ select {
   font: inherit;
 }
 
+/* Visible keyboard focus everywhere, on top of any component-level ring. */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--primary-soft);
+  color: var(--primary-strong);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 .dp-scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -119,4 +201,3 @@ select {
 .dp-scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
-
