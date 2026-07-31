@@ -1,6 +1,6 @@
 "use client";
 
-import { ThemeProvider } from "./ThemeProvider";
+import { ThemeProvider } from "@/design-system/theme/ThemeProvider";
 import PWARegister from "./PWARegister";
 
 export default function AppProviders({ children }: { children: React.ReactNode }) {

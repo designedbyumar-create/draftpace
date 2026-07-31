@@ -1,18 +1,17 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { ArrowRight, Bell, Check, Moon, Sparkles, Sun } from "@/components/ui/Icon";
+import { ArrowRight, Bell, Check, Desktop, Moon, Sun } from "@/design-system/Icon";
 import { supabase } from "@/lib/supabase";
-import { planners } from "@/lib/planners";
-import { ThemeMode, useTheme } from "@/components/providers/ThemeProvider";
+import { ThemeMode, useTheme } from "@/design-system/theme/ThemeProvider";
 
 const focusAreas = ["Money", "Habits", "Focus", "Productivity", "Health", "Learning"];
 const goals = [
   "Build consistency",
-  "Finish a System",
-  "Track money",
+  "Finish something I start",
+  "Track progress",
   "Create a routine",
   "Reduce overwhelm",
   "Plan deep work",
@@ -22,13 +21,10 @@ const reminderTimes = ["7:30 AM", "9:00 AM", "12:30 PM", "6:00 PM", "8:30 PM"];
 export default function OnboardingPage() {
   const router = useRouter();
   const { theme, setTheme } = useTheme();
-  const defaultStarterId =
-    planners.find((planner) => planner.status === "active" && (planner.access === "free" || planner.prototypeUnlocked))?.id || "";
   const [step, setStep] = useState(0);
   const [name, setName] = useState("there");
   const [focus, setFocus] = useState<string[]>(["Money"]);
-  const [goal, setGoal] = useState("Track money");
-  const [starterPlanner, setStarterPlanner] = useState(defaultStarterId);
+  const [goal, setGoal] = useState("Build consistency");
   const [reminderTime, setReminderTime] = useState("9:00 AM");
   const [notifications, setNotifications] = useState<NotificationPermission | "unsupported">("default");
 
@@ -45,17 +41,9 @@ export default function OnboardingPage() {
     else setNotifications(Notification.permission);
   }, [router]);
 
-  const starterOptions = useMemo(
-    () => planners.filter((planner) => planner.status === "active" && (planner.access === "free" || planner.prototypeUnlocked)),
-    []
-  );
-  const previewCount = planners.filter((planner) => planner.status === "coming_soon").length;
-
   const toggleFocus = (area: string) => {
     setFocus((current) =>
-      current.includes(area)
-        ? current.filter((item) => item !== area)
-        : [...current, area]
+      current.includes(area) ? current.filter((item) => item !== area) : [...current, area]
     );
   };
 
@@ -68,18 +56,7 @@ export default function OnboardingPage() {
     setNotifications(permission);
   };
 
-  const finish = async () => {
-    const payload = {
-      focus,
-      goal,
-      starterPlanner,
-      reminderTime,
-      onboardingComplete: true,
-      completedAt: new Date().toISOString(),
-    };
-
-    window.localStorage.setItem("draftpace-profile", JSON.stringify(payload));
-
+  const savePreferences = async () => {
     await supabase.auth.updateUser({
       data: {
         onboarding_complete: true,
@@ -89,35 +66,30 @@ export default function OnboardingPage() {
         theme,
       },
     });
-
-    router.replace(starterPlanner ? `/dashboard/planner/${starterPlanner}` : "/dashboard");
   };
 
-  const skip = () => {
-    const payload = {
-      focus,
-      goal,
-      starterPlanner,
-      reminderTime,
-      onboardingComplete: true,
-      completedAt: new Date().toISOString(),
-    };
-    window.localStorage.setItem("draftpace-profile", JSON.stringify(payload));
-    router.replace("/dashboard");
+  const finish = async () => {
+    await savePreferences();
+    router.replace("/app");
+  };
+
+  const skip = async () => {
+    await savePreferences();
+    router.replace("/app");
   };
 
   const steps = [
     {
       eyebrow: "Welcome",
-      title: `Let's tune Draftpace to you, ${name}.`,
-      body: "A premium System app should feel like it knows the job you hired it for. This takes under a minute.",
+      title: `Let's set up Draftpace, ${name}.`,
+      body: "A few platform preferences — theme, focus, and reminders. This takes under a minute.",
       content: (
         <div className="rounded-3xl border border-[var(--border)] bg-[var(--surface-muted)] p-4">
-          <p className="text-sm font-bold text-[var(--text)]">Your app will start with:</p>
+          <p className="text-sm font-bold text-[var(--text)]">These preferences apply across every product:</p>
           <div className="mt-3 grid gap-2 text-sm text-[var(--muted)]">
-            {["A personal Today screen", "One recommended starter System", "Reminder rhythm", "Light, Calm, or Calm Dark mode"].map((item) => (
+            {["System, Light, or Dark theme", "A reminder rhythm", "What you want to focus on first"].map((item) => (
               <div key={item} className="flex items-center gap-2">
-                <Check size={15} className="text-[var(--green)]" />
+                <Check size={15} className="text-[var(--green)]" aria-hidden />
                 {item}
               </div>
             ))}
@@ -128,7 +100,7 @@ export default function OnboardingPage() {
     {
       eyebrow: "Focus",
       title: "What are you trying to improve?",
-      body: "Pick the areas you want Draftpace to prioritize.",
+      body: "Pick the areas you want Draftpace to prioritize when recommending products.",
       content: (
         <div className="grid grid-cols-2 gap-2">
           {focusAreas.map((area) => {
@@ -153,8 +125,8 @@ export default function OnboardingPage() {
     },
     {
       eyebrow: "Goal",
-      title: "What should the app help with first?",
-      body: "This drives your Today screen and recommendations.",
+      title: "What should Draftpace help with first?",
+      body: "This shapes what shows up on your Home first.",
       content: (
         <div className="grid gap-2">
           {goals.map((item) => (
@@ -169,59 +141,16 @@ export default function OnboardingPage() {
               }`}
             >
               {item}
-              {goal === item && <Check size={16} />}
+              {goal === item && <Check size={16} aria-hidden />}
             </button>
           ))}
         </div>
       ),
     },
     {
-      eyebrow: "Starter",
-      title: "Pick your first Draftpace System.",
-      body:
-        starterOptions.length > 0
-          ? "You can change this later. The point is to get one small win immediately."
-          : "The first interactive Systems are staged as previews, so your dashboard will open without a fake starter loop.",
-      content: (
-        <div className="grid gap-3">
-          {starterOptions.length > 0 ? (
-            starterOptions.map((planner) => (
-              <button
-                key={planner.id}
-                type="button"
-                onClick={() => setStarterPlanner(planner.id)}
-                className={`rounded-3xl border p-4 text-left transition ${
-                  starterPlanner === planner.id
-                    ? "border-[var(--primary)] bg-[var(--primary-soft)]"
-                    : "border-[var(--border)] bg-[var(--surface)]"
-                }`}
-              >
-                <div className="flex items-start justify-between gap-3">
-                  <div>
-                    <p className="text-sm font-black text-[var(--text)]">{planner.title}</p>
-                    <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{planner.description}</p>
-                  </div>
-                  <span className="rounded-full bg-[var(--surface-muted)] px-2.5 py-1 text-[11px] font-bold text-[var(--muted)]">
-                    {planner.access === "paid" ? "Paid" : "Free"}
-                  </span>
-                </div>
-              </button>
-            ))
-          ) : (
-            <div className="rounded-3xl border border-[var(--border)] bg-[var(--surface-muted)] p-4">
-              <p className="text-sm font-black text-[var(--text)]">System previews are ready.</p>
-              <p className="mt-2 text-xs leading-5 text-[var(--muted)]">
-                {previewCount} coming-soon Systems are available to preview. Progress tracking will open when a System is marked active.
-              </p>
-            </div>
-          )}
-        </div>
-      ),
-    },
-    {
       eyebrow: "Rhythm",
       title: "When should Draftpace nudge you?",
-      body: "Notifications stay optional. We will not ask for permission until you choose it.",
+      body: "Notifications stay optional. We will not ask for browser permission until you choose it.",
       content: (
         <div className="grid gap-3">
           <div className="grid grid-cols-2 gap-2">
@@ -245,7 +174,7 @@ export default function OnboardingPage() {
             onClick={requestNotifications}
             className="flex items-center justify-center gap-2 rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-sm font-bold text-[var(--text)]"
           >
-            <Bell size={16} />
+            <Bell size={16} aria-hidden />
             {notifications === "granted"
               ? "Notifications enabled"
               : notifications === "denied"
@@ -259,14 +188,14 @@ export default function OnboardingPage() {
     },
     {
       eyebrow: "Theme",
-      title: "Choose the app mood.",
-      body: "Light for clarity, Calm for softness, Calm Dark for late-night planning.",
+      title: "Choose how Draftpace looks.",
+      body: "System follows your device. You can change this anytime.",
       content: (
         <div className="grid gap-2">
           {([
-            { value: "light", label: "Light", desc: "White background, crisp System workspace.", Icon: Sun },
-            { value: "calm", label: "Calm", desc: "Cool pastel surfaces and softer contrast.", Icon: Sparkles },
-            { value: "calm-dark", label: "Calm Dark", desc: "Dark, quiet, and low-glare.", Icon: Moon },
+            { value: "system", label: "System", desc: "Match your device's light or dark setting.", Icon: Desktop },
+            { value: "light", label: "Light", desc: "White background, crisp workspace.", Icon: Sun },
+            { value: "dark", label: "Dark", desc: "Dark, quiet, and low-glare.", Icon: Moon },
           ] as { value: ThemeMode; label: string; desc: string; Icon: typeof Sun }[]).map(({ value, label, desc, Icon }) => (
             <button
               key={value}
@@ -279,7 +208,7 @@ export default function OnboardingPage() {
               }`}
             >
               <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[var(--surface-muted)] text-[var(--primary)]">
-                <Icon size={18} />
+                <Icon size={18} aria-hidden />
               </div>
               <div>
                 <p className="text-sm font-black text-[var(--text)]">{label}</p>
@@ -336,8 +265,8 @@ export default function OnboardingPage() {
             onClick={() => (last ? finish() : setStep((currentStep) => currentStep + 1))}
             className="flex items-center justify-center gap-2 rounded-2xl bg-[var(--primary)] px-5 py-3 text-sm font-black text-[var(--primary-contrast)]"
           >
-            {last ? (starterPlanner ? "Open my System" : "Open dashboard") : "Continue"}
-            <ArrowRight size={16} />
+            {last ? "Enter Draftpace" : "Continue"}
+            <ArrowRight size={16} aria-hidden />
           </button>
         </div>
       </div>

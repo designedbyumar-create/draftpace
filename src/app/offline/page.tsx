@@ -7,7 +7,7 @@ export default function OfflinePage() {
         <Image src="/logo/dp-monogram-indigo.svg" alt="Draftpace" width={64} height={64} priority />
         <h1 className="mt-6 text-2xl font-black tracking-tight">You are offline</h1>
         <p className="mt-3 text-sm leading-6 text-[var(--muted)]">
-          Recently opened planners still work. New planners, checkout, and account changes need a connection.
+          Recently opened content still works. New content and account changes need a connection.
         </p>
       </div>
     </main>

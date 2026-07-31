@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { supabase } from '@/lib/supabase'
 import Link from 'next/link'
-import { ArrowRight, Envelope, Lock, WarningCircle } from '@/components/ui/Icon'
+import { ArrowRight, Envelope, Lock, WarningCircle } from '@/design-system/Icon'
 
 const GoogleIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24">
@@ -30,7 +30,7 @@ export default function Login() {
     const { error } = await supabase.auth.signInWithPassword({ email, password })
     setLoading(false)
     if (error) { setError("Wrong email or password — double check and try again."); return }
-    router.push('/dashboard')
+    router.push('/app')
   }
 
   const handleGoogle = async () => {

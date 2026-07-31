@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { FormEvent, useState } from "react";
-import { ArrowRight, CheckCircle2, Envelope, Sparkles } from "@/components/ui/Icon";
+import { ArrowRight, CheckCircle2, Envelope, Sparkles } from "@/design-system/Icon";
 
 type FormState = "idle" | "loading" | "success" | "error";
 

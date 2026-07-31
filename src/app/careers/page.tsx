@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowRight } from "@/components/ui/Icon";
+import { ArrowRight } from "@/design-system/Icon";
 import { MarketingButton } from "@/components/marketing/ui";
 
 const VALUES = [

@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { supabase } from '@/lib/supabase'
 import Link from 'next/link'
-import { ArrowRight, Check } from '@/components/ui/Icon'
+import { ArrowRight, Check } from '@/design-system/Icon'
 
 const GoogleIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24">
@@ -26,7 +26,7 @@ export default function Signup() {
   const [error,        setError]        = useState('')
   const [loading,      setLoading]      = useState(false)
   const [showPassword, setShowPassword] = useState(false)
-  const [redirectTo,   setRedirectTo]   = useState('/dashboard')
+  const [redirectTo,   setRedirectTo]   = useState('/app')
 
   useEffect(() => {
     if (typeof window === 'undefined') return

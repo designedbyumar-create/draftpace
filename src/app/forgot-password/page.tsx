@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "@/components/ui/Icon";
+import { ArrowRight } from "@/design-system/Icon";
 import { supabase } from "@/lib/supabase";
 
 export default function ForgotPasswordPage() {

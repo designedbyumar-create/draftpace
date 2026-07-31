@@ -1,11 +1,8 @@
-const CACHE_NAME = "draftpace-app-v1";
+const CACHE_NAME = "draftpace-app-v2";
 
 const APP_SHELL = [
-  "/dashboard",
-  "/dashboard/drafts",
-  "/dashboard/explore",
-  "/dashboard/progress",
-  "/dashboard/settings",
+  "/app",
+  "/app/library",
   "/offline",
   "/manifest.webmanifest",
   "/logo/dp-monogram-indigo.svg",
@@ -32,13 +29,13 @@ self.addEventListener("fetch", (event) => {
   if (request.method !== "GET") return;
 
   const url = new URL(request.url);
-  const isDashboard = url.pathname.startsWith("/dashboard");
+  const isApp = url.pathname.startsWith("/app");
   const isStaticAsset =
     url.pathname.startsWith("/_next/static") ||
     url.pathname.startsWith("/logo/") ||
     url.pathname === "/manifest.webmanifest";
 
-  if (isDashboard || isStaticAsset || url.pathname === "/offline") {
+  if (isApp || isStaticAsset || url.pathname === "/offline") {
     event.respondWith(
       caches.match(request).then((cached) => {
         const network = fetch(request)
@@ -62,16 +59,16 @@ self.addEventListener("push", (event) => {
   const data = event.data.json();
   event.waitUntil(
     self.registration.showNotification(data.title || "Draftpace", {
-      body: data.body || "Your planner is waiting.",
+      body: data.body || "Something is waiting for you.",
       icon: "/logo/dp-monogram-indigo.svg",
       badge: "/logo/dp-monogram-dark.svg",
-      data: { url: data.url || "/dashboard" }
+      data: { url: data.url || "/app" }
     })
   );
 });
 
 self.addEventListener("notificationclick", (event) => {
   event.notification.close();
-  const url = event.notification.data?.url || "/dashboard";
+  const url = event.notification.data?.url || "/app";
   event.waitUntil(self.clients.openWindow(url));
 });

@@ -28,6 +28,7 @@ import {
   Compass as PhosphorCompass,
   CreditCard as PhosphorCreditCard,
   DeviceMobile as PhosphorDeviceMobile,
+  Desktop as PhosphorDesktop,
   Download as PhosphorDownload,
   Envelope as PhosphorEnvelope,
   Fire as PhosphorFire,
@@ -121,6 +122,7 @@ export const Circle = createIcon(PhosphorCircle, "Circle");
 export const Clock = createIcon(PhosphorClock, "Clock");
 export const Compass = createIcon(PhosphorCompass, "Compass");
 export const CreditCard = createIcon(PhosphorCreditCard, "CreditCard");
+export const Desktop = createIcon(PhosphorDesktop, "Desktop");
 export const Download = createIcon(PhosphorDownload, "Download");
 export const Envelope = createIcon(PhosphorEnvelope, "Envelope");
 export const Flame = createIcon(PhosphorFlame, "Flame");
