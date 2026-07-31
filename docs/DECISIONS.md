@@ -60,6 +60,24 @@ blueprint — just the calls that shape the code.
   local/in-memory only, precisely so that proving the product framework
   doesn't require any schema decisions yet. See `DATA-BOUNDARIES.md`.
 
+## Discovered during Phase 1 verification
+
+- The pre-reset `middleware.ts` (root-level "coming soon" allowlist) was
+  **never actually being compiled or enforced** in any production build —
+  this repository uses a `src/` directory, and Next.js only loads middleware
+  from `src/middleware.ts` in that configuration, not the project root.
+  Confirmed via an empty `.next/server/middleware-manifest.json` on both the
+  pre-reset and Phase 1 builds, and a live production-server test showing
+  every path returning 200 instead of redirecting. Fixed by moving it to
+  `src/proxy.ts` (also renamed per Next.js 16.2.6's `middleware` →`proxy`
+  convention change) and re-verified live: waitlist mode now genuinely gates
+  the site. See `MIGRATION-PLAN.md` for the full account.
+- `terms/page.tsx` and `privacy/page.tsx` were assumed to be generic legal
+  boilerplate and preserved as instructed, but actually contain specific
+  claims about the abandoned planner-marketplace product (pricing, Gumroad/
+  Etsy, catalog size). Not rewritten this phase — flagged for founder/legal
+  review before `beta`/`full` launch mode is used with real users.
+
 ## Launch behavior
 
 - Production defaults to **waitlist mode** with no environment variable set.

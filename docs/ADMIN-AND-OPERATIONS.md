@@ -6,7 +6,7 @@ a gate, and a static overview page — not a working admin tool.
 ## What exists today
 
 - `src/app/admin/layout.tsx` — gated two ways:
-  1. `middleware.ts` blocks `/admin/**` entirely unless
+  1. `src/proxy.ts` blocks `/admin/**` entirely unless
      `isAdminEnabled()` is true (local dev, or an explicit
      `DRAFTPACE_ADMIN_PREVIEW=true` on a protected deploy). In ordinary
      production configuration this route is unreachable and redirects to `/`

@@ -70,12 +70,27 @@ nothing below is unrecoverable, it's removed from the working tree only.
 | `src/app/onboarding/page.tsx` | Removed the "pick a starter planner" step (imported the deleted `lib/planners`, and was exactly the "product-specific onboarding assumption" called out for removal). Kept the real Supabase `user_metadata` preference-writing. Theme step updated to `system/light/dark`. Redirect target `/dashboard/*` → `/app`. |
 | `src/app/sitemap.ts` | Removed `lib/planners` import and the planner-URL mapping; trimmed the static route list to what's actually preserved |
 | `src/app/robots.ts` | `disallow` changed from `/dashboard` to `/app`, `/admin` |
-| `middleware.ts` | Rewritten for the launch-mode contract (`ROUTE-MAP.md`) instead of a flat allowlist |
 | `public/manifest.webmanifest` | `start_url`/shortcuts moved to `/app`; `description` and `categories` de-financialized |
 | `public/sw.js` | Cached-shell paths and push-notification URL fallback moved to `/app` |
 | `src/app/auth/callback/page.tsx` | Redirect target `/dashboard` → `/app` |
 | `src/app/offline/page.tsx` | Copy generalized (no longer references "planners"/"checkout") |
 | `src/components/providers/AppProviders.tsx` | Import path updated for relocated `ThemeProvider` |
+| `middleware.ts` → `src/proxy.ts` | Discovered during Phase 1 verification: this project uses a `src/` directory, and Next.js only picks up middleware from `src/middleware.ts` in that case — the original root-level `middleware.ts` was **never actually being compiled** (confirmed via an empty `.next/server/middleware-manifest.json` and a live production-server test where every gated route returned 200 instead of redirecting). The "coming soon" lockdown had silently never been enforced in any production build, before or after this reset. Moved to `src/`, and renamed `middleware.ts` → `proxy.ts` / `export function middleware` → `export function proxy` at the same time, since Next.js 16.2.6 flags the `middleware.ts` convention as deprecated in favor of `proxy.ts`. Re-verified with a live production server: waitlist mode now correctly redirects every gated path, beta mode correctly opens `/app`/auth/content while still blocking `/admin` without the separate admin flag. |
+| `src/app/signup/page.tsx` | Found while investigating the bundle for leftover old-product strings: a "What you're getting" promo block promised "3 free planners — forever" and a button read "Take me to my planners" — both false claims about a catalog that no longer exists. Replaced with generic, honest copy. This was an application-copy bug, not a legal-content decision, so fixed directly. |
+
+## Found but deliberately not changed — needs founder review
+
+`src/app/terms/page.tsx` and `src/app/privacy/page.tsx` were preserved per
+the explicit "preserve legal pages and legal copy" instruction. Investigating
+the production bundle for leftover old-product content surfaced that these
+pages are **not** generic boilerplate — they contain specific claims tied to
+the abandoned direction: Gumroad/Etsy purchase import, a "$7/month or
+$49/year" Pro membership, "200+ planners," and streak-tracking data
+collection language. None of this reflects the reset platform. This is legal
+document content, not architecture, so it was **not rewritten** in this
+phase — flagged instead for founder/legal review before `beta` or `full`
+launch mode is ever used with real users (today's `waitlist` production
+default doesn't expose either page, so there is no live exposure right now).
 
 ## Not touched, out of scope for this phase
 

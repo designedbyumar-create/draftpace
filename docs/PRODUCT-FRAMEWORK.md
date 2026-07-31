@@ -37,7 +37,7 @@ framework does `switch (family) { case "companion": ... }`. Instead:
 | `navigationResolver.ts` | Resolves which destinations a product actually shows, and the family-aware Workspace label |
 | `moduleRegistry.ts` | Contract for registering custom per-product UI modules (empty in Phase 1 — no real modules exist yet) |
 | `themeExtension.ts` | Typed, scoped product theme-token contract (accent, data-viz palette, motion personality, content width) — never global CSS |
-| `environment.ts` | Single source of truth for launch mode + dev-fixture + admin-enabled checks, shared by `middleware.ts` and the framework |
+| `environment.ts` | Single source of truth for launch mode + dev-fixture + admin-enabled checks, shared by `src/proxy.ts` and the framework |
 | `fixtures/` | The four internal development fixtures (`DATA-BOUNDARIES.md`) |
 
 ## The product-definition contract

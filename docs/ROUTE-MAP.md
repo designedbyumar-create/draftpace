@@ -3,7 +3,7 @@
 ## Launch-mode contract
 
 `src/product-framework/environment.ts` (`getLaunchMode()`), enforced in
-`middleware.ts`:
+`src/proxy.ts`:
 
 | Launch mode | When active | What's reachable |
 |---|---|---|

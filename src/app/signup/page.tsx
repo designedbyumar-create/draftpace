@@ -220,9 +220,8 @@ export default function Signup() {
                 <p className="text-[10px] font-bold text-indigo-600 uppercase tracking-widest mb-3">What you're getting</p>
                 <div className="flex flex-col gap-2.5">
                   {[
-                    "3 free planners — forever",
-                    "Streak tracking from day 1",
-                    "Progress dashboard",
+                    "A Draftpace account",
+                    "Access to your products in one place",
                   ].map(item => (
                     <div key={item} className="flex items-center gap-2.5">
                       <div className="w-5 h-5 rounded-md bg-indigo-100 flex items-center justify-center shrink-0">
@@ -239,7 +238,7 @@ export default function Signup() {
                 {loading ? (
                   <><div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"/> Setting up your account...</>
                 ) : (
-                  <>Take me to my planners <ArrowRight size={14}/></>
+                  <>Continue <ArrowRight size={14}/></>
                 )}
               </button>
 
