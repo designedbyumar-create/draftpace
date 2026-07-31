@@ -19,6 +19,7 @@ import {
   CalendarCheck as PhosphorCalendarCheck,
   CaretDown as PhosphorCaretDown,
   CaretRight as PhosphorCaretRight,
+  ChartBar as PhosphorChartBar,
   ChatCircle as PhosphorChatCircle,
   Check as PhosphorCheck,
   CheckCircle as PhosphorCheckCircle,
@@ -32,6 +33,7 @@ import {
   Download as PhosphorDownload,
   Envelope as PhosphorEnvelope,
   Fire as PhosphorFire,
+  Flag as PhosphorFlag,
   Flame as PhosphorFlame,
   Flower as PhosphorFlower,
   FloppyDisk as PhosphorFloppyDisk,
@@ -118,6 +120,7 @@ export const Bell = createIcon(PhosphorBell, "Bell");
 export const BookOpen = createIcon(PhosphorBookOpen, "BookOpen");
 export const CalendarCheck = createIcon(PhosphorCalendarCheck, "CalendarCheck");
 export const CaretDown = createIcon(PhosphorCaretDown, "CaretDown");
+export const ChartBar = createIcon(PhosphorChartBar, "ChartBar");
 export const Check = createIcon(PhosphorCheck, "Check");
 export const CheckCircle2 = createIcon(PhosphorCheckCircle, "CheckCircle2");
 export const CheckSquare = createIcon(PhosphorCheckSquare, "CheckSquare");
@@ -132,6 +135,7 @@ export const Download = createIcon(PhosphorDownload, "Download");
 export const Envelope = createIcon(PhosphorEnvelope, "Envelope");
 export const Flame = createIcon(PhosphorFlame, "Flame");
 export const Fire = createIcon(PhosphorFire, "Fire");
+export const Flag = createIcon(PhosphorFlag, "Flag");
 export const Flower = createIcon(PhosphorFlower, "Flower");
 export const HandWaving = createIcon(PhosphorHandWaving, "HandWaving");
 export const Heart = createIcon(PhosphorHeart, "Heart");
