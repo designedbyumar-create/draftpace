@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { productRegistry } from "@/product-framework/registry";
+import { resolveProductModule } from "@/product-framework/moduleRegistry";
 import EmptyState from "@/design-system/EmptyState";
 import { Clock } from "@/design-system/Icon";
 
@@ -11,6 +12,9 @@ export default async function ProductHistoryPage({
   const { productSlug } = await params;
   const definition = productRegistry.getBySlug(productSlug);
   if (!definition) notFound();
+
+  const Module = resolveProductModule(definition, "history");
+  if (Module) return <Module definition={definition} />;
 
   return (
     <div>

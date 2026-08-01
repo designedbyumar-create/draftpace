@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { productRegistry } from "@/product-framework/registry";
+import { resolveProductModule } from "@/product-framework/moduleRegistry";
 import Surface from "@/design-system/Surface";
 import SettingsRow from "@/components/platform/SettingsRow";
 import Badge from "@/design-system/Badge";
@@ -12,6 +13,9 @@ export default async function ProductSettingsPage({
   const { productSlug } = await params;
   const definition = productRegistry.getBySlug(productSlug);
   if (!definition) notFound();
+
+  const Module = resolveProductModule(definition, "settings");
+  if (Module) return <Module definition={definition} />;
 
   return (
     <div className="space-y-6">

@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { productRegistry } from "@/product-framework/registry";
 import { familyRegistry, ProgressModelKind } from "@/product-framework/families";
+import { resolveProductModule } from "@/product-framework/moduleRegistry";
 
 const PROGRESS_MODEL_COPY: Record<ProgressModelKind, string> = {
   momentum: "Momentum — recent meaningful actions and how consistently they're happening, not a raw streak count.",
@@ -19,6 +20,9 @@ export default async function ProductProgressPage({
   const { productSlug } = await params;
   const definition = productRegistry.getBySlug(productSlug);
   if (!definition) notFound();
+
+  const Module = resolveProductModule(definition, "progress");
+  if (Module) return <Module definition={definition} />;
 
   const family = familyRegistry.get(definition.family);
   const modelKind = family?.progressModelKind ?? "custom";

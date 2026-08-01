@@ -17,6 +17,12 @@ import ThemeToggle from "@/design-system/theme/ThemeToggle";
  * No product-specific visual identity yet beyond the scoped theme
  * extension — that's real design work for when a real product exists.
  */
+const CONTENT_WIDTH_CLASS: Record<"narrow" | "standard" | "wide", string> = {
+  narrow: "max-w-3xl",
+  standard: "max-w-5xl",
+  wide: "max-w-7xl",
+};
+
 export default function ProductShell({
   definition,
   children,
@@ -28,11 +34,12 @@ export default function ProductShell({
   const family = familyRegistry.get(definition.family);
   const destinations = resolveProductNavigation(definition);
   const style = productThemeStyle(definition.theme);
+  const widthClass = CONTENT_WIDTH_CLASS[definition.theme.contentWidth ?? "narrow"];
 
   return (
     <div className="min-h-screen bg-[var(--app-bg)] text-[var(--text)]" style={style}>
       <div className="border-b border-[var(--border)] bg-[var(--surface)]">
-        <div className="mx-auto flex h-12 max-w-3xl items-center justify-between px-4 sm:px-6">
+        <div className={`mx-auto flex h-12 items-center justify-between px-4 sm:px-6 ${widthClass}`}>
           <Link
             href="/app/library"
             className="flex items-center gap-1.5 text-[12px] font-semibold text-[var(--muted)] hover:text-[var(--text)]"
@@ -45,7 +52,7 @@ export default function ProductShell({
       </div>
 
       <header className="border-b border-[var(--border)] bg-[var(--surface)] px-4 py-5 sm:px-6">
-        <div className="mx-auto max-w-3xl">
+        <div className={`mx-auto ${widthClass}`}>
           <div className="flex flex-wrap items-center gap-2">
             <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--primary)]">
               {family?.label ?? definition.family}
@@ -63,7 +70,7 @@ export default function ProductShell({
         aria-label="Product"
         className="border-b border-[var(--border)] bg-[var(--surface)]"
       >
-        <div className="mx-auto flex max-w-3xl gap-1 overflow-x-auto px-4 sm:px-6">
+        <div className={`mx-auto flex gap-1 overflow-x-auto px-4 sm:px-6 ${widthClass}`}>
           {destinations.map((destinationId) => {
             const href = `/app/products/${definition.slug}/${destinationId}`;
             const active = pathname === href;
@@ -86,7 +93,7 @@ export default function ProductShell({
         </div>
       </nav>
 
-      <main className="mx-auto w-full max-w-3xl px-4 py-8 sm:px-6">{children}</main>
+      <main className={`mx-auto w-full px-4 py-8 sm:px-6 ${widthClass}`}>{children}</main>
     </div>
   );
 }

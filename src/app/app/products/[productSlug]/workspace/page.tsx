@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { productRegistry } from "@/product-framework/registry";
 import { resolveWorkspaceLabel } from "@/product-framework/navigationResolver";
+import { resolveProductModule } from "@/product-framework/moduleRegistry";
 import {
   type DraftpaceIcon,
   Compass,
@@ -46,6 +47,9 @@ export default async function ProductWorkspacePage({
   const { productSlug } = await params;
   const definition = productRegistry.getBySlug(productSlug);
   if (!definition) notFound();
+
+  const Module = resolveProductModule(definition, "workspace");
+  if (Module) return <Module definition={definition} />;
 
   const framing = WORKSPACE_FRAMING[definition.family] ?? WORKSPACE_FRAMING.workspace;
   const Icon = framing.icon;

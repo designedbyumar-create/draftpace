@@ -1,0 +1,25 @@
+import { productRegistry } from "@/product-framework/registry";
+import { monthlyMoneyResetDefinition } from "./definition";
+
+/**
+ * Registers Monthly Money Reset through the exact same productRegistry.
+ * register() a fixture would use — there is no separate real-product code
+ * path. Idempotent, and never gated by the development-fixture environment
+ * check: a real free product is registered in every environment, dev
+ * fixtures enabled or not (see docs/DATA-BOUNDARIES.md).
+ *
+ * Called explicitly from the entry points that need the registry populated
+ * — src/app/app/layout.tsx (covers every page under /app/**) and the
+ * activation route handler, which sits outside that layout tree. See
+ * docs/MONTHLY-MONEY-RESET-BUILD-PLAN.md correction 6.
+ */
+let registered = false;
+
+export function registerMonthlyMoneyReset(): void {
+  if (registered) return;
+  registered = true;
+
+  if (!productRegistry.getBySlug(monthlyMoneyResetDefinition.slug as string)) {
+    productRegistry.register(monthlyMoneyResetDefinition);
+  }
+}
