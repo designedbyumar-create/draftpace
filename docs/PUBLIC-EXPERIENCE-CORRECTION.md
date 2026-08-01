@@ -31,9 +31,10 @@ feels like.
   a needs-based chooser, a continuity sequence) instead of another icon
   grid.
 - Introduces `/shop` as the customer-facing name for browsing products, with
-  its own public data model, kept deliberately separate from the internal
-  product-framework registry (`docs/DATA-BOUNDARIES.md` still applies:
-  nothing here overrides that boundary — see `docs/SHOP.md`).
+  its own public data model (`src/shop/definition.ts`, `src/shop/registry.ts`),
+  kept deliberately separate from the internal product-framework registry.
+  `docs/DATA-BOUNDARIES.md` still applies: nothing here overrides that
+  boundary.
 - Verifies and hardens authentication configuration validation rather than
   redesigning the auth architecture, which Phase 2 already got right.
 

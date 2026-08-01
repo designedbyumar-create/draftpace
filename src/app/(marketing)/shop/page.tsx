@@ -5,20 +5,12 @@ import Badge from "@/design-system/Badge";
 import EmptyState from "@/design-system/EmptyState";
 import { ArrowRight, BookOpen } from "@/design-system/Icon";
 import { shopRegistry } from "@/shop/registry";
+import { NEEDS } from "@/content/needs";
 
 export const metadata: Metadata = {
   title: "Shop",
   description: "Find help for the thing you're trying to sort out — guided tools organized around what you need.",
 };
-
-const NEED_GROUPS: { id: string; label: string }[] = [
-  { id: "organized", label: "Get organized" },
-  { id: "plan", label: "Plan something important" },
-  { id: "moving", label: "Follow through" },
-  { id: "decide", label: "Make a decision" },
-  { id: "back-on-track", label: "Get back on track" },
-  { id: "learn", label: "Learn step by step" },
-];
 
 export default function ShopIndexPage() {
   const products = shopRegistry.listPublished();
@@ -50,12 +42,12 @@ export default function ShopIndexPage() {
         </div>
       ) : (
         <div className="mt-12 flex flex-col gap-14">
-          {NEED_GROUPS.map((group) => {
-            const groupProducts = products.filter((product) => product.needGroups.includes(group.id));
+          {NEEDS.map((need) => {
+            const groupProducts = products.filter((product) => product.needGroups.includes(need.slug));
             if (groupProducts.length === 0) return null;
             return (
-              <div key={group.id}>
-                <h2 className="text-[13px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">{group.label}</h2>
+              <div key={need.slug}>
+                <h2 className="text-[13px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">{need.label}</h2>
                 <div className="mt-4 grid gap-3 sm:grid-cols-2">
                   {groupProducts.map((product) => (
                     <Link
