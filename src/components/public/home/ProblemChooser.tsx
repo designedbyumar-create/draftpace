@@ -14,15 +14,29 @@ export default function ProblemChooser() {
   return (
     <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
       <div role="tablist" aria-label="What are you trying to make easier?" className="flex flex-col gap-1">
-        {NEEDS.map((need) => {
+        {NEEDS.map((need, index) => {
           const isActive = need.slug === activeSlug;
           return (
             <button
               key={need.slug}
               type="button"
               role="tab"
+              id={`need-tab-${need.slug}`}
               aria-selected={isActive}
+              aria-controls="need-tabpanel"
+              tabIndex={isActive ? 0 : -1}
               onClick={() => setActiveSlug(need.slug)}
+              onKeyDown={(event) => {
+                if (event.key !== "ArrowDown" && event.key !== "ArrowUp") return;
+                event.preventDefault();
+                const nextIndex =
+                  event.key === "ArrowDown"
+                    ? (index + 1) % NEEDS.length
+                    : (index - 1 + NEEDS.length) % NEEDS.length;
+                const nextSlug = NEEDS[nextIndex].slug;
+                setActiveSlug(nextSlug);
+                document.getElementById(`need-tab-${nextSlug}`)?.focus();
+              }}
               className={`rounded-lg px-4 py-3 text-left text-[14px] font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] ${
                 isActive
                   ? "bg-[var(--primary-soft)] text-[var(--primary)]"
@@ -37,10 +51,14 @@ export default function ProblemChooser() {
 
       <motion.div
         key={active.slug}
+        id="need-tabpanel"
+        role="tabpanel"
+        aria-labelledby={`need-tab-${active.slug}`}
+        tabIndex={0}
         initial={reduceMotion ? false : { opacity: 0, y: 6 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.2 }}
-        className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 sm:p-7"
+        className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 sm:p-7 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]"
       >
         <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--faint)]">Sounds like</p>
         <p className="mt-2 text-[16px] leading-relaxed text-[var(--text)]">{active.situation}</p>
