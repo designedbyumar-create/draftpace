@@ -5,7 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { supabase } from "@/lib/supabase/client";
 import { getSupabaseConfigStatus, getAuthUnavailableMessage } from "@/lib/supabase/config";
-import { getSafeRedirect } from "@/components/auth/redirect";
+import { consumeOAuthRedirect, getSafeRedirect } from "@/components/auth/redirect";
 import Alert from "@/design-system/Alert";
 import Button from "@/design-system/Button";
 
@@ -39,7 +39,11 @@ function AuthCallbackHandler() {
       }
 
       const code = searchParams.get("code");
-      const redirectTo = getSafeRedirect(searchParams.get("redirectTo"));
+      // The OAuth redirectTo sent to Supabase can't carry its own query
+      // string (see components/auth/redirect.ts), so the intended next path
+      // comes back via sessionStorage instead of the URL for that flow. The
+      // query param is kept as a fallback for any other flow that lands here.
+      const redirectTo = getSafeRedirect(consumeOAuthRedirect() ?? searchParams.get("redirectTo"), "/app/library");
 
       try {
         if (code) {

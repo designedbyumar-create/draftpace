@@ -7,7 +7,7 @@ import { supabase } from "@/lib/supabase/client";
 import { getSupabaseConfigStatus, getAuthUnavailableMessage } from "@/lib/supabase/config";
 import AuthCard from "@/components/auth/AuthCard";
 import GoogleIcon from "@/components/auth/GoogleIcon";
-import { getSafeRedirect } from "@/components/auth/redirect";
+import { getSafeRedirect, storeOAuthRedirect } from "@/components/auth/redirect";
 import Button from "@/design-system/Button";
 import Input from "@/design-system/Input";
 import Alert from "@/design-system/Alert";
@@ -83,9 +83,10 @@ function SignupForm() {
       return;
     }
     setError("");
+    storeOAuthRedirect(redirectTo);
     const { error: oauthError } = await supabase.auth.signInWithOAuth({
       provider: "google",
-      options: { redirectTo: `${window.location.origin}/auth/callback?redirectTo=${encodeURIComponent(redirectTo)}` },
+      options: { redirectTo: `${window.location.origin}/auth/callback` },
     });
     if (oauthError) {
       setError("Couldn't start Google sign-in. Please try again.");
