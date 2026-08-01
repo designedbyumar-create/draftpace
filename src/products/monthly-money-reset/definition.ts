@@ -30,6 +30,7 @@ export const monthlyMoneyResetDefinition: ProductDefinitionInput = {
   modules: [
     { id: "monthly-money-reset.start", destination: "start" },
     { id: "monthly-money-reset.setup", destination: "setup" },
+    { id: "monthly-money-reset.workspace", destination: "workspace" },
   ],
   permissions: [],
   events: ["monthly-money-reset.activity-added", "monthly-money-reset.month-closed"],

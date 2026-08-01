@@ -3,6 +3,7 @@ import { moduleRegistry } from "@/product-framework/moduleRegistry";
 import { monthlyMoneyResetDefinition } from "./definition";
 import StartHereModule from "./components/StartHereModule";
 import SetupModule from "./components/SetupModule";
+import WorkspaceModule from "./components/WorkspaceModule";
 
 /**
  * Registers Monthly Money Reset through the exact same productRegistry.
@@ -31,5 +32,8 @@ export function registerMonthlyMoneyReset(): void {
   }
   if (!moduleRegistry.has("monthly-money-reset.setup")) {
     moduleRegistry.register("monthly-money-reset.setup", SetupModule);
+  }
+  if (!moduleRegistry.has("monthly-money-reset.workspace")) {
+    moduleRegistry.register("monthly-money-reset.workspace", WorkspaceModule);
   }
 }
