@@ -1,15 +1,13 @@
 # Draftpace
 
-Draftpace is a Next.js App Router MVP for interactive planners, streaks, progress, and a mobile-first PWA dashboard.
+Draftpace is an extensible platform for personalized digital products,
+built with the Next.js App Router.
 
 ## Stack
 
-- Next.js 16
-- React 19
-- Tailwind CSS
-- Supabase Auth and database
-- Stripe Checkout and Billing Portal scaffolds
-- Vercel deployment and cron
+- Next.js 16, React 19, Tailwind CSS
+- Supabase Auth (via `@supabase/ssr`) and Postgres
+- Framer Motion for the small set of public-site interactions that need it
 - PWA manifest and service worker
 
 ## Local Development
@@ -19,46 +17,47 @@ npm install
 npm run dev
 ```
 
-Open `http://localhost:3000`.
+Open `http://localhost:3000`. Visit `/signup` to create an account (requires
+a working Supabase project — see below), then `/app`.
 
-## Required Environment
+## Required environment
 
 ```env
-NEXT_PUBLIC_SITE_URL=http://localhost:3000
 NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
-
-STRIPE_SECRET_KEY=
-STRIPE_WEBHOOK_SECRET=
-STRIPE_PRICE_MEMBERSHIP_MONTHLY=
-STRIPE_PRICE_MEMBERSHIP_YEARLY=
-
-CRON_SECRET=
-NEXT_PUBLIC_VAPID_PUBLIC_KEY=
-VAPID_PRIVATE_KEY=
 ```
 
-Individual paid planner prices follow this naming pattern:
+Verify the configured project is actually reachable:
+
+```bash
+npm run check:supabase
+```
+
+If sign-in isn't working, start with **`docs/SUPABASE-SETUP.md`** — exact
+steps for resuming a paused project, creating a replacement, and configuring
+Google OAuth.
+
+Optional, for local admin preview and development fixtures:
 
 ```env
-STRIPE_PRICE_PLANNER_LIFE_AUDIT=
+DRAFTPACE_ADMIN_PREVIEW=true
+NEXT_PUBLIC_DEV_FIXTURES=true
 ```
 
-## PWA
+Neither is required for local development — both default to enabled when
+`NODE_ENV !== "production"`. See `docs/DECISIONS.md`.
 
-The app manifest starts installed users at `/dashboard`. The service worker caches the dashboard shell, offline page, manifest, and logo assets. Planner entries save locally first so recently opened planners stay usable offline.
+## Documentation
 
-## Notifications
+`CLAUDE.md` is the entry point for how this repository is organized.
+`docs/` contains the platform, product-framework, design-system, route-map,
+and decisions records.
 
-The current code includes:
+## Quality gates
 
-- Browser notification permission flow in dashboard settings.
-- Local test notifications after check-ins.
-- Authenticated subscription API scaffold.
-- Vercel Cron route scaffold at `/api/notifications/cron`.
-
-Production Web Push still needs VAPID keys, a `push_subscriptions` table, and a server sender.
-
-## Payments
-
-Pricing calls `/api/checkout`, which verifies the Supabase access token before creating a Stripe Checkout Session. The webhook route is scaffolded but still needs signature verification and Supabase order/subscription writes before real access granting.
+```bash
+npx tsc --noEmit
+npx eslint .
+npm run test
+npm run build
+```

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { supabase } from "@/lib/supabase/client";
+import { getSupabaseConfigStatus, getAuthUnavailableMessage } from "@/lib/supabase/config";
 import AuthCard from "@/components/auth/AuthCard";
 import Button from "@/design-system/Button";
 import Input from "@/design-system/Input";
@@ -16,17 +17,27 @@ export default function ForgotPasswordPage() {
 
   const sendReset = async () => {
     if (!email) return;
-    setLoading(true);
-    setError("");
-    const { error: resetError } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: `${window.location.origin}/reset-password`,
-    });
-    setLoading(false);
-    if (resetError) {
-      setError(resetError.message);
+    const configStatus = getSupabaseConfigStatus();
+    if (!configStatus.valid) {
+      setError(getAuthUnavailableMessage(configStatus));
       return;
     }
-    setSent(true);
+    setLoading(true);
+    setError("");
+    try {
+      const { error: resetError } = await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo: `${window.location.origin}/reset-password`,
+      });
+      if (resetError) {
+        setError(resetError.message);
+        return;
+      }
+      setSent(true);
+    } catch {
+      setError("Couldn't reach the account service. Check your connection and try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (

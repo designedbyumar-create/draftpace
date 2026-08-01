@@ -4,6 +4,7 @@ import { Suspense, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { supabase } from "@/lib/supabase/client";
+import { getSupabaseConfigStatus, getAuthUnavailableMessage } from "@/lib/supabase/config";
 import AuthCard from "@/components/auth/AuthCard";
 import GoogleIcon from "@/components/auth/GoogleIcon";
 import { getSafeRedirect } from "@/components/auth/redirect";
@@ -31,22 +32,45 @@ function LoginForm() {
 
   const handleLogin = async () => {
     if (!email || !password) return;
-    setLoading(true);
-    setError("");
-    const { error: signInError } = await supabase.auth.signInWithPassword({ email, password });
-    setLoading(false);
-    if (signInError) {
-      setError("Wrong email or password — double check and try again.");
+    const configStatus = getSupabaseConfigStatus();
+    if (!configStatus.valid) {
+      setError(getAuthUnavailableMessage(configStatus));
       return;
     }
-    router.push(redirectTo);
+    setLoading(true);
+    setError("");
+    try {
+      const { error: signInError } = await supabase.auth.signInWithPassword({ email, password });
+      if (signInError) {
+        setError(
+          signInError.message?.toLowerCase().includes("fetch") || signInError.status === undefined
+            ? "Couldn't reach the account service. Check your connection and try again."
+            : "Wrong email or password — double check and try again."
+        );
+        return;
+      }
+      router.push(redirectTo);
+    } catch {
+      setError("Couldn't reach the account service. Check your connection and try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleGoogle = async () => {
-    await supabase.auth.signInWithOAuth({
+    const configStatus = getSupabaseConfigStatus();
+    if (!configStatus.valid) {
+      setError(getAuthUnavailableMessage(configStatus));
+      return;
+    }
+    setError("");
+    const { error: oauthError } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: { redirectTo: `${window.location.origin}/auth/callback?redirectTo=${encodeURIComponent(redirectTo)}` },
     });
+    if (oauthError) {
+      setError("Couldn't start Google sign-in. Please try again.");
+    }
   };
 
   return (

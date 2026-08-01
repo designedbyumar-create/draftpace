@@ -3,13 +3,14 @@
 import { Suspense, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { supabase } from "@/lib/supabase/client";
+import { getSupabaseConfigStatus, getAuthUnavailableMessage } from "@/lib/supabase/config";
 import AuthCard from "@/components/auth/AuthCard";
 import Button from "@/design-system/Button";
 import Input from "@/design-system/Input";
 import Alert from "@/design-system/Alert";
 import Link from "next/link";
 
-type SessionState = "checking" | "ready" | "invalid";
+type SessionState = "checking" | "ready" | "invalid" | "config-error";
 
 export default function ResetPasswordPage() {
   return (
@@ -32,16 +33,27 @@ function ResetPasswordForm() {
 
   useEffect(() => {
     const establishSession = async () => {
-      const code = searchParams.get("code");
-      if (code) {
-        const { error: exchangeError } = await supabase.auth.exchangeCodeForSession(code);
-        setSessionState(exchangeError ? "invalid" : "ready");
+      const configStatus = getSupabaseConfigStatus();
+      if (!configStatus.valid) {
+        setError(getAuthUnavailableMessage(configStatus));
+        setSessionState("config-error");
         return;
       }
-      const {
-        data: { session },
-      } = await supabase.auth.getSession();
-      setSessionState(session ? "ready" : "invalid");
+      try {
+        const code = searchParams.get("code");
+        if (code) {
+          const { error: exchangeError } = await supabase.auth.exchangeCodeForSession(code);
+          setSessionState(exchangeError ? "invalid" : "ready");
+          return;
+        }
+        const {
+          data: { session },
+        } = await supabase.auth.getSession();
+        setSessionState(session ? "ready" : "invalid");
+      } catch {
+        setError("Couldn't reach the account service. Check your connection and try again.");
+        setSessionState("config-error");
+      }
     };
     establishSession();
   }, [searchParams]);
@@ -57,19 +69,32 @@ function ResetPasswordForm() {
     }
     setLoading(true);
     setError("");
-    const { error: updateError } = await supabase.auth.updateUser({ password });
-    setLoading(false);
-    if (updateError) {
-      setError(updateError.message);
-      return;
+    try {
+      const { error: updateError } = await supabase.auth.updateUser({ password });
+      if (updateError) {
+        setError(updateError.message);
+        return;
+      }
+      setDone(true);
+    } catch {
+      setError("Couldn't reach the account service. Check your connection and try again.");
+    } finally {
+      setLoading(false);
     }
-    setDone(true);
   };
 
   if (sessionState === "checking") {
     return (
       <AuthCard title="Reset password" showLegalFooter={false}>
         <p className="text-[13px] text-[var(--muted)]">Verifying your reset link…</p>
+      </AuthCard>
+    );
+  }
+
+  if (sessionState === "config-error") {
+    return (
+      <AuthCard title="Sign-in is unavailable" showLegalFooter={false}>
+        <Alert tone="danger">{error}</Alert>
       </AuthCard>
     );
   }

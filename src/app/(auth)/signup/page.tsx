@@ -4,6 +4,7 @@ import { Suspense, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { supabase } from "@/lib/supabase/client";
+import { getSupabaseConfigStatus, getAuthUnavailableMessage } from "@/lib/supabase/config";
 import AuthCard from "@/components/auth/AuthCard";
 import GoogleIcon from "@/components/auth/GoogleIcon";
 import { getSafeRedirect } from "@/components/auth/redirect";
@@ -44,26 +45,51 @@ function SignupForm() {
   }, [searchParams]);
 
   const handleSignup = async () => {
-    setLoading(true);
-    setError("");
-    const { error: signUpError } = await supabase.auth.signUp({
-      email,
-      password,
-      options: { data: { display_name: name || email.split("@")[0] } },
-    });
-    setLoading(false);
-    if (signUpError) {
-      setError(signUpError.message || "Something went wrong — please try again.");
+    const configStatus = getSupabaseConfigStatus();
+    if (!configStatus.valid) {
+      setError(getAuthUnavailableMessage(configStatus));
       return;
     }
-    router.push(redirectTo);
+    setLoading(true);
+    setError("");
+    try {
+      const { data, error: signUpError } = await supabase.auth.signUp({
+        email,
+        password,
+        options: { data: { display_name: name || email.split("@")[0] } },
+      });
+      if (signUpError) {
+        setError(signUpError.message || "Something went wrong. Please try again.");
+        return;
+      }
+      // Supabase returns a user with no identities when the email is already
+      // registered (it doesn't error, to avoid confirming which emails exist).
+      if (data.user && data.user.identities && data.user.identities.length === 0) {
+        setError("An account with this email already exists. Try signing in instead.");
+        return;
+      }
+      router.push(redirectTo);
+    } catch {
+      setError("Couldn't reach the account service. Check your connection and try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleGoogle = async () => {
-    await supabase.auth.signInWithOAuth({
+    const configStatus = getSupabaseConfigStatus();
+    if (!configStatus.valid) {
+      setError(getAuthUnavailableMessage(configStatus));
+      return;
+    }
+    setError("");
+    const { error: oauthError } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: { redirectTo: `${window.location.origin}/auth/callback?redirectTo=${encodeURIComponent(redirectTo)}` },
     });
+    if (oauthError) {
+      setError("Couldn't start Google sign-in. Please try again.");
+    }
   };
 
   return (
@@ -90,6 +116,12 @@ function SignupForm() {
           />
         ))}
       </div>
+
+      {error && (
+        <div className="mb-4">
+          <Alert tone="danger">{error}</Alert>
+        </div>
+      )}
 
       {step === 1 && (
         <div>
@@ -159,12 +191,6 @@ function SignupForm() {
             autoFocus
             containerClassName="mb-5"
           />
-
-          {error && (
-            <div className="mb-4">
-              <Alert tone="danger">{error}</Alert>
-            </div>
-          )}
 
           <div className="mb-5 rounded-lg bg-[var(--primary-soft)] p-4">
             <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--primary)]">What you&apos;re getting</p>
