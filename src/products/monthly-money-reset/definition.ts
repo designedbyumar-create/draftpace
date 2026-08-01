@@ -27,7 +27,10 @@ export const monthlyMoneyResetDefinition: ProductDefinitionInput = {
   workspaceLabel: "Workspace",
   setup: { required: true, skippable: true, schemaRef: "monthly-money-reset.state.v1" },
   dataSchemaRef: "monthly-money-reset.state.v1",
-  modules: [],
+  modules: [
+    { id: "monthly-money-reset.start", destination: "start" },
+    { id: "monthly-money-reset.setup", destination: "setup" },
+  ],
   permissions: [],
   events: ["monthly-money-reset.activity-added", "monthly-money-reset.month-closed"],
   theme: { accent: "#b86f4a", motionPersonality: "calm", contentWidth: "wide" },

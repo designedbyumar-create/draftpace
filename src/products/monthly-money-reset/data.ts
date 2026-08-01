@@ -34,6 +34,19 @@ export function interpretLoadResponse(
   }
 }
 
+/** Finds the instance id for a given product+cycle, or null if none exists yet. */
+export async function findProductInstanceId(productSlug: string, cycleKey: string): Promise<string | null> {
+  const { data, error } = await supabase
+    .from("product_instances")
+    .select("id")
+    .eq("product_slug", productSlug)
+    .eq("cycle_key", cycleKey)
+    .maybeSingle();
+
+  if (error || !data) return null;
+  return data.id;
+}
+
 export async function loadMonthlyMoneyResetState(instanceId: string): Promise<LoadStateResult> {
   const { data, error } = await supabase
     .from("monthly_money_reset_states")
