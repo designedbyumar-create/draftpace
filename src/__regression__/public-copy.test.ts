@@ -20,6 +20,9 @@ const SCAN_ROOTS = [
   "src/app/auth",
   "src/components/public",
   "src/content",
+  // The real (non-fixture) Shop listing content — customer-facing product
+  // copy, not the registry/definition machinery, so not all of src/shop.
+  "src/shop/products",
 ];
 
 const EXTENSIONS = [".tsx", ".ts"];

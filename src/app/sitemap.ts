@@ -2,8 +2,14 @@ import type { MetadataRoute } from "next";
 import { NEEDS } from "@/content/needs";
 import { GUIDES } from "@/content/guides";
 import { shopRegistry } from "@/shop/registry";
+import { registerRealShopProducts } from "@/shop/products";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  // sitemap.ts is a route handler, not wrapped by (marketing)/layout.tsx —
+  // it needs its own explicit registration call rather than depending on
+  // some other request having already rendered a marketing page first.
+  registerRealShopProducts();
+
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.draftpace.com";
   const now = new Date();
 
