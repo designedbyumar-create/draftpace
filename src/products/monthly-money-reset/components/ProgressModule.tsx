@@ -5,6 +5,7 @@ import Button from "@/design-system/Button";
 import EmptyState from "@/design-system/EmptyState";
 import { ChartBar, Wallet } from "@/design-system/Icon";
 import { useInstanceState } from "./useInstanceState";
+import ThemeScope from "./ThemeScope";
 import { computeSafeToSpend } from "../calculations";
 import { formatCurrency } from "../currency";
 
@@ -58,6 +59,7 @@ export default function ProgressModule({ definition }: { definition: ProductDefi
   const groupsWithGuide = state.spendingGroups.filter((group) => group.guideAmountMinorUnits !== undefined);
 
   return (
+    <ThemeScope>
     <div className="flex flex-col gap-6">
       <div className="grid gap-4 sm:grid-cols-3">
         <MetricCard
@@ -131,6 +133,7 @@ export default function ProgressModule({ definition }: { definition: ProductDefi
         quiet week.
       </p>
     </div>
+    </ThemeScope>
   );
 }
 

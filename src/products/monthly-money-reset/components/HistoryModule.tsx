@@ -9,6 +9,7 @@ import Badge from "@/design-system/Badge";
 import Toggle from "@/design-system/Toggle";
 import { Check, Clock } from "@/design-system/Icon";
 import { useInstanceState } from "./useInstanceState";
+import ThemeScope from "./ThemeScope";
 import { listMyProductInstances, setProductInstanceLifecycle, startNextCycle, type ProductInstanceSummary } from "../data";
 import { computeSafeToSpend } from "../calculations";
 import { buildNextCycleState } from "../carryForward";
@@ -124,6 +125,7 @@ export default function HistoryModule({ definition }: { definition: ProductDefin
   }
 
   return (
+    <ThemeScope>
     <div className="flex flex-col gap-6">
       <div className="rounded-2xl border border-[var(--border)] p-5">
         <div className="flex flex-wrap items-start justify-between gap-3">
@@ -257,6 +259,7 @@ export default function HistoryModule({ definition }: { definition: ProductDefin
         )}
       </div>
     </div>
+    </ThemeScope>
   );
 }
 

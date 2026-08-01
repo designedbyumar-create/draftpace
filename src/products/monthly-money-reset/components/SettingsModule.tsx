@@ -9,6 +9,7 @@ import Toggle from "@/design-system/Toggle";
 import EmptyState from "@/design-system/EmptyState";
 import { Download, Wallet } from "@/design-system/Icon";
 import { useInstanceState } from "./useInstanceState";
+import ThemeScope from "./ThemeScope";
 import { SaveStatusIndicator } from "./shared";
 import { setProductInstanceLifecycle } from "../data";
 import { createEmptyState } from "../state";
@@ -68,6 +69,7 @@ export default function SettingsModule({ definition }: { definition: ProductDefi
   }
 
   return (
+    <ThemeScope>
     <div className="flex flex-col gap-5">
       <div className="flex items-center justify-end">
         <SaveStatusIndicator status={saveStatus} />
@@ -187,5 +189,6 @@ export default function SettingsModule({ definition }: { definition: ProductDefi
         )}
       </Surface>
     </div>
+    </ThemeScope>
   );
 }

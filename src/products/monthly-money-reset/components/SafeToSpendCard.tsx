@@ -37,11 +37,11 @@ export default function SafeToSpendCard({
   const weekly = weeklyGuideAmount(breakdown.safeToSpend, weeksRemaining);
 
   return (
-    <div className="rounded-2xl bg-[var(--text)] p-6 text-[var(--bg)] sm:p-8">
+    <div className="rounded-2xl bg-[var(--mmr-forest-900)] p-6 text-[var(--mmr-ivory)] sm:p-8">
       <div className="flex flex-wrap items-start justify-between gap-3">
         <p className="text-[11px] font-bold uppercase tracking-[0.16em] opacity-60">Safe to spend now</p>
         {stale && (
-          <span className="flex items-center gap-1.5 rounded-full bg-white/10 px-2.5 py-1 text-[10px] font-semibold">
+          <span className="flex items-center gap-1.5 rounded-full bg-[var(--mmr-clay)]/20 px-2.5 py-1 text-[10px] font-semibold text-[var(--mmr-clay)]">
             <WarningCircle size={12} aria-hidden />
             May be out of date
           </span>
@@ -49,22 +49,22 @@ export default function SafeToSpendCard({
       </div>
 
       <p
-        className={`mt-3 text-[44px] font-semibold leading-none tracking-tight sm:text-[64px] ${
-          breakdown.safeToSpend < 0 ? "text-[var(--danger)]" : ""
+        className={`mt-3 font-serif text-[44px] font-semibold leading-none tracking-tight sm:text-[64px] ${
+          breakdown.safeToSpend < 0 ? "text-[var(--mmr-clay)]" : ""
         }`}
       >
         {formatCurrency(breakdown.safeToSpend, currency)}
       </p>
 
-      <div className="mt-5 flex flex-wrap items-center justify-between gap-4 border-t border-white/15 pt-4">
+      <div className="mt-5 flex flex-wrap items-center justify-between gap-4 border-t border-[var(--mmr-sage-strong)]/25 pt-4">
         <div>
           <p className="text-[10px] uppercase tracking-wide opacity-60">This week, roughly</p>
-          <p className="mt-1 text-[18px] font-semibold">{formatCurrency(weekly, currency)}</p>
+          <p className="mt-1 font-serif text-[18px] font-semibold">{formatCurrency(weekly, currency)}</p>
         </div>
         <button
           type="button"
           onClick={() => setExpanded((value) => !value)}
-          className="flex items-center gap-1.5 text-[12px] font-semibold underline decoration-white/40 underline-offset-4 hover:decoration-white"
+          className="flex items-center gap-1.5 text-[12px] font-semibold underline decoration-[var(--mmr-sage-strong)]/50 underline-offset-4 hover:decoration-[var(--mmr-sage-strong)]"
         >
           How this is calculated
           <CaretDown size={13} className={`transition-transform ${expanded ? "rotate-180" : ""}`} aria-hidden />
@@ -72,7 +72,7 @@ export default function SafeToSpendCard({
       </div>
 
       {expanded && (
-        <div className="mt-4 flex flex-col divide-y divide-white/10 border-t border-white/15 pt-2">
+        <div className="mt-4 flex flex-col divide-y divide-[var(--mmr-sage-strong)]/15 border-t border-[var(--mmr-sage-strong)]/25 pt-2">
           {BREAKDOWN_LINES.map((line) => (
             <div key={line.key} className="flex items-center justify-between gap-4 py-2 text-[13px]">
               <span className="opacity-70">

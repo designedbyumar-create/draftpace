@@ -7,6 +7,7 @@ import Surface from "@/design-system/Surface";
 import Badge from "@/design-system/Badge";
 import { ArrowRight, Check, Lock, Sparkles } from "@/design-system/Icon";
 import { useInstanceState } from "./useInstanceState";
+import ThemeScope from "./ThemeScope";
 
 const WHAT_YOU_ADD = [
   "The money available right now, and anything else you'd rather protect or set aside.",
@@ -33,6 +34,7 @@ export default function StartHereModule({ definition }: { definition: ProductDef
   const primaryLabel = setupComplete ? "Go to your Workspace" : "Set up this month";
 
   return (
+    <ThemeScope>
     <div>
       <p className="text-[16px] leading-relaxed text-[var(--text)]">{definition.tagline}</p>
       <p className="mt-3 max-w-lg text-[14px] leading-relaxed text-[var(--muted)]">
@@ -111,5 +113,6 @@ export default function StartHereModule({ definition }: { definition: ProductDef
         advice.
       </p>
     </div>
+    </ThemeScope>
   );
 }

@@ -10,6 +10,7 @@ import EmptyState from "@/design-system/EmptyState";
 import { ArrowLeft, ArrowRight, Check, Plus, Trash2, Wallet } from "@/design-system/Icon";
 import { useInstanceState } from "./useInstanceState";
 import { AmountField, SaveStatusIndicator, generateId } from "./shared";
+import ThemeScope from "./ThemeScope";
 import { computeSafeToSpend } from "../calculations";
 import { formatCurrency } from "../currency";
 import type { BillEntry, IncomeEntry, MonthlyMoneyResetState, SpendingGroup } from "../state";
@@ -79,6 +80,7 @@ export default function SetupModule({ definition }: { definition: ProductDefinit
   }
 
   return (
+    <ThemeScope>
     <div>
       <div className="mb-6 flex items-center justify-between gap-3">
         <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--primary)]">
@@ -139,13 +141,13 @@ export default function SetupModule({ definition }: { definition: ProductDefinit
         </Surface>
 
         <aside className="lg:sticky lg:top-6">
-          <div className="rounded-xl bg-[var(--text)] p-5 text-[var(--bg)]">
-            <p className="text-[10px] font-bold uppercase tracking-[0.14em] opacity-60">Live preview</p>
-            <p className="mt-2 text-[28px] font-semibold tracking-tight">
+          <div className="rounded-xl bg-[var(--mmr-forest-900)] p-5 text-[var(--mmr-ivory)]">
+            <p className="font-serif text-[10px] font-bold uppercase tracking-[0.14em] opacity-60">Live preview</p>
+            <p className="mt-2 font-serif text-[28px] font-semibold tracking-tight">
               {formatCurrency(breakdown.safeToSpend, state.currency)}
             </p>
             <p className="mt-1 text-[11px] opacity-70">Estimated Safe-to-Spend so far</p>
-            <div className="mt-4 flex flex-col gap-1.5 border-t border-white/15 pt-3 text-[11px]">
+            <div className="mt-4 flex flex-col gap-1.5 border-t border-[var(--mmr-sage-strong)]/25 pt-3 text-[11px]">
               <PreviewLine label="Starting balance" value={formatCurrency(breakdown.startingAvailableBalance, state.currency)} />
               <PreviewLine label="Income received" value={formatCurrency(breakdown.incomeReceived, state.currency)} />
               <PreviewLine label="Protected bills" value={formatCurrency(breakdown.protectedUnpaidBills, state.currency)} />
@@ -158,6 +160,7 @@ export default function SetupModule({ definition }: { definition: ProductDefinit
         </aside>
       </div>
     </div>
+    </ThemeScope>
   );
 }
 

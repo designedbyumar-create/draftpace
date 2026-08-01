@@ -12,6 +12,7 @@ import SafeToSpendCard from "./SafeToSpendCard";
 import NextActionCard from "./NextActionCard";
 import QuickAddModal from "./QuickAddModal";
 import CheckInModal from "./CheckInModal";
+import ThemeScope from "./ThemeScope";
 import { computeSafeToSpend, markBillPaid, markBillSkipped } from "../calculations";
 import { computeNextAction } from "../nextAction";
 import { formatCurrency } from "../currency";
@@ -132,18 +133,33 @@ export default function WorkspaceModule({ definition }: { definition: ProductDef
   }
 
   return (
+    <ThemeScope>
     <div>
       <div className="mb-5 flex items-center justify-between gap-3">
         <div role="tablist" aria-label="Workspace sections" className="flex gap-1 overflow-x-auto rounded-lg border border-[var(--border)] p-1">
-          {TABS.map((item) => (
+          {TABS.map((item, index) => (
             <button
               key={item.id}
+              id={`workspace-tab-${item.id}`}
               type="button"
               role="tab"
               aria-selected={tab === item.id}
+              aria-controls={`workspace-tabpanel-${item.id}`}
+              tabIndex={tab === item.id ? 0 : -1}
               onClick={() => setTab(item.id)}
-              className={`whitespace-nowrap rounded-md px-3 py-2 text-[12px] font-semibold transition-colors ${
-                tab === item.id ? "bg-[var(--text)] text-[var(--bg)]" : "text-[var(--muted)] hover:text-[var(--text)]"
+              onKeyDown={(event) => {
+                if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
+                event.preventDefault();
+                const nextIndex =
+                  event.key === "ArrowRight" ? (index + 1) % TABS.length : (index - 1 + TABS.length) % TABS.length;
+                const nextTab = TABS[nextIndex].id;
+                setTab(nextTab);
+                document.getElementById(`workspace-tab-${nextTab}`)?.focus();
+              }}
+              className={`whitespace-nowrap rounded-md px-3 py-2 text-[12px] font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] ${
+                tab === item.id
+                  ? "bg-[var(--mmr-forest-900)] text-[var(--mmr-ivory)]"
+                  : "text-[var(--muted)] hover:text-[var(--text)]"
               }`}
             >
               {item.label}
@@ -159,7 +175,12 @@ export default function WorkspaceModule({ definition }: { definition: ProductDef
       </div>
 
       {tab === "overview" && (
-        <div className="grid gap-5 lg:grid-cols-[1.4fr_1fr]">
+        <div
+          id="workspace-tabpanel-overview"
+          role="tabpanel"
+          aria-labelledby="workspace-tab-overview"
+          className="grid gap-5 lg:grid-cols-[1.4fr_1fr]"
+        >
           <div className="flex flex-col gap-5">
             <SafeToSpendCard
               breakdown={breakdown}
@@ -246,7 +267,7 @@ export default function WorkspaceModule({ definition }: { definition: ProductDef
       )}
 
       {tab === "activity" && (
-        <div>
+        <div id="workspace-tabpanel-activity" role="tabpanel" aria-labelledby="workspace-tab-activity">
           {state.activity.length === 0 ? (
             <EmptyState icon={Wallet} title="No activity yet" description="Spending, income, and bill payments will show up here as you add them." />
           ) : (
@@ -271,7 +292,7 @@ export default function WorkspaceModule({ definition }: { definition: ProductDef
       )}
 
       {tab === "plan" && (
-        <div>
+        <div id="workspace-tabpanel-plan" role="tabpanel" aria-labelledby="workspace-tab-plan">
           {state.spendingGroups.length === 0 ? (
             <EmptyState icon={Wallet} title="No spending groups yet" description="Add spending groups in Setup to see them here." />
           ) : (
@@ -294,7 +315,12 @@ export default function WorkspaceModule({ definition }: { definition: ProductDef
       )}
 
       {tab === "bills" && (
-        <div className="flex flex-col gap-2">
+        <div
+          id="workspace-tabpanel-bills"
+          role="tabpanel"
+          aria-labelledby="workspace-tab-bills"
+          className="flex flex-col gap-2"
+        >
           {state.bills.length === 0 ? (
             <EmptyState icon={CalendarCheck} title="No bills added yet" description="Add bills in Setup so Draftpace can protect them." />
           ) : (
@@ -332,5 +358,6 @@ export default function WorkspaceModule({ definition }: { definition: ProductDef
       {quickAddOpen && <QuickAddModal state={state} onApply={applyQuickAdd} onClose={() => setQuickAddOpen(false)} />}
       {checkInOpen && <CheckInModal state={state} onApply={applyCheckIn} onClose={() => setCheckInOpen(false)} />}
     </div>
+    </ThemeScope>
   );
 }
