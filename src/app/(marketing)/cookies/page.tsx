@@ -5,6 +5,7 @@ import Badge from "@/design-system/Badge";
 export const metadata: Metadata = {
   title: "Cookie Policy",
   description: "What cookies and local storage Draftpace uses, and why.",
+  alternates: { canonical: "/cookies" },
 };
 
 const COOKIE_TYPES = [
@@ -12,19 +13,19 @@ const COOKIE_TYPES = [
     type: "Essential",
     required: true,
     description:
-      "Required for Draftpace to work — signing in and staying signed in. You cannot opt out of these without losing the ability to use the product.",
+      "Required for Draftpace to work: signing in and staying signed in. You cannot opt out of these without losing the ability to use the product.",
     items: [{ name: "Supabase session cookies", purpose: "Keep you signed in and refresh your session. Set by Supabase, our authentication provider.", duration: "Session, refreshed automatically" }],
   },
   {
     type: "Analytics",
     required: false,
     description: "We don't run any third-party analytics or advertising cookies today.",
-    items: [{ name: "None", purpose: "No analytics cookies are set at this time.", duration: "—" }],
+    items: [{ name: "None", purpose: "No analytics cookies are set at this time.", duration: "N/A" }],
   },
 ];
 
 const LOCAL_STORAGE_ITEMS = [
-  { name: "Theme, text size, motion preference", purpose: "Kept in your browser's local storage, not a cookie — never sent to our servers." },
+  { name: "Theme, text size, motion preference", purpose: "Kept in your browser's local storage, not a cookie, and never sent to our servers." },
 ];
 
 export default function CookiesPage() {
@@ -36,7 +37,7 @@ export default function CookiesPage() {
           Cookie Policy
         </h1>
         <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-[var(--muted)]">
-          We use cookies to keep you signed in. That's basically it — no tracking, no advertising cookies.
+          We use cookies to keep you signed in. That's basically it: no tracking, no advertising cookies.
         </p>
         <p className="mt-2 text-[12px] text-[var(--faint)]">Last updated: August 2026</p>
       </Container>
@@ -85,8 +86,8 @@ export default function CookiesPage() {
               <span className="text-[11px] font-semibold text-[var(--faint)]">Not a cookie</span>
             </div>
             <p className="mb-4 text-[13px] leading-relaxed text-[var(--muted)]">
-              Some preferences live in your browser's local storage rather than a cookie — they're never transmitted
-              to us at all.
+              Some preferences live in your browser's local storage rather than a cookie, and they're never
+              transmitted to us at all.
             </p>
             <div className="flex flex-col gap-2">
               {LOCAL_STORAGE_ITEMS.map((item) => (
@@ -105,11 +106,11 @@ export default function CookiesPage() {
             {[
               {
                 title: "In your browser",
-                body: "You can block or delete cookies through your browser settings. Blocking essential cookies will break Draftpace — you won't be able to stay signed in.",
+                body: "You can block or delete cookies through your browser settings. Blocking essential cookies will break Draftpace, and you won't be able to stay signed in.",
               },
               {
                 title: "Deleting your account",
-                body: "In-product account deletion isn't available yet — email privacy@draftpace.com to request it. Browser cookies clear when you sign out or clear your browser data regardless.",
+                body: "In-product account deletion isn't available yet. Email privacy@draftpace.com to request it. Browser cookies clear when you sign out or clear your browser data regardless.",
               },
             ].map((item) => (
               <div key={item.title} className="rounded-lg border border-[var(--border)] p-5">

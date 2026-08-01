@@ -5,6 +5,7 @@ import Container from "@/design-system/Container";
 export const metadata: Metadata = {
   title: "Trust",
   description: "How Draftpace handles your data, in plain language.",
+  alternates: { canonical: "/trust" },
 };
 
 const SECTIONS = [

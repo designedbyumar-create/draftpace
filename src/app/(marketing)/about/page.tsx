@@ -4,6 +4,7 @@ import Container from "@/design-system/Container";
 export const metadata: Metadata = {
   title: "About",
   description: "Why Draftpace exists and how we build it.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {

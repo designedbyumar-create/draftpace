@@ -22,6 +22,7 @@ export async function generateMetadata({
   return {
     title: need.label,
     description: need.situation,
+    alternates: { canonical: `/help-with/${need.slug}` },
   };
 }
 

@@ -6,6 +6,7 @@ import { GUIDES } from "@/content/guides";
 export const metadata: Metadata = {
   title: "Guides",
   description: "Practical, specific writing on getting organized, planning, and following through.",
+  alternates: { canonical: "/guides" },
 };
 
 export default function GuidesIndexPage() {

@@ -181,7 +181,7 @@ function SignupForm() {
 
       {step === 3 && (
         <div>
-          <p className="mb-5 text-[13px] text-[var(--muted)]">Optional — we&apos;ll use your email name if you skip.</p>
+          <p className="mb-5 text-[13px] text-[var(--muted)]">Optional. We&apos;ll use your email name if you skip.</p>
           <Input
             label="Your name"
             value={name}
@@ -210,7 +210,7 @@ function SignupForm() {
             {loading ? "Setting up your account…" : "Continue"}
           </Button>
           <Button fullWidth variant="ghost" onClick={handleSignup} disabled={loading}>
-            Skip — use my email name
+            Skip, use my email name
           </Button>
         </div>
       )}

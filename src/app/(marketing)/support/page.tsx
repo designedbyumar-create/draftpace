@@ -5,6 +5,7 @@ import Container from "@/design-system/Container";
 export const metadata: Metadata = {
   title: "Support",
   description: "Get help with your account, a purchase, or something that isn't working.",
+  alternates: { canonical: "/support" },
 };
 
 const ENTRIES = [

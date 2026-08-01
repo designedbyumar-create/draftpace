@@ -5,12 +5,13 @@ import Container from "@/design-system/Container";
 
 export const metadata: Metadata = {
   title: "Careers",
-  description: "Careers at Draftpace — a small, focused team building an extensible digital product platform.",
+  description: "Careers at Draftpace, a small, focused team building guided tools for specific situations.",
+  alternates: { canonical: "/careers" },
 };
 
 const VALUES = [
   { label: "Small on purpose", body: "We're not optimizing for headcount. We're optimizing for impact per person." },
-  { label: "Async by default", body: "Deep work matters. We don't fill calendars — we protect time." },
+  { label: "Async by default", body: "Deep work matters. We don't fill calendars. We protect time." },
   { label: "Ship, then refine", body: "Real feedback beats internal debate. We get things in front of users fast." },
 ];
 
@@ -23,7 +24,7 @@ export default function CareersPage() {
           Small team, deliberate growth.
         </h1>
         <p className="mx-auto mt-5 max-w-md text-[16px] leading-relaxed text-[var(--muted)]">
-          We're building Draftpace with a tight, focused team. No open roles right now — but when we grow, it'll be
+          We're building Draftpace with a tight, focused team. No open roles right now, but when we grow, it'll be
           deliberate.
         </p>
       </Container>

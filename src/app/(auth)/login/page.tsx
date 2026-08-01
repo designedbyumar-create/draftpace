@@ -45,7 +45,7 @@ function LoginForm() {
         setError(
           signInError.message?.toLowerCase().includes("fetch") || signInError.status === undefined
             ? "Couldn't reach the account service. Check your connection and try again."
-            : "Wrong email or password — double check and try again."
+            : "Wrong email or password. Double check and try again."
         );
         return;
       }

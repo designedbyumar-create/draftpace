@@ -5,6 +5,7 @@ import Alert from "@/design-system/Alert";
 export const metadata: Metadata = {
   title: "Terms of Use",
   description: "What you're agreeing to when you use Draftpace.",
+  alternates: { canonical: "/terms" },
 };
 
 const SECTIONS = [
@@ -24,11 +25,11 @@ const SECTIONS = [
     content: [
       {
         sub: "The Draftpace platform",
-        body: "Draftpace is a platform for personalized digital products — Companions, learning products, automation tools, guided programs, and trackers. Your account holds your preferences and library across whichever products you own or start.",
+        body: "Draftpace hosts a set of guided tools, each built around a specific situation rather than one general-purpose piece of software. Your account holds your preferences and your library across whichever tools you use or start.",
       },
       {
         sub: "Products are still shipping",
-        body: "Individual products are in active development. What's available to use, and what's free versus paid, will change as products launch — this page will be updated accordingly rather than promising specifics that don't exist yet.",
+        body: "Individual tools are in active development. What's available to use, and what's free versus paid, will change as tools launch. We'll update this page accordingly rather than promising specifics that don't exist yet.",
       },
       {
         sub: "Service availability",
@@ -50,7 +51,7 @@ const SECTIONS = [
       },
       {
         sub: "Account termination",
-        body: "In-product account deletion isn't available yet — email us to request it and we'll confirm once it's complete. We may suspend or terminate accounts that violate these terms or engage in abusive behavior.",
+        body: "In-product account deletion isn't available yet. Email us to request it and we'll confirm once it's complete. We may suspend or terminate accounts that violate these terms or engage in abusive behavior.",
       },
     ],
   },
@@ -60,7 +61,7 @@ const SECTIONS = [
     content: [
       {
         sub: "No live paid products yet",
-        body: "There is no active subscription or paid product to purchase today. When a paid product ships, its price and billing terms will be stated clearly before you pay, and payments will be processed by Stripe — we don't store your card details ourselves.",
+        body: "There is no active subscription or paid product to purchase today. When a paid product ships, its price and billing terms will be stated clearly before you pay. Payments are processed by Stripe, and we don't store your card details ourselves.",
       },
     ],
   },
@@ -94,7 +95,7 @@ const SECTIONS = [
     content: [
       {
         sub: "We're not liable for indirect losses",
-        body: "Draftpace is provided as-is. We're not liable for indirect, incidental, or consequential damages — including lost progress or data loss — arising from use of the platform. Our total liability is limited to what you paid us in the past 12 months.",
+        body: "Draftpace is provided as-is. We're not liable for indirect, incidental, or consequential damages, including lost progress or data loss, arising from use of the platform. Our total liability is limited to what you paid us in the past 12 months.",
       },
     ],
   },

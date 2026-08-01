@@ -10,7 +10,15 @@ import { join } from "node:path";
  * layouts.
  */
 
-const NOINDEX_LAYOUTS = ["src/app/app/layout.tsx", "src/app/admin/layout.tsx", "src/app/(auth)/layout.tsx"];
+const NOINDEX_LAYOUTS = [
+  "src/app/app/layout.tsx",
+  "src/app/admin/layout.tsx",
+  "src/app/(auth)/layout.tsx",
+  "src/app/reset-password/layout.tsx",
+  "src/app/auth/callback/layout.tsx",
+  "src/app/onboarding/layout.tsx",
+  "src/app/offline/layout.tsx",
+];
 
 describe("protected/transactional route groups declare noindex", () => {
   for (const layout of NOINDEX_LAYOUTS) {
@@ -36,5 +44,23 @@ describe("sitemap.ts lists only real public pages", () => {
     expect(source.includes("/app")).toBe(false);
     expect(source.includes("/admin")).toBe(false);
     expect(source.includes("/products/")).toBe(false);
+  });
+
+  it("only includes Shop products via listPublished(), never listAll() or raw fixtures", () => {
+    const source = readFileSync(join(process.cwd(), "src/app/sitemap.ts"), "utf-8");
+    expect(source.includes("listPublished()")).toBe(true);
+    expect(source.includes("listAll()")).toBe(false);
+    expect(source.includes("registerShopFixtures")).toBe(false);
+  });
+});
+
+describe("Shop product pages noindex anything that is not published", () => {
+  it("generateMetadata sets noindex when publicationStatus is not \"published\"", () => {
+    const source = readFileSync(
+      join(process.cwd(), "src/app/(marketing)/shop/[productSlug]/page.tsx"),
+      "utf-8"
+    );
+    expect(source.includes('publicationStatus === "published"')).toBe(true);
+    expect(source.includes("index: false")).toBe(true);
   });
 });

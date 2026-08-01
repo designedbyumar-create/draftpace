@@ -18,6 +18,7 @@ export async function generateMetadata({
   return {
     title: product.seo.title,
     description: product.seo.description,
+    alternates: { canonical: `/shop/${product.slug}` },
     robots: product.publicationStatus === "published" ? undefined : { index: false, follow: false },
   };
 }
@@ -31,6 +32,23 @@ export default async function ShopProductPage({
   const product = shopRegistry.getBySlug(productSlug);
   if (!product) notFound();
 
+  const showStructuredData = product.structuredDataEligible && product.publicationStatus === "published";
+  const structuredData = showStructuredData
+    ? {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        name: product.title,
+        description: product.seo.description,
+        offers: {
+          "@type": "Offer",
+          price: product.access === "free" ? "0" : product.price?.amount.toString(),
+          priceCurrency: product.access === "free" ? "USD" : product.price?.currency,
+          availability:
+            product.availability === "available" ? "https://schema.org/InStock" : "https://schema.org/PreOrder",
+        },
+      }
+    : null;
+
   const priceLabel =
     product.access === "free"
       ? "Free"
@@ -42,6 +60,9 @@ export default async function ShopProductPage({
 
   return (
     <Container width="narrow" className="pb-24 pt-16 sm:pt-20">
+      {structuredData && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+      )}
       {product.devFixture && (
         <div className="mb-6 rounded-lg bg-[var(--surface-muted)] px-4 py-2.5 text-[12px] font-semibold text-[var(--muted)]">
           Internal Shop preview. This listing does not describe a real product.

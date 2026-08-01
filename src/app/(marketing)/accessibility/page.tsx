@@ -4,6 +4,7 @@ import Container from "@/design-system/Container";
 export const metadata: Metadata = {
   title: "Accessibility",
   description: "What Draftpace does today to be usable with a keyboard, screen reader, or different vision needs.",
+  alternates: { canonical: "/accessibility" },
 };
 
 const PRACTICES = [

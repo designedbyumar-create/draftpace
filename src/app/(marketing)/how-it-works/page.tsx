@@ -7,6 +7,7 @@ import { ArrowRight } from "@/design-system/Icon";
 export const metadata: Metadata = {
   title: "How it works",
   description: "What actually happens when you start using a Draftpace tool, from setup to the times you come back.",
+  alternates: { canonical: "/how-it-works" },
 };
 
 const STEPS = [

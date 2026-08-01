@@ -9,7 +9,8 @@ import { NEEDS } from "@/content/needs";
 
 export const metadata: Metadata = {
   title: "Shop",
-  description: "Find help for the thing you're trying to sort out — guided tools organized around what you need.",
+  description: "Find help for the thing you're trying to sort out, with guided tools organized around what you need.",
+  alternates: { canonical: "/shop" },
 };
 
 export default function ShopIndexPage() {
@@ -31,7 +32,7 @@ export default function ShopIndexPage() {
           <EmptyState
             icon={BookOpen}
             title="Nothing is published yet"
-            description="The first guided tools are still being built. Nothing is listed here until it's genuinely ready to use — not a placeholder inventory."
+            description="The first guided tools are still being built. Nothing is listed here until it's genuinely ready to use, not a placeholder inventory."
             action={
               <Link href="/help-with" className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--primary)] hover:underline">
                 See what kind of help is coming

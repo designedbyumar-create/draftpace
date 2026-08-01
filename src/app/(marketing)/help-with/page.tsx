@@ -7,6 +7,7 @@ import { NEEDS } from "@/content/needs";
 export const metadata: Metadata = {
   title: "What do you need help with?",
   description: "Six common situations Draftpace helps with, and what actually helps in each one.",
+  alternates: { canonical: "/help-with" },
 };
 
 export default function HelpWithIndexPage() {

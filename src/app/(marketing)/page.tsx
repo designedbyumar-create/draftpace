@@ -15,9 +15,10 @@ import ShopPreview from "@/components/public/home/ShopPreview";
 import TrustSection from "@/components/public/home/TrustSection";
 
 export const metadata: Metadata = {
-  title: "Draftpace — Turn messy plans into clear next steps",
+  title: "Draftpace: Turn messy plans into clear next steps",
   description:
     "Draftpace helps you organize, plan, decide and follow through with guided tools built around your situation. Your work stays saved, so you can pick up where you left off instead of starting over.",
+  alternates: { canonical: "/" },
 };
 
 export default function HomePage() {

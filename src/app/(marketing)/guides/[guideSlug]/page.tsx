@@ -17,7 +17,7 @@ export async function generateMetadata({
   const { guideSlug } = await params;
   const guide = getGuideBySlug(guideSlug);
   if (!guide) return {};
-  return { title: guide.title, description: guide.dek };
+  return { title: guide.title, description: guide.dek, alternates: { canonical: `/guides/${guide.slug}` } };
 }
 
 export default async function GuidePage({ params }: { params: Promise<{ guideSlug: string }> }) {

@@ -5,6 +5,7 @@ import Alert from "@/design-system/Alert";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "What Draftpace collects, why, and what it doesn't do with your data.",
+  alternates: { canonical: "/privacy" },
 };
 
 const SECTIONS = [
@@ -118,7 +119,7 @@ export default function PrivacyPage() {
 
       <Container width="narrow" className="pb-6">
         <Alert tone="warning" title="Not yet reviewed by counsel">
-          This policy describes the product as implemented today. It has not been through a formal legal review —
+          This policy describes the product as implemented today. It has not been through a formal legal review, so
           treat specifics like retention periods and jurisdiction as provisional until that happens.
         </Alert>
       </Container>
