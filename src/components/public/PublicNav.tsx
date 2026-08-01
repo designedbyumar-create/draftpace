@@ -7,10 +7,11 @@ import Button from "@/design-system/Button";
 import { X } from "@/design-system/Icon";
 
 const LINKS = [
-  { href: "/#platform", label: "Platform" },
-  { href: "/#families", label: "Product families" },
-  { href: "/blog", label: "Blog" },
-  { href: "/careers", label: "Careers" },
+  { href: "/help-with", label: "What do you need help with?" },
+  { href: "/shop", label: "Shop" },
+  { href: "/how-it-works", label: "How it works" },
+  { href: "/guides", label: "Guides" },
+  { href: "/about", label: "About" },
 ];
 
 export default function PublicNav() {
@@ -23,29 +24,34 @@ export default function PublicNav() {
           <Image src="/logo/draftpace-brand-logo.svg" alt="Draftpace" width={128} height={40} priority />
         </Link>
 
-        <nav aria-label="Primary" className="hidden items-center gap-7 md:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-6 lg:flex">
           {LINKS.map((link) => (
-            <Link key={link.href} href={link.href} className="text-[13px] font-semibold text-[var(--muted)] hover:text-[var(--text)]">
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-[13px] font-semibold text-[var(--muted)] hover:text-[var(--text)]"
+            >
               {link.label}
             </Link>
           ))}
         </nav>
 
-        <div className="hidden items-center gap-2 md:flex">
+        <div className="hidden items-center gap-2 lg:flex">
           <Button href="/login" variant="ghost" size="sm">
-            Log in
+            Sign in
           </Button>
-          <Button href="/signup" size="sm">
-            Get started
+          <Button href="/app/library" size="sm">
+            Open your library
           </Button>
         </div>
 
         <button
           type="button"
           aria-expanded={open}
+          aria-controls="mobile-nav"
           aria-label={open ? "Close menu" : "Open menu"}
           onClick={() => setOpen((value) => !value)}
-          className="flex h-10 w-10 items-center justify-center rounded-lg text-[var(--text)] md:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-lg text-[var(--text)] lg:hidden"
         >
           {open ? (
             <X size={20} aria-hidden />
@@ -59,7 +65,7 @@ export default function PublicNav() {
       </div>
 
       {open && (
-        <div id="mobile-nav" className="border-t border-[var(--border)] bg-[var(--bg)] px-4 py-4 md:hidden">
+        <div id="mobile-nav" className="border-t border-[var(--border)] bg-[var(--bg)] px-4 py-4 lg:hidden">
           <nav aria-label="Primary" className="flex flex-col gap-1">
             {LINKS.map((link) => (
               <Link
@@ -74,10 +80,10 @@ export default function PublicNav() {
           </nav>
           <div className="mt-3 flex flex-col gap-2 border-t border-[var(--border)] pt-3">
             <Button href="/login" variant="secondary" size="md" fullWidth>
-              Log in
+              Sign in
             </Button>
-            <Button href="/signup" size="md" fullWidth>
-              Get started
+            <Button href="/app/library" size="md" fullWidth>
+              Open your library
             </Button>
           </div>
         </div>

@@ -1,14 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const PRODUCT_LINKS = [
-  { href: "/#platform", label: "Platform" },
-  { href: "/#families", label: "Product families" },
-  { href: "/signup", label: "Create an account" },
+const HELP_LINKS = [
+  { href: "/help-with", label: "What do you need help with?" },
+  { href: "/shop", label: "Shop" },
+  { href: "/how-it-works", label: "How it works" },
+  { href: "/guides", label: "Guides" },
 ];
 
 const COMPANY_LINKS = [
-  { href: "/blog", label: "Blog" },
+  { href: "/about", label: "About" },
+  { href: "/trust", label: "Trust" },
+  { href: "/accessibility", label: "Accessibility" },
+  { href: "/support", label: "Support" },
   { href: "/careers", label: "Careers" },
 ];
 
@@ -26,12 +30,11 @@ export default function PublicFooter() {
           <div>
             <Image src="/logo/draftpace-brand-logo.svg" alt="Draftpace" width={128} height={40} />
             <p className="mt-4 max-w-xs text-[13px] leading-6 text-[var(--muted)]">
-              An extensible platform for interactive digital products that remember state, adapt, and guide the next
-              useful action.
+              Guided tools for getting organized, deciding, and following through, built around your situation.
             </p>
           </div>
 
-          <FooterColumn title="Product" links={PRODUCT_LINKS} />
+          <FooterColumn title="Get help" links={HELP_LINKS} />
           <FooterColumn title="Company" links={COMPANY_LINKS} />
         </div>
 
