@@ -22,19 +22,19 @@ one family; the platform must stay useful without them.
 
 | Layer | Owns | Does not own |
 |---|---|---|
-| **Platform** | identity, entitlements, preferences, devices, library, notifications, privacy, global navigation, launch-mode gating | product-specific workflow or domain logic |
+| **Platform** | identity, entitlements, preferences, devices, library, notifications, privacy, global navigation | product-specific workflow or domain logic |
 | **Product framework** | product registration, family/capability contracts, navigation resolution, version resolution, module registration, theme-extension contract | any single product's actual behavior |
 | **Product** (per family) | its specific problem, workflow, data, terminology, rules, visuals | authentication, commerce, or duplicated platform infrastructure |
 | **Admin** | creating, versioning, publishing, operating products and supporting customers | direct unsafe manipulation of user data or unversioned releases |
 
 ## Current shape of the repository
 
-- **Public surface (today):** a waitlist landing page at `/`, backed by a real
-  API route and Supabase table. This is the only thing production visitors
-  see; everything else is gated by launch mode (`docs/ROUTE-MAP.md`).
-- **Authenticated platform (`/app`):** a minimal Platform Home and Library,
-  both listing whatever products are registered — nothing today outside
-  local/beta fixtures.
+- **Public surface (today):** a real public homepage at `/` explaining the
+  platform and product-family model, plus legal and content pages
+  (`docs/ROUTE-MAP.md`). No waitlist gate — Phase 2 removed it.
+- **Authenticated platform (`/app`):** Platform Home, Library, and five
+  shared surfaces (notifications, account, settings, billing, support),
+  protected by a real server-verified session.
 - **Product experience (`/app/products/[productSlug]/...`):** a universal
   shell (`start / setup / workspace / progress / history / settings`) that
   renders based on a product's declared capabilities and navigation, not a

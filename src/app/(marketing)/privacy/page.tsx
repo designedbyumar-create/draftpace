@@ -1,5 +1,11 @@
-import Image from "next/image";
-import Link from "next/link";
+import type { Metadata } from "next";
+import Container from "@/design-system/Container";
+import Alert from "@/design-system/Alert";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description: "What Draftpace collects, why, and what it doesn't do with your data.",
+};
 
 const SECTIONS = [
   {
@@ -8,23 +14,19 @@ const SECTIONS = [
     content: [
       {
         sub: "Account information",
-        body: "When you sign up, we collect your email address and display name. This is used to create and identify your account. We never ask for your real name — your display name is whatever you choose.",
+        body: "When you sign up, we collect your email address and, optionally, a display name. This identifies your account. We never require your real name.",
       },
       {
-        sub: "Usage data",
-        body: "We store your planner progress, daily check-ins, streak counts, and completion history. This is the core of what Draftpace does — without it, the product doesn't work.",
+        sub: "Platform preferences",
+        body: "Theme, text-size, reminder-time, and similar preferences are stored on your account so they persist across devices.",
       },
       {
-        sub: "Connected account data",
-        body: "If you connect Gumroad or Etsy, we fetch your purchase history from those platforms to import planners into your Drafts. We only read purchase data — we never access payment details or other account activity.",
-      },
-      {
-        sub: "Notification preferences",
-        body: "Your reminder time and notification toggles are stored in your account so they persist across devices.",
+        sub: "Product data",
+        body: "Once you're using a specific Draftpace product, that product's own data (its setup answers, progress, and history) is stored against your account. What each product collects is specific to that product.",
       },
       {
         sub: "What we don't collect",
-        body: "We don't collect your location, device fingerprints, browsing history, or any data unrelated to using Draftpace. We don't run advertising or sell your data. Ever.",
+        body: "We don't collect your location, device fingerprints, or browsing history unrelated to using Draftpace. We don't run advertising, and we don't sell your data.",
       },
     ],
   },
@@ -33,16 +35,16 @@ const SECTIONS = [
     title: "How we use it",
     content: [
       {
-        sub: "To run the product",
-        body: "Your data powers your dashboard — streaks, progress, Today's Focus, Drafts. Without it, none of this works.",
+        sub: "To run the platform",
+        body: "Your account and preference data power sign-in, your library, and the platform shell. Without it, the product doesn't work.",
       },
       {
         sub: "To send you reminders",
-        body: "If you enable daily reminders, we use your email to send a nudge at your chosen time. You can turn this off at any time in Settings.",
+        body: "If you enable notifications, we use them to send reminders at times you control. You can turn this off at any time in Settings.",
       },
       {
         sub: "To improve Draftpace",
-        body: "We look at aggregate, anonymised usage patterns (e.g. which planner types are most popular) to decide what to build next. We don't analyse individual user behaviour without reason.",
+        body: "We look at aggregate, anonymized usage patterns to decide what to build next. We don't analyze individual user behavior without reason.",
       },
     ],
   },
@@ -51,16 +53,12 @@ const SECTIONS = [
     title: "Who we share it with",
     content: [
       {
-        sub: "Sub-processors",
-        body: "We use Supabase for authentication and database storage, Stripe for payment processing, and Vercel for hosting. Each of these processes only the data necessary for their function. We have data processing agreements with all of them.",
-      },
-      {
-        sub: "Gumroad and Etsy",
-        body: "When you connect these accounts, data flows between their platforms and Draftpace under your explicit authorisation. We don't share your Draftpace data with them.",
+        sub: "Service providers",
+        body: "We use Supabase for authentication and database storage, and a hosting provider to run the application. Stripe is integrated for payment processing where and when it's enabled for a purchase. Each processes only the data necessary for its function.",
       },
       {
         sub: "No selling, no advertising",
-        body: "We do not sell, rent, or share your personal data with advertisers, data brokers, or third parties for commercial purposes. This is a hard line.",
+        body: "We do not sell, rent, or share your personal data with advertisers, data brokers, or third parties for commercial purposes.",
       },
     ],
   },
@@ -70,15 +68,15 @@ const SECTIONS = [
     content: [
       {
         sub: "Access and export",
-        body: "You can export all your data at any time from Settings → Data & Privacy → Export my data. We'll send a complete download to your email.",
+        body: "Exporting your data as a downloadable file is not available yet. Until it ships, you can request a copy of your data by emailing us.",
       },
       {
         sub: "Deletion",
-        body: "Deleting your account from Settings removes all your personal data, progress, and history permanently. This cannot be undone.",
+        body: "In-product account deletion is not available yet. Until it ships, you can request deletion of your account and data by emailing us; we'll confirm once it's complete.",
       },
       {
         sub: "Corrections",
-        body: "You can update your display name in Settings at any time. To update your email address, contact us directly.",
+        body: "You can update your display name and preferences in Settings. To change your account email, contact us directly.",
       },
     ],
   },
@@ -88,7 +86,7 @@ const SECTIONS = [
     content: [
       {
         sub: "How we protect your data",
-        body: "All data is encrypted in transit (TLS) and at rest. Authentication is handled by Supabase, which uses industry-standard security practices. We don't store passwords — authentication uses secure tokens.",
+        body: "Data is encrypted in transit (TLS). Authentication is handled by Supabase; we don't store your password ourselves.",
       },
     ],
   },
@@ -98,7 +96,7 @@ const SECTIONS = [
     content: [
       {
         sub: "Questions or concerns",
-        body: "Email us at privacy@draftpace.com. We respond within 5 business days.",
+        body: "Email privacy@draftpace.com.",
       },
     ],
   },
@@ -106,84 +104,52 @@ const SECTIONS = [
 
 export default function PrivacyPage() {
   return (
-    <main className="min-h-screen bg-[#fafaf9]">
+    <main className="bg-[var(--bg)] text-[var(--text)]">
+      <Container width="narrow" className="pb-6 pt-24">
+        <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--primary)]">Legal</p>
+        <h1 className="mt-3 font-serif text-[36px] font-semibold leading-tight tracking-tight sm:text-[44px]">
+          Privacy Policy
+        </h1>
+        <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-[var(--muted)]">
+          What we collect, why, and what we don't do with it.
+        </p>
+        <p className="mt-2 text-[12px] text-[var(--faint)]">Last updated: August 2026</p>
+      </Container>
 
-      {/* Hero */}
-      <section
-        className="bg-white border-b border-gray-100 px-6 lg:px-8 pt-28 pb-14"
-        style={{
-          backgroundImage: `linear-gradient(#e8e8e6 1px, transparent 1px), linear-gradient(90deg, #e8e8e6 1px, transparent 1px)`,
-          backgroundSize: "44px 44px",
-        }}
-      >
-        <div className="mx-auto max-w-2xl">
-          <div className="inline-flex items-center gap-2 bg-indigo-50 border border-indigo-100 px-3 py-1.5 rounded-full mb-6">
-            <Image src="/logo/dp-mono.svg" alt="Draftpace" width={13} height={13}/>
-            <span className="text-[11px] font-bold uppercase tracking-widest text-indigo-600">Legal</span>
-          </div>
-          <h1
-            className="font-black text-gray-950 leading-[1.0] mb-4"
-            style={{ fontSize: "clamp(30px, 5vw, 48px)", letterSpacing: "-0.04em" }}
-          >
-            Privacy Policy
-          </h1>
-          <p className="text-[15px] text-gray-500 leading-relaxed mb-3 max-w-lg">
-            We built Draftpace to help you build momentum — not to mine your data. Here's exactly what we collect, why, and what we don't do with it.
-          </p>
-          <p className="text-[12px] text-gray-400">Last updated: June 2025</p>
-        </div>
-      </section>
+      <Container width="narrow" className="pb-6">
+        <Alert tone="warning" title="Not yet reviewed by counsel">
+          This policy describes the product as implemented today. It has not been through a formal legal review —
+          treat specifics like retention periods and jurisdiction as provisional until that happens.
+        </Alert>
+      </Container>
 
-      {/* Content */}
-      <section className="px-6 lg:px-8 py-14">
-        <div className="mx-auto max-w-2xl">
-
-          {/* TOC */}
-          <div className="bg-white border border-gray-100 rounded-2xl p-6 mb-10">
-            <p className="text-[11px] font-bold uppercase tracking-widest text-gray-400 mb-4">Contents</p>
-            <div className="flex flex-col gap-2">
-              {SECTIONS.map((s, i) => (
-                <a key={s.id} href={`#${s.id}`}
-                  className="flex items-center gap-3 text-[14px] text-gray-500 hover:text-indigo-600 transition-colors">
-                  <span className="text-[11px] font-black text-gray-300 w-5">0{i + 1}</span>
-                  {s.title}
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Sections */}
-          <div className="flex flex-col gap-12">
-            {SECTIONS.map((section, i) => (
-              <div key={section.id} id={section.id}>
-                <div className="flex items-center gap-3 mb-6">
-                  <span className="text-[11px] font-black text-gray-300 tracking-widest">0{i + 1}</span>
-                  <h2 className="text-[20px] font-bold text-gray-950">{section.title}</h2>
-                </div>
-                <div className="flex flex-col gap-5">
-                  {section.content.map((item) => (
-                    <div key={item.sub}
-                      className="bg-white border border-gray-100 rounded-xl p-5">
-                      <p className="text-[14px] font-semibold text-gray-900 mb-1.5">{item.sub}</p>
-                      <p className="text-[14px] text-gray-500 leading-relaxed">{item.body}</p>
-                    </div>
-                  ))}
-                </div>
+      <Container width="narrow" className="pb-24">
+        <div className="mt-8 flex flex-col gap-12">
+          {SECTIONS.map((section, index) => (
+            <div key={section.id} id={section.id}>
+              <div className="mb-5 flex items-center gap-3">
+                <span className="text-[11px] font-bold tracking-widest text-[var(--faint)]">0{index + 1}</span>
+                <h2 className="text-[19px] font-semibold text-[var(--text)]">{section.title}</h2>
               </div>
-            ))}
-          </div>
-
-          <div className="mt-14 pt-8 border-t border-gray-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <p className="text-[13px] text-gray-400">Questions? <a href="mailto:privacy@draftpace.com" className="text-indigo-600 hover:underline">privacy@draftpace.com</a></p>
-            <div className="flex items-center gap-4 text-[13px]">
-              <Link href="/terms"   className="text-gray-400 hover:text-gray-700 transition-colors">Terms</Link>
-              <Link href="/cookies" className="text-gray-400 hover:text-gray-700 transition-colors">Cookies</Link>
+              <div className="flex flex-col gap-3">
+                {section.content.map((item) => (
+                  <div key={item.sub} className="rounded-lg border border-[var(--border)] p-5">
+                    <p className="text-[13px] font-semibold text-[var(--text)]">{item.sub}</p>
+                    <p className="mt-1.5 text-[13px] leading-relaxed text-[var(--muted)]">{item.body}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-
+          ))}
         </div>
-      </section>
 
+        <p className="mt-12 text-[13px] text-[var(--muted)]">
+          Questions?{" "}
+          <a href="mailto:privacy@draftpace.com" className="font-semibold text-[var(--primary)] hover:underline">
+            privacy@draftpace.com
+          </a>
+        </p>
+      </Container>
     </main>
   );
 }

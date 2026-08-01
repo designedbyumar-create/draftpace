@@ -49,7 +49,9 @@ blueprint — just the calls that shape the code.
 ## Dependencies
 
 - Approved for Phase 1: `vitest`, `@testing-library/react`,
-  `@testing-library/jest-dom`, `zod`. Nothing else was added.
+  `@testing-library/jest-dom`, `zod`.
+- Approved for Phase 2: `@supabase/ssr`, added specifically to make real
+  server-side session protection possible (see "Phase 2" above).
 - `stripe` and `web-push` remain not installed — the deleted checkout route
   used raw `fetch` against Stripe's REST API, not the SDK, and commerce is
   being rebuilt later against real entitlements, not patched.
@@ -75,19 +77,35 @@ blueprint — just the calls that shape the code.
 - `terms/page.tsx` and `privacy/page.tsx` were assumed to be generic legal
   boilerplate and preserved as instructed, but actually contain specific
   claims about the abandoned planner-marketplace product (pricing, Gumroad/
-  Etsy, catalog size). Not rewritten this phase — flagged for founder/legal
-  review before `beta`/`full` launch mode is used with real users.
+  Etsy, catalog size). **Resolved in Phase 2** — see "Legal content" below.
 
-## Launch behavior
+## Phase 2 — the coming-soon layer is gone
 
-- Production defaults to **waitlist mode** with no environment variable set.
-  Local development defaults to **beta mode** automatically (`NODE_ENV !==
-  "production"`), so `/app` is reachable without configuration while
-  developing. A real deployed beta environment opts in explicitly via
-  `NEXT_PUBLIC_LAUNCH_MODE=beta`. See `ROUTE-MAP.md` for the full contract.
-- `/admin/**` is gated independently of launch mode — it is architecture
-  scaffolding, not a working admin tool, and stays unreachable in ordinary
-  production configuration regardless of launch mode.
+- The waitlist page, the launch-mode (`waitlist`/`beta`/`full`) gate, and
+  `NEXT_PUBLIC_LAUNCH_MODE` are all removed. `/` is now the real public
+  homepage in every environment, dev and production alike. The
+  `launch_subscribers` migration stays in migration history as a historical
+  artifact — no destructive migration was run.
+- `/app` and `/admin` access control no longer depends on launch mode at
+  all. `/app/**` requires a real Supabase session, verified server-side in
+  `src/proxy.ts` via `@supabase/ssr` before any protected content is sent —
+  not the Phase 1 client-side-only `AuthGate`, which is deleted.
+  `/admin/**` keeps its independent `isAdminEnabled()` gate, now forced to
+  re-evaluate per request (`export const dynamic = "force-dynamic"` — see
+  `ADMIN-AND-OPERATIONS.md` for why that was necessary).
+- `@supabase/ssr` was added as an approved dependency specifically to make
+  this real (justified per the Phase 2 brief) — `src/lib/supabase/client.ts`
+  and `server.ts` replace the old single browser-only client.
+
+## Legal content
+
+- `terms/page.tsx` and `privacy/page.tsx` were rewritten to remove every
+  claim tied to the abandoned planner-marketplace direction (Gumroad/Etsy,
+  specific pricing, "200+ planners") and to stop promising features that
+  don't exist yet (data export, in-product account deletion) — those are
+  now described honestly as request-by-email until they ship. Both pages
+  carry a visible "not yet reviewed by counsel" notice rather than implying
+  a legal review that hasn't happened.
 
 ## Universal product destinations
 
@@ -97,14 +115,12 @@ blueprint — just the calls that shape the code.
   "Workspace" per family (e.g. "Learn", "Automate", "Continue", "Build",
   "Track") without changing the route segment.
 
-## Deferred out of Phase 1
+## Deferred out of Phase 2 (unchanged)
 
-- Visual/design-system consolidation (typography, spacing, motion, full
-  responsive polish) — explicitly a separate, later, approved phase.
-- Real product content of any kind.
-- Server-side/middleware session verification (would require
-  `@supabase/ssr`, not an approved Phase 1 dependency) — the auth guard
-  remains client-side, same mechanism the app already used.
-- Commerce rebuild against entitlements, real notification sending, admin
-  role model, analytics, and everything else listed as deferred in
-  `ADMIN-AND-OPERATIONS.md` and `ROUTE-MAP.md`.
+- Real product content of any kind — Companion, Learning, Automation,
+  Tracker, or Workspace products are still not built. Only the four
+  internal fixtures exist.
+- Commerce rebuild against real entitlements, real notification sending,
+  admin role model beyond "signed in or not", analytics, Product Studio,
+  and everything else listed as not-built in `ADMIN-AND-OPERATIONS.md` and
+  `ROUTE-MAP.md`.

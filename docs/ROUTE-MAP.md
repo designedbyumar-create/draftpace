@@ -1,81 +1,56 @@
 # Route Map
 
-## Launch-mode contract
+Reflects the platform after Phase 2 (`docs/DECISIONS.md`). The waitlist/
+launch-mode gate from Phase 1 is gone — the public site, platform, and
+admin structure below are the live application.
 
-`src/product-framework/environment.ts` (`getLaunchMode()`), enforced in
-`src/proxy.ts`:
+## Access model
 
-| Launch mode | When active | What's reachable |
+| Area | Protection | Indexing |
 |---|---|---|
-| `waitlist` | Default whenever `NODE_ENV === "production"` and `NEXT_PUBLIC_LAUNCH_MODE` is unset. **This is the real production default.** | `/`, `/api/waitlist`, static assets, `/manifest.webmanifest`, `/sw.js`, `/robots.txt`, `/sitemap.xml`. Everything else redirects to `/`. |
-| `beta` | Automatic whenever `NODE_ENV !== "production"` (local dev), or explicit `NEXT_PUBLIC_LAUNCH_MODE=beta` on a real deployment. | Everything in `waitlist`, plus auth routes (`/login`, `/signup`, `/forgot-password`, `/auth/callback`), the preserved public content pages (`/careers`, `/blog`, `/privacy`, `/terms`, `/cookies`, `/offline`), and all of `/app/**`. |
-| `full` | Explicit `NEXT_PUBLIC_LAUNCH_MODE=full` only. | Same as `beta` today — reserved for when real public product-discovery routes exist. |
+| Public (`/`, `/careers`, `/blog`, `/privacy`, `/terms`, `/cookies`) | None | Indexable |
+| Auth (`/login`, `/signup`, `/forgot-password`, `/reset-password`, `/auth/callback`) | None | `noindex` |
+| Platform (`/app/**`) | Real session required — verified server-side in `src/proxy.ts` (redirects to `/login?redirectTo=...` before any protected content is served) and again in `src/app/app/layout.tsx` as defense in depth | `noindex` |
+| Admin (`/admin/**`) | Gated independently by `isAdminEnabled()` (local dev, or explicit `DRAFTPACE_ADMIN_PREVIEW=true`) *and* a real session, both re-checked per request via `export const dynamic = "force-dynamic"` | `noindex` |
 
-`/admin/**` is gated **independently** of launch mode by `isAdminEnabled()`
-(local dev, or explicit `DRAFTPACE_ADMIN_PREVIEW=true`) — it does not open
-just because launch mode is `beta` or `full`.
-
-## Public (built)
+## Public
 
 | Route | Status |
 |---|---|
-| `/` | Production waitlist page — preserved unchanged |
-| `/api/waitlist` | Preserved unchanged |
-| `/login`, `/signup`, `/forgot-password`, `/auth/callback` | Preserved, redirect targets updated to `/app` |
-| `/careers`, `/blog` | Preserved (no old-direction content) |
-| `/privacy`, `/terms`, `/cookies` | Preserved (legal copy) |
-| `/offline` | Preserved (PWA offline fallback), copy generalized |
+| `/` | The real public homepage — platform explanation, product families, shared capabilities, trust principles, account CTA |
+| `/careers`, `/blog` | Content pages |
+| `/privacy`, `/terms`, `/cookies` | Legal — cleaned of abandoned-product claims (`docs/MIGRATION-PLAN.md`) |
+| `/login`, `/signup`, `/forgot-password`, `/reset-password`, `/auth/callback` | Auth flow, on the shared design system |
 
-## Public (documented, not built this phase)
+**Documented, not built:** `/products`, `/categories/[categorySlug]`, `/solutions/[solutionSlug]`, `/pricing`, `/learn`, `/activate/[token]` — real public product discovery and activation, deferred until a real product exists.
 
-`/products`, `/products/[productSlug]`, `/categories/[categorySlug]`,
-`/solutions/[solutionSlug]`, `/pricing`, `/learn`, `/activate/[token]`
-(real verification — a scaffold-only stub may exist, see below).
-
-The old `/about`, `/support`, `/pricing`, `/features`, `/store` pages were
-**deleted**, not carried forward — they were built entirely around the
-abandoned "planner marketplace + Gumroad/Etsy" direction. Rebuilding these is
-future public-acquisition work against the new product framework, not a
-restoration of the old files.
-
-## Authenticated platform (built)
+## Authenticated platform (`/app`)
 
 | Route | Purpose |
 |---|---|
-| `/app` | Platform Home — session-gated, lists registered products, no fabricated data |
-| `/app/library` | Registered products with structural state, session-gated |
-| `/app/products/[productSlug]/start` | Product cover / entry surface |
-| `/app/products/[productSlug]/setup` | Product-specific configuration (structural placeholder) |
-| `/app/products/[productSlug]/workspace` | **Canonical live-work route** — the product's main surface, label varies per family (`workspaceLabel`) |
-| `/app/products/[productSlug]/progress` | Family-appropriate progress (structural placeholder — no percentages/streaks invented) |
-| `/app/products/[productSlug]/history` | Sessions/runs/results (structural placeholder) |
-| `/app/products/[productSlug]/settings` | Product-specific settings (structural placeholder) |
+| `/app` | Platform Home — Continue / Attention needed / Notifications, honest empty states, no fabricated activity |
+| `/app/library` | Owned/free/available/active/paused/completed/archived filters — only `all`/`available`/`free`/`archived` are backed by real registry data today; the rest render an honest "depends on entitlements" state |
+| `/app/notifications` | Inbox (empty), real browser permission flow, quiet hours, per-product controls (not built) |
+| `/app/account` | Identity, sessions, security, sign-out (real); data export, deletion, 2FA (not built) |
+| `/app/settings` | Theme, working text-scale and reduce-motion overrides (real), locale/timezone (detected, read-only), reminder time (real, persisted) |
+| `/app/billing` | Owned products (empty), payment method / billing history (not built) |
+| `/app/support` | Contact entries routed to email; in-app case tracking not built |
+| `/app/products/[productSlug]/{start,setup,workspace,progress,history,settings}` | Universal product shell — family-aware content, no product exists in production yet |
 
-A product only gets the destinations it declares (or its family default) —
-the shell does not force all six on every product. See the fixtures for
-products using fewer than six.
+## Internal (`/admin`)
 
-## Authenticated platform (documented, not built this phase)
-
-`/app/notifications`, `/app/account`, `/app/settings` (platform-level),
-`/app/billing`, `/app/support`.
-
-## Internal (built, scaffolding only)
-
-| Route | Purpose |
+| Route | Data |
 |---|---|
-| `/admin` | Static overview of the four future admin products — no data, no actions |
+| `/admin` | Overview — real counts (registered products/families) + section index |
+| `/admin/products` | Real — reads `productRegistry` |
+| `/admin/product-families` | Real — reads `familyRegistry` |
+| `/admin/operations` | Real feature-flag state; jobs/webhooks honestly empty |
+| `/admin/customers`, `/admin/entitlements`, `/admin/commerce`, `/admin/communications`, `/admin/support`, `/admin/analytics`, `/admin/audit` | Honest "not built yet" states — no fabricated customers, orders, or metrics |
 
-## Internal (documented, not built this phase)
+No Product Studio (definition authoring UI) exists — out of scope per the brief.
 
-`/admin/products`, `/admin/product-families`, `/admin/customers`,
-`/admin/entitlements`, `/admin/operations`, `/admin/analytics`,
-`/admin/audit`.
+## Indexing implementation
 
-## Indexing
-
-- `/app/**` and `/admin/**` layouts set `robots: { index: false, follow:
-  false }`.
 - `robots.ts` disallows `/app`, `/admin`, `/api`.
-- `sitemap.ts` lists only the preserved static public pages above — no
-  product, fixture, or catalog URLs (there is no catalog left to enumerate).
+- `sitemap.ts` lists only the six real public pages.
+- `/app/**` and `/admin/**` layouts, and the `(auth)` route group, set `robots: { index: false, follow: false }`.

@@ -1,7 +1,31 @@
-# Migration Plan — Product-Layer Reset (Phase 1)
+# Migration Plan — Product-Layer Reset (Phase 1) and Coming-Soon Removal (Phase 2)
 
 Full history is preserved via Git (`git log`, `git show <commit>^:<path>`) —
 nothing below is unrecoverable, it's removed from the working tree only.
+
+## Phase 2 summary
+
+Phase 2 removed the temporary coming-soon layer and shipped the real
+platform. Deleted: the waitlist homepage content, `/api/waitlist` (no
+remaining caller), the launch-mode gate in `src/proxy.ts` and
+`product-framework/environment.ts` (`getLaunchMode`, `NEXT_PUBLIC_LAUNCH_MODE`),
+`src/components/marketing/ui/**` (superseded by `src/design-system/`), and
+the Phase 1 client-side `AuthGate` (superseded by real server-side session
+verification). The `launch_subscribers` Supabase migration was **not**
+touched — it stays in migration history as a historical artifact.
+
+Added: the shared design system (`src/design-system/`, `docs/DESIGN-SYSTEM.md`),
+the real public homepage and `PublicNav`/`PublicFooter`, real `/app`/`/admin`
+session protection via `@supabase/ssr`, five new platform surfaces
+(`/app/{notifications,account,settings,billing,support}`), a redesigned
+universal product shell, `/reset-password` (a password-reset-completion page
+that never existed), and a full admin section structure
+(`docs/ADMIN-AND-OPERATIONS.md`). Legal pages (`privacy`, `terms`, `cookies`)
+were rewritten to remove abandoned-product claims — see `docs/DECISIONS.md`.
+
+Full per-commit detail is in the Phase 2 commit messages on
+`claude/draftpace-rebuild`; this file keeps the original Phase 1 inventory
+below for historical reference.
 
 ## Deleted — old product implementation
 

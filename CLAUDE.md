@@ -24,24 +24,23 @@ A generic productivity dashboard, a PDF/planner converter, a template
 marketplace, a generic form builder, or an AI chatbot. See
 `docs/DECISIONS.md` for the full list of locked decisions this reset is built on.
 
-## Current state (post product-layer reset)
+## Current state (post Phase 2)
 
-The repository went through a deliberate **product-layer reset** (see
-`docs/MIGRATION-PLAN.md`). All prior product implementations — a
-"Money Momentum" finance app, a "Systems"/"planners" catalog, and the
-marketing site built around them — were removed. What remains is:
+The product-layer reset (Phase 1) removed every prior product implementation.
+Phase 2 removed the temporary coming-soon layer and made the real platform
+the live application:
 
-- A working waitlist landing page at `/` (the only public production surface
-  today) and its API/table.
-- Authentication (Supabase email/password + Google OAuth).
-- A generalized platform shell, theme system, and Phosphor icon layer.
-- A new, domain-neutral **product framework** (`src/product-framework/`) that
-  products register against instead of the platform hardcoding any one
-  product's shape.
-- A route skeleton for the authenticated platform (`/app/**`) and an
-  architecture-only admin shell (`/admin/**`).
-- Four internal, non-production development fixtures proving the framework
-  supports different product families.
+- `/` is the real public homepage in every environment — no waitlist gate.
+- `/app/**` requires a real, server-verified Supabase session
+  (`src/proxy.ts`, via `@supabase/ssr`) — not a client-side-only check.
+- `/admin/**` is a real, denser operational shell covering every section
+  from the brief; three sections (Products, Product families, Operations)
+  read genuinely live data, the rest are honest "not built yet" states.
+- One shared premium design system (`src/design-system/`, tokens in
+  `src/app/globals.css`) covers the public site, platform, product shell,
+  and auth — see `docs/DESIGN-SYSTEM.md`.
+- The product framework (`src/product-framework/`) and its four internal
+  development fixtures are unchanged in shape from Phase 1.
 
 No real product exists yet. Do not treat the fixtures as products, and do not
 add finance/companion-specific fields to shared code — see
@@ -65,17 +64,24 @@ add finance/companion-specific fields to shared code — see
    theme extension, never a global mode again.
 5. **Icons are Phosphor-only**, via `src/design-system/Icon.tsx`. No mixed
    icon libraries, no decorative icon-per-card, no emoji as controls.
-6. **Launch mode gates exposure, not features.** Production defaults to
-   `waitlist`. `/app/**` and auth routes only become reachable in `beta`/
-   `full` mode (or local dev). `/admin/**` is gated independently and is
-   architecture scaffolding, not a working admin tool. See
-   `docs/ROUTE-MAP.md`.
+6. **`/app` and `/admin` protection is real, not a temporary gate.**
+   `/app/**` requires an actual session (`src/proxy.ts` + `src/lib/
+   supabase/server.ts`). `/admin/**` additionally requires
+   `isAdminEnabled()` — architecture scaffolding, not a working admin
+   tool, and its layout must stay `force-dynamic` (see
+   `docs/ADMIN-AND-OPERATIONS.md` for why). There is no more launch-mode
+   gate — don't reintroduce one.
 7. **Development fixtures are never real products.** They're excluded from
    the registry in production, from sitemap/robots, and are always labeled
    "Internal ... Fixture". See `docs/DATA-BOUNDARIES.md`.
-8. **No visual redesign yet.** Phase 1 shipped structural, accessible,
-   unstyled-beyond-basics layouts on purpose. The premium design-system
-   consolidation is a separate, later, approved phase.
+8. **Honest states everywhere.** No fabricated activity, metrics, charts,
+   or customer data anywhere in `/app` or `/admin`. Backend functionality
+   that doesn't exist yet renders through `EmptyState`/`SettingsRow`'s
+   "not available yet" state, never a fake working control.
+9. **One design system.** New UI uses `src/design-system/` primitives
+   (`Button`, `Input`, `Badge`, `Alert`, `EmptyState`, `Container`,
+   `Surface`, `Toggle`) and the token set in `globals.css` — see
+   `docs/DESIGN-SYSTEM.md`. Don't hand-roll new color/spacing values.
 
 ## Running locally
 
@@ -84,17 +90,17 @@ npm install
 npm run dev
 ```
 
-`npm run dev` runs with `NODE_ENV=development`, which automatically puts the
-app in **beta** launch mode (see `docs/ROUTE-MAP.md`), so `/app` and
-`/admin` are reachable without setting any environment variable. Visit
-`http://localhost:3000/login` to sign in (requires the Supabase project
-configured in `.env.local`), then `/app`.
+Visit `http://localhost:3000/signup` to create an account (requires the
+Supabase project configured in `.env.local`, with Google OAuth configured if
+you want to test that path), then `/app`.
 
-To exercise **waitlist mode** locally (the real production default), run:
-
-```bash
-NEXT_PUBLIC_LAUNCH_MODE=waitlist npm run dev
-```
+Admin (`/admin`) is reachable automatically in local dev (`NODE_ENV !==
+"production"`). To test it against a production build, set
+`DRAFTPACE_ADMIN_PREVIEW=true` before building — setting it only at runtime
+on an already-built deployment will not work (the layout is
+`force-dynamic` specifically so the check itself is live, but the flag
+still has to be present when the request is handled, i.e. in the running
+process's environment).
 
 ## Quality gates
 
@@ -103,7 +109,7 @@ Before considering any change done:
 ```bash
 npx tsc --noEmit
 npx eslint .
-npx vitest run
+npm run test
 npm run build
 ```
 
@@ -112,5 +118,6 @@ npm run build
 See `docs/ROUTE-MAP.md` for routes, `docs/PRODUCT-FRAMEWORK.md` for the
 registry/contracts, `docs/PRODUCT-FAMILIES.md` for the six initial families,
 `docs/DATA-BOUNDARIES.md` for platform vs. product vs. product-instance state,
-`docs/ADMIN-AND-OPERATIONS.md` for the admin scaffold, and
-`docs/DECISIONS.md` for the founder decisions this structure is built on.
+`docs/DESIGN-SYSTEM.md` for tokens/primitives, `docs/ADMIN-AND-OPERATIONS.md`
+for the admin shell, and `docs/DECISIONS.md` for the founder decisions this
+structure is built on.
