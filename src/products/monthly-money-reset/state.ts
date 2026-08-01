@@ -109,6 +109,8 @@ export const checkInSchema = z.object({
   spendingMissing: z.boolean(),
   reserveAdjusted: z.boolean(),
   feelsAccurate: z.boolean(),
+  /** Safe-to-Spend at the moment of this check-in — lets Progress show real movement over time. */
+  safeToSpendAtMinorUnits: moneyMinorUnits.optional(),
 });
 export type CheckIn = z.infer<typeof checkInSchema>;
 

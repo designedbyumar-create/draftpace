@@ -11,6 +11,7 @@ import { SaveStatusIndicator } from "./shared";
 import SafeToSpendCard from "./SafeToSpendCard";
 import NextActionCard from "./NextActionCard";
 import QuickAddModal from "./QuickAddModal";
+import CheckInModal from "./CheckInModal";
 import { computeSafeToSpend, markBillPaid, markBillSkipped } from "../calculations";
 import { computeNextAction } from "../nextAction";
 import { formatCurrency } from "../currency";
@@ -53,6 +54,7 @@ export default function WorkspaceModule({ definition }: { definition: ProductDef
   const { status, state, saveStatus, setState } = useInstanceState(definition.slug);
   const [tab, setTab] = useState<Tab>("overview");
   const [quickAddOpen, setQuickAddOpen] = useState(false);
+  const [checkInOpen, setCheckInOpen] = useState(false);
 
   if (status === "loading") {
     return <p className="text-[13px] text-[var(--muted)]">Loading your Workspace…</p>;
@@ -84,6 +86,19 @@ export default function WorkspaceModule({ definition }: { definition: ProductDef
   function applyQuickAdd(next: MonthlyMoneyResetState) {
     setState(next);
     setQuickAddOpen(false);
+  }
+
+  function applyCheckIn(next: MonthlyMoneyResetState) {
+    setState(next);
+    setCheckInOpen(false);
+  }
+
+  function actOnNextAction() {
+    if (nextAction?.id === "weekly-check-in") {
+      setCheckInOpen(true);
+    } else {
+      setQuickAddOpen(true);
+    }
   }
 
   function payBill(billId: string) {
@@ -175,7 +190,7 @@ export default function WorkspaceModule({ definition }: { definition: ProductDef
           </div>
 
           <div className="flex flex-col gap-5">
-            <NextActionCard nextAction={nextAction} onDismiss={dismissNextAction} onQuickAdd={() => setQuickAddOpen(true)} />
+            <NextActionCard nextAction={nextAction} onDismiss={dismissNextAction} onAct={actOnNextAction} />
 
             <div className="rounded-2xl border border-[var(--border)] p-5">
               <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--faint)]">What&apos;s protected</p>
@@ -215,6 +230,17 @@ export default function WorkspaceModule({ definition }: { definition: ProductDef
                 </div>
               )}
             </div>
+
+            <button
+              type="button"
+              onClick={() => setCheckInOpen(true)}
+              className="rounded-2xl border border-dashed border-[var(--border-strong)] p-5 text-left transition-colors hover:border-[var(--primary)]"
+            >
+              <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--faint)]">Weekly check-in</p>
+              <p className="mt-1.5 text-[13px] font-semibold text-[var(--text)]">
+                {state.checkIns.length} completed this month · start one now
+              </p>
+            </button>
           </div>
         </div>
       )}
@@ -304,6 +330,7 @@ export default function WorkspaceModule({ definition }: { definition: ProductDef
       )}
 
       {quickAddOpen && <QuickAddModal state={state} onApply={applyQuickAdd} onClose={() => setQuickAddOpen(false)} />}
+      {checkInOpen && <CheckInModal state={state} onApply={applyCheckIn} onClose={() => setCheckInOpen(false)} />}
     </div>
   );
 }

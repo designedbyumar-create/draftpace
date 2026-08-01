@@ -7,11 +7,11 @@ import type { NextAction } from "../state";
 export default function NextActionCard({
   nextAction,
   onDismiss,
-  onQuickAdd,
+  onAct,
 }: {
   nextAction: NextAction | null;
   onDismiss: () => void;
-  onQuickAdd: () => void;
+  onAct: () => void;
 }) {
   if (!nextAction) {
     return (
@@ -42,8 +42,8 @@ export default function NextActionCard({
       </div>
       <p className="mt-2 text-[17px] font-semibold text-[var(--text)]">{nextAction.label}</p>
       <p className="mt-1.5 text-[13px] leading-relaxed text-[var(--muted)]">{nextAction.reason}</p>
-      <Button size="md" className="mt-4" iconLeft={<Plus size={13} aria-hidden />} onClick={onQuickAdd}>
-        Add what changed
+      <Button size="md" className="mt-4" iconLeft={<Plus size={13} aria-hidden />} onClick={onAct}>
+        {nextAction.id === "weekly-check-in" ? "Start check-in" : "Add what changed"}
       </Button>
     </div>
   );

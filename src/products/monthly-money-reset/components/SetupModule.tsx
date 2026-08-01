@@ -153,7 +153,7 @@ export default function SetupModule({ definition }: { definition: ProductDefinit
             </div>
           </div>
           <p className="mt-3 text-[11px] leading-relaxed text-[var(--faint)]">
-            You can change anything from this setup later — nothing here is final.
+            You can change anything from this setup later. Nothing here is final.
           </p>
         </aside>
       </div>
@@ -210,7 +210,7 @@ function StepThisMonth({
       />
       <p className="text-[12px] leading-relaxed text-[var(--muted)]">
         This is what&apos;s already in your account, including anything you&apos;ve already been paid. You don&apos;t
-        need to add that income again in the next step — this number already covers it.
+        need to add that income again in the next step. This number already covers it.
       </p>
     </div>
   );
@@ -389,7 +389,7 @@ function StepBills({
       <div className="mt-6 border-t border-[var(--border)] pt-5">
         <p className="text-[13px] font-semibold text-[var(--text)]">Reserve you don&apos;t want to spend</p>
         <p className="mt-1 text-[12px] leading-relaxed text-[var(--muted)]">
-          Money still sitting in your account that you&apos;d rather leave untouched — a safety buffer, or savings you
+          Money still sitting in your account that you&apos;d rather leave untouched, a safety buffer, or savings you
           haven&apos;t moved out yet.
         </p>
         <div className="mt-3 flex flex-col gap-3">
@@ -538,7 +538,7 @@ function StepReview({
       </div>
       <p className="mt-4 text-[12px] leading-relaxed text-[var(--muted)]">
         You can go back and edit any step before finishing. Once you finish, you&apos;ll land in your Workspace with
-        this as your starting point — and everything here stays editable.
+        this as your starting point, and everything here stays editable.
       </p>
     </div>
   );

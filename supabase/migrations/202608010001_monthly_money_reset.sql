@@ -248,3 +248,47 @@ $$;
 
 revoke all on function public.save_monthly_money_reset_state(uuid, integer, jsonb, boolean, bigint, text) from public;
 grant execute on function public.save_monthly_money_reset_state(uuid, integer, jsonb, boolean, bigint, text) to authenticated;
+
+-- ---------------------------------------------------------------------------
+-- set_product_instance_lifecycle: the only way lifecycle_state changes,
+-- kept separate from save_monthly_money_reset_state since a lifecycle
+-- transition (closing a month, pausing, archiving) is a distinct action from
+-- an ordinary state edit and shouldn't require carrying a revision/state
+-- payload just to flip one column.
+-- ---------------------------------------------------------------------------
+create or replace function public.set_product_instance_lifecycle(
+  p_instance_id uuid,
+  p_lifecycle_state text
+)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  v_user_id uuid := auth.uid();
+  v_owner uuid;
+begin
+  if v_user_id is null then
+    raise exception 'Not authenticated' using errcode = '28000';
+  end if;
+
+  if p_lifecycle_state not in ('active', 'completed', 'paused', 'archived') then
+    raise exception 'Invalid lifecycle state "%"', p_lifecycle_state using errcode = '22023';
+  end if;
+
+  select user_id into v_owner from public.product_instances where id = p_instance_id;
+  if v_owner is null or v_owner <> v_user_id then
+    raise exception 'Not found' using errcode = '42501';
+  end if;
+
+  update public.product_instances
+  set lifecycle_state = p_lifecycle_state,
+      completed_at = case when p_lifecycle_state = 'completed' then now() else completed_at end,
+      updated_at = now()
+  where id = p_instance_id and user_id = v_user_id;
+end;
+$$;
+
+revoke all on function public.set_product_instance_lifecycle(uuid, text) from public;
+grant execute on function public.set_product_instance_lifecycle(uuid, text) to authenticated;

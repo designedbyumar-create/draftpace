@@ -47,9 +47,17 @@ describe("Monthly Money Reset migration structure", () => {
     expect(sql).toContain("values ('monthly-money-reset', '0.1.0', true)");
   });
 
-  it("defines both mutation functions as security definer", () => {
+  it("defines all mutation functions as security definer", () => {
     expect(sql).toMatch(/create or replace function public\.grant_free_product[\s\S]*?security definer/);
     expect(sql).toMatch(/create or replace function public\.save_monthly_money_reset_state[\s\S]*?security definer/);
+    expect(sql).toMatch(/create or replace function public\.set_product_instance_lifecycle[\s\S]*?security definer/);
+  });
+
+  it("set_product_instance_lifecycle validates the lifecycle value and checks ownership", () => {
+    expect(sql).toContain("if p_lifecycle_state not in ('active', 'completed', 'paused', 'archived') then");
+    expect(sql).toContain(
+      "grant execute on function public.set_product_instance_lifecycle(uuid, text) to authenticated"
+    );
   });
 
   it("grant_free_product looks up the version from the allowlist, never accepts one as a parameter", () => {

@@ -109,6 +109,42 @@ export async function saveMonthlyMoneyResetState(params: {
   return interpretSaveResponse(row, error);
 }
 
+export type LifecycleState = "active" | "completed" | "paused" | "archived";
+
+/** The only way an instance's lifecycle_state ever changes — see set_product_instance_lifecycle in the migration. */
+export async function setProductInstanceLifecycle(
+  instanceId: string,
+  lifecycleState: LifecycleState
+): Promise<{ ok: boolean; message?: string }> {
+  const { error } = await supabase.rpc("set_product_instance_lifecycle", {
+    p_instance_id: instanceId,
+    p_lifecycle_state: lifecycleState,
+  });
+  return error ? { ok: false, message: error.message } : { ok: true };
+}
+
+export type StartCycleResult =
+  | { status: "ok"; instanceId: string }
+  | { status: "error"; message: string };
+
+/**
+ * Starts (or safely re-fetches) the instance for a given cycle. Reuses
+ * grant_free_product — it's idempotent per (user, product, cycle_key), and
+ * its eligibility check doesn't care whether this is a user's first cycle
+ * or their fifth, so a second free product never needs a separate
+ * "start next cycle" RPC.
+ */
+export async function startNextCycle(productSlug: string, cycleKey: string): Promise<StartCycleResult> {
+  const { data, error } = await supabase.rpc("grant_free_product", {
+    p_product_slug: productSlug,
+    p_cycle_key: cycleKey,
+  });
+  if (error) return { status: "error", message: error.message };
+  const row = Array.isArray(data) ? data[0] : data;
+  if (!row?.product_instance_id) return { status: "error", message: "No instance returned." };
+  return { status: "ok", instanceId: row.product_instance_id };
+}
+
 export type ProductInstanceSummary = {
   id: string;
   productSlug: string;
