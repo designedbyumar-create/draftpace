@@ -25,6 +25,23 @@ export const monthlyMoneyResetShopProduct: ShopProductInput = {
     "You're looking for a full year-long budget or investment planning tool. This is one month at a time.",
     "You want the system to tell you what to do with your money. It shows you the picture; the decisions stay yours.",
   ],
+  objections: [
+    {
+      worry: "Worried you'll abandon it like the others?",
+      answer:
+        "It does the keeping-up, so you don't have to. There's no daily ritual to maintain and nothing to fall behind on between check-ins.",
+    },
+    {
+      worry: "Think a template can't fit your situation?",
+      answer:
+        "It asks about your situation and shows only what matters. Anything that wouldn't change your picture never shows up.",
+    },
+    {
+      worry: "Afraid it'll judge you?",
+      answer:
+        "It's not a budget. Just a clear, calm picture, with no lectures and no shame for a rough week. When you fall behind it asks what changed, not why.",
+    },
+  ],
   outcomes: [
     "A single, trustworthy Safe-to-Spend figure that updates as the month goes on.",
     "Bills that stay protected whether they're paid yet or not, so the number never assumes money you actually owe.",

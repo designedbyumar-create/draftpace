@@ -6,11 +6,13 @@ import Link from "next/link";
 import Button from "@/design-system/Button";
 import { X } from "@/design-system/Icon";
 
+// App-style, product-forward navigation: the Store is the front door, "How it
+// works" is the single education entry, and everything else lives in the
+// footer. The old "What do you need help with?" funnel is retired. See
+// docs/DRAFTPACE-APP-EXPERIENCE-DESIGN.md §3.
 const LINKS = [
-  { href: "/help-with", label: "What do you need help with?" },
-  { href: "/shop", label: "Shop" },
+  { href: "/shop", label: "Store" },
   { href: "/how-it-works", label: "How it works" },
-  { href: "/guides", label: "Guides" },
   { href: "/about", label: "About" },
 ];
 
@@ -40,8 +42,8 @@ export default function PublicNav() {
           <Button href="/login" variant="ghost" size="sm">
             Sign in
           </Button>
-          <Button href="/app/library" size="sm">
-            Open your library
+          <Button href="/shop" size="sm">
+            Browse the Store
           </Button>
         </div>
 
@@ -82,8 +84,8 @@ export default function PublicNav() {
             <Button href="/login" variant="secondary" size="md" fullWidth>
               Sign in
             </Button>
-            <Button href="/app/library" size="md" fullWidth>
-              Open your library
+            <Button href="/shop" size="md" fullWidth>
+              Browse the Store
             </Button>
           </div>
         </div>

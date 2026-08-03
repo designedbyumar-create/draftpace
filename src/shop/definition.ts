@@ -19,6 +19,14 @@ const mediaSchema = z.object({
   alt: z.string().min(1),
 });
 
+/** A doubt the buyer arrives with, and the plain answer to it. Resolved on the
+ * product page near the decision, since this market objects before it desires.
+ * See docs/DRAFTPACE-APP-EXPERIENCE-DESIGN.md §6. */
+const objectionSchema = z.object({
+  worry: z.string().min(1),
+  answer: z.string().min(1),
+});
+
 export const shopProductSchema = z.object({
   id: z.string().min(1),
   slug: z.string().regex(/^[a-z0-9][a-z0-9-]*$/, "Slugs must be lowercase, alphanumeric, and hyphenated."),
@@ -28,6 +36,7 @@ export const shopProductSchema = z.object({
   problem: z.string().min(1),
   audience: z.array(z.string()).default([]),
   audienceExclusions: z.array(z.string()).default([]),
+  objections: z.array(objectionSchema).default([]),
   outcomes: z.array(z.string()).default([]),
   howItWorks: z.array(z.string()).default([]),
   access: z.enum(["free", "paid"]),

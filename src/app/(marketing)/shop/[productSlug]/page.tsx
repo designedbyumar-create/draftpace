@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import Container from "@/design-system/Container";
 import Badge from "@/design-system/Badge";
 import Button from "@/design-system/Button";
-import { ArrowRight, Check, X } from "@/design-system/Icon";
+import { ArrowRight, Check, Lock, X } from "@/design-system/Icon";
 import { shopRegistry } from "@/shop/registry";
+import type { ShopProduct } from "@/shop/definition";
 
 export async function generateMetadata({
   params,
@@ -23,6 +25,12 @@ export async function generateMetadata({
   };
 }
 
+/**
+ * The product page. Its one job is to make one person want one product, and to
+ * resolve their distrust as desire builds. Visual-first, the get action stays
+ * within reach, and the objection movement sits near the decision. See
+ * docs/DRAFTPACE-APP-EXPERIENCE-DESIGN.md §6.
+ */
 export default async function ShopProductPage({
   params,
 }: {
@@ -32,88 +40,76 @@ export default async function ShopProductPage({
   const product = shopRegistry.getBySlug(productSlug);
   if (!product) notFound();
 
-  const showStructuredData = product.structuredDataEligible && product.publicationStatus === "published";
-  const structuredData = showStructuredData
-    ? {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        name: product.title,
-        description: product.seo.description,
-        offers: {
-          "@type": "Offer",
-          price: product.access === "free" ? "0" : product.price?.amount.toString(),
-          priceCurrency: product.access === "free" ? "USD" : product.price?.currency,
-          availability:
-            product.availability === "available" ? "https://schema.org/InStock" : "https://schema.org/PreOrder",
-        },
-      }
-    : null;
-
-  const priceLabel =
-    product.access === "free"
-      ? "Free"
-      : product.price
-        ? new Intl.NumberFormat("en-US", { style: "currency", currency: product.price.currency }).format(
-            product.price.amount
-          )
-        : "Price not yet set";
+  const priceLabel = formatPrice(product);
+  const structuredData = buildStructuredData(product);
 
   return (
-    <Container width="narrow" className="pb-24 pt-16 sm:pt-20">
+    <Container width="narrow" className="pb-28 pt-14 sm:pt-16">
       {structuredData && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       )}
       {product.devFixture && (
         <div className="mb-6 rounded-lg bg-[var(--surface-muted)] px-4 py-2.5 text-[12px] font-semibold text-[var(--muted)]">
-          Internal Shop preview. This listing does not describe a real product.
+          Internal Store preview. This listing does not describe a real product.
         </div>
       )}
 
-      {/* 1. Outcome-led hero */}
-      <div className="flex flex-wrap items-center gap-2">
-        <Badge tone={product.access === "free" ? "success" : "primary"}>{product.access === "free" ? "Free" : "Paid"}</Badge>
-        {product.availability === "coming-soon" && <Badge tone="neutral">Coming soon</Badge>}
-      </div>
-      <h1 className="mt-3 font-serif text-[32px] font-semibold leading-tight tracking-tight sm:text-[40px]">
-        {product.title}
-      </h1>
-      <p className="mt-4 max-w-xl text-[16px] leading-relaxed text-[var(--muted)]">{product.promise}</p>
+      {/* Movement 1: outcome hero with a real visual */}
+      <section className="grid gap-6 sm:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] sm:items-center">
+        <div>
+          <div className="flex flex-wrap items-center gap-2">
+            <Badge tone={product.access === "free" ? "success" : "primary"}>
+              {product.access === "free" ? "Free" : "Paid"}
+            </Badge>
+            {product.availability === "coming-soon" && <Badge tone="neutral">Coming soon</Badge>}
+          </div>
+          <h1 className="mt-3 font-serif text-[32px] font-semibold leading-tight tracking-tight sm:text-[40px]">
+            {product.title}
+          </h1>
+          <p className="mt-4 text-[16px] leading-relaxed text-[var(--muted)]">{product.promise}</p>
+          <div className="mt-6">
+            <GetAction product={product} priceLabel={priceLabel} size="lg" />
+          </div>
+          <p className="mt-3 flex items-center gap-1.5 text-[12px] text-[var(--faint)]">
+            <Lock size={12} aria-hidden />
+            Only you can see your data. It saves to your account, on every device.
+          </p>
+        </div>
+        <HeroVisual product={product} />
+      </section>
 
-      {/* 2 & 3. Who this is for / the situation */}
+      {/* Movement 2: who this is for and the situation */}
       {product.audience.length > 0 && (
-        <section className="mt-12">
-          <h2 className="text-[13px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">Who this is for</h2>
-          <ul className="mt-3 flex flex-col gap-2">
+        <Section eyebrow="Who this is for">
+          <ul className="flex flex-col gap-2">
             {product.audience.map((line) => (
               <li key={line} className="flex items-start gap-2.5 text-[14px] leading-relaxed text-[var(--text)]">
-                <Check size={14} className="mt-1 shrink-0 text-[var(--success)]" aria-hidden />
+                <Check size={15} className="mt-0.5 shrink-0 text-[var(--success)]" aria-hidden />
                 {line}
               </li>
             ))}
           </ul>
           <p className="mt-4 text-[14px] leading-relaxed text-[var(--muted)]">{product.problem}</p>
-        </section>
+        </Section>
       )}
 
-      {/* 4. What becomes easier */}
+      {/* Movement 3: what becomes easier */}
       {product.outcomes.length > 0 && (
-        <section className="mt-10">
-          <h2 className="text-[13px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">What becomes easier</h2>
-          <ul className="mt-3 flex flex-col gap-2">
+        <Section eyebrow="What becomes easier">
+          <ul className="flex flex-col gap-2.5">
             {product.outcomes.map((line) => (
               <li key={line} className="text-[14px] leading-relaxed text-[var(--text)]">
                 {line}
               </li>
             ))}
           </ul>
-        </section>
+        </Section>
       )}
 
-      {/* 5 & 6. How it works / walkthrough */}
+      {/* Movement 4: how it works */}
       {product.howItWorks.length > 0 && (
-        <section className="mt-10">
-          <h2 className="text-[13px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">How it works</h2>
-          <ol className="mt-3 flex flex-col gap-3">
+        <Section eyebrow="How it works">
+          <ol className="flex flex-col gap-3">
             {product.howItWorks.map((step, index) => (
               <li key={step} className="flex items-start gap-3 text-[14px] leading-relaxed text-[var(--text)]">
                 <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[var(--surface-muted)] text-[11px] font-bold text-[var(--muted)]">
@@ -123,53 +119,29 @@ export default async function ShopProductPage({
               </li>
             ))}
           </ol>
-        </section>
+        </Section>
       )}
 
-      {/* 7 & 8. Inputs and outputs */}
-      {(product.expectedInputs.length > 0 || product.expectedOutputs.length > 0) && (
-        <section className="mt-10 grid gap-6 sm:grid-cols-2">
-          {product.expectedInputs.length > 0 && (
-            <div>
-              <h2 className="text-[13px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">What you enter</h2>
-              <ul className="mt-3 flex flex-col gap-2">
-                {product.expectedInputs.map((line) => (
-                  <li key={line} className="text-[13px] leading-relaxed text-[var(--muted)]">
-                    {line}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-          {product.expectedOutputs.length > 0 && (
-            <div>
-              <h2 className="text-[13px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">What you get</h2>
-              <ul className="mt-3 flex flex-col gap-2">
-                {product.expectedOutputs.map((line) => (
-                  <li key={line} className="text-[13px] leading-relaxed text-[var(--muted)]">
-                    {line}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </section>
+      {/* Movement 5: objection resolution, near the decision */}
+      {product.objections.length > 0 && (
+        <Section eyebrow="Honest answers before you decide">
+          <div className="flex flex-col divide-y divide-[var(--border)] rounded-xl border border-[var(--border)]">
+            {product.objections.map((o) => (
+              <div key={o.worry} className="px-5 py-4">
+                <p className="text-[14px] font-semibold text-[var(--text)]">{o.worry}</p>
+                <p className="mt-1.5 text-[13px] leading-relaxed text-[var(--muted)]">{o.answer}</p>
+              </div>
+            ))}
+          </div>
+        </Section>
       )}
 
-      {/* 9. Saving and returning */}
-      {product.savingBehavior && (
-        <section className="mt-10 rounded-lg bg-[var(--surface-muted)] p-4">
-          <h2 className="text-[13px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">Saving and returning</h2>
-          <p className="mt-2 text-[13px] leading-relaxed text-[var(--text)]">{product.savingBehavior}</p>
-        </section>
-      )}
-
-      {/* 10 & 11. Access, compatibility, inclusions */}
-      <section className="mt-10">
-        <h2 className="text-[13px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">What's included</h2>
-        <ul className="mt-3 flex flex-col gap-2">
+      {/* Movement 6: what's included, honest limits, privacy */}
+      <Section eyebrow="What's included">
+        <ul className="flex flex-col gap-2">
           {product.inclusions.map((line) => (
-            <li key={line} className="text-[14px] leading-relaxed text-[var(--text)]">
+            <li key={line} className="flex items-start gap-2.5 text-[14px] leading-relaxed text-[var(--text)]">
+              <Check size={15} className="mt-0.5 shrink-0 text-[var(--success)]" aria-hidden />
               {line}
             </li>
           ))}
@@ -177,64 +149,43 @@ export default async function ShopProductPage({
         {product.compatibility.length > 0 && (
           <p className="mt-3 text-[12px] text-[var(--faint)]">{product.compatibility.join(" · ")}</p>
         )}
-      </section>
+      </Section>
 
-      {/* 12. Price and purchase action */}
-      <section className="mt-10 rounded-xl border border-[var(--border)] p-6">
-        <div className="flex items-center justify-between gap-4">
+      {product.audienceExclusions.length > 0 && (
+        <Section eyebrow="Maybe not for you if">
+          <ul className="flex flex-col gap-2">
+            {product.audienceExclusions.map((line) => (
+              <li key={line} className="flex items-start gap-2.5 text-[14px] leading-relaxed text-[var(--muted)]">
+                <X size={15} className="mt-0.5 shrink-0 text-[var(--faint)]" aria-hidden />
+                {line}
+              </li>
+            ))}
+          </ul>
+        </Section>
+      )}
+
+      {product.privacyNotes && (
+        <Section eyebrow="Privacy and data">
+          <p className="text-[13px] leading-relaxed text-[var(--muted)]">{product.privacyNotes}</p>
+        </Section>
+      )}
+
+      {/* Price and get, repeated near the decision */}
+      <section className="mt-12 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[var(--shadow-xs)]">
+        <div className="flex flex-wrap items-center justify-between gap-4">
           <div>
             <p className="text-[11px] font-bold uppercase tracking-wide text-[var(--faint)]">Price</p>
-            <p className="mt-1 text-[22px] font-semibold text-[var(--text)]">{priceLabel}</p>
+            <p className="mt-1 text-[24px] font-semibold text-[var(--text)]">{priceLabel}</p>
+            {product.access === "paid" && <p className="mt-0.5 text-[12px] text-[var(--muted)]">One-time. Yours to keep.</p>}
           </div>
-          {product.purchaseAction && (
-            <Button href={product.purchaseAction.href} size="lg" iconRight={<ArrowRight size={15} aria-hidden />}>
-              {product.purchaseAction.label}
-            </Button>
-          )}
+          <GetAction product={product} priceLabel={priceLabel} size="lg" />
         </div>
       </section>
 
-      {/* 13 & 14. Is this right for you */}
-      {product.audienceExclusions.length > 0 && (
-        <section className="mt-10 grid gap-6 sm:grid-cols-2">
-          <div>
-            <h2 className="text-[13px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">Likely right for you if</h2>
-            <ul className="mt-3 flex flex-col gap-2">
-              {product.audience.map((line) => (
-                <li key={line} className="flex items-start gap-2 text-[13px] leading-relaxed text-[var(--text)]">
-                  <Check size={13} className="mt-0.5 shrink-0 text-[var(--success)]" aria-hidden />
-                  {line}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h2 className="text-[13px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">Maybe not if</h2>
-            <ul className="mt-3 flex flex-col gap-2">
-              {product.audienceExclusions.map((line) => (
-                <li key={line} className="flex items-start gap-2 text-[13px] leading-relaxed text-[var(--muted)]">
-                  <X size={13} className="mt-0.5 shrink-0 text-[var(--faint)]" aria-hidden />
-                  {line}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-      )}
-
-      {/* 15. Privacy */}
-      {product.privacyNotes && (
-        <section className="mt-10">
-          <h2 className="text-[13px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">Privacy and data</h2>
-          <p className="mt-2 text-[13px] leading-relaxed text-[var(--muted)]">{product.privacyNotes}</p>
-        </section>
-      )}
-
-      {/* 16. FAQs */}
+      {/* FAQs */}
       {product.faqs.length > 0 && (
-        <section className="mt-10">
-          <h2 className="text-[13px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">Questions</h2>
-          <div className="mt-3 flex flex-col divide-y divide-[var(--border)]">
+        <Section eyebrow="Questions">
+          <div className="flex flex-col divide-y divide-[var(--border)]">
             {product.faqs.map((faq) => (
               <details key={faq.question} className="group py-3 first:pt-0">
                 <summary className="cursor-pointer text-[14px] font-semibold text-[var(--text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]">
@@ -244,55 +195,134 @@ export default async function ShopProductPage({
               </details>
             ))}
           </div>
-        </section>
+        </Section>
       )}
 
-      {/* 17 & 18. Guides and related products */}
-      {(product.relatedGuideSlugs.length > 0 || product.relatedProductSlugs.length > 0) && (
-        <section className="mt-10 grid gap-6 sm:grid-cols-2">
-          {product.relatedGuideSlugs.length > 0 && (
-            <div>
-              <h2 className="text-[13px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">Related guides</h2>
-              <ul className="mt-3 flex flex-col gap-1.5">
-                {product.relatedGuideSlugs.map((slug) => (
-                  <li key={slug}>
-                    <Link href={`/guides/${slug}`} className="text-[13px] font-semibold text-[var(--primary)] hover:underline">
-                      Read guide
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-          {product.relatedProductSlugs.length > 0 && (
-            <div>
-              <h2 className="text-[13px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">Related</h2>
-              <ul className="mt-3 flex flex-col gap-1.5">
-                {product.relatedProductSlugs.map((slug) => {
-                  const related = shopRegistry.getBySlug(slug);
-                  if (!related) return null;
-                  return (
-                    <li key={slug}>
-                      <Link href={`/shop/${slug}`} className="text-[13px] font-semibold text-[var(--primary)] hover:underline">
-                        {related.title}
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          )}
-        </section>
+      {/* Related */}
+      {product.relatedProductSlugs.length > 0 && (
+        <Section eyebrow="Related">
+          <ul className="flex flex-col gap-1.5">
+            {product.relatedProductSlugs.map((slug) => {
+              const related = shopRegistry.getBySlug(slug);
+              if (!related) return null;
+              return (
+                <li key={slug}>
+                  <Link href={`/shop/${slug}`} className="text-[13px] font-semibold text-[var(--primary)] hover:underline">
+                    {related.title}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </Section>
       )}
 
-      {/* 19. Final CTA */}
+      {/* Final CTA */}
       <section className="mt-14 border-t border-[var(--border)] pt-10 text-center">
-        {product.purchaseAction && (
-          <Button href={product.purchaseAction.href} size="lg" iconRight={<ArrowRight size={16} aria-hidden />}>
-            {product.purchaseAction.label}
-          </Button>
-        )}
+        <GetAction product={product} priceLabel={priceLabel} size="lg" center />
       </section>
     </Container>
   );
+}
+
+/** The get action. Free adds to the library; paid links to the external
+ * checkout (wired to Lemon Squeezy later via purchaseAction.href). A
+ * coming-soon product shows a disabled state instead of a live action. */
+function GetAction({
+  product,
+  priceLabel,
+  size = "md",
+  center = false,
+}: {
+  product: ShopProduct;
+  priceLabel: string;
+  size?: "sm" | "md" | "lg";
+  center?: boolean;
+}) {
+  if (product.availability === "coming-soon") {
+    return (
+      <div className={center ? "inline-flex flex-col items-center gap-1.5" : "flex flex-col gap-1.5"}>
+        <Button size={size} disabled>
+          Coming soon
+        </Button>
+        <p className="text-[12px] text-[var(--faint)]">Not available to get just yet.</p>
+      </div>
+    );
+  }
+
+  const label =
+    product.purchaseAction?.label ?? (product.access === "free" ? "Add to your library, free" : `Get it, ${priceLabel}`);
+  const href = product.purchaseAction?.href;
+
+  // Paid products get their checkout URL later; until then, the action is not
+  // yet live and is shown as pending rather than a dead link.
+  if (product.access === "paid" && !href) {
+    return (
+      <div className={center ? "inline-flex flex-col items-center gap-1.5" : "flex flex-col gap-1.5"}>
+        <Button size={size} disabled iconRight={<ArrowRight size={15} aria-hidden />}>
+          {label}
+        </Button>
+        <p className="text-[12px] text-[var(--faint)]">Checkout opens soon.</p>
+      </div>
+    );
+  }
+
+  return (
+    <Button href={href ?? `/app/activate/${product.slug}`} size={size} iconRight={<ArrowRight size={15} aria-hidden />}>
+      {label}
+    </Button>
+  );
+}
+
+/** Hero product visual: real media when present, else a labeled placeholder. */
+function HeroVisual({ product }: { product: ShopProduct }) {
+  const media = product.media[0];
+  if (media) {
+    return (
+      <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-[var(--border)] shadow-[var(--shadow-soft)]">
+        <Image src={media.src} alt={media.alt} fill className="object-cover" sizes="(max-width: 640px) 100vw, 45vw" priority />
+      </div>
+    );
+  }
+  return (
+    <div className="flex aspect-[4/3] flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-[var(--border-strong)] bg-[var(--surface-muted)] p-6 text-center">
+      <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">Product preview</p>
+      <p className="max-w-[16rem] text-[13px] leading-5 text-[var(--muted)]">
+        A real view of {product.title} in use goes here, showing the main result the product produces.
+      </p>
+    </div>
+  );
+}
+
+function Section({ eyebrow, children }: { eyebrow: string; children: React.ReactNode }) {
+  return (
+    <section className="mt-12">
+      <h2 className="text-[13px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">{eyebrow}</h2>
+      <div className="mt-3">{children}</div>
+    </section>
+  );
+}
+
+function formatPrice(product: ShopProduct): string {
+  if (product.access === "free") return "Free";
+  if (!product.price) return "Price not yet set";
+  return new Intl.NumberFormat("en-US", { style: "currency", currency: product.price.currency }).format(
+    product.price.amount
+  );
+}
+
+function buildStructuredData(product: ShopProduct) {
+  if (!(product.structuredDataEligible && product.publicationStatus === "published")) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.title,
+    description: product.seo.description,
+    offers: {
+      "@type": "Offer",
+      price: product.access === "free" ? "0" : product.price?.amount.toString(),
+      priceCurrency: product.access === "free" ? "USD" : product.price?.currency,
+      availability: product.availability === "available" ? "https://schema.org/InStock" : "https://schema.org/PreOrder",
+    },
+  };
 }
