@@ -36,6 +36,15 @@ describe("interpretLoadResponse", () => {
     const result = interpretLoadResponse({ state: { not: "valid" }, revision: 1 }, null);
     expect(result.status).toBe("error");
   });
+
+  it("treats a freshly granted empty state ({}) as ok, not a validation error", () => {
+    const result = interpretLoadResponse({ state: {}, revision: 1 }, null);
+    expect(result.status).toBe("ok");
+    if (result.status === "ok") {
+      expect(result.revision).toBe(1);
+      expect(Object.keys(result.state)).toHaveLength(0);
+    }
+  });
 });
 
 describe("interpretSaveResponse", () => {

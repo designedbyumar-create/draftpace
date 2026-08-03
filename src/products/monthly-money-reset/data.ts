@@ -26,6 +26,20 @@ export function interpretLoadResponse(
   if (error) return { status: "error", message: error.message };
   if (!data) return { status: "not-found" };
 
+  // A newly granted instance stores state: '{}', genuinely empty, not
+  // corrupt. Return it as "ok" with the empty object so useInstanceState fills
+  // it with a real empty state on first load; only non-empty saved state is
+  // validated. Without this, the empty state failed validation and surfaced as
+  // "error", making a freshly activated product look like it isn't set up.
+  if (
+    data.state &&
+    typeof data.state === "object" &&
+    !Array.isArray(data.state) &&
+    Object.keys(data.state).length === 0
+  ) {
+    return { status: "ok", revision: data.revision, state: data.state as MonthlyMoneyResetState };
+  }
+
   try {
     const state = validateMonthlyMoneyResetState(data.state);
     return { status: "ok", revision: data.revision, state };

@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { supabase } from "@/lib/supabase/client";
 import { currentCycleKey, cycleKeyToLabel } from "../cycle";
 import {
   findProductInstanceId,
@@ -33,6 +34,14 @@ export function useInstanceState(productSlug: string) {
   useEffect(() => {
     let cancelled = false;
     (async () => {
+      // The @supabase/ssr browser client hydrates its session from cookies
+      // asynchronously. Awaiting getSession() guarantees the client is
+      // authenticated before the first RLS-scoped read below, which otherwise
+      // races ahead and runs unauthenticated, returning no rows for an
+      // instance the user genuinely owns (Platform Home/Library happen to run
+      // late enough to avoid this; the product modules query immediately).
+      await supabase.auth.getSession();
+      if (cancelled) return;
       const cycleKey = currentCycleKey();
       const id = await findProductInstanceId(productSlug, cycleKey);
       if (cancelled) return;
