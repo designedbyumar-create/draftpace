@@ -3,21 +3,17 @@ import Link from "next/link";
 import Button from "@/design-system/Button";
 import Container from "@/design-system/Container";
 import { ArrowRight } from "@/design-system/Icon";
-import MessyToClearHero from "@/components/public/home/MessyToClearHero";
-import RecognitionSection from "@/components/public/home/RecognitionSection";
-import ProblemChooser from "@/components/public/home/ProblemChooser";
-import ClearNextStepSection from "@/components/public/home/ClearNextStepSection";
-import SetupSection from "@/components/public/home/SetupSection";
-import ContinuityStory from "@/components/public/home/ContinuityStory";
-import AdaptationSection from "@/components/public/home/AdaptationSection";
-import RecoverySection from "@/components/public/home/RecoverySection";
+import LivingProductHero from "@/components/public/home/LivingProductHero";
+import TheGraveyard from "@/components/public/home/TheGraveyard";
+import LivingAnatomy from "@/components/public/home/LivingAnatomy";
+import LivingSpectrum from "@/components/public/home/LivingSpectrum";
 import ShopPreview from "@/components/public/home/ShopPreview";
 import TrustSection from "@/components/public/home/TrustSection";
 
 export const metadata: Metadata = {
-  title: "Draftpace: Turn messy plans into clear next steps",
+  title: "A studio for living products",
   description:
-    "Draftpace helps you organize, plan, decide and follow through with guided tools built around your situation. Your work stays saved, so you can pick up where you left off instead of starting over.",
+    "Draftpace is a studio making living products: installable apps that remember you, guide your next move, and stay yours to keep, instead of dying on download like a file.",
   alternates: { canonical: "/" },
 };
 
@@ -28,16 +24,18 @@ export default function HomePage() {
       <section className="border-b border-[var(--border)]">
         <Container width="wide" className="grid gap-12 py-16 sm:py-20 lg:grid-cols-[1fr_0.95fr] lg:items-center lg:py-28">
           <div>
-            <h1 className="font-serif text-[38px] font-semibold leading-[1.08] tracking-tight sm:text-[48px] lg:text-[56px]">
-              Turn messy plans into clear next steps.
+            <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Products that keep up with you</p>
+            <h1 className="mt-4 font-serif text-[38px] font-semibold leading-[1.08] tracking-tight sm:text-[48px] lg:text-[56px]">
+              A studio for living products.
             </h1>
             <p className="mt-6 max-w-lg text-[17px] leading-relaxed text-[var(--muted)]">
-              Draftpace helps you organize, plan, decide and follow through with guided tools built around your
-              situation. Your work stays saved, so you can pick up where you left off instead of starting over.
+              Most things you buy online die on download: a PDF, a template, a file you open once and forget. We make
+              the opposite. Every Draftpace product is a living app that remembers you, guides your next move, and is
+              yours to keep.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <Button href="/help-with" size="lg" iconRight={<ArrowRight size={16} aria-hidden />}>
-                Find help for what you're trying to do
+              <Button href="/shop" size="lg" iconRight={<ArrowRight size={16} aria-hidden />}>
+                See what we&rsquo;ve made
               </Button>
               <Button href="/app/library" variant="secondary" size="lg">
                 Open your library
@@ -45,89 +43,88 @@ export default function HomePage() {
             </div>
           </div>
 
-          <MessyToClearHero />
+          <LivingProductHero />
         </Container>
       </section>
 
-      {/* 2. Recognition */}
+      {/* 2. The graveyard */}
       <section className="border-b border-[var(--border)]">
         <Container width="wide" className="py-16 sm:py-20">
-          <RecognitionSection />
+          <TheGraveyard />
         </Container>
       </section>
 
-      {/* 3. Problem chooser */}
+      {/* 3. What makes a product alive */}
       <section className="border-b border-[var(--border)]">
         <Container width="wide" className="py-16 sm:py-20">
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Where to start</p>
-          <h2 className="mt-3 max-w-xl font-serif text-[30px] font-semibold leading-tight tracking-tight sm:text-[38px]">
-            What are you trying to make easier?
+          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">What alive means</p>
+          <h2 className="mt-3 max-w-2xl font-serif text-[30px] font-semibold leading-tight tracking-tight sm:text-[38px]">
+            A living product does five things a file never will.
           </h2>
           <div className="mt-10">
-            <ProblemChooser />
+            <LivingAnatomy />
           </div>
         </Container>
       </section>
 
-      {/* 4. Clear next step */}
+      {/* 4. Living is a spectrum */}
       <section className="border-b border-[var(--border)]">
         <Container width="wide" className="py-16 sm:py-20">
-          <ClearNextStepSection />
-        </Container>
-      </section>
-
-      {/* 5. Setup */}
-      <section className="border-b border-[var(--border)]">
-        <Container width="wide" className="py-16 sm:py-20">
-          <SetupSection />
-        </Container>
-      </section>
-
-      {/* 6. Continuity */}
-      <section className="border-b border-[var(--border)]">
-        <Container width="narrow" className="py-16 sm:py-20">
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Cloud state</p>
-          <h2 className="mt-3 font-serif text-[30px] font-semibold leading-tight tracking-tight sm:text-[38px]">
-            Pick up where you left off.
+          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Not all the same</p>
+          <h2 className="mt-3 max-w-2xl font-serif text-[30px] font-semibold leading-tight tracking-tight sm:text-[38px]">
+            Living does not mean needy.
           </h2>
-          <p className="mt-4 max-w-md text-[15px] leading-relaxed text-[var(--muted)]">
-            Your progress is saved to your account, not just one browser. Open the same work on your phone, your
-            laptop, wherever you are next.
+          <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-[var(--muted)]">
+            Some products should check in daily. Others should stay silent until you need them. Every Draftpace
+            product sits somewhere on this range, and each point on it is still alive.
           </p>
           <div className="mt-10">
-            <ContinuityStory />
+            <LivingSpectrum />
           </div>
         </Container>
       </section>
 
-      {/* 7. Adaptation */}
+      {/* 5. The shelf */}
       <section className="border-b border-[var(--border)]">
         <Container width="wide" className="py-16 sm:py-20">
-          <AdaptationSection />
-        </Container>
-      </section>
-
-      {/* 8. Recovery */}
-      <section className="border-b border-[var(--border)]">
-        <Container width="wide" className="py-16 sm:py-20">
-          <RecoverySection />
-        </Container>
-      </section>
-
-      {/* 9. Shop preview */}
-      <section className="border-b border-[var(--border)]">
-        <Container width="wide" className="py-16 sm:py-20">
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Shop</p>
-          <h2 className="mt-3 max-w-xl font-serif text-[30px] font-semibold leading-tight tracking-tight sm:text-[38px]">
-            Find help for the thing you're trying to sort out.
+          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">The shelf</p>
+          <h2 className="mt-3 max-w-2xl font-serif text-[30px] font-semibold leading-tight tracking-tight sm:text-[38px]">
+            One studio. One curated shelf.
           </h2>
+          <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-[var(--muted)]">
+            We make every product ourselves, so the shelf stays small and every piece on it earns its place.
+          </p>
           <div className="mt-10">
             <ShopPreview />
           </div>
         </Container>
       </section>
 
-      {/* 10. Trust */}
+      {/* 6. Owned, not rented */}
+      <section className="border-b border-[var(--border)]">
+        <Container width="narrow" className="py-16 text-center sm:py-20">
+          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Owned, not rented</p>
+          <h2 className="mt-3 font-serif text-[30px] font-semibold leading-tight tracking-tight sm:text-[38px]">
+            You own it. It does not expire, and it does not watch you.
+          </h2>
+          <p className="mx-auto mt-4 max-w-lg text-[15px] leading-relaxed text-[var(--muted)]">
+            A Draftpace product is yours to keep and open whenever you want. No feed, no ads, nothing sold about you.
+            It works on your side, quietly.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-2.5">
+            {["Yours to keep", "Works offline", "No ads, no data resale"].map((chip) => (
+              <span
+                key={chip}
+                className="inline-flex items-center rounded-full border border-[var(--border)] bg-[var(--surface)] px-4 py-2 text-[13px] font-semibold text-[var(--text)] shadow-[var(--shadow-xs)]"
+              >
+                {chip}
+              </span>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* 7. Trust */}
       <section className="border-b border-[var(--border)]">
         <Container width="wide" className="py-16 sm:py-20">
           <TrustSection />
@@ -138,11 +135,11 @@ export default function HomePage() {
       <section>
         <Container width="wide" className="py-16 text-center sm:py-24">
           <h2 className="font-serif text-[28px] font-semibold leading-tight tracking-tight sm:text-[36px]">
-            What would feel easier with a clear next step?
+            Everything in the studio is alive, premium, and yours.
           </h2>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <Button href="/help-with" size="lg" iconRight={<ArrowRight size={16} aria-hidden />}>
-              Find something that helps
+            <Button href="/shop" size="lg" iconRight={<ArrowRight size={16} aria-hidden />}>
+              See what we&rsquo;ve made
             </Button>
             <Link href="/login" className="text-[13px] font-semibold text-[var(--muted)] hover:text-[var(--text)]">
               Already using Draftpace? Sign in

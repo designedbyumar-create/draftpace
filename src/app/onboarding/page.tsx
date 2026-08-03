@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { ArrowRight, Bell, Check, Desktop, Moon, Sun } from "@/design-system/Icon";
 import { supabase } from "@/lib/supabase/client";
 import { ThemeMode, useTheme } from "@/design-system/theme/ThemeProvider";
+import { LogoMark } from "@/design-system/Logo";
 
 const focusAreas = ["Money", "Habits", "Focus", "Productivity", "Health", "Learning"];
 const goals = [
@@ -228,7 +228,7 @@ export default function OnboardingPage() {
     <main className="min-h-screen bg-[var(--app-bg)] px-4 py-6 text-[var(--text)]">
       <div className="mx-auto flex min-h-[calc(100vh-48px)] w-full max-w-md flex-col">
         <div className="flex items-center justify-between">
-          <Image src="/logo/dp-monogram-indigo.svg" alt="Draftpace" width={42} height={42} priority />
+          <LogoMark size={42} />
           <button onClick={skip} className="text-xs font-bold text-[var(--muted)]">
             Skip
           </button>

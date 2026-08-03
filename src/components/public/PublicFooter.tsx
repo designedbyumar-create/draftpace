@@ -1,9 +1,10 @@
-import Image from "next/image";
 import Link from "next/link";
+import { Logo } from "@/design-system/Logo";
+import ThemeToggle from "@/design-system/theme/ThemeToggle";
 
 const HELP_LINKS = [
   { href: "/help-with", label: "What do you need help with?" },
-  { href: "/shop", label: "Shop" },
+  { href: "/shop", label: "Store" },
   { href: "/how-it-works", label: "How it works" },
   { href: "/guides", label: "Guides" },
 ];
@@ -28,10 +29,15 @@ export default function PublicFooter() {
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid gap-10 sm:grid-cols-[1.3fr_1fr_1fr]">
           <div>
-            <Image src="/logo/draftpace-brand-logo.svg" alt="Draftpace" width={128} height={40} />
+            <Logo height={40} />
             <p className="mt-4 max-w-xs text-[13px] leading-6 text-[var(--muted)]">
-              Guided tools for getting organized, deciding, and following through, built around your situation.
+              A studio making living products: apps that remember you, guide your next move, and stay yours to
+              keep.
             </p>
+            <div className="mt-6">
+              <p className="mb-2.5 text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">Appearance</p>
+              <ThemeToggle />
+            </div>
           </div>
 
           <FooterColumn title="Get help" links={HELP_LINKS} />

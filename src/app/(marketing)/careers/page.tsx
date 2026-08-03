@@ -5,7 +5,7 @@ import Container from "@/design-system/Container";
 
 export const metadata: Metadata = {
   title: "Careers",
-  description: "Careers at Draftpace, a small, focused team building guided tools for specific situations.",
+  description: "Careers at Draftpace, a small studio making living products.",
   alternates: { canonical: "/careers" },
 };
 

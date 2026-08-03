@@ -1,10 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import Button from "@/design-system/Button";
+import { Logo } from "@/design-system/Logo";
 import { X } from "@/design-system/Icon";
+import ThemeToggle from "@/design-system/theme/ThemeToggle";
 
 // App-style, product-forward navigation: the Store is the front door, "How it
 // works" is the single education entry, and everything else lives in the
@@ -23,7 +24,7 @@ export default function PublicNav() {
     <header className="sticky top-0 z-40 border-b border-[var(--border)] bg-[var(--bg)]/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
-          <Image src="/logo/draftpace-brand-logo.svg" alt="Draftpace" width={128} height={40} priority />
+          <Logo height={40} />
         </Link>
 
         <nav aria-label="Primary" className="hidden items-center gap-6 lg:flex">
@@ -42,8 +43,8 @@ export default function PublicNav() {
           <Button href="/login" variant="ghost" size="sm">
             Sign in
           </Button>
-          <Button href="/shop" size="sm">
-            Browse the Store
+          <Button href="/signup" size="sm">
+            Get started
           </Button>
         </div>
 
@@ -84,9 +85,13 @@ export default function PublicNav() {
             <Button href="/login" variant="secondary" size="md" fullWidth>
               Sign in
             </Button>
-            <Button href="/shop" size="md" fullWidth>
-              Browse the Store
+            <Button href="/signup" size="md" fullWidth>
+              Get started
             </Button>
+          </div>
+          <div className="mt-3 border-t border-[var(--border)] pt-3">
+            <p className="mb-2.5 text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">Appearance</p>
+            <ThemeToggle />
           </div>
         </div>
       )}

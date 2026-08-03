@@ -125,10 +125,10 @@ describe("primary navigation avoids internal-architecture language", () => {
 });
 
 describe("homepage headline matches the mandated copy", () => {
-  it("uses the exact required H1 and CTA labels", () => {
+  it("uses the studio positioning H1 and library CTA", () => {
     const source = readFileSync(join(process.cwd(), "src/app/(marketing)/page.tsx"), "utf-8");
-    expect(source.includes("Turn messy plans into clear next steps")).toBe(true);
-    expect(source.includes("Find help for what you're trying to do")).toBe(true);
+    expect(source.includes("A studio for living products")).toBe(true);
+    expect(source.includes("living app that remembers you")).toBe(true);
     expect(source.includes("Open your library")).toBe(true);
   });
 });

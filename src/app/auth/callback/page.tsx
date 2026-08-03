@@ -2,13 +2,13 @@
 
 import { Suspense, useEffect, useRef, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import Image from "next/image";
 import { supabase } from "@/lib/supabase/client";
 import { getSupabaseConfigStatus, getAuthUnavailableMessage } from "@/lib/supabase/config";
 import { consumeOAuthRedirect, getSafeRedirect } from "@/components/auth/redirect";
 import { resolveCallbackOutcome } from "@/components/auth/callbackOutcome";
 import Alert from "@/design-system/Alert";
 import Button from "@/design-system/Button";
+import { LogoMark } from "@/design-system/Logo";
 
 export default function AuthCallback() {
   return (
@@ -112,7 +112,7 @@ function AuthCallbackHandler() {
   if (failed) {
     return (
       <div className="flex min-h-screen flex-col items-center justify-center gap-4 bg-[var(--app-bg)] px-4 text-center">
-        <Image src="/logo/dp-monogram-indigo.svg" alt="Draftpace" width={36} height={36} />
+        <LogoMark size={36} />
         <div className="max-w-sm">
           <Alert tone="danger">{message}</Alert>
         </div>
@@ -125,7 +125,7 @@ function AuthCallbackHandler() {
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center gap-4 bg-[var(--app-bg)]">
-      <Image src="/logo/dp-monogram-indigo.svg" alt="Draftpace" width={36} height={36} />
+      <LogoMark size={36} />
       <div className="h-5 w-5 animate-spin rounded-full border-2 border-[var(--primary)] border-t-transparent" />
       <p className="text-[13px] text-[var(--muted)]">Signing you in…</p>
     </div>

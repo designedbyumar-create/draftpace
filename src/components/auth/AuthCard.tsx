@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import { LogoMark } from "@/design-system/Logo";
 
 /**
  * Shared shell for every auth screen — same design system as the platform,
@@ -24,7 +24,7 @@ export default function AuthCard({
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-[var(--app-bg)] px-4 py-10">
       <Link href="/" className="mb-8">
-        <Image src="/logo/dp-monogram-indigo.svg" alt="Draftpace" width={40} height={40} priority />
+        <LogoMark size={40} />
       </Link>
 
       <div className="w-full max-w-sm overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-[var(--shadow-soft)]">

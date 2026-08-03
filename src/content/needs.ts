@@ -1,8 +1,7 @@
 /**
  * Shared content for the need-based pages (/help-with and
- * /help-with/[slug]) and the homepage ProblemChooser. Kept as data so the
- * same six needs stay consistent across every place they appear, without
- * duplicating copy.
+ * /help-with/[slug]). Kept as data so the same six needs stay consistent
+ * across every place they appear, without duplicating copy.
  */
 export type NeedContent = {
   slug: string;

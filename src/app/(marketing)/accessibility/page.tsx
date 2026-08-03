@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const PRACTICES = [
   {
     title: "Keyboard navigation",
-    body: "Every interactive element, including the homepage's problem chooser and messy-to-clear demonstration, works with a keyboard alone, with a visible focus ring on whatever's currently selected.",
+    body: "Every interactive element, including the homepage demonstrations and the How it works walkthrough, works with a keyboard alone, with a visible focus ring on whatever is currently selected.",
   },
   {
     title: "Reduced motion",

@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
   Article,
@@ -17,6 +16,7 @@ import {
   User,
 } from "@/design-system/Icon";
 import ThemeToggle from "@/design-system/theme/ThemeToggle";
+import { LogoMark } from "@/design-system/Logo";
 
 const NAV = [
   { href: "/admin", label: "Overview", Icon: SquaresFour },
@@ -43,7 +43,7 @@ export default function AdminShell({ title, children }: { title: string; childre
     <div className="flex min-h-screen bg-[var(--app-bg)] text-[var(--text)]">
       <aside className="hidden w-[224px] shrink-0 border-r border-[var(--border)] bg-[var(--surface)] px-3 py-4 lg:flex lg:flex-col">
         <Link href="/admin" className="flex items-center gap-2 px-2">
-          <Image src="/logo/dp-mono.svg" alt="Draftpace" width={20} height={20} />
+          <LogoMark size={20} />
           <span className="text-[12px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">Admin</span>
         </Link>
         <nav aria-label="Admin" className="mt-6 space-y-0.5">

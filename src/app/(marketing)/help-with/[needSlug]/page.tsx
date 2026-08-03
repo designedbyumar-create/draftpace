@@ -79,7 +79,7 @@ export default async function HelpWithNeedPage({
 
       {relatedProducts.length > 0 ? (
         <section className="mt-12 border-t border-[var(--border)] pt-8">
-          <h2 className="text-[13px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">Tools for this</h2>
+          <h2 className="text-[13px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">Products for this</h2>
           <div className="mt-4 flex flex-col gap-3">
             {relatedProducts.map((product) => (
               <Link
@@ -96,7 +96,7 @@ export default async function HelpWithNeedPage({
       ) : (
         <section className="mt-12 border-t border-[var(--border)] pt-8">
           <p className="text-[13px] leading-relaxed text-[var(--muted)]">
-            There's no published tool for this specific situation yet. Create an account now, and it'll be ready in
+            There's no product for this specific situation yet. Create an account now, and it will be ready in
             your library the moment there is.
           </p>
         </section>

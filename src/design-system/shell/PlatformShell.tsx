@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -22,6 +21,7 @@ import {
 import { supabase } from "@/lib/supabase/client";
 import ThemeToggle from "@/design-system/theme/ThemeToggle";
 import { useSession } from "@/design-system/shell/SessionProvider";
+import { Logo } from "@/design-system/Logo";
 
 const primaryNav = [
   { label: "Home", href: "/app", Icon: Home },
@@ -79,13 +79,7 @@ export default function PlatformShell({
       {/* Desktop rail */}
       <aside className="hidden w-[220px] shrink-0 border-r border-[var(--border)] bg-[var(--surface)] px-3 py-4 lg:flex lg:flex-col xl:w-[248px] xl:px-4 xl:py-5">
         <Link href="/app" className="flex items-center gap-3 px-2">
-          <Image
-            src="/logo/draftpace-brand-logo.svg"
-            alt="Draftpace"
-            width={144}
-            height={45}
-            priority
-          />
+          <Logo height={44} />
         </Link>
 
         <nav aria-label="Platform" className="mt-7 space-y-0.5">

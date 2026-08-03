@@ -36,7 +36,7 @@ export default function TrustPage() {
     <Container width="narrow" className="pb-24 pt-16 sm:pt-20">
       <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--primary)]">Trust</p>
       <h1 className="mt-3 font-serif text-[34px] font-semibold leading-tight tracking-tight sm:text-[44px]">
-        Your plans can be personal. The way they're handled should be clear.
+        A living product is personal. The way it is handled should be clear.
       </h1>
       <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-[var(--muted)]">
         This page is the plain-language version. The{" "}

@@ -12,26 +12,24 @@ export default function AboutPage() {
     <Container width="narrow" className="pb-24 pt-16 sm:pt-20">
       <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--primary)]">About</p>
       <h1 className="mt-3 font-serif text-[34px] font-semibold leading-tight tracking-tight sm:text-[44px]">
-        We got tired of rebuilding the same plan from scratch.
+        We wanted the things we buy to stay alive.
       </h1>
 
       <div className="mt-10 flex flex-col gap-6 text-[15px] leading-relaxed text-[var(--text)]">
         <p>
-          Draftpace started from a specific frustration. Every time something got complicated, moving, planning an
-          event, working through a decision, we'd cobble together a notes app, a spreadsheet, and a browser tab that
-          stayed open for three weeks because closing it felt risky. It worked, barely, until life got busy and the
-          whole thing fell apart. Picking it back up felt like more effort than starting over.
+          Draftpace started from a folder we all recognized: a budget spreadsheet, a course we meant to finish, a
+          planner that looked perfect and did nothing once it was downloaded. Each one promised to change something,
+          then went quiet, because a file cannot notice, remind, or adjust on its own.
         </p>
         <p>
-          We didn't want another productivity app that assumes you already have a system and just needs a nicer
-          interface. We wanted something that starts from the actual situation you're in, remembers it, and tells
-          you what to do next without a wall of overdue tasks waiting to make you feel behind.
+          We did not want to make one more of those. Not a template you print, and not an app you rent and forget
+          you are paying for. We wanted to buy something that behaves like it is on your side: it remembers you, it
+          points you to the next thing, and it is still yours years later.
         </p>
         <p>
-          That's what we're building. Guided tools for specific, recognizable situations, not one general-purpose
-          dashboard pretending to handle everything. Each one is built around the problem it solves. What they share
-          is one account, one place your progress lives, and a consistent promise: you can leave and come back
-          without losing anything or starting over.
+          So we started a studio to make exactly that. We call them living products. Each one is built around a
+          single real problem and has its own world, and every one shares the same promise: it stays alive the whole
+          time you own it, and you can leave and come back without losing anything or starting over.
         </p>
       </div>
 

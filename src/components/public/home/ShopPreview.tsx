@@ -10,7 +10,7 @@ export default function ShopPreview() {
     return (
       <div className="rounded-2xl border border-dashed border-[var(--border-strong)] p-8 text-center sm:p-10">
         <p className="text-[15px] leading-relaxed text-[var(--muted)]">
-          Nothing is published in the Shop yet. The first guided tools are still being built, and this page will
+          Nothing is published in the store yet. The first products are still being made, and this page will
           show them the moment they're ready.
         </p>
         <Link href="/help-with" className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--primary)] hover:underline">
@@ -62,7 +62,7 @@ export default function ShopPreview() {
       )}
 
       <Link href="/shop" className="self-start text-[13px] font-semibold text-[var(--primary)] hover:underline">
-        Browse the Shop
+        Browse the store
       </Link>
     </div>
   );

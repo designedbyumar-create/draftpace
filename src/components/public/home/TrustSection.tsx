@@ -12,7 +12,7 @@ export default function TrustSection() {
       <div>
         <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Trust</p>
         <h2 className="mt-3 font-serif text-[30px] font-semibold leading-tight tracking-tight sm:text-[38px]">
-          Your plans can be personal. The way they are handled should be clear.
+          A living product is personal. The way it is handled should be clear.
         </h2>
         <Link href="/trust" className="mt-4 inline-block text-[13px] font-semibold text-[var(--primary)] hover:underline">
           Read the full trust page
