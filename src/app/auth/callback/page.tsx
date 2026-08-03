@@ -1,11 +1,12 @@
 "use client";
 
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { supabase } from "@/lib/supabase/client";
 import { getSupabaseConfigStatus, getAuthUnavailableMessage } from "@/lib/supabase/config";
 import { consumeOAuthRedirect, getSafeRedirect } from "@/components/auth/redirect";
+import { resolveCallbackOutcome } from "@/components/auth/callbackOutcome";
 import Alert from "@/design-system/Alert";
 import Button from "@/design-system/Button";
 
@@ -23,14 +24,32 @@ export default function AuthCallback() {
   );
 }
 
+/**
+ * The single authoritative OAuth code exchange. detectSessionInUrl is disabled
+ * on the browser client (src/lib/supabase/client.ts), so the code is exchanged
+ * exactly once here. The real session, not the exchange call's return value, is
+ * the source of truth: if a valid session exists we always proceed, so a
+ * successful sign-in can never render as a failure. A human error is shown only
+ * when no session could be established.
+ */
 function AuthCallbackHandler() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [failed, setFailed] = useState(false);
   const [message, setMessage] = useState("Sign-in didn't complete. Please try again.");
+  const ran = useRef(false);
 
   useEffect(() => {
-    const handleCallback = async () => {
+    if (ran.current) return;
+    ran.current = true;
+
+    const clearAuthParams = () => {
+      if (typeof window !== "undefined") {
+        window.history.replaceState({}, "", window.location.pathname);
+      }
+    };
+
+    const run = async () => {
       const configStatus = getSupabaseConfigStatus();
       if (!configStatus.valid) {
         setMessage(getAuthUnavailableMessage(configStatus));
@@ -39,36 +58,55 @@ function AuthCallbackHandler() {
       }
 
       const code = searchParams.get("code");
-      // The OAuth redirectTo sent to Supabase can't carry its own query
-      // string (see components/auth/redirect.ts), so the intended next path
-      // comes back via sessionStorage instead of the URL for that flow. The
-      // query param is kept as a fallback for any other flow that lands here.
-      const redirectTo = getSafeRedirect(consumeOAuthRedirect() ?? searchParams.get("redirectTo"), "/app/library");
+      const providerError = searchParams.get("error_description") || searchParams.get("error");
+      // OAuth intent rides in sessionStorage (the redirect_to sent to Supabase
+      // must match the allow list exactly and can't carry its own query). The
+      // query param is a fallback for any non-OAuth flow that lands here.
+      const redirectTo = getSafeRedirect(consumeOAuthRedirect() ?? searchParams.get("redirectTo"), "/app");
 
       try {
+        // The one and only exchange. Its returned error is not treated as fatal
+        // on its own; the getSession check below is authoritative.
         if (code) {
-          const { error } = await supabase.auth.exchangeCodeForSession(code);
-          if (error) {
-            setFailed(true);
-            return;
-          }
+          await supabase.auth.exchangeCodeForSession(code);
         }
 
         const {
           data: { session },
         } = await supabase.auth.getSession();
 
-        if (session) {
+        if (resolveCallbackOutcome(Boolean(session)) === "redirect") {
+          // Success: router.replace navigates away, which also clears the code.
           router.replace(redirectTo);
-        } else {
-          setFailed(true);
+          return;
         }
+
+        // No session established. If the provider returned an explicit error,
+        // that is the reason; either way, this is a genuine failure.
+        clearAuthParams();
+        if (providerError) setMessage("Sign-in didn't complete. Please try again.");
+        setFailed(true);
       } catch {
+        // Network or unexpected error: still verify a session may have been set
+        // before declaring failure, so we never fail after a real success.
+        try {
+          const {
+            data: { session },
+          } = await supabase.auth.getSession();
+          if (session) {
+            router.replace(redirectTo);
+            return;
+          }
+        } catch {
+          // fall through to failure
+        }
+        clearAuthParams();
         setMessage("Couldn't reach the account service. Check your connection and try again.");
         setFailed(true);
       }
     };
-    handleCallback();
+
+    run();
   }, [router, searchParams]);
 
   if (failed) {

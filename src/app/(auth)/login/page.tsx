@@ -42,11 +42,17 @@ function LoginForm() {
     try {
       const { error: signInError } = await supabase.auth.signInWithPassword({ email, password });
       if (signInError) {
-        setError(
-          signInError.message?.toLowerCase().includes("fetch") || signInError.status === undefined
-            ? "Couldn't reach the account service. Check your connection and try again."
-            : "Wrong email or password. Double check and try again."
-        );
+        const detail = signInError.message?.toLowerCase() ?? "";
+        if (detail.includes("not confirmed")) {
+          // A pre-existing account created before auto-confirm was enabled can
+          // still be unconfirmed; give an accurate, human error rather than the
+          // misleading "wrong password".
+          setError("This account's email hasn't been confirmed yet. Contact support to confirm it, then try again.");
+        } else if (detail.includes("fetch") || signInError.status === undefined) {
+          setError("Couldn't reach the account service. Check your connection and try again.");
+        } else {
+          setError("Wrong email or password. Double check and try again.");
+        }
         return;
       }
       router.push(redirectTo);

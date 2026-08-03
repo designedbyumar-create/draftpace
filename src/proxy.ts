@@ -24,6 +24,7 @@ function redirectTo(request: NextRequest, pathname: string, search?: Record<stri
 export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const isAdminPath = pathname === "/admin" || pathname.startsWith("/admin/");
+  const isAuthPage = pathname === "/login" || pathname === "/signup";
 
   if (isAdminPath && !isAdminEnabled()) {
     return redirectTo(request, "/");
@@ -52,6 +53,19 @@ export async function proxy(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
+  // Already signed in and visiting an auth form: send them to their intended
+  // destination (or the app home) instead of presenting another sign-in form.
+  if (isAuthPage) {
+    if (user) {
+      const requested = request.nextUrl.searchParams.get("redirectTo");
+      const dest = requested && requested.startsWith("/") && !requested.startsWith("//") ? requested : "/app";
+      return redirectTo(request, dest);
+    }
+    return response;
+  }
+
+  // Protected /app and /admin: signed-out visitors go to login with their
+  // intended destination preserved.
   if (!user) {
     return redirectTo(request, "/login", { redirectTo: pathname });
   }
@@ -60,5 +74,5 @@ export async function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/app/:path*", "/admin/:path*"],
+  matcher: ["/app/:path*", "/admin/:path*", "/login", "/signup"],
 };
