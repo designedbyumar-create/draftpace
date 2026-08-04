@@ -10,7 +10,7 @@ import EmptyState from "@/design-system/EmptyState";
 import { Download, Wallet } from "@/design-system/Icon";
 import { useInstanceState } from "./useInstanceState";
 import ThemeScope from "./ThemeScope";
-import { SaveStatusIndicator } from "./shared";
+import { LoadErrorState, SaveStatusIndicator } from "./shared";
 import { setProductInstanceLifecycle } from "../data";
 import { createEmptyState } from "../state";
 
@@ -19,15 +19,22 @@ const CHECK_IN_DAYS = ["sunday", "monday", "tuesday", "wednesday", "thursday", "
 
 export default function SettingsModule({ definition }: { definition: ProductDefinition }) {
   const router = useRouter();
-  const { status, instanceId, state, saveStatus, setState } = useInstanceState(definition.slug);
+  const { status, instanceId, state, saveStatus, setState, forceSave, retry } = useInstanceState(definition.slug);
   const [confirmingReset, setConfirmingReset] = useState(false);
   const [pausing, setPausing] = useState(false);
+  const [pauseFailed, setPauseFailed] = useState(false);
+  const [resetting, setResetting] = useState(false);
+  const [resetFailed, setResetFailed] = useState(false);
 
   if (status === "loading") {
     return <p className="text-[13px] text-[var(--muted)]">Loading settings…</p>;
   }
 
-  if (status === "no-instance" || status === "error" || !state || !instanceId) {
+  if (status === "error") {
+    return <LoadErrorState onRetry={retry} />;
+  }
+
+  if (status === "no-instance" || !state || !instanceId) {
     return (
       <EmptyState
         icon={Wallet}
@@ -56,14 +63,40 @@ export default function SettingsModule({ definition }: { definition: ProductDefi
   async function pauseProduct() {
     if (!instanceId) return;
     setPausing(true);
-    await setProductInstanceLifecycle(instanceId, "paused");
-    setPausing(false);
+    setPauseFailed(false);
+    // Only navigates away once the lifecycle change is confirmed — the RPC
+    // already reports { ok, message }; the previous version never checked
+    // it and would send the user to Library even if pausing had failed. See
+    // the MMR reliability pass, 2026-08-04.
+    const result = await setProductInstanceLifecycle(instanceId, "paused");
+    if (!result.ok) {
+      setPausing(false);
+      setPauseFailed(true);
+      return;
+    }
     router.push("/app/library");
   }
 
-  function resetCurrentMonth() {
+  async function resetCurrentMonth() {
     if (!state) return;
-    setState(createEmptyState({ cycleKey: state.cycle.cycleKey, cycleLabel: state.cycle.label, currency: state.currency }));
+    setResetting(true);
+    setResetFailed(false);
+    const emptyState = createEmptyState({
+      cycleKey: state.cycle.cycleKey,
+      cycleLabel: state.cycle.label,
+      currency: state.currency,
+    });
+    setState(emptyState);
+    // Navigates to Setup only once the reset is confirmed saved. A reset is
+    // explicitly irreversible, so leaving before the save landed risked a
+    // quick refresh silently reviving the "cleared" month. See the MMR
+    // reliability pass, 2026-08-04.
+    const ok = await forceSave();
+    if (!ok) {
+      setResetting(false);
+      setResetFailed(true);
+      return;
+    }
     setConfirmingReset(false);
     router.push(`/app/products/${definition.slug}/setup`);
   }
@@ -161,9 +194,14 @@ export default function SettingsModule({ definition }: { definition: ProductDefi
           <p className="mt-1 text-[12px] leading-relaxed text-[var(--muted)]">
             Keeps everything saved without reminders. You can pick it back up anytime from your library.
           </p>
+          {pauseFailed && (
+            <p className="mt-1.5 text-[12px] font-semibold text-[var(--danger)]">
+              Couldn&apos;t pause. Nothing changed, check your connection and try again.
+            </p>
+          )}
         </div>
         <Button variant="secondary" onClick={pauseProduct} disabled={pausing}>
-          {pausing ? "Pausing…" : "Pause"}
+          {pausing ? "Pausing…" : pauseFailed ? "Try again" : "Pause"}
         </Button>
       </Surface>
 
@@ -173,12 +211,17 @@ export default function SettingsModule({ definition }: { definition: ProductDefi
           Clears everything you&apos;ve entered for {state.cycle.label} and sends you back to setup. This cannot be
           undone.
         </p>
+        {resetFailed && (
+          <p className="mt-1.5 text-[12px] font-semibold text-[var(--danger)]">
+            Couldn&apos;t reset. Nothing was cleared, check your connection and try again.
+          </p>
+        )}
         {confirmingReset ? (
           <div className="mt-3 flex gap-2">
-            <Button variant="danger" onClick={resetCurrentMonth}>
-              Yes, reset {state.cycle.label}
+            <Button variant="danger" onClick={resetCurrentMonth} disabled={resetting}>
+              {resetting ? "Resetting…" : `Yes, reset ${state.cycle.label}`}
             </Button>
-            <Button variant="ghost" onClick={() => setConfirmingReset(false)}>
+            <Button variant="ghost" onClick={() => setConfirmingReset(false)} disabled={resetting}>
               Cancel
             </Button>
           </div>

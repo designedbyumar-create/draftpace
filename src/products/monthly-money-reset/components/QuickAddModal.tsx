@@ -25,7 +25,8 @@ export default function QuickAddModal({
   onClose,
 }: {
   state: MonthlyMoneyResetState;
-  onApply: (next: MonthlyMoneyResetState) => void;
+  /** Returns whether the save actually succeeded — the modal only closes on true. */
+  onApply: (next: MonthlyMoneyResetState) => Promise<boolean>;
   onClose: () => void;
 }) {
   const [type, setType] = useState<QuickAddType>("spending");
@@ -35,6 +36,7 @@ export default function QuickAddModal({
   const [selectedBillId, setSelectedBillId] = useState("");
   const [selectedGroupId, setSelectedGroupId] = useState("");
   const [submitting, setSubmitting] = useState(false);
+  const [saveFailed, setSaveFailed] = useState(false);
   const [dedupeKey] = useState(() => generateId("submit"));
   const closeButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -143,7 +145,18 @@ export default function QuickAddModal({
     const next = buildNextState();
     if (!next) return;
     setSubmitting(true);
-    onApply(next);
+    setSaveFailed(false);
+    // The dialog only closes once the save is confirmed — closing right
+    // after an optimistic, still-debounced update left a real gap where a
+    // quick refresh lost the entry entirely. See the MMR reliability pass,
+    // 2026-08-04.
+    const ok = await onApply(next);
+    if (ok) {
+      onClose();
+      return;
+    }
+    setSubmitting(false);
+    setSaveFailed(true);
   }
 
   return (
@@ -277,8 +290,14 @@ export default function QuickAddModal({
             <p className="text-[12px] leading-relaxed text-[var(--text)]">{consequenceText}</p>
           </div>
 
+          {saveFailed && (
+            <p className="text-[12px] font-semibold text-[var(--danger)]">
+              Couldn&apos;t save. Your entry is still here, check your connection and try again.
+            </p>
+          )}
+
           <Button type="submit" size="lg" fullWidth disabled={submitting || !preview}>
-            {submitting ? "Saving…" : "Save and update my month"}
+            {submitting ? "Saving…" : saveFailed ? "Try again" : "Save and update my month"}
           </Button>
         </form>
       </div>

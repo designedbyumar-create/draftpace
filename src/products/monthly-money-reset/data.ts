@@ -48,8 +48,30 @@ export function interpretLoadResponse(
   }
 }
 
-/** Finds the instance id for a given product+cycle, or null if none exists yet. */
-export async function findProductInstanceId(productSlug: string, cycleKey: string): Promise<string | null> {
+export type FindInstanceResult =
+  | { status: "found"; id: string }
+  | { status: "not-found" }
+  | { status: "error"; message: string };
+
+/**
+ * Shapes a raw product_instances select response — pure and unit-testable
+ * without a network call. A query error and a genuine zero-row result must
+ * stay distinguishable: collapsing both into the same "not found" value is
+ * exactly what makes a transient read failure indistinguishable from the
+ * user never having owned the product (see the P0 stability incident,
+ * 2026-08-04 — this was the mechanism behind the false "not set up" screen).
+ */
+export function interpretFindInstanceResponse(
+  data: { id: string } | null,
+  error: { message: string } | null
+): FindInstanceResult {
+  if (error) return { status: "error", message: error.message };
+  if (!data) return { status: "not-found" };
+  return { status: "found", id: data.id };
+}
+
+/** Finds the instance id for a given product+cycle. */
+export async function findProductInstanceId(productSlug: string, cycleKey: string): Promise<FindInstanceResult> {
   const { data, error } = await supabase
     .from("product_instances")
     .select("id")
@@ -57,8 +79,7 @@ export async function findProductInstanceId(productSlug: string, cycleKey: strin
     .eq("cycle_key", cycleKey)
     .maybeSingle();
 
-  if (error || !data) return null;
-  return data.id;
+  return interpretFindInstanceResponse(data, error);
 }
 
 export async function loadMonthlyMoneyResetState(instanceId: string): Promise<LoadStateResult> {

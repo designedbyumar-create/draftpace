@@ -174,3 +174,45 @@ describe("computeSafeToSpend", () => {
     expect(applied).toHaveLength(2);
   });
 });
+
+/**
+ * Regression coverage for the MMR reliability pass, 2026-08-04: SetupModule's
+ * addIncome()/addBill()/addGroup() create an entry with an empty name and a
+ * zero amount the instant "Add" is clicked, before the user fills anything
+ * in. This locks in that such a draft entry is inert to every calculation
+ * until it actually has a real amount — a user must be able to add a row,
+ * leave it blank, and navigate away without the Safe-to-Spend figure (or
+ * anything derived from it) changing at all.
+ */
+describe("computeSafeToSpend: draft rows are inert until given a real amount", () => {
+  it("a draft (blank name, zero amount) bill matches the result with no bill at all", () => {
+    const withoutDraft = computeSafeToSpend(baseInput());
+    const draftBill = bill({ name: "", amountMinorUnits: 0, protected: true, status: "upcoming" });
+    const withDraft = computeSafeToSpend(baseInput({ bills: [draftBill] }));
+    expect(withDraft).toEqual(withoutDraft);
+  });
+
+  it("a draft (blank name, zero amount) income entry matches the result with no income at all", () => {
+    const withoutDraft = computeSafeToSpend(baseInput());
+    const draftIncome = income({ name: "", amountMinorUnits: 0, status: "received" });
+    const withDraft = computeSafeToSpend(baseInput({ income: [draftIncome] }));
+    expect(withDraft).toEqual(withoutDraft);
+  });
+
+  it("a paid draft bill (zero amount) does not change billPayments", () => {
+    const withoutDraft = computeSafeToSpend(baseInput());
+    const draftBill = bill({ name: "", amountMinorUnits: 0, status: "paid" });
+    const withDraft = computeSafeToSpend(baseInput({ bills: [draftBill] }));
+    expect(withDraft.billPayments).toBe(withoutDraft.billPayments);
+    expect(withDraft.safeToSpend).toBe(withoutDraft.safeToSpend);
+  });
+
+  it("only becomes meaningful once a real amount is entered", () => {
+    const draftBill = bill({ name: "", amountMinorUnits: 0, status: "upcoming", protected: true });
+    const filledInBill = { ...draftBill, name: "Rent", amountMinorUnits: 150_00 };
+    const withDraft = computeSafeToSpend(baseInput({ bills: [draftBill] }));
+    const withFilledIn = computeSafeToSpend(baseInput({ bills: [filledInBill] }));
+    expect(withDraft.protectedUnpaidBills).toBe(0);
+    expect(withFilledIn.protectedUnpaidBills).toBe(150_00);
+  });
+});

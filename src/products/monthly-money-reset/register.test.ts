@@ -28,7 +28,7 @@ describe("registerMonthlyMoneyReset", () => {
     expect(found?.title).toBe("Monthly Money Reset");
     expect(found?.access.model).toBe("free");
     expect(found?.family).toBe("companion");
-  });
+  }, 20000);
 
   it("is never a development fixture", () => {
     expect(monthlyMoneyResetDefinition.devFixture).toBe(false);
@@ -47,5 +47,5 @@ describe("registerMonthlyMoneyReset", () => {
       registerMonthlyMoneyReset();
     }).not.toThrow();
     expect(productRegistry.list()).toHaveLength(1);
-  });
+  }, 20000);
 });

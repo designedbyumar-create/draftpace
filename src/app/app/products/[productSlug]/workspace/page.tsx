@@ -1,5 +1,7 @@
 import { notFound } from "next/navigation";
 import { productRegistry } from "@/product-framework/registry";
+import { registerDevFixtures } from "@/product-framework/fixtures";
+import { registerMonthlyMoneyReset } from "@/products/monthly-money-reset/register";
 import { resolveWorkspaceLabel } from "@/product-framework/navigationResolver";
 import { resolveProductModule } from "@/product-framework/moduleRegistry";
 import {
@@ -44,6 +46,12 @@ export default async function ProductWorkspacePage({
 }: {
   params: Promise<{ productSlug: string }>;
 }) {
+  // Idempotent, cheap — called here directly rather than assumed to have
+  // already run via the outer /app layout, so this segment's own module
+  // resolution can never see an under-registered registry.
+  registerDevFixtures();
+  registerMonthlyMoneyReset();
+
   const { productSlug } = await params;
   const definition = productRegistry.getBySlug(productSlug);
   if (!definition) notFound();

@@ -21,18 +21,29 @@ export type SaveStatus = "idle" | "saving" | "saved" | "conflict" | "error";
  * persistNow() never closes over a stale value — see
  * docs/products/MONTHLY-MONEY-RESET-STATES.md for the concurrency contract
  * this implements.
+ *
+ * "no-instance" means the product genuinely has no row for this user/cycle —
+ * the correct, honest "not set up yet" state. "error" means a read failed
+ * (network, a query error, or state that failed schema validation) and must
+ * never be presented the same way: it is recoverable via retry(), and the
+ * caller must render an explicit "could not load" state, not "not owned" —
+ * see the P0 stability incident, 2026-08-04.
  */
 export function useInstanceState(productSlug: string) {
   const [status, setStatus] = useState<InstanceStatus>("loading");
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [instanceId, setInstanceId] = useState<string | null>(null);
   const [state, setStateInternal] = useState<MonthlyMoneyResetState | null>(null);
   const [saveStatus, setSaveStatus] = useState<SaveStatus>("idle");
+  const [retryToken, setRetryToken] = useState(0);
   const revisionRef = useRef(1);
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const pendingRef = useRef<MonthlyMoneyResetState | null>(null);
 
   useEffect(() => {
     let cancelled = false;
+    setStatus("loading");
+    setErrorMessage(null);
     (async () => {
       // The @supabase/ssr browser client hydrates its session from cookies
       // asynchronously. Awaiting getSession() guarantees the client is
@@ -43,14 +54,19 @@ export function useInstanceState(productSlug: string) {
       await supabase.auth.getSession();
       if (cancelled) return;
       const cycleKey = currentCycleKey();
-      const id = await findProductInstanceId(productSlug, cycleKey);
+      const found = await findProductInstanceId(productSlug, cycleKey);
       if (cancelled) return;
-      if (!id) {
+      if (found.status === "error") {
+        setErrorMessage(found.message);
+        setStatus("error");
+        return;
+      }
+      if (found.status === "not-found") {
         setStatus("no-instance");
         return;
       }
-      setInstanceId(id);
-      const result = await loadMonthlyMoneyResetState(id);
+      setInstanceId(found.id);
+      const result = await loadMonthlyMoneyResetState(found.id);
       if (cancelled) return;
       if (result.status === "ok") {
         // An instance created by grant_free_product starts with state: '{}'
@@ -63,19 +79,36 @@ export function useInstanceState(productSlug: string) {
         revisionRef.current = result.revision;
         setStatus("ready");
       } else if (result.status === "not-found") {
+        // The instance row exists but its state row does not (should not
+        // normally happen — grant_free_product creates both together — but
+        // this is a genuine absence, not a read failure, so it is honest to
+        // treat it the same as no-instance rather than as an error).
         setStatus("no-instance");
       } else {
+        setErrorMessage(result.message);
         setStatus("error");
       }
     })();
     return () => {
       cancelled = true;
     };
-  }, [productSlug]);
+  }, [productSlug, retryToken]);
 
+  /** Re-runs the load from scratch — the Retry action on the error state. */
+  const retry = useCallback(() => {
+    setRetryToken((token) => token + 1);
+  }, []);
+
+  /**
+   * Returns whether the save actually succeeded. A conflict is reported as
+   * not-ok too: the caller's in-memory `next` was not the version persisted,
+   * so any navigation gated on "my edits are safely saved" must not proceed
+   * on a conflict either, even though the hook has already reconciled local
+   * state to the server's authoritative copy.
+   */
   const persistNow = useCallback(
-    async (next: MonthlyMoneyResetState) => {
-      if (!instanceId) return;
+    async (next: MonthlyMoneyResetState): Promise<boolean> => {
+      if (!instanceId) return false;
       setSaveStatus("saving");
       const breakdown = computeSafeToSpend(next);
       const result = await saveMonthlyMoneyResetState({
@@ -90,13 +123,16 @@ export function useInstanceState(productSlug: string) {
       if (result.status === "ok") {
         revisionRef.current = result.revision;
         setSaveStatus("saved");
-      } else if (result.status === "conflict") {
+        return true;
+      }
+      if (result.status === "conflict") {
         revisionRef.current = result.revision;
         setStateInternal(result.state);
         setSaveStatus("conflict");
-      } else {
-        setSaveStatus("error");
+        return false;
       }
+      setSaveStatus("error");
+      return false;
     },
     [instanceId]
   );
@@ -114,12 +150,41 @@ export function useInstanceState(productSlug: string) {
     [persistNow]
   );
 
-  /** Flushes any pending debounced save immediately — used before navigating away from a step. */
-  const forceSave = useCallback(() => {
+  /**
+   * Flushes any pending debounced save immediately and reports whether it
+   * succeeded — used before navigating away from a step. Callers that
+   * navigate on completion (e.g. finishing Setup) must check the result and
+   * stay put, with the entered values preserved locally, on failure. See the
+   * P0 stability incident, 2026-08-04: navigating unconditionally after a
+   * failed save is how a real save failure presented as lost progress.
+   */
+  const forceSave = useCallback((): Promise<boolean> => {
     if (debounceRef.current) clearTimeout(debounceRef.current);
     if (pendingRef.current) return persistNow(pendingRef.current);
-    return Promise.resolve();
+    return Promise.resolve(true);
   }, [persistNow]);
 
-  return { status, instanceId, state, saveStatus, setState, forceSave };
+  /**
+   * Saves `next` and only updates local state once the save is confirmed —
+   * unlike setState(), which applies its update optimistically before the
+   * write lands. For a consequential, one-shot transition like closing a
+   * cycle, applying the "closed" state optimistically and then failing to
+   * persist it left the UI looking closed (hiding the retry control) even
+   * though nothing was actually saved. See the MMR reliability pass,
+   * 2026-08-04.
+   */
+  const saveDirectly = useCallback(
+    async (next: MonthlyMoneyResetState): Promise<boolean> => {
+      if (debounceRef.current) clearTimeout(debounceRef.current);
+      const ok = await persistNow(next);
+      if (ok) {
+        setStateInternal(next);
+        pendingRef.current = null;
+      }
+      return ok;
+    },
+    [persistNow]
+  );
+
+  return { status, errorMessage, instanceId, state, saveStatus, setState, forceSave, saveDirectly, retry };
 }

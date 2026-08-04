@@ -22,7 +22,8 @@ export default function CheckInModal({
   onClose,
 }: {
   state: MonthlyMoneyResetState;
-  onApply: (next: MonthlyMoneyResetState) => void;
+  /** Returns whether the save actually succeeded — the modal only closes on true. */
+  onApply: (next: MonthlyMoneyResetState) => Promise<boolean>;
   onClose: () => void;
 }) {
   const [answers, setAnswers] = useState<Record<string, boolean>>({
@@ -32,6 +33,9 @@ export default function CheckInModal({
     reserveAdjusted: false,
     feelsAccurate: true,
   });
+  const [submitting, setSubmitting] = useState(false);
+  const [saveFailed, setSaveFailed] = useState(false);
+  const [dedupeKey] = useState(() => generateId("checkin-submit"));
   const closeButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -43,7 +47,11 @@ export default function CheckInModal({
     return () => document.removeEventListener("keydown", onKeyDown);
   }, [onClose]);
 
-  function handleFinish() {
+  async function handleFinish() {
+    if (submitting) return;
+    // Guards a double-tap or a retried submission from adding two check-ins,
+    // the same dedupeKey contract QuickAddModal uses for activity entries.
+    if (state.checkIns.some((entry) => entry.dedupeKey === dedupeKey)) return;
     const now = new Date().toISOString();
     const breakdown = computeSafeToSpend(state);
     const checkIn: CheckIn = {
@@ -55,12 +63,22 @@ export default function CheckInModal({
       reserveAdjusted: answers.reserveAdjusted,
       feelsAccurate: answers.feelsAccurate,
       safeToSpendAtMinorUnits: breakdown.safeToSpend,
+      dedupeKey,
     };
-    onApply({
+    setSubmitting(true);
+    setSaveFailed(false);
+    // Only closes once the save is confirmed — see QuickAddModal for why.
+    const ok = await onApply({
       ...state,
       checkIns: [...state.checkIns, checkIn],
       lastMeaningfulActivityAt: now,
     });
+    if (ok) {
+      onClose();
+      return;
+    }
+    setSubmitting(false);
+    setSaveFailed(true);
   }
 
   const somethingChanged = answers.incomeChanged || answers.billsChanged || answers.spendingMissing || answers.reserveAdjusted;
@@ -114,8 +132,14 @@ export default function CheckInModal({
           </p>
         )}
 
-        <Button size="lg" fullWidth className="mt-5" onClick={handleFinish}>
-          Finish check-in
+        {saveFailed && (
+          <p className="mt-4 text-[12px] font-semibold text-[var(--danger)]">
+            Couldn&apos;t save. Your answers are still here, check your connection and try again.
+          </p>
+        )}
+
+        <Button size="lg" fullWidth className="mt-5" onClick={handleFinish} disabled={submitting}>
+          {submitting ? "Saving…" : saveFailed ? "Try again" : "Finish check-in"}
         </Button>
       </div>
     </div>

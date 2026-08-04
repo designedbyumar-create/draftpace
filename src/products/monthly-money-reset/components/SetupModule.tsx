@@ -9,7 +9,7 @@ import Toggle from "@/design-system/Toggle";
 import EmptyState from "@/design-system/EmptyState";
 import { ArrowLeft, ArrowRight, Check, Plus, Trash2, Wallet } from "@/design-system/Icon";
 import { useInstanceState } from "./useInstanceState";
-import { AmountField, SaveStatusIndicator, generateId } from "./shared";
+import { AmountField, LoadErrorState, SaveStatusIndicator, generateId } from "./shared";
 import ThemeScope from "./ThemeScope";
 import { computeSafeToSpend } from "../calculations";
 import { formatCurrency } from "../currency";
@@ -29,13 +29,17 @@ const CHECK_IN_DAYS = ["sunday", "monday", "tuesday", "wednesday", "thursday", "
 
 export default function SetupModule({ definition }: { definition: ProductDefinition }) {
   const router = useRouter();
-  const { status, state, saveStatus, setState, forceSave } = useInstanceState(definition.slug);
+  const { status, state, saveStatus, setState, forceSave, retry } = useInstanceState(definition.slug);
 
   if (status === "loading") {
     return <p className="text-[13px] text-[var(--muted)]">Loading your setup…</p>;
   }
 
-  if (status === "no-instance" || status === "error" || !state) {
+  if (status === "error") {
+    return <LoadErrorState onRetry={retry} />;
+  }
+
+  if (status === "no-instance" || !state) {
     return (
       <EmptyState
         icon={Wallet}
@@ -58,9 +62,18 @@ export default function SetupModule({ definition }: { definition: ProductDefinit
     setState({ ...state, setup: { ...state.setup, currentStep: step } });
   }
 
+  /**
+   * Navigation only ever follows a confirmed-saved write. If a save fails
+   * (network blip, a conflict), forceSave() reports false, the entered
+   * values stay exactly as typed in local state, and the same button is the
+   * retry: clicking Continue/Finish setup again re-attempts the save. See
+   * the P0 stability incident, 2026-08-04 — navigating regardless of save
+   * outcome is how a genuine save failure presented as lost progress.
+   */
   async function handleContinue() {
     if (!state) return;
-    await forceSave();
+    const stepSaved = await forceSave();
+    if (!stepSaved) return;
     if (currentStep < 5) {
       goToStep(currentStep + 1);
     } else {
@@ -69,7 +82,8 @@ export default function SetupModule({ definition }: { definition: ProductDefinit
         setup: { ...state.setup, completedAt: new Date().toISOString(), stepsCompleted: [1, 2, 3, 4, 5] },
       };
       setState(next);
-      await forceSave();
+      const finished = await forceSave();
+      if (!finished) return;
       router.push(`/app/products/${definition.slug}/workspace`);
     }
   }

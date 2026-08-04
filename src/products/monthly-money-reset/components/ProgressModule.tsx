@@ -5,18 +5,23 @@ import Button from "@/design-system/Button";
 import EmptyState from "@/design-system/EmptyState";
 import { ChartBar, Wallet } from "@/design-system/Icon";
 import { useInstanceState } from "./useInstanceState";
+import { LoadErrorState } from "./shared";
 import ThemeScope from "./ThemeScope";
 import { computeSafeToSpend } from "../calculations";
 import { formatCurrency } from "../currency";
 
 export default function ProgressModule({ definition }: { definition: ProductDefinition }) {
-  const { status, state } = useInstanceState(definition.slug);
+  const { status, state, retry } = useInstanceState(definition.slug);
 
   if (status === "loading") {
     return <p className="text-[13px] text-[var(--muted)]">Loading your progress…</p>;
   }
 
-  if (status === "no-instance" || status === "error" || !state) {
+  if (status === "error") {
+    return <LoadErrorState onRetry={retry} />;
+  }
+
+  if (status === "no-instance" || !state) {
     return (
       <EmptyState
         icon={Wallet}

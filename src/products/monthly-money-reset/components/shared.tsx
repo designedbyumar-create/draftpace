@@ -2,9 +2,42 @@
 
 import { useState } from "react";
 import Input from "@/design-system/Input";
+import Button from "@/design-system/Button";
 import { Check, WarningCircle, WifiOff } from "@/design-system/Icon";
 import { fromMinorUnits, toMinorUnits } from "../currency";
 import type { SaveStatus } from "./useInstanceState";
+
+/**
+ * The distinct "a read failed" state — must never be visually or textually
+ * confused with "no-instance" (genuinely not owned yet). A network hiccup, a
+ * transient RLS timing issue, or state that failed schema validation are all
+ * recoverable; none of them mean the product needs to be added again. See
+ * the P0 stability incident, 2026-08-04, and DRAFTPACE-PRODUCT-EXPERIENCE-
+ * PLAYBOOK's "never fabricate an empty state from a failed read" principle.
+ */
+export function LoadErrorState({ onRetry }: { onRetry: () => void }) {
+  return (
+    <div className="flex flex-col items-center gap-3 rounded-xl border border-dashed border-[var(--danger)]/40 px-6 py-12 text-center">
+      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--danger-soft)] text-[var(--danger)]">
+        <WarningCircle size={18} aria-hidden />
+      </div>
+      <div>
+        <p className="text-[14px] font-semibold text-[var(--text)]">Couldn&apos;t load Monthly Money Reset</p>
+        <p className="mx-auto mt-1.5 max-w-sm text-[13px] leading-5 text-[var(--muted)]">
+          Your product and everything saved to it are still there. This screen just couldn&apos;t load right now.
+        </p>
+      </div>
+      <div className="flex items-center gap-2">
+        <Button size="sm" onClick={onRetry}>
+          Retry
+        </Button>
+        <Button size="sm" variant="secondary" href="/app">
+          Back to Draftpace
+        </Button>
+      </div>
+    </div>
+  );
+}
 
 export function SaveStatusIndicator({ status }: { status: SaveStatus }) {
   if (status === "idle") return null;

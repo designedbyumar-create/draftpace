@@ -18,7 +18,12 @@ export type IncomeStatus = z.infer<typeof incomeStatusSchema>;
 
 export const incomeEntrySchema = z.object({
   id: z.string().min(1),
-  name: z.string().min(1),
+  // Not `.min(1)`: the Setup UI creates an entry with an empty name the
+  // instant "Add" is clicked, before the user types one, and autosave can
+  // persist that in-progress state. A stricter-than-write read schema turned
+  // this ordinary interaction into a permanently unloadable product — see
+  // the P0 stability incident, 2026-08-04.
+  name: z.string(),
   amountMinorUnits: moneyMinorUnits.nonnegative(),
   expectedDate: isoDate.optional(),
   status: incomeStatusSchema,
@@ -32,7 +37,8 @@ export type BillStatus = z.infer<typeof billStatusSchema>;
 
 export const billEntrySchema = z.object({
   id: z.string().min(1),
-  name: z.string().min(1),
+  // See incomeEntrySchema's `name` for why this is not `.min(1)`.
+  name: z.string(),
   amountMinorUnits: moneyMinorUnits.nonnegative(),
   dueDate: isoDate.optional(),
   category: z.string().min(1).default("Other"),
@@ -46,7 +52,8 @@ export const spendingGroupKindSchema = z.enum(["essentials", "flexible", "person
 
 export const spendingGroupSchema = z.object({
   id: z.string().min(1),
-  name: z.string().min(1),
+  // See incomeEntrySchema's `name` for why this is not `.min(1)`.
+  name: z.string(),
   kind: spendingGroupKindSchema,
   guideAmountMinorUnits: moneyMinorUnits.nonnegative().optional(),
 });
@@ -111,6 +118,8 @@ export const checkInSchema = z.object({
   feelsAccurate: z.boolean(),
   /** Safe-to-Spend at the moment of this check-in — lets Progress show real movement over time. */
   safeToSpendAtMinorUnits: moneyMinorUnits.optional(),
+  /** Client-generated key so a double-tapped or retried "Finish check-in" is a no-op — see CheckInModal.tsx. */
+  dedupeKey: z.string().optional(),
 });
 export type CheckIn = z.infer<typeof checkInSchema>;
 

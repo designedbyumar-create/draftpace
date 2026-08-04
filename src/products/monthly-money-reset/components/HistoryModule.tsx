@@ -9,10 +9,11 @@ import Badge from "@/design-system/Badge";
 import Toggle from "@/design-system/Toggle";
 import { Check, Clock } from "@/design-system/Icon";
 import { useInstanceState } from "./useInstanceState";
+import { LoadErrorState } from "./shared";
 import ThemeScope from "./ThemeScope";
 import { listMyProductInstances, setProductInstanceLifecycle, startNextCycle, type ProductInstanceSummary } from "../data";
 import { computeSafeToSpend } from "../calculations";
-import { buildNextCycleState } from "../carryForward";
+import { runCloseSequence, type CloseSequenceFailureStep } from "../closeSequence";
 import { cycleKeyToLabel } from "../cycle";
 import { formatCurrency } from "../currency";
 import type { CarryForwardChoices } from "../state";
@@ -25,6 +26,15 @@ const DEFAULT_CHOICES: CarryForwardChoices = {
   checkInPreference: true,
 };
 
+const CLOSE_FAILURE_MESSAGES: Record<CloseSequenceFailureStep, (closedLabel: string, nextLabel: string) => string> = {
+  "save-close": () => "Couldn't save this month's close. Nothing changed, check your connection and try again.",
+  lifecycle: () => "This month saved as closed, but marking it complete failed. Try again to finish.",
+  "start-next-cycle": (closedLabel, nextLabel) =>
+    `${closedLabel} is closed, but starting ${nextLabel} failed. Try again to continue.`,
+  "carry-forward": (closedLabel, nextLabel) =>
+    `${closedLabel} is closed and ${nextLabel} was started, but carrying your details forward failed. Try again to finish, or open ${nextLabel} from your library and set it up directly.`,
+};
+
 function nextCycleKey(cycleKey: string): string {
   const [year, month] = cycleKey.split("-").map(Number);
   const date = new Date(Date.UTC(year, month, 1));
@@ -33,12 +43,13 @@ function nextCycleKey(cycleKey: string): string {
 
 export default function HistoryModule({ definition }: { definition: ProductDefinition }) {
   const router = useRouter();
-  const { status, instanceId, state, setState, forceSave } = useInstanceState(definition.slug);
+  const { status, instanceId, state, saveDirectly, retry } = useInstanceState(definition.slug);
   const [pastCycles, setPastCycles] = useState<ProductInstanceSummary[] | null>(null);
   const [closing, setClosing] = useState(false);
   const [reflection, setReflection] = useState("");
   const [choices, setChoices] = useState<CarryForwardChoices>(DEFAULT_CHOICES);
   const [working, setWorking] = useState(false);
+  const [closeError, setCloseError] = useState<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -54,7 +65,11 @@ export default function HistoryModule({ definition }: { definition: ProductDefin
     return <p className="text-[13px] text-[var(--muted)]">Loading your history…</p>;
   }
 
-  if (status === "no-instance" || status === "error" || !state || !instanceId) {
+  if (status === "error") {
+    return <LoadErrorState onRetry={retry} />;
+  }
+
+  if (status === "no-instance" || !state || !instanceId) {
     return (
       <EmptyState
         icon={Clock}
@@ -77,51 +92,59 @@ export default function HistoryModule({ definition }: { definition: ProductDefin
     (row) => row.cycleKey !== state.cycle.cycleKey && row.lifecycleState === "completed"
   );
 
+  /**
+   * A checked, retryable sequence — the previous version ignored the result
+   * of every step but the next-cycle creation, so a save failure could leave
+   * the old cycle marked "completed" with no next cycle ever created, or
+   * silently drop the carry-forward data, with the user routed away as if
+   * everything had succeeded. See the MMR reliability pass, 2026-08-04.
+   *
+   * Each step only runs after the previous one is confirmed. On any
+   * failure: stop, report which step failed, leave `closing` open with
+   * `reflection`/`choices` untouched, and let the same button retry. Every
+   * step here is safe to repeat: re-saving the same closed state or
+   * re-marking the lifecycle "completed" is a harmless no-op, startNextCycle
+   * reuses grant_free_product which is idempotent per (user, product,
+   * cycle_key), and the carry-forward save below treats a conflict on the
+   * brand-new instance as success rather than an error, since the only thing
+   * that could already be at a later revision than 1 is this same sequence's
+   * own earlier, unacknowledged attempt.
+   */
   async function finishClose() {
     if (!state || !instanceId) return;
     setWorking(true);
-
-    const closedAt = new Date().toISOString();
-    const closedState = {
-      ...state,
-      cycle: { ...state.cycle, closedAt },
-      completion: {
-        closedAt,
-        closingSafeToSpendMinorUnits: breakdown.safeToSpend,
-        reflection: reflection || undefined,
-        carryForward: choices,
-      },
-    };
-    setState(closedState);
-    await forceSave();
-    await setProductInstanceLifecycle(instanceId, "completed");
+    setCloseError(null);
 
     const newCycleKey = nextCycleKey(state.cycle.cycleKey);
-    const result = await startNextCycle(definition.slug, newCycleKey);
-    if (result.status === "ok") {
-      const nextState = buildNextCycleState({
+    const newCycleLabel = cycleKeyToLabel(newCycleKey);
+    const { saveMonthlyMoneyResetState } = await import("../data");
+
+    const result = await runCloseSequence(
+      {
+        saveClosedState: saveDirectly,
+        setLifecycle: setProductInstanceLifecycle,
+        startNextCycle,
+        saveNextCycleState: saveMonthlyMoneyResetState,
+      },
+      {
+        productSlug: definition.slug,
+        instanceId,
         previous: state,
-        previousInstanceId: instanceId,
-        cycleKey: newCycleKey,
-        cycleLabel: cycleKeyToLabel(newCycleKey),
+        reflection,
         choices,
-      });
-      // This runs against the brand-new instance's own revision (1), not the
-      // closed cycle's — save_monthly_money_reset_state is instance-scoped.
-      await import("../data").then(({ saveMonthlyMoneyResetState }) =>
-        saveMonthlyMoneyResetState({
-          instanceId: result.instanceId,
-          expectedRevision: 1,
-          state: nextState,
-          setupComplete: false,
-          safeToSpendMinorUnits: 0,
-          nextActionLabel: null,
-        })
-      );
+        newCycleKey,
+        newCycleLabel,
+        closedAt: new Date().toISOString(),
+      }
+    );
+
+    if (result.status === "ok") {
       router.push(`/app/products/${definition.slug}/setup`);
-    } else {
-      router.push("/app/library");
+      return;
     }
+
+    setWorking(false);
+    setCloseError(CLOSE_FAILURE_MESSAGES[result.step](state.cycle.label, newCycleLabel));
   }
 
   return (
@@ -229,9 +252,13 @@ export default function HistoryModule({ definition }: { definition: ProductDefin
             />
           </div>
 
+          {closeError && (
+            <p className="mt-4 text-[13px] font-semibold text-[var(--danger)]">{closeError}</p>
+          )}
+
           <div className="mt-5 flex gap-2">
             <Button onClick={finishClose} disabled={working} iconLeft={<Check size={14} aria-hidden />}>
-              {working ? "Closing…" : `Close and start ${cycleKeyToLabel(nextCycleKey(state.cycle.cycleKey))}`}
+              {working ? "Closing…" : closeError ? "Try again" : `Close and start ${cycleKeyToLabel(nextCycleKey(state.cycle.cycleKey))}`}
             </Button>
             <Button variant="ghost" onClick={() => setClosing(false)} disabled={working}>
               Cancel

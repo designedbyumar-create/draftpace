@@ -6,6 +6,7 @@ import SetupModule from "./components/SetupModule";
 import WorkspaceModule from "./components/WorkspaceModule";
 import ProgressModule from "./components/ProgressModule";
 import HistoryModule from "./components/HistoryModule";
+import PrintablesModule from "./components/PrintablesModule";
 import SettingsModule from "./components/SettingsModule";
 
 /**
@@ -44,6 +45,9 @@ export function registerMonthlyMoneyReset(): void {
   }
   if (!moduleRegistry.has("monthly-money-reset.history")) {
     moduleRegistry.register("monthly-money-reset.history", HistoryModule);
+  }
+  if (!moduleRegistry.has("monthly-money-reset.printables")) {
+    moduleRegistry.register("monthly-money-reset.printables", PrintablesModule);
   }
   if (!moduleRegistry.has("monthly-money-reset.settings")) {
     moduleRegistry.register("monthly-money-reset.settings", SettingsModule);
