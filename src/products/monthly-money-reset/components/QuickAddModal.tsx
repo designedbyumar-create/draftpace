@@ -9,7 +9,7 @@ import { computeSafeToSpend } from "../calculations";
 import { formatCurrency } from "../currency";
 import type { MonthlyMoneyResetState } from "../state";
 
-type QuickAddType = "spending" | "income" | "bill" | "savings" | "correction";
+export type QuickAddType = "spending" | "income" | "bill" | "savings" | "correction";
 
 const TYPES: { id: QuickAddType; label: string; icon: typeof CreditCard }[] = [
   { id: "spending", label: "Spending", icon: CreditCard },
@@ -21,15 +21,18 @@ const TYPES: { id: QuickAddType; label: string; icon: typeof CreditCard }[] = [
 
 export default function QuickAddModal({
   state,
+  initialType = "spending",
   onApply,
   onClose,
 }: {
   state: MonthlyMoneyResetState;
+  /** Pre-scopes which correction type opens first — e.g. a check-in "yes" answer jumping straight to "income" instead of making the user re-pick it. */
+  initialType?: QuickAddType;
   /** Returns whether the save actually succeeded — the modal only closes on true. */
   onApply: (next: MonthlyMoneyResetState) => Promise<boolean>;
   onClose: () => void;
 }) {
-  const [type, setType] = useState<QuickAddType>("spending");
+  const [type, setType] = useState<QuickAddType>(initialType);
   const [amountMinorUnits, setAmountMinorUnits] = useState(0);
   const [note, setNote] = useState("");
   const [selectedIncomeId, setSelectedIncomeId] = useState("");

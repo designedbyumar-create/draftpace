@@ -237,6 +237,13 @@ export const monthlyMoneyResetStateSchema = z.object({
   createdAt: isoDate,
   updatedAt: isoDate,
   lastMeaningfulActivityAt: isoDate,
+  /**
+   * The last time a check-in confirmed everything was accurate — distinct
+   * from `updatedAt`, which changes on every edit whether or not it was a
+   * deliberate confirmation. Powers "Since You Were Last Here" and the
+   * check-in receipt. Optional: unset until the first check-in completes.
+   */
+  lastConfirmedAt: isoDate.optional(),
 });
 
 export type MonthlyMoneyResetState = z.infer<typeof monthlyMoneyResetStateSchema>;

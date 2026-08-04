@@ -11,12 +11,14 @@ import { useInstanceState } from "./useInstanceState";
 import { LoadErrorState, SaveStatusIndicator } from "./shared";
 import SafeToSpendCard from "./SafeToSpendCard";
 import NextActionCard from "./NextActionCard";
+import SinceLastHere from "./SinceLastHere";
 import QuickAddModal from "./QuickAddModal";
 import CheckInModal from "./CheckInModal";
 import ThemeScope from "./ThemeScope";
 import GuidedTour, { type TourStep } from "./GuidedTour";
 import { computeSafeToSpend, markBillPaid, markBillSkipped } from "../calculations";
 import { computeNextAction } from "../nextAction";
+import { computeSinceLastHere } from "../sinceLastHere";
 import { formatCurrency } from "../currency";
 import type { ActivityEntry } from "../state";
 
@@ -30,6 +32,11 @@ const VIEWS: { id: View; label: string }[] = [
 ];
 
 const TOUR_STEPS: TourStep[] = [
+  {
+    targetId: "mmr-tour-since-last-here",
+    title: "What changed since your last visit",
+    body: "After your first check-in, this shows only what's actually different, a Safe-to-Spend change, a bill paid, income received. Nothing here is guessed.",
+  },
   {
     targetId: "mmr-tour-safe-to-spend",
     title: "Your one number",
@@ -149,6 +156,7 @@ export default function WorkspaceModule({ definition }: { definition: ProductDef
 
   const breakdown = computeSafeToSpend(state);
   const nextAction = computeNextAction(state, breakdown);
+  const sinceLastHere = computeSinceLastHere(state);
   const upcomingBills = state.bills.filter((bill) => bill.status === "upcoming" || bill.status === "changed");
   const recentActivity = [...state.activity].reverse().slice(0, 5);
 
@@ -175,6 +183,8 @@ export default function WorkspaceModule({ definition }: { definition: ProductDef
   return (
     <ThemeScope>
       <div>
+        {sinceLastHere && <SinceLastHere data={sinceLastHere} />}
+
         {/* Hero: the one number and the one next move own the top. */}
         <div className="grid gap-4 lg:grid-cols-[1.5fr_1fr] lg:items-stretch">
           <div id="mmr-tour-safe-to-spend">

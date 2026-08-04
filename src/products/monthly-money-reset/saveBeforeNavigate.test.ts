@@ -86,9 +86,14 @@ describe("QuickAddModal and CheckInModal: apply is awaited and gates the close",
     expect(source).toMatch(/if \(ok\) \{\s*\n\s*onClose\(\);/);
   });
 
-  it("CheckInModal only closes the dialog once onApply resolves true", () => {
+  it("CheckInModal only advances to its receipt once onApply resolves true", () => {
+    // Redesigned in Phase 4: finishing no longer closes the dialog directly —
+    // it shows a receipt first, whose own "Done" button calls onClose(). The
+    // save-gating invariant still holds, just gating a phase transition
+    // instead of the close.
     const source = readComponent("CheckInModal.tsx");
     expect(source).toContain("const ok = await onApply({");
-    expect(source).toMatch(/if \(ok\) \{\s*\n\s*onClose\(\);/);
+    expect(source).toMatch(/if \(ok\) \{\s*\n\s*setPhase\("receipt"\);/);
+    expect(source).toContain('onClick={onClose}');
   });
 });
