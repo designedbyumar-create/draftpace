@@ -4,8 +4,7 @@ import type { ShopProductInput } from "../definition";
  * Monthly Money Reset's real public Shop listing. Kept in sync with
  * src/products/monthly-money-reset/definition.ts in spirit (same product,
  * same promise), but deliberately a separate model. See docs/SHOP.md and
- * docs/products/MONTHLY-MONEY-RESET.md. No screenshots yet: real ones get
- * added once the built UI has been reviewed, not placeholders now.
+ * docs/products/MONTHLY-MONEY-RESET.md.
  */
 export const monthlyMoneyResetShopProduct: ShopProductInput = {
   id: "monthly-money-reset",
@@ -57,7 +56,12 @@ export const monthlyMoneyResetShopProduct: ShopProductInput = {
   ],
   access: "free",
   purchaseAction: { label: "Add free to my library", href: "/app/activate/monthly-money-reset" },
-  media: [],
+  media: [
+    {
+      src: "/products/monthly-money-reset/preview.png",
+      alt: "Monthly Money Reset's This Month view, showing a Safe to Spend Now figure of $600.00, a weekly amount, a next-move check-in prompt, and a breakdown of protected bills and upcoming bills.",
+    },
+  ],
   compatibility: ["Works in any modern browser", "No download required", "Works on phone, tablet, or desktop"],
   inclusions: [
     "The full Safe-to-Spend calculation, with an expandable breakdown of every number that feeds into it",
