@@ -1,11 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import Link from "next/link";
 import Button from "@/design-system/Button";
 import { Logo } from "@/design-system/Logo";
 import { X } from "@/design-system/Icon";
 import ThemeToggle from "@/design-system/theme/ThemeToggle";
+import AccountMenu from "@/components/account/AccountMenu";
+import { publicSignedInAccountMenuItems } from "@/components/account/accountMenuItems";
+import { signOutAndRedirect } from "@/lib/supabase/signOut";
 
 // App-style, product-forward navigation: the Store is the front door, "How it
 // works" is the single education entry, and everything else lives in the
@@ -17,8 +20,18 @@ const LINKS = [
   { href: "/about", label: "About" },
 ];
 
-export default function PublicNav() {
+export type PublicNavUser = { email: string | null; displayName: string | null } | null;
+
+/**
+ * Session-aware: the public marketing header never shows Sign in/Get
+ * started to a visitor who already has a valid Draftpace session, the
+ * `user` prop is read server-side (see the marketing layout), so there's no
+ * client fetch and no signed-out-then-signed-in flash.
+ */
+export default function PublicNav({ user }: { user: PublicNavUser }) {
   const [open, setOpen] = useState(false);
+  const accountLabel = user?.displayName || user?.email || "Account";
+  const accountItems = useMemo(() => publicSignedInAccountMenuItems(() => signOutAndRedirect("/")), []);
 
   return (
     <header className="sticky top-0 z-40 border-b border-[var(--border)] bg-[var(--bg)]/90 backdrop-blur">
@@ -39,32 +52,44 @@ export default function PublicNav() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-2 lg:flex">
-          <Button href="/login" variant="ghost" size="sm">
-            Sign in
-          </Button>
-          <Button href="/signup" size="sm">
-            Get started
-          </Button>
-        </div>
+        {user ? (
+          <div className="hidden items-center gap-3 lg:flex">
+            <Button href="/app" size="sm">
+              Open Draftpace
+            </Button>
+            <AccountMenu items={accountItems} label={accountLabel} only="desktop" />
+          </div>
+        ) : (
+          <div className="hidden items-center gap-2 lg:flex">
+            <Button href="/login" variant="ghost" size="sm">
+              Sign in
+            </Button>
+            <Button href="/signup" size="sm">
+              Get started
+            </Button>
+          </div>
+        )}
 
-        <button
-          type="button"
-          aria-expanded={open}
-          aria-controls="mobile-nav"
-          aria-label={open ? "Close menu" : "Open menu"}
-          onClick={() => setOpen((value) => !value)}
-          className="flex h-10 w-10 items-center justify-center rounded-lg text-[var(--text)] lg:hidden"
-        >
-          {open ? (
-            <X size={20} aria-hidden />
-          ) : (
-            <span className="flex flex-col gap-[5px]" aria-hidden>
-              <span className="block h-[1.5px] w-5 bg-current" />
-              <span className="block h-[1.5px] w-5 bg-current" />
-            </span>
-          )}
-        </button>
+        <div className="flex items-center gap-1 lg:hidden">
+          {user && <AccountMenu items={accountItems} label={accountLabel} only="mobile" />}
+          <button
+            type="button"
+            aria-expanded={open}
+            aria-controls="mobile-nav"
+            aria-label={open ? "Close menu" : "Open menu"}
+            onClick={() => setOpen((value) => !value)}
+            className="flex h-11 w-11 items-center justify-center rounded-lg text-[var(--text)]"
+          >
+            {open ? (
+              <X size={20} aria-hidden />
+            ) : (
+              <span className="flex flex-col gap-[5px]" aria-hidden>
+                <span className="block h-[1.5px] w-5 bg-current" />
+                <span className="block h-[1.5px] w-5 bg-current" />
+              </span>
+            )}
+          </button>
+        </div>
       </div>
 
       {open && (
@@ -81,14 +106,22 @@ export default function PublicNav() {
               </Link>
             ))}
           </nav>
-          <div className="mt-3 flex flex-col gap-2 border-t border-[var(--border)] pt-3">
-            <Button href="/login" variant="secondary" size="md" fullWidth>
-              Sign in
-            </Button>
-            <Button href="/signup" size="md" fullWidth>
-              Get started
-            </Button>
-          </div>
+          {user ? (
+            <div className="mt-3 border-t border-[var(--border)] pt-3">
+              <Button href="/app" size="md" fullWidth onClick={() => setOpen(false)}>
+                Open Draftpace
+              </Button>
+            </div>
+          ) : (
+            <div className="mt-3 flex flex-col gap-2 border-t border-[var(--border)] pt-3">
+              <Button href="/login" variant="secondary" size="md" fullWidth>
+                Sign in
+              </Button>
+              <Button href="/signup" size="md" fullWidth>
+                Get started
+              </Button>
+            </div>
+          )}
           <div className="mt-3 border-t border-[var(--border)] pt-3">
             <p className="mb-2.5 text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">Appearance</p>
             <ThemeToggle />
