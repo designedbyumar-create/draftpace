@@ -106,13 +106,13 @@ export default function PrintablesModule({ definition }: { definition: ProductDe
     );
   }
 
-  const data = buildData(state, definition, "https://www.draftpace.com");
+  const data = buildData(state, definition, "https://draftpace.com");
 
   async function handleDownload() {
     if (generating || !state) return;
     setGenerating(true);
     try {
-      const origin = typeof window !== "undefined" ? window.location.origin : "https://www.draftpace.com";
+      const origin = typeof window !== "undefined" ? window.location.origin : "https://draftpace.com";
       const { downloadMoneyResetPdf } = await import("../printables/generatePdf");
       await downloadMoneyResetPdf(buildData(state, definition, origin));
     } finally {

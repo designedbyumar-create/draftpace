@@ -12,7 +12,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.draftpace.com"),
+  metadataBase: new URL("https://draftpace.com"),
   title: {
     default: "Draftpace: A studio for living products",
     template: "%s | Draftpace",
@@ -30,9 +30,17 @@ export const metadata: Metadata = {
     title: "Draftpace: A studio for living products",
     description:
       "A studio for living products: installable apps that remember you, guide your next step, and pick up where you left off.",
-    url: "https://www.draftpace.com",
+    url: "https://draftpace.com",
     siteName: "Draftpace",
     type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Draftpace: a studio for living products" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Draftpace: A studio for living products",
+    description:
+      "A studio for living products: installable apps that remember you, guide your next step, and pick up where you left off.",
+    images: ["/og-image.png"],
   },
   icons: {
     icon: [

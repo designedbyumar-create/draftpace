@@ -10,7 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // some other request having already rendered a marketing page first.
   registerRealShopProducts();
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.draftpace.com";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://draftpace.com";
   const now = new Date();
 
   const staticRoutes = [

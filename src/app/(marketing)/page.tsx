@@ -9,6 +9,7 @@ import LivingAnatomy from "@/components/public/home/LivingAnatomy";
 import LivingSpectrum from "@/components/public/home/LivingSpectrum";
 import ShopPreview from "@/components/public/home/ShopPreview";
 import TrustSection from "@/components/public/home/TrustSection";
+import { softwareApplicationStructuredData } from "@/lib/structuredData";
 
 export const metadata: Metadata = {
   title: "A studio for living products",
@@ -20,6 +21,10 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationStructuredData()) }}
+      />
       {/* 1. Hero */}
       <section className="border-b border-[var(--border)]">
         <Container width="wide" className="grid gap-12 py-16 sm:py-20 lg:grid-cols-[1fr_0.95fr] lg:items-center lg:py-28">

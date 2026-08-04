@@ -3,6 +3,7 @@ import PublicFooter from "@/components/public/PublicFooter";
 import { registerShopFixtures } from "@/shop/fixtures";
 import { registerRealShopProducts } from "@/shop/products";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { organizationStructuredData, websiteStructuredData } from "@/lib/structuredData";
 
 /**
  * Session is read server-side, once, here, not inside PublicNav, so the
@@ -24,6 +25,14 @@ export default async function MarketingLayout({ children }: { children: React.Re
 
   return (
     <div className="flex min-h-screen flex-col bg-[var(--bg)] text-[var(--text)]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationStructuredData()) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteStructuredData()) }}
+      />
       <PublicNav user={user ? { email: user.email ?? null, displayName: user.user_metadata?.display_name ?? null } : null} />
       <main className="flex-1">{children}</main>
       <PublicFooter />
