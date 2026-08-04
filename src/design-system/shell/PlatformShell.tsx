@@ -8,6 +8,7 @@ import {
   BookOpen,
   CreditCard,
   type DraftpaceIcon,
+  Globe,
   Home,
   LifeBuoy,
   LogOut,
@@ -16,12 +17,14 @@ import {
   User,
   Wifi,
   WifiOff,
-  X,
 } from "@/design-system/Icon";
-import { supabase } from "@/lib/supabase/client";
 import ThemeToggle from "@/design-system/theme/ThemeToggle";
 import { useSession } from "@/design-system/shell/SessionProvider";
 import { Logo } from "@/design-system/Logo";
+import Avatar from "@/design-system/Avatar";
+import AccountMenu from "@/components/account/AccountMenu";
+import { appAccountMenuItems } from "@/components/account/accountMenuItems";
+import { signOutAndRedirect } from "@/lib/supabase/signOut";
 
 const primaryNav = [
   { label: "Home", href: "/app", Icon: Home },
@@ -34,6 +37,19 @@ const accountNav = [
   { label: "Settings", href: "/app/settings", Icon: Settings },
   { label: "Billing", href: "/app/billing", Icon: CreditCard },
   { label: "Support", href: "/app/support", Icon: LifeBuoy },
+];
+
+/**
+ * The mobile bottom navigation's three direct-link slots, exported so its
+ * route configuration is a real, independently testable data structure
+ * rather than something only checkable by reading JSX. The fourth slot
+ * (Account) isn't a plain link, it opens AccountMenu's sheet, see the JSX
+ * below for that binding.
+ */
+export const BOTTOM_NAV_LINKS = [
+  { label: "Home", href: "/app", Icon: Home },
+  { label: "Library", href: "/app/library", Icon: BookOpen },
+  { label: "Notifications", href: "/app/notifications", Icon: Bell },
 ];
 
 export default function PlatformShell({
@@ -49,7 +65,6 @@ export default function PlatformShell({
 }) {
   const pathname = usePathname();
   const user = useSession();
-  const [menuOpen, setMenuOpen] = useState(false);
   const [online, setOnline] = useState(true);
 
   useEffect(() => {
@@ -69,10 +84,9 @@ export default function PlatformShell({
     return String(name).split(" ")[0];
   }, [user]);
 
-  const handleSignOut = async () => {
-    await supabase.auth.signOut();
-    window.location.assign("/");
-  };
+  const accountLabel = user.user_metadata?.display_name || user.email || "Account";
+  const accountItems = useMemo(() => appAccountMenuItems(() => signOutAndRedirect("/")), []);
+  const accountActive = accountNav.some((item) => item.href === pathname);
 
   return (
     <div className="flex min-h-screen overflow-hidden bg-[var(--app-bg)] text-[var(--text)]">
@@ -97,61 +111,31 @@ export default function PlatformShell({
           ))}
         </nav>
 
-        <button
-          type="button"
-          onClick={handleSignOut}
-          className="mt-auto flex items-center gap-3 rounded-lg px-3 py-2.5 text-left text-[13px] font-semibold text-[var(--muted)] hover:bg-[var(--surface-muted)] hover:text-[var(--danger)]"
-        >
-          <LogOut size={17} aria-hidden />
-          Sign out
-        </button>
-      </aside>
-
-      {/* Mobile overflow sheet */}
-      {menuOpen && (
-        <div className="fixed inset-0 z-50 bg-black/40 lg:hidden" onClick={() => setMenuOpen(false)}>
-          <div
-            className="absolute bottom-0 left-0 right-0 rounded-t-2xl bg-[var(--surface)] p-4 pb-[max(env(safe-area-inset-bottom),16px)] shadow-[var(--shadow-md)]"
-            onClick={(event) => event.stopPropagation()}
+        <div className="mt-auto space-y-0.5">
+          <Link
+            href="/"
+            className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-left text-[13px] font-semibold text-[var(--faint)] hover:bg-[var(--surface-muted)] hover:text-[var(--text)]"
           >
-            <div className="mb-4 flex items-center justify-between">
-              <p className="text-[13px] font-bold text-[var(--text)]">{user.email}</p>
-              <button
-                type="button"
-                aria-label="Close menu"
-                className="flex h-9 w-9 items-center justify-center rounded-lg bg-[var(--surface-muted)]"
-                onClick={() => setMenuOpen(false)}
-              >
-                <X size={18} aria-hidden />
-              </button>
-            </div>
-            <nav aria-label="Account" className="space-y-0.5">
-              {accountNav.map((item) => (
-                <NavLink key={item.href} item={item} active={pathname === item.href} onClick={() => setMenuOpen(false)} />
-              ))}
-            </nav>
-            <div className="mt-2 flex items-center justify-between rounded-lg px-3 py-2.5">
-              <span className="text-[13px] font-semibold text-[var(--muted)]">Theme</span>
-              <ThemeToggle compact />
-            </div>
-            <button
-              type="button"
-              onClick={handleSignOut}
-              className="mt-1 flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-left text-[13px] font-semibold text-[var(--danger)] hover:bg-[var(--danger-soft)]"
-            >
-              <LogOut size={17} aria-hidden />
-              Sign out
-            </button>
-          </div>
+            <Globe size={17} aria-hidden />
+            Visit Draftpace website
+          </Link>
+          <button
+            type="button"
+            onClick={() => signOutAndRedirect("/")}
+            className="flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-left text-[13px] font-semibold text-[var(--muted)] hover:bg-[var(--surface-muted)] hover:text-[var(--danger)]"
+          >
+            <LogOut size={17} aria-hidden />
+            Sign out
+          </button>
         </div>
-      )}
+      </aside>
 
       <main className="flex min-w-0 flex-1 flex-col bg-[var(--app-bg)]">
         <header className="sticky top-0 z-30 border-b border-[var(--border)] bg-[var(--surface)]/95 px-4 py-2.5 backdrop-blur sm:px-6 lg:px-8">
           <div className="mx-auto flex max-w-5xl items-center justify-between gap-3">
             <div className="min-w-0 flex-1">
               <p className="truncate text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--faint)]">
-                {online ? "Draftpace" : "Draftpace — offline"}
+                {online ? "Draftpace" : "Draftpace, offline"}
               </p>
               <h1 className="mt-0.5 truncate text-[18px] font-semibold tracking-tight text-[var(--text)]">
                 {title || `Good ${getDayPart()}, ${firstName}`}
@@ -168,6 +152,9 @@ export default function PlatformShell({
                 {online ? "Online" : "Offline"}
               </div>
               {action}
+              <div className="lg:hidden">
+                <AccountMenu items={accountItems} label={accountLabel} only="mobile" />
+              </div>
             </div>
           </div>
         </header>
@@ -175,30 +162,36 @@ export default function PlatformShell({
         <div className="mx-auto w-full max-w-5xl flex-1 px-4 pb-28 pt-5 sm:px-6 lg:px-8 lg:pb-8">{children}</div>
       </main>
 
-      {/* Mobile bottom nav — kept to the primary destinations plus one
-          overflow trigger, per docs/DESIGN-SYSTEM.md's "don't overcrowd
-          mobile navigation" rule. */}
+      {/* Mobile bottom nav: the four platform destinations. Product
+          destinations (This Month/Progress/History, etc.) live entirely
+          inside ProductShell and never merge into this bar. */}
       <nav
         aria-label="Primary"
         className="fixed bottom-0 left-0 right-0 z-40 border-t border-[var(--border)] bg-[var(--surface)]/96 px-2 pb-[max(env(safe-area-inset-bottom),8px)] pt-2 backdrop-blur lg:hidden"
       >
-        <div className="grid grid-cols-3 gap-1">
-          {primaryNav.map((item) => (
+        <div className="grid grid-cols-4 gap-1">
+          {BOTTOM_NAV_LINKS.map((item) => (
             <BottomNavLink key={item.href} item={item} active={pathname === item.href} />
           ))}
-          <button
-            type="button"
-            onClick={() => setMenuOpen(true)}
-            aria-label="Account menu"
-            className={`flex h-14 flex-col items-center justify-center gap-1 rounded-lg text-[10px] font-bold ${
-              accountNav.some((item) => item.href === pathname)
-                ? "bg-[var(--primary-soft)] text-[var(--primary)]"
-                : "text-[var(--faint)]"
-            }`}
-          >
-            <User size={18} aria-hidden />
-            Account
-          </button>
+          <AccountMenu
+            items={accountItems}
+            label={accountLabel}
+            only="mobile"
+            renderMobileTrigger={({ onClick, ref }) => (
+              <button
+                ref={ref}
+                type="button"
+                onClick={onClick}
+                aria-label="Account menu"
+                className={`flex h-14 w-full flex-col items-center justify-center gap-1 rounded-lg text-[10px] font-bold ${
+                  accountActive ? "bg-[var(--primary-soft)] text-[var(--primary)]" : "text-[var(--faint)]"
+                }`}
+              >
+                {accountActive ? <Avatar label={accountLabel} size="sm" className="h-[18px] w-[18px] text-[8px]" /> : <User size={18} aria-hidden />}
+                Account
+              </button>
+            )}
+          />
         </div>
       </nav>
     </div>
