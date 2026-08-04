@@ -30,7 +30,50 @@ export type ProductInstanceSummary = {
   lastActivityAt: string;
 };
 
-export async function listMyProductInstances(productSlug?: string): Promise<ProductInstanceSummary[]> {
+export type ListInstancesResult =
+  | { status: "ok"; rows: ProductInstanceSummary[] }
+  | { status: "error"; message: string };
+
+type ProductInstanceRow = {
+  id: string;
+  product_slug: string;
+  cycle_key: string;
+  lifecycle_state: LifecycleState;
+  setup_complete: boolean;
+  safe_to_spend_cents: number | null;
+  next_action_label: string | null;
+  last_activity_at: string;
+};
+
+/** Shapes a raw Supabase select response — pure and unit-testable without a network call. */
+export function interpretListInstancesResponse(
+  data: ProductInstanceRow[] | null,
+  error: { message: string } | null
+): ListInstancesResult {
+  if (error) return { status: "error", message: error.message };
+  if (!data) return { status: "error", message: "No response while loading your progress." };
+
+  return {
+    status: "ok",
+    rows: data.map((row) => ({
+      id: row.id,
+      productSlug: row.product_slug,
+      cycleKey: row.cycle_key,
+      lifecycleState: row.lifecycle_state,
+      setupComplete: row.setup_complete,
+      safeToSpendMinorUnits: row.safe_to_spend_cents,
+      nextActionLabel: row.next_action_label,
+      lastActivityAt: row.last_activity_at,
+    })),
+  };
+}
+
+/**
+ * A query failure here must never be presented as "no progress yet" — that's
+ * indistinguishable from a genuinely fresh instance to anything downstream
+ * that collapses it to []. Callers get an explicit error to render instead.
+ */
+export async function listMyProductInstances(productSlug?: string): Promise<ListInstancesResult> {
   let query = supabase
     .from("product_instances")
     .select(
@@ -41,18 +84,7 @@ export async function listMyProductInstances(productSlug?: string): Promise<Prod
   if (productSlug) query = query.eq("product_slug", productSlug);
 
   const { data, error } = await query;
-  if (error || !data) return [];
-
-  return data.map((row) => ({
-    id: row.id,
-    productSlug: row.product_slug,
-    cycleKey: row.cycle_key,
-    lifecycleState: row.lifecycle_state,
-    setupComplete: row.setup_complete,
-    safeToSpendMinorUnits: row.safe_to_spend_cents,
-    nextActionLabel: row.next_action_label,
-    lastActivityAt: row.last_activity_at,
-  }));
+  return interpretListInstancesResponse(data, error);
 }
 
 /** The only way an instance's lifecycle_state ever changes — see set_product_instance_lifecycle in the migration. */

@@ -1,33 +1,40 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import PlatformShell from "@/design-system/shell/PlatformShell";
 import EmptyState from "@/design-system/EmptyState";
 import Button from "@/design-system/Button";
-import { ArrowRight, BookOpen } from "@/design-system/Icon";
-import { productRegistry } from "@/product-framework/registry";
+import { ArrowRight, BookOpen, WarningCircle } from "@/design-system/Icon";
 import { familyRegistry } from "@/product-framework/families";
-import { listMyProductInstances, type ProductInstanceSummary } from "@/product-framework/instances";
-import { registerMonthlyMoneyReset } from "@/products/monthly-money-reset/register";
+import { listMyEntitlements } from "@/product-framework/entitlements";
+import { listMyProductInstances } from "@/product-framework/instances";
+import { deriveOwnedProducts, type OwnedProductRow } from "@/product-framework/deriveOwnedProducts";
+import { resolveProductDestination } from "@/product-framework/resolveDestination";
+import { ensureProductsRegistered } from "@/products/manifest";
 
 /**
  * Library is a collection of owned experiences, not a filtered database. Leads
  * with the products themselves and a human status line, hides the filter bar
  * until there is enough inventory for it to earn its place, and ends with a
  * quiet path back to discovery. See docs/DRAFTPACE-APP-EXPERIENCE-DESIGN.md §10.
+ *
+ * Ownership itself comes from entitlements, not product_instances — an
+ * instance is progress on something already owned, not proof of ownership.
+ * See deriveOwnedProducts.ts for exactly how a read failure at any layer
+ * degrades a row instead of ever hiding it.
  */
 
 const FILTER_THRESHOLD = 5;
 
 type LibraryFilter = "all" | "in-progress" | "paused" | "finished" | "archived";
 
-const FILTERS: { id: LibraryFilter; label: string; matches: (i: ProductInstanceSummary) => boolean }[] = [
+const FILTERS: { id: LibraryFilter; label: string; matches: (row: OwnedProductRow) => boolean }[] = [
   { id: "all", label: "All", matches: () => true },
-  { id: "in-progress", label: "In progress", matches: (i) => i.lifecycleState === "active" },
-  { id: "paused", label: "Paused", matches: (i) => i.lifecycleState === "paused" },
-  { id: "finished", label: "Finished", matches: (i) => i.lifecycleState === "completed" },
-  { id: "archived", label: "Archived", matches: (i) => i.lifecycleState === "archived" },
+  { id: "in-progress", label: "In progress", matches: (r) => r.kind === "ready" && r.instance?.lifecycleState === "active" },
+  { id: "paused", label: "Paused", matches: (r) => r.kind === "ready" && r.instance?.lifecycleState === "paused" },
+  { id: "finished", label: "Finished", matches: (r) => r.kind === "ready" && r.instance?.lifecycleState === "completed" },
+  { id: "archived", label: "Archived", matches: (r) => r.kind === "ready" && r.instance?.lifecycleState === "archived" },
 ];
 
 /** "2026-08" -> "August 2026"; anything else is shown unchanged. */
@@ -38,7 +45,7 @@ function humanCycle(cycleKey: string): string {
   return date.toLocaleDateString("en-US", { month: "long", year: "numeric", timeZone: "UTC" });
 }
 
-function humanStatus(instance: ProductInstanceSummary): string {
+function humanStatus(instance: { setupComplete: boolean; lifecycleState: string }): string {
   if (!instance.setupComplete) return "Setup not finished";
   switch (instance.lifecycleState) {
     case "active":
@@ -55,37 +62,53 @@ function humanStatus(instance: ProductInstanceSummary): string {
 }
 
 export default function LibraryPage() {
-  const [instances, setInstances] = useState<ProductInstanceSummary[] | null>(null);
+  const [rows, setRows] = useState<OwnedProductRow[] | null>(null);
+  const [loadError, setLoadError] = useState<string | null>(null);
   const [filter, setFilter] = useState<LibraryFilter>("all");
+  const [retryToken, setRetryToken] = useState(0);
 
   useEffect(() => {
-    registerMonthlyMoneyReset();
+    ensureProductsRegistered();
     let cancelled = false;
-    listMyProductInstances().then((rows) => {
-      if (!cancelled) setInstances(rows);
+
+    Promise.all([listMyEntitlements(), listMyProductInstances()]).then(([entitlementsResult, instancesResult]) => {
+      if (cancelled) return;
+
+      if (entitlementsResult.status === "error") {
+        setLoadError(entitlementsResult.message);
+        setRows(null);
+        return;
+      }
+
+      setLoadError(null);
+      setRows(deriveOwnedProducts(entitlementsResult.rows, instancesResult));
     });
+
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [retryToken]);
 
-  const owned = useMemo(() => {
-    const latest = new Map<string, ProductInstanceSummary>();
-    for (const instance of instances ?? []) {
-      if (!latest.has(instance.productSlug)) latest.set(instance.productSlug, instance);
-    }
-    return [...latest.values()];
-  }, [instances]);
-
-  const showFilters = owned.length >= FILTER_THRESHOLD;
+  const showFilters = (rows?.length ?? 0) >= FILTER_THRESHOLD;
   const activeFilter = FILTERS.find((f) => f.id === filter) ?? FILTERS[0];
-  const visible = showFilters ? owned.filter(activeFilter.matches) : owned;
+  const visible = rows ? (showFilters ? rows.filter(activeFilter.matches) : rows) : [];
 
   return (
     <PlatformShell title="Your library" subtitle="Everything you own, ready when you are">
-      {instances === null ? (
+      {rows === null && !loadError ? (
         <p className="text-[13px] text-[var(--muted)]">Loading…</p>
-      ) : owned.length === 0 ? (
+      ) : loadError ? (
+        <EmptyState
+          icon={WarningCircle}
+          title="Couldn't load your library"
+          description="Your access hasn't changed. This was just a read failure, check your connection and try again."
+          action={
+            <Button size="md" onClick={() => setRetryToken((t) => t + 1)}>
+              Try again
+            </Button>
+          }
+        />
+      ) : rows && rows.length === 0 ? (
         <EmptyState
           icon={BookOpen}
           title="Nothing here yet"
@@ -123,8 +146,8 @@ export default function LibraryPage() {
             <p className="text-[13px] text-[var(--muted)]">Nothing matches this filter right now.</p>
           ) : (
             <div className="grid gap-3">
-              {visible.map((instance) => (
-                <OwnedItem key={instance.id} instance={instance} />
+              {visible.map((row) => (
+                <OwnedItem key={row.productSlug} row={row} onRetry={() => setRetryToken((t) => t + 1)} />
               ))}
             </div>
           )}
@@ -141,17 +164,55 @@ export default function LibraryPage() {
   );
 }
 
-/** One owned product, presented as an experience with a human status line. */
-function OwnedItem({ instance }: { instance: ProductInstanceSummary }) {
-  const definition = productRegistry.getBySlug(instance.productSlug);
-  if (!definition) return null;
+/** One owned product, presented as an experience with a human status line — degraded, but never hidden, if any layer failed to load. */
+function OwnedItem({ row, onRetry }: { row: OwnedProductRow; onRetry: () => void }) {
+  if (row.kind === "definition-missing" || row.kind === "progress-unavailable") {
+    const title = row.kind === "progress-unavailable" ? row.definition.title : row.productSlug;
+    const family = row.kind === "progress-unavailable" ? familyRegistry.get(row.definition.family) : undefined;
+    const description = row.kind === "progress-unavailable" ? "Progress couldn't load" : "Couldn't load details for this product";
+
+    return (
+      <div className="flex items-center justify-between gap-4 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[var(--shadow-xs)]">
+        <div className="min-w-0">
+          <p className="text-[15px] font-semibold text-[var(--text)]">{title}</p>
+          <p className="mt-1 text-[12.5px] text-[var(--muted)]">
+            {family ? `${family.label} · ` : ""}
+            {description}
+          </p>
+        </div>
+        <button
+          type="button"
+          onClick={onRetry}
+          className="shrink-0 text-[13px] font-semibold text-[var(--primary)] hover:underline"
+        >
+          Try again
+        </button>
+      </div>
+    );
+  }
+
+  const { definition, instance } = row;
   const family = familyRegistry.get(definition.family);
 
-  const destination = !instance.setupComplete
-    ? `/app/products/${definition.slug}/setup`
-    : instance.lifecycleState === "completed"
-      ? `/app/products/${definition.slug}/history`
-      : `/app/products/${definition.slug}/workspace`;
+  if (!instance) {
+    return (
+      <Link
+        href={`/app/products/${definition.slug}`}
+        className="flex items-center justify-between gap-4 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[var(--shadow-xs)] transition-colors hover:border-[var(--border-strong)]"
+      >
+        <div className="min-w-0">
+          <p className="text-[15px] font-semibold text-[var(--text)]">{definition.title}</p>
+          <p className="mt-1 text-[12.5px] text-[var(--muted)]">{[family?.label ?? definition.family, "Not started yet"].join(" · ")}</p>
+        </div>
+        <span className="inline-flex shrink-0 items-center gap-1.5 text-[13px] font-semibold text-[var(--primary)]">
+          Start
+          <ArrowRight size={14} aria-hidden />
+        </span>
+      </Link>
+    );
+  }
+
+  const destination = resolveProductDestination(definition, instance);
 
   const actionLabel = !instance.setupComplete
     ? "Finish setup"
@@ -180,3 +241,4 @@ function OwnedItem({ instance }: { instance: ProductInstanceSummary }) {
     </Link>
   );
 }
+

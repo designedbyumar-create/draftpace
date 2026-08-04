@@ -152,6 +152,7 @@ export {
   setProductInstanceLifecycle,
   type LifecycleState,
   type ProductInstanceSummary,
+  type ListInstancesResult,
 } from "@/product-framework/instances";
 
 export type StartCycleResult =

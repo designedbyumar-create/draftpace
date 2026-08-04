@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase/client";
-import { currentCycleKey, cycleKeyToLabel } from "../cycle";
+import { currentCycleKey, cycleKeyToLabel } from "@/product-framework/cycle";
 import {
   findProductInstanceId,
   loadMonthlyMoneyResetState,

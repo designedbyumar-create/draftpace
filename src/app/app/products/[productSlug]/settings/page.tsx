@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { productRegistry } from "@/product-framework/registry";
 import { registerDevFixtures } from "@/product-framework/fixtures";
-import { registerMonthlyMoneyReset } from "@/products/monthly-money-reset/register";
+import { ensureProductsRegistered } from "@/products/manifest";
 import { resolveProductModule } from "@/product-framework/moduleRegistry";
 import Surface from "@/design-system/Surface";
 import SettingsRow from "@/components/platform/SettingsRow";
@@ -13,7 +13,7 @@ export default async function ProductSettingsPage({
   params: Promise<{ productSlug: string }>;
 }) {
   registerDevFixtures();
-  registerMonthlyMoneyReset();
+  ensureProductsRegistered();
 
   const { productSlug } = await params;
   const definition = productRegistry.getBySlug(productSlug);

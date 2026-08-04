@@ -1,10 +1,12 @@
 const CYCLE_KEY_PATTERN = /^\d{4}-\d{2}$/;
 
 /**
- * The current monthly cycle key, "YYYY-MM". Computed in UTC deliberately —
- * simple and deterministic server-side, at the cost of a user near a month
- * boundary in a far timezone occasionally seeing the adjacent month for a
- * few hours. Documented as a known v1 limitation, not silently wrong.
+ * The current monthly cycle key, "YYYY-MM" — shared by every product that
+ * uses product_instances, since cycle_key is a schema-level constraint
+ * (not a Monthly Money Reset concept). Computed in UTC deliberately — simple
+ * and deterministic server-side, at the cost of a user near a month boundary
+ * in a far timezone occasionally seeing the adjacent month for a few hours.
+ * Documented as a known v1 limitation, not silently wrong.
  */
 export function currentCycleKey(date: Date = new Date()): string {
   const year = date.getUTCFullYear();

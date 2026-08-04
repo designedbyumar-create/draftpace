@@ -11,10 +11,10 @@ import { Check, Clock } from "@/design-system/Icon";
 import { useInstanceState } from "./useInstanceState";
 import { LoadErrorState } from "./shared";
 import ThemeScope from "./ThemeScope";
-import { listMyProductInstances, setProductInstanceLifecycle, startNextCycle, type ProductInstanceSummary } from "../data";
+import { listMyProductInstances, setProductInstanceLifecycle, startNextCycle, type ListInstancesResult } from "../data";
 import { computeSafeToSpend } from "../calculations";
 import { runCloseSequence, type CloseSequenceFailureStep } from "../closeSequence";
-import { cycleKeyToLabel } from "../cycle";
+import { cycleKeyToLabel } from "@/product-framework/cycle";
 import { formatCurrency } from "../currency";
 import type { CarryForwardChoices } from "../state";
 
@@ -44,7 +44,8 @@ function nextCycleKey(cycleKey: string): string {
 export default function HistoryModule({ definition }: { definition: ProductDefinition }) {
   const router = useRouter();
   const { status, instanceId, state, saveDirectly, retry } = useInstanceState(definition.slug);
-  const [pastCycles, setPastCycles] = useState<ProductInstanceSummary[] | null>(null);
+  const [pastCyclesResult, setPastCyclesResult] = useState<ListInstancesResult | null>(null);
+  const [pastCyclesRetryToken, setPastCyclesRetryToken] = useState(0);
   const [closing, setClosing] = useState(false);
   const [reflection, setReflection] = useState("");
   const [choices, setChoices] = useState<CarryForwardChoices>(DEFAULT_CHOICES);
@@ -53,13 +54,13 @@ export default function HistoryModule({ definition }: { definition: ProductDefin
 
   useEffect(() => {
     let cancelled = false;
-    listMyProductInstances(definition.slug).then((rows) => {
-      if (!cancelled) setPastCycles(rows);
+    listMyProductInstances(definition.slug).then((result) => {
+      if (!cancelled) setPastCyclesResult(result);
     });
     return () => {
       cancelled = true;
     };
-  }, [definition.slug]);
+  }, [definition.slug, pastCyclesRetryToken]);
 
   if (status === "loading") {
     return <p className="text-[13px] text-[var(--muted)]">Loading your history…</p>;
@@ -88,9 +89,10 @@ export default function HistoryModule({ definition }: { definition: ProductDefin
   const unresolvedBills = state.bills.filter((bill) => bill.status === "upcoming" || bill.status === "changed");
   const expectedIncome = state.income.filter((entry) => entry.status === "expected");
   const alreadyClosed = state.cycle.closedAt !== undefined;
-  const completedPastCycles = (pastCycles ?? []).filter(
-    (row) => row.cycleKey !== state.cycle.cycleKey && row.lifecycleState === "completed"
-  );
+  const completedPastCycles =
+    pastCyclesResult?.status === "ok"
+      ? pastCyclesResult.rows.filter((row) => row.cycleKey !== state.cycle.cycleKey && row.lifecycleState === "completed")
+      : [];
 
   /**
    * A checked, retryable sequence — the previous version ignored the result
@@ -269,7 +271,18 @@ export default function HistoryModule({ definition }: { definition: ProductDefin
 
       <div>
         <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--faint)]">Previous cycles</p>
-        {completedPastCycles.length === 0 ? (
+        {pastCyclesResult?.status === "error" ? (
+          <EmptyState
+            icon={Clock}
+            title="Couldn't load your previous cycles"
+            description="This was just a read failure, not a sign anything's missing. Try again."
+            action={
+              <Button size="md" onClick={() => setPastCyclesRetryToken((t) => t + 1)}>
+                Try again
+              </Button>
+            }
+          />
+        ) : completedPastCycles.length === 0 ? (
           <EmptyState icon={Clock} title="No completed months yet" description="Closed cycles show up here once you've closed your first month." />
         ) : (
           <div className="grid gap-3 sm:grid-cols-2">

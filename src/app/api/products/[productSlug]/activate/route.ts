@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { productRegistry } from "@/product-framework/registry";
-import { registerMonthlyMoneyReset } from "@/products/monthly-money-reset/register";
-import { currentCycleKey } from "@/products/monthly-money-reset/cycle";
+import { ensureProductsRegistered } from "@/products/manifest";
+import { currentCycleKey } from "@/product-framework/cycle";
 
 /**
  * The only endpoint that ever grants a free entitlement or creates a
@@ -17,7 +17,7 @@ import { currentCycleKey } from "@/products/monthly-money-reset/cycle";
  * rather than relying on that layout having already run.
  */
 export async function POST(request: Request, { params }: { params: Promise<{ productSlug: string }> }) {
-  registerMonthlyMoneyReset();
+  ensureProductsRegistered();
   const { productSlug } = await params;
 
   const definition = productRegistry.getBySlug(productSlug);

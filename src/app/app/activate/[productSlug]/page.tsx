@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { productRegistry } from "@/product-framework/registry";
-import { registerMonthlyMoneyReset } from "@/products/monthly-money-reset/register";
+import { ensureProductsRegistered } from "@/products/manifest";
 import { familyRegistry } from "@/product-framework/families";
 import Container from "@/design-system/Container";
 import Surface from "@/design-system/Surface";
@@ -30,7 +30,7 @@ export default async function ActivateProductPage({
   params: Promise<{ productSlug: string }>;
   searchParams: Promise<{ error?: string }>;
 }) {
-  registerMonthlyMoneyReset();
+  ensureProductsRegistered();
   const { productSlug } = await params;
   const { error } = await searchParams;
 
