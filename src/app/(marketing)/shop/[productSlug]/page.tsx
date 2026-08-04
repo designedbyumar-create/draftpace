@@ -44,40 +44,51 @@ export default async function ShopProductPage({
   const structuredData = buildStructuredData(product);
 
   return (
-    <Container width="narrow" className="pb-28 pt-14 sm:pt-16">
+    <>
       {structuredData && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       )}
-      {product.devFixture && (
-        <div className="mb-6 rounded-lg bg-[var(--surface-muted)] px-4 py-2.5 text-[12px] font-semibold text-[var(--muted)]">
-          Internal Store preview. This listing does not describe a real product.
-        </div>
-      )}
 
-      {/* Movement 1: outcome hero with a real visual */}
-      <section className="grid gap-6 sm:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] sm:items-center">
-        <div>
-          <div className="flex flex-wrap items-center gap-2">
-            <Badge tone={product.access === "free" ? "success" : "primary"}>
-              {product.access === "free" ? "Free" : "Paid"}
-            </Badge>
-            {product.availability === "coming-soon" && <Badge tone="neutral">Coming soon</Badge>}
-          </div>
-          <h1 className="mt-3 font-serif text-[32px] font-semibold leading-tight tracking-tight sm:text-[40px]">
-            {product.title}
-          </h1>
-          <p className="mt-4 text-[16px] leading-relaxed text-[var(--muted)]">{product.promise}</p>
-          <div className="mt-6">
-            <GetAction product={product} priceLabel={priceLabel} size="lg" />
-          </div>
-          <p className="mt-3 flex items-center gap-1.5 text-[12px] text-[var(--faint)]">
-            <Lock size={12} aria-hidden />
-            Only you can see your data. It saves to your account, on every device.
-          </p>
-        </div>
-        <HeroVisual product={product} />
-      </section>
+      {/* Movement 1: outcome hero with a real visual, given room to breathe */}
+      <div className="relative overflow-hidden border-b border-[var(--border)] bg-[var(--surface)]">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -top-40 right-[-10%] h-[520px] w-[520px] rounded-full bg-[var(--primary)] opacity-[0.07] blur-[110px]"
+        />
+        <Container width="wide" className="relative pb-16 pt-14 sm:pb-20 sm:pt-16">
+          {product.devFixture && (
+            <div className="mb-6 rounded-lg bg-[var(--surface-muted)] px-4 py-2.5 text-[12px] font-semibold text-[var(--muted)]">
+              Internal Store preview. This listing does not describe a real product.
+            </div>
+          )}
+          <section className="grid gap-10 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] sm:items-center sm:gap-8 lg:gap-14">
+            <div>
+              <div className="flex flex-wrap items-center gap-2">
+                <Badge tone={product.access === "free" ? "success" : "primary"}>
+                  {product.access === "free" ? "Free" : "Paid"}
+                </Badge>
+                {product.availability === "coming-soon" && <Badge tone="neutral">Coming soon</Badge>}
+              </div>
+              <h1 className="mt-4 font-serif text-[38px] font-semibold leading-[1.05] tracking-tight sm:text-[52px]">
+                {product.title}
+              </h1>
+              <p className="mt-5 max-w-[34rem] text-[17px] leading-relaxed text-[var(--muted)] sm:text-[18px]">
+                {product.promise}
+              </p>
+              <div className="mt-8">
+                <GetAction product={product} priceLabel={priceLabel} size="lg" />
+              </div>
+              <p className="mt-4 flex items-center gap-1.5 text-[12px] text-[var(--faint)]">
+                <Lock size={12} aria-hidden />
+                Only you can see your data. It saves to your account, on every device.
+              </p>
+            </div>
+            <HeroVisual product={product} />
+          </section>
+        </Container>
+      </div>
 
+      <Container width="narrow" className="pb-28 pt-14 sm:pt-16">
       {/* Movement 2: who this is for and the situation */}
       {product.audience.length > 0 && (
         <Section eyebrow="Who this is for">
@@ -171,12 +182,14 @@ export default async function ShopProductPage({
       )}
 
       {/* Price and get, repeated near the decision */}
-      <section className="mt-12 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[var(--shadow-xs)]">
-        <div className="flex flex-wrap items-center justify-between gap-4">
+      <section className="mt-12 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-7 shadow-[var(--shadow-soft)] sm:p-8">
+        <div className="flex flex-wrap items-center justify-between gap-5">
           <div>
             <p className="text-[11px] font-bold uppercase tracking-wide text-[var(--faint)]">Price</p>
-            <p className="mt-1 text-[24px] font-semibold text-[var(--text)]">{priceLabel}</p>
-            {product.access === "paid" && <p className="mt-0.5 text-[12px] text-[var(--muted)]">One-time. Yours to keep.</p>}
+            <p className="mt-1 font-serif text-[32px] font-semibold leading-none tracking-tight text-[var(--text)]">
+              {priceLabel}
+            </p>
+            {product.access === "paid" && <p className="mt-1.5 text-[12px] text-[var(--muted)]">One-time. Yours to keep.</p>}
           </div>
           <GetAction product={product} priceLabel={priceLabel} size="lg" />
         </div>
@@ -221,7 +234,8 @@ export default async function ShopProductPage({
       <section className="mt-14 border-t border-[var(--border)] pt-10 text-center">
         <GetAction product={product} priceLabel={priceLabel} size="lg" center />
       </section>
-    </Container>
+      </Container>
+    </>
   );
 }
 
@@ -274,13 +288,41 @@ function GetAction({
   );
 }
 
-/** Hero product visual: real media when present, else a labeled placeholder. */
+/**
+ * Hero product visual: a real screenshot framed in a browser window, the way
+ * a live web product actually reaches people, rather than a bare cropped
+ * image. A labeled placeholder still shows when a product has no media yet.
+ */
 function HeroVisual({ product }: { product: ShopProduct }) {
   const media = product.media[0];
   if (media) {
     return (
-      <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-[var(--border)] shadow-[var(--shadow-soft)]">
-        <Image src={media.src} alt={media.alt} fill className="object-cover" sizes="(max-width: 640px) 100vw, 45vw" priority />
+      <div className="relative">
+        <div
+          aria-hidden
+          className="absolute inset-x-4 inset-y-6 -z-10 rounded-[28px] bg-[var(--primary)] opacity-[0.12] blur-2xl"
+        />
+        <div className="overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-[var(--shadow-md)] transition-transform duration-[var(--dur-slow)] ease-[var(--ease-out)] hover:-translate-y-1">
+          <div className="flex items-center gap-2 border-b border-[var(--border)] bg-[var(--surface-muted)] px-4 py-2.5">
+            <span className="h-2.5 w-2.5 rounded-full bg-[var(--border-strong)]" aria-hidden />
+            <span className="h-2.5 w-2.5 rounded-full bg-[var(--border-strong)]" aria-hidden />
+            <span className="h-2.5 w-2.5 rounded-full bg-[var(--border-strong)]" aria-hidden />
+            <div className="mx-auto flex items-center gap-1.5 rounded-md bg-[var(--surface)] px-3 py-1 text-[11px] font-medium text-[var(--faint)]">
+              <Lock size={10} aria-hidden />
+              draftpace.com
+            </div>
+          </div>
+          <div className="relative aspect-[4/3]">
+            <Image
+              src={media.src}
+              alt={media.alt}
+              fill
+              className="object-cover object-top"
+              sizes="(max-width: 640px) 100vw, 50vw"
+              priority
+            />
+          </div>
+        </div>
       </div>
     );
   }
