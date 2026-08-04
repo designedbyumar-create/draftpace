@@ -21,10 +21,20 @@ setup("authenticate", async ({ page }) => {
   }
 
   await page.goto("/login");
+  // Wait past hydration, not just DOM paint — the email/password inputs are
+  // React-controlled, so filling before the client bundle attaches its
+  // listeners sets DOM value without updating state, leaving "Sign in"
+  // permanently disabled. This was seen for real on a slow/cold dev-server
+  // compile, not a hypothetical.
+  await page.waitForLoadState("networkidle");
   await page.getByLabel("Email address").fill(email);
   await page.getByLabel("Password").fill(password);
   await page.getByRole("button", { name: "Sign in" }).click();
 
-  await expect(page).toHaveURL(/\/app(\/|$)/);
+  // This is always the very first navigation of a run, so /app pays a real,
+  // one-time cold-compile cost nothing has warmed yet (observed 20s+ on a
+  // freshly started dev server) — well past the suite's normal 15s expect
+  // timeout. Every later test benefits from /app already being compiled.
+  await expect(page).toHaveURL(/\/app(\/|$)/, { timeout: 45_000 });
   await page.context().storageState({ path: authFile });
 });

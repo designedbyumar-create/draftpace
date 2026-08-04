@@ -20,7 +20,14 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   reporter: "html",
-  timeout: 30_000,
+  // A route hit for the first time in a run pays a real, one-time dev-server
+  // compile cost (observed up to ~25s) before the very first navigation even
+  // resolves. A 30s test budget leaves almost nothing for the rest of the
+  // test once that lands on a route nothing earlier in the run has warmed.
+  timeout: 60_000,
+  // Same reasoning, for individual assertions: the default 5s expect()
+  // timeout is tighter than a cold compile.
+  expect: { timeout: 15_000 },
   use: {
     baseURL,
     trace: "on-first-retry",

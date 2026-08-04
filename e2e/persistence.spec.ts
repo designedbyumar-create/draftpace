@@ -39,6 +39,9 @@ test("signing out and back in preserves ownership and access", async ({ page }) 
   // Signed out: the same product's inner route must bounce to login, not render.
   await page.goto("/app/products/monthly-money-reset/workspace");
   await expect(page).toHaveURL(/\/login/);
+  // See e2e/auth.setup.ts for why this matters: fill before hydration
+  // attaches React's listeners sets DOM value without updating state.
+  await page.waitForLoadState("networkidle");
 
   await page.getByLabel("Email address").fill(email);
   await page.getByLabel("Password").fill(password);
