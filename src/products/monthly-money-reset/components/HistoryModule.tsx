@@ -349,7 +349,7 @@ export default function HistoryModule({ definition }: { definition: ProductDefin
             <p className="mt-4 text-[13px] font-semibold text-[var(--danger)]">{closeError}</p>
           )}
 
-          <div className="mt-5 flex gap-2">
+          <div className="mt-5 flex flex-wrap gap-2">
             <Button
               onClick={finishClose}
               disabled={working || !startingBalanceTouched}
