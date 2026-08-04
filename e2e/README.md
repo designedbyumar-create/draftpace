@@ -36,3 +36,42 @@ to match and activate Monthly Money Reset for it
 (`/app/activate/monthly-money-reset`) so `library.spec.ts` and
 `canonical-route.spec.ts` have real ownership state to check against —
 `grant_free_product` is idempotent, so re-running activation is always safe.
+
+## Phase B: hidden-access-test
+
+`hidden-access-test.spec.ts` covers the service-role-only grant/revoke RPCs
+(`supabase/migrations/202608040001_grant_admin_purchased_and_revoke.sql`).
+Those RPCs are deliberately unreachable from a signed-in session, so this
+suite can't grant or revoke the product itself — the "before grant" tests
+run unconditionally, but "after grant" and "after revoke" are gated behind
+env flags that only mean something once a human has actually run the SQL
+against the test account:
+
+```bash
+# after applying the migration and running grant_admin_product for E2E_TEST_EMAIL:
+export E2E_HIDDEN_PRODUCT_GRANTED=true
+
+# after running revoke_entitlement for the same account:
+export E2E_HIDDEN_PRODUCT_REVOKED=true
+```
+
+Grant SQL (looks the account up by email, no need to find its UUID):
+
+```sql
+select * from grant_admin_product(
+  (select id from auth.users where email = 'YOUR_E2E_TEST_EMAIL'),
+  'hidden-access-test',
+  '0.1.0',
+  to_char(now(), 'YYYY-MM'),
+  'E2E verification grant'
+);
+```
+
+Revoke SQL:
+
+```sql
+select revoke_entitlement(
+  (select id from auth.users where email = 'YOUR_E2E_TEST_EMAIL'),
+  'hidden-access-test'
+);
+```

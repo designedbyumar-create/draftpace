@@ -11,7 +11,13 @@ export function resolveProductDestination(
   instance: Pick<ProductInstanceSummary, "setupComplete" | "lifecycleState">
 ): string {
   const base = `/app/products/${definition.slug}`;
-  if (!instance.setupComplete) return `${base}/setup`;
+  // Not every family declares a "setup" destination (e.g. workspace's
+  // defaultNavigation is just start/workspace/history) — routing there
+  // anyway would land the owner on a destination outside their product's
+  // own nav. setup_complete defaults to false for every fresh instance
+  // regardless of family, so this must be gated on the product actually
+  // having somewhere to send them.
+  if (definition.navigation.includes("setup") && !instance.setupComplete) return `${base}/setup`;
   if (instance.lifecycleState === "completed") return `${base}/history`;
   return `${base}/workspace`;
 }

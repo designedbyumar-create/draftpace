@@ -28,6 +28,10 @@ describe("ensureProductsRegistered", () => {
     expect(found?.title).toBe("Monthly Money Reset");
     expect(found?.access.model).toBe("free");
     expect(found?.family).toBe("companion");
+
+    const hidden = productRegistry.getBySlug("hidden-access-test");
+    expect(hidden).toBeDefined();
+    expect(hidden?.devFixture).toBe(false);
   }, 20000);
 
   it("is never a development fixture", () => {
@@ -46,14 +50,16 @@ describe("ensureProductsRegistered", () => {
       ensureProductsRegistered();
       ensureProductsRegistered();
     }).not.toThrow();
-    expect(productRegistry.list()).toHaveLength(1);
+    expect(productRegistry.list()).toHaveLength(2);
   }, 20000);
 
   it("is the only file that imports a specific product's catalog entry — every route imports the generic function", () => {
     // Locks in the actual point of this refactor: adding Product 2 should
     // mean one new import + one new array entry here, and nothing outside
     // this file should ever need to know a product-specific module path.
+    // hidden-access-test (Phase B) is that exact proof, already applied.
     const manifestSource = readFileSync(new URL("./manifest.ts", import.meta.url), "utf-8");
     expect(manifestSource).toContain("monthly-money-reset/catalog");
+    expect(manifestSource).toContain("hidden-access-test/catalog");
   });
 });

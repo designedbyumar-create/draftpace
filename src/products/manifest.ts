@@ -2,6 +2,7 @@ import { productRegistry } from "@/product-framework/registry";
 import { moduleRegistry } from "@/product-framework/moduleRegistry";
 import type { ProductCatalogEntry } from "@/product-framework/catalog";
 import { monthlyMoneyResetCatalogEntry } from "./monthly-money-reset/catalog";
+import { hiddenAccessTestCatalogEntry } from "./hidden-access-test/catalog";
 
 /**
  * The one auditable list of every real product Draftpace registers. This is
@@ -10,9 +11,11 @@ import { monthlyMoneyResetCatalogEntry } from "./monthly-money-reset/catalog";
  * ensureProductsRegistered() below and never name a product directly.
  *
  * Adding a second product means one new import and one new array entry here,
- * nothing else. See docs/PRODUCT-FRAMEWORK.md.
+ * nothing else. See docs/PRODUCT-FRAMEWORK.md. hidden-access-test is exactly
+ * that proof: a second, unrelated product added with no changes anywhere
+ * else in this file.
  */
-const PRODUCT_CATALOG: ProductCatalogEntry[] = [monthlyMoneyResetCatalogEntry];
+const PRODUCT_CATALOG: ProductCatalogEntry[] = [monthlyMoneyResetCatalogEntry, hiddenAccessTestCatalogEntry];
 
 let registered = false;
 

@@ -50,4 +50,12 @@ test("signing out and back in preserves ownership and access", async ({ page }) 
 
   await page.goto("/app/library");
   await expect(page.getByText("Monthly Money Reset")).toBeVisible();
+
+  // supabase.auth.signOut() defaults to scope: "global" — it revokes the
+  // refresh token, not just this browser context's local session. Every
+  // later test in this run loads a fresh context from the same on-disk
+  // playwright/.auth/user.json snapshot (see auth.setup.ts), so without
+  // overwriting it here with the just-reissued session, every test after
+  // this one would silently be using a dead session and look logged out.
+  await page.context().storageState({ path: "playwright/.auth/user.json" });
 });
