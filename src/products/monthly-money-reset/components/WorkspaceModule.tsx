@@ -173,7 +173,12 @@ export default function WorkspaceModule({ definition }: { definition: ProductDef
 
           <div className="flex flex-col gap-4">
             <div id="mmr-tour-next-move" className="flex-1">
-              <NextActionCard nextAction={nextAction} onDismiss={dismissNextAction} onAct={actOnNextAction} />
+              <NextActionCard
+                nextAction={nextAction}
+                checkInDay={state.preferences.checkInDay}
+                onDismiss={dismissNextAction}
+                onAct={actOnNextAction}
+              />
             </div>
             <div className="flex flex-col gap-2">
               <Button
