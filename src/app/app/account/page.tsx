@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PlatformShell from "@/design-system/shell/PlatformShell";
 import { useSession } from "@/design-system/shell/SessionProvider";
 import { supabase } from "@/lib/supabase/client";
@@ -15,7 +15,13 @@ export default function AccountPage() {
   const [signingOut, setSigningOut] = useState(false);
 
   const provider = user.app_metadata?.provider === "google" ? "Google" : "Email and password";
-  const lastSignIn = user.last_sign_in_at ? new Date(user.last_sign_in_at).toLocaleString() : "Unknown";
+  // toLocaleString() depends on the runtime's locale and time zone, which
+  // differ between the server render and the browser, so it can only be
+  // computed after mount to avoid a hydration mismatch.
+  const [lastSignIn, setLastSignIn] = useState<string | null>(null);
+  useEffect(() => {
+    setLastSignIn(user.last_sign_in_at ? new Date(user.last_sign_in_at).toLocaleString() : "Unknown");
+  }, [user.last_sign_in_at]);
 
   const handleSignOut = async () => {
     setSigningOut(true);
@@ -43,7 +49,7 @@ export default function AccountPage() {
           </h2>
           <Surface padded={false}>
             <div className="divide-y divide-[var(--border)] px-5">
-              <SettingsRow label="This device" description={`Last signed in ${lastSignIn}`}>
+              <SettingsRow label="This device" description={lastSignIn ? `Last signed in ${lastSignIn}` : "Last signed in —"}>
                 <Badge tone="success">Active</Badge>
               </SettingsRow>
               <SettingsRow label="Manage other devices" description="View and sign out other sessions." unavailable />
