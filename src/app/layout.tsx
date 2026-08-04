@@ -50,6 +50,12 @@ export const metadata: Metadata = {
     ],
     apple: [{ url: "/logo/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
+  // Google Search Console's HTML-tag verification method. Renders no meta
+  // tag at all until GOOGLE_SITE_VERIFICATION is set; never a placeholder
+  // value, since a fabricated one would silently fail verification.
+  ...(process.env.GOOGLE_SITE_VERIFICATION
+    ? { verification: { google: process.env.GOOGLE_SITE_VERIFICATION } }
+    : {}),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
