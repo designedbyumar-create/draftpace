@@ -25,6 +25,7 @@ const baseParams = {
     spendingGroups: true,
     reservePreference: true,
     checkInPreference: true,
+    startingBalance: { mode: "fresh" as const },
   },
   newCycleKey: "2026-09",
   newCycleLabel: "September 2026",
@@ -82,6 +83,18 @@ describe("runCloseSequence — happy path", () => {
     expect(call.instanceId).toBe("instance-new");
     expect(call.expectedRevision).toBe(1);
     expect(call.state.cycle.cycleKey).toBe("2026-09");
+  });
+
+  it("saves the real computed Safe-to-Spend for the new cycle, not a hardcoded zero", async () => {
+    const deps = makeDeps();
+    const withStartingBalance = {
+      ...baseParams,
+      choices: { ...baseParams.choices, startingBalance: { mode: "custom" as const, amountMinorUnits: 500_00 } },
+    };
+    await runCloseSequence(deps, withStartingBalance);
+    const call = (deps.saveNextCycleState as ReturnType<typeof vi.fn>).mock.calls[0][0];
+    // A fresh cycle with only a starting balance and nothing else: Safe-to-Spend equals it exactly.
+    expect(call.safeToSpendMinorUnits).toBe(500_00);
   });
 });
 

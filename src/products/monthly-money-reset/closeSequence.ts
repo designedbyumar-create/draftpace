@@ -95,7 +95,11 @@ export async function runCloseSequence(
     expectedRevision: 1,
     state: nextState,
     setupComplete: false,
-    safeToSpendMinorUnits: 0,
+    // A carried-forward starting balance (suggested/custom/actual) makes
+    // this genuinely nonzero — the previous hardcoded 0 predates the
+    // starting-balance choice existing at all. See Phase 5 of the MMR
+    // redesign plan.
+    safeToSpendMinorUnits: computeSafeToSpend(nextState).safeToSpend,
     nextActionLabel: null,
   });
   // A conflict on a brand-new instance almost certainly means an earlier,

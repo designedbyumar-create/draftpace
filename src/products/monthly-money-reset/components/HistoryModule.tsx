@@ -9,14 +9,14 @@ import Badge from "@/design-system/Badge";
 import Toggle from "@/design-system/Toggle";
 import { Check, Clock } from "@/design-system/Icon";
 import { useInstanceState } from "./useInstanceState";
-import { LoadErrorState } from "./shared";
+import { AmountField, LoadErrorState } from "./shared";
 import ThemeScope from "./ThemeScope";
 import { listMyProductInstances, setProductInstanceLifecycle, startNextCycle, type ListInstancesResult } from "../data";
 import { computeSafeToSpend } from "../calculations";
 import { runCloseSequence, type CloseSequenceFailureStep } from "../closeSequence";
 import { cycleKeyToLabel } from "@/product-framework/cycle";
 import { formatCurrency } from "../currency";
-import type { CarryForwardChoices } from "../state";
+import type { CarryForwardChoices, StartingBalanceMode } from "../state";
 
 const DEFAULT_CHOICES: CarryForwardChoices = {
   recurringIncome: true,
@@ -24,7 +24,18 @@ const DEFAULT_CHOICES: CarryForwardChoices = {
   spendingGroups: true,
   reservePreference: true,
   checkInPreference: true,
+  // A placeholder, not a consent — the UI never lets finishClose() run until
+  // startingBalanceTouched is true, so this value is only ever submitted
+  // once the user has explicitly picked (possibly this same option).
+  startingBalance: { mode: "fresh" },
 };
+
+const STARTING_BALANCE_OPTIONS: { mode: StartingBalanceMode; label: string; needsAmount: boolean }[] = [
+  { mode: "suggested", label: "Suggested", needsAmount: false },
+  { mode: "actual", label: "Actual balance", needsAmount: true },
+  { mode: "custom", label: "Custom amount", needsAmount: true },
+  { mode: "fresh", label: "Start fresh", needsAmount: false },
+];
 
 const CLOSE_FAILURE_MESSAGES: Record<CloseSequenceFailureStep, (closedLabel: string, nextLabel: string) => string> = {
   "save-close": () => "Couldn't save this month's close. Nothing changed, check your connection and try again.",
@@ -49,6 +60,8 @@ export default function HistoryModule({ definition }: { definition: ProductDefin
   const [closing, setClosing] = useState(false);
   const [reflection, setReflection] = useState("");
   const [choices, setChoices] = useState<CarryForwardChoices>(DEFAULT_CHOICES);
+  const [startingBalanceTouched, setStartingBalanceTouched] = useState(false);
+  const [startingBalanceAmount, setStartingBalanceAmount] = useState(0);
   const [working, setWorking] = useState(false);
   const [closeError, setCloseError] = useState<string | null>(null);
 
@@ -88,7 +101,26 @@ export default function HistoryModule({ definition }: { definition: ProductDefin
   const breakdown = computeSafeToSpend(state);
   const unresolvedBills = state.bills.filter((bill) => bill.status === "upcoming" || bill.status === "changed");
   const expectedIncome = state.income.filter((entry) => entry.status === "expected");
+  const billsPaidCount = state.bills.filter((bill) => bill.status === "paid").length;
   const alreadyClosed = state.cycle.closedAt !== undefined;
+
+  function selectStartingBalance(mode: StartingBalanceMode) {
+    setStartingBalanceTouched(true);
+    setChoices({
+      ...choices,
+      startingBalance: {
+        mode,
+        amountMinorUnits: mode === "custom" || mode === "actual" ? startingBalanceAmount : undefined,
+      },
+    });
+  }
+
+  function updateStartingBalanceAmount(amount: number) {
+    setStartingBalanceAmount(amount);
+    if (choices.startingBalance.mode === "custom" || choices.startingBalance.mode === "actual") {
+      setChoices({ ...choices, startingBalance: { ...choices.startingBalance, amountMinorUnits: amount } });
+    }
+  }
   const completedPastCycles =
     pastCyclesResult?.status === "ok"
       ? pastCyclesResult.rows.filter((row) => row.cycleKey !== state.cycle.cycleKey && row.lifecycleState === "completed")
@@ -209,10 +241,23 @@ export default function HistoryModule({ definition }: { definition: ProductDefin
             </div>
           )}
 
-          <p className="mt-4 text-[13px] font-semibold text-[var(--text)]">Closing Safe-to-Spend</p>
-          <p className="mt-1 text-[20px] font-semibold text-[var(--text)]">
-            {formatCurrency(breakdown.safeToSpend, state.currency)}
-          </p>
+          <p className="mt-4 text-[13px] font-semibold text-[var(--text)]">Closing summary</p>
+          <div className="mt-2 grid grid-cols-3 gap-3 rounded-lg bg-[var(--surface-muted)] p-3.5 text-[13px]">
+            <div>
+              <p className="text-[var(--faint)]">Closing Safe-to-Spend</p>
+              <p className="mt-0.5 font-semibold text-[var(--text)]">{formatCurrency(breakdown.safeToSpend, state.currency)}</p>
+            </div>
+            <div>
+              <p className="text-[var(--faint)]">Bills paid</p>
+              <p className="mt-0.5 font-semibold text-[var(--text)]">
+                {billsPaidCount} of {state.bills.length}
+              </p>
+            </div>
+            <div>
+              <p className="text-[var(--faint)]">Check-ins done</p>
+              <p className="mt-0.5 font-semibold text-[var(--text)]">{state.checkIns.length}</p>
+            </div>
+          </div>
 
           <label className="mt-4 block text-[13px] font-semibold text-[var(--text)]" htmlFor="reflection">
             How did this month go? <span className="font-normal text-[var(--muted)]">(optional)</span>
@@ -254,12 +299,62 @@ export default function HistoryModule({ definition }: { definition: ProductDefin
             />
           </div>
 
+          <p className="mt-5 text-[13px] font-semibold text-[var(--text)]">
+            Starting balance for {cycleKeyToLabel(nextCycleKey(state.cycle.cycleKey))}
+          </p>
+          <p className="mt-1 text-[12px] leading-relaxed text-[var(--muted)]">
+            Choose deliberately — nothing is preselected.
+          </p>
+          <div className="mt-2.5 grid gap-2 sm:grid-cols-2">
+            {STARTING_BALANCE_OPTIONS.map((option) => {
+              const selected = startingBalanceTouched && choices.startingBalance.mode === option.mode;
+              return (
+                <button
+                  key={option.mode}
+                  type="button"
+                  onClick={() => selectStartingBalance(option.mode)}
+                  className={`rounded-lg border px-3.5 py-3 text-left transition-colors ${
+                    selected
+                      ? "border-[var(--primary)] bg-[var(--primary-soft)]"
+                      : "border-[var(--border)] hover:border-[var(--border-strong)]"
+                  }`}
+                >
+                  <p className="text-[13px] font-semibold text-[var(--text)]">{option.label}</p>
+                  <p className="mt-0.5 text-[12px] leading-relaxed text-[var(--muted)]">
+                    {option.mode === "suggested" &&
+                      `An estimate — ${formatCurrency(breakdown.safeToSpend, state.currency)}, this month's closing Safe-to-Spend. Not necessarily your real bank balance.`}
+                    {option.mode === "actual" && "Enter what's really in your account right now."}
+                    {option.mode === "custom" && "Enter a different starting amount."}
+                    {option.mode === "fresh" && "Begin next month at $0, on purpose."}
+                  </p>
+                </button>
+              );
+            })}
+          </div>
+
+          {startingBalanceTouched &&
+            (choices.startingBalance.mode === "custom" || choices.startingBalance.mode === "actual") && (
+              <div className="mt-3">
+                <AmountField
+                  label={choices.startingBalance.mode === "actual" ? "Actual balance" : "Custom amount"}
+                  valueMinorUnits={startingBalanceAmount}
+                  currency={state.currency}
+                  onChange={updateStartingBalanceAmount}
+                  autoFocus
+                />
+              </div>
+            )}
+
           {closeError && (
             <p className="mt-4 text-[13px] font-semibold text-[var(--danger)]">{closeError}</p>
           )}
 
           <div className="mt-5 flex gap-2">
-            <Button onClick={finishClose} disabled={working} iconLeft={<Check size={14} aria-hidden />}>
+            <Button
+              onClick={finishClose}
+              disabled={working || !startingBalanceTouched}
+              iconLeft={<Check size={14} aria-hidden />}
+            >
               {working ? "Closing…" : closeError ? "Try again" : `Close and start ${cycleKeyToLabel(nextCycleKey(state.cycle.cycleKey))}`}
             </Button>
             <Button variant="ghost" onClick={() => setClosing(false)} disabled={working}>

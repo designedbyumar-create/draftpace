@@ -8,6 +8,7 @@ const ALL_ON: CarryForwardChoices = {
   spendingGroups: true,
   reservePreference: true,
   checkInPreference: true,
+  startingBalance: { mode: "fresh" },
 };
 
 const ALL_OFF: CarryForwardChoices = {
@@ -16,6 +17,7 @@ const ALL_OFF: CarryForwardChoices = {
   spendingGroups: false,
   reservePreference: false,
   checkInPreference: false,
+  startingBalance: { mode: "fresh" },
 };
 
 function previousState() {
@@ -102,7 +104,7 @@ describe("buildNextCycleState", () => {
     expect(next.income.some((entry) => entry.id === "inc-2")).toBe(false);
   });
 
-  it("never carries forward activity, check-ins, or the starting balance", () => {
+  it("never carries forward activity or check-ins, regardless of the starting balance choice", () => {
     const next = buildNextCycleState({
       previous: previousState(),
       previousInstanceId: "instance-1",
@@ -112,7 +114,6 @@ describe("buildNextCycleState", () => {
     });
     expect(next.activity).toHaveLength(0);
     expect(next.checkIns).toHaveLength(0);
-    expect(next.startingAvailableBalanceMinorUnits).toBe(0);
   });
 
   it("links the new cycle to the prior instance", () => {
@@ -124,5 +125,53 @@ describe("buildNextCycleState", () => {
       choices: ALL_ON,
     });
     expect(next.cycle.previousInstanceId).toBe("instance-1");
+  });
+});
+
+describe("buildNextCycleState: starting balance carry-forward", () => {
+  it("'fresh' produces exactly zero", () => {
+    const next = buildNextCycleState({
+      previous: previousState(),
+      previousInstanceId: "instance-1",
+      cycleKey: "2026-09",
+      cycleLabel: "September 2026",
+      choices: { ...ALL_ON, startingBalance: { mode: "fresh" } },
+    });
+    expect(next.startingAvailableBalanceMinorUnits).toBe(0);
+  });
+
+  it("'suggested' uses the previous cycle's actual closing Safe-to-Spend, computed fresh", () => {
+    const previous = previousState();
+    const expected = 500_00 + 50_00 - 1200_00 - 200_00; // income received (500+50) - bill payments (Rent, paid) - reserve held; see calculations.ts
+    const next = buildNextCycleState({
+      previous,
+      previousInstanceId: "instance-1",
+      cycleKey: "2026-09",
+      cycleLabel: "September 2026",
+      choices: { ...ALL_ON, startingBalance: { mode: "suggested" } },
+    });
+    expect(next.startingAvailableBalanceMinorUnits).toBe(expected);
+  });
+
+  it("'custom' preserves the entered amount exactly", () => {
+    const next = buildNextCycleState({
+      previous: previousState(),
+      previousInstanceId: "instance-1",
+      cycleKey: "2026-09",
+      cycleLabel: "September 2026",
+      choices: { ...ALL_ON, startingBalance: { mode: "custom", amountMinorUnits: 777_00 } },
+    });
+    expect(next.startingAvailableBalanceMinorUnits).toBe(777_00);
+  });
+
+  it("'actual' preserves the entered amount exactly", () => {
+    const next = buildNextCycleState({
+      previous: previousState(),
+      previousInstanceId: "instance-1",
+      cycleKey: "2026-09",
+      cycleLabel: "September 2026",
+      choices: { ...ALL_ON, startingBalance: { mode: "actual", amountMinorUnits: 42_00 } },
+    });
+    expect(next.startingAvailableBalanceMinorUnits).toBe(42_00);
   });
 });

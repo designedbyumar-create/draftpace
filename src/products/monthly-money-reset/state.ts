@@ -188,12 +188,32 @@ export const preferencesSchema = z.object({
 });
 export type Preferences = z.infer<typeof preferencesSchema>;
 
+/**
+ * "suggested" is the closing Safe-to-Spend, always clearly labeled an
+ * estimate — never presented as the user's real bank balance. "fresh" is a
+ * deliberate zero, not a silent default. "custom"/"actual" both carry a
+ * user-entered amountMinorUnits; they're kept as distinct modes rather than
+ * merged because they mean different things to the user even though the
+ * data shape is identical. See the MMR redesign plan, Phase 5.
+ */
+export const startingBalanceModeSchema = z.enum(["suggested", "custom", "fresh", "actual"]);
+export type StartingBalanceMode = z.infer<typeof startingBalanceModeSchema>;
+
+export const startingBalanceChoiceSchema = z.object({
+  mode: startingBalanceModeSchema,
+  amountMinorUnits: moneyMinorUnits.optional(),
+});
+export type StartingBalanceChoice = z.infer<typeof startingBalanceChoiceSchema>;
+
+const DEFAULT_STARTING_BALANCE_CHOICE: StartingBalanceChoice = { mode: "fresh" };
+
 export const carryForwardChoicesSchema = z.object({
   recurringIncome: z.boolean().default(true),
   recurringBills: z.boolean().default(true),
   spendingGroups: z.boolean().default(true),
   reservePreference: z.boolean().default(true),
   checkInPreference: z.boolean().default(true),
+  startingBalance: startingBalanceChoiceSchema.default(DEFAULT_STARTING_BALANCE_CHOICE),
 });
 export type CarryForwardChoices = z.infer<typeof carryForwardChoicesSchema>;
 
