@@ -30,3 +30,92 @@ export function resolveDestinationLabel(definition: ProductDefinition, destinati
   if (destination === "workspace") return resolveWorkspaceLabel(definition);
   return defaultDestinationLabel(destination);
 }
+
+/**
+ * The generic, product-agnostic default for which destinations are
+ * "primary" (always visible once a product is past its first-use gate) —
+ * workspace/progress/history-equivalents. A product overrides this only by
+ * setting `primaryNavigation` explicitly; most products won't need to.
+ */
+const DEFAULT_PRIMARY_DESTINATIONS = new Set<ProductDestinationId>(["workspace", "progress", "history"]);
+
+export function resolvePrimaryDestinationIds(definition: ProductDefinition): ProductDestinationId[] {
+  if (definition.primaryNavigation && definition.primaryNavigation.length > 0) {
+    return definition.primaryNavigation;
+  }
+  const declared = resolveProductNavigation(definition);
+  return declared.filter((destination) => DEFAULT_PRIMARY_DESTINATIONS.has(destination));
+}
+
+export type ResolvedNavigationItem = { id: ProductDestinationId; label: string };
+
+export type ResolvedNavigation = {
+  primary: ResolvedNavigationItem[];
+  secondary: ResolvedNavigationItem[];
+};
+
+/**
+ * The generic, product-agnostic signal navigation lifecycle decisions are
+ * made from — deliberately not a product's own state (e.g. MMR's
+ * setup.currentStep), since this resolver has to work for any product.
+ * `everTouched` distinguishes a genuinely untouched fresh instance from one
+ * mid-setup using data every instance already has: `createdAt` and
+ * `updatedAt` start identical (the same INSERT's `now()`) and diverge the
+ * moment the first real save happens. `null` means no instance summary was
+ * available at all (e.g. a read failure) — resolveLifecycleNavigation
+ * degrades to the full, undifferentiated destination list in that case,
+ * never a blank or broken shell.
+ */
+export type InstanceLifecycleSignal = { setupComplete: boolean; everTouched: boolean } | null;
+
+/**
+ * The state-aware navigation model: which destinations are primary, which
+ * are secondary, and — implicitly, by what's excluded from both — which
+ * disappear entirely for the current lifecycle state. Three states for any
+ * product that declares a "setup" destination:
+ *
+ * 1. Never started (setup incomplete, instance never touched): Start alone.
+ * 2. Setup in progress (setup incomplete, instance touched): Setup joins the
+ *    product's primary destinations; Start is gone.
+ * 3. Setup complete (or no setup destination at all): the product's normal
+ *    primary/secondary split; Setup (if present) demotes into secondary
+ *    under its completed label ("Edit your plan" for Monthly Money Reset).
+ *
+ * A product with no "setup" destination skips states 1/2 entirely and is
+ * always resolved as state 3.
+ */
+export function resolveLifecycleNavigation(
+  definition: ProductDefinition,
+  instance: InstanceLifecycleSignal
+): ResolvedNavigation {
+  const declared = resolveProductNavigation(definition);
+  const hasSetup = declared.includes("setup");
+  const labelOf = (id: ProductDestinationId) => resolveDestinationLabel(definition, id);
+
+  if (!instance) {
+    return { primary: declared.map((id) => ({ id, label: labelOf(id) })), secondary: [] };
+  }
+
+  if (hasSetup && !instance.setupComplete && !instance.everTouched) {
+    return { primary: [{ id: "start", label: labelOf("start") }], secondary: [] };
+  }
+
+  if (hasSetup && !instance.setupComplete) {
+    const primaryIds = ["setup", ...resolvePrimaryDestinationIds(definition)];
+    const secondaryIds = declared.filter((id) => id !== "start" && !primaryIds.includes(id));
+    return {
+      primary: primaryIds.map((id) => ({ id, label: labelOf(id) })),
+      secondary: secondaryIds.map((id) => ({ id, label: labelOf(id) })),
+    };
+  }
+
+  const primaryIds = resolvePrimaryDestinationIds(definition);
+  const secondaryIds = declared.filter((id) => id !== "start" && !primaryIds.includes(id));
+  return {
+    primary: primaryIds.map((id) => ({ id, label: labelOf(id) })),
+    secondary: secondaryIds.map((id) => ({
+      id,
+      label: id === "setup" ? definition.setup.completedLabel ?? "Edit setup" : labelOf(id),
+    })),
+  };
+}

@@ -46,6 +46,15 @@ export const productDefinitionSchema = z.object({
   access: productAccessSchema,
   capabilities: z.array(capabilityIdSchema).default([]),
   navigation: z.array(destinationIdSchema).default([]),
+  /**
+   * Which declared destinations are "primary" (always visible once the
+   * product is past its first-use gate) versus secondary/contextual. Optional
+   * — most products don't need to set this; the shared resolver's default
+   * (workspace/progress/history-equivalents are primary, everything else
+   * secondary) covers the common case. Set this only when a product's shape
+   * genuinely differs. See navigationResolver.ts.
+   */
+  primaryNavigation: z.array(destinationIdSchema).optional(),
   startRoute: z.string().default("start"),
   workspaceLabel: z.string().optional(),
   setup: z
@@ -53,6 +62,8 @@ export const productDefinitionSchema = z.object({
       required: z.boolean().default(false),
       skippable: z.boolean().default(true),
       schemaRef: z.string().optional(),
+      /** Label shown for the "setup" destination once it's complete and demoted out of primary navigation, e.g. "Edit your plan". Falls back to a generic label when unset. */
+      completedLabel: z.string().optional(),
     })
     .default({ required: false, skippable: true }),
   dataSchemaRef: z.string().optional(),

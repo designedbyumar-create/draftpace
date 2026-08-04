@@ -24,8 +24,13 @@ export const monthlyMoneyResetDefinition: ProductDefinitionInput = {
     "companion.milestones",
   ],
   navigation: ["start", "setup", "workspace", "progress", "history", "printables", "settings"],
-  workspaceLabel: "Workspace",
-  setup: { required: true, skippable: true, schemaRef: "monthly-money-reset.state.v1" },
+  workspaceLabel: "This Month",
+  setup: {
+    required: true,
+    skippable: true,
+    schemaRef: "monthly-money-reset.state.v1",
+    completedLabel: "Edit your plan",
+  },
   dataSchemaRef: "monthly-money-reset.state.v1",
   modules: [
     { id: "monthly-money-reset.start", destination: "start" },

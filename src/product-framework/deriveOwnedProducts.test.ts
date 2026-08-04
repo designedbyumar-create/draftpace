@@ -34,6 +34,8 @@ function instance(overrides: Partial<ProductInstanceSummary> = {}): ProductInsta
     safeToSpendMinorUnits: null,
     nextActionLabel: null,
     lastActivityAt: "2026-08-02T00:00:00Z",
+    createdAt: "2026-08-01T00:00:00Z",
+    updatedAt: "2026-08-02T00:00:00Z",
     ...overrides,
   };
 }

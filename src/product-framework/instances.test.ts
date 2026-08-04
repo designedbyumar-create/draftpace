@@ -10,6 +10,8 @@ const row = {
   safe_to_spend_cents: 1000,
   next_action_label: "Review bills",
   last_activity_at: "2026-08-01T00:00:00Z",
+  created_at: "2026-07-31T00:00:00Z",
+  updated_at: "2026-08-01T00:00:00Z",
 };
 
 describe("interpretListInstancesResponse", () => {
@@ -27,6 +29,8 @@ describe("interpretListInstancesResponse", () => {
           safeToSpendMinorUnits: 1000,
           nextActionLabel: "Review bills",
           lastActivityAt: "2026-08-01T00:00:00Z",
+          createdAt: "2026-07-31T00:00:00Z",
+          updatedAt: "2026-08-01T00:00:00Z",
         },
       ],
     });

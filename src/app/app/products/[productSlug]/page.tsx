@@ -33,7 +33,7 @@ export default async function ProductCanonicalPage({
   const { data: instanceRow, error: instanceError } = await supabase
     .from("product_instances")
     .select(
-      "id, product_slug, cycle_key, lifecycle_state, setup_complete, safe_to_spend_cents, next_action_label, last_activity_at"
+      "id, product_slug, cycle_key, lifecycle_state, setup_complete, safe_to_spend_cents, next_action_label, last_activity_at, created_at, updated_at"
     )
     .eq("product_slug", productSlug)
     .eq("cycle_key", cycleKey)
@@ -59,6 +59,8 @@ export default async function ProductCanonicalPage({
       safeToSpendMinorUnits: instanceRow.safe_to_spend_cents,
       nextActionLabel: instanceRow.next_action_label,
       lastActivityAt: instanceRow.last_activity_at,
+      createdAt: instanceRow.created_at,
+      updatedAt: instanceRow.updated_at,
     };
     redirect(resolveProductDestination(definition, instance));
   }

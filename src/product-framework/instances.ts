@@ -28,6 +28,16 @@ export type ProductInstanceSummary = {
   safeToSpendMinorUnits: number | null;
   nextActionLabel: string | null;
   lastActivityAt: string;
+  /**
+   * Start (nearly) identical at creation — the same INSERT's `now()` — and
+   * diverge the moment the first real save happens. The generic,
+   * product-agnostic proxy for "has this instance ever been touched since
+   * it was created," used by navigationResolver.ts to tell a genuinely
+   * fresh instance apart from one mid-setup without reading any
+   * product-specific state.
+   */
+  createdAt: string;
+  updatedAt: string;
 };
 
 export type ListInstancesResult =
@@ -43,6 +53,8 @@ type ProductInstanceRow = {
   safe_to_spend_cents: number | null;
   next_action_label: string | null;
   last_activity_at: string;
+  created_at: string;
+  updated_at: string;
 };
 
 /** Shapes a raw Supabase select response — pure and unit-testable without a network call. */
@@ -64,6 +76,8 @@ export function interpretListInstancesResponse(
       safeToSpendMinorUnits: row.safe_to_spend_cents,
       nextActionLabel: row.next_action_label,
       lastActivityAt: row.last_activity_at,
+      createdAt: row.created_at,
+      updatedAt: row.updated_at,
     })),
   };
 }
@@ -77,7 +91,7 @@ export async function listMyProductInstances(productSlug?: string): Promise<List
   let query = supabase
     .from("product_instances")
     .select(
-      "id, product_slug, cycle_key, lifecycle_state, setup_complete, safe_to_spend_cents, next_action_label, last_activity_at"
+      "id, product_slug, cycle_key, lifecycle_state, setup_complete, safe_to_spend_cents, next_action_label, last_activity_at, created_at, updated_at"
     )
     .order("last_activity_at", { ascending: false });
 

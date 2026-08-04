@@ -3,6 +3,8 @@ import { productRegistry } from "@/product-framework/registry";
 import { registerDevFixtures } from "@/product-framework/fixtures";
 import { ensureProductsRegistered } from "@/products/manifest";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { currentCycleKey } from "@/product-framework/cycle";
+import type { InstanceLifecycleSignal } from "@/product-framework/navigationResolver";
 import ProductShell from "@/components/product-shell/ProductShell";
 import RetryState from "@/components/product-shell/RetryState";
 
@@ -61,5 +63,29 @@ export default async function ProductLayout({
 
   if (!entitlement) redirect(`/app/activate/${productSlug}`);
 
-  return <ProductShell definition={definition}>{children}</ProductShell>;
+  // Feeds the state-aware navigation resolver (navigationResolver.ts) with
+  // the smallest possible signal: whether setup is complete, and whether the
+  // instance has ever been touched since creation. A read failure here must
+  // degrade to the full, undifferentiated destination list — never a blank
+  // or inaccessible shell — since this is a navigation nicety, not an access
+  // gate; the entitlement check above already owns that responsibility.
+  const { data: instanceRow, error: instanceError } = await supabase
+    .from("product_instances")
+    .select("setup_complete, created_at, updated_at")
+    .eq("product_slug", productSlug)
+    .eq("cycle_key", currentCycleKey())
+    .maybeSingle();
+
+  let instanceSignal: InstanceLifecycleSignal = null;
+  if (!instanceError) {
+    instanceSignal = instanceRow
+      ? { setupComplete: instanceRow.setup_complete, everTouched: instanceRow.updated_at !== instanceRow.created_at }
+      : { setupComplete: false, everTouched: false };
+  }
+
+  return (
+    <ProductShell definition={definition} instanceSignal={instanceSignal}>
+      {children}
+    </ProductShell>
+  );
 }

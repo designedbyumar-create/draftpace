@@ -3,19 +3,21 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ProductDefinition } from "@/product-framework/definition";
-import { resolveProductNavigation, resolveDestinationLabel } from "@/product-framework/navigationResolver";
+import { resolveLifecycleNavigation, type InstanceLifecycleSignal } from "@/product-framework/navigationResolver";
 import { familyRegistry } from "@/product-framework/families";
 import { productThemeStyle } from "@/product-framework/themeExtension";
-import { ArrowLeft } from "@/design-system/Icon";
+import { ArrowLeft, Menu } from "@/design-system/Icon";
 import Badge from "@/design-system/Badge";
 import ThemeToggle from "@/design-system/theme/ThemeToggle";
 
 /**
  * The universal product shell. Works for any family: renders whichever
- * destinations the product declares (or its family default), with the
- * Workspace tab labeled per family ("Learn", "Automate", "Continue", ...).
- * No product-specific visual identity yet beyond the scoped theme
- * extension — that's real design work for when a real product exists.
+ * destinations the product declares (or its family default), tiered into
+ * primary navigation and a compact secondary menu based on the instance's
+ * lifecycle state (never started / setting up / set up) — see
+ * navigationResolver.ts. No product-specific visual identity yet beyond the
+ * scoped theme extension — that's real design work for when a real product
+ * exists.
  */
 const CONTENT_WIDTH_CLASS: Record<"narrow" | "standard" | "wide", string> = {
   narrow: "max-w-3xl",
@@ -25,14 +27,16 @@ const CONTENT_WIDTH_CLASS: Record<"narrow" | "standard" | "wide", string> = {
 
 export default function ProductShell({
   definition,
+  instanceSignal = null,
   children,
 }: {
   definition: ProductDefinition;
+  instanceSignal?: InstanceLifecycleSignal;
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
   const family = familyRegistry.get(definition.family);
-  const destinations = resolveProductNavigation(definition);
+  const { primary, secondary } = resolveLifecycleNavigation(definition, instanceSignal);
   const style = productThemeStyle(definition.theme);
   const widthClass = CONTENT_WIDTH_CLASS[definition.theme.contentWidth ?? "narrow"];
 
@@ -66,30 +70,60 @@ export default function ProductShell({
         </div>
       </header>
 
-      <nav
-        aria-label="Product"
-        className="border-b border-[var(--border)] bg-[var(--surface)]"
-      >
-        <div className={`mx-auto flex gap-1 overflow-x-auto px-4 sm:px-6 ${widthClass}`}>
-          {destinations.map((destinationId) => {
-            const href = `/app/products/${definition.slug}/${destinationId}`;
-            const active = pathname === href;
-            const label = resolveDestinationLabel(definition, destinationId);
-            return (
-              <Link
-                key={destinationId}
-                href={href}
-                aria-current={active ? "page" : undefined}
-                className={`whitespace-nowrap border-b-2 px-3 py-3 text-[13px] font-semibold transition ${
-                  active
-                    ? "border-[var(--primary)] text-[var(--primary)]"
-                    : "border-transparent text-[var(--muted)] hover:text-[var(--text)]"
-                }`}
+      <nav aria-label="Product" className="border-b border-[var(--border)] bg-[var(--surface)]">
+        <div className={`mx-auto flex items-center justify-between gap-1 px-4 sm:px-6 ${widthClass}`}>
+          <div className="flex gap-1 overflow-x-auto">
+            {primary.map(({ id, label }) => {
+              const href = `/app/products/${definition.slug}/${id}`;
+              const active = pathname === href;
+              return (
+                <Link
+                  key={id}
+                  href={href}
+                  aria-current={active ? "page" : undefined}
+                  className={`whitespace-nowrap border-b-2 px-3 py-3 text-[13px] font-semibold transition ${
+                    active
+                      ? "border-[var(--primary)] text-[var(--primary)]"
+                      : "border-transparent text-[var(--muted)] hover:text-[var(--text)]"
+                  }`}
+                >
+                  {label}
+                </Link>
+              );
+            })}
+          </div>
+
+          {secondary.length > 0 && (
+            <details className="group relative shrink-0 py-2">
+              <summary
+                className="flex cursor-pointer list-none items-center gap-1.5 rounded-md px-2.5 py-1.5 text-[13px] font-semibold text-[var(--muted)] hover:text-[var(--text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] [&::-webkit-details-marker]:hidden"
+                aria-label="More product options"
               >
-                {label}
-              </Link>
-            );
-          })}
+                <Menu size={15} aria-hidden />
+                <span className="hidden sm:inline">More</span>
+              </summary>
+              <div className="absolute right-0 z-10 mt-1 min-w-[176px] rounded-lg border border-[var(--border)] bg-[var(--surface)] p-1 shadow-[var(--shadow-soft)]">
+                {secondary.map(({ id, label }) => {
+                  const href = `/app/products/${definition.slug}/${id}`;
+                  const active = pathname === href;
+                  return (
+                    <Link
+                      key={id}
+                      href={href}
+                      aria-current={active ? "page" : undefined}
+                      className={`block rounded-md px-3 py-2 text-[13px] font-medium transition ${
+                        active
+                          ? "bg-[var(--surface-muted)] text-[var(--primary)]"
+                          : "text-[var(--text)] hover:bg-[var(--surface-muted)]"
+                      }`}
+                    >
+                      {label}
+                    </Link>
+                  );
+                })}
+              </div>
+            </details>
+          )}
         </div>
       </nav>
 
