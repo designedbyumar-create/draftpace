@@ -1,24 +1,13 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  /**
-   * Canonical host redirect: www.draftpace.com -> draftpace.com. The
-   * canonical domain everywhere else in this app (metadataBase, sitemap,
-   * robots, canonical tags) is the apex, so a visitor or crawler landing on
-   * www must never see a second, duplicate-content host. This is evaluated
-   * by Next's own routing layer, independent of the Vercel project's domain
-   * settings, so it holds even if that configuration ever changes.
-   */
-  async redirects() {
-    return [
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "www.draftpace.com" }],
-        destination: "https://draftpace.com/:path*",
-        permanent: true,
-      },
-    ];
-  },
-};
+/**
+ * No app-level host redirect here. The canonical apex-vs-www redirect is
+ * owned entirely by the Vercel project's own domain configuration (a single
+ * edge-level rule) — see docs note in the launch report. Adding a second,
+ * opposite-direction redirect at this layer created a live apex<->www
+ * infinite redirect loop the moment both hostnames pointed at the same
+ * deployment, so this layer must never also redirect on host.
+ */
+const nextConfig: NextConfig = {};
 
 export default nextConfig;

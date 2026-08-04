@@ -29,11 +29,9 @@ describe("Canonical domain: apex, never www", () => {
     });
   }
 
-  it("next.config.ts redirects www to the apex domain", () => {
+  it("next.config.ts has no app-level host redirect (owned by Vercel's domain config to avoid a loop)", () => {
     const source = readFileSync(join(process.cwd(), "next.config.ts"), "utf-8");
-    expect(source).toContain('value: "www.draftpace.com"');
-    expect(source).toContain("https://draftpace.com/:path*");
-    expect(source).toContain("permanent: true");
+    expect(source).not.toContain("redirects()");
   });
 });
 
