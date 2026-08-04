@@ -7,7 +7,7 @@ import Button from "@/design-system/Button";
 import Surface from "@/design-system/Surface";
 import Toggle from "@/design-system/Toggle";
 import EmptyState from "@/design-system/EmptyState";
-import { Download, Wallet } from "@/design-system/Icon";
+import { Compass, Download, Wallet } from "@/design-system/Icon";
 import { useInstanceState } from "./useInstanceState";
 import ThemeScope from "./ThemeScope";
 import { LoadErrorState, SaveStatusIndicator } from "./shared";
@@ -176,6 +176,22 @@ export default function SettingsModule({ definition }: { definition: ProductDefi
           onChange={(checked) => setState({ ...state, preferences: { ...state.preferences, privacyBlur: checked } })}
           label="Hide amounts by default"
         />
+      </Surface>
+
+      <Surface className="flex items-center justify-between gap-4 p-5">
+        <div>
+          <p className="text-[13px] font-semibold text-[var(--text)]">Guided tour</p>
+          <p className="mt-1 text-[12px] leading-relaxed text-[var(--muted)]">
+            See the walkthrough of This Month again, from the start.
+          </p>
+        </div>
+        <Button
+          variant="secondary"
+          iconLeft={<Compass size={14} aria-hidden />}
+          href={`/app/products/${definition.slug}/workspace?tour=1`}
+        >
+          Replay tour
+        </Button>
       </Surface>
 
       <Surface className="flex items-center justify-between gap-4 p-5">

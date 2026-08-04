@@ -1,6 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 import type { ProductDefinition } from "@/product-framework/definition";
 import Button from "@/design-system/Button";
 import Input from "@/design-system/Input";
@@ -11,8 +13,10 @@ import { ArrowLeft, ArrowRight, Check, Plus, Trash2, Wallet } from "@/design-sys
 import { useInstanceState } from "./useInstanceState";
 import { AmountField, LoadErrorState, SaveStatusIndicator, generateId } from "./shared";
 import ThemeScope from "./ThemeScope";
+import { EASE_OUT, useCombinedReducedMotion } from "@/components/onboarding/motion";
 import { computeSafeToSpend } from "../calculations";
 import { formatCurrency } from "../currency";
+import { firstIncompleteStep, stepCompleteness, type SetupStepId } from "../setupCompleteness";
 import type { BillEntry, IncomeEntry, MonthlyMoneyResetState, SpendingGroup } from "../state";
 
 const STEPS = [
@@ -30,6 +34,8 @@ const CHECK_IN_DAYS = ["sunday", "monday", "tuesday", "wednesday", "thursday", "
 export default function SetupModule({ definition }: { definition: ProductDefinition }) {
   const router = useRouter();
   const { status, state, saveStatus, setState, forceSave, retry } = useInstanceState(definition.slug);
+  const [justFinished, setJustFinished] = useState(false);
+  const reduceMotion = useCombinedReducedMotion();
 
   if (status === "loading") {
     return <p className="text-[13px] text-[var(--muted)]">Loading your setup…</p>;
@@ -72,11 +78,20 @@ export default function SetupModule({ definition }: { definition: ProductDefinit
    */
   async function handleContinue() {
     if (!state) return;
+    if (currentStep <= 4 && !stepCompleteness(state, currentStep as SetupStepId).complete) return;
     const stepSaved = await forceSave();
     if (!stepSaved) return;
     if (currentStep < 5) {
       goToStep(currentStep + 1);
     } else {
+      // Reachable by jumping straight to the Review tile without resolving
+      // 1-4 first — send the user back to whichever step still needs
+      // attention instead of silently finishing an incomplete setup.
+      const incomplete = firstIncompleteStep(state);
+      if (incomplete) {
+        goToStep(incomplete);
+        return;
+      }
       const next: MonthlyMoneyResetState = {
         ...state,
         setup: { ...state.setup, completedAt: new Date().toISOString(), stepsCompleted: [1, 2, 3, 4, 5] },
@@ -84,13 +99,47 @@ export default function SetupModule({ definition }: { definition: ProductDefinit
       setState(next);
       const finished = await forceSave();
       if (!finished) return;
-      router.push(`/app/products/${definition.slug}/workspace`);
+      setJustFinished(true);
     }
   }
 
   function markStepSeen(step: number) {
     if (!state || state.setup.stepsCompleted.includes(step)) return;
     setState({ ...state, setup: { ...state.setup, stepsCompleted: [...state.setup.stepsCompleted, step] } });
+  }
+
+  // A deliberate transition, not an immediate redirect: the user sees the
+  // number Setup produced before moving on, with one dominant action and no
+  // decorative animation. See the MMR redesign plan, Phase 3.
+  if (justFinished) {
+    return (
+      <ThemeScope>
+        <motion.div
+          initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, ease: EASE_OUT }}
+          className="mx-auto flex max-w-md flex-col items-center gap-2 py-16 text-center"
+        >
+          <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--primary)]">
+            Your first Safe-to-Spend is ready
+          </p>
+          <p className="font-serif text-[40px] font-semibold tracking-tight text-[var(--text)]">
+            {formatCurrency(breakdown.safeToSpend, state.currency)}
+          </p>
+          <p className="mt-1 text-[13px] leading-relaxed text-[var(--muted)]">
+            This is what&apos;s genuinely free to spend in {state.cycle.label}, after your protected bills and
+            reserve. It re-settles the moment anything changes, and everything you entered stays editable.
+          </p>
+          <Button
+            size="lg"
+            className="mt-4"
+            onClick={() => router.push(`/app/products/${definition.slug}/workspace`)}
+          >
+            Go to This Month
+          </Button>
+        </motion.div>
+      </ThemeScope>
+    );
   }
 
   return (
@@ -116,7 +165,11 @@ export default function SetupModule({ definition }: { definition: ProductDefinit
             }`}
           >
             <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[var(--surface-muted)] text-[10px] font-bold text-[var(--muted)]">
-              {state.setup.stepsCompleted.includes(item.step) ? <Check size={11} aria-hidden /> : item.step}
+              {(item.step <= 4 ? stepCompleteness(state, item.step as SetupStepId).complete : Boolean(state.setup.completedAt)) ? (
+                <Check size={11} aria-hidden />
+              ) : (
+                item.step
+              )}
             </span>
             <span className="text-[11px] font-semibold text-[var(--text)]">{item.short}</span>
           </button>
@@ -131,7 +184,7 @@ export default function SetupModule({ definition }: { definition: ProductDefinit
           {currentStep === 2 && <StepIncome state={state} setState={setState} />}
           {currentStep === 3 && <StepBills state={state} setState={setState} />}
           {currentStep === 4 && <StepSpending state={state} setState={setState} />}
-          {currentStep === 5 && <StepReview state={state} breakdown={breakdown} />}
+          {currentStep === 5 && <StepReview state={state} breakdown={breakdown} goToStep={goToStep} />}
 
           <div className="mt-7 flex items-center justify-between border-t border-[var(--border)] pt-5">
             <Button
@@ -147,6 +200,7 @@ export default function SetupModule({ definition }: { definition: ProductDefinit
                 markStepSeen(currentStep);
                 handleContinue();
               }}
+              disabled={currentStep <= 4 && !stepCompleteness(state, currentStep as SetupStepId).complete}
               iconRight={currentStep < 5 ? <ArrowRight size={14} aria-hidden /> : <Check size={14} aria-hidden />}
             >
               {currentStep < 5 ? "Continue" : "Finish setup"}
@@ -187,6 +241,15 @@ function PreviewLine({ label, value }: { label: string; value: string }) {
   );
 }
 
+/** The one-sentence "what's missing and why it matters" note a step shows while incomplete. */
+function StepMissingNote({ text }: { text: string }) {
+  return (
+    <p className="rounded-lg border border-[var(--warning)]/30 bg-[var(--warning-soft)] px-3.5 py-2.5 text-[12px] leading-relaxed text-[var(--text)]">
+      {text}
+    </p>
+  );
+}
+
 function StepThisMonth({
   state,
   setState,
@@ -194,6 +257,8 @@ function StepThisMonth({
   state: MonthlyMoneyResetState;
   setState: (next: MonthlyMoneyResetState) => void;
 }) {
+  const completeness = stepCompleteness(state, 1);
+  const isZero = state.startingAvailableBalanceMinorUnits === 0;
   return (
     <div className="mt-5 flex flex-col gap-4">
       <div className="grid gap-4 sm:grid-cols-2">
@@ -229,6 +294,24 @@ function StepThisMonth({
         This is what&apos;s already in your account, including anything you&apos;ve already been paid. You don&apos;t
         need to add that income again in the next step. This number already covers it.
       </p>
+
+      {isZero && (
+        <label className="flex items-center gap-2.5 text-[12px] font-semibold text-[var(--text)]">
+          <Toggle
+            checked={state.setup.acknowledgements.startingBalanceZeroConfirmed}
+            onChange={(checked) =>
+              setState({
+                ...state,
+                setup: { ...state.setup, acknowledgements: { ...state.setup.acknowledgements, startingBalanceZeroConfirmed: checked } },
+              })
+            }
+            label="This is correct — I have $0 available right now"
+          />
+          This is correct — I have $0 available right now
+        </label>
+      )}
+
+      {!completeness.complete && <StepMissingNote text={completeness.missing} />}
     </div>
   );
 }
@@ -258,6 +341,8 @@ function StepIncome({
   function removeIncome(id: string) {
     setState({ ...state, income: state.income.filter((entry) => entry.id !== id) });
   }
+
+  const completeness = stepCompleteness(state, 2);
 
   return (
     <div className="mt-5">
@@ -308,6 +393,24 @@ function StepIncome({
       <Button variant="secondary" size="sm" className="mt-3" iconLeft={<Plus size={13} aria-hidden />} onClick={addIncome}>
         Add income source
       </Button>
+
+      {state.income.length === 0 && (
+        <label className="mt-4 flex items-center gap-2.5 text-[12px] font-semibold text-[var(--text)]">
+          <Toggle
+            checked={state.setup.acknowledgements.noOtherIncomeConfirmed}
+            onChange={(checked) =>
+              setState({
+                ...state,
+                setup: { ...state.setup, acknowledgements: { ...state.setup.acknowledgements, noOtherIncomeConfirmed: checked } },
+              })
+            }
+            label="Confirm — no other income expected this month"
+          />
+          Confirm — no other income expected this month
+        </label>
+      )}
+
+      {!completeness.complete && <div className="mt-4"><StepMissingNote text={completeness.missing} /></div>}
     </div>
   );
 }
@@ -352,6 +455,9 @@ function StepBills({
       protectedReserve: state.protectedReserve.map((item) => (item.id === id ? { ...item, amountMinorUnits } : item)),
     });
   }
+
+  const completeness = stepCompleteness(state, 3);
+  const nothingToProtect = state.bills.length === 0 && state.protectedReserve.length === 0;
 
   return (
     <div className="mt-5">
@@ -424,6 +530,24 @@ function StepBills({
           Add a reserve amount
         </Button>
       </div>
+
+      {nothingToProtect && (
+        <label className="mt-5 flex items-center gap-2.5 text-[12px] font-semibold text-[var(--text)]">
+          <Toggle
+            checked={state.setup.acknowledgements.noBillsOrReserveConfirmed}
+            onChange={(checked) =>
+              setState({
+                ...state,
+                setup: { ...state.setup, acknowledgements: { ...state.setup.acknowledgements, noBillsOrReserveConfirmed: checked } },
+              })
+            }
+            label="Confirm — nothing to protect this month"
+          />
+          Confirm — nothing to protect this month
+        </label>
+      )}
+
+      {!completeness.complete && <div className="mt-4"><StepMissingNote text={completeness.missing} /></div>}
     </div>
   );
 }
@@ -451,11 +575,15 @@ function StepSpending({
     setState({ ...state, spendingGroups: state.spendingGroups.filter((group) => group.id !== id) });
   }
 
+  const completeness = stepCompleteness(state, 4);
+
   return (
     <div className="mt-5">
       <p className="text-[12px] leading-relaxed text-[var(--muted)]">
         Keep this broad. You don&apos;t need a detailed category for every kind of purchase.
       </p>
+
+      {!completeness.complete && <StepMissingNote text={completeness.missing} />}
 
       <div className="mt-4 flex flex-col gap-3">
         {state.spendingGroups.map((group) => (
@@ -521,10 +649,16 @@ function StepSpending({
 function StepReview({
   state,
   breakdown,
+  goToStep,
 }: {
   state: MonthlyMoneyResetState;
   breakdown: ReturnType<typeof computeSafeToSpend>;
+  goToStep: (step: number) => void;
 }) {
+  const incompleteSteps = STEPS.slice(0, 4).filter(
+    (item) => !stepCompleteness(state, item.step as SetupStepId).complete
+  );
+
   const rows: { label: string; value: string }[] = [
     { label: "Money available right now", value: formatCurrency(breakdown.startingAvailableBalance, state.currency) },
     { label: "Income received", value: formatCurrency(breakdown.incomeReceived, state.currency) },
@@ -541,6 +675,23 @@ function StepReview({
 
   return (
     <div className="mt-5">
+      {incompleteSteps.length > 0 && (
+        <div className="mb-4 flex flex-col gap-2 rounded-lg border border-[var(--warning)]/30 bg-[var(--warning-soft)] p-4">
+          <p className="text-[12px] font-semibold text-[var(--text)]">A few steps still need attention</p>
+          {incompleteSteps.map((item) => (
+            <button
+              key={item.step}
+              type="button"
+              onClick={() => goToStep(item.step)}
+              className="flex items-center justify-between text-left text-[12px] font-semibold text-[var(--primary)] hover:underline"
+            >
+              {item.short}
+              <ArrowRight size={13} aria-hidden />
+            </button>
+          ))}
+        </div>
+      )}
+
       <div className="flex flex-col divide-y divide-[var(--border)] rounded-lg border border-[var(--border)]">
         {rows.map((row) => (
           <div key={row.label} className="flex items-center justify-between gap-4 px-4 py-3">

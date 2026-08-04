@@ -142,10 +142,32 @@ export const cycleSchema = z.object({
 });
 export type Cycle = z.infer<typeof cycleSchema>;
 
+/**
+ * Explicit user confirmations that a step's "nothing to add" state is a
+ * deliberate answer, not an unconsidered default — see setupCompleteness.ts.
+ * Without these, a step left at zero/empty and a step genuinely reviewed and
+ * confirmed empty are indistinguishable, and Setup would either nag a user
+ * who has real reasons to enter nothing, or silently accept a step nobody
+ * looked at.
+ */
+const NO_ACKNOWLEDGEMENTS = {
+  startingBalanceZeroConfirmed: false,
+  noOtherIncomeConfirmed: false,
+  noBillsOrReserveConfirmed: false,
+};
+
+export const setupAcknowledgementsSchema = z.object({
+  startingBalanceZeroConfirmed: z.boolean().default(false),
+  noOtherIncomeConfirmed: z.boolean().default(false),
+  noBillsOrReserveConfirmed: z.boolean().default(false),
+});
+export type SetupAcknowledgements = z.infer<typeof setupAcknowledgementsSchema>;
+
 export const setupProgressSchema = z.object({
   currentStep: z.number().int().min(1).max(5).default(1),
   stepsCompleted: z.array(z.number().int().min(1).max(5)).default([]),
   completedAt: isoDate.optional(),
+  acknowledgements: setupAcknowledgementsSchema.default(NO_ACKNOWLEDGEMENTS),
 });
 export type SetupProgress = z.infer<typeof setupProgressSchema>;
 
@@ -199,7 +221,7 @@ export const monthlyMoneyResetStateSchema = z.object({
   currency: z.string().regex(CURRENCY_CODE_PATTERN).default("USD"),
   cycle: cycleSchema,
   profile: z.object({ displayName: z.string().optional() }).default({}),
-  setup: setupProgressSchema.default({ currentStep: 1, stepsCompleted: [] }),
+  setup: setupProgressSchema.default({ currentStep: 1, stepsCompleted: [], acknowledgements: NO_ACKNOWLEDGEMENTS }),
   startingAvailableBalanceMinorUnits: moneyMinorUnits.default(0),
   income: z.array(incomeEntrySchema).default([]),
   bills: z.array(billEntrySchema).default([]),

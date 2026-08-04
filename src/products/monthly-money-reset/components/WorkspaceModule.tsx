@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import type { ProductDefinition } from "@/product-framework/definition";
 import Button from "@/design-system/Button";
 import EmptyState from "@/design-system/EmptyState";
@@ -73,6 +74,8 @@ function activityLabel(entry: ActivityEntry): string {
 const LABEL = "text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--mmr-sage-strong)]";
 
 export default function WorkspaceModule({ definition }: { definition: ProductDefinition }) {
+  const router = useRouter();
+  const searchParams = useSearchParams();
   const { status, state, saveStatus, setState, forceSave, retry } = useInstanceState(definition.slug);
   const [view, setView] = useState<View>("overview");
   const [quickAddOpen, setQuickAddOpen] = useState(false);
@@ -80,14 +83,26 @@ export default function WorkspaceModule({ definition }: { definition: ProductDef
   const [tourOn, setTourOn] = useState(false);
 
   const setupDone = Boolean(state?.setup.completedAt);
+  const replayRequested = searchParams.get("tour") === "1";
 
   useEffect(() => {
     if (!setupDone || typeof window === "undefined") return;
+
+    // An explicit replay (Settings -> Replay tour) always starts the tour,
+    // regardless of the first-use flag below — the query param is the
+    // trigger, and it's cleared from the URL immediately so a refresh
+    // doesn't re-trigger it. This never touches the first-use flag itself.
+    if (replayRequested) {
+      setTourOn(true);
+      router.replace(`/app/products/${definition.slug}/workspace`);
+      return;
+    }
+
     const key = `draftpace-tour-${definition.slug}`;
     if (window.localStorage.getItem(key)) return;
     const timer = window.setTimeout(() => setTourOn(true), 550);
     return () => window.clearTimeout(timer);
-  }, [setupDone, definition.slug]);
+  }, [setupDone, definition.slug, replayRequested, router]);
 
   const finishTour = useCallback(() => {
     setTourOn(false);
