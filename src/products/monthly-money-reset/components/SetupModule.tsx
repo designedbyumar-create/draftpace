@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import type { ProductDefinition } from "@/product-framework/definition";
 import Button from "@/design-system/Button";
 import Input from "@/design-system/Input";
+import Select from "@/design-system/Select";
 import Surface from "@/design-system/Surface";
 import Toggle from "@/design-system/Toggle";
 import EmptyState from "@/design-system/EmptyState";
@@ -19,7 +20,8 @@ import { formatCurrency } from "../currency";
 import { firstIncompleteStep, stepCompleteness, type SetupStepId } from "../setupCompleteness";
 import type { BillEntry, IncomeEntry, MonthlyMoneyResetState, SpendingGroup } from "../state";
 
-const STEPS = [
+/** Exported for setupTracker.test.ts — the tracker must always end on a reachable Confirm step. */
+export const STEPS = [
   { step: 1, title: "This month", short: "Starting point" },
   { step: 2, title: "Money coming in", short: "Income" },
   { step: 3, title: "Protect what must be paid", short: "Bills & reserve" },
@@ -30,6 +32,10 @@ const STEPS = [
 const CURRENCIES = ["USD", "PKR", "GBP", "EUR", "CAD", "AUD", "INR", "AED", "SAR"];
 
 const CHECK_IN_DAYS = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"] as const;
+
+export function isTrackerStepComplete(state: MonthlyMoneyResetState, step: number): boolean {
+  return step <= 4 ? stepCompleteness(state, step as SetupStepId).complete : Boolean(state.setup.completedAt);
+}
 
 export default function SetupModule({ definition }: { definition: ProductDefinition }) {
   const router = useRouter();
@@ -73,7 +79,7 @@ export default function SetupModule({ definition }: { definition: ProductDefinit
    * (network blip, a conflict), forceSave() reports false, the entered
    * values stay exactly as typed in local state, and the same button is the
    * retry: clicking Continue/Finish setup again re-attempts the save. See
-   * the P0 stability incident, 2026-08-04 — navigating regardless of save
+   * the P0 stability incident, 2026-08-04: navigating regardless of save
    * outcome is how a genuine save failure presented as lost progress.
    */
   async function handleContinue() {
@@ -85,7 +91,7 @@ export default function SetupModule({ definition }: { definition: ProductDefinit
       goToStep(currentStep + 1);
     } else {
       // Reachable by jumping straight to the Review tile without resolving
-      // 1-4 first — send the user back to whichever step still needs
+      // 1-4 first: send the user back to whichever step still needs
       // attention instead of silently finishing an incomplete setup.
       const incomplete = firstIncompleteStep(state);
       if (incomplete) {
@@ -152,41 +158,94 @@ export default function SetupModule({ definition }: { definition: ProductDefinit
         <SaveStatusIndicator status={saveStatus} />
       </div>
 
-      <div className="mb-6 flex gap-1.5 overflow-x-auto pb-1">
+      {/* Tablet and desktop: five readable columns, equal width. Never the
+          horizontally-scrolling row mobile gets below, since there's room here. */}
+      <div className="mb-6 hidden gap-1.5 sm:flex">
         {STEPS.map((item) => (
           <button
             key={item.step}
             type="button"
             onClick={() => goToStep(item.step)}
-            className={`flex min-w-[128px] flex-1 flex-col gap-1.5 rounded-lg border px-3 py-2.5 text-left transition-colors ${
+            className={`flex min-w-0 flex-1 flex-col gap-1.5 rounded-lg border px-3 py-2.5 text-left transition-colors ${
               currentStep === item.step
                 ? "border-[var(--primary)] bg-[var(--primary-soft)]"
                 : "border-[var(--border)] hover:border-[var(--border-strong)]"
             }`}
           >
             <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[var(--surface-muted)] text-[10px] font-bold text-[var(--muted)]">
-              {(item.step <= 4 ? stepCompleteness(state, item.step as SetupStepId).complete : Boolean(state.setup.completedAt)) ? (
-                <Check size={11} aria-hidden />
-              ) : (
-                item.step
-              )}
+              {isTrackerStepComplete(state, item.step) ? <Check size={11} aria-hidden /> : item.step}
             </span>
-            <span className="text-[11px] font-semibold text-[var(--text)]">{item.short}</span>
+            <span className="truncate text-[11px] font-semibold text-[var(--text)]">{item.short}</span>
           </button>
         ))}
+      </div>
+
+      {/* Mobile: a compact current-step treatment instead of five cramped
+          tiles: every step, including Confirm, stays reachable through
+          Back/Continue without needing horizontal scroll discovery. */}
+      <div className="mb-6 sm:hidden">
+        <div className="flex gap-1">
+          {STEPS.map((item) => (
+            <button
+              key={item.step}
+              type="button"
+              onClick={() => goToStep(item.step)}
+              aria-current={currentStep === item.step ? "step" : undefined}
+              aria-label={`${item.short}${isTrackerStepComplete(state, item.step) ? ", complete" : ""}`}
+              className={`h-1.5 flex-1 rounded-full transition-colors ${
+                currentStep === item.step
+                  ? "bg-[var(--primary)]"
+                  : isTrackerStepComplete(state, item.step)
+                    ? "bg-[var(--primary)]/40"
+                    : "bg-[var(--border)]"
+              }`}
+            />
+          ))}
+        </div>
+        <p className="mt-2.5 text-[13px] font-semibold text-[var(--text)]">
+          Step {currentStep} of 5 · {STEPS[currentStep - 1].short}
+        </p>
       </div>
 
       <div className="grid gap-6 lg:grid-cols-[1fr_280px] lg:items-start">
         <Surface className="p-5 sm:p-6">
           <h2 className="text-lg font-semibold text-[var(--text)]">{STEPS[currentStep - 1].title}</h2>
 
-          {currentStep === 1 && <StepThisMonth state={state} setState={setState} />}
-          {currentStep === 2 && <StepIncome state={state} setState={setState} />}
-          {currentStep === 3 && <StepBills state={state} setState={setState} />}
-          {currentStep === 4 && <StepSpending state={state} setState={setState} />}
-          {currentStep === 5 && <StepReview state={state} breakdown={breakdown} goToStep={goToStep} />}
+          {/* Extra clearance on mobile only, so the sticky action bar below
+              never sits over the last field once it pins to the screen. */}
+          <div className="pb-6 sm:pb-0">
+            {currentStep === 1 && <StepThisMonth state={state} setState={setState} />}
+            {currentStep === 2 && <StepIncome state={state} setState={setState} />}
+            {currentStep === 3 && <StepBills state={state} setState={setState} />}
+            {currentStep === 4 && <StepSpending state={state} setState={setState} />}
+            {currentStep === 5 && <StepReview state={state} breakdown={breakdown} goToStep={goToStep} />}
+          </div>
 
-          <div className="mt-7 flex items-center justify-between border-t border-[var(--border)] pt-5">
+          {/* Desktop/tablet: in-flow, inside the card, as before. */}
+          <div className="mt-7 hidden items-center justify-between border-t border-[var(--border)] pt-5 sm:flex">
+            <Button
+              variant="secondary"
+              disabled={currentStep === 1}
+              iconLeft={<ArrowLeft size={14} aria-hidden />}
+              onClick={() => goToStep(currentStep - 1)}
+            >
+              Back
+            </Button>
+            <Button
+              onClick={() => {
+                markStepSeen(currentStep);
+                handleContinue();
+              }}
+              disabled={currentStep <= 4 && !stepCompleteness(state, currentStep as SetupStepId).complete}
+              iconRight={currentStep < 5 ? <ArrowRight size={14} aria-hidden /> : <Check size={14} aria-hidden />}
+            >
+              {currentStep < 5 ? "Continue" : "Finish setup"}
+            </Button>
+          </div>
+
+          {/* Mobile: pinned to the bottom of the screen while scrolling a
+              long step, so Continue never requires hunting for it. */}
+          <div className="sticky bottom-0 -mx-5 mt-5 flex items-center justify-between gap-3 border-t border-[var(--border)] bg-[var(--surface)] px-5 py-4 pb-[max(env(safe-area-inset-bottom),16px)] sm:hidden">
             <Button
               variant="secondary"
               disabled={currentStep === 1}
@@ -262,20 +321,17 @@ function StepThisMonth({
   return (
     <div className="mt-5 flex flex-col gap-4">
       <div className="grid gap-4 sm:grid-cols-2">
-        <div>
-          <label className="mb-1.5 block text-[13px] font-semibold text-[var(--text)]">Currency</label>
-          <select
-            value={state.currency}
-            onChange={(event) => setState({ ...state, currency: event.target.value })}
-            className="h-11 w-full rounded-lg border border-[var(--border-strong)] bg-[var(--surface)] px-3.5 text-[14px] text-[var(--text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]"
-          >
-            {CURRENCIES.map((code) => (
-              <option key={code} value={code}>
-                {code}
-              </option>
-            ))}
-          </select>
-        </div>
+        <Select
+          label="Currency"
+          value={state.currency}
+          onChange={(event) => setState({ ...state, currency: event.target.value })}
+        >
+          {CURRENCIES.map((code) => (
+            <option key={code} value={code}>
+              {code}
+            </option>
+          ))}
+        </Select>
         <Input
           label="Name this month (optional)"
           value={state.cycle.label}
@@ -305,9 +361,9 @@ function StepThisMonth({
                 setup: { ...state.setup, acknowledgements: { ...state.setup.acknowledgements, startingBalanceZeroConfirmed: checked } },
               })
             }
-            label="This is correct — I have $0 available right now"
+            label="This is correct: I have $0 available right now"
           />
-          This is correct — I have $0 available right now
+          This is correct: I have $0 available right now
         </label>
       )}
 
@@ -380,7 +436,7 @@ function StepIncome({
               <button
                 type="button"
                 onClick={() => removeIncome(entry.id)}
-                className="flex h-8 w-8 items-center justify-center rounded-lg text-[var(--faint)] hover:bg-[var(--surface-muted)] hover:text-[var(--danger)]"
+                className="flex h-11 w-11 items-center justify-center rounded-lg text-[var(--faint)] hover:bg-[var(--surface-muted)] hover:text-[var(--danger)]"
                 aria-label={`Remove ${entry.name || "income source"}`}
               >
                 <Trash2 size={14} aria-hidden />
@@ -404,9 +460,9 @@ function StepIncome({
                 setup: { ...state.setup, acknowledgements: { ...state.setup.acknowledgements, noOtherIncomeConfirmed: checked } },
               })
             }
-            label="Confirm — no other income expected this month"
+            label="Confirm: no other income expected this month"
           />
-          Confirm — no other income expected this month
+          Confirm: no other income expected this month
         </label>
       )}
 
@@ -495,7 +551,7 @@ function StepBills({
               <button
                 type="button"
                 onClick={() => removeBill(bill.id)}
-                className="flex h-8 w-8 items-center justify-center rounded-lg text-[var(--faint)] hover:bg-[var(--surface-muted)] hover:text-[var(--danger)]"
+                className="flex h-11 w-11 items-center justify-center rounded-lg text-[var(--faint)] hover:bg-[var(--surface-muted)] hover:text-[var(--danger)]"
                 aria-label={`Remove ${bill.name || "bill"}`}
               >
                 <Trash2 size={14} aria-hidden />
@@ -541,9 +597,9 @@ function StepBills({
                 setup: { ...state.setup, acknowledgements: { ...state.setup.acknowledgements, noBillsOrReserveConfirmed: checked } },
               })
             }
-            label="Confirm — nothing to protect this month"
+            label="Confirm: nothing to protect this month"
           />
-          Confirm — nothing to protect this month
+          Confirm: nothing to protect this month
         </label>
       )}
 
@@ -587,33 +643,34 @@ function StepSpending({
 
       <div className="mt-4 flex flex-col gap-3">
         {state.spendingGroups.map((group) => (
-          <div key={group.id} className="grid grid-cols-[1.4fr_1fr_auto] items-end gap-3 rounded-lg border border-[var(--border)] p-4">
+          <div
+            key={group.id}
+            className="grid grid-cols-1 items-end gap-3 rounded-lg border border-[var(--border)] p-4 sm:grid-cols-[1.4fr_1fr_auto]"
+          >
             <Input
               label="Group"
               value={group.name}
               onChange={(event) => updateGroup(group.id, { name: event.target.value })}
               placeholder="e.g. Everyday spending"
             />
-            <div>
-              <label className="mb-1.5 block text-[13px] font-semibold text-[var(--text)]">Kind</label>
-              <select
-                value={group.kind}
-                onChange={(event) => updateGroup(group.id, { kind: event.target.value as SpendingGroup["kind"] })}
-                className="h-11 w-full rounded-lg border border-[var(--border-strong)] bg-[var(--surface)] px-3.5 text-[14px] text-[var(--text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]"
-              >
-                <option value="essentials">Essentials</option>
-                <option value="flexible">Flexible spending</option>
-                <option value="personal">Personal / optional</option>
-                <option value="custom">Custom</option>
-              </select>
-            </div>
+            <Select
+              label="Kind"
+              value={group.kind}
+              onChange={(event) => updateGroup(group.id, { kind: event.target.value as SpendingGroup["kind"] })}
+            >
+              <option value="essentials">Essentials</option>
+              <option value="flexible">Flexible spending</option>
+              <option value="personal">Personal / optional</option>
+              <option value="custom">Custom</option>
+            </Select>
             <button
               type="button"
               onClick={() => removeGroup(group.id)}
-              className="flex h-11 w-11 items-center justify-center rounded-lg text-[var(--faint)] hover:bg-[var(--surface-muted)] hover:text-[var(--danger)]"
+              className="flex h-11 w-full items-center justify-center gap-2 rounded-lg text-[var(--faint)] hover:bg-[var(--surface-muted)] hover:text-[var(--danger)] sm:w-11"
               aria-label={`Remove ${group.name || "group"}`}
             >
               <Trash2 size={14} aria-hidden />
+              <span className="text-[13px] font-semibold sm:hidden">Remove</span>
             </button>
           </div>
         ))}
@@ -624,8 +681,8 @@ function StepSpending({
       </Button>
 
       <div className="mt-6 border-t border-[var(--border)] pt-5">
-        <label className="mb-1.5 block text-[13px] font-semibold text-[var(--text)]">Weekly check-in day</label>
-        <select
+        <Select
+          label="Weekly check-in day"
           value={state.preferences.checkInDay}
           onChange={(event) =>
             setState({
@@ -633,14 +690,14 @@ function StepSpending({
               preferences: { ...state.preferences, checkInDay: event.target.value as (typeof CHECK_IN_DAYS)[number] },
             })
           }
-          className="h-11 w-full max-w-xs rounded-lg border border-[var(--border-strong)] bg-[var(--surface)] px-3.5 text-[14px] text-[var(--text)] capitalize focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]"
+          className="w-full sm:max-w-xs"
         >
           {CHECK_IN_DAYS.map((day) => (
-            <option key={day} value={day} className="capitalize">
+            <option key={day} value={day}>
               {day.charAt(0).toUpperCase() + day.slice(1)}
             </option>
           ))}
-        </select>
+        </Select>
       </div>
     </div>
   );

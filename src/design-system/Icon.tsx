@@ -38,6 +38,7 @@ import {
   Flower as PhosphorFlower,
   FloppyDisk as PhosphorFloppyDisk,
   GearSix as PhosphorGearSix,
+  GlobeSimple as PhosphorGlobeSimple,
   GraduationCap as PhosphorGraduationCap,
   HandWaving as PhosphorHandWaving,
   Heart as PhosphorHeart,
@@ -137,6 +138,7 @@ export const Flame = createIcon(PhosphorFlame, "Flame");
 export const Fire = createIcon(PhosphorFire, "Fire");
 export const Flag = createIcon(PhosphorFlag, "Flag");
 export const Flower = createIcon(PhosphorFlower, "Flower");
+export const Globe = createIcon(PhosphorGlobeSimple, "Globe");
 export const HandWaving = createIcon(PhosphorHandWaving, "HandWaving");
 export const Heart = createIcon(PhosphorHeart, "Heart");
 export const Home = createIcon(PhosphorHouse, "Home");

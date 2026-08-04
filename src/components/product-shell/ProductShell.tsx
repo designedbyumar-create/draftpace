@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ProductDefinition } from "@/product-framework/definition";
@@ -9,15 +10,27 @@ import { productThemeStyle } from "@/product-framework/themeExtension";
 import { ArrowLeft, Menu } from "@/design-system/Icon";
 import Badge from "@/design-system/Badge";
 import ThemeToggle from "@/design-system/theme/ThemeToggle";
+import MobileSheet from "@/design-system/MobileSheet";
+import AccountMenu from "@/components/account/AccountMenu";
+import { appAccountMenuItems } from "@/components/account/accountMenuItems";
+import { signOutAndRedirect } from "@/lib/supabase/signOut";
+import { useSession } from "@/design-system/shell/SessionProvider";
 
 /**
  * The universal product shell. Works for any family: renders whichever
  * destinations the product declares (or its family default), tiered into
  * primary navigation and a compact secondary menu based on the instance's
- * lifecycle state (never started / setting up / set up) — see
+ * lifecycle state (never started / setting up / set up), see
  * navigationResolver.ts. No product-specific visual identity yet beyond the
- * scoped theme extension — that's real design work for when a real product
+ * scoped theme extension, that's real design work for when a real product
  * exists.
+ *
+ * Desktop keeps the original three-block layout (utility bar, header,
+ * primary/secondary nav) unchanged apart from the added account menu.
+ * Below the lg breakpoint, the utility bar and header collapse into one
+ * compact app-bar (back, title, account) matching the platform shell's
+ * mobile pattern, and the secondary "More" menu becomes a bottom sheet
+ * instead of a small anchored popover.
  */
 const CONTENT_WIDTH_CLASS: Record<"narrow" | "standard" | "wide", string> = {
   narrow: "max-w-3xl",
@@ -35,14 +48,40 @@ export default function ProductShell({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
+  const user = useSession();
   const family = familyRegistry.get(definition.family);
   const { primary, secondary } = resolveLifecycleNavigation(definition, instanceSignal);
   const style = productThemeStyle(definition.theme);
   const widthClass = CONTENT_WIDTH_CLASS[definition.theme.contentWidth ?? "narrow"];
+  const [moreSheetOpen, setMoreSheetOpen] = useState(false);
+  const moreTriggerRef = useRef<HTMLButtonElement>(null);
+
+  const accountLabel = user.user_metadata?.display_name || user.email || "Account";
+  const accountItems = appAccountMenuItems(() => signOutAndRedirect("/"));
 
   return (
     <div className="min-h-screen bg-[var(--app-bg)] text-[var(--text)]" style={style}>
-      <div className="border-b border-[var(--border)] bg-[var(--surface)]">
+      {/* Mobile compact app-bar: back, title, account, one row instead of
+          three stacked blocks. */}
+      <div className="flex h-14 items-center gap-2 border-b border-[var(--border)] bg-[var(--surface)] px-3 lg:hidden">
+        <Link
+          href="/app/library"
+          aria-label="Back to Library"
+          className="flex h-11 shrink-0 items-center gap-1 rounded-lg px-1.5 text-[13px] font-semibold text-[var(--muted)] hover:text-[var(--text)]"
+        >
+          <ArrowLeft size={16} aria-hidden />
+          Library
+        </Link>
+        <h1 className="min-w-0 flex-1 truncate text-center text-[14px] font-semibold text-[var(--text)]">
+          {definition.title}
+        </h1>
+        <div className="flex h-11 shrink-0 items-center justify-end">
+          <AccountMenu items={accountItems} label={accountLabel} only="mobile" />
+        </div>
+      </div>
+
+      {/* Desktop utility bar: unchanged, with the account menu added. */}
+      <div className="hidden border-b border-[var(--border)] bg-[var(--surface)] lg:block">
         <div className={`mx-auto flex h-12 items-center justify-between px-4 sm:px-6 ${widthClass}`}>
           <Link
             href="/app/library"
@@ -51,11 +90,14 @@ export default function ProductShell({
             <ArrowLeft size={14} aria-hidden />
             Library
           </Link>
-          <ThemeToggle compact />
+          <div className="flex items-center gap-3">
+            <ThemeToggle compact />
+            <AccountMenu items={accountItems} label={accountLabel} only="desktop" />
+          </div>
         </div>
       </div>
 
-      <header className="border-b border-[var(--border)] bg-[var(--surface)] px-4 py-5 sm:px-6">
+      <header className="hidden border-b border-[var(--border)] bg-[var(--surface)] px-4 py-5 sm:px-6 lg:block">
         <div className={`mx-auto ${widthClass}`}>
           <div className="flex flex-wrap items-center gap-2">
             <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--primary)]">
@@ -72,7 +114,7 @@ export default function ProductShell({
 
       <nav aria-label="Product" className="border-b border-[var(--border)] bg-[var(--surface)]">
         <div className={`mx-auto flex items-center justify-between gap-1 px-4 sm:px-6 ${widthClass}`}>
-          <div className="flex gap-1 overflow-x-auto">
+          <div className="flex flex-1 gap-1 overflow-x-auto">
             {primary.map(({ id, label }) => {
               const href = `/app/products/${definition.slug}/${id}`;
               const active = pathname === href;
@@ -94,35 +136,82 @@ export default function ProductShell({
           </div>
 
           {secondary.length > 0 && (
-            <details className="group relative shrink-0 py-2">
-              <summary
-                className="flex cursor-pointer list-none items-center gap-1.5 rounded-md px-2.5 py-1.5 text-[13px] font-semibold text-[var(--muted)] hover:text-[var(--text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] [&::-webkit-details-marker]:hidden"
+            <>
+              {/* Desktop: anchored dropdown, as before. */}
+              <details className="group relative hidden shrink-0 py-2 lg:block">
+                <summary
+                  className="flex cursor-pointer list-none items-center gap-1.5 rounded-md px-2.5 py-1.5 text-[13px] font-semibold text-[var(--muted)] hover:text-[var(--text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] [&::-webkit-details-marker]:hidden"
+                  aria-label="More product options"
+                >
+                  <Menu size={15} aria-hidden />
+                  <span>More</span>
+                </summary>
+                <div className="absolute right-0 z-10 mt-1 min-w-[176px] rounded-lg border border-[var(--border)] bg-[var(--surface)] p-1 shadow-[var(--shadow-soft)]">
+                  {secondary.map(({ id, label }) => {
+                    const href = `/app/products/${definition.slug}/${id}`;
+                    const active = pathname === href;
+                    return (
+                      <Link
+                        key={id}
+                        href={href}
+                        aria-current={active ? "page" : undefined}
+                        className={`block rounded-md px-3 py-2 text-[13px] font-medium transition ${
+                          active
+                            ? "bg-[var(--surface-muted)] text-[var(--primary)]"
+                            : "text-[var(--text)] hover:bg-[var(--surface-muted)]"
+                        }`}
+                      >
+                        {label}
+                      </Link>
+                    );
+                  })}
+                </div>
+              </details>
+
+              {/* Mobile: a real touch-friendly sheet instead of a tiny popover. */}
+              <button
+                ref={moreTriggerRef}
+                type="button"
+                onClick={() => setMoreSheetOpen(true)}
                 aria-label="More product options"
+                className="flex h-11 shrink-0 items-center gap-1.5 rounded-md px-2.5 text-[13px] font-semibold text-[var(--muted)] hover:text-[var(--text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] lg:hidden"
               >
-                <Menu size={15} aria-hidden />
-                <span className="hidden sm:inline">More</span>
-              </summary>
-              <div className="absolute right-0 z-10 mt-1 min-w-[176px] rounded-lg border border-[var(--border)] bg-[var(--surface)] p-1 shadow-[var(--shadow-soft)]">
-                {secondary.map(({ id, label }) => {
-                  const href = `/app/products/${definition.slug}/${id}`;
-                  const active = pathname === href;
-                  return (
-                    <Link
-                      key={id}
-                      href={href}
-                      aria-current={active ? "page" : undefined}
-                      className={`block rounded-md px-3 py-2 text-[13px] font-medium transition ${
-                        active
-                          ? "bg-[var(--surface-muted)] text-[var(--primary)]"
-                          : "text-[var(--text)] hover:bg-[var(--surface-muted)]"
-                      }`}
-                    >
-                      {label}
-                    </Link>
-                  );
-                })}
-              </div>
-            </details>
+                <Menu size={16} aria-hidden />
+                More
+              </button>
+              <MobileSheet
+                open={moreSheetOpen}
+                onClose={() => setMoreSheetOpen(false)}
+                title="More"
+                triggerRef={moreTriggerRef}
+              >
+                <div className="flex flex-col gap-0.5">
+                  {secondary.map(({ id, label }) => {
+                    const href = `/app/products/${definition.slug}/${id}`;
+                    const active = pathname === href;
+                    return (
+                      <Link
+                        key={id}
+                        href={href}
+                        onClick={() => setMoreSheetOpen(false)}
+                        aria-current={active ? "page" : undefined}
+                        className={`flex min-h-11 items-center rounded-md px-3 py-2.5 text-[14px] font-semibold transition ${
+                          active
+                            ? "bg-[var(--surface-muted)] text-[var(--primary)]"
+                            : "text-[var(--text)] hover:bg-[var(--surface-muted)]"
+                        }`}
+                      >
+                        {label}
+                      </Link>
+                    );
+                  })}
+                  <div className="mt-1 flex items-center justify-between rounded-md px-3 py-2.5">
+                    <span className="text-[13px] font-semibold text-[var(--muted)]">Theme</span>
+                    <ThemeToggle compact />
+                  </div>
+                </div>
+              </MobileSheet>
+            </>
           )}
         </div>
       </nav>
