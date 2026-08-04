@@ -1,12 +1,17 @@
-const CACHE_NAME = "draftpace-app-v2";
+const CACHE_NAME = "draftpace-app-v3";
 
+// Static, non-personalized assets only. /app and its subroutes are
+// deliberately never cached here: they render authenticated, per-user
+// content, and a stale-while-revalidate cache previously served an old
+// signed-in page (or a different account's) before the network response
+// landed. Installability and "launch to a working shell" don't need that;
+// every real navigation into /app still goes through the normal network
+// request and the real server-side session check.
 const APP_SHELL = [
-  "/app",
-  "/app/library",
   "/offline",
   "/manifest.webmanifest",
-  "/logo/dp-monogram-indigo.svg",
-  "/logo/dp-monogram-dark.svg"
+  "/logo/icon-192.png",
+  "/logo/icon-512.png"
 ];
 
 self.addEventListener("install", (event) => {
@@ -29,13 +34,12 @@ self.addEventListener("fetch", (event) => {
   if (request.method !== "GET") return;
 
   const url = new URL(request.url);
-  const isApp = url.pathname.startsWith("/app");
   const isStaticAsset =
     url.pathname.startsWith("/_next/static") ||
     url.pathname.startsWith("/logo/") ||
     url.pathname === "/manifest.webmanifest";
 
-  if (isApp || isStaticAsset || url.pathname === "/offline") {
+  if (isStaticAsset) {
     event.respondWith(
       caches.match(request).then((cached) => {
         const network = fetch(request)
@@ -46,11 +50,16 @@ self.addEventListener("fetch", (event) => {
             }
             return response;
           })
-          .catch(() => cached || caches.match("/offline"));
+          .catch(() => cached);
 
         return cached || network;
       })
     );
+    return;
+  }
+
+  if (url.pathname === "/offline") {
+    event.respondWith(fetch(request).catch(() => caches.match("/offline")));
   }
 });
 
@@ -60,8 +69,8 @@ self.addEventListener("push", (event) => {
   event.waitUntil(
     self.registration.showNotification(data.title || "Draftpace", {
       body: data.body || "Something is waiting for you.",
-      icon: "/logo/dp-monogram-indigo.svg",
-      badge: "/logo/dp-monogram-dark.svg",
+      icon: "/logo/icon-192.png",
+      badge: "/logo/icon-192.png",
       data: { url: data.url || "/app" }
     })
   );

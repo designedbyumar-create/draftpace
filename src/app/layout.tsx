@@ -1,6 +1,15 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import AppProviders from "@/components/providers/AppProviders";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f4f2ec" },
+    { media: "(prefers-color-scheme: dark)", color: "#100f0c" },
+  ],
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.draftpace.com"),
@@ -26,8 +35,12 @@ export const metadata: Metadata = {
     type: "website",
   },
   icons: {
-    icon: "/logo/dp-monogram-indigo.svg",
-    apple: "/logo/dp-monogram-indigo.svg",
+    icon: [
+      { url: "/logo/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/logo/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/logo/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/logo/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
 };
 
