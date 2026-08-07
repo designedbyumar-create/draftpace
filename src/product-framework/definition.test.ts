@@ -47,4 +47,66 @@ describe("productDefinitionSchema", () => {
       expect(forbidden.some((bad) => key.toLowerCase().includes(bad.toLowerCase()))).toBe(false);
     }
   });
+
+  it("defaults cycleModel to \"monthly\" (Monthly Money Reset's behavior, unchanged for every existing product)", () => {
+    const result = validateProductDefinition(minimalValid);
+    expect(result.cycleModel).toBe("monthly");
+  });
+
+  it("accepts an explicit cycleModel of \"continuous\"", () => {
+    const result = validateProductDefinition({ ...minimalValid, cycleModel: "continuous" });
+    expect(result.cycleModel).toBe("continuous");
+  });
+
+  it("leaves pwa undefined when not declared, covering every product before this field existed", () => {
+    const result = validateProductDefinition(minimalValid);
+    expect(result.pwa).toBeUndefined();
+  });
+
+  it("accepts a valid pwa declaration and defaults provisionalBranding to true", () => {
+    const result = validateProductDefinition({
+      ...minimalValid,
+      pwa: {
+        name: "Test App",
+        shortName: "Test",
+        description: "A test app.",
+        themeColor: "#0e6e75",
+        backgroundColor: "#f4f2ec",
+        icons: [{ src: "/icon.png", sizes: "512x512", type: "image/png" }],
+      },
+    });
+    expect(result.pwa?.provisionalBranding).toBe(true);
+  });
+
+  it("rejects a pwa declaration with an invalid theme color", () => {
+    expect(() =>
+      validateProductDefinition({
+        ...minimalValid,
+        pwa: {
+          name: "Test App",
+          shortName: "Test",
+          description: "A test app.",
+          themeColor: "not-a-color",
+          backgroundColor: "#f4f2ec",
+          icons: [{ src: "/icon.png", sizes: "512x512", type: "image/png" }],
+        },
+      })
+    ).toThrow();
+  });
+
+  it("rejects a pwa declaration with no icons", () => {
+    expect(() =>
+      validateProductDefinition({
+        ...minimalValid,
+        pwa: {
+          name: "Test App",
+          shortName: "Test",
+          description: "A test app.",
+          themeColor: "#0e6e75",
+          backgroundColor: "#f4f2ec",
+          icons: [],
+        },
+      })
+    ).toThrow();
+  });
 });

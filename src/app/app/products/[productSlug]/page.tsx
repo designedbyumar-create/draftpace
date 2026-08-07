@@ -30,14 +30,19 @@ export default async function ProductCanonicalPage({
   const supabase = await createSupabaseServerClient();
   const cycleKey = currentCycleKey();
 
-  const { data: instanceRow, error: instanceError } = await supabase
+  // See the identical cycleModel branch in this segment's layout.tsx for why
+  // a continuous product (no monthly reset) is found by most-recently-
+  // created rather than by matching today's cycle key.
+  const instanceQuery = supabase
     .from("product_instances")
     .select(
       "id, product_slug, cycle_key, lifecycle_state, setup_complete, safe_to_spend_cents, next_action_label, last_activity_at, created_at, updated_at"
     )
-    .eq("product_slug", productSlug)
-    .eq("cycle_key", cycleKey)
-    .maybeSingle();
+    .eq("product_slug", productSlug);
+  const { data: instanceRow, error: instanceError } =
+    definition.cycleModel === "continuous"
+      ? await instanceQuery.order("created_at", { ascending: false }).limit(1).maybeSingle()
+      : await instanceQuery.eq("cycle_key", cycleKey).maybeSingle();
 
   if (instanceError) {
     return (

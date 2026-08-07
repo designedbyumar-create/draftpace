@@ -32,6 +32,53 @@ export const productModuleRegistrationSchema = z.object({
   destination: destinationIdSchema.optional(),
 });
 
+/**
+ * How `product_instances.cycle_key` (shared table, see migrations) applies
+ * to this product. "monthly" (the default) is Monthly Money Reset's model:
+ * a fresh instance per calendar cycle, looked up by an exact match on
+ * today's cycle key. "continuous" is for a product with no reset concept —
+ * exactly one instance ever, whose cycle_key is fixed at creation as an
+ * "instance cohort" marker (satisfying the shared table's NOT NULL
+ * YYYY-MM check) rather than an active period, found by most-recently-
+ * created instead of by matching today's key. See
+ * src/app/app/products/[productSlug]/layout.tsx and ./page.tsx.
+ */
+export const productCycleModelSchema = z.enum(["monthly", "continuous"]).default("monthly");
+
+/**
+ * A product's own installable-PWA identity, layered on top of Draftpace's
+ * site-wide manifest (public/manifest.webmanifest) rather than replacing
+ * it. Optional — a product with no `pwa` field is covered only by the
+ * root manifest, same as every product before this field existed. See
+ * src/app/app/products/[productSlug]/manifest.webmanifest/route.ts and
+ * docs/PWA-PRODUCT-IDENTITY.md.
+ */
+export const productPwaIconSchema = z.object({
+  src: z.string().min(1),
+  sizes: z.string().min(1),
+  type: z.string().min(1),
+  purpose: z.enum(["any", "maskable"]).optional(),
+});
+
+export const productPwaSchema = z
+  .object({
+    name: z.string().min(1),
+    shortName: z.string().min(1).max(30),
+    description: z.string().min(1),
+    themeColor: z.string().regex(/^#[0-9a-fA-F]{6}$/),
+    backgroundColor: z.string().regex(/^#[0-9a-fA-F]{6}$/),
+    icons: z.array(productPwaIconSchema).min(1),
+    /**
+     * True while the icon/color values above are borrowed from Draftpace's
+     * own neutral brand assets rather than this product's real, final
+     * visual identity. Surfaced in the settings destination and in the
+     * manifest route's response so provisional branding is never mistaken
+     * for a shipped decision. See docs/PWA-PRODUCT-IDENTITY.md.
+     */
+    provisionalBranding: z.boolean().default(true),
+  })
+  .optional();
+
 export const productDefinitionSchema = z.object({
   id: z.string().min(1),
   slug: z
@@ -44,6 +91,8 @@ export const productDefinitionSchema = z.object({
   version: z.string().regex(/^\d+\.\d+\.\d+$/, "Version must be semver, e.g. \"0.1.0\"."),
   status: z.enum(["draft", "active", "coming_soon", "archived"]),
   access: productAccessSchema,
+  cycleModel: productCycleModelSchema,
+  pwa: productPwaSchema,
   capabilities: z.array(capabilityIdSchema).default([]),
   navigation: z.array(destinationIdSchema).default([]),
   /**

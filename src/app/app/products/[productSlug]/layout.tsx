@@ -1,4 +1,5 @@
 import { notFound, redirect } from "next/navigation";
+import type { Metadata, Viewport } from "next";
 import { productRegistry } from "@/product-framework/registry";
 import { registerDevFixtures } from "@/product-framework/fixtures";
 import { ensureProductsRegistered } from "@/products/manifest";
@@ -7,6 +8,60 @@ import { currentCycleKey } from "@/product-framework/cycle";
 import type { InstanceLifecycleSignal } from "@/product-framework/navigationResolver";
 import ProductShell from "@/components/product-shell/ProductShell";
 import RetryState from "@/components/product-shell/RetryState";
+
+/**
+ * Layers a product's own installable-PWA identity (definition.pwa) on top
+ * of the root layout's site-wide metadata, for the products that declare
+ * one — most don't, and get the root manifest/appleWebApp unchanged. Next's
+ * Metadata API merges parent and child metadata per key, so setting
+ * `manifest`/`appleWebApp`/`themeColor` here overrides only those specific
+ * fields for routes under this product, everything else (icons, OG tags,
+ * etc.) still inherits from the root. See manifest.webmanifest/route.ts
+ * for the JSON this `manifest` link points at, and
+ * docs/products/PERSONAL-FINANCE-COMPANION-FOUNDATION.md for why the
+ * iOS-Safari half of "installable as its own app" is this appleWebApp
+ * override, not the JSON manifest (Safari's Add to Home Screen reads the
+ * current page's meta tags, not a linked manifest).
+ */
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ productSlug: string }>;
+}): Promise<Metadata> {
+  registerDevFixtures();
+  ensureProductsRegistered();
+
+  const { productSlug } = await params;
+  const definition = productRegistry.getBySlug(productSlug);
+  if (!definition?.pwa) return {};
+
+  return {
+    title: definition.pwa.name,
+    manifest: `/app/products/${productSlug}/manifest.webmanifest`,
+    appleWebApp: {
+      capable: true,
+      statusBarStyle: "default",
+      title: definition.pwa.shortName,
+    },
+  };
+}
+
+export async function generateViewport({
+  params,
+}: {
+  params: Promise<{ productSlug: string }>;
+}): Promise<Viewport> {
+  registerDevFixtures();
+  ensureProductsRegistered();
+
+  const { productSlug } = await params;
+  const definition = productRegistry.getBySlug(productSlug);
+  if (!definition?.pwa) return {};
+
+  return {
+    themeColor: definition.pwa.themeColor,
+  };
+}
 
 export default async function ProductLayout({
   children,
@@ -69,12 +124,21 @@ export default async function ProductLayout({
   // degrade to the full, undifferentiated destination list — never a blank
   // or inaccessible shell — since this is a navigation nicety, not an access
   // gate; the entitlement check above already owns that responsibility.
-  const { data: instanceRow, error: instanceError } = await supabase
+  // Monthly-cycle products (the default, matching Monthly Money Reset) are
+  // looked up by an exact match on today's cycle key, since a new calendar
+  // month starts a fresh instance. Continuous products (cycleModel:
+  // "continuous", e.g. Personal Finance Companion) have exactly one
+  // instance ever — cycle_key on that row is fixed at creation as an
+  // "instance cohort" marker, not an active period, so matching today's
+  // key would silently stop finding it at the next month boundary.
+  const instanceQuery = supabase
     .from("product_instances")
     .select("setup_complete, created_at, updated_at")
-    .eq("product_slug", productSlug)
-    .eq("cycle_key", currentCycleKey())
-    .maybeSingle();
+    .eq("product_slug", productSlug);
+  const { data: instanceRow, error: instanceError } =
+    definition.cycleModel === "continuous"
+      ? await instanceQuery.order("created_at", { ascending: false }).limit(1).maybeSingle()
+      : await instanceQuery.eq("cycle_key", currentCycleKey()).maybeSingle();
 
   let instanceSignal: InstanceLifecycleSignal = null;
   if (!instanceError) {

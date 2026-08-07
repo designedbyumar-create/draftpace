@@ -3,6 +3,7 @@ import { moduleRegistry } from "@/product-framework/moduleRegistry";
 import type { ProductCatalogEntry } from "@/product-framework/catalog";
 import { monthlyMoneyResetCatalogEntry } from "./monthly-money-reset/catalog";
 import { hiddenAccessTestCatalogEntry } from "./hidden-access-test/catalog";
+import { personalFinanceCompanionCatalogEntry } from "./personal-finance-companion/catalog";
 
 /**
  * The one auditable list of every real product Draftpace registers. This is
@@ -15,7 +16,11 @@ import { hiddenAccessTestCatalogEntry } from "./hidden-access-test/catalog";
  * that proof: a second, unrelated product added with no changes anywhere
  * else in this file.
  */
-const PRODUCT_CATALOG: ProductCatalogEntry[] = [monthlyMoneyResetCatalogEntry, hiddenAccessTestCatalogEntry];
+const PRODUCT_CATALOG: ProductCatalogEntry[] = [
+  monthlyMoneyResetCatalogEntry,
+  hiddenAccessTestCatalogEntry,
+  personalFinanceCompanionCatalogEntry,
+];
 
 let registered = false;
 
