@@ -55,6 +55,14 @@
 -- FK can be added. To avoid a forward-reference ordering problem, the
 -- import_session_id FK constraint is added in 202608080002 via ALTER TABLE
 -- once import_sessions exists, not inline here.
+--
+-- Wrapped in an explicit transaction so a mid-script failure in the SQL
+-- Editor (or any other client) leaves nothing applied rather than a
+-- partially-created schema — every statement below is transaction-safe
+-- (no CREATE INDEX CONCURRENTLY, no ALTER TYPE ... ADD VALUE, nothing else
+-- that Postgres disallows inside a transaction block).
+
+begin;
 
 create table if not exists public.pfc_accounts (
   id uuid primary key default gen_random_uuid(),
@@ -274,3 +282,5 @@ alter table public.pfc_savings_goals enable row level security;
 drop policy if exists "Users can view their own PFC savings goals" on public.pfc_savings_goals;
 create policy "Users can view their own PFC savings goals"
 on public.pfc_savings_goals for select to authenticated using (auth.uid() = user_id);
+
+commit;

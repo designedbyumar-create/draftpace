@@ -19,6 +19,14 @@
 -- could never be *read* by another user regardless, since the select
 -- policy already filters by user_id, but this keeps every row internally
 -- consistent, not just access-safe).
+--
+-- Wrapped in an explicit transaction — see 202608080001's identical note.
+-- Every statement here (CREATE OR REPLACE FUNCTION, REVOKE, GRANT, DROP
+-- POLICY IF EXISTS + CREATE POLICY) was already safely re-runnable on its
+-- own; the transaction wrap is defense in depth, not a fix for anything
+-- broken in this file.
+
+begin;
 
 create or replace function public._pfc_owns_instance(p_instance_id uuid)
 returns boolean
@@ -213,3 +221,5 @@ $$;
 
 revoke all on function public.save_personal_finance_companion_setup_state(uuid, integer, jsonb) from public;
 grant execute on function public.save_personal_finance_companion_setup_state(uuid, integer, jsonb) to authenticated;
+
+commit;

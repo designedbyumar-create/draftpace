@@ -1,6 +1,17 @@
 -- Personal Finance Companion: import sessions, extraction candidates,
 -- confirmation events, and the Companion setup-state table. Additive only.
 -- See docs/products/PERSONAL-FINANCE-COMPANION-FOUNDATION.md.
+--
+-- Wrapped in an explicit transaction — see 202608080001's identical note.
+-- This file's seven `alter table ... add constraint` statements further
+-- guard themselves with an explicit pg_constraint existence check (see
+-- below), since ADD CONSTRAINT has no native IF NOT EXISTS form and a
+-- retry after a partial prior run would otherwise fail on "constraint
+-- already exists" — everything else here (CREATE TABLE IF NOT EXISTS,
+-- CREATE INDEX IF NOT EXISTS, ENABLE ROW LEVEL SECURITY, DROP POLICY IF
+-- EXISTS + CREATE POLICY) was already safely re-runnable.
+
+begin;
 
 -- ---------------------------------------------------------------------------
 -- import_sessions: one row per upload or paste (CSV, pasted notes, or a
@@ -36,28 +47,102 @@ on public.pfc_import_sessions for select to authenticated using (auth.uid() = us
 
 -- Now that import_sessions exists, add the FK from each of the seven
 -- record tables' import_session_id column (created nullable, unconstrained,
--- in the prior migration specifically to allow this ordering).
-alter table public.pfc_accounts
-  add constraint pfc_accounts_import_session_fkey
-  foreign key (import_session_id) references public.pfc_import_sessions(id) on delete set null;
-alter table public.pfc_income_sources
-  add constraint pfc_income_sources_import_session_fkey
-  foreign key (import_session_id) references public.pfc_import_sessions(id) on delete set null;
-alter table public.pfc_bills
-  add constraint pfc_bills_import_session_fkey
-  foreign key (import_session_id) references public.pfc_import_sessions(id) on delete set null;
-alter table public.pfc_subscriptions
-  add constraint pfc_subscriptions_import_session_fkey
-  foreign key (import_session_id) references public.pfc_import_sessions(id) on delete set null;
-alter table public.pfc_transactions
-  add constraint pfc_transactions_import_session_fkey
-  foreign key (import_session_id) references public.pfc_import_sessions(id) on delete set null;
-alter table public.pfc_debts
-  add constraint pfc_debts_import_session_fkey
-  foreign key (import_session_id) references public.pfc_import_sessions(id) on delete set null;
-alter table public.pfc_savings_goals
-  add constraint pfc_savings_goals_import_session_fkey
-  foreign key (import_session_id) references public.pfc_import_sessions(id) on delete set null;
+-- in the prior migration specifically to allow this ordering). Postgres has
+-- no `ADD CONSTRAINT IF NOT EXISTS` form, so each addition is guarded by an
+-- explicit pg_constraint lookup instead: absent -> create it, already
+-- present -> leave it alone untouched (never dropped and recreated). Name,
+-- source table, referenced table/column, and ON DELETE SET NULL behavior
+-- are unchanged from the original statements.
+do $$
+begin
+  if not exists (
+    select 1 from pg_constraint
+    where conname = 'pfc_accounts_import_session_fkey'
+      and conrelid = 'public.pfc_accounts'::regclass
+  ) then
+    alter table public.pfc_accounts
+      add constraint pfc_accounts_import_session_fkey
+      foreign key (import_session_id) references public.pfc_import_sessions(id) on delete set null;
+  end if;
+end $$;
+
+do $$
+begin
+  if not exists (
+    select 1 from pg_constraint
+    where conname = 'pfc_income_sources_import_session_fkey'
+      and conrelid = 'public.pfc_income_sources'::regclass
+  ) then
+    alter table public.pfc_income_sources
+      add constraint pfc_income_sources_import_session_fkey
+      foreign key (import_session_id) references public.pfc_import_sessions(id) on delete set null;
+  end if;
+end $$;
+
+do $$
+begin
+  if not exists (
+    select 1 from pg_constraint
+    where conname = 'pfc_bills_import_session_fkey'
+      and conrelid = 'public.pfc_bills'::regclass
+  ) then
+    alter table public.pfc_bills
+      add constraint pfc_bills_import_session_fkey
+      foreign key (import_session_id) references public.pfc_import_sessions(id) on delete set null;
+  end if;
+end $$;
+
+do $$
+begin
+  if not exists (
+    select 1 from pg_constraint
+    where conname = 'pfc_subscriptions_import_session_fkey'
+      and conrelid = 'public.pfc_subscriptions'::regclass
+  ) then
+    alter table public.pfc_subscriptions
+      add constraint pfc_subscriptions_import_session_fkey
+      foreign key (import_session_id) references public.pfc_import_sessions(id) on delete set null;
+  end if;
+end $$;
+
+do $$
+begin
+  if not exists (
+    select 1 from pg_constraint
+    where conname = 'pfc_transactions_import_session_fkey'
+      and conrelid = 'public.pfc_transactions'::regclass
+  ) then
+    alter table public.pfc_transactions
+      add constraint pfc_transactions_import_session_fkey
+      foreign key (import_session_id) references public.pfc_import_sessions(id) on delete set null;
+  end if;
+end $$;
+
+do $$
+begin
+  if not exists (
+    select 1 from pg_constraint
+    where conname = 'pfc_debts_import_session_fkey'
+      and conrelid = 'public.pfc_debts'::regclass
+  ) then
+    alter table public.pfc_debts
+      add constraint pfc_debts_import_session_fkey
+      foreign key (import_session_id) references public.pfc_import_sessions(id) on delete set null;
+  end if;
+end $$;
+
+do $$
+begin
+  if not exists (
+    select 1 from pg_constraint
+    where conname = 'pfc_savings_goals_import_session_fkey'
+      and conrelid = 'public.pfc_savings_goals'::regclass
+  ) then
+    alter table public.pfc_savings_goals
+      add constraint pfc_savings_goals_import_session_fkey
+      foreign key (import_session_id) references public.pfc_import_sessions(id) on delete set null;
+  end if;
+end $$;
 
 -- ---------------------------------------------------------------------------
 -- extraction_candidates: AI/CSV-produced candidates awaiting review, per
@@ -153,3 +238,5 @@ alter table public.pfc_setup_state enable row level security;
 drop policy if exists "Users can view their own PFC setup state" on public.pfc_setup_state;
 create policy "Users can view their own PFC setup state"
 on public.pfc_setup_state for select to authenticated using (auth.uid() = user_id);
+
+commit;

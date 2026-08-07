@@ -105,4 +105,68 @@ describe("Personal Finance Companion migrations — structural checks", () => {
       }
     }
   });
+
+  it("every migration file is wrapped in an explicit transaction with exactly one begin/commit pair", () => {
+    for (const sql of [recordsSql, supportingSql, writeAccessSql]) {
+      const beginCount = (sql.match(/^begin;$/gm) ?? []).length;
+      const commitCount = (sql.match(/^commit;$/gm) ?? []).length;
+      expect(beginCount).toBe(1);
+      expect(commitCount).toBe(1);
+      // begin; must be the first executable statement and commit; the last —
+      // a mid-file begin/commit would leave some statements outside the
+      // transaction, defeating the point of wrapping it at all.
+      const trimmed = sql.trim();
+      expect(trimmed.endsWith("commit;")).toBe(true);
+      const firstStatementIndex = sql.search(/^(begin;|create |alter |do \$\$)/m);
+      expect(sql.slice(firstStatementIndex, firstStatementIndex + 6)).toBe("begin;");
+    }
+  });
+
+  it("all seven import_session foreign-key additions are guarded by an explicit pg_constraint existence check, not a bare ADD CONSTRAINT", () => {
+    for (const table of RECORD_TABLES) {
+      const constraintName = `${table}_import_session_fkey`;
+      const marker = `add constraint ${constraintName}`;
+      const index = supportingSql.indexOf(marker);
+      expect(index, `expected a guarded ADD CONSTRAINT for ${constraintName}`).toBeGreaterThan(-1);
+
+      // The guard must appear in the same DO block, before the ADD
+      // CONSTRAINT — walk backward to that block's own `do $$` opener and
+      // confirm a pg_constraint existence check sits between them.
+      const blockStart = supportingSql.lastIndexOf("do $$", index);
+      expect(blockStart, `expected ${constraintName} to sit inside a do $$ block`).toBeGreaterThan(-1);
+      const guardClause = supportingSql.slice(blockStart, index);
+      expect(guardClause).toContain("pg_constraint");
+      expect(guardClause).toContain(`conname = '${constraintName}'`);
+      expect(guardClause).toContain(`conrelid = 'public.${table}'::regclass`);
+      expect(guardClause).toContain("if not exists");
+    }
+  });
+
+  it("no bare (unguarded) ADD CONSTRAINT statement remains outside a do $$ existence-check block", () => {
+    // Every "add constraint" in the file must be preceded, within the same
+    // do $$ block, by the guard tested above — this catches a regression
+    // where a future edit re-adds a plain ALTER TABLE ... ADD CONSTRAINT.
+    const addConstraintMatches = [...supportingSql.matchAll(/add constraint (\w+)/g)];
+    expect(addConstraintMatches.length).toBe(RECORD_TABLES.length);
+    for (const match of addConstraintMatches) {
+      const index = match.index;
+      const blockStart = supportingSql.lastIndexOf("do $$", index);
+      const precedingText = supportingSql.slice(blockStart, index);
+      expect(precedingText).toContain("if not exists");
+    }
+  });
+
+  it("the seven DO blocks preserve the original constraint names, referenced table, and ON DELETE SET NULL behavior", () => {
+    for (const table of RECORD_TABLES) {
+      const constraintName = `${table}_import_session_fkey`;
+      expect(supportingSql).toContain(
+        `foreign key (import_session_id) references public.pfc_import_sessions(id) on delete set null`
+      );
+      expect(supportingSql).toContain(`add constraint ${constraintName}`);
+    }
+    // Exactly seven — one per record table, none dropped or duplicated.
+    const fkeyOccurrences = (supportingSql.match(/_import_session_fkey/g) ?? []).length;
+    // Each constraint name appears twice: once in the pg_constraint check, once in the ADD CONSTRAINT.
+    expect(fkeyOccurrences).toBe(RECORD_TABLES.length * 2);
+  });
 });
