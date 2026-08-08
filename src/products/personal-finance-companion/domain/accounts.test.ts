@@ -10,9 +10,12 @@ const mockChain = {
   maybeSingle: vi.fn(),
 };
 
+const mockGetUser = vi.fn();
+
 vi.mock("@/lib/supabase/client", () => ({
   supabase: {
     from: vi.fn(() => mockChain),
+    auth: { getUser: () => mockGetUser() },
   },
 }));
 
@@ -24,6 +27,8 @@ function resetChain() {
   mockChain.order.mockReturnValue(mockChain);
   mockChain.insert.mockReturnValue(mockChain);
   mockChain.update.mockReturnValue(mockChain);
+  mockGetUser.mockReset();
+  mockGetUser.mockResolvedValue({ data: { user: { id: "user-1" } }, error: null });
 }
 
 import { listAccounts, createAccount } from "./accounts";
@@ -137,5 +142,41 @@ describe("Accounts domain repository — row mapping round-trip", () => {
       expect.objectContaining({ name: "Cash", current_balance_minor: 20000, product_instance_id: "instance-1" })
     );
     expect(result.ok).toBe(true);
+  });
+
+  it("create() sets user_id from the authenticated session — regression test for a real P0 bug found during Stage A live verification: user_id has no database default, so an insert without it violates the RLS insert policy's auth.uid() = user_id check for every owner, not just an attacker", async () => {
+    mockChain.single.mockResolvedValue({
+      data: {
+        id: "acc-4",
+        name: "Checking",
+        type: "checking",
+        current_balance_minor: 0,
+        currency: "USD",
+        available_for_spending: true,
+        balance_as_of_date: "2026-08-08",
+        notes: null,
+        status: "draft",
+        needs_review_reason: null,
+        source: "manual",
+        import_session_id: null,
+        created_at: "2026-08-08T00:00:00Z",
+        updated_at: "2026-08-08T00:00:00Z",
+      },
+      error: null,
+    });
+
+    await createAccount("instance-1", { name: "Checking" });
+    expect(mockChain.insert).toHaveBeenCalledWith(expect.objectContaining({ user_id: "user-1" }));
+  });
+
+  it("create() fails with not-authenticated rather than attempting an insert that would only fail later at the database layer, when there is no session", async () => {
+    mockGetUser.mockResolvedValue({ data: { user: null }, error: null });
+
+    const result = await createAccount("instance-1", { name: "Checking" });
+    expect(result.ok).toBe(false);
+    if (!result.ok) {
+      expect(result.error.kind).toBe("not-authenticated");
+    }
+    expect(mockChain.insert).not.toHaveBeenCalled();
   });
 });

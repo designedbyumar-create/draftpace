@@ -76,9 +76,19 @@ export function createRecordRepository<TEntity, TRow>(
     },
 
     async create(productInstanceId, patch) {
+      // user_id has no database default (see the records migration) — the
+      // insert RLS policy's `auth.uid() = user_id` check fails on a null
+      // user_id, so it must be set explicitly here rather than assumed.
+      const {
+        data: { user },
+        error: userError,
+      } = await supabase.auth.getUser();
+      if (userError) return err({ kind: "network", message: userError.message });
+      if (!user) return err({ kind: "not-authenticated" });
+
       const { data, error } = await supabase
         .from(table)
-        .insert({ ...toRow(patch), product_instance_id: productInstanceId })
+        .insert({ ...toRow(patch), product_instance_id: productInstanceId, user_id: user.id })
         .select("*")
         .single();
 
