@@ -1,4 +1,4 @@
-import type { Account, Bill, Debt, FinancialArea, SavingsGoal, Subscription, Transaction } from "./state";
+import type { Account, Bill, Debt, FinancialArea, IncomeSource, SavingsGoal, Subscription, Transaction } from "./state";
 import { isStale } from "./components/accounts/accountLogic";
 import { resolveSafeDeepLink } from "./deepLinks";
 
@@ -21,12 +21,28 @@ export type AttentionKind =
   | "subscriptionCancellationApproaching"
   | "debtMissingRate"
   | "savingsMissingTarget"
-  | "transactionMissingCategory";
+  | "transactionMissingCategory"
+  | "incomeExpectationOverdue";
+
+/** Which of the six capability areas an item belongs to, for urgency/grouping presentation. Not a new judgment — a fixed mapping off `kind`. */
+export type AttentionUrgency = "needsResolution" | "worthAWhile";
+
+const URGENCY_BY_KIND: Record<AttentionKind, AttentionUrgency> = {
+  incomeExpectationOverdue: "needsResolution",
+  billMissingDueDate: "needsResolution",
+  subscriptionCancellationApproaching: "needsResolution",
+  debtMissingRate: "worthAWhile",
+  savingsMissingTarget: "worthAWhile",
+  accountStale: "worthAWhile",
+  subscriptionReview: "worthAWhile",
+  transactionMissingCategory: "worthAWhile",
+};
 
 export interface AttentionItem {
   /** Stable across renders/sessions — `${kind}:${entityId}` — the identity a future dedupe/snooze/acknowledge layer would key on. */
   id: string;
   kind: AttentionKind;
+  urgency: AttentionUrgency;
   area: FinancialArea;
   entityId: string;
   message: string;
@@ -42,6 +58,7 @@ function daysUntil(dateIso: string, now: Date): number {
 
 export interface AttentionInputs {
   accounts: Account[];
+  incomeSources: IncomeSource[];
   bills: Bill[];
   subscriptions: Subscription[];
   debts: Debt[];
@@ -59,11 +76,30 @@ export function deriveAttentionItems(inputs: AttentionInputs, now: Date = new Da
       items.push({
         id: `accountStale:${account.id}`,
         kind: "accountStale",
+        urgency: URGENCY_BY_KIND.accountStale,
         area: "accounts",
         entityId: account.id,
         message: `${account.name} balance has not been updated recently.`,
         deepLink: resolveSafeDeepLink({ kind: "area", area: "accounts", focusId: account.id }),
       });
+    }
+  }
+
+  for (const source of inputs.incomeSources) {
+    if (source.status === "archived") continue;
+    if (source.nextExpectedDate) {
+      const days = daysUntil(source.nextExpectedDate, now);
+      if (days < 0) {
+        items.push({
+          id: `incomeExpectationOverdue:${source.id}`,
+          kind: "incomeExpectationOverdue",
+          urgency: URGENCY_BY_KIND.incomeExpectationOverdue,
+          area: "income",
+          entityId: source.id,
+          message: `${source.name} was expected on ${source.nextExpectedDate}. Confirm it or update the expected date.`,
+          deepLink: resolveSafeDeepLink({ kind: "area", area: "income", focusId: source.id }),
+        });
+      }
     }
   }
 
@@ -73,6 +109,7 @@ export function deriveAttentionItems(inputs: AttentionInputs, now: Date = new Da
       items.push({
         id: `billMissingDueDate:${bill.id}`,
         kind: "billMissingDueDate",
+        urgency: URGENCY_BY_KIND.billMissingDueDate,
         area: "bills",
         entityId: bill.id,
         message: `${bill.name} needs a due date.`,
@@ -87,6 +124,7 @@ export function deriveAttentionItems(inputs: AttentionInputs, now: Date = new Da
       items.push({
         id: `subscriptionReview:${subscription.id}`,
         kind: "subscriptionReview",
+        urgency: URGENCY_BY_KIND.subscriptionReview,
         area: "subscriptions",
         entityId: subscription.id,
         message: `${subscription.name} is still marked Review.`,
@@ -99,6 +137,7 @@ export function deriveAttentionItems(inputs: AttentionInputs, now: Date = new Da
         items.push({
           id: `subscriptionCancellationApproaching:${subscription.id}`,
           kind: "subscriptionCancellationApproaching",
+          urgency: URGENCY_BY_KIND.subscriptionCancellationApproaching,
           area: "subscriptions",
           entityId: subscription.id,
           message: `You planned to cancel ${subscription.name} before it renews on ${subscription.renewalDate}.`,
@@ -114,6 +153,7 @@ export function deriveAttentionItems(inputs: AttentionInputs, now: Date = new Da
       items.push({
         id: `debtMissingRate:${debt.id}`,
         kind: "debtMissingRate",
+        urgency: URGENCY_BY_KIND.debtMissingRate,
         area: "debt",
         entityId: debt.id,
         message: `${debt.name} is missing an interest rate.`,
@@ -128,6 +168,7 @@ export function deriveAttentionItems(inputs: AttentionInputs, now: Date = new Da
       items.push({
         id: `savingsMissingTarget:${goal.id}`,
         kind: "savingsMissingTarget",
+        urgency: URGENCY_BY_KIND.savingsMissingTarget,
         area: "savings",
         entityId: goal.id,
         message: `${goal.name} is missing a target date.`,
@@ -142,6 +183,7 @@ export function deriveAttentionItems(inputs: AttentionInputs, now: Date = new Da
       items.push({
         id: `transactionMissingCategory:${transaction.id}`,
         kind: "transactionMissingCategory",
+        urgency: URGENCY_BY_KIND.transactionMissingCategory,
         area: "transactions",
         entityId: transaction.id,
         message: `${transaction.description} needs a category.`,

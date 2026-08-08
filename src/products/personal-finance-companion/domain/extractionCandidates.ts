@@ -94,6 +94,72 @@ export async function listCandidatesForSession(importSessionId: string): Promise
   return ok((data as ExtractionCandidateRow[]).map(fromRow));
 }
 
+export type ImportSourceForReview = "pastedNotes" | "textFile" | "csvImport";
+
+function toRecordSource(inputType: string | undefined): ImportSourceForReview {
+  if (inputType === "csv") return "csvImport";
+  if (inputType === "textFile") return "textFile";
+  return "pastedNotes";
+}
+
+/**
+ * Every candidate across every import session still waiting for review,
+ * grouped by session so each group can be handed to CandidateReviewQueue
+ * with the one correct `source` for that session (a batch pasted as notes
+ * and a batch imported as CSV can't share a single source label). This is
+ * what lets Workspace's "N imported records waiting" and Companion's own
+ * mount-time check resume a review queue that was left mid-batch or never
+ * opened at all — the candidates were always durable in the database, only
+ * the UI never resurfaced them outside the single session that created
+ * them (see Stage D's known gap).
+ */
+export async function listUnreviewedGroupedBySession(
+  productInstanceId: string
+): Promise<Result<{ importSessionId: string; source: ImportSourceForReview; candidates: ExtractionCandidate[] }[]>> {
+  const { data, error } = await supabase
+    .from("pfc_extraction_candidates")
+    .select(SELECT_COLUMNS)
+    .eq("product_instance_id", productInstanceId)
+    .eq("review_status", "unreviewed")
+    .order("created_at", { ascending: true });
+
+  if (error) return err({ kind: "network", message: error.message });
+  const candidates = (data as ExtractionCandidateRow[]).map(fromRow);
+  if (candidates.length === 0) return ok([]);
+
+  const sessionIds = Array.from(new Set(candidates.map((c) => c.importSessionId)));
+  const { data: sessions, error: sessionsError } = await supabase.from("pfc_import_sessions").select("id, input_type").in("id", sessionIds);
+  if (sessionsError) return err({ kind: "network", message: sessionsError.message });
+  const inputTypeBySession = new Map((sessions as { id: string; input_type: string }[]).map((s) => [s.id, s.input_type]));
+
+  const grouped = new Map<string, ExtractionCandidate[]>();
+  for (const candidate of candidates) {
+    const list = grouped.get(candidate.importSessionId) ?? [];
+    list.push(candidate);
+    grouped.set(candidate.importSessionId, list);
+  }
+
+  return ok(
+    Array.from(grouped.entries()).map(([importSessionId, sessionCandidates]) => ({
+      importSessionId,
+      source: toRecordSource(inputTypeBySession.get(importSessionId)),
+      candidates: sessionCandidates,
+    }))
+  );
+}
+
+/** Count of candidates still waiting for review across every import session for this instance — the Workspace-level "unresolved imports" signal (not a per-entity Attention item, since a candidate isn't yet a record in any of the seven areas). */
+export async function countUnreviewedCandidates(productInstanceId: string): Promise<Result<number>> {
+  const { count, error } = await supabase
+    .from("pfc_extraction_candidates")
+    .select("id", { count: "exact", head: true })
+    .eq("product_instance_id", productInstanceId)
+    .eq("review_status", "unreviewed");
+
+  if (error) return err({ kind: "network", message: error.message });
+  return ok(count ?? 0);
+}
+
 export async function updateCandidate(
   id: string,
   patch: Partial<{ payload: CandidatePayload; reviewStatus: ReviewStatus; confirmedRecordType: string; confirmedRecordId: string }>

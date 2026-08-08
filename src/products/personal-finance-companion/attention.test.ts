@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { deriveAttentionItems, summarizeAttentionByArea, type AttentionInputs } from "./attention";
-import type { Account, Bill, Debt, SavingsGoal, Subscription, Transaction } from "./state";
+import type { Account, Bill, Debt, IncomeSource, SavingsGoal, Subscription, Transaction } from "./state";
 
 const NOW = new Date("2026-08-08T00:00:00Z");
 
@@ -133,7 +133,28 @@ function transaction(overrides: Partial<Transaction> = {}): Transaction {
   };
 }
 
-const EMPTY: AttentionInputs = { accounts: [], bills: [], subscriptions: [], debts: [], savingsGoals: [], transactions: [] };
+function incomeSource(overrides: Partial<IncomeSource> = {}): IncomeSource {
+  return {
+    id: "income-1",
+    name: "Salary",
+    amountMinorUnits: 320000,
+    amountRangeMinorUnits: null,
+    frequency: "monthly",
+    nextExpectedDate: "2026-08-25",
+    confidence: "confirmed",
+    grossOrNet: "net",
+    currency: "USD",
+    status: "ready",
+    needsReviewReason: null,
+    source: "manual",
+    importSessionId: null,
+    createdAt: "2026-08-01T00:00:00Z",
+    updatedAt: "2026-08-01T00:00:00Z",
+    ...overrides,
+  };
+}
+
+const EMPTY: AttentionInputs = { accounts: [], incomeSources: [], bills: [], subscriptions: [], debts: [], savingsGoals: [], transactions: [] };
 
 describe("deriveAttentionItems", () => {
   it("returns nothing when every record is complete and fresh", () => {
@@ -182,6 +203,18 @@ describe("deriveAttentionItems", () => {
     );
     expect(items).toHaveLength(1);
     expect(items[0].entityId).toBe("txn-1");
+  });
+
+  it("flags an overdue income expectation but not a future one", () => {
+    const overdue = deriveAttentionItems({ ...EMPTY, incomeSources: [incomeSource({ nextExpectedDate: "2026-08-01" })] }, NOW);
+    expect(overdue[0].kind).toBe("incomeExpectationOverdue");
+    expect(overdue[0].message).toContain("2026-08-01");
+
+    const upcoming = deriveAttentionItems({ ...EMPTY, incomeSources: [incomeSource({ nextExpectedDate: "2026-08-25" })] }, NOW);
+    expect(upcoming).toEqual([]);
+
+    const dueToday = deriveAttentionItems({ ...EMPTY, incomeSources: [incomeSource({ nextExpectedDate: "2026-08-08" })] }, NOW);
+    expect(dueToday).toEqual([]);
   });
 
   it("never surfaces an archived record", () => {

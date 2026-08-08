@@ -1,12 +1,12 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import Badge from "@/design-system/Badge";
 import Button from "@/design-system/Button";
 import Surface from "@/design-system/Surface";
 import EmptyState from "@/design-system/EmptyState";
-import { Compass } from "@/design-system/Icon";
+import { Compass, Bell, WarningCircle, Clock, ArrowRight, CheckCircle2, Layers3 } from "@/design-system/Icon";
 import { formatCurrency } from "@/lib/currency";
 import { describeResultError } from "@/product-framework/result";
 import { findPersonalFinanceCompanionInstanceId } from "../setupStateData";
@@ -17,8 +17,13 @@ import { listSubscriptions } from "../domain/subscriptions";
 import { listTransactions } from "../domain/transactions";
 import { listDebts } from "../domain/debts";
 import { listSavingsGoals } from "../domain/savingsGoals";
+import { countUnreviewedCandidates } from "../domain/extractionCandidates";
 import { computeCapabilities, type CapabilityRow, type FinancialPictureInputs } from "../companion/capability";
+import { resolveDominantAction, type DominantAction } from "../companion/dominantAction";
 import { deriveAttentionItems, type AttentionItem } from "../attention";
+import { summarizeFreshness } from "../freshness";
+import { summarizeRecentChanges } from "../recentChanges";
+import { resolveSafeDeepLink } from "../deepLinks";
 import ExplainBreakdown from "./companion/ExplainBreakdown";
 
 type LoadStatus = "loading" | "ready" | "no-instance" | "error";
@@ -29,15 +34,42 @@ const STATUS_TONE: Record<CapabilityRow["status"], "success" | "warning" | "neut
   waiting: "neutral",
 };
 
+const SNOOZE_STORAGE_KEY = "pfc-workspace-snoozed-attention";
+const SNOOZE_DAYS = 7;
+
+function readSnoozed(): Record<string, string> {
+  if (typeof window === "undefined") return {};
+  try {
+    const raw = window.localStorage.getItem(SNOOZE_STORAGE_KEY);
+    return raw ? (JSON.parse(raw) as Record<string, string>) : {};
+  } catch {
+    return {};
+  }
+}
+
+function writeSnoozed(value: Record<string, string>) {
+  if (typeof window === "undefined") return;
+  window.localStorage.setItem(SNOOZE_STORAGE_KEY, JSON.stringify(value));
+}
+
 /**
- * "Your financial picture" — the deterministic Workspace surface
- * Companion's "See my current picture" links to. Reads only from
- * capability.ts/attention.ts; invents nothing of its own.
+ * "Your financial picture" — Workspace, the surface a returning user lands
+ * on (launch spec Stage E). Not a seven-card dashboard: leads with exactly
+ * one dominant next action (companion/dominantAction.ts), then a real
+ * Attention Inbox, then the current picture, with freshness/recent
+ * changes/Companion continuation as progressive disclosure below. Every
+ * figure and issue here is derived live from canonical records — nothing
+ * is stored specifically for this screen except which Attention items the
+ * owner has snoozed, which lives in localStorage (this device only, never
+ * a second source of truth for whether the underlying issue is resolved).
  */
 export default function WorkspaceModule() {
   const [status, setStatus] = useState<LoadStatus>("loading");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [records, setRecords] = useState<FinancialPictureInputs | null>(null);
+  const [unreviewedImportCount, setUnreviewedImportCount] = useState(0);
+  const [snoozed, setSnoozed] = useState<Record<string, string>>({});
+  const [showAllAttention, setShowAllAttention] = useState(false);
 
   const load = useCallback(async () => {
     setStatus("loading");
@@ -52,7 +84,7 @@ export default function WorkspaceModule() {
       setStatus("no-instance");
       return;
     }
-    const [accounts, incomeSources, bills, subscriptions, transactions, debts, savingsGoals] = await Promise.all([
+    const [accounts, incomeSources, bills, subscriptions, transactions, debts, savingsGoals, unreviewedCount] = await Promise.all([
       listAccounts(found.id),
       listIncomeSources(found.id),
       listBills(found.id),
@@ -60,6 +92,7 @@ export default function WorkspaceModule() {
       listTransactions(found.id),
       listDebts(found.id),
       listSavingsGoals(found.id),
+      countUnreviewedCandidates(found.id),
     ]);
     const results = [accounts, incomeSources, bills, subscriptions, transactions, debts, savingsGoals];
     const failed = results.find((r) => !r.ok);
@@ -77,12 +110,49 @@ export default function WorkspaceModule() {
       debts: debts.ok ? debts.data : [],
       savingsGoals: savingsGoals.ok ? savingsGoals.data : [],
     });
+    setUnreviewedImportCount(unreviewedCount.ok ? unreviewedCount.data : 0);
+    setSnoozed(readSnoozed());
     setStatus("ready");
   }, []);
 
   useEffect(() => {
     load();
   }, [load]);
+
+  const now = useMemo(() => new Date(), []);
+
+  const capabilities = useMemo(() => (records ? computeCapabilities(records) : []), [records]);
+  const allAttentionItems = useMemo(() => (records ? deriveAttentionItems(records, now) : []), [records, now]);
+  const dominantAction: DominantAction | null = useMemo(
+    () => (records ? resolveDominantAction(capabilities, allAttentionItems, unreviewedImportCount) : null),
+    [records, capabilities, allAttentionItems, unreviewedImportCount]
+  );
+  const freshness = useMemo(() => (records ? summarizeFreshness(records, now) : []), [records, now]);
+  const recentChanges = useMemo(() => (records ? summarizeRecentChanges(records, now) : []), [records, now]);
+
+  const visibleAttentionItems = useMemo(() => {
+    const isSnoozedNow = (item: AttentionItem) => {
+      const until = snoozed[item.id];
+      return Boolean(until && until > now.toISOString());
+    };
+    return allAttentionItems
+      .filter((item) => !isSnoozedNow(item))
+      .sort((a, b) => (a.urgency === b.urgency ? 0 : a.urgency === "needsResolution" ? -1 : 1));
+  }, [allAttentionItems, snoozed, now]);
+
+  function snoozeItem(id: string) {
+    const until = new Date(now.getTime() + SNOOZE_DAYS * 24 * 60 * 60 * 1000).toISOString();
+    const next = { ...snoozed, [id]: until };
+    setSnoozed(next);
+    writeSnoozed(next);
+  }
+
+  const snoozedCount = Object.keys(snoozed).filter((id) => snoozed[id] > now.toISOString()).length;
+
+  function clearSnoozed() {
+    setSnoozed({});
+    writeSnoozed({});
+  }
 
   if (status === "loading") {
     return (
@@ -111,8 +181,6 @@ export default function WorkspaceModule() {
     return <EmptyState icon={Compass} title="No product instance found" description="This shouldn't happen for an owner — contact support." />;
   }
 
-  const capabilities = computeCapabilities(records);
-  const attentionItems = deriveAttentionItems(records);
   const anyData = Object.values(records).some((list) => list.length > 0);
 
   if (!anyData) {
@@ -130,6 +198,16 @@ export default function WorkspaceModule() {
     );
   }
 
+  const availableMoney = capabilities.find((row) => row.key === "availableMoney");
+  const secondaryCapabilities = capabilities.filter((row) => row.key !== "availableMoney");
+
+  let companionMessage = "Run a regular review with Companion";
+  if (capabilities.some((row) => row.status === "waiting")) {
+    companionMessage = "Continue setting up your financial picture";
+  } else if (capabilities.some((row) => row.status === "needsInfo") || allAttentionItems.length > 0 || unreviewedImportCount > 0) {
+    companionMessage = "Review missing information with Companion";
+  }
+
   return (
     <div className="flex flex-col gap-6">
       <div>
@@ -137,45 +215,168 @@ export default function WorkspaceModule() {
         <p className="mt-1 text-[13px] text-[var(--muted)]">Deterministic, built only from what you've recorded — never a guess.</p>
       </div>
 
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-        {capabilities.map((row) => (
-          <Surface key={row.key} className="flex flex-col">
+      <div className="flex flex-col gap-6 lg:grid lg:grid-cols-[1.1fr_1fr] lg:items-start lg:gap-6">
+        <div className="flex flex-col gap-6">
+          {dominantAction ? (
+            <Surface elevated className="flex flex-col gap-3 border-l-4 border-l-[var(--primary)]">
+              <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">What to do next</p>
+              <p className="text-[15px] font-semibold leading-snug text-[var(--text)]">{dominantAction.message}</p>
+              <Link href={dominantAction.deepLink} className="self-start">
+                <Button size="sm" iconRight={<ArrowRight size={14} aria-hidden />}>
+                  Take care of this
+                </Button>
+              </Link>
+            </Surface>
+          ) : (
+            <Surface elevated className="flex items-center gap-3">
+              <CheckCircle2 className="h-5 w-5 shrink-0 text-[var(--success)]" />
+              <div>
+                <p className="text-[15px] font-semibold text-[var(--text)]">You're caught up.</p>
+                <p className="text-[13px] text-[var(--muted)]">Nothing needs your attention right now.</p>
+              </div>
+            </Surface>
+          )}
+
+          <div>
             <div className="flex items-center justify-between">
-              <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[var(--faint)]">{row.label}</p>
-              <Badge tone={STATUS_TONE[row.status]}>{row.status === "waiting" ? "Waiting" : row.status === "needsInfo" ? row.detail : "Ready"}</Badge>
+              <p className="flex items-center gap-1.5 text-[12px] font-bold uppercase tracking-[0.1em] text-[var(--faint)]">
+                <Bell className="h-3.5 w-3.5" /> Needs a look {visibleAttentionItems.length > 0 && `(${visibleAttentionItems.length})`}
+              </p>
+              {snoozedCount > 0 && (
+                <button type="button" onClick={clearSnoozed} className="text-[11px] font-medium text-[var(--muted)] hover:text-[var(--primary)]">
+                  {snoozedCount} snoozed — show all
+                </button>
+              )}
             </div>
-            <p className="mt-1.5 text-[22px] font-semibold tabular-nums text-[var(--text)]">
-              {row.valueMinorUnits !== null ? formatCurrency(row.valueMinorUnits, "USD") : "—"}
-            </p>
-            {row.explain && <ExplainBreakdown breakdown={row.explain} currency="USD" label={row.label} valueMinorUnits={row.valueMinorUnits ?? 0} />}
-          </Surface>
-        ))}
-      </div>
 
-      {attentionItems.length > 0 && (
-        <div>
-          <p className="text-[12px] font-bold uppercase tracking-[0.1em] text-[var(--faint)]">Needs a look</p>
-          <ul className="mt-2 flex flex-col gap-1.5">
-            {attentionItems.slice(0, 8).map((item: AttentionItem) => (
-              <li key={item.id}>
-                <Link
-                  href={item.deepLink}
-                  className="block rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3 text-[13px] font-medium text-[var(--text)] hover:border-[var(--primary)]"
-                >
-                  {item.message}
-                </Link>
-              </li>
-            ))}
-          </ul>
+            {visibleAttentionItems.length === 0 ? (
+              <p className="mt-2 text-[13px] text-[var(--muted)]">Nothing in your Attention Inbox.</p>
+            ) : (
+              <ul className="mt-2 flex flex-col gap-1.5">
+                {(showAllAttention ? visibleAttentionItems : visibleAttentionItems.slice(0, 5)).map((item) => (
+                  <li key={item.id} className="flex items-start gap-2 rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3">
+                    <WarningCircle
+                      className={`mt-0.5 h-4 w-4 shrink-0 ${item.urgency === "needsResolution" ? "text-[var(--warning)]" : "text-[var(--faint)]"}`}
+                    />
+                    <div className="flex-1">
+                      <Link href={item.deepLink} className="text-[13px] font-medium text-[var(--text)] hover:text-[var(--primary)] hover:underline">
+                        {item.message}
+                      </Link>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => snoozeItem(item.id)}
+                      className="shrink-0 text-[11px] font-medium text-[var(--faint)] hover:text-[var(--muted)]"
+                      title="Hide for 7 days on this device"
+                    >
+                      Snooze
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            {visibleAttentionItems.length > 5 && (
+              <button
+                type="button"
+                onClick={() => setShowAllAttention((v) => !v)}
+                className="mt-2 text-[12px] font-semibold text-[var(--primary)] hover:underline"
+              >
+                {showAllAttention ? "Show fewer" : `Show all ${visibleAttentionItems.length}`}
+              </button>
+            )}
+          </div>
+
+          {unreviewedImportCount > 0 && (
+            <Surface className="flex items-center gap-3">
+              <Layers3 className="h-5 w-5 shrink-0 text-[var(--muted)]" />
+              <div className="flex-1">
+                <p className="text-[13px] font-semibold text-[var(--text)]">
+                  {unreviewedImportCount} imported {unreviewedImportCount === 1 ? "record" : "records"} waiting for review.
+                </p>
+                <p className="text-[12px] text-[var(--muted)]">Nothing from an import becomes part of your picture until you confirm it.</p>
+              </div>
+              <Link href={resolveSafeDeepLink({ kind: "companionResume" })}>
+                <Button size="sm" variant="secondary">
+                  Review
+                </Button>
+              </Link>
+            </Surface>
+          )}
         </div>
-      )}
 
-      <div className="border-t border-[var(--border)] pt-4">
-        <Link href="/app/products/personal-finance-companion/start">
-          <Button size="sm" variant="secondary">
-            Continue with Companion
-          </Button>
-        </Link>
+        <div className="flex flex-col gap-6">
+          {availableMoney && (
+            <Surface elevated>
+              <div className="flex items-center justify-between">
+                <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[var(--faint)]">{availableMoney.label}</p>
+                <Badge tone={STATUS_TONE[availableMoney.status]}>
+                  {availableMoney.status === "waiting" ? "Waiting" : availableMoney.status === "needsInfo" ? availableMoney.detail : "Ready"}
+                </Badge>
+              </div>
+              <p className="mt-1.5 text-[30px] font-semibold tabular-nums text-[var(--text)]">
+                {availableMoney.valueMinorUnits !== null ? formatCurrency(availableMoney.valueMinorUnits, "USD") : "—"}
+              </p>
+              {availableMoney.explain && (
+                <ExplainBreakdown breakdown={availableMoney.explain} currency="USD" label={availableMoney.label} valueMinorUnits={availableMoney.valueMinorUnits ?? 0} />
+              )}
+            </Surface>
+          )}
+
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            {secondaryCapabilities.map((row) => (
+              <Surface key={row.key} className="flex flex-col">
+                <div className="flex items-center justify-between">
+                  <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[var(--faint)]">{row.label}</p>
+                  <Badge tone={STATUS_TONE[row.status]}>{row.status === "waiting" ? "Waiting" : row.status === "needsInfo" ? row.detail : "Ready"}</Badge>
+                </div>
+                <p className="mt-1.5 text-[20px] font-semibold tabular-nums text-[var(--text)]">
+                  {row.valueMinorUnits !== null ? formatCurrency(row.valueMinorUnits, "USD") : "—"}
+                </p>
+                {row.explain && <ExplainBreakdown breakdown={row.explain} currency="USD" label={row.label} valueMinorUnits={row.valueMinorUnits ?? 0} />}
+              </Surface>
+            ))}
+          </div>
+
+          {(freshness.length > 0 || recentChanges.length > 0) && (
+            <div className="flex flex-col gap-3 rounded-xl border border-[var(--border)] p-3.5">
+              {freshness.length > 0 && (
+                <div>
+                  <p className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.08em] text-[var(--faint)]">
+                    <Clock className="h-3.5 w-3.5" /> Freshness
+                  </p>
+                  <ul className="mt-1.5 flex flex-col gap-0.5">
+                    {freshness.map((item) => (
+                      <li key={item.domain} className="text-[13px] text-[var(--muted)]">
+                        {item.message}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {recentChanges.length > 0 && (
+                <div>
+                  <p className="text-[11px] font-bold uppercase tracking-[0.08em] text-[var(--faint)]">Recently</p>
+                  <ul className="mt-1.5 flex flex-col gap-0.5">
+                    {recentChanges.map((item) => (
+                      <li key={item.area} className="text-[13px] text-[var(--muted)]">
+                        {item.message}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+
+        <div className="border-t border-[var(--border)] pt-4 lg:col-span-2">
+          <Link href="/app/products/personal-finance-companion/start">
+            <Button size="sm" variant="secondary" iconRight={<ArrowRight size={14} aria-hidden />}>
+              {companionMessage}
+            </Button>
+          </Link>
+        </div>
       </div>
     </div>
   );

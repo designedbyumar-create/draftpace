@@ -29,6 +29,7 @@ import TextFileStep from "./import/TextFileStep";
 import CsvImportFlow from "./import/CsvImportFlow";
 import CandidateReviewQueue from "./import/CandidateReviewQueue";
 import type { ExtractionCandidate } from "../../import/types";
+import { listUnreviewedGroupedBySession } from "../../domain/extractionCandidates";
 
 type ImportFlow = "notes" | "textFile" | "csv" | "review" | null;
 type ImportSource = "pastedNotes" | "textFile" | "csvImport";
@@ -73,6 +74,8 @@ export default function CompanionModule() {
   const [importSource, setImportSource] = useState<ImportSource>("pastedNotes");
   const [reviewCandidates, setReviewCandidates] = useState<ExtractionCandidate[]>([]);
   const [reviewAccountId, setReviewAccountId] = useState<string | undefined>(undefined);
+  const [pendingReviewGroups, setPendingReviewGroups] = useState<{ source: ImportSource; candidates: ExtractionCandidate[] }[]>([]);
+  const [checkedPendingReview, setCheckedPendingReview] = useState(false);
 
   const loadRecords = useCallback(async (id: string) => {
     setRecordsStatus("loading");
@@ -108,6 +111,27 @@ export default function CompanionModule() {
   useEffect(() => {
     if (instanceId) loadRecords(instanceId);
   }, [instanceId, loadRecords]);
+
+  // Resume any candidates left over from a previous import that were never
+  // reviewed — they stay durable in pfc_extraction_candidates regardless of
+  // this component's own local state, so a fresh mount (a page reload, or
+  // arriving here from Workspace's "N imported records waiting" card) picks
+  // them back up instead of leaving them permanently stranded. Runs once
+  // per mount, and only when nothing else already claims the screen.
+  useEffect(() => {
+    if (!instanceId || recordsStatus !== "ready" || checkedPendingReview || importFlow !== null || showRecap) return;
+    setCheckedPendingReview(true);
+    listUnreviewedGroupedBySession(instanceId).then((result) => {
+      if (result.ok && result.data.length > 0) {
+        const [first, ...rest] = result.data;
+        setImportSource(first.source);
+        setReviewCandidates(first.candidates);
+        setReviewAccountId(undefined);
+        setPendingReviewGroups(rest);
+        setImportFlow("review");
+      }
+    });
+  }, [instanceId, recordsStatus, checkedPendingReview, importFlow, showRecap]);
 
   if (setupStatus === "loading" || (setupStatus === "ready" && recordsStatus === "loading")) {
     return (
@@ -177,6 +201,7 @@ export default function CompanionModule() {
     setImportFlow(null);
     setReviewCandidates([]);
     setReviewAccountId(undefined);
+    setPendingReviewGroups([]);
     if (instanceId) loadRecords(instanceId);
     setState({ ...state!, currentScreen: 1 });
   }
@@ -324,7 +349,17 @@ export default function CompanionModule() {
         onCandidateResolved={(candidateId, result) => {
           setReviewCandidates((prev) => prev.map((c) => (c.id === candidateId ? { ...c, reviewStatus: result === "skipped" ? "skipped" : "confirmed" } : c)));
         }}
-        onDone={finishImportFlow}
+        onDone={() => {
+          if (pendingReviewGroups.length > 0) {
+            const [next, ...rest] = pendingReviewGroups;
+            setImportSource(next.source);
+            setReviewCandidates(next.candidates);
+            setReviewAccountId(undefined);
+            setPendingReviewGroups(rest);
+            return;
+          }
+          finishImportFlow();
+        }}
       />
     );
   }
