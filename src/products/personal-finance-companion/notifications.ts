@@ -1,22 +1,24 @@
+import { resolveSafeDeepLink } from "./deepLinks";
+import type { NotificationCategory } from "./notificationPreferences";
+
 /**
  * Personal Finance Companion's notification CONTRACT — deliberately an
  * interface only, no sending logic, no permission request, no
- * subscription persistence. The PWA audit confirmed Draftpace's existing
- * notification routes (src/app/api/notifications/{subscribe,test,cron})
- * are non-functional stubs: subscribe never writes to a database (no
- * `notifications`/`push_subscriptions` table exists), test never sends a
- * real push, cron does no work. Building a real Web Push/VAPID platform
- * during this infrastructure session would be exactly the "quietly build
- * an entire push platform" the task instructions explicitly forbid.
+ * subscription persistence. Draftpace's existing notification routes
+ * (src/app/api/notifications/{subscribe,test,cron}) remain non-functional
+ * stubs; building a real Web Push/VAPID platform is explicitly out of
+ * scope here. See ProductDefinition.notifications (declarative-only,
+ * src/product-framework/definition.ts) for where "supported" would flip
+ * to true once a real platform exists — it does not flip here.
  *
- * What this file establishes instead: the shape a future real platform
- * would need to support this product's five notification kinds (launch
- * spec's "PWA notification readiness" section), and the deep-link target
- * each kind resolves to, so that platform work — whenever it happens —
- * has a concrete contract to implement against rather than starting from
- * nothing. See ProductDefinition.notifications (declarative-only today,
- * per src/product-framework/definition.ts) for where "supported" would
- * flip to true once a real platform exists.
+ * Two related but distinct ideas live in this product's notification
+ * architecture, kept separate on purpose:
+ *   - a notification KIND: the specific triggering event (this file)
+ *   - a preference CATEGORY: the broader bucket a user opts into
+ *     (notificationPreferences.ts) — several kinds can map to one category
+ * Collapsing them into one model would force "turn on all bill
+ * notifications" and "turn on this one specific bill's reminder" to be
+ * the same toggle, which they should not be.
  */
 
 export type PersonalFinanceCompanionNotificationKind =
@@ -26,38 +28,70 @@ export type PersonalFinanceCompanionNotificationKind =
   | "weeklyReviewDue"
   | "importNeedsReview";
 
-export interface PersonalFinanceCompanionNotificationPreferences {
-  billMissingDetail: boolean;
-  estimatedIncomeDatePassed: boolean;
-  balanceStale: boolean;
-  weeklyReviewDue: boolean;
-  importNeedsReview: boolean;
-}
+/** §17: not every event deserves a push. PROGRESS events are in-app-only by default. */
+export type NotificationTier = "action" | "upcoming" | "attention" | "review" | "progress";
 
-export const DEFAULT_NOTIFICATION_PREFERENCES: PersonalFinanceCompanionNotificationPreferences = {
-  billMissingDetail: false,
-  estimatedIncomeDatePassed: false,
-  balanceStale: false,
-  weeklyReviewDue: false,
-  importNeedsReview: false,
+export const NOTIFICATION_KIND_TIER: Record<PersonalFinanceCompanionNotificationKind, NotificationTier> = {
+  billMissingDetail: "attention",
+  estimatedIncomeDatePassed: "attention",
+  balanceStale: "attention",
+  weeklyReviewDue: "review",
+  importNeedsReview: "review",
 };
 
-/** Where a notification of this kind should deep-link to once a real platform exists. Never a bare "/app" — the launch spec requires linking to the exact relevant task. */
+export const NOTIFICATION_KIND_CATEGORY: Record<PersonalFinanceCompanionNotificationKind, NotificationCategory> = {
+  billMissingDetail: "billsAndObligations",
+  estimatedIncomeDatePassed: "expectedIncome",
+  balanceStale: "recordFreshness",
+  weeklyReviewDue: "financialReviewRhythm",
+  importNeedsReview: "transactionReview",
+};
+
+/** Where a notification of this kind should deep-link to once a real platform exists. Never a bare "/app" — the exact relevant task, not a section list, whenever a record id is available. */
 export function resolveNotificationDeepLink(
   kind: PersonalFinanceCompanionNotificationKind,
   context: { billId?: string; incomeSourceId?: string; accountId?: string; importSessionId?: string }
 ): string {
-  const base = "/app/products/personal-finance-companion";
   switch (kind) {
     case "billMissingDetail":
-      return context.billId ? `${base}/bills?focus=${context.billId}` : `${base}/bills`;
+      return resolveSafeDeepLink({ kind: "area", area: "bills", focusId: context.billId });
     case "estimatedIncomeDatePassed":
-      return context.incomeSourceId ? `${base}/income?focus=${context.incomeSourceId}` : `${base}/income`;
+      return resolveSafeDeepLink({ kind: "area", area: "income", focusId: context.incomeSourceId });
     case "balanceStale":
-      return context.accountId ? `${base}/accounts?focus=${context.accountId}` : `${base}/accounts`;
+      return resolveSafeDeepLink({ kind: "area", area: "accounts", focusId: context.accountId });
     case "weeklyReviewDue":
-      return `${base}/setup-centre`;
+      return resolveSafeDeepLink({ kind: "setupCentre" });
     case "importNeedsReview":
-      return context.importSessionId ? `${base}/setup?import=${context.importSessionId}` : `${base}/setup`;
+      return resolveSafeDeepLink({ kind: "companionResume" });
   }
 }
+
+/**
+ * Honest-language copy templates (§18): Draftpace never claims to know
+ * what happened in the real world, only what it expects or what the user
+ * told it. Each kind's copy states the expectation or the user's own
+ * stated intention, never a claim about a real-world outcome Draftpace
+ * cannot actually know.
+ */
+export const NOTIFICATION_KIND_COPY: Record<PersonalFinanceCompanionNotificationKind, { generic: string; withName: (name: string) => string }> = {
+  billMissingDetail: {
+    generic: "A bill needs a due date.",
+    withName: (name) => `${name} needs a due date.`,
+  },
+  estimatedIncomeDatePassed: {
+    generic: "Expected income needs confirming.",
+    withName: (name) => `${name} was expected. Confirm it or update the expected date.`,
+  },
+  balanceStale: {
+    generic: "An account balance has not been updated recently.",
+    withName: (name) => `${name} has not been updated recently.`,
+  },
+  weeklyReviewDue: {
+    generic: "A financial review is ready whenever you are.",
+    withName: () => "A financial review is ready whenever you are.",
+  },
+  importNeedsReview: {
+    generic: "Something needs your review.",
+    withName: () => "Something needs your review.",
+  },
+};

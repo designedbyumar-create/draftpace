@@ -1,5 +1,8 @@
 import type { ProductCatalogEntry } from "@/product-framework/catalog";
 import { personalFinanceCompanionDefinition } from "./definition";
+import CompanionModule from "./components/companion/CompanionModule";
+import WorkspaceModule from "./components/WorkspaceModule";
+import SettingsModule from "./components/SettingsModule";
 import SetupModule from "./components/SetupModule";
 import AccountsModule from "./components/AccountsModule";
 import IncomeModule from "./components/IncomeModule";
@@ -13,6 +16,9 @@ import SetupCentreModule from "./components/SetupCentreModule";
 export const personalFinanceCompanionCatalogEntry: ProductCatalogEntry = {
   definition: personalFinanceCompanionDefinition,
   moduleComponents: {
+    "personal-finance-companion.companion": CompanionModule,
+    "personal-finance-companion.workspace": WorkspaceModule,
+    "personal-finance-companion.settings": SettingsModule,
     "personal-finance-companion.setup": SetupModule,
     "personal-finance-companion.accounts": AccountsModule,
     "personal-finance-companion.income": IncomeModule,

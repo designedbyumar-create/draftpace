@@ -94,6 +94,9 @@ export const personalFinanceCompanionDefinition: ProductDefinitionInput = {
     completedLabel: "Add another source",
   },
   modules: [
+    { id: "personal-finance-companion.companion", destination: "start" },
+    { id: "personal-finance-companion.workspace", destination: "workspace" },
+    { id: "personal-finance-companion.settings", destination: "settings" },
     { id: "personal-finance-companion.setup", destination: "setup" },
     { id: "personal-finance-companion.accounts", destination: "accounts" },
     { id: "personal-finance-companion.income", destination: "income" },
