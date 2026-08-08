@@ -6,16 +6,20 @@ import Toggle from "@/design-system/Toggle";
 import Button from "@/design-system/Button";
 import { NOTIFICATION_CATEGORY_LABEL, defaultNotificationPreferences, type NotificationCategory } from "../../notificationPreferences";
 import { saveNotificationPreferences } from "../../domain/notificationPreferences";
+import { subscribeToPush } from "@/lib/notifications/pushClient";
 
 const OFFERED_CATEGORIES: NotificationCategory[] = ["billsAndObligations", "subscriptionRenewals", "expectedIncome", "debtDates"];
 
 /**
- * Contextual, one-time notification consent (launch spec Stage C §16) —
- * shown only after Companion has genuinely collected dates worth
- * remembering, never on first entry. Saves a preference record; does not
- * request OS/browser Push permission, since no real push transport exists
- * yet (see notifications.ts) — there is nothing honest to ask permission
- * for. "Not now" is a first-class, equally-sized choice, not a dismiss-X.
+ * Contextual, one-time notification consent (launch spec Stage C §16,
+ * extended Stage F) — shown only after Companion has genuinely collected
+ * dates worth remembering, never on first entry. Saves the preference
+ * record first (always succeeds regardless of what happens next), then —
+ * only because the user just deliberately clicked "Set my reminders" —
+ * requests real OS/browser Push permission. If permission is denied or
+ * push isn't supported, the preferences are still saved; there's simply
+ * nothing to deliver to on this device yet. "Not now" stays a first-class,
+ * equally-sized choice, not a dismiss-X, and never requests permission.
  */
 export default function ReminderConsentPrompt({ instanceId, onDone }: { instanceId: string; onDone: () => void }) {
   const [selected, setSelected] = useState<Set<NotificationCategory>>(new Set(["billsAndObligations", "subscriptionRenewals", "debtDates"]));
@@ -35,6 +39,7 @@ export default function ReminderConsentPrompt({ instanceId, onDone }: { instance
     const prefs = defaultNotificationPreferences();
     for (const category of selected) prefs.categories[category] = true;
     await saveNotificationPreferences(instanceId, prefs);
+    await subscribeToPush().catch(() => null);
     setSaving(false);
     onDone();
   }

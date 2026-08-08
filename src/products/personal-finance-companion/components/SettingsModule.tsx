@@ -11,6 +11,7 @@ import { Settings } from "@/design-system/Icon";
 import { describeResultError } from "@/product-framework/result";
 import { findPersonalFinanceCompanionInstanceId } from "../setupStateData";
 import { loadNotificationPreferences, saveNotificationPreferences } from "../domain/notificationPreferences";
+import PushNotificationSettings from "./PushNotificationSettings";
 import {
   notificationCategorySchema,
   NOTIFICATION_CATEGORY_LABEL,
@@ -35,6 +36,24 @@ export default function SettingsModule() {
   const [instanceId, setInstanceId] = useState<string | null>(null);
   const [preferences, setPreferences] = useState<PersonalFinanceCompanionNotificationPreferences | null>(null);
   const [saveState, setSaveState] = useState<"idle" | "saving" | "saved" | "error">("idle");
+  const [detectedTimezone, setDetectedTimezone] = useState<string | null>(null);
+  const [supportedTimeZones, setSupportedTimeZones] = useState<string[]>([]);
+
+  useEffect(() => {
+    try {
+      setDetectedTimezone(Intl.DateTimeFormat().resolvedOptions().timeZone);
+    } catch {
+      setDetectedTimezone(null);
+    }
+    const supportedValuesOf = (Intl as unknown as { supportedValuesOf?: (key: string) => string[] }).supportedValuesOf;
+    if (supportedValuesOf) {
+      try {
+        setSupportedTimeZones(supportedValuesOf("timeZone"));
+      } catch {
+        setSupportedTimeZones([]);
+      }
+    }
+  }, []);
 
   const load = useCallback(async () => {
     setStatus("loading");
@@ -127,6 +146,37 @@ export default function SettingsModule() {
       </Surface>
 
       <Surface>
+        <p className="text-[13px] font-semibold text-[var(--text)]">Time zone</p>
+        <p className="mt-0.5 text-[12px] text-[var(--muted)]">Used to keep reminders inside a reasonable local time — never sent late at night or before your day starts.</p>
+        <div className="mt-3 flex flex-wrap items-center gap-2">
+          <div className="max-w-xs flex-1">
+            {supportedTimeZones.length > 0 ? (
+              <Select
+                label="Time zone"
+                value={preferences.timezone}
+                onChange={(e) => persist({ ...preferences, timezone: e.target.value })}
+              >
+                {supportedTimeZones.map((zone) => (
+                  <option key={zone} value={zone}>
+                    {zone}
+                  </option>
+                ))}
+              </Select>
+            ) : (
+              <p className="text-[13px] text-[var(--text)]">{preferences.timezone}</p>
+            )}
+          </div>
+          {detectedTimezone && detectedTimezone !== preferences.timezone && (
+            <Button size="sm" variant="secondary" onClick={() => persist({ ...preferences, timezone: detectedTimezone })}>
+              Use detected: {detectedTimezone}
+            </Button>
+          )}
+        </div>
+      </Surface>
+
+      <PushNotificationSettings />
+
+      <Surface>
         <p className="text-[13px] font-semibold text-[var(--text)]">Notification preview privacy</p>
         <p className="mt-0.5 text-[12px] text-[var(--muted)]">How much detail appears in a notification preview.</p>
         <div className="mt-3 max-w-xs">
@@ -147,7 +197,7 @@ export default function SettingsModule() {
       <Surface>
         <p className="text-[13px] font-semibold text-[var(--text)]">What Draftpace should remember for you</p>
         <p className="mt-0.5 text-[12px] text-[var(--muted)]">
-          Nothing is sent unless a category is on here. This is a preference record only — real delivery isn&apos;t built yet.
+          Nothing is sent unless a category is on here and notifications are enabled above.
         </p>
         <div className="mt-3 flex flex-col gap-2">
           {notificationCategorySchema.options.map((category: NotificationCategory) => (

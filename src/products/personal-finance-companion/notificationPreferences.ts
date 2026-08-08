@@ -61,11 +61,14 @@ export const notificationPreferencesSchema = z.object({
   categories: z.record(z.string(), z.boolean()).default({}),
   privacyLevel: notificationPrivacyLevelSchema.default("private"),
   reviewRhythm: reviewRhythmSchema.default("off"),
+  /** IANA zone name (e.g. "America/New_York"), never a raw UTC offset — an offset silently drifts across a DST boundary, a zone name doesn't. See Stage F's timezone architecture note in domain/notificationPreferences.ts. */
+  timezone: z.string().min(1).default("UTC"),
 });
 export interface PersonalFinanceCompanionNotificationPreferences {
   categories: Partial<Record<NotificationCategory, boolean>>;
   privacyLevel: NotificationPrivacyLevel;
   reviewRhythm: ReviewRhythm;
+  timezone: string;
 }
 
 /** Nothing is sent unless the user chose it — every category defaults off, matching §16's "nothing is sent unless you choose it." */

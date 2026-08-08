@@ -15,8 +15,11 @@ import { STATUS_LABEL, STATUS_TONE } from "./shared/lifecycle";
 import DebtFormSheet, { debtFormValuesToPatch, type DebtFormValues } from "./debt/DebtFormSheet";
 import { summarizeDebts, resolveDominantAction, describeDebtIncompleteness } from "./debt/debtLogic";
 import { describeResultError } from "@/product-framework/result";
+import { createUserReminder } from "../domain/reminders";
 
 type LoadStatus = "loading" | "ready" | "no-instance" | "error";
+
+const REMIND_ME_DELAY_DAYS = 3;
 
 export default function DebtModule() {
   const [status, setStatus] = useState<LoadStatus>("loading");
@@ -26,7 +29,21 @@ export default function DebtModule() {
   const [showArchived, setShowArchived] = useState(false);
   const [formOpen, setFormOpen] = useState(false);
   const [editingDebt, setEditingDebt] = useState<Debt | null>(null);
+  const [reminderSetFor, setReminderSetFor] = useState<string | null>(null);
   const addButtonRef = useRef<HTMLDivElement>(null);
+
+  async function remindMeAboutRate(debt: Debt) {
+    if (!instanceId) return;
+    const nextEligibleAt = new Date(Date.now() + REMIND_ME_DELAY_DAYS * 24 * 60 * 60 * 1000);
+    const result = await createUserReminder(instanceId, {
+      entityType: "debt",
+      entityId: debt.id,
+      note: `Add an interest rate for ${debt.name}.`,
+      schedule: { kind: "daysBefore", targetDate: nextEligibleAt.toISOString().slice(0, 10), days: 0 },
+      nextEligibleAt: nextEligibleAt.toISOString(),
+    });
+    if (result.ok) setReminderSetFor(debt.id);
+  }
 
   const load = useCallback(async () => {
     setStatus("loading");
@@ -136,15 +153,24 @@ export default function DebtModule() {
             <p className="text-[13px] leading-relaxed text-[var(--text)]">
               Your {dominantAction.debt.name} debt is saved. Add the interest rate to calculate a reliable payoff timeline.
             </p>
-            <Button
-              size="sm"
-              onClick={() => {
-                setEditingDebt(dominantAction.debt);
-                setFormOpen(true);
-              }}
-            >
-              Add rate
-            </Button>
+            <div className="flex items-center gap-2">
+              {reminderSetFor === dominantAction.debt.id ? (
+                <span className="text-[12px] font-medium text-[var(--success)]">Reminder set</span>
+              ) : (
+                <Button size="sm" variant="ghost" onClick={() => remindMeAboutRate(dominantAction.debt)}>
+                  Remind me
+                </Button>
+              )}
+              <Button
+                size="sm"
+                onClick={() => {
+                  setEditingDebt(dominantAction.debt);
+                  setFormOpen(true);
+                }}
+              >
+                Add rate
+              </Button>
+            </div>
           </div>
         ) : null
       }

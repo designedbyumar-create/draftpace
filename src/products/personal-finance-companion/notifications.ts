@@ -73,7 +73,15 @@ export function resolveNotificationDeepLink(
  * stated intention, never a claim about a real-world outcome Draftpace
  * cannot actually know.
  */
-export const NOTIFICATION_KIND_COPY: Record<PersonalFinanceCompanionNotificationKind, { generic: string; withName: (name: string) => string }> = {
+export interface NotificationKindCopy {
+  generic: string;
+  /** `detail` carries a second fact (a date, most often) some kinds need alongside the record name — unused by kinds that don't need it. */
+  withName: (name: string, detail?: string) => string;
+  /** Only present for kinds with a natural single amount (a bill, a debt payment) — used at privacy level "detailed" only, per renderAtPrivacyLevel. */
+  withAmount?: (name: string, amount: string, detail?: string) => string;
+}
+
+export const NOTIFICATION_KIND_COPY: Record<PersonalFinanceCompanionNotificationKind, NotificationKindCopy> = {
   billMissingDetail: {
     generic: "A bill needs a due date.",
     withName: (name) => `${name} needs a due date.`,

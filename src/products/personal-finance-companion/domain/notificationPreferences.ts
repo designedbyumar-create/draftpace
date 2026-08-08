@@ -21,6 +21,7 @@ interface NotificationPreferencesRow {
   categories: unknown;
   privacy_level: string;
   review_rhythm: string;
+  timezone: string;
 }
 
 function fromRow(row: NotificationPreferencesRow): PersonalFinanceCompanionNotificationPreferences {
@@ -28,6 +29,7 @@ function fromRow(row: NotificationPreferencesRow): PersonalFinanceCompanionNotif
     categories: row.categories,
     privacyLevel: row.privacy_level,
     reviewRhythm: row.review_rhythm,
+    timezone: row.timezone,
   });
 }
 
@@ -36,7 +38,7 @@ export async function loadNotificationPreferences(
 ): Promise<Result<PersonalFinanceCompanionNotificationPreferences>> {
   const { data, error } = await supabase
     .from("pfc_notification_preferences")
-    .select("categories, privacy_level, review_rhythm")
+    .select("categories, privacy_level, review_rhythm, timezone")
     .eq("product_instance_id", productInstanceId)
     .maybeSingle();
 
@@ -70,10 +72,11 @@ export async function saveNotificationPreferences(
         categories: preferences.categories,
         privacy_level: preferences.privacyLevel,
         review_rhythm: preferences.reviewRhythm,
+        timezone: preferences.timezone,
       },
       { onConflict: "product_instance_id" }
     )
-    .select("categories, privacy_level, review_rhythm")
+    .select("categories, privacy_level, review_rhythm, timezone")
     .single();
 
   if (error) return err({ kind: "network", message: error.message });
