@@ -24,6 +24,14 @@ import OrientationStep from "./OrientationStep";
 import AreaStep from "./AreaStep";
 import SessionRecap, { type SessionChange } from "./SessionRecap";
 import ReminderConsentPrompt from "./ReminderConsentPrompt";
+import PasteNotesStep from "./import/PasteNotesStep";
+import TextFileStep from "./import/TextFileStep";
+import CsvImportFlow from "./import/CsvImportFlow";
+import CandidateReviewQueue from "./import/CandidateReviewQueue";
+import type { ExtractionCandidate } from "../../import/types";
+
+type ImportFlow = "notes" | "textFile" | "csv" | "review" | null;
+type ImportSource = "pastedNotes" | "textFile" | "csvImport";
 
 type LoadStatus = "loading" | "ready" | "no-instance" | "error";
 
@@ -61,6 +69,10 @@ export default function CompanionModule() {
   const [showRecap, setShowRecap] = useState(false);
   const [showReminderConsent, setShowReminderConsent] = useState(false);
   const [reminderConsentShown, setReminderConsentShown] = useState(false);
+  const [importFlow, setImportFlow] = useState<ImportFlow>(null);
+  const [importSource, setImportSource] = useState<ImportSource>("pastedNotes");
+  const [reviewCandidates, setReviewCandidates] = useState<ExtractionCandidate[]>([]);
+  const [reviewAccountId, setReviewAccountId] = useState<string | undefined>(undefined);
 
   const loadRecords = useCallback(async (id: string) => {
     setRecordsStatus("loading");
@@ -142,7 +154,31 @@ export default function CompanionModule() {
   if (!state || !instanceId) return null;
 
   function handleSelectPath(path: InputPath) {
+    setState({ ...state!, selectedInputPath: path, orientation: { seenAt: new Date().toISOString(), skipped: false } });
+    if (path === "notes") {
+      setImportSource("pastedNotes");
+      setImportFlow("notes");
+      return;
+    }
+    if (path === "textFile") {
+      setImportSource("textFile");
+      setImportFlow("textFile");
+      return;
+    }
+    if (path === "csv") {
+      setImportSource("csvImport");
+      setImportFlow("csv");
+      return;
+    }
     setState({ ...state!, selectedInputPath: path, currentScreen: 1, orientation: { seenAt: new Date().toISOString(), skipped: false } });
+  }
+
+  function finishImportFlow() {
+    setImportFlow(null);
+    setReviewCandidates([]);
+    setReviewAccountId(undefined);
+    if (instanceId) loadRecords(instanceId);
+    setState({ ...state!, currentScreen: 1 });
   }
 
   function handleSkipOrientation() {
@@ -226,8 +262,71 @@ export default function CompanionModule() {
     );
   }
 
-  if (!state.orientation.seenAt && !state.orientation.skipped) {
+  if (!state.orientation.seenAt && !state.orientation.skipped && importFlow === null) {
     return <OrientationStep onSelectPath={handleSelectPath} onSkip={handleSkipOrientation} />;
+  }
+
+  if (importFlow === "notes") {
+    return (
+      <PasteNotesStep
+        instanceId={instanceId}
+        onCandidatesReady={(candidates) => {
+          setReviewCandidates(candidates);
+          setImportFlow("review");
+        }}
+        onBack={() => setImportFlow(null)}
+      />
+    );
+  }
+
+  if (importFlow === "textFile") {
+    return (
+      <TextFileStep
+        instanceId={instanceId}
+        onCandidatesReady={(candidates) => {
+          setReviewCandidates(candidates);
+          setImportFlow("review");
+        }}
+        onBack={() => setImportFlow(null)}
+      />
+    );
+  }
+
+  if (importFlow === "csv") {
+    return (
+      <CsvImportFlow
+        instanceId={instanceId}
+        accounts={records.accounts.filter((a) => a.status !== "archived")}
+        existingTransactions={records.transactions}
+        onBack={() => setImportFlow(null)}
+        onDone={(ambiguousCandidates, accountId) => {
+          if (ambiguousCandidates.length > 0) {
+            setImportSource("csvImport");
+            setReviewCandidates(ambiguousCandidates);
+            setReviewAccountId(accountId);
+            setImportFlow("review");
+          } else {
+            finishImportFlow();
+          }
+        }}
+      />
+    );
+  }
+
+  if (importFlow === "review") {
+    return (
+      <CandidateReviewQueue
+        instanceId={instanceId}
+        candidates={reviewCandidates}
+        records={records}
+        source={importSource}
+        accountId={reviewAccountId}
+        onCandidateResolved={(candidateId, result) => {
+          setReviewCandidates((prev) => prev.map((c) => (c.id === candidateId ? { ...c, reviewStatus: result === "skipped" ? "skipped" : "confirmed" } : c)));
+        }}
+        onDone={finishImportFlow}
+      />
+    );
   }
 
   const areaIndex = Math.min(Math.max(state.currentScreen, 1), COMPANION_AREA_ORDER.length) - 1;
@@ -247,6 +346,21 @@ export default function CompanionModule() {
         <Badge tone={saveStatus === "saved" ? "success" : saveStatus === "error" ? "danger" : "neutral"}>
           {saveStatus === "saving" ? "Saving…" : saveStatus === "saved" ? "Saved" : saveStatus === "error" ? "Save failed" : ""}
         </Badge>
+      </div>
+      {/* Import isn't first-run-only — a returning user should be able to
+          paste more notes or import another CSV anytime, not just during
+          the one-time orientation screen. */}
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 px-1 text-[12px] text-[var(--muted)]">
+        <span>Have more to add?</span>
+        <button type="button" onClick={() => setImportFlow("notes")} className="font-semibold text-[var(--primary)] hover:underline">
+          Paste notes
+        </button>
+        <button type="button" onClick={() => setImportFlow("textFile")} className="font-semibold text-[var(--primary)] hover:underline">
+          Upload a text file
+        </button>
+        <button type="button" onClick={() => setImportFlow("csv")} className="font-semibold text-[var(--primary)] hover:underline">
+          Import a CSV
+        </button>
       </div>
       {/* key={area} forces a fresh mount per area — without it React reuses
           the same AreaStep instance across areas, freezing its "was this

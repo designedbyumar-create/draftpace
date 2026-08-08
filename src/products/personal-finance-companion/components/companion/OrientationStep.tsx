@@ -2,30 +2,31 @@
 
 import Surface from "@/design-system/Surface";
 import Button from "@/design-system/Button";
-import Alert from "@/design-system/Alert";
 import type { InputPath } from "../../state";
 
 interface PathOption {
   path: InputPath;
   label: string;
-  live: boolean;
+  hint: string;
 }
 
+/**
+ * First-run orientation (launch spec Stage C §3, extended by Stage D).
+ * Every path here is genuinely live as of Stage D — "notes"/"textFile"/
+ * "csv" route into the real pasted-notes, text-file, and CSV pipelines
+ * (see components/companion/import/), not a "not built yet" fallback to
+ * manual entry anymore. The text-file option is deliberately labeled "a
+ * text file", not "bank statements" — Draftpace does not read PDFs or
+ * scanned statements (no OCR), and the label must never imply it does.
+ */
 const PATH_OPTIONS: PathOption[] = [
-  { path: "fromScratch", label: "Mostly in my head", live: true },
-  { path: "notes", label: "Notes or messages", live: false },
-  { path: "textFile", label: "Bank or card statements", live: false },
-  { path: "csv", label: "A spreadsheet or CSV", live: false },
-  { path: "manual", label: "I already know most of it — let's go", live: true },
+  { path: "fromScratch", label: "Mostly in my head", hint: "Enter things directly" },
+  { path: "notes", label: "Notes or messages", hint: "Paste what you've written down" },
+  { path: "textFile", label: "A text file", hint: "Upload a .txt file" },
+  { path: "csv", label: "A spreadsheet or CSV", hint: "Import transactions" },
+  { path: "manual", label: "I already know most of it — let's go", hint: "Enter things directly" },
 ];
 
-/**
- * First-run orientation (launch spec Stage C §3). Every path is offered
- * honestly: the two live ones route straight into the guided manual
- * entry that actually exists; the three non-live ones say so plainly
- * before doing the same thing, rather than pretending to extract from
- * notes/statements/CSV — that pipeline isn't built yet.
- */
 export default function OrientationStep({ onSelectPath, onSkip }: { onSelectPath: (path: InputPath) => void; onSkip: () => void }) {
   return (
     <Surface elevated className="flex flex-col gap-5">
@@ -51,16 +52,11 @@ export default function OrientationStep({ onSelectPath, onSkip }: { onSelectPath
               className="flex items-center justify-between rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-left text-[13px] font-semibold text-[var(--text)] transition hover:border-[var(--primary)]"
             >
               {option.label}
-              {!option.live && <span className="text-[11px] font-medium text-[var(--muted)]">Not built yet — we&apos;ll go manual</span>}
+              <span className="text-[11px] font-medium text-[var(--muted)]">{option.hint}</span>
             </button>
           ))}
         </div>
       </div>
-
-      <Alert tone="info">
-        Pasting notes, statements, or a spreadsheet to extract details automatically isn&apos;t built yet. Whichever you
-        choose, Draftpace will guide you through entering it directly instead.
-      </Alert>
 
       <div className="flex justify-end">
         <Button variant="ghost" size="sm" onClick={onSkip}>
