@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ProductDefinition } from "@/product-framework/definition";
@@ -55,6 +55,15 @@ export default function ProductShell({
   const widthClass = CONTENT_WIDTH_CLASS[definition.theme.contentWidth ?? "narrow"];
   const [moreSheetOpen, setMoreSheetOpen] = useState(false);
   const moreTriggerRef = useRef<HTMLButtonElement>(null);
+  const activeTabRef = useRef<HTMLAnchorElement>(null);
+
+  // Primary nav scrolls horizontally on narrow screens (see the
+  // overflow-x-auto container below) — without this, a product with
+  // enough primary destinations to overflow can land on a tab that's
+  // scrolled out of view and looks clipped rather than just off-screen.
+  useEffect(() => {
+    activeTabRef.current?.scrollIntoView({ inline: "nearest", block: "nearest" });
+  }, [pathname]);
 
   const accountLabel = user.user_metadata?.display_name || user.email || "Account";
   const accountItems = appAccountMenuItems(() => signOutAndRedirect("/"));
@@ -122,6 +131,7 @@ export default function ProductShell({
                 <Link
                   key={id}
                   href={href}
+                  ref={active ? activeTabRef : undefined}
                   aria-current={active ? "page" : undefined}
                   className={`whitespace-nowrap border-b-2 px-3 py-3 text-[13px] font-semibold transition ${
                     active
