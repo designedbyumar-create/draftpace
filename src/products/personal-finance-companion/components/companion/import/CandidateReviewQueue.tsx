@@ -75,6 +75,7 @@ export default function CandidateReviewQueue({
   const [editingId, setEditingId] = useState<string | null>(null);
   const [editValues, setEditValues] = useState<{ name: string; amount: string }>({ name: "", amount: "" });
   const [busyId, setBusyId] = useState<string | null>(null);
+  const [bulkConfirming, setBulkConfirming] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const counts = pending.reduce<Record<string, number>>((acc, c) => {
@@ -82,6 +83,27 @@ export default function CandidateReviewQueue({
     acc[c.candidateType] = (acc[c.candidateType] ?? 0) + 1;
     return acc;
   }, {});
+
+  // Exception-first: only a candidate that's unrecognized, ambiguous, low/
+  // medium confidence, missing a field, or a possible duplicate needs a
+  // human decision per item. Everything else is clean enough to confirm in
+  // bulk — reviewing 20 identical high-confidence transactions one at a
+  // time would just teach people to stop reading them.
+  const analyzed = pending.map((candidate) => {
+    const isUnsupported = candidate.candidateType === "unsupported";
+    const name = candidateName(candidate.payload);
+    const amount = candidatePrimaryAmount(candidate.payload);
+    const duplicate = !isUnsupported && name ? detectDuplicate(name, amount, comparableRecordsFor(candidate.candidateType, records)) : null;
+    const needsAttention =
+      isUnsupported ||
+      candidate.confidence !== "high" ||
+      candidate.missingFields.length > 0 ||
+      candidate.ambiguityNotes.length > 0 ||
+      duplicate !== null;
+    return { candidate, isUnsupported, name, amount, duplicate, needsAttention };
+  });
+  const needsAttention = analyzed.filter((a) => a.needsAttention);
+  const looksRight = analyzed.filter((a) => !a.needsAttention);
 
   async function handleConfirm(candidate: ExtractionCandidate, overridePayload?: CandidatePayload) {
     setError(null);
@@ -94,6 +116,21 @@ export default function CandidateReviewQueue({
     }
     setEditingId(null);
     onCandidateResolved(candidate.id, result.data);
+  }
+
+  async function handleConfirmAllLooksRight() {
+    setError(null);
+    setBulkConfirming(true);
+    for (const { candidate } of looksRight) {
+      const result = await confirmCandidate({ instanceId, candidate, source, accountId });
+      if (!result.ok) {
+        setError(`Stopped after a save failed: ${describeResultError(result.error)}`);
+        setBulkConfirming(false);
+        return;
+      }
+      onCandidateResolved(candidate.id, result.data);
+    }
+    setBulkConfirming(false);
   }
 
   async function handleSkip(candidate: ExtractionCandidate) {
@@ -152,13 +189,14 @@ export default function CandidateReviewQueue({
 
       {error && <Alert tone="danger">{error}</Alert>}
 
-      <ul className="flex flex-col gap-3">
-        {pending.map((candidate) => {
+      {needsAttention.length > 0 && (
+        <div>
+          <p className="text-[12px] font-bold uppercase tracking-[0.1em] text-[var(--faint)]">
+            Needs a look ({needsAttention.length})
+          </p>
+          <ul className="mt-2 flex flex-col gap-3">
+        {needsAttention.map(({ candidate, isUnsupported, duplicate }) => {
           const summary = summarizeCandidate(candidate);
-          const isUnsupported = candidate.candidateType === "unsupported";
-          const name = candidateName(candidate.payload);
-          const amount = candidatePrimaryAmount(candidate.payload);
-          const duplicate = !isUnsupported && name ? detectDuplicate(name, amount, comparableRecordsFor(candidate.candidateType, records)) : null;
           const isEditing = editingId === candidate.id;
           const isBusy = busyId === candidate.id;
 
@@ -244,7 +282,81 @@ export default function CandidateReviewQueue({
             </li>
           );
         })}
-      </ul>
+          </ul>
+        </div>
+      )}
+
+      {looksRight.length > 0 && (
+        <div>
+          <div className="flex items-center justify-between">
+            <p className="text-[12px] font-bold uppercase tracking-[0.1em] text-[var(--faint)]">
+              Looks right ({looksRight.length})
+            </p>
+            <Button size="sm" variant="secondary" onClick={handleConfirmAllLooksRight} disabled={bulkConfirming || busyId !== null}>
+              {bulkConfirming ? "Confirming…" : `Confirm all ${looksRight.length}`}
+            </Button>
+          </div>
+          <ul className="mt-2 flex flex-col gap-1.5">
+            {looksRight.map(({ candidate }) => {
+              const summary = summarizeCandidate(candidate);
+              const isEditing = editingId === candidate.id;
+              const isBusy = busyId === candidate.id;
+
+              if (isEditing) {
+                return (
+                  <li key={candidate.id} className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3">
+                    <p className="text-[11px] font-bold uppercase tracking-[0.08em] text-[var(--faint)]">
+                      Possible {CANDIDATE_TYPE_LABEL[candidate.candidateType]}
+                    </p>
+                    <div className="mt-2 flex flex-col gap-2.5">
+                      <Input label="Name" value={editValues.name} onChange={(e) => setEditValues((v) => ({ ...v, name: e.target.value }))} />
+                      <Input
+                        label="Amount"
+                        type="number"
+                        inputMode="decimal"
+                        step="0.01"
+                        value={editValues.amount}
+                        onChange={(e) => setEditValues((v) => ({ ...v, amount: e.target.value }))}
+                      />
+                    </div>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      <Button size="sm" variant="secondary" onClick={() => setEditingId(null)} disabled={isBusy}>
+                        Cancel
+                      </Button>
+                      <Button size="sm" onClick={() => confirmEdit(candidate)} disabled={isBusy}>
+                        {isBusy ? "Saving…" : "Confirm"}
+                      </Button>
+                    </div>
+                  </li>
+                );
+              }
+
+              return (
+                <li
+                  key={candidate.id}
+                  className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3 py-2"
+                >
+                  <div className="min-w-0">
+                    <p className="truncate text-[13px] font-medium text-[var(--text)]">{summary.title}</p>
+                    <p className="truncate text-[12px] text-[var(--muted)]">{summary.lines.join(" · ")}</p>
+                  </div>
+                  <div className="flex shrink-0 gap-1.5">
+                    <Button size="sm" onClick={() => handleConfirm(candidate)} disabled={isBusy || bulkConfirming}>
+                      {isBusy ? "Saving…" : "Confirm"}
+                    </Button>
+                    <Button size="sm" variant="ghost" onClick={() => startEdit(candidate)} disabled={isBusy || bulkConfirming}>
+                      Edit
+                    </Button>
+                    <Button size="sm" variant="ghost" onClick={() => handleSkip(candidate)} disabled={isBusy || bulkConfirming}>
+                      Skip
+                    </Button>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      )}
     </Surface>
   );
 }
