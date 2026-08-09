@@ -10,14 +10,18 @@ export default function Surface({
   className = "",
   padded = true,
   elevated = false,
+  id,
 }: {
   children: React.ReactNode;
   className?: string;
   padded?: boolean;
   elevated?: boolean;
+  /** Optional DOM id — e.g. so a guided tour or "scroll to" action can target this surface. */
+  id?: string;
 }) {
   return (
     <section
+      id={id}
       className={`rounded-[var(--radius)] border border-[var(--border)] bg-[var(--surface)] ${
         elevated ? "shadow-[var(--shadow-soft)]" : "shadow-[var(--shadow-xs)]"
       } ${padded ? "p-5" : ""} ${className}`}

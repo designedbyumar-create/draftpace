@@ -212,6 +212,16 @@ export default function SettingsModule() {
           ))}
         </div>
       </Surface>
+
+      <Surface className="flex items-center justify-between gap-4">
+        <div>
+          <p className="text-[13px] font-semibold text-[var(--text)]">Guided tour</p>
+          <p className="mt-0.5 text-[12px] leading-relaxed text-[var(--muted)]">See the walkthrough of Today again, from the start.</p>
+        </div>
+        <Button variant="secondary" href="/app/products/personal-finance-companion/workspace?tour=1">
+          Replay tour
+        </Button>
+      </Surface>
     </div>
   );
 }

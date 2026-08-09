@@ -2,11 +2,14 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
+import type { ProductDefinition } from "@/product-framework/definition";
 import Badge from "@/design-system/Badge";
 import Button from "@/design-system/Button";
 import Surface from "@/design-system/Surface";
 import EmptyState from "@/design-system/EmptyState";
 import { Compass, Bell, WarningCircle, Clock, ArrowRight, CheckCircle2, Layers3 } from "@/design-system/Icon";
+import GuidedTour, { type TourStep } from "@/products/monthly-money-reset/components/GuidedTour";
 import { formatCurrency } from "@/lib/currency";
 import { describeResultError } from "@/product-framework/result";
 import { findPersonalFinanceCompanionInstanceId } from "../setupStateData";
@@ -46,12 +49,33 @@ const STATUS_TONE: Record<CapabilityRow["status"], "success" | "warning" | "neut
  * owner has snoozed, which lives in localStorage (this device only, never
  * a second source of truth for whether the underlying issue is resolved).
  */
-export default function WorkspaceModule() {
+const TOUR_STEPS: TourStep[] = [
+  {
+    targetId: "pfc-tour-next-action",
+    title: "One thing to do next",
+    body: "Never a to-do list — just the single most useful next step, derived from what's actually missing or overdue in your records.",
+  },
+  {
+    targetId: "pfc-tour-attention",
+    title: "Needs a look",
+    body: "Everything here comes from a real gap in a real record — a missing due date, a stale balance. Fix the record and the item leaves on its own.",
+  },
+  {
+    targetId: "pfc-tour-available-money",
+    title: "Available Money",
+    body: "What's genuinely free to spend, after protected money and upcoming obligations. Tap \"How Draftpace got this\" on any figure to see the exact breakdown.",
+  },
+];
+
+export default function WorkspaceModule({ definition }: { definition?: ProductDefinition }) {
+  const router = useRouter();
+  const searchParams = useSearchParams();
   const [status, setStatus] = useState<LoadStatus>("loading");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [records, setRecords] = useState<FinancialPictureInputs | null>(null);
   const [unreviewedImportCount, setUnreviewedImportCount] = useState(0);
   const [snoozed, setSnoozed] = useState<Record<string, string>>({});
+  const [tourOn, setTourOn] = useState(false);
 
   const load = useCallback(async () => {
     setStatus("loading");
@@ -100,6 +124,32 @@ export default function WorkspaceModule() {
   useEffect(() => {
     load();
   }, [load]);
+
+  const slug = definition?.slug ?? "personal-finance-companion";
+  const replayRequested = searchParams.get("tour") === "1";
+
+  useEffect(() => {
+    if (status !== "ready" || typeof window === "undefined") return;
+
+    // An explicit replay (Settings -> Replay tour) always starts the tour
+    // and is cleared from the URL immediately so a refresh doesn't
+    // re-trigger it — same pattern as Monthly Money Reset's own tour.
+    if (replayRequested) {
+      setTourOn(true);
+      router.replace(`/app/products/${slug}/workspace`);
+      return;
+    }
+
+    const key = `draftpace-tour-${slug}`;
+    if (window.localStorage.getItem(key)) return;
+    const timer = window.setTimeout(() => setTourOn(true), 550);
+    return () => window.clearTimeout(timer);
+  }, [status, replayRequested, router, slug]);
+
+  const finishTour = useCallback(() => {
+    setTourOn(false);
+    if (typeof window !== "undefined") window.localStorage.setItem(`draftpace-tour-${slug}`, "1");
+  }, [slug]);
 
   const now = useMemo(() => new Date(), []);
 
@@ -200,7 +250,7 @@ export default function WorkspaceModule() {
       <div className="flex flex-col gap-6 lg:grid lg:grid-cols-[1.1fr_1fr] lg:items-start lg:gap-6">
         <div className="flex flex-col gap-6">
           {dominantAction ? (
-            <Surface elevated className="flex flex-col gap-3 border-l-4 border-l-[var(--primary)]">
+            <Surface id="pfc-tour-next-action" elevated className="flex flex-col gap-3 border-l-4 border-l-[var(--primary)]">
               <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">What to do next</p>
               <p className="text-[15px] font-semibold leading-snug text-[var(--text)]">{dominantAction.message}</p>
               <Link href={dominantAction.deepLink} className="self-start">
@@ -210,7 +260,7 @@ export default function WorkspaceModule() {
               </Link>
             </Surface>
           ) : (
-            <Surface elevated className="flex items-center gap-3">
+            <Surface id="pfc-tour-next-action" elevated className="flex items-center gap-3">
               <CheckCircle2 className="h-5 w-5 shrink-0 text-[var(--success)]" />
               <div>
                 <p className="text-[15px] font-semibold text-[var(--text)]">You're caught up.</p>
@@ -219,7 +269,7 @@ export default function WorkspaceModule() {
             </Surface>
           )}
 
-          <div>
+          <div id="pfc-tour-attention">
             <div className="flex items-center justify-between">
               <p className="flex items-center gap-1.5 text-[12px] font-bold uppercase tracking-[0.1em] text-[var(--faint)]">
                 <Bell className="h-3.5 w-3.5" /> Needs a look {visibleAttentionItems.length > 0 && `(${visibleAttentionItems.length})`}
@@ -288,7 +338,7 @@ export default function WorkspaceModule() {
 
         <div className="flex flex-col gap-6">
           {availableMoney && (
-            <Surface elevated>
+            <Surface id="pfc-tour-available-money" elevated>
               <div className="flex items-center justify-between">
                 <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[var(--faint)]">{availableMoney.label}</p>
                 <Badge tone={STATUS_TONE[availableMoney.status]}>
@@ -359,6 +409,8 @@ export default function WorkspaceModule() {
           </Link>
         </div>
       </div>
+
+      {tourOn && <GuidedTour steps={TOUR_STEPS} onFinish={finishTour} />}
     </div>
   );
 }
