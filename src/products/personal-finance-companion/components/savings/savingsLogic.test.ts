@@ -20,6 +20,7 @@ function goal(overrides: Partial<SavingsGoal> = {}): SavingsGoal {
     targetDate: "2027-02-08",
     recurring: false,
     currency: "USD",
+    linkedAccountId: null,
     status: "ready",
     needsReviewReason: null,
     source: "manual",

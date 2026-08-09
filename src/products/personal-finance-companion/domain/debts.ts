@@ -15,6 +15,7 @@ interface DebtRow {
   promotional_rate: number | null;
   promotional_expiry: string | null;
   balance_as_of_date: string;
+  linked_account_id: string | null;
   status: string;
   needs_review_reason: string | null;
   source: string;
@@ -36,6 +37,12 @@ function fromRow(row: DebtRow) {
     promotionalRate: row.promotional_rate,
     promotionalExpiry: row.promotional_expiry,
     balanceAsOfDate: row.balance_as_of_date,
+    // ?? null, not a plain pass-through: reads as undefined (not null) if
+    // migration 202608090004 hasn't run yet on this environment, and
+    // debtSchema's linkedAccountId is .nullable() only, not .optional() —
+    // undefined would fail validation and silently drop every existing
+    // debt row (parseRow skips rows that fail the schema). Safe either way.
+    linkedAccountId: row.linked_account_id ?? null,
     status: row.status,
     needsReviewReason: row.needs_review_reason,
     source: row.source,
@@ -57,6 +64,7 @@ function toRow(patch: Record<string, unknown>) {
   if ("promotionalRate" in patch) row.promotional_rate = patch.promotionalRate;
   if ("promotionalExpiry" in patch) row.promotional_expiry = patch.promotionalExpiry;
   if ("balanceAsOfDate" in patch) row.balance_as_of_date = patch.balanceAsOfDate;
+  if ("linkedAccountId" in patch) row.linked_account_id = patch.linkedAccountId;
   if ("status" in patch) row.status = patch.status;
   if ("needsReviewReason" in patch) row.needs_review_reason = patch.needsReviewReason;
   if ("source" in patch) row.source = patch.source;

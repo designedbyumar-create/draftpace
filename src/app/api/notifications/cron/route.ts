@@ -52,7 +52,7 @@ interface SubscriptionRow {
 }
 interface DebtRow {
   id: string; name: string; type: string; balance_minor: number; currency: string; interest_rate: number | null; minimum_payment_minor: number;
-  due_date: string | null; promotional_rate: number | null; promotional_expiry: string | null; balance_as_of_date: string; status: string;
+  due_date: string | null; promotional_rate: number | null; promotional_expiry: string | null; balance_as_of_date: string; linked_account_id: string | null; status: string;
   needs_review_reason: string | null; source: string; import_session_id: string | null; created_at: string; updated_at: string;
 }
 
@@ -93,7 +93,7 @@ function mapDebt(r: DebtRow): Debt {
   return {
     id: r.id, name: r.name, type: r.type as Debt["type"], balanceMinorUnits: r.balance_minor, currency: r.currency, interestRate: r.interest_rate,
     minimumPaymentMinorUnits: r.minimum_payment_minor, dueDate: r.due_date, promotionalRate: r.promotional_rate, promotionalExpiry: r.promotional_expiry,
-    balanceAsOfDate: r.balance_as_of_date, status: r.status as Debt["status"], needsReviewReason: r.needs_review_reason, source: r.source as Debt["source"],
+    balanceAsOfDate: r.balance_as_of_date, linkedAccountId: r.linked_account_id ?? null, status: r.status as Debt["status"], needsReviewReason: r.needs_review_reason, source: r.source as Debt["source"],
     importSessionId: r.import_session_id, createdAt: r.created_at, updatedAt: r.updated_at,
   };
 }

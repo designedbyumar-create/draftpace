@@ -66,3 +66,41 @@ What's not proven, and why:
 
 Do not treat this as a design/UX blocker — it does not block Stage G or
 any other product-experience work. It blocks final launch hardening only.
+
+### Debt / Savings Goal ↔ Account linking migration
+
+**Status as of 2026-08-09: schema and code ready, migration not applied.
+The account-picker UI has been deliberately left unwired until it is.**
+
+Stage G's financial-object-model audit found a real gap: a credit card
+entered as a `Debt` had no way to also be a `Transaction` source (which
+requires an `Account` row), and a `SavingsGoal` had no link to the actual
+`Account` holding its money. The fix is additive — nullable
+`linked_account_id` columns on `pfc_debts` and `pfc_savings_goals`
+(`202608090004_personal_finance_companion_account_links.sql`), reference
+only, no calculation changes.
+
+**Discovered live, before this shipped**: wiring the UI picker and always
+including `linkedAccountId` in the save patch broke every debt/savings
+save outright — Postgres rejected the write with `Could not find the
+'linked_account_id' column of 'pfc_debts' in the schema cache`, because
+the migration (like `202608090002`/`.0003` above) can't be applied while
+the owner is locked out of the Supabase dashboard. The UI/write-path
+changes were reverted before commit specifically to avoid shipping that
+regression; only the schema type, the migration file, and a
+migration-order-safe read path (`row.linked_account_id ?? null`, so
+existing rows keep parsing correctly whether or not the column exists
+yet) are included in this checkpoint.
+
+**Required before the picker can be safely re-added**: owner applies
+`202608090004_personal_finance_companion_account_links.sql` (same SQL
+Editor access this whole section is blocked on). Once confirmed live,
+re-add the `accounts` prop, the "Also an account? / Held in an account?"
+`Select` fields, and the `linkedAccountId` patch line to
+`DebtFormSheet.tsx`/`SavingsFormSheet.tsx`, `DebtModule.tsx`/
+`SavingsModule.tsx`, and `companionAreas.tsx`'s two area forms — all of
+that code was written and confirmed correct in the browser (the picker
+rendered real account options and selection worked; the only failure was
+Postgres rejecting the write for the missing column), it just isn't
+committed, to keep this checkpoint's save path working for the owner
+right now.

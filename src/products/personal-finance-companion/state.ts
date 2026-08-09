@@ -128,6 +128,8 @@ export const debtSchema = z.object({
   promotionalRate: z.number().nullable(),
   promotionalExpiry: isoDate.nullable(),
   balanceAsOfDate: isoDate,
+  /** Optional reference to the Account this debt is also a spending source for, e.g. a credit card entered here for its balance/rate that's also used to log transactions. Never required — most debts (loans, mortgages) have no matching account. Purely a reference; no calculation reads this field yet. */
+  linkedAccountId: z.string().nullable(),
   ...recordLifecycleFields,
   ...recordProvenanceFields,
 });
@@ -142,6 +144,8 @@ export const savingsGoalSchema = z.object({
   targetDate: isoDate.nullable(),
   recurring: z.boolean(),
   currency: z.string().min(1),
+  /** Optional reference to the Account actually holding this goal's money, e.g. an Emergency Fund goal pointing at the savings account it lives in. Never required. Purely a reference; savedAmountMinorUnits stays manually entered, it is not derived from the linked account's balance. */
+  linkedAccountId: z.string().nullable(),
   ...recordLifecycleFields,
   ...recordProvenanceFields,
 });

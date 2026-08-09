@@ -37,6 +37,7 @@ function debt(overrides: Partial<Debt> = {}): Debt {
     promotionalRate: null,
     promotionalExpiry: null,
     balanceAsOfDate: "2026-08-01",
+    linkedAccountId: null,
     status: "ready",
     needsReviewReason: null,
     source: "manual",

@@ -12,6 +12,7 @@ interface SavingsGoalRow {
   target_date: string | null;
   recurring: boolean;
   currency: string;
+  linked_account_id: string | null;
   status: string;
   needs_review_reason: string | null;
   source: string;
@@ -30,6 +31,9 @@ function fromRow(row: SavingsGoalRow) {
     targetDate: row.target_date,
     recurring: row.recurring,
     currency: row.currency,
+    // ?? null: see the identical comment in domain/debts.ts's fromRow —
+    // same migration-ordering hazard applies to pfc_savings_goals.
+    linkedAccountId: row.linked_account_id ?? null,
     status: row.status,
     needsReviewReason: row.needs_review_reason,
     source: row.source,
@@ -48,6 +52,7 @@ function toRow(patch: Record<string, unknown>) {
   if ("targetDate" in patch) row.target_date = patch.targetDate;
   if ("recurring" in patch) row.recurring = patch.recurring;
   if ("currency" in patch) row.currency = patch.currency;
+  if ("linkedAccountId" in patch) row.linked_account_id = patch.linkedAccountId;
   if ("status" in patch) row.status = patch.status;
   if ("needsReviewReason" in patch) row.needs_review_reason = patch.needsReviewReason;
   if ("source" in patch) row.source = patch.source;

@@ -117,6 +117,7 @@ describe("Personal Finance Companion record schemas", () => {
       promotionalRate: null,
       promotionalExpiry: null,
       balanceAsOfDate: "2026-08-08",
+      linkedAccountId: null,
       ...provenance,
       status: "confirmedIncomplete",
       needsReviewReason: null,
@@ -134,6 +135,44 @@ describe("Personal Finance Companion record schemas", () => {
       targetDate: "2026-12-01",
       recurring: false,
       currency: "USD",
+      linkedAccountId: null,
+      ...provenance,
+    });
+    expect(result.success).toBe(true);
+  });
+
+  it("accepts a debt linked to an account (e.g. a credit card also used to log transactions)", () => {
+    const result = debtSchema.safeParse({
+      id: "1",
+      name: "Visa",
+      type: "creditCard",
+      balanceMinorUnits: 210000,
+      currency: "USD",
+      interestRate: 21.99,
+      minimumPaymentMinorUnits: 8500,
+      dueDate: null,
+      promotionalRate: null,
+      promotionalExpiry: null,
+      balanceAsOfDate: "2026-08-08",
+      linkedAccountId: "acc-visa",
+      ...provenance,
+      status: "ready",
+      needsReviewReason: null,
+    });
+    expect(result.success).toBe(true);
+  });
+
+  it("accepts a savings goal linked to the account holding its money", () => {
+    const result = savingsGoalSchema.safeParse({
+      id: "1",
+      name: "Emergency fund",
+      type: "emergencyFund",
+      targetAmountMinorUnits: 1000000,
+      savedAmountMinorUnits: 250000,
+      targetDate: "2027-01-01",
+      recurring: false,
+      currency: "USD",
+      linkedAccountId: "acc-savings",
       ...provenance,
     });
     expect(result.success).toBe(true);
