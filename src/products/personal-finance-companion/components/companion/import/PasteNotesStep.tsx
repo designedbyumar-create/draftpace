@@ -64,7 +64,7 @@ export default function PasteNotesStep({
         <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Notes or messages</p>
         <h2 className="mt-1 text-[17px] font-semibold text-[var(--text)]">Paste what you already know.</h2>
         <p className="mt-1.5 text-[13px] leading-relaxed text-[var(--muted)]">
-          Draftpace looks for patterns like amounts, due dates, and balances — one line at a time. Nothing becomes a real record
+          Draftpace looks for patterns like amounts, due dates, and balances, one line at a time. Nothing becomes a real record
           until you confirm it.
         </p>
       </div>

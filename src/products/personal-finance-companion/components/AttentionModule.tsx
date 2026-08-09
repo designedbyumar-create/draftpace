@@ -142,7 +142,7 @@ export default function AttentionModule() {
   }
 
   if (status === "no-instance" || !records) {
-    return <EmptyState icon={Bell} title="No product instance found" description="This shouldn't happen for an owner — contact support." />;
+    return <EmptyState icon={Bell} title="No product instance found" description="This shouldn't happen for an owner. Contact support." />;
   }
 
   const needsResolution = visible.filter((item) => item.urgency === "needsResolution");

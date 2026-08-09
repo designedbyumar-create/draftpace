@@ -106,7 +106,7 @@ export default function SubscriptionsModule() {
   }
 
   if (status === "no-instance") {
-    return <EmptyState icon={RotateCcw} title="No product instance found" description="This shouldn't happen for an owner — contact support." />;
+    return <EmptyState icon={RotateCcw} title="No product instance found" description="This shouldn't happen for an owner. Contact support." />;
   }
 
   const active = subscriptions.filter((s) => s.status !== "archived");
@@ -118,7 +118,7 @@ export default function SubscriptionsModule() {
     <SectionShell
       icon={RotateCcw}
       title="Subscriptions"
-      purpose="Optional recurring charges that renew on their own — kept visibly distinct from bills."
+      purpose="Optional recurring charges that renew on their own, kept visibly distinct from bills."
       onAdd={() => {
         setEditingSubscription(null);
         setFormOpen(true);

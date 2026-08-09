@@ -107,7 +107,7 @@ export default function TransactionsModule() {
   }
 
   if (status === "no-instance") {
-    return <EmptyState icon={Clock} title="No product instance found" description="This shouldn't happen for an owner — contact support." />;
+    return <EmptyState icon={Clock} title="No product instance found" description="This shouldn't happen for an owner. Contact support." />;
   }
 
   const active = [...transactions.filter((t) => t.status !== "archived")].sort((a, b) => (a.occurredOn < b.occurredOn ? 1 : -1));
@@ -120,7 +120,7 @@ export default function TransactionsModule() {
     <SectionShell
       icon={Clock}
       title="Transactions"
-      purpose="What actually happened — the basis for spending awareness."
+      purpose="What actually happened: the basis for spending awareness."
       onAdd={() => {
         setEditingTransaction(null);
         setFormOpen(true);
@@ -137,7 +137,7 @@ export default function TransactionsModule() {
       dominantAction={
         dominantAction?.kind === "add-first" ? (
           <p className="text-[13px] leading-relaxed text-[var(--text)]">
-            No transactions recorded yet. Add one to start building your spending picture — this isn&apos;t the same as having spent nothing.
+            No transactions recorded yet. Add one to start building your spending picture. This isn&apos;t the same as having spent nothing.
           </p>
         ) : null
       }
@@ -146,7 +146,7 @@ export default function TransactionsModule() {
         <EmptyState
           icon={Clock}
           title="No transactions yet"
-          description="Add what actually happened — money in or out of one of your accounts."
+          description="Add what actually happened: money in or out of one of your accounts."
           action={
             <div ref={addButtonRef} className="inline-block">
               <Button size="sm" iconLeft={<Plus size={14} aria-hidden />} onClick={() => setFormOpen(true)} disabled={accounts.length === 0}>

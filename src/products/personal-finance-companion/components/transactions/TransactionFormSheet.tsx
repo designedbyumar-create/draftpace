@@ -133,7 +133,7 @@ export default function TransactionFormSheet({
       onClose={onClose}
       triggerRef={triggerRef}
       title={isEdit ? "Edit transaction" : "Add a transaction"}
-      description={isEdit ? undefined : "Something that actually happened — money in or out of one of your accounts."}
+      description={isEdit ? undefined : "Something that actually happened: money in or out of one of your accounts."}
       footer={
         <>
           <Button variant="secondary" size="md" onClick={onClose} disabled={saving}>
@@ -146,7 +146,7 @@ export default function TransactionFormSheet({
       }
     >
       {error && <Alert tone="danger">{error}</Alert>}
-      {noAccounts && <Alert tone="warning">Add an account first — a transaction has to belong to one.</Alert>}
+      {noAccounts && <Alert tone="warning">Add an account first. A transaction has to belong to one.</Alert>}
       <Select label="Account" value={values.accountId} onChange={(e) => setValues((v) => ({ ...v, accountId: e.target.value }))}>
         {accounts.map((account) => (
           <option key={account.id} value={account.id}>
@@ -192,7 +192,7 @@ export default function TransactionFormSheet({
       <div className="flex items-center justify-between rounded-lg border border-[var(--border)] p-3">
         <div>
           <p className="text-[13px] font-semibold text-[var(--text)]">Exclude from spending</p>
-          <p className="mt-0.5 text-[12px] text-[var(--muted)]">On for a transfer between your own accounts — stays visible, doesn&apos;t count as spending or income.</p>
+          <p className="mt-0.5 text-[12px] text-[var(--muted)]">On for a transfer between your own accounts, stays visible, doesn&apos;t count as spending or income.</p>
         </div>
         <Toggle
           checked={values.excludedFromSpending}

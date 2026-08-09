@@ -99,7 +99,7 @@ export default function IncomeModule() {
   }
 
   if (status === "no-instance") {
-    return <EmptyState icon={Wallet} title="No product instance found" description="This shouldn't happen for an owner — contact support." />;
+    return <EmptyState icon={Wallet} title="No product instance found" description="This shouldn't happen for an owner. Contact support." />;
   }
 
   const active = sources.filter((s) => s.status !== "archived");

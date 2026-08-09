@@ -106,7 +106,7 @@ export default function AccountsModule() {
   }
 
   if (status === "no-instance") {
-    return <EmptyState icon={Bank} title="No product instance found" description="This shouldn't happen for an owner — contact support." />;
+    return <EmptyState icon={Bank} title="No product instance found" description="This shouldn't happen for an owner. Contact support." />;
   }
 
   const active = accounts.filter((a) => a.status !== "archived");
@@ -118,7 +118,7 @@ export default function AccountsModule() {
     <SectionShell
       icon={Bank}
       title="Accounts"
-      purpose="Where money currently sits — the foundation for available cash."
+      purpose="Where money currently sits: the foundation for available cash."
       onAdd={() => {
         setEditingAccount(null);
         setFormOpen(true);

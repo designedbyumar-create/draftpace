@@ -114,7 +114,7 @@ export default function AccountFormSheet({
       onClose={onClose}
       triggerRef={triggerRef}
       title={isEdit ? `Edit ${account.name}` : "Add an account"}
-      description={isEdit ? undefined : "Where this money currently sits — a checking account, savings, cash, or a digital wallet."}
+      description={isEdit ? undefined : "Where this money currently sits: a checking account, savings, cash, or a digital wallet."}
       footer={
         <>
           <Button variant="secondary" size="md" onClick={onClose} disabled={saving}>

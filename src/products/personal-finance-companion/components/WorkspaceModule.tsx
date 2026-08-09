@@ -53,12 +53,12 @@ const TOUR_STEPS: TourStep[] = [
   {
     targetId: "pfc-tour-next-action",
     title: "One thing to do next",
-    body: "Never a to-do list — just the single most useful next step, derived from what's actually missing or overdue in your records.",
+    body: "Never a to-do list. Just the single most useful next step, derived from what's actually missing or overdue in your records.",
   },
   {
     targetId: "pfc-tour-attention",
     title: "Needs a look",
-    body: "Everything here comes from a real gap in a real record — a missing due date, a stale balance. Fix the record and the item leaves on its own.",
+    body: "Everything here comes from a real gap in a real record: a missing due date, a stale balance. Fix the record and the item leaves on its own.",
   },
   {
     targetId: "pfc-tour-available-money",
@@ -210,7 +210,7 @@ export default function WorkspaceModule({ definition }: { definition?: ProductDe
   }
 
   if (status === "no-instance" || !records) {
-    return <EmptyState icon={Compass} title="No product instance found" description="This shouldn't happen for an owner — contact support." />;
+    return <EmptyState icon={Compass} title="No product instance found" description="This shouldn't happen for an owner. Contact support." />;
   }
 
   const anyData = Object.values(records).some((list) => list.length > 0);
@@ -244,7 +244,7 @@ export default function WorkspaceModule({ definition }: { definition?: ProductDe
     <div className="flex flex-col gap-6">
       <div>
         <h1 className="text-xl font-semibold text-[var(--text)]">Your financial picture</h1>
-        <p className="mt-1 text-[13px] text-[var(--muted)]">Deterministic, built only from what you've recorded — never a guess.</p>
+        <p className="mt-1 text-[13px] text-[var(--muted)]">Deterministic, built only from what you've recorded, never a guess.</p>
       </div>
 
       <div className="flex flex-col gap-6 lg:grid lg:grid-cols-[1.1fr_1fr] lg:items-start lg:gap-6">
@@ -280,7 +280,7 @@ export default function WorkspaceModule({ definition }: { definition?: ProductDe
                   onClick={clearSnoozed}
                   className="rounded-md px-2 py-1 text-[11px] font-medium text-[var(--muted)] hover:text-[var(--primary)]"
                 >
-                  {snoozedCount} snoozed — show all
+                  {snoozedCount} snoozed, show all
                 </button>
               )}
             </div>

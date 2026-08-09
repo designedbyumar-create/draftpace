@@ -34,7 +34,7 @@ export default function InfrastructurePlaceholder({
       {children}
       <div className="mt-6">
         <Alert tone="info">
-          {definition.title} is an internal, unreleased product (foundation stage) — this destination is a route and
+          {definition.title} is an internal, unreleased product (foundation stage). This destination is a route and
           data-access shell, not finished feature UI. Not reachable by any real customer: there is no Shop listing
           and no self-serve purchase path.
         </Alert>

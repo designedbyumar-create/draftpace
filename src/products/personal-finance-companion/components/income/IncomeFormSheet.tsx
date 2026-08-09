@@ -168,8 +168,8 @@ export default function IncomeFormSheet({
         value={values.confidence}
         onChange={(e) => setValues((v) => ({ ...v, confidence: e.target.value as IncomeSource["confidence"] }))}
       >
-        <option value="confirmed">Confirmed — this is exact</option>
-        <option value="estimated">Estimated — give a range</option>
+        <option value="confirmed">Confirmed: this is exact</option>
+        <option value="estimated">Estimated: give a range</option>
       </Select>
       {isEstimated ? (
         <div className="grid grid-cols-[1fr_1fr_auto] gap-3">
@@ -240,8 +240,8 @@ export default function IncomeFormSheet({
         value={values.grossOrNet}
         onChange={(e) => setValues((v) => ({ ...v, grossOrNet: e.target.value as IncomeSource["grossOrNet"] }))}
       >
-        <option value="net">Net — after taxes and deductions</option>
-        <option value="gross">Gross — before taxes and deductions</option>
+        <option value="net">Net: after taxes and deductions</option>
+        <option value="gross">Gross: before taxes and deductions</option>
         <option value="unknown">Not sure</option>
       </Select>
     </RecordFormSheet>

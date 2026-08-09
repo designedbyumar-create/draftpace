@@ -115,7 +115,7 @@ export default function SettingsModule() {
   }
 
   if (status === "no-instance" || !preferences) {
-    return <EmptyState icon={Settings} title="No product instance found" description="This shouldn't happen for an owner — contact support." />;
+    return <EmptyState icon={Settings} title="No product instance found" description="This shouldn't happen for an owner. Contact support." />;
   }
 
   return (
@@ -147,7 +147,7 @@ export default function SettingsModule() {
 
       <Surface>
         <p className="text-[13px] font-semibold text-[var(--text)]">Time zone</p>
-        <p className="mt-0.5 text-[12px] text-[var(--muted)]">Used to keep reminders inside a reasonable local time — never sent late at night or before your day starts.</p>
+        <p className="mt-0.5 text-[12px] text-[var(--muted)]">Used to keep reminders inside a reasonable local time, never sent late at night or before your day starts.</p>
         <div className="mt-3 flex flex-wrap items-center gap-2">
           <div className="max-w-xs flex-1">
             {supportedTimeZones.length > 0 ? (

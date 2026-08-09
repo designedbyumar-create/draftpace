@@ -170,7 +170,7 @@ export default function SavingsFormSheet({
         type="date"
         value={values.targetDate}
         onChange={(e) => setValues((v) => ({ ...v, targetDate: e.target.value }))}
-        hint="Optional — needed for a monthly contribution figure"
+        hint="Optional, needed for a monthly contribution figure"
       />
       <div className="flex items-center justify-between rounded-lg border border-[var(--border)] p-3">
         <div>

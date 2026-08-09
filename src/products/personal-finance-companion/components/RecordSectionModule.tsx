@@ -76,7 +76,7 @@ export default function RecordSectionModule<T>({
         {status === "loading" && <Badge tone="neutral">Checking live data access…</Badge>}
         {status === "ready" && (
           <Badge tone="success">
-            Live query OK — {count} {count === 1 ? "record" : "records"} in {entityLabel.toLowerCase()}
+            Live query OK: {count} {count === 1 ? "record" : "records"} in {entityLabel.toLowerCase()}
           </Badge>
         )}
         {status === "no-instance" && <Badge tone="warning">No product instance found for this user yet</Badge>}

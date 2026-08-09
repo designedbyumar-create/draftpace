@@ -99,7 +99,7 @@ export default function BillsModule() {
   }
 
   if (status === "no-instance") {
-    return <EmptyState icon={CalendarCheck} title="No product instance found" description="This shouldn't happen for an owner — contact support." />;
+    return <EmptyState icon={CalendarCheck} title="No product instance found" description="This shouldn't happen for an owner. Contact support." />;
   }
 
   const active = bills.filter((b) => b.status !== "archived");
@@ -111,7 +111,7 @@ export default function BillsModule() {
     <SectionShell
       icon={CalendarCheck}
       title="Bills"
-      purpose="What's owed on a schedule — separate from subscriptions, which renew on their own."
+      purpose="What's owed on a schedule, separate from subscriptions, which renew on their own."
       onAdd={() => {
         setEditingBill(null);
         setFormOpen(true);

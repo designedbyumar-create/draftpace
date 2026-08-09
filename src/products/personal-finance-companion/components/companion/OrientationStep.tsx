@@ -24,7 +24,7 @@ const PATH_OPTIONS: PathOption[] = [
   { path: "notes", label: "Notes or messages", hint: "Paste what you've written down" },
   { path: "textFile", label: "A text file", hint: "Upload a .txt file" },
   { path: "csv", label: "A spreadsheet or CSV", hint: "Import transactions" },
-  { path: "manual", label: "I already know most of it — let's go", hint: "Enter things directly" },
+  { path: "manual", label: "I already know most of it, let's go", hint: "Enter things directly" },
 ];
 
 export default function OrientationStep({ onSelectPath, onSkip }: { onSelectPath: (path: InputPath) => void; onSkip: () => void }) {

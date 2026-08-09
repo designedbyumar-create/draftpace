@@ -40,7 +40,7 @@ export default function SetupModule({ definition }: { definition: ProductDefinit
         {status === "ready" && state && (
           <>
             <Badge tone="success">
-              Setup state loaded — screen {state.currentScreen}, orientation {state.orientation.seenAt ? "seen" : "not seen"}
+              Setup state loaded: screen {state.currentScreen}, orientation {state.orientation.seenAt ? "seen" : "not seen"}
             </Badge>
             <Badge tone={saveStatus === "saved" ? "success" : saveStatus === "error" ? "danger" : "neutral"}>
               Autosave: {saveStatus}

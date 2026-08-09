@@ -162,7 +162,7 @@ export default function CsvImportFlow({
         missingFields,
         ambiguityNotes: [
           ...(duplicate ? ["A transaction with this exact date, amount, and description already exists."] : []),
-          ...(formulaRisk ? ["This description starts with a character spreadsheets treat as a formula — shown as plain text here."] : []),
+          ...(formulaRisk ? ["This description starts with a character spreadsheets treat as a formula. Shown as plain text here."] : []),
         ],
         sourceReference: row.join(", "),
       };
@@ -223,7 +223,7 @@ export default function CsvImportFlow({
           <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">CSV import</p>
           <h2 className="mt-1 text-[17px] font-semibold text-[var(--text)]">Upload a transaction export.</h2>
           <p className="mt-1.5 text-[13px] leading-relaxed text-[var(--muted)]">
-            Works with most bank/card CSV exports — you&apos;ll map the columns yourself on the next screen, since formats vary.
+            Works with most bank/card CSV exports. You&apos;ll map the columns yourself on the next screen, since formats vary.
           </p>
         </div>
         {error && <Alert tone="danger">{error}</Alert>}

@@ -105,7 +105,7 @@ export default function SavingsModule() {
   }
 
   if (status === "no-instance") {
-    return <EmptyState icon={Target} title="No product instance found" description="This shouldn't happen for an owner — contact support." />;
+    return <EmptyState icon={Target} title="No product instance found" description="This shouldn't happen for an owner. Contact support." />;
   }
 
   const active = goals.filter((g) => g.status !== "archived");
@@ -117,7 +117,7 @@ export default function SavingsModule() {
     <SectionShell
       icon={Target}
       title="Savings"
-      purpose="Money set aside on purpose — emergencies, goals, or costs seen coming."
+      purpose="Money set aside on purpose: emergencies, goals, or costs seen coming."
       onAdd={() => {
         setEditingGoal(null);
         setFormOpen(true);
@@ -134,7 +134,7 @@ export default function SavingsModule() {
       dominantAction={
         dominantAction?.kind === "add-first" ? (
           <p className="text-[13px] leading-relaxed text-[var(--text)]">
-            No savings goals yet. Add one directly — an emergency fund is a good place to start.
+            No savings goals yet. Add one directly. An emergency fund is a good place to start.
           </p>
         ) : dominantAction?.kind === "add-target-date" ? (
           <div className="flex flex-wrap items-center justify-between gap-3">

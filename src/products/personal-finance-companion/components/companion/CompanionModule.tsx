@@ -160,7 +160,7 @@ export default function CompanionModule() {
   }
 
   if (setupStatus === "no-instance") {
-    return <EmptyState icon={Compass} title="No product instance found" description="This shouldn't happen for an owner — contact support." />;
+    return <EmptyState icon={Compass} title="No product instance found" description="This shouldn't happen for an owner. Contact support." />;
   }
 
   if (recordsStatus === "error") {

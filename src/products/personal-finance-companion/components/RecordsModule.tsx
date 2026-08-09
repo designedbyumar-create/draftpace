@@ -125,7 +125,7 @@ export default function RecordsModule() {
   }
 
   if (status === "no-instance" || !records) {
-    return <EmptyState icon={Layers3} title="No product instance found" description="This shouldn't happen for an owner — contact support." />;
+    return <EmptyState icon={Layers3} title="No product instance found" description="This shouldn't happen for an owner. Contact support." />;
   }
 
   const accountsSummary = summarizeAccounts(records.accounts);

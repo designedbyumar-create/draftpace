@@ -117,7 +117,7 @@ export default function DebtModule() {
   }
 
   if (status === "no-instance") {
-    return <EmptyState icon={CreditCard} title="No product instance found" description="This shouldn't happen for an owner — contact support." />;
+    return <EmptyState icon={CreditCard} title="No product instance found" description="This shouldn't happen for an owner. Contact support." />;
   }
 
   const active = debts.filter((d) => d.status !== "archived");
@@ -129,7 +129,7 @@ export default function DebtModule() {
     <SectionShell
       icon={CreditCard}
       title="Debt"
-      purpose="What's owed. No payoff calculator here — just an accurate, current picture."
+      purpose="What's owed. No payoff calculator here, just an accurate, current picture."
       onAdd={() => {
         setEditingDebt(null);
         setFormOpen(true);
