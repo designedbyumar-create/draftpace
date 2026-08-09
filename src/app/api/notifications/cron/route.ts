@@ -4,6 +4,7 @@ import { isWebPushConfigured, sendWebPush } from "@/lib/notifications/webPush";
 import { formatCurrency } from "@/lib/currency";
 import { deriveReminderCandidates, nextReviewDue, type ReminderCandidate } from "@/products/personal-finance-companion/reminders/deriveReminders";
 import { diffReminders, type ExistingReminderSummary } from "@/products/personal-finance-companion/reminders/diffReminders";
+import { partitionByEntitlement } from "@/products/personal-finance-companion/reminders/entitlementFilter";
 import { resolveEligibility } from "@/products/personal-finance-companion/reminders/eligibility";
 import { buildPushPayloads, type EnrichedReminder } from "@/products/personal-finance-companion/reminders/aggregate";
 import { reminderDeepLink } from "@/products/personal-finance-companion/reminders/copy";
@@ -173,17 +174,45 @@ export async function GET(request: Request) {
   }
 
   const now = new Date();
-  const summary = { instancesEvaluated: 0, remindersInserted: 0, remindersCancelled: 0, deliveriesSent: 0, deliveriesSkipped: 0, deliveriesFailed: 0 };
+  const summary = {
+    instancesEvaluated: 0,
+    instancesSkippedNotEntitled: 0,
+    remindersInserted: 0,
+    remindersCancelled: 0,
+    deliveriesSent: 0,
+    deliveriesSkipped: 0,
+    deliveriesFailed: 0,
+  };
 
   const { data: prefRows, error: prefError } = await supabase
     .from("pfc_notification_preferences")
     .select("product_instance_id, user_id, categories, privacy_level, review_rhythm, timezone");
   if (prefError) return NextResponse.json({ ok: false, error: prefError.message }, { status: 500 });
 
-  for (const prefRow of prefRows ?? []) {
-    summary.instancesEvaluated += 1;
+  // Entitlement must be checked explicitly here — this client uses the
+  // service-role key, which bypasses RLS entirely, so nothing else in this
+  // route naturally stops evaluating (and sending to) a user whose PFC
+  // entitlement has since been revoked. A preference row and a product
+  // instance can both still exist after revocation (neither is deleted by
+  // revoke_entitlement); only this check keeps delivery honest.
+  const { data: entitlementRows, error: entitlementError } = await supabase
+    .from("entitlements")
+    .select("user_id")
+    .eq("product_slug", "personal-finance-companion")
+    .eq("is_active", true)
+    .is("revoked_at", null);
+  if (entitlementError) return NextResponse.json({ ok: false, error: entitlementError.message }, { status: 500 });
+  const entitledUserIds = new Set((entitlementRows ?? []).map((r) => r.user_id as string));
+  const { entitled: entitledPrefRows, skippedCount } = partitionByEntitlement(
+    (prefRows ?? []).map((row) => ({ ...row, userId: row.user_id as string })),
+    entitledUserIds
+  );
+  summary.instancesSkippedNotEntitled = skippedCount;
+
+  for (const prefRow of entitledPrefRows) {
     const instanceId = prefRow.product_instance_id as string;
     const userId = prefRow.user_id as string;
+    summary.instancesEvaluated += 1;
     const preferences = validateNotificationPreferences({
       categories: prefRow.categories,
       privacyLevel: prefRow.privacy_level,

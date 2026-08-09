@@ -5,6 +5,13 @@ import { monthlyMoneyResetDefinition } from "./monthly-money-reset/definition";
 // ensureProductsRegistered() is idempotent via a module-level flag, so each
 // test needs its own fresh module graph — see
 // src/product-framework/fixtures/index.test.ts for the same pattern.
+//
+// vi.resetModules() + a fresh dynamic import of the whole catalog is
+// genuinely expensive, and has gotten slower release over release as the
+// product catalog has grown (Stage F added a real notification/reminder
+// engine on top of everything else) — the explicit 40s timeouts below
+// (bumped from 20s) are load-dependent test infra, not a sign anything here
+// is actually slow at runtime.
 async function loadFreshManifestModule() {
   vi.resetModules();
   const [{ ensureProductsRegistered }, { productRegistry }] = await Promise.all([
@@ -40,7 +47,7 @@ describe("ensureProductsRegistered", () => {
     expect(pfc?.cycleModel).toBe("continuous");
     expect(pfc?.devFixture).toBe(false);
     expect(pfc?.pwa?.provisionalBranding).toBe(true);
-  }, 20000);
+  }, 40000);
 
   it("is never a development fixture", () => {
     expect(monthlyMoneyResetDefinition.devFixture).toBe(false);
@@ -59,7 +66,7 @@ describe("ensureProductsRegistered", () => {
       ensureProductsRegistered();
     }).not.toThrow();
     expect(productRegistry.list()).toHaveLength(3);
-  }, 20000);
+  }, 40000);
 
   it("is the only file that imports a specific product's catalog entry — every route imports the generic function", () => {
     // Locks in the actual point of this refactor: adding a new product

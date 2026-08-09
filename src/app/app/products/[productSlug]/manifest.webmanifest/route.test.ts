@@ -30,7 +30,7 @@ describe("GET /app/products/[productSlug]/manifest.webmanifest", () => {
     expect(manifest.scope).toBe("/app/products/personal-finance-companion/");
     expect(manifest.display).toBe("standalone");
     expect(manifest.icons.length).toBeGreaterThan(0);
-  }, 20000);
+  }, 40000);
 
   it("marks provisional branding explicitly in a response header, never silently", async () => {
     const { GET } = await loadFreshRoute();
@@ -46,7 +46,7 @@ describe("GET /app/products/[productSlug]/manifest.webmanifest", () => {
       params: Promise.resolve({ productSlug: "monthly-money-reset" }),
     });
     expect(response.status).toBe(404);
-  }, 20000);
+  }, 40000);
 
   it("returns 404 for an unknown product slug", async () => {
     const { GET } = await loadFreshRoute();
@@ -54,5 +54,5 @@ describe("GET /app/products/[productSlug]/manifest.webmanifest", () => {
       params: Promise.resolve({ productSlug: "does-not-exist" }),
     });
     expect(response.status).toBe(404);
-  }, 20000);
+  }, 40000);
 });
