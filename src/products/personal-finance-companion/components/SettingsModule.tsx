@@ -222,6 +222,18 @@ export default function SettingsModule() {
           Replay tour
         </Button>
       </Surface>
+
+      <Surface className="flex items-center justify-between gap-4">
+        <div>
+          <p className="text-[13px] font-semibold text-[var(--text)]">Printable Finance Companion</p>
+          <p className="mt-0.5 text-[12px] leading-relaxed text-[var(--muted)]">
+            Included with this product: a paper version for gathering and thinking away from the app.
+          </p>
+        </div>
+        <Button variant="secondary" href="/app/products/personal-finance-companion/printables">
+          Open
+        </Button>
+      </Surface>
     </div>
   );
 }

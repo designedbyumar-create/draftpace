@@ -14,9 +14,26 @@ import SavingsModule from "./components/SavingsModule";
 import SetupCentreModule from "./components/SetupCentreModule";
 import AttentionModule from "./components/AttentionModule";
 import RecordsModule from "./components/RecordsModule";
+import PrintablesModule from "./components/PrintablesModule";
 
 export const personalFinanceCompanionCatalogEntry: ProductCatalogEntry = {
   definition: personalFinanceCompanionDefinition,
+  // Metadata only — id/title/filename. The actual PDF bytes live in
+  // printables/assetBytes.ts, imported only by the download API route, never
+  // from here (this file is reachable from client components via
+  // manifest.ts, e.g. Library/Home).
+  printableAssets: [
+    {
+      id: "letter",
+      title: "Printable Finance Companion (US Letter)",
+      filename: "draftpace-printable-finance-companion-letter.pdf",
+    },
+    {
+      id: "a4",
+      title: "Printable Finance Companion (A4)",
+      filename: "draftpace-printable-finance-companion-a4.pdf",
+    },
+  ],
   moduleComponents: {
     "personal-finance-companion.companion": CompanionModule,
     "personal-finance-companion.workspace": WorkspaceModule,
@@ -32,5 +49,6 @@ export const personalFinanceCompanionCatalogEntry: ProductCatalogEntry = {
     "personal-finance-companion.setup-centre": SetupCentreModule,
     "personal-finance-companion.attention": AttentionModule,
     "personal-finance-companion.records": RecordsModule,
+    "personal-finance-companion.printables": PrintablesModule,
   },
 };

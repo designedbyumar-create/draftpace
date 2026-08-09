@@ -1,5 +1,6 @@
 import { productRegistry } from "@/product-framework/registry";
 import { moduleRegistry } from "@/product-framework/moduleRegistry";
+import { printableAssetRegistry } from "@/product-framework/printableAssets";
 import type { ProductCatalogEntry } from "@/product-framework/catalog";
 import { monthlyMoneyResetCatalogEntry } from "./monthly-money-reset/catalog";
 import { hiddenAccessTestCatalogEntry } from "./hidden-access-test/catalog";
@@ -48,6 +49,9 @@ export function ensureProductsRegistered(): void {
       if (!moduleRegistry.has(moduleId)) {
         moduleRegistry.register(moduleId, component);
       }
+    }
+    for (const asset of entry.printableAssets ?? []) {
+      printableAssetRegistry.register(slug, asset);
     }
   }
 }
