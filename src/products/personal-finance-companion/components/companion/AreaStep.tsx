@@ -2,10 +2,12 @@
 
 import { useRef, useState } from "react";
 import Link from "next/link";
+import { AnimatePresence, motion } from "framer-motion";
 import Surface from "@/design-system/Surface";
 import Badge from "@/design-system/Badge";
 import Button from "@/design-system/Button";
 import Alert from "@/design-system/Alert";
+import { EASE_OUT, useCombinedReducedMotion } from "@/components/onboarding/motion";
 import { STATUS_LABEL, STATUS_TONE } from "../shared/lifecycle";
 import { computeCapabilities, type FinancialPictureInputs } from "../../companion/capability";
 import type { FinancialArea } from "../../state";
@@ -41,6 +43,7 @@ export default function AreaStep({
   isFirst: boolean;
   isLast: boolean;
 }) {
+  const reduceMotion = useCombinedReducedMotion();
   const config = AREA_CONFIGS[area];
   const areaRecords = (records[areaRecordsKey(area)] as AreaRecord[]) ?? [];
   const active = areaRecords.filter((r) => r.status !== "archived");
@@ -99,6 +102,14 @@ export default function AreaStep({
         </div>
       </div>
 
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.div
+          key={mode}
+          initial={reduceMotion ? false : { opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={reduceMotion ? undefined : { opacity: 0 }}
+          transition={{ duration: 0.2, ease: EASE_OUT }}
+        >
       {mode === "reflecting" && lastSaved ? (
         <div className="flex flex-col gap-4">
           <Alert tone="success">{config.summarize(lastSaved).title} saved.</Alert>
@@ -208,6 +219,8 @@ export default function AreaStep({
           </div>
         </div>
       )}
+        </motion.div>
+      </AnimatePresence>
 
       <div className="flex items-center justify-between border-t border-[var(--border)] pt-3.5">
         <Button size="sm" variant="ghost" onClick={onBack} disabled={isFirst}>

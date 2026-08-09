@@ -1,10 +1,12 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import Badge from "@/design-system/Badge";
 import Button from "@/design-system/Button";
 import EmptyState from "@/design-system/EmptyState";
 import { Compass } from "@/design-system/Icon";
+import { EASE_OUT, useCombinedReducedMotion } from "@/components/onboarding/motion";
 import { useSetupState } from "../useSetupState";
 import { deriveAttentionItems } from "../../attention";
 import { computeCapabilities, type FinancialPictureInputs } from "../../companion/capability";
@@ -62,6 +64,7 @@ function initialSessionChanges(): Record<FinancialArea, SessionChange> {
  * log — never a second copy of financial state.
  */
 export default function CompanionModule() {
+  const reduceMotion = useCombinedReducedMotion();
   const { status: setupStatus, errorMessage: setupError, instanceId, state, saveStatus, setState, retry } = useSetupState();
   const [recordsStatus, setRecordsStatus] = useState<LoadStatus>("loading");
   const [recordsError, setRecordsError] = useState<string | null>(null);
@@ -402,19 +405,30 @@ export default function CompanionModule() {
           capability waiting before" snapshot at whatever it was on the very
           first area visited and letting the previous area's reflect card
           leak into the next area's landing render. Found live: unlock
-          moments silently never fired after the first area. */}
-      <AreaStep
-        key={area}
-        area={area}
-        instanceId={instanceId}
-        records={records}
-        onRecordSaved={handleRecordSaved}
-        onAreaStatusChange={handleAreaStatusChange}
-        onAdvance={() => handleAdvance(area)}
-        onBack={() => handleBack(area)}
-        isFirst={false}
-        isLast={areaIndex === COMPANION_AREA_ORDER.length - 1}
-      />
+          moments silently never fired after the first area. The same key
+          drives AnimatePresence's crossfade below — one area settling in as
+          the last one settles out, not an abrupt swap. */}
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.div
+          key={area}
+          initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={reduceMotion ? undefined : { opacity: 0, y: -8 }}
+          transition={{ duration: 0.3, ease: EASE_OUT }}
+        >
+          <AreaStep
+            area={area}
+            instanceId={instanceId}
+            records={records}
+            onRecordSaved={handleRecordSaved}
+            onAreaStatusChange={handleAreaStatusChange}
+            onAdvance={() => handleAdvance(area)}
+            onBack={() => handleBack(area)}
+            isFirst={areaIndex === 0}
+            isLast={areaIndex === COMPANION_AREA_ORDER.length - 1}
+          />
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 }
