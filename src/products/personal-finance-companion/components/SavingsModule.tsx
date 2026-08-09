@@ -191,7 +191,7 @@ export default function SavingsModule() {
             onClick={() => setShowArchived((v) => !v)}
             className="text-[12px] font-semibold text-[var(--muted)] hover:text-[var(--text)]"
           >
-            {showArchived ? "Hide" : "Show"} {archived.length} closed {archived.length === 1 ? "goal" : "goals"}
+            {showArchived ? "Hide" : "Show"}{" "}{archived.length} closed{" "}{archived.length === 1 ? "goal" : "goals"}
           </button>
           {showArchived && (
             <ul className="mt-2.5 flex flex-col gap-2.5 opacity-70">
@@ -228,8 +228,8 @@ function SavingsCard({
     <li className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4">
       <div className="flex items-start justify-between gap-3">
         <button type="button" onClick={onEdit} disabled={readOnly} className="flex-1 text-left disabled:cursor-default">
-          <div className="flex items-center gap-2">
-            <p className="text-[14px] font-semibold text-[var(--text)]">{goal.name}</p>
+          <div className="flex flex-wrap items-start gap-2">
+            <p className="min-w-0 text-[14px] font-semibold text-[var(--text)]">{goal.name}</p>
             <Badge tone={STATUS_TONE[effectiveStatus]}>{STATUS_LABEL[effectiveStatus]}</Badge>
           </div>
           <p className="mt-1 text-[20px] font-semibold leading-tight text-[var(--text)]">

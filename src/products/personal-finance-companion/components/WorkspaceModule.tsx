@@ -280,7 +280,8 @@ export default function WorkspaceModule({ definition }: { definition?: ProductDe
                   onClick={clearSnoozed}
                   className="rounded-md px-2 py-1 text-[11px] font-medium text-[var(--muted)] hover:text-[var(--primary)]"
                 >
-                  {snoozedCount} snoozed, show all
+                  {snoozedCount}
+                  {" "}snoozed, show all
                 </button>
               )}
             </div>
@@ -329,7 +330,8 @@ export default function WorkspaceModule({ definition }: { definition?: ProductDe
               <Layers3 className="h-5 w-5 shrink-0 text-[var(--muted)]" />
               <div className="flex-1">
                 <p className="text-[13px] font-semibold text-[var(--text)]">
-                  {unreviewedImportCount} imported {unreviewedImportCount === 1 ? "record" : "records"} waiting for review.
+                  {unreviewedImportCount}
+                  {" "}imported {unreviewedImportCount === 1 ? "record" : "records"}{" "}waiting for review.
                 </p>
                 <p className="text-[12px] text-[var(--muted)]">Nothing from an import becomes part of your picture until you confirm it.</p>
               </div>

@@ -133,7 +133,8 @@ export default function BillsModule() {
         ) : dominantAction?.kind === "add-due-date" ? (
           <div className="flex flex-wrap items-center justify-between gap-3">
             <p className="text-[13px] leading-relaxed text-[var(--text)]">
-              {dominantAction.bill.name} doesn&apos;t have a due date yet.
+              {dominantAction.bill.name}
+              {" "}doesn&apos;t have a due date yet.
             </p>
             <Button
               size="sm"
@@ -220,8 +221,8 @@ function BillCard({
     <li className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4">
       <div className="flex items-start justify-between gap-3">
         <button type="button" onClick={onEdit} disabled={readOnly} className="flex-1 text-left disabled:cursor-default">
-          <div className="flex items-center gap-2">
-            <p className="text-[14px] font-semibold text-[var(--text)]">{bill.name}</p>
+          <div className="flex flex-wrap items-start gap-2">
+            <p className="min-w-0 text-[14px] font-semibold text-[var(--text)]">{bill.name}</p>
             <Badge tone={STATUS_TONE[effectiveStatus]}>{STATUS_LABEL[effectiveStatus]}</Badge>
             {bill.essential && <Badge tone="info">Essential</Badge>}
           </div>

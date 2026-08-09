@@ -161,7 +161,8 @@ export default function RecordsModule() {
           <Layers3 className="h-5 w-5 shrink-0 text-[var(--muted)]" />
           <div className="flex-1">
             <p className="text-[13px] font-semibold text-[var(--text)]">
-              {unreviewedImportCount} imported {unreviewedImportCount === 1 ? "record" : "records"} waiting for review.
+              {unreviewedImportCount}
+              {" "}imported {unreviewedImportCount === 1 ? "record" : "records"}{" "}waiting for review.
             </p>
             <p className="text-[12px] text-[var(--muted)]">Nothing from an import becomes part of your picture until you confirm it.</p>
           </div>
@@ -224,14 +225,21 @@ export default function RecordsModule() {
           ) : (
             <>
               <Headline>{formatCurrency(billsSummary.totalMonthlyEquivalentMinorUnits, CURRENCY)}<Unit>/mo</Unit></Headline>
-              <DetailLine>{billsSummary.activeCount} tracked</DetailLine>
+              <DetailLine>
+                {billsSummary.activeCount}
+                {" "}tracked
+              </DetailLine>
               {billsSummary.missingDueDateCount > 0 && (
                 <WarningLine>
-                  {billsSummary.missingDueDateCount} missing a due date
+                  {billsSummary.missingDueDateCount}
+                  {" "}missing a due date
                 </WarningLine>
               )}
               {billsSummary.unfundedEssentialCount > 0 && (
-                <WarningLine>{billsSummary.unfundedEssentialCount} essential unfunded</WarningLine>
+                <WarningLine>
+                  {billsSummary.unfundedEssentialCount}
+                  {" "}essential unfunded
+                </WarningLine>
               )}
             </>
           )}
@@ -248,10 +256,10 @@ export default function RecordsModule() {
           ) : (
             <>
               <Headline>{formatCurrency(subscriptionsSummary.totalMonthlyEquivalentMinorUnits, CURRENCY)}<Unit>/mo</Unit></Headline>
-              <DetailLine>{subscriptionsSummary.activeCount} active</DetailLine>
-              {subscriptionsSummary.reviewingCount > 0 && <WarningLine>{subscriptionsSummary.reviewingCount} still marked Review</WarningLine>}
+              <DetailLine>{subscriptionsSummary.activeCount}{" "}active</DetailLine>
+              {subscriptionsSummary.reviewingCount > 0 && <WarningLine>{subscriptionsSummary.reviewingCount}{" "}still marked Review</WarningLine>}
               {subscriptionsSummary.plannedCancellationCount > 0 && (
-                <DetailLine>{subscriptionsSummary.plannedCancellationCount} planned to cancel</DetailLine>
+                <DetailLine>{subscriptionsSummary.plannedCancellationCount}{" "}planned to cancel</DetailLine>
               )}
             </>
           )}
@@ -291,7 +299,7 @@ export default function RecordsModule() {
                 owed across {debtSummary.activeCount} {debtSummary.activeCount === 1 ? "debt" : "debts"}
                 {debtSummary.totalMinimumPaymentMinorUnits > 0 && ` · ${formatCurrency(debtSummary.totalMinimumPaymentMinorUnits, CURRENCY)}/mo minimum`}
               </DetailLine>
-              {debtSummary.missingInterestRateCount > 0 && <WarningLine>{debtSummary.missingInterestRateCount} missing an interest rate</WarningLine>}
+              {debtSummary.missingInterestRateCount > 0 && <WarningLine>{debtSummary.missingInterestRateCount}{" "}missing an interest rate</WarningLine>}
             </>
           )}
         </AreaCard>
@@ -323,7 +331,7 @@ export default function RecordsModule() {
                 </div>
               )}
               <DetailLine>{savingsSummary.activeCount} {savingsSummary.activeCount === 1 ? "goal" : "goals"}</DetailLine>
-              {savingsSummary.missingTargetDateCount > 0 && <WarningLine>{savingsSummary.missingTargetDateCount} missing a target date</WarningLine>}
+              {savingsSummary.missingTargetDateCount > 0 && <WarningLine>{savingsSummary.missingTargetDateCount}{" "}missing a target date</WarningLine>}
             </>
           )}
         </AreaCard>
@@ -356,7 +364,7 @@ function AreaCard({
             <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[var(--faint)]">{label}</p>
           </div>
           <div className="flex items-center gap-1.5">
-            {attentionCount > 0 && <Badge tone="warning">{attentionCount} needs a look</Badge>}
+            {attentionCount > 0 && <Badge tone="warning">{attentionCount}{" "}needs a look</Badge>}
             <ChevronRight className="h-4 w-4 shrink-0 text-[var(--faint)]" aria-hidden />
           </div>
         </div>

@@ -177,7 +177,8 @@ export default function AttentionModule() {
       {snoozedItems.length > 0 && (
         <div className="flex items-center justify-between rounded-lg border border-[var(--border)] px-3.5 py-2.5">
           <p className="text-[12px] text-[var(--muted)]">
-            {snoozedItems.length} snoozed for now on this device.
+            {snoozedItems.length}
+            {" "}snoozed for now on this device.
           </p>
           <button
             type="button"

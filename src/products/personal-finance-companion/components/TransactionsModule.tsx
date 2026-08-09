@@ -234,8 +234,8 @@ function TransactionCard({
     <li className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4">
       <div className="flex items-start justify-between gap-3">
         <button type="button" onClick={onEdit} disabled={readOnly} className="flex-1 text-left disabled:cursor-default">
-          <div className="flex items-center gap-2">
-            <p className="text-[14px] font-semibold text-[var(--text)]">{transaction.description}</p>
+          <div className="flex flex-wrap items-start gap-2">
+            <p className="min-w-0 text-[14px] font-semibold text-[var(--text)]">{transaction.description}</p>
             <Badge tone={STATUS_TONE[transaction.status]}>{STATUS_LABEL[transaction.status]}</Badge>
             {transaction.excludedFromSpending && <Badge tone="info">Excluded</Badge>}
             {transaction.pendingOrCleared === "pending" && <Badge tone="neutral">Pending</Badge>}

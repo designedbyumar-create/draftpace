@@ -191,7 +191,7 @@ export default function SubscriptionsModule() {
             onClick={() => setShowArchived((v) => !v)}
             className="text-[12px] font-semibold text-[var(--muted)] hover:text-[var(--text)]"
           >
-            {showArchived ? "Hide" : "Show"} {archived.length} closed {archived.length === 1 ? "subscription" : "subscriptions"}
+            {showArchived ? "Hide" : "Show"}{" "}{archived.length} closed{" "}{archived.length === 1 ? "subscription" : "subscriptions"}
           </button>
           {showArchived && (
             <ul className="mt-2.5 flex flex-col gap-2.5 opacity-70">
@@ -231,8 +231,8 @@ function SubscriptionCard({
     <li className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4">
       <div className="flex items-start justify-between gap-3">
         <button type="button" onClick={onEdit} disabled={readOnly} className="flex-1 text-left disabled:cursor-default">
-          <div className="flex items-center gap-2">
-            <p className="text-[14px] font-semibold text-[var(--text)]">{subscription.name}</p>
+          <div className="flex flex-wrap items-start gap-2">
+            <p className="min-w-0 text-[14px] font-semibold text-[var(--text)]">{subscription.name}</p>
             <Badge tone={STATUS_TONE[subscription.status]}>{STATUS_LABEL[subscription.status]}</Badge>
             <Badge tone={subscription.decision === "plannedCancellation" ? "warning" : "neutral"}>
               {DECISION_LABEL[subscription.decision]}

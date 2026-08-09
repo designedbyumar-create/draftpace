@@ -28,6 +28,15 @@
 -- cron.schedule()'s job name argument doubles as its identity: scheduling
 -- again under the same name replaces the previous job definition rather
 -- than creating a duplicate, so this file is safely re-runnable too.
+--
+-- timeout_milliseconds := 15000: pg_net's default request timeout is
+-- 5000ms. Live production proof (owner's manual test, 2026-08-10) showed
+-- the evaluator's real execution duration is ~5.4s once there is at least
+-- one instance to evaluate — comfortably past that default, which is
+-- exactly what caused pg_net to report a timeout on the third manual
+-- attempt even though Vercel's own logs showed the request completed with
+-- a 200. 15000ms gives headroom as instancesEvaluated grows without
+-- changing anything about the evaluator's own logic, auth, or cadence.
 
 begin;
 
@@ -47,7 +56,8 @@ select
         ),
         'Content-Type', 'application/json'
       ),
-      body := '{}'::jsonb
+      body := '{}'::jsonb,
+      timeout_milliseconds := 15000
     ) as request_id;
     $$
   );

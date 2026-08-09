@@ -133,7 +133,8 @@ export default function IncomeModule() {
         ) : dominantAction?.kind === "add-amount" ? (
           <div className="flex flex-wrap items-center justify-between gap-3">
             <p className="text-[13px] leading-relaxed text-[var(--text)]">
-              {dominantAction.source.name} doesn&apos;t have an amount yet, so it isn&apos;t counted in your total.
+              {dominantAction.source.name}
+              {" "}doesn&apos;t have an amount yet, so it isn&apos;t counted in your total.
             </p>
             <Button
               size="sm"
@@ -184,7 +185,7 @@ export default function IncomeModule() {
             onClick={() => setShowArchived((v) => !v)}
             className="text-[12px] font-semibold text-[var(--muted)] hover:text-[var(--text)]"
           >
-            {showArchived ? "Hide" : "Show"} {archived.length} closed {archived.length === 1 ? "source" : "sources"}
+            {showArchived ? "Hide" : "Show"}{" "}{archived.length} closed{" "}{archived.length === 1 ? "source" : "sources"}
           </button>
           {showArchived && (
             <ul className="mt-2.5 flex flex-col gap-2.5 opacity-70">
@@ -233,8 +234,8 @@ function IncomeCard({
     <li className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4">
       <div className="flex items-start justify-between gap-3">
         <button type="button" onClick={onEdit} disabled={readOnly} className="flex-1 text-left disabled:cursor-default">
-          <div className="flex items-center gap-2">
-            <p className="text-[14px] font-semibold text-[var(--text)]">{source.name}</p>
+          <div className="flex flex-wrap items-start gap-2">
+            <p className="min-w-0 text-[14px] font-semibold text-[var(--text)]">{source.name}</p>
             <Badge tone={STATUS_TONE[effectiveStatus]}>{STATUS_LABEL[effectiveStatus]}</Badge>
             {source.confidence === "estimated" && <Badge tone="info">Estimated</Badge>}
           </div>
