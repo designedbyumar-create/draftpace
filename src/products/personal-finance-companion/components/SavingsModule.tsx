@@ -139,7 +139,8 @@ export default function SavingsModule() {
         ) : dominantAction?.kind === "add-target-date" ? (
           <div className="flex flex-wrap items-center justify-between gap-3">
             <p className="text-[13px] leading-relaxed text-[var(--text)]">
-              {dominantAction.goal.name} doesn&apos;t have a target date yet.
+              {dominantAction.goal.name}
+              {" "}doesn&apos;t have a target date yet.
             </p>
             <Button
               size="sm"
