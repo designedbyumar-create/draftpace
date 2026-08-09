@@ -261,7 +261,7 @@ export default function WorkspaceModule({ definition }: { definition?: ProductDe
             </Surface>
           ) : (
             <Surface id="pfc-tour-next-action" elevated className="flex items-center gap-3">
-              <CheckCircle2 className="h-5 w-5 shrink-0 text-[var(--success)]" />
+              <CheckCircle2 className="h-5 w-5 shrink-0 text-[var(--success)]" aria-hidden />
               <div>
                 <p className="text-[15px] font-semibold text-[var(--text)]">You're caught up.</p>
                 <p className="text-[13px] text-[var(--muted)]">Nothing needs your attention right now.</p>
@@ -275,7 +275,11 @@ export default function WorkspaceModule({ definition }: { definition?: ProductDe
                 <Bell className="h-3.5 w-3.5" /> Needs a look {visibleAttentionItems.length > 0 && `(${visibleAttentionItems.length})`}
               </p>
               {snoozedCount > 0 && (
-                <button type="button" onClick={clearSnoozed} className="text-[11px] font-medium text-[var(--muted)] hover:text-[var(--primary)]">
+                <button
+                  type="button"
+                  onClick={clearSnoozed}
+                  className="rounded-md px-2 py-1 text-[11px] font-medium text-[var(--muted)] hover:text-[var(--primary)]"
+                >
                   {snoozedCount} snoozed — show all
                 </button>
               )}
@@ -289,6 +293,7 @@ export default function WorkspaceModule({ definition }: { definition?: ProductDe
                   <li key={item.id} className="flex items-start gap-2 rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3">
                     <WarningCircle
                       className={`mt-0.5 h-4 w-4 shrink-0 ${item.urgency === "needsResolution" ? "text-[var(--warning)]" : "text-[var(--faint)]"}`}
+                      aria-hidden
                     />
                     <div className="flex-1">
                       <Link href={item.deepLink} className="text-[13px] font-medium text-[var(--text)] hover:text-[var(--primary)] hover:underline">
@@ -298,8 +303,9 @@ export default function WorkspaceModule({ definition }: { definition?: ProductDe
                     <button
                       type="button"
                       onClick={() => snoozeItem(item.id)}
-                      className="shrink-0 text-[11px] font-medium text-[var(--faint)] hover:text-[var(--muted)]"
+                      className="shrink-0 rounded-md px-2.5 py-1.5 text-[11px] font-medium text-[var(--faint)] hover:bg-[var(--surface-muted)] hover:text-[var(--muted)]"
                       title="Hide for 7 days on this device"
+                      aria-label={`Snooze: ${item.message}`}
                     >
                       Snooze
                     </button>

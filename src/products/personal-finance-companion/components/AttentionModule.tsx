@@ -159,7 +159,7 @@ export default function AttentionModule() {
 
       {visible.length === 0 ? (
         <Surface elevated className="flex items-center gap-3">
-          <CheckCircle2 className="h-5 w-5 shrink-0 text-[var(--success)]" />
+          <CheckCircle2 className="h-5 w-5 shrink-0 text-[var(--success)]" aria-hidden />
           <div>
             <p className="text-[15px] font-semibold text-[var(--text)]">You&apos;re caught up.</p>
             <p className="text-[13px] text-[var(--muted)]">Nothing needs a look right now.</p>
@@ -179,7 +179,11 @@ export default function AttentionModule() {
           <p className="text-[12px] text-[var(--muted)]">
             {snoozedItems.length} snoozed for now on this device.
           </p>
-          <button type="button" onClick={unsnoozeAll} className="text-[12px] font-semibold text-[var(--primary)] hover:underline">
+          <button
+            type="button"
+            onClick={unsnoozeAll}
+            className="rounded-md px-2.5 py-1.5 text-[12px] font-semibold text-[var(--primary)] hover:underline"
+          >
             Show snoozed
           </button>
         </div>
@@ -210,6 +214,7 @@ function AttentionGroup({
           >
             <WarningCircle
               className={`mt-0.5 h-4 w-4 shrink-0 ${item.urgency === "needsResolution" ? "text-[var(--warning)]" : "text-[var(--faint)]"}`}
+              aria-hidden
             />
             <div className="flex-1">
               <Link href={item.deepLink} className="text-[14px] font-medium text-[var(--text)] hover:text-[var(--primary)] hover:underline">
@@ -220,8 +225,9 @@ function AttentionGroup({
             <button
               type="button"
               onClick={() => onSnooze(item.id)}
-              className="shrink-0 text-[11px] font-medium text-[var(--faint)] hover:text-[var(--muted)]"
+              className="shrink-0 rounded-md px-2.5 py-1.5 text-[11px] font-medium text-[var(--faint)] hover:bg-[var(--surface-muted)] hover:text-[var(--muted)]"
               title="Hide for 7 days on this device"
+              aria-label={`Snooze: ${item.message}`}
             >
               Snooze
             </button>

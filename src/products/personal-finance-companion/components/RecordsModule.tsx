@@ -357,7 +357,7 @@ function AreaCard({
           </div>
           <div className="flex items-center gap-1.5">
             {attentionCount > 0 && <Badge tone="warning">{attentionCount} needs a look</Badge>}
-            <ChevronRight className="h-4 w-4 shrink-0 text-[var(--faint)]" />
+            <ChevronRight className="h-4 w-4 shrink-0 text-[var(--faint)]" aria-hidden />
           </div>
         </div>
         <div>{children}</div>
