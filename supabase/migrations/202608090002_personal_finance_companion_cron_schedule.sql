@@ -29,11 +29,20 @@
 -- again under the same name replaces the previous job definition rather
 -- than creating a duplicate, so this file is safely re-runnable too.
 --
+-- net.http_get, not net.http_post: the route (src/app/api/notifications/
+-- cron/route.ts) only exports GET. This migration originally used
+-- http_post, which the route rejects with 405 before the auth/evaluator
+-- logic ever runs — live production proof (owner, 2026-08-10) confirmed
+-- the scheduled job itself succeeds (cron.job_run_details: succeeded) while
+-- the actual HTTP call it made returned 405 (net._http_response), and that
+-- switching to a manual net.http_get with the same bearer header returns
+-- 200. No body/Content-Type is sent since GET has none.
+--
 -- timeout_milliseconds := 15000: pg_net's default request timeout is
 -- 5000ms. Live production proof (owner's manual test, 2026-08-10) showed
 -- the evaluator's real execution duration is ~5.4s once there is at least
 -- one instance to evaluate — comfortably past that default, which is
--- exactly what caused pg_net to report a timeout on the third manual
+-- exactly what caused pg_net to report a timeout on an earlier manual
 -- attempt even though Vercel's own logs showed the request completed with
 -- a 200. 15000ms gives headroom as instancesEvaluated grows without
 -- changing anything about the evaluator's own logic, auth, or cadence.
@@ -48,15 +57,13 @@ select
     'pfc-notifications-hourly',
     '0 * * * *',
     $$
-    select net.http_post(
+    select net.http_get(
       url := 'https://draftpace.com/api/notifications/cron',
       headers := jsonb_build_object(
         'Authorization', 'Bearer ' || (
           select decrypted_secret from vault.decrypted_secrets where name = 'pfc_cron_secret'
-        ),
-        'Content-Type', 'application/json'
+        )
       ),
-      body := '{}'::jsonb,
       timeout_milliseconds := 15000
     ) as request_id;
     $$
