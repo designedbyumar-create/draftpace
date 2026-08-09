@@ -12,6 +12,8 @@ import TransactionsModule from "./components/TransactionsModule";
 import DebtModule from "./components/DebtModule";
 import SavingsModule from "./components/SavingsModule";
 import SetupCentreModule from "./components/SetupCentreModule";
+import AttentionModule from "./components/AttentionModule";
+import RecordsModule from "./components/RecordsModule";
 
 export const personalFinanceCompanionCatalogEntry: ProductCatalogEntry = {
   definition: personalFinanceCompanionDefinition,
@@ -28,5 +30,7 @@ export const personalFinanceCompanionCatalogEntry: ProductCatalogEntry = {
     "personal-finance-companion.debt": DebtModule,
     "personal-finance-companion.savings": SavingsModule,
     "personal-finance-companion.setup-centre": SetupCentreModule,
+    "personal-finance-companion.attention": AttentionModule,
+    "personal-finance-companion.records": RecordsModule,
   },
 };

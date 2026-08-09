@@ -25,10 +25,10 @@ export function resolveWorkspaceLabel(definition: ProductDefinition): string {
   return family?.defaultWorkspaceLabel ?? defaultDestinationLabel("workspace");
 }
 
-/** Resolved label for any destination, honoring the workspace special case. */
+/** Resolved label for any destination, honoring the workspace special case and any generic per-destination override. */
 export function resolveDestinationLabel(definition: ProductDefinition, destination: ProductDestinationId): string {
   if (destination === "workspace") return resolveWorkspaceLabel(definition);
-  return defaultDestinationLabel(destination);
+  return definition.destinationLabels?.[destination] ?? defaultDestinationLabel(destination);
 }
 
 /**

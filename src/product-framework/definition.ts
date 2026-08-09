@@ -106,6 +106,8 @@ export const productDefinitionSchema = z.object({
   primaryNavigation: z.array(destinationIdSchema).optional(),
   startRoute: z.string().default("start"),
   workspaceLabel: z.string().optional(),
+  /** Generic per-destination label overrides, e.g. { start: "Companion" } — the same override "workspace" already gets via workspaceLabel, extended to any destination a product wants to rename without renaming the destination id/route itself. */
+  destinationLabels: z.record(z.string(), z.string()).optional(),
   setup: z
     .object({
       required: z.boolean().default(false),

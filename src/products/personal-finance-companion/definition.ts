@@ -52,10 +52,21 @@ export const personalFinanceCompanionDefinition: ProductDefinitionInput = {
     provisionalBranding: true,
   },
   capabilities: ["companion.context", "companion.next-action"],
+  // Deliberately excludes "setup": that destination is Phase 8's
+  // autosave/resume infrastructure probe (SetupModule.tsx), not a real
+  // onboarding screen, and nothing in this product ever calls
+  // setProductInstanceLifecycle to mark setup_complete — so declaring
+  // "setup" here trapped resolveLifecycleNavigation() in its permanent
+  // "setup in progress" branch (see navigationResolver.ts's state 2), on
+  // top of everTouched being separately stuck false (fixed in migration
+  // 202608090003). setup-centre is, and always was, the real returning-
+  // user management surface the launch spec describes — this changes
+  // nothing about that.
   navigation: [
     "start",
-    "setup",
     "workspace",
+    "attention",
+    "records",
     "accounts",
     "income",
     "bills",
@@ -67,26 +78,14 @@ export const personalFinanceCompanionDefinition: ProductDefinitionInput = {
     "history",
     "settings",
   ],
-  // Once setup is complete, every direct section plus the Setup Centre is
-  // always reachable — matching the launch spec's information architecture
-  // (section 5: each direct section is "independently reachable", the
-  // Setup Centre is "the returning user's management surface"). Start and
-  // Setup recede to secondary/contextual, matching Monthly Money Reset's
-  // own primaryNavigation override for the identical reason.
-  primaryNavigation: [
-    "workspace",
-    "accounts",
-    "income",
-    "bills",
-    "subscriptions",
-    "transactions",
-    "debt",
-    "savings",
-    "setup-centre",
-    "history",
-    "settings",
-  ],
-  workspaceLabel: "Workspace",
+  // Today / Companion / Attention / Records: the four things a returning
+  // user actually comes back for. The seven direct sections remain fully
+  // routable (Records is their real home, with its own internal
+  // navigation) and still land in the shell's "More" menu as a fallback;
+  // Settings is deliberately secondary, not a primary tab.
+  primaryNavigation: ["workspace", "start", "attention", "records"],
+  workspaceLabel: "Today",
+  destinationLabels: { start: "Companion" },
   startRoute: "start",
   setup: {
     required: false,
@@ -96,6 +95,8 @@ export const personalFinanceCompanionDefinition: ProductDefinitionInput = {
   modules: [
     { id: "personal-finance-companion.companion", destination: "start" },
     { id: "personal-finance-companion.workspace", destination: "workspace" },
+    { id: "personal-finance-companion.attention", destination: "attention" },
+    { id: "personal-finance-companion.records", destination: "records" },
     { id: "personal-finance-companion.settings", destination: "settings" },
     { id: "personal-finance-companion.setup", destination: "setup" },
     { id: "personal-finance-companion.accounts", destination: "accounts" },

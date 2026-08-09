@@ -24,6 +24,7 @@ import { deriveAttentionItems, type AttentionItem } from "../attention";
 import { summarizeFreshness } from "../freshness";
 import { summarizeRecentChanges } from "../recentChanges";
 import { resolveSafeDeepLink } from "../deepLinks";
+import { readSnoozed, writeSnoozed, snoozeUntil } from "./attentionSnooze";
 import ExplainBreakdown from "./companion/ExplainBreakdown";
 
 type LoadStatus = "loading" | "ready" | "no-instance" | "error";
@@ -33,24 +34,6 @@ const STATUS_TONE: Record<CapabilityRow["status"], "success" | "warning" | "neut
   needsInfo: "warning",
   waiting: "neutral",
 };
-
-const SNOOZE_STORAGE_KEY = "pfc-workspace-snoozed-attention";
-const SNOOZE_DAYS = 7;
-
-function readSnoozed(): Record<string, string> {
-  if (typeof window === "undefined") return {};
-  try {
-    const raw = window.localStorage.getItem(SNOOZE_STORAGE_KEY);
-    return raw ? (JSON.parse(raw) as Record<string, string>) : {};
-  } catch {
-    return {};
-  }
-}
-
-function writeSnoozed(value: Record<string, string>) {
-  if (typeof window === "undefined") return;
-  window.localStorage.setItem(SNOOZE_STORAGE_KEY, JSON.stringify(value));
-}
 
 /**
  * "Your financial picture" — Workspace, the surface a returning user lands
@@ -69,7 +52,6 @@ export default function WorkspaceModule() {
   const [records, setRecords] = useState<FinancialPictureInputs | null>(null);
   const [unreviewedImportCount, setUnreviewedImportCount] = useState(0);
   const [snoozed, setSnoozed] = useState<Record<string, string>>({});
-  const [showAllAttention, setShowAllAttention] = useState(false);
 
   const load = useCallback(async () => {
     setStatus("loading");
@@ -141,7 +123,7 @@ export default function WorkspaceModule() {
   }, [allAttentionItems, snoozed, now]);
 
   function snoozeItem(id: string) {
-    const until = new Date(now.getTime() + SNOOZE_DAYS * 24 * 60 * 60 * 1000).toISOString();
+    const until = snoozeUntil(now);
     const next = { ...snoozed, [id]: until };
     setSnoozed(next);
     writeSnoozed(next);
@@ -250,10 +232,10 @@ export default function WorkspaceModule() {
             </div>
 
             {visibleAttentionItems.length === 0 ? (
-              <p className="mt-2 text-[13px] text-[var(--muted)]">Nothing in your Attention Inbox.</p>
+              <p className="mt-2 text-[13px] text-[var(--muted)]">You're caught up. Nothing waiting on you.</p>
             ) : (
               <ul className="mt-2 flex flex-col gap-1.5">
-                {(showAllAttention ? visibleAttentionItems : visibleAttentionItems.slice(0, 5)).map((item) => (
+                {visibleAttentionItems.slice(0, 3).map((item) => (
                   <li key={item.id} className="flex items-start gap-2 rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3">
                     <WarningCircle
                       className={`mt-0.5 h-4 w-4 shrink-0 ${item.urgency === "needsResolution" ? "text-[var(--warning)]" : "text-[var(--faint)]"}`}
@@ -276,14 +258,13 @@ export default function WorkspaceModule() {
               </ul>
             )}
 
-            {visibleAttentionItems.length > 5 && (
-              <button
-                type="button"
-                onClick={() => setShowAllAttention((v) => !v)}
-                className="mt-2 text-[12px] font-semibold text-[var(--primary)] hover:underline"
+            {visibleAttentionItems.length > 0 && (
+              <Link
+                href={`/app/products/personal-finance-companion/attention`}
+                className="mt-2 inline-block text-[12px] font-semibold text-[var(--primary)] hover:underline"
               >
-                {showAllAttention ? "Show fewer" : `Show all ${visibleAttentionItems.length}`}
-              </button>
+                {visibleAttentionItems.length > 3 ? `View all ${visibleAttentionItems.length} in Attention` : "Open Attention"}
+              </Link>
             )}
           </div>
 
