@@ -23,6 +23,16 @@
 -- behavior, changes no existing column, table, or RLS policy.
 --
 -- Wrapped in an explicit transaction — see 202608080001's identical note.
+--
+-- search_path = public, pg_temp (not just public): matches what was
+-- actually applied to production. pg_temp is appended so an explicit,
+-- unqualified reference to a temp object inside this SECURITY DEFINER
+-- function would still resolve during that session, rather than the
+-- search_path silently omitting the schema Postgres itself always
+-- consults first for unqualified names — every reference in this
+-- function is already schema-qualified (public.product_instances), so
+-- this changes nothing about its behavior, only brings the committed
+-- source in line with the live definition.
 
 begin;
 
@@ -30,7 +40,7 @@ create or replace function public._pfc_touch_instance()
 returns trigger
 language plpgsql
 security definer
-set search_path = public
+set search_path = public, pg_temp
 as $$
 begin
   update public.product_instances
