@@ -68,6 +68,14 @@ export default function PlatformShell({
   const pathname = usePathname();
   const user = useSession();
   const [online, setOnline] = useState(true);
+  // Deliberately starts null (not the real day part) so the server's render
+  // matches the client's first render regardless of timezone — the server
+  // (Vercel, a fixed region) and the visitor's browser can genuinely
+  // disagree on "morning vs afternoon vs evening" for the same instant,
+  // which was producing a real hydration mismatch (React error #418) on
+  // every authenticated Platform Home load. Filled in client-side only,
+  // same pattern as `online` above.
+  const [dayPart, setDayPart] = useState<string | null>(null);
 
   useEffect(() => {
     setOnline(navigator.onLine);
@@ -79,6 +87,10 @@ export default function PlatformShell({
       window.removeEventListener("online", onOnline);
       window.removeEventListener("offline", onOffline);
     };
+  }, []);
+
+  useEffect(() => {
+    setDayPart(getDayPart());
   }, []);
 
   const firstName = useMemo(() => {
@@ -140,7 +152,7 @@ export default function PlatformShell({
                 {online ? "Draftpace" : "Draftpace, offline"}
               </p>
               <h1 className="mt-0.5 truncate text-[18px] font-semibold tracking-tight text-[var(--text)]">
-                {title || `Good ${getDayPart()}, ${firstName}`}
+                {title || `Good ${dayPart ?? "day"}, ${firstName}`}
               </h1>
               {subtitle && <p className="mt-1 truncate text-[12px] leading-4 text-[var(--muted)]">{subtitle}</p>}
             </div>
