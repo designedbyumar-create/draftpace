@@ -31,11 +31,23 @@ export async function detectPushCapability(): Promise<PushCapability> {
   return existing ? "subscribed" : "granted-not-subscribed";
 }
 
-function urlBase64ToUint8Array(base64String: string): BufferSource {
+function urlBase64ToUint8Array(base64String: string): Uint8Array {
   const padding = "=".repeat((4 - (base64String.length % 4)) % 4);
   const base64 = (base64String + padding).replace(/-/g, "+").replace(/_/g, "/");
   const rawData = window.atob(base64);
-  return Uint8Array.from([...rawData].map((char) => char.charCodeAt(0))) as BufferSource;
+  return Uint8Array.from([...rawData].map((char) => char.charCodeAt(0)));
+}
+
+/** True only when `existing` is bound to the exact same VAPID public key as `currentKey`. */
+export function subscriptionMatchesKey(existing: PushSubscription, currentKey: Uint8Array): boolean {
+  const bound = existing.options?.applicationServerKey;
+  if (!bound) return false;
+  const boundBytes = new Uint8Array(bound);
+  if (boundBytes.length !== currentKey.length) return false;
+  for (let i = 0; i < currentKey.length; i++) {
+    if (boundBytes[i] !== currentKey[i]) return false;
+  }
+  return true;
 }
 
 async function authHeader(): Promise<Record<string, string>> {
@@ -60,9 +72,27 @@ export async function subscribeToPush(): Promise<SubscribeResult> {
   if (permission !== "granted") return { ok: false, reason: "permission-denied" };
 
   const registration = await navigator.serviceWorker.ready;
-  const subscription =
-    (await registration.pushManager.getSubscription()) ??
-    (await registration.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: urlBase64ToUint8Array(publicKey) }));
+  const applicationServerKey = urlBase64ToUint8Array(publicKey);
+  let subscription = await registration.pushManager.getSubscription();
+
+  // A subscription bound to a VAPID key that's since been rotated can never
+  // be delivered to by the current VAPID_PRIVATE_KEY — reusing it here
+  // would silently persist a dead subscription server-side. Rather than
+  // relying on the caller to remember to turn notifications off and back on
+  // after a rotation, detect the mismatch and transparently replace it.
+  // Re-subscribing when uncertain (e.g. .options is unexpectedly empty) is
+  // always safe — it's idempotent and never loses data — so this errs
+  // toward refreshing rather than reusing.
+  if (subscription && !subscriptionMatchesKey(subscription, applicationServerKey)) {
+    await subscription.unsubscribe();
+    subscription = null;
+  }
+  if (!subscription) {
+    subscription = await registration.pushManager.subscribe({
+      userVisibleOnly: true,
+      applicationServerKey: applicationServerKey as BufferSource,
+    });
+  }
 
   const headers = await authHeader();
   if (!headers.Authorization) return { ok: false, reason: "network" };
