@@ -25,6 +25,8 @@ import Avatar from "@/design-system/Avatar";
 import AccountMenu from "@/components/account/AccountMenu";
 import { appAccountMenuItems } from "@/components/account/accountMenuItems";
 import { signOutAndRedirect } from "@/lib/supabase/signOut";
+import { useInstallPrompt, useStandaloneMode, isIosDevice } from "@/lib/pwa/hooks";
+import { hasDismissedInstallPrompt, dismissInstallPrompt } from "@/lib/pwa/deviceOnboarding";
 
 const primaryNav = [
   { label: "Home", href: "/app", Icon: Home },
@@ -240,28 +242,40 @@ function getDayPart() {
   return "evening";
 }
 
+/**
+ * Device-level, cross-product install nudge shown on Platform Home — never
+ * repeats after an explicit choice (accept, native dismiss, or "Not now"),
+ * tracked in localStorage (src/lib/pwa/deviceOnboarding.ts), and hides
+ * itself the moment this device is actually running standalone. On
+ * Chromium it drives the real `beforeinstallprompt`/`userChoice` flow via
+ * useInstallPrompt(); on iOS, which never fires that event, it falls back
+ * to an instructional Add to Home Screen guide instead of a dead button.
+ * Settings (src/app/app/settings/page.tsx) is the durable recovery surface
+ * once this card has been dismissed.
+ */
 export function InstallPromptCard() {
-  const [canInstall, setCanInstall] = useState(false);
-  const [promptEvent, setPromptEvent] = useState<BeforeInstallPromptEvent | null>(null);
+  const { canInstall, promptInstall } = useInstallPrompt();
+  const standalone = useStandaloneMode();
+  const [dismissed, setDismissed] = useState(true);
+  const [ios, setIos] = useState(false);
 
   useEffect(() => {
-    const handler = (event: Event) => {
-      event.preventDefault();
-      setPromptEvent(event as BeforeInstallPromptEvent);
-      setCanInstall(true);
-    };
-    window.addEventListener("beforeinstallprompt", handler);
-    return () => window.removeEventListener("beforeinstallprompt", handler);
+    setDismissed(hasDismissedInstallPrompt());
+    setIos(isIosDevice());
   }, []);
 
-  const install = async () => {
-    if (!promptEvent) return;
-    await promptEvent.prompt();
-    setPromptEvent(null);
-    setCanInstall(false);
+  const skip = () => {
+    dismissInstallPrompt();
+    setDismissed(true);
   };
 
-  if (!canInstall) return null;
+  const install = async () => {
+    const outcome = await promptInstall();
+    if (outcome) dismissInstallPrompt();
+  };
+
+  if (standalone || dismissed) return null;
+  if (!canInstall && !ios) return null;
 
   return (
     <section className="flex items-center gap-3 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4">
@@ -269,19 +283,27 @@ export function InstallPromptCard() {
         <Sparkles size={17} aria-hidden />
       </div>
       <div className="min-w-0 flex-1">
-        <p className="text-[13px] font-semibold text-[var(--text)]">Install Draftpace</p>
-        <p className="text-[12px] leading-5 text-[var(--muted)]">Open straight into the platform like a real app.</p>
+        <p className="text-[13px] font-semibold text-[var(--text)]">Keep Draftpace on your phone</p>
+        <p className="text-[12px] leading-5 text-[var(--muted)]">
+          {ios && !canInstall
+            ? 'Tap Share, then "Add to Home Screen", then "Add".'
+            : "Open straight into the platform like a real app."}
+        </p>
       </div>
+      {!(ios && !canInstall) && (
+        <button
+          onClick={install}
+          className="shrink-0 rounded-lg bg-[var(--primary)] px-3.5 py-2 text-[12px] font-semibold text-[var(--primary-contrast)]"
+        >
+          Install Draftpace
+        </button>
+      )}
       <button
-        onClick={install}
-        className="shrink-0 rounded-lg bg-[var(--primary)] px-3.5 py-2 text-[12px] font-semibold text-[var(--primary-contrast)]"
+        onClick={skip}
+        className="shrink-0 rounded-lg px-2.5 py-2 text-[12px] font-semibold text-[var(--muted)] hover:text-[var(--text)]"
       >
-        Install
+        Not now
       </button>
     </section>
   );
 }
-
-type BeforeInstallPromptEvent = Event & {
-  prompt: () => Promise<void>;
-};

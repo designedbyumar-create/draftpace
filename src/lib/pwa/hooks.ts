@@ -81,6 +81,32 @@ export function useInstallPrompt(): InstallPromptState {
 }
 
 /**
+ * True on iPhone/iPad/iPod, including iPadOS 13+ (which reports as
+ * "MacIntel" but is touch-capable, unlike a real Mac). iOS Safari never
+ * fires `beforeinstallprompt` and has no Push permission UI until the page
+ * is running standalone (added to the Home Screen) — callers use this to
+ * show the "Tap Share, then Add to Home Screen" instructional fallback
+ * instead of a dead Chromium-style install button.
+ *
+ * The Android UA check and the "Macintosh" requirement on the iPadOS
+ * branch both matter: `navigator.platform` reporting "MacIntel" alongside
+ * touch support isn't unique to real iPads — an emulated/spoofed mobile
+ * browser can leak its underlying desktop host's platform string (seen
+ * live: an Android-UA emulated viewport still reporting `platform:
+ * "MacIntel"`), which would otherwise misclassify it as iOS. Real iPadOS
+ * Safari's UA genuinely contains "Macintosh"; requiring both signals
+ * avoids that false positive without weakening real-device detection.
+ */
+export function isIosDevice(): boolean {
+  if (typeof navigator === "undefined") return false;
+  const ua = navigator.userAgent;
+  if (/Android/i.test(ua)) return false;
+  const isIphoneIpad = /iPad|iPhone|iPod/.test(ua);
+  const isIpadOS13Plus = navigator.platform === "MacIntel" && /Macintosh/.test(ua) && navigator.maxTouchPoints > 1;
+  return isIphoneIpad || isIpadOS13Plus;
+}
+
+/**
  * Online/offline connectivity — the foundation for the explicit offline
  * states the launch spec's phase 11 requires (online / temporarily
  * offline / save failed / retry available / stale cached read). Does not

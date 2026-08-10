@@ -7,6 +7,7 @@ import { supabase } from "@/lib/supabase/client";
 import ThemeToggle from "@/design-system/theme/ThemeToggle";
 import { useAccessibility, TextScale } from "@/design-system/theme/AccessibilityProvider";
 import SettingsRow from "@/components/platform/SettingsRow";
+import InstallSettingsRow from "@/components/platform/InstallSettingsRow";
 import Toggle from "@/design-system/Toggle";
 import Surface from "@/design-system/Surface";
 
@@ -85,6 +86,7 @@ export default function SettingsPage() {
           </h2>
           <Surface padded={false}>
             <div className="divide-y divide-[var(--border)] px-5">
+              <InstallSettingsRow />
               <SettingsRow label="Reminder rhythm" description={saving ? "Saving…" : "When Draftpace should nudge you, once notifications are enabled."}>
                 <select
                   value={reminderTime}
