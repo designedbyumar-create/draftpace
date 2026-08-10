@@ -8,7 +8,7 @@ import Button from "@/design-system/Button";
 import Alert from "@/design-system/Alert";
 import RecordFormSheet from "../shared/RecordFormSheet";
 import { toMinorUnits, fromMinorUnits } from "@/lib/currency";
-import type { SavingsGoal } from "../../state";
+import type { Account, SavingsGoal } from "../../state";
 
 const GOAL_TYPES: { value: SavingsGoal["type"]; label: string }[] = [
   { value: "emergencyFund", label: "Emergency fund" },
@@ -24,11 +24,21 @@ export interface SavingsFormValues {
   currency: string;
   targetDate: string;
   recurring: boolean;
+  linkedAccountId: string;
 }
 
 function defaultValues(goal: SavingsGoal | null): SavingsFormValues {
   if (!goal) {
-    return { name: "", type: "generalGoal", targetAmountMajorUnits: "", savedAmountMajorUnits: "0", currency: "USD", targetDate: "", recurring: false };
+    return {
+      name: "",
+      type: "generalGoal",
+      targetAmountMajorUnits: "",
+      savedAmountMajorUnits: "0",
+      currency: "USD",
+      targetDate: "",
+      recurring: false,
+      linkedAccountId: "",
+    };
   }
   return {
     name: goal.name,
@@ -38,6 +48,7 @@ function defaultValues(goal: SavingsGoal | null): SavingsFormValues {
     currency: goal.currency,
     targetDate: goal.targetDate ?? "",
     recurring: goal.recurring,
+    linkedAccountId: goal.linkedAccountId ?? "",
   };
 }
 
@@ -50,12 +61,14 @@ function defaultValues(goal: SavingsGoal | null): SavingsFormValues {
 export default function SavingsFormSheet({
   open,
   goal,
+  accounts = [],
   onClose,
   onSave,
   triggerRef,
 }: {
   open: boolean;
   goal: SavingsGoal | null;
+  accounts?: Account[];
   onClose: () => void;
   onSave: (values: SavingsFormValues) => Promise<string | null>;
   triggerRef?: React.RefObject<HTMLElement | null>;
@@ -79,6 +92,20 @@ export default function SavingsFormSheet({
   }
 
   const isEdit = goal !== null;
+
+  // Active accounts are always offered, plus the currently-linked one even
+  // if it's since been archived — otherwise the picker would silently show
+  // "Not linked" for a goal that's actually still linked (that account just
+  // dropped out of the active list), and saving without touching this field
+  // would sever a real link the user never asked to change.
+  const linkedArchivedAccount =
+    goal?.linkedAccountId && !accounts.some((a) => a.id === goal.linkedAccountId && a.status !== "archived")
+      ? accounts.find((a) => a.id === goal.linkedAccountId)
+      : undefined;
+  const visibleAccounts = [
+    ...accounts.filter((a) => a.status !== "archived"),
+    ...(linkedArchivedAccount ? [linkedArchivedAccount] : []),
+  ];
 
   async function handleSave() {
     setError(null);
@@ -179,6 +206,22 @@ export default function SavingsFormSheet({
         </div>
         <Toggle checked={values.recurring} onChange={(checked) => setValues((v) => ({ ...v, recurring: checked }))} label="Recurring" />
       </div>
+      {visibleAccounts.length > 0 && (
+        <Select
+          label="Held in an account?"
+          value={values.linkedAccountId}
+          onChange={(e) => setValues((v) => ({ ...v, linkedAccountId: e.target.value }))}
+          hint="Optional. Link this goal to the account actually holding the money."
+        >
+          <option value="">Not linked</option>
+          {visibleAccounts.map((account) => (
+            <option key={account.id} value={account.id}>
+              {account.name}
+              {account.status === "archived" ? " (closed)" : ""}
+            </option>
+          ))}
+        </Select>
+      )}
     </RecordFormSheet>
   );
 }
@@ -192,6 +235,7 @@ export function savingsFormValuesToPatch(values: SavingsFormValues) {
     currency: values.currency,
     targetDate: values.targetDate.trim() || null,
     recurring: values.recurring,
+    linkedAccountId: values.linkedAccountId.trim() || null,
     status: "ready",
   };
 }

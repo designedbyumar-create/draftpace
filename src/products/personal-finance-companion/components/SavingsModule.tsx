@@ -8,7 +8,8 @@ import EmptyState from "@/design-system/EmptyState";
 import { formatCurrency } from "@/lib/currency";
 import { findPersonalFinanceCompanionInstanceId } from "../setupStateData";
 import { listSavingsGoals, createSavingsGoal, updateSavingsGoal, archiveSavingsGoal } from "../domain/savingsGoals";
-import type { SavingsGoal } from "../state";
+import { listAccounts } from "../domain/accounts";
+import type { Account, SavingsGoal } from "../state";
 import SectionShell from "./shared/SectionShell";
 import { StatRow, StatTile } from "./shared/StatRow";
 import { STATUS_LABEL, STATUS_TONE } from "./shared/lifecycle";
@@ -29,6 +30,7 @@ export default function SavingsModule() {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [instanceId, setInstanceId] = useState<string | null>(null);
   const [goals, setGoals] = useState<SavingsGoal[]>([]);
+  const [accounts, setAccounts] = useState<Account[]>([]);
   const [showArchived, setShowArchived] = useState(false);
   const [formOpen, setFormOpen] = useState(false);
   const [editingGoal, setEditingGoal] = useState<SavingsGoal | null>(null);
@@ -55,6 +57,14 @@ export default function SavingsModule() {
       return;
     }
     setGoals(result.data);
+    // Soft-fail: the account link is optional, so a failed accounts read
+    // shouldn't block viewing or editing goals — the picker just offers no
+    // accounts to link until a retry succeeds. Includes archived accounts —
+    // SavingsFormSheet decides which to actually show, since a goal linked
+    // to an account that's since been closed still needs that option
+    // visible (see SavingsFormSheet's own comment on why).
+    const accountsResult = await listAccounts(found.id);
+    setAccounts(accountsResult.ok ? accountsResult.data : []);
     setStatus("ready");
   }, []);
 
@@ -203,7 +213,7 @@ export default function SavingsModule() {
         </div>
       )}
 
-      <SavingsFormSheet open={formOpen} goal={editingGoal} onClose={() => setFormOpen(false)} onSave={handleSave} triggerRef={addButtonRef} />
+      <SavingsFormSheet open={formOpen} goal={editingGoal} accounts={accounts} onClose={() => setFormOpen(false)} onSave={handleSave} triggerRef={addButtonRef} />
     </SectionShell>
   );
 }

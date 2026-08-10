@@ -7,7 +7,7 @@ import Button from "@/design-system/Button";
 import Alert from "@/design-system/Alert";
 import RecordFormSheet from "../shared/RecordFormSheet";
 import { toMinorUnits, fromMinorUnits } from "@/lib/currency";
-import type { Debt } from "../../state";
+import type { Account, Debt } from "../../state";
 
 const DEBT_TYPES: { value: Debt["type"]; label: string }[] = [
   { value: "creditCard", label: "Credit card" },
@@ -26,11 +26,21 @@ export interface DebtFormValues {
   interestRate: string;
   minimumPaymentMajorUnits: string;
   dueDate: string;
+  linkedAccountId: string;
 }
 
 function defaultValues(debt: Debt | null): DebtFormValues {
   if (!debt) {
-    return { name: "", type: "creditCard", balanceMajorUnits: "", currency: "USD", interestRate: "", minimumPaymentMajorUnits: "", dueDate: "" };
+    return {
+      name: "",
+      type: "creditCard",
+      balanceMajorUnits: "",
+      currency: "USD",
+      interestRate: "",
+      minimumPaymentMajorUnits: "",
+      dueDate: "",
+      linkedAccountId: "",
+    };
   }
   return {
     name: debt.name,
@@ -40,6 +50,7 @@ function defaultValues(debt: Debt | null): DebtFormValues {
     interestRate: debt.interestRate !== null ? String(debt.interestRate) : "",
     minimumPaymentMajorUnits: String(fromMinorUnits(debt.minimumPaymentMinorUnits, debt.currency)),
     dueDate: debt.dueDate ?? "",
+    linkedAccountId: debt.linkedAccountId ?? "",
   };
 }
 
@@ -52,12 +63,14 @@ function defaultValues(debt: Debt | null): DebtFormValues {
 export default function DebtFormSheet({
   open,
   debt,
+  accounts = [],
   onClose,
   onSave,
   triggerRef,
 }: {
   open: boolean;
   debt: Debt | null;
+  accounts?: Account[];
   onClose: () => void;
   onSave: (values: DebtFormValues) => Promise<string | null>;
   triggerRef?: React.RefObject<HTMLElement | null>;
@@ -81,6 +94,20 @@ export default function DebtFormSheet({
   }
 
   const isEdit = debt !== null;
+
+  // Active accounts are always offered, plus the currently-linked one even
+  // if it's since been archived — otherwise the picker would silently show
+  // "Not linked" for a debt that's actually still linked (that account just
+  // dropped out of the active list), and saving without touching this field
+  // would sever a real link the user never asked to change.
+  const linkedArchivedAccount =
+    debt?.linkedAccountId && !accounts.some((a) => a.id === debt.linkedAccountId && a.status !== "archived")
+      ? accounts.find((a) => a.id === debt.linkedAccountId)
+      : undefined;
+  const visibleAccounts = [
+    ...accounts.filter((a) => a.status !== "archived"),
+    ...(linkedArchivedAccount ? [linkedArchivedAccount] : []),
+  ];
 
   async function handleSave() {
     setError(null);
@@ -191,6 +218,22 @@ export default function DebtFormSheet({
         onChange={(e) => setValues((v) => ({ ...v, dueDate: e.target.value }))}
         hint="Optional"
       />
+      {visibleAccounts.length > 0 && (
+        <Select
+          label="Also an account?"
+          value={values.linkedAccountId}
+          onChange={(e) => setValues((v) => ({ ...v, linkedAccountId: e.target.value }))}
+          hint="Optional. Link a card like this Visa to the account it draws from."
+        >
+          <option value="">Not linked</option>
+          {visibleAccounts.map((account) => (
+            <option key={account.id} value={account.id}>
+              {account.name}
+              {account.status === "archived" ? " (closed)" : ""}
+            </option>
+          ))}
+        </Select>
+      )}
     </RecordFormSheet>
   );
 }
@@ -204,6 +247,7 @@ export function debtFormValuesToPatch(values: DebtFormValues, refreshBalanceDate
     interestRate: values.interestRate.trim() !== "" ? Number(values.interestRate) : null,
     minimumPaymentMinorUnits: toMinorUnits(Number(values.minimumPaymentMajorUnits), values.currency),
     dueDate: values.dueDate.trim() || null,
+    linkedAccountId: values.linkedAccountId.trim() || null,
     status: "ready",
   };
   if (refreshBalanceDate) patch.balanceAsOfDate = new Date().toISOString().slice(0, 10);

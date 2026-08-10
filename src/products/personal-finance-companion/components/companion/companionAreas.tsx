@@ -230,7 +230,7 @@ export const subscriptionsAreaConfig: AreaConfig<Subscription> = {
   renderForm: (props) => <SubscriptionAreaForm {...props} />,
 };
 
-function DebtAreaForm({ open, editing, instanceId, onClose, onSaved, triggerRef }: AreaFormProps<Debt>) {
+function DebtAreaForm({ open, editing, instanceId, accounts, onClose, onSaved, triggerRef }: AreaFormProps<Debt>) {
   async function handleSave(values: DebtFormValues): Promise<string | null> {
     if (editing) {
       const balanceChanged = Math.round(Number(values.balanceMajorUnits) * 100) !== editing.balanceMinorUnits;
@@ -244,7 +244,7 @@ function DebtAreaForm({ open, editing, instanceId, onClose, onSaved, triggerRef 
     onSaved(result.data);
     return null;
   }
-  return <DebtFormSheet open={open} debt={editing} onClose={onClose} onSave={handleSave} triggerRef={triggerRef} />;
+  return <DebtFormSheet open={open} debt={editing} accounts={accounts} onClose={onClose} onSave={handleSave} triggerRef={triggerRef} />;
 }
 
 export const debtAreaConfig: AreaConfig<Debt> = {
@@ -270,7 +270,7 @@ export const debtAreaConfig: AreaConfig<Debt> = {
   renderForm: (props) => <DebtAreaForm {...props} />,
 };
 
-function SavingsAreaForm({ open, editing, instanceId, onClose, onSaved, triggerRef }: AreaFormProps<SavingsGoal>) {
+function SavingsAreaForm({ open, editing, instanceId, accounts, onClose, onSaved, triggerRef }: AreaFormProps<SavingsGoal>) {
   async function handleSave(values: SavingsFormValues): Promise<string | null> {
     if (editing) {
       const result = await updateSavingsGoal(editing.id, savingsFormValuesToPatch(values));
@@ -283,7 +283,7 @@ function SavingsAreaForm({ open, editing, instanceId, onClose, onSaved, triggerR
     onSaved(result.data);
     return null;
   }
-  return <SavingsFormSheet open={open} goal={editing} onClose={onClose} onSave={handleSave} triggerRef={triggerRef} />;
+  return <SavingsFormSheet open={open} goal={editing} accounts={accounts} onClose={onClose} onSave={handleSave} triggerRef={triggerRef} />;
 }
 
 export const savingsAreaConfig: AreaConfig<SavingsGoal> = {

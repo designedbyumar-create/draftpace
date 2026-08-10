@@ -8,7 +8,8 @@ import EmptyState from "@/design-system/EmptyState";
 import { formatCurrency } from "@/lib/currency";
 import { findPersonalFinanceCompanionInstanceId } from "../setupStateData";
 import { listDebts, createDebt, updateDebt, archiveDebt } from "../domain/debts";
-import type { Debt } from "../state";
+import { listAccounts } from "../domain/accounts";
+import type { Account, Debt } from "../state";
 import SectionShell from "./shared/SectionShell";
 import { StatRow, StatTile } from "./shared/StatRow";
 import { STATUS_LABEL, STATUS_TONE } from "./shared/lifecycle";
@@ -26,6 +27,7 @@ export default function DebtModule() {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [instanceId, setInstanceId] = useState<string | null>(null);
   const [debts, setDebts] = useState<Debt[]>([]);
+  const [accounts, setAccounts] = useState<Account[]>([]);
   const [showArchived, setShowArchived] = useState(false);
   const [formOpen, setFormOpen] = useState(false);
   const [editingDebt, setEditingDebt] = useState<Debt | null>(null);
@@ -66,6 +68,14 @@ export default function DebtModule() {
       return;
     }
     setDebts(result.data);
+    // Soft-fail: the account link is optional, so a failed accounts read
+    // shouldn't block viewing or editing debt — the picker just offers no
+    // accounts to link until a retry succeeds. Includes archived accounts —
+    // DebtFormSheet decides which to actually show, since a debt linked to
+    // an account that's since been closed still needs that option visible
+    // (see DebtFormSheet's own comment on why).
+    const accountsResult = await listAccounts(found.id);
+    setAccounts(accountsResult.ok ? accountsResult.data : []);
     setStatus("ready");
   }, []);
 
@@ -223,7 +233,7 @@ export default function DebtModule() {
         </div>
       )}
 
-      <DebtFormSheet open={formOpen} debt={editingDebt} onClose={() => setFormOpen(false)} onSave={handleSave} triggerRef={addButtonRef} />
+      <DebtFormSheet open={formOpen} debt={editingDebt} accounts={accounts} onClose={() => setFormOpen(false)} onSave={handleSave} triggerRef={addButtonRef} />
     </SectionShell>
   );
 }
