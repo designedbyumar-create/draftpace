@@ -39,6 +39,20 @@ export function LoadErrorState({ onRetry }: { onRetry: () => void }) {
   );
 }
 
+/** A small spinning ring for inline use next to a "Saving…" label — the
+ * save itself is a real, sometimes-noticeable network round trip that the
+ * app deliberately waits on before advancing (see CheckInModal/
+ * QuickAddModal's dedupeKey comments for why), so this exists to make that
+ * wait read as active progress rather than a frozen button. */
+export function Spinner({ className = "" }: { className?: string }) {
+  return (
+    <span
+      aria-hidden
+      className={`inline-block h-3.5 w-3.5 shrink-0 animate-spin rounded-full border-2 border-current border-t-transparent opacity-70 ${className}`}
+    />
+  );
+}
+
 export function SaveStatusIndicator({ status }: { status: SaveStatus }) {
   if (status === "idle") return null;
   if (status === "saving") {

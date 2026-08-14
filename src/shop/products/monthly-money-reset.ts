@@ -61,6 +61,11 @@ export const monthlyMoneyResetShopProduct: ShopProductInput = {
       src: "/products/monthly-money-reset/preview.png",
       alt: "Monthly Money Reset's This Month view, showing a Safe to Spend Now figure of $600.00, a weekly amount, a next-move check-in prompt, and a breakdown of protected bills and upcoming bills.",
     },
+    {
+      src: "/products/monthly-money-reset/preview.png",
+      alt: "The same This Month view, focused on the protected-bills breakdown that keeps the Safe-to-Spend figure from ever assuming money that's already owed.",
+      section: "what-becomes-easier",
+    },
   ],
   compatibility: ["Works in any modern browser", "No download required", "Works on phone, tablet, or desktop"],
   inclusions: [

@@ -69,6 +69,15 @@ export default function ShopIndexPage() {
   );
 }
 
+/** States what happens next in the same terms the product page's own CTA
+ * uses (GetAction in shop/[productSlug]/page.tsx), so Store and product-page
+ * language agree instead of one reading as a soft "learn more" link and the
+ * other as a direct action. */
+function storeCardCtaLabel(product: ShopProduct): string {
+  if (product.availability === "coming-soon") return "See what's coming";
+  return product.access === "free" ? "Add free, or learn more" : "See how it works";
+}
+
 /** Low-inventory presentation: one rich, product-forward block per product. */
 function FeaturedProduct({ product }: { product: ShopProduct }) {
   const category = categoryLabel(product);
@@ -91,7 +100,7 @@ function FeaturedProduct({ product }: { product: ShopProduct }) {
         <p className="mt-2 text-[19px] font-semibold tracking-tight text-[var(--text)]">{product.title}</p>
         <p className="mt-2 text-[14px] leading-relaxed text-[var(--muted)]">{product.promise}</p>
         <span className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--primary)]">
-          See how it helps
+          {storeCardCtaLabel(product)}
           <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" aria-hidden />
         </span>
       </div>

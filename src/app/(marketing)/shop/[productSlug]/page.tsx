@@ -8,12 +8,42 @@ import Button from "@/design-system/Button";
 import { ArrowRight, Check, Lock, X } from "@/design-system/Icon";
 import { shopRegistry } from "@/shop/registry";
 import type { ShopProduct } from "@/shop/definition";
+import { registerShopFixtures } from "@/shop/fixtures";
+import { registerRealShopProducts } from "@/shop/products";
+import RichSection from "./RichSection";
+
+/**
+ * shopRegistry is populated at request time by a module-level singleton
+ * (registerRealShopProducts()). The marketing layout already calls this
+ * before rendering any child route, but that's a cross-file ordering
+ * assumption this route shouldn't have to trust blindly. Both
+ * registration calls are idempotent (guarded by their own `registered`
+ * flag), so calling them again here directly is cheap and makes every
+ * function in this file self-sufficient regardless of layout execution
+ * order. Combined with force-dynamic below (this route has no build-time
+ * data source, so without it Next.js can cache a stale not-found shell or
+ * race a cold serverless instance whose module state hasn't registered
+ * yet), this closes the "hard refresh always works, client-side nav
+ * occasionally 404s" bug reported live on production.
+ */
+function ensureShopRegistered(): void {
+  registerShopFixtures();
+  registerRealShopProducts();
+}
+
+export const dynamic = "force-dynamic";
+
+export async function generateStaticParams() {
+  ensureShopRegistered();
+  return shopRegistry.listPublished().map((product) => ({ productSlug: product.slug }));
+}
 
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ productSlug: string }>;
 }): Promise<Metadata> {
+  ensureShopRegistered();
   const { productSlug } = await params;
   const product = shopRegistry.getBySlug(productSlug);
   if (!product) return {};
@@ -36,6 +66,7 @@ export default async function ShopProductPage({
 }: {
   params: Promise<{ productSlug: string }>;
 }) {
+  ensureShopRegistered();
   const { productSlug } = await params;
   const product = shopRegistry.getBySlug(productSlug);
   if (!product) notFound();
@@ -88,97 +119,95 @@ export default async function ShopProductPage({
         </Container>
       </div>
 
-      <Container width="narrow" className="pb-28 pt-14 sm:pt-16">
+      <Container width="standard" className="pb-28 pt-14 sm:pt-16">
       {/* Movement 2: who this is for and the situation */}
       {product.audience.length > 0 && (
-        <Section eyebrow="Who this is for">
-          <ul className="flex flex-col gap-2">
+        <RichSection eyebrow="Who this is for">
+          <ul className="flex flex-col gap-2.5">
             {product.audience.map((line) => (
-              <li key={line} className="flex items-start gap-2.5 text-[14px] leading-relaxed text-[var(--text)]">
-                <Check size={15} className="mt-0.5 shrink-0 text-[var(--success)]" aria-hidden />
+              <li key={line} className="flex items-start gap-2.5">
+                <Check size={17} className="mt-0.5 shrink-0 text-[var(--success)]" aria-hidden />
                 {line}
               </li>
             ))}
           </ul>
-          <p className="mt-4 text-[14px] leading-relaxed text-[var(--muted)]">{product.problem}</p>
-        </Section>
+          <p className="mt-4 text-[var(--muted)]">{product.problem}</p>
+        </RichSection>
       )}
 
       {/* Movement 3: what becomes easier */}
       {product.outcomes.length > 0 && (
-        <Section eyebrow="What becomes easier">
-          <ul className="flex flex-col gap-2.5">
+        <RichSection eyebrow="What becomes easier" media={mediaFor(product, "what-becomes-easier")}>
+          <ul className="flex flex-col gap-3">
             {product.outcomes.map((line) => (
-              <li key={line} className="text-[14px] leading-relaxed text-[var(--text)]">
-                {line}
-              </li>
+              <li key={line}>{line}</li>
             ))}
           </ul>
-        </Section>
+        </RichSection>
       )}
 
       {/* Movement 4: how it works */}
       {product.howItWorks.length > 0 && (
-        <Section eyebrow="How it works">
-          <ol className="flex flex-col gap-3">
+        <RichSection eyebrow="How it works" media={mediaFor(product, "how-it-works")} reverse>
+          <ol className="flex flex-col gap-3.5">
             {product.howItWorks.map((step, index) => (
-              <li key={step} className="flex items-start gap-3 text-[14px] leading-relaxed text-[var(--text)]">
-                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[var(--surface-muted)] text-[11px] font-bold text-[var(--muted)]">
+              <li key={step} className="flex items-start gap-3">
+                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--surface-muted)] text-[12px] font-bold text-[var(--muted)]">
                   {index + 1}
                 </span>
                 {step}
               </li>
             ))}
           </ol>
-        </Section>
+        </RichSection>
       )}
 
       {/* Movement 5: objection resolution, near the decision */}
       {product.objections.length > 0 && (
-        <Section eyebrow="Honest answers before you decide">
-          <div className="flex flex-col divide-y divide-[var(--border)] rounded-xl border border-[var(--border)]">
+        <RichSection eyebrow="Honest answers before you decide">
+          <div className="flex flex-col divide-y divide-[var(--border)] rounded-xl border border-[var(--border)] text-[15px]">
             {product.objections.map((o) => (
               <div key={o.worry} className="px-5 py-4">
-                <p className="text-[14px] font-semibold text-[var(--text)]">{o.worry}</p>
-                <p className="mt-1.5 text-[13px] leading-relaxed text-[var(--muted)]">{o.answer}</p>
+                <p className="font-semibold text-[var(--text)]">{o.worry}</p>
+                <p className="mt-1.5 leading-relaxed text-[var(--muted)]">{o.answer}</p>
               </div>
             ))}
           </div>
-        </Section>
+        </RichSection>
       )}
 
       {/* Movement 6: what's included, honest limits, privacy */}
-      <Section eyebrow="What's included">
-        <ul className="flex flex-col gap-2">
+      <RichSection eyebrow="What's included" media={mediaFor(product, "whats-included")}>
+        <ul className="flex flex-col gap-2.5">
           {product.inclusions.map((line) => (
-            <li key={line} className="flex items-start gap-2.5 text-[14px] leading-relaxed text-[var(--text)]">
-              <Check size={15} className="mt-0.5 shrink-0 text-[var(--success)]" aria-hidden />
+            <li key={line} className="flex items-start gap-2.5">
+              <Check size={17} className="mt-0.5 shrink-0 text-[var(--success)]" aria-hidden />
               {line}
             </li>
           ))}
         </ul>
         {product.compatibility.length > 0 && (
-          <p className="mt-3 text-[12px] text-[var(--faint)]">{product.compatibility.join(" · ")}</p>
+          <p className="mt-3 text-[13px] text-[var(--faint)]">{product.compatibility.join(" · ")}</p>
         )}
-      </Section>
+      </RichSection>
 
       {product.audienceExclusions.length > 0 && (
-        <Section eyebrow="Maybe not for you if">
-          <ul className="flex flex-col gap-2">
+        <RichSection eyebrow="Maybe not for you if">
+          <ul className="flex flex-col gap-2.5">
             {product.audienceExclusions.map((line) => (
-              <li key={line} className="flex items-start gap-2.5 text-[14px] leading-relaxed text-[var(--muted)]">
-                <X size={15} className="mt-0.5 shrink-0 text-[var(--faint)]" aria-hidden />
+              <li key={line} className="flex items-start gap-2.5 text-[var(--muted)]">
+                <X size={17} className="mt-0.5 shrink-0 text-[var(--faint)]" aria-hidden />
                 {line}
               </li>
             ))}
           </ul>
-        </Section>
+        </RichSection>
       )}
 
       {product.privacyNotes && (
-        <Section eyebrow="Privacy and data">
-          <p className="text-[13px] leading-relaxed text-[var(--muted)]">{product.privacyNotes}</p>
-        </Section>
+        <RichSection eyebrow="Privacy and data">
+          <p className="text-[var(--muted)]">{product.privacyNotes}</p>
+        </RichSection>
       )}
 
       {/* Price and get, repeated near the decision */}
@@ -197,37 +226,37 @@ export default async function ShopProductPage({
 
       {/* FAQs */}
       {product.faqs.length > 0 && (
-        <Section eyebrow="Questions">
+        <RichSection eyebrow="Questions">
           <div className="flex flex-col divide-y divide-[var(--border)]">
             {product.faqs.map((faq) => (
               <details key={faq.question} className="group py-3 first:pt-0">
-                <summary className="cursor-pointer text-[14px] font-semibold text-[var(--text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]">
+                <summary className="cursor-pointer text-[15px] font-semibold text-[var(--text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]">
                   {faq.question}
                 </summary>
-                <p className="mt-2 text-[13px] leading-relaxed text-[var(--muted)]">{faq.answer}</p>
+                <p className="mt-2 leading-relaxed text-[var(--muted)]">{faq.answer}</p>
               </details>
             ))}
           </div>
-        </Section>
+        </RichSection>
       )}
 
       {/* Related */}
       {product.relatedProductSlugs.length > 0 && (
-        <Section eyebrow="Related">
+        <RichSection eyebrow="Related">
           <ul className="flex flex-col gap-1.5">
             {product.relatedProductSlugs.map((slug) => {
               const related = shopRegistry.getBySlug(slug);
               if (!related) return null;
               return (
                 <li key={slug}>
-                  <Link href={`/shop/${slug}`} className="text-[13px] font-semibold text-[var(--primary)] hover:underline">
+                  <Link href={`/shop/${slug}`} className="font-semibold text-[var(--primary)] hover:underline">
                     {related.title}
                   </Link>
                 </li>
               );
             })}
           </ul>
-        </Section>
+        </RichSection>
       )}
 
       {/* Final CTA */}
@@ -278,6 +307,24 @@ function GetAction({
         </Button>
         <p className="text-[12px] text-[var(--faint)]">Checkout opens soon.</p>
       </div>
+    );
+  }
+
+  // A free product's own Shop page has already made the full case for it.
+  // Posting straight to the activation endpoint (the same one
+  // /app/activate/[productSlug]'s <form> already posts to) skips a second,
+  // near-duplicate "Add {title} to your library" confirmation screen for a
+  // decision the visitor already made here. /app/activate/[productSlug]
+  // stays intact as the confirmation screen for paid products (where a
+  // distinct "you're about to be charged" moment still matters) and as a
+  // safe fallback entry point.
+  if (product.access === "free") {
+    return (
+      <form method="POST" action={`/api/products/${product.slug}/activate`}>
+        <Button type="submit" size={size} iconRight={<ArrowRight size={15} aria-hidden />}>
+          {label}
+        </Button>
+      </form>
     );
   }
 
@@ -336,13 +383,13 @@ function HeroVisual({ product }: { product: ShopProduct }) {
   );
 }
 
-function Section({ eyebrow, children }: { eyebrow: string; children: React.ReactNode }) {
-  return (
-    <section className="mt-12">
-      <h2 className="text-[13px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">{eyebrow}</h2>
-      <div className="mt-3">{children}</div>
-    </section>
-  );
+/** Looks up a section-tagged screenshot from the listing's media (see the
+ * `section` field on mediaSchema in src/shop/definition.ts). Returns null,
+ * not a fabricated fallback, when no real image is tagged for this section.
+ * RichSection renders the plain text-only layout in that case. */
+function mediaFor(product: ShopProduct, sectionKey: string): { src: string; alt: string } | null {
+  const match = product.media.find((m) => m.section === sectionKey);
+  return match ? { src: match.src, alt: match.alt } : null;
 }
 
 function formatPrice(product: ShopProduct): string {

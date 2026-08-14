@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Button from "@/design-system/Button";
 import Input from "@/design-system/Input";
 import { CalendarCheck, CreditCard, RotateCcw, Target, Wallet, X } from "@/design-system/Icon";
-import { AmountField, generateId } from "./shared";
+import { AmountField, generateId, Spinner } from "./shared";
 import { computeSafeToSpend } from "../calculations";
 import { formatCurrency } from "../currency";
 import type { MonthlyMoneyResetState } from "../state";
@@ -299,7 +299,7 @@ export default function QuickAddModal({
             </p>
           )}
 
-          <Button type="submit" size="lg" fullWidth disabled={submitting || !preview}>
+          <Button type="submit" size="lg" fullWidth disabled={submitting || !preview} iconLeft={submitting ? <Spinner /> : undefined}>
             {submitting ? "Saving…" : saveFailed ? "Try again" : "Save and update my month"}
           </Button>
         </form>

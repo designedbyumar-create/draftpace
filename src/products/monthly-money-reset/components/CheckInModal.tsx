@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Button from "@/design-system/Button";
 import { Check, X } from "@/design-system/Icon";
-import { generateId } from "./shared";
+import { generateId, Spinner } from "./shared";
 import QuickAddModal, { type QuickAddType } from "./QuickAddModal";
 import { computeSafeToSpend } from "../calculations";
 import { computeNextAction } from "../nextAction";
@@ -313,7 +313,7 @@ export default function CheckInModal({
           </p>
         )}
 
-        <Button size="lg" fullWidth className="mt-5" onClick={handleFinish} disabled={submitting}>
+        <Button size="lg" fullWidth className="mt-5" onClick={handleFinish} disabled={submitting} iconLeft={submitting ? <Spinner /> : undefined}>
           {submitting ? "Saving…" : saveFailed ? "Try again" : "Finish check-in"}
         </Button>
       </div>
