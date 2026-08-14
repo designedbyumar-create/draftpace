@@ -11,6 +11,8 @@ import type { ShopProduct } from "@/shop/definition";
 import { registerShopFixtures } from "@/shop/fixtures";
 import { registerRealShopProducts } from "@/shop/products";
 import RichSection from "./RichSection";
+import AddToLibraryButton from "../AddToLibraryButton";
+import { OverviewScreenMockup, AddInfoScreenMockup, BreakdownScreenMockup } from "./monthlyMoneyResetVisuals";
 
 /**
  * shopRegistry is populated at request time by a module-level singleton
@@ -73,6 +75,11 @@ export default async function ShopProductPage({
 
   const priceLabel = formatPrice(product);
   const structuredData = buildStructuredData(product);
+  // Bespoke mobile mockups exist for this one real product today (see
+  // monthlyMoneyResetVisuals.tsx's own doc comment for why real screenshots
+  // aren't used); every other product falls back to HeroVisual/plain text
+  // sections until it has its own.
+  const isMonthlyMoneyReset = product.slug === "monthly-money-reset";
 
   return (
     <>
@@ -114,7 +121,7 @@ export default async function ShopProductPage({
                 Only you can see your data. It saves to your account, on every device.
               </p>
             </div>
-            <HeroVisual product={product} />
+            {isMonthlyMoneyReset ? <OverviewScreenMockup /> : <HeroVisual product={product} />}
           </section>
         </Container>
       </div>
@@ -137,7 +144,7 @@ export default async function ShopProductPage({
 
       {/* Movement 3: what becomes easier */}
       {product.outcomes.length > 0 && (
-        <RichSection eyebrow="What becomes easier" media={mediaFor(product, "what-becomes-easier")}>
+        <RichSection eyebrow="What becomes easier" visual={isMonthlyMoneyReset ? <BreakdownScreenMockup /> : undefined}>
           <ul className="flex flex-col gap-3">
             {product.outcomes.map((line) => (
               <li key={line}>{line}</li>
@@ -148,7 +155,7 @@ export default async function ShopProductPage({
 
       {/* Movement 4: how it works */}
       {product.howItWorks.length > 0 && (
-        <RichSection eyebrow="How it works" media={mediaFor(product, "how-it-works")} reverse>
+        <RichSection eyebrow="How it works" visual={isMonthlyMoneyReset ? <AddInfoScreenMockup /> : undefined} reverse>
           <ol className="flex flex-col gap-3.5">
             {product.howItWorks.map((step, index) => (
               <li key={step} className="flex items-start gap-3">
@@ -177,7 +184,7 @@ export default async function ShopProductPage({
       )}
 
       {/* Movement 6: what's included, honest limits, privacy */}
-      <RichSection eyebrow="What's included" media={mediaFor(product, "whats-included")}>
+      <RichSection eyebrow="What's included">
         <ul className="flex flex-col gap-2.5">
           {product.inclusions.map((line) => (
             <li key={line} className="flex items-start gap-2.5">
@@ -319,13 +326,7 @@ function GetAction({
   // distinct "you're about to be charged" moment still matters) and as a
   // safe fallback entry point.
   if (product.access === "free") {
-    return (
-      <form method="POST" action={`/api/products/${product.slug}/activate`}>
-        <Button type="submit" size={size} iconRight={<ArrowRight size={15} aria-hidden />}>
-          {label}
-        </Button>
-      </form>
-    );
+    return <AddToLibraryButton slug={product.slug} label={label} size={size} />;
   }
 
   return (
@@ -381,15 +382,6 @@ function HeroVisual({ product }: { product: ShopProduct }) {
       </p>
     </div>
   );
-}
-
-/** Looks up a section-tagged screenshot from the listing's media (see the
- * `section` field on mediaSchema in src/shop/definition.ts). Returns null,
- * not a fabricated fallback, when no real image is tagged for this section.
- * RichSection renders the plain text-only layout in that case. */
-function mediaFor(product: ShopProduct, sectionKey: string): { src: string; alt: string } | null {
-  const match = product.media.find((m) => m.section === sectionKey);
-  return match ? { src: match.src, alt: match.alt } : null;
 }
 
 function formatPrice(product: ShopProduct): string {

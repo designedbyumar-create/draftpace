@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { EASE_OUT, useCombinedReducedMotion } from "@/components/onboarding/motion";
 
@@ -12,21 +11,21 @@ import { EASE_OUT, useCombinedReducedMotion } from "@/components/onboarding/moti
  * of an earlier whileInView version here confirmed why. A programmatic
  * scroll_to (and, per report, some real scroll patterns) can land past the
  * trigger margin without the observer ever firing, leaving whole sections
- * stuck at opacity 0, invisible content, not just a missing animation. A
- * section with a matching screenshot (product.media[].section, see
- * src/shop/definition.ts) gets a real framed visual beside its text,
- * alternating sides, instead of every section being a plain text block
- * regardless of whether art exists for it.
+ * stuck at opacity 0, invisible content, not just a missing animation.
+ *
+ * `visual` takes any node, not just an image, so a product with a bespoke
+ * illustration (see monthlyMoneyResetVisuals.tsx) can pair it with a
+ * section without RichSection needing to know what kind of visual it is.
  */
 export default function RichSection({
   eyebrow,
   children,
-  media,
+  visual,
   reverse = false,
 }: {
   eyebrow: string;
   children: React.ReactNode;
-  media?: { src: string; alt: string } | null;
+  visual?: React.ReactNode;
   reverse?: boolean;
 }) {
   const reduceMotion = useCombinedReducedMotion();
@@ -38,7 +37,7 @@ export default function RichSection({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: EASE_OUT }}
     >
-      {media ? (
+      {visual ? (
         <div
           className={`grid items-center gap-8 sm:gap-12 ${
             reverse ? "sm:grid-cols-[1fr_1.05fr]" : "sm:grid-cols-[1.05fr_1fr]"
@@ -48,9 +47,7 @@ export default function RichSection({
             <SectionHeading>{eyebrow}</SectionHeading>
             <div className="mt-4 text-[16px] leading-relaxed text-[var(--text)]">{children}</div>
           </div>
-          <div className={reverse ? "sm:order-1" : ""}>
-            <FramedShot src={media.src} alt={media.alt} />
-          </div>
+          <div className={reverse ? "sm:order-1" : ""}>{visual}</div>
         </div>
       ) : (
         <div className="mx-auto max-w-2xl">
@@ -64,27 +61,4 @@ export default function RichSection({
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
   return <h2 className="text-[13px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">{children}</h2>;
-}
-
-/** Same "framed browser window" treatment as the hero's hero visual, reused
- * so every real screenshot on this page reads as one consistent system. */
-function FramedShot({ src, alt }: { src: string; alt: string }) {
-  return (
-    <div className="relative">
-      <div
-        aria-hidden
-        className="absolute inset-x-4 inset-y-6 -z-10 rounded-[28px] bg-[var(--primary)] opacity-[0.08] blur-2xl"
-      />
-      <div className="overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-[var(--shadow-md)]">
-        <div className="flex items-center gap-2 border-b border-[var(--border)] bg-[var(--surface-muted)] px-4 py-2.5">
-          <span className="h-2.5 w-2.5 rounded-full bg-[var(--border-strong)]" aria-hidden />
-          <span className="h-2.5 w-2.5 rounded-full bg-[var(--border-strong)]" aria-hidden />
-          <span className="h-2.5 w-2.5 rounded-full bg-[var(--border-strong)]" aria-hidden />
-        </div>
-        <div className="relative aspect-[4/3]">
-          <Image src={src} alt={alt} fill className="object-cover" sizes="(max-width: 640px) 100vw, 50vw" />
-        </div>
-      </div>
-    </div>
-  );
 }

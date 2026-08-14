@@ -17,11 +17,6 @@ const faqSchema = z.object({
 const mediaSchema = z.object({
   src: z.string().min(1),
   alt: z.string().min(1),
-  /** Which product-page section this image illustrates (matches a Section
-   * `eyebrow` slug, e.g. "how-it-works"). Untagged entries — index 0 by
-   * convention — are the hero image. Optional so a listing with only a
-   * hero shot needs no change. */
-  section: z.string().optional(),
 });
 
 /** A doubt the buyer arrives with, and the plain answer to it. Resolved on the

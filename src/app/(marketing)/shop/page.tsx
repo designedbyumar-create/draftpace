@@ -3,10 +3,12 @@ import Link from "next/link";
 import Image from "next/image";
 import Container from "@/design-system/Container";
 import Badge from "@/design-system/Badge";
+import Button from "@/design-system/Button";
 import { ArrowRight } from "@/design-system/Icon";
 import { shopRegistry } from "@/shop/registry";
 import type { ShopProduct } from "@/shop/definition";
 import { NEEDS } from "@/content/needs";
+import AddToLibraryButton from "./AddToLibraryButton";
 
 export const metadata: Metadata = {
   title: "Store",
@@ -69,23 +71,53 @@ export default function ShopIndexPage() {
   );
 }
 
-/** States what happens next in the same terms the product page's own CTA
- * uses (GetAction in shop/[productSlug]/page.tsx), so Store and product-page
- * language agree instead of one reading as a soft "learn more" link and the
- * other as a direct action. */
-function storeCardCtaLabel(product: ShopProduct): string {
-  if (product.availability === "coming-soon") return "See what's coming";
-  return product.access === "free" ? "Add free, or learn more" : "See how it works";
+/**
+ * Two distinct actions, never one link doing double duty: "Add to library"
+ * commits (a free product goes straight into the visitor's account, same
+ * direct POST GetAction in shop/[productSlug]/page.tsx uses); "Learn more"
+ * only ever navigates to the product page. A visitor should never have to
+ * guess which one a single button will do.
+ */
+function StoreCardActions({ product }: { product: ShopProduct }) {
+  if (product.availability === "coming-soon") {
+    return (
+      <Link
+        href={`/shop/${product.slug}`}
+        className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--primary)] hover:underline"
+      >
+        Learn more
+        <ArrowRight size={14} aria-hidden />
+      </Link>
+    );
+  }
+
+  if (product.access === "free") {
+    return (
+      <div className="mt-4 flex flex-wrap items-center gap-3">
+        <AddToLibraryButton slug={product.slug} label="Add to library, free" size="sm" />
+        <Link href={`/shop/${product.slug}`} className="text-[13px] font-semibold text-[var(--muted)] hover:text-[var(--text)]">
+          Learn more
+        </Link>
+      </div>
+    );
+  }
+
+  // Paid: nothing to add pre-payment, so the only action is the product
+  // page, where checkout (once live) actually happens.
+  return (
+    <div className="mt-4">
+      <Button href={`/shop/${product.slug}`} size="sm" iconRight={<ArrowRight size={14} aria-hidden />}>
+        See how it works
+      </Button>
+    </div>
+  );
 }
 
 /** Low-inventory presentation: one rich, product-forward block per product. */
 function FeaturedProduct({ product }: { product: ShopProduct }) {
   const category = categoryLabel(product);
   return (
-    <Link
-      href={`/shop/${product.slug}`}
-      className="group grid gap-5 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[var(--shadow-xs)] transition-colors hover:border-[var(--border-strong)] sm:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] sm:items-center sm:p-6"
-    >
+    <div className="grid gap-5 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[var(--shadow-xs)] sm:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] sm:items-center sm:p-6">
       <div className="min-w-0 sm:order-1">
         <div className="flex flex-wrap items-center gap-2">
           {category && (
@@ -97,15 +129,16 @@ function FeaturedProduct({ product }: { product: ShopProduct }) {
           {product.availability === "coming-soon" && <Badge tone="neutral">Coming soon</Badge>}
           {product.devFixture && <Badge tone="neutral">Internal preview</Badge>}
         </div>
-        <p className="mt-2 text-[19px] font-semibold tracking-tight text-[var(--text)]">{product.title}</p>
+        <Link href={`/shop/${product.slug}`} className="mt-2 block text-[19px] font-semibold tracking-tight text-[var(--text)] hover:underline">
+          {product.title}
+        </Link>
         <p className="mt-2 text-[14px] leading-relaxed text-[var(--muted)]">{product.promise}</p>
-        <span className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--primary)]">
-          {storeCardCtaLabel(product)}
-          <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" aria-hidden />
-        </span>
+        <StoreCardActions product={product} />
       </div>
-      <ProductVisual product={product} className="sm:order-2" />
-    </Link>
+      <Link href={`/shop/${product.slug}`} className="sm:order-2" aria-label={`See ${product.title} in detail`}>
+        <ProductVisual product={product} />
+      </Link>
+    </div>
   );
 }
 
