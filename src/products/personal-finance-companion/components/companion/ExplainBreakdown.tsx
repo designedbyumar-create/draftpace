@@ -18,11 +18,17 @@ export default function ExplainBreakdown({
   currency,
   label,
   valueMinorUnits,
+  variant = "light",
 }: {
   breakdown: ExplainBreakdownData;
   currency: string;
   label: string;
   valueMinorUnits: number;
+  /** "dark" when placed on a --primary-colored surface (e.g. Workspace's
+   * Available Money hero): the toggle's own text is --primary by default,
+   * invisible against a --primary background. The expanded panel below is
+   * always its own self-contained light card regardless of variant. */
+  variant?: "light" | "dark";
 }) {
   const [open, setOpen] = useState(false);
 
@@ -32,7 +38,9 @@ export default function ExplainBreakdown({
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
-        className="flex items-center gap-1 text-[12px] font-semibold text-[var(--primary)] hover:underline"
+        className={`flex items-center gap-1 text-[12px] font-semibold hover:underline ${
+          variant === "dark" ? "text-[var(--primary-contrast)] opacity-80" : "text-[var(--primary)]"
+        }`}
       >
         <CaretDown size={13} aria-hidden className={`transition-transform ${open ? "rotate-180" : ""}`} />
         How Draftpace got this

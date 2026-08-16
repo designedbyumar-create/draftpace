@@ -79,16 +79,25 @@ export function createRecordRepository<TEntity, TRow>(
       // user_id has no database default (see the records migration) — the
       // insert RLS policy's `auth.uid() = user_id` check fails on a null
       // user_id, so it must be set explicitly here rather than assumed.
+      // getSession() (not getUser()) deliberately: getSession() reads the
+      // already-cached local session with no network round trip, while
+      // getUser() re-validates the JWT against Supabase Auth on every call.
+      // That revalidation buys nothing here: RLS's own `auth.uid() =
+      // user_id` check is the real, authoritative enforcement boundary
+      // regardless of what user_id this client claims, so it was only ever
+      // adding a second sequential network round trip to every single
+      // create in this repository, real, measurable lag on every "Add"
+      // across all seven PFC record types.
       const {
-        data: { user },
-        error: userError,
-      } = await supabase.auth.getUser();
-      if (userError) return err({ kind: "network", message: userError.message });
-      if (!user) return err({ kind: "not-authenticated" });
+        data: { session },
+        error: sessionError,
+      } = await supabase.auth.getSession();
+      if (sessionError) return err({ kind: "network", message: sessionError.message });
+      if (!session) return err({ kind: "not-authenticated" });
 
       const { data, error } = await supabase
         .from(table)
-        .insert({ ...toRow(patch), product_instance_id: productInstanceId, user_id: user.id })
+        .insert({ ...toRow(patch), product_instance_id: productInstanceId, user_id: session.user.id })
         .select("*")
         .single();
 

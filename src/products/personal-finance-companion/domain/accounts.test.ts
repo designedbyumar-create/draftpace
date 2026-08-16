@@ -10,12 +10,12 @@ const mockChain = {
   maybeSingle: vi.fn(),
 };
 
-const mockGetUser = vi.fn();
+const mockGetSession = vi.fn();
 
 vi.mock("@/lib/supabase/client", () => ({
   supabase: {
     from: vi.fn(() => mockChain),
-    auth: { getUser: () => mockGetUser() },
+    auth: { getSession: () => mockGetSession() },
   },
 }));
 
@@ -27,8 +27,8 @@ function resetChain() {
   mockChain.order.mockReturnValue(mockChain);
   mockChain.insert.mockReturnValue(mockChain);
   mockChain.update.mockReturnValue(mockChain);
-  mockGetUser.mockReset();
-  mockGetUser.mockResolvedValue({ data: { user: { id: "user-1" } }, error: null });
+  mockGetSession.mockReset();
+  mockGetSession.mockResolvedValue({ data: { session: { user: { id: "user-1" } } }, error: null });
 }
 
 import { listAccounts, createAccount } from "./accounts";
@@ -170,7 +170,7 @@ describe("Accounts domain repository — row mapping round-trip", () => {
   });
 
   it("create() fails with not-authenticated rather than attempting an insert that would only fail later at the database layer, when there is no session", async () => {
-    mockGetUser.mockResolvedValue({ data: { user: null }, error: null });
+    mockGetSession.mockResolvedValue({ data: { session: null }, error: null });
 
     const result = await createAccount("instance-1", { name: "Checking" });
     expect(result.ok).toBe(false);

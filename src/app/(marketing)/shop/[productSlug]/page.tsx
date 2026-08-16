@@ -12,7 +12,18 @@ import { registerShopFixtures } from "@/shop/fixtures";
 import { registerRealShopProducts } from "@/shop/products";
 import RichSection from "./RichSection";
 import AddToLibraryButton from "../AddToLibraryButton";
-import { OverviewScreenMockup, AddInfoScreenMockup, BreakdownScreenMockup } from "./monthlyMoneyResetVisuals";
+import {
+  OverviewScreenMockup as MmrOverviewScreenMockup,
+  AddInfoScreenMockup as MmrAddInfoScreenMockup,
+  BreakdownScreenMockup as MmrBreakdownScreenMockup,
+} from "./monthlyMoneyResetVisuals";
+import {
+  OverviewScreenMockup as PfcOverviewScreenMockup,
+  GuidedCompanionScreenMockup as PfcGuidedCompanionScreenMockup,
+  AttentionScreenMockup as PfcAttentionScreenMockup,
+} from "./personalFinanceCompanionVisuals";
+import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { getLemonSqueezyCheckoutUrl, hasLemonSqueezyCheckout } from "@/shop/lemonSqueezyCheckout";
 
 /**
  * shopRegistry is populated at request time by a module-level singleton
@@ -75,11 +86,17 @@ export default async function ShopProductPage({
 
   const priceLabel = formatPrice(product);
   const structuredData = buildStructuredData(product);
-  // Bespoke mobile mockups exist for this one real product today (see
-  // monthlyMoneyResetVisuals.tsx's own doc comment for why real screenshots
-  // aren't used); every other product falls back to HeroVisual/plain text
-  // sections until it has its own.
+  // Bespoke mobile mockups exist for these two real products today (see
+  // each visuals file's own doc comment for why real screenshots aren't
+  // used); any other product falls back to HeroVisual/plain text sections
+  // until it has its own.
   const isMonthlyMoneyReset = product.slug === "monthly-money-reset";
+  const isPersonalFinanceCompanion = product.slug === "personal-finance-companion";
+
+  // Resolved once per request, server-side, so every GetAction on this page
+  // (hero, mid-page, final CTA) agrees on the exact same checkout link
+  // rather than each independently re-deriving it.
+  const checkout = await resolveCheckout(product);
 
   return (
     <>
@@ -114,14 +131,20 @@ export default async function ShopProductPage({
                 {product.promise}
               </p>
               <div className="mt-8">
-                <GetAction product={product} priceLabel={priceLabel} size="lg" />
+                <GetAction product={product} priceLabel={priceLabel} checkout={checkout} size="lg" />
               </div>
               <p className="mt-4 flex items-center gap-1.5 text-[12px] text-[var(--faint)]">
                 <Lock size={12} aria-hidden />
                 Only you can see your data. It saves to your account, on every device.
               </p>
             </div>
-            {isMonthlyMoneyReset ? <OverviewScreenMockup /> : <HeroVisual product={product} />}
+            {isMonthlyMoneyReset ? (
+              <MmrOverviewScreenMockup />
+            ) : isPersonalFinanceCompanion ? (
+              <PfcOverviewScreenMockup />
+            ) : (
+              <HeroVisual product={product} />
+            )}
           </section>
         </Container>
       </div>
@@ -144,7 +167,16 @@ export default async function ShopProductPage({
 
       {/* Movement 3: what becomes easier */}
       {product.outcomes.length > 0 && (
-        <RichSection eyebrow="What becomes easier" visual={isMonthlyMoneyReset ? <BreakdownScreenMockup /> : undefined}>
+        <RichSection
+          eyebrow="What becomes easier"
+          visual={
+            isMonthlyMoneyReset ? (
+              <MmrBreakdownScreenMockup />
+            ) : isPersonalFinanceCompanion ? (
+              <PfcAttentionScreenMockup />
+            ) : undefined
+          }
+        >
           <ul className="flex flex-col gap-3">
             {product.outcomes.map((line) => (
               <li key={line}>{line}</li>
@@ -155,7 +187,17 @@ export default async function ShopProductPage({
 
       {/* Movement 4: how it works */}
       {product.howItWorks.length > 0 && (
-        <RichSection eyebrow="How it works" visual={isMonthlyMoneyReset ? <AddInfoScreenMockup /> : undefined} reverse>
+        <RichSection
+          eyebrow="How it works"
+          visual={
+            isMonthlyMoneyReset ? (
+              <MmrAddInfoScreenMockup />
+            ) : isPersonalFinanceCompanion ? (
+              <PfcGuidedCompanionScreenMockup />
+            ) : undefined
+          }
+          reverse
+        >
           <ol className="flex flex-col gap-3.5">
             {product.howItWorks.map((step, index) => (
               <li key={step} className="flex items-start gap-3">
@@ -227,7 +269,7 @@ export default async function ShopProductPage({
             </p>
             {product.access === "paid" && <p className="mt-1.5 text-[12px] text-[var(--muted)]">One-time. Yours to keep.</p>}
           </div>
-          <GetAction product={product} priceLabel={priceLabel} size="lg" />
+          <GetAction product={product} priceLabel={priceLabel} checkout={checkout} size="lg" />
         </div>
       </section>
 
@@ -268,24 +310,56 @@ export default async function ShopProductPage({
 
       {/* Final CTA */}
       <section className="mt-14 border-t border-[var(--border)] pt-10 text-center">
-        <GetAction product={product} priceLabel={priceLabel} size="lg" center />
+        <GetAction product={product} priceLabel={priceLabel} checkout={checkout} size="lg" center />
       </section>
       </Container>
     </>
   );
 }
 
-/** The get action. Free adds to the library; paid links to the external
- * checkout (wired to Lemon Squeezy later via purchaseAction.href). A
+/**
+ * Resolved once per request (not per GetAction instance, of which a page
+ * can have three) so the hero, mid-page, and final CTA all agree on the
+ * exact same checkout link. "signed-out" only fires when a real checkout
+ * URL is actually configured: an unauthenticated visitor should never be
+ * sent to sign up for a purchase that isn't live yet.
+ */
+type CheckoutStatus =
+  | { kind: "not-applicable" }
+  | { kind: "not-configured" }
+  | { kind: "signed-out"; redirectTo: string }
+  | { kind: "ready"; href: string };
+
+async function resolveCheckout(product: ShopProduct): Promise<CheckoutStatus> {
+  if (product.access !== "paid" || product.purchaseAction?.href) return { kind: "not-applicable" };
+  if (!hasLemonSqueezyCheckout(product.slug)) return { kind: "not-configured" };
+
+  const supabase = await createSupabaseServerClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) {
+    return { kind: "signed-out", redirectTo: `/signup?redirectTo=${encodeURIComponent(`/shop/${product.slug}`)}` };
+  }
+
+  const href = getLemonSqueezyCheckoutUrl(product.slug, { userId: user.id, email: user.email ?? null });
+  return href ? { kind: "ready", href } : { kind: "not-configured" };
+}
+
+/** The get action. Free adds to the library; paid links to the real Lemon
+ * Squeezy checkout once it's configured and the visitor is signed in. A
  * coming-soon product shows a disabled state instead of a live action. */
 function GetAction({
   product,
   priceLabel,
+  checkout,
   size = "md",
   center = false,
 }: {
   product: ShopProduct;
   priceLabel: string;
+  checkout: CheckoutStatus;
   size?: "sm" | "md" | "lg";
   center?: boolean;
 }) {
@@ -302,20 +376,6 @@ function GetAction({
 
   const label =
     product.purchaseAction?.label ?? (product.access === "free" ? "Add to your library, free" : `Get it, ${priceLabel}`);
-  const href = product.purchaseAction?.href;
-
-  // Paid products get their checkout URL later; until then, the action is not
-  // yet live and is shown as pending rather than a dead link.
-  if (product.access === "paid" && !href) {
-    return (
-      <div className={center ? "inline-flex flex-col items-center gap-1.5" : "flex flex-col gap-1.5"}>
-        <Button size={size} disabled iconRight={<ArrowRight size={15} aria-hidden />}>
-          {label}
-        </Button>
-        <p className="text-[12px] text-[var(--faint)]">Checkout opens soon.</p>
-      </div>
-    );
-  }
 
   // A free product's own Shop page has already made the full case for it.
   // Posting straight to the activation endpoint (the same one
@@ -329,10 +389,43 @@ function GetAction({
     return <AddToLibraryButton slug={product.slug} label={label} size={size} />;
   }
 
+  // Paid, with a static href already set on the listing itself (e.g. a
+  // future non-Lemon-Squeezy checkout), unrelated to per-visitor checkout
+  // resolution, so it always wins if present.
+  if (product.purchaseAction?.href) {
+    return (
+      <Button href={product.purchaseAction.href} size={size} iconRight={<ArrowRight size={15} aria-hidden />}>
+        {label}
+      </Button>
+    );
+  }
+
+  if (checkout.kind === "ready") {
+    return (
+      <Button href={checkout.href} size={size} iconRight={<ArrowRight size={15} aria-hidden />}>
+        {label}
+      </Button>
+    );
+  }
+
+  if (checkout.kind === "signed-out") {
+    return (
+      <Button href={checkout.redirectTo} size={size} iconRight={<ArrowRight size={15} aria-hidden />}>
+        {label}
+      </Button>
+    );
+  }
+
+  // Checkout isn't configured yet (Lemon Squeezy product/checkout link not
+  // created), or this product isn't paid at all: shown as pending rather
+  // than a dead or fake link.
   return (
-    <Button href={href ?? `/app/activate/${product.slug}`} size={size} iconRight={<ArrowRight size={15} aria-hidden />}>
-      {label}
-    </Button>
+    <div className={center ? "inline-flex flex-col items-center gap-1.5" : "flex flex-col gap-1.5"}>
+      <Button size={size} disabled iconRight={<ArrowRight size={15} aria-hidden />}>
+        {label}
+      </Button>
+      <p className="text-[12px] text-[var(--faint)]">Checkout opens soon.</p>
+    </div>
   );
 }
 

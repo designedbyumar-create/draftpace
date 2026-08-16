@@ -345,21 +345,37 @@ export default function WorkspaceModule({ definition }: { definition?: ProductDe
         </div>
 
         <div className="flex flex-col gap-6">
+          {/* The one dominant figure, same weight-class as MMR's Safe-to-Spend
+              hero, using platform tokens rather than a generic flat Surface.
+              This is the same figure the guided tour already calls out as
+              the one that matters most; it just never had visual weight to
+              match until now. */}
           {availableMoney && (
-            <Surface id="pfc-tour-available-money" elevated>
-              <div className="flex items-center justify-between">
-                <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[var(--faint)]">{availableMoney.label}</p>
-                <Badge tone={STATUS_TONE[availableMoney.status]}>
+            <div
+              id="pfc-tour-available-money"
+              className="rounded-[var(--radius)] bg-[var(--primary)] p-6 text-[var(--primary-contrast)] shadow-[var(--shadow-soft)] sm:p-7"
+            >
+              <div className="flex items-center justify-between gap-3">
+                <p className="text-[11px] font-bold uppercase tracking-[0.14em] opacity-70">{availableMoney.label}</p>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.08em] opacity-70">
                   {availableMoney.status === "waiting" ? "Waiting" : availableMoney.status === "needsInfo" ? availableMoney.detail : "Ready"}
-                </Badge>
+                </p>
               </div>
-              <p className="mt-1.5 text-[30px] font-semibold tabular-nums text-[var(--text)]">
+              <p className="mt-2 font-serif text-[40px] font-semibold leading-none tabular-nums sm:text-[48px]">
                 {availableMoney.valueMinorUnits !== null ? formatCurrency(availableMoney.valueMinorUnits, "USD") : "—"}
               </p>
               {availableMoney.explain && (
-                <ExplainBreakdown breakdown={availableMoney.explain} currency="USD" label={availableMoney.label} valueMinorUnits={availableMoney.valueMinorUnits ?? 0} />
+                <div className="mt-4 border-t border-white/15 pt-3">
+                  <ExplainBreakdown
+                    breakdown={availableMoney.explain}
+                    currency="USD"
+                    label={availableMoney.label}
+                    valueMinorUnits={availableMoney.valueMinorUnits ?? 0}
+                    variant="dark"
+                  />
+                </div>
               )}
-            </Surface>
+            </div>
           )}
 
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
