@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 import { AnimatePresence, motion } from "framer-motion";
 import Badge from "@/design-system/Badge";
 import Button from "@/design-system/Button";
@@ -28,10 +29,13 @@ import SessionRecap, { type SessionChange } from "./SessionRecap";
 import ReminderConsentPrompt from "./ReminderConsentPrompt";
 import PasteNotesStep from "./import/PasteNotesStep";
 import TextFileStep from "./import/TextFileStep";
-import CsvImportFlow from "./import/CsvImportFlow";
 import CandidateReviewQueue from "./import/CandidateReviewQueue";
 import type { ExtractionCandidate } from "../../import/types";
 import { listUnreviewedGroupedBySession } from "../../domain/extractionCandidates";
+
+// Loaded on demand, not in every Companion page's initial bundle - most
+// visitors never open the CSV import sub-flow.
+const CsvImportFlow = dynamic(() => import("./import/CsvImportFlow"));
 
 type ImportFlow = "notes" | "textFile" | "csv" | "review" | null;
 type ImportSource = "pastedNotes" | "textFile" | "csvImport";

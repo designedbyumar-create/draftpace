@@ -1,6 +1,4 @@
 /* stylelint-disable */
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -207,7 +205,7 @@ html[data-theme="dark"] {
 body {
   background-color: var(--app-bg);
   color: var(--text);
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
   /* Crisper, more premium text rendering. */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
