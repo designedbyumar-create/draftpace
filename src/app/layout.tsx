@@ -6,6 +6,12 @@ import { fraunces, inter, spaceMono } from "@/lib/fonts";
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  // Lets env(safe-area-inset-*) resolve to the device's real notch/home-
+  // indicator insets instead of 0 on iOS. A few bottom-sheet components
+  // already used env(safe-area-inset-bottom) correctly, but it was
+  // unreliable without this, and nothing accounted for the top inset at
+  // all - ProductShell's mobile app-bar sits flush under the notch.
+  viewportFit: "cover",
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#f4f2ec" },
     { media: "(prefers-color-scheme: dark)", color: "#100f0c" },
