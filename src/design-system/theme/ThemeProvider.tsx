@@ -35,13 +35,15 @@ function resolveTheme(theme: ThemeMode, systemPrefersDark: boolean): ResolvedThe
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<ThemeMode>("system");
-  const [systemPrefersDark, setSystemPrefersDark] = useState(false);
+  // Lazy initializers so first render already matches what the blocking
+  // inline script in app/layout.tsx set on <html> before hydration - a
+  // hardcoded "system"/false here would still be visually correct (the DOM
+  // attribute is already right), but would cause React's first effect run
+  // below to immediately re-fire a state update for no reason.
+  const [theme, setThemeState] = useState<ThemeMode>(getInitialTheme);
+  const [systemPrefersDark, setSystemPrefersDark] = useState(getSystemPrefersDark);
 
   useEffect(() => {
-    setThemeState(getInitialTheme());
-    setSystemPrefersDark(getSystemPrefersDark());
-
     const media = window.matchMedia(DARK_MEDIA_QUERY);
     const onChange = (event: MediaQueryListEvent) => setSystemPrefersDark(event.matches);
     media.addEventListener("change", onChange);

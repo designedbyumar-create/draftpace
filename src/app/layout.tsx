@@ -58,10 +58,21 @@ export const metadata: Metadata = {
     : {}),
 };
 
+// Runs synchronously before hydration, before the browser paints anything
+// else in <body>. Without this, the page paints once with no data-theme
+// attribute (light, or dark only if the OS itself prefers dark), then
+// ThemeProvider's own useEffect corrects it after mount - visible as a
+// flash to dark or light for a frame on every load whenever the stored
+// preference disagrees with the OS default. Keep this in sync with
+// ThemeProvider.tsx's STORAGE_KEY and resolution logic; they must compute
+// the same result from the same localStorage value.
+const THEME_INIT_SCRIPT = `(function(){try{var s=localStorage.getItem("draftpace-theme");var t=(s==="light"||s==="dark"||s==="system")?s:"system";var r=t==="system"?(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"):t;document.documentElement.dataset.theme=t;document.documentElement.style.colorScheme=r;}catch(e){}})();`;
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
         <AppProviders>
           {children}
         </AppProviders>
