@@ -4,6 +4,7 @@ import { productRegistry } from "@/product-framework/registry";
 import { registerDevFixtures } from "@/product-framework/fixtures";
 import { ensureProductsRegistered } from "@/products/manifest";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { getCachedUser } from "@/lib/supabase/getCachedUser";
 import { currentCycleKey } from "@/product-framework/cycle";
 import type { InstanceLifecycleSignal } from "@/product-framework/navigationResolver";
 import ProductShell from "@/components/product-shell/ProductShell";
@@ -89,7 +90,7 @@ export default async function ProductLayout({
   const supabase = await createSupabaseServerClient();
   const {
     data: { user },
-  } = await supabase.auth.getUser();
+  } = await getCachedUser();
 
   // src/proxy.ts already guarantees a session for every /app/** request;
   // this is defense in depth, not the primary gate.

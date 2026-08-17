@@ -105,11 +105,11 @@ export async function createUserReminder(
   input: { entityType?: FinancialArea; entityId?: string; note: string; schedule: ReminderSchedule; nextEligibleAt: string }
 ): Promise<Result<ReminderMetadata>> {
   const {
-    data: { user },
-    error: userError,
-  } = await supabase.auth.getUser();
-  if (userError) return err({ kind: "network", message: userError.message });
-  if (!user) return err({ kind: "not-authenticated" });
+    data: { session },
+    error: sessionError,
+  } = await supabase.auth.getSession();
+  if (sessionError) return err({ kind: "network", message: sessionError.message });
+  if (!session) return err({ kind: "not-authenticated" });
 
   const dedupeKey = `userCreated:${crypto.randomUUID()}`;
 
@@ -117,7 +117,7 @@ export async function createUserReminder(
     .from("pfc_reminders")
     .insert({
       product_instance_id: productInstanceId,
-      user_id: user.id,
+      user_id: session.user.id,
       entity_type: input.entityType ?? null,
       entity_id: input.entityId ?? null,
       kind: "userCreated",

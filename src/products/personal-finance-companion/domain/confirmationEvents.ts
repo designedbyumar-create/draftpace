@@ -10,17 +10,17 @@ export async function recordConfirmationEvent(
   input: { candidateId: string | null; recordType: string; recordId: string; action: ConfirmationAction; previousValue?: unknown; newValue?: unknown }
 ): Promise<Result<ConfirmationEvent>> {
   const {
-    data: { user },
-    error: userError,
-  } = await supabase.auth.getUser();
-  if (userError) return err({ kind: "network", message: userError.message });
-  if (!user) return err({ kind: "not-authenticated" });
+    data: { session },
+    error: sessionError,
+  } = await supabase.auth.getSession();
+  if (sessionError) return err({ kind: "network", message: sessionError.message });
+  if (!session) return err({ kind: "not-authenticated" });
 
   const { data, error } = await supabase
     .from("pfc_confirmation_events")
     .insert({
       product_instance_id: productInstanceId,
-      user_id: user.id,
+      user_id: session.user.id,
       candidate_id: input.candidateId,
       record_type: input.recordType,
       record_id: input.recordId,

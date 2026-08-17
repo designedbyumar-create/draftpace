@@ -40,17 +40,17 @@ export async function createImportSession(
   input: { inputType: ImportInputType; fileOriginalName?: string; fileSizeBytes?: number; fileMimeType?: string }
 ): Promise<Result<ImportSession>> {
   const {
-    data: { user },
-    error: userError,
-  } = await supabase.auth.getUser();
-  if (userError) return err({ kind: "network", message: userError.message });
-  if (!user) return err({ kind: "not-authenticated" });
+    data: { session },
+    error: sessionError,
+  } = await supabase.auth.getSession();
+  if (sessionError) return err({ kind: "network", message: sessionError.message });
+  if (!session) return err({ kind: "not-authenticated" });
 
   const { data, error } = await supabase
     .from("pfc_import_sessions")
     .insert({
       product_instance_id: productInstanceId,
-      user_id: user.id,
+      user_id: session.user.id,
       input_type: input.inputType,
       file_original_name: input.fileOriginalName ?? null,
       file_size_bytes: input.fileSizeBytes ?? null,

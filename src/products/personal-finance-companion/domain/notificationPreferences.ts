@@ -57,18 +57,18 @@ export async function saveNotificationPreferences(
   preferences: PersonalFinanceCompanionNotificationPreferences
 ): Promise<Result<PersonalFinanceCompanionNotificationPreferences>> {
   const {
-    data: { user },
-    error: userError,
-  } = await supabase.auth.getUser();
-  if (userError) return err({ kind: "network", message: userError.message });
-  if (!user) return err({ kind: "not-authenticated" });
+    data: { session },
+    error: sessionError,
+  } = await supabase.auth.getSession();
+  if (sessionError) return err({ kind: "network", message: sessionError.message });
+  if (!session) return err({ kind: "not-authenticated" });
 
   const { data, error } = await supabase
     .from("pfc_notification_preferences")
     .upsert(
       {
         product_instance_id: productInstanceId,
-        user_id: user.id,
+        user_id: session.user.id,
         categories: preferences.categories,
         privacy_level: preferences.privacyLevel,
         review_rhythm: preferences.reviewRhythm,

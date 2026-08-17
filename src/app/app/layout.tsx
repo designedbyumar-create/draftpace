@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
-import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { getCachedUser } from "@/lib/supabase/getCachedUser";
 import { SessionProvider } from "@/design-system/shell/SessionProvider";
 import { registerDevFixtures } from "@/product-framework/fixtures";
 import { ensureProductsRegistered } from "@/products/manifest";
@@ -13,10 +13,9 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   registerDevFixtures();
   ensureProductsRegistered();
 
-  const supabase = await createSupabaseServerClient();
   const {
     data: { user },
-  } = await supabase.auth.getUser();
+  } = await getCachedUser();
 
   // Defense in depth — src/proxy.ts already verifies this for every /app/*
   // request before it reaches here.

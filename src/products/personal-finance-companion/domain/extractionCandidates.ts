@@ -52,11 +52,11 @@ export async function createExtractionCandidates(
   drafts: (CandidateDraft & { duplicateStatus?: DuplicateStatus; duplicateOfId?: string | null })[]
 ): Promise<Result<ExtractionCandidate[]>> {
   const {
-    data: { user },
-    error: userError,
-  } = await supabase.auth.getUser();
-  if (userError) return err({ kind: "network", message: userError.message });
-  if (!user) return err({ kind: "not-authenticated" });
+    data: { session },
+    error: sessionError,
+  } = await supabase.auth.getSession();
+  if (sessionError) return err({ kind: "network", message: sessionError.message });
+  if (!session) return err({ kind: "not-authenticated" });
 
   if (drafts.length === 0) return ok([]);
 
@@ -65,7 +65,7 @@ export async function createExtractionCandidates(
     .insert(
       drafts.map((draft) => ({
         product_instance_id: productInstanceId,
-        user_id: user.id,
+        user_id: session.user.id,
         import_session_id: importSessionId,
         candidate_type: draft.candidateType,
         payload: draft.payload,
