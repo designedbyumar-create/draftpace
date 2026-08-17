@@ -3,8 +3,8 @@ import { ArrowRight } from "@/design-system/Icon";
 import type { ButtonSize } from "@/design-system/Button";
 
 /**
- * The one real "get" action for a free product, shared between the Store
- * list (FeaturedProduct in shop/page.tsx) and the product page (GetAction
+ * The one real "get" action for a free product, shared between the Shop
+ * list (ShopProductCard in shop/page.tsx) and the product page (GetAction
  * in shop/[productSlug]/page.tsx) so there's exactly one place that knows
  * how a free product is added: a plain POST straight to the activation
  * endpoint, the same one /app/activate/[productSlug]'s own <form> posts to.

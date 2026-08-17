@@ -67,3 +67,17 @@ export type ShopProduct = z.infer<typeof shopProductSchema>;
 export function validateShopProduct(input: unknown): ShopProduct {
   return shopProductSchema.parse(input);
 }
+
+/**
+ * The one place that decides how a listing's price reads, shared between
+ * the Shop index cards and the product detail page so the two can never
+ * disagree on wording (e.g. a paid listing with no price set yet always
+ * says "Price not yet set", never a fabricated "$0.00").
+ */
+export function formatPrice(product: ShopProduct): string {
+  if (product.access === "free") return "Free";
+  if (!product.price) return "Price not yet set";
+  return new Intl.NumberFormat("en-US", { style: "currency", currency: product.price.currency }).format(
+    product.price.amount
+  );
+}

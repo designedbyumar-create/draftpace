@@ -10,12 +10,12 @@ import AccountMenu from "@/components/account/AccountMenu";
 import { publicSignedInAccountMenuItems } from "@/components/account/accountMenuItems";
 import { signOutAndRedirect } from "@/lib/supabase/signOut";
 
-// App-style, product-forward navigation: the Store is the front door, "How it
+// App-style, product-forward navigation: the Shop is the front door, "How it
 // works" is the single education entry, and everything else lives in the
 // footer. The old "What do you need help with?" funnel is retired. See
 // docs/DRAFTPACE-APP-EXPERIENCE-DESIGN.md §3.
 const LINKS = [
-  { href: "/shop", label: "Store" },
+  { href: "/shop", label: "Shop" },
   { href: "/how-it-works", label: "How it works" },
   { href: "/about", label: "About" },
 ];

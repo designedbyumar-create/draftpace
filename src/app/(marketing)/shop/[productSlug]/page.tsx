@@ -7,7 +7,7 @@ import Badge from "@/design-system/Badge";
 import Button from "@/design-system/Button";
 import { ArrowRight, Check, Lock, X } from "@/design-system/Icon";
 import { shopRegistry } from "@/shop/registry";
-import type { ShopProduct } from "@/shop/definition";
+import { formatPrice, type ShopProduct } from "@/shop/definition";
 import { ensureShopRegistered } from "@/shop/ensureRegistered";
 import RichSection from "./RichSection";
 import AddToLibraryButton from "../AddToLibraryButton";
@@ -93,7 +93,7 @@ export default async function ShopProductPage({
         <Container width="wide" className="relative pb-16 pt-14 sm:pb-20 sm:pt-16">
           {product.devFixture && (
             <div className="mb-6 rounded-lg bg-[var(--surface-muted)] px-4 py-2.5 text-[12px] font-semibold text-[var(--muted)]">
-              Internal Store preview. This listing does not describe a real product.
+              Internal Shop preview. This listing does not describe a real product.
             </div>
           )}
           <section className="grid gap-10 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] sm:items-center sm:gap-8 lg:gap-14">
@@ -454,14 +454,6 @@ function HeroVisual({ product }: { product: ShopProduct }) {
         A real view of {product.title} in use goes here, showing the main result the product produces.
       </p>
     </div>
-  );
-}
-
-function formatPrice(product: ShopProduct): string {
-  if (product.access === "free") return "Free";
-  if (!product.price) return "Price not yet set";
-  return new Intl.NumberFormat("en-US", { style: "currency", currency: product.price.currency }).format(
-    product.price.amount
   );
 }
 

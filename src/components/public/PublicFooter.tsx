@@ -4,7 +4,7 @@ import ThemeToggle from "@/design-system/theme/ThemeToggle";
 
 const HELP_LINKS = [
   { href: "/help-with", label: "What do you need help with?" },
-  { href: "/shop", label: "Store" },
+  { href: "/shop", label: "Shop" },
   { href: "/how-it-works", label: "How it works" },
   { href: "/guides", label: "Guides" },
 ];
