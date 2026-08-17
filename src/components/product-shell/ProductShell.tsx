@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { motion, useReducedMotion } from "framer-motion";
 import { ProductDefinition } from "@/product-framework/definition";
 import { resolveLifecycleNavigation, type InstanceLifecycleSignal } from "@/product-framework/navigationResolver";
 import { familyRegistry } from "@/product-framework/families";
@@ -48,6 +49,7 @@ export default function ProductShell({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
+  const reduceMotion = useReducedMotion();
   const user = useSession();
   const family = familyRegistry.get(definition.family);
   const { primary, secondary } = resolveLifecycleNavigation(definition, instanceSignal);
@@ -231,7 +233,24 @@ export default function ProductShell({
         </div>
       </nav>
 
-      <main className={`mx-auto w-full px-4 py-8 sm:px-6 ${widthClass}`}>{children}</main>
+      <main className={`mx-auto w-full px-4 py-8 sm:px-6 ${widthClass}`}>
+        {/* Keyed on pathname so React remounts this on every route change,
+            re-triggering the mount animation below - no AnimatePresence
+            exit here deliberately: Next already unmounts the old page's
+            DOM on navigation, so there's nothing to visually exit, and an
+            exit-then-enter sequence would just add a real delay on top of
+            the page's own data-loading time. Same mount-triggered pattern
+            as RichSection/LivingAnatomy elsewhere in this codebase, not
+            whileInView, for the same reliability reason documented there. */}
+        <motion.div
+          key={pathname}
+          initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+        >
+          {children}
+        </motion.div>
+      </main>
     </div>
   );
 }
