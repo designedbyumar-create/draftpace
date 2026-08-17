@@ -35,7 +35,7 @@ export default function HowItWorksPage() {
           The example above uses Monthly Money Reset, the first product on the shelf. Every product behaves like
           this in its own way. When a new one is ready, it shows up in the{" "}
           <Link href="/shop" className="font-semibold text-[var(--primary)] hover:underline">
-            store
+            shop
           </Link>
           .
         </p>
