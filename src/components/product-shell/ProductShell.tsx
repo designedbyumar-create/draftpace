@@ -16,6 +16,7 @@ import AccountMenu from "@/components/account/AccountMenu";
 import { appAccountMenuItems } from "@/components/account/accountMenuItems";
 import { signOutAndRedirect } from "@/lib/supabase/signOut";
 import { useSession } from "@/design-system/shell/SessionProvider";
+import { useStandaloneMode } from "@/lib/pwa/hooks";
 
 /**
  * The universal product shell. Works for any family: renders whichever
@@ -50,6 +51,7 @@ export default function ProductShell({
 }) {
   const pathname = usePathname();
   const reduceMotion = useReducedMotion();
+  const standalone = useStandaloneMode();
   const user = useSession();
   const family = familyRegistry.get(definition.family);
   const { primary, secondary } = resolveLifecycleNavigation(definition, instanceSignal);
@@ -77,7 +79,9 @@ export default function ProductShell({
           row grows to clear a notch instead of squeezing existing content
           under it. */}
       <div
-        className="flex min-h-14 items-center gap-2 border-b border-[var(--border)] bg-[var(--surface)] px-3 lg:hidden"
+        className={`flex items-center gap-2 border-b border-[var(--border)] bg-[var(--surface)] px-3 lg:hidden ${
+          standalone ? "min-h-11" : "min-h-14"
+        }`}
         style={{ paddingTop: "env(safe-area-inset-top)" }}
       >
         <Link
