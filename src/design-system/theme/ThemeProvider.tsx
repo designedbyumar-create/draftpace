@@ -35,15 +35,23 @@ function resolveTheme(theme: ThemeMode, systemPrefersDark: boolean): ResolvedThe
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  // Lazy initializers so first render already matches what the blocking
-  // inline script in app/layout.tsx set on <html> before hydration - a
-  // hardcoded "system"/false here would still be visually correct (the DOM
-  // attribute is already right), but would cause React's first effect run
-  // below to immediately re-fire a state update for no reason.
-  const [theme, setThemeState] = useState<ThemeMode>(getInitialTheme);
-  const [systemPrefersDark, setSystemPrefersDark] = useState(getSystemPrefersDark);
+  // Must start at the same value the server rendered ("system"/false),
+  // not a lazily-read localStorage value: the server has no localStorage,
+  // so a client-only initial value here would mismatch the server-rendered
+  // HTML on the very first hydration pass, breaking any descendant that
+  // renders differently per theme (e.g. ThemeToggle's aria-checked). The
+  // blocking inline script in app/layout.tsx already sets the *visual*
+  // data-theme attribute on <html> before paint - this effect only needs
+  // to bring React's own state in sync afterward, which happens in a
+  // single extra client-only render immediately after hydration and is
+  // never visible (the DOM already looked right for that whole time).
+  const [theme, setThemeState] = useState<ThemeMode>("system");
+  const [systemPrefersDark, setSystemPrefersDark] = useState(false);
 
   useEffect(() => {
+    setThemeState(getInitialTheme());
+    setSystemPrefersDark(getSystemPrefersDark());
+
     const media = window.matchMedia(DARK_MEDIA_QUERY);
     const onChange = (event: MediaQueryListEvent) => setSystemPrefersDark(event.matches);
     media.addEventListener("change", onChange);
