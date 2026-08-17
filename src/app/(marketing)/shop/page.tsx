@@ -7,6 +7,7 @@ import Button from "@/design-system/Button";
 import { ArrowRight } from "@/design-system/Icon";
 import { shopRegistry } from "@/shop/registry";
 import type { ShopProduct } from "@/shop/definition";
+import { ensureShopRegistered } from "@/shop/ensureRegistered";
 import { NEEDS } from "@/content/needs";
 import AddToLibraryButton from "./AddToLibraryButton";
 
@@ -15,6 +16,8 @@ export const metadata: Metadata = {
   description: "Find the one product that fits your situation. Every product is built around one specific problem.",
   alternates: { canonical: "/shop" },
 };
+
+export const dynamic = "force-dynamic";
 
 /**
  * The Store front door. Product-forward and threshold-aware: with a few
@@ -30,6 +33,7 @@ function categoryLabel(product: ShopProduct): string | null {
 }
 
 export default function ShopIndexPage() {
+  ensureShopRegistered();
   const products = shopRegistry.listPublished();
   const useGrid = products.length >= CATEGORY_GRID_THRESHOLD;
 

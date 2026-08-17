@@ -6,6 +6,9 @@ import Button from "@/design-system/Button";
 import { ArrowRight, Check } from "@/design-system/Icon";
 import { NEEDS, getNeedBySlug } from "@/content/needs";
 import { shopRegistry } from "@/shop/registry";
+import { ensureShopRegistered } from "@/shop/ensureRegistered";
+
+export const dynamic = "force-dynamic";
 
 export function generateStaticParams() {
   return NEEDS.map((need) => ({ needSlug: need.slug }));
@@ -31,6 +34,7 @@ export default async function HelpWithNeedPage({
 }: {
   params: Promise<{ needSlug: string }>;
 }) {
+  ensureShopRegistered();
   const { needSlug } = await params;
   const need = getNeedBySlug(needSlug);
   if (!need) notFound();

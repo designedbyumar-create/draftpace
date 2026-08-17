@@ -8,8 +8,7 @@ import Button from "@/design-system/Button";
 import { ArrowRight, Check, Lock, X } from "@/design-system/Icon";
 import { shopRegistry } from "@/shop/registry";
 import type { ShopProduct } from "@/shop/definition";
-import { registerShopFixtures } from "@/shop/fixtures";
-import { registerRealShopProducts } from "@/shop/products";
+import { ensureShopRegistered } from "@/shop/ensureRegistered";
 import RichSection from "./RichSection";
 import AddToLibraryButton from "../AddToLibraryButton";
 import {
@@ -24,25 +23,6 @@ import {
 } from "./personalFinanceCompanionVisuals";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { getLemonSqueezyCheckoutUrl, hasLemonSqueezyCheckout } from "@/shop/lemonSqueezyCheckout";
-
-/**
- * shopRegistry is populated at request time by a module-level singleton
- * (registerRealShopProducts()). The marketing layout already calls this
- * before rendering any child route, but that's a cross-file ordering
- * assumption this route shouldn't have to trust blindly. Both
- * registration calls are idempotent (guarded by their own `registered`
- * flag), so calling them again here directly is cheap and makes every
- * function in this file self-sufficient regardless of layout execution
- * order. Combined with force-dynamic below (this route has no build-time
- * data source, so without it Next.js can cache a stale not-found shell or
- * race a cold serverless instance whose module state hasn't registered
- * yet), this closes the "hard refresh always works, client-side nav
- * occasionally 404s" bug reported live on production.
- */
-function ensureShopRegistered(): void {
-  registerShopFixtures();
-  registerRealShopProducts();
-}
 
 export const dynamic = "force-dynamic";
 
