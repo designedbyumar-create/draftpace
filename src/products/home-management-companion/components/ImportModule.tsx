@@ -9,10 +9,10 @@ import EmptyState from "@/design-system/EmptyState";
 import { Article, ArrowLeft, Download, ListChecks } from "@/design-system/Icon";
 import { describeResultError } from "@/product-framework/result";
 import { findHomeManagementCompanionInstanceId } from "../setupStateData";
-import { listAppliances } from "../domain/appliances";
+import { listThings } from "../domain/things";
 import { listMaintenanceTasks } from "../domain/maintenanceTasks";
 import { listServiceProviders } from "../domain/serviceProviders";
-import type { Appliance, MaintenanceTask, ServiceProvider } from "../state";
+import type { Thing, MaintenanceTask, ServiceProvider } from "../state";
 import type { ConfirmationSource, ExtractionCandidate } from "../import/types";
 import PasteNotesStep from "./import/PasteNotesStep";
 import TextFileStep from "./import/TextFileStep";
@@ -33,7 +33,7 @@ export default function ImportModule() {
   const [status, setStatus] = useState<LoadStatus>("loading");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [instanceId, setInstanceId] = useState<string | null>(null);
-  const [appliances, setAppliances] = useState<Appliance[]>([]);
+  const [things, setThings] = useState<Thing[]>([]);
   const [maintenanceTasks, setMaintenanceTasks] = useState<MaintenanceTask[]>([]);
   const [serviceProviders, setServiceProviders] = useState<ServiceProvider[]>([]);
 
@@ -57,18 +57,18 @@ export default function ImportModule() {
       return;
     }
     setInstanceId(found.id);
-    const [appliancesResult, tasksResult, providersResult] = await Promise.all([
-      listAppliances(found.id),
+    const [thingsResult, tasksResult, providersResult] = await Promise.all([
+      listThings(found.id),
       listMaintenanceTasks(found.id),
       listServiceProviders(found.id),
     ]);
-    const failed = [appliancesResult, tasksResult, providersResult].find((r) => !r.ok);
+    const failed = [thingsResult, tasksResult, providersResult].find((r) => !r.ok);
     if (failed && !failed.ok) {
       setErrorMessage(describeResultError(failed.error));
       setStatus("error");
       return;
     }
-    setAppliances(appliancesResult.ok ? appliancesResult.data : []);
+    setThings(thingsResult.ok ? thingsResult.data : []);
     setMaintenanceTasks(tasksResult.ok ? tasksResult.data : []);
     setServiceProviders(providersResult.ok ? providersResult.data : []);
     setStatus("ready");
@@ -181,7 +181,7 @@ export default function ImportModule() {
         <CandidateReviewQueue
           instanceId={instanceId}
           candidates={candidates}
-          existing={{ appliances, maintenanceTasks, serviceProviders }}
+          existing={{ things, maintenanceTasks, serviceProviders }}
           importSessionId={importSessionId ?? ""}
           source={source}
           onCandidateResolved={handleCandidateResolved}
@@ -208,8 +208,8 @@ export default function ImportModule() {
         >
           Import more
         </Button>
-        <Button size="md" onClick={() => router.push("/app/products/home-management-companion/records")}>
-          Go to Records
+        <Button size="md" onClick={() => router.push("/app/products/home-management-companion/things")}>
+          Go to Things
         </Button>
       </div>
     </Surface>

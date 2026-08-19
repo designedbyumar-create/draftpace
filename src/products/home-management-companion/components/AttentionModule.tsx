@@ -9,7 +9,7 @@ import EmptyState from "@/design-system/EmptyState";
 import { Bell, WarningCircle, CheckCircle2 } from "@/design-system/Icon";
 import { describeResultError } from "@/product-framework/result";
 import { findHomeManagementCompanionInstanceId } from "../setupStateData";
-import { listAppliances } from "../domain/appliances";
+import { listThings } from "../domain/things";
 import { listMaintenanceTasks, markMaintenanceTaskDone } from "../domain/maintenanceTasks";
 import { listProblems } from "../domain/problems";
 import { deriveAttentionItems, type AttentionInputs, type AttentionItem } from "../attention";
@@ -46,13 +46,13 @@ export default function AttentionModule() {
       return;
     }
     setInstanceId(found.id);
-    const [appliancesResult, tasksResult, problemsResult] = await Promise.all([
-      listAppliances(found.id),
+    const [thingsResult, tasksResult, problemsResult] = await Promise.all([
+      listThings(found.id),
       listMaintenanceTasks(found.id),
       listProblems(found.id),
     ]);
-    if (!appliancesResult.ok) {
-      setErrorMessage(describeResultError(appliancesResult.error));
+    if (!thingsResult.ok) {
+      setErrorMessage(describeResultError(thingsResult.error));
       setStatus("error");
       return;
     }
@@ -66,7 +66,7 @@ export default function AttentionModule() {
       setStatus("error");
       return;
     }
-    setRecords({ appliances: appliancesResult.data, maintenanceTasks: tasksResult.data, problems: problemsResult.data });
+    setRecords({ things: thingsResult.data, maintenanceTasks: tasksResult.data, problems: problemsResult.data });
     setTasksById(new Map(tasksResult.data.map((task) => [task.id, task])));
     setStatus("ready");
   }, []);

@@ -23,7 +23,7 @@ export interface ReminderCandidate {
 
 const ENTITY_TYPE_BY_KIND: Record<HomeManagementCompanionReminderKind, ReminderEntityType> = {
   maintenanceDue: "maintenanceTask",
-  warrantyExpiring: "appliance",
+  warrantyExpiring: "thing",
   problem: "problem",
 };
 

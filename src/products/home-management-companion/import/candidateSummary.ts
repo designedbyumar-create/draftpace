@@ -1,5 +1,5 @@
 import type {
-  ApplianceCandidatePayload,
+  ThingCandidatePayload,
   ExtractionCandidate,
   MaintenanceTaskCandidatePayload,
   ServiceProviderCandidatePayload,
@@ -13,7 +13,7 @@ import type {
  */
 
 export const CANDIDATE_TYPE_LABEL: Record<ExtractionCandidate["candidateType"], string> = {
-  appliance: "appliance",
+  thing: "thing",
   maintenanceTask: "maintenance task",
   serviceProvider: "service provider",
   unsupported: "unrecognized entry",
@@ -38,8 +38,8 @@ export interface CandidateSummaryLine {
 
 export function summarizeCandidate(candidate: ExtractionCandidate): CandidateSummaryLine {
   switch (candidate.candidateType) {
-    case "appliance": {
-      const p = candidate.payload as ApplianceCandidatePayload;
+    case "thing": {
+      const p = candidate.payload as ThingCandidatePayload;
       const lines: string[] = [];
       lines.push(p.warrantyExpiresAt ? `Warranty expires ${p.warrantyExpiresAt}` : "No warranty date found");
       if (p.purchaseDate) lines.push(`Purchased ${p.purchaseDate}`);

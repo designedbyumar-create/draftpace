@@ -11,16 +11,16 @@ import { summarizeCandidate, CANDIDATE_TYPE_LABEL } from "../../import/candidate
 import { detectDuplicateByName, type ComparableRecord } from "../../import/duplicateDetection";
 import { confirmCandidate } from "../../domain/confirmCandidate";
 import type { CandidatePayload, ConfirmationSource, ExtractionCandidate } from "../../import/types";
-import type { Appliance, MaintenanceTask, ServiceProvider } from "../../state";
+import type { Thing, MaintenanceTask, ServiceProvider } from "../../state";
 
 /** Existing-record lookups for duplicate detection, built once per render from records already loaded by the orchestrator, never a separate query. */
 function comparableRecordsFor(
   candidateType: ExtractionCandidate["candidateType"],
-  existing: { appliances: Appliance[]; maintenanceTasks: MaintenanceTask[]; serviceProviders: ServiceProvider[] }
+  existing: { things: Thing[]; maintenanceTasks: MaintenanceTask[]; serviceProviders: ServiceProvider[] }
 ): ComparableRecord[] {
   switch (candidateType) {
-    case "appliance":
-      return existing.appliances.filter((a) => a.status !== "archived").map((a) => ({ id: a.id, name: a.name }));
+    case "thing":
+      return existing.things.filter((a) => a.status !== "archived").map((a) => ({ id: a.id, name: a.name }));
     case "maintenanceTask":
       return existing.maintenanceTasks.filter((t) => t.status !== "archived").map((t) => ({ id: t.id, name: t.name }));
     case "serviceProvider":
@@ -46,7 +46,7 @@ export default function CandidateReviewQueue({
 }: {
   instanceId: string;
   candidates: ExtractionCandidate[];
-  existing: { appliances: Appliance[]; maintenanceTasks: MaintenanceTask[]; serviceProviders: ServiceProvider[] };
+  existing: { things: Thing[]; maintenanceTasks: MaintenanceTask[]; serviceProviders: ServiceProvider[] };
   importSessionId: string;
   source: ConfirmationSource;
   onCandidateResolved: (candidateId: string, result: { recordType: string; recordId: string } | "skipped") => void;

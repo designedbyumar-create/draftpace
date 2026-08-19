@@ -52,7 +52,7 @@ export default function CsvImportFlow({
   const [rows, setRows] = useState<string[][]>([]);
   const [parseErrorCount, setParseErrorCount] = useState(0);
 
-  const [targetType, setTargetType] = useState<CandidateType>("appliance");
+  const [targetType, setTargetType] = useState<CandidateType>("thing");
   const [nameCol, setNameCol] = useState("");
   const [brandCol, setBrandCol] = useState("");
   const [purchaseDateCol, setPurchaseDateCol] = useState("");
@@ -119,14 +119,14 @@ export default function CsvImportFlow({
         ? ["This name starts with a character spreadsheets treat as a formula. Shown as plain text here."]
         : [];
 
-      if (targetType === "appliance") {
+      if (targetType === "thing") {
         const brandIdx = headers.indexOf(brandCol);
         const purchaseIdx = headers.indexOf(purchaseDateCol);
         const warrantyIdx = headers.indexOf(warrantyCol);
         const purchaseDate = purchaseIdx >= 0 ? parseCsvDate(row[purchaseIdx]) : undefined;
         const warrantyExpiresAt = warrantyIdx >= 0 ? parseCsvDate(row[warrantyIdx]) : undefined;
         const candidate: CandidateDraft = {
-          candidateType: "appliance",
+          candidateType: "thing",
           payload: { name, brand: brandIdx >= 0 ? row[brandIdx] || undefined : undefined, purchaseDate, warrantyExpiresAt },
           confidence: name ? "high" : "low",
           missingFields: name ? [] : ["name"],
@@ -220,7 +220,7 @@ export default function CsvImportFlow({
           <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">CSV import</p>
           <h2 className="mt-1 text-[17px] font-semibold text-[var(--text)]">Upload a spreadsheet export.</h2>
           <p className="mt-1.5 text-[13px] leading-relaxed text-[var(--muted)]">
-            Works with a CSV of appliances, maintenance tasks, or service providers. You&apos;ll map the columns
+            Works with a CSV of things, maintenance tasks, or service providers. You&apos;ll map the columns
             yourself on the next screen, since formats vary. Dates must read YYYY-MM-DD.
           </p>
         </div>
@@ -260,7 +260,7 @@ export default function CsvImportFlow({
         {error && <Alert tone="danger">{error}</Alert>}
 
         <Select label="What are you importing?" value={targetType} onChange={(e) => setTargetType(e.target.value as CandidateType)}>
-          <option value="appliance">Appliances</option>
+          <option value="thing">Things</option>
           <option value="maintenanceTask">Maintenance tasks</option>
           <option value="serviceProvider">Service providers</option>
         </Select>
@@ -273,7 +273,7 @@ export default function CsvImportFlow({
           ))}
         </Select>
 
-        {targetType === "appliance" && (
+        {targetType === "thing" && (
           <>
             <Select label="Brand column (optional)" value={brandCol} onChange={(e) => setBrandCol(e.target.value)}>
               <option value="">None</option>

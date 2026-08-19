@@ -12,7 +12,7 @@ export interface TabItem {
  * APG "automatic activation" tabs pattern (arrow keys move focus and
  * activate immediately; Home/End jump to the first/last tab; only the
  * selected tab sits in the natural tab order). The one new src/design-
- * system/ primitive the Home Base v2 rebuild introduces — built entirely
+ * system/ primitive the Home Base v2 rebuild introduces, built entirely
  * from tokens every other primitive already uses (--primary, --dur/
  * --ease-out, --focus-ring), nothing bespoke. The indicator skips its
  * slide-in transition on first measurement, so a freshly mounted tablist

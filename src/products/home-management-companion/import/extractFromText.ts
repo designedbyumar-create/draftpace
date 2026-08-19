@@ -82,15 +82,15 @@ const matchers: LineMatcher[] = [
   // Checked before the plain "warranty until" matcher below: without this
   // order, "Water heater purchased 2023-01-15, warranty until 2026-01-15"
   // would match the plainer pattern first and swallow the purchase date
-  // into the appliance's name instead of its own field.
+  // into the thing's name instead of its own field.
   // "Water heater purchased 2023-01-15, warranty until 2026-01-15" / "Water heater purchased 2023-01-15"
   {
-    candidateType: "appliance",
+    candidateType: "thing",
     test: (line) => {
       const m = line.match(/^(.+?)\s+purchased\s+(\d{4}-\d{2}-\d{2})(?:,?\s*warranty\s+(?:until|expires)\s+(\d{4}-\d{2}-\d{2}))?$/i);
       if (!m) return null;
       return {
-        candidateType: "appliance",
+        candidateType: "thing",
         payload: { name: m[1].trim(), purchaseDate: m[2], warrantyExpiresAt: m[3] ?? undefined },
         confidence: "high",
         missingFields: [],
@@ -101,12 +101,12 @@ const matchers: LineMatcher[] = [
   },
   // "Refrigerator, warranty until 2027-03-01" / "Refrigerator warranty expires 2027-03-01"
   {
-    candidateType: "appliance",
+    candidateType: "thing",
     test: (line) => {
       const m = line.match(/^(.+?),?\s+warranty\s+(?:until|expires)\s+(\d{4}-\d{2}-\d{2})$/i);
       if (!m) return null;
       return {
-        candidateType: "appliance",
+        candidateType: "thing",
         payload: { name: m[1].trim(), warrantyExpiresAt: m[2] },
         confidence: "high",
         missingFields: [],
@@ -117,12 +117,12 @@ const matchers: LineMatcher[] = [
   },
   // "Furnace installed 2021-09-10"
   {
-    candidateType: "appliance",
+    candidateType: "thing",
     test: (line) => {
       const m = line.match(/^(.+?)\s+installed\s+(\d{4}-\d{2}-\d{2})$/i);
       if (!m) return null;
       return {
-        candidateType: "appliance",
+        candidateType: "thing",
         payload: { name: m[1].trim(), installDate: m[2] },
         confidence: "high",
         missingFields: [],

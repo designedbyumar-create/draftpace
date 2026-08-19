@@ -15,7 +15,7 @@ export type HomeManagementCompanionReminderKind = "maintenanceDue" | "warrantyEx
 
 export type ReminderLifecycleState = "scheduled" | "delivered" | "cancelled";
 
-export type ReminderEntityType = "appliance" | "maintenanceTask" | "problem";
+export type ReminderEntityType = "thing" | "maintenanceTask" | "problem";
 
 export interface ReminderMetadata {
   id: string;

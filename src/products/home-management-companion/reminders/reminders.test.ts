@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { deriveReminderCandidates } from "./deriveReminders";
 import { diffReminders, type ExistingReminderSummary } from "./diffReminders";
 import { resolveEligibility, isWithinQuietHours } from "./eligibility";
-import type { Appliance, MaintenanceTask, Problem } from "../state";
+import type { Thing, MaintenanceTask, Problem } from "../state";
 import type { HomeManagementCompanionNotificationPreferences } from "../notificationPreferences";
 
 const NOW = new Date("2026-06-15T12:00:00Z");
@@ -27,13 +27,14 @@ function makeTask(overrides: Partial<MaintenanceTask> = {}): MaintenanceTask {
   };
 }
 
-function makeAppliance(overrides: Partial<Appliance> = {}): Appliance {
+function makeThing(overrides: Partial<Thing> = {}): Thing {
   return {
-    id: "appliance-1",
+    id: "thing-1",
     name: "Water heater",
-    category: "appliance",
+    type: "water-heater",
     brand: null,
     model: null,
+    location: null,
     purchaseDate: null,
     installDate: null,
     warrantyExpiresAt: null,
@@ -78,7 +79,7 @@ function makeProblem(overrides: Partial<Problem> = {}): Problem {
 describe("deriveReminderCandidates", () => {
   it("wraps attention items with the right entity type and a dedupeKey matching the attention item id", () => {
     const task = makeTask();
-    const candidates = deriveReminderCandidates({ appliances: [], maintenanceTasks: [task], problems: [] }, NOW);
+    const candidates = deriveReminderCandidates({ things: [], maintenanceTasks: [task], problems: [] }, NOW);
     expect(candidates).toHaveLength(1);
     expect(candidates[0].kind).toBe("maintenanceDue");
     expect(candidates[0].entityType).toBe("maintenanceTask");
@@ -87,15 +88,15 @@ describe("deriveReminderCandidates", () => {
     expect(candidates[0].nextEligibleAt).toEqual(NOW);
   });
 
-  it("maps a warranty item to the appliance entity type", () => {
-    const appliance = makeAppliance({ warrantyExpiresAt: "2026-06-20" });
-    const candidates = deriveReminderCandidates({ appliances: [appliance], maintenanceTasks: [], problems: [] }, NOW);
-    expect(candidates[0].entityType).toBe("appliance");
+  it("maps a warranty item to the thing entity type", () => {
+    const thing = makeThing({ warrantyExpiresAt: "2026-06-20" });
+    const candidates = deriveReminderCandidates({ things: [thing], maintenanceTasks: [], problems: [] }, NOW);
+    expect(candidates[0].entityType).toBe("thing");
     expect(candidates[0].kind).toBe("warrantyExpiring");
   });
 
   it("maps a problem to the problem entity type", () => {
-    const candidates = deriveReminderCandidates({ appliances: [], maintenanceTasks: [], problems: [makeProblem()] }, NOW);
+    const candidates = deriveReminderCandidates({ things: [], maintenanceTasks: [], problems: [makeProblem()] }, NOW);
     expect(candidates).toHaveLength(1);
     expect(candidates[0].entityType).toBe("problem");
     expect(candidates[0].kind).toBe("problem");
@@ -104,29 +105,29 @@ describe("deriveReminderCandidates", () => {
 
   it("produces no candidates when nothing is due", () => {
     const task = makeTask({ lastDoneAt: "2026-06-10" });
-    const candidates = deriveReminderCandidates({ appliances: [], maintenanceTasks: [task], problems: [] }, NOW);
+    const candidates = deriveReminderCandidates({ things: [], maintenanceTasks: [task], problems: [] }, NOW);
     expect(candidates).toHaveLength(0);
   });
 
   it("produces zero candidates for a snoozed task, and zero for a snoozed problem, single source of truth with attention.ts", () => {
     const snoozedTask = makeTask({ lastDoneAt: "2026-01-01", snoozedUntil: "2026-06-20T00:00:00.000Z" });
-    expect(deriveReminderCandidates({ appliances: [], maintenanceTasks: [snoozedTask], problems: [] }, NOW)).toHaveLength(0);
+    expect(deriveReminderCandidates({ things: [], maintenanceTasks: [snoozedTask], problems: [] }, NOW)).toHaveLength(0);
 
     const snoozedProblem = makeProblem({ snoozedUntil: "2026-06-20T00:00:00.000Z" });
-    expect(deriveReminderCandidates({ appliances: [], maintenanceTasks: [], problems: [snoozedProblem] }, NOW)).toHaveLength(0);
+    expect(deriveReminderCandidates({ things: [], maintenanceTasks: [], problems: [snoozedProblem] }, NOW)).toHaveLength(0);
   });
 });
 
 describe("diffReminders", () => {
   it("inserts a candidate with no matching existing dedupeKey", () => {
-    const candidates = deriveReminderCandidates({ appliances: [], maintenanceTasks: [makeTask()], problems: [] }, NOW);
+    const candidates = deriveReminderCandidates({ things: [], maintenanceTasks: [makeTask()], problems: [] }, NOW);
     const { toInsert, toCancelIds } = diffReminders(candidates, []);
     expect(toInsert).toHaveLength(1);
     expect(toCancelIds).toHaveLength(0);
   });
 
   it("leaves an existing scheduled reminder untouched when its candidate still exists", () => {
-    const candidates = deriveReminderCandidates({ appliances: [], maintenanceTasks: [makeTask()], problems: [] }, NOW);
+    const candidates = deriveReminderCandidates({ things: [], maintenanceTasks: [makeTask()], problems: [] }, NOW);
     const existing: ExistingReminderSummary[] = [{ id: "row-1", dedupeKey: "maintenanceDue:task-1", status: "scheduled" }];
     const { toInsert, toCancelIds } = diffReminders(candidates, existing);
     expect(toInsert).toHaveLength(0);
@@ -142,7 +143,7 @@ describe("diffReminders", () => {
   it("never touches an already-delivered or already-cancelled row", () => {
     const existing: ExistingReminderSummary[] = [
       { id: "row-1", dedupeKey: "maintenanceDue:task-1", status: "delivered" },
-      { id: "row-2", dedupeKey: "warrantyExpiring:appliance-1", status: "cancelled" },
+      { id: "row-2", dedupeKey: "warrantyExpiring:thing-1", status: "cancelled" },
     ];
     const { toCancelIds } = diffReminders([], existing);
     expect(toCancelIds).toHaveLength(0);

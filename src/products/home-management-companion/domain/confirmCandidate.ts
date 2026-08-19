@@ -1,11 +1,11 @@
 "use client";
 
 import { ok, err, type Result } from "@/product-framework/result";
-import { createAppliance } from "./appliances";
+import { createThing } from "./things";
 import { createMaintenanceTask } from "./maintenanceTasks";
 import { createServiceProvider } from "./serviceProviders";
 import type {
-  ApplianceCandidatePayload,
+  ThingCandidatePayload,
   CandidatePayload,
   ConfirmationSource,
   ExtractionCandidate,
@@ -16,9 +16,9 @@ import type {
 /**
  * The one bridge from a confirmed candidate to a real canonical record,
  * Home Base's own parallel to PFC's domain/confirmCandidate.ts. Calls the
- * exact same createAppliance/createMaintenanceTask/createServiceProvider
+ * exact same createThing/createMaintenanceTask/createServiceProvider
  * functions the direct sections already use. A record created here is
- * stored in the identical hmc_appliances/hmc_maintenance_tasks/
+ * stored in the identical hmc_things/hmc_maintenance_tasks/
  * hmc_service_providers row shape as one typed by hand, differing only in
  * its `source`/`importSessionId` provenance fields. Nothing here writes a
  * record without this function being called from a genuine user
@@ -48,13 +48,14 @@ export async function confirmCandidate(input: ConfirmCandidateInput): Promise<Re
   const provenance = { source, importSessionId, status: "active" as const, needsReviewReason: null };
 
   switch (candidate.candidateType) {
-    case "appliance": {
-      const p = payload as ApplianceCandidatePayload;
-      const created = await createAppliance(instanceId, {
+    case "thing": {
+      const p = payload as ThingCandidatePayload;
+      const created = await createThing(instanceId, {
         name: p.name,
-        category: p.category ?? "appliance",
+        type: p.type ?? "other",
         brand: p.brand ?? null,
         model: null,
+        location: null,
         purchaseDate: p.purchaseDate ?? null,
         installDate: p.installDate ?? null,
         warrantyExpiresAt: p.warrantyExpiresAt ?? null,
@@ -63,7 +64,7 @@ export async function confirmCandidate(input: ConfirmCandidateInput): Promise<Re
         ...provenance,
       });
       if (!created.ok) return err(created.error);
-      return ok({ recordType: "appliance", recordId: created.data.id });
+      return ok({ recordType: "thing", recordId: created.data.id });
     }
     case "maintenanceTask": {
       const p = payload as MaintenanceTaskCandidatePayload;

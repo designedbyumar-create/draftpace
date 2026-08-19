@@ -16,8 +16,8 @@ describe("extractCandidatesFromText", () => {
     expect(drafts).toHaveLength(7);
   });
 
-  it("extracts an appliance with both purchase date and warranty, not swallowing the date into the name", () => {
-    expect(drafts[0].candidateType).toBe("appliance");
+  it("extracts a thing with both purchase date and warranty, not swallowing the date into the name", () => {
+    expect(drafts[0].candidateType).toBe("thing");
     expect(drafts[0].payload).toMatchObject({ name: "Refrigerator", purchaseDate: "2023-01-15", warrantyExpiresAt: "2026-01-15" });
   });
 
@@ -41,13 +41,13 @@ describe("extractCandidatesFromText", () => {
     expect(drafts[4].payload).toMatchObject({ name: "Ace HVAC", email: "ace@hvac.com" });
   });
 
-  it("extracts an appliance with only a warranty date", () => {
-    expect(drafts[5].candidateType).toBe("appliance");
+  it("extracts a thing with only a warranty date", () => {
+    expect(drafts[5].candidateType).toBe("thing");
     expect(drafts[5].payload).toMatchObject({ name: "Water heater", warrantyExpiresAt: "2027-03-01" });
   });
 
-  it("extracts an appliance with an install date", () => {
-    expect(drafts[6].candidateType).toBe("appliance");
+  it("extracts a thing with an install date", () => {
+    expect(drafts[6].candidateType).toBe("thing");
     expect(drafts[6].payload).toMatchObject({ name: "Furnace", installDate: "2021-09-10" });
   });
 

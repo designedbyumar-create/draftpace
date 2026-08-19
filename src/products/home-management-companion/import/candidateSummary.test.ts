@@ -5,7 +5,7 @@ import type { ExtractionCandidate } from "./types";
 function candidate(overrides: Partial<ExtractionCandidate>): ExtractionCandidate {
   return {
     id: "c1",
-    candidateType: "appliance",
+    candidateType: "thing",
     payload: { name: "Refrigerator" },
     confidence: "high",
     missingFields: [],

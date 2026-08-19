@@ -9,7 +9,7 @@ import { buildPushPayloads, type EnrichedReminder } from "@/products/home-manage
 import { deriveAttentionItems } from "@/products/home-management-companion/attention";
 import { validateNotificationPreferences } from "@/products/home-management-companion/notificationPreferences";
 import type { HomeManagementCompanionReminderKind } from "@/products/home-management-companion/reminders";
-import type { Appliance, MaintenanceTask, Problem } from "@/products/home-management-companion/state";
+import type { Thing, MaintenanceTask, Problem } from "@/products/home-management-companion/state";
 
 /**
  * Home Base's server-side reminder evaluator - a deliberately separate
@@ -22,12 +22,13 @@ import type { Appliance, MaintenanceTask, Problem } from "@/products/home-manage
  * lead-time scheduling here.
  */
 
-interface ApplianceRow {
+interface ThingRow {
   id: string;
   name: string;
-  category: string;
+  type: string;
   brand: string | null;
   model: string | null;
+  location: string | null;
   purchase_date: string | null;
   install_date: string | null;
   warranty_expires_at: string | null;
@@ -79,21 +80,22 @@ interface ProblemRow {
   updated_at: string;
 }
 
-function mapAppliance(r: ApplianceRow): Appliance {
+function mapThing(r: ThingRow): Thing {
   return {
     id: r.id,
     name: r.name,
-    category: r.category as Appliance["category"],
+    type: r.type,
     brand: r.brand,
     model: r.model,
+    location: r.location,
     purchaseDate: r.purchase_date,
     installDate: r.install_date,
     warrantyExpiresAt: r.warranty_expires_at,
     documentLink: r.document_link,
     notes: r.notes,
-    status: r.status as Appliance["status"],
+    status: r.status as Thing["status"],
     needsReviewReason: r.needs_review_reason,
-    source: r.source as Appliance["source"],
+    source: r.source as Thing["source"],
     importSessionId: r.import_session_id,
     createdAt: r.created_at,
     updatedAt: r.updated_at,
@@ -209,20 +211,20 @@ export async function GET(request: Request) {
       timezone: prefRow.timezone,
     });
 
-    const [appliancesRes, tasksRes, problemsRes] = await Promise.all([
-      supabase.from("hmc_appliances").select("*").eq("product_instance_id", instanceId),
+    const [thingsRes, tasksRes, problemsRes] = await Promise.all([
+      supabase.from("hmc_things").select("*").eq("product_instance_id", instanceId),
       supabase.from("hmc_maintenance_tasks").select("*").eq("product_instance_id", instanceId),
       supabase.from("hmc_problems").select("*").eq("product_instance_id", instanceId),
     ]);
 
-    const appliances = ((appliancesRes.data as ApplianceRow[]) ?? []).map(mapAppliance);
+    const things = ((thingsRes.data as ThingRow[]) ?? []).map(mapThing);
     const maintenanceTasks = ((tasksRes.data as MaintenanceTaskRow[]) ?? []).map(mapMaintenanceTask);
     const problems = ((problemsRes.data as ProblemRow[]) ?? []).map(mapProblem);
-    const attentionItems = deriveAttentionItems({ appliances, maintenanceTasks, problems }, now);
+    const attentionItems = deriveAttentionItems({ things, maintenanceTasks, problems }, now);
     const messageById = new Map(attentionItems.map((item) => [item.id, item.message]));
     const hrefById = new Map(attentionItems.map((item) => [item.id, item.href]));
 
-    const candidates: ReminderCandidate[] = deriveReminderCandidates({ appliances, maintenanceTasks, problems }, now);
+    const candidates: ReminderCandidate[] = deriveReminderCandidates({ things, maintenanceTasks, problems }, now);
 
     const { data: existingRows } = await supabase.from("hmc_reminders").select("id, dedupe_key, status").eq("product_instance_id", instanceId);
     const existing: ExistingReminderSummary[] = (existingRows ?? []).map((r) => ({

@@ -31,7 +31,7 @@ export const importSessionSchema = z.object({
 });
 export type ImportSession = z.infer<typeof importSessionSchema>;
 
-export const candidateTypeSchema = z.enum(["appliance", "maintenanceTask", "serviceProvider", "unsupported"]);
+export const candidateTypeSchema = z.enum(["thing", "maintenanceTask", "serviceProvider", "unsupported"]);
 export type CandidateType = z.infer<typeof candidateTypeSchema>;
 
 export const candidateConfidenceSchema = z.enum(["high", "medium", "low"]);
@@ -49,9 +49,10 @@ export type ReviewStatus = z.infer<typeof reviewStatusSchema>;
  * which of these a matcher never found, so the review UI can say so
  * honestly instead of guessing.
  */
-export interface ApplianceCandidatePayload {
+export interface ThingCandidatePayload {
   name: string;
-  category?: "appliance" | "system" | "other";
+  /** Open, matches Thing's own type taxonomy (thingTypes.ts), not a closed set here either. */
+  type?: string;
   brand?: string;
   purchaseDate?: string;
   installDate?: string;
@@ -71,7 +72,7 @@ export interface UnsupportedCandidatePayload {
 }
 
 export type CandidatePayload =
-  | ApplianceCandidatePayload
+  | ThingCandidatePayload
   | MaintenanceTaskCandidatePayload
   | ServiceProviderCandidatePayload
   | UnsupportedCandidatePayload;

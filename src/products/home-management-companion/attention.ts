@@ -1,4 +1,4 @@
-import type { Appliance, MaintenanceTask, Problem } from "./state";
+import type { Thing, MaintenanceTask, Problem } from "./state";
 
 /**
  * The shared Attention domain: one deterministic derivation of "what needs
@@ -88,7 +88,7 @@ function problemCostBucket(estimatedCostMinorUnits: number | null): 0 | 1 | 2 {
 }
 
 export interface AttentionInputs {
-  appliances: Appliance[];
+  things: Thing[];
   maintenanceTasks: MaintenanceTask[];
   problems: Problem[];
 }
@@ -132,18 +132,18 @@ export function deriveAttentionItems(inputs: AttentionInputs, now: Date = new Da
     });
   }
 
-  for (const appliance of inputs.appliances) {
-    if (appliance.status === "archived") continue;
-    if (!appliance.warrantyExpiresAt) continue;
-    const days = daysUntil(appliance.warrantyExpiresAt, now);
+  for (const thing of inputs.things) {
+    if (thing.status === "archived") continue;
+    if (!thing.warrantyExpiresAt) continue;
+    const days = daysUntil(thing.warrantyExpiresAt, now);
     if (days > WARRANTY_EXPIRING_SOON_DAYS) continue;
 
     const message =
       days < 0
-        ? `${appliance.name}'s warranty expired ${-days} ${-days === 1 ? "day" : "days"} ago.`
+        ? `${thing.name}'s warranty expired ${-days} ${-days === 1 ? "day" : "days"} ago.`
         : days === 0
-          ? `${appliance.name}'s warranty expires today.`
-          : `${appliance.name}'s warranty expires in ${days} ${days === 1 ? "day" : "days"}.`;
+          ? `${thing.name}'s warranty expires today.`
+          : `${thing.name}'s warranty expires in ${days} ${days === 1 ? "day" : "days"}.`;
 
     // Neutral, zero-weight factors reproduce this loop's own prior
     // hardcoded "worthAWhile" exactly, a warranty date alone doesn't
@@ -151,12 +151,12 @@ export function deriveAttentionItems(inputs: AttentionInputs, now: Date = new Da
     const urgency = scoreAttentionUrgency({ overdueDays: 0, consequence: 0, effort: 0, cost: 0 });
 
     items.push({
-      id: `warrantyExpiring:${appliance.id}`,
+      id: `warrantyExpiring:${thing.id}`,
       kind: "warrantyExpiring",
       urgency,
-      entityId: appliance.id,
+      entityId: thing.id,
       message,
-      href: "/app/products/home-management-companion/appliances",
+      href: `/app/products/home-management-companion/things/${thing.id}`,
     });
   }
 

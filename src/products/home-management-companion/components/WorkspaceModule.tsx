@@ -8,7 +8,7 @@ import EmptyState from "@/design-system/EmptyState";
 import { Home, WarningCircle, Clock, CheckCircle2 } from "@/design-system/Icon";
 import { describeResultError } from "@/product-framework/result";
 import { findHomeManagementCompanionInstanceId } from "../setupStateData";
-import { listAppliances } from "../domain/appliances";
+import { listThings } from "../domain/things";
 import { listMaintenanceTasks } from "../domain/maintenanceTasks";
 import { listProblems } from "../domain/problems";
 import { deriveAttentionItems, type AttentionInputs } from "../attention";
@@ -41,13 +41,13 @@ export default function WorkspaceModule() {
       setStatus("no-instance");
       return;
     }
-    const [appliancesResult, tasksResult, problemsResult] = await Promise.all([
-      listAppliances(found.id),
+    const [thingsResult, tasksResult, problemsResult] = await Promise.all([
+      listThings(found.id),
       listMaintenanceTasks(found.id),
       listProblems(found.id),
     ]);
-    if (!appliancesResult.ok) {
-      setErrorMessage(describeResultError(appliancesResult.error));
+    if (!thingsResult.ok) {
+      setErrorMessage(describeResultError(thingsResult.error));
       setStatus("error");
       return;
     }
@@ -61,11 +61,11 @@ export default function WorkspaceModule() {
       setStatus("error");
       return;
     }
-    const appliances = appliancesResult.data.filter((a) => a.status !== "archived");
+    const things = thingsResult.data.filter((a) => a.status !== "archived");
     const maintenanceTasks = tasksResult.data.filter((t) => t.status !== "archived");
     const problems = problemsResult.data.filter((p) => p.status !== "archived");
-    setRecords({ appliances, maintenanceTasks, problems });
-    setTotalActiveRecords(appliances.length + maintenanceTasks.length + problems.length);
+    setRecords({ things, maintenanceTasks, problems });
+    setTotalActiveRecords(things.length + maintenanceTasks.length + problems.length);
     setStatus("ready");
   }, []);
 
