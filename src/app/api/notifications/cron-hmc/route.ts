@@ -9,7 +9,7 @@ import { buildPushPayloads, type EnrichedReminder } from "@/products/home-manage
 import { deriveAttentionItems } from "@/products/home-management-companion/attention";
 import { validateNotificationPreferences } from "@/products/home-management-companion/notificationPreferences";
 import type { HomeManagementCompanionReminderKind } from "@/products/home-management-companion/reminders";
-import type { Appliance, MaintenanceTask } from "@/products/home-management-companion/state";
+import type { Appliance, MaintenanceTask, Problem } from "@/products/home-management-companion/state";
 
 /**
  * Home Base's server-side reminder evaluator - a deliberately separate
@@ -48,6 +48,29 @@ interface MaintenanceTaskRow {
   last_done_at: string | null;
   document_link: string | null;
   notes: string | null;
+  snoozed_until: string | null;
+  status: string;
+  needs_review_reason: string | null;
+  source: string;
+  import_session_id: string | null;
+  created_at: string;
+  updated_at: string;
+}
+interface ProblemRow {
+  id: string;
+  thing_id: string | null;
+  provider_id: string | null;
+  title: string;
+  description: string | null;
+  resolution_status: string;
+  severity: string;
+  effort: string;
+  estimated_cost_minor: number | null;
+  actual_cost_minor: number | null;
+  scheduled_at: string | null;
+  resolved_at: string | null;
+  snoozed_until: string | null;
+  notes: string | null;
   status: string;
   needs_review_reason: string | null;
   source: string;
@@ -85,9 +108,34 @@ function mapMaintenanceTask(r: MaintenanceTaskRow): MaintenanceTask {
     lastDoneAt: r.last_done_at,
     documentLink: r.document_link,
     notes: r.notes,
+    snoozedUntil: r.snoozed_until,
     status: r.status as MaintenanceTask["status"],
     needsReviewReason: r.needs_review_reason,
     source: r.source as MaintenanceTask["source"],
+    importSessionId: r.import_session_id,
+    createdAt: r.created_at,
+    updatedAt: r.updated_at,
+  };
+}
+function mapProblem(r: ProblemRow): Problem {
+  return {
+    id: r.id,
+    thingId: r.thing_id,
+    providerId: r.provider_id,
+    title: r.title,
+    description: r.description,
+    resolutionStatus: r.resolution_status as Problem["resolutionStatus"],
+    severity: r.severity as Problem["severity"],
+    effort: r.effort as Problem["effort"],
+    estimatedCostMinorUnits: r.estimated_cost_minor,
+    actualCostMinorUnits: r.actual_cost_minor,
+    scheduledAt: r.scheduled_at,
+    resolvedAt: r.resolved_at,
+    snoozedUntil: r.snoozed_until,
+    notes: r.notes,
+    status: r.status as Problem["status"],
+    needsReviewReason: r.needs_review_reason,
+    source: r.source as Problem["source"],
     importSessionId: r.import_session_id,
     createdAt: r.created_at,
     updatedAt: r.updated_at,
@@ -161,18 +209,20 @@ export async function GET(request: Request) {
       timezone: prefRow.timezone,
     });
 
-    const [appliancesRes, tasksRes] = await Promise.all([
+    const [appliancesRes, tasksRes, problemsRes] = await Promise.all([
       supabase.from("hmc_appliances").select("*").eq("product_instance_id", instanceId),
       supabase.from("hmc_maintenance_tasks").select("*").eq("product_instance_id", instanceId),
+      supabase.from("hmc_problems").select("*").eq("product_instance_id", instanceId),
     ]);
 
     const appliances = ((appliancesRes.data as ApplianceRow[]) ?? []).map(mapAppliance);
     const maintenanceTasks = ((tasksRes.data as MaintenanceTaskRow[]) ?? []).map(mapMaintenanceTask);
-    const attentionItems = deriveAttentionItems({ appliances, maintenanceTasks }, now);
+    const problems = ((problemsRes.data as ProblemRow[]) ?? []).map(mapProblem);
+    const attentionItems = deriveAttentionItems({ appliances, maintenanceTasks, problems }, now);
     const messageById = new Map(attentionItems.map((item) => [item.id, item.message]));
     const hrefById = new Map(attentionItems.map((item) => [item.id, item.href]));
 
-    const candidates: ReminderCandidate[] = deriveReminderCandidates({ appliances, maintenanceTasks }, now);
+    const candidates: ReminderCandidate[] = deriveReminderCandidates({ appliances, maintenanceTasks, problems }, now);
 
     const { data: existingRows } = await supabase.from("hmc_reminders").select("id, dedupe_key, status").eq("product_instance_id", instanceId);
     const existing: ExistingReminderSummary[] = (existingRows ?? []).map((r) => ({

@@ -1,4 +1,4 @@
-import type { Appliance, MaintenanceTask } from "./state";
+import type { Appliance, MaintenanceTask, Problem } from "./state";
 
 /**
  * The shared Attention domain: one deterministic derivation of "what needs
@@ -8,7 +8,7 @@ import type { Appliance, MaintenanceTask } from "./state";
  * source, matching PFC's own attention.ts discipline.
  */
 
-export type AttentionKind = "maintenanceDue" | "warrantyExpiring";
+export type AttentionKind = "maintenanceDue" | "warrantyExpiring" | "problem";
 export type AttentionUrgency = "needsResolution" | "worthAWhile";
 
 export interface AttentionItem {
@@ -36,9 +36,61 @@ function daysUntil(dateIso: string, now: Date): number {
   return Math.round((target.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
 }
 
+/** True while a stored snoozedUntil timestamp is still in the future, false once it lapses (or was never set). */
+function isSnoozed(snoozedUntil: string | null, now: Date): boolean {
+  return snoozedUntil !== null && new Date(snoozedUntil).getTime() > now.getTime();
+}
+
+/**
+ * The one place urgency gets decided, real and computed rather than
+ * hardcoded per kind. Only reads factors a caller can honestly derive
+ * from a stored field, never a fabricated guess: maintenance/warranty
+ * items don't carry a severity/cost of their own, so their callers pass
+ * neutral factors and let overdueDays alone drive the score (which
+ * reproduces this function's own prior hardcoded behavior exactly);
+ * Problems pass their real stored severity/effort/cost.
+ */
+export interface UrgencyFactors {
+  /** Days past due, 0 or negative when not yet due. */
+  overdueDays: number;
+  /** How bad it is to keep ignoring this: 0 low, 1 medium, 2 high. */
+  consequence: 0 | 1 | 2;
+  /** How much work it takes to address: 0 low, 1 medium, 2 high. */
+  effort: 0 | 1 | 2;
+  /** Cost impact: 0 low, 1 medium, 2 high. */
+  cost: 0 | 1 | 2;
+}
+
+const URGENCY_THRESHOLD = 2;
+
+export function scoreAttentionUrgency(factors: UrgencyFactors): AttentionUrgency {
+  const score = Math.max(0, factors.overdueDays) * 0.5 + factors.consequence * 2 + factors.cost - factors.effort * 0.5;
+  return score >= URGENCY_THRESHOLD ? "needsResolution" : "worthAWhile";
+}
+
+const PROBLEM_SEVERITY_CONSEQUENCE: Record<Problem["severity"], 0 | 1 | 2> = {
+  minor: 0,
+  moderate: 1,
+  urgent: 2,
+};
+
+const PROBLEM_EFFORT_SCORE: Record<Problem["effort"], 0 | 1 | 2> = {
+  quick: 0,
+  moderate: 1,
+  bigJob: 2,
+};
+
+function problemCostBucket(estimatedCostMinorUnits: number | null): 0 | 1 | 2 {
+  if (estimatedCostMinorUnits === null) return 0;
+  if (estimatedCostMinorUnits > 50_000) return 2;
+  if (estimatedCostMinorUnits > 10_000) return 1;
+  return 0;
+}
+
 export interface AttentionInputs {
   appliances: Appliance[];
   maintenanceTasks: MaintenanceTask[];
+  problems: Problem[];
 }
 
 /**
@@ -52,6 +104,7 @@ export function deriveAttentionItems(inputs: AttentionInputs, now: Date = new Da
 
   for (const task of inputs.maintenanceTasks) {
     if (task.status === "archived") continue;
+    if (isSnoozed(task.snoozedUntil, now)) continue;
     const nextDueIso = task.lastDoneAt ? addDays(task.lastDoneAt, task.cadenceDays) : task.createdAt.slice(0, 10);
     const days = daysUntil(nextDueIso, now);
     if (days > 0) continue;
@@ -63,10 +116,16 @@ export function deriveAttentionItems(inputs: AttentionInputs, now: Date = new Da
         ? `${task.name} is due today.`
         : `${task.name} is ${overdueDays} ${overdueDays === 1 ? "day" : "days"} overdue.`;
 
+    // Neutral factors reproduce this loop's own prior hardcoded
+    // "needsResolution" exactly: maintenance tasks don't carry a
+    // consequence/cost of their own to score honestly, so overdueDays
+    // alone (already >= 0 to have reached this point) drives it.
+    const urgency = scoreAttentionUrgency({ overdueDays, consequence: 1, effort: 1, cost: 1 });
+
     items.push({
       id: `maintenanceDue:${task.id}`,
       kind: "maintenanceDue",
-      urgency: "needsResolution",
+      urgency,
       entityId: task.id,
       message,
       href: "/app/products/home-management-companion/maintenance",
@@ -86,13 +145,40 @@ export function deriveAttentionItems(inputs: AttentionInputs, now: Date = new Da
           ? `${appliance.name}'s warranty expires today.`
           : `${appliance.name}'s warranty expires in ${days} ${days === 1 ? "day" : "days"}.`;
 
+    // Neutral, zero-weight factors reproduce this loop's own prior
+    // hardcoded "worthAWhile" exactly, a warranty date alone doesn't
+    // carry a real severity/cost to score.
+    const urgency = scoreAttentionUrgency({ overdueDays: 0, consequence: 0, effort: 0, cost: 0 });
+
     items.push({
       id: `warrantyExpiring:${appliance.id}`,
       kind: "warrantyExpiring",
-      urgency: "worthAWhile",
+      urgency,
       entityId: appliance.id,
       message,
       href: "/app/products/home-management-companion/appliances",
+    });
+  }
+
+  for (const problem of inputs.problems) {
+    if (problem.status === "archived") continue;
+    if (problem.resolutionStatus === "resolved") continue;
+    if (isSnoozed(problem.snoozedUntil, now)) continue;
+
+    const urgency = scoreAttentionUrgency({
+      overdueDays: 0,
+      consequence: PROBLEM_SEVERITY_CONSEQUENCE[problem.severity],
+      effort: PROBLEM_EFFORT_SCORE[problem.effort],
+      cost: problemCostBucket(problem.estimatedCostMinorUnits),
+    });
+
+    items.push({
+      id: `problem:${problem.id}`,
+      kind: "problem",
+      urgency,
+      entityId: problem.id,
+      message: problem.title,
+      href: "/app/products/home-management-companion/problems",
     });
   }
 

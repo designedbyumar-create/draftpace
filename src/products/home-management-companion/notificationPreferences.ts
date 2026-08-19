@@ -9,12 +9,13 @@ import { z } from "zod";
  * PFC's own file documents.
  */
 
-export const notificationCategorySchema = z.enum(["maintenanceDue", "warrantyExpiring"]);
+export const notificationCategorySchema = z.enum(["maintenanceDue", "warrantyExpiring", "problem"]);
 export type NotificationCategory = z.infer<typeof notificationCategorySchema>;
 
 export const NOTIFICATION_CATEGORY_LABEL: Record<NotificationCategory, string> = {
   maintenanceDue: "Maintenance due or overdue",
   warrantyExpiring: "Warranties expiring soon",
+  problem: "Problems reported",
 };
 
 export const notificationPrivacyLevelSchema = z.enum(["private", "normal", "detailed"]);

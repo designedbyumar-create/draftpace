@@ -10,6 +10,7 @@ import { describeResultError } from "@/product-framework/result";
 import { findHomeManagementCompanionInstanceId } from "../setupStateData";
 import { listAppliances } from "../domain/appliances";
 import { listMaintenanceTasks } from "../domain/maintenanceTasks";
+import { listProblems } from "../domain/problems";
 import { deriveAttentionItems, type AttentionInputs } from "../attention";
 
 type LoadStatus = "loading" | "ready" | "no-instance" | "error";
@@ -40,7 +41,11 @@ export default function WorkspaceModule() {
       setStatus("no-instance");
       return;
     }
-    const [appliancesResult, tasksResult] = await Promise.all([listAppliances(found.id), listMaintenanceTasks(found.id)]);
+    const [appliancesResult, tasksResult, problemsResult] = await Promise.all([
+      listAppliances(found.id),
+      listMaintenanceTasks(found.id),
+      listProblems(found.id),
+    ]);
     if (!appliancesResult.ok) {
       setErrorMessage(describeResultError(appliancesResult.error));
       setStatus("error");
@@ -51,10 +56,16 @@ export default function WorkspaceModule() {
       setStatus("error");
       return;
     }
+    if (!problemsResult.ok) {
+      setErrorMessage(describeResultError(problemsResult.error));
+      setStatus("error");
+      return;
+    }
     const appliances = appliancesResult.data.filter((a) => a.status !== "archived");
     const maintenanceTasks = tasksResult.data.filter((t) => t.status !== "archived");
-    setRecords({ appliances, maintenanceTasks });
-    setTotalActiveRecords(appliances.length + maintenanceTasks.length);
+    const problems = problemsResult.data.filter((p) => p.status !== "archived");
+    setRecords({ appliances, maintenanceTasks, problems });
+    setTotalActiveRecords(appliances.length + maintenanceTasks.length + problems.length);
     setStatus("ready");
   }, []);
 

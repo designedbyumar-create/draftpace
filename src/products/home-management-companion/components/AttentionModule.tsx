@@ -11,6 +11,7 @@ import { describeResultError } from "@/product-framework/result";
 import { findHomeManagementCompanionInstanceId } from "../setupStateData";
 import { listAppliances } from "../domain/appliances";
 import { listMaintenanceTasks, markMaintenanceTaskDone } from "../domain/maintenanceTasks";
+import { listProblems } from "../domain/problems";
 import { deriveAttentionItems, type AttentionInputs, type AttentionItem } from "../attention";
 import type { MaintenanceTask } from "../state";
 
@@ -45,7 +46,11 @@ export default function AttentionModule() {
       return;
     }
     setInstanceId(found.id);
-    const [appliancesResult, tasksResult] = await Promise.all([listAppliances(found.id), listMaintenanceTasks(found.id)]);
+    const [appliancesResult, tasksResult, problemsResult] = await Promise.all([
+      listAppliances(found.id),
+      listMaintenanceTasks(found.id),
+      listProblems(found.id),
+    ]);
     if (!appliancesResult.ok) {
       setErrorMessage(describeResultError(appliancesResult.error));
       setStatus("error");
@@ -56,7 +61,12 @@ export default function AttentionModule() {
       setStatus("error");
       return;
     }
-    setRecords({ appliances: appliancesResult.data, maintenanceTasks: tasksResult.data });
+    if (!problemsResult.ok) {
+      setErrorMessage(describeResultError(problemsResult.error));
+      setStatus("error");
+      return;
+    }
+    setRecords({ appliances: appliancesResult.data, maintenanceTasks: tasksResult.data, problems: problemsResult.data });
     setTasksById(new Map(tasksResult.data.map((task) => [task.id, task])));
     setStatus("ready");
   }, []);

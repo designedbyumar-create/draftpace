@@ -13,6 +13,7 @@ interface MaintenanceTaskRow {
   last_done_at: string | null;
   document_link: string | null;
   notes: string | null;
+  snoozed_until: string | null;
   status: string;
   needs_review_reason: string | null;
   source: string;
@@ -30,6 +31,7 @@ function fromRow(row: MaintenanceTaskRow) {
     lastDoneAt: row.last_done_at,
     documentLink: row.document_link,
     notes: row.notes,
+    snoozedUntil: row.snoozed_until,
     status: row.status,
     needsReviewReason: row.needs_review_reason,
     source: row.source,
@@ -47,6 +49,7 @@ function toRow(patch: Record<string, unknown>) {
   if ("lastDoneAt" in patch) row.last_done_at = patch.lastDoneAt;
   if ("documentLink" in patch) row.document_link = patch.documentLink;
   if ("notes" in patch) row.notes = patch.notes;
+  if ("snoozedUntil" in patch) row.snoozed_until = patch.snoozedUntil;
   if ("status" in patch) row.status = patch.status;
   if ("needsReviewReason" in patch) row.needs_review_reason = patch.needsReviewReason;
   if ("source" in patch) row.source = patch.source;
@@ -92,5 +95,22 @@ export async function markMaintenanceTaskDone(
     source: "manual",
   });
   if (!logResult.ok) return logResult;
-  return updateMaintenanceTask(task.id, { lastDoneAt: performedAt });
+  return updateMaintenanceTask(task.id, { lastDoneAt: performedAt, snoozedUntil: null });
+}
+
+/**
+ * Snooze: a short, fixed window before this task can surface in
+ * Attention again. Skip: pushes it a full cadence period out instead,
+ * distinct from Snooze, since "not now" and "not until it would come up
+ * again anyway" are different intents. Neither touches lastDoneAt: the
+ * task genuinely hasn't been done, only deferred.
+ */
+export async function snoozeMaintenanceTask(task: MaintenanceTask, days: number): Promise<Result<MaintenanceTask>> {
+  const snoozedUntil = new Date(Date.now() + days * 24 * 60 * 60 * 1000).toISOString();
+  return updateMaintenanceTask(task.id, { snoozedUntil });
+}
+
+export async function skipMaintenanceTask(task: MaintenanceTask): Promise<Result<MaintenanceTask>> {
+  const snoozedUntil = new Date(Date.now() + task.cadenceDays * 24 * 60 * 60 * 1000).toISOString();
+  return updateMaintenanceTask(task.id, { snoozedUntil });
 }

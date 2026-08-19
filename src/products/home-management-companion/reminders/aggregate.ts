@@ -31,6 +31,7 @@ const TITLE = "Home Base";
 const GENERIC_MESSAGE_BY_KIND: Record<HomeManagementCompanionReminderKind, string> = {
   maintenanceDue: "A maintenance task needs attention.",
   warrantyExpiring: "A warranty needs attention.",
+  problem: "A problem needs attention.",
 };
 
 function renderSingle(reminder: EnrichedReminder, privacyLevel: NotificationPrivacyLevel): string {

@@ -53,6 +53,8 @@ export const maintenanceTaskSchema = z.object({
   lastDoneAt: isoDate.nullable(),
   documentLink: z.string().nullable(),
   notes: z.string().nullable(),
+  /** v2: set by Snooze (a short fixed window) or Skip (the next full cadence date), read by attention.ts's snooze guard. */
+  snoozedUntil: z.string().nullable(),
   ...recordLifecycleFields,
   ...recordProvenanceFields,
 });
