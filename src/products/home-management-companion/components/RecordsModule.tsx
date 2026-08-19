@@ -6,7 +6,7 @@ import Badge from "@/design-system/Badge";
 import Button from "@/design-system/Button";
 import Surface from "@/design-system/Surface";
 import EmptyState from "@/design-system/EmptyState";
-import { Home, Wrench, User, ChevronRight, Layers3 } from "@/design-system/Icon";
+import { Home, Wrench, User, ChevronRight, Layers3, Download } from "@/design-system/Icon";
 import { describeResultError } from "@/product-framework/result";
 import { findHomeManagementCompanionInstanceId } from "../setupStateData";
 import { listAppliances } from "../domain/appliances";
@@ -98,11 +98,18 @@ export default function RecordsModule() {
 
   return (
     <div className="flex flex-col gap-6">
-      <div>
-        <h1 className="text-xl font-semibold text-[var(--text)]">Records</h1>
-        <p className="mt-1 text-[13px] text-[var(--muted)]">
-          {totalRecords === 0 ? "Nothing recorded yet across any area." : "What's actually in your home, area by area."}
-        </p>
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <h1 className="text-xl font-semibold text-[var(--text)]">Records</h1>
+          <p className="mt-1 text-[13px] text-[var(--muted)]">
+            {totalRecords === 0 ? "Nothing recorded yet across any area." : "What's actually in your home, area by area."}
+          </p>
+        </div>
+        <Link href="/app/products/home-management-companion/import">
+          <Button size="sm" variant="secondary" iconLeft={<Download size={14} aria-hidden />}>
+            Import
+          </Button>
+        </Link>
       </div>
 
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
