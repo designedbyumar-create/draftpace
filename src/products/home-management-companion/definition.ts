@@ -94,7 +94,7 @@ export const homeManagementCompanionDefinition: ProductDefinitionInput = {
   notifications: { supported: false },
   progressModel: { kind: "custom" },
   history: { enabled: true, kinds: ["maintenance-log"] },
-  settingsSections: [],
+  settingsSections: ["notifications", "privacy", "timezone"],
   migrationPolicy: { compatibility: "backward-compatible" },
   devFixture: false,
 };
