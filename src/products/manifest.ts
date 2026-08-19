@@ -5,6 +5,7 @@ import type { ProductCatalogEntry } from "@/product-framework/catalog";
 import { monthlyMoneyResetCatalogEntry } from "./monthly-money-reset/catalog";
 import { hiddenAccessTestCatalogEntry } from "./hidden-access-test/catalog";
 import { personalFinanceCompanionCatalogEntry } from "./personal-finance-companion/catalog";
+import { homeManagementCompanionCatalogEntry } from "./home-management-companion/catalog";
 
 /**
  * The one auditable list of every real product Draftpace registers. This is
@@ -21,6 +22,7 @@ const PRODUCT_CATALOG: ProductCatalogEntry[] = [
   monthlyMoneyResetCatalogEntry,
   hiddenAccessTestCatalogEntry,
   personalFinanceCompanionCatalogEntry,
+  homeManagementCompanionCatalogEntry,
 ];
 
 let registered = false;

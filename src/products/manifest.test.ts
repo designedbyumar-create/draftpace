@@ -47,6 +47,14 @@ describe("ensureProductsRegistered", () => {
     expect(pfc?.cycleModel).toBe("continuous");
     expect(pfc?.devFixture).toBe(false);
     expect(pfc?.pwa?.provisionalBranding).toBe(true);
+
+    const homeBase = productRegistry.getBySlug("home-management-companion");
+    expect(homeBase).toBeDefined();
+    expect(homeBase?.title).toBe("Home Base");
+    expect(homeBase?.access.model).toBe("paid");
+    expect(homeBase?.cycleModel).toBe("continuous");
+    expect(homeBase?.devFixture).toBe(false);
+    expect(homeBase?.pwa?.provisionalBranding).toBe(true);
   }, 40000);
 
   it("is never a development fixture", () => {
@@ -65,18 +73,20 @@ describe("ensureProductsRegistered", () => {
       ensureProductsRegistered();
       ensureProductsRegistered();
     }).not.toThrow();
-    expect(productRegistry.list()).toHaveLength(3);
+    expect(productRegistry.list()).toHaveLength(4);
   }, 40000);
 
   it("is the only file that imports a specific product's catalog entry — every route imports the generic function", () => {
     // Locks in the actual point of this refactor: adding a new product
     // should mean one new import + one new array entry here, and nothing
     // outside this file should ever need to know a product-specific module
-    // path. hidden-access-test (Phase B) and personal-finance-companion
-    // (foundation stage) are both that exact proof, already applied.
+    // path. hidden-access-test (Phase B), personal-finance-companion
+    // (foundation stage), and home-management-companion are all that exact
+    // proof, already applied.
     const manifestSource = readFileSync(new URL("./manifest.ts", import.meta.url), "utf-8");
     expect(manifestSource).toContain("monthly-money-reset/catalog");
     expect(manifestSource).toContain("hidden-access-test/catalog");
     expect(manifestSource).toContain("personal-finance-companion/catalog");
+    expect(manifestSource).toContain("home-management-companion/catalog");
   });
 });
