@@ -163,15 +163,42 @@ const CARE_TEMPLATE_BY_ID: Record<string, CareTemplate> = Object.fromEntries(
   HOME_ITEM_TYPES.flatMap((type) => type.care).map((template) => [template.id, template])
 );
 
+function escapeForRegex(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
 /**
- * Type first (precise once explicitly assigned), then a keyword match on
- * the object's own name. Returns null rather than a low-confidence guess,
- * same never-guess discipline as extractFromText.ts.
+ * True only when the keyword appears as a whole word.
+ *
+ * Plain substring matching is wrong here in a way that silently gives
+ * people the wrong advice: "dishwasher" contains "washer", so a kitchen
+ * dishwasher would be handed a washing machine's care and told to clean
+ * a detergent drawer it does not have. Word boundaries make "washer"
+ * match "washer" and "top-load washer" but not "dishwasher".
+ */
+function mentionsWord(haystack: string, keyword: string): boolean {
+  return new RegExp(`\\b${escapeForRegex(keyword)}\\b`).test(haystack);
+}
+
+/**
+ * Type first (precise once explicitly assigned), then a whole-word match
+ * on the object's own name, most specific keyword winning so "washing
+ * machine" beats a bare "washer". Returns null rather than a
+ * low-confidence guess, same never-guess discipline as
+ * extractFromText.ts.
  */
 export function matchHomeItemType(name: string, type: string): HomeItemTypeDefinition | null {
   if (HOME_ITEM_TYPE_BY_ID[type]) return HOME_ITEM_TYPE_BY_ID[type];
   const normalized = name.toLowerCase();
-  return HOME_ITEM_TYPES.find((def) => def.matchKeywords.some((keyword) => normalized.includes(keyword))) ?? null;
+
+  let best: { definition: HomeItemTypeDefinition; length: number } | null = null;
+  for (const definition of HOME_ITEM_TYPES) {
+    for (const keyword of definition.matchKeywords) {
+      if (!mentionsWord(normalized, keyword)) continue;
+      if (!best || keyword.length > best.length) best = { definition, length: keyword.length };
+    }
+  }
+  return best?.definition ?? null;
 }
 
 /** The curated entry a stored task points at, or null when it was typed by hand or predates the link. */

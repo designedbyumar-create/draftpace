@@ -178,7 +178,17 @@ export default function HomeModule() {
             </div>
           }
         />
-        <ThingFormSheet open={addOpen} thing={null} instanceId={instanceId} onClose={() => setAddOpen(false)} onSave={handleAddItem} triggerRef={addRef} />
+        <ThingFormSheet
+          open={addOpen}
+          thing={null}
+          instanceId={instanceId}
+          onClose={() => {
+            setAddOpen(false);
+            load();
+          }}
+          onSave={handleAddItem}
+          triggerRef={addRef}
+        />
       </div>
     );
   }
@@ -301,7 +311,20 @@ export default function HomeModule() {
         </Button>
       </div>
 
-      <ThingFormSheet open={addOpen} thing={null} instanceId={instanceId} onClose={() => setAddOpen(false)} onSave={handleAddItem} triggerRef={addRef} />
+      {/* Closing the sheet reloads: confirming suggested care creates tasks
+          inside the sheet, and Home must show them straight away rather
+          than only after the person happens to navigate. */}
+      <ThingFormSheet
+        open={addOpen}
+        thing={null}
+        instanceId={instanceId}
+        onClose={() => {
+          setAddOpen(false);
+          load();
+        }}
+        onSave={handleAddItem}
+        triggerRef={addRef}
+      />
       <MaintenanceTaskFormSheet
         open={editingTask !== null}
         task={editingTask}
