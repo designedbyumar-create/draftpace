@@ -58,6 +58,20 @@ export const maintenanceTaskSchema = z.object({
 });
 export type MaintenanceTask = z.infer<typeof maintenanceTaskSchema>;
 
+export const maintenanceLogEntrySchema = z.object({
+  id: z.string(),
+  taskId: z.string().nullable(),
+  applianceId: z.string().nullable(),
+  description: z.string().min(1),
+  costMinorUnits: z.number().int().nullable(),
+  performedAt: isoDate,
+  performedBy: z.string().nullable(),
+  notes: z.string().nullable(),
+  ...recordLifecycleFields,
+  ...recordProvenanceFields,
+});
+export type MaintenanceLogEntry = z.infer<typeof maintenanceLogEntrySchema>;
+
 export const serviceProviderSchema = z.object({
   id: z.string(),
   name: z.string().min(1),

@@ -1,7 +1,9 @@
 "use client";
 
+import type { Result } from "@/product-framework/result";
 import { maintenanceTaskSchema, type MaintenanceTask } from "../state";
 import { createRecordRepository } from "./repository";
+import { createMaintenanceLogEntry } from "./maintenanceLog";
 
 interface MaintenanceTaskRow {
   id: string;
@@ -64,3 +66,31 @@ export const listMaintenanceTasks = repository.list;
 export const createMaintenanceTask = repository.create;
 export const updateMaintenanceTask = repository.update;
 export const archiveMaintenanceTask = repository.archive;
+
+/**
+ * The one canonical "mark done" action: Attention's quick action and any
+ * future direct-section equivalent both call this exact function, never a
+ * bare updateMaintenanceTask({ lastDoneAt }) on its own, so a completion
+ * always leaves a log entry behind. Two sequential writes, not a
+ * transaction, matching this product's RLS-insert-only write model (no
+ * server function wraps multiple tables here, same as PFC's own
+ * repository).
+ */
+export async function markMaintenanceTaskDone(
+  task: MaintenanceTask,
+  instanceId: string,
+  options?: { performedAt?: string; notes?: string }
+): Promise<Result<MaintenanceTask>> {
+  const performedAt = options?.performedAt ?? new Date().toISOString().slice(0, 10);
+  const logResult = await createMaintenanceLogEntry(instanceId, {
+    taskId: task.id,
+    applianceId: task.applianceId,
+    description: `${task.name} completed`,
+    performedAt,
+    notes: options?.notes ?? null,
+    status: "active",
+    source: "manual",
+  });
+  if (!logResult.ok) return logResult;
+  return updateMaintenanceTask(task.id, { lastDoneAt: performedAt });
+}
