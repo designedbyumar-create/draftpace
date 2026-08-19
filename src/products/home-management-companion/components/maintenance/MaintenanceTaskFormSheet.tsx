@@ -5,7 +5,7 @@ import Button from "@/design-system/Button";
 import Input from "@/design-system/Input";
 import Select from "@/design-system/Select";
 import RecordFormSheet from "../shared/RecordFormSheet";
-import type { MaintenanceTask, Appliance } from "../../state";
+import type { MaintenanceTask, Thing } from "../../state";
 
 export interface MaintenanceTaskFormValues {
   applianceId: string;
@@ -16,14 +16,16 @@ export interface MaintenanceTaskFormValues {
   notes: string;
 }
 
-const EMPTY_VALUES: MaintenanceTaskFormValues = {
-  applianceId: "",
-  name: "",
-  cadenceDays: "90",
-  lastDoneAt: "",
-  documentLink: "",
-  notes: "",
-};
+function emptyValues(defaultApplianceId?: string): MaintenanceTaskFormValues {
+  return {
+    applianceId: defaultApplianceId ?? "",
+    name: "",
+    cadenceDays: "90",
+    lastDoneAt: "",
+    documentLink: "",
+    notes: "",
+  };
+}
 
 function taskToFormValues(task: MaintenanceTask): MaintenanceTaskFormValues {
   return {
@@ -55,28 +57,30 @@ export function maintenanceTaskFormValuesToPatch(values: MaintenanceTaskFormValu
 export default function MaintenanceTaskFormSheet({
   open,
   task,
-  appliances,
+  things,
+  defaultApplianceId,
   onClose,
   onSave,
   triggerRef,
 }: {
   open: boolean;
   task: MaintenanceTask | null;
-  appliances: Appliance[];
+  things: Thing[];
+  defaultApplianceId?: string;
   onClose: () => void;
   onSave: (values: MaintenanceTaskFormValues) => Promise<string | null>;
   triggerRef?: React.RefObject<HTMLElement | null>;
 }) {
-  const [values, setValues] = useState<MaintenanceTaskFormValues>(EMPTY_VALUES);
+  const [values, setValues] = useState<MaintenanceTaskFormValues>(emptyValues(defaultApplianceId));
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
 
   useEffect(() => {
     if (open) {
-      setValues(task ? taskToFormValues(task) : EMPTY_VALUES);
+      setValues(task ? taskToFormValues(task) : emptyValues(defaultApplianceId));
       setError(null);
     }
-  }, [open, task]);
+  }, [open, task, defaultApplianceId]);
 
   async function handleSave() {
     if (!values.name.trim()) {
@@ -126,14 +130,14 @@ export default function MaintenanceTaskFormSheet({
         onChange={(event) => setValues({ ...values, cadenceDays: event.target.value })}
       />
       <Select
-        label="Appliance (optional)"
+        label="Thing (optional)"
         value={values.applianceId}
         onChange={(event) => setValues({ ...values, applianceId: event.target.value })}
       >
-        <option value="">Not tied to one appliance</option>
-        {appliances.map((appliance) => (
-          <option key={appliance.id} value={appliance.id}>
-            {appliance.name}
+        <option value="">Not tied to one thing</option>
+        {things.map((thing) => (
+          <option key={thing.id} value={thing.id}>
+            {thing.name}
           </option>
         ))}
       </Select>

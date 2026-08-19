@@ -29,22 +29,6 @@ const recordProvenanceFields = {
   updatedAt: z.string(),
 };
 
-export const applianceSchema = z.object({
-  id: z.string(),
-  name: z.string().min(1),
-  category: z.enum(["appliance", "system", "other"]),
-  brand: z.string().nullable(),
-  model: z.string().nullable(),
-  purchaseDate: isoDate.nullable(),
-  installDate: isoDate.nullable(),
-  warrantyExpiresAt: isoDate.nullable(),
-  documentLink: z.string().nullable(),
-  notes: z.string().nullable(),
-  ...recordLifecycleFields,
-  ...recordProvenanceFields,
-});
-export type Appliance = z.infer<typeof applianceSchema>;
-
 export const maintenanceTaskSchema = z.object({
   id: z.string(),
   applianceId: z.string().nullable(),
@@ -88,13 +72,12 @@ export const serviceProviderSchema = z.object({
 export type ServiceProvider = z.infer<typeof serviceProviderSchema>;
 
 /**
- * v2: the generic entity replacing the narrow applianceSchema above
- * (kept in place, unused by new code, until Phase 4's contained cutover
- * per the rebuild plan). `type` is an open, validated string, not a
- * closed enum, same pattern as src/product-framework/families.ts's
- * ProductFamilyId: plain regex-checked text backed by a lookup table
- * (thingTypes.ts, Phase 4), so a new thing type never needs a schema
- * change to add.
+ * The generic entity Home Base v2 is built around, replacing the old
+ * narrow appliance/system/other category. `type` is an open, validated
+ * string, not a closed enum, same pattern as
+ * src/product-framework/families.ts's ProductFamilyId: plain
+ * regex-checked text backed by a lookup table (thingTypes.ts), so a new
+ * thing type never needs a schema change to add.
  */
 const THING_TYPE_PATTERN = /^[a-z][a-z0-9-]*$/;
 

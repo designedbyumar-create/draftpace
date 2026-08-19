@@ -9,10 +9,10 @@ import EmptyState from "@/design-system/EmptyState";
 import { ArrowLeft, ArrowRight, Check, Home, Plus } from "@/design-system/Icon";
 import { describeResultError } from "@/product-framework/result";
 import { findHomeManagementCompanionInstanceId, markHomeManagementCompanionSetupComplete } from "../setupStateData";
-import { listAppliances, createAppliance } from "../domain/appliances";
+import { listThings, createThing } from "../domain/things";
 import { listMaintenanceTasks, createMaintenanceTask } from "../domain/maintenanceTasks";
-import type { Appliance, MaintenanceTask } from "../state";
-import ApplianceFormSheet, { applianceFormValuesToPatch, type ApplianceFormValues } from "./appliances/ApplianceFormSheet";
+import type { Thing, MaintenanceTask } from "../state";
+import ThingFormSheet, { thingFormValuesToPatch, type ThingFormValues } from "./things/ThingFormSheet";
 import MaintenanceTaskFormSheet, {
   maintenanceTaskFormValuesToPatch,
   type MaintenanceTaskFormValues,
@@ -22,7 +22,7 @@ type LoadStatus = "loading" | "ready" | "no-instance" | "error";
 
 const STEPS = [
   { step: 1, title: "Welcome to Home Base", short: "Welcome" },
-  { step: 2, title: "Add your appliances", short: "Appliances" },
+  { step: 2, title: "Add your things", short: "Things" },
   { step: 3, title: "Add a maintenance task", short: "Maintenance" },
 ] as const;
 
@@ -39,12 +39,12 @@ export default function SetupModule() {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [instanceId, setInstanceId] = useState<string | null>(null);
   const [currentStep, setCurrentStep] = useState(1);
-  const [appliances, setAppliances] = useState<Appliance[]>([]);
+  const [things, setThings] = useState<Thing[]>([]);
   const [tasks, setTasks] = useState<MaintenanceTask[]>([]);
-  const [applianceFormOpen, setApplianceFormOpen] = useState(false);
+  const [thingFormOpen, setThingFormOpen] = useState(false);
   const [taskFormOpen, setTaskFormOpen] = useState(false);
   const [finishing, setFinishing] = useState(false);
-  const addApplianceRef = useRef<HTMLDivElement>(null);
+  const addThingRef = useRef<HTMLDivElement>(null);
   const addTaskRef = useRef<HTMLDivElement>(null);
 
   const load = useCallback(async () => {
@@ -61,8 +61,8 @@ export default function SetupModule() {
       return;
     }
     setInstanceId(found.id);
-    const [appliancesResult, tasksResult] = await Promise.all([listAppliances(found.id), listMaintenanceTasks(found.id)]);
-    setAppliances(appliancesResult.ok ? appliancesResult.data.filter((a) => a.status !== "archived") : []);
+    const [thingsResult, tasksResult] = await Promise.all([listThings(found.id), listMaintenanceTasks(found.id)]);
+    setThings(thingsResult.ok ? thingsResult.data.filter((t) => t.status !== "archived") : []);
     setTasks(tasksResult.ok ? tasksResult.data.filter((t) => t.status !== "archived") : []);
     setStatus("ready");
   }, []);
@@ -71,12 +71,12 @@ export default function SetupModule() {
     load();
   }, [load]);
 
-  async function handleSaveAppliance(values: ApplianceFormValues): Promise<string | null> {
-    if (!instanceId) return "Couldn't find your home. Try reloading the page.";
-    const result = await createAppliance(instanceId, applianceFormValuesToPatch(values));
-    if (!result.ok) return describeResultError(result.error);
-    setAppliances((prev) => [...prev, result.data]);
-    return null;
+  async function handleSaveThing(values: ThingFormValues) {
+    if (!instanceId) return { ok: false as const, message: "Couldn't find your home. Try reloading the page." };
+    const result = await createThing(instanceId, thingFormValuesToPatch(values));
+    if (!result.ok) return { ok: false as const, message: describeResultError(result.error) };
+    setThings((prev) => [...prev, result.data]);
+    return { ok: true as const, thing: result.data };
   }
 
   async function handleSaveTask(values: MaintenanceTaskFormValues): Promise<string | null> {
@@ -179,7 +179,7 @@ export default function SetupModule() {
           {currentStep === 1 && (
             <div className="mt-5 flex flex-col gap-3">
               <p className="text-[13px] leading-relaxed text-[var(--muted)]">
-                Add the appliances and systems in your home, and how often each needs attention. From there, Home Base tells
+                Add the things in your home, and how often each needs attention. From there, Home Base tells
                 you what&apos;s actually due, and nothing else, until it&apos;s due.
               </p>
               <p className="text-[13px] leading-relaxed text-[var(--muted)]">
@@ -191,20 +191,20 @@ export default function SetupModule() {
           {currentStep === 2 && (
             <div className="mt-5">
               <p className="text-[13px] leading-relaxed text-[var(--muted)]">
-                Add a few appliances or systems, with a warranty date if you have one.
+                Add a few things, with a warranty date if you have one.
               </p>
-              {appliances.length > 0 && (
+              {things.length > 0 && (
                 <ul className="mt-4 flex flex-col gap-2">
-                  {appliances.map((appliance) => (
-                    <li key={appliance.id} className="rounded-lg border border-[var(--border)] px-3.5 py-2.5 text-[13px] font-semibold text-[var(--text)]">
-                      {appliance.name}
+                  {things.map((thing) => (
+                    <li key={thing.id} className="rounded-lg border border-[var(--border)] px-3.5 py-2.5 text-[13px] font-semibold text-[var(--text)]">
+                      {thing.name}
                     </li>
                   ))}
                 </ul>
               )}
-              <div ref={addApplianceRef} className="mt-4 inline-block">
-                <Button variant="secondary" size="sm" iconLeft={<Plus size={13} aria-hidden />} onClick={() => setApplianceFormOpen(true)}>
-                  Add appliance
+              <div ref={addThingRef} className="mt-4 inline-block">
+                <Button variant="secondary" size="sm" iconLeft={<Plus size={13} aria-hidden />} onClick={() => setThingFormOpen(true)}>
+                  Add a thing
                 </Button>
               </div>
             </div>
@@ -251,17 +251,18 @@ export default function SetupModule() {
         </div>
       </Surface>
 
-      <ApplianceFormSheet
-        open={applianceFormOpen}
-        appliance={null}
-        onClose={() => setApplianceFormOpen(false)}
-        onSave={handleSaveAppliance}
-        triggerRef={addApplianceRef}
+      <ThingFormSheet
+        open={thingFormOpen}
+        thing={null}
+        instanceId={instanceId}
+        onClose={() => setThingFormOpen(false)}
+        onSave={handleSaveThing}
+        triggerRef={addThingRef}
       />
       <MaintenanceTaskFormSheet
         open={taskFormOpen}
         task={null}
-        appliances={appliances}
+        things={things}
         onClose={() => setTaskFormOpen(false)}
         onSave={handleSaveTask}
         triggerRef={addTaskRef}

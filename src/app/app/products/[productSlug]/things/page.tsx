@@ -6,7 +6,7 @@ import { resolveProductModule } from "@/product-framework/moduleRegistry";
 import EmptyState from "@/design-system/EmptyState";
 import { Home } from "@/design-system/Icon";
 
-export default async function ProductAppliancesPage({
+export default async function ProductThingsPage({
   params,
 }: {
   params: Promise<{ productSlug: string }>;
@@ -18,14 +18,14 @@ export default async function ProductAppliancesPage({
   const definition = productRegistry.getBySlug(productSlug);
   if (!definition) notFound();
 
-  const Module = resolveProductModule(definition, "appliances");
+  const Module = resolveProductModule(definition, "things");
   if (Module) return <Module definition={definition} />;
 
   return (
     <EmptyState
       icon={Home}
-      title="No appliances destination for this product"
-      description="This product does not manage appliances directly."
+      title="No things destination for this product"
+      description="This product does not manage things directly."
     />
   );
 }

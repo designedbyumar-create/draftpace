@@ -4,8 +4,7 @@ import StartModule from "./components/StartModule";
 import SetupModule from "./components/SetupModule";
 import WorkspaceModule from "./components/WorkspaceModule";
 import AttentionModule from "./components/AttentionModule";
-import RecordsModule from "./components/RecordsModule";
-import AppliancesModule from "./components/AppliancesModule";
+import ThingsModule from "./components/ThingsModule";
 import MaintenanceModule from "./components/MaintenanceModule";
 import ServiceProvidersModule from "./components/ServiceProvidersModule";
 import ImportModule from "./components/ImportModule";
@@ -19,8 +18,7 @@ export const homeManagementCompanionCatalogEntry: ProductCatalogEntry = {
     "home-management-companion.setup": SetupModule,
     "home-management-companion.workspace": WorkspaceModule,
     "home-management-companion.attention": AttentionModule,
-    "home-management-companion.records": RecordsModule,
-    "home-management-companion.appliances": AppliancesModule,
+    "home-management-companion.things": ThingsModule,
     "home-management-companion.maintenance": MaintenanceModule,
     "home-management-companion.providers": ServiceProvidersModule,
     "home-management-companion.import": ImportModule,

@@ -16,6 +16,7 @@ export default function SectionShell({
   dominantAction,
   onAdd,
   addLabel,
+  recordsLabel = "Records",
   children,
 }: {
   icon: DraftpaceIcon;
@@ -25,6 +26,7 @@ export default function SectionShell({
   dominantAction: React.ReactNode | null;
   onAdd: () => void;
   addLabel: string;
+  recordsLabel?: string;
   children: React.ReactNode;
 }) {
   return (
@@ -46,7 +48,7 @@ export default function SectionShell({
       )}
 
       <div className="mt-5 flex items-center justify-between gap-3">
-        <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">Records</p>
+        <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">{recordsLabel}</p>
         <Button size="sm" variant="secondary" iconLeft={<Plus size={14} aria-hidden />} onClick={onAdd} className="hidden lg:inline-flex">
           {addLabel}
         </Button>

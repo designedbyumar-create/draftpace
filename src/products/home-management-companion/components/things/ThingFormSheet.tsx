@@ -1,0 +1,317 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import Button from "@/design-system/Button";
+import Input from "@/design-system/Input";
+import Select from "@/design-system/Select";
+import RecordFormSheet from "../shared/RecordFormSheet";
+import { THING_TYPES, matchThingType } from "../../thingTypes";
+import { createMaintenanceTask } from "../../domain/maintenanceTasks";
+import type { Thing } from "../../state";
+
+export interface ThingFormValues {
+  name: string;
+  type: string;
+  customType: string;
+  brand: string;
+  model: string;
+  location: string;
+  purchaseDate: string;
+  installDate: string;
+  warrantyExpiresAt: string;
+  documentLink: string;
+  notes: string;
+}
+
+const EMPTY_VALUES: ThingFormValues = {
+  name: "",
+  type: "other",
+  customType: "",
+  brand: "",
+  model: "",
+  location: "",
+  purchaseDate: "",
+  installDate: "",
+  warrantyExpiresAt: "",
+  documentLink: "",
+  notes: "",
+};
+
+function thingToFormValues(thing: Thing): ThingFormValues {
+  const known = THING_TYPES.some((t) => t.id === thing.type);
+  return {
+    name: thing.name,
+    type: known ? thing.type : "other",
+    customType: known ? "" : thing.type,
+    brand: thing.brand ?? "",
+    model: thing.model ?? "",
+    location: thing.location ?? "",
+    purchaseDate: thing.purchaseDate ?? "",
+    installDate: thing.installDate ?? "",
+    warrantyExpiresAt: thing.warrantyExpiresAt ?? "",
+    documentLink: thing.documentLink ?? "",
+    notes: thing.notes ?? "",
+  };
+}
+
+/** Lowercase, hyphenated, always starts with a letter, satisfies thingSchema's open-type regex even from arbitrary input. */
+function slugify(input: string): string {
+  const slug = input
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+  if (!slug) return "other";
+  return /^[a-z]/.test(slug) ? slug : `t-${slug}`;
+}
+
+/** Form values -> the patch shape the domain layer expects. */
+export function thingFormValuesToPatch(values: ThingFormValues): Record<string, unknown> {
+  const type = values.type === "other" ? slugify(values.customType || values.name) : values.type;
+  return {
+    name: values.name.trim(),
+    type,
+    brand: values.brand.trim() || null,
+    model: values.model.trim() || null,
+    location: values.location.trim() || null,
+    purchaseDate: values.purchaseDate || null,
+    installDate: values.installDate || null,
+    warrantyExpiresAt: values.warrantyExpiresAt || null,
+    documentLink: values.documentLink.trim() || null,
+    notes: values.notes.trim() || null,
+    status: "active",
+    source: "manual",
+  };
+}
+
+type SaveResult = { ok: true; thing: Thing } | { ok: false; message: string };
+
+export default function ThingFormSheet({
+  open,
+  thing,
+  instanceId,
+  onClose,
+  onSave,
+  triggerRef,
+}: {
+  open: boolean;
+  thing: Thing | null;
+  instanceId: string | null;
+  onClose: () => void;
+  onSave: (values: ThingFormValues) => Promise<SaveResult>;
+  triggerRef?: React.RefObject<HTMLElement | null>;
+}) {
+  const [values, setValues] = useState<ThingFormValues>(EMPTY_VALUES);
+  const [error, setError] = useState<string | null>(null);
+  const [saving, setSaving] = useState(false);
+  const [step, setStep] = useState<"form" | "suggestions">("form");
+  const [createdThing, setCreatedThing] = useState<Thing | null>(null);
+  const [checkedTasks, setCheckedTasks] = useState<Set<number>>(new Set());
+  const [addingTasks, setAddingTasks] = useState(false);
+
+  const suggestion = createdThing ? matchThingType(createdThing.name, createdThing.type) : null;
+
+  useEffect(() => {
+    if (open) {
+      setValues(thing ? thingToFormValues(thing) : EMPTY_VALUES);
+      setError(null);
+      setStep("form");
+      setCreatedThing(null);
+    }
+  }, [open, thing]);
+
+  async function handleSave() {
+    if (!values.name.trim()) {
+      setError("Enter a name first.");
+      return;
+    }
+    setSaving(true);
+    const result = await onSave(values);
+    setSaving(false);
+    if (!result.ok) {
+      setError(result.message);
+      return;
+    }
+    if (thing) {
+      onClose();
+      return;
+    }
+    const match = matchThingType(result.thing.name, result.thing.type);
+    if (match && match.suggestedTasks.length > 0) {
+      setCreatedThing(result.thing);
+      setCheckedTasks(new Set(match.suggestedTasks.map((_, i) => i)));
+      setStep("suggestions");
+      return;
+    }
+    onClose();
+  }
+
+  async function handleConfirmSuggestions() {
+    if (!createdThing || !suggestion || !instanceId) {
+      onClose();
+      return;
+    }
+    setAddingTasks(true);
+    for (const index of checkedTasks) {
+      const task = suggestion.suggestedTasks[index];
+      await createMaintenanceTask(instanceId, {
+        applianceId: createdThing.id,
+        name: task.taskName,
+        cadenceDays: task.cadenceDays,
+        lastDoneAt: null,
+        documentLink: null,
+        notes: null,
+        status: "active",
+        source: "manual",
+      });
+    }
+    setAddingTasks(false);
+    onClose();
+  }
+
+  function toggleTask(index: number) {
+    setCheckedTasks((prev) => {
+      const next = new Set(prev);
+      if (next.has(index)) next.delete(index);
+      else next.add(index);
+      return next;
+    });
+  }
+
+  if (step === "suggestions" && createdThing && suggestion) {
+    return (
+      <RecordFormSheet
+        open={open}
+        onClose={onClose}
+        title={`This looks like a ${suggestion.label.toLowerCase()}`}
+        description="Add its typical upkeep now, or skip and add tasks later."
+        triggerRef={triggerRef}
+        footer={
+          <>
+            <Button variant="secondary" onClick={onClose} disabled={addingTasks}>
+              Skip
+            </Button>
+            <Button onClick={handleConfirmSuggestions} disabled={addingTasks || checkedTasks.size === 0}>
+              {addingTasks ? "Adding…" : `Add ${checkedTasks.size || ""} task${checkedTasks.size === 1 ? "" : "s"}`}
+            </Button>
+          </>
+        }
+      >
+        <ul className="flex flex-col gap-2">
+          {suggestion.suggestedTasks.map((task, index) => (
+            <li key={task.taskName}>
+              <label className="flex cursor-pointer items-start gap-3 rounded-lg border border-[var(--border)] p-3.5 transition hover:border-[var(--border-strong)]">
+                <input
+                  type="checkbox"
+                  checked={checkedTasks.has(index)}
+                  onChange={() => toggleTask(index)}
+                  className="mt-0.5 h-4 w-4 shrink-0 rounded border-[var(--border-strong)] text-[var(--primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]"
+                />
+                <span>
+                  <span className="block text-[13px] font-semibold text-[var(--text)]">{task.taskName}</span>
+                  <span className="block text-[12px] text-[var(--muted)]">
+                    Every {task.cadenceDays} {task.cadenceDays === 1 ? "day" : "days"}
+                  </span>
+                </span>
+              </label>
+            </li>
+          ))}
+        </ul>
+      </RecordFormSheet>
+    );
+  }
+
+  return (
+    <RecordFormSheet
+      open={open}
+      onClose={onClose}
+      title={thing ? "Edit thing" : "Add a thing"}
+      description="Anything in your home worth keeping track of: appliance, system, or fixture. Dates are optional."
+      triggerRef={triggerRef}
+      footer={
+        <>
+          <Button variant="secondary" onClick={onClose} disabled={saving}>
+            Cancel
+          </Button>
+          <Button onClick={handleSave} disabled={saving}>
+            {saving ? "Saving…" : "Save"}
+          </Button>
+        </>
+      }
+    >
+      <Input
+        label="Name"
+        value={values.name}
+        onChange={(event) => setValues({ ...values, name: event.target.value })}
+        placeholder="e.g. Kitchen refrigerator"
+        autoFocus
+      />
+      <Select label="Type" value={values.type} onChange={(event) => setValues({ ...values, type: event.target.value })}>
+        {THING_TYPES.map((t) => (
+          <option key={t.id} value={t.id}>
+            {t.label}
+          </option>
+        ))}
+        <option value="other">Other / not listed</option>
+      </Select>
+      {values.type === "other" && (
+        <Input
+          label="Describe the type (optional)"
+          value={values.customType}
+          onChange={(event) => setValues({ ...values, customType: event.target.value })}
+          placeholder="e.g. sump pump"
+        />
+      )}
+      <div className="grid gap-3 sm:grid-cols-2">
+        <Input
+          label="Brand (optional)"
+          value={values.brand}
+          onChange={(event) => setValues({ ...values, brand: event.target.value })}
+        />
+        <Input
+          label="Model (optional)"
+          value={values.model}
+          onChange={(event) => setValues({ ...values, model: event.target.value })}
+        />
+      </div>
+      <Input
+        label="Location (optional)"
+        value={values.location}
+        onChange={(event) => setValues({ ...values, location: event.target.value })}
+        placeholder="e.g. Basement"
+      />
+      <div className="grid gap-3 sm:grid-cols-2">
+        <Input
+          label="Purchase date (optional)"
+          type="date"
+          value={values.purchaseDate}
+          onChange={(event) => setValues({ ...values, purchaseDate: event.target.value })}
+        />
+        <Input
+          label="Install date (optional)"
+          type="date"
+          value={values.installDate}
+          onChange={(event) => setValues({ ...values, installDate: event.target.value })}
+        />
+      </div>
+      <Input
+        label="Warranty expires (optional)"
+        type="date"
+        value={values.warrantyExpiresAt}
+        onChange={(event) => setValues({ ...values, warrantyExpiresAt: event.target.value })}
+      />
+      <Input
+        label="Manual or receipt link (optional)"
+        value={values.documentLink}
+        onChange={(event) => setValues({ ...values, documentLink: event.target.value })}
+        placeholder="Paste a link from Drive, Dropbox, wherever it lives"
+      />
+      <Input
+        label="Notes (optional)"
+        value={values.notes}
+        onChange={(event) => setValues({ ...values, notes: event.target.value })}
+      />
+      {error && <p className="text-[13px] text-[var(--danger)]">{error}</p>}
+    </RecordFormSheet>
+  );
+}

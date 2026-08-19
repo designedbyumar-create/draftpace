@@ -7,9 +7,9 @@ import Button from "@/design-system/Button";
 import EmptyState from "@/design-system/EmptyState";
 import { describeResultError } from "@/product-framework/result";
 import { findHomeManagementCompanionInstanceId } from "../setupStateData";
-import { listAppliances } from "../domain/appliances";
+import { listThings } from "../domain/things";
 import { listMaintenanceTasks, createMaintenanceTask, updateMaintenanceTask, archiveMaintenanceTask } from "../domain/maintenanceTasks";
-import type { Appliance, MaintenanceTask } from "../state";
+import type { Thing, MaintenanceTask } from "../state";
 import SectionShell from "./shared/SectionShell";
 import { StatRow, StatTile } from "./shared/StatRow";
 import { STATUS_LABEL, STATUS_TONE } from "./shared/lifecycle";
@@ -25,7 +25,7 @@ export default function MaintenanceModule() {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [instanceId, setInstanceId] = useState<string | null>(null);
   const [tasks, setTasks] = useState<MaintenanceTask[]>([]);
-  const [appliances, setAppliances] = useState<Appliance[]>([]);
+  const [things, setThings] = useState<Thing[]>([]);
   const [showArchived, setShowArchived] = useState(false);
   const [formOpen, setFormOpen] = useState(false);
   const [editingTask, setEditingTask] = useState<MaintenanceTask | null>(null);
@@ -45,14 +45,14 @@ export default function MaintenanceModule() {
       return;
     }
     setInstanceId(found.id);
-    const [tasksResult, appliancesResult] = await Promise.all([listMaintenanceTasks(found.id), listAppliances(found.id)]);
+    const [tasksResult, thingsResult] = await Promise.all([listMaintenanceTasks(found.id), listThings(found.id)]);
     if (!tasksResult.ok) {
       setErrorMessage(describeResultError(tasksResult.error));
       setStatus("error");
       return;
     }
     setTasks(tasksResult.data);
-    setAppliances(appliancesResult.ok ? appliancesResult.data.filter((a) => a.status !== "archived") : []);
+    setThings(thingsResult.ok ? thingsResult.data.filter((t) => t.status !== "archived") : []);
     setStatus("ready");
   }, []);
 
@@ -110,7 +110,7 @@ export default function MaintenanceModule() {
 
   const active = tasks.filter((t) => t.status !== "archived");
   const archived = tasks.filter((t) => t.status === "archived");
-  const applianceName = (id: string | null) => (id ? appliances.find((a) => a.id === id)?.name ?? null : null);
+  const thingName = (id: string | null) => (id ? things.find((t) => t.id === id)?.name ?? null : null);
 
   return (
     <SectionShell
@@ -149,7 +149,7 @@ export default function MaintenanceModule() {
             <TaskCard
               key={task.id}
               task={task}
-              applianceName={applianceName(task.applianceId)}
+              thingName={thingName(task.applianceId)}
               onEdit={() => {
                 setEditingTask(task);
                 setFormOpen(true);
@@ -172,7 +172,7 @@ export default function MaintenanceModule() {
           {showArchived && (
             <ul className="mt-2.5 flex flex-col gap-2.5 opacity-70">
               {archived.map((task) => (
-                <TaskCard key={task.id} task={task} applianceName={applianceName(task.applianceId)} onEdit={() => {}} onArchive={() => {}} readOnly />
+                <TaskCard key={task.id} task={task} thingName={thingName(task.applianceId)} onEdit={() => {}} onArchive={() => {}} readOnly />
               ))}
             </ul>
           )}
@@ -182,7 +182,7 @@ export default function MaintenanceModule() {
       <MaintenanceTaskFormSheet
         open={formOpen}
         task={editingTask}
-        appliances={appliances}
+        things={things}
         onClose={() => setFormOpen(false)}
         onSave={handleSave}
         triggerRef={addButtonRef}
@@ -193,13 +193,13 @@ export default function MaintenanceModule() {
 
 function TaskCard({
   task,
-  applianceName,
+  thingName,
   onEdit,
   onArchive,
   readOnly = false,
 }: {
   task: MaintenanceTask;
-  applianceName: string | null;
+  thingName: string | null;
   onEdit: () => void;
   onArchive: () => void;
   readOnly?: boolean;
@@ -214,7 +214,7 @@ function TaskCard({
           </div>
           <p className="mt-0.5 text-[12px] text-[var(--muted)]">
             Every {task.cadenceDays} {task.cadenceDays === 1 ? "day" : "days"}
-            {applianceName && ` · ${applianceName}`}
+            {thingName && ` · ${thingName}`}
           </p>
           <p className="mt-1 text-[12px] text-[var(--muted)]">
             {task.lastDoneAt ? `Last done ${task.lastDoneAt}` : "Never logged"}

@@ -7,7 +7,7 @@ import { z } from "zod";
  * (see the hmc_import_sessions migration's own comment): a candidate is
  * a plain in-memory draft that lives only in the browser during the
  * review step, and only import/confirmCandidate.ts's confirmation path
- * (calling the exact same createAppliance/createMaintenanceTask/
+ * (calling the exact same createThing/createMaintenanceTask/
  * createServiceProvider functions the direct sections already use) ever
  * turns one into a real row.
  */

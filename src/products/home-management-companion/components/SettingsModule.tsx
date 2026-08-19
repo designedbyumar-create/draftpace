@@ -129,7 +129,7 @@ export default function SettingsModule() {
       <Surface className="flex items-center justify-between gap-4">
         <div>
           <p className="text-[13px] font-semibold text-[var(--text)]">Your home</p>
-          <p className="mt-0.5 text-[12px] leading-relaxed text-[var(--muted)]">Add or update appliances and maintenance tasks.</p>
+          <p className="mt-0.5 text-[12px] leading-relaxed text-[var(--muted)]">Add or update things and maintenance tasks.</p>
         </div>
         <Button variant="secondary" href="/app/products/home-management-companion/setup">
           Manage your home
