@@ -18,6 +18,7 @@
 
 const CHECKOUT_URL_ENV_BY_SLUG: Record<string, string | undefined> = {
   "personal-finance-companion": process.env.LEMON_SQUEEZY_PFC_CHECKOUT_URL,
+  "home-management-companion": process.env.LEMON_SQUEEZY_HMC_CHECKOUT_URL,
 };
 
 export function hasLemonSqueezyCheckout(productSlug: string): boolean {

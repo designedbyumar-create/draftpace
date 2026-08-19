@@ -21,6 +21,11 @@ import {
   GuidedCompanionScreenMockup as PfcGuidedCompanionScreenMockup,
   AttentionScreenMockup as PfcAttentionScreenMockup,
 } from "./personalFinanceCompanionVisuals";
+import {
+  OverviewScreenMockup as HmcOverviewScreenMockup,
+  AttentionScreenMockup as HmcAttentionScreenMockup,
+  RecordsScreenMockup as HmcRecordsScreenMockup,
+} from "./homeManagementCompanionVisuals";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { getLemonSqueezyCheckoutUrl, hasLemonSqueezyCheckout } from "@/shop/lemonSqueezyCheckout";
 
@@ -72,6 +77,7 @@ export default async function ShopProductPage({
   // until it has its own.
   const isMonthlyMoneyReset = product.slug === "monthly-money-reset";
   const isPersonalFinanceCompanion = product.slug === "personal-finance-companion";
+  const isHomeManagementCompanion = product.slug === "home-management-companion";
 
   // Resolved once per request, server-side, so every GetAction on this page
   // (hero, mid-page, final CTA) agrees on the exact same checkout link
@@ -122,6 +128,8 @@ export default async function ShopProductPage({
               <MmrOverviewScreenMockup />
             ) : isPersonalFinanceCompanion ? (
               <PfcOverviewScreenMockup />
+            ) : isHomeManagementCompanion ? (
+              <HmcOverviewScreenMockup />
             ) : (
               <HeroVisual product={product} />
             )}
@@ -154,6 +162,8 @@ export default async function ShopProductPage({
               <MmrBreakdownScreenMockup />
             ) : isPersonalFinanceCompanion ? (
               <PfcAttentionScreenMockup />
+            ) : isHomeManagementCompanion ? (
+              <HmcAttentionScreenMockup />
             ) : undefined
           }
         >
@@ -174,6 +184,8 @@ export default async function ShopProductPage({
               <MmrAddInfoScreenMockup />
             ) : isPersonalFinanceCompanion ? (
               <PfcGuidedCompanionScreenMockup />
+            ) : isHomeManagementCompanion ? (
+              <HmcRecordsScreenMockup />
             ) : undefined
           }
           reverse

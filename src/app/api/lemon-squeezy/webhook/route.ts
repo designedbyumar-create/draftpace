@@ -24,6 +24,9 @@ const VARIANT_ID_TO_PRODUCT_SLUG: Record<string, { slug: string; version: string
   ...(process.env.LEMON_SQUEEZY_PFC_VARIANT_ID
     ? { [process.env.LEMON_SQUEEZY_PFC_VARIANT_ID]: { slug: "personal-finance-companion", version: "0.1.0" } }
     : {}),
+  ...(process.env.LEMON_SQUEEZY_HMC_VARIANT_ID
+    ? { [process.env.LEMON_SQUEEZY_HMC_VARIANT_ID]: { slug: "home-management-companion", version: "0.1.0" } }
+    : {}),
 };
 
 function verifySignature(rawBody: string, signatureHeader: string | null, secret: string): boolean {
