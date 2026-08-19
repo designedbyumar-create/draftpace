@@ -88,10 +88,9 @@ export const homeManagementCompanionDefinition: ProductDefinitionInput = {
   // cached, but reads/writes require connectivity, no optimistic offline
   // write queue exists for this kind of record yet.
   offline: "shell-only",
-  // Flipped true in the reminders phase, once a real evaluator exists —
-  // false until then rather than a premature promise, same discipline PFC
-  // followed at this stage of its own build.
-  notifications: { supported: false },
+  // A real evaluator exists now (src/app/api/notifications/cron-hmc),
+  // its own separate cron job from PFC's, so this can honestly flip true.
+  notifications: { supported: true },
   progressModel: { kind: "custom" },
   history: { enabled: true, kinds: ["maintenance-log"] },
   settingsSections: ["notifications", "privacy", "timezone"],
