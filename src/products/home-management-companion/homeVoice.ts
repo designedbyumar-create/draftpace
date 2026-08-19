@@ -94,3 +94,15 @@ export function describeWarranty(warrantyExpiresAt: string, now: Date): string {
 
 /** How long a snooze lasts when someone taps Snooze without choosing a length. */
 export const DEFAULT_SNOOZE_DAYS = 7;
+
+/**
+ * The one line at the top of Home. It states the home's condition, not a
+ * count of records, and it is allowed to say that everything is fine,
+ * because that is usually true and worth hearing.
+ */
+export function describeHomeHeadline(counts: { wrong: number; worthDoing: number }): string {
+  if (counts.wrong > 0) return counts.wrong === 1 ? "Something needs a look" : "A few things need a look";
+  if (counts.worthDoing === 1) return "One thing worth taking care of";
+  if (counts.worthDoing > 1) return "A couple of things worth taking care of";
+  return "Your home is in good shape";
+}

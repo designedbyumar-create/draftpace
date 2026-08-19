@@ -45,39 +45,25 @@ export const homeManagementCompanionDefinition: ProductDefinitionInput = {
     provisionalBranding: true,
   },
   capabilities: ["companion.context", "companion.next-action"],
-  navigation: [
-    "start",
-    "setup",
-    "workspace",
-    "attention",
-    "things",
-    "maintenance",
-    "providers",
-    "import",
-    "history",
-    "settings",
-  ],
-  primaryNavigation: ["workspace", "attention", "things"],
-  workspaceLabel: "Today",
-  // The route id stays "things" (renaming a route buys nothing a person
-  // can see), but no user-facing surface says that word. The v2
-  // direction is that there is no generic noun at all: someone sees
-  // "Refrigerator", and the place those live is simply their home.
-  destinationLabels: { things: "Your home", attention: "Needs you" },
-  startRoute: "start",
+  // One place the product actually lives, plus the two things that
+  // genuinely need a page of their own. There is no Attention, Things,
+  // Maintenance or Providers destination: those were separate screens
+  // answering the same question, which made the person choose where to
+  // look before they could find out whether anything needed them. Home
+  // decides and shows. Item detail is a contextual route reached by
+  // tapping something, never a tab.
+  navigation: ["workspace", "setup", "import", "history", "settings"],
+  primaryNavigation: ["workspace", "history"],
+  workspaceLabel: "Home",
+  startRoute: "workspace",
   setup: {
     required: true,
     skippable: true,
     completedLabel: "Manage your home",
   },
   modules: [
-    { id: "home-management-companion.start", destination: "start" },
     { id: "home-management-companion.setup", destination: "setup" },
     { id: "home-management-companion.workspace", destination: "workspace" },
-    { id: "home-management-companion.attention", destination: "attention" },
-    { id: "home-management-companion.things", destination: "things" },
-    { id: "home-management-companion.maintenance", destination: "maintenance" },
-    { id: "home-management-companion.providers", destination: "providers" },
     { id: "home-management-companion.import", destination: "import" },
     { id: "home-management-companion.history", destination: "history" },
     { id: "home-management-companion.settings", destination: "settings" },

@@ -5,6 +5,7 @@ import Button from "@/design-system/Button";
 import Input from "@/design-system/Input";
 import Select from "@/design-system/Select";
 import RecordFormSheet from "../shared/RecordFormSheet";
+import { describeResultError } from "@/product-framework/result";
 import { HOME_ITEM_TYPES, matchHomeItemType } from "../../homeKnowledge";
 import { describeInterval } from "../../homeVoice";
 import { createMaintenanceTask } from "../../domain/maintenanceTasks";
@@ -66,9 +67,19 @@ function slugify(input: string): string {
   return /^[a-z]/.test(slug) ? slug : `t-${slug}`;
 }
 
-/** Form values -> the patch shape the domain layer expects. */
+/**
+ * Form values -> the patch shape the domain layer expects.
+ *
+ * When someone leaves the type alone but names the thing recognisably
+ * ("Basement water heater"), the curated match wins over a slug made
+ * from their words. Without this the record stores
+ * "basement-water-heater", which matches nothing in homeKnowledge.ts, so
+ * the product would propose that thing's care once at creation and then
+ * never know what it was again.
+ */
 export function thingFormValuesToPatch(values: ThingFormValues): Record<string, unknown> {
-  const type = values.type === "other" ? slugify(values.customType || values.name) : values.type;
+  const recognised = values.type === "other" && !values.customType.trim() ? matchHomeItemType(values.name, "") : null;
+  const type = recognised ? recognised.id : values.type === "other" ? slugify(values.customType || values.name) : values.type;
   return {
     name: values.name.trim(),
     type,
@@ -153,9 +164,14 @@ export default function ThingFormSheet({
       return;
     }
     setAddingTasks(true);
+    setError(null);
+    // Never swallow a failure here. These are jobs the person explicitly
+    // ticked; closing the sheet as though they were saved when they were
+    // not is the worst outcome available, because nothing would ever
+    // remind them again.
     for (const index of checkedTasks) {
       const task = suggestion.care[index];
-      await createMaintenanceTask(instanceId, {
+      const created = await createMaintenanceTask(instanceId, {
         applianceId: createdThing.id,
         name: task.taskName,
         cadenceDays: task.intervalDays,
@@ -166,6 +182,11 @@ export default function ThingFormSheet({
         status: "active",
         source: "manual",
       });
+      if (!created.ok) {
+        setAddingTasks(false);
+        setError(`Couldn't add "${task.taskName}". ${describeResultError(created.error)}`);
+        return;
+      }
     }
     setAddingTasks(false);
     onClose();
@@ -199,6 +220,7 @@ export default function ThingFormSheet({
           </>
         }
       >
+        {error && <p className="text-[13px] text-[var(--danger)]">{error}</p>}
         <ul className="flex flex-col gap-2">
           {suggestion.care.map((task, index) => (
             <li key={task.taskName}>

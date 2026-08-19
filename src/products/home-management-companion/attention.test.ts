@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { deriveAttentionItems, scoreAttentionUrgency } from "./attention";
-import type { HomeItem, MaintenanceTask, Problem } from "./state";
+import { deriveAttentionItems, deriveHomeState, scoreAttentionUrgency } from "./attention";
+import type { HomeItem, MaintenanceTask, MaintenanceLogEntry, Problem } from "./state";
 
 const NOW = new Date("2026-06-15T12:00:00Z");
 
@@ -219,10 +219,9 @@ describe("deriveAttentionItems: problems", () => {
     expect(deriveAttentionItems({ ...EMPTY, problems: [snoozed] }, NOW)).toHaveLength(0);
   });
 
-  it("points an unattached problem somewhere that exists, never at a dead route", () => {
+  it("gives an unattached problem no link rather than a dead route or a link to the page it is already on", () => {
     const items = deriveAttentionItems({ ...EMPTY, problems: [makeProblem({ thingId: null })] }, NOW);
-    expect(items[0].href).not.toContain("/problems");
-    expect(items[0].href).toBe("/app/products/home-management-companion/workspace");
+    expect(items[0].href).toBeNull();
   });
 
   it("deep-links a problem to its item when it has one", () => {
@@ -263,5 +262,90 @@ describe("scoreAttentionUrgency", () => {
   it("lets real money at stake raise a problem's urgency", () => {
     expect(scoreAttentionUrgency({ intervalsLate: 0, consequence: 1, effort: 1, cost: 0 })).toBe("canWait");
     expect(scoreAttentionUrgency({ intervalsLate: 0, consequence: 1, effort: 1, cost: 2 })).toBe("soon");
+  });
+});
+
+describe("deriveHomeState", () => {
+  const noEvents = { ...EMPTY, recentEvents: [] };
+
+  function makeLogEntry(overrides: Partial<MaintenanceLogEntry> = {}): MaintenanceLogEntry {
+    return {
+      id: "log-1",
+      taskId: null,
+      applianceId: null,
+      description: "AC serviced",
+      costMinorUnits: null,
+      performedAt: isoDaysAgo(14),
+      performedBy: null,
+      notes: null,
+      status: "active",
+      needsReviewReason: null,
+      source: "manual",
+      importSessionId: null,
+      createdAt: isoDaysAgo(14) + "T00:00:00Z",
+      updatedAt: isoDaysAgo(14) + "T00:00:00Z",
+      ...overrides,
+    };
+  }
+
+  it("separates something wrong from care worth doing", () => {
+    const state = deriveHomeState(
+      { ...noEvents, problems: [makeProblem()], maintenanceTasks: [makeTask()] },
+      NOW
+    );
+    expect(state.somethingWrong).toHaveLength(1);
+    expect(state.worthTakingCareOf).toHaveLength(1);
+    expect(state.worthTakingCareOf[0].kind).toBe("maintenanceDue");
+  });
+
+  it("surfaces care approaching its interval as coming up, not as due", () => {
+    const soon = makeTask({ cadenceDays: 90, lastDoneAt: isoDaysAgo(75) });
+    const state = deriveHomeState({ ...noEvents, maintenanceTasks: [soon] }, NOW);
+    expect(state.worthTakingCareOf).toHaveLength(0);
+    expect(state.comingUp).toHaveLength(1);
+    expect(state.comingUp[0].detail).toBe("Due in 2 weeks");
+  });
+
+  it("does not list something as coming up while it is already due", () => {
+    const due = makeTask({ cadenceDays: 90, lastDoneAt: isoDaysAgo(120) });
+    const state = deriveHomeState({ ...noEvents, maintenanceTasks: [due] }, NOW);
+    expect(state.comingUp).toHaveLength(0);
+    expect(state.worthTakingCareOf).toHaveLength(1);
+  });
+
+  it("reports recent work newest first and forgets old work", () => {
+    const state = deriveHomeState(
+      {
+        ...noEvents,
+        recentEvents: [
+          makeLogEntry({ id: "old", description: "Gutters cleared", performedAt: isoDaysAgo(200) }),
+          makeLogEntry({ id: "new", description: "AC serviced", performedAt: isoDaysAgo(3) }),
+          makeLogEntry({ id: "mid", description: "Filter replaced", performedAt: isoDaysAgo(20) }),
+        ],
+      },
+      NOW
+    );
+    expect(state.recentlyHandled.map((h) => h.title)).toEqual(["AC serviced", "Filter replaced"]);
+    expect(state.recentlyHandled[0].when).toBe("3 days ago");
+  });
+
+  it("knows the difference between an empty home and a home with nothing due", () => {
+    expect(deriveHomeState(noEvents, NOW).nothingTracked).toBe(true);
+    const settled = deriveHomeState(
+      { ...noEvents, homeItems: [makeHomeItem()], maintenanceTasks: [makeTask({ lastDoneAt: isoDaysAgo(1) })] },
+      NOW
+    );
+    expect(settled.nothingTracked).toBe(false);
+    expect(settled.somethingWrong).toHaveLength(0);
+    expect(settled.worthTakingCareOf).toHaveLength(0);
+  });
+
+  it("counts the quiet remainder as reassurance rather than surfacing it", () => {
+    const state = deriveHomeState(
+      { ...noEvents, homeItems: [makeHomeItem(), makeHomeItem({ id: "item-2" })], maintenanceTasks: [makeTask()] },
+      NOW
+    );
+    expect(state.worthTakingCareOf).toHaveLength(1);
+    expect(state.restUnderControl).toBe(2);
   });
 });

@@ -1,6 +1,6 @@
-import type { HomeItem, MaintenanceTask, Problem } from "./state";
+import type { HomeItem, MaintenanceTask, MaintenanceLogEntry, Problem } from "./state";
 import { findCareTemplate, findCareTemplateByTaskName, type CareConsequence, type CareEffort } from "./homeKnowledge";
-import { describeCareStatus, describeWarranty } from "./homeVoice";
+import { describeCareStatus, describeWarranty, describeUpcoming, describeElapsed, daysBetween } from "./homeVoice";
 
 /**
  * The shared Attention domain: one deterministic answer to "what does
@@ -32,7 +32,12 @@ export interface AttentionItem {
   title: string;
   /** Why it is here, stated as fact, e.g. "Last done 4 months ago, usually every 3 months". */
   detail: string;
-  href: string;
+  /**
+   * The object this concerns, when there is one. Null means there is
+   * nowhere useful to go: the row carries its own actions and Home is
+   * already the only place it lives, so it is not a link to itself.
+   */
+  href: string | null;
 }
 
 /** How far ahead a warranty expiry surfaces as worth a look before it lapses. */
@@ -128,6 +133,11 @@ function careFactorsFor(task: MaintenanceTask): { consequence: CareConsequence; 
   return { consequence: template.consequence, effort: template.effort };
 }
 
+/** The one place an item's own surface is addressed, so the route shape lives in a single line. */
+export function itemHref(itemId: string): string {
+  return `/app/products/home-management-companion/things/${itemId}`;
+}
+
 export interface AttentionInputs {
   homeItems: HomeItem[];
   maintenanceTasks: MaintenanceTask[];
@@ -168,7 +178,7 @@ export function deriveAttentionItems(inputs: AttentionInputs, now: Date = new Da
         entityId: task.id,
         title: task.name,
         detail: describeCareStatus(task.lastDoneAt, task.cadenceDays, now),
-        href: "/app/products/home-management-companion/maintenance",
+        href: task.applianceId ? itemHref(task.applianceId) : null,
       },
     });
   }
@@ -192,7 +202,7 @@ export function deriveAttentionItems(inputs: AttentionInputs, now: Date = new Da
         entityId: item.id,
         title: item.name,
         detail: describeWarranty(item.warrantyExpiresAt, now),
-        href: `/app/products/home-management-companion/things/${item.id}`,
+        href: itemHref(item.id),
       },
     });
   }
@@ -218,13 +228,7 @@ export function deriveAttentionItems(inputs: AttentionInputs, now: Date = new Da
         entityId: problem.id,
         title: problem.title,
         detail: problem.description ?? "Reported as a problem",
-        // Deep-links to the affected object when there is one. There is
-        // no dedicated problem surface yet (it lands with the reporting
-        // flow in the next phase), so an unattached problem points at
-        // Today rather than at the /problems route that never existed.
-        href: problem.thingId
-          ? `/app/products/home-management-companion/things/${problem.thingId}`
-          : "/app/products/home-management-companion/workspace",
+        href: problem.thingId ? itemHref(problem.thingId) : null,
       },
     });
   }
@@ -243,4 +247,99 @@ export function deriveAttentionItems(inputs: AttentionInputs, now: Date = new Da
       return b.rank - a.rank;
     })
     .map((entry) => entry.item);
+}
+
+/* ------------------------------------------------------------------ *
+ * Home state
+ * ------------------------------------------------------------------ */
+
+/** Care that is not due yet but is close enough to be worth knowing about. */
+const COMING_UP_HORIZON_DAYS = 30;
+/** How far back "recently handled" reaches. */
+const RECENTLY_HANDLED_DAYS = 30;
+/** Most items shown in a band before the rest are folded away. A wall of rows says the same as saying nothing. */
+export const HOME_BAND_LIMIT = 4;
+
+export interface UpcomingItem {
+  id: string;
+  title: string;
+  detail: string;
+  href: string | null;
+}
+
+export interface HandledItem {
+  id: string;
+  title: string;
+  when: string;
+}
+
+export interface HomeStateInputs extends AttentionInputs {
+  /** Completed care, used only for "recently handled". */
+  recentEvents: MaintenanceLogEntry[];
+}
+
+/**
+ * Everything the Home surface renders, in one derivation.
+ *
+ * Home is the only place any of this appears, so this function decides
+ * what matters rather than leaving the person to compare separate
+ * screens. The bands read as a single narrative: what is wrong, what is
+ * worth doing, what is coming, what was handled, and then a plain
+ * statement that the rest is fine.
+ */
+export interface HomeState {
+  somethingWrong: AttentionItem[];
+  worthTakingCareOf: AttentionItem[];
+  comingUp: UpcomingItem[];
+  recentlyHandled: HandledItem[];
+  /** Active records not currently surfaced. Only ever phrased as reassurance, never as a statistic. */
+  restUnderControl: number;
+  /** True when the home has nothing recorded at all, which is a different screen from "nothing is due". */
+  nothingTracked: boolean;
+}
+
+export function deriveHomeState(inputs: HomeStateInputs, now: Date = new Date()): HomeState {
+  const attention = deriveAttentionItems(inputs, now);
+  const somethingWrong = attention.filter((item) => item.kind === "problem");
+  const worthTakingCareOf = attention.filter((item) => item.kind !== "problem");
+
+  const surfacedTaskIds = new Set(attention.filter((i) => i.kind === "maintenanceDue").map((i) => i.entityId));
+
+  const comingUp: UpcomingItem[] = [];
+  for (const task of inputs.maintenanceTasks) {
+    if (task.status === "archived") continue;
+    if (surfacedTaskIds.has(task.id)) continue;
+    if (!task.lastDoneAt) continue;
+    const days = daysUntil(addDays(task.lastDoneAt, task.cadenceDays), now);
+    if (days <= 0 || days > COMING_UP_HORIZON_DAYS) continue;
+    comingUp.push({
+      id: `upcoming:${task.id}`,
+      title: task.name,
+      detail: `Due ${describeUpcoming(days)}`,
+      href: task.applianceId ? itemHref(task.applianceId) : null,
+    });
+  }
+  comingUp.sort((a, b) => a.detail.localeCompare(b.detail));
+
+  const recentlyHandled: HandledItem[] = inputs.recentEvents
+    .filter((entry) => entry.status !== "archived" && daysBetween(entry.performedAt, now) <= RECENTLY_HANDLED_DAYS)
+    .sort((a, b) => b.performedAt.localeCompare(a.performedAt))
+    .map((entry) => ({
+      id: `handled:${entry.id}`,
+      title: entry.description,
+      when: describeElapsed(daysBetween(entry.performedAt, now)),
+    }));
+
+  const activeItems = inputs.homeItems.filter((i) => i.status !== "archived").length;
+  const activeTasks = inputs.maintenanceTasks.filter((t) => t.status !== "archived").length;
+  const surfaced = attention.length + comingUp.length;
+
+  return {
+    somethingWrong,
+    worthTakingCareOf,
+    comingUp,
+    recentlyHandled,
+    restUnderControl: Math.max(0, activeItems + activeTasks - surfaced),
+    nothingTracked: activeItems === 0 && activeTasks === 0 && inputs.problems.length === 0,
+  };
 }

@@ -208,7 +208,7 @@ export default function ImportModule() {
         >
           Import more
         </Button>
-        <Button size="md" onClick={() => router.push("/app/products/home-management-companion/things")}>
+        <Button size="md" onClick={() => router.push("/app/products/home-management-companion/workspace")}>
           Go to your home
         </Button>
       </div>

@@ -213,7 +213,7 @@ export default function ThingDetailModule() {
         title="This isn't here anymore"
         description="It may have been removed."
         action={
-          <Link href="/app/products/home-management-companion/things">
+          <Link href="/app/products/home-management-companion/workspace">
             <Button size="sm" variant="secondary">
               Back to your home
             </Button>
@@ -226,7 +226,7 @@ export default function ThingDetailModule() {
   return (
     <div className="pb-20 lg:pb-0">
       <Link
-        href="/app/products/home-management-companion/things"
+        href="/app/products/home-management-companion/workspace"
         className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--muted)] hover:text-[var(--text)]"
       >
         <ArrowLeft size={14} aria-hidden />
