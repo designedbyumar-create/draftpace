@@ -5,7 +5,7 @@ import Button from "@/design-system/Button";
 import Input from "@/design-system/Input";
 import Select from "@/design-system/Select";
 import RecordFormSheet from "../shared/RecordFormSheet";
-import { thingDocumentKindSchema } from "../../state";
+import { homeItemDocumentKindSchema } from "../../state";
 
 export interface ThingDocumentFormValues {
   kind: string;
@@ -43,7 +43,7 @@ export function thingDocumentFormValuesToPatch(values: ThingDocumentFormValues):
   };
 }
 
-export default function ThingDocumentFormSheet({
+export default function HomeItemDocumentFormSheet({
   open,
   onClose,
   onSave,
@@ -81,7 +81,7 @@ export default function ThingDocumentFormSheet({
       open={open}
       onClose={onClose}
       title="Add a document"
-      description="A warranty, receipt, or manual for this thing, linked from wherever it already lives."
+      description="A warranty, receipt, or manual, linked from wherever it already lives."
       triggerRef={triggerRef}
       footer={
         <>
@@ -95,7 +95,7 @@ export default function ThingDocumentFormSheet({
       }
     >
       <Select label="Kind" value={values.kind} onChange={(event) => setValues({ ...values, kind: event.target.value })}>
-        {thingDocumentKindSchema.options.map((kind) => (
+        {homeItemDocumentKindSchema.options.map((kind) => (
           <option key={kind} value={kind}>
             {KIND_LABEL[kind]}
           </option>

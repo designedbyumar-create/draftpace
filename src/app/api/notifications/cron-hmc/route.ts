@@ -9,7 +9,7 @@ import { buildPushPayloads, type EnrichedReminder } from "@/products/home-manage
 import { deriveAttentionItems } from "@/products/home-management-companion/attention";
 import { validateNotificationPreferences } from "@/products/home-management-companion/notificationPreferences";
 import type { HomeManagementCompanionReminderKind } from "@/products/home-management-companion/reminders";
-import type { Thing, MaintenanceTask, Problem } from "@/products/home-management-companion/state";
+import type { HomeItem, MaintenanceTask, Problem } from "@/products/home-management-companion/state";
 
 /**
  * Home Base's server-side reminder evaluator - a deliberately separate
@@ -22,7 +22,7 @@ import type { Thing, MaintenanceTask, Problem } from "@/products/home-management
  * lead-time scheduling here.
  */
 
-interface ThingRow {
+interface HomeItemRow {
   id: string;
   name: string;
   type: string;
@@ -50,6 +50,7 @@ interface MaintenanceTaskRow {
   document_link: string | null;
   notes: string | null;
   snoozed_until: string | null;
+  care_template_id: string | null;
   status: string;
   needs_review_reason: string | null;
   source: string;
@@ -80,7 +81,7 @@ interface ProblemRow {
   updated_at: string;
 }
 
-function mapThing(r: ThingRow): Thing {
+function mapHomeItem(r: HomeItemRow): HomeItem {
   return {
     id: r.id,
     name: r.name,
@@ -93,9 +94,9 @@ function mapThing(r: ThingRow): Thing {
     warrantyExpiresAt: r.warranty_expires_at,
     documentLink: r.document_link,
     notes: r.notes,
-    status: r.status as Thing["status"],
+    status: r.status as HomeItem["status"],
     needsReviewReason: r.needs_review_reason,
-    source: r.source as Thing["source"],
+    source: r.source as HomeItem["source"],
     importSessionId: r.import_session_id,
     createdAt: r.created_at,
     updatedAt: r.updated_at,
@@ -111,6 +112,7 @@ function mapMaintenanceTask(r: MaintenanceTaskRow): MaintenanceTask {
     documentLink: r.document_link,
     notes: r.notes,
     snoozedUntil: r.snoozed_until,
+    careTemplateId: r.care_template_id ?? null,
     status: r.status as MaintenanceTask["status"],
     needsReviewReason: r.needs_review_reason,
     source: r.source as MaintenanceTask["source"],
@@ -217,14 +219,14 @@ export async function GET(request: Request) {
       supabase.from("hmc_problems").select("*").eq("product_instance_id", instanceId),
     ]);
 
-    const things = ((thingsRes.data as ThingRow[]) ?? []).map(mapThing);
+    const homeItems = ((thingsRes.data as HomeItemRow[]) ?? []).map(mapHomeItem);
     const maintenanceTasks = ((tasksRes.data as MaintenanceTaskRow[]) ?? []).map(mapMaintenanceTask);
     const problems = ((problemsRes.data as ProblemRow[]) ?? []).map(mapProblem);
-    const attentionItems = deriveAttentionItems({ things, maintenanceTasks, problems }, now);
-    const messageById = new Map(attentionItems.map((item) => [item.id, item.message]));
+    const attentionItems = deriveAttentionItems({ homeItems, maintenanceTasks, problems }, now);
+    const messageById = new Map(attentionItems.map((item) => [item.id, `${item.title}: ${item.detail}`]));
     const hrefById = new Map(attentionItems.map((item) => [item.id, item.href]));
 
-    const candidates: ReminderCandidate[] = deriveReminderCandidates({ things, maintenanceTasks, problems }, now);
+    const candidates: ReminderCandidate[] = deriveReminderCandidates({ homeItems, maintenanceTasks, problems }, now);
 
     const { data: existingRows } = await supabase.from("hmc_reminders").select("id, dedupe_key, status").eq("product_instance_id", instanceId);
     const existing: ExistingReminderSummary[] = (existingRows ?? []).map((r) => ({

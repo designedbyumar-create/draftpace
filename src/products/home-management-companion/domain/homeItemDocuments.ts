@@ -1,9 +1,9 @@
 "use client";
 
-import { thingDocumentSchema, type ThingDocument } from "../state";
+import { homeItemDocumentSchema, type HomeItemDocument } from "../state";
 import { createRecordRepository } from "./repository";
 
-interface ThingDocumentRow {
+interface HomeItemDocumentRow {
   id: string;
   thing_id: string;
   kind: string;
@@ -19,7 +19,7 @@ interface ThingDocumentRow {
   updated_at: string;
 }
 
-function fromRow(row: ThingDocumentRow) {
+function fromRow(row: HomeItemDocumentRow) {
   return {
     id: row.id,
     thingId: row.thing_id,
@@ -52,15 +52,15 @@ function toRow(patch: Record<string, unknown>) {
   return row;
 }
 
-const repository = createRecordRepository<ThingDocument, ThingDocumentRow>({
+const repository = createRecordRepository<HomeItemDocument, HomeItemDocumentRow>({
   table: "hmc_thing_documents",
-  schema: thingDocumentSchema,
+  schema: homeItemDocumentSchema,
   fromRow,
   toRow,
 });
 
-/** The one canonical Thing Documents CRUD path. */
-export const listThingDocuments = repository.list;
-export const createThingDocument = repository.create;
-export const updateThingDocument = repository.update;
-export const archiveThingDocument = repository.archive;
+/** The one canonical home-item documents CRUD path. */
+export const listHomeItemDocuments = repository.list;
+export const createHomeItemDocument = repository.create;
+export const updateHomeItemDocument = repository.update;
+export const archiveHomeItemDocument = repository.archive;

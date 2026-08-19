@@ -1,9 +1,9 @@
 "use client";
 
-import { thingSchema, type Thing } from "../state";
+import { homeItemSchema, type HomeItem } from "../state";
 import { createRecordRepository } from "./repository";
 
-interface ThingRow {
+interface HomeItemRow {
   id: string;
   name: string;
   type: string;
@@ -23,7 +23,7 @@ interface ThingRow {
   updated_at: string;
 }
 
-function fromRow(row: ThingRow) {
+function fromRow(row: HomeItemRow) {
   return {
     id: row.id,
     name: row.name,
@@ -64,15 +64,15 @@ function toRow(patch: Record<string, unknown>) {
   return row;
 }
 
-const repository = createRecordRepository<Thing, ThingRow>({
+const repository = createRecordRepository<HomeItem, HomeItemRow>({
   table: "hmc_things",
-  schema: thingSchema,
+  schema: homeItemSchema,
   fromRow,
   toRow,
 });
 
-/** The one canonical Things CRUD path. */
-export const listThings = repository.list;
-export const createThing = repository.create;
-export const updateThing = repository.update;
-export const archiveThing = repository.archive;
+/** The one canonical home-item CRUD path. Table name stays hmc_things, see state.ts. */
+export const listHomeItems = repository.list;
+export const createHomeItem = repository.create;
+export const updateHomeItem = repository.update;
+export const archiveHomeItem = repository.archive;

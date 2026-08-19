@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { deriveAttentionItems, scoreAttentionUrgency } from "./attention";
-import type { Thing, MaintenanceTask, Problem } from "./state";
+import type { HomeItem, MaintenanceTask, Problem } from "./state";
 
 const NOW = new Date("2026-06-15T12:00:00Z");
 
@@ -24,6 +24,7 @@ function makeTask(overrides: Partial<MaintenanceTask> = {}): MaintenanceTask {
     documentLink: null,
     notes: null,
     snoozedUntil: null,
+    careTemplateId: null,
     status: "active",
     needsReviewReason: null,
     source: "manual",
@@ -34,9 +35,9 @@ function makeTask(overrides: Partial<MaintenanceTask> = {}): MaintenanceTask {
   };
 }
 
-function makeThing(overrides: Partial<Thing> = {}): Thing {
+function makeHomeItem(overrides: Partial<HomeItem> = {}): HomeItem {
   return {
-    id: "thing-1",
+    id: "item-1",
     name: "Water heater",
     type: "water-heater",
     brand: null,
@@ -83,146 +84,184 @@ function makeProblem(overrides: Partial<Problem> = {}): Problem {
   };
 }
 
-describe("deriveAttentionItems: maintenance tasks", () => {
-  it("flags a task that has never been logged", () => {
-    const items = deriveAttentionItems({ things: [], maintenanceTasks: [makeTask()], problems: [] }, NOW);
+const EMPTY = { homeItems: [], maintenanceTasks: [], problems: [] };
+
+describe("deriveAttentionItems: care", () => {
+  it("surfaces a task that has never been logged, without calling it a failure", () => {
+    const items = deriveAttentionItems({ ...EMPTY, maintenanceTasks: [makeTask()] }, NOW);
     expect(items).toHaveLength(1);
     expect(items[0].kind).toBe("maintenanceDue");
-    expect(items[0].urgency).toBe("needsResolution");
-    expect(items[0].message).toContain("never been logged");
+    expect(items[0].title).toBe("Change HVAC filter");
+    expect(items[0].detail).toBe("Not logged yet, usually every 3 months");
   });
 
-  it("flags an overdue task with the correct day count", () => {
-    const task = makeTask({ cadenceDays: 90, lastDoneAt: isoDaysAgo(100) });
-    const items = deriveAttentionItems({ things: [], maintenanceTasks: [task], problems: [] }, NOW);
-    expect(items).toHaveLength(1);
-    expect(items[0].message).toBe("Change HVAC filter is 10 days overdue.");
+  it("states elapsed time and the usual interval instead of a countdown", () => {
+    const task = makeTask({ cadenceDays: 90, lastDoneAt: isoDaysAgo(120) });
+    const items = deriveAttentionItems({ ...EMPTY, maintenanceTasks: [task] }, NOW);
+    expect(items[0].detail).toBe("Last done 4 months ago, usually every 3 months");
   });
 
-  it("says 'due today' when the cadence lands exactly on today", () => {
-    const task = makeTask({ cadenceDays: 90, lastDoneAt: isoDaysAgo(90) });
-    const items = deriveAttentionItems({ things: [], maintenanceTasks: [task], problems: [] }, NOW);
-    expect(items[0].message).toBe("Change HVAC filter is due today.");
+  it("never uses the word overdue anywhere in its output", () => {
+    const task = makeTask({ cadenceDays: 90, lastDoneAt: isoDaysAgo(221) });
+    const items = deriveAttentionItems({ ...EMPTY, maintenanceTasks: [task] }, NOW);
+    expect(JSON.stringify(items).toLowerCase()).not.toContain("overdue");
   });
 
-  it("does not flag a task that is not yet due", () => {
+  it("does not surface a task that is not yet due", () => {
     const task = makeTask({ cadenceDays: 90, lastDoneAt: isoDaysAgo(10) });
-    const items = deriveAttentionItems({ things: [], maintenanceTasks: [task], problems: [] }, NOW);
-    expect(items).toHaveLength(0);
+    expect(deriveAttentionItems({ ...EMPTY, maintenanceTasks: [task] }, NOW)).toHaveLength(0);
   });
 
-  it("excludes archived tasks even when overdue", () => {
+  it("excludes archived tasks even when long past due", () => {
     const task = makeTask({ cadenceDays: 90, lastDoneAt: isoDaysAgo(200), status: "archived" });
-    const items = deriveAttentionItems({ things: [], maintenanceTasks: [task], problems: [] }, NOW);
-    expect(items).toHaveLength(0);
+    expect(deriveAttentionItems({ ...EMPTY, maintenanceTasks: [task] }, NOW)).toHaveLength(0);
   });
 
-  it("excludes an overdue task that is still snoozed", () => {
-    const task = makeTask({ cadenceDays: 90, lastDoneAt: isoDaysAgo(100), snoozedUntil: isoDaysFromNow(3) + "T00:00:00.000Z" });
-    const items = deriveAttentionItems({ things: [], maintenanceTasks: [task], problems: [] }, NOW);
-    expect(items).toHaveLength(0);
-  });
+  it("excludes a task that is still snoozed, and includes it once the snooze lapses", () => {
+    const snoozed = makeTask({ cadenceDays: 90, lastDoneAt: isoDaysAgo(100), snoozedUntil: isoDaysFromNow(3) + "T00:00:00.000Z" });
+    expect(deriveAttentionItems({ ...EMPTY, maintenanceTasks: [snoozed] }, NOW)).toHaveLength(0);
 
-  it("includes an overdue task once its snooze has lapsed", () => {
-    const task = makeTask({ cadenceDays: 90, lastDoneAt: isoDaysAgo(100), snoozedUntil: isoDaysAgo(1) + "T00:00:00.000Z" });
-    const items = deriveAttentionItems({ things: [], maintenanceTasks: [task], problems: [] }, NOW);
-    expect(items).toHaveLength(1);
+    const lapsed = makeTask({ cadenceDays: 90, lastDoneAt: isoDaysAgo(100), snoozedUntil: isoDaysAgo(1) + "T00:00:00.000Z" });
+    expect(deriveAttentionItems({ ...EMPTY, maintenanceTasks: [lapsed] }, NOW)).toHaveLength(1);
   });
 });
 
-describe("deriveAttentionItems: thing warranties", () => {
-  it("flags a warranty expiring within the window", () => {
-    const thing = makeThing({ warrantyExpiresAt: isoDaysFromNow(15) });
-    const items = deriveAttentionItems({ things: [thing], maintenanceTasks: [], problems: [] }, NOW);
+describe("deriveAttentionItems: urgency comes from real consequence", () => {
+  it("treats a just-due safety job as more urgent than a long-neglected cosmetic one", () => {
+    // Dryer vent is a fire risk (consequence 2) and is exactly due.
+    const dryerVent = makeTask({
+      id: "vent",
+      name: "Clean the dryer vent",
+      careTemplateId: "dryer.vent",
+      cadenceDays: 365,
+      lastDoneAt: isoDaysAgo(365),
+    });
+    // Detergent drawer is cosmetic (consequence 0) and is a year late.
+    const drawer = makeTask({
+      id: "drawer",
+      name: "Clean the detergent drawer",
+      careTemplateId: "washer.detergent-drawer",
+      cadenceDays: 30,
+      lastDoneAt: isoDaysAgo(395),
+    });
+
+    const items = deriveAttentionItems({ ...EMPTY, maintenanceTasks: [drawer, dryerVent] }, NOW);
+    expect(items[0].entityId).toBe("vent");
+    expect(items[0].urgency).toBe("soon");
+    expect(items.find((i) => i.entityId === "drawer")?.urgency).toBe("canWait");
+  });
+
+  it("falls back to the template matched by task name when no template id is stored", () => {
+    const byName = makeTask({ name: "Clean the dryer vent", careTemplateId: null, cadenceDays: 365, lastDoneAt: isoDaysAgo(365) });
+    expect(deriveAttentionItems({ ...EMPTY, maintenanceTasks: [byName] }, NOW)[0].urgency).toBe("soon");
+  });
+
+  it("scores an unknown, hand-written task neutrally rather than guessing", () => {
+    const custom = makeTask({ name: "Polish the doorknobs", careTemplateId: null, cadenceDays: 90, lastDoneAt: isoDaysAgo(95) });
+    expect(deriveAttentionItems({ ...EMPTY, maintenanceTasks: [custom] }, NOW)[0].urgency).toBe("canWait");
+  });
+});
+
+describe("deriveAttentionItems: warranties", () => {
+  it("surfaces a warranty inside the window as information, not a job", () => {
+    const item = makeHomeItem({ warrantyExpiresAt: isoDaysFromNow(15) });
+    const items = deriveAttentionItems({ ...EMPTY, homeItems: [item] }, NOW);
     expect(items).toHaveLength(1);
     expect(items[0].kind).toBe("warrantyExpiring");
-    expect(items[0].urgency).toBe("worthAWhile");
-    expect(items[0].message).toBe("Water heater's warranty expires in 15 days.");
+    expect(items[0].urgency).toBe("canWait");
+    expect(items[0].detail).toBe("Warranty ends in 2 weeks");
   });
 
-  it("does not flag a warranty expiring well in the future", () => {
-    const thing = makeThing({ warrantyExpiresAt: isoDaysFromNow(45) });
-    const items = deriveAttentionItems({ things: [thing], maintenanceTasks: [], problems: [] }, NOW);
-    expect(items).toHaveLength(0);
+  it("does not surface a warranty expiring well in the future", () => {
+    const item = makeHomeItem({ warrantyExpiresAt: isoDaysFromNow(45) });
+    expect(deriveAttentionItems({ ...EMPTY, homeItems: [item] }, NOW)).toHaveLength(0);
   });
 
-  it("flags an already-expired warranty with a past-tense message", () => {
-    const thing = makeThing({ warrantyExpiresAt: isoDaysAgo(5) });
-    const items = deriveAttentionItems({ things: [thing], maintenanceTasks: [], problems: [] }, NOW);
-    expect(items[0].message).toBe("Water heater's warranty expired 5 days ago.");
+  it("uses past tense once a warranty has ended", () => {
+    const item = makeHomeItem({ warrantyExpiresAt: isoDaysAgo(5) });
+    expect(deriveAttentionItems({ ...EMPTY, homeItems: [item] }, NOW)[0].detail).toBe("Warranty ended 5 days ago");
   });
 
-  it("ignores a thing with no warranty date on file", () => {
-    const thing = makeThing({ warrantyExpiresAt: null });
-    const items = deriveAttentionItems({ things: [thing], maintenanceTasks: [], problems: [] }, NOW);
-    expect(items).toHaveLength(0);
+  it("ignores an item with no warranty date, and archived items", () => {
+    expect(deriveAttentionItems({ ...EMPTY, homeItems: [makeHomeItem({ warrantyExpiresAt: null })] }, NOW)).toHaveLength(0);
+    const archived = makeHomeItem({ warrantyExpiresAt: isoDaysFromNow(5), status: "archived" });
+    expect(deriveAttentionItems({ ...EMPTY, homeItems: [archived] }, NOW)).toHaveLength(0);
   });
 
-  it("excludes archived things even with an expiring warranty", () => {
-    const thing = makeThing({ warrantyExpiresAt: isoDaysFromNow(5), status: "archived" });
-    const items = deriveAttentionItems({ things: [thing], maintenanceTasks: [], problems: [] }, NOW);
-    expect(items).toHaveLength(0);
+  it("deep-links a warranty to the item it belongs to", () => {
+    const item = makeHomeItem({ warrantyExpiresAt: isoDaysFromNow(10) });
+    expect(deriveAttentionItems({ ...EMPTY, homeItems: [item] }, NOW)[0].href).toContain("/things/item-1");
   });
 });
 
 describe("deriveAttentionItems: problems", () => {
-  it("flags an open problem", () => {
-    const items = deriveAttentionItems({ things: [], maintenanceTasks: [], problems: [makeProblem()] }, NOW);
+  it("surfaces an open problem using the user's own words as the title", () => {
+    const items = deriveAttentionItems({ ...EMPTY, problems: [makeProblem()] }, NOW);
     expect(items).toHaveLength(1);
     expect(items[0].kind).toBe("problem");
-    expect(items[0].message).toBe("Kitchen faucet is leaking");
+    expect(items[0].title).toBe("Kitchen faucet is leaking");
   });
 
-  it("scores an urgent, high-cost, quick-fix problem as needing resolution", () => {
+  it("scores an urgent problem as needing attention soon", () => {
     const problem = makeProblem({ severity: "urgent", effort: "quick", estimatedCostMinorUnits: 60_000 });
-    const items = deriveAttentionItems({ things: [], maintenanceTasks: [], problems: [problem] }, NOW);
-    expect(items[0].urgency).toBe("needsResolution");
+    expect(deriveAttentionItems({ ...EMPTY, problems: [problem] }, NOW)[0].urgency).toBe("soon");
   });
 
-  it("scores a minor, low-cost, big-job problem as only worth a while", () => {
+  it("scores a minor, low-cost, big job as able to wait", () => {
     const problem = makeProblem({ severity: "minor", effort: "bigJob", estimatedCostMinorUnits: null });
-    const items = deriveAttentionItems({ things: [], maintenanceTasks: [], problems: [problem] }, NOW);
-    expect(items[0].urgency).toBe("worthAWhile");
+    expect(deriveAttentionItems({ ...EMPTY, problems: [problem] }, NOW)[0].urgency).toBe("canWait");
   });
 
-  it("excludes a resolved problem", () => {
-    const problem = makeProblem({ resolutionStatus: "resolved" });
-    const items = deriveAttentionItems({ things: [], maintenanceTasks: [], problems: [problem] }, NOW);
-    expect(items).toHaveLength(0);
-  });
-
-  it("excludes an archived problem", () => {
-    const problem = makeProblem({ status: "archived" });
-    const items = deriveAttentionItems({ things: [], maintenanceTasks: [], problems: [problem] }, NOW);
-    expect(items).toHaveLength(0);
-  });
-
-  it("excludes a snoozed problem, and includes it again once the snooze lapses", () => {
+  it("excludes resolved, archived and snoozed problems", () => {
+    expect(deriveAttentionItems({ ...EMPTY, problems: [makeProblem({ resolutionStatus: "resolved" })] }, NOW)).toHaveLength(0);
+    expect(deriveAttentionItems({ ...EMPTY, problems: [makeProblem({ status: "archived" })] }, NOW)).toHaveLength(0);
     const snoozed = makeProblem({ snoozedUntil: isoDaysFromNow(3) + "T00:00:00.000Z" });
-    expect(deriveAttentionItems({ things: [], maintenanceTasks: [], problems: [snoozed] }, NOW)).toHaveLength(0);
+    expect(deriveAttentionItems({ ...EMPTY, problems: [snoozed] }, NOW)).toHaveLength(0);
+  });
 
-    const lapsed = makeProblem({ snoozedUntil: isoDaysAgo(1) + "T00:00:00.000Z" });
-    expect(deriveAttentionItems({ things: [], maintenanceTasks: [], problems: [lapsed] }, NOW)).toHaveLength(1);
+  it("points an unattached problem somewhere that exists, never at a dead route", () => {
+    const items = deriveAttentionItems({ ...EMPTY, problems: [makeProblem({ thingId: null })] }, NOW);
+    expect(items[0].href).not.toContain("/problems");
+    expect(items[0].href).toBe("/app/products/home-management-companion/workspace");
+  });
+
+  it("deep-links a problem to its item when it has one", () => {
+    const items = deriveAttentionItems({ ...EMPTY, problems: [makeProblem({ thingId: "item-1" })] }, NOW);
+    expect(items[0].href).toContain("/things/item-1");
+  });
+});
+
+describe("deriveAttentionItems: ordering", () => {
+  it("puts something broken above something merely scheduled at equal weight", () => {
+    const problem = makeProblem({ severity: "moderate", effort: "moderate" });
+    const task = makeTask({ name: "Polish the doorknobs", cadenceDays: 90, lastDoneAt: isoDaysAgo(91) });
+    const items = deriveAttentionItems({ ...EMPTY, maintenanceTasks: [task], problems: [problem] }, NOW);
+    expect(items[0].kind).toBe("problem");
   });
 });
 
 describe("scoreAttentionUrgency", () => {
-  it("treats a fully neutral, not-yet-due item as only worth a while", () => {
-    expect(scoreAttentionUrgency({ overdueDays: 0, consequence: 0, effort: 0, cost: 0 })).toBe("worthAWhile");
+  it("treats a safety job as needing attention the moment it is due", () => {
+    expect(scoreAttentionUrgency({ intervalsLate: 0, consequence: 2, effort: 0, cost: 0 })).toBe("soon");
   });
 
-  it("treats high consequence as needing resolution even with no other factor", () => {
-    expect(scoreAttentionUrgency({ overdueDays: 0, consequence: 2, effort: 0, cost: 0 })).toBe("needsResolution");
+  it("keeps a cosmetic job patient no matter how late it gets", () => {
+    expect(scoreAttentionUrgency({ intervalsLate: 50, consequence: 0, effort: 0, cost: 0 })).toBe("canWait");
   });
 
-  it("treats a large enough overdue count as needing resolution on its own", () => {
-    expect(scoreAttentionUrgency({ overdueDays: 10, consequence: 0, effort: 0, cost: 0 })).toBe("needsResolution");
+  it("caps lateness so an ignored item cannot climb forever", () => {
+    const twoLate = scoreAttentionUrgency({ intervalsLate: 2, consequence: 0, effort: 0, cost: 0 });
+    const wildlyLate = scoreAttentionUrgency({ intervalsLate: 200, consequence: 0, effort: 0, cost: 0 });
+    expect(twoLate).toBe(wildlyLate);
   });
 
-  it("lets high effort pull a borderline score back down", () => {
-    const withoutEffort = scoreAttentionUrgency({ overdueDays: 0, consequence: 1, effort: 0, cost: 0 });
-    const withEffort = scoreAttentionUrgency({ overdueDays: 0, consequence: 1, effort: 2, cost: 0 });
-    expect(withoutEffort).toBe("needsResolution");
-    expect(withEffort).toBe("worthAWhile");
+  it("lets high effort pull a borderline score down", () => {
+    expect(scoreAttentionUrgency({ intervalsLate: 0.5, consequence: 1, effort: 0, cost: 0 })).toBe("soon");
+    expect(scoreAttentionUrgency({ intervalsLate: 0.5, consequence: 1, effort: 2, cost: 0 })).toBe("canWait");
+  });
+
+  it("lets real money at stake raise a problem's urgency", () => {
+    expect(scoreAttentionUrgency({ intervalsLate: 0, consequence: 1, effort: 1, cost: 0 })).toBe("canWait");
+    expect(scoreAttentionUrgency({ intervalsLate: 0, consequence: 1, effort: 1, cost: 2 })).toBe("soon");
   });
 });

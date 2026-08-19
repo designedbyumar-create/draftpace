@@ -1,7 +1,7 @@
 "use client";
 
 import { ok, err, type Result } from "@/product-framework/result";
-import { createThing } from "./things";
+import { createHomeItem } from "./homeItems";
 import { createMaintenanceTask } from "./maintenanceTasks";
 import { createServiceProvider } from "./serviceProviders";
 import type {
@@ -16,7 +16,7 @@ import type {
 /**
  * The one bridge from a confirmed candidate to a real canonical record,
  * Home Base's own parallel to PFC's domain/confirmCandidate.ts. Calls the
- * exact same createThing/createMaintenanceTask/createServiceProvider
+ * exact same createHomeItem/createMaintenanceTask/createServiceProvider
  * functions the direct sections already use. A record created here is
  * stored in the identical hmc_things/hmc_maintenance_tasks/
  * hmc_service_providers row shape as one typed by hand, differing only in
@@ -50,7 +50,7 @@ export async function confirmCandidate(input: ConfirmCandidateInput): Promise<Re
   switch (candidate.candidateType) {
     case "thing": {
       const p = payload as ThingCandidatePayload;
-      const created = await createThing(instanceId, {
+      const created = await createHomeItem(instanceId, {
         name: p.name,
         type: p.type ?? "other",
         brand: p.brand ?? null,

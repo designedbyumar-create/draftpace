@@ -7,9 +7,9 @@ import Button from "@/design-system/Button";
 import EmptyState from "@/design-system/EmptyState";
 import { describeResultError } from "@/product-framework/result";
 import { findHomeManagementCompanionInstanceId } from "../setupStateData";
-import { listThings } from "../domain/things";
+import { listHomeItems } from "../domain/homeItems";
 import { listMaintenanceTasks, createMaintenanceTask, updateMaintenanceTask, archiveMaintenanceTask } from "../domain/maintenanceTasks";
-import type { Thing, MaintenanceTask } from "../state";
+import type { HomeItem, MaintenanceTask } from "../state";
 import SectionShell from "./shared/SectionShell";
 import { StatRow, StatTile } from "./shared/StatRow";
 import { STATUS_LABEL, STATUS_TONE } from "./shared/lifecycle";
@@ -25,7 +25,7 @@ export default function MaintenanceModule() {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [instanceId, setInstanceId] = useState<string | null>(null);
   const [tasks, setTasks] = useState<MaintenanceTask[]>([]);
-  const [things, setThings] = useState<Thing[]>([]);
+  const [things, setThings] = useState<HomeItem[]>([]);
   const [showArchived, setShowArchived] = useState(false);
   const [formOpen, setFormOpen] = useState(false);
   const [editingTask, setEditingTask] = useState<MaintenanceTask | null>(null);
@@ -45,7 +45,7 @@ export default function MaintenanceModule() {
       return;
     }
     setInstanceId(found.id);
-    const [tasksResult, thingsResult] = await Promise.all([listMaintenanceTasks(found.id), listThings(found.id)]);
+    const [tasksResult, thingsResult] = await Promise.all([listMaintenanceTasks(found.id), listHomeItems(found.id)]);
     if (!tasksResult.ok) {
       setErrorMessage(describeResultError(tasksResult.error));
       setStatus("error");

@@ -5,9 +5,10 @@ import Button from "@/design-system/Button";
 import Input from "@/design-system/Input";
 import Select from "@/design-system/Select";
 import RecordFormSheet from "../shared/RecordFormSheet";
-import { THING_TYPES, matchThingType } from "../../thingTypes";
+import { HOME_ITEM_TYPES, matchHomeItemType } from "../../homeKnowledge";
+import { describeInterval } from "../../homeVoice";
 import { createMaintenanceTask } from "../../domain/maintenanceTasks";
-import type { Thing } from "../../state";
+import type { HomeItem } from "../../state";
 
 export interface ThingFormValues {
   name: string;
@@ -37,8 +38,8 @@ const EMPTY_VALUES: ThingFormValues = {
   notes: "",
 };
 
-function thingToFormValues(thing: Thing): ThingFormValues {
-  const known = THING_TYPES.some((t) => t.id === thing.type);
+function thingToFormValues(thing: HomeItem): ThingFormValues {
+  const known = HOME_ITEM_TYPES.some((t) => t.id === thing.type);
   return {
     name: thing.name,
     type: known ? thing.type : "other",
@@ -84,7 +85,7 @@ export function thingFormValuesToPatch(values: ThingFormValues): Record<string, 
   };
 }
 
-type SaveResult = { ok: true; thing: Thing } | { ok: false; message: string };
+type SaveResult = { ok: true; thing: HomeItem } | { ok: false; message: string };
 
 export default function ThingFormSheet({
   open,
@@ -95,7 +96,7 @@ export default function ThingFormSheet({
   triggerRef,
 }: {
   open: boolean;
-  thing: Thing | null;
+  thing: HomeItem | null;
   instanceId: string | null;
   onClose: () => void;
   onSave: (values: ThingFormValues) => Promise<SaveResult>;
@@ -105,11 +106,11 @@ export default function ThingFormSheet({
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
   const [step, setStep] = useState<"form" | "suggestions">("form");
-  const [createdThing, setCreatedThing] = useState<Thing | null>(null);
+  const [createdThing, setCreatedThing] = useState<HomeItem | null>(null);
   const [checkedTasks, setCheckedTasks] = useState<Set<number>>(new Set());
   const [addingTasks, setAddingTasks] = useState(false);
 
-  const suggestion = createdThing ? matchThingType(createdThing.name, createdThing.type) : null;
+  const suggestion = createdThing ? matchHomeItemType(createdThing.name, createdThing.type) : null;
 
   useEffect(() => {
     if (open) {
@@ -136,10 +137,10 @@ export default function ThingFormSheet({
       onClose();
       return;
     }
-    const match = matchThingType(result.thing.name, result.thing.type);
-    if (match && match.suggestedTasks.length > 0) {
+    const match = matchHomeItemType(result.thing.name, result.thing.type);
+    if (match && match.care.length > 0) {
       setCreatedThing(result.thing);
-      setCheckedTasks(new Set(match.suggestedTasks.map((_, i) => i)));
+      setCheckedTasks(new Set(match.care.map((_, i) => i)));
       setStep("suggestions");
       return;
     }
@@ -153,11 +154,12 @@ export default function ThingFormSheet({
     }
     setAddingTasks(true);
     for (const index of checkedTasks) {
-      const task = suggestion.suggestedTasks[index];
+      const task = suggestion.care[index];
       await createMaintenanceTask(instanceId, {
         applianceId: createdThing.id,
         name: task.taskName,
-        cadenceDays: task.cadenceDays,
+        cadenceDays: task.intervalDays,
+        careTemplateId: task.id,
         lastDoneAt: null,
         documentLink: null,
         notes: null,
@@ -198,7 +200,7 @@ export default function ThingFormSheet({
         }
       >
         <ul className="flex flex-col gap-2">
-          {suggestion.suggestedTasks.map((task, index) => (
+          {suggestion.care.map((task, index) => (
             <li key={task.taskName}>
               <label className="flex cursor-pointer items-start gap-3 rounded-lg border border-[var(--border)] p-3.5 transition hover:border-[var(--border-strong)]">
                 <input
@@ -210,7 +212,7 @@ export default function ThingFormSheet({
                 <span>
                   <span className="block text-[13px] font-semibold text-[var(--text)]">{task.taskName}</span>
                   <span className="block text-[12px] text-[var(--muted)]">
-                    Every {task.cadenceDays} {task.cadenceDays === 1 ? "day" : "days"}
+                    {describeInterval(task.intervalDays)}
                   </span>
                 </span>
               </label>
@@ -225,8 +227,8 @@ export default function ThingFormSheet({
     <RecordFormSheet
       open={open}
       onClose={onClose}
-      title={thing ? "Edit thing" : "Add a thing"}
-      description="Anything in your home worth keeping track of: appliance, system, or fixture. Dates are optional."
+      title={thing ? "Edit" : "Add something to your home"}
+      description="Whatever it is, call it what you call it. Only the name is required."
       triggerRef={triggerRef}
       footer={
         <>
@@ -247,7 +249,7 @@ export default function ThingFormSheet({
         autoFocus
       />
       <Select label="Type" value={values.type} onChange={(event) => setValues({ ...values, type: event.target.value })}>
-        {THING_TYPES.map((t) => (
+        {HOME_ITEM_TYPES.map((t) => (
           <option key={t.id} value={t.id}>
             {t.label}
           </option>

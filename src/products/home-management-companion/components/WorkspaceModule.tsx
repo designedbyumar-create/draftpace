@@ -5,10 +5,10 @@ import Link from "next/link";
 import Badge from "@/design-system/Badge";
 import Button from "@/design-system/Button";
 import EmptyState from "@/design-system/EmptyState";
-import { Home, WarningCircle, Clock, CheckCircle2 } from "@/design-system/Icon";
+import { Home, Clock, CheckCircle2 } from "@/design-system/Icon";
 import { describeResultError } from "@/product-framework/result";
 import { findHomeManagementCompanionInstanceId } from "../setupStateData";
-import { listThings } from "../domain/things";
+import { listHomeItems } from "../domain/homeItems";
 import { listMaintenanceTasks } from "../domain/maintenanceTasks";
 import { listProblems } from "../domain/problems";
 import { deriveAttentionItems, type AttentionInputs } from "../attention";
@@ -41,13 +41,13 @@ export default function WorkspaceModule() {
       setStatus("no-instance");
       return;
     }
-    const [thingsResult, tasksResult, problemsResult] = await Promise.all([
-      listThings(found.id),
+    const [itemsResult, tasksResult, problemsResult] = await Promise.all([
+      listHomeItems(found.id),
       listMaintenanceTasks(found.id),
       listProblems(found.id),
     ]);
-    if (!thingsResult.ok) {
-      setErrorMessage(describeResultError(thingsResult.error));
+    if (!itemsResult.ok) {
+      setErrorMessage(describeResultError(itemsResult.error));
       setStatus("error");
       return;
     }
@@ -61,11 +61,11 @@ export default function WorkspaceModule() {
       setStatus("error");
       return;
     }
-    const things = thingsResult.data.filter((a) => a.status !== "archived");
+    const homeItems = itemsResult.data.filter((a) => a.status !== "archived");
     const maintenanceTasks = tasksResult.data.filter((t) => t.status !== "archived");
     const problems = problemsResult.data.filter((p) => p.status !== "archived");
-    setRecords({ things, maintenanceTasks, problems });
-    setTotalActiveRecords(things.length + maintenanceTasks.length + problems.length);
+    setRecords({ homeItems, maintenanceTasks, problems });
+    setTotalActiveRecords(homeItems.length + maintenanceTasks.length + problems.length);
     setStatus("ready");
   }, []);
 
@@ -112,8 +112,8 @@ export default function WorkspaceModule() {
         </div>
         <EmptyState
           icon={Home}
-          title="Nothing tracked yet"
-          description="Add an appliance or a maintenance task, and Today will tell you what's due before it becomes expensive."
+          title="Home Base doesn't know your home yet"
+          description="Add what's in your home, and it'll tell you what needs looking after before it turns into a bill."
           action={
             <Link href="/app/products/home-management-companion/setup">
               <Button size="sm">Set up your home</Button>
@@ -135,24 +135,19 @@ export default function WorkspaceModule() {
 
       {items.length > 0 && (
         <div>
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--faint)]">Needs attention ({items.length})</p>
+          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--faint)]">Worth taking care of</p>
           <ul className="mt-2 flex flex-col gap-2">
             {items.map((item) => (
               <li key={item.id}>
                 <Link
                   href={item.href}
-                  className={`flex items-start gap-3 rounded-xl border p-3.5 transition hover:border-[var(--primary)] ${
-                    item.urgency === "needsResolution"
-                      ? "border-[var(--warning)]/30 bg-[var(--warning-soft)]"
-                      : "border-[var(--border)] bg-[var(--surface)]"
-                  }`}
+                  className="flex items-start gap-3 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-3.5 transition hover:border-[var(--primary)]"
                 >
-                  {item.kind === "maintenanceDue" ? (
-                    <WarningCircle className="mt-0.5 h-4 w-4 shrink-0 text-[var(--warning)]" aria-hidden />
-                  ) : (
-                    <Clock className="mt-0.5 h-4 w-4 shrink-0 text-[var(--faint)]" aria-hidden />
-                  )}
-                  <p className="text-[13px] font-medium text-[var(--text)]">{item.message}</p>
+                  <Clock className="mt-0.5 h-4 w-4 shrink-0 text-[var(--faint)]" aria-hidden />
+                  <div className="min-w-0">
+                    <p className="text-[13px] font-semibold text-[var(--text)]">{item.title}</p>
+                    <p className="mt-0.5 text-[12px] text-[var(--muted)]">{item.detail}</p>
+                  </div>
                 </Link>
               </li>
             ))}
@@ -160,20 +155,13 @@ export default function WorkspaceModule() {
         </div>
       )}
 
-      {trackedOk > 0 && (
+      {items.length === 0 ? (
         <div className="flex items-center gap-3 rounded-xl border border-[var(--border)] bg-[var(--success-soft)] p-3.5">
           <CheckCircle2 className="h-5 w-5 shrink-0 text-[var(--success)]" aria-hidden />
-          <p className="text-[13px] font-medium text-[var(--text)]">
-            {trackedOk} other {trackedOk === 1 ? "item is" : "items are"} on track.
-          </p>
+          <p className="text-[13px] font-medium text-[var(--text)]">Your home is in good shape. Nothing needs you today.</p>
         </div>
-      )}
-
-      {items.length === 0 && (
-        <div className="flex items-center gap-3 rounded-xl border border-[var(--border)] bg-[var(--success-soft)] p-3.5">
-          <CheckCircle2 className="h-5 w-5 shrink-0 text-[var(--success)]" aria-hidden />
-          <p className="text-[13px] font-medium text-[var(--text)]">Everything&apos;s on track. Nothing needs attention today.</p>
-        </div>
+      ) : (
+        trackedOk > 0 && <p className="text-[13px] text-[var(--muted)]">Everything else is under control.</p>
       )}
     </div>
   );

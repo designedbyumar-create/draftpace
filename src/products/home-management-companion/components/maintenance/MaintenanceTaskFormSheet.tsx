@@ -5,7 +5,7 @@ import Button from "@/design-system/Button";
 import Input from "@/design-system/Input";
 import Select from "@/design-system/Select";
 import RecordFormSheet from "../shared/RecordFormSheet";
-import type { MaintenanceTask, Thing } from "../../state";
+import type { MaintenanceTask, HomeItem } from "../../state";
 
 export interface MaintenanceTaskFormValues {
   applianceId: string;
@@ -65,7 +65,7 @@ export default function MaintenanceTaskFormSheet({
 }: {
   open: boolean;
   task: MaintenanceTask | null;
-  things: Thing[];
+  things: HomeItem[];
   defaultApplianceId?: string;
   onClose: () => void;
   onSave: (values: MaintenanceTaskFormValues) => Promise<string | null>;
@@ -130,11 +130,11 @@ export default function MaintenanceTaskFormSheet({
         onChange={(event) => setValues({ ...values, cadenceDays: event.target.value })}
       />
       <Select
-        label="Thing (optional)"
+        label="What's it for? (optional)"
         value={values.applianceId}
         onChange={(event) => setValues({ ...values, applianceId: event.target.value })}
       >
-        <option value="">Not tied to one thing</option>
+        <option value="">Not tied to anything in particular</option>
         {things.map((thing) => (
           <option key={thing.id} value={thing.id}>
             {thing.name}

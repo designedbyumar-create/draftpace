@@ -14,6 +14,7 @@ interface MaintenanceTaskRow {
   document_link: string | null;
   notes: string | null;
   snoozed_until: string | null;
+  care_template_id: string | null;
   status: string;
   needs_review_reason: string | null;
   source: string;
@@ -32,6 +33,10 @@ function fromRow(row: MaintenanceTaskRow) {
     documentLink: row.document_link,
     notes: row.notes,
     snoozedUntil: row.snoozed_until,
+    // ?? null so a stale PostgREST schema cache (column added but not yet
+    // reflected) degrades to "no template" instead of failing validation
+    // and silently dropping every task from the list.
+    careTemplateId: row.care_template_id ?? null,
     status: row.status,
     needsReviewReason: row.needs_review_reason,
     source: row.source,
@@ -50,6 +55,7 @@ function toRow(patch: Record<string, unknown>) {
   if ("documentLink" in patch) row.document_link = patch.documentLink;
   if ("notes" in patch) row.notes = patch.notes;
   if ("snoozedUntil" in patch) row.snoozed_until = patch.snoozedUntil;
+  if ("careTemplateId" in patch) row.care_template_id = patch.careTemplateId;
   if ("status" in patch) row.status = patch.status;
   if ("needsReviewReason" in patch) row.needs_review_reason = patch.needsReviewReason;
   if ("source" in patch) row.source = patch.source;

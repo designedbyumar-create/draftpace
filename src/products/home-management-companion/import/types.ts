@@ -7,7 +7,7 @@ import { z } from "zod";
  * (see the hmc_import_sessions migration's own comment): a candidate is
  * a plain in-memory draft that lives only in the browser during the
  * review step, and only import/confirmCandidate.ts's confirmation path
- * (calling the exact same createThing/createMaintenanceTask/
+ * (calling the exact same createHomeItem/createMaintenanceTask/
  * createServiceProvider functions the direct sections already use) ever
  * turns one into a real row.
  */
@@ -51,7 +51,7 @@ export type ReviewStatus = z.infer<typeof reviewStatusSchema>;
  */
 export interface ThingCandidatePayload {
   name: string;
-  /** Open, matches Thing's own type taxonomy (thingTypes.ts), not a closed set here either. */
+  /** Open, matches the home item type taxonomy in homeKnowledge.ts, not a closed set here either. */
   type?: string;
   brand?: string;
   purchaseDate?: string;

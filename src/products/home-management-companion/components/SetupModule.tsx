@@ -9,9 +9,9 @@ import EmptyState from "@/design-system/EmptyState";
 import { ArrowLeft, ArrowRight, Check, Home, Plus } from "@/design-system/Icon";
 import { describeResultError } from "@/product-framework/result";
 import { findHomeManagementCompanionInstanceId, markHomeManagementCompanionSetupComplete } from "../setupStateData";
-import { listThings, createThing } from "../domain/things";
+import { listHomeItems, createHomeItem } from "../domain/homeItems";
 import { listMaintenanceTasks, createMaintenanceTask } from "../domain/maintenanceTasks";
-import type { Thing, MaintenanceTask } from "../state";
+import type { HomeItem, MaintenanceTask } from "../state";
 import ThingFormSheet, { thingFormValuesToPatch, type ThingFormValues } from "./things/ThingFormSheet";
 import MaintenanceTaskFormSheet, {
   maintenanceTaskFormValuesToPatch,
@@ -22,7 +22,7 @@ type LoadStatus = "loading" | "ready" | "no-instance" | "error";
 
 const STEPS = [
   { step: 1, title: "Welcome to Home Base", short: "Welcome" },
-  { step: 2, title: "Add your things", short: "Things" },
+  { step: 2, title: "What's in your home?", short: "Your home" },
   { step: 3, title: "Add a maintenance task", short: "Maintenance" },
 ] as const;
 
@@ -39,7 +39,7 @@ export default function SetupModule() {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [instanceId, setInstanceId] = useState<string | null>(null);
   const [currentStep, setCurrentStep] = useState(1);
-  const [things, setThings] = useState<Thing[]>([]);
+  const [things, setThings] = useState<HomeItem[]>([]);
   const [tasks, setTasks] = useState<MaintenanceTask[]>([]);
   const [thingFormOpen, setThingFormOpen] = useState(false);
   const [taskFormOpen, setTaskFormOpen] = useState(false);
@@ -61,7 +61,7 @@ export default function SetupModule() {
       return;
     }
     setInstanceId(found.id);
-    const [thingsResult, tasksResult] = await Promise.all([listThings(found.id), listMaintenanceTasks(found.id)]);
+    const [thingsResult, tasksResult] = await Promise.all([listHomeItems(found.id), listMaintenanceTasks(found.id)]);
     setThings(thingsResult.ok ? thingsResult.data.filter((t) => t.status !== "archived") : []);
     setTasks(tasksResult.ok ? tasksResult.data.filter((t) => t.status !== "archived") : []);
     setStatus("ready");
@@ -73,7 +73,7 @@ export default function SetupModule() {
 
   async function handleSaveThing(values: ThingFormValues) {
     if (!instanceId) return { ok: false as const, message: "Couldn't find your home. Try reloading the page." };
-    const result = await createThing(instanceId, thingFormValuesToPatch(values));
+    const result = await createHomeItem(instanceId, thingFormValuesToPatch(values));
     if (!result.ok) return { ok: false as const, message: describeResultError(result.error) };
     setThings((prev) => [...prev, result.data]);
     return { ok: true as const, thing: result.data };
@@ -179,7 +179,7 @@ export default function SetupModule() {
           {currentStep === 1 && (
             <div className="mt-5 flex flex-col gap-3">
               <p className="text-[13px] leading-relaxed text-[var(--muted)]">
-                Add the things in your home, and how often each needs attention. From there, Home Base tells
+                Tell Home Base what's in your home. From there it tells
                 you what&apos;s actually due, and nothing else, until it&apos;s due.
               </p>
               <p className="text-[13px] leading-relaxed text-[var(--muted)]">
@@ -191,7 +191,7 @@ export default function SetupModule() {
           {currentStep === 2 && (
             <div className="mt-5">
               <p className="text-[13px] leading-relaxed text-[var(--muted)]">
-                Add a few things, with a warranty date if you have one.
+                Add a few of the things in your home, with a warranty date if you have one.
               </p>
               {things.length > 0 && (
                 <ul className="mt-4 flex flex-col gap-2">
@@ -204,7 +204,7 @@ export default function SetupModule() {
               )}
               <div ref={addThingRef} className="mt-4 inline-block">
                 <Button variant="secondary" size="sm" iconLeft={<Plus size={13} aria-hidden />} onClick={() => setThingFormOpen(true)}>
-                  Add a thing
+                  Add something
                 </Button>
               </div>
             </div>

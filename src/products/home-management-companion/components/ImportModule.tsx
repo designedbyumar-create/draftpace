@@ -9,10 +9,10 @@ import EmptyState from "@/design-system/EmptyState";
 import { Article, ArrowLeft, Download, ListChecks } from "@/design-system/Icon";
 import { describeResultError } from "@/product-framework/result";
 import { findHomeManagementCompanionInstanceId } from "../setupStateData";
-import { listThings } from "../domain/things";
+import { listHomeItems } from "../domain/homeItems";
 import { listMaintenanceTasks } from "../domain/maintenanceTasks";
 import { listServiceProviders } from "../domain/serviceProviders";
-import type { Thing, MaintenanceTask, ServiceProvider } from "../state";
+import type { HomeItem, MaintenanceTask, ServiceProvider } from "../state";
 import type { ConfirmationSource, ExtractionCandidate } from "../import/types";
 import PasteNotesStep from "./import/PasteNotesStep";
 import TextFileStep from "./import/TextFileStep";
@@ -33,7 +33,7 @@ export default function ImportModule() {
   const [status, setStatus] = useState<LoadStatus>("loading");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [instanceId, setInstanceId] = useState<string | null>(null);
-  const [things, setThings] = useState<Thing[]>([]);
+  const [things, setThings] = useState<HomeItem[]>([]);
   const [maintenanceTasks, setMaintenanceTasks] = useState<MaintenanceTask[]>([]);
   const [serviceProviders, setServiceProviders] = useState<ServiceProvider[]>([]);
 
@@ -58,7 +58,7 @@ export default function ImportModule() {
     }
     setInstanceId(found.id);
     const [thingsResult, tasksResult, providersResult] = await Promise.all([
-      listThings(found.id),
+      listHomeItems(found.id),
       listMaintenanceTasks(found.id),
       listServiceProviders(found.id),
     ]);
@@ -209,7 +209,7 @@ export default function ImportModule() {
           Import more
         </Button>
         <Button size="md" onClick={() => router.push("/app/products/home-management-companion/things")}>
-          Go to Things
+          Go to your home
         </Button>
       </div>
     </Surface>

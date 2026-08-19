@@ -11,15 +11,15 @@ import Tabs, { TabPanel } from "@/design-system/Tabs";
 import { ArrowLeft, Archive, RotateCcw, Wrench, WarningCircle, User, Plus, LinkSimple, Home } from "@/design-system/Icon";
 import { describeResultError } from "@/product-framework/result";
 import { findHomeManagementCompanionInstanceId } from "../../setupStateData";
-import { listThings, updateThing, archiveThing } from "../../domain/things";
+import { listHomeItems, updateHomeItem, archiveHomeItem } from "../../domain/homeItems";
 import { listMaintenanceTasks, createMaintenanceTask, markMaintenanceTaskDone } from "../../domain/maintenanceTasks";
 import { listMaintenanceLog } from "../../domain/maintenanceLog";
 import { listProblems } from "../../domain/problems";
 import { listServiceProviders } from "../../domain/serviceProviders";
-import { listThingDocuments, createThingDocument } from "../../domain/thingDocuments";
-import { THING_TYPE_BY_ID } from "../../thingTypes";
+import { listHomeItemDocuments, createHomeItemDocument } from "../../domain/homeItemDocuments";
+import { HOME_ITEM_TYPE_BY_ID } from "../../homeKnowledge";
 import { STATUS_LABEL, STATUS_TONE } from "../shared/lifecycle";
-import type { Thing, MaintenanceTask, MaintenanceLogEntry, Problem, ServiceProvider, ThingDocument } from "../../state";
+import type { HomeItem, MaintenanceTask, MaintenanceLogEntry, Problem, ServiceProvider, HomeItemDocument } from "../../state";
 import ThingFormSheet, { thingFormValuesToPatch, type ThingFormValues } from "./ThingFormSheet";
 import MaintenanceTaskFormSheet, {
   maintenanceTaskFormValuesToPatch,
@@ -40,7 +40,7 @@ const TABS = [
 const SEVERITY_LABEL: Record<string, string> = { minor: "Minor", moderate: "Moderate", urgent: "Urgent" };
 
 function typeLabel(type: string): string {
-  return THING_TYPE_BY_ID[type]?.label ?? "Other";
+  return HOME_ITEM_TYPE_BY_ID[type]?.label ?? "Other";
 }
 
 /**
@@ -57,12 +57,12 @@ export default function ThingDetailModule() {
   const [status, setStatus] = useState<LoadStatus>("loading");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [instanceId, setInstanceId] = useState<string | null>(null);
-  const [things, setThings] = useState<Thing[]>([]);
+  const [things, setThings] = useState<HomeItem[]>([]);
   const [tasks, setTasks] = useState<MaintenanceTask[]>([]);
   const [logEntries, setLogEntries] = useState<MaintenanceLogEntry[]>([]);
   const [problems, setProblems] = useState<Problem[]>([]);
   const [providers, setProviders] = useState<ServiceProvider[]>([]);
-  const [documents, setDocuments] = useState<ThingDocument[]>([]);
+  const [documents, setDocuments] = useState<HomeItemDocument[]>([]);
   const [activeTab, setActiveTab] = useState("identity");
   const [editOpen, setEditOpen] = useState(false);
   const [taskFormOpen, setTaskFormOpen] = useState(false);
@@ -85,12 +85,12 @@ export default function ThingDetailModule() {
     }
     setInstanceId(found.id);
     const [thingsResult, tasksResult, logResult, problemsResult, providersResult, documentsResult] = await Promise.all([
-      listThings(found.id),
+      listHomeItems(found.id),
       listMaintenanceTasks(found.id),
       listMaintenanceLog(found.id),
       listProblems(found.id),
       listServiceProviders(found.id),
-      listThingDocuments(found.id),
+      listHomeItemDocuments(found.id),
     ]);
     if (!thingsResult.ok) {
       setErrorMessage(describeResultError(thingsResult.error));
@@ -134,7 +134,7 @@ export default function ThingDetailModule() {
 
   async function handleSaveThing(values: ThingFormValues) {
     if (!thing) return { ok: false as const, message: "Thing not loaded yet." };
-    const result = await updateThing(thing.id, thingFormValuesToPatch(values));
+    const result = await updateHomeItem(thing.id, thingFormValuesToPatch(values));
     if (!result.ok) return { ok: false as const, message: describeResultError(result.error) };
     setThings((prev) => prev.map((t) => (t.id === result.data.id ? result.data : t)));
     return { ok: true as const, thing: result.data };
@@ -143,7 +143,7 @@ export default function ThingDetailModule() {
   async function handleToggleArchive() {
     if (!thing) return;
     setArchiving(true);
-    const result = thing.status === "archived" ? await updateThing(thing.id, { status: "active" }) : await archiveThing(thing.id);
+    const result = thing.status === "archived" ? await updateHomeItem(thing.id, { status: "active" }) : await archiveHomeItem(thing.id);
     setArchiving(false);
     if (result.ok) setThings((prev) => prev.map((t) => (t.id === result.data.id ? result.data : t)));
   }
@@ -173,7 +173,7 @@ export default function ThingDetailModule() {
     if (!instanceId || !thing) return "Couldn't find your home. Try reloading the page.";
     const patch = thingDocumentFormValuesToPatch(values);
     if (typeof patch === "string") return patch;
-    const result = await createThingDocument(instanceId, { ...patch, thingId: thing.id });
+    const result = await createHomeItemDocument(instanceId, { ...patch, thingId: thing.id });
     if (!result.ok) return describeResultError(result.error);
     setDocuments((prev) => [...prev, result.data]);
     return null;
@@ -210,12 +210,12 @@ export default function ThingDetailModule() {
     return (
       <EmptyState
         icon={Home}
-        title="This thing isn't here anymore"
+        title="This isn't here anymore"
         description="It may have been removed."
         action={
           <Link href="/app/products/home-management-companion/things">
             <Button size="sm" variant="secondary">
-              Back to Things
+              Back to your home
             </Button>
           </Link>
         }
@@ -230,7 +230,7 @@ export default function ThingDetailModule() {
         className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--muted)] hover:text-[var(--text)]"
       >
         <ArrowLeft size={14} aria-hidden />
-        Things
+        Your home
       </Link>
 
       <div className="mt-4 flex flex-wrap items-start justify-between gap-4">
@@ -289,7 +289,7 @@ export default function ThingDetailModule() {
                   onClick={handleToggleArchive}
                   disabled={archiving}
                 >
-                  {archiving ? "Working…" : thing.status === "archived" ? "Restore this thing" : "Archive this thing"}
+                  {archiving ? "Working…" : thing.status === "archived" ? "Restore this" : "Archive this"}
                 </Button>
               </div>
             </div>

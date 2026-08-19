@@ -8,19 +8,19 @@ import EmptyState from "@/design-system/EmptyState";
 import Button from "@/design-system/Button";
 import { describeResultError } from "@/product-framework/result";
 import { findHomeManagementCompanionInstanceId } from "../setupStateData";
-import { listThings, createThing } from "../domain/things";
-import { THING_TYPE_BY_ID } from "../thingTypes";
-import type { Thing } from "../state";
+import { listHomeItems, createHomeItem } from "../domain/homeItems";
+import { HOME_ITEM_TYPE_BY_ID } from "../homeKnowledge";
+import type { HomeItem } from "../state";
 import SectionShell from "./shared/SectionShell";
 import { StatRow, StatTile } from "./shared/StatRow";
 import { STATUS_LABEL, STATUS_TONE } from "./shared/lifecycle";
 import ThingFormSheet, { thingFormValuesToPatch, type ThingFormValues } from "./things/ThingFormSheet";
 
 type LoadStatus = "loading" | "ready" | "no-instance" | "error";
-type SaveResult = { ok: true; thing: Thing } | { ok: false; message: string };
+type SaveResult = { ok: true; thing: HomeItem } | { ok: false; message: string };
 
 function typeLabel(type: string): string {
-  return THING_TYPE_BY_ID[type]?.label ?? "Other";
+  return HOME_ITEM_TYPE_BY_ID[type]?.label ?? "Other";
 }
 
 /**
@@ -34,7 +34,7 @@ export default function ThingsModule() {
   const [status, setStatus] = useState<LoadStatus>("loading");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [instanceId, setInstanceId] = useState<string | null>(null);
-  const [things, setThings] = useState<Thing[]>([]);
+  const [things, setThings] = useState<HomeItem[]>([]);
   const [showArchived, setShowArchived] = useState(false);
   const [formOpen, setFormOpen] = useState(false);
   const addButtonRef = useRef<HTMLDivElement>(null);
@@ -53,7 +53,7 @@ export default function ThingsModule() {
       return;
     }
     setInstanceId(found.id);
-    const result = await listThings(found.id);
+    const result = await listHomeItems(found.id);
     if (!result.ok) {
       setErrorMessage(describeResultError(result.error));
       setStatus("error");
@@ -69,7 +69,7 @@ export default function ThingsModule() {
 
   async function handleSave(values: ThingFormValues): Promise<SaveResult> {
     if (!instanceId) return { ok: false, message: "Couldn't find your home. Try reloading the page." };
-    const result = await createThing(instanceId, thingFormValuesToPatch(values));
+    const result = await createHomeItem(instanceId, thingFormValuesToPatch(values));
     if (!result.ok) return { ok: false, message: describeResultError(result.error) };
     setThings((prev) => [...prev, result.data]);
     return { ok: true, thing: result.data };
@@ -78,7 +78,7 @@ export default function ThingsModule() {
   if (status === "loading") {
     return (
       <div className="flex items-center justify-center py-16">
-        <Badge tone="neutral">Loading things…</Badge>
+        <Badge tone="neutral">Loading…</Badge>
       </div>
     );
   }
@@ -87,7 +87,7 @@ export default function ThingsModule() {
     return (
       <EmptyState
         icon={Home}
-        title="Couldn't load your things"
+        title="Couldn't load your home"
         description={errorMessage ?? "Something went wrong. Try again."}
         action={
           <Button size="sm" variant="secondary" onClick={load}>
@@ -109,11 +109,11 @@ export default function ThingsModule() {
   return (
     <SectionShell
       icon={Home}
-      title="Things"
-      purpose="Whatever's in your home worth keeping track of: appliances, systems, fixtures."
-      recordsLabel="Things"
+      title="Your home"
+      purpose="Everything Home Base is keeping an eye on."
+      recordsLabel="In your home"
       onAdd={() => setFormOpen(true)}
-      addLabel="Add a thing"
+      addLabel="Add something"
       summary={
         <StatRow>
           <StatTile label="Tracked" value={String(active.length)} />
@@ -125,12 +125,12 @@ export default function ThingsModule() {
       {active.length === 0 ? (
         <EmptyState
           icon={Home}
-          title="Nothing tracked yet"
-          description="Add a thing to start building your home's memory: warranty, maintenance, and history, all in one place."
+          title="Home Base doesn't know your home yet"
+          description="Add what's in your home, and Home Base starts keeping its warranty, its upkeep and its history for you."
           action={
             <div ref={addButtonRef} className="inline-block">
               <Button size="sm" iconLeft={<Plus size={14} aria-hidden />} onClick={() => setFormOpen(true)}>
-                Add a thing
+                Add something
               </Button>
             </div>
           }
@@ -150,7 +150,7 @@ export default function ThingsModule() {
             onClick={() => setShowArchived((v) => !v)}
             className="text-[12px] font-semibold text-[var(--muted)] hover:text-[var(--text)]"
           >
-            {showArchived ? "Hide" : "Show"} {archived.length} archived {archived.length === 1 ? "thing" : "things"}
+            {showArchived ? "Hide" : "Show"} {archived.length} archived {archived.length === 1 ? "item" : "items"}
           </button>
           {showArchived && (
             <ul className="mt-2.5 flex flex-col gap-2.5 opacity-70">
@@ -174,7 +174,7 @@ export default function ThingsModule() {
   );
 }
 
-function ThingRow({ thing }: { thing: Thing }) {
+function ThingRow({ thing }: { thing: HomeItem }) {
   return (
     <li>
       <Link

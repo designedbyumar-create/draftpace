@@ -1,15 +1,26 @@
-import type { Thing, MaintenanceTask, Problem } from "./state";
+import type { HomeItem, MaintenanceTask, Problem } from "./state";
+import { findCareTemplate, findCareTemplateByTaskName, type CareConsequence, type CareEffort } from "./homeKnowledge";
+import { describeCareStatus, describeWarranty } from "./homeVoice";
 
 /**
- * The shared Attention domain: one deterministic derivation of "what needs
- * a look", built from the same stored dates the Records sections
- * themselves show, never a second opinion or an inferred guess. Powers
- * both the Attention inbox and the Today workspace snapshot from a single
- * source, matching PFC's own attention.ts discipline.
+ * The shared Attention domain: one deterministic answer to "what does
+ * this home need from me", built only from stored dates and curated
+ * knowledge. Powers both the Attention surface and the Today snapshot
+ * from a single source, so the two can never disagree.
+ *
+ * Every item here is explainable. Nothing is inferred, weighted by
+ * engagement, or invented: if a line cannot be traced to a date on a row
+ * plus a hand-written rule in homeKnowledge.ts, it does not appear.
  */
 
 export type AttentionKind = "maintenanceDue" | "warrantyExpiring" | "problem";
-export type AttentionUrgency = "needsResolution" | "worthAWhile";
+
+/**
+ * How much this deserves to interrupt someone. Deliberately named for
+ * the decision it supports rather than for a heading: the words shown to
+ * a person live in the presentation layer, not here.
+ */
+export type AttentionUrgency = "soon" | "canWait";
 
 export interface AttentionItem {
   /** Stable across renders/sessions, `${kind}:${entityId}`. */
@@ -17,7 +28,10 @@ export interface AttentionItem {
   kind: AttentionKind;
   urgency: AttentionUrgency;
   entityId: string;
-  message: string;
+  /** What this is, in the user's terms, e.g. "Change AC filter". */
+  title: string;
+  /** Why it is here, stated as fact, e.g. "Last done 4 months ago, usually every 3 months". */
+  detail: string;
   href: string;
 }
 
@@ -42,39 +56,54 @@ function isSnoozed(snoozedUntil: string | null, now: Date): boolean {
 }
 
 /**
- * The one place urgency gets decided, real and computed rather than
- * hardcoded per kind. Only reads factors a caller can honestly derive
- * from a stored field, never a fabricated guess: maintenance/warranty
- * items don't carry a severity/cost of their own, so their callers pass
- * neutral factors and let overdueDays alone drive the score (which
- * reproduces this function's own prior hardcoded behavior exactly);
- * Problems pass their real stored severity/effort/cost.
+ * Urgency, computed from what is actually known.
+ *
+ * Two deliberate properties, both reactions to how the previous version
+ * behaved:
+ *
+ * 1. Lateness is measured in *intervals*, not raw days. Thirty days past
+ *    a monthly job is a full cycle missed; thirty days past an annual
+ *    one is barely anything. Counting raw days made a long-ignored
+ *    trivial task outrank a safety job that had just come due.
+ *
+ * 2. Consequence dominates. A dryer vent that is exactly due should beat
+ *    a detergent drawer that is a year late, because one is a fire risk
+ *    and the other is not. Lateness is capped at two intervals so an
+ *    ignored item cannot climb forever and crowd out everything else.
  */
 export interface UrgencyFactors {
-  /** Days past due, 0 or negative when not yet due. */
-  overdueDays: number;
-  /** How bad it is to keep ignoring this: 0 low, 1 medium, 2 high. */
-  consequence: 0 | 1 | 2;
-  /** How much work it takes to address: 0 low, 1 medium, 2 high. */
-  effort: 0 | 1 | 2;
-  /** Cost impact: 0 low, 1 medium, 2 high. */
+  /** How far past due, as a multiple of the item's own interval. 0 when not yet due. */
+  intervalsLate: number;
+  /** How bad it is to keep putting off: 0 cosmetic, 1 costly over time, 2 safety or serious damage. */
+  consequence: CareConsequence;
+  /** What it takes to do: 0 minutes, 1 an afternoon, 2 booking somebody. */
+  effort: CareEffort;
+  /** Money at stake: 0 low, 1 medium, 2 high. */
   cost: 0 | 1 | 2;
 }
 
-const URGENCY_THRESHOLD = 2;
+const URGENCY_THRESHOLD = 2.5;
+const MAX_INTERVALS_LATE = 2;
 
 export function scoreAttentionUrgency(factors: UrgencyFactors): AttentionUrgency {
-  const score = Math.max(0, factors.overdueDays) * 0.5 + factors.consequence * 2 + factors.cost - factors.effort * 0.5;
-  return score >= URGENCY_THRESHOLD ? "needsResolution" : "worthAWhile";
+  const lateness = Math.min(Math.max(factors.intervalsLate, 0), MAX_INTERVALS_LATE);
+  const score = factors.consequence * 2.5 + lateness * 1 + factors.cost - factors.effort * 0.5;
+  return score >= URGENCY_THRESHOLD ? "soon" : "canWait";
 }
 
-const PROBLEM_SEVERITY_CONSEQUENCE: Record<Problem["severity"], 0 | 1 | 2> = {
+/** Sort key so the list is ordered, not just banded. Higher surfaces first. */
+function rankOf(factors: UrgencyFactors): number {
+  const lateness = Math.min(Math.max(factors.intervalsLate, 0), MAX_INTERVALS_LATE);
+  return factors.consequence * 2.5 + lateness * 1 + factors.cost - factors.effort * 0.5;
+}
+
+const PROBLEM_SEVERITY_CONSEQUENCE: Record<Problem["severity"], CareConsequence> = {
   minor: 0,
   moderate: 1,
   urgent: 2,
 };
 
-const PROBLEM_EFFORT_SCORE: Record<Problem["effort"], 0 | 1 | 2> = {
+const PROBLEM_EFFORT_SCORE: Record<Problem["effort"], CareEffort> = {
   quick: 0,
   moderate: 1,
   bigJob: 2,
@@ -87,20 +116,33 @@ function problemCostBucket(estimatedCostMinorUnits: number | null): 0 | 1 | 2 {
   return 0;
 }
 
+/**
+ * What a task's care is worth, from the curated template it came from.
+ * Falls back to an exact name match for tasks that predate the link, and
+ * then to neutral factors. Neutral means "we genuinely do not know",
+ * never an invented severity.
+ */
+function careFactorsFor(task: MaintenanceTask): { consequence: CareConsequence; effort: CareEffort } {
+  const template = findCareTemplate(task.careTemplateId) ?? findCareTemplateByTaskName(task.name);
+  if (!template) return { consequence: 1, effort: 1 };
+  return { consequence: template.consequence, effort: template.effort };
+}
+
 export interface AttentionInputs {
-  things: Thing[];
+  homeItems: HomeItem[];
   maintenanceTasks: MaintenanceTask[];
   problems: Problem[];
 }
 
 /**
- * Deterministic: every item traces to a stored date on a real record, and
- * a task that has never been logged is treated as due right away (its
- * "last done" is unknown, not assumed) rather than given a free pass
- * until some arbitrary first deadline.
+ * Deterministic: every item traces to a stored date on a real row. A
+ * task that has never been logged is treated as due now, since its last
+ * completion is unknown rather than assumed.
+ *
+ * Returned in rank order, most deserving of attention first.
  */
 export function deriveAttentionItems(inputs: AttentionInputs, now: Date = new Date()): AttentionItem[] {
-  const items: AttentionItem[] = [];
+  const scored: Array<{ item: AttentionItem; rank: number }> = [];
 
   for (const task of inputs.maintenanceTasks) {
     if (task.status === "archived") continue;
@@ -109,54 +151,49 @@ export function deriveAttentionItems(inputs: AttentionInputs, now: Date = new Da
     const days = daysUntil(nextDueIso, now);
     if (days > 0) continue;
 
-    const overdueDays = -days;
-    const message = !task.lastDoneAt
-      ? `${task.name} has never been logged.`
-      : overdueDays === 0
-        ? `${task.name} is due today.`
-        : `${task.name} is ${overdueDays} ${overdueDays === 1 ? "day" : "days"} overdue.`;
+    const { consequence, effort } = careFactorsFor(task);
+    const factors: UrgencyFactors = {
+      intervalsLate: -days / Math.max(task.cadenceDays, 1),
+      consequence,
+      effort,
+      cost: 0,
+    };
 
-    // Neutral factors reproduce this loop's own prior hardcoded
-    // "needsResolution" exactly: maintenance tasks don't carry a
-    // consequence/cost of their own to score honestly, so overdueDays
-    // alone (already >= 0 to have reached this point) drives it.
-    const urgency = scoreAttentionUrgency({ overdueDays, consequence: 1, effort: 1, cost: 1 });
-
-    items.push({
-      id: `maintenanceDue:${task.id}`,
-      kind: "maintenanceDue",
-      urgency,
-      entityId: task.id,
-      message,
-      href: "/app/products/home-management-companion/maintenance",
+    scored.push({
+      rank: rankOf(factors),
+      item: {
+        id: `maintenanceDue:${task.id}`,
+        kind: "maintenanceDue",
+        urgency: scoreAttentionUrgency(factors),
+        entityId: task.id,
+        title: task.name,
+        detail: describeCareStatus(task.lastDoneAt, task.cadenceDays, now),
+        href: "/app/products/home-management-companion/maintenance",
+      },
     });
   }
 
-  for (const thing of inputs.things) {
-    if (thing.status === "archived") continue;
-    if (!thing.warrantyExpiresAt) continue;
-    const days = daysUntil(thing.warrantyExpiresAt, now);
+  for (const item of inputs.homeItems) {
+    if (item.status === "archived") continue;
+    if (!item.warrantyExpiresAt) continue;
+    const days = daysUntil(item.warrantyExpiresAt, now);
     if (days > WARRANTY_EXPIRING_SOON_DAYS) continue;
 
-    const message =
-      days < 0
-        ? `${thing.name}'s warranty expired ${-days} ${-days === 1 ? "day" : "days"} ago.`
-        : days === 0
-          ? `${thing.name}'s warranty expires today.`
-          : `${thing.name}'s warranty expires in ${days} ${days === 1 ? "day" : "days"}.`;
+    // A warranty date is information, not a job: nothing is at risk and
+    // there is nothing to do, so it never competes with real care.
+    const factors: UrgencyFactors = { intervalsLate: 0, consequence: 0, effort: 0, cost: 0 };
 
-    // Neutral, zero-weight factors reproduce this loop's own prior
-    // hardcoded "worthAWhile" exactly, a warranty date alone doesn't
-    // carry a real severity/cost to score.
-    const urgency = scoreAttentionUrgency({ overdueDays: 0, consequence: 0, effort: 0, cost: 0 });
-
-    items.push({
-      id: `warrantyExpiring:${thing.id}`,
-      kind: "warrantyExpiring",
-      urgency,
-      entityId: thing.id,
-      message,
-      href: `/app/products/home-management-companion/things/${thing.id}`,
+    scored.push({
+      rank: rankOf(factors),
+      item: {
+        id: `warrantyExpiring:${item.id}`,
+        kind: "warrantyExpiring",
+        urgency: scoreAttentionUrgency(factors),
+        entityId: item.id,
+        title: item.name,
+        detail: describeWarranty(item.warrantyExpiresAt, now),
+        href: `/app/products/home-management-companion/things/${item.id}`,
+      },
     });
   }
 
@@ -165,22 +202,45 @@ export function deriveAttentionItems(inputs: AttentionInputs, now: Date = new Da
     if (problem.resolutionStatus === "resolved") continue;
     if (isSnoozed(problem.snoozedUntil, now)) continue;
 
-    const urgency = scoreAttentionUrgency({
-      overdueDays: 0,
+    const factors: UrgencyFactors = {
+      intervalsLate: 0,
       consequence: PROBLEM_SEVERITY_CONSEQUENCE[problem.severity],
       effort: PROBLEM_EFFORT_SCORE[problem.effort],
       cost: problemCostBucket(problem.estimatedCostMinorUnits),
-    });
+    };
 
-    items.push({
-      id: `problem:${problem.id}`,
-      kind: "problem",
-      urgency,
-      entityId: problem.id,
-      message: problem.title,
-      href: "/app/products/home-management-companion/problems",
+    scored.push({
+      rank: rankOf(factors),
+      item: {
+        id: `problem:${problem.id}`,
+        kind: "problem",
+        urgency: scoreAttentionUrgency(factors),
+        entityId: problem.id,
+        title: problem.title,
+        detail: problem.description ?? "Reported as a problem",
+        // Deep-links to the affected object when there is one. There is
+        // no dedicated problem surface yet (it lands with the reporting
+        // flow in the next phase), so an unattached problem points at
+        // Today rather than at the /problems route that never existed.
+        href: problem.thingId
+          ? `/app/products/home-management-companion/things/${problem.thingId}`
+          : "/app/products/home-management-companion/workspace",
+      },
     });
   }
 
-  return items;
+  // Something broken outranks something merely scheduled when the two
+  // score about the same. "About" matters: a task one day into a
+  // 90-day cycle scores a hundredth of a point above an equivalent
+  // problem, which is not a real difference in how much it deserves
+  // someone's attention, so anything inside this margin is treated as a
+  // tie and broken by kind instead.
+  const TIE_MARGIN = 0.25;
+  const kindWeight: Record<AttentionKind, number> = { problem: 2, maintenanceDue: 1, warrantyExpiring: 0 };
+  return scored
+    .sort((a, b) => {
+      if (Math.abs(a.rank - b.rank) < TIE_MARGIN) return kindWeight[b.item.kind] - kindWeight[a.item.kind];
+      return b.rank - a.rank;
+    })
+    .map((entry) => entry.item);
 }

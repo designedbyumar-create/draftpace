@@ -11,12 +11,12 @@ import { summarizeCandidate, CANDIDATE_TYPE_LABEL } from "../../import/candidate
 import { detectDuplicateByName, type ComparableRecord } from "../../import/duplicateDetection";
 import { confirmCandidate } from "../../domain/confirmCandidate";
 import type { CandidatePayload, ConfirmationSource, ExtractionCandidate } from "../../import/types";
-import type { Thing, MaintenanceTask, ServiceProvider } from "../../state";
+import type { HomeItem, MaintenanceTask, ServiceProvider } from "../../state";
 
 /** Existing-record lookups for duplicate detection, built once per render from records already loaded by the orchestrator, never a separate query. */
 function comparableRecordsFor(
   candidateType: ExtractionCandidate["candidateType"],
-  existing: { things: Thing[]; maintenanceTasks: MaintenanceTask[]; serviceProviders: ServiceProvider[] }
+  existing: { things: HomeItem[]; maintenanceTasks: MaintenanceTask[]; serviceProviders: ServiceProvider[] }
 ): ComparableRecord[] {
   switch (candidateType) {
     case "thing":
@@ -46,7 +46,7 @@ export default function CandidateReviewQueue({
 }: {
   instanceId: string;
   candidates: ExtractionCandidate[];
-  existing: { things: Thing[]; maintenanceTasks: MaintenanceTask[]; serviceProviders: ServiceProvider[] };
+  existing: { things: HomeItem[]; maintenanceTasks: MaintenanceTask[]; serviceProviders: ServiceProvider[] };
   importSessionId: string;
   source: ConfirmationSource;
   onCandidateResolved: (candidateId: string, result: { recordType: string; recordId: string } | "skipped") => void;

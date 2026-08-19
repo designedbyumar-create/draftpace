@@ -39,6 +39,14 @@ export const maintenanceTaskSchema = z.object({
   notes: z.string().nullable(),
   /** v2: set by Snooze (a short fixed window) or Skip (the next full cadence date), read by attention.ts's snooze guard. */
   snoozedUntil: z.string().nullable(),
+  /**
+   * The homeKnowledge.ts template this task came from, when it was
+   * proposed rather than typed by hand. Lets urgency read the template's
+   * real consequence and effort. Nullable: hand-written tasks and every
+   * task created before this link existed simply have none, and fall
+   * back to a name match and then to neutral scoring.
+   */
+  careTemplateId: z.string().nullable(),
   ...recordLifecycleFields,
   ...recordProvenanceFields,
 });
@@ -72,19 +80,28 @@ export const serviceProviderSchema = z.object({
 export type ServiceProvider = z.infer<typeof serviceProviderSchema>;
 
 /**
- * The generic entity Home Base v2 is built around, replacing the old
- * narrow appliance/system/other category. `type` is an open, validated
- * string, not a closed enum, same pattern as
- * src/product-framework/families.ts's ProductFamilyId: plain
- * regex-checked text backed by a lookup table (thingTypes.ts), so a new
- * thing type never needs a schema change to add.
+ * One object in the home. Named HomeItem rather than Thing deliberately:
+ * this type's name leaks into component names, props and labels, and
+ * "thing" leaking into the interface is exactly the failure the v2 audit
+ * found (an import badge rendering the literal word "thing" at the
+ * user). The user never sees a generic noun at all, they see
+ * "Refrigerator", but if this one ever escapes, "item" is harmless.
+ *
+ * The underlying table is still hmc_things. Renaming storage would cost
+ * a migration and change nothing a person can see, so it stays: storage
+ * names are not product decisions.
+ *
+ * `type` is an open, validated string, not a closed enum, same pattern
+ * as src/product-framework/families.ts's ProductFamilyId: regex-checked
+ * text backed by a lookup table (homeKnowledge.ts), so a new type never
+ * needs a schema change to add.
  */
-const THING_TYPE_PATTERN = /^[a-z][a-z0-9-]*$/;
+const HOME_ITEM_TYPE_PATTERN = /^[a-z][a-z0-9-]*$/;
 
-export const thingSchema = z.object({
+export const homeItemSchema = z.object({
   id: z.string(),
   name: z.string().min(1),
-  type: z.string().regex(THING_TYPE_PATTERN),
+  type: z.string().regex(HOME_ITEM_TYPE_PATTERN),
   brand: z.string().nullable(),
   model: z.string().nullable(),
   location: z.string().nullable(),
@@ -96,15 +113,15 @@ export const thingSchema = z.object({
   ...recordLifecycleFields,
   ...recordProvenanceFields,
 });
-export type Thing = z.infer<typeof thingSchema>;
+export type HomeItem = z.infer<typeof homeItemSchema>;
 
-export const thingDocumentKindSchema = z.enum(["warranty", "receipt", "manual", "other"]);
-export type ThingDocumentKind = z.infer<typeof thingDocumentKindSchema>;
+export const homeItemDocumentKindSchema = z.enum(["warranty", "receipt", "manual", "other"]);
+export type HomeItemDocumentKind = z.infer<typeof homeItemDocumentKindSchema>;
 
-export const thingDocumentSchema = z.object({
+export const homeItemDocumentSchema = z.object({
   id: z.string(),
   thingId: z.string(),
-  kind: thingDocumentKindSchema,
+  kind: homeItemDocumentKindSchema,
   label: z.string().nullable(),
   documentLink: z.string().min(1),
   documentDate: isoDate.nullable(),
@@ -112,7 +129,7 @@ export const thingDocumentSchema = z.object({
   ...recordLifecycleFields,
   ...recordProvenanceFields,
 });
-export type ThingDocument = z.infer<typeof thingDocumentSchema>;
+export type HomeItemDocument = z.infer<typeof homeItemDocumentSchema>;
 
 /**
  * A problem is something currently broken or reported, distinct from

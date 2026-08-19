@@ -59,6 +59,11 @@ export const homeManagementCompanionDefinition: ProductDefinitionInput = {
   ],
   primaryNavigation: ["workspace", "attention", "things"],
   workspaceLabel: "Today",
+  // The route id stays "things" (renaming a route buys nothing a person
+  // can see), but no user-facing surface says that word. The v2
+  // direction is that there is no generic noun at all: someone sees
+  // "Refrigerator", and the place those live is simply their home.
+  destinationLabels: { things: "Your home", attention: "Needs you" },
   startRoute: "start",
   setup: {
     required: true,
