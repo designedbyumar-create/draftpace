@@ -105,6 +105,15 @@ export interface HomeItemTypeDefinition {
    * the filters and batteries their lease puts on them.
    */
   renterRelevant?: boolean;
+  /**
+   * Worth offering unprompted when somebody is first setting up.
+   *
+   * A short, curated list, not everything. Setup asking about all 121
+   * types would be the data-entry exercise this product exists to avoid;
+   * the point is to name the handful nearly every home has so somebody
+   * can tap rather than type, and add the rest whenever they think of it.
+   */
+  offerAtSetup?: boolean;
   /** Empty for things worth recording but needing nothing: a shutoff location, a policy, a paint colour. */
   care: CareTemplate[];
 }
@@ -112,7 +121,7 @@ export interface HomeItemTypeDefinition {
 export const HOME_ITEM_TYPES: HomeItemTypeDefinition[] = [
   // ---------------------------------------------------------------- Kitchen
   {
-    id: "refrigerator", label: "Refrigerator", category: "kitchen", renterRelevant: true,
+    id: "refrigerator", label: "Refrigerator", category: "kitchen", offerAtSetup: true, renterRelevant: true,
     matchKeywords: ["refrigerator", "fridge"],
     care: [
       { id: "refrigerator.water-filter", taskName: "Replace the water filter", intervalDays: 180, consequence: 0, effort: 0 },
@@ -126,7 +135,7 @@ export const HOME_ITEM_TYPES: HomeItemTypeDefinition[] = [
     care: [{ id: "freezer.defrost", taskName: "Defrost and clean", intervalDays: 365, consequence: 0, effort: 1 }],
   },
   {
-    id: "dishwasher", label: "Dishwasher", category: "kitchen", renterRelevant: true,
+    id: "dishwasher", label: "Dishwasher", category: "kitchen", offerAtSetup: true, renterRelevant: true,
     matchKeywords: ["dishwasher"],
     care: [
       { id: "dishwasher.filter", taskName: "Clean the filter", intervalDays: 30, consequence: 0, effort: 0 },
@@ -134,7 +143,7 @@ export const HOME_ITEM_TYPES: HomeItemTypeDefinition[] = [
     ],
   },
   {
-    id: "oven", label: "Oven or range", category: "kitchen", renterRelevant: true,
+    id: "oven", label: "Oven or range", category: "kitchen", offerAtSetup: true, renterRelevant: true,
     matchKeywords: ["oven", "range", "stove", "cooktop"],
     care: [{ id: "oven.deep-clean", taskName: "Deep clean", intervalDays: 90, consequence: 0, effort: 1 }],
   },
@@ -144,7 +153,7 @@ export const HOME_ITEM_TYPES: HomeItemTypeDefinition[] = [
     care: [{ id: "range-hood.filter", taskName: "Degrease the filter", intervalDays: 30, consequence: 2, effort: 0 }],
   },
   {
-    id: "microwave", label: "Microwave", category: "kitchen", renterRelevant: true,
+    id: "microwave", label: "Microwave", category: "kitchen", offerAtSetup: true, renterRelevant: true,
     matchKeywords: ["microwave"],
     care: [{ id: "microwave.filter", taskName: "Replace the grease and charcoal filters", intervalDays: 180, consequence: 0, effort: 0 }],
   },
@@ -166,7 +175,7 @@ export const HOME_ITEM_TYPES: HomeItemTypeDefinition[] = [
 
   // ---------------------------------------------------------------- Laundry
   {
-    id: "washer", label: "Washing machine", category: "laundry", renterRelevant: true,
+    id: "washer", label: "Washing machine", category: "laundry", offerAtSetup: true, renterRelevant: true,
     matchKeywords: ["washing machine", "washer"],
     care: [
       { id: "washer.cleaning-cycle", taskName: "Run a cleaning cycle", intervalDays: 90, consequence: 0, effort: 0 },
@@ -175,7 +184,7 @@ export const HOME_ITEM_TYPES: HomeItemTypeDefinition[] = [
     ],
   },
   {
-    id: "dryer", label: "Dryer", category: "laundry", renterRelevant: true,
+    id: "dryer", label: "Dryer", category: "laundry", offerAtSetup: true, renterRelevant: true,
     matchKeywords: ["dryer", "tumble dryer"],
     care: [{ id: "dryer.vent", taskName: "Clean the dryer vent", intervalDays: 365, consequence: 2, effort: 1 }],
   },
@@ -187,7 +196,7 @@ export const HOME_ITEM_TYPES: HomeItemTypeDefinition[] = [
 
   // ------------------------------------------------- Heating, cooling, air
   {
-    id: "furnace", label: "Furnace", category: "climate",
+    id: "furnace", label: "Furnace", category: "climate", offerAtSetup: true,
     matchKeywords: ["furnace"],
     care: [
       { id: "furnace.air-filter", taskName: "Replace the air filter", intervalDays: 90, consequence: 1, effort: 0 },
@@ -196,7 +205,7 @@ export const HOME_ITEM_TYPES: HomeItemTypeDefinition[] = [
     ],
   },
   {
-    id: "central-air", label: "Central air conditioning", category: "climate",
+    id: "central-air", label: "Central air conditioning", category: "climate", offerAtSetup: true,
     matchKeywords: ["central air", "air conditioning", "air conditioner"],
     care: [
       { id: "central-air.filter", taskName: "Replace the air filter", intervalDays: 90, consequence: 1, effort: 0 },
@@ -242,7 +251,7 @@ export const HOME_ITEM_TYPES: HomeItemTypeDefinition[] = [
     ],
   },
   {
-    id: "thermostat", label: "Thermostat", category: "climate", renterRelevant: true,
+    id: "thermostat", label: "Thermostat", category: "climate", offerAtSetup: true, renterRelevant: true,
     matchKeywords: ["thermostat"],
     care: [{ id: "thermostat.battery", taskName: "Replace the battery", intervalDays: 365, consequence: 1, effort: 0 }],
   },
@@ -274,7 +283,7 @@ export const HOME_ITEM_TYPES: HomeItemTypeDefinition[] = [
 
   // ------------------------------------------------------ Water and plumbing
   {
-    id: "water-heater", label: "Water heater", category: "water",
+    id: "water-heater", label: "Water heater", category: "water", offerAtSetup: true,
     matchKeywords: ["water heater", "hot water heater", "hot water tank"],
     care: [
       { id: "water-heater.flush-tank", taskName: "Flush the tank", intervalDays: 365, consequence: 1, effort: 1 },
@@ -402,7 +411,7 @@ export const HOME_ITEM_TYPES: HomeItemTypeDefinition[] = [
 
   // --------------------------------------------------- Safety and security
   {
-    id: "smoke-detector", label: "Smoke or CO detector", category: "safety", renterRelevant: true,
+    id: "smoke-detector", label: "Smoke or CO detector", category: "safety", offerAtSetup: true, renterRelevant: true,
     matchKeywords: ["smoke detector", "smoke alarm", "carbon monoxide", "co detector"],
     care: [
       { id: "smoke-detector.test", taskName: "Press the test button", intervalDays: 30, consequence: 2, effort: 0 },
@@ -456,12 +465,12 @@ export const HOME_ITEM_TYPES: HomeItemTypeDefinition[] = [
 
   // ------------------------------------------- Structure, exterior, access
   {
-    id: "roof", label: "Roof", category: "structure",
+    id: "roof", label: "Roof", category: "structure", offerAtSetup: true,
     matchKeywords: ["roof", "shingles"],
     care: [{ id: "roof.inspect", taskName: "Inspect for damage", intervalDays: 365, consequence: 2, effort: 1, months: [4] }],
   },
   {
-    id: "gutter", label: "Gutters", category: "structure",
+    id: "gutter", label: "Gutters", category: "structure", offerAtSetup: true,
     matchKeywords: ["gutters", "gutter", "downspout", "eavestrough"],
     care: [{ id: "gutter.clean", taskName: "Clear the gutters", intervalDays: 180, consequence: 1, effort: 2, months: [4, 11] }],
   },
@@ -524,7 +533,7 @@ export const HOME_ITEM_TYPES: HomeItemTypeDefinition[] = [
     care: [{ id: "driveway.seal", taskName: "Sealcoat and fill cracks", intervalDays: 1095, consequence: 0, effort: 2, months: [6] }],
   },
   {
-    id: "garage-door", label: "Garage door", category: "structure",
+    id: "garage-door", label: "Garage door", category: "structure", offerAtSetup: true,
     matchKeywords: ["garage door"],
     care: [
       { id: "garage-door.lubricate", taskName: "Lubricate the hinges and rollers", intervalDays: 180, consequence: 0, effort: 0 },
@@ -549,7 +558,7 @@ export const HOME_ITEM_TYPES: HomeItemTypeDefinition[] = [
 
   // ------------------------------------------------------ Grounds and garden
   {
-    id: "irrigation", label: "Irrigation system", category: "grounds",
+    id: "irrigation", label: "Irrigation system", category: "grounds", offerAtSetup: true,
     matchKeywords: ["irrigation", "sprinkler system", "sprinklers"],
     care: [
       { id: "irrigation.blowout", taskName: "Blow out the lines before the freeze", intervalDays: 365, consequence: 2, effort: 2, months: [10] },
@@ -558,7 +567,7 @@ export const HOME_ITEM_TYPES: HomeItemTypeDefinition[] = [
     ],
   },
   {
-    id: "lawn", label: "Lawn", category: "grounds",
+    id: "lawn", label: "Lawn", category: "grounds", offerAtSetup: true,
     matchKeywords: ["lawn", "grass", "yard"],
     care: [
       { id: "lawn.feed", taskName: "Feed and weed", intervalDays: 182, consequence: 0, effort: 1, months: [4, 9] },
@@ -676,7 +685,7 @@ export const HOME_ITEM_TYPES: HomeItemTypeDefinition[] = [
 
   // ------------------------------------------------------ Everyday things
   {
-    id: "mattress", label: "Mattress", category: "everyday", renterRelevant: true,
+    id: "mattress", label: "Mattress", category: "everyday", offerAtSetup: true, renterRelevant: true,
     matchKeywords: ["mattress", "bed"],
     care: [
       { id: "mattress.rotate", taskName: "Rotate it", intervalDays: 90, consequence: 0, effort: 0 },
@@ -732,7 +741,7 @@ export const HOME_ITEM_TYPES: HomeItemTypeDefinition[] = [
     care: [],
   },
   {
-    id: "router", label: "Wifi router", category: "everyday", renterRelevant: true,
+    id: "router", label: "Wifi router", category: "everyday", offerAtSetup: true, renterRelevant: true,
     matchKeywords: ["router", "wifi", "modem"],
     care: [{ id: "router.firmware", taskName: "Check for a firmware update", intervalDays: 180, consequence: 1, effort: 0 }],
   },
@@ -796,7 +805,7 @@ export const HOME_ITEM_TYPES: HomeItemTypeDefinition[] = [
 
   // ------------------------------------------------------------- Renting
   {
-    id: "lease", label: "Lease", category: "renting", renterRelevant: true,
+    id: "lease", label: "Lease", category: "renting", offerAtSetup: true, renterRelevant: true,
     matchKeywords: ["lease", "tenancy", "rental agreement"],
     care: [
       { id: "lease.notice-deadline", taskName: "Decide before the notice deadline", intervalDays: 365, consequence: 2, effort: 1 },
@@ -814,7 +823,7 @@ export const HOME_ITEM_TYPES: HomeItemTypeDefinition[] = [
     care: [],
   },
   {
-    id: "renters-insurance", label: "Renters insurance", category: "renting", renterRelevant: true,
+    id: "renters-insurance", label: "Renters insurance", category: "renting", offerAtSetup: true, renterRelevant: true,
     matchKeywords: ["renters insurance", "contents insurance", "tenant insurance"],
     care: [{ id: "renters-insurance.renew", taskName: "Review before it renews", intervalDays: 365, consequence: 1, effort: 0 }],
   },
@@ -872,6 +881,20 @@ function mentionsWord(haystack: string, keyword: string): boolean {
  * low-confidence guess, same never-guess discipline as
  * extractFromText.ts.
  */
+/**
+ * What setup offers, filtered by whether the person owns the place.
+ * A renter is never asked about a roof; an owner is not asked about a
+ * lease.
+ */
+export function typesOfferedAtSetup(tenure: "own" | "rent" | null): HomeItemTypeDefinition[] {
+  return HOME_ITEM_TYPES.filter((type) => {
+    if (!type.offerAtSetup) return false;
+    if (tenure === "rent") return Boolean(type.renterRelevant);
+    if (tenure === "own") return type.category !== "renting";
+    return true;
+  });
+}
+
 export function matchHomeItemType(name: string, type: string): HomeItemTypeDefinition | null {
   if (HOME_ITEM_TYPE_BY_ID[type]) return HOME_ITEM_TYPE_BY_ID[type];
   const normalized = name.toLowerCase();

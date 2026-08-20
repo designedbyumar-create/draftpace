@@ -7,6 +7,7 @@ import {
   findCareTemplate,
   findCareTemplateByTaskName,
   nextSeasonalDueIso,
+  typesOfferedAtSetup,
 } from "./homeKnowledge";
 
 describe("matchHomeItemType", () => {
@@ -165,5 +166,45 @@ describe("nextSeasonalDueIso", () => {
   it("does not treat a job added during its own month as due that instant", () => {
     // Added in October, season October: it belongs to next October, not today.
     expect(nextSeasonalDueIso("2026-10-10", [10])).toBe("2027-10-01");
+  });
+});
+
+describe("typesOfferedAtSetup", () => {
+  it("offers a short curated list, not the whole catalogue", () => {
+    const offered = typesOfferedAtSetup(null);
+    expect(offered.length).toBeGreaterThan(8);
+    expect(offered.length).toBeLessThan(HOME_ITEM_TYPES.length / 3);
+  });
+
+  it("never asks a renter about a roof, gutters or a boiler", () => {
+    const ids = typesOfferedAtSetup("rent").map((t) => t.id);
+    expect(ids).not.toContain("roof");
+    expect(ids).not.toContain("gutter");
+    expect(ids).not.toContain("furnace");
+  });
+
+  it("offers a renter the things a lease actually puts on them", () => {
+    const ids = typesOfferedAtSetup("rent").map((t) => t.id);
+    expect(ids).toContain("lease");
+    expect(ids).toContain("smoke-detector");
+    expect(ids).toContain("refrigerator");
+  });
+
+  it("never asks an owner about a lease", () => {
+    expect(typesOfferedAtSetup("own").map((t) => t.id)).not.toContain("lease");
+  });
+
+  it("still offers the shared essentials to an owner", () => {
+    const ids = typesOfferedAtSetup("own").map((t) => t.id);
+    expect(ids).toContain("water-heater");
+    expect(ids).toContain("roof");
+    expect(ids).toContain("smoke-detector");
+  });
+
+  it("gives everything it offers some care to propose, so a pick is never a dead end", () => {
+    for (const type of typesOfferedAtSetup(null)) {
+      if (type.category === "records" || type.category === "renting") continue;
+      expect(type.care.length, `${type.id} proposes nothing`).toBeGreaterThan(0);
+    }
   });
 });
