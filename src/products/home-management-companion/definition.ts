@@ -52,7 +52,7 @@ export const homeManagementCompanionDefinition: ProductDefinitionInput = {
   // look before they could find out whether anything needed them. Home
   // decides and shows. Item detail is a contextual route reached by
   // tapping something, never a tab.
-  navigation: ["workspace", "setup", "import", "history", "settings"],
+  navigation: ["workspace", "setup", "import", "printables", "history", "settings"],
   primaryNavigation: ["workspace", "history"],
   workspaceLabel: "Home",
   startRoute: "workspace",
@@ -65,6 +65,7 @@ export const homeManagementCompanionDefinition: ProductDefinitionInput = {
     { id: "home-management-companion.setup", destination: "setup" },
     { id: "home-management-companion.workspace", destination: "workspace" },
     { id: "home-management-companion.import", destination: "import" },
+    { id: "home-management-companion.printables", destination: "printables" },
     { id: "home-management-companion.history", destination: "history" },
     { id: "home-management-companion.settings", destination: "settings" },
   ],

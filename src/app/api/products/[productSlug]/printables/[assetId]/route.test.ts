@@ -54,10 +54,28 @@ describe("GET /api/products/[productSlug]/printables/[assetId]", () => {
 
   it("checks entitlement before ever calling the asset-bytes loader", () => {
     const entitlementCheckIndex = source.indexOf('.from("entitlements")');
-    const bytesCallIndex = source.indexOf("getPrintableAssetBytes(");
+    // The route picks a per-product loader and then invokes it, so this
+    // matches the invocation rather than any one product's function name.
+    const bytesCallIndex = source.indexOf("loader(assetId)");
     expect(entitlementCheckIndex).toBeGreaterThan(-1);
     expect(bytesCallIndex).toBeGreaterThan(-1);
     expect(entitlementCheckIndex).toBeLessThan(bytesCallIndex);
+  });
+
+  it("selects the asset-bytes loader from the same slug the entitlement was checked against", () => {
+    // The guard against one product's entitlement serving another's bytes:
+    // both the query and the loader choice key off `productSlug`, and the
+    // loader is only resolved after the entitlement branches have run.
+    const entitlementCheckIndex = source.indexOf('.eq("product_slug", productSlug)');
+    const loaderChoiceIndex = source.indexOf("const loader =");
+    expect(entitlementCheckIndex).toBeGreaterThan(-1);
+    expect(loaderChoiceIndex).toBeGreaterThan(-1);
+    expect(entitlementCheckIndex).toBeLessThan(loaderChoiceIndex);
+    expect(source.slice(loaderChoiceIndex, source.indexOf("loader(assetId)"))).toContain("productSlug ===");
+  });
+
+  it("serves nothing for a product with no printable loader", () => {
+    expect(source).toContain("if (!loader) {");
   });
 
   it("uses the real server Supabase client, so RLS applies to the check", () => {

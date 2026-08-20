@@ -3,7 +3,8 @@ import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { productRegistry } from "@/product-framework/registry";
 import { ensureProductsRegistered } from "@/products/manifest";
 import { printableAssetRegistry } from "@/product-framework/printableAssets";
-import { getPrintableAssetBytes } from "@/products/personal-finance-companion/printables/assetBytes";
+import { getPrintableAssetBytes as getFinanceCompanionAssetBytes } from "@/products/personal-finance-companion/printables/assetBytes";
+import { getPrintableAssetBytes as getHomeSurveyAssetBytes } from "@/products/home-management-companion/printables/assetBytes";
 
 /**
  * Serves an included printable asset's actual bytes, gated by the same
@@ -66,11 +67,22 @@ export async function GET(
     return NextResponse.redirect(new URL(`/app/activate/${productSlug}`, request.url), 303);
   }
 
-  if (productSlug !== "personal-finance-companion") {
+  // One branch per product with a printable, per this file's contract
+  // above. The entitlement check has already passed at this point and is
+  // keyed on the same productSlug used to pick the loader, so a product
+  // can only ever serve its own bytes.
+  const loader =
+    productSlug === "personal-finance-companion"
+      ? getFinanceCompanionAssetBytes
+      : productSlug === "home-management-companion"
+        ? getHomeSurveyAssetBytes
+        : null;
+
+  if (!loader) {
     return NextResponse.json({ error: "Not found" }, { status: 404 });
   }
 
-  const bytes = getPrintableAssetBytes(assetId);
+  const bytes = loader(assetId);
   if (!bytes) {
     return NextResponse.json({ error: "Not found" }, { status: 404 });
   }
