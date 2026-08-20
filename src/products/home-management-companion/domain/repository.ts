@@ -6,7 +6,7 @@ import { ok, err, type Result } from "@/product-framework/result";
 
 /**
  * The shared CRUD implementation every Home Base record type's domain
- * module (appliances.ts, maintenanceTasks.ts, serviceProviders.ts) is
+ * module (homeItems.ts, maintenanceTasks.ts, serviceProviders.ts) is
  * built from, Home Base's own copy of PFC's identical
  * personal-finance-companion/domain/repository.ts, not imported across
  * products.

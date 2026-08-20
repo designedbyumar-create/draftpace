@@ -99,11 +99,39 @@ export const DEFAULT_SNOOZE_DAYS = 7;
  * The one line at the top of Home. It states the home's condition, not a
  * count of records, and it is allowed to say that everything is fine,
  * because that is usually true and worth hearing.
+ *
+ * The vague quantifiers are deliberate, but they still have to be true.
+ * "A couple" used to cover everything from two to twenty, which was
+ * visibly wrong beside a list of four rows and quietly taught the person
+ * that the sentence at the top is decorative. Staying calm means not
+ * putting a red number on the screen, not being inaccurate.
  */
+function vagueCount(n: number, one: string, couple: string, few: string, several: string): string {
+  if (n === 1) return one;
+  if (n === 2) return couple;
+  if (n <= 4) return few;
+  return several;
+}
+
 export function describeHomeHeadline(counts: { wrong: number; worthDoing: number }): string {
-  if (counts.wrong > 0) return counts.wrong === 1 ? "Something needs a look" : "A few things need a look";
-  if (counts.worthDoing === 1) return "One thing worth taking care of";
-  if (counts.worthDoing > 1) return "A couple of things worth taking care of";
+  if (counts.wrong > 0) {
+    return vagueCount(
+      counts.wrong,
+      "Something needs a look",
+      "A couple of things need a look",
+      "A few things need a look",
+      "Several things need a look"
+    );
+  }
+  if (counts.worthDoing > 0) {
+    return vagueCount(
+      counts.worthDoing,
+      "One thing worth taking care of",
+      "A couple of things worth taking care of",
+      "A few things worth taking care of",
+      "Several things worth taking care of"
+    );
+  }
   return "Your home is in good shape";
 }
 

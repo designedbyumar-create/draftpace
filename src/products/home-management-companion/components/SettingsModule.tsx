@@ -128,7 +128,7 @@ export default function SettingsModule() {
 
       <Surface className="flex items-center justify-between gap-4">
         <div>
-          <p className="text-[13px] font-semibold text-[var(--text)]">Your home</p>
+          <h2 className="text-[13px] font-semibold text-[var(--text)]">Your home</h2>
           <p className="mt-0.5 text-[12px] leading-relaxed text-[var(--muted)]">Add or update what's in your home and how it's looked after.</p>
         </div>
         <Button variant="secondary" href="/app/products/home-management-companion/setup">
@@ -137,7 +137,7 @@ export default function SettingsModule() {
       </Surface>
 
       <Surface>
-        <p className="text-[13px] font-semibold text-[var(--text)]">Time zone</p>
+        <h2 className="text-[13px] font-semibold text-[var(--text)]">Time zone</h2>
         <p className="mt-0.5 text-[12px] text-[var(--muted)]">Used to keep reminders inside a reasonable local time, never sent late at night or before your day starts.</p>
         <div className="mt-3 flex flex-wrap items-center gap-2">
           <div className="max-w-xs flex-1">
@@ -166,7 +166,7 @@ export default function SettingsModule() {
       </Surface>
 
       <Surface>
-        <p className="text-[13px] font-semibold text-[var(--text)]">Notification preview privacy</p>
+        <h2 className="text-[13px] font-semibold text-[var(--text)]">Notification preview privacy</h2>
         <p className="mt-0.5 text-[12px] text-[var(--muted)]">How much detail appears in a notification preview.</p>
         <div className="mt-3 max-w-xs">
           <Select
@@ -184,7 +184,7 @@ export default function SettingsModule() {
       </Surface>
 
       <Surface>
-        <p className="text-[13px] font-semibold text-[var(--text)]">What Home Base should remember for you</p>
+        <h2 className="text-[13px] font-semibold text-[var(--text)]">What Home Base should remember for you</h2>
         <p className="mt-0.5 text-[12px] text-[var(--muted)]">
           Nothing is sent unless a category is on here and notifications are enabled.
         </p>

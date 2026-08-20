@@ -164,7 +164,7 @@ export function OverviewScreenMockup() {
  * record: acting captures who did it and what it cost, so the history and
  * the provider's page are real afterwards.
  */
-export function AttentionScreenMockup() {
+export function ActionRecordScreenMockup() {
   return (
     <PhoneFrame>
       <div className="flex h-full flex-col px-4 pb-4 pt-9" style={{ backgroundColor: PAPER }}>
@@ -235,7 +235,7 @@ export function AttentionScreenMockup() {
  * SetupModule.tsx's grid over the twelve categories in homeKnowledge.ts,
  * including the ones an appliance tracker would never ask about.
  */
-export function RecordsScreenMockup() {
+export function SetupScreenMockup() {
   const picks: [string, boolean][] = [
     ["Water heater", true],
     ["Furnace", true],

@@ -453,7 +453,7 @@ function ReadFirst() {
       <Text style={s.h2}>The division of labour</Text>
       <Text style={s.pMuted}>
         Paper gathers. It is better than a screen for walking, crouching, and squinting at a label in bad light. Home
-        Base remembers: it holds the dates, works out what is due, surfaces the one or two things that deserve
+        Base remembers: it holds the dates, works out what is due, surfaces the few things that deserve
         attention, and keeps the record of who fixed what and what it cost.
       </Text>
 
@@ -917,7 +917,7 @@ function ActivatePage({ code }: { code: string }) {
       <Text style={s.h1}>Activate your digital Home Base.</Text>
       <Text style={s.lede}>
         Everything you have written down goes in once, and then stops being your job to remember. Home Base works out
-        what is due, surfaces the one or two things worth doing, and keeps the record of who did what.
+        what is due, surfaces the few things worth doing, and keeps the record of who did what.
       </Text>
 
       {[

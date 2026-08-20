@@ -42,7 +42,7 @@ describe("buildPushPayloads", () => {
     const many = [reminder({ reminderId: "r-1" }), reminder({ reminderId: "r-2" }), reminder({ reminderId: "r-3" })];
     const payloads = buildPushPayloads(many, "normal", NOW);
     expect(payloads).toHaveLength(1);
-    expect(payloads[0].body).toBe("A couple of things worth taking care of.");
+    expect(payloads[0].body).toBe("A few things worth taking care of.");
     expect(payloads[0].reminderIds).toEqual(["r-1", "r-2", "r-3"]);
   });
 

@@ -46,7 +46,7 @@ export const homeManagementCompanionShopProduct: ShopProductInput = {
     {
       worry: "Worried it becomes another app nagging you with a list?",
       answer:
-        "It shows one or two things worth your attention and says so in a sentence. When nothing needs you, it tells you your home is in good shape and leaves it there. A screen that always has something on it is a screen you stop believing.",
+        "It shows the few things worth your attention and says so in a sentence. When nothing needs you, it tells you your home is in good shape and leaves it there. A screen that always has something on it is a screen you stop believing.",
     },
     {
       worry: "Think setting this up sounds like an evening you do not have?",
@@ -100,7 +100,7 @@ export const homeManagementCompanionShopProduct: ShopProductInput = {
     "What actually happened when you did a job, so the next one lands in the right place",
   ],
   expectedOutputs: [
-    "A sentence about your home's condition, and one or two things worth doing",
+    "A sentence about your home's condition, and the few things worth doing",
     "Care and seasonal work raised when it is due, never a permanent list",
     "A history of what has been done, by whom, and what it cost",
     "A printable survey of your home you can fill in by hand",
@@ -132,7 +132,7 @@ export const homeManagementCompanionShopProduct: ShopProductInput = {
     {
       question: "How does it decide what to show me?",
       answer:
-        "By how much it would cost you to leave it: how serious the consequence is, how far past its usual point it has gone, and how much work it is. A smoke alarm outranks a dusty vent, and it will say why.",
+        "By how much it would cost you to leave it: how serious the consequence is, how far past its usual point it has gone, and how much work it is. A smoke alarm outranks a dusty vent. Every row states the fact that put it there, so you can see what it is working from.",
     },
     {
       question: "Can I use it with my partner or a housemate?",

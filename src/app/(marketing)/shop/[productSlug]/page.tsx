@@ -23,8 +23,8 @@ import {
 } from "./personalFinanceCompanionVisuals";
 import {
   OverviewScreenMockup as HmcOverviewScreenMockup,
-  AttentionScreenMockup as HmcAttentionScreenMockup,
-  RecordsScreenMockup as HmcRecordsScreenMockup,
+  ActionRecordScreenMockup as HmcActionRecordScreenMockup,
+  SetupScreenMockup as HmcSetupScreenMockup,
 } from "./homeManagementCompanionVisuals";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { getLemonSqueezyCheckoutUrl, hasLemonSqueezyCheckout } from "@/shop/lemonSqueezyCheckout";
@@ -163,7 +163,7 @@ export default async function ShopProductPage({
             ) : isPersonalFinanceCompanion ? (
               <PfcAttentionScreenMockup />
             ) : isHomeManagementCompanion ? (
-              <HmcAttentionScreenMockup />
+              <HmcActionRecordScreenMockup />
             ) : undefined
           }
         >
@@ -185,7 +185,7 @@ export default async function ShopProductPage({
             ) : isPersonalFinanceCompanion ? (
               <PfcGuidedCompanionScreenMockup />
             ) : isHomeManagementCompanion ? (
-              <HmcRecordsScreenMockup />
+              <HmcSetupScreenMockup />
             ) : undefined
           }
           reverse

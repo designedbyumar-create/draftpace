@@ -61,11 +61,11 @@ function typeLabel(type: string): string {
 }
 
 /**
- * A Thing's own memory: identity, ongoing care, history of what's been
- * done, its documents, and who's worked on it. Everything here reads from
- * the same domain functions the flat sections already use, filtered to
- * this one Thing client-side (small per-home data volumes, same pattern
- * RecordsModule and MaintenanceModule already use).
+ * One item's own memory: identity, ongoing care, history of what has been
+ * done, its documents, and who has worked on it. Everything here reads
+ * from the same domain functions Home uses, filtered to this one item
+ * client-side (small per-home data volumes, the same pattern Home
+ * already uses).
  */
 export default function HomeItemDetailModule() {
   const params = useParams<{ itemId: string }>();

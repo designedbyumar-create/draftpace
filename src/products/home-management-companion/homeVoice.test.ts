@@ -8,6 +8,7 @@ import {
   describeSeasonalCareStatus,
   describeCadence,
   withArticle,
+  describeHomeHeadline,
 } from "./homeVoice";
 
 const NOW = new Date("2026-06-15T12:00:00Z");
@@ -104,5 +105,37 @@ describe("describeSeasonalCareStatus", () => {
   it("names the time of year rather than a useless interval", () => {
     expect(describeSeasonalCareStatus(null, [10], NOW)).toBe("Not logged yet, usually October");
     expect(describeSeasonalCareStatus(isoDaysAgo(300), [10], NOW)).toBe("Last done 10 months ago, usually October");
+  });
+});
+
+describe("describeHomeHeadline", () => {
+  it("says the home is fine when it is, which is usually", () => {
+    expect(describeHomeHeadline({ wrong: 0, worthDoing: 0 })).toBe("Your home is in good shape");
+  });
+
+  it("scales its vague quantifier so it is never contradicted by the list beneath it", () => {
+    const said = [1, 2, 3, 4, 7].map((n) => describeHomeHeadline({ wrong: 0, worthDoing: n }));
+    expect(said).toEqual([
+      "One thing worth taking care of",
+      "A couple of things worth taking care of",
+      "A few things worth taking care of",
+      "A few things worth taking care of",
+      "Several things worth taking care of",
+    ]);
+  });
+
+  it("leads with what is wrong whenever anything is", () => {
+    expect(describeHomeHeadline({ wrong: 1, worthDoing: 9 })).toBe("Something needs a look");
+    expect(describeHomeHeadline({ wrong: 2, worthDoing: 0 })).toBe("A couple of things need a look");
+  });
+
+  it("never says a number, a score, or overdue", () => {
+    for (const wrong of [0, 1, 3, 9]) {
+      for (const worthDoing of [0, 1, 3, 9]) {
+        const line = describeHomeHeadline({ wrong, worthDoing });
+        expect(line).not.toMatch(/\d/);
+        expect(line.toLowerCase()).not.toContain("overdue");
+      }
+    }
   });
 });
