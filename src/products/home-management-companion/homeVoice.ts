@@ -106,3 +106,47 @@ export function describeHomeHeadline(counts: { wrong: number; worthDoing: number
   if (counts.worthDoing > 1) return "A couple of things worth taking care of";
   return "Your home is in good shape";
 }
+
+const MONTH_NAMES = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December",
+];
+
+/** "October", or "April and October" for a job that comes round twice a year. */
+export function describeMonths(months: number[]): string {
+  const names = months.slice().sort((a, b) => a - b).map((m) => MONTH_NAMES[m - 1]).filter(Boolean);
+  if (names.length === 0) return "";
+  if (names.length === 1) return names[0];
+  return `${names.slice(0, -1).join(", ")} and ${names[names.length - 1]}`;
+}
+
+/**
+ * The line for a seasonal job. Says the time of year rather than an
+ * interval, because "usually every year" is useless for something that
+ * has to happen before the first freeze.
+ */
+export function describeSeasonalCareStatus(lastDoneAt: string | null, months: number[], now: Date): string {
+  const usual = `usually ${describeMonths(months)}`;
+  if (!lastDoneAt) return `Not logged yet, ${usual}`;
+  return `Last done ${describeElapsed(daysBetween(lastDoneAt, now))}, ${usual}`;
+}
+
+/**
+ * "a refrigerator", "an irrigation system", "an HVAC system".
+ *
+ * Reads on the sound rather than the letter, which is why HVAC and a few
+ * other initialisms are named explicitly: nobody says "a HVAC system".
+ */
+const AN_PREFIXES = ["hvac", "ev ", "lpg", "hoa", "rcd"];
+
+export function withArticle(label: string): string {
+  const lower = label.toLowerCase();
+  const needsAn = /^[aeiou]/.test(lower) || AN_PREFIXES.some((prefix) => lower.startsWith(prefix));
+  return `${needsAn ? "an" : "a"} ${label.toLowerCase()}`;
+}
+
+/** How often a job comes round, said as a season when it has one and an interval otherwise. */
+export function describeCadence(template: { intervalDays: number; months?: number[] }): string {
+  if (template.months?.length) return describeMonths(template.months);
+  return describeInterval(template.intervalDays);
+}

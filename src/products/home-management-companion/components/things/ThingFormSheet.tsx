@@ -7,7 +7,7 @@ import Select from "@/design-system/Select";
 import RecordFormSheet from "../shared/RecordFormSheet";
 import { describeResultError } from "@/product-framework/result";
 import { HOME_ITEM_TYPES, matchHomeItemType } from "../../homeKnowledge";
-import { describeInterval } from "../../homeVoice";
+import { describeCadence, withArticle } from "../../homeVoice";
 import { createMaintenanceTask } from "../../domain/maintenanceTasks";
 import type { HomeItem } from "../../state";
 
@@ -206,7 +206,7 @@ export default function ThingFormSheet({
       <RecordFormSheet
         open={open}
         onClose={onClose}
-        title={`This looks like a ${suggestion.label.toLowerCase()}`}
+        title={`This looks like ${withArticle(suggestion.label)}`}
         description="Add its typical upkeep now, or skip and add tasks later."
         triggerRef={triggerRef}
         footer={
@@ -234,7 +234,7 @@ export default function ThingFormSheet({
                 <span>
                   <span className="block text-[13px] font-semibold text-[var(--text)]">{task.taskName}</span>
                   <span className="block text-[12px] text-[var(--muted)]">
-                    {describeInterval(task.intervalDays)}
+                    {describeCadence(task)}
                   </span>
                 </span>
               </label>

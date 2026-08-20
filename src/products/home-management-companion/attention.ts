@@ -1,6 +1,20 @@
 import type { HomeItem, MaintenanceTask, MaintenanceLogEntry, Problem } from "./state";
-import { findCareTemplate, findCareTemplateByTaskName, type CareConsequence, type CareEffort } from "./homeKnowledge";
-import { describeCareStatus, describeWarranty, describeUpcoming, describeElapsed, daysBetween } from "./homeVoice";
+import {
+  findCareTemplate,
+  findCareTemplateByTaskName,
+  nextSeasonalDueIso,
+  type CareConsequence,
+  type CareEffort,
+  type CareTemplate,
+} from "./homeKnowledge";
+import {
+  describeCareStatus,
+  describeSeasonalCareStatus,
+  describeWarranty,
+  describeUpcoming,
+  describeElapsed,
+  daysBetween,
+} from "./homeVoice";
 
 /**
  * The shared Attention domain: one deterministic answer to "what does
@@ -127,10 +141,35 @@ function problemCostBucket(estimatedCostMinorUnits: number | null): 0 | 1 | 2 {
  * then to neutral factors. Neutral means "we genuinely do not know",
  * never an invented severity.
  */
-function careFactorsFor(task: MaintenanceTask): { consequence: CareConsequence; effort: CareEffort } {
-  const template = findCareTemplate(task.careTemplateId) ?? findCareTemplateByTaskName(task.name);
+function careTemplateFor(task: MaintenanceTask): CareTemplate | null {
+  return findCareTemplate(task.careTemplateId) ?? findCareTemplateByTaskName(task.name);
+}
+
+function careFactorsFor(template: CareTemplate | null): { consequence: CareConsequence; effort: CareEffort } {
   if (!template) return { consequence: 1, effort: 1 };
   return { consequence: template.consequence, effort: template.effort };
+}
+
+/**
+ * When a job next comes round.
+ *
+ * Seasonal care is anchored to a month rather than an elapsed count, and
+ * an unlogged seasonal job waits for its month rather than being due
+ * immediately: adding an irrigation system in August should not demand a
+ * winter blowout on the spot. Interval care keeps the opposite rule,
+ * where never having logged it means it genuinely is due now, since the
+ * last completion is unknown rather than in the future.
+ */
+function nextDueIsoFor(task: MaintenanceTask, template: CareTemplate | null): string {
+  const anchor = task.lastDoneAt ?? task.createdAt.slice(0, 10);
+  if (template?.months?.length) return nextSeasonalDueIso(anchor, template.months);
+  return task.lastDoneAt ? addDays(task.lastDoneAt, task.cadenceDays) : task.createdAt.slice(0, 10);
+}
+
+/** The line under a job, phrased for a time of year when it has one. */
+function describeCareFor(task: MaintenanceTask, template: CareTemplate | null, now: Date): string {
+  if (template?.months?.length) return describeSeasonalCareStatus(task.lastDoneAt, template.months, now);
+  return describeCareStatus(task.lastDoneAt, task.cadenceDays, now);
 }
 
 /** The one place an item's own surface is addressed, so the route shape lives in a single line. */
@@ -157,11 +196,11 @@ export function deriveAttentionItems(inputs: AttentionInputs, now: Date = new Da
   for (const task of inputs.maintenanceTasks) {
     if (task.status === "archived") continue;
     if (isSnoozed(task.snoozedUntil, now)) continue;
-    const nextDueIso = task.lastDoneAt ? addDays(task.lastDoneAt, task.cadenceDays) : task.createdAt.slice(0, 10);
-    const days = daysUntil(nextDueIso, now);
+    const template = careTemplateFor(task);
+    const days = daysUntil(nextDueIsoFor(task, template), now);
     if (days > 0) continue;
 
-    const { consequence, effort } = careFactorsFor(task);
+    const { consequence, effort } = careFactorsFor(template);
     const factors: UrgencyFactors = {
       intervalsLate: -days / Math.max(task.cadenceDays, 1),
       consequence,
@@ -177,7 +216,7 @@ export function deriveAttentionItems(inputs: AttentionInputs, now: Date = new Da
         urgency: scoreAttentionUrgency(factors),
         entityId: task.id,
         title: task.name,
-        detail: describeCareStatus(task.lastDoneAt, task.cadenceDays, now),
+        detail: describeCareFor(task, template, now),
         href: task.applianceId ? itemHref(task.applianceId) : null,
       },
     });
@@ -309,8 +348,9 @@ export function deriveHomeState(inputs: HomeStateInputs, now: Date = new Date())
   for (const task of inputs.maintenanceTasks) {
     if (task.status === "archived") continue;
     if (surfacedTaskIds.has(task.id)) continue;
-    if (!task.lastDoneAt) continue;
-    const days = daysUntil(addDays(task.lastDoneAt, task.cadenceDays), now);
+    const template = careTemplateFor(task);
+    if (!task.lastDoneAt && !template?.months?.length) continue;
+    const days = daysUntil(nextDueIsoFor(task, template), now);
     if (days <= 0 || days > COMING_UP_HORIZON_DAYS) continue;
     comingUp.push({
       id: `upcoming:${task.id}`,

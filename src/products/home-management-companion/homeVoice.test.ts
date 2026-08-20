@@ -1,5 +1,14 @@
 import { describe, expect, it } from "vitest";
-import { describeElapsed, describeUpcoming, describeInterval, describeCareStatus, describeWarranty } from "./homeVoice";
+import {
+  describeElapsed,
+  describeUpcoming,
+  describeInterval,
+  describeCareStatus,
+  describeWarranty,
+  describeSeasonalCareStatus,
+  describeCadence,
+  withArticle,
+} from "./homeVoice";
 
 const NOW = new Date("2026-06-15T12:00:00Z");
 
@@ -69,5 +78,31 @@ describe("describeWarranty", () => {
     expect(describeWarranty(isoDaysAgo(-18), NOW)).toBe("Warranty ends in 3 weeks");
     expect(describeWarranty(isoDaysAgo(5), NOW)).toBe("Warranty ended 5 days ago");
     expect(describeWarranty(isoDaysAgo(0), NOW)).toBe("Warranty ends today");
+  });
+});
+
+describe("withArticle", () => {
+  it("picks the article that matches how the label is said aloud", () => {
+    expect(withArticle("Refrigerator")).toBe("a refrigerator");
+    expect(withArticle("Irrigation system")).toBe("an irrigation system");
+    expect(withArticle("Oven or range")).toBe("an oven or range");
+    expect(withArticle("HVAC system")).toBe("an hvac system");
+    expect(withArticle("EV charger")).toBe("an ev charger");
+    expect(withArticle("Water heater")).toBe("a water heater");
+  });
+});
+
+describe("describeCadence", () => {
+  it("says the season for seasonal work and the interval for everything else", () => {
+    expect(describeCadence({ intervalDays: 365, months: [10] })).toBe("October");
+    expect(describeCadence({ intervalDays: 180, months: [4, 11] })).toBe("April and November");
+    expect(describeCadence({ intervalDays: 90 })).toBe("every 3 months");
+  });
+});
+
+describe("describeSeasonalCareStatus", () => {
+  it("names the time of year rather than a useless interval", () => {
+    expect(describeSeasonalCareStatus(null, [10], NOW)).toBe("Not logged yet, usually October");
+    expect(describeSeasonalCareStatus(isoDaysAgo(300), [10], NOW)).toBe("Last done 10 months ago, usually October");
   });
 });
