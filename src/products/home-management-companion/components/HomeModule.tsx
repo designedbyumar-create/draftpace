@@ -491,12 +491,18 @@ function Header({ headline, size = "text-[26px] sm:text-[30px]" }: { headline: s
   );
 }
 
+/**
+ * A band is a real section of this page, so it is marked up as one. Home
+ * used to be a single h1 followed by a flat wall of paragraphs, which
+ * reads fine and navigates terribly: somebody moving by heading had no
+ * way to skip from what is wrong to what is merely coming up.
+ */
 function Band({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div>
-      <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--faint)]">{label}</p>
+    <section aria-label={label}>
+      <h2 className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--faint)]">{label}</h2>
       <div className="mt-2 flex flex-col gap-2">{children}</div>
-    </div>
+    </section>
   );
 }
 
@@ -513,7 +519,7 @@ function Row({
 }) {
   const body = (
     <>
-      <p className="text-[14px] font-semibold text-[var(--text)]">{item.title}</p>
+      <h3 className="text-[14px] font-semibold text-[var(--text)]">{item.title}</h3>
       <p className="mt-0.5 text-[12px] text-[var(--muted)]">{item.detail}</p>
     </>
   );
@@ -549,7 +555,7 @@ function PlainRow({ title, detail, href, icon }: { title: string; detail: string
     <div className="flex items-start gap-3">
       {icon}
       <div className="min-w-0">
-        <p className="text-[13px] font-semibold text-[var(--text)]">{title}</p>
+        <h3 className="text-[13px] font-semibold text-[var(--text)]">{title}</h3>
         <p className="mt-0.5 text-[12px] text-[var(--muted)]">{detail}</p>
       </div>
     </div>

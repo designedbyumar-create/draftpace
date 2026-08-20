@@ -176,7 +176,7 @@ export default function CandidateReviewQueue({
 
       {needsAttention.length > 0 && (
         <div>
-          <p className="text-[12px] font-bold uppercase tracking-[0.1em] text-[var(--faint)]">Needs a look ({needsAttention.length})</p>
+          <h2 className="text-[12px] font-bold uppercase tracking-[0.1em] text-[var(--faint)]">Needs a look ({needsAttention.length})</h2>
           <ul className="mt-2 flex flex-col gap-3">
             {needsAttention.map(({ candidate, isUnsupported, duplicate }) => {
               const summary = summarizeCandidate(candidate);
@@ -293,7 +293,7 @@ export default function CandidateReviewQueue({
       {looksRight.length > 0 && (
         <div>
           <div className="flex items-center justify-between">
-            <p className="text-[12px] font-bold uppercase tracking-[0.1em] text-[var(--faint)]">Looks right ({looksRight.length})</p>
+            <h2 className="text-[12px] font-bold uppercase tracking-[0.1em] text-[var(--faint)]">Looks right ({looksRight.length})</h2>
             <Button size="sm" variant="secondary" onClick={handleConfirmAllLooksRight} disabled={bulkConfirming || busyId !== null}>
               {bulkConfirming ? "Adding…" : `Add all ${looksRight.length}`}
             </Button>

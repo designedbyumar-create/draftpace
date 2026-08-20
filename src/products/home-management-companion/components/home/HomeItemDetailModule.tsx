@@ -316,7 +316,7 @@ export default function HomeItemDetailModule() {
               </Surface>
               {item.notes && (
                 <Surface>
-                  <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-[var(--faint)]">Notes</p>
+                  <h2 className="text-[11px] font-bold uppercase tracking-[0.1em] text-[var(--faint)]">Notes</h2>
                   <p className="mt-1.5 text-[13px] leading-relaxed text-[var(--text)]">{item.notes}</p>
                 </Surface>
               )}
@@ -349,7 +349,7 @@ export default function HomeItemDetailModule() {
             <div className="flex flex-col gap-5">
               <div>
                 <div className="flex items-center justify-between">
-                  <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-[var(--faint)]">Maintenance</p>
+                  <h2 className="text-[11px] font-bold uppercase tracking-[0.1em] text-[var(--faint)]">Maintenance</h2>
                   <Button size="sm" variant="ghost" iconLeft={<Plus size={13} aria-hidden />} onClick={() => setTaskFormOpen(true)}>
                     Add task
                   </Button>
@@ -375,7 +375,7 @@ export default function HomeItemDetailModule() {
 
               <div>
                 <div className="flex items-center justify-between">
-                  <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-[var(--faint)]">Open problems</p>
+                  <h2 className="text-[11px] font-bold uppercase tracking-[0.1em] text-[var(--faint)]">Open problems</h2>
                   <Button size="sm" variant="ghost" iconLeft={<Plus size={13} aria-hidden />} onClick={() => setReportOpen(true)}>
                     Report a problem
                   </Button>
@@ -431,7 +431,7 @@ export default function HomeItemDetailModule() {
 
           <TabPanel id="records" activeId={activeTab} idPrefix="item-detail">
             <div className="flex items-center justify-between">
-              <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-[var(--faint)]">Documents</p>
+              <h2 className="text-[11px] font-bold uppercase tracking-[0.1em] text-[var(--faint)]">Documents</h2>
               <Button size="sm" variant="ghost" iconLeft={<Plus size={13} aria-hidden />} onClick={() => setDocumentFormOpen(true)}>
                 Add document
               </Button>
