@@ -73,7 +73,24 @@ export const homeManagementCompanionDefinition: ProductDefinitionInput = {
   // Distinct from PFC's teal and Monthly Money Reset's clay so a user with
   // more than one Companion can tell them apart at a glance. Muted sage:
   // calm, "home" without leaning into either existing product's hue.
-  theme: { accent: "#4f7a5c", motionPersonality: "calm", contentWidth: "narrow" },
+  theme: {
+    accent: "#4f7a5c",
+    // Declaring the scale is what actually re-themes the product: every
+    // component already reads --primary and friends, so this one block
+    // turns the whole of Home Base sage without touching any component.
+    // Before this, the accent above was declared and never rendered.
+    accentScale: {
+      base: "#4f7a5c",
+      strong: "#3d6149",
+      soft: "#e6ede2",
+      contrast: "#ffffff",
+    },
+    // Used only where the product speaks: the line at the top of Home and
+    // the one that closes it. Never for data, controls or labels.
+    narrativeFont: "var(--font-newsreader), ui-serif, Georgia, serif",
+    motionPersonality: "calm",
+    contentWidth: "narrow",
+  },
   layouts: ["responsive"],
   // "shell-only": same reasoning as PFC — the installed shell may be
   // cached, but reads/writes require connectivity, no optimistic offline

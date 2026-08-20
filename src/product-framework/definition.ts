@@ -21,6 +21,32 @@ export const productAccessSchema = z.object({
 export const productThemeExtensionSchema = z
   .object({
     accent: z.string().optional(),
+    /**
+     * The full accent scale, and the opt-in that actually re-themes a
+     * product's surfaces.
+     *
+     * `accent` alone was never enough to theme anything: a button needs a
+     * hover state, a soft tint and a readable contrast colour, so every
+     * component reasonably kept using the platform's own --primary and a
+     * declared accent stayed decorative. Products that declare only
+     * `accent` keep behaving exactly as before; declaring the scale is
+     * what opts a product into having its own colour, and it stays scoped
+     * to that product's shell root.
+     */
+    accentScale: z
+      .object({
+        base: z.string(),
+        strong: z.string(),
+        soft: z.string(),
+        contrast: z.string(),
+      })
+      .optional(),
+    /**
+     * A serif or otherwise warmer family used only where the product
+     * speaks in its own voice, never for data or controls. Holds a CSS
+     * font-family value, normally a next/font variable reference.
+     */
+    narrativeFont: z.string().optional(),
     dataVisualizationPalette: z.array(z.string()).optional(),
     motionPersonality: z.enum(["calm", "energetic", "neutral"]).optional(),
     contentWidth: z.enum(["narrow", "standard", "wide"]).optional(),

@@ -16,6 +16,7 @@ import { listProblems, snoozeProblem } from "../domain/problems";
 import { deriveHomeState, itemHref, HOME_BAND_LIMIT, type AttentionItem, type HomeStateInputs } from "../attention";
 import { describeHomeHeadline, DEFAULT_SNOOZE_DAYS } from "../homeVoice";
 import { HOME_ITEM_TYPE_BY_ID } from "../homeKnowledge";
+import CategoryIcon from "./shared/CategoryIcon";
 import type { HomeItem, MaintenanceTask, Problem, ServiceProvider } from "../state";
 import HomeItemFormSheet, { homeItemFormValuesToPatch, type HomeItemFormValues } from "./home/HomeItemFormSheet";
 import CareActionSheet from "./care/CareActionSheet";
@@ -315,10 +316,19 @@ export default function HomeModule() {
       {home.somethingWrong.length === 0 && home.worthTakingCareOf.length === 0 ? (
         <div className="flex items-center gap-3 rounded-xl border border-[var(--border)] bg-[var(--success-soft)] p-3.5">
           <CheckCircle2 className="h-5 w-5 shrink-0 text-[var(--success)]" aria-hidden />
-          <p className="text-[13px] font-medium text-[var(--text)]">Nothing needs you today.</p>
+          <p className="text-[15px] text-[var(--text)]" style={{ fontFamily: "var(--product-narrative-font)" }}>
+            Nothing needs you today.
+          </p>
         </div>
       ) : (
-        home.restUnderControl > 0 && <p className="text-[13px] text-[var(--muted)]">Everything else is under control.</p>
+        home.restUnderControl > 0 && (
+          <p
+            className="text-[15px] leading-relaxed text-[var(--muted)]"
+            style={{ fontFamily: "var(--product-narrative-font)" }}
+          >
+            Everything else is under control.
+          </p>
+        )
       )}
 
       <div>
@@ -338,9 +348,10 @@ export default function HomeModule() {
               <li key={item.id}>
                 <Link
                   href={itemHref(item.id)}
-                  className="flex items-center justify-between gap-3 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-3.5 transition hover:border-[var(--primary)]"
+                  className="flex items-center gap-3 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-3.5 transition-colors duration-[var(--dur)] ease-[var(--ease-out)] hover:border-[var(--primary)]"
                 >
-                  <div className="min-w-0">
+                  <CategoryIcon type={item.type} />
+                  <div className="min-w-0 flex-1">
                     <p className="truncate text-[13px] font-semibold text-[var(--text)]">{item.name}</p>
                     <p className="mt-0.5 text-[12px] text-[var(--muted)]">{describeItem(item)}</p>
                   </div>
@@ -414,11 +425,22 @@ function describeItem(item: HomeItem): string {
   return [type, item.brand, item.location].filter(Boolean).join(" · ") || "In your home";
 }
 
+/**
+ * The one place the product speaks rather than reports. Set in the
+ * product's narrative face at a size that reads as a sentence, because
+ * the same words at label size read as a heading and the difference is
+ * the whole point.
+ */
 function Header({ headline }: { headline: string }) {
   return (
     <div>
-      <p className="text-[13px] text-[var(--muted)]">Your home</p>
-      <h1 className="mt-1 text-xl font-semibold text-[var(--text)]">{headline}</h1>
+      <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-[var(--faint)]">Your home</p>
+      <h1
+        className="mt-1.5 text-[26px] font-medium leading-[1.15] tracking-[-0.01em] text-[var(--text)] sm:text-[30px]"
+        style={{ fontFamily: "var(--product-narrative-font)", textWrap: "balance" }}
+      >
+        {headline}
+      </h1>
     </div>
   );
 }

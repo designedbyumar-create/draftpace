@@ -22,6 +22,15 @@ import {
   ChartBar as PhosphorChartBar,
   ChatCircle as PhosphorChatCircle,
   Check as PhosphorCheck,
+  Key as PhosphorKey,
+  Blueprint as PhosphorBlueprint,
+  Thermometer as PhosphorThermometer,
+  TShirt as PhosphorTShirt,
+  Plant as PhosphorPlant,
+  Armchair as PhosphorArmchair,
+  Drop as PhosphorDrop,
+  CookingPot as PhosphorCookingPot,
+  Bug as PhosphorBug,
   CheckCircle as PhosphorCheckCircle,
   CheckSquare as PhosphorCheckSquare,
   Circle as PhosphorCircle,
@@ -182,3 +191,12 @@ export const Wifi = createIcon(PhosphorWifiHigh, "Wifi");
 export const WifiOff = createIcon(PhosphorWifiX, "WifiOff");
 export const Wrench = createIcon(PhosphorWrench, "Wrench");
 export const X = createIcon(PhosphorX, "X");
+export const Bug = createIcon(PhosphorBug, "Bug");
+export const CookingPot = createIcon(PhosphorCookingPot, "CookingPot");
+export const Drop = createIcon(PhosphorDrop, "Drop");
+export const Armchair = createIcon(PhosphorArmchair, "Armchair");
+export const Plant = createIcon(PhosphorPlant, "Plant");
+export const TShirt = createIcon(PhosphorTShirt, "TShirt");
+export const Thermometer = createIcon(PhosphorThermometer, "Thermometer");
+export const Blueprint = createIcon(PhosphorBlueprint, "Blueprint");
+export const Key = createIcon(PhosphorKey, "Key");

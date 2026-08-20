@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import AppProviders from "@/components/providers/AppProviders";
-import { fraunces, inter, spaceMono } from "@/lib/fonts";
+import { fraunces, inter, newsreader, spaceMono } from "@/lib/fonts";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -77,7 +77,7 @@ const THEME_INIT_SCRIPT = `(function(){try{var s=localStorage.getItem("draftpace
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${fraunces.variable} ${inter.variable} ${spaceMono.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${fraunces.variable} ${inter.variable} ${newsreader.variable} ${spaceMono.variable}`}>
       <body>
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
         <AppProviders>
