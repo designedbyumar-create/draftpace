@@ -10,6 +10,7 @@ interface MaintenanceLogRow {
   description: string;
   cost_minor: number | null;
   performed_at: string;
+  provider_id: string | null;
   performed_by: string | null;
   notes: string | null;
   status: string;
@@ -28,6 +29,7 @@ function fromRow(row: MaintenanceLogRow) {
     description: row.description,
     costMinorUnits: row.cost_minor,
     performedAt: row.performed_at,
+    providerId: row.provider_id ?? null,
     performedBy: row.performed_by,
     notes: row.notes,
     status: row.status,
@@ -46,6 +48,7 @@ function toRow(patch: Record<string, unknown>) {
   if ("description" in patch) row.description = patch.description;
   if ("costMinorUnits" in patch) row.cost_minor = patch.costMinorUnits;
   if ("performedAt" in patch) row.performed_at = patch.performedAt;
+  if ("providerId" in patch) row.provider_id = patch.providerId;
   if ("performedBy" in patch) row.performed_by = patch.performedBy;
   if ("notes" in patch) row.notes = patch.notes;
   if ("status" in patch) row.status = patch.status;

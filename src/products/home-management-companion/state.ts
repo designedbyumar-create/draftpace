@@ -59,6 +59,9 @@ export const maintenanceLogEntrySchema = z.object({
   description: z.string().min(1),
   costMinorUnits: z.number().int().nullable(),
   performedAt: isoDate,
+  /** A saved provider, when the work was done by someone the home already knows. */
+  providerId: z.string().nullable(),
+  /** A name typed once, for someone who was never saved as a provider. */
   performedBy: z.string().nullable(),
   notes: z.string().nullable(),
   ...recordLifecycleFields,

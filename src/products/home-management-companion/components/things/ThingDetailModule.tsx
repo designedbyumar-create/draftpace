@@ -12,7 +12,7 @@ import { ArrowLeft, Archive, RotateCcw, Wrench, WarningCircle, User, Plus, LinkS
 import { describeResultError } from "@/product-framework/result";
 import { findHomeManagementCompanionInstanceId } from "../../setupStateData";
 import { listHomeItems, updateHomeItem, archiveHomeItem } from "../../domain/homeItems";
-import { listMaintenanceTasks, createMaintenanceTask, markMaintenanceTaskDone } from "../../domain/maintenanceTasks";
+import { listMaintenanceTasks, createMaintenanceTask } from "../../domain/maintenanceTasks";
 import { listMaintenanceLog } from "../../domain/maintenanceLog";
 import { listProblems } from "../../domain/problems";
 import { listServiceProviders } from "../../domain/serviceProviders";
@@ -26,6 +26,7 @@ import MaintenanceTaskFormSheet, {
   type MaintenanceTaskFormValues,
 } from "../maintenance/MaintenanceTaskFormSheet";
 import ThingDocumentFormSheet, { thingDocumentFormValuesToPatch, type ThingDocumentFormValues } from "./ThingDocumentFormSheet";
+import CareActionSheet from "../care/CareActionSheet";
 
 type LoadStatus = "loading" | "ready" | "no-instance" | "not-found" | "error";
 
@@ -67,7 +68,7 @@ export default function ThingDetailModule() {
   const [editOpen, setEditOpen] = useState(false);
   const [taskFormOpen, setTaskFormOpen] = useState(false);
   const [documentFormOpen, setDocumentFormOpen] = useState(false);
-  const [completingTaskId, setCompletingTaskId] = useState<string | null>(null);
+  const [actionTask, setActionTask] = useState<MaintenanceTask | null>(null);
   const [archiving, setArchiving] = useState(false);
 
   const load = useCallback(async () => {
@@ -158,16 +159,6 @@ export default function ThingDetailModule() {
     return null;
   }
 
-  async function handleMarkDone(task: MaintenanceTask) {
-    if (!instanceId) return;
-    setCompletingTaskId(task.id);
-    const result = await markMaintenanceTaskDone(task, instanceId);
-    setCompletingTaskId(null);
-    if (result.ok) {
-      setTasks((prev) => prev.map((t) => (t.id === result.data.id ? result.data : t)));
-      load();
-    }
-  }
 
   async function handleSaveDocument(values: ThingDocumentFormValues): Promise<string | null> {
     if (!instanceId || !thing) return "Couldn't find your home. Try reloading the page.";
@@ -317,8 +308,8 @@ export default function ThingDetailModule() {
                             {task.lastDoneAt ? `Last done ${task.lastDoneAt}` : "Never logged"}
                           </p>
                         </div>
-                        <Button size="sm" variant="secondary" onClick={() => handleMarkDone(task)} disabled={completingTaskId === task.id}>
-                          {completingTaskId === task.id ? "Marking…" : "Mark done"}
+                        <Button size="sm" variant="secondary" onClick={() => setActionTask(task)}>
+                          Action
                         </Button>
                       </li>
                     ))}
@@ -426,6 +417,14 @@ export default function ThingDetailModule() {
         onSave={handleSaveTask}
       />
       <ThingDocumentFormSheet open={documentFormOpen} onClose={() => setDocumentFormOpen(false)} onSave={handleSaveDocument} />
+      <CareActionSheet
+        open={actionTask !== null}
+        task={actionTask}
+        instanceId={instanceId}
+        providers={providers}
+        onClose={() => setActionTask(null)}
+        onSaved={load}
+      />
     </div>
   );
 }

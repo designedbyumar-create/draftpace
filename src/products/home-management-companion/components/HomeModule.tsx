@@ -9,20 +9,16 @@ import { Home, Plus, ChevronRight, CheckCircle2, WarningCircle, Clock } from "@/
 import { describeResultError } from "@/product-framework/result";
 import { findHomeManagementCompanionInstanceId } from "../setupStateData";
 import { listHomeItems, createHomeItem } from "../domain/homeItems";
-import {
-  listMaintenanceTasks,
-  markMaintenanceTaskDone,
-  snoozeMaintenanceTask,
-  skipMaintenanceTask,
-  updateMaintenanceTask,
-} from "../domain/maintenanceTasks";
+import { listMaintenanceTasks, snoozeMaintenanceTask, updateMaintenanceTask } from "../domain/maintenanceTasks";
+import { listServiceProviders } from "../domain/serviceProviders";
 import { listMaintenanceLog } from "../domain/maintenanceLog";
 import { listProblems } from "../domain/problems";
 import { deriveHomeState, itemHref, HOME_BAND_LIMIT, type AttentionItem, type HomeStateInputs } from "../attention";
 import { describeHomeHeadline, DEFAULT_SNOOZE_DAYS } from "../homeVoice";
 import { HOME_ITEM_TYPE_BY_ID } from "../homeKnowledge";
-import type { HomeItem, MaintenanceTask } from "../state";
+import type { HomeItem, MaintenanceTask, ServiceProvider } from "../state";
 import ThingFormSheet, { thingFormValuesToPatch, type ThingFormValues } from "./things/ThingFormSheet";
+import CareActionSheet from "./care/CareActionSheet";
 import MaintenanceTaskFormSheet, {
   maintenanceTaskFormValuesToPatch,
   type MaintenanceTaskFormValues,
@@ -52,6 +48,8 @@ export default function HomeModule() {
   const [showAllCare, setShowAllCare] = useState(false);
   const [addOpen, setAddOpen] = useState(false);
   const [editingTask, setEditingTask] = useState<MaintenanceTask | null>(null);
+  const [actionTask, setActionTask] = useState<MaintenanceTask | null>(null);
+  const [providers, setProviders] = useState<ServiceProvider[]>([]);
   const addRef = useRef<HTMLDivElement>(null);
 
   const load = useCallback(async () => {
@@ -67,11 +65,12 @@ export default function HomeModule() {
       return;
     }
     setInstanceId(found.id);
-    const [itemsResult, tasksResult, problemsResult, logResult] = await Promise.all([
+    const [itemsResult, tasksResult, problemsResult, logResult, providersResult] = await Promise.all([
       listHomeItems(found.id),
       listMaintenanceTasks(found.id),
       listProblems(found.id),
       listMaintenanceLog(found.id),
+      listServiceProviders(found.id),
     ]);
     if (!itemsResult.ok) {
       setErrorMessage(describeResultError(itemsResult.error));
@@ -83,6 +82,7 @@ export default function HomeModule() {
       setStatus("error");
       return;
     }
+    setProviders(providersResult.ok ? providersResult.data : []);
     setInputs({
       homeItems: itemsResult.data,
       maintenanceTasks: tasksResult.data,
@@ -218,14 +218,11 @@ export default function HomeModule() {
               actions={
                 item.kind === "maintenanceDue" && instanceId ? (
                   <>
-                    <Button size="sm" disabled={pendingId === item.id} onClick={() => runTaskAction(item, (t) => markMaintenanceTaskDone(t, instanceId))}>
-                      {pendingId === item.id ? "Working…" : "Do now"}
+                    <Button size="sm" disabled={pendingId === item.id} onClick={() => setActionTask(tasksById.get(item.entityId) ?? null)}>
+                      Action
                     </Button>
                     <Button size="sm" variant="secondary" disabled={pendingId === item.id} onClick={() => runTaskAction(item, (t) => snoozeMaintenanceTask(t, DEFAULT_SNOOZE_DAYS))}>
-                      Snooze
-                    </Button>
-                    <Button size="sm" variant="ghost" disabled={pendingId === item.id} onClick={() => runTaskAction(item, (t) => skipMaintenanceTask(t))}>
-                      Skip
+                      {pendingId === item.id ? "Snoozing…" : "Snooze"}
                     </Button>
                   </>
                 ) : null
@@ -324,6 +321,14 @@ export default function HomeModule() {
         }}
         onSave={handleAddItem}
         triggerRef={addRef}
+      />
+      <CareActionSheet
+        open={actionTask !== null}
+        task={actionTask}
+        instanceId={instanceId}
+        providers={providers}
+        onClose={() => setActionTask(null)}
+        onSaved={load}
       />
       <MaintenanceTaskFormSheet
         open={editingTask !== null}

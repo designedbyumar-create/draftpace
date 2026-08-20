@@ -276,6 +276,7 @@ describe("deriveHomeState", () => {
       description: "AC serviced",
       costMinorUnits: null,
       performedAt: isoDaysAgo(14),
+      providerId: null,
       performedBy: null,
       notes: null,
       status: "active",

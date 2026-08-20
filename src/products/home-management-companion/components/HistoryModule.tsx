@@ -8,15 +8,24 @@ import { Clock } from "@/design-system/Icon";
 import { describeResultError } from "@/product-framework/result";
 import { findHomeManagementCompanionInstanceId } from "../setupStateData";
 import { listMaintenanceLog } from "../domain/maintenanceLog";
-import type { MaintenanceLogEntry } from "../state";
+import { listServiceProviders } from "../domain/serviceProviders";
+import { formatCurrency } from "@/lib/currency";
+import { describeElapsed, daysBetween } from "../homeVoice";
+import { HOME_BASE_CURRENCY } from "./care/CareActionSheet";
+import type { MaintenanceLogEntry, ServiceProvider } from "../state";
 
 type LoadStatus = "loading" | "ready" | "no-instance" | "error";
 
-/** History: a plain, reverse-chronological log of completed maintenance - what was done, and when. */
+/**
+ * The home's memory: what was taken care of, when, who did it, and what
+ * it cost. Only real events appear here, written when someone records
+ * that a job was done. It is not an audit trail of database changes.
+ */
 export default function HistoryModule() {
   const [status, setStatus] = useState<LoadStatus>("loading");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [entries, setEntries] = useState<MaintenanceLogEntry[]>([]);
+  const [providers, setProviders] = useState<ServiceProvider[]>([]);
 
   const load = useCallback(async () => {
     setStatus("loading");
@@ -31,19 +40,22 @@ export default function HistoryModule() {
       setStatus("no-instance");
       return;
     }
-    const result = await listMaintenanceLog(found.id);
+    const [result, providersResult] = await Promise.all([listMaintenanceLog(found.id), listServiceProviders(found.id)]);
+    setProviders(providersResult.ok ? providersResult.data : []);
     if (!result.ok) {
       setErrorMessage(describeResultError(result.error));
       setStatus("error");
       return;
     }
-    setEntries([...result.data].sort((a, b) => b.performedAt.localeCompare(a.performedAt)));
+    setEntries([...result.data].filter((e) => e.status !== "archived").sort((a, b) => b.performedAt.localeCompare(a.performedAt)));
     setStatus("ready");
   }, []);
 
   useEffect(() => {
     load();
   }, [load]);
+
+  const providerName = (id: string | null) => (id ? providers.find((p) => p.id === id)?.name ?? null : null);
 
   if (status === "loading") {
     return (
@@ -75,15 +87,17 @@ export default function HistoryModule() {
   return (
     <div className="flex flex-col gap-6">
       <div>
-        <h1 className="text-xl font-semibold text-[var(--text)]">History</h1>
-        <p className="mt-1 text-[13px] text-[var(--muted)]">Every maintenance task you've marked done, oldest to newest reversed.</p>
+        <h1 className="text-xl font-semibold text-[var(--text)]">What&apos;s been done</h1>
+        <p className="mt-1 text-[13px] text-[var(--muted)]">
+          Your home&apos;s memory: what was taken care of, when, who did it, and what it cost.
+        </p>
       </div>
 
       {entries.length === 0 ? (
         <EmptyState
           icon={Clock}
-          title="Nothing logged yet"
-          description="Mark a maintenance task done from Attention or Maintenance, and it shows up here."
+          title="Nothing here yet"
+          description="Once you take care of something, it stays here so you can look it up later."
         />
       ) : (
         <ul className="flex flex-col gap-2">
@@ -92,11 +106,8 @@ export default function HistoryModule() {
               <Clock className="mt-0.5 h-4 w-4 shrink-0 text-[var(--faint)]" aria-hidden />
               <div className="flex-1">
                 <p className="text-[13px] font-medium text-[var(--text)]">{entry.description}</p>
-                <p className="mt-0.5 text-[11px] text-[var(--muted)]">
-                  {entry.performedAt}
-                  {entry.performedBy && ` · ${entry.performedBy}`}
-                </p>
-                {entry.notes && <p className="mt-1 text-[12px] text-[var(--muted)]">{entry.notes}</p>}
+                <p className="mt-0.5 text-[12px] text-[var(--muted)]">{describeEvent(entry, providerName(entry.providerId))}</p>
+                {entry.notes && <p className="mt-1.5 text-[12px] leading-relaxed text-[var(--text)]">{entry.notes}</p>}
               </div>
             </li>
           ))}
@@ -104,4 +115,13 @@ export default function HistoryModule() {
       )}
     </div>
   );
+}
+
+/** One factual line: when, who, and what it cost. Omits anything that was never recorded rather than showing a blank. */
+function describeEvent(entry: MaintenanceLogEntry, provider: string | null): string {
+  const parts = [describeElapsed(daysBetween(entry.performedAt, new Date()))];
+  const who = provider ?? entry.performedBy;
+  parts.push(who ? `by ${who}` : "by you");
+  if (entry.costMinorUnits !== null) parts.push(formatCurrency(entry.costMinorUnits, HOME_BASE_CURRENCY));
+  return parts.join(" · ");
 }
