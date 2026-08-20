@@ -5,7 +5,7 @@ import { deriveReminderCandidates, type ReminderCandidate } from "@/products/hom
 import { diffReminders, type ExistingReminderSummary } from "@/products/home-management-companion/reminders/diffReminders";
 import { partitionByEntitlement } from "@/products/home-management-companion/reminders/entitlementFilter";
 import { resolveEligibility } from "@/products/home-management-companion/reminders/eligibility";
-import { buildPushPayloads, type EnrichedReminder } from "@/products/home-management-companion/reminders/aggregate";
+import { buildPushPayloads, HOME_HREF, type EnrichedReminder } from "@/products/home-management-companion/reminders/aggregate";
 import { deriveAttentionItems } from "@/products/home-management-companion/attention";
 import { validateNotificationPreferences } from "@/products/home-management-companion/notificationPreferences";
 import type { HomeManagementCompanionReminderKind } from "@/products/home-management-companion/reminders";
@@ -276,8 +276,12 @@ export async function GET(request: Request) {
       eligible.push({
         reminderId: row.id as string,
         kind,
-        message: messageById.get(dedupeKey) ?? "Something in your home needs attention.",
-        deepLink: hrefById.get(dedupeKey) ?? "/app/products/home-management-companion/attention",
+        // Both fallbacks land on Home, the one surface that answers
+        // whether anything needs this person. They used to point at
+        // /attention, a destination this product stopped having when its
+        // nine screens collapsed into two.
+        message: messageById.get(dedupeKey) ?? "Something in your home is worth a look.",
+        deepLink: hrefById.get(dedupeKey) ?? HOME_HREF,
       });
     }
 
