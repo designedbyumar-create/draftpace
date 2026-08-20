@@ -1,17 +1,33 @@
 /**
  * Bespoke mobile mockups for Home Base's Shop page, following the exact
  * pattern personalFinanceCompanionVisuals.tsx established: real
- * recreations of the actual product UI (the same "Needs attention" /
- * "on track" treatment shipped in WorkspaceModule.tsx, the same grouped
- * Attention inbox from AttentionModule.tsx, the same three-area Records
- * hub from RecordsModule.tsx), not screenshots and not a generic
- * template. Sage accent (#4f7a5c, Home Base's real theme.accent, see
- * definition.ts) distinguishes it from PFC's teal and MMR's clay at a
- * glance. Appliance/task names below are illustrative but internally
- * consistent, never presented as real account data. Only features that
- * are actually built are shown here: no CSV import screen exists yet
- * since that phase hasn't shipped.
+ * recreations of the shipped product UI, not screenshots and not a
+ * generic template.
+ *
+ * Rewritten for the v2 product. The previous set drew the retired v1:
+ * a "Needs attention" list, a separate Attention inbox, a three-area
+ * Records hub, and a Today/Attention/Records tab bar. None of those
+ * destinations exist any more, and the hero mockup put the word
+ * "overdue" on the sales page, which is the one thing this product's
+ * voice is forbidden from saying.
+ *
+ * What is drawn here maps to what ships: HomeModule.tsx's narrative
+ * headline and its Something's wrong / Worth taking care of / Coming up
+ * bands with their Action and Snooze pair; CareActionSheet.tsx's record
+ * of what actually happened; and SetupModule.tsx's tap-to-choose grid
+ * over the twelve categories in homeKnowledge.ts.
+ *
+ * Sage (#4f7a5c, the real theme.accent from definition.ts) distinguishes
+ * it from PFC's teal and MMR's clay. Names below are illustrative but
+ * internally consistent, and never presented as real account data.
  */
+
+const INK = "#1a2420";
+const MUTED = "#6b7570";
+const FAINT = "#8b9089";
+const SAGE = "#4f7a5c";
+const PAPER = "#f4f2ec";
+const LINE = "#e4e0d5";
 
 function StatusBar({ tone = "light" }: { tone?: "light" | "dark" }) {
   const color = tone === "dark" ? "text-white" : "text-[#1a2420]";
@@ -47,127 +63,235 @@ function PhoneFrame({ children }: { children: React.ReactNode }) {
   );
 }
 
-/** Screen 1: Today, the picture you land on. Used in the hero. Mirrors
- * WorkspaceModule.tsx's "Needs attention" list plus "on track" banner. */
+/** The two tabs Home Base actually has. */
+function TabBar({ current }: { current: "Home" | "History" }) {
+  return (
+    <div
+      className="mt-auto flex items-center gap-6 rounded-xl border bg-white px-3 py-2.5 text-[8.5px] font-semibold"
+      style={{ borderColor: LINE, color: FAINT }}
+    >
+      {(["Home", "History"] as const).map((tab) => (
+        <span key={tab} style={tab === current ? { color: SAGE } : undefined}>
+          {tab}
+        </span>
+      ))}
+    </div>
+  );
+}
+
+function BandLabel({ children }: { children: string }) {
+  return (
+    <p className="mt-3.5 text-[7.5px] font-bold uppercase tracking-[0.12em]" style={{ color: FAINT }}>
+      {children}
+    </p>
+  );
+}
+
+/** A care row exactly as Home draws it: what the job is, when it was last
+ * done and how often it comes round, then Action and Snooze. Never a
+ * countdown, and never the word this product does not say. */
+function CareRow({ title, status, actions = true }: { title: string; status: string; actions?: boolean }) {
+  return (
+    <div className="rounded-xl border bg-white p-2.5" style={{ borderColor: LINE }}>
+      <p className="text-[10px] font-semibold" style={{ color: INK }}>
+        {title}
+      </p>
+      <p className="mt-0.5 text-[8.5px] leading-relaxed" style={{ color: MUTED }}>
+        {status}
+      </p>
+      {actions && (
+        <div className="mt-2 flex gap-1.5">
+          <span className="rounded-md px-2.5 py-1 text-[8px] font-semibold text-white" style={{ backgroundColor: SAGE }}>
+            Action
+          </span>
+          <span className="rounded-md border px-2.5 py-1 text-[8px] font-semibold" style={{ borderColor: LINE, color: INK }}>
+            Snooze
+          </span>
+        </div>
+      )}
+    </div>
+  );
+}
+
+/**
+ * Screen 1: Home, the one surface the product has. Mirrors
+ * HomeModule.tsx: a sentence about the home's condition set in the
+ * product's narrative serif, the Something's wrong entry point, then the
+ * bands in their real order.
+ */
 export function OverviewScreenMockup() {
   return (
     <PhoneFrame>
-      <div className="flex h-full flex-col bg-[#f4f2ec] px-4 pb-4 pt-9">
+      <div className="flex h-full flex-col px-4 pb-4 pt-9" style={{ backgroundColor: PAPER }}>
         <StatusBar />
-        <p className="mt-3 text-[9px] font-bold uppercase tracking-[0.14em] text-[#6b7570]">Home base</p>
-        <p className="mt-1 text-[15px] font-semibold text-[#1a2420]">Your home, right now</p>
+        <p className="mt-3 text-[8px] font-bold uppercase tracking-[0.14em]" style={{ color: MUTED }}>
+          Your home
+        </p>
+        <p
+          className="mt-1 text-[15px] leading-tight"
+          style={{ color: INK, fontFamily: "var(--font-newsreader), ui-serif, Georgia, serif" }}
+        >
+          A couple of things worth taking care of
+        </p>
 
-        <p className="mt-4 text-[8px] font-bold uppercase tracking-[0.1em] text-[#8b9089]">Needs attention (2)</p>
-        <div className="mt-2 flex flex-col gap-2">
-          <div className="flex items-start gap-2 rounded-xl border border-[#e0b98a] bg-[#f7eedb] p-3">
-            <span className="mt-0.5 h-3.5 w-3.5 shrink-0 rounded-full bg-[#9a5a11]" aria-hidden />
-            <p className="flex-1 text-[10.5px] font-medium leading-relaxed text-[#1a2420]">Furnace filter is 12 days overdue.</p>
-          </div>
-          <div className="flex items-start gap-2 rounded-xl border border-[#e0b98a] bg-[#f7eedb] p-3">
-            <span className="mt-0.5 h-3.5 w-3.5 shrink-0 rounded-full bg-[#9a5a11]" aria-hidden />
-            <p className="flex-1 text-[10.5px] font-medium leading-relaxed text-[#1a2420]">Water heater warranty expires in 18 days.</p>
-          </div>
+        <span
+          className="mt-2.5 w-fit rounded-lg border bg-white px-2.5 py-1 text-[8.5px] font-semibold"
+          style={{ borderColor: LINE, color: INK }}
+        >
+          Something&rsquo;s wrong
+        </span>
+
+        <BandLabel>Worth taking care of</BandLabel>
+        <div className="mt-1.5 flex flex-col gap-1.5">
+          <CareRow title="Flush the tank" status="Last done 2 years ago, usually every year" />
+          <CareRow title="Shut off and drain before the freeze" status="Not logged yet, usually October" />
         </div>
 
-        <div className="mt-3 flex items-center gap-2 rounded-xl border border-[#cfe0d1] bg-[#e3f3ec] p-3">
-          <span className="h-3.5 w-3.5 shrink-0 rounded-full bg-[#12795b]" aria-hidden />
-          <p className="text-[10px] font-medium text-[#1a2420]">3 other items are on track.</p>
+        <BandLabel>Coming up</BandLabel>
+        <div className="mt-1.5">
+          <CareRow title="Test the alarm" status="Due in 3 weeks" actions={false} />
         </div>
 
-        <div className="mt-auto flex items-center justify-between rounded-xl border border-[#e4e0d5] bg-white px-3 py-2.5 text-[8px] font-semibold text-[#8b9089]">
-          <span className="text-[#4f7a5c]">Today</span>
-          <span>Attention</span>
-          <span>Records</span>
-        </div>
+        <TabBar current="Home" />
       </div>
     </PhoneFrame>
   );
 }
 
-/** Screen 2: the honest gaps it watches for you, never a fabricated task.
- * Mirrors AttentionModule.tsx's grouped "Needs resolution" / "Worth a
- * while" sections, including the Mark done action on maintenance-due
- * items. */
+/**
+ * Screen 2: what happens when you act on something. Mirrors
+ * CareActionSheet.tsx. This is the difference between a checkbox and a
+ * record: acting captures who did it and what it cost, so the history and
+ * the provider's page are real afterwards.
+ */
 export function AttentionScreenMockup() {
   return (
     <PhoneFrame>
-      <div className="flex h-full flex-col bg-[#f4f2ec] px-4 pb-4 pt-9">
+      <div className="flex h-full flex-col px-4 pb-4 pt-9" style={{ backgroundColor: PAPER }}>
         <StatusBar />
-        <p className="mt-3 text-[9px] font-bold uppercase tracking-[0.14em] text-[#6b7570]">Attention</p>
-        <p className="mt-1 text-[14px] font-semibold text-[#1a2420]">Everything here is real</p>
-        <p className="mt-1 text-[10px] leading-relaxed text-[#6b7570]">
-          Derived from what you have recorded. Mark it done and it disappears on its own.
+        <p className="mt-3 text-[8px] font-bold uppercase tracking-[0.14em]" style={{ color: MUTED }}>
+          Water heater
+        </p>
+        <p className="mt-1 text-[13px] font-semibold" style={{ color: INK }}>
+          Flush the tank
         </p>
 
-        <p className="mt-4 text-[8px] font-bold uppercase tracking-[0.1em] text-[#8b9089]">Needs resolution (2)</p>
-        <div className="mt-2 flex flex-col gap-2">
-          <div className="flex items-center gap-2 rounded-xl border border-[#e4e0d5] bg-white p-3">
-            <span className="h-3.5 w-3.5 shrink-0 rounded-full bg-[#9a5a11]" aria-hidden />
-            <p className="flex-1 text-[10px] font-medium leading-relaxed text-[#1a2420]">Furnace filter is 12 days overdue.</p>
-            <span className="shrink-0 rounded-md border border-[#dcd7ca] px-2 py-1 text-[8px] font-semibold text-[#1a2420]">
-              Mark done
-            </span>
+        <div className="mt-3 flex flex-col gap-1.5">
+          <div
+            className="rounded-lg border-2 bg-white px-2.5 py-2 text-[9px] font-semibold"
+            style={{ borderColor: SAGE, color: INK }}
+          >
+            I took care of it
           </div>
-          <div className="flex items-center gap-2 rounded-xl border border-[#e4e0d5] bg-white p-3">
-            <span className="h-3.5 w-3.5 shrink-0 rounded-full bg-[#9a5a11]" aria-hidden />
-            <p className="flex-1 text-[10px] font-medium leading-relaxed text-[#1a2420]">Water heater warranty expires in 18 days.</p>
+          <div className="rounded-lg border bg-white px-2.5 py-2 text-[9px]" style={{ borderColor: LINE, color: MUTED }}>
+            Skipping this round
           </div>
         </div>
 
-        <p className="mt-4 text-[8px] font-bold uppercase tracking-[0.1em] text-[#8b9089]">Worth a while (1)</p>
-        <div className="mt-2 flex flex-col gap-2">
-          <div className="flex items-center gap-2 rounded-xl border border-[#e4e0d5] bg-white p-3">
-            <span className="h-3.5 w-3.5 shrink-0 rounded-full bg-[#c7c2b3]" aria-hidden />
-            <p className="flex-1 text-[10px] font-medium leading-relaxed text-[#1a2420]">Dishwasher has not been serviced in 14 months.</p>
+        <div className="mt-3 flex flex-col gap-2">
+          {[
+            ["When", "14 Aug 2026"],
+            ["Who did it?", "Ace Plumbing"],
+            ["What it cost", "$180.00"],
+          ].map(([label, value]) => (
+            <div key={label}>
+              <p className="text-[7.5px] font-bold uppercase tracking-[0.1em]" style={{ color: FAINT }}>
+                {label}
+              </p>
+              <div
+                className="mt-1 rounded-lg border bg-white px-2.5 py-1.5 text-[9px]"
+                style={{ borderColor: LINE, color: INK }}
+              >
+                {value}
+              </div>
+            </div>
+          ))}
+          <div>
+            <p className="text-[7.5px] font-bold uppercase tracking-[0.1em]" style={{ color: FAINT }}>
+              Anything worth remembering?
+            </p>
+            <div
+              className="mt-1 rounded-lg border bg-white px-2.5 py-1.5 text-[8.5px] leading-relaxed"
+              style={{ borderColor: LINE, color: MUTED }}
+            >
+              Anode rod is due next time
+            </div>
           </div>
         </div>
 
-        <div className="mt-auto rounded-lg bg-[#e6ede2] px-3 py-2.5 text-center text-[9px] font-semibold text-[#4f7a5c]">
-          Never a fabricated to-do, always a real gap
+        <div
+          className="mt-auto rounded-lg px-3 py-2.5 text-center text-[8.5px] font-semibold"
+          style={{ backgroundColor: "#e6ede2", color: SAGE }}
+        >
+          Saved to this home&rsquo;s history
         </div>
       </div>
     </PhoneFrame>
   );
 }
 
-/** Screen 3: the guided way it stays organized, area by area. Mirrors
- * RecordsModule.tsx's three-card Records hub (Appliances, Maintenance,
- * Service providers). */
+/**
+ * Screen 3: setup, which is tapping rather than typing. Mirrors
+ * SetupModule.tsx's grid over the twelve categories in homeKnowledge.ts,
+ * including the ones an appliance tracker would never ask about.
+ */
 export function RecordsScreenMockup() {
-  const areas: [string, string, string][] = [
-    ["Appliances", "6 appliances tracked", "3 with warranty on file"],
-    ["Maintenance", "4 tasks tracked", "1 never logged"],
-    ["Service providers", "3 providers saved", ""],
+  const picks: [string, boolean][] = [
+    ["Water heater", true],
+    ["Furnace", true],
+    ["Gutters", true],
+    ["Smoke alarm", false],
+    ["Lawn", true],
+    ["Dishwasher", false],
   ];
   return (
     <PhoneFrame>
-      <div className="flex h-full flex-col bg-[#f4f2ec] px-4 pb-4 pt-9">
+      <div className="flex h-full flex-col px-4 pb-4 pt-9" style={{ backgroundColor: PAPER }}>
         <StatusBar />
-        <p className="mt-3 text-[9px] font-bold uppercase tracking-[0.14em] text-[#6b7570]">Records</p>
-        <p className="mt-1 text-[14px] font-semibold text-[#1a2420]">What&rsquo;s actually in your home</p>
+        <p className="mt-3 text-[8px] font-bold uppercase tracking-[0.14em]" style={{ color: MUTED }}>
+          Setting up
+        </p>
+        <p
+          className="mt-1 text-[14px] leading-tight"
+          style={{ color: INK, fontFamily: "var(--font-newsreader), ui-serif, Georgia, serif" }}
+        >
+          What&rsquo;s in your home?
+        </p>
+        <p className="mt-1 text-[8.5px] leading-relaxed" style={{ color: MUTED }}>
+          Tap what you have. Skip anything you are not sure about.
+        </p>
 
-        <div className="mt-4 flex flex-col gap-2.5">
-          {areas.map(([label, primary, secondary]) => (
-            <div key={label} className="rounded-xl border border-[#e4e0d5] bg-white p-3.5">
-              <div className="flex items-center justify-between">
-                <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#e6ede2] text-[#4f7a5c]">
-                  <span className="h-2.5 w-2.5 rounded-[2px] border-2 border-current" aria-hidden />
-                </span>
-                <span className="text-[13px] text-[#8b9089]">›</span>
-              </div>
-              <p className="mt-2 text-[8px] font-bold uppercase tracking-[0.08em] text-[#8b9089]">{label}</p>
-              <p className="mt-1 text-[11px] font-medium text-[#1a2420]">
-                {primary}
-                {secondary ? ` · ${secondary}` : ""}
-              </p>
+        <div className="mt-3 grid grid-cols-2 gap-1.5">
+          {picks.map(([label, selected]) => (
+            <div
+              key={label}
+              className="rounded-xl border px-2 py-2.5 text-[8.5px] font-semibold"
+              style={
+                selected
+                  ? { borderColor: SAGE, backgroundColor: "#e6ede2", color: INK }
+                  : { borderColor: LINE, backgroundColor: "#ffffff", color: MUTED }
+              }
+            >
+              <span
+                className="mb-1.5 block h-4 w-4 rounded-md"
+                style={{ backgroundColor: selected ? SAGE : "#e6ede2" }}
+                aria-hidden
+              />
+              {label}
             </div>
           ))}
         </div>
 
-        <div className="mt-auto flex items-center justify-between rounded-xl border border-[#e4e0d5] bg-white px-3 py-2.5 text-[8px] font-semibold text-[#8b9089]">
-          <span>Today</span>
-          <span>Attention</span>
-          <span className="text-[#4f7a5c]">Records</span>
+        <p className="mt-3 text-[8px] leading-relaxed" style={{ color: FAINT }}>
+          Kitchen · Laundry · Heating · Water · Power · Safety · Structure · Garden · Pests · Everyday · Papers ·
+          Renting
+        </p>
+
+        <div
+          className="mt-auto rounded-lg px-3 py-2.5 text-center text-[8.5px] font-semibold text-white"
+          style={{ backgroundColor: SAGE }}
+        >
+          Continue
         </div>
       </div>
     </PhoneFrame>

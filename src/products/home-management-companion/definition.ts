@@ -1,19 +1,20 @@
 import { ProductDefinitionInput } from "@/product-framework/definition";
 
 /**
- * Home Management Companion ("Home Base") — foundation-stage registration.
- * Same "real but unreleased" pattern as Personal Finance Companion's own
- * definition.ts: devFixture is false (a real product, registered in every
- * environment), access.model is "paid", and there is deliberately no
- * src/shop/products/home-management-companion.ts entry yet (added in a
- * later phase) — until then the only way in is a manual
- * grant_admin_product call, exactly like PFC and hidden-access-test were
- * during their own buildouts.
+ * Home Management Companion ("Home Base").
+ * Same pattern as Personal Finance Companion's own definition.ts:
+ * devFixture is false (a real product, registered in every environment),
+ * access.model is "paid", and status stays "draft" until checkout is
+ * actually wired, exactly as PFC's does while its own Shop listing is
+ * already published. The Shop listing exists now
+ * (src/shop/products/home-management-companion.ts), so entry is no longer
+ * only by manual grant_admin_product, though checkout still waits on
+ * LEMON_SQUEEZY_HMC_CHECKOUT_URL and a real price.
  *
  * cycleModel is "continuous": a home has no monthly reset concept, exactly
  * one instance ever. Navigation follows Monthly Money Reset's shape
  * (start/setup/workspace/.../history/settings, "setup" declared as a real
- * destination) rather than PFC's — PFC excludes "setup" only because of a
+ * destination) rather than PFC's. PFC excludes "setup" only because of a
  * historical bug where nothing called setProductInstanceLifecycle to mark
  * it complete; this product's Setup module calls that correctly (see
  * Phase 1), so MMR's proven, simpler shape applies directly.
@@ -22,7 +23,7 @@ export const homeManagementCompanionDefinition: ProductDefinitionInput = {
   id: "home-management-companion",
   slug: "home-management-companion",
   title: "Home Base",
-  tagline: "Know what your home needs before it becomes expensive — appliances, maintenance, and warranties, always current.",
+  tagline: "Home Base remembers your home so you do not have to. It knows what needs doing and when, and stays quiet the rest of the time.",
   family: "companion",
   version: "0.1.0",
   status: "draft",
@@ -34,7 +35,7 @@ export const homeManagementCompanionDefinition: ProductDefinitionInput = {
   pwa: {
     name: "Home Base",
     shortName: "Home Base",
-    description: "Home Base by Draftpace: appliances, maintenance, and warranties, in one always-current picture of what your home needs.",
+    description: "Home Base by Draftpace: what your home needs, across the twelve areas a home actually has, raised when it is due and quiet the rest of the time.",
     themeColor: "#4f7a5c",
     backgroundColor: "#f4f2ec",
     icons: [
@@ -93,7 +94,7 @@ export const homeManagementCompanionDefinition: ProductDefinitionInput = {
     contentWidth: "narrow",
   },
   layouts: ["responsive"],
-  // "shell-only": same reasoning as PFC — the installed shell may be
+  // "shell-only": same reasoning as PFC. The installed shell may be
   // cached, but reads/writes require connectivity, no optimistic offline
   // write queue exists for this kind of record yet.
   offline: "shell-only",
