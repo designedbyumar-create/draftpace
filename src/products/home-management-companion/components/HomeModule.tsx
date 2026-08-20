@@ -13,7 +13,14 @@ import { listMaintenanceTasks, snoozeMaintenanceTask, updateMaintenanceTask } fr
 import { listServiceProviders } from "../domain/serviceProviders";
 import { listMaintenanceLog } from "../domain/maintenanceLog";
 import { listProblems, snoozeProblem } from "../domain/problems";
-import { deriveHomeState, itemHref, HOME_BAND_LIMIT, type AttentionItem, type HomeStateInputs } from "../attention";
+import {
+  deriveHomeState,
+  itemHref,
+  HOME_BAND_LIMIT,
+  type AttentionItem,
+  type HomeState,
+  type HomeStateInputs,
+} from "../attention";
 import { describeHomeHeadline, DEFAULT_SNOOZE_DAYS } from "../homeVoice";
 import { HOME_ITEM_TYPE_BY_ID } from "../homeKnowledge";
 import CategoryIcon from "./shared/CategoryIcon";
@@ -28,6 +35,37 @@ import MaintenanceTaskFormSheet, {
 } from "./maintenance/MaintenanceTaskFormSheet";
 
 type LoadStatus = "loading" | "ready" | "no-instance" | "error";
+
+/**
+ * The five conditions a home can honestly be in.
+ *
+ * The page changes character with the house rather than swapping rows
+ * inside an identical layout. The one that matters most is "settled",
+ * because it is where the product spends most of its life: it has to
+ * look finished rather than like a page whose content failed to load.
+ */
+type HomeMood = "unknown" | "settled" | "upcoming" | "todo" | "wrong";
+
+function moodOf(home: HomeState): HomeMood {
+  if (home.nothingTracked) return "unknown";
+  if (home.somethingWrong.length > 0) return "wrong";
+  if (home.worthTakingCareOf.length > 0) return "todo";
+  if (home.comingUp.length > 0) return "upcoming";
+  return "settled";
+}
+
+/**
+ * A quiet home gets room; a busy one gets rhythm. Nothing needing action
+ * is not a reason to leave a screen looking sparse, and eight things
+ * needing action is not the moment for generous whitespace.
+ */
+const MOOD_LAYOUT: Record<HomeMood, { gap: string; headline: string }> = {
+  unknown: { gap: "gap-8", headline: "text-[28px] sm:text-[34px]" },
+  settled: { gap: "gap-9", headline: "text-[28px] sm:text-[34px]" },
+  upcoming: { gap: "gap-8", headline: "text-[27px] sm:text-[32px]" },
+  todo: { gap: "gap-7", headline: "text-[25px] sm:text-[29px]" },
+  wrong: { gap: "gap-6", headline: "text-[25px] sm:text-[29px]" },
+};
 
 /**
  * Home: the whole product on one surface.
@@ -225,11 +263,24 @@ export default function HomeModule() {
 
   const care = showAllCare ? home.worthTakingCareOf : home.worthTakingCareOf.slice(0, HOME_BAND_LIMIT);
   const hiddenCare = home.worthTakingCareOf.length - care.length;
+  const mood = moodOf(home);
+  const layout = MOOD_LAYOUT[mood];
+  // Rendered only when there is something true to say. An empty
+  // paragraph still occupies a line and leaves a gap nobody asked for.
+  const closingLine =
+    mood === "settled" || mood === "upcoming"
+      ? "Nothing needs you today."
+      : home.restUnderControl > 0
+        ? "Everything else is under control."
+        : null;
 
   return (
-    <div className="flex flex-col gap-7 pb-24 lg:pb-0">
+    <div className={`flex flex-col ${layout.gap} pb-24 lg:pb-0`}>
       <div className="flex flex-wrap items-end justify-between gap-3">
-        <Header headline={describeHomeHeadline({ wrong: home.somethingWrong.length, worthDoing: home.worthTakingCareOf.length })} />
+        <Header
+          headline={describeHomeHeadline({ wrong: home.somethingWrong.length, worthDoing: home.worthTakingCareOf.length })}
+          size={layout.headline}
+        />
         <Button size="sm" variant="secondary" onClick={() => setReportOpen(true)}>
           Something&apos;s wrong
         </Button>
@@ -313,22 +364,17 @@ export default function HomeModule() {
         </Band>
       )}
 
-      {home.somethingWrong.length === 0 && home.worthTakingCareOf.length === 0 ? (
-        <div className="flex items-center gap-3 rounded-xl border border-[var(--border)] bg-[var(--success-soft)] p-3.5">
-          <CheckCircle2 className="h-5 w-5 shrink-0 text-[var(--success)]" aria-hidden />
-          <p className="text-[15px] text-[var(--text)]" style={{ fontFamily: "var(--product-narrative-font)" }}>
-            Nothing needs you today.
-          </p>
-        </div>
-      ) : (
-        home.restUnderControl > 0 && (
-          <p
-            className="text-[15px] leading-relaxed text-[var(--muted)]"
-            style={{ fontFamily: "var(--product-narrative-font)" }}
-          >
-            Everything else is under control.
-          </p>
-        )
+      {/* Deliberately not a green box with a tick. A settled home is the
+          normal state, not an achievement, and congratulating somebody for
+          it is the first step toward keeping score. Just a plain sentence,
+          in the product's own voice. */}
+      {closingLine && (
+        <p
+          className="text-[15px] leading-relaxed text-[var(--muted)]"
+          style={{ fontFamily: "var(--product-narrative-font)" }}
+        >
+          {closingLine}
+        </p>
       )}
 
       <div>
@@ -431,12 +477,12 @@ function describeItem(item: HomeItem): string {
  * the same words at label size read as a heading and the difference is
  * the whole point.
  */
-function Header({ headline }: { headline: string }) {
+function Header({ headline, size = "text-[26px] sm:text-[30px]" }: { headline: string; size?: string }) {
   return (
     <div>
       <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-[var(--faint)]">Your home</p>
       <h1
-        className="mt-1.5 text-[26px] font-medium leading-[1.15] tracking-[-0.01em] text-[var(--text)] sm:text-[30px]"
+        className={`mt-1.5 font-medium leading-[1.15] tracking-[-0.01em] text-[var(--text)] ${size}`}
         style={{ fontFamily: "var(--product-narrative-font)", textWrap: "balance" }}
       >
         {headline}
