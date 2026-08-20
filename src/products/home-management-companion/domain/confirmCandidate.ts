@@ -4,7 +4,12 @@ import { ok, err, type Result } from "@/product-framework/result";
 import { createHomeItem } from "./homeItems";
 import { createMaintenanceTask } from "./maintenanceTasks";
 import { createServiceProvider } from "./serviceProviders";
+import { createProblem } from "./problems";
+import { createMaintenanceLogEntry } from "./maintenanceLog";
+import { matchHomeItemType } from "../homeKnowledge";
 import type {
+  ProblemCandidatePayload,
+  PastEventCandidatePayload,
   ThingCandidatePayload,
   CandidatePayload,
   ConfirmationSource,
@@ -50,9 +55,13 @@ export async function confirmCandidate(input: ConfirmCandidateInput): Promise<Re
   switch (candidate.candidateType) {
     case "thing": {
       const p = payload as ThingCandidatePayload;
+      // The matcher rarely knows the type, but the knowledge layer often
+      // does from the name alone, and a typed item is one whose care can
+      // be proposed. An untyped one is just a row.
+      const recognised = p.type ? null : matchHomeItemType(p.name, "");
       const created = await createHomeItem(instanceId, {
         name: p.name,
-        type: p.type ?? "other",
+        type: p.type ?? recognised?.id ?? "other",
         brand: p.brand ?? null,
         model: null,
         location: null,
@@ -97,7 +106,64 @@ export async function confirmCandidate(input: ConfirmCandidateInput): Promise<Re
       if (!created.ok) return err(created.error);
       return ok({ recordType: "serviceProvider", recordId: created.data.id });
     }
-    case "unsupported":
-      return err({ kind: "validation", message: "This entry wasn't recognized as a supported record type." });
+    case "problem": {
+      const p = payload as ProblemCandidatePayload;
+      const created = await createProblem(instanceId, {
+        thingId: null,
+        providerId: null,
+        title: p.title,
+        description: null,
+        resolutionStatus: "open",
+        severity: p.severity,
+        effort: "moderate",
+        estimatedCostMinorUnits: null,
+        actualCostMinorUnits: null,
+        scheduledAt: null,
+        resolvedAt: null,
+        snoozedUntil: null,
+        notes: null,
+        ...provenance,
+      });
+      if (!created.ok) return err(created.error);
+      return ok({ recordType: "problem", recordId: created.data.id });
+    }
+    case "pastEvent": {
+      const p = payload as PastEventCandidatePayload;
+      const created = await createMaintenanceLogEntry(instanceId, {
+        taskId: null,
+        applianceId: null,
+        description: p.description,
+        performedAt: p.performedAt,
+        providerId: null,
+        // Kept as free text rather than inventing a provider record from
+        // a name in a paste. The person can attach a real one later.
+        performedBy: p.providerName ?? null,
+        costMinorUnits: null,
+        notes: null,
+        ...provenance,
+      });
+      if (!created.ok) return err(created.error);
+      return ok({ recordType: "pastEvent", recordId: created.data.id });
+    }
+    case "unsupported": {
+      // Nothing the person wrote is thrown away. A line nobody could
+      // classify becomes a note on the home, carrying their exact words.
+      const p = payload as { rawText: string };
+      const created = await createHomeItem(instanceId, {
+        name: p.rawText.slice(0, 120),
+        type: "note",
+        brand: null,
+        model: null,
+        location: null,
+        purchaseDate: null,
+        installDate: null,
+        warrantyExpiresAt: null,
+        documentLink: null,
+        notes: p.rawText,
+        ...provenance,
+      });
+      if (!created.ok) return err(created.error);
+      return ok({ recordType: "note", recordId: created.data.id });
+    }
   }
 }

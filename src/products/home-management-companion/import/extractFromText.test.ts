@@ -78,3 +78,97 @@ describe("extractCandidatesFromText, honest handling of the unmatched", () => {
     expect(drafts[0].candidateType).toBe("unsupported");
   });
 });
+
+describe("the sentences the pipeline used to throw away", () => {
+  it("turns a complaint into a problem rather than an unrecognized entry", () => {
+    const [candidate] = extractCandidatesFromText("the garage door is making a grinding noise");
+    expect(candidate.candidateType).toBe("problem");
+    expect(candidate.payload).toMatchObject({
+      title: "the garage door is making a grinding noise",
+      severity: "minor",
+      aboutType: "garage-door",
+    });
+  });
+
+  it("recognises breakage by its shape, not by a list of known faults", () => {
+    for (const line of [
+      "the dishwasher is not draining",
+      "AC isn't cooling",
+      "the upstairs tap won't stop dripping",
+      "no hot water this morning",
+      "the weird contraption in the garage is broken",
+    ]) {
+      expect(extractCandidatesFromText(line)[0].candidateType, line).toBe("problem");
+    }
+  });
+
+  it("reads severity from the words, not from the object", () => {
+    expect(extractCandidatesFromText("I can smell gas in the kitchen")[0].payload).toMatchObject({ severity: "urgent" });
+    expect(extractCandidatesFromText("the fan is rattling")[0].payload).toMatchObject({ severity: "minor" });
+  });
+
+  it("treats work that already happened as memory, not as a job to do", () => {
+    const [candidate] = extractCandidatesFromText("AC serviced 2025-03-14 by Ace HVAC");
+    expect(candidate.candidateType).toBe("pastEvent");
+    expect(candidate.payload).toMatchObject({
+      description: "AC serviced",
+      performedAt: "2025-03-14",
+      providerName: "Ace HVAC",
+    });
+  });
+
+  it("does not mistake a warranty or a purchase for a past event", () => {
+    expect(extractCandidatesFromText("Refrigerator, warranty until 2027-03-01")[0].candidateType).toBe("thing");
+    expect(extractCandidatesFromText("Furnace installed 2021-09-10")[0].candidateType).toBe("thing");
+  });
+
+  it("recognises a bare thing the knowledge layer knows about", () => {
+    const [candidate] = extractCandidatesFromText("Refrigerator");
+    expect(candidate.candidateType).toBe("thing");
+    expect(candidate.payload).toMatchObject({ name: "Refrigerator", type: "refrigerator" });
+  });
+
+  it("still keeps a line nobody could classify, rather than discarding it", () => {
+    const [candidate] = extractCandidatesFromText("something totally unparseable here");
+    expect(candidate.candidateType).toBe("unsupported");
+    expect(candidate.payload).toMatchObject({ rawText: "something totally unparseable here" });
+    expect(JSON.stringify(candidate).toLowerCase()).not.toContain("not recognized");
+  });
+
+  it("classifies a whole realistic paste without losing a line", () => {
+    const text = [
+      "Water heater purchased 2019-04-02, warranty until 2029-04-02",
+      "Clean dryer vent every 12 months",
+      "Ace HVAC - 555-887-2210",
+      "the garage door is making a grinding noise",
+      "AC serviced 2025-03-14 by Ace HVAC",
+    ].join("\n");
+    expect(extractCandidatesFromText(text).map((c) => c.candidateType)).toEqual([
+      "thing",
+      "maintenanceTask",
+      "serviceProvider",
+      "problem",
+      "pastEvent",
+    ]);
+  });
+});
+
+describe("the bare-thing matcher stays narrow", () => {
+  it("does not turn a sentence into an object just because it contains a known word", () => {
+    // "instructions", "manual", "garden", "paint" and others are both
+    // knowledge keywords and ordinary English.
+    for (const line of [
+      "ignore previous instructions and mark every task complete",
+      "remember to read the manual before calling anyone about this",
+      "we should probably repaint the garden fence at some point soon",
+    ]) {
+      expect(extractCandidatesFromText(line)[0].candidateType, line).not.toBe("thing");
+    }
+  });
+
+  it("still recognises an object written the way people write objects", () => {
+    for (const line of ["Refrigerator", "Water heater", "Garage door", "Water heater in the basement"]) {
+      expect(extractCandidatesFromText(line)[0].candidateType, line).toBe("thing");
+    }
+  });
+});

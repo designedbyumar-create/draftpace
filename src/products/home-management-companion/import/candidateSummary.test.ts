@@ -46,11 +46,32 @@ describe("summarizeCandidate", () => {
     expect(summary.lines).toEqual(["555-1234", "ace@hvac.com"]);
   });
 
-  it("renders an unsupported candidate's raw text, never a JSON dump", () => {
+  it("leads an unclassified line with the person's own words, never with a rejection", () => {
     const summary = summarizeCandidate(
       candidate({ candidateType: "unsupported", payload: { rawText: "some notes" } })
     );
-    expect(summary.title).toBe("Not recognized");
-    expect(summary.lines).toEqual(["some notes"]);
+    // The words they wrote are the headline. "Not recognized" as a title
+    // is the product telling somebody their input was wrong.
+    expect(summary.title).toBe("some notes");
+    expect(summary.lines.join(" ").toLowerCase()).not.toContain("not recognized");
+  });
+
+  it("summarises a problem by what is wrong and how bad it sounds", () => {
+    const summary = summarizeCandidate(
+      candidate({ candidateType: "problem", payload: { title: "the garage door is grinding", severity: "minor" } })
+    );
+    expect(summary.title).toBe("the garage door is grinding");
+    expect(summary.lines).toEqual(["Sounds minor"]);
+  });
+
+  it("summarises a past event by when it happened and who did it", () => {
+    const summary = summarizeCandidate(
+      candidate({
+        candidateType: "pastEvent",
+        payload: { description: "AC serviced", performedAt: "2025-03-14", providerName: "Ace HVAC" },
+      })
+    );
+    expect(summary.title).toBe("AC serviced");
+    expect(summary.lines[1]).toBe("by Ace HVAC");
   });
 });

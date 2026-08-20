@@ -121,14 +121,14 @@ export default function ImportModule() {
     return (
       <div className="flex flex-col gap-6">
         <div>
-          <h1 className="text-xl font-semibold text-[var(--text)]">Import</h1>
+          <h1 className="text-xl font-semibold text-[var(--text)]">Tell Home Base about your home</h1>
           <p className="mt-1 text-[13px] text-[var(--muted)]">
-            Bring in what you already have. Draftpace looks for patterns, never AI, and nothing becomes a real record
-            until you confirm it.
+            Tell Home Base what you already know about your home. It looks for patterns, never AI, and nothing is saved
+            until you say so.
           </p>
         </div>
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-          <MethodCard icon={Article} title="Paste notes" description="Paste a few lines of text." onClick={() => setStep("pasteNotes")} />
+          <MethodCard icon={Article} title="Paste notes" description="Whatever you already have written down." onClick={() => setStep("pasteNotes")} />
           <MethodCard icon={Article} title="Text file" description="Upload a .txt file." onClick={() => setStep("textFile")} />
           <MethodCard icon={ListChecks} title="CSV" description="Upload a spreadsheet export." onClick={() => setStep("csv")} />
         </div>
@@ -194,7 +194,7 @@ export default function ImportModule() {
   return (
     <Surface elevated className="flex flex-col gap-4">
       <p className="text-[15px] font-semibold text-[var(--text)]">
-        {confirmedCount} {confirmedCount === 1 ? "record" : "records"} added.
+        {confirmedCount} {confirmedCount === 1 ? "thing" : "things"} added to your home.
       </p>
       <div className="flex flex-wrap gap-2.5">
         <Button

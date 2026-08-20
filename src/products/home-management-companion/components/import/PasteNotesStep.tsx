@@ -65,7 +65,7 @@ export default function PasteNotesStep({
         <h2 className="mt-1 text-[17px] font-semibold text-[var(--text)]">Paste what you already know.</h2>
         <p className="mt-1.5 text-[13px] leading-relaxed text-[var(--muted)]">
           Draftpace looks for patterns like warranty dates, repeat schedules, and phone numbers, one line at a time.
-          Nothing becomes a real record until you confirm it.
+          Nothing is saved until you say so.
         </p>
       </div>
 

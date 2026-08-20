@@ -7,7 +7,12 @@ import Button from "@/design-system/Button";
 import Input from "@/design-system/Input";
 import Alert from "@/design-system/Alert";
 import { describeResultError } from "@/product-framework/result";
-import { summarizeCandidate, CANDIDATE_TYPE_LABEL } from "../../import/candidateSummary";
+import {
+  summarizeCandidate,
+  CANDIDATE_TYPE_LABEL,
+  CANDIDATE_CONFIRM_LABEL,
+  describeCandidateCount,
+} from "../../import/candidateSummary";
 import { detectDuplicateByName, type ComparableRecord } from "../../import/duplicateDetection";
 import { confirmCandidate } from "../../domain/confirmCandidate";
 import type { CandidatePayload, ConfirmationSource, ExtractionCandidate } from "../../import/types";
@@ -65,7 +70,6 @@ export default function CandidateReviewQueue({
   const [error, setError] = useState<string | null>(null);
 
   const counts = pending.reduce<Record<string, number>>((acc, c) => {
-    if (c.candidateType === "unsupported") return acc;
     acc[c.candidateType] = (acc[c.candidateType] ?? 0) + 1;
     return acc;
   }, {});
@@ -157,12 +161,12 @@ export default function CandidateReviewQueue({
       <div>
         <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Review</p>
         <h2 className="mt-1 text-[17px] font-semibold text-[var(--text)]">
-          Draftpace found {pending.length} possible {pending.length === 1 ? "record" : "records"}.
+          Here&apos;s what Home Base understood.
         </h2>
         <div className="mt-2 flex flex-wrap gap-1.5">
           {Object.entries(counts).map(([type, count]) => (
             <Badge key={type} tone="neutral">
-              {CANDIDATE_TYPE_LABEL[type as ExtractionCandidate["candidateType"]]} {count}
+              {describeCandidateCount(type as ExtractionCandidate["candidateType"], count)}
             </Badge>
           ))}
         </div>
@@ -182,7 +186,7 @@ export default function CandidateReviewQueue({
               return (
                 <li key={candidate.id} className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4">
                   <p className="text-[11px] font-bold uppercase tracking-[0.08em] text-[var(--faint)]">
-                    {isUnsupported ? "Not recognized" : `Possible ${CANDIDATE_TYPE_LABEL[candidate.candidateType]}`}
+                    {isUnsupported ? "Not sure about this one" : `Looks like ${CANDIDATE_TYPE_LABEL[candidate.candidateType]}`}
                   </p>
 
                   {isEditing ? (
@@ -244,13 +248,31 @@ export default function CandidateReviewQueue({
                         </Button>
                       </>
                     ) : isUnsupported ? (
-                      <Button size="sm" variant="ghost" onClick={() => handleSkip(candidate)} disabled={isBusy}>
-                        Dismiss
-                      </Button>
+                      <>
+                        <Button size="sm" onClick={() => handleConfirm(candidate)} disabled={isBusy}>
+                          {isBusy ? "Saving…" : "Keep as a note"}
+                        </Button>
+                        <Button
+                          size="sm"
+                          variant="secondary"
+                          disabled={isBusy}
+                          onClick={() =>
+                            handleConfirm(
+                              { ...candidate, candidateType: "problem" },
+                              { title: (candidate.payload as { rawText: string }).rawText, severity: "moderate" }
+                            )
+                          }
+                        >
+                          It&apos;s a problem
+                        </Button>
+                        <Button size="sm" variant="ghost" onClick={() => handleSkip(candidate)} disabled={isBusy}>
+                          Leave it
+                        </Button>
+                      </>
                     ) : (
                       <>
                         <Button size="sm" onClick={() => handleConfirm(candidate)} disabled={isBusy}>
-                          {isBusy ? "Saving…" : `Confirm ${CANDIDATE_TYPE_LABEL[candidate.candidateType]}`}
+                          {isBusy ? "Saving…" : CANDIDATE_CONFIRM_LABEL[candidate.candidateType]}
                         </Button>
                         <Button size="sm" variant="secondary" onClick={() => startEdit(candidate)} disabled={isBusy}>
                           Edit
@@ -273,7 +295,7 @@ export default function CandidateReviewQueue({
           <div className="flex items-center justify-between">
             <p className="text-[12px] font-bold uppercase tracking-[0.1em] text-[var(--faint)]">Looks right ({looksRight.length})</p>
             <Button size="sm" variant="secondary" onClick={handleConfirmAllLooksRight} disabled={bulkConfirming || busyId !== null}>
-              {bulkConfirming ? "Confirming…" : `Confirm all ${looksRight.length}`}
+              {bulkConfirming ? "Adding…" : `Add all ${looksRight.length}`}
             </Button>
           </div>
           <ul className="mt-2 flex flex-col gap-1.5">
@@ -286,7 +308,7 @@ export default function CandidateReviewQueue({
                 return (
                   <li key={candidate.id} className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3">
                     <p className="text-[11px] font-bold uppercase tracking-[0.08em] text-[var(--faint)]">
-                      Possible {CANDIDATE_TYPE_LABEL[candidate.candidateType]}
+                      Looks like {CANDIDATE_TYPE_LABEL[candidate.candidateType]}
                     </p>
                     <div className="mt-2 flex flex-col gap-2.5">
                       <Input label="Name" value={editValues.name} onChange={(e) => setEditValues((v) => ({ ...v, name: e.target.value }))} />
@@ -314,7 +336,7 @@ export default function CandidateReviewQueue({
                   </div>
                   <div className="flex shrink-0 gap-1.5">
                     <Button size="sm" onClick={() => handleConfirm(candidate)} disabled={isBusy || bulkConfirming}>
-                      {isBusy ? "Saving…" : "Confirm"}
+                      {isBusy ? "Saving…" : "Add"}
                     </Button>
                     <Button size="sm" variant="ghost" onClick={() => startEdit(candidate)} disabled={isBusy || bulkConfirming}>
                       Edit

@@ -93,7 +93,7 @@ export default function TextFileStep({
         <h2 className="mt-1 text-[17px] font-semibold text-[var(--text)]">Upload a plain text file.</h2>
         <p className="mt-1.5 text-[13px] leading-relaxed text-[var(--muted)]">
           The same pattern-matching Draftpace uses for pasted notes, applied to a .txt file. The file itself is never
-          stored: only what you confirm becomes a real record.
+          stored: only what you confirm is saved.
         </p>
       </div>
 

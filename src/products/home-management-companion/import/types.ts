@@ -10,6 +10,11 @@ import { z } from "zod";
  * (calling the exact same createHomeItem/createMaintenanceTask/
  * createServiceProvider functions the direct sections already use) ever
  * turns one into a real row.
+ *
+ * Six candidate kinds now, not three. The two additions matter because
+ * they are the sentences people actually write: something is broken, and
+ * something already got done. The pipeline used to answer both with
+ * "Not recognized".
  */
 
 export const inputTypeSchema = z.enum(["csv", "pastedNotes", "textFile"]);
@@ -31,7 +36,14 @@ export const importSessionSchema = z.object({
 });
 export type ImportSession = z.infer<typeof importSessionSchema>;
 
-export const candidateTypeSchema = z.enum(["thing", "maintenanceTask", "serviceProvider", "unsupported"]);
+export const candidateTypeSchema = z.enum([
+  "thing",
+  "maintenanceTask",
+  "serviceProvider",
+  "problem",
+  "pastEvent",
+  "unsupported",
+]);
 export type CandidateType = z.infer<typeof candidateTypeSchema>;
 
 export const candidateConfidenceSchema = z.enum(["high", "medium", "low"]);
@@ -67,6 +79,29 @@ export interface ServiceProviderCandidatePayload {
   phone?: string;
   email?: string;
 }
+/** Something that is wrong right now, in the words the person wrote. */
+export interface ProblemCandidatePayload {
+  title: string;
+  severity: "minor" | "moderate" | "urgent";
+  /** The kind of thing it seems to concern, when the sentence made that clear. */
+  aboutType?: string;
+}
+
+/** Work that already happened, which is memory rather than a job to do. */
+export interface PastEventCandidatePayload {
+  description: string;
+  performedAt: string;
+  providerName?: string;
+}
+
+/**
+ * A line nothing matched.
+ *
+ * Never a dead end. The review step offers to keep it as a note about
+ * the home, or to turn it into a thing or a problem, because the person
+ * wrote it for a reason and deleting it is the one outcome that is
+ * definitely wrong.
+ */
 export interface UnsupportedCandidatePayload {
   rawText: string;
 }
@@ -75,6 +110,8 @@ export type CandidatePayload =
   | ThingCandidatePayload
   | MaintenanceTaskCandidatePayload
   | ServiceProviderCandidatePayload
+  | ProblemCandidatePayload
+  | PastEventCandidatePayload
   | UnsupportedCandidatePayload;
 
 export const confirmationSourceSchema = z.enum(["pastedNotes", "textFile", "csvImport"]);

@@ -1,8 +1,11 @@
+import { describeElapsed, daysBetween } from "../homeVoice";
 import type {
   ThingCandidatePayload,
   ExtractionCandidate,
   MaintenanceTaskCandidatePayload,
   ServiceProviderCandidatePayload,
+  ProblemCandidatePayload,
+  PastEventCandidatePayload,
   UnsupportedCandidatePayload,
 } from "./types";
 
@@ -12,11 +15,43 @@ import type {
  * type, all pure and testable.
  */
 
+/**
+ * What each kind is called in front of a person. Written as the thing
+ * itself rather than as a record type, so a card reads "Add to your
+ * home" rather than "Confirm thing".
+ */
 export const CANDIDATE_TYPE_LABEL: Record<ExtractionCandidate["candidateType"], string> = {
-  thing: "home item",
-  maintenanceTask: "maintenance task",
-  serviceProvider: "service provider",
-  unsupported: "unrecognized entry",
+  thing: "something in your home",
+  maintenanceTask: "a bit of upkeep",
+  serviceProvider: "someone you use",
+  problem: "something wrong",
+  pastEvent: "something already done",
+  unsupported: "not sure",
+};
+
+/** Reads naturally after a number, e.g. "2 things", "1 person". */
+const CANDIDATE_COUNT_NOUN: Record<ExtractionCandidate["candidateType"], [string, string]> = {
+  thing: ["thing", "things"],
+  maintenanceTask: ["job", "jobs"],
+  serviceProvider: ["person", "people"],
+  problem: ["problem", "problems"],
+  pastEvent: ["already done", "already done"],
+  unsupported: ["unsure", "unsure"],
+};
+
+export function describeCandidateCount(type: ExtractionCandidate["candidateType"], count: number): string {
+  const [one, many] = CANDIDATE_COUNT_NOUN[type];
+  return `${count} ${count === 1 ? one : many}`;
+}
+
+/** The verb on a card's confirm button, so it says what will happen rather than "Confirm". */
+export const CANDIDATE_CONFIRM_LABEL: Record<ExtractionCandidate["candidateType"], string> = {
+  thing: "Add to your home",
+  maintenanceTask: "Add this upkeep",
+  serviceProvider: "Save this person",
+  problem: "Log this problem",
+  pastEvent: "Add to history",
+  unsupported: "Keep as a note",
 };
 
 function cadenceLabel(days: number): string {
@@ -61,9 +96,23 @@ export function summarizeCandidate(candidate: ExtractionCandidate): CandidateSum
       if (lines.length === 0) lines.push("No phone or email found");
       return { title: p.name, lines };
     }
+    case "problem": {
+      const p = candidate.payload as ProblemCandidatePayload;
+      const severity = p.severity === "urgent" ? "Sounds urgent" : p.severity === "minor" ? "Sounds minor" : "Worth sorting";
+      return { title: p.title, lines: [severity] };
+    }
+    case "pastEvent": {
+      const p = candidate.payload as PastEventCandidatePayload;
+      const lines = [describeElapsed(daysBetween(p.performedAt, new Date()))];
+      if (p.providerName) lines.push(`by ${p.providerName}`);
+      return { title: p.description, lines };
+    }
     case "unsupported": {
       const p = candidate.payload as UnsupportedCandidatePayload;
-      return { title: "Not recognized", lines: [p.rawText] };
+      // Never "Not recognized". The line is shown as what it is, the
+      // person's own words. The card's own note explains the rest, so
+      // there is nothing to add here.
+      return { title: p.rawText, lines: [] };
     }
   }
 }
