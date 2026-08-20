@@ -12,13 +12,15 @@ import { listHomeItems, createHomeItem } from "../domain/homeItems";
 import { listMaintenanceTasks, snoozeMaintenanceTask, updateMaintenanceTask } from "../domain/maintenanceTasks";
 import { listServiceProviders } from "../domain/serviceProviders";
 import { listMaintenanceLog } from "../domain/maintenanceLog";
-import { listProblems } from "../domain/problems";
+import { listProblems, snoozeProblem } from "../domain/problems";
 import { deriveHomeState, itemHref, HOME_BAND_LIMIT, type AttentionItem, type HomeStateInputs } from "../attention";
 import { describeHomeHeadline, DEFAULT_SNOOZE_DAYS } from "../homeVoice";
 import { HOME_ITEM_TYPE_BY_ID } from "../homeKnowledge";
-import type { HomeItem, MaintenanceTask, ServiceProvider } from "../state";
+import type { HomeItem, MaintenanceTask, Problem, ServiceProvider } from "../state";
 import ThingFormSheet, { thingFormValuesToPatch, type ThingFormValues } from "./things/ThingFormSheet";
 import CareActionSheet from "./care/CareActionSheet";
+import ReportProblemSheet from "./problems/ReportProblemSheet";
+import ResolveProblemSheet from "./problems/ResolveProblemSheet";
 import MaintenanceTaskFormSheet, {
   maintenanceTaskFormValuesToPatch,
   type MaintenanceTaskFormValues,
@@ -49,6 +51,8 @@ export default function HomeModule() {
   const [addOpen, setAddOpen] = useState(false);
   const [editingTask, setEditingTask] = useState<MaintenanceTask | null>(null);
   const [actionTask, setActionTask] = useState<MaintenanceTask | null>(null);
+  const [reportOpen, setReportOpen] = useState(false);
+  const [resolvingProblem, setResolvingProblem] = useState<Problem | null>(null);
   const [providers, setProviders] = useState<ServiceProvider[]>([]);
   const addRef = useRef<HTMLDivElement>(null);
 
@@ -102,6 +106,19 @@ export default function HomeModule() {
     () => new Map((inputs?.maintenanceTasks ?? []).map((task) => [task.id, task])),
     [inputs]
   );
+  const problemsById = useMemo(
+    () => new Map((inputs?.problems ?? []).map((problem) => [problem.id, problem])),
+    [inputs]
+  );
+
+  async function runProblemAction(item: AttentionItem, run: (problem: Problem) => Promise<unknown>) {
+    const problem = problemsById.get(item.entityId);
+    if (!problem) return;
+    setPendingId(item.id);
+    await run(problem);
+    setPendingId(null);
+    await load();
+  }
 
   async function runTaskAction(item: AttentionItem, run: (task: MaintenanceTask) => Promise<unknown>) {
     const task = tasksById.get(item.entityId);
@@ -162,7 +179,12 @@ export default function HomeModule() {
   if (home.nothingTracked) {
     return (
       <div className="flex flex-col gap-6 pb-24 lg:pb-0">
-        <Header headline="Home Base doesn't know your home yet" />
+        <div className="flex flex-wrap items-end justify-between gap-3">
+          <Header headline="Home Base doesn't know your home yet" />
+          <Button size="sm" variant="secondary" onClick={() => setReportOpen(true)}>
+            Something&apos;s wrong
+          </Button>
+        </div>
         <EmptyState
           icon={Home}
           title="Start with one thing"
@@ -189,6 +211,13 @@ export default function HomeModule() {
           onSave={handleAddItem}
           triggerRef={addRef}
         />
+        <ReportProblemSheet
+          open={reportOpen}
+          instanceId={instanceId}
+          items={activeItems}
+          onClose={() => setReportOpen(false)}
+          onSaved={load}
+        />
       </div>
     );
   }
@@ -198,12 +227,36 @@ export default function HomeModule() {
 
   return (
     <div className="flex flex-col gap-7 pb-24 lg:pb-0">
-      <Header headline={describeHomeHeadline({ wrong: home.somethingWrong.length, worthDoing: home.worthTakingCareOf.length })} />
+      <div className="flex flex-wrap items-end justify-between gap-3">
+        <Header headline={describeHomeHeadline({ wrong: home.somethingWrong.length, worthDoing: home.worthTakingCareOf.length })} />
+        <Button size="sm" variant="secondary" onClick={() => setReportOpen(true)}>
+          Something&apos;s wrong
+        </Button>
+      </div>
 
       {home.somethingWrong.length > 0 && (
         <Band label="Something's wrong">
           {home.somethingWrong.map((item) => (
-            <Row key={item.id} item={item} tone="warning" />
+            <Row
+              key={item.id}
+              item={item}
+              tone="warning"
+              actions={
+                <>
+                  <Button size="sm" disabled={pendingId === item.id} onClick={() => setResolvingProblem(problemsById.get(item.entityId) ?? null)}>
+                    Take a look
+                  </Button>
+                  <Button
+                    size="sm"
+                    variant="secondary"
+                    disabled={pendingId === item.id}
+                    onClick={() => runProblemAction(item, (p) => snoozeProblem(p, DEFAULT_SNOOZE_DAYS))}
+                  >
+                    {pendingId === item.id ? "Snoozing…" : "Snooze"}
+                  </Button>
+                </>
+              }
+            />
           ))}
         </Band>
       )}
@@ -321,6 +374,21 @@ export default function HomeModule() {
         }}
         onSave={handleAddItem}
         triggerRef={addRef}
+      />
+      <ReportProblemSheet
+        open={reportOpen}
+        instanceId={instanceId}
+        items={activeItems}
+        onClose={() => setReportOpen(false)}
+        onSaved={load}
+      />
+      <ResolveProblemSheet
+        open={resolvingProblem !== null}
+        problem={resolvingProblem}
+        instanceId={instanceId}
+        providers={providers}
+        onClose={() => setResolvingProblem(null)}
+        onSaved={load}
       />
       <CareActionSheet
         open={actionTask !== null}

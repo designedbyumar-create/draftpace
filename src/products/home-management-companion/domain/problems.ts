@@ -1,7 +1,10 @@
 "use client";
 
+import type { Result } from "@/product-framework/result";
 import { problemSchema, type Problem } from "../state";
 import { createRecordRepository } from "./repository";
+import { createMaintenanceLogEntry } from "./maintenanceLog";
+import { updateServiceProvider } from "./serviceProviders";
 
 interface ProblemRow {
   id: string;
@@ -87,21 +90,56 @@ export const updateProblem = repository.update;
 export const archiveProblem = repository.archive;
 
 /**
- * The one canonical "resolve" action, mirroring
- * maintenanceTasks.ts's markMaintenanceTaskDone: sets resolutionStatus
- * and resolvedAt together, never a bare updateProblem({resolutionStatus})
- * call left to remember both fields itself.
+ * The one canonical "sorted" action, mirroring
+ * maintenanceTasks.ts's markMaintenanceTaskDone.
+ *
+ * A resolved problem is history: something was wrong with the house and
+ * then somebody fixed it, which is exactly what a person goes looking
+ * for months later. So this writes a real event to the same log that
+ * completed care writes to, rather than leaving resolved problems in a
+ * second place that History would have to remember to union in.
+ *
+ * The event is written first. If it fails, the problem stays open,
+ * because a fix nobody can look up afterwards is worse than one that is
+ * still on the list.
  */
 export async function resolveProblem(
   problem: Problem,
-  options?: { actualCostMinorUnits?: number; providerId?: string; resolvedAt?: string }
-) {
+  instanceId: string,
+  options?: {
+    actualCostMinorUnits?: number | null;
+    providerId?: string | null;
+    performedBy?: string | null;
+    notes?: string | null;
+    resolvedAt?: string;
+  }
+): Promise<Result<Problem>> {
   const resolvedAt = options?.resolvedAt ?? new Date().toISOString().slice(0, 10);
+
+  const logged = await createMaintenanceLogEntry(instanceId, {
+    taskId: null,
+    applianceId: problem.thingId,
+    description: problem.title,
+    performedAt: resolvedAt,
+    providerId: options?.providerId ?? problem.providerId,
+    performedBy: options?.performedBy ?? null,
+    costMinorUnits: options?.actualCostMinorUnits ?? problem.actualCostMinorUnits,
+    notes: options?.notes ?? null,
+    status: "active",
+    source: "manual",
+  });
+  if (!logged.ok) return logged;
+
+  const providerId = options?.providerId ?? problem.providerId;
+  if (providerId) {
+    await updateServiceProvider(providerId, { lastUsedAt: resolvedAt });
+  }
+
   return updateProblem(problem.id, {
     resolutionStatus: "resolved",
     resolvedAt,
     actualCostMinorUnits: options?.actualCostMinorUnits ?? problem.actualCostMinorUnits,
-    providerId: options?.providerId ?? problem.providerId,
+    providerId,
   });
 }
 

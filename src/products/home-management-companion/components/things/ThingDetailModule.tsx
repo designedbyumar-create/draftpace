@@ -27,6 +27,8 @@ import MaintenanceTaskFormSheet, {
 } from "../maintenance/MaintenanceTaskFormSheet";
 import ThingDocumentFormSheet, { thingDocumentFormValuesToPatch, type ThingDocumentFormValues } from "./ThingDocumentFormSheet";
 import CareActionSheet from "../care/CareActionSheet";
+import ReportProblemSheet from "../problems/ReportProblemSheet";
+import ResolveProblemSheet from "../problems/ResolveProblemSheet";
 
 type LoadStatus = "loading" | "ready" | "no-instance" | "not-found" | "error";
 
@@ -69,6 +71,8 @@ export default function ThingDetailModule() {
   const [taskFormOpen, setTaskFormOpen] = useState(false);
   const [documentFormOpen, setDocumentFormOpen] = useState(false);
   const [actionTask, setActionTask] = useState<MaintenanceTask | null>(null);
+  const [reportOpen, setReportOpen] = useState(false);
+  const [resolvingProblem, setResolvingProblem] = useState<Problem | null>(null);
   const [archiving, setArchiving] = useState(false);
 
   const load = useCallback(async () => {
@@ -318,7 +322,12 @@ export default function ThingDetailModule() {
               </div>
 
               <div>
-                <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-[var(--faint)]">Open problems</p>
+                <div className="flex items-center justify-between">
+                  <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-[var(--faint)]">Open problems</p>
+                  <Button size="sm" variant="ghost" iconLeft={<Plus size={13} aria-hidden />} onClick={() => setReportOpen(true)}>
+                    Report a problem
+                  </Button>
+                </div>
                 {openProblems.length === 0 ? (
                   <p className="mt-2 text-[13px] text-[var(--muted)]">Nothing currently broken here.</p>
                 ) : (
@@ -329,7 +338,15 @@ export default function ThingDetailModule() {
                           <WarningCircle className="h-4 w-4 shrink-0 text-[var(--warning)]" aria-hidden />
                           <p className="text-[13px] font-semibold text-[var(--text)]">{problem.title}</p>
                         </div>
-                        <p className="mt-1 text-[12px] text-[var(--muted)]">{SEVERITY_LABEL[problem.severity]} severity</p>
+                        <p className="mt-1 text-[12px] text-[var(--muted)]">
+                          {SEVERITY_LABEL[problem.severity]}
+                          {problem.resolutionStatus === "scheduled" && problem.scheduledAt && ` · someone's coming ${problem.scheduledAt}`}
+                        </p>
+                        <div className="mt-2.5">
+                          <Button size="sm" onClick={() => setResolvingProblem(problem)}>
+                            Take a look
+                          </Button>
+                        </div>
                       </li>
                     ))}
                   </ul>
@@ -417,6 +434,22 @@ export default function ThingDetailModule() {
         onSave={handleSaveTask}
       />
       <ThingDocumentFormSheet open={documentFormOpen} onClose={() => setDocumentFormOpen(false)} onSave={handleSaveDocument} />
+      <ReportProblemSheet
+        open={reportOpen}
+        instanceId={instanceId}
+        items={things}
+        defaultItemId={thing.id}
+        onClose={() => setReportOpen(false)}
+        onSaved={load}
+      />
+      <ResolveProblemSheet
+        open={resolvingProblem !== null}
+        problem={resolvingProblem}
+        instanceId={instanceId}
+        providers={providers}
+        onClose={() => setResolvingProblem(null)}
+        onSaved={load}
+      />
       <CareActionSheet
         open={actionTask !== null}
         task={actionTask}
