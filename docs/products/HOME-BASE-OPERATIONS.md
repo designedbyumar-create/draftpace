@@ -97,3 +97,48 @@ placeholder `XXXX-XXXX` rather than a real-looking fabricated code.
 - **`hmc_appliances`.** Superseded by `hmc_things` and left in place,
   unreferenced by application code. Dropping it is an explicit,
   founder-confirmed step and is not scheduled.
+
+## Deferred technical cleanup
+
+Recorded here so it is not rediscovered as a surprise. None of it is
+scheduled, and none of it affects behaviour today.
+
+### `appliance_id` should become `thing_id`
+
+`hmc_maintenance_tasks.appliance_id` and `hmc_maintenance_log.appliance_id`
+are named for the entity this product used to have. Their foreign keys
+were repointed at `hmc_things` in migration
+`202608190013_home_management_companion_maintenance_thing_fk.sql`, so a
+column called `appliance_id` now references a table called `things`. The
+TypeScript field `applianceId` mirrors it through the domain layer.
+
+This is confusing to read and correct to run. It is deliberately left
+alone because renaming it is a schema migration touching two live tables
+plus every domain module that maps them, which is a larger and riskier
+change than the confusion costs. If it is done later, the safe order is
+the one this product already used for the Things cutover: add the new
+column, backfill, reconcile, cut the domain layer over, verify, and only
+then drop the old column as a separate founder-confirmed step.
+
+Files carrying the name today: `state.ts`, `attention.ts`,
+`domain/maintenanceTasks.ts`, `domain/maintenanceLog.ts`,
+`domain/problems.ts`, `domain/confirmCandidate.ts`, three components, and
+`src/app/api/notifications/cron-hmc/route.ts`.
+
+### Manual cadence entry is days-only
+
+The task form asks "Repeats every (days)", so a job that belongs to a
+season rather than an interval cannot be entered by hand as one. The
+curated templates in `homeKnowledge.ts` carry `months` and are handled
+correctly end to end, including in Home's wording and the printable's
+year calendar; this affects only tasks somebody adds manually. Left
+alone as a scope decision, not an oversight.
+
+### Two rows of stale test data
+
+One item is stored with type `washer` where the current matcher resolves
+its name to `dishwasher`, and another with the custom type
+`basement-water-heater` where the matcher now resolves `water-heater`.
+Both predate fixes to the matcher and are the author's own test data.
+They are left untouched by instruction; nothing in the code depends on
+correcting them.
