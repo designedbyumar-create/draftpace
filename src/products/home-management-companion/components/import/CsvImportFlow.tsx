@@ -260,9 +260,9 @@ export default function CsvImportFlow({
         {error && <Alert tone="danger">{error}</Alert>}
 
         <Select label="What are you importing?" value={targetType} onChange={(e) => setTargetType(e.target.value as CandidateType)}>
-          <option value="thing">Things</option>
-          <option value="maintenanceTask">Maintenance tasks</option>
-          <option value="serviceProvider">Service providers</option>
+          <option value="thing">What's in your home</option>
+          <option value="maintenanceTask">Care and upkeep</option>
+          <option value="serviceProvider">People you use</option>
         </Select>
 
         <Select label="Name column" value={nameCol} onChange={(e) => setNameCol(e.target.value)}>

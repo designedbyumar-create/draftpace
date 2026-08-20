@@ -11,7 +11,7 @@ import { describeCadence, withArticle } from "../../homeVoice";
 import { createMaintenanceTask } from "../../domain/maintenanceTasks";
 import type { HomeItem } from "../../state";
 
-export interface ThingFormValues {
+export interface HomeItemFormValues {
   name: string;
   type: string;
   customType: string;
@@ -25,7 +25,7 @@ export interface ThingFormValues {
   notes: string;
 }
 
-const EMPTY_VALUES: ThingFormValues = {
+const EMPTY_VALUES: HomeItemFormValues = {
   name: "",
   type: "other",
   customType: "",
@@ -39,20 +39,20 @@ const EMPTY_VALUES: ThingFormValues = {
   notes: "",
 };
 
-function thingToFormValues(thing: HomeItem): ThingFormValues {
-  const known = HOME_ITEM_TYPES.some((t) => t.id === thing.type);
+function thingToFormValues(item: HomeItem): HomeItemFormValues {
+  const known = HOME_ITEM_TYPES.some((t) => t.id === item.type);
   return {
-    name: thing.name,
-    type: known ? thing.type : "other",
-    customType: known ? "" : thing.type,
-    brand: thing.brand ?? "",
-    model: thing.model ?? "",
-    location: thing.location ?? "",
-    purchaseDate: thing.purchaseDate ?? "",
-    installDate: thing.installDate ?? "",
-    warrantyExpiresAt: thing.warrantyExpiresAt ?? "",
-    documentLink: thing.documentLink ?? "",
-    notes: thing.notes ?? "",
+    name: item.name,
+    type: known ? item.type : "other",
+    customType: known ? "" : item.type,
+    brand: item.brand ?? "",
+    model: item.model ?? "",
+    location: item.location ?? "",
+    purchaseDate: item.purchaseDate ?? "",
+    installDate: item.installDate ?? "",
+    warrantyExpiresAt: item.warrantyExpiresAt ?? "",
+    documentLink: item.documentLink ?? "",
+    notes: item.notes ?? "",
   };
 }
 
@@ -70,14 +70,14 @@ function slugify(input: string): string {
 /**
  * Form values -> the patch shape the domain layer expects.
  *
- * When someone leaves the type alone but names the thing recognisably
+ * When someone leaves the type alone but names the item recognisably
  * ("Basement water heater"), the curated match wins over a slug made
  * from their words. Without this the record stores
  * "basement-water-heater", which matches nothing in homeKnowledge.ts, so
- * the product would propose that thing's care once at creation and then
+ * the product would propose that item's care once at creation and then
  * never know what it was again.
  */
-export function thingFormValuesToPatch(values: ThingFormValues): Record<string, unknown> {
+export function homeItemFormValuesToPatch(values: HomeItemFormValues): Record<string, unknown> {
   const recognised = values.type === "other" && !values.customType.trim() ? matchHomeItemType(values.name, "") : null;
   const type = recognised ? recognised.id : values.type === "other" ? slugify(values.customType || values.name) : values.type;
   return {
@@ -96,41 +96,41 @@ export function thingFormValuesToPatch(values: ThingFormValues): Record<string, 
   };
 }
 
-type SaveResult = { ok: true; thing: HomeItem } | { ok: false; message: string };
+type SaveResult = { ok: true; item: HomeItem } | { ok: false; message: string };
 
-export default function ThingFormSheet({
+export default function HomeItemFormSheet({
   open,
-  thing,
+  item,
   instanceId,
   onClose,
   onSave,
   triggerRef,
 }: {
   open: boolean;
-  thing: HomeItem | null;
+  item: HomeItem | null;
   instanceId: string | null;
   onClose: () => void;
-  onSave: (values: ThingFormValues) => Promise<SaveResult>;
+  onSave: (values: HomeItemFormValues) => Promise<SaveResult>;
   triggerRef?: React.RefObject<HTMLElement | null>;
 }) {
-  const [values, setValues] = useState<ThingFormValues>(EMPTY_VALUES);
+  const [values, setValues] = useState<HomeItemFormValues>(EMPTY_VALUES);
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
   const [step, setStep] = useState<"form" | "suggestions">("form");
-  const [createdThing, setCreatedThing] = useState<HomeItem | null>(null);
+  const [createdItem, setCreatedThing] = useState<HomeItem | null>(null);
   const [checkedTasks, setCheckedTasks] = useState<Set<number>>(new Set());
   const [addingTasks, setAddingTasks] = useState(false);
 
-  const suggestion = createdThing ? matchHomeItemType(createdThing.name, createdThing.type) : null;
+  const suggestion = createdItem ? matchHomeItemType(createdItem.name, createdItem.type) : null;
 
   useEffect(() => {
     if (open) {
-      setValues(thing ? thingToFormValues(thing) : EMPTY_VALUES);
+      setValues(item ? thingToFormValues(item) : EMPTY_VALUES);
       setError(null);
       setStep("form");
       setCreatedThing(null);
     }
-  }, [open, thing]);
+  }, [open, item]);
 
   async function handleSave() {
     if (!values.name.trim()) {
@@ -144,13 +144,13 @@ export default function ThingFormSheet({
       setError(result.message);
       return;
     }
-    if (thing) {
+    if (item) {
       onClose();
       return;
     }
-    const match = matchHomeItemType(result.thing.name, result.thing.type);
+    const match = matchHomeItemType(result.item.name, result.item.type);
     if (match && match.care.length > 0) {
-      setCreatedThing(result.thing);
+      setCreatedThing(result.item);
       setCheckedTasks(new Set(match.care.map((_, i) => i)));
       setStep("suggestions");
       return;
@@ -159,7 +159,7 @@ export default function ThingFormSheet({
   }
 
   async function handleConfirmSuggestions() {
-    if (!createdThing || !suggestion || !instanceId) {
+    if (!createdItem || !suggestion || !instanceId) {
       onClose();
       return;
     }
@@ -172,7 +172,7 @@ export default function ThingFormSheet({
     for (const index of checkedTasks) {
       const task = suggestion.care[index];
       const created = await createMaintenanceTask(instanceId, {
-        applianceId: createdThing.id,
+        applianceId: createdItem.id,
         name: task.taskName,
         cadenceDays: task.intervalDays,
         careTemplateId: task.id,
@@ -201,7 +201,7 @@ export default function ThingFormSheet({
     });
   }
 
-  if (step === "suggestions" && createdThing && suggestion) {
+  if (step === "suggestions" && createdItem && suggestion) {
     return (
       <RecordFormSheet
         open={open}
@@ -249,7 +249,7 @@ export default function ThingFormSheet({
     <RecordFormSheet
       open={open}
       onClose={onClose}
-      title={thing ? "Edit" : "Add something to your home"}
+      title={item ? "Edit" : "Add something to your home"}
       description="Whatever it is, call it what you call it. Only the name is required."
       triggerRef={triggerRef}
       footer={

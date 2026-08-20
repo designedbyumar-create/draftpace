@@ -174,7 +174,7 @@ function describeCareFor(task: MaintenanceTask, template: CareTemplate | null, n
 
 /** The one place an item's own surface is addressed, so the route shape lives in a single line. */
 export function itemHref(itemId: string): string {
-  return `/app/products/home-management-companion/things/${itemId}`;
+  return `/app/products/home-management-companion/item/${itemId}`;
 }
 
 export interface AttentionInputs {

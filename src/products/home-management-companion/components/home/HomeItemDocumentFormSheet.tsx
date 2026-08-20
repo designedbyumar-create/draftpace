@@ -7,7 +7,7 @@ import Select from "@/design-system/Select";
 import RecordFormSheet from "../shared/RecordFormSheet";
 import { homeItemDocumentKindSchema } from "../../state";
 
-export interface ThingDocumentFormValues {
+export interface HomeItemDocumentFormValues {
   kind: string;
   label: string;
   documentLink: string;
@@ -15,7 +15,7 @@ export interface ThingDocumentFormValues {
   notes: string;
 }
 
-const EMPTY_VALUES: ThingDocumentFormValues = {
+const EMPTY_VALUES: HomeItemDocumentFormValues = {
   kind: "warranty",
   label: "",
   documentLink: "",
@@ -30,7 +30,7 @@ const KIND_LABEL: Record<string, string> = {
   other: "Other",
 };
 
-export function thingDocumentFormValuesToPatch(values: ThingDocumentFormValues): Record<string, unknown> | string {
+export function homeItemDocumentFormValuesToPatch(values: HomeItemDocumentFormValues): Record<string, unknown> | string {
   if (!values.documentLink.trim()) return "Paste a link to the document first.";
   return {
     kind: values.kind,
@@ -51,10 +51,10 @@ export default function HomeItemDocumentFormSheet({
 }: {
   open: boolean;
   onClose: () => void;
-  onSave: (values: ThingDocumentFormValues) => Promise<string | null>;
+  onSave: (values: HomeItemDocumentFormValues) => Promise<string | null>;
   triggerRef?: React.RefObject<HTMLElement | null>;
 }) {
-  const [values, setValues] = useState<ThingDocumentFormValues>(EMPTY_VALUES);
+  const [values, setValues] = useState<HomeItemDocumentFormValues>(EMPTY_VALUES);
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
 

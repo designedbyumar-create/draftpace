@@ -12,7 +12,7 @@ import { findHomeManagementCompanionInstanceId, markHomeManagementCompanionSetup
 import { listHomeItems, createHomeItem } from "../domain/homeItems";
 import { listMaintenanceTasks, createMaintenanceTask } from "../domain/maintenanceTasks";
 import type { HomeItem, MaintenanceTask } from "../state";
-import ThingFormSheet, { thingFormValuesToPatch, type ThingFormValues } from "./things/ThingFormSheet";
+import HomeItemFormSheet, { homeItemFormValuesToPatch, type HomeItemFormValues } from "./home/HomeItemFormSheet";
 import MaintenanceTaskFormSheet, {
   maintenanceTaskFormValuesToPatch,
   type MaintenanceTaskFormValues,
@@ -39,7 +39,7 @@ export default function SetupModule() {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [instanceId, setInstanceId] = useState<string | null>(null);
   const [currentStep, setCurrentStep] = useState(1);
-  const [things, setThings] = useState<HomeItem[]>([]);
+  const [items, setItems] = useState<HomeItem[]>([]);
   const [tasks, setTasks] = useState<MaintenanceTask[]>([]);
   const [thingFormOpen, setThingFormOpen] = useState(false);
   const [taskFormOpen, setTaskFormOpen] = useState(false);
@@ -61,8 +61,8 @@ export default function SetupModule() {
       return;
     }
     setInstanceId(found.id);
-    const [thingsResult, tasksResult] = await Promise.all([listHomeItems(found.id), listMaintenanceTasks(found.id)]);
-    setThings(thingsResult.ok ? thingsResult.data.filter((t) => t.status !== "archived") : []);
+    const [itemsResult, tasksResult] = await Promise.all([listHomeItems(found.id), listMaintenanceTasks(found.id)]);
+    setItems(itemsResult.ok ? itemsResult.data.filter((t) => t.status !== "archived") : []);
     setTasks(tasksResult.ok ? tasksResult.data.filter((t) => t.status !== "archived") : []);
     setStatus("ready");
   }, []);
@@ -71,12 +71,12 @@ export default function SetupModule() {
     load();
   }, [load]);
 
-  async function handleSaveThing(values: ThingFormValues) {
+  async function handleSaveThing(values: HomeItemFormValues) {
     if (!instanceId) return { ok: false as const, message: "Couldn't find your home. Try reloading the page." };
-    const result = await createHomeItem(instanceId, thingFormValuesToPatch(values));
+    const result = await createHomeItem(instanceId, homeItemFormValuesToPatch(values));
     if (!result.ok) return { ok: false as const, message: describeResultError(result.error) };
-    setThings((prev) => [...prev, result.data]);
-    return { ok: true as const, thing: result.data };
+    setItems((prev) => [...prev, result.data]);
+    return { ok: true as const, item: result.data };
   }
 
   async function handleSaveTask(values: MaintenanceTaskFormValues): Promise<string | null> {
@@ -191,13 +191,13 @@ export default function SetupModule() {
           {currentStep === 2 && (
             <div className="mt-5">
               <p className="text-[13px] leading-relaxed text-[var(--muted)]">
-                Add a few of the things in your home, with a warranty date if you have one.
+                Add a few of the items in your home, with a warranty date if you have one.
               </p>
-              {things.length > 0 && (
+              {items.length > 0 && (
                 <ul className="mt-4 flex flex-col gap-2">
-                  {things.map((thing) => (
-                    <li key={thing.id} className="rounded-lg border border-[var(--border)] px-3.5 py-2.5 text-[13px] font-semibold text-[var(--text)]">
-                      {thing.name}
+                  {items.map((item) => (
+                    <li key={item.id} className="rounded-lg border border-[var(--border)] px-3.5 py-2.5 text-[13px] font-semibold text-[var(--text)]">
+                      {item.name}
                     </li>
                   ))}
                 </ul>
@@ -251,9 +251,9 @@ export default function SetupModule() {
         </div>
       </Surface>
 
-      <ThingFormSheet
+      <HomeItemFormSheet
         open={thingFormOpen}
-        thing={null}
+        item={null}
         instanceId={instanceId}
         onClose={() => setThingFormOpen(false)}
         onSave={handleSaveThing}
@@ -262,7 +262,7 @@ export default function SetupModule() {
       <MaintenanceTaskFormSheet
         open={taskFormOpen}
         task={null}
-        things={things}
+        items={items}
         onClose={() => setTaskFormOpen(false)}
         onSave={handleSaveTask}
         triggerRef={addTaskRef}

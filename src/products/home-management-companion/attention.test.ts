@@ -190,7 +190,7 @@ describe("deriveAttentionItems: warranties", () => {
 
   it("deep-links a warranty to the item it belongs to", () => {
     const item = makeHomeItem({ warrantyExpiresAt: isoDaysFromNow(10) });
-    expect(deriveAttentionItems({ ...EMPTY, homeItems: [item] }, NOW)[0].href).toContain("/things/item-1");
+    expect(deriveAttentionItems({ ...EMPTY, homeItems: [item] }, NOW)[0].href).toContain("/item/item-1");
   });
 });
 
@@ -226,7 +226,7 @@ describe("deriveAttentionItems: problems", () => {
 
   it("deep-links a problem to its item when it has one", () => {
     const items = deriveAttentionItems({ ...EMPTY, problems: [makeProblem({ thingId: "item-1" })] }, NOW);
-    expect(items[0].href).toContain("/things/item-1");
+    expect(items[0].href).toContain("/item/item-1");
   });
 });
 

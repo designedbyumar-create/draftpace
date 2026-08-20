@@ -17,7 +17,7 @@ import { deriveHomeState, itemHref, HOME_BAND_LIMIT, type AttentionItem, type Ho
 import { describeHomeHeadline, DEFAULT_SNOOZE_DAYS } from "../homeVoice";
 import { HOME_ITEM_TYPE_BY_ID } from "../homeKnowledge";
 import type { HomeItem, MaintenanceTask, Problem, ServiceProvider } from "../state";
-import ThingFormSheet, { thingFormValuesToPatch, type ThingFormValues } from "./things/ThingFormSheet";
+import HomeItemFormSheet, { homeItemFormValuesToPatch, type HomeItemFormValues } from "./home/HomeItemFormSheet";
 import CareActionSheet from "./care/CareActionSheet";
 import ReportProblemSheet from "./problems/ReportProblemSheet";
 import ResolveProblemSheet from "./problems/ResolveProblemSheet";
@@ -129,12 +129,12 @@ export default function HomeModule() {
     await load();
   }
 
-  async function handleAddItem(values: ThingFormValues) {
+  async function handleAddItem(values: HomeItemFormValues) {
     if (!instanceId) return { ok: false as const, message: "Couldn't find your home. Try reloading the page." };
-    const result = await createHomeItem(instanceId, thingFormValuesToPatch(values));
+    const result = await createHomeItem(instanceId, homeItemFormValuesToPatch(values));
     if (!result.ok) return { ok: false as const, message: describeResultError(result.error) };
     await load();
-    return { ok: true as const, thing: result.data };
+    return { ok: true as const, item: result.data };
   }
 
   async function handleSaveTask(values: MaintenanceTaskFormValues): Promise<string | null> {
@@ -187,7 +187,7 @@ export default function HomeModule() {
         </div>
         <EmptyState
           icon={Home}
-          title="Start with one thing"
+          title="Start anywhere"
           description="Add something in your home, and Home Base will tell you what it needs and when, so you don't have to keep track of it."
           action={
             <div ref={addRef} className="inline-flex flex-wrap justify-center gap-2">
@@ -200,9 +200,9 @@ export default function HomeModule() {
             </div>
           }
         />
-        <ThingFormSheet
+        <HomeItemFormSheet
           open={addOpen}
-          thing={null}
+          item={null}
           instanceId={instanceId}
           onClose={() => {
             setAddOpen(false);
@@ -364,9 +364,9 @@ export default function HomeModule() {
       {/* Closing the sheet reloads: confirming suggested care creates tasks
           inside the sheet, and Home must show them straight away rather
           than only after the person happens to navigate. */}
-      <ThingFormSheet
+      <HomeItemFormSheet
         open={addOpen}
-        thing={null}
+        item={null}
         instanceId={instanceId}
         onClose={() => {
           setAddOpen(false);
@@ -401,7 +401,7 @@ export default function HomeModule() {
       <MaintenanceTaskFormSheet
         open={editingTask !== null}
         task={editingTask}
-        things={activeItems}
+        items={activeItems}
         onClose={() => setEditingTask(null)}
         onSave={handleSaveTask}
       />

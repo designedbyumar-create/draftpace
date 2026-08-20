@@ -57,7 +57,7 @@ export function maintenanceTaskFormValuesToPatch(values: MaintenanceTaskFormValu
 export default function MaintenanceTaskFormSheet({
   open,
   task,
-  things,
+  items,
   defaultApplianceId,
   onClose,
   onSave,
@@ -65,7 +65,7 @@ export default function MaintenanceTaskFormSheet({
 }: {
   open: boolean;
   task: MaintenanceTask | null;
-  things: HomeItem[];
+  items: HomeItem[];
   defaultApplianceId?: string;
   onClose: () => void;
   onSave: (values: MaintenanceTaskFormValues) => Promise<string | null>;
@@ -135,7 +135,7 @@ export default function MaintenanceTaskFormSheet({
         onChange={(event) => setValues({ ...values, applianceId: event.target.value })}
       >
         <option value="">Not tied to anything in particular</option>
-        {things.map((thing) => (
+        {items.map((thing) => (
           <option key={thing.id} value={thing.id}>
             {thing.name}
           </option>

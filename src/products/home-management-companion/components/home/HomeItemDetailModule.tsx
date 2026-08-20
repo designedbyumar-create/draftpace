@@ -20,12 +20,12 @@ import { listHomeItemDocuments, createHomeItemDocument } from "../../domain/home
 import { HOME_ITEM_TYPE_BY_ID } from "../../homeKnowledge";
 import { STATUS_LABEL, STATUS_TONE } from "../shared/lifecycle";
 import type { HomeItem, MaintenanceTask, MaintenanceLogEntry, Problem, ServiceProvider, HomeItemDocument } from "../../state";
-import ThingFormSheet, { thingFormValuesToPatch, type ThingFormValues } from "./ThingFormSheet";
+import HomeItemFormSheet, { homeItemFormValuesToPatch, type HomeItemFormValues } from "./HomeItemFormSheet";
 import MaintenanceTaskFormSheet, {
   maintenanceTaskFormValuesToPatch,
   type MaintenanceTaskFormValues,
 } from "../maintenance/MaintenanceTaskFormSheet";
-import ThingDocumentFormSheet, { thingDocumentFormValuesToPatch, type ThingDocumentFormValues } from "./ThingDocumentFormSheet";
+import HomeItemDocumentFormSheet, { homeItemDocumentFormValuesToPatch, type HomeItemDocumentFormValues } from "./HomeItemDocumentFormSheet";
 import CareActionSheet from "../care/CareActionSheet";
 import ReportProblemSheet from "../problems/ReportProblemSheet";
 import ResolveProblemSheet from "../problems/ResolveProblemSheet";
@@ -53,14 +53,14 @@ function typeLabel(type: string): string {
  * this one Thing client-side (small per-home data volumes, same pattern
  * RecordsModule and MaintenanceModule already use).
  */
-export default function ThingDetailModule() {
-  const params = useParams<{ thingId: string }>();
-  const thingId = params.thingId;
+export default function HomeItemDetailModule() {
+  const params = useParams<{ itemId: string }>();
+  const itemId = params.itemId;
 
   const [status, setStatus] = useState<LoadStatus>("loading");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [instanceId, setInstanceId] = useState<string | null>(null);
-  const [things, setThings] = useState<HomeItem[]>([]);
+  const [items, setItems] = useState<HomeItem[]>([]);
   const [tasks, setTasks] = useState<MaintenanceTask[]>([]);
   const [logEntries, setLogEntries] = useState<MaintenanceLogEntry[]>([]);
   const [problems, setProblems] = useState<Problem[]>([]);
@@ -89,7 +89,7 @@ export default function ThingDetailModule() {
       return;
     }
     setInstanceId(found.id);
-    const [thingsResult, tasksResult, logResult, problemsResult, providersResult, documentsResult] = await Promise.all([
+    const [itemsResult, tasksResult, logResult, problemsResult, providersResult, documentsResult] = await Promise.all([
       listHomeItems(found.id),
       listMaintenanceTasks(found.id),
       listMaintenanceLog(found.id),
@@ -97,60 +97,60 @@ export default function ThingDetailModule() {
       listServiceProviders(found.id),
       listHomeItemDocuments(found.id),
     ]);
-    if (!thingsResult.ok) {
-      setErrorMessage(describeResultError(thingsResult.error));
+    if (!itemsResult.ok) {
+      setErrorMessage(describeResultError(itemsResult.error));
       setStatus("error");
       return;
     }
-    if (!thingsResult.data.some((t) => t.id === thingId)) {
+    if (!itemsResult.data.some((t) => t.id === itemId)) {
       setStatus("not-found");
       return;
     }
-    setThings(thingsResult.data);
+    setItems(itemsResult.data);
     setTasks(tasksResult.ok ? tasksResult.data : []);
     setLogEntries(logResult.ok ? logResult.data : []);
     setProblems(problemsResult.ok ? problemsResult.data : []);
     setProviders(providersResult.ok ? providersResult.data : []);
     setDocuments(documentsResult.ok ? documentsResult.data : []);
     setStatus("ready");
-  }, [thingId]);
+  }, [itemId]);
 
   useEffect(() => {
     load();
   }, [load]);
 
-  const thing = useMemo(() => things.find((t) => t.id === thingId) ?? null, [things, thingId]);
-  const thingTasks = useMemo(() => tasks.filter((t) => t.applianceId === thingId && t.status !== "archived"), [tasks, thingId]);
-  const thingLog = useMemo(
-    () => logEntries.filter((entry) => entry.applianceId === thingId).sort((a, b) => (a.performedAt < b.performedAt ? 1 : -1)),
-    [logEntries, thingId]
+  const item = useMemo(() => items.find((t) => t.id === itemId) ?? null, [items, itemId]);
+  const itemTasks = useMemo(() => tasks.filter((t) => t.applianceId === itemId && t.status !== "archived"), [tasks, itemId]);
+  const itemLog = useMemo(
+    () => logEntries.filter((entry) => entry.applianceId === itemId).sort((a, b) => (a.performedAt < b.performedAt ? 1 : -1)),
+    [logEntries, itemId]
   );
-  const thingProblems = useMemo(() => problems.filter((p) => p.thingId === thingId && p.status !== "archived"), [problems, thingId]);
-  const openProblems = thingProblems.filter((p) => p.resolutionStatus !== "resolved");
-  const resolvedProblems = thingProblems.filter((p) => p.resolutionStatus === "resolved");
-  const thingDocuments = useMemo(() => documents.filter((d) => d.thingId === thingId && d.status !== "archived"), [documents, thingId]);
+  const itemProblems = useMemo(() => problems.filter((p) => p.thingId === itemId && p.status !== "archived"), [problems, itemId]);
+  const openProblems = itemProblems.filter((p) => p.resolutionStatus !== "resolved");
+  const resolvedProblems = itemProblems.filter((p) => p.resolutionStatus === "resolved");
+  const itemDocuments = useMemo(() => documents.filter((d) => d.thingId === itemId && d.status !== "archived"), [documents, itemId]);
   const providerById = useMemo(() => new Map(providers.map((p) => [p.id, p])), [providers]);
   const linkedProviders = useMemo(() => {
-    const ids = new Set(thingProblems.map((p) => p.providerId).filter((id): id is string => Boolean(id)));
+    const ids = new Set(itemProblems.map((p) => p.providerId).filter((id): id is string => Boolean(id)));
     return Array.from(ids)
       .map((id) => providerById.get(id))
       .filter((p): p is ServiceProvider => Boolean(p));
-  }, [thingProblems, providerById]);
+  }, [itemProblems, providerById]);
 
-  async function handleSaveThing(values: ThingFormValues) {
-    if (!thing) return { ok: false as const, message: "Thing not loaded yet." };
-    const result = await updateHomeItem(thing.id, thingFormValuesToPatch(values));
+  async function handleSaveThing(values: HomeItemFormValues) {
+    if (!item) return { ok: false as const, message: "Not loaded yet. Try again in a moment." };
+    const result = await updateHomeItem(item.id, homeItemFormValuesToPatch(values));
     if (!result.ok) return { ok: false as const, message: describeResultError(result.error) };
-    setThings((prev) => prev.map((t) => (t.id === result.data.id ? result.data : t)));
-    return { ok: true as const, thing: result.data };
+    setItems((prev) => prev.map((t) => (t.id === result.data.id ? result.data : t)));
+    return { ok: true as const, item: result.data };
   }
 
   async function handleToggleArchive() {
-    if (!thing) return;
+    if (!item) return;
     setArchiving(true);
-    const result = thing.status === "archived" ? await updateHomeItem(thing.id, { status: "active" }) : await archiveHomeItem(thing.id);
+    const result = item.status === "archived" ? await updateHomeItem(item.id, { status: "active" }) : await archiveHomeItem(item.id);
     setArchiving(false);
-    if (result.ok) setThings((prev) => prev.map((t) => (t.id === result.data.id ? result.data : t)));
+    if (result.ok) setItems((prev) => prev.map((t) => (t.id === result.data.id ? result.data : t)));
   }
 
   async function handleSaveTask(values: MaintenanceTaskFormValues): Promise<string | null> {
@@ -164,11 +164,11 @@ export default function ThingDetailModule() {
   }
 
 
-  async function handleSaveDocument(values: ThingDocumentFormValues): Promise<string | null> {
-    if (!instanceId || !thing) return "Couldn't find your home. Try reloading the page.";
-    const patch = thingDocumentFormValuesToPatch(values);
+  async function handleSaveDocument(values: HomeItemDocumentFormValues): Promise<string | null> {
+    if (!instanceId || !item) return "Couldn't find your home. Try reloading the page.";
+    const patch = homeItemDocumentFormValuesToPatch(values);
     if (typeof patch === "string") return patch;
-    const result = await createHomeItemDocument(instanceId, { ...patch, thingId: thing.id });
+    const result = await createHomeItemDocument(instanceId, { ...patch, thingId: item.id });
     if (!result.ok) return describeResultError(result.error);
     setDocuments((prev) => [...prev, result.data]);
     return null;
@@ -186,7 +186,7 @@ export default function ThingDetailModule() {
     return (
       <EmptyState
         icon={Home}
-        title="Couldn't load this thing"
+        title="Couldn't load this"
         description={errorMessage ?? "Something went wrong. Try again."}
         action={
           <Button size="sm" variant="secondary" onClick={load}>
@@ -201,7 +201,7 @@ export default function ThingDetailModule() {
     return <EmptyState icon={Home} title="No product instance found" description="This shouldn't happen for an owner. Contact support." />;
   }
 
-  if (status === "not-found" || !thing) {
+  if (status === "not-found" || !item) {
     return (
       <EmptyState
         icon={Home}
@@ -230,14 +230,14 @@ export default function ThingDetailModule() {
 
       <div className="mt-4 flex flex-wrap items-start justify-between gap-4">
         <div className="min-w-0">
-          <p className="text-[13px] text-[var(--muted)]">{typeLabel(thing.type)}</p>
-          <h1 className="mt-1 text-xl font-semibold text-[var(--text)]">{thing.name}</h1>
-          {(thing.brand || thing.model) && (
-            <p className="mt-1 text-[13px] text-[var(--muted)]">{[thing.brand, thing.model].filter(Boolean).join(" ")}</p>
+          <p className="text-[13px] text-[var(--muted)]">{typeLabel(item.type)}</p>
+          <h1 className="mt-1 text-xl font-semibold text-[var(--text)]">{item.name}</h1>
+          {(item.brand || item.model) && (
+            <p className="mt-1 text-[13px] text-[var(--muted)]">{[item.brand, item.model].filter(Boolean).join(" ")}</p>
           )}
         </div>
         <div className="flex items-center gap-2">
-          {thing.status !== "active" && <Badge tone={STATUS_TONE[thing.status]}>{STATUS_LABEL[thing.status]}</Badge>}
+          {item.status !== "active" && <Badge tone={STATUS_TONE[item.status]}>{STATUS_LABEL[item.status]}</Badge>}
           <Button size="sm" variant="secondary" onClick={() => setEditOpen(true)}>
             Edit
           </Button>
@@ -245,29 +245,29 @@ export default function ThingDetailModule() {
       </div>
 
       <div className="mt-6">
-        <Tabs tabs={TABS} activeId={activeTab} onChange={setActiveTab} idPrefix="thing-detail" />
+        <Tabs tabs={TABS} activeId={activeTab} onChange={setActiveTab} idPrefix="item-detail" />
 
         <div className="mt-5">
-          <TabPanel id="identity" activeId={activeTab} idPrefix="thing-detail">
+          <TabPanel id="identity" activeId={activeTab} idPrefix="item-detail">
             <div className="flex flex-col gap-4">
               <Surface className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <Field label="Type" value={typeLabel(thing.type)} />
-                <Field label="Location" value={thing.location} />
-                <Field label="Brand" value={thing.brand} />
-                <Field label="Model" value={thing.model} />
-                <Field label="Purchased" value={thing.purchaseDate} />
-                <Field label="Installed" value={thing.installDate} />
-                <Field label="Warranty expires" value={thing.warrantyExpiresAt} />
+                <Field label="Type" value={typeLabel(item.type)} />
+                <Field label="Location" value={item.location} />
+                <Field label="Brand" value={item.brand} />
+                <Field label="Model" value={item.model} />
+                <Field label="Purchased" value={item.purchaseDate} />
+                <Field label="Installed" value={item.installDate} />
+                <Field label="Warranty expires" value={item.warrantyExpiresAt} />
               </Surface>
-              {thing.notes && (
+              {item.notes && (
                 <Surface>
                   <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-[var(--faint)]">Notes</p>
-                  <p className="mt-1.5 text-[13px] leading-relaxed text-[var(--text)]">{thing.notes}</p>
+                  <p className="mt-1.5 text-[13px] leading-relaxed text-[var(--text)]">{item.notes}</p>
                 </Surface>
               )}
-              {thing.documentLink && (
+              {item.documentLink && (
                 <a
-                  href={thing.documentLink}
+                  href={item.documentLink}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex w-fit items-center gap-1.5 text-[13px] font-semibold text-[var(--primary)] hover:underline"
@@ -280,17 +280,17 @@ export default function ThingDetailModule() {
                 <Button
                   size="sm"
                   variant="secondary"
-                  iconLeft={thing.status === "archived" ? <RotateCcw size={13} aria-hidden /> : <Archive size={13} aria-hidden />}
+                  iconLeft={item.status === "archived" ? <RotateCcw size={13} aria-hidden /> : <Archive size={13} aria-hidden />}
                   onClick={handleToggleArchive}
                   disabled={archiving}
                 >
-                  {archiving ? "Working…" : thing.status === "archived" ? "Restore this" : "Archive this"}
+                  {archiving ? "Working…" : item.status === "archived" ? "Restore this" : "Archive this"}
                 </Button>
               </div>
             </div>
           </TabPanel>
 
-          <TabPanel id="care" activeId={activeTab} idPrefix="thing-detail">
+          <TabPanel id="care" activeId={activeTab} idPrefix="item-detail">
             <div className="flex flex-col gap-5">
               <div>
                 <div className="flex items-center justify-between">
@@ -299,11 +299,11 @@ export default function ThingDetailModule() {
                     Add task
                   </Button>
                 </div>
-                {thingTasks.length === 0 ? (
-                  <p className="mt-2 text-[13px] text-[var(--muted)]">No recurring tasks tied to this thing yet.</p>
+                {itemTasks.length === 0 ? (
+                  <p className="mt-2 text-[13px] text-[var(--muted)]">Nothing recurring set up for this yet.</p>
                 ) : (
                   <ul className="mt-2 flex flex-col gap-2">
-                    {thingTasks.map((task) => (
+                    {itemTasks.map((task) => (
                       <li key={task.id} className="flex items-center justify-between gap-3 rounded-lg border border-[var(--border)] p-3.5">
                         <div>
                           <p className="text-[13px] font-semibold text-[var(--text)]">{task.name}</p>
@@ -355,12 +355,12 @@ export default function ThingDetailModule() {
             </div>
           </TabPanel>
 
-          <TabPanel id="history" activeId={activeTab} idPrefix="thing-detail">
-            {thingLog.length === 0 && resolvedProblems.length === 0 ? (
+          <TabPanel id="history" activeId={activeTab} idPrefix="item-detail">
+            {itemLog.length === 0 && resolvedProblems.length === 0 ? (
               <EmptyState icon={Wrench} title="No history yet" description="Completed maintenance and resolved problems will show up here." />
             ) : (
               <ul className="flex flex-col gap-2">
-                {thingLog.map((entry) => (
+                {itemLog.map((entry) => (
                   <li key={entry.id} className="rounded-lg border border-[var(--border)] p-3.5">
                     <p className="text-[13px] font-semibold text-[var(--text)]">{entry.description}</p>
                     <p className="mt-0.5 text-[12px] text-[var(--muted)]">{entry.performedAt}</p>
@@ -376,18 +376,18 @@ export default function ThingDetailModule() {
             )}
           </TabPanel>
 
-          <TabPanel id="records" activeId={activeTab} idPrefix="thing-detail">
+          <TabPanel id="records" activeId={activeTab} idPrefix="item-detail">
             <div className="flex items-center justify-between">
               <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-[var(--faint)]">Documents</p>
               <Button size="sm" variant="ghost" iconLeft={<Plus size={13} aria-hidden />} onClick={() => setDocumentFormOpen(true)}>
                 Add document
               </Button>
             </div>
-            {thingDocuments.length === 0 ? (
+            {itemDocuments.length === 0 ? (
               <p className="mt-2 text-[13px] text-[var(--muted)]">No warranty, receipt, or manual saved here yet.</p>
             ) : (
               <ul className="mt-2 flex flex-col gap-2">
-                {thingDocuments.map((doc) => (
+                {itemDocuments.map((doc) => (
                   <li key={doc.id} className="rounded-lg border border-[var(--border)] p-3.5">
                     <a
                       href={doc.documentLink}
@@ -407,9 +407,9 @@ export default function ThingDetailModule() {
             )}
           </TabPanel>
 
-          <TabPanel id="people" activeId={activeTab} idPrefix="thing-detail">
+          <TabPanel id="people" activeId={activeTab} idPrefix="item-detail">
             {linkedProviders.length === 0 ? (
-              <EmptyState icon={User} title="No service history linked yet" description="Providers who've worked on this thing show up here once a problem lists them." />
+              <EmptyState icon={User} title="No service history linked yet" description="People who've worked on this show up here once a problem names them." />
             ) : (
               <ul className="flex flex-col gap-2">
                 {linkedProviders.map((provider) => (
@@ -424,21 +424,21 @@ export default function ThingDetailModule() {
         </div>
       </div>
 
-      <ThingFormSheet open={editOpen} thing={thing} instanceId={instanceId} onClose={() => setEditOpen(false)} onSave={handleSaveThing} />
+      <HomeItemFormSheet open={editOpen} item={item} instanceId={instanceId} onClose={() => setEditOpen(false)} onSave={handleSaveThing} />
       <MaintenanceTaskFormSheet
         open={taskFormOpen}
         task={null}
-        things={things.filter((t) => t.status !== "archived")}
-        defaultApplianceId={thing.id}
+        items={items.filter((t) => t.status !== "archived")}
+        defaultApplianceId={item.id}
         onClose={() => setTaskFormOpen(false)}
         onSave={handleSaveTask}
       />
-      <ThingDocumentFormSheet open={documentFormOpen} onClose={() => setDocumentFormOpen(false)} onSave={handleSaveDocument} />
+      <HomeItemDocumentFormSheet open={documentFormOpen} onClose={() => setDocumentFormOpen(false)} onSave={handleSaveDocument} />
       <ReportProblemSheet
         open={reportOpen}
         instanceId={instanceId}
-        items={things}
-        defaultItemId={thing.id}
+        items={items}
+        defaultItemId={item.id}
         onClose={() => setReportOpen(false)}
         onSaved={load}
       />

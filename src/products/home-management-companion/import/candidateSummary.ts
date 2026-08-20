@@ -13,7 +13,7 @@ import type {
  */
 
 export const CANDIDATE_TYPE_LABEL: Record<ExtractionCandidate["candidateType"], string> = {
-  thing: "thing",
+  thing: "home item",
   maintenanceTask: "maintenance task",
   serviceProvider: "service provider",
   unsupported: "unrecognized entry",
