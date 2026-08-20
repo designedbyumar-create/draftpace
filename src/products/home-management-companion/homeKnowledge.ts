@@ -92,6 +92,59 @@ export const HOME_ITEM_CATEGORY_LABEL: Record<HomeItemCategory, string> = {
   renting: "Renting",
 };
 
+/**
+ * The identity facts worth asking about, which depend on what kind of
+ * thing it is.
+ *
+ * These fields were designed when this product only tracked appliances,
+ * and every one of them makes sense for a dishwasher. Applied uniformly
+ * they stop making sense fast: a lease has no model number, a deed has
+ * no brand, and a rodent check was never purchased. Asking anyway is how
+ * a product tells somebody it does not really understand what they just
+ * added, and the detail page answers with a column of "Not set" that
+ * reads like the person failed to finish something.
+ *
+ * A value that already exists is always shown, whatever the category, so
+ * narrowing this can never hide something somebody deliberately entered.
+ */
+export type HomeItemIdentityField = "brand" | "model" | "purchaseDate" | "installDate" | "warrantyExpiresAt";
+
+const APPLIANCE_FIELDS: HomeItemIdentityField[] = ["brand", "model", "purchaseDate", "installDate", "warrantyExpiresAt"];
+
+const IDENTITY_FIELDS_BY_CATEGORY: Record<HomeItemCategory, HomeItemIdentityField[]> = {
+  kitchen: APPLIANCE_FIELDS,
+  laundry: APPLIANCE_FIELDS,
+  climate: APPLIANCE_FIELDS,
+  water: APPLIANCE_FIELDS,
+  power: APPLIANCE_FIELDS,
+  safety: APPLIANCE_FIELDS,
+  everyday: APPLIANCE_FIELDS,
+  grounds: APPLIANCE_FIELDS,
+  // A roof or a driveway is installed rather than bought, and usually by
+  // somebody the previous owner hired, so a purchase date is a question
+  // almost nobody can answer.
+  structure: ["brand", "model", "installDate", "warrantyExpiresAt"],
+  // Damp and rodents are conditions, not products.
+  pests: [],
+  // A deed, a policy or a filter size has no make and model.
+  records: [],
+  // A lease has dates of its own, kept on the lease itself.
+  renting: [],
+};
+
+export function identityFieldsFor(category: HomeItemCategory | null): HomeItemIdentityField[] {
+  // An unrecognised type gets every field: better to ask than to hide a
+  // question somebody might have wanted, since custom items are exactly
+  // the ones this file knows nothing about.
+  if (!category) return APPLIANCE_FIELDS;
+  return IDENTITY_FIELDS_BY_CATEGORY[category] ?? APPLIANCE_FIELDS;
+}
+
+/** The category a stored `type` belongs to, or null when it is a custom one. */
+export function categoryOfType(type: string): HomeItemCategory | null {
+  return HOME_ITEM_TYPES.find((definition) => definition.id === type)?.category ?? null;
+}
+
 export interface HomeItemTypeDefinition {
   /** Matches the open `type` field on a home item once assigned, e.g. "water-heater". */
   id: string;

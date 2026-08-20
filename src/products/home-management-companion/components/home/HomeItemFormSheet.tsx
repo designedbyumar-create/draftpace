@@ -6,7 +6,13 @@ import Input from "@/design-system/Input";
 import Select from "@/design-system/Select";
 import RecordFormSheet from "../shared/RecordFormSheet";
 import { describeResultError } from "@/product-framework/result";
-import { HOME_ITEM_TYPES, matchHomeItemType } from "../../homeKnowledge";
+import {
+  HOME_ITEM_TYPES,
+  matchHomeItemType,
+  categoryOfType,
+  identityFieldsFor,
+  type HomeItemIdentityField,
+} from "../../homeKnowledge";
 import { describeCadence, withArticle } from "../../homeVoice";
 import { createMaintenanceTask } from "../../domain/maintenanceTasks";
 import type { HomeItem } from "../../state";
@@ -122,6 +128,19 @@ export default function HomeItemFormSheet({
   const [addingTasks, setAddingTasks] = useState(false);
 
   const suggestion = createdItem ? matchHomeItemType(createdItem.name, createdItem.type) : null;
+
+  /**
+   * Whether to ask for a given identity fact, which depends on the type
+   * chosen above. A lease has no model number and a deed has no brand,
+   * and asking anyway is how a form tells somebody it does not
+   * understand what they are entering. A field already holding a value
+   * is always asked for, so switching type can never strand data
+   * somewhere the person can no longer edit it.
+   */
+  function asks(field: HomeItemIdentityField): boolean {
+    if (values[field]) return true;
+    return identityFieldsFor(categoryOfType(values.type)).includes(field);
+  }
 
   useEffect(() => {
     if (open) {
@@ -286,44 +305,58 @@ export default function HomeItemFormSheet({
           placeholder="e.g. sump pump"
         />
       )}
-      <div className="grid gap-3 sm:grid-cols-2">
-        <Input
-          label="Brand (optional)"
-          value={values.brand}
-          onChange={(event) => setValues({ ...values, brand: event.target.value })}
-        />
-        <Input
-          label="Model (optional)"
-          value={values.model}
-          onChange={(event) => setValues({ ...values, model: event.target.value })}
-        />
-      </div>
+      {(asks("brand") || asks("model")) && (
+        <div className="grid gap-3 sm:grid-cols-2">
+          {asks("brand") && (
+            <Input
+              label="Brand (optional)"
+              value={values.brand}
+              onChange={(event) => setValues({ ...values, brand: event.target.value })}
+            />
+          )}
+          {asks("model") && (
+            <Input
+              label="Model (optional)"
+              value={values.model}
+              onChange={(event) => setValues({ ...values, model: event.target.value })}
+            />
+          )}
+        </div>
+      )}
       <Input
         label="Location (optional)"
         value={values.location}
         onChange={(event) => setValues({ ...values, location: event.target.value })}
         placeholder="e.g. Basement"
       />
-      <div className="grid gap-3 sm:grid-cols-2">
+      {(asks("purchaseDate") || asks("installDate")) && (
+        <div className="grid gap-3 sm:grid-cols-2">
+          {asks("purchaseDate") && (
+            <Input
+              label="Purchase date (optional)"
+              type="date"
+              value={values.purchaseDate}
+              onChange={(event) => setValues({ ...values, purchaseDate: event.target.value })}
+            />
+          )}
+          {asks("installDate") && (
+            <Input
+              label="Install date (optional)"
+              type="date"
+              value={values.installDate}
+              onChange={(event) => setValues({ ...values, installDate: event.target.value })}
+            />
+          )}
+        </div>
+      )}
+      {asks("warrantyExpiresAt") && (
         <Input
-          label="Purchase date (optional)"
+          label="Warranty expires (optional)"
           type="date"
-          value={values.purchaseDate}
-          onChange={(event) => setValues({ ...values, purchaseDate: event.target.value })}
+          value={values.warrantyExpiresAt}
+          onChange={(event) => setValues({ ...values, warrantyExpiresAt: event.target.value })}
         />
-        <Input
-          label="Install date (optional)"
-          type="date"
-          value={values.installDate}
-          onChange={(event) => setValues({ ...values, installDate: event.target.value })}
-        />
-      </div>
-      <Input
-        label="Warranty expires (optional)"
-        type="date"
-        value={values.warrantyExpiresAt}
-        onChange={(event) => setValues({ ...values, warrantyExpiresAt: event.target.value })}
-      />
+      )}
       <Input
         label="Manual or receipt link (optional)"
         value={values.documentLink}

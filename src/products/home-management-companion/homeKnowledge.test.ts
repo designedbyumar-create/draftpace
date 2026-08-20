@@ -8,6 +8,8 @@ import {
   findCareTemplateByTaskName,
   nextSeasonalDueIso,
   typesOfferedAtSetup,
+  identityFieldsFor,
+  categoryOfType,
 } from "./homeKnowledge";
 
 describe("matchHomeItemType", () => {
@@ -206,5 +208,50 @@ describe("typesOfferedAtSetup", () => {
       if (type.category === "records" || type.category === "renting") continue;
       expect(type.care.length, `${type.id} proposes nothing`).toBeGreaterThan(0);
     }
+  });
+});
+
+describe("identityFieldsFor", () => {
+  it("asks a dishwasher every appliance question", () => {
+    expect(identityFieldsFor("kitchen")).toEqual([
+      "brand",
+      "model",
+      "purchaseDate",
+      "installDate",
+      "warrantyExpiresAt",
+    ]);
+  });
+
+  it("asks a lease, a deed and a damp patch none of them", () => {
+    for (const category of ["renting", "records", "pests"] as const) {
+      expect(identityFieldsFor(category)).toEqual([]);
+    }
+  });
+
+  it("does not ask when a roof was purchased, since almost nobody can answer", () => {
+    const fields = identityFieldsFor("structure");
+    expect(fields).not.toContain("purchaseDate");
+    expect(fields).toContain("installDate");
+  });
+
+  it("asks everything for a custom type, since nothing is known about it", () => {
+    expect(identityFieldsFor(null)).toContain("brand");
+    expect(identityFieldsFor(categoryOfType("not-a-real-type"))).toContain("model");
+  });
+
+  it("covers every category, so a new one cannot silently fall through", () => {
+    for (const category of Object.keys(HOME_ITEM_CATEGORY_LABEL) as (keyof typeof HOME_ITEM_CATEGORY_LABEL)[]) {
+      expect(Array.isArray(identityFieldsFor(category))).toBe(true);
+    }
+  });
+});
+
+describe("categoryOfType", () => {
+  it("resolves a known type to its category", () => {
+    expect(categoryOfType("lease")).toBe("renting");
+  });
+
+  it("returns null for a type this file has never heard of", () => {
+    expect(categoryOfType("moon-buggy")).toBeNull();
   });
 });

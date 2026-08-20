@@ -30,7 +30,7 @@ import HomeItemDocumentFormSheet, { homeItemDocumentFormValuesToPatch, type Home
 import CareActionSheet, { HOME_BASE_CURRENCY } from "../care/CareActionSheet";
 import { formatCurrency } from "@/lib/currency";
 import { describeElapsed, daysBetween, describeCareStatus, describeSeasonalCareStatus } from "../../homeVoice";
-import { findCareTemplate, findCareTemplateByTaskName } from "../../homeKnowledge";
+import { findCareTemplate, findCareTemplateByTaskName, categoryOfType, identityFieldsFor, type HomeItemIdentityField } from "../../homeKnowledge";
 import ReportProblemSheet from "../problems/ReportProblemSheet";
 import ResolveProblemSheet from "../problems/ResolveProblemSheet";
 
@@ -134,6 +134,25 @@ export default function HomeItemDetailModule() {
   }, [load]);
 
   const item = useMemo(() => items.find((t) => t.id === itemId) ?? null, [items, itemId]);
+
+  /**
+   * Which identity facts this kind of thing actually has, plus anything
+   * already filled in regardless of category, so narrowing the list can
+   * never hide a value somebody deliberately entered.
+   */
+  const identityFields = useMemo(() => {
+    const labels: Record<HomeItemIdentityField, string> = {
+      brand: "Brand",
+      model: "Model",
+      purchaseDate: "Purchased",
+      installDate: "Installed",
+      warrantyExpiresAt: "Warranty expires",
+    };
+    const relevant = new Set(identityFieldsFor(item ? categoryOfType(item.type) : null));
+    return (Object.keys(labels) as HomeItemIdentityField[])
+      .filter((field) => relevant.has(field) || Boolean(item?.[field]))
+      .map((field) => ({ field, label: labels[field] }));
+  }, [item]);
   const itemTasks = useMemo(() => tasks.filter((t) => t.applianceId === itemId && t.status !== "archived"), [tasks, itemId]);
   const itemLog = useMemo(
     () => logEntries.filter((entry) => entry.applianceId === itemId).sort((a, b) => (a.performedAt < b.performedAt ? 1 : -1)),
@@ -308,11 +327,9 @@ export default function HomeItemDetailModule() {
               <Surface className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <Field label="Type" value={typeLabel(item.type)} />
                 <Field label="Location" value={item.location} />
-                <Field label="Brand" value={item.brand} />
-                <Field label="Model" value={item.model} />
-                <Field label="Purchased" value={item.purchaseDate} />
-                <Field label="Installed" value={item.installDate} />
-                <Field label="Warranty expires" value={item.warrantyExpiresAt} />
+                {identityFields.map(({ field, label }) => (
+                  <Field key={field} label={label} value={item[field]} />
+                ))}
               </Surface>
               {item.notes && (
                 <Surface>
