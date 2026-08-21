@@ -87,6 +87,32 @@ export default function WorkspaceModule() {
     setProfile(result.data);
   }
 
+  /**
+   * Dynamic import on purpose: @react-pdf is large and must never reach
+   * the main bundle. Same pattern Monthly Money Reset uses.
+   */
+  async function print() {
+    setPending(true);
+    setErrorMessage(null);
+    try {
+      const [{ downloadInOrderCopy }, { describeReadiness }] = await Promise.all([
+        import("../printables/download"),
+        import("../completion"),
+      ]);
+      await downloadInOrderCopy({
+        size: "LETTER",
+        preparedBy: "",
+        readiness,
+        summary: describeReadiness(readiness),
+      });
+    } catch {
+      // A failed generation must never look like a saved download.
+      setErrorMessage("The copy could not be generated. Nothing was downloaded.");
+    } finally {
+      setPending(false);
+    }
+  }
+
   async function act(stepKey: string, state: "confirmed" | "notRelevant" | "open", snooze = false) {
     if (!instanceId) return;
     setPending(true);
@@ -217,7 +243,7 @@ export default function WorkspaceModule() {
         <HandoverPanel
           readiness={readiness}
           pending={pending}
-          onPrint={() => setErrorMessage("Printing arrives in phase 5. Nothing was generated.")}
+          onPrint={print}
         />
       )}
     </div>
