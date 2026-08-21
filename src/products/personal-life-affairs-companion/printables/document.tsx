@@ -27,6 +27,7 @@
  */
 import { Document, Page, View, Text, StyleSheet, type DocumentProps } from "@react-pdf/renderer";
 import { AFFAIR_AREA_LABEL, type AffairArea } from "../affairsKnowledge";
+import { isBlankCopy } from "../completion";
 import type { Readiness, StandingRow, StepStanding } from "../completion";
 
 const C = {
@@ -173,9 +174,7 @@ export function InOrderDocument({
   summary,
   generatedAt,
 }: DocumentInputs): React.ReactElement<DocumentProps> {
-  // A copy with no confirmations at all is the paper path: prompts and
-  // lines to write on, rather than a page of "not yet started".
-  const blank = readiness.confirmed === 0 && readiness.leftOpen === 0 && readiness.notApplicable === 0;
+  const blank = isBlankCopy(readiness);
   const generated = formatDate(generatedAt.toISOString());
   const oldest = formatDate(readiness.oldestConfirmedAt);
 

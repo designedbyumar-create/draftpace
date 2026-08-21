@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { deriveReadiness, describeReadiness, describeHandoverInvitation } from "./completion";
+import { deriveReadiness, describeReadiness, describeHandoverInvitation, isBlankCopy } from "./completion";
 import { relevantSteps, type StepRecord } from "./sequencer";
 import { AFFAIR_STEP_BY_KEY } from "./affairsKnowledge";
 
@@ -145,5 +145,33 @@ describe("what the cover says", () => {
       expect(lower).not.toContain("asset");
       expect(line).not.toContain("—");
     }
+  });
+});
+
+describe("what counts as a blank copy", () => {
+  it("is blank only when nothing at all has been decided", () => {
+    expect(isBlankCopy(deriveReadiness({ profile: NONE, records: [] }, NOW))).toBe(true);
+  });
+
+  it("stops being blank the moment anything is confirmed", () => {
+    const steps = relevantSteps(NONE);
+    expect(isBlankCopy(deriveReadiness({ profile: NONE, records: [rec(steps[0].key)] }, NOW))).toBe(false);
+  });
+
+  /**
+   * A deliberate skip is a decision, so a copy carrying one is not a
+   * blank workbook even though nothing is confirmed. The filename and
+   * the pages both depend on this agreeing.
+   */
+  it("stops being blank when something was marked not applicable", () => {
+    const steps = relevantSteps(NONE);
+    const records = [rec(steps[0].key, { state: "notRelevant", confirmedAt: null })];
+    expect(isBlankCopy(deriveReadiness({ profile: NONE, records }, NOW))).toBe(false);
+  });
+
+  it("stops being blank when something was deliberately left open", () => {
+    const steps = relevantSteps(NONE);
+    const records = [rec(steps[0].key, { state: "open", confirmedAt: null })];
+    expect(isBlankCopy(deriveReadiness({ profile: NONE, records }, NOW))).toBe(false);
   });
 });

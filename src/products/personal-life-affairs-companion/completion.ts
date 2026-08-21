@@ -121,3 +121,17 @@ export function describeHandoverInvitation(readiness: Readiness): string {
   }
   return "You can print a copy whenever you like. It will say plainly what is settled and what is not.";
 }
+
+/**
+ * Whether a copy is a blank one: nothing decided at all, so the document
+ * prints prompts and lines to write on rather than a page of "not yet
+ * started".
+ *
+ * Lives here rather than in the document or the download, because both
+ * need it and a rule expressed twice is a rule that eventually
+ * disagrees with itself. The filename must never claim something the
+ * pages contradict.
+ */
+export function isBlankCopy(readiness: Readiness): boolean {
+  return readiness.confirmed === 0 && readiness.leftOpen === 0 && readiness.notApplicable === 0;
+}

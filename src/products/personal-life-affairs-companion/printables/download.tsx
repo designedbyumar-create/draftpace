@@ -22,6 +22,7 @@
  */
 import { Font, pdf } from "@react-pdf/renderer";
 import { InOrderDocument } from "./document";
+import { isBlankCopy } from "../completion";
 import type { Readiness } from "../completion";
 
 let fontsRegistered = false;
@@ -44,9 +45,12 @@ export interface DownloadInputs {
 }
 
 /**
- * Produces the file and hands it to the browser. The filename carries
- * the date, because somebody will end up with more than one copy over
- * the years and needs to tell which is current at a glance.
+ * Produces the file and hands it to the browser.
+ *
+ * The filename carries both the kind and the date. Somebody will end up
+ * with several of these over the years, and a blank copy and a filled
+ * one are different documents: giving them the same name means the
+ * browser silently collides them in the downloads folder.
  */
 export async function downloadInOrderCopy({ size, preparedBy, readiness, summary }: DownloadInputs): Promise<void> {
   registerFonts();
@@ -57,10 +61,14 @@ export async function downloadInOrderCopy({ size, preparedBy, readiness, summary
   ).toBlob();
 
   const stamp = generatedAt.toISOString().slice(0, 10);
+  // The same rule the document uses, so the name can never disagree
+  // with what is inside the file.
+  const isBlank = isBlankCopy(readiness);
+
   const url = URL.createObjectURL(blob);
   const anchor = document.createElement("a");
   anchor.href = url;
-  anchor.download = `in-order-${stamp}.pdf`;
+  anchor.download = `in-order-${isBlank ? "blank" : "copy"}-${stamp}.pdf`;
   document.body.appendChild(anchor);
   anchor.click();
   anchor.remove();
