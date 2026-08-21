@@ -195,3 +195,26 @@ export function isBlankCopy(readiness: Readiness): boolean {
     readiness.notApplicable === 0
   );
 }
+
+/**
+ * What the printed book calls itself, and who it says made it.
+ *
+ * Named here rather than written into the document, because the document,
+ * its download filename and the app's own preview of it all have to agree,
+ * and three copies of a string are three chances to disagree. The internal
+ * name of this product is deliberately not among them: a person hands this
+ * to somebody at the worst possible moment, and a product name across the
+ * top would make it read as an export rather than as their own document.
+ */
+export const BOOK_NAME = "My Affairs";
+export const BOOK_ATTRIBUTION = "Personal Life Affairs Companion";
+
+/**
+ * The name the file lands under. Somebody will have several of these over
+ * the years, and a blank copy and a filled one are different documents:
+ * the same name means the browser silently collides them.
+ */
+export function bookFilename(readiness: Readiness, generatedAt: Date): string {
+  const stamp = generatedAt.toISOString().slice(0, 10);
+  return `my-affairs-${isBlankCopy(readiness) ? "blank" : "copy"}-${stamp}.pdf`;
+}

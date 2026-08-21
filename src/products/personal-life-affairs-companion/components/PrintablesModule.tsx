@@ -7,7 +7,7 @@ import { BookOpen, Download } from "@/design-system/Icon";
 import { describeResultError } from "@/product-framework/result";
 import { findInOrderInstanceId } from "../instanceData";
 import { loadItems, loadProfile, loadSteps } from "../domain/affairsData";
-import { deriveReadiness, describeReadiness, isBlankCopy } from "../completion";
+import { BOOK_ATTRIBUTION, BOOK_NAME, deriveReadiness, describeReadiness, isBlankCopy } from "../completion";
 import { intakeComplete } from "../intake";
 import { AFFAIR_AREA_LABEL, AFFAIR_AREA_ORDER, type AffairArea } from "../affairsKnowledge";
 import { describeItem, type AffairItem } from "../lifeAffairs";
@@ -144,11 +144,13 @@ export default function PrintablesModule() {
           style={{ backgroundColor: "#fbfaf7" }}
         >
           <div className="border-b border-[#e3e0d8] px-6 py-5">
-            <p className="text-[10px] font-bold uppercase tracking-[0.22em]" style={{ color: "#26374f" }}>
-              In Order
+            {/* Mirrors the cover exactly: the attribution small and
+                above, the document's own name carrying the size. */}
+            <p className="text-[9.5px] font-bold uppercase tracking-[0.16em]" style={{ color: "#26374f" }}>
+              {BOOK_ATTRIBUTION}
             </p>
             <h2 className="mt-2 text-[22px] leading-tight" style={{ fontFamily: "var(--font-newsreader), serif", color: "#1a1d24" }}>
-              My affairs
+              {BOOK_NAME}
             </h2>
             {lastUpdated && (
               <p className="mt-1.5 text-[11.5px]" style={{ color: "#666b77" }}>

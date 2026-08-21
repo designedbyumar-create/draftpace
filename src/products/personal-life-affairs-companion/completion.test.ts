@@ -1,5 +1,8 @@
 import { describe, expect, it } from "vitest";
 import {
+  BOOK_ATTRIBUTION,
+  BOOK_NAME,
+  bookFilename,
   deriveReadiness,
   describeHandoverInvitation,
   describeReadiness,
@@ -188,5 +191,45 @@ describe("what counts as a blank copy", () => {
 
   it("stops being blank when an old dateless confirmation exists", () => {
     expect(isBlankCopy(readiness([rec("people.executor", { legacyConfirmation: true })]))).toBe(false);
+  });
+});
+
+/**
+ * The printed book is the artifact a person hands to somebody else. What
+ * it calls itself matters more than anywhere else in the product, and the
+ * internal name is the easiest thing in the world to reintroduce by
+ * accident, so it is guarded rather than trusted.
+ */
+describe("what the book calls itself", () => {
+  it("is named for the document, never for the software that made it", () => {
+    expect(BOOK_NAME).toBe("My Affairs");
+    expect(BOOK_NAME.toLowerCase()).not.toContain("in order");
+    expect(BOOK_NAME).not.toContain("Draftpace");
+  });
+
+  it("attributes itself to the product, quietly and by its real name", () => {
+    expect(BOOK_ATTRIBUTION).toBe("Personal Life Affairs Companion");
+    expect(BOOK_ATTRIBUTION.toLowerCase()).not.toContain("in order");
+  });
+
+  it("lands in a downloads folder under the document's name, not the slug", () => {
+    const at = new Date("2026-08-22T12:00:00Z");
+    const filled = bookFilename(readiness([], [item("people.executor")]), at);
+    expect(filled).toBe("my-affairs-copy-2026-08-22.pdf");
+    expect(filled).not.toContain("in-order");
+  });
+
+  it("gives a blank copy a different filename, so the two never collide", () => {
+    const at = new Date("2026-08-22T12:00:00Z");
+    expect(bookFilename(readiness(), at)).toBe("my-affairs-blank-2026-08-22.pdf");
+    expect(bookFilename(readiness(), at)).not.toBe(bookFilename(readiness([], [item("people.executor")]), at));
+  });
+
+  it("never says estate, assets or overdue on the cover", () => {
+    for (const text of [BOOK_NAME, BOOK_ATTRIBUTION]) {
+      expect(text.toLowerCase()).not.toContain("estate");
+      expect(text.toLowerCase()).not.toContain("asset");
+      expect(text.toLowerCase()).not.toContain("overdue");
+    }
   });
 });

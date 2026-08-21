@@ -22,7 +22,7 @@
  */
 import { Font, pdf } from "@react-pdf/renderer";
 import { InOrderDocument } from "./document";
-import { isBlankCopy } from "../completion";
+import { bookFilename } from "../completion";
 import type { Readiness } from "../completion";
 
 let fontsRegistered = false;
@@ -60,15 +60,12 @@ export async function downloadInOrderCopy({ size, preparedBy, readiness, summary
     InOrderDocument({ size, preparedBy, readiness, summary, generatedAt })
   ).toBlob();
 
-  const stamp = generatedAt.toISOString().slice(0, 10);
-  // The same rule the document uses, so the name can never disagree
-  // with what is inside the file.
-  const isBlank = isBlankCopy(readiness);
-
   const url = URL.createObjectURL(blob);
   const anchor = document.createElement("a");
   anchor.href = url;
-  anchor.download = `in-order-${isBlank ? "blank" : "copy"}-${stamp}.pdf`;
+  // The same rule the document uses, so the name in a downloads folder can
+  // never disagree with what is inside the file.
+  anchor.download = bookFilename(readiness, generatedAt);
   document.body.appendChild(anchor);
   anchor.click();
   anchor.remove();

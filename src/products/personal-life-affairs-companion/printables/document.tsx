@@ -1,5 +1,5 @@
 /**
- * The In Order document.
+ * The Personal Life Affairs Companion's printed book.
  *
  * Three variants from one generator, driven by real state:
  *
@@ -23,11 +23,24 @@
  * nothing else, so on paper it becomes the colour of what you can rely
  * on.
  *
+ * WHAT THE DOCUMENT CALLS ITSELF
+ *
+ * "My Affairs", and never the name of the software that made it. A
+ * person hands this to somebody at a moment when it is the only thing
+ * they have, and a product name across the top of every page would make
+ * it read as an export from an app rather than as their own document.
+ * The Companion is named once, quietly, on the cover and in the
+ * colophon: enough to say where it came from and how to keep it current,
+ * not enough to put a brand between the reader and the contents.
+ *
+ * "In Order" survives as the slug and the pla_ table prefix. It appears
+ * nowhere a person can see.
+ *
  * No em dashes anywhere, per the repo content rule.
  */
 import { Document, Page, View, Text, StyleSheet, type DocumentProps } from "@react-pdf/renderer";
 import { AFFAIR_AREA_LABEL, AFFAIR_AREA_ORDER, type AffairArea } from "../affairsKnowledge";
-import { isBlankCopy } from "../completion";
+import { BOOK_ATTRIBUTION, BOOK_NAME, isBlankCopy } from "../completion";
 import { captureFor } from "../capture";
 import type { Readiness, StandingRow, StepStanding } from "../completion";
 import type { AffairItem } from "../lifeAffairs";
@@ -169,7 +182,7 @@ function Sheet({ section, children }: { section: string; children: React.ReactNo
     <>
       <View style={s.spine} fixed />
       <View style={s.runningHead} fixed>
-        <Text>In Order</Text>
+        <Text>{BOOK_NAME}</Text>
         <Text>{section}</Text>
       </View>
       {children}
@@ -310,16 +323,22 @@ export function InOrderDocument({
 
   return (
     <Document
-      title="In Order"
-      author="Draftpace"
+      /*
+        The title is what a file manager, a print dialogue and a screen
+        reader announce. It is the document's name, not the software's.
+      */
+      title={BOOK_NAME}
+      author={preparedBy.trim().length > 0 ? preparedBy.trim() : BOOK_ATTRIBUTION}
       subject="Everything the people you love would need to find"
-      creator="Draftpace"
-      producer="Draftpace"
+      creator={`${BOOK_ATTRIBUTION} by Draftpace`}
+      producer={`${BOOK_ATTRIBUTION} by Draftpace`}
     >
       <Page size={size} style={s.cover}>
         <View style={{ flex: 1, paddingTop: 58, paddingBottom: 52, paddingHorizontal: 54 }}>
           <View style={s.spine} fixed />
-          <Text style={{ fontSize: 7.5, letterSpacing: 2.6, color: C.deep, textTransform: "uppercase" }}>Draftpace</Text>
+          <Text style={{ fontSize: 6.8, letterSpacing: 1.6, color: C.deep, textTransform: "uppercase" }}>
+            {BOOK_ATTRIBUTION}
+          </Text>
 
           {/*
             The mark. A column of rules with one picked out in brass:
@@ -344,7 +363,7 @@ export function InOrderDocument({
 
           <View style={{ flex: 1, justifyContent: "flex-end", paddingBottom: 30 }}>
             <View style={{ height: 1.5, backgroundColor: C.ink, marginBottom: 18 }} />
-            <Text style={{ fontFamily: HEAD, fontSize: 52, lineHeight: 1.02, color: C.ink }}>In Order</Text>
+            <Text style={{ fontFamily: HEAD, fontSize: 52, lineHeight: 1.02, color: C.ink }}>{BOOK_NAME}</Text>
             <Text style={{ fontFamily: HEAD, fontSize: 13, color: C.body, marginTop: 14, lineHeight: 1.5 }}>
               Everything the people you love{"\n"}would need to find.
             </Text>
@@ -459,6 +478,10 @@ export function InOrderDocument({
           <Text style={{ fontSize: 8.6, color: C.muted, lineHeight: 1.55 }}>
             Keep this somewhere private. Filled in, it says where things are and who to speak to, which is useful to the
             people who need it and useful to somebody who should not have it.
+          </Text>
+          <Text style={{ fontSize: 8, color: C.faint, lineHeight: 1.55, marginTop: 10 }}>
+            Prepared with the {BOOK_ATTRIBUTION} by Draftpace. A newer copy may exist: the person who made this can
+            print an up to date one at any time.
           </Text>
         </Sheet>
       </Page>
