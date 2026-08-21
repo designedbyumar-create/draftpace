@@ -9,6 +9,8 @@ import { findInOrderInstanceId } from "../instanceData";
 import { loadProfile, loadSteps, recordStep, saveProfileAnswer } from "../domain/affairsData";
 import { deriveAffairsState, type AffairProfile, type StepRecord } from "../sequencer";
 import { INTAKE_QUESTIONS, nextUnansweredIntake } from "../intake";
+import { deriveReadiness } from "../completion";
+import HandoverPanel from "./HandoverPanel";
 import type { AffairGate } from "../affairsKnowledge";
 
 type LoadStatus = "loading" | "ready" | "no-instance" | "error";
@@ -114,7 +116,16 @@ export default function WorkspaceModule() {
   }
 
   const intake = nextUnansweredIntake(profile);
-  const state = deriveAffairsState({ profile, records }, new Date());
+  const now = new Date();
+  const state = deriveAffairsState({ profile, records }, now);
+  const readiness = deriveReadiness({ profile, records }, now);
+
+  /**
+   * The handover appears once there is genuinely something to hand over,
+   * and never during intake. It is not gated on completeness: a person
+   * who has settled two things may print, and the copy will say so.
+   */
+  const showHandover = !intake && readiness.confirmed > 0;
 
   return (
     <div className="flex flex-col gap-5">
@@ -200,6 +211,14 @@ export default function WorkspaceModule() {
             <span>Nothing needs you right now.</span>
           </div>
         </section>
+      )}
+
+      {showHandover && (
+        <HandoverPanel
+          readiness={readiness}
+          pending={pending}
+          onPrint={() => setErrorMessage("Printing arrives in phase 5. Nothing was generated.")}
+        />
       )}
     </div>
   );
