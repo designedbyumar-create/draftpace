@@ -68,12 +68,22 @@ describe("ensureProductsRegistered", () => {
 
   it("is safe to call repeatedly without throwing on re-registration", async () => {
     const { ensureProductsRegistered, productRegistry } = await loadFreshManifestModule();
+    ensureProductsRegistered();
+    const afterFirstCall = productRegistry.list().length;
+
     expect(() => {
       ensureProductsRegistered();
       ensureProductsRegistered();
-      ensureProductsRegistered();
     }).not.toThrow();
-    expect(productRegistry.list()).toHaveLength(4);
+
+    // The point of this test is idempotency, so it compares against the
+    // first call rather than a hardcoded total. A literal count breaks
+    // every time a product is added, which says nothing about whether
+    // re-registration is safe. The floor below still catches the case
+    // this would otherwise hide: registration silently adding nothing,
+    // where every count would agree at zero.
+    expect(productRegistry.list()).toHaveLength(afterFirstCall);
+    expect(afterFirstCall).toBeGreaterThanOrEqual(4);
   }, 40000);
 
   it("is the only file that imports a specific product's catalog entry — every route imports the generic function", () => {
