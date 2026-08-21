@@ -40,6 +40,9 @@
  * it refers out when a real lawyer is the answer.
  */
 
+/** Whether finishing a step creates knowledge, or records something done in the world. */
+export type AffairStepKind = "establish" | "action";
+
 /** How much it costs the people you leave behind to skip this. 0 tidy, 1 real cost or delay, 2 serious. */
 export type AffairConsequence = 0 | 1 | 2;
 
@@ -94,8 +97,25 @@ export interface AffairStep {
   needs?: AffairGate[];
   /** How often to ask whether this is still true. Undefined means never re-ask. */
   confirmEveryMonths?: number;
-  /** True when finishing this step records a row in pla_items (a person, a place, a document). */
-  capturesItem?: boolean;
+  /**
+   * What kind of step this is, and therefore what finishing it means.
+   *
+   * "establish" steps create knowledge. The person answers questions and
+   * a Life Affairs record comes out. They cannot be dismissed with a
+   * bare "done", because a done with no answer behind it is exactly the
+   * defect this distinction exists to prevent: it printed a date into a
+   * document that was supposed to tell somebody where things are.
+   *
+   * "action" steps are done in the world, not in here. Telling your
+   * executor you have chosen them, or checking the name on a pension
+   * form, happens elsewhere and the honest record is that the person
+   * says they did it. These may legitimately be confirmed outright.
+   *
+   * Every establish step must have an entry in CAPTURE_SPECS, and no
+   * action step may have one. Enforced in affairsKnowledge.test.ts, so
+   * the two files cannot drift apart.
+   */
+  kind: AffairStepKind;
   /** Set when the honest answer is "talk to a professional". Shown as such, never disguised as advice. */
   referOut?: string;
 }
@@ -114,7 +134,7 @@ export const AFFAIR_STEPS: AffairStep[] = [
     why: "Everything else assumes somebody knows to look. If nobody knows to call, nothing else on this list is ever found.",
     minutes: 2,
     consequence: 2,
-    capturesItem: true,
+    kind: "establish",
     confirmEveryMonths: 24,
   },
   {
@@ -124,7 +144,7 @@ export const AFFAIR_STEPS: AffairStep[] = [
     why: "Someone has to do the practical work. Choosing them yourself means it is not decided by a court or by whoever volunteers.",
     minutes: 5,
     consequence: 2,
-    capturesItem: true,
+    kind: "establish",
     confirmEveryMonths: 24,
   },
   {
@@ -135,11 +155,12 @@ export const AFFAIR_STEPS: AffairStep[] = [
     minutes: 3,
     consequence: 1,
     requires: ["people.executor"],
-    capturesItem: true,
+    kind: "establish",
     confirmEveryMonths: 24,
   },
   {
     key: "people.executor-told",
+    kind: "action",
     area: "people",
     instruction: "Tell them you have chosen them.",
     why: "People find out at the worst possible moment and sometimes refuse. A short conversation now avoids that entirely.",
@@ -154,7 +175,7 @@ export const AFFAIR_STEPS: AffairStep[] = [
     why: "This matters while you are alive. If you cannot speak for yourself, someone will be asked, and without a name it may not be who you would have chosen.",
     minutes: 5,
     consequence: 2,
-    capturesItem: true,
+    kind: "establish",
     confirmEveryMonths: 24,
   },
   {
@@ -164,7 +185,7 @@ export const AFFAIR_STEPS: AffairStep[] = [
     why: "An accountant, a solicitor or a financial adviser can answer in an afternoon what would otherwise take months to reconstruct.",
     minutes: 5,
     consequence: 1,
-    capturesItem: true,
+    kind: "establish",
     confirmEveryMonths: 24,
   },
 
@@ -176,11 +197,12 @@ export const AFFAIR_STEPS: AffairStep[] = [
     why: "A will nobody can find does nothing at all. Where it is matters as much as having one.",
     minutes: 3,
     consequence: 2,
-    capturesItem: true,
+    kind: "establish",
     confirmEveryMonths: 12,
   },
   {
     key: "paperwork.will-make-one",
+    kind: "action",
     area: "paperwork",
     instruction: "Consider making a will if you do not have one.",
     why: "Without one, the law decides who gets what, and it may not match what you would have chosen.",
@@ -197,7 +219,7 @@ export const AFFAIR_STEPS: AffairStep[] = [
     why: "Almost every formal process asks for at least one of these, and hunting for them adds weeks.",
     minutes: 5,
     consequence: 1,
-    capturesItem: true,
+    kind: "establish",
     confirmEveryMonths: 36,
   },
   {
@@ -208,7 +230,7 @@ export const AFFAIR_STEPS: AffairStep[] = [
     minutes: 3,
     consequence: 1,
     needs: ["partnered"],
-    capturesItem: true,
+    kind: "establish",
     confirmEveryMonths: 36,
   },
   {
@@ -218,7 +240,7 @@ export const AFFAIR_STEPS: AffairStep[] = [
     why: "A box nobody can open is a box that stays closed. The key and the authority both need naming.",
     minutes: 3,
     consequence: 1,
-    capturesItem: true,
+    kind: "establish",
     confirmEveryMonths: 24,
   },
   {
@@ -228,7 +250,7 @@ export const AFFAIR_STEPS: AffairStep[] = [
     why: "A final return usually has to be filed, and whoever does it starts by looking for last year's.",
     minutes: 3,
     consequence: 1,
-    capturesItem: true,
+    kind: "establish",
     confirmEveryMonths: 12,
   },
 
@@ -240,7 +262,7 @@ export const AFFAIR_STEPS: AffairStep[] = [
     why: "Not the numbers, just which banks. Nobody can close or claim an account they never knew existed.",
     minutes: 5,
     consequence: 2,
-    capturesItem: true,
+    kind: "establish",
     confirmEveryMonths: 12,
   },
   {
@@ -250,7 +272,7 @@ export const AFFAIR_STEPS: AffairStep[] = [
     why: "Employers, pensions and benefits all need telling, and each one that is missed becomes a letter or an overpayment later.",
     minutes: 5,
     consequence: 1,
-    capturesItem: true,
+    kind: "establish",
     confirmEveryMonths: 12,
   },
   {
@@ -260,11 +282,12 @@ export const AFFAIR_STEPS: AffairStep[] = [
     why: "Old workplace pensions are the single most commonly lost thing, because people forget schemes from jobs they left decades ago.",
     minutes: 10,
     consequence: 2,
-    capturesItem: true,
+    kind: "establish",
     confirmEveryMonths: 12,
   },
   {
     key: "money.beneficiary-check",
+    kind: "action",
     area: "money",
     instruction: "Check who is currently named on your pension and life cover.",
     why: "These are paid to whoever is named on the form, and that overrides your will. A form filled in years ago at a previous job quietly wins.",
@@ -275,6 +298,7 @@ export const AFFAIR_STEPS: AffairStep[] = [
   },
   {
     key: "money.beneficiary-after-change",
+    kind: "action",
     area: "money",
     instruction: "Update the named person if your situation has changed.",
     why: "Separation and divorce do not automatically remove a former partner from these forms. It has to be done by hand.",
@@ -284,6 +308,7 @@ export const AFFAIR_STEPS: AffairStep[] = [
   },
   {
     key: "money.retirement-employer",
+    kind: "action",
     area: "money",
     instruction: "Check the named person on your workplace retirement plan.",
     why: "This is the form most often left as it was on your first day, sometimes naming someone you have not spoken to in years.",
@@ -300,7 +325,7 @@ export const AFFAIR_STEPS: AffairStep[] = [
     minutes: 5,
     consequence: 2,
     needs: ["hasLifeInsurance"],
-    capturesItem: true,
+    kind: "establish",
     confirmEveryMonths: 12,
   },
   {
@@ -310,7 +335,7 @@ export const AFFAIR_STEPS: AffairStep[] = [
     why: "Debts do not disappear quietly. Knowing about them early prevents the people sorting things out being surprised by a demand.",
     minutes: 8,
     consequence: 1,
-    capturesItem: true,
+    kind: "establish",
     confirmEveryMonths: 12,
   },
   {
@@ -320,7 +345,7 @@ export const AFFAIR_STEPS: AffairStep[] = [
     why: "Subscriptions and direct debits keep taking money long after they should. This is the list that stops that.",
     minutes: 10,
     consequence: 1,
-    capturesItem: true,
+    kind: "establish",
     confirmEveryMonths: 12,
   },
 
@@ -332,7 +357,7 @@ export const AFFAIR_STEPS: AffairStep[] = [
     why: "The deed or the tenancy decides what happens to the roof over everyone's head, and it is the first thing asked for.",
     minutes: 5,
     consequence: 2,
-    capturesItem: true,
+    kind: "establish",
     confirmEveryMonths: 24,
   },
   {
@@ -344,7 +369,7 @@ export const AFFAIR_STEPS: AffairStep[] = [
     consequence: 2,
     needs: ["ownsHome"],
     requires: ["home.where-you-live"],
-    capturesItem: true,
+    kind: "establish",
     confirmEveryMonths: 24,
   },
   {
@@ -354,7 +379,7 @@ export const AFFAIR_STEPS: AffairStep[] = [
     why: "Cover can lapse when a policy holder changes, and an empty property is often uninsured by default.",
     minutes: 3,
     consequence: 1,
-    capturesItem: true,
+    kind: "establish",
     confirmEveryMonths: 12,
   },
   {
@@ -364,11 +389,12 @@ export const AFFAIR_STEPS: AffairStep[] = [
     why: "Each one needs telling separately, and each one that is missed keeps billing.",
     minutes: 5,
     consequence: 1,
-    capturesItem: true,
+    kind: "establish",
     confirmEveryMonths: 24,
   },
   {
     key: "home.keys",
+    kind: "establish",
     area: "home",
     instruction: "Note where spare keys are and who has one.",
     why: "Someone will need to get in, and a locksmith at short notice is the expensive version of this answer.",
@@ -383,7 +409,7 @@ export const AFFAIR_STEPS: AffairStep[] = [
     why: "A vehicle cannot be sold or transferred without its paperwork, and it keeps costing money in the meantime.",
     minutes: 4,
     consequence: 1,
-    capturesItem: true,
+    kind: "establish",
     confirmEveryMonths: 24,
   },
 
@@ -396,11 +422,12 @@ export const AFFAIR_STEPS: AffairStep[] = [
     minutes: 10,
     consequence: 2,
     needs: ["hasChildren"],
-    capturesItem: true,
+    kind: "establish",
     confirmEveryMonths: 12,
   },
   {
     key: "dependants.guardian-asked",
+    kind: "action",
     area: "dependants",
     instruction: "Ask them first.",
     why: "Naming someone who would say no is worse than naming nobody, because it looks settled when it is not.",
@@ -418,11 +445,12 @@ export const AFFAIR_STEPS: AffairStep[] = [
     consequence: 1,
     needs: ["hasChildren"],
     requires: ["dependants.guardian"],
-    capturesItem: true,
+    kind: "establish",
     confirmEveryMonths: 24,
   },
   {
     key: "dependants.children-practical",
+    kind: "establish",
     area: "dependants",
     instruction: "Write down the practical details of your children's lives.",
     why: "School, doctor, allergies, routines. Whoever steps in is doing it on the worst day of their life and should not also be guessing.",
@@ -433,6 +461,7 @@ export const AFFAIR_STEPS: AffairStep[] = [
   },
   {
     key: "dependants.extra-needs",
+    kind: "establish",
     area: "dependants",
     instruction: "Record the care arrangements for anyone who depends on you.",
     why: "Ongoing care can be disrupted within days. Naming who provides it and how it is funded keeps it running.",
@@ -451,13 +480,14 @@ export const AFFAIR_STEPS: AffairStep[] = [
     minutes: 4,
     consequence: 1,
     needs: ["hasPets"],
-    capturesItem: true,
+    kind: "establish",
     confirmEveryMonths: 24,
   },
 
   // ---------------------------------------------------------------- digital
   {
     key: "digital.phone-access",
+    kind: "action",
     area: "digital",
     instruction: "Make sure someone can unlock your phone.",
     why: "Two-factor codes, photographs and half your accounts live behind it. Without access, most of the rest becomes much harder.",
@@ -472,11 +502,12 @@ export const AFFAIR_STEPS: AffairStep[] = [
     why: "It is the recovery route for nearly every other account. Knowing which one it is saves days.",
     minutes: 2,
     consequence: 2,
-    capturesItem: true,
+    kind: "establish",
     confirmEveryMonths: 24,
   },
   {
     key: "digital.password-manager",
+    kind: "establish",
     area: "digital",
     instruction: "Record whether you use a password manager, and how access is recovered.",
     why: "A password manager nobody can open locks away everything it was protecting.",
@@ -491,11 +522,12 @@ export const AFFAIR_STEPS: AffairStep[] = [
     why: "These keep billing quietly for years, and each provider has to be contacted separately.",
     minutes: 8,
     consequence: 1,
-    capturesItem: true,
+    kind: "establish",
     confirmEveryMonths: 12,
   },
   {
     key: "digital.legacy-contacts",
+    kind: "action",
     area: "digital",
     instruction: "Set a legacy contact where your accounts offer one.",
     why: "Several major providers let you nominate someone in advance. Almost nobody does, and afterwards it is far harder.",
@@ -511,13 +543,14 @@ export const AFFAIR_STEPS: AffairStep[] = [
     why: "This is the thing families say they most wanted and most often lost, and cloud accounts close after inactivity.",
     minutes: 5,
     consequence: 1,
-    capturesItem: true,
+    kind: "establish",
     confirmEveryMonths: 24,
   },
 
   // ----------------------------------------------------------------- wishes
   {
     key: "wishes.medical-preferences",
+    kind: "establish",
     area: "wishes",
     instruction: "Write down your preferences about medical treatment.",
     why: "This spares the person making decisions from guessing, and from carrying the doubt afterwards.",
@@ -528,6 +561,7 @@ export const AFFAIR_STEPS: AffairStep[] = [
   },
   {
     key: "wishes.arrangements",
+    kind: "establish",
     area: "wishes",
     instruction: "Say what you would want arranged, in plain terms.",
     why: "Families disagree most when nobody knows what was wanted. A few lines settles it.",
@@ -537,6 +571,7 @@ export const AFFAIR_STEPS: AffairStep[] = [
   },
   {
     key: "wishes.belongings",
+    kind: "establish",
     area: "wishes",
     instruction: "Note anything with meaning that is not obvious from its value.",
     why: "The arguments are almost never about the valuable things. They are about the ring nobody knew was promised.",
@@ -546,6 +581,7 @@ export const AFFAIR_STEPS: AffairStep[] = [
   },
   {
     key: "wishes.letters",
+    kind: "establish",
     area: "wishes",
     instruction: "Write anything you would want said.",
     why: "Nothing else on this list is remembered the way this is. It is also the only part nobody else can do for you.",
@@ -562,7 +598,7 @@ export const AFFAIR_STEPS: AffairStep[] = [
     minutes: 20,
     consequence: 2,
     needs: ["hasBusiness"],
-    capturesItem: true,
+    kind: "establish",
     confirmEveryMonths: 12,
     referOut:
       "Business succession usually needs an accountant or solicitor who knows the structure. In Order records who to call.",

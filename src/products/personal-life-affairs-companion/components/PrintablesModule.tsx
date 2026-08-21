@@ -6,10 +6,11 @@ import EmptyState from "@/design-system/EmptyState";
 import { Article } from "@/design-system/Icon";
 import { describeResultError } from "@/product-framework/result";
 import { findInOrderInstanceId } from "../instanceData";
-import { loadProfile, loadSteps } from "../domain/affairsData";
+import { loadItems, loadProfile, loadSteps } from "../domain/affairsData";
 import { deriveReadiness, describeReadiness } from "../completion";
 import { intakeComplete } from "../intake";
 import type { AffairProfile, StepRecord } from "../sequencer";
+import type { AffairItem } from "../lifeAffairs";
 
 type LoadStatus = "loading" | "ready" | "no-instance" | "error";
 type Size = "LETTER" | "A4";
@@ -32,6 +33,7 @@ export default function PrintablesModule() {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [profile, setProfile] = useState<AffairProfile>({});
   const [records, setRecords] = useState<StepRecord[]>([]);
+  const [items, setItems] = useState<AffairItem[]>([]);
   const [size, setSize] = useState<Size>("LETTER");
   const [pending, setPending] = useState<string | null>(null);
 
@@ -46,7 +48,11 @@ export default function PrintablesModule() {
       setStatus("no-instance");
       return;
     }
-    const [profileResult, stepsResult] = await Promise.all([loadProfile(found.id), loadSteps(found.id)]);
+    const [profileResult, stepsResult, itemsResult] = await Promise.all([
+      loadProfile(found.id),
+      loadSteps(found.id),
+      loadItems(found.id),
+    ]);
     if (!stepsResult.ok) {
       setErrorMessage(describeResultError(stepsResult.error));
       setStatus("error");
@@ -54,6 +60,7 @@ export default function PrintablesModule() {
     }
     setProfile(profileResult.ok ? profileResult.data : {});
     setRecords(stepsResult.data);
+    setItems(itemsResult.ok ? itemsResult.data : []);
     setStatus("ready");
   }, []);
 
@@ -68,7 +75,10 @@ export default function PrintablesModule() {
       const { downloadInOrderCopy } = await import("../printables/download");
       // A blank copy is the same document with nothing recorded, which is
       // why there is one generator rather than a template and an export.
-      const readiness = deriveReadiness({ profile, records: which === "blank" ? [] : records }, new Date());
+      const readiness = deriveReadiness(
+        which === "blank" ? { profile, records: [], items: [] } : { profile, records, items },
+        new Date()
+      );
       await downloadInOrderCopy({ size, preparedBy: "", readiness, summary: describeReadiness(readiness) });
     } catch {
       setErrorMessage("The copy could not be generated. Nothing was downloaded.");
@@ -85,7 +95,7 @@ export default function PrintablesModule() {
     return <EmptyState icon={Article} title="Couldn't load this" description={errorMessage ?? "Try again."} />;
   }
 
-  const readiness = deriveReadiness({ profile, records }, new Date());
+  const readiness = deriveReadiness({ profile, records, items }, new Date());
   const personalised = intakeComplete(profile);
 
   return (
@@ -142,8 +152,8 @@ export default function PrintablesModule() {
       <section className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5">
         <h2 className="text-[15px] font-semibold text-[var(--text)]">Where you are now</h2>
         <p className="mt-1.5 max-w-lg text-[13px] leading-relaxed text-[var(--muted)]">
-          What you have settled so far, with the date you confirmed each one. This is the copy you would hand to
-          somebody.
+          Everything you have recorded, in your own words, with the date you last confirmed each one. This is the copy
+          you would hand to somebody.
         </p>
         <p className="mt-2 text-[12.5px] text-[var(--muted)]">{describeReadiness(readiness)}</p>
         <div className="mt-4">

@@ -5,31 +5,40 @@ import EmptyState from "@/design-system/EmptyState";
 import { Clock } from "@/design-system/Icon";
 import { describeResultError } from "@/product-framework/result";
 import { findInOrderInstanceId } from "../instanceData";
-import { loadProfile, loadSteps } from "../domain/affairsData";
-import { deriveReadiness, type StandingRow, type StepStanding } from "../completion";
-import { AFFAIR_AREA_LABEL } from "../affairsKnowledge";
-import type { AffairProfile, StepRecord } from "../sequencer";
+import { loadItems, loadRevisions } from "../domain/affairsData";
+import { AFFAIR_AREA_LABEL, type AffairArea } from "../affairsKnowledge";
+import { describeItem, needsReview, type AffairChangeKind, type AffairItem } from "../lifeAffairs";
 
 type LoadStatus = "loading" | "ready" | "no-instance" | "error";
 
+interface Entry {
+  id: string;
+  changeKind: AffairChangeKind;
+  summary: string | null;
+  createdAt: string;
+  label: string;
+  area: AffairArea;
+}
+
 /**
- * What has been settled, and when.
+ * What this product knows, and how it came to know it.
  *
- * This is the caretaker's view: not a feed of events, but the standing
- * of everything that applies to this person, newest confirmation first.
- * It answers the question somebody actually has after a long absence,
- * which is "what did I already deal with, and how long ago".
+ * Two halves, and the order matters. First what is currently true, since
+ * that is what somebody actually came here to check. Then what changed
+ * and when, which is the half a binder cannot have: after eight years
+ * the useful question is not "is there an executor" but "when did I last
+ * look at this, and what did it say before".
  *
  * Steps never addressed are deliberately not listed. A page of things
  * you have not done is the shaming list this product exists to avoid,
  * and the one surface already tells you what is next.
  */
-const STANDING_LABEL: Record<StepStanding, string> = {
+const CHANGE_LABEL: Record<AffairChangeKind, string> = {
+  established: "Recorded",
+  updated: "Changed",
   confirmed: "Confirmed",
-  worthRechecking: "Worth checking again",
-  notApplicable: "Not applicable",
-  leftOpen: "Left open",
-  notAddressed: "Not yet started",
+  markedNotApplicable: "Marked not applicable",
+  archived: "Removed",
 };
 
 function formatDate(iso: string | null): string | null {
@@ -52,8 +61,8 @@ function describeElapsed(iso: string, now: Date): string {
 export default function HistoryModule() {
   const [status, setStatus] = useState<LoadStatus>("loading");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const [profile, setProfile] = useState<AffairProfile>({});
-  const [records, setRecords] = useState<StepRecord[]>([]);
+  const [items, setItems] = useState<AffairItem[]>([]);
+  const [entries, setEntries] = useState<Entry[]>([]);
 
   const load = useCallback(async () => {
     setStatus("loading");
@@ -67,14 +76,14 @@ export default function HistoryModule() {
       setStatus("no-instance");
       return;
     }
-    const [profileResult, stepsResult] = await Promise.all([loadProfile(found.id), loadSteps(found.id)]);
-    if (!stepsResult.ok) {
-      setErrorMessage(describeResultError(stepsResult.error));
+    const [itemsResult, revisionsResult] = await Promise.all([loadItems(found.id), loadRevisions(found.id)]);
+    if (!itemsResult.ok) {
+      setErrorMessage(describeResultError(itemsResult.error));
       setStatus("error");
       return;
     }
-    setProfile(profileResult.ok ? profileResult.data : {});
-    setRecords(stepsResult.data);
+    setItems(itemsResult.data);
+    setEntries(revisionsResult.ok ? revisionsResult.data : []);
     setStatus("ready");
   }, []);
 
@@ -90,70 +99,102 @@ export default function HistoryModule() {
     return <EmptyState icon={Clock} title="Couldn't load this" description={errorMessage ?? "Try again."} />;
   }
 
-  const now = new Date();
-  const readiness = deriveReadiness({ profile, records }, now);
-
-  // Everything the person has actually decided something about, most
-  // recently confirmed first, with undated decisions after the dated.
-  const settled: StandingRow[] = readiness.rows
-    .filter((r) => r.standing !== "notAddressed")
-    .sort((a, b) => {
-      if (a.confirmedAt && b.confirmedAt) return a.confirmedAt < b.confirmedAt ? 1 : -1;
-      if (a.confirmedAt) return -1;
-      if (b.confirmedAt) return 1;
-      return 0;
-    });
-
-  if (settled.length === 0) {
+  if (items.length === 0) {
     return (
       <EmptyState
         icon={Clock}
         title="Nothing recorded yet"
-        description="What you have confirmed, and when. It fills in as you go."
+        description="What you have told us, and when. It fills in as you go."
       />
     );
   }
 
+  const now = new Date();
+  const byArea = new Map<AffairArea, AffairItem[]>();
+  for (const item of items) {
+    byArea.set(item.area, [...(byArea.get(item.area) ?? []), item]);
+  }
+
+  const oldest = items
+    .map((i) => i.lastConfirmedAt ?? i.establishedAt)
+    .filter((d): d is string => Boolean(d))
+    .sort()[0];
+
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex flex-col gap-7">
       <div>
-        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">What you have settled</p>
+        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">What is recorded</p>
         <h1
           className="mt-2 text-[24px] leading-tight text-[var(--text)]"
           style={{ fontFamily: "var(--product-narrative-font, inherit)" }}
         >
-          {readiness.confirmed === 1 ? "One thing confirmed so far." : `${readiness.confirmed} things confirmed so far.`}
+          {items.length === 1 ? "One thing in order." : `${items.length} things in order.`}
         </h1>
-        {readiness.oldestConfirmedAt && (
-          <p className="mt-2 text-[13px] leading-relaxed text-[var(--muted)]">
-            The oldest of those was confirmed {describeElapsed(readiness.oldestConfirmedAt, now)}. Anything that has
-            been standing a long time will come back for a second look.
+        {oldest && (
+          <p className="mt-2 max-w-lg text-[13px] leading-relaxed text-[var(--muted)]">
+            The oldest of these was last looked at {describeElapsed(oldest, now)}. Anything that has been standing a
+            long time comes back for a second look on its own.
           </p>
         )}
       </div>
 
-      <div className="flex flex-col">
-        {settled.map((row) => {
-          const date = formatDate(row.confirmedAt);
-          return (
-            <div key={row.step.key} className="border-b border-[var(--border)] py-3">
-              <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                <h2 className="text-[14px] font-semibold text-[var(--text)]">{row.step.instruction}</h2>
-                <span
-                  className="text-[11px] font-semibold"
-                  style={{ color: row.standing === "confirmed" ? "var(--primary)" : "var(--muted)" }}
-                >
-                  {STANDING_LABEL[row.standing]}
-                </span>
+      {[...byArea.entries()].map(([area, areaItems]) => (
+        <section key={area} aria-label={AFFAIR_AREA_LABEL[area]}>
+          <h2 className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">
+            {AFFAIR_AREA_LABEL[area]}
+          </h2>
+          <div className="mt-2 flex flex-col">
+            {areaItems.map((item) => {
+              const detail = describeItem(item);
+              const stale = needsReview(item, now);
+              return (
+                <div key={item.id} className="border-b border-[var(--border)] py-3">
+                  <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                    <h3 className="text-[14px] font-semibold text-[var(--text)]">{item.label}</h3>
+                    <span
+                      className="text-[11px] font-semibold"
+                      style={{ color: stale ? "var(--muted)" : "var(--primary)" }}
+                    >
+                      {stale
+                        ? "Worth checking again"
+                        : item.status === "incomplete"
+                          ? "Partly recorded"
+                          : "Recorded"}
+                    </span>
+                  </div>
+                  {detail && detail !== item.label && (
+                    <p className="mt-0.5 text-[12.5px] leading-relaxed text-[var(--muted)]">{detail}</p>
+                  )}
+                  {item.notes && <p className="mt-1 text-[12.5px] leading-relaxed text-[var(--muted)]">{item.notes}</p>}
+                  {item.lastConfirmedAt && (
+                    <p className="mt-1 text-[12px] text-[var(--faint)]">
+                      Last confirmed {formatDate(item.lastConfirmedAt)}
+                    </p>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </section>
+      ))}
+
+      {entries.length > 0 && (
+        <section aria-label="What has changed">
+          <h2 className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">What has changed</h2>
+          <div className="mt-2 flex flex-col">
+            {entries.map((entry) => (
+              <div key={entry.id} className="border-b border-[var(--border)] py-2.5">
+                <p className="text-[13px] leading-relaxed text-[var(--text)]">
+                  {entry.summary ?? `${CHANGE_LABEL[entry.changeKind]} ${entry.label}.`}
+                </p>
+                <p className="mt-0.5 text-[12px] text-[var(--faint)]">
+                  {formatDate(entry.createdAt)} · {describeElapsed(entry.createdAt, now)}
+                </p>
               </div>
-              <p className="mt-0.5 text-[12px] text-[var(--muted)]">
-                {AFFAIR_AREA_LABEL[row.step.area]}
-                {date ? ` · ${date}` : ""}
-              </p>
-            </div>
-          );
-        })}
-      </div>
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   );
 }

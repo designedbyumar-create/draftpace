@@ -28,7 +28,9 @@
 import { Document, Page, View, Text, StyleSheet, type DocumentProps } from "@react-pdf/renderer";
 import { AFFAIR_AREA_LABEL, type AffairArea } from "../affairsKnowledge";
 import { isBlankCopy } from "../completion";
+import { captureFor } from "../capture";
 import type { Readiness, StandingRow, StepStanding } from "../completion";
+import type { AffairItem } from "../lifeAffairs";
 
 const C = {
   paper: "#fbfaf7",
@@ -82,30 +84,74 @@ const s = StyleSheet.create({
   headRule: { height: 1.25, backgroundColor: C.ink, marginBottom: 13 },
   p: { marginBottom: 7 },
 
-  row: { paddingVertical: 9 },
+  row: { paddingVertical: 18 },
   rowRule: { borderBottomWidth: 0.5, borderBottomColor: C.ruleSoft },
   rowTop: { flexDirection: "row", justifyContent: "space-between", alignItems: "flex-start" },
   instruction: { fontSize: 10.5, color: C.ink, flex: 1, paddingRight: 12 },
   standing: { fontSize: 6.6, letterSpacing: 0.7, textTransform: "uppercase", fontWeight: 700 },
-  answerLine: { borderBottomWidth: 0.7, borderBottomColor: C.rule, height: 22, marginTop: 6 },
+  answerLine: { borderBottomWidth: 0.7, borderBottomColor: C.rule, height: 16, marginTop: 1 },
   note: { fontSize: 8.4, color: C.muted, marginTop: 3 },
+  // A record, set as a small block rather than a table row: what it is,
+  // then who or where, then what somebody should do about it.
+  record: { marginTop: 6, paddingLeft: 10, borderLeftWidth: 1.2, borderLeftColor: C.deepSoft },
+  recordLabel: { fontSize: 10, color: C.ink },
+  recordDetail: { fontSize: 9, color: C.body, marginTop: 1.5 },
+  recordNote: { fontSize: 8.8, color: C.muted, marginTop: 2.5 },
+  recordMeta: { fontSize: 7.6, color: C.faint, marginTop: 3 },
+  fieldLabel: { fontSize: 7.4, letterSpacing: 0.5, textTransform: "uppercase", color: C.faint, marginTop: 4 },
+  promptLine: { fontSize: 8.4, color: C.muted, marginTop: 26 },
+  doneLine: { flexDirection: "row", alignItems: "flex-end", marginTop: 9 },
 });
 
 const STANDING_LABEL: Record<StepStanding, string> = {
-  confirmed: "Confirmed",
+  established: "Recorded",
+  done: "Done",
+  recordedWithoutDetail: "No detail kept",
   worthRechecking: "Worth checking",
   notApplicable: "Not applicable",
   leftOpen: "Left open",
+  unsure: "Not settled",
   notAddressed: "Not yet started",
 };
 
 const STANDING_COLOR: Record<StepStanding, string> = {
-  confirmed: C.brass,
+  established: C.brass,
+  done: C.brass,
+  recordedWithoutDetail: C.muted,
   worthRechecking: C.deep,
   notApplicable: C.faint,
   leftOpen: C.muted,
+  unsure: C.muted,
   notAddressed: C.faint,
 };
+
+/**
+ * How a field name reads on paper. The open fields bag holds keys chosen
+ * for code; the person reading this has never seen them.
+ */
+const FIELD_LABEL: Record<string, string> = {
+  relationship: "Relationship",
+  role: "What they do",
+  provider: "Provider",
+  purpose: "What it is for",
+  renewalMonth: "Renews",
+  animals: "Animals",
+  tenure: "Owned or rented",
+  exists: "In place",
+  usesOne: "In use",
+  prepaid: "Already arranged",
+  copyHeldBy: "Copy also held by",
+  openableBy: "Can be opened by",
+  namedToReceive: "Named to receive it",
+  shouldGoTo: "Should go to",
+  writtenFor: "Written for",
+  otherCarers: "Others involved in their care",
+  discussed: "Talked about it",
+};
+
+function fieldLabel(key: string): string {
+  return FIELD_LABEL[key] ?? key.replace(/([A-Z])/g, " $1").replace(/^./, (c) => c.toUpperCase());
+}
 
 function formatDate(iso: string | null): string | null {
   if (!iso) return null;
@@ -132,27 +178,101 @@ function Sheet({ section, children }: { section: string; children: React.ReactNo
 }
 
 /**
- * One step. In a blank copy it is a prompt with a line to write on; in a
- * filled one it carries its standing and, where earned, a date.
+ * One established record, printed as knowledge.
+ *
+ * This is the reason the rewrite happened. The previous version printed
+ * an instruction, the word CONFIRMED and a date, which told a family
+ * that somebody had pressed a button and nothing whatsoever about where
+ * anything was. Everything below is the person's own words.
+ */
+function RecordBlock({ item }: { item: AffairItem }) {
+  const contact = item.personContact;
+  const extras = Object.entries(item.fields).filter(([, value]) => value.trim().length > 0);
+  const confirmed = formatDate(item.lastConfirmedAt ?? item.establishedAt);
+
+  return (
+    <View style={s.record} wrap={false}>
+      <Text style={s.recordLabel}>{item.label}</Text>
+      {item.personName && item.personName !== item.label && (
+        <Text style={s.recordDetail}>{item.personName}</Text>
+      )}
+      {extras.map(([key, value]) => (
+        <Text key={key} style={s.recordDetail}>
+          {fieldLabel(key)}: {value}
+        </Text>
+      ))}
+      {contact && <Text style={s.recordDetail}>Contact: {contact}</Text>}
+      {item.whereabouts && <Text style={s.recordDetail}>Where: {item.whereabouts}</Text>}
+      {item.notes && <Text style={s.recordNote}>{item.notes}</Text>}
+      <Text style={s.recordMeta}>
+        {item.status === "incomplete" ? "Partly recorded. " : ""}
+        {confirmed ? `Last confirmed ${confirmed}` : "No date recorded"}
+      </Text>
+    </View>
+  );
+}
+
+/**
+ * One step. In a blank copy it is the question the app would ask, with a
+ * line to write on. In a filled one it is whatever the person actually
+ * told us, and where they told us nothing, it says so rather than
+ * pretending.
  */
 function StepRow({ row, blank }: { row: StandingRow; blank: boolean }) {
-  const date = formatDate(row.confirmedAt);
-  return (
-    <View style={[s.row, blank ? {} : s.rowRule]} wrap={false}>
-      <View style={s.rowTop}>
-        <Text style={s.instruction}>{row.step.instruction}</Text>
-        {!blank && (
-          <Text style={[s.standing, { color: STANDING_COLOR[row.standing] }]}>{STANDING_LABEL[row.standing]}</Text>
+  const spec = captureFor(row.step.key);
+
+  if (blank) {
+    // The blank copy asks the same questions the companion asks, drawn
+    // from the same specs, so a person who fills in the paper and a
+    // person who uses the app end up having answered the same things.
+    const prompts = spec ? spec.prompts.filter((p) => !p.askIf) : [];
+    return (
+      <View style={s.row} wrap={false}>
+        <View style={s.rowTop}>
+          <Text style={s.instruction}>{row.step.instruction}</Text>
+        </View>
+        <Text style={s.note}>{row.step.why}</Text>
+        {prompts.length > 0 ? (
+          prompts.map((prompt) => (
+            <View key={prompt.field} wrap={false}>
+              <Text style={s.promptLine}>{prompt.prompt}</Text>
+              <View style={s.answerLine} />
+            </View>
+          ))
+        ) : (
+          /*
+            An action step has nothing to write down, because it happens
+            somewhere else. A blank ruled line under it invites an answer
+            that does not exist. What a person actually wants on paper is
+            somewhere to note that they did it.
+          */
+          <View style={s.doneLine}>
+            <Text style={{ fontSize: 8.4, color: C.muted, paddingRight: 8 }}>Done on</Text>
+            <View style={{ flex: 1, borderBottomWidth: 0.7, borderBottomColor: C.rule, height: 14 }} />
+          </View>
         )}
       </View>
-      {blank ? (
-        <>
-          <Text style={s.note}>{row.step.why}</Text>
-          <View style={s.answerLine} />
-        </>
-      ) : (
-        date && <Text style={s.note}>Confirmed {date}</Text>
-      )}
+    );
+  }
+
+  const date = formatDate(row.confirmedAt);
+  return (
+    <View style={[s.row, s.rowRule]} wrap={false}>
+      <View style={s.rowTop}>
+        <Text style={s.instruction}>{row.step.instruction}</Text>
+        <Text style={[s.standing, { color: STANDING_COLOR[row.standing] }]}>{STANDING_LABEL[row.standing]}</Text>
+      </View>
+      {row.items.length > 0 ? (
+        row.items.map((item) => <RecordBlock key={item.id} item={item} />)
+      ) : row.standing === "recordedWithoutDetail" ? (
+        <Text style={s.note}>
+          Confirmed{date ? ` ${date}` : ""}, before the details were being kept. Nothing was written down.
+        </Text>
+      ) : row.standing === "done" ? (
+        <Text style={s.note}>Done{date ? `, ${date}` : ""}.</Text>
+      ) : row.standing === "unsure" ? (
+        <Text style={s.note}>Not settled. This one was left open on purpose.</Text>
+      ) : null}
     </View>
   );
 }
@@ -177,6 +297,9 @@ export function InOrderDocument({
   const blank = isBlankCopy(readiness);
   const generated = formatDate(generatedAt.toISOString());
   const oldest = formatDate(readiness.oldestConfirmedAt);
+
+  /** The standings this particular copy actually uses, for the legend. */
+  const present = new Set(readiness.rows.map((r) => r.standing));
 
   const byArea = AREA_ORDER.map((area) => ({
     area,
@@ -272,7 +395,7 @@ export function InOrderDocument({
           <Text style={s.p}>
             {blank
               ? "Every section printed here applies to the person who generated it. Anything that did not apply was left out entirely, rather than printed and crossed through."
-              : "Each entry carries its own standing. Confirmed means somebody said it was true on that date. Left open means they knew and had not finished. Not applicable means they decided it does not apply. Anything absent never applied to them at all."}
+              : "Each entry carries its own standing, and what is written under it is in their own words. Anything absent from this copy never applied to them at all."}
           </Text>
 
           <View style={{ height: 0.5, backgroundColor: C.rule, marginVertical: 16 }} />
@@ -300,20 +423,33 @@ export function InOrderDocument({
             </View>
           ) : (
             <View>
-              {([
-                ["confirmed", "Somebody said this was true, on the date shown."],
-                ["worthRechecking", "It was confirmed once, but long enough ago to be worth asking again."],
-                ["leftOpen", "Deliberately unfinished. Do not rely on it."],
-                ["notApplicable", "Considered, and decided it does not apply."],
-                ["notAddressed", "Never started."],
-              ] as [StepStanding, string][]).map(([standing, meaning]) => (
+              {/*
+                Only the marks that actually appear in this copy. A legend
+                explaining five standings when the pages contain two is
+                the kind of padding that makes a reader trust the whole
+                document less.
+              */}
+              {(
+                [
+                  ["established", "Written down here, and true when it was last confirmed."],
+                  ["done", "Something they did elsewhere and told us about."],
+                  ["worthRechecking", "Recorded once, but long enough ago to be worth asking again."],
+                  ["recordedWithoutDetail", "Dealt with on the date shown, before the details were being kept."],
+                  ["leftOpen", "Deliberately unfinished. Do not rely on it."],
+                  ["unsure", "They did not know yet, and said so rather than guessing."],
+                  ["notApplicable", "Considered, and decided it does not apply."],
+                  ["notAddressed", "Never started."],
+                ] as [StepStanding, string][]
+              )
+                .filter(([standing]) => present.has(standing))
+                .map(([standing, meaning]) => (
                 <View key={standing} style={{ flexDirection: "row", marginBottom: 7, alignItems: "flex-start" }} wrap={false}>
                   <Text style={[s.standing, { color: STANDING_COLOR[standing], width: 92, paddingTop: 1.5 }]}>
                     {STANDING_LABEL[standing]}
                   </Text>
                   <Text style={{ fontSize: 9, color: C.muted, flex: 1, lineHeight: 1.5 }}>{meaning}</Text>
-                </View>
-              ))}
+                  </View>
+                ))}
             </View>
           )}
 

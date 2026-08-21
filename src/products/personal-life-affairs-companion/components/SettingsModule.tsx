@@ -6,8 +6,10 @@ import EmptyState from "@/design-system/EmptyState";
 import { Settings } from "@/design-system/Icon";
 import { describeResultError } from "@/product-framework/result";
 import { findInOrderInstanceId } from "../instanceData";
-import { loadProfile, saveProfileAnswer } from "../domain/affairsData";
+import { loadItems, loadProfile, recordLifeEvent, saveProfileAnswer } from "../domain/affairsData";
 import { INTAKE_QUESTIONS } from "../intake";
+import { affectedItems, describeAftermath, LIFE_EVENTS, type LifeEvent } from "../lifeEvents";
+import type { AffairItem } from "../lifeAffairs";
 import type { AffairProfile } from "../sequencer";
 import type { AffairGate } from "../affairsKnowledge";
 
@@ -33,7 +35,11 @@ export default function SettingsModule() {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [instanceId, setInstanceId] = useState<string | null>(null);
   const [profile, setProfile] = useState<AffairProfile>({});
+  const [items, setItems] = useState<AffairItem[]>([]);
   const [pending, setPending] = useState<AffairGate | null>(null);
+  const [eventPending, setEventPending] = useState<string | null>(null);
+  /** What the companion says after a life event is recorded. */
+  const [aftermath, setAftermath] = useState<string | null>(null);
 
   const load = useCallback(async () => {
     const found = await findInOrderInstanceId();
@@ -47,8 +53,9 @@ export default function SettingsModule() {
       return;
     }
     setInstanceId(found.id);
-    const result = await loadProfile(found.id);
+    const [result, itemsResult] = await Promise.all([loadProfile(found.id), loadItems(found.id)]);
     setProfile(result.ok ? result.data : {});
+    setItems(itemsResult.ok ? itemsResult.data : []);
     setStatus("ready");
   }, []);
 
@@ -67,6 +74,44 @@ export default function SettingsModule() {
       return;
     }
     setProfile(result.data);
+  }
+
+  /**
+   * Somebody says their life changed.
+   *
+   * Two writes and no list. The event is recorded, and every record the
+   * change could have made untrue has its review brought forward to now,
+   * so it comes back through the ordinary next-step path rather than as
+   * a pile of work. Where the event settles an intake answer on its own,
+   * that is saved too: recording that you bought a place and then being
+   * asked whether you own your home would be the product not listening.
+   */
+  async function markLifeEvent(event: LifeEvent) {
+    if (!instanceId) return;
+    setEventPending(event.kind);
+    setErrorMessage(null);
+    setAftermath(null);
+
+    const affected = affectedItems(event, items);
+    const result = await recordLifeEvent(
+      instanceId,
+      event.kind,
+      affected.map((i) => i.id)
+    );
+    if (!result.ok) {
+      setEventPending(null);
+      setErrorMessage(describeResultError(result.error));
+      return;
+    }
+    setItems(result.data);
+
+    if (event.implies) {
+      const profileResult = await saveProfileAnswer(instanceId, event.implies.gate, event.implies.value);
+      if (profileResult.ok) setProfile(profileResult.data);
+    }
+
+    setEventPending(null);
+    setAftermath(describeAftermath(event, affected));
   }
 
   if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
@@ -131,6 +176,42 @@ export default function SettingsModule() {
             </div>
           );
         })}
+      </section>
+
+      <section aria-label="If your life has changed" className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5">
+        <h2 className="text-[15px] font-semibold text-[var(--text)]">Has something changed?</h2>
+        <p className="mt-1.5 max-w-lg text-[13px] leading-relaxed text-[var(--muted)]">
+          A picture of your affairs does not go out of date slowly. It goes out of date all at once, the week something
+          happens. Tell us and we will work out what is worth a second look.
+        </p>
+
+        {aftermath && (
+          <p
+            role="status"
+            className="mt-4 rounded-lg border border-[var(--border)] bg-[var(--surface-muted)] p-3 text-[13px] leading-relaxed text-[var(--text)]"
+          >
+            {aftermath}
+          </p>
+        )}
+
+        <div className="mt-4 flex flex-wrap gap-2">
+          {LIFE_EVENTS.map((event) => (
+            <Button
+              key={event.kind}
+              size="sm"
+              variant="secondary"
+              disabled={eventPending !== null}
+              onClick={() => markLifeEvent(event)}
+            >
+              {eventPending === event.kind ? "Recording..." : event.label}
+            </Button>
+          ))}
+        </div>
+
+        <p className="mt-3 max-w-lg text-[12px] leading-relaxed text-[var(--faint)]">
+          Nothing is deleted and nothing is marked wrong. Anything affected simply comes back on the main screen as a
+          question, one at a time.
+        </p>
       </section>
 
       <section aria-label="How this keeps up" className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5">

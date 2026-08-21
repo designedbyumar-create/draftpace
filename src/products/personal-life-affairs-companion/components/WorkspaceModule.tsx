@@ -3,19 +3,34 @@
 import { useCallback, useEffect, useState } from "react";
 import Button from "@/design-system/Button";
 import EmptyState from "@/design-system/EmptyState";
-import { CheckCircle2, ListChecks } from "@/design-system/Icon";
+import { CheckCircle2, ListChecks, Plus } from "@/design-system/Icon";
 import { describeResultError } from "@/product-framework/result";
 import { findInOrderInstanceId } from "../instanceData";
-import { loadProfile, loadSteps, recordStep, saveProfileAnswer } from "../domain/affairsData";
+import {
+  confirmItem,
+  establishItem,
+  loadItems,
+  loadProfile,
+  loadSteps,
+  recordStep,
+  saveProfileAnswer,
+  updateItem,
+} from "../domain/affairsData";
 import { deriveAffairsState, type AffairProfile, type StepRecord } from "../sequencer";
 import { INTAKE_QUESTIONS, nextUnansweredIntake } from "../intake";
 import { deriveReadiness } from "../completion";
+import { acknowledge, captureFor, type AffairItemDraft } from "../capture";
+import { describeItem, type AffairItem } from "../lifeAffairs";
+import CompanionCapture from "./CompanionCapture";
 import HandoverPanel from "./HandoverPanel";
+import HandoffCheckPanel from "./HandoffCheckPanel";
 import type { AffairGate } from "../affairsKnowledge";
 
 type LoadStatus = "loading" | "ready" | "no-instance" | "error";
 
 const SNOOZE_DAYS = 30;
+/** Long enough that an offer to fill in old detail is not a nag, short enough to still be an offer. */
+const LEAVE_IT_DAYS = 180;
 
 function inDays(days: number): string {
   const d = new Date();
@@ -26,11 +41,12 @@ function inDays(days: number): string {
 /**
  * The whole product, on one surface.
  *
- * Two modes share this screen, which is the central design idea. During
- * intake it asks about the person's life; afterwards it shows the single
- * next step. Neither is a separate destination, because "one step on
- * screen" is this product's first design law and a wizard would be a
- * second place to be.
+ * Three modes share this screen. During intake it asks about the
+ * person's life. Afterwards it shows the single next step, and when that
+ * step is one that creates knowledge it hands over to Companion Mode,
+ * which asks one question at a time until the record exists. None of the
+ * three is a separate destination, because "one thing on screen" is this
+ * product's first design law and a wizard would be a second place to be.
  *
  * Deliberately absent: a progress bar, a percentage, a denominator, and
  * any list of what remains. Counting up is the rule. A person with no
@@ -43,7 +59,13 @@ export default function WorkspaceModule() {
   const [instanceId, setInstanceId] = useState<string | null>(null);
   const [profile, setProfile] = useState<AffairProfile>({});
   const [records, setRecords] = useState<StepRecord[]>([]);
+  const [items, setItems] = useState<AffairItem[]>([]);
   const [pending, setPending] = useState(false);
+
+  /** Set while Companion Mode has the screen. Null means the step card is showing. */
+  const [capturing, setCapturing] = useState<{ stepKey: string; editing: AffairItem | null } | null>(null);
+  /** The line the companion says once something has been saved. Cleared on the next action. */
+  const [acknowledgement, setAcknowledgement] = useState<{ text: string; stepKey: string } | null>(null);
 
   const load = useCallback(async () => {
     setStatus("loading");
@@ -59,7 +81,11 @@ export default function WorkspaceModule() {
       return;
     }
     setInstanceId(found.id);
-    const [profileResult, stepsResult] = await Promise.all([loadProfile(found.id), loadSteps(found.id)]);
+    const [profileResult, stepsResult, itemsResult] = await Promise.all([
+      loadProfile(found.id),
+      loadSteps(found.id),
+      loadItems(found.id),
+    ]);
     if (!stepsResult.ok) {
       setErrorMessage(describeResultError(stepsResult.error));
       setStatus("error");
@@ -67,6 +93,7 @@ export default function WorkspaceModule() {
     }
     setProfile(profileResult.ok ? profileResult.data : {});
     setRecords(stepsResult.data);
+    setItems(itemsResult.ok ? itemsResult.data : []);
     setStatus("ready");
   }, []);
 
@@ -113,11 +140,12 @@ export default function WorkspaceModule() {
     }
   }
 
-  async function act(stepKey: string, state: "confirmed" | "notRelevant" | "open", snooze = false) {
+  async function act(stepKey: string, state: "confirmed" | "notRelevant" | "open" | "unsure", snoozeDays?: number) {
     if (!instanceId) return;
     setPending(true);
+    setAcknowledgement(null);
     const result = await recordStep(instanceId, stepKey, state, {
-      snoozedUntil: snooze ? inDays(SNOOZE_DAYS) : null,
+      snoozedUntil: snoozeDays ? inDays(snoozeDays) : null,
     });
     setPending(false);
     if (!result.ok) {
@@ -125,6 +153,42 @@ export default function WorkspaceModule() {
       return;
     }
     setRecords(result.data);
+  }
+
+  /** The moment a piece of knowledge enters the map. */
+  async function saveCapture(draft: AffairItemDraft) {
+    if (!instanceId || !capturing) return;
+    const step = state.relevant.find((s) => s.key === capturing.stepKey);
+    const spec = captureFor(capturing.stepKey);
+    if (!step || !spec) return;
+
+    setPending(true);
+    setErrorMessage(null);
+    const result = capturing.editing
+      ? await updateItem(instanceId, capturing.editing, draft)
+      : await establishItem(instanceId, draft, step.confirmEveryMonths ?? null);
+    setPending(false);
+
+    if (!result.ok) {
+      setErrorMessage(describeResultError(result.error));
+      return;
+    }
+    setItems(result.data);
+    setCapturing(null);
+    setAcknowledgement({ text: acknowledge(spec, draft.label), stepKey: capturing.stepKey });
+  }
+
+  /** "Still true." The record does not change; the date it was last vouched for does. */
+  async function confirmStanding(item: AffairItem) {
+    if (!instanceId) return;
+    setPending(true);
+    const result = await confirmItem(instanceId, item);
+    setPending(false);
+    if (!result.ok) {
+      setErrorMessage(describeResultError(result.error));
+      return;
+    }
+    setItems(result.data);
   }
 
   if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
@@ -143,25 +207,28 @@ export default function WorkspaceModule() {
 
   const intake = nextUnansweredIntake(profile);
   const now = new Date();
-  const state = deriveAffairsState({ profile, records }, now);
-  const readiness = deriveReadiness({ profile, records }, now);
+  const state = deriveAffairsState({ profile, records, items }, now);
+  const readiness = deriveReadiness({ profile, records, items }, now);
 
   /**
    * The handover appears once there is genuinely something to hand over,
-   * and never during intake. It is not gated on completeness: a person
-   * who has settled two things may print, and the copy will say so.
+   * and never during intake or mid-capture. It is not gated on
+   * completeness: a person who has recorded two things may print, and
+   * the copy will say exactly that.
    */
-  const showHandover = !intake && readiness.confirmed > 0;
+  const showHandover = !intake && !capturing && readiness.itemCount > 0;
 
-  return (
-    <div className="flex flex-col gap-5">
-      {errorMessage && (
-        <p className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3 text-[13px] text-[var(--danger)]">
-          {errorMessage}
-        </p>
-      )}
+  const errorBanner = errorMessage && (
+    <p className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3 text-[13px] text-[var(--danger)]">
+      {errorMessage}
+    </p>
+  );
 
-      {intake ? (
+  // ------------------------------------------------------------- intake
+  if (intake) {
+    return (
+      <div className="flex flex-col gap-5">
+        {errorBanner}
         <section aria-label="About you">
           <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">A few questions first</p>
           <h1
@@ -183,38 +250,168 @@ export default function WorkspaceModule() {
             {INTAKE_QUESTIONS.length} short questions. They decide what this product will and will not ask you about.
           </p>
         </section>
-      ) : state.next ? (
+      </div>
+    );
+  }
+
+  // ---------------------------------------------------- companion mode
+  if (capturing) {
+    const step = state.relevant.find((s) => s.key === capturing.stepKey);
+    const spec = captureFor(capturing.stepKey);
+    if (step && spec) {
+      return (
+        <div className="flex flex-col gap-5">
+          {errorBanner}
+          <CompanionCapture
+            step={step}
+            spec={spec}
+            editing={capturing.editing}
+            pending={pending}
+            onSave={saveCapture}
+            onCancel={() => setCapturing(null)}
+          />
+        </div>
+      );
+    }
+  }
+
+  const next = state.next;
+  const spec = next ? captureFor(next.step.key) : null;
+
+  return (
+    <div className="flex flex-col gap-5">
+      {errorBanner}
+
+      {acknowledgement && (
+        <AcknowledgementBanner
+          text={acknowledgement.text}
+          establishedCount={state.establishedCount}
+          addAnother={
+            // Offered only where a person genuinely may have several:
+            // banks, pensions, pets, professionals. Never on a step that
+            // can only ever have one answer.
+            captureFor(acknowledgement.stepKey)?.multiple
+              ? {
+                  label: captureFor(acknowledgement.stepKey)!.addAnotherLabel ?? "Add another",
+                  onClick: () => {
+                    setCapturing({ stepKey: acknowledgement.stepKey, editing: null });
+                    setAcknowledgement(null);
+                  },
+                }
+              : null
+          }
+          onDismiss={() => setAcknowledgement(null)}
+        />
+      )}
+
+      {next ? (
         <section aria-label="Your next step">
           <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">
-            {state.next.reason === "needsRecheck" ? "Worth checking again" : "Your next step"}
+            {next.reason === "needsRecheck"
+              ? "Worth checking again"
+              : next.reason === "needsDetail"
+                ? "Worth filling in"
+                : next.reason === "wasUnsure"
+                  ? "You were not sure about this"
+                  : "Your next step"}
           </p>
           <h1
             className="mt-2 text-[26px] leading-tight text-[var(--text)]"
             style={{ fontFamily: "var(--product-narrative-font, inherit)" }}
           >
-            {state.next.step.instruction}
+            {next.step.instruction}
           </h1>
-          <p className="mt-2 max-w-lg text-[13.5px] leading-relaxed text-[var(--muted)]">{state.next.step.why}</p>
+          <p className="mt-2 max-w-lg text-[13.5px] leading-relaxed text-[var(--muted)]">
+            {next.reason === "needsDetail"
+              ? "You dealt with this before this product started keeping the details. Adding them now is what puts the answer into the copy you would hand somebody."
+              : next.reason === "wasUnsure"
+                ? "You said you were not sure last time. Now is as good a moment as any, and it is still fine not to know."
+                : next.step.why}
+          </p>
 
-          {state.next.step.referOut && (
+          {next.step.referOut && (
             <p className="mt-3 max-w-lg rounded-lg border border-[var(--border)] bg-[var(--surface-muted)] p-3 text-[12.5px] leading-relaxed text-[var(--muted)]">
-              {state.next.step.referOut}
+              {next.step.referOut}
             </p>
           )}
 
+          {/* What is already recorded, shown before asking anything about
+              it. Somebody rechecking needs to see the answer they are
+              being asked to vouch for. */}
+          {next.existing.length > 0 && (
+            <ul aria-label="What is recorded now" className="mt-4 flex flex-col gap-2">
+              {next.existing.map((existing) => (
+                <li
+                  key={existing.id}
+                  className="rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3.5 py-3"
+                >
+                  <p className="text-[14px] font-semibold text-[var(--text)]">{existing.label}</p>
+                  {describeItem(existing) !== existing.label && (
+                    <p className="mt-0.5 text-[12.5px] leading-relaxed text-[var(--muted)]">{describeItem(existing)}</p>
+                  )}
+                  {existing.notes && (
+                    <p className="mt-1 text-[12.5px] leading-relaxed text-[var(--muted)]">{existing.notes}</p>
+                  )}
+                </li>
+              ))}
+            </ul>
+          )}
+
           <div className="mt-4 flex flex-wrap gap-4 text-[12px] text-[var(--faint)]">
-            <span>About {state.next.step.minutes} minutes</span>
-            {state.confirmedCount > 0 && <span>{state.confirmedCount} confirmed so far</span>}
+            <span>About {next.step.minutes} minutes</span>
+            {state.establishedCount > 0 && (
+              <span>
+                {state.establishedCount === 1 ? "1 thing recorded so far" : `${state.establishedCount} things recorded so far`}
+              </span>
+            )}
           </div>
 
           <div className="mt-5 flex flex-wrap gap-2">
-            <Button size="sm" disabled={pending} onClick={() => act(state.next!.step.key, "confirmed")}>
-              {state.next.reason === "needsRecheck" ? "Still true" : "Done this"}
-            </Button>
-            <Button size="sm" variant="secondary" disabled={pending} onClick={() => act(state.next!.step.key, "notRelevant")}>
+            {next.reason === "needsRecheck" && next.existing.length > 0 ? (
+              <>
+                <Button size="sm" disabled={pending} onClick={() => confirmStanding(next.existing[0])}>
+                  Still true
+                </Button>
+                <Button
+                  size="sm"
+                  variant="secondary"
+                  disabled={pending}
+                  onClick={() => setCapturing({ stepKey: next.step.key, editing: next.existing[0] })}
+                >
+                  Update it
+                </Button>
+              </>
+            ) : next.step.kind === "establish" && spec ? (
+              <Button
+                size="sm"
+                disabled={pending}
+                onClick={() => {
+                  setAcknowledgement(null);
+                  setCapturing({ stepKey: next.step.key, editing: null });
+                }}
+              >
+                {next.reason === "needsDetail" ? "Add the details" : "Start"}
+              </Button>
+            ) : (
+              <Button size="sm" disabled={pending} onClick={() => act(next.step.key, "confirmed")}>
+                Done this
+              </Button>
+            )}
+
+            <Button size="sm" variant="secondary" disabled={pending} onClick={() => act(next.step.key, "notRelevant")}>
               Not relevant to me
             </Button>
-            <Button size="sm" variant="secondary" disabled={pending} onClick={() => act(state.next!.step.key, "open", true)}>
+            {next.step.kind === "action" && next.reason !== "needsRecheck" && (
+              <Button size="sm" variant="ghost" disabled={pending} onClick={() => act(next.step.key, "unsure")}>
+                {"I'm not sure"}
+              </Button>
+            )}
+            <Button
+              size="sm"
+              variant="ghost"
+              disabled={pending}
+              onClick={() => act(next.step.key, "open", next.reason === "needsDetail" ? LEAVE_IT_DAYS : SNOOZE_DAYS)}
+            >
               Later
             </Button>
           </div>
@@ -226,26 +423,78 @@ export default function WorkspaceModule() {
             className="mt-2 text-[26px] leading-tight text-[var(--text)]"
             style={{ fontFamily: "var(--product-narrative-font, inherit)" }}
           >
-            Everything you have told us about is in order.
+            Your affairs are in good shape.
           </h1>
           <p className="mt-2 max-w-lg text-[13.5px] leading-relaxed text-[var(--muted)]">
-            {state.confirmedCount} confirmed. We will not ask again until something is worth checking, or you tell us
-            your situation has changed.
+            {readiness.itemCount === 1
+              ? "One thing recorded."
+              : `${readiness.itemCount} things recorded.`}{" "}
+            We will not ask again until something is worth checking, or you tell us your situation has changed.
           </p>
           <div className="mt-5 flex items-center gap-2 text-[13px] text-[var(--primary)]">
             <CheckCircle2 size={17} aria-hidden />
-            <span>Nothing needs you right now.</span>
+            <span>Nothing needs your attention right now.</span>
           </div>
         </section>
       )}
 
       {showHandover && (
-        <HandoverPanel
-          readiness={readiness}
-          pending={pending}
-          onPrint={print}
+        <HandoffCheckPanel
+          profile={profile}
+          records={records}
+          items={items}
+          onFix={(stepKey) => {
+            setAcknowledgement(null);
+            // Action steps have nothing to capture, so the check can only
+            // ever jump straight into a question when there is one to ask.
+            if (captureFor(stepKey)) setCapturing({ stepKey, editing: null });
+          }}
         />
       )}
+      {showHandover && <HandoverPanel readiness={readiness} pending={pending} onPrint={print} />}
+    </div>
+  );
+}
+
+/**
+ * What the companion says once something is saved.
+ *
+ * It exists because the alternative is a screen that silently swaps one
+ * question for another, which reads as though nothing happened. The
+ * count is here rather than on the step card so that it appears at the
+ * moment it means something, and it only ever counts up.
+ */
+function AcknowledgementBanner({
+  text,
+  establishedCount,
+  addAnother,
+  onDismiss,
+}: {
+  text: string;
+  establishedCount: number;
+  addAnother: { label: string; onClick: () => void } | null;
+  onDismiss: () => void;
+}) {
+  return (
+    <div
+      role="status"
+      className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4"
+      style={{ borderLeftWidth: 3, borderLeftColor: "var(--primary)" }}
+    >
+      <p className="text-[14px] leading-relaxed text-[var(--text)]">{text}</p>
+      <p className="mt-1 text-[12px] text-[var(--faint)]">
+        {establishedCount === 1 ? "One thing in order." : `${establishedCount} things in order.`}
+      </p>
+      <div className="mt-3 flex flex-wrap gap-2">
+        {addAnother && (
+          <Button size="sm" variant="secondary" iconLeft={<Plus size={14} aria-hidden />} onClick={addAnother.onClick}>
+            {addAnother.label}
+          </Button>
+        )}
+        <Button size="sm" variant="ghost" onClick={onDismiss}>
+          Next thing
+        </Button>
+      </div>
     </div>
   );
 }

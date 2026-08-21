@@ -31,7 +31,7 @@ export default function HandoverPanel({
   onPrint: () => void;
   pending?: boolean;
 }) {
-  const settled = readiness.nothingOutstanding && readiness.confirmed > 0;
+  const settled = readiness.nothingOutstanding && readiness.itemCount > 0;
 
   return (
     <section
