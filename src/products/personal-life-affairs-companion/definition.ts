@@ -67,17 +67,34 @@ export const personalLifeAffairsCompanionDefinition: ProductDefinitionInput = {
   // One surface, following Home Base's collapse rather than PFC's fifteen
   // destinations. The whole product is "the next step", so a person must
   // never navigate to find out what to do.
-  navigation: ["workspace", "setup", "printables", "history", "settings"],
+  navigation: ["workspace", "printables", "history", "settings"],
   primaryNavigation: ["workspace", "history"],
   workspaceLabel: "In Order",
   startRoute: "workspace",
+  /**
+   * No "setup" destination, deliberately, and this is a design decision
+   * rather than an omission.
+   *
+   * The intake questions are not a separate mode: they are simply the
+   * first few steps in the same sequence as everything else, shown on the
+   * same single surface. "One step on screen" is this product's first
+   * design law, and a setup wizard would be a second place to be.
+   *
+   * Declaring "setup" also walks into a documented trap. With a setup
+   * destination and nothing calling setProductInstanceLifecycle,
+   * resolveLifecycleNavigation() pins the product in state 1 and renders
+   * a single "Start" link to a destination this product does not
+   * register, so the only visible navigation leads nowhere. Personal
+   * Finance Companion hit exactly this and its definition still carries
+   * the comment explaining why it excludes "setup". Verified live here
+   * before removing it.
+   */
   setup: {
-    required: true,
-    skippable: false,
+    required: false,
+    skippable: true,
     completedLabel: "Review your affairs",
   },
   modules: [
-    { id: "personal-life-affairs-companion.setup", destination: "setup" },
     { id: "personal-life-affairs-companion.workspace", destination: "workspace" },
     { id: "personal-life-affairs-companion.printables", destination: "printables" },
     { id: "personal-life-affairs-companion.history", destination: "history" },
