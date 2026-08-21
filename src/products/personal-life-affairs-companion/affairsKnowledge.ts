@@ -65,7 +65,8 @@ export type AffairArea =
   | "home"
   | "dependants"
   | "digital"
-  | "wishes";
+  | "wishes"
+  | "business";
 
 export const AFFAIR_AREA_LABEL: Record<AffairArea, string> = {
   people: "Who decides, and who to call",
@@ -75,7 +76,44 @@ export const AFFAIR_AREA_LABEL: Record<AffairArea, string> = {
   dependants: "People and animals who rely on you",
   digital: "Accounts and devices",
   wishes: "What you would want",
+  business: "The business",
 };
+
+/**
+ * The same areas, named as a person would refer to them.
+ *
+ * Two label sets on purpose. The printed book gets a sentence, because
+ * its reader is somebody else looking for a thing and a heading that
+ * reads "Who decides, and who to call" tells them where to look. The app
+ * gets a noun, because a person scanning what has been recorded about
+ * their life wants a name, not a sentence to read. Forcing one label to
+ * do both would make one of the two worse.
+ */
+export const AFFAIR_DOMAIN_LABEL: Record<AffairArea, string> = {
+  people: "People",
+  home: "Home",
+  money: "Money",
+  dependants: "Pets and dependants",
+  digital: "Digital life",
+  paperwork: "Important documents",
+  wishes: "Important instructions",
+  business: "Business",
+};
+
+/**
+ * The order domains appear in, wherever they are listed together. People
+ * first because everything else assumes somebody knows who to call.
+ */
+export const AFFAIR_AREA_ORDER: AffairArea[] = [
+  "people",
+  "paperwork",
+  "money",
+  "home",
+  "dependants",
+  "digital",
+  "business",
+  "wishes",
+];
 
 export interface AffairStep {
   /**
@@ -591,8 +629,19 @@ export const AFFAIR_STEPS: AffairStep[] = [
 
   // --------------------------------------------------------------- business
   {
+    key: "business.paperwork",
+    area: "business",
+    kind: "establish",
+    instruction: "Note where the business paperwork is kept.",
+    why: "Somebody stepping in has to find the accounts, the contracts and the insurance before they can do anything at all, and none of it is usually where the household paperwork is.",
+    minutes: 4,
+    consequence: 1,
+    needs: ["hasBusiness"],
+    confirmEveryMonths: 24,
+  },
+  {
     key: "money.business-continuity",
-    area: "money",
+    area: "business",
     instruction: "Record who could keep your business running, or wind it down.",
     why: "A business without a named person can stall within a week, and staff and customers are affected first.",
     minutes: 20,

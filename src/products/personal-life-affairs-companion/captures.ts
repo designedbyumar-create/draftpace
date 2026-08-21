@@ -372,6 +372,28 @@ export const CAPTURE_SPECS: Record<string, CaptureSpec> = {
     ],
   },
 
+  // -------------------------------------------------------------- business
+  "business.paperwork": {
+    itemKind: "location",
+    labelFixed: "The business paperwork",
+    acknowledgement: "Recorded.",
+    prompts: [
+      {
+        field: "whereabouts",
+        prompt: "Where is the business paperwork kept?",
+        hint: "Accounts, contracts, insurance. Whatever somebody would have to find first.",
+        placeholder: "The blue folders in the office, and the accounts are with my accountant.",
+        multiline: true,
+      },
+      {
+        field: "notes",
+        prompt: "Is there anything they would need to know to make sense of it?",
+        multiline: true,
+        optional: true,
+      },
+    ],
+  },
+
   // ------------------------------------------------------------------ home
   "home.where-you-live": {
     itemKind: "property",

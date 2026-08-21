@@ -134,6 +134,18 @@ export const productDefinitionSchema = z.object({
   workspaceLabel: z.string().optional(),
   /** Generic per-destination label overrides, e.g. { start: "Companion" } — the same override "workspace" already gets via workspaceLabel, extended to any destination a product wants to rename without renaming the destination id/route itself. */
   destinationLabels: z.record(z.string(), z.string()).optional(),
+  /**
+   * Which product chrome to render. "tabs" is the platform default and
+   * what every product used before this existed.
+   *
+   * "rail" is a quiet left sidebar on desktop and a fixed bottom bar on
+   * mobile. It suits a product whose destinations are parallel questions
+   * rather than steps in a sequence: tabs imply an order, and where
+   * there is no order they invite people to work left to right through
+   * something that is not a path. Opt in per product; nothing that does
+   * not name it changes.
+   */
+  navigationStyle: z.enum(["tabs", "rail"]).default("tabs"),
   setup: z
     .object({
       required: z.boolean().default(false),

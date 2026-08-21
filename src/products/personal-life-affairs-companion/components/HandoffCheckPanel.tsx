@@ -22,10 +22,11 @@ export interface HandoffCheckPanelProps {
   profile: AffairProfile;
   records: StepRecord[];
   items: AffairItem[];
-  onFix: (stepKey: string) => void;
+  /** Where questions get asked. Always Next, because there is only one place. */
+  nextHref: string;
 }
 
-export default function HandoffCheckPanel({ profile, records, items, onFix }: HandoffCheckPanelProps) {
+export default function HandoffCheckPanel({ profile, records, items, nextHref }: HandoffCheckPanelProps) {
   const [open, setOpen] = useState(false);
   const result = deriveHandoff({ profile, records, items });
   const fix = firstFix(result);
@@ -63,9 +64,22 @@ export default function HandoffCheckPanel({ profile, records, items, onFix }: Ha
               {result.unclear.map((finding) => (
                 <li key={finding.scenario.key}>
                   <p className="text-[13.5px] font-semibold text-[var(--text)]">{finding.scenario.need}</p>
-                  <p className="mt-0.5 text-[12.5px] leading-relaxed text-[var(--muted)]">
-                    Still open: {finding.missing.map((s) => s.instruction.replace(/\.$/, "")).join(", ")}.
-                  </p>
+                  {/*
+                    One per line, not comma joined. Several of these
+                    instructions contain commas of their own, and run
+                    together they read as one long sentence nobody
+                    finishes.
+                  */}
+                  <ul className="mt-1 flex flex-col gap-0.5">
+                    {finding.missing.map((step) => (
+                      <li key={step.key} className="flex gap-2 text-[12.5px] leading-relaxed text-[var(--muted)]">
+                        <span aria-hidden className="text-[var(--faint)]">
+                          &middot;
+                        </span>
+                        <span>{step.instruction}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </li>
               ))}
             </ul>
@@ -76,8 +90,16 @@ export default function HandoffCheckPanel({ profile, records, items, onFix }: Ha
               {open ? "Hide the list" : "Show what is unclear"}
             </Button>
             {fix && (
-              <Button size="sm" onClick={() => onFix(fix.key)}>
-                Let&rsquo;s fix the first one
+              /*
+                Sends the person to Next rather than opening a capture
+                here. Next decides what to ask using prerequisites and
+                snoozes as well as consequence, so it may reasonably
+                offer something other than the first row above. Promising
+                a specific one here and then showing a different one is
+                the kind of small lie that makes a product feel unreliable.
+              */
+              <Button size="sm" href={nextHref}>
+                Take care of the first one
               </Button>
             )}
           </div>

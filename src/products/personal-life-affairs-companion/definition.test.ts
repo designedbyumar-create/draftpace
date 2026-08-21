@@ -90,8 +90,28 @@ describe("In Order, the product definition", () => {
     expect(catalogEntry.printableAssets ?? []).toHaveLength(0);
   });
 
-  it("keeps one surface, following Home Base's collapse rather than PFC's fifteen", () => {
+  /**
+   * Four destinations, each answering a different question. The count
+   * matters: a fifth would mean two of them overlap, and the moment a
+   * person cannot say what separates them the navigation has stopped
+   * being navigation and become a menu.
+   */
+  it("has exactly four primary destinations, one per question the product answers", () => {
+    expect(resolved.primaryNavigation).toEqual(["workspace", "affairs", "printables", "history"]);
     expect(resolved.navigation.length).toBeLessThanOrEqual(6);
-    expect(resolved.primaryNavigation).toEqual(["workspace", "history"]);
+  });
+
+  it("never shows a person the internal name, which described a state rather than a job", () => {
+    const labels = [
+      resolved.workspaceLabel,
+      ...Object.values(resolved.destinationLabels ?? {}),
+    ];
+    expect(labels).toContain("Next");
+    for (const label of labels) expect(label).not.toBe("In Order");
+  });
+
+  it("keeps settings out of the primary four, since the loop never needs it", () => {
+    expect(resolved.primaryNavigation).not.toContain("settings");
+    expect(resolved.navigation).toContain("settings");
   });
 });

@@ -119,7 +119,7 @@ export default function CompanionCapture({ step, spec, editing, pending, onSave,
     <section aria-label={step.instruction} className="flex flex-col gap-5">
       <div>
         <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">
-          {editing ? "Bringing this up to date" : step.instruction}
+          {editing ? "Bringing this up to date" : step.instruction.replace(/\.$/, "")}
         </p>
         {progress.total > 1 && (
           <p className="mt-1.5 text-[12px] text-[var(--faint)]">
@@ -204,6 +204,12 @@ export default function CompanionCapture({ step, spec, editing, pending, onSave,
               value={draftValue}
               placeholder={prompt.placeholder}
               onChange={(event) => setDraftValue(event.target.value)}
+              onKeyDown={(event) => {
+                if (event.key !== "Enter") return;
+                event.preventDefault();
+                if (!draftValue.trim() && !prompt.optional) return;
+                commit(draftValue);
+              }}
             />
           )}
 

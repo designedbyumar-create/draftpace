@@ -22,8 +22,6 @@ import { deriveReadiness } from "../completion";
 import { acknowledge, captureFor, type AffairItemDraft } from "../capture";
 import { describeItem, type AffairItem } from "../lifeAffairs";
 import CompanionCapture from "./CompanionCapture";
-import HandoverPanel from "./HandoverPanel";
-import HandoffCheckPanel from "./HandoffCheckPanel";
 import type { AffairGate } from "../affairsKnowledge";
 
 type LoadStatus = "loading" | "ready" | "no-instance" | "error";
@@ -114,32 +112,6 @@ export default function WorkspaceModule() {
     setProfile(result.data);
   }
 
-  /**
-   * Dynamic import on purpose: @react-pdf is large and must never reach
-   * the main bundle. Same pattern Monthly Money Reset uses.
-   */
-  async function print() {
-    setPending(true);
-    setErrorMessage(null);
-    try {
-      const [{ downloadInOrderCopy }, { describeReadiness }] = await Promise.all([
-        import("../printables/download"),
-        import("../completion"),
-      ]);
-      await downloadInOrderCopy({
-        size: "LETTER",
-        preparedBy: "",
-        readiness,
-        summary: describeReadiness(readiness),
-      });
-    } catch {
-      // A failed generation must never look like a saved download.
-      setErrorMessage("The copy could not be generated. Nothing was downloaded.");
-    } finally {
-      setPending(false);
-    }
-  }
-
   async function act(stepKey: string, state: "confirmed" | "notRelevant" | "open" | "unsure", snoozeDays?: number) {
     if (!instanceId) return;
     setPending(true);
@@ -209,14 +181,6 @@ export default function WorkspaceModule() {
   const now = new Date();
   const state = deriveAffairsState({ profile, records, items }, now);
   const readiness = deriveReadiness({ profile, records, items }, now);
-
-  /**
-   * The handover appears once there is genuinely something to hand over,
-   * and never during intake or mid-capture. It is not gated on
-   * completeness: a person who has recorded two things may print, and
-   * the copy will say exactly that.
-   */
-  const showHandover = !intake && !capturing && readiness.itemCount > 0;
 
   const errorBanner = errorMessage && (
     <p className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3 text-[13px] text-[var(--danger)]">
@@ -306,14 +270,17 @@ export default function WorkspaceModule() {
 
       {next ? (
         <section aria-label="Your next step">
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">
+          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Next</p>
+          <p className="mt-1.5 text-[13px] text-[var(--muted)]">
             {next.reason === "needsRecheck"
-              ? "Worth checking again"
+              ? "Worth checking again."
               : next.reason === "needsDetail"
-                ? "Worth filling in"
+                ? "Worth filling in."
                 : next.reason === "wasUnsure"
-                  ? "You were not sure about this"
-                  : "Your next step"}
+                  ? "You were not sure about this last time."
+                  : state.establishedCount === 0
+                    ? "Let us start with one thing."
+                    : "One thing worth taking care of."}
           </p>
           <h1
             className="mt-2 text-[26px] leading-tight text-[var(--text)]"
@@ -357,14 +324,7 @@ export default function WorkspaceModule() {
             </ul>
           )}
 
-          <div className="mt-4 flex flex-wrap gap-4 text-[12px] text-[var(--faint)]">
-            <span>About {next.step.minutes} minutes</span>
-            {state.establishedCount > 0 && (
-              <span>
-                {state.establishedCount === 1 ? "1 thing recorded so far" : `${state.establishedCount} things recorded so far`}
-              </span>
-            )}
-          </div>
+          <p className="mt-4 text-[12px] text-[var(--faint)]">About {next.step.minutes} minutes</p>
 
           <div className="mt-5 flex flex-wrap gap-2">
             {next.reason === "needsRecheck" && next.existing.length > 0 ? (
@@ -417,41 +377,32 @@ export default function WorkspaceModule() {
           </div>
         </section>
       ) : (
-        <section aria-label="Everything is in order">
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Your affairs</p>
+        <section aria-label="Nothing needs your attention">
+          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Next</p>
           <h1
-            className="mt-2 text-[26px] leading-tight text-[var(--text)]"
+            className="mt-3 text-[26px] leading-tight text-[var(--text)]"
             style={{ fontFamily: "var(--product-narrative-font, inherit)" }}
           >
-            Your affairs are in good shape.
+            Nothing needs your attention right now.
           </h1>
           <p className="mt-2 max-w-lg text-[13.5px] leading-relaxed text-[var(--muted)]">
-            {readiness.itemCount === 1
-              ? "One thing recorded."
-              : `${readiness.itemCount} things recorded.`}{" "}
-            We will not ask again until something is worth checking, or you tell us your situation has changed.
+            Everything you have told us about is currently in good shape. We will let you know when something is worth
+            checking again.
           </p>
+          {/*
+            No invented work here. A product that manufactures a task to
+            keep somebody busy has stopped being useful to them and
+            started being useful to itself.
+          */}
           <div className="mt-5 flex items-center gap-2 text-[13px] text-[var(--primary)]">
             <CheckCircle2 size={17} aria-hidden />
-            <span>Nothing needs your attention right now.</span>
+            <span>
+              {readiness.itemCount === 1 ? "One thing in order." : `${readiness.itemCount} things in order.`}
+            </span>
           </div>
         </section>
       )}
 
-      {showHandover && (
-        <HandoffCheckPanel
-          profile={profile}
-          records={records}
-          items={items}
-          onFix={(stepKey) => {
-            setAcknowledgement(null);
-            // Action steps have nothing to capture, so the check can only
-            // ever jump straight into a question when there is one to ask.
-            if (captureFor(stepKey)) setCapturing({ stepKey, editing: null });
-          }}
-        />
-      )}
-      {showHandover && <HandoverPanel readiness={readiness} pending={pending} onPrint={print} />}
     </div>
   );
 }

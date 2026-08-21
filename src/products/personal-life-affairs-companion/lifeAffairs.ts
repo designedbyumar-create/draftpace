@@ -147,7 +147,10 @@ export function computeNextReview(intervalMonths: number | null | undefined, fro
  */
 export function describeItem(item: AffairItem): string {
   const parts: string[] = [];
-  if (item.personName) parts.push(item.personName);
+  // The label is already on screen wherever this is shown, and for a
+  // person record the label IS the name. Repeating it under itself reads
+  // as a rendering mistake, which is exactly what it was.
+  if (item.personName && item.personName !== item.label) parts.push(item.personName);
   const relationship = item.fields.relationship;
   if (relationship) parts.push(relationship);
   if (item.whereabouts) parts.push(item.whereabouts);

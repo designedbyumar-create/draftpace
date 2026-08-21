@@ -26,7 +26,7 @@
  * No em dashes anywhere, per the repo content rule.
  */
 import { Document, Page, View, Text, StyleSheet, type DocumentProps } from "@react-pdf/renderer";
-import { AFFAIR_AREA_LABEL, type AffairArea } from "../affairsKnowledge";
+import { AFFAIR_AREA_LABEL, AFFAIR_AREA_ORDER, type AffairArea } from "../affairsKnowledge";
 import { isBlankCopy } from "../completion";
 import { captureFor } from "../capture";
 import type { Readiness, StandingRow, StepStanding } from "../completion";
@@ -160,7 +160,9 @@ function formatDate(iso: string | null): string | null {
   return d.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
 }
 
-const AREA_ORDER: AffairArea[] = ["people", "paperwork", "money", "home", "dependants", "digital", "wishes"];
+// Imported rather than restated, so a new domain cannot be added to the
+// knowledge base and silently omitted from the printed book.
+const AREA_ORDER: AffairArea[] = AFFAIR_AREA_ORDER;
 
 function Sheet({ section, children }: { section: string; children: React.ReactNode }) {
   return (

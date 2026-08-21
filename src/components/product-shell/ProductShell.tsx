@@ -17,6 +17,7 @@ import { appAccountMenuItems } from "@/components/account/accountMenuItems";
 import { signOutAndRedirect } from "@/lib/supabase/signOut";
 import { useSession } from "@/design-system/shell/SessionProvider";
 import { useStandaloneMode } from "@/lib/pwa/hooks";
+import ProductRailShell from "./ProductRailShell";
 
 /**
  * The universal product shell. Works for any family: renders whichever
@@ -41,6 +42,28 @@ const CONTENT_WIDTH_CLASS: Record<"narrow" | "standard" | "wide", string> = {
 };
 
 export default function ProductShell({
+  definition,
+  instanceSignal = null,
+  children,
+}: {
+  definition: ProductDefinition;
+  instanceSignal?: InstanceLifecycleSignal;
+  children: React.ReactNode;
+}) {
+  // A product that asked for the rail gets a different chrome entirely,
+  // rather than this one with pieces conditionally hidden. Hooks below
+  // must not run for it, so the branch is the first thing here.
+  if (definition.navigationStyle === "rail") {
+    return (
+      <ProductRailShell definition={definition} instanceSignal={instanceSignal}>
+        {children}
+      </ProductRailShell>
+    );
+  }
+  return <ProductTabShell definition={definition} instanceSignal={instanceSignal}>{children}</ProductTabShell>;
+}
+
+function ProductTabShell({
   definition,
   instanceSignal = null,
   children,

@@ -33,7 +33,14 @@ import { ProductDefinitionInput } from "@/product-framework/definition";
 export const personalLifeAffairsCompanionDefinition: ProductDefinitionInput = {
   id: "personal-life-affairs-companion",
   slug: "personal-life-affairs-companion",
-  title: "In Order",
+  /**
+   * What a person sees, everywhere. "In Order" survives as the slug, the
+   * pla_ table prefix and the name used throughout this codebase, but it
+   * described a state somebody was trying to reach rather than what the
+   * product does for them, and as a wordmark it reads as a checklist
+   * that has been finished.
+   */
+  title: "Personal Life Affairs Companion",
   tagline:
     "Everything the people you love would need to find, in one place and kept current. It tells you the one next step, skips whatever doesn't apply to you, and prints a copy you can hand over when you're ready.",
   family: "companion",
@@ -44,8 +51,10 @@ export const personalLifeAffairsCompanionDefinition: ProductDefinitionInput = {
   // Provisional, same convention as both siblings: Draftpace's neutral
   // icons until real artwork is a founder decision.
   pwa: {
-    name: "In Order",
-    shortName: "In Order",
+    name: "Personal Life Affairs Companion",
+    // Home screens truncate hard, so the short name stays the one word
+    // pair that fits under an icon.
+    shortName: "Affairs",
     description:
       "In Order by Draftpace: everything the people you love would need to find, in one place and kept current.",
     themeColor: "#26374f",
@@ -67,9 +76,35 @@ export const personalLifeAffairsCompanionDefinition: ProductDefinitionInput = {
   // One surface, following Home Base's collapse rather than PFC's fifteen
   // destinations. The whole product is "the next step", so a person must
   // never navigate to find out what to do.
-  navigation: ["workspace", "printables", "history", "settings"],
-  primaryNavigation: ["workspace", "history"],
-  workspaceLabel: "In Order",
+  /**
+   * Four destinations, and each one answers a different question:
+   *
+   *   Next     what deserves my attention?
+   *   Affairs  what does this actually know about me?
+   *   Book     what would somebody receive if I handed it over?
+   *   History  what has changed?
+   *
+   * If a person cannot say what separates these four, the navigation has
+   * failed. That is why there is no Dashboard, no Tasks, no Progress and
+   * no per-domain section: those are shapes of a checklist, and every
+   * one of them would pull the product back into being one.
+   *
+   * "In Order" survives as the internal name, the slug and the table
+   * prefix. It is no longer a label a person sees, because it described
+   * a state to reach rather than what the product does.
+   */
+  navigation: ["workspace", "affairs", "printables", "history", "settings"],
+  primaryNavigation: ["workspace", "affairs", "printables", "history"],
+  workspaceLabel: "Next",
+  destinationLabels: {
+    affairs: "Affairs",
+    printables: "Book",
+    history: "History",
+    settings: "Settings",
+  },
+  // Parallel questions, not steps, so tabs would imply an order that is
+  // not there. See ProductRailShell for the whole reasoning.
+  navigationStyle: "rail",
   startRoute: "workspace",
   /**
    * No "setup" destination, deliberately, and this is a design decision
@@ -96,6 +131,7 @@ export const personalLifeAffairsCompanionDefinition: ProductDefinitionInput = {
   },
   modules: [
     { id: "personal-life-affairs-companion.workspace", destination: "workspace" },
+    { id: "personal-life-affairs-companion.affairs", destination: "affairs" },
     { id: "personal-life-affairs-companion.printables", destination: "printables" },
     { id: "personal-life-affairs-companion.history", destination: "history" },
     { id: "personal-life-affairs-companion.settings", destination: "settings" },
