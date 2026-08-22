@@ -225,9 +225,10 @@ export default function ChildDetailModule({ childId }: { childId: string }) {
         </h2>
         <div className="mt-2 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5">
           <p className="text-[13px] leading-relaxed text-[var(--muted)]">
-            Not built yet. When it is, you will be able to check {child.name} on what they have actually been working
-            with, using your own questions, your curriculum&rsquo;s own tests, or the printed check sheets. This
-            product supplies the structure around a check, never the questions.
+            {/* Template literal, not adjacent JSX expressions: a line break
+                between {child.name} and the next word is collapsed to
+                nothing, which shipped as "check Emmaon what they have". */}
+            {`Not built yet. When it is, you will be able to check ${child.name} on what they have actually been working with, using your own questions, your curriculum's own tests, or the printed check sheets. This product supplies the structure around a check, never the questions.`}
           </p>
         </div>
       </section>
