@@ -7,7 +7,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ProductDefinition } from "@/product-framework/definition";
 import { resolveLifecycleNavigation, type InstanceLifecycleSignal } from "@/product-framework/navigationResolver";
 import { productThemeStyle } from "@/product-framework/themeExtension";
-import { ArrowLeft, BookOpen, Clock, Compass, Layers3, Menu, type DraftpaceIcon } from "@/design-system/Icon";
+import { ArrowLeft, BookOpen, Clock, Compass, Layers3, Menu, User, type DraftpaceIcon } from "@/design-system/Icon";
 import MobileSheet from "@/design-system/MobileSheet";
 import AccountMenu from "@/components/account/AccountMenu";
 import { appAccountMenuItems } from "@/components/account/accountMenuItems";
@@ -45,15 +45,27 @@ const CONTENT_WIDTH_CLASS: Record<"narrow" | "standard" | "wide", string> = {
 
 /**
  * Icons by destination id, and only where one genuinely helps
- * recognition at the bottom of a phone. A destination with no entry
- * here renders as its label alone, which is a better outcome than a
- * decorative glyph nobody can decode.
+ * recognition at the bottom of a phone.
+ *
+ * Every destination a rail product declares needs an entry. A bar with
+ * one glyph and two blanks reads as a rendering fault rather than as
+ * restraint, which is what happened the first time Homeschooling
+ * Companion rendered: workspace had an icon and kids and record did
+ * not. Enforced in ProductRailShell.test.ts.
+ *
+ * Keyed by destination id, which two products can share: workspace is
+ * "Next" in one product and "Today" in another, and Compass serves both
+ * because it means "where to go" rather than naming either. If a third
+ * product ever needs a different glyph for the same id, the icon moves
+ * onto the definition; until then that would be a seam with one side.
  */
 const RAIL_ICON: Record<string, DraftpaceIcon> = {
   workspace: Compass,
   affairs: Layers3,
   printables: BookOpen,
   history: Clock,
+  kids: User,
+  record: BookOpen,
 };
 
 export default function ProductRailShell({
@@ -78,7 +90,15 @@ export default function ProductRailShell({
   const accountItems = appAccountMenuItems(() => signOutAndRedirect("/"));
 
   const href = (id: string) => `/app/products/${definition.slug}/${id}`;
-  const isActive = (id: string) => pathname === href(id);
+  /**
+   * A destination stays selected for everything underneath it. Exact
+   * equality leaves the rail with nothing highlighted the moment a
+   * product has a detail route (Homeschooling Companion's
+   * kids/[childId]), which reads as having navigated out of the product
+   * rather than deeper into it. The trailing slash matters: without it
+   * "record" would also claim "recordings".
+   */
+  const isActive = (id: string) => pathname === href(id) || pathname.startsWith(`${href(id)}/`);
 
   const moreLinks = (onNavigate?: () => void) =>
     secondary.map(({ id, label }) => (
