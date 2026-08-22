@@ -2,6 +2,7 @@
 
 import { supabase } from "@/lib/supabase/client";
 import { ok, err, type Result } from "@/product-framework/result";
+import type { TaskEvent } from "../today";
 import type {
   Child,
   Curriculum,
@@ -234,6 +235,33 @@ export async function loadPlan(productInstanceId: string): Promise<Result<PlanEn
   );
 }
 
+/**
+ * How often a subject runs.
+ *
+ * The plan has carried days_per_week since phase 1 and nothing could
+ * change it, so every subject sat on the default of five. A family that
+ * does science twice a week had no way to say so, and Today would have
+ * put it in front of them every weekday until they stopped believing it.
+ */
+export async function setSubjectFrequency(planId: string, daysPerWeek: number): Promise<Result<null>> {
+  const { error } = await supabase
+    .from("hsc_plan")
+    .update({ days_per_week: daysPerWeek, updated_at: new Date().toISOString() })
+    .eq("id", planId);
+  if (error) return err({ kind: "network", message: error.message });
+  return ok(null);
+}
+
+/** Turning a subject off without losing what was recorded against it. */
+export async function setSubjectActive(planId: string, active: boolean): Promise<Result<null>> {
+  const { error } = await supabase
+    .from("hsc_plan")
+    .update({ active, updated_at: new Date().toISOString() })
+    .eq("id", planId);
+  if (error) return err({ kind: "network", message: error.message });
+  return ok(null);
+}
+
 export async function setSubjects(
   productInstanceId: string,
   childId: string,
@@ -252,6 +280,77 @@ export async function setSubjects(
       active: true,
     })),
     { onConflict: "child_id,subject" }
+  );
+  if (error) return err({ kind: "network", message: error.message });
+  return ok(null);
+}
+
+// ---------------------------------------------------------- task events
+
+export async function loadTaskEvents(productInstanceId: string, limit = 400): Promise<Result<TaskEvent[]>> {
+  const { data, error } = await supabase
+    .from("hsc_task_events")
+    .select("child_id, subject, on_date, state, difficulty, help_needed")
+    .eq("product_instance_id", productInstanceId)
+    .order("on_date", { ascending: false })
+    .limit(limit);
+
+  if (error) return err({ kind: "network", message: error.message });
+  const rows = (data ?? []) as unknown as Record<string, unknown>[];
+  return ok(
+    rows.map((row) => ({
+      childId: row.child_id as string,
+      subject: row.subject as string,
+      onDate: row.on_date as string,
+      state: row.state as TaskEvent["state"],
+      difficulty: (row.difficulty as TaskEvent["difficulty"]) ?? null,
+      helpNeeded: (row.help_needed as TaskEvent["helpNeeded"]) ?? null,
+    }))
+  );
+}
+
+export interface RecordedWork {
+  childId: string;
+  subject: string;
+  onDate: string;
+  state: "done" | "not-completed";
+  /** Both optional, always. A parent who only ever taps Done gets a complete product. */
+  difficulty?: TaskEvent["difficulty"];
+  helpNeeded?: TaskEvent["helpNeeded"];
+  /** Snapshotted, never resolved later. See the migration's note on why. */
+  curriculumId: string | null;
+  positionLabel: string | null;
+  source: CurriculumSource;
+}
+
+/**
+ * What happened, recorded.
+ *
+ * Upserted on (child, subject, day), so tapping Done twice is one
+ * session and a correction replaces rather than duplicates. The
+ * snapshots go in here and are never read back through a join: a record
+ * of March must not rewrite itself in June because somebody moved on.
+ */
+export async function recordWork(productInstanceId: string, work: RecordedWork): Promise<Result<null>> {
+  const user = await currentUserId();
+  if (!user.ok) return user;
+
+  const { error } = await supabase.from("hsc_task_events").upsert(
+    {
+      product_instance_id: productInstanceId,
+      user_id: user.data,
+      child_id: work.childId,
+      subject: work.subject,
+      curriculum_id: work.curriculumId,
+      position_label: work.positionLabel,
+      source: work.source,
+      on_date: work.onDate,
+      state: work.state,
+      difficulty: work.difficulty ?? null,
+      help_needed: work.helpNeeded ?? null,
+      updated_at: new Date().toISOString(),
+    },
+    { onConflict: "child_id,subject,on_date" }
   );
   if (error) return err({ kind: "network", message: error.message });
   return ok(null);

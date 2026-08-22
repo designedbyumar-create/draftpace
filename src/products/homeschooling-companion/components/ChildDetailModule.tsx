@@ -7,7 +7,15 @@ import Toggle from "@/design-system/Toggle";
 import { User } from "@/design-system/Icon";
 import { describeResultError } from "@/product-framework/result";
 import { findHomeschoolInstanceId, HOMESCHOOLING_COMPANION_SLUG } from "../instanceData";
-import { loadChildren, loadCurricula, loadPlan, loadPositions, setChildVisibility } from "../domain/learningData";
+import {
+  loadChildren,
+  loadCurricula,
+  loadPlan,
+  loadPositions,
+  setChildVisibility,
+  setSubjectActive,
+  setSubjectFrequency,
+} from "../domain/learningData";
 import {
   curriculaFor,
   describePosition,
@@ -82,6 +90,30 @@ export default function ChildDetailModule({ childId }: { childId: string }) {
   useEffect(() => {
     load();
   }, [load]);
+
+  async function changeFrequency(planId: string, daysPerWeek: number) {
+    setPending(true);
+    setErrorMessage(null);
+    const result = await setSubjectFrequency(planId, daysPerWeek);
+    setPending(false);
+    if (!result.ok) {
+      setErrorMessage(describeResultError(result.error));
+      return;
+    }
+    load();
+  }
+
+  async function changeActive(planId: string, active: boolean) {
+    setPending(true);
+    setErrorMessage(null);
+    const result = await setSubjectActive(planId, active);
+    setPending(false);
+    if (!result.ok) {
+      setErrorMessage(describeResultError(result.error));
+      return;
+    }
+    load();
+  }
 
   async function changeVisibility(field: "name" | "age" | "notes", value: Visibility) {
     setPending(true);
@@ -183,6 +215,56 @@ export default function ChildDetailModule({ childId }: { childId: string }) {
               ))}
           </div>
         )}
+        {subjects.length > 0 && (
+          <div className="mt-5">
+            <h3 className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">How often</h3>
+            <p className="mt-1.5 max-w-lg text-[12.5px] leading-relaxed text-[var(--muted)]">
+              This is the only thing that decides what turns up on Today. Fewer days is not less ambitious, it is just
+              what you actually do.
+            </p>
+            <div className="mt-2 flex flex-col">
+              {subjects.map((entry) => (
+                <div
+                  key={entry.id}
+                  className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-b border-[var(--border)] py-3"
+                >
+                  <span className="text-[14px] text-[var(--text)]">{entry.subject}</span>
+                  <div className="flex flex-wrap items-center gap-1.5">
+                    {[0, 1, 2, 3, 4, 5, 6, 7].map((n) => (
+                      <button
+                        key={n}
+                        type="button"
+                        disabled={pending}
+                        aria-label={`${entry.subject}, ${n} days a week`}
+                        aria-pressed={entry.daysPerWeek === n}
+                        onClick={() => changeFrequency(entry.id, n)}
+                        className={`h-8 w-8 rounded-md border text-[12px] font-semibold transition-colors ${
+                          entry.daysPerWeek === n
+                            ? "border-[var(--primary)] bg-[var(--primary)] text-white"
+                            : "border-[var(--border)] text-[var(--muted)] hover:text-[var(--text)]"
+                        }`}
+                      >
+                        {n}
+                      </button>
+                    ))}
+                    <button
+                      type="button"
+                      disabled={pending}
+                      onClick={() => changeActive(entry.id, false)}
+                      className="ml-1 text-[12px] text-[var(--faint)] underline underline-offset-2 hover:text-[var(--text)]"
+                    >
+                      Remove
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="mt-2 text-[12px] text-[var(--faint)]">
+              Zero days keeps a subject on record without putting it on Today.
+            </p>
+          </div>
+        )}
+
         {!ready && (
           <p className="mt-3 max-w-lg text-[12.5px] leading-relaxed text-[var(--faint)]">
             Today will stay quiet until there is something here to draw on.
