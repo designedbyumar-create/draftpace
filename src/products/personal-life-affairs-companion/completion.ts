@@ -145,36 +145,7 @@ export function deriveReadiness(
   };
 }
 
-/**
- * The line printed on the cover, and shown before somebody generates a
- * copy so there is never a surprise about what they are handing over.
- *
- * Reports every category rather than a fraction. A copy that is 12
- * records for somebody with a simple life is complete, not 12 out of 44.
- */
-export function describeReadiness(readiness: Readiness): string {
-  const parts: string[] = [];
-  parts.push(readiness.itemCount === 1 ? "1 thing recorded" : `${readiness.itemCount} things recorded`);
-  if (readiness.done > 0) parts.push(`${readiness.done} done`);
-  if (readiness.recordedWithoutDetail > 0) parts.push(`${readiness.recordedWithoutDetail} without detail`);
-  if (readiness.notApplicable > 0) parts.push(`${readiness.notApplicable} not applicable`);
-  if (readiness.leftOpen > 0) parts.push(`${readiness.leftOpen} left open`);
-  if (readiness.unsure > 0) parts.push(`${readiness.unsure} not settled yet`);
-  if (readiness.notAddressed > 0) parts.push(`${readiness.notAddressed} not yet started`);
-  if (readiness.worthRechecking > 0) parts.push(`${readiness.worthRechecking} worth checking again`);
-  return parts.join(", ") + ".";
-}
 
-/** How the person is invited to finish, phrased for where they actually are. */
-export function describeHandoverInvitation(readiness: Readiness): string {
-  if (readiness.itemCount === 0) {
-    return "Once you have recorded a few things, you can print a copy to give to somebody.";
-  }
-  if (readiness.nothingOutstanding) {
-    return "Everything you have told us about is settled. This is a good moment to print a copy.";
-  }
-  return "You can print a copy whenever you like. It will say plainly what is recorded and what is not.";
-}
 
 /**
  * Whether a copy is a blank one: nothing recorded and nothing decided,

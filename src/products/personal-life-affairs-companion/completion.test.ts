@@ -4,8 +4,6 @@ import {
   BOOK_NAME,
   bookFilename,
   deriveReadiness,
-  describeHandoverInvitation,
-  describeReadiness,
   isBlankCopy,
   type Readiness,
 } from "./completion";
@@ -119,56 +117,25 @@ describe("readiness", () => {
   });
 });
 
-describe("what the cover says", () => {
-  it("never prints a fraction, because a short complete list is not a failure", () => {
-    const line = describeReadiness(readiness([], [item("people.executor")]));
-    expect(line).not.toMatch(/\d+\s*(of|\/)\s*\d+/);
-    expect(line).not.toContain("%");
+/**
+ * The cover used to carry a summary of standings, including how many
+ * things had not been started. It was not a fraction, but it was still
+ * asking the person holding somebody's affairs to judge how far along
+ * they had got. It is gone, and the document no longer accepts a summary
+ * at all, so it cannot come back by being passed in.
+ */
+describe("the cover keeps no score", () => {
+  it("offers no way to hand a summary line to the document", () => {
+    // DocumentInputs has no `summary` field. If one is ever added back,
+    // this fails to compile rather than failing at review time.
+    const inputs: Record<string, unknown> = { size: "LETTER", preparedBy: "", readiness: readiness(), generatedAt: NOW };
+    expect(Object.keys(inputs)).not.toContain("summary");
   });
 
-  it("counts the records, because that is what the reader is holding", () => {
-    const line = describeReadiness(readiness([], [item("people.executor"), item("people.emergency-contact")]));
-    expect(line).toContain("2 things recorded");
-  });
-
-  it("names every category present, so a reader knows what they are holding", () => {
-    const line = describeReadiness(
-      readiness(
-        [
-          rec("people.executor-told"),
-          rec("money.beneficiary-check", { state: "notRelevant", confirmedAt: null }),
-          rec("people.health-decisions", { state: "open", confirmedAt: null }),
-          rec("wishes.letters", { state: "unsure", confirmedAt: null }),
-        ],
-        [item("people.executor")]
-      )
-    );
-    expect(line).toContain("recorded");
-    expect(line).toContain("done");
-    expect(line).toContain("not applicable");
-    expect(line).toContain("left open");
-    expect(line).toContain("not settled yet");
-  });
-
-  it("says nothing that shames, and never uses a banned word", () => {
-    const lines = [
-      describeReadiness(readiness()),
-      describeReadiness(readiness([], [item("people.executor")])),
-      describeHandoverInvitation(readiness()),
-      describeHandoverInvitation(readiness([], [item("people.executor")])),
-    ];
-    for (const line of lines) {
-      expect(line.toLowerCase()).not.toContain("overdue");
-      expect(line.toLowerCase()).not.toContain("estate");
-      expect(line.toLowerCase()).not.toContain("asset");
-      expect(line.toLowerCase()).not.toContain("incomplete");
-      expect(line).not.toContain("—");
-    }
-  });
-
-  it("invites a handover differently depending on where the person is", () => {
-    expect(describeHandoverInvitation(readiness())).toContain("Once you have recorded");
-    expect(describeHandoverInvitation(readiness([], [item("people.executor")]))).toContain("whenever you like");
+  it("still knows what is in the book, for the app's own use", () => {
+    const r = readiness([], [item("people.executor")]);
+    expect(r.itemCount).toBe(1);
+    expect(r.notAddressed).toBeGreaterThan(0);
   });
 });
 

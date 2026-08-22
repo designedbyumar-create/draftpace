@@ -16,7 +16,7 @@ import { Font, renderToFile } from "@react-pdf/renderer";
 import { mkdir, writeFile, readFile, access } from "node:fs/promises";
 import path from "node:path";
 import { InOrderDocument } from "../src/products/personal-life-affairs-companion/printables/document";
-import { deriveReadiness, describeReadiness } from "../src/products/personal-life-affairs-companion/completion";
+import { deriveReadiness } from "../src/products/personal-life-affairs-companion/completion";
 import { relevantSteps, type StepRecord } from "../src/products/personal-life-affairs-companion/sequencer";
 import { type AffairStep } from "../src/products/personal-life-affairs-companion/affairsKnowledge";
 import { buildDraft, captureFor } from "../src/products/personal-life-affairs-companion/capture";
@@ -224,14 +224,19 @@ for (const variant of VARIANTS) {
         size,
         preparedBy: "Dana Whitfield",
         readiness,
-        summary: describeReadiness(readiness),
         generatedAt: NOW,
       }),
       file
     );
     const bytes = await readFile(file);
     if (size === "LETTER") {
-      console.log(`${variant.name.padEnd(12)} ${describeReadiness(readiness)}`);
+      // A proofing line for whoever runs this, never anything a person
+      // receives. The document itself carries no counts at all.
+      const { established, done, recordedWithoutDetail, leftOpen, unsure, notApplicable, worthRechecking } = readiness;
+      console.log(
+        `${variant.name.padEnd(12)} records=${readiness.itemCount} established=${established} done=${done} ` +
+          `noDetail=${recordedWithoutDetail} open=${leftOpen} unsure=${unsure} na=${notApplicable} recheck=${worthRechecking}`
+      );
     }
     console.log(`  ${path.basename(file)}  ${bytes.length.toLocaleString()} bytes`);
   }

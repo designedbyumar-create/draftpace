@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { readFileSync } from "node:fs";
 import { AFFAIR_STEPS } from "./affairsKnowledge";
 
 /**
@@ -92,5 +93,54 @@ describe("labels match what the entry actually is", () => {
       const first = step.bookLabel.split(" ")[0].toLowerCase();
       expect(["they", "them", "it", "he", "she"], `${step.key}: "${step.bookLabel}"`).not.toContain(first);
     }
+  });
+});
+
+/**
+ * The Book keeps no score.
+ *
+ * Scanned from source rather than asserted on a rendered string, because
+ * the failure mode is somebody adding one more helpful line to the cover
+ * two years from now. A person receiving somebody's affairs is not there
+ * to mark how far along they got.
+ */
+describe("no progress language reaches the printed book", () => {
+  const source = readFileSync(new URL("./printables/document.tsx", import.meta.url), "utf8");
+  // Only what the document prints. Its own comments discuss the very
+  // words being banned, so every comment form has to come out first:
+  // block comments, JSX comments, and line comments.
+  const printed = source
+    .replace(/\{\s*\/\*[\s\S]*?\*\/\s*\}/g, "")
+    .replace(/\/\*[\s\S]*?\*\//g, "")
+    .split("\n")
+    .filter((line) => !line.trimStart().startsWith("//"))
+    .join("\n");
+
+  const BANNED = [
+    "not yet started",
+    "not started",
+    "% complete",
+    "percent",
+    "progress",
+    "completed",
+    "remaining",
+    "left to do",
+    "of 44",
+    "out of",
+    "score",
+  ];
+
+  for (const phrase of BANNED) {
+    it(`never prints "${phrase}"`, () => {
+      expect(printed.toLowerCase()).not.toContain(phrase);
+    });
+  }
+
+  it("cannot be handed a prepared summary line at all", () => {
+    expect(printed).not.toContain("summary");
+  });
+
+  it("says what the copy is rather than how complete it is", () => {
+    expect(printed).toContain("This is a current copy of the information recorded in the Companion.");
   });
 });

@@ -41,7 +41,6 @@ export interface DownloadInputs {
   size: "LETTER" | "A4";
   preparedBy: string;
   readiness: Readiness;
-  summary: string;
 }
 
 /**
@@ -52,12 +51,12 @@ export interface DownloadInputs {
  * one are different documents: giving them the same name means the
  * browser silently collides them in the downloads folder.
  */
-export async function downloadInOrderCopy({ size, preparedBy, readiness, summary }: DownloadInputs): Promise<void> {
+export async function downloadInOrderCopy({ size, preparedBy, readiness }: DownloadInputs): Promise<void> {
   registerFonts();
 
   const generatedAt = new Date();
   const blob = await pdf(
-    InOrderDocument({ size, preparedBy, readiness, summary, generatedAt })
+    InOrderDocument({ size, preparedBy, readiness, generatedAt })
   ).toBlob();
 
   const url = URL.createObjectURL(blob);

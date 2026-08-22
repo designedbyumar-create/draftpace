@@ -7,7 +7,7 @@ import { BookOpen, Download } from "@/design-system/Icon";
 import { describeResultError } from "@/product-framework/result";
 import { findInOrderInstanceId } from "../instanceData";
 import { loadItems, loadProfile, loadSteps } from "../domain/affairsData";
-import { BOOK_ATTRIBUTION, BOOK_NAME, deriveReadiness, describeReadiness, isBlankCopy } from "../completion";
+import { BOOK_ATTRIBUTION, BOOK_NAME, deriveReadiness, isBlankCopy } from "../completion";
 import { intakeComplete } from "../intake";
 import { AFFAIR_AREA_LABEL, AFFAIR_AREA_ORDER, type AffairArea } from "../affairsKnowledge";
 import { describeItem, type AffairItem } from "../lifeAffairs";
@@ -84,7 +84,7 @@ export default function PrintablesModule() {
         which === "blank" ? { profile, records: [], items: [] } : { profile, records, items },
         new Date()
       );
-      await downloadInOrderCopy({ size, preparedBy: "", readiness, summary: describeReadiness(readiness) });
+      await downloadInOrderCopy({ size, preparedBy: "", readiness });
     } catch {
       setErrorMessage("The copy could not be generated. Nothing was downloaded.");
     } finally {
@@ -215,7 +215,6 @@ export default function PrintablesModule() {
             ? "There is nothing established yet, so this would print as a copy saying so. Worth coming back to once you have recorded a few things."
             : "Everything you have established, with the date you last confirmed each one. This is the copy you would hand to somebody."}
         </p>
-        <p className="mt-2 text-[12.5px] text-[var(--muted)]">{describeReadiness(readiness)}</p>
         <div className="mt-4">
           <Button
             size="sm"
