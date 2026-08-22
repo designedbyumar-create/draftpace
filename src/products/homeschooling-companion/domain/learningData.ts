@@ -3,6 +3,7 @@
 import { supabase } from "@/lib/supabase/client";
 import { ok, err, type Result } from "@/product-framework/result";
 import type { TaskEvent } from "../today";
+import type { Observation, WorkEntry } from "../record";
 import type {
   Child,
   Curriculum,
@@ -287,10 +288,10 @@ export async function setSubjects(
 
 // ---------------------------------------------------------- task events
 
-export async function loadTaskEvents(productInstanceId: string, limit = 400): Promise<Result<TaskEvent[]>> {
+export async function loadTaskEvents(productInstanceId: string, limit = 400): Promise<Result<WorkEntry[]>> {
   const { data, error } = await supabase
     .from("hsc_task_events")
-    .select("child_id, subject, on_date, state, difficulty, help_needed")
+    .select("child_id, subject, on_date, state, difficulty, help_needed, position_label")
     .eq("product_instance_id", productInstanceId)
     .order("on_date", { ascending: false })
     .limit(limit);
@@ -305,6 +306,9 @@ export async function loadTaskEvents(productInstanceId: string, limit = 400): Pr
       state: row.state as TaskEvent["state"],
       difficulty: (row.difficulty as TaskEvent["difficulty"]) ?? null,
       helpNeeded: (row.help_needed as TaskEvent["helpNeeded"]) ?? null,
+      // Carried so the record can say where they were on the day, rather
+      // than where they are now. See the migration's note.
+      positionLabel: (row.position_label as string | null) ?? null,
     }))
   );
 }
@@ -352,6 +356,68 @@ export async function recordWork(productInstanceId: string, work: RecordedWork):
     },
     { onConflict: "child_id,subject,on_date" }
   );
+  if (error) return err({ kind: "network", message: error.message });
+  return ok(null);
+}
+
+// ---------------------------------------------------------- observations
+
+export async function loadObservations(productInstanceId: string, limit = 400): Promise<Result<Observation[]>> {
+  const { data, error } = await supabase
+    .from("hsc_observations")
+    .select("id, child_id, on_date, note, visibility")
+    .eq("product_instance_id", productInstanceId)
+    .neq("status", "archived")
+    .order("on_date", { ascending: false })
+    .limit(limit);
+
+  if (error) return err({ kind: "network", message: error.message });
+  const rows = (data ?? []) as unknown as Record<string, unknown>[];
+  return ok(
+    rows.map((row) => ({
+      id: row.id as string,
+      childId: row.child_id as string,
+      onDate: row.on_date as string,
+      note: row.note as string,
+      visibility: row.visibility as Visibility,
+    }))
+  );
+}
+
+/**
+ * A parent noticing something.
+ *
+ * Visibility is deliberately not a parameter: the column default keeps
+ * it private, and opting one into a printed record is a separate,
+ * deliberate act. A note written in a hurry must never end up on paper
+ * because of a setting made months earlier about something else.
+ */
+export async function createObservation(
+  productInstanceId: string,
+  input: { childId: string; onDate: string; note: string }
+): Promise<Result<null>> {
+  const user = await currentUserId();
+  if (!user.ok) return user;
+
+  const { error } = await supabase.from("hsc_observations").insert({
+    product_instance_id: productInstanceId,
+    user_id: user.data,
+    child_id: input.childId,
+    on_date: input.onDate,
+    note: input.note.trim(),
+  });
+  if (error) return err({ kind: "network", message: error.message });
+  return ok(null);
+}
+
+export async function setObservationVisibility(
+  observationId: string,
+  visibility: Visibility
+): Promise<Result<null>> {
+  const { error } = await supabase
+    .from("hsc_observations")
+    .update({ visibility, updated_at: new Date().toISOString() })
+    .eq("id", observationId);
   if (error) return err({ kind: "network", message: error.message });
   return ok(null);
 }
