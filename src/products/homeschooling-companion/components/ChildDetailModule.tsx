@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import EmptyState from "@/design-system/EmptyState";
 import Toggle from "@/design-system/Toggle";
-import { User } from "@/design-system/Icon";
+import { ShieldCheck, User } from "@/design-system/Icon";
 import { describeResultError } from "@/product-framework/result";
 import { findHomeschoolInstanceId, HOMESCHOOLING_COMPANION_SLUG } from "../instanceData";
 import {
@@ -470,12 +470,21 @@ export default function ChildDetailModule({ childId }: { childId: string }) {
           Checking what they have understood
         </h2>
         <div className="mt-2 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5">
-          <p className="text-[13px] leading-relaxed text-[var(--muted)]">
+          <p className="max-w-lg text-[13px] leading-relaxed text-[var(--muted)]">
             {/* Template literal, not adjacent JSX expressions: a line break
                 between {child.name} and the next word is collapsed to
-                nothing, which shipped as "check Emmaon what they have". */}
-            {`Not built yet. When it is, you will be able to check ${child.name} on what they have actually been working with, using your own questions, your curriculum's own tests, or the printed check sheets. This product supplies the structure around a check, never the questions.`}
+                nothing, which shipped once as "check Emmaon what they have". */}
+            {`A short check on what ${child.name} has actually been working with. You provide the questions, from your own head, from your curriculum's own tests, or from the printed check sheets, and this keeps them for next time.`}
           </p>
+          <div className="mt-4">
+            <Button
+              size="sm"
+              href={`/app/products/${HOMESCHOOLING_COMPANION_SLUG}/kids/${child.id}/check`}
+              iconLeft={<ShieldCheck size={14} aria-hidden />}
+            >
+              {`Check ${child.name}`}
+            </Button>
+          </div>
         </div>
       </section>
     </div>
