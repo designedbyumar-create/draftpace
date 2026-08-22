@@ -55,12 +55,27 @@ describe("visibility defaults are established at creation", () => {
    * never destroyed" from a habit into a guarantee. Same posture as all
    * three siblings.
    */
-  it("gives no table a delete policy", () => {
-    const rls = readFileSync(
-      new URL("../../../supabase/migrations/202608220004_homeschooling_companion_rls.sql", import.meta.url),
-      "utf8"
-    );
-    expect(rls.toLowerCase()).not.toContain("for delete");
+  /**
+   * Across every migration this product has, not only the first. The
+   * guarantee is worth nothing if the fifth table quietly opts out, and
+   * a delete against a table with no policy does not fail loudly: it
+   * succeeds at doing nothing, which is the worst of both.
+   */
+  it("gives no table a delete policy, in any migration", () => {
+    for (const file of [
+      "202608220004_homeschooling_companion_rls.sql",
+      "202608220005_homeschooling_companion_task_events.sql",
+      "202608220006_homeschooling_companion_observations.sql",
+      "202608220007_homeschooling_companion_topics_and_items.sql",
+    ]) {
+      const sql = readFileSync(new URL(`../../../supabase/migrations/${file}`, import.meta.url), "utf8");
+      expect(sql.toLowerCase(), file).not.toContain("for delete");
+    }
+  });
+
+  it("never issues a delete from the app either", () => {
+    const domain = readFileSync(new URL("./domain/learningData.ts", import.meta.url), "utf8");
+    expect(domain).not.toContain(".delete()");
   });
 
   it("proves instance ownership on every insert", () => {

@@ -421,3 +421,83 @@ export async function setObservationVisibility(
   if (error) return err({ kind: "network", message: error.message });
   return ok(null);
 }
+
+// ---------------------------------------------------------- child topics
+
+export interface ChildTopic {
+  id: string;
+  childId: string;
+  subject: string;
+  topicKey: string;
+  state: "current" | "covered" | "removed";
+}
+
+export async function loadChildTopics(productInstanceId: string): Promise<Result<ChildTopic[]>> {
+  const { data, error } = await supabase
+    .from("hsc_child_topics")
+    .select("id, child_id, subject, topic_key, state")
+    .eq("product_instance_id", productInstanceId)
+    // A tick taken back is not read anywhere. The row survives because
+    // this product deletes nothing.
+    .neq("state", "removed");
+
+  if (error) return err({ kind: "network", message: error.message });
+  const rows = (data ?? []) as unknown as Record<string, unknown>[];
+  return ok(
+    rows.map((row) => ({
+      id: row.id as string,
+      childId: row.child_id as string,
+      subject: row.subject as string,
+      topicKey: row.topic_key as string,
+      state: row.state as ChildTopic["state"],
+    }))
+  );
+}
+
+/**
+ * What a child is covering, ticked by the parent.
+ *
+ * The five second interaction that replaces a document parsing
+ * pipeline. Upserted per topic so ticking the same one twice is not two
+ * rows, and so moving a topic from current to covered is one write.
+ */
+export async function setChildTopic(
+  productInstanceId: string,
+  input: { childId: string; subject: string; topicKey: string; state: "current" | "covered" }
+): Promise<Result<null>> {
+  const user = await currentUserId();
+  if (!user.ok) return user;
+
+  const { error } = await supabase.from("hsc_child_topics").upsert(
+    {
+      product_instance_id: productInstanceId,
+      user_id: user.data,
+      child_id: input.childId,
+      subject: input.subject,
+      topic_key: input.topicKey,
+      state: input.state,
+      updated_at: new Date().toISOString(),
+    },
+    { onConflict: "child_id,topic_key" }
+  );
+  if (error) return err({ kind: "network", message: error.message });
+  return ok(null);
+}
+
+/**
+ * Unticking.
+ *
+ * Sets a state rather than deleting the row. This product has no delete
+ * policy on any table, so a delete here would not have failed loudly, it
+ * would have silently done nothing and left the parent looking at a
+ * topic they had just removed.
+ */
+export async function clearChildTopic(childId: string, topicKey: string): Promise<Result<null>> {
+  const { error } = await supabase
+    .from("hsc_child_topics")
+    .update({ state: "removed", updated_at: new Date().toISOString() })
+    .eq("child_id", childId)
+    .eq("topic_key", topicKey);
+  if (error) return err({ kind: "network", message: error.message });
+  return ok(null);
+}

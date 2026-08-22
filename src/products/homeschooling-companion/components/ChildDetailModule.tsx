@@ -8,14 +8,24 @@ import { User } from "@/design-system/Icon";
 import { describeResultError } from "@/product-framework/result";
 import { findHomeschoolInstanceId, HOMESCHOOLING_COMPANION_SLUG } from "../instanceData";
 import {
+  clearChildTopic,
   loadChildren,
+  loadChildTopics,
   loadCurricula,
   loadPlan,
   loadPositions,
+  setChildTopic,
   setChildVisibility,
   setSubjectActive,
   setSubjectFrequency,
+  setSubjects,
+  type ChildTopic,
 } from "../domain/learningData";
+import { describeTopics } from "../taxonomy";
+import { SUGGESTED_SUBJECTS } from "../setup";
+import Input from "@/design-system/Input";
+import Button from "@/design-system/Button";
+import TopicPicker from "./TopicPicker";
 import {
   curriculaFor,
   describePosition,
@@ -47,10 +57,15 @@ type LoadStatus = "loading" | "ready" | "not-found" | "no-instance" | "error";
 export default function ChildDetailModule({ childId }: { childId: string }) {
   const [status, setStatus] = useState<LoadStatus>("loading");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [instanceId, setInstanceId] = useState<string | null>(null);
   const [child, setChild] = useState<Child | null>(null);
   const [curricula, setCurricula] = useState<Curriculum[]>([]);
   const [positions, setPositions] = useState<Position[]>([]);
   const [plan, setPlan] = useState<PlanEntry[]>([]);
+  const [topics, setTopics] = useState<ChildTopic[]>([]);
+  const [openSubject, setOpenSubject] = useState<string | null>(null);
+  const [addingSubject, setAddingSubject] = useState(false);
+  const [newSubject, setNewSubject] = useState("");
   const [pending, setPending] = useState(false);
 
   const load = useCallback(async () => {
@@ -64,11 +79,13 @@ export default function ChildDetailModule({ childId }: { childId: string }) {
       setStatus("no-instance");
       return;
     }
-    const [childrenResult, curriculaResult, positionsResult, planResult] = await Promise.all([
+    setInstanceId(found.id);
+    const [childrenResult, curriculaResult, positionsResult, planResult, topicsResult] = await Promise.all([
       loadChildren(found.id),
       loadCurricula(found.id),
       loadPositions(found.id),
       loadPlan(found.id),
+      loadChildTopics(found.id),
     ]);
     if (!childrenResult.ok) {
       setErrorMessage(describeResultError(childrenResult.error));
@@ -84,6 +101,7 @@ export default function ChildDetailModule({ childId }: { childId: string }) {
     setCurricula(curriculaResult.ok ? curriculaResult.data : []);
     setPositions(positionsResult.ok ? positionsResult.data : []);
     setPlan(planResult.ok ? planResult.data : []);
+    setTopics(topicsResult.ok ? topicsResult.data.filter((t) => t.childId === childId) : []);
     setStatus("ready");
   }, [childId]);
 
@@ -107,6 +125,57 @@ export default function ChildDetailModule({ childId }: { childId: string }) {
     setPending(true);
     setErrorMessage(null);
     const result = await setSubjectActive(planId, active);
+    setPending(false);
+    if (!result.ok) {
+      setErrorMessage(describeResultError(result.error));
+      return;
+    }
+    load();
+  }
+
+  /**
+   * Adding a subject after setup.
+   *
+   * Setup tells a parent "you can add or remove them whenever you like",
+   * and until this existed only the removing half was true. Copy that
+   * promises something the product cannot do is worse than copy that
+   * promises nothing.
+   */
+  async function addSubject(subject: string) {
+    if (!instanceId || !subject.trim()) return;
+    setPending(true);
+    setErrorMessage(null);
+    const result = await setSubjects(instanceId, childId, [subject]);
+    setPending(false);
+    if (!result.ok) {
+      setErrorMessage(describeResultError(result.error));
+      return;
+    }
+    setNewSubject("");
+    setAddingSubject(false);
+    load();
+  }
+
+  async function toggleTopic(subject: string, topicKey: string, on: boolean) {
+    if (!instanceId) return;
+    setPending(true);
+    setErrorMessage(null);
+    const result = on
+      ? await setChildTopic(instanceId, { childId, subject, topicKey, state: "current" })
+      : await clearChildTopic(childId, topicKey);
+    setPending(false);
+    if (!result.ok) {
+      setErrorMessage(describeResultError(result.error));
+      return;
+    }
+    load();
+  }
+
+  async function changeTopicState(subject: string, topicKey: string, state: "current" | "covered") {
+    if (!instanceId) return;
+    setPending(true);
+    setErrorMessage(null);
+    const result = await setChildTopic(instanceId, { childId, subject, topicKey, state });
     setPending(false);
     if (!result.ok) {
       setErrorMessage(describeResultError(result.error));
@@ -265,10 +334,105 @@ export default function ChildDetailModule({ childId }: { childId: string }) {
           </div>
         )}
 
+        <div className="mt-4">
+          {addingSubject ? (
+            <div className="flex flex-col gap-3">
+              <div className="flex flex-wrap gap-2">
+                {SUGGESTED_SUBJECTS.filter((s) => !subjects.some((e) => e.subject === s)).map((suggested) => (
+                  <Button
+                    key={suggested}
+                    size="sm"
+                    variant="secondary"
+                    disabled={pending}
+                    onClick={() => addSubject(suggested)}
+                  >
+                    {suggested}
+                  </Button>
+                ))}
+              </div>
+              <div className="flex flex-wrap items-center gap-2">
+                <Input
+                  value={newSubject}
+                  placeholder="Or type your own"
+                  containerClassName="min-w-[12rem] flex-1"
+                  onChange={(event) => setNewSubject(event.target.value)}
+                  onKeyDown={(event) => {
+                    if (event.key !== "Enter") return;
+                    event.preventDefault();
+                    addSubject(newSubject);
+                  }}
+                />
+                <Button size="sm" disabled={pending || !newSubject.trim()} onClick={() => addSubject(newSubject)}>
+                  Add
+                </Button>
+                <Button size="sm" variant="ghost" disabled={pending} onClick={() => setAddingSubject(false)}>
+                  Cancel
+                </Button>
+              </div>
+            </div>
+          ) : (
+            <Button size="sm" variant="secondary" disabled={pending} onClick={() => setAddingSubject(true)}>
+              Add a subject
+            </Button>
+          )}
+        </div>
+
         {!ready && (
           <p className="mt-3 max-w-lg text-[12.5px] leading-relaxed text-[var(--faint)]">
             Today will stay quiet until there is something here to draw on.
           </p>
+        )}
+      </section>
+
+      <section aria-label="What they are covering">
+        <h2 className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">
+          What they are covering
+        </h2>
+        <p className="mt-1.5 max-w-lg text-[13px] leading-relaxed text-[var(--muted)]">
+          Ticking what you are actually teaching is the only thing that lets this check whether it landed. Nothing is
+          read from your curriculum and nothing is assumed: you say, and that is the whole of it.
+        </p>
+        {subjects.length === 0 ? (
+          <p className="mt-2 text-[12.5px] text-[var(--muted)]">Add a subject first and this fills in.</p>
+        ) : (
+          <div className="mt-3 flex flex-col">
+            {subjects.map((entry) => {
+              const forSubject = topics.filter((t) => t.subject === entry.subject);
+              const open = openSubject === entry.subject;
+              return (
+                <div key={entry.id} className="border-b border-[var(--border)] py-3">
+                  <button
+                    type="button"
+                    onClick={() => setOpenSubject(open ? null : entry.subject)}
+                    className="flex w-full items-center justify-between gap-4 text-left"
+                  >
+                    <span className="min-w-0">
+                      <span className="block text-[14px] font-semibold text-[var(--text)]">{entry.subject}</span>
+                      <span className="block text-[12.5px] leading-relaxed text-[var(--muted)]">
+                        {forSubject.length === 0
+                          ? "Nothing ticked yet"
+                          : describeTopics(forSubject.map((t) => t.topicKey))}
+                      </span>
+                    </span>
+                    <span className="shrink-0 text-[12px] font-semibold text-[var(--muted)]">
+                      {open ? "Done" : "Choose"}
+                    </span>
+                  </button>
+                  {open && (
+                    <div className="mt-3">
+                      <TopicPicker
+                        subject={entry.subject}
+                        ticked={forSubject}
+                        pending={pending}
+                        onToggle={(key, on) => toggleTopic(entry.subject, key, on)}
+                        onState={(key, state) => changeTopicState(entry.subject, key, state)}
+                      />
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
         )}
       </section>
 
