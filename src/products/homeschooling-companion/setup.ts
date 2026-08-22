@@ -30,6 +30,18 @@ export const CURRICULUM_STANCE_LABEL: Record<CurriculumStance, string> = {
   "not-sure": "Not sure yet",
 };
 
+/**
+ * What each branch means for what happens next, shown under the choice.
+ *
+ * "Not sure yet" leads somewhere useful rather than nowhere: this
+ * product works from whatever a parent gives it, including nothing.
+ */
+export const CURRICULUM_STANCE_NOTE: Record<CurriculumStance, string> = {
+  "have-one": "We will organize what you are already doing and stay out of the way.",
+  "our-own": "Name your subjects and this follows your plan.",
+  "not-sure": "We will put together a starting outline you can change, keep, or throw away.",
+};
+
 export interface ChildDraft {
   name: string;
   age: string;
@@ -48,8 +60,11 @@ export interface ChildDraft {
   subjectsConfirmed: boolean;
   /** Only asked on the have-one branch: "Lesson 12", or "just started". */
   position: string;
-  /** Only offered on the not-sure branch. */
-  wantsSuggestions: boolean | null;
+  /**
+   * Only asked when the parent wants a starting outline. How many days a
+   * week the family can actually school, which caps every subject in it.
+   */
+  daysAvailable: number | null;
 }
 
 export const EMPTY_CHILD_DRAFT: ChildDraft = {
@@ -61,7 +76,7 @@ export const EMPTY_CHILD_DRAFT: ChildDraft = {
   subjects: [],
   subjectsConfirmed: false,
   position: "",
-  wantsSuggestions: null,
+  daysAvailable: null,
 };
 
 export type SetupStepId =
@@ -72,7 +87,7 @@ export type SetupStepId =
   | "curriculum-title"
   | "subjects"
   | "position"
-  | "suggestions"
+  | "days-available"
   | "done";
 
 export interface SetupStep {
@@ -120,17 +135,17 @@ const STEPS: Record<Exclude<SetupStepId, "done">, SetupStep> = {
     question: "Which subjects?",
     why: "These become what you see each day. You can add or remove them whenever you like.",
   },
+  "days-available": {
+    id: "days-available",
+    question: "How many days a week can you school?",
+    why: "It is the only number that decides whether a starting outline is realistic. Three honest days beats five you will not manage.",
+  },
   position: {
     id: "position",
     question: "Where are you now?",
     why: "In your own words. Thirty seconds here is everything this needs to show you the right thing tomorrow.",
     placeholder: "Unit 3, Lesson 12",
     optional: true,
-  },
-  suggestions: {
-    id: "suggestions",
-    question: "Would you like some suggestions?",
-    why: "Anything suggested is a draft you edit, and it is labelled as ours until you change it. Saying no is a complete answer: you can record what you did without a plan at all.",
   },
 };
 
@@ -169,8 +184,21 @@ export function nextSetupStep(draft: ChildDraft, skipped: Set<SetupStepId> = new
     return "done";
   }
 
-  // not-sure
-  if (draft.wantsSuggestions === null) return STEPS.suggestions;
+  /*
+    "not-sure": the parent wants somewhere to begin.
+    
+    One extra question, and it is a practical one rather than an
+    educational one. Everything else the outline needs was collected
+    already: their age, and the subjects they want to focus on. Nothing
+    is inferred about the child, and no profile is built.
+  */
+  if (!draft.subjectsConfirmed) return STEPS.subjects;
+  // No subjects means nothing to outline, so asking how many days a week
+  // they can school would be asking a question with no use for the
+  // answer. They are finished, and recording what they actually do
+  // works without any plan at all.
+  if (draft.subjects.length === 0) return "done";
+  if (draft.daysAvailable === null) return STEPS["days-available"];
   return "done";
 }
 
@@ -188,7 +216,7 @@ export function setupLength(draft: ChildDraft): number {
   if (draft.schoolingType === "private-school" || draft.schoolingType === "public-school") return base;
   if (draft.stance === "have-one") return base + 4;
   if (draft.stance === "our-own") return base + 2;
-  if (draft.stance === "not-sure") return base + 2;
+  if (draft.stance === "not-sure") return base + 3;
   return base + 1;
 }
 

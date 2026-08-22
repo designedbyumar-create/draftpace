@@ -13,10 +13,12 @@ import {
   loadChildren,
   loadCurricula,
   loadPlan,
+  setChildTopic,
   setPosition,
   setSubjects,
 } from "../domain/learningData";
 import { curriculaFor, SCHOOLING_LABEL, type Child, type Curriculum, type PlanEntry } from "../learning";
+import { buildStartingOutline } from "../startingOutline";
 import type { ChildDraft } from "../setup";
 import AddChildFlow from "./AddChildFlow";
 
@@ -103,7 +105,47 @@ export default function KidsModule() {
 
     const child = created.data;
 
-    if (draft.subjects.length > 0) {
+    if (draft.stance === "not-sure" && draft.subjects.length > 0) {
+      /*
+        The starting outline, applied exactly as it was shown.
+        
+        Rebuilt from the same inputs rather than passed through, so what
+        is saved cannot drift from what the parent agreed to: the
+        function is pure and the inputs are in the draft.
+        
+        Topics land as "current", which is what makes a check possible
+        later. Every one of them is editable on the child's page, and the
+        outline is a suggestion from that moment on, not a commitment.
+      */
+      const parsedOutlineAge = Number.parseInt(draft.age, 10);
+      const outline = buildStartingOutline({
+        age: Number.isFinite(parsedOutlineAge) ? parsedOutlineAge : null,
+        subjects: draft.subjects,
+        daysAvailable: draft.daysAvailable ?? 5,
+      });
+      await setSubjects(
+        instanceId,
+        child.id,
+        outline.subjects.map((s) => ({
+          subject: s.subject,
+          daysPerWeek: s.daysPerWeek,
+          minutesPerSession: s.minutes,
+          // Ours until they change it. Labelling a suggestion as the
+          // parent's own plan takes credit off them for our own guess.
+          origin: "draftpace-outline" as const,
+        }))
+      );
+      for (const subject of outline.subjects) {
+        for (const topic of subject.focus) {
+          await setChildTopic(instanceId, {
+            childId: child.id,
+            subject: subject.subject,
+            topicKey: topic.key,
+            state: "current",
+          });
+        }
+      }
+    } else if (draft.subjects.length > 0) {
       await setSubjects(instanceId, child.id, draft.subjects);
     }
 

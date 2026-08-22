@@ -3,9 +3,21 @@
  *
  * A curriculum-neutral list of things children learn, so that a family
  * saying "we are doing equivalent fractions" and a future subject pack
- * saying the same thing mean the same thing. It is a list, not a
- * library: it teaches nothing, sequences nothing, and asserts nothing
- * about when a child should meet any of it.
+ * saying the same thing mean the same thing.
+ *
+ * IT IS A VOCABULARY, NOT A CURRICULUM.
+ *
+ * Read the whole file and you have read a set of words for organizing
+ * learning and checks. You have not read what any child should learn,
+ * in what order, or by when. Nothing here is a Draftpace curriculum,
+ * nothing here is a recommendation, and a topic being absent from this
+ * list says nothing whatsoever about whether it is worth teaching.
+ *
+ * A family teaching Latin, or logic, or boatbuilding is not missing
+ * anything: they simply have no checks available through this route,
+ * which the product says plainly. That is the honest shape of a
+ * vocabulary, and the moment it starts implying completeness it has
+ * become the curriculum position this product exists without.
  *
  * A plain TypeScript file rather than a table, like affairsKnowledge.ts
  * and homeKnowledge.ts. Reviewable in a pull request, diffable,

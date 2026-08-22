@@ -95,11 +95,15 @@ why the daily engine reads completions (section 7) and why a check can
 influence what is offered without ever changing the plan itself
 (section 10). A loop that does not close is a set of screens.
 
-**Every step is optional except the record.** A parent can skip Today
-for a fortnight, never run a check, and still have a product that works,
-because recording what happened is the one step that survives on its
-own. The product must be built so that the loop degrades gracefully to
-that, rather than breaking when a step is skipped.
+**Every part of the loop is optional.** The Companion keeps whatever the
+parent chooses to record and remains useful when parts of the loop are
+skipped. A parent can skip Today for a fortnight, never run a check,
+never write an observation, and still have something worth having.
+
+The Record is not a step in that sequence and not a ritual anybody has
+to perform: it is an output, the accumulated state of whatever was
+recorded. Building it as a step would make it a chore, and a chore is
+the thing this category loses people to.
 
 ## 2. User model
 

@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   CURRICULUM_STANCE_LABEL,
+  CURRICULUM_STANCE_NOTE,
   EMPTY_CHILD_DRAFT,
   isSetupComplete,
   nextSetupStep,
@@ -80,21 +81,64 @@ describe("the branch that defines the product", () => {
   });
 
   it("never asks a not-sure parent for a curriculum they said they do not have", () => {
-    const seen: string[] = [];
-    let d = draft({ ...base, stance: "not-sure" });
-    for (let i = 0; i < 6; i += 1) {
-      const step = nextSetupStep(d);
-      if (step === "done") break;
-      seen.push(step.id);
-      d = { ...d, wantsSuggestions: false };
-    }
-    expect(seen).not.toContain("curriculum-title");
-    expect(seen).toContain("suggestions");
+    const step = nextSetupStep(draft({ ...base, stance: "not-sure" }));
+    expect(step === "done" ? null : step.id).toBe("subjects");
   });
 
-  it("treats no thanks as a finished answer, so a parent with no plan still has a product", () => {
-    const d = draft({ ...base, stance: "not-sure", wantsSuggestions: false });
+  /**
+   * The suggestions branch offers a starting outline, which is real and
+   * editable. What it must never do is offer a Draftpace curriculum,
+   * because there is not one and there is not going to be one here.
+   */
+  it("never offers a step that promises a curriculum", () => {
+    const everyStep: string[] = [];
+    for (const stance of ["have-one", "our-own", "not-sure"] as const) {
+      let d = draft({ ...base, stance });
+      for (let i = 0; i < 8; i += 1) {
+        const step = nextSetupStep(d);
+        if (step === "done") break;
+        everyStep.push(step.id);
+        d = {
+          ...d,
+          curriculumTitle: d.curriculumTitle || "Something",
+          subjectsConfirmed: true,
+          position: d.position || "Somewhere",
+        };
+      }
+    }
+    expect(everyStep).not.toContain("suggestions");
+    for (const id of everyStep) expect(id).not.toContain("curriculum-choose");
+  });
+
+  it("lets a not-sure parent finish with no subjects at all, and still have a product", () => {
+    const d = draft({ ...base, stance: "not-sure", subjects: [], subjectsConfirmed: true });
     expect(isSetupComplete(d)).toBe(true);
+  });
+
+  /**
+   * Asking how many days a week they can school, when there is nothing
+   * to put in those days, is asking a question with no use for the
+   * answer.
+   */
+  it("does not ask about days when there are no subjects to outline", () => {
+    const d = draft({ ...base, stance: "not-sure", subjects: [], subjectsConfirmed: true });
+    expect(nextSetupStep(d)).toBe("done");
+  });
+
+  it("asks about days once there is something to outline", () => {
+    const d = draft({ ...base, stance: "not-sure", subjects: ["Math"], subjectsConfirmed: true });
+    const step = nextSetupStep(d);
+    expect(step === "done" ? null : step.id).toBe("days-available");
+  });
+
+  it("tells a not-sure parent where that choice actually leads", () => {
+    expect(CURRICULUM_STANCE_NOTE["not-sure"]).toContain("starting outline");
+    // Offered as something to change, never as an authority.
+    expect(CURRICULUM_STANCE_NOTE["not-sure"]).toContain("change");
+    for (const note of Object.values(CURRICULUM_STANCE_NOTE)) {
+      expect(note.toLowerCase()).not.toContain("curriculum we");
+      expect(note.toLowerCase()).not.toContain("correct");
+    }
   });
 
   it("stops asking about curriculum entirely for a child who is at school", () => {

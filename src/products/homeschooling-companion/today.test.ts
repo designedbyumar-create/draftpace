@@ -25,6 +25,8 @@ const plan = (childId: string, subject: string, daysPerWeek = 5): PlanEntry => (
   subject,
   daysPerWeek,
   active: true,
+  minutesPerSession: null,
+  origin: "parent",
 });
 const abeka: Curriculum = {
   id: "abeka-math",

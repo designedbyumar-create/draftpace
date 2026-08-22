@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { readFileSync } from "node:fs";
 import {
   describeTopics,
   hasTopicsFor,
@@ -132,5 +133,32 @@ describe("how topics read back", () => {
   it("drops a key it does not know rather than inventing a label", () => {
     expect(describeTopics(["math.multiplication", "not.a.real.topic"])).toBe("Multiplication");
     expect(describeTopics(["not.a.real.topic"])).toBe("");
+  });
+});
+
+/**
+ * The framing matters as much as the content. A list of 71 topics is a
+ * vocabulary; the same list presented as coverage is a curriculum, and
+ * this product has no standing to publish one.
+ */
+describe("the taxonomy is a vocabulary and says so", () => {
+  const source = readFileSync(new URL("./taxonomy.ts", import.meta.url), "utf8");
+
+  it("states outright that it is not a curriculum", () => {
+    expect(source).toContain("IT IS A VOCABULARY, NOT A CURRICULUM");
+  });
+
+  it("never claims to be complete", () => {
+    const lower = source.toLowerCase();
+    for (const claim of ["everything a child", "all topics", "full coverage", "comprehensive"]) {
+      expect(lower, claim).not.toContain(claim);
+    }
+  });
+
+  it("leaves subjects out without implying they do not matter", () => {
+    // Absence is normal and expected, and the product says so where a
+    // parent would notice it.
+    expect(hasTopicsFor("Latin")).toBe(false);
+    expect(source).toContain("says nothing whatsoever about whether it is worth teaching");
   });
 });

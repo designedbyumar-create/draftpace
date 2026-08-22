@@ -220,7 +220,7 @@ export async function setPosition(
 export async function loadPlan(productInstanceId: string): Promise<Result<PlanEntry[]>> {
   const { data, error } = await supabase
     .from("hsc_plan")
-    .select("id, child_id, subject, days_per_week, active")
+    .select("id, child_id, subject, days_per_week, active, minutes_per_session, origin")
     .eq("product_instance_id", productInstanceId);
 
   if (error) return err({ kind: "network", message: error.message });
@@ -232,6 +232,8 @@ export async function loadPlan(productInstanceId: string): Promise<Result<PlanEn
       subject: row.subject as string,
       daysPerWeek: row.days_per_week as number,
       active: row.active as boolean,
+      minutesPerSession: (row.minutes_per_session as number | null) ?? null,
+      origin: (row.origin as PlanEntry["origin"]) ?? "parent",
     }))
   );
 }
@@ -263,25 +265,40 @@ export async function setSubjectActive(planId: string, active: boolean): Promise
   return ok(null);
 }
 
+export interface SubjectPlan {
+  subject: string;
+  daysPerWeek?: number;
+  minutesPerSession?: number | null;
+  origin?: "parent" | "draftpace-outline";
+}
+
 export async function setSubjects(
   productInstanceId: string,
   childId: string,
-  subjects: string[]
+  subjects: (string | SubjectPlan)[]
 ): Promise<Result<null>> {
   const user = await currentUserId();
   if (!user.ok) return user;
   if (subjects.length === 0) return ok(null);
 
-  const { error } = await supabase.from("hsc_plan").upsert(
-    subjects.map((subject) => ({
+  const rows = subjects.map((entry) => {
+    const plan: SubjectPlan = typeof entry === "string" ? { subject: entry } : entry;
+    return {
       product_instance_id: productInstanceId,
       user_id: user.data,
       child_id: childId,
-      subject: subject.trim(),
+      subject: plan.subject.trim(),
       active: true,
-    })),
-    { onConflict: "child_id,subject" }
-  );
+      // Only written when there is something to write. A parent who
+      // never wanted an outline keeps the schema default rather than
+      // inheriting somebody else's idea of a school day.
+      ...(plan.daysPerWeek !== undefined ? { days_per_week: plan.daysPerWeek } : {}),
+      ...(plan.minutesPerSession !== undefined ? { minutes_per_session: plan.minutesPerSession } : {}),
+      ...(plan.origin !== undefined ? { origin: plan.origin } : {}),
+    };
+  });
+
+  const { error } = await supabase.from("hsc_plan").upsert(rows, { onConflict: "child_id,subject" });
   if (error) return err({ kind: "network", message: error.message });
   return ok(null);
 }

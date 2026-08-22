@@ -6,6 +6,7 @@ import Input from "@/design-system/Input";
 import { ArrowRight, Check } from "@/design-system/Icon";
 import {
   CURRICULUM_STANCE_LABEL,
+  CURRICULUM_STANCE_NOTE,
   EMPTY_CHILD_DRAFT,
   nextSetupStep,
   setupLength,
@@ -15,6 +16,12 @@ import {
   type SetupStepId,
 } from "../setup";
 import { SCHOOLING_LABEL, type SchoolingType } from "../learning";
+import {
+  buildStartingOutline,
+  describeSubjectShape,
+  minutesPerWeek,
+  OUTLINE_DISCLAIMER,
+} from "../startingOutline";
 
 /**
  * Setting a child up, one question at a time.
@@ -105,7 +112,9 @@ export default function AddChildFlow({
         </ul>
       )}
 
-      {step === "done" ? (
+      {step === "done" && draft.stance === "not-sure" ? (
+        <StartingOutlinePreview draft={draft} pending={pending} onDone={onDone} onCancel={onCancel} />
+      ) : step === "done" ? (
         <div className="flex flex-col gap-3">
           <h2
             className="text-[20px] leading-snug text-[var(--text)]"
@@ -151,30 +160,35 @@ export default function AddChildFlow({
               ))}
             </div>
           ) : step.id === "stance" ? (
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-col gap-2">
               {(Object.keys(CURRICULUM_STANCE_LABEL) as CurriculumStance[]).map((stance) => (
-                <Button
+                <button
                   key={stance}
-                  size="sm"
-                  variant="secondary"
+                  type="button"
                   onClick={() => setDraft((prev) => ({ ...prev, stance }))}
+                  className="rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3.5 py-3 text-left transition-colors hover:border-[var(--primary)]"
                 >
-                  {CURRICULUM_STANCE_LABEL[stance]}
-                </Button>
+                  <span className="block text-[14px] font-semibold text-[var(--text)]">
+                    {CURRICULUM_STANCE_LABEL[stance]}
+                  </span>
+                  <span className="mt-0.5 block text-[12.5px] leading-relaxed text-[var(--muted)]">
+                    {CURRICULUM_STANCE_NOTE[stance]}
+                  </span>
+                </button>
               ))}
             </div>
-          ) : step.id === "suggestions" ? (
+          ) : step.id === "days-available" ? (
             <div className="flex flex-wrap gap-2">
-              <Button size="sm" onClick={() => setDraft((prev) => ({ ...prev, wantsSuggestions: true }))}>
-                Yes, show me a starting point
-              </Button>
-              <Button
-                size="sm"
-                variant="secondary"
-                onClick={() => setDraft((prev) => ({ ...prev, wantsSuggestions: false }))}
-              >
-                No, we will work it out
-              </Button>
+              {[2, 3, 4, 5, 6, 7].map((n) => (
+                <Button
+                  key={n}
+                  size="sm"
+                  variant="secondary"
+                  onClick={() => setDraft((prev) => ({ ...prev, daysAvailable: n }))}
+                >
+                  {n} days
+                </Button>
+              ))}
             </div>
           ) : step.id === "subjects" ? (
             <div className="flex flex-col gap-3">
@@ -251,5 +265,105 @@ export default function AddChildFlow({
         </div>
       )}
     </section>
+  );
+}
+
+/**
+ * The starting outline, shown before anything is saved.
+ *
+ * A parent who does not know where to begin gets a weekly shape and a
+ * few topics to start from, built only from what they already told us:
+ * their child's age and the subjects they picked. Nothing is inferred
+ * about the child and no profile is built.
+ *
+ * Shown, not applied. They see the whole of it, with the disclaimer, and
+ * decide. Everything in it is editable afterwards on the child's own
+ * page, which is where the controls already live.
+ */
+function StartingOutlinePreview({
+  draft,
+  pending,
+  onDone,
+  onCancel,
+}: {
+  draft: ChildDraft;
+  pending: boolean;
+  onDone: (draft: ChildDraft) => void;
+  onCancel: () => void;
+}) {
+  const parsedAge = Number.parseInt(draft.age, 10);
+  const outline = buildStartingOutline({
+    age: Number.isFinite(parsedAge) ? parsedAge : null,
+    subjects: draft.subjects,
+    daysAvailable: draft.daysAvailable ?? 5,
+  });
+  const weekly = minutesPerWeek(outline);
+  const hours = Math.round((weekly / 60) * 10) / 10;
+
+  return (
+    <div className="flex flex-col gap-5">
+      <div>
+        <h2
+          className="text-[20px] leading-snug text-[var(--text)]"
+          style={{ fontFamily: "var(--product-narrative-font, inherit)" }}
+        >
+          A place to begin with {draft.name}.
+        </h2>
+        <p className="mt-2 max-w-lg text-[13px] leading-relaxed text-[var(--muted)]">
+          {OUTLINE_DISCLAIMER}
+        </p>
+      </div>
+
+      {outline.subjects.length === 0 ? (
+        <p className="text-[13px] text-[var(--muted)]">
+          No subjects were picked, so there is nothing to outline. You can add some any time, and recording what you
+          actually do works without a plan at all.
+        </p>
+      ) : (
+        <div className="flex flex-col">
+          {outline.subjects.map((subject) => (
+            <div key={subject.subject} className="border-b border-[var(--border)] py-3.5">
+              <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                <h3 className="text-[15px] font-semibold text-[var(--text)]">{subject.subject}</h3>
+                <span className="text-[12px] text-[var(--muted)]">{describeSubjectShape(subject)}</span>
+              </div>
+              {subject.focus.length > 0 ? (
+                <p className="mt-1 text-[12.5px] leading-relaxed text-[var(--muted)]">
+                  Suggested focus: {subject.focus.map((t) => t.label).join(", ")}
+                </p>
+              ) : (
+                <p className="mt-1 text-[12.5px] leading-relaxed text-[var(--faint)]">
+                  We have no topics for this one, so it is just time in the week. What you do with it is yours.
+                </p>
+              )}
+              <p className="mt-1 text-[12px] text-[var(--faint)]">
+                Ideas: {subject.activities.join(" · ")}
+              </p>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {weekly > 0 && (
+        <p className="text-[12.5px] text-[var(--muted)]">
+          {/* So a parent can judge whether it is realistic before agreeing
+              to it, rather than discovering it in week three. */}
+          That comes to roughly {hours} hours a week across everything.
+        </p>
+      )}
+
+      <div className="flex flex-wrap gap-2">
+        <Button size="sm" disabled={pending} onClick={() => onDone(draft)}>
+          {pending ? "Saving..." : `Start here with ${draft.name}`}
+        </Button>
+        <Button size="sm" variant="ghost" disabled={pending} onClick={onCancel}>
+          Cancel
+        </Button>
+      </div>
+      <p className="max-w-lg text-[12px] leading-relaxed text-[var(--faint)]">
+        Everything here can be changed on {draft.name}&rsquo;s page afterwards: the days, the subjects, and which
+        topics you are covering.
+      </p>
+    </div>
   );
 }

@@ -131,6 +131,16 @@ export interface PlanEntry {
   subject: string;
   daysPerWeek: number;
   active: boolean;
+  /** Set only where a starting outline suggested one and the parent kept it. */
+  minutesPerSession: number | null;
+  /**
+   * Where this subject came from.
+   *
+   * A subject the parent typed is theirs. A subject that arrived in a
+   * starting outline is ours until they change it, and saying so is the
+   * same rule every other surface in this product keeps.
+   */
+  origin: "parent" | "draftpace-outline";
 }
 
 /** Everything this product knows about one child, assembled. */

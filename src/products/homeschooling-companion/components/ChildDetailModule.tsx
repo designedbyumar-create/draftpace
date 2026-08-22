@@ -278,8 +278,15 @@ export default function ChildDetailModule({ childId }: { childId: string }) {
                 <div key={entry.id} className="border-b border-[var(--border)] py-3">
                   <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                     <h3 className="text-[14px] font-semibold text-[var(--text)]">{entry.subject}</h3>
-                    <span className="text-[11px] font-semibold text-[var(--primary)]">{SOURCE_LABEL.parent}</span>
+                    <span className="text-[11px] font-semibold text-[var(--primary)]">
+                      {entry.origin === "draftpace-outline" ? SOURCE_LABEL.draftpace : SOURCE_LABEL.parent}
+                    </span>
                   </div>
+                  {entry.origin === "draftpace-outline" && (
+                    <p className="mt-0.5 text-[12px] leading-relaxed text-[var(--faint)]">
+                      From a starting outline. Change anything and it becomes yours.
+                    </p>
+                  )}
                 </div>
               ))}
           </div>
