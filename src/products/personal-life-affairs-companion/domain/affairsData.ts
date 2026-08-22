@@ -5,6 +5,7 @@ import { ok, err, type Result } from "@/product-framework/result";
 import type { AffairArea, AffairGate } from "../affairsKnowledge";
 import { computeNextReview, type AffairItem, type AffairItemRevision, type AffairItemStatus } from "../lifeAffairs";
 import type { AffairItemDraft } from "../capture";
+import { describeChange } from "../changeSummary";
 import type { AffairProfile, StepRecord, StepState } from "../sequencer";
 
 /**
@@ -343,7 +344,20 @@ export async function confirmItem(productInstanceId: string, existing: AffairIte
   return loadItems(productInstanceId);
 }
 
-/** How a record leaves. Archived, never deleted, and the archiving is itself history. */
+/**
+ * How a record leaves. Archived, never deleted, and the archiving is
+ * itself history.
+ *
+ * The second write is the important one. Saying "this no longer applies"
+ * means stop asking, but the sequencer decides an establish step is
+ * settled by the presence of a record, so removing the last record for a
+ * step made the companion offer it again as though it had never been
+ * answered. A person who had just said a thing did not apply to them was
+ * asked about it on the next screen.
+ *
+ * Only when it is the LAST one. Rehoming one of three cats must not
+ * silence the question about the other two.
+ */
 export async function archiveItem(productInstanceId: string, existing: AffairItem): Promise<Result<AffairItem[]>> {
   const user = await currentUserId();
   if (!user.ok) return user;
@@ -355,34 +369,16 @@ export async function archiveItem(productInstanceId: string, existing: AffairIte
 
   if (error) return err({ kind: "network", message: error.message });
   await writeRevision(productInstanceId, user.data, existing, "archived", `Removed ${existing.label}.`);
-  return loadItems(productInstanceId);
-}
 
-const CHANGE_LABEL: Record<string, string> = {
-  label: "the name",
-  whereabouts: "where it is kept",
-  personName: "who it concerns",
-  personContact: "how to reach them",
-  notes: "the notes",
-};
-
-function describeChange(before: AffairItem, after: AffairItem): string {
-  const changes: string[] = [];
-  for (const key of ["label", "whereabouts", "personName", "personContact", "notes"] as const) {
-    const from = before[key];
-    const to = after[key];
-    if (from === to) continue;
-    if (from && to && key === "personName") changes.push(`changed ${CHANGE_LABEL[key]} from ${from} to ${to}`);
-    else if (!from && to) changes.push(`added ${CHANGE_LABEL[key]}`);
-    else if (from && !to) changes.push(`removed ${CHANGE_LABEL[key]}`);
-    else changes.push(`changed ${CHANGE_LABEL[key]}`);
+  const remaining = await loadItems(productInstanceId);
+  if (remaining.ok && existing.originStepKey) {
+    const stillThere = remaining.data.some((i) => i.originStepKey === existing.originStepKey);
+    if (!stillThere) {
+      const silenced = await recordStep(productInstanceId, existing.originStepKey, "notRelevant");
+      if (!silenced.ok) return silenced;
+    }
   }
-  for (const key of Object.keys({ ...before.fields, ...after.fields })) {
-    if (before.fields[key] !== after.fields[key]) changes.push(`changed ${key}`);
-  }
-  if (changes.length === 0) return `Reviewed ${after.label}.`;
-  const sentence = changes.join(", ");
-  return `${after.label}: ${sentence.charAt(0).toUpperCase()}${sentence.slice(1)}.`;
+  return remaining;
 }
 
 // -------------------------------------------------------------- history

@@ -113,6 +113,15 @@ const s = StyleSheet.create({
   recordMeta: { fontSize: 7.6, color: C.faint, marginTop: 3 },
   fieldLabel: { fontSize: 7.4, letterSpacing: 0.5, textTransform: "uppercase", color: C.faint, marginTop: 4 },
   promptLine: { fontSize: 8.4, color: C.muted, marginTop: 26 },
+  missingNote: {
+    fontSize: 8.4,
+    color: C.faint,
+    lineHeight: 1.55,
+    marginTop: 18,
+    paddingTop: 10,
+    borderTopWidth: 0.5,
+    borderTopColor: C.ruleSoft,
+  },
   doneLine: { flexDirection: "row", alignItems: "flex-end", marginTop: 9 },
 });
 
@@ -164,6 +173,13 @@ const FIELD_LABEL: Record<string, string> = {
 
 function fieldLabel(key: string): string {
   return FIELD_LABEL[key] ?? key.replace(/([A-Z])/g, " $1").replace(/^./, (c) => c.toUpperCase());
+}
+
+/** "a, b and c", so a closing line reads as a sentence rather than a list. */
+function listSentence(parts: string[]): string {
+  if (parts.length === 1) return parts[0];
+  if (parts.length === 2) return `${parts[0]} and ${parts[1]}`;
+  return `${parts.slice(0, -1).join(", ")} and ${parts[parts.length - 1]}`;
 }
 
 function formatDate(iso: string | null): string | null {
@@ -274,7 +290,13 @@ function StepRow({ row, blank }: { row: StandingRow; blank: boolean }) {
   return (
     <View style={[s.row, s.rowRule]} wrap={false}>
       <View style={s.rowTop}>
-        <Text style={s.instruction}>{row.step.instruction}</Text>
+        {/*
+          The fact, not the instruction that produced it. A stranger
+          reading "Write down who should be called first" above a name
+          reads it as a job they have been given, which turns a handoff
+          document back into somebody else's to-do list.
+        */}
+        <Text style={s.instruction}>{row.step.bookLabel}</Text>
         <Text style={[s.standing, { color: STANDING_COLOR[row.standing] }]}>{STANDING_LABEL[row.standing]}</Text>
       </View>
       {row.items.length > 0 ? (
@@ -284,9 +306,9 @@ function StepRow({ row, blank }: { row: StandingRow; blank: boolean }) {
           Confirmed{date ? ` ${date}` : ""}, before the details were being kept. Nothing was written down.
         </Text>
       ) : row.standing === "done" ? (
-        <Text style={s.note}>Done{date ? `, ${date}` : ""}.</Text>
+        <Text style={s.note}>Confirmed{date ? ` on ${date}` : ""}.</Text>
       ) : row.standing === "unsure" ? (
-        <Text style={s.note}>Not settled. This one was left open on purpose.</Text>
+        <Text style={s.note}>They were not sure yet, and said so rather than guessing.</Text>
       ) : null}
     </View>
   );
@@ -316,10 +338,17 @@ export function InOrderDocument({
   /** The standings this particular copy actually uses, for the legend. */
   const present = new Set(readiness.rows.map((r) => r.standing));
 
-  const byArea = AREA_ORDER.map((area) => ({
-    area,
-    rows: readiness.rows.filter((r) => r.step.area === area),
-  })).filter((group) => group.rows.length > 0);
+  const byArea = AREA_ORDER.map((area) => {
+    const rows = readiness.rows.filter((r) => r.step.area === area);
+    return {
+      area,
+      // Rows carrying something: a record, or a decision the person made
+      // deliberately. These are what the reader can actually use.
+      rows: blank ? rows : rows.filter((r) => r.standing !== "notAddressed"),
+      // The rest, named once in a closing line rather than listed.
+      missing: blank ? [] : rows.filter((r) => r.standing === "notAddressed"),
+    };
+  }).filter((group) => group.rows.length > 0);
 
   return (
     <Document
@@ -452,8 +481,8 @@ export function InOrderDocument({
               */}
               {(
                 [
-                  ["established", "Written down here, and true when it was last confirmed."],
-                  ["done", "Something they did elsewhere and told us about."],
+                  ["established", "Written down here, in their words, and true when last confirmed."],
+                  ["done", "Something they dealt with elsewhere, and confirmed on the date shown."],
                   ["worthRechecking", "Recorded once, but long enough ago to be worth asking again."],
                   ["recordedWithoutDetail", "Dealt with on the date shown, before the details were being kept."],
                   ["leftOpen", "Deliberately unfinished. Do not rely on it."],
@@ -486,15 +515,28 @@ export function InOrderDocument({
         </Sheet>
       </Page>
 
-      {byArea.map(({ area, rows }) => (
+      {byArea.map(({ area, rows, missing }) => (
         <Page key={area} size={size} style={s.page}>
           <Sheet section={AFFAIR_AREA_LABEL[area]}>
-            <Text style={s.eyebrow}>{blank ? "Fill this in" : "Your answers"}</Text>
+            {/* Not "your answers": the person holding a filled copy
+                answered none of it. */}
+            <Text style={s.eyebrow}>{blank ? "Fill this in" : "What is recorded"}</Text>
             <Text style={s.h1}>{AFFAIR_AREA_LABEL[area]}</Text>
             <View style={s.headRule} />
             {rows.map((row) => (
               <StepRow key={row.step.key} row={row} blank={blank} />
             ))}
+            {missing.length > 0 && (
+              /*
+                Said plainly and once. A reader who knows nothing was
+                recorded about the pensions knows to go looking, which is
+                useful; a page of identical "not yet started" rows tells
+                them the same thing in a way nobody reads.
+              */
+              <Text style={s.missingNote}>
+                Nothing was recorded about {listSentence(missing.map((r) => r.step.bookLabel.toLowerCase()))}.
+              </Text>
+            )}
           </Sheet>
         </Page>
       ))}

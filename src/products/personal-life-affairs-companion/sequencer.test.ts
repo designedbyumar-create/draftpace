@@ -304,3 +304,35 @@ describe("sequencing", () => {
     expect(state.allCaughtUp).toBe(true);
   });
 });
+
+/**
+ * "This no longer applies" removes the record, and the sequencer decides
+ * an establish step is settled by the presence of a record. Without the
+ * step also being silenced, the companion asked again on the very next
+ * screen, immediately after being told not to.
+ */
+describe("saying something no longer applies", () => {
+  it("does not come back once the step is silenced alongside the record", () => {
+    const silenced = rec("people.emergency-contact", { state: "notRelevant", confirmedAt: null });
+    const state = deriveAffairsState({ profile: {}, records: [silenced], items: [] }, NOW);
+    expect(state.next!.step.key).not.toBe("people.emergency-contact");
+  });
+
+  it("would come back if only the record went, which is why the domain writes both", () => {
+    // Guards the reason for the second write in archiveItem: with the
+    // record gone and no step row, the step is indistinguishable from
+    // one that was never answered.
+    const state = deriveAffairsState({ profile: {}, records: [], items: [] }, NOW);
+    expect(state.next!.step.key).toBe("people.emergency-contact");
+  });
+
+  it("keeps asking about a step that still has other records, so removing one of three pets is not a refusal", () => {
+    const pets = [
+      item("dependants.pets", { id: "pet-a", label: "Ade" }),
+      item("dependants.pets", { id: "pet-b", label: "Bo" }),
+    ];
+    const state = deriveAffairsState({ profile: { hasPets: true }, records: [], items: pets }, NOW);
+    expect(state.relevant.some((s) => s.key === "dependants.pets")).toBe(true);
+    expect(isEstablished(AFFAIR_STEP_BY_KEY["dependants.pets"], pets)).toBe(true);
+  });
+});
