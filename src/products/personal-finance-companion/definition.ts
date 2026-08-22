@@ -27,7 +27,8 @@ export const personalFinanceCompanionDefinition: ProductDefinitionInput = {
   id: "personal-finance-companion",
   slug: "personal-finance-companion",
   title: "Personal Finance Companion",
-  tagline: "See what is safe to spend, what is coming due, and what actually happened with your money — one place, always current.",
+  tagline:
+    "See what is safe to spend, what is coming due, and what actually happened with your money, in one place that is always current.",
   family: "companion",
   version: "0.1.0",
   status: "draft",
