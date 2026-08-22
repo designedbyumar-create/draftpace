@@ -148,7 +148,7 @@ export const homeManagementCompanionShopProduct: ShopProductInput = {
     },
   ],
   relatedGuideSlugs: [],
-  relatedProductSlugs: ["personal-finance-companion"],
+  relatedProductSlugs: ["personal-finance-companion", "personal-life-affairs-companion"],
   needGroups: ["getting-organized"],
   seo: {
     title: "Home Base: know what your home needs, before it gets expensive",

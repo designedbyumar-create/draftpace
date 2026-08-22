@@ -2,6 +2,7 @@ import { shopRegistry } from "../registry";
 import { monthlyMoneyResetShopProduct } from "./monthly-money-reset";
 import { personalFinanceCompanionShopProduct } from "./personal-finance-companion";
 import { homeManagementCompanionShopProduct } from "./home-management-companion";
+import { personalLifeAffairsCompanionShopProduct } from "./personal-life-affairs-companion";
 
 /**
  * Real, published Shop listings, never gated by the dev-fixture check
@@ -9,7 +10,12 @@ import { homeManagementCompanionShopProduct } from "./home-management-companion"
  * A real listing is registered in every environment, same as a real product
  * in the product-framework registry.
  */
-const PRODUCTS = [monthlyMoneyResetShopProduct, personalFinanceCompanionShopProduct, homeManagementCompanionShopProduct];
+const PRODUCTS = [
+  monthlyMoneyResetShopProduct,
+  personalFinanceCompanionShopProduct,
+  homeManagementCompanionShopProduct,
+  personalLifeAffairsCompanionShopProduct,
+];
 
 let registered = false;
 

@@ -26,6 +26,11 @@ import {
   ActionRecordScreenMockup as HmcActionRecordScreenMockup,
   SetupScreenMockup as HmcSetupScreenMockup,
 } from "./homeManagementCompanionVisuals";
+import {
+  OverviewScreenMockup as PlaOverviewScreenMockup,
+  CompanionScreenMockup as PlaCompanionScreenMockup,
+  BookScreenMockup as PlaBookScreenMockup,
+} from "./personalLifeAffairsCompanionVisuals";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { getLemonSqueezyCheckoutUrl, hasLemonSqueezyCheckout } from "@/shop/lemonSqueezyCheckout";
 
@@ -78,6 +83,7 @@ export default async function ShopProductPage({
   const isMonthlyMoneyReset = product.slug === "monthly-money-reset";
   const isPersonalFinanceCompanion = product.slug === "personal-finance-companion";
   const isHomeManagementCompanion = product.slug === "home-management-companion";
+  const isPersonalLifeAffairsCompanion = product.slug === "personal-life-affairs-companion";
 
   // Resolved once per request, server-side, so every GetAction on this page
   // (hero, mid-page, final CTA) agrees on the exact same checkout link
@@ -130,6 +136,8 @@ export default async function ShopProductPage({
               <PfcOverviewScreenMockup />
             ) : isHomeManagementCompanion ? (
               <HmcOverviewScreenMockup />
+            ) : isPersonalLifeAffairsCompanion ? (
+              <PlaOverviewScreenMockup />
             ) : (
               <HeroVisual product={product} />
             )}
@@ -164,6 +172,8 @@ export default async function ShopProductPage({
               <PfcAttentionScreenMockup />
             ) : isHomeManagementCompanion ? (
               <HmcActionRecordScreenMockup />
+            ) : isPersonalLifeAffairsCompanion ? (
+              <PlaBookScreenMockup />
             ) : undefined
           }
         >
@@ -186,6 +196,8 @@ export default async function ShopProductPage({
               <PfcGuidedCompanionScreenMockup />
             ) : isHomeManagementCompanion ? (
               <HmcSetupScreenMockup />
+            ) : isPersonalLifeAffairsCompanion ? (
+              <PlaCompanionScreenMockup />
             ) : undefined
           }
           reverse

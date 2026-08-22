@@ -13,6 +13,7 @@ import AddToLibraryButton from "./AddToLibraryButton";
 import { OverviewScreenMockup as MmrOverviewScreenMockup } from "./[productSlug]/monthlyMoneyResetVisuals";
 import { OverviewScreenMockup as PfcOverviewScreenMockup } from "./[productSlug]/personalFinanceCompanionVisuals";
 import { OverviewScreenMockup as HmcOverviewScreenMockup } from "./[productSlug]/homeManagementCompanionVisuals";
+import { OverviewScreenMockup as PlaOverviewScreenMockup } from "./[productSlug]/personalLifeAffairsCompanionVisuals";
 
 export const metadata: Metadata = {
   title: "Shop",
@@ -31,6 +32,7 @@ const PRODUCT_THUMBNAILS: Partial<Record<string, React.ComponentType>> = {
   "monthly-money-reset": MmrOverviewScreenMockup,
   "personal-finance-companion": PfcOverviewScreenMockup,
   "home-management-companion": HmcOverviewScreenMockup,
+  "personal-life-affairs-companion": PlaOverviewScreenMockup,
 };
 
 export default function ShopIndexPage() {
