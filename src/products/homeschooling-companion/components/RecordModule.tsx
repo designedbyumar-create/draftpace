@@ -9,10 +9,18 @@ import { findHomeschoolInstanceId } from "../instanceData";
 import {
   createObservation,
   loadChildren,
+  loadChildTopics,
+  loadCurricula,
   loadObservations,
+  loadPlan,
+  loadPositions,
   loadTaskEvents,
   setObservationVisibility,
+  type ChildTopic,
 } from "../domain/learningData";
+import { loadResultsForChild } from "../domain/checkData";
+import { buildBook, DEFAULT_BOOK_SECTIONS, type BookSections } from "../book";
+import type { Curriculum, PlanEntry, Position } from "../learning";
 import {
   deriveRecord,
   describeHowItWent,
@@ -51,6 +59,13 @@ export default function RecordModule() {
   const [events, setEvents] = useState<WorkEntry[]>([]);
   const [observations, setObservations] = useState<Observation[]>([]);
   const [childId, setChildId] = useState<string | null>(null);
+  const [curricula, setCurricula] = useState<Curriculum[]>([]);
+  const [positions, setPositions] = useState<Position[]>([]);
+  const [plan, setPlan] = useState<PlanEntry[]>([]);
+  const [childTopics, setChildTopics] = useState<ChildTopic[]>([]);
+  const [sections, setSections] = useState<BookSections>(DEFAULT_BOOK_SECTIONS);
+  const [size, setSize] = useState<"LETTER" | "A4">("LETTER");
+  const [makingRecord, setMakingRecord] = useState(false);
   const [writing, setWriting] = useState(false);
   const [noteText, setNoteText] = useState("");
   const [pending, setPending] = useState(false);
@@ -67,11 +82,16 @@ export default function RecordModule() {
       return;
     }
     setInstanceId(found.id);
-    const [childrenResult, eventsResult, observationsResult] = await Promise.all([
-      loadChildren(found.id),
-      loadTaskEvents(found.id),
-      loadObservations(found.id),
-    ]);
+    const [childrenResult, eventsResult, observationsResult, curriculaResult, positionsResult, planResult, topicsResult] =
+      await Promise.all([
+        loadChildren(found.id),
+        loadTaskEvents(found.id),
+        loadObservations(found.id),
+        loadCurricula(found.id),
+        loadPositions(found.id),
+        loadPlan(found.id),
+        loadChildTopics(found.id),
+      ]);
     if (!childrenResult.ok) {
       setErrorMessage(describeResultError(childrenResult.error));
       setStatus("error");
@@ -80,6 +100,10 @@ export default function RecordModule() {
     setChildren(childrenResult.data);
     setEvents(eventsResult.ok ? eventsResult.data : []);
     setObservations(observationsResult.ok ? observationsResult.data : []);
+    setCurricula(curriculaResult.ok ? curriculaResult.data : []);
+    setPositions(positionsResult.ok ? positionsResult.data : []);
+    setPlan(planResult.ok ? planResult.data : []);
+    setChildTopics(topicsResult.ok ? topicsResult.data : []);
     setStatus("ready");
   }, []);
 
@@ -111,6 +135,49 @@ export default function RecordModule() {
     setNoteText("");
     setWriting(false);
     load();
+  }
+
+  /**
+   * The record, made here and downloaded from here.
+   *
+   * A child must be chosen first, because a record is about one child.
+   * Two children in one document would mean handing over one child's
+   * information to account for the other.
+   */
+  async function makeRecord() {
+    if (!instanceId) return;
+    const target = childId ?? (children.length === 1 ? children[0].id : null);
+    if (!target) {
+      setErrorMessage("Choose which child the record is for first.");
+      return;
+    }
+    const child = children.find((c) => c.id === target);
+    if (!child) return;
+
+    setMakingRecord(true);
+    setErrorMessage(null);
+    try {
+      const checks = await loadResultsForChild(instanceId, target);
+      const book = buildBook({
+        child,
+        curricula: curricula.filter((c) => c.childId === target),
+        positions: positions.filter((p) => p.childId === target),
+        plan: plan.filter((p) => p.childId === target),
+        events: events.filter((e) => e.childId === target),
+        observations: observations.filter((o) => o.childId === target),
+        checks: checks.ok ? checks.data : [],
+        topicKeys: childTopics.filter((t) => t.childId === target).map((t) => t.topicKey),
+        sections,
+        generatedAt: new Date(),
+      });
+      const { downloadHomeschoolRecord } = await import("../printables/download");
+      await downloadHomeschoolRecord(book, size);
+    } catch {
+      // A failed generation must never look like a saved download.
+      setErrorMessage("The record could not be made. Nothing was downloaded.");
+    } finally {
+      setMakingRecord(false);
+    }
   }
 
   async function toggleShare(observation: Observation) {
@@ -212,6 +279,61 @@ export default function RecordModule() {
             </Button>
           </div>
         )
+      )}
+
+      {children.length > 0 && (
+        <section aria-label="The printed record" className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5">
+          <h2 className="text-[15px] font-semibold text-[var(--text)]">My Homeschool Record</h2>
+          <p className="mt-1.5 max-w-lg text-[13px] leading-relaxed text-[var(--muted)]">
+            One child, on paper, made on your own device so nothing about them is sent anywhere to produce it. It says
+            what was done and makes no claim about how any of it went.
+          </p>
+
+          <div className="mt-4 flex flex-col gap-2">
+            {(
+              [
+                ["history", "What was done, day by day"],
+                ["observations", "Notes you have marked for the record"],
+                ["checks", "Results of checks you ran"],
+              ] as const
+            ).map(([key, label]) => (
+              <label key={key} className="flex items-center gap-2.5 text-[13px] text-[var(--text)]">
+                <input
+                  type="checkbox"
+                  checked={sections[key]}
+                  onChange={(event) => setSections((prev) => ({ ...prev, [key]: event.target.checked }))}
+                  className="h-4 w-4 accent-[var(--primary)]"
+                />
+                {label}
+              </label>
+            ))}
+          </div>
+
+          <p className="mt-2 max-w-lg text-[12px] leading-relaxed text-[var(--faint)]">
+            {/* The rule that must never bend, said where the choice is made. */}
+            Notes you have kept private are never included, whatever is ticked here. Check results start out excluded
+            because they are the most sensitive thing this product holds.
+          </p>
+
+          <div className="mt-4 flex flex-wrap items-center gap-2">
+            {(["LETTER", "A4"] as const).map((option) => (
+              <Button
+                key={option}
+                size="sm"
+                variant={size === option ? "primary" : "secondary"}
+                onClick={() => setSize(option)}
+              >
+                {option === "LETTER" ? "US Letter" : "A4"}
+              </Button>
+            ))}
+            <Button size="sm" disabled={makingRecord} onClick={makeRecord}>
+              {makingRecord ? "Preparing..." : "Save as PDF"}
+            </Button>
+          </div>
+          {children.length > 1 && childId === null && (
+            <p className="mt-2 text-[12px] text-[var(--faint)]">Choose a child above first. A record is about one child.</p>
+          )}
+        </section>
       )}
 
       {view.days.length === 0 ? (

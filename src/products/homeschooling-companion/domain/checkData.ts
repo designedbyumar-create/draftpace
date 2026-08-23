@@ -253,3 +253,21 @@ export async function loadPastResults(productInstanceId: string, childId: string
     }))
   );
 }
+
+/** Every standing across all children, for the printed record. */
+export async function loadResultsForChild(
+  productInstanceId: string,
+  childId: string
+): Promise<Result<{ createdAt: string; topicKey: string; standing: Standing; answered: number; right: number }[]>> {
+  const past = await loadPastResults(productInstanceId, childId);
+  if (!past.ok) return past;
+  return ok(
+    past.data.map((row) => ({
+      createdAt: row.createdAt,
+      topicKey: row.topicKey,
+      standing: row.standing,
+      answered: row.answered,
+      right: row.right,
+    }))
+  );
+}
