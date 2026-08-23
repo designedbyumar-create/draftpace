@@ -31,6 +31,11 @@ import {
   CompanionScreenMockup as PlaCompanionScreenMockup,
   BookScreenMockup as PlaBookScreenMockup,
 } from "./personalLifeAffairsCompanionVisuals";
+import {
+  OverviewScreenMockup as HscOverviewScreenMockup,
+  CheckScreenMockup as HscCheckScreenMockup,
+  BookScreenMockup as HscBookScreenMockup,
+} from "./homeschoolingCompanionVisuals";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { getLemonSqueezyCheckoutUrl, hasLemonSqueezyCheckout } from "@/shop/lemonSqueezyCheckout";
 
@@ -84,6 +89,7 @@ export default async function ShopProductPage({
   const isPersonalFinanceCompanion = product.slug === "personal-finance-companion";
   const isHomeManagementCompanion = product.slug === "home-management-companion";
   const isPersonalLifeAffairsCompanion = product.slug === "personal-life-affairs-companion";
+  const isHomeschoolingCompanion = product.slug === "homeschooling-companion";
 
   // Resolved once per request, server-side, so every GetAction on this page
   // (hero, mid-page, final CTA) agrees on the exact same checkout link
@@ -138,6 +144,8 @@ export default async function ShopProductPage({
               <HmcOverviewScreenMockup />
             ) : isPersonalLifeAffairsCompanion ? (
               <PlaOverviewScreenMockup />
+            ) : isHomeschoolingCompanion ? (
+              <HscOverviewScreenMockup />
             ) : (
               <HeroVisual product={product} />
             )}
@@ -174,6 +182,8 @@ export default async function ShopProductPage({
               <HmcActionRecordScreenMockup />
             ) : isPersonalLifeAffairsCompanion ? (
               <PlaBookScreenMockup />
+            ) : isHomeschoolingCompanion ? (
+              <HscCheckScreenMockup />
             ) : undefined
           }
         >
@@ -198,6 +208,8 @@ export default async function ShopProductPage({
               <HmcSetupScreenMockup />
             ) : isPersonalLifeAffairsCompanion ? (
               <PlaCompanionScreenMockup />
+            ) : isHomeschoolingCompanion ? (
+              <HscBookScreenMockup />
             ) : undefined
           }
           reverse

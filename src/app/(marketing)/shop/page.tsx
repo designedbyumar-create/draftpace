@@ -14,6 +14,7 @@ import { OverviewScreenMockup as MmrOverviewScreenMockup } from "./[productSlug]
 import { OverviewScreenMockup as PfcOverviewScreenMockup } from "./[productSlug]/personalFinanceCompanionVisuals";
 import { OverviewScreenMockup as HmcOverviewScreenMockup } from "./[productSlug]/homeManagementCompanionVisuals";
 import { OverviewScreenMockup as PlaOverviewScreenMockup } from "./[productSlug]/personalLifeAffairsCompanionVisuals";
+import { OverviewScreenMockup as HscOverviewScreenMockup } from "./[productSlug]/homeschoolingCompanionVisuals";
 
 export const metadata: Metadata = {
   title: "Shop",
@@ -33,6 +34,7 @@ const PRODUCT_THUMBNAILS: Partial<Record<string, React.ComponentType>> = {
   "personal-finance-companion": PfcOverviewScreenMockup,
   "home-management-companion": HmcOverviewScreenMockup,
   "personal-life-affairs-companion": PlaOverviewScreenMockup,
+  "homeschooling-companion": HscOverviewScreenMockup,
 };
 
 export default function ShopIndexPage() {

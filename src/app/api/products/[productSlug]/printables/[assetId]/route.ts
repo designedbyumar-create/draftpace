@@ -5,6 +5,7 @@ import { ensureProductsRegistered } from "@/products/manifest";
 import { printableAssetRegistry } from "@/product-framework/printableAssets";
 import { getPrintableAssetBytes as getFinanceCompanionAssetBytes } from "@/products/personal-finance-companion/printables/assetBytes";
 import { getPrintableAssetBytes as getHomeSurveyAssetBytes } from "@/products/home-management-companion/printables/assetBytes";
+import { getPrintableAssetBytes as getHomeschoolYearAssetBytes } from "@/products/homeschooling-companion/printables/assetBytes";
 
 /**
  * Serves an included printable asset's actual bytes, gated by the same
@@ -76,7 +77,9 @@ export async function GET(
       ? getFinanceCompanionAssetBytes
       : productSlug === "home-management-companion"
         ? getHomeSurveyAssetBytes
-        : null;
+        : productSlug === "homeschooling-companion"
+          ? getHomeschoolYearAssetBytes
+          : null;
 
   if (!loader) {
     return NextResponse.json({ error: "Not found" }, { status: 404 });

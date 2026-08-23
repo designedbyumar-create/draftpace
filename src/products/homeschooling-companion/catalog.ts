@@ -6,9 +6,10 @@ import RecordModule from "./components/RecordModule";
 import SettingsModule from "./components/SettingsModule";
 
 /**
- * No printableAssets yet. They are declared when real bytes exist, in
- * phase 6. Declaring them now would put a download link on screen with
- * nothing behind it.
+ * The printable is declared here, now that real bytes exist. Metadata
+ * only: the bytes live in printables/assetBytes.ts, which only the
+ * download route imports, because this file is reachable from client
+ * components through manifest.ts.
  */
 export const homeschoolingCompanionCatalogEntry: ProductCatalogEntry = {
   definition: homeschoolingCompanionDefinition,
@@ -18,4 +19,8 @@ export const homeschoolingCompanionCatalogEntry: ProductCatalogEntry = {
     "homeschooling-companion.record": RecordModule,
     "homeschooling-companion.settings": SettingsModule,
   },
+  printableAssets: [
+    { id: "letter", title: "The Homeschool Year (US Letter)", filename: "the-homeschool-year-letter.pdf" },
+    { id: "a4", title: "The Homeschool Year (A4)", filename: "the-homeschool-year-a4.pdf" },
+  ],
 };

@@ -161,3 +161,101 @@ describe("the Personal Life Affairs Companion listing", () => {
     }
   });
 });
+
+/**
+ * The Homeschooling Companion's listing. Held to its siblings' rules,
+ * plus the two this product carries: it must never use the vocabulary of
+ * comparison, and it must never imply Draftpace supplies a curriculum.
+ */
+describe("the Homeschooling Companion listing", () => {
+  const SLUG = "homeschooling-companion";
+
+  async function listing() {
+    const { registerRealShopProducts, shopRegistry } = await loadFreshRegisterModule();
+    registerRealShopProducts();
+    return shopRegistry.getBySlug(SLUG);
+  }
+
+  it("is published, real, and reaches the Shop index", async () => {
+    const product = await listing();
+    expect(product?.publicationStatus).toBe("published");
+    expect(product?.devFixture).toBe(false);
+    expect(product?.access).toBe("paid");
+  });
+
+  it("carries no price yet, so nothing renders a fabricated figure", async () => {
+    const product = await listing();
+    expect(product?.price).toBeUndefined();
+    expect(product?.purchaseAction).toBeUndefined();
+  });
+
+  /**
+   * A homeschooling parent is already anxious about every one of these.
+   * A sales page that supplies the vocabulary of comparison has taken a
+   * side against the person reading it.
+   */
+  for (const word of ["behind what", "grade level", "proficient", "on track", "above average", "below average"]) {
+    it(`never says "${word}"`, async () => {
+      expect(JSON.stringify(await listing()).toLowerCase()).not.toContain(word);
+    });
+  }
+
+  it("says outright that it is not a curriculum", async () => {
+    const product = await listing();
+    const serialized = JSON.stringify(product).toLowerCase();
+    expect(serialized).toContain("this is not one and never becomes one");
+    expect(product?.audienceExclusions.join(" ").toLowerCase()).toContain("you want a curriculum");
+  });
+
+  it("never promises to read a curriculum document", async () => {
+    const product = await listing();
+    const sold = JSON.stringify({
+      promise: product?.promise,
+      outcomes: product?.outcomes,
+      inclusions: product?.inclusions,
+      expectedOutputs: product?.expectedOutputs,
+    }).toLowerCase();
+    expect(sold).not.toContain("upload");
+    expect(sold).not.toContain("import your curriculum");
+    expect(JSON.stringify(product?.faqs).toLowerCase()).toContain("no, and it does not pretend to");
+  });
+
+  it("never promises reminders, which the product does not have", async () => {
+    const product = await listing();
+    const sold = JSON.stringify({
+      promise: product?.promise,
+      outcomes: product?.outcomes,
+      inclusions: product?.inclusions,
+    }).toLowerCase();
+    expect(sold).not.toContain("remind");
+    expect(sold).not.toContain("notification");
+  });
+
+  it("sells the book as worth having on its own", async () => {
+    const product = await listing();
+    expect(product?.inclusions.join(" ")).toContain("30 page printed book");
+    expect(JSON.stringify(product?.faqs)).toContain("If you never opened the app it would still be worth having.");
+  });
+
+  it("states the child data position plainly", async () => {
+    const notes = (await listing())?.privacyNotes?.toLowerCase() ?? "";
+    expect(notes).toContain("never a date of birth");
+    expect(notes).toContain("children do not have accounts");
+  });
+
+  it("has no fabricated reviews, ratings, or counts", async () => {
+    expect(JSON.stringify(await listing()).toLowerCase()).not.toMatch(/\brating|\breviews?\b|bestseller|\bstars?\b/);
+  });
+
+  it("uses no em dash, per the repo content rule", async () => {
+    expect(JSON.stringify(await listing())).not.toContain("—");
+  });
+
+  it("is cross-linked from its siblings", async () => {
+    const { registerRealShopProducts, shopRegistry } = await loadFreshRegisterModule();
+    registerRealShopProducts();
+    for (const sibling of ["home-management-companion", "personal-life-affairs-companion"]) {
+      expect(shopRegistry.getBySlug(sibling)?.relatedProductSlugs, sibling).toContain(SLUG);
+    }
+  });
+});

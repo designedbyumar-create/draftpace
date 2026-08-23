@@ -3,6 +3,7 @@ import { monthlyMoneyResetShopProduct } from "./monthly-money-reset";
 import { personalFinanceCompanionShopProduct } from "./personal-finance-companion";
 import { homeManagementCompanionShopProduct } from "./home-management-companion";
 import { personalLifeAffairsCompanionShopProduct } from "./personal-life-affairs-companion";
+import { homeschoolingCompanionShopProduct } from "./homeschooling-companion";
 
 /**
  * Real, published Shop listings, never gated by the dev-fixture check
@@ -15,6 +16,7 @@ const PRODUCTS = [
   personalFinanceCompanionShopProduct,
   homeManagementCompanionShopProduct,
   personalLifeAffairsCompanionShopProduct,
+  homeschoolingCompanionShopProduct,
 ];
 
 let registered = false;

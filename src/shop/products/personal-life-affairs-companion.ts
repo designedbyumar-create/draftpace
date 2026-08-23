@@ -171,7 +171,7 @@ export const personalLifeAffairsCompanionShopProduct: ShopProductInput = {
     },
   ],
   relatedGuideSlugs: [],
-  relatedProductSlugs: ["personal-finance-companion", "home-management-companion"],
+  relatedProductSlugs: ["personal-finance-companion", "home-management-companion", "homeschooling-companion"],
   needGroups: ["getting-organized"],
   seo: {
     title: "Personal Life Affairs Companion: get your affairs in order, one step at a time",
