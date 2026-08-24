@@ -5,11 +5,12 @@ import Button from "@/design-system/Button";
 import EmptyState from "@/design-system/EmptyState";
 import { Compass, Plus } from "@/design-system/Icon";
 import { deriveAttention, QUIET_LINE } from "../attention";
-import { isActionable, type LifeItem } from "../life";
+import { isOpenToWork, type LifeItem } from "../life";
 import { PLAYBOOKS, playbooksFor } from "../playbooks";
 import type { OutcomeKind, Playbook } from "../playbook";
 import type { FinishResult } from "../domain/alongsideData";
 import CompanionRun from "./CompanionRun";
+import PlaybookChooser from "./PlaybookChooser";
 import AddItemForm from "./AddItemForm";
 import { useAlongside } from "./useAlongside";
 
@@ -37,6 +38,8 @@ export default function NowModule() {
   const { status, errorMessage, instanceId, items, replaceItem, addItem } = useAlongside();
   const [running, setRunning] = useState<{ playbook: Playbook; item: LifeItem | null } | null>(null);
   const [adding, setAdding] = useState(false);
+  /** Which item is being matched to a playbook. One at a time, like everything else here. */
+  const [choosing, setChoosing] = useState<string | null>(null);
   const [closing, setClosing] = useState<string | null>(null);
 
   if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
@@ -115,20 +118,27 @@ export default function NowModule() {
                 {item.leftOffNote && (
                   <p className="mt-1 text-[13px] leading-5 text-[var(--muted)]">{item.leftOffNote}</p>
                 )}
-                {/* Waiting items never get a do-this-now button. Somebody
-                    else has the ball, and offering to help act on it
-                    would be the product misreading the situation. */}
-                {isActionable(item) && available.length > 0 && (
-                  <div className="mt-3">
-                    <Button
-                      size="sm"
-                      variant="secondary"
-                      onClick={() => setRunning({ playbook: available[0], item })}
-                    >
-                      Do this with me
-                    </Button>
-                  </div>
-                )}
+                {/* A waiting item gets no button until the day it is
+                    worth chasing. Before then somebody else has the
+                    ball; after then, chasing is the action. */}
+                {isOpenToWork(item, new Date()) &&
+                  available.length > 0 &&
+                  (choosing === item.id ? (
+                    <PlaybookChooser
+                      item={item}
+                      onPick={(playbook) => {
+                        setChoosing(null);
+                        setRunning({ playbook, item });
+                      }}
+                      onCancel={() => setChoosing(null)}
+                    />
+                  ) : (
+                    <div className="mt-3">
+                      <Button size="sm" variant="secondary" onClick={() => setChoosing(item.id)}>
+                        Do this with me
+                      </Button>
+                    </div>
+                  ))}
               </li>
             );
           })}

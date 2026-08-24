@@ -137,11 +137,12 @@ export default function HelpModule() {
         ))}
       </ul>
 
-      {/* Honest about what exists. Seven more are written once this one
-          has proved the shape, and saying so beats a greyed out list of
-          things that are not there. */}
+      {/* The library is finished at eight, so this no longer promises
+          more. What it does say is where to put something the list does
+          not cover, which is the honest answer and also the true one:
+          Life holds anything, whether or not there is help for it. */}
       <p className="text-[13px] leading-5 text-[var(--faint)]">
-        More are being added. If what you are facing is not here, Life will still hold it for you.
+        If what you are up against is not here, Life will still hold it for you.
       </p>
     </div>
   );

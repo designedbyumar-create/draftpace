@@ -1,15 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Button from "@/design-system/Button";
 import EmptyState from "@/design-system/EmptyState";
 import { Layers3, Plus } from "@/design-system/Icon";
 import { describeResultError } from "@/product-framework/result";
-import { byKind, describeDaysSince, daysSince, isActionable, KIND_LABEL, type ItemKind, type LifeItem } from "../life";
+import { byKind, describeDaysSince, daysSince, isOpenToWork, KIND_LABEL, type ItemKind, type LifeItem } from "../life";
 import { playbooksFor } from "../playbooks";
 import type { Playbook } from "../playbook";
 import { loadItemEvents, updateItem, type FinishResult, type ItemEvent } from "../domain/alongsideData";
 import CompanionRun from "./CompanionRun";
+import PlaybookChooser from "./PlaybookChooser";
 import AddItemForm from "./AddItemForm";
 import { useAlongside } from "./useAlongside";
 
@@ -56,6 +57,7 @@ export default function LifeModule() {
   const [running, setRunning] = useState<{ playbook: Playbook; item: LifeItem } | null>(null);
   const [adding, setAdding] = useState(false);
   const [pending, setPending] = useState<string | null>(null);
+  const [choosing, setChoosing] = useState<string | null>(null);
   /**
    * The last thing that happened to each item, in the words that were
    * recorded at the time.
@@ -68,23 +70,21 @@ export default function LifeModule() {
    */
   const [latest, setLatest] = useState<Record<string, ItemEvent>>({});
 
-  useEffect(() => {
+  const refreshHistory = useCallback(async () => {
     if (!instanceId) return;
-    let cancelled = false;
-    (async () => {
-      const result = await loadItemEvents(instanceId);
-      if (cancelled || !result.ok) return;
-      const newest: Record<string, ItemEvent> = {};
-      // Already ordered newest first, so the first one seen per item wins.
-      for (const event of result.data) {
-        if (!newest[event.itemId]) newest[event.itemId] = event;
-      }
-      setLatest(newest);
-    })();
-    return () => {
-      cancelled = true;
-    };
+    const result = await loadItemEvents(instanceId);
+    if (!result.ok) return;
+    const newest: Record<string, ItemEvent> = {};
+    // Already ordered newest first, so the first one seen per item wins.
+    for (const event of result.data) {
+      if (!newest[event.itemId]) newest[event.itemId] = event;
+    }
+    setLatest(newest);
   }, [instanceId]);
+
+  useEffect(() => {
+    refreshHistory();
+  }, [refreshHistory]);
 
   if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
   if (status === "no-instance") {
@@ -104,6 +104,10 @@ export default function LifeModule() {
   function finish(result: FinishResult) {
     if (result.item) replaceItem(result.item);
     setRunning(null);
+    // A run that just wrote history has to be visible in it. Without
+    // this the line is in the database and absent from the screen, which
+    // is the same as not having written it.
+    refreshHistory();
   }
 
   /** Closing something without opening the Companion. Not everything needs a conversation. */
@@ -202,9 +206,19 @@ export default function LifeModule() {
                     {footnote(item, latest[item.id], now) && (
                       <p className="mt-2 text-[12px] text-[var(--faint)]">{footnote(item, latest[item.id], now)}</p>
                     )}
+                    {choosing === item.id && (
+                      <PlaybookChooser
+                        item={item}
+                        onPick={(playbook) => {
+                          setChoosing(null);
+                          setRunning({ playbook, item });
+                        }}
+                        onCancel={() => setChoosing(null)}
+                      />
+                    )}
                     <div className="mt-3 flex flex-wrap items-center gap-2">
-                      {isActionable(item) && available.length > 0 && (
-                        <Button size="sm" variant="secondary" onClick={() => setRunning({ playbook: available[0], item })}>
+                      {isOpenToWork(item, now) && available.length > 0 && choosing !== item.id && (
+                        <Button size="sm" variant="secondary" onClick={() => setChoosing(item.id)}>
                           Do this with me
                         </Button>
                       )}

@@ -100,6 +100,26 @@ export function isActionable(item: LifeItem): boolean {
 }
 
 /**
+ * Whether a waiting item has reached the day it is worth chasing.
+ *
+ * The other half of the rule above, and the reason isActionable is not
+ * the whole story. While you are waiting, chasing is not the action and
+ * the product says nothing. Once the check date arrives, chasing IS the
+ * action, and refusing to offer any help with it would be the shape
+ * getting in the way of the thing it exists to protect.
+ */
+export function canChase(item: LifeItem, now: Date): boolean {
+  if (item.kind !== "waiting" || item.status !== "open") return false;
+  const days = daysUntil(item.nextAt, now);
+  return days !== null && days <= 0;
+}
+
+/** Anything the person could pick up right now, of any shape. */
+export function isOpenToWork(item: LifeItem, now: Date): boolean {
+  return isActionable(item) || canChase(item, now);
+}
+
+/**
  * How long since a thread was last touched, in whole days, or null.
  *
  * Arithmetic on a stored date and nothing more. The product never infers
