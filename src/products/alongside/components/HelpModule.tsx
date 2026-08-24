@@ -5,19 +5,27 @@ import Button from "@/design-system/Button";
 import EmptyState from "@/design-system/EmptyState";
 import { LifeBuoy } from "@/design-system/Icon";
 import { describeResultError } from "@/product-framework/result";
-import { PLAYBOOKS } from "../playbooks";
 import type { OutcomeKind, Playbook } from "../playbook";
-import { createItem, type FinishResult } from "../domain/alongsideData";
+import { createItem, type FinishResult, type RunRecord } from "../domain/alongsideData";
 import CompanionRun from "./CompanionRun";
+import StartCompanion from "./StartCompanion";
+import { beginRun } from "./useResumableRun";
 import { useAlongside } from "./useAlongside";
+
+interface Running {
+  playbook: Playbook;
+  run: RunRecord;
+  directTitle: string | null;
+}
 
 /**
  * Help.
  *
- * The library, offered by situation rather than by name. Somebody does
- * not arrive looking for "the phone call playbook", they arrive with a
- * call they have been avoiding for a week, so the list is written in
- * those terms.
+ * The direct-entry path: open the Companion with nothing recorded yet.
+ * "I need to call my landlord" is how somebody actually thinks about
+ * this, not "the make-a-phone-call playbook", so the screen leads with a
+ * place to say what it is and asks what is going on underneath, in
+ * situations rather than in Draftpace's own names for them.
  *
  * Starting from here creates no obligation. A run that begins with
  * nothing behind it only offers to remember something at the end, and
@@ -25,10 +33,12 @@ import { useAlongside } from "./useAlongside";
  */
 export default function HelpModule() {
   const { status, errorMessage, instanceId, addItem, setErrorMessage } = useAlongside();
-  const [running, setRunning] = useState<Playbook | null>(null);
+  const [running, setRunning] = useState<Running | null>(null);
   const [closing, setClosing] = useState<string | null>(null);
   const [offer, setOffer] = useState<NonNullable<FinishResult["offer"]> | null>(null);
   const [pending, setPending] = useState(false);
+  const [opening, setOpening] = useState(false);
+  const [startError, setStartError] = useState<string | null>(null);
 
   if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
   if (status === "no-instance") {
@@ -82,13 +92,34 @@ export default function HelpModule() {
     return (
       <CompanionRun
         instanceId={instanceId}
-        playbook={running}
+        playbook={running.playbook}
         item={null}
-        existingRun={null}
+        run={running.run}
+        directTitle={running.directTitle}
         onFinished={finish}
         onLeft={() => setRunning(null)}
       />
     );
+  }
+
+  async function startDirect(playbook: Playbook, title: string | null) {
+    setStartError(null);
+    setOpening(true);
+    const started = await beginRun(instanceId as string, playbook, null);
+    setOpening(false);
+    if (!started.ok) {
+      setStartError("Couldn't start that. Try again.");
+      return;
+    }
+    setRunning({ playbook, run: started.data, directTitle: title });
+  }
+
+  if (opening) {
+    return <p className="text-[13px] text-[var(--faint)]">Opening...</p>;
+  }
+
+  if (!closing && !offer && !errorMessage && !startError) {
+    return <StartCompanion onStart={startDirect} />;
   }
 
   return (
@@ -99,7 +130,7 @@ export default function HelpModule() {
           className="mt-2 text-[26px] leading-tight text-[var(--text)]"
           style={{ fontFamily: "var(--product-narrative-font, inherit)" }}
         >
-          What are you up against?
+          What do you need to do?
         </h1>
       </header>
 
@@ -120,30 +151,21 @@ export default function HelpModule() {
         </section>
       )}
 
+      {startError && <p className="text-[13px] text-[var(--danger)]">{startError}</p>}
       {errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}
 
-      <ul className="flex flex-col gap-2">
-        {PLAYBOOKS.map((playbook) => (
-          <li key={playbook.key}>
-            <button
-              type="button"
-              onClick={() => setRunning(playbook)}
-              className="w-full rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-4 text-left transition-colors hover:border-[var(--primary)]"
-            >
-              <p className="text-[15px] leading-6 text-[var(--text)]">{playbook.situation}</p>
-              <p className="mt-1 text-[13px] text-[var(--muted)]">{playbook.title}</p>
-            </button>
-          </li>
-        ))}
-      </ul>
-
-      {/* The library is finished at eight, so this no longer promises
-          more. What it does say is where to put something the list does
-          not cover, which is the honest answer and also the true one:
-          Life holds anything, whether or not there is help for it. */}
-      <p className="text-[13px] leading-5 text-[var(--faint)]">
-        If what you are up against is not here, Life will still hold it for you.
-      </p>
+      <div>
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={() => {
+            setClosing(null);
+            setStartError(null);
+          }}
+        >
+          Ask about something else
+        </Button>
+      </div>
     </div>
   );
 }

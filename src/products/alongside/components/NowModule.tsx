@@ -6,21 +6,32 @@ import EmptyState from "@/design-system/EmptyState";
 import { Compass, Plus } from "@/design-system/Icon";
 import { deriveAttention, QUIET_LINE } from "../attention";
 import { isOpenToWork, type LifeItem } from "../life";
-import { PLAYBOOKS, playbooksFor } from "../playbooks";
+import { playbooksFor } from "../playbooks";
 import type { OutcomeKind, Playbook } from "../playbook";
-import type { FinishResult } from "../domain/alongsideData";
+import type { FinishResult, RunRecord } from "../domain/alongsideData";
 import CompanionRun from "./CompanionRun";
 import PlaybookChooser from "./PlaybookChooser";
+import StartCompanion from "./StartCompanion";
 import AddItemForm from "./AddItemForm";
 import { useAlongside } from "./useAlongside";
+import { beginRun, findResumableRun } from "./useResumableRun";
+
+interface Running {
+  playbook: Playbook;
+  item: LifeItem | null;
+  run: RunRecord;
+  directTitle: string | null;
+}
 
 /**
  * Now.
  *
- * What the product says when somebody opens it. Everything here is
- * derived on read from what they recorded: nothing is scheduled, nothing
- * is predicted, and no line appears that cannot be traced to a date or a
- * note they put there themselves.
+ * What the product says when somebody opens it. Every signal here traces
+ * to a fact that was stored: a date somebody set, a check-in that came
+ * due, a thread gone quiet. Alongside never invents a deadline or a
+ * sense of urgency on its own; a date only appears here because the
+ * person put it there, whether by choosing it directly or by telling the
+ * Companion who they are waiting on.
  *
  * QUIET IS A REAL ANSWER
  *
@@ -36,11 +47,14 @@ import { useAlongside } from "./useAlongside";
  */
 export default function NowModule() {
   const { status, errorMessage, instanceId, items, replaceItem, addItem } = useAlongside();
-  const [running, setRunning] = useState<{ playbook: Playbook; item: LifeItem | null } | null>(null);
+  const [running, setRunning] = useState<Running | null>(null);
   const [adding, setAdding] = useState(false);
+  const [starting, setStarting] = useState(false);
   /** Which item is being matched to a playbook. One at a time, like everything else here. */
   const [choosing, setChoosing] = useState<string | null>(null);
   const [closing, setClosing] = useState<string | null>(null);
+  const [opening, setOpening] = useState(false);
+  const [startError, setStartError] = useState<string | null>(null);
 
   if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
   if (status === "no-instance") {
@@ -65,17 +79,70 @@ export default function NowModule() {
     setClosing(outcome === "not-yet" ? null : "Recorded.");
   }
 
+  /**
+   * Opening the Companion for an item that already has a run sitting
+   * open picks that run back up instead of asking again what is in the
+   * way. This is the resume path: skip the chooser entirely when there
+   * is something to return to.
+   */
+  async function openItem(item: LifeItem) {
+    setStartError(null);
+    setOpening(true);
+    const resumable = await findResumableRun(instanceId as string, item.id);
+    setOpening(false);
+    if (resumable) {
+      setChoosing(null);
+      setRunning({ playbook: resumable.playbook, item, run: resumable.run, directTitle: null });
+      return;
+    }
+    setChoosing(item.id);
+  }
+
+  /** The chooser only shows once openItem has already ruled out a resumable run, so this always creates a fresh one. */
+  async function pickPlaybook(item: LifeItem, playbook: Playbook) {
+    setChoosing(null);
+    setOpening(true);
+    const started = await beginRun(instanceId as string, playbook, item.id);
+    setOpening(false);
+    if (!started.ok) {
+      setStartError("Couldn't start that. Try again.");
+      return;
+    }
+    setRunning({ playbook, item, run: started.data, directTitle: null });
+  }
+
+  async function startDirect(playbook: Playbook, title: string | null) {
+    setStarting(false);
+    setOpening(true);
+    const started = await beginRun(instanceId as string, playbook, null);
+    setOpening(false);
+    if (!started.ok) {
+      setStartError("Couldn't start that. Try again.");
+      return;
+    }
+    setRunning({ playbook, item: null, run: started.data, directTitle: title });
+  }
+
   if (running) {
     return (
       <CompanionRun
         instanceId={instanceId}
         playbook={running.playbook}
         item={running.item}
-        existingRun={null}
+        run={running.run}
+        directTitle={running.directTitle}
         onFinished={finish}
         onLeft={() => setRunning(null)}
       />
     );
+  }
+
+  if (starting) {
+    return <StartCompanion onStart={startDirect} onCancel={() => setStarting(false)} />;
+  }
+
+  if (opening) {
+    return <p className="text-[13px] text-[var(--faint)]">Opening...</p>;
   }
 
   const attention = deriveAttention({ items }, new Date());
@@ -99,6 +166,7 @@ export default function NowModule() {
       </header>
 
       {closing && <p className="text-[13px] text-[var(--muted)]">{closing}</p>}
+      {startError && <p className="text-[13px] text-[var(--danger)]">{startError}</p>}
 
       {!attention.quiet && (
         <ul className="flex flex-col gap-3">
@@ -126,15 +194,12 @@ export default function NowModule() {
                   (choosing === item.id ? (
                     <PlaybookChooser
                       item={item}
-                      onPick={(playbook) => {
-                        setChoosing(null);
-                        setRunning({ playbook, item });
-                      }}
+                      onPick={(playbook) => pickPlaybook(item, playbook)}
                       onCancel={() => setChoosing(null)}
                     />
                   ) : (
                     <div className="mt-3">
-                      <Button size="sm" variant="secondary" onClick={() => setChoosing(item.id)}>
+                      <Button size="sm" variant="secondary" onClick={() => openItem(item)}>
                         Do this with me
                       </Button>
                     </div>
@@ -162,11 +227,9 @@ export default function NowModule() {
           {/* Opening the Companion with nothing behind it is a first
               class path. Somebody with one phone call to make today has
               not asked for a system and should not have to build one. */}
-          {PLAYBOOKS.length > 0 && (
-            <Button variant="ghost" onClick={() => setRunning({ playbook: PLAYBOOKS[0], item: null })}>
-              Help me with something
-            </Button>
-          )}
+          <Button variant="ghost" onClick={() => setStarting(true)}>
+            Help me with something
+          </Button>
         </div>
       )}
     </div>

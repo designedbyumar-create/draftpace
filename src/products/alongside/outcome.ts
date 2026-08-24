@@ -29,11 +29,32 @@ export interface OutcomeInput {
 }
 
 /**
- * The changes to apply to the item the run was opened from. An empty
- * object means nothing changes, which is a real and important result.
+ * The changes to apply to an item. An empty object means nothing
+ * changes, which is a real and important result when it comes from
+ * applyOutcome below.
+ *
+ * Wider than what applyOutcome itself ever produces (it never touches
+ * title, note, userChosenDate or everyMonths), because this type is also
+ * how a person's own edit on the item detail page reaches the database.
+ * One shape for "something changed about this item" rather than two,
+ * so there is one place, not two, that has to agree with the database
+ * columns.
  */
 export type ItemPatch = Partial<
-  Pick<LifeItem, "status" | "kind" | "nextAt" | "waitingOn" | "lastTouchedAt" | "leftOffNote" | "nextStep">
+  Pick<
+    LifeItem,
+    | "title"
+    | "note"
+    | "status"
+    | "kind"
+    | "nextAt"
+    | "userChosenDate"
+    | "everyMonths"
+    | "waitingOn"
+    | "lastTouchedAt"
+    | "leftOffNote"
+    | "nextStep"
+  >
 >;
 
 export interface OutcomeEffect {

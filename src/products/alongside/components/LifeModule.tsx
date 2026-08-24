@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import Link from "next/link";
 import Button from "@/design-system/Button";
 import EmptyState from "@/design-system/EmptyState";
 import { Layers3, Plus } from "@/design-system/Icon";
@@ -8,11 +9,12 @@ import { describeResultError } from "@/product-framework/result";
 import { byKind, describeDaysSince, daysSince, isOpenToWork, KIND_LABEL, type ItemKind, type LifeItem } from "../life";
 import { playbooksFor } from "../playbooks";
 import type { Playbook } from "../playbook";
-import { loadItemEvents, updateItem, type FinishResult, type ItemEvent } from "../domain/alongsideData";
+import { loadItemEvents, recordOutcome, type FinishResult, type ItemEvent, type RunRecord } from "../domain/alongsideData";
 import CompanionRun from "./CompanionRun";
 import PlaybookChooser from "./PlaybookChooser";
 import AddItemForm from "./AddItemForm";
 import { useAlongside } from "./useAlongside";
+import { beginRun, findResumableRun } from "./useResumableRun";
 
 const SECTIONS: ItemKind[] = ["commitment", "waiting", "thread", "reference"];
 
@@ -54,7 +56,9 @@ function footnote(item: LifeItem, event: ItemEvent | undefined, now: Date): stri
  */
 export default function LifeModule() {
   const { status, errorMessage, instanceId, items, replaceItem, addItem, setErrorMessage } = useAlongside();
-  const [running, setRunning] = useState<{ playbook: Playbook; item: LifeItem } | null>(null);
+  const [running, setRunning] = useState<{ playbook: Playbook; item: LifeItem; run: RunRecord } | null>(null);
+  const [opening, setOpening] = useState(false);
+  const [startError, setStartError] = useState<string | null>(null);
   const [adding, setAdding] = useState(false);
   const [pending, setPending] = useState<string | null>(null);
   const [choosing, setChoosing] = useState<string | null>(null);
@@ -110,17 +114,53 @@ export default function LifeModule() {
     refreshHistory();
   }
 
-  /** Closing something without opening the Companion. Not everything needs a conversation. */
+  /**
+   * Closing something without opening the Companion. Not everything
+   * needs eight questions, and this still writes through the same
+   * applyOutcome rule a run would: a recurring item rolls forward
+   * instead of closing, and a real "Sorted" line lands in its history.
+   */
   async function close(item: LifeItem) {
     setPending(item.id);
     setErrorMessage(null);
-    const result = await updateItem(item.id, { status: "done", lastTouchedAt: new Date().toISOString() });
+    const result = await recordOutcome(instanceId as string, item, "resolved", null);
     setPending(null);
     if (!result.ok) {
       setErrorMessage(describeResultError(result.error));
       return;
     }
     replaceItem(result.data);
+    refreshHistory();
+  }
+
+  /**
+   * Opening the Companion for an item that already has a run sitting
+   * open picks it back up instead of asking again what is in the way.
+   */
+  async function openItem(item: LifeItem) {
+    setStartError(null);
+    setOpening(true);
+    const resumable = await findResumableRun(instanceId as string, item.id);
+    setOpening(false);
+    if (resumable) {
+      setChoosing(null);
+      setRunning({ playbook: resumable.playbook, item, run: resumable.run });
+      return;
+    }
+    setChoosing(item.id);
+  }
+
+  /** The chooser only shows once openItem has already ruled out a resumable run, so this always creates a fresh one. */
+  async function pickPlaybook(item: LifeItem, playbook: Playbook) {
+    setChoosing(null);
+    setOpening(true);
+    const started = await beginRun(instanceId as string, playbook, item.id);
+    setOpening(false);
+    if (!started.ok) {
+      setStartError("Couldn't start that. Try again.");
+      return;
+    }
+    setRunning({ playbook, item, run: started.data });
   }
 
   if (running) {
@@ -129,11 +169,15 @@ export default function LifeModule() {
         instanceId={instanceId}
         playbook={running.playbook}
         item={running.item}
-        existingRun={null}
+        run={running.run}
         onFinished={finish}
         onLeft={() => setRunning(null)}
       />
     );
+  }
+
+  if (opening) {
+    return <p className="text-[13px] text-[var(--faint)]">Opening...</p>;
   }
 
   const open = items.filter((item) => item.status === "open");
@@ -190,7 +234,12 @@ export default function LifeModule() {
                 const available = playbooksFor(item.kind);
                 return (
                   <li key={item.id} className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4">
-                    <p className="text-[15px] leading-6 text-[var(--text)]">{item.title}</p>
+                    <Link
+                      href={`/app/products/alongside/item/${item.id}`}
+                      className="text-[15px] font-medium leading-6 text-[var(--text)] underline decoration-[var(--border)] underline-offset-4 hover:decoration-[var(--primary)]"
+                    >
+                      {item.title}
+                    </Link>
                     {item.waitingOn && (
                       <p className="mt-1 text-[13px] text-[var(--muted)]">Waiting on {item.waitingOn}</p>
                     )}
@@ -209,16 +258,13 @@ export default function LifeModule() {
                     {choosing === item.id && (
                       <PlaybookChooser
                         item={item}
-                        onPick={(playbook) => {
-                          setChoosing(null);
-                          setRunning({ playbook, item });
-                        }}
+                        onPick={(playbook) => pickPlaybook(item, playbook)}
                         onCancel={() => setChoosing(null)}
                       />
                     )}
                     <div className="mt-3 flex flex-wrap items-center gap-2">
                       {isOpenToWork(item, now) && available.length > 0 && choosing !== item.id && (
-                        <Button size="sm" variant="secondary" onClick={() => setChoosing(item.id)}>
+                        <Button size="sm" variant="secondary" onClick={() => openItem(item)}>
                           Do this with me
                         </Button>
                       )}
@@ -236,6 +282,7 @@ export default function LifeModule() {
         );
       })}
 
+      {startError && <p className="text-[13px] text-[var(--danger)]">{startError}</p>}
       {errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}
     </div>
   );

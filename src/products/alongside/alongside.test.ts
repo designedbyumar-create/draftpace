@@ -193,6 +193,13 @@ describe("the whole product's language", () => {
     "lazy", "irresponsible", "failing", "failed", "back on track", "should have",
     "wasted", "procrastinat", "distracted", "discipline", "bad habits",
     "fix yourself", "overcome", "get your life together", "overdue",
+    // Productivity-app language. The product is external memory,
+    // attention, and situational companionship, not a task manager with
+    // an ADHD theme, and these are the words that theme shows up in.
+    "streak", "adherence", "attempt", "focus timer", "productivity", "coaching",
+    // Reference must stay a place for a detail you need for something
+    // specific, never a general notes feature.
+    "journal", "diary", "notebook",
   ];
 
   const surfaces = [
@@ -568,6 +575,166 @@ describe("what the interface can actually reach", () => {
   it("reads the history it writes, rather than filling a table nobody sees", () => {
     const life = readFileSync(new URL("./components/LifeModule.tsx", import.meta.url), "utf8");
     expect(life).toContain("loadItemEvents");
+  });
+});
+
+/**
+ * The engine is one thing, not eight. Content lives in the eight
+ * playbook files; state, persistence, resume, navigation, and outcome
+ * handling live once, in CompanionRun and the domain layer. This is
+ * asserted rather than left to hold by convention, because branching on
+ * a specific playbook inside the runtime is exactly how eight
+ * independent workflows would grow back in, one small exception at a
+ * time.
+ */
+describe("the engine is shared, not per-playbook", () => {
+  const engine = readFileSync(new URL("./components/CompanionRun.tsx", import.meta.url), "utf8");
+
+  it("never branches on which playbook is running", () => {
+    expect(engine).not.toMatch(/playbook\.key\s*===/);
+    expect(engine).not.toMatch(/playbook\.key\s*!==/);
+  });
+
+  it("switches only on step.kind, the six shapes every playbook is built from", () => {
+    expect(engine).toMatch(/step\.kind === "choose"/);
+    expect(engine).toMatch(/step\.kind === "write"/);
+    expect(engine).toMatch(/step\.kind === "wording"/);
+  });
+});
+
+/**
+ * Resume is the P0 correction: closing the tab mid-run must not lose
+ * the run, and reopening must not create a second one next to it.
+ */
+describe("resume", () => {
+  const domain = readFileSync(new URL("./domain/alongsideData.ts", import.meta.url), "utf8");
+
+  it("looks for a run to pick back up before the interface offers to start a new one", () => {
+    const now = readFileSync(new URL("./components/NowModule.tsx", import.meta.url), "utf8");
+    const life = readFileSync(new URL("./components/LifeModule.tsx", import.meta.url), "utf8");
+    const detail = readFileSync(new URL("./components/AlongsideItemDetailModule.tsx", import.meta.url), "utf8");
+    for (const [name, source] of [["Now", now], ["Life", life], ["item detail", detail]] as const) {
+      expect(source, `${name} never calls findResumableRun`).toContain("findResumableRun");
+    }
+  });
+
+  it("still finds a run the person left mid-way, not only one still marked open", () => {
+    // Leaving is not failure elsewhere in this product (the "did not get
+    // to it" outcome writes nothing at all); a left run has to be just
+    // as resumable as one nobody has touched, or that principle would be
+    // true of outcomes and false of the run itself.
+    expect(domain).toMatch(/\.in\(\s*"status"\s*,\s*\[\s*"open"\s*,\s*"left"\s*\]\s*\)/);
+  });
+
+  /**
+   * The stronger version of the original fix. A run created inside a
+   * mount effect gets created again on every remount, including the
+   * ones React itself triggers on purpose in development to catch this
+   * exact class of bug: that is how this product produced a real
+   * orphaned run during its own testing, discovered by clicking "Do
+   * this with me" a second time and landing on a blank first question
+   * instead of the run that had actually been completed. The fix is not
+   * a guard inside the effect; it is that CompanionRun has no effect
+   * that creates a run at all. The run always arrives as a prop,
+   * already created by whoever decided to open the Companion.
+   */
+  it("creates a run only in response to a person's choice, never as a side effect of rendering", () => {
+    const engine = readFileSync(new URL("./components/CompanionRun.tsx", import.meta.url), "utf8");
+    expect(engine, "CompanionRun must not call startRun itself").not.toContain("startRun");
+    expect(engine, "CompanionRun must not create a run inside a mount effect").not.toContain("useEffect");
+    expect(domain, "beginRun/pickPlaybook flows must exist to create a run before CompanionRun mounts").toContain(
+      "export async function startRun"
+    );
+  });
+
+  it("requires the run as a prop rather than accepting one that might not exist yet", () => {
+    const engine = readFileSync(new URL("./components/CompanionRun.tsx", import.meta.url), "utf8");
+    expect(engine, "run must be required, not optional").toMatch(/\n\s*run: RunRecord;/);
+    expect(engine).not.toMatch(/run\?:\s*RunRecord/);
+  });
+
+  it("creates the run exactly once per playbook choice, at every place a run can start", () => {
+    for (const [name, file] of [
+      ["Now", "./components/NowModule.tsx"],
+      ["Life", "./components/LifeModule.tsx"],
+      ["Help", "./components/HelpModule.tsx"],
+      ["item detail", "./components/AlongsideItemDetailModule.tsx"],
+    ] as const) {
+      const source = readFileSync(new URL(file, import.meta.url), "utf8");
+      expect(source, `${name} must create runs through beginRun, not by calling startRun directly`).toContain(
+        "beginRun"
+      );
+    }
+  });
+});
+
+/**
+ * The front door, and the direct-entry path.
+ *
+ * A person should be able to open Alongside with nothing recorded and
+ * say what they need to do without first learning that Alongside calls
+ * that a commitment, or that this particular situation is called
+ * "make-a-phone-call". These checks are about the mental model the
+ * interface asks for, not about behaviour a unit test can otherwise see.
+ */
+describe("the front door does not require Draftpace's own mental model", () => {
+  const start = readFileSync(new URL("./components/StartCompanion.tsx", import.meta.url), "utf8");
+  const now = readFileSync(new URL("./components/NowModule.tsx", import.meta.url), "utf8");
+  const help = readFileSync(new URL("./components/HelpModule.tsx", import.meta.url), "utf8");
+
+  it("offers every situation, never one playbook standing in for the rest", () => {
+    // The bug this guards: "Help me with something" once always opened
+    // PLAYBOOKS[0], so whatever a person actually needed, they got the
+    // phone call playbook.
+    expect(now).not.toMatch(/PLAYBOOKS\[0\]/);
+    expect(now).toContain("StartCompanion");
+    expect(help).toContain("StartCompanion");
+  });
+
+  it("shows the situation, not the playbook's own name, as what the person picks", () => {
+    expect(start).toContain("playbook.situation");
+    expect(start).not.toMatch(/\{playbook\.title\}/);
+  });
+
+  it("lets somebody type what they need before choosing anything", () => {
+    expect(start).toMatch(/What do you need to do\?/);
+  });
+
+  it("never routes free text into a playbook by guessing at it", () => {
+    // The one thing this screen must not become: the person's own words
+    // silently deciding which playbook opens. There is no language
+    // model anywhere in this codebase, and this is not the exception.
+    expect(start).not.toMatch(/\btitle\.(includes|match|toLowerCase\(\)\.includes)/);
+  });
+});
+
+describe("a direct run does not require picking a shape first", () => {
+  it("lets somebody start from Help or Now with only a situation, no commitment/waiting/thread/reference choice", () => {
+    const help = readFileSync(new URL("./components/HelpModule.tsx", import.meta.url), "utf8");
+    expect(help).not.toMatch(/KIND_PROMPT|KIND_LABEL/);
+  });
+});
+
+/**
+ * Every outcome, wherever it is triggered from, writes through the one
+ * applyOutcome rule. Two call sites would mean two chances for one of
+ * them to quietly skip the recurring-item and history-writing behaviour
+ * the other gets right, which is exactly what LifeModule's own quick
+ * close button used to do before it was routed through here too.
+ */
+describe("outcomes are applied in exactly one place", () => {
+  it("has a single call site that writes an outcome event", () => {
+    const domain = readFileSync(new URL("./domain/alongsideData.ts", import.meta.url), "utf8");
+    const inserts = domain.match(/\.from\("als_item_events"\)\.insert\(/g) ?? [];
+    expect(inserts).toHaveLength(1);
+  });
+
+  it("routes every quick action through it rather than writing the item directly", () => {
+    const life = readFileSync(new URL("./components/LifeModule.tsx", import.meta.url), "utf8");
+    const detail = readFileSync(new URL("./components/AlongsideItemDetailModule.tsx", import.meta.url), "utf8");
+    for (const [name, source] of [["Life", life], ["item detail", detail]] as const) {
+      expect(source, `${name} calls recordOutcome`).toContain("recordOutcome");
+    }
   });
 });
 

@@ -65,7 +65,11 @@ export default function AddItemForm({
         label="What is it?"
         value={title}
         onChange={(event) => setTitle(event.target.value)}
-        placeholder="Ring the energy company"
+        placeholder={kind === "reference" ? "The claim number for the insurance" : "Ring the energy company"}
+        // Reference gets its own hint so the field does not quietly
+        // become a place to save notes generally. It is for the detail
+        // that lets you deal with a specific thing again.
+        hint={kind === "reference" ? "A detail you will need for something specific, not a general note." : undefined}
         autoFocus
       />
 

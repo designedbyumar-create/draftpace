@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import Button from "@/design-system/Button";
 import Input from "@/design-system/Input";
 import { ArrowLeft, Check } from "@/design-system/Icon";
@@ -18,14 +18,7 @@ import {
   type Playbook,
   type PlaybookStep,
 } from "../playbook";
-import {
-  finishRun,
-  leaveRun,
-  saveAnswer,
-  startRun,
-  type FinishResult,
-  type RunRecord,
-} from "../domain/alongsideData";
+import { finishRun, leaveRun, saveAnswer, type FinishResult, type RunRecord } from "../domain/alongsideData";
 
 /**
  * The Companion, on screen.
@@ -47,48 +40,53 @@ export default function CompanionRun({
   instanceId,
   playbook,
   item,
-  existingRun,
+  run: initialRun,
+  directTitle = null,
   onFinished,
   onLeft,
 }: {
   instanceId: string;
   playbook: Playbook;
   item: LifeItem | null;
-  existingRun: RunRecord | null;
+  /**
+   * The run this screen is stepping through, already created (whether
+   * fresh or resumed) by whoever decided to open the Companion.
+   *
+   * Deliberately not something this component creates for itself.
+   * Starting a run as a side effect of mounting is fragile in a way that
+   * matters here specifically: React can and does invoke a mount effect
+   * more than once (Strict Mode does this on every dev render, on
+   * purpose, to surface exactly this class of bug), and an insert fired
+   * from inside that effect happens whether or not the resulting state
+   * update is kept. That produced a real orphaned run during this
+   * product's own testing. Requiring the run up front removes the
+   * effect entirely rather than guarding it more carefully.
+   */
+  run: RunRecord;
+  /**
+   * What to call this when there is no item behind it, in the person's
+   * own words if they typed one. Used as the header line and as what
+   * gets offered to Life at the end, instead of the playbook's own
+   * title, which is Draftpace's name for the situation rather than
+   * theirs.
+   */
+  directTitle?: string | null;
   onFinished: (result: FinishResult, outcome: OutcomeKind) => void;
   onLeft: () => void;
 }) {
-  const [run, setRun] = useState<RunRecord | null>(existingRun);
-  const [answers, setAnswers] = useState<Answers>(existingRun?.answers ?? {});
-  const [skipped, setSkipped] = useState<Set<string>>(new Set(existingRun?.skipped ?? []));
+  const run = initialRun;
+  const [answers, setAnswers] = useState<Answers>(initialRun.answers);
+  const [skipped, setSkipped] = useState<Set<string>>(new Set(initialRun.skipped));
   const [draft, setDraft] = useState("");
   const [outcome, setOutcome] = useState<OutcomeKind | null>(null);
   const [pending, setPending] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (run) return;
-    let cancelled = false;
-    (async () => {
-      const started = await startRun(instanceId, playbook, item?.id ?? null);
-      if (cancelled) return;
-      if (!started.ok) {
-        setErrorMessage(describeResultError(started.error));
-        return;
-      }
-      setRun(started.data);
-    })();
-    return () => {
-      cancelled = true;
-    };
-  }, [run, instanceId, playbook, item]);
 
   const step = useMemo(() => nextStep(playbook, answers, skipped), [playbook, answers, skipped]);
   const progress = runProgress(playbook, answers, skipped);
   const resume = item ? resumeContext(item, new Date()) : null;
 
   async function record(stepKey: string, value: string | null, wasSkipped = false) {
-    if (!run) return;
     setPending(true);
     setErrorMessage(null);
     const saved = await saveAnswer(instanceId, run.id, stepKey, value, wasSkipped);
@@ -103,10 +101,9 @@ export default function CompanionRun({
   }
 
   async function complete(chosen: OutcomeKind, detail: string | null) {
-    if (!run) return;
     setPending(true);
     setErrorMessage(null);
-    const finished = await finishRun(instanceId, run, item, chosen, detail, item?.title ?? playbook.title);
+    const finished = await finishRun(instanceId, run, item, chosen, detail, item?.title ?? directTitle ?? playbook.title);
     setPending(false);
     if (!finished.ok) {
       setErrorMessage(describeResultError(finished.error));
@@ -116,14 +113,14 @@ export default function CompanionRun({
   }
 
   async function leave() {
-    if (run) await leaveRun(run.id);
+    await leaveRun(run.id);
     onLeft();
   }
 
-  if (errorMessage && !run) {
-    return <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>;
-  }
-  if (!run || !step) {
+  if (!step) {
+    // Reachable only if a playbook's own steps are misconfigured (no
+    // outcome step at the end); the library's own integrity tests guard
+    // against that, so this is a floor, not an expected state.
     return <p className="text-[13px] text-[var(--faint)]">Opening...</p>;
   }
 
@@ -134,7 +131,9 @@ export default function CompanionRun({
           <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">
             {playbook.title}
           </p>
-          {item && <p className="mt-1 truncate text-[13px] text-[var(--muted)]">{item.title}</p>}
+          {(item || directTitle) && (
+            <p className="mt-1 truncate text-[13px] text-[var(--muted)]">{item?.title ?? directTitle}</p>
+          )}
         </div>
         <Button variant="ghost" size="sm" onClick={leave} iconLeft={<ArrowLeft size={14} aria-hidden />}>
           Leave this

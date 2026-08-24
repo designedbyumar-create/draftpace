@@ -50,9 +50,13 @@ function toItem(row: Record<string, unknown>): LifeItem {
 
 /** camelCase patch to the column names, in one place. */
 const PATCH_COLUMN: Record<keyof ItemPatch, string> = {
+  title: "title",
+  note: "note",
   status: "status",
   kind: "kind",
   nextAt: "next_at",
+  userChosenDate: "user_chosen_date",
+  everyMonths: "every_months",
   waitingOn: "waiting_on",
   lastTouchedAt: "last_touched_at",
   leftOffNote: "left_off_note",
@@ -234,7 +238,10 @@ export async function loadOpenRun(productInstanceId: string, itemId: string): Pr
     .select("id, item_id, playbook_key, playbook_title, status")
     .eq("product_instance_id", productInstanceId)
     .eq("item_id", itemId)
-    .eq("status", "open")
+    // "left" is included deliberately: leaving mid-run is not treated as
+    // failure elsewhere in this product, and it must not be treated as
+    // one here by silently becoming unresumable.
+    .in("status", ["open", "left"])
     .order("started_at", { ascending: false })
     .limit(1)
     .maybeSingle();
@@ -319,6 +326,38 @@ export interface FinishResult {
  * patch and no event, which is why nothing in this function needs to
  * special case it.
  */
+async function applyOutcomeToItem(
+  productInstanceId: string,
+  userId: string,
+  item: LifeItem,
+  runId: string | null,
+  outcome: OutcomeKind,
+  detail: string | null,
+  now: Date
+): Promise<Result<LifeItem>> {
+  const effect = applyOutcome(item, { outcome, detail, now });
+
+  if (effect.event) {
+    const logged = await supabase.from("als_item_events").insert({
+      product_instance_id: productInstanceId,
+      user_id: userId,
+      item_id: item.id,
+      // Nullable: an outcome recorded directly from the item page, with
+      // no Companion run behind it, is still a real thing that happened.
+      run_id: runId,
+      line: effect.event,
+      // Snapshot of what it was called at the time, so renaming an item
+      // never rewrites what its history said.
+      item_title: item.title,
+      outcome,
+    });
+    if (logged.error) return err({ kind: "network", message: logged.error.message });
+  }
+
+  if (Object.keys(effect.patch).length === 0) return ok(item);
+  return updateItem(item.id, effect.patch);
+}
+
 export async function finishRun(
   productInstanceId: string,
   run: RunRecord,
@@ -348,28 +387,32 @@ export async function finishRun(
     return ok({ item: null, offer: offerFromDirectRun({ outcome, detail, now }, fallbackTitle) });
   }
 
-  const effect = applyOutcome(item, { outcome, detail, now });
-
-  if (effect.event) {
-    const logged = await supabase.from("als_item_events").insert({
-      product_instance_id: productInstanceId,
-      user_id: user.data,
-      item_id: item.id,
-      run_id: run.id,
-      line: effect.event,
-      // Snapshot of what it was called at the time, so renaming an item
-      // never rewrites what its history said.
-      item_title: item.title,
-      outcome,
-    });
-    if (logged.error) return err({ kind: "network", message: logged.error.message });
-  }
-
-  if (Object.keys(effect.patch).length === 0) return ok({ item, offer: null });
-
-  const updated = await updateItem(item.id, effect.patch);
+  const updated = await applyOutcomeToItem(productInstanceId, user.data, item, run.id, outcome, detail, now);
   if (!updated.ok) return updated;
   return ok({ item: updated.data, offer: null });
+}
+
+/**
+ * The same outcomes finishRun applies, without a Companion run behind
+ * them.
+ *
+ * For the quick actions on the item page: marking something sorted or
+ * recording who it is waiting on does not always need eight questions
+ * first, and forcing it through a run just to reuse this logic would be
+ * the tail wagging the dog. What matters is that both paths write
+ * through the one applyOutcome rule, so "did not get to it" writing
+ * nothing, and a recurring item rolling forward instead of closing, hold
+ * true here exactly as they do inside a run.
+ */
+export async function recordOutcome(
+  productInstanceId: string,
+  item: LifeItem,
+  outcome: OutcomeKind,
+  detail: string | null
+): Promise<Result<LifeItem>> {
+  const user = await currentUserId();
+  if (!user.ok) return user;
+  return applyOutcomeToItem(productInstanceId, user.data, item, null, outcome, detail, new Date());
 }
 
 /** Leaving a run part way through is not a failure and is not recorded as one. */

@@ -33,18 +33,24 @@ export const KIND_LABEL: Record<ItemKind, string> = {
   commitment: "Something to do",
   waiting: "Waiting on someone",
   thread: "Something ongoing",
-  reference: "Worth remembering",
+  reference: "Worth having to hand",
 };
 
 /**
  * How each shape is described when the product asks about it. Written
  * from the user's side, never as a category name.
+ *
+ * Reference is the one that has to stay narrow in its own wording. It
+ * is for a claim number, an appointment reference, a phone number: the
+ * detail that makes dealing with a specific thing possible. It is not a
+ * notes feature, and the prompt below is written to make that reading
+ * hard to reach for, not merely to permit the narrower one.
  */
 export const KIND_PROMPT: Record<ItemKind, string> = {
   commitment: "Something you mean to do",
   waiting: "Something somebody else has to come back to you on",
   thread: "Something ongoing that will take more than one go",
-  reference: "Something you want to be able to find later",
+  reference: "Something you will need again to deal with a specific thing, like a reference number or a phone number",
 };
 
 export type ItemStatus = "open" | "done" | "archived";
