@@ -296,14 +296,14 @@ describe("the Alongside listing", () => {
   });
 
   /**
-   * The Phase 0 naming research is explicit: the name stays
-   * problem-forward and carries no diagnosis, but the term still has to
-   * exist somewhere or the people searching it never find the listing.
-   * It belongs in discoverability surfaces, never in the product name.
+   * The Phase 0 naming research recommended keeping ADHD out of the
+   * brand name; the founder overrode that after seeing the built
+   * product. Named outright now, in the title itself, not only in
+   * discoverability surfaces.
    */
-  it("carries ADHD in the SEO title and the audience, never in the product name", async () => {
+  it("carries ADHD plainly, in the product name, the SEO title, and the audience", async () => {
     const product = await listing();
-    expect(product?.title).toBe("Alongside");
+    expect(product?.title.toLowerCase()).toContain("adhd");
     expect(product?.seo.title.toLowerCase()).toContain("adhd");
     expect(product?.audience.join(" ").toLowerCase()).toContain("adhd");
   });

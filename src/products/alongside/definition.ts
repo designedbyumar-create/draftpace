@@ -35,12 +35,22 @@ import { ProductDefinitionInput } from "@/product-framework/definition";
  *
  * THE NAME
  *
- * "Alongside" describes the relationship the product provides rather
- * than defining the user by a deficit or a diagnosis. It does not say
- * "you struggle to follow through". It says "you do not have to do this
- * alone". ADHD is carried explicitly where discoverability matters, in
- * the SEO title and the listing copy, and deliberately not in the brand
- * name, the wordmark or the slug.
+ * Built under the working name "Alongside" (see the Phase 0 research in
+ * docs/products/ADHD-LIFE-COMPANION-PROPOSAL.md section 11, which
+ * recommended it precisely so ADHD stayed out of the brand name and the
+ * price). The founder overrode that recommendation after seeing the
+ * built product: the display name is "ADHD Life Companion", named
+ * plainly rather than split across a problem-forward brand and an
+ * SEO-only mention.
+ *
+ * The slug, table prefix (als_), internal identifiers and every code
+ * comment below still say "Alongside": that name reaches a live
+ * product_instances row in production, and changing it would need a
+ * data migration for no user-facing benefit. Same split this codebase
+ * already uses for Home Base, whose title diverges from its slug
+ * (home-management-companion) for the same reason. Only `title` and the
+ * PWA identity below carry the new name; nothing else in this file
+ * changed.
  *
  * WORDS BANNED FROM EVERY USER-FACING SURFACE
  *
@@ -55,7 +65,7 @@ import { ProductDefinitionInput } from "@/product-framework/definition";
 export const alongsideDefinition: ProductDefinitionInput = {
   id: "alongside",
   slug: "alongside",
-  title: "Alongside",
+  title: "ADHD Life Companion",
   tagline:
     "When life is too much to hold in your head, this holds it with you. Write something down once, see it when it matters, and get help working through it when you are ready.",
   family: "companion",
@@ -71,9 +81,10 @@ export const alongsideDefinition: ProductDefinitionInput = {
    */
   capabilities: ["companion.context", "companion.next-action", "companion.recovery", "companion.outcomes"],
   pwa: {
-    name: "Alongside",
-    shortName: "Alongside",
-    description: "Alongside by Draftpace: hold what you cannot keep in your head, and get through the thing when you are ready.",
+    name: "ADHD Life Companion",
+    shortName: "ADHD Companion",
+    description:
+      "ADHD Life Companion by Draftpace: hold what you cannot keep in your head, and get through the thing when you are ready.",
     themeColor: "#8d4a5c",
     backgroundColor: "#fbfaf7",
     icons: [

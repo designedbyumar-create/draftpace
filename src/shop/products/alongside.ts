@@ -1,19 +1,20 @@
 import type { ShopProductInput } from "../definition";
 
 /**
- * Alongside's real public Shop listing, same "creating this file is the
- * release gate" pattern as its four siblings.
+ * ADHD Life Companion's real public Shop listing, same "creating this
+ * file is the release gate" pattern as its four siblings.
  *
- * THE NAME SPLIT, PER THE PHASE 0 NAMING RESEARCH
+ * THE NAME
  *
- * docs/products/ADHD-LIFE-COMPANION-PROPOSAL.md section 11 found that
- * the low-cost marketplace category this product could be compared
- * against sells in the single-digit-dollar range, and a product named
- * to sit beside that category gets priced like it. The name stays
- * problem-forward and carries no diagnosis; "ADHD" is carried explicitly
- * here instead, in the SEO title, the audience section and the FAQ,
- * because that is where the people searching the term actually are, and
- * where a receipt line and a browser history entry are not.
+ * Built under the working name "Alongside". The Phase 0 research (see
+ * docs/products/ADHD-LIFE-COMPANION-PROPOSAL.md section 11) recommended
+ * keeping ADHD out of the brand name specifically because the low-cost
+ * marketplace category it would otherwise be compared against sells in
+ * the single-digit-dollar range, and a name that reads like that
+ * category gets priced like it. The founder overrode that after seeing
+ * the built product and chose the plain, named-outright title instead.
+ * Slug and table prefix stay "alongside" / "als_" (a live production
+ * entitlement already exists under that slug); only the title changed.
  *
  * THE ADJACENT AUDIENCE, NAMED RATHER THAN IMPLIED
  *
@@ -40,7 +41,7 @@ export const alongsideShopProduct: ShopProductInput = {
   id: "alongside",
   slug: "alongside",
   publicationStatus: "published",
-  title: "Alongside",
+  title: "ADHD Life Companion",
   promise:
     "Somewhere to put the thing you are carrying, and help getting through it when you are ready. Write it down once, hear about it only when it actually matters, and walk through the hard version of it one question at a time.",
   problem:
@@ -175,7 +176,7 @@ export const alongsideShopProduct: ShopProductInput = {
   relatedProductSlugs: ["personal-life-affairs-companion", "personal-finance-companion"],
   needGroups: ["getting-organized"],
   seo: {
-    title: "Alongside: ADHD and executive function, held somewhere else",
+    title: "ADHD Life Companion: hold what you cannot keep in your head",
     description:
       "Somewhere to put the thing you are carrying, and help getting through it when you are ready. Built for ADHD and the same difficulty however it shows up: long covid, chronic illness, grief, new parenthood, menopause, depression.",
   },
