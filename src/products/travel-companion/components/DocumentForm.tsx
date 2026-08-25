@@ -41,6 +41,7 @@ export default function DocumentForm({
   const [label, setLabel] = useState("");
   const [personId, setPersonId] = useState("");
   const [keptWhere, setKeptWhere] = useState("");
+  const [surfaceInBrief, setSurfaceInBrief] = useState(false);
   const [pending, setPending] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
@@ -52,6 +53,7 @@ export default function DocumentForm({
       label,
       personId: personId || null,
       keptWhere: keptWhere || null,
+      surfaceInBrief,
     });
     setPending(false);
     if (!result.ok) {
@@ -97,6 +99,16 @@ export default function DocumentForm({
         placeholder="Photo in Umar's phone"
         hint="What exists and where it is, never the document itself. Nothing here is uploaded or stored as a file."
       />
+
+      <label className="flex items-center gap-2 text-[13px] text-[var(--text)]">
+        <input
+          type="checkbox"
+          checked={surfaceInBrief}
+          onChange={(e) => setSurfaceInBrief(e.target.checked)}
+          className="accent-[var(--primary)]"
+        />
+        Show in the Trip Brief
+      </label>
 
       {errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}
 

@@ -79,6 +79,8 @@ export interface TravelDocument {
   kind: DocumentKind;
   label: string;
   keptWhere: string | null;
+  /** Flagged for the Trip Brief's "Important" line, proposal §14. */
+  surfaceInBrief: boolean;
   status: "active" | "archived";
 }
 

@@ -559,7 +559,7 @@ export async function unlinkPersonFromBooking(linkId: string): Promise<Result<nu
 
 // -------------------------------------------------------------- documents
 
-const DOCUMENT_COLUMNS = "id, trip_id, person_id, booking_id, kind, label, kept_where, status";
+const DOCUMENT_COLUMNS = "id, trip_id, person_id, booking_id, kind, label, kept_where, surface_in_brief, status";
 
 function toDocument(row: Record<string, unknown>): TravelDocument {
   return {
@@ -570,6 +570,7 @@ function toDocument(row: Record<string, unknown>): TravelDocument {
     kind: row.kind as DocumentKind,
     label: row.label as string,
     keptWhere: (row.kept_where as string | null) ?? null,
+    surfaceInBrief: Boolean(row.surface_in_brief),
     status: row.status as TravelDocument["status"],
   };
 }
@@ -592,6 +593,7 @@ export interface NewDocument {
   kind: DocumentKind;
   label: string;
   keptWhere?: string | null;
+  surfaceInBrief?: boolean;
 }
 
 export async function createDocument(
@@ -613,6 +615,7 @@ export async function createDocument(
       kind: draft.kind,
       label: draft.label.trim(),
       kept_where: draft.keptWhere?.trim() || null,
+      surface_in_brief: draft.surfaceInBrief ?? false,
     })
     .select(DOCUMENT_COLUMNS)
     .single();

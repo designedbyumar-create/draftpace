@@ -5,7 +5,9 @@ import Button from "@/design-system/Button";
 import EmptyState from "@/design-system/EmptyState";
 import { Globe, Plus } from "@/design-system/Icon";
 import { byStartTime, descendantsOf, type Booking } from "../trip";
+import { deriveTripBrief } from "../tripBrief";
 import { useTravelCompanion } from "./useTravelCompanion";
+import TripBriefCard from "./TripBriefCard";
 import TripSetupForm from "./TripSetupForm";
 import PlaceForm from "./PlaceForm";
 import BookingForm from "./BookingForm";
@@ -237,6 +239,8 @@ export default function TripModule() {
     participantsByBooking.set(link.bookingId, names);
   }
 
+  const brief = deriveTripBrief(currentTrip, places, bookings, threads, documents, new Date());
+
   return (
     <div className="mx-auto flex w-full max-w-2xl flex-col gap-7">
       <header>
@@ -250,6 +254,8 @@ export default function TripModule() {
           </p>
         )}
       </header>
+
+      <TripBriefCard brief={brief} />
 
       <section>
         <div className="flex items-center justify-between gap-4">
