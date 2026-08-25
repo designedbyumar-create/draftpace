@@ -41,6 +41,11 @@ import {
   CompanionScreenMockup as AlongsideCompanionScreenMockup,
   LifeScreenMockup as AlongsideLifeScreenMockup,
 } from "./adhdLifeCompanionVisuals";
+import {
+  OverviewScreenMockup as TravelOverviewScreenMockup,
+  ChangeImpactScreenMockup as TravelChangeImpactScreenMockup,
+  TripBriefScreenMockup as TravelTripBriefScreenMockup,
+} from "./travelCompanionVisuals";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { getLemonSqueezyCheckoutUrl, hasLemonSqueezyCheckout } from "@/shop/lemonSqueezyCheckout";
 
@@ -96,6 +101,7 @@ export default async function ShopProductPage({
   const isPersonalLifeAffairsCompanion = product.slug === "personal-life-affairs-companion";
   const isHomeschoolingCompanion = product.slug === "homeschooling-companion";
   const isAlongside = product.slug === "alongside";
+  const isTravelCompanion = product.slug === "travel-companion";
 
   // Resolved once per request, server-side, so every GetAction on this page
   // (hero, mid-page, final CTA) agrees on the exact same checkout link
@@ -154,6 +160,8 @@ export default async function ShopProductPage({
               <HscOverviewScreenMockup />
             ) : isAlongside ? (
               <AlongsideOverviewScreenMockup />
+            ) : isTravelCompanion ? (
+              <TravelOverviewScreenMockup />
             ) : (
               <HeroVisual product={product} />
             )}
@@ -194,6 +202,8 @@ export default async function ShopProductPage({
               <HscCheckScreenMockup />
             ) : isAlongside ? (
               <AlongsideLifeScreenMockup />
+            ) : isTravelCompanion ? (
+              <TravelChangeImpactScreenMockup />
             ) : undefined
           }
         >
@@ -222,6 +232,8 @@ export default async function ShopProductPage({
               <HscBookScreenMockup />
             ) : isAlongside ? (
               <AlongsideCompanionScreenMockup />
+            ) : isTravelCompanion ? (
+              <TravelTripBriefScreenMockup />
             ) : undefined
           }
           reverse
