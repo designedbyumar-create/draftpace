@@ -35,8 +35,24 @@ const policies = [...sql.matchAll(/create policy\s+"([^"]+)"\s*\n?on public\.(tr
 }));
 
 describe("Travel Companion row level security", () => {
-  it("creates the five phase 1 tables", () => {
-    expect(tables.sort()).toEqual(["trv_booking_people", "trv_bookings", "trv_people", "trv_places", "trv_trips"]);
+  it("creates the five phase 1 tables plus the two Companion run tables", () => {
+    expect(tables.sort()).toEqual(
+      [
+        "trv_booking_people",
+        "trv_bookings",
+        "trv_people",
+        "trv_places",
+        "trv_trips",
+        "trv_runs",
+        "trv_run_answers",
+      ].sort()
+    );
+  });
+
+  it("makes a run resumable while left, not only while open, from its first migration", () => {
+    // The exact fix Alongside's own build needed live, applied here
+    // from the start rather than discovered the same way twice.
+    expect(sql).toMatch(/trv_runs[\s\S]*?status text not null default 'open' check \(status in \('open', 'finished', 'left'\)\)/);
   });
 
   it("enables row level security on every table it creates", () => {

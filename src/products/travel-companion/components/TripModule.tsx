@@ -4,11 +4,16 @@ import { useState } from "react";
 import Button from "@/design-system/Button";
 import EmptyState from "@/design-system/EmptyState";
 import { Globe, Plus } from "@/design-system/Icon";
-import { byStartTime } from "../trip";
+import { byStartTime, type Booking } from "../trip";
 import { useTravelCompanion } from "./useTravelCompanion";
 import TripSetupForm from "./TripSetupForm";
 import PlaceForm from "./PlaceForm";
 import BookingForm from "./BookingForm";
+import CompanionRun from "./CompanionRun";
+import { findResumableRun, beginRun } from "./useResumableRun";
+import { PLAYBOOKS } from "../playbooks";
+import type { RunRecord } from "../domain/travelData";
+import type { Playbook } from "@/components/product-shell/companion/steps";
 
 function timeLabel(iso: string): string {
   return new Date(iso).toLocaleString(undefined, {
@@ -43,10 +48,14 @@ export default function TripModule() {
     addPlace,
     addBooking,
     addParticipants,
+    replaceBooking,
   } = useTravelCompanion();
   const [settingUp, setSettingUp] = useState(false);
   const [addingPlace, setAddingPlace] = useState(false);
   const [addingBooking, setAddingBooking] = useState(false);
+  const [running, setRunning] = useState<{ playbook: Playbook; booking: Booking; run: RunRecord } | null>(null);
+  const [opening, setOpening] = useState(false);
+  const [startError, setStartError] = useState<string | null>(null);
 
   if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
   if (status === "no-instance") {
@@ -82,6 +91,51 @@ export default function TripModule() {
         />
       </div>
     );
+  }
+
+  /**
+   * Opening the Companion for a booking with an open run already picks
+   * it back up instead of starting over. With one playbook in the
+   * library there is nothing to choose between yet; Phase 4 adds a
+   * chooser once there is something to choose from.
+   */
+  async function openBookingProblem(booking: Booking) {
+    if (!instanceId) return;
+    setStartError(null);
+    setOpening(true);
+    const resumable = await findResumableRun(instanceId, booking.id);
+    if (resumable) {
+      setOpening(false);
+      setRunning({ playbook: resumable.playbook, booking, run: resumable.run });
+      return;
+    }
+    const started = await beginRun(instanceId, PLAYBOOKS[0], booking.id);
+    setOpening(false);
+    if (!started.ok) {
+      setStartError("Couldn't start that. Try again.");
+      return;
+    }
+    setRunning({ playbook: PLAYBOOKS[0], booking, run: started.data });
+  }
+
+  if (running && instanceId) {
+    return (
+      <CompanionRun
+        instanceId={instanceId}
+        playbook={running.playbook}
+        booking={running.booking}
+        run={running.run}
+        onFinished={(result) => {
+          if (result.booking) replaceBooking(result.booking);
+          setRunning(null);
+        }}
+        onLeft={() => setRunning(null)}
+      />
+    );
+  }
+
+  if (opening) {
+    return <p className="text-[13px] text-[var(--faint)]">Opening...</p>;
   }
 
   const byId = new Map(bookings.map((booking) => [booking.id, booking]));
@@ -204,13 +258,19 @@ export default function TripModule() {
                   <p className="mt-1.5 text-[12px] text-[var(--faint)]">Depends on {dependsOn.title}</p>
                 )}
                 {names.length > 0 && <p className="mt-1.5 text-[12px] text-[var(--faint)]">{names.join(", ")}</p>}
-                {booking.notes && <p className="mt-1.5 text-[13px] leading-5 text-[var(--muted)]">{booking.notes}</p>}
+                {booking.notes && <p className="mt-1.5 whitespace-pre-line text-[13px] leading-5 text-[var(--muted)]">{booking.notes}</p>}
+                <div className="mt-3">
+                  <Button size="sm" variant="ghost" onClick={() => openBookingProblem(booking)}>
+                    Sort out a problem with this
+                  </Button>
+                </div>
               </li>
             );
           })}
         </ul>
       </section>
 
+      {startError && <p className="text-[13px] text-[var(--danger)]">{startError}</p>}
       {errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}
     </div>
   );

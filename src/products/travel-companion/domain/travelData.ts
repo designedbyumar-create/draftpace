@@ -4,6 +4,8 @@ import { supabase } from "@/lib/supabase/client";
 import { ok, err, type Result } from "@/product-framework/result";
 import type { Booking, BookingKind, BookingStatus, Person, Place, Trip, TripStatus } from "../trip";
 import { wouldCreateCycle } from "../trip";
+import type { OutcomeKind } from "@/components/product-shell/companion/steps";
+import { applyOutcome } from "../outcome";
 
 /**
  * Everything this product reads from and writes to the database.
@@ -533,6 +535,192 @@ export async function unlinkPersonFromBooking(linkId: string): Promise<Result<nu
     .from("trv_booking_people")
     .update({ status: "archived", updated_at: new Date().toISOString() })
     .eq("id", linkId);
+
+  if (error) return err({ kind: "network", message: error.message });
+  return ok(null);
+}
+
+// ------------------------------------------------------------ companion
+
+export interface RunRecord {
+  id: string;
+  bookingId: string | null;
+  playbookKey: string;
+  playbookTitle: string;
+  status: "open" | "finished" | "left";
+  answers: Record<string, string>;
+  skipped: string[];
+}
+
+export async function startRun(
+  productInstanceId: string,
+  playbook: { key: string; title: string },
+  bookingId: string | null
+): Promise<Result<RunRecord>> {
+  const user = await currentUserId();
+  if (!user.ok) return user;
+
+  const { data, error } = await supabase
+    .from("trv_runs")
+    .insert({
+      product_instance_id: productInstanceId,
+      user_id: user.data,
+      booking_id: bookingId,
+      playbook_key: playbook.key,
+      playbook_title: playbook.title,
+    })
+    .select("id, booking_id, playbook_key, playbook_title, status")
+    .single();
+
+  if (error || !data) return err({ kind: "network", message: error?.message ?? "Could not start that." });
+  const row = data as unknown as Record<string, unknown>;
+  return ok({
+    id: row.id as string,
+    bookingId: (row.booking_id as string | null) ?? null,
+    playbookKey: row.playbook_key as string,
+    playbookTitle: row.playbook_title as string,
+    status: row.status as RunRecord["status"],
+    answers: {},
+    skipped: [],
+  });
+}
+
+/**
+ * Loads a run that was left open, with everything already answered.
+ *
+ * "left" is included deliberately, from the first version of this
+ * function rather than added after the fact: leaving mid-run is not
+ * treated as failure anywhere else in this product, and it must not be
+ * treated as one here by silently becoming unresumable. This is the
+ * exact fix Alongside's own build needed, applied here from day one.
+ */
+export async function loadOpenRun(productInstanceId: string, bookingId: string): Promise<Result<RunRecord | null>> {
+  const { data, error } = await supabase
+    .from("trv_runs")
+    .select("id, booking_id, playbook_key, playbook_title, status")
+    .eq("product_instance_id", productInstanceId)
+    .eq("booking_id", bookingId)
+    .in("status", ["open", "left"])
+    .order("started_at", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+
+  if (error) return err({ kind: "network", message: error.message });
+  if (!data) return ok(null);
+
+  const row = data as unknown as Record<string, unknown>;
+  const answers = await supabase.from("trv_run_answers").select("step_key, answer, skipped").eq("run_id", row.id as string);
+  if (answers.error) return err({ kind: "network", message: answers.error.message });
+
+  const collected: Record<string, string> = {};
+  const skipped: string[] = [];
+  for (const answer of (answers.data ?? []) as unknown as Record<string, unknown>[]) {
+    if (answer.skipped) skipped.push(answer.step_key as string);
+    else if (answer.answer) collected[answer.step_key as string] = answer.answer as string;
+  }
+
+  return ok({
+    id: row.id as string,
+    bookingId: (row.booking_id as string | null) ?? null,
+    playbookKey: row.playbook_key as string,
+    playbookTitle: row.playbook_title as string,
+    status: row.status as RunRecord["status"],
+    answers: collected,
+    skipped,
+  });
+}
+
+/**
+ * Saves one step's answer. Only what the person wrote or chose
+ * themselves; suggested wording is never written here and never leaves
+ * the browser, same rule as every playbook on this engine.
+ */
+export async function saveAnswer(
+  productInstanceId: string,
+  runId: string,
+  stepKey: string,
+  answer: string | null,
+  skipped = false
+): Promise<Result<null>> {
+  const user = await currentUserId();
+  if (!user.ok) return user;
+
+  const { error } = await supabase.from("trv_run_answers").upsert(
+    {
+      product_instance_id: productInstanceId,
+      user_id: user.data,
+      run_id: runId,
+      step_key: stepKey,
+      answer: skipped ? null : answer,
+      skipped,
+      updated_at: new Date().toISOString(),
+    },
+    { onConflict: "run_id,step_key" }
+  );
+
+  if (error) return err({ kind: "network", message: error.message });
+  return ok(null);
+}
+
+export interface FinishResult {
+  booking: Booking | null;
+}
+
+async function applyOutcomeToBooking(
+  booking: Booking,
+  outcome: OutcomeKind,
+  detail: string | null,
+  now: Date
+): Promise<Result<Booking>> {
+  const effect = applyOutcome(booking, { outcome, detail, now });
+  if (Object.keys(effect.patch).length === 0) return ok(booking);
+  return updateBooking(booking.id, effect.patch, [booking]);
+}
+
+/**
+ * Closes a run and applies its outcome to the booking it concerns.
+ *
+ * The one place the loop closes. In particular, "did not get to it"
+ * reaches here like any other outcome and produces an empty patch, so
+ * nothing in this function needs to special case it.
+ */
+export async function finishRun(
+  productInstanceId: string,
+  run: RunRecord,
+  booking: Booking | null,
+  outcome: OutcomeKind,
+  detail: string | null
+): Promise<Result<FinishResult>> {
+  const now = new Date();
+
+  const closed = await supabase
+    .from("trv_runs")
+    .update({ status: "finished", outcome, outcome_detail: detail, ended_at: now.toISOString(), updated_at: now.toISOString() })
+    .eq("id", run.id);
+  if (closed.error) return err({ kind: "network", message: closed.error.message });
+
+  if (!booking) return ok({ booking: null });
+
+  const updated = await applyOutcomeToBooking(booking, outcome, detail, now);
+  if (!updated.ok) return updated;
+  return ok({ booking: updated.data });
+}
+
+/**
+ * The same outcome finishRun applies, without a Companion run behind
+ * it, for a quick action on the Trip screen that does not need eight
+ * questions first.
+ */
+export async function recordOutcome(booking: Booking, outcome: OutcomeKind, detail: string | null): Promise<Result<Booking>> {
+  return applyOutcomeToBooking(booking, outcome, detail, new Date());
+}
+
+/** Leaving a run part way through is not a failure and is not recorded as one. */
+export async function leaveRun(runId: string): Promise<Result<null>> {
+  const { error } = await supabase
+    .from("trv_runs")
+    .update({ status: "left", updated_at: new Date().toISOString() })
+    .eq("id", runId);
 
   if (error) return err({ kind: "network", message: error.message });
   return ok(null);
