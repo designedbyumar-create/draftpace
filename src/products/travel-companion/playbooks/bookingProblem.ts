@@ -27,6 +27,8 @@ export const bookingProblem: Playbook = {
   key: "booking-problem",
   title: "Sort out a booking problem",
   situation: "A booking isn't right, or they can't find it",
+  // Any kind of booking can be missing, wrong, or wrongly charged.
+  opensFor: ["flight", "train", "car", "transfer", "hotel", "rental", "activity", "restaurant", "event", "other"],
   steps: [
     {
       key: "problem",

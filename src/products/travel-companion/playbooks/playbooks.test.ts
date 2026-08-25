@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { conditionMet, visibleItems, visibleWording, type Answers } from "@/components/product-shell/companion/steps";
-import { PLAYBOOKS, PLAYBOOK_BY_KEY } from "./index";
+import { PLAYBOOKS, PLAYBOOK_BY_KEY, playbooksForBooking } from "./index";
 
 /**
  * Structural checks on the library, same shape as Alongside's own,
@@ -9,10 +9,32 @@ import { PLAYBOOKS, PLAYBOOK_BY_KEY } from "./index";
  * invisible until somebody picks that exact path on a real screen.
  */
 describe("the library", () => {
-  it("has exactly the playbooks built so far, and no duplicate keys", () => {
+  it("has exactly the eight the founder locked, and no ninth", () => {
+    expect(PLAYBOOKS.map((p) => p.key).sort()).toEqual(
+      [
+        "booking-problem",
+        "flight-problem",
+        "hotel-problem",
+        "transport-problem",
+        "something-changed",
+        "reorganize-the-trip",
+        "contact-someone",
+        "something-went-wrong",
+      ].sort()
+    );
+  });
+
+  it("has no duplicate keys", () => {
     const keys = PLAYBOOKS.map((p) => p.key);
     expect(new Set(keys).size).toBe(keys.length);
     expect(Object.keys(PLAYBOOK_BY_KEY).sort()).toEqual(keys.sort());
+  });
+
+  it("offers at least one situation for every kind of booking, so no booking is ever a dead end", () => {
+    const kinds: string[] = ["flight", "train", "car", "transfer", "hotel", "rental", "activity", "restaurant", "event", "other"];
+    for (const kind of kinds) {
+      expect(playbooksForBooking(kind as never).length, kind).toBeGreaterThan(0);
+    }
   });
 
   for (const playbook of PLAYBOOKS) {
@@ -89,6 +111,12 @@ describe("the library", () => {
               expect(text.toLowerCase(), text).not.toContain(word);
             }
           }
+        }
+      });
+
+      it("only ever marks a write step optional, since that is the only kind the engine gives a skip button to", () => {
+        for (const step of playbook.steps.filter((s) => s.optional)) {
+          expect(step.kind, `${step.key} sets optional but is a ${step.kind} step, which has no skip button`).toBe("write");
         }
       });
 

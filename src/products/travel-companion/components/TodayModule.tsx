@@ -1,10 +1,17 @@
 "use client";
 
 import EmptyState from "@/design-system/EmptyState";
+import Button from "@/design-system/Button";
 import { Compass, Globe } from "@/design-system/Icon";
 import { deriveToday, whereWeAre } from "../today";
 import { useTravelCompanion } from "./useTravelCompanion";
 import TripSetupForm from "./TripSetupForm";
+import CompanionRun from "./CompanionRun";
+import StartCompanion from "@/components/product-shell/companion/StartCompanion";
+import { beginRun } from "./useResumableRun";
+import { PLAYBOOKS } from "../playbooks";
+import type { Playbook } from "@/components/product-shell/companion/steps";
+import type { RunRecord } from "../domain/travelData";
 import { useState } from "react";
 
 /**
@@ -18,6 +25,11 @@ import { useState } from "react";
 export default function TodayModule() {
   const { status, errorMessage, instanceId, trips, currentTrip, places, bookings, addTrip } = useTravelCompanion();
   const [settingUp, setSettingUp] = useState(false);
+  const [starting, setStarting] = useState(false);
+  const [running, setRunning] = useState<{ playbook: Playbook; run: RunRecord; directTitle: string | null } | null>(null);
+  const [opening, setOpening] = useState(false);
+  const [startError, setStartError] = useState<string | null>(null);
+  const [closingNote, setClosingNote] = useState<string | null>(null);
 
   if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
   if (status === "no-instance") {
@@ -62,6 +74,45 @@ export default function TodayModule() {
     );
   }
 
+  async function startDirect(playbook: Playbook, title: string | null) {
+    if (!instanceId) return;
+    setStarting(false);
+    setStartError(null);
+    setOpening(true);
+    const started = await beginRun(instanceId, playbook, null);
+    setOpening(false);
+    if (!started.ok) {
+      setStartError("Couldn't start that. Try again.");
+      return;
+    }
+    setRunning({ playbook, run: started.data, directTitle: title });
+  }
+
+  if (running && instanceId) {
+    return (
+      <CompanionRun
+        instanceId={instanceId}
+        playbook={running.playbook}
+        booking={null}
+        run={running.run}
+        directTitle={running.directTitle}
+        onFinished={() => {
+          setRunning(null);
+          setClosingNote("Recorded.");
+        }}
+        onLeft={() => setRunning(null)}
+      />
+    );
+  }
+
+  if (starting) {
+    return <StartCompanion playbooks={PLAYBOOKS} onStart={startDirect} onCancel={() => setStarting(false)} />;
+  }
+
+  if (opening) {
+    return <p className="text-[13px] text-[var(--faint)]">Opening...</p>;
+  }
+
   const now = new Date();
   const view = deriveToday(bookings, now);
   const where = whereWeAre(places, now);
@@ -84,6 +135,8 @@ export default function TodayModule() {
       {view.quiet && (
         <p className="text-[14px] leading-6 text-[var(--muted)]">Nothing scheduled for today, right now.</p>
       )}
+
+      {closingNote && <p className="text-[13px] text-[var(--muted)]">{closingNote}</p>}
 
       {view.now.length > 0 && (
         <section className="flex flex-col gap-2">
@@ -126,6 +179,13 @@ export default function TodayModule() {
           </div>
         </section>
       )}
+
+      <div>
+        <Button variant="ghost" size="sm" onClick={() => setStarting(true)}>
+          Need help with something?
+        </Button>
+        {startError && <p className="mt-2 text-[13px] text-[var(--danger)]">{startError}</p>}
+      </div>
     </div>
   );
 }

@@ -1,28 +1,41 @@
+import type { BookingKind } from "../trip";
 import type { Playbook } from "@/components/product-shell/companion/steps";
 import { bookingProblem } from "./bookingProblem";
+import { flightProblem } from "./flightProblem";
+import { hotelProblem } from "./hotelProblem";
+import { transportProblem } from "./transportProblem";
+import { somethingChanged } from "./somethingChanged";
+import { reorganizeTheTrip } from "./reorganizeTheTrip";
+import { contactSomeone } from "./contactSomeone";
+import { somethingWentWrong } from "./somethingWentWrong";
 
 /**
- * The library. One playbook, on purpose, per the founder's own Phase 3
- * gate: prove the shared engine against a real situation before
- * authoring the remaining seven, the same "engine before content"
- * discipline Alongside's own build proved out.
+ * The library. Eight, locked, per the founder's own Phase 0 decision:
+ * "these eight are locked for v1... Phase 1/initial v1 must not expand
+ * the situation library."
  *
- * The founder's locked v1 library, for when Phase 4 adds the rest:
+ * ORDER IS THE OFFER, SAME DISCIPLINE AS ALONGSIDE'S OWN LIBRARY
  *
- *   booking-problem     (this one)
- *   flight-problem
- *   hotel-problem
- *   transport-problem
- *   something-changed
- *   reorganize-the-trip
- *   contact-someone
- *   something-went-wrong
- *
- * Eight, locked. Not a dynamic library, no search, per the founder's
- * own Phase 0 decision.
+ * Booking-scoped situations first (the ones a person reaches by opening
+ * the Companion from a specific booking), the general ones after (the
+ * ones that make sense from Today, with nothing specific selected).
  */
-export const PLAYBOOKS: Playbook[] = [bookingProblem];
+export const PLAYBOOKS: Playbook[] = [
+  bookingProblem,
+  flightProblem,
+  hotelProblem,
+  transportProblem,
+  somethingChanged,
+  reorganizeTheTrip,
+  contactSomeone,
+  somethingWentWrong,
+];
 
 export const PLAYBOOK_BY_KEY: Record<string, Playbook> = Object.fromEntries(
   PLAYBOOKS.map((playbook) => [playbook.key, playbook])
 );
+
+/** Which situations make sense opened from a booking of this kind. */
+export function playbooksForBooking(kind: BookingKind): Playbook[] {
+  return PLAYBOOKS.filter((playbook) => (playbook.opensFor as string[] | undefined)?.includes(kind));
+}

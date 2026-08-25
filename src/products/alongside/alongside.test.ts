@@ -426,6 +426,12 @@ describe("the library", () => {
         expect(playbook.opensFor).not.toContain("reference");
       });
 
+      it("only ever marks a write step optional, since that is the only kind the engine gives a skip button to", () => {
+        for (const step of playbook.steps.filter((s) => s.optional)) {
+          expect(step.kind, `${step.key} sets optional but is a ${step.kind} step, which has no skip button`).toBe("write");
+        }
+      });
+
       /**
        * Suggested wording opens a conversation. It never says what to
        * claim, accept, threaten, or settle for, because the person on

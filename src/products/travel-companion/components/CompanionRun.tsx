@@ -17,6 +17,7 @@ export default function CompanionRun({
   playbook,
   booking,
   run,
+  directTitle = null,
   onFinished,
   onLeft,
 }: {
@@ -24,6 +25,8 @@ export default function CompanionRun({
   playbook: Playbook;
   booking: Booking | null;
   run: RunRecord;
+  /** What to call this when there is no booking behind it, in the person's own words if they typed one. */
+  directTitle?: string | null;
   onFinished: (result: FinishResult, outcome: OutcomeKind) => void;
   onLeft: () => void;
 }) {
@@ -31,7 +34,7 @@ export default function CompanionRun({
     <SharedCompanionRun<FinishResult>
       playbook={playbook}
       run={run}
-      contextLabel={booking?.title ?? null}
+      contextLabel={booking?.title ?? directTitle}
       onSaveAnswer={(stepKey, value, skipped) => saveAnswer(instanceId, run.id, stepKey, value, skipped)}
       onComplete={(outcome, detail) => finishRun(instanceId, run, booking, outcome, detail)}
       onLeave={() => leaveRun(run.id)}
