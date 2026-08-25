@@ -421,7 +421,8 @@ describe("the library", () => {
       });
 
       it("opens for at least one shape, and never for a reference", () => {
-        expect(playbook.opensFor.length).toBeGreaterThan(0);
+        expect(playbook.opensFor, `${playbook.key} never sets opensFor`).toBeDefined();
+        expect(playbook.opensFor!.length).toBeGreaterThan(0);
         expect(playbook.opensFor).not.toContain("reference");
       });
 
@@ -587,22 +588,13 @@ describe("what the interface can actually reach", () => {
  * independent workflows would grow back in, one small exception at a
  * time.
  */
-describe("the engine is shared, not per-playbook", () => {
-  const engine = readFileSync(new URL("./components/CompanionRun.tsx", import.meta.url), "utf8");
-
-  it("never branches on which playbook is running", () => {
-    expect(engine).not.toMatch(/playbook\.key\s*===/);
-    expect(engine).not.toMatch(/playbook\.key\s*!==/);
-  });
-
-  it("switches only on step.kind, the six shapes every playbook is built from", () => {
-    expect(engine).toMatch(/step\.kind === "choose"/);
-    expect(engine).toMatch(/step\.kind === "write"/);
-    expect(engine).toMatch(/step\.kind === "wording"/);
-  });
-});
-
 /**
+ * The engine itself (never branches on which playbook is running,
+ * switches only on step.kind, requires the run as a prop, creates one
+ * only in response to a choice) is now guarded in
+ * src/components/product-shell/companion/companion.test.ts, once, for
+ * every product built on it, rather than re-asserted per product here.
+ *
  * Resume is the P0 correction: closing the tab mid-run must not lose
  * the run, and reopening must not create a second one next to it.
  */
@@ -626,31 +618,22 @@ describe("resume", () => {
     expect(domain).toMatch(/\.in\(\s*"status"\s*,\s*\[\s*"open"\s*,\s*"left"\s*\]\s*\)/);
   });
 
-  /**
-   * The stronger version of the original fix. A run created inside a
-   * mount effect gets created again on every remount, including the
-   * ones React itself triggers on purpose in development to catch this
-   * exact class of bug: that is how this product produced a real
-   * orphaned run during its own testing, discovered by clicking "Do
-   * this with me" a second time and landing on a blank first question
-   * instead of the run that had actually been completed. The fix is not
-   * a guard inside the effect; it is that CompanionRun has no effect
-   * that creates a run at all. The run always arrives as a prop,
-   * already created by whoever decided to open the Companion.
-   */
-  it("creates a run only in response to a person's choice, never as a side effect of rendering", () => {
-    const engine = readFileSync(new URL("./components/CompanionRun.tsx", import.meta.url), "utf8");
-    expect(engine, "CompanionRun must not call startRun itself").not.toContain("startRun");
-    expect(engine, "CompanionRun must not create a run inside a mount effect").not.toContain("useEffect");
+  it("still creates real runs through startRun, even though the engine that consumes them no longer lives in this file", () => {
     expect(domain, "beginRun/pickPlaybook flows must exist to create a run before CompanionRun mounts").toContain(
       "export async function startRun"
     );
   });
 
-  it("requires the run as a prop rather than accepting one that might not exist yet", () => {
-    const engine = readFileSync(new URL("./components/CompanionRun.tsx", import.meta.url), "utf8");
-    expect(engine, "run must be required, not optional").toMatch(/\n\s*run: RunRecord;/);
-    expect(engine).not.toMatch(/run\?:\s*RunRecord/);
+  /**
+   * The wrapper's own contract: instanceId/item/directTitle are this
+   * product's business, but `run` must still be required here too, not
+   * only in the shared engine, since this file is what every call site
+   * in this product actually imports.
+   */
+  it("requires the run as a prop on this product's own wrapper, rather than accepting one that might not exist yet", () => {
+    const wrapper = readFileSync(new URL("./components/CompanionRun.tsx", import.meta.url), "utf8");
+    expect(wrapper, "run must be required, not optional").toMatch(/\n\s*run: RunRecord;/);
+    expect(wrapper).not.toMatch(/run\?:\s*RunRecord/);
   });
 
   it("creates the run exactly once per playbook choice, at every place a run can start", () => {
@@ -678,9 +661,12 @@ describe("resume", () => {
  * interface asks for, not about behaviour a unit test can otherwise see.
  */
 describe("the front door does not require Draftpace's own mental model", () => {
-  const start = readFileSync(new URL("./components/StartCompanion.tsx", import.meta.url), "utf8");
   const now = readFileSync(new URL("./components/NowModule.tsx", import.meta.url), "utf8");
   const help = readFileSync(new URL("./components/HelpModule.tsx", import.meta.url), "utf8");
+
+  // The screen's own rendering (situation over playbook name, typing
+  // before choosing, no guessing from free text) is guarded once, at
+  // the shared engine, in companion.test.ts.
 
   it("offers every situation, never one playbook standing in for the rest", () => {
     // The bug this guards: "Help me with something" once always opened
@@ -689,22 +675,6 @@ describe("the front door does not require Draftpace's own mental model", () => {
     expect(now).not.toMatch(/PLAYBOOKS\[0\]/);
     expect(now).toContain("StartCompanion");
     expect(help).toContain("StartCompanion");
-  });
-
-  it("shows the situation, not the playbook's own name, as what the person picks", () => {
-    expect(start).toContain("playbook.situation");
-    expect(start).not.toMatch(/\{playbook\.title\}/);
-  });
-
-  it("lets somebody type what they need before choosing anything", () => {
-    expect(start).toMatch(/What do you need to do\?/);
-  });
-
-  it("never routes free text into a playbook by guessing at it", () => {
-    // The one thing this screen must not become: the person's own words
-    // silently deciding which playbook opens. There is no language
-    // model anywhere in this codebase, and this is not the exception.
-    expect(start).not.toMatch(/\btitle\.(includes|match|toLowerCase\(\)\.includes)/);
   });
 });
 
