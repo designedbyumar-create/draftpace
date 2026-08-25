@@ -66,7 +66,6 @@ export default function TripModule() {
     documents,
     preparation,
     threads,
-    recordEntries,
     addTrip,
     addPlace,
     addBooking,
@@ -183,28 +182,18 @@ export default function TripModule() {
   }
 
   /**
-   * My Trip Book, made from exactly what this screen already shows.
-   * Dynamically imported so @react-pdf/renderer never reaches the main
-   * bundle, same discipline as every sibling's own printable.
+   * My Trip Book: the standalone, blank, modular planner, not a
+   * printout of this screen's own data. Dynamically imported so
+   * @react-pdf/renderer never reaches the main bundle, same discipline
+   * as every sibling's own printable.
    */
   async function generateTripBook() {
-    if (!currentTrip) return;
     setMakingBook(true);
     setBookError(null);
     try {
       const { downloadTripBook } = await import("../printables/download");
-      await downloadTripBook({
-        trip: currentTrip,
-        people,
-        places,
-        bookings,
-        documents,
-        preparation,
-        threads,
-        recordEntries,
-        generatedAt: new Date(),
-        size: bookSize,
-      });
+      const { DEFAULT_MANIFEST } = await import("../printables/document");
+      await downloadTripBook({ ...DEFAULT_MANIFEST, size: bookSize });
     } catch {
       // A failed generation must never look like a saved download.
       setBookError("The book could not be made. Nothing was downloaded.");
@@ -569,8 +558,8 @@ export default function TripModule() {
       <section>
         <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">My Trip Book</p>
         <p className="mt-2 text-[13px] leading-6 text-[var(--muted)]">
-          A printable copy of this trip, plus method chapters on travelling with less held in your head. Everything on
-          this screen, gathered onto paper.
+          A standalone, blank travel planner: trip overview, destinations, travellers, bookings, transport,
+          accommodation, documents, threads and daily pages, all blank for you to fill in by hand.
         </p>
         <div className="mt-3 flex flex-wrap items-center gap-2">
           {(["LETTER", "A4"] as const).map((option) => (
