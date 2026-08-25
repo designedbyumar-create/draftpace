@@ -3,8 +3,17 @@
 import { useCallback, useEffect, useState } from "react";
 import { describeResultError } from "@/product-framework/result";
 import { findTravelCompanionInstanceId } from "../instanceData";
-import { loadBookingParticipants, loadBookings, loadPeople, loadPlaces, loadTrips, type BookingParticipant } from "../domain/travelData";
-import type { Booking, Person, Place, Trip } from "../trip";
+import {
+  loadBookingParticipants,
+  loadBookings,
+  loadDocuments,
+  loadPeople,
+  loadPlaces,
+  loadPreparation,
+  loadTrips,
+  type BookingParticipant,
+} from "../domain/travelData";
+import type { Booking, Person, Place, PreparationItem, Trip, TravelDocument } from "../trip";
 
 export type LoadStatus = "loading" | "ready" | "no-instance" | "error";
 
@@ -33,6 +42,8 @@ export function useTravelCompanion() {
   const [places, setPlaces] = useState<Place[]>([]);
   const [bookings, setBookings] = useState<Booking[]>([]);
   const [participants, setParticipants] = useState<BookingParticipant[]>([]);
+  const [documents, setDocuments] = useState<TravelDocument[]>([]);
+  const [preparation, setPreparation] = useState<PreparationItem[]>([]);
 
   const currentTrip = trips.find((trip) => trip.status === "planning" || trip.status === "active") ?? null;
 
@@ -65,15 +76,19 @@ export function useTravelCompanion() {
       setPlaces([]);
       setBookings([]);
       setParticipants([]);
+      setDocuments([]);
+      setPreparation([]);
       setStatus("ready");
       return;
     }
 
-    const [peopleResult, placesResult, bookingsResult, participantsResult] = await Promise.all([
+    const [peopleResult, placesResult, bookingsResult, participantsResult, documentsResult, preparationResult] = await Promise.all([
       loadPeople(active.id),
       loadPlaces(active.id),
       loadBookings(active.id),
       loadBookingParticipants(active.id),
+      loadDocuments(active.id),
+      loadPreparation(active.id),
     ]);
     if (!peopleResult.ok) {
       setErrorMessage(describeResultError(peopleResult.error));
@@ -95,10 +110,22 @@ export function useTravelCompanion() {
       setStatus("error");
       return;
     }
+    if (!documentsResult.ok) {
+      setErrorMessage(describeResultError(documentsResult.error));
+      setStatus("error");
+      return;
+    }
+    if (!preparationResult.ok) {
+      setErrorMessage(describeResultError(preparationResult.error));
+      setStatus("error");
+      return;
+    }
     setPeople(peopleResult.data);
     setPlaces(placesResult.data);
     setBookings(bookingsResult.data);
     setParticipants(participantsResult.data);
+    setDocuments(documentsResult.data);
+    setPreparation(preparationResult.data);
     setStatus("ready");
   }, []);
 
@@ -134,6 +161,17 @@ export function useTravelCompanion() {
     setParticipants((current) => [...current, ...created]);
   }, []);
 
+  const addDocument = useCallback((created: TravelDocument) => {
+    setDocuments((current) => [...current, created]);
+  }, []);
+
+  const addPreparationItem = useCallback((created: PreparationItem) => {
+    setPreparation((current) => [...current, created]);
+  }, []);
+  const replacePreparationItem = useCallback((updated: PreparationItem) => {
+    setPreparation((current) => current.map((item) => (item.id === updated.id ? updated : item)));
+  }, []);
+
   return {
     status,
     errorMessage,
@@ -145,6 +183,8 @@ export function useTravelCompanion() {
     places,
     bookings,
     participants,
+    documents,
+    preparation,
     load,
     addTrip,
     replacePerson,
@@ -154,5 +194,8 @@ export function useTravelCompanion() {
     replaceBooking,
     addBooking,
     addParticipants,
+    addDocument,
+    addPreparationItem,
+    replacePreparationItem,
   };
 }

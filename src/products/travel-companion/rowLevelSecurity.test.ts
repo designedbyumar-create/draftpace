@@ -35,7 +35,7 @@ const policies = [...sql.matchAll(/create policy\s+"([^"]+)"\s*\n?on public\.(tr
 }));
 
 describe("Travel Companion row level security", () => {
-  it("creates the five phase 1 tables plus the two Companion run tables", () => {
+  it("creates the five phase 1 tables, the two Companion run tables, and documents/preparation", () => {
     expect(tables.sort()).toEqual(
       [
         "trv_booking_people",
@@ -45,6 +45,8 @@ describe("Travel Companion row level security", () => {
         "trv_trips",
         "trv_runs",
         "trv_run_answers",
+        "trv_documents",
+        "trv_preparation",
       ].sort()
     );
   });

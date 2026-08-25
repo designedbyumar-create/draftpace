@@ -2,7 +2,20 @@
 
 import { supabase } from "@/lib/supabase/client";
 import { ok, err, type Result } from "@/product-framework/result";
-import type { Booking, BookingKind, BookingStatus, Person, Place, Trip, TripStatus } from "../trip";
+import type {
+  Booking,
+  BookingKind,
+  BookingStatus,
+  Person,
+  Place,
+  PreparationCategory,
+  PreparationCompletionStatus,
+  PreparationItem,
+  Trip,
+  TripStatus,
+  TravelDocument,
+  DocumentKind,
+} from "../trip";
 import { wouldCreateCycle } from "../trip";
 import type { OutcomeKind } from "@/components/product-shell/companion/steps";
 import { applyOutcome } from "../outcome";
@@ -538,6 +551,145 @@ export async function unlinkPersonFromBooking(linkId: string): Promise<Result<nu
 
   if (error) return err({ kind: "network", message: error.message });
   return ok(null);
+}
+
+// -------------------------------------------------------------- documents
+
+const DOCUMENT_COLUMNS = "id, trip_id, person_id, booking_id, kind, label, kept_where, status";
+
+function toDocument(row: Record<string, unknown>): TravelDocument {
+  return {
+    id: row.id as string,
+    tripId: row.trip_id as string,
+    personId: (row.person_id as string | null) ?? null,
+    bookingId: (row.booking_id as string | null) ?? null,
+    kind: row.kind as DocumentKind,
+    label: row.label as string,
+    keptWhere: (row.kept_where as string | null) ?? null,
+    status: row.status as TravelDocument["status"],
+  };
+}
+
+export async function loadDocuments(tripId: string): Promise<Result<TravelDocument[]>> {
+  const { data, error } = await supabase
+    .from("trv_documents")
+    .select(DOCUMENT_COLUMNS)
+    .eq("trip_id", tripId)
+    .neq("status", "archived")
+    .order("created_at", { ascending: true });
+
+  if (error) return err({ kind: "network", message: error.message });
+  return ok(((data ?? []) as unknown as Record<string, unknown>[]).map(toDocument));
+}
+
+export interface NewDocument {
+  personId?: string | null;
+  bookingId?: string | null;
+  kind: DocumentKind;
+  label: string;
+  keptWhere?: string | null;
+}
+
+export async function createDocument(
+  productInstanceId: string,
+  tripId: string,
+  draft: NewDocument
+): Promise<Result<TravelDocument>> {
+  const user = await currentUserId();
+  if (!user.ok) return user;
+
+  const { data, error } = await supabase
+    .from("trv_documents")
+    .insert({
+      product_instance_id: productInstanceId,
+      user_id: user.data,
+      trip_id: tripId,
+      person_id: draft.personId ?? null,
+      booking_id: draft.bookingId ?? null,
+      kind: draft.kind,
+      label: draft.label.trim(),
+      kept_where: draft.keptWhere?.trim() || null,
+    })
+    .select(DOCUMENT_COLUMNS)
+    .single();
+
+  if (error || !data) return err({ kind: "network", message: error?.message ?? "Could not add that document." });
+  return ok(toDocument(data as unknown as Record<string, unknown>));
+}
+
+// ------------------------------------------------------------ preparation
+
+const PREPARATION_COLUMNS = "id, trip_id, category, title, completion_status, notes, status";
+
+function toPreparationItem(row: Record<string, unknown>): PreparationItem {
+  return {
+    id: row.id as string,
+    tripId: row.trip_id as string,
+    category: row.category as PreparationCategory,
+    title: row.title as string,
+    completionStatus: row.completion_status as PreparationCompletionStatus,
+    notes: (row.notes as string | null) ?? null,
+    status: row.status as PreparationItem["status"],
+  };
+}
+
+export async function loadPreparation(tripId: string): Promise<Result<PreparationItem[]>> {
+  const { data, error } = await supabase
+    .from("trv_preparation")
+    .select(PREPARATION_COLUMNS)
+    .eq("trip_id", tripId)
+    .neq("status", "archived")
+    .order("created_at", { ascending: true });
+
+  if (error) return err({ kind: "network", message: error.message });
+  return ok(((data ?? []) as unknown as Record<string, unknown>[]).map(toPreparationItem));
+}
+
+export interface NewPreparationItem {
+  category: PreparationCategory;
+  title: string;
+  notes?: string | null;
+}
+
+export async function createPreparationItem(
+  productInstanceId: string,
+  tripId: string,
+  draft: NewPreparationItem
+): Promise<Result<PreparationItem>> {
+  const user = await currentUserId();
+  if (!user.ok) return user;
+
+  const { data, error } = await supabase
+    .from("trv_preparation")
+    .insert({
+      product_instance_id: productInstanceId,
+      user_id: user.data,
+      trip_id: tripId,
+      category: draft.category,
+      title: draft.title.trim(),
+      notes: draft.notes?.trim() || null,
+    })
+    .select(PREPARATION_COLUMNS)
+    .single();
+
+  if (error || !data) return err({ kind: "network", message: error?.message ?? "Could not add that item." });
+  return ok(toPreparationItem(data as unknown as Record<string, unknown>));
+}
+
+/** Toggles a checklist item between open and done. The only edit this table needs. */
+export async function setPreparationCompletion(
+  itemId: string,
+  completionStatus: PreparationCompletionStatus
+): Promise<Result<PreparationItem>> {
+  const { data, error } = await supabase
+    .from("trv_preparation")
+    .update({ completion_status: completionStatus, updated_at: new Date().toISOString() })
+    .eq("id", itemId)
+    .select(PREPARATION_COLUMNS)
+    .single();
+
+  if (error || !data) return err({ kind: "network", message: error?.message ?? "Could not save that." });
+  return ok(toPreparationItem(data as unknown as Record<string, unknown>));
 }
 
 // ------------------------------------------------------------ companion

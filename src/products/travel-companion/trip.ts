@@ -65,6 +65,37 @@ export type BookingKind =
 
 export type BookingStatus = "confirmed" | "waiting" | "cancelled";
 
+export type DocumentKind = "passport" | "visa" | "insurance" | "confirmation" | "ticket" | "agreement" | "other";
+
+/**
+ * A registry entry, never a file. Records what exists and where it is
+ * kept, not the document itself, see the Phase 0 proposal §9.
+ */
+export interface TravelDocument {
+  id: string;
+  tripId: string;
+  personId: string | null;
+  bookingId: string | null;
+  kind: DocumentKind;
+  label: string;
+  keptWhere: string | null;
+  status: "active" | "archived";
+}
+
+export type PreparationCategory = "documents" | "packing" | "transport" | "money" | "home" | "people" | "bookings";
+export type PreparationCompletionStatus = "open" | "done";
+
+/** A user-defined checklist entry. No seeded content, ever. */
+export interface PreparationItem {
+  id: string;
+  tripId: string;
+  category: PreparationCategory;
+  title: string;
+  completionStatus: PreparationCompletionStatus;
+  notes: string | null;
+  status: "active" | "archived";
+}
+
 export interface Booking {
   id: string;
   tripId: string;
