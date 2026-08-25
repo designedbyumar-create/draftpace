@@ -1,13 +1,10 @@
 import PlaceholderModule from "../../personal-life-affairs-companion/components/PlaceholderModule";
-import { Compass, Globe, User, Clock, Settings } from "@/design-system/Icon";
+import { Compass, Globe, User, Settings } from "@/design-system/Icon";
 
 /**
- * Phase 1 scaffolding only. Every destination this product declares is
- * reachable so the shell, theme and navigation can be verified live,
- * same "empty module stubs wired to every destination" step every prior
- * product's own Phase 1 or Phase 0 used, but nothing here is a real
- * feature. Today, Trip and People become real in Phase 2; Record and
- * the Companion follow in later phases per the approved proposal.
+ * Phase 1 scaffolding only, for whatever destinations are still not
+ * real yet. Today, Trip, People and Record are real as of Phase 6;
+ * Settings is the one destination still honestly not-built-yet.
  */
 
 export function TodayPlaceholder() {
@@ -36,16 +33,6 @@ export function PeoplePlaceholder() {
       icon={User}
       title="Nobody added yet"
       description="Travellers appear here once a trip exists, each with their own documents and bookings."
-    />
-  );
-}
-
-export function RecordPlaceholder() {
-  return (
-    <PlaceholderModule
-      icon={Clock}
-      title="Nothing recorded yet"
-      description="What happened on the trip, and what's worth knowing next time, appears here as it happens."
     />
   );
 }

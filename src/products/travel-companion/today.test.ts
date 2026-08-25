@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { deriveToday, whereWeAre } from "./today";
-import type { Booking, Place } from "./trip";
+import type { Booking, Place, Thread } from "./trip";
 
 const NOW = new Date("2026-10-12T08:00:00Z");
 
@@ -86,6 +86,52 @@ describe("deriveToday", () => {
     const early = booking({ id: "early", startsAt: "2026-10-12T09:05:00Z", title: "Shinkansen" });
     const view = deriveToday([late, early], NOW);
     expect(view.now.map((l) => l.booking.id)).toEqual(["early", "late"]);
+  });
+
+  const thread = (over: Partial<Thread> = {}): Thread => ({
+    id: "th1",
+    tripId: "t1",
+    bookingId: null,
+    personId: null,
+    title: "Waiting on the hotel manager",
+    whoIsInvolved: null,
+    expectedBy: null,
+    status: "open",
+    createdAt: "2026-10-12T08:00:00Z",
+    resolvedAt: null,
+    ...over,
+  });
+
+  describe("waiting", () => {
+    it("always shows an open thread with no booking behind it", () => {
+      const view = deriveToday([], NOW, [thread()]);
+      expect(view.waiting).toHaveLength(1);
+      expect(view.waiting[0].line).toBe("Waiting on the hotel manager");
+      expect(view.quiet).toBe(false);
+    });
+
+    it("never shows a resolved thread", () => {
+      const view = deriveToday([], NOW, [thread({ status: "resolved" })]);
+      expect(view.waiting).toHaveLength(0);
+    });
+
+    it("shows a booking-linked thread while the booking is within the horizon", () => {
+      const soon = booking({ id: "b1", startsAt: "2026-10-12T14:00:00Z" });
+      const view = deriveToday([soon], NOW, [thread({ bookingId: "b1" })]);
+      expect(view.waiting).toHaveLength(1);
+    });
+
+    it("stops showing a booking-linked thread once the booking falls out of the horizon", () => {
+      const farOff = booking({ id: "b1", startsAt: "2026-10-20T14:00:00Z" });
+      const view = deriveToday([farOff], NOW, [thread({ bookingId: "b1" })]);
+      expect(view.waiting).toHaveLength(0);
+    });
+
+    it("hides a booking-linked thread when the booking has no stored time to judge a horizon by", () => {
+      const undated = booking({ id: "b1", startsAt: null });
+      const view = deriveToday([undated], NOW, [thread({ bookingId: "b1" })]);
+      expect(view.waiting).toHaveLength(0);
+    });
   });
 });
 

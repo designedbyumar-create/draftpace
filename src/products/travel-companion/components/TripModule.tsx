@@ -15,9 +15,22 @@ import RecordChangeForm from "./RecordChangeForm";
 import CompanionRun from "./CompanionRun";
 import { findResumableRun, beginRun } from "./useResumableRun";
 import { playbooksForBooking, PLAYBOOK_BY_KEY } from "../playbooks";
-import { setPreparationCompletion, type RunRecord } from "../domain/travelData";
+import { setPreparationCompletion, createPreparationItem, loadRecordEntriesForPlaceNames, type RunRecord } from "../domain/travelData";
 import type { Playbook } from "@/components/product-shell/companion/steps";
 import PlaybookChooser from "@/components/product-shell/companion/PlaybookChooser";
+import type { Place, PreparationCategory, RecordCategory, RecordEntry } from "../trip";
+
+/**
+ * Where a past trip's own record entry lands on this trip's preparation
+ * list. Not load-bearing: whichever bucket it starts in, moving it is
+ * one edit, and nothing about the match itself depends on getting this
+ * right.
+ */
+function toPreparationCategory(category: RecordCategory): PreparationCategory {
+  if (category === "transport") return "transport";
+  if (category === "reservation") return "bookings";
+  return "packing";
+}
 
 const SOMETHING_CHANGED = PLAYBOOK_BY_KEY["something-changed"];
 
@@ -52,6 +65,7 @@ export default function TripModule() {
     participants,
     documents,
     preparation,
+    threads,
     addTrip,
     addPlace,
     addBooking,
@@ -60,6 +74,7 @@ export default function TripModule() {
     addDocument,
     addPreparationItem,
     replacePreparationItem,
+    upsertThread,
   } = useTravelCompanion();
   const [settingUp, setSettingUp] = useState(false);
   const [addingPlace, setAddingPlace] = useState(false);
@@ -70,6 +85,8 @@ export default function TripModule() {
   const [choosingFor, setChoosingFor] = useState<Booking | null>(null);
   const [recordingChangeFor, setRecordingChangeFor] = useState<Booking | null>(null);
   const [impact, setImpact] = useState<{ source: Booking; affected: Booking[] } | null>(null);
+  const [placeMatches, setPlaceMatches] = useState<{ place: Place; entries: RecordEntry[] } | null>(null);
+  const [addedFromMatch, setAddedFromMatch] = useState<Set<string>>(new Set());
   const [opening, setOpening] = useState(false);
   const [startError, setStartError] = useState<string | null>(null);
 
@@ -161,6 +178,34 @@ export default function TripModule() {
     if (result.ok) replacePreparationItem(result.data);
   }
 
+  /**
+   * Proposal §16's future-trip surfacing: deterministic, case-insensitive
+   * matching only, never fuzzy, never a model call. Runs once a
+   * destination is added; offers what a past trip recorded about the
+   * same place, and adds nothing until the traveller explicitly clicks.
+   */
+  async function onPlaceAdded(place: Place) {
+    addPlace(place);
+    setAddingPlace(false);
+    if (!instanceId || !currentTrip) return;
+    const matched = await loadRecordEntriesForPlaceNames(instanceId, currentTrip.id, [place.name]);
+    if (matched.ok && matched.data.length > 0) {
+      setPlaceMatches({ place, entries: matched.data });
+    }
+  }
+
+  async function addMatchToPreparation(entry: RecordEntry) {
+    if (!instanceId || !currentTrip) return;
+    const result = await createPreparationItem(instanceId, currentTrip.id, {
+      category: toPreparationCategory(entry.category),
+      title: entry.body,
+    });
+    if (result.ok) {
+      addPreparationItem(result.data);
+      setAddedFromMatch((current) => new Set(current).add(entry.id));
+    }
+  }
+
   if (running && instanceId) {
     return (
       <CompanionRun
@@ -168,8 +213,10 @@ export default function TripModule() {
         playbook={running.playbook}
         booking={running.booking}
         run={running.run}
+        existingThreads={threads}
         onFinished={(result) => {
           if (result.booking) replaceBooking(result.booking);
+          if (result.thread) upsertThread(result.thread);
           setRunning(null);
         }}
         onLeft={() => setRunning(null)}
@@ -219,10 +266,7 @@ export default function TripModule() {
               instanceId={instanceId}
               tripId={currentTrip.id}
               nextOrdinal={places.length}
-              onAdded={(place) => {
-                addPlace(place);
-                setAddingPlace(false);
-              }}
+              onAdded={onPlaceAdded}
               onCancel={() => setAddingPlace(false)}
             />
           </div>
@@ -241,6 +285,32 @@ export default function TripModule() {
               </li>
             ))}
           </ul>
+        )}
+        {placeMatches && (
+          <div className="mt-3 rounded-lg border border-[var(--border)] bg-[var(--background)] p-3.5">
+            <p className="text-[12px] font-semibold text-[var(--text)]">From a past trip to {placeMatches.place.name}:</p>
+            <ul className="mt-2 flex flex-col gap-2">
+              {placeMatches.entries.map((entry) => (
+                <li key={entry.id} className="flex flex-wrap items-center justify-between gap-2">
+                  <span className="text-[13px] text-[var(--text)]">{entry.body}</span>
+                  {addedFromMatch.has(entry.id) ? (
+                    <span className="text-[12px] text-[var(--faint)]">Added.</span>
+                  ) : (
+                    <Button size="sm" variant="ghost" onClick={() => addMatchToPreparation(entry)}>
+                      Add to preparation
+                    </Button>
+                  )}
+                </li>
+              ))}
+            </ul>
+            <button
+              type="button"
+              onClick={() => setPlaceMatches(null)}
+              className="mt-2 text-[12px] font-semibold text-[var(--faint)] hover:underline"
+            >
+              Dismiss
+            </button>
+          </div>
         )}
       </section>
 

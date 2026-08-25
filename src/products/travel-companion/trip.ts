@@ -96,6 +96,39 @@ export interface PreparationItem {
   status: "active" | "archived";
 }
 
+export type ThreadStatus = "open" | "resolved";
+
+/**
+ * The thing actually being waited on ("Hotel has not confirmed late
+ * arrival"), not a fourth booking status. See the migration's own
+ * header for why this is a separate table.
+ */
+export interface Thread {
+  id: string;
+  tripId: string;
+  bookingId: string | null;
+  personId: string | null;
+  title: string;
+  whoIsInvolved: string | null;
+  /** User-chosen only, never invented. */
+  expectedBy: string | null;
+  status: ThreadStatus;
+  createdAt: string;
+  resolvedAt: string | null;
+}
+
+export type RecordCategory = "destination" | "stay" | "transport" | "reservation" | "note" | "lesson";
+
+/** A dated, append-only line: a manual note, or a resolved thread's closing snapshot. */
+export interface RecordEntry {
+  id: string;
+  tripId: string;
+  category: RecordCategory;
+  placeName: string | null;
+  body: string;
+  createdAt: string;
+}
+
 export interface Booking {
   id: string;
   tripId: string;

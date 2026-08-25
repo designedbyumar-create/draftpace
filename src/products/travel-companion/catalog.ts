@@ -3,13 +3,12 @@ import { travelCompanionDefinition } from "./definition";
 import TodayModule from "./components/TodayModule";
 import TripModule from "./components/TripModule";
 import PeopleModule from "./components/PeopleModule";
-import { RecordPlaceholder, SettingsPlaceholder } from "./components/PlaceholderScreens";
+import RecordModule from "./components/RecordModule";
+import { SettingsPlaceholder } from "./components/PlaceholderScreens";
 
 /**
- * Phase 2: Today, Trip and People are real. Record and the Companion
- * still render an honest not-built-yet state, per the approved phase
- * plan (Record is Phase 6, the Companion is Phase 3-4). No
- * printableAssets: the PDF is Phase 7.
+ * Phase 6: Record is real. Settings still renders an honest
+ * not-built-yet state. No printableAssets: the PDF is Phase 7.
  */
 export const travelCompanionCatalogEntry: ProductCatalogEntry = {
   definition: travelCompanionDefinition,
@@ -17,7 +16,7 @@ export const travelCompanionCatalogEntry: ProductCatalogEntry = {
     "travel-companion.workspace": TodayModule,
     "travel-companion.trip": TripModule,
     "travel-companion.people": PeopleModule,
-    "travel-companion.record": RecordPlaceholder,
+    "travel-companion.record": RecordModule,
     "travel-companion.settings": SettingsPlaceholder,
   },
 };

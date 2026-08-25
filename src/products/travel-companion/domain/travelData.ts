@@ -11,6 +11,10 @@ import type {
   PreparationCategory,
   PreparationCompletionStatus,
   PreparationItem,
+  RecordCategory,
+  RecordEntry,
+  Thread,
+  ThreadStatus,
   Trip,
   TripStatus,
   TravelDocument,
@@ -692,6 +696,233 @@ export async function setPreparationCompletion(
   return ok(toPreparationItem(data as unknown as Record<string, unknown>));
 }
 
+// ---------------------------------------------------------------- threads
+
+const THREAD_COLUMNS = "id, trip_id, booking_id, person_id, title, who_is_involved, expected_by, status, created_at, resolved_at";
+
+function toThread(row: Record<string, unknown>): Thread {
+  return {
+    id: row.id as string,
+    tripId: row.trip_id as string,
+    bookingId: (row.booking_id as string | null) ?? null,
+    personId: (row.person_id as string | null) ?? null,
+    title: row.title as string,
+    whoIsInvolved: (row.who_is_involved as string | null) ?? null,
+    expectedBy: (row.expected_by as string | null) ?? null,
+    status: row.status as ThreadStatus,
+    createdAt: row.created_at as string,
+    resolvedAt: (row.resolved_at as string | null) ?? null,
+  };
+}
+
+export interface ResolvedThreadLine {
+  id: string;
+  threadId: string;
+  threadTitle: string;
+  line: string;
+  occurredAt: string;
+}
+
+/**
+ * The Record screen's own read of proposal §16: "resolved threads land
+ * here automatically (their final trv_thread_events line)". Reads the
+ * actual closing event, not a re-derived summary, so what shows here is
+ * exactly the snapshot written the day the thread closed.
+ */
+export async function loadResolvedThreadEvents(tripId: string): Promise<Result<ResolvedThreadLine[]>> {
+  const { data, error } = await supabase
+    .from("trv_thread_events")
+    .select("id, thread_id, line, occurred_at, trv_threads!inner(trip_id, title, status)")
+    .eq("trv_threads.trip_id", tripId)
+    .eq("trv_threads.status", "resolved")
+    .like("line", "Resolved:%")
+    .order("occurred_at", { ascending: false });
+
+  if (error) return err({ kind: "network", message: error.message });
+  return ok(
+    ((data ?? []) as unknown as Record<string, unknown>[]).map((row) => {
+      const thread = row.trv_threads as unknown as { title: string };
+      return {
+        id: row.id as string,
+        threadId: row.thread_id as string,
+        threadTitle: thread.title,
+        line: row.line as string,
+        occurredAt: row.occurred_at as string,
+      };
+    })
+  );
+}
+
+export async function loadThreads(tripId: string): Promise<Result<Thread[]>> {
+  const { data, error } = await supabase
+    .from("trv_threads")
+    .select(THREAD_COLUMNS)
+    .eq("trip_id", tripId)
+    .order("created_at", { ascending: true });
+
+  if (error) return err({ kind: "network", message: error.message });
+  return ok(((data ?? []) as unknown as Record<string, unknown>[]).map(toThread));
+}
+
+async function addThreadEvent(
+  productInstanceId: string,
+  threadId: string,
+  runId: string | null,
+  line: string,
+  outcome: OutcomeKind | null
+): Promise<void> {
+  const user = await currentUserId();
+  if (!user.ok) return;
+  await supabase.from("trv_thread_events").insert({
+    product_instance_id: productInstanceId,
+    user_id: user.data,
+    thread_id: threadId,
+    run_id: runId,
+    line,
+    outcome,
+  });
+}
+
+/** Opens a thread and writes its first append-only event in the same call. */
+async function createThread(
+  productInstanceId: string,
+  tripId: string,
+  bookingId: string | null,
+  title: string,
+  runId: string | null,
+  outcome: OutcomeKind | null
+): Promise<Result<Thread>> {
+  const user = await currentUserId();
+  if (!user.ok) return user;
+
+  const { data, error } = await supabase
+    .from("trv_threads")
+    .insert({
+      product_instance_id: productInstanceId,
+      user_id: user.data,
+      trip_id: tripId,
+      booking_id: bookingId,
+      title,
+    })
+    .select(THREAD_COLUMNS)
+    .single();
+
+  if (error || !data) return err({ kind: "network", message: error?.message ?? "Could not open that thread." });
+  const thread = toThread(data as unknown as Record<string, unknown>);
+  await addThreadEvent(productInstanceId, thread.id, runId, `Opened: ${title}`, outcome);
+  return ok(thread);
+}
+
+/** Resolves a thread and writes its closing event in the same call. Never deletes the thread. */
+async function resolveThread(
+  productInstanceId: string,
+  thread: Thread,
+  closingLine: string,
+  runId: string | null,
+  outcome: OutcomeKind | null
+): Promise<Result<Thread>> {
+  const now = new Date().toISOString();
+  const { data, error } = await supabase
+    .from("trv_threads")
+    .update({ status: "resolved", resolved_at: now, updated_at: now })
+    .eq("id", thread.id)
+    .select(THREAD_COLUMNS)
+    .single();
+
+  if (error || !data) return err({ kind: "network", message: error?.message ?? "Could not resolve that." });
+  const resolved = toThread(data as unknown as Record<string, unknown>);
+  await addThreadEvent(productInstanceId, resolved.id, runId, `Resolved: ${closingLine}`, outcome);
+  return ok(resolved);
+}
+
+// ---------------------------------------------------------- record entries
+
+const RECORD_ENTRY_COLUMNS = "id, trip_id, category, place_name, body, created_at";
+
+function toRecordEntry(row: Record<string, unknown>): RecordEntry {
+  return {
+    id: row.id as string,
+    tripId: row.trip_id as string,
+    category: row.category as RecordCategory,
+    placeName: (row.place_name as string | null) ?? null,
+    body: row.body as string,
+    createdAt: row.created_at as string,
+  };
+}
+
+export async function loadRecordEntries(tripId: string): Promise<Result<RecordEntry[]>> {
+  const { data, error } = await supabase
+    .from("trv_record_entries")
+    .select(RECORD_ENTRY_COLUMNS)
+    .eq("trip_id", tripId)
+    .order("created_at", { ascending: false });
+
+  if (error) return err({ kind: "network", message: error.message });
+  return ok(((data ?? []) as unknown as Record<string, unknown>[]).map(toRecordEntry));
+}
+
+/**
+ * Deterministic, case-insensitive matching only, per proposal §16: past
+ * trips' recorded place names that match one of this trip's own
+ * destinations, so they can be offered (never auto-copied) to this
+ * trip's preparation list.
+ */
+export async function loadRecordEntriesForPlaceNames(
+  productInstanceId: string,
+  currentTripId: string,
+  placeNames: string[]
+): Promise<Result<RecordEntry[]>> {
+  if (placeNames.length === 0) return ok([]);
+  const { data, error } = await supabase
+    .from("trv_record_entries")
+    .select(RECORD_ENTRY_COLUMNS)
+    .eq("product_instance_id", productInstanceId)
+    .neq("trip_id", currentTripId)
+    .not("place_name", "is", null)
+    .order("created_at", { ascending: false });
+
+  if (error) return err({ kind: "network", message: error.message });
+  const wanted = new Set(placeNames.map((name) => name.trim().toLowerCase()));
+  const rows = ((data ?? []) as unknown as Record<string, unknown>[]).map(toRecordEntry);
+  return ok(
+    rows.filter((entry) => {
+      const name = entry.placeName?.toLowerCase() ?? "";
+      return Array.from(wanted).some((wantedName) => name.includes(wantedName) || wantedName.includes(name));
+    })
+  );
+}
+
+export interface NewRecordEntry {
+  category: RecordCategory;
+  placeName?: string | null;
+  body: string;
+}
+
+export async function createRecordEntry(
+  productInstanceId: string,
+  tripId: string,
+  draft: NewRecordEntry
+): Promise<Result<RecordEntry>> {
+  const user = await currentUserId();
+  if (!user.ok) return user;
+
+  const { data, error } = await supabase
+    .from("trv_record_entries")
+    .insert({
+      product_instance_id: productInstanceId,
+      user_id: user.data,
+      trip_id: tripId,
+      category: draft.category,
+      place_name: draft.placeName?.trim() || null,
+      body: draft.body.trim(),
+    })
+    .select(RECORD_ENTRY_COLUMNS)
+    .single();
+
+  if (error || !data) return err({ kind: "network", message: error?.message ?? "Could not save that." });
+  return ok(toRecordEntry(data as unknown as Record<string, unknown>));
+}
+
 // ------------------------------------------------------------ companion
 
 export interface RunRecord {
@@ -816,17 +1047,49 @@ export async function saveAnswer(
 
 export interface FinishResult {
   booking: Booking | null;
+  thread: Thread | null;
 }
 
+/**
+ * Applies an outcome's patch to the booking, then its thread
+ * instruction, per proposal §12's "outcome → trip update": (a) resolve
+ * an open thread, (b) open a new one, (c) update the booking, or (d) do
+ * nothing. `existingThreads` only needs to include this booking's own
+ * threads; the caller (finishRun/recordOutcome) passes the trip's full
+ * list, and this function filters to the open one that concerns this
+ * booking, if any.
+ */
 async function applyOutcomeToBooking(
+  productInstanceId: string,
   booking: Booking,
   outcome: OutcomeKind,
   detail: string | null,
-  now: Date
-): Promise<Result<Booking>> {
+  now: Date,
+  runId: string | null,
+  existingThreads: Thread[]
+): Promise<Result<{ booking: Booking; thread: Thread | null }>> {
   const effect = applyOutcome(booking, { outcome, detail, now });
-  if (Object.keys(effect.patch).length === 0) return ok(booking);
-  return updateBooking(booking.id, effect.patch, [booking]);
+
+  let updatedBooking = booking;
+  if (Object.keys(effect.patch).length > 0) {
+    const updated = await updateBooking(booking.id, effect.patch, [booking]);
+    if (!updated.ok) return updated;
+    updatedBooking = updated.data;
+  }
+
+  let thread: Thread | null = null;
+  if (effect.thread?.kind === "open") {
+    const opened = await createThread(productInstanceId, booking.tripId, booking.id, effect.thread.title, runId, outcome);
+    if (opened.ok) thread = opened.data;
+  } else if (effect.thread?.kind === "resolve") {
+    const open = existingThreads.find((t) => t.bookingId === booking.id && t.status === "open");
+    if (open) {
+      const resolved = await resolveThread(productInstanceId, open, effect.thread.closingLine, runId, outcome);
+      if (resolved.ok) thread = resolved.data;
+    }
+  }
+
+  return ok({ booking: updatedBooking, thread });
 }
 
 /**
@@ -841,7 +1104,8 @@ export async function finishRun(
   run: RunRecord,
   booking: Booking | null,
   outcome: OutcomeKind,
-  detail: string | null
+  detail: string | null,
+  existingThreads: Thread[]
 ): Promise<Result<FinishResult>> {
   const now = new Date();
 
@@ -851,11 +1115,11 @@ export async function finishRun(
     .eq("id", run.id);
   if (closed.error) return err({ kind: "network", message: closed.error.message });
 
-  if (!booking) return ok({ booking: null });
+  if (!booking) return ok({ booking: null, thread: null });
 
-  const updated = await applyOutcomeToBooking(booking, outcome, detail, now);
+  const updated = await applyOutcomeToBooking(productInstanceId, booking, outcome, detail, now, run.id, existingThreads);
   if (!updated.ok) return updated;
-  return ok({ booking: updated.data });
+  return ok(updated.data);
 }
 
 /**
@@ -863,8 +1127,14 @@ export async function finishRun(
  * it, for a quick action on the Trip screen that does not need eight
  * questions first.
  */
-export async function recordOutcome(booking: Booking, outcome: OutcomeKind, detail: string | null): Promise<Result<Booking>> {
-  return applyOutcomeToBooking(booking, outcome, detail, new Date());
+export async function recordOutcome(
+  productInstanceId: string,
+  booking: Booking,
+  outcome: OutcomeKind,
+  detail: string | null,
+  existingThreads: Thread[]
+): Promise<Result<{ booking: Booking; thread: Thread | null }>> {
+  return applyOutcomeToBooking(productInstanceId, booking, outcome, detail, new Date(), null, existingThreads);
 }
 
 /** Leaving a run part way through is not a failure and is not recorded as one. */

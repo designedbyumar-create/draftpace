@@ -74,4 +74,29 @@ describe("applyOutcome", () => {
       expect(effect.patch).toEqual({});
     }
   });
+
+  describe("the thread instruction", () => {
+    it("opens a thread when waiting, titled with who or what is being waited on", () => {
+      const effect = applyOutcome(booking(), { outcome: "waiting", detail: "the hotel manager", now: NOW });
+      expect(effect.thread).toEqual({ kind: "open", title: "Waiting on the hotel manager" });
+    });
+
+    it("still opens a thread when waiting with no detail given, never leaving it untitled", () => {
+      const effect = applyOutcome(booking(), { outcome: "waiting", detail: null, now: NOW });
+      expect(effect.thread?.kind).toBe("open");
+      expect((effect.thread as { title: string }).title.length).toBeGreaterThan(0);
+    });
+
+    it("instructs a resolve when resolved, for the domain layer to act on only if a thread is actually open", () => {
+      const effect = applyOutcome(booking(), { outcome: "resolved", detail: null, now: NOW });
+      expect(effect.thread).toEqual({ kind: "resolve", closingLine: "Sorted." });
+    });
+
+    it("never touches a thread for progress, next-step, not-yet, or other", () => {
+      for (const outcome of ["progress", "next-step", "not-yet", "other"] as const) {
+        const effect = applyOutcome(booking(), { outcome, detail: "some detail", now: NOW });
+        expect(effect.thread, outcome).toBeNull();
+      }
+    });
+  });
 });

@@ -23,7 +23,7 @@ import { useState } from "react";
  * nothing stored says so and stops.
  */
 export default function TodayModule() {
-  const { status, errorMessage, instanceId, trips, currentTrip, places, bookings, addTrip } = useTravelCompanion();
+  const { status, errorMessage, instanceId, trips, currentTrip, places, bookings, threads, addTrip, upsertThread } = useTravelCompanion();
   const [settingUp, setSettingUp] = useState(false);
   const [starting, setStarting] = useState(false);
   const [running, setRunning] = useState<{ playbook: Playbook; run: RunRecord; directTitle: string | null } | null>(null);
@@ -95,8 +95,10 @@ export default function TodayModule() {
         playbook={running.playbook}
         booking={null}
         run={running.run}
+        existingThreads={threads}
         directTitle={running.directTitle}
-        onFinished={() => {
+        onFinished={(result) => {
+          if (result.thread) upsertThread(result.thread);
           setRunning(null);
           setClosingNote("Recorded.");
         }}
@@ -114,7 +116,7 @@ export default function TodayModule() {
   }
 
   const now = new Date();
-  const view = deriveToday(bookings, now);
+  const view = deriveToday(bookings, now, threads);
   const where = whereWeAre(places, now);
 
   return (
@@ -173,6 +175,19 @@ export default function TodayModule() {
           <div className="mt-2 flex flex-col gap-1.5">
             {view.later.map((row) => (
               <p key={row.booking.id} className="text-[13px] leading-6 text-[var(--muted)]">
+                {row.line}
+              </p>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {view.waiting.length > 0 && (
+        <section>
+          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">Waiting</p>
+          <div className="mt-2 flex flex-col gap-1.5">
+            {view.waiting.map((row) => (
+              <p key={row.thread.id} className="text-[13px] leading-6 text-[var(--muted)]">
                 {row.line}
               </p>
             ))}

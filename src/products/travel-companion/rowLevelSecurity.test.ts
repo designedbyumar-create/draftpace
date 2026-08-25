@@ -35,7 +35,7 @@ const policies = [...sql.matchAll(/create policy\s+"([^"]+)"\s*\n?on public\.(tr
 }));
 
 describe("Travel Companion row level security", () => {
-  it("creates the five phase 1 tables, the two Companion run tables, and documents/preparation", () => {
+  it("creates the five phase 1 tables, the two Companion run tables, documents/preparation, threads, and record entries", () => {
     expect(tables.sort()).toEqual(
       [
         "trv_booking_people",
@@ -47,6 +47,9 @@ describe("Travel Companion row level security", () => {
         "trv_run_answers",
         "trv_documents",
         "trv_preparation",
+        "trv_threads",
+        "trv_thread_events",
+        "trv_record_entries",
       ].sort()
     );
   });
@@ -103,6 +106,23 @@ describe("Travel Companion row level security", () => {
   it("grants no delete policy anywhere, so nothing can be destroyed from a client", () => {
     for (const policy of policies) {
       expect(policy.body, `"${policy.name}" grants delete`).not.toMatch(/for delete/);
+    }
+  });
+
+  /**
+   * trv_thread_events and trv_record_entries are append-only, same as
+   * als_item_events: nothing in either is ever wrong in a way that
+   * needs correcting, only ever added to, so they get select and
+   * insert only, no update policy at all, not even one scoped to the
+   * owner.
+   */
+  it("grants no update policy on the two append-only log tables", () => {
+    for (const table of ["trv_thread_events", "trv_record_entries"]) {
+      const tablePolicies = policies.filter((p) => p.table === table);
+      expect(tablePolicies.length, `${table} has no policies at all`).toBeGreaterThan(0);
+      for (const policy of tablePolicies) {
+        expect(policy.body, `"${policy.name}" grants update on an append-only table`).not.toMatch(/for update/);
+      }
     }
   });
 

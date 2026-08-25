@@ -1,4 +1,4 @@
-import { activeBookings, byStartTime, type Booking, type Place } from "./trip";
+import { activeBookings, byStartTime, type Booking, type Place, type Thread } from "./trip";
 
 /**
  * The current operational state, derived, never stored.
@@ -6,13 +6,6 @@ import { activeBookings, byStartTime, type Booking, type Place } from "./trip";
  * Same discipline as Alongside's deriveAttention: every line traces to
  * a stored column, nothing is invented, and a day with nothing in it
  * says so plainly rather than being filled with generic travel advice.
- *
- * WHAT IS DELIBERATELY MISSING FROM THIS FILE
- *
- * A "Waiting" section, for open threads awaiting a reply. trv_threads
- * does not exist yet (a later phase); when it does, that section is
- * added the same way this one is used, by reading real rows, never by
- * inventing a placeholder message in the meantime.
  */
 
 export type TodaySectionKind = "now" | "important" | "later";
@@ -24,10 +17,17 @@ export interface TodayLine {
   line: string;
 }
 
+export interface WaitingLine {
+  thread: Thread;
+  /** Whatever the person recorded, stated plainly. Never a guess at status. */
+  line: string;
+}
+
 export interface TodayView {
   now: TodayLine[];
   important: TodayLine[];
   later: TodayLine[];
+  waiting: WaitingLine[];
   quiet: boolean;
 }
 
@@ -81,11 +81,42 @@ function describeBooking(booking: Booking): string {
   return time ? `${booking.title}, ${time}.` : booking.title;
 }
 
-export function deriveToday(bookings: Booking[], now: Date): TodayView {
+/**
+ * Open threads worth showing right now.
+ *
+ * A thread with no booking behind it (opened from a general situation:
+ * contact someone, reorganize the trip, something went wrong) has no
+ * "happening" to bound it by, so it is always shown while open. A
+ * thread linked to a booking is shown only while that booking itself
+ * falls in the same now/tomorrow/day-after horizon the rest of Today
+ * uses, per the proposal's own "linked to a booking happening within
+ * the horizon"; once that booking's own time has passed out of the
+ * horizon, the thread stops surfacing here even if still open, the same
+ * way an old booking stops surfacing in Later.
+ */
+function deriveWaiting(threads: Thread[], bookings: Booking[], now: Date): WaitingLine[] {
+  const byId = new Map(bookings.map((booking) => [booking.id, booking]));
+  const tomorrow = addDays(now, 1);
+  const dayAfter = addDays(now, 2);
+
+  return threads
+    .filter((thread) => thread.status === "open")
+    .filter((thread) => {
+      if (!thread.bookingId) return true;
+      const booking = byId.get(thread.bookingId);
+      if (!booking || !booking.startsAt) return false;
+      const startsAt = new Date(booking.startsAt);
+      return sameDay(startsAt, now) || sameDay(startsAt, tomorrow) || sameDay(startsAt, dayAfter);
+    })
+    .map((thread) => ({ thread, line: thread.title }));
+}
+
+export function deriveToday(bookings: Booking[], now: Date, threads: Thread[] = []): TodayView {
   const active = activeBookings(bookings).filter((booking) => booking.startsAt);
   const today: TodayLine[] = [];
   const important: TodayLine[] = [];
   const later: TodayLine[] = [];
+  const waiting = deriveWaiting(threads, bookings, now);
 
   const tomorrow = addDays(now, 1);
   const dayAfter = addDays(now, 2);
@@ -113,7 +144,8 @@ export function deriveToday(bookings: Booking[], now: Date): TodayView {
     now: today,
     important,
     later,
-    quiet: today.length === 0 && important.length === 0 && later.length === 0,
+    waiting,
+    quiet: today.length === 0 && important.length === 0 && later.length === 0 && waiting.length === 0,
   };
 }
 
