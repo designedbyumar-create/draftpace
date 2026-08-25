@@ -259,3 +259,164 @@ describe("the Homeschooling Companion listing", () => {
     }
   });
 });
+
+/**
+ * Alongside's listing. Held to its siblings' rules, plus the two this
+ * product carries on its own: the diagnosis/deficit language it refuses
+ * in the app must not leak into the copy that sells it, and the
+ * productivity-app trappings the product itself refuses (streaks,
+ * scores, attempt counts) must not appear here either, however tempting
+ * a sales page usually finds them.
+ */
+describe("the Alongside listing", () => {
+  const SLUG = "alongside";
+
+  async function listing() {
+    const { registerRealShopProducts, shopRegistry } = await loadFreshRegisterModule();
+    registerRealShopProducts();
+    return shopRegistry.getBySlug(SLUG);
+  }
+
+  it("is published, real, and reaches the Shop index", async () => {
+    const product = await listing();
+    expect(product?.publicationStatus).toBe("published");
+    expect(product?.devFixture).toBe(false);
+    expect(product?.access).toBe("paid");
+
+    const { shopRegistry } = await loadFreshRegisterModule();
+    const { registerRealShopProducts } = await import("./index");
+    registerRealShopProducts();
+    expect(shopRegistry.listPublished().map((p) => p.slug)).toContain(SLUG);
+  });
+
+  it("carries no price yet, so nothing renders a fabricated figure", async () => {
+    const product = await listing();
+    expect(product?.price).toBeUndefined();
+    expect(product?.purchaseAction).toBeUndefined();
+  });
+
+  /**
+   * The Phase 0 naming research is explicit: the name stays
+   * problem-forward and carries no diagnosis, but the term still has to
+   * exist somewhere or the people searching it never find the listing.
+   * It belongs in discoverability surfaces, never in the product name.
+   */
+  it("carries ADHD in the SEO title and the audience, never in the product name", async () => {
+    const product = await listing();
+    expect(product?.title).toBe("Alongside");
+    expect(product?.seo.title.toLowerCase()).toContain("adhd");
+    expect(product?.audience.join(" ").toLowerCase()).toContain("adhd");
+  });
+
+  /**
+   * The same research names the adjacent audience explicitly rather
+   * than making it borrow the ADHD label to qualify. Long covid,
+   * concussion, chronic illness, grief, new parenthood, menopause and
+   * depression all produce the same difficulty holding a plan in your
+   * head.
+   */
+  it("names the adjacent audience, not only ADHD", async () => {
+    const audience = JSON.stringify(await listing()).toLowerCase();
+    for (const term of ["long covid", "concussion", "chronic illness", "grief", "menopause"]) {
+      expect(audience, term).toContain(term);
+    }
+  });
+
+  it("never requires a diagnosis to buy it", async () => {
+    const product = await listing();
+    const faqAnswer = product?.faqs.find((f) => f.question.toLowerCase().includes("diagnosis"))?.answer ?? "";
+    expect(faqAnswer.toLowerCase()).toContain("no");
+  });
+
+  /**
+   * The product itself never asks about a diagnosis, medication, or
+   * symptom. A sales page that quietly promised to track any of them
+   * would be selling a different, unbuilt product.
+   */
+  it("never claims to track a diagnosis, medication, or symptom", async () => {
+    const sold = JSON.stringify({
+      promise: (await listing())?.promise,
+      outcomes: (await listing())?.outcomes,
+      inclusions: (await listing())?.inclusions,
+      expectedInputs: (await listing())?.expectedInputs,
+    }).toLowerCase();
+    for (const word of ["medication", "symptom", "\"diagnos"]) {
+      expect(sold).not.toContain(word);
+    }
+  });
+
+  it("never promises reminders or notifications, which the product does not have yet", async () => {
+    const product = await listing();
+    const sold = JSON.stringify({
+      promise: product?.promise,
+      outcomes: product?.outcomes,
+      inclusions: product?.inclusions,
+      expectedOutputs: product?.expectedOutputs,
+    }).toLowerCase();
+    expect(sold).not.toContain("remind");
+    expect(sold).not.toContain("push notification");
+    expect(JSON.stringify(product?.faqs).toLowerCase()).toContain("not yet, and it does not pretend to");
+  });
+
+  /**
+   * The product's own house rule (no streaks, no completion percentage,
+   * no attempt counter, and "did not get to it" writes nothing) is a
+   * selling point, not an incidental fact, and the copy says so rather
+   * than reaching for the usual productivity-app vocabulary.
+   */
+  /**
+   * These words are allowed, even expected, in the objections and FAQs,
+   * the same way PLA's listing says "not a vault" to disclaim one. What
+   * must never happen is one of them showing up as something sold: the
+   * scoped fields below are what a buyer reads as "what do I get",
+   * separate from the answers to worries they arrive with.
+   */
+  it("never sells streaks, scores, or attempt counts as a feature", async () => {
+    const product = await listing();
+    const sold = JSON.stringify({
+      promise: product?.promise,
+      outcomes: product?.outcomes,
+      inclusions: product?.inclusions,
+      expectedOutputs: product?.expectedOutputs,
+    }).toLowerCase();
+    for (const word of ["streak", "score", "adherence"]) {
+      expect(sold, word).not.toContain(word);
+    }
+    const serialized = JSON.stringify(product).toLowerCase();
+    expect(serialized).toContain("no streak");
+  });
+
+  it("never says the boundary-breaking words: an amount, an account number, or a due date it would store", async () => {
+    const product = await listing();
+    expect(product?.audienceExclusions.join(" ").toLowerCase()).toContain("account number");
+  });
+
+  it("has no fabricated reviews, ratings, or counts anywhere in its content", async () => {
+    const serialized = JSON.stringify(await listing()).toLowerCase();
+    expect(serialized).not.toMatch(/\brating|\breviews?\b|bestseller|\bstars?\b/);
+  });
+
+  it("uses no em dash, per the repo content rule", async () => {
+    expect(JSON.stringify(await listing())).not.toContain("—");
+  });
+
+  it("never uses an exclamation mark", async () => {
+    expect(JSON.stringify(await listing())).not.toContain("!");
+  });
+
+  it("is cross-linked from its two closest siblings", async () => {
+    const { registerRealShopProducts, shopRegistry } = await loadFreshRegisterModule();
+    registerRealShopProducts();
+    for (const sibling of ["personal-life-affairs-companion", "personal-finance-companion"]) {
+      expect(shopRegistry.getBySlug(sibling)?.relatedProductSlugs, sibling).toContain(SLUG);
+    }
+  });
+
+  it("points every related slug at a listing that exists", async () => {
+    const { registerRealShopProducts, shopRegistry } = await loadFreshRegisterModule();
+    registerRealShopProducts();
+    for (const slug of shopRegistry.getBySlug(SLUG)?.relatedProductSlugs ?? []) {
+      expect(shopRegistry.getBySlug(slug), slug).toBeDefined();
+    }
+  });
+});

@@ -4,6 +4,7 @@ import { personalFinanceCompanionShopProduct } from "./personal-finance-companio
 import { homeManagementCompanionShopProduct } from "./home-management-companion";
 import { personalLifeAffairsCompanionShopProduct } from "./personal-life-affairs-companion";
 import { homeschoolingCompanionShopProduct } from "./homeschooling-companion";
+import { alongsideShopProduct } from "./alongside";
 
 /**
  * Real, published Shop listings, never gated by the dev-fixture check
@@ -17,6 +18,7 @@ const PRODUCTS = [
   homeManagementCompanionShopProduct,
   personalLifeAffairsCompanionShopProduct,
   homeschoolingCompanionShopProduct,
+  alongsideShopProduct,
 ];
 
 let registered = false;

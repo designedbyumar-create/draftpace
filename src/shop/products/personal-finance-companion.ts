@@ -120,7 +120,7 @@ export const personalFinanceCompanionShopProduct: ShopProductInput = {
     },
   ],
   relatedGuideSlugs: [],
-  relatedProductSlugs: ["monthly-money-reset", "personal-life-affairs-companion"],
+  relatedProductSlugs: ["monthly-money-reset", "personal-life-affairs-companion", "alongside"],
   needGroups: ["getting-organized"],
   seo: {
     title: "Personal Finance Companion: your always-current money picture",
