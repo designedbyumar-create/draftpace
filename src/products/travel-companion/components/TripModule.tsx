@@ -87,9 +87,6 @@ export default function TripModule() {
   const [impact, setImpact] = useState<{ source: Booking; affected: Booking[] } | null>(null);
   const [placeMatches, setPlaceMatches] = useState<{ place: Place; entries: RecordEntry[] } | null>(null);
   const [addedFromMatch, setAddedFromMatch] = useState<Set<string>>(new Set());
-  const [bookSize, setBookSize] = useState<"LETTER" | "A4">("LETTER");
-  const [makingBook, setMakingBook] = useState(false);
-  const [bookError, setBookError] = useState<string | null>(null);
   const [opening, setOpening] = useState(false);
   const [startError, setStartError] = useState<string | null>(null);
 
@@ -179,27 +176,6 @@ export default function TripModule() {
   async function togglePreparationDone(itemId: string, currentlyDone: boolean) {
     const result = await setPreparationCompletion(itemId, currentlyDone ? "open" : "done");
     if (result.ok) replacePreparationItem(result.data);
-  }
-
-  /**
-   * My Trip Book: the standalone, blank, modular planner, not a
-   * printout of this screen's own data. Dynamically imported so
-   * @react-pdf/renderer never reaches the main bundle, same discipline
-   * as every sibling's own printable.
-   */
-  async function generateTripBook() {
-    setMakingBook(true);
-    setBookError(null);
-    try {
-      const { downloadTripBook } = await import("../printables/download");
-      const { DEFAULT_MANIFEST } = await import("../printables/document");
-      await downloadTripBook({ ...DEFAULT_MANIFEST, size: bookSize });
-    } catch {
-      // A failed generation must never look like a saved download.
-      setBookError("The book could not be made. Nothing was downloaded.");
-    } finally {
-      setMakingBook(false);
-    }
   }
 
   /**
@@ -553,25 +529,6 @@ export default function TripModule() {
             })}
           </ul>
         )}
-      </section>
-
-      <section>
-        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">My Trip Book</p>
-        <p className="mt-2 text-[13px] leading-6 text-[var(--muted)]">
-          A standalone, blank travel planner: trip overview, destinations, travellers, bookings, transport,
-          accommodation, documents, threads and daily pages, all blank for you to fill in by hand.
-        </p>
-        <div className="mt-3 flex flex-wrap items-center gap-2">
-          {(["LETTER", "A4"] as const).map((option) => (
-            <Button key={option} size="sm" variant={bookSize === option ? "primary" : "secondary"} onClick={() => setBookSize(option)}>
-              {option === "LETTER" ? "US Letter" : "A4"}
-            </Button>
-          ))}
-          <Button size="sm" disabled={makingBook} onClick={generateTripBook}>
-            {makingBook ? "Preparing..." : "Generate My Trip Book"}
-          </Button>
-        </div>
-        {bookError && <p className="mt-2 text-[13px] text-[var(--danger)]">{bookError}</p>}
       </section>
 
       {startError && <p className="text-[13px] text-[var(--danger)]">{startError}</p>}

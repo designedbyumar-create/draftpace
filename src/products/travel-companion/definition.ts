@@ -90,9 +90,12 @@ export const travelCompanionDefinition: ProductDefinitionInput = {
    * Only three sit in the primary bar. Record is genuinely a
    * during-and-after surface rather than a moment-to-moment one, so it
    * sits one tap deeper next to Settings, the same place Alongside puts
-   * its own secondary destination.
+   * its own secondary destination. Printables joins them there, same
+   * placement Personal Finance Companion uses for its own included
+   * printable: not primary, reached from the overflow menu, label left
+   * to defaultDestinationLabel's own title-casing ("Printables").
    */
-  navigation: ["workspace", "trip", "people", "record", "settings"],
+  navigation: ["workspace", "trip", "people", "record", "printables", "settings"],
   primaryNavigation: ["workspace", "trip", "people"],
   workspaceLabel: "Today",
   destinationLabels: {
@@ -122,6 +125,7 @@ export const travelCompanionDefinition: ProductDefinitionInput = {
     { id: "travel-companion.trip", destination: "trip" },
     { id: "travel-companion.people", destination: "people" },
     { id: "travel-companion.record", destination: "record" },
+    { id: "travel-companion.printables", destination: "printables" },
     { id: "travel-companion.settings", destination: "settings" },
   ],
   permissions: [],
