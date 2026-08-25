@@ -502,24 +502,29 @@ export async function linkPersonToBooking(
   productInstanceId: string,
   bookingId: string,
   personId: string
-): Promise<Result<null>> {
+): Promise<Result<BookingParticipant>> {
   const user = await currentUserId();
   if (!user.ok) return user;
 
-  const { error } = await supabase.from("trv_booking_people").upsert(
-    {
-      product_instance_id: productInstanceId,
-      user_id: user.data,
-      booking_id: bookingId,
-      person_id: personId,
-      status: "active",
-      updated_at: new Date().toISOString(),
-    },
-    { onConflict: "booking_id,person_id" }
-  );
+  const { data, error } = await supabase
+    .from("trv_booking_people")
+    .upsert(
+      {
+        product_instance_id: productInstanceId,
+        user_id: user.data,
+        booking_id: bookingId,
+        person_id: personId,
+        status: "active",
+        updated_at: new Date().toISOString(),
+      },
+      { onConflict: "booking_id,person_id" }
+    )
+    .select("id, booking_id, person_id")
+    .single();
 
-  if (error) return err({ kind: "network", message: error.message });
-  return ok(null);
+  if (error || !data) return err({ kind: "network", message: error?.message ?? "Could not link that traveller." });
+  const row = data as unknown as Record<string, unknown>;
+  return ok({ linkId: row.id as string, bookingId: row.booking_id as string, personId: row.person_id as string });
 }
 
 /** Corrects a mistaken link. Archives the row; nothing is ever deleted. */

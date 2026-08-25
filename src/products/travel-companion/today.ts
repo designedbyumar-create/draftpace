@@ -1,0 +1,131 @@
+import { activeBookings, byStartTime, type Booking, type Place } from "./trip";
+
+/**
+ * The current operational state, derived, never stored.
+ *
+ * Same discipline as Alongside's deriveAttention: every line traces to
+ * a stored column, nothing is invented, and a day with nothing in it
+ * says so plainly rather than being filled with generic travel advice.
+ *
+ * WHAT IS DELIBERATELY MISSING FROM THIS FILE
+ *
+ * A "Waiting" section, for open threads awaiting a reply. trv_threads
+ * does not exist yet (a later phase); when it does, that section is
+ * added the same way this one is used, by reading real rows, never by
+ * inventing a placeholder message in the meantime.
+ */
+
+export type TodaySectionKind = "now" | "important" | "later";
+
+export interface TodayLine {
+  booking: Booking;
+  section: TodaySectionKind;
+  /** The stored fact, stated plainly. Never an imperative, never "don't forget". */
+  line: string;
+}
+
+export interface TodayView {
+  now: TodayLine[];
+  important: TodayLine[];
+  later: TodayLine[];
+  quiet: boolean;
+}
+
+/** Kinds where a start time functions as a window that opens, not a moment that passes. */
+const WINDOW_KINDS = new Set(["hotel", "rental"]);
+
+/**
+ * "Same day" compared as UTC calendar dates, deliberately, not the
+ * reader's local timezone.
+ *
+ * A traveller crossing timezones mid-trip is the hard case this
+ * sidesteps rather than gets wrong: nothing in this schema stores which
+ * timezone a place or a booking is in (a real, later decision, not one
+ * this file should make silently), so there is no honest way to compute
+ * "today at the destination" yet. What this file must not do is give a
+ * different answer depending on which timezone the server or the
+ * reader's device happens to be in for the exact same stored data, which
+ * comparing by local calendar components did. UTC comparison is at
+ * least deterministic and reproducible; it is a known, explicit v1
+ * limitation, not one to quietly work around.
+ */
+function sameDay(a: Date, b: Date): boolean {
+  return (
+    a.getUTCFullYear() === b.getUTCFullYear() &&
+    a.getUTCMonth() === b.getUTCMonth() &&
+    a.getUTCDate() === b.getUTCDate()
+  );
+}
+
+function addDays(date: Date, days: number): Date {
+  const next = new Date(date.getTime());
+  next.setUTCDate(next.getUTCDate() + days);
+  return next;
+}
+
+function timeLabel(iso: string): string {
+  return new Date(iso).toLocaleTimeString(undefined, { hour: "2-digit", minute: "2-digit", hour12: false, timeZone: "UTC" });
+}
+
+/**
+ * A booking's own stored facts, read back as a sentence. Never a
+ * warning, never a countdown. "Hotel check-in begins at 3 PM" is what
+ * was recorded; the reader supplies their own sense of urgency.
+ */
+function describeBooking(booking: Booking): string {
+  const time = booking.startsAt ? timeLabel(booking.startsAt) : null;
+  if (WINDOW_KINDS.has(booking.kind) && time) {
+    const verb = booking.kind === "hotel" ? "Check-in begins" : "Pickup begins";
+    return `${booking.title}. ${verb} at ${time}.`;
+  }
+  return time ? `${booking.title}, ${time}.` : booking.title;
+}
+
+export function deriveToday(bookings: Booking[], now: Date): TodayView {
+  const active = activeBookings(bookings).filter((booking) => booking.startsAt);
+  const today: TodayLine[] = [];
+  const important: TodayLine[] = [];
+  const later: TodayLine[] = [];
+
+  const tomorrow = addDays(now, 1);
+  const dayAfter = addDays(now, 2);
+
+  for (const booking of byStartTime(active)) {
+    const startsAt = new Date(booking.startsAt as string);
+
+    if (sameDay(startsAt, now)) {
+      today.push({ booking, section: "now", line: describeBooking(booking) });
+      continue;
+    }
+
+    if (sameDay(startsAt, tomorrow) && WINDOW_KINDS.has(booking.kind)) {
+      important.push({ booking, section: "important", line: describeBooking(booking) });
+      continue;
+    }
+
+    if (sameDay(startsAt, tomorrow) || sameDay(startsAt, dayAfter)) {
+      const day = sameDay(startsAt, tomorrow) ? "Tomorrow" : "In two days";
+      later.push({ booking, section: "later", line: `${day}: ${describeBooking(booking)}` });
+    }
+  }
+
+  return {
+    now: today,
+    important,
+    later,
+    quiet: today.length === 0 && important.length === 0 && later.length === 0,
+  };
+}
+
+/** Where the trip is today, from the places a person recorded arriving in and not yet departing. */
+export function whereWeAre(places: Place[], now: Date): Place | null {
+  const today = now.toISOString().slice(0, 10);
+  return (
+    places.find((place) => {
+      if (place.status !== "active") return false;
+      if (place.arrivesAt && place.arrivesAt > today) return false;
+      if (place.departsAt && place.departsAt < today) return false;
+      return Boolean(place.arrivesAt) || Boolean(place.departsAt);
+    }) ?? null
+  );
+}
