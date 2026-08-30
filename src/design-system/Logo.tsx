@@ -1,28 +1,38 @@
 /**
  * The Draftpace logo.
  *
- * Both shapes are the founder's supplied artwork used verbatim: the
- * monogram from DP- Monogram Black.svg and the wordmark from the traced
- * outline file. The previous wordmark was a different, separately traced
- * set of letterforms whose proportions did not match the real mark,
- * which is the "the text seems off" this replaces.
+ * Both shapes are the founder's supplied artwork, path data unmodified:
+ * the monogram from DP- Monogram Black.svg and the wordmark from the
+ * traced outline file. The wordmark that used to be here was a
+ * different, separately traced set of letterforms whose proportions did
+ * not match the mark, which is the "text seems off" this replaces.
  *
  * COLOUR
  *
- * The artwork ships near-black, and near-black is what light mode gets.
- * Dark mode takes teal for both the monogram plate and the wordmark, so
- * the lockup stays one object rather than a teal square beside pale
- * text. Both come from tokens (--logo-mark, --logo-word) in globals.css,
- * so nothing here hard-codes a colour and a fixed-colour asset can never
- * go invisible against the opposite ground again.
+ * The artwork ships near-black and light mode uses it as drawn. Dark
+ * mode substitutes teal for the plate and the wordmark together, so the
+ * lockup stays one object rather than a teal square beside pale text.
+ * Both come from tokens (--logo-mark, --logo-word) in globals.css, so
+ * nothing here hard-codes a colour and a fixed-colour asset can never go
+ * invisible against the opposite ground again.
  *
  * GEOMETRY
  *
- * The lockup is composed rather than exported: the wordmark is scaled so
- * its cap height sits at 48 percent of the monogram's height and is then
- * cap-centred against it, which is why the descender of the p hangs
- * below the optical centre line the way it should. See
- * docs/DESIGN-SYSTEM.md.
+ * Only the two pieces were supplied, so the lockup is composed here, and
+ * two decisions in it are deliberate departures from the source files.
+ *
+ * The plate radius is 112 rather than the 40 the monogram file carries. That
+ * file is sized for an app icon, where the operating system applies its
+ * own mask; at 112 the corners read as curved on the web, which is what the
+ * mark is meant to look like.
+ *
+ * The wordmark's cap height is set equal to the monogram glyph's own
+ * height (238.2 of 512, measured from the path rather than guessed), so the
+ * D and the glyph are siblings. It is then centred on its FULL outline,
+ * descender included, not on the cap block. Centring the cap block is
+ * the textbook move and it is wrong here: it left 137 units of air above
+ * the D and 62 below the p, so the word visibly sat low against the
+ * plate. Centring the whole outline balances it to 99 and 99.
  */
 
 const WORDMARK_PATH =
@@ -44,7 +54,7 @@ export function LogoMark({ size = 40, className = "" }: { size?: number; classNa
       role="img"
       aria-label="Draftpace"
     >
-      <rect width="512" height="512" rx="40" fill="var(--logo-mark)" />
+      <rect width="512" height="512" rx="112" fill="var(--logo-mark)" />
       <path fillRule="evenodd" clipRule="evenodd" d={MONOGRAM_PATH} fill="var(--logo-mark-glyph)" />
     </svg>
   );
@@ -52,21 +62,21 @@ export function LogoMark({ size = 40, className = "" }: { size?: number; classNa
 
 /** The full lockup: monogram plus wordmark. */
 export function Logo({ height = 40, className = "" }: { height?: number; className?: string }) {
-  const width = Math.round((height * 2203.9) / 512);
+  const width = Math.round((height * 2156.46) / 512);
   return (
     <svg
       width={width}
       height={height}
-      viewBox="0 0 2203.9 512"
+      viewBox="0 0 2156.46 512"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
       role="img"
       aria-label="Draftpace"
     >
-      <rect width="512" height="512" rx="40" fill="var(--logo-mark)" />
+      <rect width="512" height="512" rx="112" fill="var(--logo-mark)" />
       <path fillRule="evenodd" clipRule="evenodd" d={MONOGRAM_PATH} fill="var(--logo-mark-glyph)" />
-      <g transform="translate(662 133.12) scale(0.88768)">
+      <g transform="translate(662.0 99.41) scale(0.86037)">
         <path fillRule="evenodd" clipRule="evenodd" d={WORDMARK_PATH} fill="var(--logo-word)" />
       </g>
     </svg>
