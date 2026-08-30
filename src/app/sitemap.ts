@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { NEEDS } from "@/content/needs";
-import { GUIDES } from "@/content/guides";
+import { GUIDES, areasWithGuides } from "@/content/guides";
 import { shopRegistry } from "@/shop/registry";
 import { registerRealShopProducts } from "@/shop/products";
 
@@ -47,6 +47,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  /**
+   * Area hubs rank higher than individual guides on purpose: a hub is
+   * the page that can compete for the broad terms an article cannot, and
+   * it is where link equity from its cluster concentrates. Only hubs
+   * that actually have guides are listed, for the same reason the empty
+   * need pages were dropped.
+   */
+  const guideHubRoutes = areasWithGuides().map((area) => ({
+    route: `/guides/${area.slug}`,
+    changeFrequency: "weekly" as const,
+    priority: 0.6,
+  }));
+
   const guideRoutes = GUIDES.map((guide) => ({
     route: `/guides/${guide.slug}`,
     changeFrequency: "monthly" as const,
@@ -61,7 +74,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...needRoutes, ...guideRoutes, ...shopRoutes].map(({ route, changeFrequency, priority }) => ({
+  return [...staticRoutes, ...needRoutes, ...guideHubRoutes, ...guideRoutes, ...shopRoutes].map(({ route, changeFrequency, priority }) => ({
     url: `${siteUrl}${route}`,
     lastModified: now,
     changeFrequency,
