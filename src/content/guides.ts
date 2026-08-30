@@ -832,6 +832,700 @@ export const GUIDES: Guide[] = [
       },
     ],
   },
+
+  // ---------------------------------------------------------------- batch 2
+  // Ten more, all of which scored a clean fit in the guide-to-product
+  // verification, so none needed reframing. Several cross-link back to
+  // batch 1 rather than restating it, which is what the inline link
+  // support in the block model was added for.
+
+  {
+    slug: "how-often-home-systems-need-servicing",
+    title: "How often things in your house actually need servicing",
+    dek: "A reference table of real service intervals for the systems and appliances in a normal home, plus the jobs that belong to a season rather than a date.",
+    readingTime: "9 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "home",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Most maintenance advice online is either a vague seasonal checklist or a manufacturer telling you to service something twice as often as it needs. What follows is the practical middle: how often things genuinely need attention in a normal house.",
+          "Two rules before the table. Your own manual always wins, because a specific model may differ. And a job you have never done on a twenty year old system may need doing sooner than the interval suggests, because the interval assumes it was kept up.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Heating, cooling and water",
+        intro: "The systems where neglect is most expensive, and where a missed service usually shows up in the coldest or hottest week of the year.",
+        columns: ["Job", "Interval", "Why this interval"],
+        rows: [
+          ["Boiler or furnace service", "Annually", "Required by most warranties, and the check that catches unsafe combustion"],
+          ["Replace HVAC filter", "1 to 3 months", "Depends on pets, dust and whether anyone in the house has allergies"],
+          ["Flush water heater", "Annually", "Sediment builds from the first year and quietly destroys efficiency"],
+          ["Water heater anode rod check", "Every 3 to 5 years", "The single cheapest way to extend a tank's life"],
+          ["Bleed radiators", "Annually, before heating season", "Trapped air means cold tops and a system working harder than it should"],
+          ["Service air conditioning", "Annually, before summer", "A failure in August takes far longer to fix than one in April"],
+          ["Check and clean condensate drain", "Annually", "A blocked drain is a common and avoidable cause of water damage"],
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Structure, water ingress and safety",
+        intro: "Cheap to do, expensive to skip. Nearly all water damage in homes starts with something on this list.",
+        columns: ["Job", "Interval", "Why this interval"],
+        rows: [
+          ["Clear gutters and downpipes", "Twice a year", "Autumn after leaf fall, and spring after winter debris"],
+          ["Inspect roof and flashing", "Annually", "Most roof failures start at a joint, not in the middle of a slope"],
+          ["Reseal grout and caulk", "1 to 2 years", "Failed sealant lets water behind tile, where it is invisible for months"],
+          ["Test smoke and CO alarms", "Monthly", "The only job here where the cost of skipping is not measured in money"],
+          ["Replace smoke alarm units", "Every 10 years", "Sensors degrade whether or not the battery is fine"],
+          ["Check for leaks under sinks", "Twice a year", "A slow leak rots a cabinet base long before anyone notices"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The jobs that belong to a month, not an interval",
+        paragraphs: [
+          "About a third of outdoor maintenance is seasonal rather than periodic. Winterising outdoor taps belongs before the first freeze, not three hundred and sixty five days after you happened to write it down. Blowing out an irrigation system belongs in autumn regardless of when it was last done.",
+          "This is why generic reminder apps get ignored. Anything that tells you to winterise in July has told you something useless, and after the second or third useless reminder people stop reading them entirely.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Seasonal jobs, by when they belong",
+        items: [
+          "Before first freeze: shut off and drain outdoor taps, disconnect hoses, winterise irrigation.",
+          "Autumn: clear gutters after leaf fall, service heating before you need it, check draughts.",
+          "Spring: service cooling before summer, inspect the roof after winter, clear gutters again.",
+          "Summer: exterior paint and timber, fencing, anything needing dry weather.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Start from the last done date, not from today",
+        paragraphs: [
+          "The most common mistake when setting up any maintenance schedule is to start every interval from the day you wrote the list. That schedules a boiler service twelve months from an arbitrary Tuesday rather than twelve months from the last actual service.",
+          "If you know roughly when something was last done, use that. If you genuinely do not know, treat it as due, because for most of this list an unnecessary check costs an hour and a missed one costs considerably more. There is more on which of these bite hardest in [the maintenance you skip that costs the most](/guides/home-maintenance-you-skip-that-costs-the-most).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Home Base already knows these intervals for well over a hundred common jobs, and knows which of them belong to a season instead. It works out what is worth doing now from when you last did it, rates each job by what happens if you skip it, and stays quiet about the rest. Snoozing something genuinely changes what it asks you about again.",
+      },
+    ],
+  },
+
+  {
+    slug: "what-to-record-about-an-appliance-before-you-need-it",
+    title: "What to write down about an appliance before something goes wrong",
+    dek: "Five fields, recorded once while you can actually see the machine, that make every future repair faster and cheaper.",
+    readingTime: "6 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "home",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "The worst moment to look for a model number is when the thing has already broken, usually in the dark, usually with a phone torch, usually behind something heavy.",
+          "Five fields, written down once while the appliance is working and accessible, remove that moment permanently. It takes about two minutes per item and it is the highest return household admin there is.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "The five fields",
+        ordered: true,
+        items: [
+          "Make and model. The exact model, not the marketing name on the front.",
+          "Serial number, where there is one. Warranty claims usually need it.",
+          "When it was installed or bought.",
+          "When the warranty ends.",
+          "When it was last serviced, and by whom.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Where the model number usually hides",
+        intro: "The single most common reason people give up on cataloguing a house is not finding this. It is almost always in one of these places.",
+        columns: ["Appliance", "Usually found"],
+        rows: [
+          ["Fridge or freezer", "Inside, on the side wall near the salad drawer, or behind the bottom grille"],
+          ["Washing machine", "Around the inside of the door opening, or on the back panel"],
+          ["Dishwasher", "On the edge of the door, visible only when the door is open"],
+          ["Oven or cooker", "On the frame behind the door, or on a drawer runner underneath"],
+          ["Boiler or furnace", "Inside the front cover, often on a sticker facing you when it is opened"],
+          ["Water heater", "On the outer casing, usually a large label near the top"],
+          ["Air conditioning unit", "On the outdoor condenser, on a plate facing the wall"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Why the serial number matters more than you expect",
+        paragraphs: [
+          "A model number tells a supplier which part fits. A serial number tells a manufacturer which production run yours came from, which matters for warranty claims and for recalls.",
+          "Recalls are the underrated one. Manufacturers issue them regularly and reach owners through registration, which most people skip. If you have the serial number written down somewhere findable, you can check it against a recall list in a minute.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Photograph the plate rather than transcribing it",
+        paragraphs: [
+          "Model numbers are long, and they mix letters and digits in ways that are easy to get wrong in bad light. A photograph of the plate takes a second and is always right.",
+          "Keep the photograph, but also type the model number somewhere searchable, because a photo buried in three years of camera roll is not findable when you need it.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The best moment to do this is a move",
+        paragraphs: [
+          "Every fact about a house passes through your hands in the fortnight around moving in, and almost none of it gets written down. Meter readings, which utility is with whom, where the stopcock is, what came with the property.",
+          "A year later the boiler needs servicing and nobody remembers who installed it. Recording it while it is in front of you takes minutes and saves an afternoon.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Home Base asks for exactly these fields, and asks for the right ones per type of thing rather than the same form for a boiler and a lawnmower. It keeps the service history alongside them, so the next repair starts with facts. It stores what a document is and where you keep it, never the document itself, because no product on Draftpace accepts an upload.",
+      },
+    ],
+  },
+
+  {
+    slug: "where-to-look-for-a-will",
+    title: "Where to look for a will when you cannot find one",
+    dek: "A search order for finding a will, what to do if there genuinely is not one, and why the executor matters before anything else.",
+    readingTime: "6 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "affairs-and-endings",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Start with the places people actually keep wills, which are duller than you expect: a home filing box, a bedroom drawer, a safe, or with the solicitor who drafted it.",
+          "Work through the list below in order. Most wills are found in the first three places, and the later entries exist because occasionally they are not.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "The search order",
+        ordered: true,
+        items: [
+          "The obvious places at home: filing box, desk, bedside drawer, safe, or a folder marked with anything official sounding.",
+          "With a solicitor. Many firms store the original and issue the family a copy, so a copy at home may mean the original is elsewhere.",
+          "A bank safe deposit box, if they had one. Access after a death usually requires the death certificate and proof of your authority.",
+          "A national or regional will register, where one exists. Some countries maintain a central record of where wills are lodged.",
+          "With the executor. If a family member was named, they may already hold it and not have mentioned it.",
+          "Their accountant or financial adviser, who often knows whether a will exists even if they do not hold it.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Read the executor clause before anything else",
+        paragraphs: [
+          "When you find it, the first thing to look for is not who inherits. It is who is named as executor, because that person has the legal authority to act and everybody else does not.",
+          "If it is not you, several of the things you were about to do are not yours to do. That is usually a relief rather than a slight, and it saves a great deal of duplicated effort. There is more on what that role involves in [being named executor](/guides/named-executor-what-you-agreed-to).",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "If you find more than one",
+        paragraphs: [
+          "Generally the most recent valid will is the one that counts, and a later will usually revokes earlier ones explicitly. Do not destroy the earlier versions. They can matter if the newest is challenged or turns out to be invalid.",
+          "If two wills appear close together in date, or one is unsigned or unwitnessed, that is the point to get advice rather than to decide yourself.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "If there genuinely is not one",
+        paragraphs: [
+          "Then the estate is distributed according to the intestacy rules where they lived, which are fixed and do not care what anybody intended. That often surprises families, because the rules rarely match what people assume, particularly for unmarried partners and stepchildren.",
+          "This is also the moment most people realise how much of the picture was never written down anywhere, which is a separate and larger problem covered in [how to find someone's accounts](/guides/how-to-find-someones-accounts-after-they-die).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Personal Life Affairs Companion records where a will is kept, who drafted it, and who is named as executor, so this search never has to happen. It holds the location and the reference, never the document itself. It also produces a printed book, which is the format that actually survives the situation where somebody cannot get into an account.",
+      },
+    ],
+  },
+
+  {
+    slug: "named-executor-what-you-agreed-to",
+    title: "You have been named executor. Here is what you actually agreed to",
+    dek: "What the role involves, how long it really takes, what you are personally liable for, and whether you can say no.",
+    readingTime: "7 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "affairs-and-endings",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Being an executor means you are legally responsible for gathering everything somebody owned, paying what they owed, and distributing the rest according to their will. It is an administrative job with legal weight, and it usually takes many months.",
+          "Most people find out they were named at the worst possible moment and have no idea what the role involves. Here is the honest version.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What the job actually involves",
+        ordered: true,
+        items: [
+          "Find and secure everything: property, accounts, pensions, policies, possessions.",
+          "Value the estate as at the date of death, which often needs professional valuations for property.",
+          "Apply for the legal authority to act, called probate or its local equivalent.",
+          "Settle debts and taxes before anybody inherits anything.",
+          "Distribute what remains according to the will.",
+          "Keep records of all of it, because beneficiaries are entitled to see the accounts.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "How long it really takes",
+        paragraphs: [
+          "Simple estates commonly take six to twelve months. Anything involving property, a business, overseas assets or a disagreement between beneficiaries takes considerably longer, and two years is not unusual.",
+          "The slow parts are rarely the ones people expect. Waiting for probate, waiting for a property to sell, and waiting for tax clearance take far longer than any of the tasks you actually perform.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The part worth taking seriously",
+        paragraphs: [
+          "Executors can be held personally liable for mistakes. Distributing the estate before debts are settled is the classic one: if a creditor appears afterwards, the shortfall can land on you rather than on the beneficiaries who already spent it.",
+          "This is why the order matters, and why the standard advice is to wait out the statutory creditor notice period before distributing anything. It is also why executors of anything complicated usually involve a solicitor, paid from the estate rather than from their own pocket.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "You can say no",
+        paragraphs: [
+          "Being named does not oblige you to serve. You can decline, formally, provided you have not already started acting as executor. Once you have begun dealing with the estate, stepping back becomes much harder.",
+          "Declining is not a betrayal. Somebody named you years ago, possibly before they had a business or a property abroad, and possibly before your own life got complicated. If you cannot give it the time, saying so at the start is far better than stalling for a year.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What to ask for immediately if you are acting",
+        items: [
+          "Certified copies of the death certificate, more than you think you need.",
+          "The original will, not a copy.",
+          "Twelve months of bank statements, which is the fastest way to find accounts and policies nobody mentioned.",
+          "Details of any funeral plan already paid for.",
+          "Contact details for their accountant, solicitor or adviser.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Personal Life Affairs Companion exists so the person you would name never leaves you doing the search half of this job. It records what exists, where it is kept, and who should be told, and prints as a book somebody could follow. If you are currently executing an estate and finding out how little was written down, that is the argument for doing it for your own.",
+      },
+    ],
+  },
+
+  {
+    slug: "the-if-something-happens-to-me-file",
+    title: "The \"if something happens to me\" file, and what goes in it",
+    dek: "What to leave behind so nobody has to reconstruct your life from the outside, and why it is not the same thing as a will.",
+    readingTime: "7 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "affairs-and-endings",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "A will says who gets what. It does not say which bank, which pension, where the deeds are, who your accountant is, or that there is a policy nobody knows about.",
+          "That gap is what leaves families searching for months. The fix is a plain record of what exists and where it is kept, which takes a couple of evenings and is entirely separate from any legal document.",
+          "More than half of adults have no estate documents at all. If that is you, this file is a far better place to start than a will, because it is useful immediately and requires nobody's signature.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What goes in it",
+        intro: "Locations and references, not the documents themselves. This is a map, not a vault.",
+        items: [
+          "Where the will is, who drafted it, and who is named executor.",
+          "Every bank and building society, with which accounts are where. Not passwords.",
+          "Pensions, including old ones from former employers, which are the most commonly lost.",
+          "Insurance policies: life, home, car, health, and anything bought through an employer.",
+          "Property: where the deeds are, mortgage lender, and any leasehold details.",
+          "Debts, including anything guaranteed for somebody else.",
+          "Digital: which email is the recovery address for everything, and where the password manager is, without the master password.",
+          "People: accountant, solicitor, adviser, and anybody who should be told.",
+          "Anything that would surprise somebody, which is the most valuable line in the whole file.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What must not go in it",
+        paragraphs: [
+          "Passwords, PINs and full account numbers do not belong here, because this document is deliberately findable and that is the whole point of it.",
+          "Record where the password manager is and who has recovery access, and stop there. A file that is safe to leave in a drawer is worth far more than a perfect one locked somewhere nobody can reach.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Where to keep it, and who should know",
+        paragraphs: [
+          "At least two people should know it exists and where it is. A perfect record nobody can find is the same as no record, and this happens more often than you would think.",
+          "Paper is genuinely better here than a file on a laptop, because the laptop needs a password, the password is in the password manager, and the password manager is the thing they cannot get into.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Do it in passes, not in one sitting",
+        paragraphs: [
+          "The reason this never gets done is that people treat it as a single overwhelming project. It is not. Bank accounts on one evening, pensions another, digital on a third.",
+          "Any one of those passes on its own makes things meaningfully easier for whoever comes after. There is no version of this where a partial file is worthless.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "This file is what Personal Life Affairs Companion produces. It sequences the job so it has a beginning instead of being a folder of blank forms, works out which parts are even relevant to you, and prints a book somebody could follow. It records where things are kept and never the things themselves, because it cannot accept an upload at all.",
+      },
+    ],
+  },
+
+  {
+    slug: "hotel-cannot-find-your-reservation",
+    title: "The hotel cannot find your reservation. What to say",
+    dek: "What to have open before you reach the desk, why the booking is usually there under something else, and how to keep the conversation short.",
+    readingTime: "6 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "travel",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Nine times out of ten the reservation exists and is filed under something you did not expect: a different surname, the name of whoever paid, a third party booking site's own reference rather than the hotel's, or a slightly different spelling.",
+          "So the goal at the desk is not to argue. It is to give them enough different ways to look it up that one of them works.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Have these open before you speak",
+        intro: "On screen, not in an inbox you are still searching while somebody waits.",
+        items: [
+          "The confirmation reference, and separately the booking site's reference if you booked through one.",
+          "The exact name it was booked under, which may not be yours.",
+          "The dates, and the card used to pay.",
+          "The confirmation email itself, which is the thing that ends most disputes.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "An opening that works",
+        paragraphs: [
+          "Something plain does the job: hello, I have a reservation with you and you are not able to find it. Can I give you a few ways to look it up.",
+          "That sentence does two useful things. It states the problem without accusing anybody, and it moves straight to the thing that actually resolves it, which is alternative search terms. Change any of it. The point is having a first sentence at all, so the opening is not the hardest part.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Ways to ask them to search",
+        intro: "Offer these one at a time. Front desk systems search differently from how you would expect.",
+        ordered: true,
+        items: [
+          "The hotel's own confirmation number.",
+          "The third party booking reference, which is often a completely different format.",
+          "The surname of whoever paid, rather than whoever is staying.",
+          "The card's last four digits.",
+          "The dates alone, which often surfaces it when a name is misspelled.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "If it genuinely is not there",
+        paragraphs: [
+          "Show the confirmation email, and ask what they can do tonight rather than what went wrong. The cause matters tomorrow. Where you sleep matters now.",
+          "If they are full, ask them to find you a room at a comparable hotel, which is standard practice when a booking cannot be honoured. Get the name of who you spoke to and a reference before you leave the desk, because whoever you deal with next will not know any of this.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Then check what else this affects",
+        paragraphs: [
+          "If your stay moves, anything you booked around it may need a look. A dinner reservation, a transfer to the airport, a tour with a pickup at the hotel.",
+          "This is the part that catches people the next morning rather than that night, and it is covered properly in [working out what else your trip depends on](/guides/what-else-your-trip-depends-on-when-something-changes).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Travel Companion keeps every reference, provider and booking name in one place, so this conversation starts with facts rather than a search through six inboxes. It walks you through the exchange itself, including an opening line you can edit or replace, and it never tells you what to accept or settle for. Afterwards it shows you what else that change touched.",
+      },
+    ],
+  },
+
+  {
+    slug: "what-goes-in-a-homeschool-portfolio",
+    title: "What actually goes in a homeschool portfolio",
+    dek: "What to include, what evaluators are really looking for, and how to build it through the year instead of in a panic in April.",
+    readingTime: "8 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "family-and-learning",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "A portfolio is a record that your child was educated. It is not a scrapbook of best work, and it is not a performance. Evaluators are generally checking that something coherent happened across the year, not judging whether it was excellent.",
+          "Six jurisdictions make portfolios mandatory: Pennsylvania, Maryland, Ohio, South Carolina, Florida and the District of Columbia. Requirements differ, so check yours in [record keeping requirements by state](/guides/homeschool-record-keeping-requirements-by-state) and with your state association.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "The core contents",
+        intro: "Most requirements are satisfied by these five things.",
+        ordered: true,
+        items: [
+          "A log of educational activities, with reading materials named by title.",
+          "Samples of work across the year, dated, from several points rather than one good week.",
+          "A list of subjects covered and the materials or curriculum used.",
+          "Attendance or days schooled, where your state counts them.",
+          "Test results or an evaluator's written report, where required.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Include ordinary work, not only the best",
+        paragraphs: [
+          "The instinct is to include only the pieces you are proud of. Resist it. A portfolio of nothing but finished, perfect work tells an evaluator very little, and can even read as curated rather than representative.",
+          "Include something from October and something from March on the same subject. Progress across a year is the single most persuasive thing a portfolio can show, and it is invisible if everything came from the same fortnight.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "What to keep per subject",
+        intro: "A rough guide. Adjust to what your state asks for.",
+        columns: ["Subject", "Worth keeping", "How often"],
+        rows: [
+          ["Maths", "Worked problems showing method, not just answers", "A few pieces per term"],
+          ["Writing", "A first draft and the final version of the same piece", "Two or three per year"],
+          ["Reading", "A running list of books, finished and abandoned", "Ongoing"],
+          ["Science", "Photographs of experiments, plus what was concluded", "Per topic"],
+          ["History and humanities", "Anything with a date and an argument in it", "Per topic"],
+          ["Art and practical", "Photographs, since the work itself rarely fits in a folder", "As produced"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Abandoned books belong on the reading list",
+        paragraphs: [
+          "A reading log that only contains finished books is a less honest record and, oddly, a less impressive one. A child who is allowed to stop reading something is a child who keeps starting things.",
+          "Note what was abandoned and roughly why. It shows judgement developing, which is a more interesting thing to evidence than volume.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Build it as you go, or it will not exist",
+        paragraphs: [
+          "The failure mode is universal: nothing is kept until spring, and then a weekend disappears into reconstructing a year from undated worksheets and memory.",
+          "A folder per child and a habit of dropping things in as they happen is enough. It does not need a system. It needs to take under a minute so it survives a bad week.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Homeschooling Companion keeps the log as you go and prints a record per child when you need one. It accepts backdated entries, because nobody logs every day on the day. It also includes short checks you can run at home to find out honestly whether something stuck, with four possible answers including not enough to say, which is the honest result more often than most tools admit.",
+      },
+    ],
+  },
+
+  {
+    slug: "why-to-do-lists-make-it-worse",
+    title: "Why to-do lists make things worse, and what helps instead",
+    dek: "A list is a memory aid. The problem was never memory. Here is what the difficulty actually is and what works better.",
+    readingTime: "6 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "mind-and-focus",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "The premise of a to-do list is that the hard part is remembering. For a great many people that is exactly backwards. The thing has been remembered constantly, at volume, for three weeks. Writing it down again adds nothing.",
+          "What a list does add is a visible tally of everything not yet done, sorted by nothing, all equally urgent looking. So the tool intended to reduce the load becomes a daily reminder of the size of it.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Three ways lists make it harder",
+        paragraphs: [
+          "First, they flatten. A two minute email and a four hour form appear as identical rows, so choosing between them costs energy every single time you look.",
+          "Second, they accumulate. Anything genuinely difficult stays on the list while easier items pass through it, so over time the list becomes a concentrated record of what you have avoided.",
+          "Third, they say nothing about starting. A row reading chase the refund tells you what the outcome should be and gives you no idea what the first physical action is, which is the only part that was ever difficult.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What actually helps",
+        ordered: true,
+        items: [
+          "Show one thing, not everything. Almost nobody needs the full list at nine in the morning.",
+          "Write the next physical action, as a verb. Call the number on the letter. Not chase the refund.",
+          "Attach a real date, or none at all. Everything being due today means nothing is.",
+          "Hold the context. What it is about, what you want, the two facts you will need, all visible while you do it.",
+          "Let quiet be an answer. Some days genuinely need nothing from you, and a tool that cannot say so will invent work.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The streak is the worst part",
+        paragraphs: [
+          "Completion percentages, streaks and productivity scores all rest on the same assumption: that you will do more if you can see how much you are failing.",
+          "For anybody already carrying a background hum of being behind, this is precisely wrong. It converts a neutral pile of admin into a running record of personal failure, and the reliable outcome is that the app gets deleted, along with the only record of what actually needed doing.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The real question is not what, it is how to start",
+        paragraphs: [
+          "For most stuck tasks you already know exactly what needs doing. What you cannot do is hold the purpose, the outcome, and the details all at once while a stranger talks at you.",
+          "Which is a working memory problem rather than a motivation problem, and it responds to having those things written down in front of you, not to being reminded again. That is worked through properly in [making a phone call you have been avoiding](/guides/how-to-make-a-phone-call-you-have-been-avoiding).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "ADHD Life Companion shows what deserves attention now, derived from dates you set yourself, and says plainly when nothing does. It walks you through the things that are hardest to start, holding the context on screen. There is no streak, no completion percentage, and no counter of what you did not get to. Something you close halfway records nothing at all.",
+      },
+    ],
+  },
+
+  {
+    slug: "why-your-available-balance-is-lying-to-you",
+    title: "Why your available balance is lying to you",
+    dek: "What banks mean by available, what they leave out, and why the number in the app is almost never the number you can spend.",
+    readingTime: "6 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "money",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Available balance in a banking app is a technical term. It means cleared funds, plus any overdraft you have, minus transactions that have already settled. It does not mean money that is free for you to use.",
+          "The gap between those two ideas is where most unexpected shortfalls live, and it is entirely predictable once you know what the number leaves out.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "What the number does and does not know",
+        columns: ["Your bank knows", "Your bank does not know"],
+        rows: [
+          ["Money that has left the account", "That your car insurance renews on the eighteenth"],
+          ["Payments that have settled", "That four hundred of this is set aside for tax"],
+          ["Your arranged overdraft, added in", "That you agreed to cover a shared bill this month"],
+          ["Standing orders it can see scheduled", "Annual subscriptions that will not appear for months"],
+          ["The balance right now", "That a pending card payment has not landed yet"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The overdraft problem",
+        paragraphs: [
+          "Many banks include an arranged overdraft inside the available figure. That means the number can be several hundred higher than the money you actually have, and nothing on screen distinguishes the two.",
+          "It is worth finding out once whether yours does this. It changes how you should read every balance you have looked at for years.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Pending transactions cut both ways",
+        paragraphs: [
+          "A card payment can sit pending for days. Some banks subtract it from available immediately, some do not, and hotel or car hire pre-authorisations can hold amounts far larger than the final charge.",
+          "So the balance can be pessimistic and optimistic at once: reserving money that will be released, while ignoring a direct debit due on Friday.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The number worth having instead",
+        paragraphs: [
+          "What you actually want is balance, minus protected money, minus everything committed before your next payday. That is usually a lot smaller than the app's figure, and it is the only one you can spend against without a background hum of worry.",
+          "The method for working it out is in [how much of your money is actually safe to spend](/guides/how-much-of-your-money-is-actually-safe-to-spend).",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "A good figure admits when it is unsure",
+        paragraphs: [
+          "If a bill has no due date recorded, any figure built on it is provisional, and you should be told that rather than shown a confident number resting on a guess.",
+          "This is the difference between a tool you can act on and a tool you check and then second guess. Being told a figure is preliminary because two bills are missing dates is far more useful than having the uncertainty quietly rounded away.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Personal Finance Companion works out what is genuinely available by subtracting protected accounts and upcoming obligations from your real balances, then shows the line by line explanation of how it got there. When a bill is missing a due date it says the figure is preliminary rather than pretending otherwise. Monthly Money Reset does a simpler version of the same thing, free, if you want to start there.",
+      },
+    ],
+  },
+
+  {
+    slug: "why-budgeting-apps-stop-working-after-two-months",
+    title: "Why budgeting apps stop working after about two months",
+    dek: "Eighty one percent of people abandon their financial goals. The reason is usually the tool's design, not the person using it.",
+    readingTime: "6 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "money",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Around eighty one percent of people who set financial goals last year did not stick to them. That number is usually presented as a discipline problem. It is mostly a design problem.",
+          "Almost every budgeting tool requires continuous manual upkeep to stay accurate. Miss a week of categorising and the figures on screen are wrong. Once they are wrong you stop trusting them, and once you stop trusting them the app is decoration.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The maintenance burden is the whole problem",
+        paragraphs: [
+          "The setup is genuinely enjoyable. Categories, budgets per category, a clean dashboard. That is the part that gets designed carefully, because it is what people see when deciding to sign up.",
+          "Week six is not designed for at all. Week six is a fortnight of uncategorised transactions, three splits you never finished, and a dashboard confidently reporting a number you know is nonsense. Nothing in the product acknowledges that this is the normal state of things.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Four ways they break",
+        ordered: true,
+        items: [
+          "They require categorising every transaction, which is a chore with no visible reward.",
+          "They treat a missed week as a data problem for you to repair rather than a normal thing that happens.",
+          "They present precise figures built on incomplete data, without ever saying so.",
+          "They add streaks and scores, so falling behind becomes a judgement rather than a gap.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Rigid budgets fail for a separate reason",
+        paragraphs: [
+          "Envelope style budgets assume a stable month. Most months are not stable, and one unexpected cost breaks several categories at once. Repairing that takes more effort than the budget was saving.",
+          "More than half of people who budget say the main reason is simply making sure essentials are covered. That is a much smaller question than a full category system, and it can be answered with far less upkeep.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What survives past month two",
+        items: [
+          "Answers one question well rather than modelling everything.",
+          "Stays roughly right with very little input.",
+          "Says plainly when its own figure is incomplete.",
+          "Has no streak, no score, and no way to be behind.",
+          "Is still useful the week you ignore it.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Ask what happens when you stop paying attention",
+        paragraphs: [
+          "Whatever you use, this is the question worth asking before you invest a weekend in setup. Some tools degrade gracefully and are still broadly correct after a neglected fortnight. Others become actively misleading and then demand an hour of repair before they are any use again.",
+          "Only the first kind is still installed a year later.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Monthly Money Reset answers one question, what is safe to spend this month, and is free. Personal Finance Companion holds the whole picture and tells you when its own figure is preliminary rather than presenting a confident number built on a gap. Neither contains a streak, a score, or a screen that tells you that you are behind, because that is the mechanism that gets these things deleted.",
+      },
+    ],
+  },
 ];
 
 export function getGuideBySlug(slug: string): Guide | undefined {

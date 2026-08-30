@@ -98,6 +98,53 @@ describe("guide content", () => {
   });
 });
 
+/**
+ * Guides cross-link each other by hand, using the [text](/href) inline
+ * syntax the block model allows. A mistyped slug produces a link that
+ * looks fine in review and 404s for a reader, and internal linking is
+ * load bearing for how the guides layer ranks, so it is checked rather
+ * than trusted.
+ */
+describe("inline links", () => {
+  const INLINE = /\[[^\]]+\]\(([^)]+)\)/g;
+
+  function linksIn(guide: (typeof GUIDES)[number]): string[] {
+    const text = guide.body
+      .flatMap((block) => {
+        if (block.kind === "paragraphs") return block.paragraphs;
+        if (block.kind === "list") return [block.intro ?? "", ...block.items];
+        if (block.kind === "table") return [block.intro ?? "", ...block.rows.flat()];
+        return [block.body];
+      })
+      .join(" ");
+    return [...text.matchAll(INLINE)].map((match) => match[1]);
+  }
+
+  it("never points at a guide that does not exist", () => {
+    const known = new Set(GUIDES.map((guide) => `/guides/${guide.slug}`));
+    for (const guide of GUIDES) {
+      for (const href of linksIn(guide)) {
+        if (!href.startsWith("/guides/")) continue;
+        expect(known.has(href), `${guide.slug} links to missing ${href}`).toBe(true);
+      }
+    }
+  });
+
+  it("only ever links to a relative path, never off site from body copy", () => {
+    for (const guide of GUIDES) {
+      for (const href of linksIn(guide)) {
+        expect(href.startsWith("/"), `${guide.slug} links externally to ${href}`).toBe(true);
+      }
+    }
+  });
+
+  it("never links a guide to itself", () => {
+    for (const guide of GUIDES) {
+      expect(linksIn(guide), guide.slug).not.toContain(`/guides/${guide.slug}`);
+    }
+  });
+});
+
 describe("related guides", () => {
   it("never returns the guide itself", () => {
     for (const guide of GUIDES) {
