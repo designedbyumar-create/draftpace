@@ -12,24 +12,26 @@ export default function AboutPage() {
     <Container width="narrow" className="pb-24 pt-16 sm:pt-20">
       <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--primary)]">About</p>
       <h1 className="mt-3 font-serif text-[34px] font-semibold leading-tight tracking-tight sm:text-[44px]">
-        We wanted the things we buy to stay alive.
+        Nothing we make will tell you that you are behind.
       </h1>
 
       <div className="mt-10 flex flex-col gap-6 text-[15px] leading-relaxed text-[var(--text)]">
         <p>
-          Draftpace started from a folder we all recognized: a budget spreadsheet, a course we meant to finish, a
+          Draftpace started from a folder we all recognise: a budget spreadsheet, a course we meant to finish, a
           planner that looked perfect and did nothing once it was downloaded. Each one promised to change something,
-          then went quiet, because a file cannot notice, remind, or adjust on its own.
+          then went quiet.
         </p>
         <p>
-          We did not want to make one more of those. Not a template you print, and not an app you rent and forget
-          you are paying for. We wanted to buy something that behaves like it is on your side: it remembers you, it
-          points you to the next thing, and it is still yours years later.
+          What we found when we looked harder was that the file was not really the problem. The problem was that the
+          hardest parts of adult life, money and houses and paperwork and the things nobody hands you a manual for,
+          all require holding a great deal of connected detail in your head at exactly the moment you have least
+          capacity for it. Every tool we tried answered that by asking us to hold more.
         </p>
         <p>
-          So we started a studio to make exactly that. We call them living products. Each one is built around a
-          single real problem and has its own world, and every one shares the same promise: it stays alive the whole
-          time you own it, and you can leave and come back without losing anything or starting over.
+          So we build the opposite. Each Companion takes one of those areas and holds the state and the connections
+          for you, works out what genuinely needs you now, and stays quiet when the honest answer is nothing. There
+          is no streak in any of them, no completion percentage, and no screen that counts what you did not get to.
+          That is not a feature we added. It is the reason the rest of it exists.
         </p>
       </div>
 
