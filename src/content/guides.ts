@@ -84,7 +84,7 @@ export const GUIDES: Guide[] = [
 
   {
     slug: "what-to-do-when-a-parent-dies",
-    title: "What to do when a parent dies: a calm order for the first two weeks",
+    title: "What to do when a parent dies: a clear order for the first two weeks",
     dek: "The practical steps, in the order they actually need doing, written for somebody who is grieving and cannot hold a list in their head.",
     readingTime: "9 min read",
     publishedAt: "2026-08-30",
@@ -489,7 +489,7 @@ export const GUIDES: Guide[] = [
         heading: "What about compensation",
         paragraphs: [
           "Roughly half of travellers never claim for a disruption, and the most common reason given is not knowing they could. It is worth looking into afterwards.",
-          "It is deliberately not part of this guide, because what you are owed depends on where you flew from, which carrier, and sometimes which fare, and a confident wrong answer at a desk puts you in a worse position than no answer. Sort out the travel first. Look up entitlement later, calmly, when you are not standing up.",
+          "It is deliberately not part of this guide, because what you are owed depends on where you flew from, which carrier, and sometimes which fare, and a confident wrong answer at a desk puts you in a worse position than no answer. Sort out the travel first. Look up entitlement later, when you are sitting down and not at a desk.",
         ],
       },
       {

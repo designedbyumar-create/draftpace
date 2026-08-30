@@ -58,6 +58,12 @@ describe("public/auth copy has no em dashes", () => {
 });
 
 const BANNED_WORDS = [
+  // "calm" is banned on two grounds: the founder rejected it as the
+  // product's adjective, and Calm is a large meditation brand, so it is a
+  // collision as well as a taste problem. Copy leads on behaviour instead
+  // ("it never tells you that you are behind"), which is a promise the
+  // suite can actually enforce. Use "quiet" where an adjective is needed.
+  "calm",
   "seamless",
   "frictionless",
   "robust",

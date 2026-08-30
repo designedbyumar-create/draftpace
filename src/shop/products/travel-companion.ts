@@ -41,7 +41,7 @@ export const travelCompanionShopProduct: ShopProductInput = {
   promise:
     "Everything your trip depends on, in one place, and the one thing most travel tools miss: what else moves when one thing moves. Record a change to a flight and it shows you the transfer, the check-in and the reservation that were built on it, one at a time.",
   problem:
-    "A trip is easy to plan and hard to run. The planning happens once, calmly, weeks ahead. The running happens in an airport at 6am when the flight has moved three hours and you are trying to remember, from memory, what else you booked around the old time. Confirmation numbers are in six different inboxes, the transfer company's number is in a screenshot, and the only thing holding the shape of the trip together is your own head, which is the thing least available at exactly that moment.",
+    "A trip is easy to plan and hard to run. The planning happens once, weeks ahead, with time to think. The running happens in an airport at 6am when the flight has moved three hours and you are trying to remember, from memory, what else you booked around the old time. Confirmation numbers are in six different inboxes, the transfer company's number is in a screenshot, and the only thing holding the shape of the trip together is your own head, which is the thing least available at exactly that moment.",
   audience: [
     "You are travelling with other people, and you are the one everybody asks what happens next.",
     "Your trip has more than three moving parts: flights, transfers, stays and reservations that were booked around each other.",

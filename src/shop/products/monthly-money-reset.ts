@@ -38,14 +38,14 @@ export const monthlyMoneyResetShopProduct: ShopProductInput = {
     {
       worry: "Afraid it'll judge you?",
       answer:
-        "It's not a budget. Just a clear, calm picture, with no lectures and no shame for a rough week. When you fall behind it asks what changed, not why.",
+        "It's not a budget. Just a clear picture, with no lectures and no shame for a rough week. When you fall behind it asks what changed, not why.",
     },
   ],
   outcomes: [
     "A single, trustworthy Safe-to-Spend figure that updates as the month goes on.",
     "Bills that stay protected whether they're paid yet or not, so the number never assumes money you actually owe.",
     "A short weekly check-in that keeps the picture accurate without turning into a chore.",
-    "A calm way back in if you've been away for a while, no overdue-task pileup waiting for you.",
+    "A quiet way back in if you've been away for a while, no overdue-task pileup waiting for you.",
   ],
   howItWorks: [
     "Add the money available right now, along with any bills you need to protect and anything you'd rather not spend.",
