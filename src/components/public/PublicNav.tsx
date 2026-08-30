@@ -41,7 +41,13 @@ export default function PublicNav({ user }: { user: PublicNavUser }) {
   const accountItems = useMemo(() => publicSignedInAccountMenuItems(() => signOutAndRedirect("/")), []);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-[var(--border)] bg-[var(--bg)]/90 backdrop-blur">
+    // Opaque, not glass. This header used to be 90% opaque with a
+    // backdrop blur, which is invisible while the thing scrolling under it
+    // is the page background and becomes very visible the moment it is
+    // not: on a guide article the tinted banner tinted the header and the
+    // headline smeared through it as it passed underneath. The effect was
+    // only ever on show in the one situation where it looked broken.
+    <header className="sticky top-0 z-40 border-b border-[var(--border)] bg-[var(--bg)]">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
           <Logo height={40} />
