@@ -27,12 +27,15 @@
  * mark is meant to look like.
  *
  * The wordmark's cap height is set equal to the monogram glyph's own
- * height (238.2 of 512, measured from the path rather than guessed), so the
- * D and the glyph are siblings. It is then centred on its FULL outline,
- * descender included, not on the cap block. Centring the cap block is
- * the textbook move and it is wrong here: it left 137 units of air above
- * the D and 62 below the p, so the word visibly sat low against the
- * plate. Centring the whole outline balances it to 99 and 99.
+ * height (238.2 of 512, measured from the path rather than guessed), so
+ * the D and the glyph are siblings.
+ *
+ * Its vertical position is the founder's call, not a formula. Geometric
+ * centring of the full outline puts it at y 99.41; it sits 12.8 lower
+ * than that, which is one pixel at the 40px height the header renders it
+ * at. Because the offset lives in the viewBox it stays proportional, so
+ * the lockup is identical at every size rather than only correct in the
+ * header.
  */
 
 const WORDMARK_PATH =
@@ -76,7 +79,7 @@ export function Logo({ height = 40, className = "" }: { height?: number; classNa
     >
       <rect width="512" height="512" rx="112" fill="var(--logo-mark)" />
       <path fillRule="evenodd" clipRule="evenodd" d={MONOGRAM_PATH} fill="var(--logo-mark-glyph)" />
-      <g transform="translate(662.0 99.41) scale(0.86037)">
+      <g transform="translate(662.0 112.21) scale(0.86037)">
         <path fillRule="evenodd" clipRule="evenodd" d={WORDMARK_PATH} fill="var(--logo-word)" />
       </g>
     </svg>
