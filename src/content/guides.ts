@@ -2187,6 +2187,1336 @@ export const GUIDES: Guide[] = [
       },
     ],
   },
+
+  // ---------------------------------------------------------------- batch 4
+
+  {
+    slug: "what-your-family-would-need-to-know-tomorrow",
+    title: "What your family would need to know tomorrow",
+    dek: "Not a will, and not morbid. The short list of things that only exist in your head, and what happens when nobody can find them.",
+    readingTime: "6 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "affairs-and-endings",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Imagine somebody has to run your life from tomorrow morning, with no warning and no access to your phone. Not forever. Just for a fortnight.",
+          "Most of what they would need is not secret and not complicated. It is simply undocumented, because it has always lived in one head, and it turns out that is a single point of failure.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "The fortnight list",
+        intro: "What somebody would actually hit in the first two weeks, in roughly the order they would hit it.",
+        ordered: true,
+        items: [
+          "Which bank the household money is in, and whether anything is due out this week.",
+          "Where the mortgage or rent is paid from, and when.",
+          "Which utilities are on which accounts, and whether any are on a fixed term ending soon.",
+          "Whether anyone is expecting you: work, appointments, a standing commitment, somebody you care for.",
+          "Where the car keys, spare house keys and any alarm codes are.",
+          "Whether a pet needs something specific that only you know.",
+          "Who to call. Not next of kin. The person who could actually help with a specific thing.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Two weeks is the useful frame",
+        paragraphs: [
+          "Thinking about this as estate planning makes it enormous, and enormous things do not get done. Thinking about it as a fortnight makes it a short list you can write in one sitting.",
+          "It is also the frame that covers the far more likely scenarios. Illness, an accident, being abroad and unreachable, or being in hospital for a week are all far more probable than the version everyone avoids thinking about, and the same list solves all of them.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The thing that blocks everything is the password manager",
+        paragraphs: [
+          "Almost every modern household has a single point of failure that nobody has tested: the recovery email, whose password is in the password manager, whose master password exists only in one person's memory.",
+          "You do not need to write the master password down. You need somebody to have recovery access, or a sealed copy somewhere trusted, and to know that mechanism exists. Otherwise everything else on your list is behind a door nobody can open.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Keep it findable, which means keep it dull",
+        paragraphs: [
+          "This document should be safe to leave in a drawer, which means it holds locations and references rather than credentials. Where the pension paperwork is, not the login for it.",
+          "A perfect record nobody can reach is the same as no record. The fuller version of what belongs in it is in [the if something happens to me file](/guides/the-if-something-happens-to-me-file).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Personal Life Affairs Companion works out which parts of this are even relevant to you, sequences them so the job has a beginning, and records where things are kept rather than the things themselves. It prints as a book, which is the format that still works when the problem is that nobody can get into a device.",
+      },
+    ],
+  },
+
+  {
+    slug: "digital-accounts-after-a-death",
+    title: "Digital accounts after a death: what can and cannot be recovered",
+    dek: "Photos, email, subscriptions and social accounts. What providers will actually release, what they will not, and what to set up now.",
+    readingTime: "7 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "affairs-and-endings",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "The short version is that access to somebody's digital accounts after they die is much harder than people expect, and in many cases impossible regardless of documentation.",
+          "Providers are bound by their own terms and by privacy law, and a death certificate plus proof of executorship does not automatically grant access to an account. Some will memorialise. Some will close. Very few will simply hand over the contents.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Roughly what to expect",
+        intro: "Policies change and vary by country, so treat this as a starting point rather than a rule.",
+        columns: ["Account type", "Usual outcome", "What helps"],
+        rows: [
+          ["Email", "Rarely released. Sometimes closed on request.", "A legacy contact set up in advance"],
+          ["Photo storage", "Sometimes released to a designated contact", "A legacy or inactive account contact"],
+          ["Social media", "Memorialised or deleted, contents rarely released", "A legacy contact, or clear instructions"],
+          ["Subscriptions", "Cancelled on request with a death certificate", "Knowing they exist at all"],
+          ["Cloud storage", "Varies, and often refused", "Shared folders set up while alive"],
+          ["Domain names and websites", "Transferable, but registrar dependent", "Registrar details written down"],
+          ["Cryptocurrency", "Unrecoverable without the keys", "Nothing after the fact. Only preparation"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Legacy contacts are the thing that actually works",
+        paragraphs: [
+          "Several large providers let you nominate somebody in advance who can request access after your death. It takes minutes, it is free, and it is the single most effective step available.",
+          "It works because you granted permission while alive, which is a completely different legal situation from somebody requesting access afterwards. That distinction is why preparation succeeds where paperwork later usually fails.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The subscriptions keep running",
+        paragraphs: [
+          "This is the practical problem families hit first. Payments continue for months or years because nobody knows the subscriptions exist, and they are only discoverable through bank statements.",
+          "Twelve months of statements is the way to find them, for the same reason it is the way to find accounts and policies generally, which is covered in [how to find someone's accounts](/guides/how-to-find-someones-accounts-after-they-die).",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What to do now, for yourself",
+        paragraphs: [
+          "Set legacy contacts where they are offered. Write down which email address is the recovery address for everything, because that account is the key to most of the others. Make sure somebody can get into the password manager, through its own recovery mechanism rather than through a written master password.",
+          "And write down what would be a real loss. Photographs are what families grieve twice over, and they are usually the most recoverable thing if a designated contact exists.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Personal Life Affairs Companion covers the digital side more thoroughly than any other area, because it is the part that is genuinely unrecoverable if nobody wrote it down. It records which accounts exist, which email is the recovery address, and where the password manager lives, never the credentials themselves.",
+      },
+    ],
+  },
+
+  {
+    slug: "which-documents-to-keep-and-where-to-put-them",
+    title: "Which documents to keep, which to shred, and where the rest should live",
+    dek: "A retention guide for household paperwork, and a filing approach that survives contact with real life.",
+    readingTime: "7 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "affairs-and-endings",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Most households keep either everything or nothing. Everything means a box nobody can search. Nothing means an afternoon lost the one time a document is needed.",
+          "The workable middle is a short list of things worth keeping permanently, a shorter list worth keeping for a few years, and permission to shred the rest.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Roughly how long to keep things",
+        intro: "General guidance. Tax retention rules in particular vary by country, so check yours.",
+        columns: ["Document", "Keep for", "Why"],
+        rows: [
+          ["Birth, marriage, death certificates", "Permanently", "Originals are slow and costly to replace"],
+          ["Wills and powers of attorney", "Permanently, current version", "Superseded versions still matter if challenged"],
+          ["Property deeds and mortgage records", "Permanently, or until well after sale", "Boundary and ownership disputes surface late"],
+          ["Pension and investment statements", "Permanently for the annual summary", "Old schemes are the most commonly lost asset"],
+          ["Tax records", "Several years, per local rules", "Audit windows differ by country"],
+          ["Home improvement receipts", "As long as you own the property", "Can matter for warranty and for tax on sale"],
+          ["Appliance receipts and manuals", "While you own the item", "Warranty claims need proof of purchase"],
+          ["Utility bills and bank statements", "About a year, unless needed for tax", "Superseded quickly, and available from providers"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Sort by how urgently you would need it",
+        paragraphs: [
+          "Filing by category is how filing systems die, because a document usually fits two categories and choosing costs a moment every time.",
+          "Sorting by urgency works better. One thin folder for things somebody might need in an emergency, one for active paperwork, one box for archive. Three destinations means no decision, which means things actually get filed.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What actually needs to be paper",
+        paragraphs: [
+          "Certificates, deeds, signed wills and anything with a wet signature or a seal. For most of the rest, a clear scan is fine and a great deal easier to find.",
+          "The exception worth respecting is anything somebody else would need in a hurry. Paper does not need a password, a battery, or a device somebody cannot get into.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Shred rather than bin",
+        paragraphs: [
+          "Anything with an account number, a signature, a date of birth or a full address is worth shredding. That is most of what you are throwing away.",
+          "It is a small habit that removes a real and boring risk, and it makes the decision to discard something much easier, which is the actual barrier for most people.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Personal Life Affairs Companion records what documents exist and where each one is kept, so the question becomes a lookup rather than a search through a box. It never accepts an upload, which is deliberate: a registry of locations is far less dangerous to hold than the documents themselves.",
+      },
+    ],
+  },
+
+  {
+    slug: "what-to-log-after-a-repair",
+    title: "What to write down after every repair, so the next one is cheaper",
+    dek: "Five minutes after an engineer leaves is worth an hour next time. What to capture, and why the diagnosis matters more than the invoice.",
+    readingTime: "6 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "home",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Almost everybody keeps the invoice and forgets everything else. The invoice tells you what you paid. It rarely tells you what was actually wrong, what was replaced, or what the engineer said would need doing next.",
+          "That second set is what makes the next repair faster, and it exists only in your memory for about a fortnight.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Write these down the same day",
+        ordered: true,
+        items: [
+          "What the symptom was, in your own words, before anybody diagnosed it.",
+          "What they said was actually wrong.",
+          "What was replaced or adjusted, including any part number.",
+          "What they said to watch for, or what would need doing next and roughly when.",
+          "Who came, which company, and whether you would have them back.",
+          "What it cost, and whether any of it was under warranty.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The diagnosis is worth more than the invoice",
+        paragraphs: [
+          "When the same appliance misbehaves in two years, the single most useful sentence is what an engineer concluded last time. It shortens the next visit, and it sometimes prevents one entirely because you recognise the symptom.",
+          "It also protects you. An engineer telling you a part was replaced eighteen months ago is a very different conversation from one where nobody can remember.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Record what they said would come next",
+        paragraphs: [
+          "Engineers routinely mention that something else is nearing the end of its life, and that remark is almost never written down. Six months later the thing fails and nobody remembers being warned.",
+          "That one line is the most valuable thing in the whole visit, because it is the only genuinely predictive information you will get about your own house.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Keep a note of who to call again",
+        paragraphs: [
+          "Finding a good tradesperson is harder than any of the admin around it, and most people rediscover this every few years because the number was in a text message that got lost.",
+          "Recording who came, alongside the thing they worked on, means the next problem starts with a phone number rather than a search.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "This is also what makes maintenance schedules real",
+        paragraphs: [
+          "A service interval only means something if you know when the last service happened. Without that, every schedule starts from an arbitrary date and drifts.",
+          "The intervals themselves are in [how often things actually need servicing](/guides/how-often-home-systems-need-servicing).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Home Base keeps a service history against each thing in your house, including who did the work, so the next repair starts with facts rather than memory. Because it knows when something was last done, its idea of what is due next is based on reality rather than on when you happened to add the item.",
+      },
+    ],
+  },
+
+  {
+    slug: "appliance-warranties-what-to-track",
+    title: "Appliance warranties: what to track, and when they actually pay out",
+    dek: "Most warranty claims fail for boring reasons. What to record at purchase, and the dates worth knowing before something breaks.",
+    readingTime: "6 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "home",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Warranty claims mostly fail for administrative reasons rather than because a manufacturer refused. No proof of purchase, no serial number, no record of the annual service the warranty required, or a claim made a fortnight after expiry.",
+          "All four are avoidable with about two minutes of recording at the point of purchase.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What to record when something is installed",
+        ordered: true,
+        items: [
+          "Date of purchase and date of installation, which are often different and it is usually installation that starts the clock.",
+          "Serial number, which is what a manufacturer will ask for first.",
+          "Where the proof of purchase is.",
+          "The warranty length, and whether it was extended or registered.",
+          "Any condition attached, most commonly an annual service requirement.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The service condition is the one that catches people",
+        paragraphs: [
+          "Many boiler and heating warranties require a documented annual service. Miss one, and the warranty can be void for the rest of its term, which people usually discover at the exact moment they try to use it.",
+          "This is the single most expensive small print in a normal household, and the fix is knowing the condition exists and having the service dates recorded.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Registering matters more than it should",
+        paragraphs: [
+          "Registration is often what extends a warranty from one year to five, and it is a form most people skip because it looks like marketing.",
+          "It is also how manufacturers reach owners about recalls. A recall notice you never receive is worth remembering when deciding whether the form is worth two minutes.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Check the expiry before you pay for a repair",
+        paragraphs: [
+          "The obvious step that gets skipped under pressure. Something breaks, you want it fixed today, and nobody checks whether it is still covered until after the invoice.",
+          "Knowing your expiry dates in advance converts this from a discovery into a decision.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Extended warranties are usually not worth it",
+        paragraphs: [
+          "As a general rule the ones sold at the till are poor value, because they are priced to be profitable and most appliances either fail early, within the standard warranty, or last well beyond the extension.",
+          "The exception is anything where a single failure is catastrophic relative to the item's cost. That is a judgement, not a rule, and it should be made with the expiry dates in front of you rather than at a counter.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Home Base records warranty end dates alongside the make, model and serial for everything in your house, and raises one when it is genuinely approaching rather than burying it in a list. What to capture per type of thing is in [what to record about an appliance](/guides/what-to-record-about-an-appliance-before-you-need-it).",
+      },
+    ],
+  },
+
+  {
+    slug: "scripts-for-the-admin-calls-everyone-dreads",
+    title: "Scripts for the admin calls everyone dreads",
+    dek: "Opening lines for the five calls people put off longest, and the four things to do before hanging up on any of them.",
+    readingTime: "7 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "mind-and-focus",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "The first fifteen seconds are the part almost everybody rehearses and dreads. Once you are through them the conversation generally carries itself, because the other person starts asking questions and you only have to answer.",
+          "So the useful preparation is not a full script. It is a first sentence, and knowing what you want before you dial.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Openings that work",
+        intro: "Change any of these. The point is having a first sentence at all.",
+        items: [
+          "Billing problem: Hello, I have been charged for something and the amount is not what I was expecting. Can you look into it for me.",
+          "Chasing something overdue: Hello, I am following up on something I was told would be resolved by now. Can you tell me where it has got to.",
+          "Cancelling: Hello, I would like to cancel my account. Can you tell me what you need from me to do that.",
+          "Complaining: Hello, something has gone wrong and I would like to explain what happened. Can I go through it with you.",
+          "Asking for help you feel you should not need: Hello, I am trying to sort something out and I am not sure I am doing it right. Can you point me in the right direction.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Say what happened, once, in order",
+        paragraphs: [
+          "Whoever answers can only help with the actual sequence of events. Give it once, cleanly, then say what you need. Leading with the ask before the facts almost always makes the call longer.",
+          "Two sentences is usually enough. What happened, and what you would like to happen now.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Four things before you hang up",
+        intro: "This is the part that saves the second call.",
+        ordered: true,
+        items: [
+          "Ask them to read back what has been agreed.",
+          "Get a reference number for the call itself.",
+          "Get the name of who you spoke to.",
+          "Ask what happens next, and by when.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "You do not have to be firm",
+        paragraphs: [
+          "A great deal of advice about difficult calls is really advice about being assertive, which assumes the problem is that you are too soft. Usually the problem is capacity, not confidence.",
+          "Being polite and specific works with almost every call centre, because the person answering has a fixed set of options and is deciding which to offer. Clarity about what you want moves that further than firmness does.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "If the call does not resolve it",
+        paragraphs: [
+          "That is a normal outcome. Plenty of calls end with somebody else needing to look into it, and the reference number is what makes the next one continue rather than restart.",
+          "If the barrier is getting to the call at all rather than the call itself, that is a different problem, worked through in [making a phone call you have been avoiding](/guides/how-to-make-a-phone-call-you-have-been-avoiding).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "ADHD Life Companion has authored procedures for these exact situations, including a billing problem, a follow up and a difficult call. It suggests an opening you can edit or replace, holds what you want on screen while you talk, and never tells you what to accept or settle for, because you are the one with the facts. Suggested wording is never saved once you have used it.",
+      },
+    ],
+  },
+
+  {
+    slug: "when-something-has-been-left-so-long-it-is-embarrassing",
+    title: "When something has been left so long it is embarrassing",
+    dek: "The shame is doing more work than the task now. How to deal with the delay itself, including what to say about it.",
+    readingTime: "6 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "mind-and-focus",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "There is a point where a task stops being a task and becomes evidence. The unopened letters. The email from four months ago. The thing you said you would sort out and then avoided so long that dealing with it now means admitting how long it has been.",
+          "At that point you are not avoiding the work. You are avoiding the conversation about why it did not happen sooner, which is a completely different problem and considerably heavier.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The delay is almost always less interesting to them than to you",
+        paragraphs: [
+          "Whoever you have to contact deals with delayed matters constantly. Call centres, landlords, councils, accountants and clinics all have processes for exactly this, because most of what reaches them is late.",
+          "The version of the conversation you have rehearsed, where somebody is shocked or annoyed, is very rarely the one that happens. Usually they ask for a reference number and move on.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What to say about the gap",
+        intro: "Brief, factual, no explanation required. Any of these ends the topic.",
+        items: [
+          "I know this has been outstanding for a while, and I would like to get it sorted now.",
+          "This is later than it should be. What do you need from me.",
+          "I have not dealt with this until now. Can you tell me where it stands.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Do not explain unless they ask",
+        paragraphs: [
+          "The instinct is to justify: an illness, a bereavement, a hard year. If a reason is relevant to what they can offer you, give it. Otherwise it usually makes the exchange longer and more uncomfortable, mostly for you.",
+          "Acknowledge and move to the practical question. Almost every organisation is set up to answer the practical question and has nothing to do with the other one.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Open the letters before deciding it is bad",
+        paragraphs: [
+          "A pile of unopened post grows in the imagination at a rate the contents rarely justify. Often several are duplicates, a couple are marketing, and the actual problem is one item smaller than feared.",
+          "Opening them without doing anything is a legitimate first step. You are converting an unknown into a known, and the unknown is what has been costing you.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Late is a state, not a verdict",
+        paragraphs: [
+          "Almost nothing on a typical list gets worse for having been avoided, in the way the dread implies. Debts accrue interest and deadlines pass, and both are real, but the imagined catastrophe is nearly always larger than the actual position.",
+          "The way in is usually a phone call, and the preparation for that is in [making a phone call you have been avoiding](/guides/how-to-make-a-phone-call-you-have-been-avoiding).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "ADHD Life Companion is built so that nothing counts how long something sat. There is no streak, no overdue tally, and closing something you did not get to records nothing at all, not even a timestamp, because a history of your own admin should not read as a list of failures.",
+      },
+    ],
+  },
+
+  {
+    slug: "preparing-for-a-homeschool-evaluation",
+    title: "Preparing for a homeschool evaluation or review",
+    dek: "What evaluators actually look for, what to bring, and how to prepare in an evening rather than a fortnight.",
+    readingTime: "7 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "family-and-learning",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "An evaluation is generally a check that education is happening, not an inspection of whether you are doing it well. Evaluators are usually experienced homeschoolers or teachers, and most of them want the meeting to go fine.",
+          "The preparation that helps is assembling evidence that something coherent happened across the year, which is a smaller job than most people fear, particularly if anything at all was recorded as you went.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What to bring",
+        ordered: true,
+        items: [
+          "The log of what was covered, with dates, even if approximate.",
+          "Work samples across the year, not from one strong fortnight.",
+          "A list of curricula and materials used.",
+          "Attendance or days schooled, if your state counts them.",
+          "Test results, if required where you are.",
+          "A short note per subject on where you started and where you got to.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Progress is what they are looking for",
+        paragraphs: [
+          "The single most persuasive thing in any portfolio is the same subject at two points in the year. October and March writing samples side by side say more than any quantity of finished work from one week.",
+          "It is also the easiest thing to provide, and the thing most people accidentally leave out by only keeping the pieces they were proud of.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Be honest about what did not go well",
+        paragraphs: [
+          "Saying that maths was difficult until January, that you changed curriculum, and that it improved afterwards is a stronger position than implying everything went smoothly.",
+          "It demonstrates that you were paying attention and adjusting, which is exactly what an evaluator wants to see. A portfolio with no difficulties in it reads as curated rather than complete.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "If you are behind on records",
+        paragraphs: [
+          "Reconstruct honestly, mark approximate dates as approximate, and do not invent precision. A clearly reconstructed term is a normal thing to hand over.",
+          "The full recovery method is in [when you have kept nothing since October](/guides/homeschool-records-when-you-have-kept-nothing-since-october).",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Check what your state actually requires",
+        paragraphs: [
+          "Requirements differ enormously, and preparing for a stricter standard than yours wastes a weekend. The state-by-state position is in [record keeping requirements by state](/guides/homeschool-record-keeping-requirements-by-state).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Homeschooling Companion prints a record per child covering what was done, when, and what you noticed, which is most of what an evaluation asks for. It accepts backdated entries, and its short checks report an honest standing, including not enough to say, rather than a score you would then have to explain.",
+      },
+    ],
+  },
+
+  {
+    slug: "group-trip-coordination-without-becoming-the-admin",
+    title: "Group trips: coordinating people without becoming the group admin",
+    dek: "Coordinating schedules is the top stressor in group travel. A way to share the shape of a trip without owning everybody's decisions.",
+    readingTime: "6 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "travel",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Nearly two thirds of people planning group travel name coordinating schedules as their leading stressor, ahead of budgets and ahead of comparing options.",
+          "The reason is that one person ends up holding the whole thing in their head, and that person is answering the same four questions repeatedly for a fortnight.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Decide these three things first",
+        intro: "Almost all group travel friction comes from leaving these implicit.",
+        ordered: true,
+        items: [
+          "Who is booking what. Not who is paying, who is actually making each booking.",
+          "What is fixed and what is optional. Flights and stays are usually fixed. Everything else should be explicitly optional so nobody feels obliged to attend a museum.",
+          "Where the answers live. One place everybody can read without asking you.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The four questions you will be asked repeatedly",
+        paragraphs: [
+          "What time are we leaving. Where are we staying. What is happening on Thursday. Am I on that booking.",
+          "Every one of those is a lookup rather than a decision. If the answers are readable somewhere, the questions mostly stop, and the ones that remain are genuine decisions worth your attention.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Record who is on what",
+        paragraphs: [
+          "In a group, a booking is not simply an event. It is an event with a subset of people attached, and that subset is rarely everybody.",
+          "Four people on the flight, two on the car hire, three at the restaurant. Writing that down once answers a large share of the questions above and prevents the specific problem of somebody discovering at the airport that they were never on a booking.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Note what each person needs",
+        paragraphs: [
+          "Dietary requirements, mobility needs, a seat preference, medication that affects timing. In a group these live in several heads and surface at inconvenient moments.",
+          "Recorded once against the person, they are available when a booking is made rather than remembered afterwards.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "When something moves, it moves for a subset",
+        paragraphs: [
+          "This is where group trips get genuinely difficult. A delayed flight affects the four people on it and not the two who travelled separately, and working out who needs telling is its own task.",
+          "Knowing what depends on what is the same skill as in any trip, covered in [what else your trip depends on](/guides/what-else-your-trip-depends-on-when-something-changes). The group version simply adds the question of who is affected.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Travel Companion records travellers, links them to the bookings they are actually on, and holds what each person needs. When something changes it shows what was built on top of it, so working out who to tell starts from what is recorded rather than from memory. It also prints the whole trip as a book, which is a genuinely practical way to hand the shape of it to somebody else.",
+      },
+    ],
+  },
+
+  {
+    slug: "untangling-money-after-a-life-change",
+    title: "Untangling your money after a job change, move or separation",
+    dek: "Life events break the assumptions your finances were built on. A practical order for putting the picture back together.",
+    readingTime: "7 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "money",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "A new job, a move, or a separation each break several assumptions at once. Income changes shape or timing, outgoings move, and a number of things that were on autopilot are now pointed at the wrong place.",
+          "The work is not complicated. It is just spread across a dozen places, and it arrives at a moment when you have a great deal else happening.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "The order that works",
+        ordered: true,
+        items: [
+          "Income first. What is arriving, when, and is the payday different from before. Everything else depends on this.",
+          "Fixed outgoings second. What leaves automatically, from which account, and on what dates.",
+          "Then anything now wrong: an address, a name on a bill, a payment coming from an account that will close.",
+          "Then the things nobody remembers, which are pensions from the old employer and insurance bought through it.",
+          "Then recalculate what is safe to spend, because the old number is no longer true.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Job change: the gap and the pension",
+        paragraphs: [
+          "Two things catch people. A change in payday can leave a longer gap than usual between salaries, and direct debits do not care that this month is five weeks. Checking the dates before that gap arrives prevents a missed payment for no reason other than timing.",
+          "The other is the old workplace pension, which does not disappear and does not follow you. It becomes a separate pot that most people lose track of, and untraced pensions are among the most commonly lost assets there are.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Moving: the address is on more things than you think",
+        paragraphs: [
+          "Bank, insurers, pension providers, the electoral roll, your driving licence, subscriptions with a delivery address, and anything that posts an annual statement. That last category matters most, because an annual statement sent to an old address is how people lose track of accounts entirely.",
+          "Meter readings on the day, both leaving and arriving, prevent the most common billing dispute there is.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Separation: untangle joint things deliberately",
+        paragraphs: [
+          "Joint accounts, joint bills and anything one person guaranteed for the other all need explicit attention, and a financial association between two people can persist long after the relationship does.",
+          "This is the one on the list where getting advice is genuinely worth it rather than optional, particularly where property or children are involved. Nothing here is advice, and the order above is only about getting the picture visible.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Recalculate the number afterwards",
+        paragraphs: [
+          "The figure you had in your head for what is safe to spend was built on the old shape of things and is now wrong, usually in a direction nobody enjoys discovering at a till.",
+          "Rebuilding it is quick once income and outgoings are visible, and the method is in [how much of your money is actually safe to spend](/guides/how-much-of-your-money-is-actually-safe-to-spend).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Personal Finance Companion holds accounts, income, bills, subscriptions and debts in one place, so after a life change you are editing a picture rather than reconstructing one. Personal Life Affairs Companion covers the paperwork half of the same events, including the pension from the job you just left.",
+      },
+    ],
+  },
+
+  // ---------------------------------------------------------------- batch 5
+
+  {
+    slug: "talking-to-your-parents-about-their-affairs",
+    title: "How to talk to your parents about their affairs without it going badly",
+    dek: "The conversation almost everybody postpones. What to open with, what not to ask for, and how to make it about logistics rather than mortality.",
+    readingTime: "7 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "affairs-and-endings",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "The conversation goes wrong when it sounds like a conversation about dying, or worse, about money. It goes fine when it sounds like a conversation about where things are kept.",
+          "That is not a trick. It is genuinely the useful part. You do not need to know what anybody is worth or who inherits. You need to know where the will is, which pension is with whom, and who to call.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Openings that tend to work",
+        intro: "Each shifts the subject onto logistics, and most work better when the prompt is somebody other than them.",
+        items: [
+          "I have been sorting out my own paperwork and realised nobody would know where anything of mine is. Have you done yours.",
+          "If you were both in hospital for a fortnight, I would not know how to keep things running. Can we write the basics down.",
+          "A friend has just been through this for their parent and it took months, mostly because nothing was written down.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Start with yourself",
+        paragraphs: [
+          "The single most effective move is doing your own first and mentioning it. It removes any suggestion that this is about their age or their health, and it gives you something concrete to show.",
+          "It also means you are asking them to join something rather than to submit to it, which is a materially different request.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Ask for locations, not contents",
+        paragraphs: [
+          "Where the will is, not what it says. Which bank, not the balance. Who the solicitor is, not what was discussed.",
+          "Almost everybody is comfortable sharing locations and uncomfortable sharing contents, and locations are what actually prevent the months of searching later.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Expect it to take several conversations",
+        paragraphs: [
+          "Trying to complete this in one sitting is how it becomes a confrontation. Getting the will's location this month and the pensions next month is a completely normal pace and considerably more likely to finish.",
+          "If somebody shuts it down, that is information rather than a refusal. Try a different entry point later, or a different person: parents will often tell a sibling something they will not tell you, for no reason either of you could explain.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Write it down at the time",
+        paragraphs: [
+          "The most common failure is having the conversation, feeling relieved, and recording nothing. Six months later you remember there was a solicitor and not which one.",
+          "What to capture is in [the if something happens to me file](/guides/the-if-something-happens-to-me-file).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Personal Life Affairs Companion is designed to be worked through gradually rather than in one sitting, and it records where things are kept rather than what they contain, which is exactly the boundary that makes this conversation possible. Doing your own is also the easiest way to start the conversation at all.",
+      },
+    ],
+  },
+
+  {
+    slug: "inheriting-a-house-nobody-documented",
+    title: "Inheriting or buying a house nobody documented",
+    dek: "No manuals, no service history, no idea how old the boiler is. How to work out what you have and what needs attention first.",
+    readingTime: "7 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "home",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Sometimes you end up responsible for a house with no paperwork at all. An inherited property, a probate sale, or a purchase where the previous owner handed over keys and nothing else.",
+          "You are not starting from nothing. The house itself carries most of the information, and an afternoon with a torch and a phone camera recovers a surprising amount of it.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "The walk round",
+        intro: "Photograph every plate you find. Transcribing model numbers by hand in bad light produces errors.",
+        ordered: true,
+        items: [
+          "Boiler or furnace: model, serial, and any service sticker, which often lists dates and the engineer.",
+          "Water heater: the label usually includes a manufacture date, which tells you its age even if nothing else does.",
+          "Consumer unit or breaker panel: often carries an installation or inspection certificate date.",
+          "Every major appliance: make, model, serial.",
+          "Meters: readings and serial numbers, plus which supplier the meter suggests.",
+          "Loft, cellar and cupboards, where manuals and paperwork usually survive when nothing else has.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Manufacture dates tell you most of what you need",
+        paragraphs: [
+          "Nearly every major appliance encodes its manufacture date somewhere on the plate, sometimes in the serial number itself. A quick search for the model plus how to read the serial usually decodes it.",
+          "That gives you the one thing that matters most: how far through its life something is. A fifteen year old water heater is a different planning problem from a three year old one, regardless of whether either is misbehaving today.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Typical service lives",
+        intro: "Rough figures for planning, not predictions. Maintenance affects these considerably.",
+        columns: ["System", "Typical life", "What to do if yours is near it"],
+        rows: [
+          ["Boiler or furnace", "15 to 20 years", "Get it serviced and ask directly about remaining life"],
+          ["Water heater", "8 to 12 years", "Budget for replacement rather than waiting for the failure"],
+          ["Air conditioning", "10 to 15 years", "Service before summer, ask about refrigerant type"],
+          ["Roof covering", "20 to 30 years", "Get an inspection rather than guessing from the ground"],
+          ["Consumer unit or panel", "25 to 40 years", "Have it inspected, particularly if it looks original"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Book one inspection rather than five",
+        paragraphs: [
+          "If the house is genuinely undocumented, a single competent visit from a heating engineer or a general surveyor gives you more than weeks of guessing, and it produces a written record you now own.",
+          "The value is not only the findings. It is that you now have a dated starting point, which is what every future service interval will be measured from.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Treat unknowns as due",
+        paragraphs: [
+          "Where you genuinely cannot find out when something was last done, assume it is due. For most of the maintenance list an unnecessary check costs an hour and a missed one costs a great deal more.",
+          "Once you have done it, you have a date, and the guessing stops permanently. The intervals to work from are in [how often things actually need servicing](/guides/how-often-home-systems-need-servicing).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Home Base is designed to be filled in from exactly this kind of walk round, asking for the right fields per type of thing, and it will work from what you know rather than demanding a complete history. Once a date exists it takes over the arithmetic of what is due when.",
+      },
+    ],
+  },
+
+  {
+    slug: "how-to-find-the-model-number-on-any-appliance",
+    title: "How to find the model number on any appliance",
+    dek: "Where each type of appliance hides its plate, how to read a serial number, and what to do when the label has worn away.",
+    readingTime: "6 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "home",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "The model number is the thing every parts supplier, engineer and warranty claim asks for first, and it is almost never on the front of the appliance where the brand name is.",
+          "It is on a data plate, usually somewhere you have to open, tilt or crouch to see. Below is where each type keeps it.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Where to look, by appliance",
+        columns: ["Appliance", "Where the plate usually is"],
+        rows: [
+          ["Fridge or freezer", "Inside, on the side wall near the salad drawer, or behind the lower grille"],
+          ["Washing machine", "Around the inside rim of the door opening, or on the rear panel"],
+          ["Tumble dryer", "Inside the door opening, or behind the lint filter housing"],
+          ["Dishwasher", "On the edge of the door, visible only with the door open"],
+          ["Oven or cooker", "On the frame behind the door, or under a warming drawer"],
+          ["Microwave", "On the back, or inside the door frame"],
+          ["Boiler or furnace", "Inside the front cover, usually facing you once opened"],
+          ["Water heater", "A large label on the outer casing near the top"],
+          ["Air conditioning", "On the outdoor unit, on a plate often facing the wall"],
+          ["Extractor hood", "Under the filters, which lift out"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Model, serial and product number are different things",
+        paragraphs: [
+          "The plate usually carries several codes and they do different jobs. The model number identifies which product it is, and is what a parts supplier needs. The serial number identifies your specific unit, and is what a manufacturer needs for warranty and recalls.",
+          "Some brands also print a product or E number, which is what their own service system searches on. If in doubt, photograph the whole plate rather than choosing which code to write down.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Reading the age out of a serial number",
+        paragraphs: [
+          "Many manufacturers encode the manufacture date into the serial, often as a week and year. The format differs by brand, and searching for the brand plus how to read the serial number usually finds it.",
+          "This is worth doing once, because knowing an appliance is twelve years old changes how you think about repairing it versus replacing it.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "When the label is gone",
+        intro: "Worn, painted over, or peeled off. Several fallbacks usually work.",
+        items: [
+          "The original receipt or order confirmation email, searched for the brand name.",
+          "The manual, if it survived, which usually lists the model on the cover.",
+          "A previous repair invoice, which almost always records the model.",
+          "A photograph of the appliance sent to the manufacturer's support, who can often identify it by sight.",
+          "The installation certificate, for boilers and electrical work, which records the equipment fitted.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Photograph it now rather than later",
+        paragraphs: [
+          "The moment to do this is while the appliance is working and accessible, not when it has failed and been pulled out into the middle of a kitchen.",
+          "What else is worth capturing at the same time is in [what to record about an appliance](/guides/what-to-record-about-an-appliance-before-you-need-it).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Home Base asks for make, model and serial per item and keeps them alongside the service history, so the next engineer visit or parts order starts with a number rather than a torch. It asks only for the fields that make sense for that kind of thing.",
+      },
+    ],
+  },
+
+  {
+    slug: "homeschool-attendance-what-to-track",
+    title: "Homeschool attendance: what to track and what is pointless",
+    dek: "Which states count days, what actually counts as a school day, and the lightest record that satisfies a requirement.",
+    readingTime: "6 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "family-and-learning",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Some states require a specific number of instructional days or hours. Others require nothing at all. Before building any tracking habit, find out which applies to you, because tracking attendance you will never be asked for is pure overhead.",
+          "Where it is required, the record needed is usually far lighter than people assume. A count of days, not a timetable.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What counts as a school day",
+        paragraphs: [
+          "More than people expect. A museum visit, a long piece of reading, a project afternoon, a cooking session that was genuinely maths, and a day spent on one subject all generally count.",
+          "Requirements are usually expressed as days of instruction or hours of instruction, not as days that resembled a classroom. Learning that happened outside a table and a workbook still happened.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "The lightest record that works",
+        intro: "If your state counts days, this is enough.",
+        items: [
+          "A date.",
+          "A tick, or a rough hours figure if your state counts hours.",
+          "One or two words on what was covered, which turns an attendance record into something also useful for a portfolio.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Count as you go, because June reconstruction does not work",
+        paragraphs: [
+          "Reconstructing a year of attendance from memory is genuinely impossible, and unlike subject records there is nothing physical to work backwards from. There is no pile of undated worksheets that proves you did one hundred and eighty days.",
+          "A grid you tick takes seconds a day. It is the one part of homeschool record keeping where doing it live is not merely better but effectively the only option.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What is pointless",
+        paragraphs: [
+          "Logging start and finish times, unless your state specifically requires hours. Recording which parent taught. Breaking a day into subject-by-subject minutes.",
+          "None of that is asked for anywhere, and every additional column is a reason the habit dies by half term.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Where to check what applies to you",
+        paragraphs: [
+          "State requirements vary widely and change, so confirm with your state association or department of education. The overall picture is in [record keeping requirements by state](/guides/homeschool-record-keeping-requirements-by-state).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Homeschooling Companion records the day alongside what was covered, so one entry serves both attendance and the portfolio rather than being two separate chores. Its printed handbook includes a days-schooled page you can tick by hand, for anyone who would rather not open an app to record a tick.",
+      },
+    ],
+  },
+
+  {
+    slug: "homeschool-records-without-a-system-you-abandon",
+    title: "Keeping homeschool records without building a system you abandon",
+    dek: "Why elaborate tracking dies by half term, and what the version that survives a bad week actually looks like.",
+    readingTime: "6 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "family-and-learning",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Almost every homeschooling family builds a record system in September and abandons it by half term. The system is rarely the problem in principle. It is that it was designed on a good day, for a version of the week that does not happen often.",
+          "The version that survives is the one that still gets done on the bad Tuesday, and that means it has to take well under a minute.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Three things, every time",
+        paragraphs: [
+          "The date. The subject and roughly which part of it, where Unit 3, Lesson 12 is plenty. And one word about how it went: easy, about right, or difficult.",
+          "That third field is the one people leave out and the one that turns out to be most useful in March, because it tells you where to look when something has not stuck.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What kills a system",
+        intro: "Every one of these looks reasonable in September.",
+        items: [
+          "More than about four fields per entry.",
+          "Anything requiring a paragraph of writing per child per day.",
+          "A spreadsheet that has to be opened on a computer rather than whatever is in your hand.",
+          "Colour coding, which is a pleasure to design and a chore to maintain.",
+          "Any tally of days missed, which converts a record into a judgement and gets the whole thing avoided.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Plan four days and record five",
+        paragraphs: [
+          "A family that plans five days and manages four has failed at something every single week. A family that plans four and manages four has not. The work done is identical.",
+          "Recording is the same. If the habit assumes a perfect week, every ordinary week produces a gap, and gaps are what make people stop.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The fourth thing, occasionally",
+        paragraphs: [
+          "Once in a while something happens that no log captures. She finally understood fractions. He reads better lying on the floor. A bad fortnight turned out to be a cold rather than a problem.",
+          "Write those down the day they happen, in a sentence. In three years they are the only part of this you would not want to lose, and by next month you will have forgotten every one of them.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "If it already collapsed this year",
+        paragraphs: [
+          "That is the normal case rather than the exception, and more is recoverable than it feels like. The method is in [when you have kept nothing since October](/guides/homeschool-records-when-you-have-kept-nothing-since-october).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Homeschooling Companion is built around an entry that takes seconds and accepts backdated dates, because nobody logs every day on the day. It contains no completion percentage, no streak, and no count of days missed, which are the three features that reliably get record keeping abandoned.",
+      },
+    ],
+  },
+
+  {
+    slug: "life-admin-with-brain-fog",
+    title: "Life admin with brain fog: long covid, chronic illness, grief",
+    dek: "When holding a plan in your head has stopped being reliable, the useful adjustments are not about trying harder.",
+    readingTime: "7 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "mind-and-focus",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Long covid, a concussion, chronic illness, grief, new parenthood, menopause and depression are very different experiences that produce one shared administrative problem: holding a plan in your head has stopped being reliable, and it used to be.",
+          "That last part matters. Advice written for people who have always worked this way often misses how disorienting it is when a capability you depended on becomes intermittent.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Intermittent is harder to plan around than absent",
+        paragraphs: [
+          "If capacity were simply lower, you would adjust once. The difficulty is that it varies, often without warning, so a plan made on a good day assumes a version of you that may not be available on Thursday.",
+          "The practical response is to build for the bad day rather than the good one, and to treat a good day as a bonus rather than as the baseline you plan against.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What actually helps",
+        ordered: true,
+        items: [
+          "Externalise everything. Not as a list of tasks, but as the details you would otherwise hold: reference numbers, what you already tried, who you spoke to.",
+          "Write the next physical action, not the goal. On a low-capacity day, call the number on the letter is achievable and sort out the insurance is not.",
+          "Record where you stopped, always. Reconstruction is the most expensive part and the easiest to avoid.",
+          "Do the thing that needs clarity when you have clarity, and keep low-demand tasks available for when you do not.",
+          "Expect to repeat yourself to institutions, and keep notes accordingly, because you will be asked the same questions by four different people.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Phone calls are disproportionately hard",
+        paragraphs: [
+          "Calls demand real-time processing, memory and speech at once, which is exactly the combination that degrades. It is normal for a call that would once have been trivial to be the single hardest thing in a week.",
+          "Preparation helps more here than anywhere else, because it converts a live cognitive task into reading. What to write down first is in [making a phone call you have been avoiding](/guides/how-to-make-a-phone-call-you-have-been-avoiding).",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Do not let a system add a second job",
+        paragraphs: [
+          "Anything requiring daily maintenance to stay accurate will fail during exactly the period you needed it most, and then present you with a repair task on top of everything else.",
+          "The test worth applying is what happens after you ignore it for three weeks. Some tools are still broadly right and still useful. Others become misleading and demand an hour before they help again.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Nothing here needs a diagnosis",
+        paragraphs: [
+          "You do not need a label to need this. The difficulty is the same whatever produced it, and none of the practical adjustments depend on knowing why.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "ADHD Life Companion is built for the difficulty rather than the diagnosis, and asks nothing about medical history because it does not need to. It holds the details on screen while you deal with something, returns you to the exact question you left if you stop, and records nothing at all about an attempt you did not finish.",
+      },
+    ],
+  },
+
+  {
+    slug: "executive-dysfunction-is-not-procrastination",
+    title: "Executive dysfunction is not procrastination",
+    dek: "They look identical from outside and are different from inside. Why the distinction changes which strategies work.",
+    readingTime: "6 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "mind-and-focus",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "From the outside they are indistinguishable. Something needed doing, time was available, and it did not happen.",
+          "From the inside they are not similar at all, and the difference decides which strategies do anything. Procrastination involves choosing something more pleasant. Executive dysfunction involves choosing nothing, often while doing something you are not enjoying either.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "The difference in practice",
+        columns: ["", "Procrastination", "Executive dysfunction"],
+        rows: [
+          ["What you are doing instead", "Something more appealing", "Often nothing, or something you are not enjoying"],
+          ["How it feels", "Avoidance, with some relief", "Stuck, with no relief"],
+          ["Does knowing the stakes help", "Sometimes", "Rarely, and pressure often makes it worse"],
+          ["Does breaking it down help", "A little", "Considerably, if broken small enough"],
+          ["What is actually missing", "Willingness to start now", "The ability to initiate at all"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Why the standard advice misfires",
+        paragraphs: [
+          "Most productivity advice assumes procrastination, so it raises stakes: set a deadline, picture the consequences, promise yourself a reward. That works when the barrier is willingness.",
+          "When the barrier is initiation, raising stakes adds pressure to a system that is already stalled, and the reliable result is more distress and the same amount of nothing done.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What works instead",
+        paragraphs: [
+          "Lowering the entry cost rather than raising the stakes. Making the first action physically tiny. Removing decisions rather than adding motivation. Putting the context in front of you so starting does not require assembling anything.",
+          "The concrete version of that is in [task paralysis, what to do in the next ten minutes](/guides/task-paralysis-what-to-do-in-the-next-ten-minutes).",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "This is a description, not a diagnosis",
+        paragraphs: [
+          "Executive function difficulties appear in ADHD, and also in depression, anxiety, long covid, concussion, chronic illness, grief and ordinary exhaustion. Recognising the pattern does not tell you what caused it.",
+          "If it is persistent and affecting your life, that is worth raising with somebody qualified. Nothing here is medical advice, and it does not need to be for the practical adjustments to help.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Why the distinction is worth making at all",
+        paragraphs: [
+          "Mostly because of what people conclude about themselves. If you believe you have been choosing comfort over responsibility for years, you draw one conclusion about your character. If you understand that the starting mechanism itself was not firing, you draw a different and more accurate one.",
+          "That second conclusion also happens to lead to strategies that work.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "ADHD Life Companion is built around initiation rather than motivation. It shows one thing rather than a list to evaluate, breaks down anything too big into a first action, and holds the context on screen so starting does not require assembling it. It contains no streak and no score, because pressure is the thing that makes this worse.",
+      },
+    ],
+  },
+
+  {
+    slug: "what-to-keep-on-paper-when-you-travel",
+    title: "What to keep on paper when you travel",
+    dek: "Your phone is a single point of failure. The short list worth printing, and why it is shorter than you think.",
+    readingTime: "5 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "travel",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "A phone at four percent in a taxi with no charger is not a rare event. Neither is no signal on landing, roaming that has not activated, or handing the phone to a child for eleven minutes.",
+          "None of that is an argument against using a phone. It is an argument for one page of paper that works when the phone does not.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What goes on the page",
+        intro: "Short enough to fit on one side, or it will not get printed.",
+        ordered: true,
+        items: [
+          "Where you are staying, with the address in the local language if that is not yours.",
+          "Confirmation references for flights, stays and transfers.",
+          "One phone number per booking that a human will actually answer.",
+          "Travel insurance policy number and its emergency assistance line.",
+          "Passport numbers for everybody travelling.",
+          "One contact at home who could help, and who knows your plans.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The address in the local language",
+        paragraphs: [
+          "This is the item that earns its place most often, and the one almost nobody thinks of. A taxi driver who does not read your alphabet can read the address as written locally.",
+          "It costs nothing to include and resolves the specific situation where you are tired, in the wrong place, and cannot explain where you need to be.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What not to put on it",
+        paragraphs: [
+          "Card numbers, passwords, and anything that would be genuinely damaging if the page were lost. This document is deliberately carried around, which means it should be safe to lose.",
+          "Passport numbers are a judgement call. They are useful for reporting a loss and are worth carrying separately from the passports themselves rather than in the same pocket.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Two copies, in different bags",
+        paragraphs: [
+          "One in hand luggage, one in a different bag or with a different traveller. The failure mode you are protecting against includes losing a bag, and a single copy in the lost bag helps nobody.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "It is also useful when nothing has gone wrong",
+        paragraphs: [
+          "Handing somebody the page is faster than reading a reference aloud from a screen, and it means the person at the desk can read it themselves. Small, but it is the everyday case rather than the emergency one.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Travel Companion prints My Trip Book, a blank structured planner covering bookings, travellers, documents, daily pages and the connection pages that are the point of the product. It is modular, so a trip with three destinations prints three destination pages rather than forcing a fixed planner on you, and it works with a pen and nothing else.",
+      },
+    ],
+  },
+
+  {
+    slug: "what-to-check-before-each-direct-debit-date",
+    title: "What to check before each direct debit date",
+    dek: "A two minute habit that prevents the most common cause of a failed payment, which is almost never a lack of money.",
+    readingTime: "5 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "money",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Most failed payments are not caused by having no money. They are caused by having money that was already committed, in an account the payment was not coming from, or on a day the timing did not work.",
+          "Two minutes before the busiest date in your month prevents nearly all of it.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "The check",
+        ordered: true,
+        items: [
+          "What is due between now and your next payday, not just tomorrow.",
+          "Which account each one comes from, because the money being somewhere is not the same as it being in the right place.",
+          "Whether anything has changed amount. Annual increases arrive without announcement more often than they should.",
+          "Whether this month has an unusual gap, which happens when a payday falls awkwardly or a month is five weeks.",
+          "Whether anything you committed to recently has not gone out yet.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Cluster the dates rather than spreading them",
+        paragraphs: [
+          "Most providers will move a payment date on request, and it is usually a two minute call or a setting.",
+          "Getting the majority of them within a few days of payday means one moment of exposure per month instead of a slow drip of small risks across four weeks. It also makes the check above take one look instead of several.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Annual payments are the ones that catch people",
+        paragraphs: [
+          "A yearly insurance renewal or subscription is invisible in a monthly view and lands as a single large amount in a month you had planned normally.",
+          "Knowing which month each annual payment falls in is worth more than tracking any monthly one, because those are the months where a routine plan is quietly wrong.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "If one has already failed",
+        paragraphs: [
+          "Acting within a few days keeps it a minor matter, and the steps are in [you missed a payment](/guides/you-missed-a-payment-what-to-do-next).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Personal Finance Companion holds your bills and subscriptions with their due dates and accounts, and counts them against what is genuinely available rather than against your balance. When a bill has no due date recorded it says the figure is preliminary instead of quietly leaving it out.",
+      },
+    ],
+  },
+
+  {
+    slug: "can-you-afford-it-before-you-buy-it",
+    title: "Working out whether you can afford it, before you buy it",
+    dek: "A quick way to answer the question at the moment it matters, without a spreadsheet and without guessing.",
+    readingTime: "5 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "money",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "The question is almost never whether you have the money today. It is whether spending it today causes a problem in eleven days, and that is a harder thing to answer standing in a shop.",
+          "The useful version takes about thirty seconds and needs one number you should already have.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "The thirty second version",
+        ordered: true,
+        items: [
+          "Take what is genuinely available, which is your balance minus protected money minus everything committed before your next payday.",
+          "Subtract the cost of the thing.",
+          "Divide what remains by the number of weeks until payday.",
+          "Ask whether you could live on that weekly figure. That is the actual question.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Weekly is the frame that works",
+        paragraphs: [
+          "A remaining balance of four hundred sounds fine and means very different things depending on whether payday is Friday or three weeks away.",
+          "Converting to a weekly figure removes that ambiguity and is the single most useful thing you can do with a spending decision, because you already have an instinct for what a normal week costs you.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Watch for the annual ones",
+        paragraphs: [
+          "The most common way this goes wrong is a large annual payment landing in the same period. Insurance, a subscription renewal, a tax bill.",
+          "If your available figure does not account for those, it is optimistic in exactly the months you can least afford it to be.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Instalments are not free",
+        paragraphs: [
+          "Splitting a payment reduces today's impact and adds a fixed commitment to the next several months, which reduces every future version of the number you just calculated.",
+          "That can be a perfectly reasonable trade. It is only a problem when the decision is made against today's balance without noticing that future months got smaller.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Where the number comes from",
+        paragraphs: [
+          "All of this depends on having a trustworthy available figure, which your banking app does not provide. The method for building one is in [how much of your money is actually safe to spend](/guides/how-much-of-your-money-is-actually-safe-to-spend).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Monthly Money Reset gives you a safe-to-spend figure and a rough weekly guide, free. Personal Finance Companion does the same across accounts, bills, subscriptions and debts, shows how it reached the number, and tells you when a missing due date makes it preliminary rather than presenting false precision.",
+      },
+    ],
+  },
 ];
 
 export function getGuideBySlug(slug: string): Guide | undefined {
