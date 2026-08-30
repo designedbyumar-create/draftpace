@@ -124,11 +124,37 @@ describe("primary navigation avoids internal-architecture language", () => {
   });
 });
 
-describe("homepage headline matches the mandated copy", () => {
-  it("uses the studio positioning H1 and library CTA", () => {
-    const source = readFileSync(join(process.cwd(), "src/app/(marketing)/page.tsx"), "utf-8");
-    expect(source.includes("A studio for living products")).toBe(true);
-    expect(source.includes("living app that remembers you")).toBe(true);
-    expect(source.includes("Open your library")).toBe(true);
+/**
+ * The homepage leads with what these products are for, not with the
+ * format argument.
+ *
+ * This previously asserted the opposite: an H1 of "A studio for living
+ * products" and a supporting paragraph about files. That positioning was
+ * correct when the shelf was one product competing with template
+ * sellers, and it was deliberately replaced once the catalogue became
+ * seven products across six life areas. The format claim ("most things
+ * you buy online die on download") is not banned, it is demoted: it
+ * survives as one supporting line further down the page, and must never
+ * climb back into the hero.
+ */
+describe("homepage leads with the domain, not the format argument", () => {
+  const source = () => readFileSync(join(process.cwd(), "src/app/(marketing)/page.tsx"), "utf-8");
+
+  it("names the Companion Series rather than positioning Draftpace as a studio", () => {
+    expect(source().includes("The Companion Series")).toBe(true);
+    expect(source().includes("A studio for living products")).toBe(false);
+  });
+
+  it("puts the life-area picker in the hero, so products are visible immediately", () => {
+    expect(source().includes("CompanionPicker")).toBe(true);
+    expect(source().includes("LIFE_AREAS")).toBe(true);
+  });
+
+  it("leads the hero with what the products are for", () => {
+    expect(source().includes("parts of life that are hard to keep track of")).toBe(true);
+  });
+
+  it("keeps the anti-guilt promise on the page, since it is the behavioural claim the products are tested against", () => {
+    expect(source().includes("never tells you that you are behind")).toBe(true);
   });
 });
