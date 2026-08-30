@@ -5,7 +5,7 @@ import { shopRegistry } from "@/shop/registry";
 import { registerRealShopProducts } from "@/shop/products";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  // sitemap.ts is a route handler, not wrapped by (marketing)/layout.tsx —
+  // sitemap.ts is a route handler, not wrapped by (marketing)/layout.tsx,
   // it needs its own explicit registration call rather than depending on
   // some other request having already rendered a marketing page first.
   registerRealShopProducts();
@@ -54,7 +54,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   // Only published, real Shop listings. Draft, archived, and dev-preview
-  // fixtures never reach here — see src/shop/registry.ts and docs/SHOP.md.
+  // fixtures never reach here, see src/shop/registry.ts and docs/SHOP.md.
   const shopRoutes = shopRegistry.listPublished().map((product) => ({
     route: `/shop/${product.slug}`,
     changeFrequency: "weekly" as const,
