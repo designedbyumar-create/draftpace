@@ -49,7 +49,13 @@ html {
      buttons rather than above them. In light this equals the accent; in dark it
      is deliberately deeper than the bright button teal so the small, saturated
      mark does not out-glow the controls. */
-  --logo-mark: #0e6e75;
+  /* Logo. The supplied artwork is near-black and light mode uses it as
+     drawn; only dark mode substitutes teal, so the lockup is never a
+     dark plate on a dark ground. The glyph inside the plate always sits
+     against the plate colour, so it flips with it. */
+  --logo-mark: #0f172a;
+  --logo-mark-glyph: #ffffff;
+  --logo-word: #1e293b;
   --success: #12795b;
   --success-soft: #e3f3ec;
   --warning: #9a5a11;
@@ -64,6 +70,27 @@ html {
   --green: #12795b;
   --orange: #9a5a11;
   --violet: #6d4fce;
+
+  /* Life-area accents, used only by the guides layer so far.
+     Seven hues spaced around the wheel and pulled toward the same warm,
+     low-chroma world as the rest of the palette, so an area reads as a
+     shelf marker rather than as a category colour from a different
+     product. Affairs is deliberately the desaturated one. The Series
+     tier borrows the brand accent, because it is the whole shelf. */
+  --area-money: #176b51;
+  --area-money-soft: #e2efe9;
+  --area-home: #96591a;
+  --area-home-soft: #f6ebda;
+  --area-mind-and-focus: #5a4bb8;
+  --area-mind-and-focus-soft: #e9e6f7;
+  --area-family-and-learning: #97417a;
+  --area-family-and-learning-soft: #f7e6f1;
+  --area-affairs-and-endings: #4d5a68;
+  --area-affairs-and-endings-soft: #e9ecef;
+  --area-travel: #1f6291;
+  --area-travel-soft: #e2edf5;
+  --area-series: #0e6e75;
+  --area-series-soft: #e0f0f0;
 
   /* Elevation: a tight contact shadow plus a soft ambient one, warm-tinted,
      so raised surfaces read as material rather than as an outline. */
@@ -121,7 +148,9 @@ html[data-theme="dark"] {
   --primary-soft: rgba(79, 199, 201, 0.16);
   --primary-contrast: #06282a;
   --link: #4fc7c9;
-  --logo-mark: #2a9195;
+  --logo-mark: #4fc7c9;
+  --logo-mark-glyph: #06282a;
+  --logo-word: #4fc7c9;
   --success: #6fd3b3;
   --success-soft: rgba(111, 211, 179, 0.14);
   --warning: #e6b46a;
@@ -135,6 +164,23 @@ html[data-theme="dark"] {
   --green: #6fd3b3;
   --orange: #e6b46a;
   --violet: #b9a6f5;
+
+  /* Area accents, lifted and desaturated for a dark ground. Each keeps
+     its hue identity so an area is recognisable across both themes. */
+  --area-money: #63c39f;
+  --area-money-soft: rgba(99, 195, 159, 0.14);
+  --area-home: #dfa055;
+  --area-home-soft: rgba(223, 160, 85, 0.14);
+  --area-mind-and-focus: #a396ee;
+  --area-mind-and-focus-soft: rgba(163, 150, 238, 0.15);
+  --area-family-and-learning: #dd8ac2;
+  --area-family-and-learning-soft: rgba(221, 138, 194, 0.14);
+  --area-affairs-and-endings: #9aa9ba;
+  --area-affairs-and-endings-soft: rgba(154, 169, 186, 0.14);
+  --area-travel: #74b3e0;
+  --area-travel-soft: rgba(116, 179, 224, 0.14);
+  --area-series: #4fc7c9;
+  --area-series-soft: rgba(79, 199, 201, 0.16);
 
   --shadow-xs: 0 1px 1px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.3);
   --shadow-soft: 0 2px 4px rgba(0, 0, 0, 0.4), 0 16px 40px -10px rgba(0, 0, 0, 0.55);
@@ -172,7 +218,9 @@ html[data-theme="dark"] {
     --primary-soft: rgba(79, 199, 201, 0.16);
     --primary-contrast: #06282a;
     --link: #4fc7c9;
-    --logo-mark: #2a9195;
+    --logo-mark: #4fc7c9;
+    --logo-mark-glyph: #06282a;
+    --logo-word: #4fc7c9;
     --success: #6fd3b3;
     --success-soft: rgba(111, 211, 179, 0.14);
     --warning: #e6b46a;
@@ -186,6 +234,23 @@ html[data-theme="dark"] {
     --green: #6fd3b3;
     --orange: #e6b46a;
     --violet: #b9a6f5;
+
+    /* Area accents, lifted and desaturated for a dark ground. Each keeps
+       its hue identity so an area is recognisable across both themes. */
+    --area-money: #63c39f;
+    --area-money-soft: rgba(99, 195, 159, 0.14);
+    --area-home: #dfa055;
+    --area-home-soft: rgba(223, 160, 85, 0.14);
+    --area-mind-and-focus: #a396ee;
+    --area-mind-and-focus-soft: rgba(163, 150, 238, 0.15);
+    --area-family-and-learning: #dd8ac2;
+    --area-family-and-learning-soft: rgba(221, 138, 194, 0.14);
+    --area-affairs-and-endings: #9aa9ba;
+    --area-affairs-and-endings-soft: rgba(154, 169, 186, 0.14);
+    --area-travel: #74b3e0;
+    --area-travel-soft: rgba(116, 179, 224, 0.14);
+    --area-series: #4fc7c9;
+    --area-series-soft: rgba(79, 199, 201, 0.16);
 
     --shadow-xs: 0 1px 1px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.3);
     --shadow-soft: 0 2px 4px rgba(0, 0, 0, 0.4), 0 16px 40px -10px rgba(0, 0, 0, 0.55);
