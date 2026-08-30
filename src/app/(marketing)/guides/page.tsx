@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Container from "@/design-system/Container";
 import { ArrowRight } from "@/design-system/Icon";
-import { GUIDES, guidesForArea } from "@/content/guides";
+import { GUIDES, guidesForArea, seriesGuides } from "@/content/guides";
 import { LIFE_AREAS } from "@/content/areas";
 
 export const metadata: Metadata = {
@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 export default function GuidesIndexPage() {
   const areas = LIFE_AREAS.map((area) => ({ area, guides: guidesForArea(area.slug) }));
   const orphans = GUIDES.filter((guide) => guide.areaSlug === null);
+  const series = seriesGuides();
 
   return (
     <Container width="wide" className="pb-24 pt-16 sm:pt-20">
@@ -53,6 +54,28 @@ export default function GuidesIndexPage() {
           </Link>
         ))}
       </div>
+
+      {/* Series guides sit above the areas rather than inside one, because
+          they argue for the category itself. */}
+      {series.length > 0 && (
+        <section className="mt-16 border-t border-[var(--border)] pt-8">
+          <h2 className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">
+            About this kind of work
+          </h2>
+          <ul className="mt-4 flex flex-col gap-4">
+            {series.map((guide) => (
+              <li key={guide.slug}>
+                <Link href={`/guides/${guide.slug}`} className="group">
+                  <p className="text-[16px] font-semibold text-[var(--text)] group-hover:text-[var(--primary)]">
+                    {guide.title}
+                  </p>
+                  <p className="mt-1 text-[13.5px] leading-relaxed text-[var(--muted)]">{guide.dek}</p>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {/* Orphans are shown rather than hidden. They predate the Companion
           Series and have no product behind them, and guides.test.ts stops

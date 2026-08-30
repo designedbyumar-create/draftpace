@@ -1,11 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { GUIDES, guidesForArea, relatedGuides, areasWithGuides } from "./guides";
+import { GUIDES, SERIES, guidesForArea, relatedGuides, areasWithGuides, seriesGuides } from "./guides";
 import { LIFE_AREAS, getAreaBySlug } from "./areas";
 
 /**
  * Structural guards on the guides layer, in the same spirit as the
  * printed books' own content tests. The guides are the third layer of
- * the site and are about to grow from two entries to fifty five, so the
+ * the site and grew from two entries to fifty four, so the
  * failures worth catching are the ones that only appear at scale.
  */
 describe("guide slugs", () => {
@@ -35,10 +35,23 @@ describe("guide slugs", () => {
 });
 
 describe("guide to product handover", () => {
-  it("points every non-orphan guide at a real life area", () => {
+  it("points every area guide at a real life area", () => {
     for (const guide of GUIDES) {
-      if (guide.areaSlug === null) continue;
+      if (guide.areaSlug === null || guide.areaSlug === SERIES) continue;
       expect(getAreaBySlug(guide.areaSlug), `${guide.slug} claims unknown area ${guide.areaSlug}`).toBeDefined();
+    }
+  });
+
+  /**
+   * SERIES is a sentinel, not an area. It only stays safe while no real
+   * life area claims the same slug, since guidesForArea would then return
+   * category essays inside a domain hub.
+   */
+  it("keeps the series sentinel out of the real area slugs", () => {
+    expect(LIFE_AREAS.map((area) => area.slug)).not.toContain(SERIES);
+    expect(seriesGuides().length, "the series tier is written and should stay written").toBeGreaterThan(0);
+    for (const guide of seriesGuides()) {
+      expect(guide.areaSlug).toBe(SERIES);
     }
   });
 
@@ -50,6 +63,7 @@ describe("guide to product handover", () => {
    */
   it("does not accumulate orphans", () => {
     const orphans = GUIDES.filter((guide) => guide.areaSlug === null);
+    // Series guides are not orphans: they hand over to the whole shelf.
     expect(orphans.length, `orphans: ${orphans.map((g) => g.slug).join(", ")}`).toBeLessThanOrEqual(1);
   });
 
@@ -158,6 +172,14 @@ describe("related guides", () => {
     expect(relatedGuides(orphan)).toHaveLength(0);
   });
 
+  it("keeps series guides related to each other, never to a domain guide", () => {
+    for (const guide of seriesGuides()) {
+      for (const related of relatedGuides(guide)) {
+        expect(related.areaSlug, `${guide.slug} pulled in ${related.slug}`).toBe(SERIES);
+      }
+    }
+  });
+
   it("only ever returns guides from the same area", () => {
     for (const guide of GUIDES) {
       for (const related of relatedGuides(guide)) {
@@ -173,6 +195,12 @@ describe("guidesForArea", () => {
       for (const guide of guidesForArea(area.slug)) {
         expect(guide.areaSlug).toBe(area.slug);
       }
+    }
+  });
+
+  it("never returns a series guide from a life area", () => {
+    for (const area of LIFE_AREAS) {
+      expect(guidesForArea(area.slug).map((guide) => guide.slug)).not.toContain(seriesGuides()[0]?.slug);
     }
   });
 });

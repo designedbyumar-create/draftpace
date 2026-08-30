@@ -43,107 +43,37 @@ export type Guide = {
   /** Set when the writing changes materially. Reference pages live or die on this. */
   updatedAt?: string;
   /**
-   * The life area this guide belongs to, which resolves its hub, its
-   * sibling guides, and the Companion it hands over to.
+   * Where this guide belongs, which resolves its hub, its sibling
+   * guides, and what it hands over to. Three possible values:
    *
-   * Null is allowed and deliberately visible: it means an orphan, a
-   * guide with no product behind it. The two guides written before the
-   * Companion Series existed are the only ones, and guides.test.ts
-   * asserts the count does not grow, so orphans cannot accumulate
-   * quietly the way the empty need pages did.
+   *   a life area slug   the usual case, hands over to that Companion
+   *   SERIES             belongs to the whole shelf rather than one area
+   *   null               an orphan, meaning no product behind it at all
+   *
+   * SERIES exists because two guides genuinely describe the category
+   * rather than a domain, and forcing them into an arbitrary area would
+   * be dishonest while marking them orphans would be wrong: an orphan is
+   * no product, and these are every product. They hand over to the
+   * series rather than to one Companion.
+   *
+   * Null is deliberately visible rather than convenient. guides.test.ts
+   * asserts orphans do not accumulate, so a guide that earns traffic it
+   * cannot convert cannot pile up quietly the way the empty need pages
+   * did.
    */
-  areaSlug: string | null;
+  areaSlug: string | typeof SERIES | null;
   body: GuideBlock[];
 };
 
-export const GUIDES: Guide[] = [
-  {
-    slug: "planning-a-move-without-losing-the-details",
-    title: "Planning a move without losing the details",
-    dek: "The hard part of a move is rarely the packing. It's holding fifteen small decisions in your head at once.",
-    readingTime: "5 min read",
-    publishedAt: "2026-07-15",
-    // Repointed. Written before the Companion Series existed, but a move
-    // is mostly a home and address problem, so it now hands over to Home
-    // Base rather than to a need page that no longer leads anywhere.
-    areaSlug: "home",
-    body: [
-      {
-        kind: "paragraphs",
-        paragraphs: [
-          "Most moves don't go wrong because of one big mistake. They go wrong because of a dozen small things that all needed attention around the same time, and a few of them slipped. The lease notice you meant to send. The utility transfer you forgot had a deadline. The date that quietly moved up a week and nobody updated the plan.",
-          "None of these things are hard on their own. What makes a move stressful is trying to hold the whole shape of it in your head while also living your regular life.",
-        ],
-      },
-      {
-        kind: "paragraphs",
-        heading: "Separate what's due soon from what isn't",
-        paragraphs: [
-          "The instinct when planning something big is to write down everything you can think of. That's a reasonable first step, but it creates a new problem: now you have a long list, and long lists are hard to act on. The next step matters more than the full list. What needs attention this week? Everything else can wait, and it's fine if it waits, as long as it doesn't get lost.",
-        ],
-      },
-      {
-        kind: "paragraphs",
-        heading: "Expect at least one detail to change",
-        paragraphs: [
-          "A date will move. A number will change. Someone will need something a week earlier than planned. This isn't a sign your plan was wrong. It's just what happens with anything that involves other people and other schedules.",
-          "The useful question isn't how to build a plan that never changes. It's how to update one detail without having to reconsider everything connected to it. When the move-in date shifts, you shouldn't have to re-plan the whole move. You should be able to update that one date and see what else it actually affects.",
-        ],
-      },
-      {
-        kind: "list",
-        heading: "What to write down about the new place",
-        intro: "The details you will want a year from now, and will not remember if you do not record them during the move.",
-        items: [
-          "Meter readings on the day you take over, with the date.",
-          "Which utility is with which provider, and the account number for each.",
-          "Where the stopcock, fuse box and thermostat actually are.",
-          "The make and model of anything that came with the property.",
-          "Who you called when something went wrong, and whether they were any good.",
-        ],
-      },
-      {
-        kind: "callout",
-        label: "What to keep track of",
-        body: "A move is the one moment when every fact about a home passes through your hands at once, and almost none of it gets written down. A year later the boiler needs servicing and nobody remembers who installed it. Recording it while it is in front of you takes minutes and saves an afternoon.",
-      },
-    ],
-  },
-  {
-    slug: "deciding-when-every-option-feels-risky",
-    title: "Deciding when every option feels risky",
-    dek: "Some decisions don't have a safe choice. Here's how to think about them without going in circles.",
-    readingTime: "4 min read",
-    publishedAt: "2026-07-22",
-    // Orphan, and honestly labelled as one. There is no decision product
-    // and this guide predates the Companion Series. It stays published
-    // because it is written and indexed; it hands over to nothing.
-    areaSlug: null,
-    body: [
-      {
-        kind: "paragraphs",
-        paragraphs: [
-          "Some decisions are hard because you don't have enough information. Those get easier when you go and find it. Other decisions are hard because every option costs something real, and no amount of research changes that. Those are the ones that keep people up.",
-          "The second kind doesn't get solved by thinking harder. It gets solved by being honest about what you're actually weighing.",
-        ],
-      },
-      {
-        kind: "paragraphs",
-        heading: "Write down what you would regret",
-        paragraphs: [
-          "Most people list pros and cons. That produces two columns of roughly equal length and no clarity, because it treats every point as though it weighs the same. A more useful question is which version of being wrong you could live with. Regret is easier to predict than outcomes, and it tends to point somewhere specific.",
-        ],
-      },
-      {
-        kind: "paragraphs",
-        heading: "Decide what would change your mind",
-        paragraphs: [
-          "Before you choose, write down what would have to be true for the other option to be right. If nothing would, you have already decided and are looking for permission. If something would, you now know exactly what to go and check, and the decision has turned back into the first kind.",
-        ],
-      },
-    ],
-  },
+/** A guide belonging to the whole Companion Series rather than one life area. */
+export const SERIES = "series" as const;
 
+/** Guides that describe the category rather than a single domain. */
+export function seriesGuides(): Guide[] {
+  return GUIDES.filter((guide) => guide.areaSlug === SERIES);
+}
+
+export const GUIDES: Guide[] = [
   // ---------------------------------------------------------------- batch 1
   // The ten highest-priority guides from the content plan. Two of them,
   // the parent-dies pair, were flagged in the fit verification as
@@ -3514,6 +3444,296 @@ export const GUIDES: Guide[] = [
         kind: "callout",
         label: "The Companion for this",
         body: "Monthly Money Reset gives you a safe-to-spend figure and a rough weekly guide, free. Personal Finance Companion does the same across accounts, bills, subscriptions and debts, shows how it reached the number, and tells you when a missing due date makes it preliminary rather than presenting false precision.",
+      },
+    ],
+  },
+
+  // ---------------------------------------------------------------- batch 6
+  // The last four. Two finish their areas, and two are the cross-cutting
+  // pieces that needed the SERIES value added above, because they
+  // describe the category rather than a domain.
+
+  {
+    slug: "homeschool-records-what-to-keep-and-what-to-bin",
+    title: "Homeschool records: what to keep, and what you can safely throw away",
+    dek: "You cannot keep everything and you do not need to. What is worth archiving, what to photograph, and what to recycle without guilt.",
+    readingTime: "6 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "family-and-learning",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "By March most homeschooling families have more paper than shelf. The instinct is to keep all of it, because throwing away a child's work feels like throwing away the year.",
+          "It is not. A representative sample proves a year far better than a complete archive, and it is the version you might actually be able to find something in.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "What to do with what",
+        columns: ["Item", "What to do", "Why"],
+        rows: [
+          ["Dated work showing progress", "Keep", "Two points in a year is the most persuasive evidence there is"],
+          ["Standardised test results", "Keep permanently", "Slow to replace and sometimes needed years later"],
+          ["Evaluator reports", "Keep permanently", "Proof the year was reviewed and accepted"],
+          ["Your own log", "Keep permanently", "The only record that ties everything together"],
+          ["Large projects and models", "Photograph, then recycle", "They prove nothing in a box in a loft"],
+          ["Daily worksheets and drills", "Keep a handful, recycle the rest", "Fifty identical sheets say nothing fifty times"],
+          ["Curriculum you have finished with", "Sell or pass on", "Worth real money to another family"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Photograph the things that cannot be filed",
+        paragraphs: [
+          "Models, posters, science experiments, anything three dimensional. A dated photograph is genuinely better evidence than the object, because it can go in a portfolio and the object cannot.",
+          "It also solves the thing nobody says out loud, which is that the object was going to be thrown away in eighteen months anyway, quietly, when nobody was looking.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Keep a spread, not a highlight reel",
+        paragraphs: [
+          "Three pieces from across the year beats twelve from one strong fortnight. Keep something ordinary alongside something good, and keep at least one thing that was difficult.",
+          "A file of only polished work reads as curated, and it hides the thing that is actually impressive, which is the distance travelled between October and March.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Check your state before discarding anything",
+        paragraphs: [
+          "A few states have specific retention expectations, and portfolio states in particular may want material available for a set period after the year ends.",
+          "The overall position is in [record keeping requirements by state](/guides/homeschool-record-keeping-requirements-by-state).",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The sentimental pile is allowed",
+        paragraphs: [
+          "Keep the first story they wrote and the drawing that made you laugh. That is a different pile with a different purpose, and it should not be confused with the compliance one.",
+          "Mixing them is what produces a box nobody can search, containing both a legal record and a birthday card.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Homeschooling Companion keeps the log that ties everything together, which is the one record you cannot reconstruct from a box of paper. It prints as a per-child record covering what was done and when, so the paper you keep can be a genuine sample rather than the whole year.",
+      },
+    ],
+  },
+
+  {
+    slug: "diagnosed-at-forty-the-admin-nobody-warned-you-about",
+    title: "Diagnosed at forty: the admin nobody warned you about",
+    dek: "Most adults with ADHD were diagnosed as adults. What changes afterwards, what does not, and the paperwork nobody mentions.",
+    readingTime: "7 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "mind-and-focus",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "More than half of adults with an ADHD diagnosis received it in adulthood, and around six percent of adults now have one. It is no longer an unusual situation, though it can feel like one at the time.",
+          "Two things tend to arrive together afterwards. A great deal of retrospective reinterpretation, and an unexpected pile of administration.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The reinterpretation comes first",
+        paragraphs: [
+          "Most people spend the following months revisiting the past: jobs that went wrong, a degree that took longer, relationships where the same argument kept happening, the persistent sense of underperforming relative to effort.",
+          "That process is worth having and it is not the subject of this guide. The subject is the far less discussed part, which is that a diagnosis creates work.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "The admin that follows",
+        intro: "Very little of this gets mentioned in the appointment.",
+        items: [
+          "Titration, if you are medicating, which means repeat appointments and often repeat prescriptions on a short cycle.",
+          "Pharmacy logistics, which for controlled medication can mean a specific pharmacy, a limited window, and supply problems.",
+          "Employer conversations, if you choose to have them, plus any adjustments process.",
+          "Insurance and, in some countries, a disclosure question you now have to answer differently.",
+          "Driving authorities in some jurisdictions, depending on medication.",
+          "Records from a private assessment needing to reach a public system, or vice versa, which is rarely automatic.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The irony is not lost on anybody",
+        paragraphs: [
+          "A condition characterised by difficulty with sustained administration is diagnosed, and the treatment pathway is administration on a recurring schedule with real consequences for missing a step.",
+          "Naming that is genuinely useful, because people tend to interpret struggling with it as evidence they are handling the diagnosis badly. It is not. It is the single least accommodating part of the process.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What helps with this specifically",
+        paragraphs: [
+          "Treat the repeat prescription cycle as a recurring appointment rather than as a task, because it has a date and a consequence and does not respond to being remembered vaguely.",
+          "Keep the reference numbers together: clinic, prescription, pharmacy. You will be asked for them repeatedly by people who cannot see each other's systems.",
+          "And expect to repeat your own history to several different professionals. Written down once, it stops being a thing you have to reconstruct while sitting in front of somebody.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The backlog does not clear itself",
+        paragraphs: [
+          "Diagnosis explains the pile. It does not remove it, and there is often a period of disappointment when that becomes clear.",
+          "What tends to change is the approach: less trying harder, more building around the difficulty. The starting point for the things that have sat longest is in [when something has been left so long it is embarrassing](/guides/when-something-has-been-left-so-long-it-is-embarrassing).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "ADHD Life Companion holds the things you are carrying and brings them back when they actually matter, including the recurring ones with a date attached. It never asks about a diagnosis, medication or symptoms, because it is built for how this feels rather than for why, and it holds no medical information at all.",
+      },
+    ],
+  },
+
+  {
+    slug: "life-admin-the-work-nobody-teaches-you",
+    title: "Life admin: the work nobody teaches you and everybody has",
+    dek: "Nobody is trained for it, it is invisible when done, and it is most of what makes an adult life run. A name for the category.",
+    readingTime: "7 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: SERIES,
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "There is a category of work that nobody teaches, nobody schedules, and nobody notices until it goes wrong. Renewing things. Chasing things. Knowing where documents are. Remembering that the boiler needs servicing and that a pension exists from a job you left in 2014.",
+          "It has no agreed name, which is part of why it stays invisible. Life admin is the closest thing we have.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Three properties that make it uniquely awkward",
+        paragraphs: [
+          "It is invisible when it goes right. Nobody notices the insurance that renewed correctly, so there is no feedback and no credit, only the absence of a problem.",
+          "It is connected. Almost nothing sits alone. A flight moves and three bookings become wrong. An address changes and eleven organisations need telling. A person dies and a hundred small facts turn out to have lived in one head.",
+          "It arrives at bad moments. Bereavement, illness, moving, separation, a new baby. The administrative load and the capacity to handle it are almost perfectly inversely correlated.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Why generic tools do not help",
+        paragraphs: [
+          "A to-do list assumes the difficulty is remembering. For most of this it is not. The thing has been remembered constantly for weeks.",
+          "A calendar wants a date you do not have yet. A note-taking app holds text and knows nothing about how any of it relates. A spreadsheet holds facts and cannot tell you that changing one makes three others wrong.",
+          "The gap in all of them is the same: they store, and this work needs something that understands connection.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What this work actually needs",
+        ordered: true,
+        items: [
+          "Somewhere to put a detail so it is not held in your head.",
+          "Something that knows how the details relate, so one change surfaces what else it touches.",
+          "A short honest answer to what needs attention now, derived from real dates rather than invented urgency.",
+          "Help at the hard moment itself, which is usually a call or a form rather than the deciding.",
+          "Quiet when there is nothing, because most weeks genuinely need very little.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "It is unevenly distributed",
+        paragraphs: [
+          "In most households one person carries the majority of this, usually without it being discussed. It is often described as being organised, which frames a workload as a personality trait.",
+          "It is worth naming for that reason alone. Work that has no name is difficult to divide, difficult to hand over, and easy to assume somebody is simply better suited to.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The competence trap",
+        paragraphs: [
+          "People conclude they are bad at admin. Usually what has happened is that the amount is genuinely large, the tools are genuinely poor, and holding several hundred connected facts in a human memory was never a realistic expectation.",
+          "The productivity industry has spent decades selling harder trying as the solution. More on why that keeps failing in [why productivity tools fail at life admin](/guides/why-productivity-tools-fail-at-life-admin).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion Series",
+        body: "Draftpace makes one Companion per area of this work: money, home, mind and focus, family and learning, affairs and endings, and travel. Each holds the state and the connections for one domain, works out what genuinely needs you now, and stays quiet when nothing does. None of them has a streak, a score, or a screen that tells you that you are behind.",
+      },
+    ],
+  },
+
+  {
+    slug: "why-productivity-tools-fail-at-life-admin",
+    title: "Why productivity tools fail at life admin specifically",
+    dek: "They were designed for knowledge work, and life admin has different properties. Four mismatches that explain the abandoned apps.",
+    readingTime: "7 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: SERIES,
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Most productivity tools were designed around knowledge work: projects with owners, tasks with estimates, boards that move left to right. Applied to a job, they work reasonably well.",
+          "Applied to renewing a passport, chasing a refund and remembering the boiler service, they fall apart. Not because they are badly made, but because life admin has four properties the design never accounted for.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "The four mismatches",
+        columns: ["Knowledge work assumes", "Life admin actually is"],
+        rows: [
+          ["Tasks are independent", "Almost everything is connected to something else"],
+          ["The problem is remembering", "You have remembered it constantly for three weeks"],
+          ["Work happens in sessions", "It arrives in interruptions, often at the worst moment"],
+          ["More visibility helps", "Seeing all of it at once is the thing that stops you"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Independence is the big one",
+        paragraphs: [
+          "A board of tasks treats every card as a separate thing. Life admin is a web: change your address and eleven things become wrong, move a flight and three bookings need looking at, and a death makes a hundred facts urgent at once.",
+          "No general purpose tool models that, because modelling it requires knowing what kind of thing each item is. A tool that does not know a transfer was booked around a flight cannot tell you anything useful when the flight moves.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The maintenance tax",
+        paragraphs: [
+          "Every general tool needs feeding. Categorise the transactions, update the board, tidy the tags. That upkeep is tolerable at work, where it is part of the job and happens in working hours.",
+          "For personal admin it is a second job with no deadline and no colleague noticing, so it stops. And once the data is stale the tool is worse than nothing, because now it is confidently wrong.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Scores and streaks make it actively worse",
+        paragraphs: [
+          "Gamification assumes you need motivating. For work that arrives during bereavement, illness and moving, a counter of how many days you have failed is not a motivator. It is a reason to close the app.",
+          "The reliable outcome is deletion, which takes the only record of what actually needed doing with it.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What a tool for this has to do differently",
+        ordered: true,
+        items: [
+          "Know what kind of thing each item is, so it can understand relationships instead of storing rows.",
+          "Derive what matters from stored facts rather than asking you to prioritise a list.",
+          "Stay roughly right when ignored for a month, because it will be.",
+          "Say plainly when nothing needs you, and mean it.",
+          "Never score the person using it.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Which is why these are separate products",
+        paragraphs: [
+          "Understanding that a transfer depends on a flight, or that a warranty requires an annual service, or that a pension nomination overrides a will, requires knowing the domain. A single tool covering everything would have to know all of it, which is how you end up with something that stores rows and understands nothing.",
+          "The wider case for the category is in [life admin, the work nobody teaches you](/guides/life-admin-the-work-nobody-teaches-you).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion Series",
+        body: "Each Draftpace Companion covers one area and knows what the things in it are, which is what lets it tell you that one change affects three others. None requires daily upkeep to stay useful, none contains a streak or a score, and each says plainly when nothing needs you.",
       },
     ],
   },

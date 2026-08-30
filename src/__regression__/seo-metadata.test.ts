@@ -6,6 +6,7 @@ import {
   softwareApplicationStructuredData,
   websiteStructuredData,
 } from "@/lib/structuredData";
+import nextConfig from "../../next.config";
 
 /**
  * Locks in the canonical-domain fix (apex draftpace.com, never www) and the
@@ -29,9 +30,26 @@ describe("Canonical domain: apex, never www", () => {
     });
   }
 
-  it("next.config.ts has no app-level host redirect (owned by Vercel's domain config to avoid a loop)", () => {
-    const source = readFileSync(join(process.cwd(), "next.config.ts"), "utf-8");
-    expect(source).not.toContain("redirects()");
+  /**
+   * The rule this protects is narrow and was learned the hard way: the
+   * apex-vs-www redirect is owned by Vercel's domain config, and a second
+   * app-level rule keying on host produced a live infinite loop.
+   *
+   * Path redirects are fine and are used for retired URLs, so this asserts
+   * the actual invariant rather than banning the whole feature: no rule may
+   * match on host, and no destination may be absolute.
+   */
+  it("next.config.ts never redirects on host (owned by Vercel's domain config to avoid a loop)", async () => {
+    const rules = (await nextConfig.redirects?.()) ?? [];
+    expect(rules.length, "guard is vacuous if no redirects exist to check").toBeGreaterThan(0);
+
+    for (const rule of rules) {
+      for (const condition of [...(rule.has ?? []), ...(rule.missing ?? [])]) {
+        expect(condition.type, `${rule.source} matches on host`).not.toBe("host");
+      }
+      expect(rule.destination.startsWith("/"), `${rule.source} redirects off-path`).toBe(true);
+      expect(rule.source.startsWith("/"), `${rule.source} is not a path`).toBe(true);
+    }
   });
 });
 

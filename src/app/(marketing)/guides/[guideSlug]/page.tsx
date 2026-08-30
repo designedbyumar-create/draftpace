@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import Container from "@/design-system/Container";
 import { ArrowRight } from "@/design-system/Icon";
 import GuideBody from "@/components/public/guides/GuideBody";
-import { GUIDES, getGuideBySlug, guidesForArea, relatedGuides } from "@/content/guides";
+import { GUIDES, SERIES, getGuideBySlug, guidesForArea, relatedGuides } from "@/content/guides";
 import { LIFE_AREAS, getAreaBySlug } from "@/content/areas";
 import { shopRegistry } from "@/shop/registry";
 import { ensureShopRegistered } from "@/shop/ensureRegistered";
@@ -65,7 +65,8 @@ export default async function GuideOrHubPage({ params }: { params: Promise<{ gui
   const guide = getGuideBySlug(guideSlug);
   if (!guide) notFound();
 
-  const guideArea = guide.areaSlug ? getAreaBySlug(guide.areaSlug) : undefined;
+  const isSeries = guide.areaSlug === SERIES;
+  const guideArea = guide.areaSlug && !isSeries ? getAreaBySlug(guide.areaSlug) : undefined;
   const companion = guideArea ? shopRegistry.getBySlug(guideArea.productSlugs[0]) : undefined;
   const related = relatedGuides(guide);
 
@@ -105,6 +106,30 @@ export default async function GuideOrHubPage({ params }: { params: Promise<{ gui
             className="mt-4 inline-flex items-center gap-1.5 text-[14px] font-semibold text-[var(--primary)] hover:underline"
           >
             See what it does
+            <ArrowRight size={14} aria-hidden />
+          </Link>
+        </aside>
+      )}
+
+      {/* A Series guide describes the category, not a domain, so it hands
+          over to the whole shelf rather than to one Companion. */}
+      {isSeries && (
+        <aside className="mt-14 rounded-[var(--radius-xl)] border border-[var(--border)] bg-[var(--surface)] p-6">
+          <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--primary)]">
+            The Companion Series
+          </p>
+          <h2 className="mt-2 font-serif text-[22px] font-semibold leading-tight text-[var(--text)]">
+            One Companion per part of life that is administratively hard
+          </h2>
+          <p className="mt-2 text-[14px] leading-relaxed text-[var(--muted)]">
+            Money, home, mind and focus, family and learning, affairs and endings, travel. Each one holds the
+            state for its own area and works out what genuinely needs you now.
+          </p>
+          <Link
+            href="/shop"
+            className="mt-4 inline-flex items-center gap-1.5 text-[14px] font-semibold text-[var(--primary)] hover:underline"
+          >
+            See the Series
             <ArrowRight size={14} aria-hidden />
           </Link>
         </aside>
