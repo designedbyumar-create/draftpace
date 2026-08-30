@@ -1526,6 +1526,667 @@ export const GUIDES: Guide[] = [
       },
     ],
   },
+
+  // ---------------------------------------------------------------- batch 3
+  // The remaining tier one topics plus the strongest tier two. The two
+  // cross-cutting pieces, life admin and why productivity tools fail at
+  // it, are deliberately not here: they belong to the whole series
+  // rather than to one area, which the Guide model cannot express yet
+  // without calling them orphans, and an orphan means no product rather
+  // than every product. That is a small model change to make on purpose
+  // rather than to bodge around now.
+
+  {
+    slug: "the-task-that-has-been-on-your-mind-for-a-month",
+    title: "The task has been on your mind for a month and still is not done",
+    dek: "Why constant remembering does not turn into doing, and the specific thing that makes a stuck task start moving.",
+    readingTime: "6 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "mind-and-focus",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "You have not forgotten it. That is the confusing part. It arrives at eleven at night, in the shower, in the middle of something else, and it has been doing that for weeks.",
+          "So the problem is not memory, and every tool built on the assumption that it is memory has failed you. Writing it down again does nothing, because it was never off the list.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The gap is between knowing and starting",
+        paragraphs: [
+          "Starting almost anything administrative requires holding several things at once: what this is about, what you want to happen, the two facts you will need, and enough spare capacity to think while somebody talks at you.",
+          "That is a working memory load, and it is heaviest at exactly the moments you tend to attempt these things, which is late, tired, and already carrying the day. The task is not hard. Assembling the conditions to begin it is.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "The two questions that unstick most things",
+        ordered: true,
+        items: [
+          "What is the next physical action? Not the outcome. Call the number on the letter, find the reference in the email, open the form. If you cannot name a physical action, that is why it has not moved.",
+          "What would have to be in front of me to do that? Usually a reference number, a date, and a decision about what you want. Get those into one place and the task shrinks to something you can actually attempt.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The thing gets heavier the longer it sits, but not for the reason you think",
+        paragraphs: [
+          "The task itself does not change. What changes is that it acquires a story: that you have avoided it for a month, that this says something about you, that starting now means admitting to the delay.",
+          "That accumulated weight is not part of the job. It is worth naming, because it is usually the larger of the two things stopping you, and it is the one that disappears the moment you do anything at all.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Aim for a smaller thing than finishing",
+        paragraphs: [
+          "Finding the reference number is progress. Getting through the opening sentence of a call is progress. Neither finishes anything and both remove the part that was actually blocking you.",
+          "If the thing is a call you have been dreading specifically, the preparation that helps is set out in [making a phone call you have been avoiding](/guides/how-to-make-a-phone-call-you-have-been-avoiding).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "ADHD Life Companion is built for this gap rather than for remembering. You put the thing down once, it brings it back when it actually matters, and when you are ready it walks you through it, holding the purpose and the outcome on screen so you are not carrying them. Nothing in it counts how long something sat.",
+      },
+    ],
+  },
+
+  {
+    slug: "task-paralysis-what-to-do-in-the-next-ten-minutes",
+    title: "Task paralysis: what to do in the next ten minutes",
+    dek: "When you cannot start anything at all, the useful move is smaller than a plan. A short way out that does not require motivation.",
+    readingTime: "5 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "mind-and-focus",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Task paralysis is the state where you know exactly what needs doing, you have time to do it, and you cannot begin any of it. It is not the same as procrastination, because there is no pleasant alternative you are choosing instead. You are frozen between options, usually doing nothing you enjoy either.",
+          "The way out is not a better plan. Planning is more deciding, and deciding is the thing that has jammed. What helps is making the next action so small that it does not require a decision.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "The next ten minutes",
+        ordered: true,
+        items: [
+          "Pick anything, badly. Which task you choose matters far less than choosing one. Two roughly equal options usually are roughly equal.",
+          "Cut it until it is almost insultingly small. Not do the taxes. Open the folder. Not call the landlord. Find the number.",
+          "Do that, and only that. If momentum arrives, use it. If it does not, you have still moved.",
+          "Write down where you stopped, in one line, so returning does not mean reconstructing.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Why choosing is the hard part",
+        paragraphs: [
+          "When several things are all somewhat urgent and none has an obvious first step, every one of them costs energy to evaluate. Look at a list of nine of those and you can spend twenty minutes deciding and finish with nothing done and less capacity than you started with.",
+          "This is why a long list makes paralysis worse rather than better. The fix is to look at one thing, not to see everything more clearly.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Lower the bar rather than raising the pressure",
+        paragraphs: [
+          "The instinct is to increase stakes: promise yourself a deadline, imagine the consequences. That reliably raises the wall rather than lowering it, because the problem was never that you did not care enough.",
+          "Making the first action smaller works. Making the consequences larger does not, and usually adds dread to a task that already had plenty.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "If nothing moves today",
+        paragraphs: [
+          "Then nothing moved today, and the tasks are exactly where they were, indifferent to it. What matters is that tomorrow does not start from zero, which is entirely about whether you left yourself a note about where you stopped.",
+          "More on that in [picking something back up after abandoning it](/guides/picking-something-back-up-after-abandoning-it).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "ADHD Life Companion has a procedure for exactly this, for when something is too big to start. It breaks a thing down into a first action you can actually do, and shows one thing at a time rather than a list to evaluate. If you get partway and stop, it records nothing at all about the attempt.",
+      },
+    ],
+  },
+
+  {
+    slug: "just-bought-a-house-what-to-record-in-week-one",
+    title: "You just bought a house. What to record in the first week",
+    dek: "Everything about a home passes through your hands once, during the move. Here is what to capture before it disappears.",
+    readingTime: "7 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "home",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "There is a short window, roughly the fortnight around moving in, when every fact about a house is either in front of you or one phone call away. The previous owner is still reachable. The surveyor's report is still open on your laptop. The boiler manual is still in a drawer rather than lost.",
+          "After that window, each of those facts costs an afternoon to recover, and some are gone permanently. This is the highest return hour of admin in the whole process.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Day one, before anything else",
+        intro: "These are time sensitive in a way the rest are not.",
+        ordered: true,
+        items: [
+          "Meter readings for gas, electricity and water, photographed with the date visible.",
+          "Where the stopcock, fuse box, thermostat and gas shut off are. Find them now, not during an emergency.",
+          "Which utility supplier is on each service, and the account number if there is paperwork.",
+          "Whether the alarm has a code, and who holds it.",
+          "Test every smoke and carbon monoxide alarm, and note when the units expire.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Week one, while it is still accessible",
+        items: [
+          "Make, model and serial for the boiler, water heater, and every appliance that came with the house.",
+          "When the boiler was last serviced, which is usually in a logbook near it or on a sticker.",
+          "The age of the roof, windows and any major system, from the survey or the previous owner.",
+          "Warranty end dates for anything recent, especially appliances left behind.",
+          "Any tradesperson the previous owner recommends. This is worth more than it sounds and expires the moment you lose contact.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Read the survey once more, as a to-do list",
+        paragraphs: [
+          "The survey was read as a buying decision. Read it again now as a maintenance plan, because it is the only document that has systematically inspected the house and it usually names things that are fine now and will not be in three years.",
+          "Pull out anything with a timescale attached and give it a date. That is a maintenance schedule somebody else already did the hard part of.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The insurance detail people miss",
+        paragraphs: [
+          "If the property will be empty for a stretch between completion and moving in, check what your policy says about unoccupancy. Many lapse or reduce cover after thirty days empty, and the period around a move is exactly when that bites.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What this saves you later",
+        paragraphs: [
+          "A year on, the boiler needs servicing and you know when it was last done and by whom. Something fails under warranty and you have the serial number. An engineer asks how old the system is and you have an answer.",
+          "Which fields matter for each kind of thing, and where model plates hide, is covered in [what to record about an appliance](/guides/what-to-record-about-an-appliance-before-you-need-it).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Home Base is built for exactly this capture, and asks for the right fields per type of thing rather than one form for a boiler and a lawnmower. It then works out what needs doing and when, from real service intervals, and stays quiet about the rest. You can import a list rather than typing everything in.",
+      },
+    ],
+  },
+
+  {
+    slug: "seasonal-home-maintenance-without-the-pointless-jobs",
+    title: "Seasonal home maintenance, minus the jobs that do not matter",
+    dek: "A shorter seasonal list than most, built around what actually causes damage, and why generic reminders get ignored.",
+    readingTime: "7 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "home",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Most seasonal checklists are padded. They read well, they run to forty items, and by item twelve most people have stopped. A shorter list that gets done beats a complete one that does not.",
+          "What follows is the subset where timing genuinely matters, meaning the job belongs to a season rather than to a rolling interval, and skipping it in that season causes a real problem.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "The jobs that actually belong to a season",
+        columns: ["Season", "Job", "Why now specifically"],
+        rows: [
+          ["Before first freeze", "Shut off and drain outdoor taps, disconnect hoses", "A burst pipe inside a wall is the most expensive item on any home list"],
+          ["Before first freeze", "Blow out or drain irrigation", "Water left in lines splits them, and you find out in spring"],
+          ["Autumn", "Clear gutters after leaf fall", "Doing it before the leaves drop achieves very little"],
+          ["Autumn", "Service heating", "Engineers are available in October and booked solid in January"],
+          ["Autumn", "Check draughts and seals", "Cheapest possible efficiency work, and only findable when it is cold outside"],
+          ["Spring", "Service air conditioning", "Same reason as heating, in reverse"],
+          ["Spring", "Inspect roof and flashing", "After winter has done its worst, before summer storms"],
+          ["Spring", "Clear gutters again", "Winter debris, plus whatever autumn missed"],
+          ["Summer", "Exterior timber, paint, fencing", "The only window with reliably dry weather"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Everything else is an interval, not a season",
+        paragraphs: [
+          "Boiler servicing, water heater flushing, filter changes, grout and sealant, alarm testing. None of these care what month it is. They care how long since the last time.",
+          "Treating them as seasonal is what produces the checklist telling you to flush a water heater every spring when it was done in November. Their real intervals are in [how often things actually need servicing](/guides/how-often-home-systems-need-servicing).",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Why generic reminders get ignored",
+        paragraphs: [
+          "Any system that tells you to winterise in July has told you something useless, and after two or three useless prompts people stop reading all of them, including the ones that mattered.",
+          "The credibility of a reminder is the whole product. One well timed prompt a month beats twenty generic ones, and the difference is entirely whether the tool understands that a third of outdoor work belongs to a month rather than a countdown.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What to skip without guilt",
+        paragraphs: [
+          "Most of the padding on published seasonal lists is either cosmetic, or so infrequent that treating it as annual is silly. Deep cleaning a dryer vent matters. Rearranging a garage does not, whatever the list says.",
+          "If a job has no plausible failure attached to skipping it, it is a preference rather than maintenance, and it does not belong on the same list as the ones that flood a kitchen.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Home Base already knows which jobs belong to a month and which belong to an interval, and works out what is worth doing now from when you last did it rather than from when you happened to add it. Each job carries a rating for what happens if you skip it, so a short list stays short and honest.",
+      },
+    ],
+  },
+
+  {
+    slug: "beneficiary-forms-override-your-will",
+    title: "Your beneficiary forms quietly override your will",
+    dek: "Pensions and life insurance usually pass by nomination, not by will. The form you filled in on your first day at an old job may still decide who gets it.",
+    readingTime: "6 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "affairs-and-endings",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Most people assume a will decides everything. For a large share of what they own, it does not.",
+          "Pensions, life insurance, and various other accounts pass to whoever is named on the plan's own beneficiary nomination. That nomination usually sits outside the estate entirely, which means the will never gets a say, no matter how recently it was written or how clearly it says otherwise.",
+          "This is the single most common way somebody's intentions quietly fail to happen.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "What passes how",
+        intro: "Generalised, and details vary by country and provider, but the shape holds almost everywhere.",
+        columns: ["Asset", "Usually passes by", "Does the will control it"],
+        rows: [
+          ["Workplace or private pension", "Beneficiary nomination, often at trustee discretion", "Usually not"],
+          ["Life insurance policy", "Named beneficiary on the policy", "Usually not"],
+          ["Jointly owned property", "Survivorship, depending on how it is held", "Often not"],
+          ["Joint bank account", "Survivorship", "Usually not"],
+          ["Sole bank accounts and possessions", "The estate", "Yes"],
+          ["Anything held in trust", "The trust's own terms", "No"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Why this goes wrong so often",
+        paragraphs: [
+          "Beneficiary forms are filled in once, usually during onboarding at a job, and then never looked at again. People marry, separate, have children and change jobs, and the form stays exactly as it was.",
+          "The result is entirely predictable and still surprises everybody: a pension from a job somebody left fifteen years ago still names an ex-partner, or a parent who has since died, or nobody at all.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "If the nomination is blank or out of date",
+        paragraphs: [
+          "A blank nomination usually means the provider decides, often using its own rules or trustee discretion, and the outcome may not be what anybody expected.",
+          "Naming somebody who has died can push the money into the estate, which sounds fine until you remember that estates can be slower, may face different tax treatment, and are exposed to creditors in ways a direct nomination is not.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What to actually do",
+        intro: "This is a short afternoon of work and it is close to the highest value hour in personal admin.",
+        ordered: true,
+        items: [
+          "List every pension you have ever had, including from old employers. Most people underestimate this number.",
+          "List every life insurance policy, including any provided through work.",
+          "Ask each provider who is currently nominated. They will tell you.",
+          "Update anything that is wrong, blank, or names somebody who has died.",
+          "Write down where each nomination sits, so the next review takes ten minutes rather than an afternoon.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Then check it again after anything changes",
+        paragraphs: [
+          "Marriage, separation, a new child, a new job, a death in the family. Each of those is a moment when a nomination may now say the wrong thing, and none of them updates anything automatically.",
+          "Nothing here is legal advice, and the rules genuinely differ by country and by scheme. What is universal is that you should know what your forms currently say, and most people do not.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Personal Life Affairs Companion records every pension and policy you have, where each one sits, and who is currently nominated on it, so the answer is somewhere findable rather than in a form you last saw in 2011. It records what exists and where it is kept, never the documents themselves, and it does not give advice on what any nomination should say.",
+      },
+    ],
+  },
+
+  {
+    slug: "homeschool-records-when-you-have-kept-nothing-since-october",
+    title: "It is March and you have recorded nothing since October",
+    dek: "How to reconstruct a homeschool year honestly, what is genuinely recoverable, and how to make the rest of the year different.",
+    readingTime: "7 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "family-and-learning",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "This happens to most homeschooling families at least once, and almost nobody writes about it, because published advice is aimed at the version of you who kept up.",
+          "The good news is that more is recoverable than it feels like right now. The rest of it you can be honest about, which is a genuinely acceptable outcome.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What is actually recoverable",
+        intro: "Work through these in order. Most families recover a usable picture of the year in an afternoon.",
+        ordered: true,
+        items: [
+          "The physical work. Undated worksheets still tell you what was covered, and page numbers in a workbook tell you roughly how far you got.",
+          "Where you are in each curriculum right now. Working backwards from your current position reconstructs the term with reasonable accuracy.",
+          "Library records and reading history, which give you dated reading material without any effort.",
+          "Photographs on your phone, which are dated, and which capture projects, trips and experiments better than any log would.",
+          "Purchases. Receipts for books and materials date when a topic started.",
+          "Your calendar, for co-op sessions, classes, trips and anything with a time attached.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Reconstruct honestly, do not invent",
+        paragraphs: [
+          "Write approximate dates as approximate. October to December, rather than a made up Tuesday. A record that says roughly when something happened is credible. A record with invented precision is not, and if anybody ever checks, the precision is what damages you.",
+          "Evaluators and reviewers are, in general, looking for evidence that education happened. They are not forensic auditors, and a clearly reconstructed term marked as reconstructed is a normal thing to receive.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Check what your state actually requires first",
+        paragraphs: [
+          "Before spending a weekend on this, find out what you genuinely need. Several states require nothing at all, in which case this is for your own use and can be as rough as you like.",
+          "If you are in one of the six that mandate a portfolio, the requirements are specific and worth reading properly. Both are covered in [record keeping requirements by state](/guides/homeschool-record-keeping-requirements-by-state).",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Why it stopped in October",
+        paragraphs: [
+          "It is worth knowing, because otherwise it happens again in the second week of next term. Almost always the system was too heavy: a spreadsheet with nine columns, or a plan to write a paragraph a day about each child.",
+          "Anything that takes more than about a minute does not survive a bad week, and every year contains several bad weeks. The version that lasts records three things: the date, the subject and roughly what part of it, and one word about how it went.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Do not backfill the whole year before restarting",
+        paragraphs: [
+          "The common failure now is deciding to reconstruct everything perfectly before recording anything new, and then doing neither.",
+          "Start recording today, and reconstruct backwards in odd half hours. Today onwards is the part you can be accurate about, and it is the part that stops this happening again.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Homeschooling Companion accepts backdated entries, because nobody logs every day on the day, and it is built so that recording a day takes well under a minute. It has no completion percentage and no screen that tells you how many days you missed, which is the feature that makes people abandon record keeping in the first place.",
+      },
+    ],
+  },
+
+  {
+    slug: "how-to-tell-whether-something-actually-stuck",
+    title: "How to tell whether something actually stuck",
+    dek: "Covering a topic and learning it are different. A low effort way to find out which happened, without turning your house into a school.",
+    readingTime: "6 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "family-and-learning",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "You covered fractions in October. It is March. Do they know fractions? Most homeschooling parents genuinely cannot answer that, and the not knowing is more uncomfortable than any actual gap would be.",
+          "Finding out does not require testing in the formal sense. It requires asking a small number of questions, some time after the teaching, and being willing to accept the answer.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Ask later, not at the end of the lesson",
+        paragraphs: [
+          "Checking understanding immediately after teaching measures short term recall, which is nearly always good and tells you very little. The useful check happens weeks later, when whatever was going to fade has faded.",
+          "This feels counterintuitive, because a check straight after a lesson produces flattering results. That is exactly why it is not worth running.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What a useful check looks like",
+        items: [
+          "Short. Six to eight questions is plenty, and more produces fatigue rather than information.",
+          "Mixed. Some recall, some application, and at least one that asks them to explain rather than to produce an answer.",
+          "Unannounced in tone. Not a test event, just a few questions over breakfast.",
+          "Written down. What you learn is worth nothing in three weeks if you did not record it.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Four honest results, not two",
+        paragraphs: [
+          "The temptation is to conclude either that they know it or they do not. There are really four outcomes, and the fourth is the one most systems refuse to report.",
+          "It looked solid, so move on. It is worth another look, so revisit it. It is mixed, which usually means more practice rather than reteaching. Or there is not enough to say, because they answered two questions and you cannot conclude anything from two.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Not enough to say is a real answer",
+        paragraphs: [
+          "If a child answers three questions and gets two right, that is not sixty seven percent understanding. It is a sample too small to mean anything, and reporting it as a score invents confidence that does not exist.",
+          "Any tool that turns three answers into a percentage is lying to you politely. The honest response is that you do not know yet, which is genuinely useful information because it tells you to ask again rather than to act.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The questions that ask them to explain matter most",
+        paragraphs: [
+          "A child can produce a correct number without understanding anything, particularly in maths, where a memorised procedure gets the right answer for a while and then collapses.",
+          "The questions worth including are the ones where they have to say why. There is no single right wording for those, which is exactly why no answer key can mark them and why you are the only person who can judge it.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Homeschooling Companion includes short checks you can run at home, and reports one of four standings including not enough to say when too few questions were answered to conclude anything. It records the result against the topic so you can see it again later, and it never produces a score, a percentage or a comparison between children.",
+      },
+    ],
+  },
+
+  {
+    slug: "organising-a-multi-stop-trip-without-a-spreadsheet",
+    title: "Organising a multi-stop trip without a spreadsheet",
+    dek: "Six in ten people spend over ten hours planning one trip. Most of that is spent rebuilding a picture that keeps falling apart.",
+    readingTime: "7 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "travel",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "More than six in ten people spend over ten hours planning a single trip, and roughly two thirds end up dissatisfied with the result anyway. The hours do not mostly go into deciding where to go. They go into rebuilding the shape of the trip every time one detail changes.",
+          "A spreadsheet is the usual answer and it half works. It holds the facts and knows nothing about how they relate, so when the flight moves it tells you nothing about what else just became wrong.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Record these four things per booking",
+        intro: "This is the whole method. Everything else is detail.",
+        ordered: true,
+        items: [
+          "What it is, with its provider and confirmation reference.",
+          "When it starts, and when it ends if it spans time, such as a stay or a car hire.",
+          "Which destination it belongs to.",
+          "What it was booked around, if anything. This is the one everybody skips and the one that matters.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The fourth one is the whole point",
+        paragraphs: [
+          "A transfer is not merely a thing at two in the afternoon. It is a thing that exists because of a flight landing at one. A hotel check-in is not just a time, it is downstream of the transfer.",
+          "Write that relationship down once, when you book, and you never have to reconstruct it. Skip it, and every disruption starts with working out from memory what was connected to what, usually in an airport. The method is set out in [what else your trip depends on](/guides/what-else-your-trip-depends-on-when-something-changes).",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Do not build a full itinerary",
+        paragraphs: [
+          "An hour by hour plan for a two week trip is a document that is wrong by day three, and rewriting it is where most of those ten hours go.",
+          "Record the fixed points, which are the things with a booking reference attached, and leave the rest genuinely open. The fixed points are the only part that breaks expensively when something moves.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "One place, not six inboxes",
+        paragraphs: [
+          "Confirmations arrive across several email accounts, a couple of apps and occasionally a screenshot. That is fine while nothing goes wrong and useless at six in the morning at a desk.",
+          "The references are what you actually need under pressure, and they need to be somewhere you can read them in three seconds without searching.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Assume one thing will change",
+        paragraphs: [
+          "Something will move on almost every trip with more than three moving parts. Planning for that is not pessimism, it is the difference between an inconvenience and a ruined day.",
+          "The practical version of planning for it is simply having recorded what depends on what, before you needed to know.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Travel Companion holds the whole trip in one place, including what each booking was built on top of. When something moves you record the change once and it shows you exactly what was downstream of it, unchanged, so you decide. It also prints as a blank book you can carry, for when the phone is the thing that failed.",
+      },
+    ],
+  },
+
+  {
+    slug: "travel-documents-for-a-family",
+    title: "Travel documents for a family: what to carry and where to keep it",
+    dek: "What each traveller needs, what to check months before you go, and why a photograph of a passport is not a backup plan.",
+    readingTime: "7 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "travel",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Travelling with other people means being responsible for documents that are not yours, usually including at least one person who cannot be responsible for their own.",
+          "Two categories matter. What has to be checked well in advance, because it cannot be fixed at an airport, and what has to be findable on the day.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Check these months ahead",
+        intro: "Every one of these has ended trips at check-in desks.",
+        ordered: true,
+        items: [
+          "Passport expiry for every traveller. Many countries require six months validity beyond your return date, so an in-date passport can still be refused.",
+          "Blank pages, which some countries require and which nobody thinks about.",
+          "Visa or travel authorisation requirements, including electronic ones that are quick but not instant.",
+          "Whether a child travelling with one parent, or with neither, needs documented consent. Rules vary and are enforced unevenly, which is worse than being enforced consistently.",
+          "Name mismatches between passport and booking, which cause more problems than anything else on this list.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Passport validity catches people every year",
+        paragraphs: [
+          "The rule that surprises people is that many destinations require your passport to remain valid for six months after you arrive or leave. A passport expiring in four months is in date and still refused.",
+          "Check every traveller, not just the adults. Children's passports are usually valid for fewer years and expire at unhelpful moments precisely because nobody is watching them.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What to have findable on the day",
+        items: [
+          "Passports, obviously, and it is worth agreeing who is physically carrying which.",
+          "Booking references for flights, stays and transfers, readable without hunting through email.",
+          "Travel insurance policy number and the emergency assistance phone number, which is the detail people have never once memorised.",
+          "Any medication documentation, especially for anything that would raise questions at a border.",
+          "One phone number per booking that a human will actually answer.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "A photo of a passport is not a backup",
+        paragraphs: [
+          "It is useful for filling in forms and for proving to yourself what the number was. It is not a travel document, and it will not get anybody onto a plane.",
+          "The genuinely useful record is knowing what exists and where it is right now. Whose passport is in which bag. Whether the insurance is under one person's name. Which parent is carrying which child's documents. That is the information that resolves a problem at a desk, and it is the part nobody writes down.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Keep something on paper",
+        paragraphs: [
+          "A phone at four percent in a taxi is a normal situation, not a rare one. Passport numbers, the insurance line and the key references on one printed page cost nothing and work when nothing else does.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Travel Companion records what documents exist, whose they are, and where each one is kept, and can flag the ones worth showing in the trip summary. It never accepts an upload, because no product on Draftpace stores files, and passport scans are the single most sensitive thing any of them would hold if they did. It prints the lot as a blank book you can carry.",
+      },
+    ],
+  },
+
+  {
+    slug: "you-missed-a-payment-what-to-do-next",
+    title: "You missed a payment. What to do in the next 48 hours",
+    dek: "What actually happens when a payment is missed, what to do first, and how to talk to a provider without it becoming a whole thing.",
+    readingTime: "6 min read",
+    publishedAt: "2026-08-30",
+    areaSlug: "money",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "One missed payment is usually a small problem treated as a large one. The consequences are mostly recoverable, and acting within a few days is what keeps them that way.",
+          "Nothing here is financial advice, and if payments are being missed regularly rather than occasionally, that is a different situation where free debt advice services are genuinely the right call and are worth contacting early rather than late.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "The first 48 hours",
+        ordered: true,
+        items: [
+          "Confirm it actually failed. A payment can show as pending, be retried automatically, or have gone out of a different account than you think.",
+          "Pay it now if you can. A payment a few days late is materially different from one a month late, and most reporting thresholds are measured in months rather than days.",
+          "Check whether anything else is due before your next payday, so you are not solving one and creating another on Friday.",
+          "Call them if you cannot pay it. Providers have far more discretion before an account defaults than after, and almost none of that discretion is offered to people who did not get in touch.",
+          "Write down who you spoke to and what was agreed. This matters if a different person tells you something different next week.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What actually happens, roughly",
+        paragraphs: [
+          "A few days late usually means a failed payment fee and nothing else. Around a month late is generally when it starts being reported. Several months is where genuine credit consequences and default processes begin.",
+          "The exact thresholds vary by country, provider and product type. The useful general point is that the gap between a few days and a month is enormous, and it is entirely within your control.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Calling them is the part people avoid",
+        paragraphs: [
+          "It is also the single most effective thing available, because providers have options before an account goes into arrears that they lose afterwards: payment holidays, revised dates, splitting a payment.",
+          "If that call is the thing you have been putting off for a week, that is an extremely normal response to it, and the preparation that makes it easier is in [making a phone call you have been avoiding](/guides/how-to-make-a-phone-call-you-have-been-avoiding).",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Why it usually happens",
+        paragraphs: [
+          "Very rarely because somebody decided not to pay. Almost always because the balance looked fine on the day, and a payment that had already been committed had not left the account yet.",
+          "That gap between what your balance says and what is genuinely yours is the actual cause, and it is explained in [why your available balance is lying to you](/guides/why-your-available-balance-is-lying-to-you).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Personal Finance Companion holds your bills with their due dates and counts them against what is genuinely available, so the number you are looking at already accounts for what has not left yet. When a bill is missing a due date it says so rather than quietly leaving it out of the figure. Monthly Money Reset does a simpler version, free.",
+      },
+    ],
+  },
 ];
 
 export function getGuideBySlug(slug: string): Guide | undefined {
