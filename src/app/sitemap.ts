@@ -29,7 +29,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: "/cookies", changeFrequency: "yearly" as const, priority: 0.3 },
   ];
 
-  const needRoutes = NEEDS.map((need) => ({
+  /**
+   * Only situations that actually have a product behind them.
+   *
+   * Three of the six need pages have no product and end by saying so.
+   * They were written for a catalogue of generic productivity tools that
+   * never arrived, and the Companion Series went somewhere more specific
+   * instead. The routes stay alive so nothing already linked or indexed
+   * breaks, but advertising a page whose conclusion is "there is no
+   * product for this" earns traffic that cannot convert and reads as a
+   * thinner catalogue than we have.
+   */
+  const publishedSlugs = new Set(shopRegistry.listPublished().flatMap((product) => product.needGroups));
+  const needRoutes = NEEDS.filter((need) => publishedSlugs.has(need.slug)).map((need) => ({
     route: `/help-with/${need.slug}`,
     changeFrequency: "monthly" as const,
     priority: 0.6,

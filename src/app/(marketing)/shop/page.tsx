@@ -8,7 +8,7 @@ import { ArrowRight } from "@/design-system/Icon";
 import { shopRegistry } from "@/shop/registry";
 import { formatPrice, type ShopProduct } from "@/shop/definition";
 import { ensureShopRegistered } from "@/shop/ensureRegistered";
-import { NEEDS } from "@/content/needs";
+import { LIFE_AREAS } from "@/content/areas";
 import AddToLibraryButton from "./AddToLibraryButton";
 import { OverviewScreenMockup as MmrOverviewScreenMockup } from "./[productSlug]/monthlyMoneyResetVisuals";
 import { OverviewScreenMockup as PfcOverviewScreenMockup } from "./[productSlug]/personalFinanceCompanionVisuals";
@@ -45,35 +45,51 @@ export default function ShopIndexPage() {
   ensureShopRegistered();
   const products = shopRegistry.listPublished();
 
-  const categories = NEEDS.map((need) => ({
-    need,
-    products: products.filter((product) => product.needGroups.includes(need.slug)),
+  /**
+   * Grouped by life area, driven by src/content/areas.ts rather than by
+   * each listing's own needGroups.
+   *
+   * The needs taxonomy this replaces put six of seven products under a
+   * single heading, left three headings empty, and listed Travel
+   * Companion twice because it legitimately matched two situations.
+   * Areas own an ordered list of product slugs, so every product appears
+   * exactly once, in a deliberate order, and the Shop matches what the
+   * homepage and Need help already promise.
+   */
+  const bySlug = new Map(products.map((product) => [product.slug, product]));
+  const categories = LIFE_AREAS.map((area) => ({
+    area,
+    products: area.productSlugs.map((slug) => bySlug.get(slug)).filter((p): p is NonNullable<typeof p> => Boolean(p)),
   })).filter((category) => category.products.length > 0);
 
-  // Defensive, not expected with today's real listings: a product whose
-  // needGroups don't match any known situation would otherwise silently
-  // vanish from the Shop entirely rather than just missing a category.
+  // Defensive, not expected with today's real listings: a published
+  // product that no area claims would otherwise vanish from the Shop
+  // entirely rather than simply missing a heading.
   const categorizedSlugs = new Set(categories.flatMap((category) => category.products.map((p) => p.slug)));
   const uncategorized = products.filter((product) => !categorizedSlugs.has(product.slug));
 
   return (
     <Container width="wide" className="pb-24 pt-16 sm:pt-20">
-      <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--primary)]">Shop</p>
+      <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--primary)]">The Companion Series</p>
       <h1 className="mt-3 max-w-2xl font-serif text-[34px] font-semibold leading-tight tracking-tight sm:text-[44px]">
         Find the one that fits your situation.
       </h1>
       <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-[var(--muted)]">
-        Every product here is built around one specific problem. Free and paid work the same way: your progress
-        saves to your account either way.
+        Each Companion is built around one thing that is genuinely hard to keep track of. Free and paid work the same
+        way: your progress saves to your account either way.
       </p>
 
       {products.length === 0 ? (
         <EmptyShop />
       ) : (
         <div className="mt-12 flex flex-col gap-14">
-          {categories.map(({ need, products: categoryProducts }) => (
-            <section key={need.slug}>
-              <h2 className="text-[13px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">{need.label}</h2>
+          {categories.map(({ area, products: categoryProducts }) => (
+            <section key={area.slug}>
+              <h2 className="text-[13px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">{area.label}</h2>
+              {/* The situation, not a category description. Somebody
+                  scanning the Shop should be able to recognise their own
+                  week from the heading rather than from the product name. */}
+              <p className="mt-1.5 max-w-lg text-[14px] leading-relaxed text-[var(--muted)]">{area.situation}</p>
               <div className="mt-4 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                 {categoryProducts.map((product) => (
                   <ShopProductCard key={product.slug} product={product} />
@@ -93,9 +109,9 @@ export default function ShopIndexPage() {
             </section>
           )}
 
-          {categories.length < NEEDS.length && (
+          {categories.length < LIFE_AREAS.length && (
             <p className="text-[13px] text-[var(--faint)]">
-              The Shop is organized by situation. More categories fill in as new products launch.
+              The Companion Series is organised by area of life. More fill in as new Companions are finished.
             </p>
           )}
         </div>
