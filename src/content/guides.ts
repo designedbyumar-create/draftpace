@@ -28,10 +28,62 @@ import { LIFE_AREAS } from "./areas";
  * without opening the door to arbitrary HTML in content.
  */
 
+/**
+ * INTERACTIVE BLOCKS
+ *
+ * Four of these render as something the reader can operate rather than
+ * only read. That is a deliberate correction: the guides layer shipped
+ * as one component and no interaction at all, while the rest of the site
+ * had twelve bespoke components, and it read as a different and much
+ * duller website.
+ *
+ * The rule applied when choosing which blocks became interactive: the
+ * interaction has to carry meaning the prose cannot. A checklist tracks
+ * a sweep you are genuinely part way through. A timeline shows that an
+ * order is a sequence rather than a set. A comparison holds two sides
+ * against each other on a phone, where they cannot sit side by side.
+ * Nothing here animates for the sake of it, and nothing claims to
+ * remember anything: checklist state is per visit and the copy says so,
+ * because a guide is a page, not an account.
+ */
 export type GuideBlock =
   | { kind: "paragraphs"; heading?: string; paragraphs: string[] }
-  | { kind: "list"; heading?: string; intro?: string; ordered?: boolean; items: string[] }
+  | {
+      kind: "list";
+      heading?: string;
+      intro?: string;
+      ordered?: boolean;
+      /**
+       * Renders with tick boxes and a live count. Only for lists of
+       * things a reader actually does, never for lists of facts: a
+       * checkbox next to a fact invites a reader to tick it, which
+       * teaches them the control means nothing.
+       */
+      checkable?: boolean;
+      items: string[];
+    }
   | { kind: "table"; heading?: string; intro?: string; columns: string[]; rows: string[][] }
+  | {
+      kind: "timeline";
+      heading?: string;
+      intro?: string;
+      /** `when` is the marker on the spine, `what` is the step itself. */
+      steps: { when: string; what: string }[];
+    }
+  | {
+      kind: "compare";
+      heading?: string;
+      intro?: string;
+      left: { label: string; items: string[] };
+      right: { label: string; items: string[] };
+    }
+  | {
+      kind: "scripts";
+      heading?: string;
+      intro?: string;
+      /** `situation` is what the reader picks, `line` is what they say. */
+      items: { situation: string; line: string }[];
+    }
   | { kind: "callout"; label: string; body: string };
 
 export type Guide = {
@@ -99,16 +151,29 @@ export const GUIDES: Guide[] = [
         ],
       },
       {
-        kind: "list",
+        kind: "timeline",
         heading: "The first 48 hours",
-        intro: "Short on purpose. If somebody hands you a longer list this week, it is for later.",
-        ordered: true,
-        items: [
-          "Get the medical certificate of cause of death. If your parent died in hospital or a care home, staff arrange this. If they died at home unexpectedly, call emergency services first.",
-          "Register the death with your local register office. Most places require this within a few days.",
-          "Order certified copies of the death certificate. Order more than feels sensible, because ten is normal and each organisation wants its own.",
-          "Contact a funeral director, or check whether a plan was already paid for. Many people have one and never mention it.",
-          "Secure the property. Lock it, redirect post, and if it is now empty, check what the home insurance says about unoccupied buildings, because many policies lapse after thirty days.",
+        steps: [
+          {
+            when: "Straight away",
+            what: "Get the medical certificate of cause of death. If your parent died in hospital or a care home, staff arrange this. If they died at home unexpectedly, call emergency services first.",
+          },
+          {
+            when: "Within a few days",
+            what: "Register the death with your local register office. Most places require this within a few days.",
+          },
+          {
+            when: "At the same appointment",
+            what: "Order certified copies of the death certificate. Order more than feels sensible, because ten is normal and each organisation wants its own.",
+          },
+          {
+            when: "Once it is registered",
+            what: "Contact a funeral director, or check whether a plan was already paid for. Many people have one and never mention it.",
+          },
+          {
+            when: "Within thirty days",
+            what: "Secure the property. Lock it, redirect post, and if it is now empty, check what the home insurance says about unoccupied buildings, because many policies lapse after thirty days.",
+          },
         ],
       },
       {
@@ -121,6 +186,7 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "Who to tell in the first two weeks",
         intro: "Not everybody. Just the ones where delay causes a real problem.",
         items: [
@@ -181,6 +247,7 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "Start with twelve months of bank statements",
         intro: "This is the highest-yield hour you will spend, because almost everything leaves a trace here.",
         items: [
@@ -200,6 +267,7 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "Where else to look",
         items: [
           "Their email, searched for words like statement, policy, renewal, premium and pension.",
@@ -271,6 +339,7 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "What a portfolio usually contains",
         intro: "The specifics vary, but this set covers most requirements.",
         items: [
@@ -283,6 +352,7 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "What to keep even where nothing is required",
         intro: "Three things are worth recording regardless of your state, because they are the ones you will want later and cannot reconstruct.",
         items: [
@@ -348,6 +418,7 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "What to record about anything in your house",
         intro: "Five fields, once, when you can actually see the appliance. This is the part that makes every future repair cheaper.",
         items: [
@@ -418,6 +489,7 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "What to have in front of you before you call anybody",
         items: [
           "The booking reference and the name it was booked under, which are sometimes different.",
@@ -457,15 +529,29 @@ export const GUIDES: Guide[] = [
         ],
       },
       {
-        kind: "list",
+        kind: "timeline",
         heading: "The first twenty minutes",
-        ordered: true,
-        items: [
-          "Check the actual arrival time against your connection time, not the delay figure. A ninety minute delay on a three hour layover is not a problem.",
-          "If it is tight, join the transfer or service desk queue immediately. You can always leave a queue.",
-          "While standing in it, call the airline. The phone queue and the physical queue run in parallel, and whichever answers first wins.",
-          "Check the airline app. Rebooking is sometimes available there before an agent offers it.",
-          "Decide what you want: the next flight, a different routing, or an overnight with a hotel. Vague requests get vague answers.",
+        steps: [
+          {
+            when: "Before anything else",
+            what: "Check the actual arrival time against your connection time, not the delay figure. A ninety minute delay on a three hour layover is not a problem.",
+          },
+          {
+            when: "If it is tight",
+            what: "Join the transfer or service desk queue immediately. You can always leave a queue.",
+          },
+          {
+            when: "While you stand in it",
+            what: "Call the airline. The phone queue and the physical queue run in parallel, and whichever answers first wins.",
+          },
+          {
+            when: "At the same time",
+            what: "Check the airline app. Rebooking is sometimes available there before an agent offers it.",
+          },
+          {
+            when: "Before you reach the desk",
+            what: "Decide what you want: the next flight, a different routing, or an overnight with a hotel. Vague requests get vague answers.",
+          },
         ],
       },
       {
@@ -494,6 +580,7 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "What to have ready",
         items: [
           "Booking reference and the name the booking is under.",
@@ -528,9 +615,9 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "Five minutes before you dial",
         intro: "Write these down. On paper, on a screen, anywhere you can see them while talking.",
-        ordered: true,
         items: [
           "What this is about, in one line.",
           "What you want to happen. Decide it now, because this is the thing that gets lost halfway through explaining what went wrong.",
@@ -606,9 +693,9 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "What to leave behind when you stop",
         intro: "Three lines when you put something down, which turn a twenty minute restart into a two minute one.",
-        ordered: true,
         items: [
           "Where you got to. Not what the task is, where you stopped inside it.",
           "The next physical action, written as a verb. Call the number on the letter. Not chase the refund.",
@@ -655,15 +742,29 @@ export const GUIDES: Guide[] = [
         ],
       },
       {
-        kind: "list",
+        kind: "timeline",
         heading: "Working it out",
-        ordered: true,
-        items: [
-          "Add up every current account balance. Not savings, unless you genuinely would spend them.",
-          "Subtract anything protected: money set aside for tax, a deposit being held, an emergency fund you will not touch.",
-          "Subtract every bill and subscription due before your next payday.",
-          "Subtract anything you have committed to but not yet paid, such as a booking or a repair.",
-          "What is left is the honest number. Divide it by the weeks remaining if you want a weekly figure.",
+        steps: [
+          {
+            when: "Start with",
+            what: "Every current account balance added up. Not savings, unless you genuinely would spend them.",
+          },
+          {
+            when: "Take out",
+            what: "Anything protected: money set aside for tax, a deposit being held, an emergency fund you will not touch.",
+          },
+          {
+            when: "Take out",
+            what: "Every bill and subscription due before your next payday.",
+          },
+          {
+            when: "Take out",
+            what: "Anything you have committed to but not yet paid, such as a booking or a repair.",
+          },
+          {
+            when: "What is left",
+            what: "That is the honest number. Divide it by the weeks remaining if you want a weekly figure.",
+          },
         ],
       },
       {
@@ -715,8 +816,8 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "The sweep",
-        ordered: true,
         items: [
           "Download twelve months of statements for every current account and credit card.",
           "Sort by merchant rather than by date, so repeats group together.",
@@ -823,6 +924,7 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "Seasonal jobs, by when they belong",
         items: [
           "Before first freeze: shut off and drain outdoor taps, disconnect hoses, winterise irrigation.",
@@ -864,8 +966,8 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "The five fields",
-        ordered: true,
         items: [
           "Make and model. The exact model, not the marketing name on the front.",
           "Serial number, where there is one. Warranty claims usually need it.",
@@ -937,16 +1039,34 @@ export const GUIDES: Guide[] = [
         ],
       },
       {
-        kind: "list",
+        kind: "timeline",
         heading: "The search order",
-        ordered: true,
-        items: [
-          "The obvious places at home: filing box, desk, bedside drawer, safe, or a folder marked with anything official sounding.",
-          "With a solicitor. Many firms store the original and issue the family a copy, so a copy at home may mean the original is elsewhere.",
-          "A bank safe deposit box, if they had one. Access after a death usually requires the death certificate and proof of your authority.",
-          "A national or regional will register, where one exists. Some countries maintain a central record of where wills are lodged.",
-          "With the executor. If a family member was named, they may already hold it and not have mentioned it.",
-          "Their accountant or financial adviser, who often knows whether a will exists even if they do not hold it.",
+        intro: "Work down it rather than across it. Each place is more effort than the one before, and most wills are found in the first two.",
+        steps: [
+          {
+            when: "At home",
+            what: "The obvious places: filing box, desk, bedside drawer, safe, or a folder marked with anything official sounding.",
+          },
+          {
+            when: "A solicitor",
+            what: "Many firms store the original and issue the family a copy, so a copy at home may mean the original is elsewhere.",
+          },
+          {
+            when: "A safe deposit box",
+            what: "If they had one. Access after a death usually requires the death certificate and proof of your authority.",
+          },
+          {
+            when: "A will register",
+            what: "Where one exists. Some countries maintain a central record of where wills are lodged.",
+          },
+          {
+            when: "The executor",
+            what: "If a family member was named, they may already hold it and not have mentioned it.",
+          },
+          {
+            when: "Their adviser",
+            what: "Their accountant or financial adviser, who often knows whether a will exists even if they do not hold it.",
+          },
         ],
       },
       {
@@ -997,16 +1117,34 @@ export const GUIDES: Guide[] = [
         ],
       },
       {
-        kind: "list",
+        kind: "timeline",
         heading: "What the job actually involves",
-        ordered: true,
-        items: [
-          "Find and secure everything: property, accounts, pensions, policies, possessions.",
-          "Value the estate as at the date of death, which often needs professional valuations for property.",
-          "Apply for the legal authority to act, called probate or its local equivalent.",
-          "Settle debts and taxes before anybody inherits anything.",
-          "Distribute what remains according to the will.",
-          "Keep records of all of it, because beneficiaries are entitled to see the accounts.",
+        intro: "Six stages, in this order, and you cannot skip to the last one.",
+        steps: [
+          {
+            when: "Find",
+            what: "Locate and secure everything: property, accounts, pensions, policies, possessions.",
+          },
+          {
+            when: "Value",
+            what: "Value the estate as at the date of death, which often needs professional valuations for property.",
+          },
+          {
+            when: "Apply",
+            what: "Apply for the legal authority to act, called probate or its local equivalent.",
+          },
+          {
+            when: "Settle",
+            what: "Settle debts and taxes before anybody inherits anything.",
+          },
+          {
+            when: "Distribute",
+            what: "Distribute what remains according to the will.",
+          },
+          {
+            when: "Account",
+            what: "Keep records of all of it, because beneficiaries are entitled to see the accounts.",
+          },
         ],
       },
       {
@@ -1035,6 +1173,7 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "What to ask for immediately if you are acting",
         items: [
           "Certified copies of the death certificate, more than you think you need.",
@@ -1070,6 +1209,7 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "What goes in it",
         intro: "Locations and references, not the documents themselves. This is a map, not a vault.",
         items: [
@@ -1133,6 +1273,7 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "Have these open before you speak",
         intro: "On screen, not in an inbox you are still searching while somebody waits.",
         items: [
@@ -1204,9 +1345,9 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "The core contents",
         intro: "Most requirements are satisfied by these five things.",
-        ordered: true,
         items: [
           "A log of educational activities, with reading materials named by title.",
           "Samples of work across the year, dated, from several points rather than one good week.",
@@ -1287,8 +1428,9 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "What actually helps",
-        ordered: true,
+        intro: "Tick whichever your current setup already does. The ones you cannot tick are usually where it keeps failing you.",
         items: [
           "Show one thing, not everything. Almost nobody needs the full list at nine in the morning.",
           "Write the next physical action, as a verb. Call the number on the letter. Not chase the refund.",
@@ -1337,16 +1479,28 @@ export const GUIDES: Guide[] = [
         ],
       },
       {
-        kind: "table",
+        kind: "compare",
         heading: "What the number does and does not know",
-        columns: ["Your bank knows", "Your bank does not know"],
-        rows: [
-          ["Money that has left the account", "That your car insurance renews on the eighteenth"],
-          ["Payments that have settled", "That four hundred of this is set aside for tax"],
-          ["Your arranged overdraft, added in", "That you agreed to cover a shared bill this month"],
-          ["Standing orders it can see scheduled", "Annual subscriptions that will not appear for months"],
-          ["The balance right now", "That a pending card payment has not landed yet"],
-        ],
+        left: {
+          label: "Your bank knows",
+          items: [
+            "Money that has left the account.",
+            "Payments that have settled.",
+            "Your arranged overdraft, added in.",
+            "Standing orders it can see scheduled.",
+            "The balance right now.",
+          ],
+        },
+        right: {
+          label: "Your bank does not know",
+          items: [
+            "That your car insurance renews on the eighteenth.",
+            "That four hundred of this is set aside for tax.",
+            "That you agreed to cover a shared bill this month.",
+            "Annual subscriptions that will not appear for months.",
+            "That a pending card payment has not landed yet.",
+          ],
+        },
       },
       {
         kind: "paragraphs",
@@ -1432,7 +1586,9 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "What survives past month two",
+        intro: "Tick the ones the app you are using actually does. Anything left unticked is a reason it will be deleted by March.",
         items: [
           "Answers one question well rather than modelling everything.",
           "Stays roughly right with very little input.",
@@ -1491,8 +1647,8 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "The two questions that unstick most things",
-        ordered: true,
         items: [
           "What is the next physical action? Not the outcome. Call the number on the letter, find the reference in the email, open the form. If you cannot name a physical action, that is why it has not moved.",
           "What would have to be in front of me to do that? Usually a reference number, a date, and a decision about what you want. Get those into one place and the task shrinks to something you can actually attempt.",
@@ -1538,14 +1694,25 @@ export const GUIDES: Guide[] = [
         ],
       },
       {
-        kind: "list",
+        kind: "timeline",
         heading: "The next ten minutes",
-        ordered: true,
-        items: [
-          "Pick anything, badly. Which task you choose matters far less than choosing one. Two roughly equal options usually are roughly equal.",
-          "Cut it until it is almost insultingly small. Not do the taxes. Open the folder. Not call the landlord. Find the number.",
-          "Do that, and only that. If momentum arrives, use it. If it does not, you have still moved.",
-          "Write down where you stopped, in one line, so returning does not mean reconstructing.",
+        steps: [
+          {
+            when: "Choose",
+            what: "Pick anything, badly. Which task you choose matters far less than choosing one. Two roughly equal options usually are roughly equal.",
+          },
+          {
+            when: "Cut it down",
+            what: "Cut it until it is almost insultingly small. Not do the taxes. Open the folder. Not call the landlord. Find the number.",
+          },
+          {
+            when: "Do only that",
+            what: "If momentum arrives, use it. If it does not, you have still moved.",
+          },
+          {
+            when: "Before you stop",
+            what: "Write down where you stopped, in one line, so returning does not mean reconstructing.",
+          },
         ],
       },
       {
@@ -1597,9 +1764,9 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "Day one, before anything else",
         intro: "These are time sensitive in a way the rest are not.",
-        ordered: true,
         items: [
           "Meter readings for gas, electricity and water, photographed with the date visible.",
           "Where the stopcock, fuse box, thermostat and gas shut off are. Find them now, not during an emergency.",
@@ -1610,6 +1777,7 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "Week one, while it is still accessible",
         items: [
           "Make, model and serial for the boiler, water heater, and every appliance that came with the house.",
@@ -1761,9 +1929,9 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "What to actually do",
         intro: "This is a short afternoon of work and it is close to the highest value hour in personal admin.",
-        ordered: true,
         items: [
           "List every pension you have ever had, including from old employers. Most people underestimate this number.",
           "List every life insurance policy, including any provided through work.",
@@ -1805,9 +1973,9 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "What is actually recoverable",
         intro: "Work through these in order. Most families recover a usable picture of the year in an afternoon.",
-        ordered: true,
         items: [
           "The physical work. Undated worksheets still tell you what was covered, and page numbers in a workbook tell you roughly how far you got.",
           "Where you are in each curriculum right now. Working backwards from your current position reconstructs the term with reasonable accuracy.",
@@ -1882,6 +2050,7 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "What a useful check looks like",
         items: [
           "Short. Six to eight questions is plenty, and more produces fatigue rather than information.",
@@ -1939,9 +2108,9 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "Record these four things per booking",
         intro: "This is the whole method. Everything else is detail.",
-        ordered: true,
         items: [
           "What it is, with its provider and confirmation reference.",
           "When it starts, and when it ends if it spans time, such as a stay or a car hire.",
@@ -2006,9 +2175,9 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "Check these months ahead",
         intro: "Every one of these has ended trips at check-in desks.",
-        ordered: true,
         items: [
           "Passport expiry for every traveller. Many countries require six months validity beyond your return date, so an in-date passport can still be refused.",
           "Blank pages, which some countries require and which nobody thinks about.",
@@ -2027,6 +2196,7 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "What to have findable on the day",
         items: [
           "Passports, obviously, and it is worth agreeing who is physically carrying which.",
@@ -2075,15 +2245,29 @@ export const GUIDES: Guide[] = [
         ],
       },
       {
-        kind: "list",
+        kind: "timeline",
         heading: "The first 48 hours",
-        ordered: true,
-        items: [
-          "Confirm it actually failed. A payment can show as pending, be retried automatically, or have gone out of a different account than you think.",
-          "Pay it now if you can. A payment a few days late is materially different from one a month late, and most reporting thresholds are measured in months rather than days.",
-          "Check whether anything else is due before your next payday, so you are not solving one and creating another on Friday.",
-          "Call them if you cannot pay it. Providers have far more discretion before an account defaults than after, and almost none of that discretion is offered to people who did not get in touch.",
-          "Write down who you spoke to and what was agreed. This matters if a different person tells you something different next week.",
+        steps: [
+          {
+            when: "First",
+            what: "Confirm it actually failed. A payment can show as pending, be retried automatically, or have gone out of a different account than you think.",
+          },
+          {
+            when: "If you can pay it",
+            what: "Pay it now. A payment a few days late is materially different from one a month late, and most reporting thresholds are measured in months rather than days.",
+          },
+          {
+            when: "Same sitting",
+            what: "Check whether anything else is due before your next payday, so you are not solving one and creating another on Friday.",
+          },
+          {
+            when: "If you cannot pay it",
+            what: "Call them. Providers have far more discretion before an account defaults than after, and almost none of that discretion is offered to people who did not get in touch.",
+          },
+          {
+            when: "Before you hang up",
+            what: "Write down who you spoke to and what was agreed. This matters if a different person tells you something different next week.",
+          },
         ],
       },
       {
@@ -2137,9 +2321,9 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "The fortnight list",
         intro: "What somebody would actually hit in the first two weeks, in roughly the order they would hit it.",
-        ordered: true,
         items: [
           "Which bank the household money is in, and whether anything is due out this week.",
           "Where the mortgage or rent is paid from, and when.",
@@ -2324,8 +2508,8 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "Write these down the same day",
-        ordered: true,
         items: [
           "What the symptom was, in your own words, before anybody diagnosed it.",
           "What they said was actually wrong.",
@@ -2392,8 +2576,8 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "What to record when something is installed",
-        ordered: true,
         items: [
           "Date of purchase and date of installation, which are often different and it is usually installation that starts the clock.",
           "Serial number, which is what a manufacturer will ask for first.",
@@ -2458,15 +2642,30 @@ export const GUIDES: Guide[] = [
         ],
       },
       {
-        kind: "list",
+        kind: "scripts",
         heading: "Openings that work",
-        intro: "Change any of these. The point is having a first sentence at all.",
+        intro: "Every one of these opens with the problem rather than an apology, and ends with a question, which hands them the next move.",
         items: [
-          "Billing problem: Hello, I have been charged for something and the amount is not what I was expecting. Can you look into it for me.",
-          "Chasing something overdue: Hello, I am following up on something I was told would be resolved by now. Can you tell me where it has got to.",
-          "Cancelling: Hello, I would like to cancel my account. Can you tell me what you need from me to do that.",
-          "Complaining: Hello, something has gone wrong and I would like to explain what happened. Can I go through it with you.",
-          "Asking for help you feel you should not need: Hello, I am trying to sort something out and I am not sure I am doing it right. Can you point me in the right direction.",
+          {
+            situation: "Billing problem",
+            line: "Hello, I have been charged for something and the amount is not what I was expecting. Can you look into it for me.",
+          },
+          {
+            situation: "Chasing something overdue",
+            line: "Hello, I am following up on something I was told would be resolved by now. Can you tell me where it has got to.",
+          },
+          {
+            situation: "Cancelling",
+            line: "Hello, I would like to cancel my account. Can you tell me what you need from me to do that.",
+          },
+          {
+            situation: "Complaining",
+            line: "Hello, something has gone wrong and I would like to explain what happened. Can I go through it with you.",
+          },
+          {
+            situation: "Asking for help",
+            line: "Hello, I am trying to sort something out and I am not sure I am doing it right. Can you point me in the right direction.",
+          },
         ],
       },
       {
@@ -2479,9 +2678,9 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "Four things before you hang up",
         intro: "This is the part that saves the second call.",
-        ordered: true,
         items: [
           "Ask them to read back what has been agreed.",
           "Get a reference number for the call itself.",
@@ -2537,13 +2736,22 @@ export const GUIDES: Guide[] = [
         ],
       },
       {
-        kind: "list",
+        kind: "scripts",
         heading: "What to say about the gap",
-        intro: "Brief, factual, no explanation required. Any of these ends the topic.",
+        intro: "One sentence, no story. Pick whichever sits closest to how you actually feel about it and use that.",
         items: [
-          "I know this has been outstanding for a while, and I would like to get it sorted now.",
-          "This is later than it should be. What do you need from me.",
-          "I have not dealt with this until now. Can you tell me where it stands.",
+          {
+            situation: "Keep it brief",
+            line: "I know this has been outstanding for a while, and I would like to get it sorted now.",
+          },
+          {
+            situation: "Name it plainly",
+            line: "This is later than it should be. What do you need from me.",
+          },
+          {
+            situation: "Ask where it stands",
+            line: "I have not dealt with this until now. Can you tell me where it stands.",
+          },
         ],
       },
       {
@@ -2595,8 +2803,8 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "What to bring",
-        ordered: true,
         items: [
           "The log of what was covered, with dates, even if approximate.",
           "Work samples across the year, not from one strong fortnight.",
@@ -2662,9 +2870,9 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "Decide these three things first",
         intro: "Almost all group travel friction comes from leaving these implicit.",
-        ordered: true,
         items: [
           "Who is booking what. Not who is paying, who is actually making each booking.",
           "What is fixed and what is optional. Flights and stays are usually fixed. Everything else should be explicitly optional so nobody feels obliged to attend a museum.",
@@ -2727,15 +2935,30 @@ export const GUIDES: Guide[] = [
         ],
       },
       {
-        kind: "list",
+        kind: "timeline",
         heading: "The order that works",
-        ordered: true,
-        items: [
-          "Income first. What is arriving, when, and is the payday different from before. Everything else depends on this.",
-          "Fixed outgoings second. What leaves automatically, from which account, and on what dates.",
-          "Then anything now wrong: an address, a name on a bill, a payment coming from an account that will close.",
-          "Then the things nobody remembers, which are pensions from the old employer and insurance bought through it.",
-          "Then recalculate what is safe to spend, because the old number is no longer true.",
+        intro: "Each stage depends on the one above it, which is why doing them out of order tends to mean doing them twice.",
+        steps: [
+          {
+            when: "Income",
+            what: "What is arriving, when, and whether the payday has moved. Everything else depends on this.",
+          },
+          {
+            when: "Fixed outgoings",
+            what: "What leaves automatically, from which account, and on what dates.",
+          },
+          {
+            when: "Anything now wrong",
+            what: "An address, a name on a bill, a payment coming from an account that is about to close.",
+          },
+          {
+            when: "The forgotten ones",
+            what: "The things nobody remembers, which are pensions from the old employer and insurance bought through it.",
+          },
+          {
+            when: "Then recalculate",
+            what: "Work out what is safe to spend again, because the old number is no longer true.",
+          },
         ],
       },
       {
@@ -2796,13 +3019,22 @@ export const GUIDES: Guide[] = [
         ],
       },
       {
-        kind: "list",
+        kind: "scripts",
         heading: "Openings that tend to work",
-        intro: "Each shifts the subject onto logistics, and most work better when the prompt is somebody other than them.",
+        intro: "Each of these makes the conversation about logistics rather than about them dying, which is the difference between a conversation and an argument.",
         items: [
-          "I have been sorting out my own paperwork and realised nobody would know where anything of mine is. Have you done yours.",
-          "If you were both in hospital for a fortnight, I would not know how to keep things running. Can we write the basics down.",
-          "A friend has just been through this for their parent and it took months, mostly because nothing was written down.",
+          {
+            situation: "Start with yourself",
+            line: "I have been sorting out my own paperwork and realised nobody would know where anything of mine is. Have you done yours.",
+          },
+          {
+            situation: "Use a what if",
+            line: "If you were both in hospital for a fortnight, I would not know how to keep things running. Can we write the basics down.",
+          },
+          {
+            situation: "Use somebody else's story",
+            line: "A friend has just been through this for their parent and it took months, mostly because nothing was written down.",
+          },
         ],
       },
       {
@@ -2862,9 +3094,9 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "The walk round",
         intro: "Photograph every plate you find. Transcribing model numbers by hand in bad light produces errors.",
-        ordered: true,
         items: [
           "Boiler or furnace: model, serial, and any service sticker, which often lists dates and the engineer.",
           "Water heater: the label usually includes a manufacture date, which tells you its age even if nothing else does.",
@@ -2969,6 +3201,7 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "When the label is gone",
         intro: "Worn, painted over, or peeled off. Several fallbacks usually work.",
         items: [
@@ -3020,6 +3253,7 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "The lightest record that works",
         intro: "If your state counts days, this is enough.",
         items: [
@@ -3084,8 +3318,9 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "What kills a system",
-        intro: "Every one of these looks reasonable in September.",
+        intro: "Every one of these looks reasonable in September. Tick anything your current system asks of you.",
         items: [
           "More than about four fields per entry.",
           "Anything requiring a paragraph of writing per child per day.",
@@ -3150,8 +3385,8 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "What actually helps",
-        ordered: true,
         items: [
           "Externalise everything. Not as a list of tasks, but as the details you would otherwise hold: reference numbers, what you already tried, who you spoke to.",
           "Write the next physical action, not the goal. On a low-capacity day, call the number on the letter is achievable and sort out the insurance is not.",
@@ -3275,9 +3510,9 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "What goes on the page",
         intro: "Short enough to fit on one side, or it will not get printed.",
-        ordered: true,
         items: [
           "Where you are staying, with the address in the local language if that is not yours.",
           "Confirmation references for flights, stays and transfers.",
@@ -3342,8 +3577,8 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "The check",
-        ordered: true,
         items: [
           "What is due between now and your next payday, not just tomorrow.",
           "Which account each one comes from, because the money being somewhere is not the same as it being in the right place.",
@@ -3399,14 +3634,19 @@ export const GUIDES: Guide[] = [
         ],
       },
       {
-        kind: "list",
+        kind: "timeline",
         heading: "The thirty second version",
-        ordered: true,
-        items: [
-          "Take what is genuinely available, which is your balance minus protected money minus everything committed before your next payday.",
-          "Subtract the cost of the thing.",
-          "Divide what remains by the number of weeks until payday.",
-          "Ask whether you could live on that weekly figure. That is the actual question.",
+        steps: [
+          {
+            when: "Start with",
+            what: "What is genuinely available, which is your balance minus protected money minus everything committed before your next payday.",
+          },
+          { when: "Subtract", what: "The cost of the thing." },
+          { when: "Divide", what: "What remains by the number of weeks until payday." },
+          {
+            when: "Then ask",
+            what: "Whether you could live on that weekly figure. That is the actual question.",
+          },
         ],
       },
       {
@@ -3547,6 +3787,7 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "The admin that follows",
         intro: "Very little of this gets mentioned in the appointment.",
         items: [
@@ -3626,8 +3867,9 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "list",
+        checkable: true,
         heading: "What this work actually needs",
-        ordered: true,
+        intro: "Tick whatever you already have somewhere. Most people find they have the first and none of the rest.",
         items: [
           "Somewhere to put a detail so it is not held in your head.",
           "Something that knows how the details relate, so one change surfaces what else it touches.",
@@ -3676,15 +3918,26 @@ export const GUIDES: Guide[] = [
         ],
       },
       {
-        kind: "table",
+        kind: "compare",
         heading: "The four mismatches",
-        columns: ["Knowledge work assumes", "Life admin actually is"],
-        rows: [
-          ["Tasks are independent", "Almost everything is connected to something else"],
-          ["The problem is remembering", "You have remembered it constantly for three weeks"],
-          ["Work happens in sessions", "It arrives in interruptions, often at the worst moment"],
-          ["More visibility helps", "Seeing all of it at once is the thing that stops you"],
-        ],
+        left: {
+          label: "Knowledge work assumes",
+          items: [
+            "Tasks are independent.",
+            "The problem is remembering.",
+            "Work happens in sessions.",
+            "More visibility helps.",
+          ],
+        },
+        right: {
+          label: "Life admin actually is",
+          items: [
+            "Almost everything is connected to something else.",
+            "You have remembered it constantly for three weeks.",
+            "It arrives in interruptions, often at the worst moment.",
+            "Seeing all of it at once is the thing that stops you.",
+          ],
+        },
       },
       {
         kind: "paragraphs",
@@ -3751,6 +4004,39 @@ export function guidesForArea(areaSlug: string): Guide[] {
 /** Areas that currently have at least one guide, so an empty hub is never linked. */
 export function areasWithGuides() {
   return LIFE_AREAS.filter((area) => guidesForArea(area.slug).length > 0);
+}
+
+/**
+ * The guide before and after this one within its own area.
+ *
+ * Reading order inside an area is publication order, which is the order
+ * the hub lists them in, so previous and next agree with what the
+ * reader just saw. An orphan has no neighbours by definition.
+ */
+export function adjacentGuides(guide: Guide): { previous?: Guide; next?: Guide } {
+  if (!guide.areaSlug) return {};
+  const siblings = guidesForArea(guide.areaSlug);
+  const index = siblings.findIndex((candidate) => candidate.slug === guide.slug);
+  if (index === -1) return {};
+  return { previous: siblings[index - 1], next: siblings[index + 1] };
+}
+
+/**
+ * A published date a person would write, from the stored ISO date.
+ *
+ * Built from the UTC parts rather than through the local calendar,
+ * which is the same discipline the products use for stored dates: a
+ * reader in Auckland should not see a guide published a day earlier
+ * than a reader in London.
+ */
+export function formatGuideDate(iso: string): string {
+  const [year, month, day] = iso.split("-").map(Number);
+  const months = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December",
+  ];
+  if (!year || !month || !day || !months[month - 1]) return iso;
+  return `${day} ${months[month - 1]} ${year}`;
 }
 
 /**

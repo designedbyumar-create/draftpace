@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { GUIDES, SERIES, guidesForArea, relatedGuides, areasWithGuides, seriesGuides } from "./guides";
 import { LIFE_AREAS, getAreaBySlug } from "./areas";
+import { blockStrings, blockBodyStrings } from "./guideText";
+import { guideHeadings } from "./guideHeadings";
 
 /**
  * Structural guards on the guides layer, in the same spirit as the
@@ -83,16 +85,7 @@ describe("guide content", () => {
 
   it("never uses an exclamation mark or an em dash, same rule as every other surface", () => {
     for (const guide of GUIDES) {
-      const text = [
-        guide.title,
-        guide.dek,
-        ...guide.body.flatMap((block) => {
-          if (block.kind === "paragraphs") return [block.heading ?? "", ...block.paragraphs];
-          if (block.kind === "list") return [block.heading ?? "", block.intro ?? "", ...block.items];
-          if (block.kind === "table") return [block.heading ?? "", block.intro ?? "", ...block.columns, ...block.rows.flat()];
-          return [block.label, block.body];
-        }),
-      ].join(" ");
+      const text = [guide.title, guide.dek, ...guide.body.flatMap(blockStrings)].join(" ");
       expect(text, `${guide.slug} uses an exclamation mark`).not.toContain("!");
       expect(text, `${guide.slug} uses an em dash`).not.toContain("—");
     }
@@ -123,14 +116,7 @@ describe("inline links", () => {
   const INLINE = /\[[^\]]+\]\(([^)]+)\)/g;
 
   function linksIn(guide: (typeof GUIDES)[number]): string[] {
-    const text = guide.body
-      .flatMap((block) => {
-        if (block.kind === "paragraphs") return block.paragraphs;
-        if (block.kind === "list") return [block.intro ?? "", ...block.items];
-        if (block.kind === "table") return [block.intro ?? "", ...block.rows.flat()];
-        return [block.body];
-      })
-      .join(" ");
+    const text = guide.body.flatMap(blockBodyStrings).join(" ");
     return [...text.matchAll(INLINE)].map((match) => match[1]);
   }
 
@@ -202,5 +188,124 @@ describe("guidesForArea", () => {
     for (const area of LIFE_AREAS) {
       expect(guidesForArea(area.slug).map((guide) => guide.slug)).not.toContain(seriesGuides()[0]?.slug);
     }
+  });
+});
+
+/**
+ * The interactive block kinds. Each one makes a promise the content has
+ * to be able to keep: a checklist implies items you do, a timeline
+ * implies an order, a comparison implies two sides worth holding
+ * against each other. These assert the shape that makes each promise
+ * true, because a one-item checklist or a one-sided comparison renders
+ * as a control that does nothing.
+ */
+describe("interactive blocks", () => {
+  const blocksOf = (kind: string) =>
+    GUIDES.flatMap((guide) => guide.body.filter((block) => block.kind === kind).map((block) => ({ guide, block })));
+
+  it("gives every checkable list enough items to be worth ticking", () => {
+    const lists = GUIDES.flatMap((guide) =>
+      guide.body.filter((block) => block.kind === "list" && block.checkable).map((block) => ({ guide, block }))
+    );
+    expect(lists.length, "the checkable list is built and should be used").toBeGreaterThan(0);
+    for (const { guide, block } of lists) {
+      if (block.kind !== "list") continue;
+      expect(block.items.length, `${guide.slug} has a checkable list of ${block.items.length}`).toBeGreaterThan(1);
+      expect(block.ordered, `${guide.slug} marks a list both ordered and checkable`).not.toBe(true);
+    }
+  });
+
+  it("keeps every timeline an actual sequence with short markers", () => {
+    const timelines = blocksOf("timeline");
+    expect(timelines.length, "the timeline is built and should be used").toBeGreaterThan(0);
+    for (const { guide, block } of timelines) {
+      if (block.kind !== "timeline") continue;
+      expect(block.steps.length, `${guide.slug} has a timeline of ${block.steps.length}`).toBeGreaterThan(1);
+      for (const step of block.steps) {
+        expect(step.when.length, `${guide.slug} marker "${step.when}" is too long for the spine`).toBeLessThanOrEqual(34);
+        expect(step.what.length, `${guide.slug} has an empty timeline step`).toBeGreaterThan(0);
+      }
+    }
+  });
+
+  it("keeps both sides of every comparison populated and distinct", () => {
+    const compares = blocksOf("compare");
+    expect(compares.length, "the comparison is built and should be used").toBeGreaterThan(0);
+    for (const { guide, block } of compares) {
+      if (block.kind !== "compare") continue;
+      expect(block.left.items.length, `${guide.slug} has an empty left side`).toBeGreaterThan(0);
+      expect(block.right.items.length, `${guide.slug} has an empty right side`).toBeGreaterThan(0);
+      expect(block.left.label, `${guide.slug} labels both sides the same`).not.toBe(block.right.label);
+      // Rendered as two aligned columns on desktop, so a lopsided pair
+      // leaves one column visibly short of the other.
+      expect(
+        Math.abs(block.left.items.length - block.right.items.length),
+        `${guide.slug} compares ${block.left.items.length} against ${block.right.items.length}`
+      ).toBeLessThanOrEqual(1);
+    }
+  });
+
+  it("gives every script picker distinct situations and real lines", () => {
+    const scripts = blocksOf("scripts");
+    expect(scripts.length, "the script picker is built and should be used").toBeGreaterThan(0);
+    for (const { guide, block } of scripts) {
+      if (block.kind !== "scripts") continue;
+      expect(block.items.length, `${guide.slug} has a picker with nothing to pick`).toBeGreaterThan(1);
+      const situations = block.items.map((item) => item.situation);
+      expect(new Set(situations).size, `${guide.slug} repeats a situation`).toBe(situations.length);
+      for (const item of block.items) {
+        // The situation is a chip in a row of chips, so it has to stay
+        // short enough not to wrap into a paragraph.
+        expect(item.situation.length, `${guide.slug} chip "${item.situation}" is too long`).toBeLessThanOrEqual(28);
+        expect(item.line.length, `${guide.slug} has an empty script`).toBeGreaterThan(0);
+      }
+    }
+  });
+
+  /**
+   * The point of the whole rebuild. The guides layer shipped as prose
+   * with one renderer while the rest of the site had twelve components,
+   * and it read as a different, duller site. This asserts the correction
+   * holds: a new guide of nothing but paragraphs fails here rather than
+   * quietly reintroducing the old experience one article at a time.
+   */
+  it("gives every guide at least one thing the reader can operate", () => {
+    const bare = GUIDES.filter(
+      (guide) =>
+        !guide.body.some(
+          (block) =>
+            block.kind === "table" ||
+            block.kind === "timeline" ||
+            block.kind === "compare" ||
+            block.kind === "scripts" ||
+            (block.kind === "list" && block.checkable)
+        )
+    );
+    expect(bare.map((guide) => guide.slug)).toEqual([]);
+  });
+});
+
+/**
+ * Heading anchors. The contents panel links to ids derived from heading
+ * text, so a duplicate id would send two entries to the same section and
+ * an empty one would produce a link to "#".
+ */
+describe("heading anchors", () => {
+  it("gives every heading a unique, url-safe id within its guide", () => {
+    for (const guide of GUIDES) {
+      const headings = guideHeadings(guide.body);
+      const ids = headings.map((heading) => heading.id);
+      expect(new Set(ids).size, `${guide.slug} has duplicate heading ids`).toBe(ids.length);
+      for (const id of ids) {
+        expect(id, `${guide.slug} produced an unusable anchor`).toMatch(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
+      }
+    }
+  });
+
+  it("gives most guides enough sections for a contents panel to be worth showing", () => {
+    // The panel hides itself below three headings. If that were most of
+    // the library, the feature would be dead code rather than a feature.
+    const withPanel = GUIDES.filter((guide) => guideHeadings(guide.body).length >= 3);
+    expect(withPanel.length / GUIDES.length).toBeGreaterThan(0.9);
   });
 });
