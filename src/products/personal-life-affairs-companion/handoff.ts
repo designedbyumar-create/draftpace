@@ -1,4 +1,4 @@
-import { AFFAIR_STEP_BY_KEY, type AffairStep } from "./affairsKnowledge";
+import { AFFAIR_STEP_BY_KEY, type AffairArea, type AffairStep } from "./affairsKnowledge";
 import { isEstablished, isRelevant, type AffairProfile, type StepRecord } from "./sequencer";
 import type { AffairItem } from "./lifeAffairs";
 
@@ -160,4 +160,40 @@ export function firstFix(result: HandoffResult): AffairStep | null {
   const candidates = result.unclear.flatMap((f) => f.missing);
   if (candidates.length === 0) return null;
   return [...candidates].sort((a, b) => b.consequence - a.consequence || a.minutes - b.minutes)[0];
+}
+
+/**
+ * The single area a scenario belongs to, read off its first requirement
+ * rather than stored twice: every step key is "area.step-name", and
+ * every scenario's requirements sit in exactly one area in practice, so
+ * there is nothing to gain from a separate area field that could
+ * disagree with the requirements it is supposed to describe.
+ */
+export function scenarioArea(scenario: HandoffScenario): AffairArea | null {
+  const key = scenario.requires[0];
+  if (!key) return null;
+  return (key.split(".")[0] as AffairArea) ?? null;
+}
+
+/**
+ * Which scenarios the printed book can honestly point a reader toward,
+ * given which areas actually survived into this copy.
+ *
+ * Deliberately not the same question deriveHandoff answers. That checks
+ * whether a scenario's steps are established; this checks something
+ * narrower and structural, whether the section a scenario would point to
+ * exists in this copy at all, which is the one thing a "if you need to,
+ * see page such and such" reference on paper actually needs to be true.
+ * A section that survived but is thin is its own honest answer once the
+ * reader turns to it, the same as every other page in the book.
+ */
+export function findableHandoffScenarios(
+  printedAreas: ReadonlySet<AffairArea>
+): { need: string; area: AffairArea }[] {
+  const found: { need: string; area: AffairArea }[] = [];
+  for (const scenario of HANDOFF_SCENARIOS) {
+    const area = scenarioArea(scenario);
+    if (area && printedAreas.has(area)) found.push({ need: scenario.need, area });
+  }
+  return found;
 }

@@ -96,9 +96,11 @@ describe("the Personal Life Affairs Companion listing", () => {
     expect(shopRegistry.listPublished().map((p) => p.slug)).toContain(SLUG);
   });
 
-  it("carries no price yet, so nothing renders a fabricated figure", async () => {
+  it("carries a real, honest launch price: $28 against a genuine $35 regular price", async () => {
     const product = await listing();
-    expect(product?.price).toBeUndefined();
+    expect(product?.price).toEqual({ amount: 28, currency: "USD" });
+    expect(product?.compareAtPrice).toEqual({ amount: 35, currency: "USD" });
+    expect(product!.compareAtPrice!.amount).toBeGreaterThan(product!.price!.amount);
     expect(product?.purchaseAction).toBeUndefined();
   });
 

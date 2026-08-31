@@ -22,10 +22,10 @@ import type { ShopProductInput } from "../definition";
  * thing that does not exist. Home Base's listing claims reminders
  * because Home Base has an evaluator and a cron job. This one does not.
  *
- * price is deliberately omitted (TODO_SET_REAL_PRICE), same convention
- * as both siblings: formatPrice() renders "Price not yet set" rather
- * than a fabricated $0.00, and GetAction renders "Checkout opens soon"
- * until LEMON_SQUEEZY_PLA_CHECKOUT_URL is set.
+ * $28 launch price, $35 regular. The third of the seven paid products
+ * to get a real price, see the pricing plan's Phase 3. GetAction still
+ * renders "Checkout opens soon" until LEMON_SQUEEZY_PLA_CHECKOUT_URL is
+ * set, which this phase deliberately leaves alone.
  */
 export const personalLifeAffairsCompanionShopProduct: ShopProductInput = {
   id: "personal-life-affairs-companion",
@@ -94,7 +94,11 @@ export const personalLifeAffairsCompanionShopProduct: ShopProductInput = {
     "Print whenever you like. Never at 100%, never gated: a blank copy with only your relevant sections and room to write, or the current book with everything you have established.",
   ],
   access: "paid",
-  // TODO_SET_REAL_PRICE: no price object yet, see the file doc comment.
+  // Launch pricing, Phase 3 of the pricing plan: $29 actual, marked up
+  // 20% to a $35 regular price, then a net 20% off (30% off, netted
+  // down by 10 points) for the $28 this actually charges today.
+  price: { amount: 28, currency: "USD" },
+  compareAtPrice: { amount: 35, currency: "USD" },
   media: [],
   compatibility: ["Works in any modern browser", "No download required", "Works on phone, tablet, or desktop"],
   inclusions: [

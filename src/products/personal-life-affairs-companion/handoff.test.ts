@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { deriveHandoff, describeHandoff, firstFix, HANDOFF_SCENARIOS } from "./handoff";
+import { deriveHandoff, describeHandoff, findableHandoffScenarios, firstFix, HANDOFF_SCENARIOS, scenarioArea } from "./handoff";
 import { AFFAIR_STEP_BY_KEY } from "./affairsKnowledge";
 import { item, rec } from "./testSupport";
 
@@ -133,5 +133,58 @@ describe("fixing the first one", () => {
   it("offers nothing once nothing is unclear", () => {
     const items = HANDOFF_SCENARIOS.flatMap((s) => s.requires.map((key) => item(key)));
     expect(firstFix(deriveHandoff({ profile: EVERYTHING, records: [], items }))).toBeNull();
+  });
+});
+
+/**
+ * Phase 3 of the pricing plan: the printed book's "If you need to..."
+ * quick reference, which reuses these scenarios rather than inventing
+ * new copy. Real evidence showed the "checklist" demand harvested for
+ * this area actually belongs to the parent-dies guide, a different,
+ * reactive persona this product explicitly says it is not for. What
+ * this product's own Handoff Check already proves is the right mental
+ * model, scenario over category, had never reached the one document
+ * this product's whole promise is built around handing over.
+ */
+describe("scenarioArea", () => {
+  it("reads the area straight off a scenario's own first requirement", () => {
+    const reachSomeone = HANDOFF_SCENARIOS.find((s) => s.key === "reach-someone")!;
+    expect(scenarioArea(reachSomeone)).toBe("people");
+  });
+
+  it("agrees with every scenario's full requirement list, not just the first", () => {
+    // If a scenario's requirements ever spanned two areas, the printed
+    // reference would point a reader at only one of them. This is what
+    // stands between that and silence.
+    for (const scenario of HANDOFF_SCENARIOS) {
+      const area = scenarioArea(scenario);
+      for (const key of scenario.requires) {
+        expect(key.split(".")[0], `${scenario.key} requires ${key}`).toBe(area);
+      }
+    }
+  });
+});
+
+describe("findableHandoffScenarios", () => {
+  it("includes nothing when no section survived into this copy", () => {
+    expect(findableHandoffScenarios(new Set())).toEqual([]);
+  });
+
+  it("includes only scenarios whose area actually printed", () => {
+    const found = findableHandoffScenarios(new Set(["people"]));
+    expect(found.every((entry) => entry.area === "people")).toBe(true);
+    expect(found.length).toBeGreaterThan(0);
+  });
+
+  it("can point more than one scenario at the same section", () => {
+    // look-after-dependants and look-after-pets both live under
+    // "dependants" on purpose: two different needs, one real section.
+    const found = findableHandoffScenarios(new Set(["dependants"]));
+    expect(found.length).toBe(2);
+  });
+
+  it("includes every scenario once every area has printed", () => {
+    const allAreas = new Set(HANDOFF_SCENARIOS.map((s) => scenarioArea(s)).filter((a): a is NonNullable<typeof a> => a !== null));
+    expect(findableHandoffScenarios(allAreas).length).toBe(HANDOFF_SCENARIOS.length);
   });
 });

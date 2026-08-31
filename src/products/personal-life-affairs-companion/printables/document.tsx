@@ -41,6 +41,7 @@
 import { Document, Page, View, Text, StyleSheet, type DocumentProps } from "@react-pdf/renderer";
 import { AFFAIR_AREA_LABEL, AFFAIR_AREA_ORDER, type AffairArea } from "../affairsKnowledge";
 import { BOOK_ATTRIBUTION, BOOK_NAME, isBlankCopy } from "../completion";
+import { findableHandoffScenarios } from "../handoff";
 import { captureFor } from "../capture";
 import type { Readiness, StandingRow, StepStanding } from "../completion";
 import type { AffairItem } from "../lifeAffairs";
@@ -351,6 +352,27 @@ export function InOrderDocument({
    */
   const present = new Set(byArea.flatMap((group) => group.rows).map((r) => r.standing));
 
+  /**
+   * Which of the Handoff Check's real-world scenarios this copy can
+   * actually answer. A scenario's requirements all sit in one area (the
+   * shared key prefix, e.g. "people.emergency-contact"), so the area a
+   * scenario points to is read straight off its first requirement rather
+   * than duplicated as separate data.
+   *
+   * Deliberately not a re-implementation of deriveHandoff's clarity
+   * check: that would risk drifting from the in-app Handoff Check over
+   * time. Instead this asks a narrower, purely structural question that
+   * cannot drift, because it is answered from the same byArea this page
+   * already prints from: did this section survive into this copy at
+   * all. A thin or missing section is its own honest answer once the
+   * reader turns to it.
+   */
+  const printedAreas = new Set(byArea.map((group) => group.area));
+  const findableScenarios = findableHandoffScenarios(printedAreas).map((entry) => ({
+    need: entry.need,
+    sectionLabel: AFFAIR_AREA_LABEL[entry.area],
+  }));
+
   return (
     <Document
       /*
@@ -510,6 +532,32 @@ export function InOrderDocument({
                   <Text style={{ fontSize: 9, color: C.muted, flex: 1, lineHeight: 1.5 }}>{meaning}</Text>
                   </View>
                 ))}
+            </View>
+          )}
+
+          {/*
+            The Handoff Check already proved this is how a stranger
+            actually approaches the book: by what they are trying to do,
+            not by category name. It lived only inside the app before
+            this. A scenario only appears here when its section survived
+            into this copy, the same rule the rest of the book already
+            follows: this page never sends a reader looking for
+            something that was never written down.
+          */}
+          {!blank && findableScenarios.length > 0 && (
+            <View>
+              <View style={{ height: 0.5, backgroundColor: C.rule, marginVertical: 16 }} />
+              <Text style={{ fontFamily: HEAD, fontSize: 14, color: C.ink, marginBottom: 6 }}>
+                If you need to
+              </Text>
+              {findableScenarios.map(({ need, sectionLabel }) => (
+                <View key={need} style={{ flexDirection: "row", marginBottom: 7, alignItems: "flex-start" }} wrap={false}>
+                  <Text style={{ fontSize: 9, color: C.body, flex: 1, lineHeight: 1.5 }}>{need}</Text>
+                  <Text style={{ fontSize: 8.6, color: C.deep, width: 150, textAlign: "right", lineHeight: 1.5 }}>
+                    {sectionLabel}
+                  </Text>
+                </View>
+              ))}
             </View>
           )}
 
