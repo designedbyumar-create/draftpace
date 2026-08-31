@@ -8,14 +8,13 @@ import type { ShopProductInput } from "../definition";
  * real customer for the first time. See docs/SHOP.md and
  * docs/products/PERSONAL-FINANCE-COMPANION-FOUNDATION.md.
  *
- * price is deliberately omitted (TODO_SET_REAL_PRICE): the founder hasn't
- * set one yet, and formatPrice() in shop/[productSlug]/page.tsx already
- * renders "Price not yet set" for a paid product with no price, rather
- * than a fabricated $0.00 that would read as free. purchaseAction.href is
- * also intentionally omitted: with no href and access "paid", GetAction
+ * $28 launch price, $35 regular. The fifth of the seven paid products to
+ * get a real price, see the pricing plan's Phase 5. purchaseAction.href
+ * stays intentionally omitted: with no href and access "paid", GetAction
  * already renders the correct "Checkout opens soon" pending state rather
  * than a dead or fake link, exactly the mechanism this listing needs
- * until LEMON_SQUEEZY_PFC_CHECKOUT_URL is set.
+ * until LEMON_SQUEEZY_PFC_CHECKOUT_URL is set, which this phase
+ * deliberately leaves alone.
  */
 export const personalFinanceCompanionShopProduct: ShopProductInput = {
   id: "personal-finance-companion",
@@ -67,7 +66,11 @@ export const personalFinanceCompanionShopProduct: ShopProductInput = {
     "Come back anytime. The Companion resumes exactly where you left off; nothing is ever lost between visits.",
   ],
   access: "paid",
-  // TODO_SET_REAL_PRICE: no price object yet, see the file doc comment.
+  // Launch pricing, Phase 5 of the pricing plan: $29 actual, marked up
+  // 20% to a $35 regular price, then a net 20% off (30% off, netted
+  // down by 10 points) for the $28 this actually charges today.
+  price: { amount: 28, currency: "USD" },
+  compareAtPrice: { amount: 35, currency: "USD" },
   media: [],
   compatibility: ["Works in any modern browser", "No download required", "Works on phone, tablet, or desktop"],
   inclusions: [

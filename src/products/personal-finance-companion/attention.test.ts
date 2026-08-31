@@ -188,6 +188,67 @@ describe("deriveAttentionItems", () => {
     expect(distant).toEqual([]);
   });
 
+  /**
+   * Phase 5 of the pricing plan. The guide research behind this fix
+   * found the specific blind spot: an annual charge is exactly the one
+   * a three-month view never shows. Before this, a subscription that
+   * was kept (not under review, not planned to cancel) got no heads up
+   * at all before it renewed, annual or not.
+   */
+  describe("subscriptionAnnualRenewalApproaching", () => {
+    it("flags a kept annual subscription approaching its renewal", () => {
+      const items = deriveAttentionItems(
+        { ...EMPTY, subscriptions: [subscription({ decision: "keep", frequency: "annual", renewalDate: "2026-08-15" })] },
+        NOW
+      );
+      expect(items[0].kind).toBe("subscriptionAnnualRenewalApproaching");
+      expect(items[0].message).toContain("2026-08-15");
+    });
+
+    it("never fires for a kept annual subscription still months away", () => {
+      const items = deriveAttentionItems(
+        { ...EMPTY, subscriptions: [subscription({ decision: "keep", frequency: "annual", renewalDate: "2026-12-01" })] },
+        NOW
+      );
+      expect(items).toEqual([]);
+    });
+
+    it("never fires for a monthly subscription, however soon it renews", () => {
+      // Monthly is frequent enough to stay in mind on its own; this fix
+      // is specifically about the once-a-year charge, not every renewal.
+      const items = deriveAttentionItems(
+        { ...EMPTY, subscriptions: [subscription({ decision: "keep", frequency: "monthly", renewalDate: "2026-08-09" })] },
+        NOW
+      );
+      expect(items).toEqual([]);
+    });
+
+    it("never fires for an annual subscription already under review or planned to cancel", () => {
+      // Those two states already have their own, separate attention
+      // kinds. Firing this one too would flag the same underlying fact
+      // twice under two different kinds for the same subscription.
+      const reviewing = deriveAttentionItems(
+        { ...EMPTY, subscriptions: [subscription({ decision: "reviewing", frequency: "annual", renewalDate: "2026-08-15" })] },
+        NOW
+      );
+      expect(reviewing.map((i) => i.kind)).toEqual(["subscriptionReview"]);
+
+      const cancelling = deriveAttentionItems(
+        { ...EMPTY, subscriptions: [subscription({ decision: "plannedCancellation", frequency: "annual", renewalDate: "2026-08-15" })] },
+        NOW
+      );
+      expect(cancelling.map((i) => i.kind)).toEqual(["subscriptionCancellationApproaching"]);
+    });
+
+    it("never fires without a renewal date to check", () => {
+      const items = deriveAttentionItems(
+        { ...EMPTY, subscriptions: [subscription({ decision: "keep", frequency: "annual", renewalDate: null })] },
+        NOW
+      );
+      expect(items).toEqual([]);
+    });
+  });
+
   it("flags a debt missing an interest rate", () => {
     const items = deriveAttentionItems({ ...EMPTY, debts: [debt({ interestRate: null })] }, NOW);
     expect(items[0].kind).toBe("debtMissingRate");

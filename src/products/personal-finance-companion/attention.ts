@@ -19,6 +19,7 @@ export type AttentionKind =
   | "billMissingDueDate"
   | "subscriptionReview"
   | "subscriptionCancellationApproaching"
+  | "subscriptionAnnualRenewalApproaching"
   | "debtMissingRate"
   | "savingsMissingTarget"
   | "transactionMissingCategory"
@@ -31,6 +32,10 @@ const URGENCY_BY_KIND: Record<AttentionKind, AttentionUrgency> = {
   incomeExpectationOverdue: "needsResolution",
   billMissingDueDate: "needsResolution",
   subscriptionCancellationApproaching: "needsResolution",
+  // The window to decide closes the day it renews, the same reason
+  // subscriptionCancellationApproaching is needsResolution rather than
+  // worthAWhile: after that date the choice is gone for another year.
+  subscriptionAnnualRenewalApproaching: "needsResolution",
   debtMissingRate: "worthAWhile",
   savingsMissingTarget: "worthAWhile",
   accountStale: "worthAWhile",
@@ -50,6 +55,14 @@ export interface AttentionItem {
 }
 
 const CANCELLATION_APPROACHING_DAYS = 14;
+/**
+ * A separate constant from CANCELLATION_APPROACHING_DAYS on purpose,
+ * even though both are 14 today: one reminds somebody who already
+ * decided to cancel, the other gives somebody who decided nothing at all
+ * a chance to. Different questions, tuned independently later without
+ * either one silently moving the other.
+ */
+const ANNUAL_RENEWAL_HEADS_UP_DAYS = 14;
 
 function daysUntil(dateIso: string, now: Date): number {
   const target = new Date(`${dateIso}T00:00:00Z`);
@@ -141,6 +154,29 @@ export function deriveAttentionItems(inputs: AttentionInputs, now: Date = new Da
           area: "subscriptions",
           entityId: subscription.id,
           message: `You planned to cancel ${subscription.name} before it renews on ${subscription.renewalDate}.`,
+          deepLink: resolveSafeDeepLink({ kind: "area", area: "subscriptions", focusId: subscription.id }),
+        });
+      }
+    }
+    /**
+     * The blind spot the guide research found: an annual charge is
+     * exactly the one a three-month view never shows, and it was never
+     * flagged here at all unless it was already marked Review or
+     * planned to cancel. Something kept, settled, and billed once a
+     * year got no heads up before charging again. This closes that gap
+     * without touching monthly subscriptions, which are frequent enough
+     * to stay in mind on their own.
+     */
+    if (subscription.decision === "keep" && subscription.frequency === "annual" && subscription.renewalDate) {
+      const days = daysUntil(subscription.renewalDate, now);
+      if (days >= 0 && days <= ANNUAL_RENEWAL_HEADS_UP_DAYS) {
+        items.push({
+          id: `subscriptionAnnualRenewalApproaching:${subscription.id}`,
+          kind: "subscriptionAnnualRenewalApproaching",
+          urgency: URGENCY_BY_KIND.subscriptionAnnualRenewalApproaching,
+          area: "subscriptions",
+          entityId: subscription.id,
+          message: `${subscription.name} renews on ${subscription.renewalDate}, its one charge for the year.`,
           deepLink: resolveSafeDeepLink({ kind: "area", area: "subscriptions", focusId: subscription.id }),
         });
       }

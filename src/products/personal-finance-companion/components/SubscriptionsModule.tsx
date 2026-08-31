@@ -241,8 +241,19 @@ function SubscriptionCard({
           <p className="mt-1 text-[20px] font-semibold leading-tight text-[var(--text)]">
             {subscription.amountMinorUnits !== null ? formatCurrency(subscription.amountMinorUnits, subscription.currency) : "No amount yet"}
           </p>
-          <p className="mt-0.5 text-[12px] text-[var(--muted)]">
-            {subscription.frequency}
+          <p className="mt-0.5 flex flex-wrap items-center gap-1.5 text-[12px] text-[var(--muted)]">
+            {/*
+              Annual gets a badge and monthly stays plain text on
+              purpose: a monthly charge is frequent enough to stay in
+              mind on its own, and an annual one is exactly the charge a
+              three-month view never shows. The visual difference is the
+              point, not decoration.
+            */}
+            {subscription.frequency === "annual" ? (
+              <Badge tone="info">Annual</Badge>
+            ) : (
+              subscription.frequency
+            )}
             {subscription.renewalDate ? ` · renews ${subscription.renewalDate}` : ""}
           </p>
           {decisionNote && <p className="mt-1.5 text-[12px] leading-relaxed text-[var(--muted)]">{decisionNote}</p>}

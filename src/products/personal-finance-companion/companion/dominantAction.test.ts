@@ -51,6 +51,21 @@ describe("resolveDominantAction", () => {
     expect(result?.message).toContain("2 imported records");
   });
 
+  /** Phase 5 of the pricing plan: priority 5, the new slot. */
+  it("surfaces an approaching annual renewal as the dominant action when nothing outranks it", () => {
+    const result = resolveDominantAction(READY_CAPABILITIES, [attention("subscriptionAnnualRenewalApproaching")], 0);
+    expect(result?.message).toBe("subscriptionAnnualRenewalApproaching message");
+  });
+
+  it("prioritizes an already-decided planned cancellation over a not-yet-decided annual renewal", () => {
+    const result = resolveDominantAction(
+      READY_CAPABILITIES,
+      [attention("subscriptionAnnualRenewalApproaching"), attention("subscriptionCancellationApproaching")],
+      0
+    );
+    expect(result?.message).toBe("subscriptionCancellationApproaching message");
+  });
+
   it("falls back to continuing Companion when a capability is still waiting", () => {
     const capabilities = [capability({ status: "waiting", valueMinorUnits: null })];
     const result = resolveDominantAction(capabilities, [], 0);

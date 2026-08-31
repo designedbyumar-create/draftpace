@@ -17,14 +17,15 @@ import type { CapabilityRow } from "./capability";
  *  2. An income expectation is overdue (attention: incomeExpectationOverdue).
  *  3. A bill is missing information needed to plan around it (attention: billMissingDueDate).
  *  4. A planned subscription cancellation is approaching its renewal (attention: subscriptionCancellationApproaching).
- *  5. Imported candidates are waiting for review — nothing from an import becomes real until reviewed.
- *  6. An account balance is stale (attention: accountStale).
- *  7. A debt is missing the rate needed to reason about payoff (attention: debtMissingRate).
- *  8. A savings goal is missing a target date (attention: savingsMissingTarget).
- *  9. A subscription is still marked "reviewing" (attention: subscriptionReview).
- * 10. A transaction is missing a category (attention: transactionMissingCategory).
- * 11. Nothing needs attention, but the financial picture isn't fully built yet — continue Companion.
- * 12. Nothing needs attention and the picture is complete — no dominant action (null).
+ *  5. A kept annual subscription is about to renew, with nothing decided about it yet (attention: subscriptionAnnualRenewalApproaching).
+ *  6. Imported candidates are waiting for review — nothing from an import becomes real until reviewed.
+ *  7. An account balance is stale (attention: accountStale).
+ *  8. A debt is missing the rate needed to reason about payoff (attention: debtMissingRate).
+ *  9. A savings goal is missing a target date (attention: savingsMissingTarget).
+ * 10. A subscription is still marked "reviewing" (attention: subscriptionReview).
+ * 11. A transaction is missing a category (attention: transactionMissingCategory).
+ * 12. Nothing needs attention, but the financial picture isn't fully built yet — continue Companion.
+ * 13. Nothing needs attention and the picture is complete — no dominant action (null).
  */
 
 export interface DominantAction {
@@ -57,6 +58,9 @@ export function resolveDominantAction(
 
   const cancellationApproaching = findAttention(attentionItems, "subscriptionCancellationApproaching");
   if (cancellationApproaching) return { message: cancellationApproaching.message, deepLink: cancellationApproaching.deepLink };
+
+  const annualRenewalApproaching = findAttention(attentionItems, "subscriptionAnnualRenewalApproaching");
+  if (annualRenewalApproaching) return { message: annualRenewalApproaching.message, deepLink: annualRenewalApproaching.deepLink };
 
   if (unreviewedImportCandidateCount > 0) {
     return {

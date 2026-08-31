@@ -316,6 +316,60 @@ describe("the Home Base listing", () => {
 });
 
 /**
+ * Personal Finance Companion's listing. Held to its siblings' rules,
+ * plus the one this product's whole trust story is built on: it never
+ * reads a real bank account, and the listing has to say so as plainly
+ * as the product itself does.
+ */
+describe("the Personal Finance Companion listing", () => {
+  const SLUG = "personal-finance-companion";
+
+  async function listing() {
+    const { registerRealShopProducts, shopRegistry } = await loadFreshRegisterModule();
+    registerRealShopProducts();
+    return shopRegistry.getBySlug(SLUG);
+  }
+
+  it("is published, real, and reaches the Shop index", async () => {
+    const product = await listing();
+    expect(product?.publicationStatus).toBe("published");
+    expect(product?.devFixture).toBe(false);
+    expect(product?.access).toBe("paid");
+  });
+
+  it("carries a real, honest launch price: $28 against a genuine $35 regular price", async () => {
+    const product = await listing();
+    expect(product?.price).toEqual({ amount: 28, currency: "USD" });
+    expect(product?.compareAtPrice).toEqual({ amount: 35, currency: "USD" });
+    expect(product!.compareAtPrice!.amount).toBeGreaterThan(product!.price!.amount);
+    expect(product?.purchaseAction).toBeUndefined();
+  });
+
+  it("says outright that it never connects to a real bank account", async () => {
+    const serialized = JSON.stringify(await listing()).toLowerCase();
+    expect(serialized).toContain("nothing here reads your bank account");
+    expect(serialized).toContain("never reads your real bank credentials");
+  });
+
+  it("has no fabricated reviews, ratings, or counts anywhere in its content", async () => {
+    // Unlike its siblings, this listing's own copy legitimately uses
+    // "review" as a verb ("review step", "review what changed") for the
+    // CSV/paste-notes import flow, not as a claim of customer reviews.
+    // The shared blanket word ban would fail on that honest usage, so
+    // this checks for the actual signature of fabricated social proof
+    // (a number attached to reviews/ratings/stars) instead, while still
+    // banning "rating", "bestseller", and "stars" outright as before.
+    const serialized = JSON.stringify(await listing()).toLowerCase();
+    expect(serialized).not.toMatch(/\d+[.,]?\d*\s*(reviews?|ratings?|stars?)\b/);
+    expect(serialized).not.toMatch(/\brating\b|bestseller|\bstars?\b/);
+  });
+
+  it("uses no em dash, per the repo content rule", async () => {
+    expect(JSON.stringify(await listing())).not.toContain("—");
+  });
+});
+
+/**
  * Travel Companion's listing. Held to its siblings' rules, plus the
  * five locked Phase 0 boundaries its own file doc comment names: no
  * file storage, no money, no general dependency graph, no live flight
