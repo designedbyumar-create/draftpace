@@ -14,6 +14,8 @@ import {
   formatGuideDate,
   getGuideBySlug,
   guidesForArea,
+  readingMinutes,
+  readingTimeLabel,
   relatedGuides,
 } from "@/content/guides";
 import { guideHeadings } from "@/content/guideHeadings";
@@ -116,7 +118,7 @@ export default async function GuideOrHubPage({ params }: { params: Promise<{ gui
               <p className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-[13px] text-[var(--muted)]">
                 <span className="inline-flex items-center gap-1.5">
                   <Clock size={14} aria-hidden className="text-[var(--area)]" />
-                  {guide.readingTime}
+                  {readingTimeLabel(guide)}
                 </span>
                 <span className="text-[var(--faint)]">
                   {guide.updatedAt
@@ -196,7 +198,7 @@ export default async function GuideOrHubPage({ params }: { params: Promise<{ gui
                       {other.title}
                     </p>
                     <p className="mt-1.5 flex-1 text-[13.5px] leading-relaxed text-[var(--muted)]">{other.dek}</p>
-                    <p className="mt-3 font-mono text-[11px] text-[var(--faint)]">{other.readingTime}</p>
+                    <p className="mt-3 font-mono text-[11px] text-[var(--faint)]">{readingTimeLabel(other)}</p>
                   </Link>
                 </li>
               ))}
@@ -289,7 +291,7 @@ function AreaHub({ slug }: { slug: string }) {
   const guides = guidesForArea(slug);
   const companion = shopRegistry.getBySlug(area.productSlugs[0]);
   const { Mark } = areaIdentity(slug);
-  const minutes = guides.reduce((total, guide) => total + (parseInt(guide.readingTime, 10) || 0), 0);
+  const minutes = guides.reduce((total, guide) => total + readingMinutes(guide), 0);
 
   return (
     <div style={areaVars(slug)}>
@@ -346,7 +348,7 @@ function AreaHub({ slug }: { slug: string }) {
                           {guide.dek}
                         </span>
                         <span className="mt-2 block font-mono text-[11px] text-[var(--faint)]">
-                          {guide.readingTime}
+                          {readingTimeLabel(guide)}
                         </span>
                       </span>
                     </Link>

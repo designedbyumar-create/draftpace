@@ -1,5 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { GUIDES, SERIES, guidesForArea, relatedGuides, areasWithGuides, seriesGuides } from "./guides";
+import {
+  GUIDES, SERIES, guidesForArea, relatedGuides, areasWithGuides, seriesGuides,
+  readingMinutes, readingTimeLabel,
+} from "./guides";
 import { LIFE_AREAS, getAreaBySlug } from "./areas";
 import { blockStrings, blockBodyStrings } from "./guideText";
 import { guideHeadings } from "./guideHeadings";
@@ -307,5 +310,57 @@ describe("heading anchors", () => {
     // the library, the feature would be dead code rather than a feature.
     const withPanel = GUIDES.filter((guide) => guideHeadings(guide.body).length >= 3);
     expect(withPanel.length / GUIDES.length).toBeGreaterThan(0.9);
+  });
+});
+
+/**
+ * Reading time. Every one of these was hand-typed and every one was
+ * wrong, most by about three times, which put a false claim on every
+ * article header and every index card. The number is derived now, and
+ * these assert it stays plausible rather than merely computed.
+ */
+describe("reading time", () => {
+  it("is derived from the words and never zero", () => {
+    for (const guide of GUIDES) {
+      const minutes = readingMinutes(guide);
+      const words = guide.body.flatMap(blockStrings).join(" ").split(/\s+/).filter(Boolean).length;
+      expect(minutes, `${guide.slug} reports ${minutes} minutes`).toBeGreaterThan(0);
+      expect(minutes, `${guide.slug} is implausible for ${words} words`).toBe(Math.max(1, Math.round(words / 225)));
+    }
+  });
+
+  it("labels in minutes, so nothing renders a bare number", () => {
+    for (const guide of GUIDES) {
+      expect(readingTimeLabel(guide)).toMatch(/^\d+ min read$/);
+    }
+  });
+});
+
+/**
+ * Unsourced statistics.
+ *
+ * Eight population-level figures shipped stated as fact with no source,
+ * no year and no country. They came out, and this stops them coming
+ * back: a percentage or an "N in ten" attached to a group of people is
+ * a claim a reader cannot check, and on a commercial site in a YMYL
+ * area it is a liability as well as a credibility problem.
+ *
+ * If a real, cited statistic is wanted later, this test is the place to
+ * add the exemption, alongside the mechanism that renders the citation.
+ */
+describe("factual claims", () => {
+  const FIGURE = /\b(\d+[\d,.]*\s*(percent|per cent|%)|(one|two|three|four|five|six|seven|eight|nine|ten|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety)\s+(in|out of|percent|per cent)\b)/i;
+  const POPULATION = /\b(people|adults|travellers|travelers|homeowners|families|households|parents|children)\b/i;
+
+  it("never states a population statistic without a source", () => {
+    for (const guide of GUIDES) {
+      for (const text of guide.body.flatMap(blockStrings)) {
+        for (const sentence of (text ?? "").split(/(?<=\.)\s+/)) {
+          if (FIGURE.test(sentence) && POPULATION.test(sentence)) {
+            expect.fail(`${guide.slug} states an unsourced statistic: "${sentence.trim()}"`);
+          }
+        }
+      }
+    }
   });
 });

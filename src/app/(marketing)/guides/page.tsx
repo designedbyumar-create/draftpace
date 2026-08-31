@@ -7,7 +7,7 @@ import GuidesExplorer, {
   type ExplorerGuide,
 } from "@/components/public/guides/GuidesExplorer";
 import { areaIdentity } from "@/components/public/guides/areaIdentity";
-import { GUIDES, SERIES, guidesForArea, seriesGuides } from "@/content/guides";
+import { GUIDES, SERIES, guidesForArea, readingMinutes, readingTimeLabel, seriesGuides } from "@/content/guides";
 import { LIFE_AREAS } from "@/content/areas";
 
 export const metadata: Metadata = {
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 export default function GuidesIndexPage() {
   const series = seriesGuides();
   const orphans = GUIDES.filter((guide) => guide.areaSlug === null);
-  const minutes = GUIDES.reduce((total, guide) => total + (parseInt(guide.readingTime, 10) || 0), 0);
+  const minutes = GUIDES.reduce((total, guide) => total + readingMinutes(guide), 0);
 
   const areas: ExplorerArea[] = LIFE_AREAS.map((area) => {
     const { Mark } = areaIdentity(area.slug);
@@ -46,7 +46,7 @@ export default function GuidesIndexPage() {
       guides: guidesForArea(area.slug).map((guide) => ({
         slug: guide.slug,
         title: guide.title,
-        readingTime: guide.readingTime,
+        readingTime: readingTimeLabel(guide),
       })),
     };
   });
@@ -60,7 +60,7 @@ export default function GuidesIndexPage() {
       slug: guide.slug,
       title: guide.title,
       dek: guide.dek,
-      readingTime: guide.readingTime,
+      readingTime: readingTimeLabel(guide),
       areaSlug: guide.areaSlug === SERIES ? SERIES : (area?.slug ?? SERIES),
       areaLabel: area?.label ?? "The Series",
     };

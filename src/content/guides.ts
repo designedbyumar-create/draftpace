@@ -1,4 +1,5 @@
 import { LIFE_AREAS } from "./areas";
+import { blockStrings } from "./guideText";
 
 /**
  * Guides: the layer between the marketing site and the app.
@@ -90,7 +91,6 @@ export type Guide = {
   slug: string;
   title: string;
   dek: string;
-  readingTime: string;
   publishedAt: string;
   /** Set when the writing changes materially. Reference pages live or die on this. */
   updatedAt?: string;
@@ -138,7 +138,6 @@ export const GUIDES: Guide[] = [
     slug: "what-to-do-when-a-parent-dies",
     title: "What to do when a parent dies: a clear order for the first two weeks",
     dek: "The practical steps, in the order they actually need doing, written for somebody who is grieving and cannot hold a list in their head.",
-    readingTime: "9 min read",
     publishedAt: "2026-08-30",
     areaSlug: "affairs-and-endings",
     body: [
@@ -234,7 +233,6 @@ export const GUIDES: Guide[] = [
     slug: "how-to-find-someones-accounts-after-they-die",
     title: "How to find someone's bank accounts, pensions and policies after they die",
     dek: "A practical search order for tracing accounts, pensions, insurance and subscriptions when nobody wrote any of it down.",
-    readingTime: "8 min read",
     publishedAt: "2026-08-30",
     areaSlug: "affairs-and-endings",
     body: [
@@ -306,7 +304,6 @@ export const GUIDES: Guide[] = [
     slug: "homeschool-record-keeping-requirements-by-state",
     title: "Homeschool record keeping requirements, state by state",
     dek: "What each state actually asks you to keep, which states require a portfolio, and the records worth keeping even where nothing is required.",
-    readingTime: "10 min read",
     publishedAt: "2026-08-30",
     areaSlug: "family-and-learning",
     body: [
@@ -381,14 +378,13 @@ export const GUIDES: Guide[] = [
     slug: "home-maintenance-you-skip-that-costs-the-most",
     title: "The home maintenance you skip that costs the most later",
     dek: "Which deferred jobs actually turn into expensive damage, roughly how often each needs doing, and what to record so the next one is cheaper.",
-    readingTime: "8 min read",
     publishedAt: "2026-08-30",
     areaSlug: "home",
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Around seven in ten homeowners delayed a repair last year, and more than nine in ten have something still outstanding. That is not carelessness. It is what happens when three hundred small facts and dates live nowhere except somebody's memory.",
+          "Almost every house has a job that has been put off, and most have several. That is not carelessness. It is what happens when three hundred small facts and dates live nowhere except somebody's memory.",
           "The problem is that deferred maintenance does not stay the same price. Industry analysis puts the average deferred repair at over five thousand dollars by the time it is finally done, and every dollar of work put off can cost four or more later. The jobs below are the ones where that multiplier is real.",
         ],
       },
@@ -449,7 +445,6 @@ export const GUIDES: Guide[] = [
     slug: "what-else-your-trip-depends-on-when-something-changes",
     title: "One thing moved. Here is how to work out what else your trip depends on",
     dek: "A flight changes and three other bookings quietly become wrong. A method for finding them before they find you.",
-    readingTime: "7 min read",
     publishedAt: "2026-08-30",
     areaSlug: "travel",
     body: [
@@ -517,14 +512,13 @@ export const GUIDES: Guide[] = [
     slug: "flight-delayed-with-a-connection-what-to-do-first",
     title: "Your flight is delayed and you have a connection. What to do first",
     dek: "The order that actually helps in the twenty minutes after a delay is announced, and what to have ready before you reach a desk.",
-    readingTime: "7 min read",
     publishedAt: "2026-08-30",
     areaSlug: "travel",
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Fifty seven percent of travellers had a delay of more than two hours in the past year. If you have a connection, the useful window is the first twenty minutes, before several hundred other people reach the same conclusion you have.",
+          "Long delays are ordinary rather than rare. If you have a connection, the useful window is the first twenty minutes, before several hundred other people reach the same conclusion you have.",
           "The order is: work out whether the connection is genuinely gone, get in a queue and on the phone at the same time, and know what you are asking for before anyone speaks to you.",
         ],
       },
@@ -574,7 +568,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "What about compensation",
         paragraphs: [
-          "Roughly half of travellers never claim for a disruption, and the most common reason given is not knowing they could. It is worth looking into afterwards.",
+          "A great many people never claim for a disruption, usually because nobody told them they could. It is worth looking into afterwards.",
           "It is deliberately not part of this guide, because what you are owed depends on where you flew from, which carrier, and sometimes which fare, and a confident wrong answer at a desk puts you in a worse position than no answer. Sort out the travel first. Look up entitlement later, when you are sitting down and not at a desk.",
         ],
       },
@@ -601,7 +595,6 @@ export const GUIDES: Guide[] = [
     slug: "how-to-make-a-phone-call-you-have-been-avoiding",
     title: "How to make a phone call you have been avoiding for weeks",
     dek: "Why the call is hard, and a way through it that does not require you to suddenly become a different person.",
-    readingTime: "7 min read",
     publishedAt: "2026-08-30",
     areaSlug: "mind-and-focus",
     body: [
@@ -672,7 +665,6 @@ export const GUIDES: Guide[] = [
     slug: "picking-something-back-up-after-abandoning-it",
     title: "How to pick something back up after you abandoned it halfway",
     dek: "Restarting is harder than starting, for a specific reason. Here is what actually reduces the cost of coming back.",
-    readingTime: "6 min read",
     publishedAt: "2026-08-30",
     areaSlug: "mind-and-focus",
     body: [
@@ -730,7 +722,6 @@ export const GUIDES: Guide[] = [
     slug: "how-much-of-your-money-is-actually-safe-to-spend",
     title: "How much of your money is actually safe to spend",
     dek: "Your balance is not the answer. A method for working out the number that is genuinely yours, and why banking apps will not tell you.",
-    readingTime: "7 min read",
     publishedAt: "2026-08-30",
     areaSlug: "money",
     body: [
@@ -779,7 +770,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Why budgeting apps stop working around month two",
         paragraphs: [
-          "Eighty one percent of people who set financial goals last year did not stick to them. The usual reason is not weak willpower. It is that most budgeting systems require constant categorising to stay accurate, and the moment you fall a week behind, the number on screen is wrong.",
+          "Most people who set a financial goal do not stick to it. The usual reason is not weak willpower. It is that most budgeting systems require constant categorising to stay accurate, and the moment you fall a week behind, the number on screen is wrong.",
           "Once the number is wrong, you stop trusting it, and once you stop trusting it, the whole thing is decoration. A system that survives is one that stays roughly right with very little upkeep.",
         ],
       },
@@ -803,7 +794,6 @@ export const GUIDES: Guide[] = [
     slug: "how-to-find-every-subscription-you-are-paying-for",
     title: "How to find every subscription you are still paying for",
     dek: "A systematic sweep for the recurring payments you have forgotten, including the annual ones that are hardest to spot.",
-    readingTime: "6 min read",
     publishedAt: "2026-08-30",
     areaSlug: "money",
     body: [
@@ -874,7 +864,6 @@ export const GUIDES: Guide[] = [
     slug: "how-often-home-systems-need-servicing",
     title: "How often things in your house actually need servicing",
     dek: "A reference table of real service intervals for the systems and appliances in a normal home, plus the jobs that belong to a season rather than a date.",
-    readingTime: "9 min read",
     publishedAt: "2026-08-30",
     areaSlug: "home",
     body: [
@@ -953,7 +942,6 @@ export const GUIDES: Guide[] = [
     slug: "what-to-record-about-an-appliance-before-you-need-it",
     title: "What to write down about an appliance before something goes wrong",
     dek: "Five fields, recorded once while you can actually see the machine, that make every future repair faster and cheaper.",
-    readingTime: "6 min read",
     publishedAt: "2026-08-30",
     areaSlug: "home",
     body: [
@@ -1027,7 +1015,6 @@ export const GUIDES: Guide[] = [
     slug: "where-to-look-for-a-will",
     title: "Where to look for a will when you cannot find one",
     dek: "A search order for finding a will, what to do if there genuinely is not one, and why the executor matters before anything else.",
-    readingTime: "6 min read",
     publishedAt: "2026-08-30",
     areaSlug: "affairs-and-endings",
     body: [
@@ -1105,7 +1092,6 @@ export const GUIDES: Guide[] = [
     slug: "named-executor-what-you-agreed-to",
     title: "You have been named executor. Here is what you actually agreed to",
     dek: "What the role involves, how long it really takes, what you are personally liable for, and whether you can say no.",
-    readingTime: "7 min read",
     publishedAt: "2026-08-30",
     areaSlug: "affairs-and-endings",
     body: [
@@ -1195,7 +1181,6 @@ export const GUIDES: Guide[] = [
     slug: "the-if-something-happens-to-me-file",
     title: "The \"if something happens to me\" file, and what goes in it",
     dek: "What to leave behind so nobody has to reconstruct your life from the outside, and why it is not the same thing as a will.",
-    readingTime: "7 min read",
     publishedAt: "2026-08-30",
     areaSlug: "affairs-and-endings",
     body: [
@@ -1204,7 +1189,7 @@ export const GUIDES: Guide[] = [
         paragraphs: [
           "A will says who gets what. It does not say which bank, which pension, where the deeds are, who your accountant is, or that there is a policy nobody knows about.",
           "That gap is what leaves families searching for months. The fix is a plain record of what exists and where it is kept, which takes a couple of evenings and is entirely separate from any legal document.",
-          "More than half of adults have no estate documents at all. If that is you, this file is a far better place to start than a will, because it is useful immediately and requires nobody's signature.",
+          "A large share of adults have no estate documents at all. If that is you, this file is a far better place to start than a will, because it is useful immediately and requires nobody's signature.",
         ],
       },
       {
@@ -1260,7 +1245,6 @@ export const GUIDES: Guide[] = [
     slug: "hotel-cannot-find-your-reservation",
     title: "The hotel cannot find your reservation. What to say",
     dek: "What to have open before you reach the desk, why the booking is usually there under something else, and how to keep the conversation short.",
-    readingTime: "6 min read",
     publishedAt: "2026-08-30",
     areaSlug: "travel",
     body: [
@@ -1332,7 +1316,6 @@ export const GUIDES: Guide[] = [
     slug: "what-goes-in-a-homeschool-portfolio",
     title: "What actually goes in a homeschool portfolio",
     dek: "What to include, what evaluators are really looking for, and how to build it through the year instead of in a panic in April.",
-    readingTime: "8 min read",
     publishedAt: "2026-08-30",
     areaSlug: "family-and-learning",
     body: [
@@ -1406,7 +1389,6 @@ export const GUIDES: Guide[] = [
     slug: "why-to-do-lists-make-it-worse",
     title: "Why to-do lists make things worse, and what helps instead",
     dek: "A list is a memory aid. The problem was never memory. Here is what the difficulty actually is and what works better.",
-    readingTime: "6 min read",
     publishedAt: "2026-08-30",
     areaSlug: "mind-and-focus",
     body: [
@@ -1467,7 +1449,6 @@ export const GUIDES: Guide[] = [
     slug: "why-your-available-balance-is-lying-to-you",
     title: "Why your available balance is lying to you",
     dek: "What banks mean by available, what they leave out, and why the number in the app is almost never the number you can spend.",
-    readingTime: "6 min read",
     publishedAt: "2026-08-30",
     areaSlug: "money",
     body: [
@@ -1546,14 +1527,13 @@ export const GUIDES: Guide[] = [
     slug: "why-budgeting-apps-stop-working-after-two-months",
     title: "Why budgeting apps stop working after about two months",
     dek: "Eighty one percent of people abandon their financial goals. The reason is usually the tool's design, not the person using it.",
-    readingTime: "6 min read",
     publishedAt: "2026-08-30",
     areaSlug: "money",
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Around eighty one percent of people who set financial goals last year did not stick to them. That number is usually presented as a discipline problem. It is mostly a design problem.",
+          "Most people who set a financial goal do not stick to it. That number is usually presented as a discipline problem. It is mostly a design problem.",
           "Almost every budgeting tool requires continuous manual upkeep to stay accurate. Miss a week of categorising and the figures on screen are wrong. Once they are wrong you stop trusting them, and once you stop trusting them the app is decoration.",
         ],
       },
@@ -1581,7 +1561,7 @@ export const GUIDES: Guide[] = [
         heading: "Rigid budgets fail for a separate reason",
         paragraphs: [
           "Envelope style budgets assume a stable month. Most months are not stable, and one unexpected cost breaks several categories at once. Repairing that takes more effort than the budget was saving.",
-          "More than half of people who budget say the main reason is simply making sure essentials are covered. That is a much smaller question than a full category system, and it can be answered with far less upkeep.",
+          "Most people who budget are doing it to make sure the essentials are covered, nothing more ambitious than that. That is a much smaller question than a full category system, and it can be answered with far less upkeep.",
         ],
       },
       {
@@ -1626,7 +1606,6 @@ export const GUIDES: Guide[] = [
     slug: "the-task-that-has-been-on-your-mind-for-a-month",
     title: "The task has been on your mind for a month and still is not done",
     dek: "Why constant remembering does not turn into doing, and the specific thing that makes a stuck task start moving.",
-    readingTime: "6 min read",
     publishedAt: "2026-08-30",
     areaSlug: "mind-and-focus",
     body: [
@@ -1682,7 +1661,6 @@ export const GUIDES: Guide[] = [
     slug: "task-paralysis-what-to-do-in-the-next-ten-minutes",
     title: "Task paralysis: what to do in the next ten minutes",
     dek: "When you cannot start anything at all, the useful move is smaller than a plan. A short way out that does not require motivation.",
-    readingTime: "5 min read",
     publishedAt: "2026-08-30",
     areaSlug: "mind-and-focus",
     body: [
@@ -1751,7 +1729,6 @@ export const GUIDES: Guide[] = [
     slug: "just-bought-a-house-what-to-record-in-week-one",
     title: "You just bought a house. What to record in the first week",
     dek: "Everything about a home passes through your hands once, during the move. Here is what to capture before it disappears.",
-    readingTime: "7 min read",
     publishedAt: "2026-08-30",
     areaSlug: "home",
     body: [
@@ -1822,7 +1799,6 @@ export const GUIDES: Guide[] = [
     slug: "seasonal-home-maintenance-without-the-pointless-jobs",
     title: "Seasonal home maintenance, minus the jobs that do not matter",
     dek: "A shorter seasonal list than most, built around what actually causes damage, and why generic reminders get ignored.",
-    readingTime: "7 min read",
     publishedAt: "2026-08-30",
     areaSlug: "home",
     body: [
@@ -1885,7 +1861,6 @@ export const GUIDES: Guide[] = [
     slug: "beneficiary-forms-override-your-will",
     title: "Your beneficiary forms quietly override your will",
     dek: "Pensions and life insurance usually pass by nomination, not by will. The form you filled in on your first day at an old job may still decide who gets it.",
-    readingTime: "6 min read",
     publishedAt: "2026-08-30",
     areaSlug: "affairs-and-endings",
     body: [
@@ -1960,7 +1935,6 @@ export const GUIDES: Guide[] = [
     slug: "homeschool-records-when-you-have-kept-nothing-since-october",
     title: "It is March and you have recorded nothing since October",
     dek: "How to reconstruct a homeschool year honestly, what is genuinely recoverable, and how to make the rest of the year different.",
-    readingTime: "7 min read",
     publishedAt: "2026-08-30",
     areaSlug: "family-and-learning",
     body: [
@@ -2029,7 +2003,6 @@ export const GUIDES: Guide[] = [
     slug: "how-to-tell-whether-something-actually-stuck",
     title: "How to tell whether something actually stuck",
     dek: "Covering a topic and learning it are different. A low effort way to find out which happened, without turning your house into a school.",
-    readingTime: "6 min read",
     publishedAt: "2026-08-30",
     areaSlug: "family-and-learning",
     body: [
@@ -2095,14 +2068,13 @@ export const GUIDES: Guide[] = [
     slug: "organising-a-multi-stop-trip-without-a-spreadsheet",
     title: "Organising a multi-stop trip without a spreadsheet",
     dek: "Six in ten people spend over ten hours planning one trip. Most of that is spent rebuilding a picture that keeps falling apart.",
-    readingTime: "7 min read",
     publishedAt: "2026-08-30",
     areaSlug: "travel",
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "More than six in ten people spend over ten hours planning a single trip, and roughly two thirds end up dissatisfied with the result anyway. The hours do not mostly go into deciding where to go. They go into rebuilding the shape of the trip every time one detail changes.",
+          "Planning one trip routinely runs to ten hours or more, and a good share of that time produces something the traveller is not happy with anyway. The hours do not mostly go into deciding where to go. They go into rebuilding the shape of the trip every time one detail changes.",
           "A spreadsheet is the usual answer and it half works. It holds the facts and knows nothing about how they relate, so when the flight moves it tells you nothing about what else just became wrong.",
         ],
       },
@@ -2162,7 +2134,6 @@ export const GUIDES: Guide[] = [
     slug: "travel-documents-for-a-family",
     title: "Travel documents for a family: what to carry and where to keep it",
     dek: "What each traveller needs, what to check months before you go, and why a photograph of a passport is not a backup plan.",
-    readingTime: "7 min read",
     publishedAt: "2026-08-30",
     areaSlug: "travel",
     body: [
@@ -2233,7 +2204,6 @@ export const GUIDES: Guide[] = [
     slug: "you-missed-a-payment-what-to-do-next",
     title: "You missed a payment. What to do in the next 48 hours",
     dek: "What actually happens when a payment is missed, what to do first, and how to talk to a provider without it becoming a whole thing.",
-    readingTime: "6 min read",
     publishedAt: "2026-08-30",
     areaSlug: "money",
     body: [
@@ -2308,7 +2278,6 @@ export const GUIDES: Guide[] = [
     slug: "what-your-family-would-need-to-know-tomorrow",
     title: "What your family would need to know tomorrow",
     dek: "Not a will, and not morbid. The short list of things that only exist in your head, and what happens when nobody can find them.",
-    readingTime: "6 min read",
     publishedAt: "2026-08-30",
     areaSlug: "affairs-and-endings",
     body: [
@@ -2370,7 +2339,6 @@ export const GUIDES: Guide[] = [
     slug: "digital-accounts-after-a-death",
     title: "Digital accounts after a death: what can and cannot be recovered",
     dek: "Photos, email, subscriptions and social accounts. What providers will actually release, what they will not, and what to set up now.",
-    readingTime: "7 min read",
     publishedAt: "2026-08-30",
     areaSlug: "affairs-and-endings",
     body: [
@@ -2432,7 +2400,6 @@ export const GUIDES: Guide[] = [
     slug: "which-documents-to-keep-and-where-to-put-them",
     title: "Which documents to keep, which to shred, and where the rest should live",
     dek: "A retention guide for household paperwork, and a filing approach that survives contact with real life.",
-    readingTime: "7 min read",
     publishedAt: "2026-08-30",
     areaSlug: "affairs-and-endings",
     body: [
@@ -2495,7 +2462,6 @@ export const GUIDES: Guide[] = [
     slug: "what-to-log-after-a-repair",
     title: "What to write down after every repair, so the next one is cheaper",
     dek: "Five minutes after an engineer leaves is worth an hour next time. What to capture, and why the diagnosis matters more than the invoice.",
-    readingTime: "6 min read",
     publishedAt: "2026-08-30",
     areaSlug: "home",
     body: [
@@ -2563,7 +2529,6 @@ export const GUIDES: Guide[] = [
     slug: "appliance-warranties-what-to-track",
     title: "Appliance warranties: what to track, and when they actually pay out",
     dek: "Most warranty claims fail for boring reasons. What to record at purchase, and the dates worth knowing before something breaks.",
-    readingTime: "6 min read",
     publishedAt: "2026-08-30",
     areaSlug: "home",
     body: [
@@ -2630,7 +2595,6 @@ export const GUIDES: Guide[] = [
     slug: "scripts-for-the-admin-calls-everyone-dreads",
     title: "Scripts for the admin calls everyone dreads",
     dek: "Opening lines for the five calls people put off longest, and the four things to do before hanging up on any of them.",
-    readingTime: "7 min read",
     publishedAt: "2026-08-30",
     areaSlug: "mind-and-focus",
     body: [
@@ -2716,7 +2680,6 @@ export const GUIDES: Guide[] = [
     slug: "when-something-has-been-left-so-long-it-is-embarrassing",
     title: "When something has been left so long it is embarrassing",
     dek: "The shame is doing more work than the task now. How to deal with the delay itself, including what to say about it.",
-    readingTime: "6 min read",
     publishedAt: "2026-08-30",
     areaSlug: "mind-and-focus",
     body: [
@@ -2790,7 +2753,6 @@ export const GUIDES: Guide[] = [
     slug: "preparing-for-a-homeschool-evaluation",
     title: "Preparing for a homeschool evaluation or review",
     dek: "What evaluators actually look for, what to bring, and how to prepare in an evening rather than a fortnight.",
-    readingTime: "7 min read",
     publishedAt: "2026-08-30",
     areaSlug: "family-and-learning",
     body: [
@@ -2857,7 +2819,6 @@ export const GUIDES: Guide[] = [
     slug: "group-trip-coordination-without-becoming-the-admin",
     title: "Group trips: coordinating people without becoming the group admin",
     dek: "Coordinating schedules is the top stressor in group travel. A way to share the shape of a trip without owning everybody's decisions.",
-    readingTime: "6 min read",
     publishedAt: "2026-08-30",
     areaSlug: "travel",
     body: [
@@ -2923,7 +2884,6 @@ export const GUIDES: Guide[] = [
     slug: "untangling-money-after-a-life-change",
     title: "Untangling your money after a job change, move or separation",
     dek: "Life events break the assumptions your finances were built on. A practical order for putting the picture back together.",
-    readingTime: "7 min read",
     publishedAt: "2026-08-30",
     areaSlug: "money",
     body: [
@@ -3007,7 +2967,6 @@ export const GUIDES: Guide[] = [
     slug: "talking-to-your-parents-about-their-affairs",
     title: "How to talk to your parents about their affairs without it going badly",
     dek: "The conversation almost everybody postpones. What to open with, what not to ask for, and how to make it about logistics rather than mortality.",
-    readingTime: "7 min read",
     publishedAt: "2026-08-30",
     areaSlug: "affairs-and-endings",
     body: [
@@ -3081,7 +3040,6 @@ export const GUIDES: Guide[] = [
     slug: "inheriting-a-house-nobody-documented",
     title: "Inheriting or buying a house nobody documented",
     dek: "No manuals, no service history, no idea how old the boiler is. How to work out what you have and what needs attention first.",
-    readingTime: "7 min read",
     publishedAt: "2026-08-30",
     areaSlug: "home",
     body: [
@@ -3155,7 +3113,6 @@ export const GUIDES: Guide[] = [
     slug: "how-to-find-the-model-number-on-any-appliance",
     title: "How to find the model number on any appliance",
     dek: "Where each type of appliance hides its plate, how to read a serial number, and what to do when the label has worn away.",
-    readingTime: "6 min read",
     publishedAt: "2026-08-30",
     areaSlug: "home",
     body: [
@@ -3232,7 +3189,6 @@ export const GUIDES: Guide[] = [
     slug: "homeschool-attendance-what-to-track",
     title: "Homeschool attendance: what to track and what is pointless",
     dek: "Which states count days, what actually counts as a school day, and the lightest record that satisfies a requirement.",
-    readingTime: "6 min read",
     publishedAt: "2026-08-30",
     areaSlug: "family-and-learning",
     body: [
@@ -3297,7 +3253,6 @@ export const GUIDES: Guide[] = [
     slug: "homeschool-records-without-a-system-you-abandon",
     title: "Keeping homeschool records without building a system you abandon",
     dek: "Why elaborate tracking dies by half term, and what the version that survives a bad week actually looks like.",
-    readingTime: "6 min read",
     publishedAt: "2026-08-30",
     areaSlug: "family-and-learning",
     body: [
@@ -3364,7 +3319,6 @@ export const GUIDES: Guide[] = [
     slug: "life-admin-with-brain-fog",
     title: "Life admin with brain fog: long covid, chronic illness, grief",
     dek: "When holding a plan in your head has stopped being reliable, the useful adjustments are not about trying harder.",
-    readingTime: "7 min read",
     publishedAt: "2026-08-30",
     areaSlug: "mind-and-focus",
     body: [
@@ -3430,7 +3384,6 @@ export const GUIDES: Guide[] = [
     slug: "executive-dysfunction-is-not-procrastination",
     title: "Executive dysfunction is not procrastination",
     dek: "They look identical from outside and are different from inside. Why the distinction changes which strategies work.",
-    readingTime: "6 min read",
     publishedAt: "2026-08-30",
     areaSlug: "mind-and-focus",
     body: [
@@ -3497,7 +3450,6 @@ export const GUIDES: Guide[] = [
     slug: "what-to-keep-on-paper-when-you-travel",
     title: "What to keep on paper when you travel",
     dek: "Your phone is a single point of failure. The short list worth printing, and why it is shorter than you think.",
-    readingTime: "5 min read",
     publishedAt: "2026-08-30",
     areaSlug: "travel",
     body: [
@@ -3564,7 +3516,6 @@ export const GUIDES: Guide[] = [
     slug: "what-to-check-before-each-direct-debit-date",
     title: "What to check before each direct debit date",
     dek: "A two minute habit that prevents the most common cause of a failed payment, which is almost never a lack of money.",
-    readingTime: "5 min read",
     publishedAt: "2026-08-30",
     areaSlug: "money",
     body: [
@@ -3622,7 +3573,6 @@ export const GUIDES: Guide[] = [
     slug: "can-you-afford-it-before-you-buy-it",
     title: "Working out whether you can afford it, before you buy it",
     dek: "A quick way to answer the question at the moment it matters, without a spreadsheet and without guessing.",
-    readingTime: "5 min read",
     publishedAt: "2026-08-30",
     areaSlug: "money",
     body: [
@@ -3697,7 +3647,6 @@ export const GUIDES: Guide[] = [
     slug: "homeschool-records-what-to-keep-and-what-to-bin",
     title: "Homeschool records: what to keep, and what you can safely throw away",
     dek: "You cannot keep everything and you do not need to. What is worth archiving, what to photograph, and what to recycle without guilt.",
-    readingTime: "6 min read",
     publishedAt: "2026-08-30",
     areaSlug: "family-and-learning",
     body: [
@@ -3766,14 +3715,13 @@ export const GUIDES: Guide[] = [
     slug: "diagnosed-at-forty-the-admin-nobody-warned-you-about",
     title: "Diagnosed at forty: the admin nobody warned you about",
     dek: "Most adults with ADHD were diagnosed as adults. What changes afterwards, what does not, and the paperwork nobody mentions.",
-    readingTime: "7 min read",
     publishedAt: "2026-08-30",
     areaSlug: "mind-and-focus",
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "More than half of adults with an ADHD diagnosis received it in adulthood, and around six percent of adults now have one. It is no longer an unusual situation, though it can feel like one at the time.",
+          "A great many adults with an ADHD diagnosis received it in adulthood rather than as a child. It is no longer an unusual situation, though it can feel like one at the time.",
           "Two things tend to arrive together afterwards. A great deal of retrospective reinterpretation, and an unexpected pile of administration.",
         ],
       },
@@ -3836,7 +3784,6 @@ export const GUIDES: Guide[] = [
     slug: "life-admin-the-work-nobody-teaches-you",
     title: "Life admin: the work nobody teaches you and everybody has",
     dek: "Nobody is trained for it, it is invisible when done, and it is most of what makes an adult life run. A name for the category.",
-    readingTime: "7 min read",
     publishedAt: "2026-08-30",
     areaSlug: SERIES,
     body: [
@@ -3906,7 +3853,6 @@ export const GUIDES: Guide[] = [
     slug: "why-productivity-tools-fail-at-life-admin",
     title: "Why productivity tools fail at life admin specifically",
     dek: "They were designed for knowledge work, and life admin has different properties. Four mismatches that explain the abandoned apps.",
-    readingTime: "7 min read",
     publishedAt: "2026-08-30",
     areaSlug: SERIES,
     body: [
@@ -3991,6 +3937,38 @@ export const GUIDES: Guide[] = [
     ],
   },
 ];
+
+/**
+ * Words per minute used for reading time.
+ *
+ * 225 is the middle of the usual adult silent-reading range for
+ * non-technical prose. The exact figure matters less than the fact that
+ * it is applied consistently and derived rather than typed.
+ */
+const WORDS_PER_MINUTE = 225;
+
+/**
+ * Reading time, counted from the guide's own words.
+ *
+ * These used to be hand-typed strings and every one of the fifty four
+ * was wrong, most by about three times: a 545 word article carried a
+ * "10 min read" label. That is a false statement rendered on every
+ * article header and every index card, so the number is now computed
+ * and there is nowhere left to type a wrong one.
+ */
+export function readingMinutes(guide: Guide): number {
+  const words = guide.body
+    .flatMap(blockStrings)
+    .join(" ")
+    .split(/\s+/)
+    .filter(Boolean).length;
+  return Math.max(1, Math.round(words / WORDS_PER_MINUTE));
+}
+
+/** The same figure, phrased for display. */
+export function readingTimeLabel(guide: Guide): string {
+  return `${readingMinutes(guide)} min read`;
+}
 
 export function getGuideBySlug(slug: string): Guide | undefined {
   return GUIDES.find((guide) => guide.slug === slug);
