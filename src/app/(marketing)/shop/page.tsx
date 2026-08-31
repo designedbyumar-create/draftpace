@@ -6,7 +6,7 @@ import Badge from "@/design-system/Badge";
 import Button from "@/design-system/Button";
 import { ArrowRight } from "@/design-system/Icon";
 import { shopRegistry } from "@/shop/registry";
-import { formatPrice, type ShopProduct } from "@/shop/definition";
+import { formatCompareAtPrice, formatPrice, type ShopProduct } from "@/shop/definition";
 import { ensureShopRegistered } from "@/shop/ensureRegistered";
 import { LIFE_AREAS } from "@/content/areas";
 import AddToLibraryButton from "./AddToLibraryButton";
@@ -121,7 +121,9 @@ export default function ShopIndexPage() {
         <h2 className="text-[15px] font-semibold text-[var(--text)]">How access works</h2>
         <p className="mt-2 max-w-xl text-[13px] leading-relaxed text-[var(--muted)]">
           Free products are complete, not stripped-down previews. Paid products are billed once, not as a recurring
-          subscription, unless a specific listing says otherwise. Everything you own lives in your{" "}
+          subscription, unless a specific listing says otherwise. A struck-through price is the regular price a
+          product moves to later, never an inflated number invented to make the current one look bigger. Everything
+          you own lives in your{" "}
           <Link href="/app/library" className="font-semibold text-[var(--primary)] hover:underline">
             library
           </Link>
@@ -235,7 +237,10 @@ function ShopProductThumbnail({ product }: { product: ShopProduct }) {
           <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">Preview coming soon</p>
         </div>
       )}
-      <div className="absolute right-3 top-3 rounded-full bg-[var(--surface)]/95 px-2.5 py-1 text-[11px] font-bold text-[var(--text)] shadow-[var(--shadow-xs)] backdrop-blur">
+      <div className="absolute right-3 top-3 flex items-center gap-1.5 rounded-full bg-[var(--surface)]/95 px-2.5 py-1 text-[11px] font-bold text-[var(--text)] shadow-[var(--shadow-xs)] backdrop-blur">
+        {formatCompareAtPrice(product) && (
+          <span className="font-normal text-[var(--faint)] line-through">{formatCompareAtPrice(product)}</span>
+        )}
         {formatPrice(product)}
       </div>
     </div>

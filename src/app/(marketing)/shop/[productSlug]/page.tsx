@@ -7,7 +7,7 @@ import Badge from "@/design-system/Badge";
 import Button from "@/design-system/Button";
 import { ArrowRight, Check, Lock, X } from "@/design-system/Icon";
 import { shopRegistry } from "@/shop/registry";
-import { formatPrice, type ShopProduct } from "@/shop/definition";
+import { discountPercent, formatCompareAtPrice, formatPrice, type ShopProduct } from "@/shop/definition";
 import { ensureShopRegistered } from "@/shop/ensureRegistered";
 import RichSection from "./RichSection";
 import AddToLibraryButton from "../AddToLibraryButton";
@@ -90,6 +90,8 @@ export default async function ShopProductPage({
   if (!product) notFound();
 
   const priceLabel = formatPrice(product);
+  const compareAtLabel = formatCompareAtPrice(product);
+  const savingsPercent = discountPercent(product);
   const structuredData = buildStructuredData(product);
   // Bespoke mobile mockups exist for these two real products today (see
   // each visuals file's own doc comment for why real screenshots aren't
@@ -132,6 +134,19 @@ export default async function ShopProductPage({
                 <Badge tone={product.access === "free" ? "success" : "primary"}>
                   {product.access === "free" ? "Free" : "Paid"}
                 </Badge>
+                {/* Only ever appears once a listing genuinely has launch
+                    pricing set; every real product has none yet, so this
+                    row renders exactly as it always has until its own
+                    phase sets a compareAtPrice. */}
+                {compareAtLabel && (
+                  <span className="inline-flex items-center gap-1.5 text-[13px]">
+                    <span className="text-[var(--faint)] line-through">{compareAtLabel}</span>
+                    <span className="font-semibold text-[var(--text)]">{priceLabel}</span>
+                    {savingsPercent !== null && savingsPercent > 0 && (
+                      <Badge tone="success">Save {savingsPercent}%</Badge>
+                    )}
+                  </span>
+                )}
                 {product.availability === "coming-soon" && <Badge tone="neutral">Coming soon</Badge>}
               </div>
               <h1 className="mt-4 font-serif text-[38px] font-semibold leading-[1.05] tracking-tight sm:text-[52px]">
@@ -304,10 +319,23 @@ export default async function ShopProductPage({
         <div className="flex flex-wrap items-center justify-between gap-5">
           <div>
             <p className="text-[11px] font-bold uppercase tracking-wide text-[var(--faint)]">Price</p>
-            <p className="mt-1 font-serif text-[32px] font-semibold leading-none tracking-tight text-[var(--text)]">
-              {priceLabel}
-            </p>
-            {product.access === "paid" && <p className="mt-1.5 text-[12px] text-[var(--muted)]">One-time. Yours to keep.</p>}
+            <div className="mt-1 flex flex-wrap items-baseline gap-2.5">
+              {compareAtLabel && (
+                <span className="font-serif text-[20px] text-[var(--faint)] line-through">{compareAtLabel}</span>
+              )}
+              <p className="font-serif text-[32px] font-semibold leading-none tracking-tight text-[var(--text)]">
+                {priceLabel}
+              </p>
+              {savingsPercent !== null && savingsPercent > 0 && (
+                <Badge tone="success">Save {savingsPercent}%</Badge>
+              )}
+            </div>
+            {product.access === "paid" && (
+              <p className="mt-1.5 text-[12px] text-[var(--muted)]">
+                One-time. Yours to keep.
+                {compareAtLabel && " This is launch pricing, not a coupon: the regular price is what it moves to next."}
+              </p>
+            )}
           </div>
           <GetAction product={product} priceLabel={priceLabel} checkout={checkout} size="lg" />
         </div>

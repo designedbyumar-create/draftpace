@@ -48,10 +48,16 @@ const FIXTURES: ShopProductInput[] = [
     problem: "Placeholder problem statement for layout testing.",
     audience: ["Anyone reviewing the Shop layout"],
     audienceExclusions: ["Real customers — this is not a real product"],
-    outcomes: ["Confirms the paid-listing layout renders correctly, including price display"],
+    outcomes: [
+      "Confirms the paid-listing layout renders correctly, including regular/launch price display",
+    ],
     howItWorks: ["This section exists only to test spacing and hierarchy"],
     access: "paid",
-    price: { amount: 0, currency: "USD" },
+    // A placeholder discount, not a real one: exists only so the
+    // compareAtPrice UI (Phase 0) can be checked end to end without
+    // touching a real product's price ahead of its own phase.
+    price: { amount: 28, currency: "USD" },
+    compareAtPrice: { amount: 35, currency: "USD" },
     purchaseAction: { label: "Preview only", href: "/shop" },
     media: [],
     compatibility: ["Placeholder"],

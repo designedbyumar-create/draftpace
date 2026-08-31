@@ -27,7 +27,7 @@ const objectionSchema = z.object({
   answer: z.string().min(1),
 });
 
-export const shopProductSchema = z.object({
+const shopProductObjectSchema = z.object({
   id: z.string().min(1),
   slug: z.string().regex(/^[a-z0-9][a-z0-9-]*$/, "Slugs must be lowercase, alphanumeric, and hyphenated."),
   publicationStatus: z.enum(["draft", "published", "archived"]),
@@ -41,6 +41,17 @@ export const shopProductSchema = z.object({
   howItWorks: z.array(z.string()).default([]),
   access: z.enum(["free", "paid"]),
   price: z.object({ amount: z.number().nonnegative(), currency: z.string().length(3) }).optional(),
+  /**
+   * The struck-through "regular price" shown beside `price`, for a listing
+   * currently on launch pricing. `price` never stops being the number that
+   * actually gets charged — this field only ever adds a comparison next to
+   * it, never replaces it, so nothing downstream that reads `price` (the
+   * checkout link, the structured-data Offer) needs to know this exists.
+   * The refinement below is what stops a listing claiming a "discount"
+   * that isn't one: compareAtPrice must always be a real number genuinely
+   * higher than what's actually charged.
+   */
+  compareAtPrice: z.object({ amount: z.number().positive(), currency: z.string().length(3) }).optional(),
   purchaseAction: z.object({ label: z.string().min(1), href: z.string().min(1) }).optional(),
   media: z.array(mediaSchema).default([]),
   compatibility: z.array(z.string()).default([]),
@@ -61,6 +72,15 @@ export const shopProductSchema = z.object({
   devFixture: z.boolean().default(false),
 });
 
+export const shopProductSchema = shopProductObjectSchema.refine(
+  (product) => !product.compareAtPrice || (product.price && product.compareAtPrice.amount > product.price.amount),
+  {
+    message:
+      "compareAtPrice must be a real number genuinely higher than price — a listing can't claim a discount that isn't one.",
+    path: ["compareAtPrice"],
+  }
+);
+
 export type ShopProductInput = z.input<typeof shopProductSchema>;
 export type ShopProduct = z.infer<typeof shopProductSchema>;
 
@@ -77,7 +97,45 @@ export function validateShopProduct(input: unknown): ShopProduct {
 export function formatPrice(product: ShopProduct): string {
   if (product.access === "free") return "Free";
   if (!product.price) return "Price not yet set";
-  return new Intl.NumberFormat("en-US", { style: "currency", currency: product.price.currency }).format(
-    product.price.amount
-  );
+  return formatMoney(product.price);
+}
+
+/**
+ * The struck-through regular price, or null when a listing has none (a
+ * free product, an unpriced product, or simply a paid product with no
+ * launch discount running). Callers should treat null as "render nothing
+ * here" rather than substitute their own fallback text — the whole point
+ * of this being separate from formatPrice is that only a listing that
+ * actually has a compareAtPrice should ever show one.
+ */
+export function formatCompareAtPrice(product: ShopProduct): string | null {
+  if (!product.compareAtPrice) return null;
+  return formatMoney(product.compareAtPrice);
+}
+
+/**
+ * The percentage a listing's compareAtPrice represents over its actual
+ * price, rounded to the nearest whole point. Computed rather than typed
+ * anywhere, so a badge reading "Save 20%" can never drift out of sync
+ * with the two numbers it's describing.
+ */
+export function discountPercent(product: ShopProduct): number | null {
+  if (!product.compareAtPrice || !product.price) return null;
+  const { amount: was } = product.compareAtPrice;
+  const { amount: now } = product.price;
+  if (was <= 0) return null;
+  return Math.round(((was - now) / was) * 100);
+}
+
+/** Whole-dollar prices render without a trailing ".00"; anything with real
+ * cents keeps them. Every price in the catalogue today is a whole dollar
+ * amount, but a future product's isn't guaranteed to be. */
+function formatMoney(money: { amount: number; currency: string }): string {
+  const hasCents = !Number.isInteger(money.amount);
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: money.currency,
+    minimumFractionDigits: hasCents ? 2 : 0,
+    maximumFractionDigits: hasCents ? 2 : 0,
+  }).format(money.amount);
 }
