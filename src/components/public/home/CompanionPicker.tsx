@@ -2,12 +2,15 @@
 
 import { useEffect, useState, type ReactNode } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import { ArrowRight } from "@/design-system/Icon";
+import { ArrowRight, Check } from "@/design-system/Icon";
+import Button from "@/design-system/Button";
 
 export interface PickerPanel {
   areaSlug: string;
   areaLabel: string;
   situation: string;
+  /** The three things this area's Companion actually does, from src/content/areas.ts. */
+  whatHelps: string[];
   productSlug: string;
   productTitle: string;
   /** Rendered on the server so this client component never imports a route module. */
@@ -55,9 +58,12 @@ export default function CompanionPicker({ panels }: { panels: PickerPanel[] }) {
         <h1 className="mt-4 font-serif text-[38px] font-semibold leading-[1.08] tracking-tight sm:text-[48px] lg:text-[54px]">
           For the parts of life that are hard to keep track of.
         </h1>
+        {/* Three lines at most, and it names the six areas outright: the
+            previous version described how the products behave before
+            saying what part of anybody's life they are for. */}
         <p className="mt-6 max-w-lg text-[17px] leading-relaxed text-[var(--muted)]">
-          Seven companions, each built for one thing that is genuinely difficult to hold in your head. Each remembers
-          how your situation fits together, tells you what actually needs you now, and stays quiet when nothing does.
+          Seven products for the parts of everyday life that are hardest to stay on top of: money, home, focus,
+          family, affairs and travel. Each one remembers your situation so you do not have to.
         </p>
 
         <fieldset className="mt-8 border-0 p-0">
@@ -95,25 +101,19 @@ export default function CompanionPicker({ panels }: { panels: PickerPanel[] }) {
           </div>
         </fieldset>
 
-        <div className="mt-6 min-h-[92px]">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={active.areaSlug}
-              initial={reduceMotion ? false : { opacity: 0, y: 6 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={reduceMotion ? undefined : { opacity: 0, y: -6 }}
-              transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <p className="text-[15px] leading-relaxed text-[var(--text)]">{active.situation}</p>
-              <a
-                href={`/shop/${active.productSlug}`}
-                className="mt-3 inline-flex items-center gap-1.5 text-[14px] font-semibold text-[var(--primary)] hover:underline"
-              >
-                {active.productTitle}
-                <ArrowRight size={14} aria-hidden />
-              </a>
-            </motion.div>
-          </AnimatePresence>
+        {/* The way in, directly under the chips it belongs to. Outline
+            rather than a filled button: this is the hero's secondary
+            action, under a heading that is itself the page's argument,
+            and a solid teal block here would outweigh it. Fixed height,
+            so switching areas never moves the column. */}
+        <div className="mt-6 h-11">
+          <Button
+            href={`/shop/${active.productSlug}`}
+            variant="outline"
+            iconRight={<ArrowRight size={15} aria-hidden />}
+          >
+            {active.productTitle}
+          </Button>
         </div>
       </div>
 
@@ -126,7 +126,27 @@ export default function CompanionPicker({ panels }: { panels: PickerPanel[] }) {
             exit={reduceMotion ? undefined : { opacity: 0, scale: 0.99 }}
             transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
           >
-            {active.mockup}
+            {/* The phone is capped narrower than the 280px it renders at
+                elsewhere, which buys the room for the three lines below
+                without making this column taller than the copy beside
+                it. PhoneFrame is w-full under its own max-width, so a
+                narrower parent simply scales the whole screen down. */}
+            <div className="mx-auto max-w-[244px]">{active.mockup}</div>
+
+            {/* What the product actually does, three lines, from
+                src/content/areas.ts's whatHelps: written under the rule
+                that every line has to be true of the shipped product.
+                This replaces a single situation sentence that repeated
+                what the chips had already established. Always exactly
+                three items, so the block cannot change height. */}
+            <ul className="mx-auto mt-7 flex max-w-sm flex-col gap-2.5" role="list">
+              {active.whatHelps.map((line) => (
+                <li key={line} className="flex items-start gap-2.5">
+                  <Check size={14} className="mt-0.5 shrink-0 text-[var(--success)]" aria-hidden />
+                  <span className="text-[13.5px] leading-relaxed text-[var(--muted)]">{line}</span>
+                </li>
+              ))}
+            </ul>
           </motion.div>
         </AnimatePresence>
       </div>

@@ -52,6 +52,7 @@ export default function HomePage() {
         areaSlug: area.slug,
         areaLabel: area.label,
         situation: area.situation,
+        whatHelps: area.whatHelps,
         productSlug: product.slug,
         productTitle: product.title,
         mockup,

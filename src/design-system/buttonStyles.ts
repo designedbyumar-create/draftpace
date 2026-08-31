@@ -12,7 +12,7 @@
  * clients can both import.
  */
 
-export type ButtonVariant = "primary" | "secondary" | "ghost" | "danger";
+export type ButtonVariant = "primary" | "secondary" | "outline" | "ghost" | "danger";
 export type ButtonSize = "sm" | "md" | "lg";
 
 export type ButtonStyleProps = {
@@ -47,6 +47,15 @@ const variantClass: Record<ButtonVariant, string> = {
     "btn-fill-primary bg-[var(--primary)] text-[var(--primary-contrast)] shadow-[shadow:var(--btn-primary-rest)]",
   secondary:
     "btn-fill-secondary border border-[var(--border-strong)] bg-[var(--surface)] text-[var(--text)] shadow-[shadow:var(--btn-raise-rest)]",
+  // A single stroke and teal type on nothing. Distinct from secondary,
+  // which is a raised surface with a neutral border and body-colour
+  // text: this one carries no fill and no material at all, so it reads
+  // as an action without competing with a primary button beside it.
+  // Teal is correct here under the accent rule, because this is
+  // something you can act on. Hover is the faintest teal wash, in
+  // keeping with hover being colour only.
+  outline:
+    "border border-[var(--primary)] bg-transparent text-[var(--primary)] hover:bg-[var(--primary-soft)]",
   ghost: "text-[var(--muted)] hover:bg-[var(--surface-muted)] hover:text-[var(--text)]",
   danger:
     "bg-[var(--danger)] text-white shadow-[shadow:var(--btn-raise-rest)] hover:brightness-[1.04]",
