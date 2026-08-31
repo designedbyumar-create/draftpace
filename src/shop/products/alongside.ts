@@ -32,10 +32,13 @@ import type { ShopProductInput } from "../definition";
  * to reach somebody when the app is closed would be selling a thing
  * that does not exist yet.
  *
- * price is deliberately omitted (TODO_SET_REAL_PRICE), same convention
- * as all four paid siblings: formatPrice() renders "Price not yet set"
- * rather than a fabricated figure, and GetAction renders "Checkout opens
- * soon" until LEMON_SQUEEZY_ALONGSIDE_CHECKOUT_URL is set.
+ * $28 launch price, $35 regular. The seventh and last of the seven paid
+ * products to get a real price, see the pricing plan's Phase 7.
+ * purchaseAction.href stays intentionally omitted: with no href and
+ * access "paid", GetAction already renders the correct "Checkout opens
+ * soon" pending state rather than a dead or fake link, exactly the
+ * mechanism this listing needs until LEMON_SQUEEZY_ALONGSIDE_CHECKOUT_URL
+ * is set, which this phase deliberately leaves alone.
  */
 export const alongsideShopProduct: ShopProductInput = {
   id: "alongside",
@@ -103,7 +106,8 @@ export const alongsideShopProduct: ShopProductInput = {
     "Life holds everything you have recorded, grouped by what kind of thing it is, with the full history of what happened to it and a page to edit anything by hand.",
   ],
   access: "paid",
-  // TODO_SET_REAL_PRICE: no price object yet, see the file doc comment.
+  price: { amount: 28, currency: "USD" },
+  compareAtPrice: { amount: 35, currency: "USD" },
   media: [],
   compatibility: ["Works in any modern browser", "No download required", "Works on phone, tablet, or desktop"],
   inclusions: [

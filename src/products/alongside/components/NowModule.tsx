@@ -44,6 +44,19 @@ interface Running {
  * Deliberately absent: a count of anything, a streak, a completion
  * figure, a red badge, and any sentence beginning with "you still
  * have not".
+ *
+ * ONE THING, NOT A LIST TO EVALUATE
+ *
+ * deriveAttention already sorts every signal by weight, most worth
+ * mentioning first. This screen shows only that first one by default.
+ * The rest are a click away, never dropped, but not dumped on screen at
+ * once: the audience research behind this product found that a long
+ * list makes the exact state this product exists for, task paralysis,
+ * worse rather than better, because evaluating several somewhat-urgent
+ * things costs real energy before anything gets done. Showing one
+ * thing is the fix, not showing everything more clearly. See the
+ * "task paralysis" guide, and the Companion callout on it, which
+ * already claims this screen works this way.
  */
 export default function NowModule() {
   const { status, errorMessage, instanceId, items, replaceItem, addItem } = useAlongside();
@@ -55,6 +68,8 @@ export default function NowModule() {
   const [closing, setClosing] = useState<string | null>(null);
   const [opening, setOpening] = useState(false);
   const [startError, setStartError] = useState<string | null>(null);
+  /** Collapsed to the one top signal by default. See "ONE THING, NOT A LIST TO EVALUATE" above. */
+  const [showAll, setShowAll] = useState(false);
 
   if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
   if (status === "no-instance") {
@@ -168,47 +183,74 @@ export default function NowModule() {
       {closing && <p className="text-[13px] text-[var(--muted)]">{closing}</p>}
       {startError && <p className="text-[13px] text-[var(--danger)]">{startError}</p>}
 
-      {!attention.quiet && (
-        <ul className="flex flex-col gap-3">
-          {attention.signals.map((signal) => {
-            const item = byId.get(signal.itemId);
-            if (!item) return null;
-            const available = playbooksFor(item.kind);
-            return (
-              <li
-                key={signal.itemId}
-                className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4"
+      {!attention.quiet && (() => {
+        // Sorted already, most worth mentioning first (deriveAttention's
+        // own weight sort). Collapsed to that one by default; the rest
+        // stay a click away rather than vanishing.
+        const visible = showAll ? attention.signals : attention.signals.slice(0, 1);
+        const hiddenCount = attention.signals.length - visible.length;
+        return (
+          <>
+            <ul className="flex flex-col gap-3">
+              {visible.map((signal) => {
+                const item = byId.get(signal.itemId);
+                if (!item) return null;
+                const available = playbooksFor(item.kind);
+                return (
+                  <li
+                    key={signal.itemId}
+                    className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4"
+                  >
+                    <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">
+                      {signal.line}
+                    </p>
+                    <p className="mt-1.5 text-[16px] leading-6 text-[var(--text)]">{item.title}</p>
+                    {item.leftOffNote && (
+                      <p className="mt-1 text-[13px] leading-5 text-[var(--muted)]">{item.leftOffNote}</p>
+                    )}
+                    {/* A waiting item gets no button until the day it is
+                        worth chasing. Before then somebody else has the
+                        ball; after then, chasing is the action. */}
+                    {isOpenToWork(item, new Date()) &&
+                      available.length > 0 &&
+                      (choosing === item.id ? (
+                        <PlaybookChooser
+                          item={item}
+                          onPick={(playbook) => pickPlaybook(item, playbook)}
+                          onCancel={() => setChoosing(null)}
+                        />
+                      ) : (
+                        <div className="mt-3">
+                          <Button size="sm" variant="secondary" onClick={() => openItem(item)}>
+                            Do this with me
+                          </Button>
+                        </div>
+                      ))}
+                  </li>
+                );
+              })}
+            </ul>
+            {hiddenCount > 0 && (
+              <button
+                type="button"
+                onClick={() => setShowAll(true)}
+                className="self-start text-[12px] font-semibold text-[var(--muted)] hover:text-[var(--text)]"
               >
-                <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">
-                  {signal.line}
-                </p>
-                <p className="mt-1.5 text-[16px] leading-6 text-[var(--text)]">{item.title}</p>
-                {item.leftOffNote && (
-                  <p className="mt-1 text-[13px] leading-5 text-[var(--muted)]">{item.leftOffNote}</p>
-                )}
-                {/* A waiting item gets no button until the day it is
-                    worth chasing. Before then somebody else has the
-                    ball; after then, chasing is the action. */}
-                {isOpenToWork(item, new Date()) &&
-                  available.length > 0 &&
-                  (choosing === item.id ? (
-                    <PlaybookChooser
-                      item={item}
-                      onPick={(playbook) => pickPlaybook(item, playbook)}
-                      onCancel={() => setChoosing(null)}
-                    />
-                  ) : (
-                    <div className="mt-3">
-                      <Button size="sm" variant="secondary" onClick={() => openItem(item)}>
-                        Do this with me
-                      </Button>
-                    </div>
-                  ))}
-              </li>
-            );
-          })}
-        </ul>
-      )}
+                {hiddenCount === 1 ? "1 more thing" : `${hiddenCount} more things`}
+              </button>
+            )}
+            {showAll && attention.signals.length > 1 && (
+              <button
+                type="button"
+                onClick={() => setShowAll(false)}
+                className="self-start text-[12px] font-semibold text-[var(--muted)] hover:text-[var(--text)]"
+              >
+                Back to just the one
+              </button>
+            )}
+          </>
+        );
+      })()}
 
       {adding ? (
         <AddItemForm

@@ -55,6 +55,17 @@ export default function SafeToSpendCard({
       >
         {formatCurrency(breakdown.safeToSpend, currency)}
       </p>
+      {/*
+        The one line the guide research found missing everywhere: a
+        banking app's "available balance" is a technical figure that
+        does not know about a bill you haven't paid yet or savings
+        you've set aside. This number does, because it already holds
+        both back. Said once, right here, not buried behind the
+        expandable breakdown below.
+      */}
+      <p className="mt-2 text-[13px] leading-relaxed opacity-70">
+        Not your bank&apos;s balance. This already holds back the bills and savings you&apos;ve told it about.
+      </p>
 
       <div className="mt-5 flex flex-wrap items-center justify-between gap-4 border-t border-[var(--mmr-sage-strong)]/25 pt-4">
         <div>
