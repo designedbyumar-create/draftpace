@@ -126,13 +126,17 @@ export default function HomePage() {
                 is now the display line, in the same serif the page's own
                 headings use, with the explanation as fine print beneath
                 it. Deliberately no icon per card (CLAUDE.md's icon rule)
-                and no accent rail; the material is the same
-                --btn-secondary-bg the design system's secondary button
-                now uses, so a card and a control read as the same stuff.
+                and no accent rail.
+
+                Flat at rest, on purpose. Hover adds the faintest shadow
+                in the ramp and firms the hairline, and does nothing
+                else: no lift, no elevation jump. Six cards that each
+                rose and grew a shadow under the pointer made this
+                section restless to read.
               */
               <div
                 key={item.head}
-                className="btn-fill-secondary group rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[shadow:var(--shadow-xs)] transition duration-[var(--dur-fast)] hover:-translate-y-0.5 hover:border-[var(--border-strong)] hover:shadow-[shadow:var(--shadow-soft)]"
+                className="rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface)] p-5 transition-[box-shadow,border-color] duration-[var(--dur)] ease-[var(--ease-out)] hover:border-[var(--border-strong)] hover:shadow-[shadow:var(--shadow-xs)]"
               >
                 <p className="font-serif text-[17px] font-semibold leading-snug tracking-tight text-[var(--text)]">
                   {item.head}

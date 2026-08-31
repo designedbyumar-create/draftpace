@@ -105,7 +105,7 @@ function ShopProductCard({ entry }: { entry: ShopGridEntry }) {
   const firstOutcome = product.outcomes[0];
 
   return (
-    <div className="group flex flex-col overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-[shadow:var(--shadow-xs)] transition hover:border-[var(--border-strong)] hover:shadow-[shadow:var(--shadow-md)]">
+    <div className="group flex flex-col overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] transition-[box-shadow,border-color] duration-[var(--dur)] ease-[var(--ease-out)] hover:border-[var(--border-strong)] hover:shadow-[shadow:var(--shadow-xs)]">
       {/*
         thumbnail crosses a component boundary: it's built once in
         ShopIndexPage (a real phone mockup, not a route module - see

@@ -3,19 +3,18 @@ import { printableAssetRegistry } from "@/product-framework/printableAssets";
 import Surface from "@/design-system/Surface";
 import EmptyState from "@/design-system/EmptyState";
 import { Article, Download } from "@/design-system/Icon";
+import { buttonClassName } from "@/design-system/buttonStyles";
 
 const ASSET_DESCRIPTION: Record<string, string> = {
   letter: "Sized for US Letter paper.",
   a4: "Sized for A4 paper.",
 };
 
-// Mirrors Button's secondary/sm variant. Written out rather than imported
-// from src/design-system/Button (a "use client" module) because this
-// component is a Server Component — the download must resolve the
-// registry's server-populated state, and Next.js doesn't allow a server
-// module to call a function exported from a client module, only render it.
-const DOWNLOAD_LINK_CLASS =
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap text-center font-semibold tracking-[-0.006em] transition-[transform,box-shadow,background-color,border-color,color] duration-[var(--dur-fast)] ease-[var(--ease-out)] active:scale-[0.985] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)] border border-[var(--border-strong)] bg-[var(--surface)] text-[var(--text)] shadow-[shadow:var(--btn-raise-rest)] hover:bg-[var(--surface-muted)] hover:shadow-[shadow:var(--btn-raise-hover)] hover:-translate-y-px min-h-9 rounded-lg px-3.5 py-2 text-[13px]";
+// One definition, shared with the real Button. See
+// src/design-system/buttonStyles.ts for why it lives outside the
+// client component: this module is a Server Component, and the
+// hand-copied string it used to hold had already gone stale.
+const DOWNLOAD_LINK_CLASS = buttonClassName({ variant: "secondary", size: "sm" });
 
 /**
  * The Printable Finance Companion: an included, paper version of this

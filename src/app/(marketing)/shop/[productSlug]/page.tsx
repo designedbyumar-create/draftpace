@@ -511,7 +511,7 @@ function HeroVisual({ product }: { product: ShopProduct }) {
           aria-hidden
           className="absolute inset-x-4 inset-y-6 -z-10 rounded-[28px] bg-[var(--primary)] opacity-[0.12] blur-2xl"
         />
-        <div className="overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-[shadow:var(--shadow-md)] transition-transform duration-[var(--dur-slow)] ease-[var(--ease-out)] hover:-translate-y-1">
+        <div className="overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-[shadow:var(--shadow-md)] transition-transform duration-[var(--dur-slow)] ease-[var(--ease-out)] hover:-translate-y-0.5">
           <div className="flex items-center gap-2 border-b border-[var(--border)] bg-[var(--surface-muted)] px-4 py-2.5">
             <span className="h-2.5 w-2.5 rounded-full bg-[var(--border-strong)]" aria-hidden />
             <span className="h-2.5 w-2.5 rounded-full bg-[var(--border-strong)]" aria-hidden />

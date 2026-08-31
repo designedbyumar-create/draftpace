@@ -16,11 +16,17 @@ import { LIFE_AREAS } from "@/content/areas";
  * the least informative one on the page.
  *
  * Now every product is an equal card carrying the three things somebody
- * actually decides on: which part of life it is for (its life area, as a
- * pastel wash and a label), what it promises, and what it costs. The
- * pastel is the product's own area accent from --area-* in globals.css,
- * the same hues the guides layer already uses for the same six areas, so
- * an area looks like itself everywhere on the site.
+ * actually decides on: which part of life it is for, what it promises,
+ * and what it costs.
+ *
+ * The area colour is spent deliberately rather than constantly. At rest
+ * each card is a plain surface with its area named in that area's hue,
+ * one small mark; seven permanent pastel blocks side by side read as a
+ * chart rather than a shelf. Hover washes the whole card to that area's
+ * colour instead, which is quieter than a lift plus a shadow and says
+ * more, since it tells you what the card is filed under. The hues are
+ * --area-* from globals.css, the same ones the guides layer already
+ * uses, so an area looks like itself everywhere on the site.
  *
  * Price rendering goes through the same three helpers the Shop grid and
  * the product page use (formatPrice / formatCompareAtPrice /
@@ -90,49 +96,45 @@ function SeriesCard({ product }: { product: ShopProduct }) {
   return (
     <Link
       href={`/shop/${product.slug}`}
-      className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-[shadow:var(--shadow-xs)] transition duration-[var(--dur-fast)] hover:-translate-y-0.5 hover:border-[var(--border-strong)] hover:shadow-[shadow:var(--shadow-soft)]"
+      // The area's colour pair is passed as data rather than baked into
+      // classes, because it varies per card. .card-tint (globals.css)
+      // keeps the card an ordinary surface at rest and washes the whole
+      // thing to --card-tint on hover. No lift, no shadow.
+      style={{ "--card-tint": accentSoft, "--card-accent": accent } as React.CSSProperties}
+      className="card-tint group flex h-full flex-col rounded-2xl border border-[var(--border)] p-5"
     >
-      {/* The pastel wash. Tinted by area, and the only place colour is
-          spent on this card, so the price and the title stay the things
-          that read first. */}
-      <div className="px-5 pb-4 pt-5" style={{ background: accentSoft }}>
-        <div className="flex items-center justify-between gap-3">
-          <span className="text-[11px] font-bold uppercase tracking-[0.1em]" style={{ color: accent }}>
-            {area?.label ?? "The Series"}
-          </span>
-          {product.access === "free" ? (
-            <span className="rounded-full bg-[var(--surface)]/80 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide" style={{ color: accent }}>
-              Free
-            </span>
-          ) : null}
-        </div>
-        <h3 className="mt-2.5 text-[16px] font-semibold leading-snug tracking-tight text-[var(--text)]">
-          {product.title}
-        </h3>
+      <div className="flex items-center justify-between gap-3">
+        {/* The one spot of colour at rest, and it is doing a job: it says
+            which part of life this is filed under. */}
+        <span className="text-[11px] font-bold uppercase tracking-[0.1em]" style={{ color: accent }}>
+          {area?.label ?? "The Series"}
+        </span>
+        {product.access === "free" && (
+          <span className="text-[10px] font-bold uppercase tracking-wide text-[var(--success)]">Free</span>
+        )}
       </div>
 
-      <div className="flex flex-1 flex-col p-5">
-        <p className="line-clamp-3 text-[13px] leading-relaxed text-[var(--muted)]">{product.promise}</p>
+      <h3 className="mt-2.5 text-[16px] font-semibold leading-snug tracking-tight text-[var(--text)]">
+        {product.title}
+      </h3>
+      <p className="mt-1.5 line-clamp-3 text-[13px] leading-relaxed text-[var(--muted)]">{product.promise}</p>
 
-        <div className="mt-4 flex flex-1 items-end justify-between gap-3 border-t border-[var(--border)] pt-3.5">
-          <div className="flex flex-wrap items-baseline gap-2">
-            {compareAtLabel && (
-              <span className="font-serif text-[14px] text-[var(--faint)] line-through">{compareAtLabel}</span>
-            )}
-            <span className="font-serif text-[20px] font-semibold leading-none tracking-tight text-[var(--text)]">
-              {priceLabel}
-            </span>
-            {savings !== null && savings > 0 && (
-              <span className="rounded-full bg-[var(--success-soft)] px-1.5 py-0.5 text-[10px] font-bold text-[var(--success)]">
-                Save {savings}%
-              </span>
-            )}
-          </div>
-          <span className="inline-flex shrink-0 items-center gap-1 text-[12.5px] font-semibold text-[var(--primary)]">
-            See it
-            <ArrowRight size={13} className="transition-transform duration-[var(--dur-fast)] group-hover:translate-x-0.5" aria-hidden />
+      <div className="mt-4 flex flex-1 items-end justify-between gap-3 pt-3.5">
+        <div className="flex flex-wrap items-baseline gap-2">
+          {compareAtLabel && (
+            <span className="font-serif text-[14px] text-[var(--faint)] line-through">{compareAtLabel}</span>
+          )}
+          <span className="font-serif text-[20px] font-semibold leading-none tracking-tight text-[var(--text)]">
+            {priceLabel}
           </span>
+          {savings !== null && savings > 0 && (
+            <span className="text-[10px] font-bold text-[var(--success)]">Save {savings}%</span>
+          )}
         </div>
+        <span className="inline-flex shrink-0 items-center gap-1 text-[12.5px] font-semibold text-[var(--primary)]">
+          See it
+          <ArrowRight size={13} aria-hidden />
+        </span>
       </div>
     </Link>
   );

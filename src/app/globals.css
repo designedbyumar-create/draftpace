@@ -361,6 +361,30 @@ html[data-text-scale="larger"] {
  * rather than like a promotion. The midpoint is exactly --primary, so
  * the accent is still the colour the control is "made of".
  */
+/*
+ * A card that stays plain until you point at it, then takes on the
+ * colour of whatever it belongs to.
+ *
+ * The two colours are passed per card as --card-tint and --card-accent
+ * (an area's own --area-*-soft / --area-* pair), because the colour is
+ * data about the card, not a fixed style. The rest state is deliberately
+ * an ordinary surface with a hairline: with seven of these side by side,
+ * seven permanent pastel blocks read as a chart rather than a shelf.
+ * Hover is the whole card washing to its area colour, which is both
+ * quieter than a lift-and-shadow and says more, since it tells you what
+ * the card is filed under.
+ */
+.card-tint {
+  background-color: var(--surface);
+  transition:
+    background-color var(--dur) var(--ease-out),
+    border-color var(--dur) var(--ease-out);
+}
+.card-tint:hover {
+  background-color: var(--card-tint);
+  border-color: color-mix(in srgb, var(--card-accent) 30%, var(--border));
+}
+
 .btn-fill-primary {
   background-image: linear-gradient(
     180deg,
@@ -369,12 +393,17 @@ html[data-text-scale="larger"] {
     color-mix(in srgb, #000 10%, var(--primary)) 100%
   );
 }
+/* Hover lifts the whole ramp by about five points of lightness and
+   changes nothing else: no lift, no shadow swap. Deliberately small.
+   The old hover jumped 9 points at the top stop and dropped the bottom
+   shade at the same time, which on a page of several buttons read as
+   the interface twitching rather than responding. */
 .btn-fill-primary:hover {
   background-image: linear-gradient(
     180deg,
-    color-mix(in srgb, #fff 22%, var(--primary)) 0%,
-    color-mix(in srgb, #fff 7%, var(--primary)) 52%,
-    color-mix(in srgb, #000 3%, var(--primary)) 100%
+    color-mix(in srgb, #fff 19%, var(--primary)) 0%,
+    color-mix(in srgb, #fff 5%, var(--primary)) 52%,
+    color-mix(in srgb, #000 6%, var(--primary)) 100%
   );
 }
 .btn-fill-secondary {
@@ -385,7 +414,11 @@ html[data-text-scale="larger"] {
   );
 }
 .btn-fill-secondary:hover {
-  background-image: linear-gradient(180deg, var(--surface) 0%, var(--surface-muted) 100%);
+  background-image: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--surface-muted) 40%, var(--surface)) 0%,
+    color-mix(in srgb, var(--surface-muted) 85%, var(--surface)) 100%
+  );
 }
 
 html[data-reduce-motion="true"] *,
