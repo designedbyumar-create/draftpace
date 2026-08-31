@@ -21,11 +21,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://draftpace.com"),
   title: {
-    default: "Draftpace: A studio for living products",
+    default: "Draftpace: Companions for the parts of life that are hard to keep track of",
     template: "%s | Draftpace",
   },
   description:
-    "Draftpace is a studio that makes and sells living products: installable apps that remember you, guide you, and stay ready, instead of dying on download like a static file.",
+    "The Draftpace Companion Series: seven products for money, home, focus, family, affairs and travel. Each remembers how your situation fits together, tells you what needs you now, and stays quiet when nothing does.",
   manifest: "/manifest.webmanifest",
   applicationName: "Draftpace",
   appleWebApp: {
@@ -34,19 +34,26 @@ export const metadata: Metadata = {
     title: "Draftpace",
   },
   openGraph: {
-    title: "Draftpace: A studio for living products",
+    title: "Draftpace: Companions for the parts of life that are hard to keep track of",
     description:
-      "A studio for living products: installable apps that remember you, guide your next step, and pick up where you left off.",
+      "The Draftpace Companion Series: seven products for money, home, focus, family, affairs and travel. Each remembers how your situation fits together, tells you what needs you now, and stays quiet when nothing does.",
     url: "https://draftpace.com",
     siteName: "Draftpace",
     type: "website",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Draftpace: a studio for living products" }],
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Draftpace: Companions for the parts of life that are hard to keep track of",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Draftpace: A studio for living products",
+    title: "Draftpace: Companions for the parts of life that are hard to keep track of",
     description:
-      "A studio for living products: installable apps that remember you, guide your next step, and pick up where you left off.",
+      "The Draftpace Companion Series: seven products for money, home, focus, family, affairs and travel. Each remembers how your situation fits together, tells you what needs you now, and stays quiet when nothing does.",
     images: ["/og-image.png"],
   },
   icons: {
