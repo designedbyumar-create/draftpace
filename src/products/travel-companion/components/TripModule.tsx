@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import Button from "@/design-system/Button";
 import EmptyState from "@/design-system/EmptyState";
 import { Globe, Plus } from "@/design-system/Icon";
@@ -511,7 +512,24 @@ export default function TripModule() {
         )}
 
         {preparation.length === 0 && !addingPreparation && (
-          <p className="mt-2 text-[13px] text-[var(--faint)]">Nothing on the list yet.</p>
+          <div className="mt-2">
+            <p className="text-[13px] text-[var(--faint)]">Nothing on the list yet.</p>
+            {/*
+              Not a seeded list. Preparation items are never pre-filled,
+              on purpose, so a document requirement that changed last
+              year never sits in someone's trip looking current. This
+              points at the guide instead, which is where general,
+              written, kept-current advice actually belongs, and leaves
+              what goes on the list to the traveller.
+            */}
+            <p className="mt-1 text-[12px] text-[var(--faint)]">
+              Not sure where to start?{" "}
+              <Link href="/guides/travel-document-checklist" className="font-semibold text-[var(--primary)] hover:underline">
+                What each traveller needs, and where to keep it
+              </Link>
+              .
+            </p>
+          </div>
         )}
 
         {preparation.length > 0 && (

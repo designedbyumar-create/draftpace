@@ -316,6 +316,91 @@ describe("the Home Base listing", () => {
 });
 
 /**
+ * Travel Companion's listing. Held to its siblings' rules, plus the
+ * five locked Phase 0 boundaries its own file doc comment names: no
+ * file storage, no money, no general dependency graph, no live flight
+ * data, and no notifications, since the product's own definition
+ * declares notifications unsupported.
+ */
+describe("the Travel Companion listing", () => {
+  const SLUG = "travel-companion";
+
+  async function listing() {
+    const { registerRealShopProducts, shopRegistry } = await loadFreshRegisterModule();
+    registerRealShopProducts();
+    return shopRegistry.getBySlug(SLUG);
+  }
+
+  it("is published, real, and reaches the Shop index", async () => {
+    const product = await listing();
+    expect(product?.publicationStatus).toBe("published");
+    expect(product?.devFixture).toBe(false);
+    expect(product?.access).toBe("paid");
+  });
+
+  it("carries a real, honest launch price: $18 against a genuine $23 regular price", async () => {
+    const product = await listing();
+    expect(product?.price).toEqual({ amount: 18, currency: "USD" });
+    expect(product?.compareAtPrice).toEqual({ amount: 23, currency: "USD" });
+    expect(product!.compareAtPrice!.amount).toBeGreaterThan(product!.price!.amount);
+    expect(product?.purchaseAction).toBeUndefined();
+  });
+
+  /**
+   * "Notification" and "upload" legitimately appear in this listing: it
+   * says outright that it does not send the one and does not accept the
+   * other, which is real reassurance a nervous buyer needs, not a broken
+   * promise. Banning the words outright would fail on the listing's own
+   * honesty, the same mistake an early version of Home Base's equivalent
+   * test made over "overdue". The real rule is narrower: every sentence
+   * that uses one of these words has to be denying it, never claiming it.
+   */
+  function everyMentionIsADenial(text: string, word: string): void {
+    // A window rather than one sentence: the objection/exclusion pattern
+    // this listing uses often names the excluded thing in its own short
+    // sentence ("you want live flight status...") and denies it in the
+    // sentence right after ("It has no connection to any airline...").
+    // Requiring both in one sentence would fail on that structure even
+    // though the copy is doing exactly the right thing.
+    const WINDOW = 160;
+    let index = text.indexOf(word);
+    let found = 0;
+    while (index !== -1) {
+      found++;
+      const around = text.slice(Math.max(0, index - WINDOW), index + word.length + WINDOW);
+      expect(around, `"${word}" near "...${around}..." has no nearby denial`).toMatch(
+        /\b(no|not|none|never|does not|doesn't|will not|won't)\b/
+      );
+      index = text.indexOf(word, index + word.length);
+    }
+    expect(found, `"${word}" should appear at least once, denying it`).toBeGreaterThan(0);
+  }
+
+  it("only ever mentions notifications, alerts, or live flight data to deny having them", async () => {
+    const text = JSON.stringify(await listing()).toLowerCase();
+    for (const word of ["notification", "live flight"]) {
+      everyMentionIsADenial(text, word);
+    }
+  });
+
+  it("only ever mentions uploads or cost splitting to deny doing them", async () => {
+    const text = JSON.stringify(await listing()).toLowerCase();
+    for (const word of ["upload", "split"]) {
+      everyMentionIsADenial(text, word);
+    }
+  });
+
+  it("has no fabricated reviews, ratings, or counts anywhere in its content", async () => {
+    const serialized = JSON.stringify(await listing()).toLowerCase();
+    expect(serialized).not.toMatch(/\brating|\breviews?\b|bestseller|\bstars?\b/);
+  });
+
+  it("uses no em dash, per the repo content rule", async () => {
+    expect(JSON.stringify(await listing())).not.toContain("—");
+  });
+});
+
+/**
  * Alongside's listing. Held to its siblings' rules, plus the two this
  * product carries on its own: the diagnosis/deficit language it refuses
  * in the app must not leak into the copy that sells it, and the

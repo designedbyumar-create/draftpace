@@ -28,10 +28,14 @@ import type { ShopProductInput } from "../definition";
  * A travel product that implied it would alert somebody to a flight
  * change would be selling the single most valuable thing it does not do.
  *
- * price is deliberately omitted (TODO_SET_REAL_PRICE), same convention
- * as all five paid siblings: formatPrice() renders "Price not yet set"
- * rather than a fabricated figure, and GetAction renders "Checkout opens
- * soon" until LEMON_SQUEEZY_TRAVEL_CHECKOUT_URL is set.
+ * $18 launch price, $23 regular. The fourth of the seven paid products
+ * to get a real price, see the pricing plan's Phase 4. GetAction still
+ * renders "Checkout opens soon": unlike its five siblings, this product
+ * has no entry at all yet in CHECKOUT_URL_ENV_BY_SLUG
+ * (src/shop/lemonSqueezyCheckout.ts), so there is no
+ * LEMON_SQUEEZY_TRAVEL_CHECKOUT_URL to set until one is added. Noted
+ * here rather than added, since wiring Lemon Squeezy is out of scope for
+ * this pricing plan.
  */
 export const travelCompanionShopProduct: ShopProductInput = {
   id: "travel-companion",
@@ -103,7 +107,11 @@ export const travelCompanionShopProduct: ShopProductInput = {
     "Print My Trip Book whenever you want a paper copy, blank and structured, as long or short as your trip needs.",
   ],
   access: "paid",
-  // TODO_SET_REAL_PRICE: no price object yet, see the file doc comment.
+  // Launch pricing, Phase 4 of the pricing plan: $19 actual, marked up
+  // 20% to a $23 regular price, then a net 20% off (30% off, netted
+  // down by 10 points) for the $18 this actually charges today.
+  price: { amount: 18, currency: "USD" },
+  compareAtPrice: { amount: 23, currency: "USD" },
   media: [],
   compatibility: ["Works in any modern browser", "No download required", "Works on phone, tablet, or desktop"],
   inclusions: [
