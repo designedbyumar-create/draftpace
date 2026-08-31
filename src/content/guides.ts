@@ -528,16 +528,11 @@ export const GUIDES: Guide[] = [
         ],
       },
       {
-        kind: "list",
-        checkable: true,
+        kind: "paragraphs",
         heading: "What a portfolio usually contains",
-        intro: "The specifics vary, but this set covers most requirements.",
-        items: [
-          "A log of educational activities, with reading materials named by title.",
-          "Samples of work across the year, not just the best pieces.",
-          "Attendance or days schooled, where your state counts them.",
-          "Standardised test results or an evaluator's written report, where required.",
-          "A list of subjects covered and the materials used.",
+        paragraphs: [
+          "A log of what was covered, samples of work from across the year rather than only the good pieces, attendance where your state counts it, and test results or an evaluator's report where those are required.",
+          "If you are in one of the nine high-regulation jurisdictions, the detail matters, and it is set out in [what actually goes in a homeschool portfolio](/guides/what-goes-in-a-homeschool-portfolio).",
         ],
       },
       {
@@ -635,8 +630,8 @@ export const GUIDES: Guide[] = [
   },
 
   {
-    slug: "what-else-your-trip-depends-on-when-something-changes",
-    title: "One thing moved. Here is how to work out what else your trip depends on",
+    slug: "flight-changed-what-else-is-affected",
+    title: "Flight changed: how to work out what else in your trip is affected",
     dek: "A flight changes and three other bookings quietly become wrong. A method for finding them before they find you.",
     publishedAt: "2026-08-30",
     areaSlug: "travel",
@@ -855,8 +850,8 @@ export const GUIDES: Guide[] = [
   },
 
   {
-    slug: "picking-something-back-up-after-abandoning-it",
-    title: "How to pick something back up after you abandoned it halfway",
+    slug: "how-to-restart-a-project-you-gave-up-on",
+    title: "How to restart a project you gave up on",
     dek: "Restarting is harder than starting, for a specific reason. Here is what actually reduces the cost of coming back.",
     publishedAt: "2026-08-30",
     areaSlug: "mind-and-focus",
@@ -1132,8 +1127,8 @@ export const GUIDES: Guide[] = [
   },
 
   {
-    slug: "what-to-record-about-an-appliance-before-you-need-it",
-    title: "What to write down about an appliance before something goes wrong",
+    slug: "what-to-record-when-you-buy-an-appliance",
+    title: "What to record when you buy a new appliance",
     dek: "Five fields, recorded once while you can actually see the machine, that make every future repair faster and cheaper.",
     publishedAt: "2026-08-30",
     areaSlug: "home",
@@ -1158,18 +1153,11 @@ export const GUIDES: Guide[] = [
         ],
       },
       {
-        kind: "table",
+        kind: "paragraphs",
         heading: "Where the model number usually hides",
-        intro: "The single most common reason people give up on cataloguing a house is not finding this. It is almost always in one of these places.",
-        columns: ["Appliance", "Usually found"],
-        rows: [
-          ["Fridge or freezer", "Inside, on the side wall near the salad drawer, or behind the bottom grille"],
-          ["Washing machine", "Around the inside of the door opening, or on the back panel"],
-          ["Dishwasher", "On the edge of the door, visible only when the door is open"],
-          ["Oven or cooker", "On the frame behind the door, or on a drawer runner underneath"],
-          ["Boiler or furnace", "Inside the front cover, often on a sticker facing you when it is opened"],
-          ["Water heater", "On the outer casing, usually a large label near the top"],
-          ["Air conditioning unit", "On the outdoor condenser, on a plate facing the wall"],
+        paragraphs: [
+          "It is almost never on the front. Fridges hide it inside near the salad drawer, washing machines around the door opening, dishwashers on the edge of the door where you only see it with the door open.",
+          "The full list by appliance type, including what to do when the label has worn away, is in [how to find the model number on any appliance](/guides/how-to-find-the-model-number-on-any-appliance).",
         ],
       },
       {
@@ -1587,7 +1575,7 @@ export const GUIDES: Guide[] = [
         heading: "Then check what else this affects",
         paragraphs: [
           "If your stay moves, anything you booked around it may need a look. A dinner reservation, a transfer to the airport, a tour with a pickup at the hotel.",
-          "This is the part that catches people the next morning rather than that night, and it is covered properly in [working out what else your trip depends on](/guides/what-else-your-trip-depends-on-when-something-changes).",
+          "This is the part that catches people the next morning rather than that night, and it is covered properly in [working out what else your trip depends on](/guides/flight-changed-what-else-is-affected).",
         ],
       },
       {
@@ -1732,8 +1720,8 @@ export const GUIDES: Guide[] = [
   },
 
   {
-    slug: "why-your-available-balance-is-lying-to-you",
-    title: "Why your available balance is lying to you",
+    slug: "available-balance-vs-current-balance",
+    title: "Available balance vs current balance: why they differ and which to trust",
     dek: "What banks mean by available, what they leave out, and why the number in the app is almost never the number you can spend.",
     publishedAt: "2026-08-30",
     areaSlug: "money",
@@ -1889,8 +1877,8 @@ export const GUIDES: Guide[] = [
   // rather than to bodge around now.
 
   {
-    slug: "the-task-that-has-been-on-your-mind-for-a-month",
-    title: "The task has been on your mind for a month and still is not done",
+    slug: "why-you-keep-thinking-about-a-task-and-not-doing-it",
+    title: "Why you keep thinking about a task and not doing it",
     dek: "Why constant remembering does not turn into doing, and the specific thing that makes a stuck task start moving.",
     publishedAt: "2026-08-30",
     areaSlug: "mind-and-focus",
@@ -2000,7 +1988,7 @@ export const GUIDES: Guide[] = [
         heading: "If nothing moves today",
         paragraphs: [
           "Then nothing moved today, and the tasks are exactly where they were, indifferent to it. What matters is that tomorrow does not start from zero, which is entirely about whether you left yourself a note about where you stopped.",
-          "More on that in [picking something back up after abandoning it](/guides/picking-something-back-up-after-abandoning-it).",
+          "More on that in [picking something back up after abandoning it](/guides/how-to-restart-a-project-you-gave-up-on).",
         ],
       },
       {
@@ -2012,8 +2000,8 @@ export const GUIDES: Guide[] = [
   },
 
   {
-    slug: "just-bought-a-house-what-to-record-in-week-one",
-    title: "You just bought a house. What to record in the first week",
+    slug: "first-week-after-buying-a-house",
+    title: "What to do in the first week after buying a house",
     dek: "Everything about a home passes through your hands once, during the move. Here is what to capture before it disappears.",
     publishedAt: "2026-08-30",
     areaSlug: "home",
@@ -2070,7 +2058,7 @@ export const GUIDES: Guide[] = [
         heading: "What this saves you later",
         paragraphs: [
           "A year on, the boiler needs servicing and you know when it was last done and by whom. Something fails under warranty and you have the serial number. An engineer asks how old the system is and you have an answer.",
-          "Which fields matter for each kind of thing, and where model plates hide, is covered in [what to record about an appliance](/guides/what-to-record-about-an-appliance-before-you-need-it).",
+          "Which fields matter for each kind of thing, and where model plates hide, is covered in [what to record about an appliance](/guides/what-to-record-when-you-buy-an-appliance).",
         ],
       },
       {
@@ -2218,8 +2206,8 @@ export const GUIDES: Guide[] = [
   },
 
   {
-    slug: "homeschool-records-when-you-have-kept-nothing-since-october",
-    title: "It is March and you have recorded nothing since October",
+    slug: "how-to-catch-up-on-homeschool-records",
+    title: "How to catch up on homeschool records you have not kept",
     dek: "How to reconstruct a homeschool year honestly, what is genuinely recoverable, and how to make the rest of the year different.",
     publishedAt: "2026-08-30",
     areaSlug: "family-and-learning",
@@ -2286,8 +2274,8 @@ export const GUIDES: Guide[] = [
   },
 
   {
-    slug: "how-to-tell-whether-something-actually-stuck",
-    title: "How to tell whether something actually stuck",
+    slug: "how-to-check-if-your-child-learned-something",
+    title: "How to check whether your child actually learned something",
     dek: "Covering a topic and learning it are different. A low effort way to find out which happened, without turning your house into a school.",
     publishedAt: "2026-08-30",
     areaSlug: "family-and-learning",
@@ -2381,7 +2369,7 @@ export const GUIDES: Guide[] = [
         heading: "The fourth one is the whole point",
         paragraphs: [
           "A transfer is not merely a thing at two in the afternoon. It is a thing that exists because of a flight landing at one. A hotel check-in is not just a time, it is downstream of the transfer.",
-          "Write that relationship down once, when you book, and you never have to reconstruct it. Skip it, and every disruption starts with working out from memory what was connected to what, usually in an airport. The method is set out in [what else your trip depends on](/guides/what-else-your-trip-depends-on-when-something-changes).",
+          "Write that relationship down once, when you book, and you never have to reconstruct it. Skip it, and every disruption starts with working out from memory what was connected to what, usually in an airport. The method is set out in [what else your trip depends on](/guides/flight-changed-what-else-is-affected).",
         ],
       },
       {
@@ -2547,7 +2535,7 @@ export const GUIDES: Guide[] = [
         heading: "Why it usually happens",
         paragraphs: [
           "Very rarely because somebody decided not to pay. Almost always because the balance looked fine on the day, and a payment that had already been committed had not left the account yet.",
-          "That gap between what your balance says and what is genuinely yours is the actual cause, and it is explained in [why your available balance is lying to you](/guides/why-your-available-balance-is-lying-to-you).",
+          "That gap between what your balance says and what is genuinely yours is the actual cause, and it is explained in [why your available balance is lying to you](/guides/available-balance-vs-current-balance).",
         ],
       },
       {
@@ -2561,8 +2549,8 @@ export const GUIDES: Guide[] = [
   // ---------------------------------------------------------------- batch 4
 
   {
-    slug: "what-your-family-would-need-to-know-tomorrow",
-    title: "What your family would need to know tomorrow",
+    slug: "what-to-write-down-in-case-something-happens-to-you",
+    title: "What to write down in case something happens to you",
     dek: "Not a will, and not morbid. The short list of things that only exist in your head, and what happens when nobody can find them.",
     publishedAt: "2026-08-30",
     areaSlug: "affairs-and-endings",
@@ -2745,8 +2733,8 @@ export const GUIDES: Guide[] = [
   },
 
   {
-    slug: "what-to-log-after-a-repair",
-    title: "What to write down after every repair, so the next one is cheaper",
+    slug: "what-to-keep-after-a-home-repair",
+    title: "What to keep after a home repair, and why it saves money next time",
     dek: "Five minutes after an engineer leaves is worth an hour next time. What to capture, and why the diagnosis matters more than the invoice.",
     publishedAt: "2026-08-30",
     areaSlug: "home",
@@ -2872,7 +2860,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Home Base records warranty end dates alongside the make, model and serial for everything in your house, and raises one when it is genuinely approaching rather than burying it in a list. What to capture per type of thing is in [what to record about an appliance](/guides/what-to-record-about-an-appliance-before-you-need-it).",
+        body: "Home Base records warranty end dates alongside the make, model and serial for everything in your house, and raises one when it is genuinely approaching rather than burying it in a list. What to capture per type of thing is in [what to record about an appliance](/guides/what-to-record-when-you-buy-an-appliance).",
       },
     ],
   },
@@ -2963,8 +2951,8 @@ export const GUIDES: Guide[] = [
   },
 
   {
-    slug: "when-something-has-been-left-so-long-it-is-embarrassing",
-    title: "When something has been left so long it is embarrassing",
+    slug: "how-to-deal-with-something-you-have-put-off",
+    title: "How to deal with something you have put off for months",
     dek: "The shame is doing more work than the task now. How to deal with the delay itself, including what to say about it.",
     publishedAt: "2026-08-30",
     areaSlug: "mind-and-focus",
@@ -3083,7 +3071,7 @@ export const GUIDES: Guide[] = [
         heading: "If you are behind on records",
         paragraphs: [
           "Reconstruct honestly, mark approximate dates as approximate, and do not invent precision. A clearly reconstructed term is a normal thing to hand over.",
-          "The full recovery method is in [when you have kept nothing since October](/guides/homeschool-records-when-you-have-kept-nothing-since-october).",
+          "The full recovery method is in [when you have kept nothing since October](/guides/how-to-catch-up-on-homeschool-records).",
         ],
       },
       {
@@ -3102,8 +3090,8 @@ export const GUIDES: Guide[] = [
   },
 
   {
-    slug: "group-trip-coordination-without-becoming-the-admin",
-    title: "Group trips: coordinating people without becoming the group admin",
+    slug: "how-to-plan-a-group-trip",
+    title: "How to plan a group trip without becoming the organiser",
     dek: "Coordinating schedules is the top stressor in group travel. A way to share the shape of a trip without owning everybody's decisions.",
     publishedAt: "2026-08-30",
     areaSlug: "travel",
@@ -3155,7 +3143,7 @@ export const GUIDES: Guide[] = [
         heading: "When something moves, it moves for a subset",
         paragraphs: [
           "This is where group trips get genuinely difficult. A delayed flight affects the four people on it and not the two who travelled separately, and working out who needs telling is its own task.",
-          "Knowing what depends on what is the same skill as in any trip, covered in [what else your trip depends on](/guides/what-else-your-trip-depends-on-when-something-changes). The group version simply adds the question of who is affected.",
+          "Knowing what depends on what is the same skill as in any trip, covered in [what else your trip depends on](/guides/flight-changed-what-else-is-affected). The group version simply adds the question of who is affected.",
         ],
       },
       {
@@ -3167,8 +3155,8 @@ export const GUIDES: Guide[] = [
   },
 
   {
-    slug: "untangling-money-after-a-life-change",
-    title: "Untangling your money after a job change, move or separation",
+    slug: "sort-out-your-finances-after-a-life-change",
+    title: "How to sort out your finances after a job change, move or divorce",
     dek: "Life events break the assumptions your finances were built on. A practical order for putting the picture back together.",
     publishedAt: "2026-08-30",
     areaSlug: "money",
@@ -3323,8 +3311,8 @@ export const GUIDES: Guide[] = [
   },
 
   {
-    slug: "inheriting-a-house-nobody-documented",
-    title: "Inheriting or buying a house nobody documented",
+    slug: "inherited-a-house-where-to-start",
+    title: "You inherited a house and know nothing about it: where to start",
     dek: "No manuals, no service history, no idea how old the boiler is. How to work out what you have and what needs attention first.",
     publishedAt: "2026-08-30",
     areaSlug: "home",
@@ -3460,7 +3448,7 @@ export const GUIDES: Guide[] = [
         heading: "Photograph it now rather than later",
         paragraphs: [
           "The moment to do this is while the appliance is working and accessible, not when it has failed and been pulled out into the middle of a kitchen.",
-          "What else is worth capturing at the same time is in [what to record about an appliance](/guides/what-to-record-about-an-appliance-before-you-need-it).",
+          "What else is worth capturing at the same time is in [what to record about an appliance](/guides/what-to-record-when-you-buy-an-appliance).",
         ],
       },
       {
@@ -3536,8 +3524,8 @@ export const GUIDES: Guide[] = [
   },
 
   {
-    slug: "homeschool-records-without-a-system-you-abandon",
-    title: "Keeping homeschool records without building a system you abandon",
+    slug: "simple-homeschool-record-keeping-system",
+    title: "The simplest homeschool record keeping system that actually lasts",
     dek: "Why elaborate tracking dies by half term, and what the version that survives a bad week actually looks like.",
     publishedAt: "2026-08-30",
     areaSlug: "family-and-learning",
@@ -3590,7 +3578,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "If it already collapsed this year",
         paragraphs: [
-          "That is the normal case rather than the exception, and more is recoverable than it feels like. The method is in [when you have kept nothing since October](/guides/homeschool-records-when-you-have-kept-nothing-since-october).",
+          "That is the normal case rather than the exception, and more is recoverable than it feels like. The method is in [when you have kept nothing since October](/guides/how-to-catch-up-on-homeschool-records).",
         ],
       },
       {
@@ -3930,8 +3918,8 @@ export const GUIDES: Guide[] = [
   // describe the category rather than a domain.
 
   {
-    slug: "homeschool-records-what-to-keep-and-what-to-bin",
-    title: "Homeschool records: what to keep, and what you can safely throw away",
+    slug: "how-long-to-keep-homeschool-records",
+    title: "How long to keep homeschool records, and what to throw away",
     dek: "You cannot keep everything and you do not need to. What is worth archiving, what to photograph, and what to recycle without guilt.",
     publishedAt: "2026-08-30",
     areaSlug: "family-and-learning",
@@ -3998,8 +3986,8 @@ export const GUIDES: Guide[] = [
   },
 
   {
-    slug: "diagnosed-at-forty-the-admin-nobody-warned-you-about",
-    title: "Diagnosed at forty: the admin nobody warned you about",
+    slug: "diagnosed-with-adhd-as-an-adult",
+    title: "Diagnosed with ADHD as an adult: what happens next",
     dek: "Most adults with ADHD were diagnosed as adults. What changes afterwards, what does not, and the paperwork nobody mentions.",
     publishedAt: "2026-08-30",
     areaSlug: "mind-and-focus",
@@ -4055,7 +4043,7 @@ export const GUIDES: Guide[] = [
         heading: "The backlog does not clear itself",
         paragraphs: [
           "Diagnosis explains the pile. It does not remove it, and there is often a period of disappointment when that becomes clear.",
-          "What tends to change is the approach: less trying harder, more building around the difficulty. The starting point for the things that have sat longest is in [when something has been left so long it is embarrassing](/guides/when-something-has-been-left-so-long-it-is-embarrassing).",
+          "What tends to change is the approach: less trying harder, more building around the difficulty. The starting point for the things that have sat longest is in [when something has been left so long it is embarrassing](/guides/how-to-deal-with-something-you-have-put-off).",
         ],
       },
       {
