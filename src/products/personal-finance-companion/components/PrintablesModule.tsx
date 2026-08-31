@@ -15,7 +15,7 @@ const ASSET_DESCRIPTION: Record<string, string> = {
 // registry's server-populated state, and Next.js doesn't allow a server
 // module to call a function exported from a client module, only render it.
 const DOWNLOAD_LINK_CLASS =
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap text-center font-semibold tracking-[-0.006em] transition-[transform,box-shadow,background-color,border-color,color] duration-[var(--dur-fast)] ease-[var(--ease-out)] active:scale-[0.985] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)] border border-[var(--border-strong)] bg-[var(--surface)] text-[var(--text)] shadow-[var(--btn-raise-rest)] hover:bg-[var(--surface-muted)] hover:shadow-[var(--btn-raise-hover)] hover:-translate-y-px min-h-9 rounded-lg px-3.5 py-2 text-[13px]";
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap text-center font-semibold tracking-[-0.006em] transition-[transform,box-shadow,background-color,border-color,color] duration-[var(--dur-fast)] ease-[var(--ease-out)] active:scale-[0.985] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)] border border-[var(--border-strong)] bg-[var(--surface)] text-[var(--text)] shadow-[shadow:var(--btn-raise-rest)] hover:bg-[var(--surface-muted)] hover:shadow-[shadow:var(--btn-raise-hover)] hover:-translate-y-px min-h-9 rounded-lg px-3.5 py-2 text-[13px]";
 
 /**
  * The Printable Finance Companion: an included, paper version of this

@@ -315,7 +315,7 @@ export default async function ShopProductPage({
       )}
 
       {/* Price and get, repeated near the decision */}
-      <section className="mt-12 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-7 shadow-[var(--shadow-soft)] sm:p-8">
+      <section className="mt-12 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-7 shadow-[shadow:var(--shadow-soft)] sm:p-8">
         <div className="flex flex-wrap items-center justify-between gap-5">
           <div>
             <p className="text-[11px] font-bold uppercase tracking-wide text-[var(--faint)]">Price</p>
@@ -511,7 +511,7 @@ function HeroVisual({ product }: { product: ShopProduct }) {
           aria-hidden
           className="absolute inset-x-4 inset-y-6 -z-10 rounded-[28px] bg-[var(--primary)] opacity-[0.12] blur-2xl"
         />
-        <div className="overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-[var(--shadow-md)] transition-transform duration-[var(--dur-slow)] ease-[var(--ease-out)] hover:-translate-y-1">
+        <div className="overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-[shadow:var(--shadow-md)] transition-transform duration-[var(--dur-slow)] ease-[var(--ease-out)] hover:-translate-y-1">
           <div className="flex items-center gap-2 border-b border-[var(--border)] bg-[var(--surface-muted)] px-4 py-2.5">
             <span className="h-2.5 w-2.5 rounded-full bg-[var(--border-strong)]" aria-hidden />
             <span className="h-2.5 w-2.5 rounded-full bg-[var(--border-strong)]" aria-hidden />

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { ArrowRight, Check } from "@/design-system/Icon";
+import Button from "@/design-system/Button";
 
 interface Row {
   id: string;
@@ -42,7 +43,7 @@ export default function ChangeImpactDemo() {
   return (
     <div className="grid gap-10 lg:grid-cols-[0.85fr_1fr] lg:items-center lg:gap-14">
       <div>
-        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">What makes these different</p>
+        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--brand-ink)]">What makes these different</p>
         <h2 className="mt-4 font-serif text-[30px] font-semibold leading-[1.12] tracking-tight sm:text-[36px]">
           It knows what else moves when one thing moves.
         </h2>
@@ -54,17 +55,23 @@ export default function ChangeImpactDemo() {
           It never edits anything for you. Nothing here happens behind your back.
         </p>
 
-        <button
-          type="button"
-          onClick={() => setChanged((c) => !c)}
-          className="mt-7 inline-flex items-center gap-2 rounded-lg bg-[var(--primary)] px-4 py-2.5 text-[14px] font-semibold text-[var(--on-primary,#fff)] transition-transform active:scale-[0.985]"
-        >
-          {changed ? "Reset the example" : "Delay the flight by 3 hours"}
-          {!changed && <ArrowRight size={15} aria-hidden />}
-        </button>
+        {/*
+          Was a hand-rolled <button> reproducing roughly half of the
+          design system's primary treatment: it had the fill and the
+          press scale but none of the button material (no inset
+          highlight, no accent shadow, no hover lift), so it drifted
+          further from every other CTA on the site with each change to
+          the real primitive. Routed through Button so it simply gets
+          whatever a primary button is, including the gradient.
+        */}
+        <div className="mt-7">
+          <Button type="button" onClick={() => setChanged((c) => !c)} iconRight={changed ? undefined : <ArrowRight size={15} aria-hidden />}>
+            {changed ? "Reset the example" : "Delay the flight by 3 hours"}
+          </Button>
+        </div>
       </div>
 
-      <div className="rounded-[var(--radius-xl)] border border-[var(--border)] bg-[var(--surface)] p-4 shadow-[var(--shadow-soft)] sm:p-5">
+      <div className="rounded-[var(--radius-xl)] border border-[var(--border)] bg-[var(--surface)] p-4 shadow-[shadow:var(--shadow-soft)] sm:p-5">
         <div className="mb-3 flex items-center justify-between gap-3">
           <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--faint)]">Japan, October</span>
           <AnimatePresence>

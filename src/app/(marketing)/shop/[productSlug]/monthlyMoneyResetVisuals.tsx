@@ -33,7 +33,7 @@ function PhoneFrame({ children }: { children: React.ReactNode }) {
     <div className="relative mx-auto w-full max-w-[280px]" style={LIGHT_VARS as React.CSSProperties}>
       <div className="pointer-events-none absolute inset-x-6 inset-y-8 -z-10 rounded-[3rem] bg-[var(--mmr-forest-900)] opacity-[0.1] blur-2xl" aria-hidden />
       <div
-        className="relative overflow-hidden rounded-[2.75rem] border-[6px] border-[#141414] bg-[#141414] shadow-[var(--shadow-md)]"
+        className="relative overflow-hidden rounded-[2.75rem] border-[6px] border-[#141414] bg-[#141414] shadow-[shadow:var(--shadow-md)]"
         style={{ aspectRatio: "9 / 19.5" }}
       >
         <div className="absolute left-1/2 top-2.5 z-10 h-[16px] w-[84px] -translate-x-1/2 rounded-full bg-[#141414]" aria-hidden />

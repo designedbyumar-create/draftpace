@@ -172,7 +172,7 @@ function OwnedItem({ row, onRetry }: { row: OwnedProductRow; onRetry: () => void
     const description = row.kind === "progress-unavailable" ? "Progress couldn't load" : "Couldn't load details for this product";
 
     return (
-      <div className="flex items-center justify-between gap-4 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[var(--shadow-xs)]">
+      <div className="flex items-center justify-between gap-4 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[shadow:var(--shadow-xs)]">
         <div className="min-w-0">
           <p className="text-[15px] font-semibold text-[var(--text)]">{title}</p>
           <p className="mt-1 text-[12.5px] text-[var(--muted)]">
@@ -198,7 +198,7 @@ function OwnedItem({ row, onRetry }: { row: OwnedProductRow; onRetry: () => void
     return (
       <Link
         href={`/app/products/${definition.slug}`}
-        className="flex items-center justify-between gap-4 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[var(--shadow-xs)] transition-colors hover:border-[var(--border-strong)]"
+        className="flex items-center justify-between gap-4 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[shadow:var(--shadow-xs)] transition-colors hover:border-[var(--border-strong)]"
       >
         <div className="min-w-0">
           <p className="text-[15px] font-semibold text-[var(--text)]">{definition.title}</p>
@@ -225,7 +225,7 @@ function OwnedItem({ row, onRetry }: { row: OwnedProductRow; onRetry: () => void
   return (
     <Link
       href={destination}
-      className="flex items-center justify-between gap-4 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[var(--shadow-xs)] transition-colors hover:border-[var(--border-strong)]"
+      className="flex items-center justify-between gap-4 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[shadow:var(--shadow-xs)] transition-colors hover:border-[var(--border-strong)]"
     >
       <div className="min-w-0">
         <p className="text-[15px] font-semibold text-[var(--text)]">{definition.title}</p>

@@ -16,7 +16,7 @@ export default function ThemeToggle({ compact = false }: { compact?: boolean }) 
     <div
       role="radiogroup"
       aria-label="Theme"
-      className="inline-flex rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-1 shadow-[var(--shadow-soft)]"
+      className="inline-flex rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-1 shadow-[shadow:var(--shadow-soft)]"
     >
       {OPTIONS.map(({ value, label, Icon }) => {
         const active = theme === value;

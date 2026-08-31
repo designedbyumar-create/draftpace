@@ -101,7 +101,7 @@ export default function ShopIndexPage() {
 
   return (
     <Container width="wide" className="pb-24 pt-16 sm:pt-20">
-      <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--primary)]">The Companion Series</p>
+      <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--brand-ink)]">The Companion Series</p>
       <h1 className="mt-3 max-w-2xl font-serif text-[34px] font-semibold leading-tight tracking-tight sm:text-[44px]">
         Find the one that fits your situation.
       </h1>
@@ -131,7 +131,7 @@ export default function ShopIndexPage() {
 
 function EmptyShop() {
   return (
-    <div className="mt-12 max-w-lg rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[var(--shadow-xs)] sm:p-8">
+    <div className="mt-12 max-w-lg rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[shadow:var(--shadow-xs)] sm:p-8">
       <h2 className="text-[18px] font-semibold text-[var(--text)]">New products are on the way</h2>
       <p className="mt-2 text-[14px] leading-relaxed text-[var(--muted)]">
         Nothing is listed here until it is genuinely ready to use, never a placeholder inventory. The first products

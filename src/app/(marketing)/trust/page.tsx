@@ -34,7 +34,7 @@ const SECTIONS = [
 export default function TrustPage() {
   return (
     <Container width="narrow" className="pb-24 pt-16 sm:pt-20">
-      <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--primary)]">Trust</p>
+      <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--brand-ink)]">Trust</p>
       <h1 className="mt-3 font-serif text-[34px] font-semibold leading-tight tracking-tight sm:text-[44px]">
         A Companion holds personal things. How that is handled should be plain.
       </h1>

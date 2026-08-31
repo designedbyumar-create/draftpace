@@ -190,7 +190,7 @@ function ProductTabShell({
                   <Menu size={15} aria-hidden />
                   <span>More</span>
                 </summary>
-                <div className="absolute right-0 z-10 mt-1 min-w-[176px] rounded-lg border border-[var(--border)] bg-[var(--surface)] p-1 shadow-[var(--shadow-soft)]">
+                <div className="absolute right-0 z-10 mt-1 min-w-[176px] rounded-lg border border-[var(--border)] bg-[var(--surface)] p-1 shadow-[shadow:var(--shadow-soft)]">
                   {secondary.map(({ id, label }) => {
                     const href = `/app/products/${definition.slug}/${id}`;
                     const active = pathname === href;

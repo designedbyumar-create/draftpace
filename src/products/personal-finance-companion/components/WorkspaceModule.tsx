@@ -353,7 +353,7 @@ export default function WorkspaceModule({ definition }: { definition?: ProductDe
           {availableMoney && (
             <div
               id="pfc-tour-available-money"
-              className="rounded-[var(--radius)] bg-[var(--primary)] p-6 text-[var(--primary-contrast)] shadow-[var(--shadow-soft)] sm:p-7"
+              className="rounded-[var(--radius)] bg-[var(--primary)] p-6 text-[var(--primary-contrast)] shadow-[shadow:var(--shadow-soft)] sm:p-7"
             >
               <div className="flex items-center justify-between gap-3">
                 <p className="text-[11px] font-bold uppercase tracking-[0.14em] opacity-70">{availableMoney.label}</p>

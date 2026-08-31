@@ -77,7 +77,7 @@ export default function GuidesExplorer({
   return (
     <div>
       <div className="flex flex-col gap-4">
-        <div className="flex items-center gap-2.5 rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface)] px-4 py-3 shadow-[var(--shadow-xs)] focus-within:border-[var(--primary)]">
+        <div className="flex items-center gap-2.5 rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface)] px-4 py-3 shadow-[shadow:var(--shadow-xs)] focus-within:border-[var(--primary)]">
           <Search size={17} aria-hidden className="shrink-0 text-[var(--faint)]" />
           <input
             type="search"

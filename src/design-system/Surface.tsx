@@ -23,7 +23,7 @@ export default function Surface({
     <section
       id={id}
       className={`rounded-[var(--radius)] border border-[var(--border)] bg-[var(--surface)] ${
-        elevated ? "shadow-[var(--shadow-soft)]" : "shadow-[var(--shadow-xs)]"
+        elevated ? "shadow-[shadow:var(--shadow-soft)]" : "shadow-[shadow:var(--shadow-xs)]"
       } ${padded ? "p-5" : ""} ${className}`}
     >
       {children}

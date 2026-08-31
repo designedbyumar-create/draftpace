@@ -19,7 +19,7 @@ export default function CareersPage() {
   return (
     <main className="min-h-screen bg-[var(--bg)] text-[var(--text)]">
       <Container width="narrow" className="pb-24 pt-28 text-center">
-        <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--primary)]">Careers</p>
+        <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--brand-ink)]">Careers</p>
         <h1 className="mt-4 font-serif text-[40px] font-semibold leading-[1.05] tracking-tight sm:text-[52px]">
           Small team, deliberate growth.
         </h1>

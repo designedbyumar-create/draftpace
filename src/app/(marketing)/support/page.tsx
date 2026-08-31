@@ -46,7 +46,7 @@ const ENTRIES = [
 export default function SupportPage() {
   return (
     <Container width="narrow" className="pb-24 pt-16 sm:pt-20">
-      <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--primary)]">Support</p>
+      <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--brand-ink)]">Support</p>
       <h1 className="mt-3 font-serif text-[34px] font-semibold leading-tight tracking-tight sm:text-[44px]">
         Get help with something specific.
       </h1>

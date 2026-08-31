@@ -56,7 +56,7 @@ export default function NeedHelpPage() {
 
   return (
     <Container width="wide" className="pb-24 pt-16 sm:pt-20">
-      <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--primary)]">Need help</p>
+      <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--brand-ink)]">Need help</p>
       <h1 className="mt-3 max-w-2xl font-serif text-[34px] font-semibold leading-tight tracking-tight sm:text-[44px]">
         Which of these sounds like your week?
       </h1>

@@ -242,7 +242,7 @@ function FocalShell({
   badge?: React.ReactNode;
 }) {
   return (
-    <section className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[var(--shadow-soft)] sm:p-8">
+    <section className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[shadow:var(--shadow-soft)] sm:p-8">
       <div className="flex flex-wrap items-center gap-2">
         <p className="text-[12px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">{eyebrow}</p>
         {familyLabel && <span className="text-[12px] text-[var(--faint)]">· {familyLabel}</span>}

@@ -70,7 +70,7 @@ export default function GuidesIndexPage() {
 
   return (
     <Container width="wide" className="pb-24 pt-14 sm:pt-20">
-      <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--primary)]">Guides</p>
+      <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--brand-ink)]">Guides</p>
       <h1 className="mt-3 max-w-2xl font-serif text-[34px] font-semibold leading-[1.08] tracking-tight text-balance sm:text-[46px]">
         Practical help, whether or not you buy anything.
       </h1>

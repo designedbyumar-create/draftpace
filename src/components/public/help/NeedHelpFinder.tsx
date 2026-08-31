@@ -62,7 +62,7 @@ export default function NeedHelpFinder({ entries }: { entries: FinderEntry[] }) 
                 >
                   <span className="flex items-start justify-between gap-4">
                     <span>
-                      <span className="block text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--primary)]">
+                      <span className="block text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--brand-ink)]">
                         {entry.areaLabel}
                       </span>
                       <span className="mt-1.5 block text-[15px] leading-relaxed text-[var(--text)]">

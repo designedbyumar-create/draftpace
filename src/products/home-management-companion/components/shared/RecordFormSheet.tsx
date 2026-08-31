@@ -73,7 +73,7 @@ export default function RecordFormSheet({
     >
       <div
         ref={panelRef}
-        className="max-h-[90vh] w-full overflow-y-auto rounded-t-2xl bg-[var(--surface)] p-5 pb-[max(env(safe-area-inset-bottom),20px)] shadow-[var(--shadow-md)] sm:max-w-md sm:rounded-2xl sm:p-6"
+        className="max-h-[90vh] w-full overflow-y-auto rounded-t-2xl bg-[var(--surface)] p-5 pb-[max(env(safe-area-inset-bottom),20px)] shadow-[shadow:var(--shadow-md)] sm:max-w-md sm:rounded-2xl sm:p-6"
       >
         <div className="mb-4 flex items-start justify-between gap-4">
           <div>

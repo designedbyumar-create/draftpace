@@ -15,7 +15,7 @@ export default function HowItWorksPage() {
   return (
     <Container width="wide" className="pb-24 pt-16 sm:pt-20">
       <div className="max-w-2xl">
-        <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--primary)]">How it works</p>
+        <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--brand-ink)]">How it works</p>
         <h1 className="mt-3 font-serif text-[34px] font-semibold leading-tight tracking-tight sm:text-[44px]">
           What it is like to own a living product.
         </h1>

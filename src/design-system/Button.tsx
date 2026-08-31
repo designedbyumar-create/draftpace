@@ -33,13 +33,18 @@ const baseClass =
   "inline-flex items-center justify-center gap-2 whitespace-nowrap text-center font-semibold tracking-[-0.006em] transition-[transform,box-shadow,background-color,border-color,color] duration-[var(--dur-fast)] ease-[var(--ease-out)] active:scale-[0.985] active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none disabled:translate-y-0";
 
 const variantClass: Record<ButtonVariant, string> = {
+  // btn-fill-* are real classes in globals.css, not tokens, so their
+  // gradient resolves var(--primary) against the button itself and
+  // follows a product's own accent inside the product shell. The flat
+  // bg-[var(--primary)] underneath stays as the fallback for any engine
+  // without color-mix(), where the button is simply a solid accent.
   primary:
-    "bg-[var(--primary)] text-[var(--primary-contrast)] shadow-[var(--btn-primary-rest)] hover:bg-[var(--primary-strong)] hover:shadow-[var(--btn-primary-hover)] hover:-translate-y-px active:shadow-[var(--btn-primary-rest)]",
+    "btn-fill-primary bg-[var(--primary)] text-[var(--primary-contrast)] shadow-[shadow:var(--btn-primary-rest)] hover:shadow-[shadow:var(--btn-primary-hover)] hover:-translate-y-px active:shadow-[shadow:var(--btn-primary-rest)]",
   secondary:
-    "border border-[var(--border-strong)] bg-[var(--surface)] text-[var(--text)] shadow-[var(--btn-raise-rest)] hover:bg-[var(--surface-muted)] hover:border-[var(--border-strong)] hover:shadow-[var(--btn-raise-hover)] hover:-translate-y-px active:shadow-[var(--btn-raise-rest)]",
+    "btn-fill-secondary border border-[var(--border-strong)] bg-[var(--surface)] text-[var(--text)] shadow-[shadow:var(--btn-raise-rest)] hover:border-[var(--border-strong)] hover:shadow-[shadow:var(--btn-raise-hover)] hover:-translate-y-px active:shadow-[shadow:var(--btn-raise-rest)]",
   ghost: "text-[var(--muted)] hover:bg-[var(--surface-muted)] hover:text-[var(--text)]",
   danger:
-    "bg-[var(--danger)] text-white shadow-[var(--btn-raise-rest)] hover:brightness-[1.05] hover:shadow-[var(--btn-raise-hover)] hover:-translate-y-px active:shadow-[var(--btn-raise-rest)]",
+    "bg-[var(--danger)] text-white shadow-[shadow:var(--btn-raise-rest)] hover:brightness-[1.05] hover:shadow-[shadow:var(--btn-raise-hover)] hover:-translate-y-px active:shadow-[shadow:var(--btn-raise-rest)]",
 };
 
 const sizeClass: Record<ButtonSize, string> = {

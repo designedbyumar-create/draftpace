@@ -104,7 +104,7 @@ export default function GuidedTour({ steps, onFinish }: { steps: TourStep[]; onF
         aria-modal="false"
         aria-labelledby="mmr-tour-title"
         tabIndex={-1}
-        className="pointer-events-auto fixed w-[300px] max-w-[calc(100vw-32px)] rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[var(--shadow-md)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]"
+        className="pointer-events-auto fixed w-[300px] max-w-[calc(100vw-32px)] rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[shadow:var(--shadow-md)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]"
         style={popStyle}
       >
         <p className="text-[11px] font-semibold text-[var(--faint)]">

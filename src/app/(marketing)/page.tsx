@@ -83,7 +83,7 @@ export default function HomePage() {
       {/* 3. How these behave */}
       <section className="border-b border-[var(--border)]">
         <Container width="wide" className="py-16 sm:py-20">
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">How these behave</p>
+          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--brand-ink)]">How these behave</p>
           <h2 className="mt-3 max-w-2xl font-serif text-[30px] font-semibold leading-tight tracking-tight sm:text-[38px]">
             It never tells you that you are behind.
           </h2>
@@ -118,12 +118,26 @@ export default function HomePage() {
                 body: "No subscription to babysit. It does not expire if you step away for a year.",
               },
             ].map((item) => (
+              /*
+                These six were flat bordered boxes whose heading and body
+                were both 14px, so each card was a single grey block with
+                no hierarchy and the set read as filler. The fix is
+                typographic rather than decorative: the guarantee itself
+                is now the display line, in the same serif the page's own
+                headings use, with the explanation as fine print beneath
+                it. Deliberately no icon per card (CLAUDE.md's icon rule)
+                and no accent rail; the material is the same
+                --btn-secondary-bg the design system's secondary button
+                now uses, so a card and a control read as the same stuff.
+              */
               <div
                 key={item.head}
-                className="rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface)] p-5"
+                className="btn-fill-secondary group rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[shadow:var(--shadow-xs)] transition duration-[var(--dur-fast)] hover:-translate-y-0.5 hover:border-[var(--border-strong)] hover:shadow-[shadow:var(--shadow-soft)]"
               >
-                <p className="text-[14px] font-semibold text-[var(--text)]">{item.head}</p>
-                <p className="mt-2 text-[14px] leading-relaxed text-[var(--muted)]">{item.body}</p>
+                <p className="font-serif text-[17px] font-semibold leading-snug tracking-tight text-[var(--text)]">
+                  {item.head}
+                </p>
+                <p className="mt-2 text-[13.5px] leading-relaxed text-[var(--muted)]">{item.body}</p>
               </div>
             ))}
           </div>
@@ -137,7 +151,7 @@ export default function HomePage() {
       {/* 4. The series */}
       <section className="border-b border-[var(--border)]">
         <Container width="wide" className="py-16 sm:py-20">
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">The Companion Series</p>
+          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--brand-ink)]">The Companion Series</p>
           <h2 className="mt-3 max-w-2xl font-serif text-[30px] font-semibold leading-tight tracking-tight sm:text-[38px]">
             Seven companions. Each one does a single hard thing.
           </h2>
@@ -154,7 +168,7 @@ export default function HomePage() {
       {/* 5. Owned, not rented */}
       <section className="border-b border-[var(--border)]">
         <Container width="narrow" className="py-16 text-center sm:py-20">
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Owned, not rented</p>
+          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--brand-ink)]">Owned, not rented</p>
           <h2 className="mt-3 font-serif text-[30px] font-semibold leading-tight tracking-tight sm:text-[38px]">
             You own it. It does not expire, and it does not watch you.
           </h2>
@@ -166,7 +180,7 @@ export default function HomePage() {
             {["Yours to keep", "Works offline", "No ads, no data resale"].map((chip) => (
               <span
                 key={chip}
-                className="inline-flex items-center rounded-full border border-[var(--border)] bg-[var(--surface)] px-4 py-2 text-[13px] font-semibold text-[var(--text)] shadow-[var(--shadow-xs)]"
+                className="inline-flex items-center rounded-full border border-[var(--border)] bg-[var(--surface)] px-4 py-2 text-[13px] font-semibold text-[var(--text)] shadow-[shadow:var(--shadow-xs)]"
               >
                 {chip}
               </span>

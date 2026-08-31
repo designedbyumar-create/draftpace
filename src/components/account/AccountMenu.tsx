@@ -72,7 +72,7 @@ export default function AccountMenu({
           >
             <Avatar label={label} size="sm" />
           </summary>
-          <div className="absolute right-0 z-20 mt-2 min-w-[216px] rounded-lg border border-[var(--border)] bg-[var(--surface)] p-1 shadow-[var(--shadow-soft)]">
+          <div className="absolute right-0 z-20 mt-2 min-w-[216px] rounded-lg border border-[var(--border)] bg-[var(--surface)] p-1 shadow-[shadow:var(--shadow-soft)]">
             {items.map((item) => (
               <AccountMenuRow key={item.key} item={item} onSelect={closeDesktopMenu} />
             ))}

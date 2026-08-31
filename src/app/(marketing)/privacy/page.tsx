@@ -107,7 +107,7 @@ export default function PrivacyPage() {
   return (
     <main className="bg-[var(--bg)] text-[var(--text)]">
       <Container width="narrow" className="pb-6 pt-24">
-        <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--primary)]">Legal</p>
+        <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--brand-ink)]">Legal</p>
         <h1 className="mt-3 font-serif text-[36px] font-semibold leading-tight tracking-tight sm:text-[44px]">
           Privacy Policy
         </h1>

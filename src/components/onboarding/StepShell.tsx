@@ -60,7 +60,7 @@ export default function StepShell({
           ))}
         </div>
 
-        <section className="mt-6 flex-1 overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[var(--shadow-soft)] transition-colors duration-[var(--dur)] ease-[var(--ease-out)] sm:p-8">
+        <section className="mt-6 flex-1 overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[shadow:var(--shadow-soft)] transition-colors duration-[var(--dur)] ease-[var(--ease-out)] sm:p-8">
           <AnimatePresence mode="wait" initial={false}>
             <motion.div
               key={step}

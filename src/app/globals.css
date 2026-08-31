@@ -56,6 +56,22 @@ html {
   --logo-mark: #0f172a;
   --logo-mark-glyph: #ffffff;
   --logo-word: #1e293b;
+
+  /* Brand ink: the logo's own dark slate, promoted from a logo-only
+     colour into a real brand token.
+     THE RULE THIS ENCODES: teal means "you can act on this" (buttons,
+     links, the one primary CTA). Ink means "this is a label" (eyebrows,
+     section labels, filter tags). Before this token existed the two were
+     confused in both directions: the homepage's area chips were teal and
+     the Shop's were plain --text, so the same control read as two
+     different things on two pages, and teal was spent on 27 static
+     eyebrows that nobody can click.
+     In dark the logo itself turns teal, so ink has no literal logo
+     counterpart there; it becomes the pale slate that plays the same
+     role against a dark ground. */
+  --brand-ink: #1e293b;
+  --brand-ink-soft: #eef1f5;
+  --brand-ink-contrast: #ffffff;
   --success: #12795b;
   --success-soft: #e3f3ec;
   --warning: #9a5a11;
@@ -100,8 +116,11 @@ html {
 
   /* Buttons carry their own material: a hairline inset top highlight so the top
      edge catches light, plus a colour-matched drop shadow so the primary sits on
-     its own accent glow (no gradients). These are tokens so they follow the
-     accent and invert cleanly in dark. */
+     its own accent glow. These are tokens so they follow the accent and invert
+     cleanly in dark.
+     The gradient fill itself is NOT a token here; it is the .btn-fill-*
+     classes further down. See the note on those for why a custom property
+     cannot do this job. */
   --btn-primary-rest: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 1px 2px rgba(10, 86, 92, 0.24), 0 3px 10px -3px rgba(14, 110, 117, 0.4);
   --btn-primary-hover: inset 0 1px 0 rgba(255, 255, 255, 0.26), 0 2px 4px rgba(10, 86, 92, 0.26), 0 10px 22px -6px rgba(14, 110, 117, 0.5);
   --btn-raise-rest: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 1px 1px rgba(28, 25, 20, 0.04), 0 1px 2px rgba(28, 25, 20, 0.06);
@@ -151,6 +170,9 @@ html[data-theme="dark"] {
   --logo-mark: #4fc7c9;
   --logo-mark-glyph: #06282a;
   --logo-word: #4fc7c9;
+  --brand-ink: #c5d0de;
+  --brand-ink-soft: rgba(197, 208, 222, 0.14);
+  --brand-ink-contrast: #16202e;
   --success: #6fd3b3;
   --success-soft: rgba(111, 211, 179, 0.14);
   --warning: #e6b46a;
@@ -221,6 +243,9 @@ html[data-theme="dark"] {
     --logo-mark: #4fc7c9;
     --logo-mark-glyph: #06282a;
     --logo-word: #4fc7c9;
+    --brand-ink: #c5d0de;
+    --brand-ink-soft: rgba(197, 208, 222, 0.14);
+    --brand-ink-contrast: #16202e;
     --success: #6fd3b3;
     --success-soft: rgba(111, 211, 179, 0.14);
     --warning: #e6b46a;
@@ -310,6 +335,57 @@ html[data-text-scale="large"] {
 
 html[data-text-scale="larger"] {
   font-size: 125%;
+}
+
+/*
+ * Button fills.
+ *
+ * WHY THESE ARE CLASSES AND NOT TOKENS, which is the whole point:
+ * a custom property whose value contains var(--primary) is substituted
+ * where the property is DECLARED, not where it is used. Declaring
+ * --btn-primary-bg on html therefore bakes in html's teal and inherits
+ * that same teal everywhere, including inside a product shell where
+ * productThemeStyle() has just reassigned --primary to that product's
+ * own accent. Every product's primary button would have silently turned
+ * Draftpace teal. Verified in the browser before this was written.
+ *
+ * A real property on the element itself resolves var(--primary) against
+ * that element, so these follow whatever accent is in scope: brand teal
+ * on marketing, the product's own accent inside /app/products, and the
+ * dark-mode value of each automatically.
+ *
+ * The fill is a shallow vertical gradient: about one stop of lift at the
+ * top and one of shade at the bottom, which is what reads as a physical,
+ * premium control under the inset highlight the --btn-*-rest shadows
+ * add. One hue only, never two, so a button still looks like the brand
+ * rather than like a promotion. The midpoint is exactly --primary, so
+ * the accent is still the colour the control is "made of".
+ */
+.btn-fill-primary {
+  background-image: linear-gradient(
+    180deg,
+    color-mix(in srgb, #fff 13%, var(--primary)) 0%,
+    var(--primary) 52%,
+    color-mix(in srgb, #000 10%, var(--primary)) 100%
+  );
+}
+.btn-fill-primary:hover {
+  background-image: linear-gradient(
+    180deg,
+    color-mix(in srgb, #fff 22%, var(--primary)) 0%,
+    color-mix(in srgb, #fff 7%, var(--primary)) 52%,
+    color-mix(in srgb, #000 3%, var(--primary)) 100%
+  );
+}
+.btn-fill-secondary {
+  background-image: linear-gradient(
+    180deg,
+    var(--surface) 0%,
+    color-mix(in srgb, var(--surface-muted) 55%, var(--surface)) 100%
+  );
+}
+.btn-fill-secondary:hover {
+  background-image: linear-gradient(180deg, var(--surface) 0%, var(--surface-muted) 100%);
 }
 
 html[data-reduce-motion="true"] *,

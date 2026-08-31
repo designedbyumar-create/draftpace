@@ -60,5 +60,5 @@ export default function RichSection({
 }
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
-  return <h2 className="text-[13px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">{children}</h2>;
+  return <h2 className="text-[13px] font-bold uppercase tracking-[0.14em] text-[var(--brand-ink)]">{children}</h2>;
 }

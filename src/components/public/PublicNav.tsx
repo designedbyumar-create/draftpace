@@ -49,8 +49,14 @@ export default function PublicNav({ user }: { user: PublicNavUser }) {
     // only ever on show in the one situation where it looked broken.
     <header className="sticky top-0 z-40 border-b border-[var(--border)] bg-[var(--bg)]">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        {/*
+          32, not 40, against this header's own h-16. At 40 the lockup
+          filled 62% of the bar and read as the loudest thing on every
+          page; 32 puts it at half the bar height, which is where a
+          wordmark sits on a site that wants its content to lead.
+        */}
         <Link href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
-          <Logo height={40} />
+          <Logo height={32} />
         </Link>
 
         <nav aria-label="Primary" className="hidden items-center gap-6 lg:flex">

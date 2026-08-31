@@ -14,7 +14,7 @@ export default function TheGraveyard() {
   return (
     <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
       <div>
-        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Why we exist</p>
+        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--brand-ink)]">Why we exist</p>
         <h2 className="mt-3 font-serif text-[30px] font-semibold leading-tight tracking-tight sm:text-[38px]">
           Most of what you buy online dies on download.
         </h2>

@@ -73,10 +73,13 @@ function FilterChip({ label, active, onClick }: { label: string; active: boolean
       type="button"
       onClick={onClick}
       aria-pressed={active}
+      // Brand ink rather than raw --text, matching the homepage's own
+      // area chips exactly. Both are the same control doing the same job
+      // and now look it. See --brand-ink in globals.css.
       className={`rounded-full border px-3.5 py-2 text-[13px] font-semibold transition-colors ${
         active
-          ? "border-[var(--text)] bg-[var(--text)] text-[var(--surface)]"
-          : "border-[var(--border-strong)] bg-[var(--surface)] text-[var(--muted)] hover:border-[var(--primary)] hover:text-[var(--text)]"
+          ? "border-[var(--brand-ink)] bg-[var(--brand-ink)] text-[var(--brand-ink-contrast)]"
+          : "border-[var(--border-strong)] bg-[var(--surface)] text-[var(--muted)] hover:border-[var(--brand-ink)] hover:text-[var(--text)]"
       }`}
     >
       {label}
@@ -102,7 +105,7 @@ function ShopProductCard({ entry }: { entry: ShopGridEntry }) {
   const firstOutcome = product.outcomes[0];
 
   return (
-    <div className="group flex flex-col overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-[var(--shadow-xs)] transition hover:border-[var(--border-strong)] hover:shadow-[var(--shadow-md)]">
+    <div className="group flex flex-col overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-[shadow:var(--shadow-xs)] transition hover:border-[var(--border-strong)] hover:shadow-[shadow:var(--shadow-md)]">
       {/*
         thumbnail crosses a component boundary: it's built once in
         ShopIndexPage (a real phone mockup, not a route module - see
@@ -117,7 +120,7 @@ function ShopProductCard({ entry }: { entry: ShopGridEntry }) {
           {areaLabel && (
             <span
               key="area-tag"
-              className="absolute left-3 top-3 z-10 rounded-full bg-[var(--surface)]/92 px-2.5 py-1 text-[11px] font-bold tracking-wide text-[var(--text)] shadow-[var(--shadow-xs)] backdrop-blur"
+              className="absolute left-3 top-3 z-10 rounded-full bg-[var(--surface)]/92 px-2.5 py-1 text-[11px] font-bold tracking-wide text-[var(--text)] shadow-[shadow:var(--shadow-xs)] backdrop-blur"
             >
               {areaLabel}
             </span>

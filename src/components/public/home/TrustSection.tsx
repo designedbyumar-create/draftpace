@@ -10,7 +10,7 @@ export default function TrustSection() {
   return (
     <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
       <div>
-        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Trust</p>
+        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--brand-ink)]">Trust</p>
         <h2 className="mt-3 font-serif text-[30px] font-semibold leading-tight tracking-tight sm:text-[38px]">
           A living product is personal. The way it is handled should be clear.
         </h2>

@@ -37,7 +37,7 @@ export default function LivingProductHero() {
   };
 
   return (
-    <figure className="m-0 rounded-[var(--radius-xl)] border border-[var(--border)] bg-[var(--surface)] p-4 shadow-[var(--shadow-soft)] sm:p-5">
+    <figure className="m-0 rounded-[var(--radius-xl)] border border-[var(--border)] bg-[var(--surface)] p-4 shadow-[shadow:var(--shadow-soft)] sm:p-5">
       <div className="mb-4 flex items-center justify-between gap-3">
         <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--faint)]">
           The same thing you bought
@@ -52,7 +52,7 @@ export default function LivingProductHero() {
                 aria-pressed={active}
                 onClick={() => select(value)}
                 className={`rounded-full px-3 py-1 text-[11px] font-semibold transition-colors duration-[var(--dur-fast)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] ${
-                  active ? "bg-[var(--surface)] text-[var(--text)] shadow-[var(--shadow-xs)]" : "text-[var(--muted)] hover:text-[var(--text)]"
+                  active ? "bg-[var(--surface)] text-[var(--text)] shadow-[shadow:var(--shadow-xs)]" : "text-[var(--muted)] hover:text-[var(--text)]"
                 }`}
               >
                 {value === "static" ? "Static file" : "Living product"}
@@ -108,7 +108,7 @@ export default function LivingProductHero() {
                     </span>
                     <p className="text-[14px] font-semibold text-[var(--text)]">Monthly Money Reset</p>
                   </div>
-                  <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Live</span>
+                  <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-[var(--brand-ink)]">Live</span>
                 </div>
               </Stagger>
 
@@ -117,7 +117,7 @@ export default function LivingProductHero() {
               </Stagger>
 
               <Stagger reduceMotion={reduceMotion} index={2}>
-                <div className="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--surface)] p-4 shadow-[var(--shadow-xs)]">
+                <div className="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--surface)] p-4 shadow-[shadow:var(--shadow-xs)]">
                   <p className="text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--faint)]">Safe to spend today</p>
                   <p className="mt-1 font-serif text-[32px] font-semibold leading-none tracking-tight text-[var(--text)]">$84</p>
                 </div>
@@ -129,7 +129,7 @@ export default function LivingProductHero() {
                     <Bell size={12} aria-hidden />
                   </span>
                   <div>
-                    <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-[var(--primary)]">Next</p>
+                    <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-[var(--brand-ink)]">Next</p>
                     <p className="mt-0.5 text-[13px] font-semibold text-[var(--text)]">Log yesterday&rsquo;s spending, then you are set for the week.</p>
                   </div>
                 </div>

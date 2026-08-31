@@ -51,7 +51,7 @@ export default function CompanionPicker({ panels }: { panels: PickerPanel[] }) {
   return (
     <div className="grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-center lg:gap-12">
       <div>
-        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">The Companion Series</p>
+        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--brand-ink)]">The Companion Series</p>
         <h1 className="mt-4 font-serif text-[38px] font-semibold leading-[1.08] tracking-tight sm:text-[48px] lg:text-[54px]">
           For the parts of life that are hard to keep track of.
         </h1>
@@ -76,11 +76,16 @@ export default function CompanionPicker({ panels }: { panels: PickerPanel[] }) {
                     setChosen(true);
                     setIndex(i);
                   }}
+                  // Brand ink, not teal: an area chip is a label you are
+                  // sorting by, not the page's call to action. This is the
+                  // same treatment the Shop's filter bar uses, so the one
+                  // control does not read as two different things on two
+                  // pages. See --brand-ink in globals.css.
                   className={[
                     "rounded-full border px-3.5 py-2 text-[13px] font-semibold transition-colors",
                     isActive
-                      ? "border-[var(--primary)] bg-[var(--primary)] text-[var(--on-primary,#fff)]"
-                      : "border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:border-[var(--primary)] hover:text-[var(--text)]",
+                      ? "border-[var(--brand-ink)] bg-[var(--brand-ink)] text-[var(--brand-ink-contrast)]"
+                      : "border-[var(--border-strong)] bg-[var(--surface)] text-[var(--muted)] hover:border-[var(--brand-ink)] hover:text-[var(--text)]",
                   ].join(" ")}
                 >
                   {panel.areaLabel}

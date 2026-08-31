@@ -150,7 +150,7 @@ export default function PrintablesModule({ definition }: { definition: ProductDe
 /** The living preview: an on-screen mirror of the artifact, in MMR's world. */
 function PrintablePreview({ data }: { data: MoneyResetPdfData }) {
   return (
-    <div className="mt-6 overflow-hidden rounded-2xl border border-[var(--mmr-line)] bg-[var(--mmr-paper)] shadow-[var(--shadow-soft)]">
+    <div className="mt-6 overflow-hidden rounded-2xl border border-[var(--mmr-line)] bg-[var(--mmr-paper)] shadow-[shadow:var(--shadow-soft)]">
       <div className="flex items-center justify-between border-b border-[var(--mmr-line)] px-6 py-3">
         <span className="text-[9px] font-bold uppercase tracking-[0.16em] text-[var(--mmr-sage-strong)]">
           Monthly Money Reset

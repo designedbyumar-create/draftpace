@@ -27,7 +27,7 @@ export default function AuthCard({
         <LogoMark size={40} />
       </Link>
 
-      <div className="w-full max-w-sm overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-[var(--shadow-soft)]">
+      <div className="w-full max-w-sm overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-[shadow:var(--shadow-soft)]">
         <div className="p-6 sm:p-8">
           {eyebrow && (
             <p className="mb-1.5 text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">{eyebrow}</p>

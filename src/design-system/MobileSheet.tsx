@@ -73,7 +73,7 @@ export default function MobileSheet({
         if (event.target === event.currentTarget) onClose();
       }}
     >
-      <div className="max-h-[85vh] w-full overflow-y-auto rounded-t-2xl bg-[var(--surface)] p-5 pb-[max(env(safe-area-inset-bottom),20px)] shadow-[var(--shadow-md)]">
+      <div className="max-h-[85vh] w-full overflow-y-auto rounded-t-2xl bg-[var(--surface)] p-5 pb-[max(env(safe-area-inset-bottom),20px)] shadow-[shadow:var(--shadow-md)]">
         <div className="mb-4 flex items-center justify-between gap-4">
           <p id="mobile-sheet-title" className="text-[15px] font-semibold text-[var(--text)]">
             {title}

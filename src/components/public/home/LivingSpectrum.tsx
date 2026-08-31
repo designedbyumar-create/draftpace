@@ -97,7 +97,7 @@ export default function LivingSpectrum() {
               );
             })}
             <motion.span
-              className="pointer-events-none absolute top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-[var(--primary)] bg-[var(--surface)] shadow-[var(--btn-primary-rest)]"
+              className="pointer-events-none absolute top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-[var(--primary)] bg-[var(--surface)] shadow-[shadow:var(--btn-primary-rest)]"
               animate={{ left: `${fillPercent}%` }}
               transition={reduceMotion ? { duration: 0 } : { type: "spring", stiffness: 320, damping: 32 }}
             />
@@ -125,7 +125,7 @@ export default function LivingSpectrum() {
         initial={reduceMotion ? false : { opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-        className="rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[var(--shadow-soft)] sm:p-7"
+        className="rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[shadow:var(--shadow-soft)] sm:p-7"
       >
         <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--faint)]">{active.example}</p>
         <p className="mt-2 font-serif text-[24px] font-semibold tracking-tight text-[var(--text)]">{active.title}</p>

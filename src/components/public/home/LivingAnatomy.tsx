@@ -88,7 +88,7 @@ export default function LivingAnatomy() {
         id="behavior-panel"
         role="tabpanel"
         aria-labelledby={`behavior-tab-${active.id}`}
-        className="flex min-h-[280px] flex-col justify-center rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[var(--shadow-soft)] sm:p-8"
+        className="flex min-h-[280px] flex-col justify-center rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[shadow:var(--shadow-soft)] sm:p-8"
       >
         <BehaviorDemo id={active.id} reduceMotion={reduceMotion} />
       </div>
@@ -158,7 +158,7 @@ function BehaviorDemo({ id, reduceMotion }: { id: string; reduceMotion: boolean 
             <ArrowRight size={12} aria-hidden />
           </span>
           <div>
-            <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-[var(--primary)]">Next</p>
+            <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-[var(--brand-ink)]">Next</p>
             <p className="mt-0.5 text-[13px] font-semibold text-[var(--text)]">Move $200 into savings before Friday.</p>
           </div>
         </div>
@@ -197,7 +197,7 @@ function BehaviorDemo({ id, reduceMotion }: { id: string; reduceMotion: boolean 
           <Check size={12} aria-hidden />
         </span>
         <div>
-          <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-[var(--primary)]">Plan adjusted</p>
+          <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-[var(--brand-ink)]">Plan adjusted</p>
           <p className="mt-0.5 text-[13px] font-semibold text-[var(--text)]">Everything shifted to the 8th. You did not rebuild a thing.</p>
         </div>
       </div>
