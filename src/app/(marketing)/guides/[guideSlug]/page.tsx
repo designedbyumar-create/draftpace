@@ -14,6 +14,8 @@ import {
   formatGuideDate,
   getGuideBySlug,
   guidesForArea,
+  localeCounterpart,
+  localeLabel,
   readingMinutes,
   readingTimeLabel,
   relatedGuides,
@@ -86,6 +88,7 @@ export default async function GuideOrHubPage({ params }: { params: Promise<{ gui
   const { previous, next } = adjacentGuides(guide);
   const headings = guideHeadings(guide.body);
   const { Mark } = areaIdentity(guide.areaSlug);
+  const counterpart = localeCounterpart(guide);
 
   const eyebrow = isSeries ? "The Companion Series" : (guideArea?.label ?? "Guides");
   const eyebrowHref = isSeries ? "/guides" : guideArea ? `/guides/${guideArea.slug}` : "/guides";
@@ -115,6 +118,29 @@ export default async function GuideOrHubPage({ params }: { params: Promise<{ gui
                 {guide.title}
               </h1>
               <p className="mt-4 max-w-[54ch] text-[17px] leading-relaxed text-[var(--muted)]">{guide.dek}</p>
+              {/* Loud, above the fold, and before a word of the procedure.
+                  Six of these guides described UK probate with nothing
+                  saying so, and an American reader was being told to do
+                  something that does not exist where they live. */}
+              {guide.locale && (
+                <p className="mt-5 inline-flex flex-wrap items-center gap-2 rounded-lg border border-[var(--area)] bg-[var(--surface)] px-3 py-2 text-[13.5px]">
+                  <span className="font-bold uppercase tracking-[0.1em] text-[var(--area)]">
+                    {localeLabel(guide.locale)}
+                  </span>
+                  <span className="text-[var(--muted)]">
+                    This describes the {localeLabel(guide.locale)} procedure.
+                  </span>
+                  {counterpart && (
+                    <Link
+                      href={`/guides/${counterpart.slug}`}
+                      className="font-semibold text-[var(--area)] underline underline-offset-2"
+                    >
+                      Read the {localeLabel(counterpart.locale!)} version
+                    </Link>
+                  )}
+                </p>
+              )}
+
               <p className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-[13px] text-[var(--muted)]">
                 <span className="inline-flex items-center gap-1.5">
                   <Clock size={14} aria-hidden className="text-[var(--area)]" />

@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   GUIDES, SERIES, guidesForArea, relatedGuides, areasWithGuides, seriesGuides,
-  readingMinutes, readingTimeLabel,
+  readingMinutes, readingTimeLabel, localeCounterpart,
 } from "./guides";
 import { LIFE_AREAS, getAreaBySlug } from "./areas";
 import { blockStrings, blockBodyStrings } from "./guideText";
@@ -361,6 +361,90 @@ describe("factual claims", () => {
           }
         }
       }
+    }
+  });
+});
+
+/**
+ * The state guide is the anchor page for the strongest query in the
+ * library and it shipped promising fifty states while naming twenty
+ * two. A parent in an unlisted state clicked, found nothing and left,
+ * which is the worst failure a page can have: the click happens and the
+ * answer is not there.
+ */
+describe("state coverage", () => {
+  it("covers every US jurisdiction it promises", () => {
+    const guide = GUIDES.find((g) => g.slug === "homeschool-record-keeping-requirements-by-state");
+    expect(guide, "the state guide should exist").toBeDefined();
+    const table = guide!.body.find((block) => block.kind === "table");
+    expect(table, "the state guide should carry a table").toBeDefined();
+    if (table?.kind !== "table") return;
+
+    const listed = new Set(table.rows.map((row) => row[0]));
+    const missing = US_JURISDICTIONS.filter((name) => !listed.has(name));
+    expect(missing, `not covered: ${missing.join(", ")}`).toEqual([]);
+  });
+});
+
+const US_JURISDICTIONS = [
+  "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware",
+  "District of Columbia", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa",
+  "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota",
+  "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey",
+  "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon",
+  "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah",
+  "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming",
+];
+
+/**
+ * Locale.
+ *
+ * Six affairs guides shipped describing UK probate, using "register
+ * office" and "solicitor", with nothing on the page saying so. An
+ * American reader was being told to do something that does not exist
+ * where they live, and search confirms the problem is real: people put
+ * the country in the query.
+ *
+ * A guide either declares its country or contains no country-specific
+ * procedure. There is no third option.
+ */
+describe("locale", () => {
+  const UK_TERMS = /\b(register office|registering the death|grant of probate|section 27)\b/i;
+  const US_TERMS = /\b(letters testamentary|probate court|Social Security Administration|credit bureaus)\b/i;
+
+  /**
+   * The test is exclusivity, not mention. A guide that names both
+   * countries' terms in one sentence is explaining the difference,
+   * which is exactly what an undeclared guide should do. A guide that
+   * uses only one country's vocabulary is silently assuming a reader.
+   */
+  it("never uses one country's vocabulary exclusively without declaring it", () => {
+    for (const guide of GUIDES) {
+      if (guide.locale) continue;
+      const text = [guide.title, guide.dek, ...guide.body.flatMap(blockStrings)].join(" ");
+      const uk = UK_TERMS.test(text);
+      const us = US_TERMS.test(text);
+      expect(uk && !us, `${guide.slug} uses only UK terms and declares no country`).toBe(false);
+      expect(us && !uk, `${guide.slug} uses only US terms and declares no country`).toBe(false);
+    }
+  });
+
+  it("gives every localised guide a counterpart in the other country", () => {
+    const localised = GUIDES.filter((guide) => guide.locale);
+    expect(localised.length, "the locale field is in use").toBeGreaterThan(0);
+    for (const guide of localised) {
+      const other = localeCounterpart(guide);
+      expect(other, `${guide.slug} has no counterpart, so one market is stranded`).toBeDefined();
+      expect(other!.locale).not.toBe(guide.locale);
+    }
+  });
+
+  it("keeps British vocabulary out of everything that is not a UK guide", () => {
+    for (const guide of GUIDES) {
+      if (guide.locale === "uk") continue;
+      const text = [guide.title, guide.dek, ...guide.body.flatMap(blockStrings)].join(" ");
+      expect(/\bfortnight\b/i.test(text), `${guide.slug} says fortnight`).toBe(false);
+      expect(/\bwhilst\b/i.test(text), `${guide.slug} says whilst`).toBe(false);
     }
   });
 });

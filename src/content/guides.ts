@@ -114,8 +114,52 @@ export type Guide = {
    * did.
    */
   areaSlug: string | typeof SERIES | null;
+  /**
+   * Which country's procedure this describes, where that matters.
+   *
+   * Undeclared means the guidance holds anywhere: how to make a phone
+   * call you have been avoiding does not change at a border. Declared
+   * means it does, and the page says so loudly at the top.
+   *
+   * This exists because six affairs guides shipped describing UK
+   * probate, using "register office" and "solicitor", with nothing
+   * saying so. An American reading them was being told to do something
+   * that does not exist where they live. Search bears the problem out:
+   * people put the country in the query, and "what to do when a parent
+   * dies uk" and "what to do when a parent dies in florida" are both
+   * things people type.
+   */
+  locale?: "us" | "uk";
   body: GuideBlock[];
 };
+
+/** Guides whose procedure is specific to one country. */
+export function localeLabel(locale: "us" | "uk"): string {
+  return locale === "us" ? "United States" : "United Kingdom";
+}
+
+/**
+ * The same guide written for the other country, if it exists.
+ *
+ * Paired guides share everything but the procedure, so each one links to
+ * its counterpart rather than leaving a reader to work out that the page
+ * they want is elsewhere.
+ */
+export function localeCounterpart(guide: Guide): Guide | undefined {
+  if (!guide.locale) return undefined;
+
+  // The primary market keeps the unsuffixed slug, because that is the
+  // URL the head term deserves and the United States is the larger
+  // audience. So a pair is "slug" and "slug-uk", not "slug-us" and
+  // "slug-uk", and the lookup has to work in both directions.
+  const stem = guide.slug.replace(/-(uk|us)$/, "");
+  const other = guide.locale === "uk" ? "us" : "uk";
+  return GUIDES.find(
+    (candidate) =>
+      candidate.locale === other &&
+      (candidate.slug === `${stem}-${other}` || candidate.slug === stem)
+  );
+}
 
 /** A guide belonging to the whole Companion Series rather than one life area. */
 export const SERIES = "series" as const;
@@ -137,9 +181,110 @@ export const GUIDES: Guide[] = [
   {
     slug: "what-to-do-when-a-parent-dies",
     title: "What to do when a parent dies: a clear order for the first two weeks",
-    dek: "The practical steps, in the order they actually need doing, written for somebody who is grieving and cannot hold a list in their head.",
+    dek: "The practical steps in the order they actually need doing, written for somebody who is grieving and cannot hold a list in their head.",
     publishedAt: "2026-08-30",
+    updatedAt: "2026-08-31",
     areaSlug: "affairs-and-endings",
+    locale: "us",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "When a parent dies there are perhaps six things that genuinely need doing in the first week, and several dozen that feel urgent and are not. The difference matters, because you are being asked to do administration at the exact moment you are least able to.",
+          "This is the order that works. Get certified copies of the death certificate, because almost nothing else can start without them. Find the will. Tell the small number of organizations that actually need telling now. Secure the property. Then stop, because the rest can genuinely wait, and most of it will take months anyway.",
+          "Nothing here is legal advice. Probate and creditor rules are set by state and sometimes by county, and the funeral director and the probate clerk where your parent lived will tell you what applies.",
+        ],
+      },
+      {
+        kind: "timeline",
+        heading: "The first 48 hours",
+        steps: [
+          {
+            when: "Straight away",
+            what: "Get the death pronounced. In a hospital, hospice or nursing facility, staff handle it. At home with hospice involved, call the hospice line rather than 911. At home unexpectedly, call 911.",
+          },
+          {
+            when: "Same day",
+            what: "Choose a funeral home. In most states they file the death certificate with the county or state vital records office on your behalf, which is why this step gates the next one.",
+          },
+          {
+            when: "When you order",
+            what: "Ask the funeral home for certified copies of the death certificate. Ten is normal. Each institution wants its own and most will not take a photocopy.",
+          },
+          {
+            when: "Check first",
+            what: "Ask whether a prepaid funeral plan or burial policy already exists before arranging anything. Many people have one and never mention it.",
+          },
+          {
+            when: "Within thirty days",
+            what: "Secure the property. Lock it, forward the mail, and check the homeowners policy, because most insurers restrict cover once a house has been vacant for thirty or sixty days.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Why you need so many death certificates",
+        paragraphs: [
+          "Banks, brokerages, insurers, pension administrators, the Social Security Administration, the DMV and the county recorder will each want a certified copy, and most will not accept a scan or a photocopy. Some return them and some keep them.",
+          "Ordering ten through the funeral home at the outset is far cheaper and faster than ordering them one at a time from vital records over the following six months. This is the single most common thing people wish they had known.",
+        ],
+      },
+      {
+        kind: "list",
+        checkable: true,
+        heading: "Who to tell in the first two weeks",
+        intro: "Not everybody. Just the ones where delay causes a real problem.",
+        items: [
+          "Social Security, which the funeral home often reports for you. Confirm it was done, because benefits paid for the month of death usually have to be returned.",
+          "Their bank and any credit union, so accounts can be frozen and automatic payments stopped.",
+          "Their employer or pension administrator, because overpaid pension is reclaimed and stopping it is easier than repaying it.",
+          "Medicare, Medicaid or the VA, if any applied.",
+          "Home and auto insurers, particularly if a property is now unoccupied or a vehicle is being kept.",
+          "The three credit bureaus, to place a deceased alert and reduce the risk of identity theft.",
+          "Their landlord or mortgage servicer.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Where to look for the will",
+        paragraphs: [
+          "Start with the obvious places, because that is usually where it is: a home safe, a filing box, a bedside drawer. Then the less obvious. Many people leave the original with the attorney who drafted it, and some counties allow a will to be deposited with the probate court during life.",
+          "If you find one, read who is named as executor before doing anything else. That person petitions the probate court for the authority to act, and if it is not you, several of the steps above become theirs rather than yours.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What can genuinely wait",
+        paragraphs: [
+          "Probate runs for months in most states, and there is no version of this where you finish it in two weeks. Closing accounts, valuing the estate, filing the final tax return and distributing anything are all downstream of steps you have not yet completed.",
+          "Clearing the house can wait too, and most people who rush it regret it. Nothing bad happens if a closet stays full until spring.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The part nobody warns you about",
+        paragraphs: [
+          "The hardest thing about these two weeks is rarely any single task. It is that you are reconstructing somebody's entire administrative life from the outside, without a map, while grieving. Which bank. Which 401(k). Whether there was life insurance. Whether the utilities were in their name. Who the attorney was.",
+          "Most families find some of it and never find the rest. Money sits unclaimed with state treasurers, subscriptions keep taking payments for years, and somebody spends a Sunday going through paper looking for a policy number that may not exist.",
+          "It is worth saying plainly, because it is the thing you will think about later: this is not something you can fix now, for the person who has died. It is something you can fix for the next person, which is usually you.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Personal Life Affairs Companion is built for the other side of this. It walks you through recording what exists, where it is kept, and who should be told, so nobody has to reconstruct it from the outside. It never asks you to upload a document, only to record where one is. If these two weeks have shown you how hard the search is, that is exactly the problem it exists to prevent.",
+      },
+    ],
+  },
+
+  {
+    slug: "what-to-do-when-a-parent-dies-uk",
+    title: "What to do when a parent dies in the UK: the first two weeks",
+    dek: "Registering the death, ordering certificates and telling the right people, in the order they need doing, for England, Wales, Scotland and Northern Ireland.",
+    publishedAt: "2026-08-30",
+    updatedAt: "2026-08-31",
+    areaSlug: "affairs-and-endings",
+    locale: "uk",
     body: [
       {
         kind: "paragraphs",
@@ -272,7 +417,7 @@ export const GUIDES: Guide[] = [
           "Their phone, for banking and authenticator apps that name institutions.",
           "The pension tracing service most countries run, which finds schemes from former employers.",
           "Unclaimed asset registers, which hold dormant accounts and lost policies.",
-          "Their accountant or solicitor, who often knows more than the family does.",
+          "Their accountant, attorney or solicitor, who often knows more than the family does.",
           "The loft, the filing box, and the drawer nobody has opened, which sound like jokes and are where a great deal of this is actually found.",
         ],
       },
@@ -280,7 +425,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "What you will need before anybody talks to you",
         paragraphs: [
-          "Almost every institution will want a certified copy of the death certificate, proof of your own identity, and evidence of your authority to act, which usually means the will naming you as executor or a grant of probate.",
+          "Almost every institution will want a certified copy of the death certificate, proof of your own identity, and evidence of your authority to act, which usually means the will naming you as executor plus the court document appointing you, called letters testamentary in most of the United States and a grant of probate in the United Kingdom.",
           "It is worth assembling that set once and keeping it together, because you will be asked for exactly the same three things perhaps twenty times.",
         ],
       },
@@ -295,7 +440,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Personal Life Affairs Companion records what exists and where it is kept, so this search never has to happen to your family. It holds accounts, pensions, policies and digital services as a registry, never as uploaded files, and produces a printed book somebody could follow if they had to. It is the difference between a fortnight of searching and an afternoon of reading.",
+        body: "Personal Life Affairs Companion records what exists and where it is kept, so this search never has to happen to your family. It holds accounts, pensions, policies and digital services as a registry, never as uploaded files, and produces a printed book somebody could follow if they had to. It is the difference between two weeks of searching and an afternoon of reading.",
       },
     ],
   },
@@ -317,20 +462,68 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "table",
-        heading: "The three groups",
-        intro: "Roughly where states sit, by how much they ask of you.",
-        columns: ["Group", "What is typically required", "Examples"],
+        heading: "Every state, and what it asks you to keep",
+        intro: "Use the filter to find yours. The level is how much the state involves itself, not how hard homeschooling is there. Confirm against your state before relying on it, because these change.",
+        columns: ["State", "Level", "What you are asked to keep"],
         rows: [
-          ["Low or none", "No routine reporting. Records are for your own use and for proving the year if ever questioned.", "Texas, Idaho, Oklahoma, Illinois, Michigan, Alaska, Connecticut, New Jersey"],
-          ["Attendance or notice", "Notice of intent, attendance records, and sometimes a list of subjects taught.", "Alabama, Indiana, Mississippi, Arizona, Arkansas, Oregon, South Dakota"],
-          ["Portfolio or assessment", "A portfolio of work, an annual evaluation, standardised testing, or a combination.", "Pennsylvania, Maryland, Ohio, South Carolina, Florida, District of Columbia, New York"],
+          ["Alabama", "Low", "Notice through a church or private school; attendance records"],
+          ["Alaska", "None", "Nothing filed; records for your own use"],
+          ["Arizona", "Low", "Notice of intent; keep your own records"],
+          ["Arkansas", "Moderate", "Notice of intent each year; records of instruction"],
+          ["California", "Moderate", "Private school affidavit; attendance register and course list"],
+          ["Colorado", "Moderate", "Notice; attendance, immunisation and test or evaluation every other year"],
+          ["Connecticut", "None", "Nothing required; portfolio only if you opt into review"],
+          ["Delaware", "Low", "Enrolment and attendance reported annually"],
+          ["District of Columbia", "High", "Notice; portfolio available for review; annual reporting"],
+          ["Florida", "High", "Notice; portfolio of work and log kept two years; annual evaluation"],
+          ["Georgia", "Moderate", "Declaration of intent; attendance; annual progress reports kept"],
+          ["Hawaii", "Moderate", "Notice; record of curriculum; annual progress report"],
+          ["Idaho", "None", "Nothing filed; records for your own use"],
+          ["Illinois", "None", "Nothing filed; records for your own use"],
+          ["Indiana", "Low", "Attendance records, produced on request"],
+          ["Iowa", "Low", "Options range from none to reporting; depends on the route chosen"],
+          ["Kansas", "Low", "Register as a non-accredited private school; keep attendance"],
+          ["Kentucky", "Low", "Notice; attendance and scholarship records"],
+          ["Louisiana", "Moderate", "Application or notice; portfolio or test results annually"],
+          ["Maine", "Moderate", "Notice; annual assessment by test or portfolio review"],
+          ["Maryland", "High", "Notice; portfolio reviewed by the district up to three times a year"],
+          ["Massachusetts", "High", "Prior approval of your plan; progress reports as agreed"],
+          ["Michigan", "None", "Nothing filed under the home education route"],
+          ["Minnesota", "Moderate", "Notice; annual testing; records of subjects and attendance"],
+          ["Mississippi", "Low", "Certificate of enrolment filed annually"],
+          ["Missouri", "Moderate", "No notice, but a log of hours, samples of work and evaluations kept"],
+          ["Montana", "Low", "Notice; attendance and immunisation records kept"],
+          ["Nebraska", "Moderate", "Notice and information filed annually; attendance records"],
+          ["Nevada", "Low", "Notice of intent filed once; records for your own use"],
+          ["New Hampshire", "Moderate", "Notice; portfolio kept two years; annual evaluation"],
+          ["New Jersey", "None", "Nothing filed; records for your own use"],
+          ["New Mexico", "Low", "Notice filed annually; immunisation records"],
+          ["New York", "High", "Notice; individualised plan; quarterly reports; annual assessment"],
+          ["North Carolina", "Moderate", "Notice; attendance and immunisation; annual standardised test kept"],
+          ["North Dakota", "Moderate", "Notice; annual testing in certain grades; records kept"],
+          ["Ohio", "High", "Notice; annual academic assessment by test or portfolio review"],
+          ["Oklahoma", "None", "Nothing filed; records for your own use"],
+          ["Oregon", "Moderate", "Notice on starting; testing at certain grades, results kept"],
+          ["Pennsylvania", "High", "Affidavit; log, portfolio, and annual evaluator review"],
+          ["Rhode Island", "Moderate", "District approval; attendance and progress as the district requires"],
+          ["South Carolina", "High", "Association or district option; portfolio, log and progress records"],
+          ["South Dakota", "Low", "Notice; testing at certain grades"],
+          ["Tennessee", "Moderate", "Notice; attendance; testing at certain grades depending on route"],
+          ["Texas", "None", "Nothing filed; keep curriculum evidence for your own use"],
+          ["Utah", "Low", "One-time affidavit; records for your own use"],
+          ["Vermont", "High", "Enrolment filed annually; assessment and progress report"],
+          ["Virginia", "Moderate", "Notice; annual evidence of progress by test or evaluation"],
+          ["Washington", "Moderate", "Declaration of intent; annual test or assessment, results kept"],
+          ["West Virginia", "Moderate", "Notice; annual academic assessment kept"],
+          ["Wisconsin", "Low", "Annual enrolment report filed"],
+          ["Wyoming", "Low", "Curriculum submitted annually to the local board"],
         ],
       },
       {
         kind: "paragraphs",
         heading: "Which states require a portfolio",
         paragraphs: [
-          "Pennsylvania, Maryland, Ohio, South Carolina, Florida and the District of Columbia make a portfolio mandatory. New York, Pennsylvania, Kentucky, Maryland and Ohio are generally regarded as the most regulated for record keeping overall.",
+          "Nine jurisdictions sit in the high group: the District of Columbia, Florida, Maryland, Massachusetts, New York, Ohio, Pennsylvania, South Carolina and Vermont. In those, a portfolio or a formal annual assessment is part of the law rather than a good habit.",
           "If you are in one of those, the portfolio is not a formality. Someone reads it, and building it in April from memory is far harder than adding to it as you go.",
         ],
       },
@@ -999,7 +1192,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "The best moment to do this is a move",
         paragraphs: [
-          "Every fact about a house passes through your hands in the fortnight around moving in, and almost none of it gets written down. Meter readings, which utility is with whom, where the stopcock is, what came with the property.",
+          "Every fact about a house passes through your hands in the two weeks around moving in, and almost none of it gets written down. Meter readings, which utility is with whom, where the stopcock is, what came with the property.",
           "A year later the boiler needs servicing and nobody remembers who installed it. Recording it while it is in front of you takes minutes and saves an afternoon.",
         ],
       },
@@ -1021,7 +1214,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Start with the places people actually keep wills, which are duller than you expect: a home filing box, a bedroom drawer, a safe, or with the solicitor who drafted it.",
+          "Start with the places people actually keep wills, which are duller than you expect: a home filing box, a bedroom drawer, a safe, or with the attorney or solicitor who drafted it.",
           "Work through the list below in order. Most wills are found in the first three places, and the later entries exist because occasionally they are not.",
         ],
       },
@@ -1035,7 +1228,7 @@ export const GUIDES: Guide[] = [
             what: "The obvious places: filing box, desk, bedside drawer, safe, or a folder marked with anything official sounding.",
           },
           {
-            when: "A solicitor",
+            when: "The lawyer",
             what: "Many firms store the original and issue the family a copy, so a copy at home may mean the original is elsewhere.",
           },
           {
@@ -1093,7 +1286,9 @@ export const GUIDES: Guide[] = [
     title: "You have been named executor. Here is what you actually agreed to",
     dek: "What the role involves, how long it really takes, what you are personally liable for, and whether you can say no.",
     publishedAt: "2026-08-30",
+    updatedAt: "2026-08-31",
     areaSlug: "affairs-and-endings",
+    locale: "us",
     body: [
       {
         kind: "paragraphs",
@@ -1117,7 +1312,98 @@ export const GUIDES: Guide[] = [
           },
           {
             when: "Apply",
-            what: "Apply for the legal authority to act, called probate or its local equivalent.",
+            what: "Petition the probate court in the county where they lived. What it issues is usually called letters testamentary, and it is the document banks will ask to see.",
+          },
+          {
+            when: "Settle",
+            what: "Settle debts and taxes before anybody inherits anything.",
+          },
+          {
+            when: "Distribute",
+            what: "Distribute what remains according to the will.",
+          },
+          {
+            when: "Account",
+            what: "Keep records of all of it, because beneficiaries are entitled to see the accounts.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "How long it really takes",
+        paragraphs: [
+          "Simple estates commonly take six to twelve months. Anything involving real property, a business, out of state assets or a disagreement between beneficiaries takes considerably longer, and two years is not unusual.",
+          "The slow parts are rarely the ones people expect. Waiting for probate, waiting for a property to sell, and waiting for tax clearance take far longer than any of the tasks you actually perform.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The part worth taking seriously",
+        paragraphs: [
+          "Executors can be held personally liable for mistakes. Distributing the estate before debts are settled is the classic one: if a creditor appears afterwards, the shortfall can land on you rather than on the beneficiaries who already spent it.",
+          "This is why the order matters, and why you wait out your state creditor claim period before distributing anything. That window is set by state law and commonly runs three to six months from the notice to creditors. Executors of anything complicated usually involve a probate attorney, paid from the estate rather than from their own pocket.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "You can say no",
+        paragraphs: [
+          "Being named does not oblige you to serve. You can decline, formally, provided you have not already started acting as executor. Once you have begun dealing with the estate, stepping back becomes much harder.",
+          "Declining is not a betrayal. Somebody named you years ago, possibly before they had a business or a property abroad, and possibly before your own life got complicated. If you cannot give it the time, saying so at the start is far better than stalling for a year.",
+        ],
+      },
+      {
+        kind: "list",
+        checkable: true,
+        heading: "What to ask for immediately if you are acting",
+        items: [
+          "Certified copies of the death certificate, more than you think you need.",
+          "The original will, not a copy.",
+          "Twelve months of bank statements, which is the fastest way to find accounts and policies nobody mentioned.",
+          "The most recent federal tax return, which lists income sources you may not know about.",
+          "Details of any funeral plan already paid for.",
+          "Contact details for their accountant, attorney or financial adviser.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Personal Life Affairs Companion exists so the person you would name never leaves you doing the search half of this job. It records what exists, where it is kept, and who should be told, and prints as a book somebody could follow. If you are currently executing an estate and finding out how little was written down, that is the argument for doing it for your own.",
+      },
+    ],
+  },
+
+  {    slug: "named-executor-what-you-agreed-to-uk",
+    title: "Named as executor in the UK: what you actually agreed to",
+    dek: "What the role involves, how long it really takes, what you are personally liable for, and whether you can say no.",
+    publishedAt: "2026-08-30",
+    updatedAt: "2026-08-31",
+    areaSlug: "affairs-and-endings",
+    locale: "uk",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Being an executor means you are legally responsible for gathering everything somebody owned, paying what they owed, and distributing the rest according to their will. It is an administrative job with legal weight, and it usually takes many months.",
+          "Most people find out they were named at the worst possible moment and have no idea what the role involves. Here is the honest version.",
+        ],
+      },
+      {
+        kind: "timeline",
+        heading: "What the job actually involves",
+        intro: "Six stages, in this order, and you cannot skip to the last one.",
+        steps: [
+          {
+            when: "Find",
+            what: "Locate and secure everything: property, accounts, pensions, policies, possessions.",
+          },
+          {
+            when: "Value",
+            what: "Value the estate as at the date of death, which often needs professional valuations for property.",
+          },
+          {
+            when: "Apply",
+            what: "Apply for the grant of probate, or confirmation in Scotland, which is the legal authority to act.",
           },
           {
             when: "Settle",
@@ -1146,7 +1432,7 @@ export const GUIDES: Guide[] = [
         heading: "The part worth taking seriously",
         paragraphs: [
           "Executors can be held personally liable for mistakes. Distributing the estate before debts are settled is the classic one: if a creditor appears afterwards, the shortfall can land on you rather than on the beneficiaries who already spent it.",
-          "This is why the order matters, and why the standard advice is to wait out the statutory creditor notice period before distributing anything. It is also why executors of anything complicated usually involve a solicitor, paid from the estate rather than from their own pocket.",
+          "This is why the order matters, and why the standard advice is to wait out the statutory creditor notice period before distributing anything. It is also why executors of anything complicated usually involve a solicitor, paid from the estate rather than from their own pocket. Placing a statutory advertisement under section 27 of the Trustee Act is the standard protection against unknown creditors.",
         ],
       },
       {
@@ -1199,13 +1485,13 @@ export const GUIDES: Guide[] = [
         intro: "Locations and references, not the documents themselves. This is a map, not a vault.",
         items: [
           "Where the will is, who drafted it, and who is named executor.",
-          "Every bank and building society, with which accounts are where. Not passwords.",
+          "Every bank, credit union and building society, with which accounts are where. Not passwords.",
           "Pensions, including old ones from former employers, which are the most commonly lost.",
           "Insurance policies: life, home, car, health, and anything bought through an employer.",
           "Property: where the deeds are, mortgage lender, and any leasehold details.",
           "Debts, including anything guaranteed for somebody else.",
           "Digital: which email is the recovery address for everything, and where the password manager is, without the master password.",
-          "People: accountant, solicitor, adviser, and anybody who should be told.",
+          "People: accountant, lawyer, adviser, and anybody who should be told.",
           "Anything that would surprise somebody, which is the most valuable line in the whole file.",
         ],
       },
@@ -1344,7 +1630,7 @@ export const GUIDES: Guide[] = [
         heading: "Include ordinary work, not only the best",
         paragraphs: [
           "The instinct is to include only the pieces you are proud of. Resist it. A portfolio of nothing but finished, perfect work tells an evaluator very little, and can even read as curated rather than representative.",
-          "Include something from October and something from March on the same subject. Progress across a year is the single most persuasive thing a portfolio can show, and it is invisible if everything came from the same fortnight.",
+          "Include something from October and something from March on the same subject. Progress across a year is the single most persuasive thing a portfolio can show, and it is invisible if everything came from the same two weeks.",
         ],
       },
       {
@@ -1542,7 +1828,7 @@ export const GUIDES: Guide[] = [
         heading: "The maintenance burden is the whole problem",
         paragraphs: [
           "The setup is genuinely enjoyable. Categories, budgets per category, a clean dashboard. That is the part that gets designed carefully, because it is what people see when deciding to sign up.",
-          "Week six is not designed for at all. Week six is a fortnight of uncategorised transactions, three splits you never finished, and a dashboard confidently reporting a number you know is nonsense. Nothing in the product acknowledges that this is the normal state of things.",
+          "Week six is not designed for at all. Week six is two weeks of uncategorised transactions, three splits you never finished, and a dashboard confidently reporting a number you know is nonsense. Nothing in the product acknowledges that this is the normal state of things.",
         ],
       },
       {
@@ -1581,7 +1867,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Ask what happens when you stop paying attention",
         paragraphs: [
-          "Whatever you use, this is the question worth asking before you invest a weekend in setup. Some tools degrade gracefully and are still broadly correct after a neglected fortnight. Others become actively misleading and then demand an hour of repair before they are any use again.",
+          "Whatever you use, this is the question worth asking before you invest a weekend in setup. Some tools degrade gracefully and are still broadly correct after a neglected two weeks. Others become actively misleading and then demand an hour of repair before they are any use again.",
           "Only the first kind is still installed a year later.",
         ],
       },
@@ -1735,7 +2021,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "There is a short window, roughly the fortnight around moving in, when every fact about a house is either in front of you or one phone call away. The previous owner is still reachable. The surveyor's report is still open on your laptop. The boiler manual is still in a drawer rather than lost.",
+          "There is a short window, roughly the two weeks around moving in, when every fact about a house is either in front of you or one phone call away. The previous owner is still reachable. The surveyor's report is still open on your laptop. The boiler manual is still in a drawer rather than lost.",
           "After that window, each of those facts costs an afternoon to recover, and some are gone permanently. This is the highest return hour of admin in the whole process.",
         ],
       },
@@ -2284,14 +2570,14 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Imagine somebody has to run your life from tomorrow morning, with no warning and no access to your phone. Not forever. Just for a fortnight.",
+          "Imagine somebody has to run your life from tomorrow morning, with no warning and no access to your phone. Not forever. Just for two weeks.",
           "Most of what they would need is not secret and not complicated. It is simply undocumented, because it has always lived in one head, and it turns out that is a single point of failure.",
         ],
       },
       {
         kind: "list",
         checkable: true,
-        heading: "The fortnight list",
+        heading: "The two week list",
         intro: "What somebody would actually hit in the first two weeks, in roughly the order they would hit it.",
         items: [
           "Which bank the household money is in, and whether anything is due out this week.",
@@ -2307,7 +2593,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Two weeks is the useful frame",
         paragraphs: [
-          "Thinking about this as estate planning makes it enormous, and enormous things do not get done. Thinking about it as a fortnight makes it a short list you can write in one sitting.",
+          "Thinking about this as estate planning makes it enormous, and enormous things do not get done. Thinking about it as two weeks makes it a short list you can write in one sitting.",
           "It is also the frame that covers the far more likely scenarios. Illness, an accident, being abroad and unreachable, or being in hospital for a week are all far more probable than the version everyone avoids thinking about, and the same list solves all of them.",
         ],
       },
@@ -2469,7 +2755,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         paragraphs: [
           "Almost everybody keeps the invoice and forgets everything else. The invoice tells you what you paid. It rarely tells you what was actually wrong, what was replaced, or what the engineer said would need doing next.",
-          "That second set is what makes the next repair faster, and it exists only in your memory for about a fortnight.",
+          "That second set is what makes the next repair faster, and it exists only in your memory for about two weeks.",
         ],
       },
       {
@@ -2535,7 +2821,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Warranty claims mostly fail for administrative reasons rather than because a manufacturer refused. No proof of purchase, no serial number, no record of the annual service the warranty required, or a claim made a fortnight after expiry.",
+          "Warranty claims mostly fail for administrative reasons rather than because a manufacturer refused. No proof of purchase, no serial number, no record of the annual service the warranty required, or a claim made two weeks after expiry.",
           "All four are avoidable with about two minutes of recording at the point of purchase.",
         ],
       },
@@ -2752,7 +3038,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "preparing-for-a-homeschool-evaluation",
     title: "Preparing for a homeschool evaluation or review",
-    dek: "What evaluators actually look for, what to bring, and how to prepare in an evening rather than a fortnight.",
+    dek: "What evaluators actually look for, what to bring, and how to prepare in an evening rather than two weeks.",
     publishedAt: "2026-08-30",
     areaSlug: "family-and-learning",
     body: [
@@ -2769,7 +3055,7 @@ export const GUIDES: Guide[] = [
         heading: "What to bring",
         items: [
           "The log of what was covered, with dates, even if approximate.",
-          "Work samples across the year, not from one strong fortnight.",
+          "Work samples across the year, not from one strong two week stretch.",
           "A list of curricula and materials used.",
           "Attendance or days schooled, if your state counts them.",
           "Test results, if required where you are.",
@@ -2826,7 +3112,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         paragraphs: [
           "Nearly two thirds of people planning group travel name coordinating schedules as their leading stressor, ahead of budgets and ahead of comparing options.",
-          "The reason is that one person ends up holding the whole thing in their head, and that person is answering the same four questions repeatedly for a fortnight.",
+          "The reason is that one person ends up holding the whole thing in their head, and that person is answering the same four questions repeatedly for two weeks.",
         ],
       },
       {
@@ -2988,7 +3274,7 @@ export const GUIDES: Guide[] = [
           },
           {
             situation: "Use a what if",
-            line: "If you were both in hospital for a fortnight, I would not know how to keep things running. Can we write the basics down.",
+            line: "If you were both in hospital for two weeks, I would not know how to keep things running. Can we write the basics down.",
           },
           {
             situation: "Use somebody else's story",
@@ -3008,7 +3294,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Ask for locations, not contents",
         paragraphs: [
-          "Where the will is, not what it says. Which bank, not the balance. Who the solicitor is, not what was discussed.",
+          "Where the will is, not what it says. Which bank, not the balance. Who the lawyer is, not what was discussed.",
           "Almost everybody is comfortable sharing locations and uncomfortable sharing contents, and locations are what actually prevent the months of searching later.",
         ],
       },
@@ -3024,7 +3310,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Write it down at the time",
         paragraphs: [
-          "The most common failure is having the conversation, feeling relieved, and recording nothing. Six months later you remember there was a solicitor and not which one.",
+          "The most common failure is having the conversation, feeling relieved, and recording nothing. Six months later you remember there was a lawyer and not which one.",
           "What to capture is in [the if something happens to me file](/guides/the-if-something-happens-to-me-file).",
         ],
       },
@@ -3296,7 +3582,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "The fourth thing, occasionally",
         paragraphs: [
-          "Once in a while something happens that no log captures. She finally understood fractions. He reads better lying on the floor. A bad fortnight turned out to be a cold rather than a problem.",
+          "Once in a while something happens that no log captures. She finally understood fractions. He reads better lying on the floor. A bad two weeks turned out to be a cold rather than a problem.",
           "Write those down the day they happen, in a sentence. In three years they are the only part of this you would not want to lose, and by next month you will have forgotten every one of them.",
         ],
       },
@@ -3683,7 +3969,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Keep a spread, not a highlight reel",
         paragraphs: [
-          "Three pieces from across the year beats twelve from one strong fortnight. Keep something ordinary alongside something good, and keep at least one thing that was difficult.",
+          "Three pieces from across the year beats twelve from one strong two week stretch. Keep something ordinary alongside something good, and keep at least one thing that was difficult.",
           "A file of only polished work reads as curated, and it hides the thing that is actually impressive, which is the distance travelled between October and March.",
         ],
       },
