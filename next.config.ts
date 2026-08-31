@@ -49,6 +49,8 @@ const nextConfig: NextConfig = {
       { source: "/guides/what-your-family-would-need-to-know-tomorrow", destination: "/guides/what-to-write-down-in-case-something-happens-to-you", permanent: true },
       { source: "/guides/when-something-has-been-left-so-long-it-is-embarrassing", destination: "/guides/how-to-deal-with-something-you-have-put-off", permanent: true },
       { source: "/guides/why-your-available-balance-is-lying-to-you", destination: "/guides/available-balance-vs-current-balance", permanent: true },
+      { source: "/guides/seasonal-home-maintenance-without-the-pointless-jobs", destination: "/guides/home-maintenance-checklist-by-month", permanent: true },
+      { source: "/guides/travel-documents-for-a-family", destination: "/guides/travel-document-checklist", permanent: true },
     ];
   },
 };

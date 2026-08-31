@@ -1587,6 +1587,78 @@ export const GUIDES: Guide[] = [
   },
 
   {
+    slug: "homeschool-record-keeping-template",
+    title: "Homeschool record keeping template: what actually needs to be on it",
+    dek: "Most free templates ask for too much and get abandoned by half term. The four fields that survive a real year, and what to do with them.",
+    publishedAt: "2026-08-31",
+    areaSlug: "family-and-learning",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Search for a homeschool record keeping template and you will find hundreds. Most of them are beautiful, most of them ask for eight fields per child per day, and most of them are abandoned somewhere around November.",
+          "The template is not the hard part. Keeping it is. So what follows is the smallest structure that still satisfies an evaluator, and the reasoning for why each column earns its place.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "The four columns that earn their place",
+        intro: "Copy this into whatever you already open every day. A notebook is fine. The format matters far less than whether it gets filled in.",
+        columns: ["Column", "Example", "Why it is there"],
+        rows: [
+          ["Date", "14 Oct", "Every requirement that exists anywhere is anchored to dates. Without them you have anecdotes."],
+          ["Subject", "Maths", "Evaluators and states ask what was covered, by subject, not by activity."],
+          ["What part", "Unit 3, Lesson 12", "Turns a year into a sequence somebody can follow. This is the column that proves progress."],
+          ["How it went", "Difficult", "One word. It is the only column that helps you rather than an evaluator, and it is the one you will be glad of in March."],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What to leave off, and why",
+        paragraphs: [
+          "Hours, unless your state counts them. Most do not, and logging time turns a thirty second job into a two minute one.",
+          "Colour coding. It is a pleasure to design and a chore to maintain, and it is the single most reliable predictor of a system being abandoned.",
+          "Anything requiring a written paragraph per child per day. Nobody sustains that past October, and the version you abandon in October is worth less than the crude one you keep all year.",
+        ],
+      },
+      {
+        kind: "list",
+        checkable: true,
+        heading: "What to add occasionally, not daily",
+        intro: "These are the things that make a record persuasive rather than merely complete. Once a term is plenty.",
+        items: [
+          "A dated sample of work per subject, ordinary rather than the best one.",
+          "The curriculum or materials you are using, and any change of them mid year.",
+          "A photograph of anything three dimensional, which is better evidence than the object itself.",
+          "One sentence about something that happened. She finally understood fractions.",
+          "Test or evaluation results, if your state requires them.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Paper, spreadsheet or app",
+        paragraphs: [
+          "All three work. The question is which one is open when the lesson finishes, because a record made an hour later is a record made from memory.",
+          "Paper wins on friction and loses on searching. A spreadsheet wins on totals and loses because it usually lives on a computer rather than in your hand. Whatever you pick, the test is whether you can complete an entry in under thirty seconds.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Check what your state asks before you design anything",
+        paragraphs: [
+          "Eight jurisdictions ask for nothing at all, and nine want a portfolio or a formal assessment. Building for the strictest standard when you live in Texas wastes a weekend.",
+          "The full position is in [homeschool record keeping requirements, state by state](/guides/homeschool-record-keeping-requirements-by-state), and what a portfolio needs is in [what actually goes in a homeschool portfolio](/guides/what-goes-in-a-homeschool-portfolio).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Homeschooling Companion is these four fields and nothing else, with the date filled in for you. It accepts backdated entries, because real weeks are not tidy, and it prints a record per child covering what was done and when. There is no tally of days missed and no score, because a record that judges you is a record that gets avoided.",
+      },
+    ],
+  },
+
+  {
     slug: "what-goes-in-a-homeschool-portfolio",
     title: "What actually goes in a homeschool portfolio",
     dek: "What to include, what evaluators are really looking for, and how to build it through the year instead of in a panic in April.",
@@ -2070,8 +2142,8 @@ export const GUIDES: Guide[] = [
   },
 
   {
-    slug: "seasonal-home-maintenance-without-the-pointless-jobs",
-    title: "Seasonal home maintenance, minus the jobs that do not matter",
+    slug: "home-maintenance-checklist-by-month",
+    title: "Home maintenance checklist by month, minus the jobs that do not matter",
     dek: "A shorter seasonal list than most, built around what actually causes damage, and why generic reminders get ignored.",
     publishedAt: "2026-08-30",
     areaSlug: "home",
@@ -2405,8 +2477,8 @@ export const GUIDES: Guide[] = [
   },
 
   {
-    slug: "travel-documents-for-a-family",
-    title: "Travel documents for a family: what to carry and where to keep it",
+    slug: "travel-document-checklist",
+    title: "Travel document checklist: what to carry and where to keep it",
     dek: "What each traveller needs, what to check months before you go, and why a photograph of a passport is not a backup plan.",
     publishedAt: "2026-08-30",
     areaSlug: "travel",
