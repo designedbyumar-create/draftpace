@@ -250,7 +250,11 @@ export const HOME_ITEM_TYPES: HomeItemTypeDefinition[] = [
   // ------------------------------------------------- Heating, cooling, air
   {
     id: "furnace", label: "Furnace", category: "climate", offerAtSetup: true,
-    matchKeywords: ["furnace"],
+    // "ducted heating" is the common name for the same forced-air gas
+    // system outside North America; the label stays "Furnace" because
+    // that's still the clearer word for most of this product's readers,
+    // this only widens what gets recognised.
+    matchKeywords: ["furnace", "ducted heating"],
     care: [
       { id: "furnace.air-filter", taskName: "Replace the air filter", intervalDays: 90, consequence: 1, effort: 0 },
       { id: "furnace.tune-up", taskName: "Book a professional tune-up", intervalDays: 365, consequence: 1, effort: 2, months: [9, 10] },
@@ -259,7 +263,11 @@ export const HOME_ITEM_TYPES: HomeItemTypeDefinition[] = [
   },
   {
     id: "central-air", label: "Central air conditioning", category: "climate", offerAtSetup: true,
-    matchKeywords: ["central air", "air conditioning", "air conditioner"],
+    // "ac" and "aircon" added deliberately short: real search behaviour
+    // (autocomplete harvest, Phase 2 of the pricing plan) showed both as
+    // common bare self-references, and neither shares a substring with
+    // any existing keyword here, so they matched nothing before this.
+    matchKeywords: ["central air", "air conditioning", "air conditioner", "aircon", "air con", "ac"],
     care: [
       { id: "central-air.filter", taskName: "Replace the air filter", intervalDays: 90, consequence: 1, effort: 0 },
       { id: "central-air.service", taskName: "Book a service before the season", intervalDays: 365, consequence: 1, effort: 2, months: [4, 5] },
@@ -410,6 +418,19 @@ export const HOME_ITEM_TYPES: HomeItemTypeDefinition[] = [
     id: "faucet", label: "Faucet", category: "water", renterRelevant: true,
     matchKeywords: ["faucet", "tap", "aerator"],
     care: [{ id: "faucet.aerator", taskName: "Descale the aerator", intervalDays: 365, consequence: 0, effort: 0 }],
+  },
+  {
+    // A real gap, not a variant of a plain faucet: this has its own
+    // under-sink tank and its own filter cartridge, on its own
+    // manufacturer-set schedule, which a faucet's aerator task does not
+    // cover. Found while checking Phase 2's autocomplete evidence
+    // against the 121 types already here; almost everything else in
+    // that harvest turned out to be vehicles and watches, not homes.
+    id: "instant-hot-water-tap", label: "Instant hot water tap", category: "water", renterRelevant: true,
+    matchKeywords: ["quooker", "instant hot water tap", "boiling water tap", "hot water dispenser"],
+    care: [
+      { id: "instant-hot-water-tap.filter", taskName: "Replace the filter cartridge", intervalDays: 180, consequence: 0, effort: 0 },
+    ],
   },
   {
     id: "pressure-regulator", label: "Water pressure regulator", category: "water",

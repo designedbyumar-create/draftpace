@@ -266,6 +266,54 @@ describe("the Homeschooling Companion listing", () => {
 });
 
 /**
+ * Home Base's listing. Had no dedicated test block before this: it
+ * carried no price, so there was nothing yet to hold to a standard.
+ * Phase 2 of the pricing plan gives it one, so it gets real coverage
+ * alongside the price rather than after it.
+ */
+describe("the Home Base listing", () => {
+  const SLUG = "home-management-companion";
+
+  async function listing() {
+    const { registerRealShopProducts, shopRegistry } = await loadFreshRegisterModule();
+    registerRealShopProducts();
+    return shopRegistry.getBySlug(SLUG);
+  }
+
+  it("is published, real, and reaches the Shop index", async () => {
+    const product = await listing();
+    expect(product?.publicationStatus).toBe("published");
+    expect(product?.devFixture).toBe(false);
+    expect(product?.access).toBe("paid");
+  });
+
+  it("carries a real, honest launch price: $28 against a genuine $35 regular price", async () => {
+    const product = await listing();
+    expect(product?.price).toEqual({ amount: 28, currency: "USD" });
+    expect(product?.compareAtPrice).toEqual({ amount: 35, currency: "USD" });
+    expect(product!.compareAtPrice!.amount).toBeGreaterThan(product!.price!.amount);
+    expect(product?.purchaseAction).toBeUndefined();
+  });
+
+  /** "Overdue" is a marketing-principle-level ban for this specific
+   * product (docs/NORTH-STAR-PFC-HMC.md): a home that hasn't had its
+   * filter changed is not failing at anything. The listing already uses
+   * the word once, to promise it never will, which is the one honest
+   * exception, so this checks every occurrence is that same negation
+   * rather than banning the word outright and breaking on its own
+   * reassurance. */
+  it('only ever uses "overdue" to promise it never says it', async () => {
+    const text = JSON.stringify(await listing()).toLowerCase();
+    const occurrences = (text.match(/overdue/g) ?? []).length;
+    const insideThePromise = (text.match(/never says overdue/g) ?? []).length;
+    expect(occurrences, "the word should appear at least once, in the promise").toBeGreaterThan(0);
+    // If every "overdue" sits inside "never says overdue", the two counts
+    // are equal by construction; any other appearance breaks that equality.
+    expect(occurrences).toBe(insideThePromise);
+  });
+});
+
+/**
  * Alongside's listing. Held to its siblings' rules, plus the two this
  * product carries on its own: the diagnosis/deficit language it refuses
  * in the app must not leak into the copy that sells it, and the

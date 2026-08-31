@@ -255,3 +255,33 @@ describe("categoryOfType", () => {
     expect(categoryOfType("moon-buggy")).toBeNull();
   });
 });
+
+/**
+ * Phase 2 of the pricing plan. Real search evidence (620 queries
+ * harvested from Google autocomplete) was checked against the 121 types
+ * already here, not assumed against them. The honest result: almost the
+ * whole "how often should I service my ___" cluster turned out to be
+ * cars, motorcycles, bicycles and watches, correctly out of scope for a
+ * home product. The genuine, real gaps were three keyword additions and
+ * one missing type, and this is what proves each one actually closed.
+ */
+describe("Phase 2: gaps found against real search evidence", () => {
+  it("recognises 'ac' and 'aircon' as central air, not as nothing", () => {
+    expect(matchHomeItemType("Living room AC", "")?.id).toBe("central-air");
+    expect(matchHomeItemType("The aircon", "")?.id).toBe("central-air");
+  });
+
+  it("recognises ducted heating as a furnace", () => {
+    expect(matchHomeItemType("Ducted heating", "")?.id).toBe("furnace");
+  });
+
+  it("gives an instant hot water tap its own type, not a plain faucet's care", () => {
+    const match = matchHomeItemType("Quooker", "");
+    expect(match?.id).toBe("instant-hot-water-tap");
+    expect(match?.care[0]?.taskName).toMatch(/filter/i);
+  });
+
+  it("still tells a faucet from an instant hot water tap", () => {
+    expect(matchHomeItemType("Kitchen faucet", "")?.id).toBe("faucet");
+  });
+});
