@@ -23,8 +23,8 @@ import type { ShopProductInput } from "../definition";
  * NOT CLAIMED, BECAUSE NOT BUILT: reminders, notifications, curriculum
  * import, and any suggestion that Draftpace supplies lesson content.
  *
- * price is deliberately omitted (TODO_SET_REAL_PRICE), same convention
- * as all three paid siblings.
+ * $18 launch price, $23 regular. The first of the seven paid products
+ * to get a real price, see the pricing plan's Phase 1.
  */
 export const homeschoolingCompanionShopProduct: ShopProductInput = {
   id: "homeschooling-companion",
@@ -94,7 +94,13 @@ export const homeschoolingCompanionShopProduct: ShopProductInput = {
     "Print the record whenever somebody needs it, or nobody does.",
   ],
   access: "paid",
-  // TODO_SET_REAL_PRICE: no price object yet, see the file doc comment.
+  // Launch pricing, Phase 1 of the pricing plan: $19 actual, marked up
+  // 20% to a $23 regular price, then a net 20% off (30% off, netted
+  // down by 10 points) for the $18 this actually charges today. See
+  // src/shop/definition.ts for the invariant that keeps compareAtPrice
+  // honest: it is refused unless it is genuinely higher than price.
+  price: { amount: 18, currency: "USD" },
+  compareAtPrice: { amount: 23, currency: "USD" },
   media: [],
   compatibility: ["Works in any modern browser", "No download required", "Works on phone, tablet, or desktop"],
   inclusions: [

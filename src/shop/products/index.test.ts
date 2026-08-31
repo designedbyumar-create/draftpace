@@ -183,9 +183,14 @@ describe("the Homeschooling Companion listing", () => {
     expect(product?.access).toBe("paid");
   });
 
-  it("carries no price yet, so nothing renders a fabricated figure", async () => {
+  it("carries a real, honest launch price: $18 against a genuine $23 regular price", async () => {
     const product = await listing();
-    expect(product?.price).toBeUndefined();
+    expect(product?.price).toEqual({ amount: 18, currency: "USD" });
+    expect(product?.compareAtPrice).toEqual({ amount: 23, currency: "USD" });
+    // The schema itself refuses a compareAtPrice that isn't a real
+    // discount; this just confirms this specific listing lands on the
+    // right side of that math, not just any side of it.
+    expect(product!.compareAtPrice!.amount).toBeGreaterThan(product!.price!.amount);
     expect(product?.purchaseAction).toBeUndefined();
   });
 

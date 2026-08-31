@@ -21,6 +21,8 @@ import { curriculaFor, SCHOOLING_LABEL, type Child, type Curriculum, type PlanEn
 import { buildStartingOutline } from "../startingOutline";
 import type { ChildDraft } from "../setup";
 import AddChildFlow from "./AddChildFlow";
+import HouseholdState from "./HouseholdState";
+import { defaultHousehold, loadHousehold, saveHousehold, type Household } from "../domain/household";
 
 type LoadStatus = "loading" | "ready" | "no-instance" | "error";
 
@@ -42,6 +44,8 @@ export default function KidsModule() {
   const [children, setChildren] = useState<Child[]>([]);
   const [curricula, setCurricula] = useState<Curriculum[]>([]);
   const [plan, setPlan] = useState<PlanEntry[]>([]);
+  const [household, setHousehold] = useState<Household>(defaultHousehold());
+  const [householdPending, setHouseholdPending] = useState(false);
   const [adding, setAdding] = useState(false);
   const [pending, setPending] = useState(false);
 
@@ -57,10 +61,11 @@ export default function KidsModule() {
       return;
     }
     setInstanceId(found.id);
-    const [childrenResult, curriculaResult, planResult] = await Promise.all([
+    const [childrenResult, curriculaResult, planResult, householdResult] = await Promise.all([
       loadChildren(found.id),
       loadCurricula(found.id),
       loadPlan(found.id),
+      loadHousehold(found.id),
     ]);
     if (!childrenResult.ok) {
       setErrorMessage(describeResultError(childrenResult.error));
@@ -70,8 +75,20 @@ export default function KidsModule() {
     setChildren(childrenResult.data);
     setCurricula(curriculaResult.ok ? curriculaResult.data : []);
     setPlan(planResult.ok ? planResult.data : []);
+    // Never blocks the rest of the page on failure: the question is
+    // entirely optional, so an unreadable answer behaves exactly like an
+    // unanswered one.
+    setHousehold(householdResult.ok ? householdResult.data : defaultHousehold());
     setStatus("ready");
   }, []);
+
+  async function saveState(state: string | null) {
+    if (!instanceId) return;
+    setHouseholdPending(true);
+    const result = await saveHousehold(instanceId, { state });
+    setHouseholdPending(false);
+    if (result.ok) setHousehold(result.data);
+  }
 
   useEffect(() => {
     load();
@@ -225,6 +242,8 @@ export default function KidsModule() {
           {errorMessage}
         </p>
       )}
+
+      <HouseholdState state={household.state} pending={householdPending} onSave={saveState} />
 
       {children.length === 0 ? (
         <EmptyState

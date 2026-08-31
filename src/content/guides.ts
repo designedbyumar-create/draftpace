@@ -1,4 +1,5 @@
 import { LIFE_AREAS } from "./areas";
+import { HOMESCHOOL_STATE_REQUIREMENTS } from "@/lib/homeschoolStateRequirements";
 import { blockStrings } from "./guideText";
 
 /**
@@ -465,59 +466,12 @@ export const GUIDES: Guide[] = [
         heading: "Every state, and what it asks you to keep",
         intro: "Use the filter to find yours. The level is how much the state involves itself, not how hard homeschooling is there. Confirm against your state before relying on it, because these change.",
         columns: ["State", "Level", "What you are asked to keep"],
-        rows: [
-          ["Alabama", "Low", "Notice through a church or private school; attendance records"],
-          ["Alaska", "None", "Nothing filed; records for your own use"],
-          ["Arizona", "Low", "Notice of intent; keep your own records"],
-          ["Arkansas", "Moderate", "Notice of intent each year; records of instruction"],
-          ["California", "Moderate", "Private school affidavit; attendance register and course list"],
-          ["Colorado", "Moderate", "Notice; attendance, immunisation and test or evaluation every other year"],
-          ["Connecticut", "None", "Nothing required; portfolio only if you opt into review"],
-          ["Delaware", "Low", "Enrolment and attendance reported annually"],
-          ["District of Columbia", "High", "Notice; portfolio available for review; annual reporting"],
-          ["Florida", "High", "Notice; portfolio of work and log kept two years; annual evaluation"],
-          ["Georgia", "Moderate", "Declaration of intent; attendance; annual progress reports kept"],
-          ["Hawaii", "Moderate", "Notice; record of curriculum; annual progress report"],
-          ["Idaho", "None", "Nothing filed; records for your own use"],
-          ["Illinois", "None", "Nothing filed; records for your own use"],
-          ["Indiana", "Low", "Attendance records, produced on request"],
-          ["Iowa", "Low", "Options range from none to reporting; depends on the route chosen"],
-          ["Kansas", "Low", "Register as a non-accredited private school; keep attendance"],
-          ["Kentucky", "Low", "Notice; attendance and scholarship records"],
-          ["Louisiana", "Moderate", "Application or notice; portfolio or test results annually"],
-          ["Maine", "Moderate", "Notice; annual assessment by test or portfolio review"],
-          ["Maryland", "High", "Notice; portfolio reviewed by the district up to three times a year"],
-          ["Massachusetts", "High", "Prior approval of your plan; progress reports as agreed"],
-          ["Michigan", "None", "Nothing filed under the home education route"],
-          ["Minnesota", "Moderate", "Notice; annual testing; records of subjects and attendance"],
-          ["Mississippi", "Low", "Certificate of enrolment filed annually"],
-          ["Missouri", "Moderate", "No notice, but a log of hours, samples of work and evaluations kept"],
-          ["Montana", "Low", "Notice; attendance and immunisation records kept"],
-          ["Nebraska", "Moderate", "Notice and information filed annually; attendance records"],
-          ["Nevada", "Low", "Notice of intent filed once; records for your own use"],
-          ["New Hampshire", "Moderate", "Notice; portfolio kept two years; annual evaluation"],
-          ["New Jersey", "None", "Nothing filed; records for your own use"],
-          ["New Mexico", "Low", "Notice filed annually; immunisation records"],
-          ["New York", "High", "Notice; individualised plan; quarterly reports; annual assessment"],
-          ["North Carolina", "Moderate", "Notice; attendance and immunisation; annual standardised test kept"],
-          ["North Dakota", "Moderate", "Notice; annual testing in certain grades; records kept"],
-          ["Ohio", "High", "Notice; annual academic assessment by test or portfolio review"],
-          ["Oklahoma", "None", "Nothing filed; records for your own use"],
-          ["Oregon", "Moderate", "Notice on starting; testing at certain grades, results kept"],
-          ["Pennsylvania", "High", "Affidavit; log, portfolio, and annual evaluator review"],
-          ["Rhode Island", "Moderate", "District approval; attendance and progress as the district requires"],
-          ["South Carolina", "High", "Association or district option; portfolio, log and progress records"],
-          ["South Dakota", "Low", "Notice; testing at certain grades"],
-          ["Tennessee", "Moderate", "Notice; attendance; testing at certain grades depending on route"],
-          ["Texas", "None", "Nothing filed; keep curriculum evidence for your own use"],
-          ["Utah", "Low", "One-time affidavit; records for your own use"],
-          ["Vermont", "High", "Enrolment filed annually; assessment and progress report"],
-          ["Virginia", "Moderate", "Notice; annual evidence of progress by test or evaluation"],
-          ["Washington", "Moderate", "Declaration of intent; annual test or assessment, results kept"],
-          ["West Virginia", "Moderate", "Notice; annual academic assessment kept"],
-          ["Wisconsin", "Low", "Annual enrolment report filed"],
-          ["Wyoming", "Low", "Curriculum submitted annually to the local board"],
-        ],
+        // Derived, not duplicated: the Homeschooling Companion product
+        // reads the same array for its own setup, and this used to be a
+        // second hand-typed copy of it. One correction landed here while
+        // moving it: two entries used British spelling that had slipped
+        // past the locale pass already done on the rest of this layer.
+        rows: HOMESCHOOL_STATE_REQUIREMENTS.map((entry) => [entry.state, entry.level, entry.note]),
       },
       {
         kind: "paragraphs",
