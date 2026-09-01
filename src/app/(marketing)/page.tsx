@@ -9,6 +9,7 @@ import ShopPreview from "@/components/public/home/ShopPreview";
 import TrustSection from "@/components/public/home/TrustSection";
 import { softwareApplicationStructuredData } from "@/lib/structuredData";
 import { LIFE_AREAS } from "@/content/areas";
+import { discountPercent, formatCompareAtPrice, formatPrice } from "@/shop/definition";
 import { shopRegistry } from "@/shop/registry";
 import { ensureShopRegistered } from "@/shop/ensureRegistered";
 import { OverviewScreenMockup as MmrMockup } from "./shop/[productSlug]/monthlyMoneyResetVisuals";
@@ -51,10 +52,17 @@ export default function HomePage() {
       {
         areaSlug: area.slug,
         areaLabel: area.label,
-        situation: area.situation,
         whatHelps: area.whatHelps,
         productSlug: product.slug,
         productTitle: product.title,
+        // Formatted here, by the same helpers the Shop grid and the
+        // product page use, so the hero can never quote a price that
+        // disagrees with the page it links to.
+        priceLabel: formatPrice(product),
+        compareAtLabel: formatCompareAtPrice(product),
+        savingsPercent: discountPercent(product),
+        isFree: product.access === "free",
+        comingSoon: product.availability === "coming-soon",
         mockup,
       },
     ];
@@ -69,7 +77,7 @@ export default function HomePage() {
 
       {/* 1. Hero: which part of life is this for */}
       <section className="border-b border-[var(--border)]">
-        <Container width="wide" className="py-16 sm:py-20 lg:py-24">
+        <Container width="wide" className="py-12 sm:py-14 lg:py-16">
           <CompanionPicker panels={panels} />
         </Container>
       </section>
