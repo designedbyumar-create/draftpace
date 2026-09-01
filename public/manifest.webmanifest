@@ -1,41 +1,47 @@
 {
   "name": "Draftpace",
   "short_name": "Draftpace",
-  "description": "Interactive Draftpace Systems for money momentum, daily progress, and sustainable recovery.",
-  "start_url": "/dashboard",
+  "description": "Draftpace is a platform for interactive, personalized digital products that keep you moving forward.",
+  "start_url": "/app",
   "scope": "/",
   "display": "standalone",
   "display_override": ["standalone", "minimal-ui", "browser"],
-  "background_color": "#FAFAF7",
-  "theme_color": "#3730A3",
+  "background_color": "#f4f2ec",
+  "theme_color": "#0e6e75",
   "orientation": "portrait-primary",
-  "categories": ["productivity", "lifestyle", "finance"],
+  "categories": ["productivity", "lifestyle"],
   "icons": [
     {
-      "src": "/logo/dp-monogram-indigo.svg",
-      "sizes": "512x512",
-      "type": "image/svg+xml",
+      "src": "/logo/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/logo/dp-monogram-dark.svg",
+      "src": "/logo/icon-512.png",
       "sizes": "512x512",
-      "type": "image/svg+xml",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
       "purpose": "maskable"
     }
   ],
   "shortcuts": [
     {
-      "name": "Today",
-      "short_name": "Today",
-      "url": "/dashboard",
-      "description": "Open today's System focus"
+      "name": "Home",
+      "short_name": "Home",
+      "url": "/app",
+      "description": "Open Draftpace"
     },
     {
-      "name": "Systems",
-      "short_name": "Systems",
-      "url": "/dashboard/drafts",
-      "description": "Open your active Systems"
+      "name": "Library",
+      "short_name": "Library",
+      "url": "/app/library",
+      "description": "Open your products"
     }
   ]
 }
