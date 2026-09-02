@@ -47,7 +47,28 @@ export default function PublicNav({ user }: { user: PublicNavUser }) {
     // not: on a guide article the tinted banner tinted the header and the
     // headline smeared through it as it passed underneath. The effect was
     // only ever on show in the one situation where it looked broken.
-    <header className="sticky top-0 z-40 border-b border-[var(--border)] bg-[var(--bg)]">
+    // Detached at the sides on a phone, flush to the top edge, and
+    // unchanged from lg up.
+    //
+    // Flush rather than fully floating on purpose. With a gap above it as
+    // well, the page scrolled through a twelve pixel strip between the top
+    // of the screen and the bar, which read as a rendering fault rather
+    // than as a design. Hugging the top keeps the detached feel from the
+    // side margins and the bottom corners without that strip.
+    //
+    // Still sticky rather than fixed. A sticky element keeps its place in
+    // the flow, so nothing underneath has to be padded to account for the
+    // bar and no content can end up trapped beneath it.
+    //
+    // Opaque, never glass. This header used to be 90% opaque with a
+    // backdrop blur, which is invisible while the thing scrolling under it
+    // is the page background and becomes very visible the moment it is
+    // not: on a guide article the tinted banner tinted the header and the
+    // headline smeared through it as it passed underneath. Detaching it
+    // makes that worse, not better, because more of the page passes beside
+    // the bar, so the fill stays solid.
+    <header className="sticky top-0 z-40 px-3 lg:px-0">
+      <div className="mx-auto max-w-6xl rounded-b-2xl border-x border-b border-[var(--border)] bg-[var(--surface)] shadow-[shadow:var(--shadow-soft)] lg:max-w-none lg:rounded-none lg:border-x-0 lg:bg-[var(--bg)] lg:shadow-none">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/*
           32, not 40, against this header's own h-16. At 40 the lockup
@@ -112,7 +133,7 @@ export default function PublicNav({ user }: { user: PublicNavUser }) {
       </div>
 
       {open && (
-        <div id="mobile-nav" className="border-t border-[var(--border)] bg-[var(--bg)] px-4 py-4 lg:hidden">
+        <div id="mobile-nav" className="border-t border-[var(--border)] px-4 py-4 lg:hidden">
           <nav aria-label="Primary" className="flex flex-col gap-1">
             {LINKS.map((link) => (
               <Link
@@ -147,6 +168,7 @@ export default function PublicNav({ user }: { user: PublicNavUser }) {
           </div>
         </div>
       )}
+      </div>
     </header>
   );
 }
