@@ -26,10 +26,10 @@ export const INTRO = {
     "How Draftpace became seven products built around real parts of life, instead of one interface stretched over all of them.",
   byline: "By Umar Malik, who designed and built it.",
   meta: [
-    { label: "Role", value: "Product Designer and Creator. Sole owner of the work." },
+    { label: "Role", value: "Founder, Product Designer & Creator." },
     { label: "Timeline", value: "May to September 2026" },
-    { label: "Status", value: "MVP frozen. Not yet in anyone's hands." },
-    { label: "Scope", value: "Research, strategy, product design, writing, visual system, build" },
+    { label: "Status", value: "MVP Live." },
+    { label: "Scope", value: "Research, strategy, product design, UX writing, visual system, build" },
   ],
 };
 
@@ -131,7 +131,7 @@ export const SHELF = {
 
 export const SYSTEM = {
   eyebrow: "The system",
-  heading: "One foundation underneath seven different products",
+  heading: "One foundation underneath different products",
   body: [
     "Each product looks and behaves differently on purpose. Underneath, they share one foundation: how someone signs in and owns something, the shell around every product, the set of places every product has in common, and one set of colours, spacing and type with room for each product's own character on top.",
     "None of that was planned upfront in full. It came from repetition. By the sixth product, a pattern that had already been built twice was pulled out into one shared version rather than copied a third time. That is what let the later products get built faster than the earlier ones.",
@@ -150,7 +150,7 @@ export const PROCESS = {
   eyebrow: "Process",
   heading: "The process that actually happened",
   body: [
-    "There were no wireframes and no research repository kept along the way. The work ran as a loop, and the running product was the thing being reviewed at every turn.",
+    "There were no wireframes and no research repository kept along the way. The work ran as a loop, and the running product was the thing being reviewed & tested at every turn.",
   ],
   steps: [
     { name: "Understand", text: "The problem, and what people already use for it." },
