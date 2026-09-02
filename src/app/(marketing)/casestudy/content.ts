@@ -1,324 +1,443 @@
 /**
- * The case study's text, kept out of the page component so the writing can
- * be read and edited as writing rather than picked out of markup.
+ * The case study's writing, kept out of the page component so the copy can
+ * be read and edited as copy rather than picked out of markup.
  *
- * HONESTY RULES THIS FILE IS WRITTEN UNDER
+ * WHAT THIS IS, AND WHAT IT IS NOT
  *
- * Three kinds of statement appear here and they are not allowed to blur
- * into each other:
+ * A product design case study, not a diary. The founder's own history
+ * appears once, briefly, because it explains why this problem was worth
+ * looking at. Everything after that is about the product: the problem, the
+ * research, the thesis, the decisions, the system, and what is still
+ * unproven.
  *
- *   - what was researched or observed before building
- *   - what was decided, and on what basis
- *   - what has actually been checked with people outside the project
+ * THE HONESTY RULE
  *
- * The last category is currently empty, and the page says so in its own
- * words rather than leaving a reader to assume otherwise. Anything
- * reconstructed after the fact carries a visible note saying so.
+ * Three kinds of statement appear here and they are never allowed to blur
+ * into each other: what was researched or observed before building, what
+ * was decided and on what basis, and what has actually been checked with
+ * people outside the project. The third is currently empty, and the page
+ * says so plainly rather than leaving a reader to assume otherwise.
  */
 
-export interface Section {
-  id: string;
-  label: string;
-  /** Shown as the section heading. */
-  heading: string;
-  /** Optional standfirst, one or two lines, set larger than the body. */
-  standfirst?: string;
-  /** Body paragraphs. */
-  body?: string[];
-  /** An aside the reader should be able to tell apart from the narrative. */
-  note?: { kind: "reconstructed" | "unverified" | "decision"; text: string };
-  /** A pulled-out list, used sparingly. */
-  list?: { head: string; text: string }[];
-  /** A short quotation from the project's own written record. */
-  quote?: { text: string; source: string };
-}
-
 export const INTRO = {
-  eyebrow: "Case study",
-  title: "I spent six years designing other people's products. Then I built my own.",
+  eyebrow: "Product design case study",
+  title: "Software that starts with your life, not the other way around.",
   standfirst:
-    "Draftpace is seven products for the parts of life that are hard to keep track of. I did the thinking, the design, the writing and the build. This is the honest account of how it happened, including the parts I got wrong and the question I still cannot answer.",
+    "How Draftpace became seven products built around real parts of life, instead of one interface stretched over all of them.",
+  byline: "By Umar Malik, who designed and built it.",
   meta: [
     { label: "Role", value: "Product Designer and Creator. Sole owner of the work." },
     { label: "Timeline", value: "May to September 2026" },
-    { label: "Status", value: "MVP frozen. Not yet sold to anyone." },
-    { label: "Scope", value: "Strategy, product design, writing, visual system, build" },
+    { label: "Status", value: "MVP frozen. Not yet in anyone's hands." },
+    { label: "Scope", value: "Research, strategy, product design, writing, visual system, build" },
   ],
 };
 
-export const SECTIONS: Section[] = [
-  {
-    id: "short-version",
-    label: "The short version",
-    heading: "The short version",
-    standfirst: "If you only read one part, read this.",
-    list: [
-      {
-        head: "I was designing screens when I wanted to be solving problems",
-        text: "Six years of product design for other companies. The part I was good at was working out what to build. The part I was paid for was making it look right.",
-      },
-      {
-        head: "Getting ill gave me the time to ask whether I wanted to keep doing it",
-        text: "I left my job and spent months recovering. The answer was no, and the follow-up question was what was actually stopping me.",
-      },
-      {
-        head: "I looked at the market before I built anything",
-        text: "People were buying planners and templates in real numbers, and a lot of them were quietly disappointed afterwards. That gap was the opportunity.",
-      },
-      {
-        head: "My first answer was better documents. I deleted it.",
-        text: "It was a reasonable idea and it is still a good business, but it was not the answer to the problem I actually cared about.",
-      },
-      {
-        head: "The second answer was products that do the remembering for you",
-        text: "Seven of them, covering money, home, focus, family, personal affairs and travel.",
-      },
-      {
-        head: "I built seven to test one thing",
-        text: "Not seven ideas. One question: can a single foundation carry parts of life that have nothing in common? It can.",
-      },
-      {
-        head: "The thing I have not proven is the important one",
-        text: "Nobody outside this project has used it or paid for it. I can tell you the product works. I cannot yet tell you anyone wants it.",
-      },
-    ],
-  },
+export const CONTEXT = {
+  heading: "Context",
+  body: [
+    "Umar Malik is a Product Designer and Creator with six years of experience building software for complex, real-world problems, including work in education and products built around children, teachers and families.",
+    "A medical break in 2026 gave him time away from client work, and a question that came with it: which problems were actually worth solving. What stayed interesting was never the interface. It was understanding a problem well enough to make it smaller. That question became Draftpace.",
+  ],
+};
 
-  {
-    id: "before",
-    label: "Before any of this",
-    heading: "Before any of this",
-    body: [
-      "I spent about six years designing products for other people. I was fine at it. But the part of the job I actually cared about was never the screens.",
-      "What I liked was the bit before that. Working out what the real problem was. Deciding what should exist and what should not. Arguing about which of three ideas was worth building. By the time it reached the point where I was choosing spacing and states, most of the interesting thinking had already happened, usually in a meeting I was in but did not own.",
-      "So I got good at the last stretch of a process whose beginning belonged to somebody else.",
-    ],
-  },
+export const PROBLEM = {
+  eyebrow: "The problem",
+  heading: "Managing real life is still in pieces",
+  body: [
+    "There is no shortage of software. Notes apps, spreadsheets, calendars, reminders, PDFs, cloud folders, messaging threads, bookmarks, dedicated apps, and memory. Most of them work fine on their own.",
+    "The problem sits between them. A person becomes the one holding the whole thing together: remembering where something was saved, what needs to happen next, when something needs attention, which document belongs to which problem, and which app has which piece of it.",
+  ],
+  kicker: "None of these tools fail. The system built out of all of them does.",
+  /** Labels for the scattered-tools figure. */
+  scatter: ["Notes", "Spreadsheets", "Calendar", "Reminders", "PDFs", "Cloud folders", "Messages", "Bookmarks", "Memory"],
+};
 
-  {
-    id: "question",
-    label: "The question that started it",
-    heading: "The question that started it",
-    body: [
-      "Then I got sick. I left my job and spent months recovering.",
-      "A long enough gap makes you ask blunt questions, and the one I could not get away from was whether this was what I wanted to keep doing for the rest of my life. The answer came back as a flat no.",
-      "The second question was more useful. If I can design products and work out problems, what is actually stopping me from building something of my own?",
-      "I could not find an answer. That is the whole reason Draftpace exists.",
-    ],
-    note: {
-      kind: "reconstructed",
-      text: "This period sits in a four week gap in the project's history, between the first version going quiet in July and the rebuild starting on the first of August. The gap is visible in the record. The reasoning behind it is mine, told here for the first time.",
+export const INSIGHT = {
+  eyebrow: "The insight",
+  heading: "Most software starts with the tool",
+  body: [
+    "Most software hands a person a structure first. Fields, folders, tasks, reminders, dashboards, templates. Then it asks them to translate their actual problem into whichever of those it happens to offer.",
+    "Draftpace explores the opposite direction. Instead of starting with the software and asking a person to fit their life into it, what if the software started with how the problem already exists in someone's life, and built its structure around that?",
+  ],
+};
+
+export const RESEARCH = {
+  eyebrow: "Research",
+  heading: "What the research actually looked like",
+  body: [
+    "Before building anything, the opportunity was researched directly. Reading listings and the reviews underneath them on the marketplaces where planners and templates are sold. Reading long threads where people describe what they bought and what happened to it a few weeks later. Going through competing products and the comments under them.",
+    "Two things were true at once, and the tension between them is the whole opportunity. A large number of people were buying these products. A large number of them were quietly done with them within weeks.",
+    "The disappointment had a shape. Upkeep became a second job. The product did not fit the specific situation the person actually had. And falling behind turned the thing into a record of failure, which is the point most people close it for good.",
+  ],
+  ledger: [
+    { kind: "Observed", text: "The same three complaints repeating across reviews and long forum threads." },
+    { kind: "Researched", text: "Listings, competing products, their sites, and what buyers said underneath them." },
+    { kind: "Interpreted", text: "That the failure was structural, not a matter of the products being badly made." },
+    { kind: "Hypothesised", text: "That a product which keeps the state of a problem would not fail the same way." },
+  ],
+  note: "This research happened before the product was designed, and it was not written up formally at the time. What is described here is reconstructed from the decisions it produced.",
+};
+
+export const FIRST_ANSWER = {
+  eyebrow: "The first answer",
+  heading: "Better documents were not enough",
+  body: [
+    "The first direction was to build better versions of what already existed. Carefully designed planners, templates and resources built around one specific situation instead of a blank grid to fill in yourself.",
+    "That is a reasonable idea, and it still exists as its own effort under a separate name, WealthDrafts. Different problems deserve different solutions, and a document is an excellent answer to a problem with edges.",
+    "But the problems worth caring about here did not have edges. Money does not finish. A house does not finish. The paperwork a family needs if something goes wrong does not finish. If the problem does not end, why should the product stop at download?",
+  ],
+};
+
+export const THESIS = {
+  quote: "Design around the problem. Not the software.",
+  support:
+    "Every Draftpace product holds the context of one part of a person's life, keeps what matters together, and says what needs attention without asking them to remember to check.",
+};
+
+export const COMPANION = {
+  eyebrow: "The product model",
+  heading: "A Companion is not an app with a different name",
+  body: [
+    "It is a focused environment built around one area of life, where the structure of the product comes from the structure of the problem.",
+  ],
+  examples: [
+    {
+      area: "Home",
+      instead: "Instead of a generic list of tasks and reminders",
+      real: "Home Base holds the actual things in a house, the record of what has been done to them, and the problems that come up, then says what is genuinely worth taking care of now.",
     },
-  },
-
-  {
-    id: "market",
-    label: "What I found in the market",
-    heading: "What I found when I looked at the market properly",
-    body: [
-      "Before I built anything, I went and looked. Not at a report. At the actual places where these things are bought and sold.",
-      "I read listings. I read the reviews under them, which is where people stop performing and say what actually happened. I read long forum threads where somebody describes the planner they bought in January and what state it was in by March. I went through competitor sites and the comments under their products.",
-      "Two things were true at the same time, and the tension between them is the whole opportunity. A very large number of people were buying these things. A very large number of them were quietly disappointed a few weeks later.",
-      "The disappointment had a shape. The upkeep was a second job. The thing did not fit the specific mess they actually had. And when they fell behind, the product turned into a record of failure, which is the point most people quietly close the file for good.",
-    ],
-    note: {
-      kind: "reconstructed",
-      text: "This research happened before the product was designed. I did not write it up at the time, which was a mistake. What you are reading is reconstructed from the decisions it produced and from my own memory of it, not from notes taken on the day.",
+    {
+      area: "Money",
+      instead: "Instead of a budgeting grid to fill in",
+      real: "Monthly Money Reset and Personal Finance Companion hold the ongoing shape of someone's money: what is coming in, what is already committed, and what is actually safe to spend.",
     },
-  },
-
-  {
-    id: "first-answer",
-    label: "My first answer",
-    heading: "My first answer, and the business it became",
-    body: [
-      "My first conclusion was that the products were simply not good enough, and that the opening was to make far better ones. Carefully designed. Built around one specific situation instead of being a blank grid you have to fill in yourself.",
-      "I still think that is true, and I still do it. That work continues under a separate name, WealthDrafts, which makes focused solutions for specific problems, including printables and small tools.",
-      "But while I was thinking about my own life, I hit something that idea could not solve.",
-    ],
-  },
-
-  {
-    id: "turn",
-    label: "The thing that changed my mind",
-    heading: "The thing that changed my mind",
-    standfirst: "A document can help you organise your life. It can also sit unopened.",
-    body: [
-      "You can forget to open it. You can forget to update it. You can forget which file you put the thing in. The system you bought to carry the load becomes one more thing you have to stay on top of.",
-      "I want to be careful here, because the easy version of this story is that documents are bad, and that is not what I think. A document is an excellent answer to a problem with edges. A trip you are taking next month. A form you have to fill in once. A thing you want on paper.",
-      "Different problems deserve different solutions. That is the actual principle, and it is why I kept both.",
-      "The problems I had been circling did not have edges. Money does not finish. A house does not finish. The paperwork a family needs if something goes wrong does not finish. Those are not documents. They are ongoing, and they need something that keeps going with them.",
-    ],
-  },
-
-  {
-    id: "companions",
-    label: "What I built instead",
-    heading: "So I designed something that stays",
-    body: [
-      "The idea is not complicated. What if the product did the remembering?",
-      "It holds your situation. It works out what actually needs you now. It tells you the one next thing rather than showing you a wall of everything. And when nothing needs you, it says so and stays quiet.",
-      "There is one rule underneath all of it that I care about more than any feature. It never tells you that you are behind. There is no streak in any of these products, no completion percentage, and no screen that counts what you did not get to. If you disappear for a month, nothing punishes you when you come back.",
-      "That came straight out of the reviews. Falling behind was the moment people quit. So I made falling behind cost nothing.",
-    ],
-    quote: {
-      text: "It never tells you that you are behind.",
-      source: "This is a promise the automated test suite actually enforces, not just a line of copy.",
+    {
+      area: "Travel",
+      instead: "Instead of a checklist that does not know what is on it",
+      real: "Travel Companion holds the real shape of a trip, so when one thing moves, it can show what else was built on top of it.",
     },
-  },
+  ],
+};
 
-  {
-    id: "deleted",
-    label: "Deleting the first version",
-    heading: "Then I deleted the first version of my own product",
-    body: [
-      "By this point I had already built a working version of the old idea. A storefront, a catalogue, a checkout, marketing pages, the lot. It had shipped as a coming soon page.",
-      "On the first of August I deleted almost all of it.",
-      "I kept the pieces that were not tied to the old direction, the sign in, the legal pages, the theme switch, and rebuilt everything else. I wrote the rule down at the time so I could not argue with myself about it later.",
-      "It is the decision I am most confident about. The old version was not bad work. It was work aimed at a problem I had stopped believing in, and keeping it would only have slowed down the thing I did believe in.",
-    ],
-    quote: {
-      text: "Nothing was preserved because of sunk effort.",
-      source: "Written into the project's decision record on the day of the rebuild.",
-    },
-  },
+export const SHELF = {
+  eyebrow: "The seven",
+  heading: "Seven problems, one way of thinking",
+  body: [
+    "Seven different problems, not seven versions of the same app. The question behind building more than one was simple: if different parts of life have genuinely different problems, should they share one generic productivity screen?",
+    "The answer here was no. Each product is built to feel native to the problem it solves, rather than a shared template stretched over it.",
+  ],
+};
 
-  {
-    id: "how",
-    label: "How I actually designed it",
-    heading: "How I actually designed this, which is not how you are supposed to",
-    standfirst: "There are no Figma files. There are no wireframes. I should be straight about that.",
-    body: [
-      "I designed by building the real thing and then living with it.",
-      "I would decide what a product needed to do, build a working version, use it myself, and then go through it looking for what was wrong. Not what was ugly. What was wrong. Then I would fix that and go again. The written record of this project is mostly a record of those rounds.",
-      "This has a real advantage. You cannot fool yourself with a picture of a product. A drawing of a screen always works, because nothing in it has to load, fail, be empty, or hold somebody's actual messy information. The moment you use the real thing, the problems introduce themselves.",
-      "It also has a real cost, and I would rather name it than have somebody else point it out. Reviewing your own working product tells you a great deal about what you made and nothing at all about whether anybody else wants it. I got very good information about the thing and no information about the market.",
-      "So: strong on judgement, weak on evidence. That is an accurate summary of this project's method.",
-    ],
-    note: {
-      kind: "decision",
-      text: "This was a choice, not an accident. Working alone, a drawing is a detour. Every hour spent drawing a screen is an hour not spent finding out how it behaves when the data is real.",
-    },
-  },
+export const SYSTEM = {
+  eyebrow: "The system",
+  heading: "One foundation underneath seven different products",
+  body: [
+    "Each product looks and behaves differently on purpose. Underneath, they share one foundation: how someone signs in and owns something, the shell around every product, the set of places every product has in common, and one set of colours, spacing and type with room for each product's own character on top.",
+    "None of that was planned upfront in full. It came from repetition. By the sixth product, a pattern that had already been built twice was pulled out into one shared version rather than copied a third time. That is what let the later products get built faster than the earlier ones.",
+  ],
+  flow: [
+    "Different problems",
+    "Different product experiences",
+    "Shared design principles",
+    "Shared interaction patterns",
+    "One shared foundation",
+    "One shelf that holds together",
+  ],
+};
 
-  {
-    id: "seven-on-purpose",
-    label: "Seven, on purpose",
-    heading: "Why there are seven products and not one",
-    body: [
-      "This is the decision people will question most, so let me be exact about it.",
-      "Building one product and calling the result a platform proves nothing. The whole bet was that one shared foundation could carry parts of life that have almost nothing to do with each other. Money is numbers and dates. A house is objects and seasons. Personal affairs is documents and people. Travel is a chain of things that fall over when one of them moves.",
-      "If the same foundation could carry all of those without being bent out of shape each time, the idea was sound. If it could not, better to find out at product three than after spending a year on one.",
-      "It held. The later products took less time than the earlier ones, which is the only honest measure of whether a foundation is real.",
-    ],
-    note: {
-      kind: "unverified",
-      text: "This tested whether the system could support different parts of life. It did not test whether anyone wants seven products, or which of them matters most. Those remain open.",
-    },
-  },
+export const PROCESS = {
+  eyebrow: "Process",
+  heading: "The process that actually happened",
+  body: [
+    "There were no wireframes and no research repository kept along the way. The work ran as a loop, and the running product was the thing being reviewed at every turn.",
+  ],
+  steps: [
+    { name: "Understand", text: "The problem, and what people already use for it." },
+    { name: "Define", text: "The thesis, the scope, the constraints, the edges." },
+    { name: "Build", text: "The real experience, not a picture of it." },
+    { name: "Use and review", text: "Live with the working product and find what is wrong." },
+    { name: "Challenge", text: "Ask whether the structure still matches the real problem." },
+    { name: "Change", text: "Redesign, remove, simplify, restructure." },
+    { name: "Repeat", text: "Turn what keeps working into a shared pattern." },
+  ],
+  kicker: "The product itself became part of the design process.",
+};
 
-  {
-    id: "wrong",
-    label: "What I got wrong",
-    heading: "Four things the product taught me I had wrong",
-    standfirst: "These are the useful part. A case study where everything worked is not a case study, it is an advert.",
-    list: [
-      {
-        head: "My own filing system did not survive contact with the products",
-        text: "I had sorted everything by the need a person had, and built a whole page around it. Once seven products existed, six of them fell into one bucket and three buckets were empty. The categories were tidy in my head and useless in practice. I threw them out and sorted by area of life instead, which is how people describe their own problems anyway.",
-      },
-      {
-        head: "I killed the best writing on the site because it was arguing the wrong point",
-        text: "The homepage opened by explaining why one of my products beats a document. It was well written and I was fond of it. It was also the weakest thing I could lead with, because every piece of software claims to remember you, and because it measured us against a file rather than against a real competitor. Worse, it pushed the actual products most of the way down the page. I cut it and led with the parts of life instead.",
-      },
-      {
-        head: "One of my favourite words already belonged to somebody else",
-        text: "I had used a particular soothing adjective all over the product. Then I noticed it is also the name of a very large meditation company. It was both a collision and, on reflection, a slightly lazy word. It is now banned in the codebase and the tests fail if it comes back.",
-      },
-      {
-        head: "I rejected my own first version of a product after building it",
-        text: "The first version of the home product was a tracker for appliances and maintenance. Correct, and lifeless. I threw out the shape and rebuilt it around how somebody actually talks about their house, including letting them say what is wrong in their own words instead of picking a category.",
-      },
-    ],
-  },
+export interface Decision {
+  title: string;
+  context: string;
+  problem: string;
+  options: string;
+  decision: string;
+  result: string;
+}
 
+export const DECISIONS: Decision[] = [
   {
-    id: "system",
-    label: "Designing it once",
-    heading: "Designing it once instead of seven times",
-    body: [
-      "The thing I am proudest of is not a screen. It is that the sixth product was faster to build than the second.",
-      "Every product shares the same spine. The same way of signing in and owning things. The same shell around the outside. The same set of places a product can have, so that moving between two of them does not feel like moving between two companies. One set of colours, spacing and type, with room for each product to have its own character on top.",
-      "Halfway through the sixth product I noticed I was about to copy the guided walkthrough engine from an earlier one. That is the moment a system either forms or quietly rots. So I stopped, pulled the shared part out into one place, and rebuilt both products on top of it. Nothing a user could see changed. Everything after that got cheaper.",
-      "The rules are enforced by tests rather than by discipline. If somebody uses a colour that is not in the set, or writes a banned word into public text, the build fails. I did that because I knew I would be the one to break the rules at two in the morning.",
-    ],
+    title: "Killing the first version",
+    context:
+      "A working version of the original idea already existed: a storefront, a catalogue, a checkout, marketing pages, live as a coming soon page.",
+    problem: "It was built around a direction that no longer matched what the research said the opportunity was.",
+    options: "Keep the working code and steer it somewhere new, or delete it and rebuild against the new thesis.",
+    decision:
+      "Delete it. Nothing was kept for the reason that it already existed. The pieces that were not tied to the old direction were relocated rather than rewritten.",
+    result: "Slower for one week and faster for every week after, because the rebuild had nothing to work around.",
   },
-
   {
-    id: "ai",
-    label: "Where AI fitted",
-    heading: "Where AI fitted, since you will wonder",
-    body: [
-      "I used AI heavily as a build partner, and the project's own history records it on almost every change, so there is no point being coy about it.",
-      "What that actually looked like: I decided what to build and why. I set the constraints and locked the decisions. I reviewed the working product and said what was wrong with it. The AI did a large amount of the writing of code against those decisions, and it was fast at it.",
-      "The division shows up plainly in the record. The history is full of entries that say the founder rejected this scope, or corrected this after seeing it built, or overrode this decision after using the product. That is what my job was on this project. Judgement applied to a working thing.",
-      "I do not think this makes the design work less mine. It made it possible to do at all, alone, at this size. But I would rather state it accurately than let somebody discover it and wonder what else was oversold.",
-    ],
+    title: "From a document to a Companion",
+    context: "The first business idea was better planners and templates, sold once and downloaded.",
+    problem: "A document cannot follow a problem that keeps going. It can be forgotten, and it cannot tell anyone anything.",
+    options: "Make even better documents, or build something that keeps the state of a problem over time.",
+    decision:
+      "Split them. Focused, bounded problems stayed with documents under WealthDrafts. Ongoing problems became Companions under Draftpace.",
+    result: "Two different answers for two genuinely different kinds of problem, instead of one answer stretched over both.",
   },
-
   {
-    id: "honest",
-    label: "What I know and what I do not",
-    heading: "What I actually know, and what I only believe",
-    standfirst: "This is the section I would want to read first if somebody sent me a case study.",
-    list: [
-      {
-        head: "Known: the system holds",
-        text: "Seven products, six areas of life, one foundation. Later products cost less to build than earlier ones. This is demonstrated, not claimed.",
-      },
-      {
-        head: "Known: it behaves correctly",
-        text: "Close to two thousand automated checks run on every change, covering the product rules, the design system and the public writing.",
-      },
-      {
-        head: "Believed: the market gap is real",
-        text: "Based on reading listings, reviews and forum threads before building. Real research, informally done, and never turned into a documented study.",
-      },
-      {
-        head: "Believed: people want this shape of product",
-        text: "This is a hypothesis. It comes from the pattern in those reviews. Nobody has confirmed it by choosing this over the alternative.",
-      },
-      {
-        head: "Unverified: the price",
-        text: "Products sit at eighteen or twenty eight dollars. That came from my sense of how much is in each one and what the surrounding market looks like. There was no pricing research and no willingness to pay testing. It is a starting number, not a finding.",
-      },
-      {
-        head: "Unverified: everything about real use",
-        text: "No usability testing. No interviews. No customers. The people in my written descriptions of buyers are reasoned constructions, not real people I spoke to, and I have not pretended otherwise anywhere in this project.",
-      },
-    ],
+    title: "Seven products instead of one",
+    context: "One product with a shared foundation underneath it proves nothing, because there is nothing to compare it against.",
+    problem: "Would the same foundation hold up across parts of life with almost nothing in common?",
+    options: "Build one product properly and assume the foundation works, or build across enough areas to find out.",
+    decision: "Build across six areas of life on purpose, as a test of the foundation rather than a bet on seven ideas.",
+    result: "It held. The later products took less time to build than the earlier ones, which is the only honest measure of it.",
   },
-
   {
-    id: "next",
-    label: "What happens next",
-    heading: "What happens next, and why the MVP is frozen",
-    body: [
-      "I have frozen it deliberately, because the next question is not one more feature can answer.",
-      "For four months the open question was whether I could design and build this. That question is closed. Seven products exist, they work, and they share one foundation.",
-      "The open question now is whether real people want it, use it, and pay for it. Nothing I can add to the codebase will answer that. Only putting it in front of people will.",
-      "So the next work is not product work. It is getting it in front of actual buyers, watching what they do with it, and being willing to be wrong about which of the seven matters. I expect to learn that one or two of them carry the whole thing and the rest were me proving a point to myself.",
-    ],
+    title: "The taxonomy that did not survive contact",
+    context: "Products were originally sorted by the kind of need they served, a set of categories written before most of them existed.",
+    problem: "Once there were seven products, six of them fell into a single category and three categories were empty.",
+    options: "Keep the categories and force the products into them, or rebuild the categories around what had actually been built.",
+    decision: "Sort by area of life instead of by abstract need, which is also how somebody describes their own problem out loud.",
+    result: "A shop and a homepage that sort the way a visitor already thinks, rather than the way an early plan did.",
   },
-
   {
-    id: "state",
-    label: "Where it stands today",
-    heading: "Where it stands today",
-    body: [
-      "The MVP is frozen. Seven products, six areas of life, one free and six paid. A public site with a shop, a guides library, and the pages a real company needs. A signed in application with its own shell, notifications, and a place for everything somebody owns.",
-      "It is a real product, built and shipped by one person over about four months, and it has not yet met a single customer.",
-      "Both halves of that sentence are the point.",
-    ],
+    title: "What the homepage leads with",
+    context:
+      "The homepage opened with the argument that a Draftpace product outlasts a downloaded file, and spent three sections making it.",
+    problem:
+      "That argument was right when the shelf held one product. With seven, it measured the work against a file rather than a real competitor, it was a claim any software can make, and it pushed the actual products most of the way down the page.",
+    options: "Sharpen the format argument, or drop it and lead with what the products are for.",
+    decision: "Cut it from the top of the page and lead with the six areas of life. The file argument survives as one supporting line further down.",
+    result: "The single best-written passage on the site was demoted on purpose, because being well written is not the same as being the right thing to say first.",
+  },
+  {
+    title: "Living products gave way to Companions",
+    context:
+      "The founding strategy document locked living product as the core idea and explicitly demoted the word Companion to something narrower.",
+    problem:
+      "In practice, Companion was the word that explained the product to a person seeing it for the first time. Living product needed a paragraph of setup before it meant anything at all.",
+    options: "Keep pushing the locked word, or let the one that was already working take the lead.",
+    decision: "Companion became the name on the page. Living stayed as the idea underneath it rather than the label on top.",
+    result: "The Companion Series, as it exists today, named against the project's own founding document.",
   },
 ];
+
+export const REPOSITION = {
+  eyebrow: "Before and after",
+  heading: "The repositioning, in the order of the page itself",
+  body: [
+    "The clearest way to see this decision is not in the words. It is in where the products sat on the page.",
+  ],
+  before: {
+    label: "Before",
+    provenance: "Commit 693c59b, 25 August 2026",
+    eyebrow: "Products that keep up with you",
+    headline: "A studio for living products.",
+    sections: [
+      "Hero",
+      "The graveyard",
+      "What makes a product alive",
+      "Living is a spectrum",
+      "The shelf",
+      "Owned, not rented",
+      "Trust",
+      "Closing",
+    ],
+    productsAt: 5,
+  },
+  after: {
+    label: "After",
+    provenance: "Commit babf966 onward, 30 August 2026",
+    eyebrow: "The Companion Series",
+    headline: "For the parts of life that are hard to keep track of.",
+    sections: [
+      "Hero, with the products in it",
+      "The difference, made touchable",
+      "How these behave",
+      "The series",
+      "Owned, not rented",
+      "Trust",
+      "Closing",
+    ],
+    productsAt: 1,
+  },
+  reason:
+    "Three of the first four sections were arguing about file formats. The products themselves were the fifth thing a visitor met. Moving them to the first thing meant cutting the writing the site was proudest of.",
+};
+
+export interface DeepDive {
+  slug: string;
+  name: string;
+  area: string;
+  problem: string;
+  existing: string;
+  thesis: string;
+  response: string;
+  keyDecision: string;
+  result: string;
+}
+
+export const DEEP_DIVES: DeepDive[] = [
+  {
+    slug: "home-management-companion",
+    name: "Home Base",
+    area: "Home",
+    problem:
+      "A house generates small, ongoing responsibilities that have nowhere to live. When the filter was last changed. Who serviced the boiler. The model number behind the fridge. What is quietly about to need attention.",
+    existing:
+      "Most people split this across a notes app, a drawer of manuals, their own memory, and finding out only once something has already broken.",
+    thesis:
+      "A home is not a task list. It is a set of real things, each with its own history and its own rhythm, plus the occasional problem that fits neither.",
+    response:
+      "Home Base is built around the things in a home, the record of what has happened to each of them, and the problems currently open, all surfaced through one view that says what is worth taking care of now.",
+    keyDecision:
+      "The first version was a straightforward appliance and maintenance tracker. It worked, and it had no character. It was rebuilt around how somebody actually talks about their house, including letting them describe what is wrong in their own words instead of choosing from a list of categories.",
+    result:
+      "A product that knows a dishwasher is not a washing machine, and can raise the right thing at the right time because it understands what it is looking at.",
+  },
+  {
+    slug: "personal-finance-companion",
+    name: "Personal Finance Companion",
+    area: "Money",
+    problem:
+      "Money is not one question. It is accounts, income, bills, subscriptions, debts and savings, all moving at once, and the only question that matters is what is actually safe to spend right now.",
+    existing:
+      "People check several banking apps, hold the rest in their head, and find out they were wrong when something comes out that they had forgotten was coming.",
+    thesis:
+      "The work is not data entry. It is arriving at one number a person can trust, and being able to show exactly what it is made of.",
+    response:
+      "One dominant figure for available money, with the full breakdown one tap away, and a single next move whenever something needs attention rather than a dashboard to interpret.",
+    keyDecision:
+      "The workspace was redesigned around one dominant next action and a real attention list, rather than showing everything the product knew at once. Importing was made exception-first, so a person reviews what looks wrong instead of reading a flat list of everything they just imported.",
+    result:
+      "The most structurally complex product on the shelf, and the one that best demonstrates ongoing management rather than one-time setup.",
+  },
+  {
+    slug: "travel-companion",
+    name: "Travel Companion",
+    area: "Travel",
+    problem:
+      "A trip is a chain of things that depend on each other. The transfer depends on the flight. The check-in depends on the transfer. When one moves, several others quietly become wrong.",
+    existing:
+      "A folder of confirmation emails, a checklist that does not know what is on it, and a person mentally re-deriving the whole chain every time something changes.",
+    thesis:
+      "The valuable thing is not storing the bookings. It is knowing what else moves when one thing moves.",
+    response:
+      "The trip is held as a set of connected things. Record that a flight changed, and the product walks through what was built on top of it, one item at a time, and leaves alone the dinner reservation that depended on nothing.",
+    keyDecision:
+      "It never edits anything on the person's behalf. The walk is downward only and changes nothing by itself, because a product that silently rearranges a trip is worse than one that does nothing.",
+    result:
+      "The clearest demonstration of the whole thesis: a product whose structure is the structure of the problem.",
+  },
+];
+
+export const DIFFERENT = {
+  eyebrow: "The difference",
+  heading: "Where it starts is the difference",
+  body: [
+    "Most software starts with the tool. Tasks, notes, a database, a calendar, a dashboard. The person has to translate their actual situation into whichever of those they were handed.",
+    "Draftpace starts at the other end, with the part of life the problem lives in. Home. Money. Travel. Learning. What somebody leaves behind for the people who have to sort it out. The structure of each product follows from there.",
+    "That is the claim being tested, and it is one the products still have to earn in real use rather than in a design decision.",
+  ],
+  comparison: [
+    { approach: "Generic productivity software", startsWith: "The tool" },
+    { approach: "A system built by hand from notes, sheets and memory", startsWith: "Whatever is to hand" },
+    { approach: "Planners and templates", startsWith: "A template" },
+    { approach: "Chat-based assistants", startsWith: "A conversation" },
+    { approach: "Draftpace", startsWith: "The problem itself" },
+  ],
+  caveat:
+    "The point is not that Draftpace beats everything on this list. Several of them are very good at what they do. The point is that it starts somewhere else.",
+};
+
+export const HELD_UP = {
+  eyebrow: "Assessment",
+  heading: "What held up",
+  items: [
+    {
+      head: "Starting from the problem rather than the interface",
+      text: "Home Base did not get its shape from a task list template. It got it from what a house actually needs.",
+    },
+    {
+      head: "Being willing to delete finished work",
+      text: "The first version of Draftpace was working software, and it was deleted the day it stopped matching the thesis.",
+    },
+    {
+      head: "Testing the foundation with variety, not with faith",
+      text: "Six unrelated areas of life were built on purpose, to find out whether one foundation would hold rather than assume it.",
+    },
+    {
+      head: "Designing against the real thing",
+      text: "Every structural decision here was corrected after using the built product, not after looking at a drawing of it.",
+    },
+    {
+      head: "Consistency without sameness",
+      text: "Seven products share one shell and one set of rules, and none of them reads as a reskin of another.",
+    },
+  ],
+};
+
+export const UNPROVEN = {
+  eyebrow: "Assessment",
+  heading: "What is still only a hypothesis",
+  items: [
+    {
+      head: "Nobody outside this project has used it",
+      text: "No usability testing, no interviews, no customers. The buyers described in the project's own documents are reasoned constructions, not people who were spoken to.",
+    },
+    {
+      head: "The price is a starting number",
+      text: "Products sit at eighteen or twenty eight dollars, set from a sense of the depth of each one and the surrounding market. There was no pricing research and no willingness to pay testing.",
+    },
+    {
+      head: "Nobody knows which of the seven matters most",
+      text: "The shelf was built to test a foundation. It was not built on evidence about which area of life has the strongest demand.",
+    },
+    {
+      head: "Returning is the whole bet, and it is untested",
+      text: "The entire model rests on people coming back to a product over months. That is exactly the thing that cannot be proven without real users.",
+    },
+  ],
+  kicker:
+    "The MVP answers the product design questions. The market still has to answer the business ones.",
+};
+
+export const STATS = {
+  eyebrow: "Scope",
+  heading: "By the numbers",
+  note: "Counted from the project's own history rather than estimated.",
+  items: [
+    { value: "7", label: "products, across six areas of life" },
+    { value: "14", label: "weeks from first commit to frozen MVP" },
+    { value: "180", label: "design tokens in one shared set" },
+    { value: "14", label: "shared interface primitives" },
+    { value: "1,937", label: "automated checks on every change" },
+    { value: "76", label: "pages across the site and products" },
+  ],
+};
+
+export const NEXT = {
+  eyebrow: "Next",
+  heading: "Time to find out whether anyone wants it",
+  body: [
+    "The next phase is not more features. It is putting Draftpace in front of people who had nothing to do with building it, and watching what actually happens.",
+    "What do they use. What do they ignore. What do they come back to without being reminded. Where does it get in the way. Which of the seven pulls the most interest. And whether anybody is willing to pay for it.",
+    "Whatever gets designed next should come from that, rather than from another round of good reasoning.",
+  ],
+};
+
+export const CLOSING = {
+  quote:
+    "Draftpace is an ongoing exploration of what software looks like when it starts from the reality of the person using it, rather than from the interface, the feature list, or the productivity system.",
+  lines: ["Design around the problem.", "Build around real life.", "Let the software follow."],
+  byline: "Umar Malik. Product Designer and Creator.",
+};
