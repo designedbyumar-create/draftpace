@@ -1,72 +1,37 @@
 import type { Metadata } from "next";
 import Container from "@/design-system/Container";
-import NeedHelpFinder, { type FinderEntry } from "@/components/public/help/NeedHelpFinder";
-import { LIFE_AREAS } from "@/content/areas";
-import { shopRegistry } from "@/shop/registry";
-import { ensureShopRegistered } from "@/shop/ensureRegistered";
-import { OverviewScreenMockup as MmrMockup } from "../shop/[productSlug]/monthlyMoneyResetVisuals";
-import { OverviewScreenMockup as HmcMockup } from "../shop/[productSlug]/homeManagementCompanionVisuals";
-import { OverviewScreenMockup as AlongsideMockup } from "../shop/[productSlug]/adhdLifeCompanionVisuals";
-import { OverviewScreenMockup as HscMockup } from "../shop/[productSlug]/homeschoolingCompanionVisuals";
-import { OverviewScreenMockup as PlaMockup } from "../shop/[productSlug]/personalLifeAffairsCompanionVisuals";
-import { OverviewScreenMockup as TravelMockup } from "../shop/[productSlug]/travelCompanionVisuals";
+import AskDP from "@/components/public/help/AskDP";
 
 export const metadata: Metadata = {
-  title: "Need help",
+  title: "Ask",
   description:
-    "Six situations the Draftpace Companion Series is built for, and the Companion that covers each one. Every situation here has a product behind it.",
+    "Ask a real question about money, home, legal and admin, personal affairs, travel, work, documents, cars or family life, and get an answer from Draftpace's own sourced library, not a guess.",
   alternates: { canonical: "/help-with" },
 };
 
 /**
- * The URL stays /help-with even though the page is now called Need help.
- * It is in the sitemap, indexed, and printed inside at least one shipped
- * product, so the label is what changed and the address is not.
+ * The URL stays /help-with. It is in the sitemap, indexed, and printed
+ * inside at least one shipped product, so nothing about the address
+ * changes even though the page underneath it is now a different thing:
+ * Ask DP absorbs what this page used to do (pick your situation, meet
+ * the Companion for it) and adds a real question-and-answer library in
+ * front of it. See src/content/askdp.ts for what backs the answers and
+ * src/components/public/help/AskDP.tsx for how a question resolves.
  */
-const AREA_MOCKUP: Record<string, React.ReactNode> = {
-  money: <MmrMockup />,
-  home: <HmcMockup />,
-  "mind-and-focus": <AlongsideMockup />,
-  "family-and-learning": <HscMockup />,
-  "affairs-and-endings": <PlaMockup />,
-  travel: <TravelMockup />,
-};
-
 export default function NeedHelpPage() {
-  ensureShopRegistered();
-
-  const entries: FinderEntry[] = LIFE_AREAS.flatMap((area) => {
-    const products = area.productSlugs
-      .map((slug) => shopRegistry.getBySlug(slug))
-      .filter((p): p is NonNullable<typeof p> => Boolean(p))
-      .map((p) => ({ slug: p.slug, title: p.title, access: p.access }));
-    if (products.length === 0) return [];
-    return [
-      {
-        areaSlug: area.slug,
-        areaLabel: area.label,
-        situation: area.situation,
-        inTheirWords: area.inTheirWords,
-        whatHelps: area.whatHelps,
-        products,
-        mockup: AREA_MOCKUP[area.slug] ?? null,
-      },
-    ];
-  });
-
   return (
     <Container width="wide" className="pb-24 pt-16 sm:pt-20">
-      <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--brand-ink)]">Need help</p>
+      <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--brand-ink)]">Ask</p>
       <h1 className="mt-3 max-w-2xl font-serif text-[34px] font-semibold leading-tight tracking-tight sm:text-[44px]">
-        Which of these sounds like your week?
+        Ask a real question. Get an answer from what Draftpace actually knows.
       </h1>
       <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-[var(--muted)]">
-        Pick the one closest to what you are actually dealing with. Every situation here has a Companion behind it, so
-        you will not be walked through your own problem and then told we have not built anything for it.
+        Not a chat that generates an answer. Every answer here comes from a sourced entry in Draftpace&rsquo;s own
+        library, and it says so plainly when nothing in the library covers what you asked.
       </p>
 
-      <div className="mt-12">
-        <NeedHelpFinder entries={entries} />
+      <div className="mt-10 max-w-2xl">
+        <AskDP />
       </div>
     </Container>
   );
