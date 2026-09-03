@@ -18,6 +18,7 @@ import { shopRegistry } from "@/shop/registry";
 import { ensureShopRegistered } from "@/shop/ensureRegistered";
 import { formatPrice } from "@/shop/definition";
 import { LIFE_AREAS } from "@/content/areas";
+import { founderStructuredData } from "@/lib/structuredData";
 import { OverviewScreenMockup as MmrMockup } from "../shop/[productSlug]/monthlyMoneyResetVisuals";
 import {
   OverviewScreenMockup as HmcMockup,
@@ -141,6 +142,13 @@ export default function CaseStudyPage() {
 
   return (
     <CaseStudyGate>
+      {/* Person schema, not Article: this page names a real author in
+          INTRO.byline, so it can honestly claim one, same rule as the
+          founderStructuredData() doc comment. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(founderStructuredData()) }}
+      />
       {/* Opening. Product first, byline small: this is a case study about
           the work, not an introduction to its author. */}
       <section className="border-b border-[var(--border)]">

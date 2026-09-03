@@ -372,6 +372,18 @@ function AnswerCard({
         </a>
       )}
 
+      {entry.wealthdrafts && (
+        <a
+          href={entry.wealthdrafts.url}
+          target="_blank"
+          rel="noopener"
+          className="mt-2 inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--primary)] hover:underline"
+        >
+          More from Wealth Drafts: {entry.wealthdrafts.title}
+          <ArrowRight size={13} aria-hidden />
+        </a>
+      )}
+
       {entry.relatedProductSlug && (
         <div className="mt-5 flex flex-col gap-2 border-t border-[var(--border)] pt-5">
           <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">Keeps track of this for you</p>
