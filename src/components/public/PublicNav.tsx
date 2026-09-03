@@ -15,13 +15,15 @@ import { signOutAndRedirect } from "@/lib/supabase/signOut";
 // footer. The old "What do you need help with?" funnel is retired. See
 // docs/DRAFTPACE-APP-EXPERIENCE-DESIGN.md §3.
 /**
- * "Need help" leads on purpose. It is the only entry that asks about the
+ * "Ask" leads on purpose. It is the only entry that asks about the
  * visitor rather than explaining Draftpace, and it previously existed
  * only in the footer under a label long enough to read as a sentence,
- * which is why nobody found it.
+ * which is why nobody found it. Renamed from "Need help" when the page
+ * behind it became Ask DP: a real question-and-answer library, not
+ * only a situation picker.
  */
 const LINKS = [
-  { href: "/help-with", label: "Need help" },
+  { href: "/help-with", label: "Ask" },
   { href: "/shop", label: "Shop" },
   { href: "/how-it-works", label: "How it works" },
   { href: "/about", label: "About" },

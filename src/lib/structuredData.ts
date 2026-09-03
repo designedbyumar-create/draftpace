@@ -18,6 +18,26 @@ export function organizationStructuredData() {
     logo: `${SITE_URL}/logo/icon-512.png`,
     description:
       "Draftpace is a studio that makes living products: installable apps that remember you, guide your next move, and stay ready.",
+    sameAs: ["https://www.linkedin.com/company/draftpace-studio/"],
+  };
+}
+
+/**
+ * The founder, as a real Person distinct from the Organization above. Used
+ * on pages that already carry a named byline (About, the case study), never
+ * injected sitewide: a Person schema claims authorship of that specific
+ * page, and only pages that actually name Umar as the author should make
+ * that claim.
+ */
+export function founderStructuredData() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Umar Malik",
+    url: `${SITE_URL}/about`,
+    jobTitle: "Founder",
+    worksFor: { "@type": "Organization", name: "Draftpace" },
+    sameAs: ["https://www.linkedin.com/in/designedbyumar/"],
   };
 }
 

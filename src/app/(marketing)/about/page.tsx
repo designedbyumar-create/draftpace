@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Container from "@/design-system/Container";
+import { founderStructuredData } from "@/lib/structuredData";
 
 export const metadata: Metadata = {
   title: "About",
@@ -10,6 +12,10 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <Container width="narrow" className="pb-24 pt-16 sm:pt-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(founderStructuredData()) }}
+      />
       <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--brand-ink)]">About</p>
       <h1 className="mt-3 font-serif text-[34px] font-semibold leading-tight tracking-tight sm:text-[44px]">
         Nothing we make will tell you that you are behind.
@@ -57,6 +63,37 @@ export default function AboutPage() {
               <p className="mt-1.5 text-[13px] leading-relaxed text-[var(--muted)]">{item.body}</p>
             </div>
           ))}
+        </div>
+      </div>
+
+      <div className="mt-14 border-t border-[var(--border)] pt-10">
+        <h2 className="text-[16px] font-semibold text-[var(--text)]">Who's behind it</h2>
+        <div className="mt-4 flex flex-col gap-4 text-[14px] leading-relaxed text-[var(--muted)]">
+          <p>
+            Draftpace is built by{" "}
+            <a
+              href="https://www.linkedin.com/in/designedbyumar/"
+              target="_blank"
+              rel="noopener"
+              className="font-semibold text-[var(--text)] hover:underline"
+            >
+              Umar Malik
+            </a>
+            , its founder and designer.
+          </p>
+          <p>
+            Money is one part of life, and it&rsquo;s a big enough one to have its own home:{" "}
+            <a
+              href="https://wealthdrafts.com"
+              target="_blank"
+              rel="noopener"
+              className="font-semibold text-[var(--text)] hover:underline"
+            >
+              Wealth Drafts
+            </a>{" "}
+            is Draftpace&rsquo;s sister site, covering budgeting, saving and debt payoff in the same plain, sourced
+            style as everything here.
+          </p>
         </div>
       </div>
     </Container>

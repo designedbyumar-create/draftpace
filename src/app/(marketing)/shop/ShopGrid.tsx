@@ -35,7 +35,7 @@ const DEFAULT_SITUATION = "Seven Companions, one screen. Pick an area below to n
  * carries its own area tag on its thumbnail, so context isn't lost, but
  * narrowing to one area is now something a visitor chooses rather than
  * something the page always does for them. Nothing is preselected, same
- * reasoning as NeedHelpFinder: the default view is everything, the way a
+ * reasoning as Ask DP's browse view: the default is everything, the way a
  * shelf actually looks before anyone touches it.
  */
 export default function ShopGrid({ entries, areas }: { entries: ShopGridEntry[]; areas: ShopFilterArea[] }) {
