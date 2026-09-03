@@ -119,6 +119,289 @@ export type RangeEntry = EntryBase & {
 
 export type AskEntry = RuleEntry | RangeEntry;
 
+/**
+ * A question about Ask DP itself, not about a law or a rule: "what are
+ * you," "can I trust this," "do you save what I type." These have no
+ * jurisdiction and nothing to cite, so they deliberately don't extend
+ * EntryBase or carry a `source`. They're matched by the same free-text
+ * search as everything else, just never shown as a tenth topic chip: a
+ * "what are you?" chip sitting next to "Cars & Ownership" would read as
+ * filler, not as a real research area. They surface instead as a small
+ * set of suggestions next to the search box.
+ */
+export type MetaEntry = {
+  slug: string;
+  /** The canonical phrasing, shown as the question once answered. */
+  question: string;
+  /** Other real ways someone might type the same question, matched to
+   *  this same entry without duplicating the answer. */
+  aliases: string[];
+  answer: string;
+};
+
+export const META_ENTRIES: MetaEntry[] = [
+  {
+    slug: "meta-what-are-you",
+    question: "What are you?",
+    aliases: ["who are you", "what is ask dp", "what is this"],
+    answer:
+      "I'm Ask DP, Draftpace's own question library. Think of it as a librarian, not a chatbot: nothing here generates an answer or guesses. Ask something, and it looks for a matching entry that was already researched and sourced ahead of time, then shows you exactly that, with where it came from. If nothing in the library covers what you asked, it says so plainly instead of making something up.",
+  },
+  {
+    slug: "meta-are-you-ai",
+    question: "Are you an AI, like ChatGPT?",
+    aliases: ["are you chatgpt", "are you a chatbot", "is this ai", "are you an ai"],
+    answer:
+      "Not the kind that writes answers on the fly, and that's deliberate: nothing here is composed, so nothing here can be wrong in a fluent-sounding way. What's actually running is a matching system. It reads what you typed, finds the closest hand-written entry in the library, and shows it to you word for word, unedited. The only part doing any real work is how it matches your question, not how it writes the answer, because it never writes one.",
+  },
+  {
+    slug: "meta-legal-advice",
+    question: "Can you give me legal or financial advice?",
+    aliases: ["is this legal advice", "is this financial advice", "should i trust this instead of a lawyer"],
+    answer:
+      "No, and nothing here should be treated that way. Every answer is general information sourced from a real statute, government body, or official guidance, current as of the date shown under it. Your specific situation can turn on a detail a general answer can't see, so for anything with real money or legal weight riding on it, use this to get oriented, then check with a licensed professional for your exact case.",
+  },
+  {
+    slug: "meta-accuracy",
+    question: "How do you know this is accurate?",
+    aliases: ["where does this information come from", "how accurate is this", "who checks this", "can i trust this"],
+    answer:
+      "Every entry is checked against a real source before it goes in: legislation, an official regulator, or a body like the IRS, GOV.UK, or the CRA, linked right under the answer so you can check it yourself. Each entry also carries a \"Verified\" date, the day that checking actually happened. Nothing here is written from memory and left unchecked, and where two sources disagreed during research, the primary one won and the other was set aside rather than quietly blended in.",
+  },
+  {
+    slug: "meta-privacy",
+    question: "Do you save or remember what I ask?",
+    aliases: ["do you save my questions", "is this private", "do you track what i type", "do you store my questions"],
+    answer:
+      "What you type stays on your screen. No account is needed to use this, nothing you type is sent to a server or logged anywhere, and Draftpace doesn't run analytics tracking on this page. Close the tab and it's gone, same as if you'd never asked.",
+  },
+  {
+    slug: "meta-no-match",
+    question: "What happens if you don't know the answer?",
+    aliases: ["what if you dont know", "what if there is no answer", "can you answer anything", "do you know everything"],
+    answer:
+      "You get told, honestly. If nothing in the library matches what you asked, that shows up plainly instead of a guess dressed up to sound confident. That's a real limit, not a bug: the library only covers what's been properly researched so far, a working set of topics across the US, UK and Canada that grows over time rather than pretending to be finished on day one.",
+  },
+  {
+    slug: "meta-countries",
+    question: "Which countries do you cover?",
+    aliases: ["what countries", "do you cover my country", "is this just for the us", "do you cover the uk"],
+    answer:
+      "The United States, the United Kingdom and Canada, for now. Where a country's own regions genuinely change the answer, like Scotland's different homeschooling consent rule or Quebec's much heavier one, that's built into the answer itself rather than flattened into one national line. More countries are a matter of when the research gets done properly, not a promise with a date attached to it.",
+  },
+  {
+    slug: "meta-free",
+    question: "Is this free? Do I need an account?",
+    aliases: ["do i need to sign up", "is this free to use", "do i need an account", "do i have to pay"],
+    answer:
+      "Free, and no account needed. Ask a question, browse a category, that's the whole interaction. Some answers point to a Draftpace product that goes further on that specific problem, and that's always marked as a separate, optional step, never folded into the answer itself.",
+  },
+  {
+    slug: "meta-freshness",
+    question: "How often is this updated?",
+    aliases: ["is this up to date", "how current is this information", "when was this last checked", "are these laws current"],
+    answer:
+      "Every entry shows exactly when it was last verified, so you're never guessing how fresh it is. Laws and thresholds do change, and where something is genuinely mid-change, a passed law not yet in force, a number about to move, that's called out in its own notice rather than buried in the answer text. This isn't a live feed updating itself: it's reviewed and rechecked by hand, which is slower but means every date shown is real.",
+  },
+  {
+    slug: "meta-scope",
+    question: "Can you help with things outside these categories?",
+    aliases: ["what can you not help with", "do you cover everything", "what dont you know", "what dont you cover"],
+    answer:
+      "Not yet, and that's worth saying plainly rather than stretching to cover it. The library is organised into nine areas, and right now some have real depth while others are still just a plan with nothing written. Ask something outside all of them, or inside one that's still empty, and you'll get the honest \"nothing here yet\" answer rather than a stretch. Draftpace's guides library and its Companion products cover more ground where this doesn't reach.",
+  },
+];
+
+/** Exact canonical-question lookup, used once free-text matching (which
+ *  also checks aliases) has already resolved to the canonical phrasing. */
+export function findMetaEntry(question: string): MetaEntry | undefined {
+  return META_ENTRIES.find((m) => m.question === question);
+}
+
+/**
+ * A real, frequently-expressed everyday problem, researched from actual
+ * language people use (forums, support threads), not a legal fact and not
+ * a question about the tool. "I don't know where my money is going" has
+ * no statute behind it, so it gets no `source`/`verifiedAt`: what it gets
+ * instead is an honest acknowledgement and a real redirect to whichever
+ * Draftpace guide or product actually addresses it. `topic` is kept, same
+ * as on AskEntry, but purely for two internal jobs: guessing a fallback
+ * source when nothing matches a typed question, and surfacing a few other
+ * real entries to "keep exploring" after an answer. Neither job means
+ * this ever renders as a browsable category again: see the file-level
+ * decision to run Ask DP as one flat hub, not nine sections.
+ */
+export type ProblemEntry = {
+  slug: string;
+  topic: AskTopic;
+  /** The canonical phrasing, shown as the question once resolved. */
+  phrase: string;
+  /** Real phrasings pulled from actual research, not invented paraphrases. */
+  aliases: string[];
+  /** Acknowledge the problem honestly, then redirect. Never a source
+   *  citation: there's nothing to cite for "you're not alone in this." */
+  response: string;
+  relatedGuideSlugs?: string[];
+  relatedProductSlug?: string;
+};
+
+export const PROBLEM_ENTRIES: ProblemEntry[] = [
+  {
+    slug: "problem-money-scattered",
+    topic: "money",
+    phrase: "I don't know where my money is going",
+    aliases: [
+      "my finances are scattered across multiple tools",
+      "i have no idea where my money went",
+      "i use too many apps for money",
+      "i keep everything in spreadsheets for money",
+      "my money system is a mess",
+      "i have no system for tracking money",
+      "too many apps for finances",
+    ],
+    response:
+      "That's less a willpower problem than a visibility one: when money moves through six different places, no single view of it ever quite adds up. Start with what the number on your banking app actually means before building anything more complicated on top of it, then a real way to check whether you can afford something before you spend, not after.",
+    relatedGuideSlugs: ["available-balance-vs-current-balance", "can-you-afford-it-before-you-buy-it"],
+    relatedProductSlug: "personal-finance-companion",
+  },
+  {
+    slug: "problem-subscriptions-forgotten",
+    topic: "money",
+    phrase: "I forgot to cancel a subscription and got charged",
+    aliases: [
+      "how do you track subscriptions",
+      "i keep getting charged for subscriptions i forgot",
+      "i forgot about a free trial",
+      "i forgot a renewal",
+      "how do i track subscriptions",
+      "i have too many subscriptions to track",
+      "i forgot to cancel a free trial",
+    ],
+    response:
+      "The usual failure point isn't forgetting you signed up, it's forgetting the renewal date exists at all until the charge does. The fix is a single list of what's actually recurring and when it renews, not a better memory.",
+    relatedGuideSlugs: ["how-to-find-every-subscription-you-are-paying-for"],
+    relatedProductSlug: "personal-finance-companion",
+  },
+  {
+    slug: "problem-budgeting-apps-fail",
+    topic: "money",
+    phrase: "Why do budgeting apps stop working for me?",
+    aliases: [
+      "i hate budgeting",
+      "budgeting is overwhelming",
+      "i've tried everything for budgeting",
+      "ynab is too expensive",
+      "ynab is too complex",
+      "i tried ynab but gave up",
+      "i tried mint but gave up",
+      "mint shut down",
+      "i don't know how to budget",
+    ],
+    response:
+      "Usually not a you problem, a format problem: most budgeting apps ask for daily categorised logging, and that habit quietly dies around week six or seven for almost everyone, not just you. A system built to survive a missed week, rather than demand a perfect one, tends to hold up longer.",
+    relatedGuideSlugs: ["why-budgeting-apps-stop-working-after-two-months"],
+    relatedProductSlug: "monthly-money-reset",
+  },
+  {
+    slug: "problem-home-maintenance-overwhelm",
+    topic: "home",
+    phrase: "I'm overwhelmed by home maintenance",
+    aliases: [
+      "i keep forgetting home maintenance",
+      "i don't know what needs maintenance",
+      "homeownership feels like a full time job",
+      "i have no idea what needs maintenance",
+      "how do you track home maintenance",
+      "i keep forgetting maintenance tasks",
+    ],
+    response:
+      "Most of it genuinely isn't urgent, which is exactly why it's easy to lose track of: nothing fails immediately when you skip it, until the one time it does and it's expensive. A short list of what actually matters, and when, beats a vague sense that you're behind on everything.",
+    relatedGuideSlugs: ["home-maintenance-you-skip-that-costs-the-most", "home-maintenance-checklist-by-month"],
+    relatedProductSlug: "home-management-companion",
+  },
+  {
+    slug: "problem-first-time-homeowner",
+    topic: "home",
+    phrase: "I'm a first-time homeowner and don't know what to do",
+    aliases: ["just bought a house what now", "first time homeowner", "new homeowner what should i do"],
+    response:
+      "The first few weeks matter more than people expect: a handful of things are cheap or free to sort out right after closing, and expensive to fix later if you don't. Worth getting that order right before anything else.",
+    relatedGuideSlugs: ["first-week-after-buying-a-house"],
+    relatedProductSlug: "home-management-companion",
+  },
+  {
+    slug: "problem-documents-chaos",
+    topic: "documents",
+    phrase: "I can't find my important documents when I need them",
+    aliases: [
+      "i have too much paper",
+      "my documents are a mess",
+      "how do you organize important documents",
+      "i lost my warranty",
+      "i lost a receipt",
+      "i lost a manual",
+      "how do you organize digital files",
+      "i keep a home binder",
+    ],
+    response:
+      "Most people don't actually have a documents problem, they have a which-of-these-matters problem: most paper coming into a house can be shredded, and the few things worth keeping need one dedicated place, not a better filing system for everything.",
+    relatedGuideSlugs: ["which-documents-to-keep-and-where-to-put-them", "what-to-record-when-you-buy-an-appliance"],
+    relatedProductSlug: "home-management-companion",
+  },
+  {
+    slug: "problem-mental-load",
+    topic: "personal-affairs",
+    phrase: "I keep everything in my head and it's exhausting",
+    aliases: [
+      "i'm drowning",
+      "i can't keep up",
+      "i'm overwhelmed",
+      "life admin is too much",
+      "i'm drowning in admin",
+      "adulting is hard",
+      "there has to be a better way",
+      "i need a system",
+      "i need a better way",
+      "i wish there was a simpler way",
+      "i have no mental space left",
+      "i'm burned out from little things",
+      "i built my own system in notion",
+    ],
+    response:
+      "That exhaustion is real, not a personal failing: holding an ever-growing list of half-remembered tasks in your head is genuinely tiring, whether or not any single item on it is actually hard. The fix usually isn't a better to-do list, most of those make it worse. It's somewhere outside your head that actually holds it for you.",
+    relatedGuideSlugs: [
+      "why-to-do-lists-make-it-worse",
+      "life-admin-the-work-nobody-teaches-you",
+      "why-productivity-tools-fail-at-life-admin",
+    ],
+    relatedProductSlug: "alongside",
+  },
+  {
+    slug: "problem-renewals-warranties-tracking",
+    topic: "documents",
+    phrase: "How do you keep track of renewal dates and warranties?",
+    aliases: [
+      "how do you remember renewal dates",
+      "how do you remember recurring tasks",
+      "appliance warranty tracking",
+      "how often do home systems need servicing",
+      "i use my calendar for every reminder",
+    ],
+    response:
+      "A warranty or a service interval is only useful if you can find it again months later, which is exactly when most people can't. Worth recording it once, right when you buy or install the thing, rather than reconstructing it from memory the day something breaks.",
+    relatedGuideSlugs: [
+      "appliance-warranties-what-to-track",
+      "how-often-home-systems-need-servicing",
+      "how-to-find-the-model-number-on-any-appliance",
+    ],
+    relatedProductSlug: "home-management-companion",
+  },
+];
+
+export function findProblemEntry(phrase: string): ProblemEntry | undefined {
+  return PROBLEM_ENTRIES.find((p) => p.phrase === phrase);
+}
+
 // ---------------------------------------------------------------------
 // Homeschooling (under Family & Life)
 // ---------------------------------------------------------------------
@@ -237,6 +520,20 @@ const BUDGETING_RULE: RuleEntry[] = [
       name: "Wealth Drafts, The 50/30/20 Budget Rule, Explained Simply",
       url: "https://wealthdrafts.com/budgeting/50-30-20-budget-rule/",
     },
+    verifiedAt: "2026-09-03",
+  },
+];
+
+const COUPLES_FINANCES: RuleEntry[] = [
+  {
+    slug: "couples-shared-finances",
+    kind: "rule",
+    question: "How do couples manage shared finances?",
+    topic: "money",
+    jurisdiction: "universal",
+    answer:
+      "There's no single right setup. Only around 38% of couples keep everything fully joint; the rest mix in some separation, 36% blend joint and separate accounts and 26% keep finances entirely separate. The most common working model is a hybrid: personal accounts stay separate, and one joint account covers shared costs like rent, utilities and groceries, funded by a set contribution from each person, either split evenly or in proportion to income. What actually predicts fewer money arguments isn't which structure a couple picks, it's having at least one clearly shared account and talking about it openly rather than avoiding the subject.",
+    source: { name: "Bankrate, 2026 couples and finances survey", url: "https://www.bankrate.com/banking/reasons-for-married-couples-to-consider-separate-bank-accounts/" },
     verifiedAt: "2026-09-03",
   },
 ];
@@ -654,9 +951,15 @@ export const ASK_ENTRIES: AskEntry[] = [
   ...HOMESCHOOL_RECORDS,
   ...HOMESCHOOL_CURRICULUM,
   ...DIVORCE_WAITING_PERIOD,
-  ...BUDGETING_RULE,
+  // Government/regulator-sourced money entries come before the two
+  // editorial/survey-sourced ones (BUDGETING_RULE, COUPLES_FINANCES) on
+  // purpose: fallbackSourcesForTopic() picks the first two distinct
+  // sources it finds per topic, and a tax or contribution-limit miss
+  // should surface the IRS/GOV.UK/CRA before it surfaces a blog post.
   ...RETIREMENT_LIMITS,
   ...CREDIT_REPORT_LENGTH,
+  ...BUDGETING_RULE,
+  ...COUPLES_FINANCES,
   ...SECURITY_DEPOSIT_LIMIT,
   ...WILL_LAWYER_REQUIRED,
   ...NAME_CHANGE_PROCESS,
@@ -666,9 +969,11 @@ export const ASK_ENTRIES: AskEntry[] = [
   ...CAR_INSURANCE_REQUIRED,
 ];
 
-/** Every distinct question, grouped by topic, for the browse-by-category
- *  chips. One card per question even where several jurisdictions answer
- *  it differently: the country is resolved after the question is picked. */
+/** Every distinct question for one topic. Not a browse-by-category chip
+ *  list any more (Ask DP runs as one flat hub, see the file-level note
+ *  above PROBLEM_ENTRIES): this now only powers relatedQuestions() below.
+ *  One entry per question even where several jurisdictions answer it
+ *  differently, since the country is resolved after the question is picked. */
 export function questionsForTopic(topic: AskTopic): string[] {
   const seen = new Set<string>();
   const out: string[] = [];
@@ -703,3 +1008,120 @@ export function entryForQuestionAndCountry(question: string, country: Country): 
     (e) => e.jurisdiction !== "universal" && e.jurisdiction.country === country
   );
 }
+
+/**
+ * When nothing in the library matches a typed question, this is the
+ * honest middle ground between the bare "nothing here" state and
+ * inventing a new citation on the spot: point toward the same official
+ * bodies already trusted and cited elsewhere in this topic. It never
+ * introduces a source that hasn't already been verified and used on a
+ * real entry, so this can't drift out of sync with what's actually been
+ * checked. Deduplicated by source name, capped at two so it reads as a
+ * pointer, not a second answer.
+ */
+export function fallbackSourcesForTopic(topic: AskTopic): { name: string; url: string }[] {
+  const seen = new Set<string>();
+  const out: { name: string; url: string }[] = [];
+  for (const entry of ASK_ENTRIES) {
+    if (entry.topic !== topic) continue;
+    if (seen.has(entry.source.name)) continue;
+    seen.add(entry.source.name);
+    out.push(entry.source);
+    if (out.length >= 2) break;
+  }
+  return out;
+}
+
+/**
+ * Best-guess topic for a typed question that matched nothing exactly,
+ * scored the same way matchQuestion() scores a question match, just run
+ * against every entry's own topic instead of a specific question. Used
+ * only to pick a fallback source; a weak guess still isn't the same as
+ * pretending to answer, so callers should keep the honest empty state
+ * front and center and treat this as a footnote, not a hidden answer.
+ */
+export function guessTopic(input: string): AskTopic | null {
+  const words = input
+    .toLowerCase()
+    .replace(/[?.,!]/g, "")
+    .split(/\s+/)
+    .filter((w) => w.length > 3);
+  if (words.length === 0) return null;
+  const scores = new Map<AskTopic, number>();
+  const corpus = [
+    ...ASK_ENTRIES.map((e) => ({ topic: e.topic, text: e.question })),
+    ...PROBLEM_ENTRIES.flatMap((p) => [
+      { topic: p.topic, text: p.phrase },
+      ...p.aliases.map((a) => ({ topic: p.topic, text: a })),
+    ]),
+  ];
+  for (const { topic, text } of corpus) {
+    const textWords = text
+      .toLowerCase()
+      .replace(/[?.,!]/g, "")
+      .split(/\s+/)
+      .filter((w) => w.length > 3);
+    const hits = textWords.filter((w) => words.some((typed) => typed.includes(w) || w.includes(typed))).length;
+    if (hits > 0) scores.set(topic, (scores.get(topic) ?? 0) + hits);
+  }
+  let best: AskTopic | null = null;
+  let bestScore = 0;
+  for (const [topic, score] of scores) {
+    if (score > bestScore) {
+      best = topic;
+      bestScore = score;
+    }
+  }
+  return best;
+}
+
+/** A few other real entries from the same topic, for "keep exploring"
+ *  after an answer. Always real library entries, in a fixed, explainable
+ *  order (ASK_ENTRIES first, then PROBLEM_ENTRIES), never composed. */
+export function relatedQuestions(topic: AskTopic, exclude: string, limit = 3): string[] {
+  const out: string[] = [];
+  const seen = new Set<string>([exclude]);
+  for (const q of questionsForTopic(topic)) {
+    if (seen.has(q)) continue;
+    seen.add(q);
+    out.push(q);
+    if (out.length >= limit) return out;
+  }
+  for (const p of PROBLEM_ENTRIES) {
+    if (p.topic !== topic || seen.has(p.phrase)) continue;
+    seen.add(p.phrase);
+    out.push(p.phrase);
+    if (out.length >= limit) return out;
+  }
+  return out;
+}
+
+/** A small, cross-topic set of real questions and real problems, shown as
+ *  quick-start chips. Deliberately not grouped or labelled by topic: Ask
+ *  DP is one hub, not nine sections, so what earns a spot here is how
+ *  often it comes up in real life, not which category it happens to sit
+ *  in behind the scenes. */
+export const FEATURED_QUESTIONS: string[] = [
+  "I don't know where my money is going",
+  "I forgot to cancel a subscription and got charged",
+  "I'm overwhelmed by home maintenance",
+  "How do couples manage shared finances?",
+  "Do I need a lawyer to write a valid will?",
+  "I keep everything in my head and it's exhausting",
+];
+
+/** A wider rotation for the search box's own placeholder text: real
+ *  questions and real problems, cycling so an empty box still shows what
+ *  this actually covers instead of a single static hint. */
+export const SEARCH_PLACEHOLDER_EXAMPLES: string[] = [
+  "Ask a question, or pick one below",
+  "I don't know where my money is going",
+  "How long does an unpaid debt stay on my credit report?",
+  "I'm overwhelmed by home maintenance",
+  "Do I need a lawyer to write a valid will?",
+  "I forgot to cancel a subscription and got charged",
+  "How do couples manage shared finances?",
+  "What records am I actually required to keep?",
+  "I keep everything in my head and it's exhausting",
+  "Is there a legal limit on how much my landlord can charge for a security deposit?",
+];
