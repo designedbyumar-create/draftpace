@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     { route: "", changeFrequency: "weekly" as const, priority: 1 },
     { route: "/help-with", changeFrequency: "monthly" as const, priority: 0.8 },
+    { route: "/help-with/about-ask-dp", changeFrequency: "monthly" as const, priority: 0.4 },
     { route: "/shop", changeFrequency: "weekly" as const, priority: 0.8 },
     { route: "/how-it-works", changeFrequency: "monthly" as const, priority: 0.6 },
     { route: "/guides", changeFrequency: "weekly" as const, priority: 0.6 },
