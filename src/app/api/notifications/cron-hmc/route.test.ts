@@ -81,4 +81,18 @@ describe("the Home Base cron evaluator's authorization gate", () => {
     expect(source).toContain("process.env.HMC_CRON_SECRET");
     expect(source).not.toMatch(/process\.env\.CRON_SECRET\b/);
   });
+
+  /**
+   * The Updates feed's whole reason to exist is that web push opt-in is
+   * rare — most users never grant browser permission, and the feed has
+   * to stay true for them too. So this has to record before the "no
+   * push subscription, skip" early-exit, not after it.
+   */
+  it("records every payload to the Updates feed before the no-subscription skip, not after", () => {
+    const insertIndex = source.indexOf("insertProductUpdate(supabase, {");
+    const skipIndex = source.indexOf("// No device to deliver to yet");
+    expect(insertIndex).toBeGreaterThan(-1);
+    expect(skipIndex).toBeGreaterThan(-1);
+    expect(insertIndex).toBeLessThan(skipIndex);
+  });
 });

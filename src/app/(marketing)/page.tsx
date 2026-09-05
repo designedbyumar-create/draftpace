@@ -5,6 +5,7 @@ import Container from "@/design-system/Container";
 import { ArrowRight } from "@/design-system/Icon";
 import CompanionPicker, { type PickerPanel } from "@/components/public/home/CompanionPicker";
 import ChangeImpactDemo from "@/components/public/home/ChangeImpactDemo";
+import AskDPShowcase from "@/components/public/home/AskDPShowcase";
 import ShopPreview from "@/components/public/home/ShopPreview";
 import TrustSection from "@/components/public/home/TrustSection";
 import { softwareApplicationStructuredData } from "@/lib/structuredData";
@@ -161,7 +162,14 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* 4. The series */}
+      {/* 4. Prove the "no model, anywhere" claim from section 3 */}
+      <section className="border-b border-[var(--border)]">
+        <Container width="wide" className="py-16 sm:py-20">
+          <AskDPShowcase />
+        </Container>
+      </section>
+
+      {/* 5. The series */}
       <section className="border-b border-[var(--border)]">
         <Container width="wide" className="py-16 sm:py-20">
           <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--brand-ink)]">The Companion Series</p>
@@ -178,7 +186,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* 5. Owned, not rented */}
+      {/* 6. Owned, not rented */}
       <section className="border-b border-[var(--border)]">
         <Container width="narrow" className="py-16 text-center sm:py-20">
           <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--brand-ink)]">Owned, not rented</p>
@@ -202,14 +210,14 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* 6. Trust */}
+      {/* 7. Trust */}
       <section className="border-b border-[var(--border)]">
         <Container width="wide" className="py-16 sm:py-20">
           <TrustSection />
         </Container>
       </section>
 
-      {/* 7. Closing */}
+      {/* 8. Closing */}
       <section>
         <Container width="wide" className="py-16 text-center sm:py-24">
           <h2 className="font-serif text-[28px] font-semibold leading-tight tracking-tight sm:text-[36px]">

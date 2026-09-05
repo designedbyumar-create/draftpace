@@ -449,3 +449,20 @@ html[data-reduce-motion="true"] *::after {
 .dp-scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/*
+ * iOS Safari auto-zooms the whole page on focus for any text input,
+ * textarea or select rendered under 16px, and does not zoom back out on
+ * blur — the exact cause of a real "app keeps zooming in on mobile" bug.
+ * Input.tsx and Select.tsx are already fixed at the source; this is the
+ * safety net for anything hand-rolled that isn't. Scoped to touch
+ * viewports only, so desktop keeps whatever size a component actually
+ * asks for.
+ */
+@media (max-width: 767px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}

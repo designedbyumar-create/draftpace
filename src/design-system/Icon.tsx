@@ -14,6 +14,7 @@ import {
   Bank as PhosphorBank,
   Barbell as PhosphorBarbell,
   Bell as PhosphorBell,
+  BellRinging as PhosphorBellRinging,
   BookOpen as PhosphorBookOpen,
   Books as PhosphorBooks,
   CalendarCheck as PhosphorCalendarCheck,
@@ -127,6 +128,7 @@ export const BadgeCheck = createIcon(PhosphorSealCheck, "BadgeCheck");
 export const Bank = createIcon(PhosphorBank, "Bank");
 export const Barbell = createIcon(PhosphorBarbell, "Barbell");
 export const Bell = createIcon(PhosphorBell, "Bell");
+export const BellRinging = createIcon(PhosphorBellRinging, "BellRinging");
 export const BookOpen = createIcon(PhosphorBookOpen, "BookOpen");
 export const CalendarCheck = createIcon(PhosphorCalendarCheck, "CalendarCheck");
 export const CaretDown = createIcon(PhosphorCaretDown, "CaretDown");

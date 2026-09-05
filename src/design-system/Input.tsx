@@ -32,7 +32,12 @@ const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
         aria-invalid={error ? true : undefined}
         aria-describedby={[hintId, errorId].filter(Boolean).join(" ") || undefined}
         className={[
-          "h-11 w-full rounded-lg border bg-[var(--surface)] px-3.5 text-[14px] text-[var(--text)] placeholder-[var(--faint)] transition-colors",
+          // 16px, not 14: iOS Safari auto-zooms the whole page on focus for
+          // any input under 16px, and never zooms back out on blur. That
+          // was the entire "app keeps zooming in on mobile" bug, not a PWA
+          // quirk - one font-size below a browser threshold. Applies to
+          // every consumer of this primitive at once.
+          "h-11 w-full rounded-lg border bg-[var(--surface)] px-3.5 text-[16px] text-[var(--text)] placeholder-[var(--faint)] transition-colors",
           "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]",
           error ? "border-[var(--danger)]" : "border-[var(--border-strong)] focus:border-[var(--primary)]",
           className,
