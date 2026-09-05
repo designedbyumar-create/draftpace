@@ -9,11 +9,15 @@ import Button from "@/design-system/Button";
 import Badge from "@/design-system/Badge";
 import { ArrowRight, WarningCircle } from "@/design-system/Icon";
 import { familyRegistry } from "@/product-framework/families";
+import { productRegistry } from "@/product-framework/registry";
 import { listMyEntitlements } from "@/product-framework/entitlements";
 import { listMyProductInstances } from "@/product-framework/instances";
 import { deriveOwnedProducts, type OwnedProductRow } from "@/product-framework/deriveOwnedProducts";
 import { resolveProductDestination } from "@/product-framework/resolveDestination";
 import { loadTopAttentionItem, type SharedAttentionItem } from "@/product-framework/attentionAdapter";
+import { boughtStartedLine, humanStatus } from "@/product-framework/ownedProductPresentation";
+import { listMyUpdates, type UpdateRow } from "@/product-framework/updates";
+import { formatRelativeTime } from "@/lib/formatRelativeTime";
 import { ensureProductsRegistered } from "@/products/manifest";
 
 /**
@@ -30,12 +34,16 @@ import { ensureProductsRegistered } from "@/products/manifest";
 
 const BEHIND_AFTER_DAYS = 10;
 
-type FocalState = "none" | "degraded" | "not-started" | "setup" | "active" | "behind" | "completed" | "needs-attention";
+type FocalState = "none" | "degraded" | "not-started" | "setup" | "active" | "behind" | "completed" | "needs-attention" | "paused";
 
 function focalStateFor(row: OwnedProductRow | null, attentionItem: SharedAttentionItem | null): FocalState {
   if (!row) return "none";
   if (row.kind !== "ready") return "degraded";
   if (!row.instance) return "not-started";
+  // Vacation mode wins over every other state once setup is done — a
+  // paused product should never present as "Continue X" or "it's been a
+  // while", the entire point of pausing it.
+  if (row.instance.setupComplete && row.instance.pausedAt) return "paused";
   if (row.instance.lifecycleState === "completed") return "completed";
   if (!row.instance.setupComplete) return "setup";
   const ageDays = (Date.now() - new Date(row.instance.lastActivityAt).getTime()) / 86_400_000;
@@ -55,6 +63,7 @@ export default function AppHomePage() {
   const [loadError, setLoadError] = useState<string | null>(null);
   const [retryToken, setRetryToken] = useState(0);
   const [topAttentionItem, setTopAttentionItem] = useState<SharedAttentionItem | null>(null);
+  const [recentUpdates, setRecentUpdates] = useState<UpdateRow[]>([]);
   const firstName = String(user.user_metadata?.display_name || user.email?.split("@")[0] || "there").split(" ")[0];
 
   useEffect(() => {
@@ -93,6 +102,20 @@ export default function AppHomePage() {
     };
   }, [rows]);
 
+  // Same "enhancement, never blocking" discipline as the attention effect
+  // above — independent of rows/entitlements entirely, so a slow or
+  // failed Updates fetch never delays Home's real render either.
+  useEffect(() => {
+    let cancelled = false;
+    listMyUpdates().then((result) => {
+      if (cancelled) return;
+      if (result.status === "ok") setRecentUpdates(result.rows.slice(0, 5));
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   const retry = () => setRetryToken((t) => t + 1);
   // The winning attention item can belong to a product other than the
   // most recently used one — when it does, that product's row becomes
@@ -120,6 +143,19 @@ export default function AppHomePage() {
       ) : (
         <div className="space-y-10">
           <FocalBlock row={focalRow} attentionItem={topAttentionItem} firstName={firstName} onRetry={retry} />
+
+          {recentUpdates.length > 0 && (
+            <section>
+              <h2 className="mb-3 text-[12px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">
+                Recently across your life
+              </h2>
+              <div className="grid gap-2.5">
+                {recentUpdates.map((update) => (
+                  <RecentUpdateRow key={update.id} update={update} />
+                ))}
+              </div>
+            </section>
+          )}
 
           {rest.length > 0 && (
             <section>
@@ -211,6 +247,19 @@ function FocalBlock({
         body="You are a few short steps from your first result. It saves as you go, so you can stop and come back anytime."
         primary={{ label: "Continue setup", href: destination }}
         familyLabel={family?.label}
+      />
+    );
+  }
+
+  if (state === "paused") {
+    return (
+      <FocalShell
+        eyebrow="Paused"
+        title={`${title} is paused`}
+        body="This is paused. Resume it from Settings whenever you're ready."
+        primary={{ label: "Go to Settings", href: `/app/products/${definition.slug}/settings` }}
+        familyLabel={family?.label}
+        badge={<Badge tone="neutral">Paused</Badge>}
       />
     );
   }
@@ -330,6 +379,32 @@ function FocalActionButton({
   );
 }
 
+/**
+ * One recent, real thing a product told the person — substantive content,
+ * not a count or badge, so it stays inside ProductRailShell's "no counts,
+ * no badges, no progress, no notification dots" rule despite living on
+ * Home. Not the inbox: /app/notifications stays the full list.
+ */
+function RecentUpdateRow({ update }: { update: UpdateRow }) {
+  const definition = productRegistry.getBySlug(update.productSlug);
+  const family = definition ? familyRegistry.get(definition.family) : undefined;
+
+  return (
+    <Link
+      href={update.url}
+      className="flex items-center justify-between gap-3 rounded-xl border border-[var(--border)] px-4 py-3 transition-colors hover:border-[var(--border-strong)]"
+    >
+      <div className="min-w-0">
+        <p className="text-[14px] font-semibold text-[var(--text)]">{update.title}</p>
+        <p className="mt-0.5 truncate text-[12px] text-[var(--faint)]">
+          {[family?.label ?? update.productSlug, formatRelativeTime(update.createdAt)].join(" · ")}
+        </p>
+      </div>
+      <ArrowRight size={14} className="shrink-0 text-[var(--faint)]" aria-hidden />
+    </Link>
+  );
+}
+
 /** A quiet secondary owned-product link, used only when more than one is owned. */
 function LibraryLink({ row, onRetry }: { row: OwnedProductRow; onRetry: () => void }) {
   if (row.kind !== "ready") {
@@ -344,16 +419,23 @@ function LibraryLink({ row, onRetry }: { row: OwnedProductRow; onRetry: () => vo
     );
   }
 
-  const { definition, instance } = row;
+  const { definition, instance, entitlement } = row;
   const destination = instance ? resolveProductDestination(definition, instance) : `/app/products/${definition.slug}`;
+  const family = familyRegistry.get(definition.family);
+  const statusLine = [family?.label ?? definition.family, instance ? humanStatus(instance) : "Not started yet", boughtStartedLine(entitlement, instance)].join(
+    " · "
+  );
 
   return (
     <Link
       href={destination}
       className="flex items-center justify-between gap-3 rounded-xl border border-[var(--border)] px-4 py-3 transition-colors hover:border-[var(--border-strong)]"
     >
-      <p className="text-[14px] font-semibold text-[var(--text)]">{definition.title}</p>
-      <ArrowRight size={14} className="text-[var(--faint)]" aria-hidden />
+      <div className="min-w-0">
+        <p className="text-[14px] font-semibold text-[var(--text)]">{definition.title}</p>
+        <p className="mt-0.5 truncate text-[12px] text-[var(--faint)]">{statusLine}</p>
+      </div>
+      <ArrowRight size={14} className="shrink-0 text-[var(--faint)]" aria-hidden />
     </Link>
   );
 }

@@ -27,10 +27,10 @@ import { applyOutcome, offerFromDirectRun, type ItemPatch } from "../outcome";
  * at each call site.
  */
 
-const ITEM_COLUMNS =
+export const ITEM_COLUMNS =
   "id, kind, title, note, status, next_at, user_chosen_date, every_months, waiting_on, last_touched_at, left_off_note, next_step, created_at";
 
-function toItem(row: Record<string, unknown>): LifeItem {
+export function toItem(row: Record<string, unknown>): LifeItem {
   return {
     id: row.id as string,
     kind: row.kind as ItemKind,

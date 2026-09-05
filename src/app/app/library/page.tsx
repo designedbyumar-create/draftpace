@@ -11,6 +11,13 @@ import { listMyEntitlements } from "@/product-framework/entitlements";
 import { listMyProductInstances } from "@/product-framework/instances";
 import { deriveOwnedProducts, type OwnedProductRow } from "@/product-framework/deriveOwnedProducts";
 import { resolveProductDestination } from "@/product-framework/resolveDestination";
+import {
+  boughtStartedLine,
+  humanCycle,
+  humanStatus,
+  visibleLibraryFilters,
+  type LibraryFilter,
+} from "@/product-framework/ownedProductPresentation";
 import { ensureProductsRegistered } from "@/products/manifest";
 
 /**
@@ -26,40 +33,6 @@ import { ensureProductsRegistered } from "@/products/manifest";
  */
 
 const FILTER_THRESHOLD = 5;
-
-type LibraryFilter = "all" | "in-progress" | "paused" | "finished" | "archived";
-
-const FILTERS: { id: LibraryFilter; label: string; matches: (row: OwnedProductRow) => boolean }[] = [
-  { id: "all", label: "All", matches: () => true },
-  { id: "in-progress", label: "In progress", matches: (r) => r.kind === "ready" && r.instance?.lifecycleState === "active" },
-  { id: "paused", label: "Paused", matches: (r) => r.kind === "ready" && r.instance?.lifecycleState === "paused" },
-  { id: "finished", label: "Finished", matches: (r) => r.kind === "ready" && r.instance?.lifecycleState === "completed" },
-  { id: "archived", label: "Archived", matches: (r) => r.kind === "ready" && r.instance?.lifecycleState === "archived" },
-];
-
-/** "2026-08" -> "August 2026"; anything else is shown unchanged. */
-function humanCycle(cycleKey: string): string {
-  const match = /^(\d{4})-(\d{2})$/.exec(cycleKey);
-  if (!match) return cycleKey;
-  const date = new Date(Date.UTC(Number(match[1]), Number(match[2]) - 1, 1));
-  return date.toLocaleDateString("en-US", { month: "long", year: "numeric", timeZone: "UTC" });
-}
-
-function humanStatus(instance: { setupComplete: boolean; lifecycleState: string }): string {
-  if (!instance.setupComplete) return "Setup not finished";
-  switch (instance.lifecycleState) {
-    case "active":
-      return "In progress";
-    case "completed":
-      return "Finished";
-    case "paused":
-      return "Paused";
-    case "archived":
-      return "Archived";
-    default:
-      return "In progress";
-  }
-}
 
 export default function LibraryPage() {
   const [rows, setRows] = useState<OwnedProductRow[] | null>(null);
@@ -89,8 +62,9 @@ export default function LibraryPage() {
     };
   }, [retryToken]);
 
+  const filters = visibleLibraryFilters(rows ?? []);
   const showFilters = (rows?.length ?? 0) >= FILTER_THRESHOLD;
-  const activeFilter = FILTERS.find((f) => f.id === filter) ?? FILTERS[0];
+  const activeFilter = filters.find((f) => f.id === filter) ?? filters[0];
   const visible = rows ? (showFilters ? rows.filter(activeFilter.matches) : rows) : [];
 
   return (
@@ -123,7 +97,7 @@ export default function LibraryPage() {
         <div className="space-y-8">
           {showFilters && (
             <div role="tablist" aria-label="Library filter" className="flex gap-1 overflow-x-auto border-b border-[var(--border)]">
-              {FILTERS.map((item) => (
+              {filters.map((item) => (
                 <button
                   key={item.id}
                   type="button"
@@ -191,7 +165,7 @@ function OwnedItem({ row, onRetry }: { row: OwnedProductRow; onRetry: () => void
     );
   }
 
-  const { definition, instance } = row;
+  const { definition, instance, entitlement } = row;
   const family = familyRegistry.get(definition.family);
 
   if (!instance) {
@@ -203,6 +177,7 @@ function OwnedItem({ row, onRetry }: { row: OwnedProductRow; onRetry: () => void
         <div className="min-w-0">
           <p className="text-[15px] font-semibold text-[var(--text)]">{definition.title}</p>
           <p className="mt-1 text-[12.5px] text-[var(--muted)]">{[family?.label ?? definition.family, "Not started yet"].join(" · ")}</p>
+          <p className="mt-1 text-[12.5px] text-[var(--faint)]">{boughtStartedLine(entitlement, null)}</p>
         </div>
         <span className="inline-flex shrink-0 items-center gap-1.5 text-[13px] font-semibold text-[var(--primary)]">
           Start
@@ -230,6 +205,7 @@ function OwnedItem({ row, onRetry }: { row: OwnedProductRow; onRetry: () => void
       <div className="min-w-0">
         <p className="text-[15px] font-semibold text-[var(--text)]">{definition.title}</p>
         <p className="mt-1 text-[12.5px] text-[var(--muted)]">{statusLine}</p>
+        <p className="mt-1 text-[12.5px] text-[var(--faint)]">{boughtStartedLine(entitlement, instance)}</p>
         {instance.nextActionLabel && instance.setupComplete && (
           <p className="mt-1.5 text-[12.5px] text-[var(--muted)]">Next: {instance.nextActionLabel}</p>
         )}

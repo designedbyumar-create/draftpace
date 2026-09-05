@@ -5,6 +5,7 @@ import Button from "@/design-system/Button";
 import EmptyState from "@/design-system/EmptyState";
 import { Settings } from "@/design-system/Icon";
 import { describeResultError } from "@/product-framework/result";
+import PauseProductControl from "@/components/product-shell/PauseProductControl";
 import { findInOrderInstanceId } from "../instanceData";
 import { loadItems, loadProfile, recordLifeEvent, saveProfileAnswer } from "../domain/affairsData";
 import { INTAKE_QUESTIONS } from "../intake";
@@ -115,7 +116,7 @@ export default function SettingsModule() {
   }
 
   if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
-  if (status === "no-instance") {
+  if (status === "no-instance" || !instanceId) {
     return <EmptyState icon={Settings} title="Nothing to change yet" description="This product has not been set up on your account." />;
   }
   if (status === "error") {
@@ -143,6 +144,10 @@ export default function SettingsModule() {
           {errorMessage}
         </p>
       )}
+
+      <section aria-label="Pause" className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5">
+        <PauseProductControl instanceId={instanceId} />
+      </section>
 
       <section aria-label="Your answers" className="flex flex-col">
         {INTAKE_QUESTIONS.map((q) => {

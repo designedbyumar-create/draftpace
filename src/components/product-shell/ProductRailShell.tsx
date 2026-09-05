@@ -126,11 +126,12 @@ export default function ProductRailShell({
         {/* ------------------------------------------------ desktop rail */}
         <aside className="sticky top-0 hidden h-screen w-60 shrink-0 flex-col border-r border-[var(--border)] bg-[var(--surface)] px-4 py-5 lg:flex">
           <Link
-            href="/app/library"
+            href="/app"
+            aria-label="Back to Draftpace"
             className="mb-6 flex items-center gap-1.5 text-[12px] font-semibold text-[var(--muted)] hover:text-[var(--text)]"
           >
             <ArrowLeft size={14} aria-hidden />
-            Library
+            Draftpace
           </Link>
 
           <p
@@ -183,12 +184,12 @@ export default function ProductRailShell({
             style={{ paddingTop: "env(safe-area-inset-top)" }}
           >
             <Link
-              href="/app/library"
-              aria-label="Back to Library"
+              href="/app"
+              aria-label="Back to Draftpace"
               className="flex h-11 shrink-0 items-center gap-1 rounded-lg px-1.5 text-[13px] font-semibold text-[var(--muted)] hover:text-[var(--text)]"
             >
               <ArrowLeft size={16} aria-hidden />
-              Library
+              Draftpace
             </Link>
             <h1 className="min-w-0 flex-1 truncate text-center text-[14px] font-semibold text-[var(--text)]">
               {definition.title}

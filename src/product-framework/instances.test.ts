@@ -12,6 +12,7 @@ const row = {
   last_activity_at: "2026-08-01T00:00:00Z",
   created_at: "2026-07-31T00:00:00Z",
   updated_at: "2026-08-01T00:00:00Z",
+  paused_at: null,
 };
 
 describe("interpretListInstancesResponse", () => {
@@ -31,9 +32,18 @@ describe("interpretListInstancesResponse", () => {
           lastActivityAt: "2026-08-01T00:00:00Z",
           createdAt: "2026-07-31T00:00:00Z",
           updatedAt: "2026-08-01T00:00:00Z",
+          pausedAt: null,
         },
       ],
     });
+  });
+
+  it("maps a paused instance's paused_at through unchanged", () => {
+    const result = interpretListInstancesResponse([{ ...row, paused_at: "2026-08-15T00:00:00Z" }], null);
+    expect(result.status).toBe("ok");
+    if (result.status === "ok") {
+      expect(result.rows[0].pausedAt).toBe("2026-08-15T00:00:00Z");
+    }
   });
 
   /**

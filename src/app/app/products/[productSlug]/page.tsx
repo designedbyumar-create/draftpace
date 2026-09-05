@@ -36,7 +36,7 @@ export default async function ProductCanonicalPage({
   const instanceQuery = supabase
     .from("product_instances")
     .select(
-      "id, product_slug, cycle_key, lifecycle_state, setup_complete, safe_to_spend_cents, next_action_label, last_activity_at, created_at, updated_at"
+      "id, product_slug, cycle_key, lifecycle_state, setup_complete, safe_to_spend_cents, next_action_label, last_activity_at, created_at, updated_at, paused_at"
     )
     .eq("product_slug", productSlug);
   const { data: instanceRow, error: instanceError } =
@@ -66,6 +66,7 @@ export default async function ProductCanonicalPage({
       lastActivityAt: instanceRow.last_activity_at,
       createdAt: instanceRow.created_at,
       updatedAt: instanceRow.updated_at,
+      pausedAt: instanceRow.paused_at,
     };
     redirect(resolveProductDestination(definition, instance));
   }
