@@ -12,6 +12,7 @@ import Alert from "@/design-system/Alert";
 import Badge from "@/design-system/Badge";
 import { Bell, WarningCircle } from "@/design-system/Icon";
 import { listMyUpdates, markUpdateHandled, type UpdateRow } from "@/product-framework/updates";
+import { formatRelativeTime } from "@/lib/formatRelativeTime";
 
 type PermissionState = NotificationPermission | "unsupported" | "checking";
 
@@ -156,26 +157,6 @@ export default function NotificationsPage() {
       </div>
     </PlatformShell>
   );
-}
-
-function formatRelativeTime(iso: string): string {
-  const date = new Date(iso);
-  if (Number.isNaN(date.getTime())) return iso;
-  const seconds = Math.round((date.getTime() - Date.now()) / 1000);
-  const divisions: [Intl.RelativeTimeFormatUnit, number][] = [
-    ["year", 60 * 60 * 24 * 365],
-    ["month", 60 * 60 * 24 * 30],
-    ["week", 60 * 60 * 24 * 7],
-    ["day", 60 * 60 * 24],
-    ["hour", 60 * 60],
-    ["minute", 60],
-  ];
-  for (const [unit, unitSeconds] of divisions) {
-    if (Math.abs(seconds) >= unitSeconds) {
-      return new Intl.RelativeTimeFormat("en-US", { numeric: "auto" }).format(Math.round(seconds / unitSeconds), unit);
-    }
-  }
-  return "just now";
 }
 
 /** One recorded update: what a product said, when, and a way to see it and clear it. */

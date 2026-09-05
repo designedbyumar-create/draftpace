@@ -9,6 +9,7 @@ import Surface from "@/design-system/Surface";
 import EmptyState from "@/design-system/EmptyState";
 import { Settings } from "@/design-system/Icon";
 import { describeResultError } from "@/product-framework/result";
+import PauseProductControl from "@/components/product-shell/PauseProductControl";
 import { findHomeManagementCompanionInstanceId } from "../setupStateData";
 import { loadNotificationPreferences, saveNotificationPreferences } from "../domain/notificationPreferences";
 import {
@@ -113,7 +114,7 @@ export default function SettingsModule() {
     );
   }
 
-  if (status === "no-instance" || !preferences) {
+  if (status === "no-instance" || !preferences || !instanceId) {
     return <EmptyState icon={Settings} title="No product instance found" description="This shouldn't happen for an owner. Contact support." />;
   }
 
@@ -125,6 +126,10 @@ export default function SettingsModule() {
           {saveState === "saving" ? "Saving…" : saveState === "saved" ? "Saved" : saveState === "error" ? "Save failed" : ""}
         </Badge>
       </div>
+
+      <Surface>
+        <PauseProductControl instanceId={instanceId} />
+      </Surface>
 
       <Surface className="flex items-center justify-between gap-4">
         <div>

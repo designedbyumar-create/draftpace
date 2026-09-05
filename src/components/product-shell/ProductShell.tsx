@@ -108,12 +108,12 @@ function ProductTabShell({
         style={{ paddingTop: "env(safe-area-inset-top)" }}
       >
         <Link
-          href="/app/library"
-          aria-label="Back to Library"
+          href="/app"
+          aria-label="Back to Draftpace"
           className="flex h-11 shrink-0 items-center gap-1 rounded-lg px-1.5 text-[13px] font-semibold text-[var(--muted)] hover:text-[var(--text)]"
         >
           <ArrowLeft size={16} aria-hidden />
-          Library
+          Draftpace
         </Link>
         <h1 className="min-w-0 flex-1 truncate text-center text-[14px] font-semibold text-[var(--text)]">
           {definition.title}
@@ -127,11 +127,12 @@ function ProductTabShell({
       <div className="hidden border-b border-[var(--border)] bg-[var(--surface)] lg:block">
         <div className={`mx-auto flex h-12 items-center justify-between px-4 sm:px-6 ${widthClass}`}>
           <Link
-            href="/app/library"
+            href="/app"
+            aria-label="Back to Draftpace"
             className="flex items-center gap-1.5 text-[12px] font-semibold text-[var(--muted)] hover:text-[var(--text)]"
           >
             <ArrowLeft size={14} aria-hidden />
-            Library
+            Draftpace
           </Link>
           <div className="flex items-center gap-3">
             <ThemeToggle compact />

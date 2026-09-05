@@ -212,7 +212,10 @@ export async function loadTopAttentionItem(rows: OwnedProductRow[]): Promise<Sha
       row.kind === "ready" &&
       row.instance !== null &&
       row.instance.setupComplete &&
-      row.instance.lifecycleState !== "completed"
+      row.instance.lifecycleState !== "completed" &&
+      // Vacation mode means actually quiet — a paused product's own
+      // signals shouldn't compete for Home's hero slot either.
+      !row.instance.pausedAt
   );
 
   const settled = await Promise.allSettled(
