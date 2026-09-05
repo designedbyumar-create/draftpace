@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   Bell,
+  BellRinging,
   BookOpen,
   CreditCard,
   type DraftpaceIcon,
@@ -15,7 +16,6 @@ import {
   Settings,
   Sparkles,
   User,
-  Wifi,
   WifiOff,
 } from "@/design-system/Icon";
 import ThemeToggle from "@/design-system/theme/ThemeToggle";
@@ -27,6 +27,7 @@ import { appAccountMenuItems } from "@/components/account/accountMenuItems";
 import { signOutAndRedirect } from "@/lib/supabase/signOut";
 import { useInstallPrompt, useStandaloneMode, isIosDevice } from "@/lib/pwa/hooks";
 import { hasDismissedInstallPrompt, dismissInstallPrompt } from "@/lib/pwa/deviceOnboarding";
+import { hasUnhandledUpdates } from "@/product-framework/updates";
 
 const primaryNav = [
   { label: "Home", href: "/app", Icon: Home },
@@ -68,6 +69,7 @@ export default function PlatformShell({
   const pathname = usePathname();
   const user = useSession();
   const [online, setOnline] = useState(true);
+  const [hasUpdates, setHasUpdates] = useState(false);
   // Deliberately starts null (not the real day part) so the server's render
   // matches the client's first render regardless of timezone — the server
   // (Vercel, a fixed region) and the visitor's browser can genuinely
@@ -92,6 +94,20 @@ export default function PlatformShell({
   useEffect(() => {
     setDayPart(getDayPart());
   }, []);
+
+  // A glyph swap, not a badge or dot — this shell's nav explicitly never
+  // shows counts/badges/progress/notification dots, and an overlaid dot
+  // would contradict that even coming from a different file. Refetched on
+  // every route change so leaving the Updates page clears it once read.
+  useEffect(() => {
+    let cancelled = false;
+    hasUnhandledUpdates().then((result) => {
+      if (!cancelled) setHasUpdates(result);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [pathname]);
 
   const firstName = useMemo(() => {
     const name = user.user_metadata?.display_name || user.email?.split("@")[0] || "there";
@@ -121,7 +137,12 @@ export default function PlatformShell({
         </p>
         <nav aria-label="Account" className="space-y-0.5">
           {accountNav.map((item) => (
-            <NavLink key={item.href} item={item} active={pathname === item.href} />
+            <NavLink
+              key={item.href}
+              item={item}
+              active={pathname === item.href}
+              icon={item.href === "/app/notifications" && hasUpdates ? BellRinging : undefined}
+            />
           ))}
         </nav>
 
@@ -161,10 +182,21 @@ export default function PlatformShell({
               <div className="hidden sm:block">
                 <ThemeToggle compact />
               </div>
-              <div className="hidden h-9 items-center gap-1.5 rounded-lg border border-[var(--border)] bg-[var(--surface-muted)] px-2.5 text-[12px] font-semibold text-[var(--muted)] sm:flex">
-                {online ? <Wifi size={14} aria-hidden /> : <WifiOff size={14} aria-hidden />}
-                {online ? "Online" : "Offline"}
-              </div>
+              {/* Quiet by default, same rule the rest of the platform
+                  follows: this used to show "Online" permanently, on
+                  every page, which is chrome nobody asked to see and
+                  breaks the site's own "stays silent until something is
+                  genuinely worth raising" promise. It now only exists
+                  the moment there's actually something to raise: you
+                  went offline. Shown at every breakpoint once true,
+                  since that's worth knowing on a phone as much as a
+                  desktop. */}
+              {!online && (
+                <div className="flex h-9 items-center gap-1.5 rounded-lg border border-[var(--warning)] bg-[var(--warning-soft)] px-2.5 text-[12px] font-semibold text-[var(--warning)]">
+                  <WifiOff size={14} aria-hidden />
+                  Offline
+                </div>
+              )}
               {action}
               <div className="lg:hidden">
                 <AccountMenu items={accountItems} label={accountLabel} only="mobile" />
@@ -185,7 +217,12 @@ export default function PlatformShell({
       >
         <div className="grid grid-cols-4 gap-1">
           {BOTTOM_NAV_LINKS.map((item) => (
-            <BottomNavLink key={item.href} item={item} active={pathname === item.href} />
+            <BottomNavLink
+              key={item.href}
+              item={item}
+              active={pathname === item.href}
+              icon={item.href === "/app/notifications" && hasUpdates ? BellRinging : undefined}
+            />
           ))}
           <AccountMenu
             items={accountItems}
@@ -214,7 +251,18 @@ export default function PlatformShell({
 
 type NavItem = { label: string; href: string; Icon: DraftpaceIcon };
 
-function NavLink({ item, active, onClick }: { item: NavItem; active: boolean; onClick?: () => void }) {
+function NavLink({
+  item,
+  active,
+  onClick,
+  icon: IconOverride,
+}: {
+  item: NavItem;
+  active: boolean;
+  onClick?: () => void;
+  icon?: DraftpaceIcon;
+}) {
+  const ItemIcon = IconOverride ?? item.Icon;
   return (
     <Link
       href={item.href}
@@ -226,13 +274,22 @@ function NavLink({ item, active, onClick }: { item: NavItem; active: boolean; on
           : "text-[var(--muted)] hover:bg-[var(--surface-muted)] hover:text-[var(--text)]"
       }`}
     >
-      <item.Icon size={18} aria-hidden />
+      <ItemIcon size={18} aria-hidden />
       {item.label}
     </Link>
   );
 }
 
-function BottomNavLink({ item, active }: { item: NavItem; active: boolean }) {
+function BottomNavLink({
+  item,
+  active,
+  icon: IconOverride,
+}: {
+  item: NavItem;
+  active: boolean;
+  icon?: DraftpaceIcon;
+}) {
+  const ItemIcon = IconOverride ?? item.Icon;
   return (
     <Link
       href={item.href}
@@ -241,7 +298,7 @@ function BottomNavLink({ item, active }: { item: NavItem; active: boolean }) {
         active ? "bg-[var(--primary-soft)] text-[var(--primary)]" : "text-[var(--faint)]"
       }`}
     >
-      <item.Icon size={18} aria-hidden />
+      <ItemIcon size={18} aria-hidden />
       {item.label}
     </Link>
   );

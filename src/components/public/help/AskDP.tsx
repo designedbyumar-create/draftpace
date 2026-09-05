@@ -248,7 +248,7 @@ export default function AskDP() {
           aria-controls="ask-dp-suggestions"
           aria-activedescendant={showSuggestions ? `ask-dp-suggestion-${highlighted}` : undefined}
           autoComplete="off"
-          className="h-14 w-full rounded-[var(--radius-lg)] border border-[var(--border-strong)] bg-[var(--surface)] pl-11 pr-28 text-[15px] text-[var(--text)] placeholder:text-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] focus:border-[var(--primary)]"
+          className="h-14 w-full rounded-[var(--radius-lg)] border border-[var(--border-strong)] bg-[var(--surface)] pl-11 pr-28 text-[16px] text-[var(--text)] placeholder:text-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] focus:border-[var(--primary)]"
         />
         {/* The real placeholder attribute above is a static, non-animating
             fallback (first-paint and screen readers). This overlay is
@@ -265,7 +265,7 @@ export default function AskDP() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={reduceMotion ? undefined : { opacity: 0, y: -5 }}
                 transition={{ duration: 0.28 }}
-                className="block truncate text-[15px] text-[var(--faint)]"
+                className="block truncate text-[16px] text-[var(--faint)]"
               >
                 {SEARCH_PLACEHOLDER_EXAMPLES[placeholderIndex]}
               </motion.span>

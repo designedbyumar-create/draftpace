@@ -41,7 +41,9 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(function Select(
           aria-invalid={error ? true : undefined}
           aria-describedby={[hintId, errorId].filter(Boolean).join(" ") || undefined}
           className={[
-            "h-11 w-full appearance-none rounded-lg border bg-[var(--surface)] py-2.5 pl-3.5 pr-9 text-[14px] text-[var(--text)] transition-colors",
+            // 16px, not 14: same iOS auto-zoom-on-focus threshold as
+            // Input.tsx, and <select> triggers it exactly the same way.
+            "h-11 w-full appearance-none rounded-lg border bg-[var(--surface)] py-2.5 pl-3.5 pr-9 text-[16px] text-[var(--text)] transition-colors",
             "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]",
             error ? "border-[var(--danger)]" : "border-[var(--border-strong)] focus:border-[var(--primary)]",
             className,

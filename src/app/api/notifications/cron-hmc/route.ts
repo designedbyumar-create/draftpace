@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getSupabaseServiceRoleClient } from "@/lib/server-auth";
 import { isWebPushConfigured, sendWebPush } from "@/lib/notifications/webPush";
+import { insertProductUpdate } from "@/lib/notifications/updatesFeed";
 import { deriveReminderCandidates, type ReminderCandidate } from "@/products/home-management-companion/reminders/deriveReminders";
 import { diffReminders, type ExistingReminderSummary } from "@/products/home-management-companion/reminders/diffReminders";
 import { partitionByEntitlement } from "@/products/home-management-companion/reminders/entitlementFilter";
@@ -287,14 +288,31 @@ export async function GET(request: Request) {
 
     if (eligible.length === 0) continue;
 
+    const payloads = buildPushPayloads(eligible, preferences.privacyLevel, now);
+
+    // Recorded in the in-app Updates feed regardless of push subscription:
+    // web push opt-in is genuinely rare, and the feed's whole point is
+    // that "stay updated" stays true even for users who never grant
+    // browser permission. Idempotent by the same dedupe_key push already
+    // uses, scoped per-product — see product_updates' own migration.
+    for (const payload of payloads) {
+      await insertProductUpdate(supabase, {
+        userId,
+        productSlug: "home-management-companion",
+        productInstanceId: instanceId,
+        title: payload.title,
+        body: payload.body,
+        url: payload.url,
+        dedupeKey: payload.dedupeKey,
+      });
+    }
+
     const { data: subs } = await supabase.from("push_subscriptions").select("id, endpoint, p256dh, auth_key").eq("user_id", userId).is("revoked_at", null);
     if (!subs || subs.length === 0) {
       // No device to deliver to yet - leave these reminders scheduled so they're retried once a subscription exists.
       summary.deliveriesSkipped += eligible.length;
       continue;
     }
-
-    const payloads = buildPushPayloads(eligible, preferences.privacyLevel, now);
 
     for (const payload of payloads) {
       const { data: claimed } = await supabase

@@ -13,6 +13,7 @@ import { listMyEntitlements } from "@/product-framework/entitlements";
 import { listMyProductInstances } from "@/product-framework/instances";
 import { deriveOwnedProducts, type OwnedProductRow } from "@/product-framework/deriveOwnedProducts";
 import { resolveProductDestination } from "@/product-framework/resolveDestination";
+import { loadTopAttentionItem, type SharedAttentionItem } from "@/product-framework/attentionAdapter";
 import { ensureProductsRegistered } from "@/products/manifest";
 
 /**
@@ -29,16 +30,23 @@ import { ensureProductsRegistered } from "@/products/manifest";
 
 const BEHIND_AFTER_DAYS = 10;
 
-type FocalState = "none" | "degraded" | "not-started" | "setup" | "active" | "behind" | "completed";
+type FocalState = "none" | "degraded" | "not-started" | "setup" | "active" | "behind" | "completed" | "needs-attention";
 
-function focalStateFor(row: OwnedProductRow | null): FocalState {
+function focalStateFor(row: OwnedProductRow | null, attentionItem: SharedAttentionItem | null): FocalState {
   if (!row) return "none";
   if (row.kind !== "ready") return "degraded";
   if (!row.instance) return "not-started";
   if (row.instance.lifecycleState === "completed") return "completed";
   if (!row.instance.setupComplete) return "setup";
   const ageDays = (Date.now() - new Date(row.instance.lastActivityAt).getTime()) / 86_400_000;
-  return ageDays > BEHIND_AFTER_DAYS ? "behind" : "active";
+  const base = ageDays > BEHIND_AFTER_DAYS ? "behind" : "active";
+  // A real, more urgent cross-product signal outranks routine setup
+  // progress or "it's been a while" — but only for the product it
+  // actually belongs to, never borrowed onto a different row.
+  if (attentionItem && attentionItem.productSlug === row.productSlug && (base === "active" || base === "behind")) {
+    return "needs-attention";
+  }
+  return base;
 }
 
 export default function AppHomePage() {
@@ -46,6 +54,7 @@ export default function AppHomePage() {
   const [rows, setRows] = useState<OwnedProductRow[] | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);
   const [retryToken, setRetryToken] = useState(0);
+  const [topAttentionItem, setTopAttentionItem] = useState<SharedAttentionItem | null>(null);
   const firstName = String(user.user_metadata?.display_name || user.email?.split("@")[0] || "there").split(" ")[0];
 
   useEffect(() => {
@@ -70,9 +79,28 @@ export default function AppHomePage() {
     };
   }, [retryToken]);
 
+  // Separate from the load above on purpose: attention is enhancement on
+  // top of Home's real render, so a slow or failed attention fetch must
+  // never block or delay today's render of what's already known.
+  useEffect(() => {
+    if (!rows) return;
+    let cancelled = false;
+    loadTopAttentionItem(rows).then((item) => {
+      if (!cancelled) setTopAttentionItem(item);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [rows]);
+
   const retry = () => setRetryToken((t) => t + 1);
-  const focalRow = rows?.[0] ?? null;
-  const rest = rows?.slice(1) ?? [];
+  // The winning attention item can belong to a product other than the
+  // most recently used one — when it does, that product's row becomes
+  // the focal block instead of rows[0] (see attentionAdapter.ts's own
+  // "scan every owned product" reasoning).
+  const attentionRow = topAttentionItem ? rows?.find((row) => row.productSlug === topAttentionItem.productSlug) ?? null : null;
+  const focalRow = attentionRow ?? rows?.[0] ?? null;
+  const rest = rows?.filter((row) => row !== focalRow) ?? [];
 
   return (
     <PlatformShell>
@@ -91,7 +119,7 @@ export default function AppHomePage() {
         />
       ) : (
         <div className="space-y-10">
-          <FocalBlock row={focalRow} firstName={firstName} onRetry={retry} />
+          <FocalBlock row={focalRow} attentionItem={topAttentionItem} firstName={firstName} onRetry={retry} />
 
           {rest.length > 0 && (
             <section>
@@ -118,14 +146,16 @@ type FocalAction = { label: string; href: string } | { label: string; onClick: (
 /** The one dominant thing on the screen, composed per the user's current state. */
 function FocalBlock({
   row,
+  attentionItem,
   firstName,
   onRetry,
 }: {
   row: OwnedProductRow | null;
+  attentionItem: SharedAttentionItem | null;
   firstName: string;
   onRetry: () => void;
 }) {
-  const state = focalStateFor(row);
+  const state = focalStateFor(row, attentionItem);
 
   // No owned products yet: a warm invitation to find the first one.
   if (state === "none" || !row) {
@@ -206,6 +236,21 @@ function FocalBlock({
         body="It has been a little while. A few things may have changed. Update what is different, or just pick up where you left off."
         primary={{ label: "Update what changed", href: destination }}
         secondary={{ label: "Just continue", href: destination }}
+        familyLabel={family?.label}
+      />
+    );
+  }
+
+  if (state === "needs-attention") {
+    // attentionItem is guaranteed here — focalStateFor only returns this
+    // state when attentionItem exists and matches this row's product.
+    const item = attentionItem!;
+    return (
+      <FocalShell
+        eyebrow="Needs a look"
+        title={item.title}
+        body={item.detail}
+        primary={{ label: "Open", href: item.href }}
         familyLabel={family?.label}
       />
     );
