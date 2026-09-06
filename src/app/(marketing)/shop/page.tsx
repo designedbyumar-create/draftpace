@@ -8,13 +8,7 @@ import { ensureShopRegistered } from "@/shop/ensureRegistered";
 import { LIFE_AREAS } from "@/content/areas";
 import ShopCardMockup from "./ShopCardMockup";
 import ShopGrid, { type ShopFilterArea, type ShopGridEntry } from "./ShopGrid";
-import { OverviewScreenMockup as MmrOverview, AddInfoScreenMockup as MmrAddInfo, BreakdownScreenMockup as MmrBreakdown } from "./[productSlug]/monthlyMoneyResetVisuals";
-import { OverviewScreenMockup as PfcOverview, GuidedCompanionScreenMockup as PfcGuided, AttentionScreenMockup as PfcAttention } from "./[productSlug]/personalFinanceCompanionVisuals";
-import { OverviewScreenMockup as HmcOverview, ActionRecordScreenMockup as HmcActionRecord, SetupScreenMockup as HmcSetup } from "./[productSlug]/homeManagementCompanionVisuals";
-import { OverviewScreenMockup as PlaOverview, CompanionScreenMockup as PlaCompanion, BookScreenMockup as PlaBook } from "./[productSlug]/personalLifeAffairsCompanionVisuals";
-import { OverviewScreenMockup as HscOverview, CheckScreenMockup as HscCheck, BookScreenMockup as HscBook } from "./[productSlug]/homeschoolingCompanionVisuals";
-import { OverviewScreenMockup as AlongsideOverview, CompanionScreenMockup as AlongsideCompanion, LifeScreenMockup as AlongsideLife } from "./[productSlug]/adhdLifeCompanionVisuals";
-import { OverviewScreenMockup as TravelOverview, ChangeImpactScreenMockup as TravelChangeImpact, TripBriefScreenMockup as TravelTripBrief } from "./[productSlug]/travelCompanionVisuals";
+import { screensFor } from "./productScreens";
 
 export const metadata: Metadata = {
   title: "Shop",
@@ -25,26 +19,15 @@ export const metadata: Metadata = {
 export const dynamic = "force-dynamic";
 
 /**
- * The one place that maps a real product slug to the three real phone
- * screens its Shop card cycles through on hover (see ShopCardMockup). A
- * product without an entry here falls back to its own listing media,
- * then to an honest placeholder - never a fabricated image, and never a
- * single screen scrolled to fake a second one it doesn't have.
+ * A card's thumbnail: the product's own three real screens, cycled on
+ * hover (see ShopCardMockup and productScreens.tsx). A product without
+ * screens falls back to its own listing media, then to an honest
+ * placeholder, never a fabricated image.
  */
-const PRODUCT_SCREENS: Partial<Record<string, React.ComponentType[]>> = {
-  "monthly-money-reset": [MmrOverview, MmrAddInfo, MmrBreakdown],
-  "personal-finance-companion": [PfcOverview, PfcGuided, PfcAttention],
-  "home-management-companion": [HmcOverview, HmcActionRecord, HmcSetup],
-  "personal-life-affairs-companion": [PlaOverview, PlaCompanion, PlaBook],
-  "homeschooling-companion": [HscOverview, HscCheck, HscBook],
-  alongside: [AlongsideOverview, AlongsideCompanion, AlongsideLife],
-  "travel-companion": [TravelOverview, TravelChangeImpact, TravelTripBrief],
-};
-
 function renderThumbnail(product: { slug: string; media: { src: string; alt: string }[] }) {
-  const Screens = PRODUCT_SCREENS[product.slug];
-  if (Screens) {
-    return <ShopCardMockup screens={Screens.map((Screen, i) => <Screen key={i} />)} />;
+  const screens = screensFor(product.slug);
+  if (screens) {
+    return <ShopCardMockup screens={screens} />;
   }
   const media = product.media[0];
   if (media) {

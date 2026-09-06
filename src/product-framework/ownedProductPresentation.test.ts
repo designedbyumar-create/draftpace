@@ -23,13 +23,13 @@ describe("boughtStartedLine", () => {
     grantedAt: "2026-08-12T00:00:00Z",
   };
 
-  it("shows only the bought date when no instance exists yet", () => {
-    expect(boughtStartedLine(entitlement, null)).toBe("Bought Aug 12, 2026");
+  it("shows only the ownership date when no instance exists yet", () => {
+    expect(boughtStartedLine(entitlement, null)).toBe("Yours since Aug 12, 2026");
   });
 
-  it("shows both bought and started dates once an instance exists", () => {
+  it("shows both ownership and started dates once an instance exists", () => {
     const instance = { createdAt: "2026-08-14T00:00:00Z" } as ProductInstanceSummary;
-    expect(boughtStartedLine(entitlement, instance)).toBe("Bought Aug 12, 2026 · Started Aug 14, 2026");
+    expect(boughtStartedLine(entitlement, instance)).toBe("Yours since Aug 12, 2026 · Started Aug 14, 2026");
   });
 });
 
