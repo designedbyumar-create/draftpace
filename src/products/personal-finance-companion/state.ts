@@ -1,11 +1,11 @@
 import { z } from "zod";
 
 /**
- * Personal Finance Companion's canonical record schemas — the TypeScript
+ * Personal Finance Companion's canonical record schemas, the TypeScript
  * side of supabase/migrations/202608080001_personal_finance_companion_records.sql.
  * Field naming matches Monthly Money Reset's convention (`amountMinorUnits`,
  * a generic minor-units name, not `amountCents`) even though the database
- * columns use a `_minor` suffix — see src/lib/currency.ts. Validation is
+ * columns use a `_minor` suffix, see src/lib/currency.ts. Validation is
  * boundary-only (parsed when data comes back from Supabase, not on every
  * keystroke), matching the lesson documented on MMR's incomeEntrySchema:
  * a stricter-than-write schema breaks autosave of an in-progress, not-yet-
@@ -31,6 +31,25 @@ const recordProvenanceFields = {
   importSessionId: z.string().nullable(),
   createdAt: z.string(),
   updatedAt: z.string(),
+};
+
+/**
+ * Shared Responsibility (Trump Card Memo, absorbing the founder-proposed
+ * Couple Finance Companion into a feature of this product): a bill or
+ * subscription can be flagged shared with another person, at a split
+ * this account's own share of. `sharedSplitPercent` is only ever set
+ * alongside `shared: true`, see the matching DB check constraint in
+ * 202609060003_personal_finance_companion_shared_responsibility.sql.
+ * `settled`/`settledAt` are manually ticked, not computed: there is no
+ * automatic cycle boundary to reset them against (this product's
+ * cycleModel is "continuous"), so re-ticking settled after new shared
+ * activity is how a fresh reconciliation period starts.
+ */
+const sharedResponsibilityFields = {
+  shared: z.boolean(),
+  sharedSplitPercent: z.number().int().min(1).max(99).nullable(),
+  settled: z.boolean(),
+  settledAt: isoDate.nullable(),
 };
 
 export const accountSchema = z.object({
@@ -82,6 +101,7 @@ export const billSchema = z.object({
   currency: z.string().min(1),
   ...recordLifecycleFields,
   ...recordProvenanceFields,
+  ...sharedResponsibilityFields,
 });
 export type Bill = z.infer<typeof billSchema>;
 
@@ -95,6 +115,7 @@ export const subscriptionSchema = z.object({
   currency: z.string().min(1),
   ...recordLifecycleFields,
   ...recordProvenanceFields,
+  ...sharedResponsibilityFields,
 });
 export type Subscription = z.infer<typeof subscriptionSchema>;
 
@@ -128,7 +149,7 @@ export const debtSchema = z.object({
   promotionalRate: z.number().nullable(),
   promotionalExpiry: isoDate.nullable(),
   balanceAsOfDate: isoDate,
-  /** Optional reference to the Account this debt is also a spending source for, e.g. a credit card entered here for its balance/rate that's also used to log transactions. Never required — most debts (loans, mortgages) have no matching account. Purely a reference; no calculation reads this field yet. */
+  /** Optional reference to the Account this debt is also a spending source for, e.g. a credit card entered here for its balance/rate that's also used to log transactions. Never required, most debts (loans, mortgages) have no matching account. Purely a reference; no calculation reads this field yet. */
   linkedAccountId: z.string().nullable(),
   ...recordLifecycleFields,
   ...recordProvenanceFields,
@@ -152,7 +173,7 @@ export const savingsGoalSchema = z.object({
 export type SavingsGoal = z.infer<typeof savingsGoalSchema>;
 
 // ---------------------------------------------------------------------------
-// Companion setup-state — the guided flow's own resumable progress, never a
+// Companion setup-state, the guided flow's own resumable progress, never a
 // financial record. See supabase/migrations/..._supporting_tables.sql's
 // pfc_setup_state table and docs/products/PERSONAL-FINANCE-COMPANION-FOUNDATION.md
 // section on setup-state infrastructure (spec phase 8).
@@ -172,7 +193,7 @@ export const setupStateSchema = z.object({
   /** Screen 0-7 of the launch spec's first-run Companion journey; 0 = orientation. */
   currentScreen: z.number().int().min(0).max(7).default(0),
   selectedInputPath: inputPathSchema.nullable().default(null),
-  /** Per-area status, keyed by FinancialArea (validated at read sites via the FinancialArea type, not by the schema itself — Zod v4's enum-keyed z.record requires every key present, which is wrong for a progressively-filled map). Powers both Companion's own progress and the Setup Centre's status grid, without a second source of truth. */
+  /** Per-area status, keyed by FinancialArea (validated at read sites via the FinancialArea type, not by the schema itself, Zod v4's enum-keyed z.record requires every key present, which is wrong for a progressively-filled map). Powers both Companion's own progress and the Setup Centre's status grid, without a second source of truth. */
   areaProgress: z.record(z.string(), areaSetupStatusSchema).default({}),
   activeImportSessionId: z.string().nullable().default(null),
   /** Index into the current review batch, so leaving mid-review and returning resumes at the same candidate, not the start of the batch. */

@@ -1,25 +1,17 @@
 import { ProductDefinitionInput } from "@/product-framework/definition";
 
 /**
- * Personal Finance Companion — the foundation-stage registration for the
- * paid product defined in full by the launch specification (see
- * docs/products/PERSONAL-FINANCE-COMPANION-FOUNDATION.md for the
- * reconciliation this registration is built from).
- *
- * Follows hidden-access-test's exact "real but unreleased" pattern
- * (src/products/hidden-access-test/definition.ts): devFixture is false
- * (a real product, registered in every environment, not excluded from
- * production the way a framework-testing fixture is), access.model is
- * "paid", and — critically — there is deliberately no
- * src/shop/products/personal-finance-companion.ts entry, so /shop never
- * lists it and /shop/personal-finance-companion 404s. That is the entire
- * release-gating mechanism for this stage (launch spec phase 12): no new
- * gating infrastructure was built, because none was needed. The only way
- * in is a manual grant_admin_product call (service-role only), exactly
- * like hidden-access-test.
+ * Personal Finance Companion, one of Draftpace's real, live, paid
+ * products (see docs/products/PERSONAL-FINANCE-COMPANION-FOUNDATION.md for
+ * the original reconciliation this registration is built from). It has
+ * since launched publicly: src/shop/products/personal-finance-companion.ts
+ * is registered and its Shop page is live. An earlier version of this
+ * comment described a hidden, pre-launch stage (following
+ * hidden-access-test's pattern) that no longer reflects reality; kept only
+ * as a note so nobody re-hides a shipped product chasing a stale comment.
  *
  * cycleModel is "continuous": unlike Monthly Money Reset, this product has
- * no monthly reset concept — exactly one instance ever, found by most
+ * no monthly reset concept, exactly one instance ever, found by most
  * recently created rather than by matching today's cycle key. See
  * src/product-framework/definition.ts's productCycleModelSchema comment.
  */
@@ -31,19 +23,20 @@ export const personalFinanceCompanionDefinition: ProductDefinitionInput = {
     "See what is safe to spend, what is coming due, and what actually happened with your money, in one place that is always current.",
   family: "companion",
   version: "0.1.0",
-  status: "draft",
+  status: "active",
   access: { model: "paid" },
   cycleModel: "continuous",
-  // Provisional: reuses Draftpace's own neutral brand icons/colors for
-  // local installability testing only, per the explicit instruction not
-  // to invent final product artwork this session. Real icon assets and
-  // final theme/background colors are a separate, later decision — see
-  // docs/products/PERSONAL-FINANCE-COMPANION-FOUNDATION.md's PWA section.
+  // Real theme/background colors: petrol, this product's own identity
+  // (see docs/PRODUCT-PLATFORM.md's design-system pass). Icons are still
+  // Draftpace's neutral brand assets, real per-product icon artwork
+  // remains a separate, later decision, so provisionalBranding stays
+  // true for icons specifically, tracked in the manifest route/settings
+  // destination per its own doc comment in product-framework/definition.ts.
   pwa: {
     name: "Personal Finance Companion",
     shortName: "Finance",
     description: "Personal Finance Companion by Draftpace: accounts, income, bills, subscriptions, transactions, debt, and savings, in one always-current picture.",
-    themeColor: "#0e6e75",
+    themeColor: "#2e4a4d",
     backgroundColor: "#f4f2ec",
     icons: [
       { src: "/logo/icon-192.png", sizes: "192x192", type: "image/png", purpose: "any" },
@@ -56,12 +49,12 @@ export const personalFinanceCompanionDefinition: ProductDefinitionInput = {
   // Deliberately excludes "setup": that destination is Phase 8's
   // autosave/resume infrastructure probe (SetupModule.tsx), not a real
   // onboarding screen, and nothing in this product ever calls
-  // setProductInstanceLifecycle to mark setup_complete — so declaring
+  // setProductInstanceLifecycle to mark setup_complete, so declaring
   // "setup" here trapped resolveLifecycleNavigation() in its permanent
   // "setup in progress" branch (see navigationResolver.ts's state 2), on
   // top of everTouched being separately stuck false (fixed in migration
   // 202608090003). setup-centre is, and always was, the real returning-
-  // user management surface the launch spec describes — this changes
+  // user management surface the launch spec describes, this changes
   // nothing about that.
   navigation: [
     "start",
@@ -113,16 +106,33 @@ export const personalFinanceCompanionDefinition: ProductDefinitionInput = {
   ],
   permissions: [],
   events: [],
+  // Petrol: this product's first real accent identity. Declaring the full
+  // scale (not just `accent`) is what actually re-themes it, per
+  // themeExtension.ts's own comment, every shared component already
+  // reads --primary and friends, so this one block turns the whole
+  // product petrol without touching any component. Before this, PFC had
+  // no accent declared at all, the one product the design-system audit
+  // found with zero visual identity of its own.
+  theme: {
+    accentScale: {
+      base: "#2e4a4d",
+      strong: "#22383a",
+      soft: "#e4ebea",
+      contrast: "#ffffff",
+      wash: "#f2f6f5",
+    },
+    motionPersonality: "calm",
+  },
   layouts: ["responsive"],
   // "shell-only": the installed app shell and static/product UI may be
   // cached; financial reads/writes require connectivity. See the offline
-  // contract in docs/products/PERSONAL-FINANCE-COMPANION-FOUNDATION.md —
+  // contract in docs/products/PERSONAL-FINANCE-COMPANION-FOUNDATION.md ,
   // this product deliberately does not get "local-edits" (an optimistic
   // offline write queue), since no conflict-safe mechanism for one exists
   // in this repository yet and financial data must never imply a save
   // succeeded when it did not.
   offline: "shell-only",
-  // Declarative only at this stage — no push-sending platform exists yet
+  // Declarative only at this stage, no push-sending platform exists yet
   // (see the PWA/notification-readiness audit). Left false rather than a
   // premature true, since nothing behind this flag is real yet.
   notifications: { supported: false },

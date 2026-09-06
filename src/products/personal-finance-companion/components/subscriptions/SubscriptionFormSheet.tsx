@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Input from "@/design-system/Input";
 import Select from "@/design-system/Select";
+import Toggle from "@/design-system/Toggle";
 import Button from "@/design-system/Button";
 import Alert from "@/design-system/Alert";
 import RecordFormSheet from "../shared/RecordFormSheet";
@@ -22,11 +23,23 @@ export interface SubscriptionFormValues {
   frequency: Subscription["frequency"];
   renewalDate: string;
   decision: Subscription["decision"];
+  shared: boolean;
+  /** This account's own share, 1-99, as text so the field can sit empty rather than defaulting to a guessed number. Ignored (saved as null) whenever `shared` is off. */
+  sharedSplitPercent: string;
 }
 
 function defaultValues(subscription: Subscription | null): SubscriptionFormValues {
   if (!subscription) {
-    return { name: "", amountMajorUnits: "", currency: "USD", frequency: "monthly", renewalDate: "", decision: "keep" };
+    return {
+      name: "",
+      amountMajorUnits: "",
+      currency: "USD",
+      frequency: "monthly",
+      renewalDate: "",
+      decision: "keep",
+      shared: false,
+      sharedSplitPercent: "",
+    };
   }
   return {
     name: subscription.name,
@@ -36,13 +49,15 @@ function defaultValues(subscription: Subscription | null): SubscriptionFormValue
     frequency: subscription.frequency,
     renewalDate: subscription.renewalDate ?? "",
     decision: subscription.decision,
+    shared: subscription.shared,
+    sharedSplitPercent: subscription.sharedSplitPercent !== null ? String(subscription.sharedSplitPercent) : "",
   };
 }
 
 /**
  * Add/edit form for a subscription. The "Planned to cancel" decision is
  * paired, right in the picker, with the same "Draftpace won't cancel it for
- * you" boundary shown on the card — see subscriptionLogic.ts's
+ * you" boundary shown on the card, see subscriptionLogic.ts's
  * describeDecisionNote, which this copy must stay consistent with.
  */
 export default function SubscriptionFormSheet({
@@ -63,7 +78,7 @@ export default function SubscriptionFormSheet({
   const [saving, setSaving] = useState(false);
 
   // Re-seed whenever a different (or no) subscription opens, or the sheet
-  // is freshly reopened in "add" mode — RecordFormSheet returns null while
+  // is freshly reopened in "add" mode, RecordFormSheet returns null while
   // closed, but doesn't unmount this component, so a cancelled draft would
   // otherwise silently carry over into the next "Add" flow.
   const [wasOpen, setWasOpen] = useState(open);
@@ -88,6 +103,13 @@ export default function SubscriptionFormSheet({
       const parsed = Number(values.amountMajorUnits);
       if (Number.isNaN(parsed) || parsed < 0) {
         setError("Enter an amount of zero or more, or leave it blank if you're not sure.");
+        return;
+      }
+    }
+    if (values.shared) {
+      const percent = Number(values.sharedSplitPercent);
+      if (!values.sharedSplitPercent.trim() || Number.isNaN(percent) || percent < 1 || percent > 99) {
+        setError("Enter your own share as a number between 1 and 99.");
         return;
       }
     }
@@ -175,6 +197,25 @@ export default function SubscriptionFormSheet({
       {values.decision === "plannedCancellation" && (
         <Alert tone="info">Draftpace will track this as planned to cancel. It won&apos;t cancel it for you.</Alert>
       )}
+      <div className="flex items-center justify-between rounded-lg border border-[var(--border)] p-3">
+        <div>
+          <p className="text-[13px] font-semibold text-[var(--text)]">Shared Responsibility</p>
+          <p className="mt-0.5 text-[12px] text-[var(--muted)]">On when you split this with somebody else.</p>
+        </div>
+        <Toggle checked={values.shared} onChange={(checked) => setValues((v) => ({ ...v, shared: checked }))} label="Shared Responsibility" />
+      </div>
+      {values.shared && (
+        <Input
+          label="Your share (%)"
+          type="number"
+          inputMode="numeric"
+          min={1}
+          max={99}
+          placeholder="e.g. 50"
+          value={values.sharedSplitPercent}
+          onChange={(e) => setValues((v) => ({ ...v, sharedSplitPercent: e.target.value }))}
+        />
+      )}
     </RecordFormSheet>
   );
 }
@@ -188,6 +229,8 @@ export function subscriptionFormValuesToPatch(values: SubscriptionFormValues) {
     frequency: values.frequency,
     renewalDate: values.renewalDate.trim() || null,
     decision: values.decision,
+    shared: values.shared,
+    sharedSplitPercent: values.shared ? Number(values.sharedSplitPercent) : null,
     status: "ready",
   };
 }

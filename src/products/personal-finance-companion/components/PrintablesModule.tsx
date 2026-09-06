@@ -4,6 +4,7 @@ import Surface from "@/design-system/Surface";
 import EmptyState from "@/design-system/EmptyState";
 import { Article, Download } from "@/design-system/Icon";
 import { buttonClassName } from "@/design-system/buttonStyles";
+import SharedStatementDownloadButton from "./SharedStatementDownloadButton";
 
 const ASSET_DESCRIPTION: Record<string, string> = {
   letter: "Sized for US Letter paper.",
@@ -19,7 +20,7 @@ const DOWNLOAD_LINK_CLASS = buttonClassName({ variant: "secondary", size: "sm" }
 /**
  * The Printable Finance Companion: an included, paper version of this
  * product, for gathering and thinking away from a screen. It is not a
- * second product and grants nothing on its own — access to it comes from
+ * second product and grants nothing on its own, access to it comes from
  * owning Personal Finance Companion, checked server-side on every download
  * (see the API route this links to).
  */
@@ -72,6 +73,17 @@ export default function PrintablesModule({ definition }: { definition: ProductDe
           ))}
         </div>
       )}
+
+      <div className="border-t border-[var(--border)] pt-6">
+        <p className="text-[13px] font-semibold text-[var(--text)]">Shared Responsibility statement</p>
+        <p className="mt-1 max-w-lg text-[13px] leading-relaxed text-[var(--muted)]">
+          Generated from your current shared bills and subscriptions: what&apos;s already settled, and what&apos;s
+          still owed. Always current, unlike the printable companion above.
+        </p>
+        <div className="mt-3">
+          <SharedStatementDownloadButton />
+        </div>
+      </div>
     </div>
   );
 }

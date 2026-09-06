@@ -1,13 +1,16 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import { RotateCcw, Plus } from "@/design-system/Icon";
 import Badge from "@/design-system/Badge";
 import Button from "@/design-system/Button";
 import EmptyState from "@/design-system/EmptyState";
 import { formatCurrency } from "@/lib/currency";
+import { liftProps, settleVariant } from "@/design-system/motion";
 import { findPersonalFinanceCompanionInstanceId } from "../setupStateData";
 import { listSubscriptions, createSubscription, updateSubscription, archiveSubscription } from "../domain/subscriptions";
+import { computeSharedSplit } from "../domain/sharedResponsibility";
 import type { Subscription } from "../state";
 import SectionShell from "./shared/SectionShell";
 import { StatRow, StatTile } from "./shared/StatRow";
@@ -79,6 +82,14 @@ export default function SubscriptionsModule() {
 
   async function handleArchive(subscription: Subscription) {
     const result = await archiveSubscription(subscription.id);
+    if (result.ok) setSubscriptions((prev) => prev.map((s) => (s.id === result.data.id ? result.data : s)));
+  }
+
+  async function handleToggleSettled(subscription: Subscription) {
+    const result = await updateSubscription(subscription.id, {
+      settled: !subscription.settled,
+      settledAt: !subscription.settled ? new Date().toISOString() : null,
+    });
     if (result.ok) setSubscriptions((prev) => prev.map((s) => (s.id === result.data.id ? result.data : s)));
   }
 
@@ -179,6 +190,7 @@ export default function SubscriptionsModule() {
                 setFormOpen(true);
               }}
               onArchive={() => handleArchive(subscription)}
+              onToggleSettled={() => handleToggleSettled(subscription)}
             />
           ))}
         </ul>
@@ -196,7 +208,14 @@ export default function SubscriptionsModule() {
           {showArchived && (
             <ul className="mt-2.5 flex flex-col gap-2.5 opacity-70">
               {archived.map((subscription) => (
-                <SubscriptionCard key={subscription.id} subscription={subscription} onEdit={() => {}} onArchive={() => {}} readOnly />
+                <SubscriptionCard
+                  key={subscription.id}
+                  subscription={subscription}
+                  onEdit={() => {}}
+                  onArchive={() => {}}
+                  onToggleSettled={() => {}}
+                  readOnly
+                />
               ))}
             </ul>
           )}
@@ -218,17 +237,27 @@ function SubscriptionCard({
   subscription,
   onEdit,
   onArchive,
+  onToggleSettled,
   readOnly = false,
 }: {
   subscription: Subscription;
   onEdit: () => void;
   onArchive: () => void;
+  onToggleSettled: () => void;
   readOnly?: boolean;
 }) {
+  const reduceMotion = useReducedMotion();
   const decisionNote = describeDecisionNote(subscription);
+  const split =
+    subscription.shared && subscription.amountMinorUnits !== null && subscription.sharedSplitPercent !== null
+      ? computeSharedSplit(subscription.amountMinorUnits, subscription.sharedSplitPercent)
+      : null;
 
   return (
-    <li className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4">
+    <motion.li
+      className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4"
+      {...liftProps(Boolean(reduceMotion))}
+    >
       <div className="flex items-start justify-between gap-3">
         <button type="button" onClick={onEdit} disabled={readOnly} className="flex-1 text-left disabled:cursor-default">
           <div className="flex flex-wrap items-start gap-2">
@@ -237,6 +266,7 @@ function SubscriptionCard({
             <Badge tone={subscription.decision === "plannedCancellation" ? "warning" : "neutral"}>
               {DECISION_LABEL[subscription.decision]}
             </Badge>
+            {subscription.shared && <Badge tone="primary">Shared</Badge>}
           </div>
           <p className="mt-1 text-[20px] font-semibold leading-tight text-[var(--text)]">
             {subscription.amountMinorUnits !== null ? formatCurrency(subscription.amountMinorUnits, subscription.currency) : "No amount yet"}
@@ -256,14 +286,43 @@ function SubscriptionCard({
             )}
             {subscription.renewalDate ? ` · renews ${subscription.renewalDate}` : ""}
           </p>
+          {split && (
+            <p className="mt-1.5 text-[12px] text-[var(--muted)]">
+              Your share {formatCurrency(split.yourShareMinorUnits, subscription.currency)} · Their share{" "}
+              {formatCurrency(split.otherShareMinorUnits, subscription.currency)}
+            </p>
+          )}
           {decisionNote && <p className="mt-1.5 text-[12px] leading-relaxed text-[var(--muted)]">{decisionNote}</p>}
         </button>
         {!readOnly && (
-          <Button size="sm" variant="ghost" onClick={onArchive}>
-            Close
-          </Button>
+          <div className="flex shrink-0 flex-col items-end gap-1.5">
+            <Button size="sm" variant="ghost" onClick={onArchive}>
+              Close
+            </Button>
+            {subscription.shared && (
+              <SettleToggle settled={subscription.settled} onToggle={onToggleSettled} reduceMotion={Boolean(reduceMotion)} />
+            )}
+          </div>
         )}
       </div>
-    </li>
+    </motion.li>
+  );
+}
+
+/** The manually-ticked settle action for a shared bill/subscription, same behavior as BillsModule.tsx's own SettleToggle. */
+function SettleToggle({ settled, onToggle, reduceMotion }: { settled: boolean; onToggle: () => void; reduceMotion: boolean }) {
+  if (settled) {
+    return (
+      <motion.span key="settled" initial="hidden" animate="visible" variants={settleVariant(reduceMotion)} className="inline-flex">
+        <Button size="sm" variant="secondary" onClick={onToggle}>
+          Settled
+        </Button>
+      </motion.span>
+    );
+  }
+  return (
+    <Button size="sm" variant="ghost" onClick={onToggle}>
+      Mark settled
+    </Button>
   );
 }

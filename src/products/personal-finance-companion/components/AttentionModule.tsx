@@ -2,11 +2,13 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import { motion, useReducedMotion } from "framer-motion";
 import Badge from "@/design-system/Badge";
 import Button from "@/design-system/Button";
 import Surface from "@/design-system/Surface";
 import EmptyState from "@/design-system/EmptyState";
 import { Bell, WarningCircle, CheckCircle2 } from "@/design-system/Icon";
+import { staggerContainer, staggerItem } from "@/design-system/motion";
 import { describeResultError } from "@/product-framework/result";
 import { findPersonalFinanceCompanionInstanceId } from "../setupStateData";
 import { listAccounts } from "../domain/accounts";
@@ -32,13 +34,13 @@ const AREA_LABELS: Record<AttentionItem["area"], string> = {
 };
 
 /**
- * Attention — the signature Draftpace interaction. One deterministic list
+ * Attention, the signature Draftpace interaction. One deterministic list
  * of what genuinely needs a look, derived from the same rules the direct
  * sections use (attention.ts), never a second opinion. There is no
  * checklist to complete and no count to chase: an item leaves this list the
  * moment its underlying record no longer has the issue, or when it's
  * snoozed for a week on this device. Nothing here celebrates emptiness or
- * penalizes a backlog — it just tells the truth about what's outstanding.
+ * penalizes a backlog, it just tells the truth about what's outstanding.
  */
 export default function AttentionModule() {
   const [status, setStatus] = useState<LoadStatus>("loading");
@@ -202,15 +204,23 @@ function AttentionGroup({
   items: AttentionItem[];
   onSnooze: (id: string) => void;
 }) {
+  const reduceMotion = useReducedMotion();
+
   return (
     <div>
       <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--faint)]">
         {title} ({items.length})
       </p>
-      <ul className="mt-2 flex flex-col gap-1.5">
+      <motion.ul
+        className="mt-2 flex flex-col gap-1.5"
+        initial="hidden"
+        animate="visible"
+        variants={staggerContainer(Boolean(reduceMotion))}
+      >
         {items.map((item) => (
-          <li
+          <motion.li
             key={item.id}
+            variants={staggerItem(Boolean(reduceMotion))}
             className="flex items-start gap-3 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-3.5"
           >
             <WarningCircle
@@ -232,9 +242,9 @@ function AttentionGroup({
             >
               Snooze
             </button>
-          </li>
+          </motion.li>
         ))}
-      </ul>
+      </motion.ul>
     </div>
   );
 }

@@ -44,6 +44,10 @@ function bill(overrides: Partial<Bill> = {}): Bill {
     importSessionId: null,
     createdAt: "2026-01-01T00:00:00Z",
     updatedAt: "2026-01-01T00:00:00Z",
+    shared: false,
+    sharedSplitPercent: null,
+    settled: false,
+    settledAt: null,
     ...overrides,
   };
 }

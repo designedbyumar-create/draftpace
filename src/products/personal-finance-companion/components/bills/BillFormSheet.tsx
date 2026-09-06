@@ -32,6 +32,9 @@ export interface BillFormValues {
   frequency: Bill["frequency"];
   essential: boolean;
   funded: boolean;
+  shared: boolean;
+  /** This account's own share, 1-99, as text so the field can sit empty rather than defaulting to a guessed number. Ignored (saved as null) whenever `shared` is off. */
+  sharedSplitPercent: string;
 }
 
 function defaultValues(bill: Bill | null): BillFormValues {
@@ -49,6 +52,8 @@ function defaultValues(bill: Bill | null): BillFormValues {
       frequency: "monthly",
       essential: true,
       funded: true,
+      shared: false,
+      sharedSplitPercent: "",
     };
   }
   const rule = bill.dueRule;
@@ -65,12 +70,14 @@ function defaultValues(bill: Bill | null): BillFormValues {
     frequency: bill.frequency,
     essential: bill.essential,
     funded: bill.funded,
+    shared: bill.shared,
+    sharedSplitPercent: bill.sharedSplitPercent !== null ? String(bill.sharedSplitPercent) : "",
   };
 }
 
 /**
  * Add/edit form for a bill. A bill with no due date is still saved and
- * still shown — see billLogic.ts's describeBillIncompleteness — this form
+ * still shown, see billLogic.ts's describeBillIncompleteness, this form
  * just makes "none" an explicit, honest choice rather than a required field.
  */
 export default function BillFormSheet({
@@ -91,7 +98,7 @@ export default function BillFormSheet({
   const [saving, setSaving] = useState(false);
 
   // Re-seed whenever a different (or no) bill opens, or the sheet is
-  // freshly reopened in "add" mode — RecordFormSheet returns null while
+  // freshly reopened in "add" mode, RecordFormSheet returns null while
   // closed, but doesn't unmount this component, so a cancelled draft would
   // otherwise silently carry over into the next "Add" flow.
   const [wasOpen, setWasOpen] = useState(open);
@@ -133,6 +140,13 @@ export default function BillFormSheet({
     if (values.dueDateType === "recurrenceDescription" && !values.dueRecurrenceDescription.trim()) {
       setError("Describe when this bill is due.");
       return;
+    }
+    if (values.shared) {
+      const percent = Number(values.sharedSplitPercent);
+      if (!values.sharedSplitPercent.trim() || Number.isNaN(percent) || percent < 1 || percent > 99) {
+        setError("Enter your own share as a number between 1 and 99.");
+        return;
+      }
     }
     setSaving(true);
     const failureMessage = await onSave(values);
@@ -261,6 +275,25 @@ export default function BillFormSheet({
         </div>
         <Toggle checked={values.funded} onChange={(checked) => setValues((v) => ({ ...v, funded: checked }))} label="Funded" />
       </div>
+      <div className="flex items-center justify-between rounded-lg border border-[var(--border)] p-3">
+        <div>
+          <p className="text-[13px] font-semibold text-[var(--text)]">Shared Responsibility</p>
+          <p className="mt-0.5 text-[12px] text-[var(--muted)]">On when you split this with somebody else.</p>
+        </div>
+        <Toggle checked={values.shared} onChange={(checked) => setValues((v) => ({ ...v, shared: checked }))} label="Shared Responsibility" />
+      </div>
+      {values.shared && (
+        <Input
+          label="Your share (%)"
+          type="number"
+          inputMode="numeric"
+          min={1}
+          max={99}
+          placeholder="e.g. 50"
+          value={values.sharedSplitPercent}
+          onChange={(e) => setValues((v) => ({ ...v, sharedSplitPercent: e.target.value }))}
+        />
+      )}
     </RecordFormSheet>
   );
 }
@@ -283,6 +316,8 @@ export function billFormValuesToPatch(values: BillFormValues) {
     frequency: values.frequency,
     essential: values.essential,
     funded: values.funded,
+    shared: values.shared,
+    sharedSplitPercent: values.shared ? Number(values.sharedSplitPercent) : null,
     status: "ready",
   };
 }
