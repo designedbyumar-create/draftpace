@@ -229,6 +229,18 @@ export const DECISIONS: Decision[] = [
     decision: "Companion became the name on the page. Living stayed as the idea underneath it rather than the label on top.",
     result: "The Companion Series, as it exists today, named against the project's own founding document.",
   },
+  {
+    title: "From a product list to a life",
+    context:
+      "Home and Library both listed owned products the same way: a title, a status badge, and a link. That matched what the platform stored, not what owning several of them actually felt like.",
+    problem:
+      "The founder's own read on the shipped app was blunt: products sat there like items left in a bin, with no sense they belonged to one person's actual life, and no reason for Library to look any different from Home.",
+    options: "Add more metadata to the same list row, or ask what each screen was actually for and rebuild around that.",
+    decision:
+      "Home was regrouped by area of life, Money, Home, Mind and Focus, Family and Learning, Affairs and Endings, Travel, with each tile speaking in that product's own words instead of a generic status line. Library became a shelf led by each product's real screens, and every owned product gained a second page: a manual built entirely from that product's own published content.",
+    result:
+      "Two screens that used to look identical now answer two different questions, and three fields that had been defined on every product listing since launch, what it asks for, what it gives back, how saving works, were shown to an owner for the first time.",
+  },
 ];
 
 export const REPOSITION = {
@@ -420,7 +432,7 @@ export const STATS = {
     { value: "14", label: "weeks from first commit to frozen MVP" },
     { value: "180", label: "design tokens in one shared set" },
     { value: "14", label: "shared interface primitives" },
-    { value: "1,937", label: "automated checks on every change" },
+    { value: "2,006", label: "automated checks on every change" },
     { value: "76", label: "pages across the site and products" },
   ],
 };
