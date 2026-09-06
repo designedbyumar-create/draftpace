@@ -3,6 +3,7 @@ import { describeHowItWent, describeWork, type Observation, type WorkEntry } fro
 import { TOPIC_BY_KEY } from "./taxonomy";
 import { STANDING_LABEL, type Standing } from "./check";
 import { positionFor } from "./learning";
+import type { HomeschoolStateRequirement } from "@/lib/homeschoolStateRequirements";
 
 /**
  * My Homeschool Record: what a parent could hand to somebody.
@@ -64,6 +65,8 @@ export interface BookInputs {
   topicKeys: string[];
   sections: BookSections;
   generatedAt: Date;
+  /** The household's own state, if one has been said. Null when none was picked, same as household.state itself. */
+  stateRequirement?: HomeschoolStateRequirement | null;
 }
 
 export interface BookSubject {
@@ -93,6 +96,8 @@ export interface Book {
   generatedAt: Date;
   /** True when there is genuinely nothing to print but the covers. */
   empty: boolean;
+  /** The household's own state, if one has been said, carried through unchanged. */
+  stateRequirement: HomeschoolStateRequirement | null;
 }
 
 /**
@@ -190,7 +195,51 @@ export function buildBook(inputs: BookInputs): Book {
     lastDate: dates.length > 0 ? dates[dates.length - 1] : null,
     generatedAt: inputs.generatedAt,
     empty: subjects.length === 0 && days.length === 0 && observations.length === 0 && checks.length === 0,
+    stateRequirement: inputs.stateRequirement ?? null,
   };
+}
+
+/**
+ * What the state asks for, next to what is already here.
+ *
+ * A read-only rollup: nothing here asks the parent to record anything new,
+ * it only reads the same book this document already prints and says
+ * whether each thing the state's checklist names has something recorded
+ * against it yet. Present only for a High or Moderate state, since a None
+ * or Low state has no checklist to roll up.
+ *
+ * This is not a determination of compliance and never says "compliant" or
+ * "met". A parent's own record and a state's own definition of "enough"
+ * are not the same question, and this answers only the first one.
+ */
+export interface StateComplianceRow {
+  label: string;
+  /** What is recorded that speaks to this, in one line, or null for nothing yet. */
+  recorded: string | null;
+}
+
+export function stateComplianceRows(book: Book): StateComplianceRow[] {
+  const checklist = book.stateRequirement?.checklist;
+  if (!checklist) return [];
+
+  const rows: StateComplianceRow[] = [];
+  const dayCount = book.days.length;
+  const noteCount = book.observations.length;
+  const checkCount = book.checks.length;
+
+  if (checklist.log) {
+    rows.push({ label: "A log or record of instruction", recorded: dayCount > 0 ? `${dayCount} ${dayCount === 1 ? "day" : "days"} logged` : null });
+  }
+  if (checklist.attendanceOrHours) {
+    rows.push({ label: "Attendance or hours", recorded: dayCount > 0 ? `${dayCount} ${dayCount === 1 ? "day" : "days"} recorded` : null });
+  }
+  if (checklist.workSamples) {
+    rows.push({ label: "Samples of work or a portfolio", recorded: noteCount > 0 ? `${noteCount} ${noteCount === 1 ? "note" : "notes"} kept` : null });
+  }
+  if (checklist.testOrEvaluation) {
+    rows.push({ label: "A test score or evaluation", recorded: checkCount > 0 ? `${checkCount} ${checkCount === 1 ? "check" : "checks"} on file` : null });
+  }
+  return rows;
 }
 
 /**

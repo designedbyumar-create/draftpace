@@ -21,7 +21,7 @@
  * Plum and ink, matching the product. No em dashes, per the repo rule.
  */
 import { Document, Page, View, Text, StyleSheet, type DocumentProps } from "@react-pdf/renderer";
-import { BOOK_DISCLAIMER, describeBook, describePeriod, SOURCE_ON_PAPER, type Book } from "../book";
+import { BOOK_DISCLAIMER, describeBook, describePeriod, SOURCE_ON_PAPER, stateComplianceRows, type Book } from "../book";
 
 const C = {
   paper: "#fbfaf7",
@@ -168,6 +168,39 @@ export function HomeschoolRecordDocument({ book, size }: DocumentInputs): React.
           </View>
         </View>
       </Page>
+
+      {book.stateRequirement?.checklist && (
+        <Page size={size} style={s.page}>
+          <Sheet section="What your state asks for">
+            <Text style={s.eyebrow}>{book.stateRequirement.state}, {book.stateRequirement.level} regulation</Text>
+            <Text style={s.h1}>What your state asks for.</Text>
+            <View style={s.headRule} />
+            <Text style={s.p}>{book.stateRequirement.note}.</Text>
+            <Text style={{ fontSize: 8.4, color: C.faint, marginTop: -4, marginBottom: 8 }}>
+              Laws change. Confirm with your state before relying on this.
+            </Text>
+            {stateComplianceRows(book).map((row) => (
+              <View key={row.label} style={s.row} wrap={false}>
+                <View style={s.rowTop}>
+                  <Text style={s.rowTitle}>{row.label}</Text>
+                  <Text style={row.recorded ? s.tag : [s.tag, { color: C.faint }]}>
+                    {row.recorded ?? "Nothing recorded yet"}
+                  </Text>
+                </View>
+              </View>
+            ))}
+            {book.stateRequirement.checklist.otherNotes.length > 0 && (
+              <Text style={{ fontSize: 8.6, color: C.muted, marginTop: 10, lineHeight: 1.55 }}>
+                {book.stateRequirement.checklist.otherNotes.join(" ")}
+              </Text>
+            )}
+            <Text style={{ fontSize: 8.4, color: C.faint, marginTop: 12, lineHeight: 1.5 }}>
+              This says what is recorded, not whether it is enough. What your state actually requires is worth
+              confirming at the source.
+            </Text>
+          </Sheet>
+        </Page>
+      )}
 
       {book.subjects.length > 0 && (
         <Page size={size} style={s.page}>

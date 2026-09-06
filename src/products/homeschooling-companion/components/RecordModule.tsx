@@ -19,6 +19,7 @@ import {
   type ChildTopic,
 } from "../domain/learningData";
 import { loadResultsForChild } from "../domain/checkData";
+import { loadHousehold, householdRequirement } from "../domain/household";
 import { buildBook, DEFAULT_BOOK_SECTIONS, type BookSections } from "../book";
 import type { Curriculum, PlanEntry, Position } from "../learning";
 import {
@@ -157,7 +158,10 @@ export default function RecordModule() {
     setMakingRecord(true);
     setErrorMessage(null);
     try {
-      const checks = await loadResultsForChild(instanceId, target);
+      const [checks, household] = await Promise.all([
+        loadResultsForChild(instanceId, target),
+        loadHousehold(instanceId),
+      ]);
       const book = buildBook({
         child,
         curricula: curricula.filter((c) => c.childId === target),
@@ -169,6 +173,7 @@ export default function RecordModule() {
         topicKeys: childTopics.filter((t) => t.childId === target).map((t) => t.topicKey),
         sections,
         generatedAt: new Date(),
+        stateRequirement: household.ok ? householdRequirement(household.data) : null,
       });
       const { downloadHomeschoolRecord } = await import("../printables/download");
       await downloadHomeschoolRecord(book, size);

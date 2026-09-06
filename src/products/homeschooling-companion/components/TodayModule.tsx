@@ -2,10 +2,12 @@
 
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
+import { motion, useReducedMotion } from "framer-motion";
 import Button from "@/design-system/Button";
 import EmptyState from "@/design-system/EmptyState";
 import { CalendarCheck, Check } from "@/design-system/Icon";
 import { describeResultError } from "@/product-framework/result";
+import { staggerContainer, staggerItem, settleVariant } from "@/design-system/motion";
 import { findHomeschoolInstanceId, HOMESCHOOLING_COMPANION_SLUG } from "../instanceData";
 import {
   loadChildren,
@@ -44,6 +46,9 @@ export default function TodayModule() {
   const [pending, setPending] = useState<string | null>(null);
   /** The task just recorded, offered a follow-up. Cleared on the next action. */
   const [asking, setAsking] = useState<TodayTask | null>(null);
+  /** The subject just marked done, so its line gets the one-time settle beat rather than every visit replaying it. */
+  const [justRecordedKey, setJustRecordedKey] = useState<string | null>(null);
+  const reduceMotion = useReducedMotion();
 
   const load = useCallback(async () => {
     const found = await findHomeschoolInstanceId();
@@ -115,6 +120,9 @@ export default function TodayModule() {
     // second condition that write reopened the panel it had just
     // closed, leaving the parent unable to dismiss it at all.
     setAsking(state === "done" && extra.difficulty === undefined ? task : null);
+    // The settle beat marks genuine completion only, never "did not get
+    // to it": that outcome is not a smaller version of done.
+    setJustRecordedKey(state === "done" ? key : null);
   }
 
   if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
@@ -198,12 +206,21 @@ export default function TodayModule() {
                     : "Nothing scheduled today."}
               </p>
             ) : (
-              <div className="mt-2 flex flex-col gap-2.5">
+              <motion.div
+                className="mt-2 flex flex-col gap-2.5"
+                initial="hidden"
+                animate="visible"
+                variants={staggerContainer(Boolean(reduceMotion))}
+              >
                 {day.tasks.map((task) => {
                   const key = `${task.childId}:${task.subject}`;
                   const busy = pending === key;
                   return (
-                    <div key={key} className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4">
+                    <motion.div
+                      key={key}
+                      variants={staggerItem(Boolean(reduceMotion))}
+                      className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4"
+                    >
                       <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                         <h3 className="text-[15px] font-semibold text-[var(--text)]">{task.subject}</h3>
                         {/* Where it came from, on every task, every time. */}
@@ -225,21 +242,42 @@ export default function TodayModule() {
                           Did not get to it
                         </Button>
                       </div>
-                    </div>
+                    </motion.div>
                   );
                 })}
-              </div>
+              </motion.div>
             )}
 
             {day.recorded.length > 0 && (
               <ul className="mt-2.5 flex flex-col gap-1">
-                {day.recorded.map((entry) => (
-                  <li key={entry.subject} className="flex items-center gap-2 text-[12.5px] text-[var(--muted)]">
-                    <Check size={14} aria-hidden className="shrink-0 text-[var(--primary)]" />
-                    {entry.subject}
-                    {entry.state === "not-completed" && <span className="text-[var(--faint)]">, not finished</span>}
-                  </li>
-                ))}
+                {day.recorded.map((entry) => {
+                  const line = (
+                    <>
+                      <Check size={14} aria-hidden className="shrink-0 text-[var(--primary)]" />
+                      {entry.subject}
+                      {entry.state === "not-completed" && <span className="text-[var(--faint)]">, not finished</span>}
+                    </>
+                  );
+                  const key = `${entry.childId}:${entry.subject}`;
+                  if (key !== justRecordedKey) {
+                    return (
+                      <li key={entry.subject} className="flex items-center gap-2 text-[12.5px] text-[var(--muted)]">
+                        {line}
+                      </li>
+                    );
+                  }
+                  return (
+                    <motion.li
+                      key={entry.subject}
+                      initial="hidden"
+                      animate="visible"
+                      variants={settleVariant(Boolean(reduceMotion))}
+                      className="flex items-center gap-2 text-[12.5px] text-[var(--muted)]"
+                    >
+                      {line}
+                    </motion.li>
+                  );
+                })}
               </ul>
             )}
           </section>
