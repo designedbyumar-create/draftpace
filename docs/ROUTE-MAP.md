@@ -28,8 +28,9 @@ admin structure below are the live application.
 
 | Route | Purpose |
 |---|---|
-| `/app` | Platform Home — Continue / Attention needed / Notifications, honest empty states, no fabricated activity |
-| `/app/library` | Owned/free/available/active/paused/completed/archived filters — only `all`/`available`/`free`/`archived` are backed by real registry data today; the rest render an honest "depends on entitlements" state |
+| `/app` | Platform Home — one focal block, then owned products grouped by life area (`src/content/areas.ts`), each tile showing that product's own current summary via `productSummary.ts` |
+| `/app/library` | The shelf — every owned product led by its real screens, with lifecycle filters that hide themselves when they'd be dead ends (`visibleLibraryFilters`) |
+| `/app/library/[productSlug]` | That product's manual — its published content in an owner's order (what it's for, its screens, how to use it, what it needs and returns, saving, privacy, questions), plus a live ownership bar |
 | `/app/notifications` | Inbox (empty), real browser permission flow, quiet hours, per-product controls (not built) |
 | `/app/account` | Identity, sessions, security, sign-out (real); data export, deletion, 2FA (not built) |
 | `/app/settings` | Theme, working text-scale and reduce-motion overrides (real), locale/timezone (detected, read-only), reminder time (real, persisted) |

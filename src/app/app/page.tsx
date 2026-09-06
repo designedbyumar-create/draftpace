@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import PlatformShell, { InstallPromptCard } from "@/design-system/shell/PlatformShell";
 import { useSession } from "@/design-system/shell/SessionProvider";
 import EmptyState from "@/design-system/EmptyState";
@@ -15,9 +15,12 @@ import { listMyProductInstances } from "@/product-framework/instances";
 import { deriveOwnedProducts, type OwnedProductRow } from "@/product-framework/deriveOwnedProducts";
 import { resolveProductDestination } from "@/product-framework/resolveDestination";
 import { loadTopAttentionItem, type SharedAttentionItem } from "@/product-framework/attentionAdapter";
-import { boughtStartedLine, humanStatus } from "@/product-framework/ownedProductPresentation";
 import { listMyUpdates, type UpdateRow } from "@/product-framework/updates";
 import { formatRelativeTime } from "@/lib/formatRelativeTime";
+import DegradedProductRow from "@/components/platform/DegradedProductRow";
+import ProductSummaryTile from "@/components/platform/ProductSummaryTile";
+import { loadProductSummaries, type SharedProductSummary } from "@/product-framework/productSummary";
+import { LIFE_AREAS } from "@/content/areas";
 import { ensureProductsRegistered } from "@/products/manifest";
 
 /**
@@ -64,6 +67,7 @@ export default function AppHomePage() {
   const [retryToken, setRetryToken] = useState(0);
   const [topAttentionItem, setTopAttentionItem] = useState<SharedAttentionItem | null>(null);
   const [recentUpdates, setRecentUpdates] = useState<UpdateRow[]>([]);
+  const [summaries, setSummaries] = useState<Record<string, SharedProductSummary>>({});
   const firstName = String(user.user_metadata?.display_name || user.email?.split("@")[0] || "there").split(" ")[0];
 
   useEffect(() => {
@@ -102,6 +106,20 @@ export default function AppHomePage() {
     };
   }, [rows]);
 
+  // Each owned product's own summary line, loaded per product and
+  // dropped silently on failure — same enhancement-not-blocking rule as
+  // the attention load above, so a slow product never holds up Home.
+  useEffect(() => {
+    if (!rows) return;
+    let cancelled = false;
+    loadProductSummaries(rows).then((result) => {
+      if (!cancelled) setSummaries(result);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [rows]);
+
   // Same "enhancement, never blocking" discipline as the attention effect
   // above — independent of rows/entitlements entirely, so a slow or
   // failed Updates fetch never delays Home's real render either.
@@ -123,7 +141,28 @@ export default function AppHomePage() {
   // "scan every owned product" reasoning).
   const attentionRow = topAttentionItem ? rows?.find((row) => row.productSlug === topAttentionItem.productSlug) ?? null : null;
   const focalRow = attentionRow ?? rows?.[0] ?? null;
-  const rest = rows?.filter((row) => row !== focalRow) ?? [];
+
+  // Home is organised by area of life, not by product: the section
+  // heading is the part of your life, the products under it are how you
+  // get there. Reuses LIFE_AREAS (src/content/areas.ts) — the same
+  // taxonomy the Store filters by — rather than a second, parallel one.
+  // An area with nothing owned in it never renders, so owning one
+  // product means one section, not five empty ones.
+  const areaSections = useMemo(() => {
+    const ready = (rows ?? []).filter(
+      (row): row is Extract<OwnedProductRow, { kind: "ready" }> => row.kind === "ready"
+    );
+    return LIFE_AREAS.map((area) => ({
+      area,
+      rows: ready.filter((row) => area.productSlugs.includes(row.productSlug)),
+    })).filter((section) => section.rows.length > 0);
+  }, [rows]);
+
+  // Anything that failed to load keeps its honest degraded row rather
+  // than being silently dropped from an area it belongs to.
+  const degraded = (rows ?? []).filter(
+    (row): row is Exclude<OwnedProductRow, { kind: "ready" }> => row.kind !== "ready"
+  );
 
   return (
     <PlatformShell>
@@ -157,14 +196,35 @@ export default function AppHomePage() {
             </section>
           )}
 
-          {rest.length > 0 && (
+          {areaSections.map((section) => (
+            <section key={section.area.slug}>
+              <div className="mb-3.5">
+                <h2 className="text-[12px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">
+                  {section.area.label}
+                </h2>
+                <p className="mt-1 max-w-lg text-[13px] leading-relaxed text-[var(--muted)]">{section.area.situation}</p>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {section.rows.map((row) => (
+                  <ProductSummaryTile
+                    key={row.productSlug}
+                    row={row}
+                    summary={summaries[row.productSlug]}
+                    wide={section.rows.length === 1}
+                  />
+                ))}
+              </div>
+            </section>
+          ))}
+
+          {degraded.length > 0 && (
             <section>
               <h2 className="mb-3 text-[12px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">
-                Also in your library
+                Couldn&apos;t load
               </h2>
-              <div className="grid gap-2.5">
-                {rest.map((row) => (
-                  <LibraryLink key={row.productSlug} row={row} onRetry={retry} />
+              <div className="grid gap-3 sm:grid-cols-2">
+                {degraded.map((row) => (
+                  <DegradedProductRow key={row.productSlug} row={row} onRetry={retry} />
                 ))}
               </div>
             </section>
@@ -405,37 +465,3 @@ function RecentUpdateRow({ update }: { update: UpdateRow }) {
   );
 }
 
-/** A quiet secondary owned-product link, used only when more than one is owned. */
-function LibraryLink({ row, onRetry }: { row: OwnedProductRow; onRetry: () => void }) {
-  if (row.kind !== "ready") {
-    const title = row.kind === "progress-unavailable" ? row.definition.title : row.productSlug;
-    return (
-      <div className="flex items-center justify-between gap-3 rounded-xl border border-[var(--border)] px-4 py-3">
-        <p className="text-[14px] font-semibold text-[var(--text)]">{title}</p>
-        <button type="button" onClick={onRetry} className="text-[13px] font-semibold text-[var(--primary)] hover:underline">
-          Try again
-        </button>
-      </div>
-    );
-  }
-
-  const { definition, instance, entitlement } = row;
-  const destination = instance ? resolveProductDestination(definition, instance) : `/app/products/${definition.slug}`;
-  const family = familyRegistry.get(definition.family);
-  const statusLine = [family?.label ?? definition.family, instance ? humanStatus(instance) : "Not started yet", boughtStartedLine(entitlement, instance)].join(
-    " · "
-  );
-
-  return (
-    <Link
-      href={destination}
-      className="flex items-center justify-between gap-3 rounded-xl border border-[var(--border)] px-4 py-3 transition-colors hover:border-[var(--border-strong)]"
-    >
-      <div className="min-w-0">
-        <p className="text-[14px] font-semibold text-[var(--text)]">{definition.title}</p>
-        <p className="mt-0.5 truncate text-[12px] text-[var(--faint)]">{statusLine}</p>
-      </div>
-      <ArrowRight size={14} className="shrink-0 text-[var(--faint)]" aria-hidden />
-    </Link>
-  );
-}

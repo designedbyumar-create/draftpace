@@ -46,17 +46,18 @@ export function humanDate(iso: string): string {
 }
 
 /**
- * "Bought {date}" alone before an instance exists; "Bought {date} · Started
- * {date}" once one does. Ownership (entitlement) and progress (instance)
- * are always two different facts — see docs/DATA-BOUNDARIES.md — so this
- * takes them as two separate arguments rather than a single owned-row
- * shape, and works the same regardless of which OwnedProductRow kind is
- * calling it.
+ * "Yours since {date}" alone before an instance exists; "Yours since
+ * {date} · Started {date}" once one does — plain-language, not a receipt
+ * ("Bought {date}" read like a grocery order). Ownership (entitlement)
+ * and progress (instance) are always two different facts — see
+ * docs/DATA-BOUNDARIES.md — so this takes them as two separate arguments
+ * rather than a single owned-row shape, and works the same regardless of
+ * which OwnedProductRow kind is calling it.
  */
 export function boughtStartedLine(entitlement: EntitlementSummary, instance: ProductInstanceSummary | null): string {
-  const bought = `Bought ${humanDate(entitlement.grantedAt)}`;
-  if (!instance) return bought;
-  return `${bought} · Started ${humanDate(instance.createdAt)}`;
+  const owned = `Yours since ${humanDate(entitlement.grantedAt)}`;
+  if (!instance) return owned;
+  return `${owned} · Started ${humanDate(instance.createdAt)}`;
 }
 
 export type LibraryFilter = "all" | "in-progress" | "paused" | "finished" | "archived";

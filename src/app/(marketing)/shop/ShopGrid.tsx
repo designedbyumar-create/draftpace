@@ -156,7 +156,7 @@ function ShopProductCard({ entry }: { entry: ShopGridEntry }) {
           </div>
         )}
 
-        <div className="mt-3.5 flex flex-1 items-end gap-3.5">
+        <div className="mt-3.5 flex flex-1 flex-col items-stretch justify-end gap-2">
           <CardCta product={product} priceLabel={priceLabel} />
         </div>
       </div>
@@ -184,16 +184,17 @@ function CardCta({ product, priceLabel }: { product: ShopProduct; priceLabel: st
 
   return (
     <>
-      <div className="flex-1">
-        {product.access === "free" ? (
-          <AddToLibraryButton slug={product.slug} label="Add to your library, free" size="sm" fullWidth />
-        ) : (
-          <Button href={`/shop/${product.slug}`} size="sm" fullWidth iconRight={<ArrowRight size={14} aria-hidden />}>
-            Get it, {priceLabel}
-          </Button>
-        )}
-      </div>
-      <Link href={`/shop/${product.slug}`} className="shrink-0 text-[13px] font-semibold text-[var(--muted)] hover:text-[var(--text)]">
+      {product.access === "free" ? (
+        <AddToLibraryButton slug={product.slug} label="Add to your library, free" size="sm" fullWidth />
+      ) : (
+        <Button href={`/shop/${product.slug}`} size="sm" fullWidth iconRight={<ArrowRight size={14} aria-hidden />}>
+          Get it, {priceLabel}
+        </Button>
+      )}
+      <Link
+        href={`/shop/${product.slug}`}
+        className="text-center text-[12.5px] font-semibold text-[var(--muted)] hover:text-[var(--text)]"
+      >
         Learn more
       </Link>
     </>
