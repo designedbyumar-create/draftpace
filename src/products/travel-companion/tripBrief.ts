@@ -27,7 +27,7 @@ export function deriveTripBrief(
   now: Date
 ): TripBriefView {
   const where = whereWeAre(places, now);
-  const today = deriveToday(bookings, now, threads).now.map((line) => line.booking);
+  const today = deriveToday(bookings, now, threads, places).now.map((line) => line.booking);
 
   const activePlaces = places.filter((place) => place.status === "active").sort((a, b) => a.ordinal - b.ordinal);
   const next = where ? activePlaces.find((place) => place.ordinal > where.ordinal) ?? null : (activePlaces[0] ?? null);

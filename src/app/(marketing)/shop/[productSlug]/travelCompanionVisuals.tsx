@@ -20,6 +20,7 @@
  * as a flight status pulled from an airline. Every line drawn here is
  * something a traveller recorded themselves.
  */
+import PhoneFrame from "../PhoneFrame";
 
 const INK = "#1a1d24";
 const MUTED = "#4a5262";
@@ -35,24 +36,6 @@ function StatusBar() {
       <div className="flex items-center gap-1">
         <span className="h-2 w-3 rounded-[1px] border border-current" />
         <span className="h-2 w-2 rounded-full border border-current" />
-      </div>
-    </div>
-  );
-}
-
-function PhoneFrame({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="relative mx-auto w-full max-w-[280px]">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-4 inset-y-8 -z-10 rounded-[3rem] bg-[#a8611f] opacity-[0.16] blur-3xl"
-      />
-      <div
-        className="relative overflow-hidden rounded-[2.75rem] border-[6px] border-[#101312] bg-[#101312] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.35)]"
-        style={{ aspectRatio: "9 / 19.5" }}
-      >
-        <div className="absolute left-1/2 top-2.5 z-10 h-[16px] w-[84px] -translate-x-1/2 rounded-full bg-[#101312]" aria-hidden />
-        <div className="absolute inset-0 overflow-hidden rounded-[2.25rem]">{children}</div>
       </div>
     </div>
   );
@@ -89,7 +72,7 @@ function Eyebrow({ children }: { children: string }) {
  */
 export function OverviewScreenMockup() {
   return (
-    <PhoneFrame>
+    <PhoneFrame accent={AMBER}>
       <div className="flex h-full flex-col px-4 pb-4 pt-9" style={{ backgroundColor: PAPER }}>
         <StatusBar />
         <div className="mt-5">
@@ -139,7 +122,7 @@ export function OverviewScreenMockup() {
  */
 export function ChangeImpactScreenMockup() {
   return (
-    <PhoneFrame>
+    <PhoneFrame accent={AMBER}>
       <div className="flex h-full flex-col px-4 pb-4 pt-9" style={{ backgroundColor: PAPER }}>
         <StatusBar />
         <div className="mt-5">
@@ -203,7 +186,7 @@ export function ChangeImpactScreenMockup() {
  */
 export function TripBriefScreenMockup() {
   return (
-    <PhoneFrame>
+    <PhoneFrame accent={AMBER}>
       <div className="flex h-full flex-col px-4 pb-4 pt-9" style={{ backgroundColor: PAPER }}>
         <StatusBar />
         <div className="mt-5">

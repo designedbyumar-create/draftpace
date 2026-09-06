@@ -21,6 +21,7 @@ const place = (over: Partial<Place> = {}): Place => ({
   ordinal: 0,
   arrivesAt: null,
   departsAt: null,
+  timezone: null,
   status: "active",
   ...over,
 });

@@ -116,7 +116,7 @@ export default function TodayModule() {
   }
 
   const now = new Date();
-  const view = deriveToday(bookings, now, threads);
+  const view = deriveToday(bookings, now, threads, places);
   const where = whereWeAre(places, now);
 
   return (
