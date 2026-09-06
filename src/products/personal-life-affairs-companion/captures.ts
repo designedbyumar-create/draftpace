@@ -248,6 +248,27 @@ export const CAPTURE_SPECS: Record<string, CaptureSpec> = {
       { field: "whereabouts", prompt: "Where are your recent tax records kept?", placeholder: "Filing cabinet in the study, and online with my accountant" },
     ],
   },
+  "paperwork.proof-of-authority": {
+    itemKind: "status",
+    labelFixed: "Proving the executor's authority",
+    acknowledgement: "Recorded.",
+    prompts: [
+      {
+        field: "status",
+        prompt: "Has anything already been started to prove your executor can act?",
+        hint: "Letters Testamentary, probate, or whatever your local process is called.",
+        choices: ["Not looked into yet", "Looked into, nothing started", "Already started", UNSURE],
+      },
+      {
+        field: "notes",
+        prompt: "Where do things stand?",
+        hint: "In your own words. Whatever would save your executor from starting cold.",
+        multiline: true,
+        optional: true,
+        askIf: { field: "status", equals: ["Looked into, nothing started", "Already started"] },
+      },
+    ],
+  },
 
   // ----------------------------------------------------------------- money
   "money.current-accounts": {

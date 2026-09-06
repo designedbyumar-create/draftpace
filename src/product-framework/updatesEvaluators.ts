@@ -151,13 +151,20 @@ async function evaluateTravelUpdates(supabase: SupabaseClient, instanceId: strin
  * purpose (see migration 202608220001's own comment) — the strongest,
  * most natural of the four signals, and the dedupe key advances on its
  * own the moment an item is reconfirmed and next_review_at moves forward.
+ *
+ * The status filter mirrors needsReview() in lifeAffairs.ts exactly:
+ * only an "established" record is ever due for review. Migration
+ * 202608220001 renamed "active" to "established" (and split off
+ * "incomplete" as a distinct standing); this query used to filter on
+ * "active", a value the column has not accepted since that migration
+ * ran, so it silently matched zero rows from the day it shipped.
  */
 async function evaluatePersonalLifeAffairsUpdates(supabase: SupabaseClient, instanceId: string, now: Date): Promise<UpdatePayload[]> {
   const { data } = await supabase
     .from("pla_items")
     .select("id, label, next_review_at")
     .eq("product_instance_id", instanceId)
-    .eq("status", "active")
+    .eq("status", "established")
     .not("next_review_at", "is", null)
     .lte("next_review_at", now.toISOString());
 

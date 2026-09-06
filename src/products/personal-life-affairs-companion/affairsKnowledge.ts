@@ -319,6 +319,18 @@ export const AFFAIR_STEPS: AffairStep[] = [
     kind: "establish",
     confirmEveryMonths: 12,
   },
+  {
+    key: "paperwork.proof-of-authority",
+    area: "paperwork",
+    instruction: "Note where things stand on your executor being able to prove that authority.",
+    bookLabel: "Proving the executor's authority",
+    why: "Banks and the land registry will not act on an executor's word alone. Knowing whether Letters Testamentary, probate or your local equivalent has already been started, looked into, or not looked at yet saves someone weeks of finding out the hard way.",
+    minutes: 3,
+    consequence: 1,
+    requires: ["people.executor"],
+    kind: "establish",
+    confirmEveryMonths: 12,
+  },
 
   // ------------------------------------------------------------------ money
   {

@@ -1,5 +1,13 @@
 import { describe, expect, it } from "vitest";
-import { deriveHandoff, describeHandoff, findableHandoffScenarios, firstFix, HANDOFF_SCENARIOS, scenarioArea } from "./handoff";
+import {
+  deriveHandoff,
+  describeHandoff,
+  findableHandoffScenarios,
+  firstFix,
+  HANDOFF_SCENARIOS,
+  scenarioArea,
+  scenarioUrgency,
+} from "./handoff";
 import { AFFAIR_STEP_BY_KEY } from "./affairsKnowledge";
 import { item, rec } from "./testSupport";
 
@@ -186,5 +194,37 @@ describe("findableHandoffScenarios", () => {
   it("includes every scenario once every area has printed", () => {
     const allAreas = new Set(HANDOFF_SCENARIOS.map((s) => scenarioArea(s)).filter((a): a is NonNullable<typeof a> => a !== null));
     expect(findableHandoffScenarios(allAreas).length).toBe(HANDOFF_SCENARIOS.length);
+  });
+
+  /**
+   * Promoted from a buried legend entry to the book's opening pages on
+   * the understanding that it would be ordered by urgency, not by
+   * whatever order HANDOFF_SCENARIOS happens to be authored in.
+   */
+  it("orders what it returns most urgent first", () => {
+    const allAreas = new Set(HANDOFF_SCENARIOS.map((s) => scenarioArea(s)).filter((a): a is NonNullable<typeof a> => a !== null));
+    const found = findableHandoffScenarios(allAreas);
+    const urgencies = found.map((entry) => {
+      const scenario = HANDOFF_SCENARIOS.find((s) => s.need === entry.need)!;
+      return scenarioUrgency(scenario);
+    });
+    for (let i = 1; i < urgencies.length; i++) {
+      expect(urgencies[i], `position ${i}`).toBeLessThanOrEqual(urgencies[i - 1]);
+    }
+  });
+});
+
+describe("scenarioUrgency", () => {
+  it("is the highest consequence among a scenario's own required steps", () => {
+    const reachSomeone = HANDOFF_SCENARIOS.find((s) => s.key === "reach-someone")!;
+    const expected = Math.max(...reachSomeone.requires.map((key) => AFFAIR_STEP_BY_KEY[key].consequence));
+    expect(scenarioUrgency(reachSomeone)).toBe(expected);
+  });
+
+  it("invents no severity of its own beyond what the knowledge base already assigns each step", () => {
+    for (const scenario of HANDOFF_SCENARIOS) {
+      const consequences = scenario.requires.map((key) => AFFAIR_STEP_BY_KEY[key]?.consequence).filter((c) => c !== undefined);
+      expect(scenarioUrgency(scenario)).toBe(Math.max(...consequences));
+    }
   });
 });

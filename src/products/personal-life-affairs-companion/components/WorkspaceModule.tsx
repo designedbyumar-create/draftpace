@@ -1,10 +1,12 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import Button from "@/design-system/Button";
 import EmptyState from "@/design-system/EmptyState";
 import { CheckCircle2, ListChecks, Plus } from "@/design-system/Icon";
 import { describeResultError } from "@/product-framework/result";
+import { entranceVariant } from "@/design-system/motion";
 import { findInOrderInstanceId } from "../instanceData";
 import {
   confirmItem,
@@ -64,6 +66,7 @@ export default function WorkspaceModule() {
   const [capturing, setCapturing] = useState<{ stepKey: string; editing: AffairItem | null } | null>(null);
   /** The line the companion says once something has been saved. Cleared on the next action. */
   const [acknowledgement, setAcknowledgement] = useState<{ text: string; stepKey: string } | null>(null);
+  const reduceMotion = useReducedMotion();
 
   const load = useCallback(async () => {
     setStatus("loading");
@@ -269,7 +272,13 @@ export default function WorkspaceModule() {
       )}
 
       {next ? (
-        <section aria-label="Your next step">
+        <motion.section
+          key={next.step.key}
+          aria-label="Your next step"
+          initial="hidden"
+          animate="visible"
+          variants={entranceVariant(Boolean(reduceMotion))}
+        >
           <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Next</p>
           <p className="mt-1.5 text-[13px] text-[var(--muted)]">
             {next.reason === "needsRecheck"
@@ -375,7 +384,7 @@ export default function WorkspaceModule() {
               Later
             </Button>
           </div>
-        </section>
+        </motion.section>
       ) : (
         <section aria-label="Nothing needs your attention">
           <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Next</p>

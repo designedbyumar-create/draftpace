@@ -1,4 +1,4 @@
-import { AFFAIR_STEP_BY_KEY, type AffairArea, type AffairStep } from "./affairsKnowledge";
+import { AFFAIR_STEP_BY_KEY, type AffairArea, type AffairConsequence, type AffairStep } from "./affairsKnowledge";
 import { isEstablished, isRelevant, type AffairProfile, type StepRecord } from "./sequencer";
 import type { AffairItem } from "./lifeAffairs";
 
@@ -176,8 +176,24 @@ export function scenarioArea(scenario: HandoffScenario): AffairArea | null {
 }
 
 /**
+ * How urgent a scenario is, for ordering the printed "if you need to"
+ * index. Not a new judgment: the same consequence scale firstFix()
+ * already uses to choose between two open steps, taken at its highest
+ * across everything the scenario requires. A scenario naming a step the
+ * knowledge base already treats as high-consequence sorts first; nothing
+ * here invents a second severity scale alongside the one already
+ * authored per step.
+ */
+export function scenarioUrgency(scenario: HandoffScenario): AffairConsequence {
+  const consequences = scenario.requires
+    .map((key) => AFFAIR_STEP_BY_KEY[key]?.consequence)
+    .filter((c): c is AffairConsequence => c !== undefined);
+  return consequences.length > 0 ? (Math.max(...consequences) as AffairConsequence) : 0;
+}
+
+/**
  * Which scenarios the printed book can honestly point a reader toward,
- * given which areas actually survived into this copy.
+ * given which areas actually survived into this copy, most urgent first.
  *
  * Deliberately not the same question deriveHandoff answers. That checks
  * whether a scenario's steps are established; this checks something
@@ -190,10 +206,11 @@ export function scenarioArea(scenario: HandoffScenario): AffairArea | null {
 export function findableHandoffScenarios(
   printedAreas: ReadonlySet<AffairArea>
 ): { need: string; area: AffairArea }[] {
-  const found: { need: string; area: AffairArea }[] = [];
+  const found: { need: string; area: AffairArea; urgency: AffairConsequence }[] = [];
   for (const scenario of HANDOFF_SCENARIOS) {
     const area = scenarioArea(scenario);
-    if (area && printedAreas.has(area)) found.push({ need: scenario.need, area });
+    if (area && printedAreas.has(area)) found.push({ need: scenario.need, area, urgency: scenarioUrgency(scenario) });
   }
-  return found;
+  // Stable sort: scenarios tied on urgency keep HANDOFF_SCENARIOS's own order.
+  return found.sort((a, b) => b.urgency - a.urgency).map(({ need, area }) => ({ need, area }));
 }

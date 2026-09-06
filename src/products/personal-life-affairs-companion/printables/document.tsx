@@ -460,6 +460,30 @@ export function InOrderDocument({
         </View>
       </Page>
 
+      {!blank && findableScenarios.length > 0 && (
+        <Page size={size} style={s.page}>
+          <Sheet section="If you need to">
+            <Text style={s.eyebrow}>Start here</Text>
+            <Text style={s.h1}>If you need to.</Text>
+            <View style={s.headRule} />
+            <Text style={s.p}>
+              Whichever of these brought you to this copy, most urgent first. Each points to the section that answers
+              it, so there is no need to read the whole book before finding the one page that matters right now.
+            </Text>
+            <View style={{ marginTop: 8 }}>
+              {findableScenarios.map(({ need, sectionLabel }) => (
+                <View key={need} style={{ flexDirection: "row", marginBottom: 10, alignItems: "flex-start" }} wrap={false}>
+                  <Text style={{ fontSize: 10, color: C.body, flex: 1, lineHeight: 1.55 }}>{need}</Text>
+                  <Text style={{ fontSize: 9, color: C.deep, width: 150, textAlign: "right", lineHeight: 1.55 }}>
+                    {sectionLabel}
+                  </Text>
+                </View>
+              ))}
+            </View>
+          </Sheet>
+        </Page>
+      )}
+
       <Page size={size} style={s.page}>
         <Sheet section="Read first">
           <Text style={s.eyebrow}>Read first</Text>
@@ -532,32 +556,6 @@ export function InOrderDocument({
                   <Text style={{ fontSize: 9, color: C.muted, flex: 1, lineHeight: 1.5 }}>{meaning}</Text>
                   </View>
                 ))}
-            </View>
-          )}
-
-          {/*
-            The Handoff Check already proved this is how a stranger
-            actually approaches the book: by what they are trying to do,
-            not by category name. It lived only inside the app before
-            this. A scenario only appears here when its section survived
-            into this copy, the same rule the rest of the book already
-            follows: this page never sends a reader looking for
-            something that was never written down.
-          */}
-          {!blank && findableScenarios.length > 0 && (
-            <View>
-              <View style={{ height: 0.5, backgroundColor: C.rule, marginVertical: 16 }} />
-              <Text style={{ fontFamily: HEAD, fontSize: 14, color: C.ink, marginBottom: 6 }}>
-                If you need to
-              </Text>
-              {findableScenarios.map(({ need, sectionLabel }) => (
-                <View key={need} style={{ flexDirection: "row", marginBottom: 7, alignItems: "flex-start" }} wrap={false}>
-                  <Text style={{ fontSize: 9, color: C.body, flex: 1, lineHeight: 1.5 }}>{need}</Text>
-                  <Text style={{ fontSize: 8.6, color: C.deep, width: 150, textAlign: "right", lineHeight: 1.5 }}>
-                    {sectionLabel}
-                  </Text>
-                </View>
-              ))}
             </View>
           )}
 
