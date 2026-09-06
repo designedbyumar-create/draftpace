@@ -5,6 +5,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, BookOpen } from "@/design-system/Icon";
 import Badge, { type BadgeTone } from "@/design-system/Badge";
 import Button from "@/design-system/Button";
+import ProductBadge from "@/components/platform/ProductBadge";
 import { familyRegistry } from "@/product-framework/families";
 import { iconForProduct } from "@/product-framework/productIcons";
 import { resolveProductDestination } from "@/product-framework/resolveDestination";
@@ -75,9 +76,7 @@ export default function LibraryShelfCard({
 
       <div className="flex flex-1 flex-col p-5">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--primary-soft)] text-[var(--primary)]">
-            <Icon size={13} aria-hidden />
-          </span>
+          <ProductBadge definition={definition} size="sm" />
           <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-[var(--faint)]">
             {areaLabel ?? family?.label ?? definition.family}
           </p>

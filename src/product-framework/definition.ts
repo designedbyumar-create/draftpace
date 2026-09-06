@@ -39,6 +39,17 @@ export const productThemeExtensionSchema = z
         strong: z.string(),
         soft: z.string(),
         contrast: z.string(),
+        /**
+         * The pastel "wash" tier — paler and quieter than `soft`, meant to
+         * be the *default* background for hero cards, section dividers,
+         * and any surface covering real screen area. `base`/`strong` keep
+         * doing exactly what they did before this field existed: identity
+         * marks and the one primary action per screen. Optional so no
+         * existing product's rendering changes the moment this ships —
+         * several already have a `soft` value gentle enough to double as
+         * this until a product deliberately computes its own.
+         */
+        wash: z.string().optional(),
       })
       .optional(),
     /**

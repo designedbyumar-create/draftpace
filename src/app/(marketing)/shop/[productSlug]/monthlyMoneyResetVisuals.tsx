@@ -1,4 +1,5 @@
 import { monthlyMoneyResetThemeVars } from "@/products/monthly-money-reset/theme";
+import PhoneFrame from "../PhoneFrame";
 
 /**
  * Bespoke mobile mockups for Monthly Money Reset's Shop page: a real,
@@ -28,25 +29,10 @@ function StatusBar({ tone = "light" }: { tone?: "light" | "dark" }) {
   );
 }
 
-function PhoneFrame({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="relative mx-auto w-full max-w-[280px]" style={LIGHT_VARS as React.CSSProperties}>
-      <div className="pointer-events-none absolute inset-x-6 inset-y-8 -z-10 rounded-[3rem] bg-[var(--mmr-forest-900)] opacity-[0.1] blur-2xl" aria-hidden />
-      <div
-        className="relative overflow-hidden rounded-[2.75rem] border-[6px] border-[#141414] bg-[#141414] shadow-[shadow:var(--shadow-md)]"
-        style={{ aspectRatio: "9 / 19.5" }}
-      >
-        <div className="absolute left-1/2 top-2.5 z-10 h-[16px] w-[84px] -translate-x-1/2 rounded-full bg-[#141414]" aria-hidden />
-        <div className="absolute inset-0 overflow-hidden rounded-[2.25rem]">{children}</div>
-      </div>
-    </div>
-  );
-}
-
 /** Screen 1: what you land on. Used in the hero. */
 export function OverviewScreenMockup() {
   return (
-    <PhoneFrame>
+    <PhoneFrame accent="var(--mmr-forest-900)" bezelColor="#141414" style={LIGHT_VARS as React.CSSProperties}>
       <div className="flex h-full flex-col bg-[var(--mmr-ivory)] px-4 pb-4 pt-9">
         <StatusBar />
         <p className="mt-3 text-[9px] font-bold uppercase tracking-[0.14em] text-[var(--mmr-muted)]">Monthly Money Reset</p>
@@ -86,7 +72,7 @@ export function AddInfoScreenMockup() {
     { label: "Savings", active: false },
   ];
   return (
-    <PhoneFrame>
+    <PhoneFrame accent="var(--mmr-forest-900)" bezelColor="#141414" style={LIGHT_VARS as React.CSSProperties}>
       <div className="flex h-full flex-col bg-[var(--mmr-paper)] px-4 pb-4 pt-9">
         <StatusBar />
         <p className="mt-3 text-[9px] font-bold uppercase tracking-[0.14em] text-[var(--mmr-clay)]">Quick add</p>
@@ -146,7 +132,7 @@ export function BreakdownScreenMockup() {
     ["- Reserve still held", "$350.00"],
   ];
   return (
-    <PhoneFrame>
+    <PhoneFrame accent="var(--mmr-forest-900)" bezelColor="#141414" style={LIGHT_VARS as React.CSSProperties}>
       <div className="flex h-full flex-col bg-[var(--mmr-forest-900)] px-4 pb-4 pt-9 text-[var(--mmr-ivory)]">
         <StatusBar tone="dark" />
         <p className="mt-3 text-[9px] font-bold uppercase tracking-[0.14em] opacity-60">Safe to spend now</p>

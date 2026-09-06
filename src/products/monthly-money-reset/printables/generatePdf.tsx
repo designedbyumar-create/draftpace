@@ -5,10 +5,22 @@
  * @react-pdf/renderer and is therefore only ever loaded on demand (dynamic
  * import from PrintablesModule), never in the main bundle.
  *
- * The document is a fixed "paper" artifact in MMR's own forest/ivory/clay world.
+ * The document is a fixed "paper" artifact in MMR's own forest/ivory/clay world,
+ * built on the shared PrintableDocument shell (src/design-system/PrintableDocument.tsx)
+ * for its header, footer, and pagination, only the hero/next-move/breakdown
+ * content between them is bespoke to this product.
  * No em dashes anywhere, per the Draftpace content rule.
  */
-import { Document, Page, View, Text, Link, StyleSheet, pdf } from "@react-pdf/renderer";
+import { View, Text, StyleSheet, pdf } from "@react-pdf/renderer";
+import {
+  PrintableDocument,
+  PrintablePage,
+  PrintableHeader,
+  PrintableSectionLabel,
+  PrintableRow,
+  PrintableContinueFooter,
+  type PrintablePalette,
+} from "@/design-system/PrintableDocument";
 import { formatCurrency } from "../currency";
 
 export type MoneyResetPdfData = {
@@ -29,7 +41,6 @@ export type MoneyResetPdfData = {
 
 const C = {
   forest: "#173c32",
-  forestDeep: "#102a24",
   ivory: "#f5f0e8",
   ivoryDim: "#c9d2c8",
   paper: "#fffdf9",
@@ -38,15 +49,12 @@ const C = {
   clay: "#b86f4a",
   claySoft: "#f2e2d8",
   line: "#ded8cd",
-  sage: "#4a5f52",
 };
 
+/** MMR's own accent is forest: the hero background, the month heading, and every link already use it, so the shared shell's header/labels/links render in it too rather than introducing a second identity colour. */
+const PALETTE: PrintablePalette = { accent: C.forest, ink: C.ink, muted: C.muted, line: C.line, paper: C.paper };
+
 const styles = StyleSheet.create({
-  page: { paddingVertical: 44, paddingHorizontal: 48, backgroundColor: C.paper, color: C.ink, fontFamily: "Helvetica", fontSize: 10, lineHeight: 1.5 },
-  topbar: { flexDirection: "row", justifyContent: "space-between", alignItems: "center" },
-  brand: { fontSize: 8, letterSpacing: 1.4, color: C.sage, fontFamily: "Helvetica-Bold" },
-  wordmark: { fontSize: 9, color: C.muted, fontFamily: "Times-Bold" },
-  rule: { height: 1, backgroundColor: C.line, marginTop: 10, marginBottom: 24 },
   month: { fontFamily: "Times-Bold", fontSize: 26, color: C.forest },
   subtitle: { fontSize: 10, color: C.muted, marginTop: 3 },
   hero: { marginTop: 22, backgroundColor: C.forest, borderRadius: 14, paddingVertical: 24, paddingHorizontal: 26 },
@@ -59,37 +67,16 @@ const styles = StyleSheet.create({
   nextText: { fontSize: 12, color: C.ink, marginTop: 5, fontFamily: "Helvetica-Bold" },
   cols: { flexDirection: "row", gap: 16, marginTop: 20 },
   col: { flex: 1 },
-  colLabel: { fontSize: 8, letterSpacing: 1.2, color: C.sage, fontFamily: "Helvetica-Bold", marginBottom: 8 },
-  lineRow: { flexDirection: "row", justifyContent: "space-between", paddingVertical: 4, borderBottom: 0.7, borderColor: C.line, borderStyle: "solid" },
-  lineLabel: { fontSize: 9.5, color: C.muted, flex: 1, marginRight: 8 },
-  lineValue: { fontSize: 9.5, color: C.ink, fontFamily: "Helvetica-Bold" },
   calcWrap: { marginTop: 22 },
-  footer: { marginTop: 26, paddingTop: 16, borderTop: 1, borderColor: C.line, borderStyle: "solid" },
-  continueLabel: { fontSize: 8, letterSpacing: 1.2, color: C.sage, fontFamily: "Helvetica-Bold", marginBottom: 8 },
-  linkRow: { flexDirection: "row", gap: 18, marginBottom: 14, flexWrap: "wrap" },
-  link: { fontSize: 10, color: C.forest, fontFamily: "Helvetica-Bold", textDecoration: "underline" },
-  fine: { fontSize: 8.5, color: C.muted, lineHeight: 1.5 },
+  emptyLine: { fontSize: 9.5, color: C.muted },
 });
-
-function Row({ label, value, sign, currency }: { label: string; value: number; sign?: string; currency: string }) {
-  return (
-    <View style={styles.lineRow}>
-      <Text style={styles.lineLabel}>{sign && sign !== "=" ? `${sign} ` : ""}{label}</Text>
-      <Text style={styles.lineValue}>{formatCurrency(value, currency)}</Text>
-    </View>
-  );
-}
 
 function MoneyResetDocument({ data }: { data: MoneyResetPdfData }) {
   const productUrl = (dest: string) => `${data.origin}/app/products/${data.slug}/${dest}`;
   return (
-    <Document title={`Monthly Money Reset: ${data.monthLabel}`} author="Draftpace" subject="Your money snapshot">
-      <Page size="A4" style={styles.page}>
-        <View style={styles.topbar}>
-          <Text style={styles.brand}>MONTHLY MONEY RESET</Text>
-          <Text style={styles.wordmark}>Draftpace</Text>
-        </View>
-        <View style={styles.rule} />
+    <PrintableDocument title={`Monthly Money Reset: ${data.monthLabel}`} subject="Your money snapshot">
+      <PrintablePage palette={PALETTE}>
+        <PrintableHeader eyebrow="MONTHLY MONEY RESET" palette={PALETTE} />
 
         <Text style={styles.month}>{data.monthLabel}</Text>
         <Text style={styles.subtitle}>Your money snapshot, as of {data.generatedLabel}.</Text>
@@ -113,43 +100,40 @@ function MoneyResetDocument({ data }: { data: MoneyResetPdfData }) {
 
         <View style={styles.cols}>
           <View style={styles.col}>
-            <Text style={styles.colLabel}>WHAT IS PROTECTED</Text>
-            <Row label="Bills not yet paid" value={data.protectedUnpaidBills} currency={data.currency} />
-            <Row label="Reserve still held" value={data.protectedReserveHeld} currency={data.currency} />
+            <PrintableSectionLabel palette={PALETTE}>WHAT IS PROTECTED</PrintableSectionLabel>
+            <PrintableRow label="Bills not yet paid" value={formatCurrency(data.protectedUnpaidBills, data.currency)} palette={PALETTE} />
+            <PrintableRow label="Reserve still held" value={formatCurrency(data.protectedReserveHeld, data.currency)} palette={PALETTE} />
           </View>
           <View style={styles.col}>
-            <Text style={styles.colLabel}>UPCOMING BILLS</Text>
+            <PrintableSectionLabel palette={PALETTE}>UPCOMING BILLS</PrintableSectionLabel>
             {data.upcomingBills.length === 0 ? (
-              <Text style={styles.lineLabel}>Every bill is handled this month.</Text>
+              <Text style={styles.emptyLine}>Every bill is handled this month.</Text>
             ) : (
               data.upcomingBills.map((bill, i) => (
-                <Row key={i} label={bill.name} value={bill.amount} currency={data.currency} />
+                <PrintableRow key={i} label={bill.name} value={formatCurrency(bill.amount, data.currency)} palette={PALETTE} />
               ))
             )}
           </View>
         </View>
 
         <View style={styles.calcWrap}>
-          <Text style={styles.colLabel}>HOW THIS IS CALCULATED</Text>
+          <PrintableSectionLabel palette={PALETTE}>HOW THIS IS CALCULATED</PrintableSectionLabel>
           {data.breakdownLines.map((line, i) => (
-            <Row key={i} label={line.label} sign={line.sign} value={line.value} currency={data.currency} />
+            <PrintableRow key={i} label={line.label} sign={line.sign} value={formatCurrency(line.value, data.currency)} palette={PALETTE} />
           ))}
         </View>
 
-        <View style={styles.footer}>
-          <Text style={styles.continueLabel}>CONTINUE IN THE APP</Text>
-          <View style={styles.linkRow}>
-            <Link style={styles.link} src={productUrl("workspace")}>Open your workspace</Link>
-            <Link style={styles.link} src={productUrl("setup")}>Update your setup</Link>
-            <Link style={styles.link} src={productUrl("history")}>See your history</Link>
-          </View>
-          <Text style={styles.fine}>
-            This is a snapshot from {data.generatedLabel}. Your Monthly Money Reset keeps updating as the month
-            changes, so open it any time and it reflects the latest. This is not financial advice.
-          </Text>
-        </View>
-      </Page>
-    </Document>
+        <PrintableContinueFooter
+          palette={PALETTE}
+          links={[
+            { label: "Open your workspace", href: productUrl("workspace") },
+            { label: "Update your setup", href: productUrl("setup") },
+            { label: "See your history", href: productUrl("history") },
+          ]}
+          note={`This is a snapshot from ${data.generatedLabel}. Your Monthly Money Reset keeps updating as the month changes, so open it any time and it reflects the latest. This is not financial advice.`}
+        />
+      </PrintablePage>
+    </PrintableDocument>
   );
 }
 

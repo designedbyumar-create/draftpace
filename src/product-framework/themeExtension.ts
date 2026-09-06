@@ -44,6 +44,11 @@ export function productThemeStyle(theme: ProductThemeExtension): CSSProperties {
     style["--primary-contrast"] = theme.accentScale.contrast;
     style["--link"] = theme.accentScale.base;
     style["--focus-ring"] = theme.accentScale.base;
+    // Falls back to `soft` when a product hasn't computed its own wash yet
+    // (see the field's own doc comment in definition.ts) — never unset,
+    // since a shell that reaches for --product-wash should always get a
+    // usable pastel tone, not nothing.
+    style["--product-wash"] = theme.accentScale.wash ?? theme.accentScale.soft;
 
     if (theme.narrativeFont) style["--product-narrative-font"] = theme.narrativeFont;
 

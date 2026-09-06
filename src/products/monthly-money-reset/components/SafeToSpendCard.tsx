@@ -1,9 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import { CaretDown, WarningCircle } from "@/design-system/Icon";
+import { entranceVariant } from "@/design-system/motion";
 import type { SafeToSpendBreakdown } from "../calculations";
 import { weeklyGuideAmount } from "../calculations";
+import type { TightestDay } from "../cycleTimeline";
 import { formatCurrency } from "../currency";
 
 const BREAKDOWN_LINES: { key: keyof SafeToSpendBreakdown; label: string; sign: "+" | "-" | "=" }[] = [
@@ -16,19 +19,27 @@ const BREAKDOWN_LINES: { key: keyof SafeToSpendBreakdown; label: string; sign: "
   { key: "protectedReserveHeld", label: "Reserve still held", sign: "-" },
 ];
 
+function formatTightestDate(iso: string): string {
+  return new Date(iso).toLocaleDateString(undefined, { month: "short", day: "numeric" });
+}
+
 export default function SafeToSpendCard({
   breakdown,
   currency,
   updatedAt,
   weeksRemaining,
+  tightestDay,
 }: {
   breakdown: SafeToSpendBreakdown;
   currency: string;
   updatedAt: string;
   weeksRemaining: number;
+  /** The lowest point the account is projected to reach before the cycle ends, from cycleTimeline.ts. Null when nothing dated points to a dip worth naming. */
+  tightestDay: TightestDay | null;
 }) {
   const [expanded, setExpanded] = useState(false);
   const [now, setNow] = useState(() => Date.now());
+  const reduceMotion = useReducedMotion();
   useEffect(() => {
     const timer = setInterval(() => setNow(Date.now()), 60_000);
     return () => clearInterval(timer);
@@ -37,7 +48,11 @@ export default function SafeToSpendCard({
   const weekly = weeklyGuideAmount(breakdown.safeToSpend, weeksRemaining);
 
   return (
-    <div className="rounded-2xl bg-[var(--mmr-forest-900)] p-6 text-[var(--mmr-ivory)] sm:p-8">
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={entranceVariant(Boolean(reduceMotion))}
+      className="rounded-2xl bg-[var(--mmr-forest-900)] p-6 text-[var(--mmr-ivory)] sm:p-8">
       <div className="flex flex-wrap items-start justify-between gap-3">
         <p className="text-[11px] font-bold uppercase tracking-[0.16em] opacity-60">Safe to spend now</p>
         {stale && (
@@ -68,9 +83,22 @@ export default function SafeToSpendCard({
       </p>
 
       <div className="mt-5 flex flex-wrap items-center justify-between gap-4 border-t border-[var(--mmr-sage-strong)]/25 pt-4">
-        <div>
-          <p className="text-[10px] uppercase tracking-wide opacity-60">This week, roughly</p>
-          <p className="mt-1 font-serif text-[18px] font-semibold">{formatCurrency(weekly, currency)}</p>
+        <div className="flex flex-wrap items-start gap-6">
+          <div>
+            <p className="text-[10px] uppercase tracking-wide opacity-60">This week, roughly</p>
+            <p className="mt-1 font-serif text-[18px] font-semibold">{formatCurrency(weekly, currency)}</p>
+          </div>
+          {tightestDay && (
+            <div>
+              <p className="text-[10px] uppercase tracking-wide opacity-60">Tightest day this cycle</p>
+              <p className="mt-1 font-serif text-[18px] font-semibold">
+                {formatTightestDate(tightestDay.date)}
+                <span className="ml-1.5 font-sans text-[12px] font-medium opacity-70">
+                  {formatCurrency(tightestDay.amountMinorUnits, currency)}
+                </span>
+              </p>
+            </div>
+          )}
         </div>
         <button
           type="button"
@@ -99,6 +127,6 @@ export default function SafeToSpendCard({
           </p>
         </div>
       )}
-    </div>
+    </motion.div>
   );
 }

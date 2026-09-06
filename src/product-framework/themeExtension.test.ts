@@ -63,3 +63,24 @@ describe("productThemeStyle: opting a product into its own presentation", () => 
     expect(Number.parseInt(calm["--dur"], 10)).toBeGreaterThan(Number.parseInt(energetic["--dur"], 10));
   });
 });
+
+describe("productThemeStyle: the wash tier", () => {
+  it("falls back to soft when a product hasn't computed its own wash", () => {
+    const style = productThemeStyle({
+      accentScale: { base: "#4f7a5c", strong: "#3d6149", soft: "#e6ede2", contrast: "#ffffff" },
+    }) as Record<string, string>;
+    expect(style["--product-wash"]).toBe("#e6ede2");
+  });
+
+  it("uses a product's own wash value when it declares one", () => {
+    const style = productThemeStyle({
+      accentScale: { base: "#8d4a5c", strong: "#68343f", soft: "#f5eaec", contrast: "#ffffff", wash: "#faf2f4" },
+    }) as Record<string, string>;
+    expect(style["--product-wash"]).toBe("#faf2f4");
+  });
+
+  it("never emits --product-wash for a product with no accentScale at all", () => {
+    const style = productThemeStyle({ accent: "#b86f4a" }) as Record<string, string>;
+    expect(style["--product-wash"]).toBeUndefined();
+  });
+});
