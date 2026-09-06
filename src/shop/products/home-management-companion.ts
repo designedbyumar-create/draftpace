@@ -56,7 +56,7 @@ export const homeManagementCompanionShopProduct: ShopProductInput = {
     {
       worry: "Not sure it can know how often anything is really due?",
       answer:
-        "It knows because somebody wrote it down: a hand-built list of 121 kinds of thing found in homes and the care each one needs, including which jobs belong to which month. Nothing is inferred by a model, and every date it shows traces to something you entered.",
+        "It knows because somebody wrote it down: a hand-built list of 122 kinds of thing found in homes and the care each one needs, including which jobs belong to which month. Nothing is inferred by a model, and every date it shows traces to something you entered.",
     },
     {
       worry: "Already behind on everything and expecting to be told so?",
@@ -107,7 +107,7 @@ export const homeManagementCompanionShopProduct: ShopProductInput = {
   compatibility: ["Works in any modern browser", "No download required", "Works on phone, tablet, or desktop"],
   inclusions: [
     "The twelve areas of a home: kitchen, laundry, heating and cooling, water, power, safety, structure, grounds and garden, pests and damp, everyday things, papers, and renting",
-    "A hand-built care schedule covering 121 kinds of thing, including the jobs that belong to a season rather than a timer",
+    "A hand-built care schedule covering 122 kinds of thing, including the jobs that belong to a season rather than a timer",
     "The Home Survey: a printable book in US Letter and A4, for gathering what you own away from a screen",
     "Setup by tapping rather than typing, plus paste-in import if you already keep notes somewhere",
     "Somewhere to record what is currently wrong, kept separate from what is merely due",

@@ -219,6 +219,7 @@ describe("identityFieldsFor", () => {
       "purchaseDate",
       "installDate",
       "warrantyExpiresAt",
+      "buySpec",
     ]);
   });
 
@@ -232,6 +233,20 @@ describe("identityFieldsFor", () => {
     const fields = identityFieldsFor("structure");
     expect(fields).not.toContain("purchaseDate");
     expect(fields).toContain("installDate");
+  });
+
+  /**
+   * "What to buy" (a filter size, a part number, a bulb type) makes
+   * sense for a physical, buyable thing. A roof is installed, not
+   * bought again piece by piece, and a lease/deed/damp patch is not a
+   * product at all, so neither asks for it.
+   */
+  it("asks what to buy for appliance-shaped categories, never for structure, records, renting, or pests", () => {
+    expect(identityFieldsFor("kitchen")).toContain("buySpec");
+    expect(identityFieldsFor("climate")).toContain("buySpec");
+    for (const category of ["structure", "renting", "records", "pests"] as const) {
+      expect(identityFieldsFor(category)).not.toContain("buySpec");
+    }
   });
 
   it("asks everything for a custom type, since nothing is known about it", () => {
@@ -258,7 +273,7 @@ describe("categoryOfType", () => {
 
 /**
  * Phase 2 of the pricing plan. Real search evidence (620 queries
- * harvested from Google autocomplete) was checked against the 121 types
+ * harvested from Google autocomplete) was checked against the 122 types
  * already here, not assumed against them. The honest result: almost the
  * whole "how often should I service my ___" cluster turned out to be
  * cars, motorcycles, bicycles and watches, correctly out of scope for a

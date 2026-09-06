@@ -10,7 +10,8 @@ import RecordFormSheet from "../shared/RecordFormSheet";
 import { createProblem } from "../../domain/problems";
 import { matchProblemSentence } from "../../problemSentence";
 import { withArticle } from "../../homeVoice";
-import type { HomeItem, ProblemSeverity } from "../../state";
+import { suggestProviderForItem } from "../../providerSuggestion";
+import type { HomeItem, ProblemSeverity, ServiceProvider } from "../../state";
 
 const SEVERITY_LABEL: Record<ProblemSeverity, string> = {
   minor: "Minor",
@@ -35,6 +36,7 @@ export default function ReportProblemSheet({
   open,
   instanceId,
   items,
+  providers = [],
   defaultItemId,
   onClose,
   onSaved,
@@ -42,6 +44,8 @@ export default function ReportProblemSheet({
   open: boolean;
   instanceId: string | null;
   items: HomeItem[];
+  /** Used only to suggest a provider already used for this category of issue (see providerSuggestion below). Optional so existing callers keep working unchanged. */
+  providers?: ServiceProvider[];
   /** Pre-attaches the report when it was started from a particular thing's own surface. */
   defaultItemId?: string;
   onClose: () => void;
@@ -59,6 +63,12 @@ export default function ReportProblemSheet({
   const match = useMemo(
     () => (sentence.trim() ? matchProblemSentence(sentence, active) : null),
     [sentence, active]
+  );
+
+  // "You've used X for water-category issues before" (Trump Card Memo), see providerSuggestion.ts.
+  const providerSuggestion = useMemo(
+    () => (itemId ? suggestProviderForItem(itemId, active, providers) : null),
+    [itemId, active, providers]
   );
 
   useEffect(() => {
@@ -183,6 +193,13 @@ export default function ReportProblemSheet({
           </option>
         ))}
       </Select>
+
+      {providerSuggestion && (
+        <p className="text-[12px] text-[var(--muted)]">
+          You&apos;ve used <span className="font-semibold text-[var(--text)]">{providerSuggestion.provider.name}</span>{" "}
+          for {providerSuggestion.categoryLabel.toLowerCase()} issues before.
+        </p>
+      )}
 
       <Select
         label="How bad is it?"

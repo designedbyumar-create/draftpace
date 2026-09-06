@@ -10,7 +10,8 @@ import RecordFormSheet from "../shared/RecordFormSheet";
 import { resolveProblem, scheduleProblem } from "../../domain/problems";
 import { createServiceProvider } from "../../domain/serviceProviders";
 import { HOME_BASE_CURRENCY } from "../care/CareActionSheet";
-import type { Problem, ServiceProvider } from "../../state";
+import { categoryOfType } from "../../homeKnowledge";
+import type { HomeItem, Problem, ServiceProvider } from "../../state";
 
 const DID_IT_MYSELF = "self";
 const SOMEONE_NEW = "new";
@@ -37,6 +38,7 @@ export default function ResolveProblemSheet({
   problem,
   instanceId,
   providers,
+  items,
   onClose,
   onSaved,
 }: {
@@ -44,6 +46,8 @@ export default function ResolveProblemSheet({
   problem: Problem | null;
   instanceId: string | null;
   providers: ServiceProvider[];
+  /** Used only to look up the category of the item this problem is about, so a newly added provider records what kind of work they actually did. */
+  items: HomeItem[];
   onClose: () => void;
   onSaved: () => void;
 }) {
@@ -79,9 +83,10 @@ export default function ResolveProblemSheet({
       setError("What's their name?");
       return "failed";
     }
+    const linkedItem = problem?.thingId ? items.find((item) => item.id === problem.thingId) : null;
     const created = await createServiceProvider(instanceId as string, {
       name: newProviderName.trim(),
-      category: null,
+      category: linkedItem ? categoryOfType(linkedItem.type) : null,
       phone: newProviderPhone.trim() || null,
       email: null,
       lastUsedAt: when,

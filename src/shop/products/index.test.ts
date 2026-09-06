@@ -343,6 +343,19 @@ describe("the Home Base listing", () => {
     // are equal by construction; any other appearance breaks that equality.
     expect(occurrences).toBe(insideThePromise);
   });
+
+  /**
+   * The listing quotes an exact count of curated home-item types twice
+   * ("a hand-built list of N kinds of thing"). That number previously
+   * drifted to 121 while the real catalogue grew to 122 entries, with
+   * nothing to catch it. This ties the claim to the real array so it
+   * can never silently go stale again.
+   */
+  it("quotes the real number of curated home-item types, not a stale count", async () => {
+    const { HOME_ITEM_TYPES } = await import("@/products/home-management-companion/homeKnowledge");
+    const text = JSON.stringify(await listing());
+    expect(text).toContain(`${HOME_ITEM_TYPES.length} kinds of thing`);
+  });
 });
 
 /**

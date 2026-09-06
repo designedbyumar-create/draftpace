@@ -86,6 +86,10 @@ export const homeManagementCompanionDefinition: ProductDefinitionInput = {
       strong: "#3d6149",
       soft: "#e6ede2",
       contrast: "#ffffff",
+      // Already pastel enough to double as the wash tier as-is (design-
+      // system audit finding): formalized here rather than computing a
+      // second, paler value nobody asked for.
+      wash: "#e6ede2",
     },
     // Used only where the product speaks: the line at the top of Home and
     // the one that closes it. Never for data, controls or labels.

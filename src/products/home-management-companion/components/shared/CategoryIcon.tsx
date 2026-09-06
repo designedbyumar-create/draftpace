@@ -21,7 +21,7 @@ import { HOME_ITEM_TYPE_BY_ID, type HomeItemCategory } from "../../homeKnowledge
  * One icon per category, twelve in total.
  *
  * The design system forbids a decorative icon per card, and it is right
- * to: 121 types with 121 glyphs would be noise. Twelve is different,
+ * to: 122 types with 122 glyphs would be noise. Twelve is different,
  * because it encodes a real and stable taxonomy and answers a genuine
  * question at a glance, which of these is the plumbing one, when
  * somebody is scanning a list of thirty things.

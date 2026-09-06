@@ -27,6 +27,7 @@ export interface HomeItemFormValues {
   purchaseDate: string;
   installDate: string;
   warrantyExpiresAt: string;
+  buySpec: string;
   documentLink: string;
   notes: string;
 }
@@ -41,6 +42,7 @@ const EMPTY_VALUES: HomeItemFormValues = {
   purchaseDate: "",
   installDate: "",
   warrantyExpiresAt: "",
+  buySpec: "",
   documentLink: "",
   notes: "",
 };
@@ -57,6 +59,7 @@ function thingToFormValues(item: HomeItem): HomeItemFormValues {
     purchaseDate: item.purchaseDate ?? "",
     installDate: item.installDate ?? "",
     warrantyExpiresAt: item.warrantyExpiresAt ?? "",
+    buySpec: item.buySpec ?? "",
     documentLink: item.documentLink ?? "",
     notes: item.notes ?? "",
   };
@@ -95,6 +98,7 @@ export function homeItemFormValuesToPatch(values: HomeItemFormValues): Record<st
     purchaseDate: values.purchaseDate || null,
     installDate: values.installDate || null,
     warrantyExpiresAt: values.warrantyExpiresAt || null,
+    buySpec: values.buySpec.trim() || null,
     documentLink: values.documentLink.trim() || null,
     notes: values.notes.trim() || null,
     status: "active",
@@ -355,6 +359,15 @@ export default function HomeItemFormSheet({
           type="date"
           value={values.warrantyExpiresAt}
           onChange={(event) => setValues({ ...values, warrantyExpiresAt: event.target.value })}
+        />
+      )}
+      {asks("buySpec") && (
+        <Input
+          label="What to buy (optional)"
+          value={values.buySpec}
+          onChange={(event) => setValues({ ...values, buySpec: event.target.value })}
+          placeholder="e.g. 16x25x1 filter, part #WH-2000, or E26 bulb"
+          hint="The one fact you'd need at a hardware store: a filter size, a part number, a bulb type."
         />
       )}
       <Input

@@ -33,6 +33,7 @@ interface HomeItemRow {
   purchase_date: string | null;
   install_date: string | null;
   warranty_expires_at: string | null;
+  buy_spec: string | null;
   document_link: string | null;
   notes: string | null;
   status: string;
@@ -93,6 +94,7 @@ function mapHomeItem(r: HomeItemRow): HomeItem {
     purchaseDate: r.purchase_date,
     installDate: r.install_date,
     warrantyExpiresAt: r.warranty_expires_at,
+    buySpec: r.buy_spec,
     documentLink: r.document_link,
     notes: r.notes,
     status: r.status as HomeItem["status"],

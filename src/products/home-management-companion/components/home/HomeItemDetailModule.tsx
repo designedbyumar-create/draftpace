@@ -22,6 +22,7 @@ import { STATUS_LABEL, STATUS_TONE } from "../shared/lifecycle";
 import CategoryIcon from "../shared/CategoryIcon";
 import type { HomeItem, MaintenanceTask, MaintenanceLogEntry, Problem, ServiceProvider, HomeItemDocument } from "../../state";
 import HomeItemFormSheet, { homeItemFormValuesToPatch, type HomeItemFormValues } from "./HomeItemFormSheet";
+import PrintItemCardButton from "./PrintItemCardButton";
 import MaintenanceTaskFormSheet, {
   maintenanceTaskFormValuesToPatch,
   type MaintenanceTaskFormValues,
@@ -147,6 +148,7 @@ export default function HomeItemDetailModule() {
       purchaseDate: "Purchased",
       installDate: "Installed",
       warrantyExpiresAt: "Warranty expires",
+      buySpec: "What to buy",
     };
     const relevant = new Set(identityFieldsFor(item ? categoryOfType(item.type) : null));
     return (Object.keys(labels) as HomeItemIdentityField[])
@@ -312,6 +314,7 @@ export default function HomeItemDetailModule() {
         </div>
         <div className="flex items-center gap-2">
           {item.status !== "active" && <Badge tone={STATUS_TONE[item.status]}>{STATUS_LABEL[item.status]}</Badge>}
+          <PrintItemCardButton item={item} typeLabel={typeLabel(item.type)} />
           <Button size="sm" variant="secondary" onClick={() => setEditOpen(true)}>
             Edit
           </Button>
@@ -514,6 +517,7 @@ export default function HomeItemDetailModule() {
         open={reportOpen}
         instanceId={instanceId}
         items={items}
+        providers={providers}
         defaultItemId={item.id}
         onClose={() => setReportOpen(false)}
         onSaved={load}
@@ -523,6 +527,7 @@ export default function HomeItemDetailModule() {
         problem={resolvingProblem}
         instanceId={instanceId}
         providers={providers}
+        items={items}
         onClose={() => setResolvingProblem(null)}
         onSaved={load}
       />

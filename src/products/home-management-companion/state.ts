@@ -111,6 +111,8 @@ export const homeItemSchema = z.object({
   purchaseDate: isoDate.nullable(),
   installDate: isoDate.nullable(),
   warrantyExpiresAt: isoDate.nullable(),
+  /** What to buy when replacing it: a filter size, a part number, a bulb type. Distinct from brand/model, which identify the thing rather than what a hardware store needs to sell you the right replacement. */
+  buySpec: z.string().nullable(),
   documentLink: z.string().nullable(),
   notes: z.string().nullable(),
   ...recordLifecycleFields,

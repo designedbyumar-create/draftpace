@@ -13,6 +13,7 @@ interface HomeItemRow {
   purchase_date: string | null;
   install_date: string | null;
   warranty_expires_at: string | null;
+  buy_spec: string | null;
   document_link: string | null;
   notes: string | null;
   status: string;
@@ -34,6 +35,7 @@ function fromRow(row: HomeItemRow) {
     purchaseDate: row.purchase_date,
     installDate: row.install_date,
     warrantyExpiresAt: row.warranty_expires_at,
+    buySpec: row.buy_spec,
     documentLink: row.document_link,
     notes: row.notes,
     status: row.status,
@@ -55,6 +57,7 @@ function toRow(patch: Record<string, unknown>) {
   if ("purchaseDate" in patch) row.purchase_date = patch.purchaseDate;
   if ("installDate" in patch) row.install_date = patch.installDate;
   if ("warrantyExpiresAt" in patch) row.warranty_expires_at = patch.warrantyExpiresAt;
+  if ("buySpec" in patch) row.buy_spec = patch.buySpec;
   if ("documentLink" in patch) row.document_link = patch.documentLink;
   if ("notes" in patch) row.notes = patch.notes;
   if ("status" in patch) row.status = patch.status;
