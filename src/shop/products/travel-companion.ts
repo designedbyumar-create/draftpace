@@ -96,6 +96,24 @@ export const travelCompanionShopProduct: ShopProductInput = {
     "A record of what actually happened, and what is worth knowing before the next trip to the same place.",
     "A printed book you can carry, so the trip does not depend on one device staying charged.",
   ],
+  problemsSolved: [
+    {
+      problem: "Confirmation numbers live in six different inboxes and a screenshot.",
+      solution: "One place that holds what you booked, who it's for, and what it depends on.",
+    },
+    {
+      problem: "When a flight moves, you're trying to remember from memory what else was booked around the old time.",
+      solution: "An immediate answer to what else a change touches, walked one booking at a time.",
+    },
+    {
+      problem: "Your phone is at four percent in a taxi, and that's the only copy of the plan.",
+      solution: "A printed book you can carry, so the trip doesn't depend on one device staying charged.",
+    },
+    {
+      problem: "You can't tell what's actually happening today versus what's just noise.",
+      solution: "Today's operational state on one screen: what's happening, and what's worth knowing about tomorrow.",
+    },
+  ],
   howItWorks: [
     "Set up a trip with a name and rough dates. That is the whole of the setup, and nothing is gated behind finishing it.",
     "Add what it is made of as you book it: destinations, travellers, flights, transfers, stays and reservations, each with its own provider and reference.",

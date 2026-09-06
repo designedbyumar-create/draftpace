@@ -96,6 +96,24 @@ export const alongsideShopProduct: ShopProductInput = {
     "A record of what actually happened, in your own words, that never once says you failed at something.",
     "Help with one thing today, with nothing set up first, and no obligation to turn it into a system.",
   ],
+  problemsSolved: [
+    {
+      problem: "The same thing has been on your mind for three weeks and you still can't make yourself pick up the phone.",
+      solution: "A hard call or email with an opening line ready, and a short list of what to have in front of you.",
+    },
+    {
+      problem: "A to-do list just becomes a longer thing to feel behind on.",
+      solution: "Nothing needs you right now, said plainly, on the days that's true, instead of a list filling the space anyway.",
+    },
+    {
+      problem: "You put something down half finished and lose where you were.",
+      solution: "Somewhere to leave a half finished thing that remembers exactly where you got to.",
+    },
+    {
+      problem: "Every system eventually tells you that you've failed at it.",
+      solution: "A record of what actually happened, in your own words, that never once says you failed at something.",
+    },
+  ],
   howItWorks: [
     "Write something down, or open the Companion straight away with nothing recorded. Both are first class ways in.",
     "Say what it is, in one line, and pick the shape that fits: something to do, something you are waiting on somebody else for, something ongoing, or a detail you will need again.",

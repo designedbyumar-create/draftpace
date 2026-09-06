@@ -10,6 +10,7 @@ import { shopRegistry } from "@/shop/registry";
 import { discountPercent, formatCompareAtPrice, formatPrice, type ShopProduct } from "@/shop/definition";
 import { ensureShopRegistered } from "@/shop/ensureRegistered";
 import RichSection from "./RichSection";
+import ProblemCards from "./ProblemCards";
 import AddToLibraryButton from "../AddToLibraryButton";
 import {
   OverviewScreenMockup as MmrOverviewScreenMockup,
@@ -185,25 +186,10 @@ export default async function ShopProductPage({
       </div>
 
       <Container width="standard" className="pb-28 pt-14 sm:pt-16">
-      {/* Movement 2: who this is for and the situation */}
-      {product.audience.length > 0 && (
-        <RichSection eyebrow="Who this is for">
-          <ul className="flex flex-col gap-2.5">
-            {product.audience.map((line) => (
-              <li key={line} className="flex items-start gap-2.5">
-                <Check size={17} className="mt-0.5 shrink-0 text-[var(--success)]" aria-hidden />
-                {line}
-              </li>
-            ))}
-          </ul>
-          <p className="mt-4 text-[var(--muted)]">{product.problem}</p>
-        </RichSection>
-      )}
-
-      {/* Movement 3: what becomes easier */}
-      {product.outcomes.length > 0 && (
+      {/* Movement 2: the problem, named and solved, one card at a time */}
+      {product.problemsSolved.length > 0 ? (
         <RichSection
-          eyebrow="What becomes easier"
+          eyebrow="What this solves"
           visual={
             isMonthlyMoneyReset ? (
               <MmrBreakdownScreenMockup />
@@ -222,12 +208,36 @@ export default async function ShopProductPage({
             ) : undefined
           }
         >
-          <ul className="flex flex-col gap-3">
-            {product.outcomes.map((line) => (
-              <li key={line}>{line}</li>
-            ))}
-          </ul>
+          <p className="mb-5 text-[var(--muted)]">{product.problem}</p>
+          <ProblemCards items={product.problemsSolved} />
         </RichSection>
+      ) : (
+        <>
+          {/* No problemsSolved authored yet for this listing: falls back to
+              the original flat lists rather than an empty section. */}
+          {product.audience.length > 0 && (
+            <RichSection eyebrow="Who this is for">
+              <ul className="flex flex-col gap-2.5">
+                {product.audience.map((line) => (
+                  <li key={line} className="flex items-start gap-2.5">
+                    <Check size={17} className="mt-0.5 shrink-0 text-[var(--success)]" aria-hidden />
+                    {line}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-4 text-[var(--muted)]">{product.problem}</p>
+            </RichSection>
+          )}
+          {product.outcomes.length > 0 && (
+            <RichSection eyebrow="What becomes easier">
+              <ul className="flex flex-col gap-3">
+                {product.outcomes.map((line) => (
+                  <li key={line}>{line}</li>
+                ))}
+              </ul>
+            </RichSection>
+          )}
+        </>
       )}
 
       {/* Movement 4: how it works */}

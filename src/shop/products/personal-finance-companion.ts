@@ -58,6 +58,26 @@ export const personalFinanceCompanionShopProduct: ShopProductInput = {
     "Debt and Savings you can optionally link to the account that holds them, without ever mixing up a linked balance with a goal you are tracking by hand.",
     "Import a bank statement, a pasted note, or a CSV, and review what changed before anything becomes part of your picture.",
   ],
+  problemsSolved: [
+    {
+      problem: "Your money is scattered across bank apps, statements, memory, and habit.",
+      solution: "One dominant Available Money figure you can actually trust, with the full breakdown one tap away.",
+    },
+    {
+      problem: "You only find out something's wrong after it's already become a problem.",
+      solution:
+        "A real Attention inbox: only genuine gaps in your own records, never a fabricated task to make the list look useful.",
+    },
+    {
+      problem: "You can't tell if a number reflects your real bank balance or just your own tracking.",
+      solution:
+        "Debt and Savings you can optionally link to the account that holds them, without ever mixing up a linked balance with a goal you're tracking by hand.",
+    },
+    {
+      problem: "Reviewing a statement means re-entering everything by hand.",
+      solution: "Import a bank statement, a note, or a CSV, and review what changed before it becomes part of your picture.",
+    },
+  ],
   howItWorks: [
     "Add what you have across the seven areas: accounts, income, bills, subscriptions, transactions, debt, and savings. Skip anything you do not have yet.",
     "The Companion asks about one area at a time and only continues once it has enough to be useful, never a giant form up front.",

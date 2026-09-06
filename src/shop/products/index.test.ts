@@ -69,6 +69,36 @@ describe("registerRealShopProducts", () => {
 });
 
 /**
+ * The interactive "What this solves" section (ProblemCards.tsx) replaced
+ * the old flat "Who this is for"/"What becomes easier" tick lists on every
+ * live product's Shop page. Each live product must have real,
+ * non-empty problemsSolved content, or its page silently falls back to the
+ * old flat lists instead, which this test exists to catch.
+ */
+describe("every live product's problemsSolved content", () => {
+  const LIVE_SLUGS = [
+    "monthly-money-reset",
+    "personal-finance-companion",
+    "home-management-companion",
+    "personal-life-affairs-companion",
+    "homeschooling-companion",
+    "alongside",
+    "travel-companion",
+  ];
+
+  it.each(LIVE_SLUGS)("%s has at least two real problem/solution pairs", async (slug) => {
+    const { registerRealShopProducts, shopRegistry } = await loadFreshRegisterModule();
+    registerRealShopProducts();
+    const product = shopRegistry.getBySlug(slug);
+    expect(product?.problemsSolved.length).toBeGreaterThanOrEqual(2);
+    for (const pair of product?.problemsSolved ?? []) {
+      expect(pair.problem.length).toBeGreaterThan(0);
+      expect(pair.solution.length).toBeGreaterThan(0);
+    }
+  });
+});
+
+/**
  * The Personal Life Affairs Companion's listing. Held to the same rules
  * as its siblings, plus the two this product carries on its own: it must
  * never use the vocabulary that loses the people it is for, and it must

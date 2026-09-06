@@ -83,6 +83,25 @@ export const personalLifeAffairsCompanionShopProduct: ShopProductInput = {
     "My Affairs: a printable book, in your own words, that somebody who has never used this could pick up and use.",
     "An honest answer to whether another person could actually manage, scenario by scenario, rather than a completion score.",
   ],
+  problemsSolved: [
+    {
+      problem: "You've meant to sort this out for years and never found a first step small enough to take.",
+      solution: "One question on screen at a time, chosen for you, instead of a blank folder to organise yourself.",
+    },
+    {
+      problem: "You don't actually know what costs the most to leave undone.",
+      solution:
+        "The things that cost the most raised first: who decides, who to call, where the will is, who's named on the forms that override it.",
+    },
+    {
+      problem: "Things written down once quietly stop being true.",
+      solution: "A record that comes back years later and asks whether it's still true.",
+    },
+    {
+      problem: "You want something a person could actually use, not a login they'd have to inherit.",
+      solution: "My Affairs: a printable book, in your own words, that somebody who's never used this could pick up and use.",
+    },
+  ],
   howItWorks: [
     "Eight short questions about your situation. Children, a partner, a pension, whether you own or rent, life cover, anyone who depends on you, pets, a business. They decide what you will and will not be asked about, permanently.",
     "Then one thing at a time. The step you are shown is the one whose absence would cost the people around you most, with an honest estimate of how long it takes and a sentence on why it matters.",

@@ -27,6 +27,21 @@ const objectionSchema = z.object({
   answer: z.string().min(1),
 });
 
+/**
+ * One concrete problem this product solves, paired with the specific thing
+ * that changes because of it. Rendered as an interactive card on the
+ * product page (see ProblemCards.tsx), replacing the old side-by-side
+ * "Who this is for" / "What becomes easier" tick lists: those named a
+ * situation and a benefit as two separate flat lists a visitor had to
+ * mentally reconnect themselves. This names the connection directly.
+ * Optional and additive: `audience`/`outcomes` below are unchanged and
+ * still power the Shop grid card and the Library manual page.
+ */
+const problemSolvedSchema = z.object({
+  problem: z.string().min(1),
+  solution: z.string().min(1),
+});
+
 const shopProductObjectSchema = z.object({
   id: z.string().min(1),
   slug: z.string().regex(/^[a-z0-9][a-z0-9-]*$/, "Slugs must be lowercase, alphanumeric, and hyphenated."),
@@ -38,6 +53,7 @@ const shopProductObjectSchema = z.object({
   audienceExclusions: z.array(z.string()).default([]),
   objections: z.array(objectionSchema).default([]),
   outcomes: z.array(z.string()).default([]),
+  problemsSolved: z.array(problemSolvedSchema).default([]),
   howItWorks: z.array(z.string()).default([]),
   access: z.enum(["free", "paid"]),
   price: z.object({ amount: z.number().nonnegative(), currency: z.string().length(3) }).optional(),

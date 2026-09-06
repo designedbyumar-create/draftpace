@@ -83,6 +83,24 @@ export const homeschoolingCompanionShopProduct: ShopProductInput = {
     "A printed record per child, made on your own device, containing only what you chose to include.",
     "A thirty page book of method and working pages that keeps working whether or not you ever open the app.",
   ],
+  problemsSolved: [
+    {
+      problem: "By March you can't remember what you covered in October.",
+      solution: "A record of what you actually did, kept as it happened, that you could hand to somebody at year's end.",
+    },
+    {
+      problem: "You're not sure whether something actually landed.",
+      solution: "An honest answer about whether a topic stuck, including the honest answer that there isn't enough evidence to say.",
+    },
+    {
+      problem: "Keeping more than one child's records straight in your head has stopped working.",
+      solution: "One page each morning that says what today looks like, per child.",
+    },
+    {
+      problem: "You need something to show, not a system so heavy it gets abandoned by half term.",
+      solution: "A printed record per child, containing only what you chose to include.",
+    },
+  ],
   howItWorks: [
     "Add a child. Name, age, how they are schooled. Three questions, and the age is only ever an age: no birth dates are stored anywhere in this product.",
     "Say whether you already follow a curriculum. If you do, name it and say where you are, in your own words, like Unit 3, Lesson 12. If you have your own plan, name your subjects instead. If you have no idea yet, it will put together a starting outline you can change or throw away.",

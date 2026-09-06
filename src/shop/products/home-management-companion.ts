@@ -71,6 +71,24 @@ export const homeManagementCompanionShopProduct: ShopProductInput = {
     "A record of who came out, what they did, and what it cost, so the question three years from now has an answer.",
     "The two-in-the-morning facts written down once: where the water shuts off, how many turns, and which tool it takes.",
   ],
+  problemsSolved: [
+    {
+      problem: "The filter size, the model number, the last flush date, none of it lives anywhere.",
+      solution: "One page that answers whether anything needs you this week, in a sentence, instead of a dashboard to interpret.",
+    },
+    {
+      problem: "The expensive stuff, the water heater, the gutters, the outside tap, gets caught too late, as a repair.",
+      solution: "The boring, expensive jobs raised before they become repairs, not after.",
+    },
+    {
+      problem: "Seasonal work gets remembered a year too late, long after its month has passed.",
+      solution: "Seasonal work raised in the month it actually belongs to.",
+    },
+    {
+      problem: "Nobody remembers who came out, what they did, or what it cost.",
+      solution: "A record of who came out, what they did, and what it cost, so the question three years from now has an answer.",
+    },
+  ],
   howItWorks: [
     "Tell it whether you own or rent, then tap what your home has. Twelve areas, from the kitchen and the boiler to the garden, damp and pests, and the papers.",
     "It suggests the care each one usually needs and you untick anything that does not apply. Nothing is created without you confirming it.",

@@ -47,6 +47,22 @@ export const monthlyMoneyResetShopProduct: ShopProductInput = {
     "A short weekly check-in that keeps the picture accurate without turning into a chore.",
     "A quiet way back in if you've been away for a while, no overdue-task pileup waiting for you.",
   ],
+  problemsSolved: [
+    {
+      problem: "You don't know what's actually safe to spend without doing the math yourself, every time.",
+      solution: "A single Safe-to-Spend figure that updates as the month goes on, no mental math required.",
+    },
+    {
+      problem: "A bill you haven't paid yet still feels like money you have.",
+      solution:
+        "Protected bills stay held back whether they're paid or not, so the number never assumes money you actually owe.",
+    },
+    {
+      problem: "Staying on top of it usually turns into a chore, or gets abandoned by month two.",
+      solution:
+        "A short weekly check-in keeps the picture accurate, and a quiet way back in if you've been away, no overdue pile-up waiting.",
+    },
+  ],
   howItWorks: [
     "Add the money available right now, along with any bills you need to protect and anything you'd rather not spend.",
     "Add income you're still expecting. It only counts toward Safe-to-Spend once you mark it received.",
