@@ -29,7 +29,7 @@ describe("the engine is shared, not per-playbook", () => {
     expect(engine).not.toMatch(/playbook\.key\s*!==/);
   });
 
-  it("switches only on step.kind, the six shapes every playbook is built from", () => {
+  it("switches only on step.kind, the shapes every playbook is built from", () => {
     expect(engine).toMatch(/step\.kind === "choose"/);
     expect(engine).toMatch(/step\.kind === "write"/);
     expect(engine).toMatch(/step\.kind === "wording"/);

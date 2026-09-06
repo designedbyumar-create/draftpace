@@ -148,6 +148,7 @@ export default function NowModule() {
         directTitle={running.directTitle}
         onFinished={finish}
         onLeft={() => setRunning(null)}
+        onItemUpdated={replaceItem}
       />
     );
   }

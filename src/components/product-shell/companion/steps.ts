@@ -46,6 +46,13 @@ export type StepKind =
   | "prepare"
   /** Authored suggested language. Always editable. */
   | "wording"
+  /**
+   * The moment right before doing the thing itself. Exactly two answers,
+   * fixed by the engine rather than authored per playbook: doing it now,
+   * or naming one exact time today. Never a countdown to being late, and
+   * never a second question about why today did not work out.
+   */
+  | "ready"
   /** Short prompts for while the thing is happening. Capped, deliberately. */
   | "during"
   /** Terminal. Branches back into the product's own domain. */

@@ -225,6 +225,7 @@ export default function AlongsideItemDetailModule() {
         run={running.run}
         onFinished={finishRun}
         onLeft={() => setRunning(null)}
+        onItemUpdated={setItem}
       />
     );
   }

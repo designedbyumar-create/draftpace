@@ -5,6 +5,7 @@ import Button from "@/design-system/Button";
 import Input from "@/design-system/Input";
 import { ArrowLeft, Check } from "@/design-system/Icon";
 import { describeResultError, type Result } from "@/product-framework/result";
+import ReadyStepCard from "./ReadyStep";
 import {
   nextStep,
   OUTCOME_OPTIONS,
@@ -115,6 +116,17 @@ export default function CompanionRun<TFinishResult>({
     setDraft("");
   }
 
+  /**
+   * "Not now, but at this time" on a ready step. Named the time, then
+   * leaves, exactly like the header's own "Leave this": naming a time is
+   * not a reason to ask a second question, and it is not a failure to
+   * record either.
+   */
+  async function recordAndLeave(stepKey: string, value: string) {
+    await record(stepKey, value);
+    await leave();
+  }
+
   async function complete(chosen: OutcomeKind, detail: string | null) {
     setPending(true);
     setErrorMessage(null);
@@ -185,6 +197,7 @@ export default function CompanionRun<TFinishResult>({
         onSkip={() => record(step.key, null, true)}
         onOutcome={setOutcome}
         onComplete={complete}
+        onReadyNotNow={(time) => recordAndLeave(step.key, `not-now:${time}`)}
       />
 
       {errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}
@@ -203,6 +216,7 @@ function StepCard({
   onSkip,
   onOutcome,
   onComplete,
+  onReadyNotNow,
 }: {
   step: PlaybookStep;
   answers: Answers;
@@ -214,6 +228,7 @@ function StepCard({
   onSkip: () => void;
   onOutcome: (value: OutcomeKind | null) => void;
   onComplete: (outcome: OutcomeKind, detail: string | null) => void;
+  onReadyNotNow: (time: string) => void;
 }) {
   const heading = (
     <div>
@@ -323,6 +338,15 @@ function StepCard({
         <Button onClick={() => onAnswer(draft.trim() || "used-suggested")} disabled={pending}>
           Next
         </Button>
+      </section>
+    );
+  }
+
+  if (step.kind === "ready") {
+    return (
+      <section className="flex flex-col gap-5">
+        {heading}
+        <ReadyStepCard pending={pending} onCallNow={() => onAnswer("call-now")} onNotNow={onReadyNotNow} />
       </section>
     );
   }

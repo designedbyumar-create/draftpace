@@ -70,7 +70,7 @@ export const alongsideDefinition: ProductDefinitionInput = {
     "When life is too much to hold in your head, this holds it with you. Write something down once, see it when it matters, and get help working through it when you are ready.",
   family: "companion",
   version: "0.1.0",
-  status: "draft",
+  status: "active",
   access: { model: "paid" },
   cycleModel: "continuous",
   /**
@@ -161,6 +161,10 @@ export const alongsideDefinition: ProductDefinitionInput = {
       strong: "#68343f",
       soft: "#f5eaec",
       contrast: "#ffffff",
+      // Already pastel enough to double as the wash tier as-is (design-
+      // system audit finding): formalized here rather than computing a
+      // second, paler value nobody asked for.
+      wash: "#f5eaec",
     },
     narrativeFont: "var(--font-newsreader), ui-serif, Georgia, serif",
     motionPersonality: "calm",
