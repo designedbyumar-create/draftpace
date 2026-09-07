@@ -60,6 +60,7 @@ import {
 } from "./familyHealthBinderVisuals";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { getLemonSqueezyCheckoutUrl, hasLemonSqueezyCheckout } from "@/shop/lemonSqueezyCheckout";
+import CheckoutButton from "@/components/shop/CheckoutButton";
 
 export const dynamic = "force-dynamic";
 
@@ -514,9 +515,9 @@ function GetAction({
 
   if (checkout.kind === "ready") {
     return (
-      <Button href={checkout.href} size={size} iconRight={<ArrowRight size={15} aria-hidden />}>
+      <CheckoutButton href={checkout.href} size={size} iconRight={<ArrowRight size={15} aria-hidden />}>
         {label}
-      </Button>
+      </CheckoutButton>
     );
   }
 
