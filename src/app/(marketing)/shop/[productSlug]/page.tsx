@@ -7,7 +7,8 @@ import Badge from "@/design-system/Badge";
 import Button from "@/design-system/Button";
 import { ArrowRight, Check, Lock, X } from "@/design-system/Icon";
 import { shopRegistry } from "@/shop/registry";
-import { discountPercent, formatCompareAtPrice, formatPrice, type ShopProduct } from "@/shop/definition";
+import { discountPercent, formatCompareAtPrice, formatPrice, questionsForStage, type ShopProduct } from "@/shop/definition";
+import SearchedProblems from "./SearchedProblems";
 import { ensureShopRegistered } from "@/shop/ensureRegistered";
 import RichSection from "./RichSection";
 import ProblemCards from "./ProblemCards";
@@ -117,6 +118,7 @@ export default async function ShopProductPage({
   const isTravelCompanion = product.slug === "travel-companion";
   const isVehicleMaintenanceCompanion = product.slug === "vehicle-maintenance-companion";
   const isFamilyHealthBinder = product.slug === "family-health-binder";
+  const decidingQuestions = questionsForStage(product, "deciding");
 
   // Resolved once per request, server-side, so every GetAction on this page
   // (hero, mid-page, final CTA) agrees on the exact same checkout link
@@ -300,17 +302,10 @@ export default async function ShopProductPage({
         </RichSection>
       )}
 
-      {/* Movement 5: objection resolution, near the decision */}
-      {product.objections.length > 0 && (
-        <RichSection eyebrow="Honest answers before you decide">
-          <div className="flex flex-col divide-y divide-[var(--border)] rounded-xl border border-[var(--border)] text-[15px]">
-            {product.objections.map((o) => (
-              <div key={o.worry} className="px-5 py-4">
-                <p className="font-semibold text-[var(--text)]">{o.worry}</p>
-                <p className="mt-1.5 leading-relaxed text-[var(--muted)]">{o.answer}</p>
-              </div>
-            ))}
-          </div>
+      {/* Movement 3: the problem in the reader's own words, before ours */}
+      {product.searchedProblems.length > 0 && (
+        <RichSection eyebrow="Which of these is you?">
+          <SearchedProblems items={product.searchedProblems} />
         </RichSection>
       )}
 
@@ -375,11 +370,14 @@ export default async function ShopProductPage({
         </div>
       </section>
 
-      {/* FAQs */}
-      {product.faqs.length > 0 && (
-        <RichSection eyebrow="Questions">
+      {/* Questions, asked once. A migrated listing answers each worry a
+          single time and says which moment it belongs to; the rest still
+          get their objections and faqs concatenated here, which is what
+          this page rendered as two near-duplicate sections before. */}
+      {decidingQuestions.length > 0 && (
+        <RichSection eyebrow="Honest answers before you decide">
           <div className="flex flex-col divide-y divide-[var(--border)]">
-            {product.faqs.map((faq) => (
+            {decidingQuestions.map((faq) => (
               <details key={faq.question} className="group py-3 first:pt-0">
                 <summary className="cursor-pointer text-[15px] font-semibold text-[var(--text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]">
                   {faq.question}

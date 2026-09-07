@@ -152,6 +152,7 @@ export default function ProductRailShell({
                 <Link
                   key={id}
                   href={href(id)}
+                  data-tour-id={`rail-${id}`}
                   aria-current={active ? "page" : undefined}
                   className={`rounded-lg px-3 py-2 text-[12px] font-bold uppercase tracking-[0.12em] transition-colors ${
                     active
@@ -241,6 +242,7 @@ export default function ProductRailShell({
               <li key={id} className="min-w-0 flex-1">
                 <Link
                   href={href(id)}
+                  data-tour-id={`rail-${id}`}
                   aria-current={active ? "page" : undefined}
                   className={`flex h-14 flex-col items-center justify-center gap-0.5 px-1 transition-colors ${
                     active ? "text-[var(--primary)]" : "text-[var(--muted)]"

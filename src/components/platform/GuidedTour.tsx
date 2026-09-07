@@ -6,11 +6,36 @@ import { useReducedMotion } from "framer-motion";
 import Button from "@/design-system/Button";
 
 export type TourStep = {
-  /** The id of a real element on the page. A step whose target is absent is skipped. */
+  /**
+   * Matches an element's `id`, or a `data-tour-id` when the same thing is
+   * rendered more than once responsively. A step whose target is absent,
+   * or present but not visible, is skipped.
+   */
   targetId: string;
   title: string;
   body: string;
 };
+
+/**
+ * The visible element for a target.
+ *
+ * A responsive shell renders the same destination twice — the product
+ * rail has a desktop column and a mobile bottom bar, both in the DOM at
+ * once with one hidden by CSS. `id` must be unique, and getElementById
+ * would happily return the hidden one, whose rect is all zeroes, so the
+ * spotlight would land in the corner of the screen. Marking both with
+ * `data-tour-id` and picking the one that actually has a box is what
+ * makes a tour step work at every width.
+ */
+function resolveTarget(targetId: string): HTMLElement | null {
+  if (typeof document === "undefined") return null;
+  const candidates = document.querySelectorAll<HTMLElement>(`#${CSS.escape(targetId)}, [data-tour-id="${targetId}"]`);
+  for (const el of candidates) {
+    const rect = el.getBoundingClientRect();
+    if (rect.width > 0 && rect.height > 0) return el;
+  }
+  return null;
+}
 
 /**
  * A contextual first-use tour: it spotlights a real element on the page and
@@ -68,7 +93,7 @@ export default function GuidedTour({
    */
   const liveSteps = useMemo(() => {
     if (!mounted || typeof document === "undefined") return [];
-    return steps.filter((s) => document.getElementById(s.targetId) !== null);
+    return steps.filter((s) => resolveTarget(s.targetId) !== null);
   }, [mounted, steps]);
 
   const step = liveSteps[index];
@@ -86,7 +111,7 @@ export default function GuidedTour({
 
   useEffect(() => {
     if (!step) return;
-    const el = document.getElementById(step.targetId);
+    const el = resolveTarget(step.targetId);
     if (!el) return;
     el.scrollIntoView({ block: "center", behavior: reduceMotion ? "auto" : "smooth" });
     const measure = () => setRect(el.getBoundingClientRect());

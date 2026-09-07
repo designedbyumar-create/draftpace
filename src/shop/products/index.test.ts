@@ -563,8 +563,10 @@ describe("the Alongside listing", () => {
 
   it("never requires a diagnosis to buy it", async () => {
     const product = await listing();
-    const faqAnswer = product?.faqs.find((f) => f.question.toLowerCase().includes("diagnosis"))?.answer ?? "";
-    expect(faqAnswer.toLowerCase()).toContain("no");
+    if (!product) throw new Error("no listing");
+    const { allQuestions } = await import("../definition");
+    const answer = allQuestions(product).find((q) => q.question.toLowerCase().includes("diagnosis"))?.answer ?? "";
+    expect(answer.toLowerCase(), "no question answers whether a diagnosis is required").toContain("no");
   });
 
   /**
@@ -594,7 +596,18 @@ describe("the Alongside listing", () => {
     }).toLowerCase();
     expect(sold).not.toContain("remind");
     expect(sold).not.toContain("push notification");
-    expect(JSON.stringify(product?.faqs).toLowerCase()).toContain("not yet, and it does not pretend to");
+
+    // Absence is not enough: the listing has to say plainly that it does
+    // not notify, or a reader assumes it does. Asserted on the answer's
+    // meaning rather than one exact sentence, so the copy can be rewritten
+    // without the guard going quiet.
+    if (!product) throw new Error("no listing");
+    const { allQuestions } = await import("../definition");
+    const notifications = allQuestions(product).find((q) =>
+      /reminder|notification/i.test(q.question)
+    );
+    expect(notifications, "nothing answers whether it sends reminders").toBeDefined();
+    expect(notifications!.answer.toLowerCase()).toMatch(/^no[.,]|does not send|not yet/);
   });
 
   /**

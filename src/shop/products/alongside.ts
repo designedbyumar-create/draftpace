@@ -61,41 +61,18 @@ export const alongsideShopProduct: ShopProductInput = {
     "You want it to remember the details of a bill, an account, or a policy. It records that you need to sort out a problem with the electricity bill, not the provider, the amount, or the account number. Personal Life Affairs Companion and Personal Finance Companion are where that detail belongs.",
     "You want push notifications or email reminders today. It does not send either yet. What it does is stay quiet until something is actually worth mentioning, and say so plainly the moment you open it.",
   ],
-  objections: [
-    {
-      worry: "Tried a to-do list and it just became another list to feel behind on?",
-      answer:
-        "That is what most of them do: everything sits on screen at once, sorted by nothing, and the list itself becomes a source of the feeling you were trying to get away from. This shows what is worth your attention right now, and says so in one sentence, or says plainly that nothing needs you and stops there.",
-    },
-    {
-      worry: "Know exactly what to do and still cannot make the call?",
-      answer:
-        "The gap is rarely knowing what to do. It is holding the purpose, the outcome you want, and the two things you must not forget, all at once, while a stranger talks to you. The Companion holds those on screen so you do not have to, and gives you an opening line so the first fifteen seconds are not the hardest part.",
-    },
-    {
-      worry: "Worried this is another app that will guilt you for falling behind?",
-      answer:
-        "There is no streak, no percentage, and no attempt counter anywhere in it. If you open something and do not finish it, closing it records nothing at all: not a status, not a note, not a mark against you. Leaving is a button, not a failure.",
-    },
-    {
-      worry: "Not sure ADHD is even the right word for what you are dealing with?",
-      answer:
-        "It does not need to be. It is built for the difficulty, not the diagnosis. Brain fog from long covid, a concussion, chronic illness, grief, new parenthood, menopause, and depression all make holding a plan in your head unreliable in the same way, and nothing here asks which one applies to you.",
-    },
-    {
-      worry: "Worried you will have to set the whole thing up before it is any use?",
-      answer:
-        "You can open it with nothing recorded and say what you need to do right now: call the landlord, chase the refund, whatever it is. It helps you with that one thing first, and only afterward, once, asks whether you want it remembered.",
-    },
-  ],
-  outcomes: [
-    "Nothing needs you right now, said plainly, on the days that is true, instead of a list filling the space anyway.",
-    "The right thing raised at the right moment: a date you set yourself, somebody who has gone quiet, a thread you left off a fortnight ago.",
-    "A hard phone call or email with an opening line ready, a short list of what to have in front of you, and nowhere it tells you what to say beyond the first sentence.",
-    "Somewhere to leave a half finished thing that remembers exactly where you got to, so picking it back up does not mean starting over.",
-    "A record of what actually happened, in your own words, that never once says you failed at something.",
-    "Help with one thing today, with nothing set up first, and no obligation to turn it into a system.",
-  ],
+  // Emptied by the content collapse: objections and faqs measured 75-81%
+  // duplicate, and the Shop page rendered both, so the same worry was
+  // answered twice a few hundred pixels apart. Both now live in
+  // `questions` below, each answered once, tagged with the moment it
+  // matters.
+  objections: [],
+  // Emptied by the content collapse: five of these six lines were
+  // near-verbatim copies of a problemsSolved solution, and the two
+  // surfaces rendered them separately, so an owner read the same
+  // sentence on the Shop page and again in the manual. The two that
+  // said something new are now paired with the problem they answer.
+  outcomes: [],
   problemsSolved: [
     {
       problem: "The same thing has been on your mind for three weeks and you still can't make yourself pick up the phone.",
@@ -112,6 +89,14 @@ export const alongsideShopProduct: ShopProductInput = {
     {
       problem: "Every system eventually tells you that you've failed at it.",
       solution: "A record of what actually happened, in your own words, that never once says you failed at something.",
+    },
+    {
+      problem: "Things you meant to come back to just quietly disappear.",
+      solution: "The right thing raised at the right moment: a date you set yourself, somebody who has gone quiet, a thread you left off a fortnight ago.",
+    },
+    {
+      problem: "You don't have the energy to set up another system before it starts helping.",
+      solution: "Help with one thing today, with nothing set up first, and no obligation to turn it into a system.",
     },
   ],
   howItWorks: [
@@ -154,46 +139,145 @@ export const alongsideShopProduct: ShopProductInput = {
     "Everything saves to your account automatically as you go. It is tied to your sign-in, not this device, so a run you started on your phone is still there if you open Draftpace somewhere else. Nothing is ever deleted: a thing you close stays closed rather than disappearing, and its history is never edited after the fact.",
   privacyNotes:
     "Your records are private to your account. Draftpace does not sell your data or use it for advertising, and nothing here is read by an AI model: there is no model provider anywhere in this product. It holds no diagnosis, no medication, and no symptom, because it is not asked for and never will be. It holds no amount, account number, or provider either, by design: that detail belongs to Personal Life Affairs Companion or Personal Finance Companion, and Alongside only ever records your relationship to getting something done. Suggested wording for a hard conversation stays in your browser and is never saved, even after you use it.",
-  faqs: [
+  faqs: [],
+
+  /**
+   * Every worry, asked once, tagged with the moment it matters. Five
+   * objections and eight faqs collapsed to nine questions here: "Not sure
+   * ADHD is even the right word" and "Do I need an ADHD diagnosis" were
+   * the same question twice, as were the two about being guilted, and the
+   * two about a hard phone call.
+   *
+   * The Shop page shows the deciding half. The Library manual shows the
+   * owning half, which is where the mechanics questions belong: somebody
+   * who already paid does not need the pitch answered again.
+   */
+  questions: [
     {
-      question: "Is this a one-time purchase or a subscription?",
-      answer: "One time. You pay once and keep it, the same way every paid product on Draftpace works.",
+      question: "Tried a to-do list and it just became another list to feel behind on?",
+      answer:
+        "That is what most of them do: everything sits on screen at once, sorted by nothing, and the list itself becomes the thing you were trying to get away from. This shows what is worth your attention right now, in one sentence, or says plainly that nothing needs you and stops there.",
+      stage: ["deciding"],
     },
     {
-      question: "Do I need an ADHD diagnosis to use this?",
+      question: "Do I need an ADHD diagnosis for this to be for me?",
       answer:
-        "No. It is built for the difficulty, not the diagnosis, and nothing in it asks which one applies to you. Long covid, a concussion, chronic illness, grief, new parenthood, menopause, and depression all make holding a plan in your head unreliable in the same way, and this is built for that experience, whatever produced it.",
+        "No. It is built for the difficulty, not the diagnosis. Brain fog from long covid, a concussion, chronic illness, grief, new parenthood, menopause and depression all make holding a plan in your head unreliable in the same way, and nothing here asks which one applies to you.",
+      stage: ["deciding", "owning"],
     },
     {
-      question: "Does it send reminders or notifications?",
+      question: "Will it guilt me for not finishing something?",
       answer:
-        "Not yet, and it does not pretend to. Push reaches iOS only through a manual install no page can trigger, and even web push is opted into by a small share of people who are offered it. Attention is built so that can change later without the product changing; today, everything happens inside the app, when you open it.",
-    },
-    {
-      question: "Will it judge me for not finishing something?",
-      answer:
-        "No. There is no streak, no completion percentage, and no attempt counter anywhere in it. Closing something you did not get to records nothing at all, not even a timestamp, because recording an abandonment would turn your own history into a list of failures.",
+        "There is no streak, no percentage and no attempt counter anywhere in it. If you open something and do not finish it, closing it records nothing at all: not a status, not a note, not a mark against you. Leaving is a button, not a failure.",
+      stage: ["deciding", "owning"],
     },
     {
       question: "Does it tell me what to say on a hard phone call?",
       answer:
-        "It gives you an opening line, because the first fifteen seconds are the part most people rehearse and dread, and it is always editable or replaceable. It never tells you what to claim, accept, or settle for. That is yours, because you are the only one with the facts.",
+        "It gives you an opening line so the first fifteen seconds are not the hardest part, and holds your purpose, the outcome you want and the two things you must not forget on screen while you talk. Past that first sentence it stays out of your way. The words are yours.",
+      stage: ["deciding", "owning"],
     },
     {
-      question: "What if I close it halfway through something?",
+      question: "Do I have to set the whole thing up before it is any use?",
       answer:
-        "Come back whenever you are ready. It returns to the exact question you left, not the beginning, and leaving is never recorded as anything other than leaving.",
+        "No. Open it with nothing recorded and say what you need to do right now. It helps with that one thing first, and only afterwards, once, asks whether you want it remembered.",
+      stage: ["deciding"],
     },
     {
-      question: "Does it store details about my bills, accounts, or medical history?",
+      question: "Is this a one-time purchase or a subscription?",
+      answer: "One time. You pay once and keep it, the same way every paid product on Draftpace works.",
+      stage: ["deciding"],
+    },
+    {
+      question: "What happens if I close it halfway through something?",
       answer:
-        "No, and it is built so that it cannot. It records that something needs sorting out and your relationship to getting it done, never the account number, the provider, or the sum involved. That detail lives in Personal Life Affairs Companion or Personal Finance Companion, which are built to hold it properly.",
+        "It remembers where you got to and offers to pick up there next time, so coming back is not starting over. Nothing about stopping is recorded as a failed attempt.",
+      stage: ["owning"],
     },
     {
-      question: "Do I need a Draftpace account?",
-      answer: "Yes, so your records save privately and follow you across devices.",
+      question: "Does it send reminders or notifications?",
+      answer:
+        "No. Nothing here pushes at you. Something you asked to be raised again comes back when you next open it, at the time you chose, and waits quietly until then.",
+      stage: ["deciding", "owning"],
+    },
+    {
+      question: "Does it store details about my bills, accounts or medical history?",
+      answer:
+        "No. It holds what you are trying to get done and what happened, in your own words. Money belongs in a money product and health details in a health one; this one deliberately does not ask.",
+      stage: ["deciding", "owning"],
     },
   ],
+
+  /**
+   * How people describe this before they know a product like this exists.
+   * Not invented here: every phrase is either a researched alias from
+   * PROBLEM_ENTRIES in src/content/askdp.ts or the title of a guide
+   * already written for this life area from the same research.
+   */
+  searchedProblems: [
+    {
+      phrase: "I keep everything in my head and it's exhausting",
+      answer: "Somewhere to put a thing down that will bring it back when it actually matters, so holding it stops being your job.",
+    },
+    {
+      phrase: "I know exactly what I need to do and still can't start",
+      answer: "A walked-through version of the hard thing, one step on screen at a time, so starting is not a decision you have to make alone.",
+    },
+    {
+      phrase: "I've been avoiding a phone call for weeks",
+      answer: "An opening line, the outcome you want, and the two things not to forget, held on screen while you make it.",
+    },
+    {
+      phrase: "This isn't procrastination and to-do lists make it worse",
+      answer: "One thing at a time, chosen for you from what you already said mattered, and a plain \"nothing needs you\" on the days that is true.",
+    },
+    {
+      phrase: "I have brain fog and can't face life admin",
+      answer: "Built for the difficulty rather than the diagnosis, and it never asks why holding a plan in your head is unreliable right now.",
+    },
+    {
+      phrase: "I left something half finished and lost where I was",
+      answer: "It remembers exactly where you got to, so picking it back up is not starting over.",
+    },
+  ],
+
+  /**
+   * What an owner opens the manual to do. Each row links straight to the
+   * screen it happens on, because the answer to "how do I do this" is
+   * being taken there, not being told where to go.
+   */
+  tasks: [
+    {
+      label: "Put something down so it comes back when it matters",
+      answer: "Say what it is and when you want to be asked again. Until then it stays out of sight.",
+      destination: "life",
+    },
+    {
+      label: "Get through a call I'm dreading",
+      answer: "Open Help and say what the call is. You get an opening line and the two things to keep in front of you.",
+      destination: "help",
+    },
+    {
+      label: "Deal with the thing I keep not starting",
+      answer: "Now shows the single thing most worth your attention, with a way in that does not require deciding first.",
+      destination: "workspace",
+    },
+    {
+      label: "Find something I wrote down weeks ago",
+      answer: "Everything you have recorded lives in Life, including the things that are not due yet.",
+      destination: "life",
+    },
+    {
+      label: "Change when something asks me again",
+      answer: "Open it in Life and name a new time. Nothing is overdue in the meantime, because nothing here is ever overdue.",
+      destination: "life",
+    },
+    {
+      label: "Stop halfway without losing my place",
+      answer: "Close it. It remembers where you got to and offers to pick up there, and records nothing about stopping.",
+    },
+  ],
+
   relatedGuideSlugs: [],
   relatedProductSlugs: ["personal-life-affairs-companion", "personal-finance-companion"],
   needGroups: ["getting-organized"],

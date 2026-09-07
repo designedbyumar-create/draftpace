@@ -22,7 +22,7 @@ const source = readFileSync(TOUR, "utf8");
 
 describe("GuidedTour skips steps it cannot point at", () => {
   it("resolves its steps against the live document rather than trusting the list", () => {
-    expect(source).toContain("document.getElementById(s.targetId) !== null");
+    expect(source).toContain("resolveTarget(s.targetId) !== null");
   });
 
   it("finishes instead of opening when no step has a target on the page", () => {
@@ -33,6 +33,11 @@ describe("GuidedTour skips steps it cannot point at", () => {
     // The old fallback. Its return renders only when a rect exists now.
     expect(source).not.toContain('className="fixed inset-0 bg-[var(--overlay)]"');
     expect(source).toContain("if (!mounted || !step || !rect) return null;");
+  });
+
+  it("ignores a target that is in the DOM but has no box, so a responsive duplicate cannot win", () => {
+    expect(source).toContain("rect.width > 0 && rect.height > 0");
+    expect(source).toContain('[data-tour-id="');
   });
 
   it("counts steps for the reader out of the ones actually shown", () => {
@@ -61,6 +66,11 @@ describe("every tour step points at an id that exists in its own product", () =>
     .filter((e) => e.isDirectory())
     .map((e) => e.name);
 
+  const shellSource = readFileSync(
+    path.resolve(process.cwd(), "src/components/product-shell/ProductRailShell.tsx"),
+    "utf8"
+  );
+
   it("checks at least one product with a tour", () => {
     const withTours = products.filter((slug) =>
       sourcesOf(path.join(PRODUCTS, slug)).some((f) => /targetId:\s*"/.test(readFileSync(f, "utf8")))
@@ -76,9 +86,14 @@ describe("every tour step points at an id that exists in its own product", () =>
       const all = files.map((f) => readFileSync(f, "utf8")).join("\n");
       const targets = [...all.matchAll(/targetId:\s*"([^"]+)"/g)].map((m) => m[1]);
       for (const target of targets) {
+        const inProduct = all.includes(`id="${target}"`) || all.includes(`data-tour-id="${target}"`);
+        // The shared rail marks every destination with data-tour-id, so a
+        // step may legitimately point at navigation rather than at
+        // something the product itself renders.
+        const inShell = shellSource.includes(`data-tour-id={\`rail-\${id}\`}`) && target.startsWith("rail-");
         expect(
-          all.includes(`id="${target}"`),
-          `${slug} has a tour step targeting "${target}" but no element carries that id`
+          inProduct || inShell,
+          `${slug} has a tour step targeting "${target}" but nothing carries that id`
         ).toBe(true);
       }
     }

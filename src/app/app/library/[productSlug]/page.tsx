@@ -8,7 +8,8 @@ import { screenTourFor } from "@/app/(marketing)/shop/productScreens";
 import { LIFE_AREAS } from "@/content/areas";
 import { shopRegistry } from "@/shop/registry";
 import { ensureShopRegistered } from "@/shop/ensureRegistered";
-import type { ShopProduct } from "@/shop/definition";
+import { questionsForStage, type ShopProduct } from "@/shop/definition";
+import ManualTasks from "@/components/platform/manual/ManualTasks";
 import ManualContents from "@/components/platform/manual/ManualContents";
 import ManualFaq from "@/components/platform/manual/ManualFaq";
 import ManualOwnershipBar from "@/components/platform/manual/ManualOwnershipBar";
@@ -77,7 +78,11 @@ export default async function ProductManualPage({ params }: Params) {
 
   const area = LIFE_AREAS.find((a) => a.productSlugs.includes(product.slug)) ?? null;
   const screens = screenTourFor(product.slug);
-  const sections = buildSections(product, screens !== null);
+  // A listing that has been given tasks gets the task index; the rest keep
+  // the document until they are migrated too.
+  const taskShaped = product.tasks.length > 0;
+  const owningQuestions = questionsForStage(product, "owning");
+  const sections = buildSections(product, screens !== null, taskShaped, owningQuestions.length > 0);
   const related = product.relatedProductSlugs
     .map((slug) => shopRegistry.getBySlug(slug))
     .filter((p): p is ShopProduct => Boolean(p));
@@ -106,9 +111,15 @@ export default async function ProductManualPage({ params }: Params) {
         </div>
 
         <article className="min-w-0 space-y-12">
-          <Section id="what-it-is" title="What it's for">
-            <p className="text-[15px] leading-relaxed text-[var(--text)]">{product.problem}</p>
-          </Section>
+          {taskShaped ? (
+            <Section id="what-do-you-want-to-do" title="What do you want to do?">
+              <ManualTasks tasks={product.tasks} productSlug={product.slug} />
+            </Section>
+          ) : (
+            <Section id="what-it-is" title="What it's for">
+              <p className="text-[15px] leading-relaxed text-[var(--text)]">{product.problem}</p>
+            </Section>
+          )}
 
           {screens && (
             <Section id="what-it-looks-like" title="What it looks like">
@@ -116,7 +127,10 @@ export default async function ProductManualPage({ params }: Params) {
             </Section>
           )}
 
-          {product.howItWorks.length > 0 && (
+          {/* The un-migrated shape. Every section below restates the Shop
+              page to somebody who has already paid, which is what the
+              task index above replaces once a listing has tasks. */}
+          {!taskShaped && product.howItWorks.length > 0 && (
             <Section id="how-to-use-it" title="How to use it">
               <ol className="space-y-4">
                 {product.howItWorks.map((step, i) => (
@@ -131,19 +145,19 @@ export default async function ProductManualPage({ params }: Params) {
             </Section>
           )}
 
-          {product.outcomes.length > 0 && (
+          {!taskShaped && product.outcomes.length > 0 && (
             <Section id="what-you-should-get" title="What you should get out of it">
               <Bullets items={product.outcomes} />
             </Section>
           )}
 
-          {product.inclusions.length > 0 && (
+          {!taskShaped && product.inclusions.length > 0 && (
             <Section id="whats-inside" title="What's inside">
               <Bullets items={product.inclusions} />
             </Section>
           )}
 
-          {(product.expectedInputs.length > 0 || product.expectedOutputs.length > 0) && (
+          {!taskShaped && (product.expectedInputs.length > 0 || product.expectedOutputs.length > 0) && (
             <Section id="what-it-needs" title="What it needs from you, and what it gives back">
               <div className="grid gap-4 sm:grid-cols-2">
                 {product.expectedInputs.length > 0 && (
@@ -160,7 +174,7 @@ export default async function ProductManualPage({ params }: Params) {
             </Section>
           )}
 
-          {(product.savingBehavior || product.compatibility.length > 0) && (
+          {!taskShaped && (product.savingBehavior || product.compatibility.length > 0) && (
             <Section id="saving-and-devices" title="Saving, and where it works">
               {product.savingBehavior && (
                 <p className="text-[14.5px] leading-relaxed text-[var(--text)]">{product.savingBehavior}</p>
@@ -180,15 +194,34 @@ export default async function ProductManualPage({ params }: Params) {
             </Section>
           )}
 
-          {product.privacyNotes && (
+          {!taskShaped && product.privacyNotes && (
             <Section id="privacy" title="What stays private">
               <p className="text-[14.5px] leading-relaxed text-[var(--text)]">{product.privacyNotes}</p>
             </Section>
           )}
 
-          {product.faqs.length > 0 && (
+          {/* Where a migrated listing puts saving and privacy: one line
+              each, with the detail a click away, rather than two dense
+              paragraphs an owner scrolls past. */}
+          {taskShaped && (
+            <Section id="saving-and-privacy" title="Saving and privacy">
+              <p className="text-[14.5px] leading-relaxed text-[var(--text)]">
+                Everything saves to your account as you go, on every device you sign in on. Nothing here is read by an
+                AI model, and nothing is sold.
+              </p>
+              <Link
+                href="/trust"
+                className="mt-3 inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--primary)]"
+              >
+                How Draftpace handles your data
+                <ArrowRight size={14} aria-hidden />
+              </Link>
+            </Section>
+          )}
+
+          {owningQuestions.length > 0 && (
             <Section id="questions" title="Questions owners ask">
-              <ManualFaq faqs={product.faqs} />
+              <ManualFaq faqs={owningQuestions} />
             </Section>
           )}
 
@@ -234,18 +267,31 @@ export default async function ProductManualPage({ params }: Params) {
 }
 
 /** The index, built from the same conditions the sections themselves render under, so it can never list a section that isn't there. */
-function buildSections(product: ShopProduct, hasScreens: boolean): { id: string; label: string }[] {
-  const sections: { id: string; label: string }[] = [{ id: "what-it-is", label: "What it's for" }];
+function buildSections(
+  product: ShopProduct,
+  hasScreens: boolean,
+  taskShaped: boolean,
+  hasQuestions: boolean
+): { id: string; label: string }[] {
+  const sections: { id: string; label: string }[] = taskShaped
+    ? [{ id: "what-do-you-want-to-do", label: "What to do" }]
+    : [{ id: "what-it-is", label: "What it's for" }];
   if (hasScreens) sections.push({ id: "what-it-looks-like", label: "What it looks like" });
-  if (product.howItWorks.length > 0) sections.push({ id: "how-to-use-it", label: "How to use it" });
-  if (product.outcomes.length > 0) sections.push({ id: "what-you-should-get", label: "What you get" });
-  if (product.inclusions.length > 0) sections.push({ id: "whats-inside", label: "What's inside" });
-  if (product.expectedInputs.length > 0 || product.expectedOutputs.length > 0)
-    sections.push({ id: "what-it-needs", label: "Needs and returns" });
-  if (product.savingBehavior || product.compatibility.length > 0)
-    sections.push({ id: "saving-and-devices", label: "Saving" });
-  if (product.privacyNotes) sections.push({ id: "privacy", label: "Privacy" });
-  if (product.faqs.length > 0) sections.push({ id: "questions", label: "Questions" });
+
+  if (!taskShaped) {
+    if (product.howItWorks.length > 0) sections.push({ id: "how-to-use-it", label: "How to use it" });
+    if (product.outcomes.length > 0) sections.push({ id: "what-you-should-get", label: "What you get" });
+    if (product.inclusions.length > 0) sections.push({ id: "whats-inside", label: "What's inside" });
+    if (product.expectedInputs.length > 0 || product.expectedOutputs.length > 0)
+      sections.push({ id: "what-it-needs", label: "Needs and returns" });
+    if (product.savingBehavior || product.compatibility.length > 0)
+      sections.push({ id: "saving-and-devices", label: "Saving" });
+    if (product.privacyNotes) sections.push({ id: "privacy", label: "Privacy" });
+  } else {
+    sections.push({ id: "saving-and-privacy", label: "Saving and privacy" });
+  }
+
+  if (hasQuestions) sections.push({ id: "questions", label: "Questions" });
   if (product.relatedProductSlugs.length > 0) sections.push({ id: "what-it-works-with", label: "Works with" });
   return sections;
 }
