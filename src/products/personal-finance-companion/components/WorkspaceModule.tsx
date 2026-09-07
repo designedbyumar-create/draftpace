@@ -2,14 +2,14 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
 import type { ProductDefinition } from "@/product-framework/definition";
 import Badge from "@/design-system/Badge";
 import Button from "@/design-system/Button";
 import Surface from "@/design-system/Surface";
 import EmptyState from "@/design-system/EmptyState";
 import { Compass, Bell, WarningCircle, Clock, ArrowRight, CheckCircle2, Layers3 } from "@/design-system/Icon";
-import GuidedTour, { type TourStep } from "@/products/monthly-money-reset/components/GuidedTour";
+import GuidedTour, { type TourStep } from "@/components/platform/GuidedTour";
+import { useFirstRunTour } from "@/components/platform/useFirstRunTour";
 import { formatCurrency } from "@/lib/currency";
 import { describeResultError } from "@/product-framework/result";
 import { findPersonalFinanceCompanionInstanceId } from "../setupStateData";
@@ -68,14 +68,11 @@ const TOUR_STEPS: TourStep[] = [
 ];
 
 export default function WorkspaceModule({ definition }: { definition?: ProductDefinition }) {
-  const router = useRouter();
-  const searchParams = useSearchParams();
   const [status, setStatus] = useState<LoadStatus>("loading");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [records, setRecords] = useState<FinancialPictureInputs | null>(null);
   const [unreviewedImportCount, setUnreviewedImportCount] = useState(0);
   const [snoozed, setSnoozed] = useState<Record<string, string>>({});
-  const [tourOn, setTourOn] = useState(false);
 
   const load = useCallback(async () => {
     setStatus("loading");
@@ -126,30 +123,7 @@ export default function WorkspaceModule({ definition }: { definition?: ProductDe
   }, [load]);
 
   const slug = definition?.slug ?? "personal-finance-companion";
-  const replayRequested = searchParams.get("tour") === "1";
-
-  useEffect(() => {
-    if (status !== "ready" || typeof window === "undefined") return;
-
-    // An explicit replay (Settings -> Replay tour) always starts the tour
-    // and is cleared from the URL immediately so a refresh doesn't
-    // re-trigger it — same pattern as Monthly Money Reset's own tour.
-    if (replayRequested) {
-      setTourOn(true);
-      router.replace(`/app/products/${slug}/workspace`);
-      return;
-    }
-
-    const key = `draftpace-tour-${slug}`;
-    if (window.localStorage.getItem(key)) return;
-    const timer = window.setTimeout(() => setTourOn(true), 550);
-    return () => window.clearTimeout(timer);
-  }, [status, replayRequested, router, slug]);
-
-  const finishTour = useCallback(() => {
-    setTourOn(false);
-    if (typeof window !== "undefined") window.localStorage.setItem(`draftpace-tour-${slug}`, "1");
-  }, [slug]);
+  const { tourOn, finishTour } = useFirstRunTour(slug, status === "ready");
 
   const now = useMemo(() => new Date(), []);
 

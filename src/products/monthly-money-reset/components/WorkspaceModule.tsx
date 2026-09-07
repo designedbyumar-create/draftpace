@@ -1,7 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import type { ProductDefinition } from "@/product-framework/definition";
 import Button from "@/design-system/Button";
@@ -17,7 +16,8 @@ import SinceLastHere from "./SinceLastHere";
 import QuickAddModal from "./QuickAddModal";
 import CheckInModal from "./CheckInModal";
 import ThemeScope from "./ThemeScope";
-import GuidedTour, { type TourStep } from "./GuidedTour";
+import GuidedTour, { type TourStep } from "@/components/platform/GuidedTour";
+import { useFirstRunTour } from "@/components/platform/useFirstRunTour";
 import { computeSafeToSpend, markBillPaid, markBillSkipped } from "../calculations";
 import { computeTightestDay } from "../cycleTimeline";
 import { computeNextAction } from "../nextAction";
@@ -90,13 +90,10 @@ function activityLabel(entry: ActivityEntry): string {
 const LABEL = "text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--mmr-sage-strong)]";
 
 export default function WorkspaceModule({ definition }: { definition: ProductDefinition }) {
-  const router = useRouter();
-  const searchParams = useSearchParams();
   const { status, state, saveStatus, setState, forceSave, retry } = useInstanceState(definition.slug);
   const [view, setView] = useState<View>("overview");
   const [quickAddOpen, setQuickAddOpen] = useState(false);
   const [checkInOpen, setCheckInOpen] = useState(false);
-  const [tourOn, setTourOn] = useState(false);
   const [justPaidId, setJustPaidId] = useState<string | null>(null);
   const reduceMotion = useReducedMotion();
 
@@ -109,32 +106,10 @@ export default function WorkspaceModule({ definition }: { definition: ProductDef
     return () => window.clearTimeout(timer);
   }, [justPaidId]);
 
+  // Waits for setup: a tour of an unconfigured Workspace would spotlight
+  // placeholders rather than this person's own numbers.
   const setupDone = Boolean(state?.setup.completedAt);
-  const replayRequested = searchParams.get("tour") === "1";
-
-  useEffect(() => {
-    if (!setupDone || typeof window === "undefined") return;
-
-    // An explicit replay (Settings -> Replay tour) always starts the tour,
-    // regardless of the first-use flag below — the query param is the
-    // trigger, and it's cleared from the URL immediately so a refresh
-    // doesn't re-trigger it. This never touches the first-use flag itself.
-    if (replayRequested) {
-      setTourOn(true);
-      router.replace(`/app/products/${definition.slug}/workspace`);
-      return;
-    }
-
-    const key = `draftpace-tour-${definition.slug}`;
-    if (window.localStorage.getItem(key)) return;
-    const timer = window.setTimeout(() => setTourOn(true), 550);
-    return () => window.clearTimeout(timer);
-  }, [setupDone, definition.slug, replayRequested, router]);
-
-  const finishTour = useCallback(() => {
-    setTourOn(false);
-    if (typeof window !== "undefined") window.localStorage.setItem(`draftpace-tour-${definition.slug}`, "1");
-  }, [definition.slug]);
+  const { tourOn, finishTour } = useFirstRunTour(definition.slug, setupDone);
 
   if (status === "loading") {
     return <p className="text-[13px] text-[var(--muted)]">Loading your Workspace…</p>;
