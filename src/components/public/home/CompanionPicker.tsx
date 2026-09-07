@@ -25,6 +25,8 @@ export interface PickerPanel {
   comingSoon: boolean;
   /** Rendered on the server so this client component never imports a route module. */
   mockup: ReactNode;
+  /** The signature screen shown offset behind the overview. */
+  secondaryMockup: ReactNode;
 }
 
 const CYCLE_MS = 5200;
@@ -49,7 +51,7 @@ const EASE = [0.22, 1, 0.36, 1] as const;
  *
  * WHAT THE RIGHT-HAND COLUMN IS
  *
- * The name of the product, what it costs, the screen, and one button.
+ * The name of the product, what it costs, two screens, and one button.
  * Nothing else. It used to carry a three-line "what you get" checklist
  * and a line about ownership beside the phone, which made the hero the
  * densest block on the site: a heading, a paragraph, eight chips, a
@@ -222,17 +224,57 @@ export default function CompanionPicker({ panels }: { panels: PickerPanel[] }) {
 
               176px, which is 0.6286 of the 280px the frames are drawn
               at. One size at every width. */}
-          <div className="relative aspect-[9/19.5] w-[176px] shrink-0">
+          {/* Two screens, not one. The overview in front and that
+              product's signature screen offset behind it, so the hero
+              says twice as much about a product per glance using art
+              that already existed for its own Shop page.
+
+              The box is sized to hold both exactly. The front phone
+              renders 176 x 381.3 (280 x 606.67 at 0.6286). The back one
+              renders 165.5 x 358.5 (the same frame at 0.5909) and sits
+              at x 96, y 22, so its far edge lands at 261.5 and its
+              bottom at 380.5: both inside a 262 x 381 box. That matters
+              more than it sounds. A decorative element that exceeds its
+              container is exactly what scrolled this page sideways on a
+              phone once already, so the numbers here are derived rather
+              than eyeballed.
+
+              The offset is 96 rather than something tighter because
+              what shows through has to be worth showing: at 72 the
+              visible strip was 65px of a screen's outer margin, which
+              read as a dark slab rather than a second screen. At 96 it
+              is 85px of actual content, the column of figures on the
+              breakdown, the dates on the book.
+
+              Both are keyed on the same slug inside one AnimatePresence,
+              so the pair cross-fades as a single object rather than two
+              screens swapping out of step. */}
+          <div className="relative aspect-[262/381] w-[262px] shrink-0">
             <AnimatePresence mode="wait">
               <motion.div
                 key={active.productSlug}
-                className="absolute left-0 top-0 w-[280px] origin-top-left scale-[0.6286]"
+                className="absolute inset-0"
                 initial={reduceMotion ? false : { opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={reduceMotion ? undefined : { opacity: 0 }}
                 transition={{ duration: 0.28, ease: EASE }}
               >
-                {active.mockup}
+                {/* Behind, and only slightly quieter. Started at 60%
+                    opacity and it went muddy: a screen blended into the
+                    page ground stops looking like a screen. Depth comes
+                    from the offset and the front frame's own shadow
+                    instead, so this stays a legible second screen.
+                    Hidden from assistive tech because a mockup is a wall
+                    of text and two of them read as one garbled screen. */}
+                <div
+                  aria-hidden
+                  className="absolute left-[96px] top-[22px] w-[280px] origin-top-left scale-[0.5909] opacity-90"
+                >
+                  {active.secondaryMockup}
+                </div>
+                <div className="absolute left-0 top-0 w-[280px] origin-top-left scale-[0.6286]">
+                  {active.mockup}
+                </div>
               </motion.div>
             </AnimatePresence>
           </div>

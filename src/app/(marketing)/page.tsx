@@ -13,14 +13,38 @@ import { LIFE_AREAS } from "@/content/areas";
 import { discountPercent, formatCompareAtPrice, formatPrice } from "@/shop/definition";
 import { shopRegistry } from "@/shop/registry";
 import { ensureShopRegistered } from "@/shop/ensureRegistered";
-import { OverviewScreenMockup as MmrMockup } from "./shop/[productSlug]/monthlyMoneyResetVisuals";
-import { OverviewScreenMockup as HmcMockup } from "./shop/[productSlug]/homeManagementCompanionVisuals";
-import { OverviewScreenMockup as AlongsideMockup } from "./shop/[productSlug]/adhdLifeCompanionVisuals";
-import { OverviewScreenMockup as HscMockup } from "./shop/[productSlug]/homeschoolingCompanionVisuals";
-import { OverviewScreenMockup as PlaMockup } from "./shop/[productSlug]/personalLifeAffairsCompanionVisuals";
-import { OverviewScreenMockup as TravelMockup } from "./shop/[productSlug]/travelCompanionVisuals";
-import { OverviewScreenMockup as VmcMockup } from "./shop/[productSlug]/vehicleMaintenanceCompanionVisuals";
-import { OverviewScreenMockup as FhbMockup } from "./shop/[productSlug]/familyHealthBinderVisuals";
+import {
+  OverviewScreenMockup as MmrMockup,
+  BreakdownScreenMockup as MmrSecond,
+} from "./shop/[productSlug]/monthlyMoneyResetVisuals";
+import {
+  OverviewScreenMockup as HmcMockup,
+  ActionRecordScreenMockup as HmcSecond,
+} from "./shop/[productSlug]/homeManagementCompanionVisuals";
+import {
+  OverviewScreenMockup as AlongsideMockup,
+  CompanionScreenMockup as AlongsideSecond,
+} from "./shop/[productSlug]/adhdLifeCompanionVisuals";
+import {
+  OverviewScreenMockup as HscMockup,
+  CheckScreenMockup as HscSecond,
+} from "./shop/[productSlug]/homeschoolingCompanionVisuals";
+import {
+  OverviewScreenMockup as PlaMockup,
+  BookScreenMockup as PlaSecond,
+} from "./shop/[productSlug]/personalLifeAffairsCompanionVisuals";
+import {
+  OverviewScreenMockup as TravelMockup,
+  ChangeImpactScreenMockup as TravelSecond,
+} from "./shop/[productSlug]/travelCompanionVisuals";
+import {
+  OverviewScreenMockup as VmcMockup,
+  ServiceBoundaryScreenMockup as VmcSecond,
+} from "./shop/[productSlug]/vehicleMaintenanceCompanionVisuals";
+import {
+  OverviewScreenMockup as FhbMockup,
+  IntakeSummaryScreenMockup as FhbSecond,
+} from "./shop/[productSlug]/familyHealthBinderVisuals";
 
 export const metadata: Metadata = {
   title: "Companions for the parts of life that are hard to keep track of",
@@ -45,6 +69,27 @@ const AREA_MOCKUP: Record<string, React.ReactNode> = {
   "family-health": <FhbMockup />,
 };
 
+/**
+ * The screen that sits behind the overview in the hero's offset pair.
+ *
+ * Not a second arbitrary screen: each of these is the one thing that
+ * product is actually for, and the overview alone never shows it. The
+ * breakdown behind Safe-to-Spend, the printed book behind Personal Life
+ * Affairs, the Service Boundary behind Vehicle Maintenance. Two screens
+ * say twice as much about a product as one, and every one of these was
+ * already drawn for its own Shop page.
+ */
+const AREA_SECOND_MOCKUP: Record<string, React.ReactNode> = {
+  money: <MmrSecond />,
+  home: <HmcSecond />,
+  "mind-and-focus": <AlongsideSecond />,
+  "family-and-learning": <HscSecond />,
+  "affairs-and-endings": <PlaSecond />,
+  travel: <TravelSecond />,
+  vehicles: <VmcSecond />,
+  "family-health": <FhbSecond />,
+};
+
 export default function HomePage() {
   ensureShopRegistered();
 
@@ -52,6 +97,7 @@ export default function HomePage() {
     const productSlug = area.productSlugs[0];
     const product = shopRegistry.getBySlug(productSlug);
     const mockup = AREA_MOCKUP[area.slug];
+    const secondaryMockup = AREA_SECOND_MOCKUP[area.slug];
     if (!product || !mockup) return [];
     return [
       {
@@ -69,6 +115,7 @@ export default function HomePage() {
         isFree: product.access === "free",
         comingSoon: product.availability === "coming-soon",
         mockup,
+        secondaryMockup,
       },
     ];
   });
