@@ -182,8 +182,77 @@ describe("the built checkout URL carries everything the overlay and webhook need
     expect(new URL(built!).searchParams.get("button_color")).toBe(accent);
   });
 
+  it("returns the buyer to the welcome screen, not to the Shop page they were on", () => {
+    // Straight to /app/products/... would race the webhook and bounce a
+    // paying customer to an activation page. /app/welcome waits.
+    const success = new URL(built!).searchParams.get("checkout[success_url]");
+    expect(success).toContain(`/app/welcome/${slug}`);
+    expect(success).not.toContain("/shop");
+  });
+
   it("returns null for a product with no checkout, rather than a broken URL", () => {
     expect(getLemonSqueezyCheckoutUrl("not-a-product", { userId: "u", email: null })).toBeNull();
+  });
+});
+
+/**
+ * The post-purchase screen is the one place in the product where somebody
+ * has already paid. Two things must hold there no matter what: it can
+ * never grant access itself, and it can never tell a paying customer they
+ * do not own what they bought.
+ */
+describe("the welcome screen is honest and grants nothing", () => {
+  const page = read("src/app/app/welcome/[productSlug]/page.tsx");
+  const awaiting = read("src/components/platform/AwaitingGrant.tsx");
+  const endpoint = read("src/app/api/products/[productSlug]/entitlement/route.ts");
+
+  it("only ever reads the entitlement, never writes one", () => {
+    // A POST, an RPC, or an insert here would be a way to obtain a paid
+    // product by visiting a URL.
+    expect(page).not.toMatch(/\.rpc\(|\.insert\(|\.upsert\(/);
+    expect(page).toContain('.from("entitlements")');
+    expect(page).toContain(".select(");
+  });
+
+  it("exposes no write path from the polling endpoint either", () => {
+    expect(endpoint).not.toMatch(/\.rpc\(|\.insert\(|\.upsert\(/);
+    expect(endpoint).toContain("export async function GET");
+    expect(endpoint).not.toContain("export async function POST");
+  });
+
+  it("requires a real session to answer, so it cannot report on somebody else", () => {
+    expect(endpoint).toContain("auth.getUser()");
+    expect(endpoint).toContain("401");
+  });
+
+  it("treats a read failure as unknown, never as not-granted", () => {
+    // Returning granted:false on an error would make a database blip look
+    // identical to a webhook that has not arrived, and the screen would
+    // stop waiting for something that already happened.
+    expect(endpoint).toMatch(/if \(error\) return NextResponse\.json\([^)]*503/);
+  });
+
+  it("gives up into a real next step rather than a dead end", () => {
+    expect(awaiting).toContain("timedOut");
+    expect(awaiting).toContain("/support");
+  });
+
+  it("never tells a paying customer the purchase failed", () => {
+    // Comments stripped first: this is about what the screen says, and
+    // the file's own doc comment discusses the wording it must avoid.
+    const copy = awaiting
+      .replace(/\/\*[\s\S]*?\*\//g, "")
+      .replace(/\/\/.*$/gm, "")
+      .toLowerCase();
+
+    for (const forbidden of ["do not own", "don't own", "not found", "no access", "failed", "error"]) {
+      expect(copy, `the waiting state says "${forbidden}" to somebody who has paid`).not.toContain(forbidden);
+    }
+  });
+
+  it("is kept out of search results, being a per-customer page", () => {
+    expect(page).toContain("robots:");
+    expect(page).toContain("index: false");
   });
 });
 

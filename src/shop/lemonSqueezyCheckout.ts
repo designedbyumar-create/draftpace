@@ -75,6 +75,9 @@ const CHECKOUT_URL_ENV_BY_SLUG: Record<string, string | undefined> = {
   "family-health-binder": process.env.LEMON_SQUEEZY_FHB_CHECKOUT_URL,
 };
 
+/** Matches sitemap.ts, so a preview deployment returns to itself. */
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://draftpace.com";
+
 function baseCheckoutUrl(productSlug: string): string | undefined {
   return CHECKOUT_URL_ENV_BY_SLUG[productSlug] ?? CHECKOUT_URL_BY_SLUG[productSlug];
 }
@@ -117,5 +120,18 @@ export function getLemonSqueezyCheckoutUrl(
 
   url.searchParams.set("checkout[custom][user_id]", visitor.userId);
   if (visitor.email) url.searchParams.set("checkout[email]", visitor.email);
+
+  // Where Lemon Squeezy sends the customer once payment clears. Without
+  // it the overlay closes onto the Shop page they were already reading,
+  // which still says "Get it": nothing confirms the purchase and the
+  // obvious next click is the buy button again. /app/welcome waits for
+  // the grant to land before offering the way in, which is why this does
+  // not point straight at the product.
+  //
+  // Set per checkout rather than in the Lemon Squeezy dashboard so it
+  // stays correct per product with nothing to configure by hand, and so
+  // it is visible here next to everything else the link carries.
+  if (siteUrl) url.searchParams.set("checkout[success_url]", `${siteUrl}/app/welcome/${productSlug}`);
+
   return url.toString();
 }
