@@ -83,7 +83,7 @@ export default function PasteNotesStep({
         <Button variant="secondary" size="md" onClick={onBack} disabled={busy}>
           Back
         </Button>
-        <Button size="md" onClick={findRecords} disabled={busy}>
+        <Button variant="commit" size="md" onClick={findRecords} disabled={busy}>
           {busy ? "Looking for records…" : "Find records"}
         </Button>
       </div>

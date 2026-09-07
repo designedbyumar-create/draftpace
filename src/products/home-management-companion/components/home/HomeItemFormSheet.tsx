@@ -237,7 +237,7 @@ export default function HomeItemFormSheet({
             <Button variant="secondary" onClick={onClose} disabled={addingTasks}>
               Skip
             </Button>
-            <Button onClick={handleConfirmSuggestions} disabled={addingTasks || checkedTasks.size === 0}>
+            <Button variant="commit" onClick={handleConfirmSuggestions} disabled={addingTasks || checkedTasks.size === 0}>
               {addingTasks ? "Adding…" : `Add ${checkedTasks.size || ""} task${checkedTasks.size === 1 ? "" : "s"}`}
             </Button>
           </>
@@ -280,7 +280,7 @@ export default function HomeItemFormSheet({
           <Button variant="secondary" onClick={onClose} disabled={saving}>
             Cancel
           </Button>
-          <Button onClick={handleSave} disabled={saving}>
+          <Button variant="commit" onClick={handleSave} disabled={saving}>
             {saving ? "Saving…" : "Save"}
           </Button>
         </>

@@ -171,7 +171,7 @@ export default function DebtModule() {
                   Remind me
                 </Button>
               )}
-              <Button
+              <Button variant="action"
                 size="sm"
                 onClick={() => {
                   setEditingDebt(dominantAction.debt);
@@ -192,7 +192,7 @@ export default function DebtModule() {
           description="Add a credit card, loan, or anything else you owe money on."
           action={
             <div ref={addButtonRef} className="inline-block">
-              <Button size="sm" iconLeft={<Plus size={14} aria-hidden />} onClick={() => setFormOpen(true)}>
+              <Button variant="action" size="sm" iconLeft={<Plus size={14} aria-hidden />} onClick={() => setFormOpen(true)}>
                 Add debt
               </Button>
             </div>

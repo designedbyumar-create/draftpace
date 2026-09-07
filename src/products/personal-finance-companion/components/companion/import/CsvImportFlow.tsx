@@ -347,7 +347,7 @@ export default function CsvImportFlow({
           <Button variant="secondary" size="md" onClick={() => setStep("upload")}>
             Back
           </Button>
-          <Button size="md" onClick={confirmImport}>
+          <Button variant="commit" size="md" onClick={confirmImport}>
             Import {mappedRows.length} {mappedRows.length === 1 ? "transaction" : "transactions"}
           </Button>
         </div>
@@ -371,7 +371,7 @@ export default function CsvImportFlow({
       {ambiguousCandidates.length > 0 && (
         <Alert tone="warning">{ambiguousCandidates.length} rows need individual review before they can be confirmed.</Alert>
       )}
-      <Button size="md" onClick={() => onDone(ambiguousCandidates, accountId)}>
+      <Button variant="commit" size="md" onClick={() => onDone(ambiguousCandidates, accountId)}>
         Continue
       </Button>
     </Surface>

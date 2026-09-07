@@ -122,7 +122,7 @@ export default function GuidedTour({ steps, onFinish }: { steps: TourStep[]; onF
           >
             Skip
           </button>
-          <Button size="sm" onClick={goNext}>
+          <Button variant="commit" size="sm" onClick={goNext}>
             {isLast ? "Got it" : "Next"}
           </Button>
         </div>

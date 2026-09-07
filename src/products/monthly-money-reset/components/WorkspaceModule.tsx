@@ -151,7 +151,7 @@ export default function WorkspaceModule({ definition }: { definition: ProductDef
         title="This product isn't set up in your library yet"
         description="Add Monthly Money Reset to your library first, then come back here."
         action={
-          <Button href={`/app/activate/${definition.slug}`} size="md">
+          <Button variant="commit" href={`/app/activate/${definition.slug}`} size="md">
             Add to my library
           </Button>
         }
@@ -166,7 +166,7 @@ export default function WorkspaceModule({ definition }: { definition: ProductDef
         title="Finish setup for a complete picture"
         description="You can still look around, but Safe-to-Spend won't be accurate until setup is finished."
         action={
-          <Button href={`/app/products/${definition.slug}/setup`} size="md">
+          <Button variant="commit" href={`/app/products/${definition.slug}/setup`} size="md">
             Finish setup
           </Button>
         }
@@ -235,7 +235,7 @@ export default function WorkspaceModule({ definition }: { definition: ProductDef
               />
             </div>
             <div className="flex flex-col gap-2">
-              <Button
+              <Button variant="action"
                 id="mmr-tour-quick-add"
                 size="lg"
                 fullWidth

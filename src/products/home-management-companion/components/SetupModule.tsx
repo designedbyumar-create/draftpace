@@ -260,7 +260,7 @@ export default function SetupModule() {
           </div>
           {errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}
           <div className="flex flex-wrap items-center gap-3">
-            <Button disabled={picked.size === 0} iconRight={<ArrowRight size={14} aria-hidden />} onClick={() => setStep("care")}>
+            <Button variant="commit" disabled={picked.size === 0} iconRight={<ArrowRight size={14} aria-hidden />} onClick={() => setStep("care")}>
               {picked.size === 0 ? "Pick a few" : `Continue with ${picked.size}`}
             </Button>
             <Button variant="secondary" href="/app/products/home-management-companion/import">
@@ -287,7 +287,7 @@ export default function SetupModule() {
           )}
           {errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}
           <div className="flex flex-wrap gap-3">
-            <Button
+            <Button variant="commit"
               disabled={busy}
               iconRight={<ArrowRight size={14} aria-hidden />}
               onClick={async () => {
@@ -321,7 +321,7 @@ export default function SetupModule() {
             </p>
           )}
           <div>
-            <Button disabled={busy} onClick={finish} iconRight={<Check size={14} aria-hidden />}>
+            <Button variant="commit" disabled={busy} onClick={finish} iconRight={<Check size={14} aria-hidden />}>
               {busy ? "Finishing…" : wrongSentence.trim() ? "Save and finish" : "Nothing right now"}
             </Button>
           </div>

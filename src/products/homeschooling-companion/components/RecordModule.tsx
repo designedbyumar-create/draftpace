@@ -268,7 +268,7 @@ export default function RecordModule() {
             <p className="mt-2 text-[12px] text-[var(--faint)]">Choose a child above first.</p>
           )}
           <div className="mt-3 flex flex-wrap gap-2">
-            <Button size="sm" disabled={pending || !noteText.trim()} onClick={saveNote}>
+            <Button variant="commit" size="sm" disabled={pending || !noteText.trim()} onClick={saveNote}>
               {pending ? "Saving..." : "Save it"}
             </Button>
             <Button size="sm" variant="ghost" disabled={pending} onClick={() => setWriting(false)}>
@@ -331,7 +331,7 @@ export default function RecordModule() {
                 {option === "LETTER" ? "US Letter" : "A4"}
               </Button>
             ))}
-            <Button size="sm" disabled={makingRecord} onClick={makeRecord}>
+            <Button variant="commit" size="sm" disabled={makingRecord} onClick={makeRecord}>
               {makingRecord ? "Preparing..." : "Save as PDF"}
             </Button>
           </div>

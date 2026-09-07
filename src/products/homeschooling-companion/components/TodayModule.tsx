@@ -172,7 +172,7 @@ export default function TodayModule() {
             you can also just record what you did without any plan at all.
           </p>
           <div className="mt-4">
-            <Button size="sm" href={`/app/products/${HOMESCHOOLING_COMPANION_SLUG}/kids`}>
+            <Button variant="action" size="sm" href={`/app/products/${HOMESCHOOLING_COMPANION_SLUG}/kids`}>
               Go to your children
             </Button>
           </div>
@@ -235,7 +235,7 @@ export default function TodayModule() {
                         </p>
                       )}
                       <div className="mt-3 flex flex-wrap gap-2">
-                        <Button size="sm" disabled={busy} onClick={() => record(task, "done")}>
+                        <Button variant="action" size="sm" disabled={busy} onClick={() => record(task, "done")}>
                           {busy ? "Saving..." : "Done"}
                         </Button>
                         <Button size="sm" variant="ghost" disabled={busy} onClick={() => record(task, "not-completed")}>

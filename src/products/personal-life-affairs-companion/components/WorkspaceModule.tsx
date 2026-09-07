@@ -206,7 +206,7 @@ export default function WorkspaceModule() {
           </h1>
           <p className="mt-2 max-w-lg text-[13.5px] leading-relaxed text-[var(--muted)]">{intake.why}</p>
           <div className="mt-4 flex flex-wrap gap-2">
-            <Button size="sm" disabled={pending} onClick={() => answerIntake(intake.gate, true)}>
+            <Button variant="action" size="sm" disabled={pending} onClick={() => answerIntake(intake.gate, true)}>
               Yes
             </Button>
             <Button size="sm" variant="secondary" disabled={pending} onClick={() => answerIntake(intake.gate, false)}>
@@ -338,7 +338,7 @@ export default function WorkspaceModule() {
           <div className="mt-5 flex flex-wrap gap-2">
             {next.reason === "needsRecheck" && next.existing.length > 0 ? (
               <>
-                <Button size="sm" disabled={pending} onClick={() => confirmStanding(next.existing[0])}>
+                <Button variant="commit" size="sm" disabled={pending} onClick={() => confirmStanding(next.existing[0])}>
                   Still true
                 </Button>
                 <Button
@@ -351,7 +351,7 @@ export default function WorkspaceModule() {
                 </Button>
               </>
             ) : next.step.kind === "establish" && spec ? (
-              <Button
+              <Button variant="action"
                 size="sm"
                 disabled={pending}
                 onClick={() => {
@@ -362,7 +362,7 @@ export default function WorkspaceModule() {
                 {next.reason === "needsDetail" ? "Add the details" : "Start"}
               </Button>
             ) : (
-              <Button size="sm" disabled={pending} onClick={() => act(next.step.key, "confirmed")}>
+              <Button variant="commit" size="sm" disabled={pending} onClick={() => act(next.step.key, "confirmed")}>
                 Done this
               </Button>
             )}

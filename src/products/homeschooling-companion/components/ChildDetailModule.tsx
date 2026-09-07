@@ -369,7 +369,7 @@ export default function ChildDetailModule({ childId }: { childId: string }) {
                     addSubject(newSubject);
                   }}
                 />
-                <Button size="sm" disabled={pending || !newSubject.trim()} onClick={() => addSubject(newSubject)}>
+                <Button variant="commit" size="sm" disabled={pending || !newSubject.trim()} onClick={() => addSubject(newSubject)}>
                   Add
                 </Button>
                 <Button size="sm" variant="ghost" disabled={pending} onClick={() => setAddingSubject(false)}>
@@ -484,7 +484,7 @@ export default function ChildDetailModule({ childId }: { childId: string }) {
             {`A short check on what ${child.name} has actually been working with. You provide the questions, from your own head, from your curriculum's own tests, or from the printed check sheets, and this keeps them for next time.`}
           </p>
           <div className="mt-4">
-            <Button
+            <Button variant="action"
               size="sm"
               href={`/app/products/${HOMESCHOOLING_COMPANION_SLUG}/kids/${child.id}/check`}
               iconLeft={<ShieldCheck size={14} aria-hidden />}

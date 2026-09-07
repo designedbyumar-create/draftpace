@@ -102,7 +102,7 @@ export default function ReminderConsentPrompt({ instanceId, onDone }: { instance
         <Button size="md" variant="secondary" onClick={onDone} disabled={saving}>
           Not now
         </Button>
-        <Button size="md" onClick={setReminders} disabled={saving}>
+        <Button variant="action" size="md" onClick={setReminders} disabled={saving}>
           {saving ? "Saving…" : "Set my reminders"}
         </Button>
       </div>

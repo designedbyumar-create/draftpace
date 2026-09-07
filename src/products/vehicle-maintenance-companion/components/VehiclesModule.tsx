@@ -98,7 +98,7 @@ function AddVehicleForm({
 
       {errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}
       <div className="flex flex-wrap items-center gap-2">
-        <Button onClick={save} disabled={pending || label.trim().length === 0}>
+        <Button variant="commit" onClick={save} disabled={pending || label.trim().length === 0}>
           Add vehicle
         </Button>
         <Button variant="ghost" onClick={onCancel} disabled={pending}>
@@ -247,7 +247,7 @@ function AddMaintenanceItemForm({
 
       {errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}
       <div className="flex flex-wrap items-center gap-2">
-        <Button size="sm" onClick={save} disabled={pending || taskName.trim().length === 0}>
+        <Button variant="commit" size="sm" onClick={save} disabled={pending || taskName.trim().length === 0}>
           Add item
         </Button>
         <Button size="sm" variant="ghost" onClick={onCancel} disabled={pending}>
@@ -351,7 +351,7 @@ function VehicleCard({
       {editingMileage ? (
         <div className="mt-2 flex flex-wrap items-center gap-2">
           <Input value={mileageDraft} onChange={(e) => setMileageDraft(e.target.value)} placeholder="Current mileage" containerClassName="w-40" />
-          <Button size="sm" disabled={pending} onClick={saveMileage}>
+          <Button variant="commit" size="sm" disabled={pending} onClick={saveMileage}>
             Save
           </Button>
           <Button size="sm" variant="ghost" disabled={pending} onClick={() => setEditingMileage(false)}>

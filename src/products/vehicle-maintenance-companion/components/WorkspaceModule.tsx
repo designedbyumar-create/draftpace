@@ -77,7 +77,7 @@ function DueHero({ entry, pending, onMarkDone }: { entry: DueVehicleItem; pendin
         {intervalLine(entry) ? ` (${intervalLine(entry)})` : ""}
       </p>
       <div className="mt-4">
-        <Button size="sm" disabled={pending} onClick={onMarkDone}>
+        <Button variant="commit" size="sm" disabled={pending} onClick={onMarkDone}>
           {pending ? "Saving..." : "Mark done today"}
         </Button>
       </div>

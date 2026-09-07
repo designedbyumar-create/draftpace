@@ -90,7 +90,7 @@ export default function HistoryModule({ definition }: { definition: ProductDefin
         title="This product isn't set up in your library yet"
         description="Add Monthly Money Reset to your library first."
         action={
-          <Button href={`/app/activate/${definition.slug}`} size="md">
+          <Button variant="commit" href={`/app/activate/${definition.slug}`} size="md">
             Add to my library
           </Button>
         }
@@ -216,7 +216,7 @@ export default function HistoryModule({ definition }: { definition: ProductDefin
         </div>
 
         {!alreadyClosed && !closing && (
-          <Button className="mt-4" onClick={() => setClosing(true)}>
+          <Button variant="action" className="mt-4" onClick={() => setClosing(true)}>
             Close {state.cycle.label}
           </Button>
         )}
@@ -350,7 +350,7 @@ export default function HistoryModule({ definition }: { definition: ProductDefin
           )}
 
           <div className="mt-5 flex flex-wrap gap-2">
-            <Button
+            <Button variant="action"
               onClick={finishClose}
               disabled={working || !startingBalanceTouched}
               iconLeft={<Check size={14} aria-hidden />}
@@ -372,7 +372,7 @@ export default function HistoryModule({ definition }: { definition: ProductDefin
             title="Couldn't load your previous cycles"
             description="This was just a read failure, not a sign anything's missing. Try again."
             action={
-              <Button size="md" onClick={() => setPastCyclesRetryToken((t) => t + 1)}>
+              <Button variant="action" size="md" onClick={() => setPastCyclesRetryToken((t) => t + 1)}>
                 Try again
               </Button>
             }

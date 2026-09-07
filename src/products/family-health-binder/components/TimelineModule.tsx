@@ -128,7 +128,7 @@ function AddEventForm({
 
       {errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}
       <div className="flex flex-wrap items-center gap-2">
-        <Button size="sm" onClick={save} disabled={pending || description.trim().length === 0}>
+        <Button variant="commit" size="sm" onClick={save} disabled={pending || description.trim().length === 0}>
           Record it
         </Button>
         <Button size="sm" variant="ghost" onClick={onCancel} disabled={pending}>

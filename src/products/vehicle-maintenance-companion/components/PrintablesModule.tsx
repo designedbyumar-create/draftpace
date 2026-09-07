@@ -131,7 +131,7 @@ export default function PrintablesModule({ definition }: { definition: ProductDe
             <p className="mt-0.5 text-[12px] text-[var(--muted)]">Generated fresh each time, dated and mileage-stamped.</p>
           </div>
         </div>
-        <Button size="sm" disabled={making} onClick={generate}>
+        <Button variant="commit" size="sm" disabled={making} onClick={generate}>
           {making ? "Preparing..." : "Generate"}
         </Button>
       </Surface>

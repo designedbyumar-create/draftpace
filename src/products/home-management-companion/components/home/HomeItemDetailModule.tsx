@@ -415,7 +415,7 @@ export default function HomeItemDetailModule() {
                           {problem.resolutionStatus === "scheduled" && problem.scheduledAt && ` · someone's coming ${problem.scheduledAt}`}
                         </p>
                         <div className="mt-2.5">
-                          <Button size="sm" onClick={() => setResolvingProblem(problem)}>
+                          <Button variant="action" size="sm" onClick={() => setResolvingProblem(problem)}>
                             Take a look
                           </Button>
                         </div>

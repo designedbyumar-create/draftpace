@@ -83,7 +83,7 @@ export default function PrintablesModule({ definition }: { definition: ProductDe
         title="This product isn't set up in your library yet"
         description="Add Monthly Money Reset to your library first, then come back here."
         action={
-          <Button href={`/app/activate/${definition.slug}`} size="md">
+          <Button variant="commit" href={`/app/activate/${definition.slug}`} size="md">
             Add to my library
           </Button>
         }
@@ -98,7 +98,7 @@ export default function PrintablesModule({ definition }: { definition: ProductDe
         title="Finish setup to make your snapshot"
         description="Your Printable is built from your plan, so it needs setup finished first. It only takes a minute."
         action={
-          <Button href={`/app/products/${definition.slug}/setup`} size="md">
+          <Button variant="commit" href={`/app/products/${definition.slug}/setup`} size="md">
             Finish setup
           </Button>
         }
@@ -135,7 +135,7 @@ export default function PrintablesModule({ definition }: { definition: ProductDe
         <PrintablePreview data={data} />
 
         <div className="mt-5 flex flex-wrap items-center gap-3">
-          <Button size="lg" iconLeft={<Download size={15} aria-hidden />} onClick={handleDownload} disabled={generating}>
+          <Button variant="commit" size="lg" iconLeft={<Download size={15} aria-hidden />} onClick={handleDownload} disabled={generating}>
             {generating ? "Preparing your PDF…" : "Download PDF"}
           </Button>
           <p className="text-[12px] text-[var(--mmr-muted)]">

@@ -299,7 +299,7 @@ export default function QuickAddModal({
             </p>
           )}
 
-          <Button type="submit" size="lg" fullWidth disabled={submitting || !preview} iconLeft={submitting ? <Spinner /> : undefined}>
+          <Button variant="commit" type="submit" size="lg" fullWidth disabled={submitting || !preview} iconLeft={submitting ? <Spinner /> : undefined}>
             {submitting ? "Saving…" : saveFailed ? "Try again" : "Save and update my month"}
           </Button>
         </form>

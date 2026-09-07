@@ -256,7 +256,7 @@ export default function HomeModule() {
           description="Add something in your home, and Home Base will tell you what it needs and when, so you don't have to keep track of it."
           action={
             <div ref={addRef} className="inline-flex flex-wrap justify-center gap-2">
-              <Button size="sm" iconLeft={<Plus size={14} aria-hidden />} onClick={() => setAddOpen(true)}>
+              <Button variant="action" size="sm" iconLeft={<Plus size={14} aria-hidden />} onClick={() => setAddOpen(true)}>
                 Add something
               </Button>
               <Button size="sm" variant="secondary" href="/app/products/home-management-companion/import">
@@ -322,7 +322,7 @@ export default function HomeModule() {
               tone="warning"
               actions={
                 <>
-                  <Button size="sm" disabled={pendingId === item.id} onClick={() => setResolvingProblem(problemsById.get(item.entityId) ?? null)}>
+                  <Button variant="action" size="sm" disabled={pendingId === item.id} onClick={() => setResolvingProblem(problemsById.get(item.entityId) ?? null)}>
                     Take a look
                   </Button>
                   <Button
@@ -350,7 +350,7 @@ export default function HomeModule() {
               actions={
                 item.kind === "maintenanceDue" && instanceId ? (
                   <>
-                    <Button size="sm" disabled={pendingId === item.id} onClick={() => setActionTask(tasksById.get(item.entityId) ?? null)}>
+                    <Button variant="action" size="sm" disabled={pendingId === item.id} onClick={() => setActionTask(tasksById.get(item.entityId) ?? null)}>
                       Action
                     </Button>
                     <Button size="sm" variant="secondary" disabled={pendingId === item.id} onClick={() => runTaskAction(item, (t) => snoozeMaintenanceTask(t, DEFAULT_SNOOZE_DAYS))}>
@@ -441,7 +441,7 @@ export default function HomeModule() {
         className="fixed inset-x-0 bottom-0 z-30 border-t border-[var(--border)] bg-[var(--surface)]/96 px-4 pt-3 backdrop-blur lg:hidden"
         style={{ paddingBottom: "max(env(safe-area-inset-bottom), 12px)" }}
       >
-        <Button fullWidth iconLeft={<Plus size={15} aria-hidden />} onClick={() => setAddOpen(true)}>
+        <Button variant="action" fullWidth iconLeft={<Plus size={15} aria-hidden />} onClick={() => setAddOpen(true)}>
           Add something
         </Button>
       </div>

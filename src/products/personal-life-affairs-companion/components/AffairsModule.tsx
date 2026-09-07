@@ -218,7 +218,7 @@ export default function AffairsModule() {
         )}
 
         <div className="flex flex-wrap gap-2">
-          <Button size="sm" disabled={pending} onClick={() => setEditingId(open.id)}>
+          <Button variant="action" size="sm" disabled={pending} onClick={() => setEditingId(open.id)}>
             Update
           </Button>
           {stale && instanceId && (

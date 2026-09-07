@@ -153,7 +153,7 @@ export default function SubscriptionsModule() {
             <p className="text-[13px] leading-relaxed text-[var(--text)]">
               You&apos;re still deciding on {dominantAction.subscription.name}.
             </p>
-            <Button
+            <Button variant="action"
               size="sm"
               onClick={() => {
                 setEditingSubscription(dominantAction.subscription);
@@ -173,7 +173,7 @@ export default function SubscriptionsModule() {
           description="Add a streaming service, app, or membership that renews on its own."
           action={
             <div ref={addButtonRef} className="inline-block">
-              <Button size="sm" iconLeft={<Plus size={14} aria-hidden />} onClick={() => setFormOpen(true)}>
+              <Button variant="action" size="sm" iconLeft={<Plus size={14} aria-hidden />} onClick={() => setFormOpen(true)}>
                 Add subscription
               </Button>
             </div>

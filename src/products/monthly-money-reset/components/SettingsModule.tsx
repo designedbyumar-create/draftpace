@@ -41,7 +41,7 @@ export default function SettingsModule({ definition }: { definition: ProductDefi
         title="This product isn't set up in your library yet"
         description="Add Monthly Money Reset to your library first."
         action={
-          <Button href={`/app/activate/${definition.slug}`} size="md">
+          <Button variant="commit" href={`/app/activate/${definition.slug}`} size="md">
             Add to my library
           </Button>
         }

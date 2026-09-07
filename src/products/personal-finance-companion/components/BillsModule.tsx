@@ -147,7 +147,7 @@ export default function BillsModule() {
               {dominantAction.bill.name}
               {" "}doesn&apos;t have a due date yet.
             </p>
-            <Button
+            <Button variant="action"
               size="sm"
               onClick={() => {
                 setEditingBill(dominantAction.bill);
@@ -167,7 +167,7 @@ export default function BillsModule() {
           description="Add rent, utilities, insurance, or anything else billed on a schedule."
           action={
             <div ref={addButtonRef} className="inline-block">
-              <Button size="sm" iconLeft={<Plus size={14} aria-hidden />} onClick={() => setFormOpen(true)}>
+              <Button variant="action" size="sm" iconLeft={<Plus size={14} aria-hidden />} onClick={() => setFormOpen(true)}>
                 Add bill
               </Button>
             </div>

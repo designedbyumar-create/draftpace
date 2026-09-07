@@ -149,7 +149,7 @@ export default function TransactionsModule() {
           description="Add what actually happened: money in or out of one of your accounts."
           action={
             <div ref={addButtonRef} className="inline-block">
-              <Button size="sm" iconLeft={<Plus size={14} aria-hidden />} onClick={() => setFormOpen(true)} disabled={accounts.length === 0}>
+              <Button variant="action" size="sm" iconLeft={<Plus size={14} aria-hidden />} onClick={() => setFormOpen(true)} disabled={accounts.length === 0}>
                 Add transaction
               </Button>
             </div>

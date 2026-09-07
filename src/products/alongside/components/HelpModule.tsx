@@ -141,7 +141,7 @@ export default function HelpModule() {
           <p className="text-[15px] leading-6 text-[var(--text)]">Want me to hold on to this?</p>
           <p className="mt-1.5 text-[14px] leading-6 text-[var(--muted)]">{offer.title}</p>
           <div className="mt-4 flex flex-wrap items-center gap-2">
-            <Button size="sm" onClick={keepOffer} disabled={pending}>
+            <Button variant="commit" size="sm" onClick={keepOffer} disabled={pending}>
               Keep it
             </Button>
             <Button size="sm" variant="ghost" onClick={() => setOffer(null)} disabled={pending}>

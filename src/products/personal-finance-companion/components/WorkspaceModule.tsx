@@ -223,7 +223,7 @@ export default function WorkspaceModule({ definition }: { definition?: ProductDe
         description="Once you add a few accounts, bills, or income sources, your current picture appears here."
         action={
           <Link href="/app/products/personal-finance-companion/start">
-            <Button size="sm">Start with Companion</Button>
+            <Button variant="action" size="sm">Start with Companion</Button>
           </Link>
         }
       />
@@ -254,7 +254,7 @@ export default function WorkspaceModule({ definition }: { definition?: ProductDe
               <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">What to do next</p>
               <p className="text-[15px] font-semibold leading-snug text-[var(--text)]">{dominantAction.message}</p>
               <Link href={dominantAction.deepLink} className="self-start">
-                <Button size="sm" iconRight={<ArrowRight size={14} aria-hidden />}>
+                <Button variant="commit" size="sm" iconRight={<ArrowRight size={14} aria-hidden />}>
                   Take care of this
                 </Button>
               </Link>

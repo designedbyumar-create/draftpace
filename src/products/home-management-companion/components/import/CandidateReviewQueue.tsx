@@ -149,7 +149,7 @@ export default function CandidateReviewQueue({
       <Surface elevated className="flex flex-col gap-4">
         <p className="text-[15px] font-semibold text-[var(--text)]">All caught up.</p>
         <p className="text-[13px] text-[var(--muted)]">Every candidate from this import has been reviewed.</p>
-        <Button size="md" onClick={onDone}>
+        <Button variant="commit" size="md" onClick={onDone}>
           Continue
         </Button>
       </Surface>
@@ -243,13 +243,13 @@ export default function CandidateReviewQueue({
                         <Button size="sm" variant="secondary" onClick={() => setEditingId(null)} disabled={isBusy}>
                           Cancel
                         </Button>
-                        <Button size="sm" onClick={() => confirmEdit(candidate)} disabled={isBusy}>
+                        <Button variant="action" size="sm" onClick={() => confirmEdit(candidate)} disabled={isBusy}>
                           {isBusy ? "Saving…" : "Confirm"}
                         </Button>
                       </>
                     ) : isUnsupported ? (
                       <>
-                        <Button size="sm" onClick={() => handleConfirm(candidate)} disabled={isBusy}>
+                        <Button variant="action" size="sm" onClick={() => handleConfirm(candidate)} disabled={isBusy}>
                           {isBusy ? "Saving…" : "Keep as a note"}
                         </Button>
                         <Button
@@ -271,7 +271,7 @@ export default function CandidateReviewQueue({
                       </>
                     ) : (
                       <>
-                        <Button size="sm" onClick={() => handleConfirm(candidate)} disabled={isBusy}>
+                        <Button variant="action" size="sm" onClick={() => handleConfirm(candidate)} disabled={isBusy}>
                           {isBusy ? "Saving…" : CANDIDATE_CONFIRM_LABEL[candidate.candidateType]}
                         </Button>
                         <Button size="sm" variant="secondary" onClick={() => startEdit(candidate)} disabled={isBusy}>
@@ -317,7 +317,7 @@ export default function CandidateReviewQueue({
                       <Button size="sm" variant="secondary" onClick={() => setEditingId(null)} disabled={isBusy}>
                         Cancel
                       </Button>
-                      <Button size="sm" onClick={() => confirmEdit(candidate)} disabled={isBusy}>
+                      <Button variant="action" size="sm" onClick={() => confirmEdit(candidate)} disabled={isBusy}>
                         {isBusy ? "Saving…" : "Confirm"}
                       </Button>
                     </div>
@@ -335,7 +335,7 @@ export default function CandidateReviewQueue({
                     <p className="truncate text-[12px] text-[var(--muted)]">{summary.lines.join(" · ")}</p>
                   </div>
                   <div className="flex shrink-0 gap-1.5">
-                    <Button size="sm" onClick={() => handleConfirm(candidate)} disabled={isBusy || bulkConfirming}>
+                    <Button variant="action" size="sm" onClick={() => handleConfirm(candidate)} disabled={isBusy || bulkConfirming}>
                       {isBusy ? "Saving…" : "Add"}
                     </Button>
                     <Button size="sm" variant="ghost" onClick={() => startEdit(candidate)} disabled={isBusy || bulkConfirming}>

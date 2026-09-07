@@ -87,7 +87,7 @@ function AddMemberForm({
       />
       {errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}
       <div className="flex flex-wrap items-center gap-2">
-        <Button onClick={save} disabled={pending || name.trim().length === 0}>
+        <Button variant="commit" onClick={save} disabled={pending || name.trim().length === 0}>
           Add to the binder
         </Button>
         <Button variant="ghost" onClick={onCancel} disabled={pending}>
@@ -189,7 +189,7 @@ function AddFactForm({
 
       {errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}
       <div className="flex flex-wrap items-center gap-2">
-        <Button size="sm" onClick={save} disabled={pending || detail.trim().length === 0}>
+        <Button variant="commit" size="sm" onClick={save} disabled={pending || detail.trim().length === 0}>
           Add
         </Button>
         <Button size="sm" variant="ghost" onClick={onCancel} disabled={pending}>

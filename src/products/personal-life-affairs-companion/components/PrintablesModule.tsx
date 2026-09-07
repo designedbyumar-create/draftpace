@@ -216,7 +216,7 @@ export default function PrintablesModule() {
             : "Everything you have established, with the date you last confirmed each one. This is the copy you would hand to somebody."}
         </p>
         <div className="mt-4">
-          <Button
+          <Button variant="commit"
             size="sm"
             disabled={pending !== null}
             iconLeft={<Download size={14} aria-hidden />}

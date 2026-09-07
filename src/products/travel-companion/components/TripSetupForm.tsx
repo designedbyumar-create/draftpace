@@ -63,7 +63,7 @@ export default function TripSetupForm({
       </div>
       {errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}
       <div className="flex flex-wrap items-center gap-2">
-        <Button onClick={save} disabled={pending || title.trim().length === 0}>
+        <Button variant="commit" onClick={save} disabled={pending || title.trim().length === 0}>
           Set up this trip
         </Button>
         {onCancel && (
