@@ -2,15 +2,15 @@
 
 import { useEffect, useState, type ReactNode } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import { ArrowRight, Check } from "@/design-system/Icon";
+import { ArrowRight } from "@/design-system/Icon";
 import Badge from "@/design-system/Badge";
 import Button from "@/design-system/Button";
 
 export interface PickerPanel {
   areaSlug: string;
   areaLabel: string;
-  /** The three things this area's Companion actually does, from src/content/areas.ts. */
-  whatHelps: string[];
+  /** This area's own button label, from src/content/areas.ts. */
+  heroCta: string;
   productSlug: string;
   productTitle: string;
   /**
@@ -33,7 +33,7 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 
 /**
  * The homepage hero, as one interaction: pick the part of life you are
- * dealing with, see the Companion that covers it and what it gives you.
+ * dealing with, see the Companion that covers it.
  *
  * This replaces the static-file comparison that used to sit here. That
  * comparison argued about format (a living product versus a dead PDF),
@@ -49,19 +49,29 @@ const EASE = [0.22, 1, 0.36, 1] as const;
  *
  * WHAT THE RIGHT-HAND COLUMN IS
  *
- * The name of the product, what it costs, the screen, and the three
- * things it does, in that order. It used to be a phone floating on the
- * page ground with a checklist loose underneath it, and nothing said
- * what the thing cost. The area is not repeated in it: the chip that is
- * lit on the left already says which one this is.
+ * The name of the product, what it costs, the screen, and one button.
+ * Nothing else. It used to carry a three-line "what you get" checklist
+ * and a line about ownership beside the phone, which made the hero the
+ * densest block on the site: a heading, a paragraph, eight chips, a
+ * product name, a price, three ticked lines, an ownership sentence and
+ * a button, all above the fold. The screen is the argument here; a
+ * reader who wants the three lines is one click from a page that gives
+ * them properly. The area is not repeated either: the chip lit on the
+ * left already says which one this is.
+ *
+ * The button's label comes from the area (heroCta in
+ * src/content/areas.ts), so the one control in the most valuable
+ * position on the site says something about what is behind it and
+ * changes as the picker moves, rather than reading "See the full
+ * product" under a heading that already names the product.
  *
  * MOTION IS FOR STATE CHANGES, NEVER FOR HOVER
  *
  * Hover stays a colour shift everywhere, as it is across the rest of the
  * design system. What moves here is the thing that is actually changing:
- * the chip pill slides between areas, the contents cross-fade and the
- * three lines stagger in, and a hairline under the chips shows how long
- * the current area has left. That last one exists because the section
+ * the chip pill slides between areas, the screen and the button label
+ * cross-fade, and a hairline under the chips shows how long the current
+ * area has left. That last one exists because the section
  * already auto-advanced with no warning at all, which read as the page
  * moving on its own.
  */
@@ -190,7 +200,12 @@ export default function CompanionPicker({ panels }: { panels: PickerPanel[] }) {
           <PriceRow panel={active} />
         </div>
 
-        <div className="flex flex-col items-center gap-5 border-t border-[var(--border)] pt-5 sm:flex-row sm:items-stretch sm:gap-6">
+        {/* A column, not a row. This was phone-beside-text; with the
+            checklist gone there is nothing to sit beside the screen, and
+            leaving the split in place stranded the button across a void
+            of empty page. The screen and its one control now stack, so
+            the button reads as belonging to what is above it. */}
+        <div className="flex flex-col items-start gap-5 border-t border-[var(--border)] pt-5">
           {/* Every mockup is drawn at a fixed 280px with fixed type
               sizes inside them, so narrowing their container reflows the
               screen rather than shrinking it. Scaling the whole frame is
@@ -200,9 +215,7 @@ export default function CompanionPicker({ panels }: { panels: PickerPanel[] }) {
               occupies and nothing below it is thrown out.
 
               176px, which is 0.6286 of the 280px the frames are drawn
-              at. One size at every width: the row has enough room for
-              the three lines beside it even at the narrowest desktop
-              width. */}
+              at. One size at every width. */}
           <div className="relative aspect-[9/19.5] w-[176px] shrink-0">
             <AnimatePresence mode="wait">
               <motion.div
@@ -218,92 +231,38 @@ export default function CompanionPicker({ panels }: { panels: PickerPanel[] }) {
             </AnimatePresence>
           </div>
 
-          <div className="flex w-full min-w-0 flex-col">
-            <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--faint)]">What you get</p>
-
-            {/* The three things the product actually does, from
-                src/content/areas.ts's whatHelps: written under the rule
-                that every line has to be true of the shipped product.
-                Always exactly three, so the block cannot change height,
-                and they stagger in so the change reads as one thing
-                arriving rather than three lines blinking at once. */}
+          {/* The way in, and nothing else. Outline rather than filled,
+              because this sits under a heading that is itself the page's
+              argument and a solid block would outweigh it. */}
+          <div className="min-w-0">
+            {/* The visible label changes with the area; the accessible
+                name still carries the product, so a screen reader's link
+                list does not fill with near-identical generic entries.
+                Keyed on the slug so the label cross-fades with the rest
+                of the panel instead of swapping under the pointer. */}
             <AnimatePresence mode="wait">
-              <motion.ul
+              <motion.div
                 key={active.productSlug}
-                role="list"
-                className="mt-3 flex flex-col gap-2.5"
-                initial={reduceMotion ? false : "hidden"}
-                animate="shown"
-                exit={reduceMotion ? undefined : "hidden"}
-                variants={{
-                  hidden: { transition: { staggerChildren: 0.03, staggerDirection: -1 } },
-                  shown: { transition: { staggerChildren: 0.055, delayChildren: 0.04 } },
-                }}
+                initial={reduceMotion ? false : { opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={reduceMotion ? undefined : { opacity: 0 }}
+                transition={{ duration: 0.22, ease: EASE }}
               >
-                {active.whatHelps.map((line) => (
-                  <motion.li
-                    key={line}
-                    className="flex items-start gap-2.5"
-                    variants={{
-                      hidden: { opacity: 0, y: 6 },
-                      shown: { opacity: 1, y: 0 },
-                    }}
-                    transition={{ duration: 0.26, ease: EASE }}
-                  >
-                    <Check size={14} className="mt-0.5 shrink-0 text-[var(--success)]" aria-hidden />
-                    <span className="text-[13.5px] leading-relaxed text-[var(--muted)]">{line}</span>
-                  </motion.li>
-                ))}
-              </motion.ul>
+                <Button
+                  href={`/shop/${active.productSlug}`}
+                  variant="outline"
+                  aria-label={`See ${active.productTitle} in detail`}
+                  iconRight={<ArrowRight size={15} aria-hidden />}
+                >
+                  {active.heroCta}
+                </Button>
+              </motion.div>
             </AnimatePresence>
-
-            <p className="mt-4 border-t border-[var(--border)] pt-3 text-[12.5px] leading-relaxed text-[var(--faint)]">
-              {ownershipLine(active)}
-            </p>
-
-            {/* The way in, at the foot of the text it belongs to.
-                mt-auto is what lines its bottom edge up with the
-                phone's: the row stretches both columns to the taller of
-                the two, which is the screen, so the button sits on that
-                floor rather than wherever the copy happens to end.
-                Outline rather than filled, because this is the hero's
-                secondary action under a heading that is itself the
-                page's argument, and a solid teal block would outweigh
-                it. */}
-            <div className="mt-5 sm:mt-auto sm:pt-5">
-              {/* The label is not the product's name any more: the name
-                  is already the heading at the top of this column, and
-                  the two sitting in one block read as the same words
-                  twice. The accessible name still carries it, in the
-                  wording the Shop grid's own "see in detail" link uses,
-                  so a link list does not fill up with identical
-                  generic entries. */}
-              <Button
-                href={`/shop/${active.productSlug}`}
-                variant="outline"
-                aria-label={`See ${active.productTitle} in detail`}
-                iconRight={<ArrowRight size={15} aria-hidden />}
-              >
-                See the full product
-              </Button>
-            </div>
           </div>
         </div>
       </div>
     </div>
   );
-}
-
-/**
- * What owning it means, in the terms the rest of the page already uses.
- * A product still on the way has nothing to say about ownership yet, and
- * a free one has no purchase to describe, so neither gets the paid line
- * rather than a softened version of it.
- */
-function ownershipLine(panel: PickerPanel): string {
-  if (panel.comingSoon) return "Not out yet. Nothing to buy, and nothing to sign up to.";
-  if (panel.isFree) return "Free, and it saves to your account like every other Companion.";
-  return "Bought once and owned. No subscription, and it does not expire if you step away.";
 }
 
 /**

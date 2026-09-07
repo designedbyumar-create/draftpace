@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { LogoMark } from "@/design-system/Logo";
+import { Logo } from "@/design-system/Logo";
 import Button from "@/design-system/Button";
 import { ArrowRight } from "@/design-system/Icon";
 import { EASE_OUT, useCombinedReducedMotion } from "./motion";
@@ -39,7 +39,7 @@ export default function StepShell({
     <main className="min-h-screen bg-[var(--app-bg)] px-4 py-6 text-[var(--text)] transition-colors duration-[var(--dur)] ease-[var(--ease-out)]">
       <div className="mx-auto flex min-h-[calc(100vh-48px)] w-full max-w-md flex-col">
         <div className="flex items-center justify-between">
-          <LogoMark size={42} />
+          <Logo height={30} />
           <button
             type="button"
             onClick={onSkip}

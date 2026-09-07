@@ -39,6 +39,17 @@ export interface LifeArea {
    * aspirational line here costs more than a missing one.
    */
   whatHelps: string[];
+  /**
+   * The homepage hero's button label for this area.
+   *
+   * The hero used to carry one static "See the full product" under a
+   * heading that already said the product's name, so the single control
+   * in the most valuable position on the site said nothing about what
+   * was behind it. This is that label, written per area and phrased as
+   * the thing a reader would actually want to see, not as the product's
+   * name a second time.
+   */
+  heroCta: string;
   /** Product slugs, in the order they should be offered. */
   productSlugs: string[];
 }
@@ -55,6 +66,7 @@ export const LIFE_AREAS: LifeArea[] = [
       "Bills, subscriptions and debts held in one place instead of across four bank apps.",
       "A single next move when something needs attention, rather than a dashboard to interpret.",
     ],
+    heroCta: "See how safe-to-spend works",
     productSlugs: ["monthly-money-reset", "personal-finance-companion"],
   },
   {
@@ -68,6 +80,7 @@ export const LIFE_AREAS: LifeArea[] = [
       "What is worth taking care of now, worked out from real dates rather than a nagging schedule.",
       "Snooze and skip that genuinely change what you get asked about again.",
     ],
+    heroCta: "See what a house needs",
     productSlugs: ["home-management-companion"],
   },
   {
@@ -81,6 +94,7 @@ export const LIFE_AREAS: LifeArea[] = [
       "Eight walked-through procedures for the things that are hardest to start, including a hard phone call.",
       "Leaving something half finished records nothing at all. There is no streak and no score.",
     ],
+    heroCta: "See how it helps you start",
     productSlugs: ["alongside"],
   },
   {
@@ -94,6 +108,7 @@ export const LIFE_AREAS: LifeArea[] = [
       "Short checks you run at home to find out honestly whether something landed.",
       "A printable record per child, and a printed handbook that works with a pencil alone.",
     ],
+    heroCta: "See what it records",
     productSlugs: ["homeschooling-companion"],
   },
   {
@@ -107,6 +122,7 @@ export const LIFE_AREAS: LifeArea[] = [
       "A record of what exists and where it is kept, never the documents themselves.",
       "A printed book somebody could actually follow if they had to.",
     ],
+    heroCta: "See what goes in the book",
     productSlugs: ["personal-life-affairs-companion"],
   },
   {
@@ -120,6 +136,7 @@ export const LIFE_AREAS: LifeArea[] = [
       "Change one thing and see exactly what was built on top of it, handled one at a time.",
       "A printable trip book, blank and structured, for when the phone is at four percent.",
     ],
+    heroCta: "See what one change touches",
     productSlugs: ["travel-companion"],
   },
   {
@@ -133,6 +150,7 @@ export const LIFE_AREAS: LifeArea[] = [
       "One ranked view of what is due across every vehicle you own, computed from what you actually recorded.",
       "A dated, mileage-stamped document you can hand to a shop, stating what is requested today and what is not.",
     ],
+    heroCta: "See how due is worked out",
     productSlugs: ["vehicle-maintenance-companion"],
   },
   {
@@ -146,6 +164,7 @@ export const LIFE_AREAS: LifeArea[] = [
       "A structured symptom timeline, onset, duration and severity as real fields, not a memory reconstructed later.",
       "A dated Intake Summary per person, ready to hand to a clinic alongside their own paperwork.",
     ],
+    heroCta: "See what an intake summary holds",
     productSlugs: ["family-health-binder"],
   },
 ];

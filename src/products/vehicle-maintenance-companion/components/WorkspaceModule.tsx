@@ -1,5 +1,6 @@
 "use client";
 
+import FirstRun from "@/components/platform/FirstRun";
 import FirstRunTour from "@/components/platform/FirstRunTour";
 import { VEHICLE_MAINTENANCE_COMPANION_SLUG } from "../instanceData";
 import type { TourStep } from "@/components/platform/GuidedTour";
@@ -166,14 +167,15 @@ export default function WorkspaceModule() {
   }
   if (vehicles.length === 0) {
     return (
-      <>
-        <FirstRunTour slug={VEHICLE_MAINTENANCE_COMPANION_SLUG} steps={TOUR_STEPS} />
-        <EmptyState
-          icon={Car}
-          title="No vehicles yet"
-          description="Add a vehicle in Vehicles to start tracking what it needs, then this screen will show what's due."
-        />
-      </>
+      <FirstRun
+        slug={VEHICLE_MAINTENANCE_COMPANION_SLUG}
+        icon={Car}
+        title="No vehicles yet"
+        description="Add a vehicle to start tracking what it needs, then this screen will show what's due across everything you own."
+        actionLabel="Add your first vehicle"
+        destination="vehicles"
+        steps={TOUR_STEPS}
+      />
     );
   }
 

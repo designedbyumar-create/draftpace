@@ -34,7 +34,14 @@ export default async function MarketingLayout({ children }: { children: React.Re
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteStructuredData()) }}
       />
       <PublicNav user={user ? { email: user.email ?? null, displayName: user.user_metadata?.display_name ?? null } : null} />
-      <main className="flex-1">{children}</main>
+      {/* overflow-x-clip, not hidden: a decorative element that bleeds
+          past its own container scrolls the whole page sideways on a
+          narrow screen, which is one of the worst things a marketing
+          page can do on a phone. Ask DP's atmospheric glow sits at
+          -inset-6 and did exactly that at 390px. `clip` trims the bleed
+          without making this a scroll container, so the sticky header
+          above it keeps working; `hidden` would break it. */}
+      <main className="flex-1 overflow-x-clip">{children}</main>
       <PublicFooter />
     </div>
   );

@@ -198,6 +198,14 @@ export default function TodayModule() {
           icon={CalendarCheck}
           title="Start with a child"
           description="Everything in this product belongs to a child, so today has nobody to be about yet."
+          // The instruction named a destination and then left somebody to
+          // find it. A first screen that says what to do next should be
+          // the thing that takes you there.
+          action={
+            <Button href={`/app/products/${HOMESCHOOLING_COMPANION_SLUG}/kids`} variant="commit" size="sm">
+              Add your first child
+            </Button>
+          }
         />
       ) : view.nothingPlanned ? (
         <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5">

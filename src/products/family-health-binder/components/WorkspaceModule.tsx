@@ -1,5 +1,6 @@
 "use client";
 
+import FirstRun from "@/components/platform/FirstRun";
 import FirstRunTour from "@/components/platform/FirstRunTour";
 import { FAMILY_HEALTH_BINDER_SLUG } from "../instanceData";
 import type { TourStep } from "@/components/platform/GuidedTour";
@@ -86,14 +87,15 @@ export default function WorkspaceModule() {
   }
   if (members.length === 0) {
     return (
-      <>
-        <FirstRunTour slug={FAMILY_HEALTH_BINDER_SLUG} steps={TOUR_STEPS} />
-        <EmptyState
-          icon={Heart}
-          title="Nobody added yet"
-          description="Add the first person in your family, in Family, to start keeping their facts on hand."
-        />
-      </>
+      <FirstRun
+        slug={FAMILY_HEALTH_BINDER_SLUG}
+        icon={Heart}
+        title="Nobody added yet"
+        description="Add the first person in your family to start keeping their medications, allergies and symptoms on hand."
+        actionLabel="Add the first person"
+        destination="members"
+        steps={TOUR_STEPS}
+      />
     );
   }
 

@@ -57,7 +57,7 @@ export default function HomePage() {
       {
         areaSlug: area.slug,
         areaLabel: area.label,
-        whatHelps: area.whatHelps,
+        heroCta: area.heroCta,
         productSlug: product.slug,
         productTitle: product.title,
         // Formatted here, by the same helpers the Shop grid and the
@@ -110,26 +110,32 @@ export default function HomePage() {
               {
                 head: "Quiet by default",
                 body: "It stays silent until something is genuinely worth raising, and says so plainly when nothing is.",
+                proof: "ADHD Life Companion's Now screen says nothing needs you right now, on the days that is true.",
               },
               {
                 head: "Derived, never invented",
                 body: "Every line traces back to something you recorded yourself. Nothing here manufactures urgency.",
+                proof: "Personal Finance Companion's Attention lists only real gaps: a bill with no due date, a stale balance.",
               },
               {
                 head: "No model, anywhere",
                 body: "There is no AI in any of this. What it suggests was written by a person, and it never guesses.",
+                proof: "Home Base knows what a house needs because somebody wrote down 122 kinds of thing by hand.",
               },
               {
                 head: "Holds the connections",
                 body: "It remembers how the pieces of your situation depend on each other, which is the part nobody can hold.",
+                proof: "Travel Companion walks down what a booking was booked around, one at a time.",
               },
               {
                 head: "Nothing is destroyed",
                 body: "Corrections archive rather than delete, and history is never rewritten after the fact.",
+                proof: "Personal Life Affairs Companion keeps every change, so a retired entry still shows what it said before.",
               },
               {
                 head: "Bought once, owned",
                 body: "No subscription to babysit. It does not expire if you step away for a year.",
+                proof: "Monthly Money Reset is free. The rest are one payment, and nothing here has a renewal date.",
               },
             ].map((item) => (
               /*
@@ -147,15 +153,30 @@ export default function HomePage() {
                 else: no lift, no elevation jump. Six cards that each
                 rose and grew a shadow under the pointer made this
                 section restless to read.
+
+                The third line is the change. Asked for icons here, and
+                an icon per card is both banned by CLAUDE.md's icon rule
+                and the exact decoration this section already rejected
+                once. The real problem was that six abstract promises in
+                identical boxes give a reader nothing to believe. A named
+                product actually doing the thing is what an icon would
+                only have gestured at.
               */
               <div
                 key={item.head}
-                className="rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface)] p-5 transition-[box-shadow,border-color] duration-[var(--dur)] ease-[var(--ease-out)] hover:border-[var(--border-strong)] hover:shadow-[shadow:var(--shadow-xs)]"
+                className="flex flex-col rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface)] p-5 transition-[box-shadow,border-color] duration-[var(--dur)] ease-[var(--ease-out)] hover:border-[var(--border-strong)] hover:shadow-[shadow:var(--shadow-xs)]"
               >
                 <p className="font-serif text-[17px] font-semibold leading-snug tracking-tight text-[var(--text)]">
                   {item.head}
                 </p>
                 <p className="mt-2 text-[13.5px] leading-relaxed text-[var(--muted)]">{item.body}</p>
+                {/* mt-auto puts the evidence on the card's floor, so the
+                    six lines align across the row however long the body
+                    above each one runs. */}
+                <p className="mt-auto pt-4 text-[12.5px] leading-relaxed text-[var(--faint)]">
+                  <span className="font-semibold uppercase tracking-[0.1em] text-[var(--brand-ink)]">In practice </span>
+                  {item.proof}
+                </p>
               </div>
             ))}
           </div>
@@ -201,15 +222,50 @@ export default function HomePage() {
             A Companion is yours to keep and open whenever you want. No feed, no ads, nothing sold about you. It works
             on your side, quietly.
           </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-2.5">
-            {["Yours to keep", "Works offline", "No ads, no data resale"].map((chip) => (
-              <span
-                key={chip}
-                className="inline-flex items-center rounded-full border border-[var(--border)] bg-[var(--surface)] px-4 py-2 text-[13px] font-semibold text-[var(--text)] shadow-[shadow:var(--shadow-xs)]"
-              >
-                {chip}
-              </span>
+          {/*
+            These three were rounded pills with a border and a shadow,
+            which is the shape this site uses for a filter chip and for
+            the hero's area picker. Both of those are buttons, so three
+            static pills sitting under a heading read as controls that
+            had stopped working: people click them and nothing happens.
+
+            The fix is not a different pill. A claim like "no ads, no
+            data resale" is worth more said properly than compressed
+            into two words, so each one now states itself and then says
+            what makes it true, and the section ends with a real link to
+            the page that carries the whole argument.
+          */}
+          <dl className="mx-auto mt-10 grid max-w-2xl gap-x-8 gap-y-6 text-left sm:grid-cols-3">
+            {[
+              {
+                term: "Yours to keep",
+                detail: "One payment, no renewal date. Step away for a year and it is exactly as you left it.",
+              },
+              {
+                term: "Works offline",
+                detail: "Installable as an app, and what you have already loaded stays readable without a signal.",
+              },
+              {
+                term: "No ads, no data resale",
+                detail: "Nothing here is sold or used for advertising, and no product is read by an AI model.",
+              },
+            ].map((item) => (
+              <div key={item.term}>
+                <dt className="font-serif text-[16px] font-semibold leading-snug tracking-tight text-[var(--text)]">
+                  {item.term}
+                </dt>
+                <dd className="mt-1.5 text-[13px] leading-relaxed text-[var(--muted)]">{item.detail}</dd>
+              </div>
             ))}
+          </dl>
+          <div className="mt-8">
+            <Link
+              href="/trust"
+              className="inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-[var(--muted)] underline-offset-4 transition-colors hover:text-[var(--text)] hover:underline"
+            >
+              How we handle your data
+              <ArrowRight size={15} aria-hidden />
+            </Link>
           </div>
         </Container>
       </section>

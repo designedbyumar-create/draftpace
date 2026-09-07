@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | Draftpace",
   },
   description:
-    "The Draftpace Companion Series: seven products for money, home, focus, family, affairs and travel. Each remembers how your situation fits together, tells you what needs you now, and stays quiet when nothing does.",
+    "The Draftpace Companion Series: nine products for money, home, focus, family, affairs, travel, vehicles and family health. Each remembers how your situation fits together, tells you what needs you now, and stays quiet when nothing does.",
   manifest: "/manifest.webmanifest",
   applicationName: "Draftpace",
   appleWebApp: {
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Draftpace: Companions for the parts of life that are hard to keep track of",
     description:
-      "The Draftpace Companion Series: seven products for money, home, focus, family, affairs and travel. Each remembers how your situation fits together, tells you what needs you now, and stays quiet when nothing does.",
+      "The Draftpace Companion Series: nine products for money, home, focus, family, affairs, travel, vehicles and family health. Each remembers how your situation fits together, tells you what needs you now, and stays quiet when nothing does.",
     url: "https://draftpace.com",
     siteName: "Draftpace",
     type: "website",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Draftpace: Companions for the parts of life that are hard to keep track of",
     description:
-      "The Draftpace Companion Series: seven products for money, home, focus, family, affairs and travel. Each remembers how your situation fits together, tells you what needs you now, and stays quiet when nothing does.",
+      "The Draftpace Companion Series: nine products for money, home, focus, family, affairs, travel, vehicles and family health. Each remembers how your situation fits together, tells you what needs you now, and stays quiet when nothing does.",
     images: ["/og-image.png"],
   },
   icons: {
