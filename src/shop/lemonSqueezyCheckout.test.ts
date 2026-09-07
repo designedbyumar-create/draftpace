@@ -6,6 +6,7 @@ import { shopRegistry } from "./registry";
 import { ensureShopRegistered } from "./ensureRegistered";
 import { productRegistry } from "@/product-framework/registry";
 import { ensureProductsRegistered } from "@/products/manifest";
+import { grantedVersionFor, listMappedVariantSlugs } from "@/shop/lemonSqueezyVariants";
 
 ensureShopRegistered();
 ensureProductsRegistered();
@@ -71,6 +72,77 @@ describe("every published paid product can actually be bought", () => {
       ).toBe(false);
     }
   });
+});
+
+/**
+ * The two halves of a sale are configured in two different files, and
+ * nothing but this connects them. A product with a live Buy Link but no
+ * variant id takes the money and grants nothing: the payment succeeds,
+ * the webhook returns 400, and the only symptom is a customer emailing to
+ * ask where their product went.
+ */
+describe("anything that can be bought can also be granted", () => {
+  const mapped = new Set(listMappedVariantSlugs());
+
+  /**
+   * Slugs with a live Buy Link whose numeric variant id the founder has
+   * not supplied yet. Every entry here is a product that must not be sold
+   * until it is removed. Shrinking this to empty is the release gate.
+   */
+  const AWAITING_VARIANT_ID = new Set([
+    "home-management-companion",
+    "personal-life-affairs-companion",
+    "homeschooling-companion",
+    "alongside",
+    "travel-companion",
+    "vehicle-maintenance-companion",
+  ]);
+
+  for (const slug of listCheckoutSlugs()) {
+    if (AWAITING_VARIANT_ID.has(slug)) {
+      it(`${slug} is still awaiting its variant id`, () => {
+        expect(
+          mapped.has(slug),
+          `${slug} has a variant id now. Remove it from AWAITING_VARIANT_ID so the real assertion guards it.`
+        ).toBe(false);
+      });
+      continue;
+    }
+
+    it(`${slug} can be granted after payment`, () => {
+      expect(
+        mapped.has(slug),
+        `${slug} has a live Buy Link but no Lemon Squeezy variant id, so a purchase is charged and then rejected by the webhook with "Unrecognized variant_id". Add it to PURCHASABLE in src/shop/lemonSqueezyVariants.ts.`
+      ).toBe(true);
+    });
+  }
+
+  it("never maps a variant to a slug that has no checkout", () => {
+    for (const slug of listMappedVariantSlugs()) {
+      expect(
+        hasLemonSqueezyCheckout(slug),
+        `${slug} has a variant id but no Buy Link, so the mapping is unreachable`
+      ).toBe(true);
+    }
+  });
+
+  /**
+   * The webhook states each product's version rather than reading it from
+   * the registry, to keep a serverless route from importing every product
+   * definition on every cold start. This is what makes that safe: a
+   * version bump fails here, in CI, instead of silently granting the
+   * previous version to a paying customer.
+   */
+  for (const slug of listCheckoutSlugs()) {
+    it(`${slug} grants the version its definition actually declares`, () => {
+      const declared = productRegistry.getBySlug(slug)?.version;
+      expect(declared, `${slug} has no product definition`).toBeTruthy();
+      expect(
+        grantedVersionFor(slug),
+        `${slug} is at version ${declared}, but a purchase would grant ${grantedVersionFor(slug)}. Update PURCHASABLE in src/shop/lemonSqueezyVariants.ts.`
+      ).toBe(declared);
+    });
+  }
 });
 
 describe("the built checkout URL carries everything the overlay and webhook need", () => {

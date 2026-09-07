@@ -2,6 +2,7 @@ import { createHmac, timingSafeEqual } from "node:crypto";
 import { NextResponse } from "next/server";
 import { getSupabaseServiceRoleClient } from "@/lib/server-auth";
 import { currentCycleKey } from "@/product-framework/cycle";
+import { productForVariant } from "@/shop/lemonSqueezyVariants";
 
 /**
  * Lemon Squeezy sends order_created (and other) events here once a real
@@ -19,24 +20,6 @@ import { currentCycleKey } from "@/product-framework/cycle";
  * specifically for "a verified purchase/webhook handler after it has
  * already confirmed the payment": this route is that handler.
  */
-
-const VARIANT_ID_TO_PRODUCT_SLUG: Record<string, { slug: string; version: string }> = {
-  ...(process.env.LEMON_SQUEEZY_PFC_VARIANT_ID
-    ? { [process.env.LEMON_SQUEEZY_PFC_VARIANT_ID]: { slug: "personal-finance-companion", version: "0.1.0" } }
-    : {}),
-  ...(process.env.LEMON_SQUEEZY_HMC_VARIANT_ID
-    ? { [process.env.LEMON_SQUEEZY_HMC_VARIANT_ID]: { slug: "home-management-companion", version: "0.1.0" } }
-    : {}),
-  ...(process.env.LEMON_SQUEEZY_PLA_VARIANT_ID
-    ? { [process.env.LEMON_SQUEEZY_PLA_VARIANT_ID]: { slug: "personal-life-affairs-companion", version: "0.1.0" } }
-    : {}),
-  ...(process.env.LEMON_SQUEEZY_HSC_VARIANT_ID
-    ? { [process.env.LEMON_SQUEEZY_HSC_VARIANT_ID]: { slug: "homeschooling-companion", version: "0.1.0" } }
-    : {}),
-  ...(process.env.LEMON_SQUEEZY_ALONGSIDE_VARIANT_ID
-    ? { [process.env.LEMON_SQUEEZY_ALONGSIDE_VARIANT_ID]: { slug: "alongside", version: "0.1.0" } }
-    : {}),
-};
 
 function verifySignature(rawBody: string, signatureHeader: string | null, secret: string): boolean {
   if (!signatureHeader) return false;
@@ -93,7 +76,7 @@ export async function POST(request: Request) {
   }
 
   const variantId = String(payload.data.attributes.first_order_item?.variant_id ?? "");
-  const mapped = VARIANT_ID_TO_PRODUCT_SLUG[variantId];
+  const mapped = productForVariant(variantId);
   if (!mapped) {
     return NextResponse.json({ error: `Unrecognized variant_id "${variantId}"; no product mapped.` }, { status: 400 });
   }
