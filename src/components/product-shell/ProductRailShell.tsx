@@ -124,7 +124,7 @@ export default function ProductRailShell({
     ));
 
   return (
-    <div className="min-h-screen bg-[var(--app-bg)] text-[var(--text)]" style={style}>
+    <div className="min-h-screen bg-[var(--app-bg)] text-[var(--text)]" data-product-theme style={style}>
       <div className="lg:flex">
         {/* ------------------------------------------------ desktop rail */}
         <aside className="sticky top-0 hidden h-screen w-60 shrink-0 flex-col border-r border-[var(--border)] bg-[var(--surface)] px-4 py-5 lg:flex">

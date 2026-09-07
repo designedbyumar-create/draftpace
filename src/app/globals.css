@@ -128,8 +128,17 @@ html {
      The gradient fill itself is NOT a token here; it is the .btn-fill-*
      classes further down. See the note on those for why a custom property
      cannot do this job. */
-  --btn-primary-rest: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 1px 2px rgba(10, 86, 92, 0.24), 0 3px 10px -3px rgba(14, 110, 117, 0.4);
-  --btn-primary-hover: inset 0 1px 0 rgba(255, 255, 255, 0.26), 0 2px 4px rgba(10, 86, 92, 0.26), 0 10px 22px -6px rgba(14, 110, 117, 0.5);
+  /* The glow is mixed from --primary rather than written as a literal, so
+     it follows whatever accent is in scope. It used to be hardcoded teal
+     (rgba(14,110,117)) while its own comment claimed it followed the
+     accent, which meant every themed product's primary button sat on a
+     platform-teal halo: steel on teal, plum on teal, amber on teal. */
+  --btn-primary-rest: inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    0 1px 2px color-mix(in srgb, var(--primary) 26%, transparent),
+    0 3px 10px -3px color-mix(in srgb, var(--primary) 42%, transparent);
+  --btn-primary-hover: inset 0 1px 0 rgba(255, 255, 255, 0.26),
+    0 2px 4px color-mix(in srgb, var(--primary) 28%, transparent),
+    0 10px 22px -6px color-mix(in srgb, var(--primary) 52%, transparent);
   --btn-raise-rest: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 1px 1px rgba(28, 25, 20, 0.04), 0 1px 2px rgba(28, 25, 20, 0.06);
   --btn-raise-hover: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 2px 4px rgba(28, 25, 20, 0.06), 0 8px 18px -8px rgba(28, 25, 20, 0.16);
 
@@ -219,8 +228,10 @@ html[data-theme="dark"] {
   --shadow-soft: 0 2px 4px rgba(0, 0, 0, 0.4), 0 16px 40px -10px rgba(0, 0, 0, 0.55);
   --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.5), 0 28px 64px -14px rgba(0, 0, 0, 0.65);
 
-  --btn-primary-rest: inset 0 1px 0 rgba(255, 255, 255, 0.28), 0 1px 2px rgba(0, 0, 0, 0.4), 0 3px 12px -3px rgba(79, 199, 201, 0.34);
-  --btn-primary-hover: inset 0 1px 0 rgba(255, 255, 255, 0.34), 0 2px 6px rgba(0, 0, 0, 0.45), 0 10px 24px -6px rgba(79, 199, 201, 0.46);
+  --btn-primary-rest: inset 0 1px 0 rgba(255, 255, 255, 0.28), 0 1px 2px rgba(0, 0, 0, 0.4),
+    0 3px 12px -3px color-mix(in srgb, var(--primary) 36%, transparent);
+  --btn-primary-hover: inset 0 1px 0 rgba(255, 255, 255, 0.34), 0 2px 6px rgba(0, 0, 0, 0.45),
+    0 10px 24px -6px color-mix(in srgb, var(--primary) 48%, transparent);
   --btn-raise-rest: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 1px 1px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.3);
   --btn-raise-hover: inset 0 1px 0 rgba(255, 255, 255, 0.09), 0 2px 6px rgba(0, 0, 0, 0.45), 0 8px 20px -8px rgba(0, 0, 0, 0.5);
 
@@ -400,6 +411,50 @@ html[data-text-scale="larger"] {
   border-color: color-mix(in srgb, var(--card-accent) 30%, var(--border));
 }
 
+/* ---------------------------------------------------------------
+   A product's own accent, chosen per theme.
+
+   productThemeStyle() puts BOTH tone sets on the shell root as inline
+   custom properties, because an inline style cannot answer a media
+   query. These rules pick which set feeds the tokens the rest of the
+   design system already reads. Before this existed, every themed
+   product pushed its light accent into dark mode: petrol at 1.82:1
+   against this theme's own ground, steel at 2.26:1.
+
+   Kept as one selector per theme rather than spread through the token
+   blocks above, because these are scoped to a product shell and those
+   are the platform's own palette.
+   --------------------------------------------------------------- */
+[data-product-theme] {
+  --primary: var(--product-primary-light);
+  --primary-strong: var(--product-primary-strong-light);
+  --primary-soft: var(--product-primary-soft-light);
+  --primary-contrast: var(--product-primary-contrast-light);
+  --product-wash: var(--product-wash-light);
+  --link: var(--product-primary-light);
+  --focus-ring: var(--product-primary-light);
+}
+:root[data-theme="dark"] [data-product-theme] {
+  --primary: var(--product-primary-dark);
+  --primary-strong: var(--product-primary-strong-dark);
+  --primary-soft: var(--product-primary-soft-dark);
+  --primary-contrast: var(--product-primary-contrast-dark);
+  --product-wash: var(--product-wash-dark);
+  --link: var(--product-primary-dark);
+  --focus-ring: var(--product-primary-dark);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) [data-product-theme] {
+    --primary: var(--product-primary-dark);
+    --primary-strong: var(--product-primary-strong-dark);
+    --primary-soft: var(--product-primary-soft-dark);
+    --primary-contrast: var(--product-primary-contrast-dark);
+    --product-wash: var(--product-wash-dark);
+    --link: var(--product-primary-dark);
+    --focus-ring: var(--product-primary-dark);
+  }
+}
+
 .btn-fill-primary {
   background-image: linear-gradient(
     180deg,
@@ -407,6 +462,39 @@ html[data-text-scale="larger"] {
     var(--primary) 52%,
     color-mix(in srgb, #000 10%, var(--primary)) 100%
   );
+}
+
+/* ---------------------------------------------------------------
+   The product register: quiet actions, in the product's own family.
+
+   The marketing register above (gradient fill, accent glow) is a
+   persuasive CTA and belongs on the public site. Inside a product,
+   the same treatment on every action turned each screen into a wall
+   of competing CTAs: 365 buttons across the products, roughly 175 of
+   them falling through to the marketing primary because no variant
+   was passed.
+
+   `action` is the ordinary in-product action: a tint of the product's
+   own accent, a hairline of the same, no gradient and no glow.
+   `commit` is the one real commitment on a screen: solid accent, but
+   flat, so it leads without shouting. Both follow --primary, so they
+   are that product's colour in both themes automatically.
+   --------------------------------------------------------------- */
+.btn-action {
+  background-color: color-mix(in srgb, var(--primary) 9%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--primary) 24%, var(--border));
+  color: var(--primary-strong);
+}
+.btn-action:hover {
+  background-color: color-mix(in srgb, var(--primary) 15%, var(--surface));
+  border-color: color-mix(in srgb, var(--primary) 38%, var(--border));
+}
+.btn-commit {
+  background-color: var(--primary);
+  color: var(--primary-contrast);
+}
+.btn-commit:hover {
+  background-color: color-mix(in srgb, #000 9%, var(--primary));
 }
 /* Hover lifts the whole ramp by about five points of lightness and
    changes nothing else: no lift, no shadow swap. Deliberately small.

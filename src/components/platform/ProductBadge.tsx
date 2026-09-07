@@ -1,4 +1,5 @@
 import { iconForProduct } from "@/product-framework/productIcons";
+import { deriveDarkTones } from "@/design-system/accentTone";
 import type { ProductDefinition } from "@/product-framework/definition";
 
 /**
@@ -30,12 +31,26 @@ export default function ProductBadge({
   const dimension = size === "sm" ? "h-6 w-6" : "h-7 w-7";
   const iconSize = size === "sm" ? 13 : 15;
 
-  const style = scale
-    ? ({ backgroundColor: scale.wash ?? scale.soft, color: scale.base } as React.CSSProperties)
-    : undefined;
+  // Both tone sets, with globals.css picking one per theme, the same
+  // mechanism the product shells use. Painting the light wash directly
+  // put a pale block on the dark page for every product tile on Home and
+  // in the Library.
+  const dark = scale ? deriveDarkTones(scale.base) : null;
+  const style =
+    scale && dark
+      ? ({
+          "--product-primary-light": scale.base,
+          "--product-wash-light": scale.wash ?? scale.soft,
+          "--product-primary-dark": dark.base,
+          "--product-wash-dark": dark.wash,
+          backgroundColor: "var(--product-wash)",
+          color: "var(--primary)",
+        } as React.CSSProperties)
+      : undefined;
 
   return (
     <span
+      {...(scale ? { "data-product-theme": "" } : {})}
       className={`flex ${dimension} shrink-0 items-center justify-center rounded-full ${
         scale ? "" : "bg-[var(--primary-soft)] text-[var(--primary)]"
       }`}

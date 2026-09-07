@@ -53,6 +53,27 @@ export const productThemeExtensionSchema = z
       })
       .optional(),
     /**
+     * The dark-theme counterpart of `accentScale`. Optional, and normally
+     * absent: `productThemeStyle()` derives a dark tone set from the light
+     * `base` (see src/design-system/accentTone.ts), preserving the hue and
+     * lifting it until it clears 4.5:1 against the dark ground. Declare
+     * this only to overrule that arithmetic for a product whose dark
+     * identity is a deliberate design choice rather than a lightening of
+     * its light one.
+     *
+     * Never leave this partly filled in: it replaces the derived set
+     * outright, so a half-authored one is a half-themed product.
+     */
+    accentScaleDark: z
+      .object({
+        base: z.string(),
+        strong: z.string(),
+        soft: z.string(),
+        contrast: z.string(),
+        wash: z.string().optional(),
+      })
+      .optional(),
+    /**
      * A serif or otherwise warmer family used only where the product
      * speaks in its own voice, never for data or controls. Holds a CSS
      * font-family value, normally a next/font variable reference.
