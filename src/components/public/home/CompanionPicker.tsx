@@ -94,7 +94,7 @@ export default function CompanionPicker({ panels }: { panels: PickerPanel[] }) {
   const active = panels[index] ?? panels[0];
 
   return (
-    <div className="grid gap-8 lg:grid-cols-[1fr_0.95fr] lg:items-center lg:gap-12">
+    <div className="grid gap-8 lg:grid-cols-[1fr_0.95fr] lg:items-center lg:gap-20 xl:gap-24">
       {/* min-w-0 on both columns: a grid item's automatic minimum is its
           min-content width, so one unbreakable string inside either
           column widens the whole track past the container rather than
@@ -204,8 +204,14 @@ export default function CompanionPicker({ panels }: { panels: PickerPanel[] }) {
             checklist gone there is nothing to sit beside the screen, and
             leaving the split in place stranded the button across a void
             of empty page. The screen and its one control now stack, so
-            the button reads as belonging to what is above it. */}
-        <div className="flex flex-col items-start gap-5 border-t border-[var(--border)] pt-5">
+            the button reads as belonging to what is above it.
+
+            Centred rather than left-aligned: left-aligned, the screen
+            sat hard against the heading in the column beside it and read
+            as crowding it. Centred in its own panel, with the column gap
+            widened, it has room on both sides and the button below sits
+            under the middle of what it belongs to. */}
+        <div className="flex flex-col items-center gap-7 border-t border-[var(--border)] pt-7">
           {/* Every mockup is drawn at a fixed 280px with fixed type
               sizes inside them, so narrowing their container reflows the
               screen rather than shrinking it. Scaling the whole frame is
