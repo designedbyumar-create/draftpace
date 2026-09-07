@@ -13,6 +13,7 @@ import {
   ArrowRight as PhosphorArrowRight,
   Bank as PhosphorBank,
   Barbell as PhosphorBarbell,
+  Car as PhosphorCar,
   Bell as PhosphorBell,
   BellRinging as PhosphorBellRinging,
   BookOpen as PhosphorBookOpen,
@@ -127,6 +128,7 @@ export const ArrowRight = createIcon(PhosphorArrowRight, "ArrowRight");
 export const BadgeCheck = createIcon(PhosphorSealCheck, "BadgeCheck");
 export const Bank = createIcon(PhosphorBank, "Bank");
 export const Barbell = createIcon(PhosphorBarbell, "Barbell");
+export const Car = createIcon(PhosphorCar, "Car");
 export const Bell = createIcon(PhosphorBell, "Bell");
 export const BellRinging = createIcon(PhosphorBellRinging, "BellRinging");
 export const BookOpen = createIcon(PhosphorBookOpen, "BookOpen");

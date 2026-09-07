@@ -47,6 +47,11 @@ import {
   ChangeImpactScreenMockup as TravelChangeImpactScreenMockup,
   TripBriefScreenMockup as TravelTripBriefScreenMockup,
 } from "./travelCompanionVisuals";
+import {
+  OverviewScreenMockup as VmcOverviewScreenMockup,
+  ServiceBoundaryScreenMockup as VmcServiceBoundaryScreenMockup,
+  AddItemScreenMockup as VmcAddItemScreenMockup,
+} from "./vehicleMaintenanceCompanionVisuals";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { getLemonSqueezyCheckoutUrl, hasLemonSqueezyCheckout } from "@/shop/lemonSqueezyCheckout";
 
@@ -105,6 +110,7 @@ export default async function ShopProductPage({
   const isHomeschoolingCompanion = product.slug === "homeschooling-companion";
   const isAlongside = product.slug === "alongside";
   const isTravelCompanion = product.slug === "travel-companion";
+  const isVehicleMaintenanceCompanion = product.slug === "vehicle-maintenance-companion";
 
   // Resolved once per request, server-side, so every GetAction on this page
   // (hero, mid-page, final CTA) agrees on the exact same checkout link
@@ -178,6 +184,8 @@ export default async function ShopProductPage({
               <AlongsideOverviewScreenMockup />
             ) : isTravelCompanion ? (
               <TravelOverviewScreenMockup />
+            ) : isVehicleMaintenanceCompanion ? (
+              <VmcOverviewScreenMockup />
             ) : (
               <HeroVisual product={product} />
             )}
@@ -205,6 +213,8 @@ export default async function ShopProductPage({
               <AlongsideLifeScreenMockup />
             ) : isTravelCompanion ? (
               <TravelChangeImpactScreenMockup />
+            ) : isVehicleMaintenanceCompanion ? (
+              <VmcServiceBoundaryScreenMockup />
             ) : undefined
           }
         >
@@ -259,6 +269,8 @@ export default async function ShopProductPage({
               <AlongsideCompanionScreenMockup />
             ) : isTravelCompanion ? (
               <TravelTripBriefScreenMockup />
+            ) : isVehicleMaintenanceCompanion ? (
+              <VmcAddItemScreenMockup />
             ) : undefined
           }
           reverse

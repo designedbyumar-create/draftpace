@@ -10,6 +10,7 @@ import { personalLifeAffairsCompanionCatalogEntry } from "./personal-life-affair
 import { homeschoolingCompanionCatalogEntry } from "./homeschooling-companion/catalog";
 import { alongsideCatalogEntry } from "./alongside/catalog";
 import { travelCompanionCatalogEntry } from "./travel-companion/catalog";
+import { vehicleMaintenanceCompanionCatalogEntry } from "./vehicle-maintenance-companion/catalog";
 
 /**
  * The one auditable list of every real product Draftpace registers. This is
@@ -31,6 +32,7 @@ const PRODUCT_CATALOG: ProductCatalogEntry[] = [
   homeschoolingCompanionCatalogEntry,
   alongsideCatalogEntry,
   travelCompanionCatalogEntry,
+  vehicleMaintenanceCompanionCatalogEntry,
 ];
 
 let registered = false;

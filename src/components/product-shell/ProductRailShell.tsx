@@ -7,7 +7,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ProductDefinition } from "@/product-framework/definition";
 import { resolveLifecycleNavigation, type InstanceLifecycleSignal } from "@/product-framework/navigationResolver";
 import { productThemeStyle } from "@/product-framework/themeExtension";
-import { ArrowLeft, BookOpen, Clock, Compass, Globe, Layers3, LifeBuoy, Menu, User, type DraftpaceIcon } from "@/design-system/Icon";
+import { ArrowLeft, BookOpen, Car, Clock, Compass, Globe, Layers3, LifeBuoy, Menu, User, type DraftpaceIcon } from "@/design-system/Icon";
 import MobileSheet from "@/design-system/MobileSheet";
 import AccountMenu from "@/components/account/AccountMenu";
 import { appAccountMenuItems } from "@/components/account/accountMenuItems";
@@ -70,6 +70,7 @@ const RAIL_ICON: Record<string, DraftpaceIcon> = {
   help: LifeBuoy,
   trip: Globe,
   people: User,
+  vehicles: Car,
 };
 
 export default function ProductRailShell({

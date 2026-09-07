@@ -6,6 +6,7 @@ import { personalLifeAffairsCompanionShopProduct } from "./personal-life-affairs
 import { homeschoolingCompanionShopProduct } from "./homeschooling-companion";
 import { alongsideShopProduct } from "./alongside";
 import { travelCompanionShopProduct } from "./travel-companion";
+import { vehicleMaintenanceCompanionShopProduct } from "./vehicle-maintenance-companion";
 
 /**
  * Real, published Shop listings, never gated by the dev-fixture check
@@ -21,6 +22,7 @@ const PRODUCTS = [
   homeschoolingCompanionShopProduct,
   alongsideShopProduct,
   travelCompanionShopProduct,
+  vehicleMaintenanceCompanionShopProduct,
 ];
 
 let registered = false;
