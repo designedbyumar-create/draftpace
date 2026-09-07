@@ -52,6 +52,11 @@ import {
   ServiceBoundaryScreenMockup as VmcServiceBoundaryScreenMockup,
   AddItemScreenMockup as VmcAddItemScreenMockup,
 } from "./vehicleMaintenanceCompanionVisuals";
+import {
+  OverviewScreenMockup as FhbOverviewScreenMockup,
+  SymptomFormScreenMockup as FhbSymptomFormScreenMockup,
+  IntakeSummaryScreenMockup as FhbIntakeSummaryScreenMockup,
+} from "./familyHealthBinderVisuals";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { getLemonSqueezyCheckoutUrl, hasLemonSqueezyCheckout } from "@/shop/lemonSqueezyCheckout";
 
@@ -111,6 +116,7 @@ export default async function ShopProductPage({
   const isAlongside = product.slug === "alongside";
   const isTravelCompanion = product.slug === "travel-companion";
   const isVehicleMaintenanceCompanion = product.slug === "vehicle-maintenance-companion";
+  const isFamilyHealthBinder = product.slug === "family-health-binder";
 
   // Resolved once per request, server-side, so every GetAction on this page
   // (hero, mid-page, final CTA) agrees on the exact same checkout link
@@ -186,6 +192,8 @@ export default async function ShopProductPage({
               <TravelOverviewScreenMockup />
             ) : isVehicleMaintenanceCompanion ? (
               <VmcOverviewScreenMockup />
+            ) : isFamilyHealthBinder ? (
+              <FhbOverviewScreenMockup />
             ) : (
               <HeroVisual product={product} />
             )}
@@ -215,6 +223,8 @@ export default async function ShopProductPage({
               <TravelChangeImpactScreenMockup />
             ) : isVehicleMaintenanceCompanion ? (
               <VmcServiceBoundaryScreenMockup />
+            ) : isFamilyHealthBinder ? (
+              <FhbSymptomFormScreenMockup />
             ) : undefined
           }
         >
@@ -271,6 +281,8 @@ export default async function ShopProductPage({
               <TravelTripBriefScreenMockup />
             ) : isVehicleMaintenanceCompanion ? (
               <VmcAddItemScreenMockup />
+            ) : isFamilyHealthBinder ? (
+              <FhbIntakeSummaryScreenMockup />
             ) : undefined
           }
           reverse

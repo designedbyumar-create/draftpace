@@ -71,6 +71,8 @@ const RAIL_ICON: Record<string, DraftpaceIcon> = {
   trip: Globe,
   people: User,
   vehicles: Car,
+  members: User,
+  timeline: Clock,
 };
 
 export default function ProductRailShell({
