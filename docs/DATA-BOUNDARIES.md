@@ -1,8 +1,16 @@
 # Data Boundaries
 
-Phase 1 establishes these boundaries in **types only** — no Supabase
-migrations were added. The goal is to prove the shape doesn't box out any
-future product family, not to build real persistence yet.
+These boundaries began as types only, with no Supabase migrations behind
+them, and that is what the rest of this document used to describe. Nine
+products now store real user data behind them, so the boundaries below
+are load-bearing rather than aspirational: they are what keeps a
+finance field out of a health product's tables and out of the shared
+instance shape.
+
+The rule that has not changed, and is the whole point: **product-specific
+data lives behind the product's own versioned schema and its own table
+prefix, never in shared tables and never in the product-definition
+contract.**
 
 ## Platform state
 
@@ -18,10 +26,11 @@ Per the product framework's job, *not* per family:
 
 - product id + version
 - lifecycle (draft/active/paused/completed/archived — mirrors
-  `ProductStatus` in the definition contract)
+  `ProductStatus` in the definition contract). Pause is real: see
+  `202609060002_product_instance_pause.sql`
 - setup status
 - active destination
-- progress summary (shape only — no product computes real progress yet)
+- progress summary
 - last activity
 - sync state
 - a reference to the product-specific payload (never the payload itself)
@@ -36,10 +45,40 @@ definition (`PRODUCT-FRAMEWORK.md`).
 ## Product-specific data
 
 Always behind a versioned, typed schema **registered by the product**, never
-inlined into shared tables or the product-definition contract itself. Nothing
-in Phase 1 defines a real product schema — this boundary exists so that when
-Monthly Money Reset (or a learning product) is eventually built, its fields
-never leak into `product_instances` or the product-definition record.
+inlined into shared tables or the product-definition contract itself.
+
+Each product owns a table prefix, chosen once and used consistently, with
+RLS scoping every row to the signed-in account through that product's own
+instance:
+
+| Prefix | Product |
+|---|---|
+| `monthly_*` | Monthly Money Reset |
+| `pfc_*` | Personal Finance Companion |
+| `hmc_*` | Home Base |
+| `als_*` | ADHD Life Companion (Alongside) |
+| `hsc_*` | Homeschooling Companion |
+| `pla_*` | Personal Life Affairs Companion |
+| `trv_*` | Travel Companion |
+| `vmc_*` | Vehicle Maintenance Companion |
+| `fhb_*` | Family Health Binder |
+
+Shared platform tables (`product_*`, `push_*`, `free_*`,
+`redeemable_*`, `launch_*`) hold no product-specific field, and no
+product reads another product's tables. There is no cross-product data
+sharing anywhere, by design.
+
+Two boundaries worth naming because they are easy to erode:
+
+- **A person a product tracks is a row, not an account.** A child in
+  Homeschooling Companion, a family member in Family Health Binder and a
+  traveller in Travel Companion are all rows scoped under the one
+  signed-in user. None of them has a login, an entitlement, or a consent
+  flow, which is also why none of them needs one.
+- **Sensitivity is a per-record choice the person makes.** Family Health
+  Binder's `visibility` ('summary' | 'private') and Travel Companion's
+  `requirements` are the same pattern: the record stays fully usable in
+  the account and is simply excluded from anything printed.
 
 ## Automation state (proof, not implementation)
 
@@ -68,9 +107,9 @@ Fixtures (`src/product-framework/fixtures/`) are:
 - excluded from `sitemap.ts`/`robots.ts` because those files only ever
   enumerate static public pages, never the product registry.
 
-## What's explicitly deferred
+## What's still deferred
 
-Real product schemas (finance, learning, automation or otherwise), a real
-`product_instances` table, sync/conflict handling, and anything storing
-actual user data beyond auth. Adding any of these is a Phase 2+ decision, not
-implied by this document.
+A learning-family or automation-family schema, sync/conflict handling,
+and a real `profiles`/`preferences` table (platform preferences still
+live in Supabase auth metadata). Adding any of these is a decision to
+take deliberately, not something this document implies.
