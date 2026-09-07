@@ -46,13 +46,31 @@ const PURCHASABLE: Record<string, PurchasableProduct> = {
     variantId: process.env.LEMON_SQUEEZY_PFC_VARIANT_ID ?? "2102710",
     version: "0.1.0",
   },
-  "home-management-companion": { variantId: process.env.LEMON_SQUEEZY_HMC_VARIANT_ID, version: "0.1.0" },
-  "personal-life-affairs-companion": { variantId: process.env.LEMON_SQUEEZY_PLA_VARIANT_ID, version: "0.1.0" },
-  "homeschooling-companion": { variantId: process.env.LEMON_SQUEEZY_HSC_VARIANT_ID, version: "0.1.0" },
-  "alongside": { variantId: process.env.LEMON_SQUEEZY_ALONGSIDE_VARIANT_ID, version: "0.1.0" },
-  "travel-companion": { variantId: process.env.LEMON_SQUEEZY_TRAVEL_VARIANT_ID, version: "0.1.0" },
-  "vehicle-maintenance-companion": { variantId: process.env.LEMON_SQUEEZY_VMC_VARIANT_ID, version: "0.1.0" },
-  "family-health-binder": { variantId: process.env.LEMON_SQUEEZY_FHB_VARIANT_ID, version: "0.1.0" },
+  "home-management-companion": {
+    variantId: process.env.LEMON_SQUEEZY_HMC_VARIANT_ID ?? "2102727",
+    version: "0.1.0",
+  },
+  "personal-life-affairs-companion": {
+    variantId: process.env.LEMON_SQUEEZY_PLA_VARIANT_ID ?? "2102744",
+    version: "0.1.0",
+  },
+  "homeschooling-companion": {
+    variantId: process.env.LEMON_SQUEEZY_HSC_VARIANT_ID ?? "2102740",
+    version: "0.1.0",
+  },
+  "alongside": { variantId: process.env.LEMON_SQUEEZY_ALONGSIDE_VARIANT_ID ?? "2102735", version: "0.1.0" },
+  "travel-companion": { variantId: process.env.LEMON_SQUEEZY_TRAVEL_VARIANT_ID ?? "2102746", version: "0.1.0" },
+  "vehicle-maintenance-companion": {
+    variantId: process.env.LEMON_SQUEEZY_VMC_VARIANT_ID ?? "2102749",
+    version: "0.1.0",
+  },
+  // Mapped, but not yet reachable from the Shop: this product exists in
+  // Lemon Squeezy and has a variant, and no Buy Link URL has been
+  // supplied, so its Shop page still shows "Checkout opens soon". The
+  // mapping is harmless and deliberate: it means the day the link
+  // arrives, or if a sale comes through Lemon Squeezy's own storefront,
+  // the grant already works rather than 400ing.
+  "family-health-binder": { variantId: process.env.LEMON_SQUEEZY_FHB_VARIANT_ID ?? "2102751", version: "0.1.0" },
 };
 
 /** Which slugs have a variant id, so a purchase of them can be granted. */

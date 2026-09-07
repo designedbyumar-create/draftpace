@@ -85,30 +85,12 @@ describe("anything that can be bought can also be granted", () => {
   const mapped = new Set(listMappedVariantSlugs());
 
   /**
-   * Slugs with a live Buy Link whose numeric variant id the founder has
-   * not supplied yet. Every entry here is a product that must not be sold
-   * until it is removed. Shrinking this to empty is the release gate.
+   * No exemptions. Every product that can be bought can be granted, and
+   * this assertion is now strict for all of them. Do not reintroduce an
+   * allowlist here: an exemption in this suite is a product that takes
+   * money and gives nothing back.
    */
-  const AWAITING_VARIANT_ID = new Set([
-    "home-management-companion",
-    "personal-life-affairs-companion",
-    "homeschooling-companion",
-    "alongside",
-    "travel-companion",
-    "vehicle-maintenance-companion",
-  ]);
-
   for (const slug of listCheckoutSlugs()) {
-    if (AWAITING_VARIANT_ID.has(slug)) {
-      it(`${slug} is still awaiting its variant id`, () => {
-        expect(
-          mapped.has(slug),
-          `${slug} has a variant id now. Remove it from AWAITING_VARIANT_ID so the real assertion guards it.`
-        ).toBe(false);
-      });
-      continue;
-    }
-
     it(`${slug} can be granted after payment`, () => {
       expect(
         mapped.has(slug),
@@ -117,12 +99,17 @@ describe("anything that can be bought can also be granted", () => {
     });
   }
 
-  it("never maps a variant to a slug that has no checkout", () => {
+  /**
+   * The reverse direction is not symmetrical, on purpose. A variant with
+   * no Buy Link is harmless: nothing on the site can reach it, and if a
+   * sale arrives another way (Lemon Squeezy's own storefront, or a link
+   * added later) the grant already works. What must never exist is the
+   * other way round, which the assertions above cover. This only catches
+   * a mapping pointed at a slug that is not a product at all, i.e. a typo.
+   */
+  it("never maps a variant to a slug that is not a real product", () => {
     for (const slug of listMappedVariantSlugs()) {
-      expect(
-        hasLemonSqueezyCheckout(slug),
-        `${slug} has a variant id but no Buy Link, so the mapping is unreachable`
-      ).toBe(true);
+      expect(shopRegistry.getBySlug(slug), `variant mapped to unknown slug "${slug}"`).toBeDefined();
     }
   });
 
