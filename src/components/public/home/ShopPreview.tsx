@@ -40,7 +40,11 @@ const AREA_BY_PRODUCT = new Map(
 );
 
 export default function ShopPreview() {
-  const products = shopRegistry.listPublished();
+  // Paid only, same reason as the Shop grid: the series preview is a
+  // catalogue, and a free product in it competes on price against
+  // products it was never meant to be compared with. The free one gets
+  // its own section further down the homepage.
+  const products = shopRegistry.listPublishedPaid();
 
   if (products.length === 0) {
     return (

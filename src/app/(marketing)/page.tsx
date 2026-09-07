@@ -258,6 +258,43 @@ export default function HomePage() {
         </Container>
       </section>
 
+      {/*
+        5b. The free way in.
+
+        Below the fold on purpose. The free product used to lead the hero
+        and the Shop grid, which put the thing that earns nothing in the
+        most valuable slot on the site and anchored every price after it
+        against zero. It belongs here instead: after somebody has seen
+        what the series is and what these products cost, as the answer to
+        "is there a way to try this". Its own page carries the actual
+        argument, so this is one claim and one link, not a second sales
+        pitch competing with the series above it.
+      */}
+      <section className="border-b border-[var(--border)] bg-[var(--surface-muted)]">
+        <Container width="wide" className="py-16 sm:py-20">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between lg:gap-16">
+            <div className="min-w-0 max-w-xl">
+              <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--brand-ink)]">
+                Start free
+              </p>
+              <h2 className="mt-3 font-serif text-[28px] font-semibold leading-tight tracking-tight sm:text-[34px]">
+                One of them costs nothing, and is not a trial.
+              </h2>
+              <p className="mt-4 text-[15px] leading-relaxed text-[var(--muted)]">
+                Monthly Money Reset shows what is genuinely safe to spend after what is already committed. It is a
+                complete, narrower product rather than a preview of a paid one, and it is the fastest way to find out
+                whether a Companion suits how you think before you spend anything.
+              </p>
+            </div>
+            <div className="shrink-0">
+              <Button href="/free" size="lg" iconRight={<ArrowRight size={16} aria-hidden />}>
+                See what it does
+              </Button>
+            </div>
+          </div>
+        </Container>
+      </section>
+
       {/* 6. Owned, not rented */}
       <section className="border-b border-[var(--border)]">
         <Container width="narrow" className="py-16 text-center sm:py-20">

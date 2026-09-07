@@ -18,6 +18,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: "/help-with", changeFrequency: "monthly" as const, priority: 0.8 },
     { route: "/help-with/about-ask-dp", changeFrequency: "monthly" as const, priority: 0.4 },
     { route: "/shop", changeFrequency: "weekly" as const, priority: 0.8 },
+    // The acquisition page, ranked above every paid listing on purpose:
+    // it is the page that has to win searches a priced product cannot,
+    // and the only one somebody can act on without spending anything.
+    { route: "/free", changeFrequency: "weekly" as const, priority: 0.9 },
     { route: "/how-it-works", changeFrequency: "monthly" as const, priority: 0.6 },
     { route: "/guides", changeFrequency: "weekly" as const, priority: 0.6 },
     { route: "/about", changeFrequency: "monthly" as const, priority: 0.5 },
@@ -67,9 +71,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
-  // Only published, real Shop listings. Draft, archived, and dev-preview
+  // Only published, PAID Shop listings. Draft, archived, and dev-preview
   // fixtures never reach here, see src/shop/registry.ts and docs/SHOP.md.
-  const shopRoutes = shopRegistry.listPublished().map((product) => ({
+  // A free product's /shop URL permanently redirects to /free, and
+  // listing a redirect in a sitemap asks a crawler to index a hop.
+  const shopRoutes = shopRegistry.listPublishedPaid().map((product) => ({
     route: `/shop/${product.slug}`,
     changeFrequency: "weekly" as const,
     priority: 0.7,

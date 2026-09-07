@@ -43,6 +43,24 @@ class ShopRegistry {
     );
   }
 
+  /**
+   * The published listings somebody actually pays for.
+   *
+   * The Shop grid and the homepage's series preview both show this rather
+   * than everything published. A free product sitting in a priced grid
+   * competes with the paid ones on the one axis it cannot lose, and every
+   * price after it is read against zero. The free product has its own
+   * page and its own band instead: see listPublishedFree() and /free.
+   */
+  listPublishedPaid(): ShopProduct[] {
+    return this.listPublished().filter((product) => product.access !== "free");
+  }
+
+  /** The published listings that cost nothing. Today that is exactly one. */
+  listPublishedFree(): ShopProduct[] {
+    return this.listPublished().filter((product) => product.access === "free");
+  }
+
   /** Everything visible in this environment, any status — for internal use only. */
   listAll(): ShopProduct[] {
     return [...this.products.values()].filter((product) => this.isVisible(product));

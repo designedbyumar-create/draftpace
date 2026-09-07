@@ -67,7 +67,14 @@ export const LIFE_AREAS: LifeArea[] = [
       "A single next move when something needs attention, rather than a dashboard to interpret.",
     ],
     heroCta: "See how safe-to-spend works",
-    productSlugs: ["monthly-money-reset", "personal-finance-companion"],
+    // Personal Finance Companion first, deliberately. Every marketing
+    // surface that shows one product per area takes productSlugs[0], so
+    // while Monthly Money Reset led this list the highest-value slot on
+    // the site (the hero's Money panel) advertised the free product and
+    // the paid flagship was invisible there. The free product has its own
+    // page now, at /free, rather than a slot it was winning by costing
+    // nothing.
+    productSlugs: ["personal-finance-companion", "monthly-money-reset"],
   },
   {
     slug: "home",

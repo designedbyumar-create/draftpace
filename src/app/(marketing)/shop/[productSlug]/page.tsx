@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import Container from "@/design-system/Container";
@@ -101,6 +101,15 @@ export default async function ShopProductPage({
   const product = shopRegistry.getBySlug(productSlug);
   if (!product) notFound();
 
+  /**
+   * A free product's real page is /free, not a detail page inside a
+   * priced catalogue. Permanent, so the old URL stops competing with the
+   * page that replaced it and passes its authority on rather than
+   * splitting it. Deep links, old shares and anything already indexed
+   * keep working.
+   */
+  if (product.access === "free") permanentRedirect("/free");
+
   const priceLabel = formatPrice(product);
   const compareAtLabel = formatCompareAtPrice(product);
   const savingsPercent = discountPercent(product);
@@ -146,9 +155,12 @@ export default async function ShopProductPage({
           <section className="grid gap-10 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] sm:items-center sm:gap-8 lg:gap-14">
             <div>
               <div className="flex flex-wrap items-center gap-2">
-                <Badge tone={product.access === "free" ? "success" : "primary"}>
-                  {product.access === "free" ? "Free" : "Paid"}
-                </Badge>
+                {/* Always "Paid": a free listing never reaches this
+                    render, because the redirect above sends it to /free.
+                    TypeScript proves it, narrowing access to "paid"
+                    here, which is why the old free/paid ternary is gone
+                    rather than kept "just in case". */}
+                <Badge tone="primary">Paid</Badge>
                 {/* Only ever appears once a listing genuinely has launch
                     pricing set; every real product has none yet, so this
                     row renders exactly as it always has until its own
