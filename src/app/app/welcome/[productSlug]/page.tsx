@@ -91,10 +91,21 @@ export default async function WelcomePage({ params }: { params: Promise<{ produc
         <div className="mx-auto max-w-[560px]">
           {granted ? (
             <>
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[var(--primary-soft)]">
-                <Check size={20} className="text-[var(--primary)]" aria-hidden />
+              {/* Solid accent, not the soft wash it was: at this moment the
+                  customer's actual question is whether their card went
+                  through, and a pale tint does not answer it. Scales in
+                  once, which is as much celebration as these products can
+                  carry. One of them is about dying; confetti would be
+                  grotesque on it, so there is none on any of them. */}
+              <span className="inline-flex h-12 w-12 animate-[welcome-mark_420ms_cubic-bezier(0.16,1,0.3,1)] items-center justify-center rounded-full bg-[var(--primary)] motion-reduce:animate-none">
+                <Check size={24} className="text-[var(--primary-contrast)]" aria-hidden />
               </span>
-              <h1 className="mt-5 font-serif text-[30px] leading-[1.15] tracking-[-0.01em] text-[var(--text)] sm:text-[36px]">
+              {/* States the transaction plainly. "X is yours" implies the
+                  payment worked; it never says so. */}
+              <p className="mt-5 text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">
+                Payment complete
+              </p>
+              <h1 className="mt-2 font-serif text-[30px] leading-[1.15] tracking-[-0.01em] text-[var(--text)] sm:text-[36px]">
                 {title} is yours.
               </h1>
               <p className="mt-3 text-[16px] leading-relaxed text-[var(--muted)]">

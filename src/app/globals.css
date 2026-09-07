@@ -544,6 +544,23 @@ html[data-reduce-motion="true"] *::after {
   }
 }
 
+/*
+ * The confirmation mark on /app/welcome, the screen shown straight after
+ * a purchase. Ends at the resting state, so the global
+ * prefers-reduced-motion rule above collapsing it to 0.01ms leaves the
+ * mark correctly drawn rather than mid-animation.
+ */
+@keyframes welcome-mark {
+  from {
+    opacity: 0;
+    transform: scale(0.82);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .dp-scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
