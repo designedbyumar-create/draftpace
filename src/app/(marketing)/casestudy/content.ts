@@ -23,7 +23,7 @@ export const INTRO = {
   eyebrow: "Product design case study",
   title: "Software that starts with your life, not the other way around.",
   standfirst:
-    "How Draftpace became seven products built around real parts of life, instead of one interface stretched over all of them.",
+    "How Draftpace became nine products built around real parts of life, instead of one interface stretched over all of them.",
   byline: "By Umar Malik, who designed and built it.",
   meta: [
     { label: "Role", value: "Founder, Product Designer & Creator." },
@@ -121,10 +121,10 @@ export const COMPANION = {
 };
 
 export const SHELF = {
-  eyebrow: "The seven",
-  heading: "Seven problems, one way of thinking",
+  eyebrow: "The nine",
+  heading: "Nine problems, one way of thinking",
   body: [
-    "Seven different problems, not seven versions of the same app. The question behind building more than one was simple: if different parts of life have genuinely different problems, should they share one generic productivity screen?",
+    "Nine different problems, not nine versions of the same app. The question behind building more than one was simple: if different parts of life have genuinely different problems, should they share one generic productivity screen?",
     "The answer here was no. Each product is built to feel native to the problem it solves, rather than a shared template stretched over it.",
   ],
 };
@@ -194,17 +194,17 @@ export const DECISIONS: Decision[] = [
     result: "Two different answers for two genuinely different kinds of problem, instead of one answer stretched over both.",
   },
   {
-    title: "Seven products instead of one",
+    title: "Nine products instead of one",
     context: "One product with a shared foundation underneath it proves nothing, because there is nothing to compare it against.",
     problem: "Would the same foundation hold up across parts of life with almost nothing in common?",
     options: "Build one product properly and assume the foundation works, or build across enough areas to find out.",
-    decision: "Build across six areas of life on purpose, as a test of the foundation rather than a bet on seven ideas.",
+    decision: "Build across eight areas of life on purpose, as a test of the foundation rather than a bet on nine ideas.",
     result: "It held. The later products took less time to build than the earlier ones, which is the only honest measure of it.",
   },
   {
     title: "The taxonomy that did not survive contact",
     context: "Products were originally sorted by the kind of need they served, a set of categories written before most of them existed.",
-    problem: "Once there were seven products, six of them fell into a single category and three categories were empty.",
+    problem: "Once the shelf held seven products, six of them fell into a single category and three categories were empty.",
     options: "Keep the categories and force the products into them, or rebuild the categories around what had actually been built.",
     decision: "Sort by area of life instead of by abstract need, which is also how somebody describes their own problem out loud.",
     result: "A shop and a homepage that sort the way a visitor already thinks, rather than the way an early plan did.",
@@ -214,9 +214,9 @@ export const DECISIONS: Decision[] = [
     context:
       "The homepage opened with the argument that a Draftpace product outlasts a downloaded file, and spent three sections making it.",
     problem:
-      "That argument was right when the shelf held one product. With seven, it measured the work against a file rather than a real competitor, it was a claim any software can make, and it pushed the actual products most of the way down the page.",
+      "That argument was right when the shelf held one product. With a shelf of them, it measured the work against a file rather than a real competitor, it was a claim any software can make, and it pushed the actual products most of the way down the page.",
     options: "Sharpen the format argument, or drop it and lead with what the products are for.",
-    decision: "Cut it from the top of the page and lead with the six areas of life. The file argument survives as one supporting line further down.",
+    decision: "Cut it from the top of the page and lead with the areas of life themselves. The file argument survives as one supporting line further down.",
     result: "The single best-written passage on the site was demoted on purpose, because being well written is not the same as being the right thing to say first.",
   },
   {
@@ -385,7 +385,7 @@ export const HELD_UP = {
     },
     {
       head: "Testing the foundation with variety, not with faith",
-      text: "Six unrelated areas of life were built on purpose, to find out whether one foundation would hold rather than assume it.",
+      text: "Eight unrelated areas of life were built on purpose, to find out whether one foundation would hold rather than assume it.",
     },
     {
       head: "Designing against the real thing",
@@ -393,7 +393,7 @@ export const HELD_UP = {
     },
     {
       head: "Consistency without sameness",
-      text: "Seven products share one shell and one set of rules, and none of them reads as a reskin of another.",
+      text: "Nine products share one shell and one set of rules, and none of them reads as a reskin of another.",
     },
   ],
 };
@@ -411,7 +411,7 @@ export const UNPROVEN = {
       text: "Products sit at eighteen or twenty eight dollars, set from a sense of the depth of each one and the surrounding market. There was no pricing research and no willingness to pay testing.",
     },
     {
-      head: "Nobody knows which of the seven matters most",
+      head: "Nobody knows which of the nine matters most",
       text: "The shelf was built to test a foundation. It was not built on evidence about which area of life has the strongest demand.",
     },
     {
@@ -427,13 +427,18 @@ export const STATS = {
   eyebrow: "Scope",
   heading: "By the numbers",
   note: "Counted from the project's own history rather than estimated.",
+  // Every figure here is recounted from the repository when it changes,
+  // never incremented by eye. The design-token count is deliberately the
+  // number of token names, not the number of declarations: the same
+  // token is declared once per theme, and counting declarations made the
+  // shared set look three times larger than it is.
   items: [
-    { value: "7", label: "products, across six areas of life" },
-    { value: "14", label: "weeks from first commit to frozen MVP" },
-    { value: "180", label: "design tokens in one shared set" },
-    { value: "14", label: "shared interface primitives" },
-    { value: "2,006", label: "automated checks on every change" },
-    { value: "76", label: "pages across the site and products" },
+    { value: "9", label: "products, across eight areas of life" },
+    { value: "15", label: "weeks from first commit to this build" },
+    { value: "71", label: "design tokens in one shared set" },
+    { value: "15", label: "shared interface primitives" },
+    { value: "2,243", label: "automated checks on every change" },
+    { value: "81", label: "pages across the site and products" },
   ],
 };
 
@@ -442,7 +447,7 @@ export const NEXT = {
   heading: "Time to find out whether anyone wants it",
   body: [
     "The next phase is not more features. It is putting Draftpace in front of people who had nothing to do with building it, and watching what actually happens.",
-    "What do they use. What do they ignore. What do they come back to without being reminded. Where does it get in the way. Which of the seven pulls the most interest. And whether anybody is willing to pay for it.",
+    "What do they use. What do they ignore. What do they come back to without being reminded. Where does it get in the way. Which of the nine pulls the most interest. And whether anybody is willing to pay for it.",
     "Whatever gets designed next should come from that, rather than from another round of good reasoning.",
   ],
 };
