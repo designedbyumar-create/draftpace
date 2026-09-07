@@ -20,6 +20,36 @@ import path from "node:path";
 const TOUR = path.resolve(process.cwd(), "src/components/platform/GuidedTour.tsx");
 const source = readFileSync(TOUR, "utf8");
 
+/**
+ * The tour renders through a portal into document.body, which is outside
+ * the shell root carrying `data-product-theme` and the accent pairs.
+ * Custom properties inherit down the DOM and a portal is not a
+ * descendant, so without carrying the theme across, a steel product's
+ * tour showed a teal "Next" button: the platform accent, inside a
+ * product, which is the exact mistake the two button registers exist to
+ * prevent. Confirmed live before this guard was written (the button
+ * computed rgb(86, 83, 73), Vehicle Maintenance Companion's own
+ * #565349, only after the fix).
+ */
+describe("GuidedTour carries the product's accent across its portal", () => {
+  it("portals into document.body, which is why the theme has to be copied at all", () => {
+    expect(source).toContain("createPortal(");
+    expect(source).toContain("document.body");
+  });
+
+  it("copies the shell's own accent custom properties onto the portal root", () => {
+    expect(source).toContain("PRODUCT_THEME_ATTRIBUTE");
+    expect(source).toContain('name.startsWith("--product-")');
+    expect(source).toContain("{...productTheme}");
+  });
+
+  it("copies nothing when there is no product shell on the page", () => {
+    // A platform-level caller must keep the platform accent, not inherit
+    // whatever product happened to render last.
+    expect(source).toContain("if (!host) return {};");
+  });
+});
+
 describe("GuidedTour skips steps it cannot point at", () => {
   it("resolves its steps against the live document rather than trusting the list", () => {
     expect(source).toContain("resolveTarget(s.targetId) !== null");

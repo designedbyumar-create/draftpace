@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties }
 import { createPortal } from "react-dom";
 import { useReducedMotion } from "framer-motion";
 import Button from "@/design-system/Button";
+import { PRODUCT_THEME_ATTRIBUTE } from "@/product-framework/themeExtension";
 
 export type TourStep = {
   /**
@@ -99,6 +100,34 @@ export default function GuidedTour({
   const step = liveSteps[index];
   const isLast = index === liveSteps.length - 1;
 
+  /**
+   * The product's own accent, carried across the portal.
+   *
+   * This renders into document.body, which is outside the shell root
+   * that carries `data-product-theme` and the light/dark accent pairs.
+   * Custom properties inherit down the DOM, and a portal is not a
+   * descendant, so without this the tour's "Next" button and its
+   * spotlight ring resolve to the platform accent instead of the
+   * product's: teal furniture on a steel product, which is exactly the
+   * mistake the two button registers exist to prevent.
+   *
+   * Copying the shell's inline pairs onto the portal root, rather than
+   * threading a theme prop through every caller, means a product gets
+   * this by existing. With no product shell on the page (there is no
+   * such caller today, but the primitive is platform-level) it copies
+   * nothing and the platform accent is correct.
+   */
+  const productTheme = useMemo(() => {
+    if (!mounted || typeof document === "undefined") return {};
+    const host = document.querySelector<HTMLElement>(`[${PRODUCT_THEME_ATTRIBUTE}]`);
+    if (!host) return {};
+    const style: Record<string, string> = {};
+    for (const name of host.style) {
+      if (name.startsWith("--product-")) style[name] = host.style.getPropertyValue(name);
+    }
+    return { [PRODUCT_THEME_ATTRIBUTE]: "", style: style as CSSProperties };
+  }, [mounted]);
+
   // Nothing on this screen to point at: finish rather than dim the page.
   useEffect(() => {
     if (mounted && liveSteps.length === 0) onFinish();
@@ -161,7 +190,7 @@ export default function GuidedTour({
     : { bottom: window.innerHeight - rect.top + 14, left };
 
   return createPortal(
-    <div className="pointer-events-none fixed inset-0 z-[200]">
+    <div className="pointer-events-none fixed inset-0 z-[200]" {...productTheme}>
       <div
         className={`fixed rounded-2xl ring-2 ring-[var(--primary)] ${reduceMotion ? "" : "transition-all duration-300 ease-out"}`}
         style={{ ...spotlight, boxShadow: "0 0 0 9999px rgba(10, 20, 16, 0.55)" }}
