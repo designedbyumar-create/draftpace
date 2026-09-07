@@ -42,35 +42,15 @@ export const homeManagementCompanionShopProduct: ShopProductInput = {
     "You want to share the list with a partner or a housemate and assign jobs between you. Home Base is single-account for now.",
     "You manage more than one property.",
   ],
-  objections: [
-    {
-      worry: "Worried it becomes another app nagging you with a list?",
-      answer:
-        "It shows the few things worth your attention and says so in a sentence. When nothing needs you, it tells you your home is in good shape and leaves it there. A screen that always has something on it is a screen you stop believing.",
-    },
-    {
-      worry: "Think setting this up sounds like an evening you do not have?",
-      answer:
-        "Setup is tapping what you have from a list, not typing. It comes with a printable book you can carry round the house to gather model numbers away from a screen, and you can stop at any point. One water heater with a date on it is already worth more than forty blank rows.",
-    },
-    {
-      worry: "Not sure it can know how often anything is really due?",
-      answer:
-        "It knows because somebody wrote it down: a hand-built list of 122 kinds of thing found in homes and the care each one needs, including which jobs belong to which month. Nothing is inferred by a model, and every date it shows traces to something you entered.",
-    },
-    {
-      worry: "Already behind on everything and expecting to be told so?",
-      answer:
-        "It never says overdue and never keeps score. A job you have not done yet is described by when it was last done and how often it usually comes round, and you can push anything back without it counting against you.",
-    },
-  ],
-  outcomes: [
-    "One page that answers whether anything needs you, in a sentence, instead of a dashboard you have to interpret.",
-    "The expensive, forgettable jobs raised before they become repairs: the filter, the flush, the gutters, the shutoff you have never located.",
-    "Seasonal work raised in the month it belongs to, not three hundred and sixty five days after you last thought about it.",
-    "A record of who came out, what they did, and what it cost, so the question three years from now has an answer.",
-    "The two-in-the-morning facts written down once: where the water shuts off, how many turns, and which tool it takes.",
-  ],
+  // Emptied by the content collapse: every objection was answered a
+  // second time in faqs, and the Shop page rendered both a few hundred
+  // pixels apart. Both now live in `questions`, answered once each and
+  // tagged with the moment they matter.
+  objections: [],
+  // Emptied by the content collapse: four of these five restated a
+  // problemsSolved solution almost word for word. The fifth said
+  // something new and is now paired with the problem it answers.
+  outcomes: [],
   problemsSolved: [
     {
       problem: "The filter size, the model number, the last flush date, none of it lives anywhere.",
@@ -86,7 +66,17 @@ export const homeManagementCompanionShopProduct: ShopProductInput = {
     },
     {
       problem: "Nobody remembers who came out, what they did, or what it cost.",
-      solution: "A record of who came out, what they did, and what it cost, so the question three years from now has an answer.",
+      solution:
+        "A record of who came out, what they did, and what it cost, and when you report a new problem it tells you who you already used for that kind of work.",
+    },
+    {
+      problem: "At two in the morning nobody can find the water shutoff, let alone remember which way it turns.",
+      solution: "The facts that only matter in an emergency, written down once, on a page you can print and leave by the door.",
+    },
+    {
+      problem: "You are standing in the hardware store with no idea which filter, bulb or part it takes.",
+      solution:
+        "A what-to-buy line on each thing, for the filter size, part number or bulb type, printed on a single card you can take with you.",
     },
   ],
   howItWorks: [
@@ -95,7 +85,8 @@ export const homeManagementCompanionShopProduct: ShopProductInput = {
     "Already have notes somewhere? Paste them in and it will pull out what it recognises for you to confirm, line by line.",
     "Home shows what needs you now, what is coming up, and what has recently been handled. When there is nothing, it says so.",
     "When something is worth doing you can act on it or push it back. Acting records what actually happened: who did it, what it cost, and anything worth remembering next time.",
-    "Something broken rather than due? Say what is wrong in a sentence and it works out what you mean and treats it as its own kind of problem.",
+    "Something broken rather than due? Say what is wrong in a sentence and it works out what you mean and treats it as its own kind of problem. If you have already used somebody for that kind of work, it says who.",
+    "Print an Item Card for anything you are about to buy a part for. It carries the make, the model and the what-to-buy line, so the paper is enough on its own at the counter.",
   ],
   access: "paid",
   // Launch pricing, Phase 2 of the pricing plan: $29 actual, marked up
@@ -109,6 +100,8 @@ export const homeManagementCompanionShopProduct: ShopProductInput = {
     "The twelve areas of a home: kitchen, laundry, heating and cooling, water, power, safety, structure, grounds and garden, pests and damp, everyday things, papers, and renting",
     "A hand-built care schedule covering 122 kinds of thing, including the jobs that belong to a season rather than a timer",
     "The Home Survey: a printable book in US Letter and A4, for gathering what you own away from a screen",
+    "A what-to-buy line on each thing (filter size, part number, bulb type), and a printable Item Card carrying it to the shop",
+    "Provider suggestions drawn from your own history: who you last used for that category of work, never a directory",
     "Setup by tapping rather than typing, plus paste-in import if you already keep notes somewhere",
     "Somewhere to record what is currently wrong, kept separate from what is merely due",
     "Service history and costs kept against the people who did the work",
@@ -126,49 +119,154 @@ export const homeManagementCompanionShopProduct: ShopProductInput = {
     "Care and seasonal work raised when it is due, never a permanent list",
     "A history of what has been done, by whom, and what it cost",
     "A printable survey of your home you can fill in by hand",
+    "A one-page Item Card for anything you need to buy a part for",
   ],
   savingBehavior:
     "Everything saves to your account automatically as you go. It is tied to your sign-in, not this device, so it is there if you come back on something else.",
   privacyNotes:
     "Your home records are private to your account. Draftpace does not sell your data or use it for advertising, and nothing here is read by an AI model. Home Base is a tracking aid, not a substitute for your manuals or a professional inspection, and anything involving gas, electricity, structure or water is a job for somebody qualified. Deliberately, it is not a place to keep passwords or alarm codes.",
-  faqs: [
+  faqs: [],
+
+  /**
+   * Every worry, asked once, tagged with the moment it matters. Four
+   * objections and eight faqs collapsed to eight questions: "another app
+   * nagging you with a list" and "how does it decide what to show me"
+   * were the same worry answered from two directions, as were "setting
+   * this up sounds like an evening you do not have" and "what if I only
+   * enter a few things at first". Sharing and multiple properties are
+   * one honest "not yet" rather than two.
+   */
+  questions: [
     {
-      question: "Is this a one-time purchase or a subscription?",
-      answer: "One time. You pay once and keep it, the same way every paid product on Draftpace works unless a listing says otherwise.",
+      question: "Worried it becomes another app nagging you with a list?",
+      answer:
+        "It shows the few things worth your attention, in a sentence, and when nothing needs you it says your home is in good shape and stops there. What appears is ranked by what it would cost you to leave it, so a smoke alarm outranks a dusty vent, and every row states the fact that put it there.",
+      stage: ["deciding", "owning"],
     },
     {
-      question: "Does it scan receipts or warranty cards automatically?",
+      question: "Is setting this up an evening you do not have?",
       answer:
-        "No. You add the details yourself, on purpose. There is no camera scan, no document upload, and no AI reading your paperwork.",
+        "Setup is tapping what you have from a list, not typing, and you can stop at any point. It works from whatever you have given it: one water heater with a date on it is already worth more than forty blank rows. There is a printable book for gathering model numbers round the house away from a screen.",
+      stage: ["deciding", "owning"],
+    },
+    {
+      question: "How can it know how often anything is really due?",
+      answer:
+        "Because somebody wrote it down: a hand-built list of 122 kinds of thing found in homes and the care each one needs, including which jobs belong to which month. Nothing is inferred by a model, and every date traces back to something you entered.",
+      stage: ["deciding", "owning"],
+    },
+    {
+      question: "Already behind on everything and expecting to be told so?",
+      answer:
+        "It never says overdue and never keeps score. A job not done yet is described by when it was last done and how often it comes round, and you can push anything back without it counting against you.",
+      stage: ["deciding", "owning"],
+    },
+    {
+      question: "Does it scan receipts or warranty cards?",
+      answer:
+        "No. You add the details yourself, on purpose. There is no camera scan, no document upload, and nothing here is read by an AI model.",
+      stage: ["deciding", "owning"],
     },
     {
       question: "Is this useful if I rent?",
       answer:
-        "Yes, and it adjusts. Tell it you rent and it stops asking about the roof and the gutters and starts asking about the things that cost a renter money: the notice deadline, the deposit, and what you reported to the landlord and when.",
+        "Yes, and it adjusts. Say you rent and it stops asking about the roof and the gutters and starts asking about what costs a renter money: the notice deadline, the deposit, and what you reported to the landlord and when.",
+      stage: ["deciding", "owning"],
     },
     {
-      question: "What if I only enter a few things at first?",
+      question: "Can I share it with a partner, or track a second property?",
       answer:
-        "That is the expected way to use it. It works from whatever you have given it and never demands a complete picture before it will say anything useful.",
+        "Not yet, on both. It is built around one account and one home for now, with no sharing or assigning between people.",
+      stage: ["deciding", "owning"],
     },
     {
-      question: "How does it decide what to show me?",
+      question: "Is this a one-time purchase, and do I need an account?",
       answer:
-        "By how much it would cost you to leave it: how serious the consequence is, how far past its usual point it has gone, and how much work it is. A smoke alarm outranks a dusty vent. Every row states the fact that put it there, so you can see what it is working from.",
-    },
-    {
-      question: "Can I use it with my partner or a housemate?",
-      answer: "Not yet. Home Base is built around a single account for now, and there is no sharing or assigning between people.",
-    },
-    {
-      question: "Can I track more than one property?",
-      answer: "Not yet. Home Base is built around a single home for now.",
-    },
-    {
-      question: "Do I need a Draftpace account?",
-      answer: "Yes, so your home records save privately and follow you across devices.",
+        "One time, and yes. You pay once and keep it, and a Draftpace account is what keeps your home records private and available on whatever device you next open.",
+      stage: ["deciding"],
     },
   ],
+
+  /**
+   * How people describe this before they know a product like this exists.
+   * Sourced, not invented: the four home PROBLEM_ENTRIES clusters in
+   * src/content/askdp.ts and the titles of home guides already written
+   * from the same research.
+   */
+  searchedProblems: [
+    {
+      phrase: "I keep forgetting home maintenance",
+      answer:
+        "It holds the timing for you and raises a job when it is worth doing, then goes quiet again. Nothing sits on screen permanently.",
+    },
+    {
+      phrase: "I just bought a house and have no idea what needs doing",
+      answer:
+        "Tap what your home has across twelve areas and it tells you what each one needs and roughly when, before anything becomes a repair.",
+    },
+    {
+      phrase: "How often do home systems actually need servicing",
+      answer:
+        "A hand-built schedule for 122 kinds of thing found in homes, including the jobs that belong to a month rather than a timer.",
+    },
+    {
+      phrase: "I lost the manual, the receipt and the warranty",
+      answer:
+        "Make, model, install date, warranty end and the what-to-buy line live on the thing itself, and print onto one card when you need them.",
+    },
+    {
+      phrase: "I don't know which filter or part my appliance takes",
+      answer: "A what-to-buy line on each thing, printable as a single Item Card you can take to the counter.",
+    },
+    {
+      phrase: "Homeownership feels like a full-time job",
+      answer:
+        "One page answers whether anything needs you this week. When the answer is no, it says so and leaves it there.",
+    },
+  ],
+
+  /**
+   * What an owner opens the manual to do, each row linking to the screen
+   * it happens on.
+   */
+  tasks: [
+    {
+      label: "Find out whether anything needs me this week",
+      answer: "Home answers it in a sentence, with the few things worth doing under it and nothing padding the list.",
+      destination: "workspace",
+    },
+    {
+      label: "Add what my home has",
+      answer: "Tap from the list of 122 kinds of thing rather than typing. Untick any care that does not apply to yours.",
+      destination: "setup",
+    },
+    {
+      label: "Record what filter or part something takes",
+      answer: "The what-to-buy line sits on the thing itself, alongside its make and model.",
+      destination: "workspace",
+    },
+    {
+      label: "Take the details to the hardware store",
+      answer: "Print an Item Card. It carries the make, model and what-to-buy line, and is self-sufficient on paper.",
+      destination: "printables",
+    },
+    {
+      label: "Report something that's broken rather than due",
+      answer: "Say what is wrong in a sentence. It is treated as its own kind of problem, and you are told who you used last for that kind of work.",
+      destination: "workspace",
+    },
+    {
+      label: "Look up who came out and what it cost",
+      answer: "History keeps the work, the person and the cost, so the question three years from now has an answer.",
+      destination: "history",
+    },
+    {
+      label: "Bring in notes I already keep somewhere",
+      answer: "Paste them in. It pulls out what it recognises and you confirm line by line before anything is created.",
+      destination: "import",
+    },
+  ],
+
   relatedGuideSlugs: [],
   relatedProductSlugs: ["personal-finance-companion", "personal-life-affairs-companion", "homeschooling-companion"],
   needGroups: ["getting-organized"],

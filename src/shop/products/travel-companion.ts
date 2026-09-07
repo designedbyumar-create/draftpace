@@ -60,42 +60,15 @@ export const travelCompanionShopProduct: ShopProductInput = {
     "You want it to plan the trip for you or suggest what to do. It has no opinion about your itinerary and no model involved anywhere in it.",
     "You want push notifications when something changes. It does not send them yet, and does not pretend to.",
   ],
-  objections: [
-    {
-      worry: "Already have everything in your email and a notes app?",
-      answer:
-        "Most people do, and it works right up until something moves. Email holds each booking on its own, with no idea that the transfer was booked around the flight. This holds the connection between them, so when one changes you are shown what was built on top of it instead of reconstructing it from memory at a gate.",
-    },
-    {
-      worry: "Worried this is another itinerary planner?",
-      answer:
-        "A planner is about deciding what your trip will be. This is about running the trip once it exists and starts changing. It never suggests a destination, never fills a day for you, and every blank stays blank until you write in it.",
-    },
-    {
-      worry: "Not going to trust an app with your passport details?",
-      answer:
-        "You should not, and it does not ask. It cannot store a file at all: there is no upload anywhere in the product. It records that a document exists, whose it is, and where it lives, which is what you actually need at a desk when somebody asks where it is.",
-    },
-    {
-      worry: "Phone dies, then what?",
-      answer:
-        "There is a printed book included, blank and structured, covering the whole trip: bookings, travellers, documents, transport, daily pages, and the connection pages that are the point of the product. Paper does not need signal, battery, or a login.",
-    },
-    {
-      worry: "Travelling alone with a simple trip?",
-      answer:
-        "Then this is probably more than you need. It earns its place when a trip has enough moving parts that one change causes another, and when somebody other than you is depending on the answer.",
-    },
-  ],
-  outcomes: [
-    "One place that holds what you booked, who it is for, and what it depends on, instead of six inboxes and a screenshot.",
-    "When something moves, an immediate answer to what else it touches, walked one booking at a time rather than all at once.",
-    "A confirmation number and a provider readable in three seconds at a desk, without opening an email client.",
-    "Today's operational state on one screen: what is happening, what is worth knowing about tomorrow, and what you are still waiting to hear back on.",
-    "An honest, quiet screen on the days a trip needs nothing from you, rather than a list filling the space anyway.",
-    "A record of what actually happened, and what is worth knowing before the next trip to the same place.",
-    "A printed book you can carry, so the trip does not depend on one device staying charged.",
-  ],
+  // Emptied by the content collapse: four of these five were answered a
+  // second time in faqs, and the Shop page rendered both a few hundred
+  // pixels apart. All of them now live in `questions`, answered once
+  // each and tagged with the moment they matter.
+  objections: [],
+  // Emptied by the content collapse: four of these seven restated a
+  // problemsSolved solution nearly word for word. The three that said
+  // something new are now paired with the problem they answer.
+  outcomes: [],
   problemsSolved: [
     {
       problem: "Confirmation numbers live in six different inboxes and a screenshot.",
@@ -111,7 +84,21 @@ export const travelCompanionShopProduct: ShopProductInput = {
     },
     {
       problem: "You can't tell what's actually happening today versus what's just noise.",
-      solution: "Today's operational state on one screen: what's happening, and what's worth knowing about tomorrow.",
+      solution:
+        "Today's operational state on one screen, and on the days a trip needs nothing from you, an honest quiet screen rather than a list filling the space anyway.",
+    },
+    {
+      problem: "A booking crosses a time zone and you can't work out whether it's still today.",
+      solution:
+        "Each place carries its real timezone, worked out from what you named it, so today means today where you actually are and daylight saving cannot quietly shift it.",
+    },
+    {
+      problem: "Somebody at a desk asks for the confirmation number and it's in one of six inboxes.",
+      solution: "The reference and the provider readable in three seconds, without opening an email client.",
+    },
+    {
+      problem: "You come back to the same place a year later and have forgotten everything you learned.",
+      solution: "A dated record of what happened, and what's worth knowing before the next trip to the same place.",
     },
   ],
   howItWorks: [
@@ -121,6 +108,7 @@ export const travelCompanionShopProduct: ShopProductInput = {
     "Today shows the current state, derived fresh from what you recorded: what is happening now, what is worth knowing about, and what you are waiting on.",
     "When something moves, record the change. It walks down what depends on it and shows every affected booking as potentially affected, never edited for you, so you decide what actually needs doing.",
     "For each one, the Companion walks you through it: eight authored situations covering booking, flight, hotel and transport problems, plus the general ones for reorganising and letting people know.",
+    "Name a destination and it works out that place's real timezone from a small offline table, so today means today where you are. Unrecognised places are said to be undetected rather than guessed at, and you can set one by hand from the same table.",
     "Waiting to hear back becomes a real open thread, shown on Today until it is resolved, then filed into the record with the line it closed on.",
     "Print My Trip Book whenever you want a paper copy, blank and structured, as long or short as your trip needs.",
   ],
@@ -139,6 +127,7 @@ export const travelCompanionShopProduct: ShopProductInput = {
     "The change-impact walk: record a change and see exactly what was built on top of it, handled one booking at a time",
     "The Companion: eight authored situations for when something goes wrong, including flight, hotel, transport and booking problems",
     "Open threads: anything you are waiting to hear back on, surfaced while it matters and filed when it is resolved",
+    "Real timezones per place, from an offline lookup with a searchable manual override, so a booking across a date line is never wrongly called today",
     "People: who is travelling, their requirements, and the documents that belong to them",
     "A document registry: what exists and where it is kept, never a file, never an upload",
     "Record: what happened, dated, and what is worth knowing next time you go to the same place",
@@ -163,46 +152,153 @@ export const travelCompanionShopProduct: ShopProductInput = {
     "Everything saves to your account automatically as you go. It is tied to your sign-in, not this device, so a trip you set up on a laptop is there on your phone at the airport. Nothing is ever deleted: a cancelled booking or a corrected entry is archived rather than removed, and the record of what happened is never edited after the fact.",
   privacyNotes:
     "Your trip is private to your account. Draftpace does not sell your data or use it for advertising, and nothing here is read by an AI model: there is no model provider anywhere in this product. It stores no files at all, which means no passport scan, no visa PDF, and no boarding pass image can be uploaded to it even by accident. It holds no amount, currency, or balance, so it never becomes a record of what a trip cost. Suggested wording for a difficult call stays in your browser and is never saved, even after you use it.",
-  faqs: [
+  faqs: [],
+
+  /**
+   * Every worry, asked once, tagged with the moment it matters. Five
+   * objections and eight faqs collapsed to nine questions: "not going to
+   * trust an app with your passport details" and "can I store my
+   * passport or tickets in it" were the same question twice, as were the
+   * itinerary-planner pair and the printed-book pair.
+   */
+  questions: [
     {
-      question: "Is this a one-time purchase or a subscription?",
-      answer: "One time. You pay once and keep it, the same way every paid product on Draftpace works.",
+      question: "Already have everything in your email and a notes app?",
+      answer:
+        "Most people do, and it works right up until something moves. Email holds each booking on its own, with no idea the transfer was booked around the flight. This holds the connection, so when one changes you are shown what was built on top of it instead of reconstructing it at a gate.",
+      stage: ["deciding", "owning"],
     },
     {
-      question: "Can I store my passport or tickets in it?",
+      question: "Is this another itinerary planner?",
       answer:
-        "No, and that is deliberate rather than a limitation waiting to be fixed. It records that a document exists, whose it is, and where it is kept, for example a photo in your phone or printed in the front pocket. No product on Draftpace stores an uploaded file, and passport and visa references are the most sensitive category of data any of them would hold if it did.",
+        "A planner is about deciding what your trip will be. This is about running the trip once it exists and starts changing. It never suggests a destination, never fills a day for you, has no opinion about your itinerary, and every blank stays blank until you write in it.",
+      stage: ["deciding"],
     },
     {
-      question: "Does it track flight status or tell me if my flight is delayed?",
+      question: "Can I store my passport or my tickets in it?",
       answer:
-        "No. It has no connection to any airline or booking system, and it does not send notifications of any kind yet. Everything it shows is something you recorded. What it does is far more useful once you already know about the delay: tell you what else that delay touches.",
+        "No, and that is deliberate rather than a gap waiting to be filled. It cannot store a file at all: there is no upload anywhere in it. It records that a document exists, whose it is, and where it is kept, a photo on your phone or printed in the front pocket, which is what you actually need when somebody asks where it is.",
+      stage: ["deciding", "owning"],
+    },
+    {
+      question: "Does it track flight status or tell me my flight is delayed?",
+      answer:
+        "No. It has no connection to any airline or booking system, and it sends no notifications of any kind. Everything it shows is something you recorded. What it does is more useful once you already know: tell you what else that delay touches.",
+      stage: ["deciding", "owning"],
     },
     {
       question: "What actually happens when a flight moves?",
       answer:
-        "You record the new time on that booking. It then walks down everything you said was booked around it, the transfer, the check-in, the reservation that evening, and shows each one as potentially affected with its current time. It changes nothing for you. You go through them one at a time, with the Companion to help on any that need a phone call.",
+        "You record the new time on that booking. It walks down everything you said was booked around it, the transfer, the check-in, the reservation that evening, and shows each as potentially affected with its current time. It changes nothing for you. You go through them one at a time, with the Companion on any that need a phone call.",
+      stage: ["deciding", "owning"],
+    },
+    {
+      question: "Does it get time zones right when I cross one?",
+      answer:
+        "It works the place's real timezone out from what you named it, using a small offline table of major cities and airports, so what counts as today is today where you are and daylight saving cannot quietly shift it. An unrecognised place says so rather than guessing, and you can set one by hand. There is no raw UTC offset anywhere, because an offset goes wrong twice a year.",
+      stage: ["deciding", "owning"],
     },
     {
       question: "Can it split costs between the people I am travelling with?",
       answer:
-        "No. There is no amount, currency, or balance column anywhere in it, on purpose. A thread can say somebody still owes their share in your own words, but nothing here calculates it. Adding that would make this a worse version of a product we already sell.",
+        "No. There is no amount, currency or balance column anywhere in it, on purpose. A thread can say somebody still owes their share in your own words, but nothing here calculates it. Adding that would make this a worse version of a product we already sell.",
+      stage: ["deciding", "owning"],
     },
     {
-      question: "Will it plan my trip or suggest things to do?",
+      question: "What happens when my phone dies?",
       answer:
-        "No. It has no opinion about where you should go or what you should book, and there is no model involved anywhere in it. It is built to run a trip you have already decided on.",
+        "My Trip Book is included: a blank, structured planner you print and fill in by hand, covering the trip overview, destinations, travellers, bookings, transport, accommodation, documents, open threads and daily pages, plus the connection and change-impact pages that are this product's own way of thinking. It is modular, so three destinations print three destination pages. Paper needs no signal, battery or login.",
+      stage: ["deciding", "owning"],
     },
     {
-      question: "What is My Trip Book?",
+      question: "Is this a one-time purchase, and do I need an account?",
       answer:
-        "A blank, structured travel planner, included, that you print and fill in by hand. Trip overview, destinations, travellers, bookings, transport, accommodation, documents, open threads and daily pages, plus the booking-connection and change-impact pages that are this product's own way of thinking. It is modular, so a trip with three destinations prints three destination pages rather than forcing a fixed planner on you.",
-    },
-    {
-      question: "Do I need a Draftpace account?",
-      answer: "Yes, so your trip saves privately and follows you across devices.",
+        "One time, and yes. The account is what keeps your trip private and there on your phone at the airport after you set it up on a laptop.",
+      stage: ["deciding"],
     },
   ],
+
+  /**
+   * How people describe this before they know a product like this exists.
+   * Sourced, not invented: the luggage-compensation question already
+   * answered in src/content/askdp.ts and the titles of the travel guides
+   * written from the same research.
+   */
+  searchedProblems: [
+    {
+      phrase: "My flight changed and I don't know what else is affected",
+      answer:
+        "Record the change and it walks down everything you said was booked around it, one booking at a time, editing nothing for you.",
+    },
+    {
+      phrase: "My flight is delayed and I have a connection",
+      answer:
+        "The connection, the transfer and whatever was booked after them are shown as potentially affected, with a walked-through call for any that need one.",
+    },
+    {
+      phrase: "How do I organise a multi-stop trip without a spreadsheet",
+      answer:
+        "Destinations, bookings, travellers and documents in one place, with the shape of the trip held for you rather than in your head.",
+    },
+    {
+      phrase: "The hotel cannot find my reservation",
+      answer:
+        "The provider and the confirmation reference are readable in three seconds, and there is an authored walkthrough for the conversation that follows.",
+    },
+    {
+      phrase: "I'm the one everybody asks what happens next",
+      answer:
+        "Today shows the current state of the trip in plain sentences, each tracing to something somebody recorded, so the answer is not in your head alone.",
+    },
+    {
+      phrase: "What should I keep on paper when I travel",
+      answer:
+        "My Trip Book prints exactly that: the whole trip, structured, as long as your trip needs and no longer.",
+    },
+  ],
+
+  /**
+   * What an owner opens the manual to do, each row linking to the screen
+   * it happens on.
+   */
+  tasks: [
+    {
+      label: "Find out what's happening today",
+      answer: "Today is derived fresh from what you recorded: what is happening, what is coming, what you are waiting on.",
+      destination: "workspace",
+    },
+    {
+      label: "Add a booking",
+      answer: "What, when, who with, the provider and the reference. Trip holds them all with a brief over the whole thing.",
+      destination: "trip",
+    },
+    {
+      label: "Say one booking depends on another",
+      answer: "Set it once with the depends-on picker. Nothing is ever inferred from timing or place.",
+      destination: "trip",
+    },
+    {
+      label: "Deal with something that just changed",
+      answer: "Record the change. It lists everything built on top of it as potentially affected, and changes none of it for you.",
+      destination: "workspace",
+    },
+    {
+      label: "Fix a place whose timezone was not detected",
+      answer: "Search the same table and set it by hand. There is no raw offset to get wrong.",
+      destination: "trip",
+    },
+    {
+      label: "Print the trip to carry",
+      answer: "My Trip Book, blank and structured, as long as your trip needs. Paper needs no battery.",
+      destination: "printables",
+    },
+    {
+      label: "Write down what's worth knowing next time",
+      answer: "Record keeps what happened, dated, and what you would want to know before going back to the same place.",
+      destination: "record",
+    },
+  ],
+
   relatedGuideSlugs: [],
   relatedProductSlugs: ["personal-life-affairs-companion", "alongside"],
   needGroups: ["planning-something-important", "keeping-something-moving"],

@@ -49,41 +49,15 @@ export const vehicleMaintenanceCompanionShopProduct: ShopProductInput = {
     "You want push notifications when something becomes due. It does not send them yet, and does not pretend to.",
     "You want a full record of every repair ever done. This is about what is due next, not a general vehicle history log.",
   ],
-  objections: [
-    {
-      worry: "Worried this claims to know your car's real maintenance schedule?",
-      answer:
-        "It does not, deliberately. The starting points it offers are hand-written, generic rules of thumb, always labelled \"typical,\" and every one becomes an ordinary, editable number the moment you use it. Your own manual, or your own mechanic, is always the real source. This just means you are not stuck typing a number from nothing.",
-    },
-    {
-      worry: "Bought a used car with no real history?",
-      answer:
-        "That is a distinct, named path in the product, not an afterthought. Marking a vehicle's history unknown skips asking for a last-done date or mileage it does not honestly have. Every item on it reads as nothing to judge yet, never as an invented \"already overdue,\" until you record a real fact against it.",
-    },
-    {
-      worry: "Do a lot of towing or short trips?",
-      answer:
-        "Severe duty is a one-time toggle per job, not per vehicle, because oil changes and tire rotations do not shorten at the same rate as everything else on the car. It halves whichever interval you actually entered; it never substitutes a different number of its own.",
-    },
-    {
-      worry: "Skeptical of yet another maintenance app that never gets used?",
-      answer:
-        "There is exactly one main screen: what is due, ranked, across every vehicle you own. No streaks, no score, no manufactured urgency for things that are not actually due. A day with nothing due says so plainly.",
-    },
-    {
-      worry: "Worried about surprise work at the shop counter?",
-      answer:
-        "This is the reason the Service Boundary exists: a dated, mileage-stamped document stating exactly what you are requesting today and what is explicitly not authorized without a further conversation. It states your own choice, made in the app before you hand it over.",
-    },
-  ],
-  outcomes: [
-    "One ranked view of what is due, across every vehicle you own, computed from the intervals and facts you actually recorded.",
-    "A place to keep the exact interval you were quoted, instead of relying on memory or a generic number found online.",
-    "A one-time severe-duty toggle per job, so towing or short-trip driving is accounted for without inventing a second interval table.",
-    "A distinct, honest path for a used or inherited vehicle: nothing is assumed already done, and nothing reads as overdue until a real fact says so.",
-    "A dated, mileage-stamped Service Boundary document you can hand to a shop, stating what is requested today and what is not authorized.",
-    "A quiet, honest screen on the days nothing is due, rather than an invented task filling the space.",
-  ],
+  // Emptied by the content collapse: four of these five were answered a
+  // second time in faqs, and the Shop page rendered both. All of them
+  // now live in `questions`, answered once each and tagged with the
+  // moment they matter.
+  objections: [],
+  // Emptied by the content collapse: four of these six restated a
+  // problemsSolved solution nearly word for word. The two that said
+  // something new are now paired with the problem they answer.
+  outcomes: [],
   problemsSolved: [
     {
       problem: "Nobody remembers the exact interval they were quoted for this specific vehicle.",
@@ -100,6 +74,11 @@ export const vehicleMaintenanceCompanionShopProduct: ShopProductInput = {
     {
       problem: "Towing or short-trip driving shortens some intervals, but not all of them equally.",
       solution: "A one-time severe-duty toggle per job that halves only the interval you actually entered.",
+    },
+    {
+      problem: "Every maintenance app eventually becomes a list of manufactured urgency you stop opening.",
+      solution:
+        "One screen: what is due, ranked, across every vehicle. No streak, no score, and a plain \"nothing is due\" on the days that is true.",
     },
   ],
   howItWorks: [
@@ -141,40 +120,146 @@ export const vehicleMaintenanceCompanionShopProduct: ShopProductInput = {
     "Everything saves to your account automatically as you go. It is tied to your sign-in, not this device, so a vehicle you set up on a laptop is there on your phone at the shop. Nothing is ever silently deleted; removing a vehicle or an item archives it rather than erasing the record.",
   privacyNotes:
     "Your vehicles and maintenance records are private to your account. Draftpace does not sell your data or use it for advertising, and nothing here is read by an AI model: there is no model provider anywhere in this product. It has no connection to any vehicle, dealer, or manufacturer system, and cannot look up or share anything about your car beyond what you typed in yourself.",
-  faqs: [
+  faqs: [],
+
+  /**
+   * Every worry, asked once, tagged with the moment it matters. Five
+   * objections and seven faqs collapsed to eight questions: each
+   * objection had a near-identical faq beneath it (the factory-schedule
+   * pair, the used-car pair, the severe-duty pair, the Service Boundary
+   * pair), and the Shop page rendered both.
+   */
+  questions: [
     {
-      question: "Is this a one-time purchase or a subscription?",
-      answer: "One time. You pay once and keep it, the same way every paid product on Draftpace works.",
-    },
-    {
-      question: "Does it know my car's actual factory maintenance schedule?",
+      question: "Does it know my car's real factory maintenance schedule?",
       answer:
-        "No, and it is not trying to. It offers a short, hand-written list of typical starting intervals for common jobs, always labelled \"typical,\" and copying one onto your vehicle makes it an ordinary, editable number from that point on. Your own manual or mechanic is always the real source.",
+        "No, and it is not trying to. What it offers is a short, hand-written list of typical starting intervals for common jobs, always labelled typical, and copying one onto your vehicle makes it an ordinary editable number from that point on. Your own manual or your own mechanic is always the real source. This just means you are not typing a number from nothing.",
+      stage: ["deciding", "owning"],
     },
     {
       question: "I bought a used car with no service records. What happens?",
       answer:
-        "You mark that vehicle's history unknown when you add it. Nothing is asked about when a job was last done, and every item on it reads as nothing to judge yet, honestly, until you record a real fact against it. It never guesses that something is already overdue.",
+        "You mark that vehicle's history unknown when you add it, and it stops asking for a last-done date it does not honestly have. Every item on it reads as nothing to judge yet until you record a real fact, and it never guesses that something is already overdue on a car it knows nothing about.",
+      stage: ["deciding", "owning"],
     },
     {
-      question: "What does severe duty actually change?",
+      question: "I tow, or drive short trips. What does severe duty actually change?",
       answer:
-        "It is a one-time toggle on a specific maintenance item, not the whole vehicle. Turning it on halves whichever interval you entered for that job; it never substitutes a different, hardcoded number of its own, and it never changes any other job on the same vehicle.",
+        "It is a one-time toggle on a specific job, not on the whole vehicle, because an oil change and a tyre rotation do not shorten at the same rate. Turning it on halves whichever interval you entered for that one job. It never substitutes a hardcoded number of its own and never touches anything else on the car.",
+      stage: ["deciding", "owning"],
     },
     {
-      question: "What is the Service Boundary?",
+      question: "What is the Service Boundary, and what is it for?",
       answer:
-        "A document you generate before a shop visit: a dated, mileage-stamped statement of exactly what you are requesting today, with everything else you track on that vehicle listed as not authorized without a further conversation. It states your own choice, decided in the app, not a recommendation from Draftpace about what your car needs.",
+        "A dated, mileage-stamped document you generate before a shop visit: exactly what you are requesting today, with everything else you track on that vehicle listed as not authorized without a further conversation. It states your own choice, decided before you hand the keys over, not a recommendation from Draftpace about what your car needs.",
+      stage: ["deciding", "owning"],
     },
     {
-      question: "Does it connect to my car or read my actual odometer?",
-      answer: "No. There is no connection to any vehicle, dealer, or manufacturer system anywhere in this product. You enter your own mileage.",
+      question: "Does it connect to my car or read my odometer?",
+      answer:
+        "No. There is no connection to any vehicle, dealer, or manufacturer system anywhere in this product, and no VIN lookup. You enter your own mileage, which is also why nothing here can be wrong about your car without you having typed it.",
+      stage: ["deciding", "owning"],
     },
     {
-      question: "Do I need a Draftpace account?",
-      answer: "Yes, so your vehicles save privately and follow you across devices.",
+      question: "Will it nag me with manufactured urgency?",
+      answer:
+        "There is one main screen: what is due, ranked, across every vehicle you own. No streak, no score, and on a day when nothing is due it says exactly that and stops.",
+      stage: ["deciding", "owning"],
+    },
+    {
+      question: "Does it send me a reminder when something comes due?",
+      answer:
+        "No, and it does not pretend to. Nothing is sent to you. What is due is worked out fresh each time you open it, from the intervals and dates you recorded.",
+      stage: ["deciding", "owning"],
+    },
+    {
+      question: "Is this a one-time purchase, and do I need an account?",
+      answer:
+        "One time, and yes. The account is what keeps your vehicles private and there on your phone at the shop after you set them up on a laptop.",
+      stage: ["deciding"],
     },
   ],
+
+  /**
+   * How people describe this before they know a product like this exists.
+   * There were no PROBLEM_ENTRIES or guides for vehicles when this was
+   * written, so these come from research done for it rather than from
+   * the existing knowledge layer: the two recurring owner situations
+   * (a used car with no records, and unauthorised work at the counter)
+   * and the widely documented fact that a large share of drivers meet
+   * the severe-service definition without knowing the term. Every answer
+   * describes only what the product actually does.
+   */
+  searchedProblems: [
+    {
+      phrase: "I bought a used car with no maintenance records",
+      answer:
+        "Mark its history unknown and nothing is assumed done. Items wait, honestly, until you have a real fact to record against them.",
+    },
+    {
+      phrase: "How do I stop a shop doing work I didn't authorize",
+      answer:
+        "Hand them a dated, mileage-stamped page saying what you are requesting today and that nothing else is authorized without a conversation first.",
+    },
+    {
+      phrase: "How often should I really change the oil if I tow or drive short trips",
+      answer:
+        "Enter the interval you actually believe, then turn on severe duty for that one job to halve it. Nothing here overrides your number with its own.",
+    },
+    {
+      phrase: "I can't remember what interval the mechanic quoted me",
+      answer:
+        "Type it in once against that vehicle. It is kept, editable, and it is what the due date is computed from from then on.",
+    },
+    {
+      phrase: "What maintenance is due on my car right now",
+      answer:
+        "One ranked view across every vehicle you own, worked out from your intervals and your recorded dates and mileage, never from a guess.",
+    },
+    {
+      phrase: "I have two cars and lose track of which needs what",
+      answer:
+        "Both sit in the same ranked list, most urgent first, each item saying which vehicle it belongs to.",
+    },
+  ],
+
+  /**
+   * What an owner opens the manual to do, each row linking to the screen
+   * it happens on.
+   */
+  tasks: [
+    {
+      label: "See what's due right now",
+      answer: "Due ranks everything across every vehicle, most urgent first, and says plainly when nothing is.",
+      destination: "workspace",
+    },
+    {
+      label: "Add a vehicle",
+      answer: "What you call it, its identity if you want it, and whether you actually know its service history.",
+      destination: "vehicles",
+    },
+    {
+      label: "Track a job and set its real interval",
+      answer: "Start from a typical interval or write your own. Either way it is your number and stays editable.",
+      destination: "vehicles",
+    },
+    {
+      label: "Account for towing or short trips",
+      answer: "Turn on severe duty for that one job. It halves the interval you entered and touches nothing else.",
+      destination: "vehicles",
+    },
+    {
+      label: "Record that I had something done",
+      answer: "Mark it done on the day. Its next due date resets from that real fact, not from an estimate.",
+      destination: "workspace",
+    },
+    {
+      label: "Put a limit in writing before a shop visit",
+      answer: "Generate the Service Boundary. Choose what you are requesting; everything else prints as not authorized.",
+      destination: "printables",
+    },
+  ],
+
   relatedGuideSlugs: [],
   relatedProductSlugs: ["home-management-companion", "personal-life-affairs-companion"],
   needGroups: ["keeping-something-moving"],

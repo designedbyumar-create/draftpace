@@ -52,40 +52,15 @@ export const familyHealthBinderShopProduct: ShopProductInput = {
     "You want to sync your child's own device to their own account here. There is no separate account or login for anyone this product tracks.",
     "You want push notifications for medication reminders. It does not send them yet, and does not pretend to.",
   ],
-  objections: [
-    {
-      worry: "Worried this is trying to be a medical device?",
-      answer:
-        "It is not, and never claims to be. It is a place to keep facts your family already knows, in a structured, dated form. It has no opinion about what a symptom means and makes no diagnosis. That judgment stays with your family and your clinician, always.",
-    },
-    {
-      worry: "Skeptical of a vague 'symptom tracker' with a single text box?",
-      answer:
-        "Onset, duration and severity are real, structured fields here, not one free-text box you fill in from memory later. That is the one design decision the research behind this product treats as non-negotiable: a pattern across weeks should be something you can actually see, not something you reconstruct under pressure.",
-    },
-    {
-      worry: "Worried about a child having their own account or login?",
-      answer:
-        "There is not one. Every family member, adult or child, is a row kept under your own account. Nobody this product tracks has a separate login, a separate entitlement, or a separate anything.",
-    },
-    {
-      worry: "Not everything about your family should print on a page you hand to a stranger?",
-      answer:
-        "Every fact and every symptom event can be marked private. It stays fully usable in your own account; it is simply left off the printed Intake Summary. You decide, per fact, what leaves the house.",
-    },
-    {
-      worry: "Concerned about privacy law and health data?",
-      answer:
-        "Draftpace is not a HIPAA-covered entity, and this listing will not pretend that means nothing applies. Where the FTC Health Breach Notification Rule or an applicable state health-privacy law covers information you store here, Draftpace follows it. Nothing here is sold, and nothing here is read by an AI model.",
-    },
-  ],
-  outcomes: [
-    "One place that holds every family member's medications, allergies and family history, reachable from any device.",
-    "A structured symptom timeline: onset, duration and severity as real fields, so a pattern is visible, not remembered.",
-    "A dated, one-page Intake Summary per person, ready to hand to a clinic alongside their own paperwork.",
-    "A private, per-fact choice about what leaves the house on a printed page, and what stays in the account only.",
-    "No separate account for a child: everyone in the family is kept under the one account you already have.",
-  ],
+  // Emptied by the content collapse: every objection was answered a
+  // second time in faqs, and the Shop page rendered both a few hundred
+  // pixels apart. All of them now live in `questions`, answered once
+  // each and tagged with the moment they matter.
+  objections: [],
+  // Emptied by the content collapse: four of these five restated a
+  // problemsSolved solution nearly word for word. The one that said
+  // something new is now paired with the problem it answers.
+  outcomes: [],
   problemsSolved: [
     {
       problem: "A family's medications and allergies live only in one parent's memory.",
@@ -102,6 +77,10 @@ export const familyHealthBinderShopProduct: ShopProductInput = {
     {
       problem: "Not everything belongs on a page you hand to a stranger at a desk.",
       solution: "A private, per-fact choice about what's included on the printed Intake Summary.",
+    },
+    {
+      problem: "The portal that holds your child's records is not something you can reach at 2am on your phone.",
+      solution: "Your own account, on whatever device is in your hand, holding the facts you put there yourself.",
     },
   ],
   howItWorks: [
@@ -142,41 +121,141 @@ export const familyHealthBinderShopProduct: ShopProductInput = {
     "Everything saves to your account automatically as you go. It is tied to your sign-in, not this device, so a fact you add on a laptop is there on your phone at an appointment. Nothing is ever silently deleted; removing a person or a fact archives it rather than erasing the record.",
   privacyNotes:
     "Your family's facts are private to your account. Draftpace does not sell your data or use it for advertising, and nothing here is read by an AI model: there is no model provider anywhere in this product. Draftpace is not a covered entity under HIPAA; where the FTC Health Breach Notification Rule or an applicable state health-privacy law applies to information you store here, Draftpace follows it. Anything marked private stays in your account and is never included on a generated Intake Summary.",
-  faqs: [
-    {
-      question: "Is this a one-time purchase or a subscription?",
-      answer: "One time. You pay once and keep it, the same way every paid product on Draftpace works.",
-    },
+  faqs: [],
+
+  /**
+   * Every worry, asked once, tagged with the moment it matters. Five
+   * objections and seven faqs collapsed to seven questions: each
+   * objection had a near-identical faq beneath it (the medical-device
+   * pair, the symptom-timeline pair, the child-account pair, the
+   * private-fact pair, the HIPAA pair), and the Shop page rendered both.
+   */
+  questions: [
     {
       question: "Does this give medical advice or a diagnosis?",
       answer:
-        "No. It records facts your family already knows, in a structured, dated form. It never interprets a symptom, never suggests a diagnosis, and has no model or AI involved anywhere in it. Judgment about what any of it means stays with your family and your clinician.",
+        "No, and it never claims to. It keeps facts your family already knows, in a structured, dated form. It never interprets a symptom, never suggests a diagnosis, and there is no model or AI anywhere in it. What any of it means stays with your family and your clinician.",
+      stage: ["deciding", "owning"],
+    },
+    {
+      question: "What makes this different from a notes app or a symptom tracker with one text box?",
+      answer:
+        "Onset, duration and severity are real, structured fields, filled in as it happens rather than reconstructed later. That structure is what makes a pattern across weeks something you can see, instead of something you piece together at an intake desk while tired and worried.",
+      stage: ["deciding", "owning"],
     },
     {
       question: "Does my child need their own account?",
       answer:
-        "No. Every family member, adult or child, is a row kept under your own account. There is no separate login or entitlement for anyone this product tracks.",
-    },
-    {
-      question: "What makes the symptom timeline different from a notes app?",
-      answer:
-        "Onset, duration and severity are real, structured fields, not one open text box. That structure is what makes a pattern across weeks visible later, rather than something you have to piece back together from memory.",
+        "No, and they cannot have one. Every family member, adult or child, is a row under your own account. Nobody this product tracks gets a separate login, a separate entitlement, or a separate anything.",
+      stage: ["deciding", "owning"],
     },
     {
       question: "Can I keep some facts off the printed page?",
       answer:
-        "Yes. Any medical fact or symptom event can be marked private. It stays fully usable in your account; it is simply excluded the next time you generate an Intake Summary.",
+        "Any fact and any symptom event can be marked private. It stays fully usable in your own account and is simply left off the Intake Summary. You decide, per fact, what leaves the house.",
+      stage: ["deciding", "owning"],
     },
     {
       question: "Does this replace HIPAA protections or my clinic's own records?",
       answer:
-        "No, and this listing will not claim it does. Draftpace is not a HIPAA-covered entity. Where the FTC Health Breach Notification Rule or an applicable state health-privacy law covers information you store here, Draftpace follows it. The Intake Summary is meant to supplement your clinic's own intake paperwork, never replace it.",
+        "No, and this listing will not pretend otherwise. Draftpace is not a HIPAA-covered entity. Where the FTC Health Breach Notification Rule or an applicable state health-privacy law covers information you store here, Draftpace follows it. The Intake Summary supplements your clinic's own paperwork; it never stands in for it.",
+      stage: ["deciding", "owning"],
     },
     {
-      question: "Do I need a Draftpace account?",
-      answer: "Yes, so your family's facts save privately and follow you across devices.",
+      question: "Does it remind me to take or give a medication?",
+      answer:
+        "No, and it does not pretend to. Nothing is sent to you. This is a record you consult, not a schedule that chases you.",
+      stage: ["deciding", "owning"],
+    },
+    {
+      question: "Is this a one-time purchase, and do I need an account?",
+      answer:
+        "One time, and yes. The account is the point: it is what makes a fact you added on a laptop reachable on your phone at an urgent care desk.",
+      stage: ["deciding"],
     },
   ],
+
+  /**
+   * How people describe this before they know a product like this exists.
+   * There were no PROBLEM_ENTRIES or guides for family health when this
+   * was written, so these come from research done for it rather than
+   * from the existing knowledge layer: the documented recall failure at
+   * intake (people who cannot name a medication are told to bring the
+   * bottle or a photo), and the clinical advice that a useful symptom
+   * note records when it started, how it changed and what helped, in the
+   * same small set of fields each time. Every answer describes only what
+   * the product actually does.
+   */
+  searchedProblems: [
+    {
+      phrase: "I can never remember my child's medications at the doctor",
+      answer:
+        "They are written down per person, with dosage and frequency, on whatever device is in your hand at the desk.",
+    },
+    {
+      phrase: "What should I bring to a doctor's appointment",
+      answer:
+        "A dated one-page Intake Summary for that person: medications, allergies, family history and recent symptoms, minus anything you marked private.",
+    },
+    {
+      phrase: "How do I keep a symptom diary before an appointment",
+      answer:
+        "The same small set of fields each time: what it was, when it started, how long it lasted, how severe, and what helped. Short factual entries, not an essay.",
+    },
+    {
+      phrase: "She's been sick on and off for weeks and I can't tell if it's a pattern",
+      answer:
+        "Dated events with real fields make a pattern visible rather than remembered, so the question has an answer you can point at.",
+    },
+    {
+      phrase: "Where do I keep everyone's allergies and reactions",
+      answer:
+        "Per person, with the reaction recorded alongside, in one place you can reach without a clinic portal login.",
+    },
+    {
+      phrase: "I'm looking after my kids and my parent and it's all in my head",
+      answer:
+        "Everyone is a row under your one account, adults and children alike, each with their own facts and their own timeline.",
+    },
+  ],
+
+  /**
+   * What an owner opens the manual to do, each row linking to the screen
+   * it happens on.
+   */
+  tasks: [
+    {
+      label: "See everyone at a glance",
+      answer: "Overview shows each person, what is recorded for them, and the most recent symptom across the family.",
+      destination: "workspace",
+    },
+    {
+      label: "Add somebody to the binder",
+      answer: "A name, their relationship to you, and a date of birth if you want it. No account is created for them.",
+      destination: "members",
+    },
+    {
+      label: "Record a medication or an allergy",
+      answer: "Dosage and frequency for a medication, the reaction for an allergy, kept against that person.",
+      destination: "members",
+    },
+    {
+      label: "Log a symptom as it happens",
+      answer: "What it is, when it started, how long, how severe, and what helped. The same fields every time.",
+      destination: "timeline",
+    },
+    {
+      label: "Keep something off the printed page",
+      answer: "Mark it private. It stays usable in your account and is excluded from every Intake Summary.",
+      destination: "members",
+    },
+    {
+      label: "Print a summary for an appointment",
+      answer: "A dated one-page Intake Summary for one person, meant to go alongside a clinic's own paperwork.",
+      destination: "printables",
+    },
+  ],
+
   relatedGuideSlugs: [],
   relatedProductSlugs: ["home-management-companion", "personal-life-affairs-companion"],
   needGroups: ["getting-organized"],
