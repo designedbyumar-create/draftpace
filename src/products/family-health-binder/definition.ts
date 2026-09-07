@@ -69,7 +69,7 @@ export const familyHealthBinderDefinition: ProductDefinitionInput = {
     shortName: "Health",
     description:
       "Family Health Binder by Draftpace: medications, allergies, family history and a structured symptom timeline, kept against your account, reachable from any device.",
-    themeColor: "#6b7a9e",
+    themeColor: "#606e8e",
     backgroundColor: "#f8f8fb",
     icons: [
       { src: "/logo/icon-192.png", sizes: "192x192", type: "image/png", purpose: "any" },
@@ -127,14 +127,22 @@ export const familyHealthBinderDefinition: ProductDefinitionInput = {
    * Finance Companion's petrol, and deliberately not clinical white or
    * medical red/green, since this product is a record, not a monitor.
    *
+   * base is deliberately a touch darker than the first draft (#6b7a9e):
+   * that value contrasted at only 4.28:1 against white (this theme's own
+   * `contrast` token), short of WCAG AA's 4.5:1 for normal text, and
+   * every primary button inside this product's shell renders white text
+   * on this exact colour (see buttonStyles.ts's use of
+   * --primary-contrast). #606e8e clears 5.1:1 while staying the same
+   * colour identity.
+   *
    * Full accentScale, including wash, declared from day one, same
    * discipline as Vehicle Maintenance Companion.
    */
   theme: {
-    accent: "#6b7a9e",
+    accent: "#606e8e",
     accentScale: {
-      base: "#6b7a9e",
-      strong: "#4a5570",
+      base: "#606e8e",
+      strong: "#424c62",
       soft: "#e4e8ef",
       contrast: "#ffffff",
       wash: "#f4f5f8",

@@ -27,7 +27,7 @@ export type IntakeSummaryPrintData = IntakeSummaryData & { generatedLabel: strin
 
 /** This product's own dusty lavender-blue accent (definition.ts's theme.accentScale), not a hardcoded placeholder. */
 const PALETTE: PrintablePalette = {
-  accent: "#6b7a9e",
+  accent: "#606e8e",
   ink: "#21242c",
   muted: "#6d7280",
   line: "#e4e8ef",

@@ -6,7 +6,7 @@
  * What is drawn maps to what ships: Overview's per-member summary rows,
  * the structured symptom-recording form with its real onset/duration/
  * severity fields, and the Intake Summary printable's own section
- * layout. Dusty lavender-blue (#6b7a9e, the real theme.accent) is
+ * layout. Dusty lavender-blue (#606e8e, the real theme.accent) is
  * deliberately not clinical white or medical red/green: this product is
  * a record, not a monitor.
  *
@@ -19,7 +19,7 @@ import PhoneFrame from "../PhoneFrame";
 const INK = "#21242c";
 const MUTED = "#6d7280";
 const FAINT = "#9a9fac";
-const ACCENT = "#6b7a9e";
+const ACCENT = "#606e8e";
 const PAPER = "#fdfdfe";
 const LINE = "#e4e8ef";
 
