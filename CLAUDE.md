@@ -24,11 +24,16 @@ A generic productivity dashboard, a PDF/planner converter, a template
 marketplace, a generic form builder, or an AI chatbot. See
 `docs/DECISIONS.md` for the full list of locked decisions this reset is built on.
 
-## Current state (post Phase 2)
+## Current state
 
-The product-layer reset (Phase 1) removed every prior product implementation.
-Phase 2 removed the temporary coming-soon layer and made the real platform
-the live application:
+Nine real products ship (Monthly Money Reset, Personal Finance Companion,
+Home Base, ADHD Life Companion, Homeschooling Companion, Personal Life
+Affairs Companion, Travel Companion, Vehicle Maintenance Companion,
+Family Health Binder), each with its own tables, RLS, accent, printables
+and first-run tour. All nine are `companion`-family; the other five
+registered families have no product yet.
+
+The platform layer beneath them, established by the Phase 1/2 reset:
 
 - `/` is the real public homepage in every environment — no waitlist gate.
 - `/app/**` requires a real, server-verified Supabase session
@@ -42,9 +47,10 @@ the live application:
 - The product framework (`src/product-framework/`) and its four internal
   development fixtures are unchanged in shape from Phase 1.
 
-No real product exists yet. Do not treat the fixtures as products, and do not
-add finance/companion-specific fields to shared code — see
-`docs/DATA-BOUNDARIES.md`.
+Do not treat the fixtures as products, and do not add
+finance/companion-specific fields to shared code — each product owns its
+own table prefix and its own schema, and no product reads another
+product's data. See `docs/DATA-BOUNDARIES.md`.
 
 ## Architecture rules (read before adding code)
 
@@ -82,6 +88,15 @@ add finance/companion-specific fields to shared code — see
    (`Button`, `Input`, `Badge`, `Alert`, `EmptyState`, `Container`,
    `Surface`, `Toggle`) and the token set in `globals.css` — see
    `docs/DESIGN-SYSTEM.md`. Don't hand-roll new color/spacing values.
+10. **Buttons have two registers.** `primary` is the marketing CTA, for
+    the public site only. Inside a product use `action` (an ordinary
+    action) or `commit` (the one real commitment on the screen); both
+    follow `--primary`, so they are that product's own colour with no
+    per-product code. See `src/design-system/buttonStyles.ts`.
+11. **A product's accent is emitted as a light/dark pair.**
+    `productThemeStyle()` sets `--product-*-light` and `--product-*-dark`
+    and the stylesheet picks between them, because an inline style cannot
+    answer a media query. Never set `--primary` inline.
 
 ## Running locally
 

@@ -99,7 +99,7 @@ export default function SessionRecap({
           Add more now
         </Button>
         <Link href="/app/products/personal-finance-companion/workspace">
-          <Button size="md">See my current picture</Button>
+          <Button variant="commit" size="md">See my current picture</Button>
         </Link>
       </div>
     </Surface>

@@ -113,7 +113,7 @@ export default function DocumentForm({
       {errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}
 
       <div className="flex flex-wrap items-center gap-2">
-        <Button onClick={save} disabled={pending || label.trim().length === 0}>
+        <Button variant="commit" onClick={save} disabled={pending || label.trim().length === 0}>
           Add document
         </Button>
         <Button variant="ghost" onClick={onCancel} disabled={pending}>

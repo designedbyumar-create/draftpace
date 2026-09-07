@@ -104,10 +104,17 @@ export const makeADifficultPhoneCall: Playbook = {
       ],
     },
     {
+      key: "ready",
+      kind: "ready",
+      prompt: "Ready to call?",
+      why: "Calling now while you are prepared, or naming one exact time today. Either is a real answer.",
+    },
+    {
       key: "during",
       kind: "during",
       prompt: "While you are on the call",
       why: "Short on purpose. Anything longer is unreadable while somebody is talking to you.",
+      askIf: { step: "ready", equals: ["call-now"] },
       items: [
         { text: "Say the thing you came to say" },
         { text: "You are allowed to ask for a minute to think" },

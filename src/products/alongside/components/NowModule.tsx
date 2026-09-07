@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Button from "@/design-system/Button";
 import EmptyState from "@/design-system/EmptyState";
+import GuidedTour, { type TourStep } from "@/components/platform/GuidedTour";
+import { useFirstRunTour } from "@/components/platform/useFirstRunTour";
 import { Compass, Plus } from "@/design-system/Icon";
 import { deriveAttention, QUIET_LINE } from "../attention";
 import { isOpenToWork, type LifeItem } from "../life";
@@ -14,6 +16,7 @@ import PlaybookChooser from "./PlaybookChooser";
 import StartCompanion from "./StartCompanion";
 import AddItemForm from "./AddItemForm";
 import { useAlongside } from "./useAlongside";
+import { ALONGSIDE_SLUG } from "../instanceData";
 import { beginRun, findResumableRun } from "./useResumableRun";
 
 interface Running {
@@ -58,6 +61,35 @@ interface Running {
  * "task paralysis" guide, and the Companion callout on it, which
  * already claims this screen works this way.
  */
+/**
+ * Four steps that all survive an empty first visit, which is the only
+ * state a first-run tour ever actually runs in. The Now heading and the
+ * three rail destinations are on screen whether or not anything has been
+ * recorded; nothing here points at a card that needs data to exist.
+ */
+const TOUR_STEPS: TourStep[] = [
+  {
+    targetId: "alongside-tour-now",
+    title: "This screen is allowed to be empty",
+    body: "When nothing is worth raising, it says so and stops. There is no list filling the space, no streak, and nothing here counts against you.",
+  },
+  {
+    targetId: "rail-help",
+    title: "Start with one hard thing",
+    body: "Help is the way in when you have not recorded anything yet. Say what you need to do, a call you have been avoiding say, and it walks you through that one thing.",
+  },
+  {
+    targetId: "rail-life",
+    title: "Where things you put down live",
+    body: "Anything you record goes here, including the things that are not due yet. Nothing in Life is ever overdue.",
+  },
+  {
+    targetId: "rail-workspace",
+    title: "Come back here when you want the next thing",
+    body: "Now shows the single thing most worth your attention, chosen from what you already said mattered. One thing, never a wall of them.",
+  },
+];
+
 export default function NowModule() {
   const { status, errorMessage, instanceId, items, replaceItem, addItem } = useAlongside();
   const [running, setRunning] = useState<Running | null>(null);
@@ -70,6 +102,10 @@ export default function NowModule() {
   const [startError, setStartError] = useState<string | null>(null);
   /** Collapsed to the one top signal by default. See "ONE THING, NOT A LIST TO EVALUATE" above. */
   const [showAll, setShowAll] = useState(false);
+  // No setup step in this product, so the tour waits only for the screen
+  // to have loaded: an owner arriving with nothing recorded is exactly
+  // who it is for.
+  const { tourOn, finishTour } = useFirstRunTour(ALONGSIDE_SLUG, status === "ready");
 
   if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
   if (status === "no-instance") {
@@ -148,6 +184,7 @@ export default function NowModule() {
         directTitle={running.directTitle}
         onFinished={finish}
         onLeft={() => setRunning(null)}
+        onItemUpdated={replaceItem}
       />
     );
   }
@@ -165,7 +202,9 @@ export default function NowModule() {
 
   return (
     <div className="mx-auto flex w-full max-w-2xl flex-col gap-6">
-      <header>
+      {tourOn && <GuidedTour steps={TOUR_STEPS} onFinish={finishTour} labelPrefix="alongside" />}
+
+      <header id="alongside-tour-now">
         <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Now</p>
         <h1
           className="mt-2 text-[26px] leading-tight text-[var(--text)]"

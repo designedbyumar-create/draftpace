@@ -1,5 +1,7 @@
 import {
+  Car,
   Compass,
+  FirstAidKit,
   GraduationCap,
   Heart,
   Home,
@@ -29,6 +31,8 @@ const PRODUCT_ICON: Record<string, DraftpaceIcon> = {
   "homeschooling-companion": GraduationCap,
   "personal-life-affairs-companion": Shield,
   "travel-companion": Compass,
+  "vehicle-maintenance-companion": Car,
+  "family-health-binder": FirstAidKit,
 };
 
 export function iconForProduct(slug: string): DraftpaceIcon {

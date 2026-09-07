@@ -145,7 +145,7 @@ export default function SavingsFormSheet({
           <Button variant="secondary" size="md" onClick={onClose} disabled={saving}>
             Cancel
           </Button>
-          <Button size="md" onClick={handleSave} disabled={saving}>
+          <Button variant="commit" size="md" onClick={handleSave} disabled={saving}>
             {saving ? "Saving…" : isEdit ? "Save changes" : "Add goal"}
           </Button>
         </>

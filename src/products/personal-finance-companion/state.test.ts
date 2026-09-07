@@ -21,6 +21,14 @@ const provenance = {
   updatedAt: "2026-08-08T00:00:00Z",
 };
 
+/** Only bill/subscription schemas declare Shared Responsibility (state.ts's sharedResponsibilityFields). */
+const sharedResponsibility = {
+  shared: false,
+  sharedSplitPercent: null,
+  settled: false,
+  settledAt: null,
+};
+
 describe("Personal Finance Companion record schemas", () => {
   it("accepts a real account", () => {
     const result = accountSchema.safeParse({
@@ -51,6 +59,7 @@ describe("Personal Finance Companion record schemas", () => {
       funded: false,
       currency: "USD",
       ...provenance,
+      ...sharedResponsibility,
     });
     expect(result.success).toBe(true);
   });
@@ -81,6 +90,7 @@ describe("Personal Finance Companion record schemas", () => {
       decision: "keep",
       currency: "USD",
       ...provenance,
+      ...sharedResponsibility,
     });
     expect(result.success).toBe(true);
   });

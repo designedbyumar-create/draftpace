@@ -1,7 +1,7 @@
 import { ProductDefinitionInput } from "@/product-framework/definition";
 
 /**
- * Monthly Money Reset — Draftpace's first real product and first free
+ * Monthly Money Reset, Draftpace's first real product and first free
  * product. See docs/products/MONTHLY-MONEY-RESET.md for the full product
  * brief. devFixture is always false: this is never gated behind
  * areDevFixturesEnabled() and is registered in every environment.
@@ -43,7 +43,21 @@ export const monthlyMoneyResetDefinition: ProductDefinitionInput = {
   ],
   permissions: [],
   events: ["monthly-money-reset.activity-added", "monthly-money-reset.month-closed"],
-  theme: { accent: "#b86f4a", motionPersonality: "calm", contentWidth: "wide" },
+  /**
+   * Deliberately no `accent`/`accentScale` here. This product's real visual
+   * identity is the bespoke forest/sage/ivory/clay scale in `theme.ts`
+   * (`monthlyMoneyResetThemeVars`), applied as `--mmr-*` custom properties
+   * by its own `ThemeScope.tsx`, never through the shared
+   * `productThemeStyle()` mechanism every other themed product uses. This
+   * is the one intentional exception, not an oversight or a second
+   * undocumented system: MMR's design predates `accentScale` and already
+   * has its own light/dark pair, which the shared scale (one set of
+   * values, no light/dark split) cannot express. Declaring a decorative
+   * `accent` here as well would just be a second, disconnected color that
+   * nothing renders, see `themeExtension.ts`'s own comment on why
+   * `accent` alone is inert.
+   */
+  theme: { motionPersonality: "calm", contentWidth: "wide" },
   layouts: ["responsive"],
   offline: "shell-only",
   notifications: { supported: true },

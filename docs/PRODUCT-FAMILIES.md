@@ -18,6 +18,22 @@ declare its own — a product can still opt into a subset (see the fixtures,
 which deliberately use different navigation subsets from their family
 defaults to prove the resolver isn't hardcoded).
 
+## In practice today
+
+All nine live products are `companion`, and every one of them declares
+its own navigation rather than taking the family default: Home Base has
+`import`, Travel Companion has `trip` and `people`, Family Health Binder
+has `members` and `timeline`, and so on (`docs/ROUTE-MAP.md` lists every
+destination that exists). Six of the nine also set
+`navigationStyle: "rail"` and get different chrome entirely
+(`ProductRailShell`) rather than the tab shell with pieces hidden.
+
+That nine products of one family need thirty different destinations
+between them is the evidence the resolver was built for. The other five
+families are registered and unused: no product outside `companion` has
+been built yet, and none of the shell code branches on family name, so
+building one requires no change here.
+
 ## Capability naming rule
 
 `<family-namespace>.<capability>`, lowercase, hyphenated. The namespace does

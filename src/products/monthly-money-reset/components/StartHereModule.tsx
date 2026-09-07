@@ -71,11 +71,11 @@ export default function StartHereModule({ definition }: { definition: ProductDef
 
       <div className="mt-7 flex flex-wrap items-center gap-3">
         {status === "loading" ? (
-          <Button size="lg" disabled iconRight={<ArrowRight size={15} aria-hidden />}>
+          <Button variant="commit" size="lg" disabled iconRight={<ArrowRight size={15} aria-hidden />}>
             {primaryLabel}
           </Button>
         ) : (
-          <Button href={primaryHref} size="lg" iconRight={<ArrowRight size={15} aria-hidden />}>
+          <Button variant="commit" href={primaryHref} size="lg" iconRight={<ArrowRight size={15} aria-hidden />}>
             {primaryLabel}
           </Button>
         )}

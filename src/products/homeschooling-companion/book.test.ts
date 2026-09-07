@@ -6,11 +6,13 @@ import {
   describeBook,
   describePeriod,
   SOURCE_ON_PAPER,
+  stateComplianceRows,
   type BookInputs,
 } from "./book";
 import { SOURCE_LABEL } from "./learning";
 import type { Child, Curriculum, PlanEntry, Position } from "./learning";
 import type { Observation, WorkEntry } from "./record";
+import { getHomeschoolStateRequirement } from "@/lib/homeschoolStateRequirements";
 
 const emma: Child = {
   id: "emma",
@@ -251,5 +253,60 @@ describe("how a source reads to a stranger", () => {
   it("still credits an outline rather than the parent", () => {
     expect(SOURCE_ON_PAPER.draftpace.toLowerCase()).toContain("outline");
     expect(SOURCE_ON_PAPER.draftpace.toLowerCase()).not.toContain("parent");
+  });
+});
+
+/**
+ * What your state asks for, next to what you have. A read-only rollup:
+ * it reads the same book this document already prints, and never asks
+ * the parent to record anything to make it work.
+ */
+describe("stateComplianceRows", () => {
+  const florida = getHomeschoolStateRequirement("Florida")!;
+  const texas = getHomeschoolStateRequirement("Texas")!;
+
+  it("says nothing for a state with no checklist", () => {
+    expect(texas.checklist).toBeUndefined();
+    const book = buildBook(inputs({ stateRequirement: texas }));
+    expect(stateComplianceRows(book)).toEqual([]);
+  });
+
+  it("says nothing when no state was picked at all", () => {
+    const book = buildBook(inputs({ stateRequirement: null }));
+    expect(stateComplianceRows(book)).toEqual([]);
+  });
+
+  it("lists one row per thing the state's checklist actually asks for", () => {
+    // Florida asks for a log, work samples and a test or evaluation, not attendance/hours.
+    const book = buildBook(inputs({ stateRequirement: florida }));
+    const rows = stateComplianceRows(book);
+    expect(rows.map((r) => r.label)).toEqual([
+      "A log or record of instruction",
+      "Samples of work or a portfolio",
+      "A test score or evaluation",
+    ]);
+  });
+
+  it("says what is recorded, from the same data already on the page", () => {
+    const book = buildBook(
+      inputs({
+        stateRequirement: florida,
+        events: [work({ onDate: "2026-08-18" }), work({ onDate: "2026-08-19" })],
+        checks: [{ createdAt: "2026-08-22T10:00:00Z", topicKey: "math.multiplication", standing: "mixed", answered: 4, right: 3 }],
+        sections: { ...DEFAULT_BOOK_SECTIONS, checks: true },
+      })
+    );
+    const rows = stateComplianceRows(book);
+    expect(rows.find((r) => r.label.startsWith("A log"))?.recorded).toBe("2 days logged");
+    expect(rows.find((r) => r.label.startsWith("Samples"))?.recorded).toBeNull();
+    expect(rows.find((r) => r.label.startsWith("A test"))?.recorded).toBe("1 check on file");
+  });
+
+  it("never claims compliance, only what is recorded", () => {
+    const book = buildBook(inputs({ stateRequirement: florida }));
+    const text = JSON.stringify(stateComplianceRows(book)).toLowerCase();
+    for (const word of ["compliant", "compliance", "met", "satisfied", "sufficient"]) {
+      expect(text, word).not.toContain(word);
+    }
   });
 });

@@ -1,5 +1,7 @@
 import { activeBookings, byStartTime, type Booking, type Place, type Thread } from "./trip";
 
+const UTC = "UTC";
+
 /**
  * The current operational state, derived, never stored.
  *
@@ -35,26 +37,44 @@ export interface TodayView {
 const WINDOW_KINDS = new Set(["hotel", "rental"]);
 
 /**
- * "Same day" compared as UTC calendar dates, deliberately, not the
- * reader's local timezone.
+ * A date's calendar day in a given IANA zone, as "YYYY-MM-DD".
  *
- * A traveller crossing timezones mid-trip is the hard case this
- * sidesteps rather than gets wrong: nothing in this schema stores which
- * timezone a place or a booking is in (a real, later decision, not one
- * this file should make silently), so there is no honest way to compute
- * "today at the destination" yet. What this file must not do is give a
- * different answer depending on which timezone the server or the
- * reader's device happens to be in for the exact same stored data, which
- * comparing by local calendar components did. UTC comparison is at
- * least deterministic and reproducible; it is a known, explicit v1
- * limitation, not one to quietly work around.
+ * Falls back to UTC for a zone name Intl does not recognise, the same
+ * honest fallback trv_places.timezone itself uses for a place the lookup
+ * table never matched: this file trusts whatever string it is handed
+ * (the lookup table, or a person's own explicit pick) without a second
+ * validation layer, and a corrupt value should degrade to the old
+ * UTC-only behaviour rather than throw.
  */
-function sameDay(a: Date, b: Date): boolean {
-  return (
-    a.getUTCFullYear() === b.getUTCFullYear() &&
-    a.getUTCMonth() === b.getUTCMonth() &&
-    a.getUTCDate() === b.getUTCDate()
-  );
+function calendarDate(date: Date, timeZone: string): string {
+  try {
+    return new Intl.DateTimeFormat("en-CA", { timeZone, year: "numeric", month: "2-digit", day: "2-digit" }).format(
+      date
+    );
+  } catch {
+    return new Intl.DateTimeFormat("en-CA", { timeZone: UTC, year: "numeric", month: "2-digit", day: "2-digit" }).format(
+      date
+    );
+  }
+}
+
+/**
+ * "Same day", compared in a specific place's own timezone rather than
+ * raw UTC.
+ *
+ * This used to compare UTC calendar components regardless of where a
+ * booking or the reader actually was, a known, documented v1 limitation:
+ * nothing in the schema stored which timezone a place was in, so there
+ * was no honest way to compute "today at the destination". trv_places
+ * now carries an IANA zone name (timezoneLookup.ts, auto-detected or
+ * picked by hand), so a booking anchored to a place compares against
+ * that place's real calendar day. A booking with no place, or a place
+ * with no detected zone, falls back to UTC exactly as before: an honest
+ * fallback, never a silent wrong answer, not a regression from the old
+ * behaviour.
+ */
+function sameDay(a: Date, b: Date, timeZone: string = UTC): boolean {
+  return calendarDate(a, timeZone) === calendarDate(b, timeZone);
 }
 
 function addDays(date: Date, days: number): Date {
@@ -94,10 +114,14 @@ function describeBooking(booking: Booking): string {
  * horizon, the thread stops surfacing here even if still open, the same
  * way an old booking stops surfacing in Later.
  */
-function deriveWaiting(threads: Thread[], bookings: Booking[], now: Date): WaitingLine[] {
+/** A booking's own place's timezone, or UTC when it has no place or the place has no detected zone. */
+function timeZoneForBooking(booking: Booking, placeById: Map<string, Place>): string {
+  const place = booking.placeId ? placeById.get(booking.placeId) : undefined;
+  return place?.timezone ?? UTC;
+}
+
+function deriveWaiting(threads: Thread[], bookings: Booking[], now: Date, placeById: Map<string, Place>): WaitingLine[] {
   const byId = new Map(bookings.map((booking) => [booking.id, booking]));
-  const tomorrow = addDays(now, 1);
-  const dayAfter = addDays(now, 2);
 
   return threads
     .filter((thread) => thread.status === "open")
@@ -105,37 +129,41 @@ function deriveWaiting(threads: Thread[], bookings: Booking[], now: Date): Waiti
       if (!thread.bookingId) return true;
       const booking = byId.get(thread.bookingId);
       if (!booking || !booking.startsAt) return false;
+      const tz = timeZoneForBooking(booking, placeById);
       const startsAt = new Date(booking.startsAt);
-      return sameDay(startsAt, now) || sameDay(startsAt, tomorrow) || sameDay(startsAt, dayAfter);
+      const tomorrow = addDays(now, 1);
+      const dayAfter = addDays(now, 2);
+      return sameDay(startsAt, now, tz) || sameDay(startsAt, tomorrow, tz) || sameDay(startsAt, dayAfter, tz);
     })
     .map((thread) => ({ thread, line: thread.title }));
 }
 
-export function deriveToday(bookings: Booking[], now: Date, threads: Thread[] = []): TodayView {
+export function deriveToday(bookings: Booking[], now: Date, threads: Thread[] = [], places: Place[] = []): TodayView {
+  const placeById = new Map(places.map((place) => [place.id, place]));
   const active = activeBookings(bookings).filter((booking) => booking.startsAt);
   const today: TodayLine[] = [];
   const important: TodayLine[] = [];
   const later: TodayLine[] = [];
-  const waiting = deriveWaiting(threads, bookings, now);
-
-  const tomorrow = addDays(now, 1);
-  const dayAfter = addDays(now, 2);
+  const waiting = deriveWaiting(threads, bookings, now, placeById);
 
   for (const booking of byStartTime(active)) {
+    const tz = timeZoneForBooking(booking, placeById);
     const startsAt = new Date(booking.startsAt as string);
+    const tomorrow = addDays(now, 1);
+    const dayAfter = addDays(now, 2);
 
-    if (sameDay(startsAt, now)) {
+    if (sameDay(startsAt, now, tz)) {
       today.push({ booking, section: "now", line: describeBooking(booking) });
       continue;
     }
 
-    if (sameDay(startsAt, tomorrow) && WINDOW_KINDS.has(booking.kind)) {
+    if (sameDay(startsAt, tomorrow, tz) && WINDOW_KINDS.has(booking.kind)) {
       important.push({ booking, section: "important", line: describeBooking(booking) });
       continue;
     }
 
-    if (sameDay(startsAt, tomorrow) || sameDay(startsAt, dayAfter)) {
-      const day = sameDay(startsAt, tomorrow) ? "Tomorrow" : "In two days";
+    if (sameDay(startsAt, tomorrow, tz) || sameDay(startsAt, dayAfter, tz)) {
+      const day = sameDay(startsAt, tomorrow, tz) ? "Tomorrow" : "In two days";
       later.push({ booking, section: "later", line: `${day}: ${describeBooking(booking)}` });
     }
   }
@@ -149,12 +177,22 @@ export function deriveToday(bookings: Booking[], now: Date, threads: Thread[] = 
   };
 }
 
-/** Where the trip is today, from the places a person recorded arriving in and not yet departing. */
+/**
+ * Where the trip is today, from the places a person recorded arriving in
+ * and not yet departing.
+ *
+ * "Today" is computed separately for each candidate place, in that
+ * place's own timezone (UTC when none was detected), rather than once
+ * up front: two places in this list can genuinely be in different
+ * zones, and a traveller near midnight in one of them deserves the
+ * answer that place's own calendar would give, not whichever zone the
+ * server or the reader's device happens to be in.
+ */
 export function whereWeAre(places: Place[], now: Date): Place | null {
-  const today = now.toISOString().slice(0, 10);
   return (
     places.find((place) => {
       if (place.status !== "active") return false;
+      const today = calendarDate(now, place.timezone ?? UTC);
       if (place.arrivesAt && place.arrivesAt > today) return false;
       if (place.departsAt && place.departsAt < today) return false;
       return Boolean(place.arrivesAt) || Boolean(place.departsAt);

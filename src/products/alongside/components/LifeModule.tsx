@@ -172,6 +172,7 @@ export default function LifeModule() {
         run={running.run}
         onFinished={finish}
         onLeft={() => setRunning(null)}
+        onItemUpdated={replaceItem}
       />
     );
   }

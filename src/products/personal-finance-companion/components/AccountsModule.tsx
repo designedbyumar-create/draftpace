@@ -142,7 +142,7 @@ export default function AccountsModule() {
             <p className="text-[13px] leading-relaxed text-[var(--text)]">
               This balance was last confirmed {dominantAction.daysStale} days ago. Update it if it has changed.
             </p>
-            <Button
+            <Button variant="action"
               size="sm"
               onClick={() => {
                 setEditingAccount(dominantAction.account);
@@ -162,7 +162,7 @@ export default function AccountsModule() {
           description="Add one directly, or paste a note that mentions a balance and Draftpace will find it."
           action={
             <div ref={addButtonRef} className="inline-block">
-              <Button size="sm" iconLeft={<Plus size={14} aria-hidden />} onClick={() => setFormOpen(true)}>
+              <Button variant="action" size="sm" iconLeft={<Plus size={14} aria-hidden />} onClick={() => setFormOpen(true)}>
                 Add account
               </Button>
             </div>

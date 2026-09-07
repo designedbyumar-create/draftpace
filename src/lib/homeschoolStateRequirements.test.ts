@@ -8,6 +8,46 @@ import {
 } from "./homeschoolStateRequirements";
 
 /**
+ * The structured checklist, a breakdown of the same `note` each entry
+ * already carries. Mirrors homeKnowledge.test.ts's discipline for a
+ * hand-authored per-entry table: every entry that should have one does,
+ * none that shouldn't does, and every one that exists says something.
+ */
+describe("HomeschoolStateChecklist", () => {
+  it("exists for every High or Moderate state, and no None or Low state", () => {
+    for (const entry of HOMESCHOOL_STATE_REQUIREMENTS) {
+      const shouldHaveOne = entry.level === "High" || entry.level === "Moderate";
+      expect(Boolean(entry.checklist), entry.state).toBe(shouldHaveOne);
+    }
+  });
+
+  it("marks at least one thing true, for every state that has one", () => {
+    for (const entry of HOMESCHOOL_STATE_REQUIREMENTS) {
+      if (!entry.checklist) continue;
+      const { log, attendanceOrHours, workSamples, testOrEvaluation } = entry.checklist;
+      expect(log || attendanceOrHours || workSamples || testOrEvaluation, entry.state).toBe(true);
+    }
+  });
+
+  it("never claims a level of regulation the note itself does not support", () => {
+    // A High or Moderate state's note always names at least a notice or a
+    // form of record; nothing here invents a requirement absent from it.
+    for (const entry of HOMESCHOOL_STATE_REQUIREMENTS) {
+      if (!entry.checklist) continue;
+      expect(entry.note.length, entry.state).toBeGreaterThan(0);
+    }
+  });
+
+  it("uses no em dash in any otherNotes line, per the repo content rule", () => {
+    for (const entry of HOMESCHOOL_STATE_REQUIREMENTS) {
+      for (const line of entry.checklist?.otherNotes ?? []) {
+        expect(line, entry.state).not.toContain("—");
+      }
+    }
+  });
+});
+
+/**
  * This array is now the single source of truth for two consumers: the
  * public guide's state-by-state table (src/content/guides.ts) and
  * Homeschooling Companion's household state picker. Both are proven

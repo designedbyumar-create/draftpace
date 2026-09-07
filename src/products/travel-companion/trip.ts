@@ -48,6 +48,8 @@ export interface Place {
   ordinal: number;
   arrivesAt: string | null;
   departsAt: string | null;
+  /** IANA zone name (e.g. "Asia/Tokyo"), never a raw offset. Null means not detected; treated as UTC. */
+  timezone: string | null;
   status: "active" | "archived";
 }
 

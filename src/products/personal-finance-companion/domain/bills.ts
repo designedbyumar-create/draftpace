@@ -22,6 +22,10 @@ interface BillRow {
   import_session_id: string | null;
   created_at: string;
   updated_at: string;
+  shared: boolean;
+  shared_split_percent: number | null;
+  settled: boolean;
+  settled_at: string | null;
 }
 
 function fromRow(row: BillRow) {
@@ -47,6 +51,10 @@ function fromRow(row: BillRow) {
     importSessionId: row.import_session_id,
     createdAt: row.created_at,
     updatedAt: row.updated_at,
+    shared: row.shared,
+    sharedSplitPercent: row.shared_split_percent,
+    settled: row.settled,
+    settledAt: row.settled_at,
   };
 }
 
@@ -70,6 +78,10 @@ function toRow(patch: Record<string, unknown>) {
   if ("needsReviewReason" in patch) row.needs_review_reason = patch.needsReviewReason;
   if ("source" in patch) row.source = patch.source;
   if ("importSessionId" in patch) row.import_session_id = patch.importSessionId;
+  if ("shared" in patch) row.shared = patch.shared;
+  if ("sharedSplitPercent" in patch) row.shared_split_percent = patch.sharedSplitPercent;
+  if ("settled" in patch) row.settled = patch.settled;
+  if ("settledAt" in patch) row.settled_at = patch.settledAt;
   return row;
 }
 

@@ -126,7 +126,7 @@ export default function AddChildFlow({
             You can change any of it later, and add more whenever there is a reason to.
           </p>
           <div className="flex flex-wrap gap-2">
-            <Button size="sm" disabled={pending} onClick={() => onDone(draft)}>
+            <Button variant="commit" size="sm" disabled={pending} onClick={() => onDone(draft)}>
               {pending ? "Saving..." : `Add ${draft.name}`}
             </Button>
             <Button size="sm" variant="ghost" disabled={pending} onClick={onCancel}>
@@ -206,7 +206,7 @@ export default function AddChildFlow({
               </div>
               <p className="text-[12px] text-[var(--faint)]">Tap the ones you teach. Anything missing can be added later.</p>
               <div className="flex flex-wrap items-center gap-2">
-                <Button
+                <Button variant="commit"
                   size="sm"
                   iconRight={<ArrowRight size={15} aria-hidden />}
                   onClick={() => setDraft((prev) => ({ ...prev, subjectsConfirmed: true }))}
@@ -247,7 +247,7 @@ export default function AddChildFlow({
                 }}
               />
               <div className="flex flex-wrap items-center gap-2">
-                <Button size="sm" type="submit" disabled={!value.trim()} iconRight={<ArrowRight size={15} aria-hidden />}>
+                <Button variant="commit" size="sm" type="submit" disabled={!value.trim()} iconRight={<ArrowRight size={15} aria-hidden />}>
                   Continue
                 </Button>
                 {step.optional && (
@@ -353,7 +353,7 @@ function StartingOutlinePreview({
       )}
 
       <div className="flex flex-wrap gap-2">
-        <Button size="sm" disabled={pending} onClick={() => onDone(draft)}>
+        <Button variant="commit" size="sm" disabled={pending} onClick={() => onDone(draft)}>
           {pending ? "Saving..." : `Start here with ${draft.name}`}
         </Button>
         <Button size="sm" variant="ghost" disabled={pending} onClick={onCancel}>

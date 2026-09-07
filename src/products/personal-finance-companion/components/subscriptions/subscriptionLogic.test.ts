@@ -17,6 +17,10 @@ function subscription(overrides: Partial<Subscription> = {}): Subscription {
     importSessionId: null,
     createdAt: "2026-08-01T00:00:00Z",
     updatedAt: "2026-08-01T00:00:00Z",
+    shared: false,
+    sharedSplitPercent: null,
+    settled: false,
+    settledAt: null,
     ...overrides,
   };
 }

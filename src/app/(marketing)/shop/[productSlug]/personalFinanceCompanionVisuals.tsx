@@ -9,6 +9,10 @@
  * gaps it watches for you. Numbers are illustrative but internally
  * consistent, never presented as real account data.
  */
+import PhoneFrame from "../PhoneFrame";
+
+/** This product's real accent (definition.ts's theme.accentScale), not the placeholder teal these mockups used before that existed. */
+const ACCENT = "#2e4a4d";
 
 function StatusBar({ tone = "light" }: { tone?: "light" | "dark" }) {
   const color = tone === "dark" ? "text-white" : "text-[#1a2420]";
@@ -23,37 +27,15 @@ function StatusBar({ tone = "light" }: { tone?: "light" | "dark" }) {
   );
 }
 
-/** Same phone chrome as MMR's mockups, on a deeper charcoal backdrop glow
- * (distinct from MMR's warm cream): a paid product's page reads more
- * premium with a darker stage, while the screens themselves stay accurate
- * to the real light-mode product UI. */
-function PhoneFrame({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="relative mx-auto w-full max-w-[280px]">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-4 inset-y-8 -z-10 rounded-[3rem] bg-[#0e6e75] opacity-[0.16] blur-3xl"
-      />
-      <div
-        className="relative overflow-hidden rounded-[2.75rem] border-[6px] border-[#101312] bg-[#101312] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.35)]"
-        style={{ aspectRatio: "9 / 19.5" }}
-      >
-        <div className="absolute left-1/2 top-2.5 z-10 h-[16px] w-[84px] -translate-x-1/2 rounded-full bg-[#101312]" aria-hidden />
-        <div className="absolute inset-0 overflow-hidden rounded-[2.25rem]">{children}</div>
-      </div>
-    </div>
-  );
-}
-
 /** Screen 1: the picture you land on. Used in the hero. */
 export function OverviewScreenMockup() {
   return (
-    <PhoneFrame>
+    <PhoneFrame accent={ACCENT}>
       <div className="flex h-full flex-col bg-[#f4f2ec] px-4 pb-4 pt-9">
         <StatusBar />
         <p className="mt-3 text-[9px] font-bold uppercase tracking-[0.14em] text-[#6b7570]">Personal Finance Companion</p>
 
-        <div className="mt-3 rounded-2xl bg-[#0e6e75] p-4 text-white">
+        <div className="mt-3 rounded-2xl p-4 text-white" style={{ backgroundColor: ACCENT }}>
           <div className="flex items-center justify-between gap-2">
             <p className="text-[9px] font-bold uppercase tracking-[0.14em] opacity-70">Available Money</p>
             <p className="text-[9px] font-semibold uppercase tracking-[0.08em] opacity-70">Ready</p>
@@ -78,7 +60,7 @@ export function OverviewScreenMockup() {
         </div>
 
         <div className="mt-auto flex items-center justify-between rounded-xl border border-[#e4e0d5] bg-white px-3 py-2.5 text-[8px] font-semibold text-[#8b9089]">
-          <span className="text-[#0e6e75]">Today</span>
+          <span className="text-[#2e4a4d]">Today</span>
           <span>Companion</span>
           <span>Attention</span>
           <span>Records</span>
@@ -91,19 +73,19 @@ export function OverviewScreenMockup() {
 /** Screen 2: the guided way you build it, one question at a time. */
 export function GuidedCompanionScreenMockup() {
   return (
-    <PhoneFrame>
+    <PhoneFrame accent={ACCENT}>
       <div className="flex h-full flex-col bg-[#f4f2ec] px-4 pb-4 pt-9">
         <StatusBar />
         <div className="mt-3 flex gap-1">
           {[true, true, true, true, false, false, false].map((done, i) => (
-            <span key={i} className={`h-1.5 flex-1 rounded-full ${done ? "bg-[#0e6e75]" : "bg-[#e4e0d5]"}`} />
+            <span key={i} className={`h-1.5 flex-1 rounded-full ${done ? "bg-[#2e4a4d]" : "bg-[#e4e0d5]"}`} />
           ))}
         </div>
 
-        <div className="mt-5 flex h-8 w-8 items-center justify-center rounded-lg bg-[#dce7e6] text-[#0e6e75]">
+        <div className="mt-5 flex h-8 w-8 items-center justify-center rounded-lg bg-[#e4ebea] text-[#2e4a4d]">
           <span className="text-[13px]">↻</span>
         </div>
-        <p className="mt-3 text-[9px] font-bold uppercase tracking-[0.14em] text-[#0e6e75]">Transactions</p>
+        <p className="mt-3 text-[9px] font-bold uppercase tracking-[0.14em] text-[#2e4a4d]">Transactions</p>
         <p className="mt-1 text-[14px] font-semibold leading-snug text-[#1a2420]">
           What actually happened: the basis for spending awareness.
         </p>
@@ -120,7 +102,7 @@ export function GuidedCompanionScreenMockup() {
           </div>
         </div>
 
-        <div className="mt-auto rounded-xl bg-[#0e6e75] py-2.5 text-center text-[11px] font-semibold text-white">
+        <div className="mt-auto rounded-xl bg-[#2e4a4d] py-2.5 text-center text-[11px] font-semibold text-white">
           Looks right, continue
         </div>
       </div>
@@ -136,7 +118,7 @@ export function AttentionScreenMockup() {
     ["Visa card has no interest rate set.", "faint"],
   ];
   return (
-    <PhoneFrame>
+    <PhoneFrame accent={ACCENT}>
       <div className="flex h-full flex-col bg-[#f4f2ec] px-4 pb-4 pt-9">
         <StatusBar />
         <p className="mt-3 text-[9px] font-bold uppercase tracking-[0.14em] text-[#6b7570]">Attention</p>
@@ -158,7 +140,7 @@ export function AttentionScreenMockup() {
           ))}
         </div>
 
-        <div className="mt-auto rounded-lg bg-[#dce7e6] px-3 py-2.5 text-center text-[9px] font-semibold text-[#0e6e75]">
+        <div className="mt-auto rounded-lg bg-[#e4ebea] px-3 py-2.5 text-center text-[9px] font-semibold text-[#2e4a4d]">
           Never a fabricated to-do, always a real gap
         </div>
       </div>

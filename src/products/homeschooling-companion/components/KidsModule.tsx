@@ -298,7 +298,7 @@ export default function KidsModule() {
       )}
 
       <div>
-        <Button size="sm" iconLeft={<Plus size={14} aria-hidden />} onClick={() => setAdding(true)}>
+        <Button variant="action" size="sm" iconLeft={<Plus size={14} aria-hidden />} onClick={() => setAdding(true)}>
           {children.length === 0 ? "Add a child" : "Add another child"}
         </Button>
       </div>

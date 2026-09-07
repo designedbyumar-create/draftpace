@@ -1,11 +1,15 @@
 "use client";
 
+import FirstRunTour from "@/components/platform/FirstRunTour";
+import type { TourStep } from "@/components/platform/GuidedTour";
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
+import { motion, useReducedMotion } from "framer-motion";
 import Button from "@/design-system/Button";
 import EmptyState from "@/design-system/EmptyState";
 import { CalendarCheck, Check } from "@/design-system/Icon";
 import { describeResultError } from "@/product-framework/result";
+import { staggerContainer, staggerItem, settleVariant } from "@/design-system/motion";
 import { findHomeschoolInstanceId, HOMESCHOOLING_COMPANION_SLUG } from "../instanceData";
 import {
   loadChildren,
@@ -19,6 +23,33 @@ import { dateKey, deriveToday, describeTask, type TaskEvent, type TodayTask } fr
 import { SOURCE_LABEL, type Child, type Curriculum, type PlanEntry, type Position } from "../learning";
 
 type LoadStatus = "loading" | "ready" | "no-instance" | "error";
+
+const TOUR_STEPS: TourStep[] = [
+  {
+    targetId: "empty-state",
+    title: "Today starts empty on purpose",
+    body:
+      "Nothing is planned until you add a child and say what they are learning. This screen never invents a curriculum for you.",
+  },
+  {
+    targetId: "rail-kids",
+    title: "Start by adding a child",
+    body:
+      "Each child gets their own subjects and their own plan. You decide what they learn; this only keeps track of it.",
+  },
+  {
+    targetId: "rail-workspace",
+    title: "One page each morning",
+    body:
+      "Today shows what this day looks like per child, and says nothing at all on the days you are not schooling.",
+  },
+  {
+    targetId: "rail-record",
+    title: "The record you could hand to somebody",
+    body:
+      "What you actually did, dated as it happened, ready to print per child if your state ever asks.",
+  },
+];
 
 /**
  * Today. The one surface where the children meet, because "what are we
@@ -44,6 +75,9 @@ export default function TodayModule() {
   const [pending, setPending] = useState<string | null>(null);
   /** The task just recorded, offered a follow-up. Cleared on the next action. */
   const [asking, setAsking] = useState<TodayTask | null>(null);
+  /** The subject just marked done, so its line gets the one-time settle beat rather than every visit replaying it. */
+  const [justRecordedKey, setJustRecordedKey] = useState<string | null>(null);
+  const reduceMotion = useReducedMotion();
 
   const load = useCallback(async () => {
     const found = await findHomeschoolInstanceId();
@@ -115,20 +149,28 @@ export default function TodayModule() {
     // second condition that write reopened the panel it had just
     // closed, leaving the parent unable to dismiss it at all.
     setAsking(state === "done" && extra.difficulty === undefined ? task : null);
+    // The settle beat marks genuine completion only, never "did not get
+    // to it": that outcome is not a smaller version of done.
+    setJustRecordedKey(state === "done" ? key : null);
   }
 
   if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
   if (status === "no-instance") {
-    return <EmptyState icon={CalendarCheck} title="Nothing to show yet" description="This product has not been set up on your account." />;
+    return (
+      <EmptyState icon={CalendarCheck} title="Nothing to show yet" description="This product has not been set up on your account." />
+    );
   }
   if (status === "error") {
-    return <EmptyState icon={CalendarCheck} title="Couldn't load this" description={errorMessage ?? "Try again."} />;
+    return (
+      <EmptyState icon={CalendarCheck} title="Couldn't load this" description={errorMessage ?? "Try again."} />
+    );
   }
 
   const view = deriveToday({ children, plan, curricula, positions, events }, now);
 
   return (
     <div className="flex flex-col gap-6">
+      <FirstRunTour slug={HOMESCHOOLING_COMPANION_SLUG} steps={TOUR_STEPS} />
       <div>
         <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Today</p>
         <h1
@@ -164,7 +206,7 @@ export default function TodayModule() {
             you can also just record what you did without any plan at all.
           </p>
           <div className="mt-4">
-            <Button size="sm" href={`/app/products/${HOMESCHOOLING_COMPANION_SLUG}/kids`}>
+            <Button variant="action" size="sm" href={`/app/products/${HOMESCHOOLING_COMPANION_SLUG}/kids`}>
               Go to your children
             </Button>
           </div>
@@ -198,12 +240,21 @@ export default function TodayModule() {
                     : "Nothing scheduled today."}
               </p>
             ) : (
-              <div className="mt-2 flex flex-col gap-2.5">
+              <motion.div
+                className="mt-2 flex flex-col gap-2.5"
+                initial="hidden"
+                animate="visible"
+                variants={staggerContainer(Boolean(reduceMotion))}
+              >
                 {day.tasks.map((task) => {
                   const key = `${task.childId}:${task.subject}`;
                   const busy = pending === key;
                   return (
-                    <div key={key} className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4">
+                    <motion.div
+                      key={key}
+                      variants={staggerItem(Boolean(reduceMotion))}
+                      className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4"
+                    >
                       <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                         <h3 className="text-[15px] font-semibold text-[var(--text)]">{task.subject}</h3>
                         {/* Where it came from, on every task, every time. */}
@@ -218,28 +269,49 @@ export default function TodayModule() {
                         </p>
                       )}
                       <div className="mt-3 flex flex-wrap gap-2">
-                        <Button size="sm" disabled={busy} onClick={() => record(task, "done")}>
+                        <Button variant="action" size="sm" disabled={busy} onClick={() => record(task, "done")}>
                           {busy ? "Saving..." : "Done"}
                         </Button>
                         <Button size="sm" variant="ghost" disabled={busy} onClick={() => record(task, "not-completed")}>
                           Did not get to it
                         </Button>
                       </div>
-                    </div>
+                    </motion.div>
                   );
                 })}
-              </div>
+              </motion.div>
             )}
 
             {day.recorded.length > 0 && (
               <ul className="mt-2.5 flex flex-col gap-1">
-                {day.recorded.map((entry) => (
-                  <li key={entry.subject} className="flex items-center gap-2 text-[12.5px] text-[var(--muted)]">
-                    <Check size={14} aria-hidden className="shrink-0 text-[var(--primary)]" />
-                    {entry.subject}
-                    {entry.state === "not-completed" && <span className="text-[var(--faint)]">, not finished</span>}
-                  </li>
-                ))}
+                {day.recorded.map((entry) => {
+                  const line = (
+                    <>
+                      <Check size={14} aria-hidden className="shrink-0 text-[var(--primary)]" />
+                      {entry.subject}
+                      {entry.state === "not-completed" && <span className="text-[var(--faint)]">, not finished</span>}
+                    </>
+                  );
+                  const key = `${entry.childId}:${entry.subject}`;
+                  if (key !== justRecordedKey) {
+                    return (
+                      <li key={entry.subject} className="flex items-center gap-2 text-[12.5px] text-[var(--muted)]">
+                        {line}
+                      </li>
+                    );
+                  }
+                  return (
+                    <motion.li
+                      key={entry.subject}
+                      initial="hidden"
+                      animate="visible"
+                      variants={settleVariant(Boolean(reduceMotion))}
+                      className="flex items-center gap-2 text-[12.5px] text-[var(--muted)]"
+                    >
+                      {line}
+                    </motion.li>
+                  );
+                })}
               </ul>
             )}
           </section>

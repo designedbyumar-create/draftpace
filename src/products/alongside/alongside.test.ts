@@ -9,12 +9,14 @@ import {
   KIND_LABEL,
   KIND_PROMPT,
   resumeContext,
+  todayAt,
   type LifeItem,
 } from "./life";
 import { deriveAttention, isApprovedPhrasing, QUIET_LINE, readySignals } from "./attention";
 import { applyOutcome, offerFromDirectRun } from "./outcome";
 import { conditionMet, nextStep, OUTCOME_OPTIONS, visibleItems, visibleWording, type Answers } from "./playbook";
 import { makeAPhoneCall } from "./playbooks/makeAPhoneCall";
+import { makeADifficultPhoneCall } from "./playbooks/makeADifficultPhoneCall";
 import { PLAYBOOKS, PLAYBOOK_BY_KEY, playbooksFor } from "./playbooks";
 
 const NOW = new Date("2026-08-23T10:00:00Z");
@@ -269,7 +271,14 @@ describe("the playbook engine", () => {
   });
 
   it("finishes at the outcome step and nowhere else", () => {
-    const complete = answers({ outcome: "x", prepare: "seen", "must-not-forget": "x", opening: "x", during: "seen" });
+    const complete = answers({
+      outcome: "x",
+      prepare: "seen",
+      "must-not-forget": "x",
+      opening: "x",
+      ready: "call-now",
+      during: "seen",
+    });
     expect(nextStep(makeAPhoneCall, complete)!.kind).toBe("outcome");
   });
 
@@ -477,6 +486,69 @@ function gateAnswers(step: { askIf?: { step: string; equals?: string[] } }, fall
   if (!step.askIf) return {};
   return { [step.askIf.step]: step.askIf.equals?.[0] ?? fallback };
 }
+
+/**
+ * The ready step. Only the two calls that are hard to start or hard to
+ * have need a moment before dialling; the other six playbooks have
+ * nothing analogous to be ready for, and must not grow one by accident.
+ */
+describe("the ready step", () => {
+  it("only ever appears in the two phone-call playbooks", () => {
+    for (const playbook of PLAYBOOKS) {
+      const hasReady = playbook.steps.some((step) => step.kind === "ready");
+      const isPhoneCall = playbook.key === "make-a-phone-call" || playbook.key === "make-a-difficult-phone-call";
+      expect(hasReady, playbook.key).toBe(isPhoneCall);
+    }
+  });
+
+  it("gates the during checklist behind choosing to call now, in both phone-call playbooks", () => {
+    for (const playbook of [makeAPhoneCall, makeADifficultPhoneCall]) {
+      const during = playbook.steps.find((step) => step.kind === "during")!;
+      expect(during.askIf, playbook.key).toEqual({ step: "ready", equals: ["call-now"] });
+    }
+  });
+
+  it("routes straight to the outcome step when the answer is not now, skipping the during checklist", () => {
+    for (const playbook of [makeAPhoneCall, makeADifficultPhoneCall]) {
+      const answers: Answers = {};
+      for (const step of playbook.steps) {
+        if (step.key === "during") break;
+        answers[step.key] = step.key === "ready" ? "not-now:14:00" : "x";
+      }
+      expect(nextStep(playbook, answers)?.kind, playbook.key).toBe("outcome");
+    }
+  });
+});
+
+/**
+ * Naming one exact time today. The whole point is reusing the item's own
+ * date field rather than inventing a second way to schedule something,
+ * so this is arithmetic, not a new kind of fact.
+ */
+describe("naming one exact time today", () => {
+  const NOW = new Date("2026-08-23T10:00:00Z");
+
+  it("combines a time with today's date", () => {
+    const at = todayAt("14:30", NOW);
+    expect(at).not.toBeNull();
+    const combined = new Date(at!);
+    expect(combined.getHours()).toBe(14);
+    expect(combined.getMinutes()).toBe(30);
+    expect(combined.toDateString()).toBe(NOW.toDateString());
+  });
+
+  it("rejects anything that is not a real time, rather than saving something wrong", () => {
+    expect(todayAt("whenever", NOW)).toBeNull();
+    expect(todayAt("25:00", NOW)).toBeNull();
+    expect(todayAt("10:75", NOW)).toBeNull();
+  });
+
+  it("reads back as you-asked, the same as any other self-chosen date", () => {
+    const at = todayAt("15:00", NOW);
+    const scheduled = item({ nextAt: at!, userChosenDate: true });
+    expect(deriveAttention({ items: [scheduled] }, NOW).signals[0]?.reason).toBe("you-asked");
+  });
+});
 
 describe("the loop closing", () => {
   it("closes a one-off when it is sorted", () => {

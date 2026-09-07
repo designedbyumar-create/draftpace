@@ -19,6 +19,7 @@ import {
   type ChildTopic,
 } from "../domain/learningData";
 import { loadResultsForChild } from "../domain/checkData";
+import { loadHousehold, householdRequirement } from "../domain/household";
 import { buildBook, DEFAULT_BOOK_SECTIONS, type BookSections } from "../book";
 import type { Curriculum, PlanEntry, Position } from "../learning";
 import {
@@ -157,7 +158,10 @@ export default function RecordModule() {
     setMakingRecord(true);
     setErrorMessage(null);
     try {
-      const checks = await loadResultsForChild(instanceId, target);
+      const [checks, household] = await Promise.all([
+        loadResultsForChild(instanceId, target),
+        loadHousehold(instanceId),
+      ]);
       const book = buildBook({
         child,
         curricula: curricula.filter((c) => c.childId === target),
@@ -169,6 +173,7 @@ export default function RecordModule() {
         topicKeys: childTopics.filter((t) => t.childId === target).map((t) => t.topicKey),
         sections,
         generatedAt: new Date(),
+        stateRequirement: household.ok ? householdRequirement(household.data) : null,
       });
       const { downloadHomeschoolRecord } = await import("../printables/download");
       await downloadHomeschoolRecord(book, size);
@@ -263,7 +268,7 @@ export default function RecordModule() {
             <p className="mt-2 text-[12px] text-[var(--faint)]">Choose a child above first.</p>
           )}
           <div className="mt-3 flex flex-wrap gap-2">
-            <Button size="sm" disabled={pending || !noteText.trim()} onClick={saveNote}>
+            <Button variant="commit" size="sm" disabled={pending || !noteText.trim()} onClick={saveNote}>
               {pending ? "Saving..." : "Save it"}
             </Button>
             <Button size="sm" variant="ghost" disabled={pending} onClick={() => setWriting(false)}>
@@ -326,7 +331,7 @@ export default function RecordModule() {
                 {option === "LETTER" ? "US Letter" : "A4"}
               </Button>
             ))}
-            <Button size="sm" disabled={makingRecord} onClick={makeRecord}>
+            <Button variant="commit" size="sm" disabled={makingRecord} onClick={makeRecord}>
               {makingRecord ? "Preparing..." : "Save as PDF"}
             </Button>
           </div>

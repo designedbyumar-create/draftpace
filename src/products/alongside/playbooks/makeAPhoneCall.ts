@@ -119,10 +119,17 @@ export const makeAPhoneCall: Playbook = {
       ],
     },
     {
+      key: "ready",
+      kind: "ready",
+      prompt: "Ready to call?",
+      why: "Calling now while it is fresh, or naming one exact time today. Either is a real answer.",
+    },
+    {
       key: "during",
       kind: "during",
       prompt: "While you are on the call",
       why: "Short on purpose. Anything longer is unreadable while somebody is talking to you.",
+      askIf: { step: "ready", equals: ["call-now"] },
       items: [
         { text: "Say what you need" },
         { text: "Ask your main question" },

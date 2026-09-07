@@ -75,7 +75,7 @@ export default function NextActionCard({
         <p className="text-[17px] font-semibold text-[var(--text)]">{nextAction.label}</p>
       </div>
       <p className="mt-1.5 text-[13px] leading-relaxed text-[var(--muted)]">{nextAction.reason}</p>
-      <Button size="md" className="mt-4" iconLeft={<Plus size={13} aria-hidden />} onClick={onAct}>
+      <Button variant="commit" size="md" className="mt-4" iconLeft={<Plus size={13} aria-hidden />} onClick={onAct}>
         {nextAction.id === "weekly-check-in" ? "Start check-in" : "Add what changed"}
       </Button>
     </div>

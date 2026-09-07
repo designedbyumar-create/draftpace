@@ -46,10 +46,12 @@ interface BillRow {
   id: string; name: string; category: string; amount_minor: number | null; amount_range_min_minor: number | null; amount_range_max_minor: number | null;
   is_variable: boolean; due_rule: Record<string, unknown> | null; frequency: string; essential: boolean; funded: boolean; currency: string;
   status: string; needs_review_reason: string | null; source: string; import_session_id: string | null; created_at: string; updated_at: string;
+  shared: boolean; shared_split_percent: number | null; settled: boolean; settled_at: string | null;
 }
 interface SubscriptionRow {
   id: string; name: string; amount_minor: number | null; frequency: string; renewal_date: string | null; decision: string; currency: string;
   status: string; needs_review_reason: string | null; source: string; import_session_id: string | null; created_at: string; updated_at: string;
+  shared: boolean; shared_split_percent: number | null; settled: boolean; settled_at: string | null;
 }
 interface DebtRow {
   id: string; name: string; type: string; balance_minor: number; currency: string; interest_rate: number | null; minimum_payment_minor: number;
@@ -81,6 +83,7 @@ function mapBill(r: BillRow): Bill {
     isVariable: r.is_variable, dueRule, frequency: r.frequency as Bill["frequency"], essential: r.essential, funded: r.funded, currency: r.currency,
     status: r.status as Bill["status"], needsReviewReason: r.needs_review_reason, source: r.source as Bill["source"], importSessionId: r.import_session_id,
     createdAt: r.created_at, updatedAt: r.updated_at,
+    shared: r.shared, sharedSplitPercent: r.shared_split_percent, settled: r.settled, settledAt: r.settled_at,
   };
 }
 function mapSubscription(r: SubscriptionRow): Subscription {
@@ -88,6 +91,7 @@ function mapSubscription(r: SubscriptionRow): Subscription {
     id: r.id, name: r.name, amountMinorUnits: r.amount_minor, frequency: r.frequency as Subscription["frequency"], renewalDate: r.renewal_date,
     decision: r.decision as Subscription["decision"], currency: r.currency, status: r.status as Subscription["status"], needsReviewReason: r.needs_review_reason,
     source: r.source as Subscription["source"], importSessionId: r.import_session_id, createdAt: r.created_at, updatedAt: r.updated_at,
+    shared: r.shared, sharedSplitPercent: r.shared_split_percent, settled: r.settled, settledAt: r.settled_at,
   };
 }
 function mapDebt(r: DebtRow): Debt {

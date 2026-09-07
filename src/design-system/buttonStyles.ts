@@ -12,7 +12,22 @@
  * clients can both import.
  */
 
-export type ButtonVariant = "primary" | "secondary" | "outline" | "ghost" | "danger";
+/**
+ * TWO REGISTERS, ONE SYSTEM.
+ *
+ * `primary` is the marketing register: a persuasive CTA with gradient
+ * material and an accent glow, for the public site where a button's job
+ * is to be taken. `action` and `commit` are the product register, for
+ * inside the app, where a button's job is to be available without
+ * competing: `action` is an ordinary action tinted in the product's own
+ * accent, `commit` the single real commitment on a screen, solid but
+ * flat. Both follow `--primary`, so they are that product's colour in
+ * both themes without any per-product button code.
+ *
+ * Getting this wrong is what put the marketing CTA on roughly 175
+ * in-product buttons that never asked for a variant at all.
+ */
+export type ButtonVariant = "primary" | "action" | "commit" | "secondary" | "outline" | "ghost" | "danger";
 export type ButtonSize = "sm" | "md" | "lg";
 
 export type ButtonStyleProps = {
@@ -45,6 +60,11 @@ const variantClass: Record<ButtonVariant, string> = {
   // something the person actually did.
   primary:
     "btn-fill-primary bg-[var(--primary)] text-[var(--primary-contrast)] shadow-[shadow:var(--btn-primary-rest)]",
+  // The product register. No gradient, no glow: the material is a tint of
+  // the product's own accent (.btn-action / .btn-commit in globals.css,
+  // for the same color-mix reason .btn-fill-* lives there).
+  action: "btn-action",
+  commit: "btn-commit",
   secondary:
     "btn-fill-secondary border border-[var(--border-strong)] bg-[var(--surface)] text-[var(--text)] shadow-[shadow:var(--btn-raise-rest)]",
   // A single stroke and teal type on nothing. Distinct from secondary,

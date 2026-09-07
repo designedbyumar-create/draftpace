@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { motion, useReducedMotion } from "framer-motion";
 import Button from "@/design-system/Button";
 import EmptyState from "@/design-system/EmptyState";
 import { Globe, Plus } from "@/design-system/Icon";
+import { staggerContainer, staggerItem, pressProps } from "@/design-system/motion";
 import { byStartTime, descendantsOf, type Booking } from "../trip";
 import { deriveTripBrief } from "../tripBrief";
 import { useTravelCompanion } from "./useTravelCompanion";
@@ -92,6 +94,7 @@ export default function TripModule() {
   const [addedFromMatch, setAddedFromMatch] = useState<Set<string>>(new Set());
   const [opening, setOpening] = useState(false);
   const [startError, setStartError] = useState<string | null>(null);
+  const reduceMotion = useReducedMotion();
 
   if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
   if (status === "no-instance") {
@@ -411,21 +414,32 @@ export default function TripModule() {
                     <p className="text-[12px] font-semibold text-[var(--text)]">
                       This might affect {impact.affected.length === 1 ? "this" : `these ${impact.affected.length}`}, unchanged so far:
                     </p>
-                    <ul className="mt-2 flex flex-col gap-2">
+                    <motion.ul
+                      className="mt-2 flex flex-col gap-2"
+                      initial="hidden"
+                      animate="visible"
+                      variants={staggerContainer(Boolean(reduceMotion))}
+                    >
                       {impact.affected.map((affected) => (
-                        <li key={affected.id} className="flex flex-wrap items-center justify-between gap-2">
+                        <motion.li
+                          key={affected.id}
+                          variants={staggerItem(Boolean(reduceMotion))}
+                          className="flex flex-wrap items-center justify-between gap-2"
+                        >
                           <span className="text-[13px] text-[var(--text)]">
                             {affected.title}
                             {affected.startsAt && <span className="text-[var(--muted)]"> · {timeLabel(affected.startsAt)}</span>}
                           </span>
                           {SOMETHING_CHANGED && (
-                            <Button size="sm" variant="ghost" onClick={() => pickPlaybook(affected, SOMETHING_CHANGED)}>
-                              Deal with what changed
-                            </Button>
+                            <motion.span {...pressProps(Boolean(reduceMotion))} className="inline-block">
+                              <Button size="sm" variant="ghost" onClick={() => pickPlaybook(affected, SOMETHING_CHANGED)}>
+                                Deal with what changed
+                              </Button>
+                            </motion.span>
                           )}
-                        </li>
+                        </motion.li>
                       ))}
-                    </ul>
+                    </motion.ul>
                     <button
                       type="button"
                       onClick={() => setImpact(null)}

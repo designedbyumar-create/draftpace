@@ -4,8 +4,8 @@ import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "@/design-system/Icon";
 import Badge from "@/design-system/Badge";
+import ProductBadge from "@/components/platform/ProductBadge";
 import { formatCurrency } from "@/lib/currency";
-import { iconForProduct } from "@/product-framework/productIcons";
 import { resolveProductDestination } from "@/product-framework/resolveDestination";
 import { humanStatus } from "@/product-framework/ownedProductPresentation";
 import type { SharedProductSummary } from "@/product-framework/productSummary";
@@ -40,7 +40,6 @@ export default function ProductSummaryTile({
 }) {
   const reduceMotion = useReducedMotion();
   const { definition, instance } = row;
-  const Icon = iconForProduct(definition.slug);
 
   const destination = instance ? resolveProductDestination(definition, instance) : `/app/products/${definition.slug}`;
   const status = instance ? humanStatus(instance) : "Not started yet";
@@ -66,9 +65,7 @@ export default function ProductSummaryTile({
       >
         <div className={wide ? "min-w-0 flex-1" : "contents"}>
           <div className="flex items-center gap-2.5">
-            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[var(--primary-soft)] text-[var(--primary)]">
-              <Icon size={15} aria-hidden />
-            </span>
+            <ProductBadge definition={definition} />
             <p className="min-w-0 truncate text-[11.5px] font-bold uppercase tracking-[0.1em] text-[var(--faint)]">
               {definition.title}
             </p>

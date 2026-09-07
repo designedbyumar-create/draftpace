@@ -96,7 +96,7 @@ function ProductTabShell({
   const accountItems = appAccountMenuItems(() => signOutAndRedirect("/"));
 
   return (
-    <div className="min-h-screen bg-[var(--app-bg)] text-[var(--text)]" style={style}>
+    <div className="min-h-screen bg-[var(--app-bg)] text-[var(--text)]" data-product-theme style={style}>
       {/* Mobile compact app-bar: back, title, account, one row instead of
           three stacked blocks. min-h (not h) + safe-area padding-top so the
           row grows to clear a notch instead of squeezing existing content
@@ -167,6 +167,7 @@ function ProductTabShell({
                   key={id}
                   href={href}
                   ref={active ? activeTabRef : undefined}
+                  data-tour-id={`rail-${id}`}
                   aria-current={active ? "page" : undefined}
                   className={`whitespace-nowrap border-b-2 px-3 py-3 text-[13px] font-semibold transition ${
                     active

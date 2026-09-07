@@ -52,7 +52,7 @@ export const travelCompanionDefinition: ProductDefinitionInput = {
     "Everything your trip depends on, in one place, with the right context when you need it. You don't have to remember how it all connects.",
   family: "companion",
   version: "0.1.0",
-  status: "draft",
+  status: "active",
   access: { model: "paid" },
   cycleModel: "continuous",
   /**
@@ -146,6 +146,9 @@ export const travelCompanionDefinition: ProductDefinitionInput = {
       strong: "#7c4715",
       soft: "#f7ead9",
       contrast: "#ffffff",
+      // Pale peach-sand, one step paler than soft, for a hero card or
+      // section background.
+      wash: "#faf1e6",
     },
     narrativeFont: "var(--font-newsreader), ui-serif, Georgia, serif",
     motionPersonality: "calm",

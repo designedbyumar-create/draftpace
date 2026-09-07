@@ -50,7 +50,7 @@ export const homeschoolingCompanionDefinition: ProductDefinitionInput = {
    */
   family: "learning",
   version: "0.1.0",
-  status: "draft",
+  status: "active",
   access: { model: "paid" },
   cycleModel: "continuous",
   capabilities: ["learning.lesson", "learning.activity", "learning.assessment", "learning.mastery"],
@@ -137,6 +137,10 @@ export const homeschoolingCompanionDefinition: ProductDefinitionInput = {
       strong: "#4a3350",
       soft: "#f0eaf1",
       contrast: "#ffffff",
+      // Pale lavender, consistent with plum rather than a second colour
+      // computed separately: soft is already close, wash goes one step
+      // paler again for a hero card or section background.
+      wash: "#f6f1f7",
     },
     // A serif carries the child's name and the day's work. Shared with
     // two siblings on purpose: the narrative face is a Draftpace family

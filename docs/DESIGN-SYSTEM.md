@@ -33,11 +33,85 @@ and inside `@media (prefers-color-scheme: dark)` scoped to
 - Borders: `--border` (hairline), `--border-strong` (emphasis).
 - Brand: `--primary` / `--primary-strong` / `--primary-soft` /
   `--primary-contrast` — one accent, used deliberately, not saturated across
-  the interface.
+  the interface. Inside a product shell these are re-pointed at that
+  product's own accent, see **Per-product accent** below.
 - Semantic: `--success`, `--warning`, `--danger`, `--info`, each with a
   `-soft` background pair, muted rather than saturated (avoids the "generic
   SaaS template" bright-green/red look).
 - No gradients anywhere in the shared system.
+
+## Per-product accent
+
+A product declares its own colour once, in its `definition.ts`, as
+`theme.accentScale` (`base` / `strong` / `soft` / `contrast`, plus an
+optional `wash`). `productThemeStyle()`
+(`src/product-framework/themeExtension.ts`) turns that into inline custom
+properties on the product shell's root, which also carries
+`data-product-theme`.
+
+Two rules matter here, both learned the hard way:
+
+- **Inline styles emit light/dark *pairs*, never the live value.**
+  `productThemeStyle()` sets `--product-primary-light` and
+  `--product-primary-dark`; `globals.css` selects between them under
+  `[data-product-theme]`, `:root[data-theme="dark"] [data-product-theme]`
+  and the `prefers-color-scheme` copy. An inline style cannot answer a
+  media query, so setting `--primary` inline directly is what once made
+  every themed product unreadable in dark mode.
+- **A dark accent is derived, not guessed.** `deriveDarkTones()`
+  (`src/design-system/accentTone.ts`) lifts a light accent to a real
+  contrast target against the dark surface, preserving hue and restoring
+  chroma, and leaves a near-neutral accent neutral. A product may still
+  supply `accentScaleDark` explicitly to override it.
+
+Monthly Money Reset's bespoke `--mmr-*` tokens are the one documented
+exception to this mechanism, not a second undocumented system.
+
+## Buttons: two registers, one system
+
+`src/design-system/buttonStyles.ts` is the source of truth, and its doc
+comment is the long version.
+
+- **Marketing register:** `primary`. A persuasive CTA with gradient
+  material and an accent glow, for the public site, where a button's job
+  is to be taken.
+- **Product register:** `action` and `commit`. Inside the app a button's
+  job is to be available without competing. `action` is an ordinary
+  action, tinted in the product's own accent. `commit` is the single real
+  commitment on a screen: solid, but flat.
+- Both product variants follow `--primary`, so they are that product's
+  colour in both themes with no per-product button code anywhere.
+- `secondary`, `outline`, `ghost`, `danger` work in either register.
+
+Defaulting in-app buttons to `primary` is what once put the marketing CTA
+on roughly 175 product buttons that never asked for a variant.
+
+## Shared product-layer components
+
+Built once, used by every product, rather than re-implemented per
+product:
+
+- `src/design-system/motion.ts` — the named variants (`entranceVariant`,
+  `staggerContainer`/`staggerItem`, `settleVariant`, `pressProps`,
+  `liftProps`), each guarded by `useReducedMotion()`.
+- `src/design-system/PrintableDocument.tsx` — the shared
+  `@react-pdf/renderer` shell (cover, header, footer, pagination,
+  palette) behind every printable. Printable modules import
+  `@react-pdf/renderer` and must therefore only ever be reached via a
+  dynamic import.
+- `src/app/(marketing)/shop/PhoneFrame.tsx` — one phone frame,
+  parameterised by accent, instead of a copy per marketing mockup file.
+- `src/components/platform/ProductBadge.tsx` — reads a product's own
+  `accentScale`, so a product's icon is its own colour outside its shell
+  too, not platform teal.
+- `src/components/platform/GuidedTour.tsx` +
+  `useFirstRunTour.ts` + `FirstRunTour.tsx` — the first-run tour. A step
+  targets an `id` or a `data-tour-id`; steps whose target is not on
+  screen are dropped, and a tour with no surviving steps finishes rather
+  than pointing at nothing. `EmptyState` carries
+  `data-tour-id="empty-state"` and both shells mark destinations as
+  `rail-<id>`, because those are the only things a brand new, empty
+  account actually renders.
 
 ## Spacing, radius, containers, breakpoints
 

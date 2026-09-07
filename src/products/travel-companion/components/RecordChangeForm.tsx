@@ -64,7 +64,7 @@ export default function RecordChangeForm({
       </div>
       {errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}
       <div className="flex flex-wrap items-center gap-2">
-        <Button onClick={save} disabled={pending}>
+        <Button variant="commit" onClick={save} disabled={pending}>
           Save the change
         </Button>
         <Button variant="ghost" onClick={onCancel} disabled={pending}>

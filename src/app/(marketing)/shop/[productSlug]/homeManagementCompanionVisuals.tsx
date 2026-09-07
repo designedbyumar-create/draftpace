@@ -21,6 +21,7 @@
  * it from PFC's teal and MMR's clay. Names below are illustrative but
  * internally consistent, and never presented as real account data.
  */
+import PhoneFrame from "../PhoneFrame";
 
 const INK = "#1a2420";
 const MUTED = "#6b7570";
@@ -37,27 +38,6 @@ function StatusBar({ tone = "light" }: { tone?: "light" | "dark" }) {
       <div className="flex items-center gap-1">
         <span className="h-2 w-3 rounded-[1px] border border-current" />
         <span className="h-2 w-2 rounded-full border border-current" />
-      </div>
-    </div>
-  );
-}
-
-/** Same phone chrome as PFC's mockups, glow tinted sage instead of teal so
- * the two paid Companions read as distinct products at a glance while
- * staying visually consistent as a family. */
-function PhoneFrame({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="relative mx-auto w-full max-w-[280px]">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-4 inset-y-8 -z-10 rounded-[3rem] bg-[#4f7a5c] opacity-[0.16] blur-3xl"
-      />
-      <div
-        className="relative overflow-hidden rounded-[2.75rem] border-[6px] border-[#101312] bg-[#101312] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.35)]"
-        style={{ aspectRatio: "9 / 19.5" }}
-      >
-        <div className="absolute left-1/2 top-2.5 z-10 h-[16px] w-[84px] -translate-x-1/2 rounded-full bg-[#101312]" aria-hidden />
-        <div className="absolute inset-0 overflow-hidden rounded-[2.25rem]">{children}</div>
       </div>
     </div>
   );
@@ -121,7 +101,7 @@ function CareRow({ title, status, actions = true }: { title: string; status: str
  */
 export function OverviewScreenMockup() {
   return (
-    <PhoneFrame>
+    <PhoneFrame accent={SAGE}>
       <div className="flex h-full flex-col px-4 pb-4 pt-9" style={{ backgroundColor: PAPER }}>
         <StatusBar />
         <p className="mt-3 text-[8px] font-bold uppercase tracking-[0.14em]" style={{ color: MUTED }}>
@@ -166,7 +146,7 @@ export function OverviewScreenMockup() {
  */
 export function ActionRecordScreenMockup() {
   return (
-    <PhoneFrame>
+    <PhoneFrame accent={SAGE}>
       <div className="flex h-full flex-col px-4 pb-4 pt-9" style={{ backgroundColor: PAPER }}>
         <StatusBar />
         <p className="mt-3 text-[8px] font-bold uppercase tracking-[0.14em]" style={{ color: MUTED }}>
@@ -245,7 +225,7 @@ export function SetupScreenMockup() {
     ["Dishwasher", false],
   ];
   return (
-    <PhoneFrame>
+    <PhoneFrame accent={SAGE}>
       <div className="flex h-full flex-col px-4 pb-4 pt-9" style={{ backgroundColor: PAPER }}>
         <StatusBar />
         <p className="mt-3 text-[8px] font-bold uppercase tracking-[0.14em]" style={{ color: MUTED }}>

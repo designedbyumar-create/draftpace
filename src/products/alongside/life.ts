@@ -147,6 +147,25 @@ export function daysUntil(iso: string | null, now: Date): number | null {
 }
 
 /**
+ * Combines a time somebody named with today's date, in local time.
+ *
+ * For naming one exact time today rather than a date: a person picks the
+ * time, and today is supplied rather than asked for. Returns null for
+ * anything that is not a real HH:MM time, so a step that stores this
+ * cannot silently save a date nobody chose.
+ */
+export function todayAt(time: string, now: Date): string | null {
+  const match = /^(\d{1,2}):(\d{2})$/.exec(time.trim());
+  if (!match) return null;
+  const hours = Number(match[1]);
+  const minutes = Number(match[2]);
+  if (hours > 23 || minutes > 59) return null;
+  const result = new Date(now.getTime());
+  result.setHours(hours, minutes, 0, 0);
+  return result.toISOString();
+}
+
+/**
  * How a stretch of time reads to a person.
  *
  * Vague on purpose past a fortnight. "Coming up in 23 days" is a number

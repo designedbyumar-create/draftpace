@@ -136,7 +136,7 @@ export default function IncomeModule() {
               {dominantAction.source.name}
               {" "}doesn&apos;t have an amount yet, so it isn&apos;t counted in your total.
             </p>
-            <Button
+            <Button variant="action"
               size="sm"
               onClick={() => {
                 setEditingSource(dominantAction.source);
@@ -156,7 +156,7 @@ export default function IncomeModule() {
           description="Add a paycheck, freelance income, or anything else that regularly brings money in."
           action={
             <div ref={addButtonRef} className="inline-block">
-              <Button size="sm" iconLeft={<Plus size={14} aria-hidden />} onClick={() => setFormOpen(true)}>
+              <Button variant="action" size="sm" iconLeft={<Plus size={14} aria-hidden />} onClick={() => setFormOpen(true)}>
                 Add income
               </Button>
             </div>

@@ -139,7 +139,7 @@ export default function TransactionFormSheet({
           <Button variant="secondary" size="md" onClick={onClose} disabled={saving}>
             Cancel
           </Button>
-          <Button size="md" onClick={handleSave} disabled={saving || noAccounts}>
+          <Button variant="commit" size="md" onClick={handleSave} disabled={saving || noAccounts}>
             {saving ? "Saving…" : isEdit ? "Save changes" : "Add transaction"}
           </Button>
         </>

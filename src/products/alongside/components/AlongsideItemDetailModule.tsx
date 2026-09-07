@@ -225,6 +225,7 @@ export default function AlongsideItemDetailModule() {
         run={running.run}
         onFinished={finishRun}
         onLeft={() => setRunning(null)}
+        onItemUpdated={setItem}
       />
     );
   }
@@ -310,7 +311,7 @@ export default function AlongsideItemDetailModule() {
               hint="This is your own choice, not something the product is asking for. Leave it empty to clear it."
             />
             <div className="flex flex-wrap items-center gap-2">
-              <Button size="sm" onClick={saveEdit} disabled={pending}>
+              <Button variant="commit" size="sm" onClick={saveEdit} disabled={pending}>
                 Save
               </Button>
               <Button size="sm" variant="ghost" onClick={() => setEditing(false)} disabled={pending}>
@@ -346,7 +347,7 @@ export default function AlongsideItemDetailModule() {
                   autoFocus
                 />
                 <div className="flex flex-wrap items-center gap-2">
-                  <Button size="sm" onClick={markWaiting} disabled={pending}>
+                  <Button variant="commit" size="sm" onClick={markWaiting} disabled={pending}>
                     Save
                   </Button>
                   <Button size="sm" variant="ghost" onClick={() => setWaitingForm(false)} disabled={pending}>

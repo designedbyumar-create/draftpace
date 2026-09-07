@@ -39,6 +39,38 @@ export const productThemeExtensionSchema = z
         strong: z.string(),
         soft: z.string(),
         contrast: z.string(),
+        /**
+         * The pastel "wash" tier — paler and quieter than `soft`, meant to
+         * be the *default* background for hero cards, section dividers,
+         * and any surface covering real screen area. `base`/`strong` keep
+         * doing exactly what they did before this field existed: identity
+         * marks and the one primary action per screen. Optional so no
+         * existing product's rendering changes the moment this ships —
+         * several already have a `soft` value gentle enough to double as
+         * this until a product deliberately computes its own.
+         */
+        wash: z.string().optional(),
+      })
+      .optional(),
+    /**
+     * The dark-theme counterpart of `accentScale`. Optional, and normally
+     * absent: `productThemeStyle()` derives a dark tone set from the light
+     * `base` (see src/design-system/accentTone.ts), preserving the hue and
+     * lifting it until it clears 4.5:1 against the dark ground. Declare
+     * this only to overrule that arithmetic for a product whose dark
+     * identity is a deliberate design choice rather than a lightening of
+     * its light one.
+     *
+     * Never leave this partly filled in: it replaces the derived set
+     * outright, so a half-authored one is a half-themed product.
+     */
+    accentScaleDark: z
+      .object({
+        base: z.string(),
+        strong: z.string(),
+        soft: z.string(),
+        contrast: z.string(),
+        wash: z.string().optional(),
       })
       .optional(),
     /**

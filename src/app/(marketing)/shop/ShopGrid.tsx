@@ -5,7 +5,7 @@ import Link from "next/link";
 import Badge from "@/design-system/Badge";
 import Button from "@/design-system/Button";
 import { ArrowRight, Check } from "@/design-system/Icon";
-import { discountPercent, formatCompareAtPrice, formatPrice, type ShopProduct } from "@/shop/definition";
+import { cardHighlight, discountPercent, formatCompareAtPrice, formatPrice, type ShopProduct } from "@/shop/definition";
 import AddToLibraryButton from "./AddToLibraryButton";
 
 export interface ShopFilterArea {
@@ -23,7 +23,7 @@ export interface ShopGridEntry {
   thumbnail: ReactNode;
 }
 
-const DEFAULT_SITUATION = "Seven Companions, one screen. Pick an area below to narrow it down.";
+const DEFAULT_SITUATION = "Every Companion, one screen. Pick an area below to narrow it down.";
 
 /**
  * The Shop's filter bar and product shelf.
@@ -102,7 +102,7 @@ function ShopProductCard({ entry }: { entry: ShopGridEntry }) {
   const priceLabel = formatPrice(product);
   const compareAtLabel = formatCompareAtPrice(product);
   const savingsPercent = discountPercent(product);
-  const firstOutcome = product.outcomes[0];
+  const firstOutcome = cardHighlight(product);
 
   return (
     <div className="group flex flex-col overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] transition-[box-shadow,border-color] duration-[var(--dur)] ease-[var(--ease-out)] hover:border-[var(--border-strong)] hover:shadow-[shadow:var(--shadow-xs)]">

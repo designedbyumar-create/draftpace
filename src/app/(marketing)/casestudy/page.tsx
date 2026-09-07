@@ -28,6 +28,8 @@ import {
 import { OverviewScreenMockup as AlongsideMockup } from "../shop/[productSlug]/adhdLifeCompanionVisuals";
 import { OverviewScreenMockup as HscMockup } from "../shop/[productSlug]/homeschoolingCompanionVisuals";
 import { OverviewScreenMockup as PlaMockup } from "../shop/[productSlug]/personalLifeAffairsCompanionVisuals";
+import { OverviewScreenMockup as VmcMockup } from "../shop/[productSlug]/vehicleMaintenanceCompanionVisuals";
+import { OverviewScreenMockup as FhbMockup } from "../shop/[productSlug]/familyHealthBinderVisuals";
 import {
   OverviewScreenMockup as TravelMockup,
   ChangeImpactScreenMockup as TravelImpact,
@@ -42,7 +44,7 @@ import {
 export const metadata: Metadata = {
   title: "Draftpace: a product design case study by Umar Malik",
   description:
-    "How seven products were designed around real parts of life instead of one interface stretched over all of them, and what the work has and has not proven.",
+    "How nine products were designed around real parts of life instead of one interface stretched over all of them, and what the work has and has not proven.",
   alternates: { canonical: "/casestudy" },
   // Unlisted on purpose: not in any nav, not in the sitemap, and asked out
   // of search results directly rather than relied on to stay unfound.
@@ -50,13 +52,26 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-const AREA_MOCKUP: Record<string, React.ReactNode> = {
-  money: <MmrMockup />,
-  home: <HmcMockup />,
-  "mind-and-focus": <AlongsideMockup />,
-  "family-and-learning": <HscMockup />,
-  "affairs-and-endings": <PlaMockup />,
-  travel: <TravelMockup />,
+/**
+ * One screen per product, keyed by product rather than by life area.
+ *
+ * It used to be keyed by area, which silently showed one product per
+ * area: the money area has two products and only the first appeared, and
+ * a product whose area had no entry was dropped from the shelf without a
+ * trace. That is how a page headed "seven problems" could render six
+ * tiles. Keyed by product, a new product either brings its own screen or
+ * is visibly absent from a count this page states out loud.
+ */
+const PRODUCT_MOCKUP: Record<string, React.ReactNode> = {
+  "monthly-money-reset": <MmrMockup />,
+  "personal-finance-companion": <PfcMockup />,
+  "home-management-companion": <HmcMockup />,
+  alongside: <AlongsideMockup />,
+  "homeschooling-companion": <HscMockup />,
+  "personal-life-affairs-companion": <PlaMockup />,
+  "travel-companion": <TravelMockup />,
+  "vehicle-maintenance-companion": <VmcMockup />,
+  "family-health-binder": <FhbMockup />,
 };
 
 /** The three screens shown for each deep dive, in the product's own UI. */
@@ -74,7 +89,7 @@ const NAV = [
   { id: "first-answer", label: "The first answer" },
   { id: "thesis", label: "The thesis" },
   { id: "companion", label: "The product model" },
-  { id: "shelf", label: "The seven" },
+  { id: "shelf", label: "The nine" },
   { id: "system", label: "The system" },
   { id: "process", label: "Process" },
   { id: "decisions", label: "Decisions" },
@@ -133,12 +148,14 @@ function Section({
 export default function CaseStudyPage() {
   ensureShopRegistered();
 
-  const shelf = LIFE_AREAS.flatMap((area) => {
-    const product = shopRegistry.getBySlug(area.productSlugs[0]);
-    const mockup = AREA_MOCKUP[area.slug];
-    if (!product || !mockup) return [];
-    return [{ area: area.label, title: product.title, slug: product.slug, price: formatPrice(product), mockup }];
-  });
+  const shelf = LIFE_AREAS.flatMap((area) =>
+    area.productSlugs.flatMap((slug) => {
+      const product = shopRegistry.getBySlug(slug);
+      const mockup = PRODUCT_MOCKUP[slug];
+      if (!product || !mockup) return [];
+      return [{ area: area.label, title: product.title, slug: product.slug, price: formatPrice(product), mockup }];
+    })
+  );
 
   return (
     <CaseStudyGate>
@@ -449,7 +466,7 @@ export default function CaseStudyPage() {
             The products are real. Go and look at them.
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-[15px] leading-relaxed text-[var(--muted)]">
-            Everything described here is running. One of the seven is free, so you can see how it behaves without
+            Everything described here is running. One of the nine is free, so you can see how it behaves without
             spending anything.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">

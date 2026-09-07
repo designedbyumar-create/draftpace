@@ -88,7 +88,7 @@ export default function HomeItemDocumentFormSheet({
           <Button variant="secondary" onClick={onClose} disabled={saving}>
             Cancel
           </Button>
-          <Button onClick={handleSave} disabled={saving}>
+          <Button variant="commit" onClick={handleSave} disabled={saving}>
             {saving ? "Saving…" : "Save"}
           </Button>
         </>

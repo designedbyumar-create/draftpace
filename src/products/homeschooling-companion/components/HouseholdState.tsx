@@ -112,7 +112,7 @@ export default function HouseholdState({
             </option>
           ))}
         </Select>
-        <Button size="sm" disabled={!draft || pending} onClick={() => onSave(draft)}>
+        <Button variant="commit" size="sm" disabled={!draft || pending} onClick={() => onSave(draft)}>
           {pending ? "Saving..." : "Save"}
         </Button>
         <Button size="sm" variant="ghost" disabled={pending} onClick={() => setOpen(false)}>

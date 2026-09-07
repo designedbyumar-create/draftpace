@@ -7,9 +7,11 @@ import Badge from "@/design-system/Badge";
 import Button from "@/design-system/Button";
 import { ArrowRight, Check, Lock, X } from "@/design-system/Icon";
 import { shopRegistry } from "@/shop/registry";
-import { discountPercent, formatCompareAtPrice, formatPrice, type ShopProduct } from "@/shop/definition";
+import { discountPercent, formatCompareAtPrice, formatPrice, questionsForStage, type ShopProduct } from "@/shop/definition";
+import SearchedProblems from "./SearchedProblems";
 import { ensureShopRegistered } from "@/shop/ensureRegistered";
 import RichSection from "./RichSection";
+import ProblemCards from "./ProblemCards";
 import AddToLibraryButton from "../AddToLibraryButton";
 import {
   OverviewScreenMockup as MmrOverviewScreenMockup,
@@ -46,6 +48,16 @@ import {
   ChangeImpactScreenMockup as TravelChangeImpactScreenMockup,
   TripBriefScreenMockup as TravelTripBriefScreenMockup,
 } from "./travelCompanionVisuals";
+import {
+  OverviewScreenMockup as VmcOverviewScreenMockup,
+  ServiceBoundaryScreenMockup as VmcServiceBoundaryScreenMockup,
+  AddItemScreenMockup as VmcAddItemScreenMockup,
+} from "./vehicleMaintenanceCompanionVisuals";
+import {
+  OverviewScreenMockup as FhbOverviewScreenMockup,
+  SymptomFormScreenMockup as FhbSymptomFormScreenMockup,
+  IntakeSummaryScreenMockup as FhbIntakeSummaryScreenMockup,
+} from "./familyHealthBinderVisuals";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { getLemonSqueezyCheckoutUrl, hasLemonSqueezyCheckout } from "@/shop/lemonSqueezyCheckout";
 
@@ -104,6 +116,9 @@ export default async function ShopProductPage({
   const isHomeschoolingCompanion = product.slug === "homeschooling-companion";
   const isAlongside = product.slug === "alongside";
   const isTravelCompanion = product.slug === "travel-companion";
+  const isVehicleMaintenanceCompanion = product.slug === "vehicle-maintenance-companion";
+  const isFamilyHealthBinder = product.slug === "family-health-binder";
+  const decidingQuestions = questionsForStage(product, "deciding");
 
   // Resolved once per request, server-side, so every GetAction on this page
   // (hero, mid-page, final CTA) agrees on the exact same checkout link
@@ -177,6 +192,10 @@ export default async function ShopProductPage({
               <AlongsideOverviewScreenMockup />
             ) : isTravelCompanion ? (
               <TravelOverviewScreenMockup />
+            ) : isVehicleMaintenanceCompanion ? (
+              <VmcOverviewScreenMockup />
+            ) : isFamilyHealthBinder ? (
+              <FhbOverviewScreenMockup />
             ) : (
               <HeroVisual product={product} />
             )}
@@ -185,25 +204,10 @@ export default async function ShopProductPage({
       </div>
 
       <Container width="standard" className="pb-28 pt-14 sm:pt-16">
-      {/* Movement 2: who this is for and the situation */}
-      {product.audience.length > 0 && (
-        <RichSection eyebrow="Who this is for">
-          <ul className="flex flex-col gap-2.5">
-            {product.audience.map((line) => (
-              <li key={line} className="flex items-start gap-2.5">
-                <Check size={17} className="mt-0.5 shrink-0 text-[var(--success)]" aria-hidden />
-                {line}
-              </li>
-            ))}
-          </ul>
-          <p className="mt-4 text-[var(--muted)]">{product.problem}</p>
-        </RichSection>
-      )}
-
-      {/* Movement 3: what becomes easier */}
-      {product.outcomes.length > 0 && (
+      {/* Movement 2: the problem, named and solved, one card at a time */}
+      {product.problemsSolved.length > 0 ? (
         <RichSection
-          eyebrow="What becomes easier"
+          eyebrow="What this solves"
           visual={
             isMonthlyMoneyReset ? (
               <MmrBreakdownScreenMockup />
@@ -219,15 +223,43 @@ export default async function ShopProductPage({
               <AlongsideLifeScreenMockup />
             ) : isTravelCompanion ? (
               <TravelChangeImpactScreenMockup />
+            ) : isVehicleMaintenanceCompanion ? (
+              <VmcServiceBoundaryScreenMockup />
+            ) : isFamilyHealthBinder ? (
+              <FhbSymptomFormScreenMockup />
             ) : undefined
           }
         >
-          <ul className="flex flex-col gap-3">
-            {product.outcomes.map((line) => (
-              <li key={line}>{line}</li>
-            ))}
-          </ul>
+          <p className="mb-5 text-[var(--muted)]">{product.problem}</p>
+          <ProblemCards items={product.problemsSolved} />
         </RichSection>
+      ) : (
+        <>
+          {/* No problemsSolved authored yet for this listing: falls back to
+              the original flat lists rather than an empty section. */}
+          {product.audience.length > 0 && (
+            <RichSection eyebrow="Who this is for">
+              <ul className="flex flex-col gap-2.5">
+                {product.audience.map((line) => (
+                  <li key={line} className="flex items-start gap-2.5">
+                    <Check size={17} className="mt-0.5 shrink-0 text-[var(--success)]" aria-hidden />
+                    {line}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-4 text-[var(--muted)]">{product.problem}</p>
+            </RichSection>
+          )}
+          {product.outcomes.length > 0 && (
+            <RichSection eyebrow="What becomes easier">
+              <ul className="flex flex-col gap-3">
+                {product.outcomes.map((line) => (
+                  <li key={line}>{line}</li>
+                ))}
+              </ul>
+            </RichSection>
+          )}
+        </>
       )}
 
       {/* Movement 4: how it works */}
@@ -249,6 +281,10 @@ export default async function ShopProductPage({
               <AlongsideCompanionScreenMockup />
             ) : isTravelCompanion ? (
               <TravelTripBriefScreenMockup />
+            ) : isVehicleMaintenanceCompanion ? (
+              <VmcAddItemScreenMockup />
+            ) : isFamilyHealthBinder ? (
+              <FhbIntakeSummaryScreenMockup />
             ) : undefined
           }
           reverse
@@ -266,17 +302,10 @@ export default async function ShopProductPage({
         </RichSection>
       )}
 
-      {/* Movement 5: objection resolution, near the decision */}
-      {product.objections.length > 0 && (
-        <RichSection eyebrow="Honest answers before you decide">
-          <div className="flex flex-col divide-y divide-[var(--border)] rounded-xl border border-[var(--border)] text-[15px]">
-            {product.objections.map((o) => (
-              <div key={o.worry} className="px-5 py-4">
-                <p className="font-semibold text-[var(--text)]">{o.worry}</p>
-                <p className="mt-1.5 leading-relaxed text-[var(--muted)]">{o.answer}</p>
-              </div>
-            ))}
-          </div>
+      {/* Movement 3: the problem in the reader's own words, before ours */}
+      {product.searchedProblems.length > 0 && (
+        <RichSection eyebrow="Which of these is you?">
+          <SearchedProblems items={product.searchedProblems} />
         </RichSection>
       )}
 
@@ -341,11 +370,14 @@ export default async function ShopProductPage({
         </div>
       </section>
 
-      {/* FAQs */}
-      {product.faqs.length > 0 && (
-        <RichSection eyebrow="Questions">
+      {/* Questions, asked once. A migrated listing answers each worry a
+          single time and says which moment it belongs to; the rest still
+          get their objections and faqs concatenated here, which is what
+          this page rendered as two near-duplicate sections before. */}
+      {decidingQuestions.length > 0 && (
+        <RichSection eyebrow="Honest answers before you decide">
           <div className="flex flex-col divide-y divide-[var(--border)]">
-            {product.faqs.map((faq) => (
+            {decidingQuestions.map((faq) => (
               <details key={faq.question} className="group py-3 first:pt-0">
                 <summary className="cursor-pointer text-[15px] font-semibold text-[var(--text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]">
                   {faq.question}

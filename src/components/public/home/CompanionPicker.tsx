@@ -95,12 +95,12 @@ export default function CompanionPicker({ panels }: { panels: PickerPanel[] }) {
         <h1 className="mt-3 font-serif text-[38px] font-semibold leading-[1.08] tracking-tight sm:text-[48px] lg:text-[54px]">
           For the parts of life that are hard to keep track of.
         </h1>
-        {/* Three lines at most, and it names the six areas outright: the
+        {/* Three lines at most, and it names the areas outright: the
             previous version described how the products behave before
             saying what part of anybody's life they are for. */}
         <p className="mt-5 max-w-lg text-[17px] leading-relaxed text-[var(--muted)]">
-          Seven products for the parts of everyday life that are hardest to stay on top of: money, home, focus,
-          family, affairs and travel. Each one remembers your situation so you do not have to.
+          Companions for the parts of everyday life that are hardest to stay on top of: money, home, focus, family,
+          affairs, travel, vehicles and family health. Each one remembers your situation so you do not have to.
         </p>
 
         <fieldset className="mt-7 border-0 p-0">
@@ -191,7 +191,7 @@ export default function CompanionPicker({ panels }: { panels: PickerPanel[] }) {
         </div>
 
         <div className="flex flex-col items-center gap-5 border-t border-[var(--border)] pt-5 sm:flex-row sm:items-stretch sm:gap-6">
-          {/* All six mockups are drawn at a fixed 280px with fixed type
+          {/* Every mockup is drawn at a fixed 280px with fixed type
               sizes inside them, so narrowing their container reflows the
               screen rather than shrinking it. Scaling the whole frame is
               what actually makes a smaller phone, and the outer box

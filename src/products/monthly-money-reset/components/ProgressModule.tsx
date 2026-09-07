@@ -28,7 +28,7 @@ export default function ProgressModule({ definition }: { definition: ProductDefi
         title="This product isn't set up in your library yet"
         description="Add Monthly Money Reset to your library first."
         action={
-          <Button href={`/app/activate/${definition.slug}`} size="md">
+          <Button variant="commit" href={`/app/activate/${definition.slug}`} size="md">
             Add to my library
           </Button>
         }
@@ -43,7 +43,7 @@ export default function ProgressModule({ definition }: { definition: ProductDefi
         title="Nothing to show yet"
         description="Progress builds up once setup is finished and the month gets underway."
         action={
-          <Button href={`/app/products/${definition.slug}/setup`} size="md">
+          <Button variant="commit" href={`/app/products/${definition.slug}/setup`} size="md">
             Finish setup
           </Button>
         }

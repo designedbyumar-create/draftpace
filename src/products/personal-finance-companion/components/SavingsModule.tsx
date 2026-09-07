@@ -152,7 +152,7 @@ export default function SavingsModule() {
               {dominantAction.goal.name}
               {" "}doesn&apos;t have a target date yet.
             </p>
-            <Button
+            <Button variant="action"
               size="sm"
               onClick={() => {
                 setEditingGoal(dominantAction.goal);
@@ -172,7 +172,7 @@ export default function SavingsModule() {
           description="Add an emergency fund, a specific goal, or money set aside for a cost you can see coming."
           action={
             <div ref={addButtonRef} className="inline-block">
-              <Button size="sm" iconLeft={<Plus size={14} aria-hidden />} onClick={() => setFormOpen(true)}>
+              <Button variant="action" size="sm" iconLeft={<Plus size={14} aria-hidden />} onClick={() => setFormOpen(true)}>
                 Add goal
               </Button>
             </div>

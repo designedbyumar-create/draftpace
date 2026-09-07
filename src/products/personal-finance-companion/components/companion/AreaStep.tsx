@@ -133,7 +133,7 @@ export default function AreaStep({
             <Button size="md" variant="secondary" onClick={openCreate}>
               Add another
             </Button>
-            <Button size="md" onClick={onAdvance}>
+            <Button variant="commit" size="md" onClick={onAdvance}>
               Continue
             </Button>
           </div>
@@ -151,7 +151,7 @@ export default function AreaStep({
             <Button size="md" variant="secondary" onClick={openCreate}>
               Add another
             </Button>
-            <Button
+            <Button variant="commit"
               size="md"
               onClick={() => {
                 onAreaStatusChange(area, "complete");
@@ -189,7 +189,7 @@ export default function AreaStep({
             <Button size="md" variant="secondary" onClick={openCreate}>
               {config.addLabel}
             </Button>
-            <Button
+            <Button variant="commit"
               size="md"
               onClick={() => {
                 onAreaStatusChange(area, "complete");
@@ -209,7 +209,7 @@ export default function AreaStep({
           </p>
           <div className="flex flex-wrap gap-2.5">
             <div ref={addButtonRef} className="inline-block">
-              <Button size="md" onClick={openCreate}>
+              <Button variant="commit" size="md" onClick={openCreate}>
                 {config.addLabel}
               </Button>
             </div>

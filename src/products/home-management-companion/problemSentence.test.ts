@@ -13,6 +13,7 @@ function makeItem(overrides: Partial<HomeItem> = {}): HomeItem {
     purchaseDate: null,
     installDate: null,
     warrantyExpiresAt: null,
+    buySpec: null,
     documentLink: null,
     notes: null,
     status: "active",

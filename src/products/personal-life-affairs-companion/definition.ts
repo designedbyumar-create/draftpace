@@ -3,9 +3,8 @@ import { ProductDefinitionInput } from "@/product-framework/definition";
 /**
  * Personal Life Affairs Companion, product name "In Order".
  *
- * The third Draftpace product. Same "real but unreleased" registration
- * pattern as its two siblings: devFixture false, access paid, status
- * draft until checkout is wired.
+ * The third Draftpace product. Registered, checkout-wired and live
+ * (devFixture false, access paid, status active), same as both siblings.
  *
  * WHAT THIS PRODUCT IS, so later contributors do not drift it
  *
@@ -45,7 +44,7 @@ export const personalLifeAffairsCompanionDefinition: ProductDefinitionInput = {
     "Everything the people you love would need to find, in one place and kept current. It tells you the one next step, skips whatever doesn't apply to you, and prints a copy you can hand over when you're ready.",
   family: "companion",
   version: "0.1.0",
-  status: "draft",
+  status: "active",
   access: { model: "paid" },
   cycleModel: "continuous",
   // Provisional, same convention as both siblings: Draftpace's neutral
@@ -154,6 +153,9 @@ export const personalLifeAffairsCompanionDefinition: ProductDefinitionInput = {
       strong: "#1a2738",
       soft: "#e6eaf0",
       contrast: "#ffffff",
+      // Pale slate-blue, one step paler than soft, for a hero card or
+      // section background rather than a second computed identity.
+      wash: "#f2f4f7",
     },
     // The instruction is this product's hero, so the narrative serif
     // carries a sentence telling you what to do, not a number and not a

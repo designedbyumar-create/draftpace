@@ -28,7 +28,7 @@ export function LoadErrorState({ onRetry }: { onRetry: () => void }) {
         </p>
       </div>
       <div className="flex items-center gap-2">
-        <Button size="sm" onClick={onRetry}>
+        <Button variant="action" size="sm" onClick={onRetry}>
           Retry
         </Button>
         <Button size="sm" variant="secondary" href="/app">

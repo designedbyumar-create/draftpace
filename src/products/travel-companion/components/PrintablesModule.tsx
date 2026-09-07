@@ -72,7 +72,7 @@ export default function PrintablesModule(_props: { definition: ProductDefinition
               {option === "LETTER" ? "US Letter" : "A4"}
             </Button>
           ))}
-          <Button size="sm" disabled={making} onClick={generate}>
+          <Button variant="commit" size="sm" disabled={making} onClick={generate}>
             {making ? "Preparing..." : "Generate"}
           </Button>
         </div>

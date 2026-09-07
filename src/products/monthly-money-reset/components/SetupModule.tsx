@@ -58,7 +58,7 @@ export default function SetupModule({ definition }: { definition: ProductDefinit
         title="This product isn't set up in your library yet"
         description="Add Monthly Money Reset to your library first, then come back here."
         action={
-          <Button href={`/app/activate/${definition.slug}`} size="md">
+          <Button variant="commit" href={`/app/activate/${definition.slug}`} size="md">
             Add to my library
           </Button>
         }
@@ -136,7 +136,7 @@ export default function SetupModule({ definition }: { definition: ProductDefinit
             This is what&apos;s genuinely free to spend in {state.cycle.label}, after your protected bills and
             reserve. It re-settles the moment anything changes, and everything you entered stays editable.
           </p>
-          <Button
+          <Button variant="commit"
             size="lg"
             className="mt-4"
             onClick={() => router.push(`/app/products/${definition.slug}/workspace`)}
@@ -231,7 +231,7 @@ export default function SetupModule({ definition }: { definition: ProductDefinit
             >
               Back
             </Button>
-            <Button
+            <Button variant="commit"
               onClick={() => {
                 markStepSeen(currentStep);
                 handleContinue();
@@ -254,7 +254,7 @@ export default function SetupModule({ definition }: { definition: ProductDefinit
             >
               Back
             </Button>
-            <Button
+            <Button variant="commit"
               onClick={() => {
                 markStepSeen(currentStep);
                 handleContinue();

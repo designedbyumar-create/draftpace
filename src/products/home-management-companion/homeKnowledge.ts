@@ -107,9 +107,16 @@ export const HOME_ITEM_CATEGORY_LABEL: Record<HomeItemCategory, string> = {
  * A value that already exists is always shown, whatever the category, so
  * narrowing this can never hide something somebody deliberately entered.
  */
-export type HomeItemIdentityField = "brand" | "model" | "purchaseDate" | "installDate" | "warrantyExpiresAt";
+export type HomeItemIdentityField = "brand" | "model" | "purchaseDate" | "installDate" | "warrantyExpiresAt" | "buySpec";
 
-const APPLIANCE_FIELDS: HomeItemIdentityField[] = ["brand", "model", "purchaseDate", "installDate", "warrantyExpiresAt"];
+const APPLIANCE_FIELDS: HomeItemIdentityField[] = [
+  "brand",
+  "model",
+  "purchaseDate",
+  "installDate",
+  "warrantyExpiresAt",
+  "buySpec",
+];
 
 const IDENTITY_FIELDS_BY_CATEGORY: Record<HomeItemCategory, HomeItemIdentityField[]> = {
   kitchen: APPLIANCE_FIELDS,
@@ -161,7 +168,7 @@ export interface HomeItemTypeDefinition {
   /**
    * Worth offering unprompted when somebody is first setting up.
    *
-   * A short, curated list, not everything. Setup asking about all 121
+   * A short, curated list, not everything. Setup asking about all 122
    * types would be the data-entry exercise this product exists to avoid;
    * the point is to name the handful nearly every home has so somebody
    * can tap rather than type, and add the rest whenever they think of it.
@@ -424,7 +431,7 @@ export const HOME_ITEM_TYPES: HomeItemTypeDefinition[] = [
     // under-sink tank and its own filter cartridge, on its own
     // manufacturer-set schedule, which a faucet's aerator task does not
     // cover. Found while checking Phase 2's autocomplete evidence
-    // against the 121 types already here; almost everything else in
+    // against the 122 types already here; almost everything else in
     // that harvest turned out to be vehicles and watches, not homes.
     id: "instant-hot-water-tap", label: "Instant hot water tap", category: "water", renterRelevant: true,
     matchKeywords: ["quooker", "instant hot water tap", "boiling water tap", "hot water dispenser"],

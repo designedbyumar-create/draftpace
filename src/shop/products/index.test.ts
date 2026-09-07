@@ -69,6 +69,36 @@ describe("registerRealShopProducts", () => {
 });
 
 /**
+ * The interactive "What this solves" section (ProblemCards.tsx) replaced
+ * the old flat "Who this is for"/"What becomes easier" tick lists on every
+ * live product's Shop page. Each live product must have real,
+ * non-empty problemsSolved content, or its page silently falls back to the
+ * old flat lists instead, which this test exists to catch.
+ */
+describe("every live product's problemsSolved content", () => {
+  const LIVE_SLUGS = [
+    "monthly-money-reset",
+    "personal-finance-companion",
+    "home-management-companion",
+    "personal-life-affairs-companion",
+    "homeschooling-companion",
+    "alongside",
+    "travel-companion",
+  ];
+
+  it.each(LIVE_SLUGS)("%s has at least two real problem/solution pairs", async (slug) => {
+    const { registerRealShopProducts, shopRegistry } = await loadFreshRegisterModule();
+    registerRealShopProducts();
+    const product = shopRegistry.getBySlug(slug);
+    expect(product?.problemsSolved.length).toBeGreaterThanOrEqual(2);
+    for (const pair of product?.problemsSolved ?? []) {
+      expect(pair.problem.length).toBeGreaterThan(0);
+      expect(pair.solution.length).toBeGreaterThan(0);
+    }
+  });
+});
+
+/**
  * The Personal Life Affairs Companion's listing. Held to the same rules
  * as its siblings, plus the two this product carries on its own: it must
  * never use the vocabulary that loses the people it is for, and it must
@@ -127,8 +157,14 @@ describe("the Personal Life Affairs Companion listing", () => {
     expect(sold).not.toContain("remind");
     expect(sold).not.toContain("notification");
     expect(sold).not.toContain("alert");
-    // And says so plainly where somebody would think to ask.
-    expect(JSON.stringify(product?.faqs).toLowerCase()).toContain("not yet, and it does not pretend to");
+    // And says so plainly where somebody would think to ask. Asserts the
+    // claim rather than one sentence of it: the content collapse moved
+    // this answer out of faqs and into `questions`, and sharpened it,
+    // since the product now genuinely surfaces a standing entry in the
+    // in-app updates feed. What must stay true is that the listing tells
+    // a reader outright that nothing is sent to them.
+    const { allQuestions } = await import("../definition");
+    expect(JSON.stringify(allQuestions(product!)).toLowerCase()).toContain("nothing is sent to you");
   });
 
   it("does not sell itself as a vault, which is the boundary the product is built on", async () => {
@@ -224,7 +260,12 @@ describe("the Homeschooling Companion listing", () => {
     }).toLowerCase();
     expect(sold).not.toContain("upload");
     expect(sold).not.toContain("import your curriculum");
-    expect(JSON.stringify(product?.faqs).toLowerCase()).toContain("no, and it does not pretend to");
+    // Reads through allQuestions() rather than faqs directly: the
+    // content collapse moved every answer into `questions`, and what has
+    // to stay true is that the listing refuses this outright somewhere a
+    // buyer will read, not which field carries it.
+    const { allQuestions } = await import("../definition");
+    expect(JSON.stringify(allQuestions(product!)).toLowerCase()).toContain("no, and it does not pretend to");
   });
 
   it("never promises reminders, which the product does not have", async () => {
@@ -241,7 +282,8 @@ describe("the Homeschooling Companion listing", () => {
   it("sells the book as worth having on its own", async () => {
     const product = await listing();
     expect(product?.inclusions.join(" ")).toContain("30 page printed book");
-    expect(JSON.stringify(product?.faqs)).toContain("If you never opened the app it would still be worth having.");
+    const { allQuestions } = await import("../definition");
+    expect(JSON.stringify(allQuestions(product!))).toContain("It works with a pencil and nothing else.");
   });
 
   it("states the child data position plainly", async () => {
@@ -313,6 +355,19 @@ describe("the Home Base listing", () => {
     // are equal by construction; any other appearance breaks that equality.
     expect(occurrences).toBe(insideThePromise);
   });
+
+  /**
+   * The listing quotes an exact count of curated home-item types twice
+   * ("a hand-built list of N kinds of thing"). That number previously
+   * drifted to 121 while the real catalogue grew to 122 entries, with
+   * nothing to catch it. This ties the claim to the real array so it
+   * can never silently go stale again.
+   */
+  it("quotes the real number of curated home-item types, not a stale count", async () => {
+    const { HOME_ITEM_TYPES } = await import("@/products/home-management-companion/homeKnowledge");
+    const text = JSON.stringify(await listing());
+    expect(text).toContain(`${HOME_ITEM_TYPES.length} kinds of thing`);
+  });
 });
 
 /**
@@ -345,10 +400,16 @@ describe("the Personal Finance Companion listing", () => {
     expect(product?.purchaseAction).toBeUndefined();
   });
 
+  // Asserts the claim, not one sentence of it. The original version
+  // pinned two exact phrasings, so collapsing the duplicate faqs field
+  // into `questions` broke it even though the listing still said the
+  // same thing in the same two places. What has to stay true is that
+  // somebody reading this listing is told outright, somewhere, that
+  // nothing here reaches a real bank.
   it("says outright that it never connects to a real bank account", async () => {
     const serialized = JSON.stringify(await listing()).toLowerCase();
-    expect(serialized).toContain("nothing here reads your bank account");
-    expect(serialized).toContain("never reads your real bank credentials");
+    expect(serialized).toMatch(/(nothing here|it never) reads your bank account/);
+    expect(serialized).toMatch(/never reads your real bank credentials/);
   });
 
   it("has no fabricated reviews, ratings, or counts anywhere in its content", async () => {
@@ -520,8 +581,10 @@ describe("the Alongside listing", () => {
 
   it("never requires a diagnosis to buy it", async () => {
     const product = await listing();
-    const faqAnswer = product?.faqs.find((f) => f.question.toLowerCase().includes("diagnosis"))?.answer ?? "";
-    expect(faqAnswer.toLowerCase()).toContain("no");
+    if (!product) throw new Error("no listing");
+    const { allQuestions } = await import("../definition");
+    const answer = allQuestions(product).find((q) => q.question.toLowerCase().includes("diagnosis"))?.answer ?? "";
+    expect(answer.toLowerCase(), "no question answers whether a diagnosis is required").toContain("no");
   });
 
   /**
@@ -551,7 +614,18 @@ describe("the Alongside listing", () => {
     }).toLowerCase();
     expect(sold).not.toContain("remind");
     expect(sold).not.toContain("push notification");
-    expect(JSON.stringify(product?.faqs).toLowerCase()).toContain("not yet, and it does not pretend to");
+
+    // Absence is not enough: the listing has to say plainly that it does
+    // not notify, or a reader assumes it does. Asserted on the answer's
+    // meaning rather than one exact sentence, so the copy can be rewritten
+    // without the guard going quiet.
+    if (!product) throw new Error("no listing");
+    const { allQuestions } = await import("../definition");
+    const notifications = allQuestions(product).find((q) =>
+      /reminder|notification/i.test(q.question)
+    );
+    expect(notifications, "nothing answers whether it sends reminders").toBeDefined();
+    expect(notifications!.answer.toLowerCase()).toMatch(/^no[.,]|does not send|not yet/);
   });
 
   /**

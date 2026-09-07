@@ -7,7 +7,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ProductDefinition } from "@/product-framework/definition";
 import { resolveLifecycleNavigation, type InstanceLifecycleSignal } from "@/product-framework/navigationResolver";
 import { productThemeStyle } from "@/product-framework/themeExtension";
-import { ArrowLeft, BookOpen, Clock, Compass, Globe, Layers3, LifeBuoy, Menu, User, type DraftpaceIcon } from "@/design-system/Icon";
+import { ArrowLeft, BookOpen, Car, Clock, Compass, Globe, Layers3, LifeBuoy, Menu, User, type DraftpaceIcon } from "@/design-system/Icon";
 import MobileSheet from "@/design-system/MobileSheet";
 import AccountMenu from "@/components/account/AccountMenu";
 import { appAccountMenuItems } from "@/components/account/accountMenuItems";
@@ -70,6 +70,9 @@ const RAIL_ICON: Record<string, DraftpaceIcon> = {
   help: LifeBuoy,
   trip: Globe,
   people: User,
+  vehicles: Car,
+  members: User,
+  timeline: Clock,
 };
 
 export default function ProductRailShell({
@@ -121,7 +124,7 @@ export default function ProductRailShell({
     ));
 
   return (
-    <div className="min-h-screen bg-[var(--app-bg)] text-[var(--text)]" style={style}>
+    <div className="min-h-screen bg-[var(--app-bg)] text-[var(--text)]" data-product-theme style={style}>
       <div className="lg:flex">
         {/* ------------------------------------------------ desktop rail */}
         <aside className="sticky top-0 hidden h-screen w-60 shrink-0 flex-col border-r border-[var(--border)] bg-[var(--surface)] px-4 py-5 lg:flex">
@@ -149,6 +152,7 @@ export default function ProductRailShell({
                 <Link
                   key={id}
                   href={href(id)}
+                  data-tour-id={`rail-${id}`}
                   aria-current={active ? "page" : undefined}
                   className={`rounded-lg px-3 py-2 text-[12px] font-bold uppercase tracking-[0.12em] transition-colors ${
                     active
@@ -238,6 +242,7 @@ export default function ProductRailShell({
               <li key={id} className="min-w-0 flex-1">
                 <Link
                   href={href(id)}
+                  data-tour-id={`rail-${id}`}
                   aria-current={active ? "page" : undefined}
                   className={`flex h-14 flex-col items-center justify-center gap-0.5 px-1 transition-colors ${
                     active ? "text-[var(--primary)]" : "text-[var(--muted)]"

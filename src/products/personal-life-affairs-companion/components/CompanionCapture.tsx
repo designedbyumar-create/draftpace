@@ -215,7 +215,7 @@ export default function CompanionCapture({ step, spec, editing, pending, onSave,
 
           {!prompt.choices && (
             <div className="flex flex-wrap items-center gap-2">
-              <Button size="sm" type="submit" disabled={pending || !draftValue.trim()} iconRight={<ArrowRight size={15} aria-hidden />}>
+              <Button variant="commit" size="sm" type="submit" disabled={pending || !draftValue.trim()} iconRight={<ArrowRight size={15} aria-hidden />}>
                 Continue
               </Button>
               {prompt.optional && (
@@ -238,7 +238,7 @@ export default function CompanionCapture({ step, spec, editing, pending, onSave,
             That is everything worth asking about this one.
           </h2>
           <div className="flex flex-wrap gap-2">
-            <Button size="sm" disabled={pending} onClick={save}>
+            <Button variant="commit" size="sm" disabled={pending} onClick={save}>
               {pending ? "Saving..." : editing ? "Save the change" : "Record this"}
             </Button>
             <Button size="sm" variant="ghost" disabled={pending} onClick={onCancel}>

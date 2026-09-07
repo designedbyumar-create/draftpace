@@ -81,7 +81,7 @@ export default function PushNotificationSettings() {
       )}
 
       {(capability === "default" || capability === "granted-not-subscribed") && (
-        <Button size="sm" onClick={handleEnable} disabled={busy}>
+        <Button variant="action" size="sm" onClick={handleEnable} disabled={busy}>
           {busy ? "Enabling…" : "Enable on this device"}
         </Button>
       )}

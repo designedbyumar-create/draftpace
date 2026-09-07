@@ -1,5 +1,13 @@
 import type { CSSProperties } from "react";
 import { ProductDefinition } from "./definition";
+import { deriveDarkTones } from "@/design-system/accentTone";
+
+/**
+ * The attribute a product shell root carries so globals.css can select the
+ * light or dark half of the pairs below. Exported so both shells and the
+ * stylesheet's own tests agree on one spelling.
+ */
+export const PRODUCT_THEME_ATTRIBUTE = "data-product-theme";
 
 /**
  * A product's theme extension produces scoped CSS custom properties applied
@@ -38,12 +46,37 @@ export function productThemeStyle(theme: ProductThemeExtension): CSSProperties {
   // to honour it would be a change to a product this work is not
   // supposed to touch. It can opt in deliberately whenever it wants to.
   if (theme.accentScale) {
-    style["--primary"] = theme.accentScale.base;
-    style["--primary-strong"] = theme.accentScale.strong;
-    style["--primary-soft"] = theme.accentScale.soft;
-    style["--primary-contrast"] = theme.accentScale.contrast;
-    style["--link"] = theme.accentScale.base;
-    style["--focus-ring"] = theme.accentScale.base;
+    /**
+     * Both tone sets are emitted as *pairs*, and globals.css picks which
+     * pair feeds --primary/--link/--focus-ring for the active theme.
+     *
+     * This indirection is the whole point. These are inline styles on the
+     * shell root, and an inline style cannot answer a media query, so the
+     * previous version of this function pushed each product's LIGHT accent
+     * into dark mode too: petrol at 1.82:1 on the dark ground, steel at
+     * 2.26:1, every themed product's links and focus rings effectively
+     * invisible and every filled button a dark block on a dark page.
+     * Setting --primary here directly would also outrank any stylesheet
+     * rule trying to correct it, which is why this no longer does.
+     */
+    const light = theme.accentScale;
+    const dark = theme.accentScaleDark ?? deriveDarkTones(light.base);
+
+    style["--product-primary-light"] = light.base;
+    style["--product-primary-strong-light"] = light.strong;
+    style["--product-primary-soft-light"] = light.soft;
+    style["--product-primary-contrast-light"] = light.contrast;
+    // Falls back to `soft` when a product hasn't computed its own wash yet
+    // (see the field's own doc comment in definition.ts) — never unset,
+    // since a shell that reaches for --product-wash should always get a
+    // usable pastel tone, not nothing.
+    style["--product-wash-light"] = light.wash ?? light.soft;
+
+    style["--product-primary-dark"] = dark.base;
+    style["--product-primary-strong-dark"] = dark.strong;
+    style["--product-primary-soft-dark"] = dark.soft;
+    style["--product-primary-contrast-dark"] = dark.contrast;
+    style["--product-wash-dark"] = dark.wash ?? dark.soft;
 
     if (theme.narrativeFont) style["--product-narrative-font"] = theme.narrativeFont;
 

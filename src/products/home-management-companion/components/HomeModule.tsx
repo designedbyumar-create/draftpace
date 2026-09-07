@@ -1,11 +1,16 @@
 "use client";
 
+import FirstRunTour from "@/components/platform/FirstRunTour";
+import { HOME_MANAGEMENT_COMPANION_SLUG } from "../setupStateData";
+import type { TourStep } from "@/components/platform/GuidedTour";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
+import { motion, useReducedMotion } from "framer-motion";
 import Badge from "@/design-system/Badge";
 import Button from "@/design-system/Button";
 import EmptyState from "@/design-system/EmptyState";
 import { Home, Plus, ChevronRight, CheckCircle2, WarningCircle, Clock } from "@/design-system/Icon";
+import { entranceVariant, settleVariant } from "@/design-system/motion";
 import { describeResultError } from "@/product-framework/result";
 import { findHomeManagementCompanionInstanceId } from "../setupStateData";
 import { listHomeItems, createHomeItem } from "../domain/homeItems";
@@ -67,6 +72,27 @@ const MOOD_LAYOUT: Record<HomeMood, { gap: string; headline: string }> = {
   wrong: { gap: "gap-6", headline: "text-[25px] sm:text-[29px]" },
 };
 
+const TOUR_STEPS: TourStep[] = [
+  {
+    targetId: "empty-state",
+    title: "Nothing needs you yet",
+    body:
+      "Home only speaks up when something is genuinely due. Until you have recorded what is in your home, there is nothing honest for it to say, and it will not invent anything to fill the space.",
+  },
+  {
+    targetId: "rail-workspace",
+    title: "What needs doing, in a sentence",
+    body:
+      "This is the one screen that answers whether anything needs you right now. Not a dashboard to interpret: a sentence.",
+  },
+  {
+    targetId: "rail-history",
+    title: "What was already taken care of",
+    body:
+      "Every job you record lands here with who did it and what it cost, so the question three years from now has an answer.",
+  },
+];
+
 /**
  * Home: the whole product on one surface.
  *
@@ -93,19 +119,21 @@ export default function HomeModule() {
   const [reportOpen, setReportOpen] = useState(false);
   const [resolvingProblem, setResolvingProblem] = useState<Problem | null>(null);
   const [providers, setProviders] = useState<ServiceProvider[]>([]);
+  const [justHandledId, setJustHandledId] = useState<string | null>(null);
   const addRef = useRef<HTMLDivElement>(null);
 
-  const load = useCallback(async () => {
+  /** Returns the freshly fetched inputs (or null on failure) so a caller that just performed an action can derive fresh state immediately, rather than reading this render's now-stale closure over `inputs`. */
+  const load = useCallback(async (): Promise<HomeStateInputs | null> => {
     setErrorMessage(null);
     const found = await findHomeManagementCompanionInstanceId();
     if (found.status === "error") {
       setErrorMessage(found.message);
       setStatus("error");
-      return;
+      return null;
     }
     if (found.status === "not-found") {
       setStatus("no-instance");
-      return;
+      return null;
     }
     setInstanceId(found.id);
     const [itemsResult, tasksResult, problemsResult, logResult, providersResult] = await Promise.all([
@@ -118,21 +146,23 @@ export default function HomeModule() {
     if (!itemsResult.ok) {
       setErrorMessage(describeResultError(itemsResult.error));
       setStatus("error");
-      return;
+      return null;
     }
     if (!tasksResult.ok) {
       setErrorMessage(describeResultError(tasksResult.error));
       setStatus("error");
-      return;
+      return null;
     }
     setProviders(providersResult.ok ? providersResult.data : []);
-    setInputs({
+    const freshInputs: HomeStateInputs = {
       homeItems: itemsResult.data,
       maintenanceTasks: tasksResult.data,
       problems: problemsResult.ok ? problemsResult.data : [],
       recentEvents: logResult.ok ? logResult.data : [],
-    });
+    };
+    setInputs(freshInputs);
     setStatus("ready");
+    return freshInputs;
   }, []);
 
   useEffect(() => {
@@ -166,6 +196,26 @@ export default function HomeModule() {
     await run(task);
     setPendingId(null);
     await load();
+  }
+
+  /**
+   * Passed as CareActionSheet/ResolveProblemSheet's onSaved. Both sheets
+   * share this one callback for either of their two outcomes ("done" or
+   * "skipped", "sorted" or "booked"), but only "done"/"sorted" actually
+   * write a maintenance-log entry (skipMaintenanceTask/scheduleProblem
+   * do not), so the "Recently handled" list's top entry only changes on
+   * a genuine completion. Comparing against the id captured before this
+   * action is what tells the two apart, rather than assuming onSaved
+   * always means something new landed.
+   */
+  async function handleActionResolved() {
+    const previousTopId = home?.recentlyHandled[0]?.id;
+    const fresh = await load();
+    if (!fresh) return;
+    const topHandled = deriveHomeState(fresh, new Date()).recentlyHandled[0];
+    if (!topHandled || topHandled.id === previousTopId) return;
+    setJustHandledId(topHandled.id);
+    window.setTimeout(() => setJustHandledId(null), 900);
   }
 
   async function handleAddItem(values: HomeItemFormValues) {
@@ -210,7 +260,9 @@ export default function HomeModule() {
   }
 
   if (status === "no-instance" || !home || !inputs) {
-    return <EmptyState icon={Home} title="No product instance found" description="This shouldn't happen for an owner. Contact support." />;
+    return (
+      <EmptyState icon={Home} title="No product instance found" description="This shouldn't happen for an owner. Contact support." />
+    );
   }
 
   const activeItems = inputs.homeItems.filter((i) => i.status !== "archived");
@@ -230,7 +282,7 @@ export default function HomeModule() {
           description="Add something in your home, and Home Base will tell you what it needs and when, so you don't have to keep track of it."
           action={
             <div ref={addRef} className="inline-flex flex-wrap justify-center gap-2">
-              <Button size="sm" iconLeft={<Plus size={14} aria-hidden />} onClick={() => setAddOpen(true)}>
+              <Button variant="action" size="sm" iconLeft={<Plus size={14} aria-hidden />} onClick={() => setAddOpen(true)}>
                 Add something
               </Button>
               <Button size="sm" variant="secondary" href="/app/products/home-management-companion/import">
@@ -254,6 +306,7 @@ export default function HomeModule() {
           open={reportOpen}
           instanceId={instanceId}
           items={activeItems}
+          providers={providers}
           onClose={() => setReportOpen(false)}
           onSaved={load}
         />
@@ -295,7 +348,7 @@ export default function HomeModule() {
               tone="warning"
               actions={
                 <>
-                  <Button size="sm" disabled={pendingId === item.id} onClick={() => setResolvingProblem(problemsById.get(item.entityId) ?? null)}>
+                  <Button variant="action" size="sm" disabled={pendingId === item.id} onClick={() => setResolvingProblem(problemsById.get(item.entityId) ?? null)}>
                     Take a look
                   </Button>
                   <Button
@@ -323,7 +376,7 @@ export default function HomeModule() {
               actions={
                 item.kind === "maintenanceDue" && instanceId ? (
                   <>
-                    <Button size="sm" disabled={pendingId === item.id} onClick={() => setActionTask(tasksById.get(item.entityId) ?? null)}>
+                    <Button variant="action" size="sm" disabled={pendingId === item.id} onClick={() => setActionTask(tasksById.get(item.entityId) ?? null)}>
                       Action
                     </Button>
                     <Button size="sm" variant="secondary" disabled={pendingId === item.id} onClick={() => runTaskAction(item, (t) => snoozeMaintenanceTask(t, DEFAULT_SNOOZE_DAYS))}>
@@ -359,6 +412,7 @@ export default function HomeModule() {
               detail={entry.when}
               href={null}
               icon={<CheckCircle2 className="h-4 w-4 shrink-0 text-[var(--success)]" aria-hidden />}
+              justSettled={entry.id === justHandledId}
             />
           ))}
         </Band>
@@ -413,7 +467,7 @@ export default function HomeModule() {
         className="fixed inset-x-0 bottom-0 z-30 border-t border-[var(--border)] bg-[var(--surface)]/96 px-4 pt-3 backdrop-blur lg:hidden"
         style={{ paddingBottom: "max(env(safe-area-inset-bottom), 12px)" }}
       >
-        <Button fullWidth iconLeft={<Plus size={15} aria-hidden />} onClick={() => setAddOpen(true)}>
+        <Button variant="action" fullWidth iconLeft={<Plus size={15} aria-hidden />} onClick={() => setAddOpen(true)}>
           Add something
         </Button>
       </div>
@@ -436,6 +490,7 @@ export default function HomeModule() {
         open={reportOpen}
         instanceId={instanceId}
         items={activeItems}
+        providers={providers}
         onClose={() => setReportOpen(false)}
         onSaved={load}
       />
@@ -444,8 +499,9 @@ export default function HomeModule() {
         problem={resolvingProblem}
         instanceId={instanceId}
         providers={providers}
+        items={activeItems}
         onClose={() => setResolvingProblem(null)}
-        onSaved={load}
+        onSaved={handleActionResolved}
       />
       <CareActionSheet
         open={actionTask !== null}
@@ -453,7 +509,7 @@ export default function HomeModule() {
         instanceId={instanceId}
         providers={providers}
         onClose={() => setActionTask(null)}
-        onSaved={load}
+        onSaved={handleActionResolved}
       />
       <MaintenanceTaskFormSheet
         open={editingTask !== null}
@@ -478,8 +534,9 @@ function describeItem(item: HomeItem): string {
  * the whole point.
  */
 function Header({ headline, size = "text-[26px] sm:text-[30px]" }: { headline: string; size?: string }) {
+  const reduceMotion = useReducedMotion();
   return (
-    <div>
+    <motion.div initial="hidden" animate="visible" variants={entranceVariant(Boolean(reduceMotion))}>
       <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-[var(--faint)]">Your home</p>
       <h1
         className={`mt-1.5 font-medium leading-[1.15] tracking-[-0.01em] text-[var(--text)] ${size}`}
@@ -487,7 +544,7 @@ function Header({ headline, size = "text-[26px] sm:text-[30px]" }: { headline: s
       >
         {headline}
       </h1>
-    </div>
+    </motion.div>
   );
 }
 
@@ -550,7 +607,21 @@ function Row({
   );
 }
 
-function PlainRow({ title, detail, href, icon }: { title: string; detail: string; href: string | null; icon: React.ReactNode }) {
+function PlainRow({
+  title,
+  detail,
+  href,
+  icon,
+  justSettled = false,
+}: {
+  title: string;
+  detail: string;
+  href: string | null;
+  icon: React.ReactNode;
+  /** True for the one row that was just created by a care action or problem resolution completing, so it gets the one-time settle beat rather than every visit to this list replaying it. */
+  justSettled?: boolean;
+}) {
+  const reduceMotion = useReducedMotion();
   const body = (
     <div className="flex items-start gap-3">
       {icon}
@@ -561,10 +632,18 @@ function PlainRow({ title, detail, href, icon }: { title: string; detail: string
     </div>
   );
   const className = "rounded-xl border border-[var(--border)] bg-[var(--surface)] p-3.5";
-  if (!href) return <div className={className}>{body}</div>;
-  return (
+  const inner = !href ? (
+    <div className={className}>{body}</div>
+  ) : (
     <Link href={href} className={`${className} block transition hover:border-[var(--primary)]`}>
       {body}
     </Link>
+  );
+  if (!justSettled) return inner;
+  return (
+    <motion.div initial="hidden" animate="visible" variants={settleVariant(Boolean(reduceMotion))}>
+      <FirstRunTour slug={HOME_MANAGEMENT_COMPANION_SLUG} steps={TOUR_STEPS} />
+      {inner}
+    </motion.div>
   );
 }

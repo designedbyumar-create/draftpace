@@ -98,7 +98,7 @@ export default function HandoffCheckPanel({ profile, records, items, nextHref }:
                 a specific one here and then showing a different one is
                 the kind of small lie that makes a product feel unreliable.
               */
-              <Button size="sm" href={nextHref}>
+              <Button variant="action" size="sm" href={nextHref}>
                 Take care of the first one
               </Button>
             )}

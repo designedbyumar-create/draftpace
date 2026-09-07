@@ -1,10 +1,15 @@
 "use client";
 
+import FirstRunTour from "@/components/platform/FirstRunTour";
+import { PERSONAL_LIFE_AFFAIRS_COMPANION_SLUG } from "../instanceData";
+import type { TourStep } from "@/components/platform/GuidedTour";
 import { useCallback, useEffect, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import Button from "@/design-system/Button";
 import EmptyState from "@/design-system/EmptyState";
 import { CheckCircle2, ListChecks, Plus } from "@/design-system/Icon";
 import { describeResultError } from "@/product-framework/result";
+import { entranceVariant } from "@/design-system/motion";
 import { findInOrderInstanceId } from "../instanceData";
 import {
   confirmItem,
@@ -36,6 +41,27 @@ function inDays(days: number): string {
   return d.toISOString().slice(0, 10);
 }
 
+const TOUR_STEPS: TourStep[] = [
+  {
+    targetId: "rail-workspace",
+    title: "One question at a time",
+    body:
+      "This is the whole product: one thing on screen, chosen for you. There is no progress bar and no list of what is left, because a short list finished is a complete success.",
+  },
+  {
+    targetId: "rail-affairs",
+    title: "What you have written down so far",
+    body:
+      "Everything you establish lands here. It counts up, never down.",
+  },
+  {
+    targetId: "rail-printables",
+    title: "The book somebody would actually follow",
+    body:
+      "When enough exists, this prints as a book a person could pick up and use if they had to.",
+  },
+];
+
 /**
  * The whole product, on one surface.
  *
@@ -64,6 +90,7 @@ export default function WorkspaceModule() {
   const [capturing, setCapturing] = useState<{ stepKey: string; editing: AffairItem | null } | null>(null);
   /** The line the companion says once something has been saved. Cleared on the next action. */
   const [acknowledgement, setAcknowledgement] = useState<{ text: string; stepKey: string } | null>(null);
+  const reduceMotion = useReducedMotion();
 
   const load = useCallback(async () => {
     setStatus("loading");
@@ -174,7 +201,9 @@ export default function WorkspaceModule() {
     );
   }
   if (status === "error") {
-    return <EmptyState icon={ListChecks} title="Couldn't load this" description={errorMessage ?? "Try again."} />;
+    return (
+      <EmptyState icon={ListChecks} title="Couldn't load this" description={errorMessage ?? "Try again."} />
+    );
   }
 
   const intake = nextUnansweredIntake(profile);
@@ -203,7 +232,7 @@ export default function WorkspaceModule() {
           </h1>
           <p className="mt-2 max-w-lg text-[13.5px] leading-relaxed text-[var(--muted)]">{intake.why}</p>
           <div className="mt-4 flex flex-wrap gap-2">
-            <Button size="sm" disabled={pending} onClick={() => answerIntake(intake.gate, true)}>
+            <Button variant="action" size="sm" disabled={pending} onClick={() => answerIntake(intake.gate, true)}>
               Yes
             </Button>
             <Button size="sm" variant="secondary" disabled={pending} onClick={() => answerIntake(intake.gate, false)}>
@@ -244,6 +273,7 @@ export default function WorkspaceModule() {
 
   return (
     <div className="flex flex-col gap-5">
+      <FirstRunTour slug={PERSONAL_LIFE_AFFAIRS_COMPANION_SLUG} steps={TOUR_STEPS} />
       {errorBanner}
 
       {acknowledgement && (
@@ -269,7 +299,13 @@ export default function WorkspaceModule() {
       )}
 
       {next ? (
-        <section aria-label="Your next step">
+        <motion.section
+          key={next.step.key}
+          aria-label="Your next step"
+          initial="hidden"
+          animate="visible"
+          variants={entranceVariant(Boolean(reduceMotion))}
+        >
           <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Next</p>
           <p className="mt-1.5 text-[13px] text-[var(--muted)]">
             {next.reason === "needsRecheck"
@@ -329,7 +365,7 @@ export default function WorkspaceModule() {
           <div className="mt-5 flex flex-wrap gap-2">
             {next.reason === "needsRecheck" && next.existing.length > 0 ? (
               <>
-                <Button size="sm" disabled={pending} onClick={() => confirmStanding(next.existing[0])}>
+                <Button variant="commit" size="sm" disabled={pending} onClick={() => confirmStanding(next.existing[0])}>
                   Still true
                 </Button>
                 <Button
@@ -342,7 +378,7 @@ export default function WorkspaceModule() {
                 </Button>
               </>
             ) : next.step.kind === "establish" && spec ? (
-              <Button
+              <Button variant="action"
                 size="sm"
                 disabled={pending}
                 onClick={() => {
@@ -353,7 +389,7 @@ export default function WorkspaceModule() {
                 {next.reason === "needsDetail" ? "Add the details" : "Start"}
               </Button>
             ) : (
-              <Button size="sm" disabled={pending} onClick={() => act(next.step.key, "confirmed")}>
+              <Button variant="commit" size="sm" disabled={pending} onClick={() => act(next.step.key, "confirmed")}>
                 Done this
               </Button>
             )}
@@ -375,7 +411,7 @@ export default function WorkspaceModule() {
               Later
             </Button>
           </div>
-        </section>
+        </motion.section>
       ) : (
         <section aria-label="Nothing needs your attention">
           <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Next</p>

@@ -190,7 +190,7 @@ export default function CheckInModal({
             </p>
           </div>
 
-          <Button size="lg" fullWidth className="mt-5" onClick={onClose}>
+          <Button variant="commit" size="lg" fullWidth className="mt-5" onClick={onClose}>
             Done
           </Button>
         </div>
@@ -313,7 +313,7 @@ export default function CheckInModal({
           </p>
         )}
 
-        <Button size="lg" fullWidth className="mt-5" onClick={handleFinish} disabled={submitting} iconLeft={submitting ? <Spinner /> : undefined}>
+        <Button variant="commit" size="lg" fullWidth className="mt-5" onClick={handleFinish} disabled={submitting} iconLeft={submitting ? <Spinner /> : undefined}>
           {submitting ? "Saving…" : saveFailed ? "Try again" : "Finish check-in"}
         </Button>
       </div>

@@ -1,12 +1,13 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import type { ProductDefinition } from "@/product-framework/definition";
 import Button from "@/design-system/Button";
 import EmptyState from "@/design-system/EmptyState";
 import Badge from "@/design-system/Badge";
 import { CalendarCheck, Check, Plus, Wallet, X } from "@/design-system/Icon";
+import { settleVariant } from "@/design-system/motion";
 import { useInstanceState } from "./useInstanceState";
 import { LoadErrorState, SaveStatusIndicator } from "./shared";
 import SafeToSpendCard from "./SafeToSpendCard";
@@ -15,8 +16,10 @@ import SinceLastHere from "./SinceLastHere";
 import QuickAddModal from "./QuickAddModal";
 import CheckInModal from "./CheckInModal";
 import ThemeScope from "./ThemeScope";
-import GuidedTour, { type TourStep } from "./GuidedTour";
+import GuidedTour, { type TourStep } from "@/components/platform/GuidedTour";
+import { useFirstRunTour } from "@/components/platform/useFirstRunTour";
 import { computeSafeToSpend, markBillPaid, markBillSkipped } from "../calculations";
+import { computeTightestDay } from "../cycleTimeline";
 import { computeNextAction } from "../nextAction";
 import { computeSinceLastHere } from "../sinceLastHere";
 import { formatCurrency } from "../currency";
@@ -61,6 +64,12 @@ function weeksRemainingInCycle(cycleKey: string, now: Date = new Date()): number
   return Math.max(Math.ceil((daysInMonth - dayOfMonth + 1) / 7), 1);
 }
 
+/** The last day of the given YYYY-MM cycle, as an ISO datetime — same "day 0 of next month" trick weeksRemainingInCycle already relies on. */
+function cycleEndDateIso(cycleKey: string): string {
+  const [year, month] = cycleKey.split("-").map(Number);
+  return new Date(Date.UTC(year, month, 0)).toISOString();
+}
+
 function activityLabel(entry: ActivityEntry): string {
   switch (entry.type) {
     case "spending":
@@ -81,40 +90,26 @@ function activityLabel(entry: ActivityEntry): string {
 const LABEL = "text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--mmr-sage-strong)]";
 
 export default function WorkspaceModule({ definition }: { definition: ProductDefinition }) {
-  const router = useRouter();
-  const searchParams = useSearchParams();
   const { status, state, saveStatus, setState, forceSave, retry } = useInstanceState(definition.slug);
   const [view, setView] = useState<View>("overview");
   const [quickAddOpen, setQuickAddOpen] = useState(false);
   const [checkInOpen, setCheckInOpen] = useState(false);
-  const [tourOn, setTourOn] = useState(false);
+  const [justPaidId, setJustPaidId] = useState<string | null>(null);
+  const reduceMotion = useReducedMotion();
 
-  const setupDone = Boolean(state?.setup.completedAt);
-  const replayRequested = searchParams.get("tour") === "1";
-
+  // Clears the just-paid marker itself, so the settle animation is a
+  // one-time beat at the moment of completion rather than something a
+  // later re-render or view switch could replay.
   useEffect(() => {
-    if (!setupDone || typeof window === "undefined") return;
-
-    // An explicit replay (Settings -> Replay tour) always starts the tour,
-    // regardless of the first-use flag below — the query param is the
-    // trigger, and it's cleared from the URL immediately so a refresh
-    // doesn't re-trigger it. This never touches the first-use flag itself.
-    if (replayRequested) {
-      setTourOn(true);
-      router.replace(`/app/products/${definition.slug}/workspace`);
-      return;
-    }
-
-    const key = `draftpace-tour-${definition.slug}`;
-    if (window.localStorage.getItem(key)) return;
-    const timer = window.setTimeout(() => setTourOn(true), 550);
+    if (!justPaidId) return;
+    const timer = window.setTimeout(() => setJustPaidId(null), 900);
     return () => window.clearTimeout(timer);
-  }, [setupDone, definition.slug, replayRequested, router]);
+  }, [justPaidId]);
 
-  const finishTour = useCallback(() => {
-    setTourOn(false);
-    if (typeof window !== "undefined") window.localStorage.setItem(`draftpace-tour-${definition.slug}`, "1");
-  }, [definition.slug]);
+  // Waits for setup: a tour of an unconfigured Workspace would spotlight
+  // placeholders rather than this person's own numbers.
+  const setupDone = Boolean(state?.setup.completedAt);
+  const { tourOn, finishTour } = useFirstRunTour(definition.slug, setupDone);
 
   if (status === "loading") {
     return <p className="text-[13px] text-[var(--muted)]">Loading your Workspace…</p>;
@@ -131,7 +126,7 @@ export default function WorkspaceModule({ definition }: { definition: ProductDef
         title="This product isn't set up in your library yet"
         description="Add Monthly Money Reset to your library first, then come back here."
         action={
-          <Button href={`/app/activate/${definition.slug}`} size="md">
+          <Button variant="commit" href={`/app/activate/${definition.slug}`} size="md">
             Add to my library
           </Button>
         }
@@ -146,7 +141,7 @@ export default function WorkspaceModule({ definition }: { definition: ProductDef
         title="Finish setup for a complete picture"
         description="You can still look around, but Safe-to-Spend won't be accurate until setup is finished."
         action={
-          <Button href={`/app/products/${definition.slug}/setup`} size="md">
+          <Button variant="commit" href={`/app/products/${definition.slug}/setup`} size="md">
             Finish setup
           </Button>
         }
@@ -155,6 +150,13 @@ export default function WorkspaceModule({ definition }: { definition: ProductDef
   }
 
   const breakdown = computeSafeToSpend(state);
+  const tightestDay = computeTightestDay({
+    breakdown,
+    today: new Date().toISOString(),
+    cycleEndDate: cycleEndDateIso(state.cycle.cycleKey),
+    bills: state.bills,
+    income: state.income,
+  });
   const nextAction = computeNextAction(state, breakdown);
   const sinceLastHere = computeSinceLastHere(state);
   const upcomingBills = state.bills.filter((bill) => bill.status === "upcoming" || bill.status === "changed");
@@ -173,6 +175,7 @@ export default function WorkspaceModule({ definition }: { definition: ProductDef
   function payBill(billId: string) {
     if (!state) return;
     setState({ ...state, bills: markBillPaid(state.bills, billId, new Date().toISOString()) });
+    setJustPaidId(billId);
   }
 
   function skipBill(billId: string) {
@@ -193,6 +196,7 @@ export default function WorkspaceModule({ definition }: { definition: ProductDef
               currency={state.currency}
               updatedAt={state.updatedAt}
               weeksRemaining={weeksRemainingInCycle(state.cycle.cycleKey)}
+              tightestDay={tightestDay}
             />
           </div>
 
@@ -206,7 +210,7 @@ export default function WorkspaceModule({ definition }: { definition: ProductDef
               />
             </div>
             <div className="flex flex-col gap-2">
-              <Button
+              <Button variant="action"
                 id="mmr-tour-quick-add"
                 size="lg"
                 fullWidth
@@ -389,9 +393,20 @@ export default function WorkspaceModule({ definition }: { definition: ProductDef
                         <div className="flex items-center gap-2">
                           <p className="text-[13px] font-semibold text-[var(--mmr-ink)]">{bill.name || "Bill"}</p>
                           {bill.protected && <Badge tone="primary">Protected</Badge>}
-                          <Badge tone={bill.status === "paid" ? "success" : bill.status === "skipped" ? "neutral" : "warning"}>
-                            {bill.status}
-                          </Badge>
+                          {bill.id === justPaidId ? (
+                            <motion.span
+                              initial="hidden"
+                              animate="visible"
+                              variants={settleVariant(Boolean(reduceMotion))}
+                              className="inline-flex"
+                            >
+                              <Badge tone="success">{bill.status}</Badge>
+                            </motion.span>
+                          ) : (
+                            <Badge tone={bill.status === "paid" ? "success" : bill.status === "skipped" ? "neutral" : "warning"}>
+                              {bill.status}
+                            </Badge>
+                          )}
                         </div>
                         {bill.dueDate && <p className="mt-1 text-[12px] text-[var(--mmr-muted)]">Due {bill.dueDate}</p>}
                       </div>

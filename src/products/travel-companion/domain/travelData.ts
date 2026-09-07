@@ -236,7 +236,7 @@ export async function updatePerson(personId: string, patch: PersonPatch): Promis
 
 // ----------------------------------------------------------------- places
 
-const PLACE_COLUMNS = "id, trip_id, name, ordinal, arrives_at, departs_at, status";
+const PLACE_COLUMNS = "id, trip_id, name, ordinal, arrives_at, departs_at, timezone, status";
 
 function toPlace(row: Record<string, unknown>): Place {
   return {
@@ -246,6 +246,7 @@ function toPlace(row: Record<string, unknown>): Place {
     ordinal: row.ordinal as number,
     arrivesAt: (row.arrives_at as string | null) ?? null,
     departsAt: (row.departs_at as string | null) ?? null,
+    timezone: (row.timezone as string | null) ?? null,
     status: row.status as Place["status"],
   };
 }
@@ -267,6 +268,7 @@ export interface NewPlace {
   ordinal?: number;
   arrivesAt?: string | null;
   departsAt?: string | null;
+  timezone?: string | null;
 }
 
 export async function createPlace(
@@ -287,6 +289,7 @@ export async function createPlace(
       ordinal: draft.ordinal ?? 0,
       arrives_at: draft.arrivesAt ?? null,
       departs_at: draft.departsAt ?? null,
+      timezone: draft.timezone ?? null,
     })
     .select(PLACE_COLUMNS)
     .single();
@@ -300,6 +303,7 @@ export type PlacePatch = Partial<{
   ordinal: number;
   arrivesAt: string | null;
   departsAt: string | null;
+  timezone: string | null;
   status: Place["status"];
 }>;
 
@@ -308,6 +312,7 @@ const PLACE_PATCH_COLUMN: Record<keyof PlacePatch, string> = {
   ordinal: "ordinal",
   arrivesAt: "arrives_at",
   departsAt: "departs_at",
+  timezone: "timezone",
   status: "status",
 };
 

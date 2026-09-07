@@ -287,7 +287,7 @@ export default function CheckModule({ childId }: { childId: string }) {
         </p>
 
         <div className="flex flex-wrap gap-2">
-          <Button size="sm" href={`/app/products/${HOMESCHOOLING_COMPANION_SLUG}/kids/${child.id}`}>
+          <Button variant="commit" size="sm" href={`/app/products/${HOMESCHOOLING_COMPANION_SLUG}/kids/${child.id}`}>
             Done
           </Button>
         </div>
@@ -328,7 +328,7 @@ export default function CheckModule({ childId }: { childId: string }) {
         )}
 
         <div className="flex flex-wrap gap-2">
-          <Button size="sm" disabled={pending} onClick={() => mark("right")}>
+          <Button variant="action" size="sm" disabled={pending} onClick={() => mark("right")}>
             Right
           </Button>
           <Button size="sm" variant="secondary" disabled={pending} onClick={() => mark("not-right")}>
@@ -414,7 +414,7 @@ export default function CheckModule({ childId }: { childId: string }) {
               onChange={(event) => setDraftAnswer(event.target.value)}
             />
             <div>
-              <Button size="sm" disabled={pending || !draftPrompt.trim() || !draftTopic} onClick={addQuestion}>
+              <Button variant="commit" size="sm" disabled={pending || !draftPrompt.trim() || !draftTopic} onClick={addQuestion}>
                 {pending ? "Saving..." : "Add it"}
               </Button>
             </div>
@@ -429,7 +429,7 @@ export default function CheckModule({ childId }: { childId: string }) {
         )}
 
         <div className="flex flex-wrap gap-2">
-          <Button size="sm" disabled={pending || total === 0} onClick={begin}>
+          <Button variant="commit" size="sm" disabled={pending || total === 0} onClick={begin}>
             Start the check
           </Button>
           <Button size="sm" variant="ghost" onClick={() => setStage("choose")}>
@@ -535,7 +535,7 @@ export default function CheckModule({ childId }: { childId: string }) {
       )}
 
       <div>
-        <Button size="sm" disabled={pending || chosen.length === 0} onClick={goToQuestions}>
+        <Button variant="commit" size="sm" disabled={pending || chosen.length === 0} onClick={goToQuestions}>
           Next
         </Button>
       </div>

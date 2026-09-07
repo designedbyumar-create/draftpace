@@ -31,15 +31,40 @@ describe("productThemeStyle: opting a product into its own presentation", () => 
     expect(style).toEqual({ "--product-accent": "#b86f4a" });
   });
 
-  it("takes over the primary tokens once a full scale is declared", () => {
+  it("emits both tone sets as pairs once a full scale is declared", () => {
     const style = productThemeStyle({
       accent: "#4f7a5c",
       accentScale: { base: "#4f7a5c", strong: "#3d6149", soft: "#e6ede2", contrast: "#ffffff" },
     }) as Record<string, string>;
-    expect(style["--primary"]).toBe("#4f7a5c");
-    expect(style["--primary-strong"]).toBe("#3d6149");
-    expect(style["--primary-soft"]).toBe("#e6ede2");
-    expect(style["--focus-ring"]).toBe("#4f7a5c");
+    expect(style["--product-primary-light"]).toBe("#4f7a5c");
+    expect(style["--product-primary-strong-light"]).toBe("#3d6149");
+    expect(style["--product-primary-soft-light"]).toBe("#e6ede2");
+    expect(style["--product-primary-dark"]).toBeDefined();
+    expect(style["--product-primary-dark"]).not.toBe("#4f7a5c");
+  });
+
+  /**
+   * The regression that matters most here. Setting --primary inline would
+   * outrank the stylesheet rule that swaps in the dark tone, which is
+   * exactly how every themed product ended up pushing its light accent
+   * into dark mode (petrol at 1.82:1 on the dark ground).
+   */
+  it("never sets --primary, --link or --focus-ring inline, so the theme rules can win", () => {
+    const style = productThemeStyle({
+      accentScale: { base: "#4f7a5c", strong: "#3d6149", soft: "#e6ede2", contrast: "#ffffff" },
+    }) as Record<string, string>;
+    expect(style["--primary"]).toBeUndefined();
+    expect(style["--link"]).toBeUndefined();
+    expect(style["--focus-ring"]).toBeUndefined();
+  });
+
+  it("honours an explicit accentScaleDark instead of deriving one", () => {
+    const style = productThemeStyle({
+      accentScale: { base: "#4f7a5c", strong: "#3d6149", soft: "#e6ede2", contrast: "#ffffff" },
+      accentScaleDark: { base: "#9fd8ae", strong: "#c2e8cb", soft: "#1f2a22", contrast: "#0b120d" },
+    }) as Record<string, string>;
+    expect(style["--product-primary-dark"]).toBe("#9fd8ae");
+    expect(style["--product-primary-contrast-dark"]).toBe("#0b120d");
   });
 
   it("applies the narrative face and motion only inside that opt-in", () => {
@@ -61,5 +86,35 @@ describe("productThemeStyle: opting a product into its own presentation", () => 
     const calm = productThemeStyle({ accentScale: scale, motionPersonality: "calm" }) as Record<string, string>;
     const energetic = productThemeStyle({ accentScale: scale, motionPersonality: "energetic" }) as Record<string, string>;
     expect(Number.parseInt(calm["--dur"], 10)).toBeGreaterThan(Number.parseInt(energetic["--dur"], 10));
+  });
+});
+
+describe("productThemeStyle: the wash tier", () => {
+  it("falls back to soft when a product hasn't computed its own wash", () => {
+    const style = productThemeStyle({
+      accentScale: { base: "#4f7a5c", strong: "#3d6149", soft: "#e6ede2", contrast: "#ffffff" },
+    }) as Record<string, string>;
+    expect(style["--product-wash-light"]).toBe("#e6ede2");
+  });
+
+  it("uses a product's own wash value when it declares one", () => {
+    const style = productThemeStyle({
+      accentScale: { base: "#8d4a5c", strong: "#68343f", soft: "#f5eaec", contrast: "#ffffff", wash: "#faf2f4" },
+    }) as Record<string, string>;
+    expect(style["--product-wash-light"]).toBe("#faf2f4");
+  });
+
+  it("always has a dark counterpart, so a wash surface is never a pale block on a dark page", () => {
+    const style = productThemeStyle({
+      accentScale: { base: "#8d4a5c", strong: "#68343f", soft: "#f5eaec", contrast: "#ffffff", wash: "#faf2f4" },
+    }) as Record<string, string>;
+    expect(style["--product-wash-dark"]).toBeDefined();
+    expect(style["--product-wash-dark"]).not.toBe("#faf2f4");
+  });
+
+  it("never emits a wash for a product with no accentScale at all", () => {
+    const style = productThemeStyle({ accent: "#b86f4a" }) as Record<string, string>;
+    expect(style["--product-wash-light"]).toBeUndefined();
+    expect(style["--product-wash-dark"]).toBeUndefined();
   });
 });

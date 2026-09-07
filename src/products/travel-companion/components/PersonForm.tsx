@@ -64,7 +64,7 @@ export default function PersonForm({
       />
       {errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}
       <div className="flex flex-wrap items-center gap-2">
-        <Button onClick={save} disabled={pending || name.trim().length === 0}>
+        <Button variant="commit" onClick={save} disabled={pending || name.trim().length === 0}>
           Add traveller
         </Button>
         <Button variant="ghost" onClick={onCancel} disabled={pending}>
