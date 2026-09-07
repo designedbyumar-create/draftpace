@@ -88,11 +88,14 @@ html {
   --violet: #6d4fce;
 
   /* Life-area accents, used only by the guides layer so far.
-     Seven hues spaced around the wheel and pulled toward the same warm,
+     Hues spaced around the wheel and pulled toward the same warm,
      low-chroma world as the rest of the palette, so an area reads as a
      shelf marker rather than as a category colour from a different
      product. Affairs is deliberately the desaturated one. The Series
-     tier borrows the brand accent, because it is the whole shelf. */
+     tier borrows the brand accent, because it is the whole shelf.
+     Vehicles and Family health match their own product's accentScale
+     base (steel, dusty lavender-blue) rather than inventing a second,
+     unrelated hue for the same product. */
   --area-money: #176b51;
   --area-money-soft: #e2efe9;
   --area-home: #96591a;
@@ -105,6 +108,10 @@ html {
   --area-affairs-and-endings-soft: #e9ecef;
   --area-travel: #1f6291;
   --area-travel-soft: #e2edf5;
+  --area-vehicles: #565349;
+  --area-vehicles-soft: #eae8e0;
+  --area-family-health: #4a5570;
+  --area-family-health-soft: #e6e9f0;
   --area-series: #0e6e75;
   --area-series-soft: #e0f0f0;
 
@@ -201,6 +208,10 @@ html[data-theme="dark"] {
   --area-affairs-and-endings-soft: rgba(154, 169, 186, 0.14);
   --area-travel: #74b3e0;
   --area-travel-soft: rgba(116, 179, 224, 0.14);
+  --area-vehicles: #a9a495;
+  --area-vehicles-soft: rgba(169, 164, 149, 0.14);
+  --area-family-health: #9aa8cc;
+  --area-family-health-soft: rgba(154, 168, 204, 0.14);
   --area-series: #4fc7c9;
   --area-series-soft: rgba(79, 199, 201, 0.16);
 
@@ -274,6 +285,10 @@ html[data-theme="dark"] {
     --area-affairs-and-endings-soft: rgba(154, 169, 186, 0.14);
     --area-travel: #74b3e0;
     --area-travel-soft: rgba(116, 179, 224, 0.14);
+    --area-vehicles: #a9a495;
+    --area-vehicles-soft: rgba(169, 164, 149, 0.14);
+    --area-family-health: #9aa8cc;
+    --area-family-health-soft: rgba(154, 168, 204, 0.14);
     --area-series: #4fc7c9;
     --area-series-soft: rgba(79, 199, 201, 0.16);
 

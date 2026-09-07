@@ -19,11 +19,13 @@ import { OverviewScreenMockup as AlongsideMockup } from "./shop/[productSlug]/ad
 import { OverviewScreenMockup as HscMockup } from "./shop/[productSlug]/homeschoolingCompanionVisuals";
 import { OverviewScreenMockup as PlaMockup } from "./shop/[productSlug]/personalLifeAffairsCompanionVisuals";
 import { OverviewScreenMockup as TravelMockup } from "./shop/[productSlug]/travelCompanionVisuals";
+import { OverviewScreenMockup as VmcMockup } from "./shop/[productSlug]/vehicleMaintenanceCompanionVisuals";
+import { OverviewScreenMockup as FhbMockup } from "./shop/[productSlug]/familyHealthBinderVisuals";
 
 export const metadata: Metadata = {
   title: "Companions for the parts of life that are hard to keep track of",
   description:
-    "The Draftpace Companion Series: seven products for money, home, focus, family, affairs and travel. Each remembers how your situation fits together, tells you what needs you now, and stays quiet when nothing does.",
+    "The Draftpace Companion Series: products for money, home, focus, family, affairs, travel, vehicles and family health. Each remembers how your situation fits together, tells you what needs you now, and stays quiet when nothing does.",
   alternates: { canonical: "/" },
 };
 
@@ -39,6 +41,8 @@ const AREA_MOCKUP: Record<string, React.ReactNode> = {
   "family-and-learning": <HscMockup />,
   "affairs-and-endings": <PlaMockup />,
   travel: <TravelMockup />,
+  vehicles: <VmcMockup />,
+  "family-health": <FhbMockup />,
 };
 
 export default function HomePage() {
@@ -174,7 +178,7 @@ export default function HomePage() {
         <Container width="wide" className="py-16 sm:py-20">
           <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--brand-ink)]">The Companion Series</p>
           <h2 className="mt-3 max-w-2xl font-serif text-[30px] font-semibold leading-tight tracking-tight sm:text-[38px]">
-            Seven companions. Each one does a single hard thing.
+            One Companion series. Each one does a single hard thing.
           </h2>
           <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-[var(--muted)]">
             We make every one ourselves, so the series stays small and each product earns its place. Smaller, lighter

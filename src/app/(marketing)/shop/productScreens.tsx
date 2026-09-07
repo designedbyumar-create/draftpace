@@ -5,6 +5,8 @@ import { OverviewScreenMockup as PlaOverview, CompanionScreenMockup as PlaCompan
 import { OverviewScreenMockup as HscOverview, CheckScreenMockup as HscCheck, BookScreenMockup as HscBook } from "./[productSlug]/homeschoolingCompanionVisuals";
 import { OverviewScreenMockup as AlongsideOverview, CompanionScreenMockup as AlongsideCompanion, LifeScreenMockup as AlongsideLife } from "./[productSlug]/adhdLifeCompanionVisuals";
 import { OverviewScreenMockup as TravelOverview, ChangeImpactScreenMockup as TravelChangeImpact, TripBriefScreenMockup as TravelTripBrief } from "./[productSlug]/travelCompanionVisuals";
+import { OverviewScreenMockup as VmcOverview, ServiceBoundaryScreenMockup as VmcServiceBoundary, AddItemScreenMockup as VmcAddItem } from "./[productSlug]/vehicleMaintenanceCompanionVisuals";
+import { OverviewScreenMockup as FhbOverview, SymptomFormScreenMockup as FhbSymptomForm, IntakeSummaryScreenMockup as FhbIntakeSummary } from "./[productSlug]/familyHealthBinderVisuals";
 
 /**
  * The one place that maps a real product slug to the three real phone
@@ -29,6 +31,8 @@ export const PRODUCT_SCREENS: Partial<Record<string, React.ComponentType[]>> = {
   "homeschooling-companion": [HscOverview, HscCheck, HscBook],
   alongside: [AlongsideOverview, AlongsideCompanion, AlongsideLife],
   "travel-companion": [TravelOverview, TravelChangeImpact, TravelTripBrief],
+  "vehicle-maintenance-companion": [VmcOverview, VmcServiceBoundary, VmcAddItem],
+  "family-health-binder": [FhbOverview, FhbSymptomForm, FhbIntakeSummary],
 };
 
 /** The three screens for a product, already instantiated, or null when it has none. */
@@ -87,6 +91,16 @@ const SCREEN_CAPTIONS: Partial<Record<string, string[]>> = {
     "Today: the real derived state, including what you are waiting on",
     "The change-impact walk, mid-walk, after a flight time changed",
     "The Trip Brief, expanded",
+  ],
+  "vehicle-maintenance-companion": [
+    "Due: the single ranked view, with the most urgent item as the dominant one",
+    "The Service Boundary, choosing what is requested today and what is not",
+    "Adding a maintenance item, from a typical starting interval you can change",
+  ],
+  "family-health-binder": [
+    "Overview: every family member and what is recorded for them",
+    "Recording a symptom, with real onset, duration and severity fields",
+    "The Intake Summary, ready to generate for one person",
   ],
 };
 

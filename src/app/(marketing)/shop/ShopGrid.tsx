@@ -23,7 +23,7 @@ export interface ShopGridEntry {
   thumbnail: ReactNode;
 }
 
-const DEFAULT_SITUATION = "Seven Companions, one screen. Pick an area below to narrow it down.";
+const DEFAULT_SITUATION = "Every Companion, one screen. Pick an area below to narrow it down.";
 
 /**
  * The Shop's filter bar and product shelf.

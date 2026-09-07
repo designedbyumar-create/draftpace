@@ -122,6 +122,32 @@ export const LIFE_AREAS: LifeArea[] = [
     ],
     productSlugs: ["travel-companion"],
   },
+  {
+    slug: "vehicles",
+    label: "Vehicles",
+    situation: "You cannot remember what interval you were actually quoted, or when anything was last done.",
+    inTheirWords:
+      "I know I should be tracking this vehicle's maintenance, but the interval I was quoted is written on a receipt somewhere, if anywhere, and I only ever check once it becomes a problem.",
+    whatHelps: [
+      "Your own maintenance intervals, kept per vehicle, never a hardcoded factory schedule.",
+      "One ranked view of what is due across every vehicle you own, computed from what you actually recorded.",
+      "A dated, mileage-stamped document you can hand to a shop, stating what is requested today and what is not.",
+    ],
+    productSlugs: ["vehicle-maintenance-companion"],
+  },
+  {
+    slug: "family-health",
+    label: "Family health",
+    situation: "Everyone's medications and allergies live only in your own memory.",
+    inTheirWords:
+      "I am the one who remembers everyone's medications and allergies, and if I had to reconstruct it at an intake desk right now, I would be guessing at half of it.",
+    whatHelps: [
+      "Every family member's medications, allergies and history, kept in one place, reachable from any device.",
+      "A structured symptom timeline, onset, duration and severity as real fields, not a memory reconstructed later.",
+      "A dated Intake Summary per person, ready to hand to a clinic alongside their own paperwork.",
+    ],
+    productSlugs: ["family-health-binder"],
+  },
 ];
 
 export function getAreaBySlug(slug: string): LifeArea | undefined {

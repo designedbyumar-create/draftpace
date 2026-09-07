@@ -44,6 +44,7 @@ import {
   Download as PhosphorDownload,
   Envelope as PhosphorEnvelope,
   Fire as PhosphorFire,
+  FirstAidKit as PhosphorFirstAidKit,
   Flag as PhosphorFlag,
   Flame as PhosphorFlame,
   Flower as PhosphorFlower,
@@ -149,6 +150,7 @@ export const Download = createIcon(PhosphorDownload, "Download");
 export const Envelope = createIcon(PhosphorEnvelope, "Envelope");
 export const Flame = createIcon(PhosphorFlame, "Flame");
 export const Fire = createIcon(PhosphorFire, "Fire");
+export const FirstAidKit = createIcon(PhosphorFirstAidKit, "FirstAidKit");
 export const Flag = createIcon(PhosphorFlag, "Flag");
 export const Flower = createIcon(PhosphorFlower, "Flower");
 export const Globe = createIcon(PhosphorGlobeSimple, "Globe");
