@@ -1,5 +1,8 @@
 "use client";
 
+import FirstRunTour from "@/components/platform/FirstRunTour";
+import { TRAVEL_COMPANION_SLUG } from "../instanceData";
+import type { TourStep } from "@/components/platform/GuidedTour";
 import EmptyState from "@/design-system/EmptyState";
 import Button from "@/design-system/Button";
 import { Compass, Globe } from "@/design-system/Icon";
@@ -13,6 +16,33 @@ import { PLAYBOOKS } from "../playbooks";
 import type { Playbook } from "@/components/product-shell/companion/steps";
 import type { RunRecord } from "../domain/travelData";
 import { useState } from "react";
+
+const TOUR_STEPS: TourStep[] = [
+  {
+    targetId: "empty-state",
+    title: "Nothing to run yet",
+    body:
+      "Today is the operational view of a trip in progress. Until a trip exists there is nothing happening, so it says so rather than showing a sample one.",
+  },
+  {
+    targetId: "rail-trip",
+    title: "Set the trip up here",
+    body:
+      "Destinations, bookings, documents. Say once what a booking depends on and it remembers the shape of your trip for you.",
+  },
+  {
+    targetId: "rail-workspace",
+    title: "Then come back here",
+    body:
+      "Today shows what is happening, what is worth knowing about, and what you are still waiting to hear back on.",
+  },
+  {
+    targetId: "rail-people",
+    title: "Who is travelling",
+    body:
+      "Their documents and requirements, so the answer at a desk is three seconds away.",
+  },
+];
 
 /**
  * Today.
@@ -42,7 +72,9 @@ export default function TodayModule() {
     );
   }
   if (status === "error") {
-    return <EmptyState icon={Compass} title="Couldn't load this" description={errorMessage ?? "Try again."} />;
+    return (
+      <EmptyState icon={Compass} title="Couldn't load this" description={errorMessage ?? "Try again."} />
+    );
   }
   if (!instanceId) return null;
 
@@ -56,6 +88,7 @@ export default function TodayModule() {
     }
     return (
       <div className="mx-auto flex w-full max-w-2xl flex-col gap-6">
+        <FirstRunTour slug={TRAVEL_COMPANION_SLUG} steps={TOUR_STEPS} />
         <EmptyState
           icon={Globe}
           title={trips.length === 0 ? "No trip yet" : "Nothing currently in progress"}

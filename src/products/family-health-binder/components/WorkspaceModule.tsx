@@ -1,5 +1,8 @@
 "use client";
 
+import FirstRunTour from "@/components/platform/FirstRunTour";
+import { FAMILY_HEALTH_BINDER_SLUG } from "../instanceData";
+import type { TourStep } from "@/components/platform/GuidedTour";
 import { motion, useReducedMotion } from "framer-motion";
 import EmptyState from "@/design-system/EmptyState";
 import { Heart } from "@/design-system/Icon";
@@ -31,6 +34,33 @@ function mostRecentEvent(events: SymptomEvent[]): SymptomEvent | null {
   return active.reduce((latest, e) => (e.onsetAt > latest.onsetAt ? e : latest));
 }
 
+const TOUR_STEPS: TourStep[] = [
+  {
+    targetId: "empty-state",
+    title: "Nobody in the binder yet",
+    body:
+      "Everything here is a fact you record about somebody in your family. Nothing is filled in for you and nothing is inferred.",
+  },
+  {
+    targetId: "rail-members",
+    title: "Add the people first",
+    body:
+      "Adults and children alike are rows under your own account. Nobody gets a separate login.",
+  },
+  {
+    targetId: "rail-timeline",
+    title: "Record symptoms as they happen",
+    body:
+      "Onset, duration and severity are real fields, so a pattern across weeks is something you can see rather than reconstruct at an intake desk.",
+  },
+  {
+    targetId: "rail-workspace",
+    title: "Everyone at a glance",
+    body:
+      "Overview shows each person and what is recorded for them, plus the most recent symptom across the family.",
+  },
+];
+
 /**
  * The whole account, on one screen: who's in the binder, a one-line
  * summary of what's recorded for each, and, when there is one, the most
@@ -45,18 +75,25 @@ export default function WorkspaceModule() {
 
   if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
   if (status === "no-instance") {
-    return <EmptyState icon={Heart} title="Nothing to show yet" description="This product has not been set up on your account." />;
+    return (
+      <EmptyState icon={Heart} title="Nothing to show yet" description="This product has not been set up on your account." />
+    );
   }
   if (status === "error") {
-    return <EmptyState icon={Heart} title="Couldn't load this" description={errorMessage ?? "Try again."} />;
+    return (
+      <EmptyState icon={Heart} title="Couldn't load this" description={errorMessage ?? "Try again."} />
+    );
   }
   if (members.length === 0) {
     return (
-      <EmptyState
-        icon={Heart}
-        title="Nobody added yet"
-        description="Add the first person in your family, in Family, to start keeping their facts on hand."
-      />
+      <>
+        <FirstRunTour slug={FAMILY_HEALTH_BINDER_SLUG} steps={TOUR_STEPS} />
+        <EmptyState
+          icon={Heart}
+          title="Nobody added yet"
+          description="Add the first person in your family, in Family, to start keeping their facts on hand."
+        />
+      </>
     );
   }
 
@@ -65,6 +102,7 @@ export default function WorkspaceModule() {
 
   return (
     <div className="mx-auto flex w-full max-w-2xl flex-col gap-6">
+      <FirstRunTour slug={FAMILY_HEALTH_BINDER_SLUG} steps={TOUR_STEPS} />
       <motion.header initial="hidden" animate="visible" variants={entranceVariant(Boolean(reduceMotion))}>
         <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Overview</p>
         <h1 className="mt-2 text-[26px] leading-tight text-[var(--text)]" style={{ fontFamily: "var(--product-narrative-font, inherit)" }}>

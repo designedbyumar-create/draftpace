@@ -1,5 +1,8 @@
 "use client";
 
+import FirstRunTour from "@/components/platform/FirstRunTour";
+import { HOME_MANAGEMENT_COMPANION_SLUG } from "../setupStateData";
+import type { TourStep } from "@/components/platform/GuidedTour";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
@@ -68,6 +71,27 @@ const MOOD_LAYOUT: Record<HomeMood, { gap: string; headline: string }> = {
   todo: { gap: "gap-7", headline: "text-[25px] sm:text-[29px]" },
   wrong: { gap: "gap-6", headline: "text-[25px] sm:text-[29px]" },
 };
+
+const TOUR_STEPS: TourStep[] = [
+  {
+    targetId: "empty-state",
+    title: "Nothing needs you yet",
+    body:
+      "Home only speaks up when something is genuinely due. Until you have recorded what is in your home, there is nothing honest for it to say, and it will not invent anything to fill the space.",
+  },
+  {
+    targetId: "rail-workspace",
+    title: "What needs doing, in a sentence",
+    body:
+      "This is the one screen that answers whether anything needs you right now. Not a dashboard to interpret: a sentence.",
+  },
+  {
+    targetId: "rail-history",
+    title: "What was already taken care of",
+    body:
+      "Every job you record lands here with who did it and what it cost, so the question three years from now has an answer.",
+  },
+];
 
 /**
  * Home: the whole product on one surface.
@@ -236,7 +260,9 @@ export default function HomeModule() {
   }
 
   if (status === "no-instance" || !home || !inputs) {
-    return <EmptyState icon={Home} title="No product instance found" description="This shouldn't happen for an owner. Contact support." />;
+    return (
+      <EmptyState icon={Home} title="No product instance found" description="This shouldn't happen for an owner. Contact support." />
+    );
   }
 
   const activeItems = inputs.homeItems.filter((i) => i.status !== "archived");
@@ -616,6 +642,7 @@ function PlainRow({
   if (!justSettled) return inner;
   return (
     <motion.div initial="hidden" animate="visible" variants={settleVariant(Boolean(reduceMotion))}>
+      <FirstRunTour slug={HOME_MANAGEMENT_COMPANION_SLUG} steps={TOUR_STEPS} />
       {inner}
     </motion.div>
   );

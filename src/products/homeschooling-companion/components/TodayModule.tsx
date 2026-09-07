@@ -1,5 +1,7 @@
 "use client";
 
+import FirstRunTour from "@/components/platform/FirstRunTour";
+import type { TourStep } from "@/components/platform/GuidedTour";
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
@@ -21,6 +23,33 @@ import { dateKey, deriveToday, describeTask, type TaskEvent, type TodayTask } fr
 import { SOURCE_LABEL, type Child, type Curriculum, type PlanEntry, type Position } from "../learning";
 
 type LoadStatus = "loading" | "ready" | "no-instance" | "error";
+
+const TOUR_STEPS: TourStep[] = [
+  {
+    targetId: "empty-state",
+    title: "Today starts empty on purpose",
+    body:
+      "Nothing is planned until you add a child and say what they are learning. This screen never invents a curriculum for you.",
+  },
+  {
+    targetId: "rail-kids",
+    title: "Start by adding a child",
+    body:
+      "Each child gets their own subjects and their own plan. You decide what they learn; this only keeps track of it.",
+  },
+  {
+    targetId: "rail-workspace",
+    title: "One page each morning",
+    body:
+      "Today shows what this day looks like per child, and says nothing at all on the days you are not schooling.",
+  },
+  {
+    targetId: "rail-record",
+    title: "The record you could hand to somebody",
+    body:
+      "What you actually did, dated as it happened, ready to print per child if your state ever asks.",
+  },
+];
 
 /**
  * Today. The one surface where the children meet, because "what are we
@@ -127,16 +156,21 @@ export default function TodayModule() {
 
   if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
   if (status === "no-instance") {
-    return <EmptyState icon={CalendarCheck} title="Nothing to show yet" description="This product has not been set up on your account." />;
+    return (
+      <EmptyState icon={CalendarCheck} title="Nothing to show yet" description="This product has not been set up on your account." />
+    );
   }
   if (status === "error") {
-    return <EmptyState icon={CalendarCheck} title="Couldn't load this" description={errorMessage ?? "Try again."} />;
+    return (
+      <EmptyState icon={CalendarCheck} title="Couldn't load this" description={errorMessage ?? "Try again."} />
+    );
   }
 
   const view = deriveToday({ children, plan, curricula, positions, events }, now);
 
   return (
     <div className="flex flex-col gap-6">
+      <FirstRunTour slug={HOMESCHOOLING_COMPANION_SLUG} steps={TOUR_STEPS} />
       <div>
         <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Today</p>
         <h1

@@ -1,5 +1,8 @@
 "use client";
 
+import FirstRunTour from "@/components/platform/FirstRunTour";
+import { VEHICLE_MAINTENANCE_COMPANION_SLUG } from "../instanceData";
+import type { TourStep } from "@/components/platform/GuidedTour";
 import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import Button from "@/design-system/Button";
@@ -118,6 +121,27 @@ function NoBaselineRow({ entry }: { entry: DueVehicleItem }) {
   );
 }
 
+const TOUR_STEPS: TourStep[] = [
+  {
+    targetId: "empty-state",
+    title: "Nothing is due yet",
+    body:
+      "Due computes from intervals and facts you record. With no vehicle added there is nothing to judge, so it says nothing rather than guessing at a schedule.",
+  },
+  {
+    targetId: "rail-vehicles",
+    title: "Add a vehicle first",
+    body:
+      "Say what you call it and whether you actually know its service history. If you do not, nothing will ever read as overdue on a fact you never had.",
+  },
+  {
+    targetId: "rail-workspace",
+    title: "What is due, ranked",
+    body:
+      "One view across every vehicle you own, most urgent first, computed only from what you entered.",
+  },
+];
+
 /**
  * The single ranked "what's due" view: everything Vehicle Maintenance
  * Companion's Due destination shows, read directly from
@@ -131,18 +155,25 @@ export default function WorkspaceModule() {
 
   if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
   if (status === "no-instance") {
-    return <EmptyState icon={Car} title="Nothing to show yet" description="This product has not been set up on your account." />;
+    return (
+      <EmptyState icon={Car} title="Nothing to show yet" description="This product has not been set up on your account." />
+    );
   }
   if (status === "error") {
-    return <EmptyState icon={Car} title="Couldn't load this" description={errorMessage ?? "Try again."} />;
+    return (
+      <EmptyState icon={Car} title="Couldn't load this" description={errorMessage ?? "Try again."} />
+    );
   }
   if (vehicles.length === 0) {
     return (
-      <EmptyState
-        icon={Car}
-        title="No vehicles yet"
-        description="Add a vehicle in Vehicles to start tracking what it needs, then this screen will show what's due."
-      />
+      <>
+        <FirstRunTour slug={VEHICLE_MAINTENANCE_COMPANION_SLUG} steps={TOUR_STEPS} />
+        <EmptyState
+          icon={Car}
+          title="No vehicles yet"
+          description="Add a vehicle in Vehicles to start tracking what it needs, then this screen will show what's due."
+        />
+      </>
     );
   }
 
@@ -172,6 +203,7 @@ export default function WorkspaceModule() {
 
   return (
     <div className="mx-auto flex w-full max-w-2xl flex-col gap-6">
+      <FirstRunTour slug={VEHICLE_MAINTENANCE_COMPANION_SLUG} steps={TOUR_STEPS} />
       <header>
         <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Due</p>
         <h1 className="mt-2 text-[26px] leading-tight text-[var(--text)]" style={{ fontFamily: "var(--product-narrative-font, inherit)" }}>

@@ -66,10 +66,15 @@ describe("every tour step points at an id that exists in its own product", () =>
     .filter((e) => e.isDirectory())
     .map((e) => e.name);
 
-  const shellSource = readFileSync(
-    path.resolve(process.cwd(), "src/components/product-shell/ProductRailShell.tsx"),
-    "utf8"
-  );
+  // Targets a product does not render itself: the two shells mark every
+  // destination, and EmptyState is what a first-run screen usually is.
+  const sharedSource = [
+    "src/components/product-shell/ProductRailShell.tsx",
+    "src/components/product-shell/ProductShell.tsx",
+    "src/design-system/EmptyState.tsx",
+  ]
+    .map((f) => readFileSync(path.resolve(process.cwd(), f), "utf8"))
+    .join("\n");
 
   it("checks at least one product with a tour", () => {
     const withTours = products.filter((slug) =>
@@ -90,7 +95,9 @@ describe("every tour step points at an id that exists in its own product", () =>
         // The shared rail marks every destination with data-tour-id, so a
         // step may legitimately point at navigation rather than at
         // something the product itself renders.
-        const inShell = shellSource.includes(`data-tour-id={\`rail-\${id}\`}`) && target.startsWith("rail-");
+        const inShell =
+          (target.startsWith("rail-") && sharedSource.includes("data-tour-id={`rail-${id}`}")) ||
+          sharedSource.includes(`data-tour-id="${target}"`);
         expect(
           inProduct || inShell,
           `${slug} has a tour step targeting "${target}" but nothing carries that id`

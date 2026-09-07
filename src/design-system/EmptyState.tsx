@@ -17,7 +17,14 @@ export default function EmptyState({
   action?: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-col items-center gap-3 rounded-xl border border-dashed border-[var(--border-strong)] px-6 py-12 text-center">
+    <div
+      // A first-run tour runs against an empty product by definition, and
+      // for most products this is the whole of what a new owner is looking
+      // at, so it is the one thing a first step can reliably point to. See
+      // src/components/platform/GuidedTour.tsx.
+      data-tour-id="empty-state"
+      className="flex flex-col items-center gap-3 rounded-xl border border-dashed border-[var(--border-strong)] px-6 py-12 text-center"
+    >
       {Icon && (
         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--surface-muted)] text-[var(--muted)]">
           <Icon size={18} aria-hidden />

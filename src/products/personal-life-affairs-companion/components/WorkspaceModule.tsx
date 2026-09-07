@@ -1,5 +1,8 @@
 "use client";
 
+import FirstRunTour from "@/components/platform/FirstRunTour";
+import { PERSONAL_LIFE_AFFAIRS_COMPANION_SLUG } from "../instanceData";
+import type { TourStep } from "@/components/platform/GuidedTour";
 import { useCallback, useEffect, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import Button from "@/design-system/Button";
@@ -37,6 +40,27 @@ function inDays(days: number): string {
   d.setDate(d.getDate() + days);
   return d.toISOString().slice(0, 10);
 }
+
+const TOUR_STEPS: TourStep[] = [
+  {
+    targetId: "rail-workspace",
+    title: "One question at a time",
+    body:
+      "This is the whole product: one thing on screen, chosen for you. There is no progress bar and no list of what is left, because a short list finished is a complete success.",
+  },
+  {
+    targetId: "rail-affairs",
+    title: "What you have written down so far",
+    body:
+      "Everything you establish lands here. It counts up, never down.",
+  },
+  {
+    targetId: "rail-printables",
+    title: "The book somebody would actually follow",
+    body:
+      "When enough exists, this prints as a book a person could pick up and use if they had to.",
+  },
+];
 
 /**
  * The whole product, on one surface.
@@ -177,7 +201,9 @@ export default function WorkspaceModule() {
     );
   }
   if (status === "error") {
-    return <EmptyState icon={ListChecks} title="Couldn't load this" description={errorMessage ?? "Try again."} />;
+    return (
+      <EmptyState icon={ListChecks} title="Couldn't load this" description={errorMessage ?? "Try again."} />
+    );
   }
 
   const intake = nextUnansweredIntake(profile);
@@ -247,6 +273,7 @@ export default function WorkspaceModule() {
 
   return (
     <div className="flex flex-col gap-5">
+      <FirstRunTour slug={PERSONAL_LIFE_AFFAIRS_COMPANION_SLUG} steps={TOUR_STEPS} />
       {errorBanner}
 
       {acknowledgement && (

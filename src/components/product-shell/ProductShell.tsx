@@ -167,6 +167,7 @@ function ProductTabShell({
                   key={id}
                   href={href}
                   ref={active ? activeTabRef : undefined}
+                  data-tour-id={`rail-${id}`}
                   aria-current={active ? "page" : undefined}
                   className={`whitespace-nowrap border-b-2 px-3 py-3 text-[13px] font-semibold transition ${
                     active
