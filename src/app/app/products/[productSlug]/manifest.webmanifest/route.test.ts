@@ -84,12 +84,41 @@ describe("GET /app/products/[productSlug]/manifest.webmanifest", () => {
     expect(seen.size).toBeGreaterThan(1);
   });
 
-  it("returns 404 for a product with no pwa field declared (e.g. Monthly Money Reset), not an empty manifest", async () => {
+  /**
+   * Named Monthly Money Reset as its example until that product became
+   * installable like every other one, at which point the test was
+   * asserting a fact about one product rather than the route's rule.
+   * Derived from the registry now, so it keeps holding whichever products
+   * declare `pwa` and whichever do not.
+   */
+  it("returns 404 for any product with no pwa field, rather than an empty manifest", async () => {
     const { GET } = await loadFreshRoute();
-    const response = await GET(new Request("https://draftpace.com/x"), {
-      params: Promise.resolve({ productSlug: "monthly-money-reset" }),
-    });
-    expect(response.status).toBe(404);
+    const productRegistry = await loadFreshRegistry();
+    const withoutPwa = productRegistry.list().filter((definition) => !definition.pwa);
+    expect(withoutPwa.length, "every product is installable, so this rule is untested").toBeGreaterThan(0);
+
+    for (const definition of withoutPwa) {
+      const response = await GET(new Request("https://draftpace.com/x"), {
+        params: Promise.resolve({ productSlug: definition.slug }),
+      });
+      expect(response.status, `${definition.slug} declares no pwa but served a manifest`).toBe(404);
+    }
+  }, 40000);
+
+  it("serves a manifest for every product that does declare pwa", async () => {
+    const { GET } = await loadFreshRoute();
+    const productRegistry = await loadFreshRegistry();
+
+    for (const definition of productRegistry.list()) {
+      if (!definition.pwa) continue;
+      const response = await GET(new Request("https://draftpace.com/x"), {
+        params: Promise.resolve({ productSlug: definition.slug }),
+      });
+      expect(response.status, `${definition.slug} declares pwa but its manifest 404s`).toBe(200);
+      const manifest = await response.json();
+      expect(manifest.start_url).toBe(`/app/products/${definition.slug}`);
+      expect(manifest.scope).toBe(`/app/products/${definition.slug}/`);
+    }
   }, 40000);
 
   it("returns 404 for an unknown product slug", async () => {

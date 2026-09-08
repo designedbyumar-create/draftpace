@@ -210,6 +210,58 @@ export default function FreeProductPage() {
         </section>
       )}
 
+      {/*
+        How it reaches a phone. Every claim here is true of the shipped
+        PWA: this product serves its own manifest, scoped to its own
+        routes, with its own icon and name, and installs from inside
+        itself. It matters more here than on a paid page: this is the
+        first Draftpace product most people ever open, and "a website" and
+        "an app on my phone" are different propositions to somebody
+        deciding whether to bother.
+      */}
+      <section className="border-b border-[var(--border)]">
+        <Container width="wide" className="py-16 sm:py-20">
+          <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--brand-ink)]">On your devices</p>
+          <h2 className="mt-3 max-w-2xl font-serif text-[28px] font-semibold leading-tight tracking-tight sm:text-[34px]">
+            It works like an app, without an app store.
+          </h2>
+          <p className="mt-5 max-w-[42rem] text-[15px] leading-relaxed text-[var(--muted)]">
+            Monthly Money Reset runs in your browser, and installs to your phone from there. No App Store, no Play
+            Store, no download, and no update to remember. Add it once and it gets its own icon and its own window,
+            like any other app on your phone.
+          </p>
+          <div className="mt-9 grid gap-7 sm:grid-cols-3">
+            <div>
+              <p className="text-[13px] font-bold text-[var(--text)]">On iPhone and iPad</p>
+              <p className="mt-2 text-[14px] leading-relaxed text-[var(--muted)]">
+                Open it in Safari, tap Share, then Add to Home Screen. It opens full screen from then on, with no
+                browser bar.
+              </p>
+            </div>
+            <div>
+              <p className="text-[13px] font-bold text-[var(--text)]">On Android</p>
+              <p className="mt-2 text-[14px] leading-relaxed text-[var(--muted)]">
+                Chrome offers to install it, or you can tap Install in the product&apos;s own settings. One tap and it
+                is on your home screen.
+              </p>
+            </div>
+            <div>
+              <p className="text-[13px] font-bold text-[var(--text)]">On computers</p>
+              <p className="mt-2 text-[14px] leading-relaxed text-[var(--muted)]">
+                It works in any modern browser as it is. Chrome and Edge will also install it as its own desktop
+                window if you would rather it were not a tab.
+              </p>
+            </div>
+          </div>
+          <p className="mt-8 max-w-[42rem] border-t border-[var(--border)] pt-6 text-[14px] leading-relaxed text-[var(--muted)]">
+            <span className="font-semibold text-[var(--text)]">Free installs exactly like paid.</span> It gets its own
+            icon and its own window, the same as every Companion, because being free is not a reason to be less of an
+            app. Your figures are tied to your account rather than the device, so signing in anywhere brings them with
+            you.
+          </p>
+        </Container>
+      </section>
+
       {/* The graduation, said once and only at the end.
           Not a paywall and not an upsell for something this product is
           missing: it names the boundary this product deliberately has,

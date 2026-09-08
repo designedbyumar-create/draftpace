@@ -58,6 +58,35 @@ export const monthlyMoneyResetDefinition: ProductDefinitionInput = {
    * `accent` alone is inert.
    */
   theme: { motionPersonality: "calm", contentWidth: "wide" },
+  /**
+   * Installable, like every other product. This was the one real product
+   * with no pwa block, which meant the free product, the first thing most
+   * people ever open, was the only one that could not be added to a Home
+   * Screen. Being free is not a reason to be less of an app.
+   *
+   * Colours come from this product's own --mmr-* tokens (theme.ts) rather
+   * than an accentScale, which it deliberately does not declare: forest-800
+   * for the plate, ivory for the glyph and background.
+   */
+  pwa: {
+    name: "Monthly Money Reset",
+    shortName: "Money Reset",
+    description:
+      "Monthly Money Reset by Draftpace: what is safe to spend this month, what must be protected, and the next useful move.",
+    themeColor: "#214b3e",
+    backgroundColor: "#faf7f1",
+    icons: [
+      { src: "/logo/products/monthly-money-reset/icon-192.png", sizes: "192x192", type: "image/png", purpose: "any" },
+      { src: "/logo/products/monthly-money-reset/icon-512.png", sizes: "512x512", type: "image/png", purpose: "any" },
+      {
+        src: "/logo/products/monthly-money-reset/icon-maskable-512.png",
+        sizes: "512x512",
+        type: "image/png",
+        purpose: "maskable",
+      },
+    ],
+    provisionalBranding: false,
+  },
   layouts: ["responsive"],
   offline: "shell-only",
   notifications: { supported: true },
