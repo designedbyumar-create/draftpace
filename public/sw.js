@@ -1,4 +1,4 @@
-const CACHE_NAME = "draftpace-app-v3";
+const CACHE_NAME = "draftpace-app-v4";
 
 // Static, non-personalized assets only. /app and its subroutes are
 // deliberately never cached here: they render authenticated, per-user
@@ -54,6 +54,38 @@ self.addEventListener("fetch", (event) => {
 
         return cached || network;
       })
+    );
+    return;
+  }
+
+  /**
+   * A navigation with no connection. Without this branch the browser
+   * showed its own error page for every route, which meant /offline was
+   * cached on install and then never served: an installed app handing
+   * back a browser error is the loudest way to tell somebody it is not
+   * really an app.
+   *
+   * Network first, always. /app renders authenticated, per-user content
+   * and must never be served from a cache (see APP_SHELL's own note), so
+   * this adds no caching of navigations at all. It only replaces the
+   * failure: the request still goes to the network every time, and the
+   * cached /offline page appears only when that genuinely cannot be
+   * reached.
+   */
+  if (request.mode === "navigate") {
+    event.respondWith(
+      fetch(request).catch(() =>
+        caches.match("/offline").then(
+          (cached) =>
+            cached ||
+            // Only if the shell itself never cached, e.g. a first visit
+            // that failed. Better than the browser's error, still honest.
+            new Response("<!doctype html><meta charset=utf-8><title>Offline</title><p>You are offline.", {
+              status: 503,
+              headers: { "Content-Type": "text/html; charset=utf-8" },
+            })
+        )
+      )
     );
     return;
   }

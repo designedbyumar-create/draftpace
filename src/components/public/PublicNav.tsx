@@ -69,8 +69,15 @@ export default function PublicNav({ user }: { user: PublicNavUser }) {
     // headline smeared through it as it passed underneath. Detaching it
     // makes that worse, not better, because more of the page passes beside
     // the bar, so the fill stays solid.
-    <header className="sticky top-0 z-40 px-3 lg:px-0">
-      <div className="mx-auto max-w-6xl rounded-b-2xl border-x border-b border-[var(--border)] bg-[var(--surface)] shadow-[shadow:var(--shadow-soft)] lg:max-w-none lg:rounded-none lg:border-x-0 lg:bg-[var(--bg)] lg:shadow-none">
+    // Detached from the top edge on mobile, not welded to it. It used to
+    // be a card rounded on its bottom corners only, flush against the
+    // screen edge, which reads as a browser chrome bar rather than as
+    // part of the product. It now floats: a gap above it, rounded on all
+    // four corners, bordered all round. The gap resolves the notch inset
+    // first, so on an installed iPhone it clears the status bar instead
+    // of sitting under it. Desktop is unchanged: full-bleed, no card.
+    <header className="sticky top-0 z-40 px-3 pt-[max(env(safe-area-inset-top),10px)] lg:px-0 lg:pt-0">
+      <div className="mx-auto max-w-6xl rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-[shadow:var(--shadow-soft)] lg:max-w-none lg:rounded-none lg:border-x-0 lg:border-t-0 lg:bg-[var(--bg)] lg:shadow-none">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/*
           32, not 40, against this header's own h-16. At 40 the lockup
@@ -78,7 +85,7 @@ export default function PublicNav({ user }: { user: PublicNavUser }) {
           page; 32 puts it at half the bar height, which is where a
           wordmark sits on a site that wants its content to lead.
         */}
-        <Link href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
+        <Link href="/" className="-my-2 flex items-center gap-2.5 py-2" onClick={() => setOpen(false)}>
           <Logo height={32} />
         </Link>
 

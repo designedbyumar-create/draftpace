@@ -550,6 +550,69 @@ html[data-reduce-motion="true"] *::after {
  * prefers-reduced-motion rule above collapsing it to 0.01ms leaves the
  * mark correctly drawn rather than mid-animation.
  */
+/*
+ * THE THINGS THAT MAKE A WEB PAGE FEEL LIKE A WEB PAGE
+ *
+ * Three defaults that are invisible on a desktop and unmistakable on a
+ * phone, especially once a Companion is installed and there is no browser
+ * chrome left to explain them away.
+ */
+
+/* The blue flash on every tap. Nothing else announces "this is a website"
+ * as immediately, and it fires on any element a finger touches, including
+ * ones that are not controls at all. Focus-visible rings are untouched,
+ * so keyboard users lose nothing. */
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Stops the whole page rubber-banding past its own content on iOS, which
+ * exposes the browser's ground behind an app that is meant to be the
+ * whole screen. `contain` rather than `none`: a scrollable area inside the
+ * page still scrolls normally, it just does not chain to the document. */
+html,
+body {
+  overscroll-behavior-y: contain;
+}
+
+/* A long press on a nav label should not select the label. Applies only to
+ * chrome, never to content: anything a reader might legitimately want to
+ * copy, including everything a product records for them, stays selectable. */
+nav,
+header button,
+[role="tablist"],
+button,
+summary {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/*
+ * The platform minimum for anything a finger is meant to hit, on both iOS
+ * and Android. Applied to standalone controls only: an inline link inside
+ * a paragraph is not a tap target in this sense and would wreck the line
+ * height of the prose around it if it were forced to 44px.
+ *
+ * A <summary> is the case that made this necessary. The FAQ rows on every
+ * product page measured 24px tall, less than half the minimum, on the one
+ * screen where somebody is deciding whether to spend money.
+ */
+@media (pointer: coarse) {
+  summary,
+  button:not(:disabled),
+  [role="button"],
+  [role="tab"] {
+    min-height: 44px;
+  }
+
+  /* summary is display:list-item, so min-height alone leaves the text at
+     the top of the box rather than centred in it. */
+  summary {
+    display: flex;
+    align-items: center;
+  }
+}
+
 @keyframes welcome-mark {
   from {
     opacity: 0;

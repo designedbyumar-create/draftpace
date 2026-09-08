@@ -13,6 +13,7 @@ import RichSection from "./RichSection";
 import ProblemCards from "./ProblemCards";
 import AddToLibraryButton from "../AddToLibraryButton";
 import ProductGallery from "./ProductGallery";
+import StickyBuyBar from "./StickyBuyBar";
 import { productRegistry } from "@/product-framework/registry";
 import { ensureProductsRegistered } from "@/products/manifest";
 import { productThemeStyle, PRODUCT_THEME_ATTRIBUTE } from "@/product-framework/themeExtension";
@@ -36,13 +37,52 @@ export async function generateMetadata({
   const { productSlug } = await params;
   const product = shopRegistry.getBySlug(productSlug);
   if (!product) return {};
+  /**
+   * The product's own store cover, rather than the site-wide og-image
+   * every listing shared. Sharing a link to Travel Companion showed the
+   * same picture as sharing a link to Family Health Binder, which is a
+   * wasted impression in the one place a link is judged before it is
+   * opened. Each cover already names the product and carries its accent.
+   */
+  const cover = STORE_COVERS.has(product.slug) ? `/store/${product.slug}-1-cover.webp` : "/og-image.png";
+
   return {
     title: product.seo.title,
     description: product.seo.description,
     alternates: { canonical: `/shop/${product.slug}` },
     robots: product.publicationStatus === "published" ? undefined : { index: false, follow: false },
+    openGraph: {
+      title: product.seo.title,
+      description: product.seo.description,
+      url: `/shop/${product.slug}`,
+      type: "website",
+      images: [{ url: cover, width: 1400, height: 1050, alt: product.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: product.seo.title,
+      description: product.seo.description,
+      images: [cover],
+    },
   };
 }
+
+/**
+ * Slugs with a generated store cover in public/store. Listed rather than
+ * probed: a missing file would otherwise be advertised to every crawler
+ * and link unfurler as this product's image.
+ */
+const STORE_COVERS = new Set([
+  "personal-finance-companion",
+  "home-management-companion",
+  "alongside",
+  "homeschooling-companion",
+  "personal-life-affairs-companion",
+  "travel-companion",
+  "vehicle-maintenance-companion",
+  "family-health-binder",
+  "monthly-money-reset",
+]);
 
 /**
  * The product page. Its one job is to make one person want one product, and to
@@ -156,6 +196,12 @@ export default async function ShopProductPage({
             <div className="mt-6">
               <GetAction product={product} checkout={checkout} size="lg" fullWidth />
             </div>
+            {/* Appears only once the button above has scrolled away, and
+                renders the same GetAction so the two can never disagree
+                about what the checkout is. */}
+            <StickyBuyBar priceLabel={priceLabel} compareAtLabel={compareAtLabel}>
+              <GetAction product={product} checkout={checkout} size="md" fullWidth />
+            </StickyBuyBar>
             <p className="mt-3 flex items-center gap-1.5 text-[12.5px] text-[var(--faint)]">
               <Lock size={12} aria-hidden />
               Only you can see your data. It saves to your account, on every device.
@@ -501,16 +547,31 @@ function GetAction({
  */
 function buildStructuredData(product: ShopProduct) {
   if (!(product.structuredDataEligible && product.publicationStatus === "published")) return null;
+  const url = `https://draftpace.com/shop/${product.slug}`;
   return {
     "@context": "https://schema.org",
     "@type": "Product",
     name: product.title,
     description: product.seo.description,
+    // Google will not show a Product rich result without an image, which
+    // is why this was previously ineligible however complete the rest of
+    // it looked. Absolute, because a crawler does not resolve relative
+    // paths inside JSON-LD.
+    ...(STORE_COVERS.has(product.slug)
+      ? { image: [`https://draftpace.com/store/${product.slug}-1-cover.webp`] }
+      : {}),
+    brand: { "@type": "Brand", name: "Draftpace" },
+    sku: product.slug,
+    url,
     offers: {
       "@type": "Offer",
+      url,
       price: product.access === "free" ? "0" : product.price?.amount.toString(),
       priceCurrency: product.access === "free" ? "USD" : product.price?.currency,
       availability: product.availability === "available" ? "https://schema.org/InStock" : "https://schema.org/PreOrder",
+      // One payment, no licence term. Stated so a crawler does not have to
+      // infer it from a price alone.
+      priceValidUntil: "2027-12-31",
     },
   };
 }
