@@ -5,6 +5,7 @@ import { ensureProductsRegistered } from "@/products/manifest";
 import { resolveProductModule } from "@/product-framework/moduleRegistry";
 import Surface from "@/design-system/Surface";
 import SettingsRow from "@/components/platform/SettingsRow";
+import InstallProductRow from "@/components/platform/InstallProductRow";
 import Badge from "@/design-system/Badge";
 
 export default async function ProductSettingsPage({
@@ -31,6 +32,10 @@ export default async function ProductSettingsPage({
 
       <Surface padded={false}>
         <div className="divide-y divide-[var(--border)] px-5">
+          {/* First, because it is the only row here that does something on
+              this device. Every product serves its own manifest already;
+              until this row existed nothing told anyone so. */}
+          <InstallProductRow productTitle={definition.title} />
           <SettingsRow
             label="Configuration"
             description={

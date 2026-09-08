@@ -87,12 +87,18 @@ export const alongsideDefinition: ProductDefinitionInput = {
       "ADHD Life Companion by Draftpace: hold what you cannot keep in your head, and get through the thing when you are ready.",
     themeColor: "#8d4a5c",
     backgroundColor: "#fbfaf7",
+    // This product's own icon, so installing two Companions does not
+    // put two identical Draftpace squares on the home screen. Same
+    // monogram, this product's accent, generated from Logo.tsx's own
+    // path data. The maskable variant fills the canvas and keeps the
+    // glyph inside the 80% safe zone, because the OS applies its own
+    // mask and would crop the corners off a pre-rounded plate.
     icons: [
-      { src: "/logo/icon-192.png", sizes: "192x192", type: "image/png", purpose: "any" },
-      { src: "/logo/icon-512.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
-      { src: "/logo/icon-maskable-512.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
+      { src: "/logo/products/alongside/icon-192.png", sizes: "192x192", type: "image/png", purpose: "any" },
+      { src: "/logo/products/alongside/icon-512.png", sizes: "512x512", type: "image/png", purpose: "any" },
+      { src: "/logo/products/alongside/icon-maskable-512.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
     ],
-    provisionalBranding: true,
+    provisionalBranding: false,
   },
   /**
    * Three destinations, one per question the product answers:

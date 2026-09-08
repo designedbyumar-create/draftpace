@@ -38,12 +38,18 @@ export const personalFinanceCompanionDefinition: ProductDefinitionInput = {
     description: "Personal Finance Companion by Draftpace: accounts, income, bills, subscriptions, transactions, debt, and savings, in one always-current picture.",
     themeColor: "#2e4a4d",
     backgroundColor: "#f4f2ec",
+    // This product's own icon, so installing two Companions does not
+    // put two identical Draftpace squares on the home screen. Same
+    // monogram, this product's accent, generated from Logo.tsx's own
+    // path data. The maskable variant fills the canvas and keeps the
+    // glyph inside the 80% safe zone, because the OS applies its own
+    // mask and would crop the corners off a pre-rounded plate.
     icons: [
-      { src: "/logo/icon-192.png", sizes: "192x192", type: "image/png", purpose: "any" },
-      { src: "/logo/icon-512.png", sizes: "512x512", type: "image/png", purpose: "any" },
-      { src: "/logo/icon-maskable-512.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
+      { src: "/logo/products/personal-finance-companion/icon-192.png", sizes: "192x192", type: "image/png", purpose: "any" },
+      { src: "/logo/products/personal-finance-companion/icon-512.png", sizes: "512x512", type: "image/png", purpose: "any" },
+      { src: "/logo/products/personal-finance-companion/icon-maskable-512.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
     ],
-    provisionalBranding: true,
+    provisionalBranding: false,
   },
   capabilities: ["companion.context", "companion.next-action"],
   // Deliberately excludes "setup": that destination is Phase 8's

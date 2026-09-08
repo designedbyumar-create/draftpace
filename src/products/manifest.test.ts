@@ -46,7 +46,6 @@ describe("ensureProductsRegistered", () => {
     expect(pfc?.access.model).toBe("paid");
     expect(pfc?.cycleModel).toBe("continuous");
     expect(pfc?.devFixture).toBe(false);
-    expect(pfc?.pwa?.provisionalBranding).toBe(true);
 
     const homeBase = productRegistry.getBySlug("home-management-companion");
     expect(homeBase).toBeDefined();
@@ -54,7 +53,6 @@ describe("ensureProductsRegistered", () => {
     expect(homeBase?.access.model).toBe("paid");
     expect(homeBase?.cycleModel).toBe("continuous");
     expect(homeBase?.devFixture).toBe(false);
-    expect(homeBase?.pwa?.provisionalBranding).toBe(true);
   }, 40000);
 
   it("is never a development fixture", () => {
@@ -98,5 +96,23 @@ describe("ensureProductsRegistered", () => {
     expect(manifestSource).toContain("hidden-access-test/catalog");
     expect(manifestSource).toContain("personal-finance-companion/catalog");
     expect(manifestSource).toContain("home-management-companion/catalog");
+  });
+
+  /**
+   * Provisional branding means placeholder icons and colours, shipped
+   * knowingly. Every installable product now carries its own real icon,
+   * so any product still declaring it provisional is one that would put a
+   * placeholder on a paying customer's Home Screen.
+   */
+  it("ships no product with placeholder PWA branding", async () => {
+    const { ensureProductsRegistered, productRegistry } = await loadFreshManifestModule();
+    ensureProductsRegistered();
+    for (const definition of productRegistry.list()) {
+      if (!definition.pwa || definition.devFixture) continue;
+      expect(
+        definition.pwa.provisionalBranding,
+        `${definition.slug} still declares provisional PWA branding, so installing it puts placeholder branding on a Home Screen`
+      ).toBe(false);
+    }
   });
 });

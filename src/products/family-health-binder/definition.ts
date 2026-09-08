@@ -71,12 +71,18 @@ export const familyHealthBinderDefinition: ProductDefinitionInput = {
       "Family Health Binder by Draftpace: medications, allergies, family history and a structured symptom timeline, kept against your account, reachable from any device.",
     themeColor: "#606e8e",
     backgroundColor: "#f8f8fb",
+    // This product's own icon, so installing two Companions does not
+    // put two identical Draftpace squares on the home screen. Same
+    // monogram, this product's accent, generated from Logo.tsx's own
+    // path data. The maskable variant fills the canvas and keeps the
+    // glyph inside the 80% safe zone, because the OS applies its own
+    // mask and would crop the corners off a pre-rounded plate.
     icons: [
-      { src: "/logo/icon-192.png", sizes: "192x192", type: "image/png", purpose: "any" },
-      { src: "/logo/icon-512.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
-      { src: "/logo/icon-maskable-512.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
+      { src: "/logo/products/family-health-binder/icon-192.png", sizes: "192x192", type: "image/png", purpose: "any" },
+      { src: "/logo/products/family-health-binder/icon-512.png", sizes: "512x512", type: "image/png", purpose: "any" },
+      { src: "/logo/products/family-health-binder/icon-maskable-512.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
     ],
-    provisionalBranding: true,
+    provisionalBranding: false,
   },
   /**
    * Four real destinations, each answering a different question:

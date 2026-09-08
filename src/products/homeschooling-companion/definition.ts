@@ -63,12 +63,18 @@ export const homeschoolingCompanionDefinition: ProductDefinitionInput = {
       "Homeschooling Companion by Draftpace: keep track of what your children are learning, what to do today, and what they have actually understood.",
     themeColor: "#6a4a72",
     backgroundColor: "#fbfaf7",
+    // This product's own icon, so installing two Companions does not
+    // put two identical Draftpace squares on the home screen. Same
+    // monogram, this product's accent, generated from Logo.tsx's own
+    // path data. The maskable variant fills the canvas and keeps the
+    // glyph inside the 80% safe zone, because the OS applies its own
+    // mask and would crop the corners off a pre-rounded plate.
     icons: [
-      { src: "/logo/icon-192.png", sizes: "192x192", type: "image/png", purpose: "any" },
-      { src: "/logo/icon-512.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
-      { src: "/logo/icon-maskable-512.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
+      { src: "/logo/products/homeschooling-companion/icon-192.png", sizes: "192x192", type: "image/png", purpose: "any" },
+      { src: "/logo/products/homeschooling-companion/icon-512.png", sizes: "512x512", type: "image/png", purpose: "any" },
+      { src: "/logo/products/homeschooling-companion/icon-maskable-512.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
     ],
-    provisionalBranding: true,
+    provisionalBranding: false,
   },
   /**
    * Three destinations, derived from the three scopes the product loop
