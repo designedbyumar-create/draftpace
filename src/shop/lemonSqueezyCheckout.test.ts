@@ -27,32 +27,15 @@ describe("every published paid product can actually be bought", () => {
   });
 
   /**
-   * Products we know cannot be bought yet, so a *new* one slipping through
-   * still fails this suite. Emptying this list is the goal; adding to it
-   * without a reason is how the gap becomes permanent.
-   *
-   * family-health-binder: no Buy Link created in Lemon Squeezy yet, so its
-   * Shop page shows the honest "Checkout opens soon" state. It is the one
-   * paid product of eight with no link.
+   * No exemptions left. Every published paid product has a live Buy Link,
+   * and this assertion is strict for all of them. Do not add an allowlist
+   * back: an exemption here is a product whose page takes somebody all the
+   * way to the decision and then has nothing to sell them.
    */
-  const KNOWN_NO_CHECKOUT = new Set(["family-health-binder"]);
-
   for (const product of paid) {
-    const buyable = () => hasLemonSqueezyCheckout(product.slug) || Boolean(product.purchaseAction?.href);
-
-    if (KNOWN_NO_CHECKOUT.has(product.slug)) {
-      it(`${product.slug} is still the known gap, and nothing more`, () => {
-        expect(
-          buyable(),
-          `${product.slug} can be bought now. Remove it from KNOWN_NO_CHECKOUT so the real assertion guards it.`
-        ).toBe(false);
-      });
-      continue;
-    }
-
     it(`${product.slug} has a live checkout`, () => {
       expect(
-        buyable(),
+        hasLemonSqueezyCheckout(product.slug) || Boolean(product.purchaseAction?.href),
         `${product.slug} is published and paid but has no Lemon Squeezy Buy Link and no purchaseAction.href, so its buy button renders the "Checkout opens soon" pending state.`
       ).toBe(true);
     });

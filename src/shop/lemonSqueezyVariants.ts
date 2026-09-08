@@ -64,12 +64,6 @@ const PURCHASABLE: Record<string, PurchasableProduct> = {
     variantId: process.env.LEMON_SQUEEZY_VMC_VARIANT_ID ?? "2102749",
     version: "0.1.0",
   },
-  // Mapped, but not yet reachable from the Shop: this product exists in
-  // Lemon Squeezy and has a variant, and no Buy Link URL has been
-  // supplied, so its Shop page still shows "Checkout opens soon". The
-  // mapping is harmless and deliberate: it means the day the link
-  // arrives, or if a sale comes through Lemon Squeezy's own storefront,
-  // the grant already works rather than 400ing.
   "family-health-binder": { variantId: process.env.LEMON_SQUEEZY_FHB_VARIANT_ID ?? "2102751", version: "0.1.0" },
 };
 

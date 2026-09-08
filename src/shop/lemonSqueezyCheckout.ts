@@ -60,7 +60,7 @@ const CHECKOUT_URL_BY_SLUG: Record<string, string> = {
   "travel-companion": "https://draftpace.lemonsqueezy.com/checkout/buy/56eb2495-89af-4f4c-8e76-c4b29d6b5131",
   "vehicle-maintenance-companion":
     "https://draftpace.lemonsqueezy.com/checkout/buy/c55443ca-3315-4b43-9570-e0bd29309af9",
-  // family-health-binder: no Buy Link created in Lemon Squeezy yet.
+  "family-health-binder": "https://draftpace.lemonsqueezy.com/checkout/buy/84f4a4ea-0061-4785-b412-483bdcb4e1d8",
 };
 
 /** Per-deployment override, for test-mode links on a staging environment. */
