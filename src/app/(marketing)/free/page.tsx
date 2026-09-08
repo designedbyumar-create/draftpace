@@ -6,7 +6,9 @@ import { ArrowRight, Check } from "@/design-system/Icon";
 import { shopRegistry } from "@/shop/registry";
 import { ensureShopRegistered } from "@/shop/ensureRegistered";
 import { questionsForStage } from "@/shop/definition";
-import { OverviewScreenMockup, BreakdownScreenMockup } from "../shop/[productSlug]/monthlyMoneyResetVisuals";
+import ProductGallery from "../shop/[productSlug]/ProductGallery";
+import { productRegistry } from "@/product-framework/registry";
+import { ensureProductsRegistered } from "@/products/manifest";
 
 /**
  * The free product's own front door.
@@ -84,6 +86,13 @@ export default function FreeProductPage() {
 
   const deciding = questionsForStage(product, "deciding");
 
+  // Monthly Money Reset carries its accent as bespoke --mmr-* tokens
+  // rather than an accentScale (its own documented exception), so this
+  // falls back to the platform accent rather than reading a scale that
+  // was deliberately never declared.
+  ensureProductsRegistered();
+  const accent = productRegistry.getBySlug(product.slug)?.theme?.accentScale?.base ?? "var(--primary)";
+
   return (
     <>
       {/* Hero. One claim, one button, and the screen doing the thing.
@@ -92,7 +101,7 @@ export default function FreeProductPage() {
           search result or the Shop's own band. */}
       <section className="border-b border-[var(--border)]">
         <Container width="wide" className="py-14 sm:py-16 lg:py-20">
-          <div className="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center lg:gap-20">
+          <div className="grid gap-10 lg:grid-cols-[1fr_1.05fr] lg:items-center lg:gap-14">
             <div className="min-w-0">
               <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--brand-ink)]">
                 Free, and not a trial
@@ -129,22 +138,12 @@ export default function FreeProductPage() {
               </ul>
             </div>
 
-            {/* Same offset pair the homepage hero uses, for the same
-                reason: the overview in front, and behind it the screen
-                that answers "where did that number come from". */}
-            <div className="flex justify-center lg:justify-end">
-              <div className="relative aspect-[262/381] w-[262px] shrink-0">
-                <div
-                  aria-hidden
-                  className="absolute left-[96px] top-[22px] w-[280px] origin-top-left scale-[0.5909] opacity-90"
-                >
-                  <BreakdownScreenMockup />
-                </div>
-                <div className="absolute left-0 top-0 w-[280px] origin-top-left scale-[0.6286]">
-                  <OverviewScreenMockup />
-                </div>
-              </div>
-            </div>
+            {/* The same gallery every paid product page opens with, so the
+                free product is presented as a peer of the paid ones rather
+                than as a lesser thing in a different shape. It is the one
+                place the two tiers should look identical: the difference
+                between them is the price, not the seriousness. */}
+            <ProductGallery slug={product.slug} title={product.title} accent={accent} />
           </div>
         </Container>
       </section>

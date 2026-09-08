@@ -8,9 +8,26 @@ import type { ShopProduct } from "@/shop/definition";
 import { shopRegistry } from "@/shop/registry";
 import { ensureShopRegistered } from "@/shop/ensureRegistered";
 import { LIFE_AREAS } from "@/content/areas";
-import ShopCardMockup from "./ShopCardMockup";
 import ShopGrid, { type ShopFilterArea, type ShopGridEntry } from "./ShopGrid";
-import { screensFor } from "./productScreens";
+
+/**
+ * Slugs with a generated store cover in public/store. Listed rather than
+ * probed, because a missing file would otherwise render as a broken image
+ * on the Shop's front page with nothing to catch it. A Shop fixture, or a
+ * product added before its images are generated, falls through to the
+ * honest placeholder instead.
+ */
+const STORE_COVERS = new Set([
+  "personal-finance-companion",
+  "home-management-companion",
+  "alongside",
+  "homeschooling-companion",
+  "personal-life-affairs-companion",
+  "travel-companion",
+  "vehicle-maintenance-companion",
+  "family-health-binder",
+  "monthly-money-reset",
+]);
 
 export const metadata: Metadata = {
   title: "Shop",
@@ -21,15 +38,30 @@ export const metadata: Metadata = {
 export const dynamic = "force-dynamic";
 
 /**
- * A card's thumbnail: the product's own three real screens, cycled on
- * hover (see ShopCardMockup and productScreens.tsx). A product without
- * screens falls back to its own listing media, then to an honest
+ * A card's thumbnail: the product's own store cover, the same image its
+ * detail page opens with, so the grid and the page a click lands on show
+ * the same thing. Each cover is that product's accent, which is what
+ * makes the grid readable as a set of nine distinct products rather than
+ * nine near-identical phone mockups.
+ *
+ * The mockup-cycling card it replaced still exists and is still used by
+ * the Library (see ShopCardMockup and productScreens.tsx), where an owner
+ * benefits from seeing real screens rather than a cover.
+ *
+ * A listing with no cover falls back to its own media, then to an honest
  * placeholder, never a fabricated image.
  */
-function renderThumbnail(product: { slug: string; media: { src: string; alt: string }[] }) {
-  const screens = screensFor(product.slug);
-  if (screens) {
-    return <ShopCardMockup screens={screens} />;
+function renderThumbnail(product: { slug: string; title: string; media: { src: string; alt: string }[] }) {
+  if (STORE_COVERS.has(product.slug)) {
+    return (
+      <Image
+        src={`/store/${product.slug}-1-cover.webp`}
+        alt={product.title}
+        fill
+        className="object-cover"
+        sizes="(max-width: 640px) 100vw, 33vw"
+      />
+    );
   }
   const media = product.media[0];
   if (media) {
