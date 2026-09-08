@@ -91,8 +91,13 @@ export const vehicleMaintenanceCompanionShopProduct: ShopProductInput = {
     "Before a shop visit, generate a Service Boundary: choose what you are requesting today, and everything else prints as not authorized without a further conversation.",
   ],
   access: "paid",
-  price: { amount: 18, currency: "USD" },
-  compareAtPrice: { amount: 23, currency: "USD" },
+  // Priced as a lifetime licence at a standing 50% off the list price.
+  // The list price is what the product is worth to somebody who needs it;
+  // the discount is the launch position, not a countdown. These two
+  // numbers must match the Lemon Squeezy variant exactly, or a customer
+  // reads one figure and is charged another.
+  price: { amount: 34, currency: "USD" },
+  compareAtPrice: { amount: 69, currency: "USD" },
   media: [],
   compatibility: ["Works in any modern browser", "No download required", "Works on phone, tablet, or desktop"],
   inclusions: [

@@ -126,14 +126,6 @@ describe("the Personal Life Affairs Companion listing", () => {
     expect(shopRegistry.listPublished().map((p) => p.slug)).toContain(SLUG);
   });
 
-  it("carries a real, honest launch price: $28 against a genuine $35 regular price", async () => {
-    const product = await listing();
-    expect(product?.price).toEqual({ amount: 28, currency: "USD" });
-    expect(product?.compareAtPrice).toEqual({ amount: 35, currency: "USD" });
-    expect(product!.compareAtPrice!.amount).toBeGreaterThan(product!.price!.amount);
-    expect(product?.purchaseAction).toBeUndefined();
-  });
-
   /**
    * 40% of people without a will say they do not have enough to need
    * one. Saying "estate" or "assets" confirms that belief and loses the
@@ -219,17 +211,6 @@ describe("the Homeschooling Companion listing", () => {
     expect(product?.publicationStatus).toBe("published");
     expect(product?.devFixture).toBe(false);
     expect(product?.access).toBe("paid");
-  });
-
-  it("carries a real, honest launch price: $18 against a genuine $23 regular price", async () => {
-    const product = await listing();
-    expect(product?.price).toEqual({ amount: 18, currency: "USD" });
-    expect(product?.compareAtPrice).toEqual({ amount: 23, currency: "USD" });
-    // The schema itself refuses a compareAtPrice that isn't a real
-    // discount; this just confirms this specific listing lands on the
-    // right side of that math, not just any side of it.
-    expect(product!.compareAtPrice!.amount).toBeGreaterThan(product!.price!.amount);
-    expect(product?.purchaseAction).toBeUndefined();
   });
 
   /**
@@ -331,14 +312,6 @@ describe("the Home Base listing", () => {
     expect(product?.access).toBe("paid");
   });
 
-  it("carries a real, honest launch price: $28 against a genuine $35 regular price", async () => {
-    const product = await listing();
-    expect(product?.price).toEqual({ amount: 28, currency: "USD" });
-    expect(product?.compareAtPrice).toEqual({ amount: 35, currency: "USD" });
-    expect(product!.compareAtPrice!.amount).toBeGreaterThan(product!.price!.amount);
-    expect(product?.purchaseAction).toBeUndefined();
-  });
-
   /** "Overdue" is a marketing-principle-level ban for this specific
    * product (docs/NORTH-STAR-PFC-HMC.md): a home that hasn't had its
    * filter changed is not failing at anything. The listing already uses
@@ -392,14 +365,6 @@ describe("the Personal Finance Companion listing", () => {
     expect(product?.access).toBe("paid");
   });
 
-  it("carries a real, honest launch price: $28 against a genuine $35 regular price", async () => {
-    const product = await listing();
-    expect(product?.price).toEqual({ amount: 28, currency: "USD" });
-    expect(product?.compareAtPrice).toEqual({ amount: 35, currency: "USD" });
-    expect(product!.compareAtPrice!.amount).toBeGreaterThan(product!.price!.amount);
-    expect(product?.purchaseAction).toBeUndefined();
-  });
-
   // Asserts the claim, not one sentence of it. The original version
   // pinned two exact phrasings, so collapsing the duplicate faqs field
   // into `questions` broke it even though the listing still said the
@@ -451,14 +416,6 @@ describe("the Travel Companion listing", () => {
     expect(product?.publicationStatus).toBe("published");
     expect(product?.devFixture).toBe(false);
     expect(product?.access).toBe("paid");
-  });
-
-  it("carries a real, honest launch price: $18 against a genuine $23 regular price", async () => {
-    const product = await listing();
-    expect(product?.price).toEqual({ amount: 18, currency: "USD" });
-    expect(product?.compareAtPrice).toEqual({ amount: 23, currency: "USD" });
-    expect(product!.compareAtPrice!.amount).toBeGreaterThan(product!.price!.amount);
-    expect(product?.purchaseAction).toBeUndefined();
   });
 
   /**
@@ -542,14 +499,6 @@ describe("the Alongside listing", () => {
     const { registerRealShopProducts } = await import("./index");
     registerRealShopProducts();
     expect(shopRegistry.listPublished().map((p) => p.slug)).toContain(SLUG);
-  });
-
-  it("carries a real, honest launch price: $28 against a genuine $35 regular price", async () => {
-    const product = await listing();
-    expect(product?.price).toEqual({ amount: 28, currency: "USD" });
-    expect(product?.compareAtPrice).toEqual({ amount: 35, currency: "USD" });
-    expect(product!.compareAtPrice!.amount).toBeGreaterThan(product!.price!.amount);
-    expect(product?.purchaseAction).toBeUndefined();
   });
 
   /**
@@ -687,6 +636,60 @@ describe("the Alongside listing", () => {
     registerRealShopProducts();
     for (const slug of shopRegistry.getBySlug(SLUG)?.relatedProductSlugs ?? []) {
       expect(shopRegistry.getBySlug(slug), slug).toBeDefined();
+    }
+  });
+});
+
+/**
+ * Pricing, asserted once for every paid listing rather than six times in
+ * six near-identical blocks. Each price move used to mean editing all of
+ * them, which is how a test suite starts describing last quarter.
+ *
+ * THE FIGURE THAT MATTERS MOST IS NOT HERE. These numbers must equal what
+ * the matching Lemon Squeezy variant actually charges, and nothing in this
+ * repository can check that: the site says one thing and the checkout does
+ * another, with the customer finding out at the card form. Whoever changes
+ * a price here changes it in Lemon Squeezy in the same sitting.
+ */
+describe("paid listings are priced consistently", () => {
+  /** The intended figures, in one place. Two tiers, both at 50% off list. */
+  const EXPECTED: Record<string, { price: number; compareAt: number }> = {
+    "personal-finance-companion": { price: 49, compareAt: 99 },
+    "home-management-companion": { price: 49, compareAt: 99 },
+    "personal-life-affairs-companion": { price: 49, compareAt: 99 },
+    alongside: { price: 49, compareAt: 99 },
+    "homeschooling-companion": { price: 34, compareAt: 69 },
+    "travel-companion": { price: 34, compareAt: 69 },
+    "vehicle-maintenance-companion": { price: 34, compareAt: 69 },
+    "family-health-binder": { price: 34, compareAt: 69 },
+  };
+
+  async function paidListings() {
+    const { registerRealShopProducts, shopRegistry } = await loadFreshRegisterModule();
+    registerRealShopProducts();
+    return shopRegistry.listPublishedPaid();
+  }
+
+  it("prices every paid listing exactly as intended, and leaves none unpriced", async () => {
+    const paid = await paidListings();
+    expect(paid.length).toBe(Object.keys(EXPECTED).length);
+
+    for (const product of paid) {
+      const expected = EXPECTED[product.slug];
+      expect(expected, `${product.slug} is paid and published but has no intended price recorded here`).toBeDefined();
+      expect(product.price, `${product.slug} price`).toEqual({ amount: expected.price, currency: "USD" });
+      expect(product.compareAtPrice, `${product.slug} compare-at`).toEqual({
+        amount: expected.compareAt,
+        currency: "USD",
+      });
+    }
+  });
+
+  it("never shows a discount that is not one", async () => {
+    for (const product of await paidListings()) {
+      expect(product.compareAtPrice!.amount, `${product.slug}`).toBeGreaterThan(product.price!.amount);
+      expect(product.price!.amount, `${product.slug}`).toBeGreaterThan(0);
+      expect(product.purchaseAction, `${product.slug} overrides checkout with a static href`).toBeUndefined();
     }
   });
 });

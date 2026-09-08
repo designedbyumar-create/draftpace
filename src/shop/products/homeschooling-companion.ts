@@ -102,8 +102,13 @@ export const homeschoolingCompanionShopProduct: ShopProductInput = {
   // down by 10 points) for the $18 this actually charges today. See
   // src/shop/definition.ts for the invariant that keeps compareAtPrice
   // honest: it is refused unless it is genuinely higher than price.
-  price: { amount: 18, currency: "USD" },
-  compareAtPrice: { amount: 23, currency: "USD" },
+  // Priced as a lifetime licence at a standing 50% off the list price.
+  // The list price is what the product is worth to somebody who needs it;
+  // the discount is the launch position, not a countdown. These two
+  // numbers must match the Lemon Squeezy variant exactly, or a customer
+  // reads one figure and is charged another.
+  price: { amount: 34, currency: "USD" },
+  compareAtPrice: { amount: 69, currency: "USD" },
   media: [],
   compatibility: ["Works in any modern browser", "No download required", "Works on phone, tablet, or desktop"],
   inclusions: [

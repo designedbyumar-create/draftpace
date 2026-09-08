@@ -92,8 +92,13 @@ export const homeManagementCompanionShopProduct: ShopProductInput = {
   // Launch pricing, Phase 2 of the pricing plan: $29 actual, marked up
   // 20% to a $35 regular price, then a net 20% off (30% off, netted
   // down by 10 points) for the $28 this actually charges today.
-  price: { amount: 28, currency: "USD" },
-  compareAtPrice: { amount: 35, currency: "USD" },
+  // Priced as a lifetime licence at a standing 50% off the list price.
+  // The list price is what the product is worth to somebody who needs it;
+  // the discount is the launch position, not a countdown. These two
+  // numbers must match the Lemon Squeezy variant exactly, or a customer
+  // reads one figure and is charged another.
+  price: { amount: 49, currency: "USD" },
+  compareAtPrice: { amount: 99, currency: "USD" },
   media: [],
   compatibility: ["Works in any modern browser", "No download required", "Works on phone, tablet, or desktop"],
   inclusions: [

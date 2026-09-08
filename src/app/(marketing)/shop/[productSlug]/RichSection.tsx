@@ -19,11 +19,19 @@ import { EASE_OUT, useCombinedReducedMotion } from "@/components/onboarding/moti
  */
 export default function RichSection({
   eyebrow,
+  title,
   children,
   visual,
   reverse = false,
 }: {
   eyebrow: string;
+  /**
+   * The section's real heading. The eyebrow above it is a label, not a
+   * title, and a page made only of small uppercase labels gives a reader
+   * nothing to scan by. Optional, so a section that is genuinely just a
+   * labelled list (Related) still renders as it did.
+   */
+  title?: string;
   children: React.ReactNode;
   visual?: React.ReactNode;
   reverse?: boolean;
@@ -45,17 +53,27 @@ export default function RichSection({
         >
           <div className={reverse ? "sm:order-2" : ""}>
             <SectionHeading>{eyebrow}</SectionHeading>
+            {title && <SectionTitle>{title}</SectionTitle>}
             <div className="mt-4 text-[16px] leading-relaxed text-[var(--text)]">{children}</div>
           </div>
           <div className={reverse ? "sm:order-1" : ""}>{visual}</div>
         </div>
       ) : (
-        <div className="mx-auto max-w-2xl">
+        <div>
           <SectionHeading>{eyebrow}</SectionHeading>
-          <div className="mt-4 text-[15px] leading-relaxed text-[var(--text)]">{children}</div>
+          {title && <SectionTitle>{title}</SectionTitle>}
+          <div className="mt-5 text-[15px] leading-relaxed text-[var(--text)]">{children}</div>
         </div>
       )}
     </motion.section>
+  );
+}
+
+function SectionTitle({ children }: { children: React.ReactNode }) {
+  return (
+    <h3 className="mt-2 font-serif text-[27px] leading-[1.15] tracking-[-0.015em] text-[var(--text)] sm:text-[30px]">
+      {children}
+    </h3>
   );
 }
 

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { notFound, permanentRedirect } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
 import Container from "@/design-system/Container";
 import Badge from "@/design-system/Badge";
 import Button from "@/design-system/Button";
@@ -13,51 +12,10 @@ import { ensureShopRegistered } from "@/shop/ensureRegistered";
 import RichSection from "./RichSection";
 import ProblemCards from "./ProblemCards";
 import AddToLibraryButton from "../AddToLibraryButton";
-import {
-  OverviewScreenMockup as MmrOverviewScreenMockup,
-  AddInfoScreenMockup as MmrAddInfoScreenMockup,
-  BreakdownScreenMockup as MmrBreakdownScreenMockup,
-} from "./monthlyMoneyResetVisuals";
-import {
-  OverviewScreenMockup as PfcOverviewScreenMockup,
-  GuidedCompanionScreenMockup as PfcGuidedCompanionScreenMockup,
-  AttentionScreenMockup as PfcAttentionScreenMockup,
-} from "./personalFinanceCompanionVisuals";
-import {
-  OverviewScreenMockup as HmcOverviewScreenMockup,
-  ActionRecordScreenMockup as HmcActionRecordScreenMockup,
-  SetupScreenMockup as HmcSetupScreenMockup,
-} from "./homeManagementCompanionVisuals";
-import {
-  OverviewScreenMockup as PlaOverviewScreenMockup,
-  CompanionScreenMockup as PlaCompanionScreenMockup,
-  BookScreenMockup as PlaBookScreenMockup,
-} from "./personalLifeAffairsCompanionVisuals";
-import {
-  OverviewScreenMockup as HscOverviewScreenMockup,
-  CheckScreenMockup as HscCheckScreenMockup,
-  BookScreenMockup as HscBookScreenMockup,
-} from "./homeschoolingCompanionVisuals";
-import {
-  OverviewScreenMockup as AlongsideOverviewScreenMockup,
-  CompanionScreenMockup as AlongsideCompanionScreenMockup,
-  LifeScreenMockup as AlongsideLifeScreenMockup,
-} from "./adhdLifeCompanionVisuals";
-import {
-  OverviewScreenMockup as TravelOverviewScreenMockup,
-  ChangeImpactScreenMockup as TravelChangeImpactScreenMockup,
-  TripBriefScreenMockup as TravelTripBriefScreenMockup,
-} from "./travelCompanionVisuals";
-import {
-  OverviewScreenMockup as VmcOverviewScreenMockup,
-  ServiceBoundaryScreenMockup as VmcServiceBoundaryScreenMockup,
-  AddItemScreenMockup as VmcAddItemScreenMockup,
-} from "./vehicleMaintenanceCompanionVisuals";
-import {
-  OverviewScreenMockup as FhbOverviewScreenMockup,
-  SymptomFormScreenMockup as FhbSymptomFormScreenMockup,
-  IntakeSummaryScreenMockup as FhbIntakeSummaryScreenMockup,
-} from "./familyHealthBinderVisuals";
+import ProductGallery from "./ProductGallery";
+import { productRegistry } from "@/product-framework/registry";
+import { ensureProductsRegistered } from "@/products/manifest";
+import { productThemeStyle, PRODUCT_THEME_ATTRIBUTE } from "@/product-framework/themeExtension";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { getLemonSqueezyCheckoutUrl, hasLemonSqueezyCheckout } from "@/shop/lemonSqueezyCheckout";
 import CheckoutButton from "@/components/shop/CheckoutButton";
@@ -98,6 +56,7 @@ export default async function ShopProductPage({
   params: Promise<{ productSlug: string }>;
 }) {
   ensureShopRegistered();
+  ensureProductsRegistered();
   const { productSlug } = await params;
   const product = shopRegistry.getBySlug(productSlug);
   if (!product) notFound();
@@ -115,318 +74,310 @@ export default async function ShopProductPage({
   const compareAtLabel = formatCompareAtPrice(product);
   const savingsPercent = discountPercent(product);
   const structuredData = buildStructuredData(product);
-  // Bespoke mobile mockups exist for these two real products today (see
-  // each visuals file's own doc comment for why real screenshots aren't
-  // used); any other product falls back to HeroVisual/plain text sections
-  // until it has its own.
-  const isMonthlyMoneyReset = product.slug === "monthly-money-reset";
-  const isPersonalFinanceCompanion = product.slug === "personal-finance-companion";
-  const isHomeManagementCompanion = product.slug === "home-management-companion";
-  const isPersonalLifeAffairsCompanion = product.slug === "personal-life-affairs-companion";
-  const isHomeschoolingCompanion = product.slug === "homeschooling-companion";
-  const isAlongside = product.slug === "alongside";
-  const isTravelCompanion = product.slug === "travel-companion";
-  const isVehicleMaintenanceCompanion = product.slug === "vehicle-maintenance-companion";
-  const isFamilyHealthBinder = product.slug === "family-health-binder";
   const decidingQuestions = questionsForStage(product, "deciding");
 
+  /**
+   * The product's own accent and installed name, read from its definition
+   * rather than repeated here. A listing with no matching product (a Shop
+   * fixture) falls back to the platform accent and its own title.
+   */
+  const definition = productRegistry.getBySlug(product.slug);
+  const accent = definition?.theme?.accentScale?.base ?? "var(--primary)";
+  const installedName = definition?.pwa?.shortName ?? product.title;
+  const installable = Boolean(definition?.pwa);
+
   // Resolved once per request, server-side, so every GetAction on this page
-  // (hero, mid-page, final CTA) agrees on the exact same checkout link
-  // rather than each independently re-deriving it.
+  // agrees on the exact same checkout link rather than each independently
+  // re-deriving it.
   const checkout = await resolveCheckout(product);
 
   return (
-    <>
+    /*
+      The page wears the product's own accent, so the buy button, the
+      discount badge and every link agree rather than pairing a petrol
+      price with a teal button. productThemeStyle is the only sanctioned
+      way to do this: it emits --product-*-light and --product-*-dark as a
+      pair and lets the stylesheet choose, because an inline style cannot
+      answer a media query (CLAUDE.md rule 11).
+    */
+    <div {...{ [PRODUCT_THEME_ATTRIBUTE]: "" }} style={definition ? productThemeStyle(definition.theme) : undefined}>
       {structuredData && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       )}
 
-      {/* Movement 1: outcome hero with a real visual, given room to breathe */}
-      <div className="relative overflow-hidden border-b border-[var(--border)] bg-[var(--surface)]">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -top-40 right-[-10%] h-[520px] w-[520px] rounded-full bg-[var(--primary)] opacity-[0.07] blur-[110px]"
-        />
-        <Container width="wide" className="relative pb-16 pt-14 sm:pb-20 sm:pt-16">
-          {product.devFixture && (
-            <div className="mb-6 rounded-lg bg-[var(--surface-muted)] px-4 py-2.5 text-[12px] font-semibold text-[var(--muted)]">
-              Internal Shop preview. This listing does not describe a real product.
-            </div>
-          )}
-          <section className="grid gap-10 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] sm:items-center sm:gap-8 lg:gap-14">
-            <div>
-              <div className="flex flex-wrap items-center gap-2">
-                {/* Always "Paid": a free listing never reaches this
-                    render, because the redirect above sends it to /free.
-                    TypeScript proves it, narrowing access to "paid"
-                    here, which is why the old free/paid ternary is gone
-                    rather than kept "just in case". */}
-                <Badge tone="primary">Paid</Badge>
-                {/* Only ever appears once a listing genuinely has launch
-                    pricing set; every real product has none yet, so this
-                    row renders exactly as it always has until its own
-                    phase sets a compareAtPrice. */}
-                {compareAtLabel && (
-                  <span className="inline-flex items-center gap-1.5 text-[13px]">
-                    <span className="text-[var(--faint)] line-through">{compareAtLabel}</span>
-                    <span className="font-semibold text-[var(--text)]">{priceLabel}</span>
-                    {savingsPercent !== null && savingsPercent > 0 && (
-                      <Badge tone="success">Save {savingsPercent}%</Badge>
-                    )}
-                  </span>
-                )}
-                {product.availability === "coming-soon" && <Badge tone="neutral">Coming soon</Badge>}
-              </div>
-              <h1 className="mt-4 font-serif text-[38px] font-semibold leading-[1.05] tracking-tight sm:text-[52px]">
-                {product.title}
-              </h1>
-              <p className="mt-5 max-w-[34rem] text-[17px] leading-relaxed text-[var(--muted)] sm:text-[18px]">
-                {product.promise}
-              </p>
-              <div className="mt-8">
-                <GetAction product={product} priceLabel={priceLabel} checkout={checkout} size="lg" />
-              </div>
-              <p className="mt-4 flex items-center gap-1.5 text-[12px] text-[var(--faint)]">
-                <Lock size={12} aria-hidden />
-                Only you can see your data. It saves to your account, on every device.
-              </p>
-            </div>
-            {isMonthlyMoneyReset ? (
-              <MmrOverviewScreenMockup />
-            ) : isPersonalFinanceCompanion ? (
-              <PfcOverviewScreenMockup />
-            ) : isHomeManagementCompanion ? (
-              <HmcOverviewScreenMockup />
-            ) : isPersonalLifeAffairsCompanion ? (
-              <PlaOverviewScreenMockup />
-            ) : isHomeschoolingCompanion ? (
-              <HscOverviewScreenMockup />
-            ) : isAlongside ? (
-              <AlongsideOverviewScreenMockup />
-            ) : isTravelCompanion ? (
-              <TravelOverviewScreenMockup />
-            ) : isVehicleMaintenanceCompanion ? (
-              <VmcOverviewScreenMockup />
-            ) : isFamilyHealthBinder ? (
-              <FhbOverviewScreenMockup />
-            ) : (
-              <HeroVisual product={product} />
-            )}
-          </section>
-        </Container>
-      </div>
-
-      <Container width="standard" className="pb-28 pt-14 sm:pt-16">
-      {/* Movement 2: the problem, named and solved, one card at a time */}
-      {product.problemsSolved.length > 0 ? (
-        <RichSection
-          eyebrow="What this solves"
-          visual={
-            isMonthlyMoneyReset ? (
-              <MmrBreakdownScreenMockup />
-            ) : isPersonalFinanceCompanion ? (
-              <PfcAttentionScreenMockup />
-            ) : isHomeManagementCompanion ? (
-              <HmcActionRecordScreenMockup />
-            ) : isPersonalLifeAffairsCompanion ? (
-              <PlaBookScreenMockup />
-            ) : isHomeschoolingCompanion ? (
-              <HscCheckScreenMockup />
-            ) : isAlongside ? (
-              <AlongsideLifeScreenMockup />
-            ) : isTravelCompanion ? (
-              <TravelChangeImpactScreenMockup />
-            ) : isVehicleMaintenanceCompanion ? (
-              <VmcServiceBoundaryScreenMockup />
-            ) : isFamilyHealthBinder ? (
-              <FhbSymptomFormScreenMockup />
-            ) : undefined
-          }
-        >
-          <p className="mb-5 text-[var(--muted)]">{product.problem}</p>
-          <ProblemCards items={product.problemsSolved} />
-        </RichSection>
-      ) : (
-        <>
-          {/* No problemsSolved authored yet for this listing: falls back to
-              the original flat lists rather than an empty section. */}
-          {product.audience.length > 0 && (
-            <RichSection eyebrow="Who this is for">
-              <ul className="flex flex-col gap-2.5">
-                {product.audience.map((line) => (
-                  <li key={line} className="flex items-start gap-2.5">
-                    <Check size={17} className="mt-0.5 shrink-0 text-[var(--success)]" aria-hidden />
-                    {line}
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-4 text-[var(--muted)]">{product.problem}</p>
-            </RichSection>
-          )}
-          {product.outcomes.length > 0 && (
-            <RichSection eyebrow="What becomes easier">
-              <ul className="flex flex-col gap-3">
-                {product.outcomes.map((line) => (
-                  <li key={line}>{line}</li>
-                ))}
-              </ul>
-            </RichSection>
-          )}
-        </>
-      )}
-
-      {/* Movement 4: how it works */}
-      {product.howItWorks.length > 0 && (
-        <RichSection
-          eyebrow="How it works"
-          visual={
-            isMonthlyMoneyReset ? (
-              <MmrAddInfoScreenMockup />
-            ) : isPersonalFinanceCompanion ? (
-              <PfcGuidedCompanionScreenMockup />
-            ) : isHomeManagementCompanion ? (
-              <HmcSetupScreenMockup />
-            ) : isPersonalLifeAffairsCompanion ? (
-              <PlaCompanionScreenMockup />
-            ) : isHomeschoolingCompanion ? (
-              <HscBookScreenMockup />
-            ) : isAlongside ? (
-              <AlongsideCompanionScreenMockup />
-            ) : isTravelCompanion ? (
-              <TravelTripBriefScreenMockup />
-            ) : isVehicleMaintenanceCompanion ? (
-              <VmcAddItemScreenMockup />
-            ) : isFamilyHealthBinder ? (
-              <FhbIntakeSummaryScreenMockup />
-            ) : undefined
-          }
-          reverse
-        >
-          <ol className="flex flex-col gap-3.5">
-            {product.howItWorks.map((step, index) => (
-              <li key={step} className="flex items-start gap-3">
-                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--surface-muted)] text-[12px] font-bold text-[var(--muted)]">
-                  {index + 1}
-                </span>
-                {step}
-              </li>
-            ))}
-          </ol>
-        </RichSection>
-      )}
-
-      {/* Movement 3: the problem in the reader's own words, before ours */}
-      {product.searchedProblems.length > 0 && (
-        <RichSection eyebrow="Which of these is you?">
-          <SearchedProblems items={product.searchedProblems} />
-        </RichSection>
-      )}
-
-      {/* Movement 6: what's included, honest limits, privacy */}
-      <RichSection eyebrow="What's included">
-        <ul className="flex flex-col gap-2.5">
-          {product.inclusions.map((line) => (
-            <li key={line} className="flex items-start gap-2.5">
-              <Check size={17} className="mt-0.5 shrink-0 text-[var(--success)]" aria-hidden />
-              {line}
-            </li>
-          ))}
-        </ul>
-        {product.compatibility.length > 0 && (
-          <p className="mt-3 text-[13px] text-[var(--faint)]">{product.compatibility.join(" · ")}</p>
+      <Container width="wide" className="pb-24 pt-10 sm:pt-12">
+        {product.devFixture && (
+          <div className="mb-6 rounded-lg bg-[var(--surface-muted)] px-4 py-2.5 text-[12px] font-semibold text-[var(--muted)]">
+            Internal Shop preview. This listing does not describe a real product.
+          </div>
         )}
-      </RichSection>
 
-      {product.audienceExclusions.length > 0 && (
-        <RichSection eyebrow="Maybe not for you if">
-          <ul className="flex flex-col gap-2.5">
-            {product.audienceExclusions.map((line) => (
-              <li key={line} className="flex items-start gap-2.5 text-[var(--muted)]">
-                <X size={17} className="mt-0.5 shrink-0 text-[var(--faint)]" aria-hidden />
-                {line}
-              </li>
-            ))}
-          </ul>
-        </RichSection>
-      )}
+        {/*
+          The decision, and nothing else, above the fold: what it looks
+          like, what it costs, and the button. Everything that used to
+          compete for this space now has its own headed section below.
+        */}
+        <section className="grid items-stretch gap-10 lg:grid-cols-[1.05fr_1fr] lg:gap-14">
+          <ProductGallery slug={product.slug} title={product.title} accent={accent} />
 
-      {product.privacyNotes && (
-        <RichSection eyebrow="Privacy and data">
-          <p className="text-[var(--muted)]">{product.privacyNotes}</p>
-        </RichSection>
-      )}
+          <div className="flex flex-col justify-center">
+            <div className="flex flex-wrap items-center gap-2">
+              {/* Always "Paid": a free listing never reaches this render,
+                  because the redirect above sends it to /free. */}
+              <Badge tone="primary">Paid</Badge>
+              {product.availability === "coming-soon" && <Badge tone="neutral">Coming soon</Badge>}
+            </div>
 
-      {/* Price and get, repeated near the decision */}
-      <section className="mt-12 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-7 shadow-[shadow:var(--shadow-soft)] sm:p-8">
-        <div className="flex flex-wrap items-center justify-between gap-5">
-          <div>
-            <p className="text-[11px] font-bold uppercase tracking-wide text-[var(--faint)]">Price</p>
-            <div className="mt-1 flex flex-wrap items-baseline gap-2.5">
+            <h1 className="mt-4 font-serif text-[36px] font-semibold leading-[1.06] tracking-tight sm:text-[44px]">
+              {product.title}
+            </h1>
+            <p className="mt-4 text-[16.5px] leading-relaxed text-[var(--muted)]">{product.promise}</p>
+
+            <div className="mt-7 flex flex-wrap items-baseline gap-3">
+              <span className="font-serif text-[44px] font-semibold leading-none tracking-tight text-[var(--text)]">
+                {priceLabel}
+              </span>
               {compareAtLabel && (
                 <span className="font-serif text-[20px] text-[var(--faint)] line-through">{compareAtLabel}</span>
               )}
-              <p className="font-serif text-[32px] font-semibold leading-none tracking-tight text-[var(--text)]">
-                {priceLabel}
-              </p>
               {savingsPercent !== null && savingsPercent > 0 && (
-                <Badge tone="success">Save {savingsPercent}%</Badge>
+                <span
+                  className="rounded-full px-3 py-1 text-[12.5px] font-bold text-white"
+                  style={{ backgroundColor: accent }}
+                >
+                  {savingsPercent}% off
+                </span>
               )}
             </div>
-            {product.access === "paid" && (
-              <p className="mt-1.5 text-[12px] text-[var(--muted)]">
-                One-time. Yours to keep.
-                {compareAtLabel && " This is launch pricing, not a coupon: the regular price is what it moves to next."}
-              </p>
-            )}
-          </div>
-          <GetAction product={product} priceLabel={priceLabel} checkout={checkout} size="lg" />
-        </div>
-      </section>
+            <p className="mt-2 text-[14px] font-semibold" style={{ color: accent }}>
+              One payment. Yours for life.
+            </p>
 
-      {/* Questions, asked once. A migrated listing answers each worry a
-          single time and says which moment it belongs to; the rest still
-          get their objections and faqs concatenated here, which is what
-          this page rendered as two near-duplicate sections before. */}
-      {decidingQuestions.length > 0 && (
-        <RichSection eyebrow="Honest answers before you decide">
-          <div className="flex flex-col divide-y divide-[var(--border)]">
-            {decidingQuestions.map((faq) => (
-              <details key={faq.question} className="group py-3 first:pt-0">
-                <summary className="cursor-pointer text-[15px] font-semibold text-[var(--text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]">
-                  {faq.question}
-                </summary>
-                <p className="mt-2 leading-relaxed text-[var(--muted)]">{faq.answer}</p>
-              </details>
+            <div className="mt-6">
+              <GetAction product={product} checkout={checkout} size="lg" fullWidth />
+            </div>
+            <p className="mt-3 flex items-center gap-1.5 text-[12.5px] text-[var(--faint)]">
+              <Lock size={12} aria-hidden />
+              Only you can see your data. It saves to your account, on every device.
+            </p>
+          </div>
+        </section>
+      </Container>
+
+      <Container width="standard" className="pb-28">
+        {/* What it includes, first: the reader has just decided to keep
+            reading, and this is the question they are actually holding. */}
+        <RichSection eyebrow="Included" title="What it includes">
+          <div className="grid gap-x-10 gap-y-4 sm:grid-cols-2">
+            {product.inclusions.map((line) => (
+              <div key={line} className="flex items-start gap-2.5 border-b border-[var(--border)] pb-4">
+                <Check size={16} className="mt-1 shrink-0" style={{ color: accent }} aria-hidden />
+                <span className="text-[14.5px] leading-relaxed">{line}</span>
+              </div>
             ))}
           </div>
+          {product.compatibility.length > 0 && (
+            <p className="mt-5 text-[13px] text-[var(--faint)]">{product.compatibility.join(" · ")}</p>
+          )}
         </RichSection>
-      )}
 
-      {/* Related */}
-      {product.relatedProductSlugs.length > 0 && (
-        <RichSection eyebrow="Related">
-          <ul className="flex flex-col gap-1.5">
-            {product.relatedProductSlugs.map((slug) => {
-              const related = shopRegistry.getBySlug(slug);
-              if (!related) return null;
-              return (
-                <li key={slug}>
-                  <Link href={`/shop/${slug}`} className="font-semibold text-[var(--primary)] hover:underline">
-                    {related.title}
-                  </Link>
+        {product.problemsSolved.length > 0 ? (
+          <RichSection eyebrow="The problem" title="What this solves">
+            <p className="mb-5 text-[var(--muted)]">{product.problem}</p>
+            <ProblemCards items={product.problemsSolved} />
+          </RichSection>
+        ) : (
+          <>
+            {product.audience.length > 0 && (
+              <RichSection eyebrow="Who this is for">
+                <ul className="flex flex-col gap-2.5">
+                  {product.audience.map((line) => (
+                    <li key={line} className="flex items-start gap-2.5">
+                      <Check size={17} className="mt-0.5 shrink-0 text-[var(--success)]" aria-hidden />
+                      {line}
+                    </li>
+                  ))}
+                </ul>
+              </RichSection>
+            )}
+          </>
+        )}
+
+        {product.howItWorks.length > 0 && (
+          <RichSection eyebrow="In use" title="How it works">
+            <ol className="grid gap-x-8 gap-y-5 sm:grid-cols-2">
+              {product.howItWorks.map((step, index) => (
+                <li key={step} className="flex items-start gap-3">
+                  <span
+                    className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[12px] font-bold text-white"
+                    style={{ backgroundColor: accent }}
+                  >
+                    {index + 1}
+                  </span>
+                  <span className="text-[14.5px] leading-relaxed text-[var(--muted)]">{step}</span>
                 </li>
-              );
-            })}
-          </ul>
-        </RichSection>
-      )}
+              ))}
+            </ol>
+          </RichSection>
+        )}
 
-      {/* Final CTA */}
-      <section className="mt-14 border-t border-[var(--border)] pt-10 text-center">
-        <GetAction product={product} priceLabel={priceLabel} checkout={checkout} size="lg" center />
-      </section>
+        {product.searchedProblems.length > 0 && (
+          <RichSection eyebrow="In your words" title="Which of these is you?">
+            <SearchedProblems items={product.searchedProblems} />
+          </RichSection>
+        )}
+
+        {/*
+          How the product reaches a phone. Every claim here is true of the
+          shipped PWA: each product serves its own manifest, scoped to its
+          own routes, with its own icon and name (see the product's
+          manifest.webmanifest route), and installs from inside itself.
+          Only rendered for a product that actually declares `pwa`.
+        */}
+        {installable && (
+          <RichSection eyebrow="On your devices" title="It works like an app, without an app store">
+            <p className="max-w-[42rem] leading-relaxed text-[var(--muted)]">
+              {product.title} runs in your browser, and installs to your phone from there. No App Store, no
+              Play Store, no download, and no update to remember. Add it once and it gets its own icon and
+              its own window, like any other app on your phone.
+            </p>
+            <div className="mt-7 grid gap-6 sm:grid-cols-3">
+              <div>
+                <p className="text-[13px] font-bold text-[var(--text)]">On iPhone and iPad</p>
+                <p className="mt-2 text-[14px] leading-relaxed text-[var(--muted)]">
+                  Open it in Safari, tap Share, then Add to Home Screen. It opens full screen from then on,
+                  with no browser bar.
+                </p>
+              </div>
+              <div>
+                <p className="text-[13px] font-bold text-[var(--text)]">On Android</p>
+                <p className="mt-2 text-[14px] leading-relaxed text-[var(--muted)]">
+                  Chrome offers to install it, or you can tap Install in the product&apos;s own settings. One
+                  tap and it is on your home screen.
+                </p>
+              </div>
+              <div>
+                <p className="text-[13px] font-bold text-[var(--text)]">On computers</p>
+                <p className="mt-2 text-[14px] leading-relaxed text-[var(--muted)]">
+                  It works in any modern browser as it is. Chrome and Edge will also install it as its own
+                  desktop window if you would rather it were not a tab.
+                </p>
+              </div>
+            </div>
+            <p className="mt-6 max-w-[42rem] border-t border-[var(--border)] pt-5 text-[14px] leading-relaxed text-[var(--muted)]">
+              <span className="font-semibold text-[var(--text)]">Installs as {installedName}, not as Draftpace.</span>{" "}
+              Each Companion has its own icon and its own window, so owning three of them gives you three
+              separate apps rather than one to navigate inside. Your work is tied to your account rather
+              than the device, so signing in anywhere brings all of it with you.
+            </p>
+          </RichSection>
+        )}
+
+        {product.audienceExclusions.length > 0 && (
+          <RichSection eyebrow="Honesty" title="Maybe not for you if">
+            <ul className="flex flex-col gap-2.5">
+              {product.audienceExclusions.map((line) => (
+                <li key={line} className="flex items-start gap-2.5 text-[var(--muted)]">
+                  <X size={17} className="mt-0.5 shrink-0 text-[var(--faint)]" aria-hidden />
+                  {line}
+                </li>
+              ))}
+            </ul>
+          </RichSection>
+        )}
+
+        {product.privacyNotes && (
+          <RichSection eyebrow="Your data" title="Privacy and data">
+            <p className="max-w-[42rem] leading-relaxed text-[var(--muted)]">{product.privacyNotes}</p>
+          </RichSection>
+        )}
+
+        {/*
+          Stated before the second buy button, not after it. Somebody
+          deciding whether to spend money is entitled to know the refund
+          position while they are still deciding.
+        */}
+        <RichSection eyebrow="Before you buy" title="About refunds">
+          <div className="max-w-[42rem]">
+            <p className="leading-relaxed text-[var(--text)]">
+              {product.title} is a digital product, delivered to your account the moment your payment
+              clears. Because of that we do not offer refunds once access has been granted.
+            </p>
+            <p className="mt-4 leading-relaxed text-[var(--muted)]">
+              We would rather you did not need one. Everything on this page describes what the product
+              actually does, and Monthly Money Reset is free if you would like to see how we build before
+              you spend anything.
+            </p>
+            <p className="mt-4 leading-relaxed text-[var(--muted)]">
+              If something is not working, is not what you understood it to be, or you were charged in
+              error, please write to us. We read every message and we will put it right.
+            </p>
+            <Link
+              href="/support"
+              className="mt-5 inline-flex items-center gap-1.5 text-[14px] font-semibold hover:underline"
+              style={{ color: accent }}
+            >
+              Contact support <ArrowRight size={14} aria-hidden />
+            </Link>
+          </div>
+        </RichSection>
+
+        {decidingQuestions.length > 0 && (
+          <RichSection eyebrow="Straight answers" title="Honest answers before you decide">
+            <div className="flex flex-col divide-y divide-[var(--border)]">
+              {decidingQuestions.map((faq) => (
+                <details key={faq.question} className="group py-3 first:pt-0">
+                  <summary className="cursor-pointer text-[15px] font-semibold text-[var(--text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]">
+                    {faq.question}
+                  </summary>
+                  <p className="mt-2 leading-relaxed text-[var(--muted)]">{faq.answer}</p>
+                </details>
+              ))}
+            </div>
+          </RichSection>
+        )}
+
+        {product.relatedProductSlugs.length > 0 && (
+          <RichSection eyebrow="Related">
+            <ul className="flex flex-col gap-1.5">
+              {product.relatedProductSlugs.map((slug) => {
+                const related = shopRegistry.getBySlug(slug);
+                if (!related) return null;
+                return (
+                  <li key={slug}>
+                    <Link href={`/shop/${slug}`} className="font-semibold text-[var(--primary)] hover:underline">
+                      {related.title}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </RichSection>
+        )}
+
+        {/* Final CTA */}
+        <section
+          className="mt-16 rounded-3xl px-8 py-14 text-center"
+          style={{ background: `color-mix(in srgb, ${accent} 11%, var(--surface))` }}
+        >
+          <h2 className="font-serif text-[32px] leading-[1.12] tracking-tight text-[var(--text)] sm:text-[36px]">
+            Buy it once. Keep it for good.
+          </h2>
+          <p className="mx-auto mt-4 max-w-[36rem] leading-relaxed text-[var(--muted)]">
+            No subscription, no renewal, no upsell later. One payment and {product.title} is yours, on every
+            device you sign in on.
+          </p>
+          <div className="mt-8 flex justify-center">
+            <GetAction product={product} checkout={checkout} size="lg" center />
+          </div>
+          {compareAtLabel && (
+            <p className="mt-4 text-[13px] text-[var(--faint)]">
+              {savingsPercent}% off {compareAtLabel}. Digital product, no refunds once access is granted.
+            </p>
+          )}
+        </section>
       </Container>
-    </>
+    </div>
   );
 }
 
@@ -465,16 +416,17 @@ async function resolveCheckout(product: ShopProduct): Promise<CheckoutStatus> {
  * coming-soon product shows a disabled state instead of a live action. */
 function GetAction({
   product,
-  priceLabel,
   checkout,
   size = "md",
   center = false,
+  fullWidth = false,
 }: {
   product: ShopProduct;
-  priceLabel: string;
   checkout: CheckoutStatus;
   size?: "sm" | "md" | "lg";
   center?: boolean;
+  /** Fills its column, so the buy box reads as one block rather than a button floating in it. */
+  fullWidth?: boolean;
 }) {
   if (product.availability === "coming-soon") {
     return (
@@ -488,7 +440,7 @@ function GetAction({
   }
 
   const label =
-    product.purchaseAction?.label ?? (product.access === "free" ? "Add to your library, free" : `Get it, ${priceLabel}`);
+    product.purchaseAction?.label ?? (product.access === "free" ? "Add to your library, free" : "Get Lifetime Access");
 
   // A free product's own Shop page has already made the full case for it.
   // Posting straight to the activation endpoint (the same one
@@ -507,7 +459,7 @@ function GetAction({
   // resolution, so it always wins if present.
   if (product.purchaseAction?.href) {
     return (
-      <Button href={product.purchaseAction.href} size={size} iconRight={<ArrowRight size={15} aria-hidden />}>
+      <Button href={product.purchaseAction.href} size={size} fullWidth={fullWidth} iconRight={<ArrowRight size={15} aria-hidden />}>
         {label}
       </Button>
     );
@@ -515,7 +467,7 @@ function GetAction({
 
   if (checkout.kind === "ready") {
     return (
-      <CheckoutButton href={checkout.href} size={size} iconRight={<ArrowRight size={15} aria-hidden />}>
+      <CheckoutButton href={checkout.href} size={size} fullWidth={fullWidth} iconRight={<ArrowRight size={15} aria-hidden />}>
         {label}
       </CheckoutButton>
     );
@@ -523,7 +475,7 @@ function GetAction({
 
   if (checkout.kind === "signed-out") {
     return (
-      <Button href={checkout.redirectTo} size={size} iconRight={<ArrowRight size={15} aria-hidden />}>
+      <Button href={checkout.redirectTo} size={size} fullWidth={fullWidth} iconRight={<ArrowRight size={15} aria-hidden />}>
         {label}
       </Button>
     );
@@ -547,49 +499,6 @@ function GetAction({
  * a live web product actually reaches people, rather than a bare cropped
  * image. A labeled placeholder still shows when a product has no media yet.
  */
-function HeroVisual({ product }: { product: ShopProduct }) {
-  const media = product.media[0];
-  if (media) {
-    return (
-      <div className="relative">
-        <div
-          aria-hidden
-          className="absolute inset-x-4 inset-y-6 -z-10 rounded-[28px] bg-[var(--primary)] opacity-[0.12] blur-2xl"
-        />
-        <div className="overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-[shadow:var(--shadow-md)] transition-transform duration-[var(--dur-slow)] ease-[var(--ease-out)] hover:-translate-y-0.5">
-          <div className="flex items-center gap-2 border-b border-[var(--border)] bg-[var(--surface-muted)] px-4 py-2.5">
-            <span className="h-2.5 w-2.5 rounded-full bg-[var(--border-strong)]" aria-hidden />
-            <span className="h-2.5 w-2.5 rounded-full bg-[var(--border-strong)]" aria-hidden />
-            <span className="h-2.5 w-2.5 rounded-full bg-[var(--border-strong)]" aria-hidden />
-            <div className="mx-auto flex items-center gap-1.5 rounded-md bg-[var(--surface)] px-3 py-1 text-[11px] font-medium text-[var(--faint)]">
-              <Lock size={10} aria-hidden />
-              draftpace.com
-            </div>
-          </div>
-          <div className="relative aspect-[4/3]">
-            <Image
-              src={media.src}
-              alt={media.alt}
-              fill
-              className="object-cover object-top"
-              sizes="(max-width: 640px) 100vw, 50vw"
-              priority
-            />
-          </div>
-        </div>
-      </div>
-    );
-  }
-  return (
-    <div className="flex aspect-[4/3] flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-[var(--border-strong)] bg-[var(--surface-muted)] p-6 text-center">
-      <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">Product preview</p>
-      <p className="max-w-[16rem] text-[13px] leading-5 text-[var(--muted)]">
-        A real view of {product.title} in use goes here, showing the main result the product produces.
-      </p>
-    </div>
-  );
-}
-
 function buildStructuredData(product: ShopProduct) {
   if (!(product.structuredDataEligible && product.publicationStatus === "published")) return null;
   return {

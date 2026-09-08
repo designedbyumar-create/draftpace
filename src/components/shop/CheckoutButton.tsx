@@ -39,11 +39,13 @@ export default function CheckoutButton({
   href,
   children,
   size = "md",
+  fullWidth = false,
   iconRight,
 }: {
   href: string;
   children: ReactNode;
   size?: ButtonSize;
+  fullWidth?: boolean;
   iconRight?: ReactNode;
 }) {
   return (
@@ -58,7 +60,7 @@ export default function CheckoutButton({
       />
       {/* `primary`, the marketing register, because this is the public
           Shop, not in-product UI (see CLAUDE.md's two-register rule). */}
-      <a href={href} className={`lemonsqueezy-button ${buttonClassName({ size, variant: "primary" })}`}>
+      <a href={href} className={`lemonsqueezy-button ${buttonClassName({ size, fullWidth, variant: "primary" })}`}>
         {children}
         {iconRight}
       </a>
