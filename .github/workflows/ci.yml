@@ -1,0 +1,53 @@
+# The four gates from CLAUDE.md, run automatically instead of from memory.
+#
+# They are one job on purpose. Split across four jobs each would reinstall
+# dependencies and rebuild the Next cache, which costs more wall-clock time
+# than running them in sequence, and a failure in any one of them means the
+# same thing: do not merge.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  # A newer push supersedes an older one on the same branch. Nobody needs
+  # the result of a commit that has already been replaced.
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  gates:
+    name: typecheck, lint, test, build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Typecheck
+        run: npx tsc --noEmit
+
+      - name: Lint
+        run: npx eslint .
+
+      - name: Test
+        run: npm run test
+
+      # Placeholder values only. The build must not require real secrets:
+      # anything that genuinely needs one is read at request time, and a
+      # build that fails without production credentials cannot be verified
+      # on a fork or in a pull request from outside.
+      - name: Build
+        run: npm run build
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: https://example.supabase.co
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ci-placeholder-anon-key

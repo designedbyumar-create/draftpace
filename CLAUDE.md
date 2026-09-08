@@ -130,9 +130,29 @@ npm run build
 
 ## Where things live
 
-See `docs/ROUTE-MAP.md` for routes, `docs/PRODUCT-FRAMEWORK.md` for the
-registry/contracts, `docs/PRODUCT-FAMILIES.md` for the six initial families,
-`docs/DATA-BOUNDARIES.md` for platform vs. product vs. product-instance state,
-`docs/DESIGN-SYSTEM.md` for tokens/primitives, `docs/ADMIN-AND-OPERATIONS.md`
-for the admin shell, and `docs/DECISIONS.md` for the founder decisions this
-structure is built on.
+Start with `docs/ARCHITECTURE.md`: the whole system in one read, and the
+fastest way to orient. Then `docs/DECISIONS.md` before arguing with any
+constraint here, because most were settled once already.
+
+Then, as needed: `docs/ROUTE-MAP.md` for routes, `docs/PRODUCT-FRAMEWORK.md`
+for the registry/contracts, `docs/PRODUCT-FAMILIES.md` for the six initial
+families, `docs/DATA-BOUNDARIES.md` for platform vs. product vs.
+product-instance state, `docs/DESIGN-SYSTEM.md` for tokens/primitives,
+`docs/COMMERCE.md` for the purchase flow end to end,
+`docs/ADMIN-AND-OPERATIONS.md` for the admin shell, and `docs/RUNBOOK.md`
+when something is broken in production.
+
+`docs/archive/` holds superseded planning documents. They record how
+decisions were reached and are never current guidance.
+
+## Tests are guards, not coverage
+
+The suite exists to catch what no type error and no failing build would:
+a shop claim that stopped being true, a product with a live checkout and no
+way to grant it, two products installing the same icon, a service worker
+that never registers. Every one of those was a real bug here.
+
+**A test you have never seen fail is not yet known to work.** After writing
+a guard, break the code it guards and confirm it fails with a message that
+names the actual problem. Several tests here were asserting the wrong thing
+until that step found it.
