@@ -47,7 +47,7 @@ export type ServiceBoundaryData = {
 
 /** This product's own steel accent (definition.ts's theme.accentScale), not a hardcoded placeholder. */
 const PALETTE: PrintablePalette = {
-  accent: "#565349",
+  accent: "#4d5a35",
   ink: "#211f1a",
   muted: "#6f6c62",
   line: "#e9e7e0",

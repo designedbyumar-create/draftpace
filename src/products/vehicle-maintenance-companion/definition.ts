@@ -57,7 +57,7 @@ export const vehicleMaintenanceCompanionDefinition: ProductDefinitionInput = {
     shortName: "Vehicles",
     description:
       "Vehicle Maintenance Companion by Draftpace: the intervals you actually know, kept against the vehicles you own, so you always know what's due.",
-    themeColor: "#565349",
+    themeColor: "#4d5a35",
     backgroundColor: "#fbfaf7",
     // This product's own icon, so installing two Companions does not
     // put two identical Draftpace squares on the home screen. Same
@@ -126,14 +126,29 @@ export const vehicleMaintenanceCompanionDefinition: ProductDefinitionInput = {
    * Money Reset and Personal Finance Companion both shipped in and later
    * had to correct.
    */
+  /**
+   * Olive, not the near-grey steel this shipped with.
+   *
+   * The original #565349 had a chroma of 13 when every other product sat
+   * between 31 and 137, which made it measurably the only near-grey in the
+   * set rather than a matter of taste. On a page where the accent is the
+   * buy button, a colour with almost no colour in it reads as a disabled
+   * control, which is the worst thing a call to action can look like.
+   *
+   * Olive rather than the obvious bronze: bronze landed at hue 27deg,
+   * two degrees from Travel Companion's amber, so the two products would
+   * have shared a colour. This sits at 81deg, in the widest empty gap in
+   * the palette, 57deg clear of Home Base's forest, and stays right for a
+   * product about workshops and machinery.
+   */
   theme: {
-    accent: "#565349",
+    accent: "#4d5a35",
     accentScale: {
-      base: "#565349",
-      strong: "#3d3b33",
-      soft: "#e9e7e0",
+      base: "#4d5a35",
+      strong: "#3a4427",
+      soft: "#e9ecdf",
       contrast: "#ffffff",
-      wash: "#f3f2ee",
+      wash: "#f4f6ee",
     },
     narrativeFont: "var(--font-newsreader), ui-serif, Georgia, serif",
     motionPersonality: "calm",

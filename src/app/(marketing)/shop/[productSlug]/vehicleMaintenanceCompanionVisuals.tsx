@@ -7,7 +7,7 @@
  * What is drawn maps to what ships: WorkspaceModule's dominant-action
  * hero for the single most urgent due item, the Service Boundary
  * printable's requested/not-authorized split, and the template-picker +
- * severe-duty toggle from adding a maintenance item. Steel (#565349, the
+ * severe-duty toggle from adding a maintenance item. Olive (#4d5a35, the
  * real theme.accent) reads as tools and a garage, distinct from every
  * other accent already in use on this platform.
  *
@@ -20,7 +20,7 @@ import PhoneFrame from "../PhoneFrame";
 const INK = "#211f1a";
 const MUTED = "#6f6c62";
 const FAINT = "#9a9689";
-const STEEL = "#565349";
+const STEEL = "#4d5a35";
 const PAPER = "#fbfaf7";
 const LINE = "#e9e7e0";
 

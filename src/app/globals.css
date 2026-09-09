@@ -94,8 +94,10 @@ html {
      product. Affairs is deliberately the desaturated one. The Series
      tier borrows the brand accent, because it is the whole shelf.
      Vehicles and Family health match their own product's accentScale
-     base (steel, dusty lavender-blue) rather than inventing a second,
-     unrelated hue for the same product. */
+     base (olive, dusty lavender-blue) rather than inventing a second,
+     unrelated hue for the same product. Vehicles was a near-grey steel
+     until its chroma was measured at 13 against every other product's 31
+     to 137, which made its buy button read as a disabled control. */
   --area-money: #176b51;
   --area-money-soft: #e2efe9;
   --area-home: #96591a;
@@ -108,8 +110,8 @@ html {
   --area-affairs-and-endings-soft: #e9ecef;
   --area-travel: #1f6291;
   --area-travel-soft: #e2edf5;
-  --area-vehicles: #565349;
-  --area-vehicles-soft: #eae8e0;
+  --area-vehicles: #4d5a35;
+  --area-vehicles-soft: #e9ecdf;
   --area-family-health: #424c62;
   --area-family-health-soft: #e6e9f0;
   --area-series: #0e6e75;
@@ -217,7 +219,7 @@ html[data-theme="dark"] {
   --area-affairs-and-endings-soft: rgba(154, 169, 186, 0.14);
   --area-travel: #74b3e0;
   --area-travel-soft: rgba(116, 179, 224, 0.14);
-  --area-vehicles: #a9a495;
+  --area-vehicles: #adb88f;
   --area-vehicles-soft: rgba(169, 164, 149, 0.14);
   --area-family-health: #9aa8cc;
   --area-family-health-soft: rgba(154, 168, 204, 0.14);
@@ -296,7 +298,7 @@ html[data-theme="dark"] {
     --area-affairs-and-endings-soft: rgba(154, 169, 186, 0.14);
     --area-travel: #74b3e0;
     --area-travel-soft: rgba(116, 179, 224, 0.14);
-    --area-vehicles: #a9a495;
+    --area-vehicles: #adb88f;
     --area-vehicles-soft: rgba(169, 164, 149, 0.14);
     --area-family-health: #9aa8cc;
     --area-family-health-soft: rgba(154, 168, 204, 0.14);

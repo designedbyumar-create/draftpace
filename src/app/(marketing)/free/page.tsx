@@ -6,7 +6,8 @@ import { ArrowRight, Check } from "@/design-system/Icon";
 import { shopRegistry } from "@/shop/registry";
 import { ensureShopRegistered } from "@/shop/ensureRegistered";
 import { questionsForStage } from "@/shop/definition";
-import ProductGallery from "../shop/[productSlug]/ProductGallery";
+import ProductScreenCarousel from "../shop/[productSlug]/ProductScreenCarousel";
+import { screenTourFor } from "../shop/productScreens";
 import { productRegistry } from "@/product-framework/registry";
 import { ensureProductsRegistered } from "@/products/manifest";
 
@@ -86,12 +87,17 @@ export default function FreeProductPage() {
 
   const deciding = questionsForStage(product, "deciding");
 
-  // Monthly Money Reset carries its accent as bespoke --mmr-* tokens
-  // rather than an accentScale (its own documented exception), so this
-  // falls back to the platform accent rather than reading a scale that
-  // was deliberately never declared.
+  /**
+   * Monthly Money Reset carries its accent as bespoke --mmr-* tokens
+   * rather than an accentScale (its own documented exception), so there is
+   * no scale to read. This states its forest directly, the same
+   * --mmr-forest-800 its PWA icon uses, rather than falling back to the
+   * platform teal: the free product should look like itself here, not
+   * like Draftpace generally.
+   */
   ensureProductsRegistered();
-  const accent = productRegistry.getBySlug(product.slug)?.theme?.accentScale?.base ?? "var(--primary)";
+  const accent = productRegistry.getBySlug(product.slug)?.theme?.accentScale?.base ?? "#214b3e";
+  const screenTour = screenTourFor(product.slug);
 
   return (
     <>
@@ -143,7 +149,9 @@ export default function FreeProductPage() {
                 than as a lesser thing in a different shape. It is the one
                 place the two tiers should look identical: the difference
                 between them is the price, not the seriousness. */}
-            <ProductGallery slug={product.slug} title={product.title} accent={accent} />
+            {screenTour ? (
+              <ProductScreenCarousel screens={screenTour} accent={accent} title={product.title} />
+            ) : null}
           </div>
         </Container>
       </section>
