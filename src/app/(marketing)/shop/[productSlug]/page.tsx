@@ -216,6 +216,53 @@ export default async function ShopProductPage({
               <Lock size={12} aria-hidden />
               Only you can see your data. It saves to your account, on every device.
             </p>
+
+            {/*
+              Under the button, because this is what somebody is still
+              deciding on once the price has stopped being the question.
+
+              It is also what balances the two columns. The obvious way to
+              align them was to shrink the phone until it matched this
+              side, which is what the previous design did and why its
+              screens were too small to read. The phone is the product;
+              the column beside it earns its height instead.
+
+              Every line is the listing's own expectedOutputs, the field
+              that answers "what do I actually end up with". Nothing here
+              is written for this block, so it cannot drift from what the
+              product does.
+            */}
+            {product.expectedOutputs.length > 0 && (
+              <div className="mt-8 border-t border-[var(--border)] pt-6">
+                <h2 className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--faint)]">
+                  What you end up with
+                </h2>
+                <ul className="mt-3.5 flex flex-col gap-2.5">
+                  {product.expectedOutputs.slice(0, 4).map((line) => (
+                    <li key={line} className="flex items-start gap-2.5 text-[14px] leading-relaxed text-[var(--text)]">
+                      <Check size={15} className="mt-[3px] shrink-0" style={{ color: accent }} aria-hidden />
+                      <span>{line}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* The three practical facts, which are the same for every
+                product and are asked about every time: when do I get it,
+                where does it run, and does it ever charge me again. */}
+            <dl className="mt-7 grid grid-cols-3 gap-4 border-t border-[var(--border)] pt-6">
+              {[
+                ["Delivery", "In your library the moment you pay"],
+                ["Runs on", "Any browser, or installed as its own app"],
+                ["Renews", "Never. One payment, kept for good"],
+              ].map(([term, detail]) => (
+                <div key={term}>
+                  <dt className="text-[10.5px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">{term}</dt>
+                  <dd className="mt-1.5 text-[12.5px] leading-[1.45] text-[var(--muted)]">{detail}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </section>
       </Container>
