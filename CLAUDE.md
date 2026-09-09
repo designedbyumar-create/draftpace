@@ -44,6 +44,13 @@ The platform layer beneath them, established by the Phase 1/2 reset:
 - One shared premium design system (`src/design-system/`, tokens in
   `src/app/globals.css`) covers the public site, platform, product shell,
   and auth — see `docs/DESIGN-SYSTEM.md`.
+- Commerce is live: a Lemon Squeezy overlay checkout on Draftpace's own
+  domain, with Lemon Squeezy as merchant of record, and a signed
+  `order_created` webhook that resolves the product from an explicit
+  variant map rather than from anything the payload claims. See
+  `docs/COMMERCE.md`.
+- Every product is installable on its own: its own manifest, scope, name
+  and icon, so installing from inside a product installs that product.
 - The product framework (`src/product-framework/`) and its four internal
   development fixtures are unchanged in shape from Phase 1.
 

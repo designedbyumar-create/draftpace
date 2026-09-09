@@ -30,7 +30,7 @@ blueprint — just the calls that shape the code.
   old `/store` and `/library` catalog pages, the old checkout implementation,
   and the disconnected old marketing implementation (homepage sections,
   Navbar/Footer, `/about`, `/support`, `/pricing`, `/features`) were deleted.
-  Full inventory: `MIGRATION-PLAN.md`.
+  Full inventory: `docs/archive/MIGRATION-PLAN.md`.
 - The production waitlist page, the waitlist API and its migration,
   authentication, legal pages, PWA infrastructure, the theme mechanism, and
   the Phosphor icon wrapper were preserved (the last three relocated and
@@ -52,9 +52,11 @@ blueprint — just the calls that shape the code.
   `@testing-library/jest-dom`, `zod`.
 - Approved for Phase 2: `@supabase/ssr`, added specifically to make real
   server-side session protection possible (see "Phase 2" above).
-- `stripe` and `web-push` remain not installed — the deleted checkout route
-  used raw `fetch` against Stripe's REST API, not the SDK, and commerce is
-  being rebuilt later against real entitlements, not patched.
+- `stripe` and `web-push` are still not installed, and now never will be for
+  this purpose. Commerce was rebuilt against real entitlements on Lemon
+  Squeezy (see "Commerce" below), which needs no SDK: a hosted overlay and
+  one signed webhook. The two dead Stripe placeholder routes were deleted
+  rather than left advertising a payment system that did not exist.
 
 ## Database
 
@@ -73,7 +75,7 @@ blueprint — just the calls that shape the code.
   every path returning 200 instead of redirecting. Fixed by moving it to
   `src/proxy.ts` (also renamed per Next.js 16.2.6's `middleware` →`proxy`
   convention change) and re-verified live: waitlist mode now genuinely gates
-  the site. See `MIGRATION-PLAN.md` for the full account.
+  the site. See `docs/archive/MIGRATION-PLAN.md` for the full account.
 - `terms/page.tsx` and `privacy/page.tsx` were assumed to be generic legal
   boilerplate and preserved as instructed, but actually contain specific
   claims about the abandoned planner-marketplace product (pricing, Gumroad/
@@ -115,12 +117,45 @@ blueprint — just the calls that shape the code.
   "Workspace" per family (e.g. "Learn", "Automate", "Continue", "Build",
   "Track") without changing the route segment.
 
-## Deferred out of Phase 2 (unchanged)
+## Commerce (locked at v1.0.0)
 
-- Real product content of any kind — Companion, Learning, Automation,
-  Tracker, or Workspace products are still not built. Only the four
-  internal fixtures exist.
-- Commerce rebuild against real entitlements, real notification sending,
-  admin role model beyond "signed in or not", analytics, Product Studio,
-  and everything else listed as not-built in `ADMIN-AND-OPERATIONS.md` and
-  `ROUTE-MAP.md`.
+- **A merchant of record, not a payment processor.** Lemon Squeezy is the
+  legal seller and carries VAT/GST liability in every country. A processor
+  would leave that with a one-person business. The higher cut is the price
+  of not running a tax function, and it was paid deliberately.
+- **The checkout opens on `draftpace.com`.** An overlay, not a redirect to
+  someone else's domain in the middle of a purchase.
+- **The webhook's payload never decides what is granted.** The HMAC
+  signature is verified first, then the product is resolved through an
+  explicit variant map held in this repository
+  (`src/shop/lemonSqueezyVariants.ts`). Nothing the payload claims about
+  which product was bought is read. Granting is service-role only; no
+  client-reachable route can grant a paid product.
+- **The post-purchase screen waits for the grant rather than racing it**,
+  and never tells a paying customer their purchase failed. See
+  `docs/COMMERCE.md`.
+- Prices live in code, not fetched from Lemon Squeezy. If the two diverge a
+  customer reads one number and is charged another, so the fix order is
+  Lemon Squeezy first, then the code, then deploy. See `docs/RUNBOOK.md`.
+
+## Installability (locked at v1.0.0)
+
+- **No app store, and no single installable Draftpace.** Each product serves
+  its own manifest, scoped to its own routes, with its own name, theme
+  colour and icon, so installing from inside a product installs *that*
+  product. One icon holding nine unrelated products is not how anybody
+  thinks about their own life.
+- iOS has no install prompt, so there the instruction *is* the control. A
+  button that could never work is not shown.
+
+## Still deferred at v1.0.0
+
+The Phase 2 deferrals for real product content and the commerce rebuild are
+resolved: nine products ship and commerce runs end to end. What remains:
+
+- Refunds do not revoke access automatically (`order_refunded` is
+  unhandled). Revoke by hand per `docs/RUNBOOK.md`.
+- Real notification sending, an admin role model beyond "signed in or not",
+  analytics, Product Studio, and everything else listed as not-built in
+  `ADMIN-AND-OPERATIONS.md` and `ROUTE-MAP.md`.
+- No product exists yet for the five registered non-Companion families.

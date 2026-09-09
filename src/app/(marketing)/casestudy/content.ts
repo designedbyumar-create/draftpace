@@ -28,7 +28,7 @@ export const INTRO = {
   meta: [
     { label: "Role", value: "Founder, Product Designer & Creator." },
     { label: "Timeline", value: "May to September 2026" },
-    { label: "Status", value: "MVP Live." },
+    { label: "Status", value: "MVP live, frozen at v1.0.0." },
     { label: "Scope", value: "Research, strategy, product design, UX writing, visual system, build" },
   ],
 };
@@ -241,6 +241,58 @@ export const DECISIONS: Decision[] = [
     result:
       "Two screens that used to look identical now answer two different questions, and three fields that had been defined on every product listing since launch, what it asks for, what it gives back, how saving works, were shown to an owner for the first time.",
   },
+  {
+    title: "Selling it without becoming a payments company",
+    context:
+      "Nine products had prices on them and no way to actually sell one. Somebody could reach a checkout button and get no further.",
+    problem:
+      "Selling software to people in different countries means being liable for VAT and GST in each of them. Taking card details means being responsible for them. Neither is a job one person should be doing alongside designing the products.",
+    options:
+      "A payment processor, which moves money and leaves the tax liability and the compliance with the seller, or a merchant of record, which becomes the legal seller of record and carries both, for a larger cut.",
+    decision:
+      "A merchant of record, with the checkout opening as an overlay on draftpace.com rather than sending a buyer to a different domain halfway through paying. The cut is higher than a processor's, and that is the price of not running a tax function.",
+    result:
+      "A one-person business that can sell into any country from day one, and a purchase that never leaves the page it started on.",
+  },
+  {
+    title: "The webhook is not allowed to say what was bought",
+    context:
+      "Payment happens on somebody else's system. A webhook then tells Draftpace to give a person a product they now own.",
+    problem:
+      "That webhook is an outside request. Anything in it that decides what gets granted is a thing an attacker gets to choose, and the failure mode is silent: somebody is charged and gets nothing, or gets something they did not pay for.",
+    options:
+      "Read the product out of the payload, which is what the payload is for, or treat the payload as untrusted and resolve the product locally.",
+    decision:
+      "Verify the signature first, then resolve the product through an explicit map held in this codebase. The payload's own claims about which product was bought are never read. The screen a buyer lands on afterwards waits for that grant to arrive rather than racing it, and if it never does, it says so and offers a person, instead of pretending the purchase failed.",
+    result:
+      "The one place in the system where money and access meet has exactly one thing it trusts, and it is not the message.",
+  },
+  {
+    title: "An app, without an app store",
+    context:
+      "These are products people are meant to return to for months. A browser tab is not where that happens.",
+    problem:
+      "An app store means review queues, two native codebases, and a gatekeeper between a fix and the person who needs it. But a single installable Draftpace would put nine unrelated products behind one icon, which is not how anybody thinks about their own life.",
+    options:
+      "Build native apps, ship one installable Draftpace, or give each product its own installable identity on the web.",
+    decision:
+      "Each product serves its own manifest, scoped to its own routes, with its own name, colour and icon. Installing from inside Travel Companion installs Travel Companion. On iOS there is no install prompt at all, so the instruction is the control, and the page says so rather than showing a button that will never work.",
+    result:
+      "Nine icons on a home screen, each its own product, updated the moment it is deployed. It also exposed that the service worker had never registered for anyone, which had quietly made the offline page and the install prompt dead for the whole life of the project.",
+  },
+  {
+    title: "One phone, four screens",
+    context:
+      "Each product page opened with a large cover image and four thumbnails under it, in the pattern every online store uses.",
+    problem:
+      "Clicking a thumbnail swapped the whole picture: background, phone, caption, everything. That is four photographs of a product rather than one product doing four things, and the eye has to find the phone again after every change.",
+    options:
+      "Keep the gallery and make the four images more consistent, or hold the product still and change only what is on its screen.",
+    decision:
+      "One frame, one phone, and the screens moving inside the bezel, the way they would if you were holding it. It advances on its own, and stops permanently the moment somebody takes control, because a carousel that keeps moving under a reader is worse than one that never moved.",
+    result:
+      "The screens are the real ones, drawn from the same map the shop card and the owner's manual read, so somebody who buys a product recognises it afterwards as the thing they were shown.",
+  },
 ];
 
 export const REPOSITION = {
@@ -408,7 +460,11 @@ export const UNPROVEN = {
     },
     {
       head: "The price is a starting number",
-      text: "Products sit at eighteen or twenty eight dollars, set from a sense of the depth of each one and the surrounding market. There was no pricing research and no willingness to pay testing.",
+      text: "Products list at ninety nine or sixty nine dollars and open at half that, set from a sense of the depth of each one and the surrounding market. There was no pricing research and no willingness to pay testing, so both the list price and the discount are positions rather than findings.",
+    },
+    {
+      head: "Nobody has bought one yet",
+      text: "The whole chain, checkout to signed webhook to grant to the screen a buyer lands on, is built and covered by automated checks. It has not yet carried a real purchase by a real person, which is a different kind of evidence.",
     },
     {
       head: "Nobody knows which of the nine matters most",
@@ -437,8 +493,8 @@ export const STATS = {
     { value: "15", label: "weeks from first commit to this build" },
     { value: "71", label: "design tokens in one shared set" },
     { value: "15", label: "shared interface primitives" },
-    { value: "2,243", label: "automated checks on every change" },
-    { value: "81", label: "pages across the site and products" },
+    { value: "2,361", label: "automated checks on every change" },
+    { value: "83", label: "pages across the site and products" },
   ],
 };
 
