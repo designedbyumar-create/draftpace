@@ -11,7 +11,7 @@ import { LIFE_AREAS } from "@/content/areas";
 import ShopGrid, { type ShopFilterArea, type ShopGridEntry } from "./ShopGrid";
 
 /**
- * Slugs with a generated store cover in public/store. Listed rather than
+ * Slugs with generated store images in public/store. Listed rather than
  * probed, because a missing file would otherwise render as a broken image
  * on the Shop's front page with nothing to catch it. A Shop fixture, or a
  * product added before its images are generated, falls through to the
@@ -38,24 +38,33 @@ export const metadata: Metadata = {
 export const dynamic = "force-dynamic";
 
 /**
- * A card's thumbnail: the product's own store cover, the same image its
- * detail page opens with, so the grid and the page a click lands on show
- * the same thing. Each cover is that product's accent, which is what
- * makes the grid readable as a set of nine distinct products rather than
- * nine near-identical phone mockups.
+ * A card's thumbnail: one straight phone on a pale wash of the product's
+ * own accent, which is what makes the grid readable as nine distinct
+ * products rather than nine near-identical mockups.
  *
- * The mockup-cycling card it replaced still exists and is still used by
+ * WHY THE SCREEN FRAME AND NOT THE COVER
+ *
+ * The `-1-cover` image carries the product's name and its promise burned
+ * into the artwork, which is right for a social preview, where the image
+ * travels alone and has to introduce itself. Here it travels with a card
+ * that already prints the title, the promise, a claim and a price, so the
+ * cover printed the same two sentences twice, once at 11px inside a
+ * picture. The `-2-screen` frame is the same wash and the same phone with
+ * a caption instead: it shows the product doing something the card's own
+ * words do not already say.
+ *
+ * The mockup-cycling card this replaced still exists and is still used by
  * the Library (see ShopCardMockup and productScreens.tsx), where an owner
- * benefits from seeing real screens rather than a cover.
+ * benefits from live screens rather than a picture of them.
  *
- * A listing with no cover falls back to its own media, then to an honest
+ * A listing with no images falls back to its own media, then to an honest
  * placeholder, never a fabricated image.
  */
 function renderThumbnail(product: { slug: string; title: string; media: { src: string; alt: string }[] }) {
   if (STORE_COVERS.has(product.slug)) {
     return (
       <Image
-        src={`/store/${product.slug}-1-cover.webp`}
+        src={`/store/${product.slug}-2-screen.webp`}
         alt={product.title}
         fill
         className="object-cover"

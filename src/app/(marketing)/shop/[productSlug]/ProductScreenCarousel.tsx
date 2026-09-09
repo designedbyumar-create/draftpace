@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { accentWash } from "@/design-system/accentTone";
 import PhoneFrame from "../PhoneFrame";
 
 /**
@@ -81,10 +82,11 @@ export default function ProductScreenCarousel({
       <div
         className="relative overflow-hidden rounded-2xl border border-[var(--border)] px-6 pt-10 sm:px-10 sm:pt-14"
         style={{
-          // A light tint of the product's own accent, the same treatment
-          // its store cover uses, so the page and the images it shares to
-          // social are recognisably one thing.
-          background: `linear-gradient(150deg, color-mix(in srgb, ${accent} 30%, white) 0%, color-mix(in srgb, ${accent} 15%, white) 62%, color-mix(in srgb, ${accent} 24%, white) 100%)`,
+          // The same wash the generated store images use (accentWash, and
+          // see docs/DESIGN-SYSTEM.md for why it goes through HSL rather
+          // than mixing with white), so this frame and the picture of it
+          // that gets shared to social are recognisably one thing.
+          background: `linear-gradient(150deg, ${accentWash(accent, 0.905)} 0%, ${accentWash(accent, 0.973)} 62%, ${accentWash(accent, 0.925)} 100%)`,
         }}
       >
         {/* The caption above the phone, not below: it says what you are

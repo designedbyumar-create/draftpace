@@ -160,3 +160,36 @@ export function deriveDarkTones(lightBase: string): DerivedDarkTones {
     wash: `color-mix(in srgb, ${base} 12%, transparent)`,
   };
 }
+
+/** Saturation range a pale ground is held to, so no product's wash reads grey and none reads neon. */
+export const WASH_SATURATION: [number, number] = [0.34, 0.5];
+
+/** How far apart two washes can possibly sit in saturation, given that clamp. */
+export const WASH_SATURATION_WIDTH = WASH_SATURATION[1] - WASH_SATURATION[0];
+
+/**
+ * A pale ground in an accent's own hue, at a lightness you choose.
+ *
+ * WHY NOT `color-mix(in srgb, accent N%, white)`
+ *
+ * Mixing toward white scales chroma by the same fraction as everything
+ * else, so one percentage cannot serve nine accents: a low-saturation
+ * accent (Personal Finance's petrol, S=0.25) turns grey long before it
+ * turns light, while a saturated one (Travel's amber) is still obviously
+ * coloured at the same number. Nine products then look like one product,
+ * which is the exact failure this was written to fix.
+ *
+ * Going through HSL sets lightness and saturation independently: every
+ * product gets a ground of the same paleness in its own hue. Saturation
+ * is clamped rather than preserved — a floor so petrol still reads as
+ * petrol, a ceiling so amber does not read as a warning label.
+ *
+ * Used by the product detail page's screen carousel and by the generated
+ * store images (see docs/DESIGN-SYSTEM.md), which is why the two look
+ * like the same product.
+ */
+export function accentWash(hex: string, lightness: number): string {
+  const [hue, saturation] = rgbToHsl(parseHex(hex));
+  const held = Math.min(Math.max(saturation, WASH_SATURATION[0]), WASH_SATURATION[1]);
+  return toHex(hslToRgb([hue, held, lightness]));
+}

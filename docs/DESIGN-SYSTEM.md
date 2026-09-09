@@ -67,6 +67,35 @@ Two rules matter here, both learned the hard way:
 Monthly Money Reset's bespoke `--mmr-*` tokens are the one documented
 exception to this mechanism, not a second undocumented system.
 
+## Store images (`public/store/`)
+
+Four generated images per product, 1600×1200 WebP, named
+`<slug>-1-cover`, `-2-screen`, `-3-screen`, `-4-screen`. The cover carries
+the product's name and promise and is used where the image travels alone
+— the detail page's OG image and its Product JSON-LD. The three screen
+frames carry a caption instead, and `-2-screen` is the Shop grid's
+thumbnail, because the card already prints the title and promise itself.
+
+`src/app/(marketing)/shop/storeImages.test.ts` guards that both lists of
+slugs agree and that every file is really on disk.
+
+Each frame is one straight, whole phone (the shared `PhoneFrame`, showing
+a real screen from `productScreens.tsx`) on a pale ground in that
+product's own hue. **The ground goes through HSL, not `color-mix` with
+white.** Mixing an accent with white scales its chroma by the same
+fraction, so a low-saturation accent turns grey long before it turns
+light while a saturated one is still vivid at the same percentage — which
+is how nine products end up looking like one product. Setting lightness
+(~0.90–0.97 across the gradient) and saturation (clamped to roughly
+0.34–0.50) independently gives every product a ground of the same
+paleness in its own hue.
+
+To regenerate: render the frames at 1600×1200 from a temporary route
+under `src/app/`, screenshot each by id with Playwright at
+`deviceScaleFactor: 2` (hide the Next dev badge — `nextjs-portal{display:none}`
+— or it lands in the bottom-left corner of every capture), convert with
+`sharp` at quality 88, and delete the route. All 36 come to ~1.4 MB.
+
 ## Buttons: two registers, one system
 
 `src/design-system/buttonStyles.ts` is the source of truth, and its doc

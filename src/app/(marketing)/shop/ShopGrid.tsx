@@ -1,10 +1,10 @@
 "use client";
 
-import { Fragment, useState, type ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import Link from "next/link";
 import Badge from "@/design-system/Badge";
 import Button from "@/design-system/Button";
-import { ArrowRight, Check } from "@/design-system/Icon";
+import { ArrowRight } from "@/design-system/Icon";
 import { cardHighlight, discountPercent, formatCompareAtPrice, formatPrice, type ShopProduct } from "@/shop/definition";
 import AddToLibraryButton from "./AddToLibraryButton";
 
@@ -32,7 +32,7 @@ const DEFAULT_SITUATION = "Every Companion, one screen. Pick an area below to na
  * heading and its situation paragraph before showing two or three cards.
  * That read fine the first time and became repetitive scrolling on every
  * visit after. This is one continuous shelf instead: every product still
- * carries its own area tag on its thumbnail, so context isn't lost, but
+ * names its own area above its title, so context isn't lost, but
  * narrowing to one area is now something a visitor chooses rather than
  * something the page always does for them. Nothing is preselected, same
  * reasoning as Ask DP's browse view: the default is everything, the way a
@@ -105,58 +105,93 @@ function ShopProductCard({ entry }: { entry: ShopGridEntry }) {
   const firstOutcome = cardHighlight(product);
 
   return (
-    <div className="group flex flex-col overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] transition-[box-shadow,border-color] duration-[var(--dur)] ease-[var(--ease-out)] hover:border-[var(--border-strong)] hover:shadow-[shadow:var(--shadow-xs)]">
+    /*
+      Depth is the whole difference between a listing and a product.
+      A flat outlined rectangle that changes its border colour on hover
+      reads as a row in a table; a card that sits slightly above the page
+      and rises when you reach for it reads as an object. Rest is a hair
+      of shadow, hover is a real one plus a 2px lift, and the picture
+      inside grows very slightly so the movement starts at the thing
+      being sold rather than at its frame. All of it collapses under
+      prefers-reduced-motion, which globals.css already handles for
+      transition durations globally.
+    */
+    <div className="group flex flex-col overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-[shadow:var(--shadow-xs)] transition-[box-shadow,border-color,transform] duration-[var(--dur)] ease-[var(--ease-out)] hover:-translate-y-0.5 hover:border-[var(--border-strong)] hover:shadow-[shadow:var(--shadow-soft)]">
       {/*
-        thumbnail crosses a component boundary: it's built once in
-        ShopIndexPage (a real phone mockup, not a route module - see
-        renderThumbnail) and handed down as a prop. Sitting it next to
-        a second, locally-rendered sibling (the area tag) without an
-        explicit key on each is exactly the shape that trips React's
-        "list needs keys" check, even though neither one is really a
-        list. Explicit keys on both settle it for good.
+        The thumbnail is a store image: a caption across the top, a
+        centred phone filling the middle, a wordmark bottom-left. There
+        is no corner of it a floating pill can sit in without landing on
+        one of those, which is what the area tag used to do, so the tag
+        moved out of the picture and into the card body as an eyebrow
+        above the title. Nothing overlaps, and it is legible at the size
+        it actually renders.
       */}
       <Link href={`/shop/${product.slug}`} aria-label={`See ${product.title} in detail`} className="relative block aspect-[4/3] overflow-hidden bg-[var(--surface-muted)]">
-        <div className="absolute inset-0">
-          {areaLabel && (
-            <span
-              key="area-tag"
-              className="absolute left-3 top-3 z-10 rounded-full bg-[var(--surface)]/92 px-2.5 py-1 text-[11px] font-bold tracking-wide text-[var(--text)] shadow-[shadow:var(--shadow-xs)] backdrop-blur"
-            >
-              {areaLabel}
-            </span>
-          )}
-          <Fragment key="thumbnail">{thumbnail}</Fragment>
+        <div className="absolute inset-0 transition-transform duration-[var(--dur-slow)] ease-[var(--ease-out)] group-hover:scale-[1.025]">
+          {thumbnail}
         </div>
       </Link>
 
       <div className="flex flex-1 flex-col p-5">
+        {areaLabel && (
+          <p className="mb-2 text-[10.5px] font-bold uppercase tracking-[0.14em] text-[var(--faint)]">{areaLabel}</p>
+        )}
         {(product.availability === "coming-soon" || product.devFixture) && (
           <div className="mb-2 flex flex-wrap items-center gap-1.5">
             {product.availability === "coming-soon" && <Badge tone="neutral">Coming soon</Badge>}
             {product.devFixture && <Badge tone="neutral">Internal preview</Badge>}
           </div>
         )}
-        <Link href={`/shop/${product.slug}`} className="block text-[16px] font-semibold leading-snug tracking-tight text-[var(--text)] hover:underline">
+        {/* Serif, like the store image's own title and like the product
+            page it opens: the card is a small version of that page, not
+            a different typographic world. */}
+        <Link
+          href={`/shop/${product.slug}`}
+          className="block font-serif text-[19px] font-semibold leading-[1.25] tracking-[-0.01em] text-[var(--text)] decoration-[var(--border-strong)] underline-offset-4 hover:underline"
+        >
           {product.title}
         </Link>
-        <p className="mt-1.5 line-clamp-2 text-[13px] leading-relaxed text-[var(--muted)]">{product.promise}</p>
+        <p className="mt-2 line-clamp-2 text-[13px] leading-relaxed text-[var(--muted)]">{product.promise}</p>
 
+        {/*
+          A hairline and a line of text, not a grey slab with a green
+          tick. The tick claimed this was a feature checklist when it is
+          one sentence about what you end up with, and nine grey slabs
+          down a grid is the single heaviest thing on the page.
+        */}
         {firstOutcome && (
-          <div className="mt-3 flex items-start gap-2 rounded-lg bg-[var(--surface-muted)] px-3 py-2.5">
-            <Check size={13} className="mt-0.5 shrink-0 text-[var(--success)]" aria-hidden />
-            <p className="text-[12px] leading-relaxed text-[var(--text)]">{firstOutcome}</p>
-          </div>
+          <p className="mt-3.5 border-l-2 border-[var(--border-strong)] pl-3 text-[12.5px] leading-relaxed text-[var(--text)]">
+            {firstOutcome}
+          </p>
         )}
+
+        {/*
+          Grows so the price and the button land on the same line across
+          the row whatever the promise and the claim above them ran to.
+          A grid whose CTAs sit at three different heights is the tell
+          that these are nine separate pages rather than one shelf.
+        */}
+        <div className="min-h-4 flex-1" aria-hidden />
 
         {product.availability !== "coming-soon" && (
-          <div className="mt-4 flex flex-wrap items-baseline gap-2 border-t border-[var(--border)] pt-3.5">
-            {compareAtLabel && <span className="font-serif text-[15px] text-[var(--faint)] line-through">{compareAtLabel}</span>}
-            <p className="font-serif text-[22px] font-semibold leading-none tracking-tight text-[var(--text)]">{priceLabel}</p>
-            {savingsPercent !== null && savingsPercent > 0 && <Badge tone="success">Save {savingsPercent}%</Badge>}
+          <div className="flex flex-wrap items-baseline gap-x-2.5 gap-y-1 border-t border-[var(--border)] pt-4">
+            <p className="font-serif text-[26px] font-semibold leading-none tracking-tight text-[var(--text)]">{priceLabel}</p>
+            {compareAtLabel && <span className="text-[13px] text-[var(--faint)] line-through">{compareAtLabel}</span>}
+            {/*
+              The saving stays, because it is true and it is the offer,
+              but as type rather than a filled pill: nine green capsules
+              down a grid read as a coupon site, which is the opposite of
+              what this catalogue is meant to feel like.
+            */}
+            {savingsPercent !== null && savingsPercent > 0 && (
+              <span className="text-[11.5px] font-bold uppercase tracking-[0.08em] text-[var(--success)]">
+                {savingsPercent}% off
+              </span>
+            )}
           </div>
         )}
 
-        <div className="mt-3.5 flex flex-1 flex-col items-stretch justify-end gap-2">
+        <div className="mt-4 flex flex-col items-stretch gap-2.5">
           <CardCta product={product} priceLabel={priceLabel} />
         </div>
       </div>

@@ -1,5 +1,13 @@
 import { describe, expect, it } from "vitest";
-import { deriveDarkTones, contrastRatio, DARK_SURFACE, DARK_TONE_TARGET } from "./accentTone";
+import {
+  deriveDarkTones,
+  accentWash,
+  contrastRatio,
+  DARK_SURFACE,
+  DARK_TONE_TARGET,
+  WASH_SATURATION,
+  WASH_SATURATION_WIDTH,
+} from "./accentTone";
 import { productRegistry } from "@/product-framework/registry";
 import { ensureProductsRegistered } from "@/products/manifest";
 
@@ -64,5 +72,64 @@ describe("every themed product survives dark mode", () => {
         4.5
       );
     }
+  });
+});
+
+/**
+ * The failure this guards is the one that made nine store images look
+ * like one product: a pale ground mixed toward white keeps a saturated
+ * accent obviously coloured and washes a desaturated one to grey, so no
+ * single percentage serves the whole catalogue.
+ */
+describe("accentWash", () => {
+  function saturation(hex: string): number {
+    const [r, g, b] = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255);
+    const max = Math.max(r, g, b);
+    const min = Math.min(r, g, b);
+    if (max === min) return 0;
+    const l = (max + min) / 2;
+    return l > 0.5 ? (max - min) / (2 - max - min) : (max - min) / (max + min);
+  }
+
+  /** Petrol (S=0.25) and amber, the two ends of the catalogue's saturation range. */
+  const PETROL = "#2e4a4d";
+  const AMBER = "#8a5a1c";
+
+  /** 8-bit channels cannot round-trip a saturation exactly; this is that slack, not a widened contract. */
+  const ROUNDING = 0.02;
+
+  it("closes the gap between a washed-out accent and a vivid one", () => {
+    const before = Math.abs(saturation(PETROL) - saturation(AMBER));
+    const petrol = saturation(accentWash(PETROL, 0.92));
+    const amber = saturation(accentWash(AMBER, 0.92));
+    const after = Math.abs(petrol - amber);
+    expect(after, `petrol ${petrol.toFixed(3)} vs amber ${amber.toFixed(3)}`).toBeLessThanOrEqual(
+      WASH_SATURATION_WIDTH + ROUNDING
+    );
+    expect(after).toBeLessThan(before);
+  });
+
+  it("holds every wash inside the saturation band", () => {
+    for (const accent of [PETROL, AMBER, "#4d5a35", "#8d4a5c", "#606e8e"]) {
+      const s = saturation(accentWash(accent, 0.92));
+      expect(s, `${accent} washed to S=${s.toFixed(3)}`).toBeGreaterThanOrEqual(WASH_SATURATION[0] - ROUNDING);
+      expect(s, `${accent} washed to S=${s.toFixed(3)}`).toBeLessThanOrEqual(WASH_SATURATION[1] + ROUNDING);
+    }
+  });
+
+  it("leaves a low-saturation accent visibly coloured rather than grey", () => {
+    expect(saturation(accentWash(PETROL, 0.92))).toBeGreaterThan(0.3);
+  });
+
+  it("honours the lightness it is asked for", () => {
+    for (const target of [0.9, 0.95, 0.975]) {
+      const hex = accentWash(PETROL, target);
+      const [r, g, b] = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255);
+      expect(Math.abs((Math.max(r, g, b) + Math.min(r, g, b)) / 2 - target)).toBeLessThan(0.01);
+    }
+  });
+
+  it("keeps each product in its own hue rather than a shared tint", () => {
+    expect(accentWash(PETROL, 0.92)).not.toEqual(accentWash(AMBER, 0.92));
   });
 });
