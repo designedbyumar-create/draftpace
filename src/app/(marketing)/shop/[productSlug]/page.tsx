@@ -13,6 +13,8 @@ import RichSection from "./RichSection";
 import ProblemCards from "./ProblemCards";
 import AddToLibraryButton from "../AddToLibraryButton";
 import ProductGallery from "./ProductGallery";
+import ProductScreenCarousel from "./ProductScreenCarousel";
+import { screenTourFor } from "../productScreens";
 import StickyBuyBar from "./StickyBuyBar";
 import { productRegistry } from "@/product-framework/registry";
 import { ensureProductsRegistered } from "@/products/manifest";
@@ -125,6 +127,7 @@ export default async function ShopProductPage({
   const accent = definition?.theme?.accentScale?.base ?? "var(--primary)";
   const installedName = definition?.pwa?.shortName ?? product.title;
   const installable = Boolean(definition?.pwa);
+  const screenTour = screenTourFor(product.slug);
 
   // Resolved once per request, server-side, so every GetAction on this page
   // agrees on the exact same checkout link rather than each independently
@@ -158,7 +161,14 @@ export default async function ShopProductPage({
           compete for this space now has its own headed section below.
         */}
         <section className="grid items-stretch gap-10 lg:grid-cols-[1.05fr_1fr] lg:gap-14">
-          <ProductGallery slug={product.slug} title={product.title} accent={accent} />
+          {/* One frame, one phone, the screens changing inside it. A
+              product with no drawn screens falls back to the cover
+              gallery rather than an empty frame. */}
+          {screenTour ? (
+            <ProductScreenCarousel screens={screenTour} accent={accent} title={product.title} />
+          ) : (
+            <ProductGallery slug={product.slug} title={product.title} accent={accent} />
+          )}
 
           <div className="flex flex-col justify-center">
             <div className="flex flex-wrap items-center gap-2">
