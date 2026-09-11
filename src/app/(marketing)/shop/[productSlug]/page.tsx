@@ -6,7 +6,7 @@ import Badge from "@/design-system/Badge";
 import Button from "@/design-system/Button";
 import { ArrowRight, Check, Lock, X } from "@/design-system/Icon";
 import { shopRegistry } from "@/shop/registry";
-import { discountPercent, formatCompareAtPrice, formatPrice, questionsForStage, type ShopProduct } from "@/shop/definition";
+import { allQuestions, discountPercent, formatCompareAtPrice, formatPrice, questionsForStage, type ShopProduct } from "@/shop/definition";
 import SearchedProblems from "./SearchedProblems";
 import { ensureShopRegistered } from "@/shop/ensureRegistered";
 import RichSection from "./RichSection";
@@ -116,6 +116,7 @@ export default async function ShopProductPage({
   const compareAtLabel = formatCompareAtPrice(product);
   const savingsPercent = discountPercent(product);
   const structuredData = buildStructuredData(product);
+  const faqStructuredData = buildFaqStructuredData(product);
   const decidingQuestions = questionsForStage(product, "deciding");
 
   /**
@@ -146,6 +147,9 @@ export default async function ShopProductPage({
     <div {...{ [PRODUCT_THEME_ATTRIBUTE]: "" }} style={definition ? productThemeStyle(definition.theme) : undefined}>
       {structuredData && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+      )}
+      {faqStructuredData && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }} />
       )}
 
       <Container width="wide" className="pb-24 pt-10 sm:pt-12">
@@ -630,5 +634,36 @@ function buildStructuredData(product: ShopProduct) {
       // infer it from a price alone.
       priceValidUntil: "2027-12-31",
     },
+  };
+}
+
+/**
+ * FAQPage schema from the listing's own real questions (whichever field
+ * they live in, migrated or not), never a separate hand-authored copy:
+ * the same eligibility gate as the Product schema above (published, and
+ * structuredDataEligible so an unfinished listing's placeholder answers
+ * can never render as a rich result), so the two schemas always appear
+ * or stay absent together. Returns null rather than an empty FAQPage
+ * when a listing has no questions at all, since Google treats an
+ * eligible-but-empty FAQPage as a policy violation, not a shorter valid
+ * one.
+ */
+function buildFaqStructuredData(product: ShopProduct) {
+  if (!(product.structuredDataEligible && product.publicationStatus === "published")) return null;
+  // allQuestions(), not product.faqs directly: a migrated listing empties
+  // objections/faqs and keeps every question in the new unified
+  // `questions` field instead (see src/shop/definition.ts). Reading
+  // .faqs alone would have rendered an empty FAQPage for every listing
+  // that has already migrated, which is most of them.
+  const questions = allQuestions(product);
+  if (questions.length === 0) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: questions.map((q) => ({
+      "@type": "Question",
+      name: q.question,
+      acceptedAnswer: { "@type": "Answer", text: q.answer },
+    })),
   };
 }

@@ -47,6 +47,14 @@ function collectFiles(root: string): string[] {
 
 const FILES = SCAN_ROOTS.flatMap(collectFiles);
 
+// "studio" and "living product(s)" within 60 characters of each other,
+// either order, case-insensitive: wide enough to catch "a studio ...
+// living products" and "living products ... studio" phrasings, narrow
+// enough that the two words appearing in unrelated parts of a much
+// longer file would not trip it. Module scope because two separate
+// describe blocks below both need it.
+const TAGLINE_SHAPE = /studio[\s\S]{0,60}?living products?|living products?[\s\S]{0,60}?studio/i;
+
 describe("public/auth copy has no em dashes", () => {
   for (const file of FILES) {
     const relative = file.replace(process.cwd() + "/", "");
@@ -162,5 +170,71 @@ describe("homepage leads with the domain, not the format argument", () => {
 
   it("keeps the anti-guilt promise on the page, since it is the behavioural claim the products are tested against", () => {
     expect(source().includes("never tells you that you are behind")).toBe(true);
+  });
+});
+
+/**
+ * The "studio for living products" positioning tagline, specifically,
+ * regardless of which file it turns up in.
+ *
+ * Scoped to the combined phrase rather than to "studio" or "living
+ * product(s)" as individual banned words on purpose: "living product" by
+ * itself is a real, still-current concept (the static-file-vs-living
+ * comparison in LivingProductHero, TrustSection, /how-it-works), kept
+ * deliberately when the hero positioning was demoted, per the test above.
+ * A bare word ban would fail on that legitimate copy. What actually keeps
+ * recurring is the two words together as a company-positioning claim: it
+ * shipped once in the homepage H1 (caught above), once more in
+ * PublicFooter's tagline, and once more in organizationStructuredData's
+ * description, each a separate file the other checks in this suite never
+ * touched. This regex catches the shape itself, anywhere it appears, so a
+ * fourth copy cannot ship unnoticed the same way.
+ */
+describe("the 'studio for living products' tagline never comes back", () => {
+  // The one deliberate exception: the case study quotes its own retired
+  // headline verbatim as a labeled "Before" artifact with real commit
+  // provenance (see REPOSITION.before in casestudy/content.ts), telling
+  // the story of the repositioning rather than repeating the claim. That
+  // is the phrase's entire remaining reason to exist in the codebase, so
+  // excluding it here (rather than loosening the regex) keeps the guard
+  // strict everywhere the phrase would actually be a live regression.
+  const EXEMPT = ["src/app/(marketing)/casestudy/content.ts"];
+
+  for (const file of FILES) {
+    const relative = file.replace(process.cwd() + "/", "");
+    if (EXEMPT.includes(relative)) continue;
+    it(`${relative} does not combine "studio" with "living product(s)"`, () => {
+      const source = readFileSync(file, "utf-8");
+      expect(TAGLINE_SHAPE.test(source)).toBe(false);
+    });
+  }
+});
+
+/**
+ * structuredData.ts's builders are not in SCAN_ROOTS (it is a src/lib
+ * utility file, most of which is genuinely internal and not customer
+ * copy), but every string in it is rendered as JSON-LD straight into
+ * pages Google and AI crawlers read, which makes it exactly the kind of
+ * output this whole suite exists to guard. Checked narrowly, by name,
+ * rather than by adding all of src/lib to the sweep, since most of that
+ * directory (currency.ts, server-auth.ts, ...) is internal utility code
+ * whose comments are not held to marketing-copy rules.
+ */
+describe("structured data (JSON-LD) follows the same copy rules as the page it's on", () => {
+  const source = () => readFileSync(join(process.cwd(), "src/lib/structuredData.ts"), "utf-8");
+
+  it("contains no em dash", () => {
+    expect(source().includes("—")).toBe(false);
+  });
+
+  it("contains no banned marketing words", () => {
+    const lower = source().toLowerCase();
+    for (const word of BANNED_WORDS) {
+      expect(lower.includes(word)).toBe(false);
+    }
+  });
+
+  it('does not combine "studio" with "living product(s)"', () => {
+    expect(TAGLINE_SHAPE.test(source())).toBe(false);
   });
 });

@@ -17,7 +17,7 @@ export function organizationStructuredData() {
     url: SITE_URL,
     logo: `${SITE_URL}/logo/icon-512.png`,
     description:
-      "Draftpace is a studio that makes living products: installable apps that remember you, guide your next move, and stay ready.",
+      "Draftpace makes the Companion Series: products for money, home, focus, family, affairs, travel, vehicles and family health, each remembering your situation so you do not have to.",
     sameAs: ["https://www.linkedin.com/company/draftpace-studio/"],
   };
 }
@@ -70,6 +70,38 @@ export function softwareApplicationStructuredData() {
       price: "0",
       priceCurrency: "USD",
       description: "Monthly Money Reset, the current free launch product, is free to use.",
+    },
+  };
+}
+
+/**
+ * One guide, as an Article. The 70-plus guides had no structured data at
+ * all before this: real, substantial content with no way for a search
+ * engine or an AI answer engine to read its publish date, its update
+ * date, or its author, all of which a plain HTML page implies but never
+ * states machine-readably.
+ *
+ * author is the Organization, not a Person: guides carry no individual
+ * byline (unlike /about or the case study, which name Umar directly),
+ * so claiming a personal author here would be inventing a fact the page
+ * itself never asserts.
+ */
+export function guideStructuredData(guide: { slug: string; title: string; dek: string; publishedAt: string; updatedAt?: string }) {
+  const url = `${SITE_URL}/guides/${guide.slug}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: guide.title,
+    description: guide.dek,
+    url,
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    datePublished: guide.publishedAt,
+    dateModified: guide.updatedAt ?? guide.publishedAt,
+    author: { "@type": "Organization", name: "Draftpace", url: SITE_URL },
+    publisher: {
+      "@type": "Organization",
+      name: "Draftpace",
+      logo: { "@type": "ImageObject", url: `${SITE_URL}/logo/icon-512.png` },
     },
   };
 }

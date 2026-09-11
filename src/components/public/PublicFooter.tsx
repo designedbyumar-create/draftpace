@@ -31,8 +31,8 @@ export default function PublicFooter() {
           <div>
             <Logo height={40} />
             <p className="mt-4 max-w-xs text-[13px] leading-6 text-[var(--muted)]">
-              A studio making living products: apps that remember you, guide your next move, and stay yours to
-              keep.
+              The Companion Series: products that remember your situation so you do not have to, yours to
+              keep once you buy them.
             </p>
             <div className="mt-6">
               <p className="mb-2.5 text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">Appearance</p>
