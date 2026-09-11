@@ -24,6 +24,7 @@ import { guideHeadings } from "@/content/guideHeadings";
 import { LIFE_AREAS, getAreaBySlug } from "@/content/areas";
 import { shopRegistry } from "@/shop/registry";
 import { ensureShopRegistered } from "@/shop/ensureRegistered";
+import { guideStructuredData } from "@/lib/structuredData";
 
 /**
  * One route serving two page types: a life-area hub, or a guide.
@@ -97,6 +98,10 @@ export default async function GuideOrHubPage({ params }: { params: Promise<{ gui
     // Every area colour on the page descends from this one declaration,
     // so no component below has to know which area it is rendering in.
     <div style={areaVars(guide.areaSlug)}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(guideStructuredData(guide)) }}
+      />
       <ReadingProgress />
 
       {/* The header band. It carries the area's colour and mark, which is
