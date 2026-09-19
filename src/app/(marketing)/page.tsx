@@ -4,7 +4,7 @@ import Button from "@/design-system/Button";
 import Container from "@/design-system/Container";
 import { ArrowRight } from "@/design-system/Icon";
 import CompanionPicker, { type PickerPanel } from "@/components/public/home/CompanionPicker";
-import ChangeImpactDemo from "@/components/public/home/ChangeImpactDemo";
+import WhyNotSpreadsheet from "@/components/public/home/WhyNotSpreadsheet";
 import AskDPShowcase from "@/components/public/home/AskDPShowcase";
 import ShopPreview from "@/components/public/home/ShopPreview";
 import TrustSection from "@/components/public/home/TrustSection";
@@ -134,10 +134,10 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* 2. The differentiator, made touchable */}
+      {/* 2. Why not just use what you already have */}
       <section className="border-b border-[var(--border)]">
         <Container width="wide" className="py-16 sm:py-20">
-          <ChangeImpactDemo />
+          <WhyNotSpreadsheet />
         </Container>
       </section>
 
