@@ -128,6 +128,7 @@ export const personalFinanceCompanionDefinition: ProductDefinitionInput = {
       wash: "#f2f6f5",
     },
     motionPersonality: "calm",
+    identity: { motif: "index" },
   },
   layouts: ["responsive"],
   // "shell-only": the installed app shell and static/product UI may be

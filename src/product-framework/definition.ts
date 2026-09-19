@@ -18,6 +18,31 @@ export const productAccessSchema = z.object({
   entitlementKey: z.string().optional(),
 });
 
+/**
+ * The structural motif a product's own surfaces borrow from: the thing its
+ * signature screen object and its printed pages are made to resemble.
+ * A motif is a name, not a style: it is emitted as `data-product-motif` on
+ * the shell root so a stylesheet or a printable can key off it, and it
+ * must be unique per real product (see productIdentity.test.ts), which is
+ * what stops nine products drifting back into one look with nine colours.
+ */
+export const PRODUCT_MOTIFS = [
+  "ledger",
+  "index",
+  "tag",
+  "focus",
+  "register",
+  "book",
+  "timeline",
+  "gauge",
+  "page",
+] as const;
+export type ProductMotif = (typeof PRODUCT_MOTIFS)[number];
+
+/** How rounded a product's own surfaces are. `standard` is the platform's. */
+export const PRODUCT_SHAPES = ["sharp", "standard", "soft"] as const;
+export type ProductShape = (typeof PRODUCT_SHAPES)[number];
+
 export const productThemeExtensionSchema = z
   .object({
     accent: z.string().optional(),
@@ -82,6 +107,19 @@ export const productThemeExtensionSchema = z
     dataVisualizationPalette: z.array(z.string()).optional(),
     motionPersonality: z.enum(["calm", "energetic", "neutral"]).optional(),
     contentWidth: z.enum(["narrow", "standard", "wide"]).optional(),
+    /**
+     * The product's identity beyond colour, and the opt-in for the dials
+     * that used to hide behind `accentScale`. Declaring it applies the
+     * product's `motionPersonality` (which, without a scale, was declared
+     * by Monthly Money Reset and never honoured) and its `shape`. A
+     * product that does not declare it renders exactly as before.
+     */
+    identity: z
+      .object({
+        motif: z.enum(PRODUCT_MOTIFS),
+        shape: z.enum(PRODUCT_SHAPES).optional(),
+      })
+      .optional(),
   })
   .default({});
 

@@ -1,5 +1,5 @@
 import type { CSSProperties } from "react";
-import { ProductDefinition } from "./definition";
+import { ProductDefinition, type ProductShape } from "./definition";
 import { deriveDarkTones } from "@/design-system/accentTone";
 
 /**
@@ -34,17 +34,27 @@ const MOTION_EASE: Record<NonNullable<ProductThemeExtension["motionPersonality"]
   energetic: "cubic-bezier(0.34, 1.2, 0.64, 1)",
 };
 
+/**
+ * Multiplier applied to the platform's four radius tokens inside a product
+ * shell (globals.css, `[data-product-theme]`). `standard` is 1 so a product
+ * that states it is indistinguishable from one that says nothing.
+ */
+const RADIUS_SCALE: Record<ProductShape, number> = {
+  sharp: 0.45,
+  standard: 1,
+  soft: 1.35,
+};
+
 export function productThemeStyle(theme: ProductThemeExtension): CSSProperties {
   const style: Record<string, string> = {};
   if (theme.accent) style["--product-accent"] = theme.accent;
 
-  // accentScale is the opt-in for the whole block below, not just for
-  // colour. A product that declares it is saying "I manage my own
-  // presentation"; every other product renders byte-identically to
-  // before, including its motion timing. Monthly Money Reset declares a
-  // calm personality that has never been honoured, and quietly starting
-  // to honour it would be a change to a product this work is not
-  // supposed to touch. It can opt in deliberately whenever it wants to.
+  // accentScale is the opt-in for the colour block below and for the
+  // narrative face, not for anything else: motion and shape have their
+  // own gate further down, because a product with bespoke colour tokens
+  // (Monthly Money Reset) must be able to opt into those without also
+  // being re-coloured. A product that declares neither renders
+  // byte-identically to before, including its motion timing.
   if (theme.accentScale) {
     /**
      * Both tone sets are emitted as *pairs*, and globals.css picks which
@@ -79,11 +89,20 @@ export function productThemeStyle(theme: ProductThemeExtension): CSSProperties {
     style["--product-wash-dark"] = dark.wash ?? dark.soft;
 
     if (theme.narrativeFont) style["--product-narrative-font"] = theme.narrativeFont;
+  }
 
+  // Motion and shape are opted into by `accentScale` (as they always were)
+  // or, for a product that manages its own colours some other way, by
+  // declaring an `identity`. Both routes leave a product that declares
+  // neither byte-identical.
+  if (theme.accentScale || theme.identity) {
     if (theme.motionPersonality) {
       style["--dur"] = MOTION_DURATION[theme.motionPersonality];
       style["--ease-out"] = MOTION_EASE[theme.motionPersonality];
     }
+  }
+  if (theme.identity?.shape) {
+    style["--product-radius-scale"] = String(RADIUS_SCALE[theme.identity.shape]);
   }
   if (theme.dataVisualizationPalette?.length) {
     theme.dataVisualizationPalette.forEach((color, index) => {

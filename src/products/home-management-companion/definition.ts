@@ -102,6 +102,7 @@ export const homeManagementCompanionDefinition: ProductDefinitionInput = {
     narrativeFont: "var(--font-newsreader), ui-serif, Georgia, serif",
     motionPersonality: "calm",
     contentWidth: "narrow",
+    identity: { motif: "tag" },
   },
   layouts: ["responsive"],
   // "shell-only": same reasoning as PFC. The installed shell may be

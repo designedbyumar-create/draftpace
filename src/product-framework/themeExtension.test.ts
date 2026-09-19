@@ -1,4 +1,6 @@
 import { describe, expect, it } from "vitest";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { productThemeStyle } from "./themeExtension";
 
 describe("productThemeStyle", () => {
@@ -116,5 +118,56 @@ describe("productThemeStyle: the wash tier", () => {
     const style = productThemeStyle({ accent: "#b86f4a" }) as Record<string, string>;
     expect(style["--product-wash-light"]).toBeUndefined();
     expect(style["--product-wash-dark"]).toBeUndefined();
+  });
+});
+
+describe("productThemeStyle: identity", () => {
+  it("leaves a product with no identity byte-identical, including one that declares motion", () => {
+    expect(productThemeStyle({ accent: "#b86f4a", motionPersonality: "calm", contentWidth: "wide" })).toEqual({
+      "--product-accent": "#b86f4a",
+    });
+  });
+
+  it("lets a product with bespoke colours opt into motion by declaring an identity, without being re-coloured", () => {
+    const style = productThemeStyle({
+      accent: "#b86f4a",
+      motionPersonality: "calm",
+      identity: { motif: "ledger" },
+    }) as Record<string, string>;
+    expect(style["--dur"]).toBe("260ms");
+    expect(style["--product-primary-light"]).toBeUndefined();
+    expect(style["--product-narrative-font"]).toBeUndefined();
+  });
+
+  it("scales the radii by shape, and treats standard as no change at all", () => {
+    const sharp = productThemeStyle({ identity: { motif: "gauge", shape: "sharp" } }) as Record<string, string>;
+    const soft = productThemeStyle({ identity: { motif: "book", shape: "soft" } }) as Record<string, string>;
+    const standard = productThemeStyle({ identity: { motif: "tag", shape: "standard" } }) as Record<string, string>;
+    expect(Number(sharp["--product-radius-scale"])).toBeLessThan(1);
+    expect(Number(soft["--product-radius-scale"])).toBeGreaterThan(1);
+    expect(Number(standard["--product-radius-scale"])).toBe(1);
+    expect(productThemeStyle({ identity: { motif: "tag" } })).not.toHaveProperty("--product-radius-scale");
+  });
+
+  it("never emits the motif as a style: it is an attribute, not a value a stylesheet has to guess", () => {
+    const style = productThemeStyle({ identity: { motif: "ledger", shape: "sharp" } });
+    expect(JSON.stringify(style)).not.toContain("ledger");
+  });
+});
+
+describe("product identity: the stylesheet and shell half of the contract", () => {
+  const css = readFileSync(join(process.cwd(), "src/app/globals.css"), "utf8");
+
+  it("scales all four platform radii from --product-radius-scale, falling back to 1", () => {
+    for (const [token, px] of [["--radius-sm", 9], ["--radius", 13], ["--radius-lg", 17], ["--radius-xl", 22]] as const) {
+      expect(css).toContain(`${token}: calc(${px}px * var(--product-radius-scale, 1));`);
+    }
+  });
+
+  it("puts the motif on the root of both shells, where a stylesheet or printable can read it", () => {
+    for (const shell of ["ProductShell.tsx", "ProductRailShell.tsx"]) {
+      const source = readFileSync(join(process.cwd(), "src/components/product-shell", shell), "utf8");
+      expect(source).toContain("data-product-motif={definition.theme.identity?.motif}");
+    }
   });
 });

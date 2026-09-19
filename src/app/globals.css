@@ -427,6 +427,15 @@ html[data-text-scale="larger"] {
    blocks above, because these are scoped to a product shell and those
    are the platform's own palette.
    --------------------------------------------------------------- */
+/* Shape: a product's `identity.shape` scales the platform radii inside its
+   own shell only. With no scale declared the fallback is 1, so every value
+   below equals the platform's own and nothing changes. */
+[data-product-theme] {
+  --radius-sm: calc(9px * var(--product-radius-scale, 1));
+  --radius: calc(13px * var(--product-radius-scale, 1));
+  --radius-lg: calc(17px * var(--product-radius-scale, 1));
+  --radius-xl: calc(22px * var(--product-radius-scale, 1));
+}
 [data-product-theme] {
   --primary: var(--product-primary-light);
   --primary-strong: var(--product-primary-strong-light);

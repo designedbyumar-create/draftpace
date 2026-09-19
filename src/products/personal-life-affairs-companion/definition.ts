@@ -169,6 +169,7 @@ export const personalLifeAffairsCompanionDefinition: ProductDefinitionInput = {
     narrativeFont: "var(--font-newsreader), ui-serif, Georgia, serif",
     motionPersonality: "calm",
     contentWidth: "narrow",
+    identity: { motif: "book" },
   },
   layouts: ["responsive"],
   offline: "shell-only",

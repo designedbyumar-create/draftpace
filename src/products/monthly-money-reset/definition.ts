@@ -57,7 +57,7 @@ export const monthlyMoneyResetDefinition: ProductDefinitionInput = {
    * nothing renders, see `themeExtension.ts`'s own comment on why
    * `accent` alone is inert.
    */
-  theme: { motionPersonality: "calm", contentWidth: "wide" },
+  theme: { motionPersonality: "calm", contentWidth: "wide", identity: { motif: "ledger" } },
   /**
    * Installable, like every other product. This was the one real product
    * with no pwa block, which meant the free product, the first thing most

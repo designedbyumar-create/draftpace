@@ -67,6 +67,45 @@ Two rules matter here, both learned the hard way:
 Monthly Money Reset's bespoke `--mmr-*` tokens are the one documented
 exception to this mechanism, not a second undocumented system.
 
+## Product identity (beyond colour)
+
+Colour alone made nine products read as one product in nine outfits. A
+product now declares `theme.identity` in its `definition.ts`:
+
+```ts
+theme: {
+  ...,
+  identity: { motif: "ledger", shape: "sharp" }, // shape is optional
+}
+```
+
+- **`motif`** (required, one of `PRODUCT_MOTIFS` in
+  `src/product-framework/definition.ts`) names the structure the product's
+  own signature screen object and printed pages are built around: ledger,
+  index, tag, focus, register, book, timeline, gauge, page. It is emitted
+  as `data-product-motif` on both shell roots so a stylesheet or a
+  printable can key off it. A motif is a name, never a style value.
+  `productIdentity.test.ts` requires every sold product to declare one and
+  no two to share one, and fails if a motif exists that nothing uses.
+- **`shape`** (`sharp | standard | soft`) scales the four platform radius
+  tokens inside that product's shell only, through
+  `--product-radius-scale` (globals.css, `[data-product-theme]`). Only
+  surfaces that use `var(--radius*)` follow it; hard-coded Tailwind
+  `rounded-*` classes do not, so a product moves those onto the tokens as
+  it redesigns each screen. `standard`, and no declaration, are identical.
+- **Declaring `identity` also opts a product into its `motionPersonality`**
+  without needing `accentScale`. That is how a product with bespoke colour
+  tokens (Monthly Money Reset) takes its own motion without being
+  re-coloured. A product that declares neither is byte-identical to
+  before; `themeExtension.test.ts` pins that.
+
+Rules for a signature object and a motif: built from data the product
+really has, never decoration, no invented figures, no scores or streaks
+(see Visual rules below). Content width and the narrative face were
+already dials (`contentWidth`, `narrativeFont`); density is not one,
+because Tailwind 3 spacing is static rather than variable-driven, so a
+denser or airier product changes its own components.
+
 ## Store images (`public/store/`)
 
 Four generated images per product, 1600×1200 WebP, named
