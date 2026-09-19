@@ -11,6 +11,10 @@ import type { CSSProperties } from "react";
  */
 
 const LIGHT: Record<string, string> = {
+  // The Number's own panel. Light keeps the deep forest; dark keeps it deep
+  // too (below), rather than inverting to a pale slab on a dark page.
+  "--mmr-hero": "#173c32",
+  "--mmr-hero-ink": "#f5f0e8",
   "--mmr-forest-950": "#102a24",
   "--mmr-forest-900": "#173c32",
   "--mmr-forest-800": "#214b3e",
@@ -35,6 +39,8 @@ const LIGHT: Record<string, string> = {
 };
 
 const DARK: Record<string, string> = {
+  "--mmr-hero": "#1f4034",
+  "--mmr-hero-ink": "#eef2ea",
   "--mmr-forest-950": "#eaf0eb",
   "--mmr-forest-900": "#dce8df",
   "--mmr-forest-800": "#bdd0c3",
@@ -60,4 +66,44 @@ const DARK: Record<string, string> = {
 
 export function monthlyMoneyResetThemeVars(resolvedTheme: "light" | "dark"): CSSProperties {
   return (resolvedTheme === "dark" ? DARK : LIGHT) as CSSProperties;
+}
+
+/**
+ * The few shared tokens this product must set itself. It does not declare an
+ * accentScale (see definition.ts), so nothing gave it a --primary: the
+ * shell's `[data-product-theme]` rule pointed --primary at a variable this
+ * product never declares, and every filled button and link inside it
+ * rendered with no colour. Kept apart from the --mmr-* set on purpose: that
+ * set is guaranteed never to collide with a platform token, and this one is
+ * a deliberate, named override of exactly these six.
+ */
+export const MONEY_RESET_SHARED_TOKENS = [
+  "--primary",
+  "--primary-strong",
+  "--primary-soft",
+  "--primary-contrast",
+  "--link",
+  "--focus-ring",
+] as const;
+
+const SHARED_LIGHT: Record<string, string> = {
+  "--primary": "#214b3e",
+  "--primary-strong": "#173c32",
+  "--primary-soft": "#dce2d7",
+  "--primary-contrast": "#fffdf9",
+  "--link": "#214b3e",
+  "--focus-ring": "#315f50",
+};
+
+const SHARED_DARK: Record<string, string> = {
+  "--primary": "#a9cdb8",
+  "--primary-strong": "#c6e0d0",
+  "--primary-soft": "#26362f",
+  "--primary-contrast": "#0f1a15",
+  "--link": "#a9cdb8",
+  "--focus-ring": "#a9cdb8",
+};
+
+export function monthlyMoneyResetSharedTokens(resolvedTheme: "light" | "dark"): CSSProperties {
+  return (resolvedTheme === "dark" ? SHARED_DARK : SHARED_LIGHT) as CSSProperties;
 }

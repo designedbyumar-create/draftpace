@@ -1,7 +1,7 @@
 "use client";
 
 import { useTheme } from "@/design-system/theme/ThemeProvider";
-import { monthlyMoneyResetThemeVars } from "../theme";
+import { monthlyMoneyResetSharedTokens, monthlyMoneyResetThemeVars } from "../theme";
 
 /**
  * Wraps every Monthly Money Reset module so its forest/sage/ivory/clay
@@ -12,5 +12,9 @@ import { monthlyMoneyResetThemeVars } from "../theme";
  */
 export default function ThemeScope({ children }: { children: React.ReactNode }) {
   const { resolvedTheme } = useTheme();
-  return <div style={monthlyMoneyResetThemeVars(resolvedTheme)}>{children}</div>;
+  return (
+    <div style={{ ...monthlyMoneyResetThemeVars(resolvedTheme), ...monthlyMoneyResetSharedTokens(resolvedTheme) }}>
+      {children}
+    </div>
+  );
 }
