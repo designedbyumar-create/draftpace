@@ -3,6 +3,7 @@ import { ArrowRight } from "@/design-system/Icon";
 import { shopRegistry } from "@/shop/registry";
 import { discountPercent, formatCompareAtPrice, formatPrice, type ShopProduct } from "@/shop/definition";
 import { LIFE_AREAS } from "@/content/areas";
+import { screensFor } from "@/app/(marketing)/shop/productScreens";
 
 /**
  * The Companion Series, on the homepage.
@@ -97,48 +98,73 @@ function SeriesCard({ product }: { product: ShopProduct }) {
   const accent = area ? `var(--area-${area.slug})` : "var(--area-series)";
   const accentSoft = area ? `var(--area-${area.slug}-soft)` : "var(--area-series-soft)";
 
+  // The real screen somebody lands on, the same drawing the Shop card and
+  // the owned-product manual use (see productScreens.tsx) - never a
+  // second, separately-drawn "homepage version". Only the first of the
+  // three: this card has no room or reason to cycle through all of them,
+  // the way the Shop grid's larger card does.
+  const screens = screensFor(product.slug);
+  const overview = screens?.[0] ?? null;
+
   return (
     <Link
       href={`/shop/${product.slug}`}
       // The area's colour pair is passed as data rather than baked into
       // classes, because it varies per card. .card-tint (globals.css)
-      // keeps the card an ordinary surface at rest and washes the whole
-      // thing to --card-tint on hover. No lift, no shadow.
+      // keeps the card body an ordinary surface at rest and washes it to
+      // --card-tint on hover. No lift, no shadow.
       style={{ "--card-tint": accentSoft, "--card-accent": accent } as React.CSSProperties}
-      className="card-tint group flex h-full flex-col rounded-2xl border border-[var(--border)] p-5"
+      className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[var(--border)]"
     >
-      <div className="flex items-center justify-between gap-3">
-        {/* The one spot of colour at rest, and it is doing a job: it says
-            which part of life this is filed under. */}
-        <span className="text-[11px] font-bold uppercase tracking-[0.1em]" style={{ color: accent }}>
-          {area?.label ?? "The Series"}
-        </span>
-        {product.access === "free" && (
-          <span className="text-[10px] font-bold uppercase tracking-wide text-[var(--success)]">Free</span>
-        )}
-      </div>
+      {overview && (
+        // The thumbnail strip. Deliberately small (h-28, versus the Shop
+        // grid card's full aspect-[4/3] phone) and deliberately cropped
+        // to just the top of the real screen: a "what does this even
+        // look like" glance, not a second product tour competing with
+        // the Shop page's own. The area tint sits here permanently
+        // rather than only on hover, the one place on this card colour
+        // is a backdrop rather than a state - the same way a product
+        // photograph sits on a coloured plate.
+        <div className="relative h-28 shrink-0 overflow-hidden" style={{ background: accentSoft }}>
+          <div className="absolute left-1/2 top-3 w-[168px] -translate-x-1/2">{overview}</div>
+        </div>
+      )}
 
-      <h3 className="mt-2.5 text-[16px] font-semibold leading-snug tracking-tight text-[var(--text)]">
-        {product.title}
-      </h3>
-      <p className="mt-1.5 line-clamp-3 text-[13px] leading-relaxed text-[var(--muted)]">{product.promise}</p>
-
-      <div className="mt-4 flex flex-1 items-end justify-between gap-3 pt-3.5">
-        <div className="flex flex-wrap items-baseline gap-2">
-          {compareAtLabel && (
-            <span className="font-serif text-[14px] text-[var(--faint)] line-through">{compareAtLabel}</span>
-          )}
-          <span className="font-serif text-[20px] font-semibold leading-none tracking-tight text-[var(--text)]">
-            {priceLabel}
+      <div className="card-tint flex flex-1 flex-col p-5">
+        <div className="flex items-center justify-between gap-3">
+          {/* Without a thumbnail above it, this is still the one spot of
+              colour at rest, doing the same job: naming which part of
+              life the card is filed under. */}
+          <span className="text-[11px] font-bold uppercase tracking-[0.1em]" style={{ color: accent }}>
+            {area?.label ?? "The Series"}
           </span>
-          {savings !== null && savings > 0 && (
-            <span className="text-[10px] font-bold text-[var(--success)]">Save {savings}%</span>
+          {product.access === "free" && (
+            <span className="text-[10px] font-bold uppercase tracking-wide text-[var(--success)]">Free</span>
           )}
         </div>
-        <span className="inline-flex shrink-0 items-center gap-1 text-[12.5px] font-semibold text-[var(--primary)]">
-          See it
-          <ArrowRight size={13} aria-hidden />
-        </span>
+
+        <h3 className="mt-2.5 text-[16px] font-semibold leading-snug tracking-tight text-[var(--text)]">
+          {product.title}
+        </h3>
+        <p className="mt-1.5 line-clamp-3 text-[13px] leading-relaxed text-[var(--muted)]">{product.promise}</p>
+
+        <div className="mt-4 flex flex-1 items-end justify-between gap-3 pt-3.5">
+          <div className="flex flex-wrap items-baseline gap-2">
+            {compareAtLabel && (
+              <span className="font-serif text-[14px] text-[var(--faint)] line-through">{compareAtLabel}</span>
+            )}
+            <span className="font-serif text-[20px] font-semibold leading-none tracking-tight text-[var(--text)]">
+              {priceLabel}
+            </span>
+            {savings !== null && savings > 0 && (
+              <span className="text-[10px] font-bold text-[var(--success)]">Save {savings}%</span>
+            )}
+          </div>
+          <span className="inline-flex shrink-0 items-center gap-1 text-[12.5px] font-semibold text-[var(--primary)]">
+            See it
+            <ArrowRight size={13} aria-hidden />
+          </span>
+        </div>
       </div>
     </Link>
   );

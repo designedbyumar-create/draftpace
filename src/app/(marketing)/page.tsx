@@ -272,7 +272,7 @@ export default function HomePage() {
       */}
       <section className="border-b border-[var(--border)] bg-[var(--surface-muted)]">
         <Container width="wide" className="py-16 sm:py-20">
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between lg:gap-16">
+          <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between lg:gap-16">
             <div className="min-w-0 max-w-xl">
               <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--brand-ink)]">
                 Start free
@@ -285,11 +285,25 @@ export default function HomePage() {
                 complete, narrower product rather than a preview of a paid one, and it is the fastest way to find out
                 whether a Companion suits how you think before you spend anything.
               </p>
+              <div className="mt-6">
+                <Button href="/free" size="lg" iconRight={<ArrowRight size={16} aria-hidden />}>
+                  See what it does
+                </Button>
+              </div>
             </div>
-            <div className="shrink-0">
-              <Button href="/free" size="lg" iconRight={<ArrowRight size={16} aria-hidden />}>
-                See what it does
-              </Button>
+            {/*
+              This section used to be text and a button on a plain tinted
+              field, the one place on the page making a real product
+              claim with nothing to look at. MmrSecond (the Breakdown
+              screen) rather than the Overview MmrMockup already shown at
+              the top of the hero: showing the same screen twice on one
+              page would read as a rerun, and the breakdown is the part
+              of the free product's own honesty claim, "money available
+              right now" reconciled line by line, that most needs
+              showing rather than telling.
+            */}
+            <div className="w-full max-w-[220px] shrink-0 self-center lg:self-auto">
+              <MmrSecond />
             </div>
           </div>
         </Container>
