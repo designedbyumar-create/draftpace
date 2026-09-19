@@ -3,13 +3,10 @@
 import FirstRunTour from "@/components/platform/FirstRunTour";
 import type { TourStep } from "@/components/platform/GuidedTour";
 import { useCallback, useEffect, useState } from "react";
-import Link from "next/link";
-import { motion, useReducedMotion } from "framer-motion";
 import Button from "@/design-system/Button";
 import EmptyState from "@/design-system/EmptyState";
-import { CalendarCheck, Check } from "@/design-system/Icon";
+import { CalendarCheck } from "@/design-system/Icon";
 import { describeResultError } from "@/product-framework/result";
-import { staggerContainer, staggerItem, settleVariant } from "@/design-system/motion";
 import { findHomeschoolInstanceId, HOMESCHOOLING_COMPANION_SLUG } from "../instanceData";
 import {
   loadChildren,
@@ -19,8 +16,9 @@ import {
   loadTaskEvents,
   recordWork,
 } from "../domain/learningData";
-import { dateKey, deriveToday, describeTask, type TaskEvent, type TodayTask } from "../today";
-import { SOURCE_LABEL, type Child, type Curriculum, type PlanEntry, type Position } from "../learning";
+import { dateKey, deriveToday, type TaskEvent, type TodayTask } from "../today";
+import type { Child, Curriculum, PlanEntry, Position } from "../learning";
+import { TodayDays, TodayHeader } from "./TodayView";
 
 type LoadStatus = "loading" | "ready" | "no-instance" | "error";
 
@@ -77,7 +75,6 @@ export default function TodayModule() {
   const [asking, setAsking] = useState<TodayTask | null>(null);
   /** The subject just marked done, so its line gets the one-time settle beat rather than every visit replaying it. */
   const [justRecordedKey, setJustRecordedKey] = useState<string | null>(null);
-  const reduceMotion = useReducedMotion();
 
   const load = useCallback(async () => {
     const found = await findHomeschoolInstanceId();
@@ -171,21 +168,18 @@ export default function TodayModule() {
   return (
     <div className="flex flex-col gap-6">
       <FirstRunTour slug={HOMESCHOOLING_COMPANION_SLUG} steps={TOUR_STEPS} />
-      <div>
-        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Today</p>
-        <h1
-          className="mt-2 text-[26px] leading-tight text-[var(--text)]"
-          style={{ fontFamily: "var(--product-narrative-font, inherit)" }}
-        >
-          {children.length === 0
+      <TodayHeader
+        heading={
+          children.length === 0
             ? "Nobody added yet."
             : view.nothingPlanned
               ? "Nothing planned yet."
               : view.nothingOutstanding
                 ? "Nothing left for today."
-                : "What we are doing today."}
-        </h1>
-      </div>
+                : "What we are doing today."
+        }
+        dateLabel={now.toLocaleDateString(undefined, { weekday: "long", month: "long", day: "numeric" })}
+      />
 
       {errorMessage && (
         <p className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3 text-[13px] text-[var(--danger)]">
@@ -220,150 +214,20 @@ export default function TodayModule() {
           </div>
         </div>
       ) : (
-        view.days.map((day) => (
-          <section key={day.child.id} aria-label={`Today for ${day.child.name}`}>
-            <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-              <h2
-                className="text-[18px] text-[var(--text)]"
-                style={{ fontFamily: "var(--product-narrative-font, inherit)" }}
-              >
-                {day.child.name}
-              </h2>
-              <Link
-                href={`/app/products/${HOMESCHOOLING_COMPANION_SLUG}/kids/${day.child.id}`}
-                className="text-[12px] font-semibold text-[var(--muted)] hover:text-[var(--text)]"
-              >
-                Their page
-              </Link>
-            </div>
-
-            {day.tasks.length === 0 ? (
-              <p className="mt-2 text-[13px] leading-relaxed text-[var(--muted)]">
-                {/* A day off is a normal day, and neither of these is a
-                    failure to do something. */}
-                {day.recorded.length > 0
-                  ? "That is everything for today."
-                  : day.restDay
-                    ? "Nothing scheduled today."
-                    : "Nothing scheduled today."}
-              </p>
-            ) : (
-              <motion.div
-                className="mt-2 flex flex-col gap-2.5"
-                initial="hidden"
-                animate="visible"
-                variants={staggerContainer(Boolean(reduceMotion))}
-              >
-                {day.tasks.map((task) => {
-                  const key = `${task.childId}:${task.subject}`;
-                  const busy = pending === key;
-                  return (
-                    <motion.div
-                      key={key}
-                      variants={staggerItem(Boolean(reduceMotion))}
-                      className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4"
-                    >
-                      <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                        <h3 className="text-[15px] font-semibold text-[var(--text)]">{task.subject}</h3>
-                        {/* Where it came from, on every task, every time. */}
-                        <span className="text-[11px] font-semibold text-[var(--primary)]">
-                          {SOURCE_LABEL[task.source]}
-                        </span>
-                      </div>
-                      <p className="mt-0.5 text-[13px] text-[var(--muted)]">{describeTask(task)}</p>
-                      {task.reason && (
-                        <p className="mt-1.5 text-[12.5px] leading-relaxed text-[var(--muted)]">
-                          Worth going over again. {task.reason}
-                        </p>
-                      )}
-                      <div className="mt-3 flex flex-wrap gap-2">
-                        <Button variant="action" size="sm" disabled={busy} onClick={() => record(task, "done")}>
-                          {busy ? "Saving..." : "Done"}
-                        </Button>
-                        <Button size="sm" variant="ghost" disabled={busy} onClick={() => record(task, "not-completed")}>
-                          Did not get to it
-                        </Button>
-                      </div>
-                    </motion.div>
-                  );
-                })}
-              </motion.div>
-            )}
-
-            {day.recorded.length > 0 && (
-              <ul className="mt-2.5 flex flex-col gap-1">
-                {day.recorded.map((entry) => {
-                  const line = (
-                    <>
-                      <Check size={14} aria-hidden className="shrink-0 text-[var(--primary)]" />
-                      {entry.subject}
-                      {entry.state === "not-completed" && <span className="text-[var(--faint)]">, not finished</span>}
-                    </>
-                  );
-                  const key = `${entry.childId}:${entry.subject}`;
-                  if (key !== justRecordedKey) {
-                    return (
-                      <li key={entry.subject} className="flex items-center gap-2 text-[12.5px] text-[var(--muted)]">
-                        {line}
-                      </li>
-                    );
-                  }
-                  return (
-                    <motion.li
-                      key={entry.subject}
-                      initial="hidden"
-                      animate="visible"
-                      variants={settleVariant(Boolean(reduceMotion))}
-                      className="flex items-center gap-2 text-[12.5px] text-[var(--muted)]"
-                    >
-                      {line}
-                    </motion.li>
-                  );
-                })}
-              </ul>
-            )}
-          </section>
-        ))
-      )}
-
-      {asking && (
-        <div
-          role="status"
-          className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4"
-          style={{ borderLeftWidth: 3, borderLeftColor: "var(--primary)" }}
-        >
-          {/* The subject exactly as the parent typed it. Lowercasing turned
-              "Maths with Nana" into "maths with nana". */}
-          <p className="text-[14px] text-[var(--text)]">How did {asking.subject} go?</p>
-          <p className="mt-0.5 text-[12px] text-[var(--faint)]">
-            Only if it is worth saying. It changes what comes next, and skipping it changes nothing.
-          </p>
-          <div className="mt-3 flex flex-wrap gap-2">
-            {(
-              [
-                ["easy", "Easy"],
-                ["about-right", "About right"],
-                ["difficult", "Difficult"],
-              ] as const
-            ).map(([value, label]) => (
-              <Button
-                key={value}
-                size="sm"
-                variant="secondary"
-                onClick={() => {
-                  const task = asking;
-                  setAsking(null);
-                  record(task, "done", { difficulty: value });
-                }}
-              >
-                {label}
-              </Button>
-            ))}
-            <Button size="sm" variant="ghost" onClick={() => setAsking(null)}>
-              Skip
-            </Button>
-          </div>
-        </div>
+        <TodayDays
+          view={view}
+          childHref={(childId) => `/app/products/${HOMESCHOOLING_COMPANION_SLUG}/kids/${childId}`}
+          pendingKey={pending}
+          asking={asking}
+          justRecordedKey={justRecordedKey}
+          onDone={(task) => record(task, "done")}
+          onNotCompleted={(task) => record(task, "not-completed")}
+          onDifficulty={(task, value) => {
+            setAsking(null);
+            record(task, "done", { difficulty: value });
+          }}
+          onSkipAsking={() => setAsking(null)}
+        />
       )}
     </div>
   );
