@@ -127,6 +127,14 @@ describe("where the new views are wired", () => {
     expect(source("TripStart.tsx")).toContain("Where are you going?");
   });
 
+  it("the itinerary offers the printed copy and the one-page trip card", () => {
+    const itineraryModule = source("ItineraryModule.tsx");
+    expect(itineraryModule).toContain("downloadItinerary");
+    expect(itineraryModule).toContain("downloadTripCard");
+    expect(itineraryModule).toContain("deriveTripCard(");
+    expect(itineraryModule).toContain("Save a one-page trip card");
+  });
+
   it("never puts an /opacity on a var() colour, which Tailwind 3 silently drops", () => {
     for (const file of ["TodayView.tsx", "ItineraryView.tsx", "TripStart.tsx"]) {
       expect([...source(file).matchAll(/\[var\(--[a-z0-9-]+\)\]\/\d+/gi)].map((m) => m[0]), file).toEqual([]);

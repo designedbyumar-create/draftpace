@@ -155,6 +155,7 @@ export const travelCompanionShopProduct: ShopProductInput = {
     "A dated record of what happened, and lessons carried forward to the next trip",
     "A printable day-by-day itinerary, made from what you recorded",
     "A printable packing list, one page a traveller can tick with a pen",
+    "A one-page trip card for the family: who is going, where, how you are getting there and where you are staying, with no booking references, documents or notes on it",
     "A printable trip book, as long as your trip needs and no longer",
   ],
   savingBehavior:

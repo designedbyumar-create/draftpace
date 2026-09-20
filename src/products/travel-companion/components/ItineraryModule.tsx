@@ -5,6 +5,7 @@ import EmptyState from "@/design-system/EmptyState";
 import Button from "@/design-system/Button";
 import { CalendarCheck } from "@/design-system/Icon";
 import { deriveItinerary } from "../itinerary";
+import { deriveTripCard } from "../tripCard";
 import { BOOKING_KIND_INFO, type BookingKind } from "../trip";
 import BookingForm from "./BookingForm";
 import ItineraryView, { dayLabel } from "./ItineraryView";
@@ -32,6 +33,7 @@ export default function ItineraryModule() {
   const { status, errorMessage, instanceId, currentTrip, places, bookings, people, addTrip, addBooking, addParticipants } = travel;
   const [adding, setAdding] = useState<string | null>(null);
   const [making, setMaking] = useState(false);
+  const [makingCard, setMakingCard] = useState(false);
   const [printError, setPrintError] = useState<string | null>(null);
 
   if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
@@ -80,6 +82,22 @@ export default function ItineraryModule() {
   }));
   const range = rangeLabel(itinerary.range);
 
+  async function printCard() {
+    setMakingCard(true);
+    setPrintError(null);
+    try {
+      const { downloadTripCard } = await import("../printables/download");
+      await downloadTripCard(
+        deriveTripCard({ trip: currentTrip!, people, places, bookings }),
+        /^en-(US|CA)/.test(navigator.language) ? "LETTER" : "A4",
+      );
+    } catch {
+      setPrintError("The trip card could not be made. Nothing was downloaded.");
+    } finally {
+      setMakingCard(false);
+    }
+  }
+
   async function print() {
     setMaking(true);
     setPrintError(null);
@@ -111,9 +129,14 @@ export default function ItineraryModule() {
         onAdd={setAdding}
         actions={
           days.length > 0 && (
-            <Button variant="secondary" size="sm" disabled={making} onClick={print}>
-              {making ? "Preparing..." : "Save as PDF"}
-            </Button>
+            <>
+              <Button variant="secondary" size="sm" disabled={making} onClick={print}>
+                {making ? "Preparing..." : "Save as PDF"}
+              </Button>
+              <Button variant="ghost" size="sm" disabled={makingCard} onClick={printCard}>
+                {makingCard ? "Preparing..." : "Save a one-page trip card"}
+              </Button>
+            </>
           )
         }
       />
