@@ -59,6 +59,7 @@ const thread = (over: Partial<Thread> = {}): Thread => ({
 });
 
 const document = (over: Partial<TravelDocument> = {}): TravelDocument => ({
+  expiresOn: null,
   id: "d1",
   tripId: "t1",
   personId: null,

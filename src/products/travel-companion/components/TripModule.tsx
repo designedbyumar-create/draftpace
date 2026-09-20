@@ -15,6 +15,8 @@ import TripSetupForm from "./TripSetupForm";
 import PlaceForm from "./PlaceForm";
 import BookingForm from "./BookingForm";
 import DocumentForm from "./DocumentForm";
+import DocumentChecks from "./DocumentChecks";
+import DocumentExpiry from "./DocumentExpiry";
 import PackingStarter from "./PackingStarter";
 import PackingView from "./PackingView";
 import PreparationForm from "./PreparationForm";
@@ -23,6 +25,7 @@ import CompanionRun from "./CompanionRun";
 import { findResumableRun, beginRun } from "./useResumableRun";
 import { playbooksForBooking, PLAYBOOK_BY_KEY } from "../playbooks";
 import { archivePreparationItem, setPreparationCompletion, createPreparationItem, loadRecordEntriesForPlaceNames, type RunRecord } from "../domain/travelData";
+import { checkDocuments } from "../documentChecks";
 import { packingSections } from "../packingLists";
 import type { Playbook } from "@/components/product-shell/companion/steps";
 import PlaybookChooser from "@/components/product-shell/companion/PlaybookChooser";
@@ -80,6 +83,7 @@ export default function TripModule() {
     addParticipants,
     replaceBooking,
     addDocument,
+    replaceDocument,
     addPreparationItem,
     replacePreparationItem,
     upsertThread,
@@ -270,6 +274,7 @@ export default function TripModule() {
 
   const brief = deriveTripBrief(currentTrip, places, bookings, threads, documents, new Date());
 
+  const documentChecks = checkDocuments({ documents, people, trip: currentTrip });
   const activePreparation = preparation.filter((item) => item.status === "active");
   const packingRows = activePreparation.filter((item) => item.category === "packing");
   const otherPreparation = activePreparation.filter((item) => item.category !== "packing");
@@ -513,6 +518,12 @@ export default function TripModule() {
           <p className="mt-2 text-[13px] text-[var(--faint)]">Nothing recorded yet.</p>
         )}
 
+        {documentChecks.length > 0 && (
+          <div className="mt-3">
+            <DocumentChecks checks={documentChecks} />
+          </div>
+        )}
+
         {documents.length > 0 && (
           <ul className="mt-2 flex flex-col gap-2">
             {documents.map((document) => {
@@ -523,6 +534,7 @@ export default function TripModule() {
                   <p className="mt-0.5 text-[14px] font-medium text-[var(--text)]">{document.label}</p>
                   {person && <p className="mt-0.5 text-[13px] text-[var(--muted)]">{person.name}</p>}
                   {document.keptWhere && <p className="mt-0.5 text-[13px] text-[var(--muted)]">{document.keptWhere}</p>}
+                  <DocumentExpiry document={document} onChanged={replaceDocument} />
                 </li>
               );
             })}

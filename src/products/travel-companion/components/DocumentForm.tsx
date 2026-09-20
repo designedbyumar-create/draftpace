@@ -41,6 +41,7 @@ export default function DocumentForm({
   const [label, setLabel] = useState("");
   const [personId, setPersonId] = useState("");
   const [keptWhere, setKeptWhere] = useState("");
+  const [expiresOn, setExpiresOn] = useState("");
   const [surfaceInBrief, setSurfaceInBrief] = useState(false);
   const [pending, setPending] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -54,6 +55,7 @@ export default function DocumentForm({
       personId: personId || null,
       keptWhere: keptWhere || null,
       surfaceInBrief,
+      expiresOn: expiresOn || null,
     });
     setPending(false);
     if (!result.ok) {
@@ -98,6 +100,14 @@ export default function DocumentForm({
         onChange={(e) => setKeptWhere(e.target.value)}
         placeholder="Photo in Umar's phone"
         hint="What exists and where it is, never the document itself. Nothing here is uploaded or stored as a file."
+      />
+
+      <Input
+        type="date"
+        label="Expires (optional)"
+        value={expiresOn}
+        onChange={(e) => setExpiresOn(e.target.value)}
+        hint="Only used to point out a date that falls before or during the trip."
       />
 
       <label className="flex items-center gap-2 text-[13px] text-[var(--text)]">

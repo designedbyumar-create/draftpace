@@ -564,7 +564,7 @@ export async function unlinkPersonFromBooking(linkId: string): Promise<Result<nu
 
 // -------------------------------------------------------------- documents
 
-const DOCUMENT_COLUMNS = "id, trip_id, person_id, booking_id, kind, label, kept_where, surface_in_brief, status";
+const DOCUMENT_COLUMNS = "id, trip_id, person_id, booking_id, kind, label, kept_where, surface_in_brief, status, expires_on";
 
 function toDocument(row: Record<string, unknown>): TravelDocument {
   return {
@@ -576,6 +576,7 @@ function toDocument(row: Record<string, unknown>): TravelDocument {
     label: row.label as string,
     keptWhere: (row.kept_where as string | null) ?? null,
     surfaceInBrief: Boolean(row.surface_in_brief),
+    expiresOn: row.expires_on ? String(row.expires_on).slice(0, 10) : null,
     status: row.status as TravelDocument["status"],
   };
 }
@@ -599,6 +600,8 @@ export interface NewDocument {
   label: string;
   keptWhere?: string | null;
   surfaceInBrief?: boolean;
+  /** YYYY-MM-DD. Optional. */
+  expiresOn?: string | null;
 }
 
 export async function createDocument(
@@ -621,11 +624,25 @@ export async function createDocument(
       label: draft.label.trim(),
       kept_where: draft.keptWhere?.trim() || null,
       surface_in_brief: draft.surfaceInBrief ?? false,
+      expires_on: draft.expiresOn || null,
     })
     .select(DOCUMENT_COLUMNS)
     .single();
 
   if (error || !data) return err({ kind: "network", message: error?.message ?? "Could not add that document." });
+  return ok(toDocument(data as unknown as Record<string, unknown>));
+}
+
+/** Sets or clears the expiry date on an entry that already exists. The only edit this needs. */
+export async function setDocumentExpiry(documentId: string, expiresOn: string | null): Promise<Result<TravelDocument>> {
+  const { data, error } = await supabase
+    .from("trv_documents")
+    .update({ expires_on: expiresOn || null })
+    .eq("id", documentId)
+    .select(DOCUMENT_COLUMNS)
+    .single();
+
+  if (error || !data) return err({ kind: "network", message: error?.message ?? "Could not save that." });
   return ok(toDocument(data as unknown as Record<string, unknown>));
 }
 

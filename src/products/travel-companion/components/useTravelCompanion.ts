@@ -193,6 +193,9 @@ export function useTravelCompanion() {
   const addDocument = useCallback((created: TravelDocument) => {
     setDocuments((current) => [...current, created]);
   }, []);
+  const replaceDocument = useCallback((updated: TravelDocument) => {
+    setDocuments((current) => current.map((document) => (document.id === updated.id ? updated : document)));
+  }, []);
 
   const addPreparationItem = useCallback((created: PreparationItem) => {
     setPreparation((current) => [...current, created]);
@@ -235,6 +238,7 @@ export function useTravelCompanion() {
     addBooking,
     addParticipants,
     addDocument,
+    replaceDocument,
     addPreparationItem,
     replacePreparationItem,
     upsertThread,

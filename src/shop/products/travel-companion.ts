@@ -136,7 +136,7 @@ export const travelCompanionShopProduct: ShopProductInput = {
     "Open threads: anything you are waiting to hear back on, surfaced while it matters and filed when it is resolved",
     "Real timezones per place, from an offline lookup with a searchable manual override, so a booking across a date line is never wrongly called today",
     "People: who is travelling, their requirements, and the documents that belong to them",
-    "A document registry: what exists and where it is kept, never a file, never an upload",
+    "A document registry: what exists and where it is kept, never a file, never an upload, with an optional expiry date that is compared to your trip and stated as a plain date, never as what a country requires",
     "Record: what happened, dated, and what is worth knowing next time you go to the same place",
     "My Trip Book: a blank, structured, printable planner covering every part of the trip, included",
     "A private, real account, not a shared demo",

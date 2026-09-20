@@ -83,6 +83,8 @@ export interface TravelDocument {
   keptWhere: string | null;
   /** Flagged for the Trip Brief's "Important" line, proposal §14. */
   surfaceInBrief: boolean;
+  /** YYYY-MM-DD, when the person recorded one. Compared to the trip's dates and nothing else. */
+  expiresOn: string | null;
   status: "active" | "archived";
 }
 
