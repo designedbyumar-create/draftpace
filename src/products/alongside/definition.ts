@@ -116,7 +116,7 @@ export const alongsideDefinition: ProductDefinitionInput = {
    * own history lives on the thread.
    */
   navigation: ["workspace", "life", "help", "settings"],
-  primaryNavigation: ["workspace", "life", "help"],
+  primaryNavigation: ["workspace", "life"],
   workspaceLabel: "Now",
   destinationLabels: {
     life: "Life",

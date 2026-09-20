@@ -1,20 +1,21 @@
 "use client";
 
 import { useState } from "react";
-import Button from "@/design-system/Button";
 import EmptyState from "@/design-system/EmptyState";
 import GuidedTour, { type TourStep } from "@/components/platform/GuidedTour";
 import { useFirstRunTour } from "@/components/platform/useFirstRunTour";
-import { Compass, Plus } from "@/design-system/Icon";
-import { deriveAttention, QUIET_LINE } from "../attention";
+import { Compass } from "@/design-system/Icon";
+import { describeResultError } from "@/product-framework/result";
+import { deriveAttention } from "../attention";
 import { isOpenToWork, type LifeItem } from "../life";
 import { playbooksFor } from "../playbooks";
 import type { OutcomeKind, Playbook } from "../playbook";
-import type { FinishResult, RunRecord } from "../domain/alongsideData";
+import { recordOutcome, type FinishResult, type RunRecord } from "../domain/alongsideData";
 import CompanionRun from "./CompanionRun";
 import PlaybookChooser from "./PlaybookChooser";
 import StartCompanion from "./StartCompanion";
 import AddItemForm from "./AddItemForm";
+import NowView from "./NowView";
 import { useAlongside } from "./useAlongside";
 import { ALONGSIDE_SLUG } from "../instanceData";
 import { beginRun, findResumableRun } from "./useResumableRun";
@@ -74,9 +75,9 @@ const TOUR_STEPS: TourStep[] = [
     body: "When nothing is worth raising, it says so and stops. There is no list filling the space, no streak, and nothing here counts against you.",
   },
   {
-    targetId: "rail-help",
+    targetId: "alongside-tour-help",
     title: "Start with one hard thing",
-    body: "Help is the way in when you have not recorded anything yet. Say what you need to do, a call you have been avoiding say, and it walks you through that one thing.",
+    body: "Help me with something is the way in when you have not recorded anything yet. Say what you need to do, a call you have been avoiding say, and it walks you through that one thing.",
   },
   {
     targetId: "rail-life",
@@ -100,8 +101,10 @@ export default function NowModule() {
   const [closing, setClosing] = useState<string | null>(null);
   const [opening, setOpening] = useState(false);
   const [startError, setStartError] = useState<string | null>(null);
-  /** Collapsed to the one top signal by default. See "ONE THING, NOT A LIST TO EVALUATE" above. */
-  const [showAll, setShowAll] = useState(false);
+  /** Things set down with "Not now" for as long as this screen is open. Never stored. */
+  const [skipped, setSkipped] = useState<string[]>([]);
+  /** The item being marked sorted, so its button can say so. */
+  const [sorting, setSorting] = useState<string | null>(null);
   // No setup step in this product, so the tour waits only for the screen
   // to have loaded: an owner arriving with nothing recorded is exactly
   // who it is for.
@@ -197,101 +200,31 @@ export default function NowModule() {
     return <p className="text-[13px] text-[var(--faint)]">Opening...</p>;
   }
 
-  const attention = deriveAttention({ items }, new Date());
+  const now = new Date();
+  const attention = deriveAttention({ items }, now);
   const byId = new Map(items.map((item) => [item.id, item]));
+  // Sorted already, most worth mentioning first. Only one is ever shown;
+  // "Not now" sets it down for as long as this screen is open, and writes
+  // nothing.
+  const current = attention.signals.find((signal) => !skipped.includes(signal.itemId) && byId.has(signal.itemId)) ?? null;
+  const currentItem = current ? (byId.get(current.itemId) ?? null) : null;
 
-  return (
-    <div className="mx-auto flex w-full max-w-2xl flex-col gap-6">
-      {tourOn && <GuidedTour steps={TOUR_STEPS} onFinish={finishTour} labelPrefix="alongside" />}
+  async function markSorted(item: LifeItem) {
+    setStartError(null);
+    setSorting(item.id);
+    const result = await recordOutcome(instanceId as string, item, "resolved", null);
+    setSorting(null);
+    if (!result.ok) {
+      setStartError(describeResultError(result.error));
+      return;
+    }
+    replaceItem(result.data);
+    setClosing("Recorded.");
+  }
 
-      <header id="alongside-tour-now">
-        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Now</p>
-        <h1
-          className="mt-2 text-[26px] leading-tight text-[var(--text)]"
-          style={{ fontFamily: "var(--product-narrative-font, inherit)" }}
-        >
-          {attention.quiet ? QUIET_LINE : "Worth a look"}
-        </h1>
-        {attention.quiet && (
-          <p className="mt-2 text-[14px] leading-6 text-[var(--muted)]">
-            Anything you have recorded is still here in Life.
-          </p>
-        )}
-      </header>
-
-      {closing && <p className="text-[13px] text-[var(--muted)]">{closing}</p>}
-      {startError && <p className="text-[13px] text-[var(--danger)]">{startError}</p>}
-
-      {!attention.quiet && (() => {
-        // Sorted already, most worth mentioning first (deriveAttention's
-        // own weight sort). Collapsed to that one by default; the rest
-        // stay a click away rather than vanishing.
-        const visible = showAll ? attention.signals : attention.signals.slice(0, 1);
-        const hiddenCount = attention.signals.length - visible.length;
-        return (
-          <>
-            <ul className="flex flex-col gap-3">
-              {visible.map((signal) => {
-                const item = byId.get(signal.itemId);
-                if (!item) return null;
-                const available = playbooksFor(item.kind);
-                return (
-                  <li
-                    key={signal.itemId}
-                    className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4"
-                  >
-                    <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">
-                      {signal.line}
-                    </p>
-                    <p className="mt-1.5 text-[16px] leading-6 text-[var(--text)]">{item.title}</p>
-                    {item.leftOffNote && (
-                      <p className="mt-1 text-[13px] leading-5 text-[var(--muted)]">{item.leftOffNote}</p>
-                    )}
-                    {/* A waiting item gets no button until the day it is
-                        worth chasing. Before then somebody else has the
-                        ball; after then, chasing is the action. */}
-                    {isOpenToWork(item, new Date()) &&
-                      available.length > 0 &&
-                      (choosing === item.id ? (
-                        <PlaybookChooser
-                          item={item}
-                          onPick={(playbook) => pickPlaybook(item, playbook)}
-                          onCancel={() => setChoosing(null)}
-                        />
-                      ) : (
-                        <div className="mt-3">
-                          <Button size="sm" variant="secondary" onClick={() => openItem(item)}>
-                            Do this with me
-                          </Button>
-                        </div>
-                      ))}
-                  </li>
-                );
-              })}
-            </ul>
-            {hiddenCount > 0 && (
-              <button
-                type="button"
-                onClick={() => setShowAll(true)}
-                className="self-start text-[12px] font-semibold text-[var(--muted)] hover:text-[var(--text)]"
-              >
-                {hiddenCount === 1 ? "1 more thing" : `${hiddenCount} more things`}
-              </button>
-            )}
-            {showAll && attention.signals.length > 1 && (
-              <button
-                type="button"
-                onClick={() => setShowAll(false)}
-                className="self-start text-[12px] font-semibold text-[var(--muted)] hover:text-[var(--text)]"
-              >
-                Back to just the one
-              </button>
-            )}
-          </>
-        );
-      })()}
-
-      {adding ? (
+  if (adding) {
+    return (
+      <div className="mx-auto w-full max-w-md py-4">
         <AddItemForm
           instanceId={instanceId}
           onAdded={(item) => {
@@ -300,19 +233,36 @@ export default function NowModule() {
           }}
           onCancel={() => setAdding(false)}
         />
-      ) : (
-        <div className="flex flex-wrap items-center gap-2">
-          <Button variant="secondary" onClick={() => setAdding(true)} iconLeft={<Plus size={14} aria-hidden />}>
-            Keep something
-          </Button>
-          {/* Opening the Companion with nothing behind it is a first
-              class path. Somebody with one phone call to make today has
-              not asked for a system and should not have to build one. */}
-          <Button variant="ghost" onClick={() => setStarting(true)}>
-            Help me with something
-          </Button>
-        </div>
-      )}
-    </div>
+      </div>
+    );
+  }
+
+  return (
+    <>
+      {tourOn && <GuidedTour steps={TOUR_STEPS} onFinish={finishTour} labelPrefix="alongside" />}
+      <NowView
+        signal={current && currentItem ? { line: current.line, item: currentItem } : null}
+        setDown={!attention.quiet && current === null}
+        canWork={Boolean(currentItem && isOpenToWork(currentItem, now) && playbooksFor(currentItem.kind).length > 0)}
+        chooser={
+          currentItem && choosing === currentItem.id ? (
+            <PlaybookChooser
+              item={currentItem}
+              onPick={(playbook) => pickPlaybook(currentItem, playbook)}
+              onCancel={() => setChoosing(null)}
+            />
+          ) : null
+        }
+        closing={closing}
+        startError={startError}
+        sorting={Boolean(sorting)}
+        onDoThis={() => currentItem && openItem(currentItem)}
+        onNotNow={() => current && setSkipped((ids) => [...ids, current.itemId])}
+        onSorted={() => currentItem && markSorted(currentItem)}
+        onShowAgain={() => setSkipped([])}
+        onKeep={() => setAdding(true)}
+        onHelp={() => setStarting(true)}
+      />
+    </>
   );
 }
