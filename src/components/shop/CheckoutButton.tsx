@@ -3,6 +3,7 @@
 import Script from "next/script";
 import type { ReactNode } from "react";
 import { buttonClassName, type ButtonSize } from "@/design-system/buttonStyles";
+import { trackEvent } from "@/lib/analytics/gtag";
 
 /**
  * The buy button, as a Lemon Squeezy overlay rather than a trip to another
@@ -41,13 +42,31 @@ export default function CheckoutButton({
   size = "md",
   fullWidth = false,
   iconRight,
+  analytics,
 }: {
   href: string;
   children: ReactNode;
   size?: ButtonSize;
   fullWidth?: boolean;
   iconRight?: ReactNode;
+  /**
+   * Optional so this component works with zero analytics knowledge if a
+   * future call site has none to give it. Every real call site today
+   * (GetAction, in shop/[productSlug]/page.tsx) passes it: this is the
+   * one place a Lemon Squeezy checkout actually opens, so one click here
+   * is both "the product CTA was clicked" and "checkout began", so the two
+   * GA4 events fire together rather than needing two separate handlers
+   * for what is, on this button, a single real moment.
+   */
+  analytics?: { productId: string; productName: string; productCategory: string; cta: string };
 }) {
+  const handleClick = () => {
+    if (!analytics) return;
+    const { productId, productName, productCategory, cta } = analytics;
+    trackEvent("product_cta_click", { product_id: productId, product_name: productName, cta });
+    trackEvent("begin_checkout", { product_id: productId, product_name: productName, product_category: productCategory });
+  };
+
   return (
     <>
       <Script
@@ -60,7 +79,7 @@ export default function CheckoutButton({
       />
       {/* `primary`, the marketing register, because this is the public
           Shop, not in-product UI (see CLAUDE.md's two-register rule). */}
-      <a href={href} className={`lemonsqueezy-button ${buttonClassName({ size, fullWidth, variant: "primary" })}`}>
+      <a href={href} className={`lemonsqueezy-button ${buttonClassName({ size, fullWidth, variant: "primary" })}`} onClick={handleClick}>
         {children}
         {iconRight}
       </a>

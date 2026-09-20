@@ -7,6 +7,7 @@ import Button from "@/design-system/Button";
 import { ArrowRight } from "@/design-system/Icon";
 import { cardHighlight, discountPercent, formatCompareAtPrice, formatPrice, type ShopProduct } from "@/shop/definition";
 import AddToLibraryButton from "./AddToLibraryButton";
+import { trackEvent } from "@/lib/analytics/gtag";
 
 export interface ShopFilterArea {
   slug: string;
@@ -55,8 +56,8 @@ export default function ShopGrid({ entries, areas }: { entries: ShopGridEntry[];
       <p className="mt-3.5 text-[13.5px] italic leading-relaxed text-[var(--faint)]">{situation}</p>
 
       <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {visible.map((entry) => (
-          <ShopProductCard key={entry.product.slug} entry={entry} />
+        {visible.map((entry, position) => (
+          <ShopProductCard key={entry.product.slug} entry={entry} position={position} />
         ))}
       </div>
 
@@ -97,12 +98,20 @@ function FilterChip({ label, active, onClick }: { label: string; active: boolean
  * pair invented for the grid). Neither is a soft "Learn more" link
  * standing in for a real action - that stays, but as the secondary one.
  */
-function ShopProductCard({ entry }: { entry: ShopGridEntry }) {
+function ShopProductCard({ entry, position }: { entry: ShopGridEntry; position: number }) {
   const { product, areaLabel, thumbnail } = entry;
   const priceLabel = formatPrice(product);
   const compareAtLabel = formatCompareAtPrice(product);
   const savingsPercent = discountPercent(product);
   const firstOutcome = cardHighlight(product);
+
+  // The one click that means "discovered this from the shelf", as
+  // distinct from CardCta's buttons, which mean "committed to it". The
+  // thumbnail is the largest, most-clicked way into a card; the title
+  // and "Learn more" links go to the exact same place, and firing the
+  // same event on all three would count one visit three times.
+  const trackDiscovery = () =>
+    trackEvent("shop_product_click", { product_id: product.id, product_name: product.title, position });
 
   return (
     /*
@@ -126,7 +135,12 @@ function ShopProductCard({ entry }: { entry: ShopGridEntry }) {
         above the title. Nothing overlaps, and it is legible at the size
         it actually renders.
       */}
-      <Link href={`/shop/${product.slug}`} aria-label={`See ${product.title} in detail`} className="relative block aspect-[4/3] overflow-hidden bg-[var(--surface-muted)]">
+      <Link
+        href={`/shop/${product.slug}`}
+        aria-label={`See ${product.title} in detail`}
+        className="relative block aspect-[4/3] overflow-hidden bg-[var(--surface-muted)]"
+        onClick={trackDiscovery}
+      >
         <div className="absolute inset-0 transition-transform duration-[var(--dur-slow)] ease-[var(--ease-out)] group-hover:scale-[1.025]">
           {thumbnail}
         </div>
@@ -220,9 +234,27 @@ function CardCta({ product, priceLabel }: { product: ShopProduct; priceLabel: st
   return (
     <>
       {product.access === "free" ? (
-        <AddToLibraryButton slug={product.slug} label="Add to your library, free" size="sm" fullWidth />
+        <AddToLibraryButton
+          slug={product.slug}
+          label="Add to your library, free"
+          size="sm"
+          fullWidth
+          analytics={{ productName: product.title }}
+        />
       ) : (
-        <Button href={`/shop/${product.slug}`} size="sm" fullWidth iconRight={<ArrowRight size={14} aria-hidden />}>
+        <Button
+          href={`/shop/${product.slug}`}
+          size="sm"
+          fullWidth
+          iconRight={<ArrowRight size={14} aria-hidden />}
+          onClick={() =>
+            trackEvent("product_cta_click", {
+              product_id: product.id,
+              product_name: product.title,
+              cta: "get_it_grid",
+            })
+          }
+        >
           Get it, {priceLabel}
         </Button>
       )}

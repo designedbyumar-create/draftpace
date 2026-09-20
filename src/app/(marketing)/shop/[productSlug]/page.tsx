@@ -22,6 +22,9 @@ import { productThemeStyle, PRODUCT_THEME_ATTRIBUTE } from "@/product-framework/
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { getLemonSqueezyCheckoutUrl, hasLemonSqueezyCheckout } from "@/shop/lemonSqueezyCheckout";
 import CheckoutButton from "@/components/shop/CheckoutButton";
+import { getAreaForProduct } from "@/content/areas";
+import ViewProductTracker from "@/components/analytics/ViewProductTracker";
+import TrackedLink from "@/components/analytics/TrackedLink";
 
 export const dynamic = "force-dynamic";
 
@@ -129,6 +132,8 @@ export default async function ShopProductPage({
   const installedName = definition?.pwa?.shortName ?? product.title;
   const installable = Boolean(definition?.pwa);
   const screenTour = screenTourFor(product.slug);
+  /** The life area this product is filed under (Money, Home, Travel, ...): the closest real "category" this catalogue has. */
+  const productCategory = getAreaForProduct(product.slug)?.label ?? "uncategorized";
 
   // Resolved once per request, server-side, so every GetAction on this page
   // agrees on the exact same checkout link rather than each independently
@@ -145,6 +150,7 @@ export default async function ShopProductPage({
       answer a media query (CLAUDE.md rule 11).
     */
     <div {...{ [PRODUCT_THEME_ATTRIBUTE]: "" }} style={definition ? productThemeStyle(definition.theme) : undefined}>
+      <ViewProductTracker productId={product.id} productName={product.title} productCategory={productCategory} />
       {structuredData && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       )}
@@ -208,13 +214,13 @@ export default async function ShopProductPage({
             </p>
 
             <div className="mt-6">
-              <GetAction product={product} checkout={checkout} size="lg" fullWidth />
+              <GetAction product={product} checkout={checkout} productCategory={productCategory} size="lg" fullWidth />
             </div>
             {/* Appears only once the button above has scrolled away, and
                 renders the same GetAction so the two can never disagree
                 about what the checkout is. */}
             <StickyBuyBar priceLabel={priceLabel} compareAtLabel={compareAtLabel}>
-              <GetAction product={product} checkout={checkout} size="md" fullWidth />
+              <GetAction product={product} checkout={checkout} productCategory={productCategory} size="md" fullWidth />
             </StickyBuyBar>
             <p className="mt-3 flex items-center gap-1.5 text-[12.5px] text-[var(--faint)]">
               <Lock size={12} aria-hidden />
@@ -475,7 +481,7 @@ export default async function ShopProductPage({
             device you sign in on.
           </p>
           <div className="mt-8 flex justify-center">
-            <GetAction product={product} checkout={checkout} size="lg" center />
+            <GetAction product={product} checkout={checkout} productCategory={productCategory} size="lg" center />
           </div>
           {compareAtLabel && (
             <p className="mt-4 text-[13px] text-[var(--faint)]">
@@ -524,12 +530,15 @@ async function resolveCheckout(product: ShopProduct): Promise<CheckoutStatus> {
 function GetAction({
   product,
   checkout,
+  productCategory,
   size = "md",
   center = false,
   fullWidth = false,
 }: {
   product: ShopProduct;
   checkout: CheckoutStatus;
+  /** The area label (Money, Home, Travel, ...) this product's page already computed once, passed down rather than re-derived per render. */
+  productCategory: string;
   size?: "sm" | "md" | "lg";
   center?: boolean;
   /** Fills its column, so the buy box reads as one block rather than a button floating in it. */
@@ -558,7 +567,7 @@ function GetAction({
   // distinct "you're about to be charged" moment still matters) and as a
   // safe fallback entry point.
   if (product.access === "free") {
-    return <AddToLibraryButton slug={product.slug} label={label} size={size} />;
+    return <AddToLibraryButton slug={product.slug} label={label} size={size} analytics={{ productName: product.title }} />;
   }
 
   // Paid, with a static href already set on the listing itself (e.g. a
@@ -574,7 +583,13 @@ function GetAction({
 
   if (checkout.kind === "ready") {
     return (
-      <CheckoutButton href={checkout.href} size={size} fullWidth={fullWidth} iconRight={<ArrowRight size={15} aria-hidden />}>
+      <CheckoutButton
+        href={checkout.href}
+        size={size}
+        fullWidth={fullWidth}
+        iconRight={<ArrowRight size={15} aria-hidden />}
+        analytics={{ productId: product.id, productName: product.title, productCategory, cta: label }}
+      >
         {label}
       </CheckoutButton>
     );
@@ -582,9 +597,16 @@ function GetAction({
 
   if (checkout.kind === "signed-out") {
     return (
-      <Button href={checkout.redirectTo} size={size} fullWidth={fullWidth} iconRight={<ArrowRight size={15} aria-hidden />}>
+      <TrackedLink
+        href={checkout.redirectTo}
+        size={size}
+        fullWidth={fullWidth}
+        iconRight={<ArrowRight size={15} aria-hidden />}
+        eventName="product_cta_click"
+        eventParams={{ product_id: product.id, product_name: product.title, cta: label }}
+      >
         {label}
-      </Button>
+      </TrackedLink>
     );
   }
 

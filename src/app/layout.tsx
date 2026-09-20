@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import AppProviders from "@/components/providers/AppProviders";
 import { fraunces, inter, newsreader, spaceMono } from "@/lib/fonts";
+import GoogleAnalyticsScript from "@/components/analytics/GoogleAnalyticsScript";
+import AnalyticsPageView from "@/components/analytics/AnalyticsPageView";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -87,6 +89,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning className={`${fraunces.variable} ${inter.variable} ${newsreader.variable} ${spaceMono.variable}`}>
       <body>
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+        {/*
+          The single place gtag.js is loaded and the single place
+          page_view fires on navigation — every route, /app and /admin
+          included, goes through this one root layout. See each
+          component's own comment in src/components/analytics/ for why
+          it's split this way rather than one bigger component.
+        */}
+        <GoogleAnalyticsScript />
+        <AnalyticsPageView />
         <AppProviders>
           {children}
         </AppProviders>
