@@ -110,6 +110,17 @@ theme: {
   readable as text and its button label readable on it, in both themes.
   Quiet is not allowed to mean faint.
 
+- **`hero`** (optional) gives a product the tones of its one filled banner,
+  a `from`/`mid`/`to` gradient and the `ink` that sits on it, as a required
+  light and dark pair. It is separate from the accent because the two answer
+  different questions: the accent must read as text and as a button on the
+  page, while the hero must hold light text on a deep field, and in dark
+  mode that field is a deep tone of the hue, not the pale tone the accent
+  becomes. Emitted as `--product-hero-{from,mid,to,ink}-light/dark` and
+  picked in globals.css in the same three theme states as the accent.
+  `ground.test.ts` holds `ink` to 7:1 against every stop of the gradient,
+  in both themes (Personal Finance Companion's Today banner).
+
 Rules for a signature object and a motif: built from data the product
 really has, never decoration, no invented figures, no scores or streaks
 (see Visual rules below). Content width and the narrative face were

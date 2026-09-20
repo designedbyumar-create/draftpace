@@ -46,7 +46,23 @@ export const personalFinanceCompanionShopProduct: ShopProductInput = {
   problemsSolved: [
     {
       problem: "Your money is scattered across bank apps, statements, memory, and habit.",
-      solution: "One dominant Available Money figure you can actually trust, with the full breakdown one tap away.",
+      solution:
+        "One Available Money figure in a banner that shows where the rest of your balance goes, with every figure's working one tap away.",
+    },
+    {
+      problem: "You have no idea when a debt will actually be gone.",
+      solution:
+        "A payoff plan from your own balances, rates and minimum payments: the month you are debt-free, the order the debts clear, and what the cheaper method saves. A debt with no rate is named as left out, never guessed at.",
+    },
+    {
+      problem: "You cannot remember which bills you have paid this month.",
+      solution:
+        "Tick a bill paid for the month. What is left to pay is worked out from what you ticked, and a paid bill leaves the list of what is coming up.",
+    },
+    {
+      problem: "You cannot see what a normal month looks like once everything is counted.",
+      solution:
+        "A typical month written out from what you recorded: what comes in, what goes out, what is set aside to reach each goal on its date, and what is left. Anything it could not count is named underneath.",
     },
     {
       problem: "You only find out something's wrong after it's already become a problem.",
@@ -94,6 +110,8 @@ export const personalFinanceCompanionShopProduct: ShopProductInput = {
     "The guided Companion, plus direct access to every area for a quick edit",
     "A real Attention inbox derived from your own records, never fabricated",
     "\"How Draftpace got this\" breakdowns on every figure",
+    "A payoff plan for your debts, smallest balance first or highest rate first, with an extra amount you choose",
+    "Bills you can tick paid for the month, and a typical month written out like a budget planner",
     "Optional account linking for debt and savings, without ever deriving a goal from a linked balance",
     "Paste-notes, text file, and CSV import with a review step before anything is confirmed",
     "Shared Responsibility: a per-bill shared flag and split, a manually ticked settled date, and a generated statement of what is settled and what is still owed",
@@ -107,7 +125,8 @@ export const personalFinanceCompanionShopProduct: ShopProductInput = {
     "Debt and savings goals, optionally linked to an account",
   ],
   expectedOutputs: [
-    "An Available Money figure, explained line by line",
+    "An Available Money figure, explained line by line, with a bar showing where the rest of your balance goes",
+    "The month you could be debt-free, and the order your debts clear",
     "One dominant next action at a time",
     "A real Attention inbox of genuine gaps",
     "A complete, always-current financial picture across all seven areas",
@@ -193,6 +212,15 @@ export const personalFinanceCompanionShopProduct: ShopProductInput = {
         "Subscriptions are their own area, with amounts and renewal dates, and a missing renewal date shows up in Attention rather than being quietly ignored.",
     },
     {
+      phrase: "Debt snowball or avalanche, which is better for me",
+      answer:
+        "The payoff plan runs both on your own balances, rates and minimums and says which costs less in interest, with the month you would be debt-free either way.",
+    },
+    {
+      phrase: "I need a bill tracker that shows what I have paid",
+      answer: "Bills you tick paid for the month, with what is left to pay worked out from the ticks.",
+    },
+    {
       phrase: "I have no idea where my money went",
       answer:
         "Transactions you enter or import, reviewed before anything joins your picture, so what you are looking at is what actually happened.",
@@ -223,6 +251,16 @@ export const personalFinanceCompanionShopProduct: ShopProductInput = {
       label: "See what's actually available to spend",
       answer: "Overview opens on Available Money, with the line-by-line breakdown one tap away.",
       destination: "workspace",
+    },
+    {
+      label: "Find out when my debt could be gone",
+      answer: "Open Debt for the payoff plan. Add an extra amount each month and switch between smallest balance first and highest rate first.",
+      destination: "debt",
+    },
+    {
+      label: "Tick off a bill I have paid",
+      answer: "Open Bills and tick the bill. It is paid for the month, and what is left to pay updates.",
+      destination: "bills",
     },
     {
       label: "Find out what needs fixing in my records",

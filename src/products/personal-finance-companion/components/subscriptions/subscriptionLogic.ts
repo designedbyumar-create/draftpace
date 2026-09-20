@@ -58,7 +58,7 @@ export function resolveDominantAction(subscriptions: Subscription[]): Subscripti
  */
 export function describeDecisionNote(subscription: Subscription): string | null {
   if (subscription.decision === "plannedCancellation") {
-    return "Draftpace is tracking this as planned to cancel. It won't cancel it for you — you'll still need to do that yourself.";
+    return "Draftpace is tracking this as planned to cancel. It won't cancel it for you. You'll still need to do that yourself.";
   }
   if (subscription.decision === "reviewing") {
     return "You're still deciding whether to keep this.";

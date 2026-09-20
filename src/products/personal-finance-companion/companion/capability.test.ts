@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { computeCapabilities, allReady, type FinancialPictureInputs } from "./capability";
+import { computeCapabilities, allReady, balanceAllocation, type FinancialPictureInputs } from "./capability";
 import type { Account, Bill, Debt, IncomeSource, SavingsGoal, Subscription, Transaction } from "../state";
 
 function account(overrides: Partial<Account> = {}): Account {
@@ -204,6 +204,42 @@ describe("availableMoney", () => {
   });
 });
 
+describe("debt minimum payments are obligations", () => {
+  const inputs: FinancialPictureInputs = {
+    ...EMPTY,
+    accounts: [account({ currentBalanceMinorUnits: 500000 })],
+    bills: [bill({ amountMinorUnits: 100000 })],
+    debts: [debt({ minimumPaymentMinorUnits: 8500 }), debt({ id: "debt-2", name: "Loan", minimumPaymentMinorUnits: 12000 })],
+  };
+
+  it("Available Money subtracts every debt's minimum payment, and says so as its own line", () => {
+    const row = computeCapabilities(inputs).find((r) => r.key === "availableMoney")!;
+    expect(row.valueMinorUnits).toBe(500000 - 100000 - 8500 - 12000);
+    expect(row.explain!.lineItems).toContainEqual({ label: "Debt minimum payments", amountMinorUnits: -20500 });
+  });
+
+  it("Upcoming Obligations counts the same minimums, so the two figures cannot disagree", () => {
+    const rows = computeCapabilities(inputs);
+    const available = rows.find((r) => r.key === "availableMoney")!;
+    const obligations = rows.find((r) => r.key === "upcomingObligations")!;
+    expect(obligations.valueMinorUnits).toBe(100000 + 20500);
+    expect(500000 - obligations.valueMinorUnits!).toBe(available.valueMinorUnits);
+  });
+
+  it("adds no debt line when there is no debt, and ignores a closed debt", () => {
+    const none = computeCapabilities({ ...inputs, debts: [] }).find((r) => r.key === "availableMoney")!;
+    expect(none.explain!.lineItems.map((l) => l.label)).not.toContain("Debt minimum payments");
+    const closed = computeCapabilities({ ...inputs, debts: [debt({ status: "archived" })] }).find((r) => r.key === "availableMoney")!;
+    expect(closed.valueMinorUnits).toBe(400000);
+  });
+
+  it("someone with only a debt still has an obligations figure", () => {
+    const row = computeCapabilities({ ...EMPTY, debts: [debt({ minimumPaymentMinorUnits: 5000 })] }).find((r) => r.key === "upcomingObligations")!;
+    expect(row.status).not.toBe("waiting");
+    expect(row.valueMinorUnits).toBe(5000);
+  });
+});
+
 describe("expectedIncome", () => {
   it("uses the midpoint for estimated ranges and flags the estimate caveat", () => {
     const rows = computeCapabilities({
@@ -213,6 +249,24 @@ describe("expectedIncome", () => {
     const row = rows.find((r) => r.key === "expectedIncome")!;
     expect(row.valueMinorUnits).toBe(150000);
     expect(row.explain?.caveat).toMatch(/estimated/);
+  });
+});
+
+describe("expectedIncome is a monthly figure", () => {
+  it("turns weekly and fortnightly pay into a month, instead of counting one payday", () => {
+    const rows = computeCapabilities({
+      ...EMPTY,
+      incomeSources: [income({ id: "w", name: "Weekly shifts", amountMinorUnits: 30000, frequency: "weekly" }), income({ id: "b", name: "Fortnightly pay", amountMinorUnits: 120000, frequency: "biweekly" })],
+    });
+    const row = rows.find((r) => r.key === "expectedIncome")!;
+    expect(row.valueMinorUnits).toBe(Math.round((30000 * 52) / 12) + Math.round((120000 * 26) / 12));
+    expect(row.explain!.lineItems.map((l) => l.label)).toEqual(["Weekly shifts (monthly equivalent)", "Fortnightly pay (monthly equivalent)"]);
+  });
+
+  it("does not count irregular income, and says so", () => {
+    const row = computeCapabilities({ ...EMPTY, incomeSources: [income(), income({ id: "x", name: "Odd jobs", amountMinorUnits: 50000, frequency: "irregular" })] }).find((r) => r.key === "expectedIncome")!;
+    expect(row.valueMinorUnits).toBe(200000);
+    expect(row.explain!.caveat).toContain("1 irregular source is not counted.");
   });
 });
 
@@ -268,5 +322,38 @@ describe("allReady", () => {
   it("is false when any row needsInfo", () => {
     const rows = computeCapabilities({ ...EMPTY, debts: [debt({ interestRate: null })] });
     expect(allReady(rows)).toBe(false);
+  });
+});
+
+describe("balanceAllocation", () => {
+  const inputs: FinancialPictureInputs = {
+    ...EMPTY,
+    accounts: [account({ currentBalanceMinorUnits: 322018 }), account({ id: "acc-2", availableForSpending: false, currentBalanceMinorUnits: 200000 })],
+    bills: [bill({ amountMinorUnits: 100000 })],
+    subscriptions: [subscription({ amountMinorUnits: 1500 })],
+    debts: [debt({ minimumPaymentMinorUnits: 8500 })],
+  };
+
+  it("splits the balance into available, bills and subscriptions, debt minimums and protected, and the four add up to the total", () => {
+    const a = balanceAllocation(inputs)!;
+    expect(a).toEqual({
+      totalMinorUnits: 522018,
+      availableMinorUnits: 522018 - 200000 - 101500 - 8500,
+      billsAndSubscriptionsMinorUnits: 101500,
+      debtMinimumsMinorUnits: 8500,
+      protectedMinorUnits: 200000,
+    });
+    expect(a.availableMinorUnits + a.billsAndSubscriptionsMinorUnits + a.debtMinimumsMinorUnits + a.protectedMinorUnits).toBe(a.totalMinorUnits);
+  });
+
+  it("always agrees with the Available Money figure", () => {
+    const row = computeCapabilities(inputs).find((r) => r.key === "availableMoney")!;
+    expect(balanceAllocation(inputs)!.availableMinorUnits).toBe(row.valueMinorUnits);
+  });
+
+  it("is null with no account, and can be negative when what is owed out exceeds what is there", () => {
+    expect(balanceAllocation(EMPTY)).toBeNull();
+    const over = balanceAllocation({ ...inputs, bills: [bill({ amountMinorUnits: 900000 })] })!;
+    expect(over.availableMinorUnits).toBeLessThan(0);
   });
 });

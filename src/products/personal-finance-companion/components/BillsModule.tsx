@@ -10,13 +10,16 @@ import { formatCurrency } from "@/lib/currency";
 import { liftProps, settleVariant } from "@/design-system/motion";
 import { findPersonalFinanceCompanionInstanceId } from "../setupStateData";
 import { listBills, createBill, updateBill, archiveBill } from "../domain/bills";
+import { listBillPayments, markBillPaid, unmarkBillPaid } from "../domain/billPayments";
 import { computeSharedSplit } from "../domain/sharedResponsibility";
-import type { Bill } from "../state";
+import type { Bill, BillPayment } from "../state";
 import SectionShell from "./shared/SectionShell";
 import { StatRow, StatTile } from "./shared/StatRow";
 import { STATUS_LABEL, STATUS_TONE } from "./shared/lifecycle";
+import PaidToggle, { paidDayLabel } from "./bills/PaidToggle";
 import BillFormSheet, { billFormValuesToPatch, type BillFormValues } from "./bills/BillFormSheet";
 import { summarizeBills, resolveDominantAction, describeBillIncompleteness, describeDueRule } from "./bills/billLogic";
+import { isoDateOf, leftToPay, paymentFor, periodOf } from "./bills/billPaid";
 import { describeResultError } from "@/product-framework/result";
 
 type LoadStatus = "loading" | "ready" | "no-instance" | "error";
@@ -26,6 +29,10 @@ export default function BillsModule() {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [instanceId, setInstanceId] = useState<string | null>(null);
   const [bills, setBills] = useState<Bill[]>([]);
+  const [payments, setPayments] = useState<BillPayment[]>([]);
+  // False when the payments could not be read (for example before the table exists): the paid controls hide instead of breaking the screen.
+  const [paymentsAvailable, setPaymentsAvailable] = useState(true);
+  const period = periodOf(new Date());
   const [showArchived, setShowArchived] = useState(false);
   const [formOpen, setFormOpen] = useState(false);
   const [editingBill, setEditingBill] = useState<Bill | null>(null);
@@ -52,6 +59,9 @@ export default function BillsModule() {
       return;
     }
     setBills(result.data);
+    const paymentsResult = await listBillPayments(found.id);
+    setPaymentsAvailable(paymentsResult.ok);
+    setPayments(paymentsResult.ok ? paymentsResult.data : []);
     setStatus("ready");
   }, []);
 
@@ -84,6 +94,18 @@ export default function BillsModule() {
       settledAt: !bill.settled ? new Date().toISOString() : null,
     });
     if (result.ok) setBills((prev) => prev.map((b) => (b.id === result.data.id ? result.data : b)));
+  }
+
+  async function handleTogglePaid(bill: Bill) {
+    if (!instanceId) return;
+    const existing = paymentFor(payments, bill.id, period);
+    if (existing) {
+      const result = await unmarkBillPaid(existing.id);
+      if (result.ok) setPayments((prev) => prev.filter((p) => p.id !== existing.id));
+      return;
+    }
+    const result = await markBillPaid(instanceId, bill.id, period, isoDateOf(new Date()));
+    if (result.ok) setPayments((prev) => [...prev, result.data]);
   }
 
   if (status === "loading") {
@@ -131,6 +153,7 @@ export default function BillsModule() {
       summary={
         <StatRow>
           <StatTile label="Monthly total" value={formatCurrency(summary.totalMonthlyEquivalentMinorUnits, "USD")} />
+          {paymentsAvailable && <StatTile label="Left to pay this month" value={formatCurrency(leftToPay(bills, payments, period).leftMinorUnits, "USD")} />}
           <StatTile label="Bills" value={String(summary.activeCount)} />
           <StatTile label="Missing due date" value={String(summary.missingDueDateCount)} tone="muted" />
           <StatTile label="Unfunded essentials" value={String(summary.unfundedEssentialCount)} tone="muted" />
@@ -174,7 +197,7 @@ export default function BillsModule() {
           }
         />
       ) : (
-        <ul className="flex flex-col gap-2.5">
+        <ul className="overflow-hidden rounded-[18px] border border-[var(--border)] bg-[var(--surface)]">
           {active.map((bill) => (
             <BillCard
               key={bill.id}
@@ -185,6 +208,7 @@ export default function BillsModule() {
               }}
               onArchive={() => handleArchive(bill)}
               onToggleSettled={() => handleToggleSettled(bill)}
+              paid={paymentsAvailable ? { payment: paymentFor(payments, bill.id, period), onToggle: () => handleTogglePaid(bill) } : undefined}
             />
           ))}
         </ul>
@@ -200,7 +224,7 @@ export default function BillsModule() {
             {showArchived ? "Hide" : "Show"} {archived.length} closed {archived.length === 1 ? "bill" : "bills"}
           </button>
           {showArchived && (
-            <ul className="mt-2.5 flex flex-col gap-2.5 opacity-70">
+            <ul className="mt-2.5 overflow-hidden rounded-[18px] border border-[var(--border)] bg-[var(--surface)] opacity-70">
               {archived.map((bill) => (
                 <BillCard key={bill.id} bill={bill} onEdit={() => {}} onArchive={() => {}} onToggleSettled={() => {}} readOnly />
               ))}
@@ -219,12 +243,14 @@ function BillCard({
   onEdit,
   onArchive,
   onToggleSettled,
+  paid,
   readOnly = false,
 }: {
   bill: Bill;
   onEdit: () => void;
   onArchive: () => void;
   onToggleSettled: () => void;
+  paid?: { payment: BillPayment | undefined; onToggle: () => void };
   readOnly?: boolean;
 }) {
   const reduceMotion = useReducedMotion();
@@ -236,40 +262,38 @@ function BillCard({
       ? computeSharedSplit(bill.amountMinorUnits, bill.sharedSplitPercent)
       : null;
 
+  const paidLabel = paid?.payment ? paidDayLabel(paid.payment.paidOn) : null;
   return (
-    <motion.li
-      className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4"
-      {...liftProps(Boolean(reduceMotion))}
-    >
-      <div className="flex items-start justify-between gap-3">
-        <button type="button" onClick={onEdit} disabled={readOnly} className="flex-1 text-left disabled:cursor-default">
-          <div className="flex flex-wrap items-start gap-2">
-            <p className="min-w-0 text-[14px] font-semibold text-[var(--text)]">{bill.name}</p>
-            <Badge tone={STATUS_TONE[effectiveStatus]}>{STATUS_LABEL[effectiveStatus]}</Badge>
-            {bill.essential && <Badge tone="info">Essential</Badge>}
-            {bill.shared && <Badge tone="primary">Shared</Badge>}
-          </div>
-          <p className="mt-1 text-[20px] font-semibold leading-tight text-[var(--text)]">
-            {bill.amountMinorUnits !== null ? formatCurrency(bill.amountMinorUnits, bill.currency) : "No amount yet"}
+    <motion.li className="flex items-start gap-3 px-4 py-3.5 [&:not(:first-child)]:border-t [&:not(:first-child)]:border-[var(--border)]" {...liftProps(Boolean(reduceMotion))}>
+      {paid && <PaidToggle name={bill.name} payment={paid.payment} onToggle={paid.onToggle} />}
+      <button type="button" onClick={onEdit} disabled={readOnly} className="min-w-0 flex-1 text-left disabled:cursor-default">
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+          <p className={`min-w-0 text-[15px] font-semibold leading-tight tracking-[-0.01em] ${paidLabel ? "text-[var(--muted)]" : "text-[var(--text)]"}`}>{bill.name}</p>
+          <Badge tone={STATUS_TONE[effectiveStatus]}>{STATUS_LABEL[effectiveStatus]}</Badge>
+          {bill.essential && <Badge tone="info">Essential</Badge>}
+          {bill.shared && <Badge tone="primary">Shared</Badge>}
+        </div>
+        <p className="mt-1 text-[12.5px] text-[var(--muted)]">
+          {paidLabel ?? dueDescription ?? "No due date"} · {bill.category || "Uncategorized"}
+        </p>
+        {split && (
+          <p className="mt-1 text-[12.5px] text-[var(--muted)]">
+            Your share {formatCurrency(split.yourShareMinorUnits, bill.currency)} · Their share {formatCurrency(split.otherShareMinorUnits, bill.currency)}
           </p>
-          <p className="mt-0.5 text-[12px] text-[var(--muted)]">
-            {bill.category || "Uncategorized"} · {dueDescription ?? "No due date"}
-          </p>
-          {split && (
-            <p className="mt-1.5 text-[12px] text-[var(--muted)]">
-              Your share {formatCurrency(split.yourShareMinorUnits, bill.currency)} · Their share{" "}
-              {formatCurrency(split.otherShareMinorUnits, bill.currency)}
-            </p>
-          )}
-          {incompleteMessage && <p className="mt-1.5 text-[12px] leading-relaxed text-[var(--warning)]">{incompleteMessage}</p>}
-        </button>
+        )}
+        {incompleteMessage && <p className="mt-1.5 text-[12.5px] leading-relaxed text-[var(--warning)]">{incompleteMessage}</p>}
+      </button>
+      <div className="flex shrink-0 flex-col items-end gap-1.5">
+        <p className="text-[15px] font-medium tabular-nums text-[var(--text)]">
+          {bill.amountMinorUnits !== null ? formatCurrency(bill.amountMinorUnits, bill.currency) : "No amount yet"}
+        </p>
         {!readOnly && (
-          <div className="flex shrink-0 flex-col items-end gap-1.5">
+          <>
             <Button size="sm" variant="ghost" onClick={onArchive}>
               Close
             </Button>
             {bill.shared && <SettleToggle settled={bill.settled} onToggle={onToggleSettled} reduceMotion={Boolean(reduceMotion)} />}
-          </div>
+          </>
         )}
       </div>
     </motion.li>

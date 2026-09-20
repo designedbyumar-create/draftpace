@@ -13,6 +13,7 @@ import type { Account, Debt } from "../state";
 import SectionShell from "./shared/SectionShell";
 import { StatRow, StatTile } from "./shared/StatRow";
 import { STATUS_LABEL, STATUS_TONE } from "./shared/lifecycle";
+import PayoffPlan from "./debt/PayoffPanel";
 import DebtFormSheet, { debtFormValuesToPatch, type DebtFormValues } from "./debt/DebtFormSheet";
 import { summarizeDebts, resolveDominantAction, describeDebtIncompleteness } from "./debt/debtLogic";
 import { describeResultError } from "@/product-framework/result";
@@ -139,7 +140,7 @@ export default function DebtModule() {
     <SectionShell
       icon={CreditCard}
       title="Debt"
-      purpose="What's owed. No payoff calculator here, just an accurate, current picture."
+      purpose="What you owe, and when it could be gone."
       onAdd={() => {
         setEditingDebt(null);
         setFormOpen(true);
@@ -199,7 +200,7 @@ export default function DebtModule() {
           }
         />
       ) : (
-        <ul className="flex flex-col gap-2.5">
+        <ul className="overflow-hidden rounded-[18px] border border-[var(--border)] bg-[var(--surface)]">
           {active.map((debt) => (
             <DebtCard
               key={debt.id}
@@ -214,6 +215,8 @@ export default function DebtModule() {
         </ul>
       )}
 
+      <PayoffPlan debts={debts} />
+
       {archived.length > 0 && (
         <div className="mt-5">
           <button
@@ -224,7 +227,7 @@ export default function DebtModule() {
             {showArchived ? "Hide" : "Show"}{" "}{archived.length} closed{" "}{archived.length === 1 ? "debt" : "debts"}
           </button>
           {showArchived && (
-            <ul className="mt-2.5 flex flex-col gap-2.5 opacity-70">
+            <ul className="mt-2.5 overflow-hidden rounded-[18px] border border-[var(--border)] bg-[var(--surface)] opacity-70">
               {archived.map((debt) => (
                 <DebtCard key={debt.id} debt={debt} onEdit={() => {}} onArchive={() => {}} readOnly />
               ))}
@@ -262,22 +265,20 @@ function DebtCard({
   const effectiveStatus = incompleteMessage ? "confirmedIncomplete" : debt.status;
 
   return (
-    <li className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4">
-      <div className="flex items-start justify-between gap-3">
-        <button type="button" onClick={onEdit} disabled={readOnly} className="flex-1 text-left disabled:cursor-default">
-          <div className="flex flex-wrap items-start gap-2">
-            <p className="min-w-0 text-[14px] font-semibold text-[var(--text)]">{debt.name}</p>
-            <Badge tone={STATUS_TONE[effectiveStatus]}>{STATUS_LABEL[effectiveStatus]}</Badge>
-          </div>
-          <p className="mt-1 text-[20px] font-semibold leading-tight text-[var(--text)]">
-            {formatCurrency(debt.balanceMinorUnits, debt.currency)}
-          </p>
-          <p className="mt-0.5 text-[12px] text-[var(--muted)]">
-            {DEBT_TYPE_LABEL[debt.type]} · min {formatCurrency(debt.minimumPaymentMinorUnits, debt.currency)}
-            {debt.interestRate !== null ? ` · ${debt.interestRate}% APR` : ""}
-          </p>
-          {incompleteMessage && <p className="mt-1.5 text-[12px] leading-relaxed text-[var(--warning)]">{incompleteMessage}</p>}
-        </button>
+    <li className="flex items-start gap-3 px-4 py-3.5 [&:not(:first-child)]:border-t [&:not(:first-child)]:border-[var(--border)]">
+      <button type="button" onClick={onEdit} disabled={readOnly} className="min-w-0 flex-1 text-left disabled:cursor-default">
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+          <p className="min-w-0 text-[15px] font-semibold leading-tight tracking-[-0.01em] text-[var(--text)]">{debt.name}</p>
+          <Badge tone={STATUS_TONE[effectiveStatus]}>{STATUS_LABEL[effectiveStatus]}</Badge>
+        </div>
+        <p className="mt-1 text-[12.5px] text-[var(--muted)]">
+          {DEBT_TYPE_LABEL[debt.type]} · min {formatCurrency(debt.minimumPaymentMinorUnits, debt.currency)}
+          {debt.interestRate !== null ? ` · ${debt.interestRate}% APR` : ""}
+        </p>
+        {incompleteMessage && <p className="mt-1.5 text-[12.5px] leading-relaxed text-[var(--warning)]">{incompleteMessage}</p>}
+      </button>
+      <div className="flex shrink-0 flex-col items-end gap-1.5">
+        <p className="text-[17px] font-semibold tabular-nums tracking-[-0.01em] text-[var(--text)]">{formatCurrency(debt.balanceMinorUnits, debt.currency)}</p>
         {!readOnly && (
           <Button size="sm" variant="ghost" onClick={onArchive}>
             Close

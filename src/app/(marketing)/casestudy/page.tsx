@@ -37,8 +37,8 @@ import {
 } from "../shop/[productSlug]/travelCompanionVisuals";
 import {
   OverviewScreenMockup as PfcMockup,
-  GuidedCompanionScreenMockup as PfcGuided,
-  AttentionScreenMockup as PfcAttention,
+  BillsScreenMockup as PfcBills,
+  PayoffScreenMockup as PfcPayoff,
 } from "../shop/[productSlug]/personalFinanceCompanionVisuals";
 
 export const metadata: Metadata = {
@@ -77,7 +77,7 @@ const PRODUCT_MOCKUP: Record<string, React.ReactNode> = {
 /** The three screens shown for each deep dive, in the product's own UI. */
 const DEEP_DIVE_SCREENS: Record<string, React.ReactNode[]> = {
   "home-management-companion": [<HmcMockup key="a" />, <HmcRecord key="b" />, <HmcSetup key="c" />],
-  "personal-finance-companion": [<PfcMockup key="a" />, <PfcGuided key="b" />, <PfcAttention key="c" />],
+  "personal-finance-companion": [<PfcMockup key="a" />, <PfcBills key="b" />, <PfcPayoff key="c" />],
   "travel-companion": [<TravelMockup key="a" />, <TravelItinerary key="b" />, <TravelImpact key="c" />],
 };
 

@@ -37,24 +37,25 @@ export default function SectionShell({
     // fixed Add bar below never covers the last record row; lg:pb-0 since
     // that bar doesn't render at that breakpoint.
     <div className="pb-20 lg:pb-0">
-      <div className="flex items-start gap-3">
-        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[var(--primary-soft)] text-[var(--primary)]">
-          <Icon size={19} aria-hidden />
-        </span>
-        <div>
-          <h2 className="text-[18px] font-semibold text-[var(--text)]">{title}</h2>
-          <p className="mt-0.5 text-[13px] leading-relaxed text-[var(--muted)]">{purpose}</p>
+      <div>
+        <div className="flex items-center gap-2 text-[var(--muted)]">
+          <Icon size={16} aria-hidden />
+          <span className="text-[13.5px]">{purpose}</span>
         </div>
+        <h2 className="mt-1.5 text-[26px] font-semibold leading-none tracking-[-0.02em] text-[var(--text)]">{title}</h2>
       </div>
 
       <div className="mt-5">{summary}</div>
 
       {dominantAction && (
-        <div className="mt-4 rounded-xl border border-[var(--primary)] bg-[var(--primary-soft)] p-4">{dominantAction}</div>
+        <div className="mt-4 flex gap-3 rounded-[16px] border border-[var(--border)] bg-[var(--surface)] p-4">
+          <span aria-hidden className="w-[3px] shrink-0 self-stretch rounded-full" style={{ backgroundColor: "var(--warning)" }} />
+          <div className="min-w-0 flex-1">{dominantAction}</div>
+        </div>
       )}
 
-      <div className="mt-5 flex items-center justify-between gap-3">
-        <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">Records</p>
+      <div className="mt-7 flex items-center justify-between gap-3">
+        <h3 className="text-[17px] font-semibold tracking-[-0.015em] text-[var(--text)]">Records</h3>
         {/* Desktop only here - on mobile this same action moves to a
             bottom-anchored bar within thumb reach, below. */}
         <Button size="sm" variant="secondary" iconLeft={<Plus size={14} aria-hidden />} onClick={onAdd} className="hidden lg:inline-flex">

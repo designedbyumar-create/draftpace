@@ -12,18 +12,33 @@ verified live in both themes and at both desktop and mobile widths.
 
 ## Product identity
 
-- **Accent**: the shared `--primary` teal (`#0e6e75` light / `#4fc7c9`
-  dark). PFC does not define a second accent. The product's own PWA
-  identity (`definition.ts`'s `pwa.themeColor`) reuses the same teal for
-  continuity between the installed app and the browser tab.
-- **Typeface**: the shared UI sans throughout. PFC has no serif/display
-  moment of its own — money is the thing that should carry visual
-  weight, not a wordmark (see Money typography below).
-- **What makes it read as PFC, not "Draftpace generically"**: the
-  content, not a separate skin. Real dollar figures, specific area
-  names (Bills, Debt, Savings...), and the Attention/Records vocabulary
-  are what differentiate this product from Monthly Money Reset or any
-  future family, not a bespoke palette.
+Rebuilt after the first pass. What follows replaces the earlier "shared
+teal, no identity of its own" position.
+
+- **Accent**: ink green (`#0d3b2e`, mint `#8fe3bd` in dark). Spent on the
+  main action, income, paid ticks, the active tab and the "available"
+  share of the balance bar, and nowhere else. The ground is a neutral
+  grey-green (`#f3f4f3`, `#0a0e0c` in dark), so money is the only colour
+  on the page.
+- **The hero**: one filled banner on Today, declared as `theme.hero` so
+  its light and dark tones are the product's own. It carries Available to
+  spend in the narrative face, and under it a bar of where the rest of the
+  balance goes: available, bills and subscriptions, debt minimums,
+  protected. The four parts add up to the balance (`balanceAllocation` in
+  `companion/capability.ts` is the one place that is worked out, from the
+  same totals as the figure), so the widths are true. Its shadow is kept
+  subtle on purpose.
+- **Typeface**: Inter for everything that is read, Fraunces
+  (`theme.narrativeFont`) for the figures that are the point: the hero, a
+  typical month's "left over", and the debt-free month. Cents are set at
+  half size and 60% opacity.
+- **Everything below the hero is quiet**: grouped panels with thin lines
+  and no shadows, sentence-case 17px section titles, rows with calendar
+  badges (Coming up), rings (Goals) and a check (Bills). A row is never a
+  card inside a card. `SectionShell` and `StatRow` carry the same style to
+  the seven direct sections.
+- **What makes it read as PFC, not "Draftpace generically"**: the hero and
+  its bar, which only exist because every figure here is traceable.
 
 ## Money typography
 

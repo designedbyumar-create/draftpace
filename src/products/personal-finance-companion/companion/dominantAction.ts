@@ -45,7 +45,7 @@ export function resolveDominantAction(
   const availableMoney = capabilities.find((row) => row.key === "availableMoney");
   if (availableMoney && availableMoney.valueMinorUnits !== null && availableMoney.valueMinorUnits < 0) {
     return {
-      message: "Available Money is negative right now — what's coming up costs more than what you have available.",
+      message: "Available Money is negative right now. What's coming up costs more than what you have available.",
       deepLink: resolveSafeDeepLink({ kind: "area", area: "accounts" }),
     };
   }

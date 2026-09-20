@@ -57,6 +57,22 @@ export const productGroundTonesSchema = z.object({
 });
 export type ProductGroundTones = z.infer<typeof productGroundTonesSchema>;
 
+/**
+ * One theme's worth of a product's hero surface: the filled banner that
+ * carries the one figure a screen exists for. Separate from the accent
+ * because the two answer different questions. The accent has to read as
+ * text and as a button on the page; the hero has to hold light text on a
+ * deep field, and in dark mode that field is a deep tone of the hue, not
+ * the pale tone the accent becomes.
+ */
+export const productHeroTonesSchema = z.object({
+  from: z.string(),
+  mid: z.string(),
+  to: z.string(),
+  ink: z.string(),
+});
+export type ProductHeroTones = z.infer<typeof productHeroTonesSchema>;
+
 export const productThemeExtensionSchema = z
   .object({
     accent: z.string().optional(),
@@ -127,6 +143,8 @@ export const productThemeExtensionSchema = z
      * accent.
      */
     ground: z.object({ light: productGroundTonesSchema, dark: productGroundTonesSchema }).optional(),
+    /** The hero banner's own tones, when the product has one. See productHeroTonesSchema. */
+    hero: z.object({ light: productHeroTonesSchema, dark: productHeroTonesSchema }).optional(),
     /**
      * A serif or otherwise warmer family used only where the product
      * speaks in its own voice, never for data or controls. Holds a CSS

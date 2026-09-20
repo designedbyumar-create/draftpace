@@ -38,10 +38,9 @@ export function resolveDominantAction(debts: Debt[]): DebtDominantAction {
 }
 
 /**
- * The exact copy for a debt saved without an interest rate. Deliberately
- * literal and stable — this product does not build a payoff calculator,
- * so the message explains what's missing and why, not a feature the debt
- * is waiting to unlock.
+ * The exact copy for a debt saved without an interest rate. Literal and
+ * stable: the rate is what the payoff plan (payoffPlan.ts) needs, and a
+ * debt without one is left out of the plan by name, never guessed at.
  */
 export function describeDebtIncompleteness(debt: Debt): string | null {
   if (debt.interestRate === null) {

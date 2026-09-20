@@ -2,6 +2,7 @@ import type { Account, Bill, Debt, IncomeSource, SavingsGoal, Subscription, Tran
 import { summarizeBills } from "../components/bills/billLogic";
 import { monthlyEquivalentMinorUnits as subscriptionMonthlyEquivalent } from "../components/subscriptions/subscriptionLogic";
 import { summarizeDebts } from "../components/debt/debtLogic";
+import { monthlyEquivalentMinorUnits as incomeMonthlyEquivalent } from "../components/income/incomeLogic";
 
 /**
  * The deterministic financial-picture engine: every figure Companion and
@@ -50,6 +51,41 @@ function activeOf<T extends { status: string }>(records: T[]): T[] {
   return records.filter((r) => r.status !== "archived");
 }
 
+/** The one definition of what is owed out each month, shared by Available Money and Upcoming Obligations so the two can never disagree. */
+function obligationTotals(inputs: FinancialPictureInputs) {
+  const billsTotal = summarizeBills(inputs.bills).totalMonthlyEquivalentMinorUnits;
+  const subscriptionsTotal = activeOf(inputs.subscriptions)
+    .filter((s) => s.decision !== "cancelled")
+    .reduce((sum, s) => sum + (subscriptionMonthlyEquivalent(s) ?? 0), 0);
+  const debtMinimumsTotal = summarizeDebts(inputs.debts).totalMinimumPaymentMinorUnits;
+  return { billsTotal, subscriptionsTotal, debtMinimumsTotal, obligationsTotal: billsTotal + subscriptionsTotal + debtMinimumsTotal };
+}
+
+/** Where the money in your accounts goes, in the order the hero banner draws it. The four parts always add up to `totalMinorUnits`. */
+export interface BalanceAllocation {
+  totalMinorUnits: number;
+  availableMinorUnits: number;
+  billsAndSubscriptionsMinorUnits: number;
+  debtMinimumsMinorUnits: number;
+  protectedMinorUnits: number;
+}
+
+/** Null when there is no account to allocate. Uses the same obligation totals as Available Money, so the banner and the figure cannot disagree. */
+export function balanceAllocation(inputs: FinancialPictureInputs): BalanceAllocation | null {
+  const accounts = activeOf(inputs.accounts);
+  if (accounts.length === 0) return null;
+  const totalMinorUnits = accounts.reduce((sum, a) => sum + a.currentBalanceMinorUnits, 0);
+  const protectedMinorUnits = accounts.filter((a) => !a.availableForSpending).reduce((sum, a) => sum + a.currentBalanceMinorUnits, 0);
+  const { billsTotal, subscriptionsTotal, debtMinimumsTotal } = obligationTotals(inputs);
+  return {
+    totalMinorUnits,
+    availableMinorUnits: totalMinorUnits - protectedMinorUnits - billsTotal - subscriptionsTotal - debtMinimumsTotal,
+    billsAndSubscriptionsMinorUnits: billsTotal + subscriptionsTotal,
+    debtMinimumsMinorUnits: debtMinimumsTotal,
+    protectedMinorUnits,
+  };
+}
+
 function availableMoney(inputs: FinancialPictureInputs): CapabilityRow {
   const accounts = activeOf(inputs.accounts);
   if (accounts.length === 0) {
@@ -59,11 +95,8 @@ function availableMoney(inputs: FinancialPictureInputs): CapabilityRow {
   const totalBalances = accounts.reduce((sum, a) => sum + a.currentBalanceMinorUnits, 0);
   const protectedTotal = accounts.filter((a) => !a.availableForSpending).reduce((sum, a) => sum + a.currentBalanceMinorUnits, 0);
 
+  const { billsTotal, subscriptionsTotal, debtMinimumsTotal, obligationsTotal } = obligationTotals(inputs);
   const billsSummary = summarizeBills(inputs.bills);
-  const subscriptionsTotal = activeOf(inputs.subscriptions)
-    .filter((s) => s.decision !== "cancelled")
-    .reduce((sum, s) => sum + (subscriptionMonthlyEquivalent(s) ?? 0), 0);
-  const obligationsTotal = billsSummary.totalMonthlyEquivalentMinorUnits + subscriptionsTotal;
 
   const total = totalBalances - protectedTotal - obligationsTotal;
 
@@ -71,7 +104,8 @@ function availableMoney(inputs: FinancialPictureInputs): CapabilityRow {
     lineItems: [
       { label: "All account balances", amountMinorUnits: totalBalances },
       { label: "Protected money", amountMinorUnits: -protectedTotal },
-      { label: "Upcoming obligations", amountMinorUnits: -obligationsTotal },
+      { label: "Bills and subscriptions", amountMinorUnits: -(billsTotal + subscriptionsTotal) },
+      ...(debtMinimumsTotal > 0 ? [{ label: "Debt minimum payments", amountMinorUnits: -debtMinimumsTotal }] : []),
     ],
     totalMinorUnits: total,
     basedOn: [`${accounts.length} confirmed ${accounts.length === 1 ? "account" : "accounts"}`],
@@ -97,20 +131,24 @@ function expectedIncome(inputs: FinancialPictureInputs): CapabilityRow {
   }
 
   const estimatedCount = sources.filter((s) => s.confidence === "estimated").length;
-  const total = sources.reduce((sum, s) => {
-    if (s.amountMinorUnits !== null) return sum + s.amountMinorUnits;
-    if (s.amountRangeMinorUnits) return sum + Math.round((s.amountRangeMinorUnits.min + s.amountRangeMinorUnits.max) / 2);
-    return sum;
-  }, 0);
+  const irregular = sources.filter((s) => s.frequency === "irregular");
+  const counted = sources
+    .map((source) => ({ source, monthly: incomeMonthlyEquivalent(source) }))
+    .filter((entry): entry is { source: IncomeSource; monthly: number } => entry.monthly !== null);
+  const total = counted.reduce((sum, entry) => sum + entry.monthly, 0);
+
+  const caveats: string[] = [];
+  if (estimatedCount > 0) caveats.push(`${estimatedCount} ${estimatedCount === 1 ? "figure is" : "figures are"} estimated, not confirmed.`);
+  if (irregular.length > 0) caveats.push(`${irregular.length} irregular ${irregular.length === 1 ? "source is" : "sources are"} not counted.`);
 
   const explain: ExplainBreakdown = {
-    lineItems: sources.map((s) => ({
-      label: s.name,
-      amountMinorUnits: s.amountMinorUnits ?? Math.round(((s.amountRangeMinorUnits?.min ?? 0) + (s.amountRangeMinorUnits?.max ?? 0)) / 2),
+    lineItems: counted.map(({ source, monthly }) => ({
+      label: source.frequency === "monthly" ? source.name : `${source.name} (monthly equivalent)`,
+      amountMinorUnits: monthly,
     })),
     totalMinorUnits: total,
     basedOn: [`${sources.length} income ${sources.length === 1 ? "source" : "sources"}`],
-    caveat: estimatedCount > 0 ? `${estimatedCount} ${estimatedCount === 1 ? "figure is" : "figures are"} estimated, not confirmed.` : null,
+    caveat: caveats.length > 0 ? caveats.join(" ") : null,
   };
 
   return {
@@ -126,13 +164,13 @@ function expectedIncome(inputs: FinancialPictureInputs): CapabilityRow {
 function upcomingObligations(inputs: FinancialPictureInputs): CapabilityRow {
   const bills = activeOf(inputs.bills);
   const subscriptions = activeOf(inputs.subscriptions).filter((s) => s.decision !== "cancelled");
-  if (bills.length === 0 && subscriptions.length === 0) {
+  const debts = activeOf(inputs.debts);
+  if (bills.length === 0 && subscriptions.length === 0 && debts.length === 0) {
     return { key: "upcomingObligations", label: "Upcoming Obligations", status: "waiting", detail: "Waiting for a bill or subscription", valueMinorUnits: null, explain: null };
   }
 
   const billsSummary = summarizeBills(inputs.bills);
-  const subscriptionsTotal = subscriptions.reduce((sum, s) => sum + (subscriptionMonthlyEquivalent(s) ?? 0), 0);
-  const total = billsSummary.totalMonthlyEquivalentMinorUnits + subscriptionsTotal;
+  const { billsTotal, subscriptionsTotal, debtMinimumsTotal, obligationsTotal: total } = obligationTotals(inputs);
 
   const status: CapabilityStatus = billsSummary.missingDueDateCount > 0 ? "needsInfo" : "ready";
   const detail = billsSummary.missingDueDateCount > 0
@@ -141,11 +179,16 @@ function upcomingObligations(inputs: FinancialPictureInputs): CapabilityRow {
 
   const explain: ExplainBreakdown = {
     lineItems: [
-      { label: "Bills (monthly equivalent)", amountMinorUnits: billsSummary.totalMonthlyEquivalentMinorUnits },
+      { label: "Bills (monthly equivalent)", amountMinorUnits: billsTotal },
       { label: "Subscriptions (monthly equivalent)", amountMinorUnits: subscriptionsTotal },
+      ...(debtMinimumsTotal > 0 ? [{ label: "Debt minimum payments", amountMinorUnits: debtMinimumsTotal }] : []),
     ],
     totalMinorUnits: total,
-    basedOn: [`${bills.length} ${bills.length === 1 ? "bill" : "bills"}`, `${subscriptions.length} active ${subscriptions.length === 1 ? "subscription" : "subscriptions"}`],
+    basedOn: [
+      `${bills.length} ${bills.length === 1 ? "bill" : "bills"}`,
+      `${subscriptions.length} active ${subscriptions.length === 1 ? "subscription" : "subscriptions"}`,
+      ...(debts.length > 0 ? [`${debts.length} ${debts.length === 1 ? "debt" : "debts"}`] : []),
+    ],
     caveat: billsSummary.missingDueDateCount > 0 ? detail + " confirmed, so this figure is preliminary." : null,
   };
 
@@ -198,7 +241,7 @@ function debt(inputs: FinancialPictureInputs): CapabilityRow {
       ],
       totalMinorUnits: summary.totalBalanceMinorUnits,
       basedOn: [`${debts.length} recorded ${debts.length === 1 ? "debt" : "debts"}`],
-      caveat: status === "needsInfo" ? detail + " — payoff timelines can't be calculated reliably until it's added." : null,
+      caveat: status === "needsInfo" ? detail + ". Payoff timelines can't be calculated reliably until it's added." : null,
     },
   };
 }

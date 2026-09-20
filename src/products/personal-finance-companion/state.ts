@@ -105,6 +105,15 @@ export const billSchema = z.object({
 });
 export type Bill = z.infer<typeof billSchema>;
 
+/** A bill ticked as paid for one calendar month. `period` is "YYYY-MM", never a time-zone-dependent instant. */
+export const billPaymentSchema = z.object({
+  id: z.string(),
+  billId: z.string(),
+  period: z.string().regex(/^\d{4}-(0[1-9]|1[0-2])$/),
+  paidOn: isoDate,
+});
+export type BillPayment = z.infer<typeof billPaymentSchema>;
+
 export const subscriptionSchema = z.object({
   id: z.string(),
   name: z.string().min(1),

@@ -123,6 +123,13 @@ export function productThemeStyle(theme: ProductThemeExtension): CSSProperties {
     }
   }
 
+  if (theme.hero) {
+    for (const key of ["from", "mid", "to", "ink"] as const) {
+      style[`--product-hero-${key}-light`] = theme.hero.light[key];
+      style[`--product-hero-${key}-dark`] = theme.hero.dark[key];
+    }
+  }
+
   // Motion and shape are opted into by `accentScale` (as they always were)
   // or, for a product that manages its own colours some other way, by
   // declaring an `identity`. Both routes leave a product that declares

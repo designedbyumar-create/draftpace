@@ -44,9 +44,9 @@ export const notificationPrivacyLevelSchema = z.enum(["private", "normal", "deta
 export type NotificationPrivacyLevel = z.infer<typeof notificationPrivacyLevelSchema>;
 
 export const NOTIFICATION_PRIVACY_LEVEL_LABEL: Record<NotificationPrivacyLevel, string> = {
-  private: "Private — no names or amounts",
-  normal: "Normal — names, no amounts",
-  detailed: "Detailed — names and amounts",
+  private: "Private: no names or amounts",
+  normal: "Normal: names, no amounts",
+  detailed: "Detailed: names and amounts",
 };
 
 export const reviewRhythmSchema = z.enum(["weekly", "biweekly", "monthly", "off"]);

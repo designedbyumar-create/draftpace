@@ -1,5 +1,5 @@
 import { OverviewScreenMockup as MmrOverview, AddInfoScreenMockup as MmrAddInfo, BreakdownScreenMockup as MmrBreakdown } from "./[productSlug]/monthlyMoneyResetVisuals";
-import { OverviewScreenMockup as PfcOverview, GuidedCompanionScreenMockup as PfcGuided, AttentionScreenMockup as PfcAttention } from "./[productSlug]/personalFinanceCompanionVisuals";
+import { OverviewScreenMockup as PfcOverview, BillsScreenMockup as PfcBills, PayoffScreenMockup as PfcPayoff } from "./[productSlug]/personalFinanceCompanionVisuals";
 import { OverviewScreenMockup as HmcOverview, ActionRecordScreenMockup as HmcActionRecord, SetupScreenMockup as HmcSetup } from "./[productSlug]/homeManagementCompanionVisuals";
 import { OverviewScreenMockup as PlaOverview, CompanionScreenMockup as PlaCompanion, BookScreenMockup as PlaBook } from "./[productSlug]/personalLifeAffairsCompanionVisuals";
 import { OverviewScreenMockup as HscOverview, CheckScreenMockup as HscCheck, BookScreenMockup as HscBook } from "./[productSlug]/homeschoolingCompanionVisuals";
@@ -25,7 +25,7 @@ import { OverviewScreenMockup as FhbOverview, SymptomFormScreenMockup as FhbSymp
  */
 export const PRODUCT_SCREENS: Partial<Record<string, React.ComponentType[]>> = {
   "monthly-money-reset": [MmrOverview, MmrAddInfo, MmrBreakdown],
-  "personal-finance-companion": [PfcOverview, PfcGuided, PfcAttention],
+  "personal-finance-companion": [PfcOverview, PfcBills, PfcPayoff],
   "home-management-companion": [HmcOverview, HmcActionRecord, HmcSetup],
   "personal-life-affairs-companion": [PlaOverview, PlaCompanion, PlaBook],
   "homeschooling-companion": [HscOverview, HscCheck, HscBook],
@@ -63,9 +63,9 @@ const SCREEN_CAPTIONS: Partial<Record<string, string[]>> = {
     "The breakdown behind the number",
   ],
   "personal-finance-companion": [
-    "The picture you land on",
-    "The guided way you build it, one question at a time",
-    "The honest gaps it watches for, never a fabricated task",
+    "Today: what is free to spend, and where the rest goes",
+    "Bills: ticked off for the month, with what is left to pay",
+    "The payoff plan: the month you are debt-free",
   ],
   "home-management-companion": [
     "Home: one sentence about how your home is doing, then the bands",

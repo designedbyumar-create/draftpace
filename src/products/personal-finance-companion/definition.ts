@@ -36,8 +36,8 @@ export const personalFinanceCompanionDefinition: ProductDefinitionInput = {
     name: "Personal Finance Companion",
     shortName: "Finance",
     description: "Personal Finance Companion by Draftpace: accounts, income, bills, subscriptions, transactions, debt, and savings, in one always-current picture.",
-    themeColor: "#2e4a4d",
-    backgroundColor: "#f4f2ec",
+    themeColor: "#0d3b2e",
+    backgroundColor: "#f3f4f3",
     // This product's own icon, so installing two Companions does not
     // put two identical Draftpace squares on the home screen. Same
     // monogram, this product's accent, generated from Logo.tsx's own
@@ -112,21 +112,57 @@ export const personalFinanceCompanionDefinition: ProductDefinitionInput = {
   ],
   permissions: [],
   events: [],
-  // Petrol: this product's first real accent identity. Declaring the full
-  // scale (not just `accent`) is what actually re-themes it, per
-  // themeExtension.ts's own comment, every shared component already
-  // reads --primary and friends, so this one block turns the whole
-  // product petrol without touching any component. Before this, PFC had
-  // no accent declared at all, the one product the design-system audit
-  // found with zero visual identity of its own.
+  // Ink green on a neutral ground, with one filled hero banner that
+  // carries the figure the product exists for. The accent is spent on the
+  // main action, income, the active tab and the "available" share of the
+  // balance bar; the ground stays neutral so money is the only colour.
+  // Figures use Fraunces, set in the hero and in the few places a figure
+  // is the point; everything that is read rather than counted is sans.
   theme: {
+    accent: "#0d3b2e",
     accentScale: {
-      base: "#2e4a4d",
-      strong: "#22383a",
-      soft: "#e4ebea",
+      base: "#0d3b2e",
+      strong: "#08281f",
+      soft: "#dbe8e2",
       contrast: "#ffffff",
-      wash: "#f2f6f5",
+      wash: "#eef4f1",
     },
+    accentScaleDark: {
+      base: "#8fe3bd",
+      strong: "#b4efd3",
+      soft: "#173a2d",
+      contrast: "#06231a",
+      wash: "#12261e",
+    },
+    ground: {
+      light: {
+        appBg: "#f3f4f3",
+        surface: "#ffffff",
+        surfaceMuted: "#f7f8f7",
+        surfaceStrong: "#e6e9e7",
+        text: "#101613",
+        muted: "#57625c",
+        faint: "#66716b",
+        border: "#e5e8e6",
+        borderStrong: "#cbd1ce",
+      },
+      dark: {
+        appBg: "#0a0e0c",
+        surface: "#131916",
+        surfaceMuted: "#0f1411",
+        surfaceStrong: "#1d2521",
+        text: "#eef2ef",
+        muted: "#a3aea8",
+        faint: "#8b9691",
+        border: "rgba(238, 242, 239, 0.09)",
+        borderStrong: "rgba(238, 242, 239, 0.16)",
+      },
+    },
+    hero: {
+      light: { from: "#256049", mid: "#0d3b2e", to: "#0d3b2e", ink: "#ffffff" },
+      dark: { from: "#1f5a45", mid: "#123a2c", to: "#0d2a20", ink: "#e9f5ef" },
+    },
+    narrativeFont: "var(--font-fraunces), ui-serif, Georgia, serif",
     motionPersonality: "calm",
     identity: { motif: "index" },
   },

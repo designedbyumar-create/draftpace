@@ -170,3 +170,22 @@ describe("Personal Finance Companion migrations — structural checks", () => {
     expect(fkeyOccurrences).toBe(RECORD_TABLES.length * 2);
   });
 });
+
+describe("bill payments migration", () => {
+  const sql = read("202609210001_personal_finance_bill_payments.sql");
+
+  it("enables row level security and scopes every policy to the owner", () => {
+    expect(sql).toContain("alter table public.pfc_bill_payments enable row level security");
+    expect(sql).toContain("on public.pfc_bill_payments for select to authenticated using (auth.uid() = user_id)");
+    expect(sql).toContain("using (auth.uid() = user_id);");
+  });
+
+  it("checks instance ownership on insert, as every other PFC insert does", () => {
+    expect(sql).toMatch(/on public\.pfc_bill_payments for insert to authenticated\s+with check \(auth\.uid\(\) = user_id and public\._pfc_owns_instance\(product_instance_id\)\)/);
+  });
+
+  it("has no update policy (a payment is ticked or unticked, never edited) and one row per bill per month", () => {
+    expect(sql).not.toContain("for update");
+    expect(sql).toContain("unique (bill_id, period)");
+  });
+});

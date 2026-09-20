@@ -103,3 +103,39 @@ describe("a product's own ground", () => {
     }
   });
 });
+
+const withHero = declared.filter(({ definition }) => (definition.theme as { hero?: unknown }).hero);
+
+describe("a product's hero banner", () => {
+  for (const { path, definition } of withHero) {
+    const theme = definition.theme as unknown as { hero: { light: Record<string, string>; dark: Record<string, string> } };
+    for (const mode of ["light", "dark"] as const) {
+      const h = theme.hero[mode];
+      it(`${definition.title} (${path}), ${mode}: its light text is readable at every point of the gradient`, () => {
+        for (const stop of [h.from, h.mid, h.to]) {
+          expect(contrast(h.ink, stop), `ink on ${stop}`).toBeGreaterThanOrEqual(7);
+        }
+      });
+    }
+  }
+
+  it("is emitted as a light and a dark value for every tone, and only when declared", () => {
+    if (withHero.length === 0) return;
+    const definition = withHero[0].definition as unknown as { theme: Parameters<typeof productThemeStyle>[0] };
+    const style = productThemeStyle(definition.theme) as Record<string, string>;
+    for (const key of ["from", "mid", "to", "ink"]) {
+      expect(style[`--product-hero-${key}-light`], `${key} light`).toBeTruthy();
+      expect(style[`--product-hero-${key}-dark`], `${key} dark`).toBeTruthy();
+    }
+    const plain = productThemeStyle({ accent: "#123456" } as Parameters<typeof productThemeStyle>[0]) as Record<string, string>;
+    expect(Object.keys(plain).filter((key) => key.startsWith("--product-hero"))).toEqual([]);
+  });
+
+  it("reaches the page: the stylesheet picks the pair in all three theme states", () => {
+    const css = readFileSync(join(process.cwd(), "src/app/globals.css"), "utf8");
+    for (const key of ["from", "mid", "to", "ink"]) {
+      expect(css, `${key} light`).toContain(`--product-hero-${key}: var(--product-hero-${key}-light);`);
+      expect(css.split(`--product-hero-${key}: var(--product-hero-${key}-dark);`).length - 1, `${key} dark, twice`).toBe(2);
+    }
+  });
+});

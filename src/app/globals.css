@@ -442,6 +442,10 @@ html[data-text-scale="larger"] {
   --primary-soft: var(--product-primary-soft-light);
   --primary-contrast: var(--product-primary-contrast-light);
   --product-wash: var(--product-wash-light);
+  --product-hero-from: var(--product-hero-from-light);
+  --product-hero-mid: var(--product-hero-mid-light);
+  --product-hero-to: var(--product-hero-to-light);
+  --product-hero-ink: var(--product-hero-ink-light);
   --link: var(--product-primary-light);
   --focus-ring: var(--product-primary-light);
 }
@@ -451,6 +455,10 @@ html[data-text-scale="larger"] {
   --primary-soft: var(--product-primary-soft-dark);
   --primary-contrast: var(--product-primary-contrast-dark);
   --product-wash: var(--product-wash-dark);
+  --product-hero-from: var(--product-hero-from-dark);
+  --product-hero-mid: var(--product-hero-mid-dark);
+  --product-hero-to: var(--product-hero-to-dark);
+  --product-hero-ink: var(--product-hero-ink-dark);
   --link: var(--product-primary-dark);
   --focus-ring: var(--product-primary-dark);
 }
@@ -461,6 +469,10 @@ html[data-text-scale="larger"] {
     --primary-soft: var(--product-primary-soft-dark);
     --primary-contrast: var(--product-primary-contrast-dark);
     --product-wash: var(--product-wash-dark);
+    --product-hero-from: var(--product-hero-from-dark);
+    --product-hero-mid: var(--product-hero-mid-dark);
+    --product-hero-to: var(--product-hero-to-dark);
+    --product-hero-ink: var(--product-hero-ink-dark);
     --link: var(--product-primary-dark);
     --focus-ring: var(--product-primary-dark);
   }

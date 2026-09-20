@@ -119,7 +119,7 @@ const matchers: LineMatcher[] = [
       const ambiguityNotes: string[] = [];
       if (day === null) {
         missingFields.push("dueRule");
-        if (m[3].toLowerCase() === "last") ambiguityNotes.push('"Last" day of month is ambiguous (28-31) — set the exact due date directly.');
+        if (m[3].toLowerCase() === "last") ambiguityNotes.push('"Last" day of month is ambiguous (28-31). Set the exact due date directly.');
       }
       return {
         candidateType: "bill",
@@ -141,7 +141,7 @@ const matchers: LineMatcher[] = [
       const amount = parseMoney(m[2]);
       const day = ordinalToDay(m[3]);
       const missingFields: string[] = [];
-      const ambiguityNotes: string[] = ["Renewal date was phrased approximately (\"around\") — confirm the exact date."];
+      const ambiguityNotes: string[] = ["Renewal date was phrased approximately (\"around\"). Confirm the exact date."];
       if (day === null) missingFields.push("renewalDate");
       return {
         candidateType: "subscription",
@@ -162,7 +162,7 @@ const matchers: LineMatcher[] = [
       const name = m[1].trim();
       const balance = parseMoney(m[2]);
       const ambiguityNotes: string[] = [];
-      if (/about/i.test(line)) ambiguityNotes.push('Balance was phrased approximately ("about") — confirm the exact current balance.');
+      if (/about/i.test(line)) ambiguityNotes.push('Balance was phrased approximately ("about"). Confirm the exact current balance.');
       return {
         candidateType: "account",
         payload: { name: `${name} account`, balanceMajorUnits: balance, type: /check/i.test(name) ? "checking" : /sav/i.test(name) ? "savings" : "other" },

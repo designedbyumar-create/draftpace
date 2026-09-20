@@ -253,7 +253,7 @@ export const debtAreaConfig: AreaConfig<Debt> = {
   title: "Debt",
   singularNoun: "debt",
   pluralNoun: "debts",
-  purpose: "What's owed. No payoff calculator here, just an accurate, current picture.",
+  purpose: "What you owe, and when it could be gone.",
   askPrompt: "What do you owe money on?",
   whyText: "Your debt is saved even without an interest rate. The missing rate simply limits what Draftpace can calculate reliably.",
   addLabel: "Add debt",
