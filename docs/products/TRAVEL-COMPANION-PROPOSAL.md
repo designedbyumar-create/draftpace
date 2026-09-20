@@ -295,7 +295,7 @@ trv_documents
 trv_preparation
   id, trip_id, user_id, product_instance_id
   category                  text    check in ('documents','packing','transport','money','home','people','bookings')
-  title                     text                 user-defined, no seeded content
+  title                     text                 user-defined, or added from an opt-in starter packing list (never unasked; no requirement content, ever)
   status                    text    check in ('open','done') default 'open'
   notes                     text null
   created_at, updated_at

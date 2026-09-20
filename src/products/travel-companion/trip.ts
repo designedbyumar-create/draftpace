@@ -89,7 +89,11 @@ export interface TravelDocument {
 export type PreparationCategory = "documents" | "packing" | "transport" | "money" | "home" | "people" | "bookings";
 export type PreparationCompletionStatus = "open" | "done";
 
-/** A user-defined checklist entry. No seeded content, ever. */
+/**
+ * A checklist entry: either something the person typed, or a row they chose
+ * to add from a starter packing list (see packingLists.ts). Never added
+ * unasked, and always theirs to tick or remove.
+ */
 export interface PreparationItem {
   id: string;
   tripId: string;
@@ -98,6 +102,12 @@ export interface PreparationItem {
   completionStatus: PreparationCompletionStatus;
   notes: string | null;
   status: "active" | "archived";
+  /** Whose it is. Null for a shared item, or one for nobody in particular. */
+  personId: string | null;
+  /** The heading it sits under, when it came from a list with groups. */
+  group: string | null;
+  /** Which starter list it came from. Null for anything typed by hand. */
+  starterList: string | null;
 }
 
 export type ThreadStatus = "open" | "resolved";

@@ -20,7 +20,7 @@ const CATEGORY_OPTIONS: { value: PreparationCategory; label: string }[] = [
 const SELECT_CLASS =
   "w-full rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3.5 py-2.5 text-[14px] text-[var(--text)] outline-none focus:border-[var(--primary)]";
 
-/** Adding a checklist item. No seeded content, ever: the title is always the user's own words. */
+/** Adding a checklist item by hand: the title is always the user's own words. Starter packing lists are a separate, opt-in path (PackingStarter). */
 export default function PreparationForm({
   instanceId,
   tripId,

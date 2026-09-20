@@ -57,7 +57,7 @@ export const travelCompanionShopProduct: ShopProductInput = {
     "You want it to store your actual documents. It does not accept uploads and never will. It records that a passport exists, whose it is, and where it is kept, never the document itself.",
     "You want it to split costs or track what anyone owes. There is no amount, currency, or balance anywhere in this product, on purpose. That is a different product's job.",
     "You want live flight status, prices, or availability. It has no connection to any airline, aggregator, or booking site. Everything it shows is something you recorded.",
-    "You want it to plan the trip for you or suggest what to do. It has no opinion about your itinerary and no model involved anywhere in it.",
+    "You want it to plan the trip for you or suggest what to see and do. It has no opinion about your itinerary and no model involved anywhere in it. The only thing it offers to start you with is a packing list, and only if you choose one.",
     "You want push notifications when something changes. It does not send them yet, and does not pretend to.",
   ],
   // Emptied by the content collapse: four of these five were answered a
@@ -128,6 +128,7 @@ export const travelCompanionShopProduct: ShopProductInput = {
   inclusions: [
     "Today: the current operational state of the trip, derived fresh from what you recorded, never a manual task list",
     "Itinerary: the whole trip laid out day by day from what you recorded, a day with nothing on it said plainly, and a printable copy",
+    "Packing lists: starter lists for the kind of trip (beach, city, cold weather, camping, road trip and more), added for each traveller only when you choose, yours to tick or remove, and printable",
     "Trip: destinations, bookings, documents and preparation, with a Trip Brief summarising the whole thing at a glance",
     "Booking connections: say once what a booking depends on, and the product remembers the shape of your trip for you",
     "The change-impact walk: record a change and see exactly what was built on top of it, handled one booking at a time",
@@ -153,6 +154,7 @@ export const travelCompanionShopProduct: ShopProductInput = {
     "A worked-through version of a hard call with an airline, hotel or transport company",
     "A dated record of what happened, and lessons carried forward to the next trip",
     "A printable day-by-day itinerary, made from what you recorded",
+    "A printable packing list, one page a traveller can tick with a pen",
     "A printable trip book, as long as your trip needs and no longer",
   ],
   savingBehavior:

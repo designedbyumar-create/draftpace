@@ -15,12 +15,15 @@ import TripSetupForm from "./TripSetupForm";
 import PlaceForm from "./PlaceForm";
 import BookingForm from "./BookingForm";
 import DocumentForm from "./DocumentForm";
+import PackingStarter from "./PackingStarter";
+import PackingView from "./PackingView";
 import PreparationForm from "./PreparationForm";
 import RecordChangeForm from "./RecordChangeForm";
 import CompanionRun from "./CompanionRun";
 import { findResumableRun, beginRun } from "./useResumableRun";
 import { playbooksForBooking, PLAYBOOK_BY_KEY } from "../playbooks";
-import { setPreparationCompletion, createPreparationItem, loadRecordEntriesForPlaceNames, type RunRecord } from "../domain/travelData";
+import { archivePreparationItem, setPreparationCompletion, createPreparationItem, loadRecordEntriesForPlaceNames, type RunRecord } from "../domain/travelData";
+import { packingSections } from "../packingLists";
 import type { Playbook } from "@/components/product-shell/companion/steps";
 import PlaybookChooser from "@/components/product-shell/companion/PlaybookChooser";
 import type { Place, PreparationCategory, RecordCategory, RecordEntry } from "../trip";
@@ -86,6 +89,8 @@ export default function TripModule() {
   const [addingBooking, setAddingBooking] = useState(false);
   const [addingDocument, setAddingDocument] = useState(false);
   const [addingPreparation, setAddingPreparation] = useState(false);
+  const [startingPacking, setStartingPacking] = useState(false);
+  const [printingPacking, setPrintingPacking] = useState(false);
   const [running, setRunning] = useState<{ playbook: Playbook; booking: Booking; run: RunRecord } | null>(null);
   const [choosingFor, setChoosingFor] = useState<Booking | null>(null);
   const [recordingChangeFor, setRecordingChangeFor] = useState<Booking | null>(null);
@@ -179,6 +184,26 @@ export default function TripModule() {
     setImpact(affected.length > 0 ? { source: updated, affected } : null);
   }
 
+  async function removePreparation(itemId: string) {
+    const result = await archivePreparationItem(itemId);
+    if (result.ok) replacePreparationItem(result.data);
+  }
+
+  async function printPacking() {
+    if (!currentTrip) return;
+    setPrintingPacking(true);
+    try {
+      const { downloadPackingList } = await import("../printables/download");
+      await downloadPackingList({
+        title: currentTrip.title,
+        sections: packingSections(preparation, people),
+        size: /^en-(US|CA)/.test(navigator.language) ? "LETTER" : "A4",
+      });
+    } finally {
+      setPrintingPacking(false);
+    }
+  }
+
   async function togglePreparationDone(itemId: string, currentlyDone: boolean) {
     const result = await setPreparationCompletion(itemId, currentlyDone ? "open" : "done");
     if (result.ok) replacePreparationItem(result.data);
@@ -244,6 +269,10 @@ export default function TripModule() {
   }
 
   const brief = deriveTripBrief(currentTrip, places, bookings, threads, documents, new Date());
+
+  const activePreparation = preparation.filter((item) => item.status === "active");
+  const packingRows = activePreparation.filter((item) => item.category === "packing");
+  const otherPreparation = activePreparation.filter((item) => item.category !== "packing");
 
   return (
     <div className="mx-auto flex w-full max-w-2xl flex-col gap-7">
@@ -504,12 +533,33 @@ export default function TripModule() {
       <section>
         <div className="flex items-center justify-between gap-4">
           <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">Preparation</p>
-          {!addingPreparation && (
-            <Button size="sm" variant="ghost" onClick={() => setAddingPreparation(true)} iconLeft={<Plus size={14} aria-hidden />}>
-              Add
-            </Button>
+          {!addingPreparation && !startingPacking && (
+            <div className="flex items-center gap-1">
+              <Button size="sm" variant="ghost" onClick={() => setStartingPacking(true)}>
+                Start a packing list
+              </Button>
+              <Button size="sm" variant="ghost" onClick={() => setAddingPreparation(true)} iconLeft={<Plus size={14} aria-hidden />}>
+                Add
+              </Button>
+            </div>
           )}
         </div>
+
+        {startingPacking && (
+          <div className="mt-2">
+            <PackingStarter
+              instanceId={instanceId}
+              tripId={currentTrip.id}
+              people={people}
+              existing={preparation}
+              onAdded={(items) => {
+                items.forEach(addPreparationItem);
+                setStartingPacking(false);
+              }}
+              onCancel={() => setStartingPacking(false)}
+            />
+          </div>
+        )}
 
         {addingPreparation && (
           <div className="mt-2">
@@ -525,20 +575,19 @@ export default function TripModule() {
           </div>
         )}
 
-        {preparation.length === 0 && !addingPreparation && (
+        {activePreparation.length === 0 && !addingPreparation && !startingPacking && (
           <div className="mt-2">
-            <p className="text-[13px] text-[var(--faint)]">Nothing on the list yet.</p>
+            <p className="text-[13px] text-[var(--muted)]">Nothing on the list yet.</p>
             {/*
-              Not a seeded list. Preparation items are never pre-filled,
-              on purpose, so a document requirement that changed last
-              year never sits in someone's trip looking current. This
-              points at the guide instead, which is where general,
-              written, kept-current advice actually belongs, and leaves
-              what goes on the list to the traveller.
+              A packing list is something to choose to start, above. Nothing
+              on this list is ever added unasked. Requirements for documents
+              are deliberately not seeded even then: one that changed last
+              year must never sit in somebody's trip looking current, so
+              that goes to the guide, where it is kept up to date and dated.
             */}
-            <p className="mt-1 text-[12px] text-[var(--faint)]">
+            <p className="mt-1 text-[12px] text-[var(--muted)]">
               Not sure where to start?{" "}
-              <Link href="/guides/travel-document-checklist" className="font-semibold text-[var(--primary)] hover:underline">
+              <Link href="/guides/travel-document-checklist" className="font-semibold text-[var(--text)] underline hover:no-underline">
                 What each traveller needs, and where to keep it
               </Link>
               .
@@ -546,9 +595,24 @@ export default function TripModule() {
           </div>
         )}
 
-        {preparation.length > 0 && (
-          <ul className="mt-2 flex flex-col gap-2">
-            {preparation.map((item) => {
+        {packingRows.length > 0 && (
+          <div className="mt-3">
+            <PackingView
+              sections={packingSections(preparation, people)}
+              onToggle={togglePreparationDone}
+              onRemove={removePreparation}
+              actions={
+                <Button size="sm" variant="secondary" disabled={printingPacking} onClick={printPacking}>
+                  {printingPacking ? "Preparing..." : "Save as PDF"}
+                </Button>
+              }
+            />
+          </div>
+        )}
+
+        {otherPreparation.length > 0 && (
+          <ul className="mt-3 flex flex-col gap-2">
+            {otherPreparation.map((item) => {
               const done = item.completionStatus === "done";
               return (
                 <li key={item.id} className="flex items-start gap-2.5 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4">

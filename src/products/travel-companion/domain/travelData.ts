@@ -631,7 +631,7 @@ export async function createDocument(
 
 // ------------------------------------------------------------ preparation
 
-const PREPARATION_COLUMNS = "id, trip_id, category, title, completion_status, notes, status";
+const PREPARATION_COLUMNS = "id, trip_id, category, title, completion_status, notes, status, person_id, list_group, starter_list";
 
 function toPreparationItem(row: Record<string, unknown>): PreparationItem {
   return {
@@ -642,6 +642,9 @@ function toPreparationItem(row: Record<string, unknown>): PreparationItem {
     completionStatus: row.completion_status as PreparationCompletionStatus,
     notes: (row.notes as string | null) ?? null,
     status: row.status as PreparationItem["status"],
+    personId: (row.person_id as string | null) ?? null,
+    group: (row.list_group as string | null) ?? null,
+    starterList: (row.starter_list as string | null) ?? null,
   };
 }
 
@@ -661,6 +664,12 @@ export interface NewPreparationItem {
   category: PreparationCategory;
   title: string;
   notes?: string | null;
+  /** Whose item it is. Null or absent means shared, or nobody in particular. */
+  personId?: string | null;
+  /** The heading it sits under, for a list with groups. */
+  group?: string | null;
+  /** Which starter list it came from. Absent for anything the person typed. */
+  starterList?: string | null;
 }
 
 export async function createPreparationItem(
@@ -680,11 +689,58 @@ export async function createPreparationItem(
       category: draft.category,
       title: draft.title.trim(),
       notes: draft.notes?.trim() || null,
+      person_id: draft.personId ?? null,
+      list_group: draft.group ?? null,
+      starter_list: draft.starterList ?? null,
     })
     .select(PREPARATION_COLUMNS)
     .single();
 
   if (error || !data) return err({ kind: "network", message: error?.message ?? "Could not add that item." });
+  return ok(toPreparationItem(data as unknown as Record<string, unknown>));
+}
+
+/** Adds a starter list's worth of checklist rows in one go. All of them, or none. */
+export async function createPreparationItems(
+  productInstanceId: string,
+  tripId: string,
+  drafts: NewPreparationItem[]
+): Promise<Result<PreparationItem[]>> {
+  if (drafts.length === 0) return ok([]);
+  const user = await currentUserId();
+  if (!user.ok) return user;
+
+  const { data, error } = await supabase
+    .from("trv_preparation")
+    .insert(
+      drafts.map((draft) => ({
+        product_instance_id: productInstanceId,
+        user_id: user.data,
+        trip_id: tripId,
+        category: draft.category,
+        title: draft.title.trim(),
+        notes: draft.notes?.trim() || null,
+        person_id: draft.personId ?? null,
+        list_group: draft.group ?? null,
+        starter_list: draft.starterList ?? null,
+      }))
+    )
+    .select(PREPARATION_COLUMNS);
+
+  if (error || !data) return err({ kind: "network", message: error?.message ?? "Could not add that list." });
+  return ok((data as unknown as Record<string, unknown>[]).map(toPreparationItem));
+}
+
+/** Takes an item off the list. Archived, never deleted: nothing in this product is destroyed from a client. */
+export async function archivePreparationItem(itemId: string): Promise<Result<PreparationItem>> {
+  const { data, error } = await supabase
+    .from("trv_preparation")
+    .update({ status: "archived", updated_at: new Date().toISOString() })
+    .eq("id", itemId)
+    .select(PREPARATION_COLUMNS)
+    .single();
+
+  if (error || !data) return err({ kind: "network", message: error?.message ?? "Could not remove that." });
   return ok(toPreparationItem(data as unknown as Record<string, unknown>));
 }
 

@@ -8,6 +8,7 @@
 import { Font, pdf } from "@react-pdf/renderer";
 import { TripBookDocument, type TripBookManifest } from "./document";
 import { ItineraryDocument, type ItineraryPrintData } from "./itinerary";
+import { PackingDocument, type PackingPrintData } from "./packing";
 
 let fontsRegistered = false;
 
@@ -48,6 +49,20 @@ export async function downloadItinerary(data: ItineraryPrintData): Promise<void>
   const anchor = document.createElement("a");
   anchor.href = url;
   anchor.download = `itinerary-${new Date().toISOString().slice(0, 10)}.pdf`;
+  document.body.appendChild(anchor);
+  anchor.click();
+  anchor.remove();
+  URL.revokeObjectURL(url);
+}
+
+export async function downloadPackingList(data: PackingPrintData): Promise<void> {
+  registerFonts();
+
+  const blob = await pdf(PackingDocument({ data })).toBlob();
+  const url = URL.createObjectURL(blob);
+  const anchor = document.createElement("a");
+  anchor.href = url;
+  anchor.download = `packing-list-${new Date().toISOString().slice(0, 10)}.pdf`;
   document.body.appendChild(anchor);
   anchor.click();
   anchor.remove();
