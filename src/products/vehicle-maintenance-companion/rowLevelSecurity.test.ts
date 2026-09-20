@@ -25,8 +25,10 @@ const policies = [...sql.matchAll(/create policy\s+"([^"]+)"\s*\n?on public\.(vm
 }));
 
 describe("Vehicle Maintenance Companion row level security", () => {
-  it("creates the two tables this product is built on", () => {
-    expect(tables.sort()).toEqual(["vmc_maintenance_items", "vmc_vehicles"].sort());
+  it("creates the tables this product is built on", () => {
+    expect(tables.sort()).toEqual(
+      ["vmc_maintenance_items", "vmc_notification_preferences", "vmc_renewals", "vmc_service_events", "vmc_vehicles"].sort()
+    );
   });
 
   it("enables row level security on every table it creates", () => {
@@ -79,7 +81,10 @@ describe("Vehicle Maintenance Companion row level security", () => {
     const vehicles = readFileSync(new URL("./domain/vehicles.ts", import.meta.url), "utf8");
     const items = readFileSync(new URL("./domain/maintenanceItems.ts", import.meta.url), "utf8");
     const repository = readFileSync(new URL("./domain/repository.ts", import.meta.url), "utf8");
-    const domain = vehicles + items + repository;
+    const others = ["serviceEvents", "renewals", "reminderPreferences", "recordService"]
+      .map((name) => readFileSync(new URL(`./domain/${name}.ts`, import.meta.url), "utf8"))
+      .join("\n");
+    const domain = vehicles + items + repository + others;
     expect(domain).toMatch(/\.update\(/);
     expect(domain, "the domain layer must never call .delete(), RLS grants no delete policy to fall back on").not.toMatch(
       /\.delete\(/

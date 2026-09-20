@@ -181,6 +181,7 @@ const EVALUATED_PRODUCT_SLUGS = [
   "homeschooling-companion",
   "travel-companion",
   "personal-life-affairs-companion",
+  "vehicle-maintenance-companion",
 ] as const;
 
 export type EvaluatedProductSlug = (typeof EVALUATED_PRODUCT_SLUGS)[number];
@@ -205,5 +206,10 @@ export async function evaluateProductUpdates(
       return evaluateTravelUpdates(supabase, instanceId, now);
     case "personal-life-affairs-companion":
       return evaluatePersonalLifeAffairsUpdates(supabase, instanceId, now);
+    case "vehicle-maintenance-companion":
+      // Push only, and only to somebody who switched reminders on (see
+      // reminderDelivery.ts). Nothing is written to the Updates feed, so a
+      // date somebody entered is never announced twice.
+      return [];
   }
 }

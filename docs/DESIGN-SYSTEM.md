@@ -119,7 +119,7 @@ theme: {
   becomes. Emitted as `--product-hero-{from,mid,to,ink}-light/dark` and
   picked in globals.css in the same three theme states as the accent.
   `ground.test.ts` holds `ink` to 7:1 against every stop of the gradient,
-  in both themes (Personal Finance Companion's Today banner).
+  in both themes (Personal Finance Companion's Today banner, Vehicle Maintenance Companion's Due cluster).
 
 Rules for a signature object and a motif: built from data the product
 really has, never decoration, no invented figures, no scores or streaks

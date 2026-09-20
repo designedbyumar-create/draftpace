@@ -5,7 +5,7 @@ import { OverviewScreenMockup as PlaOverview, CompanionScreenMockup as PlaCompan
 import { OverviewScreenMockup as HscOverview, CheckScreenMockup as HscCheck, BookScreenMockup as HscBook } from "./[productSlug]/homeschoolingCompanionVisuals";
 import { OverviewScreenMockup as AlongsideOverview, CompanionScreenMockup as AlongsideCompanion, LifeScreenMockup as AlongsideLife } from "./[productSlug]/adhdLifeCompanionVisuals";
 import { OverviewScreenMockup as TravelOverview, ItineraryScreenMockup as TravelItinerary, ChangeImpactScreenMockup as TravelChangeImpact } from "./[productSlug]/travelCompanionVisuals";
-import { OverviewScreenMockup as VmcOverview, ServiceBoundaryScreenMockup as VmcServiceBoundary, AddItemScreenMockup as VmcAddItem } from "./[productSlug]/vehicleMaintenanceCompanionVisuals";
+import { OverviewScreenMockup as VmcOverview, ServiceBoundaryScreenMockup as VmcServiceBoundary, HistoryScreenMockup as VmcHistory } from "./[productSlug]/vehicleMaintenanceCompanionVisuals";
 import { OverviewScreenMockup as FhbOverview, SymptomFormScreenMockup as FhbSymptomForm, IntakeSummaryScreenMockup as FhbIntakeSummary } from "./[productSlug]/familyHealthBinderVisuals";
 
 /**
@@ -31,7 +31,7 @@ export const PRODUCT_SCREENS: Partial<Record<string, React.ComponentType[]>> = {
   "homeschooling-companion": [HscOverview, HscCheck, HscBook],
   alongside: [AlongsideOverview, AlongsideCompanion, AlongsideLife],
   "travel-companion": [TravelOverview, TravelItinerary, TravelChangeImpact],
-  "vehicle-maintenance-companion": [VmcOverview, VmcServiceBoundary, VmcAddItem],
+  "vehicle-maintenance-companion": [VmcOverview, VmcServiceBoundary, VmcHistory],
   "family-health-binder": [FhbOverview, FhbSymptomForm, FhbIntakeSummary],
 };
 
@@ -93,9 +93,9 @@ const SCREEN_CAPTIONS: Partial<Record<string, string[]>> = {
     "The change-impact walk: what depends on a booking that changed, unchanged so far",
   ],
   "vehicle-maintenance-companion": [
-    "Due: the single ranked view, with the most urgent item as the dominant one",
-    "The Service Boundary, choosing what is requested today and what is not",
-    "Adding a maintenance item, from a typical starting interval you can change",
+    "Due: the vehicle as its cluster, and the one job that needs you",
+    "The Service Boundary: what you asked for, in writing",
+    "History: every service, by year",
   ],
   "family-health-binder": [
     "Overview: every family member and what is recorded for them",

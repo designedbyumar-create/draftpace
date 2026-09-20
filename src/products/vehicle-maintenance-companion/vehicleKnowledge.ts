@@ -48,8 +48,80 @@ export const MAINTENANCE_TEMPLATES: MaintenanceTemplate[] = [
   { id: "wiper-blades", taskName: "Wiper blade replacement", typicalIntervalMiles: null, typicalIntervalMonths: 12 },
   { id: "alignment", taskName: "Wheel alignment check", typicalIntervalMiles: 12000, typicalIntervalMonths: 12 },
   { id: "registration-inspection", taskName: "Registration or safety inspection", typicalIntervalMiles: null, typicalIntervalMonths: 12 },
+  { id: "tire-pressure", taskName: "Tire pressure check", typicalIntervalMiles: null, typicalIntervalMonths: 1 },
+  { id: "washer-fluid", taskName: "Washer fluid top up", typicalIntervalMiles: null, typicalIntervalMonths: 3 },
+  { id: "lights-check", taskName: "Lights and indicators check", typicalIntervalMiles: null, typicalIntervalMonths: 6 },
+  { id: "tire-swap", taskName: "Winter and summer tire swap", typicalIntervalMiles: null, typicalIntervalMonths: 6 },
+  { id: "ac-check", taskName: "Air conditioning check", typicalIntervalMiles: null, typicalIntervalMonths: 24 },
+  { id: "timing-belt", taskName: "Timing belt replacement (if your engine has one)", typicalIntervalMiles: 90000, typicalIntervalMonths: 84 },
+  { id: "emergency-kit", taskName: "Emergency kit check", typicalIntervalMiles: null, typicalIntervalMonths: 12 },
+  { id: "underbody-rinse", taskName: "Underbody rinse after road salt", typicalIntervalMiles: null, typicalIntervalMonths: 12 },
+  { id: "fuel-filter", taskName: "Fuel filter replacement", typicalIntervalMiles: 30000, typicalIntervalMonths: 24 },
+  { id: "charging-check", taskName: "Charging port and cable check", typicalIntervalMiles: null, typicalIntervalMonths: 12 },
+  { id: "hoses-belts", taskName: "Hoses and drive belt inspection", typicalIntervalMiles: null, typicalIntervalMonths: 12 },
+  { id: "suspension-check", taskName: "Suspension and steering check", typicalIntervalMiles: null, typicalIntervalMonths: 12 },
 ];
 
 export function templateById(id: string): MaintenanceTemplate | null {
   return MAINTENANCE_TEMPLATES.find((template) => template.id === id) ?? null;
+}
+
+/**
+ * A starting set of jobs somebody can add in one go, opt-in and never
+ * automatic. Each entry is only a list of template ids, so every interval
+ * on an added job is still the template's typical starting point, copied
+ * onto an ordinary editable item. An added job has nothing recorded against
+ * it, so it says "nothing to judge yet" until a real fact goes in; adding a
+ * list can never make anything read as already overdue.
+ */
+export interface StarterList {
+  id: string;
+  name: string;
+  blurb: string;
+  templateIds: string[];
+}
+
+export const STARTER_LISTS: StarterList[] = [
+  {
+    id: "before-winter",
+    name: "Before winter",
+    blurb: "Cold is hard on batteries, tires and wipers.",
+    templateIds: ["battery-check", "tire-swap", "tire-replacement-check", "wiper-blades", "washer-fluid", "lights-check", "emergency-kit"],
+  },
+  {
+    id: "before-a-long-drive",
+    name: "Before a long summer drive",
+    blurb: "The checks worth doing before a road trip.",
+    templateIds: ["oil-change", "tire-pressure", "tire-replacement-check", "brake-inspection", "coolant", "ac-check", "emergency-kit"],
+  },
+  {
+    id: "once-a-year",
+    name: "Once a year",
+    blurb: "The yearly round most vehicles want.",
+    templateIds: ["battery-check", "brake-inspection", "cabin-air-filter", "engine-air-filter", "wiper-blades", "alignment", "underbody-rinse"],
+  },
+  {
+    id: "by-the-miles",
+    name: "By the miles",
+    blurb: "The bigger jobs that come round every so many thousand miles.",
+    templateIds: ["oil-change", "tire-rotation", "brake-fluid", "spark-plugs", "transmission-fluid", "coolant", "timing-belt"],
+  },
+];
+
+export function starterListById(id: string): StarterList | null {
+  return STARTER_LISTS.find((list) => list.id === id) ?? null;
+}
+
+/**
+ * The templates in a list that are not already tracked on a vehicle,
+ * matched by the template an item started from, or by its name for a job
+ * somebody typed themselves. Adding the same list twice adds nothing.
+ */
+export function templatesToAdd(list: StarterList, tracked: { templateId: string | null; taskName: string }[]): MaintenanceTemplate[] {
+  const haveIds = new Set(tracked.map((item) => item.templateId).filter((id): id is string => id !== null));
+  const haveNames = new Set(tracked.map((item) => item.taskName.trim().toLowerCase()));
+  return list.templateIds
+    .map((id) => templateById(id))
+    .filter((template): template is MaintenanceTemplate => template !== null)
+    .filter((template) => !haveIds.has(template.id) && !haveNames.has(template.taskName.trim().toLowerCase()));
 }

@@ -3,6 +3,7 @@ import { getSupabaseServiceRoleClient } from "@/lib/server-auth";
 import { insertProductUpdate } from "@/lib/notifications/updatesFeed";
 import { isWebPushConfigured } from "@/lib/notifications/webPush";
 import { deliverAlongsideReminders } from "@/products/alongside/reminderDelivery";
+import { deliverVehicleReminders } from "@/products/vehicle-maintenance-companion/reminderDelivery";
 import { evaluateProductUpdates, isEvaluatedProductSlug } from "@/product-framework/updatesEvaluators";
 
 /**
@@ -46,7 +47,7 @@ export async function GET(request: Request) {
   };
   const pushConfigured = isWebPushConfigured();
 
-  const evaluatedSlugs = ["alongside", "homeschooling-companion", "travel-companion", "personal-life-affairs-companion"];
+  const evaluatedSlugs = ["alongside", "homeschooling-companion", "travel-companion", "personal-life-affairs-companion", "vehicle-maintenance-companion"];
 
   const [{ data: instanceRows, error: instanceError }, { data: entitlementRows, error: entitlementError }] = await Promise.all([
     supabase.from("product_instances").select("id, user_id, product_slug").in("product_slug", evaluatedSlugs),
@@ -89,11 +90,19 @@ export async function GET(request: Request) {
       summary.updatesWritten += 1;
     }
 
-    // Alongside alone also sends real push, and only to somebody who
-    // switched reminders on, for a date they chose. Everything else in this
+    // Alongside and Vehicle Maintenance Companion also send real push, and
+    // only to somebody who switched reminders on. Everything else in this
     // route stays feed-only.
     if (productSlug === "alongside" && pushConfigured) {
       const outcome = await deliverAlongsideReminders(supabase, { instanceId, userId, now });
+      if (outcome === "sent") summary.remindersSent += 1;
+      if (outcome === "no-device") summary.remindersWaitingForDevice += 1;
+    }
+    // Vehicle Maintenance Companion sends real push too, on the same terms:
+    // only to somebody who switched reminders on, for a date or a distance
+    // they recorded themselves.
+    if (productSlug === "vehicle-maintenance-companion" && pushConfigured) {
+      const outcome = await deliverVehicleReminders(supabase, { instanceId, userId, now });
       if (outcome === "sent") summary.remindersSent += 1;
       if (outcome === "no-device") summary.remindersWaitingForDevice += 1;
     }

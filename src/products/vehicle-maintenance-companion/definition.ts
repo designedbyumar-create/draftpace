@@ -57,8 +57,8 @@ export const vehicleMaintenanceCompanionDefinition: ProductDefinitionInput = {
     shortName: "Vehicles",
     description:
       "Vehicle Maintenance Companion by Draftpace: the intervals you actually know, kept against the vehicles you own, so you always know what's due.",
-    themeColor: "#4d5a35",
-    backgroundColor: "#fbfaf7",
+    themeColor: "#b45309",
+    backgroundColor: "#f2f3f4",
     // This product's own icon, so installing two Companions does not
     // put two identical Draftpace squares on the home screen. Same
     // monogram, this product's accent, generated from Logo.tsx's own
@@ -77,17 +77,20 @@ export const vehicleMaintenanceCompanionDefinition: ProductDefinitionInput = {
    *
    *   Due         what needs doing, across every vehicle, ranked
    *   Vehicles    what do I own, and what am I tracking on it
-   *   Boundary    the printable, handed to a shop
+   *   History     what has been done to each, and when
+   *   Paperwork   the dates and details that live in the glove box
+   *   Print       the Service Boundary, the service record, the card
    *
-   * Settings is real scaffolding, honestly not built yet, same as every
-   * other new product's Settings destination on day one.
+   * Settings is reminders, and only reminders: off until switched on.
    */
-  navigation: ["workspace", "vehicles", "printables", "settings"],
-  primaryNavigation: ["workspace", "vehicles"],
+  navigation: ["workspace", "vehicles", "history", "paperwork", "printables", "settings"],
+  primaryNavigation: ["workspace", "vehicles", "history", "paperwork"],
   workspaceLabel: "Due",
   destinationLabels: {
     vehicles: "Vehicles",
-    printables: "Boundary",
+    history: "History",
+    paperwork: "Paperwork",
+    printables: "Print",
     settings: "Settings",
   },
   navigationStyle: "rail",
@@ -109,63 +112,91 @@ export const vehicleMaintenanceCompanionDefinition: ProductDefinitionInput = {
   modules: [
     { id: "vehicle-maintenance-companion.workspace", destination: "workspace" },
     { id: "vehicle-maintenance-companion.vehicles", destination: "vehicles" },
+    { id: "vehicle-maintenance-companion.history", destination: "history" },
+    { id: "vehicle-maintenance-companion.paperwork", destination: "paperwork" },
     { id: "vehicle-maintenance-companion.printables", destination: "printables" },
     { id: "vehicle-maintenance-companion.settings", destination: "settings" },
   ],
   permissions: [],
   events: [],
   /**
-   * Steel. Deliberately not a recolour of a sibling: covered up, this
-   * product must be distinguishable from every other accent already in
-   * use (ink blue, sage, teal, clay, plum, mulberry, amber). Steel reads
-   * as tools and a garage rather than travel or home, without leaning on
-   * automotive cliche (racing red, chrome, asphalt black).
+   * Signal amber on graphite, from the instrument cluster: the one lamp
+   * that means something on a dashboard is the one that is lit when
+   * something needs attention, and dark when nothing does.
    *
-   * Full accentScale, including wash, declared from day one: this
-   * product never goes through the accent-with-no-scale state Monthly
-   * Money Reset and Personal Finance Companion both shipped in and later
-   * had to correct.
-   */
-  /**
-   * Olive, not the near-grey steel this shipped with.
+   * The amber is deep enough to read as text and to carry a white button
+   * label on a light page (5:1), and lifts to a lighter amber in dark mode.
+   * It is spent on the main action, the lit lamp, links and the active tab.
+   * The ground is a cool graphite-neutral so the amber is the only warm
+   * thing on the screen, and no other product uses it: covered up, this one
+   * is still distinguishable from ink blue, sage, teal, clay, plum, mulberry
+   * and ink green.
    *
-   * The original #565349 had a chroma of 13 when every other product sat
-   * between 31 and 137, which made it measurably the only near-grey in the
-   * set rather than a matter of taste. On a page where the accent is the
-   * buy button, a colour with almost no colour in it reads as a disabled
-   * control, which is the worst thing a call to action can look like.
-   *
-   * Olive rather than the obvious bronze: bronze landed at hue 27deg,
-   * two degrees from Travel Companion's amber, so the two products would
-   * have shared a colour. This sits at 81deg, in the widest empty gap in
-   * the palette, 57deg clear of Home Base's forest, and stays right for a
-   * product about workshops and machinery.
+   * The banner on Due is the cluster: dark in both themes, because a
+   * dashboard is, with its own tones so the lamp reads against it. Full
+   * accentScale, including wash, from day one.
    */
   theme: {
-    accent: "#4d5a35",
+    accent: "#b45309",
     accentScale: {
-      base: "#4d5a35",
-      strong: "#3a4427",
-      soft: "#e9ecdf",
+      base: "#b45309",
+      strong: "#8f3f06",
+      soft: "#fbe8d5",
       contrast: "#ffffff",
-      wash: "#f4f6ee",
+      wash: "#fdf3e8",
     },
-    narrativeFont: "var(--font-newsreader), ui-serif, Georgia, serif",
+    accentScaleDark: {
+      base: "#f2a04a",
+      strong: "#f7bd80",
+      soft: "#3a2413",
+      contrast: "#241203",
+      wash: "#2a1b0f",
+    },
+    ground: {
+      light: {
+        appBg: "#f2f3f4",
+        surface: "#ffffff",
+        surfaceMuted: "#f6f7f8",
+        surfaceStrong: "#e4e7e9",
+        text: "#14181b",
+        muted: "#565e64",
+        faint: "#66707a",
+        border: "#e3e6e8",
+        borderStrong: "#c8cdd1",
+      },
+      dark: {
+        appBg: "#0c0f11",
+        surface: "#15191c",
+        surfaceMuted: "#111417",
+        surfaceStrong: "#1f2529",
+        text: "#eceff1",
+        muted: "#a3acb2",
+        faint: "#8b959c",
+        border: "rgba(236, 239, 241, 0.09)",
+        borderStrong: "rgba(236, 239, 241, 0.16)",
+      },
+    },
+    hero: {
+      light: { from: "#38424a", mid: "#20272c", to: "#161b1e", ink: "#f1f3f4" },
+      dark: { from: "#2b343a", mid: "#1a2024", to: "#101416", ink: "#eceff1" },
+    },
+    // No narrativeFont, deliberately. Every other Companion speaks in a
+    // serif somewhere; this one is an instrument panel, so it speaks in
+    // the sans and sets everything that is measured in a monospaced face.
     motionPersonality: "calm",
     contentWidth: "narrow",
-    identity: { motif: "gauge" },
+    // Small square corners: a gauge panel, not a card.
+    identity: { motif: "gauge", shape: "sharp" },
   },
   layouts: ["responsive"],
   offline: "shell-only",
-  // Honest, not a placeholder: no push infrastructure exists for this
-  // product yet, same rule every Companion without one already states.
-  notifications: { supported: false },
+  // Real, and opt-in: reminders are off until somebody switches them on in
+  // Settings, and only ever for a job that reached its interval or a date
+  // they recorded. See vehicleReminders.ts.
+  notifications: { supported: true },
   progressModel: { kind: "custom" },
-  // No dedicated history surface this phase: a last-done fact lives on
-  // its own maintenance item, not in a separate timeline. Declaring
-  // enabled here without one would be exactly the kind of unbuilt claim
-  // rule 8 forbids.
-  history: { enabled: false, kinds: [] },
+  // The service record: every time a job was done, kept as an event.
+  history: { enabled: true, kinds: ["service"] },
   settingsSections: [],
   migrationPolicy: { compatibility: "backward-compatible" },
   devFixture: false,

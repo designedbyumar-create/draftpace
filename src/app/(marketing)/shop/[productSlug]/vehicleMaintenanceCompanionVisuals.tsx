@@ -1,32 +1,83 @@
 /**
  * Bespoke mobile mockups for Vehicle Maintenance Companion's Shop page,
- * following the pattern its siblings established: real recreations of
- * the shipped product UI, on the shared PhoneFrame from day one, not a
- * locally-duplicated bezel.
+ * following the pattern its siblings established: recreations of the
+ * shipped product UI, not screenshots and not a generic template.
  *
- * What is drawn maps to what ships: WorkspaceModule's dominant-action
- * hero for the single most urgent due item, the Service Boundary
- * printable's requested/not-authorized split, and the template-picker +
- * severe-duty toggle from adding a maintenance item. Olive (#4d5a35, the
- * real theme.accent) reads as tools and a garage, distinct from every
- * other accent already in use on this platform.
+ * What is drawn maps to what ships. Screen 1 is the Due screen: the
+ * vehicle as its instrument cluster, with its odometer and plate, the job
+ * most worth attention under a lit lamp, then what else is due and the
+ * paperwork dates coming up. Screen 2 is the Service Boundary, on the
+ * Print screen. Screen 3 is History: every service, by year. The bottom
+ * bar is the real one: Due, Vehicles, History, Paperwork.
  *
- * Nothing drawn here implies a real factory schedule, a live vehicle
- * connection, or a shop booking: every figure traces to something a
- * person typed in, same discipline as the product itself.
+ * Every figure is worked out by the same functions the product uses, from
+ * a small set of sample records (deriveDueView, describeRemaining,
+ * deriveRenewalsView, historyByYear), so a drawing cannot say something the
+ * product would not. Every colour comes from the product's own definition,
+ * and every phrase drawn is asserted against the component that says it
+ * (vehicleMaintenanceCompanionVisuals.test.tsx).
+ *
+ * The sample vehicles, shops and amounts are illustrative and internally
+ * consistent, never presented as real records.
  */
+import type { ReactNode } from "react";
+import { Article, Car, Clock, Compass } from "@/design-system/Icon";
+import { vehicleMaintenanceCompanionDefinition as definition } from "@/products/vehicle-maintenance-companion/definition";
+import { deriveDueView } from "@/products/vehicle-maintenance-companion/dueStatus";
+import { describeVehicle, vehicleLamps } from "@/products/vehicle-maintenance-companion/fleet";
+import { describeInterval, describeRemaining } from "@/products/vehicle-maintenance-companion/dueText";
+import { odometerDigits, shortDay } from "@/products/vehicle-maintenance-companion/odometer";
+import { describeRenewalTiming, deriveRenewalsView, renewalTitle } from "@/products/vehicle-maintenance-companion/renewals";
+import { formatCost, historyByYear } from "@/products/vehicle-maintenance-companion/serviceHistory";
+import type { MaintenanceItem, Renewal, ServiceEvent, Vehicle } from "@/products/vehicle-maintenance-companion/state";
 import PhoneFrame from "../PhoneFrame";
 
-const INK = "#211f1a";
-const MUTED = "#6f6c62";
-const FAINT = "#9a9689";
-const STEEL = "#4d5a35";
-const PAPER = "#fbfaf7";
-const LINE = "#e9e7e0";
+const theme = definition.theme;
+const ground = theme?.ground?.light;
+const accent = theme?.accentScale;
+const hero = theme?.hero?.light;
+if (!ground || !accent || !hero) throw new Error("Vehicle Maintenance Companion must declare its ground, accent scale and hero.");
 
-function StatusBar() {
+const DESK = ground.appBg;
+const SURFACE = ground.surface;
+const SUNKEN = ground.surfaceStrong;
+const INK = ground.text;
+const MUTED = ground.muted;
+const STRONG_RULE = ground.borderStrong;
+const ACCENT = accent.base;
+const ACCENT_LABEL = accent.contrast;
+const HERO_INK = hero.ink;
+const HERO_TO = hero.to;
+const HERO_BACKGROUND = `radial-gradient(120% 90% at 85% -10%, ${hero.from} 0%, ${hero.mid} 55%, ${hero.to} 100%)`;
+
+const NOW = new Date(2026, 8, 21, 9, 0);
+const TODAY = "2026-09-21";
+const stamp = { createdAt: "2026-01-01T00:00:00Z", updatedAt: "2026-01-01T00:00:00Z" };
+
+const CIVIC: Vehicle = { id: "v1", label: "Civic", year: 2018, make: "Honda", model: "Civic", currentMileage: 50_400, mileageUpdatedAt: "2026-08-01", historyKnown: true, fuelType: "petrol", hardUse: false, plate: "7ABC123", vin: null, tyreSize: null, oilSpec: null, insurer: null, policyNumber: null, roadsidePhone: null, status: "active", ...stamp };
+const job = (id: string, taskName: string, intervalMiles: number, intervalMonths: number, lastDoneAt: string, lastDoneMileage: number): MaintenanceItem => ({ id, vehicleId: "v1", templateId: null, taskName, intervalMiles, intervalMonths, severeDuty: false, lastDoneAt, lastDoneMileage, status: "active", ...stamp });
+const ITEMS: MaintenanceItem[] = [
+  job("i1", "Oil and filter change", 5000, 6, "2026-02-10", 44_900),
+  job("i2", "Tire rotation", 6000, 6, "2026-03-20", 45_000),
+  job("i3", "Cabin air filter", 15000, 12, "2025-10-05", 39_000),
+];
+const renewal = (id: string, kind: Renewal["kind"], dueOn: string): Renewal => ({ id, vehicleId: "v1", kind, label: null, dueOn, whereKept: null, note: null, status: "active", ...stamp });
+const RENEWALS: Renewal[] = [renewal("r1", "registration", "2026-09-12"), renewal("r2", "insurance", "2026-10-03")];
+const service = (id: string, doneOn: string, taskName: string, mileage: number, shop: string | null, costMinorUnits: number | null): ServiceEvent => ({ id, vehicleId: "v1", itemId: null, taskName, doneOn, mileage, shop, costMinorUnits, note: null, status: "active", ...stamp });
+export const EVENTS: ServiceEvent[] = [
+  service("e1", "2026-09-01", "Engine oil and filter change", 50_100, "Main Street Garage", 8950),
+  service("e2", "2026-03-20", "Tire rotation", 45_000, "Main Street Garage", 3000),
+  service("e3", "2026-02-14", "Replaced the rear brake pads", 44_900, "Kwik Brakes", 24000),
+  service("e4", "2025-10-05", "Cabin air filter", 39_000, null, null),
+];
+const VAN: Vehicle = { ...CIVIC, id: "v2", label: "Work van", year: 2016, make: "Ford", model: "Transit", currentMileage: 88_100, mileageUpdatedAt: "2026-09-18", plate: "8XYZ456", fuelType: "diesel" };
+export const SAMPLE = { vehicles: [CIVIC, VAN], items: ITEMS, renewals: RENEWALS, events: EVENTS };
+
+const MONO = "font-mono";
+
+function StatusBar({ color }: { color: string }) {
   return (
-    <div className="flex items-center justify-between px-1 text-[10px] font-semibold" style={{ color: INK }}>
+    <div className="flex items-center justify-between px-1 text-[10px] font-semibold" style={{ color }}>
       <span>9:41</span>
       <div className="flex items-center gap-1">
         <span className="h-2 w-3 rounded-[1px] border border-current" />
@@ -36,194 +87,310 @@ function StatusBar() {
   );
 }
 
-function TabBar({ current }: { current: "Due" | "Vehicles" | "Boundary" }) {
+/** The four destinations the product actually has, an icon over a label, the accent only on the tab you are on. Print lives under More, so no tab is lit there. */
+function TabBar({ current }: { current: "Due" | "Vehicles" | "History" | "Paperwork" | null }) {
+  const tabs = [
+    { label: "Due", Icon: Compass },
+    { label: "Vehicles", Icon: Car },
+    { label: "History", Icon: Clock },
+    { label: "Paperwork", Icon: Article },
+  ] as const;
   return (
-    <div
-      className="mt-auto flex items-center justify-between rounded-xl border bg-white px-4 py-2.5 text-[8.5px] font-semibold"
-      style={{ borderColor: LINE, color: FAINT }}
-    >
-      {(["Due", "Vehicles", "Boundary"] as const).map((tab) => (
-        <span key={tab} style={tab === current ? { color: STEEL } : undefined}>
-          {tab}
+    <div className="-mx-4 -mb-4 mt-auto flex border-t" style={{ borderColor: STRONG_RULE, backgroundColor: SURFACE }}>
+      {tabs.map(({ label, Icon }) => (
+        <span key={label} className="flex h-10 flex-1 flex-col items-center justify-center gap-px text-[7px] font-semibold" style={{ color: label === current ? ACCENT : MUTED }}>
+          <Icon size={12} aria-hidden />
+          {label}
         </span>
       ))}
     </div>
   );
 }
 
-function Eyebrow({ children }: { children: string }) {
+function Screen({ children }: { children: ReactNode }) {
   return (
-    <p className="text-[7.5px] font-bold uppercase tracking-[0.14em]" style={{ color: STEEL }}>
+    <PhoneFrame accent={ACCENT}>
+      <div className="flex h-full flex-col px-4 pb-4 pt-9" style={{ backgroundColor: DESK }}>
+        <StatusBar color={INK} />
+        {children}
+      </div>
+    </PhoneFrame>
+  );
+}
+
+function Heading({ kicker, title }: { kicker: string; title: string }) {
+  return (
+    <div className="mt-3">
+      <p className={`${MONO} text-[5.5px] uppercase tracking-[0.12em]`} style={{ color: MUTED }}>
+        {kicker}
+      </p>
+      <h3 className="mt-0.5 text-[16px] font-bold leading-none tracking-[-0.02em]" style={{ color: INK }}>
+        {title}
+      </h3>
+    </div>
+  );
+}
+
+function Group({ children }: { children: ReactNode }) {
+  return (
+    <div className="overflow-hidden rounded-[3px] border" style={{ borderColor: STRONG_RULE, backgroundColor: SURFACE }}>
       {children}
-    </p>
+    </div>
+  );
+}
+
+/** Rows divided by a dashed rule, like a service sheet. */
+const rule = (index: number) => (index ? { borderTop: `1px dashed ${STRONG_RULE}` } : undefined);
+
+function SectionTitle({ children, meta }: { children: string; meta?: string }) {
+  return (
+    <div className="mb-1 mt-3 flex items-center justify-between">
+      <p className={`${MONO} flex items-center gap-1 text-[5.5px] font-bold uppercase tracking-[0.14em]`} style={{ color: MUTED }}>
+        <span className="h-[1px] w-[6px]" style={{ backgroundColor: ACCENT }} />
+        {children}
+      </p>
+      {meta && (
+        <p className={`${MONO} text-[5px]`} style={{ color: MUTED }}>
+          {meta}
+        </p>
+      )}
+    </div>
+  );
+}
+
+function Lamp({ state }: { state: "due" | "soon" | "clear" }) {
+  return (
+    <span
+      className="h-[5px] w-[5px] shrink-0 rounded-full"
+      style={state === "due" ? { backgroundColor: ACCENT } : state === "soon" ? { border: `1.5px solid ${ACCENT}` } : { border: `1px solid ${STRONG_RULE}` }}
+    />
+  );
+}
+
+function Plate({ children, hero = false }: { children: string; hero?: boolean }) {
+  return (
+    <span
+      className={`${MONO} rounded-[1.5px] border px-1 py-[1px] text-[6px] font-bold tracking-[0.1em]`}
+      style={hero ? { borderColor: "rgba(255,255,255,0.3)", backgroundColor: "rgba(255,255,255,0.1)" } : { borderColor: STRONG_RULE, backgroundColor: DESK, color: INK }}
+    >
+      {children}
+    </span>
   );
 }
 
 /**
- * Screen 1: Due, the single ranked "what's due" view. Drawn with a real
- * overdue item as the dominant-action hero, exactly the WorkspaceModule
- * treatment: one urgent thing named plainly, with a real remaining
- * figure, never a generic checklist.
+ * Screen 1: Due. Two vehicles, each with its lamp, and the cluster for the
+ * one whose job the engine ranks first: only that job's figures, and no
+ * percentage or score, because the product shows neither.
  */
 export function OverviewScreenMockup() {
+  const view = deriveDueView(SAMPLE.vehicles, ITEMS, NOW);
+  const top = view.due[0];
+  if (!top) throw new Error("The sample must have a job that is due.");
+  const rest = [...view.due.slice(1), ...view.dueSoon];
+  const renewals = deriveRenewalsView(SAMPLE.vehicles, RENEWALS, TODAY);
+  const lamps = vehicleLamps(SAMPLE.vehicles, view, [...renewals.pastDate, ...renewals.soon]);
+  const { digits, lead } = odometerDigits(CIVIC.currentMileage ?? 0);
   return (
-    <PhoneFrame accent={STEEL}>
-      <div className="flex h-full flex-col px-4 pb-4 pt-9" style={{ backgroundColor: PAPER }}>
-        <StatusBar />
-        <div className="mt-5">
-          <Eyebrow>Due</Eyebrow>
-          <h3 className="mt-2 text-[16px] font-semibold leading-[1.15]" style={{ color: INK, fontFamily: "Georgia, serif" }}>
-            What&apos;s due, across everything you own.
-          </h3>
+    <Screen>
+      <Heading kicker="Across everything you own" title="Due" />
+      <div className="mt-2 flex flex-wrap gap-1">
+        <span className={`${MONO} rounded-[1.5px] border px-1.5 py-[2px] text-[5.5px] font-bold`} style={{ borderColor: INK, backgroundColor: INK, color: SURFACE }}>
+          ALL
+        </span>
+        {lamps.map(({ vehicle, state }) => (
+          <span key={vehicle.id} className={`${MONO} flex items-center gap-1 rounded-[1.5px] border px-1.5 py-[2px] text-[5.5px] font-bold`} style={{ borderColor: STRONG_RULE, backgroundColor: SURFACE, color: INK }}>
+            <Lamp state={state} />
+            {vehicle.plate}
+          </span>
+        ))}
+      </div>
+      <div className="mt-2 overflow-hidden rounded-[5px] p-3" style={{ background: HERO_BACKGROUND, color: HERO_INK, boxShadow: `0 0 0 1px ${HERO_TO}` }}>
+        <div className="flex items-center justify-between">
+          <Plate hero>{CIVIC.plate ?? CIVIC.label}</Plate>
+          <span className="text-[6px] opacity-70">{describeVehicle(CIVIC)}</span>
+        </div>
+        <div className="mt-2.5 flex items-end gap-[1.5px]">
+          {digits.map((digit, i) => (
+            <span key={i} className={`${MONO} flex h-[17px] w-[12px] items-center justify-center rounded-[1.5px] border text-[10px] font-bold`} style={{ borderColor: "rgba(255,255,255,0.1)", backgroundColor: "rgba(0,0,0,0.5)", opacity: i < lead ? 0.25 : 1 }}>
+              {digit}
+            </span>
+          ))}
+          <span className={`${MONO} ml-1 pb-[1px] text-[5px] uppercase opacity-60`}>miles</span>
+        </div>
+        <p className={`${MONO} mt-1 text-[4.5px] uppercase opacity-55`}>as of {shortDay(CIVIC.mileageUpdatedAt ?? TODAY, TODAY)}</p>
+        <div className="mt-2 flex h-[4px] items-end gap-[2.6px] opacity-30">
+          {Array.from({ length: 31 }, (_, i) => (
+            <span key={i} className="w-[0.5px] bg-current" style={{ height: i % 5 === 0 ? 4 : 2 }} />
+          ))}
+        </div>
+        <div className={`${MONO} mt-2.5 flex items-center gap-1 text-[5.5px] font-bold uppercase tracking-[0.14em]`}>
+          <span className="h-[5px] w-[5px] rounded-full" style={{ backgroundColor: ACCENT, boxShadow: `0 0 0 2px ${ACCENT}55` }} />
+          Due
+        </div>
+        <p className="mt-1 text-[13px] font-bold leading-[1.1] tracking-[-0.02em]">{top.item.taskName}</p>
+        <p className={`${MONO} mt-1 text-[5.5px] leading-snug opacity-80`}>
+          {describeRemaining(top)} ({describeInterval(top.item)})
+        </p>
+        <span className="mt-2 inline-block rounded-[2px] px-2 py-[4px] text-[6.5px] font-semibold" style={{ backgroundColor: ACCENT, color: ACCENT_LABEL }}>
+          I had this done
+        </span>
+      </div>
 
-          <div className="mt-3 rounded-lg border-l-[3px] border bg-white p-2.5" style={{ borderColor: LINE, borderLeftColor: "#b5482f" }}>
-            <p className="text-[7px] font-bold uppercase tracking-[0.08em]" style={{ color: "#b5482f" }}>
-              Due
-            </p>
-            <p className="mt-1 text-[10px] font-semibold" style={{ color: INK }}>
-              Engine oil and filter change
-            </p>
-            <p className="mt-0.5 text-[8px]" style={{ color: MUTED }}>
-              2019 Honda Civic
-            </p>
-            <p className="mt-1 text-[8px]" style={{ color: MUTED }}>
-              320 miles past due (every 5,000 miles)
-            </p>
-            <span className="mt-2 inline-block rounded-md border px-2 py-1 text-[7.5px] font-semibold" style={{ borderColor: STEEL, color: STEEL }}>
-              Mark done today
+      <SectionTitle>Also due</SectionTitle>
+      <Group>
+        {rest.map((entry, index) => (
+          <div key={entry.item.id} className="flex items-start gap-1.5 px-2 py-1.5" style={rule(index)}>
+            <span className="mt-[2px]">
+              <Lamp state={entry.urgency >= 1 ? "due" : "soon"} />
+            </span>
+            <div className="min-w-0 flex-1">
+              <p className="text-[7px] font-semibold leading-tight" style={{ color: INK }}>
+                {entry.item.taskName}
+              </p>
+              <p className={`${MONO} mt-0.5 text-[5px]`} style={{ color: MUTED }}>
+                {describeRemaining(entry)}
+              </p>
+            </div>
+            <Plate>{entry.vehicle.plate ?? entry.vehicle.label}</Plate>
+          </div>
+        ))}
+      </Group>
+
+      <SectionTitle>Paperwork</SectionTitle>
+      <Group>
+        {[...renewals.pastDate, ...renewals.soon].map((entry, index) => (
+          <div key={entry.renewal.id} className="flex items-baseline justify-between px-2 py-1.5" style={rule(index)}>
+            <span className="text-[7px] font-semibold" style={{ color: INK }}>
+              {renewalTitle(entry.renewal)}
+            </span>
+            <span className={`${MONO} text-[5px]`} style={{ color: MUTED }}>
+              {describeRenewalTiming(entry.days)}, {entry.renewal.dueOn}
             </span>
           </div>
-
-          <p className="mt-3 text-[7.5px] font-bold uppercase tracking-[0.08em]" style={{ color: FAINT }}>
-            Also due
-          </p>
-          <div className="mt-1.5 rounded-lg border bg-white p-2.5" style={{ borderColor: LINE }}>
-            <p className="text-[8.5px]" style={{ color: INK }}>
-              Tire rotation
-              <span style={{ color: MUTED }}> · 2019 Honda Civic</span>
-            </p>
-            <p className="mt-0.5 text-[7.5px]" style={{ color: MUTED }}>
-              180 miles left
-            </p>
-          </div>
-        </div>
-        <TabBar current="Due" />
-      </div>
-    </PhoneFrame>
+        ))}
+      </Group>
+      <TabBar current="Due" />
+    </Screen>
   );
 }
 
 /**
- * Screen 2: the Service Boundary, this product's signature feature. The
- * exact requested-today / not-authorized split the printable itself
- * generates, drawn as the choosing step before generating it.
+ * Screen 2: the Service Boundary, on the Print screen. What is requested
+ * today is chosen from the jobs that are tracked, anything else is written
+ * in, and the most the person will agree to without a call is typed as they
+ * want it printed. Nothing is stored and nothing is checked.
  */
 export function ServiceBoundaryScreenMockup() {
+  const requested = new Set(["i1"]);
   return (
-    <PhoneFrame accent={STEEL}>
-      <div className="flex h-full flex-col px-4 pb-4 pt-9" style={{ backgroundColor: PAPER }}>
-        <StatusBar />
-        <div className="mt-5">
-          <Eyebrow>Boundary</Eyebrow>
-          <h3 className="mt-2 text-[15px] font-semibold leading-[1.15]" style={{ color: INK, fontFamily: "Georgia, serif" }}>
-            Service Boundary
-          </h3>
-          <p className="mt-1 text-[8px]" style={{ color: MUTED }}>
-            2019 Honda Civic, at 62,340 miles
-          </p>
-
-          <p className="mt-3 text-[7px] font-bold uppercase tracking-[0.08em]" style={{ color: STEEL }}>
-            Requested today
-          </p>
-          <div className="mt-1.5 rounded-lg border bg-white p-2.5" style={{ borderColor: LINE }}>
-            <p className="text-[8.5px] font-semibold" style={{ color: INK }}>
-              Engine oil and filter change
-            </p>
-          </div>
-
-          <p className="mt-2.5 text-[7px] font-bold uppercase tracking-[0.08em]" style={{ color: FAINT }}>
-            Not authorized without a further conversation
-          </p>
-          <div className="mt-1.5 flex flex-col gap-1.5">
-            {["Brake pad and rotor inspection", "Cabin air filter replacement"].map((task) => (
-              <div key={task} className="rounded-lg border bg-white p-2" style={{ borderColor: LINE }}>
-                <p className="text-[8px]" style={{ color: MUTED }}>
-                  {task}
-                </p>
+    <Screen>
+      <Heading kicker="One for the shop, one for a buyer, one for the glove box" title="Print" />
+      <div className="mt-2.5 rounded-[3px] border p-2.5" style={{ borderColor: STRONG_RULE, backgroundColor: SURFACE }}>
+        <p className="text-[8px] font-bold tracking-[-0.01em]" style={{ color: INK }}>
+          Service Boundary
+        </p>
+        <div className="mt-2 grid grid-cols-2 gap-1.5">
+          {[
+            { label: "Shop (optional)", value: "Main Street Garage" },
+            { label: "Number to call you on (optional)", value: "" },
+          ].map((field) => (
+            <div key={field.label}>
+              <p className="text-[5px] font-semibold" style={{ color: INK }}>
+                {field.label}
+              </p>
+              <div className="mt-0.5 rounded-[2px] border px-1 py-[3px] text-[6px]" style={{ borderColor: STRONG_RULE, color: INK, minHeight: 12 }}>
+                {field.value}
               </div>
-            ))}
-          </div>
-
-          <span className="mt-3 inline-block self-start rounded-md px-2.5 py-1.5 text-[7.5px] font-semibold text-white" style={{ backgroundColor: STEEL }}>
-            Generate
+            </div>
+          ))}
+        </div>
+        <p className="mt-2 text-[6px] font-semibold" style={{ color: INK }}>
+          What are you requesting today?
+        </p>
+        <div className="mt-1 flex flex-col gap-1">
+          {ITEMS.map((item) => (
+            <div key={item.id} className="flex items-center gap-1.5">
+              <span className="flex h-[7px] w-[7px] items-center justify-center rounded-[1px] text-[5px]" style={requested.has(item.id) ? { backgroundColor: ACCENT, color: ACCENT_LABEL } : { border: `1px solid ${STRONG_RULE}` }}>
+                {requested.has(item.id) ? "\u2713" : ""}
+              </span>
+              <span className="text-[6.5px]" style={{ color: INK }}>
+                {item.taskName}
+              </span>
+            </div>
+          ))}
+        </div>
+        <p className="mt-2 text-[5px] font-semibold" style={{ color: INK }}>
+          Do not go over this without calling (optional)
+        </p>
+        <div className={`${MONO} mt-0.5 rounded-[2px] border px-1 py-[3px] text-[6px]`} style={{ borderColor: STRONG_RULE, color: INK }}>
+          $200
+        </div>
+        <div className="mt-1.5 flex items-center gap-1.5">
+          <span className="flex h-[7px] w-[7px] items-center justify-center rounded-[1px] text-[5px]" style={{ backgroundColor: ACCENT, color: ACCENT_LABEL }}>
+            {"\u2713"}
+          </span>
+          <span className="text-[6px]" style={{ color: INK }}>
+            Ask them to keep any parts they replace, so I can see them
           </span>
         </div>
-        <TabBar current="Boundary" />
+        <span className="mt-2.5 inline-block rounded-[2px] px-2 py-[4px] text-[6.5px] font-semibold" style={{ backgroundColor: ACCENT, color: ACCENT_LABEL }}>
+          Make the Service Boundary
+        </span>
       </div>
-    </PhoneFrame>
+      <TabBar current={null} />
+    </Screen>
   );
 }
 
 /**
- * Screen 3: adding a maintenance item, the template picker and the
- * severe-duty toggle, the two mechanisms the whole feature build was
- * about: a typical starting interval, always editable, and a one-time
- * per-item toggle rather than a second interval table.
+ * Screen 3: History. Every service, newest first, by year. The only sum is
+ * the cost somebody chose to enter, and the line says how many entries it
+ * covers, so a total never reads as the whole story.
  */
-export function AddItemScreenMockup() {
+export function HistoryScreenMockup() {
+  const groups = historyByYear(EVENTS, "v1");
   return (
-    <PhoneFrame accent={STEEL}>
-      <div className="flex h-full flex-col px-4 pb-4 pt-9" style={{ backgroundColor: PAPER }}>
-        <StatusBar />
-        <div className="mt-5">
-          <Eyebrow>Vehicles</Eyebrow>
-          <h3 className="mt-2 text-[14px] font-semibold leading-[1.15]" style={{ color: INK, fontFamily: "Georgia, serif" }}>
-            Track a maintenance item
-          </h3>
-
-          <p className="mt-3 text-[7px] font-semibold" style={{ color: MUTED }}>
-            Start from a typical job (optional)
-          </p>
-          <div className="mt-1.5 flex flex-wrap gap-1">
-            {["Oil change", "Tire rotation", "Brake fluid"].map((label, i) => (
-              <span
-                key={label}
-                className="rounded-full border px-2 py-1 text-[7px] font-semibold"
-                style={i === 0 ? { borderColor: STEEL, color: STEEL } : { borderColor: LINE, color: FAINT }}
-              >
-                {label}
-              </span>
-            ))}
+    <Screen>
+      <Heading kicker="What has been done, and when" title="History" />
+      <div className="mt-1 flex flex-col">
+        {groups.map((group) => (
+          <div key={group.year}>
+            <SectionTitle
+              meta={group.costedCount > 0 ? `${formatCost(group.costMinorUnits)} entered, on ${group.costedCount} of ${group.events.length} ${group.events.length === 1 ? "entry" : "entries"}` : undefined}
+            >
+              {group.year}
+            </SectionTitle>
+            <Group>
+              {group.events.map((event, index) => (
+                <div key={event.id} className="grid grid-cols-[38px_1fr] gap-2 px-2 py-1.5" style={rule(index)}>
+                  <div className={`${MONO} text-[4.5px] leading-[1.5]`} style={{ color: MUTED }}>
+                    <p className="font-bold" style={{ color: INK }}>
+                      {event.doneOn}
+                    </p>
+                    {event.mileage !== null && <p>{event.mileage.toLocaleString()} mi</p>}
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-[7px] font-semibold leading-tight" style={{ color: INK }}>
+                      {event.taskName}
+                    </p>
+                    <p className={`${MONO} mt-0.5 text-[4.5px]`} style={{ color: MUTED }}>
+                      {[event.shop, event.costMinorUnits !== null ? formatCost(event.costMinorUnits) : null].filter(Boolean).join(" \u00b7 ")}
+                    </p>
+                    <p className="mt-0.5 text-[5px] font-semibold" style={{ color: MUTED }}>
+                      Change
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </Group>
           </div>
-
-          <div className="mt-2.5 rounded-lg border bg-white p-2" style={{ borderColor: LINE }}>
-            <p className="text-[7px]" style={{ color: FAINT }}>
-              Interval, miles
-            </p>
-            <p className="text-[9.5px] font-semibold" style={{ color: INK }}>
-              5,000
-              <span className="ml-1 text-[7px] font-normal" style={{ color: MUTED }}>
-                typical, editable
-              </span>
-            </p>
-          </div>
-
-          <label className="mt-2.5 flex items-start gap-1.5 text-[8px]" style={{ color: INK }}>
-            <span className="mt-[1px] h-2.5 w-2.5 shrink-0 rounded-[2px] border" style={{ borderColor: STEEL, backgroundColor: STEEL }} />
-            <span>
-              Severe duty for this job
-              <span className="block text-[7px] font-normal" style={{ color: MUTED }}>
-                Halves this job&apos;s interval only.
-              </span>
-            </span>
-          </label>
-
-          <span className="mt-3 inline-block self-start rounded-md px-2.5 py-1.5 text-[7.5px] font-semibold text-white" style={{ backgroundColor: STEEL }}>
-            Add item
-          </span>
-        </div>
-        <TabBar current="Vehicles" />
+        ))}
+        <span className="mt-3 inline-block self-start rounded-[2px] border px-2 py-[4px] text-[6.5px] font-semibold" style={{ borderColor: STRONG_RULE, color: INK, backgroundColor: SUNKEN }}>
+          Print the service record
+        </span>
       </div>
-    </PhoneFrame>
+      <TabBar current="History" />
+    </Screen>
   );
 }

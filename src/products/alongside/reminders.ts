@@ -1,3 +1,4 @@
+import { inQuietHours, localHour, type ReminderPreferences } from "@/lib/notifications/reminderClock";
 import { isActionable, type LifeItem } from "./life";
 
 /**
@@ -18,21 +19,13 @@ import { isActionable, type LifeItem } from "./life";
 /** How long after a chosen date a reminder is still worth sending. */
 export const REMINDER_WINDOW_HOURS = 48;
 
-export interface ReminderPreferences {
-  remindersEnabled: boolean;
-  showDetail: boolean;
-  quietStartHour: number;
-  quietEndHour: number;
-  timezone: string;
-}
-
-export const DEFAULT_REMINDER_PREFERENCES: ReminderPreferences = {
-  remindersEnabled: false,
-  showDetail: false,
-  quietStartHour: 21,
-  quietEndHour: 8,
-  timezone: "UTC",
-};
+export {
+  DEFAULT_REMINDER_PREFERENCES,
+  inQuietHours,
+  localHour,
+  pruneNotified,
+  type ReminderPreferences,
+} from "@/lib/notifications/reminderClock";
 
 export interface DueReminder {
   itemId: string;
@@ -60,23 +53,6 @@ export function dueReminders(items: LifeItem[], now: Date): DueReminder[] {
       return Number.isFinite(at) && at <= now.getTime() && at >= earliest;
     })
     .map((item) => ({ itemId: item.id, title: item.title, key: `${item.id}:${item.nextAt}` }));
-}
-
-/** The local hour, 0-23, in an IANA zone. Falls back to UTC for a zone the runtime does not know. */
-export function localHour(now: Date, timeZone: string): number {
-  const read = (zone: string) =>
-    Number(new Intl.DateTimeFormat("en-GB", { hour: "numeric", hourCycle: "h23", timeZone: zone }).format(now));
-  try {
-    return read(timeZone);
-  } catch {
-    return read("UTC");
-  }
-}
-
-/** True from quiet_start up to, not including, quiet_end. The window may cross midnight. Equal hours means never quiet. */
-export function inQuietHours(hour: number, startHour: number, endHour: number): boolean {
-  if (startHour === endHour) return false;
-  return startHour < endHour ? hour >= startHour && hour < endHour : hour >= startHour || hour < endHour;
 }
 
 export interface ReminderPush {
@@ -119,10 +95,4 @@ export function planReminder(input: {
     };
   }
   return { title: TITLE, body: "You said you would come back to a few things.", url: WORKSPACE_URL, keys };
-}
-
-/** Drops ledger entries old enough that the window could never make them due again. */
-export function pruneNotified(notified: Record<string, string>, now: Date): Record<string, string> {
-  const cutoff = now.getTime() - 7 * 24 * 3_600_000;
-  return Object.fromEntries(Object.entries(notified).filter(([, sentAt]) => new Date(sentAt).getTime() >= cutoff));
 }

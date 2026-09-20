@@ -58,7 +58,7 @@ same thing for the manual's task links.
 
 The destinations that exist today: `accounts`, `affairs`, `attention`,
 `bills`, `debt`, `help`, `history`, `import`, `income`, `itinerary`, `kids`, `life`,
-`maintenance`, `members`, `people`, `printables`, `progress`, `seasons`,
+`maintenance`, `members`, `paperwork`, `people`, `printables`, `progress`, `seasons`,
 `providers`, `record`, `records`, `savings`, `settings`, `setup`,
 `setup-centre`, `start`, `subscriptions`, `timeline`, `transactions`,
 `trip`, `vehicles`, `workspace`. Plus the nested
