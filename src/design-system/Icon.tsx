@@ -49,6 +49,7 @@ import {
   Flame as PhosphorFlame,
   Flower as PhosphorFlower,
   Leaf as PhosphorLeaf,
+  MapPin as PhosphorMapPin,
   FloppyDisk as PhosphorFloppyDisk,
   GearSix as PhosphorGearSix,
   GlobeSimple as PhosphorGlobeSimple,
@@ -189,6 +190,7 @@ export const SquaresFour = createIcon(PhosphorSquaresFour, "SquaresFour");
 export const Star = createIcon(PhosphorStar, "Star");
 export const Snowflake = createIcon(PhosphorSnowflake, "Snowflake");
 export const Leaf = createIcon(PhosphorLeaf, "Leaf");
+export const MapPin = createIcon(PhosphorMapPin, "MapPin");
 export const Sun = createIcon(PhosphorSun, "Sun");
 export const Target = createIcon(PhosphorTarget, "Target");
 export const Trash2 = createIcon(PhosphorTrash, "Trash2");

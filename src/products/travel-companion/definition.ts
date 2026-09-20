@@ -67,8 +67,8 @@ export const travelCompanionDefinition: ProductDefinitionInput = {
     name: "Travel Companion",
     shortName: "Travel",
     description: "Travel Companion by Draftpace: the operational memory of your trip, so you don't have to hold it all in your head.",
-    themeColor: "#a8611f",
-    backgroundColor: "#fbfaf7",
+    themeColor: "#00626f",
+    backgroundColor: "#eef4f5",
     // This product's own icon, so installing two Companions does not
     // put two identical Draftpace squares on the home screen. Same
     // monogram, this product's accent, generated from Logo.tsx's own
@@ -101,10 +101,11 @@ export const travelCompanionDefinition: ProductDefinitionInput = {
    * printable: not primary, reached from the overflow menu, label left
    * to defaultDestinationLabel's own title-casing ("Printables").
    */
-  navigation: ["workspace", "trip", "people", "record", "printables", "settings"],
-  primaryNavigation: ["workspace", "trip", "people"],
+  navigation: ["workspace", "itinerary", "trip", "people", "record", "printables", "settings"],
+  primaryNavigation: ["workspace", "itinerary", "trip", "people"],
   workspaceLabel: "Today",
   destinationLabels: {
+    itinerary: "Itinerary",
     trip: "Trip",
     people: "People",
     record: "Record",
@@ -128,6 +129,7 @@ export const travelCompanionDefinition: ProductDefinitionInput = {
   },
   modules: [
     { id: "travel-companion.workspace", destination: "workspace" },
+    { id: "travel-companion.itinerary", destination: "itinerary" },
     { id: "travel-companion.trip", destination: "trip" },
     { id: "travel-companion.people", destination: "people" },
     { id: "travel-companion.record", destination: "record" },
@@ -137,26 +139,73 @@ export const travelCompanionDefinition: ProductDefinitionInput = {
   permissions: [],
   events: [],
   /**
-   * A warm amber/ochre, distinct from teal, clay, sage, plum, and
-   * mulberry. Deliberately not the blue-and-cloud palette every
-   * mainstream travel app already uses, this is opened mid-trip, often
-   * mid-problem, and a tourist-brochure palette on that screen would be
-   * exactly the wrong register. Red is not used as a status colour
-   * anywhere in this product, same rule as every sibling: nothing here
-   * is an alarm.
+   * Lagoon, toned down: a deep ocean teal on pale aqua-grey and white, with
+   * a soft peach on the time stubs. Travel is opened on a phone in a bright
+   * place, often mid-problem, so the ground is light and crisp and the type
+   * is ink on white.
+   *
+   * The deep teal is spent only where somebody is meant to press: the calls
+   * to action and the tab you are on. The tickets themselves, the day
+   * headers and the stubs carry no accent at all, so a screen of bookings
+   * reads as quiet paper with one obvious thing to do.
+   *
+   * The peach lives in `wash`, the pastel tier, so it follows the theme into
+   * dark mode (a deep warm brown) without a second colour system.
+   *
+   * There is no narrative serif here on purpose. The boarding pass is the
+   * object, and airport signage is a sans: a serif headline on a ticket
+   * would read as a wedding invitation.
+   *
+   * Distinct from teal (Personal Finance's is a dark slate, this is a
+   * brighter ocean), clay, sage, plum, mauve and navy. Red is not used as a
+   * status colour anywhere in this product: nothing here is an alarm.
+   *
+   * Every text pair clears 4.5:1 and body text clears 7:1, in both themes
+   * (src/product-framework/ground.test.ts).
    */
   theme: {
-    accent: "#a8611f",
+    accent: "#00626f",
     accentScale: {
-      base: "#a8611f",
-      strong: "#7c4715",
-      soft: "#f7ead9",
+      base: "#00626f",
+      strong: "#00434d",
+      soft: "#d9eef0",
       contrast: "#ffffff",
-      // Pale peach-sand, one step paler than soft, for a hero card or
-      // section background.
-      wash: "#faf1e6",
+      // The stub tint: a soft peach, not a pale accent.
+      wash: "#ffe4da",
     },
-    narrativeFont: "var(--font-newsreader), ui-serif, Georgia, serif",
+    accentScaleDark: {
+      base: "#5cc4d2",
+      strong: "#8bd8e2",
+      soft: "#163338",
+      contrast: "#06242a",
+      wash: "#3a2018",
+    },
+    ground: {
+      light: {
+        appBg: "#eef4f5",
+        surface: "#ffffff",
+        surfaceMuted: "#f5f9f9",
+        surfaceStrong: "#dde9ea",
+        text: "#0f2a2f",
+        muted: "#4b646a",
+        faint: "#587076",
+        border: "#dce8ea",
+        borderStrong: "#c3d5d8",
+      },
+      dark: {
+        appBg: "#0a1618",
+        surface: "#112225",
+        surfaceMuted: "#162a2e",
+        surfaceStrong: "#1f3a3f",
+        text: "#e6f1f2",
+        muted: "#9db6ba",
+        faint: "#86a0a5",
+        border: "rgba(230, 241, 242, 0.10)",
+        borderStrong: "rgba(230, 241, 242, 0.17)",
+      },
+    },
+    // No narrativeFont, deliberately: see above. The shared Companion
+    // screens fall back to the product's sans.
     motionPersonality: "calm",
     contentWidth: "narrow",
     identity: { motif: "timeline" },

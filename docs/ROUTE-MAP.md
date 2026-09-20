@@ -57,7 +57,7 @@ now asserts the mapping, and why `contentCollapse.test.ts` asserts the
 same thing for the manual's task links.
 
 The destinations that exist today: `accounts`, `affairs`, `attention`,
-`bills`, `debt`, `help`, `history`, `import`, `income`, `kids`, `life`,
+`bills`, `debt`, `help`, `history`, `import`, `income`, `itinerary`, `kids`, `life`,
 `maintenance`, `members`, `people`, `printables`, `progress`, `seasons`,
 `providers`, `record`, `records`, `savings`, `settings`, `setup`,
 `setup-centre`, `start`, `subscriptions`, `timeline`, `transactions`,

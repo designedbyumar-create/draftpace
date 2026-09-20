@@ -4,7 +4,7 @@ import { OverviewScreenMockup as HmcOverview, ActionRecordScreenMockup as HmcAct
 import { OverviewScreenMockup as PlaOverview, CompanionScreenMockup as PlaCompanion, BookScreenMockup as PlaBook } from "./[productSlug]/personalLifeAffairsCompanionVisuals";
 import { OverviewScreenMockup as HscOverview, CheckScreenMockup as HscCheck, BookScreenMockup as HscBook } from "./[productSlug]/homeschoolingCompanionVisuals";
 import { OverviewScreenMockup as AlongsideOverview, CompanionScreenMockup as AlongsideCompanion, LifeScreenMockup as AlongsideLife } from "./[productSlug]/adhdLifeCompanionVisuals";
-import { OverviewScreenMockup as TravelOverview, ChangeImpactScreenMockup as TravelChangeImpact, TripBriefScreenMockup as TravelTripBrief } from "./[productSlug]/travelCompanionVisuals";
+import { OverviewScreenMockup as TravelOverview, ItineraryScreenMockup as TravelItinerary, ChangeImpactScreenMockup as TravelChangeImpact } from "./[productSlug]/travelCompanionVisuals";
 import { OverviewScreenMockup as VmcOverview, ServiceBoundaryScreenMockup as VmcServiceBoundary, AddItemScreenMockup as VmcAddItem } from "./[productSlug]/vehicleMaintenanceCompanionVisuals";
 import { OverviewScreenMockup as FhbOverview, SymptomFormScreenMockup as FhbSymptomForm, IntakeSummaryScreenMockup as FhbIntakeSummary } from "./[productSlug]/familyHealthBinderVisuals";
 
@@ -30,7 +30,7 @@ export const PRODUCT_SCREENS: Partial<Record<string, React.ComponentType[]>> = {
   "personal-life-affairs-companion": [PlaOverview, PlaCompanion, PlaBook],
   "homeschooling-companion": [HscOverview, HscCheck, HscBook],
   alongside: [AlongsideOverview, AlongsideCompanion, AlongsideLife],
-  "travel-companion": [TravelOverview, TravelChangeImpact, TravelTripBrief],
+  "travel-companion": [TravelOverview, TravelItinerary, TravelChangeImpact],
   "vehicle-maintenance-companion": [VmcOverview, VmcServiceBoundary, VmcAddItem],
   "family-health-binder": [FhbOverview, FhbSymptomForm, FhbIntakeSummary],
 };
@@ -88,9 +88,9 @@ const SCREEN_CAPTIONS: Partial<Record<string, string[]>> = {
     "Life: the shapes kept separate, and what you have dealt with kept under Sorted",
   ],
   "travel-companion": [
-    "Today: the real derived state, including what you are waiting on",
-    "The change-impact walk, mid-walk, after a flight time changed",
-    "The Trip Brief, expanded",
+    "Today: the trip as a day line, including what you are waiting on",
+    "The whole trip, day by day, with a day that has nothing recorded said plainly",
+    "The change-impact walk: what depends on a booking that changed, unchanged so far",
   ],
   "vehicle-maintenance-companion": [
     "Due: the single ranked view, with the most urgent item as the dominant one",

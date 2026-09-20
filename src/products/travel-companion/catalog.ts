@@ -1,6 +1,7 @@
 import type { ProductCatalogEntry } from "@/product-framework/catalog";
 import { travelCompanionDefinition } from "./definition";
 import TodayModule from "./components/TodayModule";
+import ItineraryModule from "./components/ItineraryModule";
 import TripModule from "./components/TripModule";
 import PeopleModule from "./components/PeopleModule";
 import RecordModule from "./components/RecordModule";
@@ -19,6 +20,7 @@ export const travelCompanionCatalogEntry: ProductCatalogEntry = {
   definition: travelCompanionDefinition,
   moduleComponents: {
     "travel-companion.workspace": TodayModule,
+    "travel-companion.itinerary": ItineraryModule,
     "travel-companion.trip": TripModule,
     "travel-companion.people": PeopleModule,
     "travel-companion.record": RecordModule,

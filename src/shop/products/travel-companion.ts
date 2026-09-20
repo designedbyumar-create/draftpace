@@ -127,6 +127,7 @@ export const travelCompanionShopProduct: ShopProductInput = {
   compatibility: ["Works in any modern browser", "No download required", "Works on phone, tablet, or desktop"],
   inclusions: [
     "Today: the current operational state of the trip, derived fresh from what you recorded, never a manual task list",
+    "Itinerary: the whole trip laid out day by day from what you recorded, a day with nothing on it said plainly, and a printable copy",
     "Trip: destinations, bookings, documents and preparation, with a Trip Brief summarising the whole thing at a glance",
     "Booking connections: say once what a booking depends on, and the product remembers the shape of your trip for you",
     "The change-impact walk: record a change and see exactly what was built on top of it, handled one booking at a time",
@@ -151,6 +152,7 @@ export const travelCompanionShopProduct: ShopProductInput = {
     "What else is affected when one thing changes, listed and never auto-edited",
     "A worked-through version of a hard call with an airline, hotel or transport company",
     "A dated record of what happened, and lessons carried forward to the next trip",
+    "A printable day-by-day itinerary, made from what you recorded",
     "A printable trip book, as long as your trip needs and no longer",
   ],
   savingBehavior:

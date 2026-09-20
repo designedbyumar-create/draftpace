@@ -33,7 +33,7 @@ import { OverviewScreenMockup as FhbMockup } from "../shop/[productSlug]/familyH
 import {
   OverviewScreenMockup as TravelMockup,
   ChangeImpactScreenMockup as TravelImpact,
-  TripBriefScreenMockup as TravelBrief,
+  ItineraryScreenMockup as TravelItinerary,
 } from "../shop/[productSlug]/travelCompanionVisuals";
 import {
   OverviewScreenMockup as PfcMockup,
@@ -78,7 +78,7 @@ const PRODUCT_MOCKUP: Record<string, React.ReactNode> = {
 const DEEP_DIVE_SCREENS: Record<string, React.ReactNode[]> = {
   "home-management-companion": [<HmcMockup key="a" />, <HmcRecord key="b" />, <HmcSetup key="c" />],
   "personal-finance-companion": [<PfcMockup key="a" />, <PfcGuided key="b" />, <PfcAttention key="c" />],
-  "travel-companion": [<TravelMockup key="a" />, <TravelImpact key="b" />, <TravelBrief key="c" />],
+  "travel-companion": [<TravelMockup key="a" />, <TravelItinerary key="b" />, <TravelImpact key="c" />],
 };
 
 const NAV = [

@@ -37,6 +37,7 @@ export default function BookingForm({
   places,
   existingBookings,
   people,
+  initialDate,
   onAdded,
   onCancel,
 }: {
@@ -45,6 +46,8 @@ export default function BookingForm({
   places: Place[];
   existingBookings: Booking[];
   people: Person[];
+  /** YYYY-MM-DD, when adding from a day of the itinerary. Starts is then set to 09:00 that day, to be changed. */
+  initialDate?: string;
   onAdded: (booking: Booking, participants: BookingParticipant[]) => void;
   onCancel: () => void;
 }) {
@@ -52,7 +55,7 @@ export default function BookingForm({
   const [title, setTitle] = useState("");
   const [provider, setProvider] = useState("");
   const [reference, setReference] = useState("");
-  const [startsAt, setStartsAt] = useState("");
+  const [startsAt, setStartsAt] = useState(initialDate ? `${initialDate}T09:00` : "");
   const [endsAt, setEndsAt] = useState("");
   const [placeId, setPlaceId] = useState("");
   const [dependsOnBookingId, setDependsOnBookingId] = useState("");
@@ -136,7 +139,14 @@ export default function BookingForm({
       </div>
 
       <div className="flex flex-wrap gap-3">
-        <Input type="datetime-local" label="Starts (optional)" value={startsAt} onChange={(e) => setStartsAt(e.target.value)} containerClassName="flex-1" />
+        <Input
+          type="datetime-local"
+          label="Starts (optional)"
+          value={startsAt}
+          onChange={(e) => setStartsAt(e.target.value)}
+          containerClassName="flex-1"
+          hint={initialDate ? "Set to 09:00 on that day. Change it if you know the time." : undefined}
+        />
         <Input type="datetime-local" label="Ends (optional)" value={endsAt} onChange={(e) => setEndsAt(e.target.value)} containerClassName="flex-1" />
       </div>
 

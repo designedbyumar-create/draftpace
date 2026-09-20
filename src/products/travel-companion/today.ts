@@ -17,6 +17,8 @@ export interface TodayLine {
   section: TodaySectionKind;
   /** The stored fact, stated plainly. Never an imperative, never "don't forget". */
   line: string;
+  /** Which day a later line belongs to, so it can be set under its own heading. */
+  day?: "Tomorrow" | "In two days";
 }
 
 export interface WaitingLine {
@@ -83,8 +85,32 @@ function addDays(date: Date, days: number): Date {
   return next;
 }
 
-function timeLabel(iso: string): string {
+export function timeLabel(iso: string): string {
   return new Date(iso).toLocaleTimeString(undefined, { hour: "2-digit", minute: "2-digit", hour12: false, timeZone: "UTC" });
+}
+
+/**
+ * One stop on the day line, as its parts rather than a sentence: the
+ * time it was recorded for, what it is, and, for a window that opens
+ * rather than a moment that passes, what the time means.
+ *
+ * The same stored facts describeBooking reads back as a sentence, split
+ * so a timeline can set the time where a timeline sets it. Nothing is
+ * added: no status, no countdown, no "don't forget".
+ */
+export interface Stop {
+  time: string | null;
+  title: string;
+  /** "Check-in begins" or "Pickup begins". Null for a moment rather than a window. */
+  note: string | null;
+}
+
+export function describeStop(booking: Booking): Stop {
+  const time = booking.startsAt ? timeLabel(booking.startsAt) : null;
+  if (WINDOW_KINDS.has(booking.kind) && time) {
+    return { time, title: booking.title, note: booking.kind === "hotel" ? "Check-in begins" : "Pickup begins" };
+  }
+  return { time, title: booking.title, note: null };
 }
 
 /**
@@ -163,8 +189,8 @@ export function deriveToday(bookings: Booking[], now: Date, threads: Thread[] = 
     }
 
     if (sameDay(startsAt, tomorrow, tz) || sameDay(startsAt, dayAfter, tz)) {
-      const day = sameDay(startsAt, tomorrow, tz) ? "Tomorrow" : "In two days";
-      later.push({ booking, section: "later", line: `${day}: ${describeBooking(booking)}` });
+      const day: "Tomorrow" | "In two days" = sameDay(startsAt, tomorrow, tz) ? "Tomorrow" : "In two days";
+      later.push({ booking, section: "later", line: `${day}: ${describeBooking(booking)}`, day });
     }
   }
 

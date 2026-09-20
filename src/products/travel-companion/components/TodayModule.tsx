@@ -5,10 +5,12 @@ import { TRAVEL_COMPANION_SLUG } from "../instanceData";
 import type { TourStep } from "@/components/platform/GuidedTour";
 import EmptyState from "@/design-system/EmptyState";
 import Button from "@/design-system/Button";
-import { Compass, Globe } from "@/design-system/Icon";
-import { deriveToday, whereWeAre } from "../today";
+import { Compass } from "@/design-system/Icon";
+import { deriveToday, describeStop, whereWeAre } from "../today";
+import type { Booking } from "../trip";
 import { useTravelCompanion } from "./useTravelCompanion";
-import TripSetupForm from "./TripSetupForm";
+import TodayView, { type DayStop } from "./TodayView";
+import TripStart from "./TripStart";
 import CompanionRun from "./CompanionRun";
 import StartCompanion from "@/components/product-shell/companion/StartCompanion";
 import { beginRun } from "./useResumableRun";
@@ -19,14 +21,20 @@ import { useState } from "react";
 
 const TOUR_STEPS: TourStep[] = [
   {
-    targetId: "empty-state",
-    title: "Nothing to run yet",
+    targetId: "travel-tour-start",
+    title: "Start with a name and dates",
     body:
-      "Today is the operational view of a trip in progress. Until a trip exists there is nothing happening, so it says so rather than showing a sample one.",
+      "That is all a trip needs to exist. You will see it laid out day by day straight away, and add what you have booked from there.",
+  },
+  {
+    targetId: "rail-itinerary",
+    title: "The whole trip, day by day",
+    body:
+      "Every booking on one line, with what you are still waiting on. A day with nothing recorded says so, and never fills it in for you.",
   },
   {
     targetId: "rail-trip",
-    title: "Set the trip up here",
+    title: "Where the details live",
     body:
       "Destinations, bookings, documents. Say once what a booking depends on and it remembers the shape of your trip for you.",
   },
@@ -53,8 +61,7 @@ const TOUR_STEPS: TourStep[] = [
  * nothing stored says so and stops.
  */
 export default function TodayModule() {
-  const { status, errorMessage, instanceId, trips, currentTrip, places, bookings, threads, addTrip, upsertThread } = useTravelCompanion();
-  const [settingUp, setSettingUp] = useState(false);
+  const { status, errorMessage, instanceId, currentTrip, places, bookings, threads, addTrip, upsertThread } = useTravelCompanion();
   const [starting, setStarting] = useState(false);
   const [running, setRunning] = useState<{ playbook: Playbook; run: RunRecord; directTitle: string | null } | null>(null);
   const [opening, setOpening] = useState(false);
@@ -79,31 +86,11 @@ export default function TodayModule() {
   if (!instanceId) return null;
 
   if (!currentTrip) {
-    if (settingUp) {
-      return (
-        <div className="mx-auto w-full max-w-2xl">
-          <TripSetupForm instanceId={instanceId} onCreated={addTrip} onCancel={() => setSettingUp(false)} />
-        </div>
-      );
-    }
     return (
-      <div className="mx-auto flex w-full max-w-2xl flex-col gap-6">
+      <>
         <FirstRunTour slug={TRAVEL_COMPANION_SLUG} steps={TOUR_STEPS} />
-        <EmptyState
-          icon={Globe}
-          title={trips.length === 0 ? "No trip yet" : "Nothing currently in progress"}
-          description="Set up a trip to see today's operational state here."
-          action={
-            <button
-              type="button"
-              onClick={() => setSettingUp(true)}
-              className="text-[13px] font-semibold text-[var(--primary)] hover:underline"
-            >
-              Set up a trip
-            </button>
-          }
-        />
-      </div>
+        <TripStart instanceId={instanceId} onCreated={addTrip} />
+      </>
     );
   }
 
@@ -152,88 +139,55 @@ export default function TodayModule() {
   const view = deriveToday(bookings, now, threads, places);
   const where = whereWeAre(places, now);
 
+  const stop = (booking: Booking): DayStop => ({
+    ...describeStop(booking),
+    id: booking.id,
+    location: booking.location,
+    awaiting: booking.bookingStatus === "waiting",
+  });
+  const laterGroups = (["Tomorrow", "In two days"] as const)
+    .map((label) => ({ label, stops: view.later.filter((row) => row.day === label).map((row) => stop(row.booking)) }))
+    .filter((group) => group.stops.length > 0);
+
+  const today = now.toISOString().slice(0, 10);
+  const starts = currentTrip.startsAt ? currentTrip.startsAt.slice(0, 10) : null;
+  const startsFact =
+    starts && starts > today
+      ? `Your trip starts ${new Date(`${starts}T12:00:00Z`).toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", timeZone: "UTC" })}.`
+      : null;
+
   return (
-    <div className="mx-auto flex w-full max-w-2xl flex-col gap-6">
-      <header>
-        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">
-          {currentTrip.title.toUpperCase()}
-        </p>
-        <h1
-          className="mt-2 text-[26px] leading-tight text-[var(--text)]"
-          style={{ fontFamily: "var(--product-narrative-font, inherit)" }}
-        >
-          Today
-        </h1>
-        {where && <p className="mt-1 text-[13px] text-[var(--muted)]">Currently in {where.name}</p>}
-      </header>
-
-      {view.quiet && (
-        <p className="text-[14px] leading-6 text-[var(--muted)]">Nothing scheduled for today, right now.</p>
-      )}
-
-      {closingNote && <p className="text-[13px] text-[var(--muted)]">{closingNote}</p>}
-
-      {view.now.length > 0 && (
-        <section className="flex flex-col gap-2">
-          {view.now.map((row) => (
-            <div key={row.booking.id} className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4">
-              <p className="text-[15px] leading-6 text-[var(--text)]">{row.line}</p>
-              {row.booking.location && <p className="mt-1 text-[13px] text-[var(--muted)]">{row.booking.location}</p>}
-              {row.booking.bookingStatus === "waiting" && (
-                <p className="mt-1 text-[12px] font-semibold uppercase tracking-[0.08em] text-[var(--faint)]">
-                  Awaiting confirmation
-                </p>
-              )}
-            </div>
-          ))}
-        </section>
-      )}
-
-      {view.important.length > 0 && (
-        <section>
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">Important</p>
-          <div className="mt-2 flex flex-col gap-2">
-            {view.important.map((row) => (
-              <p key={row.booking.id} className="text-[14px] leading-6 text-[var(--text)]">
-                {row.line}
-              </p>
-            ))}
+    <TodayView
+      tripTitle={currentTrip.title.toUpperCase()}
+      where={where?.name ?? null}
+      quiet={view.quiet}
+      closingNote={closingNote}
+      today={view.now.map((row) => stop(row.booking))}
+      important={view.important.map((row) => stop(row.booking))}
+      later={laterGroups}
+      waiting={view.waiting.map((row) => ({ id: row.thread.id, title: row.line }))}
+      note={
+        view.now.length === 0 ? (
+          <div className="flex flex-col items-start gap-3">
+            {startsFact && <p className="text-[15px] leading-6 text-[var(--text)]">{startsFact}</p>}
+            <Button
+              href={`/app/products/${TRAVEL_COMPANION_SLUG}/itinerary`}
+              variant="secondary"
+              size="sm"
+            >
+              See the trip, day by day
+            </Button>
           </div>
-        </section>
-      )}
-
-      {view.later.length > 0 && (
-        <section>
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">Later</p>
-          <div className="mt-2 flex flex-col gap-1.5">
-            {view.later.map((row) => (
-              <p key={row.booking.id} className="text-[13px] leading-6 text-[var(--muted)]">
-                {row.line}
-              </p>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {view.waiting.length > 0 && (
-        <section>
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">Waiting</p>
-          <div className="mt-2 flex flex-col gap-1.5">
-            {view.waiting.map((row) => (
-              <p key={row.thread.id} className="text-[13px] leading-6 text-[var(--muted)]">
-                {row.line}
-              </p>
-            ))}
-          </div>
-        </section>
-      )}
-
-      <div>
-        <Button variant="ghost" size="sm" onClick={() => setStarting(true)}>
-          Need help with something?
-        </Button>
-        {startError && <p className="mt-2 text-[13px] text-[var(--danger)]">{startError}</p>}
-      </div>
-    </div>
+        ) : null
+      }
+      help={
+        <>
+          <Button variant="ghost" size="sm" onClick={() => setStarting(true)}>
+            Need help with something?
+          </Button>
+          {startError && <p className="mt-2 text-[13px] text-[var(--danger)]">{startError}</p>}
+        </>
+      }
+    />
   );
 }
