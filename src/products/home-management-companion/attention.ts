@@ -141,7 +141,7 @@ function problemCostBucket(estimatedCostMinorUnits: number | null): 0 | 1 | 2 {
  * then to neutral factors. Neutral means "we genuinely do not know",
  * never an invented severity.
  */
-function careTemplateFor(task: MaintenanceTask): CareTemplate | null {
+export function careTemplateFor(task: MaintenanceTask): CareTemplate | null {
   return findCareTemplate(task.careTemplateId) ?? findCareTemplateByTaskName(task.name);
 }
 
@@ -160,7 +160,7 @@ function careFactorsFor(template: CareTemplate | null): { consequence: CareConse
  * where never having logged it means it genuinely is due now, since the
  * last completion is unknown rather than in the future.
  */
-function nextDueIsoFor(task: MaintenanceTask, template: CareTemplate | null): string {
+export function nextDueIsoFor(task: MaintenanceTask, template: CareTemplate | null): string {
   const anchor = task.lastDoneAt ?? task.createdAt.slice(0, 10);
   if (template?.months?.length) return nextSeasonalDueIso(anchor, template.months);
   return task.lastDoneAt ? addDays(task.lastDoneAt, task.cadenceDays) : task.createdAt.slice(0, 10);

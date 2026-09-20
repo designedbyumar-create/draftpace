@@ -4,6 +4,7 @@ import SetupModule from "./components/SetupModule";
 import HomeModule from "./components/HomeModule";
 import ImportModule from "./components/ImportModule";
 import HistoryModule from "./components/HistoryModule";
+import SeasonsModule from "./components/SeasonsModule";
 import SettingsModule from "./components/SettingsModule";
 import PrintablesModule from "./components/PrintablesModule";
 
@@ -29,6 +30,7 @@ export const homeManagementCompanionCatalogEntry: ProductCatalogEntry = {
     "home-management-companion.workspace": HomeModule,
     "home-management-companion.import": ImportModule,
     "home-management-companion.history": HistoryModule,
+    "home-management-companion.seasons": SeasonsModule,
     "home-management-companion.settings": SettingsModule,
     "home-management-companion.printables": PrintablesModule,
   },

@@ -48,6 +48,7 @@ import {
   Flag as PhosphorFlag,
   Flame as PhosphorFlame,
   Flower as PhosphorFlower,
+  Leaf as PhosphorLeaf,
   FloppyDisk as PhosphorFloppyDisk,
   GearSix as PhosphorGearSix,
   GlobeSimple as PhosphorGlobeSimple,
@@ -77,6 +78,7 @@ import {
   SquaresFour as PhosphorSquaresFour,
   Stack as PhosphorStack,
   Star as PhosphorStar,
+  Snowflake as PhosphorSnowflake,
   Sun as PhosphorSun,
   Target as PhosphorTarget,
   Trash as PhosphorTrash,
@@ -185,6 +187,8 @@ export const Smartphone = createIcon(PhosphorDeviceMobile, "Smartphone");
 export const Sparkles = createIcon(PhosphorSparkle, "Sparkles");
 export const SquaresFour = createIcon(PhosphorSquaresFour, "SquaresFour");
 export const Star = createIcon(PhosphorStar, "Star");
+export const Snowflake = createIcon(PhosphorSnowflake, "Snowflake");
+export const Leaf = createIcon(PhosphorLeaf, "Leaf");
 export const Sun = createIcon(PhosphorSun, "Sun");
 export const Target = createIcon(PhosphorTarget, "Target");
 export const Trash2 = createIcon(PhosphorTrash, "Trash2");

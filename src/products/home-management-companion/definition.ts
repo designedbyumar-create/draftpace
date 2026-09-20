@@ -57,11 +57,14 @@ export const homeManagementCompanionDefinition: ProductDefinitionInput = {
   // Maintenance or Providers destination: those were separate screens
   // answering the same question, which made the person choose where to
   // look before they could find out whether anything needed them. Home
-  // decides and shows. Item detail is a contextual route reached by
-  // tapping something, never a tab.
-  navigation: ["workspace", "setup", "import", "printables", "history", "settings"],
-  primaryNavigation: ["workspace", "history"],
-  workspaceLabel: "Home",
+  // ("Now") decides and shows. Seasons is the one added destination
+  // because it answers a different question, what is coming across the
+  // year, from the same records. Item detail is a contextual route
+  // reached by tapping something, never a tab.
+  navigation: ["workspace", "seasons", "printables", "history", "setup", "import", "settings"],
+  navigationStyle: "rail",
+  primaryNavigation: ["workspace", "seasons", "history", "printables"],
+  workspaceLabel: "Now",
   startRoute: "workspace",
   setup: {
     required: true,
@@ -73,6 +76,7 @@ export const homeManagementCompanionDefinition: ProductDefinitionInput = {
     { id: "home-management-companion.workspace", destination: "workspace" },
     { id: "home-management-companion.import", destination: "import" },
     { id: "home-management-companion.printables", destination: "printables" },
+    { id: "home-management-companion.seasons", destination: "seasons" },
     { id: "home-management-companion.history", destination: "history" },
     { id: "home-management-companion.settings", destination: "settings" },
   ],
