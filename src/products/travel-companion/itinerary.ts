@@ -1,5 +1,5 @@
 import { describeStop, timeLabel, type Stop } from "./today";
-import type { Booking, BookingKind, Place, Trip } from "./trip";
+import { BOOKING_KIND_INFO, type Booking, type BookingKind, type Place, type Trip } from "./trip";
 
 /**
  * The whole trip, day by day, derived and never stored.
@@ -63,8 +63,8 @@ function eachDay(from: string, to: string): string[] {
   return days;
 }
 
-/** The kinds whose end time is a second stop on a later day: leaving the room, handing the car back. */
-const ENDING_NOTE: Partial<Record<BookingKind, string>> = { hotel: "Check-out", rental: "Return" };
+/** The kinds whose end time is a second stop on a later day: leaving the room, handing the car back. Defined once, in BOOKING_KIND_INFO. */
+const endingNote = (kind: BookingKind): string | undefined => BOOKING_KIND_INFO[kind].ends;
 
 function placeOn(places: Place[], date: string): string | null {
   const match = [...places]
@@ -108,7 +108,7 @@ export function deriveItinerary(input: { trip: Trip; bookings: Booking[]; places
       awaiting: booking.bookingStatus === "waiting",
     });
 
-    const ending = ENDING_NOTE[booking.kind];
+    const ending = endingNote(booking.kind);
     if (ending && isDate(booking.endsAt) && datePart(booking.endsAt) > start) {
       push(datePart(booking.endsAt), {
         time: timeLabel(booking.endsAt),

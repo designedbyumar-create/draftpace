@@ -5,24 +5,13 @@ import EmptyState from "@/design-system/EmptyState";
 import Button from "@/design-system/Button";
 import { CalendarCheck } from "@/design-system/Icon";
 import { deriveItinerary } from "../itinerary";
-import type { BookingKind } from "../trip";
+import { BOOKING_KIND_INFO, type BookingKind } from "../trip";
 import BookingForm from "./BookingForm";
 import ItineraryView, { dayLabel } from "./ItineraryView";
 import TripStart from "./TripStart";
 import { useTravelCompanion } from "./useTravelCompanion";
 
-const KIND_LABEL: Record<BookingKind, string> = {
-  flight: "Flight",
-  train: "Train",
-  car: "Car",
-  transfer: "Transfer",
-  hotel: "Hotel",
-  rental: "Rental",
-  activity: "Activity",
-  restaurant: "Restaurant",
-  event: "Event",
-  other: "Other",
-};
+const KIND_LABEL = (kind: BookingKind): string => BOOKING_KIND_INFO[kind].label;
 
 function rangeLabel(range: { from: string; to: string } | null): string | null {
   if (!range) return null;
@@ -100,7 +89,7 @@ export default function ItineraryModule() {
         title: currentTrip!.title,
         rangeLabel: range,
         days,
-        undated: itinerary.undated.map((booking) => ({ id: booking.id, title: booking.title, kindLabel: KIND_LABEL[booking.kind] })),
+        undated: itinerary.undated.map((booking) => ({ id: booking.id, title: booking.title, kindLabel: KIND_LABEL(booking.kind) })),
         size: /^en-(US|CA)/.test(navigator.language) ? "LETTER" : "A4",
       });
     } catch {
@@ -117,7 +106,7 @@ export default function ItineraryModule() {
         tripTitle={currentTrip.title.toUpperCase()}
         rangeLabel={range}
         days={days}
-        undated={itinerary.undated.map((booking) => ({ id: booking.id, title: booking.title, kindLabel: KIND_LABEL[booking.kind] }))}
+        undated={itinerary.undated.map((booking) => ({ id: booking.id, title: booking.title, kindLabel: KIND_LABEL(booking.kind) }))}
         compact={itinerary.compact}
         onAdd={setAdding}
         actions={

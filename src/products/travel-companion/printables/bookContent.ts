@@ -8,10 +8,12 @@
  * into the pages themselves.
  */
 
+import { BOOKING_KIND_INFO, BOOKING_KINDS } from "../trip";
+
 export const BOOK_TITLE = "My Trip Book";
 export const BOOK_SUBTITLE = "A structured, modular travel record. Blank until you fill it in, and only as long as your trip needs.";
 
-export const BOOKING_TYPES = ["Flight", "Train", "Car", "Transfer", "Hotel", "Rental", "Activity", "Restaurant", "Event", "Other"];
+export const BOOKING_TYPES = BOOKING_KINDS.map((kind) => BOOKING_KIND_INFO[kind].label);
 
 export const DOCUMENT_TYPES = ["Passport", "Visa", "Insurance", "Ticket", "Confirmation", "Agreement", "Other"];
 

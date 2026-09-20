@@ -13,8 +13,8 @@ import type { Playbook } from "@/components/product-shell/companion/steps";
 export const transportProblem: Playbook = {
   key: "transport-problem",
   title: "Sort out a transport problem",
-  situation: "A train, transfer or rental car has gone wrong",
-  opensFor: ["train", "car", "transfer", "rental"],
+  situation: "A train, bus, ferry, transfer or rental car has gone wrong",
+  opensFor: ["train", "bus", "ferry", "car", "transfer", "rental"],
   steps: [
     {
       key: "problem",

@@ -53,17 +53,56 @@ export interface Place {
   status: "active" | "archived";
 }
 
-export type BookingKind =
-  | "flight"
-  | "train"
-  | "car"
-  | "transfer"
-  | "hotel"
-  | "rental"
-  | "activity"
-  | "restaurant"
-  | "event"
-  | "other";
+/**
+ * Every kind of booking, in the order they are offered.
+ *
+ * One list, so the form, the itinerary, Today, the printed book and the
+ * database constraint cannot disagree about what exists. A migration widens
+ * the constraint whenever this grows, and a test holds the two equal.
+ */
+export const BOOKING_KINDS = [
+  "flight",
+  "train",
+  "bus",
+  "ferry",
+  "car",
+  "transfer",
+  "hotel",
+  "campsite",
+  "cruise",
+  "rental",
+  "activity",
+  "restaurant",
+  "event",
+  "other",
+] as const;
+
+export type BookingKind = (typeof BOOKING_KINDS)[number];
+
+export interface BookingKindInfo {
+  label: string;
+  /** Set for a kind whose start time is a window that opens, not a moment that passes: what that time means. */
+  starts?: string;
+  /** Set for a kind whose end is a second stop on a later day: what that end is called. */
+  ends?: string;
+}
+
+export const BOOKING_KIND_INFO: Record<BookingKind, BookingKindInfo> = {
+  flight: { label: "Flight" },
+  train: { label: "Train" },
+  bus: { label: "Bus" },
+  ferry: { label: "Ferry" },
+  car: { label: "Car" },
+  transfer: { label: "Transfer" },
+  hotel: { label: "Hotel", starts: "Check-in begins", ends: "Check-out" },
+  campsite: { label: "Campsite", starts: "Check-in begins", ends: "Check-out" },
+  cruise: { label: "Cruise", starts: "Boarding begins", ends: "Disembark" },
+  rental: { label: "Rental", starts: "Pickup begins", ends: "Return" },
+  activity: { label: "Activity" },
+  restaurant: { label: "Restaurant" },
+  event: { label: "Event" },
+  other: { label: "Other" },
+};
 
 export type BookingStatus = "confirmed" | "waiting" | "cancelled";
 

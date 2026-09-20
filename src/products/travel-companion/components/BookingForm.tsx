@@ -5,20 +5,9 @@ import Button from "@/design-system/Button";
 import Input from "@/design-system/Input";
 import { describeResultError } from "@/product-framework/result";
 import { createBooking, linkPersonToBooking, type BookingParticipant } from "../domain/travelData";
-import type { Booking, BookingKind, Person, Place } from "../trip";
+import { BOOKING_KIND_INFO, BOOKING_KINDS, type Booking, type BookingKind, type Person, type Place } from "../trip";
 
-const KIND_OPTIONS: { value: BookingKind; label: string }[] = [
-  { value: "flight", label: "Flight" },
-  { value: "train", label: "Train" },
-  { value: "car", label: "Car" },
-  { value: "transfer", label: "Transfer" },
-  { value: "hotel", label: "Hotel" },
-  { value: "rental", label: "Rental" },
-  { value: "activity", label: "Activity" },
-  { value: "restaurant", label: "Restaurant" },
-  { value: "event", label: "Event" },
-  { value: "other", label: "Other" },
-];
+const KIND_OPTIONS: { value: BookingKind; label: string }[] = BOOKING_KINDS.map((value) => ({ value, label: BOOKING_KIND_INFO[value].label }));
 
 const SELECT_CLASS =
   "w-full rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3.5 py-2.5 text-[14px] text-[var(--text)] outline-none focus:border-[var(--primary)]";

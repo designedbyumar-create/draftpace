@@ -1,3 +1,4 @@
+import { BOOKING_KINDS } from "../trip";
 import type { Playbook } from "@/components/product-shell/companion/steps";
 
 /**
@@ -28,7 +29,7 @@ export const bookingProblem: Playbook = {
   title: "Sort out a booking problem",
   situation: "A booking isn't right, or they can't find it",
   // Any kind of booking can be missing, wrong, or wrongly charged.
-  opensFor: ["flight", "train", "car", "transfer", "hotel", "rental", "activity", "restaurant", "event", "other"],
+  opensFor: [...BOOKING_KINDS],
   steps: [
     {
       key: "problem",

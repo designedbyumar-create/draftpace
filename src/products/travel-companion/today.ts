@@ -1,4 +1,4 @@
-import { activeBookings, byStartTime, type Booking, type Place, type Thread } from "./trip";
+import { activeBookings, BOOKING_KIND_INFO, byStartTime, type Booking, type Place, type Thread } from "./trip";
 
 const UTC = "UTC";
 
@@ -35,8 +35,8 @@ export interface TodayView {
   quiet: boolean;
 }
 
-/** Kinds where a start time functions as a window that opens, not a moment that passes. */
-const WINDOW_KINDS = new Set(["hotel", "rental"]);
+/** Kinds where a start time functions as a window that opens, not a moment that passes. Defined once, in BOOKING_KIND_INFO. */
+const WINDOW_KINDS = new Set(Object.entries(BOOKING_KIND_INFO).filter(([, info]) => info.starts).map(([kind]) => kind));
 
 /**
  * A date's calendar day in a given IANA zone, as "YYYY-MM-DD".
@@ -107,9 +107,8 @@ export interface Stop {
 
 export function describeStop(booking: Booking): Stop {
   const time = booking.startsAt ? timeLabel(booking.startsAt) : null;
-  if (WINDOW_KINDS.has(booking.kind) && time) {
-    return { time, title: booking.title, note: booking.kind === "hotel" ? "Check-in begins" : "Pickup begins" };
-  }
+  const starts = BOOKING_KIND_INFO[booking.kind]?.starts;
+  if (starts && time) return { time, title: booking.title, note: starts };
   return { time, title: booking.title, note: null };
 }
 
@@ -120,10 +119,8 @@ export function describeStop(booking: Booking): Stop {
  */
 function describeBooking(booking: Booking): string {
   const time = booking.startsAt ? timeLabel(booking.startsAt) : null;
-  if (WINDOW_KINDS.has(booking.kind) && time) {
-    const verb = booking.kind === "hotel" ? "Check-in begins" : "Pickup begins";
-    return `${booking.title}. ${verb} at ${time}.`;
-  }
+  const verb = BOOKING_KIND_INFO[booking.kind]?.starts;
+  if (verb && time) return `${booking.title}. ${verb} at ${time}.`;
   return time ? `${booking.title}, ${time}.` : booking.title;
 }
 

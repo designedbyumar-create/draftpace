@@ -13,7 +13,7 @@ export const hotelProblem: Playbook = {
   key: "hotel-problem",
   title: "Sort out a hotel problem",
   situation: "Something is wrong with a stay, or at check-in",
-  opensFor: ["hotel"],
+  opensFor: ["hotel", "campsite"],
   steps: [
     {
       key: "problem",

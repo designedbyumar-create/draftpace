@@ -1,3 +1,4 @@
+import { BOOKING_KINDS } from "../trip";
 import type { Playbook } from "@/components/product-shell/companion/steps";
 
 /**
@@ -21,7 +22,7 @@ export const somethingChanged: Playbook = {
   key: "something-changed",
   title: "Deal with something that changed",
   situation: "A time, a place, or a plan moved on you",
-  opensFor: ["flight", "train", "car", "transfer", "hotel", "rental", "activity", "restaurant", "event", "other"],
+  opensFor: [...BOOKING_KINDS],
   steps: [
     {
       key: "kind",
