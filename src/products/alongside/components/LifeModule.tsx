@@ -13,6 +13,7 @@ import { loadItemEvents, recordOutcome, type FinishResult, type ItemEvent, type 
 import CompanionRun from "./CompanionRun";
 import PlaybookChooser from "./PlaybookChooser";
 import AddItemForm from "./AddItemForm";
+import SortedList from "./SortedList";
 import { useAlongside } from "./useAlongside";
 import { beginRun, findResumableRun } from "./useResumableRun";
 
@@ -188,7 +189,7 @@ export default function LifeModule() {
     <div className="mx-auto flex w-full max-w-2xl flex-col gap-7">
       <header className="flex items-start justify-between gap-4">
         <div>
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Life</p>
+          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">Life</p>
           <h1
             className="mt-2 text-[26px] leading-tight text-[var(--text)]"
             style={{ fontFamily: "var(--product-narrative-font, inherit)" }}
@@ -217,8 +218,12 @@ export default function LifeModule() {
       {open.length === 0 && !adding && (
         <EmptyState
           icon={Layers3}
-          title="Nothing recorded yet"
-          description="Anything you put here stays here until you say otherwise."
+          title={items.some((item) => item.status === "done") ? "Nothing open right now" : "Nothing recorded yet"}
+          description={
+            items.some((item) => item.status === "done")
+              ? "What you have dealt with is kept under Sorted."
+              : "Anything you put here stays here until you say otherwise."
+          }
         />
       )}
 
@@ -282,6 +287,8 @@ export default function LifeModule() {
           </section>
         );
       })}
+
+      <SortedList items={items} now={now} />
 
       {startError && <p className="text-[13px] text-[var(--danger)]">{startError}</p>}
       {errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}

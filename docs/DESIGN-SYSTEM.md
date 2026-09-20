@@ -99,6 +99,17 @@ theme: {
   re-coloured. A product that declares neither is byte-identical to
   before; `themeExtension.test.ts` pins that.
 
+- **`ground`** (optional) gives a product its own page, surface, text and
+  hairline tones as a required light and dark pair. It is emitted as
+  `--product-ground-*-light/dark` and picked in globals.css by
+  `[data-product-ground]`, an attribute only a declaring product's shell
+  carries, so every other product stays on the platform ramp. A product
+  declares one only when its ground is part of its identity (ADHD Life
+  Companion's blush-grey). `ground.test.ts` holds every declared ground to
+  the same floor: body text 7:1, muted and faint text 4.5:1, the accent
+  readable as text and its button label readable on it, in both themes.
+  Quiet is not allowed to mean faint.
+
 Rules for a signature object and a motif: built from data the product
 really has, never decoration, no invented figures, no scores or streaks
 (see Visual rules below). Content width and the narrative face were

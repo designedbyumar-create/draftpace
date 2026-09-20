@@ -114,6 +114,9 @@ export const resolveABillingProblem: Playbook = {
     {
       key: "during",
       kind: "during",
+      recall: [
+        { step: "wanted", label: "What you want" },
+      ],
       prompt: "While you are on the call",
       why: "The reference number is the one that matters. Without it the next call starts from nothing.",
       items: [

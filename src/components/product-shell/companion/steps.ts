@@ -77,6 +77,12 @@ export interface PlaybookStep {
   /** For prepare and during: the lines shown, filtered by askIf. */
   items?: { text: string; askIf?: StepCondition }[];
   suggestedWording?: { text: string; askIf?: StepCondition }[];
+  /**
+   * For prepare and during: earlier answers shown back in the person's own
+   * words, so the thing they decided to say is on screen while they say it.
+   * Only ever points at `write` steps; a `choose` answer is a code, not words.
+   */
+  recall?: { step: string; label: string }[];
   askIf?: StepCondition;
   optional?: boolean;
 }
@@ -173,6 +179,14 @@ export function nextStep(playbook: Playbook, answers: Answers, skipped: Set<stri
 /** Lines that apply, given what has been answered. Used by prepare and during. */
 export function visibleItems(step: PlaybookStep, answers: Answers): string[] {
   return (step.items ?? []).filter((item) => conditionMet(item.askIf, answers)).map((item) => item.text);
+}
+
+/** The person's own earlier words, for the steps that show them back. Skipped or empty answers are left out. */
+export function recalledAnswers(step: PlaybookStep, answers: Answers): { label: string; text: string }[] {
+  return (step.recall ?? []).flatMap((entry) => {
+    const text = answers[entry.step]?.trim();
+    return text ? [{ label: entry.label, text }] : [];
+  });
 }
 
 export function visibleWording(step: PlaybookStep, answers: Answers): string[] {

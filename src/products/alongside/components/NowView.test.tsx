@@ -5,6 +5,8 @@ import { renderToStaticMarkup } from "react-dom/server";
 import NowView, { type NowViewProps } from "./NowView";
 import { QUIET_LINE } from "../attention";
 import type { LifeItem } from "../life";
+import { FIRST_WIN } from "../firstWin";
+import { PLAYBOOK_BY_KEY } from "../playbooks";
 
 const item = (over: Partial<LifeItem> = {}): LifeItem =>
   ({
@@ -108,5 +110,57 @@ describe("The One Card", () => {
   it("never puts an /opacity on a var() colour", () => {
     const source = readFileSync(join(__dirname, "NowView.tsx"), "utf8");
     expect([...source.matchAll(/\[var\(--[a-z0-9-]+\)\]\/\d+/gi)].map((m) => m[0])).toEqual([]);
+  });
+
+  describe("the first win", () => {
+    const first = (over: Partial<NowViewProps> = {}) =>
+      render({ signal: null, firstWin: true, onFirstWin: () => {}, ...over });
+
+    it("offers every way in on an empty first visit, as buttons", () => {
+      const html = first();
+      for (const option of FIRST_WIN) expect(html).toContain(option.label);
+      expect(html.match(/<button[^>]*>[^<]*(?:A call|An email|An appointment|Something that)/g)).toHaveLength(4);
+      expect(html).toContain("What is one thing that has been sitting there?");
+    });
+
+    it("never shows them next to a real card, or without the handler that would start one", () => {
+      expect(render({ firstWin: true, onFirstWin: () => {} })).not.toContain("Ways to start");
+      expect(render({ signal: null, firstWin: true })).not.toContain("Ways to start");
+      expect(render({ signal: null })).not.toContain("Ways to start");
+    });
+
+    it("every option opens a walkthrough that exists", () => {
+      for (const option of FIRST_WIN) expect(PLAYBOOK_BY_KEY[option.playbookKey], option.playbookKey).toBeDefined();
+    });
+
+    it("stays in the product's voice: no count, no score, nothing overdue", () => {
+      expect(first().toLowerCase()).not.toMatch(/overdue|streak|\d+ (things|tasks)|behind/);
+    });
+  });
+
+  it("shows the keep-this question above the card when a run that began from nothing ends", () => {
+    const html = render({ signal: null, offer: <p>Want me to hold on to this?</p> });
+    expect(html).toContain("Want me to hold on to this?");
+    // The question is the whole screen. "Nothing needs you" under it reads as a contradiction.
+    expect(html).not.toContain(QUIET_LINE);
+  });
+
+  it("NowModule handles the offer a direct run returns, or the question is silently lost", () => {
+    const source = readFileSync(join(__dirname, "NowModule.tsx"), "utf8");
+    expect(source).toContain("result.offer");
+    expect(source).toContain("createItem");
+  });
+
+  it("sits on a card of its own, so the one thing is an object and not text on a page", () => {
+    const html = render();
+    const card = html.match(/<section[^>]*aria-label="The one thing"[^>]*>/)?.[0] ?? "";
+    expect(card).toContain("bg-[var(--surface)]");
+    expect(card).toContain("border-[var(--border)]");
+  });
+
+  it("keeps the accent for the one action: nothing else on the card is in it", () => {
+    const source = readFileSync(join(__dirname, "NowView.tsx"), "utf8");
+    expect(source).not.toContain("text-[var(--primary)]");
+    expect(source.match(/variant="commit"/g)).toHaveLength(1);
   });
 });

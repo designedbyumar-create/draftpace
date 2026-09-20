@@ -84,6 +84,9 @@ export const bookAndPrepareForAnAppointment: Playbook = {
     {
       key: "prepare",
       kind: "prepare",
+      recall: [
+        { step: "ask", label: "What you wanted to ask" },
+      ],
       prompt: "For the day itself",
       why: "Put this somewhere you will see it that morning.",
       items: [

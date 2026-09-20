@@ -77,6 +77,9 @@ export const sendTheEmail: Playbook = {
     {
       key: "check",
       kind: "prepare",
+      recall: [
+        { step: "needed", label: "What you are asking for" },
+      ],
       prompt: "Before you send it",
       why: "Read it once against these, then send it. Reading it a fourth time does not make it better.",
       items: [

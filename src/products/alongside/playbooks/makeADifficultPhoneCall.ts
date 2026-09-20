@@ -112,6 +112,10 @@ export const makeADifficultPhoneCall: Playbook = {
     {
       key: "during",
       kind: "during",
+      recall: [
+        { step: "outcome-wanted", label: "What you want" },
+        { step: "line", label: "What you will not agree to" },
+      ],
       prompt: "While you are on the call",
       why: "Short on purpose. Anything longer is unreadable while somebody is talking to you.",
       askIf: { step: "ready", equals: ["call-now"] },

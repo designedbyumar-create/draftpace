@@ -4,7 +4,8 @@ import path from "node:path";
 
 /**
  * This route writes to the Updates feed for four products with no push
- * infrastructure of their own — structural checks mirror
+ * infrastructure of their own, and additionally hands Alongside's
+ * opted-in reminders to its own delivery module. Structural checks mirror
  * cron/route.test.ts and cron-hmc/route.test.ts's own discipline.
  */
 
@@ -57,9 +58,10 @@ describe("the life-updates cron evaluator's authorization gate", () => {
     expect(source).not.toMatch(/process\.env\.HMC_CRON_SECRET\b/);
   });
 
-  it("never sends push — this route's only side effect is a product_updates row", () => {
+  it("never sends push itself: its own side effect is a product_updates row, and the one push path is Alongside's opt-in delivery", () => {
     expect(source).not.toContain("sendWebPush");
     expect(source).not.toContain("push_subscriptions");
+    expect(source.match(/deliverAlongsideReminders\(/g)).toHaveLength(1);
   });
 
   it("checks entitlement explicitly before evaluating, since the service-role client bypasses RLS", () => {

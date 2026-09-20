@@ -8,6 +8,7 @@ import { describeResultError } from "@/product-framework/result";
 import type { OutcomeKind, Playbook } from "../playbook";
 import { createItem, type FinishResult, type RunRecord } from "../domain/alongsideData";
 import CompanionRun from "./CompanionRun";
+import KeepOffer from "./KeepOffer";
 import StartCompanion from "./StartCompanion";
 import { beginRun } from "./useResumableRun";
 import { useAlongside } from "./useAlongside";
@@ -125,7 +126,7 @@ export default function HelpModule() {
   return (
     <div className="mx-auto flex w-full max-w-2xl flex-col gap-6">
       <header>
-        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Help</p>
+        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">Help</p>
         <h1
           className="mt-2 text-[26px] leading-tight text-[var(--text)]"
           style={{ fontFamily: "var(--product-narrative-font, inherit)" }}
@@ -137,18 +138,7 @@ export default function HelpModule() {
       {closing && <p className="text-[13px] text-[var(--muted)]">{closing}</p>}
 
       {offer && (
-        <section className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5">
-          <p className="text-[15px] leading-6 text-[var(--text)]">Want me to hold on to this?</p>
-          <p className="mt-1.5 text-[14px] leading-6 text-[var(--muted)]">{offer.title}</p>
-          <div className="mt-4 flex flex-wrap items-center gap-2">
-            <Button variant="commit" size="sm" onClick={keepOffer} disabled={pending}>
-              Keep it
-            </Button>
-            <Button size="sm" variant="ghost" onClick={() => setOffer(null)} disabled={pending}>
-              No need
-            </Button>
-          </div>
-        </section>
+        <KeepOffer title={offer.title} pending={pending} onKeep={keepOffer} onDecline={() => setOffer(null)} />
       )}
 
       {startError && <p className="text-[13px] text-[var(--danger)]">{startError}</p>}

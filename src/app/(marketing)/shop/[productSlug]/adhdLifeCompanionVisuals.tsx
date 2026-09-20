@@ -8,7 +8,7 @@
  * phone call playbook, and LifeModule's shape grouping with its real
  * footnote line. The bottom bar is the real one: Now, Life, Help.
  *
- * Mulberry (#8d4a5c, the real theme.accent) distinguishes it from ink
+ * Dusk mauve (#86586a, the real theme.accent) distinguishes it from ink
  * blue, sage, teal, clay and plum. Warm rather than cool on purpose,
  * same reasoning as the product itself: this is opened when something
  * has been sitting undone for three weeks, and a cold palette on that
@@ -23,7 +23,7 @@ import PhoneFrame from "../PhoneFrame";
 const INK = "#1a1d24";
 const MUTED = "#4a5262";
 const FAINT = "#8b93a1";
-const MULBERRY = "#8d4a5c";
+const MULBERRY = "#86586a";
 const PAPER = "#fbfaf7";
 const LINE = "#e3e0d8";
 

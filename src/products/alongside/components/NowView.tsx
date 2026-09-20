@@ -5,11 +5,14 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import Button from "@/design-system/Button";
 import { Plus } from "@/design-system/Icon";
 import { QUIET_LINE } from "../attention";
+import { FIRST_WIN } from "../firstWin";
 import type { LifeItem } from "../life";
 
 /**
- * The One Card. Now is one thing: a line saying why it is here, the thing in
- * the person's own words, one button, and two ways to set it down. Nothing
+ * The One Card. Now is one thing, on a card of its own: a line saying why it
+ * is here, the thing in the person's own words, one button, and two ways to
+ * set it down. The accent appears on that one button and nowhere else on the
+ * card, so the eye has exactly one place to go. Nothing
  * else competes for the screen, because for the people this is for, an
  * evaluation of several somewhat-urgent things costs the energy that the
  * one thing needed.
@@ -30,6 +33,11 @@ export interface NowViewProps {
   canWork: boolean;
   /** The playbook chooser, when "Do this with me" has more than one way in. Replaces the button. */
   chooser: ReactNode | null;
+  /** The keep-this-or-not question after a run that began from nothing. Shown above the card. */
+  offer?: ReactNode | null;
+  /** True on the very first visit, with nothing recorded: offers four ways straight into a walkthrough. */
+  firstWin?: boolean;
+  onFirstWin?: (playbookKey: string) => void;
   closing: string | null;
   startError: string | null;
   sorting: boolean;
@@ -49,6 +57,9 @@ export default function NowView({
   setDown,
   canWork,
   chooser,
+  offer = null,
+  firstWin = false,
+  onFirstWin,
   closing,
   startError,
   sorting,
@@ -92,6 +103,7 @@ export default function NowView({
             {closing}
           </p>
         )}
+        {offer}
         {startError && (
           <p
             role="alert"
@@ -106,10 +118,10 @@ export default function NowView({
             <motion.section
               key={signal.item.id}
               aria-label="The one thing"
-              className="flex flex-col gap-5"
+              className="flex flex-col gap-5 rounded-[var(--radius-xl)] border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[0_14px_32px_-16px_color-mix(in_srgb,var(--text)_30%,transparent)]"
               {...fade}
             >
-              <p className="text-[14px] font-semibold text-[var(--primary)]">
+              <p className="text-[14px] font-semibold text-[var(--muted)]">
                 {signal.line}
               </p>
               <h2
@@ -165,7 +177,7 @@ export default function NowView({
                 </button>
               </div>
             </motion.section>
-          ) : (
+          ) : offer ? null : (
             <motion.section
               key="quiet"
               aria-label="Nothing right now"
@@ -179,13 +191,30 @@ export default function NowView({
                   fontWeight: 500,
                 }}
               >
-                {setDown ? "That is all for now" : QUIET_LINE}
+                {firstWin ? "What is one thing that has been sitting there?" : setDown ? "That is all for now" : QUIET_LINE}
               </h2>
               <p className="text-[15px] leading-relaxed text-[var(--muted)]">
-                {setDown
-                  ? "Nothing else is asking for you. Everything you have recorded is still here in Life."
-                  : "Anything you have recorded is still here in Life."}
+                {firstWin
+                  ? "Pick the closest. It walks you through that one thing, and you can stop at any point."
+                  : setDown
+                    ? "Nothing else is asking for you. Everything you have recorded is still here in Life."
+                    : "Anything you have recorded is still here in Life."}
               </p>
+              {firstWin && onFirstWin && (
+                <ul aria-label="Ways to start" className="flex flex-col gap-2">
+                  {FIRST_WIN.map((option) => (
+                    <li key={option.playbookKey}>
+                      <button
+                        type="button"
+                        onClick={() => onFirstWin(option.playbookKey)}
+                        className="min-h-14 w-full rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-5 text-left text-[16px] text-[var(--text)] transition-colors hover:border-[var(--primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]"
+                      >
+                        {option.label}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              )}
               {setDown && (
                 <div>
                   <button

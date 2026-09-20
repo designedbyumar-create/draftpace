@@ -7,7 +7,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ProductDefinition } from "@/product-framework/definition";
 import { resolveLifecycleNavigation, type InstanceLifecycleSignal } from "@/product-framework/navigationResolver";
 import { familyRegistry } from "@/product-framework/families";
-import { productThemeStyle } from "@/product-framework/themeExtension";
+import { hasProductGround, productThemeStyle } from "@/product-framework/themeExtension";
 import { ArrowLeft, Menu } from "@/design-system/Icon";
 import Badge from "@/design-system/Badge";
 import ThemeToggle from "@/design-system/theme/ThemeToggle";
@@ -96,7 +96,7 @@ function ProductTabShell({
   const accountItems = appAccountMenuItems(() => signOutAndRedirect("/"));
 
   return (
-    <div className="min-h-screen bg-[var(--app-bg)] text-[var(--text)]" data-product-theme data-product-motif={definition.theme.identity?.motif} style={style}>
+    <div className="min-h-screen bg-[var(--app-bg)] text-[var(--text)]" data-product-theme data-product-motif={definition.theme.identity?.motif} data-product-ground={hasProductGround(definition.theme) ? "" : undefined} style={style}>
       {/* Mobile compact app-bar: back, title, account, one row instead of
           three stacked blocks. min-h (not h) + safe-area padding-top so the
           row grows to clear a notch instead of squeezing existing content

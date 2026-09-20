@@ -127,6 +127,10 @@ export const makeAPhoneCall: Playbook = {
     {
       key: "during",
       kind: "during",
+      recall: [
+        { step: "outcome", label: "What a good result looks like" },
+        { step: "must-not-forget", label: "Do not forget" },
+      ],
       prompt: "While you are on the call",
       why: "Short on purpose. Anything longer is unreadable while somebody is talking to you.",
       askIf: { step: "ready", equals: ["call-now"] },

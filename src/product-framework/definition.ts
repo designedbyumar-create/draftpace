@@ -43,6 +43,20 @@ export type ProductMotif = (typeof PRODUCT_MOTIFS)[number];
 export const PRODUCT_SHAPES = ["sharp", "standard", "soft"] as const;
 export type ProductShape = (typeof PRODUCT_SHAPES)[number];
 
+/** One theme's worth of a product's ground. Names mirror the platform tokens they replace. */
+export const productGroundTonesSchema = z.object({
+  appBg: z.string(),
+  surface: z.string(),
+  surfaceMuted: z.string(),
+  surfaceStrong: z.string(),
+  text: z.string(),
+  muted: z.string(),
+  faint: z.string(),
+  border: z.string(),
+  borderStrong: z.string(),
+});
+export type ProductGroundTones = z.infer<typeof productGroundTonesSchema>;
+
 export const productThemeExtensionSchema = z
   .object({
     accent: z.string().optional(),
@@ -98,6 +112,21 @@ export const productThemeExtensionSchema = z
         wash: z.string().optional(),
       })
       .optional(),
+    /**
+     * The product's own ground: the page, its surfaces, its text and its
+     * hairlines, as a light and a dark set.
+     *
+     * Optional, and absent for every product that lives on the platform's
+     * neutral ramp. Declared only by a product whose ground is part of its
+     * identity, which so far is one whose people arrive overwhelmed and
+     * for whom the difference between a blush-grey page and a cream one is
+     * the difference between the app feeling like theirs or like any
+     * other. Both sets are required together for the same reason
+     * `accentScaleDark` is never half-authored: a light-only ground would
+     * leave the dark theme on the platform's colours under this product's
+     * accent.
+     */
+    ground: z.object({ light: productGroundTonesSchema, dark: productGroundTonesSchema }).optional(),
     /**
      * A serif or otherwise warmer family used only where the product
      * speaks in its own voice, never for data or controls. Holds a CSS

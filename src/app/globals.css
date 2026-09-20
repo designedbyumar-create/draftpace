@@ -466,6 +466,47 @@ html[data-text-scale="larger"] {
   }
 }
 
+/* A product's own ground, for the products that declare one. The pairs are
+   emitted inline (see productThemeStyle) and picked here, for the same
+   reason the accent pairs are: an inline style cannot answer a media
+   query. Selected by an attribute only a declaring product carries, so
+   every other product stays on the platform ramp untouched. */
+[data-product-theme][data-product-ground] {
+  --app-bg: var(--product-ground-app-bg-light);
+  --surface: var(--product-ground-surface-light);
+  --surface-muted: var(--product-ground-surface-muted-light);
+  --surface-strong: var(--product-ground-surface-strong-light);
+  --text: var(--product-ground-text-light);
+  --muted: var(--product-ground-muted-light);
+  --faint: var(--product-ground-faint-light);
+  --border: var(--product-ground-border-light);
+  --border-strong: var(--product-ground-border-strong-light);
+}
+:root[data-theme="dark"] [data-product-theme][data-product-ground] {
+  --app-bg: var(--product-ground-app-bg-dark);
+  --surface: var(--product-ground-surface-dark);
+  --surface-muted: var(--product-ground-surface-muted-dark);
+  --surface-strong: var(--product-ground-surface-strong-dark);
+  --text: var(--product-ground-text-dark);
+  --muted: var(--product-ground-muted-dark);
+  --faint: var(--product-ground-faint-dark);
+  --border: var(--product-ground-border-dark);
+  --border-strong: var(--product-ground-border-strong-dark);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) [data-product-theme][data-product-ground] {
+    --app-bg: var(--product-ground-app-bg-dark);
+    --surface: var(--product-ground-surface-dark);
+    --surface-muted: var(--product-ground-surface-muted-dark);
+    --surface-strong: var(--product-ground-surface-strong-dark);
+    --text: var(--product-ground-text-dark);
+    --muted: var(--product-ground-muted-dark);
+    --faint: var(--product-ground-faint-dark);
+    --border: var(--product-ground-border-dark);
+    --border-strong: var(--product-ground-border-strong-dark);
+  }
+}
+
 .btn-fill-primary {
   background-image: linear-gradient(
     180deg,
@@ -621,6 +662,18 @@ summary {
   summary {
     display: flex;
     align-items: center;
+  }
+
+  /* A switch is a 24px pill. Forcing 44px onto the box itself stretched it
+     into a circle on every phone, so the pill stays and its hit area grows
+     instead, by 10px above and below. */
+  button[role="switch"]:not(:disabled) {
+    min-height: 0;
+  }
+  button[role="switch"]::after {
+    content: "";
+    position: absolute;
+    inset: -10px 0;
   }
 }
 

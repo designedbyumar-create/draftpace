@@ -85,8 +85,8 @@ export const alongsideDefinition: ProductDefinitionInput = {
     shortName: "ADHD Companion",
     description:
       "ADHD Life Companion by Draftpace: hold what you cannot keep in your head, and get through the thing when you are ready.",
-    themeColor: "#8d4a5c",
-    backgroundColor: "#fbfaf7",
+    themeColor: "#86586a",
+    backgroundColor: "#f4f0f1",
     // This product's own icon, so installing two Companions does not
     // put two identical Draftpace squares on the home screen. Same
     // monogram, this product's accent, generated from Logo.tsx's own
@@ -150,27 +150,62 @@ export const alongsideDefinition: ProductDefinitionInput = {
   permissions: [],
   events: [],
   /**
-   * Muted mulberry. Deliberately its own hue: teal, clay, sage, ink blue
-   * and plum are taken, and covered up these five products have to be
-   * tellable apart.
+   * Dusk: a dusty mauve on a blush-grey ground. Deliberately its own hue:
+   * teal, clay, sage, ink blue and plum are taken, and side by side the
+   * products have to be tellable apart.
    *
-   * Warm rather than cool on purpose. This is the product a person opens
-   * when something has been sitting undone for three weeks, and a cold
-   * palette on that screen reads as clinical. Red is deliberately not
-   * used anywhere as a status colour, because nothing in this product is
-   * an alarm.
+   * Quieter than the mulberry it replaced, on purpose. This is the product
+   * a person opens when something has been sitting undone for three weeks,
+   * and the guidance for ADHD interfaces agrees on the parts that matter
+   * here: low saturation, real white space, and one accent kept for the
+   * one action. The ground moved with the accent because a blush-grey page
+   * and a cream one are the difference between this feeling like its own
+   * place and feeling like every other app. Red is deliberately not used
+   * anywhere as a status colour, because nothing in this product is an
+   * alarm.
+   *
+   * Every text pair clears 4.5:1 and body text clears 13:1, in both
+   * themes (ground.test.ts). Soft is not allowed to mean faint.
    */
   theme: {
-    accent: "#8d4a5c",
+    accent: "#86586a",
     accentScale: {
-      base: "#8d4a5c",
-      strong: "#68343f",
-      soft: "#f5eaec",
+      base: "#86586a",
+      strong: "#5f3d4b",
+      soft: "#f1e7eb",
       contrast: "#ffffff",
-      // Already pastel enough to double as the wash tier as-is (design-
-      // system audit finding): formalized here rather than computing a
-      // second, paler value nobody asked for.
-      wash: "#f5eaec",
+      wash: "#f7f1f3",
+    },
+    accentScaleDark: {
+      base: "#c99aaf",
+      strong: "#ddb6c7",
+      soft: "#2e2429",
+      contrast: "#2a1a22",
+      wash: "#251d21",
+    },
+    ground: {
+      light: {
+        appBg: "#f4f0f1",
+        surface: "#fbf9fa",
+        surfaceMuted: "#eee8eb",
+        surfaceStrong: "#e4dbdf",
+        text: "#241e21",
+        muted: "#645a5f",
+        faint: "#766b71",
+        border: "#e6dde1",
+        borderStrong: "#d5cacf",
+      },
+      dark: {
+        appBg: "#151113",
+        surface: "#1e191c",
+        surfaceMuted: "#251f23",
+        surfaceStrong: "#2f282d",
+        text: "#f1ebee",
+        muted: "#b4a9af",
+        faint: "#9a8f96",
+        border: "rgba(255, 245, 250, 0.09)",
+        borderStrong: "rgba(255, 245, 250, 0.15)",
+      },
     },
     narrativeFont: "var(--font-newsreader), ui-serif, Georgia, serif",
     motionPersonality: "calm",
@@ -180,20 +215,16 @@ export const alongsideDefinition: ProductDefinitionInput = {
   layouts: ["responsive"],
   offline: "shell-only",
   /**
-   * False, and this is the honest state rather than a placeholder.
-   *
-   * Phase 0 research found that push reaches iOS only through a manual
-   * multi-step home screen install that no page can trigger, and that
-   * web push opt-in runs from roughly 3% to 15% even where no install is
-   * needed. Attention is therefore built as a layer with delivery behind
-   * an adapter: in-app in v1, push measured later. Nothing in this
-   * product claims to notify anybody until that measurement justifies
-   * it.
+   * True, narrowly. The only thing that ever notifies is a date the person
+   * chose, once they have switched reminders on (see reminders.ts). Phase 0
+   * research found push reaches iOS only through a manual home screen
+   * install and opt-in runs roughly 3% to 15%, so nothing else here depends
+   * on it: Now, Life and the Updates feed all work with it switched off.
    */
-  notifications: { supported: false },
+  notifications: { supported: true },
   progressModel: { kind: "custom" },
   history: { enabled: true, kinds: ["outcome", "note"] },
-  settingsSections: ["privacy", "timezone"],
+  settingsSections: ["notifications", "privacy", "timezone"],
   migrationPolicy: { compatibility: "backward-compatible" },
   devFixture: false,
 };

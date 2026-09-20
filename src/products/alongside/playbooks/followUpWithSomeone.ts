@@ -86,6 +86,9 @@ export const followUpWithSomeone: Playbook = {
     {
       key: "during",
       kind: "during",
+      recall: [
+        { step: "needed", label: "What you need from them" },
+      ],
       prompt: "Worth doing while you have them",
       items: [
         { text: "Say when you last got in touch" },

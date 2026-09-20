@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { motion, useReducedMotion } from "framer-motion";
 import { ProductDefinition } from "@/product-framework/definition";
 import { resolveLifecycleNavigation, type InstanceLifecycleSignal } from "@/product-framework/navigationResolver";
-import { productThemeStyle } from "@/product-framework/themeExtension";
+import { hasProductGround, productThemeStyle } from "@/product-framework/themeExtension";
 import { ArrowLeft, BookOpen, Car, Clock, Compass, Globe, Layers3, LifeBuoy, Menu, Sun, User, type DraftpaceIcon } from "@/design-system/Icon";
 import MobileSheet from "@/design-system/MobileSheet";
 import AccountMenu from "@/components/account/AccountMenu";
@@ -125,7 +125,7 @@ export default function ProductRailShell({
     ));
 
   return (
-    <div className="min-h-screen bg-[var(--app-bg)] text-[var(--text)]" data-product-theme data-product-motif={definition.theme.identity?.motif} style={style}>
+    <div className="min-h-screen bg-[var(--app-bg)] text-[var(--text)]" data-product-theme data-product-motif={definition.theme.identity?.motif} data-product-ground={hasProductGround(definition.theme) ? "" : undefined} style={style}>
       <div className="lg:flex">
         {/* ------------------------------------------------ desktop rail */}
         <aside className="sticky top-0 hidden h-screen w-60 shrink-0 flex-col border-r border-[var(--border)] bg-[var(--surface)] px-4 py-5 lg:flex">

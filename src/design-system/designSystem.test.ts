@@ -185,4 +185,12 @@ describe("colour semantics: teal acts, ink labels", () => {
       expect(source).toContain("text-[var(--brand-ink-contrast)]");
     }
   });
+
+  // A 44px min-height on every button turned each Toggle into a circle on
+  // phones. The pill has to survive, with its hit area grown instead.
+  it("keeps a switch a pill on touch devices, and grows its hit area instead of its box", () => {
+    const coarse = GLOBALS.slice(GLOBALS.indexOf("@media (pointer: coarse)"));
+    expect(coarse).toMatch(/button\[role="switch"\]:not\(:disabled\)\s*\{\s*min-height:\s*0;/);
+    expect(coarse).toMatch(/button\[role="switch"\]::after\s*\{[^}]*inset:\s*-10px 0;/);
+  });
 });

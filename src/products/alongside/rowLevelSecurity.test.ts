@@ -34,8 +34,14 @@ const policies = [...sql.matchAll(/create policy\s+"([^"]+)"\s*\n?on public\.(al
 }));
 
 describe("Alongside row level security", () => {
-  it("creates the four tables this product is built on", () => {
-    expect(tables.sort()).toEqual(["als_item_events", "als_items", "als_run_answers", "als_runs"]);
+  it("creates the five tables this product is built on", () => {
+    expect(tables.sort()).toEqual([
+      "als_item_events",
+      "als_items",
+      "als_notification_preferences",
+      "als_run_answers",
+      "als_runs",
+    ]);
   });
 
   it("enables row level security on every table it creates", () => {

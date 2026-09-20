@@ -1,5 +1,5 @@
 import type { CSSProperties } from "react";
-import { ProductDefinition, type ProductShape } from "./definition";
+import { ProductDefinition, type ProductGroundTones, type ProductShape } from "./definition";
 import { deriveDarkTones } from "@/design-system/accentTone";
 
 /**
@@ -8,6 +8,31 @@ import { deriveDarkTones } from "@/design-system/accentTone";
  * stylesheet's own tests agree on one spelling.
  */
 export const PRODUCT_THEME_ATTRIBUTE = "data-product-theme";
+
+/**
+ * Carried by a shell root only when its product declares a `ground`, so
+ * globals.css has something to select on. A product without one must never
+ * match, or the pairs below would be read as unset custom properties.
+ */
+export const PRODUCT_GROUND_ATTRIBUTE = "data-product-ground";
+
+/** The custom-property name for each ground tone, as globals.css reads them. */
+const GROUND_TOKEN: Record<keyof ProductGroundTones, string> = {
+  appBg: "app-bg",
+  surface: "surface",
+  surfaceMuted: "surface-muted",
+  surfaceStrong: "surface-strong",
+  text: "text",
+  muted: "muted",
+  faint: "faint",
+  border: "border",
+  borderStrong: "border-strong",
+};
+
+/** True when the shell root should carry PRODUCT_GROUND_ATTRIBUTE. */
+export function hasProductGround(theme: ProductThemeExtension): boolean {
+  return Boolean(theme.ground);
+}
 
 /**
  * A product's theme extension produces scoped CSS custom properties applied
@@ -89,6 +114,13 @@ export function productThemeStyle(theme: ProductThemeExtension): CSSProperties {
     style["--product-wash-dark"] = dark.wash ?? dark.soft;
 
     if (theme.narrativeFont) style["--product-narrative-font"] = theme.narrativeFont;
+  }
+
+  if (theme.ground) {
+    for (const [name, token] of Object.entries(GROUND_TOKEN) as [keyof ProductGroundTones, string][]) {
+      style[`--product-ground-${token}-light`] = theme.ground.light[name];
+      style[`--product-ground-${token}-dark`] = theme.ground.dark[name];
+    }
   }
 
   // Motion and shape are opted into by `accentScale` (as they always were)

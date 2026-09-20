@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { getSupabaseServiceRoleClient } from "@/lib/server-auth";
 import { insertProductUpdate } from "@/lib/notifications/updatesFeed";
+import { isWebPushConfigured } from "@/lib/notifications/webPush";
+import { deliverAlongsideReminders } from "@/products/alongside/reminderDelivery";
 import { evaluateProductUpdates, isEvaluatedProductSlug } from "@/product-framework/updatesEvaluators";
 
 /**
@@ -39,7 +41,10 @@ export async function GET(request: Request) {
     instancesEvaluated: 0,
     instancesSkippedNotEntitled: 0,
     updatesWritten: 0,
+    remindersSent: 0,
+    remindersWaitingForDevice: 0,
   };
+  const pushConfigured = isWebPushConfigured();
 
   const evaluatedSlugs = ["alongside", "homeschooling-companion", "travel-companion", "personal-life-affairs-companion"];
 
@@ -82,6 +87,15 @@ export async function GET(request: Request) {
         dedupeKey: payload.dedupeKey,
       });
       summary.updatesWritten += 1;
+    }
+
+    // Alongside alone also sends real push, and only to somebody who
+    // switched reminders on, for a date they chose. Everything else in this
+    // route stays feed-only.
+    if (productSlug === "alongside" && pushConfigured) {
+      const outcome = await deliverAlongsideReminders(supabase, { instanceId, userId, now });
+      if (outcome === "sent") summary.remindersSent += 1;
+      if (outcome === "no-device") summary.remindersWaitingForDevice += 1;
     }
   }
 

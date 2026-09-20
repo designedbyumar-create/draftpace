@@ -8,12 +8,13 @@ import { Compass } from "@/design-system/Icon";
 import { describeResultError } from "@/product-framework/result";
 import { deriveAttention } from "../attention";
 import { isOpenToWork, type LifeItem } from "../life";
-import { playbooksFor } from "../playbooks";
+import { PLAYBOOK_BY_KEY, playbooksFor } from "../playbooks";
 import type { OutcomeKind, Playbook } from "../playbook";
-import { recordOutcome, type FinishResult, type RunRecord } from "../domain/alongsideData";
+import { createItem, recordOutcome, type FinishResult, type RunRecord } from "../domain/alongsideData";
 import CompanionRun from "./CompanionRun";
 import PlaybookChooser from "./PlaybookChooser";
 import StartCompanion from "./StartCompanion";
+import KeepOffer from "./KeepOffer";
 import AddItemForm from "./AddItemForm";
 import NowView from "./NowView";
 import { useAlongside } from "./useAlongside";
@@ -71,13 +72,13 @@ interface Running {
 const TOUR_STEPS: TourStep[] = [
   {
     targetId: "alongside-tour-now",
-    title: "This screen is allowed to be empty",
-    body: "When nothing is worth raising, it says so and stops. There is no list filling the space, no streak, and nothing here counts against you.",
+    title: "One thing at a time",
+    body: "When something needs you, this shows that one thing. When nothing does, it says so and stops. No list, no streak, and nothing here counts against you.",
   },
   {
     targetId: "alongside-tour-help",
     title: "Start with one hard thing",
-    body: "Help me with something is the way in when you have not recorded anything yet. Say what you need to do, a call you have been avoiding say, and it walks you through that one thing.",
+    body: "Help me with something is the way in when you have not recorded anything. Pick the situation, or say it in your own words, and it walks you through that one thing.",
   },
   {
     targetId: "rail-life",
@@ -105,6 +106,9 @@ export default function NowModule() {
   const [skipped, setSkipped] = useState<string[]>([]);
   /** The item being marked sorted, so its button can say so. */
   const [sorting, setSorting] = useState<string | null>(null);
+  /** Set when a run that began from nothing produced something worth keeping. Asked, never written on its own. */
+  const [offer, setOffer] = useState<NonNullable<FinishResult["offer"]> | null>(null);
+  const [offerPending, setOfferPending] = useState(false);
   // No setup step in this product, so the tour waits only for the screen
   // to have loaded: an owner arriving with nothing recorded is exactly
   // who it is for.
@@ -128,6 +132,10 @@ export default function NowModule() {
   function finish(result: FinishResult, outcome: OutcomeKind) {
     if (result.item) replaceItem(result.item);
     setRunning(null);
+    if (result.offer) {
+      setOffer(result.offer);
+      return;
+    }
     // Said once, in the past tense, about the thing rather than the
     // person. Nothing is said at all when they did not get to it.
     setClosing(outcome === "not-yet" ? null : "Recorded.");
@@ -175,6 +183,25 @@ export default function NowModule() {
       return;
     }
     setRunning({ playbook, item: null, run: started.data, directTitle: title });
+  }
+
+  async function keepOffer() {
+    if (!offer) return;
+    setOfferPending(true);
+    const result = await createItem(instanceId as string, {
+      kind: offer.kind,
+      title: offer.title,
+      note: offer.note,
+      nextAt: offer.nextAt,
+    });
+    setOfferPending(false);
+    if (!result.ok) {
+      setStartError(describeResultError(result.error));
+      return;
+    }
+    addItem(result.data);
+    setOffer(null);
+    setClosing("It is in Life now.");
   }
 
   if (running) {
@@ -253,6 +280,13 @@ export default function NowModule() {
             />
           ) : null
         }
+        offer={
+          offer ? (
+            <KeepOffer title={offer.title} pending={offerPending} onKeep={keepOffer} onDecline={() => setOffer(null)} />
+          ) : null
+        }
+        firstWin={items.length === 0 && !closing && !offer}
+        onFirstWin={(key) => PLAYBOOK_BY_KEY[key] && startDirect(PLAYBOOK_BY_KEY[key], null)}
         closing={closing}
         startError={startError}
         sorting={Boolean(sorting)}

@@ -6,10 +6,12 @@ import Input from "@/design-system/Input";
 import { ArrowLeft, Check } from "@/design-system/Icon";
 import { describeResultError, type Result } from "@/product-framework/result";
 import ReadyStepCard from "./ReadyStep";
+import RecallPanel from "./RecallPanel";
 import {
   nextStep,
   OUTCOME_OPTIONS,
   runProgress,
+  recalledAnswers,
   visibleItems,
   visibleWording,
   type Answers,
@@ -291,9 +293,11 @@ function StepCard({
 
   if (step.kind === "prepare" || step.kind === "during") {
     const lines = visibleItems(step, answers);
+    const recalled = recalledAnswers(step, answers);
     return (
       <section className="flex flex-col gap-5">
         {heading}
+        <RecallPanel entries={recalled} />
         <ul className="flex flex-col gap-2">
           {lines.map((line) => (
             <li

@@ -24,13 +24,14 @@ import type { ShopProductInput } from "../definition";
  * plan in your head. The audience section names both doors rather than
  * making the second one require the first one's word for it.
  *
- * NOT CLAIMED, BECAUSE NOT BUILT: reminders, push notifications, email.
- * The product's own definition declares notifications: { supported:
- * false }, with the Phase 0 delivery research as the reason (push
- * reaches iOS only through a manual install no page can trigger, and web
- * push opt-in runs 3 to 15% even without one). A listing that promised
- * to reach somebody when the app is closed would be selling a thing
- * that does not exist yet.
+ * REMINDERS ARE CLAIMED NARROWLY, BECAUSE THEY ARE BUILT NARROWLY: one
+ * opt-in push notification, on a date the person chose, with quiet hours
+ * and a lock screen that says nothing about the item unless they allow
+ * it. Not claimed: email, any reminder about a thing with no chosen date,
+ * or reaching somebody whose device cannot receive push (iOS only does,
+ * from an installed home screen app, and web push opt-in runs 3 to 15%
+ * even without that step). A listing that promised more than that would
+ * be selling a thing that does not exist.
  *
  * $28 launch price, $35 regular. The seventh and last of the seven paid
  * products to get a real price, see the pricing plan's Phase 7.
@@ -59,7 +60,7 @@ export const alongsideShopProduct: ShopProductInput = {
     "You want it to track a diagnosis, medication, or symptoms. It does not ask about any of them and never will. It is built for how this feels, not for why.",
     "You want a habit tracker, a streak, or a score. There is no completion percentage anywhere in this product and no comparison between one week and another.",
     "You want it to remember the details of a bill, an account, or a policy. It records that you need to sort out a problem with the electricity bill, not the provider, the amount, or the account number. Personal Life Affairs Companion and Personal Finance Companion are where that detail belongs.",
-    "You want push notifications or email reminders today. It does not send either yet. What it does is stay quiet until something is actually worth mentioning, and say so plainly the moment you open it.",
+    "You want email reminders, or a nudge about things you never put a date on. It sends no email, and the only notification it can send is one for a date you chose yourself, and only if you switch that on. Everything else it does is stay quiet until something is actually worth mentioning, and say so plainly the moment you open it.",
   ],
   // Emptied by the content collapse: objections and faqs measured 75-81%
   // duplicate, and the Shop page rendered both, so the same worry was
@@ -202,7 +203,7 @@ export const alongsideShopProduct: ShopProductInput = {
     {
       question: "Does it send reminders or notifications?",
       answer:
-        "No. Nothing here pushes at you. Something you asked to be raised again comes back when you next open it, at the time you chose, and waits quietly until then.",
+        "Only if you switch it on, and only for a date you chose yourself. On that day it sends one notification, never during the quiet hours you set, and it says nothing about what it is for on your lock screen unless you allow that. It never sends email, never nudges about something you put no date on, and never counts what is waiting. On an iPhone it needs Alongside added to your home screen first. Switched off, or with no permission given, everything you asked to be raised again waits quietly until you next open it.",
       stage: ["deciding", "owning"],
     },
     {

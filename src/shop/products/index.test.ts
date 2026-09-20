@@ -553,8 +553,10 @@ describe("the Alongside listing", () => {
     }
   });
 
-  it("never promises reminders or notifications, which the product does not have yet", async () => {
+  it("claims reminders exactly as narrowly as they are built: opt-in, a date the person chose, never email", async () => {
     const product = await listing();
+    // The headline promise stays about the walkthrough. A reminder is a
+    // setting somebody switches on, not the reason to buy.
     const sold = JSON.stringify({
       promise: product?.promise,
       outcomes: product?.outcomes,
@@ -564,17 +566,23 @@ describe("the Alongside listing", () => {
     expect(sold).not.toContain("remind");
     expect(sold).not.toContain("push notification");
 
-    // Absence is not enough: the listing has to say plainly that it does
-    // not notify, or a reader assumes it does. Asserted on the answer's
-    // meaning rather than one exact sentence, so the copy can be rewritten
-    // without the guard going quiet.
+    // Asserted on the answer's meaning rather than one exact sentence, so
+    // the copy can be rewritten without the guard going quiet. Each clause
+    // is a limit the delivery code enforces (reminders.ts), so dropping one
+    // from the listing, or loosening the code, has to fail here.
     if (!product) throw new Error("no listing");
     const { allQuestions } = await import("../definition");
-    const notifications = allQuestions(product).find((q) =>
-      /reminder|notification/i.test(q.question)
-    );
-    expect(notifications, "nothing answers whether it sends reminders").toBeDefined();
-    expect(notifications!.answer.toLowerCase()).toMatch(/^no[.,]|does not send|not yet/);
+    const answer = allQuestions(product).find((q) => /reminder|notification/i.test(q.question));
+    expect(answer, "nothing answers whether it sends reminders").toBeDefined();
+    const text = answer!.answer.toLowerCase();
+    expect(text, "must say it is opt-in").toMatch(/only if you switch it on/);
+    expect(text, "must say it is only for a date the person chose").toMatch(/date you chose yourself/);
+    expect(text, "must say it never sends email").toMatch(/never sends email/);
+    expect(text).not.toMatch(/\boverdue\b|\bmissed\b|streak/);
+
+    // And the product really does declare it can notify, or this is a claim about nothing.
+    const { alongsideDefinition } = await import("@/products/alongside/definition");
+    expect(alongsideDefinition.notifications?.supported).toBe(true);
   });
 
   /**

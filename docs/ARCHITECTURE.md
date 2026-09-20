@@ -115,7 +115,7 @@ affect another.
 |---|---|
 | `/api/notifications/cron` | Reminders across users |
 | `/api/notifications/cron-hmc` | Home Base's own evaluator |
-| `/api/notifications/cron-life-updates` | Writes to the Updates feed for the four products with no push infrastructure |
+| `/api/notifications/cron-life-updates` | Writes to the Updates feed for the four products with no push infrastructure. Alongside alone also sends its opted-in, chosen-date reminder from here |
 
 ## What holds it together
 
