@@ -83,9 +83,9 @@ const SCREEN_CAPTIONS: Partial<Record<string, string[]>> = {
     "The printed half, drawn the way the book actually sets",
   ],
   alongside: [
-    "Now: two real attention reasons, each showing why it is there",
-    "The Companion, mid phone-call playbook, on the prepare step",
-    "Life: the shapes kept separate, never mixed together",
+    "Now: the one thing, on a card of its own, with one button and two ways to set it down",
+    "The call step, with your own words from earlier shown back while you talk",
+    "Life: the shapes kept separate, and what you have dealt with kept under Sorted",
   ],
   "travel-companion": [
     "Today: the real derived state, including what you are waiting on",
