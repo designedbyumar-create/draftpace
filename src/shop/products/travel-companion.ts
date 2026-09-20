@@ -21,7 +21,7 @@ import type { ShopProductInput } from "../definition";
  *   4. Live flight status, prices, or availability. There is no external
  *      data source anywhere in this product; every line it shows traces
  *      to something the traveller recorded.
- *   5. More than eight Companion situations.
+ *   5. More than nine Companion situations.
  *
  * NOT CLAIMED, BECAUSE NOT BUILT: notifications of any kind. The
  * product's own definition declares notifications: { supported: false }.
@@ -107,7 +107,7 @@ export const travelCompanionShopProduct: ShopProductInput = {
     "For anything booked around something else, say so once with a 'this depends on' picker. Nothing is ever inferred from timing or place, because two things on the same day are not necessarily connected.",
     "Today shows the current state, derived fresh from what you recorded: what is happening now, what is worth knowing about, and what you are waiting on.",
     "When something moves, record the change. It walks down what depends on it and shows every affected booking as potentially affected, never edited for you, so you decide what actually needs doing.",
-    "For each one, the Companion walks you through it: eight authored situations covering booking, flight, hotel and transport problems, plus the general ones for reorganising and letting people know.",
+    "For each one, the Companion walks you through it: nine authored situations covering booking, flight, hotel and transport problems, something lost or stolen, plus the general ones for reorganising and letting people know.",
     "Name a destination and it works out that place's real timezone from a small offline table, so today means today where you are. Unrecognised places are said to be undetected rather than guessed at, and you can set one by hand from the same table.",
     "Waiting to hear back becomes a real open thread, shown on Today until it is resolved, then filed into the record with the line it closed on.",
     "Print My Trip Book whenever you want a paper copy, blank and structured, as long or short as your trip needs.",
@@ -132,7 +132,7 @@ export const travelCompanionShopProduct: ShopProductInput = {
     "Trip: destinations, bookings, documents and preparation, with a Trip Brief summarising the whole thing at a glance",
     "Booking connections: say once what a booking depends on, and the product remembers the shape of your trip for you",
     "The change-impact walk: record a change and see exactly what was built on top of it, handled one booking at a time",
-    "The Companion: eight authored situations for when something goes wrong, including flight, hotel, transport and booking problems",
+    "The Companion: nine authored situations for when something goes wrong, including flight, hotel, transport and booking problems, and something lost or stolen",
     "Open threads: anything you are waiting to hear back on, surfaced while it matters and filed when it is resolved",
     "Real timezones per place, from an offline lookup with a searchable manual override, so a booking across a date line is never wrongly called today",
     "People: who is travelling, their requirements, and the documents that belong to them",

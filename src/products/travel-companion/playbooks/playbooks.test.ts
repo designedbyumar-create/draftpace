@@ -9,7 +9,7 @@ import { PLAYBOOKS, PLAYBOOK_BY_KEY, playbooksForBooking } from "./index";
  * invisible until somebody picks that exact path on a real screen.
  */
 describe("the library", () => {
-  it("has exactly the eight the founder locked, and no ninth", () => {
+  it("has exactly the nine, and no tenth: the eight the founder locked and the one added deliberately after", () => {
     expect(PLAYBOOKS.map((p) => p.key).sort()).toEqual(
       [
         "booking-problem",
@@ -19,6 +19,7 @@ describe("the library", () => {
         "something-changed",
         "reorganize-the-trip",
         "contact-someone",
+        "lost-or-stolen",
         "something-went-wrong",
       ].sort()
     );
@@ -134,4 +135,39 @@ describe("the library", () => {
       });
     });
   }
+});
+
+describe("lost or stolen", () => {
+  const playbook = PLAYBOOK_BY_KEY["lost-or-stolen"];
+  const text = JSON.stringify(playbook).toLowerCase();
+
+  it("says before anything else that it is not an emergency service", () => {
+    expect(playbook.steps[0].why).toMatch(/emergency services first/i);
+    expect(playbook.steps[0].kind).toBe("choose");
+  });
+
+  it("is a general situation, opened from Today rather than from one booking", () => {
+    expect(playbook.opensFor).toBeUndefined();
+    for (const kind of ["flight", "hotel", "train", "cruise"] as const) {
+      expect(playbooksForBooking(kind).some((p) => p.key === "lost-or-stolen")).toBe(false);
+    }
+  });
+
+  it("never claims what happens next: no fee, no timeline, no right, no promise, no legal or medical statement", () => {
+    expect(text).not.toMatch(/\bwithin \d+|\d+ (hours|days|weeks)|free of charge|no charge|you will (get|receive|be)|you are entitled|your rights?|compensation|refund|reimburs|liable|guarantee|the law (says|requires)|must (report|file)|\bmust\b|diagnos|treatment|insurance will/);
+  });
+
+  it("offers something to have in front of you and an opening line for every kind of thing that can be lost", () => {
+    for (const value of ["passport", "cards", "phone", "bag", "tickets", "other"]) {
+      const answers = { what: value };
+      const prepare = playbook.steps.find((s) => s.key === "prepare")!;
+      const opening = playbook.steps.find((s) => s.key === "opening")!;
+      expect(visibleItems(prepare, answers).length, `${value} has nothing to have in front of you`).toBeGreaterThan(1);
+      expect(visibleWording(opening, answers).length, `${value} has no opening line`).toBeGreaterThan(0);
+    }
+  });
+
+  it("keeps the product's voice: no urgency, no scoring, no dashes", () => {
+    expect(text).not.toMatch(/—|\bcalm\b|overdue|urgent|don't forget|\bjust\b/);
+  });
 });

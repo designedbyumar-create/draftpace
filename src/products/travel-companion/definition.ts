@@ -32,11 +32,12 @@ import { ProductDefinitionInput } from "@/product-framework/definition";
  * 4. The Companion engine is a shared, extracted runtime, not a fork of
  *    Alongside's implementation. See the shared engine work this
  *    product's Phase 3 depends on.
- * 5. Exactly eight Companion Mode situations in v1, locked: booking
- *    problem, flight problem, hotel problem, transport problem,
+ * 5. Exactly nine Companion Mode situations: eight locked in Phase 0
+ *    (booking problem, flight problem, hotel problem, transport problem,
  *    something changed, reorganize the trip, contact someone, something
- *    went wrong. Same "eight, and eight is the number" discipline as
- *    Alongside's own library.
+ *    went wrong) and a ninth added deliberately, for something lost or
+ *    stolen, the one situation the eight left uncovered. A test names
+ *    them all, so a tenth cannot arrive by accident.
  *
  * cycleModel is "continuous": one instance per account. A trip is a
  * user-created record inside it, the same tier Homeschooling
