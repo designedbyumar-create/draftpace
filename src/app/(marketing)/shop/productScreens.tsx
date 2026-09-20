@@ -73,9 +73,9 @@ const SCREEN_CAPTIONS: Partial<Record<string, string[]>> = {
     "Setup, which is tapping rather than typing",
   ],
   "personal-life-affairs-companion": [
-    "Next: one thing on screen, which is the whole design",
-    "Companion Mode: exactly one question is live",
-    "The Book, the artifact all of it is aimed at",
+    "Next: one step, on a page of the book, showing what the answer becomes",
+    "Companion Mode: exactly one question is live, on the same page",
+    "The Book: a cover, index tabs, and what somebody would receive",
   ],
   "homeschooling-companion": [
     "Today, grouped by child, never interleaved",

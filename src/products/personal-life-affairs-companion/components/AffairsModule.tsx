@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import Button from "@/design-system/Button";
 import EmptyState from "@/design-system/EmptyState";
-import { ChevronRight, Layers3 } from "@/design-system/Icon";
+import { Layers3 } from "@/design-system/Icon";
 import { describeResultError } from "@/product-framework/result";
 import { findInOrderInstanceId, PERSONAL_LIFE_AFFAIRS_COMPANION_SLUG } from "../instanceData";
 import { archiveItem, confirmItem, loadItems, loadProfile, loadRevisions, loadSteps, updateItem } from "../domain/affairsData";
@@ -12,6 +12,7 @@ import { needsReview, type AffairItem, type AffairItemRevision } from "../lifeAf
 import type { AffairProfile, StepRecord } from "../sequencer";
 import { captureFor, type AffairItemDraft } from "../capture";
 import CompanionCapture from "./CompanionCapture";
+import AffairsContents from "./AffairsContents";
 import HandoffCheckPanel from "./HandoffCheckPanel";
 
 type LoadStatus = "loading" | "ready" | "no-instance" | "error";
@@ -48,20 +49,6 @@ function formatMonth(iso: string | null): string | null {
   const d = new Date(iso);
   if (Number.isNaN(d.getTime())) return null;
   return d.toLocaleDateString("en-GB", { month: "long", year: "numeric" });
-}
-
-/**
- * How a record reads in a list: what it is, then the one or two things
- * that identify it. Never every field, because a list of everything is
- * the detail page and there would then be no reason to open one.
- */
-function summarise(item: AffairItem): string[] {
-  const lines: string[] = [];
-  if (item.personName && item.personName !== item.label) lines.push(item.personName);
-  if (item.fields.relationship) lines.push(item.fields.relationship);
-  if (item.fields.role) lines.push(item.fields.role);
-  if (item.whereabouts) lines.push(item.whereabouts);
-  return lines.slice(0, 2);
 }
 
 export default function AffairsModule() {
@@ -309,45 +296,7 @@ export default function AffairsModule() {
         </p>
       </div>
 
-      {byArea.map(({ area, entries }) => (
-        <section key={area} aria-label={AFFAIR_DOMAIN_LABEL[area]}>
-          <h2 className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">
-            {AFFAIR_DOMAIN_LABEL[area]}
-          </h2>
-          <div className="mt-2 flex flex-col">
-            {entries.map((item) => {
-              const stale = needsReview(item, now);
-              return (
-                <button
-                  key={item.id}
-                  type="button"
-                  onClick={() => setOpenId(item.id)}
-                  className="group flex items-center gap-3 border-b border-[var(--border)] py-3 text-left transition-colors hover:bg-[var(--surface-muted)]"
-                >
-                  <span className="min-w-0 flex-1">
-                    <span className="block text-[14px] font-semibold text-[var(--text)]">{item.label}</span>
-                    {summarise(item).map((line) => (
-                      <span key={line} className="block text-[12.5px] leading-relaxed text-[var(--muted)]">
-                        {line}
-                      </span>
-                    ))}
-                    {stale && (
-                      <span className="mt-0.5 block text-[11.5px] font-semibold text-[var(--primary)]">
-                        Worth checking again
-                      </span>
-                    )}
-                  </span>
-                  <ChevronRight
-                    size={15}
-                    aria-hidden
-                    className="shrink-0 text-[var(--faint)] transition-colors group-hover:text-[var(--muted)]"
-                  />
-                </button>
-              );
-            })}
-          </div>
-        </section>
-      ))}
+      <AffairsContents groups={byArea} now={now} onOpen={setOpenId} />
 
       <HandoffCheckPanel
         profile={profile}

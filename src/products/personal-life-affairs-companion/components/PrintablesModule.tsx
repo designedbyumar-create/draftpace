@@ -7,11 +7,11 @@ import { BookOpen, Download } from "@/design-system/Icon";
 import { describeResultError } from "@/product-framework/result";
 import { findInOrderInstanceId } from "../instanceData";
 import { loadItems, loadProfile, loadSteps } from "../domain/affairsData";
-import { BOOK_ATTRIBUTION, BOOK_NAME, deriveReadiness, isBlankCopy } from "../completion";
+import { deriveReadiness, isBlankCopy } from "../completion";
 import { intakeComplete } from "../intake";
-import { AFFAIR_AREA_LABEL, AFFAIR_AREA_ORDER, type AffairArea } from "../affairsKnowledge";
-import { describeItem, type AffairItem } from "../lifeAffairs";
+import type { AffairItem } from "../lifeAffairs";
 import type { AffairProfile, StepRecord } from "../sequencer";
+import BookSpread from "./BookSpread";
 
 type LoadStatus = "loading" | "ready" | "no-instance" | "error";
 type Size = "LETTER" | "A4";
@@ -104,11 +104,6 @@ export default function PrintablesModule() {
   const personalised = intakeComplete(profile);
   const blank = isBlankCopy(readiness);
 
-  const byArea = AFFAIR_AREA_ORDER.map((area) => ({
-    area,
-    entries: items.filter((i) => i.area === area),
-  })).filter((group) => group.entries.length > 0);
-
   const lastUpdated = readiness.lastConfirmedAt
     ? new Date(readiness.lastConfirmedAt).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })
     : null;
@@ -136,67 +131,8 @@ export default function PrintablesModule() {
         </p>
       )}
 
-      {/* ------------------------------------------------- the preview */}
-      {byArea.length > 0 && (
-        <section
-          aria-label="Preview of your book"
-          className="overflow-hidden rounded-xl border border-[var(--border)]"
-          style={{ backgroundColor: "#fbfaf7" }}
-        >
-          <div className="border-b border-[#e3e0d8] px-6 py-5">
-            {/* Mirrors the cover exactly: the attribution small and
-                above, the document's own name carrying the size. */}
-            <p className="text-[9.5px] font-bold uppercase tracking-[0.16em]" style={{ color: "#26374f" }}>
-              {BOOK_ATTRIBUTION}
-            </p>
-            <h2 className="mt-2 text-[22px] leading-tight" style={{ fontFamily: "var(--font-newsreader), serif", color: "#1a1d24" }}>
-              {BOOK_NAME}
-            </h2>
-            {lastUpdated && (
-              <p className="mt-1.5 text-[11.5px]" style={{ color: "#666b77" }}>
-                Last updated {lastUpdated}
-              </p>
-            )}
-          </div>
-
-          <div className="flex flex-col gap-5 px-6 py-5">
-            {byArea.map(({ area, entries }) => (
-              <div key={area}>
-                <p className="text-[9.5px] font-bold uppercase tracking-[0.16em]" style={{ color: "#949aa6" }}>
-                  {AFFAIR_AREA_LABEL[area as AffairArea]}
-                </p>
-                <div className="mt-2 flex flex-col gap-3">
-                  {entries.map((item) => {
-                    const detail = describeItem(item);
-                    return (
-                      <div key={item.id} className="border-l-2 pl-3" style={{ borderColor: "#e6eaf0" }}>
-                        <p className="text-[13.5px]" style={{ color: "#1a1d24" }}>
-                          {item.label}
-                        </p>
-                        {detail && detail !== item.label && (
-                          <p className="mt-0.5 text-[12.5px] leading-relaxed" style={{ color: "#3b3f49" }}>
-                            {detail}
-                          </p>
-                        )}
-                        {item.notes && (
-                          <p className="mt-1 text-[12px] leading-relaxed" style={{ color: "#666b77" }}>
-                            {item.notes}
-                          </p>
-                        )}
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <p className="border-t border-[#e3e0d8] px-6 py-3 text-[11.5px]" style={{ color: "#666b77" }}>
-            The printed copy carries the date you last confirmed each entry, so whoever holds it can tell what is
-            current.
-          </p>
-        </section>
-      )}
+      {/* ------------------------------------------------- the book */}
+      <BookSpread lastUpdated={lastUpdated} items={items} />
 
       {/* --------------------------------------------------- the modes */}
       <div className="flex flex-wrap items-center gap-2">

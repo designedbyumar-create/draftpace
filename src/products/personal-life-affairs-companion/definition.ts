@@ -57,7 +57,7 @@ export const personalLifeAffairsCompanionDefinition: ProductDefinitionInput = {
     description:
       "In Order by Draftpace: everything the people you love would need to find, in one place and kept current.",
     themeColor: "#26374f",
-    backgroundColor: "#fbfaf7",
+    backgroundColor: "#efebe2",
     // This product's own icon, so installing two Companions does not
     // put two identical Draftpace squares on the home screen. Same
     // monogram, this product's accent, generated from Logo.tsx's own
@@ -144,13 +144,23 @@ export const personalLifeAffairsCompanionDefinition: ProductDefinitionInput = {
   permissions: [],
   events: [],
   /**
-   * Ink and brass. Deliberately not a recolour of a sibling: covered up,
+   * Ink and paper. Deliberately not a recolour of a sibling: covered up,
    * this product must be distinguishable from Home Base's sage warmth and
    * PFC's teal density (the P3 distinctiveness test).
+   *
+   * The product is a book, so the ground is paper on a desk: a cream page
+   * over a warmer, deeper cream, with ink for type. Pinterest's own
+   * results for this kind of product are sage and teal or red and black,
+   * so ink navy on cream is both this product's own hue and the one open
+   * seat in that feed. The book's cover keeps its cloth blue in the dark
+   * theme too, because a cover is an object and objects do not invert.
    *
    * Ink blue carries signatures, documents and permanence. Brass is the
    * colour of "done" and is spent only on completion, which is why it is
    * declared here as the accent while ink carries the primary scale.
+   *
+   * Every text pair clears 4.5:1 and body text clears 7:1, in both themes
+   * (src/product-framework/ground.test.ts).
    */
   theme: {
     accent: "#26374f",
@@ -163,13 +173,45 @@ export const personalLifeAffairsCompanionDefinition: ProductDefinitionInput = {
       // section background rather than a second computed identity.
       wash: "#f2f4f7",
     },
+    accentScaleDark: {
+      base: "#9db4d6",
+      strong: "#b9cbe4",
+      soft: "#1e2a3d",
+      contrast: "#0f1a2b",
+      wash: "#182234",
+    },
+    ground: {
+      light: {
+        appBg: "#efebe2",
+        surface: "#fbf8f1",
+        surfaceMuted: "#f1ede3",
+        surfaceStrong: "#e4ded0",
+        text: "#1b1f27",
+        muted: "#565c68",
+        faint: "#626875",
+        border: "#e2dccd",
+        borderStrong: "#cfc8b6",
+      },
+      dark: {
+        appBg: "#0f1218",
+        surface: "#171b24",
+        surfaceMuted: "#1d222c",
+        surfaceStrong: "#262c38",
+        text: "#edeae2",
+        muted: "#a8aeba",
+        faint: "#8d94a1",
+        border: "rgba(237, 234, 226, 0.10)",
+        borderStrong: "rgba(237, 234, 226, 0.17)",
+      },
+    },
     // The instruction is this product's hero, so the narrative serif
     // carries a sentence telling you what to do, not a number and not a
     // description of your home.
     narrativeFont: "var(--font-newsreader), ui-serif, Georgia, serif",
     motionPersonality: "calm",
     contentWidth: "narrow",
-    identity: { motif: "book" },
+    // A book has small corners. `sharp` scales the platform radii to 45%.
+    identity: { motif: "book", shape: "sharp" },
   },
   layouts: ["responsive"],
   offline: "shell-only",

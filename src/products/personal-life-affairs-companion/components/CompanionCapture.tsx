@@ -7,7 +7,8 @@ import { ArrowRight, Check } from "@/design-system/Icon";
 import { applicablePrompts, buildDraft, captureProgress, nextPrompt, UNSURE } from "../capture";
 import type { AffairItemDraft, CaptureAnswers } from "../capture";
 import type { CapturePrompt, CaptureSpec } from "../captures";
-import type { AffairStep } from "../affairsKnowledge";
+import { AFFAIR_AREA_LABEL, type AffairStep } from "../affairsKnowledge";
+import BookPage from "./BookPage";
 import type { AffairItem } from "../lifeAffairs";
 
 /**
@@ -116,9 +117,10 @@ export default function CompanionCapture({ step, spec, editing, pending, onSave,
   }
 
   return (
-    <section aria-label={step.instruction} className="flex flex-col gap-5">
+    <BookPage label={step.instruction} head={AFFAIR_AREA_LABEL[step.area]} ribbon>
+      <div className="flex flex-col gap-5 pt-4">
       <div>
-        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">
+        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">
           {editing ? "Bringing this up to date" : step.instruction.replace(/\.$/, "")}
         </p>
         {progress.total > 1 && (
@@ -247,6 +249,7 @@ export default function CompanionCapture({ step, spec, editing, pending, onSave,
           </div>
         </div>
       )}
-    </section>
+      </div>
+    </BookPage>
   );
 }

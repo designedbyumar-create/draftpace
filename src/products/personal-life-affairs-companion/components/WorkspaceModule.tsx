@@ -26,7 +26,9 @@ import { INTAKE_QUESTIONS, nextUnansweredIntake } from "../intake";
 import { deriveReadiness } from "../completion";
 import { acknowledge, captureFor, type AffairItemDraft } from "../capture";
 import { describeItem, type AffairItem } from "../lifeAffairs";
+import BookPage from "./BookPage";
 import CompanionCapture from "./CompanionCapture";
+import NextStepPage from "./NextStepPage";
 import type { AffairGate } from "../affairsKnowledge";
 
 type LoadStatus = "loading" | "ready" | "no-instance" | "error";
@@ -222,16 +224,15 @@ export default function WorkspaceModule() {
     return (
       <div className="flex flex-col gap-5">
         {errorBanner}
-        <section aria-label="About you">
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">A few questions first</p>
+        <BookPage label="About you" head="A few questions first" ribbon>
           <h1
-            className="mt-2 text-[26px] leading-tight text-[var(--text)]"
+            className="mt-4 text-[28px] leading-[1.15] text-[var(--text)] [text-wrap:balance]"
             style={{ fontFamily: "var(--product-narrative-font, inherit)" }}
           >
             {intake.question}
           </h1>
-          <p className="mt-2 max-w-lg text-[13.5px] leading-relaxed text-[var(--muted)]">{intake.why}</p>
-          <div className="mt-4 flex flex-wrap gap-2">
+          <p className="mt-3 text-[15px] leading-[1.6] text-[var(--muted)]">{intake.why}</p>
+          <div className="mt-5 flex flex-wrap gap-2">
             <Button variant="action" size="sm" disabled={pending} onClick={() => answerIntake(intake.gate, true)}>
               Yes
             </Button>
@@ -239,10 +240,10 @@ export default function WorkspaceModule() {
               No
             </Button>
           </div>
-          <p className="mt-4 text-[12px] text-[var(--faint)]">
+          <p className="mt-5 border-t border-dotted border-[var(--border-strong)] pt-3 text-[12px] text-[var(--muted)]">
             {INTAKE_QUESTIONS.length} short questions. They decide what this product will and will not ask you about.
           </p>
-        </section>
+        </BookPage>
       </div>
     );
   }
@@ -299,129 +300,104 @@ export default function WorkspaceModule() {
       )}
 
       {next ? (
-        <motion.section
+        <motion.div
           key={next.step.key}
-          aria-label="Your next step"
           initial="hidden"
           animate="visible"
           variants={entranceVariant(Boolean(reduceMotion))}
         >
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Next</p>
-          <p className="mt-1.5 text-[13px] text-[var(--muted)]">
-            {next.reason === "needsRecheck"
-              ? "Worth checking again."
-              : next.reason === "needsDetail"
-                ? "Worth filling in."
+          <NextStepPage
+            area={next.step.area}
+            lead={
+              next.reason === "needsRecheck"
+                ? "Worth checking again."
+                : next.reason === "needsDetail"
+                  ? "Worth filling in."
+                  : next.reason === "wasUnsure"
+                    ? "You were not sure about this last time."
+                    : state.establishedCount === 0
+                      ? "Let us start with one thing."
+                      : "One thing worth taking care of."
+            }
+            instruction={next.step.instruction}
+            body={
+              next.reason === "needsDetail"
+                ? "You dealt with this before this product started keeping the details. Adding them now is what puts the answer into the copy you would hand somebody."
                 : next.reason === "wasUnsure"
-                  ? "You were not sure about this last time."
-                  : state.establishedCount === 0
-                    ? "Let us start with one thing."
-                    : "One thing worth taking care of."}
-          </p>
-          <h1
-            className="mt-2 text-[26px] leading-tight text-[var(--text)]"
-            style={{ fontFamily: "var(--product-narrative-font, inherit)" }}
-          >
-            {next.step.instruction}
-          </h1>
-          <p className="mt-2 max-w-lg text-[13.5px] leading-relaxed text-[var(--muted)]">
-            {next.reason === "needsDetail"
-              ? "You dealt with this before this product started keeping the details. Adding them now is what puts the answer into the copy you would hand somebody."
-              : next.reason === "wasUnsure"
-                ? "You said you were not sure last time. Now is as good a moment as any, and it is still fine not to know."
-                : next.step.why}
-          </p>
-
-          {next.step.referOut && (
-            <p className="mt-3 max-w-lg rounded-lg border border-[var(--border)] bg-[var(--surface-muted)] p-3 text-[12.5px] leading-relaxed text-[var(--muted)]">
-              {next.step.referOut}
-            </p>
-          )}
-
-          {/* What is already recorded, shown before asking anything about
-              it. Somebody rechecking needs to see the answer they are
-              being asked to vouch for. */}
-          {next.existing.length > 0 && (
-            <ul aria-label="What is recorded now" className="mt-4 flex flex-col gap-2">
-              {next.existing.map((existing) => (
-                <li
-                  key={existing.id}
-                  className="rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3.5 py-3"
-                >
-                  <p className="text-[14px] font-semibold text-[var(--text)]">{existing.label}</p>
-                  {describeItem(existing) !== existing.label && (
-                    <p className="mt-0.5 text-[12.5px] leading-relaxed text-[var(--muted)]">{describeItem(existing)}</p>
-                  )}
-                  {existing.notes && (
-                    <p className="mt-1 text-[12.5px] leading-relaxed text-[var(--muted)]">{existing.notes}</p>
-                  )}
-                </li>
-              ))}
-            </ul>
-          )}
-
-          <p className="mt-4 text-[12px] text-[var(--faint)]">About {next.step.minutes} minutes</p>
-
-          <div className="mt-5 flex flex-wrap gap-2">
-            {next.reason === "needsRecheck" && next.existing.length > 0 ? (
+                  ? "You said you were not sure last time. Now is as good a moment as any, and it is still fine not to know."
+                  : next.step.why
+            }
+            referOut={next.step.referOut}
+            existing={next.existing.map((existing) => ({
+              id: existing.id,
+              label: existing.label,
+              detail: describeItem(existing) !== existing.label ? describeItem(existing) : null,
+              notes: existing.notes,
+            }))}
+            bookLabel={next.step.bookLabel}
+            minutes={next.step.minutes}
+            actions={
               <>
-                <Button variant="commit" size="sm" disabled={pending} onClick={() => confirmStanding(next.existing[0])}>
-                  Still true
+                {next.reason === "needsRecheck" && next.existing.length > 0 ? (
+                  <>
+                    <Button variant="commit" size="sm" disabled={pending} onClick={() => confirmStanding(next.existing[0])}>
+                      Still true
+                    </Button>
+                    <Button
+                      size="sm"
+                      variant="secondary"
+                      disabled={pending}
+                      onClick={() => setCapturing({ stepKey: next.step.key, editing: next.existing[0] })}
+                    >
+                      Update it
+                    </Button>
+                  </>
+                ) : next.step.kind === "establish" && spec ? (
+                  <Button variant="action"
+                    size="sm"
+                    disabled={pending}
+                    onClick={() => {
+                      setAcknowledgement(null);
+                      setCapturing({ stepKey: next.step.key, editing: null });
+                    }}
+                  >
+                    {next.reason === "needsDetail" ? "Add the details" : "Start"}
+                  </Button>
+                ) : (
+                  <Button variant="commit" size="sm" disabled={pending} onClick={() => act(next.step.key, "confirmed")}>
+                    Done this
+                  </Button>
+                )}
+
+                <Button size="sm" variant="secondary" disabled={pending} onClick={() => act(next.step.key, "notRelevant")}>
+                  Not relevant to me
                 </Button>
+                {next.step.kind === "action" && next.reason !== "needsRecheck" && (
+                  <Button size="sm" variant="ghost" disabled={pending} onClick={() => act(next.step.key, "unsure")}>
+                    {"I'm not sure"}
+                  </Button>
+                )}
                 <Button
                   size="sm"
-                  variant="secondary"
+                  variant="ghost"
                   disabled={pending}
-                  onClick={() => setCapturing({ stepKey: next.step.key, editing: next.existing[0] })}
+                  onClick={() => act(next.step.key, "open", next.reason === "needsDetail" ? LEAVE_IT_DAYS : SNOOZE_DAYS)}
                 >
-                  Update it
+                  Later
                 </Button>
               </>
-            ) : next.step.kind === "establish" && spec ? (
-              <Button variant="action"
-                size="sm"
-                disabled={pending}
-                onClick={() => {
-                  setAcknowledgement(null);
-                  setCapturing({ stepKey: next.step.key, editing: null });
-                }}
-              >
-                {next.reason === "needsDetail" ? "Add the details" : "Start"}
-              </Button>
-            ) : (
-              <Button variant="commit" size="sm" disabled={pending} onClick={() => act(next.step.key, "confirmed")}>
-                Done this
-              </Button>
-            )}
-
-            <Button size="sm" variant="secondary" disabled={pending} onClick={() => act(next.step.key, "notRelevant")}>
-              Not relevant to me
-            </Button>
-            {next.step.kind === "action" && next.reason !== "needsRecheck" && (
-              <Button size="sm" variant="ghost" disabled={pending} onClick={() => act(next.step.key, "unsure")}>
-                {"I'm not sure"}
-              </Button>
-            )}
-            <Button
-              size="sm"
-              variant="ghost"
-              disabled={pending}
-              onClick={() => act(next.step.key, "open", next.reason === "needsDetail" ? LEAVE_IT_DAYS : SNOOZE_DAYS)}
-            >
-              Later
-            </Button>
-          </div>
-        </motion.section>
+            }
+          />
+        </motion.div>
       ) : (
-        <section aria-label="Nothing needs your attention">
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Next</p>
+        <BookPage label="Nothing needs your attention" head="Next">
           <h1
-            className="mt-3 text-[26px] leading-tight text-[var(--text)]"
+            className="mt-4 text-[28px] leading-[1.15] text-[var(--text)] [text-wrap:balance]"
             style={{ fontFamily: "var(--product-narrative-font, inherit)" }}
           >
             Nothing needs your attention right now.
           </h1>
-          <p className="mt-2 max-w-lg text-[13.5px] leading-relaxed text-[var(--muted)]">
+          <p className="mt-3 text-[15px] leading-[1.6] text-[var(--muted)]">
             Everything you have told us about is currently in good shape. We will let you know when something is worth
             checking again.
           </p>
@@ -430,13 +406,13 @@ export default function WorkspaceModule() {
             keep somebody busy has stopped being useful to them and
             started being useful to itself.
           */}
-          <div className="mt-5 flex items-center gap-2 text-[13px] text-[var(--primary)]">
+          <div className="mt-5 flex items-center gap-2 border-t border-dotted border-[var(--border-strong)] pt-3 text-[13px] text-[var(--primary)]">
             <CheckCircle2 size={17} aria-hidden />
             <span>
               {readiness.itemCount === 1 ? "One thing in order." : `${readiness.itemCount} things in order.`}
             </span>
           </div>
-        </section>
+        </BookPage>
       )}
 
     </div>
