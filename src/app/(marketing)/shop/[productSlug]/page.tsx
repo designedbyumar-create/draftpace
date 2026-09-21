@@ -10,10 +10,12 @@ import { allQuestions, discountPercent, formatCompareAtPrice, formatPrice, quest
 import SearchedProblems from "./SearchedProblems";
 import { ensureShopRegistered } from "@/shop/ensureRegistered";
 import RichSection from "./RichSection";
+import type { ReactNode } from "react";
 import ProblemCards from "./ProblemCards";
 import AddToLibraryButton from "../AddToLibraryButton";
 import ProductGallery from "./ProductGallery";
 import ProductScreenCarousel from "./ProductScreenCarousel";
+import DetailTabs, { type DetailTab } from "./DetailTabs";
 import { screenTourFor } from "../productScreens";
 import StickyBuyBar from "./StickyBuyBar";
 import { productRegistry } from "@/product-framework/registry";
@@ -134,6 +136,8 @@ export default async function ShopProductPage({
   // agrees on the exact same checkout link rather than each independently
   // re-deriving it.
   const checkout = await resolveCheckout(product);
+
+  const detailTabs = buildDetailTabs(product, { accent, installedName, installable, decidingQuestions });
 
   return (
     /*
@@ -272,177 +276,16 @@ export default async function ShopProductPage({
       </Container>
 
       <Container width="standard" className="pb-28">
-        {/* What it includes, first: the reader has just decided to keep
-            reading, and this is the question they are actually holding. */}
-        <RichSection eyebrow="Included" title="What it includes">
-          <div className="grid gap-x-10 gap-y-4 sm:grid-cols-2">
-            {product.inclusions.map((line) => (
-              <div key={line} className="flex items-start gap-2.5 border-b border-[var(--border)] pb-4">
-                <Check size={16} className="mt-1 shrink-0" style={{ color: accent }} aria-hidden />
-                <span className="text-[14.5px] leading-relaxed">{line}</span>
-              </div>
-            ))}
-          </div>
-          {product.compatibility.length > 0 && (
-            <p className="mt-5 text-[13px] text-[var(--faint)]">{product.compatibility.join(" · ")}</p>
-          )}
-        </RichSection>
-
-        {product.problemsSolved.length > 0 ? (
-          <RichSection eyebrow="The problem" title="What this solves">
-            <p className="mb-5 text-[var(--muted)]">{product.problem}</p>
-            <ProblemCards items={product.problemsSolved} />
-          </RichSection>
-        ) : (
-          <>
-            {product.audience.length > 0 && (
-              <RichSection eyebrow="Who this is for">
-                <ul className="flex flex-col gap-2.5">
-                  {product.audience.map((line) => (
-                    <li key={line} className="flex items-start gap-2.5">
-                      <Check size={17} className="mt-0.5 shrink-0 text-[var(--success)]" aria-hidden />
-                      {line}
-                    </li>
-                  ))}
-                </ul>
-              </RichSection>
-            )}
-          </>
-        )}
-
-        {product.howItWorks.length > 0 && (
-          <RichSection eyebrow="In use" title="How it works">
-            <ol className="grid gap-x-8 gap-y-5 sm:grid-cols-2">
-              {product.howItWorks.map((step, index) => (
-                <li key={step} className="flex items-start gap-3">
-                  <span
-                    className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[12px] font-bold text-white"
-                    style={{ backgroundColor: accent }}
-                  >
-                    {index + 1}
-                  </span>
-                  <span className="text-[14.5px] leading-relaxed text-[var(--muted)]">{step}</span>
-                </li>
-              ))}
-            </ol>
-          </RichSection>
-        )}
-
-        {product.searchedProblems.length > 0 && (
-          <RichSection eyebrow="In your words" title="Which of these is you?">
-            <SearchedProblems items={product.searchedProblems} />
-          </RichSection>
-        )}
-
         {/*
-          How the product reaches a phone. Every claim here is true of the
-          shipped PWA: each product serves its own manifest, scoped to its
-          own routes, with its own icon and name (see the product's
-          manifest.webmanifest route), and installs from inside itself.
-          Only rendered for a product that actually declares `pwa`.
+          Everything below the buy box, one question at a time. The page
+          used to run nine sections down a single column, about 1,500
+          words that restated one another. DetailTabs keeps every panel in
+          the page but shows one, and the first is the one a reader
+          arrives holding: what does this fix.
         */}
-        {installable && (
-          <RichSection eyebrow="On your devices" title="It works like an app, without an app store">
-            <p className="max-w-[42rem] leading-relaxed text-[var(--muted)]">
-              {product.title} runs in your browser, and installs to your phone from there. No App Store, no
-              Play Store, no download, and no update to remember. Add it once and it gets its own icon and
-              its own window, like any other app on your phone.
-            </p>
-            <div className="mt-7 grid gap-6 sm:grid-cols-3">
-              <div>
-                <p className="text-[13px] font-bold text-[var(--text)]">On iPhone and iPad</p>
-                <p className="mt-2 text-[14px] leading-relaxed text-[var(--muted)]">
-                  Open it in Safari, tap Share, then Add to Home Screen. It opens full screen from then on,
-                  with no browser bar.
-                </p>
-              </div>
-              <div>
-                <p className="text-[13px] font-bold text-[var(--text)]">On Android</p>
-                <p className="mt-2 text-[14px] leading-relaxed text-[var(--muted)]">
-                  Chrome offers to install it, or you can tap Install in the product&apos;s own settings. One
-                  tap and it is on your home screen.
-                </p>
-              </div>
-              <div>
-                <p className="text-[13px] font-bold text-[var(--text)]">On computers</p>
-                <p className="mt-2 text-[14px] leading-relaxed text-[var(--muted)]">
-                  It works in any modern browser as it is. Chrome and Edge will also install it as its own
-                  desktop window if you would rather it were not a tab.
-                </p>
-              </div>
-            </div>
-            <p className="mt-6 max-w-[42rem] border-t border-[var(--border)] pt-5 text-[14px] leading-relaxed text-[var(--muted)]">
-              <span className="font-semibold text-[var(--text)]">Installs as {installedName}, not as Draftpace.</span>{" "}
-              Each Companion has its own icon and its own window, so owning three of them gives you three
-              separate apps rather than one to navigate inside. Your work is tied to your account rather
-              than the device, so signing in anywhere brings all of it with you.
-            </p>
-          </RichSection>
-        )}
-
-        {product.audienceExclusions.length > 0 && (
-          <RichSection eyebrow="Honesty" title="Maybe not for you if">
-            <ul className="flex flex-col gap-2.5">
-              {product.audienceExclusions.map((line) => (
-                <li key={line} className="flex items-start gap-2.5 text-[var(--muted)]">
-                  <X size={17} className="mt-0.5 shrink-0 text-[var(--faint)]" aria-hidden />
-                  {line}
-                </li>
-              ))}
-            </ul>
-          </RichSection>
-        )}
-
-        {product.privacyNotes && (
-          <RichSection eyebrow="Your data" title="Privacy and data">
-            <p className="max-w-[42rem] leading-relaxed text-[var(--muted)]">{product.privacyNotes}</p>
-          </RichSection>
-        )}
-
-        {/*
-          Stated before the second buy button, not after it. Somebody
-          deciding whether to spend money is entitled to know the refund
-          position while they are still deciding.
-        */}
-        <RichSection eyebrow="Before you buy" title="About refunds">
-          <div className="max-w-[42rem]">
-            <p className="leading-relaxed text-[var(--text)]">
-              {product.title} is a digital product, delivered to your account the moment your payment
-              clears. Because of that we do not offer refunds once access has been granted.
-            </p>
-            <p className="mt-4 leading-relaxed text-[var(--muted)]">
-              We would rather you did not need one. Everything on this page describes what the product
-              actually does, and Monthly Money Reset is free if you would like to see how we build before
-              you spend anything.
-            </p>
-            <p className="mt-4 leading-relaxed text-[var(--muted)]">
-              If something is not working, is not what you understood it to be, or you were charged in
-              error, please write to us. We read every message and we will put it right.
-            </p>
-            <Link
-              href="/support"
-              className="mt-5 inline-flex items-center gap-1.5 text-[14px] font-semibold hover:underline"
-              style={{ color: accent }}
-            >
-              Contact support <ArrowRight size={14} aria-hidden />
-            </Link>
-          </div>
-        </RichSection>
-
-        {decidingQuestions.length > 0 && (
-          <RichSection eyebrow="Straight answers" title="Honest answers before you decide">
-            <div className="flex flex-col divide-y divide-[var(--border)]">
-              {decidingQuestions.map((faq) => (
-                <details key={faq.question} className="group py-3 first:pt-0">
-                  <summary className="cursor-pointer text-[15px] font-semibold text-[var(--text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]">
-                    {faq.question}
-                  </summary>
-                  <p className="mt-2 leading-relaxed text-[var(--muted)]">{faq.answer}</p>
-                </details>
-              ))}
-            </div>
-          </RichSection>
-        )}
+        <section className="mt-16 sm:mt-20" aria-label="About this product">
+          <DetailTabs accent={accent} tabs={detailTabs} />
+        </section>
 
         {product.relatedProductSlugs.length > 0 && (
           <RichSection eyebrow="Related">
@@ -486,6 +329,197 @@ export default async function ShopProductPage({
       </Container>
     </div>
   );
+}
+
+/** The first N of a list, and the rest behind a plain disclosure, so a long list costs one line until somebody asks. */
+function Fold({ items, keep, noun, children }: { items: string[]; keep: number; noun: string; children: (line: string) => ReactNode }) {
+  const shown = items.slice(0, keep);
+  const rest = items.slice(keep);
+  return (
+    <>
+      {shown.map((line) => children(line))}
+      {rest.length > 0 && (
+        <details className="group sm:col-span-2">
+          <summary className="cursor-pointer text-[14px] font-semibold text-[var(--primary)] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]">
+            <span className="group-open:hidden">{`Show ${rest.length} more ${noun}`}</span>
+            <span className="hidden group-open:inline">{`Show fewer ${noun}`}</span>
+          </summary>
+          <div className="mt-4 grid gap-x-10 gap-y-4 sm:grid-cols-2">{rest.map((line) => children(line))}</div>
+        </details>
+      )}
+    </>
+  );
+}
+
+/**
+ * The detail panels, in the order a reader's questions arrive: what does
+ * this fix, what do I get, how does it work, is it for me, what else would
+ * I ask, and what happens to my data and my money. Each panel says only
+ * what its question needs. The long-form install, privacy and refund text
+ * that used to be three full sections is a few lines here, with the whole
+ * privacy statement still one tap away.
+ */
+function buildDetailTabs(
+  product: ShopProduct,
+  ctx: { accent: string; installedName: string; installable: boolean; decidingQuestions: { question: string; answer: string }[] }
+): DetailTab[] {
+  const { accent, installedName, installable, decidingQuestions } = ctx;
+  const tabs: DetailTab[] = [];
+
+  if (product.problemsSolved.length > 0) {
+    tabs.push({
+      id: "solves",
+      label: "The problem",
+      content: (
+        <>
+          <p className="mb-5 text-[var(--muted)]">{product.problem}</p>
+          <ProblemCards items={product.problemsSolved} />
+        </>
+      ),
+    });
+  }
+
+  tabs.push({
+    id: "included",
+    label: "What's included",
+    content: (
+      <>
+        <div className="grid gap-x-10 gap-y-4 sm:grid-cols-2">
+          <Fold items={product.inclusions} keep={6} noun="things">
+            {(line) => (
+              <div key={line} className="flex items-start gap-2.5 border-b border-[var(--border)] pb-4">
+                <Check size={16} className="mt-1 shrink-0" style={{ color: accent }} aria-hidden />
+                <span className="text-[14.5px] leading-relaxed">{line}</span>
+              </div>
+            )}
+          </Fold>
+        </div>
+        {product.compatibility.length > 0 && <p className="mt-5 text-[13px] text-[var(--faint)]">{product.compatibility.join(" \u00b7 ")}</p>}
+      </>
+    ),
+  });
+
+  if (product.howItWorks.length > 0) {
+    tabs.push({
+      id: "how",
+      label: "How it works",
+      content: (
+        <ol className="flex flex-col gap-4">
+          {product.howItWorks.slice(0, 4).map((step, index) => (
+            <li key={step} className="flex items-start gap-3">
+              <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[12px] font-bold text-white" style={{ backgroundColor: accent }}>
+                {index + 1}
+              </span>
+              <span className="text-[14.5px] leading-relaxed text-[var(--muted)]">{step}</span>
+            </li>
+          ))}
+          {product.howItWorks.length > 4 && (
+            <li className="list-none">
+              <details className="group">
+                <summary className="cursor-pointer text-[14px] font-semibold text-[var(--primary)] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]">
+                  <span className="group-open:hidden">{`Show the other ${product.howItWorks.length - 4} steps`}</span>
+                  <span className="hidden group-open:inline">Show fewer steps</span>
+                </summary>
+                <ol start={5} className="mt-4 flex flex-col gap-4">
+                  {product.howItWorks.slice(4).map((step, index) => (
+                    <li key={step} className="flex items-start gap-3">
+                      <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[12px] font-bold text-white" style={{ backgroundColor: accent }}>
+                        {index + 5}
+                      </span>
+                      <span className="text-[14.5px] leading-relaxed text-[var(--muted)]">{step}</span>
+                    </li>
+                  ))}
+                </ol>
+              </details>
+            </li>
+          )}
+        </ol>
+      ),
+    });
+  }
+
+  if (product.audienceExclusions.length > 0 || product.searchedProblems.length > 0) {
+    tabs.push({
+      id: "fit",
+      label: "Is it for you?",
+      content: (
+        <>
+          {product.searchedProblems.length > 0 && (
+            <>
+              <p className="mb-3 text-[14px] font-semibold text-[var(--text)]">Which of these sounds like you?</p>
+              <SearchedProblems items={product.searchedProblems} />
+            </>
+          )}
+          {product.audienceExclusions.length > 0 && (
+            <div className={product.searchedProblems.length > 0 ? "mt-8" : ""}>
+              <p className="mb-3 text-[14px] font-semibold text-[var(--text)]">Maybe not for you if</p>
+              <ul className="flex flex-col gap-2.5">
+                <Fold items={product.audienceExclusions} keep={3} noun="reasons">
+                  {(line) => (
+                    <li key={line} className="flex items-start gap-2.5 text-[var(--muted)]">
+                      <X size={17} className="mt-0.5 shrink-0 text-[var(--faint)]" aria-hidden />
+                      {line}
+                    </li>
+                  )}
+                </Fold>
+              </ul>
+            </div>
+          )}
+        </>
+      ),
+    });
+  }
+
+  if (decidingQuestions.length > 0) {
+    tabs.push({
+      id: "questions",
+      label: "Questions",
+      content: (
+        <div className="flex flex-col divide-y divide-[var(--border)]">
+          {decidingQuestions.map((faq) => (
+            <details key={faq.question} className="group py-3 first:pt-0">
+              <summary className="cursor-pointer text-[15px] font-semibold text-[var(--text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]">{faq.question}</summary>
+              <p className="mt-2 leading-relaxed text-[var(--muted)]">{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      ),
+    });
+  }
+
+  tabs.push({
+    id: "fine-print",
+    label: "Data & refunds",
+    content: (
+      <div className="flex flex-col gap-7">
+        {product.privacyNotes && (
+          <div>
+            <p className="text-[14px] font-semibold text-[var(--text)]">Your data</p>
+            <p className="mt-1.5 max-w-[42rem] text-[14.5px] leading-relaxed text-[var(--muted)]">{product.privacyNotes}</p>
+          </div>
+        )}
+        {installable && (
+          <div>
+            <p className="text-[14px] font-semibold text-[var(--text)]">It works like an app, without an app store</p>
+            <p className="mt-1.5 max-w-[42rem] text-[14.5px] leading-relaxed text-[var(--muted)]">
+              It runs in your browser and installs as {installedName}, with its own icon and window. On iPhone, open it in Safari and tap Share, then Add to Home Screen. On Android, tap Install. On a computer it works as it is, and Chrome and Edge can install it as its own window too.
+            </p>
+          </div>
+        )}
+        <div>
+          <p className="text-[14px] font-semibold text-[var(--text)]">Refunds</p>
+          <p className="mt-1.5 max-w-[42rem] text-[14.5px] leading-relaxed text-[var(--muted)]">
+            {product.title} is a digital product delivered the moment your payment clears, so there are no refunds once access is granted. If something is not working, is not what you understood it to be, or you were charged in error, write to us and we will put it right.
+          </p>
+          <Link href="/support" className="mt-3 inline-flex items-center gap-1.5 text-[14px] font-semibold hover:underline" style={{ color: accent }}>
+            Contact support <ArrowRight size={14} aria-hidden />
+          </Link>
+        </div>
+      </div>
+    ),
+  });
+
+  return tabs;
 }
 
 /**

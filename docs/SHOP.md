@@ -87,3 +87,19 @@ Base, PLA, Homeschooling, Alongside); Travel Companion, Vehicle
 Maintenance Companion and Family Health Binder are deliberately absent,
 which is the mechanism keeping their checkout a placeholder, not an
 oversight. Monthly Money Reset is free and activates directly.
+
+## The product detail page
+
+Below the buy box, the page is one tabbed panel (`DetailTabs.tsx`), not a
+column of nine sections: The problem, What's included, How it works, Is it
+for you, Questions, Data and refunds. Every panel is in the page's HTML
+whether or not it is showing, so nothing is lost to a crawler or to
+find-in-page, and a tab named in the URL hash (`#questions`) opens on
+arrival. Long lists show their first few items with the rest behind a plain
+disclosure (`Fold` in `page.tsx`). The listing fields feed the same panels
+as before; nothing in `src/shop/products/` needed to change, but a listing
+that runs to twelve inclusions or nine steps now costs the reader one line
+until they ask, so write the first three of each as the ones that matter.
+
+The page went from roughly 1,800 visible words and 7,000px to about 550
+words and 2,800px on first view.
