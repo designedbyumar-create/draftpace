@@ -2,15 +2,13 @@
 
 import { useEffect, useState, type ReactNode } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import { ArrowRight } from "@/design-system/Icon";
+import Link from "next/link";
+import { ArrowRight, CaretDown } from "@/design-system/Icon";
 import Badge from "@/design-system/Badge";
-import Button from "@/design-system/Button";
 
 export interface PickerPanel {
   areaSlug: string;
   areaLabel: string;
-  /** This area's own button label, from src/content/areas.ts. */
-  heroCta: string;
   productSlug: string;
   productTitle: string;
   /**
@@ -61,11 +59,10 @@ const EASE = [0.22, 1, 0.36, 1] as const;
  * them properly. The area is not repeated either: the chip lit on the
  * left already says which one this is.
  *
- * The button's label comes from the area (heroCta in
- * src/content/areas.ts), so the one control in the most valuable
- * position on the site says something about what is behind it and
- * changes as the picker moves, rather than reading "See the full
- * product" under a heading that already names the product.
+ * The button goes to that product's working demo further down the page,
+ * with a plain link to its full page beside it. Its label is the same for
+ * every product, so the one control in the most valuable position on the
+ * site is never a riddle.
  *
  * MOTION IS FOR STATE CHANGES, NEVER FOR HOVER
  *
@@ -279,33 +276,24 @@ export default function CompanionPicker({ panels }: { panels: PickerPanel[] }) {
             </AnimatePresence>
           </div>
 
-          {/* The way in, and nothing else. Outline rather than filled,
-              because this sits under a heading that is itself the page's
-              argument and a solid block would outweigh it. */}
-          <div className="min-w-0">
-            {/* The visible label changes with the area; the accessible
-                name still carries the product, so a screen reader's link
-                list does not fill with near-identical generic entries.
-                Keyed on the slug so the label cross-fades with the rest
-                of the panel instead of swapping under the pointer. */}
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={active.productSlug}
-                initial={reduceMotion ? false : { opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={reduceMotion ? undefined : { opacity: 0 }}
-                transition={{ duration: 0.22, ease: EASE }}
-              >
-                <Button
-                  href={`/shop/${active.productSlug}`}
-                  variant="outline"
-                  aria-label={`See ${active.productTitle} in detail`}
-                  iconRight={<ArrowRight size={15} aria-hidden />}
-                >
-                  {active.heroCta}
-                </Button>
-              </motion.div>
-            </AnimatePresence>
+          {/* The way in. It goes to the working demo further down the page
+              for this product, because that is the fastest way to find out
+              what it does, and a plain link to the full page sits beside it
+              for anybody who wants the whole story. The label is the same
+              for every product on purpose: it used to change with the area
+              ("See what one change touches") and read as a riddle. */}
+          <div className="flex min-w-0 flex-wrap items-center gap-x-5 gap-y-3">
+            <a
+              href={`#${active.productSlug}`}
+              aria-label={`Try ${active.productTitle} live`}
+              className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[var(--brand-ink)] px-5 text-[14px] font-semibold text-[var(--brand-ink-contrast)] transition-opacity duration-[var(--dur)] hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]"
+            >
+              Try it live
+              <CaretDown size={14} aria-hidden />
+            </a>
+            <Link href={`/shop/${active.productSlug}`} aria-label={`See ${active.productTitle} in detail`} className="inline-flex items-center gap-1.5 text-[14px] font-semibold text-[var(--muted)] hover:text-[var(--text)]">
+              Full details <ArrowRight size={14} aria-hidden />
+            </Link>
           </div>
         </div>
       </div>

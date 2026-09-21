@@ -69,6 +69,18 @@ html {
      In dark the logo itself turns teal, so ink has no literal logo
      counterpart there; it becomes the pale slate that plays the same
      role against a dark ground. */
+  /* The tones of a homepage poster (CompanionPosters). Each poster sets
+     all of them from its own product's theme, so these are only the
+     fallbacks a poster never actually shows. */
+  --poster-bg: #f7f5f0;
+  --poster-surface: #ffffff;
+  --poster-text: #1a1a1a;
+  --poster-muted: #5c5c5c;
+  --poster-border: #e3dfd6;
+  --poster-accent: #0e6e75;
+  --poster-soft: #e0f0f0;
+  --poster-accent-contrast: #ffffff;
+  --poster-radius: 16px;
   --brand-ink: #1e293b;
   --brand-ink-soft: #eef1f5;
   --brand-ink-contrast: #ffffff;

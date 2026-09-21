@@ -4,19 +4,26 @@ import Button from "@/design-system/Button";
 import Container from "@/design-system/Container";
 import { ArrowRight } from "@/design-system/Icon";
 import CompanionPicker, { type PickerPanel } from "@/components/public/home/CompanionPicker";
-import WhyNotSpreadsheet from "@/components/public/home/WhyNotSpreadsheet";
-import AskDPShowcase from "@/components/public/home/AskDPShowcase";
-import ShopPreview from "@/components/public/home/ShopPreview";
+import ProductNav from "@/components/public/home/ProductNav";
+import CompanionShowcase from "@/components/public/home/CompanionShowcase";
+import type { SceneData, PosterTheme } from "@/components/public/home/posterTypes";
+import TellItOnce from "@/components/public/home/TellItOnce";
 import TrustSection from "@/components/public/home/TrustSection";
 import { softwareApplicationStructuredData } from "@/lib/structuredData";
 import { LIFE_AREAS } from "@/content/areas";
+import { POSTER_SCENES } from "@/content/homepagePosters";
+import { ITEMS as TELL_ITEMS } from "@/components/public/home/tellItOnceRules";
+import { accentWash } from "@/design-system/accentTone";
+import { productRegistry } from "@/product-framework/registry";
+import { ensureProductsRegistered } from "@/products/manifest";
 import { discountPercent, formatCompareAtPrice, formatPrice } from "@/shop/definition";
 import { shopRegistry } from "@/shop/registry";
 import { ensureShopRegistered } from "@/shop/ensureRegistered";
+import { BreakdownScreenMockup as MmrSecond } from "./shop/[productSlug]/monthlyMoneyResetVisuals";
 import {
-  OverviewScreenMockup as MmrMockup,
-  BreakdownScreenMockup as MmrSecond,
-} from "./shop/[productSlug]/monthlyMoneyResetVisuals";
+  OverviewScreenMockup as PfcMockup,
+  PayoffScreenMockup as PfcSecond,
+} from "./shop/[productSlug]/personalFinanceCompanionVisuals";
 import {
   OverviewScreenMockup as HmcMockup,
   ActionRecordScreenMockup as HmcSecond,
@@ -59,7 +66,7 @@ export const metadata: Metadata = {
  * component never has to import a route module.
  */
 const AREA_MOCKUP: Record<string, React.ReactNode> = {
-  money: <MmrMockup />,
+  money: <PfcMockup />,
   home: <HmcMockup />,
   "mind-and-focus": <AlongsideMockup />,
   "family-and-learning": <HscMockup />,
@@ -80,7 +87,7 @@ const AREA_MOCKUP: Record<string, React.ReactNode> = {
  * already drawn for its own Shop page.
  */
 const AREA_SECOND_MOCKUP: Record<string, React.ReactNode> = {
-  money: <MmrSecond />,
+  money: <PfcSecond />,
   home: <HmcSecond />,
   "mind-and-focus": <AlongsideSecond />,
   "family-and-learning": <HscSecond />,
@@ -90,8 +97,66 @@ const AREA_SECOND_MOCKUP: Record<string, React.ReactNode> = {
   "family-health": <FhbSecond />,
 };
 
+const ITEM_SLUGS = TELL_ITEMS.map((item) => item.productSlug);
+
+/** The face each product's own headings speak in, and the one that labels everything in monospace. */
+const HEADLINE_FONT: Record<string, string> = {
+  "personal-finance-companion": "var(--font-fraunces), ui-serif, Georgia, serif",
+  "travel-companion": "var(--font-inter), ui-sans-serif, system-ui, sans-serif",
+  "vehicle-maintenance-companion": "var(--font-inter), ui-sans-serif, system-ui, sans-serif",
+  "family-health-binder": "var(--font-inter), ui-sans-serif, system-ui, sans-serif",
+};
+const SERIF = "var(--font-newsreader), ui-serif, Georgia, serif";
+const RADIUS: Record<string, number> = { sharp: 4, standard: 16, soft: 24 };
+
 export default function HomePage() {
   ensureShopRegistered();
+  ensureProductsRegistered();
+
+  /*
+    Each poster wears its own product's colours: the ground and accent from
+    its definition, so re-theming a product moves its poster with it. A
+    product with no ground of its own (Home Base, Homeschooling) gets a
+    pale wash of its accent, worked out the way the Shop's store images are.
+  */
+  function posterTheme(slug: string): PosterTheme | null {
+    const theme = productRegistry.getBySlug(slug)?.theme;
+    const scale = theme?.accentScale;
+    if (!theme || !scale) return null;
+    const ground = theme.ground?.light;
+    return {
+      bg: ground?.appBg ?? accentWash(scale.base, 0.955),
+      surface: ground?.surface ?? accentWash(scale.base, 0.995),
+      text: ground?.text ?? "#1c1917",
+      muted: ground?.muted ?? "#57534e",
+      border: ground?.border ?? accentWash(scale.base, 0.86),
+      accent: scale.base,
+      accentContrast: scale.contrast,
+      soft: scale.soft,
+      radius: RADIUS[theme.identity?.shape ?? "standard"],
+      headlineFont: HEADLINE_FONT[slug] ?? SERIF,
+      monoLabels: slug === "vehicle-maintenance-companion",
+      hero: theme.hero?.light,
+    };
+  }
+
+  const tellAccents = Object.fromEntries(
+    ITEM_SLUGS.flatMap((slug) => {
+      const scale = productRegistry.getBySlug(slug)?.theme?.accentScale;
+      return scale ? [[slug, { base: scale.base, soft: scale.soft }]] : [];
+    })
+  );
+
+  const scenes: SceneData[] = POSTER_SCENES.flatMap((scene) => {
+    const posters = scene.products.flatMap((content) => {
+      const product = shopRegistry.getBySlug(content.productSlug);
+      const area = LIFE_AREAS.find((a) => a.slug === content.areaSlug);
+      const theme = posterTheme(content.productSlug);
+      if (!product || !area || !theme) return [];
+      return [{ productSlug: product.slug, title: product.title, area: area.label, priceLabel: formatPrice(product), headline: content.headline, beats: content.beats.map(({ lead, text }) => ({ lead, text })), theme }];
+    });
+    return posters.length === 2 ? [{ id: scene.id, title: scene.title, posters: [posters[0], posters[1]] as SceneData["posters"] }] : [];
+  });
 
   const panels: PickerPanel[] = LIFE_AREAS.flatMap((area) => {
     const productSlug = area.productSlugs[0];
@@ -103,7 +168,6 @@ export default function HomePage() {
       {
         areaSlug: area.slug,
         areaLabel: area.label,
-        heroCta: area.heroCta,
         productSlug: product.slug,
         productTitle: product.title,
         // Formatted here, by the same helpers the Shop grid and the
@@ -134,128 +198,37 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* 2. Why not just use what you already have */}
+      {/* 2. How a Companion works, to try */}
       <section className="border-b border-[var(--border)]">
-        <Container width="wide" className="py-16 sm:py-20">
-          <WhyNotSpreadsheet />
+        <Container width="wide" className="py-16 sm:py-24">
+          <TellItOnce accents={tellAccents} />
         </Container>
       </section>
 
-      {/* 3. How these behave */}
-      <section className="border-b border-[var(--border)]">
-        <Container width="wide" className="py-16 sm:py-20">
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--brand-ink)]">How these behave</p>
-          <h2 className="mt-3 max-w-2xl font-serif text-[30px] font-semibold leading-tight tracking-tight sm:text-[38px]">
-            It never tells you that you are behind.
+      {/* 4. The Companions, one to a section, each with a working demo */}
+      <section className="border-t border-[var(--border)]">
+        <Container width="wide" className="pb-14 pt-20 sm:pb-20 sm:pt-28">
+          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--brand-ink)]">The Companions</p>
+          <h2 className="mt-3 max-w-3xl font-serif text-[38px] font-semibold leading-[1.05] tracking-[-0.025em] sm:text-[60px]">
+            Apps designed around your needs.
           </h2>
-          <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-[var(--muted)]">
-            There is no streak in any Draftpace product, no completion percentage, and no screen that counts what you
-            did not get to. Something you left unfinished records nothing at all.
-          </p>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                head: "Quiet by default",
-                body: "It stays silent until something is genuinely worth raising, and says so plainly when nothing is.",
-                proof: "ADHD Life Companion's Now screen says nothing needs you right now, on the days that is true.",
-              },
-              {
-                head: "Derived, never invented",
-                body: "Every line traces back to something you recorded yourself. Nothing here manufactures urgency.",
-                proof: "Personal Finance Companion's Attention lists only real gaps: a bill with no due date, a stale balance.",
-              },
-              {
-                head: "No model, anywhere",
-                body: "There is no AI in any of this. What it suggests was written by a person, and it never guesses.",
-                proof: "Home Base knows what a house needs because somebody wrote down 122 kinds of thing by hand.",
-              },
-              {
-                head: "Holds the connections",
-                body: "It remembers how the pieces of your situation depend on each other, which is the part nobody can hold.",
-                proof: "Travel Companion walks down what a booking was booked around, one at a time.",
-              },
-              {
-                head: "Nothing is destroyed",
-                body: "Corrections archive rather than delete, and history is never rewritten after the fact.",
-                proof: "Personal Life Affairs Companion keeps every change, so a retired entry still shows what it said before.",
-              },
-              {
-                head: "Bought once, owned",
-                body: "No subscription to babysit. It does not expire if you step away for a year.",
-                proof: "Monthly Money Reset is free. The rest are one payment, and nothing here has a renewal date.",
-              },
-            ].map((item) => (
-              /*
-                These six were flat bordered boxes whose heading and body
-                were both 14px, so each card was a single grey block with
-                no hierarchy and the set read as filler. The fix is
-                typographic rather than decorative: the guarantee itself
-                is now the display line, in the same serif the page's own
-                headings use, with the explanation as fine print beneath
-                it. Deliberately no icon per card (CLAUDE.md's icon rule)
-                and no accent rail.
-
-                Flat at rest, on purpose. Hover adds the faintest shadow
-                in the ramp and firms the hairline, and does nothing
-                else: no lift, no elevation jump. Six cards that each
-                rose and grew a shadow under the pointer made this
-                section restless to read.
-
-                The third line is the change. Asked for icons here, and
-                an icon per card is both banned by CLAUDE.md's icon rule
-                and the exact decoration this section already rejected
-                once. The real problem was that six abstract promises in
-                identical boxes give a reader nothing to believe. A named
-                product actually doing the thing is what an icon would
-                only have gestured at.
-              */
-              <div
-                key={item.head}
-                className="flex flex-col rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface)] p-5 transition-[box-shadow,border-color] duration-[var(--dur)] ease-[var(--ease-out)] hover:border-[var(--border-strong)] hover:shadow-[shadow:var(--shadow-xs)]"
-              >
-                <p className="font-serif text-[17px] font-semibold leading-snug tracking-tight text-[var(--text)]">
-                  {item.head}
-                </p>
-                <p className="mt-2 text-[13.5px] leading-relaxed text-[var(--muted)]">{item.body}</p>
-                {/* mt-auto puts the evidence on the card's floor, so the
-                    six lines align across the row however long the body
-                    above each one runs. */}
-                <p className="mt-auto pt-4 text-[12.5px] leading-relaxed text-[var(--faint)]">
-                  <span className="font-semibold uppercase tracking-[0.1em] text-[var(--brand-ink)]">In practice </span>
-                  {item.proof}
-                </p>
-              </div>
-            ))}
-          </div>
-          <p className="mt-8 max-w-xl text-[14px] leading-relaxed text-[var(--faint)]">
-            Most things you buy online die on download. A Companion is the opposite of a file: it is still working the
-            whole time you own it.
+          <p className="mt-5 max-w-xl text-[16px] leading-relaxed text-[var(--muted)]">
+            The Companion Series is eight apps, each built for one hard thing and each with a look of its own. Every one
+            below works, so touch it.{" "}
+            A Companion never tells you that you are behind.
           </p>
         </Container>
-      </section>
-
-      {/* 4. Prove the "no model, anywhere" claim from section 3 */}
-      <section className="border-b border-[var(--border)]">
-        <Container width="wide" className="py-16 sm:py-20">
-          <AskDPShowcase />
-        </Container>
-      </section>
-
-      {/* 5. The series */}
-      <section className="border-b border-[var(--border)]">
-        <Container width="wide" className="py-16 sm:py-20">
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--brand-ink)]">The Companion Series</p>
-          <h2 className="mt-3 max-w-2xl font-serif text-[30px] font-semibold leading-tight tracking-tight sm:text-[38px]">
-            One Companion series. Each one does a single hard thing.
-          </h2>
-          <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-[var(--muted)]">
-            We make every one ourselves, so the series stays small and each product earns its place. Smaller, lighter
-            products will follow, and they will be their own thing rather than a watered down Companion.
-          </p>
-          <div className="mt-10">
-            <ShopPreview />
-          </div>
-        </Container>
+        <ProductNav
+          items={scenes.flatMap((scene) =>
+            scene.posters.map((poster) => ({ slug: poster.productSlug, label: poster.title.replace(/ Companion$/, ""), accent: poster.theme.accent, contrast: poster.theme.accentContrast }))
+          )}
+        />
+        <CompanionShowcase posters={scenes.flatMap((scene) => scene.posters)} />
+        <div className="flex justify-center border-t border-[var(--border)] py-14">
+          <Button href="/shop" variant="secondary" size="lg" iconRight={<ArrowRight size={16} aria-hidden />}>
+            Compare them side by side
+          </Button>
+        </div>
       </section>
 
       {/*

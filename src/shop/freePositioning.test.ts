@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { shopRegistry } from "./registry";
 import { ensureShopRegistered } from "./ensureRegistered";
+import { POSTER_SCENES } from "@/content/homepagePosters";
 import { LIFE_AREAS } from "@/content/areas";
 
 ensureShopRegistered();
@@ -46,9 +47,10 @@ describe("the free product does not sit in the priced catalogue", () => {
     }
   });
 
-  it("builds the Shop grid and the homepage series from paid listings only", () => {
+  it("builds the Shop grid from paid listings only, and gives the homepage a poster for each paid product and no free one", () => {
     expect(read("src/app/(marketing)/shop/page.tsx")).toContain("listPublishedPaid()");
-    expect(read("src/components/public/home/ShopPreview.tsx")).toContain("listPublishedPaid()");
+    const posters = POSTER_SCENES.flatMap((scene) => scene.products.map((p) => p.productSlug)).sort();
+    expect(posters).toEqual(paid.map((p) => p.slug).sort());
   });
 
   it("never lets a free product lead a life area, which is what the hero shows", () => {

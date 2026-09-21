@@ -66,7 +66,7 @@ export const LIFE_AREAS: LifeArea[] = [
       "Bills, subscriptions and debts held in one place instead of across four bank apps.",
       "A single next move when something needs attention, rather than a dashboard to interpret.",
     ],
-    heroCta: "See how safe-to-spend works",
+    heroCta: "See what is free to spend",
     // Personal Finance Companion first, deliberately. Every marketing
     // surface that shows one product per area takes productSlugs[0], so
     // while Monthly Money Reset led this list the highest-value slot on
@@ -167,11 +167,11 @@ export const LIFE_AREAS: LifeArea[] = [
     inTheirWords:
       "I am the one who remembers everyone's medications and allergies, and if I had to reconstruct it at an intake desk right now, I would be guessing at half of it.",
     whatHelps: [
-      "Every family member's medications, allergies and history, kept in one place, reachable from any device.",
+      "Every person's allergies, medications, vaccines, doctors and insurance, entered once and changeable any time.",
       "A structured symptom timeline, onset, duration and severity as real fields, not a memory reconstructed later.",
-      "A dated Intake Summary per person, ready to hand to a clinic alongside their own paperwork.",
+      "The page each moment needs: a forms sheet for school and camp, a caregiver sheet, an emergency card and a visit page.",
     ],
-    heroCta: "See what an intake summary holds",
+    heroCta: "See what the forms sheet holds",
     productSlugs: ["family-health-binder"],
   },
 ];
