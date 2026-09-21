@@ -57,6 +57,20 @@ describe("deriveOwnedProducts", () => {
     }
   });
 
+  it("treats a product that asks for no setup as set up, though nothing ever writes setup_complete for it", () => {
+    productRegistry.register(definitionInput);
+    const rows = deriveOwnedProducts([entitlement()], { status: "ok", rows: [instance({ setupComplete: false })] });
+    if (rows[0].kind !== "ready") throw new Error("expected ready");
+    expect(rows[0].instance?.setupComplete).toBe(true);
+  });
+
+  it("leaves a product that does require setup as unfinished until setup is written", () => {
+    productRegistry.register({ ...definitionInput, setup: { required: true, skippable: true } });
+    const rows = deriveOwnedProducts([entitlement()], { status: "ok", rows: [instance({ setupComplete: false })] });
+    if (rows[0].kind !== "ready") throw new Error("expected ready");
+    expect(rows[0].instance?.setupComplete).toBe(false);
+  });
+
   it("a registered product with no matching instance is still ready, with instance null (not started, not hidden)", () => {
     productRegistry.register(definitionInput);
     const rows = deriveOwnedProducts([entitlement()], { status: "ok", rows: [] });

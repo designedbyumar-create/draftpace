@@ -46,10 +46,10 @@ export function PrintableDocument({
 }
 
 /** The one page shell, with a running "page X of Y" footer that costs nothing to leave on a single-page document. */
-export function PrintablePage({ palette, children }: { palette: PrintablePalette; children: ReactNode }) {
+export function PrintablePage({ palette, children, size = "A4" }: { palette: PrintablePalette; children: ReactNode; size?: "A4" | "LETTER" }) {
   return (
     <Page
-      size="A4"
+      size={size}
       style={{
         paddingVertical: 44,
         paddingHorizontal: 48,

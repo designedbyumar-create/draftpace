@@ -74,6 +74,7 @@ const RAIL_ICON: Record<string, DraftpaceIcon> = {
   people: User,
   vehicles: Car,
   paperwork: Article,
+  visits: CalendarCheck,
   members: User,
   timeline: Clock,
 };

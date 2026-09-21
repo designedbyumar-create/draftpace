@@ -13,7 +13,7 @@ export type RecordStatus = z.infer<typeof recordStatusSchema>;
 export const visibilitySchema = z.enum(["summary", "private"]);
 export type Visibility = z.infer<typeof visibilitySchema>;
 
-export const relationshipSchema = z.enum(["self", "spouse", "child", "other"]);
+export const relationshipSchema = z.enum(["self", "spouse", "child", "parent", "other"]);
 export type Relationship = z.infer<typeof relationshipSchema>;
 
 export const familyMemberSchema = z.object({
@@ -21,13 +21,23 @@ export const familyMemberSchema = z.object({
   name: z.string().min(1),
   relationship: relationshipSchema,
   dateOfBirth: isoDate.nullable(),
+  /** Typed by the person, for the forms that ask "who do we call". */
+  emergencyName: z.string().nullable(),
+  emergencyPhone: z.string().nullable(),
+  insurer: z.string().nullable(),
+  insuranceMemberId: z.string().nullable(),
+  insuranceGroup: z.string().nullable(),
+  /** What a sitter or a grandparent should know: routines, comforts, fears. Printed only on the caregiver sheet. */
+  caregiverNotes: z.string().nullable(),
+  /** The day this person's medication list was last looked over and found right. Never inferred. */
+  medicationsCheckedOn: isoDate.nullable(),
   status: recordStatusSchema,
   createdAt: z.string(),
   updatedAt: z.string(),
 });
 export type FamilyMember = z.infer<typeof familyMemberSchema>;
 
-export const medicalFactKindSchema = z.enum(["medication", "allergy", "history"]);
+export const medicalFactKindSchema = z.enum(["medication", "allergy", "condition", "history"]);
 export type MedicalFactKind = z.infer<typeof medicalFactKindSchema>;
 
 export const medicalFactSchema = z
@@ -41,6 +51,9 @@ export const medicalFactSchema = z
     frequency: z.string().nullable(),
     /** Allergy-only. Null otherwise. */
     reaction: z.string().nullable(),
+    /** Medication-only. A medication with a stop date is no longer taken, and stays in the record but leaves every printed page. */
+    startedOn: isoDate.nullable(),
+    stoppedOn: isoDate.nullable(),
     visibility: visibilitySchema,
     status: recordStatusSchema,
     createdAt: z.string(),
@@ -51,6 +64,9 @@ export const medicalFactSchema = z
   })
   .refine((fact) => fact.kind === "allergy" || fact.reaction === null, {
     message: "A reaction belongs to an allergy only.",
+  })
+  .refine((fact) => fact.kind === "medication" || (fact.startedOn === null && fact.stoppedOn === null), {
+    message: "Start and stop dates belong to a medication only.",
   });
 export type MedicalFact = z.infer<typeof medicalFactSchema>;
 
@@ -80,3 +96,50 @@ export const symptomEventSchema = z
     message: "A duration needs both a value and a unit, or neither.",
   });
 export type SymptomEvent = z.infer<typeof symptomEventSchema>;
+
+export const providerKindSchema = z.enum(["doctor", "specialist", "dentist", "pharmacy", "other"]);
+export type ProviderKind = z.infer<typeof providerKindSchema>;
+
+export const providerSchema = z.object({
+  id: z.string(),
+  familyMemberId: z.string(),
+  kind: providerKindSchema,
+  name: z.string().min(1),
+  phone: z.string().nullable(),
+  note: z.string().nullable(),
+  status: recordStatusSchema,
+  createdAt: z.string(),
+  updatedAt: z.string(),
+});
+export type Provider = z.infer<typeof providerSchema>;
+
+export const immunizationSchema = z.object({
+  id: z.string(),
+  familyMemberId: z.string(),
+  vaccine: z.string().min(1),
+  givenOn: isoDate,
+  note: z.string().nullable(),
+  visibility: visibilitySchema,
+  status: recordStatusSchema,
+  createdAt: z.string(),
+  updatedAt: z.string(),
+});
+export type Immunization = z.infer<typeof immunizationSchema>;
+
+export const visitSchema = z.object({
+  id: z.string(),
+  familyMemberId: z.string(),
+  visitOn: isoDate,
+  /** Who or where, as typed: "Dr. Patel", "Urgent care on Main". */
+  withWhom: z.string().nullable(),
+  reason: z.string().min(1),
+  /** What to ask, one per line. */
+  questions: z.string().nullable(),
+  /** What was said or decided, one block. */
+  notes: z.string().nullable(),
+  visibility: visibilitySchema,
+  status: recordStatusSchema,
+  createdAt: z.string(),
+  updatedAt: z.string(),
+});
+export type Visit = z.infer<typeof visitSchema>;

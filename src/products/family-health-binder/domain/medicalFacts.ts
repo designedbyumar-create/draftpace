@@ -13,6 +13,8 @@ interface MedicalFactRow {
   dosage: string | null;
   frequency: string | null;
   reaction: string | null;
+  started_on: string | null;
+  stopped_on: string | null;
   visibility: string;
   status: string;
   created_at: string;
@@ -28,6 +30,8 @@ function fromRow(row: MedicalFactRow) {
     dosage: row.dosage,
     frequency: row.frequency,
     reaction: row.reaction,
+    startedOn: row.started_on ?? null,
+    stoppedOn: row.stopped_on ?? null,
     visibility: row.visibility,
     status: row.status,
     createdAt: row.created_at,
@@ -43,6 +47,8 @@ function toRow(patch: Record<string, unknown>) {
   if ("dosage" in patch) row.dosage = patch.dosage;
   if ("frequency" in patch) row.frequency = patch.frequency;
   if ("reaction" in patch) row.reaction = patch.reaction;
+  if ("startedOn" in patch) row.started_on = patch.startedOn;
+  if ("stoppedOn" in patch) row.stopped_on = patch.stoppedOn;
   if ("visibility" in patch) row.visibility = patch.visibility;
   if ("status" in patch) row.status = patch.status;
   return row;

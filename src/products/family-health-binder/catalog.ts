@@ -3,6 +3,7 @@ import { familyHealthBinderDefinition } from "./definition";
 import WorkspaceModule from "./components/WorkspaceModule";
 import MembersModule from "./components/MembersModule";
 import TimelineModule from "./components/TimelineModule";
+import VisitsModule from "./components/VisitsModule";
 import PrintablesModule from "./components/PrintablesModule";
 import SettingsModule from "./components/SettingsModule";
 
@@ -12,6 +13,7 @@ export const familyHealthBinderCatalogEntry: ProductCatalogEntry = {
     "family-health-binder.workspace": WorkspaceModule,
     "family-health-binder.members": MembersModule,
     "family-health-binder.timeline": TimelineModule,
+    "family-health-binder.visits": VisitsModule,
     "family-health-binder.printables": PrintablesModule,
     "family-health-binder.settings": SettingsModule,
   },

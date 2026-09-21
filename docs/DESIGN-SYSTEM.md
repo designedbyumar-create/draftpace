@@ -82,7 +82,7 @@ theme: {
 - **`motif`** (required, one of `PRODUCT_MOTIFS` in
   `src/product-framework/definition.ts`) names the structure the product's
   own signature screen object and printed pages are built around: ledger,
-  index, tag, focus, register, book, timeline, gauge, page. It is emitted
+  index, tag, focus, register, book, timeline, gauge, card. It is emitted
   as `data-product-motif` on both shell roots so a stylesheet or a
   printable can key off it. A motif is a name, never a style value.
   `productIdentity.test.ts` requires every sold product to declare one and

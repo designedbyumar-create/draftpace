@@ -1,56 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { buildIntakeSummary } from "./intakeSummary";
-import type { FamilyMember, MedicalFact, SymptomEvent } from "./state";
-
-const NOW = "2026-09-07T00:00:00.000Z";
-
-function member(overrides: Partial<FamilyMember> = {}): FamilyMember {
-  return {
-    id: "m1",
-    name: "Amina",
-    relationship: "child",
-    dateOfBirth: "2018-04-02",
-    status: "active",
-    createdAt: NOW,
-    updatedAt: NOW,
-    ...overrides,
-  };
-}
-
-function fact(overrides: Partial<MedicalFact> = {}): MedicalFact {
-  return {
-    id: "f1",
-    familyMemberId: "m1",
-    kind: "medication",
-    detail: "Amoxicillin",
-    dosage: "250mg",
-    frequency: "twice daily",
-    reaction: null,
-    visibility: "summary",
-    status: "active",
-    createdAt: NOW,
-    updatedAt: NOW,
-    ...overrides,
-  };
-}
-
-function event(overrides: Partial<SymptomEvent> = {}): SymptomEvent {
-  return {
-    id: "e1",
-    familyMemberId: "m1",
-    description: "Fever",
-    onsetAt: "2026-09-01",
-    durationValue: 3,
-    durationUnit: "days",
-    severity: "moderate",
-    whatHelped: "Rest and fluids",
-    visibility: "summary",
-    status: "active",
-    createdAt: NOW,
-    updatedAt: NOW,
-    ...overrides,
-  };
-}
+import { event, fact, member } from "./testFixtures";
 
 describe("buildIntakeSummary", () => {
   it("sorts facts into medications, allergies and history by kind", () => {
@@ -63,6 +13,16 @@ describe("buildIntakeSummary", () => {
     expect(summary.medications).toEqual([{ label: "Amoxicillin", detail: "250mg, twice daily" }]);
     expect(summary.allergies).toEqual([{ label: "Peanuts", detail: "Hives" }]);
     expect(summary.history).toEqual([{ label: "Asthma runs in the family", detail: "" }]);
+  });
+
+  it("lists conditions on their own, and leaves a stopped medication off", () => {
+    const facts = [
+      fact({ id: "f1", detail: "Old syrup", stoppedOn: "2026-06-01" }),
+      fact({ id: "f2", kind: "condition", detail: "Asthma", dosage: null, frequency: null }),
+    ];
+    const summary = buildIntakeSummary(member(), facts, []);
+    expect(summary.medications).toEqual([]);
+    expect(summary.conditions).toEqual([{ label: "Asthma", detail: "" }]);
   });
 
   it("never includes a fact marked private", () => {
@@ -93,7 +53,7 @@ describe("buildIntakeSummary", () => {
     const events = [event()];
     const summary = buildIntakeSummary(member(), [], events);
     expect(summary.recentSymptoms).toEqual([
-      { label: "Fever, 2026-09-01", detail: "moderate, 3 days, helped by Rest and fluids" },
+      { label: "Fever, 09/01/2026", detail: "moderate, 3 days, helped by Rest and fluids" },
     ]);
   });
 
@@ -103,7 +63,7 @@ describe("buildIntakeSummary", () => {
       event({ id: "e2", onsetAt: "2026-09-01", description: "Fever" }),
     ];
     const summary = buildIntakeSummary(member(), [], events);
-    expect(summary.recentSymptoms.map((s) => s.label)).toEqual(["Fever, 2026-09-01", "Rash, 2026-08-01"]);
+    expect(summary.recentSymptoms.map((s) => s.label)).toEqual(["Fever, 09/01/2026", "Rash, 08/01/2026"]);
   });
 
   it("caps the printed symptom history at 8 most recent events", () => {

@@ -35,7 +35,7 @@ export const PRODUCT_MOTIFS = [
   "book",
   "timeline",
   "gauge",
-  "page",
+  "card",
 ] as const;
 export type ProductMotif = (typeof PRODUCT_MOTIFS)[number];
 

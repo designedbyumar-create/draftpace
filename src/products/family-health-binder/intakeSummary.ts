@@ -1,3 +1,5 @@
+import { usDate } from "./dates";
+import { isCurrentMedication } from "./medications";
 import type { FamilyMember, MedicalFact, SymptomEvent } from "./state";
 
 /**
@@ -25,6 +27,7 @@ export interface IntakeSummaryData {
   member: Pick<FamilyMember, "name" | "dateOfBirth">;
   medications: IntakeSummaryLine[];
   allergies: IntakeSummaryLine[];
+  conditions: IntakeSummaryLine[];
   history: IntakeSummaryLine[];
   recentSymptoms: IntakeSummaryLine[];
 }
@@ -51,7 +54,7 @@ export function buildIntakeSummary(
   return {
     member: { name: member.name, dateOfBirth: member.dateOfBirth },
     medications: memberFacts
-      .filter((f) => f.kind === "medication")
+      .filter(isCurrentMedication)
       .map((f) => ({
         label: f.detail,
         detail: [f.dosage, f.frequency].filter(Boolean).join(", "),
@@ -59,9 +62,10 @@ export function buildIntakeSummary(
     allergies: memberFacts
       .filter((f) => f.kind === "allergy")
       .map((f) => ({ label: f.detail, detail: f.reaction ?? "" })),
+    conditions: memberFacts.filter((f) => f.kind === "condition").map((f) => ({ label: f.detail, detail: "" })),
     history: memberFacts.filter((f) => f.kind === "history").map((f) => ({ label: f.detail, detail: "" })),
     recentSymptoms: memberEvents.map((e) => ({
-      label: `${e.description}, ${e.onsetAt}`,
+      label: `${e.description}, ${usDate(e.onsetAt)}`,
       detail: [e.severity, durationLabel(e), e.whatHelped ? `helped by ${e.whatHelped}` : null].filter(Boolean).join(", "),
     })),
   };

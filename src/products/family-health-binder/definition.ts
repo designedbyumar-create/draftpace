@@ -11,11 +11,27 @@ import { ProductDefinitionInput } from "@/product-framework/definition";
  *
  * WHAT THIS PRODUCT IS
  *
- * A place to keep the facts a family would otherwise have to reconstruct
- * from memory in an urgent-care waiting room: who is in the family,
- * what they take, what they are allergic to, what runs in the family,
- * and a real, structured record of symptoms as they actually happened,
- * not a vague memory of "she's been sick on and off."
+ * The answers every form asks, entered once. School, camp and sports forms,
+ * a new specialist's intake packet, a babysitter, an urgent-care desk all
+ * ask for the same handful of facts about the same people: who they are,
+ * what they are allergic to, what they take, who their doctor is, who to
+ * call, who insures them, which shots they have had. Here each person is one
+ * card that holds those, and the card prints as the page the moment needs.
+ * It is also where a symptom is recorded as it happens, and where the
+ * questions for the next appointment wait, so neither has to be remembered
+ * in a waiting room.
+ *
+ * It is a record and never advice: nothing here checks a dose, an
+ * interaction or a vaccine schedule, and nothing says what a person should
+ * do about a symptom.
+ *
+ * THE CARD
+ *
+ * The identity is a medical ID card: each person has a colour and an initial,
+ * allergies come first as a tag, the way they do on an alert bracelet, and
+ * the printed pages are built from the same card. Inter only, generous
+ * corners, a rose accent on warm paper: the opposite of a clinical white
+ * screen, and unlike every other product's colour, type and shape.
  *
  * THE STRUCTURED SYMPTOM TIMELINE
  *
@@ -57,7 +73,7 @@ export const familyHealthBinderDefinition: ProductDefinitionInput = {
   slug: "family-health-binder",
   title: "Family Health Binder",
   tagline:
-    "Who's in your family, what they take, what they're allergic to, and a real record of symptoms as they happened, reachable from any device when it actually matters.",
+    "The answers every form asks, entered once: who they are, what they're allergic to, what they take, who to call. It prints as the page school, camp, a sitter or a new doctor wants.",
   family: "companion",
   version: "0.1.0",
   status: "active",
@@ -68,9 +84,9 @@ export const familyHealthBinderDefinition: ProductDefinitionInput = {
     name: "Family Health Binder",
     shortName: "Health",
     description:
-      "Family Health Binder by Draftpace: medications, allergies, family history and a structured symptom timeline, kept against your account, reachable from any device.",
-    themeColor: "#606e8e",
-    backgroundColor: "#f8f8fb",
+      "Family Health Binder by Draftpace: the answers every form asks, entered once, for everyone in your family. Prints as a forms sheet, a caregiver sheet, an emergency card and a visit page.",
+    themeColor: "#b23a5b",
+    backgroundColor: "#faf6f3",
     // This product's own icon, so installing two Companions does not
     // put two identical Draftpace squares on the home screen. Same
     // monogram, this product's accent, generated from Logo.tsx's own
@@ -85,23 +101,22 @@ export const familyHealthBinderDefinition: ProductDefinitionInput = {
     provisionalBranding: false,
   },
   /**
-   * Four real destinations, each answering a different question:
+   * Five destinations, each answering a different question:
    *
-   *   Overview  who's in this binder, and what's worth knowing at a glance
-   *   Family    each person's medications, allergies and history
+   *   Overview  everyone in the binder, and what each card is missing
+   *   Family    each person's card: health, shots, care team, contacts
    *   Symptoms  the structured timeline, per person
-   *   Summary   the printable, meant to leave the house
-   *
-   * Settings is real scaffolding, honestly not built yet, same as every
-   * other new product's Settings destination on day one.
+   *   Visits    the questions for the next appointment, and what was said
+   *   Print     the pages that leave the house
    */
-  navigation: ["workspace", "members", "timeline", "printables", "settings"],
-  primaryNavigation: ["workspace", "members", "timeline"],
+  navigation: ["workspace", "members", "timeline", "visits", "printables", "settings"],
+  primaryNavigation: ["workspace", "members", "timeline", "visits"],
   workspaceLabel: "Overview",
   destinationLabels: {
     members: "Family",
     timeline: "Symptoms",
-    printables: "Summary",
+    visits: "Visits",
+    printables: "Print",
     settings: "Settings",
   },
   navigationStyle: "rail",
@@ -121,42 +136,71 @@ export const familyHealthBinderDefinition: ProductDefinitionInput = {
     { id: "family-health-binder.workspace", destination: "workspace" },
     { id: "family-health-binder.members", destination: "members" },
     { id: "family-health-binder.timeline", destination: "timeline" },
+    { id: "family-health-binder.visits", destination: "visits" },
     { id: "family-health-binder.printables", destination: "printables" },
     { id: "family-health-binder.settings", destination: "settings" },
   ],
   permissions: [],
   events: [],
   /**
-   * Dusty lavender-blue. Distinguishable from every other accent already
-   * in use (ink blue, sage, teal, clay, plum, mulberry, amber, steel):
-   * closer to violet than Travel Companion's blue, softer than Personal
-   * Finance Companion's petrol, and deliberately not clinical white or
-   * medical red/green, since this product is a record, not a monitor.
+   * Rose on warm paper. Distinguishable from every other accent in use
+   * (mulberry, sage, plum, ink green, ink blue, teal, amber): a clear rose,
+   * warmer and brighter than the mulberry, and deliberately not clinical
+   * white, medical red or green, since this product is a record and not a
+   * monitor. Full accentScale, including wash, and a dark pair.
    *
-   * base is deliberately a touch darker than the first draft (#6b7a9e):
-   * that value contrasted at only 4.28:1 against white (this theme's own
-   * `contrast` token), short of WCAG AA's 4.5:1 for normal text, and
-   * every primary button inside this product's shell renders white text
-   * on this exact colour (see buttonStyles.ts's use of
-   * --primary-contrast). #606e8e clears 5.1:1 while staying the same
-   * colour identity.
+   * The ground is a warm paper rather than a cool grey, so the whole product
+   * reads as something kept in a home and not in a hospital. Every pair is
+   * held to the platform floor by ground.test.ts.
    *
-   * Full accentScale, including wash, declared from day one, same
-   * discipline as Vehicle Maintenance Companion.
+   * No narrativeFont, deliberately: every other Companion speaks in a serif
+   * somewhere, and this one is a card someone fills in and reads at a
+   * glance, so it speaks in the sans.
    */
   theme: {
-    accent: "#606e8e",
+    accent: "#b23a5b",
     accentScale: {
-      base: "#606e8e",
-      strong: "#424c62",
-      soft: "#e4e8ef",
+      base: "#b23a5b",
+      strong: "#86233f",
+      soft: "#f9e3ea",
       contrast: "#ffffff",
-      wash: "#f4f5f8",
+      wash: "#fdf1f4",
     },
-    narrativeFont: "var(--font-newsreader), ui-serif, Georgia, serif",
+    accentScaleDark: {
+      base: "#f08aa3",
+      strong: "#f8b8c8",
+      soft: "#3a1a24",
+      contrast: "#2a0c15",
+      wash: "#2a141b",
+    },
+    ground: {
+      light: {
+        appBg: "#faf6f3",
+        surface: "#fffdfb",
+        surfaceMuted: "#f6efea",
+        surfaceStrong: "#ebe1da",
+        text: "#241a1b",
+        muted: "#64565a",
+        faint: "#6d5f63",
+        border: "#eaddd6",
+        borderStrong: "#d5c3ba",
+      },
+      dark: {
+        appBg: "#170f11",
+        surface: "#211719",
+        surfaceMuted: "#1b1214",
+        surfaceStrong: "#2c2023",
+        text: "#f5eded",
+        muted: "#b8a8ab",
+        faint: "#9d8d91",
+        border: "rgba(245, 237, 237, 0.09)",
+        borderStrong: "rgba(245, 237, 237, 0.16)",
+      },
+    },
     motionPersonality: "calm",
     contentWidth: "narrow",
-    identity: { motif: "page" },
+    // Generous corners: a card you hold, not a panel.
+    identity: { motif: "card", shape: "soft" },
   },
   layouts: ["responsive"],
   offline: "shell-only",
@@ -164,9 +208,9 @@ export const familyHealthBinderDefinition: ProductDefinitionInput = {
   // product yet, same rule every Companion without one already states.
   notifications: { supported: false },
   progressModel: { kind: "custom" },
-  // Genuinely built: the Symptoms destination is a real, dated history
-  // of past symptom events, not a generic "activity log" claim.
-  history: { enabled: true, kinds: ["symptom-event"] },
+  // Genuinely built: Symptoms and Visits are each a real, dated history,
+  // not a generic "activity log" claim.
+  history: { enabled: true, kinds: ["symptom-event", "visit"] },
   settingsSections: [],
   migrationPolicy: { compatibility: "backward-compatible" },
   devFixture: false,

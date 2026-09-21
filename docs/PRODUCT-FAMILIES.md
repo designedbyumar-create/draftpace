@@ -23,7 +23,7 @@ defaults to prove the resolver isn't hardcoded).
 All nine live products are `companion`, and every one of them declares
 its own navigation rather than taking the family default: Home Base has
 `import`, Travel Companion has `trip` and `people`, Family Health Binder
-has `members` and `timeline`, and so on (`docs/ROUTE-MAP.md` lists every
+has `members`, `timeline` and `visits`, and so on (`docs/ROUTE-MAP.md` lists every
 destination that exists). Six of the nine also set
 `navigationStyle: "rail"` and get different chrome entirely
 (`ProductRailShell`) rather than the tab shell with pieces hidden.

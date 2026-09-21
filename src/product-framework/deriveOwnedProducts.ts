@@ -62,7 +62,12 @@ export function deriveOwnedProducts(
     }
 
     // Rows are ordered by last_activity_at desc, so the first match per slug is the latest.
-    const instance = instances.rows.find((row) => row.productSlug === entitlement.productSlug) ?? null;
+    const found = instances.rows.find((row) => row.productSlug === entitlement.productSlug) ?? null;
+    // A product that asks for no setup has nothing to finish. Its instance row
+    // never has setup_complete written (no step exists to write it), so left
+    // as read it would show "Setup not finished" and a "Continue setup" prompt
+    // on Home for ever.
+    const instance = found && !definition.setup.required ? { ...found, setupComplete: true } : found;
 
     return {
       kind: "ready",

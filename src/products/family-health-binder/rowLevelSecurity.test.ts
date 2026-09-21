@@ -26,8 +26,8 @@ const policies = [...sql.matchAll(/create policy\s+"([^"]+)"\s*\n?on public\.(fh
 }));
 
 describe("Family Health Binder row level security", () => {
-  it("creates the three tables this product is built on", () => {
-    expect(tables.sort()).toEqual(["fhb_family_members", "fhb_medical_facts", "fhb_symptom_events"].sort());
+  it("creates the six tables this product is built on", () => {
+    expect(tables.sort()).toEqual(["fhb_family_members", "fhb_immunizations", "fhb_medical_facts", "fhb_providers", "fhb_symptom_events", "fhb_visits"].sort());
   });
 
   it("enables row level security on every table it creates", () => {
@@ -75,12 +75,15 @@ describe("Family Health Binder row level security", () => {
   it("is the only thing scoping the domain layer's updates to their owner", () => {
     // Every domain module writes through the shared repository.ts
     // factory rather than calling supabase directly, so the domain
-    // layer taken as a whole is these four files together.
+    // layer taken as a whole is these files together.
     const members = readFileSync(new URL("./domain/familyMembers.ts", import.meta.url), "utf8");
     const facts = readFileSync(new URL("./domain/medicalFacts.ts", import.meta.url), "utf8");
     const events = readFileSync(new URL("./domain/symptomEvents.ts", import.meta.url), "utf8");
+    const providers = readFileSync(new URL("./domain/providers.ts", import.meta.url), "utf8");
+    const immunizations = readFileSync(new URL("./domain/immunizations.ts", import.meta.url), "utf8");
+    const visits = readFileSync(new URL("./domain/visits.ts", import.meta.url), "utf8");
     const repository = readFileSync(new URL("./domain/repository.ts", import.meta.url), "utf8");
-    const domain = members + facts + events + repository;
+    const domain = members + facts + events + providers + immunizations + visits + repository;
     expect(domain).toMatch(/\.update\(/);
     expect(domain, "the domain layer must never call .delete(), RLS grants no delete policy to fall back on").not.toMatch(
       /\.delete\(/
@@ -119,6 +122,6 @@ describe("Family Health Binder row level security", () => {
   /** visibility must default to something, and 'summary'/'private' are the only two options the app understands. */
   it("gives every fact and event a closed, defaulted visibility", () => {
     const visibilityChecks = [...sql.matchAll(/visibility text not null default 'summary' check \(visibility in \('summary', 'private'\)\)/g)];
-    expect(visibilityChecks.length).toBe(2);
+    expect(visibilityChecks.length, "facts, symptoms, immunizations and visits each carry a visibility").toBe(4);
   });
 });

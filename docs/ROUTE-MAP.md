@@ -61,7 +61,7 @@ The destinations that exist today: `accounts`, `affairs`, `attention`,
 `maintenance`, `members`, `paperwork`, `people`, `printables`, `progress`, `seasons`,
 `providers`, `record`, `records`, `savings`, `settings`, `setup`,
 `setup-centre`, `start`, `subscriptions`, `timeline`, `transactions`,
-`trip`, `vehicles`, `workspace`. Plus the nested
+`trip`, `vehicles`, `visits`, `workspace`. Plus the nested
 `item/[itemId]`, `kids/[childId]`, `kids/[childId]/check`, and each
 product's own `manifest.webmanifest`.
 

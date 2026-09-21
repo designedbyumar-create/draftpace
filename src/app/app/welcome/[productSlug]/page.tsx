@@ -132,7 +132,9 @@ export default async function WelcomePage({ params }: { params: Promise<{ produc
                   <li className="flex gap-2.5">
                     <Check size={15} className="mt-1 shrink-0 text-[var(--primary)]" aria-hidden />
                     <span>
-                      The first screen sets it up with you. It takes a few minutes and you can leave it half done.
+                      {definition.setup.required
+                        ? "The first screen sets it up with you. It takes a few minutes and you can leave it half done."
+                        : "There is nothing to set up first. Open it and start with the first thing you want to keep."}
                     </span>
                   </li>
                 </ul>

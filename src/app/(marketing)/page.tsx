@@ -43,7 +43,7 @@ import {
 } from "./shop/[productSlug]/vehicleMaintenanceCompanionVisuals";
 import {
   OverviewScreenMockup as FhbMockup,
-  IntakeSummaryScreenMockup as FhbSecond,
+  CaregiverSheetScreenMockup as FhbSecond,
 } from "./shop/[productSlug]/familyHealthBinderVisuals";
 
 export const metadata: Metadata = {

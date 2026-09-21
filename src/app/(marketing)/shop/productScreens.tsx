@@ -6,7 +6,7 @@ import { OverviewScreenMockup as HscOverview, CheckScreenMockup as HscCheck, Boo
 import { OverviewScreenMockup as AlongsideOverview, CompanionScreenMockup as AlongsideCompanion, LifeScreenMockup as AlongsideLife } from "./[productSlug]/adhdLifeCompanionVisuals";
 import { OverviewScreenMockup as TravelOverview, ItineraryScreenMockup as TravelItinerary, ChangeImpactScreenMockup as TravelChangeImpact } from "./[productSlug]/travelCompanionVisuals";
 import { OverviewScreenMockup as VmcOverview, ServiceBoundaryScreenMockup as VmcServiceBoundary, HistoryScreenMockup as VmcHistory } from "./[productSlug]/vehicleMaintenanceCompanionVisuals";
-import { OverviewScreenMockup as FhbOverview, SymptomFormScreenMockup as FhbSymptomForm, IntakeSummaryScreenMockup as FhbIntakeSummary } from "./[productSlug]/familyHealthBinderVisuals";
+import { OverviewScreenMockup as FhbOverview, FormsSheetScreenMockup as FhbFormsSheet, CaregiverSheetScreenMockup as FhbCaregiverSheet } from "./[productSlug]/familyHealthBinderVisuals";
 
 /**
  * The one place that maps a real product slug to the three real phone
@@ -32,7 +32,7 @@ export const PRODUCT_SCREENS: Partial<Record<string, React.ComponentType[]>> = {
   alongside: [AlongsideOverview, AlongsideCompanion, AlongsideLife],
   "travel-companion": [TravelOverview, TravelItinerary, TravelChangeImpact],
   "vehicle-maintenance-companion": [VmcOverview, VmcServiceBoundary, VmcHistory],
-  "family-health-binder": [FhbOverview, FhbSymptomForm, FhbIntakeSummary],
+  "family-health-binder": [FhbOverview, FhbFormsSheet, FhbCaregiverSheet],
 };
 
 /** The three screens for a product, already instantiated, or null when it has none. */
@@ -98,9 +98,9 @@ const SCREEN_CAPTIONS: Partial<Record<string, string[]>> = {
     "History: every service, by year",
   ],
   "family-health-binder": [
-    "Overview: every family member and what is recorded for them",
-    "Recording a symptom, with real onset, duration and severity fields",
-    "The Intake Summary, ready to generate for one person",
+    "Overview: each person as a card, and what their forms sheet is missing",
+    "The Forms sheet: the answers every form asks, in the order they ask",
+    "The Caregiver sheet: what to avoid, what is taken, who to call",
   ],
 };
 

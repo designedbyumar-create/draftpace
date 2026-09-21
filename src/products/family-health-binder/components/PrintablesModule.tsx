@@ -1,95 +1,105 @@
 "use client";
 
 import { useState } from "react";
-import Surface from "@/design-system/Surface";
 import Button from "@/design-system/Button";
 import EmptyState from "@/design-system/EmptyState";
-import { Article, Heart } from "@/design-system/Icon";
+import { Article } from "@/design-system/Icon";
+import { longDate, todayIso } from "../dates";
 import { buildIntakeSummary } from "../intakeSummary";
+import { buildCaregiverSheet, buildEmergencyCard, buildFormsSheet, buildVisitPrep, formsGaps, privateCount } from "../printSheets";
+import { describeVisit, nextVisit } from "../visits";
+import { CARD, Heading, PersonPicker } from "./Care";
+import { gate } from "./Gate";
 import { useFamilyHealthBinder } from "./useFamilyHealthBinder";
-import type { FamilyMember } from "../state";
 
-function dateLabel(date: Date): string {
-  return date.toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
-}
+type DocId = "forms" | "caregiver" | "emergency" | "visit" | "intake";
 
 /**
- * Choosing a family member, then generating their Intake Summary. This
- * module never decides what's on the page itself: buildIntakeSummary()
- * already filtered out anything marked private, so this only wires the
- * choice to the download.
+ * Print: the pages that leave the house, one set per person. Every page is
+ * built fresh from the record, dated, and leaves off anything marked
+ * private, and each says how many records that was.
  */
 export default function PrintablesModule() {
-  const { status, errorMessage, members, facts, events } = useFamilyHealthBinder();
-  const [memberId, setMemberId] = useState<string | null>(null);
-  const [making, setMaking] = useState(false);
-  const [generateError, setGenerateError] = useState<string | null>(null);
+  const data = useFamilyHealthBinder();
+  const [personId, setPersonId] = useState<string | null>(null);
+  const [making, setMaking] = useState<DocId | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
-  if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
-  if (status === "no-instance") {
-    return <EmptyState icon={Heart} title="Nothing to show yet" description="This product has not been set up on your account." />;
-  }
-  if (status === "error") {
-    return <EmptyState icon={Heart} title="Couldn't load this" description={errorMessage ?? "Try again."} />;
-  }
+  const blocked = gate(data);
+  if (blocked) return blocked;
+  const { members, facts, events, providers, immunizations, visits } = data;
   if (members.length === 0) {
-    return <EmptyState icon={Heart} title="Nobody added yet" description="Add a family member in Family before generating an Intake Summary." />;
+    return <EmptyState icon={Article} title="Nobody added yet" description="Add a person in Family before printing anything." />;
   }
 
-  const member: FamilyMember = members.find((m) => m.id === memberId) ?? members[0];
+  const today = todayIso();
+  const member = members.find((m) => m.id === personId) ?? members[0];
+  const next = nextVisit(visits, member.id, today);
+  const gaps = formsGaps(member, providers);
+  const hidden = privateCount(member.id, facts, events, immunizations, visits);
 
-  async function generate() {
-    setMaking(true);
-    setGenerateError(null);
+  async function make(id: DocId) {
+    setMaking(id);
+    setError(null);
+    const generatedLabel = longDate(today);
     try {
-      const { downloadIntakeSummary } = await import("../printables/generateIntakeSummary");
-      const summary = buildIntakeSummary(member, facts, events);
-      await downloadIntakeSummary({ ...summary, generatedLabel: dateLabel(new Date()) });
+      if (id === "forms") {
+        const { downloadFormsSheet } = await import("../printables/generateFormsSheet");
+        await downloadFormsSheet({ ...buildFormsSheet(member, facts, providers, immunizations, events, visits, today), generatedLabel });
+      } else if (id === "caregiver") {
+        const { downloadCaregiverSheet } = await import("../printables/generateCaregiverSheet");
+        await downloadCaregiverSheet({ ...buildCaregiverSheet(member, facts, providers, immunizations, events, visits, today), generatedLabel });
+      } else if (id === "emergency") {
+        const { downloadEmergencyCard } = await import("../printables/generateEmergencyCard");
+        await downloadEmergencyCard({ ...buildEmergencyCard(member, facts, providers, immunizations, events, visits, today), generatedLabel });
+      } else if (id === "visit") {
+        const { downloadVisitPrep } = await import("../printables/generateVisitPrep");
+        await downloadVisitPrep({ ...buildVisitPrep(member, next, facts, events, immunizations, visits, today), generatedLabel });
+      } else {
+        const { downloadIntakeSummary } = await import("../printables/generateIntakeSummary");
+        await downloadIntakeSummary({ ...buildIntakeSummary(member, facts, events), generatedLabel, hiddenCount: hidden });
+      }
     } catch {
       // A failed generation must never look like a saved download.
-      setGenerateError("The document could not be made. Nothing was downloaded.");
+      setError("The page could not be made. Nothing was downloaded.");
     } finally {
-      setMaking(false);
+      setMaking(null);
     }
   }
 
+  const docs: { id: DocId; title: string; blurb: string; note?: string }[] = [
+    { id: "forms", title: "Forms sheet", blurb: "The answers school, camp, sports and new-patient forms ask for, in the order they ask.", note: gaps.length > 0 ? `Missing: ${gaps.join(", ")}.` : undefined },
+    { id: "caregiver", title: "Caregiver sheet", blurb: "For a babysitter, grandparent or respite carer: what to avoid, what is taken, who to call, and your notes." },
+    { id: "emergency", title: "Emergency card", blurb: "One small card for a wallet, a bag or the fridge." },
+    { id: "visit", title: "Visit page", blurb: "Your questions, what is taken now and recent symptoms, with room for notes.", note: next ? `For ${describeVisit(next)}.` : "No visit planned, so it prints without questions." },
+    { id: "intake", title: "Intake summary", blurb: "For a new doctor: allergies, medications, conditions, family history and recent symptoms." },
+  ];
+
   return (
-    <div className="flex flex-col gap-6">
-      <div>
-        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Summary</p>
-        <h1 className="mt-2 text-xl font-semibold text-[var(--text)]">Intake Summary</h1>
-        <p className="mt-2 max-w-lg text-[13px] leading-relaxed text-[var(--muted)]">
-          A one-page summary for one person: medications, allergies, family history and recent symptoms, dated and
-          ready to hand to a clinic alongside their own paperwork. Anything you&apos;ve marked private stays out of it.
-        </p>
-      </div>
+    <div className="mx-auto flex w-full max-w-2xl flex-col gap-5">
+      <Heading kicker="The pages that leave the house" title="Print" />
+      {members.length > 1 && <PersonPicker people={members} activeId={member.id} onPick={setPersonId} />}
+      <p className="text-[14px] leading-relaxed text-[var(--muted)]">
+        {hidden > 0
+          ? `${hidden === 1 ? "One record" : `${hidden} records`} marked private for ${member.name} stay${hidden === 1 ? "s" : ""} off every page.`
+          : `Nothing is marked private for ${member.name}. Anything you mark private stays off every page.`}
+      </p>
 
-      {members.length > 1 && (
-        <div className="flex flex-wrap gap-2">
-          {members.map((m) => (
-            <Button key={m.id} size="sm" variant={m.id === member.id ? "primary" : "secondary"} onClick={() => setMemberId(m.id)}>
-              {m.name}
+      <ul className={`${CARD} px-5`}>
+        {docs.map((doc) => (
+          <li key={doc.id} className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 py-4 [&:not(:first-child)]:border-t [&:not(:first-child)]:border-[var(--border)]">
+            <div className="min-w-0 flex-1 basis-64">
+              <p className="text-[16px] font-semibold text-[var(--text)]">{doc.title}</p>
+              <p className="mt-0.5 text-[14px] leading-snug text-[var(--muted)]">{doc.blurb}</p>
+              {doc.note && <p className="mt-1 text-[13.5px] leading-snug text-[var(--muted)]">{doc.note}</p>}
+            </div>
+            <Button variant={doc.id === "forms" ? "commit" : "action"} size="sm" disabled={making !== null} onClick={() => make(doc.id)}>
+              {making === doc.id ? "Preparing..." : "Make it"}
             </Button>
-          ))}
-        </div>
-      )}
-
-      <Surface className="flex flex-wrap items-center justify-between gap-4">
-        <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--surface-muted)] text-[var(--primary)]">
-            <Article size={18} aria-hidden />
-          </div>
-          <div>
-            <p className="text-[13px] font-semibold text-[var(--text)]">Intake Summary, {member.name}</p>
-            <p className="mt-0.5 text-[12px] text-[var(--muted)]">Generated fresh each time, dated.</p>
-          </div>
-        </div>
-        <Button variant="commit" size="sm" disabled={making} onClick={generate}>
-          {making ? "Preparing..." : "Generate"}
-        </Button>
-      </Surface>
-
-      {generateError && <p className="text-[13px] text-[var(--danger)]">{generateError}</p>}
+          </li>
+        ))}
+      </ul>
+      {error && <p role="alert" className="text-[13px] text-[var(--danger)]">{error}</p>}
     </div>
   );
 }
