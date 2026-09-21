@@ -23,6 +23,7 @@ import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { getLemonSqueezyCheckoutUrl, hasLemonSqueezyCheckout } from "@/shop/lemonSqueezyCheckout";
 import CheckoutButton from "@/components/shop/CheckoutButton";
 import { getAreaForProduct } from "@/content/areas";
+import { withPreservedUtm } from "@/lib/analytics/utm";
 import ViewProductTracker from "@/components/analytics/ViewProductTracker";
 import TrackedLink from "@/components/analytics/TrackedLink";
 
@@ -97,8 +98,10 @@ const STORE_COVERS = new Set([
  */
 export default async function ShopProductPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ productSlug: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   ensureShopRegistered();
   ensureProductsRegistered();
@@ -112,8 +115,14 @@ export default async function ShopProductPage({
    * page that replaced it and passes its authority on rather than
    * splitting it. Deep links, old shares and anything already indexed
    * keep working.
+   *
+   * UTM parameters ride along: a Pinterest Pin naming this old slug
+   * directly still lands with its campaign attribution intact, since
+   * this redirect happens server-side before gtag.js ever runs and would
+   * otherwise be a silent, total loss of attribution rather than a
+   * missing-but-recoverable event.
    */
-  if (product.access === "free") permanentRedirect("/free");
+  if (product.access === "free") permanentRedirect(withPreservedUtm("/free", await searchParams));
 
   const priceLabel = formatPrice(product);
   const compareAtLabel = formatCompareAtPrice(product);
@@ -135,10 +144,12 @@ export default async function ShopProductPage({
   /** The life area this product is filed under (Money, Home, Travel, ...): the closest real "category" this catalogue has. */
   const productCategory = getAreaForProduct(product.slug)?.label ?? "uncategorized";
 
+  const resolvedSearchParams = await searchParams;
+
   // Resolved once per request, server-side, so every GetAction on this page
   // agrees on the exact same checkout link rather than each independently
   // re-deriving it.
-  const checkout = await resolveCheckout(product);
+  const checkout = await resolveCheckout(product, resolvedSearchParams);
 
   return (
     /*
@@ -507,7 +518,7 @@ type CheckoutStatus =
   | { kind: "signed-out"; redirectTo: string }
   | { kind: "ready"; href: string };
 
-async function resolveCheckout(product: ShopProduct): Promise<CheckoutStatus> {
+async function resolveCheckout(product: ShopProduct, searchParams: Record<string, string | string[] | undefined>): Promise<CheckoutStatus> {
   if (product.access !== "paid" || product.purchaseAction?.href) return { kind: "not-applicable" };
   if (!hasLemonSqueezyCheckout(product.slug)) return { kind: "not-configured" };
 
@@ -517,7 +528,12 @@ async function resolveCheckout(product: ShopProduct): Promise<CheckoutStatus> {
   } = await supabase.auth.getUser();
 
   if (!user) {
-    return { kind: "signed-out", redirectTo: `/signup?redirectTo=${encodeURIComponent(`/shop/${product.slug}`)}` };
+    // withPreservedUtm before encodeURIComponent: the campaign has to
+    // survive the round trip through signup and back to this exact
+    // product page, or a Pinterest visitor who signs up mid-visit is the
+    // one visitor this whole system silently fails to attribute.
+    const backTo = withPreservedUtm(`/shop/${product.slug}`, searchParams);
+    return { kind: "signed-out", redirectTo: `/signup?redirectTo=${encodeURIComponent(backTo)}` };
   }
 
   const href = getLemonSqueezyCheckoutUrl(product.slug, { userId: user.id, email: user.email ?? null });

@@ -2,11 +2,20 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { createServerClient } from "@supabase/ssr";
 import { isAdminEnabled } from "@/product-framework/environment";
+import { withPreservedUtm } from "@/lib/analytics/utm";
 
-function redirectTo(request: NextRequest, pathname: string, search?: Record<string, string>) {
-  const url = request.nextUrl.clone();
-  url.pathname = pathname;
-  url.search = "";
+/**
+ * `pathname` is a plain path (no query) when the caller already knows the
+ * destination; `dest` is for the one caller (below) that is round-tripping
+ * an opaque `path+query` string it did not build itself and cannot assume
+ * has no "?" in it. Both go through `new URL(..., request.url)` rather
+ * than mutating `request.nextUrl.clone()`'s `.pathname` directly: the
+ * pathname setter percent-encodes a literal "?" instead of treating it as
+ * the start of a query string, which silently produced a broken redirect
+ * the one time this carried a combined string before.
+ */
+function redirectTo(request: NextRequest, dest: string, search?: Record<string, string>) {
+  const url = new URL(dest, request.url);
   if (search) {
     for (const [key, value] of Object.entries(search)) url.searchParams.set(key, value);
   }
@@ -65,9 +74,12 @@ export async function proxy(request: NextRequest) {
   }
 
   // Protected /app and /admin: signed-out visitors go to login with their
-  // intended destination preserved.
+  // intended destination preserved, UTM parameters included — a Pinterest
+  // Pin can point straight at an owned product's /app/** route, and the
+  // login detour must not be the reason gtag.js never sees the campaign
+  // that brought them here (see src/lib/analytics/utm.ts).
   if (!user) {
-    return redirectTo(request, "/login", { redirectTo: pathname });
+    return redirectTo(request, "/login", { redirectTo: withPreservedUtm(pathname, request.nextUrl.searchParams) });
   }
 
   return response;
