@@ -24,6 +24,10 @@ import { productThemeStyle, PRODUCT_THEME_ATTRIBUTE } from "@/product-framework/
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { getLemonSqueezyCheckoutUrl, hasLemonSqueezyCheckout } from "@/shop/lemonSqueezyCheckout";
 import CheckoutButton from "@/components/shop/CheckoutButton";
+import { getAreaForProduct } from "@/content/areas";
+import { withPreservedUtm } from "@/lib/analytics/utm";
+import ViewProductTracker from "@/components/analytics/ViewProductTracker";
+import TrackedLink from "@/components/analytics/TrackedLink";
 
 export const dynamic = "force-dynamic";
 
@@ -96,8 +100,10 @@ const STORE_COVERS = new Set([
  */
 export default async function ShopProductPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ productSlug: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   ensureShopRegistered();
   ensureProductsRegistered();
@@ -111,8 +117,14 @@ export default async function ShopProductPage({
    * page that replaced it and passes its authority on rather than
    * splitting it. Deep links, old shares and anything already indexed
    * keep working.
+   *
+   * UTM parameters ride along: a Pinterest Pin naming this old slug
+   * directly still lands with its campaign attribution intact, since
+   * this redirect happens server-side before gtag.js ever runs and would
+   * otherwise be a silent, total loss of attribution rather than a
+   * missing-but-recoverable event.
    */
-  if (product.access === "free") permanentRedirect("/free");
+  if (product.access === "free") permanentRedirect(withPreservedUtm("/free", await searchParams));
 
   const priceLabel = formatPrice(product);
   const compareAtLabel = formatCompareAtPrice(product);
@@ -131,11 +143,15 @@ export default async function ShopProductPage({
   const installedName = definition?.pwa?.shortName ?? product.title;
   const installable = Boolean(definition?.pwa);
   const screenTour = screenTourFor(product.slug);
+  /** The life area this product is filed under (Money, Home, Travel, ...): the closest real "category" this catalogue has. */
+  const productCategory = getAreaForProduct(product.slug)?.label ?? "uncategorized";
+
+  const resolvedSearchParams = await searchParams;
 
   // Resolved once per request, server-side, so every GetAction on this page
   // agrees on the exact same checkout link rather than each independently
   // re-deriving it.
-  const checkout = await resolveCheckout(product);
+  const checkout = await resolveCheckout(product, resolvedSearchParams);
 
   const detailTabs = buildDetailTabs(product, { accent, installedName, installable, decidingQuestions });
 
@@ -149,6 +165,7 @@ export default async function ShopProductPage({
       answer a media query (CLAUDE.md rule 11).
     */
     <div {...{ [PRODUCT_THEME_ATTRIBUTE]: "" }} style={definition ? productThemeStyle(definition.theme) : undefined}>
+      <ViewProductTracker productId={product.id} productName={product.title} productCategory={productCategory} />
       {structuredData && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       )}
@@ -212,13 +229,13 @@ export default async function ShopProductPage({
             </p>
 
             <div className="mt-6">
-              <GetAction product={product} checkout={checkout} size="lg" fullWidth />
+              <GetAction product={product} checkout={checkout} productCategory={productCategory} size="lg" fullWidth />
             </div>
             {/* Appears only once the button above has scrolled away, and
                 renders the same GetAction so the two can never disagree
                 about what the checkout is. */}
             <StickyBuyBar priceLabel={priceLabel} compareAtLabel={compareAtLabel}>
-              <GetAction product={product} checkout={checkout} size="md" fullWidth />
+              <GetAction product={product} checkout={checkout} productCategory={productCategory} size="md" fullWidth />
             </StickyBuyBar>
             <p className="mt-3 flex items-center gap-1.5 text-[12.5px] text-[var(--faint)]">
               <Lock size={12} aria-hidden />
@@ -318,7 +335,7 @@ export default async function ShopProductPage({
             device you sign in on.
           </p>
           <div className="mt-8 flex justify-center">
-            <GetAction product={product} checkout={checkout} size="lg" center />
+            <GetAction product={product} checkout={checkout} productCategory={productCategory} size="lg" center />
           </div>
           {compareAtLabel && (
             <p className="mt-4 text-[13px] text-[var(--faint)]">
@@ -535,7 +552,7 @@ type CheckoutStatus =
   | { kind: "signed-out"; redirectTo: string }
   | { kind: "ready"; href: string };
 
-async function resolveCheckout(product: ShopProduct): Promise<CheckoutStatus> {
+async function resolveCheckout(product: ShopProduct, searchParams: Record<string, string | string[] | undefined>): Promise<CheckoutStatus> {
   if (product.access !== "paid" || product.purchaseAction?.href) return { kind: "not-applicable" };
   if (!hasLemonSqueezyCheckout(product.slug)) return { kind: "not-configured" };
 
@@ -545,7 +562,12 @@ async function resolveCheckout(product: ShopProduct): Promise<CheckoutStatus> {
   } = await supabase.auth.getUser();
 
   if (!user) {
-    return { kind: "signed-out", redirectTo: `/signup?redirectTo=${encodeURIComponent(`/shop/${product.slug}`)}` };
+    // withPreservedUtm before encodeURIComponent: the campaign has to
+    // survive the round trip through signup and back to this exact
+    // product page, or a Pinterest visitor who signs up mid-visit is the
+    // one visitor this whole system silently fails to attribute.
+    const backTo = withPreservedUtm(`/shop/${product.slug}`, searchParams);
+    return { kind: "signed-out", redirectTo: `/signup?redirectTo=${encodeURIComponent(backTo)}` };
   }
 
   const href = getLemonSqueezyCheckoutUrl(product.slug, { userId: user.id, email: user.email ?? null });
@@ -558,12 +580,15 @@ async function resolveCheckout(product: ShopProduct): Promise<CheckoutStatus> {
 function GetAction({
   product,
   checkout,
+  productCategory,
   size = "md",
   center = false,
   fullWidth = false,
 }: {
   product: ShopProduct;
   checkout: CheckoutStatus;
+  /** The area label (Money, Home, Travel, ...) this product's page already computed once, passed down rather than re-derived per render. */
+  productCategory: string;
   size?: "sm" | "md" | "lg";
   center?: boolean;
   /** Fills its column, so the buy box reads as one block rather than a button floating in it. */
@@ -592,7 +617,7 @@ function GetAction({
   // distinct "you're about to be charged" moment still matters) and as a
   // safe fallback entry point.
   if (product.access === "free") {
-    return <AddToLibraryButton slug={product.slug} label={label} size={size} />;
+    return <AddToLibraryButton slug={product.slug} label={label} size={size} analytics={{ productName: product.title }} />;
   }
 
   // Paid, with a static href already set on the listing itself (e.g. a
@@ -608,7 +633,13 @@ function GetAction({
 
   if (checkout.kind === "ready") {
     return (
-      <CheckoutButton href={checkout.href} size={size} fullWidth={fullWidth} iconRight={<ArrowRight size={15} aria-hidden />}>
+      <CheckoutButton
+        href={checkout.href}
+        size={size}
+        fullWidth={fullWidth}
+        iconRight={<ArrowRight size={15} aria-hidden />}
+        analytics={{ productId: product.id, productName: product.title, productCategory, cta: label }}
+      >
         {label}
       </CheckoutButton>
     );
@@ -616,9 +647,16 @@ function GetAction({
 
   if (checkout.kind === "signed-out") {
     return (
-      <Button href={checkout.redirectTo} size={size} fullWidth={fullWidth} iconRight={<ArrowRight size={15} aria-hidden />}>
+      <TrackedLink
+        href={checkout.redirectTo}
+        size={size}
+        fullWidth={fullWidth}
+        iconRight={<ArrowRight size={15} aria-hidden />}
+        eventName="product_cta_click"
+        eventParams={{ product_id: product.id, product_name: product.title, cta: label }}
+      >
         {label}
-      </Button>
+      </TrackedLink>
     );
   }
 

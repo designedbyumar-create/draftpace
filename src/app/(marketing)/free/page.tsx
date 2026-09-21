@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Button from "@/design-system/Button";
 import Container from "@/design-system/Container";
 import { ArrowRight, Check } from "@/design-system/Icon";
 import { shopRegistry } from "@/shop/registry";
@@ -10,6 +9,9 @@ import ProductScreenCarousel from "../shop/[productSlug]/ProductScreenCarousel";
 import { screenTourFor } from "../shop/productScreens";
 import { productRegistry } from "@/product-framework/registry";
 import { ensureProductsRegistered } from "@/products/manifest";
+import { getAreaForProduct } from "@/content/areas";
+import ViewProductTracker from "@/components/analytics/ViewProductTracker";
+import TrackedLink from "@/components/analytics/TrackedLink";
 
 /**
  * The free product's own front door.
@@ -98,9 +100,11 @@ export default function FreeProductPage() {
   ensureProductsRegistered();
   const accent = productRegistry.getBySlug(product.slug)?.theme?.accentScale?.base ?? "#214b3e";
   const screenTour = screenTourFor(product.slug);
+  const productCategory = getAreaForProduct(product.slug)?.label ?? "uncategorized";
 
   return (
     <>
+      <ViewProductTracker productId={product.id} productName={product.title} productCategory={productCategory} />
       {/* Hero. One claim, one button, and the screen doing the thing.
           "Free" is stated as a fact rather than shouted: this page is
           reached by people who already know it is free, from an ad, a
@@ -120,9 +124,15 @@ export default function FreeProductPage() {
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-4">
-                <Button href={`/app/activate/${product.slug}`} size="lg" iconRight={<ArrowRight size={16} aria-hidden />}>
+                <TrackedLink
+                  href={`/app/activate/${product.slug}`}
+                  size="lg"
+                  iconRight={<ArrowRight size={16} aria-hidden />}
+                  eventName="free_product_start"
+                  eventParams={{ product_id: product.id, product_name: product.title }}
+                >
                   Start free
-                </Button>
+                </TrackedLink>
                 <p className="text-[13px] text-[var(--faint)]">
                   No card. No subscription. Takes a couple of minutes.
                 </p>
@@ -313,9 +323,15 @@ export default function FreeProductPage() {
             Free, complete, and yours to keep. If it is not for you, nothing was spent finding out.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <Button href={`/app/activate/${product.slug}`} size="lg" iconRight={<ArrowRight size={16} aria-hidden />}>
+            <TrackedLink
+              href={`/app/activate/${product.slug}`}
+              size="lg"
+              iconRight={<ArrowRight size={16} aria-hidden />}
+              eventName="free_product_start"
+              eventParams={{ product_id: product.id, product_name: product.title }}
+            >
               Start free
-            </Button>
+            </TrackedLink>
             <Link href="/shop" className="text-[13px] font-semibold text-[var(--muted)] hover:text-[var(--text)]">
               See the paid Companions
             </Link>
