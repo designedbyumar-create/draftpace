@@ -126,24 +126,27 @@ function Row({ poster, isOpen, onToggle }: { poster: PosterData; isOpen: boolean
               {BUYER_BLURB[poster.productSlug]}
             </p>
 
-            {/* Price and View sit under the pitch, not beside it, and
-                stay exactly here whether the demo is open or closed: a
-                visitor who is sold already never has to open anything to
-                reach the product's own page. */}
-            <div className="mt-4 flex flex-wrap items-center gap-4">
-              <span className="text-[16px] font-semibold" style={{ fontFamily: theme.headlineFont }}>
-                {poster.priceLabel}
-              </span>
-              <Link
-                href={`/shop/${poster.productSlug}`}
-                aria-label={`View ${poster.title}`}
-                onClick={(e) => e.stopPropagation()}
-                className="inline-flex min-h-10 shrink-0 items-center gap-1.5 rounded-full px-4 text-[13.5px] font-semibold transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] focus-visible:ring-offset-2"
-                style={{ backgroundColor: theme.accent, color: theme.accentContrast }}
-              >
-                View <ArrowRight size={13} aria-hidden />
-              </Link>
-            </div>
+            {/* Price and View sit under the pitch while the row is
+                collapsed, so a visitor who is already sold never has to
+                open anything to reach the product's own page. Once open,
+                the expanded panel below ends with its own price and CTA,
+                so this doesn't repeat it. */}
+            {!isOpen && (
+              <div className="mt-4 flex flex-wrap items-center gap-4">
+                <span className="text-[16px] font-semibold" style={{ fontFamily: theme.headlineFont }}>
+                  {poster.priceLabel}
+                </span>
+                <Link
+                  href={`/shop/${poster.productSlug}`}
+                  aria-label={`View ${poster.title}`}
+                  onClick={(e) => e.stopPropagation()}
+                  className="inline-flex min-h-10 shrink-0 items-center gap-1.5 rounded-full px-4 text-[13.5px] font-semibold transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] focus-visible:ring-offset-2"
+                  style={{ backgroundColor: theme.accent, color: theme.accentContrast }}
+                >
+                  View <ArrowRight size={13} aria-hidden />
+                </Link>
+              </div>
+            )}
           </div>
         </div>
 

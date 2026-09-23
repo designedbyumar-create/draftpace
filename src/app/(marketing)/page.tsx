@@ -223,7 +223,9 @@ export default function HomePage() {
             A Companion never tells you that you are behind.
           </p>
         </Container>
-        <CompanionAccordion posters={scenes.flatMap((scene) => scene.posters)} />
+        <Container width="wide">
+          <CompanionAccordion posters={scenes.flatMap((scene) => scene.posters)} />
+        </Container>
         <div className="flex justify-center border-t border-[var(--border)] py-14">
           <Button href="/shop" variant="secondary" size="lg" iconRight={<ArrowRight size={16} aria-hidden />}>
             Compare them side by side
