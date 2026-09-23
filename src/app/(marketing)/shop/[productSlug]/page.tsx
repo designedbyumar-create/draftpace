@@ -21,6 +21,7 @@ import StickyBuyBar from "./StickyBuyBar";
 import { productRegistry } from "@/product-framework/registry";
 import { ensureProductsRegistered } from "@/products/manifest";
 import { productThemeStyle, PRODUCT_THEME_ATTRIBUTE } from "@/product-framework/themeExtension";
+import { deriveDarkTones } from "@/design-system/accentTone";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { getLemonSqueezyCheckoutUrl, hasLemonSqueezyCheckout } from "@/shop/lemonSqueezyCheckout";
 import CheckoutButton from "@/components/shop/CheckoutButton";
@@ -139,7 +140,11 @@ export default async function ShopProductPage({
    * fixture) falls back to the platform accent and its own title.
    */
   const definition = productRegistry.getBySlug(product.slug);
-  const accent = definition?.theme?.accentScale?.base ?? "var(--primary)";
+  const accentScale = definition?.theme?.accentScale;
+  const accent = accentScale?.base ?? "var(--primary)";
+  // The dark-theme counterpart, for the screen carousel's wash: see its
+  // own comment for why an inline style needs both values, not one.
+  const accentDark = accentScale ? (definition?.theme?.accentScaleDark?.base ?? deriveDarkTones(accentScale.base).base) : "var(--primary)";
   const installedName = definition?.pwa?.shortName ?? product.title;
   const installable = Boolean(definition?.pwa);
   const screenTour = screenTourFor(product.slug);
@@ -190,7 +195,7 @@ export default async function ShopProductPage({
               product with no drawn screens falls back to the cover
               gallery rather than an empty frame. */}
           {screenTour ? (
-            <ProductScreenCarousel screens={screenTour} accent={accent} title={product.title} />
+            <ProductScreenCarousel screens={screenTour} accent={accent} accentDark={accentDark} title={product.title} />
           ) : (
             <ProductGallery slug={product.slug} title={product.title} accent={accent} />
           )}

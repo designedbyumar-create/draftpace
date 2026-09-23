@@ -1826,7 +1826,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "why-budgeting-apps-stop-working-after-two-months",
     title: "Why budgeting apps stop working after about two months",
-    dek: "Eighty one percent of people abandon their financial goals. The reason is usually the tool's design, not the person using it.",
+    dek: "Most people who set a financial goal do not stick to it. The reason is usually the tool's design, not the person using it.",
     publishedAt: "2026-08-30",
     areaSlug: "money",
     body: [
@@ -2367,7 +2367,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "organising-a-multi-stop-trip-without-a-spreadsheet",
     title: "Organising a multi-stop trip without a spreadsheet",
-    dek: "Six in ten people spend over ten hours planning one trip. Most of that is spent rebuilding a picture that keeps falling apart.",
+    dek: "Planning one trip routinely runs to ten hours or more. Most of that is spent rebuilding a picture that keeps falling apart.",
     publishedAt: "2026-08-30",
     areaSlug: "travel",
     body: [
@@ -4320,10 +4320,32 @@ export function formatGuideDate(iso: string): string {
 /**
  * Up to `limit` other guides from the same area, so a reader who arrived
  * on one narrow article has somewhere to go that is not the exit.
+ *
+ * Ranked by distance from this guide's own position in the area, not by
+ * the area's publication order: a flat `slice(0, limit)` always returned
+ * the same opening guides regardless of which one you were reading, which
+ * meant every guide past the fourth in an area showed the identical three
+ * "related" links, and the first guide in an area showed the same guide
+ * here and in "next" (adjacentGuides). Immediate neighbours are pushed to
+ * the back of the ranking, since adjacentGuides already surfaces those as
+ * previous/next, but they still fill in when an area is too small for
+ * `limit` genuinely distinct picks.
  */
 export function relatedGuides(guide: Guide, limit = 3): Guide[] {
   if (!guide.areaSlug) return [];
-  return guidesForArea(guide.areaSlug)
-    .filter((candidate) => candidate.slug !== guide.slug)
-    .slice(0, limit);
+  const siblings = guidesForArea(guide.areaSlug);
+  const index = siblings.findIndex((candidate) => candidate.slug === guide.slug);
+  if (index === -1) return [];
+
+  return siblings
+    .map((candidate, i) => ({ candidate, distance: Math.abs(i - index) }))
+    .filter(({ distance }) => distance !== 0)
+    .sort((a, b) => {
+      const aAdjacent = a.distance === 1;
+      const bAdjacent = b.distance === 1;
+      if (aAdjacent !== bAdjacent) return aAdjacent ? 1 : -1;
+      return a.distance - b.distance;
+    })
+    .slice(0, limit)
+    .map(({ candidate }) => candidate);
 }

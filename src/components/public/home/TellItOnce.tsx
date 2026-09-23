@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type CSSProperties } from "react";
+import { useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Article, ArrowRight, Bell, BookOpen, CalendarCheck, Car, FirstAidKit, Globe, Home, Save, Wallet, type DraftpaceIcon } from "@/design-system/Icon";
 import { DEFAULTS, ITEMS, describe, type ItemId, type Options } from "./tellItOnceRules";
@@ -20,15 +20,17 @@ import { DEFAULTS, ITEMS, describe, type ItemId, type Options } from "./tellItOn
  * no merged screen here and none is implied: the Companions never read one
  * another's data.
  *
- * The colour of the result follows the product the item belongs to, taken
- * from that product's own theme, so choosing a different tile changes whose
- * work you are looking at.
+ * The colour of the result follows the life area the item belongs to, taken
+ * from the platform's own area tokens (each defined as a light/dark pair in
+ * globals.css), so choosing a different tile changes whose work you are
+ * looking at and stays legible in every theme without any theme-detection
+ * logic here.
  */
 const ICONS: Record<ItemId, DraftpaceIcon> = { boiler: Home, car: Car, flight: Globe, allergy: FirstAidKit, visa: Wallet, will: BookOpen };
 
-export interface TellItOnceAccent {
-  base: string;
-  soft: string;
+/** An item's life-area accent, as the theme-aware CSS custom properties globals.css already defines. */
+function areaAccent(area: string): { base: string; soft: string } {
+  return { base: `var(--area-${area})`, soft: `var(--area-${area}-soft)` };
 }
 
 const STEPS = [
@@ -37,17 +39,16 @@ const STEPS = [
   { key: "speaks", label: "Speaks up", Icon: Bell },
 ] as const;
 
-export default function TellItOnce({ accents }: { accents: Record<string, TellItOnceAccent> }) {
+export default function TellItOnce() {
   const reduceMotion = useReducedMotion();
   const [id, setId] = useState<ItemId>("boiler");
   const [opts, setOpts] = useState<Options>(DEFAULTS);
   const item = ITEMS.find((i) => i.id === id) ?? ITEMS[0];
   const result = describe(id, opts);
-  const accent = accents[item.productSlug] ?? { base: "var(--primary)", soft: "var(--primary-soft)" };
-  const vars = { "--tio": accent.base, "--tio-soft": accent.soft } as CSSProperties;
+  const accent = areaAccent(item.area);
 
   return (
-    <div style={vars}>
+    <div>
       <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--brand-ink)]">How a Companion works</p>
       <h2 className="mt-3 max-w-3xl font-serif text-[34px] font-semibold leading-[1.06] tracking-[-0.025em] sm:text-[52px]">
         Tell it once. It does the remembering.
@@ -60,7 +61,7 @@ export default function TellItOnce({ accents }: { accents: Record<string, TellIt
             {ITEMS.map((it) => {
               const Icon = ICONS[it.id];
               const on = it.id === id;
-              const a = accents[it.productSlug];
+              const a = areaAccent(it.area);
               return (
                 <button
                   key={it.id}

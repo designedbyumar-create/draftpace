@@ -9,6 +9,7 @@ import ProductScreenCarousel from "../shop/[productSlug]/ProductScreenCarousel";
 import { screenTourFor } from "../shop/productScreens";
 import { productRegistry } from "@/product-framework/registry";
 import { ensureProductsRegistered } from "@/products/manifest";
+import { deriveDarkTones } from "@/design-system/accentTone";
 import { getAreaForProduct } from "@/content/areas";
 import ViewProductTracker from "@/components/analytics/ViewProductTracker";
 import TrackedLink from "@/components/analytics/TrackedLink";
@@ -99,6 +100,9 @@ export default function FreeProductPage() {
    */
   ensureProductsRegistered();
   const accent = productRegistry.getBySlug(product.slug)?.theme?.accentScale?.base ?? "#214b3e";
+  // The dark-theme counterpart, for the screen carousel's wash: see its
+  // own comment for why an inline style needs both values, not one.
+  const accentDark = deriveDarkTones(accent).base;
   const screenTour = screenTourFor(product.slug);
   const productCategory = getAreaForProduct(product.slug)?.label ?? "uncategorized";
 
@@ -160,7 +164,7 @@ export default function FreeProductPage() {
                 place the two tiers should look identical: the difference
                 between them is the price, not the seriousness. */}
             {screenTour ? (
-              <ProductScreenCarousel screens={screenTour} accent={accent} title={product.title} />
+              <ProductScreenCarousel screens={screenTour} accent={accent} accentDark={accentDark} title={product.title} />
             ) : null}
           </div>
         </Container>

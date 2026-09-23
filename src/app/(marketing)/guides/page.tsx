@@ -7,8 +7,7 @@ import GuidesExplorer, {
   type ExplorerGuide,
 } from "@/components/public/guides/GuidesExplorer";
 import { areaIdentity } from "@/components/public/guides/areaIdentity";
-import { GUIDES, SERIES, guidesForArea, readingMinutes, readingTimeLabel, seriesGuides } from "@/content/guides";
-import { LIFE_AREAS } from "@/content/areas";
+import { GUIDES, SERIES, areasWithGuides, guidesForArea, readingMinutes, readingTimeLabel, seriesGuides } from "@/content/guides";
 
 export const metadata: Metadata = {
   title: "Guides",
@@ -35,8 +34,9 @@ export default function GuidesIndexPage() {
   const series = seriesGuides();
   const orphans = GUIDES.filter((guide) => guide.areaSlug === null);
   const minutes = GUIDES.reduce((total, guide) => total + readingMinutes(guide), 0);
+  const populatedAreas = areasWithGuides();
 
-  const areas: ExplorerArea[] = LIFE_AREAS.map((area) => {
+  const areas: ExplorerArea[] = populatedAreas.map((area) => {
     const { Mark } = areaIdentity(area.slug);
     return {
       slug: area.slug,
@@ -55,7 +55,7 @@ export default function GuidesIndexPage() {
   // panel, because they are about the whole shelf rather than one part
   // of it. They get their own section below instead.
   const guides: ExplorerGuide[] = GUIDES.filter((guide) => guide.areaSlug !== null).map((guide) => {
-    const area = LIFE_AREAS.find((candidate) => candidate.slug === guide.areaSlug);
+    const area = populatedAreas.find((candidate) => candidate.slug === guide.areaSlug);
     return {
       slug: guide.slug,
       title: guide.title,

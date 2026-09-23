@@ -354,7 +354,12 @@ describe("factual claims", () => {
 
   it("never states a population statistic without a source", () => {
     for (const guide of GUIDES) {
-      for (const text of guide.body.flatMap(blockStrings)) {
+      // Includes the title and dek, not just the body: a dek is the most
+      // read line of the guide (it is the hook on the index card as well
+      // as the subhead on the article), and two population statistics
+      // shipped there once already, missed because this only scanned the
+      // body.
+      for (const text of [guide.title, guide.dek, ...guide.body.flatMap(blockStrings)]) {
         for (const sentence of (text ?? "").split(/(?<=\.)\s+/)) {
           if (FIGURE.test(sentence) && POPULATION.test(sentence)) {
             expect.fail(`${guide.slug} states an unsourced statistic: "${sentence.trim()}"`);

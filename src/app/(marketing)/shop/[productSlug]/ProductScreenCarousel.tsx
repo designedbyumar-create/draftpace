@@ -42,10 +42,13 @@ export type CarouselScreen = { node: ReactNode; caption: string | null };
 export default function ProductScreenCarousel({
   screens,
   accent,
+  accentDark,
   title,
 }: {
   screens: CarouselScreen[];
   accent: string;
+  /** The dark-theme counterpart of `accent`, for the wash below: see its own comment. */
+  accentDark: string;
   title: string;
 }) {
   const [index, setIndex] = useState(0);
@@ -76,17 +79,21 @@ export default function ProductScreenCarousel({
   }, [taken, reduceMotion, screens.length]);
 
   const active = screens[index];
+  // The same wash the generated store images use (accentWash, and see
+  // docs/DESIGN-SYSTEM.md for why it goes through HSL rather than mixing
+  // with white), so this frame and the picture of it that gets shared to
+  // social are recognisably one thing. Each stop is a light-dark() pair
+  // rather than a single resolved colour: this is an inline custom style,
+  // which can't answer a media query on its own, so a single value stayed
+  // locked to its light-mode wash regardless of the visitor's theme.
+  const wash = (light: number, dark: number) => `light-dark(${accentWash(accent, light)}, ${accentWash(accentDark, dark)})`;
 
   return (
     <div className="flex flex-col">
       <div
         className="relative overflow-hidden rounded-2xl border border-[var(--border)] px-6 pt-10 sm:px-10 sm:pt-14"
         style={{
-          // The same wash the generated store images use (accentWash, and
-          // see docs/DESIGN-SYSTEM.md for why it goes through HSL rather
-          // than mixing with white), so this frame and the picture of it
-          // that gets shared to social are recognisably one thing.
-          background: `linear-gradient(150deg, ${accentWash(accent, 0.905)} 0%, ${accentWash(accent, 0.973)} 62%, ${accentWash(accent, 0.925)} 100%)`,
+          background: `linear-gradient(150deg, ${wash(0.905, 0.14)} 0%, ${wash(0.973, 0.19)} 62%, ${wash(0.925, 0.16)} 100%)`,
         }}
       >
         {/* The caption above the phone, not below: it says what you are
@@ -101,7 +108,7 @@ export default function ProductScreenCarousel({
               exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -6 }}
               transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
               className="absolute inset-x-0 top-0 font-serif text-[19px] leading-[1.3] sm:text-[21px]"
-              style={{ color: `color-mix(in srgb, ${accent} 82%, black)` }}
+              style={{ color: `light-dark(color-mix(in srgb, ${accent} 82%, black), ${accentDark})` }}
             >
               {active?.caption ?? title}
             </motion.p>

@@ -4,16 +4,14 @@ import Button from "@/design-system/Button";
 import Container from "@/design-system/Container";
 import { ArrowRight } from "@/design-system/Icon";
 import CompanionPicker, { type PickerPanel } from "@/components/public/home/CompanionPicker";
-import ProductNav from "@/components/public/home/ProductNav";
-import CompanionShowcase from "@/components/public/home/CompanionShowcase";
+import CompanionAccordion from "@/components/public/home/CompanionAccordion";
 import type { SceneData, PosterTheme } from "@/components/public/home/posterTypes";
 import TellItOnce from "@/components/public/home/TellItOnce";
 import TrustSection from "@/components/public/home/TrustSection";
 import { softwareApplicationStructuredData } from "@/lib/structuredData";
 import { LIFE_AREAS } from "@/content/areas";
 import { POSTER_SCENES } from "@/content/homepagePosters";
-import { ITEMS as TELL_ITEMS } from "@/components/public/home/tellItOnceRules";
-import { accentWash } from "@/design-system/accentTone";
+import { accentWash, deriveDarkTones } from "@/design-system/accentTone";
 import { productRegistry } from "@/product-framework/registry";
 import { ensureProductsRegistered } from "@/products/manifest";
 import { discountPercent, formatCompareAtPrice, formatPrice } from "@/shop/definition";
@@ -97,8 +95,6 @@ const AREA_SECOND_MOCKUP: Record<string, React.ReactNode> = {
   "family-health": <FhbSecond />,
 };
 
-const ITEM_SLUGS = TELL_ITEMS.map((item) => item.productSlug);
-
 /** The face each product's own headings speak in, and the one that labels everything in monospace. */
 const HEADLINE_FONT: Record<string, string> = {
   "personal-finance-companion": "var(--font-fraunces), ui-serif, Georgia, serif",
@@ -118,34 +114,43 @@ export default function HomePage() {
     its definition, so re-theming a product moves its poster with it. A
     product with no ground of its own (Home Base, Homeschooling) gets a
     pale wash of its accent, worked out the way the Shop's store images are.
+
+    Every value is a `light-dark()` pair rather than a single resolved
+    colour. A poster section sets these as literal --poster-* custom
+    properties (CompanionShowcase.tsx), and an inline custom property
+    can't answer a media query on its own: a single light value would
+    stay light no matter the visitor's theme, the same failure
+    productThemeStyle() was rewritten once already to avoid (see its own
+    comment). `light-dark()` resolves against the page's `color-scheme`,
+    which globals.css already sets correctly for all three theme states,
+    so no extra plumbing is needed to make eight product sections behave
+    like the rest of the page in dark mode.
   */
   function posterTheme(slug: string): PosterTheme | null {
     const theme = productRegistry.getBySlug(slug)?.theme;
     const scale = theme?.accentScale;
     if (!theme || !scale) return null;
-    const ground = theme.ground?.light;
+    const groundLight = theme.ground?.light;
+    const groundDark = theme.ground?.dark;
+    const darkScale = theme.accentScaleDark ?? deriveDarkTones(scale.base);
+    const heroLight = theme.hero?.light;
+    const heroDark = theme.hero?.dark;
+    const ld = (light: string, dark: string) => `light-dark(${light}, ${dark})`;
     return {
-      bg: ground?.appBg ?? accentWash(scale.base, 0.955),
-      surface: ground?.surface ?? accentWash(scale.base, 0.995),
-      text: ground?.text ?? "#1c1917",
-      muted: ground?.muted ?? "#57534e",
-      border: ground?.border ?? accentWash(scale.base, 0.86),
-      accent: scale.base,
-      accentContrast: scale.contrast,
-      soft: scale.soft,
+      bg: ld(groundLight?.appBg ?? accentWash(scale.base, 0.955), groundDark?.appBg ?? accentWash(scale.base, 0.13)),
+      surface: ld(groundLight?.surface ?? accentWash(scale.base, 0.995), groundDark?.surface ?? accentWash(scale.base, 0.17)),
+      text: ld(groundLight?.text ?? "#1c1917", groundDark?.text ?? "#f5f2ea"),
+      muted: ld(groundLight?.muted ?? "#57534e", groundDark?.muted ?? "#b1aa9d"),
+      border: ld(groundLight?.border ?? accentWash(scale.base, 0.86), groundDark?.border ?? accentWash(scale.base, 0.26)),
+      accent: ld(scale.base, darkScale.base),
+      accentContrast: ld(scale.contrast, darkScale.contrast),
+      soft: ld(scale.soft, darkScale.soft),
       radius: RADIUS[theme.identity?.shape ?? "standard"],
       headlineFont: HEADLINE_FONT[slug] ?? SERIF,
       monoLabels: slug === "vehicle-maintenance-companion",
-      hero: theme.hero?.light,
+      hero: heroLight && heroDark ? { from: ld(heroLight.from, heroDark.from), mid: ld(heroLight.mid, heroDark.mid), to: ld(heroLight.to, heroDark.to), ink: ld(heroLight.ink, heroDark.ink) } : undefined,
     };
   }
-
-  const tellAccents = Object.fromEntries(
-    ITEM_SLUGS.flatMap((slug) => {
-      const scale = productRegistry.getBySlug(slug)?.theme?.accentScale;
-      return scale ? [[slug, { base: scale.base, soft: scale.soft }]] : [];
-    })
-  );
 
   const scenes: SceneData[] = POSTER_SCENES.flatMap((scene) => {
     const posters = scene.products.flatMap((content) => {
@@ -201,7 +206,7 @@ export default function HomePage() {
       {/* 2. How a Companion works, to try */}
       <section className="border-b border-[var(--border)]">
         <Container width="wide" className="py-16 sm:py-24">
-          <TellItOnce accents={tellAccents} />
+          <TellItOnce />
         </Container>
       </section>
 
@@ -218,12 +223,7 @@ export default function HomePage() {
             A Companion never tells you that you are behind.
           </p>
         </Container>
-        <ProductNav
-          items={scenes.flatMap((scene) =>
-            scene.posters.map((poster) => ({ slug: poster.productSlug, label: poster.title.replace(/ Companion$/, ""), accent: poster.theme.accent, contrast: poster.theme.accentContrast }))
-          )}
-        />
-        <CompanionShowcase posters={scenes.flatMap((scene) => scene.posters)} />
+        <CompanionAccordion posters={scenes.flatMap((scene) => scene.posters)} />
         <div className="flex justify-center border-t border-[var(--border)] py-14">
           <Button href="/shop" variant="secondary" size="lg" iconRight={<ArrowRight size={16} aria-hidden />}>
             Compare them side by side

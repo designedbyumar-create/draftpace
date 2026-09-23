@@ -4,14 +4,12 @@ import { motion } from "framer-motion";
 import { EASE_OUT, useCombinedReducedMotion } from "@/components/onboarding/motion";
 
 /**
- * The Shop product page's section shell. Fades/lifts in on mount using the
- * same pattern as LivingAnatomy.tsx / LivingSpectrum.tsx (animate, not
- * whileInView): those reference components deliberately animate
- * immediately rather than gating on IntersectionObserver, and a live check
- * of an earlier whileInView version here confirmed why. A programmatic
- * scroll_to (and, per report, some real scroll patterns) can land past the
- * trigger margin without the observer ever firing, leaving whole sections
- * stuck at opacity 0, invisible content, not just a missing animation.
+ * The Shop product page's section shell. Fades/lifts in on mount (animate,
+ * not whileInView): a live check of an earlier whileInView version here
+ * confirmed why that gate is wrong for this. A programmatic scroll_to (and,
+ * per report, some real scroll patterns) can land past the trigger margin
+ * without the observer ever firing, leaving whole sections stuck at
+ * opacity 0, invisible content, not just a missing animation.
  *
  * `visual` takes any node, not just an image, so a product with a bespoke
  * illustration (see monthlyMoneyResetVisuals.tsx) can pair it with a
