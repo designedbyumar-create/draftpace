@@ -4236,6 +4236,524 @@ export const GUIDES: Guide[] = [
       },
     ],
   },
+
+  // ------------------------------------------------- Monthly Money Reset set
+  // Seven guides written for the free product's Pinterest pins. Each one
+  // answers a search a person actually types, uses the free Monthly Money
+  // Reset as its worked example, and stays inside what that product does:
+  // one month at a time, typed numbers, no bank connection.
+
+  {
+    slug: "how-to-budget-for-beginners",
+    title: "How to make a monthly budget for the first time",
+    dek: "Skip the forty categories. Four things to gather, one number to find, and a check-in that takes five minutes.",
+    publishedAt: "2026-09-26",
+    areaSlug: "money",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Most first budgets fail for the same reason: they ask for too much. Every purchase logged, every category balanced, every day. That works for a week and then it stops, and a budget that has stopped is worse than none because it now shows a number you no longer believe.",
+          "A first budget only needs to answer one question: how much of this month's money is actually safe to spend. Everything below is in service of that number and nothing else.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Gather these four things",
+        intro: "Ten minutes, your banking app and last month's bills. You do not need a spreadsheet.",
+        checkable: true,
+        items: [
+          "The money you have available today, across the accounts you spend from.",
+          "The money you expect to come in this month, and on which day.",
+          "The bills that must be paid, with their amounts and due dates.",
+          "A small amount you would like to keep out of your spending, if any.",
+        ],
+      },
+      {
+        kind: "timeline",
+        heading: "Set it up in this order",
+        intro: "The order matters, because each step changes what the next one means.",
+        steps: [
+          { when: "This month", what: "Start from what you have today, not from what you had at the start of the month." },
+          { when: "Money coming in", what: "Add what you expect and the day you expect it. Expected money does not count until it arrives." },
+          { when: "Protect what must be paid", what: "Add each bill with its due date and mark it protected, so it comes out of your number before you can spend it." },
+          { when: "Your spending view", what: "Group the rest into three broad buckets. Keep it rough." },
+          { when: "Review", what: "Read the number back. If it looks wrong, one of the earlier steps is missing something." },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Protect the bills first",
+        paragraphs: [
+          "The single most useful habit in budgeting is treating a bill you have not paid yet as money you no longer have. Your balance still shows it, which is why a balance feels comfortable right up until the day the rent leaves.",
+          "Say you have $1,850 available, $900 in bills still to pay and $350 you want to keep untouched. The number you can actually spend is $600. Not $1,850. Once you have seen the sum written out, it is hard to go back to trusting a balance.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "A rough spending view, not forty categories",
+        intro: "Three groups are enough to see where a month is going. Each can carry a guide amount, which is a rough target and not a hard limit.",
+        columns: ["Group", "What goes in it", "Examples"],
+        rows: [
+          ["Essentials", "Things you need every month that are not fixed bills", "Groceries, fuel, transit"],
+          ["Flexible", "Things that can stretch or shrink", "Eating out, entertainment, clothing"],
+          ["Personal", "Money that is simply yours to spend", "Hobbies, gifts, small treats"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The weekly check-in",
+        paragraphs: [
+          "Once a week, spend five minutes asking four questions. Has any income come in or changed? Has a bill changed or been paid? Is there spending you have not added? Does your reserve need adjusting? If the answer to any of them is yes, add it. If all four are no, you are finished.",
+          "That is the entire routine. It is deliberately small, because the budgets that survive are the ones that ask for very little. If you fall behind, [start from today rather than catching up](/guides/how-to-start-over-after-budget-failure).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "Try it free",
+        body: "Monthly Money Reset walks through exactly these steps in a few minutes and shows a live number as you go. It is free and complete, with no card and no bank connection. It covers one month at a time, and when you want a wider picture across accounts, bills and debt, Personal Finance Companion is the next step.",
+      },
+    ],
+  },
+
+  {
+    slug: "how-to-budget-with-irregular-income",
+    title: "How to budget when your income is different every month",
+    dek: "Averages mislead when pay swings. Plan from money that has actually arrived, hold back the bills, and find the tightest day of the month.",
+    publishedAt: "2026-09-26",
+    areaSlug: "money",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "If you freelance, work tips, take gig shifts or earn commission, most budgeting advice is quietly written for someone else. It assumes the same pay on the same day, so you can divide it into tidy percentages. Your pay does not do that, and a plan built on an average is wrong in exactly the months you can least afford it.",
+          "The fix is not a cleverer formula. It is a smaller promise: only plan from money that has actually landed.",
+        ],
+      },
+      {
+        kind: "compare",
+        heading: "Two ways to plan the same month",
+        left: {
+          label: "Planning from expected pay",
+          items: [
+            "Counts a payment before it arrives",
+            "Feels generous early in the month",
+            "Breaks the moment a client pays late",
+            "Leaves you short with bills already committed",
+          ],
+        },
+        right: {
+          label: "Planning from received pay",
+          items: [
+            "Counts only money in your account",
+            "Feels tighter early, then holds steady",
+            "A late payment changes nothing you planned",
+            "Bills are held back before anything is spent",
+          ],
+        },
+      },
+      {
+        kind: "paragraphs",
+        heading: "Count only what has arrived",
+        paragraphs: [
+          "Keep expected income visible, because it is useful to know it is coming, but keep it out of the number you spend from. When it lands, mark it received and the number rises. Not before.",
+          "A worked month. You have $1,850 available. You still owe $900 in bills and want to keep $350 untouched. Your safe number is $600, even though you are expecting a $600 client payment on the thirtieth. The day that payment lands, your number becomes $1,200. Until then, you have not spent it, which is the point.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Do these four things before you plan a month",
+        checkable: true,
+        items: [
+          "Count only money that has arrived, not money you are owed.",
+          "List the bills that cannot slip: rent, utilities, phone, insurance.",
+          "Find the tightest day of the month, the day your balance will be lowest.",
+          "Keep a small reserve for the slow month that will eventually come.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Find the tightest day",
+        paragraphs: [
+          "An average month can hide a very bad week. If rent leaves on the first and your client pays on the twentieth, the middle of the month is where you are actually exposed, even if the total looks fine.",
+          "Walk the balance forward day by day using only the bills and income that have dates. The lowest point is your tightest day. Knowing it in advance turns a surprise into a plan: you can move a bill, hold off a purchase, or chase an invoice before you need to.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "A reserve is what makes a slow month survivable",
+        paragraphs: [
+          "The purpose of a reserve in an uneven income is not a savings goal. It is a buffer that turns a bad month into an ordinary one. Even a modest amount held back, and kept out of the number you spend from, changes how a low month feels. There is more on building one in [how to build your first $1,000 emergency fund](/guides/how-to-build-a-first-1000-emergency-fund).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "Try it free",
+        body: "Monthly Money Reset is built around this rule. Income you are expecting does not count until you mark it received, it shows the weekly figure for the rest of the month, and it flags your tightest day when there really is a dip ahead. It is free, needs no bank connection, and covers one month at a time.",
+      },
+    ],
+  },
+
+  {
+    slug: "how-to-build-a-first-1000-emergency-fund",
+    title: "How to build your first $1,000 emergency fund",
+    dek: "One thousand dollars will not cover everything. It will cover the small surprises that otherwise land on a card. Here is how to set it aside at a pace you can keep.",
+    publishedAt: "2026-09-26",
+    areaSlug: "money",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "A full emergency fund of several months of expenses can feel out of reach, and that feeling is often the reason people never start. A first fund of one thousand dollars is a different kind of goal. It is small enough to reach, and it covers the things that most often go wrong: a car repair, a vet bill, a phone that stops working, a dentist visit.",
+          "It is not the finish line. It is the first step that keeps a small problem from becoming a credit card balance.",
+        ],
+      },
+      {
+        kind: "timeline",
+        heading: "A pace you can keep",
+        intro: "Example only. Pick an amount that leaves your month intact, even if it looks small.",
+        steps: [
+          { when: "Month 1", what: "Set aside $250. Keep it out of the number you spend from." },
+          { when: "Month 2", what: "Set aside another $250, if the month allows it. If it does not, set aside less and carry on." },
+          { when: "Month 3", what: "Same again. Check your tightest day so you know the amount is not squeezing a bill." },
+          { when: "Month 4", what: "You reach $1,000. Keep it where it is and decide what comes next." },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Where it lives",
+        paragraphs: [
+          "Keep it somewhere you can reach quickly but will not spend by accident. For many people that means a separate savings account. The specific account and its interest rate matter less than the separation: money that sits in the same account you spend from tends to get spent.",
+          "If you cannot open a separate account yet, you can still hold the amount out of your spending. That is the idea behind a reserve: an amount you tell yourself is not available.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Hold it back before you spend",
+        paragraphs: [
+          "The reliable way to save is to set the money aside first and spend what is left, rather than spending first and saving whatever survives. In practice that means the reserve comes out of your number at the start of the month.",
+          "If you have $1,850 available, $900 in bills to pay and a $350 reserve, your safe number is $600. The $350 is not gone. It is simply not part of what you are allowed to spend from.",
+        ],
+      },
+      {
+        kind: "compare",
+        heading: "What counts as an emergency",
+        left: {
+          label: "Counts",
+          items: [
+            "A repair you need to keep working or driving",
+            "An unexpected medical or vet bill",
+            "A lost or stolen essential item",
+            "A gap when income stops for a while",
+          ],
+        },
+        right: {
+          label: "Does not count",
+          items: [
+            "A sale on something you were planning to buy",
+            "A holiday that came up",
+            "A gift you had not budgeted for",
+            "A bill you knew was coming",
+          ],
+        },
+      },
+      {
+        kind: "paragraphs",
+        heading: "When you dip into it",
+        paragraphs: [
+          "You will, at some point. That is what it is for, and using it is not failing at saving. The only rule is to put it back when you can, and to notice that the fund worked: the emergency happened, and it did not land on a card.",
+          "Once you have reached the first thousand, you can decide whether to keep building. Until then, keep it simple. If the month is tight, look at [how to save money this month without a big life change](/guides/how-to-save-money-fast).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "Try it free",
+        body: "Monthly Money Reset lets you add a reserve, an amount you do not want to spend, and takes it out of your safe-to-spend number. It does not move money for you or track a savings goal, so the actual saving still happens in your account. What it does is make sure the reserve is never counted as spending money. It is free and needs no bank connection.",
+      },
+    ],
+  },
+
+  {
+    slug: "how-to-save-money-fast",
+    title: "How to save money this month without a big life change",
+    dek: "Four small moves that free up cash in a single month, and the ones that are not worth the effort.",
+    publishedAt: "2026-09-26",
+    areaSlug: "money",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Fast saving advice tends to fall into two camps: give up the things you enjoy, or find a side income. Neither is a plan for a normal month. What works far more often is smaller and duller: find money that is leaving without you noticing, and stop it.",
+          "This is about one month. Not a year, not a lifestyle. The goal is to end this month with more than you would have.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Four moves, in order of effort",
+        checkable: true,
+        items: [
+          "Check every recurring charge, including the annual ones you have forgotten.",
+          "Move a small amount into savings first, before you spend anything else.",
+          "Trim one flexible group by a modest amount, and only one.",
+          "Check your tightest day so you know how much room the month really has.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Where a month's savings usually come from",
+        columns: ["Where to look", "What to look for", "Effort"],
+        rows: [
+          ["Recurring charges", "Subscriptions you no longer use, plans you could downgrade", "Low"],
+          ["Bills", "Phone or internet plans that have crept up since you signed", "Medium"],
+          ["Flexible spending", "The one group that has grown most this month", "Medium"],
+          ["Fees", "Bank or card fees you could avoid with a small change", "Low"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Start with what recurs",
+        paragraphs: [
+          "A recurring charge is the best kind of saving, because you make the decision once and it keeps paying you back. Go through your statements for anything that repeats. If you have not looked in a while, [finding every subscription you are paying for](/guides/how-to-find-every-subscription-you-are-paying-for) walks through it.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Move a small amount first",
+        paragraphs: [
+          "Saving what is left over rarely works, because there is rarely anything left. Set a small amount aside at the start of the month, even if it feels too small to matter, and treat the rest as your spending money. Fifty dollars set aside on day one beats two hundred you meant to set aside on day thirty.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Check the tightest day before you commit",
+        paragraphs: [
+          "Before you set money aside, check the lowest point your balance will reach this month. If saving another fifty dollars would leave you short the day rent leaves, it is not a saving, it is a loan from your future self. Knowing the tightest day tells you how much room is real.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What is not worth the effort",
+        paragraphs: [
+          "Cutting small treats you enjoy usually saves very little and costs you a lot of goodwill toward the whole plan. Chasing a few dollars of cashback or tracking every coffee tends to take more attention than it returns. If a saving is going to cost you more in effort than it earns, leave it.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "Try it free",
+        body: "Monthly Money Reset shows what is safe to spend once your bills and reserve are held back, gives you a rough weekly figure, and points out your tightest day. It is free, needs no bank connection, and takes a few minutes to set up. If you want somewhere to keep recurring charges as well, that is what Personal Finance Companion is for.",
+      },
+    ],
+  },
+
+  {
+    slug: "how-to-start-over-after-budget-failure",
+    title: "You fell off your budget: how to restart this month",
+    dek: "You do not need to catch up on six weeks of receipts. You need today's balance, the bills still coming, and one clear number.",
+    publishedAt: "2026-09-26",
+    areaSlug: "money",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "You had a budget. Then a busy week turned into three, and now the numbers on screen are weeks out of date. The natural instinct is to catch up: dig out old receipts, reconcile everything, and get back to where you were. That instinct is the reason so many budgets end here.",
+          "Catching up is the hardest way to restart, and it is unnecessary. A budget does not need a perfect history. It needs to be true from today.",
+        ],
+      },
+      {
+        kind: "compare",
+        heading: "Two ways back",
+        left: {
+          label: "Catching up",
+          items: [
+            "Rebuild weeks of old spending",
+            "Reconcile every account",
+            "Feel behind until you finish",
+            "Easy to abandon halfway",
+          ],
+        },
+        right: {
+          label: "Starting from today",
+          items: [
+            "Enter today's real balance",
+            "Add the bills still to come",
+            "Have a working number in minutes",
+            "Nothing old to be wrong about",
+          ],
+        },
+      },
+      {
+        kind: "list",
+        heading: "The restart, in four steps",
+        checkable: true,
+        items: [
+          "Forget last month. It has already happened and cannot be fixed by logging it late.",
+          "Enter today's balance, the amount that is really in the account right now.",
+          "Add the bills still coming, only the ones ahead of you, with their due dates.",
+          "Ignore the rest. Old spending is already reflected in your balance.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Why today's balance is enough",
+        paragraphs: [
+          "Your balance already contains every purchase you made while you were not tracking. It is the summary of all the spending you skipped logging, so you do not need the history to know where you stand. Take the balance, subtract the bills that are still coming, and you have the honest number for the rest of the month.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Your first check-in back",
+        paragraphs: [
+          "When you open your budget after time away, the useful question is what changed since you were last here. Has your safe number gone up or down? How long since you confirmed it? Which bills were paid? Start there, add anything missing, and close it.",
+          "Then keep the routine small. A five minute weekly check-in is easier to keep than a daily habit. If you are unsure how to build one, [the weekly check-in and why it works](/guides/why-budgeting-apps-stop-working-after-two-months) explains it.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "Try it free",
+        body: "Monthly Money Reset is built for exactly this. Open it after a gap and it shows what changed since you were last here, how old your figures are, and one next move. You can reset a month in a few minutes from today's balance, with no old receipts and no bank connection. It is free.",
+      },
+    ],
+  },
+
+  {
+    slug: "end-of-month-money-review",
+    title: "A ten minute end of month money review",
+    dek: "Look back at what happened, choose what carries into next month, and start the new one clean, without turning it into a lecture to yourself.",
+    publishedAt: "2026-09-26",
+    areaSlug: "money",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "An end of month review sounds like homework, which is why most people skip it. Done well, it is short and it changes the next month: you see what happened, you keep what worked, and you start with a number you trust.",
+          "The aim is a look, not a verdict. If you finish feeling worse than you started, the review has gone wrong.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "The ten minute review",
+        checkable: true,
+        items: [
+          "Note the number you ended on, the last safe-to-spend figure for the month.",
+          "Check that every bill was paid or deliberately skipped.",
+          "Glance at each spending group against its rough guide, without judging it.",
+          "Decide what carries into next month and what stays behind.",
+          "Choose next month's starting balance.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "What carries into next month, and what does not",
+        intro: "Recurring things return. One-off things do not, so a new month starts as a fresh picture and not a copy of the old one.",
+        columns: ["Item", "Carries?", "Why"],
+        rows: [
+          ["Recurring income", "Yes", "It will come again, so it returns as expected"],
+          ["Recurring bills", "Yes", "They come back as upcoming"],
+          ["Spending groups", "Yes", "So you do not rebuild your setup each month"],
+          ["Reserve preference", "Yes", "The amount you keep out of your spending"],
+          ["One-off spending", "No", "It belongs to the month it happened in"],
+          ["Old activity", "No", "It stays in your history, not your new number"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Choosing a starting balance",
+        paragraphs: [
+          "You have a few honest options. You can start from what is really in your account right now, which is usually the most accurate. You can enter a different starting amount if some of it is spoken for elsewhere. Or you can begin at zero, on purpose, if you want a clean slate. The one you should avoid is guessing.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Keep it a look, not a verdict",
+        paragraphs: [
+          "A reflection is optional and it should be short. One line about what worked and one about what to change is plenty. There is no score to beat and no streak to protect. A month that went badly is still useful information, and a month that went well does not need celebrating with a spreadsheet.",
+          "If you have fallen behind and the review feels heavy, [start from today instead](/guides/how-to-start-over-after-budget-failure).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "Try it free",
+        body: "Monthly Money Reset closes a month for you. It shows a closing summary, lets you choose what carries forward with a toggle for each item, and starts the next month with your recurring bills and income already in place. Past months stay in your history. It is free and needs no bank connection.",
+      },
+    ],
+  },
+
+  {
+    slug: "how-to-cancel-subscriptions",
+    title: "How to cancel a subscription that is hard to cancel",
+    dek: "Where the cancel button hides, what to say when they push back, and how to check that it actually ended.",
+    publishedAt: "2026-09-26",
+    areaSlug: "money",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Some subscriptions take a single click to start and a phone call to stop. That is not an accident, and it is worth knowing before you try, so that the friction does not talk you into keeping something you do not want.",
+          "Finding the subscription is one job, covered in [how to find every subscription you are paying for](/guides/how-to-find-every-subscription-you-are-paying-for). This guide is about the next one: actually ending it.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Where the cancel option usually hides",
+        columns: ["Where you signed up", "Where to look"],
+        rows: [
+          ["Directly on the company's site", "Account, then Billing or Membership, then Cancel or Manage plan"],
+          ["Through Apple", "Settings, your name, Subscriptions"],
+          ["Through Google Play", "Play Store, your profile, Payments and subscriptions"],
+          ["Through a streaming or app bundle", "The bundle provider's account page, not the individual service"],
+          ["Through a phone or internet provider", "The provider's account page or a customer service call"],
+        ],
+      },
+      {
+        kind: "scripts",
+        heading: "What to say when they push back",
+        intro: "Pick the situation you are in. Keep it short and polite, and say the same thing again if you need to.",
+        items: [
+          {
+            situation: "They offer a discount",
+            line: "Thank you, but I would like to cancel today. Please confirm the cancellation and the date it takes effect.",
+          },
+          {
+            situation: "They say call us",
+            line: "I would like to cancel my subscription. Can you tell me what you need from me to do that today?",
+          },
+          {
+            situation: "Only chat is available",
+            line: "I want to cancel my subscription. Please cancel it and send me written confirmation.",
+          },
+          {
+            situation: "They refuse to cancel",
+            line: "I have asked to cancel and I would like a reference number for this request. I will also check with my card provider about the charge.",
+          },
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Check that it actually ended",
+        checkable: true,
+        items: [
+          "Get a confirmation, by email or on screen, and keep it.",
+          "Note the date the cancellation takes effect. Some run to the end of the period you paid for.",
+          "Look for the next scheduled charge and confirm it is gone.",
+          "Check your statements a month later to make sure no charge came through.",
+          "Remove the card from the service if it lets you.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Cancel one thing today",
+        paragraphs: [
+          "If you have found several subscriptions, do not try to cancel them all in one sitting. Pick the one that costs the most for the least use and end that today. The rest can follow, and one cancelled charge is worth more than a list of intentions.",
+          "Use the annual figure to choose. Fourteen ninety nine a month sounds small. It is more than one hundred and seventy nine dollars a year, which is a different question.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "Keeping the list",
+        body: "Personal Finance Companion keeps your subscriptions alongside your bills, with what each costs annually, and counts them against what is genuinely safe to spend. If you only want to see what a cancelled charge frees up, Monthly Money Reset, which is free, will show your safe-to-spend number rise once the bill is removed. Neither will cancel anything for you.",
+      },
+    ],
+  },
 ];
 
 /**
