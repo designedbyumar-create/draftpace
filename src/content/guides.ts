@@ -4750,7 +4750,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "Keeping the list",
-        body: "Personal Finance Companion keeps your subscriptions alongside your bills, with what each costs annually, and counts them against what is genuinely safe to spend. If you only want to see what a cancelled charge frees up, Monthly Money Reset, which is free, will show your safe-to-spend number rise once the bill is removed. Neither will cancel anything for you.",
+        body: "Personal Finance Companion keeps your subscriptions alongside your bills, with a monthly total, a decision on each one (keep, still deciding, planned to cancel), and a heads-up before an annual charge renews. It tracks the decision and will not cancel anything for you. If you only want to see what a cancelled charge frees up, Monthly Money Reset, which is free, will show your safe-to-spend number rise once the bill is removed.",
       },
     ],
   },
