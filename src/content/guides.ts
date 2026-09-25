@@ -4754,6 +4754,521 @@ export const GUIDES: Guide[] = [
       },
     ],
   },
+
+  // ------------------------------------------------------- Home Base set
+  // Seven guides written for the Home Base Pinterest pins. Each answers a
+  // search a homeowner or renter actually types, and each stays inside what
+  // Home Base does: you type everything, nothing is scanned or uploaded,
+  // there is no valuation and no lifespan forecast, and reminders are a
+  // setting you turn on.
+
+  {
+    slug: "fall-home-maintenance-checklist",
+    title: "Fall home maintenance checklist by month",
+    dek: "September, October and November, in the order the jobs actually need doing, and why the freeze jobs cannot wait for a reminder that fires a year after you last did them.",
+    publishedAt: "2026-09-26",
+    areaSlug: "home",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Fall is when a house asks for the most in the least time. The heating comes on for the first time in months, the outdoor water has to be dealt with before the first hard frost, and the gutters fill up right when you would like to be doing something else.",
+          "Most fall lists are a wall of forty items. This one is short on purpose: the jobs that prevent damage, in the month they belong to. For the other seasons and the other months, see [the by-month checklist](/guides/home-maintenance-checklist-by-month).",
+        ],
+      },
+      {
+        kind: "timeline",
+        heading: "The fall list, month by month",
+        intro: "Do these in order. Each one is easier if the one before it is finished.",
+        steps: [
+          { when: "September", what: "Book the professional heating tune-up before everyone else does. Seal the gaps mice use to get in before the cold sends them looking." },
+          { when: "October", what: "Shut off and drain the outdoor faucet. Blow out the irrigation lines if you have them. Replace the humidifier pad. Take the window air conditioner out and store it. Service the snow blower and the mower's winter fuel before you need them." },
+          { when: "November", what: "Clear the gutters once the leaves are down, not before." },
+        ],
+      },
+      {
+        kind: "table",
+        heading: "What each job protects against",
+        columns: ["Job", "When", "What it prevents"],
+        rows: [
+          ["Heating tune-up", "September", "A breakdown in the first cold week, when every technician is booked"],
+          ["Seal entry points", "September", "Mice moving in for the winter"],
+          ["Drain the outdoor faucet", "October", "A frozen line that splits and floods a wall later"],
+          ["Blow out irrigation lines", "October", "Cracked pipes and sprinkler heads"],
+          ["Replace the humidifier pad", "October", "A humidifier working harder for less"],
+          ["Store the window air conditioner", "October", "Drafts and a damaged unit"],
+          ["Clear the gutters", "November", "Water overflowing at the fascia and the foundation"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Why fall reminders fail",
+        paragraphs: [
+          "A reminder that repeats every 365 days is the wrong shape for a freeze job. The deadline is not a date, it is the weather. If you drained the faucet on the twenty-eighth of October last year and the first frost arrives on the fifteenth this year, an interval reminder is late.",
+          "That is why these jobs belong to a month, not a timer. Put them where you will see them in September, and treat the first forecast of freezing temperatures as the real deadline. There is more on this in [winterize your house: the jobs to finish before the first freeze](/guides/winterize-your-house-checklist).",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "A quick check before you start",
+        checkable: true,
+        items: [
+          "Do you know where your outdoor faucet shutoff is, if it has one inside the house?",
+          "Is the ladder safe, and is someone home while you use it?",
+          "Do you have the heating filter size written down where you can find it?",
+          "Have you booked the tune-up, not just planned to?",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Home Base puts each of these in the month it belongs to. Its Seasons page shows the fall jobs for the things in your house, so a home with no irrigation system does not see the irrigation job. Jobs you have not logged yet read \"Not logged yet, usually October\". Seasons follow the northern hemisphere. Reminders are off until you turn them on, and you type in what you did, nothing is scanned.",
+      },
+    ],
+  },
+
+  {
+    slug: "winterize-your-house-checklist",
+    title: "Winterize your house: the jobs to finish before the first freeze",
+    dek: "Freeze jobs have a deadline, and the weather sets it. Here is what to do, in what order, and what to write down so next year is a five minute job.",
+    publishedAt: "2026-09-26",
+    areaSlug: "home",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Most home maintenance runs on an interval: change the filter every three months, flush the water heater every year. Winterizing does not. It runs on a date that you do not choose, which is the first night the temperature drops below freezing.",
+          "The good news is that the list is short. Five jobs cover most of what goes wrong. None of them is difficult. All of them are easier in a dry afternoon in October than in a cold snap in January.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "The winterizing list",
+        intro: "Tick them off as you go. This list lives on the page for this visit only.",
+        checkable: true,
+        items: [
+          "Shut off and drain the outdoor faucet before the freeze, and disconnect the hose.",
+          "Blow out the irrigation lines before the freeze, or book someone who has the compressor.",
+          "Take out the window air conditioner and store it for winter.",
+          "Replace the humidifier pad.",
+          "Seal entry points before the cold, especially around pipes and the garage door.",
+        ],
+      },
+      {
+        kind: "compare",
+        heading: "Date jobs and interval jobs",
+        left: {
+          label: "Interval jobs",
+          items: [
+            "Replace the furnace filter every three months",
+            "Test the smoke alarm every month",
+            "Flush the water heater every year",
+            "Fine to do a few days late",
+          ],
+        },
+        right: {
+          label: "Date jobs",
+          items: [
+            "Drain the outdoor faucet before the first freeze",
+            "Blow out the irrigation lines before the freeze",
+            "Store the window air conditioner for winter",
+            "Not fine to do a few days late",
+          ],
+        },
+      },
+      {
+        kind: "paragraphs",
+        heading: "Outside water first",
+        paragraphs: [
+          "The outdoor faucet is the single most common freeze failure. Water left in the pipe between the shutoff and the tap freezes, expands and can split the pipe inside the wall, where you will not see it until the thaw. Disconnect the hose, shut the water off to that line if there is a valve for it inside the house, and let the tap run until it stops.",
+          "If your faucet has no interior shutoff or you are not sure how it is plumbed, that is a good question to ask a plumber once. This guide gives general information and is not a substitute for looking at your own plumbing. If you want to know where your main shutoff is before you need it, read [do you know where your main water shutoff is](/guides/where-is-my-water-shutoff).",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The quiet jobs that still matter",
+        paragraphs: [
+          "The humidifier pad and the mice are the two jobs people forget because nothing visibly breaks. A worn pad means the humidifier works harder for less. Small gaps around pipes and the garage door are how mice come in as soon as the weather turns.",
+          "Snow blowers and mowers belong on this list too if you own them. Service the blower before the first snow, and put winter fuel or a stabilizer in the mower.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Write down the date you did it",
+        paragraphs: [
+          "The cheapest thing you can do for next year is note the date. \"Drained faucet, October 21\" is enough. Next October you will know whether you were early or late, and you will know it is a job you have done before.",
+          "For the wider list of what falls due in the fall, see [the fall checklist by month](/guides/fall-home-maintenance-checklist).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Home Base keeps the freeze jobs in the months they belong to and flags a seasonal job as due now once its month has come and it has not been logged. You record what you did and who did it, and the note stays with the item. It does not know your weather, and it does not send reminders unless you turn them on, so treat the first frost forecast as the deadline.",
+      },
+    ],
+  },
+
+  {
+    slug: "home-maintenance-log-template",
+    title: "A home maintenance log that actually gets used",
+    dek: "Four fields and one note. Enough to answer the questions that matter when something fails, and short enough that you will keep filling it in.",
+    publishedAt: "2026-09-26",
+    areaSlug: "home",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Most home maintenance logs stop being kept after the first two entries. They ask for too much: model numbers, part costs, photos, reference codes. Every extra field is a reason to put it off until tomorrow.",
+          "A log that survives asks for very little. It is there to answer three questions later: when did we last do this, who did it, and what did it cost. Everything else is optional.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "What to write each time",
+        columns: ["Field", "Example", "Why it matters"],
+        rows: [
+          ["Date", "Aug 14", "Tells you when the clock started for the next one"],
+          ["What was done", "Flushed the water heater tank", "Says what changed, in plain words"],
+          ["Who did it", "Ace Plumbing, or you", "Gets you a phone number next time, not a search"],
+          ["What it cost", "$180.00", "Lets you compare quotes and spot a price that is off"],
+          ["One note", "Anode rod is due next time", "The one line that saves the next visit"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The note that saves money",
+        paragraphs: [
+          "The most valuable field is the last one. When a technician tells you what is coming next, write it down. \"Belt is wearing.\" \"Other spring will go soon.\" \"Filter size is different from what the old one said.\" That sentence is the difference between a routine visit and an emergency, because you will remember to raise it when you book.",
+          "If a repair needed a diagnosis, write that down too. The diagnosis matters more than the invoice, which is covered in [what to keep after a home repair](/guides/what-to-keep-after-a-home-repair).",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Make it easy to keep",
+        checkable: true,
+        items: [
+          "Write it the same day, while you can still remember the detail.",
+          "Keep one log for the whole house, not one per room.",
+          "Write the cost even if it is a rough figure.",
+          "Add the phone number the first time you use someone new.",
+          "Skip the fields you will never look at.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Paper or app",
+        paragraphs: [
+          "Either works. A single page in a binder is fine if the binder lives somewhere you can reach it. The Home Survey, a printable book from Draftpace, has a page laid out exactly like this for the home's memory, and the app version does the same job on your phone.",
+          "The point is not the format. It is that the answer is in one place when the water heater fails and someone asks how old the anode rod is.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Home Base has an Action button on every job. Tap it and it asks when, who did it, what it cost, and whether there is anything worth remembering. Saving writes a line to the home's History and resets the clock. It stores what you type, not receipts or files, so keep the paperwork where it already lives and link to it if you like.",
+      },
+    ],
+  },
+
+  {
+    slug: "how-often-change-furnace-filter",
+    title: "How often to change your furnace and AC filter, and where to write the size",
+    dek: "Every three months is the working default. Here is when to change it sooner, how to read the size numbers, and the one place to write them so you never guess in the store.",
+    publishedAt: "2026-09-26",
+    areaSlug: "home",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "The furnace filter is the cheapest job in the house and one of the easiest to lose track of. It does not fail loudly. A clogged one just makes the system work harder, week after week, until something else gives.",
+          "Three months is a sensible default for a normal one inch filter in a normal house. The rest of this page is about when to shorten that, and how to stop doing the store-aisle guess.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "When to change it sooner",
+        intro: "These are ordinary rules of thumb. Your manual and your system's maker have the final say.",
+        columns: ["Situation", "What tends to happen", "A sensible change"],
+        rows: [
+          ["Pets that shed", "The filter clogs with hair and dander faster", "Check monthly, change as needed"],
+          ["Someone with allergies", "You want the filter working at its best", "Check monthly"],
+          ["Renovation or heavy dust", "It can fill in days", "Check after the work, change if grey"],
+          ["An empty or seldom-used house", "It loads slowly", "Three months is usually plenty"],
+          ["Heating or cooling all season", "It works most of the year", "Every one to three months"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "How to read the size",
+        paragraphs: [
+          "The three numbers on the edge of the filter are its length, width and depth in inches. A filter marked 16x25x1 is about sixteen inches by twenty-five inches, and one inch thick. Sizes are usually nominal, so the real dimensions can be a fraction of an inch smaller, which is why you buy by the printed number and not by measuring.",
+          "Write down the size on the day you change it. Also note the direction of the airflow arrow, and whether the filter slides in from the side or the front. These are the two things you will forget by the next change.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Write these down once",
+        checkable: true,
+        items: [
+          "The size printed on the current filter's frame.",
+          "The thickness, in case you have a deeper filter than the store shelf assumes.",
+          "Where the filter lives: return grille, furnace door, or air handler.",
+          "The date you changed it.",
+          "The next date you want to check it.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Where to keep it",
+        paragraphs: [
+          "The best place is somewhere you will be standing when you need it: on a strip of tape on the furnace, on your phone, or on a card you keep in your wallet. The same goes for the bulb type, the part number for the humidifier pad, and any other fact you look up every time. Some people call this the hardware store line.",
+          "For the wider habit, see [how often things in your house actually need servicing](/guides/how-often-home-systems-need-servicing), and for finding a model number on an appliance, [how to find the model number on any appliance](/guides/how-to-find-the-model-number-on-any-appliance).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Home Base has a What to buy field on every item. Put 16x25x1 filter there and it sits with the furnace, and it prints on the item's one-page Item Card, which you can take to the hardware store on paper or on your phone. Home Base uses three months for the furnace filter job by default. It does not know your household, so shorten the interval yourself if you have pets or dust.",
+      },
+    ],
+  },
+
+  {
+    slug: "where-is-my-water-shutoff",
+    title: "Do you know where your main water shutoff is? Find it before you need it",
+    dek: "Water coming through a ceiling at two in the morning is the wrong moment to start looking. Here is where the valve usually is, how to tell if it is stuck, and what to write down.",
+    publishedAt: "2026-09-26",
+    areaSlug: "home",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "When a pipe fails, the fastest way to limit the damage is to stop the water at the source. That only works if you already know where the main shutoff is, everyone in the house knows too, and the valve turns.",
+          "Finding it takes about ten minutes on an ordinary afternoon. Nobody does it, which is exactly why it is worth doing. This page is general information, not a repair guide. If water is actively coming through a ceiling or a wall, or you smell gas or see sparks, treat that as an emergency and call the right professional.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Where the main shutoff usually is",
+        columns: ["Where to look", "What you are looking for"],
+        rows: [
+          ["Near the water meter", "A valve on the pipe just before or after the meter"],
+          ["Where the line enters the house", "A valve where the pipe comes through the foundation or the floor"],
+          ["Basement or crawlspace", "Often on the wall closest to the street"],
+          ["An outside box", "A ground-level box near the street or the foundation, sometimes with a curb valve inside"],
+        ],
+      },
+      {
+        kind: "compare",
+        heading: "Two kinds of valve",
+        left: {
+          label: "Wheel or round handle",
+          items: [
+            "Usually a gate valve",
+            "Turns several times",
+            "Often stiff if unused for years",
+            "May need gentle, steady effort",
+          ],
+        },
+        right: {
+          label: "Lever handle",
+          items: [
+            "Usually a ball valve",
+            "Turns a quarter turn",
+            "Closed when the lever sits across the pipe",
+            "Easier to check at a glance",
+          ],
+        },
+      },
+      {
+        kind: "list",
+        heading: "The ten minute check",
+        checkable: true,
+        items: [
+          "Find the valve and note where it is.",
+          "Work out which way it turns, and write that down.",
+          "Note any tool it needs, such as a wrench for a meter box.",
+          "Check that it moves without forcing it. A valve that will not turn is worth asking a plumber about.",
+          "Show everyone else in the house.",
+          "Draw the location on a page where it will be found in an emergency.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Keep it turning",
+        paragraphs: [
+          "A valve you never touch can seize. Some people turn the main shutoff off and on once a year, gently, to keep it free. Home Base has a yearly job for exactly this, called Turn the valve to keep it free. If yours does not move, stop and ask a plumber, because forcing it can break it.",
+          "Also note the smaller shutoffs: the ones under the sinks and behind the toilets. Those are a quick way to stop a single leak without shutting off the whole house.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Write it where anyone can find it",
+        paragraphs: [
+          "The most useful page in a home binder is the one titled if something goes wrong tonight: where the water, gas and electricity shut off, which way each turns, and who to call first. Fill in the water line today. For the gas and the electrical panel, note where they are and leave the operating to a qualified person. If you are starting a binder, see [what goes in a home binder](/guides/how-to-make-a-home-binder).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Home Base holds where things are and what they need, including a yearly job to keep the main shutoff turning. The Home Survey that comes with it has a page for exactly this, with boxes for water, gas and electricity. It does not detect leaks, and when you report something dangerous it keeps your note and tells you it sounds urgent, but it does not tell you what to do. Call a professional for that.",
+      },
+    ],
+  },
+
+  {
+    slug: "how-to-make-a-home-binder",
+    title: "How to make a home binder: what goes in it and what does not",
+    dek: "A binder is only useful if the right things are in it. Five sections cover almost everything, and there is one category of thing that should never go in.",
+    publishedAt: "2026-09-26",
+    areaSlug: "home",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "A home binder answers a single question at the worst possible moment: what do I need to know right now? It is not a filing cabinet and it is not a scrapbook. Anything that does not help you act quickly can live somewhere else.",
+          "Most binders fail in one of two ways. They are so ambitious that nobody finishes them, or they are so thin that they help with nothing. Five sections is the amount that gets used.",
+        ],
+      },
+      {
+        kind: "timeline",
+        heading: "The five sections, in the order to fill them in",
+        intro: "Start with the first and stop whenever you like. Each one is useful on its own.",
+        steps: [
+          { when: "If something goes wrong", what: "Where the water, gas and electricity shut off, which way each turns, and who to call first. Ten minutes. Do this one tonight." },
+          { when: "Numbers you look up", what: "Filter sizes, bulb types, paint colors, meter numbers, trash and recycling days." },
+          { when: "Who to call", what: "Plumber, electrician, heating and cooling, roofer, and their phone numbers, plus anyone you would use again." },
+          { when: "What has been done", what: "A running log: date, what was done, on what, by whom and what it cost." },
+          { when: "Dates that cost money", what: "Warranty expiry dates, the insurance renewal, and, if you rent, the lease and the deposit." },
+        ],
+      },
+      {
+        kind: "table",
+        heading: "What belongs, and where it comes from",
+        columns: ["Goes in", "Why", "How to get it"],
+        rows: [
+          ["Shutoff locations", "Speed in an emergency", "A walk of the house with a flashlight"],
+          ["Filter and bulb sizes", "No more guessing in the store", "Read them off the item once"],
+          ["Contacts", "A lookup, not a search", "Write each name and number the first time you use them"],
+          ["The log", "Answers when it last happened", "Fill in after each job"],
+          ["Warranty dates", "Claims fail on missed dates", "Copy from the paperwork"],
+        ],
+      },
+      {
+        kind: "callout",
+        label: "What never goes in",
+        body: "Passwords, alarm codes, the code to the garage keypad, and anything else that opens the house or your accounts. A binder gets lent to a house sitter, photographed for a repair quote and left on the counter. Write where things are and who to call. Never write the codes and passwords themselves.",
+      },
+      {
+        kind: "list",
+        heading: "Making one in an afternoon",
+        checkable: true,
+        items: [
+          "Take a flashlight and a pen and walk the house once, kitchen first, then utility, basement, attic and outside.",
+          "Fill in the emergency page before anything else.",
+          "Write down what you find without organizing it yet.",
+          "Put the pages in the binder in the order above.",
+          "Set a date to add one thing a week, not to finish it.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Paper and app together",
+        paragraphs: [
+          "A paper binder is easy to hand to someone, and it works when the power is out. It is also easy to lose track of, and it does not tell you when the filter is due. An app is the opposite. The two together are the best of both: paper for the emergency page and the numbers, an app for what falls due.",
+          "If you have just moved in, [the first week after buying a house](/guides/first-week-after-buying-a-house) is the best time to start, because you can still see every label. For the log itself, see [a home maintenance log that actually gets used](/guides/home-maintenance-log-template).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "The Home Survey is a printable book that comes with Home Base: 36 pages on US Letter paper, with a page for the shutoffs, twelve areas of a house, every job and how often, a year plan, a page for who to call and a log. It works without a login. Home Base keeps what falls due and what was done. It stores what you type, not the files, and it is not a place for passwords.",
+      },
+    ],
+  },
+
+  {
+    slug: "moving-into-a-rental-what-to-document",
+    title: "Moving into a rental: what to document on day one to protect your deposit",
+    dek: "The deposit conversation at the end of a lease starts on the day you get the keys. Four records, all easy to make on day one, do most of the work.",
+    publishedAt: "2026-09-26",
+    areaSlug: "home",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "When you leave a rental, the landlord compares the place to how it was. If nobody wrote down how it was, that comparison is one person's memory against another's. Photographs and dates turn it into a record.",
+          "This guide is about habit, not law. Rules about deposits, notice and repairs differ from place to place, and this is not legal advice. Check your own lease and local rules for the specifics.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "The day one list",
+        intro: "Do this before you unpack, while every room is still empty.",
+        checkable: true,
+        items: [
+          "Photograph every room, every wall, the floors, the windows and the inside of the appliances, with the date visible or recorded.",
+          "Write down the lease start date, the renewal date, and the date by which you have to give notice.",
+          "Record the deposit amount, who holds it, and when it is due back.",
+          "Note anything that is already damaged, and send it to the landlord in writing.",
+          "Keep a log of everything you report, with the date and the answer.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "The four records",
+        columns: ["Record", "What to write", "Why it helps later"],
+        rows: [
+          ["Photos", "Room, date, the problem if any", "Shows the condition on day one"],
+          ["Lease dates", "Started, renews on, notice by", "The dates that cost money to miss"],
+          ["Deposit", "Amount, held by, returned in", "You know what to ask for and when"],
+          ["What you reported", "Date, what, the answer", "A trail if a problem comes back"],
+        ],
+      },
+      {
+        kind: "compare",
+        heading: "What you look after, and what the landlord does",
+        left: {
+          label: "Usually yours",
+          items: [
+            "Keeping the place clean",
+            "Changing smoke alarm batteries",
+            "Reporting problems promptly",
+            "Renters insurance, if you have it",
+          ],
+        },
+        right: {
+          label: "Usually the landlord's",
+          items: [
+            "The roof and structure",
+            "Major systems like heating and plumbing",
+            "Repairs that are not your fault",
+            "Deciding what happens with the deposit",
+          ],
+        },
+      },
+      {
+        kind: "paragraphs",
+        heading: "Report in writing, and log it",
+        paragraphs: [
+          "When something breaks, tell the landlord in writing and keep a copy. A message is better than a phone call because it has a date. Add a line to your log with the date, what you said and what they answered. If the same problem comes back, that log is your record that you flagged it.",
+          "Renters do not have to write down the roof, the gutters or the furnace. The list that matters is short: the lease, the deposit, the smoke alarm, and what you reported.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The photos, done properly",
+        paragraphs: [
+          "Take wide shots of each room, then close shots of anything that is scratched, stained or worn. Photograph the inside of the oven and the refrigerator, and the floor near the door. Keep the photos where you cannot lose them, and record the date you took them. The point is a set that anyone can look at and understand in a minute.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Home Base has a renter setup that stops asking about the roof and gutters and asks about the things above: the lease, the deposit, and what you have reported to the landlord and when. Its lease job, Decide before the notice deadline, is a reminder to look at your notice date each year. It stores what you type, not photos or documents, so keep your photos in your own phone. It is not legal advice.",
+      },
+    ],
+  },
 ];
 
 /**
