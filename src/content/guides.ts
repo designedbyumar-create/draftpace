@@ -5269,6 +5269,769 @@ export const GUIDES: Guide[] = [
       },
     ],
   },
+
+  // ---------------------------------------------- Personal Finance Companion set
+  // Eleven guides written for the Personal Finance Companion Pinterest pins.
+  // Each answers a search someone actually types and stays inside what the
+  // Companion does: everything is typed, pasted or imported and reviewed, there
+  // is no bank connection, no PDF or scan import, no annual subscription
+  // total, no reminders to rely on, and USD only. Available Money is a
+  // month-level estimate, never a safe-until-payday figure.
+
+  {
+    slug: "debt-snowball-vs-avalanche",
+    title: "Debt snowball vs avalanche: which costs less, and which you will keep",
+    dek: "Two ways to order your debts. A worked three-debt example with real interest totals, why the two often come out close, and how to choose the one you will actually stick with.",
+    publishedAt: "2026-09-26",
+    areaSlug: "money",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "If you owe money on more than one thing, you have to decide where any extra money goes first. Every debt still gets its minimum. The question is which one gets the rest.",
+          "There are two well-known answers. They differ less than the internet arguments suggest, and the honest answer to which is better is that it depends on your numbers and on what you will keep doing for the next few years.",
+        ],
+      },
+      {
+        kind: "compare",
+        heading: "The two orders",
+        left: {
+          label: "Snowball: smallest balance first",
+          items: [
+            "Puts the extra on the smallest balance",
+            "Clears a debt sooner, which feels like progress",
+            "Frees up that minimum to roll into the next debt",
+            "Can cost a little more interest",
+          ],
+        },
+        right: {
+          label: "Avalanche: highest rate first",
+          items: [
+            "Puts the extra on the highest interest rate",
+            "Usually costs the least interest",
+            "May take longer to clear the first debt",
+            "Frees up minimums later",
+          ],
+        },
+      },
+      {
+        kind: "table",
+        heading: "A worked example",
+        intro: "Three debts, $200 a month extra, starting September 2026. Interest is added each month at the yearly rate divided by twelve, and every debt gets its minimum.",
+        columns: ["Debt", "Balance", "Rate", "Minimum"],
+        rows: [
+          ["Store card", "$1,200", "19.9%", "$40"],
+          ["Visa", "$9,000", "24.9%", "$270"],
+          ["Car loan", "$14,000", "7.5%", "$320"],
+        ],
+      },
+      {
+        kind: "table",
+        heading: "What the two orders do with those numbers",
+        columns: ["", "Snowball", "Avalanche"],
+        rows: [
+          ["First debt cleared", "Store card, March 2027", "Visa, October 2028"],
+          ["Debt-free", "September 2029", "September 2029"],
+          ["Interest along the way", "$5,109.78", "$4,995.84"],
+          ["Difference", "", "$113.94 less"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Why the gap is often small",
+        paragraphs: [
+          "In this example both orders finish in the same month. The difference is the interest, and it is small compared with the total. That is common when the extra is modest and the rates are not wildly apart.",
+          "There is also a case where the two do not differ at all. If the smallest balance is also the highest rate, both methods choose the same debt first. And with no extra money at all, every debt just gets its minimum, so the order changes nothing. In the example above, paying only the minimums gives the same result under both methods: debt-free in March 2031 and $9,232.57 in interest. The extra dollars matter more than the method.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Write these down for each debt first",
+        checkable: true,
+        items: [
+          "The balance you owe today.",
+          "The interest rate. If you do not know it yet, find the statement or ask the lender.",
+          "The minimum payment.",
+          "The date the payment is due each month.",
+          "Whether the rate is promotional and when it ends.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What a simple model leaves out",
+        paragraphs: [
+          "Every plan like this assumes a constant rate, so a promotional rate that ends is not captured. It assumes the minimum stays the same, though on many cards it shrinks as the balance falls. And it assumes you add no new charges. Treat the dates and totals as a way to compare two orders on the same numbers, not as a forecast of what will happen.",
+          "Then choose the order you will keep. A method you abandon after six months costs more than either one. If you are also trying to understand what a minimum-only path looks like, see [how long paying only the minimum takes](/guides/credit-card-minimum-payments-how-long).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Personal Finance Companion has a payoff plan. You enter each debt's balance, rate and minimum, add an extra amount for each month, and switch between smallest balance first and highest rate first. It shows the month each debt clears, the interest along the way, and, when two or more debts are in the plan, which order costs less. A debt with no rate is left out and named, not guessed. It is a model from your own numbers, not advice, and it does not change what you pay. It is $49 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "monthly-bills-list",
+    title: "How to make a monthly bills list that includes the ones that are not monthly",
+    dek: "Rent is easy. The insurance that arrives every three months and the annual renewal are the ones that ambush a month. Here is a list that includes them, and the columns that matter.",
+    publishedAt: "2026-09-26",
+    areaSlug: "money",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "A bills list feels like the simplest possible piece of organizing, and it usually fails at the same point: it lists what arrives every month and forgets everything else. The bills that surprise you are almost never the monthly ones.",
+          "A useful list has a small number of columns and includes the quarterly and annual bills from the start. It takes about half an hour to build the first time, and a few minutes a month to keep.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "The columns",
+        columns: ["Column", "What to write", "Why it matters"],
+        rows: [
+          ["Name", "Rent, electric, car insurance", "You will scan for it by name"],
+          ["Amount", "A number, or a low and a high", "Some bills move; be honest about it"],
+          ["Due day", "The day of the month, or a specific date", "A bill with no date cannot be planned around"],
+          ["How often", "Monthly, quarterly, annual", "Tells you what a month really costs"],
+          ["Essential", "Yes or no", "What has to be paid before anything else"],
+          ["Shared", "Who pays part, and what share", "Stops you paying for someone else's half"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Turn every bill into a monthly amount",
+        paragraphs: [
+          "To see what a normal month costs, convert every bill to a monthly equivalent. A monthly bill is itself. A quarterly bill divided by three. An annual bill divided by twelve.",
+          "For example, car insurance of $612 every three months is $204 a month. A $96 annual renewal is $8 a month. Add those to the monthly bills and you have a more honest figure for what leaves in a month than the bills you can see in your banking app.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Build it in four passes",
+        checkable: true,
+        items: [
+          "Pull the last three months of statements and list everything that repeated.",
+          "Add anything that comes less often: quarterly, twice a year, annual.",
+          "Write a due day or date against each one, and mark the ones you cannot find.",
+          "Mark which bills are essential, then note the ones that vary.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Bills that move around",
+        paragraphs: [
+          "Electric, water and phone bills change. Write a low and a high, and plan toward the high. There is a longer method in [how to budget for bills that change every month](/guides/budget-for-variable-bills).",
+          "For the non-monthly ones, a small monthly amount set aside for each is the quieter alternative to scrambling when they arrive. That idea has its own guide: [sinking funds](/guides/sinking-funds-explained).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Personal Finance Companion has a Bills screen with all of these fields, including frequency (monthly, quarterly, annual, custom), an amount that can vary, and a due day or date. It shows a monthly total and what is left to pay this month, lets you tick a bill paid, and flags any bill with no due date. You type the bills in, or paste them and review each one. It does not read your bank, and it counts a full month of bills toward Available Money whether or not you have ticked them paid. It is $49 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "organize-your-finances-from-scratch",
+    title: "How to organize your finances when everything is scattered",
+    dek: "Bank apps, statements, a spreadsheet nobody trusts, and a lot in your head. A ten minute starting path that works even when you do not have everything to hand.",
+    publishedAt: "2026-09-26",
+    areaSlug: "money",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Most advice about organizing money starts with gathering every statement, every login and every bill. That is exactly what makes it hard to start. The picture you can build in ten minutes from what you already know is more useful than the perfect one you never begin.",
+          "This is a starting path, not a system. It is meant to be finished the same day, and improved later.",
+        ],
+      },
+      {
+        kind: "timeline",
+        heading: "The ten minute starting path",
+        steps: [
+          { when: "Gather", what: "Write down where your money information lives: bank apps, a statement folder, notes, a spreadsheet, or your head." },
+          { when: "Write what you know", what: "Accounts and roughly what is in them. What comes in and when. The bills you can name. The debts you owe." },
+          { when: "Mark what you do not", what: "Beside anything you are unsure of, write a question mark. Do not guess." },
+          { when: "Find one number", what: "Pick the single figure you most want: what is actually free to spend, or when the debt is gone." },
+          { when: "Fix one thing", what: "Choose the one gap that matters most and close it, such as a missing due date." },
+          { when: "Set a rhythm", what: "Choose a small, regular time to update it, weekly or monthly." },
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Six areas to cover",
+        checkable: true,
+        items: [
+          "Accounts: where your money sits, and roughly how much.",
+          "Income: what comes in, how sure you are of it, and when.",
+          "Bills: what is due on a schedule, including the ones that are not monthly.",
+          "Subscriptions: what renews on its own.",
+          "Debts: what you owe, the rate and the minimum.",
+          "Goals: what you are saving toward, and by when.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The gaps are useful",
+        paragraphs: [
+          "A gap is not a failure. A bill with no due date, a debt with no interest rate and an account you have not checked in a month are all things you now know to find. A picture that says where it is unsure is more trustworthy than one that quietly fills the blanks.",
+          "If you want the simplest possible version to start with, [how much of your money is actually safe to spend](/guides/how-much-of-your-money-is-actually-safe-to-spend) gives you one number from three inputs.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Paper, notes or an app",
+        paragraphs: [
+          "Any of them works for the first pass. The thing that matters is that you can update it in a few minutes, because a picture that is two months old is worse than none. If you like paper, a printable workbook is a good way to gather. There is more on that in [how to make a financial binder](/guides/financial-binder-what-to-include).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Personal Finance Companion starts by asking where your financial information is right now: mostly in your head, in notes, in a text file, in a spreadsheet, or already known. It then goes one area at a time, and nothing is required. You type it in, paste it, or import a CSV, and you review anything imported before it counts. Missing information is shown, not hidden, and the app suggests one next move at a time. It is $49 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "split-bills-with-a-partner-or-roommate",
+    title: "How couples and roommates split bills without keeping score",
+    dek: "There is no single right way to split a bill. Three common approaches, what each one assumes, and a simple written record so the question stays settled.",
+    publishedAt: "2026-09-26",
+    areaSlug: "money",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Sharing a home or a life means sharing costs, and most arguments about it are not about the money. They are about not being able to remember who paid what. A little structure fixes most of that.",
+          "This guide is neutral about the answer. It describes three common ways to split, what each one assumes, and how to keep a record.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Three ways to split",
+        columns: ["Approach", "How it works", "It assumes"],
+        rows: [
+          ["Equal", "Every bill is split in half", "Similar income and similar use"],
+          ["By income", "Each person pays a share matching what they earn", "You are comfortable sharing income"],
+          ["By item", "Each person takes certain bills", "The bills are of similar size"],
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Agree these four things first",
+        checkable: true,
+        items: [
+          "Which bills count as shared, and which do not.",
+          "What each person's share is, as a percentage.",
+          "How often you settle: monthly, or when it adds up.",
+          "Where you write it down, so both of you can see it.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Write down what is settled and what is owed",
+        paragraphs: [
+          "The simplest habit is a running record: each shared bill, the amount, each person's share, and a mark when it is settled. When someone asks whether rent was paid, the answer is on the page.",
+          "A one-page statement of what is still owed, and what has already been settled, is often all you need to send. It turns a memory dispute into arithmetic.",
+        ],
+      },
+      {
+        kind: "compare",
+        heading: "When a joint account helps, and when it does not",
+        left: {
+          label: "A joint account suits",
+          items: [
+            "Long-term partners who share most costs",
+            "Bills that are always the same amount",
+            "Two people who check in regularly",
+          ],
+        },
+        right: {
+          label: "Tracking separately suits",
+          items: [
+            "Roommates and short-term arrangements",
+            "Costs that are only partly shared",
+            "Anyone who wants to keep the rest private",
+          ],
+        },
+      },
+      {
+        kind: "paragraphs",
+        heading: "Keep it plain",
+        paragraphs: [
+          "Avoid turning it into a ledger of every coffee. Agree the shared bills once, review them when something changes, and write down settlements as they happen. If your bills are a mix of monthly and non-monthly, [a monthly bills list](/guides/monthly-bills-list) is a good base to share from.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "In Personal Finance Companion, any bill or subscription can be marked Shared Responsibility with your share as a percentage. The row shows your share and their share, you tick it settled, and you can download a one-page PDF of what is still owed and what is already settled. The other person needs no account. It is manual: it does not send money, request payment or track who paid. It is $49 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "subscription-tracker-what-to-track",
+    title: "What to write down for every subscription",
+    dek: "The renewal date matters more than the price. Six fields that catch renewals before they happen, and a five minute monthly check.",
+    publishedAt: "2026-09-26",
+    areaSlug: "money",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Finding your subscriptions is a one-time job, covered in [how to find every subscription you are paying for](/guides/how-to-find-every-subscription-you-are-paying-for). Keeping track of them is the ongoing one, and it needs far less than most trackers ask for.",
+          "The single most useful thing to record is not the price. It is the date it renews, because that is the last moment you can do anything about it.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "The six fields",
+        columns: ["Field", "What to write", "Why"],
+        rows: [
+          ["Name", "The service", "So you can find it again"],
+          ["Charge", "What it costs each cycle", "The number that leaves your account"],
+          ["Cycle", "Monthly, annual, or something else", "Annual charges are the easy ones to miss"],
+          ["Renewal date", "The date it next charges", "The date you can act on"],
+          ["Your decision", "Keep, still deciding, or planned to cancel", "Turns a vague worry into a status"],
+          ["Who shares it", "If someone else pays part", "Stops two people paying for the same thing"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The annual trap",
+        paragraphs: [
+          "A charge you pay once a year is invisible for eleven months and then lands all at once. It is also the charge most likely to renew because you forgot. If you keep only one habit, make it a heads-up about two weeks before any annual renewal, so there is time to decide.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "A five minute monthly check",
+        checkable: true,
+        items: [
+          "Look at anything renewing in the next two weeks.",
+          "For each one, keep it, decide, or plan to cancel it.",
+          "Look at anything marked still deciding and settle at least one.",
+          "Add any new subscription you started this month.",
+          "Remove anything you have already canceled.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Canceling is the easy part after you decide",
+        paragraphs: [
+          "Once a subscription is marked planned to cancel, the last step is to actually do it, which some services make harder than it should be. That is covered in [how to cancel a subscription that is hard to cancel](/guides/how-to-cancel-subscriptions).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Personal Finance Companion tracks subscriptions with a decision on each one: keep, still deciding, planned to cancel, or already canceled. It shows a monthly total, and it puts a kept annual subscription in Attention when it is within 14 days of renewing. It tracks the decision and will not cancel anything for you. It does not show an annual total. It is $49 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "bank-statement-csv-to-budget",
+    title: "How to turn a bank statement CSV into a budget without a spreadsheet",
+    dek: "Download the file, check its shape, map the columns, catch the duplicates. The whole process, and what a CSV cannot tell you.",
+    publishedAt: "2026-09-26",
+    areaSlug: "money",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Most banks let you download a transaction history as a CSV, a plain text file of rows and columns. It is the simplest way to work with your own spending data without connecting an account to anything. It is also full of small traps.",
+          "This guide walks through the process, and is honest about what a list of transactions can and cannot tell you.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Check the file before you use it",
+        checkable: true,
+        items: [
+          "Open it and confirm there is a header row naming each column.",
+          "Check whether spending is negative or shown as a positive number.",
+          "Check whether there is one amount column, or separate debit and credit columns.",
+          "Check the date format: month first or day first.",
+          "Scan for duplicate rows, the same date, amount and description twice.",
+        ],
+      },
+      {
+        kind: "timeline",
+        heading: "The process",
+        steps: [
+          { when: "Download", what: "Export the period you want from your bank, as a CSV." },
+          { when: "Look", what: "Open it and check the shape using the list above." },
+          { when: "Map", what: "Tell whatever tool you are using which column is the date, the description and the amount." },
+          { when: "Review", what: "Look for duplicates and anything that looks wrong before it counts." },
+          { when: "Categorize", what: "Give each transaction a category, or skip the ones that do not matter." },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What a CSV cannot tell you",
+        paragraphs: [
+          "A transaction list tells you what happened. It does not tell you what is coming: the bill due Friday, the subscription renewing next week, the balance you need to keep. It also does not know which of your accounts you meant to keep out of your spending.",
+          "That is why a list of transactions alone gives you a description of the past, not a plan. To plan, you need your bills, your income and your balances, alongside it.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Watch for the double count",
+        paragraphs: [
+          "Two things commonly go wrong. A file that overlaps with one you imported before will duplicate rows. And a transfer between your own accounts can appear as both spending in one and income in the other. Look at anything that shows up twice with the same date and amount before you trust a total.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "No bank login needed",
+        paragraphs: [
+          "Downloading a file yourself means you never give a third party access to your account. The trade-off is that it is a snapshot you have to refresh. For a monthly habit, that is often exactly enough. If you want a simpler starting point, see [how to make a monthly budget for the first time](/guides/how-to-budget-for-beginners).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Personal Finance Companion imports a transaction CSV up to 2 MB. You map the columns yourself: date, description, and either one amount column or separate debit and credit columns. Rows it cannot read are skipped and counted, ambiguous cells are rejected rather than guessed, and an exact duplicate is flagged. Nothing is saved until you review it. It imports transactions only, not accounts or bills, and imported transactions do not change your Available Money. It has no PDF or scan import and no bank connection. It is $49 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "financial-binder-what-to-include",
+    title: "How to make a financial binder: what goes in it and how often to update it",
+    dek: "Seven sections cover most of a financial binder. What each holds, how confident to be in each entry, and how to keep it current without it becoming a chore.",
+    publishedAt: "2026-09-26",
+    areaSlug: "money",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "A financial binder is a private place to gather what you know about your money: what you have, what comes in, what is due, and what you owe. It does not replace your bank or your records. It is where you put the picture together so you can see it.",
+          "The most useful binders are short. Seven sections is enough, and none of them needs to be finished before the next one is useful.",
+        ],
+      },
+      {
+        kind: "timeline",
+        heading: "The seven sections, in the order to fill them",
+        steps: [
+          { when: "01 Accounts", what: "Each account, its type, roughly what is in it, and the date you last checked." },
+          { when: "02 Income", what: "Each source, how sure you are of the amount, and when it arrives." },
+          { when: "03 Bills", what: "Everything due on a schedule, with amounts and due days." },
+          { when: "04 Subscriptions", what: "What renews on its own, the date, and your decision on each." },
+          { when: "05 Debt", what: "Each debt, its balance, rate and minimum." },
+          { when: "06 Savings goals", what: "What you are saving toward, the target and the date." },
+          { when: "07 A written summary", what: "A few lines in plain words on where you stand, and what you will do next." },
+        ],
+      },
+      {
+        kind: "table",
+        heading: "How confident to be in each entry",
+        intro: "Marking how sure you are is what stops a binder from becoming a source of false confidence.",
+        columns: ["Label", "Meaning"],
+        rows: [
+          ["Confirmed", "You checked it against a statement or a bill"],
+          ["Estimated", "A reasonable guess, with a range if you have one"],
+          ["Unresolved", "You know it matters and have not found it yet"],
+          ["Missing", "You have not entered it at all"],
+          ["Stale", "It was right once and has not been checked recently"],
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Keeping it current",
+        checkable: true,
+        items: [
+          "Set one small, regular time to update it, weekly or monthly.",
+          "Update balances and anything that changed, not everything.",
+          "Add a short note about what you decided and why.",
+          "Keep the binder somewhere private, since it holds sensitive information.",
+          "Do not write passwords, full account numbers or security answers in it.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Paper and an app together",
+        paragraphs: [
+          "Paper is good for gathering. It is easy to hand over, and it does not need power. It will not tell you what is due next week. An app is the opposite. Using the two together means neither has to do everything. If you are just starting, [how to organize your finances when everything is scattered](/guides/organize-your-finances-from-scratch) is the shorter path.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Personal Finance Companion comes with an 81-page printable workbook in US Letter and A4. It has the sections above, a page to compare two debt payoff methods, a variable bills worksheet, twelve monthly review spreads and a quick reference card with a ten minute starting path. It is a private paper workbook for gathering and preparing your money, and the app keeps it current. Net worth is a handwritten page in the workbook, not something the app calculates. It is $49 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "sinking-funds-explained",
+    title: "Sinking funds: how to save for the costs you can see coming",
+    dek: "Car registration, insurance, holidays and gifts arrive on a schedule. A sinking fund turns each into a small monthly amount. Here is how to work out the number.",
+    publishedAt: "2026-09-26",
+    areaSlug: "money",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Some of the biggest costs in a year are not surprises. They are just infrequent: car registration, an insurance premium paid twice a year, a holiday, a run of birthdays. Because they arrive once in a while, they feel like emergencies when they land.",
+          "A sinking fund is a small amount set aside each month for a cost that is coming on a known date. It turns a large, occasional bill into a small, regular one.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The formula",
+        paragraphs: [
+          "Take what you still need, subtract what you have already saved, and divide by the whole months left until the date. For example, if you need $600 by the end of the year and have $150 saved with four months left, set aside $112.50 a month.",
+          "If the date is less than a month away, or you do not have a date, there is no sensible monthly figure. That is a sign to pick a date.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Costs worth a sinking fund",
+        columns: ["Cost", "When it lands", "Why it ambushes a month"],
+        rows: [
+          ["Car registration", "Once a year", "One large charge"],
+          ["Insurance", "Every three or six months", "Easy to forget between payments"],
+          ["Holidays and gifts", "The same weeks each year", "Predictable but rarely planned"],
+          ["Annual subscriptions", "Once a year", "A charge you were not watching"],
+          ["Medical and dental", "A few times a year", "Small amounts that add up"],
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Setting one up",
+        checkable: true,
+        items: [
+          "List the costs you can name and the month each one lands.",
+          "Work out a target and a date for each.",
+          "Divide to find the monthly amount, then add them up.",
+          "Check the total against what you can set aside without squeezing a bill.",
+          "Keep the money somewhere you will not spend it by accident.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Where the money lives",
+        paragraphs: [
+          "The best place is somewhere separate from the account you spend from, such as a savings account, so it is out of sight. If you cannot open a separate account, at least keep it out of your spending number. The first step for many people is a small reserve, covered in [how to build your first $1,000 emergency fund](/guides/how-to-build-a-first-1000-emergency-fund).",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The annual bill should not be a surprise",
+        paragraphs: [
+          "An annual bill is a small monthly amount you did not set aside. If a $600 charge arrives in twelve months, that is $50 a month starting today. Divide what remains by the months left, and the number becomes ordinary.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Personal Finance Companion has savings goals with a type that includes sinking fund. You enter the target, what you have saved so far and a target date, and it shows the monthly amount needed. The progress is what you record: it does not read your bank account and it does not move money. It is $49 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "50-30-20-rule-where-it-breaks",
+    title: "The 50/30/20 rule, and where it breaks for real budgets",
+    dek: "Half to needs, thirty to wants, twenty to savings and debt. It is tidy. Here is who it fits, where it breaks, and how to check it against your own month.",
+    publishedAt: "2026-09-26",
+    areaSlug: "money",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "The 50/30/20 rule splits your after-tax income three ways: fifty for needs, thirty for wants and twenty for savings and debt repayment. It is popular because it is easy to remember. It is a starting point, not a law, and for many budgets it does not fit.",
+          "This guide is about testing it against your own numbers rather than accepting it or dismissing it.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "The rule",
+        columns: ["Share", "Goes to", "Examples"],
+        rows: [
+          ["50", "Needs", "Rent, utilities, groceries, minimum debt payments, insurance"],
+          ["30", "Wants", "Eating out, entertainment, hobbies, subscriptions you could drop"],
+          ["20", "Savings and extra debt payments", "Emergency fund, extra toward debt, goals"],
+        ],
+      },
+      {
+        kind: "compare",
+        heading: "Where it fits, and where it breaks",
+        left: {
+          label: "It tends to fit when",
+          items: [
+            "Income is steady and mid-range",
+            "Housing costs are moderate",
+            "Debt payments are small",
+          ],
+        },
+        right: {
+          label: "It tends to break when",
+          items: [
+            "Rent alone is close to half of income",
+            "Pay changes from month to month",
+            "Debt minimums are large",
+          ],
+        },
+      },
+      {
+        kind: "list",
+        heading: "Test it on your own month",
+        checkable: true,
+        items: [
+          "Write down your monthly after-tax income, using only what is reliable.",
+          "Add up your needs, including the monthly equivalent of quarterly and annual bills.",
+          "Add up what you set aside and what you pay toward debt beyond the minimum.",
+          "Whatever is left is your wants.",
+          "Compare each to the rule and note where you differ, without judging it.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Adjust it, do not abandon it",
+        paragraphs: [
+          "If your needs come to sixty percent, the rule is telling you something true: this is a tight month. You can adjust the split to fit, perhaps sixty, twenty and twenty, and still have a useful picture. The value of the rule is in making the three groups visible, not in the specific numbers.",
+          "Watch for the bills that are not monthly. A rule applied to twelve regular bills will be off if a quarterly premium and an annual renewal are missing. [A monthly bills list](/guides/monthly-bills-list) fixes that. If your income varies, start from [how to budget when your income is different every month](/guides/how-to-budget-with-irregular-income).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Personal Finance Companion does not have a built-in 50/30/20 view, so treat this as a method with a manual check. What it does show is a typical month: what comes in, what goes out (bills, subscriptions and debt minimums, as monthly equivalents), what you are setting aside for goals, and what is left. Irregular income and bills with no amount are named, not counted. You can use those figures to test the rule. It is $49 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "budget-for-variable-bills",
+    title: "How to budget for bills that change every month",
+    dek: "Electric, water and phone bills move around. Pull twelve months, find the low and the high, and plan toward the high so the spike month is not a surprise.",
+    publishedAt: "2026-09-26",
+    areaSlug: "money",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "A fixed bill is easy to plan for. A bill that changes every month is not, and the usual response is to guess, then be surprised in the months the guess was low.",
+          "The fix is to stop treating a moving bill as a single number. It is a range, and it is much easier to plan around a range you have looked at than a figure you have imagined.",
+        ],
+      },
+      {
+        kind: "timeline",
+        heading: "The method",
+        steps: [
+          { when: "Pull twelve months", what: "Find the last twelve statements or bills for the one you are planning." },
+          { when: "Find the low and the high", what: "Note the smallest and the largest amount in that year." },
+          { when: "Plan toward the high", what: "Use the high, or something close to it, in your budget." },
+          { when: "Set the gap aside", what: "In the months the bill is low, keep the difference for the spike." },
+          { when: "Check again", what: "Once a season, look at whether the range has moved." },
+        ],
+      },
+      {
+        kind: "table",
+        heading: "An example",
+        intro: "An illustration only. Use your own twelve months.",
+        columns: ["", "Amount"],
+        rows: [
+          ["Lowest month", "$60"],
+          ["Highest month", "$122"],
+          ["Midpoint", "$91"],
+          ["Plan toward", "$122"],
+          ["Set aside in a low month", "$62"],
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Bills that usually move",
+        checkable: true,
+        items: [
+          "Electric and gas, which follow the seasons.",
+          "Water, which rises with use.",
+          "Phone and internet, if you pay for data or usage.",
+          "Anything billed by consumption rather than a fixed plan.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The spike month",
+        paragraphs: [
+          "The month the bill is highest is the month it hurts. Setting the difference aside in the cheaper months is a small sinking fund for exactly that. There is a fuller version of the idea in [sinking funds explained](/guides/sinking-funds-explained). For the wider list of what falls due, see [how to make a monthly bills list](/guides/monthly-bills-list).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "In Personal Finance Companion, a bill can be marked as varying, with a low and a high estimate, and the monthly total uses the midpoint of the range. It is an estimate you enter, not something it tracks from your actual bills each month. The workbook that comes with it has a variable bills worksheet for your twelve months. It is $49 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "credit-card-minimum-payments-how-long",
+    title: "How long paying only the minimum takes, and what an extra $50 changes",
+    dek: "Interest is added every month, so a balance you only pay the minimum on can take much longer to clear than it looks. A worked example, and what an extra amount does.",
+    publishedAt: "2026-09-26",
+    areaSlug: "money",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Paying the minimum on a credit card keeps the account in good standing. It is also designed, in effect, to keep you in debt for a long time, because most of a small payment goes to the interest added that month.",
+          "It helps to see what that looks like once, with a real number.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "How the interest works each month",
+        paragraphs: [
+          "A rate quoted as a yearly percentage is usually applied monthly at one twelfth of that. On a $3,000 balance at 24 percent, the monthly rate is 2 percent, so about $60 of interest is added in the first month. If your minimum payment is $90, only about $30 of it reduces what you owe.",
+          "Next month the balance is a little lower, so the interest is a little lower, and slightly more of the payment goes to the balance. The process repeats, slowly, which is why the total time is longer than most people expect.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "What an extra amount does",
+        intro: "Three debts, from the worked example in the snowball and avalanche guide. Starting September 2026, with a constant rate and constant minimums.",
+        columns: ["Extra each month", "Debt-free", "Interest along the way"],
+        rows: [
+          ["$0, minimums only", "March 2031", "$9,232.57"],
+          ["$200", "September 2029", "$4,995.84"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Read this as a comparison, not a forecast",
+        paragraphs: [
+          "Those figures assume a constant rate and a constant minimum. On many cards the minimum shrinks as the balance falls, which stretches the real timeline out. New charges make it longer again. So the interest and dates above are a way to compare two paths on the same numbers, and real life on a card is usually slower.",
+          "The useful takeaway is not the exact dates. It is that a modest extra amount, paid consistently, cuts the time and the interest by a lot. If you have more than one debt, the order matters less than the extra, as shown in [debt snowball vs avalanche](/guides/debt-snowball-vs-avalanche).",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What to do with this",
+        checkable: true,
+        items: [
+          "Find the balance, the interest rate and the minimum for each card.",
+          "Work out roughly what one month of interest is, using the rate divided by twelve.",
+          "See how much of your minimum actually reduces the balance.",
+          "Pick an extra amount you can keep up, even a small one.",
+          "Do not add new charges to the card while you are paying it down.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Personal Finance Companion's payoff plan has an Extra each month input where leaving it at zero shows the minimums only. It shows the month each debt clears and the interest along the way. It assumes a constant rate and constant minimums, and a debt with no rate is left out and named. It is a model from your own numbers, not advice, and it does not change what you pay. It is $49 once.",
+      },
+    ],
+  },
 ];
 
 /**
