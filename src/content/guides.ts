@@ -6032,6 +6032,606 @@ export const GUIDES: Guide[] = [
       },
     ],
   },
+
+  // ------------------------------------------------ ADHD Life Companion set
+  // Nine guides written for the ADHD Life Companion Pinterest pins. They are
+  // practical admin guidance, not treatment: none says the product treats,
+  // manages or improves ADHD, and each says plainly that it is not medical
+  // advice. Each stays inside what the product does: one thing on Now, Life in
+  // four shapes, eight authored playbooks, six outcomes (where "Did not get to
+  // it" changes nothing on the item), opt-in web push reminders for dates you
+  // chose, and no bill amounts, documents, streaks or scores.
+
+  {
+    slug: "how-to-start-when-everything-is-overdue",
+    title: "Everything is late: how to pick the first thing",
+    dek: "When it is all late, the problem is not that you cannot do things. It is that everything looks equally urgent. A way to sort it, pick one, and put the rest out of sight.",
+    publishedAt: "2026-09-26",
+    areaSlug: "mind-and-focus",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "There is a particular kind of week when the calls, the forms, the replies and the bills have all gone past the day you meant to deal with them. Looking at the whole pile is what makes it unbearable, because everything looks equally urgent and equally guilty.",
+          "This guide is practical admin help, not medical advice. It is about making the first choice smaller than the pile.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Sort by who is waiting",
+        intro: "Do not rank everything. Put each thing in one of three piles.",
+        checkable: true,
+        items: [
+          "A person is waiting on you: someone has asked, or will notice.",
+          "A date is attached: there is a real day it has to happen by.",
+          "Nobody is waiting: it matters, but nothing changes this week.",
+        ],
+      },
+      {
+        kind: "timeline",
+        heading: "The two minute triage",
+        steps: [
+          { when: "Write it down", what: "List only the things where a person or a date is involved. Leave the rest for later." },
+          { when: "Pick one", what: "Choose the one that is smallest or most likely to change something for somebody." },
+          { when: "Name the first step", what: "Write the first physical thing you would do: a call, a message, opening a form." },
+          { when: "Put the rest away", what: "Out of sight is not lost. Write them down somewhere and stop looking at them tonight." },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What to do with everything else",
+        paragraphs: [
+          "The things you are not doing today are not gone. They are somewhere safe, and you know where. The relief comes from not carrying them in your head, not from finishing them.",
+          "If you need to contact people about the delay, you do not have to explain at length. A short, plain message is enough, and there are lines for it in [how to deal with something you have put off](/guides/how-to-deal-with-something-you-have-put-off).",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Leave the pile alone tonight",
+        paragraphs: [
+          "Once you have picked one thing and named its first step, you are allowed to stop. Sorting is not a reason to keep going until midnight. If the first step is smaller than you can face, [task paralysis: what to do in the next ten minutes](/guides/task-paralysis-what-to-do-in-the-next-ten-minutes) is the next place to look.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "ADHD Life Companion shows one thing on its Now screen, and when nothing needs you, it says so and stops. Everything else you put down lives in Life, in four shapes: something to do, waiting on someone, something ongoing, and worth having to hand. Nothing in Life is marked late and nothing is counted. When something feels too big, the Break something down walkthrough asks for the first physical step and which one could happen today. It is a web app, not a treatment or medical advice. It is $49 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "paperwork-pile-where-to-start",
+    title: "A pile of paperwork you have been avoiding: where to start",
+    dek: "Unopened mail gets scarier every week. Open, do not decide. A ten minute way to make the pile smaller without deciding anything in a hurry.",
+    publishedAt: "2026-09-26",
+    areaSlug: "mind-and-focus",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "The longer an envelope sits, the more it seems to contain. Most of the fear is about not knowing. The first job is not to deal with the pile. It is to find out what is in it.",
+          "This is practical guidance, not medical advice, and it works for anyone with a stack of mail they have been putting off.",
+        ],
+      },
+      {
+        kind: "timeline",
+        heading: "A ten minute version",
+        steps: [
+          { when: "Set a limit", what: "Ten minutes, one box or one shelf. Stop when the time is up, even if the pile is not finished." },
+          { when: "Open, do not decide", what: "Open each item and put it in a pile. Do not act on anything yet." },
+          { when: "Sort by who is waiting", what: "A person is waiting, a date is attached, or nobody is waiting." },
+          { when: "Write down the reference numbers", what: "Any claim, case or account number goes in one place, not left on the letter." },
+          { when: "Choose the smallest piece", what: "Pick one thing from the first pile and write the first physical step." },
+        ],
+      },
+      {
+        kind: "compare",
+        heading: "Two ways to face a pile",
+        left: {
+          label: "Trying to finish it",
+          items: [
+            "Starts with the hardest letter",
+            "Needs a whole free day",
+            "Ends when you run out of energy",
+            "Feels like failure if it is not done",
+          ],
+        },
+        right: {
+          label: "Making it smaller",
+          items: [
+            "Starts with opening, not deciding",
+            "Fits into ten minutes",
+            "Ends when the time is up",
+            "Counts as done if the pile is smaller",
+          ],
+        },
+      },
+      {
+        kind: "paragraphs",
+        heading: "The is-this-still-needed check",
+        paragraphs: [
+          "Some of what is in an old pile has already been dealt with, has expired, or was never urgent. Before you act on something old, ask whether it still needs doing at all. That question alone often shrinks the pile.",
+          "What to keep on paper, and where to put it, is a separate question with its own guide: [which documents to keep and where to put them](/guides/which-documents-to-keep-and-where-to-put-them).",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Start with one envelope",
+        paragraphs: [
+          "You do not have to do the whole pile. You have to start it. If ten minutes is too much, open one envelope. That is a real start, and it is more than the pile has had for weeks.",
+          "If the thing you are avoiding is a phone call that the paperwork points to, [how to make a phone call you have been avoiding](/guides/how-to-make-a-phone-call-you-have-been-avoiding) picks up from here.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "ADHD Life Companion has a Pick something back up walkthrough that asks where you got to, whether anything was missing last time, and what the smallest piece is, and it keeps your answers so next time you see them instead of working it out again. A reference number you will need for one specific thing can go under Worth having to hand. It stores what you type, not documents, photos or scans. It is a web app, not a treatment or medical advice. It is $49 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "how-to-say-no-or-give-bad-news-on-the-phone",
+    title: "How to say no, or give bad news, on the phone",
+    dek: "Some calls are hard because of what you have to say. Decide what you will not agree to before you dial, have an opening ready, and give yourself permission to ask for a minute.",
+    publishedAt: "2026-09-26",
+    areaSlug: "mind-and-focus",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "A call where you have to say no, or tell someone something they will not want to hear, is harder than a call where you have to ask for something. The difficulty is not the phone. It is that you are about to disappoint someone and you have not decided how.",
+          "This guide is about the practical parts: what to decide, what to have ready, and what to say first. It is not therapy, negotiation coaching or advice about what you should agree to.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What makes this one hard?",
+        intro: "Naming it tells you what is worth having ready.",
+        checkable: true,
+        items: [
+          "You are telling them something they will not want to hear.",
+          "You are saying no to something.",
+          "Money is involved.",
+          "It is personal.",
+          "They have been difficult about this before.",
+        ],
+      },
+      {
+        kind: "timeline",
+        heading: "Before you dial",
+        steps: [
+          { when: "Say what you want", what: "One line: what you want to be true when you put the phone down." },
+          { when: "Decide what you will not agree to", what: "Deciding now means you are not deciding it while somebody waits on the line." },
+          { when: "Set the room", what: "A glass of water within reach, and somewhere you will not be overheard." },
+          { when: "Name two call-back times", what: "In case now turns out to be the wrong moment." },
+          { when: "Get the first sentence ready", what: "Getting the first sentence out is most of it." },
+        ],
+      },
+      {
+        kind: "scripts",
+        heading: "An opening to start from",
+        intro: "Pick the situation. Use it, or change it to sound like you.",
+        items: [
+          { situation: "Bad news", line: "Hi, it is me. There is something I need to tell you and it is not good news. Is now an all right time?" },
+          { situation: "Saying no", line: "Hi, I have thought about it and I am not going to be able to do it. I wanted to tell you rather than leave you waiting." },
+          { situation: "Money", line: "Hi, I need to talk to you about money, which I would rather do directly than by email. Do you have a few minutes?" },
+          { situation: "Difficult before", line: "Hi, I am calling about this again. I would like to get it sorted today if we can. Can you look at what has happened so far?" },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "You are allowed to ask for a minute",
+        paragraphs: [
+          "During the call, you are allowed to ask for a minute to think, and you are allowed to say you will call back. Neither is a failure. Write down anything that was agreed, and, if it matters, the name of who you spoke to.",
+          "For everyday admin calls, there are scripts in [scripts for the admin calls everyone dreads](/guides/scripts-for-the-admin-calls-everyone-dreads).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "ADHD Life Companion has a Make a difficult phone call walkthrough. It asks what makes this one hard, who you are calling, what you want to be true, and whether there is anything you are not willing to agree to. It shows what is worth having ready, suggests an opening you can use or replace with your own, and keeps your own words on screen during the call. It never tells you what to accept or refuse. What you type in your own opening is saved. It is a web app, not therapy or medical advice. It is $49 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "the-email-you-keep-not-sending-and-how-to-chase-a-reply",
+    title: "The email you keep not sending, and how to follow up when nobody replies",
+    dek: "An email that does not say what it wants gets answered slowly, or not at all. What it is for, how to write the first line, and what to do when nobody answers.",
+    publishedAt: "2026-09-26",
+    areaSlug: "mind-and-focus",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "The email you keep not sending is rarely hard to write. It is hard to start. Most of the time it is waiting for a first line, and everything after that comes more easily.",
+          "This guide is practical help with the parts that stall: what the email is for, the first line, and what to do afterward if nobody replies. It is not medical advice.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Decide these three things first",
+        checkable: true,
+        items: [
+          "What the email is for: asking, replying, saying no, chasing, or explaining a problem.",
+          "Who it is to.",
+          "What needs to happen because of it, in one line.",
+        ],
+      },
+      {
+        kind: "scripts",
+        heading: "A first line to start from",
+        intro: "The rest is usually easier once this exists. Use one, or write your own.",
+        items: [
+          { situation: "Asking", line: "Hello, I am hoping you can help me with something." },
+          { situation: "Replying", line: "Hello, thank you for getting back to me. To answer your question:" },
+          { situation: "Saying no", line: "Hello, thank you for asking me. I am not going to be able to do it this time." },
+          { situation: "Chasing", line: "Hello, I got in touch about this a little while ago and I have not heard back yet. Could you let me know where it stands?" },
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Before you send it",
+        intro: "Read it once against these, then send it. Reading it a fourth time does not make it better.",
+        checkable: true,
+        items: [
+          "What you want is in the first three lines.",
+          "The date, if there is one, is in there.",
+          "Anything you meant to attach is attached.",
+          "It is short enough to read on a phone.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "When nobody replies",
+        paragraphs: [
+          "Chasing by the same route that already went unanswered is usually the slower option. If you emailed, try a call, or the other way around. And ask for a date rather than an update. An update can be nothing. A date is something you can hold them to.",
+          "Then note when you will check back, so the waiting has an end. If the follow-up is by phone, [scripts for the admin calls everyone dreads](/guides/scripts-for-the-admin-calls-everyone-dreads) has an opening for chasing.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "ADHD Life Companion has a Send the email walkthrough that asks what the email is for, who it is to and what needs to happen, suggests a first line you can use or replace with your own, and lists the checks before you send. A Follow something up walkthrough asks how you last got in touch and what you need from them now. Something you are waiting on can be kept as a Waiting item with a check-back date. It does not send email or read your inbox. It is a web app, not a treatment or medical advice. It is $49 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "first-physical-step-20-examples",
+    title: "The first physical step: examples for admin you are stuck on",
+    dek: "A first step is something you could see happen: a call, an email, a form, a document. Twenty concrete first steps for the tasks that stay on the list.",
+    publishedAt: "2026-09-26",
+    areaSlug: "mind-and-focus",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "When a task feels too big to start, planning it usually makes it bigger. What helps is a first step that is physical: something somebody watching you could see happen. Not deciding, not planning, not thinking about it.",
+          "This is a reference list. It is practical admin help, not medical advice. Read down it, find something like yours, and copy the shape of the step.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Twenty first steps",
+        columns: ["The task", "The first physical step"],
+        rows: [
+          ["Book the dentist", "Look up the phone number and write it down"],
+          ["Make an insurance claim", "Find the claim number or the policy letter"],
+          ["Reply to the tax letter", "Put the letter on the desk and read the first paragraph"],
+          ["Return a package", "Find the packing slip"],
+          ["Cancel a subscription", "Open the account page and find the cancel or manage option"],
+          ["Renew an ID", "Find the current one and check the expiry date"],
+          ["Sort out the spare room", "Call the charity shop about collection"],
+          ["Answer a difficult email", "Write only the first line"],
+          ["Chase a refund", "Find the reference number from the last contact"],
+          ["Fill in a form", "Open it and fill in your name and the date"],
+          ["Change your address", "List the first three places that need it"],
+          ["Book a repair", "Take a photo of the problem"],
+          ["Sort the mail pile", "Open the top five items and do nothing else"],
+          ["Ask for help", "Send one message that says what you need"],
+          ["Deal with a bill dispute", "Find the statement showing the charge"],
+          ["Prepare for an appointment", "Write down what you want to come away with"],
+          ["Call the landlord", "Write what you will say in one line"],
+          ["Apply for something", "Find out the deadline and write it on a piece of paper"],
+          ["Return to an old project", "Find where you left it and put it on the desk"],
+          ["Make a doctor's appointment", "Find the phone number and the times you could go"],
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Check your own first step",
+        checkable: true,
+        items: [
+          "Could someone watching see it happen?",
+          "Can it be done in a few minutes?",
+          "Is it a real action, not deciding or planning?",
+          "Is it small enough that starting is not a decision?",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "One, not the list",
+        paragraphs: [
+          "If you write two or three steps, pick one to happen today. Not the list, one. The rest are not lost. Writing the next one down is what stops the whole thing from having to be worked out again.",
+          "If even the first step is too much, [task paralysis: what to do in the next ten minutes](/guides/task-paralysis-what-to-do-in-the-next-ten-minutes) goes smaller still.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "ADHD Life Companion has a Break something down walkthrough. It asks what the thing is, what would be true when it is finished, and what the first physical step is, then optionally the next two, and which of them could happen today: one of them, not the list. The steps you are not doing today go into Life so you do not carry them. It is a web app, not a treatment or medical advice. It is $49 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "a-weekly-reset-that-survives-a-bad-week",
+    title: "A weekly reset that survives a bad week",
+    dek: "Most resets assume a normal week. A ten minute version that still works when the week did not go to plan, and what to do with the week you skipped.",
+    publishedAt: "2026-09-26",
+    areaSlug: "mind-and-focus",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "A weekly reset is a good idea that usually fails in the same way: it is designed for a week that went fine. The first bad week breaks it, and then there is a reset to catch up on as well.",
+          "This guide is about a reset that is small enough to survive a bad week. It is practical, not medical advice.",
+        ],
+      },
+      {
+        kind: "timeline",
+        heading: "The ten minute reset",
+        steps: [
+          { when: "Open the pile", what: "Look at what is there. Do not decide anything yet." },
+          { when: "Pick one thing", what: "One, not the list. The one that matters most this week." },
+          { when: "Put one date on it", what: "A day you chose. If you do not want a date, leave it empty." },
+        ],
+      },
+      {
+        kind: "compare",
+        heading: "Two kinds of reset",
+        left: {
+          label: "A reset that needs a good week",
+          items: [
+            "Reviews everything that happened",
+            "Builds a plan for the whole week",
+            "Falls apart after a missed day",
+            "Adds a catch-up task",
+          ],
+        },
+        right: {
+          label: "A reset that survives a bad one",
+          items: [
+            "Looks at what is in front of you",
+            "Picks one thing",
+            "Works the same after a missed week",
+            "Adds nothing to catch up on",
+          ],
+        },
+      },
+      {
+        kind: "paragraphs",
+        heading: "What to do with the week you skipped",
+        paragraphs: [
+          "Nothing. A skipped week does not need to be caught up. It does not create a debt. You do the ten minutes this week, as if the last one had not been missed, because for the purpose of the reset it has not.",
+          "Some weeks the honest answer to what you got done is that you did not get to it. That is a real answer, not a failure. It changes nothing about what is in front of you now.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "A floor and a ceiling",
+        intro: "On a bad week, do the floor. On a good week, the ceiling is allowed.",
+        checkable: true,
+        items: [
+          "The floor: open the pile and pick one thing.",
+          "The ceiling: also put a date on it and write the first physical step.",
+          "Either counts as a reset.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "If the whole system has stopped working",
+        paragraphs: [
+          "If you stopped using a system entirely, the fix is not a better system. It is a way back that does not start with a catch-up. That is covered in [why you stop using planners, and how to come back](/guides/why-you-abandon-planners-and-how-to-come-back).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "ADHD Life Companion shows one thing on Now, lets you say Not now without changing anything, and has an outcome called Did not get to it that changes nothing on the item, adds nothing to its history, and counts nothing. Nothing in it is marked late, and it has no streaks, no scores and no percentages. It does not have a weekly review or plan. It is a web app, not a treatment or medical advice. It is $49 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "why-you-abandon-planners-and-how-to-come-back",
+    title: "Why you stop using planners, and how to come back without starting over",
+    dek: "You did not fail the planner. Most systems quietly assume a normal week. Here is what actually breaks, how to salvage one page, and what to look for next.",
+    publishedAt: "2026-09-26",
+    areaSlug: "mind-and-focus",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Almost everyone has a planner they stopped using. The usual story is that the person lost motivation. A more useful reading is that the system had a requirement built in that a real week could not always meet.",
+          "This is practical guidance, not medical advice. For the wider pattern across tools, see [why productivity tools fail at life admin](/guides/why-productivity-tools-fail-at-life-admin).",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "What usually breaks",
+        columns: ["What the system needs", "What happens in a hard week"],
+        rows: [
+          ["Daily upkeep", "One missed day leaves a gap that is hard to face"],
+          ["Catching up on what you skipped", "The backlog grows and feels worse than before"],
+          ["A perfect record", "A gap in the record looks like failure"],
+          ["Lots of setup", "There is no energy left to maintain it"],
+        ],
+      },
+      {
+        kind: "timeline",
+        heading: "How to come back without starting over",
+        steps: [
+          { when: "Do not reset it", what: "Do not clear the whole thing and begin again. That is the same starting cost as before." },
+          { when: "Find one page", what: "Look for the single page or list that still matters and keep only that." },
+          { when: "Write where you got to", what: "One sentence, so next time starts from here." },
+          { when: "Pick one thing", what: "Choose a single item and note its first physical step." },
+          { when: "Stop there", what: "Coming back counts on its own. You do not have to make up for the gap." },
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What to look for in the next one",
+        checkable: true,
+        items: [
+          "It survives a missed week without extra work.",
+          "It does not count or display what you did not do.",
+          "It asks for very little to start.",
+          "It can be put down halfway and picked up again.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "A restart without a reset",
+        paragraphs: [
+          "If you are returning to something you gave up on, [how to restart a project you gave up on](/guides/how-to-restart-a-project-you-gave-up-on) covers the specific cost of coming back. And [why to-do lists make things worse](/guides/why-to-do-lists-make-it-worse) explains why the list itself is often part of the problem.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "ADHD Life Companion is built so that a missed week changes nothing. Nothing is marked late, there are no streaks or scores, and a walkthrough you close partway reopens at the exact question with your earlier answers still there. Things you have dealt with are kept under Sorted, and nothing is deleted. It is a web app, not a treatment or medical advice. It is $49 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "why-you-keep-missing-bill-due-dates",
+    title: "Why you keep missing bill due dates, and a system that does not rely on remembering",
+    dek: "Forgetting is often not remembering too late. It is never reaching the moment. Put the date on the thing itself, choose the reminder yourself, and know what to do the day you notice.",
+    publishedAt: "2026-09-26",
+    areaSlug: "mind-and-focus",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Missing a due date is usually described as forgetting. Often it is closer to never reaching the moment: the bill was in your head, then the week happened, and the date passed without ever being in front of you.",
+          "This guide is about a memory-light way to handle it. It is practical help, not medical advice, and it covers the dates, not the amounts. For what to do once one has been missed, see [you missed a payment: what to do next](/guides/you-missed-a-payment-what-to-do-next).",
+        ],
+      },
+      {
+        kind: "timeline",
+        heading: "A system that does not rely on remembering",
+        steps: [
+          { when: "Put the date on the item", what: "Write the bill as an item with the date attached, not only in a calendar you do not open." },
+          { when: "Choose the reminder yourself", what: "Pick whether you want one, and for which dates." },
+          { when: "Choose quiet hours", what: "So a reminder does not arrive when you cannot act on it." },
+          { when: "Keep the lock screen private", what: "A reminder that says what it is about can be read by anyone nearby." },
+          { when: "Check it once a week", what: "A short look at what has a date in the next few days." },
+        ],
+      },
+      {
+        kind: "compare",
+        heading: "Two ways to handle a due date",
+        left: {
+          label: "Relying on memory",
+          items: [
+            "The date lives in your head",
+            "A reminder you set once and never see",
+            "A calendar you rarely open",
+          ],
+        },
+        right: {
+          label: "Putting it on the item",
+          items: [
+            "The date lives with the thing",
+            "A reminder you chose and can switch off",
+            "One place to look",
+          ],
+        },
+      },
+      {
+        kind: "paragraphs",
+        heading: "A note on automatic payment",
+        paragraphs: [
+          "Automatic payment can take a due date out of your head, which is a real help. It also hides the amount, and it fails quietly if a card expires or a balance is low. Whether it suits you depends on your accounts. It is worth knowing both sides before you decide.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The day you notice it is late",
+        paragraphs: [
+          "If you notice a payment is late, the first step is small: find the reference and contact them, without an essay of explanation. That is covered in the guide linked above. Then put the next date on the item so it does not happen again.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "In ADHD Life Companion, you can keep something like Pay the water bill as an item with a day you choose. Reminders are off until you switch them on. When on, they only cover dates you chose yourself, they respect quiet hours, and the lock screen stays generic unless you turn on Say what it is about. They are web push notifications, so an iPhone needs the app on the Home Screen, and they are not guaranteed to reach every device. It holds no bill amounts, providers or account numbers. For the money side, Monthly Money Reset is free and Personal Finance Companion is $49 once. It is not a treatment or medical advice.",
+      },
+    ],
+  },
+
+  {
+    slug: "time-blindness-planning",
+    title: "Planning when you cannot feel time pass",
+    dek: "Later today is not a time. A few small ways to plan without needing to feel time pass: one exact time, made visible, with a buffer before a call.",
+    publishedAt: "2026-09-26",
+    areaSlug: "mind-and-focus",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Many people who find it hard to feel time passing describe it as time blindness. It is a description of an experience, not a diagnosis, and this guide is practical help, not medical advice.",
+          "The pattern is familiar. You mean to do something later, and later never arrives as a moment. It quietly stops being an option. The fix is to replace a vague later with a single exact time.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Vague versus exact",
+        columns: ["Vague", "Exact"],
+        rows: [
+          ["I will call later", "I will call at 3:30"],
+          ["This afternoon", "After lunch, at 2:00"],
+          ["Sometime this week", "Thursday at 10:00"],
+          ["When I have a minute", "Right after this meeting ends"],
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Three small habits",
+        checkable: true,
+        items: [
+          "Name one exact time, not a window.",
+          "Make it visible somewhere you will see it, without needing a timer.",
+          "Leave a buffer before a call, so getting ready is not part of the call.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "One time, not a schedule",
+        paragraphs: [
+          "You do not need a full schedule. You need one exact time for the one thing that matters today. A schedule adds a lot of times to miss. A single time is easier to keep and easier to forgive when it slips.",
+          "If the time passes anyway, choose a new exact time. Do not treat the missed one as a failure. It is information about how much space the task needed.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Calling now, or naming a time",
+        paragraphs: [
+          "For a call, there are only two honest options: call now while you are prepared, or name one exact time today. Either is a real answer. What does not work is leaving it open. For more on making a call you have been avoiding, see [how to make a phone call you have been avoiding](/guides/how-to-make-a-phone-call-you-have-been-avoiding).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "In ADHD Life Companion, the Ready to call step asks you to call now or name one exact time today. Call now runs a short countdown, and choosing a time asks What time today and holds it. If you switch reminders on, a time you chose can send one notification on the day, with quiet hours respected. It is not a timer or a scheduler and does not build a plan for your day. It is a web app, not a treatment or medical advice. It is $49 once.",
+      },
+    ],
+  },
 ];
 
 /**
