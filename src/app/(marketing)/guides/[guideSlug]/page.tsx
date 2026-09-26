@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Container from "@/design-system/Container";
-import { ArrowLeft, ArrowRight, Clock } from "@/design-system/Icon";
+import { ArrowRight, Clock } from "@/design-system/Icon";
 import GuideBody from "@/components/public/guides/GuideBody";
 import GuideContents from "@/components/public/guides/GuideContents";
 import ReadingProgress from "@/components/public/guides/ReadingProgress";
@@ -10,7 +10,6 @@ import { areaIdentity, areaVars } from "@/components/public/guides/areaIdentity"
 import {
   GUIDES,
   SERIES,
-  adjacentGuides,
   formatGuideDate,
   getGuideBySlug,
   guideWordCount,
@@ -19,7 +18,7 @@ import {
   localeLabel,
   readingMinutes,
   readingTimeLabel,
-  relatedGuides,
+  relatedPicks,
 } from "@/content/guides";
 import { guideHeadings } from "@/content/guideHeadings";
 import { guideMetaDescription, guideMetaTitle, guideOgLocale, guideSeoTitle, localeAlternates } from "@/content/guideMeta";
@@ -28,6 +27,8 @@ import { shopRegistry } from "@/shop/registry";
 import { ensureShopRegistered } from "@/shop/ensureRegistered";
 import { collectionStructuredData, guideStructuredData, jsonLd } from "@/lib/structuredData";
 import Breadcrumbs, { type BreadcrumbItem } from "@/components/public/guides/Breadcrumbs";
+import NextSteps from "@/components/public/guides/NextSteps";
+import Sources from "@/components/public/guides/Sources";
 
 /**
  * One route serving two page types: a life-area hub, or a guide.
@@ -132,8 +133,9 @@ export default async function GuideOrHubPage({ params }: { params: Promise<{ gui
   const isSeries = guide.areaSlug === SERIES;
   const guideArea = guide.areaSlug && !isSeries ? getAreaBySlug(guide.areaSlug) : undefined;
   const companion = guideArea ? shopRegistry.getBySlug(guideArea.productSlugs[0]) : undefined;
-  const related = relatedGuides(guide);
-  const { previous, next } = adjacentGuides(guide);
+  const picks = relatedPicks(guide);
+  const nextGuide = guide.next ? getGuideBySlug(guide.next.slug) : undefined;
+  const faqItems = guide.body.flatMap((block) => (block.kind === "faq" ? block.items : []));
   const headings = guideHeadings(guide.body);
   const { Mark } = areaIdentity(guide.areaSlug);
   const counterpart = localeCounterpart(guide);
@@ -164,6 +166,7 @@ export default async function GuideOrHubPage({ params }: { params: Promise<{ gui
               areaLabel: guideArea?.label,
               areaPath: guideArea ? `/guides/${guideArea.slug}` : undefined,
               wordCount: guideWordCount(guide),
+              faq: faqItems,
             }),
           ),
         }}
@@ -234,6 +237,18 @@ export default async function GuideOrHubPage({ params }: { params: Promise<{ gui
             <GuideContents headings={headings} variant="disclosure" />
             <GuideBody blocks={guide.body} />
 
+            {guide.sources && <Sources sources={guide.sources} />}
+
+            <NextSteps
+              next={nextGuide && guide.next ? { guide: nextGuide, reason: guide.next.reason } : undefined}
+              also={picks.filter((pick) => pick.guide.slug !== nextGuide?.slug)}
+              hub={
+                guideArea
+                  ? { href: `/guides/${guideArea.slug}`, label: `All ${guidesForArea(guideArea.slug).length} ${guideArea.label.toLowerCase()} guides` }
+                  : { href: "/guides", label: "All guides" }
+              }
+            />
+
             {/* The handover. A guide that leaves a convinced reader with
                 nowhere to go is just an article, so this is the point of
                 the whole layer. */}
@@ -259,43 +274,11 @@ export default async function GuideOrHubPage({ params }: { params: Promise<{ gui
               />
             )}
 
-            {(previous || next) && (
-              <nav
-                aria-label="More in this area"
-                className="mt-10 grid gap-3 border-t border-[var(--border)] pt-8 sm:grid-cols-2"
-              >
-                {previous ? <Adjacent guide={previous} direction="previous" /> : <span className="hidden sm:block" />}
-                {next && <Adjacent guide={next} direction="next" />}
-              </nav>
-            )}
           </article>
 
           <GuideContents headings={headings} variant="rail" />
         </div>
 
-        {related.length > 0 && (
-          <section className="mt-16 border-t border-[var(--border)] pt-10">
-            <h2 className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">
-              Related guides
-            </h2>
-            <ul className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {related.map((other) => (
-                <li key={other.slug}>
-                  <Link
-                    href={`/guides/${other.slug}`}
-                    className="group flex h-full flex-col rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface)] p-4 transition-colors hover:border-[var(--area)]"
-                  >
-                    <p className="text-[15px] font-semibold leading-snug text-[var(--text)] group-hover:text-[var(--area)]">
-                      {other.title}
-                    </p>
-                    <p className="mt-1.5 flex-1 text-[13.5px] leading-relaxed text-[var(--muted)]">{other.dek}</p>
-                    <p className="mt-3 font-mono text-[11px] text-[var(--faint)]">{readingTimeLabel(other)}</p>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </section>
-        )}
       </Container>
     </div>
   );
@@ -337,40 +320,6 @@ function Handover({
         </div>
       </div>
     </aside>
-  );
-}
-
-/** Previous or next guide within the same area. */
-function Adjacent({
-  guide,
-  direction,
-}: {
-  guide: { slug: string; title: string };
-  direction: "previous" | "next";
-}) {
-  const isNext = direction === "next";
-  return (
-    <Link
-      href={`/guides/${guide.slug}`}
-      className={[
-        "group flex flex-col rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface)] p-4 transition-colors hover:border-[var(--area)]",
-        isNext ? "sm:text-right" : "",
-      ].join(" ")}
-    >
-      <span
-        className={[
-          "inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]",
-          isNext ? "sm:justify-end" : "",
-        ].join(" ")}
-      >
-        {!isNext && <ArrowLeft size={12} aria-hidden />}
-        {isNext ? "Next in this area" : "Previous in this area"}
-        {isNext && <ArrowRight size={12} aria-hidden />}
-      </span>
-      <span className="mt-1.5 text-[15px] font-semibold leading-snug text-[var(--text)] group-hover:text-[var(--area)]">
-        {guide.title}
-      </span>
-    </Link>
   );
 }
 

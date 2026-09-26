@@ -9,6 +9,20 @@ import type { GuideBlock } from "./guides";
  * quietly pointing at nothing after a heading is reworded.
  */
 
+/** The heading a FAQ block gets when it does not set one. */
+export const FAQ_HEADING = "Questions people ask";
+
+/**
+ * The section heading a block carries, if it has one. Callouts and
+ * figures never do; a FAQ always does, because its questions need a
+ * section to sit under and the contents panel needs something to link to.
+ */
+export function blockHeading(block: GuideBlock): string | undefined {
+  if (block.kind === "callout" || block.kind === "figure") return undefined;
+  if (block.kind === "faq") return block.heading ?? FAQ_HEADING;
+  return block.heading || undefined;
+}
+
 export interface GuideHeading {
   id: string;
   text: string;
@@ -38,13 +52,13 @@ export function guideHeadings(blocks: GuideBlock[]): GuideHeading[] {
   const headings: GuideHeading[] = [];
 
   for (const block of blocks) {
-    if (block.kind === "callout") continue;
-    if (!block.heading) continue;
+    const text = blockHeading(block);
+    if (!text) continue;
 
-    const base = headingId(block.heading);
+    const base = headingId(text);
     const count = seen.get(base) ?? 0;
     seen.set(base, count + 1);
-    headings.push({ id: count === 0 ? base : `${base}-${count + 1}`, text: block.heading });
+    headings.push({ id: count === 0 ? base : `${base}-${count + 1}`, text });
   }
 
   return headings;

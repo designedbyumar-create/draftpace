@@ -114,6 +114,30 @@ export type GuideStructuredDataInput = {
 
 type Crumb = { name: string; path: string };
 
+/** Inline [text](/href) markup reduced to its text, for a value a machine reads. */
+export function plainText(markup: string): string {
+  return markup.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
+}
+
+/**
+ * The guide's FAQ block as FAQPage data. Emitted only from the same
+ * strings the page renders, so the markup can never claim a question the
+ * reader cannot see. Google now shows FAQ rich results only for a narrow
+ * set of sites, so this is not a ranking play: the visible questions are
+ * the asset, and this simply describes them accurately to any consumer
+ * that reads it.
+ */
+export function faqStructuredData(items: { q: string; a: string }[]) {
+  return {
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: plainText(item.a) },
+    })),
+  };
+}
+
 /**
  * BreadcrumbList from the same trail the page shows. Google requires the
  * markup to match what a reader can see, so the page builds the trail
@@ -142,7 +166,7 @@ export function breadcrumbStructuredData(trail: Crumb[]) {
  */
 export function guideStructuredData(
   guide: GuideStructuredDataInput,
-  options: { description: string; trail: Crumb[]; areaLabel?: string; areaPath?: string; wordCount?: number },
+  options: { description: string; trail: Crumb[]; areaLabel?: string; areaPath?: string; wordCount?: number; faq?: { q: string; a: string }[] },
 ) {
   const url = `${SITE_URL}/guides/${guide.slug}`;
   const inLanguage = guide.locale === "uk" ? "en-GB" : "en-US";
@@ -171,6 +195,7 @@ export function guideStructuredData(
         },
       },
       breadcrumbStructuredData(options.trail),
+      ...(options.faq && options.faq.length > 0 ? [faqStructuredData(options.faq)] : []),
     ],
   };
 }

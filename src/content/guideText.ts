@@ -45,6 +45,10 @@ export function blockStrings(block: GuideBlock): string[] {
       ];
     case "callout":
       return [block.label, block.body];
+    case "faq":
+      return [block.heading ?? "", ...block.items.flatMap((item) => [item.q, item.a])];
+    case "figure":
+      return [block.alt, block.caption ?? ""];
     default: {
       const exhaustive: never = block;
       return exhaustive;
@@ -73,6 +77,10 @@ export function blockBodyStrings(block: GuideBlock): string[] {
       return [block.intro ?? "", ...block.items.map((item) => item.line)];
     case "callout":
       return [block.body];
+    case "faq":
+      return block.items.map((item) => item.a);
+    case "figure":
+      return [];
     default: {
       const exhaustive: never = block;
       return exhaustive;

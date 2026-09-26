@@ -86,7 +86,50 @@ export type GuideBlock =
       /** `situation` is what the reader picks, `line` is what they say. */
       items: { situation: string; line: string }[];
     }
-  | { kind: "callout"; label: string; body: string };
+  | { kind: "callout"; label: string; body: string }
+  | {
+      kind: "faq";
+      /** The section heading. Defaults to "Questions people ask" where rendered. */
+      heading?: string;
+      /**
+       * Three to six real questions in the words people use, each answered
+       * in 30 to 90 words. The question is a heading and the answer sits
+       * directly under it, visible: that shape is what wins People Also Ask
+       * and paragraph snippets, and it is why this is a block and not a
+       * list. Answers take the same inline links as a paragraph.
+       */
+      items: { q: string; a: string }[];
+    }
+  | {
+      kind: "figure";
+      /** A path under /guides/img/. The export script in the pins folder writes these. */
+      src: string;
+      /**
+       * What the image shows, in one plain sentence, not "screenshot of".
+       * It is the only description a screen reader and an image search
+       * get, so it has to stand on its own.
+       */
+      alt: string;
+      /** Visible caption. A product screen is captioned as a sample. */
+      caption?: string;
+      /** The file's real pixel size: reserved so the page does not jump when it loads. */
+      width: number;
+      height: number;
+      /** aside floats beside the text on a wide screen; inline sits in the column. */
+      layout?: "inline" | "aside";
+      /** What kind of picture, so tests can hold "screens only in the handover, always a sample". */
+      source: "card" | "printable" | "product-screen" | "diagram";
+    };
+
+/** A named primary source behind a rule, a number or a deadline the guide states. */
+export type GuideSource = {
+  name: string;
+  url: string;
+  /** The day it was checked, YYYY-MM-DD: a source is only as good as when somebody last looked. */
+  retrieved: string;
+  /** What in the guide this backs, when it is not obvious. */
+  note?: string;
+};
 
 export type Guide = {
   slug: string;
@@ -111,6 +154,21 @@ export type Guide = {
    * and what stops two guides from competing for the same search.
    */
   primaryQuery?: string;
+  /**
+   * Primary sources for any rule, deadline, threshold, cost or medical
+   * fact the guide states. Shown at the foot of the article with the date
+   * each was checked. A guide that states none of those needs none.
+   */
+  sources?: GuideSource[];
+  /**
+   * Hand-picked related guides, best first, each with the reason a reader
+   * would click. Written by a person because the reason is what makes an
+   * internal link convincing. Same area only; the rest come from
+   * relatedGuides' word-overlap ranking.
+   */
+  related?: { slug: string; reason: string }[];
+  /** The single "do this next" guide, with why. Shown first in the next-step block. */
+  next?: { slug: string; reason: string };
   publishedAt: string;
   /** Set when the writing changes materially. Reference pages live or die on this. */
   updatedAt?: string;
@@ -9407,34 +9465,76 @@ export function formatGuideDate(iso: string): string {
 }
 
 /**
- * Up to `limit` other guides from the same area, so a reader who arrived
- * on one narrow article has somewhere to go that is not the exit.
- *
- * Ranked by distance from this guide's own position in the area, not by
- * the area's publication order: a flat `slice(0, limit)` always returned
- * the same opening guides regardless of which one you were reading, which
- * meant every guide past the fourth in an area showed the identical three
- * "related" links, and the first guide in an area showed the same guide
- * here and in "next" (adjacentGuides). Immediate neighbours are pushed to
- * the back of the ranking, since adjacentGuides already surfaces those as
- * previous/next, but they still fill in when an area is too small for
- * `limit` genuinely distinct picks.
+ * Words that carry no topic: dropped before two guides are compared, so
+ * that "what to do when a" cannot make a guide about a parent's death
+ * look like one about a phone call.
  */
-export function relatedGuides(guide: Guide, limit = 3): Guide[] {
-  if (!guide.areaSlug) return [];
-  const siblings = guidesForArea(guide.areaSlug);
-  const index = siblings.findIndex((candidate) => candidate.slug === guide.slug);
-  if (index === -1) return [];
+const TOPIC_STOPWORDS = new Set(
+  (
+    "a an and are as at be but by can do does for from has have how if in into is it its more not of on or so than that the their them then there these they this to up was what when where which who why will with you your yours about after before between over most many some any all one two three four five own out off just only also very too your".split(" ")
+  ),
+);
 
-  return siblings
-    .map((candidate, i) => ({ candidate, distance: Math.abs(i - index) }))
-    .filter(({ distance }) => distance !== 0)
-    .sort((a, b) => {
-      const aAdjacent = a.distance === 1;
-      const bAdjacent = b.distance === 1;
-      if (aAdjacent !== bAdjacent) return aAdjacent ? 1 : -1;
-      return a.distance - b.distance;
-    })
-    .slice(0, limit)
-    .map(({ candidate }) => candidate);
+/** The topic words of a guide: what its title, description and target query are about. */
+function topicWords(guide: Guide): Set<string> {
+  const text = `${guide.title} ${guide.dek} ${guide.primaryQuery ?? ""} ${guide.primaryQuery ?? ""}`.toLowerCase();
+  const words = text.match(/[a-z]+/g) ?? [];
+  // Trailing "s" stripped so "subscription" and "subscriptions" agree.
+  return new Set(words.filter((w) => w.length > 2 && !TOPIC_STOPWORDS.has(w)).map((w) => (w.length > 4 ? w.replace(/s$/, "") : w)));
+}
+
+/** Shared topic words over all topic words either guide uses. 0 for unrelated, 1 for identical. */
+export function topicOverlap(a: Guide, b: Guide): number {
+  const wa = topicWords(a);
+  const wb = topicWords(b);
+  let shared = 0;
+  for (const w of wa) if (wb.has(w)) shared += 1;
+  const union = wa.size + wb.size - shared;
+  return union === 0 ? 0 : shared / union;
+}
+
+/** Below this, two guides in one area share a subject only by accident. */
+const RELATED_MIN_OVERLAP = 0.09;
+
+/**
+ * Up to `limit` guides a reader who just finished this one would want
+ * next, each with the reason to click.
+ *
+ * Curated picks come first, because a person wrote the reason and knew
+ * why the two belong together. After that, same-area guides ranked by how
+ * much of their topic they share with this one. It returns fewer than
+ * `limit` rather than filling the gap with unrelated guides: the old
+ * version ranked by distance in the list, so 86 percent of what it
+ * showed had nothing to do with the guide it sat under.
+ */
+export function relatedPicks(guide: Guide, limit = 3): { guide: Guide; reason: string }[] {
+  if (!guide.areaSlug) return [];
+  const siblings = guidesForArea(guide.areaSlug).filter((candidate) => candidate.slug !== guide.slug);
+  const picks: { guide: Guide; reason: string }[] = [];
+  const taken = new Set<string>([guide.slug]);
+
+  for (const curated of guide.related ?? []) {
+    const other = siblings.find((candidate) => candidate.slug === curated.slug);
+    if (other && !taken.has(other.slug)) {
+      picks.push({ guide: other, reason: curated.reason });
+      taken.add(other.slug);
+    }
+  }
+
+  const ranked = siblings
+    .filter((candidate) => !taken.has(candidate.slug))
+    .map((candidate) => ({ candidate, score: topicOverlap(guide, candidate) }))
+    .filter(({ score }) => score >= RELATED_MIN_OVERLAP)
+    .sort((x, y) => y.score - x.score || x.candidate.slug.localeCompare(y.candidate.slug));
+
+  for (const { candidate } of ranked) {
+    if (picks.length >= limit) break;
+    picks.push({ guide: candidate, reason: candidate.dek });
+  }
+
+  return picks.slice(0, limit);
+}
+
+export function relatedGuides(guide: Guide, limit = 3): Guide[] {
+  return relatedPicks(guide, limit).map((pick) => pick.guide);
 }

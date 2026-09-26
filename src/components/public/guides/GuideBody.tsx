@@ -1,11 +1,13 @@
 import type { GuideBlock } from "@/content/guides";
-import { guideHeadings } from "@/content/guideHeadings";
+import { blockHeading, guideHeadings } from "@/content/guideHeadings";
 import { renderInline } from "./inline";
 import CheckableList from "./blocks/CheckableList";
 import ReferenceTable from "./blocks/ReferenceTable";
 import Timeline from "./blocks/Timeline";
 import CompareBlock from "./blocks/CompareBlock";
 import ScriptPicker from "./blocks/ScriptPicker";
+import Faq from "./blocks/Faq";
+import Figure from "./blocks/Figure";
 
 /**
  * Renders a guide's typed blocks.
@@ -42,8 +44,30 @@ export default function GuideBody({ blocks }: { blocks: GuideBlock[] }) {
   return (
     <div className="mt-10 flex flex-col gap-1">
       {blocks.map((block, i) => {
-        const heading =
-          block.kind !== "callout" && block.heading ? headings[headingIndex++] : undefined;
+        const heading = blockHeading(block) ? headings[headingIndex++] : undefined;
+
+        if (block.kind === "faq") {
+          return (
+            <section key={i} className="mb-2">
+              {heading && <Heading id={heading.id}>{heading.text}</Heading>}
+              <Faq items={block.items} idPrefix={`f${i}`} />
+            </section>
+          );
+        }
+
+        if (block.kind === "figure") {
+          return (
+            <Figure
+              key={i}
+              src={block.src}
+              alt={block.alt}
+              caption={block.caption}
+              width={block.width}
+              height={block.height}
+              layout={block.layout}
+            />
+          );
+        }
 
         if (block.kind === "paragraphs") {
           return (
@@ -132,6 +156,8 @@ export default function GuideBody({ blocks }: { blocks: GuideBlock[] }) {
             </section>
           );
         }
+
+        if (block.kind !== "callout") return null;
 
         return (
           <aside
