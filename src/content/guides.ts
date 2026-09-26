@@ -261,6 +261,12 @@ export const GUIDES: Guide[] = [
     title: "What to do when a parent dies: the first two weeks (US)",
     dek: "The few things that cannot wait, the many that can, and why to order extra death certificates. Steps in order, for a grieving week.",
     primaryQuery: "what to do when a parent dies",
+    next: { slug: "who-to-tell-when-someone-dies", reason: "Once the first days are handled, this gives the full order of who to notify and how to keep track as you go." },
+    related: [
+      { slug: "what-to-do-when-a-parent-dies-uk", reason: "If the death happened in England, Wales, Scotland or Northern Ireland, this is the UK version with registration and Tell Us Once." },
+      { slug: "how-to-find-someones-accounts-after-they-die", reason: "When nothing was written down, this is the search order for finding bank accounts, pensions and policies." },
+      { slug: "where-to-look-for-a-will", reason: "To find out whether a will exists and where it is kept, this covers the usual places and the order to check them." },
+    ],
     publishedAt: "2026-08-30",
     updatedAt: "2026-08-31",
     areaSlug: "affairs-and-endings",
@@ -361,6 +367,12 @@ export const GUIDES: Guide[] = [
     title: "What to do when a parent dies: the first fortnight (UK)",
     dek: "Registering the death, getting certificates and telling the right people, in the order it is done. Rules differ across the four UK nations.",
     primaryQuery: "what to do when a parent dies uk",
+    next: { slug: "named-executor-what-you-agreed-to-uk", reason: "If you have been named executor, this explains what the role involves, how long probate takes and how to step aside." },
+    related: [
+      { slug: "what-to-do-when-a-parent-dies", reason: "Dealing with a death in the United States? This twin covers death certificates and the steps that apply there." },
+      { slug: "who-to-tell-when-someone-dies", reason: "For a tracked list of who needs to hear and in what order, this notification guide is written to be worked through." },
+      { slug: "how-to-find-someones-accounts-after-they-die", reason: "If accounts, pensions or policies are missing from the paperwork, this sets out where to search and in what order." },
+    ],
     publishedAt: "2026-08-30",
     updatedAt: "2026-08-31",
     areaSlug: "affairs-and-endings",
@@ -459,6 +471,12 @@ export const GUIDES: Guide[] = [
     title: "How to find someone's accounts after they die",
     dek: "A search order for tracing bank accounts, pensions, policies and subscriptions when nothing was written down, starting with twelve months of statements.",
     primaryQuery: "how to find someone's accounts after they die",
+    next: { slug: "digital-accounts-after-a-death", reason: "Once the money is traced, this covers photos, email and subscriptions, and what providers will and will not release." },
+    related: [
+      { slug: "who-to-tell-when-someone-dies", reason: "When you find an account, this tells you who else to notify next and in what order." },
+      { slug: "where-to-look-for-a-will", reason: "A will often lists the assets you are searching for, so this shows where to look for one." },
+      { slug: "what-to-do-when-a-parent-dies", reason: "For everything else in the first two weeks around the search, this gives the whole order of tasks." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "affairs-and-endings",
     body: [
@@ -531,6 +549,12 @@ export const GUIDES: Guide[] = [
     title: "Homeschool requirements by state: what records to keep",
     dek: "A filterable table of all 50 states and DC in four levels, from nothing filed to portfolio or formal assessment. Confirm yours at the source.",
     primaryQuery: "homeschool requirements by state",
+    next: { slug: "homeschool-notice-of-intent-explained", reason: "Once you know your level, this explains what a notice of intent is and how to find the form your state wants." },
+    related: [
+      { slug: "do-you-have-to-count-homeschool-days-or-hours", reason: "Some states count days or hours and many do not. This shows how to check which yours does." },
+      { slug: "homeschool-attendance-what-to-track", reason: "If your state wants attendance, this covers what counts as a school day and the lightest way to record it." },
+      { slug: "how-to-start-homeschooling-first-month-paperwork", reason: "Starting from scratch? Follow the order for the first month: what to file, what to record, what can wait." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "family-and-learning",
     body: [
@@ -602,6 +626,12 @@ export const GUIDES: Guide[] = [
     title: "Most important home maintenance tasks: eight not to skip",
     dek: "Gutters, heating, water heater, filters, roof, alarms, grout and outdoor taps: how often each is due and what a missed one turns into.",
     primaryQuery: "most important home maintenance tasks",
+    next: { slug: "how-often-home-systems-need-servicing", reason: "Once you know which eight jobs matter most, this gives the service interval for every system in the house." },
+    related: [
+      { slug: "home-maintenance-checklist-by-month", reason: "To place those jobs on the calendar, this sorts them by the season each one belongs to." },
+      { slug: "how-often-change-furnace-filter", reason: "The filter is the cheapest job on your list, and this says how often to change it and what size to buy." },
+      { slug: "fall-home-maintenance-checklist", reason: "Gutters and heating come first in fall, and this puts them in order across September to November." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "home",
     body: [
@@ -670,6 +700,12 @@ export const GUIDES: Guide[] = [
     title: "Flight schedule changed? What else in your trip to check",
     dek: "A new departure time can break your transfer, hotel check-in and dinner booking. How to find what was built on the flight and check each in order.",
     primaryQuery: "flight schedule change what else to check",
+    next: { slug: "hotel-cannot-find-your-reservation", reason: "Once you know which bookings hang off the flight, this covers what to do when the hotel desk has no record of yours." },
+    related: [
+      { slug: "flight-delayed-with-a-connection-what-to-do-first", reason: "If the change is a delay with a connection to catch, this covers the first twenty minutes and what to say at the desk." },
+      { slug: "how-to-write-a-one-page-trip-itinerary", reason: "A short itinerary with a reference beside each booking makes it quick to see what a new departure time knocks over." },
+      { slug: "organising-a-multi-stop-trip-without-a-spreadsheet", reason: "With many stops, every booking rests on another, so this shows how to record what depends on what." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "travel",
     body: [
@@ -738,6 +774,12 @@ export const GUIDES: Guide[] = [
     title: "Flight delayed with a connection: what to do first",
     dek: "A delay and a connection to catch. The first twenty minutes, what to say at the desk, and what to have in hand before you reach it.",
     primaryQuery: "flight delayed missed connection what to do",
+    next: { slug: "flight-changed-what-else-is-affected", reason: "After the delay, this walks through the transfer, hotel check-in and dinner booking that were built on the flight." },
+    related: [
+      { slug: "hotel-cannot-find-your-reservation", reason: "If the delay means arriving late, this covers what to say when the hotel has given the room away or lost the booking." },
+      { slug: "lost-passport-wallet-or-phone-abroad-what-to-have-ready", reason: "Bags, cards or a passport went missing in the scramble? This lists what to gather and who to tell first." },
+      { slug: "what-to-keep-on-paper-when-you-travel", reason: "A dead phone in the queue is the real risk, so keep references on paper as this one-page list shows." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "travel",
     body: [
@@ -822,6 +864,12 @@ export const GUIDES: Guide[] = [
     title: "How to make a phone call you keep avoiding",
     dek: "A call is several jobs at once, which is why it stalls. Prepare five things on paper, write the first sentence out, and know when you can stop.",
     primaryQuery: "make a phone call you are avoiding",
+    next: { slug: "scripts-for-the-admin-calls-everyone-dreads", reason: "Once you can dial, this has opening lines for billing problems, chasing, canceling and complaints, plus what to get before you hang up." },
+    related: [
+      { slug: "how-to-say-no-or-give-bad-news-on-the-phone", reason: "If the hard part of the call is what you have to say, not dialing, this covers refusals and bad news." },
+      { slug: "time-blindness-planning", reason: "Later today is not a time. Pick one exact time for the call and add a buffer, so it stops sliding." },
+      { slug: "task-paralysis-what-to-do-in-the-next-ten-minutes", reason: "When even picking up the phone will not start, this ten minute way out shrinks the first step until it needs no motivation." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "mind-and-focus",
     body: [
@@ -893,6 +941,12 @@ export const GUIDES: Guide[] = [
     title: "How to restart a project you gave up on",
     dek: "Coming back costs more than starting did, mostly the rebuilding of where you got to. What to leave behind when you stop, and how to resume from there.",
     primaryQuery: "restart a project you gave up on",
+    next: { slug: "why-you-abandon-planners-and-how-to-come-back", reason: "If the project stalled because the system around it broke, this shows what usually fails and how to keep one page of it." },
+    related: [
+      { slug: "a-weekly-reset-that-survives-a-bad-week", reason: "A ten minute weekly check-in is a light way to keep a restarted project moving, even after a bad week." },
+      { slug: "first-physical-step-20-examples", reason: "Twenty examples of a first step you could see happen, useful for the small move that gets a stopped project going again." },
+      { slug: "how-to-deal-with-something-you-have-put-off", reason: "If the shame of the gap is what keeps you away, this gives three lines to name the delay and get to the practical question." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "mind-and-focus",
     body: [
@@ -951,6 +1005,12 @@ export const GUIDES: Guide[] = [
     title: "How much money is safe to spend after your bills?",
     dek: "Your balance is not what you can spend. Take off the bills still due and the money you are holding back, in five steps, and one number is left.",
     primaryQuery: "how much money is safe to spend",
+    next: { slug: "can-you-afford-it-before-you-buy-it", reason: "Once you have your safe number, use it to test one specific purchase before you commit to it." },
+    related: [
+      { slug: "available-balance-vs-current-balance", reason: "If your app shows two different balances, this explains posted, pending and held money and which figure to start from." },
+      { slug: "monthly-bills-list", reason: "List every bill still due, including the quarterly and annual ones, so the number you subtract is complete." },
+      { slug: "what-to-check-before-each-direct-debit-date", reason: "Check which account each bill leaves from and when, so the money you set aside is in the right place." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "money",
     body: [
@@ -1024,6 +1084,12 @@ export const GUIDES: Guide[] = [
     title: "How to find all your subscriptions, including annual ones",
     dek: "A twelve month statement sweep in six steps, the six places forgotten charges hide, and why to compare the yearly cost, not the monthly one.",
     primaryQuery: "how to find all my subscriptions",
+    next: { slug: "subscription-tracker-what-to-track", reason: "Found them all? Write down six fields for each one so the next renewal date never catches you out." },
+    related: [
+      { slug: "how-to-cancel-subscriptions", reason: "Spotted one you no longer use, and it is hard to stop? Here are the cancel steps and scripts." },
+      { slug: "how-to-save-money-fast", reason: "Cutting a forgotten charge is one of the quickest ways to free up cash this month, ranked against other small moves." },
+      { slug: "bank-statement-csv-to-budget", reason: "If your bank lets you download a file, this shows how to check it and sort charges without retyping." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "money",
     body: [
@@ -1095,6 +1161,12 @@ export const GUIDES: Guide[] = [
     title: "Home maintenance schedule: how often to service each system",
     dek: "Service intervals for heating, cooling, water, structure and safety, plus the jobs tied to a season, not a date. Your own manual wins over any table.",
     primaryQuery: "home maintenance schedule",
+    next: { slug: "home-maintenance-checklist-by-month", reason: "After the intervals, this turns them into a checklist of jobs that belong to a season rather than a date." },
+    related: [
+      { slug: "home-maintenance-you-skip-that-costs-the-most", reason: "If you only have time for a few jobs, this ranks the eight that cost the most when skipped." },
+      { slug: "how-often-change-furnace-filter", reason: "Filters have the shortest interval on the schedule, so this covers changing them and noting the size." },
+      { slug: "home-maintenance-log-template", reason: "Once a job is done, this shows what to write in the log so the next due date is easy to find." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "home",
     body: [
@@ -1174,6 +1246,12 @@ export const GUIDES: Guide[] = [
     title: "What to write down when you buy an appliance",
     dek: "Brand, model, serial number, purchase date and warranty end: five facts to write once, while the machine is in front of you, before its first repair.",
     primaryQuery: "appliance information to record",
+    next: { slug: "how-to-find-the-model-number-on-any-appliance", reason: "Before you can write the model down, you have to find it, and this shows where the data plate hides." },
+    related: [
+      { slug: "appliance-warranties-what-to-track", reason: "With the purchase details written, this explains how to track the warranty end and the service condition." },
+      { slug: "how-to-make-a-home-binder", reason: "The appliance sheet is one page of a home binder, and this shows what else goes alongside it." },
+      { slug: "what-to-keep-after-a-home-repair", reason: "When the machine first breaks, this covers what to write down at the repair visit." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "home",
     body: [
@@ -1241,6 +1319,12 @@ export const GUIDES: Guide[] = [
     title: "How to find a will after someone dies",
     dek: "Where wills are usually kept, in the order to search, what to do if several turn up, and what applies when there is no will at all.",
     primaryQuery: "how to find a will after someone dies",
+    next: { slug: "named-executor-what-you-agreed-to", reason: "If the will names you, this explains what an executor does and where you could be personally liable." },
+    related: [
+      { slug: "how-to-find-someones-accounts-after-they-die", reason: "A will rarely lists every account, so this gives the search order for tracing money and policies." },
+      { slug: "what-to-do-when-a-parent-dies", reason: "For the wider order of tasks after a parent dies, this puts the search for a will in context." },
+      { slug: "safe-deposit-box-and-spare-keys-who-can-open-it", reason: "If the original may be in a deposit box or home safe, this covers who can open one and how." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "affairs-and-endings",
     body: [
@@ -1319,6 +1403,12 @@ export const GUIDES: Guide[] = [
     title: "Named executor of a will: what you agreed to (US)",
     dek: "What an executor does, how long it takes, where you can be personally liable, and how to say no if you cannot take the role on.",
     primaryQuery: "named executor what to do",
+    next: { slug: "how-to-find-someones-accounts-after-they-die", reason: "Serving as executor means finding every asset, and this shows the order to search for accounts and policies." },
+    related: [
+      { slug: "named-executor-what-you-agreed-to-uk", reason: "In England, Wales, Scotland or Northern Ireland the role and the court process differ, and this is the UK version." },
+      { slug: "where-to-look-for-a-will", reason: "Before you can act, you need the original will, and this covers where it is usually kept." },
+      { slug: "who-to-tell-when-someone-dies", reason: "An executor has to notify banks, agencies and providers, and this lists who to tell and when." },
+    ],
     publishedAt: "2026-08-30",
     updatedAt: "2026-08-31",
     areaSlug: "affairs-and-endings",
@@ -1411,6 +1501,12 @@ export const GUIDES: Guide[] = [
     title: "Named as an executor: what you agreed to (UK)",
     dek: "What an executor does in the UK, how long probate takes, where you can be personally liable, and how to step aside before you start.",
     primaryQuery: "named as executor uk what to do",
+    next: { slug: "where-to-look-for-a-will", reason: "If you cannot yet find the original, this covers where wills are kept and what to do if several turn up." },
+    related: [
+      { slug: "named-executor-what-you-agreed-to", reason: "This is the US version for readers outside the UK, where executors and the court process work differently." },
+      { slug: "what-to-do-when-a-parent-dies-uk", reason: "To see the registration and certificate steps that come with the role, use the UK first-fortnight guide." },
+      { slug: "how-to-find-someones-accounts-after-they-die", reason: "To trace accounts, pensions and policies for the estate, this gives a search order that works when little is written down." },
+    ],
     publishedAt: "2026-08-30",
     updatedAt: "2026-08-31",
     areaSlug: "affairs-and-endings",
@@ -1503,6 +1599,12 @@ export const GUIDES: Guide[] = [
     title: "The if-something-happens-to-me file: what goes in it",
     dek: "A plain record of what exists and where it is kept, so no one has to rebuild your life from outside. It is not a will, and it is done in passes.",
     primaryQuery: "if something happens to me file",
+    next: { slug: "what-to-write-down-in-case-something-happens-to-you", reason: "For the short list of details that live only in your head, start here and keep it findable." },
+    related: [
+      { slug: "life-admin-binder-what-goes-in-it", reason: "To hold the finished file in one physical place, this sets out eight sections and what to leave out." },
+      { slug: "hospital-for-two-weeks-what-would-someone-need-to-find", reason: "To test whether the file works, this asks what someone would need to find if you were hospitalized for two weeks." },
+      { slug: "emergency-contact-and-medical-decision-maker", reason: "Once you know who would speak for you, this covers choosing a health care proxy and recording where the forms are." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "affairs-and-endings",
     body: [
@@ -1568,6 +1670,12 @@ export const GUIDES: Guide[] = [
     title: "Hotel can't find your reservation: what to say",
     dek: "The desk says there is no booking. Which references and names to try, what to ask for tonight, and a two-sentence opening to use at the counter.",
     primaryQuery: "hotel can't find my reservation",
+    next: { slug: "flight-delayed-with-a-connection-what-to-do-first", reason: "If the reason you are late is the flight, start here for what to ask the airline before you reach the desk." },
+    related: [
+      { slug: "flight-changed-what-else-is-affected", reason: "When a changed flight moved your arrival, this finds every booking that was built on it so none is left behind." },
+      { slug: "travel-document-checklist", reason: "Passport names and booking names often differ, so this shows which details to note beside each document." },
+      { slug: "what-to-keep-on-paper-when-you-travel", reason: "Screenshots fail at the counter, so this covers printing the confirmation and the hotel address in the local language." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "travel",
     body: [
@@ -1640,6 +1748,12 @@ export const GUIDES: Guide[] = [
     title: "Homeschool record keeping template: four columns to copy",
     dek: "Date, subject and part, one word on how it went, and an occasional note. What to leave off, and how to choose paper, a spreadsheet or an app.",
     primaryQuery: "homeschool record keeping template",
+    next: { slug: "simple-homeschool-record-keeping-system", reason: "For the habit behind the columns, this covers keeping entries under a minute and what to do after a bad week." },
+    related: [
+      { slug: "homeschool-record-keeping-for-multiple-children", reason: "With more than one child, this shows how to file by child and log shared lessons once per child." },
+      { slug: "homeschool-reading-log", reason: "Books need their own list. This gives the three-column reading log, including books your child quit." },
+      { slug: "homeschool-record-keeping-requirements-by-state", reason: "Check what your state expects you to keep before you settle on a format, with all 50 states and DC in one table." },
+    ],
     publishedAt: "2026-08-31",
     areaSlug: "family-and-learning",
     body: [
@@ -1713,6 +1827,12 @@ export const GUIDES: Guide[] = [
     title: "What to include in a homeschool portfolio, by subject",
     dek: "The five core contents, what to keep per subject, and why October and March samples say more than a highlight reel. Check your state's rules.",
     primaryQuery: "what to include in a homeschool portfolio",
+    next: { slug: "preparing-for-a-homeschool-evaluation", reason: "When the portfolio is going to an evaluator, this covers what to bring and how to get ready in one evening." },
+    related: [
+      { slug: "homeschool-reading-log", reason: "The reading list is one of the five portfolio contents. This shows what to write in it." },
+      { slug: "how-long-to-keep-homeschool-records", reason: "Wondering how long a portfolio needs to stay in the drawer? This covers what to keep, photograph or recycle." },
+      { slug: "homeschool-record-keeping-requirements-by-state", reason: "Some states ask for a portfolio and some do not. This table shows which level yours falls in." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "family-and-learning",
     body: [
@@ -1787,6 +1907,12 @@ export const GUIDES: Guide[] = [
     title: "Why to-do lists do not work when starting is the problem",
     dek: "A list assumes remembering is the hard part. When you have remembered for weeks, starting is what stalls. Three ways lists get in the way, and what helps.",
     primaryQuery: "why to-do lists do not work",
+    next: { slug: "why-you-abandon-planners-and-how-to-come-back", reason: "Lists are one kind of system that breaks. This explains why planners fail the same way and how to come back without starting over." },
+    related: [
+      { slug: "task-paralysis-what-to-do-in-the-next-ten-minutes", reason: "When the list is not the problem and starting is, this ten minute way out shrinks the first step until it needs no decision." },
+      { slug: "a-weekly-reset-that-survives-a-bad-week", reason: "Instead of a longer list, a ten minute weekly reset picks one thing and lets a skipped week go." },
+      { slug: "why-you-keep-thinking-about-a-task-and-not-doing-it", reason: "If you keep rewriting the task without doing it, this explains the gap between knowing and starting and offers two questions." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "mind-and-focus",
     body: [
@@ -1848,6 +1974,12 @@ export const GUIDES: Guide[] = [
     title: "Available vs current balance: which one can you spend?",
     dek: "Current balance counts what has posted. Available balance also subtracts holds and pending items. Neither one knows about the bills still coming.",
     primaryQuery: "available balance vs current balance",
+    next: { slug: "how-much-of-your-money-is-actually-safe-to-spend", reason: "Once you know which balance is real, subtract the bills still due to find what is safe to spend." },
+    related: [
+      { slug: "can-you-afford-it-before-you-buy-it", reason: "Turn the balance into a yes or no on a specific purchase, working out what is left until payday." },
+      { slug: "what-to-check-before-each-direct-debit-date", reason: "See why a payment can fail even when the balance looks fine, and what to check before each bill leaves." },
+      { slug: "you-missed-a-payment-what-to-do-next", reason: "A held or pending item can cause a missed payment, and this lays out the first 48 hours after one." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "money",
     body: [
@@ -1927,6 +2059,12 @@ export const GUIDES: Guide[] = [
     title: "Why budgets get dropped, and what one that lasts needs",
     dek: "Upkeep piles up and the number goes wrong. Four ways budgeting tools break, and five traits of one still in use after month two.",
     primaryQuery: "why do budgets fail",
+    next: { slug: "how-to-start-over-after-budget-failure", reason: "Already stopped keeping up with yours? Restart with today's balance and one clear number instead of catching up." },
+    related: [
+      { slug: "how-to-budget-for-beginners", reason: "Build a first budget from four things and a five minute weekly check that keeps it in use." },
+      { slug: "end-of-month-money-review", reason: "A short monthly review is how a budget stays in use without turning into a chore." },
+      { slug: "50-30-20-rule-where-it-breaks", reason: "A fixed split can be the reason a budget fails, so test it against your own month here." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "money",
     body: [
@@ -2007,6 +2145,12 @@ export const GUIDES: Guide[] = [
     title: "Why you keep thinking about a task and not doing it",
     dek: "You have not forgotten it, so writing it down again changes nothing. The gap is between knowing and starting, and two questions that help close it.",
     primaryQuery: "keep thinking about a task",
+    next: { slug: "task-paralysis-what-to-do-in-the-next-ten-minutes", reason: "When thinking about it has turned into being stuck, this is the main guide to getting unstuck in ten minutes." },
+    related: [
+      { slug: "first-physical-step-20-examples", reason: "Twenty examples of a first step you could see happen, to replace the vague thought with something you can do." },
+      { slug: "executive-dysfunction-is-not-procrastination", reason: "If this looks like laziness from outside, this explains the difference between not starting and not caring." },
+      { slug: "why-to-do-lists-make-it-worse", reason: "If the task lives on a list you keep rewriting, this explains three ways lists get in the way of starting." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "mind-and-focus",
     body: [
@@ -2063,6 +2207,12 @@ export const GUIDES: Guide[] = [
     title: "ADHD task paralysis: what to do in the next ten minutes",
     dek: "You know what needs doing and cannot begin. A ten minute way out that shrinks the first step until it needs no decision and no motivation.",
     primaryQuery: "adhd task paralysis",
+    next: { slug: "first-physical-step-20-examples", reason: "Stuck on what the first step even looks like? Twenty worked examples show how to shrink a task to something you could see happen." },
+    related: [
+      { slug: "executive-dysfunction-is-not-procrastination", reason: "If you wonder why willpower and deadlines do not help, this separates executive dysfunction from procrastination." },
+      { slug: "why-you-keep-thinking-about-a-task-and-not-doing-it", reason: "When you keep circling the same task in your head, this covers the gap between knowing and starting." },
+      { slug: "how-to-start-when-everything-is-overdue", reason: "If it is not one task but many, all past their dates, this shows how to pick the first thing and stop for tonight." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "mind-and-focus",
     body: [
@@ -2132,6 +2282,12 @@ export const GUIDES: Guide[] = [
     title: "New house checklist: what to do in the first week",
     dek: "Shutoffs, meter readings, alarms, appliance labels and the inspection report: what to capture in the first week, while it is all in front of you.",
     primaryQuery: "new house checklist",
+    next: { slug: "where-is-my-water-shutoff", reason: "Of everything to find in week one, the main water shutoff matters most in an emergency, and this shows how to locate it." },
+    related: [
+      { slug: "what-to-record-when-you-buy-an-appliance", reason: "Each appliance label you photograph needs a home, and this is the one-page record to copy it into." },
+      { slug: "inherited-a-house-where-to-start", reason: "If the sellers left no records at all, this covers dating what you have and checking it first." },
+      { slug: "moving-into-a-rental-what-to-document", reason: "Renting rather than buying, you need a different day-one list, and this covers deposit photos and lease dates." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "home",
     body: [
@@ -2203,6 +2359,12 @@ export const GUIDES: Guide[] = [
     title: "Home maintenance checklist: the jobs that belong to a season",
     dek: "Nine jobs that really belong to a season, which ones run on an interval instead, and what to skip without guilt. Written for US homes.",
     primaryQuery: "seasonal home maintenance checklist",
+    next: { slug: "fall-home-maintenance-checklist", reason: "Autumn has the most jobs of any season, and this lays out September to November in order." },
+    related: [
+      { slug: "how-often-home-systems-need-servicing", reason: "For jobs that run on an interval rather than a season, this gives how often each system needs service." },
+      { slug: "winterize-your-house-checklist", reason: "Freeze jobs have a hard deadline, and this covers what to finish before the first hard frost." },
+      { slug: "home-maintenance-log-template", reason: "Checking jobs off is only half of it, so this shows the four fields to write each time." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "home",
     body: [
@@ -2266,6 +2428,12 @@ export const GUIDES: Guide[] = [
     title: "Beneficiary vs will: which one decides who gets it?",
     dek: "Pensions, retirement accounts and life insurance go to the person named on the form, not the person in your will. What passes how, and how to check.",
     primaryQuery: "beneficiary vs will",
+    next: { slug: "update-your-paperwork-after-a-life-change", reason: "Beneficiary forms go stale after a divorce, marriage or birth, and this lists what to review by event." },
+    related: [
+      { slug: "the-if-something-happens-to-me-file", reason: "To record which accounts have named beneficiaries and where the forms are, use this file." },
+      { slug: "who-would-raise-your-children-guardian-checklist", reason: "If you have children, a guardian named in your will is another choice worth checking against your forms." },
+      { slug: "talking-to-your-parents-about-their-affairs", reason: "If a parent's forms are a mystery, this offers scripts for asking about their will and finances without it going badly." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "affairs-and-endings",
     body: [
@@ -2341,6 +2509,12 @@ export const GUIDES: Guide[] = [
     title: "How to catch up on homeschool records you did not keep",
     dek: "Kept nothing since October? What you can rebuild from workbooks, photos, receipts and library history, and how to mark it as reconstructed.",
     primaryQuery: "catch up on homeschool records",
+    next: { slug: "simple-homeschool-record-keeping-system", reason: "After the rebuild, set up something you will keep. Three things per entry, under a minute." },
+    related: [
+      { slug: "homeschool-record-keeping-template", reason: "Rebuilding on a fresh page? Four columns to copy make the reconstruction quick to write up." },
+      { slug: "preparing-for-a-homeschool-evaluation", reason: "An evaluation coming up before you are caught up? This lists what to bring and how to get ready fast." },
+      { slug: "homeschool-attendance-what-to-track", reason: "Attendance is the record most often rebuilt last. This shows what counts as a school day and how to log it." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "family-and-learning",
     body: [
@@ -2410,6 +2584,12 @@ export const GUIDES: Guide[] = [
     title: "How to tell if your homeschooler actually learned it",
     dek: "Covered is not learned. Ask four questions a week or more later, write the answers down, and know when a result is not enough to say.",
     primaryQuery: "is my homeschooler learning",
+    next: { slug: "homeschool-subject-not-working-what-to-change-first", reason: "If the check shows something did not stick, this gives the cheapest-first order for changing a stalled subject." },
+    related: [
+      { slug: "homeschool-reading-log", reason: "A reading log gives you something to ask about later. This shows the three columns and why quit books stay on it." },
+      { slug: "what-goes-in-a-homeschool-portfolio", reason: "Write-ups of what your child can do belong in a portfolio. This covers what to keep for each subject." },
+      { slug: "homeschool-weekly-plan-with-a-spare-day", reason: "Checks a week later need slack in the schedule. This weekly plan leaves a spare day on purpose." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "family-and-learning",
     body: [
@@ -2476,6 +2656,12 @@ export const GUIDES: Guide[] = [
     title: "Multi-stop trip planner: organize it without a spreadsheet",
     dek: "Many stops mean many bookings that rest on each other. Record four things per booking and skip the rebuild after every change.",
     primaryQuery: "multi stop trip planner",
+    next: { slug: "how-to-write-a-one-page-trip-itinerary", reason: "Once the bookings are recorded, this turns them into one page in time order that you can carry." },
+    related: [
+      { slug: "flight-changed-what-else-is-affected", reason: "When one leg moves, this explains how to walk down the chain and check each booking that rests on it." },
+      { slug: "how-to-plan-a-group-trip", reason: "Several people on different legs? This covers who is on which booking and where the answers live." },
+      { slug: "travel-document-checklist", reason: "Each stop may need its own documents, so this covers what to carry and where to note it." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "travel",
     body: [
@@ -2543,6 +2729,12 @@ export const GUIDES: Guide[] = [
     title: "Travel document checklist: what to carry and where",
     dek: "What each traveler needs, what to check months ahead, and how to note where every document is kept, because a phone photo is not a backup.",
     primaryQuery: "travel document checklist",
+    next: { slug: "what-to-keep-on-paper-when-you-travel", reason: "Now that you know what to carry, this shows which pages to print, and why two copies beat one." },
+    related: [
+      { slug: "first-international-trip-checklist", reason: "New to crossing borders? This puts passport, entry rules, money and insurance in the order to sort them and how early." },
+      { slug: "lost-passport-wallet-or-phone-abroad-what-to-have-ready", reason: "If a document goes missing on the road, this lists what to have ready and the one person to tell first." },
+      { slug: "packing-and-planning-for-a-trip-with-kids-or-a-baby", reason: "Children need their own paperwork, so this covers what to note for each child and what to pack." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "travel",
     body: [
@@ -2614,6 +2806,12 @@ export const GUIDES: Guide[] = [
     title: "You missed a payment. What to do in the next 48 hours",
     dek: "A five step plan for the first 48 hours, what usually happens at a few days late versus a month late, and what to say when you call.",
     primaryQuery: "missed a payment what to do",
+    next: { slug: "what-to-check-before-each-direct-debit-date", reason: "Stop it happening again with a two minute check before the busiest payment date each month." },
+    related: [
+      { slug: "monthly-bills-list", reason: "Put every bill, with its real due date, on one list so none is left to memory." },
+      { slug: "how-to-build-a-first-1000-emergency-fund", reason: "A small cash cushion is what keeps a late bill from becoming a late fee, and this shows how to build one." },
+      { slug: "credit-card-minimum-payments-how-long", reason: "If the missed payment was a credit card minimum, see how long minimums take to clear a balance and what extra changes." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "money",
     body: [
@@ -2689,6 +2887,12 @@ export const GUIDES: Guide[] = [
     title: "What to write down in case something happens to me",
     dek: "The short list of things that exist only in your head, framed as two weeks away, and how to keep it findable, dull and current.",
     primaryQuery: "what to write down in case something happens to me",
+    next: { slug: "the-if-something-happens-to-me-file", reason: "Once you have the short list, this shows the full file and where each item is kept." },
+    related: [
+      { slug: "hospital-for-two-weeks-what-would-someone-need-to-find", reason: "To check the list holds up, imagine two weeks in the hospital and see what someone could actually find." },
+      { slug: "life-admin-binder-what-goes-in-it", reason: "If you prefer paper, this shows how to gather the same information into a binder with eight sections." },
+      { slug: "digital-accounts-after-a-death", reason: "Passwords, photos and email are the items most often forgotten, and this covers what can be recovered." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "affairs-and-endings",
     body: [
@@ -2751,6 +2955,12 @@ export const GUIDES: Guide[] = [
     title: "Digital accounts after a death: what can be recovered",
     dek: "Photos, email, subscriptions and social accounts. What providers tend to release, what they do not, and what to set up now.",
     primaryQuery: "digital accounts after death",
+    next: { slug: "what-to-write-down-in-case-something-happens-to-you", reason: "To leave a usable record of logins and devices, start with this short list of what to write down." },
+    related: [
+      { slug: "how-to-find-someones-accounts-after-they-die", reason: "For money rather than photos, this shows how to trace accounts, pensions and policies." },
+      { slug: "who-to-tell-when-someone-dies", reason: "Closing accounts is part of notifying, and this gives the order of who to tell." },
+      { slug: "the-if-something-happens-to-me-file", reason: "To store the setup somewhere a trusted person can find it, use this file." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "affairs-and-endings",
     body: [
@@ -2813,6 +3023,12 @@ export const GUIDES: Guide[] = [
     title: "Which documents to keep, shred or store, and for how long",
     dek: "A rough retention guide for household paperwork, what to shred, and a three-part filing approach based on how fast you would need each thing.",
     primaryQuery: "how long to keep documents",
+    next: { slug: "life-admin-binder-what-goes-in-it", reason: "Once you know what to keep, this shows how to lay it out in eight sections." },
+    related: [
+      { slug: "the-if-something-happens-to-me-file", reason: "To record where each kept document lives, this file gives someone else a way to find it." },
+      { slug: "safe-deposit-box-and-spare-keys-who-can-open-it", reason: "For the originals worth keeping outside the house, this covers deposit boxes, safes and spare keys." },
+      { slug: "update-your-paperwork-after-a-life-change", reason: "After a move, marriage or new baby, some papers are out of date, and this lists where to look again." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "affairs-and-endings",
     body: [
@@ -2876,6 +3092,12 @@ export const GUIDES: Guide[] = [
     title: "What to keep after a home repair, besides the invoice",
     dek: "The invoice shows the price. Write down the diagnosis, the part replaced and what the technician says comes next, before they drive away.",
     primaryQuery: "home repair record",
+    next: { slug: "home-maintenance-log-template", reason: "Repair notes are more useful in one running place, and this sets up a home log to hold them." },
+    related: [
+      { slug: "appliance-warranties-what-to-track", reason: "A repair may be covered, so this shows when to check the warranty before you pay the bill." },
+      { slug: "what-to-record-when-you-buy-an-appliance", reason: "The model and purchase date on your appliance record make the technician's diagnosis easier to use later." },
+      { slug: "home-maintenance-you-skip-that-costs-the-most", reason: "To avoid repairs in the first place, this ranks the eight maintenance jobs that cost most when skipped." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "home",
     body: [
@@ -2944,6 +3166,12 @@ export const GUIDES: Guide[] = [
     title: "How to keep track of appliance warranties",
     dek: "What to record at purchase, the service condition that catches people out, and when to check the expiry date before you pay for a repair.",
     primaryQuery: "appliance warranty tracking",
+    next: { slug: "what-to-record-when-you-buy-an-appliance", reason: "Warranty dates only help if you wrote them down at purchase, and this lists the facts to record." },
+    related: [
+      { slug: "how-to-find-the-model-number-on-any-appliance", reason: "Warranty claims need the model number, and this shows where to find it on each type of appliance." },
+      { slug: "what-to-keep-after-a-home-repair", reason: "When a repair is under way, this covers what to keep from the visit alongside the warranty paperwork." },
+      { slug: "how-to-make-a-home-binder", reason: "Warranty papers belong with your other home records, and this shows how to sort them into a binder." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "home",
     body: [
@@ -3011,6 +3239,12 @@ export const GUIDES: Guide[] = [
     title: "What to say on admin calls: opening lines and scripts",
     dek: "Opening lines for billing problems, chasing, canceling, complaints and asking for help, plus four things to get before you hang up on any call.",
     primaryQuery: "admin phone call scripts",
+    next: { slug: "how-to-make-a-phone-call-you-have-been-avoiding", reason: "If the call itself is what you keep avoiding, start with the full walkthrough: five things on paper and a first sentence." },
+    related: [
+      { slug: "how-to-say-no-or-give-bad-news-on-the-phone", reason: "For calls where you must refuse or deliver bad news, this has the opening and what to decide before you dial." },
+      { slug: "the-email-you-keep-not-sending-and-how-to-chase-a-reply", reason: "When a call is too much, a written first line and a follow-up plan for silence can do the same job." },
+      { slug: "first-physical-step-20-examples", reason: "Twenty examples of a first step, including the call, for admin you are stuck on." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "mind-and-focus",
     body: [
@@ -3097,6 +3331,12 @@ export const GUIDES: Guide[] = [
     title: "How to deal with something you have put off for months",
     dek: "When the delay feels like the problem, name it in one sentence and move on to the practical question. Three lines to use, and what not to explain.",
     primaryQuery: "deal with something you have put off",
+    next: { slug: "paperwork-pile-where-to-start", reason: "If part of what you have avoided is unopened mail, this shows a ten minute way to open and sort without deciding anything." },
+    related: [
+      { slug: "how-to-start-when-everything-is-overdue", reason: "When several things have gone past their date, this shows how to sort by who is waiting and pick one first step." },
+      { slug: "task-paralysis-what-to-do-in-the-next-ten-minutes", reason: "If naming the delay does not get you moving, this ten minute way out makes the first step small enough to start." },
+      { slug: "scripts-for-the-admin-calls-everyone-dreads", reason: "When the thing you put off is a call, these opening lines cover billing, chasing, canceling and complaints." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "mind-and-focus",
     body: [
@@ -3171,6 +3411,12 @@ export const GUIDES: Guide[] = [
     title: "Homeschool evaluation: what to bring and how to prepare",
     dek: "What an evaluator looks for, a six-item folder list, and how to get ready in one evening. Ask your own evaluator or state what it requires.",
     primaryQuery: "homeschool evaluation what to bring",
+    next: { slug: "what-goes-in-a-homeschool-portfolio", reason: "Most of the folder is the portfolio. This covers the five contents and why October and March samples work." },
+    related: [
+      { slug: "how-to-catch-up-on-homeschool-records", reason: "Behind on records with a review coming? This shows what you can rebuild and how to mark it as reconstructed." },
+      { slug: "how-long-to-keep-homeschool-records", reason: "After the meeting, decide what stays in the folder. This covers how long to keep records and what to recycle." },
+      { slug: "homeschool-attendance-what-to-track", reason: "Evaluators often ask about days. This shows what counts as a school day and the lightest record." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "family-and-learning",
     body: [
@@ -3238,6 +3484,12 @@ export const GUIDES: Guide[] = [
     title: "How to plan a group trip (without being the organizer)",
     dek: "Group trips go wrong when one person holds everything in their head. Decide who books what, who is on each booking and where the answers live.",
     primaryQuery: "how to plan a group trip",
+    next: { slug: "how-to-write-a-one-page-trip-itinerary", reason: "After deciding who books what, this shows how to write the one page you hand to everyone else." },
+    related: [
+      { slug: "organising-a-multi-stop-trip-without-a-spreadsheet", reason: "When the group splits across stops, this shows how to record which bookings depend on which." },
+      { slug: "packing-and-planning-for-a-trip-with-kids-or-a-baby", reason: "If some of the group are children, this covers what to pack per child and how to plan a day with slack." },
+      { slug: "what-to-keep-on-paper-when-you-travel", reason: "Not everyone will open a phone app, so this covers the paper page worth handing out." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "travel",
     body: [
@@ -3304,6 +3556,12 @@ export const GUIDES: Guide[] = [
     title: "Sort out your finances after a job change, move or divorce",
     dek: "A five step order for putting your money back together, plus the traps in each event: the old retirement plan, address changes, joint accounts.",
     primaryQuery: "finances after a life change",
+    next: { slug: "organize-your-finances-from-scratch", reason: "When accounts, cards and papers are scattered after the change, this gives a ten minute starting path." },
+    related: [
+      { slug: "financial-binder-what-to-include", reason: "Keep the new addresses, accounts and contacts together in one binder and update it on a schedule." },
+      { slug: "split-bills-with-a-partner-or-roommate", reason: "Moved in with someone, or split up? See how to divide shared bills fairly and write the agreement down." },
+      { slug: "monthly-bills-list", reason: "Rebuild your bill list from scratch after the move so nothing is still going to the old account." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "money",
     body: [
@@ -3388,6 +3646,12 @@ export const GUIDES: Guide[] = [
     title: "How to talk to your parents about their will and finances",
     dek: "What to open with, what not to ask for, how to start with your own affairs, and scripts for a conversation that takes several tries.",
     primaryQuery: "how to talk to your parents about their will",
+    next: { slug: "emergency-contact-and-medical-decision-maker", reason: "A useful first question to raise is who would speak for a parent about their medical care." },
+    related: [
+      { slug: "where-to-look-for-a-will", reason: "Knowing where a parent keeps the will is one of the simplest things to ask, and this covers where wills usually are." },
+      { slug: "beneficiary-forms-override-your-will", reason: "Which form decides who gets a pension or policy is a good topic to raise, and this explains it." },
+      { slug: "what-to-do-when-a-parent-dies", reason: "To see what happens if the conversation never occurs, this gives the order of tasks after a parent dies." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "affairs-and-endings",
     body: [
@@ -3462,6 +3726,12 @@ export const GUIDES: Guide[] = [
     title: "Inherited a house with no records? Where to start",
     dek: "No manuals, no service history, no idea how old the furnace is. How to date what you have, typical service lives, and what to check first.",
     primaryQuery: "inherited house maintenance",
+    next: { slug: "how-often-home-systems-need-servicing", reason: "With no service history to go on, a schedule of typical intervals tells you which systems to look at first." },
+    related: [
+      { slug: "first-week-after-buying-a-house", reason: "Handing over the keys is the same moment as a new purchase, so this checklist covers the first week." },
+      { slug: "what-to-record-when-you-buy-an-appliance", reason: "Start writing things down now with this one-page appliance record so the next owner is not guessing." },
+      { slug: "home-maintenance-you-skip-that-costs-the-most", reason: "To decide where the first repair money goes, this ranks the eight jobs that cost most when skipped." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "home",
     body: [
@@ -3536,6 +3806,12 @@ export const GUIDES: Guide[] = [
     title: "How to find the model number on any appliance",
     dek: "Where the data plate hides on a fridge, washer, dryer, dishwasher, oven and water heater, and what to do when the label has worn away.",
     primaryQuery: "how to find appliance model number",
+    next: { slug: "what-to-record-when-you-buy-an-appliance", reason: "Once you have the model number, this lists what else to write down beside it while the machine is in front of you." },
+    related: [
+      { slug: "appliance-warranties-what-to-track", reason: "A model number is what a warranty claim asks for first, and this explains how to track the expiry." },
+      { slug: "how-often-change-furnace-filter", reason: "Another number worth writing down is the furnace filter size, and this explains how to read it." },
+      { slug: "inherited-a-house-where-to-start", reason: "When an old house has no manuals, this covers dating each appliance and knowing its typical life." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "home",
     body: [
@@ -3613,6 +3889,12 @@ export const GUIDES: Guide[] = [
     title: "Homeschool attendance records: what counts as a school day",
     dek: "What counts as a homeschool day, the lightest three-part record, and which attendance habits are pointless. Check your state's rule at the source.",
     primaryQuery: "homeschool attendance record",
+    next: { slug: "do-you-have-to-count-homeschool-days-or-hours", reason: "Before you log every day, check whether your state counts days or hours at all with this guide." },
+    related: [
+      { slug: "homeschool-record-keeping-requirements-by-state", reason: "Attendance rules vary by state. This table shows which level yours sits in and where to confirm it." },
+      { slug: "homeschool-record-keeping-template", reason: "Attendance can be one column among four. This template shows how to keep it inside the daily record." },
+      { slug: "simple-homeschool-record-keeping-system", reason: "Attendance works best inside a habit you keep. This covers a system with three things per entry." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "family-and-learning",
     body: [
@@ -3678,6 +3960,12 @@ export const GUIDES: Guide[] = [
     title: "A simple homeschool record keeping system you will keep",
     dek: "Three things per entry in under a minute, a plan for the bad week, and the occasional fourth note worth writing down. Notebook or app.",
     primaryQuery: "simple homeschool record keeping system",
+    next: { slug: "homeschool-record-keeping-template", reason: "Ready for the paper or spreadsheet version? Copy the four columns and see what to leave off." },
+    related: [
+      { slug: "homeschool-record-keeping-for-multiple-children", reason: "Two or more children make one system easy to muddle. This shows how to file by child." },
+      { slug: "how-to-catch-up-on-homeschool-records", reason: "Fell off the habit already? This covers how to rebuild what you did not write down." },
+      { slug: "homeschool-record-keeping-requirements-by-state", reason: "Not sure how much your state wants you to keep? This table sets the level for all 50 states and DC." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "family-and-learning",
     body: [
@@ -3745,6 +4033,12 @@ export const GUIDES: Guide[] = [
     title: "Life admin with brain fog: long covid, illness, grief",
     dek: "When holding a plan in your head has become unreliable, build for the bad day. Adjustments that do not depend on knowing why, or on trying harder.",
     primaryQuery: "life admin with brain fog",
+    next: { slug: "a-weekly-reset-that-survives-a-bad-week", reason: "For days when planning falls apart, a ten minute weekly reset that needs no catching up fits a bad week." },
+    related: [
+      { slug: "executive-dysfunction-is-not-procrastination", reason: "If starting is the barrier whatever the cause, this explains executive dysfunction and how to lower the cost of starting." },
+      { slug: "first-physical-step-20-examples", reason: "Concrete first steps you can copy on a day when holding a plan in your head is unreliable." },
+      { slug: "diagnosed-with-adhd-as-an-adult", reason: "If an ADHD diagnosis is part of your picture, this covers the appointments, records and backlog that follow it." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "mind-and-focus",
     body: [
@@ -3811,6 +4105,12 @@ export const GUIDES: Guide[] = [
     title: "Executive dysfunction vs procrastination: the difference",
     dek: "They look identical from outside. Why raising the stakes fails when starting is the barrier, and what lowers the cost of starting instead.",
     primaryQuery: "executive dysfunction vs procrastination",
+    next: { slug: "task-paralysis-what-to-do-in-the-next-ten-minutes", reason: "To act on this rather than just understand it, this is the ten minute way out when you cannot begin." },
+    related: [
+      { slug: "why-you-keep-thinking-about-a-task-and-not-doing-it", reason: "If you keep thinking about the task without starting, this looks at that gap and two questions that help." },
+      { slug: "first-physical-step-20-examples", reason: "Examples of first steps that lower the cost of starting, for calls, forms and documents." },
+      { slug: "diagnosed-with-adhd-as-an-adult", reason: "If this sounds familiar and you have just been diagnosed, this covers the admin that follows." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "mind-and-focus",
     body: [
@@ -3878,6 +4178,12 @@ export const GUIDES: Guide[] = [
     title: "What to print before you travel: a one-page paper list",
     dek: "Phones die at the wrong moment. The one page worth printing, including your hotel address in the local language, and why two copies beat one.",
     primaryQuery: "what to print before you travel",
+    next: { slug: "travel-document-checklist", reason: "For the full list of what each traveler needs and where each document is kept, read this next." },
+    related: [
+      { slug: "how-to-write-a-one-page-trip-itinerary", reason: "The printed page works best as a short timetable, and this shows what goes on each line." },
+      { slug: "lost-passport-wallet-or-phone-abroad-what-to-have-ready", reason: "If the paper copy is all you have left, this covers what to gather and who to tell first." },
+      { slug: "night-before-you-travel-checklist", reason: "Do the printing the evening before with this short list of six checks that leave the morning free." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "travel",
     body: [
@@ -3945,6 +4251,12 @@ export const GUIDES: Guide[] = [
     title: "What to check before your bills come out each month",
     dek: "A two minute check before your busiest payment date: which account each bill leaves from, what changed, and why to bunch dates near payday.",
     primaryQuery: "what to check before bills come out",
+    next: { slug: "monthly-bills-list", reason: "Build the full list of what leaves your account, including the bills that are not monthly." },
+    related: [
+      { slug: "you-missed-a-payment-what-to-do-next", reason: "When a payment has already failed, this covers what to do in the first 48 hours." },
+      { slug: "how-much-of-your-money-is-actually-safe-to-spend", reason: "Take the bills due before payday off your balance to see what is really yours to spend." },
+      { slug: "budget-for-variable-bills", reason: "For bills that change amount every month, this sets a planning figure so the check has a number to compare with." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "money",
     body: [
@@ -4003,6 +4315,12 @@ export const GUIDES: Guide[] = [
     title: "How to know if you can afford something before you buy it",
     dek: "Balance minus the bills still coming, divided by the weeks to payday: a thirty second check, and why annual bills and installments skew it.",
     primaryQuery: "how to know if you can afford something",
+    next: { slug: "how-much-of-your-money-is-actually-safe-to-spend", reason: "See the full five step method behind this quick check, with a worked example and the negative number case." },
+    related: [
+      { slug: "available-balance-vs-current-balance", reason: "If the balance in your app looks higher than the money you have, learn the difference between posted and available." },
+      { slug: "sinking-funds-explained", reason: "Annual and quarterly bills skew a purchase check, and a sinking fund is how you save for them in advance." },
+      { slug: "how-to-save-money-fast", reason: "Decided you cannot afford it yet? These small moves free up cash within a single month." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "money",
     body: [
@@ -4078,6 +4396,12 @@ export const GUIDES: Guide[] = [
     title: "How long to keep homeschool records, and what to throw away",
     dek: "Which papers to keep, what to photograph and what to recycle. Florida and New Hampshire name two years for a portfolio; the rest is advice.",
     primaryQuery: "how long to keep homeschool records",
+    next: { slug: "what-goes-in-a-homeschool-portfolio", reason: "To know what belongs in the keep pile first, see the five portfolio contents and per-subject samples." },
+    related: [
+      { slug: "preparing-for-a-homeschool-evaluation", reason: "If an evaluator may ask to see last year's work, this covers what to bring." },
+      { slug: "how-to-catch-up-on-homeschool-records", reason: "Threw something out too soon, or never kept it? This shows how to reconstruct the record." },
+      { slug: "homeschool-record-keeping-requirements-by-state", reason: "Retention depends on your state. Look up your level in this table and confirm at the source." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "family-and-learning",
     body: [
@@ -4147,6 +4471,12 @@ export const GUIDES: Guide[] = [
     title: "Diagnosed with ADHD as an adult: the admin that follows",
     dek: "What changes after an adult diagnosis, what does not, and the admin that comes next: appointments, records and the backlog you already had.",
     primaryQuery: "diagnosed with adhd as an adult",
+    next: { slug: "paperwork-pile-where-to-start", reason: "After a diagnosis comes paperwork; this shows how to open and sort a pile without deciding anything in a hurry." },
+    related: [
+      { slug: "executive-dysfunction-is-not-procrastination", reason: "To understand why starting is hard, this explains executive dysfunction and how it differs from procrastination." },
+      { slug: "why-you-keep-missing-bill-due-dates", reason: "Missed due dates are a common cost of stalled admin; this sets up a system that does not rely on remembering." },
+      { slug: "life-admin-with-brain-fog", reason: "If illness or grief is also in the picture, this builds life admin around the bad day, not the good one." },
+    ],
     publishedAt: "2026-08-30",
     areaSlug: "mind-and-focus",
     body: [
@@ -4217,6 +4547,9 @@ export const GUIDES: Guide[] = [
     title: "What is life admin, and why does it feel so hard?",
     dek: "Life admin is the unscheduled work of keeping an adult life running. Three traits that make it awkward, what it needs, and who ends up carrying it.",
     primaryQuery: "what is life admin",
+    next: { slug: "why-productivity-tools-fail-at-life-admin", reason: "Now that you know what life admin is, see why to-do lists and productivity apps handle it badly and what a better tool must do." },
+    related: [
+    ],
     publishedAt: "2026-08-30",
     areaSlug: SERIES,
     body: [
@@ -4287,6 +4620,9 @@ export const GUIDES: Guide[] = [
     title: "Why to-do lists and productivity apps fail at life admin",
     dek: "Life admin is a web of connected details, not a list of separate tasks. Four mismatches with productivity tools, and five things a better tool must do.",
     primaryQuery: "why productivity apps fail at life admin",
+    next: { slug: "life-admin-the-work-nobody-teaches-you", reason: "If the mismatch is new to you, start with what life admin is, its three traits and who ends up carrying it." },
+    related: [
+    ],
     publishedAt: "2026-08-30",
     areaSlug: SERIES,
     body: [
@@ -4382,6 +4718,12 @@ export const GUIDES: Guide[] = [
     title: "How to make a monthly budget for the first time",
     dek: "Skip the forty categories. Gather four things, find one number with a worked $1,850 example, and keep it with a five minute weekly check-in.",
     primaryQuery: "how to make a monthly budget",
+    next: { slug: "how-much-of-your-money-is-actually-safe-to-spend", reason: "Take the one number from your first budget and turn it into what you can spend today." },
+    related: [
+      { slug: "organize-your-finances-from-scratch", reason: "If the four things you need are spread across apps and notes, start here to pull them together." },
+      { slug: "50-30-20-rule-where-it-breaks", reason: "Compare your first budget with the 50/30/20 split and see where a fixed rule stops fitting." },
+      { slug: "why-budgeting-apps-stop-working-after-two-months", reason: "Wondering why first budgets get dropped? See four ways they break and what one that lasts needs." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "money",
     body: [
@@ -4456,6 +4798,12 @@ export const GUIDES: Guide[] = [
     title: "How to budget with irregular income: count what has landed",
     dek: "Pay that swings breaks percentage budgets. Plan only from money that has arrived, hold back the bills and find your tightest day, with a $1,850 example.",
     primaryQuery: "how to budget with irregular income",
+    next: { slug: "how-to-build-a-first-1000-emergency-fund", reason: "With pay that swings, a starter cushion covers the low months without reaching for a card." },
+    related: [
+      { slug: "how-much-of-your-money-is-actually-safe-to-spend", reason: "Apply the same take-off method to the money that has landed so far this month." },
+      { slug: "sinking-funds-explained", reason: "Set money aside monthly for the bills that arrive quarterly or yearly, even when income moves." },
+      { slug: "budget-for-variable-bills", reason: "Bills that change in size add to the swing, and this sets a planning figure for each one." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "money",
     body: [
@@ -4535,6 +4883,12 @@ export const GUIDES: Guide[] = [
     title: "How to build your first $1,000 emergency fund",
     dek: "A $1,000 starter fund will not cover everything, but it keeps small surprises off a card. A four step pace, where to keep it, when to use it.",
     primaryQuery: "$1,000 emergency fund",
+    next: { slug: "sinking-funds-explained", reason: "Next, save monthly for predictable costs such as car repairs or annual fees so they do not tap this fund." },
+    related: [
+      { slug: "debt-snowball-vs-avalanche", reason: "Carrying card debt as well as building a cushion? Compare snowball and avalanche orders to see which costs less." },
+      { slug: "how-to-save-money-fast", reason: "Need the first deposit? Four small moves free up cash within a single month." },
+      { slug: "how-to-budget-with-irregular-income", reason: "If your pay changes month to month, see how to plan only from money that has arrived." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "money",
     body: [
@@ -4615,6 +4969,12 @@ export const GUIDES: Guide[] = [
     title: "How to save money this month without a big life change",
     dek: "Four small moves that free up cash within a single month, ranked by effort, plus the popular cuts that are not worth the trouble.",
     primaryQuery: "how to save money this month",
+    next: { slug: "how-to-build-a-first-1000-emergency-fund", reason: "Give the cash you free up somewhere to go, with a four step pace for a first $1,000." },
+    related: [
+      { slug: "how-to-find-every-subscription-you-are-paying-for", reason: "Hunt down forgotten charges with a twelve month statement sweep before cutting anything else." },
+      { slug: "how-to-cancel-subscriptions", reason: "Found a service to drop but the company pushes back? These scripts and steps help you get out." },
+      { slug: "budget-for-variable-bills", reason: "Bills that swing can hide easy savings, and this shows how to plan toward the high month." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "money",
     body: [
@@ -4688,6 +5048,12 @@ export const GUIDES: Guide[] = [
     title: "You fell off your budget: how to restart this month",
     dek: "You do not need to catch up on six weeks of receipts. You need today's balance, the bills still coming, and one clear number.",
     primaryQuery: "how to restart a budget",
+    next: { slug: "how-much-of-your-money-is-actually-safe-to-spend", reason: "Calculate the one number you need today from your balance and the bills still coming." },
+    related: [
+      { slug: "how-to-budget-for-beginners", reason: "Prefer a fresh start with a proper first budget? This walks through it from four inputs." },
+      { slug: "end-of-month-money-review", reason: "Set up a ten minute month end review so the next slip gets caught in weeks, not months." },
+      { slug: "why-budgeting-apps-stop-working-after-two-months", reason: "See the four ways budgets break, and what one needs to still be in use after month two." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "money",
     body: [
@@ -4759,6 +5125,12 @@ export const GUIDES: Guide[] = [
     title: "End of month money review: a ten minute checklist",
     dek: "Note where the month ended, check every bill, choose what carries into next month, and start clean without turning it into a lecture.",
     primaryQuery: "end of month budget review",
+    next: { slug: "what-to-check-before-each-direct-debit-date", reason: "Before next month begins, run the two minute check on each bill and the account it leaves from." },
+    related: [
+      { slug: "how-to-start-over-after-budget-failure", reason: "Month ended badly and you want to reset? This restarts a budget from today's balance." },
+      { slug: "sinking-funds-explained", reason: "Choose what carries over by putting money toward big costs you can already see coming." },
+      { slug: "subscription-tracker-what-to-track", reason: "Add a five minute renewal check to your month end review with these six subscription fields." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "money",
     body: [
@@ -4823,6 +5195,12 @@ export const GUIDES: Guide[] = [
     title: "How to cancel a subscription that is hard to cancel",
     dek: "Where cancel buttons hide, what to say when the company pushes back, and how to confirm the charge really stopped. Includes four scripts.",
     primaryQuery: "hard to cancel subscription",
+    next: { slug: "subscription-tracker-what-to-track", reason: "After you cancel, keep a tracker of six fields so the next renewal cannot slip by unnoticed." },
+    related: [
+      { slug: "how-to-find-every-subscription-you-are-paying-for", reason: "Not sure everything you pay for is on your list yet? Sweep twelve months of statements first." },
+      { slug: "how-to-save-money-fast", reason: "Cancelling frees money right away, and these small moves show what else is worth cutting this month." },
+      { slug: "end-of-month-money-review", reason: "Use the month end review to confirm the charge really stopped and spot new ones." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "money",
     body: [
@@ -4908,6 +5286,12 @@ export const GUIDES: Guide[] = [
     title: "Fall home maintenance checklist by month",
     dek: "September, October and November in order: heating tune-up, freeze jobs, then gutters. Short on purpose, built around jobs that prevent damage.",
     primaryQuery: "fall home maintenance checklist",
+    next: { slug: "winterize-your-house-checklist", reason: "When the first frost is close, this narrows the season down to the freeze jobs with a deadline." },
+    related: [
+      { slug: "home-maintenance-checklist-by-month", reason: "To see the same jobs across the whole year, this spreads them month by month." },
+      { slug: "how-often-change-furnace-filter", reason: "Changing the furnace filter is part of heating prep, and this says how often and which size." },
+      { slug: "where-is-my-water-shutoff", reason: "Frozen pipes are the costly fall risk, so know where the main valve is with this guide." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "home",
     body: [
@@ -4974,6 +5358,12 @@ export const GUIDES: Guide[] = [
     title: "Winterize your house: jobs to finish before the first freeze",
     dek: "Freeze jobs have a deadline, and the weather sets it. What to do, in what order, and what to write down so next year takes five minutes.",
     primaryQuery: "winterize house checklist",
+    next: { slug: "home-maintenance-log-template", reason: "After the freeze jobs are finished, this shows what to write down so next year takes five minutes." },
+    related: [
+      { slug: "fall-home-maintenance-checklist", reason: "For the longer view of September to November, this puts the whole fall in order." },
+      { slug: "where-is-my-water-shutoff", reason: "Burst pipes are what you are guarding against, and this shows where to shut the water off if one goes." },
+      { slug: "how-often-home-systems-need-servicing", reason: "Heating service is one of the jobs on this interval table, so you can see when it next falls due." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "home",
     body: [
@@ -5056,6 +5446,12 @@ export const GUIDES: Guide[] = [
     title: "Home maintenance log template: what to write each time",
     dek: "A home maintenance log is four fields and one note: date, what was done, who did it and what it cost. Example entries show how much to write.",
     primaryQuery: "home maintenance log",
+    next: { slug: "what-to-keep-after-a-home-repair", reason: "A log entry is only as good as the notes, and this covers what to write after a technician visits." },
+    related: [
+      { slug: "how-often-home-systems-need-servicing", reason: "To know when the next entry is due, this gives the interval for each system in the house." },
+      { slug: "how-to-make-a-home-binder", reason: "The log is one section of a binder, and this shows the others and what should stay out." },
+      { slug: "moving-into-a-rental-what-to-document", reason: "In a rental, a dated record helps at move-out, and this covers what to document on day one." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "home",
     body: [
@@ -5119,6 +5515,12 @@ export const GUIDES: Guide[] = [
     title: "How often to change a furnace filter (and the size to note)",
     dek: "Every three months is the working default; change it sooner with pets or dust. How to read the size numbers and where to write them once.",
     primaryQuery: "how often to change furnace filter",
+    next: { slug: "how-often-home-systems-need-servicing", reason: "Filters are one line on a longer list, and this gives the interval for every other system." },
+    related: [
+      { slug: "home-maintenance-log-template", reason: "Write each change in a running log, and this shows how to keep one that you will use." },
+      { slug: "home-maintenance-you-skip-that-costs-the-most", reason: "Filters and gutters lead the jobs people skip, and this ranks eight that cost most later." },
+      { slug: "fall-home-maintenance-checklist", reason: "Heating prep in fall starts with the filter, and this puts the other jobs in order." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "home",
     body: [
@@ -5183,6 +5585,12 @@ export const GUIDES: Guide[] = [
     title: "Where is your main water shutoff? Find it before you need it",
     dek: "Where the main valve usually is, the two valve types, how to tell if it is stuck, and the one page to write it on so anyone can find it.",
     primaryQuery: "where is my main water shutoff",
+    next: { slug: "how-to-make-a-home-binder", reason: "Put the shutoff location on the page where anyone can find it, and this shows how to build that binder." },
+    related: [
+      { slug: "winterize-your-house-checklist", reason: "Turning off outdoor taps and draining lines comes with freeze prep, and this covers the full job list." },
+      { slug: "first-week-after-buying-a-house", reason: "Finding the shutoff is one item on the first-week list, and this covers the others to check." },
+      { slug: "inherited-a-house-where-to-start", reason: "If you inherited a house, locating shutoffs is the first task, and this covers what else to check." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "home",
     body: [
@@ -5267,6 +5675,12 @@ export const GUIDES: Guide[] = [
     title: "How to make a home binder: what goes in and what stays out",
     dek: "Five sections cover almost everything a home binder needs, and one category of thing should never go in. You can build one in an afternoon.",
     primaryQuery: "how to make a home binder",
+    next: { slug: "what-to-record-when-you-buy-an-appliance", reason: "The appliance sheet is the page most binders lack, and this shows exactly what to write on it." },
+    related: [
+      { slug: "home-maintenance-log-template", reason: "A binder needs a maintenance section, and this shows what to write in the log each time." },
+      { slug: "where-is-my-water-shutoff", reason: "A binder is only useful if the shutoff is on a page, and this explains how to find the valve." },
+      { slug: "appliance-warranties-what-to-track", reason: "Warranty paperwork has a place in the binder, and this covers what to track on each one." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "home",
     body: [
@@ -5339,6 +5753,12 @@ export const GUIDES: Guide[] = [
     title: "Moving into a rental: what to document on day one",
     dek: "Dated photos, lease dates, the deposit and a log of what you report. Four records made on day one settle most deposit arguments later.",
     primaryQuery: "rental move in checklist",
+    next: { slug: "where-is-my-water-shutoff", reason: "Even as a renter, you should know the main shutoff, so this shows how to find it and check it turns." },
+    related: [
+      { slug: "first-week-after-buying-a-house", reason: "If you later buy a place, this covers what to capture in the first week." },
+      { slug: "home-maintenance-log-template", reason: "Keep a dated list of what you report to the landlord, and this shows a simple log format." },
+      { slug: "how-to-make-a-home-binder", reason: "To keep the lease and photos in one place, this shows how to make a binder for the home." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "home",
     body: [
@@ -5431,6 +5851,12 @@ export const GUIDES: Guide[] = [
     title: "Debt snowball vs avalanche: which costs less, which sticks",
     dek: "A three-debt example with real interest totals, why the two orders often finish close, and how to pick the one you will keep.",
     primaryQuery: "debt snowball vs avalanche",
+    next: { slug: "credit-card-minimum-payments-how-long", reason: "See what only paying the minimum costs in months and interest, then what an extra amount changes." },
+    related: [
+      { slug: "how-to-build-a-first-1000-emergency-fund", reason: "Keep a small cushion beside the payoff plan so one surprise does not put you back on the card." },
+      { slug: "you-missed-a-payment-what-to-do-next", reason: "If you slipped and missed a debt payment, here are the first steps and what to say when you call." },
+      { slug: "50-30-20-rule-where-it-breaks", reason: "Decide how much of your month can go to debt at all by testing the 50/30/20 rule against your numbers." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "money",
     body: [
@@ -5526,6 +5952,12 @@ export const GUIDES: Guide[] = [
     title: "Monthly bills list: include the bills that are not monthly",
     dek: "A six column list, plus the math for turning quarterly and annual bills into a monthly amount: $612 every three months is $204 a month.",
     primaryQuery: "monthly bills list",
+    next: { slug: "budget-for-variable-bills", reason: "For any bill that changes each month, use twelve months of history to pick a planning amount." },
+    related: [
+      { slug: "sinking-funds-explained", reason: "Turn the quarterly and annual bills on your list into a saved monthly amount with a simple formula." },
+      { slug: "what-to-check-before-each-direct-debit-date", reason: "With your list done, check which account each bill leaves from and when before payday." },
+      { slug: "split-bills-with-a-partner-or-roommate", reason: "Sharing rent and utilities? See how to divide each line on the list fairly between two or more people." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "money",
     body: [
@@ -5589,6 +6021,12 @@ export const GUIDES: Guide[] = [
     title: "How to organize your finances when everything is scattered",
     dek: "Bank apps, statements, a notes file and a lot in your head. A ten minute, six step starting path that works without every statement to hand.",
     primaryQuery: "how to organize your finances",
+    next: { slug: "how-to-budget-for-beginners", reason: "Ready to turn the pile into a plan? Build a monthly budget from four things and a worked example." },
+    related: [
+      { slug: "financial-binder-what-to-include", reason: "Once the pieces are found, give them a permanent home in a seven section binder." },
+      { slug: "bank-statement-csv-to-budget", reason: "If a bank statement is the only record you have, see how to turn a downloaded file into usable rows." },
+      { slug: "monthly-bills-list", reason: "Write down every bill with its due date, the first thing worth pulling out of the mess." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "money",
     body: [
@@ -5652,6 +6090,12 @@ export const GUIDES: Guide[] = [
     title: "How to split bills with a partner or roommate: 3 methods",
     dek: "Equal, by income or by item: what each one assumes, four things to agree first, and a one page record so the question stays settled.",
     primaryQuery: "how to split bills with a partner",
+    next: { slug: "monthly-bills-list", reason: "List every shared bill with its amount and due date before you decide how to split the total." },
+    related: [
+      { slug: "50-30-20-rule-where-it-breaks", reason: "See how a percentage rule such as 50/30/20 can help set a fair share when incomes differ." },
+      { slug: "sort-out-your-finances-after-a-life-change", reason: "Moving in together, moving out or splitting up? Here is the order for sorting shared money." },
+      { slug: "what-to-check-before-each-direct-debit-date", reason: "Agree which account each shared bill leaves from and check it before each date." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "money",
     body: [
@@ -5731,6 +6175,12 @@ export const GUIDES: Guide[] = [
     title: "Subscription tracker: the six fields that catch renewals",
     dek: "The renewal date beats the price. What to write down for each subscription, the annual charge trap and a five minute monthly check.",
     primaryQuery: "subscription tracker",
+    next: { slug: "how-to-cancel-subscriptions", reason: "When a renewal comes up that you want to stop, follow these steps and scripts to cancel." },
+    related: [
+      { slug: "how-to-find-every-subscription-you-are-paying-for", reason: "Starting from nothing? Sweep twelve months of statements to fill in the first version of your tracker." },
+      { slug: "how-to-save-money-fast", reason: "Trimming subscriptions is one of the quickest wins, ranked here alongside other small money moves." },
+      { slug: "end-of-month-money-review", reason: "Fold the renewal check into a ten minute month end routine that covers every bill." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "money",
     body: [
@@ -5793,6 +6243,12 @@ export const GUIDES: Guide[] = [
     title: "How to import a bank statement CSV: check the file first",
     dek: "Download the file, check its shape, map the columns and catch duplicate rows, plus what a list of past transactions cannot tell you.",
     primaryQuery: "import bank statement csv",
+    next: { slug: "how-much-of-your-money-is-actually-safe-to-spend", reason: "A file of past transactions cannot show what is still due, so subtract the bills that are coming to find your number." },
+    related: [
+      { slug: "organize-your-finances-from-scratch", reason: "If the statement is only one of many scattered records, start with a ten minute path to gather all of it." },
+      { slug: "how-to-find-every-subscription-you-are-paying-for", reason: "Use the same twelve months of data to find every recurring charge and subscription." },
+      { slug: "how-to-budget-for-beginners", reason: "Turn the sorted transactions into a first monthly budget with four inputs and a worked example." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "money",
     body: [
@@ -5861,6 +6317,12 @@ export const GUIDES: Guide[] = [
     title: "Financial binder: what to include and how often to update",
     dek: "Seven sections cover most of a financial binder. What each holds, how sure to be about each entry, and a short routine to keep it current.",
     primaryQuery: "financial binder what to include",
+    next: { slug: "monthly-bills-list", reason: "The bills section is easier to fill in with a full monthly list that includes the annual ones." },
+    related: [
+      { slug: "organize-your-finances-from-scratch", reason: "Pulling documents together for the first time? This path works even without every statement to hand." },
+      { slug: "sort-out-your-finances-after-a-life-change", reason: "Update the binder after a job change, move or divorce, and see which accounts and plans need attention." },
+      { slug: "subscription-tracker-what-to-track", reason: "Give subscriptions their own page in the binder, with the six fields that catch renewals." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "money",
     body: [
@@ -5929,6 +6391,12 @@ export const GUIDES: Guide[] = [
     title: "Sinking funds explained: save for costs you can see coming",
     dek: "The formula for a monthly amount, with a $600 example: subtract what is saved, divide by months left. Where to keep it and five costs to start with.",
     primaryQuery: "sinking funds explained",
+    next: { slug: "budget-for-variable-bills", reason: "When a bill is not fixed, plan toward the high month and let a fund cover the spike." },
+    related: [
+      { slug: "monthly-bills-list", reason: "Get the whole list of quarterly and annual bills into one place, with the monthly math done for you." },
+      { slug: "how-to-build-a-first-1000-emergency-fund", reason: "Start with a $1,000 starter fund before you divide money among specific costs." },
+      { slug: "how-to-budget-with-irregular-income", reason: "If pay swings, learn to plan only from what has landed and still keep these funds moving." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "money",
     body: [
@@ -5998,6 +6466,12 @@ export const GUIDES: Guide[] = [
     title: "The 50/30/20 rule: who it fits and where it breaks",
     dek: "Half to needs, thirty percent to wants, twenty to savings and debt. Test it against your own month in five steps, and what to do at 60 percent needs.",
     primaryQuery: "50/30/20 rule",
+    next: { slug: "how-to-budget-for-beginners", reason: "If the percentage split does not fit, build your own monthly budget from four things instead." },
+    related: [
+      { slug: "how-to-budget-with-irregular-income", reason: "Percentages break when pay swings, and this plans only from money that has arrived." },
+      { slug: "monthly-bills-list", reason: "Count your real needs by listing every bill, including the ones that are not monthly." },
+      { slug: "split-bills-with-a-partner-or-roommate", reason: "Sharing costs with someone? Compare equal, income-based and item-by-item splits." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "money",
     body: [
@@ -6071,6 +6545,12 @@ export const GUIDES: Guide[] = [
     title: "How to budget for bills that change every month",
     dek: "Electric, water and phone bills move. Pull twelve months, find the low and the high, and plan toward the high so the spike month is no surprise.",
     primaryQuery: "budget for variable bills",
+    next: { slug: "sinking-funds-explained", reason: "Save a set amount each month for the costs you can see coming, using the formula and a $600 example." },
+    related: [
+      { slug: "monthly-bills-list", reason: "Add the changing bills to a full list with a column for the planning amount." },
+      { slug: "what-to-check-before-each-direct-debit-date", reason: "On the bill date, check what changed and which account it leaves from." },
+      { slug: "how-to-budget-with-irregular-income", reason: "When your pay moves as well as your bills, plan only from what has already landed." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "money",
     body: [
@@ -6136,6 +6616,12 @@ export const GUIDES: Guide[] = [
     title: "How long paying only the minimum takes on credit card debt",
     dek: "Interest at 2 percent a month eats most of a small payment. A $3,000 example at 24 percent, then a three debt comparison of minimums versus extra.",
     primaryQuery: "credit card minimum payment payoff time",
+    next: { slug: "debt-snowball-vs-avalanche", reason: "Compare the snowball and avalanche orders and pick the payoff method you will keep." },
+    related: [
+      { slug: "how-to-build-a-first-1000-emergency-fund", reason: "Building a small fund means a surprise expense stays off the card and the balance stops growing." },
+      { slug: "you-missed-a-payment-what-to-do-next", reason: "If you have skipped a minimum, here is what to do in the first 48 hours." },
+      { slug: "how-to-save-money-fast", reason: "Find extra cash for the balance this month with small moves and no big life change." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "money",
     body: [
@@ -6206,6 +6692,12 @@ export const GUIDES: Guide[] = [
     title: "Everything is overdue: how to pick the first thing",
     dek: "When the calls, forms and bills are all past their date, do not rank them. Sort by who is waiting, pick one first step, and stop for tonight.",
     primaryQuery: "everything is overdue where to start",
+    next: { slug: "first-physical-step-20-examples", reason: "After you pick the first thing, this has twenty examples of a first step you could see happen." },
+    related: [
+      { slug: "paperwork-pile-where-to-start", reason: "If a good part of the backlog is unopened mail, this shows how to open and sort it in ten minutes." },
+      { slug: "task-paralysis-what-to-do-in-the-next-ten-minutes", reason: "When even the first pick will not start, this ten minute way out shrinks the step until it needs no decision." },
+      { slug: "how-to-deal-with-something-you-have-put-off", reason: "If shame about how long it has waited is in the way, this gives three lines to name it and move on." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "mind-and-focus",
     body: [
@@ -6265,6 +6757,12 @@ export const GUIDES: Guide[] = [
     title: "Paperwork pile you are avoiding: where to start",
     dek: "Unopened mail gets scarier every week. A ten minute way to make the pile smaller by opening and sorting, without deciding anything in a hurry.",
     primaryQuery: "paperwork pile where to start",
+    next: { slug: "how-to-start-when-everything-is-overdue", reason: "When the pile is calls, forms and bills as well as mail, this shows how to sort by who is waiting." },
+    related: [
+      { slug: "how-to-deal-with-something-you-have-put-off", reason: "If you are dreading what the letters say, this covers how to name the delay and get to the practical question." },
+      { slug: "first-physical-step-20-examples", reason: "For the items that need a call or form, twenty examples of a first step you could see happen." },
+      { slug: "why-you-keep-missing-bill-due-dates", reason: "For bills found in the pile, this shows how to keep due dates from slipping again." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "mind-and-focus",
     body: [
@@ -6337,6 +6835,12 @@ export const GUIDES: Guide[] = [
     title: "How to say no, or give bad news, on the phone",
     dek: "Some calls are hard because of what you have to say. Decide what you will not agree to before dialing, have an opening ready, and ask for a minute.",
     primaryQuery: "give bad news on the phone",
+    next: { slug: "how-to-make-a-phone-call-you-have-been-avoiding", reason: "For the general case of a call you keep avoiding, this walks through five things to prepare and a first sentence." },
+    related: [
+      { slug: "scripts-for-the-admin-calls-everyone-dreads", reason: "Opening lines for billing problems, chasing, canceling and complaints, plus four things to get before you hang up." },
+      { slug: "the-email-you-keep-not-sending-and-how-to-chase-a-reply", reason: "If you would rather refuse or chase in writing, this covers three decisions, a first line and the follow-up." },
+      { slug: "time-blindness-planning", reason: "Name one exact time to make a hard call, with a buffer before it, so it does not float." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "mind-and-focus",
     body: [
@@ -6403,6 +6907,12 @@ export const GUIDES: Guide[] = [
     title: "The email you keep not sending: first lines and follow-ups",
     dek: "An email that does not say what it wants gets answered slowly. Decide three things, write the first line, and know what to do when no one replies.",
     primaryQuery: "email you keep not sending",
+    next: { slug: "how-to-say-no-or-give-bad-news-on-the-phone", reason: "If the message is a refusal or bad news, this covers what to decide first and asking for a minute." },
+    related: [
+      { slug: "scripts-for-the-admin-calls-everyone-dreads", reason: "When an email gets no answer, these opening lines and things to get before hanging up help on the phone instead." },
+      { slug: "how-to-make-a-phone-call-you-have-been-avoiding", reason: "If the follow-up needs to be a call, this covers what to prepare and how to write the first sentence." },
+      { slug: "first-physical-step-20-examples", reason: "Twenty examples of a first step, including drafting one line, for admin you are stuck on." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "mind-and-focus",
     body: [
@@ -6467,6 +6977,12 @@ export const GUIDES: Guide[] = [
     title: "First physical step: 20 examples for stuck admin tasks",
     dek: "A first step is something you could see happen. Twenty examples, from a call to a form to a document, and how to check your own.",
     primaryQuery: "first physical step examples",
+    next: { slug: "how-to-make-a-phone-call-you-have-been-avoiding", reason: "The most common first step is a call; this walks through five things to prepare and how to know when you can stop." },
+    related: [
+      { slug: "task-paralysis-what-to-do-in-the-next-ten-minutes", reason: "If a first step still feels too big, this ten minute way out shrinks it until it needs no decision." },
+      { slug: "why-you-keep-thinking-about-a-task-and-not-doing-it", reason: "For a task you keep thinking about, this explains why writing it down again changes nothing." },
+      { slug: "paperwork-pile-where-to-start", reason: "A concrete example of a first step: opening and sorting a paperwork pile in ten minutes." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "mind-and-focus",
     body: [
@@ -6536,6 +7052,12 @@ export const GUIDES: Guide[] = [
     title: "A weekly reset that survives a bad week",
     dek: "Most resets assume a normal week. A ten minute version for the weeks that fall apart, and why a skipped week needs no catching up.",
     primaryQuery: "weekly reset for a bad week",
+    next: { slug: "why-you-abandon-planners-and-how-to-come-back", reason: "If your resets keep collapsing, this explains why planners fail and how to salvage one page." },
+    related: [
+      { slug: "why-to-do-lists-make-it-worse", reason: "If a growing list is what wore you out, this explains why lists stall when starting is the problem." },
+      { slug: "why-you-keep-missing-bill-due-dates", reason: "A weekly check is a good place to put bill dates; this shows a system that does not rely on remembering." },
+      { slug: "how-to-restart-a-project-you-gave-up-on", reason: "For the project that stalled during a bad week, this shows what to leave behind and how to resume." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "mind-and-focus",
     body: [
@@ -6616,6 +7138,12 @@ export const GUIDES: Guide[] = [
     title: "Why you stop using planners, and how to come back",
     dek: "You did not fail the planner. Most systems assume a normal week. What breaks, how to salvage one page, and what to look for in the next one.",
     primaryQuery: "why you stop using planners",
+    next: { slug: "a-weekly-reset-that-survives-a-bad-week", reason: "For the habit you keep in place of the planner, a ten minute weekly reset that survives a bad week." },
+    related: [
+      { slug: "why-to-do-lists-make-it-worse", reason: "To see why lists in particular stop working when starting is the problem, read these three ways they get in the way." },
+      { slug: "how-to-restart-a-project-you-gave-up-on", reason: "If a project went quiet along with the planner, this shows how to resume from where you got to." },
+      { slug: "life-admin-with-brain-fog", reason: "If a hard stretch of illness or grief is what broke the planner, this builds admin that works on the bad days." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "mind-and-focus",
     body: [
@@ -6679,6 +7207,12 @@ export const GUIDES: Guide[] = [
     title: "Why you keep missing bill due dates (and a better system)",
     dek: "Missing a due date is often never reaching the moment, not forgetting. Put the date on the item, choose your reminder, and know what to do when you notice.",
     primaryQuery: "why you keep missing bill due dates",
+    next: { slug: "time-blindness-planning", reason: "Putting a date on the item helps only if you reach that day; this plans around time you cannot feel pass." },
+    related: [
+      { slug: "paperwork-pile-where-to-start", reason: "Missed bills often start in unopened mail, so this shows a ten minute way to open and sort it." },
+      { slug: "a-weekly-reset-that-survives-a-bad-week", reason: "A short weekly reset is one way to check due dates even when the week falls apart." },
+      { slug: "how-to-start-when-everything-is-overdue", reason: "If several bills are already late, this shows how to sort by who is waiting and pick one first step." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "mind-and-focus",
     body: [
@@ -6747,6 +7281,12 @@ export const GUIDES: Guide[] = [
     title: "ADHD time blindness: how to plan when later never comes",
     dek: "Later today is not a time. Plan with one exact time, made visible, and a buffer before a call, without needing to feel time pass.",
     primaryQuery: "adhd time blindness planning",
+    next: { slug: "why-you-abandon-planners-and-how-to-come-back", reason: "If your planner failed because time never felt real, this explains why systems break and how to come back." },
+    related: [
+      { slug: "why-you-keep-missing-bill-due-dates", reason: "A concrete use of one exact time: putting the date on the item so a bill does not slip past." },
+      { slug: "how-to-make-a-phone-call-you-have-been-avoiding", reason: "Booking one exact time for a call and a buffer before it is easy to try with this walkthrough." },
+      { slug: "a-weekly-reset-that-survives-a-bad-week", reason: "A ten minute weekly reset gives you one place to set the times you plan." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "mind-and-focus",
     body: [
@@ -6806,6 +7346,12 @@ export const GUIDES: Guide[] = [
     title: "Homeschool weekly schedule with a spare day built in",
     dek: "Plan four days and leave one empty on purpose, write your short-day list ahead, and put the hard subject first. Includes fill-in lines.",
     primaryQuery: "homeschool weekly schedule",
+    next: { slug: "four-day-homeschool-week", reason: "This shows how many days each subject gets across a four-day week and what to record when the fifth stays empty." },
+    related: [
+      { slug: "homeschool-subject-not-working-what-to-change-first", reason: "When the plan holds and one subject still stalls, change the time, then the amount, then go back a step." },
+      { slug: "homeschool-record-keeping-for-multiple-children", reason: "Planning around more than one child? See how to keep each child's record apart and log shared lessons." },
+      { slug: "how-to-start-homeschooling-first-month-paperwork", reason: "New to all this? Here is the order to set things up in the first month, ending with a plain first week." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "family-and-learning",
     body: [
@@ -6876,6 +7422,12 @@ export const GUIDES: Guide[] = [
     title: "Four-day homeschool week: how many days each subject gets",
     dek: "Which subjects get four days and which fewer, why a spare day helps a plan hold, and what to record when the fifth day stays empty.",
     primaryQuery: "four day homeschool week",
+    next: { slug: "homeschool-weekly-plan-with-a-spare-day", reason: "Fill-in lines and a short-day list are in this weekly plan, built around one deliberately empty day." },
+    related: [
+      { slug: "do-you-have-to-count-homeschool-days-or-hours", reason: "Does a four-day week meet your state's count? This shows how to find out whether yours counts days or hours." },
+      { slug: "how-to-check-if-your-child-learned-something", reason: "Fewer days on a subject raises the question of retention. This gives four questions to ask a week later." },
+      { slug: "homeschool-subject-not-working-what-to-change-first", reason: "If a subject gets four days and still is not moving, start here for the cheapest fix first." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "family-and-learning",
     body: [
@@ -6961,6 +7513,12 @@ export const GUIDES: Guide[] = [
     title: "Homeschool notice of intent: what it is, how to find yours",
     dek: "Sometimes a declaration or affidavit. What a notice usually covers, whether it goes to the state or your district, and five steps to find yours.",
     primaryQuery: "homeschool notice of intent",
+    next: { slug: "do-you-have-to-count-homeschool-days-or-hours", reason: "After the notice is filed, find out whether your state also wants a count of days or hours." },
+    related: [
+      { slug: "homeschool-record-keeping-requirements-by-state", reason: "To see what your state asks beyond the notice, look up your level in the state table." },
+      { slug: "how-to-start-homeschooling-first-month-paperwork", reason: "Filing is one step of several. This orders the first month, from rules to a first week." },
+      { slug: "how-to-catch-up-on-homeschool-records", reason: "Missed a filing or a record from the start? This covers how to rebuild what you can and label it." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "family-and-learning",
     body: [
@@ -7018,6 +7576,12 @@ export const GUIDES: Guide[] = [
     title: "Do you have to count homeschool days or hours?",
     dek: "Some states count days or hours and many do not. How to find out which yours does, what to look for, and the lightest way to keep the count.",
     primaryQuery: "homeschool days or hours required",
+    next: { slug: "homeschool-notice-of-intent-explained", reason: "Counting is one duty, filing is another. This explains the notice of intent and how to find yours." },
+    related: [
+      { slug: "homeschool-record-keeping-requirements-by-state", reason: "Look up your own state's level and the source to confirm it in this table of all 50 states and DC." },
+      { slug: "homeschool-attendance-what-to-track", reason: "If you do need to count, this defines what counts as a school day and the lightest three-part record." },
+      { slug: "four-day-homeschool-week", reason: "Counting days? See how a four-day week gets subjects spread across the days you actually teach." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "family-and-learning",
     body: [
@@ -7074,6 +7638,12 @@ export const GUIDES: Guide[] = [
     title: "How to start homeschooling: what to do in the first month",
     dek: "The order to follow: find your state's rules, file what is due, start a record on day one, and what can wait. Ends with a plain first week.",
     primaryQuery: "how to start homeschooling",
+    next: { slug: "homeschool-notice-of-intent-explained", reason: "The first thing due in many states. This explains what a notice covers and five steps to find yours." },
+    related: [
+      { slug: "homeschool-record-keeping-requirements-by-state", reason: "Find your state's level and the official source in this table before you file anything." },
+      { slug: "simple-homeschool-record-keeping-system", reason: "Start a record on day one with three things per entry, in a notebook or an app." },
+      { slug: "homeschool-weekly-plan-with-a-spare-day", reason: "Ready to plan the week? This one leaves a spare day and a short-day list built in." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "family-and-learning",
     body: [
@@ -7144,6 +7714,12 @@ export const GUIDES: Guide[] = [
     title: "Homeschool record keeping for multiple children",
     dek: "Two children, three subjects each, one shared afternoon. File everything by child, log shared lessons once per child, and keep each record apart.",
     primaryQuery: "homeschool record keeping multiple children",
+    next: { slug: "homeschool-record-keeping-template", reason: "Copy four columns for each child, and see what to leave off the page." },
+    related: [
+      { slug: "simple-homeschool-record-keeping-system", reason: "For the habit that holds it together across children, see three things per entry and a plan for the bad week." },
+      { slug: "what-goes-in-a-homeschool-portfolio", reason: "Each child needs their own portfolio. This covers the five contents and what to keep per subject." },
+      { slug: "homeschool-reading-log", reason: "Shared read-alouds need logging once per child. This shows the three-column reading log." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "family-and-learning",
     body: [
@@ -7200,6 +7776,12 @@ export const GUIDES: Guide[] = [
     title: "Homeschool reading log: three columns, quit books included",
     dek: "What goes in each column, why a book your child stopped still belongs on the list, and how the log fits into a portfolio or review.",
     primaryQuery: "homeschool reading log",
+    next: { slug: "what-goes-in-a-homeschool-portfolio", reason: "To turn the list into portfolio evidence, this covers the contents and what to keep per subject." },
+    related: [
+      { slug: "homeschool-record-keeping-template", reason: "Books are one column of the wider record. Here are four columns for the daily entries." },
+      { slug: "how-to-check-if-your-child-learned-something", reason: "A book list invites the next question. This gives four ways to check what your child kept." },
+      { slug: "homeschool-subject-not-working-what-to-change-first", reason: "Reading stalled? This gives the cheapest-first order for changing a subject that is not working." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "family-and-learning",
     body: [
@@ -7262,6 +7844,12 @@ export const GUIDES: Guide[] = [
     title: "Homeschool subject not working? What to change first",
     dek: "Change the time, then the amount, then go back a step, and only then look at the material. A cheapest-first order for a stalled subject.",
     primaryQuery: "homeschool subject not working",
+    next: { slug: "how-to-check-if-your-child-learned-something", reason: "Not sure it is not working? First check what actually stuck, with four questions asked a week or more later." },
+    related: [
+      { slug: "homeschool-weekly-plan-with-a-spare-day", reason: "Changing the time of day is the first fix. This plan puts the hard subject first and leaves a spare day." },
+      { slug: "homeschool-reading-log", reason: "For comprehension trouble, a reading log shows what your child finishes and what they quit." },
+      { slug: "four-day-homeschool-week", reason: "Reducing the amount is the second fix. This shows how many days each subject gets in a four-day week." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "family-and-learning",
     body: [
@@ -7329,6 +7917,12 @@ export const GUIDES: Guide[] = [
     title: "Life admin binder: what to include, in 8 sections",
     dek: "Eight sections for a binder that says where things are, what to leave out, and why a short finished one beats a long half-filled one.",
     primaryQuery: "life admin binder",
+    next: { slug: "the-if-something-happens-to-me-file", reason: "For what to actually record before you buy a binder, this gives the file and how to build it in passes." },
+    related: [
+      { slug: "which-documents-to-keep-and-where-to-put-them", reason: "To decide what belongs in the binder and what to shred, use this retention guide." },
+      { slug: "safe-deposit-box-and-spare-keys-who-can-open-it", reason: "Papers you cannot keep at home go in a box or safe, and this covers who can open them." },
+      { slug: "what-to-write-down-in-case-something-happens-to-you", reason: "For the details that are not on paper anywhere yet, this is the short list to write first." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "affairs-and-endings",
     body: [
@@ -7391,6 +7985,12 @@ export const GUIDES: Guide[] = [
     title: "If you were hospitalized, what would someone need to find?",
     dek: "A two-week test for your paperwork: who to contact, where the important papers are and how someone could get help with accounts and devices.",
     primaryQuery: "if i was hospitalized who will pay my bills",
+    next: { slug: "the-if-something-happens-to-me-file", reason: "Once you have seen the gaps, the full file shows what to record and in what order." },
+    related: [
+      { slug: "what-to-write-down-in-case-something-happens-to-you", reason: "For the short list of items that exist only in your head, use this writing prompt." },
+      { slug: "emergency-contact-and-medical-decision-maker", reason: "If a hospital needs someone to decide for you, this covers how to choose and record a health care proxy." },
+      { slug: "what-happens-to-your-pets-if-something-happens-to-you", reason: "If animals would need feeding while you were away, this covers naming someone and writing down what each needs." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "affairs-and-endings",
     body: [
@@ -7442,6 +8042,12 @@ export const GUIDES: Guide[] = [
     title: "How to choose a health care proxy, and record it",
     dek: "Choosing someone to speak for you about medical care, asking them, and writing down where the paperwork is. Forms and rules vary by state.",
     primaryQuery: "how to choose a health care proxy",
+    next: { slug: "hospital-for-two-weeks-what-would-someone-need-to-find", reason: "To see what someone would need to find in a hospital stay, this two-week test covers the rest of the paperwork." },
+    related: [
+      { slug: "the-if-something-happens-to-me-file", reason: "To record the proxy's name and where the forms are kept, this file gives you a place for it." },
+      { slug: "talking-to-your-parents-about-their-affairs", reason: "Asking a parent who speaks for them is delicate, and this offers scripts for that conversation." },
+      { slug: "who-would-raise-your-children-guardian-checklist", reason: "If you have children, naming who would raise them is the companion decision, with a checklist." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "affairs-and-endings",
     body: [
@@ -7502,6 +8108,12 @@ export const GUIDES: Guide[] = [
     title: "Who would raise your children? A guardian checklist",
     dek: "A guardian who would say no is worse than none named, because it looks settled when it is not. A checklist for choosing, asking and a second choice.",
     primaryQuery: "guardian checklist for children",
+    next: { slug: "emergency-contact-and-medical-decision-maker", reason: "After naming a guardian, this covers naming the person who would speak for your medical care." },
+    related: [
+      { slug: "update-your-paperwork-after-a-life-change", reason: "A new child is a common reason to revisit your paperwork, and this lists what to look at again." },
+      { slug: "beneficiary-forms-override-your-will", reason: "To make sure money reaches the right people as well, this compares beneficiary forms and your will." },
+      { slug: "what-happens-to-your-pets-if-something-happens-to-you", reason: "If your household includes animals, this covers naming someone to take them in and what to write down." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "affairs-and-endings",
     body: [
@@ -7553,6 +8165,12 @@ export const GUIDES: Guide[] = [
     title: "Who to notify when someone dies, in order",
     dek: "Who to tell first, what can wait, and how to keep track as you go, so the first phone calls are not the hardest part of the week.",
     primaryQuery: "who to notify when someone dies",
+    next: { slug: "how-to-find-someones-accounts-after-they-die", reason: "When a bank or policy turns up unexpectedly, this covers how to trace accounts, pensions and policies." },
+    related: [
+      { slug: "what-to-do-when-a-parent-dies", reason: "For the whole first two weeks in order, including certificates and funeral choices, use this US guide." },
+      { slug: "digital-accounts-after-a-death", reason: "Email, phone and social accounts also need handling, and this covers what providers will release." },
+      { slug: "named-executor-what-you-agreed-to", reason: "If you are the executor, this explains what the role includes and where you could be liable." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "affairs-and-endings",
     body: [
@@ -7613,6 +8231,12 @@ export const GUIDES: Guide[] = [
     title: "What to update after marriage, divorce, a move or a baby",
     dek: "Where to look again after a move, marriage, new child or divorce, named people first, and what an attorney or provider can confirm.",
     primaryQuery: "what to update after a life change",
+    next: { slug: "beneficiary-forms-override-your-will", reason: "After a life change, the first form to check is your beneficiary designation, and this explains which one wins." },
+    related: [
+      { slug: "who-would-raise-your-children-guardian-checklist", reason: "A new baby means naming a guardian, and this checklist covers choosing and asking someone." },
+      { slug: "emergency-contact-and-medical-decision-maker", reason: "Marriage or divorce can change who should speak for your medical care, and this explains the choice." },
+      { slug: "the-if-something-happens-to-me-file", reason: "To keep the updated details in one place, this file records what exists and where it is kept." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "affairs-and-endings",
     body: [
@@ -7664,6 +8288,12 @@ export const GUIDES: Guide[] = [
     title: "Who can open a safe deposit box or safe when you die?",
     dek: "What to write down about a safe, a deposit box and spare keys, why a name beats a code, and how to check that someone can really open them.",
     primaryQuery: "who can open a safe deposit box",
+    next: { slug: "where-to-look-for-a-will", reason: "If a will may be in a box or safe, this covers where wills are kept and how to search." },
+    related: [
+      { slug: "life-admin-binder-what-goes-in-it", reason: "For papers kept at home, this shows how to organize them into a binder someone could open." },
+      { slug: "the-if-something-happens-to-me-file", reason: "To record who can open the box and where the keys are, this file gives you a place to note it." },
+      { slug: "which-documents-to-keep-and-where-to-put-them", reason: "Deciding what deserves a box versus a shredder starts with this retention guide." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "affairs-and-endings",
     body: [
@@ -7719,6 +8349,12 @@ export const GUIDES: Guide[] = [
     title: "Who will take care of your pets if something happens to you",
     dek: "A name, what each animal needs, and where the papers are. A short note that makes a hard week easier for whoever steps in.",
     primaryQuery: "who will take care of my pets if something happens to me",
+    next: { slug: "who-would-raise-your-children-guardian-checklist", reason: "If you also have children, this checklist covers choosing someone who would say yes." },
+    related: [
+      { slug: "the-if-something-happens-to-me-file", reason: "To store the note about your animals where someone will look, use this file." },
+      { slug: "what-to-write-down-in-case-something-happens-to-you", reason: "For the short list of everything else that lives only in your head, use this prompt." },
+      { slug: "hospital-for-two-weeks-what-would-someone-need-to-find", reason: "A hospital stay is the most likely reason someone needs to step in, and this test shows what they would need." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "affairs-and-endings",
     body: [
@@ -7769,6 +8405,12 @@ export const GUIDES: Guide[] = [
     title: "How to write a one-page trip itinerary",
     dek: "A trip itinerary that survives a change is short, in time order, with the reference beside each booking. What goes on each line and what to leave off.",
     primaryQuery: "one page trip itinerary",
+    next: { slug: "what-to-keep-on-paper-when-you-travel", reason: "With the itinerary written, this covers what else belongs on paper and why to print two copies." },
+    related: [
+      { slug: "organising-a-multi-stop-trip-without-a-spreadsheet", reason: "For a trip with many bookings resting on each other, this shows how to record them without a spreadsheet." },
+      { slug: "how-to-plan-a-group-trip", reason: "A one-page itinerary is also what you send the group, and this covers who books what and who is on it." },
+      { slug: "flight-changed-what-else-is-affected", reason: "When a departure time moves, this shows which lines on the itinerary need checking first." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "travel",
     body: [
@@ -7834,6 +8476,12 @@ export const GUIDES: Guide[] = [
     title: "Packing list for a week away, by person",
     dek: "Start with what every trip needs, add what this one asks for, then split it by person. A method you can tick off as you pack.",
     primaryQuery: "packing list for a week away",
+    next: { slug: "carry-on-only-packing-list", reason: "If the whole week must fit in one bag, this covers choosing the bag first and packing to the list." },
+    related: [
+      { slug: "packing-and-planning-for-a-trip-with-kids-or-a-baby", reason: "Packing for children too? This adds per-child lists and the paperwork to note for each." },
+      { slug: "night-before-you-travel-checklist", reason: "The evening before you leave, this six-check list confirms the bag holds what matters." },
+      { slug: "road-trip-planning-checklist", reason: "Packing for a drive instead of a flight? This adds the stops, stays, car check and who drives when." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "travel",
     body: [
@@ -7893,6 +8541,12 @@ export const GUIDES: Guide[] = [
     title: "Carry-on only packing list: how to fit it in one bag",
     dek: "One bag, nothing checked. Choose the bag first, then pack to the list, and check size and weight on your airline's own page before you go.",
     primaryQuery: "carry on only packing list",
+    next: { slug: "night-before-you-travel-checklist", reason: "With the bag packed and closed, this covers the last checks on documents, cards, phone and times." },
+    related: [
+      { slug: "packing-list-for-a-week-away", reason: "For a longer per-person list split into shared and personal items, start with this week-away guide." },
+      { slug: "first-international-trip-checklist", reason: "A first trip abroad has rules a carry-on cannot fix, so this lists what to sort and how early." },
+      { slug: "packing-and-planning-for-a-trip-with-kids-or-a-baby", reason: "Flying with children changes what fits in one bag, and this covers what to pack for each child." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "travel",
     body: [
@@ -7957,6 +8611,12 @@ export const GUIDES: Guide[] = [
     title: "Traveling with kids or a baby: packing and planning",
     dek: "What changes when children come along: what to pack per child, the paperwork to note for each, and how to plan a day with room for a bad one.",
     primaryQuery: "traveling with kids or a baby",
+    next: { slug: "packing-list-for-a-week-away", reason: "For the full per-person packing method that the child lists build on, start with this guide." },
+    related: [
+      { slug: "travel-document-checklist", reason: "Each child has papers to note, and this shows what to carry and where to keep it." },
+      { slug: "carry-on-only-packing-list", reason: "If you are trying to travel light with a child, this covers picking the bag first and packing to a list." },
+      { slug: "road-trip-planning-checklist", reason: "Driving with children means planning stops around them, and this covers daily distance, stays and the car check." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "travel",
     body: [
@@ -8027,6 +8687,12 @@ export const GUIDES: Guide[] = [
     title: "Lost passport, wallet or phone abroad: what to have ready",
     dek: "Passport, wallet or phone gone abroad. What to gather before you call anyone, the one person to tell first, and where the official steps live.",
     primaryQuery: "lost passport abroad",
+    next: { slug: "travel-document-checklist", reason: "Before anything goes missing, this shows how to note where each document is kept so you can say what is gone." },
+    related: [
+      { slug: "what-to-keep-on-paper-when-you-travel", reason: "Paper copies and the hotel address in the local language help when a phone is the thing you lost." },
+      { slug: "hotel-cannot-find-your-reservation", reason: "If the loss leaves you without a card or booking, this covers what to say at the hotel desk tonight." },
+      { slug: "first-international-trip-checklist", reason: "For a first trip abroad, this covers sorting money, insurance and phone before you leave, so a loss hurts less." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "travel",
     body: [
@@ -8077,6 +8743,12 @@ export const GUIDES: Guide[] = [
     title: "First international trip checklist: what to do and when",
     dek: "Passport, entry rules, money, insurance and phone, in the order to sort them out and how early to start. Check every rule at the official source.",
     primaryQuery: "first international trip checklist",
+    next: { slug: "travel-document-checklist", reason: "Once the rules are checked, this covers the documents each traveler carries and where to note each one." },
+    related: [
+      { slug: "night-before-you-travel-checklist", reason: "On the last evening, this six-check list confirms nothing from the timeline was missed." },
+      { slug: "lost-passport-wallet-or-phone-abroad-what-to-have-ready", reason: "Know who to tell and what to gather if a passport, wallet or phone disappears abroad." },
+      { slug: "packing-list-for-a-week-away", reason: "After the paperwork, this shows how to build a packing list by person that you can tick off." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "travel",
     body: [
@@ -8140,6 +8812,12 @@ export const GUIDES: Guide[] = [
     title: "Road trip planning checklist: stops, stays, car and pack",
     dek: "The few things to fix before you drive: daily distance, stays with their references, the car check, who drives when, and what stays within reach.",
     primaryQuery: "road trip planning checklist",
+    next: { slug: "night-before-you-travel-checklist", reason: "Before you set off, this short evening list covers the documents, phone and house checks the route does not." },
+    related: [
+      { slug: "packing-list-for-a-week-away", reason: "For the pack itself, this shows how to build a list by person with shared items marked." },
+      { slug: "how-to-plan-a-group-trip", reason: "Sharing the drive with others? This covers who books what, who is on each booking and where answers live." },
+      { slug: "how-to-write-a-one-page-trip-itinerary", reason: "Turn the stops and stays into a single page in time order with a reference beside each booking." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "travel",
     body: [
@@ -8200,6 +8878,12 @@ export const GUIDES: Guide[] = [
     title: "Night before you travel checklist: a short list",
     dek: "Six checks the evening before you go: documents, cards, phone, times and the house, so the morning is only leaving. Plus what to skip.",
     primaryQuery: "night before travel checklist",
+    next: { slug: "what-to-keep-on-paper-when-you-travel", reason: "If you have not printed yet, this covers the one page worth printing and why to keep two copies." },
+    related: [
+      { slug: "travel-document-checklist", reason: "For a fuller check of what each traveler needs and where it is kept, use this documents guide." },
+      { slug: "carry-on-only-packing-list", reason: "To check the bag itself, this covers packing one carry-on to a list, with size and weight checked on the airline page." },
+      { slug: "flight-delayed-with-a-connection-what-to-do-first", reason: "If the morning goes wrong at the airport, this covers the first twenty minutes of a delay with a connection." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "travel",
     body: [
@@ -8250,6 +8934,12 @@ export const GUIDES: Guide[] = [
     title: "How to know what maintenance your car is due for",
     dek: "Work out what is due by miles and by months, whichever comes first, using the intervals in your owner's manual and one recorded date.",
     primaryQuery: "what maintenance is due on my car",
+    next: { slug: "car-maintenance-by-mileage-start-with-your-manual", reason: "Once you know what is due, this shows how to pull the mileage and month intervals for your own car from the manual." },
+    related: [
+      { slug: "car-maintenance-log-what-to-write-down", reason: "Keep the dates and odometer readings this answer depends on in a running log, one line per job." },
+      { slug: "winter-car-prep-checklist", reason: "Heading into cold weather, this lists the battery, tire and wiper checks worth doing before the first frost." },
+      { slug: "car-paperwork-dates-organizer", reason: "Registration and insurance have due dates too, and this shows how to track them alongside the service jobs." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "vehicles",
     body: [
@@ -8304,6 +8994,12 @@ export const GUIDES: Guide[] = [
     title: "What to tell a mechanic before the work starts",
     dek: "Say what you are asking for, the most you will approve without a call, and ask for an estimate in writing. A short script and a page to hand over.",
     primaryQuery: "what to tell a mechanic before repair",
+    next: { slug: "car-maintenance-log-what-to-write-down", reason: "After the work is done, write it down with date and mileage so the next shop or buyer can see it." },
+    related: [
+      { slug: "what-is-due-on-my-car-right-now", reason: "Before you book the shop, check which jobs are actually due so you ask for the right work." },
+      { slug: "glove-box-checklist-what-to-keep", reason: "Keep the shop estimate and a pen card with your essential numbers where you can reach them." },
+      { slug: "two-cars-one-household-maintenance", reason: "If two cars go to the same shop, this keeps each job filed against the right vehicle." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "vehicles",
     body: [
@@ -8367,6 +9063,12 @@ export const GUIDES: Guide[] = [
     title: "Bought a used car with no service records? What to do",
     dek: "No service history on your used car? Ask the seller, note the odometer, find the manual and start your own record from today.",
     primaryQuery: "used car no service records",
+    next: { slug: "car-maintenance-log-what-to-write-down", reason: "Start your own record today: this lays out the columns and what to write on each line." },
+    related: [
+      { slug: "car-maintenance-by-mileage-start-with-your-manual", reason: "With no history to go on, find your manual's intervals and write them down using this guide." },
+      { slug: "what-is-due-on-my-car-right-now", reason: "Work out what is probably due now, working from the miles and the date you bought the car." },
+      { slug: "first-car-checklist-for-new-drivers", reason: "Use the first-week checklist to get the manual, papers and glove box sorted in one pass." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "vehicles",
     body: [
@@ -8427,6 +9129,12 @@ export const GUIDES: Guide[] = [
     title: "Car maintenance log: what to write down",
     dek: "A car maintenance log needs three things on every line and two optional ones. What to write, what to leave off, and how to keep it up.",
     primaryQuery: "car maintenance log",
+    next: { slug: "what-is-due-on-my-car-right-now", reason: "With a log in hand, this shows how to read it against your intervals and see what is due now." },
+    related: [
+      { slug: "car-maintenance-by-mileage-start-with-your-manual", reason: "Pull the intervals from your owner's manual so each log line has a date and mileage to aim for." },
+      { slug: "selling-your-car-with-a-service-history", reason: "When the car changes hands, this turns your log into a service history a buyer can read." },
+      { slug: "used-car-no-service-records-what-to-do", reason: "If the car came with no paperwork, this explains how to begin a record from the day you get it." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "vehicles",
     body: [
@@ -8486,6 +9194,12 @@ export const GUIDES: Guide[] = [
     title: "Selling your car: how to present your service history",
     dek: "A dated record shows a buyer how a car was looked after. What to bring, what a record you kept yourself can and cannot prove, and how to print it.",
     primaryQuery: "selling a car with service history",
+    next: { slug: "car-maintenance-log-what-to-write-down", reason: "Before you hand anything over, this shows how to keep the record complete: date, miles and what was done." },
+    related: [
+      { slug: "car-paperwork-dates-organizer", reason: "Gather the registration, insurance and inspection papers a buyer will ask to see at the same time." },
+      { slug: "used-car-no-service-records-what-to-do", reason: "Buying rather than selling, this covers what to do when the car arrives without any service history." },
+      { slug: "glove-box-checklist-what-to-keep", reason: "Clear out the glove box before the handover and decide which papers stay with the car." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "vehicles",
     body: [
@@ -8534,6 +9248,12 @@ export const GUIDES: Guide[] = [
     title: "Car maintenance schedule by mileage: check your manual",
     dek: "Charts online are averages. How to pull the mileage and month intervals for your own car out of the manual and write them down once.",
     primaryQuery: "car maintenance schedule by mileage",
+    next: { slug: "what-is-due-on-my-car-right-now", reason: "After you have your intervals, this turns them into a clear answer on what is due right now." },
+    related: [
+      { slug: "car-maintenance-log-what-to-write-down", reason: "Record each interval and the last date it was done in a log so the manual numbers stay useful." },
+      { slug: "first-car-checklist-for-new-drivers", reason: "New to the car, this first-week checklist puts finding the manual at the top of the list." },
+      { slug: "two-cars-one-household-maintenance", reason: "If you run two cars, this shows how to keep each one's intervals and dates apart." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "vehicles",
     body: [
@@ -8596,6 +9316,12 @@ export const GUIDES: Guide[] = [
     title: "Winter car prep checklist: what to check before frost",
     dek: "Battery, tires, wipers, washer fluid, lights and an emergency kit: six checks before the first hard frost, and what to write down.",
     primaryQuery: "winter car prep checklist",
+    next: { slug: "what-is-due-on-my-car-right-now", reason: "Alongside the cold-weather checks, see what else is due by miles or months before the season starts." },
+    related: [
+      { slug: "car-maintenance-by-mileage-start-with-your-manual", reason: "For fluids and other jobs with intervals, look up your manual's figures with this guide." },
+      { slug: "car-maintenance-log-what-to-write-down", reason: "Write down the battery, tire and wiper checks you do so next winter starts from facts." },
+      { slug: "what-to-tell-a-mechanic-before-work-starts", reason: "If a check turns up a worn part, this covers what to say to the shop before the repair starts." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "vehicles",
     body: [
@@ -8646,6 +9372,12 @@ export const GUIDES: Guide[] = [
     title: "How to keep track of maintenance on two cars",
     dek: "Which car needs the oil change? Keep a separate record for each car, label them by plate or name, and check both together once a month.",
     primaryQuery: "keep track of maintenance on two cars",
+    next: { slug: "car-maintenance-log-what-to-write-down", reason: "Give each car its own record, and this shows the columns and what to write on every line." },
+    related: [
+      { slug: "car-paperwork-dates-organizer", reason: "Two cars means two sets of renewals, and this shows how to track each registration and insurance date." },
+      { slug: "what-is-due-on-my-car-right-now", reason: "Check what is due on each car in turn with this method, one after the other." },
+      { slug: "car-maintenance-by-mileage-start-with-your-manual", reason: "Each car has its own intervals, and this shows where to find them in each manual." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "vehicles",
     body: [
@@ -8693,6 +9425,12 @@ export const GUIDES: Guide[] = [
     title: "What to keep in your glove box (and what to leave home)",
     dek: "The papers and numbers worth having in the car, what is better kept at home, and how to put the essentials on one card with blank lines for a pen.",
     primaryQuery: "what to keep in your glove box",
+    next: { slug: "car-paperwork-dates-organizer", reason: "Before you stock the glove box, this shows how to track the dates on the papers you keep in it." },
+    related: [
+      { slug: "first-car-checklist-for-new-drivers", reason: "Set up the glove box as one step in the first-week list for a car new to you." },
+      { slug: "what-to-tell-a-mechanic-before-work-starts", reason: "A card with your numbers helps at the shop counter, and this covers what to say before work starts." },
+      { slug: "winter-car-prep-checklist", reason: "Winter adds items like a scraper and kit, and this lists the checks to make before frost." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "vehicles",
     body: [
@@ -8741,6 +9479,12 @@ export const GUIDES: Guide[] = [
     title: "How to track car registration and insurance renewals",
     dek: "Note the kind of paper, the date and where it is kept, then look six weeks ahead so a renewal does not sneak up. Check your state for its rules.",
     primaryQuery: "track car registration and insurance renewals",
+    next: { slug: "glove-box-checklist-what-to-keep", reason: "Once the dates are tracked, this shows which papers to carry in the car and which to keep at home." },
+    related: [
+      { slug: "two-cars-one-household-maintenance", reason: "Running two cars doubles the renewals, and this keeps them from getting mixed up." },
+      { slug: "selling-your-car-with-a-service-history", reason: "When it is time to sell, this shows how to present the papers and service history to a buyer." },
+      { slug: "what-is-due-on-my-car-right-now", reason: "Renewals sit beside service jobs, and this shows how to see what is due by miles and months." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "vehicles",
     body: [
@@ -8789,6 +9533,12 @@ export const GUIDES: Guide[] = [
     title: "First car checklist: what to do in the first week",
     dek: "Find the manual, note the mileage, locate the papers, start a record and put the essentials in the glove box, all in your first week with the car.",
     primaryQuery: "first car checklist",
+    next: { slug: "car-maintenance-by-mileage-start-with-your-manual", reason: "Start with the manual: this shows how to pull your car's intervals from it and write them down." },
+    related: [
+      { slug: "car-maintenance-log-what-to-write-down", reason: "Turn the first-week notes into a proper record using this guide to the columns and habits." },
+      { slug: "glove-box-checklist-what-to-keep", reason: "Put the essentials on one card for the glove box, with blank lines for a pen." },
+      { slug: "car-paperwork-dates-organizer", reason: "Find and calendar the registration, insurance and inspection dates so none slip by." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "vehicles",
     body: [
@@ -8844,6 +9594,12 @@ export const GUIDES: Guide[] = [
     title: "What to put in a family medical binder",
     dek: "Eight things worth writing down for each person, what to leave out, and why one page per person keeps the wrong allergy off the wrong form.",
     primaryQuery: "what to put in a family medical binder",
+    next: { slug: "medication-list-what-to-write-down", reason: "Once each person has a page, the medicine list is the section that goes stale fastest, and this shows how to write it." },
+    related: [
+      { slug: "school-and-camp-health-forms-what-to-have-ready", reason: "When a camp or school form arrives asking for the same details, this shows how to pull them from your binder page." },
+      { slug: "babysitter-and-grandparent-info-sheet", reason: "To hand part of the binder to a sitter or grandparent, this covers the one-page version and what goes on it." },
+      { slug: "caring-for-a-parent-and-kids-one-place", reason: "If you also look after a parent, this sets up the same binder with one page per person across both generations." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "family-health",
     body: [
@@ -8897,6 +9653,12 @@ export const GUIDES: Guide[] = [
     title: "Camp and school health forms: what to have ready",
     dek: "Camp, school and sports forms ask for the same seven things every year. Get the answers on one page before the form arrives in the mail.",
     primaryQuery: "camp health form",
+    next: { slug: "what-to-leave-off-a-health-page-you-hand-over", reason: "Before you copy anything onto a form, check which health details a school or camp actually needs from you." },
+    related: [
+      { slug: "what-goes-in-a-family-health-binder", reason: "To keep the answers these forms ask for in one place all year, start with the family medical binder." },
+      { slug: "babysitter-and-grandparent-info-sheet", reason: "When the form is for a sitter or grandparent rather than a camp, this is the shorter sheet to fill in." },
+      { slug: "emergency-contact-information-sheet", reason: "Most forms want two people to call, and this shows how to write that emergency contact page clearly." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "family-health",
     body: [
@@ -8948,6 +9710,12 @@ export const GUIDES: Guide[] = [
     title: "Babysitter information sheet: what to put on it",
     dek: "A one-page sheet for a sitter or grandparent: allergies first, what is taken now, two people to call and bedtime notes. What to leave off, too.",
     primaryQuery: "babysitter information sheet",
+    next: { slug: "emergency-contact-information-sheet", reason: "For the names, numbers and few facts someone needs in a hurry, this covers the emergency sheet to keep beside it." },
+    related: [
+      { slug: "what-to-leave-off-a-health-page-you-hand-over", reason: "Not everything about your child belongs in a sitter's hands, and this helps you decide what stays off the page." },
+      { slug: "medication-list-what-to-write-down", reason: "If your child takes something regularly, this shows how to write the medicine line so a sitter can read it." },
+      { slug: "school-and-camp-health-forms-what-to-have-ready", reason: "For the longer forms a camp or school sends, this lists what to have ready before they arrive." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "family-health",
     body: [
@@ -8996,6 +9764,12 @@ export const GUIDES: Guide[] = [
     title: "Doctor appointment checklist for the day before",
     dek: "Write your questions, list what is taken now, note symptoms with dates and leave room for notes. A short paperwork list for a doctor visit.",
     primaryQuery: "doctor appointment checklist",
+    next: { slug: "questions-to-bring-to-the-doctor", reason: "With the paperwork gathered, turn to the questions themselves and how to write them so the important one comes first." },
+    related: [
+      { slug: "medication-list-what-to-write-down", reason: "Doctors ask what is taken now, and this shows how to write the medication list so it matches the labels." },
+      { slug: "symptom-notes-for-a-doctor-visit", reason: "If the visit is about something that comes and goes, this covers noting when it started and what helped." },
+      { slug: "new-doctor-intake-what-to-bring", reason: "When the doctor is someone new, this covers the extra history worth bringing to a first visit." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "family-health",
     body: [
@@ -9044,6 +9818,12 @@ export const GUIDES: Guide[] = [
     title: "Questions to ask the doctor: how to write them down",
     dek: "One question per line, the important one first, and space for each answer. A one-page method for a short appointment, with room to tick them off.",
     primaryQuery: "how to write questions for the doctor",
+    next: { slug: "symptom-notes-for-a-doctor-visit", reason: "Your questions land better with dated notes behind them, and this shows what to write about a symptom." },
+    related: [
+      { slug: "doctor-appointment-prep-checklist", reason: "For everything else to gather the day before, the appointment checklist covers the whole paperwork list." },
+      { slug: "new-doctor-intake-what-to-bring", reason: "If you are seeing a doctor for the first time, this lists what a first visit tends to ask you for." },
+      { slug: "medication-list-what-to-write-down", reason: "Bring the current medicine list alongside your questions, and this explains how to write one." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "family-health",
     body: [
@@ -9093,6 +9873,12 @@ export const GUIDES: Guide[] = [
     title: "How to keep a family medication list",
     dek: "Name, dose and how often, copied exactly as the label says, plus the date the list was last right. Always follow your prescriber or pharmacist.",
     primaryQuery: "how to keep a medication list",
+    next: { slug: "doctor-appointment-prep-checklist", reason: "Once the list is right, this shows what else to gather the day before a doctor visit." },
+    related: [
+      { slug: "symptom-notes-for-a-doctor-visit", reason: "Alongside the medicines, dated notes about how someone has been feeling give the appointment more to work from." },
+      { slug: "emergency-contact-information-sheet", reason: "The same medicine facts can go on an emergency sheet, and this covers what else belongs there." },
+      { slug: "new-doctor-intake-what-to-bring", reason: "For a first visit with a new doctor, this shows where the medication list fits among the other papers." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "family-health",
     body: [
@@ -9141,6 +9927,12 @@ export const GUIDES: Guide[] = [
     title: "Symptom log for a doctor visit: what to write down",
     dek: "Four notes help a doctor most: when it started, how long it lasted, how bad it was and what helped. A notes page, not a symptom checker.",
     primaryQuery: "symptom log for doctor visit",
+    next: { slug: "questions-to-bring-to-the-doctor", reason: "After you have the notes, turn them into short written questions to ask before time runs out." },
+    related: [
+      { slug: "doctor-appointment-prep-checklist", reason: "To fit the symptom page into a full visit routine, use the checklist for the day before." },
+      { slug: "new-doctor-intake-what-to-bring", reason: "A new doctor has none of your history, and this shows how to bring symptoms and background on one page." },
+      { slug: "medication-list-what-to-write-down", reason: "Doctors often ask what has been taken as well, so this shows how to keep the medicine list current." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "family-health",
     body: [
@@ -9189,6 +9981,12 @@ export const GUIDES: Guide[] = [
     title: "Emergency contact information sheet: what to include",
     dek: "A one-page sheet with names, numbers and the few facts someone would need. What to write, and why a printed sheet is not a substitute for a medical ID.",
     primaryQuery: "emergency contact information sheet",
+    next: { slug: "babysitter-and-grandparent-info-sheet", reason: "When someone else is minding the children, this shows how to turn these facts into a sitter sheet." },
+    related: [
+      { slug: "medication-list-what-to-write-down", reason: "The medicines someone would need to know about belong on the sheet, and this shows how to write them down." },
+      { slug: "what-to-leave-off-a-health-page-you-hand-over", reason: "Deciding how much to put on a printed page others will see is easier with these three questions." },
+      { slug: "caring-for-a-parent-and-kids-one-place", reason: "If a parent lives with you or relies on you, this shows how to keep one page each for everyone." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "family-health",
     body: [
@@ -9237,6 +10035,12 @@ export const GUIDES: Guide[] = [
     title: "What to bring to a new doctor appointment",
     dek: "Allergies, medicines, conditions, family history and recent symptoms on one page, so a first visit starts from facts instead of memory.",
     primaryQuery: "what to bring to a new doctor appointment",
+    next: { slug: "medication-list-what-to-write-down", reason: "The medicine list is the item a new doctor asks for first, so write it out before you go." },
+    related: [
+      { slug: "doctor-appointment-prep-checklist", reason: "For the rest of the paperwork to gather before any visit, use the appointment checklist." },
+      { slug: "symptom-notes-for-a-doctor-visit", reason: "If the reason for the visit is a symptom, this shows how to write it down with dates." },
+      { slug: "caring-for-a-parent-and-kids-one-place", reason: "When the new patient is your parent, this covers keeping their information next to your children's." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "family-health",
     body: [
@@ -9287,6 +10091,12 @@ export const GUIDES: Guide[] = [
     title: "What health information to share with a sitter or school",
     dek: "A sitter, a camp and a new doctor each need different facts. Three questions to ask before you print, and what to keep on your own page.",
     primaryQuery: "what health information to share with a school",
+    next: { slug: "emergency-contact-information-sheet", reason: "Once you know what to share, this shows how to set out the emergency page that everyone can see." },
+    related: [
+      { slug: "babysitter-and-grandparent-info-sheet", reason: "For the actual sitter or grandparent sheet, this lists what goes on it and how to order it." },
+      { slug: "school-and-camp-health-forms-what-to-have-ready", reason: "Schools and camps ask for a fixed set of details, and this lists what to have ready." },
+      { slug: "what-goes-in-a-family-health-binder", reason: "To keep the full set of private details in one place, start with the family medical binder." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "family-health",
     body: [
@@ -9337,6 +10147,12 @@ export const GUIDES: Guide[] = [
     title: "Caregiver binder for a parent and kids: one page each",
     dek: "Looking after a parent and children means two sets of forms and medicines. Same headings, one page per person, printed one at a time.",
     primaryQuery: "caregiver binder for parent and kids",
+    next: { slug: "what-goes-in-a-family-health-binder", reason: "For the basic setup of one health page per person, start with the family medical binder." },
+    related: [
+      { slug: "medication-list-what-to-write-down", reason: "Two generations means two medicine lists, and this shows how to keep each one exactly as labeled." },
+      { slug: "emergency-contact-information-sheet", reason: "Anyone might need to reach the right person fast, and this covers an emergency sheet for each household member." },
+      { slug: "what-to-leave-off-a-health-page-you-hand-over", reason: "When a sibling or helper needs some but not all of the information, this helps you choose what to share." },
+    ],
     publishedAt: "2026-09-26",
     areaSlug: "family-health",
     body: [

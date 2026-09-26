@@ -118,6 +118,24 @@ describe("curated related and next links", () => {
     }
     expect(bad).toEqual([]);
   });
+
+  it("gives every guide a next step, and no two guides the same reason line", () => {
+    const missing = GUIDES.filter((g) => !g.next || (g.related ?? []).length < 3).map((g) => g.slug);
+    const reasons = GUIDES.flatMap((g) => [...(g.related ?? []), ...(g.next ? [g.next] : [])].map((l) => l.reason));
+    const dupes = reasons.filter((r, i) => reasons.indexOf(r) !== i);
+    // The two Series guides have nothing else in their area to point at.
+    expect(missing.filter((s) => GUIDES.find((g) => g.slug === s)?.areaSlug !== "series")).toEqual([]);
+    expect(dupes).toEqual([]);
+  });
+
+  it("leaves no guide with fewer than two hand-picked links pointing at it", () => {
+    const inbound = new Map<string, number>(GUIDES.map((g) => [g.slug, 0]));
+    for (const g of GUIDES) {
+      for (const l of [...(g.related ?? []), ...(g.next ? [g.next] : [])]) inbound.set(l.slug, (inbound.get(l.slug) ?? 0) + 1);
+    }
+    const thin = [...inbound].filter(([slug, n]) => n < 2 && GUIDES.find((g) => g.slug === slug)?.areaSlug !== "series").map(([slug, n]) => `${slug}: ${n}`);
+    expect(thin).toEqual([]);
+  });
 });
 
 describe("relatedPicks", () => {
