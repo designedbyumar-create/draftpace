@@ -8635,6 +8635,536 @@ export const GUIDES: Guide[] = [
       },
     ],
   },
+
+  {
+    slug: "what-goes-in-a-family-health-binder",
+    title: "What goes in a family health binder",
+    dek: "A family health binder holds the answers every form asks: who they are, allergies, medications, doctors, insurance, vaccines and who to call. What goes in it, and what to leave out.",
+    publishedAt: "2026-09-26",
+    areaSlug: "family-health",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Most families keep their health information in their heads, a kitchen drawer and a few patient portals. It works until a form asks for something you have to look up, or a sitter needs to know something you have not written down.",
+          "A family health binder is a single place that holds the answers forms keep asking for. It is a record of what you know, not medical advice, and it supplements the paperwork a clinic gives you. It does not replace it.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Eight things worth writing down",
+        checkable: true,
+        items: [
+          "Who they are: name, and date of birth if forms ask for it.",
+          "Allergies, and what happens.",
+          "Medications: the name, the dose as given to you, and how often.",
+          "Conditions, in your own words.",
+          "Doctors and pharmacy, with phone numbers.",
+          "Health insurance: the insurer, member ID and group number.",
+          "Vaccines, typed in from their record, with dates.",
+          "Who to call in an emergency.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "One page per person",
+        paragraphs: [
+          "Keep each person's facts on their own page. Adults and children are the same kind of record. Mixing two people on one page is how the wrong allergy ends up on the wrong form.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What to leave out",
+        paragraphs: [
+          "Leave out anything you do not need to hand over: test results you do not understand, guesses about what something means, and anything you would not want a school or a sitter to read. A binder is a working record, not an archive of everything.",
+          "For what to do with the pages once you have them, see [school and camp health forms](/guides/school-and-camp-health-forms-what-to-have-ready) and [what to leave off a health page you hand over](/guides/what-to-leave-off-a-health-page-you-hand-over).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Family Health Binder keeps what you type in for each person on one card: allergies, medications, conditions, doctors, insurance, vaccines and who to call. It prints five pages from that: a forms sheet, a caregiver sheet, an emergency card, a visit page and an intake summary. It records what you enter and never says what anyone should do. There are no reminders, no sharing and no AI. It is a web app, $34 once, and it is not medical advice.",
+      },
+    ],
+  },
+
+  {
+    slug: "school-and-camp-health-forms-what-to-have-ready",
+    title: "School and camp health forms: what to have ready",
+    dek: "Every summer, every school year, the same questions. What to have ready in one place so the forms take minutes, not an evening.",
+    publishedAt: "2026-09-26",
+    areaSlug: "family-health",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "School, camp and sports forms ask for much the same things every year. The questions barely change, but the answers are scattered across a phone, a portal and a drawer.",
+          "What a school or camp requires differs, so ask them what they need and follow their instructions. This guide is about having the answers ready, not about what any place requires.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What to have ready",
+        checkable: true,
+        items: [
+          "Date of birth.",
+          "An emergency contact, with a phone number.",
+          "Health insurance: the insurer, member ID and group number.",
+          "Their doctor, with a phone number.",
+          "Allergies, and what happens.",
+          "Medications, with the dose and how often as given to you.",
+          "Vaccines, typed in from their record. Ask the school or camp which ones it needs to see.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The order forms ask in",
+        paragraphs: [
+          "Most forms start with who the child is and who to call. Then insurance and doctors. Then health: allergies, medications, anything staff should know. Then vaccines or a signed statement. If your page follows the same order, filling in the form is copying from one to the other.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Keep it beside the form",
+        paragraphs: [
+          "Print your page and put it beside the form. It is quicker than searching, and it is less likely to leave something out. For what to leave off a page you hand over, see [what to leave off a health page you hand over](/guides/what-to-leave-off-a-health-page-you-hand-over).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Family Health Binder prints a Forms sheet for each person: the answers school, camp, sports and new-patient forms ask for, in the order they ask, on US Letter. It sits beside the form and does not fill it in. Vaccines are names and dates you type, and the list never says what is due. Records you mark private are left off every printed page. It is a web app, $34 once, and it is not medical advice.",
+      },
+    ],
+  },
+
+  {
+    slug: "babysitter-and-grandparent-info-sheet",
+    title: "What to put on a babysitter or grandparent info sheet",
+    dek: "A one-page sheet for whoever is minding your child: allergies, what is taken, who to call and what they should know. What to include, and what to leave off.",
+    publishedAt: "2026-09-26",
+    areaSlug: "family-health",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Handing a child to a sitter or grandparent is easier when they have the same information you would. A single page, on the fridge or in their hand, is more useful than a long conversation at the door.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What to put on it",
+        checkable: true,
+        items: [
+          "Allergies first, in a place that is easy to see, and what happens.",
+          "What is taken now, with the dose and how often as given to you.",
+          "Who to call: you, a second person and the child's doctor, with numbers.",
+          "What to do in an emergency, in whatever form your household uses.",
+          "Bedtime, comforts and fears: the small things that make an evening go well.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Bedtime, comforts, fears",
+        paragraphs: [
+          "The notes that matter most to a sitter are often not medical at all. When bedtime is, what settles them, what worries them. A few plain lines are worth more than a paragraph of instructions.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What to leave off",
+        paragraphs: [
+          "A sitter does not need your insurance member ID or your child's full vaccine record. Leave off what they will not use. See [what to leave off a health page you hand over](/guides/what-to-leave-off-a-health-page-you-hand-over).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Family Health Binder prints a Caregiver sheet titled All about your child: allergies in a large box, what is taken now, who to call, and your own notes on routines and comforts. The notes print on that sheet and nowhere else. It says in an emergency to call 911. It does not send the page to anyone. You print it and hand it over. It is a web app, $34 once, and it is not medical advice.",
+      },
+    ],
+  },
+
+  {
+    slug: "doctor-appointment-prep-checklist",
+    title: "Doctor appointment prep checklist",
+    dek: "A short list for the day before a visit: what to write down, what to bring, and what to leave to the doctor.",
+    publishedAt: "2026-09-26",
+    areaSlug: "family-health",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Most appointments are short, and most of us forget half of what we meant to say. A few minutes of preparation the day before makes the visit more useful. This is a checklist for what to gather, not medical advice.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "The day before",
+        checkable: true,
+        items: [
+          "Write your questions down, one per line.",
+          "List what is taken now, with the dose and how often as given to you.",
+          "Note any symptoms, and when they started.",
+          "Bring your insurance information.",
+          "Leave room on the page for notes from the visit.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Write down the question, not the answer",
+        paragraphs: [
+          "The doctor's job is to answer. Yours is to bring the question. \"Can she swim this week?\" is a question. \"I think it is nothing\" is a guess, and it will not help the doctor. Write what you want to know.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Write down what was said",
+        paragraphs: [
+          "After the visit, note what was said or decided while it is fresh. It is easy to lose by the time you reach the car. For the questions page itself, see [questions to bring to the doctor, on one page](/guides/questions-to-bring-to-the-doctor).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "In Family Health Binder, you can plan a visit and write your questions, one per line, then add what was said afterwards. The Visit page prints your questions with tick boxes, what is taken now, recent symptom notes and room for notes from the visit. It is a record only: it does not remind, schedule or book anything. It is a web app, $34 once, and it is not medical advice.",
+      },
+    ],
+  },
+
+  {
+    slug: "questions-to-bring-to-the-doctor",
+    title: "Questions to bring to the doctor, on one page",
+    dek: "Writing questions down means you still have them when you are in the room. How to write them so they get answered.",
+    publishedAt: "2026-09-26",
+    areaSlug: "family-health",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "The best time to think of a question is rarely when the doctor is in front of you. Write it down when it occurs to you, and bring the page.",
+          "This guide is about how to write questions, not what to ask. What matters to your family is for you and your doctor to decide.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "How to write a good question",
+        checkable: true,
+        items: [
+          "One question per line, so you can tick them off.",
+          "Be specific. \"Can she swim this week?\" is easier to answer than \"Is swimming okay?\"",
+          "Put the most important one first.",
+          "Leave a space beside each for the answer.",
+          "Keep the list short enough to get through in the time you have.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Tick them off in the room",
+        paragraphs: [
+          "Bring the page and tick each question as it is answered. Anything not ticked when you are about to leave is what to ask before you go. It is a small habit, and it works.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Write the answers down",
+        paragraphs: [
+          "A short note beside each question makes the page a record. See [doctor appointment prep checklist](/guides/doctor-appointment-prep-checklist) for what else to bring.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Family Health Binder has a Questions to ask field on each planned visit, one question per line, and prints them on the Visit page with tick boxes. It does not suggest questions or answer them. It is a web app, $34 once, and it is not medical advice.",
+      },
+    ],
+  },
+
+  {
+    slug: "medication-list-what-to-write-down",
+    title: "Medication list: what to write down",
+    dek: "A medication list for the family, with what to write and how to keep it current. Always follow what a prescriber or pharmacist tells you.",
+    publishedAt: "2026-09-26",
+    areaSlug: "family-health",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "A medication list is one of the most useful pages a family can carry. New doctors, urgent care, schools and sitters all ask what is taken now. Having it written down is quicker and more reliable than remembering.",
+          "This guide is about how to keep the list, not about any medication. It cannot tell you what to take, how much or when. For that, ask the prescriber or pharmacist and follow what they say.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "The three columns",
+        columns: ["Column", "What goes in it"],
+        rows: [
+          ["Name", "The name on the label"],
+          ["Dose", "As given to you by the prescriber or on the label"],
+          ["How often", "As given to you, in the same words"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Write what you are given",
+        paragraphs: [
+          "Copy the dose and the frequency exactly as they appear on the label or in what the prescriber told you. Do not convert or round them. A list that copies the source is safer than one that paraphrases it.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Note when it was last right",
+        paragraphs: [
+          "A list goes out of date quietly. Note the date you last checked that it was right. It tells whoever reads it how much to trust it. When something is stopped, mark it as stopped and leave it off the page you hand over.",
+          "For what to bring to a visit, see [doctor appointment prep checklist](/guides/doctor-appointment-prep-checklist).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "In Family Health Binder, each medication has a name, a dose and how often, all typed by you and never checked. A button says the list is right today and keeps the date. A stopped medication stays in the app and leaves every printed page. It does not check doses or interactions, and it sends no reminders. It is a web app, $34 once, and it is not medical advice.",
+      },
+    ],
+  },
+
+  {
+    slug: "symptom-notes-for-a-doctor-visit",
+    title: "Symptom notes for a doctor visit",
+    dek: "The four things a doctor usually asks: when it started, how long, how bad, and what helped. A notes page for the visit. Not a symptom checker.",
+    publishedAt: "2026-09-26",
+    areaSlug: "family-health",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Doctors tend to ask the same questions about a symptom, and the answers are hard to give from memory. A few notes written as it happens make the visit more useful.",
+          "This guide is about taking notes, not about what any symptom means. It cannot tell you whether something is serious. If you are worried, contact your doctor, and in an emergency, call 911.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Four short notes",
+        checkable: true,
+        items: [
+          "When it started: the date, as best you know it.",
+          "How long it lasted: hours, days or weeks.",
+          "How bad it was: mild, moderate or severe, in your own view.",
+          "What helped, in your own words.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Write it when it happens",
+        paragraphs: [
+          "The date is the part people lose first. A note written on the day is more accurate than a memory a week later. It only takes a line.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Notes, not answers",
+        paragraphs: [
+          "Write what you saw, not what you think it is. \"Started Tuesday, lasted three days, mild\" helps a doctor. \"Probably a cold\" does not. Let them decide what it means. For what else to bring, see [doctor appointment prep checklist](/guides/doctor-appointment-prep-checklist).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Family Health Binder lets you record a symptom with what it is, when it started, how long, how bad and what helped. It shows them as a dated list, newest first. It has no chart, no trend and no advice, and it does not tell you what a symptom means. Recent notes print on the visit page and the intake summary. It is a web app, $34 once, and it is not medical advice.",
+      },
+    ],
+  },
+
+  {
+    slug: "emergency-contact-information-sheet",
+    title: "Emergency contact information sheet: what to include",
+    dek: "A one-page sheet with names, numbers and the few facts someone would need. What to write, and why a printed sheet is not a substitute for a medical ID.",
+    publishedAt: "2026-09-26",
+    areaSlug: "family-health",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "An emergency information sheet is a page that tells someone who to call and what they should know. It is useful in a bag, on the fridge or in a sitter's hand. It is not medical advice, and it is not a medical ID.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What to include",
+        checkable: true,
+        items: [
+          "The person's name and age.",
+          "Allergies, in a place that is easy to see.",
+          "Who to call, with a phone number.",
+          "Their doctor, with a phone number.",
+          "Health insurance, if you want it on the page.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "A card is not a medical ID",
+        paragraphs: [
+          "A printed card is a note of what you typed in. It reflects only what you wrote, and it can be out of date. A medical ID is a different thing, and a card does not replace it. If a medical ID matters for your situation, ask your doctor.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Keep it where you can find it",
+        paragraphs: [
+          "A sheet nobody can find helps nobody. Decide where it lives: the fridge, a bag, a glove box. Tell whoever might need it where it is. For what to put on a sheet for a sitter, see [what to put on a babysitter or grandparent info sheet](/guides/babysitter-and-grandparent-info-sheet).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Family Health Binder prints an Emergency card: name, age, allergies, who to call, a doctor and insurance, on a small card you cut out of a US Letter page. It reflects only what was typed in, is not medical advice, and says it does not replace a medical ID. It is a printed paper card, not a wallet card, and it is not accessible from a locked phone. It is a web app, $34 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "new-doctor-intake-what-to-bring",
+    title: "New doctor? What to bring to the first visit",
+    dek: "A new doctor asks the same things as the last. A short summary of what to bring so the first visit starts with facts, not guesses.",
+    publishedAt: "2026-09-26",
+    areaSlug: "family-health",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "The first visit with a new doctor often begins with a clipboard. The questions are ordinary, and answering them from memory is where mistakes creep in. A one-page summary you prepared earlier is quicker and more accurate.",
+          "It supplements the paperwork the clinic gives you. It does not replace it, and it is not medical advice.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What to bring",
+        checkable: true,
+        items: [
+          "Allergies, and what happens.",
+          "Medications, with the dose and how often as given to you.",
+          "Conditions, in your own words.",
+          "Family history, as far as you know it.",
+          "Recent symptoms, with dates.",
+          "Your insurance information and a photo ID, if the clinic asks.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Several doctors, one page",
+        paragraphs: [
+          "When several doctors are involved, one page listing who they are and what each of them knows saves repeating it. Note the name, a phone number and a line on why you see them.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Start with the facts",
+        paragraphs: [
+          "Handing over a page changes how a first visit begins. The doctor starts from what you have written, and you spend the time on questions. See [doctor appointment prep checklist](/guides/doctor-appointment-prep-checklist).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Family Health Binder prints an Intake summary for a new doctor: allergies, medications, conditions, family history and recent symptoms on one page. It also keeps doctors, specialists, dentists and pharmacies with phone numbers and a note. It supplements clinic paperwork and does not replace it. It is a web app, $34 once, and it is not medical advice.",
+      },
+    ],
+  },
+
+  {
+    slug: "what-to-leave-off-a-health-page-you-hand-over",
+    title: "What to leave off a health page you hand over",
+    dek: "A sitter, a teacher and a new doctor need different things. How to decide what each page should hold, and what to keep for yourself.",
+    publishedAt: "2026-09-26",
+    areaSlug: "family-health",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Not everyone who needs some of your family's health information needs all of it. A sitter needs one set of facts, a camp another, a new doctor a third. Handing over everything is easy and rarely a good idea.",
+          "This guide is about choosing what goes on a page you print. It is not legal advice, and what a school, camp or clinic asks for is theirs to say.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Who needs what",
+        columns: ["Who", "What they usually need"],
+        rows: [
+          ["A sitter or grandparent", "Allergies, what is taken now, who to call, routines"],
+          ["A school or camp", "What the form asks: who to call, insurance, allergies, medications"],
+          ["A new doctor", "Allergies, medications, conditions, family history, recent symptoms"],
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Questions to ask before you print",
+        checkable: true,
+        items: [
+          "Does this person need this fact to do what I am asking of them?",
+          "Would I be comfortable if this page were left on a counter?",
+          "Is it current, or has something changed since I last checked?",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Keep a page for yourself",
+        paragraphs: [
+          "Keep the full record in one place for yourself, and make each page a selection from it. That way the fullest version is never the one that travels. See [what goes in a family health binder](/guides/what-goes-in-a-family-health-binder).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "In Family Health Binder, any allergy, medication, symptom, vaccine or visit can be marked Keep this private. It stays in the app and is left off every printed page, and each printed page says how many records it left off. That is a print filter, not a lock: you can still see the record in the app. Emergency contact, insurance, providers and caregiver notes have no private setting. It is a web app, $34 once, and it is not medical advice.",
+      },
+    ],
+  },
+
+  {
+    slug: "caring-for-a-parent-and-kids-one-place",
+    title: "Caring for a parent and kids: everyone's information in one place",
+    dek: "When you look after a parent and your children, the paperwork multiplies. A way to keep everyone's information in one place without mixing it up.",
+    publishedAt: "2026-09-26",
+    areaSlug: "family-health",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Looking after a parent and children at the same time means keeping track of two sets of appointments, two sets of medications and two sets of forms. The information ends up in different places, and you are the one who remembers where.",
+          "This guide is about organizing, not about anyone's care. It is not medical advice.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "A simple rule",
+        checkable: true,
+        items: [
+          "One page per person, with their name at the top.",
+          "The same headings on every page: allergies, medications, doctors, insurance, who to call.",
+          "One place to keep them all.",
+          "Print one person at a time, never several on one page.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Adults and children are the same kind of page",
+        paragraphs: [
+          "The headings are the same for a child and a parent. Keeping them the same means you always know where to look. It also means a form for either one is quick to fill in.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Note when you last checked",
+        paragraphs: [
+          "A parent's medication list may change more often than a child's. Note when you last checked each one. See [medication list: what to write down](/guides/medication-list-what-to-write-down), and for what to hand to whom, see [what to leave off a health page you hand over](/guides/what-to-leave-off-a-health-page-you-hand-over).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Family Health Binder gives every person, child, parent, partner or you, their own card under your account, with the same sections for each. You can print a forms sheet, caregiver sheet, emergency card, visit page and intake summary for one person at a time. It has no separate accounts for children, and no way to share a binder with another person. It is a web app, $34 once, and it is not medical advice.",
+      },
+    ],
+  },
 ];
 
 /**
