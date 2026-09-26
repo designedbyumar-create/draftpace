@@ -333,6 +333,13 @@ function AreaHub({ slug }: { slug: string }) {
   const guides = guidesForArea(slug);
   const companion = shopRegistry.getBySlug(area.productSlugs[0]);
   const { Mark } = areaIdentity(slug);
+  const bySlug = new Map(guides.map((g) => [g.slug, g]));
+  const startGuides = area.startHere.flatMap((s) => bySlug.get(s) ?? []);
+  const clusters = area.clusters.map((c, i) => ({
+    ...c,
+    slug: String(i + 1),
+    guides: c.slugs.flatMap((s) => bySlug.get(s) ?? []),
+  }));
   const minutes = guides.reduce((total, guide) => total + readingMinutes(guide), 0);
   const hubTrail: BreadcrumbItem[] = [
     { name: "Home", path: "/" },
@@ -388,28 +395,54 @@ function AreaHub({ slug }: { slug: string }) {
                 Nothing written for this area yet. The Companion for it already exists.
               </p>
             ) : (
-              <ol className="flex flex-col divide-y divide-[var(--border)]">
-                {guides.map((guide, i) => (
-                  <li key={guide.slug}>
-                    <Link href={`/guides/${guide.slug}`} className="group flex gap-4 py-5 first:pt-0">
-                      <span className="mt-1 shrink-0 font-mono text-[12px] tabular-nums text-[var(--faint)] transition-colors group-hover:text-[var(--area)]">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                      <span className="min-w-0">
-                        <span className="block text-[18px] font-semibold leading-snug text-[var(--text)] transition-colors group-hover:text-[var(--area)]">
-                          {guide.title}
-                        </span>
-                        <span className="mt-1.5 block text-[14.5px] leading-relaxed text-[var(--muted)]">
-                          {guide.dek}
-                        </span>
-                        <span className="mt-2 block font-mono text-[11px] text-[var(--faint)]">
-                          {readingTimeLabel(guide)}
-                        </span>
-                      </span>
-                    </Link>
-                  </li>
+              <>
+                <p className="max-w-[58ch] text-[16px] leading-relaxed text-[var(--text)]">{area.intro}</p>
+
+                <section aria-labelledby="start-here" className="mt-8">
+                  <h2 id="start-here" className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--area)]">
+                    Start here
+                  </h2>
+                  <ul className="mt-3 grid gap-3 sm:grid-cols-3">
+                    {startGuides.map((guide) => (
+                      <li key={guide.slug}>
+                        <Link
+                          href={`/guides/${guide.slug}`}
+                          className="group flex h-full flex-col rounded-[var(--radius-xl)] border border-[var(--area)]/40 bg-[var(--area-soft)] p-4"
+                        >
+                          <span className="font-serif text-[16px] font-semibold leading-snug text-[var(--text)] group-hover:text-[var(--area)]">
+                            {guide.title}
+                          </span>
+                          <span className="mt-auto pt-3 font-mono text-[11px] text-[var(--faint)]">
+                            {readingTimeLabel(guide)}
+                          </span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+
+                {clusters.map((cluster) => (
+                  <section key={cluster.title} aria-labelledby={`cluster-${cluster.slug}`} className="mt-12">
+                    <h2 id={`cluster-${cluster.slug}`} className="font-serif text-[22px] font-semibold leading-snug tracking-tight">
+                      {cluster.title}
+                    </h2>
+                    <p className="mt-1 text-[14px] leading-relaxed text-[var(--muted)]">{cluster.blurb}</p>
+                    <ul className="mt-4 flex flex-col divide-y divide-[var(--border)]">
+                      {cluster.guides.map((guide) => (
+                        <li key={guide.slug}>
+                          <Link href={`/guides/${guide.slug}`} className="group block py-4 first:pt-0">
+                            <span className="block text-[17px] font-semibold leading-snug text-[var(--text)] transition-colors group-hover:text-[var(--area)]">
+                              {guide.title}
+                            </span>
+                            <span className="mt-1.5 block text-[14.5px] leading-relaxed text-[var(--muted)]">{guide.dek}</span>
+                            <span className="mt-2 block font-mono text-[11px] text-[var(--faint)]">{readingTimeLabel(guide)}</span>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
                 ))}
-              </ol>
+              </>
             )}
           </div>
 

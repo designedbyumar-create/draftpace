@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { LIFE_AREAS } from "./areas";
-import { getGuideBySlug } from "./guides";
+import { GUIDES, getGuideBySlug } from "./guides";
 import { registerRealShopProducts } from "../shop/products";
 import { shopRegistry } from "../shop/registry";
 
@@ -43,5 +43,24 @@ describe("searched problems", () => {
     }
     expect(linked).toBeGreaterThan(40);
     expect(missing).toEqual([]);
+  });
+});
+
+describe("hub clusters", () => {
+  it("place every guide of an area in exactly one cluster, and only guides of that area", () => {
+    const problems: string[] = [];
+    for (const area of LIFE_AREAS) {
+      const filed = GUIDES.filter((g) => g.areaSlug === area.slug).map((g) => g.slug);
+      const placed = area.clusters.flatMap((c) => c.slugs);
+      for (const slug of filed) {
+        const n = placed.filter((p) => p === slug).length;
+        if (n !== 1) problems.push(`${area.slug}: ${slug} appears in ${n} clusters`);
+      }
+      for (const slug of placed) if (!filed.includes(slug)) problems.push(`${area.slug}: ${slug} is not filed under it`);
+      for (const c of area.clusters) if (c.slugs.length < 2) problems.push(`${area.slug}: cluster "${c.title}" has ${c.slugs.length} guide`);
+      const words = area.intro.trim().split(/\s+/).length;
+      if (words < 30 || words > 90) problems.push(`${area.slug}: intro is ${words} words`);
+    }
+    expect(problems).toEqual([]);
   });
 });
