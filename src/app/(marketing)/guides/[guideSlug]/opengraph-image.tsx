@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
-import { getAreaBySlug } from "@/content/areas";
-import { SERIES, getGuideBySlug } from "@/content/guides";
+import { LIFE_AREAS, getAreaBySlug } from "@/content/areas";
+import { GUIDES, SERIES, getGuideBySlug } from "@/content/guides";
 import { guideSeoTitle } from "@/content/guideMeta";
 
 /**
@@ -36,6 +36,11 @@ function fontSizeFor(title: string): number {
   if (title.length <= 34) return 84;
   if (title.length <= 48) return 72;
   return 62;
+}
+
+// Prerendered like the pages they belong to, one card per guide and area.
+export function generateStaticParams() {
+  return [...LIFE_AREAS.map((a) => ({ guideSlug: a.slug })), ...GUIDES.map((g) => ({ guideSlug: g.slug }))];
 }
 
 export default async function Image({ params }: { params: Promise<{ guideSlug: string }> }) {

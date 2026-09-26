@@ -33,12 +33,21 @@ const LINKS = [
 export type PublicNavUser = { email: string | null; displayName: string | null } | null;
 
 /**
- * Session-aware: the public marketing header never shows Sign in/Get
- * started to a visitor who already has a valid Draftpace session, the
- * `user` prop is read server-side (see the marketing layout), so there's no
- * client fetch and no signed-out-then-signed-in flash.
+ * `undefined` means the session has not been read yet. The account area is
+ * kept in the layout but hidden until it is, so a signed-in reader never
+ * sees "Sign in" flash and the header does not shift.
  */
-export default function PublicNav({ user }: { user: PublicNavUser }) {
+export type PublicNavSessionState = PublicNavUser | undefined;
+
+/**
+ * Session-aware: the public marketing header never shows Sign in/Get
+ * started to a visitor who already has a valid Draftpace session. The
+ * session is read in the browser (see PublicNavSession), which is what lets
+ * every marketing page, guides included, be prerendered and served from
+ * the CDN instead of rendered per request.
+ */
+export default function PublicNav({ user }: { user: PublicNavSessionState }) {
+  const resolving = user === undefined;
   const [open, setOpen] = useState(false);
   const accountLabel = user?.displayName || user?.email || "Account";
   const accountItems = useMemo(() => publicSignedInAccountMenuItems(() => signOutAndRedirect("/")), []);
@@ -110,7 +119,7 @@ export default function PublicNav({ user }: { user: PublicNavUser }) {
             <AccountMenu items={accountItems} label={accountLabel} only="desktop" />
           </div>
         ) : (
-          <div className="hidden items-center gap-2 lg:flex">
+          <div className={`hidden items-center gap-2 lg:flex${resolving ? " invisible" : ""}`}>
             <Button href="/login" variant="ghost" size="sm">
               Sign in
             </Button>

@@ -1,27 +1,18 @@
-import PublicNav from "@/components/public/PublicNav";
+import PublicNavSession from "@/components/public/PublicNavSession";
 import PublicFooter from "@/components/public/PublicFooter";
 import { registerShopFixtures } from "@/shop/fixtures";
 import { registerRealShopProducts } from "@/shop/products";
-import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { organizationStructuredData, websiteStructuredData } from "@/lib/structuredData";
 
 /**
- * Session is read server-side, once, here, not inside PublicNav, so the
- * signed-in vs signed-out header is correct on first paint with no client
- * fetch and no flash from one state to the other. This is the same
- * createSupabaseServerClient() every other server-rendered auth check in
- * this codebase uses (see src/app/app/layout.tsx), not a second auth path.
- * The trade-off: these routes can no longer be fully static, the same
- * trade every /app/** route already makes for the same reason.
+ * No session read here. The header learns who is signed in in the browser
+ * (PublicNavSession), so nothing in this layout depends on the request and
+ * the pages under it can be prerendered. Reading it here once made every
+ * guide render on demand.
  */
-export default async function MarketingLayout({ children }: { children: React.ReactNode }) {
+export default function MarketingLayout({ children }: { children: React.ReactNode }) {
   registerShopFixtures();
   registerRealShopProducts();
-
-  const supabase = await createSupabaseServerClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
 
   return (
     <div className="flex min-h-screen flex-col bg-[var(--bg)] text-[var(--text)]">
@@ -33,7 +24,7 @@ export default async function MarketingLayout({ children }: { children: React.Re
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteStructuredData()) }}
       />
-      <PublicNav user={user ? { email: user.email ?? null, displayName: user.user_metadata?.display_name ?? null } : null} />
+      <PublicNavSession />
       {/* overflow-x-clip, not hidden: a decorative element that bleeds
           past its own container scrolls the whole page sideways on a
           narrow screen, which is one of the worst things a marketing

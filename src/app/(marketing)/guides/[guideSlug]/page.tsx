@@ -45,6 +45,10 @@ import GuideNotice from "@/components/public/guides/GuideNotice";
  * trades for its better URLs.
  */
 
+// Every guide and area is known at build time. An unknown slug is a 404, not
+// a page to render on demand.
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return [
     ...LIFE_AREAS.map((area) => ({ guideSlug: area.slug })),
