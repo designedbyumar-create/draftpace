@@ -13,6 +13,7 @@ import {
   adjacentGuides,
   formatGuideDate,
   getGuideBySlug,
+  guideWordCount,
   guidesForArea,
   localeCounterpart,
   localeLabel,
@@ -21,11 +22,12 @@ import {
   relatedGuides,
 } from "@/content/guides";
 import { guideHeadings } from "@/content/guideHeadings";
-import { guideMetaDescription, guideMetaTitle, guideOgLocale, guideSeoTitle } from "@/content/guideMeta";
+import { guideMetaDescription, guideMetaTitle, guideOgLocale, guideSeoTitle, localeAlternates } from "@/content/guideMeta";
 import { LIFE_AREAS, getAreaBySlug } from "@/content/areas";
 import { shopRegistry } from "@/shop/registry";
 import { ensureShopRegistered } from "@/shop/ensureRegistered";
-import { guideStructuredData } from "@/lib/structuredData";
+import { collectionStructuredData, guideStructuredData, jsonLd } from "@/lib/structuredData";
+import Breadcrumbs, { type BreadcrumbItem } from "@/components/public/guides/Breadcrumbs";
 
 /**
  * One route serving two page types: a life-area hub, or a guide.
@@ -85,7 +87,13 @@ export async function generateMetadata({
     // it pushes the title past what a search result shows.
     title: { absolute: guideMetaTitle(guide) },
     description,
-    alternates: { canonical: `/guides/${guide.slug}` },
+    alternates: {
+      canonical: `/guides/${guide.slug}`,
+      // Only where a twin really exists, and always reciprocal and
+      // self-referencing: hreflang that one page declares and the other
+      // does not is ignored. The unsuffixed slug is the US page.
+      ...(localeAlternates(guide, localeCounterpart(guide)) ? { languages: localeAlternates(guide, localeCounterpart(guide)) } : {}),
+    },
     // Explicit rather than defaulted: a large image preview is what makes a
     // guide eligible for a large card in Discover and image-led results.
     robots: {
@@ -130,8 +138,17 @@ export default async function GuideOrHubPage({ params }: { params: Promise<{ gui
   const { Mark } = areaIdentity(guide.areaSlug);
   const counterpart = localeCounterpart(guide);
 
-  const eyebrow = isSeries ? "The Companion Series" : (guideArea?.label ?? "Guides");
-  const eyebrowHref = isSeries ? "/guides" : guideArea ? `/guides/${guideArea.slug}` : "/guides";
+  // The trail is built once and used twice: drawn above the title, and
+  // emitted as BreadcrumbList data. Google only trusts the second when
+  // it matches the first.
+  const trail: BreadcrumbItem[] = [
+    { name: "Home", path: "/" },
+    { name: "Guides", path: "/guides" },
+    // The Series guides belong to no single area, so they have no hub between
+    // the index and the guide itself.
+    ...(guideArea ? [{ name: guideArea.label, path: `/guides/${guideArea.slug}` }] : []),
+    { name: guide.title, path: `/guides/${guide.slug}` },
+  ];
 
   return (
     // Every area colour on the page descends from this one declaration,
@@ -139,7 +156,17 @@ export default async function GuideOrHubPage({ params }: { params: Promise<{ gui
     <div style={areaVars(guide.areaSlug)}>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(guideStructuredData(guide)) }}
+        dangerouslySetInnerHTML={{
+          __html: jsonLd(
+            guideStructuredData(guide, {
+              description: guideMetaDescription(guide),
+              trail,
+              areaLabel: guideArea?.label,
+              areaPath: guideArea ? `/guides/${guideArea.slug}` : undefined,
+              wordCount: guideWordCount(guide),
+            }),
+          ),
+        }}
       />
       <ReadingProgress />
 
@@ -148,17 +175,11 @@ export default async function GuideOrHubPage({ params }: { params: Promise<{ gui
           has been read. */}
       <header className="border-b border-[var(--border)] bg-[var(--area-soft)]">
         <Container width="wide" className="pb-10 pt-10 sm:pt-14">
-          <Link
-            href={eyebrowHref}
-            className="inline-flex items-center gap-1.5 text-[12px] font-bold uppercase tracking-[0.12em] text-[var(--area)] transition-opacity hover:opacity-70"
-          >
-            <ArrowLeft size={13} aria-hidden />
-            {eyebrow}
-          </Link>
+          <Breadcrumbs trail={trail} />
 
           <div className="mt-5 grid gap-8 lg:grid-cols-[minmax(0,1fr)_180px] lg:items-center lg:gap-12">
             <div>
-              <h1 className="max-w-[19ch] font-serif text-[32px] font-semibold leading-[1.1] tracking-tight text-balance sm:text-[42px]">
+              <h1 className="max-w-[26ch] font-serif text-[30px] font-semibold leading-[1.1] tracking-tight text-balance sm:text-[40px]">
                 {guide.title}
               </h1>
               <p className="mt-4 max-w-[54ch] text-[17px] leading-relaxed text-[var(--muted)]">{guide.dek}</p>
@@ -362,18 +383,31 @@ function AreaHub({ slug }: { slug: string }) {
   const companion = shopRegistry.getBySlug(area.productSlugs[0]);
   const { Mark } = areaIdentity(slug);
   const minutes = guides.reduce((total, guide) => total + readingMinutes(guide), 0);
+  const hubTrail: BreadcrumbItem[] = [
+    { name: "Home", path: "/" },
+    { name: "Guides", path: "/guides" },
+    { name: area.label, path: `/guides/${area.slug}` },
+  ];
 
   return (
     <div style={areaVars(slug)}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: jsonLd(
+            collectionStructuredData({
+              name: `${area.label} guides`,
+              description: `Guides for when ${area.situation.charAt(0).toLowerCase()}${area.situation.slice(1, -1)}.`,
+              path: `/guides/${area.slug}`,
+              trail: hubTrail,
+              guides,
+            }),
+          ),
+        }}
+      />
       <header className="border-b border-[var(--border)] bg-[var(--area-soft)]">
         <Container width="wide" className="pb-10 pt-10 sm:pt-14">
-          <Link
-            href="/guides"
-            className="inline-flex items-center gap-1.5 text-[12px] font-bold uppercase tracking-[0.12em] text-[var(--area)] transition-opacity hover:opacity-70"
-          >
-            <ArrowLeft size={13} aria-hidden />
-            All guides
-          </Link>
+          <Breadcrumbs trail={hubTrail} />
 
           <div className="mt-5 grid gap-8 sm:grid-cols-[minmax(0,1fr)_160px] sm:items-center sm:gap-12">
             <div>

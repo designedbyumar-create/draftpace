@@ -9342,12 +9342,16 @@ const WORDS_PER_MINUTE = 225;
  * and there is nowhere left to type a wrong one.
  */
 export function readingMinutes(guide: Guide): number {
-  const words = guide.body
+  return Math.max(1, Math.round(guideWordCount(guide) / WORDS_PER_MINUTE));
+}
+
+/** Words in the body, headings and lists included: what reading time and the Article schema both count. */
+export function guideWordCount(guide: Guide): number {
+  return guide.body
     .flatMap(blockStrings)
     .join(" ")
     .split(/\s+/)
     .filter(Boolean).length;
-  return Math.max(1, Math.round(words / WORDS_PER_MINUTE));
 }
 
 /** The same figure, phrased for display. */

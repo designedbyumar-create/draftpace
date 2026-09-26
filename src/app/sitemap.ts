@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { NEEDS } from "@/content/needs";
-import { GUIDES, areasWithGuides, guidesForArea } from "@/content/guides";
+import { GUIDES, areasWithGuides, guidesForArea, localeCounterpart } from "@/content/guides";
+import { localeAlternates } from "@/content/guideMeta";
 import { shopRegistry } from "@/shop/registry";
 import { registerRealShopProducts } from "@/shop/products";
 
@@ -42,6 +43,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "weekly" | "monthly" | "yearly";
     priority: number;
     lastModified?: Date;
+    /** hreflang alternates, for the guides that have a US and a UK version. */
+    languages?: Record<string, string>;
   };
 
   const staticRoutes: Route[] = [
@@ -107,12 +110,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     };
   }) satisfies Route[];
 
-  const guideRoutes: Route[] = GUIDES.map((guide) => ({
-    route: `/guides/${guide.slug}`,
-    lastModified: dateOf(guide.updatedAt ?? guide.publishedAt),
-    changeFrequency: "monthly",
-    priority: 0.5,
-  }));
+  const guideRoutes: Route[] = GUIDES.map((guide) => {
+    // The US and UK twins list each other, and themselves, exactly as their
+    // pages do in <link rel="alternate" hreflang>. One side without the
+    // other is ignored by Google, so both come from the same rule.
+    const languages = localeAlternates(guide, localeCounterpart(guide), siteUrl);
+    return {
+      route: `/guides/${guide.slug}`,
+      lastModified: dateOf(guide.updatedAt ?? guide.publishedAt),
+      changeFrequency: "monthly",
+      priority: 0.5,
+      languages,
+    };
+  });
 
   // Only published, PAID Shop listings. Draft, archived, and dev-preview
   // fixtures never reach here, see src/shop/registry.ts and docs/SHOP.md.
@@ -124,12 +134,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...needRoutes, ...guideHubRoutes, ...guideRoutes, ...shopRoutes].map(
-    ({ route, changeFrequency, priority, lastModified }) => ({
+  const allRoutes: Route[] = [...staticRoutes, ...needRoutes, ...guideHubRoutes, ...guideRoutes, ...shopRoutes];
+  return allRoutes.map(
+    ({ route, changeFrequency, priority, lastModified, languages }) => ({
       url: `${siteUrl}${route}`,
       ...(lastModified ? { lastModified } : {}),
       changeFrequency,
       priority,
+      ...(languages ? { alternates: { languages } } : {}),
     })
   );
 }

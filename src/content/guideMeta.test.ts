@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { GUIDES } from "./guides";
+import { GUIDES, localeCounterpart } from "./guides";
 import {
   META_DESCRIPTION_MAX,
   META_DESCRIPTION_MIN,
@@ -10,6 +10,7 @@ import {
   guideMetaTitle,
   guideOgLocale,
   guideSeoTitle,
+  localeAlternates,
 } from "./guideMeta";
 
 /**
@@ -119,5 +120,27 @@ describe("meta helpers", () => {
     expect(guideOgLocale("uk")).toBe("en_GB");
     expect(guideOgLocale("us")).toBe("en_US");
     expect(guideOgLocale(undefined)).toBe("en_US");
+  });
+});
+
+describe("hreflang for locale twins", () => {
+  it("gives both sides of a pair the same, self-referencing set", () => {
+    const pairs = GUIDES.filter((g) => g.locale === "uk");
+    expect(pairs.length).toBeGreaterThan(0);
+    for (const uk of pairs) {
+      const us = localeCounterpart(uk);
+      expect(us, `${uk.slug} has no US twin`).toBeDefined();
+      const fromUk = localeAlternates(uk, us);
+      const fromUs = localeAlternates(us!, uk);
+      expect(fromUk).toEqual(fromUs);
+      expect(fromUk?.["en-GB"]).toBe(`/guides/${uk.slug}`);
+      expect(fromUk?.["en-US"]).toBe(`/guides/${us!.slug}`);
+      expect(fromUk?.["x-default"]).toBe(`/guides/${us!.slug}`);
+    }
+  });
+
+  it("says nothing for a guide with no twin", () => {
+    expect(localeAlternates({ slug: "a", locale: "us" }, undefined)).toBeUndefined();
+    expect(localeAlternates({ slug: "a" }, { slug: "b", locale: "uk" })).toBeUndefined();
   });
 });
