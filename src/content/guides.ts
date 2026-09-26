@@ -7147,6 +7147,438 @@ export const GUIDES: Guide[] = [
       },
     ],
   },
+
+  {
+    slug: "life-admin-binder-what-goes-in-it",
+    title: "What goes in a life admin binder",
+    dek: "A life admin binder works best when it says where things are, not when it holds the things themselves. Eight sections, what belongs in each, what to leave out, and why a short finished one beats a long half-filled one.",
+    publishedAt: "2026-09-26",
+    areaSlug: "affairs-and-endings",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "A life admin binder is a single place that tells somebody else where things are and who to speak to. It might be called an emergency binder, an in case of emergency binder, or an if something happens to me file. The names differ. The job is the same.",
+          "Most binders fail for the same reason: they start as a hundred blank pages, and nobody finishes a hundred blank pages. A short binder you finish is worth far more than a long one you abandon in the second section.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "A map, not a vault",
+        paragraphs: [
+          "The most useful rule is to write down where something is, not what it says. \"With Smith and Co, top drawer\" is the useful answer. The document itself should stay where it is.",
+          "This also keeps the binder safe to hand over. A page that lists account numbers and passwords is exactly the wrong thing to leave in a drawer. A page that says where things are and who to call is useful to the right person, and much less harmful in the wrong hands. Keep it somewhere private either way.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Eight sections",
+        intro: "Not every section applies to every household. Skip what does not.",
+        checkable: true,
+        items: [
+          "Who decides, and who to call. The first person to contact, a person to sort things out, and someone to speak about medical care.",
+          "Where the paperwork is. The will, identity documents, tax records, any safe or deposit box.",
+          "Money coming in and going out. Banks by name only, pensions and retirement plans, what leaves your account automatically.",
+          "Where you live. Whether you own or rent, insurance, utilities, who has a spare key.",
+          "People and animals who rely on you. Who would look after children, dependents and pets.",
+          "Accounts and devices. The main email address, how somebody would get help getting into your accounts, where photographs live.",
+          "What you would want. Preferences in your own words, and where any formal paperwork is kept.",
+          "The business, if you have one. Who could keep it going or wind it down, and where its paperwork is.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What to leave out",
+        paragraphs: [
+          "Leave out passwords, the master password for a password manager, full account numbers, and anything you would not want a visitor to read. If somebody would need to get in, write where the recovery instructions are kept, not the instructions themselves.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Build it in an order",
+        paragraphs: [
+          "Start with the one thing that matters most: who should be called first. Then the will and who knows where it is. Then the email address everything is registered to. Three pages, done in an evening, are already more than most people have. You can add the rest over a few weeks.",
+          "For what else belongs in the wider file, see [the if something happens to me file, and what goes in it](/guides/the-if-something-happens-to-me-file) and [what to write down in case something happens to you](/guides/what-to-write-down-in-case-something-happens-to-you).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Personal Life Affairs Companion turns the binder into one step at a time. It asks eight yes or no questions, skips whatever does not apply, and shows one step on screen with no list of what is left. It never asks for a password or an account number, sends nothing to anyone, and prints a book called My Affairs that you hand over yourself. It is a web app, $49 once, and it is an organizing tool, not legal advice.",
+      },
+    ],
+  },
+
+  {
+    slug: "hospital-for-two-weeks-what-would-someone-need-to-find",
+    title: "If you were in the hospital for two weeks, what would someone need to find?",
+    dek: "You do not have to imagine the worst to plan for two weeks away. Who to contact, where the paperwork is, and how someone would get help with your accounts and devices.",
+    publishedAt: "2026-09-26",
+    areaSlug: "affairs-and-endings",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Most of what a household needs from you in an emergency is not dramatic. It is ordinary: bills that need paying, a landlord or employer who needs to be told, a phone somebody has to get into, a child who needs collecting.",
+          "Asking what someone would need to find if you were in the hospital for two weeks is a gentler way into the same question as a will or an estate plan, and it produces most of the same list.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "The questions a partner or friend would ask",
+        checkable: true,
+        items: [
+          "Who needs to be contacted first, and how would they be reached?",
+          "Where is the important paperwork, and who knows that?",
+          "How would someone get help getting into your accounts and devices?",
+          "Which bills or payments would fall due in the meantime, and are they automatic?",
+          "Who looks after children, dependents or pets, and what do they need to know for a normal week?",
+          "Who speaks to your employer or your business?",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Answer with where, not what",
+        paragraphs: [
+          "For each question, write down where the answer is or who has it. You do not need to copy documents or write out credentials. \"The recovery instructions are in the safe, and my brother knows the safe is there\" is a complete and useful answer.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Two weeks is a good size",
+        paragraphs: [
+          "Two weeks is long enough to expose the gaps and short enough not to feel morbid. It is also the shape of most real interruptions: a hospital stay, a long trip out of contact, a family emergency somewhere else. If your list works for two weeks, it is most of the way to working for anything longer.",
+          "For the longer version, see [the if something happens to me file](/guides/the-if-something-happens-to-me-file), and for the one question that matters most, see [who to tell when someone dies](/guides/who-to-tell-when-someone-dies).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Personal Life Affairs Companion includes a Handoff Check that looks at what you have recorded the way a stranger would, by what they would be trying to do: who to contact, where the paperwork is, how to reach accounts and devices. It shows a count of what may still be unclear, never a percentage, and it is private to you. It sends nothing to anyone. It is a web app, $49 once, not legal advice.",
+      },
+    ],
+  },
+
+  {
+    slug: "emergency-contact-and-medical-decision-maker",
+    title: "Who would speak for you about medical care?",
+    dek: "Choosing a person, asking them, talking about what you would want, and writing down where any formal paperwork is kept. Forms and rules vary by state, so confirm yours.",
+    publishedAt: "2026-09-26",
+    areaSlug: "affairs-and-endings",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "If you were too ill to speak for yourself, someone would need to. Who that is, and whether they know what you would want, is worth deciding before it matters. This guide is about the practical side: choosing, asking, and recording where things are. It is not legal or medical advice.",
+          "The formal documents involved, and who is allowed to speak for you if you have not chosen, vary by state. An attorney in your state, or your state's official source, is the place to confirm what applies to you.",
+        ],
+      },
+      {
+        kind: "timeline",
+        heading: "The order that works",
+        steps: [
+          {
+            when: "Choose",
+            what: "Pick one person you trust, who is likely to be reachable and who would be able to stay steady under pressure. It does not have to be the person closest to you.",
+          },
+          {
+            when: "Ask",
+            what: "Ask them before you write their name down. Being named without being asked is unfair to them and unreliable for you.",
+          },
+          {
+            when: "Talk",
+            what: "Tell them what you would want. It does not have to be a long conversation. What matters most, and what would be hard for you, is a good start.",
+          },
+          {
+            when: "Record",
+            what: "Write down who they are, how to reach them, and where any formal paperwork is kept.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "A first contact is different from a decision maker",
+        paragraphs: [
+          "An emergency contact is the person to call first. A medical decision maker is the person who would speak about your care. They can be the same person, but they do not have to be. Write both down, and say which is which.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Name a second person",
+        paragraphs: [
+          "The person you choose may be traveling, unwell or unreachable on the day. A second name costs almost nothing and covers the gap.",
+          "For the wider picture of what to write down, see [what to write down in case something happens to you](/guides/what-to-write-down-in-case-something-happens-to-you).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Personal Life Affairs Companion has a step for deciding who should speak for you about medical care. It records their name, how to reach them, and whether you have talked to them about what you would want. It records the choice. It does not create a legal form, appoint anyone, or contact anyone. It is a web app, $49 once, and it is not legal or medical advice.",
+      },
+    ],
+  },
+
+  {
+    slug: "who-would-raise-your-children-guardian-checklist",
+    title: "Who would raise your children? A checklist for naming someone",
+    dek: "Naming someone who would say no is worse than naming nobody, because it looks settled when it is not. A checklist for choosing, asking, and naming a second choice.",
+    publishedAt: "2026-09-26",
+    areaSlug: "affairs-and-endings",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "For many parents this is the hardest question on the list, and the reason people finally sit down to plan at all. It is also one where a little clarity now matters a great deal.",
+          "How a guardian is legally named, and what a court considers, varies by state. This guide covers the human side of the choice. Confirm the legal side with an attorney in your state.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "The checklist",
+        checkable: true,
+        items: [
+          "Think about values and daily life first, not only who is closest or who is wealthiest.",
+          "Choose one person or couple, and ask them before you name them.",
+          "Name a second choice, in case the first cannot or will not do it.",
+          "Write down the practical details of a normal week: school, the doctor, who collects them, what happens on which day.",
+          "Say where any formal paperwork is kept, and who knows that.",
+          "Come back to it when something changes: a move, a separation, a new child.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Ask them first",
+        paragraphs: [
+          "Naming someone who would say no is worse than naming nobody, because it looks settled when it is not. A short, honest conversation now spares everyone a surprise later. If the answer is no, that is useful information, and it costs you an hour and not a crisis.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The children's week",
+        paragraphs: [
+          "The written details do more than they look like they will. Whoever steps in is trying to get a child through a normal Tuesday while everyone is upset. A page that says who collects them, what the doctor is called and which days matter turns a frightening week into a manageable one.",
+          "See also [what to write down in case something happens to you](/guides/what-to-write-down-in-case-something-happens-to-you).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Personal Life Affairs Companion, if you have children under eighteen, asks who you would want to raise them, then asks you to talk to them first, then asks for a second choice and the details of a normal week. It records your choice. It does not appoint a guardian or file anything, and it sends nothing to anyone. It is a web app, $49 once, and it is not legal advice.",
+      },
+    ],
+  },
+
+  {
+    slug: "who-to-tell-when-someone-dies",
+    title: "Who to tell when someone dies, and in what order",
+    dek: "A plain order for who to tell first and what can wait, so the first phone calls are not the hardest part of the week. Procedures vary by state and situation.",
+    publishedAt: "2026-09-26",
+    areaSlug: "affairs-and-endings",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "When someone dies, the list of people to tell feels endless. It is not. A small number of calls matter in the first days, and most of the rest can wait until there is more energy.",
+          "This guide gives an order. It cannot replace advice for your situation, and procedures vary by state. If there is an executor or a hospice or hospital team involved, they will often tell you the next step.",
+        ],
+      },
+      {
+        kind: "timeline",
+        heading: "A sensible order",
+        steps: [
+          {
+            when: "First",
+            what: "Close family and the people who would want to hear it from a person, not from someone else. If there was a named first contact, start there.",
+          },
+          {
+            when: "The first few days",
+            what: "The medical or funeral professionals involved, and the person named to handle affairs, if there is one.",
+          },
+          {
+            when: "Within the first weeks",
+            what: "The employer, and the banks and insurers who will need to know. These can usually be done by phone, and many will tell you what they need.",
+          },
+          {
+            when: "When you have the energy",
+            what: "Utilities, subscriptions, social accounts and everything else. Most of it is not urgent.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Write it down as you go",
+        paragraphs: [
+          "Keep a single page of who you told, when, and what they said they needed next. In the first days it is easy to lose track of who has been told and who has not.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The list is easier when it already exists",
+        paragraphs: [
+          "The hardest calls are the ones where nobody knows whom to call. If nobody knows to call, nothing else on the list is ever found. A page that says who to contact first, written down in advance, is one of the kindest things a person can leave.",
+          "For the first two weeks in more detail, see [what to do when a parent dies](/guides/what-to-do-when-a-parent-dies), and for finding accounts nobody wrote down, see [how to find someone's accounts after they die](/guides/how-to-find-someones-accounts-after-they-die).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Personal Life Affairs Companion is for preparing, not for the days after. Its first step asks who should be called first, and a name is enough to begin with. It does not hold a list of who to notify, and it sends nothing to anyone. It prints a book that somebody could follow. It is a web app, $49 once, and it is not legal advice.",
+      },
+    ],
+  },
+
+  {
+    slug: "update-your-paperwork-after-a-life-change",
+    title: "What to look at again after a move, a marriage, a new baby or a divorce",
+    dek: "A picture of your paperwork goes out of date all at once, the week something happens. What to look at again, in a sensible order, and what an attorney or provider can confirm.",
+    publishedAt: "2026-09-26",
+    areaSlug: "affairs-and-endings",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Paperwork goes out of date all at once, not slowly. The week you move, marry, separate, have a child, change jobs or lose someone you named, several things stop being true together, and none of them announces itself.",
+          "This guide is a list of where to look, not advice about what to do. For what a change means legally, an attorney or the provider in question is the place to ask.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Where to look, by event",
+        columns: ["What changed", "What to look at again"],
+        rows: [
+          ["You moved", "Where you live, insurance, utilities, who has a spare key"],
+          ["You married", "Who is named on forms, who to call first, who speaks for you about medical care"],
+          ["You separated or divorced", "Who is named on forms, who would sort things out, who speaks for you about medical care"],
+          ["You had or adopted a child", "Who would raise them, the details of their week, who is named on forms"],
+          ["You changed jobs", "The retirement plan and life insurance from the old job, and who is named on them"],
+          ["Someone you named has died", "Every place that person was the answer"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Named people first",
+        paragraphs: [
+          "The most consequential things to look at are the names on forms. A retirement account or life insurance policy usually goes to whoever is named on the form, and a form filled in years ago at a previous job may still be the one that counts. See [your beneficiary forms quietly override your will](/guides/beneficiary-forms-override-your-will).",
+          "A separation or divorce does not necessarily change who is named on these forms by itself. Check with the plan provider and an attorney about what applies to you.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Do not try to fix everything in a week",
+        paragraphs: [
+          "Start with the names, then who to call first, then the rest as you have energy. For the money side of the same events, see [how to sort out your finances after a job change, move or divorce](/guides/sort-out-your-finances-after-a-life-change).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Personal Life Affairs Companion has a Has something changed step with nine life events, such as I moved or I got married. Choose one and it finds the parts of what you recorded that are worth a second look, and brings them back one at a time as questions. Nothing is deleted and nothing is marked wrong. It is a web app, $49 once, and it is not legal advice.",
+      },
+    ],
+  },
+
+  {
+    slug: "safe-deposit-box-and-spare-keys-who-can-open-it",
+    title: "The safe, the deposit box and the spare key: who can open them?",
+    dek: "A box nobody can open helps nobody. What to write down about a safe, a deposit box and spare keys, and what never to write.",
+    publishedAt: "2026-09-26",
+    areaSlug: "affairs-and-endings",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Many households have a safe, a deposit box or a set of spare keys that only one person knows about. It holds the important things, and it becomes a problem the day that person is not available.",
+          "The fix is small: write down that it exists, where it is, and who is able to open it. Not how.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Three things to write down",
+        checkable: true,
+        items: [
+          "What it is: a home safe, a deposit box at a bank, a lockbox, a filing cabinet with a key.",
+          "Where it is, precisely enough that a stranger could find it.",
+          "Who is able to open it: a name, not a code.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Never write the combination",
+        paragraphs: [
+          "Do not record the combination, the PIN or the location of the key on the same page as the location of the safe. Write where somebody would find out how to open it, such as who has the key or where the instructions are kept, not the instructions themselves.",
+          "This is the same rule as everything else in a life admin file: say where, not what. See [what goes in a life admin binder](/guides/life-admin-binder-what-goes-in-it).",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Spare keys",
+        paragraphs: [
+          "Note who has a spare key to your home, and who could get one. A neighbor with a key is often the fastest route into a house in an emergency. It is worth knowing who that is, and worth telling them they are on the list.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Check it works",
+        paragraphs: [
+          "Ask the person named whether they know where the box or safe is and how they would get access. A deposit box in your name alone may not be simple for someone else to open. The bank can tell you what its rules are, and an attorney can tell you what applies where you live.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Personal Life Affairs Companion has a step for any safe, lockbox or deposit box. It asks what it is, where it is, who is able to open it, and where someone would find out how. The hint says to record a name, not a code, and never the combination. It also has a step for who has a spare key. It never asks for a combination and sends nothing to anyone. It is a web app, $49 once, and it is not legal advice.",
+      },
+    ],
+  },
+
+  {
+    slug: "what-happens-to-your-pets-if-something-happens-to-you",
+    title: "What happens to your pets if something happens to you",
+    dek: "A name, what each animal needs, and where the papers are. A short note that makes a hard week easier for whoever steps in.",
+    publishedAt: "2026-09-26",
+    areaSlug: "affairs-and-endings",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "If you were suddenly away, someone would need to feed the dog, let the cat out and get the rabbit to the vet. Most people do not have a plan for this, and the person who steps in usually has to guess.",
+          "A short note fixes almost all of it. It takes about two minutes per animal, and it is one of the kindest things you can leave.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What to write",
+        checkable: true,
+        items: [
+          "Who would take each animal, and whether you have asked them.",
+          "What each animal needs: food, medication, routines, quirks.",
+          "The name of the vet and where the records are.",
+          "Where papers are kept: registration, insurance, microchip details.",
+          "Who else could help if the first person cannot.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Ask first",
+        paragraphs: [
+          "As with any arrangement that depends on another person, ask before you write their name down. A person who has agreed, and knows what is involved, is a plan. A name on a page is only a hope.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The vet is a useful second contact",
+        paragraphs: [
+          "A vet knows your animals' history and can be reached in an emergency. Tell your vet who to contact, and tell that person that they are on the list.",
+          "For the wider file this belongs in, see [what goes in a life admin binder](/guides/life-admin-binder-what-goes-in-it).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "If you have pets, Personal Life Affairs Companion has a step for saying who would take them and what they need. It records the answer in your own words, and your answer prints in the book. It sends nothing to anyone and does not arrange care. It is a web app, $49 once, and it is not legal advice.",
+      },
+    ],
+  },
 ];
 
 /**
