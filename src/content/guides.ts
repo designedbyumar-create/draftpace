@@ -7579,6 +7579,479 @@ export const GUIDES: Guide[] = [
       },
     ],
   },
+
+  {
+    slug: "how-to-write-a-one-page-trip-itinerary",
+    title: "How to write a one-page trip itinerary",
+    dek: "A trip itinerary that survives a change is short, in time order, and keeps the confirmation reference beside the booking. What goes on the page, and what to leave off it.",
+    publishedAt: "2026-09-26",
+    areaSlug: "travel",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Most trip itineraries fail in the same way: they try to be a guidebook. Restaurant ideas, opening hours and three backup plans crowd out the few things you actually need to find quickly, which are where you have to be, when, and which booking it is.",
+          "A useful itinerary is closer to a timetable than a guidebook. It fits on one page, it is in time order, and every line answers three questions.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Three things on every line",
+        columns: ["Column", "What goes in it"],
+        rows: [
+          ["Time", "When it starts, as it is on the booking"],
+          ["Place", "Where you need to be, in a few words"],
+          ["Reference", "The confirmation reference, beside the booking and not in an inbox"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "One block per day",
+        paragraphs: [
+          "Give each day its own block. Put the fixed things first: flights, trains, check-in, anything with a reserved time. Leave the rest of the day empty on purpose. A day with nothing on it is not a gap in the plan. It is room for the day to go the way it goes.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What to leave off",
+        checkable: true,
+        items: [
+          "Restaurant and sightseeing ideas that are not booked. Keep them in a separate note.",
+          "Opening hours you have not confirmed.",
+          "Long descriptions. A name and a place are enough.",
+          "Anything that would be useless if it changed. Put that in the notes.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Note what depends on what",
+        paragraphs: [
+          "The most useful thing you can add is which bookings rest on which. A transfer built on a flight, a check-in built on a train. When the first one moves, the rest need looking at, and the itinerary is where you will see it. See [how to work out what else in your trip is affected when a flight changes](/guides/flight-changed-what-else-is-affected).",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Print it",
+        paragraphs: [
+          "A one-page itinerary is worth printing. It works when your phone does not, and it is the page you hand to whoever is meeting you. For what else earns a place on paper, see [what to keep on paper when you travel](/guides/what-to-keep-on-paper-when-you-travel).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "In Travel Companion, you name a trip and give it rough dates, and it is laid out day by day straight away. Add what you have booked from there. A day with nothing recorded says so and is never filled in for you. Each booking card shows its confirmation reference, and the itinerary saves as a PDF. It records bookings you made elsewhere. It does not book anything, track flights or suggest where to go. It is a web app, $34 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "packing-list-for-a-week-away",
+    title: "Packing list for a week away, by person",
+    dek: "A packing list that starts with the things every trip needs, then adds what this one asks for. A printable checklist you can adjust per person.",
+    publishedAt: "2026-09-26",
+    areaSlug: "travel",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "The trouble with most packing lists is that they are either too long to use or too generic to trust. The way out is to build yours in two layers: a short list of things every trip needs, then a few additions for this particular one.",
+          "No list fits every trip, so treat this as a starting point, not a rulebook. Change anything.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Layer one: the basics",
+        intro: "What almost every trip needs, whatever the weather.",
+        checkable: true,
+        items: [
+          "Passport or photo ID",
+          "Bank card",
+          "Copies of your bookings",
+          "Some cash",
+          "Phone, and something to charge it with",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Layer two: this trip",
+        paragraphs: [
+          "Add what the trip asks for. A beach week wants sun and swimming things. A week in a cold place wants layers and something waterproof. A city break wants comfortable shoes and a bag you can carry all day. Write down the two or three things that make this trip different, not everything you might possibly need.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Pack by person",
+        paragraphs: [
+          "Split the list into what is shared and what is personal. Shared items, such as a first aid kit or a charger, only need packing once. Personal items belong to one person each. Splitting it this way stops two people packing the same thing and nobody packing the other.",
+          "If you are packing for children, add a short extra list for each child. See [packing and planning for a trip with kids or a baby](/guides/packing-and-planning-for-a-trip-with-kids-or-a-baby).",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Tick as you pack",
+        paragraphs: [
+          "A packing list is only useful if you tick it. Print it, leave it by the bag, and tick things as they go in. Do the documents first, and put them where you will not have to look for them.",
+          "For a shorter version, see [a carry-on only packing list](/guides/carry-on-only-packing-list).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Travel Companion has eleven starting lists: the basics, beach, city break, cold weather, camping, road trip, cruise, business trip, carry-on only, children and a baby. It calls them a starting point, not a rulebook, and nothing is added until you press the button. Items are grouped under Everyone and then each person, and the list saves as a PDF with tick boxes. The lists use plain words and are for you to change. It is a web app, $34 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "carry-on-only-packing-list",
+    title: "A carry-on only packing list",
+    dek: "One bag, nothing checked. A short list and a firm rule: choose the bag first, pack to the list, and leave out what you can buy or borrow on arrival.",
+    publishedAt: "2026-09-26",
+    areaSlug: "travel",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Traveling with only a carry-on comes down to one decision made in the right order: the bag first, then the list. If you choose the list first, you will always find that it does not fit.",
+          "Check your airline's current rules for size and weight before you pack. They differ and they change, so the airline's own page is the only source to trust.",
+        ],
+      },
+      {
+        kind: "timeline",
+        heading: "The order",
+        steps: [
+          {
+            when: "Choose the bag",
+            what: "Pick the bag you will carry, and treat its size as the limit for everything else.",
+          },
+          {
+            when: "Write the list",
+            what: "Start with the basics: passport or photo ID, a bank card, copies of your bookings, some cash. Then add clothes for the days, not for the possibilities.",
+          },
+          {
+            when: "Pack to the list",
+            what: "Pack what is on the list and nothing else. If it is not written down, it stays.",
+          },
+          {
+            when: "Check the weight",
+            what: "Weigh the bag against your airline's rule before you leave home, not at the desk.",
+          },
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Ways to make it fit",
+        checkable: true,
+        items: [
+          "Choose clothes that mix, so a few pieces make several outfits.",
+          "Wear the heaviest shoes and the bulkiest layer.",
+          "Decant liquids into small containers, and check the limits for carrying them.",
+          "Leave behind what you can buy or borrow when you arrive.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What is worth keeping in reach",
+        paragraphs: [
+          "Keep your documents, your phone and anything you will need in transit in one easy pocket. The point of a single bag is speed, and speed disappears if you have to unpack at the gate.",
+          "For the longer version of this list, see [packing list for a week away](/guides/packing-list-for-a-week-away).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Travel Companion has a Carry-on only starting list, described as one bag, nothing checked. Like the others, it is a starting point that you can change, and nothing is added until you press the button. The list saves as a PDF with tick boxes. It does not know your airline's size or weight limits. It is a web app, $34 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "packing-and-planning-for-a-trip-with-kids-or-a-baby",
+    title: "Packing and planning for a trip with kids or a baby",
+    dek: "What changes on a trip with children or a baby: the packing list, the paperwork and the pace. A checklist you can adjust for each child.",
+    publishedAt: "2026-09-26",
+    areaSlug: "travel",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Traveling with children changes three things: what you pack, what you need to carry on paper, and how much you can plan into a day. The first is a list. The second is a checklist. The third is a decision to make before you go.",
+        ],
+      },
+      {
+        kind: "compare",
+        heading: "What changes",
+        left: {
+          label: "On your own",
+          items: [
+            "One bag of your own things",
+            "Flexible timing",
+            "A plan you can change on the spot",
+          ],
+        },
+        right: {
+          label: "With a child or a baby",
+          items: [
+            "Extras for each child, plus shared items",
+            "Naps, meals and downtime set the timing",
+            "A plan with room for a bad day",
+          ],
+        },
+      },
+      {
+        kind: "list",
+        heading: "Packing: per child",
+        intro: "Start with your own basics, then add a short list for each child.",
+        checkable: true,
+        items: [
+          "Their own documents, if the trip needs them.",
+          "A change of clothes in the bag you carry, not the one you check.",
+          "Anything that comforts them: a toy, a blanket, a book.",
+          "For a baby, the things you would need in an unplanned extra night.",
+          "Snacks and drinks that you know they will accept.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Paperwork",
+        paragraphs: [
+          "List each child's documents under their own name, and note where each one is kept. Requirements differ by country and by airline, and they change, so check with the official source for where you are going. Our guide on [travel documents](/guides/travel-document-checklist) covers what to record and how.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Pace",
+        paragraphs: [
+          "Plan fewer things, and plan them earlier in the day. Leave one gap in each day, and one day in the trip with nothing in it. A trip with children succeeds when it can absorb a bad morning.",
+          "For the group side of it, see [how to plan a group trip without becoming the organizer](/guides/how-to-plan-a-group-trip).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "In Travel Companion, you add each person who is traveling and can mark someone as a child. Two starting packing lists, Children and A baby, add items for each child you have recorded. Nothing is added until you press the button, and you can remove or change any of it. Each person can also carry a private note of requirements. It does not share anything with anyone. It is a web app, $34 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "lost-passport-wallet-or-phone-abroad-what-to-have-ready",
+    title: "Lost your passport, wallet or phone abroad: what to have ready",
+    dek: "The order that helps when something important goes missing while you are away, and what to have ready first. Steps vary by country and by what was lost.",
+    publishedAt: "2026-09-26",
+    areaSlug: "travel",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "When a passport, wallet or phone goes missing, the first ten minutes tend to go on panic and the next hour on searching. The most useful thing you can do is slow down and have the right details in front of you before you make a call.",
+          "This guide is about preparation, not procedure. The correct steps depend on what was lost, where you are and who issued it. Confirm what to do with the official source, such as the issuer of a card or your country's official travel advice.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What to have ready",
+        checkable: true,
+        items: [
+          "What exactly was lost, and roughly when you last had it.",
+          "Who issued it: the bank for a card, the carrier for a phone, the government for a passport.",
+          "Where the copies or records are, if you kept any.",
+          "How you can be reached now, since your usual phone may be the thing that is gone.",
+          "Who else needs to know: someone with you, someone waiting to meet you, someone at home.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Do one thing at a time",
+        paragraphs: [
+          "Start with the thing that is most urgent and hardest to undo, which is often a card or a phone that gives access to accounts. Write down who you spoke to, and when, and what they said would happen next. A page of notes is worth more than a good memory on a bad day.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Tell one person first",
+        paragraphs: [
+          "Tell someone you trust what has happened, in a sentence: what was lost, where you are, what you need. They can help with the calls, and you will not carry the whole thing alone. If your phone is gone, borrow one, and use a number you know by heart.",
+          "Where the things were kept matters too. See [what to keep on paper when you travel](/guides/what-to-keep-on-paper-when-you-travel) for the short list of what is worth carrying in another form.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Travel Companion has a set of questions for when something is lost or stolen: a passport or ID, bank cards or a wallet, a phone, a bag or luggage, or tickets or booking confirmations. It helps you gather what you need before you make the call, and a separate Let somebody know step helps you word a message. It gives no legal, embassy or police steps, and it sends nothing for you. The wording is not saved. It is a web app, $34 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "first-international-trip-checklist",
+    title: "First international trip checklist",
+    dek: "A first trip abroad has a short list of things worth sorting early. Rules vary by country and change, so check each with the official source.",
+    publishedAt: "2026-09-26",
+    areaSlug: "travel",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "A first international trip feels like a lot of unknowns. Most of them are ordinary paperwork with a deadline, and the trick is to find out early which ones apply to you.",
+          "This checklist says what to look into, not what the rules are. Entry rules, health requirements and documents differ by country and change, and the official source for the country you are visiting is the only one to trust.",
+        ],
+      },
+      {
+        kind: "timeline",
+        heading: "In a sensible order",
+        steps: [
+          {
+            when: "As soon as you decide",
+            what: "Check that your passport exists and is valid for the trip. Find out what the country you are visiting asks of its visitors, and whether you need anything before you go.",
+          },
+          {
+            when: "A few months out",
+            what: "Note when each document expires, and whether any date falls before or during the trip. Renewals can take time.",
+          },
+          {
+            when: "Once you have booked",
+            what: "Keep confirmations in one place, with the reference beside each booking.",
+          },
+          {
+            when: "Before you leave",
+            what: "Sort out how you will pay, how you will stay in touch, and what insurance you want.",
+          },
+          {
+            when: "The night before",
+            what: "Check your documents are in the bag you carry. See [the night-before list](/guides/night-before-you-travel-checklist).",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Check each rule at the source",
+        paragraphs: [
+          "Look for the official government pages of the country you are visiting, and your own government's travel advice. Do not rely on a blog post, including this one, for a rule that could stop you boarding.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Record what exists and where it is",
+        paragraphs: [
+          "For each document, note what it is, whose it is, where it is kept and when it expires. A photograph on your phone is not a plan on its own. See [travel document checklist](/guides/travel-document-checklist).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Travel Companion records documents as a registry: what exists, whose it is, where it is kept, and when it expires. If an expiry date falls before or during the trip, it appears under Dates worth a look, with a reminder that what each country asks for differs and changes, so you should check with the country you are visiting. It only compares the dates you typed and states no country rules. It stores no files. It is a web app, $34 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "road-trip-planning-checklist",
+    title: "Road trip planning checklist",
+    dek: "Stops, stays and what to pack for a road trip, in an order that makes sense. Long drives and short stops, with room for the day to go its own way.",
+    publishedAt: "2026-09-26",
+    areaSlug: "travel",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "A road trip is the most flexible kind of trip, which is exactly why it goes wrong when nothing is fixed. A few decisions made in advance leave the rest free.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Before you go",
+        checkable: true,
+        items: [
+          "Decide roughly how far you will drive each day, and how many hours is too many.",
+          "Book the stays you cannot do without, and keep the reference for each.",
+          "Check the car: tires, fluids, and anything the vehicle's own manual recommends before a long trip.",
+          "Keep documents together: license, insurance, and any rental agreement.",
+          "Note who is driving, and when.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Stops",
+        paragraphs: [
+          "Plan a stop every couple of hours, and plan the first one before you leave. Note what is at each stop that you actually need: fuel, food, a place to stretch. Leave the rest unplanned.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Stays",
+        paragraphs: [
+          "Book the nights that matter, especially in busy places, and leave others open. Write the check-in time and the confirmation reference beside each stay. If a stay depends on a rental car or a ferry, note that too, so a change shows what is affected. See [how to work out what else in your trip is affected](/guides/flight-changed-what-else-is-affected).",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What to pack for the car",
+        intro: "On top of your own bag.",
+        checkable: true,
+        items: [
+          "Water and snacks within reach.",
+          "Chargers and a way to use your phone safely.",
+          "Something to clean up with, and a bag for trash.",
+          "A small bag for the night, so you do not unpack the whole car.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Travel Companion has a Road trip starting list, described as long drives and short stops. It also records bookings such as a rental car, a hotel or a campsite with their times and references, and the itinerary shows them day by day. It has no maps, directions or route planning. It is a web app, $34 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "night-before-you-travel-checklist",
+    title: "The night-before list",
+    dek: "A short list for the evening before a trip, so the morning is only leaving. Short on purpose, because a list you finish beats one you admire.",
+    publishedAt: "2026-09-26",
+    areaSlug: "travel",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "The night before a trip is the wrong time to find out you are missing something, and the right time to check that you are not. A short list, done in ten minutes, is enough.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "The list",
+        checkable: true,
+        items: [
+          "Passport or photo ID, in the bag you carry.",
+          "Bank card, and some cash.",
+          "Copies of your bookings, printed or saved where you can reach them without signal.",
+          "Phone charged, and something to charge it with.",
+          "Anything with a time on it tomorrow, checked once.",
+          "The house: things off, windows shut, someone who knows you are away.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Look at tomorrow, and the day after",
+        paragraphs: [
+          "Read through the first two days of the trip once. Note what is fixed, what you are still waiting to hear back on, and anything that depends on something else. A transfer built on a flight is worth a glance if the flight has changed.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Keep the list short",
+        paragraphs: [
+          "The longer the list, the less likely you are to finish it. Put the things that matter most first, and leave the rest to the packing list you made earlier. See [packing list for a week away](/guides/packing-list-for-a-week-away).",
+          "For the paper you might want in your bag, see [what to keep on paper when you travel](/guides/what-to-keep-on-paper-when-you-travel).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "In Travel Companion, Today shows what is happening, what is worth knowing about tomorrow, and what you are still waiting to hear back on. It looks two days ahead, no further. A preparation list has seven kinds of to-do: documents, packing, transport, money, home, people and bookings, and you can tick them off. It sends no alerts. It is a web app, $34 once.",
+      },
+    ],
+  },
 ];
 
 /**
