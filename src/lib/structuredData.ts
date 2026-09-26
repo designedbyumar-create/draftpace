@@ -166,7 +166,7 @@ export function breadcrumbStructuredData(trail: Crumb[]) {
  */
 export function guideStructuredData(
   guide: GuideStructuredDataInput,
-  options: { description: string; trail: Crumb[]; areaLabel?: string; areaPath?: string; wordCount?: number; faq?: { q: string; a: string }[] },
+  options: { description: string; trail: Crumb[]; areaLabel?: string; areaPath?: string; wordCount?: number; faq?: { q: string; a: string }[]; image?: { url: string; width: number; height: number } },
 ) {
   const url = `${SITE_URL}/guides/${guide.slug}`;
   const inLanguage = guide.locale === "uk" ? "en-GB" : "en-US";
@@ -183,6 +183,7 @@ export function guideStructuredData(
         dateModified: guide.updatedAt ?? guide.publishedAt,
         inLanguage,
         isAccessibleForFree: true,
+        ...(options.image ? { image: { "@type": "ImageObject", url: `${SITE_URL}${options.image.url}`, width: options.image.width, height: options.image.height } } : {}),
         ...(options.areaLabel ? { articleSection: options.areaLabel } : {}),
         ...(options.wordCount ? { wordCount: options.wordCount } : {}),
         ...(options.areaPath ? { isPartOf: { "@type": "CollectionPage", "@id": `${SITE_URL}${options.areaPath}` } } : {}),

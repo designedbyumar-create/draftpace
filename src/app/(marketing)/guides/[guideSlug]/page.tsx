@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import Container from "@/design-system/Container";
 import { ArrowRight, Clock } from "@/design-system/Icon";
@@ -29,6 +30,7 @@ import { collectionStructuredData, guideStructuredData, jsonLd } from "@/lib/str
 import Breadcrumbs, { type BreadcrumbItem } from "@/components/public/guides/Breadcrumbs";
 import NextSteps from "@/components/public/guides/NextSteps";
 import Sources from "@/components/public/guides/Sources";
+import { bodyWithImage, guideImage } from "@/content/guideImages";
 import GuideNotice from "@/components/public/guides/GuideNotice";
 
 /**
@@ -144,6 +146,7 @@ export default async function GuideOrHubPage({ params }: { params: Promise<{ gui
   const headings = guideHeadings(guide.body);
   const { Mark } = areaIdentity(guide.areaSlug);
   const counterpart = localeCounterpart(guide);
+  const image = guideImage(guide.slug);
 
   // The trail is built once and used twice: drawn above the title, and
   // emitted as BreadcrumbList data. Google only trusts the second when
@@ -172,6 +175,7 @@ export default async function GuideOrHubPage({ params }: { params: Promise<{ gui
               areaPath: guideArea ? `/guides/${guideArea.slug}` : undefined,
               wordCount: guideWordCount(guide),
               faq: faqItems,
+              image: image ? { url: image.cover, width: 1200, height: 630 } : undefined,
             }),
           ),
         }}
@@ -185,7 +189,7 @@ export default async function GuideOrHubPage({ params }: { params: Promise<{ gui
         <Container width="wide" className="pb-10 pt-10 sm:pt-14">
           <Breadcrumbs trail={trail} />
 
-          <div className="mt-5 grid gap-8 lg:grid-cols-[minmax(0,1fr)_180px] lg:items-center lg:gap-12">
+          <div className={`mt-5 grid gap-8 lg:items-center lg:gap-12 ${image ? "lg:grid-cols-[minmax(0,1fr)_320px]" : "lg:grid-cols-[minmax(0,1fr)_180px]"}`}>
             <div>
               <h1 className="max-w-[26ch] font-serif text-[30px] font-semibold leading-[1.1] tracking-tight text-balance sm:text-[40px]">
                 {guide.title}
@@ -230,7 +234,19 @@ export default async function GuideOrHubPage({ params }: { params: Promise<{ gui
             {/* The area mark. Decorative, and hidden on phones where the
                 headline should own the whole first screen. */}
             <div className="hidden text-[var(--area)] lg:block">
-              <Mark className="w-full" />
+              {image ? (
+                <Image
+                  src={image.cover}
+                  alt=""
+                  width={1200}
+                  height={630}
+                  sizes="320px"
+                  priority
+                  className="h-auto w-full rounded-[var(--radius-xl)] shadow-[0_10px_30px_-12px_rgba(0,0,0,0.25)]"
+                />
+              ) : (
+                <Mark className="w-full" />
+              )}
             </div>
           </div>
         </Container>
@@ -240,7 +256,7 @@ export default async function GuideOrHubPage({ params }: { params: Promise<{ gui
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_236px] lg:gap-16">
           <article className="min-w-0 max-w-[68ch]">
             <GuideContents headings={headings} variant="disclosure" />
-            <GuideBody blocks={guide.body} />
+            <GuideBody blocks={bodyWithImage(guide)} />
 
             {guide.sources && <Sources sources={guide.sources} />}
             <GuideNotice areaSlug={guide.areaSlug} />
@@ -413,6 +429,16 @@ function AreaHub({ slug }: { slug: string }) {
                           href={`/guides/${guide.slug}`}
                           className="group flex h-full flex-col rounded-[var(--radius-xl)] border border-[var(--area)]/40 bg-[var(--area-soft)] p-4"
                         >
+                          {guideImage(guide.slug) && (
+                            <Image
+                              src={guideImage(guide.slug)!.cover}
+                              alt=""
+                              width={1200}
+                              height={630}
+                              sizes="(min-width: 640px) 220px, 100vw"
+                              className="mb-3 h-auto w-full rounded-lg"
+                            />
+                          )}
                           <span className="font-serif text-[16px] font-semibold leading-snug text-[var(--text)] group-hover:text-[var(--area)]">
                             {guide.title}
                           </span>
