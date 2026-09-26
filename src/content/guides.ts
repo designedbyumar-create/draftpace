@@ -871,67 +871,285 @@ export const GUIDES: Guide[] = [
       { slug: "task-paralysis-what-to-do-in-the-next-ten-minutes", reason: "When even picking up the phone will not start, this ten minute way out shrinks the first step until it needs no motivation." },
     ],
     publishedAt: "2026-08-30",
+    updatedAt: "2026-09-26",
     areaSlug: "mind-and-focus",
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "The call is not hard because you do not know what to say. It is hard because making it requires holding several things at once: why you are calling, what outcome you want, the two facts you must not forget, and the ability to think while a stranger talks at you.",
-          "Many people describe this as a problem of holding too much at once rather than a lack of motivation, which may be why telling yourself to just do it has not worked for three weeks.",
-          "What helps is taking those things out of your head and putting them somewhere you can see them, so the call only requires the part you can actually do.",
+          "Write five things on paper before you dial: what the call is about, the result you want, your reference number, two facts, and your first sentence word for word. Then dial, read the first sentence, and follow the short list below. Before you hang up, ask for a reference number and a name.",
+          "This is for the call you've had on your list for days or weeks: a billing problem, a booking, a cancellation, a chase. It can't tell you why calls are hard for you in particular, and if dread of the phone is getting in the way of work or health, a clinician is the right person to ask. This is admin help, not medical advice.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Why a call stalls when the task is small",
+        paragraphs: [
+          "You have the number. You've had it for three weeks. Nothing stops you from dialing except that a call asks you to do several things at the same moment: remember why you're calling, listen to someone you can't see, keep your main point in mind, answer their questions, write down the reference, and sound like a person who does this every day. There is no warm-up, and you can't pause it or read it back.",
+          "Many people describe this as too many things held at once, not a lack of caring, which may be why telling yourself to just get it over with hasn't worked. No one has proven a cure for the stall. What coaches and clinicians often suggest, and what is worth trying, is to take every one of those jobs out of your head except the talking. That is what the five things are for.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Example: the five things, filled in",
+        intro: "An illustration, not a real account. Say a phone company charged you $45 twice on the same day and you want one of them back.",
+        columns: ["The thing", "What's on the page"],
+        rows: [
+          ["What it's about", "The double charge on my phone bill."],
+          ["The result I want", "The second $45 charge refunded to my card."],
+          ["Reference", "Account ending 4471. Statement dated the 3rd."],
+          [
+            "Two facts",
+            "Both charges posted on the 3rd. I called once before, on the 9th, and spoke to someone named Dana.",
+          ],
+          [
+            "First sentence",
+            "Hi, I've been charged twice for the same thing on my bill and I'd like to get it put right. Can I explain what happened?",
+          ],
+        ],
+      },
+      {
+        kind: "list",
+        ordered: true,
+        heading: "How to write each of the five",
+        intro: "Paper is best, because you can't lose it behind another window. A note on your phone works if it's the only thing open.",
+        items: [
+          "What it's about, in one line. Write it the way you'd say it to a friend: \"the double charge on my phone bill.\" If it takes two lines, it's really two calls. Pick the one that comes first and put the other on a separate page.",
+          "The result you want, in one line. Decide it now, because it's the thing that slips away halfway through explaining how you got here. A refund, a new date, a cancellation confirmed in writing. If the call wanders, this line is where you come back to.",
+          "The reference. Account number, order number, booking code, or the name and address the account is under. Put it where you can read it, not where you could find it. Hunting through an app while a stranger waits is the moment many calls come apart.",
+          "Two facts. A date and an amount, or a name and a date. Two, not ten. Anything more lives on the statement or email you've put next to the page.",
+          "The first sentence, word for word. A full sentence, written out. Leaving it as \"I'll work out how to begin\" is how the number stays in your phone another week.",
         ],
       },
       {
         kind: "list",
         checkable: true,
-        heading: "Five minutes before you dial",
-        intro: "Write these down. On paper, on a screen, anywhere you can see them while talking.",
+        heading: "Set up the room",
+        intro: "Two minutes, and only the ones that apply to you.",
         items: [
-          "What this is about, in one line.",
-          "What you want to happen. Decide it now, because this is the thing that gets lost halfway through explaining what went wrong.",
-          "Your account or reference number.",
-          "Two facts you will need: a date, an amount, a name.",
-          "Your first sentence, written out.",
+          "The five things are on one page, in front of you.",
+          "A pen, and space on the page to write the reference they give you.",
+          "You've checked when the line is open, and picked one exact time inside those hours.",
+          "You're somewhere you can talk without being overheard, if the call is personal.",
+          "Speakerphone or earbuds are ready, if having both hands free helps you write.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Write the first sentence out",
+        heading: "Pick the time now",
         paragraphs: [
-          "The first fifteen seconds are the part almost everybody rehearses and dreads, and they are also the part you can prepare completely. Once you are through them, the conversation usually carries itself.",
-          "Something as plain as this works: hello, I have a problem with my account and I am hoping you can help me sort it out. Can I explain what has happened. You are not performing. You are getting past the opening.",
+          "Later today isn't a time. Choose one exact time, add ten minutes of buffer before it, and treat the buffer as the moment you read your page once. If you'd rather call right now while everything is fresh, that's the other good answer. The one that doesn't work is leaving it open. [Planning when you cannot feel time pass](/guides/time-blindness-planning) has more on naming a time so it stops sliding.",
+        ],
+      },
+      {
+        kind: "scripts",
+        heading: "The first sentence, by kind of call",
+        intro: "Take the closest one and change any of it. Yours can be shorter or clumsier. It only has to get you through the first fifteen seconds, and you can read it. Say it out loud once before you dial.",
+        items: [
+          {
+            situation: "A problem with an order",
+            line: "Hi, I have a problem with my account and I'm hoping you can help me sort it out. Can I explain what happened?",
+          },
+          {
+            situation: "You were charged wrongly",
+            line: "Hi, I've been charged twice for the same thing and I'd like to get it put right. Can you look at the account for me?",
+          },
+          {
+            situation: "Booking an appointment",
+            line: "Hi, I'd like to book an appointment. Are you the right person for that?",
+          },
+          {
+            situation: "Canceling",
+            line: "Hi, I'd like to cancel. Can you tell me what you need from me to do that?",
+          },
+          {
+            situation: "Chasing a request",
+            line: "Hi, I contacted you about this on the 9th and I'm calling to find out where it stands. Can you look it up for me?",
+          },
+          {
+            situation: "Making a complaint",
+            line: "Hi, I'd like to make a complaint. Can you tell me how that works here, and who I need to speak to?",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "If the call is a harder one, like telling someone no or giving bad news, the opening lines are different. That's covered in [how to say no or give bad news on the phone](/guides/how-to-say-no-or-give-bad-news-on-the-phone), and there are more openings for billing, chasing and canceling in [scripts for the admin calls everyone dreads](/guides/scripts-for-the-admin-calls-everyone-dreads).",
         ],
       },
       {
         kind: "list",
-        heading: "While you are on the call",
-        intro: "Short, because anything longer is unreadable while somebody is speaking to you.",
+        ordered: true,
+        heading: "During the call",
+        intro: "Short on purpose. Anything longer is unreadable while someone is talking to you.",
         items: [
-          "Say what you need.",
-          "Ask them to read the details back once they have found it.",
+          "Read your first sentence. Then say the result you want, in your own words or straight off the page.",
+          "Answer their questions from the page. If they ask for something you don't have, say so and ask what else would do.",
+          "Write down what they tell you as they say it: names, dates, anything they promise.",
           "Ask what happens next, and by when.",
-          "Get a reference for the call, and the name of who you spoke to.",
+          "Before you hang up, ask for a reference number for this call and the name of the person you spoke to.",
+        ],
+      },
+      {
+        kind: "scripts",
+        heading: "Lines to have ready mid-call",
+        intro: "Put these at the bottom of the page. You're allowed to use every one of them.",
+        items: [
+          {
+            situation: "You need a moment",
+            line: "Can you give me a moment? I want to find that so I give you the right answer.",
+          },
+          {
+            situation: "You lost your place",
+            line: "Sorry, let me check my notes. I'm calling about the double charge on my bill.",
+          },
+          {
+            situation: "They talked fast",
+            line: "Could you say that again, more slowly? I'm writing it down.",
+          },
+          {
+            situation: "They want to transfer you",
+            line: "Before you transfer me, can I have your name and a reference for this call, in case we get cut off?",
+          },
+          {
+            situation: "Wrapping up",
+            line: "So to confirm, you're going to refund the second charge and I should see it within five business days. Can I have a reference number for this call?",
+          },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "If you get through it and nothing is resolved",
+        heading: "If you get voicemail or a hold queue",
         paragraphs: [
-          "That is a normal outcome and not a failed call. Plenty of calls end with somebody else needing to look into it. What matters is that you now have a reference and a name, which means the next call starts from where this one stopped rather than from the beginning.",
+          "A voicemail is a smaller version of the same call, and you can rehearse it on the page. Leave your name, one line about why you're calling, your number said slowly, then said again, and a time you'll be free. Then write down that you left it and when. That counts as making the call, and it gives them the next move.",
+          "On hold, keep the page in front of you and put the phone on speaker. Decide before you dial how long you'll wait. Twenty minutes is a fair limit if you have nothing else in the day. When it's up, hang up, write the time you called, and pick your next time. If they offer a callback, take it. Some menus route you to a person if you press 0 or say \"representative\". It's worth a try, and it doesn't always work.",
+        ],
+      },
+      {
+        kind: "scripts",
+        items: [
+          {
+            situation: "Leaving a voicemail",
+            line: "Hi, this is Sam Rivera, calling about a double charge on my phone bill. My number is 555 0142, again, 555 0142. I'm free between two and four today. Thank you.",
+          },
+          {
+            situation: "A menu with no right option",
+            line: "Representative. (Or press 0.)",
+          },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "If you do not manage it today",
+        heading: "If it goes badly",
         paragraphs: [
-          "Then you do not manage it today. Nothing has got worse, and adding guilt to the pile has never once made the next attempt easier.",
-          "The thing worth protecting is that the preparation you did is still there tomorrow. Starting over from nothing is what makes the second attempt harder than the first, and it is entirely avoidable.",
+          "You might freeze, lose the thread, get someone unhelpful, or feel your voice go. None of that ruins the call. What you need out of it is still the same: a name, a reference, and what happens next. If you get those, you can stop, and the next call starts from where this one ended.",
+          "If you're being pushed to agree to something, you don't have to answer on the spot. You're allowed to ask for a minute. You're allowed to say you'll call back.",
         ],
       },
       {
-        kind: "callout",
-        label: "The Companion for this",
-        body: "ADHD Life Companion walks you through calls like this one, step by step, holding the purpose and the outcome on screen so you do not have to. It gives you an opening line you can use or replace with your own, and it never tells you what to accept or settle for, because you are the one with the facts. If you close it halfway through, it picks up on the exact question you left, and stopping early changes nothing on the item.",
+        kind: "scripts",
+        items: [
+          {
+            situation: "You froze",
+            line: "Sorry, I lost my place. Can I have a second?",
+          },
+          {
+            situation: "You're upset or shaky",
+            line: "Give me a moment, I'm finding this stressful. I'll be right with you.",
+          },
+          {
+            situation: "They say they can't help",
+            line: "Is there someone who can? Can I have their name, or the name of the department?",
+          },
+          {
+            situation: "They press you to agree",
+            line: "I'd like to think about that. Can you send it to me in writing, and I'll call back?",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "When you hang up, write four lines under your five things while it's fresh: the date and time, who you spoke to, the reference, and what they said would happen by when. That page is the first sentence of your next call, and it is the reason a call that didn't resolve wasn't wasted. Then decide whether you're done, waiting, or need to call again, and put an exact time on it.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "If you can't get yourself to dial",
+        paragraphs: [
+          "Writing the five things is already the hardest step for many people, so if that's all you did today, keep the page. It will still be there tomorrow, and starting again from nothing is what makes the second attempt feel heavier than the first. If even the page won't start, [what to do in the next ten minutes](/guides/task-paralysis-what-to-do-in-the-next-ten-minutes) shrinks the first move until it needs no push, and [the first physical step, with examples](/guides/first-physical-step-20-examples) shows what that looks like for calls.",
+        ],
+      },
+      {
+        kind: "timeline",
+        heading: "A ladder, if the real call is too big",
+        intro: "Coaches often suggest working up from easier calls. It's worth trying, not proven, and you can skip any rung.",
+        steps: [
+          {
+            when: "Rung 1: the page",
+            what: "Write the five things. Stop there if you need to.",
+          },
+          {
+            when: "Rung 2: no one to answer",
+            what: "Call after hours and leave the voicemail, or listen to the recorded greeting.",
+          },
+          {
+            when: "Rung 3: an easy call",
+            what: "Ask something with no stakes, like opening hours or whether they can help with your kind of problem.",
+          },
+          {
+            when: "Rung 4: the call",
+            what: "Dial with the page in front of you and read the first sentence.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "When a phone call isn't the only route",
+        paragraphs: [
+          "Check whether the company takes the same request by email, online chat or a form. For a billing problem or a cancellation, writing also leaves you a record. If you'd rather write, [the email you keep not sending](/guides/the-email-you-keep-not-sending-and-how-to-chase-a-reply) works the same way, with your first line written out. Some things do need a voice, like proving who you are, or something urgent, and it's fine to do those with someone sitting in the room while you dial. They don't have to do anything.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "When preparing turns into stalling",
+        paragraphs: [
+          "It happens. The page gets tidier and the phone stays where it is. Give yourself ten minutes to write the five things, and if you find yourself rewriting the first sentence a fourth time, dial. A slightly clumsy opening that you actually say beats a perfect one you never do. If the number has been on your mind for months and the guilt is the heavy part, [how to deal with something you have put off](/guides/how-to-deal-with-something-you-have-put-off) starts from there.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "Why is it so hard to make a phone call?",
+            a: "A call has no warm-up. You have to remember why you're calling, listen live, answer questions and hold your main point in mind, all at once, and you can't pause or reread. Plenty of people find that heavier than the same task by email. Some link it to ADHD or anxiety, but only a clinician can say whether that applies to you.",
+          },
+          {
+            q: "How do I start a phone call when I'm nervous?",
+            a: "Write the first sentence out and read it. If they ask for your name, give it, and then say the sentence as written. It's fine to say you're a bit nervous or that you need a second. The first fifteen seconds are the part you can prepare completely, and the conversation usually carries itself after that.",
+          },
+          {
+            q: "What do I say if I get voicemail?",
+            a: "Say your name, one line about why you're calling, your phone number slowly, then the number again, and a time you'll be free. Keep it under twenty seconds. Then write down that you left the message and when. If you haven't heard back in a few days, that note tells you it's time to call again.",
+          },
+          {
+            q: "How long should I wait on hold?",
+            a: "There's no rule. Decide before you dial, based on your day. Twenty minutes is a fair limit if you have nothing else scheduled. When it's up, hang up, write down when you called, and pick your next exact time. If they offer a callback, take it and keep your phone free.",
+          },
+          {
+            q: "Can someone else make the call for me?",
+            a: "Sometimes. Many companies will only talk to the account holder, or will talk to someone else only after you've given permission. That usually means you're on the line briefly to say so. Ask the company what it requires. A friend sitting beside you while you make the call is always an option.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Where the Companion fits",
+        paragraphs: [
+          "The Make a phone call walkthrough in [ADHD Life Companion](/shop/alongside) asks these questions one at a time: what the call is about, who you're calling, what a good result looks like, what's worth having in front of you, and anything you must not forget to say. It then offers an opening line to use, or you can write your own, and asks whether to call now or name one exact time today. During the call it shows your own words back to you. If you close it halfway, it reopens at the question you left. It doesn't ask for account numbers or amounts, and it isn't a diagnosis or a treatment. It's the five things on a screen, in order.",
+        ],
       },
     ],
   },
@@ -1012,69 +1230,121 @@ export const GUIDES: Guide[] = [
       { slug: "what-to-check-before-each-direct-debit-date", reason: "Check which account each bill leaves from and when, so the money you set aside is in the right place." },
     ],
     publishedAt: "2026-08-30",
+    updatedAt: "2026-09-26",
     areaSlug: "money",
+    sources: [
+      {
+        name: "Consumer Financial Protection Circular 2022-06: Unanticipated overdraft fee assessment practices (CFPB)",
+        url: "https://www.consumerfinance.gov/compliance/circulars/consumer-financial-protection-circular-2022-06-unanticipated-overdraft-fee-assessment-practices/",
+        retrieved: "2026-09-26",
+        note: "Defines available balance as ledger balance plus made-available deposits less pending debits, and shows how later-settling items can overdraw an account that looked positive.",
+      },
+      {
+        name: "Available balance vs. current balance (Bankrate)",
+        url: "https://www.bankrate.com/banking/checking/what-is-your-available-balance/",
+        retrieved: "2026-09-26",
+        note: "Available balance reflects pending items and holds but not upcoming bills you haven't paid yet.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "The number in your banking app is not what you can spend. It is what is sitting there right now, before everything that has already been committed and has not left yet.",
-          "The figure you actually want is your balance, minus money that is protected or spoken for, minus what is due before your next payday. That number is usually much smaller than the balance, and knowing it is the difference between spending confidently and spending with a low background hum of worry.",
+          "When you open your banking app and see $2,340, the money you can spend is that balance minus every bill and payment due before your next payday, minus anything you're holding back on purpose, minus anything you've promised but haven't paid yet. What's left is your safe-to-spend number, and it's usually much smaller than the balance.",
+          "This is for anyone paid on a steady rhythm who wants one number before a purchase. It only knows what you type in, so it's as current as your last look, and it can't predict groceries, fuel or a surprise repair. It isn't financial advice.",
         ],
       },
       {
-        kind: "timeline",
-        heading: "Working it out",
-        steps: [
+        kind: "table",
+        heading: "An example, line by line",
+        intro: "Say it's the 12th, payday is the 28th, and your checking account shows $2,340.00 available. These figures are an illustration, not anyone's real month.",
+        columns: ["Line", "Amount", "What it is"],
+        rows: [
+          ["Available balance", "$2,340.00", "Checking only, after pending items"],
+          ["Car insurance, the 15th", "- $128.00", "Due before payday"],
+          ["Phone, the 18th", "- $62.00", "Due before payday"],
+          [
+            "Credit card payment, the 20th",
+            "- $210.00",
+            "You pay this card in full each month",
+          ],
+          ["Electric, the 22nd", "- $94.00", "Due before payday"],
+          ["Streaming, the 25th", "- $15.00", "Due before payday"],
+          [
+            "Held back on purpose",
+            "- $300.00",
+            "Tax money you set aside, not for spending",
+          ],
+          ["Promised, not paid", "- $120.00", "A repair deposit you've agreed to"],
+          ["Safe to spend", "$1,411.00", "Until the 28th"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What the $1,411 tells you",
+        paragraphs: [
+          "The balance said $2,340. The number you can act on is $1,411, which is $929 less. Rent isn't in the sum because it comes out on the 1st, after payday, and the 28th paycheck is what covers it.",
+          "If you want a weekly figure, divide by the weeks left. From the 12th to the 28th is a little over two weeks, so $1,411 works out to roughly $600 a week. Treat that as arithmetic, not a forecast. Then, when you're deciding on a specific purchase, [test it against this number](/guides/can-you-afford-it-before-you-buy-it).",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Work out your own number in five steps",
+        ordered: true,
+        items: [
+          "Open the account you pay bills from and write down the available balance, not the current one. If the two differ, [this explains which to trust](/guides/available-balance-vs-current-balance). Add other accounts only if you'd really spend from them. Leave savings out.",
+          "Write down your next payday, then list every bill, subscription and card payment that leaves before it. Include the quarterly and annual ones. [A bills list that includes them](/guides/monthly-bills-list) makes this a two minute job later.",
+          "Subtract them. If you pay a credit card in full, that card's balance is a bill too. If you carry a balance, subtract the payment you'll actually make.",
+          "Subtract what you're holding back: tax money, a deposit, the cushion you don't want to touch. Then subtract anything you've committed to but not paid, like a booking or a repair.",
+          "Write the result at the top of a note and date it. If you want a weekly figure, divide by the weeks left. Next time you're about to spend, look at that number first, then look at the balance.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "When the number is wrong or misleading",
+        intro: "Six ways this sum goes off, and what to do about each.",
+        items: [
+          "It comes out negative. Don't round it up to zero. It means the bills due before payday are bigger than the money you have, and you have days to move something: a payment date, a transfer, or a call to the biller.",
+          "Money is coming but hasn't landed. Leave it out until it's in the account. A paycheck that's a day late shouldn't turn a plan into an overdraft.",
+          "You forgot a bill. Annual and quarterly charges are the usual culprits. A charge from twelve months ago on your statement will show you which ones.",
+          "The balance moved since you looked. A pending charge or a bill you paid after writing the number down makes it stale. Redo the sum after any big change.",
+          "Different bills leave different accounts. Do the sum per account, or the money in one will hide a shortfall in the other.",
+          "You stopped checking it. A number you wrote three weeks ago is a guess. Date it, and treat anything over a week old as suspect.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
           {
-            when: "Start with",
-            what: "Every current account balance added up. Not savings, unless you genuinely would spend them.",
+            q: "Is safe to spend the same as disposable income?",
+            a: "Not quite. Disposable income usually means your pay after taxes, measured over a period. Safe to spend is a snapshot for today: the money in your account minus what's already spoken for before your next payday. Two people with the same disposable income can have very different safe-to-spend numbers on the 12th, depending on when their bills land.",
           },
           {
-            when: "Take out",
-            what: "Anything protected: money set aside for tax, a deposit being held, an emergency fund you will not touch.",
+            q: "Should I count my savings account?",
+            a: "Only if you'd truly spend it. If it's your emergency fund or money for a known cost, leave it out of the starting balance. Counting it makes the number bigger and less useful, because you'll end up spending money you'd already given a job.",
           },
           {
-            when: "Take out",
-            what: "Every bill and subscription due before your next payday.",
+            q: "Do I subtract my credit card balance?",
+            a: "If you pay the card in full, yes. Charges you've already made are money owed, so treat the payment as a bill due on its date. If you carry a balance, subtract the payment you'll make before payday. Either way, don't count the card's available credit as money you have.",
           },
           {
-            when: "Take out",
-            what: "Anything you have committed to but not yet paid, such as a booking or a repair.",
+            q: "How much cash should I keep as a buffer?",
+            a: "That's your call, and it's worth choosing a number rather than leaving it vague. Some people hold back the cost of a week of groceries, others a flat $100. Subtract it as its own line so it's visible, and adjust it when your month gets tighter or looser.",
           },
           {
-            when: "What is left",
-            what: "That is the honest number. Divide it by the weeks remaining if you want a weekly figure.",
+            q: "Why doesn't my banking app show this number?",
+            a: "Available balance in a banking app reflects pending items and holds that are already in the system. Bankrate notes it doesn't account for upcoming bills you haven't paid yet. Your bank can't know your insurance renews on the 15th, so the subtraction is yours to do.",
           },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Why your banking app will not do this",
+        heading: "Where the free Monthly Money Reset fits",
         paragraphs: [
-          "Your bank knows what has left your account. It does not know that your car insurance renews on the eighteenth, that you promised to cover a shared bill, or that four hundred of that balance is quietly earmarked for tax.",
-          "Available balance in a banking app usually means your balance after holds and pending items, not after your upcoming bills. Those are very different things, and the gap between them is where many unexpected shortfalls come from.",
+          "[Monthly Money Reset](/free) does this sum for you from numbers you type. You enter the money you have right now, your income once it arrives, your bills and any savings you're protecting, and it shows one safe-to-spend figure with a receipt of every line, plus a rough weekly amount. It works on the month rather than to payday, and it can go negative and says so. It's only as current as your last update, and it doesn't connect to your bank.",
+          "If you want your whole picture rather than one month, [Personal Finance Companion](/shop/personal-finance-companion) keeps your accounts, bills, subscriptions and debt minimums together and shows an Available Money estimate with its working. It's a month-level estimate that subtracts a full month of bills, not an until-payday figure like the one above, so use the sum on this page for today's decision.",
         ],
-      },
-      {
-        kind: "paragraphs",
-        heading: "Why budgeting apps get dropped",
-        paragraphs: [
-          "Budgets often get dropped, and the usual reason is not weak willpower. It is that many budgeting systems require constant categorizing to stay accurate, and the moment you fall a week behind, the number on screen is wrong.",
-          "Once the number is wrong, you stop trusting it, and once you stop trusting it, the whole thing is decoration. A system that survives is one that stays roughly right with very little upkeep.",
-        ],
-      },
-      {
-        kind: "paragraphs",
-        heading: "The number should tell you when it is unsure",
-        paragraphs: [
-          "This matters more than it sounds. If a bill is missing its due date, any figure calculated from it is provisional, and you deserve to be told that rather than shown a confident number built on a guess.",
-          "A tool that says this figure is preliminary because two bills have no date is far more useful than one that quietly rounds the uncertainty away.",
-        ],
-      },
-      {
-        kind: "callout",
-        label: "The Companion for this",
-        body: "Monthly Money Reset gives you one number for what is safe to spend this month, holds back the bills you have not paid yet, and shows a rough weekly figure for the rest of the month. It is free. Personal Finance Companion covers your whole picture with a month-level estimate, Available Money, that subtracts protected accounts and a full month of bills, subscriptions and debt minimums, shows its working, and marks itself Preliminary when a bill has no due date. Start with the free one if you are not sure.",
       },
     ],
   },
@@ -1082,7 +1352,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "how-to-find-every-subscription-you-are-paying-for",
     title: "How to find all your subscriptions, including annual ones",
-    dek: "A twelve month statement sweep in six steps, the six places forgotten charges hide, and why to compare the yearly cost, not the monthly one.",
+    dek: "A twelve month statement sweep, plus the places charges hide: Apple and Google lists, PayPal, old cards and free trials that turned into paid plans.",
     primaryQuery: "how to find all my subscriptions",
     next: { slug: "subscription-tracker-what-to-track", reason: "Found them all? Write down six fields for each one so the next renewal date never catches you out." },
     related: [
@@ -1091,61 +1361,183 @@ export const GUIDES: Guide[] = [
       { slug: "bank-statement-csv-to-budget", reason: "If your bank lets you download a file, this shows how to check it and sort charges without retyping." },
     ],
     publishedAt: "2026-08-30",
+    updatedAt: "2026-09-26",
     areaSlug: "money",
+    sources: [
+      {
+        name: "Apple Support: See, change or cancel your subscriptions",
+        url: "https://support.apple.com/en-us/118428",
+        retrieved: "2026-09-26",
+        note: "iPhone steps, receipts search, other Apple Accounts not listed",
+      },
+      {
+        name: "Google Play Help: Cancel, pause or change a subscription on Google Play",
+        url: "https://support.google.com/googleplay/answer/7018481",
+        retrieved: "2026-09-26",
+        note: "Android path to Manage subscriptions; check other Google accounts",
+      },
+      {
+        name: "PayPal Help: Automatic payments",
+        url: "https://www.paypal.com/us/cshelp/article/what-is-an-automatic-payment-and-how-do-i-update-or-cancel-one-help240",
+        retrieved: "2026-09-26",
+        note: "PayPal Settings, Payments path; cancel or change backup method",
+      },
+      {
+        name: "FTC Consumer Advice: Getting in and out of free trials, auto-renewals and negative option subscriptions",
+        url: "https://consumer.ftc.gov/articles/getting-and-out-free-trials-auto-renewals-and-negative-option-subscriptions",
+        retrieved: "2026-09-26",
+        note: "check statements, trial deadlines, dispute with card company",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "The subscriptions costing you the most are not the ones you think about. They are the ones you forgot, which is precisely why they are still running.",
-          "Finding them takes about half an hour and needs one thing that is easy to skip: a full twelve months of statements, not three. Annual subscriptions are often the expensive ones, and they are invisible in a quarterly view.",
-        ],
-      },
-      {
-        kind: "list",
-        checkable: true,
-        heading: "The sweep",
-        items: [
-          "Download twelve months of statements for every current account and credit card.",
-          "Sort by merchant rather than by date, so repeats group together.",
-          "Mark anything that appears more than twice at a similar amount.",
-          "Separately scan for single larger charges around the same date each year, which is where annual renewals hide.",
-          "Check app store subscriptions on every phone in the household, since these do not always appear as recognisable names.",
-          "Search your email for renewal, receipt, subscription and your card's last four digits.",
+          "To find every subscription you pay for, pull twelve months of statements for each card and account, then look for the same merchant at the same amount, plus single charges that land once a year. Next, check the places a statement can't explain: your Apple or Google subscription list, PayPal automatic payments and your email receipts.",
+          "This is for anyone who suspects they pay for more than they remember. It can't find charges on a card or account you don't have statements for, cash payments, or a subscription billed to someone else's Apple or Google account.",
         ],
       },
       {
         kind: "table",
-        heading: "Where forgotten subscriptions usually hide",
-        columns: ["Where", "Why it gets missed"],
+        heading: "An example sweep, with the yearly cost of each",
+        intro: "Example only, not real data. Say a year of statements turns up six repeating charges. The monthly figures look small. The yearly column is the one to decide on.",
+        columns: ["Charge", "How often", "What you see", "Cost per year"],
         rows: [
-          ["Annual renewals", "Appears once a year, never in a three month view"],
-          ["App store billing", "Shows as the store, not the service"],
-          ["Free trials that converted", "The first charge arrives long after you signed up"],
-          ["Old cards still on file", "Charges continue on a card you replaced"],
-          ["Services bundled with something else", "One line covers several products"],
-          ["A partner's account", "Two people each paying for the same thing"],
+          ["Video streaming", "Monthly", "$15.49", "$185.88"],
+          ["Music streaming", "Monthly", "$10.99", "$131.88"],
+          ["Cloud storage", "Monthly", "$2.99", "$35.88"],
+          ["Photo editing app", "Monthly", "$4.99", "$59.88"],
+          ["Fitness app", "Once a year", "$79.99", "$79.99"],
+          ["Antivirus", "Once a year", "$59.99", "$59.99"],
+          ["Total", "", "", "$553.50"],
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Decide with the annual figure, not the monthly one",
         paragraphs: [
-          "Nine ninety nine a month is easy to keep. A hundred and twenty dollars a year is a decision. Same money, different question, and the annual figure is the one that tells you the truth about whether you want it.",
-          "Multiply everything by twelve before you decide anything, and look at the total across all of them. That number can be a surprise.",
+          "Nothing in that list is outrageous, and that's the point. The total is about $46 a month, and you'd only see the two annual charges by looking back a full year. Three months of statements would have missed both.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "How to run the sweep",
+        ordered: true,
+        intro: "Set aside an hour. Use a spreadsheet or a sheet of paper with four columns: name, amount, how often, where it's billed.",
+        items: [
+          "Download twelve months of statements for every credit card, debit card and checking account you've used. Most banks let you pick a date range or download a CSV. If yours only keeps a few months online, ask for older statements.",
+          "Search or scan each statement for repeats. Sorting by merchant name puts the same company next to itself. Write down anything that appears two or more times at the same or a similar amount.",
+          "Scan again for one-off charges that look like a subscription: a round-ish amount with a service name, in the same month as a year earlier. These are your annual renewals. If you have only twelve months, a charge that appears once is a candidate. Note it and cross-check it against the app store lists below.",
+          "Open your Apple subscription list. On iPhone, go to Settings, tap your name, then Subscriptions. Apple's own guidance is that subscriptions bought with a different Apple Account won't appear there, so repeat this on any other account you've used.",
+          "On Android, go to Settings, Google, your name, Manage your Google Account, then Payments and subscriptions, then Manage subscriptions. Switch Google accounts and look again if you use more than one.",
+          "Log in to PayPal on the website and go to Settings, then Payments, then Subscriptions and saved businesses (some accounts label it Automatic payments). Every merchant allowed to bill you appears there.",
+          "Search your email for the words receipt, invoice, renewal, subscription, trial, and your billing email address. Look at the last twelve months and note any sender you haven't written down yet.",
+          "Add up the yearly cost of each one. Monthly charges times twelve, annual charges as they are. Then mark each as keep, unsure or cancel.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "What the line on your statement usually means",
+        intro: "Statement wording varies by bank and merchant, so treat these as patterns to look for, not exact strings.",
+        columns: ["What the line looks like", "What it usually is", "Where to look next"],
+        rows: [
+          [
+            "Apple.com/bill",
+            "Apple billing for an App Store subscription, iCloud or Apple services",
+            "Settings, your name, Subscriptions, or search email for receipts from Apple",
+          ],
+          [
+            "Google followed by a service name",
+            "A Google Play or Google service subscription",
+            "Google Account, Payments and subscriptions",
+          ],
+          [
+            "PayPal followed by a company name",
+            "A merchant billing you through PayPal",
+            "PayPal, Settings, Payments, automatic payments",
+          ],
+          [
+            "Amazon or AMZN with Digital, Prime or a code",
+            "Prime, a digital purchase or an Amazon channel",
+            "Your Amazon account, then the memberships and subscriptions page",
+          ],
+          [
+            "A name you don't recognize",
+            "Often the parent company or a payment processor",
+            "Search the exact text, then check your email for that date",
+          ],
+          [
+            "The same round amount every month",
+            "Almost always a subscription",
+            "Match it to a receipt in your email",
+          ],
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Cancelling is the easy part. Noticing is not",
+        heading: "Charges that show the store and not the service",
         paragraphs: [
-          "Nothing about this is difficult once you have found them. The reason people pay for years is not that cancelling is hard, it is that nothing ever brings the charge to their attention at a moment when they are thinking about it.",
-          "Which is why doing this once is worth much less than having somewhere the list actually lives afterwards.",
+          "If a charge shows the store and not the service, the receipt is the fastest fix. Apple says to search your email for a receipt or invoice from Apple to see which account and which subscription it belongs to. If you find a receipt but the subscription isn't in your list, the company on the receipt may bill you directly, so contact that company.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What can go wrong",
+        paragraphs: [
+          "A free trial that turned into a paid plan looks like a normal charge on the first billing date, weeks after you signed up. The FTC advises checking your card statements and marking your calendar for a trial's deadline, because once it passes you may be paying. If you find one, check the date of the first charge against your email from the sign-up.",
+          "Old cards are the other trap. If you replaced a card, some merchants keep charging the new one and some don't. Go through the statements for the card you stopped using, not only the current one.",
+          "Shared households add a third. If your partner or a family member holds the Apple or Google account, their list has subscriptions yours doesn't. Sit down together and compare, because two people can pay for the same thing without knowing.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Limits of the method",
+        paragraphs: [
+          "A statement sweep is only as good as the accounts you include. If you can't get to twelve months, do the months you can and set a reminder to repeat it when the older ones come around. When you find something you don't want, the steps for ending it are in [how to cancel a subscription that is hard to cancel](/guides/how-to-cancel-subscriptions), including scripts for when the company pushes back.",
+          "If you can download a file from your bank, [turning a bank statement CSV into a budget](/guides/bank-statement-csv-to-budget) shows how to check it and sort charges without retyping them.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "How do I find all my subscriptions?",
+            a: "Gather twelve months of statements for every card and account, look for repeating merchants and once-a-year charges, then check Apple, Google Play, PayPal and your email receipts. Write each one down with its amount, how often it bills and where it's billed. It takes about an hour.",
+          },
+          {
+            q: "How do I find hidden subscriptions on my bank statement?",
+            a: "Sort by merchant so repeats sit together, then look for identical or near-identical amounts each month. Also look for one charge a year with a service name. Lines that show Apple.com/bill, Google or PayPal are billing platforms, so you'll need to check those accounts to see the actual service.",
+          },
+          {
+            q: "How do I see my subscriptions on my iPhone?",
+            a: "Open Settings, tap your name, then tap Subscriptions. Tap any item to see its renewal date and price. Subscriptions bought with a different Apple Account won't show, and you can't manage a family member's, so sign in with the account that made the purchase.",
+          },
+          {
+            q: "How do I find subscriptions on Android?",
+            a: "Go to Settings, Google, your name, Manage your Google Account, then Payments and subscriptions and Manage subscriptions. If one is missing, it may be on a different Google account, so switch accounts and check again. Subscriptions billed through PayPal or directly by a company won't be listed there.",
+          },
+          {
+            q: "How do I find subscriptions charged through PayPal?",
+            a: "On the PayPal website, go to Settings, then Payments, then Subscriptions and saved businesses, or Automatic payments. Select a merchant to see its details. You can cancel the automatic payment or change the backup payment method from that page.",
+          },
+          {
+            q: "What if I find a charge I don't recognize?",
+            a: "Search the exact text from the statement, then check your email for a receipt around that date. If it still isn't yours, contact the merchant first. The FTC advises that if you were charged without consent and they won't refund you, you can dispute the charge with your card company.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Keeping the list after the sweep",
+        paragraphs: [
+          "Once you have the list, the hard part is keeping it current. In Personal Finance Companion, each subscription gets its own record: amount, whether it bills monthly, annually or on a custom cycle, the renewal date, and a decision (keep, reviewing, planned cancellation or canceled). The Subscriptions area shows a monthly total, with annual charges divided by 12, and a kept annual subscription appears in Attention when it's within 14 days of renewing and you open the app.",
+          "It doesn't find subscriptions for you. You can paste your list as notes and review each line before it's saved, but a bank CSV imports transactions and doesn't turn them into subscriptions, so you enter those yourself. [Personal Finance Companion](/shop/personal-finance-companion) is where the list lives after the sweep. If you only want to know what's safe to spend this month, the free [Monthly Money Reset](/free) does that without a subscriptions area. Once you have the list, [what to write down for every subscription](/guides/subscription-tracker-what-to-track) covers the fields worth keeping.",
         ],
       },
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Personal Finance Companion holds your subscriptions alongside your bills, with a monthly total and a decision on each one: keep, still deciding, planned to cancel. A kept annual subscription shows up in Attention when it is within 14 days of renewing, when you open the app. It does not show an annual total and it will not cancel anything for you.",
+        body: "Personal Finance Companion keeps each subscription with its amount, renewal date and a decision, and shows a monthly total. It doesn't find subscriptions from your statements, show an annual total or cancel anything for you.",
       },
     ],
   },
@@ -1905,7 +2297,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "why-to-do-lists-make-it-worse",
     title: "Why to-do lists do not work when starting is the problem",
-    dek: "A list assumes remembering is the hard part. When you have remembered for weeks, starting is what stalls. Three ways lists get in the way, and what helps.",
+    dek: "A long list makes you choose every time you look, and its rows never say where to start. A nine-row example cut to one first step, and how to do it yours.",
     primaryQuery: "why to-do lists do not work",
     next: { slug: "why-you-abandon-planners-and-how-to-come-back", reason: "Lists are one kind of system that breaks. This explains why planners fail the same way and how to come back without starting over." },
     related: [
@@ -1914,57 +2306,149 @@ export const GUIDES: Guide[] = [
       { slug: "why-you-keep-thinking-about-a-task-and-not-doing-it", reason: "If you keep rewriting the task without doing it, this explains the gap between knowing and starting and offers two questions." },
     ],
     publishedAt: "2026-08-30",
+    updatedAt: "2026-09-26",
     areaSlug: "mind-and-focus",
+    sources: [
+      {
+        name: "Getting Things Done: What is GTD",
+        url: "https://gettingthingsdone.com/what-is-gtd/",
+        retrieved: "2026-09-26",
+        note: "The clarify step: decide the next action for each actionable item instead of leaving it vague.",
+      },
+      {
+        name: "ADDitude: ADD To-Do Lists",
+        url: "https://www.additudemag.com/add-to-do-lists/",
+        retrieved: "2026-09-26",
+        note: "Two-minute tasks done immediately and kept off the list; specific task wording; large projects kept off the daily list.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "The premise of a to-do list is that the hard part is remembering. For many people it is not the hard part. The thing has been remembered constantly, at volume, for three weeks. Writing it down again adds nothing.",
-          "What a list does add is a visible tally of everything not yet done, sorted by nothing, all equally urgent looking. So the tool intended to reduce the load becomes a daily reminder of the size of it.",
+          "A to-do list stops working when it gets long enough that every look means choosing between rows, and when its rows name an outcome instead of a first move. Cut it to one physical first step for today, a date only where a real one exists, and park the rest out of sight.",
+          "This is for anyone whose list has become something to avoid, with ADHD or without. It can't tell you why your attention works the way it does, and it isn't medical advice.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Three ways lists make it harder",
+        heading: "Example: one Tuesday list, before and after",
         paragraphs: [
-          "First, they flatten. A two minute email and a four hour form appear as identical rows, so choosing between them costs energy every single time you look.",
-          "Second, they accumulate. Anything genuinely difficult stays on the list while easier items pass through it, so over time the list becomes a concentrated record of what you have avoided.",
-          "Third, they say nothing about starting. A row reading chase the refund tells you what the outcome should be and gives you no idea what the first physical action is, which is the only part that was ever difficult.",
+          "Say you open your list at 9 a.m. and it says: Taxes. Dentist. Car. Mom's birthday. Spare room. Airline refund. Email Priya. Insurance. Laundry. Nine rows, no order, and you have known about most of them for weeks.",
+          "Here is the same list rewritten. The middle column is the only thing that changed about the words. The right column is what changed about where each one lives.",
+        ],
+      },
+      {
+        kind: "table",
+        columns: ["On the list now", "Rewritten as a first step", "Where it goes"],
+        rows: [
+          [
+            "Airline refund",
+            "Open the airline's email and copy the booking reference onto one line",
+            "Today. This is the one thing.",
+          ],
+          [
+            "Email Priya",
+            "Send: \"Can you confirm the 12th still works?\"",
+            "Two minutes. Do it now, then it's gone.",
+          ],
+          [
+            "Mom's birthday",
+            "Order a card by Friday",
+            "Friday is a real date, so it gets one.",
+          ],
+          [
+            "Dentist",
+            "Call the office and ask for the first opening after the 15th",
+            "Parked. Pick a day to come back to it.",
+          ],
+          ["Car", "Find the renewal notice and put it on the desk", "Parked, no date."],
+          [
+            "Spare room",
+            "Carry the boxes by the door out to the hall",
+            "Parked, no date. It's ongoing, not one task.",
+          ],
+          [
+            "Insurance",
+            "Write the claim number on one line where you can find it",
+            "Reference. It's a detail to keep, not a task.",
+          ],
+          ["Taxes", "Open the folder and find last year's return", "Parked, no date."],
+          ["Laundry", "Nothing. It's a habit, not a list item.", "Off the list."],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "After ten minutes, what you look at tomorrow morning is two lines: copy the booking reference, and order the card by Friday. The other seven still exist. They just aren't asking you to choose among them every time you look.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Why a long list stops working",
+        paragraphs: [
+          "A list shows a two-minute email and a four-hour form as the same kind of row, so picking between them costs effort every time. The hard rows also stay while the easy ones pass through, which means an old list slowly becomes a record of what you keep avoiding.",
+          "And a row like \"Airline refund\" says what you want to be true, not what to do first. The first physical move is the part that was hard all along, and the list leaves it blank.",
         ],
       },
       {
         kind: "list",
-        checkable: true,
-        heading: "What actually helps",
-        intro: "Tick whichever your current setup already does. The ones you cannot tick are usually where it keeps failing you.",
+        ordered: true,
+        heading: "How to cut a long list down in ten minutes",
+        intro: "Do this on one page or one screen, with a timer set for ten minutes.",
         items: [
-          "Show one thing, not everything. Almost nobody needs the full list at nine in the morning.",
-          "Write the next physical action, as a verb. Call the number on the letter. Not chase the refund.",
-          "Attach a real date, or none at all. Everything being due today means nothing is.",
-          "Hold the context. What it is about, what you want, the two facts you will need, all visible while you do it.",
-          "Let quiet be an answer. Some days genuinely need nothing from you, and a tool that cannot say so will invent work.",
+          "Copy everything onto one page, in whatever order it comes. Don't sort yet.",
+          "Cross out what isn't a task: habits you do anyway, things you've decided against, things already done.",
+          "Do anything that takes two minutes or less right now, and cross it out. ADDitude's list advice makes the same call: those never need to sit on a list.",
+          "Rewrite each remaining row as a first step someone watching could see you do. Call, open, find, carry, send. This is the \"next action\" idea from Getting Things Done, and it's the whole trick. There are 20 examples in [the first physical step](/guides/first-physical-step-20-examples).",
+          "Pick one for today. Put its first step where you will see it, not at the bottom of the page.",
+          "Give a date to the rows that have a real one: a deadline, an appointment, something you told someone. Leave the rest with no date at all.",
+          "Move everything else to a second page. Tomorrow you'll only open it after today's one thing is done.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "The streak is the worst part",
+        heading: "When this doesn't work",
         paragraphs: [
-          "Completion percentages, streaks and productivity scores all rest on the same assumption: that you will do more if you can see how much you are failing.",
-          "For anybody already carrying a background hum of being behind, this can backfire. It converts a neutral pile of admin into a running record of personal failure, and a common outcome is that the app gets deleted, along with the only record of what actually needed doing.",
+          "The parked page can turn into a second pile. If you open it every day to check, you've rebuilt the long list. Look at it once a week instead, as in [a weekly reset that survives a bad week](/guides/a-weekly-reset-that-survives-a-bad-week).",
+          "Another common snag is that rewriting the list becomes today's task. If it takes more than ten minutes, stop, and just do the first step of the item you most dread. And if you pick your one thing and still can't start it, the step is too big. [Task paralysis: what to do in the next ten minutes](/guides/task-paralysis-what-to-do-in-the-next-ten-minutes) shrinks it further.",
+          "If everything on the page is late and every row feels urgent, start with [how to start when everything is overdue](/guides/how-to-start-when-everything-is-overdue). If the whole system fell apart weeks ago, that is a different problem, and [why you stop using planners](/guides/why-you-abandon-planners-and-how-to-come-back) covers how to come back to one.",
+          "One limit, said once: a short list is not a cure. If you already have a list that works, keep it. This is for the one you've stopped opening.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "Why don't to-do lists work for ADHD?",
+            a: "There isn't one reason, and this guide can't speak to a diagnosis. What people commonly describe is that a long list makes every row look equally urgent, hard items sit there for weeks, and rows say what should happen but not what to do first. The fix is the same either way: fewer rows in view, a physical first step, and dates only where they're real.",
+          },
+          {
+            q: "Why does my to-do list make me anxious?",
+            a: "A long list is a visible tally of everything undone, and the rows you've avoided longest are still on it every time you look. Cutting what you see to one thing for today, with the rest parked on another page, removes the daily tally without losing anything. If the anxiety is broader than your list, that is worth raising with a professional.",
+          },
+          {
+            q: "How many things should be on a to-do list for one day?",
+            a: "There is no proven number. We'd start with one thing, plus anything with a real date that day, as in the example above. If you finish the one, you can pick another. Starting with five usually rebuilds the same list you were trying to escape.",
+          },
+          {
+            q: "Is a paper list or an app better?",
+            a: "Neither wins by itself. What helps is how much you see at once and whether each row starts with something physical. A paper page with one line on it can beat an app showing forty rows, and an app that shows one item can beat a crowded notebook. Use whichever you'll actually open tomorrow.",
+          },
+          {
+            q: "What do I do with a to-do list that already has 50 items?",
+            a: "Don't rewrite all 50. Cross out what isn't a task, then pick the five you'd least like to be asked about and rewrite only those as first steps. Choose one for today and move the other 45 to a second page you open weekly. You can bring rows back as you get to them.",
+          },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "The real question is not what, it is how to start",
+        heading: "Where the Companion fits",
         paragraphs: [
-          "For most stuck tasks you already know exactly what needs doing. What you cannot do is hold the purpose, the outcome, and the details all at once while a stranger talks at you.",
-          "Many people find this is less about motivation and more about holding too much at once, and that it helps to have those things written down in front of you rather than being reminded again. That is worked through properly in [making a phone call you have been avoiding](/guides/how-to-make-a-phone-call-you-have-been-avoiding).",
+          "The steps above work on paper. [ADHD Life Companion](/shop/alongside) does two of them for you. Now shows one thing at a time, chosen from what you already told it: a date you set, something you're waiting on, or something ongoing you left 14 or more days ago. When none of those applies, it says \"Nothing needs you right now\" and stops.",
+          "Life holds everything else in four separate groups: Something to do, Waiting on someone, Something ongoing, and Worth having to hand. Nothing is marked late and nothing is counted. Its \"Break something down\" walkthrough asks what the thing is, what would be true when it's finished, and the first physical step, then asks which could happen today, with the note \"One of them. Not the list.\" It is a web app, not a list manager, so it doesn't hold everything, and it isn't treatment or medical advice.",
         ],
-      },
-      {
-        kind: "callout",
-        label: "The Companion for this",
-        body: "ADHD Life Companion shows what deserves attention now, based on dates you chose, things you are waiting on, and things you left off, and says plainly when nothing does. It walks you through the things that are hardest to start, holding the context on screen. There is no streak, no completion percentage, and no counter of what you did not get to. Something you close halfway changes nothing on the item.",
       },
     ],
   },
@@ -1981,75 +2465,163 @@ export const GUIDES: Guide[] = [
       { slug: "you-missed-a-payment-what-to-do-next", reason: "A held or pending item can cause a missed payment, and this lays out the first 48 hours after one." },
     ],
     publishedAt: "2026-08-30",
+    updatedAt: "2026-09-26",
     areaSlug: "money",
+    sources: [
+      {
+        name: "CFPB: How long can a bank or credit union hold funds I deposited?",
+        url: "https://www.consumerfinance.gov/ask-cfpb/how-long-can-a-bank-or-credit-union-hold-funds-i-deposited-en-1023/",
+        retrieved: "2026-09-26",
+        note: "Reasons a bank may extend a deposit hold: new accounts under 30 days, repeated overdrafts, large checks; deposit notice.",
+      },
+      {
+        name: "Federal Reserve: A Guide to Regulation CC Compliance",
+        url: "https://www.federalreserve.gov/supervisionreg/guide-regulation-cc-compliance.htm",
+        retrieved: "2026-09-26",
+        note: "Exception hold categories and the duty to notify the customer of a longer hold. Dollar thresholds deliberately left out because they are inflation-adjusted.",
+      },
+      {
+        name: "CFPB: How can I avoid debit card overdrafts?",
+        url: "https://www.consumerfinance.gov/ask-cfpb/how-can-i-avoid-debit-card-overdrafts-en-1035/",
+        retrieved: "2026-09-26",
+        note: "Deposits may not be immediately available, so check funds after recent deposits.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Available balance in a banking app is a technical term. It means your current balance minus holds and pending debits, plus any overdraft line your bank includes. It does not mean money that is free for you to use.",
-          "The gap between those two ideas is where many unexpected shortfalls come from, and it is predictable once you know what the number leaves out.",
+          "Current balance is the total of everything that has posted to your account. Available balance is what your bank will let you spend right now: the current balance minus pending card purchases and holds, plus any overdraft line some banks add. Use available to judge whether a payment will go through, and current to match a statement.",
+          "This is for anyone whose banking app shows two numbers and who wants to know which one to trust. It can't tell you what your bank does with your own account, because the rules on holds and overdraft lines are set in your account agreement.",
         ],
       },
       {
-        kind: "compare",
-        heading: "What the number does and does not know",
-        left: {
-          label: "Your bank knows",
-          items: [
-            "Money that has left the account.",
-            "Payments that have settled.",
-            "Any overdraft line your bank adds in.",
-            "Most holds and pending card purchases.",
-            "The balance right now.",
+        kind: "paragraphs",
+        heading: "An example with a hold and pending charges",
+        paragraphs: [
+          "Say your checking account starts the day at $1,240.00 posted. Over two days you do three things, and your app updates like this.",
+        ],
+      },
+      {
+        kind: "table",
+        intro: "Example figures only. Your bank may order or label these differently.",
+        columns: ["What happened", "Current balance", "Available balance"],
+        rows: [
+          ["Start of the day, everything posted", "$1,240.00", "$1,240.00"],
+          [
+            "Grocery purchase on your debit card, still pending: $86.40",
+            "$1,240.00",
+            "$1,153.60",
           ],
-        },
-        right: {
-          label: "Your bank does not know",
-          items: [
-            "That your car insurance renews on the eighteenth.",
-            "That four hundred of this is set aside for tax.",
-            "That you agreed to cover a shared bill this month.",
-            "Annual subscriptions that will not appear for months.",
-            "An autopay due on Friday that has not been taken yet.",
+          ["Gas pump places a hold: $100.00", "$1,240.00", "$1,053.60"],
+          [
+            "You deposit a $500.00 check and the bank holds it until Thursday",
+            "$1,740.00 at some banks, $1,240.00 at others",
+            "$1,053.60",
           ],
-        },
-      },
-      {
-        kind: "paragraphs",
-        heading: "The overdraft problem",
-        paragraphs: [
-          "Some banks include an overdraft line inside the available figure. That means the number can be several hundred higher than the money you actually have, and nothing on screen distinguishes the two.",
-          "It is worth finding out once whether yours does this. It changes how you should read every balance you have looked at for years.",
+          [
+            "A $180.00 autopay is due Friday but has not been taken yet",
+            "unchanged",
+            "$1,053.60",
+          ],
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Pending transactions cut both ways",
         paragraphs: [
-          "A card payment can sit pending for days. Some banks subtract it from available immediately, some do not, and hotel or rental car pre-authorizations can hold amounts far larger than the final charge.",
-          "So the balance can be pessimistic and optimistic at once: reserving money that will be released, while ignoring an autopay due on Friday.",
+          "Notice what neither column does. The autopay isn't in either figure, so the money that is really yours before Friday is $873.60, not $1,053.60. And when the pump finishes at $42.15, the $100.00 hold drops off and your available balance rises by $57.85, without you doing anything.",
+          "That last part is why an available balance can go up on its own. Nothing arrived. A hold was replaced by the smaller real charge.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "The terms your bank uses",
+        columns: ["Term", "What it means", "Where you see it"],
+        rows: [
+          [
+            "Current balance",
+            "Everything that has posted, and nothing pending. Also called posted or ledger balance.",
+            "Statements, and the top line of many apps",
+          ],
+          [
+            "Available balance",
+            "What you can spend now: current minus holds and pending debits, plus any overdraft line your bank includes.",
+            "ATM screens, and whatever your card is approved against",
+          ],
+          [
+            "Pending",
+            "A purchase the merchant has authorized but not yet settled. It can change amount before it posts.",
+            "Your recent activity list",
+          ],
+          [
+            "Authorization hold",
+            "Money set aside at gas pumps, hotels and rental cars until the final charge arrives. It can be larger than the final charge.",
+            "Your available balance only",
+          ],
+          [
+            "Deposit hold",
+            "Part of a deposit your bank has not yet released for spending.",
+            "Your available balance, with a release date in the deposit notice",
+          ],
+          [
+            "Overdraft line",
+            "Coverage some banks add to the available figure. You can spend it, but it isn't your money.",
+            "Sometimes folded into available with no label",
+          ],
+        ],
+      },
+      {
+        kind: "list",
+        heading: "How to read your two numbers today",
+        ordered: true,
+        items: [
+          "Open the account and find both figures. If your app shows only one, look for a label such as \"available\" or \"posted\", or check the ATM receipt.",
+          "Look at the pending list and add up anything marked as a hold or pre-authorization, especially fuel, hotels and rental cars.",
+          "Check your recent deposits. If any is a check, find the date your bank says the money is released. The notice you got when you deposited it lists that date.",
+          "Read your account agreement or ask the bank once whether the available figure includes an overdraft line. It changes how you read every balance afterward.",
+          "Subtract what is due before payday from the available figure. The method is in [how much of your money is actually safe to spend](/guides/how-much-of-your-money-is-actually-safe-to-spend).",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "The number worth having instead",
+        heading: "When the numbers mislead you",
         paragraphs: [
-          "What you actually want is balance, minus protected money, minus everything committed before your next payday. That is usually a lot smaller than the app's figure, and it is the only one you can spend against without a background hum of worry.",
-          "The method for working it out is in [how much of your money is actually safe to spend](/guides/how-much-of-your-money-is-actually-safe-to-spend).",
+          "Deposit holds are set partly by federal rule. Banks must make cash and electronic deposits available quickly, but they can extend holds on checks, on large deposits, on accounts under 30 days old and on accounts with repeated overdrafts. Your deposit notice is where the bank has to tell you when it is holding money longer.",
+          "Debit card overdrafts are their own trap. Whether a purchase can overdraw your account depends on whether you opted in to that coverage, and a purchase can be approved against a balance that later shrinks. Before a bill leaves, look at [what to check before each direct debit date](/guides/what-to-check-before-each-direct-debit-date). If a payment has already failed, [you missed a payment](/guides/you-missed-a-payment-what-to-do-next) covers the first 48 hours.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Common questions",
+        items: [
+          {
+            q: "Which balance is my real balance?",
+            a: "Neither one is the amount that is free to spend. Current shows what has posted, and available shows what the bank will approve today. Your real number is available minus what you owe before payday, such as autopays, rent and any set-aside money. That last step is up to you, because the bank can't see your bills.",
+          },
+          {
+            q: "Is available balance the same as what I can spend?",
+            a: "Only in the narrow sense that your card will probably be approved up to that amount. Some banks add an overdraft line to it, and it ignores bills that haven't been taken yet. Treat it as the ceiling for one purchase, not as spare money.",
+          },
+          {
+            q: "Why is my available balance higher than my current balance?",
+            a: "It usually means the bank is including something extra, most often an overdraft line or a credit that hasn't posted yet, such as a deposit it is letting you use early. Check your account agreement or ask the bank which one applies. Don't assume the difference is yours.",
+          },
+          {
+            q: "Why is my available balance lower than my current balance?",
+            a: "Something is holding money back. Common causes are pending card purchases, a gas pump or hotel authorization hold, and a deposit the bank hasn't released yet. Look for the item in your pending list. Most holds fall away by themselves once the merchant settles the final charge.",
+          },
+          {
+            q: "Which balance should I use to pay a bill?",
+            a: "Use available to see whether the payment will go through today, then subtract other bills due before payday so it doesn't cause a failed payment later. Use current when you are matching your records to a statement, because pending items can still change.",
+          },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "A good figure admits when it is unsure",
+        heading: "Where a Companion fits",
         paragraphs: [
-          "If a bill has no due date recorded, any figure built on it is provisional, and you should be told that rather than shown a confident number resting on a guess.",
-          "This is the difference between a tool you can act on and a tool you check and then second guess. Being told a figure is preliminary because two bills are missing dates is far more useful than having the uncertainty quietly rounded away.",
+          "Your bank shows you two balances and leaves out your bills. In [Personal Finance Companion](/shop/personal-finance-companion) you type in each account's balance yourself, mark which accounts are available for spending and which are protected, and add your bills. It then shows what is left with the working written out line by line. It doesn't connect to your bank, so it only knows the balance you typed, and it works from a month of bills rather than counting down to payday. The free [Monthly Money Reset](/free) is the shorter version: it takes the money you have now and subtracts the protected bills you haven't paid yet.",
         ],
-      },
-      {
-        kind: "callout",
-        label: "The Companion for this",
-        body: "Personal Finance Companion shows Available Money, a month-level estimate: your balances, minus protected accounts, minus a full month of bills, subscriptions and debt minimums, with the working shown. It marks the figure Preliminary when a bill has no due date. Monthly Money Reset, which is free, subtracts only the protected bills you have not yet paid.",
       },
     ],
   },
@@ -2214,65 +2786,200 @@ export const GUIDES: Guide[] = [
       { slug: "how-to-start-when-everything-is-overdue", reason: "If it is not one task but many, all past their dates, this shows how to pick the first thing and stop for tonight." },
     ],
     publishedAt: "2026-08-30",
+    updatedAt: "2026-09-26",
     areaSlug: "mind-and-focus",
+    sources: [
+      {
+        name: "Child Mind Institute: What Is ADHD Paralysis?",
+        url: "https://childmind.org/article/what-is-adhd-paralysis/",
+        retrieved: "2026-09-26",
+        note: "Description of the frozen feeling, that it is not an official ADHD symptom, and the basic needs, body doubling and chunking strategies.",
+      },
+      {
+        name: "CDC: About ADHD",
+        url: "https://www.cdc.gov/adhd/about/index.html",
+        retrieved: "2026-09-26",
+        note: "First step is to talk with a healthcare provider; no single test for ADHD.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Task paralysis is the state where you know exactly what needs doing, you have time to do it, and you cannot begin any of it. It is not the same as procrastination, because there is no pleasant alternative you are choosing instead. You are frozen between options, usually doing nothing you enjoy either.",
-          "The way out is not a better plan. Planning is more deciding, and deciding is the thing that has jammed. What helps is making the next action so small that it does not require a decision.",
+          "Pick one task and shrink it until the first step is something a person watching could see you do, like opening a folder or finding a phone number. Do only that, for up to ten minutes, then write one line about where you stopped. Below is the sequence minute by minute, with worked examples.",
+          "This is for the moment when you know what needs doing, you have the time, and you still can't begin. It's practical admin help, not medical advice, and it can't tell you why you're stuck. If it's affecting your work or health, a clinician is the right person to ask.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What it looks like from the inside",
+        paragraphs: [
+          "You've opened the same tab four times. The letter is on the desk, face down, and you've moved it twice to wipe the table. You could have made the call in the time you've spent deciding whether to make it, and you know that, which makes it worse.",
+          "Child Mind Institute describes this stall, usually called ADHD paralysis, as a frozen feeling when you face a task or decision and can't act however much you want to. It also says it isn't an official ADHD symptom, though it's common in people who have ADHD. We're not going to tell you what yours is. The sequence below doesn't depend on a label, and it's built around one idea: the start is the problem, so shrink the start.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Example: the same task, shrunk three times",
+        paragraphs: [
+          "This is an illustration, not a case. Say the task is \"sort out the insurance claim\". Here is what happens as you cut it down.",
+          "Version one: \"Sort out the insurance claim.\" There's no visible first move in that. You'd have to decide where to look, who to call and what to say, all before doing anything. That's the wall.",
+          "Version two: \"Call the insurer.\" Better, but a call needs a number, a claim reference, the dates and ten free minutes. Still several decisions in a trench coat.",
+          "Version three: \"Find the letter with the claim number on it and put it next to the phone.\" That's it. You can see it happen. It takes two minutes. It needs no motivation, because nothing in it can go wrong, and no one on the other end can say no.",
         ],
       },
       {
         kind: "timeline",
-        heading: "The next ten minutes",
+        heading: "The next ten minutes, minute by minute",
+        intro: "Set a timer for ten minutes. It's a ceiling, not a target. You're allowed to stop early.",
         steps: [
           {
-            when: "Choose",
-            what: "Pick anything, badly. Which task you choose matters far less than choosing one. Two roughly equal options usually are roughly equal.",
+            when: "Minute 0 to 1: choose",
+            what: "Pick one task. Not the most important, just the one you keep looking at. If two are close, take the one whose paper or screen is nearer. Choosing well isn't the point. Choosing is.",
           },
           {
-            when: "Cut it down",
-            what: "Cut it until it is almost insultingly small. Not do the taxes. Open the folder. Not call the landlord. Find the number.",
+            when: "Minute 1 to 2: say where it ends",
+            what: "Finish this sentence in a few words: \"It's done when...\". For the claim, that might be \"the insurer has my claim number and knows I called\". A task with no end feels endless, and that's part of the weight.",
           },
           {
-            when: "Do only that",
-            what: "If momentum arrives, use it. If it does not, you have still moved.",
+            when: "Minute 2 to 4: find the first step",
+            what: "Write the first physical step on paper or a note. Physical means someone watching could see it. Find the letter. Open the form. Write the first line. If you wrote \"think about\", \"plan\" or \"decide\", cross it out and try again.",
           },
           {
-            when: "Before you stop",
-            what: "Write down where you stopped, in one line, so returning does not mean reconstructing.",
+            when: "Minute 4 to 5: check the size",
+            what: "Ask whether you could do it right now, in under three minutes, without deciding anything. If yes, go. If not, shrink it again. The section below covers what to do when it still feels too big.",
+          },
+          {
+            when: "Minute 5 to 9: do only that",
+            what: "Do the step and nothing past it. If you find the letter, you may stop there. If momentum shows up, keep going. If it doesn't, you've still moved a task that was stuck.",
+          },
+          {
+            when: "Minute 9 to 10: leave a note",
+            what: "Write one line where you'll see it: what you did and what the next step is. \"Found the letter, it's by the phone. Next: call, number is on page 2.\" Then stop, even if you feel you should keep going.",
           },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Why choosing is the hard part",
+        heading: "Why the smaller step works, and what we'd skip",
         paragraphs: [
-          "When several things are all somewhat urgent and none has an obvious first step, every one of them costs energy to evaluate. Look at a list of nine of those and you can spend twenty minutes deciding and finish with nothing done and less capacity than you started with.",
-          "This is why a long list makes paralysis worse rather than better. The fix is to look at one thing, not to see everything more clearly.",
+          "A big task asks you to choose a route, hold the goal in mind, and act, all at once. Shrinking the first step takes the choosing and the holding out of it. What's left is one action with no decision in it.",
+          "We'd skip the pep talk and the consequences. Telling yourself what happens if you don't do it adds dread to a task that already had plenty. It tends to raise the wall rather than lower it. A smaller step doesn't need you to feel ready, which is the only thing you can't order up on demand.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "More first steps, from vague to visible",
+        intro: "Examples of the same move on different tasks. For twenty more, see [the first physical step: examples for admin you are stuck on](/guides/first-physical-step-20-examples).",
+        columns: ["The stuck task", "What it feels like", "The first physical step"],
+        rows: [
+          [
+            "The spare room",
+            "Too much, no starting point",
+            "Take one photo of the room from the doorway",
+          ],
+          [
+            "A form for work",
+            "Dreading the first box",
+            "Open it and type your name and the date",
+          ],
+          [
+            "The email you owe someone",
+            "Every opening line sounds wrong",
+            "Write \"Hi [name],\" and one true sentence, even a bad one",
+          ],
+          [
+            "A bill you don't understand",
+            "Afraid of what it says",
+            "Put it on the desk and read only the total",
+          ],
+          [
+            "Booking an appointment",
+            "Too many choices of day",
+            "Find the phone number and write down two days you could go",
+          ],
+          [
+            "A project you dropped",
+            "Guilt about the gap",
+            "Find the file or box and put it where you'll see it",
+          ],
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Lower the bar rather than raising the pressure",
+        heading: "If the first step still feels too big",
         paragraphs: [
-          "The instinct is to increase stakes: promise yourself a deadline, imagine the consequences. That reliably raises the wall rather than lowering it, because the problem was never that you did not care enough.",
-          "Making the first action smaller works. Making the consequences larger does not, and usually adds dread to a task that already had plenty.",
+          "It happens, and it doesn't mean you're doing it wrong. Usually one of three things is going on. Try them in this order.",
+        ],
+      },
+      {
+        kind: "list",
+        ordered: true,
+        heading: "Three ways to go smaller",
+        items: [
+          "Shrink the step again. \"Find the letter\" too big? Try \"walk to the room where the letter is\". \"Open the form\" too big? Try \"put the laptop on the desk\". This sounds silly. That's the point: a step so small there's nothing to refuse.",
+          "Change one thing about the setting before you touch the task. Stand up, move to another room, get a glass of water, eat something if you haven't. Child Mind Institute suggests checking basic needs like hunger, tiredness or the need for a change of scene. Then try the step you already picked.",
+          "Ask someone to be nearby. Working next to another person, even in silence, helps some people begin. Child Mind Institute lists it as a strategy, called body doubling. It's worth trying, not proven for everyone. A text to a friend saying \"I'm going to open the form now, can you stay on with me\" is enough.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What can go wrong",
+        paragraphs: [
+          "You might do the step and feel nothing. Fine. The step counted, and the task isn't where it was. You might pick a new task every ten minutes and finish none. If that's happening, stay with one task for the whole ten minutes, and write it in your note so you meet it first tomorrow.",
+          "If you keep circling the same task in your head without starting, that's a slightly different problem, covered in [why you keep thinking about a task and not doing it](/guides/why-you-keep-thinking-about-a-task-and-not-doing-it). If it's not one task but a whole pile, all late, use [how to pick the first thing when everything is late](/guides/how-to-start-when-everything-is-overdue) instead of this page.",
+          "Ten minutes won't fix a pattern. If starting things is a constant, painful struggle, or it's getting in the way of your job, your health or your relationships, that's worth taking to a doctor or other clinician, who can look at the whole picture. The CDC says the first step is to talk with a healthcare provider, since there's no single test for ADHD. For what comes after, see [diagnosed with ADHD as an adult: what happens next](/guides/diagnosed-with-adhd-as-an-adult).",
         ],
       },
       {
         kind: "paragraphs",
         heading: "If nothing moves today",
         paragraphs: [
-          "Then nothing moved today, and the tasks are exactly where they were, indifferent to it. What matters is that tomorrow does not start from zero, which is entirely about whether you left yourself a note about where you stopped.",
-          "More on that in [picking something back up after abandoning it](/guides/how-to-restart-a-project-you-gave-up-on).",
+          "Then nothing moved today. The tasks are where they were, and the only thing you can protect is tomorrow's start. Leave a note that says what the first step would have been and where the paper is. Tomorrow you begin from that line, not from zero. For more on returning to something you dropped, see [how to restart a project you gave up on](/guides/how-to-restart-a-project-you-gave-up-on).",
+          "Tonight, do one physical thing: put the paper or the laptop where you'll see it first thing.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "What is task paralysis?",
+            a: "It's a stuck feeling where you want to do something, know roughly what it is, and can't begin. Child Mind Institute describes ADHD paralysis as a powerful feeling of being frozen. It isn't an official symptom or a diagnosis by itself. It's a description of an experience, and different things can cause it, so this page sticks to what you can do about it.",
+          },
+          {
+            q: "How do you snap out of task paralysis?",
+            a: "Don't try to snap out of it. Shrink the task until the first step needs no decision. Pick one task, write the first physical step, and do only that for a few minutes. Opening the folder counts. If that's still too big, go smaller, change rooms, or ask someone to stay nearby while you start.",
+          },
+          {
+            q: "Is task paralysis the same as procrastination?",
+            a: "Not quite, though they overlap. Procrastination usually means choosing something more pleasant. Task paralysis tends to feel like being frozen with no pleasant alternative, and the delay is miserable. The fix differs too: pressure and deadlines can make the freeze worse, while a smaller first step often helps. See [executive dysfunction is not procrastination](/guides/executive-dysfunction-is-not-procrastination).",
+          },
+          {
+            q: "Why can't I start even simple tasks?",
+            a: "A simple-looking task can hide several decisions: where to look, what to say, when to do it. A stall often sits in those hidden decisions, not in the effort. Writing the actual first move, such as finding the number, removes most of them. If it happens a lot and hurts your daily life, a clinician can help work out why.",
+          },
+          {
+            q: "How long should I work on a task when I'm stuck?",
+            a: "Up to ten minutes is a good ceiling, and you can stop earlier. The timer is there to make the start feel finite, not to make you finish. If you get going, keep going. If you don't, write one line about where you stopped and leave it for another day.",
+          },
+          {
+            q: "Is a to-do list good for task paralysis?",
+            a: "Usually not on its own. A long list makes you choose between rows every time you look, and a row like \"sort insurance\" gives no first move. One task with a written first step works better. More on that in [why to-do lists make it worse](/guides/why-to-do-lists-make-it-worse).",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Where a Companion can hold this for you",
+        paragraphs: [
+          "[Alongside](/shop/alongside), the ADHD Life Companion, has a walkthrough for this exact situation, called Break something down. It asks what the thing is, what would be true when it's finished, and what the first physical step is, then optionally the next two, and which of them could happen today. One of them, not the list. The steps you aren't doing today go into Life, so you don't have to carry them in your head. It shows one thing at a time, and if you stop partway it changes nothing on the item.",
         ],
       },
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "ADHD Life Companion has a procedure for exactly this, for when something is too big to start. It breaks a thing down into a first action you can actually do, and shows one thing at a time rather than a list to evaluate. If you get partway and stop, it changes nothing on the item.",
+        body: "Alongside is a web app for admin, not a treatment, and it doesn't send anything unless you choose a date for a reminder. It won't do the step for you, but it keeps the step where you can see it.",
       },
     ],
   },
@@ -2813,69 +3520,210 @@ export const GUIDES: Guide[] = [
       { slug: "credit-card-minimum-payments-how-long", reason: "If the missed payment was a credit card minimum, see how long minimums take to clear a balance and what extra changes." },
     ],
     publishedAt: "2026-08-30",
+    updatedAt: "2026-09-26",
     areaSlug: "money",
+    sources: [
+      {
+        name: "CFPB: How long does information stay on my credit report?",
+        url: "https://www.consumerfinance.gov/ask-cfpb/how-long-does-information-stay-on-my-credit-report-en-323/",
+        retrieved: "2026-09-26",
+        note: "Negative information can generally be reported for seven years.",
+      },
+      {
+        name: "Equifax: When late credit card payments post",
+        url: "https://www.equifax.com/personal/education/credit-cards/articles/-/learn/when-late-credit-card-payments-post/",
+        retrieved: "2026-09-26",
+        note: "Late payments generally aren't on reports for at least 30 days; late fees can come sooner; partial payments still reported.",
+      },
+      {
+        name: "CFPB: If I can't pay my mortgage loan, what are my options?",
+        url: "https://www.consumerfinance.gov/ask-cfpb/if-i-cant-pay-my-mortgage-loan-what-are-my-options-en-268/",
+        retrieved: "2026-09-26",
+        note: "Call the servicer first, HUD-approved counselors, HOPE Hotline, no need to pay for foreclosure help.",
+      },
+      {
+        name: "Chase: Recovering from a late credit card payment",
+        url: "https://www.chase.com/personal/credit-cards/education/basics/recovering-from-a-late-credit-card-payment",
+        retrieved: "2026-09-26",
+        note: "Contact the creditor, pay before 30 days, goodwill letter.",
+      },
+      {
+        name: "CFPB: What is a grace period for a credit card?",
+        url: "https://www.consumerfinance.gov/ask-cfpb/what-is-a-grace-period-for-a-credit-card-en-51/",
+        retrieved: "2026-09-26",
+        note: "Grace period is about avoiding interest on new purchases.",
+      },
+      {
+        name: "CFPB: Credit Card Penalty Fees Final Rule",
+        url: "https://www.consumerfinance.gov/rules-policy/final-rules/credit-card-penalty-fees-final-rule/",
+        retrieved: "2026-09-26",
+        note: "Checked for late fee rule status; guide does not state a fee cap.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "One missed payment is usually a small problem treated as a large one. The consequences are mostly recoverable, and acting within a few days is what keeps them that way.",
-          "Nothing here is financial advice, and if payments are being missed regularly rather than occasionally, that is a different situation where free nonprofit credit counseling is the right call and worth contacting early rather than late.",
+          "Check that the payment actually failed, then pay the full amount today if you can. Most lenders don't report a late payment to Equifax, Experian and TransUnion until it's 30 days past due, so paying inside that window usually costs a late fee, not a mark on your report. If you can't pay, call before day 30.",
+          "This is written for one missed bill, not a pile of them, and for US accounts. It can't tell you what your lender's late fee or grace period is, because that sits in your own agreement, and it isn't legal or financial advice. If you're missing payments regularly, skip to the section on when this isn't enough.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "An example: a card minimum due on the 12th",
+        paragraphs: [
+          "Say your card minimum of $35 was due on the 12th and it's now the 14th. Here is how the next weeks could play out, as an illustration and not a forecast.",
+          "Day 1 to 29: a late fee can be added, and interest keeps running on the balance. Day 30: the lender can report the payment as 30 days late. Day 60 or more: some card agreements let the lender raise your rate on the existing balance. The CFPB's own materials note that a penalty rate can apply if you're more than 60 days late.",
+          "Pay the $35 plus any late fee on the 14th and you're in the first bucket. Wait until the 45th day and you're in the second. The money owed is the same. What changes is what gets written on your report, and a reported late payment can stay there for seven years, according to the CFPB.",
         ],
       },
       {
         kind: "timeline",
-        heading: "The first 48 hours",
+        heading: "The first 48 hours, in order",
         steps: [
           {
-            when: "First",
-            what: "Confirm it actually failed. A payment can show as pending, be retried automatically, or have gone out of a different account than you think.",
+            when: "Right now",
+            what: "Confirm it failed. Log in and look for a payment marked pending, a retry, or a payment that left a different account than you expected. Screenshot the status. Some banks show a balance that hasn't caught up with what already left, which is covered in [available balance vs current balance](/guides/available-balance-vs-current-balance).",
           },
           {
-            when: "If you can pay it",
-            what: "Pay it now. A payment a few days late is materially different from one a month late, and most reporting thresholds are measured in months rather than days.",
+            when: "Within the hour",
+            what: "If you have the money, pay the full past-due amount, plus the late fee if it has been added. A partial payment inside the 30 days can still be reported as late, according to Equifax.",
           },
           {
             when: "Same sitting",
-            what: "Check whether anything else is due before your next payday, so you are not solving one and creating another on Friday.",
+            what: "Look at every bill due before your next payday, so fixing this one doesn't cause a second miss on Friday. A single list helps, see [the monthly bills list](/guides/monthly-bills-list).",
           },
           {
-            when: "If you cannot pay it",
-            what: "Call them. Providers often have more flexibility before an account defaults than after, and it is easier to use when you get in touch first.",
+            when: "Day 1, if you can't pay",
+            what: "Call the lender. Use the script below. Ask what they can do before the account reaches 30 days.",
           },
           {
-            when: "Before you hang up",
-            what: "Write down who you spoke to and what was agreed. This matters if a different person tells you something different next week.",
+            when: "Right after the call",
+            what: "Write down the date, the name or ID of the person, and exactly what was agreed. Ask for it in writing or by email.",
+          },
+          {
+            when: "Day 2",
+            what: "Log in again. Check the payment posted, the fee is what they said, and autopay is on or the due date is in your calendar.",
+          },
+        ],
+      },
+      {
+        kind: "scripts",
+        heading: "What to say when you call the lender",
+        intro: "Use the number on your statement or the back of the card. Have your account number and the date of the missed payment in front of you.",
+        items: [
+          {
+            situation: "Opening",
+            line: "Hi, I missed my payment that was due on the 12th. I'd like to make it now and see what I can do about the late fee.",
+          },
+          {
+            situation: "If you can pay today",
+            line: "I can pay the full past-due amount today. Can you confirm the total, including any fee, and that this won't be reported as late?",
+          },
+          {
+            situation: "Asking for the fee waiver",
+            line: "This is the first time I've missed a payment. Would you waive the late fee as a one-time courtesy?",
+          },
+          {
+            situation: "If you can't pay all of it",
+            line: "I can pay $X today and the rest on the [date]. Is there a hardship program, a payment plan, or a date change I can use so this doesn't reach 30 days late?",
+          },
+          {
+            situation: "If they say no",
+            line: "Is there a supervisor or a retention team who can review this? I'd like to note on the account that I asked.",
+          },
+          {
+            situation: "Closing",
+            line: "Can you read back what we agreed, and can you send it to me in writing? Could I have your name or ID number?",
           },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "What actually happens, roughly",
+        heading: "If the call is the part you're avoiding",
         paragraphs: [
-          "A few days late usually means a failed payment fee and nothing else. Around a month late is generally when it starts being reported. Several months late is where accounts are more likely to be sent to default or collections.",
-          "The exact thresholds vary by country, provider and product type. The useful general point is that the gap between a few days and a month is enormous, and it is entirely within your control.",
+          "Most of the fear is in the first sentence. Say it from the script above, word for word, and the rest follows the lender's questions. If you freeze, [making a phone call you have been avoiding](/guides/how-to-make-a-phone-call-you-have-been-avoiding) is a short plan for getting it done. A lender can only offer options while the account is still open and current enough to fix, which is why this call comes before day 30, not after.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "What happens by bill type",
+        intro: "This is the general pattern. Your agreement or the notice on the bill is the final word.",
+        columns: ["Bill", "In the first days", "At 30 days past due"],
+        rows: [
+          [
+            "Credit card",
+            "Late fee possible, interest keeps running",
+            "Lender can report it late to the bureaus",
+          ],
+          [
+            "Mortgage",
+            "Late fee after the grace period in your loan terms",
+            "Can be reported late. Call your servicer before it gets that far",
+          ],
+          ["Auto loan or personal loan", "Late fee and reminders", "Can be reported late"],
+          [
+            "Rent",
+            "Late fee per your lease, notice from the landlord",
+            "Depends on the lease. Ask what the landlord does after the fee date",
+          ],
+          [
+            "Utilities",
+            "Late fee or a disconnection notice",
+            "Often handled with notices and a payment plan first. Ask the company",
+          ],
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Calling them is the part people avoid",
+        heading: "A grace period is not the same as forgiveness",
         paragraphs: [
-          "It is also the single most effective thing available, because providers have options before an account goes into arrears that they lose afterwards: deferrals, revised dates, splitting a payment.",
-          "If that call is the thing you have been putting off for a week, that is an extremely normal response to it, and the preparation that makes it easier is in [making a phone call you have been avoiding](/guides/how-to-make-a-phone-call-you-have-been-avoiding).",
+          "On a credit card, the grace period is about interest: you skip interest on new purchases if you pay the whole balance by the due date, the CFPB explains. It doesn't give you extra days to pay without a fee. A late fee grace period, when there is one, is a separate number of days in your agreement, and mortgages and leases often include one. Look for it in the paperwork before you assume it exists.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "When this isn't enough",
+        ordered: false,
+        items: [
+          "You're already past 30 days. Pay what you can, then ask the lender for a goodwill adjustment in writing, mentioning that this is your first miss and your record before it. Chase describes this as a goodwill letter, and there is no guarantee they'll agree.",
+          "You can't pay this month or next. For a mortgage, the CFPB says to call your servicer first and to contact a HUD-approved housing counselor (the HOPE Hotline is 888-995-4673) for free help. You don't have to pay anyone to help you avoid foreclosure.",
+          "It's happened three times this year. Then the fix isn't a call, it's a change in how bills get tracked, and [why you keep missing bill due dates](/guides/why-you-keep-missing-bill-due-dates) walks through that.",
+          "You see an error on your report. You can dispute it for free with the bureau and the lender under the Fair Credit Reporting Act.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask after a missed payment",
+        items: [
+          {
+            q: "How many days late before it hurts my credit?",
+            a: "For most accounts, a payment is reported to Equifax, Experian and TransUnion once it is 30 days past due. Before that, you can still get a late fee and interest, but Equifax says a late payment generally won't reach your reports for at least 30 days. After it's reported, later marks can follow at 60 and 90 days, so don't stop at the first one.",
+          },
+          {
+            q: "Will one missed payment ruin my credit?",
+            a: "It won't ruin it by itself, but it does count. If it's reported, the CFPB says a credit reporting company can generally keep negative information for seven years. The impact tends to fade as newer, on-time payments build up behind it. Paying before day 30 is what keeps it off the report in the first place.",
+          },
+          {
+            q: "Can I get a late fee waived?",
+            a: "You can ask, and the best time is when you call to make the payment. Lenders decide case by case. It helps if it's your first miss, and if you're paying it now. Ask once, politely, and note the answer. A fee they refuse today can sometimes be reviewed later if you keep paying on time.",
+          },
+          {
+            q: "What if I paid but it still shows as missed?",
+            a: "Check whether the payment is pending or was sent to the wrong account, then ask the lender to confirm it in writing. If a late mark is reported when you paid on time, you can dispute it for free with the credit bureau and the lender. Keep the confirmation email, bank statement line or screenshot.",
+          },
+          {
+            q: "Should I pay the whole bill or just some of it?",
+            a: "If you can, pay the full past-due amount, because Equifax notes partial payments inside the 30 days can still be reported as late. If you can't, pay what you can and call at the same time to arrange the rest. Getting the agreement in writing counts for more than the exact figure.",
+          },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "How it often happens",
+        heading: "Where Draftpace fits",
         paragraphs: [
-          "Often not because somebody decided not to pay, but because the balance looked fine on the day and a payment that had already been committed had not left the account yet.",
-          "That gap between what your balance says and what is genuinely yours is a common cause, and it is explained in [available balance vs current balance](/guides/available-balance-vs-current-balance).",
+          "A lot of missed payments come from a due date that was never written down where it would be seen. Monthly Money Reset, which is [free](/free), lets you list the bills you still owe this month and holds that money back from your safe-to-spend number. [Personal Finance Companion](/shop/personal-finance-companion) keeps each bill with its due date, lets you tick it paid, and shows what falls due in the next 14 days when you open it. It doesn't send payments or contact your lender for you.",
         ],
-      },
-      {
-        kind: "callout",
-        label: "The Companion for this",
-        body: "Personal Finance Companion holds your bills with their due dates and shows what is left to pay this month once you tick bills paid. Its Available Money is a month-level estimate that counts a full month of bills whether or not they are paid, and it marks the figure Preliminary when a bill has no due date. Monthly Money Reset, which is free, holds back only the bills you have not paid yet.",
       },
     ],
   },
@@ -4103,7 +4951,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "executive-dysfunction-is-not-procrastination",
     title: "Executive dysfunction vs procrastination: the difference",
-    dek: "They look identical from outside. Why raising the stakes fails when starting is the barrier, and what lowers the cost of starting instead.",
+    dek: "They can look identical from outside, and they can overlap. How to tell which one you're in today, and what lowers the cost of starting.",
     primaryQuery: "executive dysfunction vs procrastination",
     next: { slug: "task-paralysis-what-to-do-in-the-next-ten-minutes", reason: "To act on this rather than just understand it, this is the ten minute way out when you cannot begin." },
     related: [
@@ -4112,63 +4960,166 @@ export const GUIDES: Guide[] = [
       { slug: "diagnosed-with-adhd-as-an-adult", reason: "If this sounds familiar and you have just been diagnosed, this covers the admin that follows." },
     ],
     publishedAt: "2026-08-30",
+    updatedAt: "2026-09-26",
     areaSlug: "mind-and-focus",
+    sources: [
+      {
+        name: "Center on the Developing Child, Harvard University: InBrief, Executive Function",
+        url: "https://developingchild.harvard.edu/resources/inbrief-executive-function-skills-for-life-and-learning/",
+        retrieved: "2026-09-26",
+        note: "Plain description of executive function skills (focus, holding information, filtering distractions, switching); air traffic control comparison.",
+      },
+      {
+        name: "ADDA: Executive Function Disorder and ADHD",
+        url: "https://add.org/executive-function-disorder/",
+        retrieved: "2026-09-26",
+        note: "Executive dysfunction is not a medical diagnosis; list of associated conditions; task paralysis description.",
+      },
+      {
+        name: "Steel, P. (2007). The nature of procrastination. Psychological Bulletin 133(1), 65-94 (University of Calgary record)",
+        url: "https://ucalgary.scholaris.ca/items/d0dea740-4751-4e9a-84da-2d8ad446830d",
+        retrieved: "2026-09-26",
+        note: "691 correlations; strongest predictors task aversiveness, delay, self-efficacy, impulsiveness, self-control and organization.",
+      },
+      {
+        name: "NIMH: Attention-Deficit/Hyperactivity Disorder",
+        url: "https://www.nimh.nih.gov/health/topics/attention-deficit-hyperactivity-disorder-adhd",
+        retrieved: "2026-09-26",
+        note: "ADHD inattention described as trouble staying on task or organized, often continuing into adulthood; symptoms can interfere with daily life.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "From the outside they are indistinguishable. Something needed doing, time was available, and it did not happen.",
-          "From the inside they are not similar at all, and the difference decides which strategies do anything. Procrastination usually involves choosing something more pleasant. Executive dysfunction is often described as choosing nothing, sometimes while doing something you are not enjoying either.",
+          "Procrastination is putting something off even though you expect the delay to cost you, usually because something else feels better right now. Executive dysfunction is a plain-language label for trouble with skills like starting, planning and holding several steps in mind. The two overlap, and you can do both in one afternoon.",
+          "This is for anyone who keeps not starting things they do want done. It can't tell you why it happens or whether you have a condition, and it isn't medical advice.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "An example: the same form, two different Tuesdays",
+        paragraphs: [
+          "Say a parking permit renewal is due Friday. It's a one-page form and you know where it is. On the first Tuesday you think about it, decide the game on your phone sounds better, play for an hour, and feel a small hit of relief followed by a small hit of guilt. That's what most people mean by procrastination: a choice, made with your eyes open, to trade later for now.",
+          "On the second Tuesday the form is on the desk. You sit down with it and nothing happens. You aren't enjoying anything else. You look at the first field, look at your phone, look at the form again, and forty minutes later you feel worse than when you sat down. Outside, the two Tuesdays look the same: the form wasn't touched. Inside, the second one is the kind of stuck that people often describe as executive dysfunction. This is an illustration, not a case.",
         ],
       },
       {
         kind: "table",
-        heading: "The difference in practice",
+        heading: "How the two often differ",
+        intro: "These are tendencies, not tests. Plenty of people land in the middle, and one person can be in either column on different days.",
         columns: ["", "Procrastination", "Executive dysfunction"],
         rows: [
-          ["What you are doing instead", "Something more appealing", "Often nothing, or something you are not enjoying"],
-          ["How it feels", "Avoidance, with some relief", "Stuck, with no relief"],
-          ["Does knowing the stakes help", "Sometimes", "Often less, and pressure can make it worse"],
-          ["Does breaking it down help", "A little", "Often, if broken small enough"],
-          ["What is actually missing", "Willingness to start now", "Often the ability to get started"],
+          [
+            "What you do instead",
+            "Something more appealing, on purpose",
+            "Often nothing, or something you aren't enjoying",
+          ],
+          [
+            "How it feels",
+            "Avoidance, with some relief",
+            "Stuck, with little or no relief",
+          ],
+          [
+            "Do the stakes help",
+            "Often, when the deadline gets close",
+            "Often not, and for many people more pressure adds distress",
+          ],
+          [
+            "Does breaking it down help",
+            "A little",
+            "Often a lot, if the first piece is small enough to see",
+          ],
+          [
+            "Where the trouble sits",
+            "Wanting to do it now",
+            "Getting started, holding the steps, or sequencing them",
+          ],
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Why the standard advice misfires",
+        heading: "Why the difference is not always clean",
         paragraphs: [
-          "Most productivity advice assumes procrastination, so it raises stakes: set a deadline, picture the consequences, promise yourself a reward. That works when the barrier is willingness.",
-          "When the barrier is initiation, raising stakes adds pressure to a system that is already stalled, and a common result is more distress and the same amount of nothing done.",
+          "Executive function is the set of mental skills that let you plan, focus, hold information in mind, filter distractions and switch tasks. The Center on the Developing Child at Harvard compares it to an air traffic control system. Trouble with those skills is called executive dysfunction, but it is a description of a pattern, not a diagnosis of its own. ADDA says so directly, and lists ADHD, autism, depression, brain injury and several other conditions as common companions.",
+          "Procrastination research points in a similar direction from the other side. Piers Steel's 2007 review of 691 correlations found that the strongest predictors were how unpleasant the task is, how long the payoff is delayed, how confident you feel about doing it, impulsiveness, and organization and self-control. In other words, a task that is boring, unclear and far from any reward is easy to put off, and so is a task you don't feel able to organize. The same afternoon can contain both.",
+        ],
+      },
+      {
+        kind: "list",
+        ordered: true,
+        heading: "Five questions to ask yourself about today",
+        intro: "You're not trying to name a condition. You're picking which kind of help to try first.",
+        items: [
+          "Is there something you'd rather be doing? If yes, you're probably choosing. If you're doing nothing, or something you don't enjoy, starting itself may be the wall.",
+          "Could you say the first physical action out loud, such as open the form or find the account number? If you can't, the task hasn't been broken down yet. Try [twenty examples of a first step](/guides/first-physical-step-20-examples).",
+          "Would a deadline in an hour get you moving? If it would, delay is more likely. If you'd sit there looking at it anyway, more pressure probably isn't the missing piece.",
+          "Is it one task, or a pile? A pile is usually a sorting problem before it's a starting problem. [How to start when everything is overdue](/guides/how-to-start-when-everything-is-overdue) covers that.",
+          "Are you also short on sleep, ill, grieving or flat? Those change how much capacity you have on any given day, and a smaller first step is a fair response to all of them.",
+        ],
+      },
+      {
+        kind: "compare",
+        heading: "What to try for each",
+        left: {
+          label: "If you're choosing something nicer",
+          items: [
+            "Take away the nicer option for twenty minutes: phone in another room, tab closed.",
+            "Make the unpleasant part shorter. Decide you'll do only the first field.",
+            "Attach a small, real reward you'll actually give yourself afterward.",
+            "Say the deadline to someone who will ask how it went.",
+          ],
+        },
+        right: {
+          label: "If starting itself is the wall",
+          items: [
+            "Shrink the first step until it's something a person watching could see: pick up the form, put it on top of the keys.",
+            "Put what you need in front of you first: the reference number, the date, the letter.",
+            "Remove decisions. Choose today's one thing and leave the rest out of sight.",
+            "Stop when the small step is done. Doing more is allowed, not required.",
+          ],
+        },
+      },
+      {
+        kind: "paragraphs",
+        heading: "When this doesn't work, and what to do about it",
+        paragraphs: [
+          "A smaller first step won't fix everything. If a task is stuck because you're afraid of what it will say, or because you're exhausted, you may need to deal with the fear or the exhaustion first, and the step may need to be a text to someone rather than the task itself. Shame also builds. The longer a thing sits, the more it feels like it says something about you, and that weight is real even when the task is small. Naming it once, then doing one tiny thing, usually costs less than waiting for the feeling to pass. [Task paralysis: what to do in the next ten minutes](/guides/task-paralysis-what-to-do-in-the-next-ten-minutes) walks through it.",
+          "If starting things has been this hard for months, is affecting your work, money or health, and isn't explained by a bad stretch, it's worth raising with a doctor or a mental health professional. They can look at what's behind it, which a guide can't. If you already have a diagnosis or suspect one, [diagnosed with ADHD as an adult](/guides/diagnosed-with-adhd-as-an-adult) covers the paperwork side.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "Is executive dysfunction just an excuse for procrastinating?",
+            a: "No, but they can look the same and can happen together. Procrastination is a choice to delay something you expect to regret delaying. Executive dysfunction describes trouble with skills like starting and organizing. Either way, the useful question is what would lower the cost of starting today, not who is to blame.",
+          },
+          {
+            q: "Is executive dysfunction a real diagnosis?",
+            a: "Not on its own. Organizations such as ADDA describe it as a set of symptoms, not a medical diagnosis, and it shows up with ADHD, autism, depression, brain injury and other conditions. If you're worried about what's behind it, a doctor or mental health professional can assess that. This guide can't.",
+          },
+          {
+            q: "How do I know if I'm procrastinating or can't start?",
+            a: "Ask whether you'd rather be doing something else. If you're choosing something more pleasant, that leans toward procrastination. If you're doing nothing, or something you don't enjoy, and a deadline wouldn't move you, starting itself may be the barrier. It can be both, and it can change by day.",
+          },
+          {
+            q: "Why can't I start a task even when I know it's important?",
+            a: "Knowing it's important isn't the same as being able to begin. Starting takes holding the purpose, the first step and the materials in mind at once, and that is hard when you're tired, stressed or short on capacity. Many people find a tiny, visible first step easier than more urgency.",
+          },
+          {
+            q: "What helps when I can't get started?",
+            a: "Shrink the first step until it's something you could see happen, like finding the letter or opening the form. Put what you need in front of you, pick one thing rather than a list, and let yourself stop after it. If it's constant and hurting your life, talk to a professional.",
+          },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "What works instead",
+        heading: "Where the Companion fits",
         paragraphs: [
-          "Lowering the entry cost rather than raising the stakes. Making the first action physically tiny. Removing decisions rather than adding motivation. Putting the context in front of you so starting does not require assembling anything.",
-          "The concrete version of that is in [task paralysis, what to do in the next ten minutes](/guides/task-paralysis-what-to-do-in-the-next-ten-minutes).",
+          "If the second Tuesday sounds familiar, [ADHD Life Companion](/shop/alongside) does the shrinking with you. You keep the thing once, and Now shows one card instead of a list. Choose Do this with me, and its Break something down walkthrough asks what the first physical step is, then asks which one could happen today, with the note that it's one of them, not the list. It doesn't diagnose anything, ask about symptoms or medication, or time you, and stopping partway leaves the item as it was.",
         ],
-      },
-      {
-        kind: "paragraphs",
-        heading: "This is a description, not a diagnosis",
-        paragraphs: [
-          "Executive function difficulties appear in ADHD, and also in depression, anxiety, long covid, concussion, chronic illness, grief and ordinary exhaustion. Recognising the pattern does not tell you what caused it.",
-          "If it is persistent and affecting your life, that is worth raising with somebody qualified. Nothing here is medical advice, and it does not need to be for the practical adjustments to help.",
-        ],
-      },
-      {
-        kind: "paragraphs",
-        heading: "Why the distinction is worth making at all",
-        paragraphs: [
-          "Mostly because of what people conclude about themselves. If you believe you have been choosing comfort over responsibility for years, you draw one conclusion about your character. If you understand that starting itself was the barrier, you draw a different and probably fairer one.",
-          "That second conclusion also happens to lead to strategies that work.",
-        ],
-      },
-      {
-        kind: "callout",
-        label: "The Companion for this",
-        body: "ADHD Life Companion is built around initiation rather than motivation. It shows one thing rather than a list to evaluate, breaks down anything too big into a first action, and holds the context on screen so starting does not require assembling it. It contains no streak and no score, because pressure tends to make this harder for many people.",
       },
     ],
   },
