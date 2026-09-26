@@ -191,7 +191,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "When a parent dies there are perhaps six things that genuinely need doing in the first week, and several dozen that feel urgent and are not. The difference matters, because you are being asked to do administration at the exact moment you are least able to.",
+          "When a parent dies only a few things genuinely need doing in the first week, and many others feel urgent and are not. The difference matters, because you are being asked to do administration at the exact moment you are least able to.",
           "This is the order that works. Get certified copies of the death certificate, because almost nothing else can start without them. Find the will. Tell the small number of organizations that actually need telling now. Secure the property. Then stop, because the rest can genuinely wait, and most of it will take months anyway.",
           "Nothing here is legal advice. Probate and creditor rules are set by state and sometimes by county, and the funeral director and the probate clerk where your parent lived will tell you what applies.",
         ],
@@ -210,7 +210,7 @@ export const GUIDES: Guide[] = [
           },
           {
             when: "When you order",
-            what: "Ask the funeral home for certified copies of the death certificate. Ten is normal. Each institution wants its own and most will not take a photocopy.",
+            what: "Ask the funeral home for certified copies of the death certificate, more than you think you need. Many institutions want their own and most will not take a photocopy.",
           },
           {
             when: "Check first",
@@ -218,7 +218,7 @@ export const GUIDES: Guide[] = [
           },
           {
             when: "Within thirty days",
-            what: "Secure the property. Lock it, forward the mail, and check the homeowners policy, because most insurers restrict cover once a house has been vacant for thirty or sixty days.",
+            what: "Secure the property. Lock it, forward the mail, and check the homeowners policy, because many insurers restrict cover once a house has been vacant for a set number of days.",
           },
         ],
       },
@@ -227,7 +227,7 @@ export const GUIDES: Guide[] = [
         heading: "Why you need so many death certificates",
         paragraphs: [
           "Banks, brokerages, insurers, pension administrators, the Social Security Administration, the DMV and the county recorder will each want a certified copy, and most will not accept a scan or a photocopy. Some return them and some keep them.",
-          "Ordering ten through the funeral home at the outset is far cheaper and faster than ordering them one at a time from vital records over the following six months. This is the single most common thing people wish they had known.",
+          "Ordering several through the funeral home at the outset is usually quicker than ordering them one at a time from vital records later.",
         ],
       },
       {
@@ -258,7 +258,7 @@ export const GUIDES: Guide[] = [
         heading: "What can genuinely wait",
         paragraphs: [
           "Probate runs for months in most states, and there is no version of this where you finish it in two weeks. Closing accounts, valuing the estate, filing the final tax return and distributing anything are all downstream of steps you have not yet completed.",
-          "Clearing the house can wait too, and most people who rush it regret it. Nothing bad happens if a closet stays full until spring.",
+          "Clearing the house can wait too, and rushing it can mean throwing out papers you still need. It is fine if a closet stays full until spring.",
         ],
       },
       {
@@ -266,14 +266,14 @@ export const GUIDES: Guide[] = [
         heading: "The part nobody warns you about",
         paragraphs: [
           "The hardest thing about these two weeks is rarely any single task. It is that you are reconstructing somebody's entire administrative life from the outside, without a map, while grieving. Which bank. Which 401(k). Whether there was life insurance. Whether the utilities were in their name. Who the attorney was.",
-          "Most families find some of it and never find the rest. Money sits unclaimed with state treasurers, subscriptions keep taking payments for years, and somebody spends a Sunday going through paper looking for a policy number that may not exist.",
+          "Families often find some of it and not the rest. Money sits unclaimed with state treasurers, subscriptions keep taking payments for years, and somebody spends a Sunday going through paper looking for a policy number that may not exist.",
           "It is worth saying plainly, because it is the thing you will think about later: this is not something you can fix now, for the person who has died. It is something you can fix for the next person, which is usually you.",
         ],
       },
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Personal Life Affairs Companion is built for the other side of this. It walks you through recording what exists, where it is kept, and who should be told, so nobody has to reconstruct it from the outside. It never asks you to upload a document, only to record where one is. If these two weeks have shown you how hard the search is, that is exactly the problem it exists to prevent.",
+        body: "Personal Life Affairs Companion is built for the other side of this. It walks you through recording what exists and where it is kept, so nobody has to reconstruct it from the outside. It has no upload, only a place to note where a document is. It may be worth having for your own affairs, later.",
       },
     ],
   },
@@ -290,7 +290,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "When a parent dies there are perhaps six things that genuinely need doing in the first week, and several dozen that feel urgent and are not. The difference matters, because you are being asked to do administration at the exact moment you are least able to.",
+          "When a parent dies only a few things genuinely need doing in the first week, and many others feel urgent and are not. The difference matters, because you are being asked to do administration at the exact moment you are least able to.",
           "This is the order that works. Register the death and get certified copies of the certificate, because almost nothing else can start without them. Find the will if there is one. Tell the small number of organisations that actually need telling now. Secure the property. Then stop, because the rest can genuinely wait, and most of it will take months anyway.",
           "Nothing below is legal advice. Requirements differ by country and sometimes by region, and the registrar you speak to will tell you what applies where you are.",
         ],
@@ -305,11 +305,11 @@ export const GUIDES: Guide[] = [
           },
           {
             when: "Within a few days",
-            what: "Register the death with your local register office. Most places require this within a few days.",
+            what: "Register the death with your local register office. The deadline is five days in England, Wales and Northern Ireland, and eight in Scotland.",
           },
           {
             when: "At the same appointment",
-            what: "Order certified copies of the death certificate. Order more than feels sensible, because ten is normal and each organisation wants its own.",
+            what: "Order certified copies of the death certificate. Order more than feels sensible, because several organisations will want their own certified copy.",
           },
           {
             when: "Once it is registered",
@@ -317,7 +317,7 @@ export const GUIDES: Guide[] = [
           },
           {
             when: "Within thirty days",
-            what: "Secure the property. Lock it, redirect post, and if it is now empty, check what the home insurance says about unoccupied buildings, because many policies lapse after thirty days.",
+            what: "Secure the property. Lock it, redirect post, and if it is now empty, check what the home insurance says about unoccupied buildings, because many policies limit cover once a property has been empty for a set number of days.",
           },
         ],
       },
@@ -325,8 +325,8 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Why you need so many death certificates",
         paragraphs: [
-          "Banks, pension providers, insurers, utilities and government departments will each want to see a certified copy, and most will not accept a photocopy or a scan. Some return them and some do not. Ordering ten at registration is far cheaper and faster than ordering them one at a time over the following six months.",
-          "This is the single most common thing people wish they had known, and it costs nothing to get right.",
+          "Banks, pension providers, insurers, utilities and government departments will each want to see a certified copy, and most will not accept a photocopy or a scan. Some return them and some do not. Ordering several at registration is usually quicker than going back for more later.",
+          "It is easier to have them in hand than to ask again.",
         ],
       },
       {
@@ -337,7 +337,7 @@ export const GUIDES: Guide[] = [
         items: [
           "Their bank and any building society, so accounts can be frozen and direct debits stopped.",
           "Their pension provider or employer, because overpaid pension is usually reclaimed and it is easier to stop it than repay it.",
-          "The government department handling benefits, tax and state pension, which in many countries has a single service that notifies several at once.",
+          "The government department handling benefits, tax and state pension, which in England, Scotland and Wales has a single service, Tell Us Once, that notifies several government departments at once. The registrar will explain it.",
           "Home and car insurers, particularly if a property is now unoccupied.",
           "Their landlord or mortgage lender.",
         ],
@@ -355,7 +355,7 @@ export const GUIDES: Guide[] = [
         heading: "What can genuinely wait",
         paragraphs: [
           "Probate takes months in most places, and there is no version of this where you finish it in a fortnight. Closing accounts, valuing the estate, dealing with tax and distributing anything are all downstream of steps you have not yet completed.",
-          "Clearing the house can wait too, and most people who rush it regret it. Nothing bad happens if a wardrobe stays full until spring.",
+          "Clearing the house can wait too, and rushing it can mean throwing out papers you still need. It is fine if a wardrobe stays full until spring.",
         ],
       },
       {
@@ -363,14 +363,14 @@ export const GUIDES: Guide[] = [
         heading: "The part nobody warns you about",
         paragraphs: [
           "The hardest thing about this fortnight is rarely any single task. It is that you are trying to reconstruct somebody's entire administrative life from the outside, without a map, while grieving. Which bank. Which pension. Whether there was insurance. Whether the utilities were in their name. Who the solicitor was.",
-          "Most families find some of it and never find the rest. Money sits unclaimed, subscriptions keep taking payments for years, and somebody spends a Sunday going through paper looking for a policy number that may not exist.",
+          "Families often find some of it and not the rest. Money sits unclaimed, subscriptions keep taking payments for years, and somebody spends a Sunday going through paper looking for a policy number that may not exist.",
           "It is worth saying plainly, because it is the thing you will think about later: this is not something you can fix now, for the person who has died. It is something you can fix for the next person, which is usually you.",
         ],
       },
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Personal Life Affairs Companion is built for the other side of this. It walks you through recording what exists, where it is kept, and who should be told, so nobody has to reconstruct it from the outside. It never asks you to upload a document, only to record where one is. If this fortnight has shown you how hard the search is, that is exactly the problem it exists to prevent.",
+        body: "Personal Life Affairs Companion is built for the other side of this. It walks you through recording what exists and where it is kept, so nobody has to reconstruct it from the outside. It has no upload, only a place to note where a document is. It may be worth having for your own affairs, later.",
       },
     ],
   },
@@ -385,15 +385,15 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "There is no single register you can search to find everything somebody owned. That is the honest answer, and it is why this task takes most families months rather than an afternoon.",
-          "What works instead is a systematic sweep of four sources: their post, their bank statements, their email, and the official tracing services that exist for pensions and unclaimed assets. Between them you will usually find the great majority of it.",
+          "There is no single register you can search to find everything somebody owned. That is the honest answer, and it is why this task often takes months rather than an afternoon.",
+          "What works instead is a systematic sweep of four sources: their post, their bank statements, their email, and the official tracing services that exist for pensions and unclaimed assets. Between them you have the best chance of finding it.",
         ],
       },
       {
         kind: "list",
         checkable: true,
         heading: "Start with twelve months of bank statements",
-        intro: "This is the highest-yield hour you will spend, because almost everything leaves a trace here.",
+        intro: "This is one of the most useful hours you will spend, because a great deal leaves a trace here.",
         items: [
           "Regular outgoings reveal insurance policies, subscriptions, service contracts and standing orders.",
           "Regular incomings reveal pensions, annuities, benefits and rental income.",
@@ -416,8 +416,8 @@ export const GUIDES: Guide[] = [
         items: [
           "Their email, searched for words like statement, policy, renewal, premium and pension.",
           "Their phone, for banking and authenticator apps that name institutions.",
-          "The pension tracing service most countries run, which finds schemes from former employers.",
-          "Unclaimed asset registers, which hold dormant accounts and lost policies.",
+          "A pension tracing service, where your country runs one, which can find schemes from former employers.",
+          "Official unclaimed property or unclaimed money databases, where your state or country has one, which hold dormant accounts and lost policies.",
           "Their accountant, attorney or solicitor, who often knows more than the family does.",
           "The loft, the filing box, and the drawer nobody has opened, which sound like jokes and are where a great deal of this is actually found.",
         ],
@@ -427,21 +427,21 @@ export const GUIDES: Guide[] = [
         heading: "What you will need before anybody talks to you",
         paragraphs: [
           "Almost every institution will want a certified copy of the death certificate, proof of your own identity, and evidence of your authority to act, which usually means the will naming you as executor plus the court document appointing you, called letters testamentary in most of the United States and a grant of probate in the United Kingdom.",
-          "It is worth assembling that set once and keeping it together, because you will be asked for exactly the same three things perhaps twenty times.",
+          "It is worth assembling that set once and keeping it together, because you will be asked for the same three things again and again.",
         ],
       },
       {
         kind: "paragraphs",
         heading: "Accept that you will not find everything",
         paragraphs: [
-          "Billions sit in dormant accounts and untraced pensions, mostly because the only person who knew about them died. A thorough search finds most of it and almost never all of it, and at some point continuing to look costs more than it recovers.",
+          "Some accounts and pensions are never traced, often because the only person who knew about them has died. A thorough search may not find everything, and at some point continuing to look may cost more than it recovers.",
           "That is not a failure on your part. It is the predictable result of a system where the information lived in one person's head.",
         ],
       },
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Personal Life Affairs Companion records what exists and where it is kept, so this search never has to happen to your family. It holds accounts, pensions, policies and digital services as a registry, never as uploaded files, and produces a printed book somebody could follow if they had to. It is the difference between two weeks of searching and an afternoon of reading.",
+        body: "Personal Life Affairs Companion records the names of your banks, your pensions, your life cover and any online accounts that charge money, and where the paperwork for each is kept, so this search never has to happen to your family. It has no upload and never asks for account numbers or passwords, and it produces a printed book somebody could follow if they had to.",
       },
     ],
   },
@@ -457,7 +457,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         paragraphs: [
           "Homeschool record requirements vary enormously between states. Some ask for nothing at all. Some want attendance only. A handful require a portfolio of work that an evaluator will actually look at.",
-          "The practical takeaway is that you should know which of three groups your state falls into, and then keep slightly more than it asks for, because the cost of keeping records is small and the cost of not having them when asked is not.",
+          "The practical takeaway is that you should know which of four levels your state falls into, and then keep slightly more than it asks for, because the cost of keeping records is small and the cost of not having them when asked is not.",
           "Laws change. Always confirm with your state homeschool association or department of education before relying on any summary, including this one.",
         ],
       },
@@ -477,8 +477,8 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Which states require a portfolio",
         paragraphs: [
-          "Nine jurisdictions sit in the high group: the District of Columbia, Florida, Maryland, Massachusetts, New York, Ohio, Pennsylvania, South Carolina and Vermont. In those, a portfolio or a formal annual assessment is part of the law rather than a good habit.",
-          "If you are in one of those, the portfolio is not a formality. Someone reads it, and building it in April from memory is far harder than adding to it as you go.",
+          "Nine jurisdictions sit in the high group: the District of Columbia, Florida, Maryland, Massachusetts, New York, Ohio, Pennsylvania, South Carolina and Vermont. In our summary, those are the states that ask for a portfolio, a formal annual assessment or prior approval of your plan. A portfolio or work samples appear in six of the nine (the District of Columbia, Florida, Maryland, Ohio, Pennsylvania and South Carolina) and in four Moderate states (Louisiana, Maine, Missouri and New Hampshire). In Louisiana, Maine and Ohio a portfolio can stand in for a test.",
+          "If your state asks for a portfolio, someone may read it, and building it in April from memory is far harder than adding to it as you go.",
         ],
       },
       {
@@ -493,7 +493,7 @@ export const GUIDES: Guide[] = [
         kind: "list",
         checkable: true,
         heading: "What to keep even where nothing is required",
-        intro: "Three things are worth recording regardless of your state, because they are the ones you will want later and cannot reconstruct.",
+        intro: "Three things are worth recording regardless of your state, because they are the ones you will most want later.",
         items: [
           "The date, the subject, and roughly what part of it. Unit 3, Lesson 12 is enough.",
           "Whether it landed. One word does it: easy, about right, or difficult.",
@@ -511,7 +511,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Homeschooling Companion keeps the record as you go and prints it when you need it. It accepts backdated entries, because nobody logs every day on the day, and it includes short checks you can run at home to find out honestly whether something stuck. There is no completion percentage anywhere in it, and no screen that tells you that you are behind.",
+        body: "Homeschooling Companion keeps the record as you go and prints it when you need it. Entries are always dated the day you make them, so it records forward from the day you start. It also lets you run short checks at home, with questions you choose, to find out honestly whether something stuck. There is no completion percentage anywhere in it, and no screen that tells you that you are behind.",
       },
     ],
   },
@@ -526,8 +526,8 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Almost every house has a job that has been put off, and most have several. That is not carelessness. It is what happens when three hundred small facts and dates live nowhere except somebody's memory.",
-          "The problem is that deferred maintenance does not stay the same price. Industry analysis puts the average deferred repair at over five thousand dollars by the time it is finally done, and every dollar of work put off can cost four or more later. The jobs below are the ones where that multiplier is real.",
+          "Almost every house has a job that has been put off, and most have several. That is not carelessness. It is what happens when a lot of small facts and dates live nowhere except somebody's memory.",
+          "The problem is that deferred maintenance does not stay the same price. A small job put off tends to turn into a bigger one. The jobs below are the ones where that is most likely.",
         ],
       },
       {
@@ -543,7 +543,7 @@ export const GUIDES: Guide[] = [
           ["Check roof and flashing", "Annually", "Small leak becomes decking, insulation and ceiling"],
           ["Test smoke and CO alarms", "Monthly", "The only item on this list where the cost is not money"],
           ["Reseal grout and caulk", "Every 1 to 2 years", "Water behind tile, which is invisible until the wall is opened"],
-          ["Winterise outdoor taps", "Once, before first freeze", "A burst pipe inside a wall, which is the most expensive item here"],
+          ["Winterize outdoor taps", "Once, before first freeze", "A burst pipe inside a wall, which can be the most expensive item here"],
         ],
       },
       {
@@ -572,13 +572,13 @@ export const GUIDES: Guide[] = [
         heading: "Seasonal jobs are not interval jobs",
         paragraphs: [
           "A good deal of outdoor maintenance belongs to a month rather than to a rolling interval. Blowing out an irrigation system belongs in autumn, not three hundred and sixty five days after you happened to write it down.",
-          "Treating everything as an interval is why generic maintenance apps end up telling people to winterise in July, and why they get ignored.",
+          "Treating everything as an interval is how a reminder ends up telling you to winterize in July.",
         ],
       },
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Home Base knows the service intervals for well over a hundred common jobs, rates each by what happens if you skip it and how much effort it takes, and understands which jobs belong to a season rather than a rolling date. It records the make, model and service history of everything in your house, so the next repair starts with facts instead of a torch and a phone camera behind the fridge.",
+        body: "Home Base knows how often 148 common care jobs usually come round, rates each by what happens if you skip it and how much effort it takes, and understands which jobs belong to a season rather than a rolling date. It records the brand, model and service history of everything you add, so the next repair starts with facts instead of a torch and a phone camera behind the fridge.",
       },
     ],
   },
@@ -620,7 +620,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Handle them one at a time",
         paragraphs: [
-          "The instinct when four things are wrong is to deal with all four at once, usually by opening four browser tabs and phoning somebody while reading an email. That is how people end up cancelling the wrong booking.",
+          "The instinct when four things are wrong is to deal with all four at once, usually by opening four browser tabs and phoning somebody while reading an email. That is how the wrong booking gets canceled.",
           "Change the thing that moved first. Write down the new fact. Then go to whatever depended on it, one booking at a time, and decide whether it actually needs anything. Often two of the four turn out to be fine.",
         ],
       },
@@ -660,7 +660,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Long delays are ordinary rather than rare. If you have a connection, the useful window is the first twenty minutes, before several hundred other people reach the same conclusion you have.",
+          "Delays are ordinary. If you have a connection, act quickly, because the other passengers on your flight will reach the same conclusion you have.",
           "The order is: work out whether the connection is genuinely gone, get in a queue and on the phone at the same time, and know what you are asking for before anyone speaks to you.",
         ],
       },
@@ -710,7 +710,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "What about compensation",
         paragraphs: [
-          "A great many people never claim for a disruption, usually because nobody told them they could. It is worth looking into afterwards.",
+          "It is worth looking into compensation afterwards.",
           "It is deliberately not part of this guide, because what you are owed depends on where you flew from, which carrier, and sometimes which fare, and a confident wrong answer at a desk puts you in a worse position than no answer. Sort out the travel first. Look up entitlement later, when you are sitting down and not at a desk.",
         ],
       },
@@ -728,7 +728,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Travel Companion holds your references, your onward bookings and what depends on what, so a delay does not begin with searching six inboxes. It walks you through the call itself, including an opening line you can use or replace, and afterwards it shows you what else that delay touched. It also prints as a blank book, for when the phone is the thing that failed.",
+        body: "Travel Companion holds your references, your onward bookings and what depends on what, so a delay does not begin with searching six inboxes. It walks you through the call itself, including an opening line you can use or replace, and if you record the flight's new time, it shows what else was booked around it. It also prints as a blank book you fill in by hand, for when the phone is the thing that failed.",
       },
     ],
   },
@@ -744,7 +744,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         paragraphs: [
           "The call is not hard because you do not know what to say. It is hard because making it requires holding several things at once: why you are calling, what outcome you want, the two facts you must not forget, and the ability to think while a stranger talks at you.",
-          "That is a working memory problem, not a motivation problem, which is why telling yourself to just do it has not worked for three weeks.",
+          "Many people describe this as a problem of holding too much at once rather than a lack of motivation, which may be why telling yourself to just do it has not worked for three weeks.",
           "What helps is taking those things out of your head and putting them somewhere you can see them, so the call only requires the part you can actually do.",
         ],
       },
@@ -798,7 +798,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "ADHD Life Companion walks you through calls like this one, step by step, holding the purpose and the outcome on screen so you do not have to. It gives you an opening line you can edit or ignore, and it never tells you what to accept or settle for, because you are the one with the facts. If you close it halfway through, it picks up on the exact question you left, and it records nothing at all about the attempt you did not finish.",
+        body: "ADHD Life Companion walks you through calls like this one, step by step, holding the purpose and the outcome on screen so you do not have to. It gives you an opening line you can use or replace with your own, and it never tells you what to accept or settle for, because you are the one with the facts. If you close it halfway through, it picks up on the exact question you left, and stopping early changes nothing on the item.",
       },
     ],
   },
@@ -855,7 +855,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "ADHD Life Companion is built so that leaving something is not a failure. Close a run halfway through and it records nothing at all, then returns you to the exact question you left rather than to the beginning. Everything you had already answered is still there. There is no streak, no completion percentage, and nothing anywhere that counts what you did not get to.",
+        body: "ADHD Life Companion is built so that leaving something is not a failure. Close a run halfway through and it changes nothing on the item, then returns you to the exact question you left rather than to the beginning. Everything you had already answered is still there. There is no streak, no completion percentage, and nothing anywhere that counts what you did not get to.",
       },
     ],
   },
@@ -905,14 +905,14 @@ export const GUIDES: Guide[] = [
         heading: "Why your banking app will not do this",
         paragraphs: [
           "Your bank knows what has left your account. It does not know that your car insurance renews on the eighteenth, that you promised to cover a shared bill, or that four hundred of that balance is quietly earmarked for tax.",
-          "Available balance in a banking app usually means cleared funds, not uncommitted funds. Those are very different things, and the gap between them is where most unexpected shortfalls live.",
+          "Available balance in a banking app usually means your balance after holds and pending items, not after your upcoming bills. Those are very different things, and the gap between them is where many unexpected shortfalls come from.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Why budgeting apps stop working around month two",
+        heading: "Why budgeting apps get dropped",
         paragraphs: [
-          "Most people who set a financial goal do not stick to it. The usual reason is not weak willpower. It is that most budgeting systems require constant categorising to stay accurate, and the moment you fall a week behind, the number on screen is wrong.",
+          "Budgets often get dropped, and the usual reason is not weak willpower. It is that many budgeting systems require constant categorizing to stay accurate, and the moment you fall a week behind, the number on screen is wrong.",
           "Once the number is wrong, you stop trusting it, and once you stop trusting it, the whole thing is decoration. A system that survives is one that stays roughly right with very little upkeep.",
         ],
       },
@@ -927,7 +927,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Monthly Money Reset gives you one number for what is safe to spend this month and a rough weekly figure, and it is free. Personal Finance Companion does the same across your whole picture, subtracting protected money and upcoming obligations, showing the line by line explanation of how it reached the figure, and telling you plainly when a missing due date makes it preliminary. Start with the free one if you are not sure.",
+        body: "Monthly Money Reset gives you one number for what is safe to spend this month, holds back the bills you have not paid yet, and shows a rough weekly figure for the rest of the month. It is free. Personal Finance Companion covers your whole picture with a month-level estimate, Available Money, that subtracts protected accounts and a full month of bills, subscriptions and debt minimums, shows its working, and marks itself Preliminary when a bill has no due date. Start with the free one if you are not sure.",
       },
     ],
   },
@@ -943,7 +943,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         paragraphs: [
           "The subscriptions costing you the most are not the ones you think about. They are the ones you forgot, which is precisely why they are still running.",
-          "Finding them takes about half an hour and needs one thing most people skip: a full twelve months of statements, not three. Annual subscriptions are the expensive ones and they are invisible in a quarterly view.",
+          "Finding them takes about half an hour and needs one thing that is easy to skip: a full twelve months of statements, not three. Annual subscriptions are often the expensive ones, and they are invisible in a quarterly view.",
         ],
       },
       {
@@ -976,8 +976,8 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Decide with the annual figure, not the monthly one",
         paragraphs: [
-          "Nine ninety nine a month is easy to keep. A hundred and twenty pounds a year is a decision. Same money, different question, and the annual figure is the one that tells you the truth about whether you want it.",
-          "Multiply everything by twelve before you decide anything, and look at the total across all of them. That number is usually a surprise.",
+          "Nine ninety nine a month is easy to keep. A hundred and twenty dollars a year is a decision. Same money, different question, and the annual figure is the one that tells you the truth about whether you want it.",
+          "Multiply everything by twelve before you decide anything, and look at the total across all of them. That number can be a surprise.",
         ],
       },
       {
@@ -991,7 +991,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Personal Finance Companion holds your subscriptions alongside your bills and accounts, with what each costs annually rather than just monthly, and counts them against what is genuinely safe to spend. You can import a statement rather than typing them in. It will not cancel anything for you, and it will not let a renewal be the first time you remember one exists.",
+        body: "Personal Finance Companion holds your subscriptions alongside your bills, with a monthly total and a decision on each one: keep, still deciding, planned to cancel. A kept annual subscription shows up in Attention when it is within 14 days of renewing, when you open the app. It does not show an annual total and it will not cancel anything for you.",
       },
     ],
   },
@@ -1012,7 +1012,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Most maintenance advice online is either a vague seasonal checklist or a manufacturer telling you to service something twice as often as it needs. What follows is the practical middle: how often things genuinely need attention in a normal house.",
+          "Maintenance advice online is often a vague seasonal checklist. What follows is more specific: how often things typically need attention in a normal house.",
           "Two rules before the table. Your own manual always wins, because a specific model may differ. And a job you have never done on a twenty year old system may need doing sooner than the interval suggests, because the interval assumes it was kept up.",
         ],
       },
@@ -1022,10 +1022,10 @@ export const GUIDES: Guide[] = [
         intro: "The systems where neglect is most expensive, and where a missed service usually shows up in the coldest or hottest week of the year.",
         columns: ["Job", "Interval", "Why this interval"],
         rows: [
-          ["Boiler or furnace service", "Annually", "Required by most warranties, and the check that catches unsafe combustion"],
+          ["Boiler or furnace service", "Annually", "Often required by warranties, and the check that catches unsafe combustion"],
           ["Replace HVAC filter", "1 to 3 months", "Depends on pets, dust and whether anyone in the house has allergies"],
-          ["Flush water heater", "Annually", "Sediment builds from the first year and quietly destroys efficiency"],
-          ["Water heater anode rod check", "Every 3 to 5 years", "The single cheapest way to extend a tank's life"],
+          ["Flush water heater", "Annually", "Sediment builds up over time and quietly lowers efficiency"],
+          ["Water heater anode rod check", "Every 3 to 5 years", "A cheap way to extend a tank's life"],
           ["Bleed radiators", "Annually, before heating season", "Trapped air means cold tops and a system working harder than it should"],
           ["Service air conditioning", "Annually, before summer", "A failure in August takes far longer to fix than one in April"],
           ["Check and clean condensate drain", "Annually", "A blocked drain is a common and avoidable cause of water damage"],
@@ -1034,11 +1034,11 @@ export const GUIDES: Guide[] = [
       {
         kind: "table",
         heading: "Structure, water ingress and safety",
-        intro: "Cheap to do, expensive to skip. Nearly all water damage in homes starts with something on this list.",
+        intro: "Cheap to do, expensive to skip. A lot of water damage starts with something on this list.",
         columns: ["Job", "Interval", "Why this interval"],
         rows: [
           ["Clear gutters and downpipes", "Twice a year", "Autumn after leaf fall, and spring after winter debris"],
-          ["Inspect roof and flashing", "Annually", "Most roof failures start at a joint, not in the middle of a slope"],
+          ["Inspect roof and flashing", "Annually", "Roof leaks often start at a joint, not in the middle of a slope"],
           ["Reseal grout and caulk", "1 to 2 years", "Failed sealant lets water behind tile, where it is invisible for months"],
           ["Test smoke and CO alarms", "Monthly", "The only job here where the cost of skipping is not measured in money"],
           ["Replace smoke alarm units", "Every 10 years", "Sensors degrade whether or not the battery is fine"],
@@ -1049,8 +1049,8 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "The jobs that belong to a month, not an interval",
         paragraphs: [
-          "About a third of outdoor maintenance is seasonal rather than periodic. Winterising outdoor taps belongs before the first freeze, not three hundred and sixty five days after you happened to write it down. Blowing out an irrigation system belongs in autumn regardless of when it was last done.",
-          "This is why generic reminder apps get ignored. Anything that tells you to winterise in July has told you something useless, and after the second or third useless reminder people stop reading them entirely.",
+          "A good deal of outdoor maintenance is seasonal rather than periodic. Winterizing outdoor taps belongs before the first freeze, not three hundred and sixty five days after you happened to write it down. Blowing out an irrigation system belongs in fall regardless of when it was last done.",
+          "Anything that tells you to winterize in July has told you something useless, and useless reminders teach people to stop reading the useful ones.",
         ],
       },
       {
@@ -1068,14 +1068,14 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Start from the last done date, not from today",
         paragraphs: [
-          "The most common mistake when setting up any maintenance schedule is to start every interval from the day you wrote the list. That schedules a boiler service twelve months from an arbitrary Tuesday rather than twelve months from the last actual service.",
+          "A common mistake when setting up a maintenance schedule is to start every interval from the day you wrote the list. That schedules a boiler service twelve months from an arbitrary Tuesday rather than twelve months from the last actual service.",
           "If you know roughly when something was last done, use that. If you genuinely do not know, treat it as due, because for most of this list an unnecessary check costs an hour and a missed one costs considerably more. There is more on which of these bite hardest in [the maintenance you skip that costs the most](/guides/home-maintenance-you-skip-that-costs-the-most).",
         ],
       },
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Home Base already knows these intervals for well over a hundred common jobs, and knows which of them belong to a season instead. It works out what is worth doing now from when you last did it, rates each job by what happens if you skip it, and stays quiet about the rest. Snoozing something genuinely changes what it asks you about again.",
+        body: "Home Base already knows how often 148 common care jobs usually come round, and which of them belong to a season instead. It works out what is worth doing now from when you last did it, rates each job by what happens if you skip it, and stays quiet about the rest. Snooze puts a job off for seven days.",
       },
     ],
   },
@@ -1091,7 +1091,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         paragraphs: [
           "The worst moment to look for a model number is when the thing has already broken, usually in the dark, usually with a phone torch, usually behind something heavy.",
-          "Five fields, written down once while the appliance is working and accessible, remove that moment permanently. It takes about two minutes per item and it is the highest return household admin there is.",
+          "Five fields, written down once while the appliance is working and accessible, remove that moment permanently. It takes a couple of minutes per item.",
         ],
       },
       {
@@ -1119,7 +1119,7 @@ export const GUIDES: Guide[] = [
         heading: "Why the serial number matters more than you expect",
         paragraphs: [
           "A model number tells a supplier which part fits. A serial number tells a manufacturer which production run yours came from, which matters for warranty claims and for recalls.",
-          "Recalls are the underrated one. Manufacturers issue them regularly and reach owners through registration, which most people skip. If you have the serial number written down somewhere findable, you can check it against a recall list in a minute.",
+          "Recalls are the underrated one. Manufacturers issue them regularly and reach owners through registration, which many people skip. If you have the serial number written down somewhere findable, you can check it against a recall list in a minute.",
         ],
       },
       {
@@ -1134,14 +1134,14 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "The best moment to do this is a move",
         paragraphs: [
-          "Every fact about a house passes through your hands in the two weeks around moving in, and almost none of it gets written down. Meter readings, which utility is with whom, where the stopcock is, what came with the property.",
+          "Many facts about a house pass through your hands in the weeks around moving in, and few of them get written down. Meter readings, which utility is with whom, where the shutoff valve is, what came with the property.",
           "A year later the boiler needs servicing and nobody remembers who installed it. Recording it while it is in front of you takes minutes and saves an afternoon.",
         ],
       },
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Home Base asks for exactly these fields, and asks for the right ones per type of thing rather than the same form for a boiler and a lawnmower. It keeps the service history alongside them, so the next repair starts with facts. It stores what a document is and where you keep it, never the document itself, because no product on Draftpace accepts an upload.",
+        body: "Home Base has fields for brand, model, purchase and install dates and warranty end, and a Notes field where a serial number can go. It shows the right fields per type of thing rather than the same form for a boiler and a lawnmower, and keeps the service history alongside them. It stores a link to where a document lives, never the document itself.",
       },
     ],
   },
@@ -1157,13 +1157,13 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         paragraphs: [
           "Start with the places people actually keep wills, which are duller than you expect: a home filing box, a bedroom drawer, a safe, or with the attorney or solicitor who drafted it.",
-          "Work through the list below in order. Most wills are found in the first three places, and the later entries exist because occasionally they are not.",
+          "Work through the list below in order. The later entries are less likely, and they exist because sometimes the will is not where anyone would expect.",
         ],
       },
       {
         kind: "timeline",
         heading: "The search order",
-        intro: "Work down it rather than across it. Each place is more effort than the one before, and most wills are found in the first two.",
+        intro: "Work down it rather than across it. Each place is more effort than the one before.",
         steps: [
           {
             when: "At home",
@@ -1218,7 +1218,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Personal Life Affairs Companion records where a will is kept, who drafted it, and who is named as executor, so this search never has to happen. It holds the location and the reference, never the document itself. It also produces a printed book, which is the format that actually survives the situation where somebody cannot get into an account.",
+        body: "Personal Life Affairs Companion records whether you have a will, where it is kept, who else knows, and who you would name to sort things out, so this search never has to happen. It holds the location, and it has no upload for the document itself. It also produces a printed book, which is the format that actually survives the situation where somebody cannot get into an account.",
       },
     ],
   },
@@ -1274,7 +1274,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "How long it really takes",
         paragraphs: [
-          "Simple estates commonly take six to twelve months. Anything involving real property, a business, out of state assets or a disagreement between beneficiaries takes considerably longer, and two years is not unusual.",
+          "Even a simple estate takes many months. Anything involving real property, a business, out of state assets or a disagreement between beneficiaries takes considerably longer, and two years is not unusual.",
           "The slow parts are rarely the ones people expect. Waiting for probate, waiting for a property to sell, and waiting for tax clearance take far longer than any of the tasks you actually perform.",
         ],
       },
@@ -1283,7 +1283,7 @@ export const GUIDES: Guide[] = [
         heading: "The part worth taking seriously",
         paragraphs: [
           "Executors can be held personally liable for mistakes. Distributing the estate before debts are settled is the classic one: if a creditor appears afterwards, the shortfall can land on you rather than on the beneficiaries who already spent it.",
-          "This is why the order matters, and why you wait out your state creditor claim period before distributing anything. That window is set by state law and commonly runs three to six months from the notice to creditors. Executors of anything complicated usually involve a probate attorney, paid from the estate rather than from their own pocket.",
+          "This is why the order matters, and why you wait out your state creditor claim period before distributing anything. That window is set by state law, so ask the probate court or an attorney how long it is where your parent lived. Executors of anything complicated usually involve a probate attorney, paid from the estate rather than from their own pocket.",
         ],
       },
       {
@@ -1310,7 +1310,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Personal Life Affairs Companion exists so the person you would name never leaves you doing the search half of this job. It records what exists, where it is kept, and who should be told, and prints as a book somebody could follow. If you are currently executing an estate and finding out how little was written down, that is the argument for doing it for your own.",
+        body: "Personal Life Affairs Companion is for the other side of this: recording what exists and where it is kept, in a printed book somebody could follow. If you are doing this now, it may be worth doing your own later.",
       },
     ],
   },
@@ -1365,7 +1365,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "How long it really takes",
         paragraphs: [
-          "Simple estates commonly take six to twelve months. Anything involving property, a business, overseas assets or a disagreement between beneficiaries takes considerably longer, and two years is not unusual.",
+          "Even a simple estate takes many months. Anything involving property, a business, overseas assets or a disagreement between beneficiaries takes considerably longer, and two years is not unusual.",
           "The slow parts are rarely the ones people expect. Waiting for probate, waiting for a property to sell, and waiting for tax clearance take far longer than any of the tasks you actually perform.",
         ],
       },
@@ -1374,7 +1374,7 @@ export const GUIDES: Guide[] = [
         heading: "The part worth taking seriously",
         paragraphs: [
           "Executors can be held personally liable for mistakes. Distributing the estate before debts are settled is the classic one: if a creditor appears afterwards, the shortfall can land on you rather than on the beneficiaries who already spent it.",
-          "This is why the order matters, and why the standard advice is to wait out the statutory creditor notice period before distributing anything. It is also why executors of anything complicated usually involve a solicitor, paid from the estate rather than from their own pocket. Placing a statutory advertisement under section 27 of the Trustee Act is the standard protection against unknown creditors.",
+          "This is why the order matters, and why the standard advice is to look for creditors before distributing anything. It is also why executors of anything complicated usually involve a solicitor, paid from the estate rather than from their own pocket. In England and Wales, a notice under section 27 of the Trustee Act 1925 gives protection against claims you did not know about. Scotland and Northern Ireland have their own rules.",
         ],
       },
       {
@@ -1400,7 +1400,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Personal Life Affairs Companion exists so the person you would name never leaves you doing the search half of this job. It records what exists, where it is kept, and who should be told, and prints as a book somebody could follow. If you are currently executing an estate and finding out how little was written down, that is the argument for doing it for your own.",
+        body: "Personal Life Affairs Companion is for the other side of this: recording what exists and where it is kept, in a printed book somebody could follow. If you are doing this now, it may be worth doing your own later.",
       },
     ],
   },
@@ -1416,8 +1416,8 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         paragraphs: [
           "A will says who gets what. It does not say which bank, which pension, where the deeds are, who your accountant is, or that there is a policy nobody knows about.",
-          "That gap is what leaves families searching for months. The fix is a plain record of what exists and where it is kept, which takes a couple of evenings and is entirely separate from any legal document.",
-          "A large share of adults have no estate documents at all. If that is you, this file is a far better place to start than a will, because it is useful immediately and requires nobody's signature.",
+          "That gap is what leaves families searching for months. The fix is a plain record of what exists and where it is kept, which can be built in a few short sittings and is entirely separate from any legal document.",
+          "If you have no estate documents yet, this file is a far better place to start than a will, because it is useful immediately and requires nobody's signature.",
         ],
       },
       {
@@ -1434,7 +1434,7 @@ export const GUIDES: Guide[] = [
           "Debts, including anything guaranteed for somebody else.",
           "Digital: which email is the recovery address for everything, and where the password manager is, without the master password.",
           "People: accountant, lawyer, adviser, and anybody who should be told.",
-          "Anything that would surprise somebody, which is the most valuable line in the whole file.",
+          "Anything that would surprise somebody, which is often the most useful line in the file.",
         ],
       },
       {
@@ -1464,7 +1464,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "This file is what Personal Life Affairs Companion produces. It sequences the job so it has a beginning instead of being a folder of blank forms, works out which parts are even relevant to you, and prints a book somebody could follow. It records where things are kept and never the things themselves, because it cannot accept an upload at all.",
+        body: "Personal Life Affairs Companion covers much of this file. It sequences the job so it has a beginning instead of being a folder of blank forms, works out which parts are even relevant to you, and prints a book somebody could follow. It asks where things are kept, not for the things themselves, and it has no upload.",
       },
     ],
   },
@@ -1479,7 +1479,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Nine times out of ten the reservation exists and is filed under something you did not expect: a different surname, the name of whoever paid, a third party booking site's own reference rather than the hotel's, or a slightly different spelling.",
+          "Often the reservation exists and is filed under something you did not expect: a different surname, the name of whoever paid, a third party booking site's own reference rather than the hotel's, or a slightly different spelling.",
           "So the goal at the desk is not to argue. It is to give them enough different ways to look it up that one of them works.",
         ],
       },
@@ -1521,7 +1521,7 @@ export const GUIDES: Guide[] = [
         heading: "If it genuinely is not there",
         paragraphs: [
           "Show the confirmation email, and ask what they can do tonight rather than what went wrong. The cause matters tomorrow. Where you sleep matters now.",
-          "If they are full, ask them to find you a room at a comparable hotel, which is standard practice when a booking cannot be honoured. Get the name of who you spoke to and a reference before you leave the desk, because whoever you deal with next will not know any of this.",
+          "If they are full, ask whether they can find you a room at a comparable hotel. Get the name of who you spoke to and a reference before you leave the desk, because whoever you deal with next will not know any of this.",
         ],
       },
       {
@@ -1535,7 +1535,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Travel Companion keeps every reference, provider and booking name in one place, so this conversation starts with facts rather than a search through six inboxes. It walks you through the exchange itself, including an opening line you can edit or replace, and it never tells you what to accept or settle for. Afterwards it shows you what else that change touched.",
+        body: "Travel Companion keeps the confirmation reference and title of each booking in one place, so this conversation starts with facts rather than a search through six inboxes. It walks you through the exchange itself, including an opening line you can edit or replace, and it never tells you what to accept or settle for. If the stay's time changes and you record it, it shows what else was booked around it.",
       },
     ],
   },
@@ -1550,8 +1550,8 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Search for a homeschool record keeping template and you will find hundreds. Most of them are beautiful, most of them ask for eight fields per child per day, and most of them are abandoned somewhere around November.",
-          "The template is not the hard part. Keeping it is. So what follows is the smallest structure that still satisfies an evaluator, and the reasoning for why each column earns its place.",
+          "Search for a homeschool record keeping template and you will find hundreds. Most of them are beautiful, most of them ask for eight fields per child per day, and most of them are abandoned somewhere around October.",
+          "The template is not the hard part. Keeping it is. So what follows is the smallest structure that still shows what happened, and the reasoning for why each column earns its place.",
         ],
       },
       {
@@ -1560,9 +1560,9 @@ export const GUIDES: Guide[] = [
         intro: "Copy this into whatever you already open every day. A notebook is fine. The format matters far less than whether it gets filled in.",
         columns: ["Column", "Example", "Why it is there"],
         rows: [
-          ["Date", "14 Oct", "Every requirement that exists anywhere is anchored to dates. Without them you have anecdotes."],
+          ["Date", "14 Oct", "Requirements that count days or ask for a log are anchored to dates. Without them you have anecdotes."],
           ["Subject", "Maths", "Evaluators and states ask what was covered, by subject, not by activity."],
-          ["What part", "Unit 3, Lesson 12", "Turns a year into a sequence somebody can follow. This is the column that proves progress."],
+          ["What part", "Unit 3, Lesson 12", "Turns a year into a sequence somebody can follow. This is the column that helps show progress."],
           ["How it went", "Difficult", "One word. It is the only column that helps you rather than an evaluator, and it is the one you will be glad of in March."],
         ],
       },
@@ -1571,7 +1571,7 @@ export const GUIDES: Guide[] = [
         heading: "What to leave off, and why",
         paragraphs: [
           "Hours, unless your state counts them. Most do not, and logging time turns a thirty second job into a two minute one.",
-          "Colour coding. It is a pleasure to design and a chore to maintain, and it is the single most reliable predictor of a system being abandoned.",
+          "Color coding. It is a pleasure to design and a chore to maintain, and it is a common reason a system gets dropped.",
           "Anything requiring a written paragraph per child per day. Nobody sustains that past October, and the version you abandon in October is worth less than the crude one you keep all year.",
         ],
       },
@@ -1600,14 +1600,14 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Check what your state asks before you design anything",
         paragraphs: [
-          "Eight jurisdictions ask for nothing at all, and nine want a portfolio or a formal assessment. Building for the strictest standard when you live in Texas wastes a weekend.",
+          "Eight jurisdictions file nothing with the state, and nine sit in our top level, where a portfolio, a formal assessment or prior approval of your plan is part of the picture. Building for the strictest standard when you live in Texas wastes a weekend.",
           "The full position is in [homeschool record keeping requirements, state by state](/guides/homeschool-record-keeping-requirements-by-state), and what a portfolio needs is in [what actually goes in a homeschool portfolio](/guides/what-goes-in-a-homeschool-portfolio).",
         ],
       },
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Homeschooling Companion is these four fields and nothing else, with the date filled in for you. It accepts backdated entries, because real weeks are not tidy, and it prints a record per child covering what was done and when. There is no tally of days missed and no score, because a record that judges you is a record that gets avoided.",
+        body: "Homeschooling Companion is these four fields and nothing else, with the date filled in for you. The date is always the day you record, so it records forward from the day you start, and it prints a record per child covering what was done and when. There is no tally of days missed and no score, because a record that judges you is a record that gets avoided.",
       },
     ],
   },
@@ -1623,14 +1623,14 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         paragraphs: [
           "A portfolio is a record that your child was educated. It is not a scrapbook of best work, and it is not a performance. Evaluators are generally checking that something coherent happened across the year, not judging whether it was excellent.",
-          "Six jurisdictions make portfolios mandatory: Pennsylvania, Maryland, Ohio, South Carolina, Florida and the District of Columbia. Requirements differ, so check yours in [record keeping requirements by state](/guides/homeschool-record-keeping-requirements-by-state) and with your state association.",
+          "In our summary of state requirements, a portfolio or work samples appear in ten jurisdictions: the District of Columbia, Florida, Louisiana, Maine, Maryland, Missouri, New Hampshire, Ohio, Pennsylvania and South Carolina. In Louisiana, Maine and Ohio a portfolio can stand in for a test. Requirements differ, so check yours in [record keeping requirements by state](/guides/homeschool-record-keeping-requirements-by-state) and with your state association.",
         ],
       },
       {
         kind: "list",
         checkable: true,
         heading: "The core contents",
-        intro: "Most requirements are satisfied by these five things.",
+        intro: "A typical portfolio holds these five things.",
         items: [
           "A log of educational activities, with reading materials named by title.",
           "Samples of work across the year, dated, from several points rather than one good week.",
@@ -1644,7 +1644,7 @@ export const GUIDES: Guide[] = [
         heading: "Include ordinary work, not only the best",
         paragraphs: [
           "The instinct is to include only the pieces you are proud of. Resist it. A portfolio of nothing but finished, perfect work tells an evaluator very little, and can even read as curated rather than representative.",
-          "Include something from October and something from March on the same subject. Progress across a year is the single most persuasive thing a portfolio can show, and it is invisible if everything came from the same two weeks.",
+          "Include something from October and something from March on the same subject. Progress across a year is one of the clearest things a portfolio can show, and it is invisible if everything came from the same two weeks.",
         ],
       },
       {
@@ -1665,7 +1665,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Abandoned books belong on the reading list",
         paragraphs: [
-          "A reading log that only contains finished books is a less honest record and, oddly, a less impressive one. A child who is allowed to stop reading something is a child who keeps starting things.",
+          "A reading log that only contains finished books is a less honest record and, oddly, a less impressive one. A child who is allowed to stop reading something may well keep starting things.",
           "Note what was abandoned and roughly why. It shows judgement developing, which is a more interesting thing to evidence than volume.",
         ],
       },
@@ -1673,14 +1673,14 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Build it as you go, or it will not exist",
         paragraphs: [
-          "The failure mode is universal: nothing is kept until spring, and then a weekend disappears into reconstructing a year from undated worksheets and memory.",
+          "The usual failure mode is this: nothing is kept until spring, and then a weekend disappears into reconstructing a year from undated worksheets and memory.",
           "A folder per child and a habit of dropping things in as they happen is enough. It does not need a system. It needs to take under a minute so it survives a bad week.",
         ],
       },
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Homeschooling Companion keeps the log as you go and prints a record per child when you need one. It accepts backdated entries, because nobody logs every day on the day. It also includes short checks you can run at home to find out honestly whether something stuck, with four possible answers including not enough to say, which is the honest result more often than most tools admit.",
+        body: "Homeschooling Companion keeps the log as you go and prints a record per child when you need one. Entries are always dated the day you make them. It also lets you run short checks at home, with questions you choose, to find out honestly whether something stuck, with four possible answers including not enough to say.",
       },
     ],
   },
@@ -1695,7 +1695,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "The premise of a to-do list is that the hard part is remembering. For a great many people that is exactly backwards. The thing has been remembered constantly, at volume, for three weeks. Writing it down again adds nothing.",
+          "The premise of a to-do list is that the hard part is remembering. For many people it is not the hard part. The thing has been remembered constantly, at volume, for three weeks. Writing it down again adds nothing.",
           "What a list does add is a visible tally of everything not yet done, sorted by nothing, all equally urgent looking. So the tool intended to reduce the load becomes a daily reminder of the size of it.",
         ],
       },
@@ -1726,7 +1726,7 @@ export const GUIDES: Guide[] = [
         heading: "The streak is the worst part",
         paragraphs: [
           "Completion percentages, streaks and productivity scores all rest on the same assumption: that you will do more if you can see how much you are failing.",
-          "For anybody already carrying a background hum of being behind, this is precisely wrong. It converts a neutral pile of admin into a running record of personal failure, and the reliable outcome is that the app gets deleted, along with the only record of what actually needed doing.",
+          "For anybody already carrying a background hum of being behind, this can backfire. It converts a neutral pile of admin into a running record of personal failure, and a common outcome is that the app gets deleted, along with the only record of what actually needed doing.",
         ],
       },
       {
@@ -1734,13 +1734,13 @@ export const GUIDES: Guide[] = [
         heading: "The real question is not what, it is how to start",
         paragraphs: [
           "For most stuck tasks you already know exactly what needs doing. What you cannot do is hold the purpose, the outcome, and the details all at once while a stranger talks at you.",
-          "Which is a working memory problem rather than a motivation problem, and it responds to having those things written down in front of you, not to being reminded again. That is worked through properly in [making a phone call you have been avoiding](/guides/how-to-make-a-phone-call-you-have-been-avoiding).",
+          "Many people find this is less about motivation and more about holding too much at once, and that it helps to have those things written down in front of you rather than being reminded again. That is worked through properly in [making a phone call you have been avoiding](/guides/how-to-make-a-phone-call-you-have-been-avoiding).",
         ],
       },
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "ADHD Life Companion shows what deserves attention now, derived from dates you set yourself, and says plainly when nothing does. It walks you through the things that are hardest to start, holding the context on screen. There is no streak, no completion percentage, and no counter of what you did not get to. Something you close halfway records nothing at all.",
+        body: "ADHD Life Companion shows what deserves attention now, based on dates you chose, things you are waiting on, and things you left off, and says plainly when nothing does. It walks you through the things that are hardest to start, holding the context on screen. There is no streak, no completion percentage, and no counter of what you did not get to. Something you close halfway changes nothing on the item.",
       },
     ],
   },
@@ -1755,8 +1755,8 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Available balance in a banking app is a technical term. It means cleared funds, plus any overdraft you have, minus transactions that have already settled. It does not mean money that is free for you to use.",
-          "The gap between those two ideas is where most unexpected shortfalls live, and it is entirely predictable once you know what the number leaves out.",
+          "Available balance in a banking app is a technical term. It means your current balance minus holds and pending debits, plus any overdraft line your bank includes. It does not mean money that is free for you to use.",
+          "The gap between those two ideas is where many unexpected shortfalls come from, and it is predictable once you know what the number leaves out.",
         ],
       },
       {
@@ -1767,8 +1767,8 @@ export const GUIDES: Guide[] = [
           items: [
             "Money that has left the account.",
             "Payments that have settled.",
-            "Your arranged overdraft, added in.",
-            "Standing orders it can see scheduled.",
+            "Any overdraft line your bank adds in.",
+            "Most holds and pending card purchases.",
             "The balance right now.",
           ],
         },
@@ -1779,7 +1779,7 @@ export const GUIDES: Guide[] = [
             "That four hundred of this is set aside for tax.",
             "That you agreed to cover a shared bill this month.",
             "Annual subscriptions that will not appear for months.",
-            "That a pending card payment has not landed yet.",
+            "An autopay due on Friday that has not been taken yet.",
           ],
         },
       },
@@ -1787,7 +1787,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "The overdraft problem",
         paragraphs: [
-          "Many banks include an arranged overdraft inside the available figure. That means the number can be several hundred higher than the money you actually have, and nothing on screen distinguishes the two.",
+          "Some banks include an overdraft line inside the available figure. That means the number can be several hundred higher than the money you actually have, and nothing on screen distinguishes the two.",
           "It is worth finding out once whether yours does this. It changes how you should read every balance you have looked at for years.",
         ],
       },
@@ -1795,8 +1795,8 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Pending transactions cut both ways",
         paragraphs: [
-          "A card payment can sit pending for days. Some banks subtract it from available immediately, some do not, and hotel or car hire pre-authorisations can hold amounts far larger than the final charge.",
-          "So the balance can be pessimistic and optimistic at once: reserving money that will be released, while ignoring a direct debit due on Friday.",
+          "A card payment can sit pending for days. Some banks subtract it from available immediately, some do not, and hotel or rental car pre-authorizations can hold amounts far larger than the final charge.",
+          "So the balance can be pessimistic and optimistic at once: reserving money that will be released, while ignoring an autopay due on Friday.",
         ],
       },
       {
@@ -1818,7 +1818,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Personal Finance Companion works out what is genuinely available by subtracting protected accounts and upcoming obligations from your real balances, then shows the line by line explanation of how it got there. When a bill is missing a due date it says the figure is preliminary rather than pretending otherwise. Monthly Money Reset does a simpler version of the same thing, free, if you want to start there.",
+        body: "Personal Finance Companion shows Available Money, a month-level estimate: your balances, minus protected accounts, minus a full month of bills, subscriptions and debt minimums, with the working shown. It marks the figure Preliminary when a bill has no due date. Monthly Money Reset, which is free, subtracts only the protected bills you have not yet paid.",
       },
     ],
   },
@@ -1826,15 +1826,15 @@ export const GUIDES: Guide[] = [
   {
     slug: "why-budgeting-apps-stop-working-after-two-months",
     title: "Why budgeting apps stop working after about two months",
-    dek: "Most people who set a financial goal do not stick to it. The reason is usually the tool's design, not the person using it.",
+    dek: "Budgets often get dropped. The reason is usually the tool's design, not the person using it.",
     publishedAt: "2026-08-30",
     areaSlug: "money",
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Most people who set a financial goal do not stick to it. That number is usually presented as a discipline problem. It is mostly a design problem.",
-          "Almost every budgeting tool requires continuous manual upkeep to stay accurate. Miss a week of categorising and the figures on screen are wrong. Once they are wrong you stop trusting them, and once you stop trusting them the app is decoration.",
+          "Budgets often get dropped, and that is usually presented as a discipline problem. It is mostly a design problem.",
+          "Many budgeting tools require continuous manual upkeep to stay accurate. Miss a week of categorizing and the figures on screen are wrong. Once they are wrong you stop trusting them, and once you stop trusting them the app is decoration.",
         ],
       },
       {
@@ -1860,8 +1860,8 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Rigid budgets fail for a separate reason",
         paragraphs: [
-          "Envelope style budgets assume a stable month. Most months are not stable, and one unexpected cost breaks several categories at once. Repairing that takes more effort than the budget was saving.",
-          "Most people who budget are doing it to make sure the essentials are covered, nothing more ambitious than that. That is a much smaller question than a full category system, and it can be answered with far less upkeep.",
+          "Envelope style budgets assume a stable month. Many months are not stable, and one unexpected cost breaks several categories at once. Repairing that takes more effort than the budget was saving.",
+          "Many people who budget are doing it to make sure the essentials are covered, nothing more ambitious than that. That is a much smaller question than a full category system, and it can be answered with far less upkeep.",
         ],
       },
       {
@@ -1882,7 +1882,7 @@ export const GUIDES: Guide[] = [
         heading: "Ask what happens when you stop paying attention",
         paragraphs: [
           "Whatever you use, this is the question worth asking before you invest a weekend in setup. Some tools degrade gracefully and are still broadly correct after a neglected two weeks. Others become actively misleading and then demand an hour of repair before they are any use again.",
-          "Only the first kind is still installed a year later.",
+          "Choose the first kind.",
         ],
       },
       {
@@ -1913,7 +1913,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         paragraphs: [
           "You have not forgotten it. That is the confusing part. It arrives at eleven at night, in the shower, in the middle of something else, and it has been doing that for weeks.",
-          "So the problem is not memory, and every tool built on the assumption that it is memory has failed you. Writing it down again does nothing, because it was never off the list.",
+          "So the problem may not be memory, and a tool built only around remembering may not help. Writing it down again does nothing, because it was never off the list.",
         ],
       },
       {
@@ -1921,7 +1921,7 @@ export const GUIDES: Guide[] = [
         heading: "The gap is between knowing and starting",
         paragraphs: [
           "Starting almost anything administrative requires holding several things at once: what this is about, what you want to happen, the two facts you will need, and enough spare capacity to think while somebody talks at you.",
-          "That is a working memory load, and it is heaviest at exactly the moments you tend to attempt these things, which is late, tired, and already carrying the day. The task is not hard. Assembling the conditions to begin it is.",
+          "Many people find that is a lot to hold, and it feels heaviest at the moments you tend to attempt these things, which is late, tired, and already carrying the day. The task may not be hard. Assembling the conditions to begin it often is.",
         ],
       },
       {
@@ -1952,7 +1952,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "ADHD Life Companion is built for this gap rather than for remembering. You put the thing down once, it brings it back when it actually matters, and when you are ready it walks you through it, holding the purpose and the outcome on screen so you are not carrying them. Nothing in it counts how long something sat.",
+        body: "ADHD Life Companion is built for this gap rather than for remembering. You put the thing down once, it shows it on the day you chose, and when you are ready it walks you through it, holding the purpose and the outcome on screen so you are not carrying them. Nothing in it counts how long something sat.",
       },
     ],
   },
@@ -2020,7 +2020,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "ADHD Life Companion has a procedure for exactly this, for when something is too big to start. It breaks a thing down into a first action you can actually do, and shows one thing at a time rather than a list to evaluate. If you get partway and stop, it records nothing at all about the attempt.",
+        body: "ADHD Life Companion has a procedure for exactly this, for when something is too big to start. It breaks a thing down into a first action you can actually do, and shows one thing at a time rather than a list to evaluate. If you get partway and stop, it changes nothing on the item.",
       },
     ],
   },
@@ -2036,7 +2036,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         paragraphs: [
           "There is a short window, roughly the two weeks around moving in, when every fact about a house is either in front of you or one phone call away. The previous owner is still reachable. The surveyor's report is still open on your laptop. The boiler manual is still in a drawer rather than lost.",
-          "After that window, each of those facts costs an afternoon to recover, and some are gone permanently. This is the highest return hour of admin in the whole process.",
+          "After that window, each of those facts costs an afternoon to recover, and some are gone permanently. This is time well spent.",
         ],
       },
       {
@@ -2076,7 +2076,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "The insurance detail people miss",
         paragraphs: [
-          "If the property will be empty for a stretch between completion and moving in, check what your policy says about unoccupancy. Many lapse or reduce cover after thirty days empty, and the period around a move is exactly when that bites.",
+          "If the property will be empty for a stretch between completion and moving in, check what your policy says about unoccupancy. Many policies lapse or reduce cover after a set number of days empty, and the period around a move is exactly when that bites.",
         ],
       },
       {
@@ -2105,7 +2105,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Most seasonal checklists are padded. They read well, they run to forty items, and by item twelve most people have stopped. A shorter list that gets done beats a complete one that does not.",
+          "Many seasonal checklists are long. They read well, but a long list is easy to abandon. A shorter list that gets done beats a complete one that does not.",
           "What follows is the subset where timing genuinely matters, meaning the job belongs to a season rather than to a rolling interval, and skipping it in that season causes a real problem.",
         ],
       },
@@ -2114,22 +2114,22 @@ export const GUIDES: Guide[] = [
         heading: "The jobs that actually belong to a season",
         columns: ["Season", "Job", "Why now specifically"],
         rows: [
-          ["Before first freeze", "Shut off and drain outdoor taps, disconnect hoses", "A burst pipe inside a wall is the most expensive item on any home list"],
+          ["Before first freeze", "Shut off and drain outdoor taps, disconnect hoses", "A burst pipe inside a wall can be the most expensive item on a home list"],
           ["Before first freeze", "Blow out or drain irrigation", "Water left in lines splits them, and you find out in spring"],
           ["Autumn", "Clear gutters after leaf fall", "Doing it before the leaves drop achieves very little"],
-          ["Autumn", "Service heating", "Engineers are available in October and booked solid in January"],
-          ["Autumn", "Check draughts and seals", "Cheapest possible efficiency work, and only findable when it is cold outside"],
+          ["Fall", "Service heating", "Technicians are easier to book in October than in the first cold week"],
+          ["Fall", "Check drafts and seals", "Inexpensive efficiency work, and easiest to find when it is cold outside"],
           ["Spring", "Service air conditioning", "Same reason as heating, in reverse"],
           ["Spring", "Inspect roof and flashing", "After winter has done its worst, before summer storms"],
           ["Spring", "Clear gutters again", "Winter debris, plus whatever autumn missed"],
-          ["Summer", "Exterior timber, paint, fencing", "The only window with reliably dry weather"],
+          ["Summer", "Exterior timber, paint, fencing", "A stretch of dry weather makes the work easier"],
         ],
       },
       {
         kind: "paragraphs",
         heading: "Everything else is an interval, not a season",
         paragraphs: [
-          "Boiler servicing, water heater flushing, filter changes, grout and sealant, alarm testing. None of these care what month it is. They care how long since the last time.",
+          "Water heater flushing, filter changes, grout and sealant, alarm testing. None of these care what month it is. They care how long since the last time.",
           "Treating them as seasonal is what produces the checklist telling you to flush a water heater every spring when it was done in November. Their real intervals are in [how often things actually need servicing](/guides/how-often-home-systems-need-servicing).",
         ],
       },
@@ -2137,8 +2137,8 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Why generic reminders get ignored",
         paragraphs: [
-          "Any system that tells you to winterise in July has told you something useless, and after two or three useless prompts people stop reading all of them, including the ones that mattered.",
-          "The credibility of a reminder is the whole product. One well timed prompt a month beats twenty generic ones, and the difference is entirely whether the tool understands that a third of outdoor work belongs to a month rather than a countdown.",
+          "Any system that tells you to winterize in July has told you something useless, and useless prompts teach people to stop reading the ones that mattered.",
+          "A reminder is only as useful as its timing. One well timed prompt beats twenty generic ones, and the difference is whether the tool understands that some outdoor work belongs to a month rather than a countdown.",
         ],
       },
       {
@@ -2167,15 +2167,15 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Most people assume a will decides everything. For a large share of what they own, it does not.",
+          "Most people assume a will decides everything. For some of what they own, it does not.",
           "Pensions, life insurance, and various other accounts pass to whoever is named on the plan's own beneficiary nomination. That nomination usually sits outside the estate entirely, which means the will never gets a say, no matter how recently it was written or how clearly it says otherwise.",
-          "This is the single most common way somebody's intentions quietly fail to happen.",
+          "This is one common way somebody's intentions quietly fail to happen.",
         ],
       },
       {
         kind: "table",
         heading: "What passes how",
-        intro: "Generalised, and details vary by country and provider, but the shape holds almost everywhere.",
+        intro: "Generalized, and details vary by country and provider, but the shape is similar in many places.",
         columns: ["Asset", "Usually passes by", "Does the will control it"],
         rows: [
           ["Workplace or private pension", "Beneficiary nomination, often at trustee discretion", "Usually not"],
@@ -2191,7 +2191,7 @@ export const GUIDES: Guide[] = [
         heading: "Why this goes wrong so often",
         paragraphs: [
           "Beneficiary forms are filled in once, usually during onboarding at a job, and then never looked at again. People marry, separate, have children and change jobs, and the form stays exactly as it was.",
-          "The result is entirely predictable and still surprises everybody: a pension from a job somebody left fifteen years ago still names an ex-partner, or a parent who has since died, or nobody at all.",
+          "The result is predictable and still surprises people: a pension from a job somebody left fifteen years ago still names an ex-partner, or a parent who has since died, or nobody at all.",
         ],
       },
       {
@@ -2206,9 +2206,9 @@ export const GUIDES: Guide[] = [
         kind: "list",
         checkable: true,
         heading: "What to actually do",
-        intro: "This is a short afternoon of work and it is close to the highest value hour in personal admin.",
+        intro: "This is a short afternoon of work, and worth doing.",
         items: [
-          "List every pension you have ever had, including from old employers. Most people underestimate this number.",
+          "List every pension you have ever had, including from old employers.",
           "List every life insurance policy, including any provided through work.",
           "Ask each provider who is currently nominated. They will tell you.",
           "Update anything that is wrong, blank, or names somebody who has died.",
@@ -2220,13 +2220,13 @@ export const GUIDES: Guide[] = [
         heading: "Then check it again after anything changes",
         paragraphs: [
           "Marriage, separation, a new child, a new job, a death in the family. Each of those is a moment when a nomination may now say the wrong thing, and none of them updates anything automatically.",
-          "Nothing here is legal advice, and the rules genuinely differ by country and by scheme. What is universal is that you should know what your forms currently say, and most people do not.",
+          "Nothing here is legal advice, and the rules genuinely differ by country and by scheme. What matters everywhere is knowing what your forms currently say.",
         ],
       },
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Personal Life Affairs Companion records every pension and policy you have, where each one sits, and who is currently nominated on it, so the answer is somewhere findable rather than in a form you last saw in 2011. It records what exists and where it is kept, never the documents themselves, and it does not give advice on what any nomination should say.",
+        body: "Personal Life Affairs Companion records your pensions and your life cover, where the paperwork for each is kept, and who is named to receive it, so the answer is somewhere findable rather than in a form you last saw in 2011. It has no upload, and it does not give advice on what any nomination should say.",
       },
     ],
   },
@@ -2241,7 +2241,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "This happens to most homeschooling families at least once, and almost nobody writes about it, because published advice is aimed at the version of you who kept up.",
+          "This happens to many homeschooling families, and published advice is often aimed at the version of you who kept up.",
           "The good news is that more is recoverable than it feels like right now. The rest of it you can be honest about, which is a genuinely acceptable outcome.",
         ],
       },
@@ -2249,7 +2249,7 @@ export const GUIDES: Guide[] = [
         kind: "list",
         checkable: true,
         heading: "What is actually recoverable",
-        intro: "Work through these in order. Most families recover a usable picture of the year in an afternoon.",
+        intro: "Work through these in order. A usable picture of the year is often recoverable.",
         items: [
           "The physical work. Undated worksheets still tell you what was covered, and page numbers in a workbook tell you roughly how far you got.",
           "Where you are in each curriculum right now. Working backwards from your current position reconstructs the term with reasonable accuracy.",
@@ -2271,16 +2271,16 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Check what your state actually requires first",
         paragraphs: [
-          "Before spending a weekend on this, find out what you genuinely need. Several states require nothing at all, in which case this is for your own use and can be as rough as you like.",
-          "If you are in one of the six that mandate a portfolio, the requirements are specific and worth reading properly. Both are covered in [record keeping requirements by state](/guides/homeschool-record-keeping-requirements-by-state).",
+          "Before spending a weekend on this, find out what you genuinely need. Several states require nothing to be filed, in which case this is for your own use and can be as rough as you like.",
+          "If your state asks for a portfolio or an evaluation, the requirements are specific and worth reading properly. Both are covered in [record keeping requirements by state](/guides/homeschool-record-keeping-requirements-by-state).",
         ],
       },
       {
         kind: "paragraphs",
         heading: "Why it stopped in October",
         paragraphs: [
-          "It is worth knowing, because otherwise it happens again in the second week of next term. Almost always the system was too heavy: a spreadsheet with nine columns, or a plan to write a paragraph a day about each child.",
-          "Anything that takes more than about a minute does not survive a bad week, and every year contains several bad weeks. The version that lasts records three things: the date, the subject and roughly what part of it, and one word about how it went.",
+          "It is worth knowing, because otherwise it happens again in the second week of next term. Often the system was too heavy: a spreadsheet with nine columns, or a plan to write a paragraph a day about each child.",
+          "Anything that takes much more than a minute is hard to keep up through a bad week, and most years contain a few. The version that lasts records three things: the date, the subject and roughly what part of it, and one word about how it went.",
         ],
       },
       {
@@ -2294,7 +2294,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Homeschooling Companion accepts backdated entries, because nobody logs every day on the day, and it is built so that recording a day takes well under a minute. It has no completion percentage and no screen that tells you how many days you missed, which is the feature that makes people abandon record keeping in the first place.",
+        body: "Homeschooling Companion dates every entry with the day you make it, so it cannot fill in past weeks. Reconstruct those on paper and record forward from today, which takes well under a minute a day. It has no completion percentage and no screen that tells you how many days you missed.",
       },
     ],
   },
@@ -2309,7 +2309,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "You covered fractions in October. It is March. Do they know fractions? Most homeschooling parents genuinely cannot answer that, and the not knowing is more uncomfortable than any actual gap would be.",
+          "You covered fractions in October. It is March. Do they know fractions? Many homeschooling parents cannot say for sure, and the not knowing is uncomfortable.",
           "Finding out does not require testing in the formal sense. It requires asking a small number of questions, some time after the teaching, and being willing to accept the answer.",
         ],
       },
@@ -2326,7 +2326,7 @@ export const GUIDES: Guide[] = [
         checkable: true,
         heading: "What a useful check looks like",
         items: [
-          "Short. Six to eight questions is plenty, and more produces fatigue rather than information.",
+          "Short. Four answered questions on one topic is the fewest that tells you anything, and much more tends to produce fatigue rather than information.",
           "Mixed. Some recall, some application, and at least one that asks them to explain rather than to produce an answer.",
           "Unannounced in tone. Not a test event, just a few questions over breakfast.",
           "Written down. What you learn is worth nothing in three weeks if you did not record it.",
@@ -2359,7 +2359,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Homeschooling Companion includes short checks you can run at home, and reports one of four standings including not enough to say when too few questions were answered to conclude anything. It records the result against the topic so you can see it again later, and it never produces a score, a percentage or a comparison between children.",
+        body: "Homeschooling Companion lets you run short checks at home, with questions you choose or write, and reports one of four standings including not enough to say when too few questions were answered to conclude anything. It keeps the result with the topic and says so if the same result comes up twice, and it never produces a score, a percentage or a comparison between children.",
       },
     ],
   },
@@ -2367,14 +2367,14 @@ export const GUIDES: Guide[] = [
   {
     slug: "organising-a-multi-stop-trip-without-a-spreadsheet",
     title: "Organising a multi-stop trip without a spreadsheet",
-    dek: "Planning one trip routinely runs to ten hours or more. Most of that is spent rebuilding a picture that keeps falling apart.",
+    dek: "Every time one detail changes, the picture of the trip has to be rebuilt. There is a way to stop that.",
     publishedAt: "2026-08-30",
     areaSlug: "travel",
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Planning one trip routinely runs to ten hours or more, and a good share of that time produces something the traveller is not happy with anyway. The hours do not mostly go into deciding where to go. They go into rebuilding the shape of the trip every time one detail changes.",
+          "Planning a trip takes many hours, and they do not mostly go into deciding where to go. They go into rebuilding the shape of the trip every time one detail changes.",
           "A spreadsheet is the usual answer and it half works. It holds the facts and knows nothing about how they relate, so when the flight moves it tells you nothing about what else just became wrong.",
         ],
       },
@@ -2402,7 +2402,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Do not build a full itinerary",
         paragraphs: [
-          "An hour by hour plan for a two week trip is a document that is wrong by day three, and rewriting it is where most of those ten hours go.",
+          "An hour by hour plan for a two week trip is a document that is wrong by day three, and rewriting it is where much of the time goes.",
           "Record the fixed points, which are the things with a booking reference attached, and leave the rest genuinely open. The fixed points are the only part that breaks expensively when something moves.",
         ],
       },
@@ -2418,14 +2418,14 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Assume one thing will change",
         paragraphs: [
-          "Something will move on almost every trip with more than three moving parts. Planning for that is not pessimism, it is the difference between an inconvenience and a ruined day.",
+          "Something may well move on a trip with many moving parts. Planning for that is not pessimism, it is the difference between an inconvenience and a ruined day.",
           "The practical version of planning for it is simply having recorded what depends on what, before you needed to know.",
         ],
       },
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Travel Companion holds the whole trip in one place, including what each booking was built on top of. When something moves you record the change once and it shows you exactly what was downstream of it, unchanged, so you decide. It also prints as a blank book you can carry, for when the phone is the thing that failed.",
+        body: "Travel Companion holds the whole trip in one place, including what each booking was built on top of. When something moves you record the change once and it shows you exactly what was downstream of it, unchanged, so you decide. It also prints as a blank book you fill in by hand and carry, for when the phone is the thing that failed.",
       },
     ],
   },
@@ -2448,20 +2448,20 @@ export const GUIDES: Guide[] = [
         kind: "list",
         checkable: true,
         heading: "Check these months ahead",
-        intro: "Every one of these has ended trips at check-in desks.",
+        intro: "Each of these can end a trip at a check-in desk.",
         items: [
-          "Passport expiry for every traveller. Many countries require six months validity beyond your return date, so an in-date passport can still be refused.",
+          "Passport expiry for every traveler. Some countries require several months of validity beyond your return date, so an in-date passport can still be refused. Check the official entry page.",
           "Blank pages, which some countries require and which nobody thinks about.",
           "Visa or travel authorisation requirements, including electronic ones that are quick but not instant.",
           "Whether a child travelling with one parent, or with neither, needs documented consent. Rules vary and are enforced unevenly, which is worse than being enforced consistently.",
-          "Name mismatches between passport and booking, which cause more problems than anything else on this list.",
+          "Name mismatches between passport and booking, which can stop you at check-in.",
         ],
       },
       {
         kind: "paragraphs",
         heading: "Passport validity catches people every year",
         paragraphs: [
-          "The rule that surprises people is that many destinations require your passport to remain valid for six months after you arrive or leave. A passport expiring in four months is in date and still refused.",
+          "Some destinations require your passport to remain valid for a set time after you arrive or leave, often several months. A passport that is in date can still be refused.",
           "Check every traveller, not just the adults. Children's passports are usually valid for fewer years and expire at unhelpful moments precisely because nobody is watching them.",
         ],
       },
@@ -2472,7 +2472,7 @@ export const GUIDES: Guide[] = [
         items: [
           "Passports, obviously, and it is worth agreeing who is physically carrying which.",
           "Booking references for flights, stays and transfers, readable without hunting through email.",
-          "Travel insurance policy number and the emergency assistance phone number, which is the detail people have never once memorised.",
+          "Travel insurance policy number and the emergency assistance phone number.",
           "Any medication documentation, especially for anything that would raise questions at a border.",
           "One phone number per booking that a human will actually answer.",
         ],
@@ -2495,7 +2495,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Travel Companion records what documents exist, whose they are, and where each one is kept, and can flag the ones worth showing in the trip summary. It never accepts an upload, because no product on Draftpace stores files, and passport scans are the single most sensitive thing any of them would hold if they did. It prints the lot as a blank book you can carry.",
+        body: "Travel Companion records what documents exist, whose they are, and where each one is kept, and can flag the ones worth showing in the trip summary. It never accepts an upload, because no product on Draftpace stores files, and passport scans are the single most sensitive thing any of them would hold if they did. It also prints My Trip Book, which is blank paper you fill in by hand.",
       },
     ],
   },
@@ -2511,7 +2511,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         paragraphs: [
           "One missed payment is usually a small problem treated as a large one. The consequences are mostly recoverable, and acting within a few days is what keeps them that way.",
-          "Nothing here is financial advice, and if payments are being missed regularly rather than occasionally, that is a different situation where free debt advice services are genuinely the right call and are worth contacting early rather than late.",
+          "Nothing here is financial advice, and if payments are being missed regularly rather than occasionally, that is a different situation where free nonprofit credit counseling is the right call and worth contacting early rather than late.",
         ],
       },
       {
@@ -2532,7 +2532,7 @@ export const GUIDES: Guide[] = [
           },
           {
             when: "If you cannot pay it",
-            what: "Call them. Providers have far more discretion before an account defaults than after, and almost none of that discretion is offered to people who did not get in touch.",
+            what: "Call them. Providers often have more flexibility before an account defaults than after, and it is easier to use when you get in touch first.",
           },
           {
             when: "Before you hang up",
@@ -2544,7 +2544,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "What actually happens, roughly",
         paragraphs: [
-          "A few days late usually means a failed payment fee and nothing else. Around a month late is generally when it starts being reported. Several months is where genuine credit consequences and default processes begin.",
+          "A few days late usually means a failed payment fee and nothing else. Around a month late is generally when it starts being reported. Several months late is where accounts are more likely to be sent to default or collections.",
           "The exact thresholds vary by country, provider and product type. The useful general point is that the gap between a few days and a month is enormous, and it is entirely within your control.",
         ],
       },
@@ -2552,22 +2552,22 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Calling them is the part people avoid",
         paragraphs: [
-          "It is also the single most effective thing available, because providers have options before an account goes into arrears that they lose afterwards: payment holidays, revised dates, splitting a payment.",
+          "It is also the single most effective thing available, because providers have options before an account goes into arrears that they lose afterwards: deferrals, revised dates, splitting a payment.",
           "If that call is the thing you have been putting off for a week, that is an extremely normal response to it, and the preparation that makes it easier is in [making a phone call you have been avoiding](/guides/how-to-make-a-phone-call-you-have-been-avoiding).",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Why it usually happens",
+        heading: "How it often happens",
         paragraphs: [
-          "Very rarely because somebody decided not to pay. Almost always because the balance looked fine on the day, and a payment that had already been committed had not left the account yet.",
-          "That gap between what your balance says and what is genuinely yours is the actual cause, and it is explained in [why your available balance is lying to you](/guides/available-balance-vs-current-balance).",
+          "Often not because somebody decided not to pay, but because the balance looked fine on the day and a payment that had already been committed had not left the account yet.",
+          "That gap between what your balance says and what is genuinely yours is a common cause, and it is explained in [available balance vs current balance](/guides/available-balance-vs-current-balance).",
         ],
       },
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Personal Finance Companion holds your bills with their due dates and counts them against what is genuinely available, so the number you are looking at already accounts for what has not left yet. When a bill is missing a due date it says so rather than quietly leaving it out of the figure. Monthly Money Reset does a simpler version, free.",
+        body: "Personal Finance Companion holds your bills with their due dates and shows what is left to pay this month once you tick bills paid. Its Available Money is a month-level estimate that counts a full month of bills whether or not they are paid, and it marks the figure Preliminary when a bill has no due date. Monthly Money Reset, which is free, holds back only the bills you have not paid yet.",
       },
     ],
   },
@@ -2598,7 +2598,7 @@ export const GUIDES: Guide[] = [
           "Where the mortgage or rent is paid from, and when.",
           "Which utilities are on which accounts, and whether any are on a fixed term ending soon.",
           "Whether anyone is expecting you: work, appointments, a standing commitment, somebody you care for.",
-          "Where the car keys, spare house keys and any alarm codes are.",
+          "Where the car keys and spare house keys are, and where the alarm code is written down.",
           "Whether a pet needs something specific that only you know.",
           "Who to call. Not next of kin. The person who could actually help with a specific thing.",
         ],
@@ -2691,7 +2691,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Personal Life Affairs Companion covers the digital side more thoroughly than any other area, because it is the part that is genuinely unrecoverable if nobody wrote it down. It records which accounts exist, which email is the recovery address, and where the password manager lives, never the credentials themselves.",
+        body: "Personal Life Affairs Companion has six digital steps: getting into your phone, the main email address, recovering access to a password manager, online accounts that charge money, setting a legacy contact, and where your photographs live. It asks where things are, never for the credentials themselves.",
       },
     ],
   },
@@ -2753,7 +2753,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Personal Life Affairs Companion records what documents exist and where each one is kept, so the question becomes a lookup rather than a search through a box. It never accepts an upload, which is deliberate: a registry of locations is far less dangerous to hold than the documents themselves.",
+        body: "Personal Life Affairs Companion records where key papers are kept, such as identity documents, tax records, the will and any safe or deposit box, so the question becomes a lookup rather than a search through a box. It has no upload, which is deliberate: a note of where things are is far less risky to hold than the documents themselves.",
       },
     ],
   },
@@ -2768,8 +2768,8 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Almost everybody keeps the invoice and forgets everything else. The invoice tells you what you paid. It rarely tells you what was actually wrong, what was replaced, or what the engineer said would need doing next.",
-          "That second set is what makes the next repair faster, and it exists only in your memory for about two weeks.",
+          "Many people keep the invoice and forget everything else. The invoice tells you what you paid. It rarely tells you what was actually wrong, what was replaced, or what the engineer said would need doing next.",
+          "That second set is what makes the next repair faster, and it exists only in your memory, which fades fast.",
         ],
       },
       {
@@ -2797,15 +2797,15 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Record what they said would come next",
         paragraphs: [
-          "Engineers routinely mention that something else is nearing the end of its life, and that remark is almost never written down. Six months later the thing fails and nobody remembers being warned.",
-          "That one line is the most valuable thing in the whole visit, because it is the only genuinely predictive information you will get about your own house.",
+          "Technicians often mention that something else is nearing the end of its life, and that remark is rarely written down. Six months later the thing fails and nobody remembers being warned.",
+          "That one line is among the most useful things from the visit, because it is a heads-up about your own house.",
         ],
       },
       {
         kind: "paragraphs",
         heading: "Keep a note of who to call again",
         paragraphs: [
-          "Finding a good tradesperson is harder than any of the admin around it, and most people rediscover this every few years because the number was in a text message that got lost.",
+          "Finding a good tradesperson can be harder than any of the admin around it, and the number is easy to lose in a text message.",
           "Recording who came, alongside the thing they worked on, means the next problem starts with a phone number rather than a search.",
         ],
       },
@@ -2835,7 +2835,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Warranty claims mostly fail for administrative reasons rather than because a manufacturer refused. No proof of purchase, no serial number, no record of the annual service the warranty required, or a claim made two weeks after expiry.",
+          "Warranty claims often fail for administrative reasons. No proof of purchase, no serial number, no record of the annual service the warranty required, or a claim made two weeks after expiry.",
           "All four are avoidable with about two minutes of recording at the point of purchase.",
         ],
       },
@@ -2844,7 +2844,7 @@ export const GUIDES: Guide[] = [
         checkable: true,
         heading: "What to record when something is installed",
         items: [
-          "Date of purchase and date of installation, which are often different and it is usually installation that starts the clock.",
+          "Date of purchase and date of installation, which are often different, and the warranty says which one starts the clock.",
           "Serial number, which is what a manufacturer will ask for first.",
           "Where the proof of purchase is.",
           "The warranty length, and whether it was extended or registered.",
@@ -2856,14 +2856,14 @@ export const GUIDES: Guide[] = [
         heading: "The service condition is the one that catches people",
         paragraphs: [
           "Many boiler and heating warranties require a documented annual service. Miss one, and the warranty can be void for the rest of its term, which people usually discover at the exact moment they try to use it.",
-          "This is the single most expensive small print in a normal household, and the fix is knowing the condition exists and having the service dates recorded.",
+          "This is small print that can cost a lot, and the fix is knowing the condition exists and having the service dates recorded.",
         ],
       },
       {
         kind: "paragraphs",
         heading: "Registering matters more than it should",
         paragraphs: [
-          "Registration is often what extends a warranty from one year to five, and it is a form most people skip because it looks like marketing.",
+          "With some manufacturers, registration extends a warranty, and it is a form many people skip because it looks like marketing.",
           "It is also how manufacturers reach owners about recalls. A recall notice you never receive is worth remembering when deciding whether the form is worth two minutes.",
         ],
       },
@@ -2877,16 +2877,16 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "paragraphs",
-        heading: "Extended warranties are usually not worth it",
+        heading: "Think before buying an extended warranty",
         paragraphs: [
-          "As a general rule the ones sold at the till are poor value, because they are priced to be profitable and most appliances either fail early, within the standard warranty, or last well beyond the extension.",
-          "The exception is anything where a single failure is catastrophic relative to the item's cost. That is a judgement, not a rule, and it should be made with the expiry dates in front of you rather than at a counter.",
+          "Extended warranties are sold at a profit, so read what they cover and what they cost before agreeing at the counter, and check whether the standard warranty already covers the likely failures.",
+          "Cover can be worth weighing where a single failure would be very costly relative to the item's price. That is a judgment, not a rule, and it should be made with the expiry dates in front of you rather than at a counter.",
         ],
       },
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Home Base records warranty end dates alongside the make, model and serial for everything in your house, and raises one when it is genuinely approaching rather than burying it in a list. What to capture per type of thing is in [what to record about an appliance](/guides/what-to-record-when-you-buy-an-appliance).",
+        body: "Home Base records warranty end dates alongside the brand and model of everything you add, with a serial number going in Notes, and shows a warranty on Now 30 days before it ends. Reminders are off unless you turn on the warranty one. What to capture per type of thing is in [what to record about an appliance](/guides/what-to-record-when-you-buy-an-appliance).",
       },
     ],
   },
@@ -2956,8 +2956,8 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "You do not have to be firm",
         paragraphs: [
-          "A great deal of advice about difficult calls is really advice about being assertive, which assumes the problem is that you are too soft. Usually the problem is capacity, not confidence.",
-          "Being polite and specific works with almost every call centre, because the person answering has a fixed set of options and is deciding which to offer. Clarity about what you want moves that further than firmness does.",
+          "A great deal of advice about difficult calls is really advice about being assertive, which assumes the problem is that you are too soft. Often the problem is capacity, not confidence.",
+          "Being polite and specific usually works well with call centers, because the person answering has a fixed set of options and is deciding which to offer. Clarity about what you want moves that further than firmness does.",
         ],
       },
       {
@@ -2971,7 +2971,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "ADHD Life Companion has authored procedures for these exact situations, including a billing problem, a follow up and a difficult call. It suggests an opening you can edit or replace, holds what you want on screen while you talk, and never tells you what to accept or settle for, because you are the one with the facts. Suggested wording is never saved once you have used it.",
+        body: "ADHD Life Companion has authored procedures for these exact situations, including a billing problem, a follow up and a difficult call. It suggests an opening you can use or replace with your own, holds what you want on screen while you talk, and never tells you what to accept or settle for, because you are the one with the facts. The suggested wording is not saved, but wording you type yourself is.",
       },
     ],
   },
@@ -2994,8 +2994,8 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "The delay is almost always less interesting to them than to you",
         paragraphs: [
-          "Whoever you have to contact deals with delayed matters constantly. Call centres, landlords, councils, accountants and clinics all have processes for exactly this, because most of what reaches them is late.",
-          "The version of the conversation you have rehearsed, where somebody is shocked or annoyed, is very rarely the one that happens. Usually they ask for a reference number and move on.",
+          "Whoever you have to contact deals with delayed matters constantly. Call centers, landlords, city offices, accountants and clinics all have processes for exactly this, because a lot of what reaches them is late.",
+          "The version of the conversation you have rehearsed, where somebody is shocked or annoyed, is often not the one that happens. Often they just ask for a reference number and move on.",
         ],
       },
       {
@@ -3037,14 +3037,14 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Late is a state, not a verdict",
         paragraphs: [
-          "Almost nothing on a typical list gets worse for having been avoided, in the way the dread implies. Debts accrue interest and deadlines pass, and both are real, but the imagined catastrophe is nearly always larger than the actual position.",
+          "Some things do get worse for having been avoided. Debts accrue interest and deadlines pass, and both are real, but the dread is often larger than the actual position.",
           "The way in is usually a phone call, and the preparation for that is in [making a phone call you have been avoiding](/guides/how-to-make-a-phone-call-you-have-been-avoiding).",
         ],
       },
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "ADHD Life Companion is built so that nothing counts how long something sat. There is no streak, no overdue tally, and closing something you did not get to records nothing at all, not even a timestamp, because a history of your own admin should not read as a list of failures.",
+        body: "ADHD Life Companion is built so that nothing counts how long something sat. There is no streak, no overdue tally, and closing something you did not get to changes nothing on the item and adds nothing to its history, because a history of your own admin should not read as a list of failures.",
       },
     ],
   },
@@ -3059,7 +3059,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "An evaluation is generally a check that education is happening, not an inspection of whether you are doing it well. Evaluators are usually experienced homeschoolers or teachers, and most of them want the meeting to go fine.",
+          "An evaluation is generally a check that education is happening, not an inspection of whether you are doing it well. Who does the evaluating depends on your state, so ask yours what it wants to see.",
           "The preparation that helps is assembling evidence that something coherent happened across the year, which is a smaller job than most people fear, particularly if anything at all was recorded as you went.",
         ],
       },
@@ -3078,9 +3078,9 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "paragraphs",
-        heading: "Progress is what they are looking for",
+        heading: "Progress across the year is worth showing",
         paragraphs: [
-          "The single most persuasive thing in any portfolio is the same subject at two points in the year. October and March writing samples side by side say more than any quantity of finished work from one week.",
+          "One of the clearest things in any portfolio is the same subject at two points in the year. October and March writing samples side by side can say more than a quantity of finished work from one week.",
           "It is also the easiest thing to provide, and the thing most people accidentally leave out by only keeping the pieces they were proud of.",
         ],
       },
@@ -3089,7 +3089,7 @@ export const GUIDES: Guide[] = [
         heading: "Be honest about what did not go well",
         paragraphs: [
           "Saying that maths was difficult until January, that you changed curriculum, and that it improved afterwards is a stronger position than implying everything went smoothly.",
-          "It demonstrates that you were paying attention and adjusting, which is exactly what an evaluator wants to see. A portfolio with no difficulties in it reads as curated rather than complete.",
+          "It shows that you were paying attention and adjusting. A portfolio with no difficulties in it reads as curated rather than complete.",
         ],
       },
       {
@@ -3110,7 +3110,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Homeschooling Companion prints a record per child covering what was done, when, and what you noticed, which is most of what an evaluation asks for. It accepts backdated entries, and its short checks report an honest standing, including not enough to say, rather than a score you would then have to explain.",
+        body: "Homeschooling Companion prints a record per child covering what was done, when, and what you noticed, which gives an evaluator a record to read alongside your work samples. Entries are always dated the day you make them, and its short checks report an honest standing, including not enough to say, rather than a score you would then have to explain.",
       },
     ],
   },
@@ -3118,14 +3118,14 @@ export const GUIDES: Guide[] = [
   {
     slug: "how-to-plan-a-group-trip",
     title: "How to plan a group trip without becoming the organiser",
-    dek: "Coordinating schedules is the top stressor in group travel. A way to share the shape of a trip without owning everybody's decisions.",
+    dek: "Group trips get hard when one person holds everything. A way to share the shape of a trip without owning everybody's decisions.",
     publishedAt: "2026-08-30",
     areaSlug: "travel",
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Nearly two thirds of people planning group travel name coordinating schedules as their leading stressor, ahead of budgets and ahead of comparing options.",
+          "Coordinating schedules is one of the hardest parts of planning a group trip.",
           "The reason is that one person ends up holding the whole thing in their head, and that person is answering the same four questions repeatedly for two weeks.",
         ],
       },
@@ -3133,7 +3133,7 @@ export const GUIDES: Guide[] = [
         kind: "list",
         checkable: true,
         heading: "Decide these three things first",
-        intro: "Almost all group travel friction comes from leaving these implicit.",
+        intro: "Much of the friction on a group trip comes from leaving these implicit.",
         items: [
           "Who is booking what. Not who is paying, who is actually making each booking.",
           "What is fixed and what is optional. Flights and stays are usually fixed. Everything else should be explicitly optional so nobody feels obliged to attend a museum.",
@@ -3175,7 +3175,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Travel Companion records travellers, links them to the bookings they are actually on, and holds what each person needs. When something changes it shows what was built on top of it, so working out who to tell starts from what is recorded rather than from memory. It also prints the whole trip as a book, which is a genuinely practical way to hand the shape of it to somebody else.",
+        body: "Travel Companion records travelers, links them to the bookings they are actually on, and holds what each person needs. When something changes it shows what was built on top of it, so working out who to tell starts from what is recorded rather than from memory. It is one person's record, not a shared one. To hand the shape of the trip to somebody else, send the itinerary PDF or the one-page trip card.",
       },
     ],
   },
@@ -3225,23 +3225,23 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Job change: the gap and the pension",
         paragraphs: [
-          "Two things catch people. A change in payday can leave a longer gap than usual between salaries, and direct debits do not care that this month is five weeks. Checking the dates before that gap arrives prevents a missed payment for no reason other than timing.",
-          "The other is the old workplace pension, which does not disappear and does not follow you. It becomes a separate pot that most people lose track of, and untraced pensions are among the most commonly lost assets there are.",
+          "Two things catch people. A change in payday can leave a longer gap than usual between salaries, and automatic payments do not care that this month is five weeks. Checking the dates before that gap arrives prevents a missed payment for no reason other than timing.",
+          "The other is the old workplace retirement plan or pension, which does not disappear and does not follow you. It becomes a separate pot that is easy to lose track of.",
         ],
       },
       {
         kind: "paragraphs",
         heading: "Moving: the address is on more things than you think",
         paragraphs: [
-          "Bank, insurers, pension providers, the electoral roll, your driving licence, subscriptions with a delivery address, and anything that posts an annual statement. That last category matters most, because an annual statement sent to an old address is how people lose track of accounts entirely.",
-          "Meter readings on the day, both leaving and arriving, prevent the most common billing dispute there is.",
+          "Bank, insurers, retirement plan providers, voter registration, your driver's license, subscriptions with a delivery address, and anything that posts an annual statement. That last category matters most, because an annual statement sent to an old address is how people lose track of accounts entirely.",
+          "Utility meter readings on the day, both leaving and arriving, can head off billing disputes.",
         ],
       },
       {
         kind: "paragraphs",
         heading: "Separation: untangle joint things deliberately",
         paragraphs: [
-          "Joint accounts, joint bills and anything one person guaranteed for the other all need explicit attention, and a financial association between two people can persist long after the relationship does.",
+          "Joint accounts, joint bills and anything one person guaranteed for the other all need explicit attention, and shared accounts and debts can keep two people financially linked long after the relationship ends.",
           "This is the one on the list where getting advice is genuinely worth it rather than optional, particularly where property or children are involved. Nothing here is advice, and the order above is only about getting the picture visible.",
         ],
       },
@@ -3256,7 +3256,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Personal Finance Companion holds accounts, income, bills, subscriptions and debts in one place, so after a life change you are editing a picture rather than reconstructing one. Personal Life Affairs Companion covers the paperwork half of the same events, including the pension from the job you just left.",
+        body: "Personal Finance Companion holds accounts, income, bills, subscriptions and debts in one place, so after a life change you are editing a picture rather than reconstructing one. Personal Life Affairs Companion records the paperwork side of the same events, including any pension from the job you just left and who is named to receive it.",
       },
     ],
   },
@@ -3279,7 +3279,7 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "scripts",
-        heading: "Openings that tend to work",
+        heading: "Openings worth trying",
         intro: "Each of these makes the conversation about logistics rather than about them dying, which is the difference between a conversation and an argument.",
         items: [
           {
@@ -3300,7 +3300,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Start with yourself",
         paragraphs: [
-          "The single most effective move is doing your own first and mentioning it. It removes any suggestion that this is about their age or their health, and it gives you something concrete to show.",
+          "One of the most effective moves is doing your own first and mentioning it. It removes any suggestion that this is about their age or their health, and it gives you something concrete to show.",
           "It also means you are asking them to join something rather than to submit to it, which is a materially different request.",
         ],
       },
@@ -3309,7 +3309,7 @@ export const GUIDES: Guide[] = [
         heading: "Ask for locations, not contents",
         paragraphs: [
           "Where the will is, not what it says. Which bank, not the balance. Who the lawyer is, not what was discussed.",
-          "Almost everybody is comfortable sharing locations and uncomfortable sharing contents, and locations are what actually prevent the months of searching later.",
+          "Many people are more comfortable sharing locations than contents, and locations are what actually prevent the months of searching later.",
         ],
       },
       {
@@ -3357,7 +3357,7 @@ export const GUIDES: Guide[] = [
         intro: "Photograph every plate you find. Transcribing model numbers by hand in bad light produces errors.",
         items: [
           "Boiler or furnace: model, serial, and any service sticker, which often lists dates and the engineer.",
-          "Water heater: the label usually includes a manufacture date, which tells you its age even if nothing else does.",
+          "Water heater: the label often carries a manufacture date, sometimes coded in the serial number, which tells you its age even if nothing else does.",
           "Consumer unit or breaker panel: often carries an installation or inspection certificate date.",
           "Every major appliance: make, model, serial.",
           "Meters: readings and serial numbers, plus which supplier the meter suggests.",
@@ -3368,21 +3368,21 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Manufacture dates tell you most of what you need",
         paragraphs: [
-          "Nearly every major appliance encodes its manufacture date somewhere on the plate, sometimes in the serial number itself. A quick search for the model plus how to read the serial usually decodes it.",
+          "Many major appliances encode their manufacture date somewhere on the plate, sometimes in the serial number itself. A quick search for the model plus how to read the serial usually decodes it.",
           "That gives you the one thing that matters most: how far through its life something is. A fifteen year old water heater is a different planning problem from a three year old one, regardless of whether either is misbehaving today.",
         ],
       },
       {
         kind: "table",
         heading: "Typical service lives",
-        intro: "Rough figures for planning, not predictions. Maintenance affects these considerably.",
+        intro: "Rough ranges from general guidance, not predictions, and not something Home Base tracks. Climate, use and upkeep change them a lot.",
         columns: ["System", "Typical life", "What to do if yours is near it"],
         rows: [
-          ["Boiler or furnace", "15 to 20 years", "Get it serviced and ask directly about remaining life"],
-          ["Water heater", "8 to 12 years", "Budget for replacement rather than waiting for the failure"],
-          ["Air conditioning", "10 to 15 years", "Service before summer, ask about refrigerant type"],
-          ["Roof covering", "20 to 30 years", "Get an inspection rather than guessing from the ground"],
-          ["Consumer unit or panel", "25 to 40 years", "Have it inspected, particularly if it looks original"],
+          ["Boiler or furnace", "Often 15 years or more", "Get it serviced and ask directly about remaining life"],
+          ["Water heater", "Roughly a decade for a tank", "Budget for replacement rather than waiting for the failure"],
+          ["Air conditioning", "Often around a decade or more", "Service before summer, ask about refrigerant type"],
+          ["Roof covering", "Two decades or more, depending on material", "Get an inspection rather than guessing from the ground"],
+          ["Electrical panel", "Several decades", "Have it inspected, particularly if it looks original"],
         ],
       },
       {
@@ -3480,7 +3480,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Home Base asks for make, model and serial per item and keeps them alongside the service history, so the next engineer visit or parts order starts with a number rather than a torch. It asks only for the fields that make sense for that kind of thing.",
+        body: "Home Base has Brand and Model fields on each item, and a Notes field where a serial number can go, and keeps them alongside the service history, so the next technician visit or parts order starts with a number rather than a flashlight. It asks only for the fields that make sense for that kind of thing.",
       },
     ],
   },
@@ -3496,7 +3496,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         paragraphs: [
           "Some states require a specific number of instructional days or hours. Others require nothing at all. Before building any tracking habit, find out which applies to you, because tracking attendance you will never be asked for is pure overhead.",
-          "Where it is required, the record needed is usually far lighter than people assume. A count of days, not a timetable.",
+          "Where it is required, the record needed is often lighter than people assume. A count of days, not a timetable.",
         ],
       },
       {
@@ -3511,7 +3511,7 @@ export const GUIDES: Guide[] = [
         kind: "list",
         checkable: true,
         heading: "The lightest record that works",
-        intro: "If your state counts days, this is enough.",
+        intro: "If your state counts days, this is often enough.",
         items: [
           "A date.",
           "A tick, or a rough hours figure if your state counts hours.",
@@ -3522,7 +3522,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Count as you go, because June reconstruction does not work",
         paragraphs: [
-          "Reconstructing a year of attendance from memory is genuinely impossible, and unlike subject records there is nothing physical to work backwards from. There is no pile of undated worksheets that proves you did one hundred and eighty days.",
+          "Reconstructing a year of attendance from memory is hard, and unlike subject records there is little physical to work backwards from, although a calendar and dated photos help. A pile of undated worksheets does not show how many days you taught.",
           "A grid you tick takes seconds a day. It is the one part of homeschool record keeping where doing it live is not merely better but effectively the only option.",
         ],
       },
@@ -3531,7 +3531,7 @@ export const GUIDES: Guide[] = [
         heading: "What is pointless",
         paragraphs: [
           "Logging start and finish times, unless your state specifically requires hours. Recording which parent taught. Breaking a day into subject-by-subject minutes.",
-          "None of that is asked for anywhere, and every additional column is a reason the habit dies by half term.",
+          "None of that is usually asked for, and every additional column is a reason the habit dies by half term.",
         ],
       },
       {
@@ -3544,7 +3544,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Homeschooling Companion records the day alongside what was covered, so one entry serves both attendance and the portfolio rather than being two separate chores. Its printed handbook includes a days-schooled page you can tick by hand, for anyone who would rather not open an app to record a tick.",
+        body: "Homeschooling Companion records the day alongside what was covered, so one entry serves as both a day count and part of the record rather than being two separate chores. It does not track hours and has no attendance counter.",
       },
     ],
   },
@@ -3559,7 +3559,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Almost every homeschooling family builds a record system in September and abandons it by half term. The system is rarely the problem in principle. It is that it was designed on a good day, for a version of the week that does not happen often.",
+          "Many homeschooling families build a record system in September and let it lapse within weeks. The system is rarely the problem in principle. It is that it was designed on a good day, for a version of the week that does not happen often.",
           "The version that survives is the one that still gets done on the bad Tuesday, and that means it has to take well under a minute.",
         ],
       },
@@ -3568,7 +3568,7 @@ export const GUIDES: Guide[] = [
         heading: "Three things, every time",
         paragraphs: [
           "The date. The subject and roughly which part of it, where Unit 3, Lesson 12 is plenty. And one word about how it went: easy, about right, or difficult.",
-          "That third field is the one people leave out and the one that turns out to be most useful in March, because it tells you where to look when something has not stuck.",
+          "That third field is often the one people leave out, and it can be the most useful in March, because it tells you where to look when something has not stuck.",
         ],
       },
       {
@@ -3586,10 +3586,10 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "paragraphs",
-        heading: "Plan four days and record five",
+        heading: "Plan four days and record what happened",
         paragraphs: [
           "A family that plans five days and manages four has failed at something every single week. A family that plans four and manages four has not. The work done is identical.",
-          "Recording is the same. If the habit assumes a perfect week, every ordinary week produces a gap, and gaps are what make people stop.",
+          "Recording is the same. If the habit assumes a perfect week, every ordinary week produces a gap, and gaps are a common reason people stop.",
         ],
       },
       {
@@ -3610,7 +3610,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Homeschooling Companion is built around an entry that takes seconds and accepts backdated dates, because nobody logs every day on the day. It contains no completion percentage, no streak, and no count of days missed, which are the three features that reliably get record keeping abandoned.",
+        body: "Homeschooling Companion is built around an entry that takes seconds and is always dated the day you make it. It contains no completion percentage, no streak, and no count of days missed.",
       },
     ],
   },
@@ -3653,7 +3653,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Phone calls are disproportionately hard",
         paragraphs: [
-          "Calls demand real-time processing, memory and speech at once, which is exactly the combination that degrades. It is normal for a call that would once have been trivial to be the single hardest thing in a week.",
+          "Calls demand real-time processing, memory and speech at once, which many people find harder when their thinking is affected. It is common for a call that would once have been trivial to be the single hardest thing in a week.",
           "Preparation helps more here than anywhere else, because it converts a live cognitive task into reading. What to write down first is in [making a phone call you have been avoiding](/guides/how-to-make-a-phone-call-you-have-been-avoiding).",
         ],
       },
@@ -3669,13 +3669,13 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Nothing here needs a diagnosis",
         paragraphs: [
-          "You do not need a label to need this. The difficulty is the same whatever produced it, and none of the practical adjustments depend on knowing why.",
+          "You do not need a label to need this. The difficulty is the same whatever produced it, and none of the practical adjustments depend on knowing why. This is admin help, not medical guidance.",
         ],
       },
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "ADHD Life Companion is built for the difficulty rather than the diagnosis, and asks nothing about medical history because it does not need to. It holds the details on screen while you deal with something, returns you to the exact question you left if you stop, and records nothing at all about an attempt you did not finish.",
+        body: "ADHD Life Companion is built for the difficulty rather than the diagnosis, and asks nothing about medical history because it does not need to. It holds the details on screen while you deal with something, returns you to the exact question you left if you stop, and stopping early changes nothing on the item.",
       },
     ],
   },
@@ -3691,7 +3691,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         paragraphs: [
           "From the outside they are indistinguishable. Something needed doing, time was available, and it did not happen.",
-          "From the inside they are not similar at all, and the difference decides which strategies do anything. Procrastination involves choosing something more pleasant. Executive dysfunction involves choosing nothing, often while doing something you are not enjoying either.",
+          "From the inside they are not similar at all, and the difference decides which strategies do anything. Procrastination usually involves choosing something more pleasant. Executive dysfunction is often described as choosing nothing, sometimes while doing something you are not enjoying either.",
         ],
       },
       {
@@ -3701,9 +3701,9 @@ export const GUIDES: Guide[] = [
         rows: [
           ["What you are doing instead", "Something more appealing", "Often nothing, or something you are not enjoying"],
           ["How it feels", "Avoidance, with some relief", "Stuck, with no relief"],
-          ["Does knowing the stakes help", "Sometimes", "Rarely, and pressure often makes it worse"],
-          ["Does breaking it down help", "A little", "Considerably, if broken small enough"],
-          ["What is actually missing", "Willingness to start now", "The ability to initiate at all"],
+          ["Does knowing the stakes help", "Sometimes", "Often less, and pressure can make it worse"],
+          ["Does breaking it down help", "A little", "Often, if broken small enough"],
+          ["What is actually missing", "Willingness to start now", "Often the ability to get started"],
         ],
       },
       {
@@ -3711,7 +3711,7 @@ export const GUIDES: Guide[] = [
         heading: "Why the standard advice misfires",
         paragraphs: [
           "Most productivity advice assumes procrastination, so it raises stakes: set a deadline, picture the consequences, promise yourself a reward. That works when the barrier is willingness.",
-          "When the barrier is initiation, raising stakes adds pressure to a system that is already stalled, and the reliable result is more distress and the same amount of nothing done.",
+          "When the barrier is initiation, raising stakes adds pressure to a system that is already stalled, and a common result is more distress and the same amount of nothing done.",
         ],
       },
       {
@@ -3734,14 +3734,14 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Why the distinction is worth making at all",
         paragraphs: [
-          "Mostly because of what people conclude about themselves. If you believe you have been choosing comfort over responsibility for years, you draw one conclusion about your character. If you understand that the starting mechanism itself was not firing, you draw a different and more accurate one.",
+          "Mostly because of what people conclude about themselves. If you believe you have been choosing comfort over responsibility for years, you draw one conclusion about your character. If you understand that starting itself was the barrier, you draw a different and probably fairer one.",
           "That second conclusion also happens to lead to strategies that work.",
         ],
       },
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "ADHD Life Companion is built around initiation rather than motivation. It shows one thing rather than a list to evaluate, breaks down anything too big into a first action, and holds the context on screen so starting does not require assembling it. It contains no streak and no score, because pressure is the thing that makes this worse.",
+        body: "ADHD Life Companion is built around initiation rather than motivation. It shows one thing rather than a list to evaluate, breaks down anything too big into a first action, and holds the context on screen so starting does not require assembling it. It contains no streak and no score, because pressure tends to make this harder for many people.",
       },
     ],
   },
@@ -3807,7 +3807,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Travel Companion prints My Trip Book, a blank structured planner covering bookings, travellers, documents, daily pages and the connection pages that are the point of the product. It is modular, so a trip with three destinations prints three destination pages rather than forcing a fixed planner on you, and it works with a pen and nothing else.",
+        body: "Travel Companion prints My Trip Book, a blank structured planner covering bookings, travelers, documents, daily pages and the connection pages that are the point of the product. It has a fixed set of pages, and you print the ones you want. It also makes a one-page trip card from what you recorded, which carries no references, documents or notes, so write those beside it in pen.",
       },
     ],
   },
@@ -3822,8 +3822,8 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Most failed payments are not caused by having no money. They are caused by having money that was already committed, in an account the payment was not coming from, or on a day the timing did not work.",
-          "Two minutes before the busiest date in your month prevents nearly all of it.",
+          "Many failed payments are not caused by having no money. They are caused by having money that was already committed, in an account the payment was not coming from, or on a day the timing did not work.",
+          "Two minutes before the busiest date in your month prevents much of it.",
         ],
       },
       {
@@ -3842,7 +3842,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Cluster the dates rather than spreading them",
         paragraphs: [
-          "Most providers will move a payment date on request, and it is usually a two minute call or a setting.",
+          "Many providers will move a payment date on request, often with a short call or a setting.",
           "Getting the majority of them within a few days of payday means one moment of exposure per month instead of a slow drip of small risks across four weeks. It also makes the check above take one look instead of several.",
         ],
       },
@@ -3864,7 +3864,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Personal Finance Companion holds your bills and subscriptions with their due dates and accounts, and counts them against what is genuinely available rather than against your balance. When a bill has no due date recorded it says the figure is preliminary instead of quietly leaving it out.",
+        body: "Personal Finance Companion holds your bills and subscriptions with their due dates, and its Coming up list shows what is due in the next 14 days. Its Available Money is a month-level estimate that counts a full month of bills, paid or not, and it marks the figure Preliminary when a bill has no due date.",
       },
     ],
   },
@@ -3879,7 +3879,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "The question is almost never whether you have the money today. It is whether spending it today causes a problem in eleven days, and that is a harder thing to answer standing in a shop.",
+          "The question is almost never whether you have the money today. It is whether spending it today causes a problem later in the month, and that is a harder thing to answer standing in a shop.",
           "The useful version takes about thirty seconds and needs one number you should already have.",
         ],
       },
@@ -3933,7 +3933,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Monthly Money Reset gives you a safe-to-spend figure and a rough weekly guide, free. Personal Finance Companion does the same across accounts, bills, subscriptions and debts, shows how it reached the number, and tells you when a missing due date makes it preliminary rather than presenting false precision.",
+        body: "Monthly Money Reset gives you a safe-to-spend figure and a rough weekly guide for the rest of the month, free, and previews what a purchase would change. Personal Finance Companion has no weekly figure. Its Available Money is a month-level estimate across accounts, bills, subscriptions and debts, with the working shown and a Preliminary flag when a bill has no due date.",
       },
     ],
   },
@@ -3953,7 +3953,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "By March most homeschooling families have more paper than shelf. The instinct is to keep all of it, because throwing away a child's work feels like throwing away the year.",
+          "By March many homeschooling families have more paper than shelf. The instinct is to keep all of it, because throwing away a child's work feels like throwing away the year.",
           "It is not. A representative sample proves a year far better than a complete archive, and it is the version you might actually be able to find something in.",
         ],
       },
@@ -3964,11 +3964,11 @@ export const GUIDES: Guide[] = [
         rows: [
           ["Dated work showing progress", "Keep", "Two points in a year is the most persuasive evidence there is"],
           ["Standardised test results", "Keep permanently", "Slow to replace and sometimes needed years later"],
-          ["Evaluator reports", "Keep permanently", "Proof the year was reviewed and accepted"],
-          ["Your own log", "Keep permanently", "The only record that ties everything together"],
+          ["Evaluator reports", "Keep permanently", "Proof the year was reviewed"],
+          ["Your own log", "Keep permanently", "A record that ties everything together"],
           ["Large projects and models", "Photograph, then recycle", "They prove nothing in a box in a loft"],
           ["Daily worksheets and drills", "Keep a handful, recycle the rest", "Fifty identical sheets say nothing fifty times"],
-          ["Curriculum you have finished with", "Sell or pass on", "Worth real money to another family"],
+          ["Curriculum you have finished with", "Sell or pass on", "Another family may want it"],
         ],
       },
       {
@@ -3976,7 +3976,7 @@ export const GUIDES: Guide[] = [
         heading: "Photograph the things that cannot be filed",
         paragraphs: [
           "Models, posters, science experiments, anything three dimensional. A dated photograph is genuinely better evidence than the object, because it can go in a portfolio and the object cannot.",
-          "It also solves the thing nobody says out loud, which is that the object was going to be thrown away in eighteen months anyway, quietly, when nobody was looking.",
+          "It also solves the thing nobody says out loud, which is that the object was probably going to be thrown away eventually anyway.",
         ],
       },
       {
@@ -3991,7 +3991,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Check your state before discarding anything",
         paragraphs: [
-          "A few states have specific retention expectations, and portfolio states in particular may want material available for a set period after the year ends.",
+          "Some states name a retention period. In our summary, Florida and New Hampshire list a portfolio kept two years. Anything longer in the table above is advice, not law.",
           "The overall position is in [record keeping requirements by state](/guides/homeschool-record-keeping-requirements-by-state).",
         ],
       },
@@ -4006,7 +4006,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Homeschooling Companion keeps the log that ties everything together, which is the one record you cannot reconstruct from a box of paper. It prints as a per-child record covering what was done and when, so the paper you keep can be a genuine sample rather than the whole year.",
+        body: "Homeschooling Companion keeps a log of what was done and when, alongside the paper you keep. It prints as a per-child record covering what was done and when, so the paper you keep can be a genuine sample rather than the whole year.",
       },
     ],
   },
@@ -4014,14 +4014,14 @@ export const GUIDES: Guide[] = [
   {
     slug: "diagnosed-with-adhd-as-an-adult",
     title: "Diagnosed with ADHD as an adult: what happens next",
-    dek: "Most adults with ADHD were diagnosed as adults. What changes afterwards, what does not, and the paperwork nobody mentions.",
+    dek: "What changes after an adult diagnosis, what does not, and the paperwork nobody mentions.",
     publishedAt: "2026-08-30",
     areaSlug: "mind-and-focus",
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "A great many adults with an ADHD diagnosis received it in adulthood rather than as a child. It is no longer an unusual situation, though it can feel like one at the time.",
+          "Some adults receive an ADHD diagnosis in adulthood rather than as a child. It is not an unusual situation, though it can feel like one at the time.",
           "Two things tend to arrive together afterwards. A great deal of retrospective reinterpretation, and an unexpected pile of administration.",
         ],
       },
@@ -4029,7 +4029,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "The reinterpretation comes first",
         paragraphs: [
-          "Most people spend the following months revisiting the past: jobs that went wrong, a degree that took longer, relationships where the same argument kept happening, the persistent sense of underperforming relative to effort.",
+          "Many people spend the following months revisiting the past: jobs that went wrong, a degree that took longer, relationships where the same argument kept happening, the persistent sense of underperforming relative to effort.",
           "That process is worth having and it is not the subject of this guide. The subject is the far less discussed part, which is that a diagnosis creates work.",
         ],
       },
@@ -4037,13 +4037,13 @@ export const GUIDES: Guide[] = [
         kind: "list",
         checkable: true,
         heading: "The admin that follows",
-        intro: "Very little of this gets mentioned in the appointment.",
+        intro: "Very little of this gets mentioned in the appointment. This is admin help, not medical advice; your prescriber and local rules decide the details.",
         items: [
-          "Titration, if you are medicating, which means repeat appointments and often repeat prescriptions on a short cycle.",
-          "Pharmacy logistics, which for controlled medication can mean a specific pharmacy, a limited window, and supply problems.",
+          "Follow-up appointments and repeat prescriptions, if you are prescribed medication. Your prescriber sets the schedule.",
+          "Pharmacy logistics, which for some prescriptions can mean a specific pharmacy, a limited window, and supply problems.",
           "Employer conversations, if you choose to have them, plus any adjustments process.",
           "Insurance and, in some countries, a disclosure question you now have to answer differently.",
-          "Driving authorities in some jurisdictions, depending on medication.",
+          "Driving or licensing rules in some places. Check your local rules.",
           "Records from a private assessment needing to reach a public system, or vice versa, which is rarely automatic.",
         ],
       },
@@ -4051,7 +4051,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "The irony is not lost on anybody",
         paragraphs: [
-          "A condition characterised by difficulty with sustained administration is diagnosed, and the treatment pathway is administration on a recurring schedule with real consequences for missing a step.",
+          "Many people notice the irony: getting through a diagnosis involves administration on a recurring schedule, with real consequences for missing a step.",
           "Naming that is genuinely useful, because people tend to interpret struggling with it as evidence they are handling the diagnosis badly. It is not. It is the single least accommodating part of the process.",
         ],
       },
@@ -4075,7 +4075,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "ADHD Life Companion holds the things you are carrying and brings them back when they actually matter, including the recurring ones with a date attached. It never asks about a diagnosis, medication or symptoms, because it is built for how this feels rather than for why, and it holds no medical information at all.",
+        body: "ADHD Life Companion holds the things you are carrying and shows them on the day you chose. A repeating date, like a monthly refill, has to be set again each time. It never asks about a diagnosis, medication or symptoms, because it is built for how this feels rather than for why, and it does not track any of it.",
       },
     ],
   },
@@ -4099,8 +4099,8 @@ export const GUIDES: Guide[] = [
         heading: "Three properties that make it uniquely awkward",
         paragraphs: [
           "It is invisible when it goes right. Nobody notices the insurance that renewed correctly, so there is no feedback and no credit, only the absence of a problem.",
-          "It is connected. Almost nothing sits alone. A flight moves and three bookings become wrong. An address changes and eleven organisations need telling. A person dies and a hundred small facts turn out to have lived in one head.",
-          "It arrives at bad moments. Bereavement, illness, moving, separation, a new baby. The administrative load and the capacity to handle it are almost perfectly inversely correlated.",
+          "It is connected. Almost nothing sits alone. A flight moves and three bookings become wrong. An address changes and many organizations need telling. A person dies and many small facts turn out to have lived in one head.",
+          "It arrives at bad moments. Bereavement, illness, moving, separation, a new baby. The administrative load tends to be heaviest when the capacity to handle it is lowest.",
         ],
       },
       {
@@ -4116,7 +4116,7 @@ export const GUIDES: Guide[] = [
         kind: "list",
         checkable: true,
         heading: "What this work actually needs",
-        intro: "Tick whatever you already have somewhere. Most people find they have the first and none of the rest.",
+        intro: "Tick whatever you already have somewhere. You may find you have the first and none of the rest.",
         items: [
           "Somewhere to put a detail so it is not held in your head.",
           "Something that knows how the details relate, so one change surfaces what else it touches.",
@@ -4129,7 +4129,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "It is unevenly distributed",
         paragraphs: [
-          "In most households one person carries the majority of this, usually without it being discussed. It is often described as being organised, which frames a workload as a personality trait.",
+          "In many households one person carries most of this, usually without it being discussed. It is often described as being organized, which frames a workload as a personality trait.",
           "It is worth naming for that reason alone. Work that has no name is difficult to divide, difficult to hand over, and easy to assume somebody is simply better suited to.",
         ],
       },
@@ -4137,14 +4137,14 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "The competence trap",
         paragraphs: [
-          "People conclude they are bad at admin. Usually what has happened is that the amount is genuinely large, the tools are genuinely poor, and holding several hundred connected facts in a human memory was never a realistic expectation.",
+          "People conclude they are bad at admin. Usually what has happened is that the amount is genuinely large, the tools are genuinely poor, and holding that many connected facts in a human memory was never a realistic expectation.",
           "The productivity industry has spent decades selling harder trying as the solution. More on why that keeps failing in [why productivity tools fail at life admin](/guides/why-productivity-tools-fail-at-life-admin).",
         ],
       },
       {
         kind: "callout",
         label: "The Companion Series",
-        body: "Draftpace makes one Companion per area of this work: money, home, mind and focus, family and learning, affairs and endings, and travel. Each holds the state and the connections for one domain, works out what genuinely needs you now, and stays quiet when nothing does. None of them has a streak, a score, or a screen that tells you that you are behind.",
+        body: "Draftpace makes a Companion for each area of this work: money, home, mind and focus, family and learning, affairs and endings, travel, vehicles and family health. Each holds the state and the connections for one domain, works out what genuinely needs you now, and stays quiet when nothing does. None of them has a streak, a score, or a screen that tells you that you are behind.",
       },
     ],
   },
@@ -4189,7 +4189,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Independence is the big one",
         paragraphs: [
-          "A board of tasks treats every card as a separate thing. Life admin is a web: change your address and eleven things become wrong, move a flight and three bookings need looking at, and a death makes a hundred facts urgent at once.",
+          "A board of tasks treats every card as a separate thing. Life admin is a web: change your address and a long list of things becomes wrong, move a flight and several bookings need looking at, and a death makes many facts urgent at once.",
           "No general purpose tool models that, because modelling it requires knowing what kind of thing each item is. A tool that does not know a transfer was booked around a flight cannot tell you anything useful when the flight moves.",
         ],
       },
@@ -4206,7 +4206,7 @@ export const GUIDES: Guide[] = [
         heading: "Scores and streaks make it actively worse",
         paragraphs: [
           "Gamification assumes you need motivating. For work that arrives during bereavement, illness and moving, a counter of how many days you have failed is not a motivator. It is a reason to close the app.",
-          "The reliable outcome is deletion, which takes the only record of what actually needed doing with it.",
+          "The likely outcome is deletion, which takes the only record of what actually needed doing with it.",
         ],
       },
       {
@@ -4253,7 +4253,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Most first budgets fail for the same reason: they ask for too much. Every purchase logged, every category balanced, every day. That works for a week and then it stops, and a budget that has stopped is worse than none because it now shows a number you no longer believe.",
+          "Many first budgets fail for the same reason: they ask for too much. Every purchase logged, every category balanced, every day. That works for a week and then it stops, and a budget that has stopped is worse than none because it now shows a number you no longer believe.",
           "A first budget only needs to answer one question: how much of this month's money is actually safe to spend. Everything below is in service of that number and nothing else.",
         ],
       },
@@ -4555,7 +4555,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "You had a budget. Then a busy week turned into three, and now the numbers on screen are weeks out of date. The natural instinct is to catch up: dig out old receipts, reconcile everything, and get back to where you were. That instinct is the reason so many budgets end here.",
+          "You had a budget. Then a busy week turned into three, and now the numbers on screen are weeks out of date. The natural instinct is to catch up: dig out old receipts, reconcile everything, and get back to where you were. That instinct is a common reason budgets end here.",
           "Catching up is the hardest way to restart, and it is unnecessary. A budget does not need a perfect history. It needs to be true from today.",
         ],
       },
@@ -4588,15 +4588,15 @@ export const GUIDES: Guide[] = [
         items: [
           "Forget last month. It has already happened and cannot be fixed by logging it late.",
           "Enter today's balance, the amount that is really in the account right now.",
-          "Add the bills still coming, only the ones ahead of you, with their due dates.",
-          "Ignore the rest. Old spending is already reflected in your balance.",
+          "Add the bills still coming, only the ones ahead of you, with their due dates. Include any card balance you owe.",
+          "Ignore the rest. Old spending from this account is already reflected in its balance.",
         ],
       },
       {
         kind: "paragraphs",
         heading: "Why today's balance is enough",
         paragraphs: [
-          "Your balance already contains every purchase you made while you were not tracking. It is the summary of all the spending you skipped logging, so you do not need the history to know where you stand. Take the balance, subtract the bills that are still coming, and you have the honest number for the rest of the month.",
+          "Your account balance already reflects every purchase you paid for from it while you were not tracking. It is the summary of that spending, so you do not need the history to know where you stand. Card purchases are the exception: they show up as a balance you owe, so add that to the bills still coming. Take the balance, subtract the bills that are still coming, and you have the honest number for the rest of the month.",
         ],
       },
       {
@@ -4604,7 +4604,7 @@ export const GUIDES: Guide[] = [
         heading: "Your first check-in back",
         paragraphs: [
           "When you open your budget after time away, the useful question is what changed since you were last here. Has your safe number gone up or down? How long since you confirmed it? Which bills were paid? Start there, add anything missing, and close it.",
-          "Then keep the routine small. A five minute weekly check-in is easier to keep than a daily habit. If you are unsure how to build one, [the weekly check-in and why it works](/guides/why-budgeting-apps-stop-working-after-two-months) explains it.",
+          "Then keep the routine small. A five minute weekly check-in is easier to keep than a daily habit. If you are unsure how to build one, [the four question weekly check-in](/guides/how-to-budget-for-beginners) explains it.",
         ],
       },
       {
@@ -4625,7 +4625,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "An end of month review sounds like homework, which is why most people skip it. Done well, it is short and it changes the next month: you see what happened, you keep what worked, and you start with a number you trust.",
+          "An end of month review sounds like homework, which is why many people skip it. Done well, it is short and it changes the next month: you see what happened, you keep what worked, and you start with a number you trust.",
           "The aim is a look, not a verdict. If you finish feeling worse than you started, the review has gone wrong.",
         ],
       },
@@ -4688,7 +4688,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Some subscriptions take a single click to start and a phone call to stop. That is not an accident, and it is worth knowing before you try, so that the friction does not talk you into keeping something you do not want.",
+          "Some subscriptions take a single click to start and a phone call to stop. That is common, and it is worth knowing before you try, so that the friction does not talk you into keeping something you do not want.",
           "Finding the subscription is one job, covered in [how to find every subscription you are paying for](/guides/how-to-find-every-subscription-you-are-paying-for). This guide is about the next one: actually ending it.",
         ],
       },
@@ -4750,7 +4750,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "Keeping the list",
-        body: "Personal Finance Companion keeps your subscriptions alongside your bills, with a monthly total, a decision on each one (keep, still deciding, planned to cancel), and a heads-up before an annual charge renews. It tracks the decision and will not cancel anything for you. If you only want to see what a cancelled charge frees up, Monthly Money Reset, which is free, will show your safe-to-spend number rise once the bill is removed.",
+        body: "Personal Finance Companion keeps your subscriptions alongside your bills, with a monthly total, a decision on each one (keep, still deciding, planned to cancel), and Attention shows a kept annual subscription within 14 days of renewing. It tracks the decision and will not cancel anything for you. If you only want to see what a canceled charge frees up, Monthly Money Reset, which is free, will show your safe-to-spend number rise once the bill is removed.",
       },
     ],
   },
@@ -4773,7 +4773,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         paragraphs: [
           "Fall is when a house asks for the most in the least time. The heating comes on for the first time in months, the outdoor water has to be dealt with before the first hard frost, and the gutters fill up right when you would like to be doing something else.",
-          "Most fall lists are a wall of forty items. This one is short on purpose: the jobs that prevent damage, in the month they belong to. For the other seasons and the other months, see [the by-month checklist](/guides/home-maintenance-checklist-by-month).",
+          "Most fall lists are a wall of forty items. This one is short on purpose: the jobs that prevent damage, in the month they belong to. For the other seasons, see [the by-month checklist](/guides/home-maintenance-checklist-by-month).",
         ],
       },
       {
@@ -4838,7 +4838,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         paragraphs: [
           "Most home maintenance runs on an interval: change the filter every three months, flush the water heater every year. Winterizing does not. It runs on a date that you do not choose, which is the first night the temperature drops below freezing.",
-          "The good news is that the list is short. Five jobs cover most of what goes wrong. None of them is difficult. All of them are easier in a dry afternoon in October than in a cold snap in January.",
+          "The good news is that the list is short. Five jobs cover a lot of what goes wrong. Most of them are not difficult. All of them are easier in a dry afternoon in October than in a cold snap in January.",
         ],
       },
       {
@@ -4880,7 +4880,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Outside water first",
         paragraphs: [
-          "The outdoor faucet is the single most common freeze failure. Water left in the pipe between the shutoff and the tap freezes, expands and can split the pipe inside the wall, where you will not see it until the thaw. Disconnect the hose, shut the water off to that line if there is a valve for it inside the house, and let the tap run until it stops.",
+          "The outdoor faucet is a common freeze failure. Water left in the pipe between the shutoff and the tap freezes, expands and can split the pipe inside the wall, where you will not see it until the thaw. Disconnect the hose, shut the water off to that line if there is a valve for it inside the house, and let the tap run until it stops.",
           "If your faucet has no interior shutoff or you are not sure how it is plumbed, that is a good question to ask a plumber once. This guide gives general information and is not a substitute for looking at your own plumbing. If you want to know where your main shutoff is before you need it, read [do you know where your main water shutoff is](/guides/where-is-my-water-shutoff).",
         ],
       },
@@ -4918,7 +4918,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Most home maintenance logs stop being kept after the first two entries. They ask for too much: model numbers, part costs, photos, reference codes. Every extra field is a reason to put it off until tomorrow.",
+          "Many home maintenance logs stop being kept early. They ask for too much: model numbers, part costs, photos, reference codes. Every extra field is a reason to put it off until tomorrow.",
           "A log that survives asks for very little. It is there to answer three questions later: when did we last do this, who did it, and what did it cost. Everything else is optional.",
         ],
       },
@@ -4958,7 +4958,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Paper or app",
         paragraphs: [
-          "Either works. A single page in a binder is fine if the binder lives somewhere you can reach it. The Home Survey, a printable book from Draftpace, has a page laid out exactly like this for the home's memory, and the app version does the same job on your phone.",
+          "Either works. A single page in a binder is fine if the binder lives somewhere you can reach it. The Home Survey, a printable book from Draftpace, has a page laid out much like this for the home's memory, and the app version does the same job on your phone.",
           "The point is not the format. It is that the answer is in one place when the water heater fails and someone asks how old the anode rod is.",
         ],
       },
@@ -5021,14 +5021,14 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Where to keep it",
         paragraphs: [
-          "The best place is somewhere you will be standing when you need it: on a strip of tape on the furnace, on your phone, or on a card you keep in your wallet. The same goes for the bulb type, the part number for the humidifier pad, and any other fact you look up every time. Some people call this the hardware store line.",
+          "The best place is somewhere you will be standing when you need it: on a strip of tape on the furnace, on your phone, or on a card you keep in your wallet. The same goes for the bulb type, the part number for the humidifier pad, and any other fact you look up every time.",
           "For the wider habit, see [how often things in your house actually need servicing](/guides/how-often-home-systems-need-servicing), and for finding a model number on an appliance, [how to find the model number on any appliance](/guides/how-to-find-the-model-number-on-any-appliance).",
         ],
       },
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Home Base has a What to buy field on every item. Put 16x25x1 filter there and it sits with the furnace, and it prints on the item's one-page Item Card, which you can take to the hardware store on paper or on your phone. Home Base uses three months for the furnace filter job by default. It does not know your household, so shorten the interval yourself if you have pets or dust.",
+        body: "Home Base has a What to buy field on every item. Put 16x25x1 filter there and it sits with the furnace, and it prints on the item's one-page Item Card, which you can take to the hardware store on paper or on your phone. Home Base uses three months for the furnace filter job by default. It does not know your household, so if you have pets or dust, change the filter sooner and log it when you do.",
       },
     ],
   },
@@ -5044,7 +5044,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         paragraphs: [
           "When a pipe fails, the fastest way to limit the damage is to stop the water at the source. That only works if you already know where the main shutoff is, everyone in the house knows too, and the valve turns.",
-          "Finding it takes about ten minutes on an ordinary afternoon. Nobody does it, which is exactly why it is worth doing. This page is general information, not a repair guide. If water is actively coming through a ceiling or a wall, or you smell gas or see sparks, treat that as an emergency and call the right professional.",
+          "Finding it takes about ten minutes on an ordinary afternoon. Few people do it, which is exactly why it is worth doing. This page is general information, not a repair guide. If water is actively coming through a ceiling or a wall, or you smell gas or see sparks, treat that as an emergency and call the right professional.",
         ],
       },
       {
@@ -5127,7 +5127,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         paragraphs: [
           "A home binder answers a single question at the worst possible moment: what do I need to know right now? It is not a filing cabinet and it is not a scrapbook. Anything that does not help you act quickly can live somewhere else.",
-          "Most binders fail in one of two ways. They are so ambitious that nobody finishes them, or they are so thin that they help with nothing. Five sections is the amount that gets used.",
+          "A binder can fail in two ways. It can be so ambitious that nobody finishes it, or so thin that it helps with nothing. Five sections is enough to be useful.",
         ],
       },
       {
@@ -5182,7 +5182,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "The Home Survey is a printable book that comes with Home Base: 36 pages on US Letter paper, with a page for the shutoffs, twelve areas of a house, every job and how often, a year plan, a page for who to call and a log. It works without a login. Home Base keeps what falls due and what was done. It stores what you type, not the files, and it is not a place for passwords.",
+        body: "The Home Survey is a printable book that comes with Home Base: 36 pages on US Letter paper, with a page for the shutoffs, twelve areas of a house, every job and how often, a year plan, a page for who to call and a log. You fill it in on paper. Home Base keeps what falls due and what was done. It stores what you type, not the files, and it is not a place for passwords.",
       },
     ],
   },
@@ -5232,7 +5232,7 @@ export const GUIDES: Guide[] = [
           label: "Usually yours",
           items: [
             "Keeping the place clean",
-            "Changing smoke alarm batteries",
+            "Changing smoke alarm batteries, if your lease says so",
             "Reporting problems promptly",
             "Renters insurance, if you have it",
           ],
@@ -5265,7 +5265,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Home Base has a renter setup that stops asking about the roof and gutters and asks about the things above: the lease, the deposit, and what you have reported to the landlord and when. Its lease job, Decide before the notice deadline, is a reminder to look at your notice date each year. It stores what you type, not photos or documents, so keep your photos in your own phone. It is not legal advice.",
+        body: "Home Base has a renter setup that stops asking about the roof and gutters and asks about the things above: the lease, the deposit, and what you have reported to the landlord and when. Its lease job, Decide before the notice deadline, is a yearly job to look at your notice date. It stores what you type, not photos or documents, so keep your photos in your own phone. It is not legal advice.",
       },
     ],
   },
@@ -5341,7 +5341,7 @@ export const GUIDES: Guide[] = [
         heading: "Why the gap is often small",
         paragraphs: [
           "In this example both orders finish in the same month. The difference is the interest, and it is small compared with the total. That is common when the extra is modest and the rates are not wildly apart.",
-          "There is also a case where the two do not differ at all. If the smallest balance is also the highest rate, both methods choose the same debt first. And with no extra money at all, every debt just gets its minimum, so the order changes nothing. In the example above, paying only the minimums gives the same result under both methods: debt-free in March 2031 and $9,232.57 in interest. The extra dollars matter more than the method.",
+          "There is also a case where the two do not differ at all. If the smallest balance is also the highest rate, both methods choose the same debt first. With no extra money there is less to direct, so the gap can shrink, though it does not always vanish, because a cleared debt's minimum rolls on to the next one. In the example above, paying only the minimums happens to give the same result under both methods: debt-free in March 2031 and $9,232.57 in interest. The extra dollars matter more than the method.",
         ],
       },
       {
@@ -5382,7 +5382,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "A bills list feels like the simplest possible piece of organizing, and it usually fails at the same point: it lists what arrives every month and forgets everything else. The bills that surprise you are almost never the monthly ones.",
+          "A bills list feels like the simplest possible piece of organizing, and it usually fails at the same point: it lists what arrives every month and forgets everything else. The bills that surprise you are often not the monthly ones.",
           "A useful list has a small number of columns and includes the quarterly and annual bills from the start. It takes about half an hour to build the first time, and a few minutes a month to keep.",
         ],
       },
@@ -5983,7 +5983,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Paying the minimum on a credit card keeps the account in good standing. It is also designed, in effect, to keep you in debt for a long time, because most of a small payment goes to the interest added that month.",
+          "Paying the minimum on a credit card keeps the account in good standing. It is also slow, because most of a small payment goes to the interest added that month.",
           "It helps to see what that looks like once, with a real number.",
         ],
       },
@@ -5992,13 +5992,13 @@ export const GUIDES: Guide[] = [
         heading: "How the interest works each month",
         paragraphs: [
           "A rate quoted as a yearly percentage is usually applied monthly at one twelfth of that. On a $3,000 balance at 24 percent, the monthly rate is 2 percent, so about $60 of interest is added in the first month. If your minimum payment is $90, only about $30 of it reduces what you owe.",
-          "Next month the balance is a little lower, so the interest is a little lower, and slightly more of the payment goes to the balance. The process repeats, slowly, which is why the total time is longer than most people expect.",
+          "Next month the balance is a little lower, so the interest is a little lower, and slightly more of the payment goes to the balance. The process repeats, slowly, which is why the total time is often longer than people expect.",
         ],
       },
       {
         kind: "table",
         heading: "What an extra amount does",
-        intro: "Three debts, from the worked example in the snowball and avalanche guide. Starting September 2026, with a constant rate and constant minimums.",
+        intro: "Three debts, from the worked example in the snowball and avalanche guide. Starting September 2026, with a constant rate and constant minimums, and any extra going to the highest rate first. With $50 extra, the same debts clear in August 2030 with $7,491.15 in interest.",
         columns: ["Extra each month", "Debt-free", "Interest along the way"],
         rows: [
           ["$0, minimums only", "March 2031", "$9,232.57"],
@@ -6456,7 +6456,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Almost everyone has a planner they stopped using. The usual story is that the person lost motivation. A more useful reading is that the system had a requirement built in that a real week could not always meet.",
+          "Many people have a planner they stopped using. A common story is that the person lost motivation. A more useful reading is that the system had a requirement built in that a real week could not always meet.",
           "This is practical guidance, not medical advice. For the wider pattern across tools, see [why productivity tools fail at life admin](/guides/why-productivity-tools-fail-at-life-admin).",
         ],
       },
@@ -6652,7 +6652,7 @@ export const GUIDES: Guide[] = [
         heading: "Leave one day empty on purpose",
         paragraphs: [
           "Write Monday to Friday, then mark one day as spare and leave it blank when you plan. It is not a day off. It is the day that absorbs whatever the week throws at you: the appointment, the sick morning, the lesson that took twice as long as it should have.",
-          "In a week where nothing goes wrong, the spare day becomes a lighter day, a catch-up, or a day out. In a week where something does, it is the reason you did not fall behind on Monday and spend the rest of the week feeling it.",
+          "In a week where nothing goes wrong, the spare day becomes a lighter day, a catch-up, or a day out. In a week where something does, it is the reason one lost morning does not spill into the rest of the week.",
         ],
       },
       {
@@ -6697,7 +6697,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "In Homeschooling Companion, you choose how many days a week each subject happens, from 0 to 7, and Today shows what is planned for that day. Recording a subject is one tap, and marking Did not get to it is recorded as not finished, so it comes back next time as Last time this was not finished. It does not build a plan for you and it does not judge a short day. It is a web app, $34 once.",
+        body: "In Homeschooling Companion, you choose how many days a week each subject happens, from 0 to 7, and Today shows what is planned for that day. Recording a subject is one tap, and marking Did not get to it is recorded as not finished, so it comes back next time as Last time this was not finished. It does not build a plan for you and it does not judge a short day. It has no spare-day setting: a day with nothing planned shows Nothing scheduled today. It is a web app, $34 once.",
       },
     ],
   },
@@ -6712,7 +6712,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "A family that plans five days and manages four has failed at something every single week. A family that plans four and manages four has not. The work done is identical. Only one of them still wants to be doing this in March.",
+          "A family that plans five days and manages four has failed at something every single week. A family that plans four and manages four has not. The work done is identical. One of them has a plan that fits the week.",
           "A four-day week is not a lesser week. It is a plan you can keep, which matters more than a plan that looks better on paper.",
         ],
       },
@@ -6721,7 +6721,7 @@ export const GUIDES: Guide[] = [
         heading: "Why four is easier to keep than five",
         paragraphs: [
           "Every homeschooling week contains interruptions: appointments, a sibling's illness, a day out that ran late, a morning that simply did not happen. A five-day plan has no room for any of them, so each one becomes a small failure.",
-          "A four-day plan has a spare day. When something goes wrong, the work moves to it. When nothing does, the day is free, and free days are how families stay in it for years.",
+          "A four-day plan has a spare day. When something goes wrong, the work moves to it. When nothing does, the day is free, and a free day can make a plan easier to keep.",
         ],
       },
       {
@@ -6781,7 +6781,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "In Homeschooling Companion, each subject has its own number of days a week, from 0 to 7, and Today shows what is planned for the day. You decide the numbers. It does not choose them for you and it does not count your spare days as missed. It is a web app, $34 once.",
+        body: "In Homeschooling Companion, each subject has its own number of days a week, from 0 to 7, and Today shows what is planned for the day. You decide the numbers. A subject set to 4 days runs Monday, Tuesday, Thursday and Friday, which leaves Wednesday free. It does not choose the numbers for you and it does not count a day with nothing planned as missed. It is a web app, $34 once.",
       },
     ],
   },
@@ -7003,7 +7003,7 @@ export const GUIDES: Guide[] = [
         heading: "Why separate records matter",
         paragraphs: [
           "Where an evaluator, a reviewer or an authority asks to see a record, it is asked for by child. A record that mixes two children has to be pulled apart at the worst possible moment. Keeping them separate from the start costs almost nothing.",
-          "It also lets each child's record say what is true for them. One may be well ahead in reading and slow in math, and the other the reverse. Two records tell that story. One combined record does not.",
+          "It also lets each child's record say what is true for them. One may find reading easier and math harder, and the other the reverse. Two records tell that story. One combined record does not.",
         ],
       },
       {
@@ -7031,7 +7031,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "A reading log is one of the most useful and least demanding records a homeschooling family can keep. It is evidence that reading happened, a memory aid when you look back over the year, and often a source of quiet pride for the child.",
+          "A reading log is a useful, low-effort record for a homeschooling family. It is evidence that reading happened and a memory aid when you look back over the year.",
           "It does not need to be elaborate. Three columns are enough: the book, when it was started, and when it was finished or stopped.",
         ],
       },
@@ -7049,7 +7049,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Every book, finished or abandoned",
         paragraphs: [
-          "Abandoned books belong on the list. A child who is allowed to stop is a child who keeps starting. If stopping a book counts as a failure, children learn to stop picking books that might be hard, or they push through books they hate and learn to hate reading.",
+          "Abandoned books belong on the list. A child who is allowed to stop may well keep starting. If stopping a book counts as a failure, a child may stop picking books that might be hard, or push through books they dislike.",
           "A list with only finished books also tells a slightly false story. The real story includes the books that did not work, and that is valuable information about what your child likes.",
         ],
       },
@@ -7077,7 +7077,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Homeschooling Companion records reading as a subject like any other: you tap it on Today and add a short note if it is worth one. It has no separate book list screen. The printed handbook has a reading log page you can fill in by hand, with a column for finished or stopped. It is a web app, $34 once.",
+        body: "Homeschooling Companion records reading as a subject like any other: you tap it on Today and add a short note if it is worth one. It has no separate book list screen. It is a web app, $34 once.",
       },
     ],
   },
@@ -7092,7 +7092,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "When a subject is not working, the instinct is to change the curriculum. It is also the most expensive change, and often the least likely to help. There is a cheaper order to try first.",
+          "When a subject is not working, the instinct is to change the curriculum. It is also often the most expensive change, and a cheaper order is worth trying first.",
           "The idea is simple: change one thing at a time, starting with the smallest, and only move down the list when the smaller change has not helped.",
         ],
       },
@@ -7102,7 +7102,7 @@ export const GUIDES: Guide[] = [
         steps: [
           {
             when: "Change the time",
-            what: "Earlier in the day, later, or shorter. Many problems are about when, not what.",
+            what: "Earlier in the day, later, or shorter. Some problems are about when, not what.",
           },
           {
             when: "Then change the amount",
@@ -7159,7 +7159,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         paragraphs: [
           "A life admin binder is a single place that tells somebody else where things are and who to speak to. It might be called an emergency binder, an in case of emergency binder, or an if something happens to me file. The names differ. The job is the same.",
-          "Most binders fail for the same reason: they start as a hundred blank pages, and nobody finishes a hundred blank pages. A short binder you finish is worth far more than a long one you abandon in the second section.",
+          "Many binders fail for the same reason: they start as a hundred blank pages, and nobody finishes a hundred blank pages. A short binder you finish is worth far more than a long one you abandon in the second section.",
         ],
       },
       {
@@ -7197,7 +7197,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Build it in an order",
         paragraphs: [
-          "Start with the one thing that matters most: who should be called first. Then the will and who knows where it is. Then the email address everything is registered to. Three pages, done in an evening, are already more than most people have. You can add the rest over a few weeks.",
+          "Start with the one thing that matters most: who should be called first. Then the will and who knows where it is. Then the email address everything is registered to. Three pages, done in an evening, are a real start. You can add the rest over a few weeks.",
           "For what else belongs in the wider file, see [the if something happens to me file, and what goes in it](/guides/the-if-something-happens-to-me-file) and [what to write down in case something happens to you](/guides/what-to-write-down-in-case-something-happens-to-you).",
         ],
       },
@@ -7248,7 +7248,7 @@ export const GUIDES: Guide[] = [
         heading: "Two weeks is a good size",
         paragraphs: [
           "Two weeks is long enough to expose the gaps and short enough not to feel morbid. It is also the shape of most real interruptions: a hospital stay, a long trip out of contact, a family emergency somewhere else. If your list works for two weeks, it is most of the way to working for anything longer.",
-          "For the longer version, see [the if something happens to me file](/guides/the-if-something-happens-to-me-file), and for the one question that matters most, see [who to tell when someone dies](/guides/who-to-tell-when-someone-dies).",
+          "For the longer version, see [the if something happens to me file](/guides/the-if-something-happens-to-me-file), and for a shorter list to write down, see [what to write down in case something happens to you](/guides/what-to-write-down-in-case-something-happens-to-you).",
         ],
       },
       {
@@ -7328,7 +7328,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "For many parents this is the hardest question on the list, and the reason people finally sit down to plan at all. It is also one where a little clarity now matters a great deal.",
+          "For many parents this is the hardest question on the list, and often the reason people finally sit down to plan at all. It is also one where a little clarity now matters a great deal.",
           "How a guardian is legally named, and what a court considers, varies by state. This guide covers the human side of the choice. Confirm the legal side with an attorney in your state.",
         ],
       },
@@ -7415,7 +7415,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "The list is easier when it already exists",
         paragraphs: [
-          "The hardest calls are the ones where nobody knows whom to call. If nobody knows to call, nothing else on the list is ever found. A page that says who to contact first, written down in advance, is one of the kindest things a person can leave.",
+          "The hardest calls are the ones where nobody knows who to call. If nobody knows who to call, much of the rest may never be found. A page that says who to contact first, written down in advance, is one of the kindest things a person can leave.",
           "For the first two weeks in more detail, see [what to do when a parent dies](/guides/what-to-do-when-a-parent-dies), and for finding accounts nobody wrote down, see [how to find someone's accounts after they die](/guides/how-to-find-someones-accounts-after-they-die).",
         ],
       },
@@ -7472,7 +7472,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Personal Life Affairs Companion has a Has something changed step with nine life events, such as I moved or I got married. Choose one and it finds the parts of what you recorded that are worth a second look, and brings them back one at a time as questions. Nothing is deleted and nothing is marked wrong. It is a web app, $49 once, and it is not legal advice.",
+        body: "Personal Life Affairs Companion has a card in Settings called Has something changed, with nine life events, such as I moved or I got married. Choose one and it finds the parts of what you recorded that are worth a second look, and brings them back one at a time as questions. Nothing is deleted and nothing is marked wrong. It is a web app, $49 once, and it is not legal advice.",
       },
     ],
   },
@@ -7542,7 +7542,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         paragraphs: [
           "If you were suddenly away, someone would need to feed the dog, let the cat out and get the rabbit to the vet. Most people do not have a plan for this, and the person who steps in usually has to guess.",
-          "A short note fixes almost all of it. It takes about two minutes per animal, and it is one of the kindest things you can leave.",
+          "A short note fixes much of it. It takes a few minutes per animal, and it is one of the kindest things you can leave.",
         ],
       },
       {
@@ -8063,7 +8063,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Most people cannot say when their car last had its oil changed without digging through a glovebox or a phone. The question sounds simple, and the answer usually turns out to be a guess.",
+          "Many people cannot say when their car last had its oil changed without digging through a glovebox or a phone. The question sounds simple, and the answer is often a guess.",
           "You can answer it in a minute if you have two things written down: when each job was last done, and how often your car wants it. The second comes from your owner's manual. The first has to come from you.",
         ],
       },
@@ -8116,7 +8116,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Most disagreements at a repair shop start the same way: a small job grows while you are not there, and nobody wrote down what was agreed. You cannot control what a shop finds, but you can control what you say before they start.",
+          "Many disagreements at a repair shop start the same way: a small job grows while you are not there, and nobody wrote down what was agreed. You cannot control what a shop finds, but you can control what you say before they start.",
           "This is a plain script, not legal advice. It will not force a shop to do anything. It makes your request clear, and clear requests are easier to keep.",
         ],
       },
@@ -8266,7 +8266,7 @@ export const GUIDES: Guide[] = [
         items: [
           "Guesses about when something was done. If you do not know, leave it out.",
           "Long descriptions. A short line and a receipt somewhere are enough.",
-          "Anything you would not want to hand to a buyer.",
+          "Anything that is not about the car, such as your home address or account numbers.",
         ],
       },
       {
@@ -8396,7 +8396,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "winter-car-prep-checklist",
     title: "Winter car prep checklist",
-    dek: "Cold is hard on batteries, tires and wipers. A short checklist for the weeks before the first hard frost, with room to write down what you find.",
+    dek: "Cold is hard on batteries, tires and wipers. A short checklist for the weeks before the first hard frost, and a way to note what you find.",
     publishedAt: "2026-09-26",
     areaSlug: "vehicles",
     body: [
@@ -8424,7 +8424,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Three things the cold is hard on",
         paragraphs: [
-          "Batteries lose strength in the cold, tires lose pressure as the temperature drops, and wipers work harder in winter. Those three account for most of what is worth checking in advance.",
+          "Batteries lose strength in the cold, tires lose pressure as the temperature drops, and wipers work harder in winter. They are a good place to start.",
         ],
       },
       {
@@ -8517,7 +8517,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "What is better kept at home",
         paragraphs: [
-          "Anything you would not want a thief to find alongside your car. Spare keys, papers that show your home address, and the title are best kept elsewhere. Keep the details, not the originals.",
+          "Anything you would not want a thief to find alongside your car. Spare keys, papers that show your home address, and the title are best kept elsewhere. Keep the details, not the originals. A card that lists your VIN and policy number carries those details too, so leave those lines blank if you would rather not keep them in the car.",
         ],
       },
       {
@@ -8568,9 +8568,9 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "paragraphs",
-        heading: "Look two months ahead",
+        heading: "Look six weeks ahead",
         paragraphs: [
-          "Look at your dates once a month, and act on the ones within the next few weeks. Renewal can take time, and the day before is a poor time to find that something is missing.",
+          "Look at your dates once a month, and act on the ones within the next six weeks. Renewal can take time, and the day before is a poor time to find that something is missing.",
           "For what to keep in the car itself, see [what to keep in your glove box](/guides/glove-box-checklist-what-to-keep).",
         ],
       },
@@ -8602,7 +8602,7 @@ export const GUIDES: Guide[] = [
         items: [
           "Find the owner's manual. It has the maintenance intervals for your car.",
           "Note the mileage today, and the date.",
-          "Find the registration and insurance papers, and note where they are.",
+          "Find the registration and insurance papers, and the title if the car came with one, and note where they are.",
           "Start a record: a page with date, miles and what was done.",
           "Put a card in the glove box with the essentials.",
         ],
@@ -8646,7 +8646,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Most families keep their health information in their heads, a kitchen drawer and a few patient portals. It works until a form asks for something you have to look up, or a sitter needs to know something you have not written down.",
+          "Many families keep their health information in their heads, a kitchen drawer and a few patient portals. It works until a form asks for something you have to look up, or a sitter needs to know something you have not written down.",
           "A family health binder is a single place that holds the answers forms keep asking for. It is a record of what you know, not medical advice, and it supplements the paperwork a clinic gives you. It does not replace it.",
         ],
       },
@@ -8720,7 +8720,7 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "The order forms ask in",
         paragraphs: [
-          "Most forms start with who the child is and who to call. Then insurance and doctors. Then health: allergies, medications, anything staff should know. Then vaccines or a signed statement. If your page follows the same order, filling in the form is copying from one to the other.",
+          "Many forms start with who the child is and who to call. Then insurance and doctors. Then health: allergies, medications, anything staff should know. Then vaccines or a signed statement. If your page follows the same order, filling in the form is copying from one to the other.",
         ],
       },
       {
@@ -8780,7 +8780,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Family Health Binder prints a Caregiver sheet titled All about your child: allergies in a large box, what is taken now, who to call, and your own notes on routines and comforts. The notes print on that sheet and nowhere else. It says in an emergency to call 911. It does not send the page to anyone. You print it and hand it over. It is a web app, $34 once, and it is not medical advice.",
+        body: "Family Health Binder prints a Caregiver sheet titled with the person's name, such as All about Amina: allergies in a large box, what is taken now, who to call, and your own notes on routines and comforts. The notes print on that sheet and nowhere else. It says in an emergency to call 911. It does not send the page to anyone. You print it and hand it over. It is a web app, $34 once, and it is not medical advice.",
       },
     ],
   },
@@ -8806,7 +8806,7 @@ export const GUIDES: Guide[] = [
           "Write your questions down, one per line.",
           "List what is taken now, with the dose and how often as given to you.",
           "Note any symptoms, and when they started.",
-          "Bring your insurance information.",
+          "Bring your insurance card.",
           "Leave room on the page for notes from the visit.",
         ],
       },
@@ -8827,7 +8827,7 @@ export const GUIDES: Guide[] = [
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "In Family Health Binder, you can plan a visit and write your questions, one per line, then add what was said afterwards. The Visit page prints your questions with tick boxes, what is taken now, recent symptom notes and room for notes from the visit. It is a record only: it does not remind, schedule or book anything. It is a web app, $34 once, and it is not medical advice.",
+        body: "In Family Health Binder, you can plan a visit and write your questions, one per line, then add what was said afterwards. The Visit page prints your questions with tick boxes, what is taken now, recent symptom notes and room for notes from the visit. Insurance is on the Forms sheet, not here. It is a record only: it does not remind, schedule or book anything. It is a web app, $34 once, and it is not medical advice.",
       },
     ],
   },
@@ -9059,13 +9059,13 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Start with the facts",
         paragraphs: [
-          "Handing over a page changes how a first visit begins. The doctor starts from what you have written, and you spend the time on questions. See [doctor appointment prep checklist](/guides/doctor-appointment-prep-checklist).",
+          "Handing over a page can change how a first visit begins. Many clinics start from what you have written, and you can spend the time on questions. See [doctor appointment prep checklist](/guides/doctor-appointment-prep-checklist).",
         ],
       },
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Family Health Binder prints an Intake summary for a new doctor: allergies, medications, conditions, family history and recent symptoms on one page. It also keeps doctors, specialists, dentists and pharmacies with phone numbers and a note. It supplements clinic paperwork and does not replace it. It is a web app, $34 once, and it is not medical advice.",
+        body: "Family Health Binder prints an Intake summary for a new doctor: allergies, medications, conditions, family history and recent symptoms on one page. Doctors, specialists, dentists and pharmacies are kept too, but they print on the Forms sheet, not on this summary. It supplements clinic paperwork and does not replace it. It is a web app, $34 once, and it is not medical advice.",
       },
     ],
   },
