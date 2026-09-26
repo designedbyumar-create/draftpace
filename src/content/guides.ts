@@ -6632,6 +6632,521 @@ export const GUIDES: Guide[] = [
       },
     ],
   },
+
+  {
+    slug: "homeschool-weekly-plan-with-a-spare-day",
+    title: "A homeschool weekly plan that survives a bad day",
+    dek: "Plan four days and leave the fifth empty, decide in advance what a short day looks like, and put the hard thing first. A weekly plan with a spare day built in.",
+    publishedAt: "2026-09-26",
+    areaSlug: "family-and-learning",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Most weekly homeschool schedules are written for a week in which nothing goes wrong. Nobody is ill, nobody has an appointment, and everybody is in a good mood at nine o'clock. Those weeks are rare, and a plan that only works in them fails by Wednesday.",
+          "A plan that survives a bad day has three parts: a day left empty on purpose, a short day decided in advance, and the hardest subject placed early. None of them needs a special tool. A sheet of paper is enough.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Leave one day empty on purpose",
+        paragraphs: [
+          "Write Monday to Friday, then mark one day as spare and leave it blank when you plan. It is not a day off. It is the day that absorbs whatever the week throws at you: the appointment, the sick morning, the lesson that took twice as long as it should have.",
+          "In a week where nothing goes wrong, the spare day becomes a lighter day, a catch-up, or a day out. In a week where something does, it is the reason you did not fall behind on Monday and spend the rest of the week feeling it.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "What the week looks like",
+        columns: ["Day", "Plan"],
+        rows: [
+          ["Monday", "The full plan"],
+          ["Tuesday", "The full plan"],
+          ["Wednesday", "Spare. Leave it empty when you plan."],
+          ["Thursday", "The full plan"],
+          ["Friday", "The full plan, or a lighter one"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Put the hard thing first",
+        paragraphs: [
+          "Whatever is hardest for your child, or for you, goes early in the day, while there is still something left in everyone. The rest of the day can then be shorter without being a failure, because the part that mattered most has already happened.",
+          "This is also the easiest rule to keep. You do not have to rewrite anything. You only change the order.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Decide in advance what a short day looks like",
+        intro: "Fill these in once, on a normal day, and keep them where you will see them. Deciding on a bad morning is much harder than following a decision you already made.",
+        checkable: true,
+        items: [
+          "On a short day we always do: (two or three things, no more).",
+          "On a very short day we always do: (one thing).",
+          "The thing we drop first is: (name it now).",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What to record on a short day",
+        paragraphs: [
+          "A short day still counts, and it is still worth one line: the date, what you did, and one word about how it went. A record made up of only full days quietly tells a story that is not true, and a short day written down is more honest than a blank one.",
+          "For a simple way to keep the record light enough to survive a bad week, see [the simplest homeschool record keeping system that actually lasts](/guides/simple-homeschool-record-keeping-system).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "In Homeschooling Companion, you choose how many days a week each subject happens, from 0 to 7, and Today shows what is planned for that day. Recording a subject is one tap, and marking Did not get to it is recorded as not finished, so it comes back next time as Last time this was not finished. It does not build a plan for you and it does not judge a short day. It is a web app, $34 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "four-day-homeschool-week",
+    title: "The four-day homeschool week: how to set one up",
+    dek: "Plan four days, not five. How a four-day homeschool week works, how to spread subjects across it, and what to record so the fifth day is a spare and not a gap.",
+    publishedAt: "2026-09-26",
+    areaSlug: "family-and-learning",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "A family that plans five days and manages four has failed at something every single week. A family that plans four and manages four has not. The work done is identical. Only one of them still wants to be doing this in March.",
+          "A four-day week is not a lesser week. It is a plan you can keep, which matters more than a plan that looks better on paper.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Why four is easier to keep than five",
+        paragraphs: [
+          "Every homeschooling week contains interruptions: appointments, a sibling's illness, a day out that ran late, a morning that simply did not happen. A five-day plan has no room for any of them, so each one becomes a small failure.",
+          "A four-day plan has a spare day. When something goes wrong, the work moves to it. When nothing does, the day is free, and free days are how families stay in it for years.",
+        ],
+      },
+      {
+        kind: "compare",
+        heading: "Two families, the same amount of work",
+        left: {
+          label: "Plans five, manages four",
+          items: [
+            "Feels short every week",
+            "The plan is never met, so it stops being looked at",
+            "Records show gaps that were never really gaps",
+          ],
+        },
+        right: {
+          label: "Plans four, manages four",
+          items: [
+            "Meets the plan every week",
+            "The plan is kept, so it keeps being used",
+            "Records match what happened",
+          ],
+        },
+      },
+      {
+        kind: "paragraphs",
+        heading: "How to spread subjects across four days",
+        paragraphs: [
+          "Not every subject needs to happen every day. Start by deciding how many days each one gets, then place them so no single day is overloaded.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "One example, as a suggestion",
+        columns: ["Subject", "Days a week"],
+        rows: [
+          ["Math", "4"],
+          ["Reading", "4"],
+          ["Writing", "3"],
+          ["Science", "2"],
+          ["History", "2"],
+          ["Geography", "1"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "That is only one shape. Change it to fit your child. The point is that the numbers are decided once, not renegotiated every morning.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What to record",
+        paragraphs: [
+          "Record what actually happened: the date, the subject, and one word about how it went. A four-day week produces four days of entries and a spare day with nothing on it. That is a complete record, not an incomplete one.",
+          "If your state asks for a number of days, find out what it counts, and find out early. Our guide on [homeschool attendance and what to track](/guides/homeschool-attendance-what-to-track) covers it, and the official source for your state is the one that decides.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "In Homeschooling Companion, each subject has its own number of days a week, from 0 to 7, and Today shows what is planned for the day. You decide the numbers. It does not choose them for you and it does not count your spare days as missed. It is a web app, $34 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "homeschool-notice-of-intent-explained",
+    title: "What a homeschool notice of intent is, and how to find yours",
+    dek: "A notice of intent is a short filing that tells your state you are homeschooling. What the phrase usually means, why the name varies, and how to find out what yours asks for.",
+    publishedAt: "2026-09-26",
+    areaSlug: "family-and-learning",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "A notice of intent is, in plain terms, a filing that tells your state or your local school district that you are homeschooling. In some places it is called a declaration, an affidavit, or a letter of intent. The name varies, and so does what it has to contain.",
+          "This guide explains what the phrase usually means and how to find out what applies to you. It is not legal advice, and it cannot tell you what your state requires. Laws change, and the official source is the one that counts.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What it usually covers",
+        paragraphs: [
+          "Where a notice is required, it is typically a short document. It usually names the child, gives their age or grade, and states that they will be educated at home. Some places ask for more, and some ask for less.",
+          "Whether you file it once, once a year, or not at all depends on where you live. Some places require nothing to be filed. That is why the first job is finding out which kind of place yours is.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "How to find yours",
+        checkable: true,
+        items: [
+          "Go to your state department of education website and look for homeschool or home instruction.",
+          "Check whether the notice goes to the state or to your local district. It varies.",
+          "Note when it is due. Some places want it before you begin, and some after a set period.",
+          "Note whether it has to be filed again each year.",
+          "Keep a copy of what you filed, and the date you filed it.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "State organizations can help you find it",
+        paragraphs: [
+          "Most states have a homeschool organization run by families who have already done this. They often explain the official process in plain language. Use them to orient yourself, then confirm against the official source, because organizations can be out of date too.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "If you are also starting out",
+        paragraphs: [
+          "A notice is one step in getting started, not the whole of it. For the order of everything else, see [how to start homeschooling: the first-month paperwork order](/guides/how-to-start-homeschooling-first-month-paperwork). For what states ask you to keep once you are under way, see [record keeping requirements by state](/guides/homeschool-record-keeping-requirements-by-state).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Homeschooling Companion includes a summary of what each state typically asks, listed as None, Low, Moderate or High regulation. It is a summary, not the law, and every state page says Laws change. Confirm with your state before relying on this. It does not file anything for you and does not tell you whether you meet a requirement. It is a web app, $34 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "do-you-have-to-count-homeschool-days-or-hours",
+    title: "Do you have to count homeschool days or hours?",
+    dek: "It depends on where you live, and it changes. What counting days or hours usually means, how to find out whether your state asks for it, and the lightest way to keep the number.",
+    publishedAt: "2026-09-26",
+    areaSlug: "family-and-learning",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "The honest answer is that it depends on your state, and it can change. Some places ask for a number of days or hours, and some ask for nothing to be counted at all. This guide cannot tell you which applies to you. It can help you find out, and help you keep the number lightly if you need one.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Find out once, properly",
+        paragraphs: [
+          "Look at your state department of education website, and then at a state homeschool organization. Write down what you find in one place: whether a number of days or hours is required, what counts toward it, and whether you have to show the number to anyone.",
+          "Do this once, at the start of the year. Then you are not wondering about it every few weeks.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "What you are trying to find out",
+        columns: ["Question", "Why it matters"],
+        rows: [
+          ["Does my state ask for days, hours, both or neither?", "It decides whether you need to count at all"],
+          ["What counts as a day?", "Some places count a day of any instruction"],
+          ["Do I have to hand the number over?", "Some places ask, some do not"],
+          ["Is it checked, and by whom?", "It decides how careful the record needs to be"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "If you have to count",
+        paragraphs: [
+          "Mark a day as you go. Do not try to rebuild it later. A simple box per day schooled, ticked on the day, is more accurate than any reconstruction made in June, and it takes seconds.",
+          "If you have fallen behind on the record, start from today and be honest about the earlier part. Our guide on [how to catch up on homeschool records](/guides/how-to-catch-up-on-homeschool-records) covers doing that without inventing anything.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "If you do not have to count",
+        paragraphs: [
+          "Then the number is for you, if you want it at all. A record of what was done is usually more useful than a count of days, and it is easier to keep. Our guide on [homeschool attendance: what to track](/guides/homeschool-attendance-what-to-track) explains the lighter options.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Homeschooling Companion does not track hours. Where your state page lists a log or record of instruction, it shows how many days you have logged, counted as days with any entry. It says what is recorded, not whether it is enough, and every state page says Laws change. Confirm with your state before relying on this. It is a web app, $34 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "how-to-start-homeschooling-first-month-paperwork",
+    title: "How to start homeschooling: the first-month paperwork order",
+    dek: "Starting homeschooling has a paperwork order that is easier to follow than it looks: find your state's rules, note what it asks, and start a simple record on day one.",
+    publishedAt: "2026-09-26",
+    areaSlug: "family-and-learning",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "The first month of homeschooling can feel like a wall of things to do at once. It is not. There is an order to it, and most of the work is smaller than it looks.",
+          "You can begin before you have everything figured out. A record can start with a child's name and one subject, and the rest can be added as you go.",
+        ],
+      },
+      {
+        kind: "timeline",
+        heading: "The order",
+        steps: [
+          {
+            when: "Find your state's rules",
+            what: "Once, from the official source. Your state department of education is the place to start.",
+          },
+          {
+            when: "Note what it asks",
+            what: "A notice, some records, a yearly review, or nothing at all. Write it down in one place.",
+          },
+          {
+            when: "File anything that has to be filed",
+            what: "Where a notice is required, do it early and keep a copy. See [what a notice of intent is](/guides/homeschool-notice-of-intent-explained).",
+          },
+          {
+            when: "Start a simple record on day one",
+            what: "The date, the subject and roughly what part, and one word about how it went. That is enough.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What can wait",
+        paragraphs: [
+          "The curriculum does not have to be settled in the first week. The perfect schedule does not exist yet. A portfolio is built through the year, not on day one. Most of what feels urgent in the first month is not.",
+          "If you are not sure what you are doing yet, that is normal. Begin with what you have and change it as you learn what works.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "A first week that does not need a plan",
+        checkable: true,
+        items: [
+          "Write your child's name and one subject on a page.",
+          "Each day, note the date and what you did, in a line.",
+          "At the end of the week, look at what happened and note one thing to change.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Where to go next",
+        paragraphs: [
+          "For a record that lasts past October, see [the simplest homeschool record keeping system that actually lasts](/guides/simple-homeschool-record-keeping-system). For what states usually ask you to keep, see [record keeping requirements by state](/guides/homeschool-record-keeping-requirements-by-state).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Adding a child in Homeschooling Companion asks one question: are you already following a curriculum? You can answer Yes, we have one, No, we are doing our own, or Not sure yet, and a suggested starting outline is offered by age, clearly labeled a suggestion you can change or ignore. It is a web app, $34 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "homeschool-record-keeping-for-multiple-children",
+    title: "Keeping records for more than one child without mixing them up",
+    dek: "Two children, three subjects each, and one shared afternoon. How to record it once per child, keep each record separate, and handle the lessons you did together.",
+    publishedAt: "2026-09-26",
+    areaSlug: "family-and-learning",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Record keeping that works for one child often stops working at two. The same lesson gets logged once, or twice, or on the wrong child, and by spring nobody is sure which page belongs to whom.",
+          "The fix is a simple rule: everything is filed by child. The rest follows from it.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Rules that keep it straight",
+        checkable: true,
+        items: [
+          "One record per child. Never two children in one document.",
+          "Log the shared morning once for each child, with that child's own note.",
+          "Different curricula per child are fine. Each child keeps their own.",
+          "A private note stays with the child it is about.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The lesson you did together",
+        paragraphs: [
+          "A read-aloud, a science experiment, a trip. Both children were there, and it counts for both. Write it once for each child, in a line each. It feels like doubling the work, but it takes seconds, and it means each record stands on its own if anyone ever asks to see one.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Why separate records matter",
+        paragraphs: [
+          "Where an evaluator, a reviewer or an authority asks to see a record, it is asked for by child. A record that mixes two children has to be pulled apart at the worst possible moment. Keeping them separate from the start costs almost nothing.",
+          "It also lets each child's record say what is true for them. One may be well ahead in reading and slow in math, and the other the reverse. Two records tell that story. One combined record does not.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Where to go next",
+        paragraphs: [
+          "For what belongs in each record, see [the simplest homeschool record keeping system that actually lasts](/guides/simple-homeschool-record-keeping-system) and [what goes in a homeschool portfolio](/guides/what-goes-in-a-homeschool-portfolio).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Homeschooling Companion keeps a separate page for each child, and Today groups what is planned by child, so a shared morning is two taps, one for each. The printed record is one child at a time and never combines two in a document. A private note stays private unless you choose to print it. It is a web app, $34 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "homeschool-reading-log",
+    title: "The homeschool reading log: what to write and why abandoned books belong on it",
+    dek: "Three columns are enough for a homeschool reading log. What to write, why a book your child stopped reading still belongs on the list, and how the log fits a portfolio.",
+    publishedAt: "2026-09-26",
+    areaSlug: "family-and-learning",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "A reading log is one of the most useful and least demanding records a homeschooling family can keep. It is evidence that reading happened, a memory aid when you look back over the year, and often a source of quiet pride for the child.",
+          "It does not need to be elaborate. Three columns are enough: the book, when it was started, and when it was finished or stopped.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "The three columns",
+        columns: ["Column", "What goes in it"],
+        rows: [
+          ["Book", "The title, and the author if you like"],
+          ["Started", "A date, roughly is fine"],
+          ["Finished or stopped", "A date, and either word"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Every book, finished or abandoned",
+        paragraphs: [
+          "Abandoned books belong on the list. A child who is allowed to stop is a child who keeps starting. If stopping a book counts as a failure, children learn to stop picking books that might be hard, or they push through books they hate and learn to hate reading.",
+          "A list with only finished books also tells a slightly false story. The real story includes the books that did not work, and that is valuable information about what your child likes.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Let the child fill it in",
+        paragraphs: [
+          "Once a child can write, the log is theirs to keep. It is a small job with a clear result, and the handwriting counts as writing practice. Younger children can tell you, and you write it down.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "How it fits a portfolio",
+        paragraphs: [
+          "Where a portfolio or a review is part of your picture, a reading log is one of the easiest things to include. It shows breadth without any extra work. See [what goes in a homeschool portfolio](/guides/what-goes-in-a-homeschool-portfolio) for the rest of it, and always confirm what your own evaluator or state wants.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What a log cannot tell you",
+        paragraphs: [
+          "A log says what was read, not how well it was understood. To find out whether something landed, ask your child to explain it a week later. See [how to check if your child learned something](/guides/how-to-check-if-your-child-learned-something).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Homeschooling Companion records reading as a subject like any other: you tap it on Today and add a short note if it is worth one. It has no separate book list screen. The printed handbook has a reading log page you can fill in by hand, with a column for finished or stopped. It is a web app, $34 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "homeschool-subject-not-working-what-to-change-first",
+    title: "When a homeschool subject is not working: what to change first",
+    dek: "Change the time first, then the amount, then go back one step, and only then consider the material. An order for fixing a subject that is not working, cheapest change first.",
+    publishedAt: "2026-09-26",
+    areaSlug: "family-and-learning",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "When a subject is not working, the instinct is to change the curriculum. It is also the most expensive change, and often the least likely to help. There is a cheaper order to try first.",
+          "The idea is simple: change one thing at a time, starting with the smallest, and only move down the list when the smaller change has not helped.",
+        ],
+      },
+      {
+        kind: "timeline",
+        heading: "The order",
+        steps: [
+          {
+            when: "Change the time",
+            what: "Earlier in the day, later, or shorter. Many problems are about when, not what.",
+          },
+          {
+            when: "Then change the amount",
+            what: "Less of it, for now. A smaller amount done well beats a full amount done with resistance.",
+          },
+          {
+            when: "Then go back one step",
+            what: "Find the step before the one that is not working, and check whether that one is solid.",
+          },
+          {
+            when: "Only then consider the material",
+            what: "If the time, the amount and the step are all right, the material may be the problem.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Going back one step",
+        paragraphs: [
+          "A skill usually rests on the one before it. If long division keeps going wrong, the trouble may be in multiplication. Ask a few short questions about the step before, and see whether it is solid. If it is not, that is where to start, and it is not a step backward. It is the way forward.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Notice how a hard session felt",
+        paragraphs: [
+          "A single hard day means little. A pattern across a few weeks means something. One word after each session, easy, about right or difficult, is enough to show the pattern without turning it into a project.",
+          "For a way to check what has landed, see [how to check if your child learned something](/guides/how-to-check-if-your-child-learned-something).",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "You are allowed to stop",
+        paragraphs: [
+          "Putting something down for a while is a real option. Coming back to it in a month often works better than pushing through today. It is not giving up. It is choosing when.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "In Homeschooling Companion, a session you mark difficult comes back on Today as Worth going over again, with the reason: Last time you said this was difficult. You can tick the topics you are actually teaching and run a short check you write or choose yourself, and results can say Not enough to say. It states what came back. It does not change your material or tell you what is wrong. It is a web app, $34 once.",
+      },
+    ],
+  },
 ];
 
 /**
