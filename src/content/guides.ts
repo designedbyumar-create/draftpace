@@ -8052,6 +8052,589 @@ export const GUIDES: Guide[] = [
       },
     ],
   },
+
+  {
+    slug: "what-is-due-on-my-car-right-now",
+    title: "What is due on my car right now?",
+    dek: "A one-page way to know what is due on your car, by miles and by time, using your own numbers from your owner's manual and one recorded date to start.",
+    publishedAt: "2026-09-26",
+    areaSlug: "vehicles",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Most people cannot say when their car last had its oil changed without digging through a glovebox or a phone. The question sounds simple, and the answer usually turns out to be a guess.",
+          "You can answer it in a minute if you have two things written down: when each job was last done, and how often your car wants it. The second comes from your owner's manual. The first has to come from you.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "The two numbers for every job",
+        checkable: true,
+        items: [
+          "The date it was last done, and the mileage at the time.",
+          "How often it comes round, in miles, in months, or in both. Your owner's manual is the source.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Miles or months, whichever comes first",
+        paragraphs: [
+          "Some jobs go by distance, some by time, and many by both. When a job has both, it comes due when the first one is reached. A car that barely moves can hit the months limit long before the miles. A car that covers long distances hits the miles first.",
+          "To work it out, take today's mileage and subtract the mileage when the job was last done. Then count the months since the date. Whichever is further along its limit is the one that counts.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "You need one recorded date to start",
+        paragraphs: [
+          "Nothing can be judged without a starting fact. If you do not know when something was last done, do not guess. Write that down honestly, and start from the next time you do it. A record that begins today is worth more than a guess that claims to begin last spring. See [what to do if you bought a used car with no service records](/guides/used-car-no-service-records-what-to-do).",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Keep it on one page",
+        paragraphs: [
+          "A single page is enough: the job, the date it was last done, the mileage then, and how often it is due. For what to write on each line, see [car maintenance log: what to write down](/guides/car-maintenance-log-what-to-write-down), and for where the intervals come from, see [car maintenance by mileage: start with your owner's manual](/guides/car-maintenance-by-mileage-start-with-your-manual).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Vehicle Maintenance Companion works out what is due from the intervals you enter and the dates you record. It shows what is due across every car you own, most urgent first, and says so plainly when nothing is due, with no score or percentage. A job with no recorded date reads as nothing to judge yet, never overdue. It uses your numbers, not a factory schedule. It is a web app, $34 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "what-to-tell-a-mechanic-before-work-starts",
+    title: "What to tell a mechanic before the work starts",
+    dek: "Say what you are asking for, say the most you will agree to without a call, and ask for a written estimate for anything else. A short script and a page to hand over.",
+    publishedAt: "2026-09-26",
+    areaSlug: "vehicles",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Most disagreements at a repair shop start the same way: a small job grows while you are not there, and nobody wrote down what was agreed. You cannot control what a shop finds, but you can control what you say before they start.",
+          "This is a plain script, not legal advice. It will not force a shop to do anything. It makes your request clear, and clear requests are easier to keep.",
+        ],
+      },
+      {
+        kind: "timeline",
+        heading: "Before you hand over the keys",
+        steps: [
+          {
+            when: "Say what you are asking for",
+            what: "Be specific about today's job. \"An oil and filter change and a tire rotation\" is a request. \"Have a look at it\" is an invitation.",
+          },
+          {
+            when: "Say the limit",
+            what: "Tell them the most you will agree to without a call. It is a simple sentence: \"Please do not go over this without calling me first.\"",
+          },
+          {
+            when: "Ask for a call first",
+            what: "If something else comes up, ask them to call you before any further work begins, and to wait for your answer.",
+          },
+          {
+            when: "Ask for a written estimate",
+            what: "For anything else they find, ask for the estimate in writing before you say yes.",
+          },
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Optional extras",
+        checkable: true,
+        items: [
+          "Ask them to keep any parts they replace, so you can see them.",
+          "Give a number they can reach you on during the day.",
+          "Note the mileage and the date on your copy.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Write it down",
+        paragraphs: [
+          "A spoken request is easily forgotten by both of you. A page you both initial is not. It does not have to be formal: what you are requesting, the most you will agree to, and the sentence about calling you.",
+          "If you keep a record of what was done, the page is also the start of the entry. See [car maintenance log: what to write down](/guides/car-maintenance-log-what-to-write-down).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Vehicle Maintenance Companion prints a page called the Service Boundary. It lists the jobs you are requesting today, states that anything not listed is not authorized, asks the shop to call before further work and to give a written estimate, and has an optional line for the most you will go without a call. It is your written request, not a contract, and the app does not check or use the amount. It is made in your browser. A web app, $34 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "used-car-no-service-records-what-to-do",
+    title: "You bought a used car with no service records: what to do",
+    dek: "A used car with no service history is normal. What to ask, what to note on day one, and how to build a record that starts now.",
+    publishedAt: "2026-09-26",
+    areaSlug: "vehicles",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Plenty of used cars arrive with nothing on paper. That does not mean nothing was ever done to them, only that nobody wrote it down, or that the paper did not travel with the car.",
+          "You cannot reconstruct what you do not know. What you can do is start a record today and be honest about the part you cannot see.",
+        ],
+      },
+      {
+        kind: "timeline",
+        heading: "The first week",
+        steps: [
+          {
+            when: "Ask the seller",
+            what: "Ask what they know and whether any receipts or notes exist. Anything they remember is worth writing down, marked as what the seller said.",
+          },
+          {
+            when: "Note today's mileage",
+            what: "Read the odometer and write down the number and the date. It is your starting point.",
+          },
+          {
+            when: "Find the manual",
+            what: "Your owner's manual says how often each job comes round for your car. If it is missing, the manufacturer may have a copy online.",
+          },
+          {
+            when: "Start a record",
+            what: "Begin with today. Each time something is done, write the date, the mileage and what was done.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Do not guess what was done",
+        paragraphs: [
+          "The temptation with an unknown history is to assume the worst and do everything at once, or the best and do nothing. Neither is based on a fact. A better approach is to treat each job as unknown until you have a real date for it, and to decide job by job whether a check now is worth it.",
+          "If a mechanic looks at the car, ask what they see and write that down too. See [what to tell a mechanic before the work starts](/guides/what-to-tell-a-mechanic-before-work-starts).",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Your record becomes the history",
+        paragraphs: [
+          "In a couple of years, you will be the one with a service history and the next owner the one who asks for it. See [selling your car with a service history](/guides/selling-your-car-with-a-service-history).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "In Vehicle Maintenance Companion, you can say that a vehicle's history is unknown. Nothing is then assumed done: a job waits for a real fact before it says anything is due, and shows as nothing to judge yet until you record when it was last done. Nothing reads overdue on a fact you never had. It works the same way for any job with no recorded date. It is a web app, $34 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "car-maintenance-log-what-to-write-down",
+    title: "Car maintenance log: what to write down",
+    dek: "A car maintenance log needs three things on every line, and two optional ones. What to write, what to leave off, and how to keep it up.",
+    publishedAt: "2026-09-26",
+    areaSlug: "vehicles",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "A maintenance log has one job: to say what was done to the car, and when. It does not need to be beautiful. It needs to be complete enough that you, a mechanic or a buyer could read it in a minute.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "The columns",
+        columns: ["Column", "What goes in it", "Needed?"],
+        rows: [
+          ["Date", "The day it was done", "Yes"],
+          ["Miles", "The odometer reading at the time", "Yes"],
+          ["What was done", "In plain words, such as an oil and filter change", "Yes"],
+          ["Who did it", "A shop name, or yourself", "Optional"],
+          ["Cost or note", "What it cost, or anything worth remembering", "Optional"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Record the fact, not the intention",
+        paragraphs: [
+          "Write what was done, not what you meant to do. A line that says \"brake pads replaced\" is a fact. A line that says \"brakes need doing\" is a reminder, and belongs somewhere else.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What to leave off",
+        checkable: true,
+        items: [
+          "Guesses about when something was done. If you do not know, leave it out.",
+          "Long descriptions. A short line and a receipt somewhere are enough.",
+          "Anything you would not want to hand to a buyer.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "One-off repairs count too",
+        paragraphs: [
+          "A log is not only for scheduled jobs. A repair after a breakdown belongs on it as well, with the same three fields. It is often the most interesting line for the next owner.",
+          "To use the log to work out what is due, see [what is due on my car right now](/guides/what-is-due-on-my-car-right-now).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Vehicle Maintenance Companion keeps every service with its date, mileage, who did it, an optional cost and a note, grouped by year, newest first. You can also log a service that was never a tracked job, like a repair. Costs are optional and shown without a currency symbol. It is your own record. It is a web app, $34 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "selling-your-car-with-a-service-history",
+    title: "Selling your car? Bring the service history",
+    dek: "A dated record of what was done helps a buyer see how a car was looked after. What to include, and what it can and cannot prove.",
+    publishedAt: "2026-09-26",
+    areaSlug: "vehicles",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "When you sell a car, a buyer wants to know how it was looked after. A tidy record answers that better than a promise. It does not decide the price, and it will not make a difference to every buyer, but it removes a question.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What to bring",
+        checkable: true,
+        items: [
+          "A list of what was done, in date order, with the mileage at each entry.",
+          "The name of who did each job, where you know it.",
+          "Any receipts you kept, kept separately from the list.",
+          "Notes on anything unusual, such as a one-off repair.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What a record can and cannot prove",
+        paragraphs: [
+          "A record you kept yourself is your account of what happened. It is useful, and honest buyers know that. It is not a certificate. If you say what you can back up, and leave out what you cannot, it will read as credible.",
+          "Receipts add weight to a list. A list without receipts is still better than nothing, provided it is clear that it is your own record.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Print it, keep a copy",
+        paragraphs: [
+          "Print the record so the buyer can read it on the spot, and keep a copy for yourself. If you are keeping it as you go, this is a five-minute job. If you are starting late, be honest about where the record begins. See [you bought a used car with no service records](/guides/used-car-no-service-records-what-to-do) for how to begin.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Vehicle Maintenance Companion prints everything recorded for one vehicle, oldest first, as a service record made in your browser. The page says plainly that it is the owner's own record, not a dealer or shop history, and that nothing was checked against a receipt. A closed vehicle's record can still be printed after you sell the car. It does not value a car or check a history. It is a web app, $34 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "car-maintenance-by-mileage-start-with-your-manual",
+    title: "Car maintenance by mileage: start with your owner's manual",
+    dek: "Generic maintenance charts are a guess. Your owner's manual is the source for your car. How to pull out the intervals that matter and write them down once.",
+    publishedAt: "2026-09-26",
+    areaSlug: "vehicles",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Search for a car maintenance schedule and you will find dozens of charts with confident numbers. They are averages, and yours is not an average car. The only source that matches your model is the one that came with it.",
+          "This guide does not give intervals, because they differ by car and by how it is used. It shows you how to find yours.",
+        ],
+      },
+      {
+        kind: "timeline",
+        heading: "How to use your manual",
+        steps: [
+          {
+            when: "Find the maintenance section",
+            what: "Look for a section called maintenance, service or schedule. If you do not have the paper copy, the manufacturer may have one online for your model and year.",
+          },
+          {
+            when: "Note miles, months, or both",
+            what: "For each job, write down whether it is by distance, by time, or by both, and the number.",
+          },
+          {
+            when: "Look for the harder conditions",
+            what: "Many manuals list different intervals for towing, mostly short trips, heavy dust or extreme heat or cold. If that is how you drive, note it.",
+          },
+          {
+            when: "Write it down once",
+            what: "Put the jobs and their intervals on one page. You should not have to open the manual every time.",
+          },
+        ],
+      },
+      {
+        kind: "table",
+        heading: "What to write for each job",
+        columns: ["Job", "Miles", "Months"],
+        rows: [
+          ["From your manual", "A number, or blank", "A number, or blank"],
+          ["From your manual", "A number, or blank", "A number, or blank"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Harder use changes the numbers",
+        paragraphs: [
+          "If you tow, drive short trips or live somewhere with dust, heat or cold, look at what your manual says for those conditions. A common approach is to shorten the interval. What is right for your car is what its manual says, and if it is unclear, a mechanic you trust can tell you.",
+          "Once you have the intervals, the next step is knowing what is due. See [what is due on my car right now](/guides/what-is-due-on-my-car-right-now).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "In Vehicle Maintenance Companion, you can type jobs from your manual in a small table: the job, the miles and the months. You can also start from typical jobs, which are a generic starting point you can change, and not a factory schedule. A severe duty toggle halves the interval you entered for one job. It does not know your car's real schedule. It is a web app, $34 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "winter-car-prep-checklist",
+    title: "Winter car prep checklist",
+    dek: "Cold is hard on batteries, tires and wipers. A short checklist for the weeks before the first hard frost, with room to write down what you find.",
+    publishedAt: "2026-09-26",
+    areaSlug: "vehicles",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Cold weather finds the weak points in a car. A battery that starts fine in September may not in January. A tire that is fine in the dry may be a problem on ice. The best time to look is before you need it.",
+          "This checklist is what to look at, not how to fix it. Follow your owner's manual for anything specific, and see a mechanic for anything you are not sure about.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Before the first frost",
+        checkable: true,
+        items: [
+          "Battery: have it tested.",
+          "Tires: check the tread and the pressure, and swap to winter tires if you use them.",
+          "Wiper blades: check they clear the glass cleanly.",
+          "Washer fluid: top it up.",
+          "Lights: check they all work.",
+          "Emergency kit: check it is in the car and complete.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Three things the cold is hard on",
+        paragraphs: [
+          "Batteries lose strength in the cold, tires lose pressure as the temperature drops, and wipers work harder in winter. Those three account for most of what is worth checking in advance.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Write down what you find",
+        paragraphs: [
+          "Note the date and what you checked, even if nothing needed doing. It becomes part of your record, and it tells you when you last looked. See [car maintenance log: what to write down](/guides/car-maintenance-log-what-to-write-down).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Vehicle Maintenance Companion has a starter list called Before winter: cold is hard on batteries, tires and wipers. It adds the jobs with a typical interval you can change and nothing recorded against them, so none of it reads as overdue. It is a starting point, not advice for your car. It is a web app, $34 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "two-cars-one-household-maintenance",
+    title: "Two cars, one household: keeping maintenance straight",
+    dek: "With two cars it is easy to lose track of which one needs what. A simple way to keep each car's record separate and see both at once.",
+    publishedAt: "2026-09-26",
+    areaSlug: "vehicles",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "One car is easy to keep track of. Two cars are where things go wrong. The oil change gets logged against the wrong one, a registration date belongs to a car that is not the one you thought, and nobody is sure which of them made the noise.",
+          "The fix is to keep each car's record separate and to look at both together.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Three habits",
+        checkable: true,
+        items: [
+          "One page per car, with its own name or plate at the top.",
+          "Log each job against the car it was done to, on the day.",
+          "Look at both together once a month, so you can see which one needs you.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Use the plate or a name",
+        paragraphs: [
+          "Give each car a label you will not mix up: a plate, or a name like the work van. It sounds trivial, and it is the difference between a record you trust and one you have to double check.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Keep the paperwork straight too",
+        paragraphs: [
+          "Insurance and registration are separate for each car. Note the dates for each one, and where each paper is. See [car paperwork dates: registration, insurance, inspection](/guides/car-paperwork-dates-organizer).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Vehicle Maintenance Companion holds as many cars as you own under one account. With two or more, a strip of plates shows which one needs you, with a lamp for each: a filled dot for something due, a ring for something close, an empty ring for clear. Tap a plate to filter Due to that car. It is a web app, $34 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "glove-box-checklist-what-to-keep",
+    title: "What to keep in your glove box",
+    dek: "A short list of the papers and numbers worth having in the car, and what is better kept at home.",
+    publishedAt: "2026-09-26",
+    areaSlug: "vehicles",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "A glove box tends to collect everything: old receipts, napkins, a manual for a car you no longer own. What you need in it is much shorter.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Worth having in the car",
+        checkable: true,
+        items: [
+          "The registration paper or card, where your state expects you to carry it. Check with your state for what applies.",
+          "Your insurance card or the policy details.",
+          "A roadside help number you can call.",
+          "The owner's manual.",
+          "A note of your tire size and the oil type your car uses.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What is better kept at home",
+        paragraphs: [
+          "Anything you would not want a thief to find alongside your car. Spare keys, papers that show your home address, and the title are best kept elsewhere. Keep the details, not the originals.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "One card, not a folder",
+        paragraphs: [
+          "A single card with the plate, the VIN, the oil, the tire size, the insurer and a roadside number is easier to find than a folder of papers. Fill it in by hand or from a record you keep. See [car paperwork dates](/guides/car-paperwork-dates-organizer) for the dates worth keeping in view.",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Vehicle Maintenance Companion prints a glove box card from the details you type: registration plate, VIN, oil, insurer, policy number, roadside number and the dates you are watching. Every line is typed by you and nothing is looked up or checked. Blank lines stay blank for a pen. It is made in your browser. A web app, $34 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "car-paperwork-dates-organizer",
+    title: "Car paperwork dates: registration, insurance, inspection",
+    dek: "A way to keep track of the dates on your car's paperwork without a folder: what each date is, where the paper is, and what to check with the official source.",
+    publishedAt: "2026-09-26",
+    areaSlug: "vehicles",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Cars come with a handful of dates that matter: registration, insurance, an inspection, sometimes a warranty ending. They arrive by mail, get filed somewhere, and come round again a year later.",
+          "What each of these requires depends on where you live. This guide is about keeping track of the dates, not about what your state asks. For that, the official source is the one to trust.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Three things to note for each",
+        columns: ["What to note", "Why"],
+        rows: [
+          ["The kind of paper", "Registration, insurance, inspection, warranty or something else"],
+          ["The date", "The day it runs out or comes up"],
+          ["Where the paper is", "A drawer, a folder, a name, so you can find it on the day"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Note the date when you renew",
+        paragraphs: [
+          "The best moment to record the next date is the day you renew. The new paper is in your hand and the new date is printed on it. Write it down straight away.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Look two months ahead",
+        paragraphs: [
+          "Look at your dates once a month, and act on the ones within the next few weeks. Renewal can take time, and the day before is a poor time to find that something is missing.",
+          "For what to keep in the car itself, see [what to keep in your glove box](/guides/glove-box-checklist-what-to-keep).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Vehicle Maintenance Companion records a registration, insurance, inspection, warranty or other date, and where the paper is. Nothing is uploaded and it never says what any place requires. A date shows on Due from 45 days out or once past. If you switch reminders on, which are off until you do, you also get one notice two weeks ahead and one on the day, on that device. It is a web app, $34 once.",
+      },
+    ],
+  },
+
+  {
+    slug: "first-car-checklist-for-new-drivers",
+    title: "First car checklist for new drivers",
+    dek: "A short list of what to sort in the first week with a car: the papers, the manual, the first record, and what to keep in the car.",
+    publishedAt: "2026-09-26",
+    areaSlug: "vehicles",
+    body: [
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "A first car brings a lot of small questions at once. Most of them can wait. A handful are worth doing in the first week, and they make everything after easier.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "In the first week",
+        checkable: true,
+        items: [
+          "Find the owner's manual. It has the maintenance intervals for your car.",
+          "Note the mileage today, and the date.",
+          "Find the registration and insurance papers, and note where they are.",
+          "Start a record: a page with date, miles and what was done.",
+          "Put a card in the glove box with the essentials.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Do the small things first",
+        paragraphs: [
+          "None of this needs a garage. It is a notebook, a pen and an hour. The first entry in your record can be as simple as the date you got the car and its mileage that day.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Learn what is due",
+        paragraphs: [
+          "Your manual says how often each job comes round. Once you know, you can see what is coming up. See [car maintenance by mileage: start with your owner's manual](/guides/car-maintenance-by-mileage-start-with-your-manual) and [what is due on my car right now](/guides/what-is-due-on-my-car-right-now).",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Start the record today",
+        paragraphs: [
+          "The best time to start a car's record is the day you get it. In a few years it will be the history you hand over to the next owner. See [selling your car with a service history](/guides/selling-your-car-with-a-service-history).",
+        ],
+      },
+      {
+        kind: "callout",
+        label: "The Companion for this",
+        body: "Vehicle Maintenance Companion lets you name the car, log a service with its date and mileage, and see what is due from intervals you enter. Reminders are optional and off until you switch them on: one device, at most once an hour, for a job that has reached its interval or a date that is close. It is a web app, $34 once.",
+      },
+    ],
+  },
 ];
 
 /**
