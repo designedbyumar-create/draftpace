@@ -29,6 +29,7 @@ import { collectionStructuredData, guideStructuredData, jsonLd } from "@/lib/str
 import Breadcrumbs, { type BreadcrumbItem } from "@/components/public/guides/Breadcrumbs";
 import NextSteps from "@/components/public/guides/NextSteps";
 import Sources from "@/components/public/guides/Sources";
+import GuideNotice from "@/components/public/guides/GuideNotice";
 
 /**
  * One route serving two page types: a life-area hub, or a guide.
@@ -238,6 +239,7 @@ export default async function GuideOrHubPage({ params }: { params: Promise<{ gui
             <GuideBody blocks={guide.body} />
 
             {guide.sources && <Sources sources={guide.sources} />}
+            <GuideNotice areaSlug={guide.areaSlug} />
 
             <NextSteps
               next={nextGuide && guide.next ? { guide: nextGuide, reason: guide.next.reason } : undefined}

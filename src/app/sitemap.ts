@@ -60,6 +60,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: "/guides", changeFrequency: "weekly", priority: 0.6 },
     { route: "/about", changeFrequency: "monthly", priority: 0.5 },
     { route: "/trust", changeFrequency: "monthly", priority: 0.4 },
+    { route: "/editorial-standards", changeFrequency: "yearly", priority: 0.3 },
     { route: "/accessibility", changeFrequency: "monthly", priority: 0.4 },
     { route: "/support", changeFrequency: "monthly", priority: 0.4 },
     { route: "/careers", changeFrequency: "monthly", priority: 0.4 },

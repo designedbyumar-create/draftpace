@@ -12,6 +12,7 @@ const HELP_LINKS = [
 const COMPANY_LINKS = [
   { href: "/about", label: "About" },
   { href: "/trust", label: "Trust" },
+  { href: "/editorial-standards", label: "Editorial standards" },
   { href: "/accessibility", label: "Accessibility" },
   { href: "/support", label: "Support" },
   { href: "/careers", label: "Careers" },
