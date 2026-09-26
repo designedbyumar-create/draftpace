@@ -203,35 +203,42 @@ export const personalFinanceCompanionShopProduct: ShopProductInput = {
   searchedProblems: [
     {
       phrase: "My finances are scattered across too many apps",
+      guideSlug: "organize-your-finances-from-scratch",
       answer:
         "One place holding accounts, income, bills, subscriptions, transactions, debt and savings, with a single figure for what is actually available.",
     },
     {
       phrase: "I keep getting charged for subscriptions I forgot about",
+      guideSlug: "how-to-find-every-subscription-you-are-paying-for",
       answer:
         "Subscriptions are their own area, with amounts and renewal dates, and a missing renewal date shows up in Attention rather than being quietly ignored.",
     },
     {
       phrase: "Debt snowball or avalanche, which is better for me",
+      guideSlug: "debt-snowball-vs-avalanche",
       answer:
         "The payoff plan runs both on your own balances, rates and minimums and says which costs less in interest, with the month you would be debt-free either way.",
     },
     {
       phrase: "I need a bill tracker that shows what I have paid",
+      guideSlug: "monthly-bills-list",
       answer: "Bills you tick paid for the month, with what is left to pay worked out from the ticks.",
     },
     {
       phrase: "I have no idea where my money went",
+      guideSlug: "bank-statement-csv-to-budget",
       answer:
         "Transactions you enter or import, reviewed before anything joins your picture, so what you are looking at is what actually happened.",
     },
     {
       phrase: "How do couples split bills without arguing about it",
+      guideSlug: "split-bills-with-a-partner-or-roommate",
       answer:
         "A shared flag and your share on each bill, a settled tick you control, and a statement you can both read that says what is squared up.",
     },
     {
       phrase: "I need to sort out my finances after a move or a job change",
+      guideSlug: "sort-out-your-finances-after-a-life-change",
       answer:
         "Add what is true now. Every figure recomputes from your own records, so a changed situation does not mean rebuilding a spreadsheet.",
     },

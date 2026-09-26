@@ -210,26 +210,32 @@ export const familyHealthBinderShopProduct: ShopProductInput = {
   searchedProblems: [
     {
       phrase: "I can never remember my child's medications at the doctor",
+      guideSlug: "medication-list-what-to-write-down",
       answer: "They are written down per person, with dose and how often, on whatever device is in your hand at the desk, and stopped ones leave the list.",
     },
     {
       phrase: "What should I bring to a doctor's appointment",
+      guideSlug: "doctor-appointment-prep-checklist",
       answer: "A Visit page for that person: your questions with a box to tick each, what is taken now, recent symptoms, and room for notes.",
     },
     {
       phrase: "Camp and school health forms every year",
+      guideSlug: "school-and-camp-health-forms-what-to-have-ready",
       answer: "A Forms sheet with the answers those forms ask for, in the order they ask, so you copy from one page instead of finding each fact again.",
     },
     {
       phrase: "What does a babysitter or grandparent need to know about my child",
+      guideSlug: "babysitter-and-grandparent-info-sheet",
       answer: "A Caregiver sheet: allergies first, what is taken, who to call, and your own notes about bedtime, comforts and fears.",
     },
     {
       phrase: "Where do I keep everyone's allergies and reactions",
+      guideSlug: "what-goes-in-a-family-health-binder",
       answer: "Per person, with what happens recorded alongside, in one place you can reach without a clinic portal login.",
     },
     {
       phrase: "I'm looking after my kids and my parent and it's all in my head",
+      guideSlug: "caring-for-a-parent-and-kids-one-place",
       answer: "Everyone is a row under your one account, adults and children alike, each with their own card, vaccines, doctors and timeline.",
     },
   ],

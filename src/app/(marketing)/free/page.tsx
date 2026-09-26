@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Container from "@/design-system/Container";
+import { GuidesForCompanion } from "@/components/public/guides/GuideLinks";
 import { ArrowRight, Check } from "@/design-system/Icon";
 import { shopRegistry } from "@/shop/registry";
 import { ensureShopRegistered } from "@/shop/ensureRegistered";
@@ -291,6 +292,19 @@ export default function FreeProductPage() {
           and points at the product whose job that is. Somebody who never
           hits that boundary never needs the other one, and this page
           says so. */}
+      {/* The searches this product answers, for somebody who wants the answer before the tool. */}
+      <section className="border-b border-[var(--border)]">
+        <Container width="narrow" className="py-16 sm:py-20">
+          <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--brand-ink)]">Free guides</p>
+          <h2 className="mt-3 font-serif text-[26px] font-semibold leading-tight tracking-tight sm:text-[32px]">
+            Want the answer before the tool?
+          </h2>
+          <div className="mt-6">
+            <GuidesForCompanion areaSlug="money" />
+          </div>
+        </Container>
+      </section>
+
       <section className="border-b border-[var(--border)]">
         <Container width="narrow" className="py-16 sm:py-20">
           <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--brand-ink)]">

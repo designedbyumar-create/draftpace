@@ -229,31 +229,37 @@ export const vehicleMaintenanceCompanionShopProduct: ShopProductInput = {
   searchedProblems: [
     {
       phrase: "I bought a used car with no maintenance records",
+      guideSlug: "used-car-no-service-records-what-to-do",
       answer:
         "Mark its history unknown and nothing is assumed done. Items wait, honestly, until you have a real fact to record against them.",
     },
     {
       phrase: "How do I stop a shop doing work I didn't authorize",
+      guideSlug: "what-to-tell-a-mechanic-before-work-starts",
       answer:
         "Hand them a dated, mileage-stamped page saying what you are requesting today and that nothing else is authorized without a conversation first.",
     },
     {
       phrase: "How often should I really change the oil if I tow or drive short trips",
+      guideSlug: "car-maintenance-by-mileage-start-with-your-manual",
       answer:
         "Enter the interval you actually believe, then turn on severe duty for that one job to halve it. Nothing here overrides your number with its own.",
     },
     {
       phrase: "I can't remember what interval the mechanic quoted me",
+      guideSlug: "car-maintenance-log-what-to-write-down",
       answer:
         "Type it in once against that vehicle. It is kept, editable, and it is what the due date is computed from from then on.",
     },
     {
       phrase: "What maintenance is due on my car right now",
+      guideSlug: "what-is-due-on-my-car-right-now",
       answer:
         "One ranked view across every vehicle you own, worked out from your intervals and your recorded dates and mileage, never from a guess.",
     },
     {
       phrase: "I have two cars and lose track of which needs what",
+      guideSlug: "two-cars-one-household-maintenance",
       answer:
         "Both sit in the same ranked list, most urgent first, each item saying which vehicle it belongs to.",
     },

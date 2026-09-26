@@ -8,6 +8,7 @@ import CompanionAccordion from "@/components/public/home/CompanionAccordion";
 import type { SceneData, PosterTheme } from "@/components/public/home/posterTypes";
 import TellItOnce from "@/components/public/home/TellItOnce";
 import TrustSection from "@/components/public/home/TrustSection";
+import { StartWithGuides } from "@/components/public/guides/GuideLinks";
 import { softwareApplicationStructuredData } from "@/lib/structuredData";
 import { LIFE_AREAS } from "@/content/areas";
 import { POSTER_SCENES } from "@/content/homepagePosters";
@@ -340,6 +341,13 @@ export default function HomePage() {
               <ArrowRight size={15} aria-hidden />
             </Link>
           </div>
+        </Container>
+      </section>
+
+      {/* 6b. Guides: the way in for someone who arrives with a problem, not a product */}
+      <section className="border-b border-[var(--border)]">
+        <Container width="wide" className="py-16 sm:py-20">
+          <StartWithGuides />
         </Container>
       </section>
 

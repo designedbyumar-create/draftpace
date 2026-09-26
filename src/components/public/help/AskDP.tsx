@@ -612,13 +612,13 @@ function AnswerCard({
       </div>
 
       {relatedGuide && (
-        <a
+        <Link
           href={`/guides/${relatedGuide.slug}`}
           className="mt-3 inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--primary)] hover:underline"
         >
           Full guide: {relatedGuide.title}
           <ArrowRight size={13} aria-hidden />
-        </a>
+        </Link>
       )}
 
       {entry.wealthdrafts && (
@@ -636,7 +636,7 @@ function AnswerCard({
       {entry.relatedProductSlug && (
         <div className="mt-5 flex flex-col gap-2 border-t border-[var(--border)] pt-5">
           <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">Keeps track of this for you</p>
-          <a
+          <Link
             href={`/shop/${entry.relatedProductSlug}`}
             className="group flex items-center justify-between gap-3 rounded-lg border border-[var(--border)] px-3.5 py-3 transition-colors hover:border-[var(--primary)]"
           >
@@ -645,7 +645,7 @@ function AnswerCard({
               See the product
             </span>
             <ArrowRight size={15} aria-hidden className="text-[var(--primary)]" />
-          </a>
+          </Link>
         </div>
       )}
 
@@ -691,14 +691,14 @@ function ProblemAnswerCard({
       {guides.length > 0 && (
         <div className="mt-4 flex flex-col gap-2 border-t border-[var(--border)] pt-4">
           {guides.map((guide) => (
-            <a
+            <Link
               key={guide.slug}
               href={`/guides/${guide.slug}`}
               className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--primary)] hover:underline"
             >
               Full guide: {guide.title}
               <ArrowRight size={13} aria-hidden />
-            </a>
+            </Link>
           ))}
         </div>
       )}
@@ -706,7 +706,7 @@ function ProblemAnswerCard({
       {problem.relatedProductSlug && (
         <div className="mt-5 flex flex-col gap-2 border-t border-[var(--border)] pt-5">
           <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">Keeps track of this for you</p>
-          <a
+          <Link
             href={`/shop/${problem.relatedProductSlug}`}
             className="group flex items-center justify-between gap-3 rounded-lg border border-[var(--border)] px-3.5 py-3 transition-colors hover:border-[var(--primary)]"
           >
@@ -715,7 +715,7 @@ function ProblemAnswerCard({
               See the product
             </span>
             <ArrowRight size={15} aria-hidden className="text-[var(--primary)]" />
-          </a>
+          </Link>
         </div>
       )}
 

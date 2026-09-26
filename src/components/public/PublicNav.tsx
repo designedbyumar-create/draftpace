@@ -24,6 +24,7 @@ import { signOutAndRedirect } from "@/lib/supabase/signOut";
  */
 const LINKS = [
   { href: "/help-with", label: "Ask" },
+  { href: "/guides", label: "Guides" },
   { href: "/shop", label: "Shop" },
   { href: "/how-it-works", label: "How it works" },
   { href: "/about", label: "About" },

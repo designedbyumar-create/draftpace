@@ -50,6 +50,15 @@ export interface LifeArea {
    * name a second time.
    */
   heroCta: string;
+  /**
+   * Three guides to start with, in order: the ones that best answer what
+   * somebody in this situation is most likely to be searching for. Shown
+   * on the homepage and on the Companion's own page, so the Companion and
+   * the guides that lead to it link to each other. Never a UK-locale
+   * guide, and always a guide filed under this area; areas.test.ts holds
+   * both.
+   */
+  startHere: string[];
   /** Product slugs, in the order they should be offered. */
   productSlugs: string[];
 }
@@ -67,6 +76,11 @@ export const LIFE_AREAS: LifeArea[] = [
       "A single next move when something needs attention, rather than a dashboard to interpret.",
     ],
     heroCta: "See what is free to spend",
+    startHere: [
+      "how-much-of-your-money-is-actually-safe-to-spend",
+      "you-missed-a-payment-what-to-do-next",
+      "how-to-find-every-subscription-you-are-paying-for",
+    ],
     // Personal Finance Companion first, deliberately. Every marketing
     // surface that shows one product per area takes productSlugs[0], so
     // while Monthly Money Reset led this list the highest-value slot on
@@ -88,6 +102,11 @@ export const LIFE_AREAS: LifeArea[] = [
       "Snooze and skip that genuinely change what you get asked about again.",
     ],
     heroCta: "See what a house needs",
+    startHere: [
+      "home-maintenance-checklist-by-month",
+      "how-to-make-a-home-binder",
+      "first-week-after-buying-a-house",
+    ],
     productSlugs: ["home-management-companion"],
   },
   {
@@ -102,6 +121,11 @@ export const LIFE_AREAS: LifeArea[] = [
       "Leaving something half finished records nothing at all. There is no streak and no score.",
     ],
     heroCta: "See how it helps you start",
+    startHere: [
+      "how-to-make-a-phone-call-you-have-been-avoiding",
+      "task-paralysis-what-to-do-in-the-next-ten-minutes",
+      "paperwork-pile-where-to-start",
+    ],
     productSlugs: ["alongside"],
   },
   {
@@ -116,6 +140,11 @@ export const LIFE_AREAS: LifeArea[] = [
       "A printable record per child, and a printed handbook that works with a pencil alone.",
     ],
     heroCta: "See what it records",
+    startHere: [
+      "homeschool-record-keeping-requirements-by-state",
+      "simple-homeschool-record-keeping-system",
+      "how-to-start-homeschooling-first-month-paperwork",
+    ],
     productSlugs: ["homeschooling-companion"],
   },
   {
@@ -130,6 +159,11 @@ export const LIFE_AREAS: LifeArea[] = [
       "A printed book somebody could actually follow if they had to.",
     ],
     heroCta: "See what goes in the book",
+    startHere: [
+      "what-to-do-when-a-parent-dies",
+      "how-to-find-someones-accounts-after-they-die",
+      "the-if-something-happens-to-me-file",
+    ],
     productSlugs: ["personal-life-affairs-companion"],
   },
   {
@@ -144,6 +178,11 @@ export const LIFE_AREAS: LifeArea[] = [
       "A printable trip book, blank and structured, for when the phone is at four percent.",
     ],
     heroCta: "See what one change touches",
+    startHere: [
+      "flight-delayed-with-a-connection-what-to-do-first",
+      "travel-document-checklist",
+      "flight-changed-what-else-is-affected",
+    ],
     productSlugs: ["travel-companion"],
   },
   {
@@ -158,6 +197,11 @@ export const LIFE_AREAS: LifeArea[] = [
       "A dated, mileage-stamped document you can hand to a shop, stating what is requested today and what is not.",
     ],
     heroCta: "See how due is worked out",
+    startHere: [
+      "what-to-tell-a-mechanic-before-work-starts",
+      "used-car-no-service-records-what-to-do",
+      "what-is-due-on-my-car-right-now",
+    ],
     productSlugs: ["vehicle-maintenance-companion"],
   },
   {
@@ -172,6 +216,11 @@ export const LIFE_AREAS: LifeArea[] = [
       "The page each moment needs: a forms sheet for school and camp, a caregiver sheet, an emergency card and a visit page.",
     ],
     heroCta: "See what the forms sheet holds",
+    startHere: [
+      "what-goes-in-a-family-health-binder",
+      "school-and-camp-health-forms-what-to-have-ready",
+      "doctor-appointment-prep-checklist",
+    ],
     productSlugs: ["family-health-binder"],
   },
 ];

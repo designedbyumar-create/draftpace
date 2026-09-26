@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
+import { ArrowRight } from "@/design-system/Icon";
 import { entranceVariant } from "@/design-system/motion";
 
 /**
@@ -17,7 +19,14 @@ import { entranceVariant } from "@/design-system/motion";
  * field in src/shop/definition.ts. That research already existed in
  * src/content/askdp.ts and reached only Ask DP until now.
  */
-export default function SearchedProblems({ items }: { items: { phrase: string; answer: string }[] }) {
+/**
+ * `guide` is resolved by the server page and passed down as a slug and
+ * title only. Importing the guides module here would ship every guide's
+ * text to the browser for the sake of one link.
+ */
+export type SearchedProblem = { phrase: string; answer: string; guide?: { slug: string; title: string } };
+
+export default function SearchedProblems({ items }: { items: SearchedProblem[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const reduceMotion = useReducedMotion();
 
@@ -51,14 +60,23 @@ export default function SearchedProblems({ items }: { items: { phrase: string; a
             </button>
 
             {open && (
-              <motion.p
+              <motion.div
                 initial="hidden"
                 animate="visible"
                 variants={entranceVariant(Boolean(reduceMotion))}
-                className="px-4 pb-4 pl-[30px] text-[14.5px] leading-relaxed text-[var(--muted)]"
+                className="px-4 pb-4 pl-[30px]"
               >
-                {item.answer}
-              </motion.p>
+                <p className="text-[14.5px] leading-relaxed text-[var(--muted)]">{item.answer}</p>
+                {item.guide && (
+                  <Link
+                    href={`/guides/${item.guide.slug}`}
+                    className="mt-2.5 inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-[var(--primary)] hover:underline"
+                  >
+                    Read the free guide: {item.guide.title}
+                    <ArrowRight size={13} aria-hidden />
+                  </Link>
+                )}
+              </motion.div>
             )}
           </div>
         );

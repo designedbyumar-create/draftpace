@@ -78,6 +78,13 @@ const searchedProblemSchema = z.object({
   phrase: z.string().min(1),
   /** What this product actually does about it. One sentence, no pitch. */
   answer: z.string().min(1),
+  /**
+   * The guide that answers this problem itself, when there is one. The
+   * phrase is somebody's own words for what is wrong, so the honest
+   * next step for a reader who is not ready to buy is the free guide, not
+   * only the product. Rendered as a link under the answer.
+   */
+  guideSlug: z.string().optional(),
 });
 
 /**

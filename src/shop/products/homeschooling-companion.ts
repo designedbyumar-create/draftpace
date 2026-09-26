@@ -227,31 +227,37 @@ export const homeschoolingCompanionShopProduct: ShopProductInput = {
   searchedProblems: [
     {
       phrase: "What homeschool records am I actually required to keep",
+      guideSlug: "homeschool-record-keeping-requirements-by-state",
       answer:
         "Name your state and the printed record carries what it asks for, each line set against what you have already recorded.",
     },
     {
       phrase: "I have not kept any records and need to catch up",
+      guideSlug: "how-to-catch-up-on-homeschool-records",
       answer:
         "It works from whatever you give it. Record what you did, when you can remember it, and the record builds from there rather than demanding a full year up front.",
     },
     {
       phrase: "How do I know if my child actually learned something",
+      guideSlug: "how-to-check-if-your-child-learned-something",
       answer:
         "A check of eight questions you supply and mark, reported one topic at a time, including the honest answer that there is not enough to say.",
     },
     {
       phrase: "What goes in a homeschool portfolio",
+      guideSlug: "what-goes-in-a-homeschool-portfolio",
       answer:
         "A dated record of what was done, notes in your own words about the day something landed, and check results per topic. You choose what is included before it prints.",
     },
     {
       phrase: "I need to prepare for a homeschool evaluation",
+      guideSlug: "preparing-for-a-homeschool-evaluation",
       answer:
         "Print the record for one child. It contains only what you chose to include, and it says what is in it rather than how it is going.",
     },
     {
       phrase: "Homeschool planners are too heavy and I always quit",
+      guideSlug: "simple-homeschool-record-keeping-system",
       answer:
         "One tap a day per subject is the whole obligation. There is no plan to fall behind on because nothing here scores you against one.",
     },

@@ -26,6 +26,8 @@ import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { getLemonSqueezyCheckoutUrl, hasLemonSqueezyCheckout } from "@/shop/lemonSqueezyCheckout";
 import CheckoutButton from "@/components/shop/CheckoutButton";
 import { getAreaForProduct } from "@/content/areas";
+import { GuidesForCompanion } from "@/components/public/guides/GuideLinks";
+import { getGuideBySlug } from "@/content/guides";
 import { withPreservedUtm } from "@/lib/analytics/utm";
 import ViewProductTracker from "@/components/analytics/ViewProductTracker";
 import TrackedLink from "@/components/analytics/TrackedLink";
@@ -327,6 +329,15 @@ export default async function ShopProductPage({
           </RichSection>
         )}
 
+        {/* The guides that answer what somebody arrives searching for. Linking them
+            from here gives each one the Companion page's authority, and gives the
+            reader who is not ready to buy somewhere useful to go. */}
+        {getAreaForProduct(product.slug) && (
+          <RichSection eyebrow="Guides" title={`Free guides for ${getAreaForProduct(product.slug)?.label.toLowerCase()}`}>
+            <GuidesForCompanion areaSlug={getAreaForProduct(product.slug)!.slug} />
+          </RichSection>
+        )}
+
         {/* Final CTA */}
         <section
           className="mt-16 rounded-3xl px-8 py-14 text-center"
@@ -469,7 +480,12 @@ function buildDetailTabs(
           {product.searchedProblems.length > 0 && (
             <>
               <p className="mb-3 text-[14px] font-semibold text-[var(--text)]">Which of these sounds like you?</p>
-              <SearchedProblems items={product.searchedProblems} />
+              <SearchedProblems
+                items={product.searchedProblems.map((item) => {
+                  const guide = item.guideSlug ? getGuideBySlug(item.guideSlug) : undefined;
+                  return { phrase: item.phrase, answer: item.answer, guide: guide ? { slug: guide.slug, title: guide.title } : undefined };
+                })}
+              />
             </>
           )}
           {product.audienceExclusions.length > 0 && (

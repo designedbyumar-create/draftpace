@@ -227,22 +227,27 @@ export const alongsideShopProduct: ShopProductInput = {
     },
     {
       phrase: "I know exactly what I need to do and still can't start",
+      guideSlug: "task-paralysis-what-to-do-in-the-next-ten-minutes",
       answer: "A walked-through version of the hard thing, one step on screen at a time, so starting is not a decision you have to make alone.",
     },
     {
       phrase: "I've been avoiding a phone call for weeks",
+      guideSlug: "how-to-make-a-phone-call-you-have-been-avoiding",
       answer: "An opening line, the outcome you want, and the two things not to forget, held on screen while you make it.",
     },
     {
       phrase: "This isn't procrastination and to-do lists make it worse",
+      guideSlug: "executive-dysfunction-is-not-procrastination",
       answer: "One thing at a time, chosen for you from what you already said mattered, and a plain \"nothing needs you\" on the days that is true.",
     },
     {
       phrase: "I have brain fog and can't face life admin",
+      guideSlug: "life-admin-with-brain-fog",
       answer: "Built for the difficulty rather than the diagnosis, and it never asks why holding a plan in your head is unreliable right now.",
     },
     {
       phrase: "I left something half finished and lost where I was",
+      guideSlug: "how-to-restart-a-project-you-gave-up-on",
       answer: "It remembers exactly where you got to, so picking it back up is not starting over.",
     },
   ],

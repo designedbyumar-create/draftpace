@@ -166,31 +166,37 @@ export const monthlyMoneyResetShopProduct: ShopProductInput = {
   searchedProblems: [
     {
       phrase: "I hate budgeting and I've tried everything",
+      guideSlug: "how-to-budget-for-beginners",
       answer:
         "This is not a budget. It is one number for what is safe to spend, with nothing to categorise and no plan to stick to.",
     },
     {
       phrase: "I tried YNAB or Mint and gave up",
+      guideSlug: "how-to-start-over-after-budget-failure",
       answer:
         "Those ask you to keep a whole system current. This asks for a few figures and does the keeping-up itself, so there is nothing to fall behind on.",
     },
     {
       phrase: "How much of my money is actually safe to spend",
+      guideSlug: "how-much-of-your-money-is-actually-safe-to-spend",
       answer:
         "One figure, updated as the cycle goes on, with every number that feeds it shown line by line if you want to check the working.",
     },
     {
       phrase: "My balance says I have money but a bill is coming",
+      guideSlug: "available-balance-vs-current-balance",
       answer:
         "Bills you protect are held back whether they are paid yet or not, so the figure never counts money you already owe.",
     },
     {
       phrase: "Why do budgeting apps stop working after two months",
+      guideSlug: "why-budgeting-apps-stop-working-after-two-months",
       answer:
         "Because they need daily upkeep. This one has a short weekly check-in and a quiet way back in when you have been away for weeks.",
     },
     {
       phrase: "I don't know if I can afford this before I buy it",
+      guideSlug: "can-you-afford-it-before-you-buy-it",
       answer:
         "Safe-to-Spend answers exactly that, and the tightest day this cycle tells you whether the money is really there or just there today.",
     },

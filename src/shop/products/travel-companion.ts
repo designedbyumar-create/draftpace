@@ -237,31 +237,37 @@ export const travelCompanionShopProduct: ShopProductInput = {
   searchedProblems: [
     {
       phrase: "My flight changed and I don't know what else is affected",
+      guideSlug: "flight-changed-what-else-is-affected",
       answer:
         "Record the change and it walks down everything you said was booked around it, one booking at a time, editing nothing for you.",
     },
     {
       phrase: "My flight is delayed and I have a connection",
+      guideSlug: "flight-delayed-with-a-connection-what-to-do-first",
       answer:
         "The connection, the transfer and whatever was booked after them are shown as potentially affected, with a walked-through call for any that need one.",
     },
     {
       phrase: "How do I organise a multi-stop trip without a spreadsheet",
+      guideSlug: "organising-a-multi-stop-trip-without-a-spreadsheet",
       answer:
         "Destinations, bookings, travellers and documents in one place, with the shape of the trip held for you rather than in your head.",
     },
     {
       phrase: "The hotel cannot find my reservation",
+      guideSlug: "hotel-cannot-find-your-reservation",
       answer:
         "The provider and the confirmation reference are readable in three seconds, and there is an authored walkthrough for the conversation that follows.",
     },
     {
       phrase: "I'm the one everybody asks what happens next",
+      guideSlug: "how-to-plan-a-group-trip",
       answer:
         "Today shows the current state of the trip in plain sentences, each tracing to something somebody recorded, so the answer is not in your head alone.",
     },
     {
       phrase: "What should I keep on paper when I travel",
+      guideSlug: "what-to-keep-on-paper-when-you-travel",
       answer:
         "My Trip Book prints exactly that: the whole trip, structured, as long as your trip needs and no longer.",
     },

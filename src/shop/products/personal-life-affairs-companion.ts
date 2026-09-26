@@ -217,31 +217,37 @@ export const personalLifeAffairsCompanionShopProduct: ShopProductInput = {
   searchedProblems: [
     {
       phrase: "What should I write down in case something happens to me",
+      guideSlug: "what-to-write-down-in-case-something-happens-to-you",
       answer:
         "A hand-built list of 46 things that belong in order, asked one at a time and only where they apply to you.",
     },
     {
       phrase: "How do I make an if-something-happens-to-me file",
+      guideSlug: "the-if-something-happens-to-me-file",
       answer:
         "This is that file, kept current rather than written once, and printable as a book somebody could pick up and use.",
     },
     {
       phrase: "My pension goes to whoever is named on the form, not my will",
+      guideSlug: "beneficiary-forms-override-your-will",
       answer:
         "Who is named on the forms that override a will is one of the first things it raises, because it is the one most often years out of date.",
     },
     {
       phrase: "I have been named executor and do not know what that involves",
+      guideSlug: "named-executor-what-you-agreed-to",
       answer:
         "It records where things stand on proving that authority, so nobody discovers at a bank counter that being named is not the same as being able to act.",
     },
     {
       phrase: "How do I talk to my parents about their affairs",
+      guideSlug: "talking-to-your-parents-about-their-affairs",
       answer:
         "Give them something with a first step small enough to take. One question at a time, and everything that does not apply to them never appears.",
     },
     {
       phrase: "Nobody would know where to find anything if I died tomorrow",
+      guideSlug: "life-admin-binder-what-goes-in-it",
       answer:
         "A handoff check answers that scenario by scenario, by what somebody would be trying to do, and names the one thing worth fixing first.",
     },

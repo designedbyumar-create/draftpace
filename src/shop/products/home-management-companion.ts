@@ -201,30 +201,36 @@ export const homeManagementCompanionShopProduct: ShopProductInput = {
   searchedProblems: [
     {
       phrase: "I keep forgetting home maintenance",
+      guideSlug: "home-maintenance-checklist-by-month",
       answer:
         "It holds the timing for you and raises a job when it is worth doing, then goes quiet again. Nothing sits on screen permanently.",
     },
     {
       phrase: "I just bought a house and have no idea what needs doing",
+      guideSlug: "first-week-after-buying-a-house",
       answer:
         "Tap what your home has across twelve areas and it tells you what each one needs and roughly when, before anything becomes a repair.",
     },
     {
       phrase: "How often do home systems actually need servicing",
+      guideSlug: "how-often-home-systems-need-servicing",
       answer:
         "A hand-built schedule for 122 kinds of thing found in homes, including the jobs that belong to a month rather than a timer.",
     },
     {
       phrase: "I lost the manual, the receipt and the warranty",
+      guideSlug: "appliance-warranties-what-to-track",
       answer:
         "Make, model, install date, warranty end and the what-to-buy line live on the thing itself, and print onto one card when you need them.",
     },
     {
       phrase: "I don't know which filter or part my appliance takes",
+      guideSlug: "how-to-find-the-model-number-on-any-appliance",
       answer: "A what-to-buy line on each thing, printable as a single Item Card you can take to the counter.",
     },
     {
       phrase: "Homeownership feels like a full-time job",
+      guideSlug: "how-to-make-a-home-binder",
       answer:
         "One page answers whether anything needs you this week. When the answer is no, it says so and leaves it there.",
     },
