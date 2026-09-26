@@ -21,6 +21,7 @@ import {
   relatedGuides,
 } from "@/content/guides";
 import { guideHeadings } from "@/content/guideHeadings";
+import { guideMetaDescription, guideMetaTitle, guideOgLocale, guideSeoTitle } from "@/content/guideMeta";
 import { LIFE_AREAS, getAreaBySlug } from "@/content/areas";
 import { shopRegistry } from "@/shop/registry";
 import { ensureShopRegistered } from "@/shop/ensureRegistered";
@@ -56,19 +57,57 @@ export async function generateMetadata({
 
   const area = getAreaBySlug(guideSlug);
   if (area) {
+    const title = `${area.label} guides`;
+    const description = `Guides for when ${area.situation.charAt(0).toLowerCase()}${area.situation.slice(1, -1)}.`;
     return {
-      title: `${area.label} guides`,
-      description: `Guides for when ${area.situation.charAt(0).toLowerCase()}${area.situation.slice(1, -1)}.`,
+      title,
+      description,
       alternates: { canonical: `/guides/${area.slug}` },
+      openGraph: {
+        type: "website",
+        title,
+        description,
+        url: `/guides/${area.slug}`,
+        siteName: "Draftpace",
+        locale: "en_US",
+      },
+      twitter: { card: "summary_large_image", title, description },
     };
   }
 
   const guide = getGuideBySlug(guideSlug);
   if (!guide) return {};
+  const guideArea = guide.areaSlug && guide.areaSlug !== SERIES ? getAreaBySlug(guide.areaSlug) : undefined;
+  const description = guideMetaDescription(guide);
+  const socialTitle = guideSeoTitle(guide);
   return {
-    title: guide.title,
-    description: guide.dek,
+    // absolute: the layout template would append the site suffix even when
+    // it pushes the title past what a search result shows.
+    title: { absolute: guideMetaTitle(guide) },
+    description,
     alternates: { canonical: `/guides/${guide.slug}` },
+    // Explicit rather than defaulted: a large image preview is what makes a
+    // guide eligible for a large card in Discover and image-led results.
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
+    },
+    // Without this, every shared guide (and every Pinterest scrape of one)
+    // inherited the homepage's title and description from the root layout.
+    // The image comes from opengraph-image.tsx beside this file.
+    openGraph: {
+      type: "article",
+      title: socialTitle,
+      description,
+      url: `/guides/${guide.slug}`,
+      siteName: "Draftpace",
+      locale: guideOgLocale(guide.locale),
+      publishedTime: guide.publishedAt,
+      modifiedTime: guide.updatedAt ?? guide.publishedAt,
+      ...(guideArea ? { section: guideArea.label } : {}),
+    },
+    twitter: { card: "summary_large_image", title: socialTitle, description },
   };
 }
 
