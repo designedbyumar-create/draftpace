@@ -30,103 +30,119 @@
  {
   "slug": "school-and-camp-health-forms-what-to-have-ready",
   "area": "family-health",
-  "line1": "The same form,",
-  "line2": "every single year",
+  "line1": "Camp forms again?",
+  "line2": "One page of answers",
   "pieces": [
    {
-    "type": "table",
-    "eyebrow": "The order forms ask in",
-    "columns": [
-     "Section",
-     "What it asks"
+    "type": "checklist",
+    "eyebrow": "Have ready before the form",
+    "items": [
+     "Birth date and emergency contacts",
+     "Allergies and what happens",
+     "Medicines, dose, how often",
+     "Vaccine dates from the record",
+     "Insurer, member ID, group number"
     ],
-    "rows": [
-     [
-      "Who and who to call",
-      "Child, emergency contact"
-     ],
-     [
-      "Insurance and doctors",
-      "Insurer, member ID, doctor"
-     ],
-     [
-      "Health",
-      "Allergies, medications"
-     ],
-     [
-      "Vaccines",
-      "Record or signed statement"
-     ]
+    "done": [
+     0,
+     1
     ]
    },
    {
-    "type": "note",
-    "eyebrow": "Before you copy",
-    "text": "Ask the camp or school what they need, and follow their instructions."
+    "type": "compare",
+    "eyebrow": "Who fills in what",
+    "left": {
+     "label": "You",
+     "items": [
+      "Contacts and allergies",
+      "Medicines and vaccine dates"
+     ]
+    },
+    "right": {
+     "label": "Provider",
+     "items": [
+      "The exam page",
+      "Their signature"
+     ]
+    }
    }
   ],
-  "alt": "A table of the order camp and school forms usually ask in, from who and who to call through insurance, health and vaccines, with a note to ask the camp what it needs.",
-  "caption": "Many forms follow this order, so your page can too."
+  "alt": "A checklist of answers to have ready for a camp health form beside a card showing what a parent fills in and what the provider completes.",
+  "caption": "The parent half of a camp form, and the page only your child's provider can complete."
  },
  {
   "slug": "babysitter-and-grandparent-info-sheet",
   "area": "family-health",
-  "line1": "A sitter needs one page,",
-  "line2": "not a long talk",
+  "line1": "What a sitter needs",
+  "line2": "on one page",
   "pieces": [
    {
-    "type": "checklist",
-    "eyebrow": "Sitter sheet",
-    "title": "What to put on it",
-    "items": [
-     "Allergies first, and what happens",
-     "What is taken now, dose, how often",
-     "Who to call: you, a second person",
-     "What to do in an emergency",
-     "Bedtime, comforts and fears"
+    "type": "page",
+    "eyebrow": "All about Amina (example)",
+    "rows": [
+     "Allergies: peanuts, hives",
+     "Medicines: cetirizine 5 mg",
+     "Call: Sam, then Aunt Lena",
+     "Doctor: Dr. Patel",
+     "Bedtime is 8, green cup",
+     "In an emergency, call 911"
     ]
    },
    {
     "type": "note",
-    "eyebrow": "Leave off",
-    "text": "Insurance member ID and the full vaccine record."
+    "eyebrow": "You add by hand",
+    "text": "Your address, a second contact and house rules go on in pen."
    }
   ],
-  "alt": "A sitter sheet checklist covering allergies, what is taken now, who to call, emergency steps and bedtime notes, beside a note on what to leave off.",
-  "caption": "What goes on a one-page sheet for a sitter or grandparent."
+  "alt": "A filled example sitter sheet for an invented child with allergies, medicines, who to call and bedtime notes, and a note about what to write by hand.",
+  "caption": "An example sheet for an invented child. Names and numbers are made up."
  },
  {
   "slug": "doctor-appointment-prep-checklist",
   "area": "family-health",
-  "line1": "Most visits are short.",
-  "line2": "Your list is not",
+  "line1": "Doctor visit tomorrow?",
+  "line2": "Write it down today",
   "pieces": [
+   {
+    "type": "checklist",
+    "eyebrow": "The night before",
+    "items": [
+     "Reason for the visit, one line",
+     "Questions, most important first",
+     "Medicines, doses and the bottles",
+     "What changed, with dates",
+     "ID and insurance card in the bag"
+    ],
+    "done": [
+     0,
+     1
+    ]
+   },
    {
     "type": "timeline",
     "eyebrow": "Around the visit",
-    "title": "Doctor appointment",
     "steps": [
      {
-      "when": "Day before",
-      "what": "Write questions, one per line"
+      "when": "Check-in",
+      "what": "Say you have questions"
      },
      {
-      "when": "Day before",
-      "what": "List what is taken now, note symptoms"
+      "when": "In the room",
+      "what": "Start with the big one"
      },
      {
-      "when": "Day before",
-      "what": "Bring your insurance card"
+      "when": "Before you leave",
+      "what": "Say the plan back"
      },
      {
-      "when": "After the visit",
-      "what": "Note what was said, while fresh"
+      "when": "That evening",
+      "what": "Write down what was decided"
      }
     ]
    }
   ],
-  "alt": "A timeline for a doctor visit: write questions, list what is taken and note symptoms the day before, bring the insurance card, then note what was said afterward.",
-  "caption": "A short paperwork list for the day before a doctor visit."
+  "alt": "A night-before checklist for a doctor visit next to a short timeline of what to do at check-in, in the room and after.",
+  "caption": "The paperwork side of a doctor visit, before and after."
  },
  {
   "slug": "questions-to-bring-to-the-doctor",

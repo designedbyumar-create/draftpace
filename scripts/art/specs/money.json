@@ -139,30 +139,41 @@
  {
   "slug": "why-budgeting-apps-stop-working-after-two-months",
   "area": "money",
-  "line1": "It was never a",
-  "line2": "discipline problem",
+  "line1": "Why you quit budgeting",
+  "line2": "Upkeep, not willpower",
   "pieces": [
    {
     "type": "checklist",
-    "eyebrow": "What survives past month two",
-    "title": "Tick what your app does",
+    "eyebrow": "Five tests for a budget that lasts",
     "items": [
-     "Answers one question well",
-     "Stays right with little input",
-     "Says when its figure is incomplete",
-     "Nothing to fall behind on",
-     "Useful the week you ignore it"
-    ],
-    "done": []
+     "Answers one question you ask",
+     "Close after two skipped weeks",
+     "Says when its number is old",
+     "Nothing can put you behind",
+     "Restart from today's balance"
+    ]
    },
    {
-    "type": "note",
-    "eyebrow": "Ask before you set up",
-    "text": "What happens when I stop paying attention? Choose the tool that stays roughly right."
+    "type": "timeline",
+    "eyebrow": "Example: how week six happens",
+    "steps": [
+     {
+      "when": "Week 2",
+      "what": "Two days missed, caught up"
+     },
+     {
+      "when": "Week 4",
+      "what": "Pile of unsorted items, closed it"
+     },
+     {
+      "when": "Week 6",
+      "what": "Not opened, number known wrong"
+     }
+    ]
    }
   ],
-  "alt": "A checklist of five traits of a budgeting tool that lasts past month two, beside a note telling you to ask what happens when you stop paying attention.",
-  "caption": "The five traits worth checking before you spend a weekend setting anything up."
+  "alt": "A five item checklist of tests for a budget that lasts, beside a three step timeline showing how a missed week turns into an app you stop opening.",
+  "caption": "Example: a missed week turns into an app you stop opening by week six."
  },
  {
   "slug": "you-missed-a-payment-what-to-do-next",
@@ -213,103 +224,139 @@
  {
   "slug": "sort-out-your-finances-after-a-life-change",
   "area": "money",
-  "line1": "New job, new address,",
-  "line2": "same tangled money",
+  "line1": "New job, move, split",
+  "line2": "Count the gap first",
   "pieces": [
    {
-    "type": "timeline",
-    "eyebrow": "The order that works",
-    "steps": [
-     {
-      "when": "Income",
-      "what": "What arrives, when, and has payday moved"
-     },
-     {
-      "when": "Fixed outgoings",
-      "what": "What leaves, from which account, when"
-     },
-     {
-      "when": "Now wrong",
-      "what": "An address, a name, an account closing"
-     },
-     {
-      "when": "Forgotten",
-      "what": "Old employer pension, work insurance"
-     }
-    ]
+    "type": "ledger",
+    "eyebrow": "Example: the gap after a job change",
+    "rows": [
+     [
+      "Balance after last paycheck",
+      "$2,150"
+     ],
+     [
+      "Rent, 1st",
+      "- $1,450"
+     ],
+     [
+      "Car insurance, phone, electric",
+      "- $269"
+     ],
+     [
+      "Internet and card minimum",
+      "- $95"
+     ]
+    ],
+    "total": [
+     "Left before first new pay",
+     "$336"
+    ],
+    "example": true
    },
    {
     "type": "note",
-    "eyebrow": "Then, last",
-    "text": "Recalculate what is safe to spend. The old number is no longer true."
+    "eyebrow": "This week",
+    "text": "Find the date the first new deposit will really land, then count every bill until then."
    }
   ],
-  "alt": "A four step timeline for sorting money after a job change, move or separation, beside a note to recalculate what is safe to spend.",
-  "caption": "Each stage depends on the one above it, which is why the order counts."
+  "alt": "A ledger showing a $2,150 balance falling to $336 before the first new paycheck, next to a note to find the first real deposit date.",
+  "caption": "Example: a $2,150 balance leaves $336 before the first new paycheck."
  },
  {
   "slug": "what-to-check-before-each-direct-debit-date",
   "area": "money",
-  "line1": "Money was there,",
-  "line2": "but not in that account",
+  "line1": "Before your bills hit",
+  "line2": "Two minute autopay check",
   "pieces": [
    {
-    "type": "checklist",
-    "eyebrow": "Before the busiest date",
-    "items": [
-     "What is due before next payday",
-     "Which account each one leaves",
-     "Whether any amount has changed",
-     "A gap: odd payday, long month",
-     "Anything committed, not gone yet"
+    "type": "ledger",
+    "eyebrow": "Example: the 29th to payday, the 5th",
+    "rows": [
+     [
+      "Available balance, the 29th",
+      "$1,940"
+     ],
+     [
+      "Rent and car loan, the 1st",
+      "- $1,762"
+     ],
+     [
+      "Phone and internet",
+      "- $115"
+     ],
+     [
+      "Electric, the 3rd",
+      "- $96"
+     ]
     ],
-    "done": []
+    "total": [
+     "Short on payday",
+     "- $33"
+    ],
+    "example": true
    },
    {
-    "type": "note",
-    "eyebrow": "Cluster the dates",
-    "text": "Many providers will move a payment date on request. Fewer moments of exposure each month."
+    "type": "checklist",
+    "eyebrow": "The check, in order",
+    "items": [
+     "Count bills until payday",
+     "Read the available balance",
+     "Note each bill's source account",
+     "Compare amounts that vary",
+     "Fix a shortfall the same day"
+    ]
    }
   ],
-  "alt": "A five item checklist to run before a direct debit date, beside a note about asking providers to move payment dates closer together.",
-  "caption": "The two minute check, run before the busiest date in your month."
+  "alt": "A ledger showing a $1,940 balance falling to minus $33 before payday, beside a five item autopay checklist.",
+  "caption": "Example: $1,940 looks safe for rent and comes up $33 short by payday."
  },
  {
   "slug": "can-you-afford-it-before-you-buy-it",
   "area": "money",
   "line1": "Can you afford it?",
-  "line2": "Turn it into a week",
+  "line2": "Test the weekly number",
   "pieces": [
    {
-    "type": "timeline",
-    "eyebrow": "The thirty second version",
-    "steps": [
-     {
-      "when": "Start with",
-      "what": "Balance minus protected minus committed"
-     },
-     {
-      "when": "Subtract",
-      "what": "The cost of the thing"
-     },
-     {
-      "when": "Divide",
-      "what": "What remains by the weeks until payday"
-     },
-     {
-      "when": "Then ask",
-      "what": "Could you live on that weekly figure?"
-     }
-    ]
+    "type": "table",
+    "eyebrow": "Example: $600 safe, four weeks to go",
+    "columns": [
+     "Buy",
+     "Left",
+     "Per week"
+    ],
+    "rows": [
+     [
+      "Nothing",
+      "$600",
+      "$150"
+     ],
+     [
+      "A $42 item",
+      "$558",
+      "$139.50"
+     ],
+     [
+      "A $180 item",
+      "$420",
+      "$105"
+     ],
+     [
+      "A $480 item",
+      "$120",
+      "$30"
+     ]
+    ],
+    "example": true
    },
    {
     "type": "note",
-    "eyebrow": "Watch out",
-    "text": "Splitting a payment adds a fixed commitment to every coming month."
+    "eyebrow": "The test",
+    "text": "Is the weekly amount left still more than a normal week costs you? If not, wait."
    }
   ],
-  "alt": "A four step timeline for testing a purchase: start from what is available, subtract the cost, divide by weeks to payday, then ask if you could live on it.",
-  "caption": "The thirty second test for one purchase, using your safe-to-spend number."
+  "alt": "A table of an example $600 safe-to-spend balance over four weeks, showing weekly amounts left after purchases of $42, $180 and $480.",
+  "caption": "Example: $600 safe to spend leaves $105 a week after a $180 item."
  },
  {
   "slug": "how-to-budget-for-beginners",
@@ -477,147 +524,115 @@
  {
   "slug": "how-to-start-over-after-budget-failure",
   "area": "money",
-  "line1": "You fell behind.",
+  "line1": "Fell off your budget?",
   "line2": "Start from today",
   "pieces": [
    {
-    "type": "compare",
-    "eyebrow": "Two ways back",
-    "left": {
-     "label": "Catching up",
-     "items": [
-      "Rebuild weeks of spending",
-      "Reconcile every account",
-      "Feel behind until done"
+    "type": "ledger",
+    "eyebrow": "The restart sum, one example",
+    "rows": [
+     [
+      "Checking account today",
+      "$1,640"
+     ],
+     [
+      "Card you'll pay on the 25th",
+      "less $410"
+     ],
+     [
+      "Phone, electric, insurance",
+      "less $272"
+     ],
+     [
+      "Cushion you want to keep",
+      "less $150"
      ]
-    },
-    "right": {
-     "label": "From today",
-     "items": [
-      "Enter today's real balance",
-      "Add the bills still to come",
-      "A working number in minutes"
-     ]
-    }
-   },
-   {
-    "type": "note",
-    "eyebrow": "The rule",
-    "text": "A budget does not need a perfect history. It needs to be true from today."
+    ],
+    "total": [
+     "Left to spend until the 1st",
+     "$808"
+    ],
+    "example": true
    }
   ],
-  "alt": "A comparison of catching up on old spending versus starting from today's balance, beside a note that a budget only needs to be true from today.",
-  "caption": "Two ways back to a budget you trust."
+  "alt": "A ledger card showing an example restart: $1,640 in checking, less the card, three bills and a cushion, leaving $808 to spend.",
+  "caption": "Example: today's balance minus what is still due leaves $808."
  },
  {
   "slug": "end-of-month-money-review",
   "area": "money",
-  "line1": "Ten minutes at month",
-  "line2": "end, a look not a verdict",
+  "line1": "End of month review",
+  "line2": "in ten minutes",
   "pieces": [
-   {
-    "type": "table",
-    "eyebrow": "What carries into next month",
-    "columns": [
-     "Item",
-     "Carries?"
-    ],
-    "rows": [
-     [
-      "Recurring income",
-      "Yes"
-     ],
-     [
-      "Recurring bills",
-      "Yes"
-     ],
-     [
-      "Spending groups",
-      "Yes"
-     ],
-     [
-      "One-off spending",
-      "No"
-     ]
-    ]
-   },
    {
     "type": "checklist",
     "eyebrow": "The ten minute review",
     "items": [
-     "Note your closing safe number",
-     "Each bill paid or skipped",
-     "Glance at each group, no judging",
-     "Decide what carries over",
-     "Choose next month's start"
+     "Write down every balance",
+     "Compare with the start",
+     "Check every bill was paid",
+     "Scan for charges you don't know",
+     "Look at next month's dues"
     ],
-    "done": []
+    "done": [
+     0,
+     1
+    ]
    }
   ],
-  "alt": "A table showing that recurring income, bills and spending groups carry into next month while one-off spending does not, beside the five step ten minute review checklist.",
-  "caption": "Recurring things return; one-off things stay with the month they happened in."
+  "alt": "A checklist card with five steps for an end of month review, from writing down every balance to looking at next month's due dates.",
+  "caption": "The checks that make up the ten minutes."
  },
  {
   "slug": "how-to-cancel-subscriptions",
   "area": "money",
-  "line1": "Easy to start,",
-  "line2": "hard to cancel",
+  "line1": "Won't let you cancel?",
+  "line2": "Say this",
   "pieces": [
    {
     "type": "script",
-    "eyebrow": "When they push back",
+    "eyebrow": "Three lines for when they push back",
     "lines": [
      {
-      "label": "Say",
-      "text": "I would like to cancel today. Please confirm the date it takes effect."
+      "label": "Discount",
+      "text": "Thank you, but I'd like to cancel today. Please confirm the end date."
      },
      {
-      "label": "Ask",
-      "text": "I would like to cancel. What do you need from me to do that today?"
+      "label": "Call us",
+      "text": "I'd like to cancel. What do you need from me to finish it today?"
      },
      {
-      "label": "If no",
-      "text": "May I have a reference number? I will also check with my card provider."
+      "label": "Chat only",
+      "text": "Please cancel it now and send me written confirmation."
      }
     ]
-   },
-   {
-    "type": "checklist",
-    "eyebrow": "Check that it ended",
-    "items": [
-     "Get a confirmation, keep it",
-     "Note the date it takes effect",
-     "Confirm the next charge is gone",
-     "Check statements a month later"
-    ],
-    "done": []
    }
   ],
-  "alt": "A script of three lines to say when a company resists a cancellation, beside a checklist for confirming the subscription really ended.",
-  "caption": "Keep it short and polite, and say the same thing again if you need to."
+  "alt": "A script card with three short lines to say when a company pushes back on cancelling: for a discount, for a call-us request, and for chat only.",
+  "caption": "Three short lines for the usual pushbacks."
  },
  {
   "slug": "debt-snowball-vs-avalanche",
   "area": "money",
   "line1": "Snowball or avalanche?",
-  "line2": "The order you'll keep",
+  "line2": "The numbers side by side",
   "pieces": [
    {
     "type": "table",
-    "eyebrow": "What the two orders do",
+    "eyebrow": "Same debts, $200 extra a month",
     "columns": [
-     "Result",
+     "",
      "Snowball",
      "Avalanche"
     ],
     "rows": [
      [
-      "First debt cleared",
-      "Store card, Mar 2027",
-      "Visa, Oct 2028"
+      "First debt gone",
+      "Mar 2027",
+      "Oct 2028"
      ],
      [
-      "Debt gone",
+      "Debt-free",
       "Sept 2029",
       "Sept 2029"
      ],
@@ -628,17 +643,10 @@
      ]
     ],
     "example": true
-   },
-   {
-    "type": "stat",
-    "eyebrow": "The gap in this example",
-    "value": "$113.94",
-    "caption": "less interest with avalanche, same finish month",
-    "example": true
    }
   ],
-  "alt": "A table comparing snowball and avalanche on three debts: first debt cleared, debt-free month and interest paid, beside a card showing a $113.94 difference.",
-  "caption": "A worked example of three debts with $200 a month extra. Your numbers will differ."
+  "alt": "A table comparing the snowball and avalanche orders for three example debts: same debt-free month, avalanche paying $113.94 less interest.",
+  "caption": "Example: the two orders finish together, $113.94 apart."
  },
  {
   "slug": "monthly-bills-list",
@@ -775,273 +783,194 @@
  {
   "slug": "bank-statement-csv-to-budget",
   "area": "money",
-  "line1": "A CSV shows the past,",
-  "line2": "not what is coming",
+  "line1": "Check the file",
+  "line2": "before you import it",
   "pieces": [
    {
-    "type": "timeline",
-    "eyebrow": "The process",
-    "steps": [
-     {
-      "when": "Download",
-      "what": "Export the period you want as a CSV"
-     },
-     {
-      "when": "Map",
-      "what": "Say which column is which"
-     },
-     {
-      "when": "Review",
-      "what": "Look for duplicates and odd rows first"
-     },
-     {
-      "when": "Categorize",
-      "what": "Categorize, or skip what does not matter"
-     }
+    "type": "checklist",
+    "eyebrow": "Look at it in a text editor first",
+    "items": [
+     "A header row names each column",
+     "Spending is negative or positive",
+     "One amount column, or two",
+     "Dates run month first or day first",
+     "No repeated rows"
     ]
-   },
-   {
-    "type": "note",
-    "eyebrow": "What a CSV cannot tell you",
-    "text": "It shows what happened, not the bill due Friday or the renewal next week."
    }
   ],
-  "alt": "A four step timeline for turning a bank statement CSV into a budget, beside a note that a transaction list cannot show what is coming.",
-  "caption": "Download, map, review, then categorize, with nothing counted until you have reviewed it."
+  "alt": "A checklist of five things to check in a downloaded bank CSV before importing: header row, sign of spending, amount columns, date order and repeated rows.",
+  "caption": "Five checks to run on any bank CSV before it counts."
  },
  {
   "slug": "financial-binder-what-to-include",
   "area": "money",
-  "line1": "A binder that says",
-  "line2": "how sure you are",
+  "line1": "A financial binder",
+  "line2": "in seven sections",
   "pieces": [
    {
-    "type": "table",
-    "eyebrow": "How confident to be in each entry",
-    "columns": [
-     "Label",
-     "Meaning"
-    ],
+    "type": "page",
+    "eyebrow": "Fill them in this order",
+    "title": "Financial binder",
     "rows": [
-     [
-      "Confirmed",
-      "Checked against a bill"
-     ],
-     [
-      "Estimated",
-      "A reasonable guess"
-     ],
-     [
-      "Unresolved",
-      "Important, not found yet"
-     ],
-     [
-      "Stale",
-      "Not checked recently"
-     ]
+     "01 Accounts",
+     "02 Income",
+     "03 Bills",
+     "04 Subscriptions",
+     "05 Debt",
+     "06 Savings goals"
     ]
-   },
-   {
-    "type": "note",
-    "eyebrow": "Seven sections",
-    "text": "Accounts, income, bills, subscriptions, debt, goals, summary."
    }
   ],
-  "alt": "A table of confidence labels for a financial binder entry: confirmed, estimated, unresolved and stale, beside a note listing the seven sections.",
-  "caption": "Marking how sure you are stops a binder becoming a source of false confidence."
+  "alt": "A binder page listing six of the seven sections to fill in order: accounts, income, bills, subscriptions, debt and savings goals.",
+  "caption": "The sections of a working financial binder, in the order to fill them."
  },
  {
   "slug": "sinking-funds-explained",
   "area": "money",
-  "line1": "A $600 bill in a year",
-  "line2": "is $50 a month now",
+  "line1": "Sinking funds:",
+  "line2": "a year of known costs",
   "pieces": [
    {
-    "type": "table",
-    "eyebrow": "The sinking fund formula",
-    "columns": [
-     "Step",
-     "Example"
-    ],
+    "type": "ledger",
+    "eyebrow": "Cost divided by months covered",
     "rows": [
      [
-      "Still needed",
-      "$600"
+      "Car insurance (six months)",
+      "$90.00"
      ],
      [
-      "Already saved",
-      "$150"
+      "Car registration",
+      "$10.00"
      ],
      [
-      "Whole months left",
-      "4"
+      "Holiday gifts",
+      "$37.50"
      ],
      [
-      "Set aside a month",
-      "$112.50"
+      "Annual subscription",
+      "$8.00"
+     ],
+     [
+      "Dental and vision",
+      "$30.00"
      ]
     ],
-    "example": true
-   },
-   {
-    "type": "checklist",
-    "eyebrow": "Costs worth a sinking fund",
-    "items": [
-     "Car registration",
-     "Insurance, every 3 or 6 months",
-     "Holidays and gifts",
-     "Annual subscriptions",
-     "Medical and dental"
+    "total": [
+     "Set aside each month",
+     "$175.50"
     ],
-    "done": []
+    "example": true
    }
   ],
-  "alt": "A table working out a monthly sinking fund amount of $112.50 from $600 needed, $150 saved and four months left, beside a checklist of costs worth saving for.",
-  "caption": "Example figures: $600 needed by year end, $150 saved, four months left."
+  "alt": "A ledger of five example yearly costs, each divided into a monthly amount, adding up to $175.50 a month to set aside.",
+  "caption": "Example: five known costs turned into one monthly figure."
  },
  {
   "slug": "50-30-20-rule-where-it-breaks",
   "area": "money",
-  "line1": "50/30/20 is a start,",
-  "line2": "not a law",
+  "line1": "The 50/30/20 rule",
+  "line2": "on $3,500 a month",
   "pieces": [
    {
-    "type": "table",
-    "eyebrow": "The rule",
-    "columns": [
-     "Share",
-     "Goes to"
-    ],
+    "type": "ledger",
+    "eyebrow": "Split of after-tax income",
     "rows": [
      [
-      "50% Needs",
-      "Rent, bills, groceries"
+      "Needs (50%)",
+      "$1,750"
      ],
      [
-      "30% Wants",
-      "Eating out, hobbies"
+      "Wants (30%)",
+      "$1,050"
      ],
      [
-      "20% Savings, debt",
-      "Emergency fund, goals"
+      "Savings and extra debt (20%)",
+      "$700"
      ]
-    ]
-   },
-   {
-    "type": "compare",
-    "eyebrow": "Where it breaks",
-    "left": {
-     "label": "Fits when",
-     "items": [
-      "Income is steady",
-      "Housing costs are moderate"
-     ]
-    },
-    "right": {
-     "label": "Breaks when",
-     "items": [
-      "Rent is near half of income",
-      "Pay changes month to month",
-      "Debt minimums are large"
-     ]
-    }
+    ],
+    "total": [
+     "Take-home pay",
+     "$3,500"
+    ],
+    "example": true
    }
   ],
-  "alt": "A table of the 50/30/20 rule splitting after-tax income into needs, wants and savings, beside a comparison of when it fits and when it breaks.",
-  "caption": "The rule as a starting point: test it against your own month."
+  "alt": "A ledger showing $3,500 of after-tax income split into $1,750 for needs, $1,050 for wants and $700 for savings and extra debt payments.",
+  "caption": "Example: the rule applied to $3,500 a month after tax."
  },
  {
   "slug": "budget-for-variable-bills",
   "area": "money",
-  "line1": "A bill that moves",
-  "line2": "is a range, not a number",
+  "line1": "Bills that change?",
+  "line2": "Plan from twelve months",
   "pieces": [
    {
-    "type": "table",
-    "eyebrow": "Plan toward the high",
-    "columns": [
-     "Your bill",
-     "Amount"
-    ],
+    "type": "ledger",
+    "eyebrow": "Example: one electric bill",
     "rows": [
      [
       "Lowest month",
-      "$60"
+      "$60.00"
      ],
      [
       "Highest month",
-      "$122"
+      "$122.00"
      ],
      [
-      "Plan toward",
-      "$122"
+      "Twelve month total",
+      "$1,088.00"
      ],
      [
-      "Set aside, low month",
-      "$62"
+      "Average month",
+      "$90.67"
      ]
     ],
-    "example": true
-   },
-   {
-    "type": "checklist",
-    "eyebrow": "Bills that usually move",
-    "items": [
-     "Electric and gas",
-     "Water",
-     "Phone and internet, if by usage",
-     "Anything billed by consumption"
+    "total": [
+     "Plan toward, no cushion",
+     "$122.00"
     ],
-    "done": []
+    "example": true
    }
   ],
-  "alt": "A table showing a variable bill with a low of $60 and a high of $122, planning toward $122 and setting aside $62 in a low month, beside a checklist of bills that move.",
-  "caption": "An illustration only. Use your own twelve months."
+  "alt": "A ledger of an example electric bill: lowest and highest month, the twelve month total, the average, and the figure to plan toward.",
+  "caption": "Example: twelve bills turned into one planning figure."
  },
  {
   "slug": "credit-card-minimum-payments-how-long",
   "area": "money",
-  "line1": "Paying the minimum",
-  "line2": "is slower than it looks",
+  "line1": "Only the minimum?",
+  "line2": "See what $50 changes",
   "pieces": [
    {
     "type": "table",
-    "eyebrow": "What an extra amount does",
+    "eyebrow": "$3,000 at 24% APR, no new charges",
     "columns": [
-     "Extra each month",
-     "Debt gone",
+     "Payment",
+     "Months",
      "Interest"
     ],
     "rows": [
      [
-      "$0, minimums only",
-      "Mar 2031",
-      "$9,232.57"
+      "$90 (minimum)",
+      "56",
+      "$1,993"
      ],
      [
-      "$50",
-      "Aug 2030",
-      "$7,491.15"
+      "$140 ($50 extra)",
+      "29",
+      "$957"
      ],
      [
-      "$200",
-      "Sept 2029",
-      "$4,995.84"
+      "$290 ($200 extra)",
+      "12",
+      "$395"
      ]
     ],
     "example": true
-   },
-   {
-    "type": "stat",
-    "eyebrow": "One month, $3,000 at 24%",
-    "value": "$30",
-    "caption": "of a $90 minimum reduces the balance",
-    "foot": "The other $60 is interest",
-    "example": true
    }
   ],
-  "alt": "A table comparing three extra payment amounts on the same debts by debt-free date and interest, beside a card showing only $30 of a $90 minimum reduces the balance.",
-  "caption": "Example: three debts starting September 2026, constant rates. A comparison, not a forecast."
+  "alt": "A table of an example $3,000 card at 24 percent showing months to pay off and interest at $90, $140 and $290 a month.",
+  "caption": "Example: the same card paid at three monthly amounts."
  },
  {
   "slug": "life-admin-the-work-nobody-teaches-you",

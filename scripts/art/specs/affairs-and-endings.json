@@ -18,22 +18,22 @@
       "what": "Choose a funeral home"
      },
      {
-      "when": "When you order",
-      "what": "Ask for extra certified certificates"
+      "when": "At the funeral home",
+      "what": "Ask for certified copies"
      },
      {
-      "when": "Within 30 days",
-      "what": "Secure the property: lock, forward mail"
+      "when": "Within days",
+      "what": "Check Social Security was told"
      }
     ]
    },
    {
     "type": "note",
-    "eyebrow": "Before anything else",
-    "text": "Ask if a prepaid funeral plan exists. Many people have one and never mention it."
+    "eyebrow": "Before you arrange anything",
+    "text": "Ask whether a prepaid funeral plan exists. Many people have one and never mention it."
    }
   ],
-  "alt": "A timeline card of the first 48 hours after a parent dies, from getting the death pronounced to securing the property, beside a note about prepaid funeral plans.",
+  "alt": "A timeline card of the first 48 hours after a parent dies, from getting the death pronounced to checking Social Security was told, beside a note about prepaid funeral plans.",
   "caption": "The first 48 hours, in order. The rest of the two weeks follows in the guide."
  },
  {
@@ -277,29 +277,24 @@
  {
   "slug": "what-to-write-down-in-case-something-happens-to-you",
   "area": "affairs-and-endings",
-  "line1": "Someone runs your life",
-  "line2": "from tomorrow morning",
+  "line1": "The one page",
+  "line2": "to write tonight",
   "pieces": [
    {
-    "type": "checklist",
-    "eyebrow": "The two week list",
-    "items": [
-     "Which bank, and what is due out",
-     "Where rent or mortgage is paid",
-     "Whether anyone is expecting you",
-     "Where keys and the alarm code are",
-     "Who could actually help"
-    ],
-    "done": []
-   },
-   {
-    "type": "note",
-    "eyebrow": "Keep it dull",
-    "text": "Locations and references, not logins. Safe to leave in a drawer."
+    "type": "page",
+    "eyebrow": "Places and names only",
+    "title": "If something happens",
+    "rows": [
+     "Who to call first",
+     "Where the will is",
+     "How to get into my phone",
+     "What's due out this week",
+     "Who relies on me"
+    ]
    }
   ],
-  "alt": "A checklist of what someone would need in the first two weeks of running your life, from the bank and rent to keys, alarm code and who to call, with a note.",
-  "caption": "Two weeks, not forever: a list you can write in one sitting."
+  "alt": "A blank lined page titled If something happens, with five prompts: who to call first, where the will is, phone access, what's due this week, who relies on me.",
+  "caption": "Five lines, all places and names. No passwords."
  },
  {
   "slug": "digital-accounts-after-a-death",
@@ -424,80 +419,75 @@
  {
   "slug": "life-admin-binder-what-goes-in-it",
   "area": "affairs-and-endings",
-  "line1": "A hundred blank pages",
-  "line2": "never gets finished",
+  "line1": "What goes in a life",
+  "line2": "admin binder",
   "pieces": [
    {
-    "type": "compare",
-    "eyebrow": "A map, not a vault",
-    "left": {
-     "label": "Write down",
-     "items": [
-      "Where the will is",
-      "Who to call first",
-      "Where recovery info is kept"
-     ]
-    },
-    "right": {
-     "label": "Leave out",
-     "items": [
-      "Passwords",
-      "Full account numbers",
-      "The master password"
-     ]
-    }
+    "type": "checklist",
+    "eyebrow": "Eight tabs",
+    "title": "Where things are, not what",
+    "items": [
+     "Who to call",
+     "Paperwork",
+     "Money",
+     "Home",
+     "People and pets"
+    ]
    },
    {
-    "type": "stat",
-    "eyebrow": "Start small",
-    "value": "3 pages",
-    "caption": "Who to call, the will, the email address. One evening."
+    "type": "note",
+    "eyebrow": "Leave off",
+    "text": "Passwords and account numbers. Write where the recovery kit is instead."
    }
   ],
-  "alt": "A compare card of what to write in a life admin binder and what to leave out, beside a card suggesting three pages as a start.",
-  "caption": "Write where something is, not what it says."
+  "alt": "A checklist of the first five tabs of a life admin binder, with a note that passwords and account numbers stay out and locations go in.",
+  "caption": "Five of the eight tabs. Each page holds locations and names."
  },
  {
   "slug": "hospital-for-two-weeks-what-would-someone-need-to-find",
   "area": "affairs-and-endings",
-  "line1": "If you were in the",
-  "line2": "hospital for two weeks",
+  "line1": "If you were in the hospital",
+  "line2": "what gets paid?",
   "pieces": [
    {
-    "type": "table",
-    "eyebrow": "What would someone need to find?",
-    "columns": [
-     "Question",
-     "Write down"
-    ],
+    "type": "ledger",
+    "eyebrow": "Two weeks of bills (example)",
     "rows": [
      [
-      "Who to call first",
-      "Name and how to reach"
+      "Rent (autopay, the 1st)",
+      "$1,450"
      ],
      [
-      "Important paperwork",
-      "Where, and who knows"
+      "Car payment (autopay)",
+      "$312"
      ],
      [
-      "Accounts and devices",
-      "Where recovery is kept"
+      "Phone (autopay)",
+      "$58"
      ],
      [
-      "Bills due meanwhile",
-      "Which are automatic"
+      "Electric (by hand, 19th)",
+      "$96"
+     ],
+     [
+      "Card minimum (by hand)",
+      "$35"
      ]
-    ]
+    ],
+    "total": [
+     "Due in the window",
+     "$1,951"
+    ],
+    "example": true
    },
    {
-    "type": "stat",
-    "eyebrow": "A good size",
-    "value": "2 weeks",
-    "caption": "Long enough to show the gaps, short enough to write in one go."
+    "type": "note",
+    "eyebrow": "Only two need a person",
+    "text": "$131 is paid by hand. Write down which bills those are and how someone could log in."
    }
   ],
-  "alt": "A table of four questions someone would ask if you were in the hospital for two weeks, with what to write down for each, beside a card on why two weeks is a good size.",
-  "caption": "Answer with where, not what."
+  "alt": "A ledger of five example bills in a two-week hospital stay, three paying automatically and two by hand, totaling $1,951, with a note about the manual ones.",
+  "caption": "An example month. Amounts are invented to show the split."
  },
  {
   "slug": "emergency-contact-and-medical-decision-maker",

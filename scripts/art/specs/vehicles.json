@@ -130,39 +130,48 @@
  {
   "slug": "selling-your-car-with-a-service-history",
   "area": "vehicles",
-  "line1": "Selling your car?",
-  "line2": "Bring the dated record",
+  "line1": "Selling with a",
+  "line2": "service record",
   "pieces": [
    {
-    "type": "page",
-    "eyebrow": "Service record for a buyer",
-    "title": "Oldest entry first",
-    "rows": [
+    "eyebrow": "One page, oldest first",
+    "columns": [
      "Date",
      "Miles",
-     "What was done",
-     "Who did it",
-     "Notes, e.g. one-off repair"
-    ]
-   },
-   {
-    "type": "note",
-    "eyebrow": "Your own record",
-    "text": "Say what you can back up. Leave out what you cannot."
+     "Work done"
+    ],
+    "rows": [
+     [
+      "Mar 3, 2023",
+      "48,100",
+      "Oil and filter"
+     ],
+     [
+      "Nov 12, 2023",
+      "55,600",
+      "Front brake pads"
+     ],
+     [
+      "Jun 21, 2024",
+      "63,900",
+      "Oil, tire rotation"
+     ]
+    ],
+    "example": true,
+    "type": "table"
    }
   ],
-  "alt": "A blank service record page with fields for date, miles, what was done, who did it and notes, beside a note to include only what you can back up.",
-  "caption": "The shape of a record to print for a buyer. Keep receipts separately."
+  "alt": "A sample service record page with three lines, each showing a date, odometer reading and the work done, oldest first.",
+  "caption": "An example page. Date, miles and work done, oldest first."
  },
  {
   "slug": "car-maintenance-by-mileage-start-with-your-manual",
   "area": "vehicles",
-  "line1": "Charts are averages,",
-  "line2": "the manual is the source",
+  "line1": "Maintenance by",
+  "line2": "mileage: your manual",
   "pieces": [
    {
-    "type": "table",
-    "eyebrow": "Write it down once",
+    "eyebrow": "Typical starting points",
     "columns": [
      "Job",
      "Miles",
@@ -170,83 +179,88 @@
     ],
     "rows": [
      [
-      "From your manual",
-      "A number, or blank",
-      "A number, or blank"
+      "Oil and filter",
+      "5,000",
+      "6"
      ],
      [
-      "From your manual",
-      "A number, or blank",
-      "A number, or blank"
+      "Brake fluid",
+      "30,000",
+      "24"
      ],
      [
-      "From your manual",
-      "A number, or blank",
-      "A number, or blank"
+      "Coolant",
+      "60,000",
+      "60"
+     ],
+     [
+      "Timing belt",
+      "90,000",
+      "84"
      ]
-    ]
-   },
-   {
-    "type": "note",
-    "eyebrow": "Harder use",
-    "text": "Towing, short trips, dust, heat or cold: check what the manual says for them."
+    ],
+    "example": true,
+    "type": "table"
    }
   ],
-  "alt": "A blank three-row table with job, miles and months columns to fill in from the owner's manual, and a note about harder driving conditions.",
-  "caption": "A page to copy your manual's intervals onto, once. Leave a column blank if the manual does."
+  "alt": "A table of typical maintenance intervals by miles and months for oil, brake fluid, coolant and a timing belt, to compare with an owner's manual.",
+  "caption": "Typical example intervals. Your manual has the real ones."
  },
  {
   "slug": "winter-car-prep-checklist",
   "area": "vehicles",
-  "line1": "Cold finds weak points,",
-  "line2": "look before the frost",
+  "line1": "Winter car prep:",
+  "line2": "before the frost",
   "pieces": [
    {
-    "type": "checklist",
-    "eyebrow": "Before the first frost",
+    "eyebrow": "Before the first hard frost",
     "items": [
-     "Battery: have it tested",
+     "Battery: get it tested",
      "Tires: tread and pressure",
-     "Wiper blades: clear the glass",
-     "Washer fluid: top it up",
-     "Lights: check they all work"
-    ]
-   },
-   {
-    "type": "note",
-    "eyebrow": "Also",
-    "text": "Check the emergency kit is in the car and complete."
+     "Wipers and washer fluid",
+     "Coolant, lights, defroster",
+     "Kit in the car"
+    ],
+    "done": [
+     0
+    ],
+    "type": "checklist"
    }
   ],
-  "alt": "A winter car checklist covering battery, tires, wiper blades, washer fluid and lights, with a note to check the emergency kit is complete.",
-  "caption": "Five checks plus the emergency kit. Note the date, even if nothing needed doing."
+  "alt": "A five-item checklist for winter car prep covering the battery, tires, wipers, coolant and lights, and the emergency kit.",
+  "caption": "Five checks to finish before the first frost."
  },
  {
   "slug": "two-cars-one-household-maintenance",
   "area": "vehicles",
-  "line1": "Which car needs",
-  "line2": "the oil change?",
+  "line1": "Two cars, one",
+  "line2": "household",
   "pieces": [
    {
-    "type": "page",
-    "eyebrow": "One page per car",
-    "title": "Name or plate at the top",
+    "eyebrow": "Same job, different answers",
+    "columns": [
+     "Car",
+     "Oil last done",
+     "Decides"
+    ],
     "rows": [
-     "Car name or plate",
-     "Job done, and the date",
-     "Miles at the time",
-     "Insurance date",
-     "Registration date"
-    ]
-   },
-   {
-    "type": "note",
-    "eyebrow": "Once a month",
-    "text": "Look at both cars together, so you can see which one needs you."
+     [
+      "Sedan",
+      "Feb 10",
+      "Months: overdue"
+     ],
+     [
+      "Van",
+      "Jun 20",
+      "Miles: 1,200 left"
+     ]
+    ],
+    "example": true,
+    "type": "table"
    }
   ],
-  "alt": "A blank one-page record for a single car with name or plate, job, miles, insurance and registration dates, and a note to review both cars monthly.",
-  "caption": "Keep each car's record on its own page, and check both together."
+  "alt": "A table comparing two cars in one household: the sedan is overdue for oil by months while the van has about 1,200 miles left.",
+  "caption": "An example. The car that drives less can be the late one."
  },
  {
   "slug": "glove-box-checklist-what-to-keep",

@@ -219,61 +219,78 @@
  {
   "slug": "how-to-deal-with-something-you-have-put-off",
   "area": "mind-and-focus",
-  "line1": "It has been months",
-  "line2": "One sentence, no story",
+  "line1": "Months late? Say it",
+  "line2": "in one sentence",
   "pieces": [
    {
     "type": "script",
-    "eyebrow": "What to say about the gap",
+    "eyebrow": "Example: naming the gap",
     "lines": [
      {
-      "label": "Say",
-      "text": "This is later than it should be. What do you need from me."
+      "label": "Say it",
+      "text": "This is later than it should be, and I'd like to sort it out now."
      },
      {
       "label": "Ask",
-      "text": "I have not dealt with this until now. Can you tell me where it stands."
+      "text": "Is it still open, and what do you need from me?"
+     },
+     {
+      "label": "Close",
+      "text": "Can I have a reference number and your name?"
      }
-    ]
+    ],
+    "example": true
    },
    {
     "type": "note",
-    "eyebrow": "Do not explain",
-    "text": "Acknowledge the gap and move to the practical question, unless they ask why."
+    "eyebrow": "Before you dial",
+    "text": "Open it first. Read the date and the ask, and decide nothing else."
    }
   ],
-  "alt": "Two short lines for naming a long delay and asking where things stand, beside a note to skip the explanation unless asked.",
-  "caption": "Two ways to name the gap in one sentence. Pick the one closest to how you feel."
+  "alt": "A three line script for a late call: name the gap, ask the practical question, ask for a reference, beside a note to open the letter first.",
+  "caption": "An example of the order: the gap in one sentence, then the question."
  },
  {
   "slug": "life-admin-with-brain-fog",
   "area": "mind-and-focus",
-  "line1": "Plan for the bad day",
-  "line2": "not the good one",
+  "line1": "Foggy week?",
+  "line2": "Build for the bad day",
   "pieces": [
    {
-    "type": "checklist",
-    "eyebrow": "What actually helps",
-    "items": [
-     "Write down details you would hold",
-     "Write the next physical action",
-     "Record where you stopped",
-     "Do clear-head tasks on clear days",
-     "Keep notes for repeat questions"
+    "type": "table",
+    "eyebrow": "A note for next time (example)",
+    "columns": [
+     "Question",
+     "The note"
     ],
-    "done": [
-     0,
-     2
-    ]
+    "rows": [
+     [
+      "Where I stopped",
+      "Form to page 2"
+     ],
+     [
+      "Who I spoke to",
+      "Priya, claims desk"
+     ],
+     [
+      "Reference",
+      "Claim ending 4471"
+     ],
+     [
+      "Next action",
+      "Find the policy letter"
+     ]
+    ],
+    "example": true
    },
    {
     "type": "note",
-    "eyebrow": "The test",
-    "text": "What happens after you ignore it for three weeks? A good system is still roughly right."
+    "eyebrow": "On a low day",
+    "text": "Write the next physical action, not the goal."
    }
   ],
-  "alt": "A checklist of five adjustments for low-capacity days, with two ticked, beside a note about how a system should hold up after three weeks of being ignored.",
-  "caption": "Adjustments that do not depend on knowing why, or on trying harder."
+  "alt": "A sample note for next time with four rows: where you stopped, who you spoke to, the reference, and the next action, beside a note to write the next physical action.",
+  "caption": "An example note that saves you rebuilding where you were."
  },
  {
   "slug": "executive-dysfunction-is-not-procrastination",
@@ -311,90 +328,92 @@
  {
   "slug": "diagnosed-with-adhd-as-an-adult",
   "area": "mind-and-focus",
-  "line1": "The diagnosis came",
-  "line2": "with a pile of admin",
+  "line1": "Just diagnosed?",
+  "line2": "One page for the admin",
   "pieces": [
    {
     "type": "page",
-    "eyebrow": "Reference numbers, in one place",
+    "eyebrow": "One page, after the visit",
+    "title": "Example page",
     "rows": [
-     "Clinic",
-     "Prescription",
-     "Pharmacy",
-     "My history, written once"
+     "Next visit: date and time",
+     "Pharmacy name and phone",
+     "How refills work (asked)",
+     "Reference numbers",
+     "Who I've told, so far"
     ]
    },
    {
     "type": "note",
-    "eyebrow": "One way to hold it",
-    "text": "Treat the repeat prescription cycle as a recurring appointment, not a task."
+    "eyebrow": "Admin only",
+    "text": "Your prescriber decides treatment. This page holds the follow-through."
    }
   ],
-  "alt": "A blank page for keeping clinic, prescription and pharmacy references and a written history together, beside a note about repeat prescriptions.",
-  "caption": "A page to keep the references together. Your prescriber sets the schedule."
+  "alt": "A sample one page admin sheet with rows for the next visit, pharmacy, refills, reference numbers and who you have told, beside a note that your prescriber decides treatment.",
+  "caption": "An example page: the follow-through, with treatment left to your prescriber."
  },
  {
   "slug": "how-to-start-when-everything-is-overdue",
   "area": "mind-and-focus",
-  "line1": "Everything is late",
-  "line2": "Sort by who is waiting",
+  "line1": "Everything is late.",
+  "line2": "Start with one.",
   "pieces": [
    {
-    "type": "choice",
-    "eyebrow": "Three piles, not a ranking",
-    "question": "Who is waiting on this?",
-    "options": [
-     "A person is waiting on you",
-     "A date is attached",
-     "No one is waiting"
-    ]
+    "type": "table",
+    "eyebrow": "Sorted in two minutes (example)",
+    "columns": [
+     "The thing",
+     "Pile"
+    ],
+    "rows": [
+     [
+      "Reply to the landlord",
+      "A person"
+     ],
+     [
+      "Renew car registration",
+      "A date"
+     ],
+     [
+      "Book the dentist",
+      "No one waiting"
+     ]
+    ],
+    "example": true
    },
    {
     "type": "note",
-    "eyebrow": "For the rest",
-    "text": "Out of sight is not lost. Write them down and stop looking tonight."
+    "eyebrow": "Then stop for tonight",
+    "text": "Pick one. Name its first step. Put the rest in one place."
    }
   ],
-  "alt": "A card sorting late tasks into three piles: a person waiting, a date attached, or no one waiting, beside a note that the rest can be put away tonight.",
-  "caption": "Put each thing in one pile instead of ranking the lot."
+  "alt": "A small table sorting three late tasks into a person, a date, or no one waiting, beside a note to pick one, name its first step and stop for tonight.",
+  "caption": "Example only. Write your own list, sort it by who is waiting."
  },
  {
   "slug": "paperwork-pile-where-to-start",
   "area": "mind-and-focus",
-  "line1": "Open it before",
-  "line2": "you decide it is bad",
+  "line1": "A pile of mail.",
+  "line2": "Four stacks, ten minutes",
   "pieces": [
    {
-    "type": "timeline",
-    "eyebrow": "A ten minute version",
-    "steps": [
-     {
-      "when": "Set a limit",
-      "what": "One box or one shelf, then stop"
-     },
-     {
-      "when": "Just open",
-      "what": "Open each item. Do not act yet."
-     },
-     {
-      "when": "Who is waiting",
-      "what": "A person, a date, or no one"
-     },
-     {
-      "when": "Smallest piece",
-      "what": "Write its first physical step"
-     }
+    "type": "checklist",
+    "eyebrow": "Four stacks (open, do not decide)",
+    "items": [
+     "Act: a person or date is on it",
+     "Keep: a reference or record",
+     "Ask someone: you can't tell",
+     "Bin or shred: nothing to do"
     ]
    },
    {
-    "type": "stat",
-    "eyebrow": "If ten minutes is too much",
-    "value": "1",
-    "caption": "Open one envelope. That is a real start."
+    "type": "note",
+    "eyebrow": "Then stop",
+    "text": "Ten minutes is a limit, not a quota. Copy the reference numbers to one page."
    }
   ],
-  "alt": "A four-step timeline for a ten minute pass through a paperwork pile, beside a card saying one envelope is a real start.",
-  "caption": "Open, sort, then choose one small piece."
+  "alt": "A checklist of four stacks for sorting a mail pile, act, keep, ask someone, bin or shred, beside a note that ten minutes is a limit and not a quota.",
+  "caption": "Open, stack, stop when the timer ends."
  },
  {
   "slug": "how-to-say-no-or-give-bad-news-on-the-phone",
@@ -507,121 +526,124 @@
  {
   "slug": "a-weekly-reset-that-survives-a-bad-week",
   "area": "mind-and-focus",
-  "line1": "The reset that",
-  "line2": "survives a bad week",
-  "pieces": [
-   {
-    "type": "compare",
-    "eyebrow": "Two kinds of reset",
-    "left": {
-     "label": "Good-week reset",
-     "items": [
-      "Reviews everything",
-      "Plans the whole week",
-      "Adds a catch-up task"
-     ]
-    },
-    "right": {
-     "label": "Bad-week reset",
-     "items": [
-      "Looks at what is there",
-      "Picks one thing",
-      "Adds nothing to catch up"
-     ]
-    }
-   },
-   {
-    "type": "note",
-    "eyebrow": "The floor",
-    "text": "On a bad week, open the pile and pick one thing. That counts as a reset."
-   }
-  ],
-  "alt": "A comparison of a reset that needs a good week and one that survives a bad week, beside a note that opening the pile and picking one thing counts.",
-  "caption": "The ten minute reset works the same after a missed week."
- },
- {
-  "slug": "why-you-abandon-planners-and-how-to-come-back",
-  "area": "mind-and-focus",
-  "line1": "Your planner was",
-  "line2": "built for a good week",
-  "pieces": [
-   {
-    "type": "table",
-    "eyebrow": "Where systems break",
-    "columns": [
-     "System needs",
-     "Hard week"
-    ],
-    "rows": [
-     [
-      "Daily upkeep",
-      "Gap is hard to face"
-     ],
-     [
-      "Catching up",
-      "Backlog grows"
-     ],
-     [
-      "A perfect record",
-      "Gap reads as failure"
-     ],
-     [
-      "Lots of setup",
-      "No energy left"
-     ]
-    ]
-   },
-   {
-    "type": "note",
-    "eyebrow": "Coming back",
-    "text": "Do not reset it. Find the one page that still counts and keep only that."
-   }
-  ],
-  "alt": "A table of four things a planner needs and what happens in a hard week, beside a note to keep one page instead of starting over.",
-  "caption": "What usually breaks, in a hard week."
- },
- {
-  "slug": "why-you-keep-missing-bill-due-dates",
-  "area": "mind-and-focus",
-  "line1": "Not forgotten, just",
-  "line2": "never in front of you",
+  "line1": "Ten minutes, one thing",
+  "line2": "no catching up",
   "pieces": [
    {
     "type": "timeline",
-    "eyebrow": "A system without remembering",
+    "eyebrow": "The floor version (example)",
     "steps": [
      {
-      "when": "Date on the item",
-      "what": "Write the bill with its date attached"
+      "when": "Minutes 0 to 3",
+      "what": "Open the pile. Decide nothing yet."
      },
      {
-      "when": "Your reminder",
-      "what": "Pick whether you want one, and which dates"
+      "when": "Minutes 3 to 5",
+      "what": "Pick one thing, not the list"
      },
      {
-      "when": "Quiet hours",
-      "what": "So it does not land at a bad time"
+      "when": "Minutes 5 to 8",
+      "what": "Put a day and a first step on it"
      },
      {
-      "when": "Weekly look",
-      "what": "A short look at the next few days"
+      "when": "Minutes 8 to 10",
+      "what": "Put the rest away. You're done"
      }
     ]
    },
    {
     "type": "note",
-    "eyebrow": "Lock screen",
-    "text": "A reminder that says what it is about can be read by anyone nearby."
+    "eyebrow": "If you skipped a week",
+    "text": "Do this week's ten minutes. There is nothing to catch up on."
    }
   ],
-  "alt": "A four-step timeline for keeping bill due dates in front of you without remembering, beside a note about keeping reminders private.",
-  "caption": "Four of the five steps in the guide."
+  "alt": "A four step ten minute weekly reset: open the pile, pick one thing, add a day and step, put the rest away, beside a note that a skipped week needs no catching up.",
+  "caption": "The floor version of a weekly reset: ten minutes, one thing."
+ },
+ {
+  "slug": "why-you-abandon-planners-and-how-to-come-back",
+  "area": "mind-and-focus",
+  "line1": "You didn't fail",
+  "line2": "the planner",
+  "pieces": [
+   {
+    "type": "timeline",
+    "eyebrow": "Coming back, in fifteen minutes",
+    "steps": [
+     {
+      "when": "Keep one page",
+      "what": "Don't clear the book"
+     },
+     {
+      "when": "Write where you got to",
+      "what": "One sentence at the top"
+     },
+     {
+      "when": "Pick one item",
+      "what": "Add its first physical step"
+     },
+     {
+      "when": "Stop",
+      "what": "No catching up on the gap"
+     }
+    ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "Put it where you pass it",
+    "text": "On the keys or the kettle. A page you can't see isn't a system."
+   }
+  ],
+  "alt": "A four-step timeline for coming back to a planner: keep one page, write where you got to, pick one item, stop, beside a note to put the page where you pass it.",
+  "caption": "The gap stays a gap. One page and one item is the comeback."
+ },
+ {
+  "slug": "why-you-keep-missing-bill-due-dates",
+  "area": "mind-and-focus",
+  "line1": "The date never",
+  "line2": "reached you",
+  "pieces": [
+   {
+    "type": "table",
+    "eyebrow": "Line up with payday (example)",
+    "columns": [
+     "Bill",
+     "Due",
+     "Move to"
+    ],
+    "rows": [
+     [
+      "Phone",
+      "12th",
+      "21st"
+     ],
+     [
+      "Electric",
+      "18th",
+      "21st"
+     ],
+     [
+      "Card",
+      "25th",
+      "6th"
+     ]
+    ],
+    "example": true
+   },
+   {
+    "type": "note",
+    "eyebrow": "Put the date on the item",
+    "text": "Choose the reminder yourself. Look at the next few days once a week."
+   }
+  ],
+  "alt": "A small table showing three example bills with due dates moved to land after payday, beside a note to put the date on the item and choose your own reminder.",
+  "caption": "Example dates. Ask each company whether it can move yours."
  },
  {
   "slug": "time-blindness-planning",
   "area": "mind-and-focus",
-  "line1": "Later never arrives",
-  "line2": "Name one exact time",
+  "line1": "Later isn't a time.",
+  "line2": "Name one.",
   "pieces": [
    {
     "type": "table",
@@ -632,31 +654,26 @@
     ],
     "rows": [
      [
-      "I will call later",
-      "I will call at 3:30"
+      "I'll call later",
+      "I'll call at 3:30"
      ],
      [
       "This afternoon",
-      "After lunch, at 2:00"
+      "After lunch, 2:00"
      ],
      [
       "Sometime this week",
       "Thursday at 10:00"
-     ],
-     [
-      "When I have a minute",
-      "After this meeting"
      ]
-    ],
-    "example": true
+    ]
    },
    {
     "type": "note",
-    "eyebrow": "One time",
-    "text": "Name one exact time, not a window, and put it where you will see it."
+    "eyebrow": "Put it in the alarm label",
+    "text": "Write the first physical step, not just Call. Add a buffer before a call."
    }
   ],
-  "alt": "A table turning four vague plans into exact times, beside a note to name one time and keep it visible.",
-  "caption": "Example: vague plans and their exact versions."
+  "alt": "A table of vague plans beside exact ones, such as I'll call later and I'll call at 3:30, with a note to put the first physical step in the alarm label.",
+  "caption": "Exact times you can copy. Work back from a fixed time for a leave time."
  }
 ]

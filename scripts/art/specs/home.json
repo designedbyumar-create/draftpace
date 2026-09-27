@@ -126,34 +126,43 @@
  {
   "slug": "home-maintenance-checklist-by-month",
   "area": "home",
-  "line1": "Not every job is",
-  "line2": "a seasonal job",
+  "line1": "Home maintenance,",
+  "line2": "month by month",
   "pieces": [
    {
-    "type": "timeline",
-    "eyebrow": "Jobs that belong to a season",
-    "steps": [
-     {
-      "when": "Pre-freeze",
-      "what": "Drain outdoor taps and irrigation lines"
-     },
-     {
-      "when": "Autumn",
-      "what": "Gutters after leaves, service heating"
-     },
-     {
-      "when": "Spring",
-      "what": "Service cooling, inspect roof, clear gutters"
-     },
-     {
-      "when": "Summer",
-      "what": "Exterior timber, paint and fencing"
-     }
+    "type": "table",
+    "eyebrow": "Jobs that have a month",
+    "columns": [
+     "Month",
+     "Job"
+    ],
+    "rows": [
+     [
+      "April",
+      "Roof look, gutters"
+     ],
+     [
+      "September",
+      "Book furnace tune-up"
+     ],
+     [
+      "October",
+      "Drain faucets, hoses"
+     ],
+     [
+      "July, August",
+      "Nothing seasonal"
+     ]
     ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "Some months are empty",
+    "text": "Nothing seasonal. A good month."
    }
   ],
-  "alt": "A four-step seasonal timeline: drain taps before the freeze, gutters and heating in autumn, cooling and roof in spring, exterior work in summer.",
-  "caption": "The jobs that really belong to a season. Everything else runs on an interval."
+  "alt": "A table of four months with the home job that belongs to each, including July and August marked as having nothing seasonal, beside a short note.",
+  "caption": "Four months from the guide's year, including two with nothing to do."
  },
  {
   "slug": "what-to-keep-after-a-home-repair",
@@ -247,71 +256,76 @@
  {
   "slug": "how-to-find-the-model-number-on-any-appliance",
   "area": "home",
-  "line1": "The model number is",
-  "line2": "not on the front",
+  "line1": "Find the model number",
+  "line2": "before you need it",
   "pieces": [
    {
     "type": "table",
-    "eyebrow": "Where the data plate hides",
+    "eyebrow": "Where the plate usually is",
     "columns": [
      "Appliance",
-     "Where the plate is"
+     "Look here"
     ],
     "rows": [
      [
-      "Fridge or freezer",
+      "Front-load washer",
+      "Door rim"
+     ],
+     [
+      "Top-load washer",
+      "Under the lid"
+     ],
+     [
+      "Refrigerator",
       "Inside side wall"
      ],
      [
-      "Washing machine",
-      "Door opening rim"
-     ],
-     [
       "Dishwasher",
-      "Door edge, door open"
-     ],
-     [
-      "Water heater",
-      "Label near the top"
+      "Tub edge, door open"
      ]
     ]
    },
    {
     "type": "note",
-    "eyebrow": "Photograph it whole",
-    "text": "Photograph the whole plate rather than choosing which code to copy."
+    "eyebrow": "Before you close the door",
+    "text": "Photograph the whole plate. Model, serial and any other code, all in one shot."
    }
   ],
-  "alt": "A table of where the data plate sits on a fridge, washing machine, dishwasher and water heater, beside a note to photograph the whole plate.",
-  "caption": "Four of the ten appliances covered in the guide, and where each keeps its plate."
+  "alt": "A short table of where the model number plate sits on a washer, refrigerator and dishwasher, with a note to photograph the whole plate.",
+  "caption": "Common plate spots. Brands differ, so check the manual."
  },
  {
   "slug": "fall-home-maintenance-checklist",
   "area": "home",
-  "line1": "Fall stays short",
-  "line2": "when you keep it short",
+  "line1": "Fall home maintenance",
+  "line2": "in the right order",
   "pieces": [
    {
     "type": "timeline",
-    "eyebrow": "The fall list, month by month",
+    "eyebrow": "September to November",
     "steps": [
      {
       "when": "September",
-      "what": "Book the heating tune-up, seal entry gaps"
+      "what": "Book the tune-up, seal gaps, new filter"
      },
      {
       "when": "October",
-      "what": "Drain outdoor faucet, blow out irrigation"
+      "what": "Drain outdoor water, service equipment"
      },
      {
       "when": "November",
-      "what": "Clear gutters once the leaves are down"
+      "what": "Clear gutters after the leaves drop"
      }
     ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "The split",
+    "text": "Freeze jobs run on the weather. The rest of the season runs on the month."
    }
   ],
-  "alt": "A three-step fall timeline: book the heating tune-up and seal gaps in September, drain the faucet in October, clear gutters in November.",
-  "caption": "Fall in three months, using the jobs from the guide."
+  "alt": "A three-step timeline of fall home maintenance: September heating and gaps, October outdoor water and equipment, November gutters.",
+  "caption": "The fall order. Shift it later in the south."
  },
  {
   "slug": "winterize-your-house-checklist",
