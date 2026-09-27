@@ -1,0 +1,498 @@
+[
+ {
+  "slug": "home-maintenance-you-skip-that-costs-the-most",
+  "area": "home",
+  "line1": "The jobs you skip",
+  "line2": "cost the most later",
+  "pieces": [
+   {
+    "type": "table",
+    "eyebrow": "Jobs where delay costs",
+    "columns": [
+     "Job",
+     "How often",
+     "If skipped"
+    ],
+    "rows": [
+     [
+      "Clear gutters",
+      "Twice a year",
+      "Damp, then fascia"
+     ],
+     [
+      "Service the furnace",
+      "Annually",
+      "Cold-week failure"
+     ],
+     [
+      "Flush water heater",
+      "Annually",
+      "Tank fails early"
+     ],
+     [
+      "Test smoke, CO alarms",
+      "Monthly",
+      "Cost is not money"
+     ]
+    ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "The real fix",
+    "text": "The fix is not discipline. Write down when it was last done."
+   }
+  ],
+  "alt": "A table of four maintenance jobs with how often each is due and what a skipped one turns into, beside a note about writing down the last done date.",
+  "caption": "Four of the eight jobs from the guide, with how often each is due and what skipping it leads to."
+ },
+ {
+  "slug": "how-often-home-systems-need-servicing",
+  "area": "home",
+  "line1": "How often does it",
+  "line2": "really need service",
+  "pieces": [
+   {
+    "type": "compare",
+    "eyebrow": "Typical service intervals",
+    "left": {
+     "label": "Heat and water",
+     "items": [
+      "Boiler service, annually",
+      "Filter, 1 to 3 months",
+      "Flush heater, annually"
+     ]
+    },
+    "right": {
+     "label": "Safety and roof",
+     "items": [
+      "Alarms, monthly",
+      "Gutters, twice a year",
+      "Smoke units, every 10 years"
+     ]
+    }
+   }
+  ],
+  "alt": "Two cards comparing service intervals: heating and water jobs on one side, safety and roof jobs on the other, each with how often it is due.",
+  "caption": "Typical intervals from the guide. Your own manual wins over any table."
+ },
+ {
+  "slug": "what-to-record-when-you-buy-an-appliance",
+  "area": "home",
+  "line1": "Before the first repair",
+  "line2": "write down five things",
+  "pieces": [
+   {
+    "type": "page",
+    "eyebrow": "Appliance record",
+    "rows": [
+     "Make and model",
+     "Serial number",
+     "Installed or bought",
+     "Warranty ends",
+     "Last serviced, and by whom"
+    ],
+    "title": "Five fields, written once"
+   }
+  ],
+  "alt": "A blank one-page appliance record with five fields: make and model, serial number, install date, warranty end and last service.",
+  "caption": "The five fields to write while the appliance is in front of you."
+ },
+ {
+  "slug": "first-week-after-buying-a-house",
+  "area": "home",
+  "line1": "New keys, new house",
+  "line2": "the first week list",
+  "pieces": [
+   {
+    "type": "checklist",
+    "eyebrow": "Day one, before anything else",
+    "items": [
+     "Photograph meters, dated",
+     "Find stopcock and fuse box",
+     "Note supplier for each service",
+     "Ask who holds the alarm code",
+     "Test smoke and CO alarms"
+    ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "Then, in week one",
+    "text": "Read the survey again as a to-do list, and give every timescale a date."
+   }
+  ],
+  "alt": "A day-one checklist for a new house covering meter photos, shutoffs, suppliers, alarm code and alarm tests, with a note about rereading the survey.",
+  "caption": "The day-one list from the guide, to do while the previous owner is still reachable."
+ },
+ {
+  "slug": "home-maintenance-checklist-by-month",
+  "area": "home",
+  "line1": "Not every job is",
+  "line2": "a seasonal job",
+  "pieces": [
+   {
+    "type": "timeline",
+    "eyebrow": "Jobs that belong to a season",
+    "steps": [
+     {
+      "when": "Pre-freeze",
+      "what": "Drain outdoor taps and irrigation lines"
+     },
+     {
+      "when": "Autumn",
+      "what": "Gutters after leaves, service heating"
+     },
+     {
+      "when": "Spring",
+      "what": "Service cooling, inspect roof, clear gutters"
+     },
+     {
+      "when": "Summer",
+      "what": "Exterior timber, paint and fencing"
+     }
+    ]
+   }
+  ],
+  "alt": "A four-step seasonal timeline: drain taps before the freeze, gutters and heating in autumn, cooling and roof in spring, exterior work in summer.",
+  "caption": "The jobs that really belong to a season. Everything else runs on an interval."
+ },
+ {
+  "slug": "what-to-keep-after-a-home-repair",
+  "area": "home",
+  "line1": "Keep more than",
+  "line2": "the invoice",
+  "pieces": [
+   {
+    "type": "checklist",
+    "eyebrow": "Write these down the same day",
+    "items": [
+     "The symptom, in your words",
+     "What they said was wrong",
+     "What was replaced, part number",
+     "What to watch for next",
+     "Who came and what it cost"
+    ]
+   }
+  ],
+  "alt": "A checklist of what to write after a home repair: the symptom, the diagnosis, the part replaced, what to watch for next, and who came.",
+  "caption": "What to record before the technician drives away, besides the invoice."
+ },
+ {
+  "slug": "appliance-warranties-what-to-track",
+  "area": "home",
+  "line1": "Warranty claims fail",
+  "line2": "on paperwork",
+  "pieces": [
+   {
+    "type": "choice",
+    "eyebrow": "Before you pay for a repair",
+    "question": "Before you pay for a repair, check:",
+    "options": [
+     "Is the warranty still running?",
+     "Was the annual service recorded?",
+     "Do you have proof of purchase?",
+     "Do you have the serial number?"
+    ],
+    "picked": 0
+   },
+   {
+    "type": "note",
+    "eyebrow": "Worth two minutes",
+    "text": "With some brands, registering extends a warranty and brings recall notices."
+   }
+  ],
+  "alt": "A card asking what to check before paying for a repair, listing warranty status, the annual service record, proof of purchase and serial number.",
+  "caption": "The four things that most often sink a warranty claim, per the guide."
+ },
+ {
+  "slug": "inherited-a-house-where-to-start",
+  "area": "home",
+  "line1": "Inherited a house",
+  "line2": "with no records",
+  "pieces": [
+   {
+    "type": "table",
+    "eyebrow": "Typical service lives",
+    "columns": [
+     "Item",
+     "Typical service life"
+    ],
+    "rows": [
+     [
+      "Boiler or furnace",
+      "15 years or more"
+     ],
+     [
+      "Water heater (tank)",
+      "Roughly a decade"
+     ],
+     [
+      "Air conditioning",
+      "A decade or more"
+     ],
+     [
+      "Roof covering",
+      "Two decades or more"
+     ]
+    ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "When you cannot tell",
+    "text": "Where you cannot find out when it was last done, assume it is due."
+   }
+  ],
+  "alt": "A table of typical service lives for boiler, water heater, air conditioning and roof, beside a note to treat unknown service dates as due.",
+  "caption": "Typical service lives from the guide. Your own equipment may differ."
+ },
+ {
+  "slug": "how-to-find-the-model-number-on-any-appliance",
+  "area": "home",
+  "line1": "The model number is",
+  "line2": "not on the front",
+  "pieces": [
+   {
+    "type": "table",
+    "eyebrow": "Where the data plate hides",
+    "columns": [
+     "Appliance",
+     "Where the plate is"
+    ],
+    "rows": [
+     [
+      "Fridge or freezer",
+      "Inside side wall"
+     ],
+     [
+      "Washing machine",
+      "Door opening rim"
+     ],
+     [
+      "Dishwasher",
+      "Door edge, door open"
+     ],
+     [
+      "Water heater",
+      "Label near the top"
+     ]
+    ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "Photograph it whole",
+    "text": "Photograph the whole plate rather than choosing which code to copy."
+   }
+  ],
+  "alt": "A table of where the data plate sits on a fridge, washing machine, dishwasher and water heater, beside a note to photograph the whole plate.",
+  "caption": "Four of the ten appliances covered in the guide, and where each keeps its plate."
+ },
+ {
+  "slug": "fall-home-maintenance-checklist",
+  "area": "home",
+  "line1": "Fall stays short",
+  "line2": "when you keep it short",
+  "pieces": [
+   {
+    "type": "timeline",
+    "eyebrow": "The fall list, month by month",
+    "steps": [
+     {
+      "when": "September",
+      "what": "Book the heating tune-up, seal entry gaps"
+     },
+     {
+      "when": "October",
+      "what": "Drain outdoor faucet, blow out irrigation"
+     },
+     {
+      "when": "November",
+      "what": "Clear gutters once the leaves are down"
+     }
+    ]
+   }
+  ],
+  "alt": "A three-step fall timeline: book the heating tune-up and seal gaps in September, drain the faucet in October, clear gutters in November.",
+  "caption": "Fall in three months, using the jobs from the guide."
+ },
+ {
+  "slug": "winterize-your-house-checklist",
+  "area": "home",
+  "line1": "The weather sets",
+  "line2": "your deadline",
+  "pieces": [
+   {
+    "type": "checklist",
+    "eyebrow": "The winterizing list",
+    "items": [
+     "Drain outdoor faucet, hose off",
+     "Blow out irrigation lines",
+     "Store window air conditioner",
+     "Replace humidifier pad",
+     "Seal entry points"
+    ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "Date jobs",
+    "text": "The first freeze is the deadline, not a date on the calendar."
+   }
+  ],
+  "alt": "A five-item winterizing checklist covering the outdoor faucet, irrigation, window air conditioner, humidifier pad and entry points, with a note on the freeze deadline.",
+  "caption": "The five winterizing jobs from the guide."
+ },
+ {
+  "slug": "home-maintenance-log-template",
+  "area": "home",
+  "line1": "A log you will",
+  "line2": "actually keep",
+  "pieces": [
+   {
+    "type": "page",
+    "eyebrow": "Home maintenance log",
+    "rows": [
+     "Date",
+     "What was done",
+     "Who did it",
+     "What it cost",
+     "One note for next time"
+    ],
+    "title": "One line per job"
+   }
+  ],
+  "alt": "A blank home maintenance log page with fields for the date, what was done, who did it, what it cost and one note for next time.",
+  "caption": "The four fields and one note the guide says a log needs."
+ },
+ {
+  "slug": "how-often-change-furnace-filter",
+  "area": "home",
+  "line1": "Three months, sooner",
+  "line2": "with pets or dust",
+  "pieces": [
+   {
+    "type": "stat",
+    "eyebrow": "Furnace filter default",
+    "value": "3 months",
+    "caption": "Default for a normal one inch filter",
+    "foot": "Sooner with pets, dust or allergies"
+   },
+   {
+    "type": "checklist",
+    "eyebrow": "Write these down once",
+    "items": [
+     "Size on the filter frame",
+     "Thickness",
+     "Where the filter lives",
+     "Date you changed it",
+     "Next date to check"
+    ]
+   }
+  ],
+  "alt": "A card showing three months as the default furnace filter interval, beside a checklist of the size and location facts to write down once.",
+  "caption": "The default interval and the facts to note, from the guide."
+ },
+ {
+  "slug": "where-is-my-water-shutoff",
+  "area": "home",
+  "line1": "Find the shutoff",
+  "line2": "before you need it",
+  "pieces": [
+   {
+    "type": "compare",
+    "eyebrow": "Two kinds of valve",
+    "left": {
+     "label": "Wheel handle",
+     "items": [
+      "Usually a gate valve",
+      "Turns several times",
+      "Often stiff if unused"
+     ]
+    },
+    "right": {
+     "label": "Lever handle",
+     "items": [
+      "Usually a ball valve",
+      "Quarter turn",
+      "Closed when across the pipe"
+     ]
+    }
+   },
+   {
+    "type": "note",
+    "eyebrow": "Write it down",
+    "text": "Note which way it turns and any tool it needs."
+   }
+  ],
+  "alt": "Two cards comparing a wheel handle gate valve with a lever handle ball valve, beside a note to write down which way it turns.",
+  "caption": "How to tell the two common main shutoff valve types apart."
+ },
+ {
+  "slug": "how-to-make-a-home-binder",
+  "area": "home",
+  "line1": "What goes in a binder,",
+  "line2": "and what never does",
+  "pieces": [
+   {
+    "type": "compare",
+    "eyebrow": "The binder rule",
+    "left": {
+     "label": "Goes in",
+     "items": [
+      "Shutoff locations",
+      "Filter and bulb sizes",
+      "Contacts, log, warranties"
+     ]
+    },
+    "right": {
+     "label": "Never goes in",
+     "items": [
+      "Passwords",
+      "Alarm codes",
+      "Garage keypad code"
+     ]
+    }
+   }
+  ],
+  "alt": "Two cards comparing what goes in a home binder, such as shutoff locations and contacts, with what never does, such as passwords and alarm codes.",
+  "caption": "Write where things are and who to call, never the codes themselves."
+ },
+ {
+  "slug": "moving-into-a-rental-what-to-document",
+  "area": "home",
+  "line1": "Day one in a rental",
+  "line2": "protects your deposit",
+  "pieces": [
+   {
+    "type": "table",
+    "eyebrow": "The four records",
+    "columns": [
+     "Record",
+     "Write down"
+    ],
+    "rows": [
+     [
+      "Photos",
+      "Room, date, problem"
+     ],
+     [
+      "Lease dates",
+      "Start, renewal, notice"
+     ],
+     [
+      "Deposit",
+      "Amount, held by, when"
+     ],
+     [
+      "What you reported",
+      "Date, what, the answer"
+     ]
+    ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "Report in writing",
+    "text": "Report in writing and keep a copy, so the message carries a date."
+   }
+  ],
+  "alt": "A table of four day-one rental records: photos, lease dates, deposit and what you reported, beside a note to report in writing.",
+  "caption": "The four records from the guide. Not legal advice; rules vary by place."
+ }
+]

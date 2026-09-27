@@ -1,8 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "@/design-system/Icon";
 import type { Guide } from "@/content/guides";
 
-type Pick = { guide: Guide; reason: string };
+type Pick = { guide: Guide; reason: string; thumb?: string };
 
 /**
  * Where a reader goes when the guide has done its job.
@@ -32,14 +33,19 @@ export default function NextSteps({
       {next && (
         <Link
           href={`/guides/${next.guide.slug}`}
-          className="group mt-4 block rounded-[var(--radius-lg)] border border-[var(--area)] bg-[var(--area-soft)] p-5 transition-opacity hover:opacity-90"
+          className="group mt-4 flex gap-4 rounded-[var(--radius-lg)] border border-[var(--area)] bg-[var(--area-soft)] p-5 transition-opacity hover:opacity-90"
         >
+          {next.thumb && (
+            <Image src={next.thumb} alt="" width={800} height={600} sizes="150px" className="hidden h-[112px] w-[150px] shrink-0 rounded-lg sm:block" />
+          )}
+          <span className="min-w-0">
           <span className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--area)]">If this is where you are</span>
           <span className="mt-1.5 flex items-center gap-2 text-[17px] font-semibold leading-snug text-[var(--text)]">
             {next.guide.title}
             <ArrowRight size={15} aria-hidden className="shrink-0 text-[var(--area)]" />
           </span>
           <span className="mt-1.5 block text-[14.5px] leading-relaxed text-[var(--muted)]">{next.reason}</span>
+          </span>
         </Link>
       )}
 

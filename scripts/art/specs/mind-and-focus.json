@@ -1,0 +1,638 @@
+[
+ {
+  "slug": "how-to-make-a-phone-call-you-have-been-avoiding",
+  "area": "mind-and-focus",
+  "line1": "Five lines on paper",
+  "line2": "before you dial",
+  "pieces": [
+   {
+    "type": "page",
+    "eyebrow": "The five things, before the call",
+    "title": "Write them, then dial",
+    "rows": [
+     "What the call is about",
+     "The result I want",
+     "Reference number",
+     "Two facts",
+     "First sentence, written out"
+    ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "Before you hang up",
+    "text": "Ask for a reference number for this call and the name of the person you spoke to."
+   }
+  ],
+  "alt": "A blank page listing the five things to write before a call (topic, result, reference, two facts, first sentence) beside a note about asking for a reference number.",
+  "caption": "The five things to have on one page before you dial."
+ },
+ {
+  "slug": "how-to-restart-a-project-you-gave-up-on",
+  "area": "mind-and-focus",
+  "line1": "Coming back costs more",
+  "line2": "than starting did",
+  "pieces": [
+   {
+    "type": "checklist",
+    "eyebrow": "Leave behind when you stop",
+    "title": "Three lines",
+    "items": [
+     "Where you got to",
+     "Next physical action, as a verb",
+     "Anything not written anywhere else"
+    ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "When you return",
+    "text": "Go straight to the next action. Do not re-read everything first."
+   }
+  ],
+  "alt": "A checklist of three lines to leave when you put a task down, with a note saying to resume at the next action rather than the beginning.",
+  "caption": "Three lines that turn a twenty minute restart into a two minute one."
+ },
+ {
+  "slug": "why-to-do-lists-make-it-worse",
+  "area": "mind-and-focus",
+  "line1": "Nine rows, no order",
+  "line2": "Pick one first step",
+  "pieces": [
+   {
+    "type": "table",
+    "eyebrow": "Tuesday list, cut down",
+    "columns": [
+     "On the list now",
+     "Where it goes"
+    ],
+    "rows": [
+     [
+      "Airline refund",
+      "Today. The one thing."
+     ],
+     [
+      "Email Priya",
+      "Two minutes, do it now"
+     ],
+     [
+      "Mom's birthday",
+      "Friday, a real date"
+     ],
+     [
+      "Dentist",
+      "Parked, no date"
+     ]
+    ],
+    "example": true
+   },
+   {
+    "type": "stat",
+    "eyebrow": "Tomorrow morning",
+    "value": "2 lines",
+    "caption": "Copy the booking reference. Order the card by Friday.",
+    "example": true
+   }
+  ],
+  "alt": "A table showing four rows from a nine-row to-do list and where each goes, beside a card saying only two lines are left to look at tomorrow morning.",
+  "caption": "Example: part of a nine-row list, sorted into today, now, a real date, and parked."
+ },
+ {
+  "slug": "why-you-keep-thinking-about-a-task-and-not-doing-it",
+  "area": "mind-and-focus",
+  "line1": "You did not forget it",
+  "line2": "You have not started",
+  "pieces": [
+   {
+    "type": "choice",
+    "eyebrow": "Question one",
+    "question": "What is the next physical action?",
+    "options": [
+     "Call the number on the letter",
+     "Find the reference in the email",
+     "Open the form"
+    ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "Question two",
+    "text": "What would have to be in front of me to do that?"
+   }
+  ],
+  "alt": "A card asking what the next physical action is, with three examples, beside a second question about what needs to be in front of you.",
+  "caption": "The two questions that unstick most things. The options are examples."
+ },
+ {
+  "slug": "task-paralysis-what-to-do-in-the-next-ten-minutes",
+  "area": "mind-and-focus",
+  "line1": "Frozen at the start",
+  "line2": "Ten minutes, one step",
+  "pieces": [
+   {
+    "type": "timeline",
+    "eyebrow": "The next ten minutes",
+    "steps": [
+     {
+      "when": "Minute 0 to 1",
+      "what": "Pick the task you keep looking at"
+     },
+     {
+      "when": "Minute 2 to 4",
+      "what": "Write the first physical step"
+     },
+     {
+      "when": "Minute 5 to 9",
+      "what": "Do the step and nothing past it"
+     },
+     {
+      "when": "Minute 9 to 10",
+      "what": "Leave a one-line note, then stop"
+     }
+    ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "Shrunk three times",
+    "text": "Find the letter with the claim number on it and put it next to the phone."
+   }
+  ],
+  "alt": "A timeline of ten minutes from picking a task to leaving a note, beside a note showing the insurance claim shrunk to one visible first step.",
+  "caption": "The ten minutes, minute by minute. The claim example is an illustration."
+ },
+ {
+  "slug": "scripts-for-the-admin-calls-everyone-dreads",
+  "area": "mind-and-focus",
+  "line1": "Fifteen seconds",
+  "line2": "is the hard part",
+  "pieces": [
+   {
+    "type": "script",
+    "eyebrow": "Cancelling, in one opening",
+    "lines": [
+     {
+      "label": "Say",
+      "text": "Hello, I would like to cancel my account."
+     },
+     {
+      "label": "Ask",
+      "text": "Can you tell me what you need from me to do that?"
+     },
+     {
+      "label": "Then",
+      "text": "Get a reference number and a name before you hang up."
+     }
+    ]
+   },
+   {
+    "type": "checklist",
+    "eyebrow": "Four things before you hang up",
+    "items": [
+     "Read back what was agreed",
+     "A reference number for the call",
+     "The name of who you spoke to",
+     "What happens next, and by when"
+    ]
+   }
+  ],
+  "alt": "A three-line script for opening a cancellation call, beside a checklist of four things to get before hanging up.",
+  "caption": "An opening that starts with the problem and ends with a question, plus what to get before you hang up."
+ },
+ {
+  "slug": "how-to-deal-with-something-you-have-put-off",
+  "area": "mind-and-focus",
+  "line1": "It has been months",
+  "line2": "One sentence, no story",
+  "pieces": [
+   {
+    "type": "script",
+    "eyebrow": "What to say about the gap",
+    "lines": [
+     {
+      "label": "Say",
+      "text": "This is later than it should be. What do you need from me."
+     },
+     {
+      "label": "Ask",
+      "text": "I have not dealt with this until now. Can you tell me where it stands."
+     }
+    ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "Do not explain",
+    "text": "Acknowledge the gap and move to the practical question, unless they ask why."
+   }
+  ],
+  "alt": "Two short lines for naming a long delay and asking where things stand, beside a note to skip the explanation unless asked.",
+  "caption": "Two ways to name the gap in one sentence. Pick the one closest to how you feel."
+ },
+ {
+  "slug": "life-admin-with-brain-fog",
+  "area": "mind-and-focus",
+  "line1": "Plan for the bad day",
+  "line2": "not the good one",
+  "pieces": [
+   {
+    "type": "checklist",
+    "eyebrow": "What actually helps",
+    "items": [
+     "Write down details you would hold",
+     "Write the next physical action",
+     "Record where you stopped",
+     "Do clear-head tasks on clear days",
+     "Keep notes for repeat questions"
+    ],
+    "done": [
+     0,
+     2
+    ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "The test",
+    "text": "What happens after you ignore it for three weeks? A good system is still roughly right."
+   }
+  ],
+  "alt": "A checklist of five adjustments for low-capacity days, with two ticked, beside a note about how a system should hold up after three weeks of being ignored.",
+  "caption": "Adjustments that do not depend on knowing why, or on trying harder."
+ },
+ {
+  "slug": "executive-dysfunction-is-not-procrastination",
+  "area": "mind-and-focus",
+  "line1": "Not lazy, not choosing",
+  "line2": "Stuck at the start",
+  "pieces": [
+   {
+    "type": "compare",
+    "eyebrow": "What to try for each",
+    "left": {
+     "label": "Procrastinating",
+     "items": [
+      "Take the nicer option away",
+      "Do only the first field"
+     ]
+    },
+    "right": {
+     "label": "Stuck at start",
+     "items": [
+      "Shrink the first step",
+      "Put what you need in front"
+     ]
+    }
+   },
+   {
+    "type": "note",
+    "eyebrow": "One question to ask",
+    "text": "Is there something you would rather be doing? If not, starting may be the wall."
+   }
+  ],
+  "alt": "Two columns of things to try, one for choosing something nicer and one for being unable to start, beside a note with the question that tells them apart.",
+  "caption": "Tendencies, not a test. Plenty of people land in the middle."
+ },
+ {
+  "slug": "diagnosed-with-adhd-as-an-adult",
+  "area": "mind-and-focus",
+  "line1": "The diagnosis came",
+  "line2": "with a pile of admin",
+  "pieces": [
+   {
+    "type": "page",
+    "eyebrow": "Reference numbers, in one place",
+    "rows": [
+     "Clinic",
+     "Prescription",
+     "Pharmacy",
+     "My history, written once"
+    ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "One way to hold it",
+    "text": "Treat the repeat prescription cycle as a recurring appointment, not a task."
+   }
+  ],
+  "alt": "A blank page for keeping clinic, prescription and pharmacy references and a written history together, beside a note about repeat prescriptions.",
+  "caption": "A page to keep the references together. Your prescriber sets the schedule."
+ },
+ {
+  "slug": "how-to-start-when-everything-is-overdue",
+  "area": "mind-and-focus",
+  "line1": "Everything is late",
+  "line2": "Sort by who is waiting",
+  "pieces": [
+   {
+    "type": "choice",
+    "eyebrow": "Three piles, not a ranking",
+    "question": "Who is waiting on this?",
+    "options": [
+     "A person is waiting on you",
+     "A date is attached",
+     "No one is waiting"
+    ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "For the rest",
+    "text": "Out of sight is not lost. Write them down and stop looking tonight."
+   }
+  ],
+  "alt": "A card sorting late tasks into three piles: a person waiting, a date attached, or no one waiting, beside a note that the rest can be put away tonight.",
+  "caption": "Put each thing in one pile instead of ranking the lot."
+ },
+ {
+  "slug": "paperwork-pile-where-to-start",
+  "area": "mind-and-focus",
+  "line1": "Open it before",
+  "line2": "you decide it is bad",
+  "pieces": [
+   {
+    "type": "timeline",
+    "eyebrow": "A ten minute version",
+    "steps": [
+     {
+      "when": "Set a limit",
+      "what": "One box or one shelf, then stop"
+     },
+     {
+      "when": "Just open",
+      "what": "Open each item. Do not act yet."
+     },
+     {
+      "when": "Who is waiting",
+      "what": "A person, a date, or no one"
+     },
+     {
+      "when": "Smallest piece",
+      "what": "Write its first physical step"
+     }
+    ]
+   },
+   {
+    "type": "stat",
+    "eyebrow": "If ten minutes is too much",
+    "value": "1",
+    "caption": "Open one envelope. That is a real start."
+   }
+  ],
+  "alt": "A four-step timeline for a ten minute pass through a paperwork pile, beside a card saying one envelope is a real start.",
+  "caption": "Open, sort, then choose one small piece."
+ },
+ {
+  "slug": "how-to-say-no-or-give-bad-news-on-the-phone",
+  "area": "mind-and-focus",
+  "line1": "You have to say no",
+  "line2": "Decide before you dial",
+  "pieces": [
+   {
+    "type": "script",
+    "eyebrow": "Saying no, an opening",
+    "lines": [
+     {
+      "label": "Say",
+      "text": "Hi, I have thought about it and I am not going to be able to do it."
+     },
+     {
+      "label": "Then",
+      "text": "I wanted to tell you rather than leave you waiting."
+     }
+    ]
+   },
+   {
+    "type": "checklist",
+    "eyebrow": "Before you dial",
+    "items": [
+     "Say what you want in one line",
+     "Decide what you will not agree to",
+     "Set the room",
+     "Name two call-back times"
+    ]
+   }
+  ],
+  "alt": "A two-line opening script for saying no, beside a checklist of four things to settle before dialing.",
+  "caption": "An opening to start from. Change it to sound like you."
+ },
+ {
+  "slug": "the-email-you-keep-not-sending-and-how-to-chase-a-reply",
+  "area": "mind-and-focus",
+  "line1": "One line starts it",
+  "line2": "The rest comes easier",
+  "pieces": [
+   {
+    "type": "checklist",
+    "eyebrow": "Before you send it",
+    "items": [
+     "Ask is in the first three lines",
+     "The date, if there is one",
+     "Anything you meant to attach",
+     "Short enough to read on a phone"
+    ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "When no one replies",
+    "text": "Try the other route, a call if you emailed, and ask for a date rather than an update."
+   }
+  ],
+  "alt": "A checklist of four checks before sending an email, beside a note about chasing by a different route and asking for a date.",
+  "caption": "Read it once against these, then send it."
+ },
+ {
+  "slug": "first-physical-step-20-examples",
+  "area": "mind-and-focus",
+  "line1": "Too big to start?",
+  "line2": "Do something visible",
+  "pieces": [
+   {
+    "type": "table",
+    "eyebrow": "Task to first physical step",
+    "columns": [
+     "The task",
+     "First physical step"
+    ],
+    "rows": [
+     [
+      "Book the dentist",
+      "Write down the number"
+     ],
+     [
+      "Return a package",
+      "Find the packing slip"
+     ],
+     [
+      "Renew an ID",
+      "Check the expiry date"
+     ],
+     [
+      "Fill in a form",
+      "Type name and date"
+     ]
+    ]
+   },
+   {
+    "type": "checklist",
+    "eyebrow": "Check your own step",
+    "items": [
+     "Could someone see it happen?",
+     "Doable in a few minutes?",
+     "A real action, not planning?",
+     "Starting it is not a decision"
+    ]
+   }
+  ],
+  "alt": "A table pairing four stuck tasks with a first physical step, beside a four-question checklist for testing your own step.",
+  "caption": "Four of the twenty first steps in the guide."
+ },
+ {
+  "slug": "a-weekly-reset-that-survives-a-bad-week",
+  "area": "mind-and-focus",
+  "line1": "The reset that",
+  "line2": "survives a bad week",
+  "pieces": [
+   {
+    "type": "compare",
+    "eyebrow": "Two kinds of reset",
+    "left": {
+     "label": "Good-week reset",
+     "items": [
+      "Reviews everything",
+      "Plans the whole week",
+      "Adds a catch-up task"
+     ]
+    },
+    "right": {
+     "label": "Bad-week reset",
+     "items": [
+      "Looks at what is there",
+      "Picks one thing",
+      "Adds nothing to catch up"
+     ]
+    }
+   },
+   {
+    "type": "note",
+    "eyebrow": "The floor",
+    "text": "On a bad week, open the pile and pick one thing. That counts as a reset."
+   }
+  ],
+  "alt": "A comparison of a reset that needs a good week and one that survives a bad week, beside a note that opening the pile and picking one thing counts.",
+  "caption": "The ten minute reset works the same after a missed week."
+ },
+ {
+  "slug": "why-you-abandon-planners-and-how-to-come-back",
+  "area": "mind-and-focus",
+  "line1": "Your planner was",
+  "line2": "built for a good week",
+  "pieces": [
+   {
+    "type": "table",
+    "eyebrow": "Where systems break",
+    "columns": [
+     "System needs",
+     "Hard week"
+    ],
+    "rows": [
+     [
+      "Daily upkeep",
+      "Gap is hard to face"
+     ],
+     [
+      "Catching up",
+      "Backlog grows"
+     ],
+     [
+      "A perfect record",
+      "Gap reads as failure"
+     ],
+     [
+      "Lots of setup",
+      "No energy left"
+     ]
+    ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "Coming back",
+    "text": "Do not reset it. Find the one page that still counts and keep only that."
+   }
+  ],
+  "alt": "A table of four things a planner needs and what happens in a hard week, beside a note to keep one page instead of starting over.",
+  "caption": "What usually breaks, in a hard week."
+ },
+ {
+  "slug": "why-you-keep-missing-bill-due-dates",
+  "area": "mind-and-focus",
+  "line1": "Not forgotten, just",
+  "line2": "never in front of you",
+  "pieces": [
+   {
+    "type": "timeline",
+    "eyebrow": "A system without remembering",
+    "steps": [
+     {
+      "when": "Date on the item",
+      "what": "Write the bill with its date attached"
+     },
+     {
+      "when": "Your reminder",
+      "what": "Pick whether you want one, and which dates"
+     },
+     {
+      "when": "Quiet hours",
+      "what": "So it does not land at a bad time"
+     },
+     {
+      "when": "Weekly look",
+      "what": "A short look at the next few days"
+     }
+    ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "Lock screen",
+    "text": "A reminder that says what it is about can be read by anyone nearby."
+   }
+  ],
+  "alt": "A four-step timeline for keeping bill due dates in front of you without remembering, beside a note about keeping reminders private.",
+  "caption": "Four of the five steps in the guide."
+ },
+ {
+  "slug": "time-blindness-planning",
+  "area": "mind-and-focus",
+  "line1": "Later never arrives",
+  "line2": "Name one exact time",
+  "pieces": [
+   {
+    "type": "table",
+    "eyebrow": "Vague versus exact",
+    "columns": [
+     "Vague",
+     "Exact"
+    ],
+    "rows": [
+     [
+      "I will call later",
+      "I will call at 3:30"
+     ],
+     [
+      "This afternoon",
+      "After lunch, at 2:00"
+     ],
+     [
+      "Sometime this week",
+      "Thursday at 10:00"
+     ],
+     [
+      "When I have a minute",
+      "After this meeting"
+     ]
+    ],
+    "example": true
+   },
+   {
+    "type": "note",
+    "eyebrow": "One time",
+    "text": "Name one exact time, not a window, and put it where you will see it."
+   }
+  ],
+  "alt": "A table turning four vague plans into exact times, beside a note to name one time and keep it visible.",
+  "caption": "Example: vague plans and their exact versions."
+ }
+]

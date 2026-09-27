@@ -1,0 +1,1235 @@
+{
+ "what-to-do-when-a-parent-dies": {
+  "hero": "/guides/art/what-to-do-when-a-parent-dies-hero.webp",
+  "thumb": "/guides/art/what-to-do-when-a-parent-dies-thumb.webp",
+  "figure": "/guides/art/what-to-do-when-a-parent-dies-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A timeline card of the first 48 hours after a parent dies, from getting the death pronounced to securing the property, beside a note about prepaid funeral plans.",
+  "caption": "The first 48 hours, in order. The rest of the two weeks follows in the guide."
+ },
+ "what-to-do-when-a-parent-dies-uk": {
+  "hero": "/guides/art/what-to-do-when-a-parent-dies-uk-hero.webp",
+  "thumb": "/guides/art/what-to-do-when-a-parent-dies-uk-thumb.webp",
+  "figure": "/guides/art/what-to-do-when-a-parent-dies-uk-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A timeline of the first days after a death in the UK, from the medical certificate to the funeral director, beside a short checklist of who to tell.",
+  "caption": "The registration deadline is five days in England, Wales and Northern Ireland, and eight in Scotland."
+ },
+ "how-to-find-someones-accounts-after-they-die": {
+  "hero": "/guides/art/how-to-find-someones-accounts-after-they-die-hero.webp",
+  "thumb": "/guides/art/how-to-find-someones-accounts-after-they-die-thumb.webp",
+  "figure": "/guides/art/how-to-find-someones-accounts-after-they-die-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A table of what regular outgoings, incomings, annual payments and small recurring amounts in twelve months of bank statements can reveal, with a note to keep the post.",
+  "caption": "Bank statements leave the clearest trail. The guide lists the other places to look."
+ },
+ "where-to-look-for-a-will": {
+  "hero": "/guides/art/where-to-look-for-a-will-hero.webp",
+  "thumb": "/guides/art/where-to-look-for-a-will-thumb.webp",
+  "figure": "/guides/art/where-to-look-for-a-will-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A checklist of places to look for a will, from home to the lawyer, a deposit box, a will register and the executor, beside a note to read the executor clause first.",
+  "caption": "Work down the list rather than across it: each place takes more effort than the one before."
+ },
+ "named-executor-what-you-agreed-to": {
+  "hero": "/guides/art/named-executor-what-you-agreed-to-hero.webp",
+  "thumb": "/guides/art/named-executor-what-you-agreed-to-thumb.webp",
+  "figure": "/guides/art/named-executor-what-you-agreed-to-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A choice card listing the options for someone named executor: serve, bring in a probate attorney, or decline before acting, beside a note about creditor claim periods.",
+  "caption": "You can decline formally, as long as you have not started acting as executor."
+ },
+ "named-executor-what-you-agreed-to-uk": {
+  "hero": "/guides/art/named-executor-what-you-agreed-to-uk-hero.webp",
+  "thumb": "/guides/art/named-executor-what-you-agreed-to-uk-thumb.webp",
+  "figure": "/guides/art/named-executor-what-you-agreed-to-uk-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A checklist of what an executor should ask for immediately, from certified certificates to the original will and bank statements, with a note about creditors.",
+  "caption": "You can decline, as long as you have not already started acting as executor."
+ },
+ "the-if-something-happens-to-me-file": {
+  "hero": "/guides/art/the-if-something-happens-to-me-file-hero.webp",
+  "thumb": "/guides/art/the-if-something-happens-to-me-file-thumb.webp",
+  "figure": "/guides/art/the-if-something-happens-to-me-file-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A blank printable page titled If something happens to me, with lines for the will, banks, pensions, insurance, property and anything that would surprise someone.",
+  "caption": "The lines a file like this holds. Locations and references only, never the credentials."
+ },
+ "beneficiary-forms-override-your-will": {
+  "hero": "/guides/art/beneficiary-forms-override-your-will-hero.webp",
+  "thumb": "/guides/art/beneficiary-forms-override-your-will-thumb.webp",
+  "figure": "/guides/art/beneficiary-forms-override-your-will-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A table showing how a pension, life insurance, a joint bank account and a sole account usually pass on, and whether the will controls each, beside a note.",
+  "caption": "Generalized, and details vary by country and provider. Not legal advice."
+ },
+ "what-to-write-down-in-case-something-happens-to-you": {
+  "hero": "/guides/art/what-to-write-down-in-case-something-happens-to-you-hero.webp",
+  "thumb": "/guides/art/what-to-write-down-in-case-something-happens-to-you-thumb.webp",
+  "figure": "/guides/art/what-to-write-down-in-case-something-happens-to-you-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A checklist of what someone would need in the first two weeks of running your life, from the bank and rent to keys, alarm code and who to call, with a note.",
+  "caption": "Two weeks, not forever: a list you can write in one sitting."
+ },
+ "digital-accounts-after-a-death": {
+  "hero": "/guides/art/digital-accounts-after-a-death-hero.webp",
+  "thumb": "/guides/art/digital-accounts-after-a-death-thumb.webp",
+  "figure": "/guides/art/digital-accounts-after-a-death-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A table of what usually happens to email, photo storage, subscriptions and cryptocurrency after a death, and what helps, beside a note about legacy contacts.",
+  "caption": "Policies change and vary by country, so treat this as a starting point."
+ },
+ "which-documents-to-keep-and-where-to-put-them": {
+  "hero": "/guides/art/which-documents-to-keep-and-where-to-put-them-hero.webp",
+  "thumb": "/guides/art/which-documents-to-keep-and-where-to-put-them-thumb.webp",
+  "figure": "/guides/art/which-documents-to-keep-and-where-to-put-them-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A table of how long to keep certificates, property deeds, tax records and bills, beside a note on sorting into emergency, active and archive.",
+  "caption": "General guidance. Tax retention rules vary by country, so check yours."
+ },
+ "talking-to-your-parents-about-their-affairs": {
+  "hero": "/guides/art/talking-to-your-parents-about-their-affairs-hero.webp",
+  "thumb": "/guides/art/talking-to-your-parents-about-their-affairs-thumb.webp",
+  "figure": "/guides/art/talking-to-your-parents-about-their-affairs-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A script card with three ways to open the conversation with a parent about their affairs, starting with your own paperwork, beside a note to go slowly.",
+  "caption": "Example wording. Ask for locations, not contents."
+ },
+ "life-admin-binder-what-goes-in-it": {
+  "hero": "/guides/art/life-admin-binder-what-goes-in-it-hero.webp",
+  "thumb": "/guides/art/life-admin-binder-what-goes-in-it-thumb.webp",
+  "figure": "/guides/art/life-admin-binder-what-goes-in-it-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A compare card of what to write in a life admin binder and what to leave out, beside a card suggesting three pages as a start.",
+  "caption": "Write where something is, not what it says."
+ },
+ "hospital-for-two-weeks-what-would-someone-need-to-find": {
+  "hero": "/guides/art/hospital-for-two-weeks-what-would-someone-need-to-find-hero.webp",
+  "thumb": "/guides/art/hospital-for-two-weeks-what-would-someone-need-to-find-thumb.webp",
+  "figure": "/guides/art/hospital-for-two-weeks-what-would-someone-need-to-find-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A table of four questions someone would ask if you were in the hospital for two weeks, with what to write down for each, beside a card on why two weeks is a good size.",
+  "caption": "Answer with where, not what."
+ },
+ "emergency-contact-and-medical-decision-maker": {
+  "hero": "/guides/art/emergency-contact-and-medical-decision-maker-hero.webp",
+  "thumb": "/guides/art/emergency-contact-and-medical-decision-maker-thumb.webp",
+  "figure": "/guides/art/emergency-contact-and-medical-decision-maker-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A compare card of an emergency contact and a medical decision maker, two roles that can be one person or two, beside a note to ask first and name a second person.",
+  "caption": "Not legal or medical advice. The formal documents vary by state."
+ },
+ "who-would-raise-your-children-guardian-checklist": {
+  "hero": "/guides/art/who-would-raise-your-children-guardian-checklist-hero.webp",
+  "thumb": "/guides/art/who-would-raise-your-children-guardian-checklist-thumb.webp",
+  "figure": "/guides/art/who-would-raise-your-children-guardian-checklist-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A blank printable page for recording who you would want to raise your children, with a second choice, the details of a normal week and where paperwork is kept.",
+  "caption": "The human side of the choice. Confirm the legal side with an attorney in your state."
+ },
+ "who-to-tell-when-someone-dies": {
+  "hero": "/guides/art/who-to-tell-when-someone-dies-hero.webp",
+  "thumb": "/guides/art/who-to-tell-when-someone-dies-thumb.webp",
+  "figure": "/guides/art/who-to-tell-when-someone-dies-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A timeline of who to tell when someone dies, from close family first to utilities and subscriptions when you have the energy, beside a note to keep a log.",
+  "caption": "Most of the list is not urgent."
+ },
+ "update-your-paperwork-after-a-life-change": {
+  "hero": "/guides/art/update-your-paperwork-after-a-life-change-hero.webp",
+  "thumb": "/guides/art/update-your-paperwork-after-a-life-change-thumb.webp",
+  "figure": "/guides/art/update-your-paperwork-after-a-life-change-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A table matching life events such as a move, a marriage, a new child or a new job to the paperwork worth looking at again, beside a note about names on forms.",
+  "caption": "Where to look, not what to do. Ask the provider or an attorney."
+ },
+ "safe-deposit-box-and-spare-keys-who-can-open-it": {
+  "hero": "/guides/art/safe-deposit-box-and-spare-keys-who-can-open-it-hero.webp",
+  "thumb": "/guides/art/safe-deposit-box-and-spare-keys-who-can-open-it-thumb.webp",
+  "figure": "/guides/art/safe-deposit-box-and-spare-keys-who-can-open-it-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A checklist of three things to write down about a safe or deposit box, what it is, where it is and who can open it, beside a note never to record the combination.",
+  "caption": "Say where, not what."
+ },
+ "what-happens-to-your-pets-if-something-happens-to-you": {
+  "hero": "/guides/art/what-happens-to-your-pets-if-something-happens-to-you-hero.webp",
+  "thumb": "/guides/art/what-happens-to-your-pets-if-something-happens-to-you-thumb.webp",
+  "figure": "/guides/art/what-happens-to-your-pets-if-something-happens-to-you-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A checklist for a pet care note, covering who would take each animal, food and medication, the vet, papers and a backup, beside a note about asking first.",
+  "caption": "A few minutes per animal."
+ },
+ "homeschool-record-keeping-requirements-by-state": {
+  "hero": "/guides/art/homeschool-record-keeping-requirements-by-state-hero.webp",
+  "thumb": "/guides/art/homeschool-record-keeping-requirements-by-state-thumb.webp",
+  "figure": "/guides/art/homeschool-record-keeping-requirements-by-state-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A choice card asking which of four levels a state falls into, None, Low, Moderate or High, beside a card showing nine jurisdictions in the high group.",
+  "caption": "The four levels the state table sorts every state into. Laws change, so confirm yours."
+ },
+ "homeschool-record-keeping-template": {
+  "hero": "/guides/art/homeschool-record-keeping-template-hero.webp",
+  "thumb": "/guides/art/homeschool-record-keeping-template-thumb.webp",
+  "figure": "/guides/art/homeschool-record-keeping-template-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A table of the four record keeping columns, Date, Subject, What part and How it went, with example entries, next to a note on what to leave off.",
+  "caption": "An example entry for each of the four columns. Copy it into whatever you already open every day."
+ },
+ "what-goes-in-a-homeschool-portfolio": {
+  "hero": "/guides/art/what-goes-in-a-homeschool-portfolio-hero.webp",
+  "thumb": "/guides/art/what-goes-in-a-homeschool-portfolio-thumb.webp",
+  "figure": "/guides/art/what-goes-in-a-homeschool-portfolio-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A table of what to keep in a portfolio for math, writing, reading and science, with a note to include October and March samples of the same subject.",
+  "caption": "A rough guide to what to keep per subject. Adjust it to what your state asks for."
+ },
+ "how-to-catch-up-on-homeschool-records": {
+  "hero": "/guides/art/how-to-catch-up-on-homeschool-records-hero.webp",
+  "thumb": "/guides/art/how-to-catch-up-on-homeschool-records-thumb.webp",
+  "figure": "/guides/art/how-to-catch-up-on-homeschool-records-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A checklist of places to rebuild a homeschool year from, such as workbooks, library history and photos, beside a note on approximate dates.",
+  "caption": "Where to look, in order. Mark reconstructed terms as reconstructed."
+ },
+ "how-to-check-if-your-child-learned-something": {
+  "hero": "/guides/art/how-to-check-if-your-child-learned-something-hero.webp",
+  "thumb": "/guides/art/how-to-check-if-your-child-learned-something-thumb.webp",
+  "figure": "/guides/art/how-to-check-if-your-child-learned-something-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A choice card listing the four possible results of a learning check, ending in Not enough to say, beside a note to ask weeks after the lesson.",
+  "caption": "The four possible results of a short check. Not enough to say is a real answer."
+ },
+ "preparing-for-a-homeschool-evaluation": {
+  "hero": "/guides/art/preparing-for-a-homeschool-evaluation-hero.webp",
+  "thumb": "/guides/art/preparing-for-a-homeschool-evaluation-thumb.webp",
+  "figure": "/guides/art/preparing-for-a-homeschool-evaluation-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A printable-style folder list for a homeschool evaluation with six items, from the activity log to a note per subject, and a note about saying it plainly.",
+  "caption": "The six things to bring. Ask your own evaluator or state what it requires."
+ },
+ "homeschool-attendance-what-to-track": {
+  "hero": "/guides/art/homeschool-attendance-what-to-track-hero.webp",
+  "thumb": "/guides/art/homeschool-attendance-what-to-track-thumb.webp",
+  "figure": "/guides/art/homeschool-attendance-what-to-track-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A three-part attendance record checklist of date, tick and a few words, beside a comparison of what counts as a school day and what is pointless to log.",
+  "caption": "The lightest attendance record, and what is not worth writing down."
+ },
+ "simple-homeschool-record-keeping-system": {
+  "hero": "/guides/art/simple-homeschool-record-keeping-system-hero.webp",
+  "thumb": "/guides/art/simple-homeschool-record-keeping-system-thumb.webp",
+  "figure": "/guides/art/simple-homeschool-record-keeping-system-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A daily entry form with four lines, date, subject and part, how it went and an occasional sentence, next to a choice of easy, about right or difficult.",
+  "caption": "The three things to record each time, plus the occasional fourth."
+ },
+ "how-long-to-keep-homeschool-records": {
+  "hero": "/guides/art/how-long-to-keep-homeschool-records-hero.webp",
+  "thumb": "/guides/art/how-long-to-keep-homeschool-records-thumb.webp",
+  "figure": "/guides/art/how-long-to-keep-homeschool-records-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A table sorting homeschool papers into keep, keep permanently, photograph and recycle, with a card noting two states that name a two year portfolio period.",
+  "caption": "Which papers to keep, photograph or recycle. Check your state before discarding anything."
+ },
+ "homeschool-weekly-plan-with-a-spare-day": {
+  "hero": "/guides/art/homeschool-weekly-plan-with-a-spare-day-hero.webp",
+  "thumb": "/guides/art/homeschool-weekly-plan-with-a-spare-day-thumb.webp",
+  "figure": "/guides/art/homeschool-weekly-plan-with-a-spare-day-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A weekly timeline with full plan days and Wednesday left spare on purpose, plus a fill-in note for what a short day always includes.",
+  "caption": "One way to lay out the week. Pick the spare day that suits yours."
+ },
+ "four-day-homeschool-week": {
+  "hero": "/guides/art/four-day-homeschool-week-hero.webp",
+  "thumb": "/guides/art/four-day-homeschool-week-thumb.webp",
+  "figure": "/guides/art/four-day-homeschool-week-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A table showing how many days a week each subject gets in a four-day plan, with a note that planning four and managing four is the same work as five.",
+  "caption": "An example spread of subjects across four days. Change the numbers to fit your child."
+ },
+ "homeschool-notice-of-intent-explained": {
+  "hero": "/guides/art/homeschool-notice-of-intent-explained-hero.webp",
+  "thumb": "/guides/art/homeschool-notice-of-intent-explained-thumb.webp",
+  "figure": "/guides/art/homeschool-notice-of-intent-explained-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A five-step checklist for finding a state's homeschool notice of intent, from the education website to keeping a copy, with a note that the official source counts.",
+  "caption": "Five steps to find what applies to you. Confirm against your state's official source."
+ },
+ "do-you-have-to-count-homeschool-days-or-hours": {
+  "hero": "/guides/art/do-you-have-to-count-homeschool-days-or-hours-hero.webp",
+  "thumb": "/guides/art/do-you-have-to-count-homeschool-days-or-hours-thumb.webp",
+  "figure": "/guides/art/do-you-have-to-count-homeschool-days-or-hours-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A choice card asking whether a state counts days, hours, both or neither, beside a note to mark each day as you go.",
+  "caption": "The one question to answer at the start of the year, from the official source."
+ },
+ "how-to-start-homeschooling-first-month-paperwork": {
+  "hero": "/guides/art/how-to-start-homeschooling-first-month-paperwork-hero.webp",
+  "thumb": "/guides/art/how-to-start-homeschooling-first-month-paperwork-thumb.webp",
+  "figure": "/guides/art/how-to-start-homeschooling-first-month-paperwork-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A four-step timeline for the first month of homeschooling, from finding state rules to starting a record, with a note on what can wait.",
+  "caption": "The first-month order, from the official source to a first dated entry."
+ },
+ "homeschool-record-keeping-for-multiple-children": {
+  "hero": "/guides/art/homeschool-record-keeping-for-multiple-children-hero.webp",
+  "thumb": "/guides/art/homeschool-record-keeping-for-multiple-children-thumb.webp",
+  "figure": "/guides/art/homeschool-record-keeping-for-multiple-children-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A comparison of one shared homeschool file against one record per child, with a note on logging a shared morning once for each child.",
+  "caption": "Why records are filed by child, and how to log a lesson you did together."
+ },
+ "homeschool-reading-log": {
+  "hero": "/guides/art/homeschool-reading-log-hero.webp",
+  "thumb": "/guides/art/homeschool-reading-log-thumb.webp",
+  "figure": "/guides/art/homeschool-reading-log-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A three-column reading log layout for book, started and finished or stopped, with a note that abandoned books belong on the list.",
+  "caption": "The three columns of a reading log. Once they can write, let the child fill it in."
+ },
+ "homeschool-subject-not-working-what-to-change-first": {
+  "hero": "/guides/art/homeschool-subject-not-working-what-to-change-first-hero.webp",
+  "thumb": "/guides/art/homeschool-subject-not-working-what-to-change-first-thumb.webp",
+  "figure": "/guides/art/homeschool-subject-not-working-what-to-change-first-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A four-step timeline for a homeschool subject that is not working, from changing the time to changing the material, with a note to change one thing at a time.",
+  "caption": "The order to try changes in, cheapest first."
+ },
+ "what-goes-in-a-family-health-binder": {
+  "hero": "/guides/art/what-goes-in-a-family-health-binder-hero.webp",
+  "thumb": "/guides/art/what-goes-in-a-family-health-binder-thumb.webp",
+  "figure": "/guides/art/what-goes-in-a-family-health-binder-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A blank health page with fields for name, allergies, medications, conditions, doctors and insurance, beside a note saying one page per person.",
+  "caption": "The fields worth writing down for each person, one page each."
+ },
+ "school-and-camp-health-forms-what-to-have-ready": {
+  "hero": "/guides/art/school-and-camp-health-forms-what-to-have-ready-hero.webp",
+  "thumb": "/guides/art/school-and-camp-health-forms-what-to-have-ready-thumb.webp",
+  "figure": "/guides/art/school-and-camp-health-forms-what-to-have-ready-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A table of the order camp and school forms usually ask in, from who and who to call through insurance, health and vaccines, with a note to ask the camp what it needs.",
+  "caption": "Many forms follow this order, so your page can too."
+ },
+ "babysitter-and-grandparent-info-sheet": {
+  "hero": "/guides/art/babysitter-and-grandparent-info-sheet-hero.webp",
+  "thumb": "/guides/art/babysitter-and-grandparent-info-sheet-thumb.webp",
+  "figure": "/guides/art/babysitter-and-grandparent-info-sheet-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A sitter sheet checklist covering allergies, what is taken now, who to call, emergency steps and bedtime notes, beside a note on what to leave off.",
+  "caption": "What goes on a one-page sheet for a sitter or grandparent."
+ },
+ "doctor-appointment-prep-checklist": {
+  "hero": "/guides/art/doctor-appointment-prep-checklist-hero.webp",
+  "thumb": "/guides/art/doctor-appointment-prep-checklist-thumb.webp",
+  "figure": "/guides/art/doctor-appointment-prep-checklist-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A timeline for a doctor visit: write questions, list what is taken and note symptoms the day before, bring the insurance card, then note what was said afterward.",
+  "caption": "A short paperwork list for the day before a doctor visit."
+ },
+ "questions-to-bring-to-the-doctor": {
+  "hero": "/guides/art/questions-to-bring-to-the-doctor-hero.webp",
+  "thumb": "/guides/art/questions-to-bring-to-the-doctor-thumb.webp",
+  "figure": "/guides/art/questions-to-bring-to-the-doctor-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A comparison of a vague question, is swimming okay, with a specific one, can she swim this week, plus a note to tick questions off in the room.",
+  "caption": "One question per line, the important one first."
+ },
+ "medication-list-what-to-write-down": {
+  "hero": "/guides/art/medication-list-what-to-write-down-hero.webp",
+  "thumb": "/guides/art/medication-list-what-to-write-down-thumb.webp",
+  "figure": "/guides/art/medication-list-what-to-write-down-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A table with three columns for a medication list, name, dose and how often, each copied as given, with a note to record the date last checked.",
+  "caption": "Write the dose and frequency exactly as the label gives them."
+ },
+ "symptom-notes-for-a-doctor-visit": {
+  "hero": "/guides/art/symptom-notes-for-a-doctor-visit-hero.webp",
+  "thumb": "/guides/art/symptom-notes-for-a-doctor-visit-thumb.webp",
+  "figure": "/guides/art/symptom-notes-for-a-doctor-visit-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A symptom note page with fields for what it is, when it started, how long it lasted, how bad it was and what helped.",
+  "caption": "Four short notes help at a visit. It records what you saw, not what it means."
+ },
+ "emergency-contact-information-sheet": {
+  "hero": "/guides/art/emergency-contact-information-sheet-hero.webp",
+  "thumb": "/guides/art/emergency-contact-information-sheet-thumb.webp",
+  "figure": "/guides/art/emergency-contact-information-sheet-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "An emergency sheet checklist listing name and age, allergies, who to call, their doctor and insurance, beside a note that a printed card is not a medical ID.",
+  "caption": "What goes on a one-page emergency sheet."
+ },
+ "new-doctor-intake-what-to-bring": {
+  "hero": "/guides/art/new-doctor-intake-what-to-bring-hero.webp",
+  "thumb": "/guides/art/new-doctor-intake-what-to-bring-thumb.webp",
+  "figure": "/guides/art/new-doctor-intake-what-to-bring-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "An intake summary page with fields for allergies, medications, conditions, family history and recent symptoms, beside a note about insurance and photo ID.",
+  "caption": "One page for a first visit, alongside the clinic's own paperwork."
+ },
+ "what-to-leave-off-a-health-page-you-hand-over": {
+  "hero": "/guides/art/what-to-leave-off-a-health-page-you-hand-over-hero.webp",
+  "thumb": "/guides/art/what-to-leave-off-a-health-page-you-hand-over-thumb.webp",
+  "figure": "/guides/art/what-to-leave-off-a-health-page-you-hand-over-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A checklist of three questions to ask before printing a health page, whether they need it, whether it could sit on a counter and whether it is current.",
+  "caption": "Three questions to ask before you hand a page over."
+ },
+ "caring-for-a-parent-and-kids-one-place": {
+  "hero": "/guides/art/caring-for-a-parent-and-kids-one-place-hero.webp",
+  "thumb": "/guides/art/caring-for-a-parent-and-kids-one-place-thumb.webp",
+  "figure": "/guides/art/caring-for-a-parent-and-kids-one-place-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A four-line rule for keeping a parent's and children's health pages: one page per person, the same headings, one place, and print one person at a time.",
+  "caption": "Adults and children use the same kind of page."
+ },
+ "home-maintenance-you-skip-that-costs-the-most": {
+  "hero": "/guides/art/home-maintenance-you-skip-that-costs-the-most-hero.webp",
+  "thumb": "/guides/art/home-maintenance-you-skip-that-costs-the-most-thumb.webp",
+  "figure": "/guides/art/home-maintenance-you-skip-that-costs-the-most-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A table of four maintenance jobs with how often each is due and what a skipped one turns into, beside a note about writing down the last done date.",
+  "caption": "Four of the eight jobs from the guide, with how often each is due and what skipping it leads to."
+ },
+ "how-often-home-systems-need-servicing": {
+  "hero": "/guides/art/how-often-home-systems-need-servicing-hero.webp",
+  "thumb": "/guides/art/how-often-home-systems-need-servicing-thumb.webp",
+  "figure": "/guides/art/how-often-home-systems-need-servicing-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "Two cards comparing service intervals: heating and water jobs on one side, safety and roof jobs on the other, each with how often it is due.",
+  "caption": "Typical intervals from the guide. Your own manual wins over any table."
+ },
+ "what-to-record-when-you-buy-an-appliance": {
+  "hero": "/guides/art/what-to-record-when-you-buy-an-appliance-hero.webp",
+  "thumb": "/guides/art/what-to-record-when-you-buy-an-appliance-thumb.webp",
+  "figure": "/guides/art/what-to-record-when-you-buy-an-appliance-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A blank one-page appliance record with five fields: make and model, serial number, install date, warranty end and last service.",
+  "caption": "The five fields to write while the appliance is in front of you."
+ },
+ "first-week-after-buying-a-house": {
+  "hero": "/guides/art/first-week-after-buying-a-house-hero.webp",
+  "thumb": "/guides/art/first-week-after-buying-a-house-thumb.webp",
+  "figure": "/guides/art/first-week-after-buying-a-house-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A day-one checklist for a new house covering meter photos, shutoffs, suppliers, alarm code and alarm tests, with a note about rereading the survey.",
+  "caption": "The day-one list from the guide, to do while the previous owner is still reachable."
+ },
+ "home-maintenance-checklist-by-month": {
+  "hero": "/guides/art/home-maintenance-checklist-by-month-hero.webp",
+  "thumb": "/guides/art/home-maintenance-checklist-by-month-thumb.webp",
+  "figure": "/guides/art/home-maintenance-checklist-by-month-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A four-step seasonal timeline: drain taps before the freeze, gutters and heating in autumn, cooling and roof in spring, exterior work in summer.",
+  "caption": "The jobs that really belong to a season. Everything else runs on an interval."
+ },
+ "what-to-keep-after-a-home-repair": {
+  "hero": "/guides/art/what-to-keep-after-a-home-repair-hero.webp",
+  "thumb": "/guides/art/what-to-keep-after-a-home-repair-thumb.webp",
+  "figure": "/guides/art/what-to-keep-after-a-home-repair-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A checklist of what to write after a home repair: the symptom, the diagnosis, the part replaced, what to watch for next, and who came.",
+  "caption": "What to record before the technician drives away, besides the invoice."
+ },
+ "appliance-warranties-what-to-track": {
+  "hero": "/guides/art/appliance-warranties-what-to-track-hero.webp",
+  "thumb": "/guides/art/appliance-warranties-what-to-track-thumb.webp",
+  "figure": "/guides/art/appliance-warranties-what-to-track-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A card asking what to check before paying for a repair, listing warranty status, the annual service record, proof of purchase and serial number.",
+  "caption": "The four things that most often sink a warranty claim, per the guide."
+ },
+ "inherited-a-house-where-to-start": {
+  "hero": "/guides/art/inherited-a-house-where-to-start-hero.webp",
+  "thumb": "/guides/art/inherited-a-house-where-to-start-thumb.webp",
+  "figure": "/guides/art/inherited-a-house-where-to-start-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A table of typical service lives for boiler, water heater, air conditioning and roof, beside a note to treat unknown service dates as due.",
+  "caption": "Typical service lives from the guide. Your own equipment may differ."
+ },
+ "how-to-find-the-model-number-on-any-appliance": {
+  "hero": "/guides/art/how-to-find-the-model-number-on-any-appliance-hero.webp",
+  "thumb": "/guides/art/how-to-find-the-model-number-on-any-appliance-thumb.webp",
+  "figure": "/guides/art/how-to-find-the-model-number-on-any-appliance-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A table of where the data plate sits on a fridge, washing machine, dishwasher and water heater, beside a note to photograph the whole plate.",
+  "caption": "Four of the ten appliances covered in the guide, and where each keeps its plate."
+ },
+ "fall-home-maintenance-checklist": {
+  "hero": "/guides/art/fall-home-maintenance-checklist-hero.webp",
+  "thumb": "/guides/art/fall-home-maintenance-checklist-thumb.webp",
+  "figure": "/guides/art/fall-home-maintenance-checklist-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A three-step fall timeline: book the heating tune-up and seal gaps in September, drain the faucet in October, clear gutters in November.",
+  "caption": "Fall in three months, using the jobs from the guide."
+ },
+ "winterize-your-house-checklist": {
+  "hero": "/guides/art/winterize-your-house-checklist-hero.webp",
+  "thumb": "/guides/art/winterize-your-house-checklist-thumb.webp",
+  "figure": "/guides/art/winterize-your-house-checklist-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A five-item winterizing checklist covering the outdoor faucet, irrigation, window air conditioner, humidifier pad and entry points, with a note on the freeze deadline.",
+  "caption": "The five winterizing jobs from the guide."
+ },
+ "home-maintenance-log-template": {
+  "hero": "/guides/art/home-maintenance-log-template-hero.webp",
+  "thumb": "/guides/art/home-maintenance-log-template-thumb.webp",
+  "figure": "/guides/art/home-maintenance-log-template-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A blank home maintenance log page with fields for the date, what was done, who did it, what it cost and one note for next time.",
+  "caption": "The four fields and one note the guide says a log needs."
+ },
+ "how-often-change-furnace-filter": {
+  "hero": "/guides/art/how-often-change-furnace-filter-hero.webp",
+  "thumb": "/guides/art/how-often-change-furnace-filter-thumb.webp",
+  "figure": "/guides/art/how-often-change-furnace-filter-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A card showing three months as the default furnace filter interval, beside a checklist of the size and location facts to write down once.",
+  "caption": "The default interval and the facts to note, from the guide."
+ },
+ "where-is-my-water-shutoff": {
+  "hero": "/guides/art/where-is-my-water-shutoff-hero.webp",
+  "thumb": "/guides/art/where-is-my-water-shutoff-thumb.webp",
+  "figure": "/guides/art/where-is-my-water-shutoff-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "Two cards comparing a wheel handle gate valve with a lever handle ball valve, beside a note to write down which way it turns.",
+  "caption": "How to tell the two common main shutoff valve types apart."
+ },
+ "how-to-make-a-home-binder": {
+  "hero": "/guides/art/how-to-make-a-home-binder-hero.webp",
+  "thumb": "/guides/art/how-to-make-a-home-binder-thumb.webp",
+  "figure": "/guides/art/how-to-make-a-home-binder-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "Two cards comparing what goes in a home binder, such as shutoff locations and contacts, with what never does, such as passwords and alarm codes.",
+  "caption": "Write where things are and who to call, never the codes themselves."
+ },
+ "moving-into-a-rental-what-to-document": {
+  "hero": "/guides/art/moving-into-a-rental-what-to-document-hero.webp",
+  "thumb": "/guides/art/moving-into-a-rental-what-to-document-thumb.webp",
+  "figure": "/guides/art/moving-into-a-rental-what-to-document-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A table of four day-one rental records: photos, lease dates, deposit and what you reported, beside a note to report in writing.",
+  "caption": "The four records from the guide. Not legal advice; rules vary by place."
+ },
+ "how-to-make-a-phone-call-you-have-been-avoiding": {
+  "hero": "/guides/art/how-to-make-a-phone-call-you-have-been-avoiding-hero.webp",
+  "thumb": "/guides/art/how-to-make-a-phone-call-you-have-been-avoiding-thumb.webp",
+  "figure": "/guides/art/how-to-make-a-phone-call-you-have-been-avoiding-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A blank page listing the five things to write before a call (topic, result, reference, two facts, first sentence) beside a note about asking for a reference number.",
+  "caption": "The five things to have on one page before you dial."
+ },
+ "how-to-restart-a-project-you-gave-up-on": {
+  "hero": "/guides/art/how-to-restart-a-project-you-gave-up-on-hero.webp",
+  "thumb": "/guides/art/how-to-restart-a-project-you-gave-up-on-thumb.webp",
+  "figure": "/guides/art/how-to-restart-a-project-you-gave-up-on-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A checklist of three lines to leave when you put a task down, with a note saying to resume at the next action rather than the beginning.",
+  "caption": "Three lines that turn a twenty minute restart into a two minute one."
+ },
+ "why-to-do-lists-make-it-worse": {
+  "hero": "/guides/art/why-to-do-lists-make-it-worse-hero.webp",
+  "thumb": "/guides/art/why-to-do-lists-make-it-worse-thumb.webp",
+  "figure": "/guides/art/why-to-do-lists-make-it-worse-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A table showing four rows from a nine-row to-do list and where each goes, beside a card saying only two lines are left to look at tomorrow morning.",
+  "caption": "Example: part of a nine-row list, sorted into today, now, a real date, and parked."
+ },
+ "why-you-keep-thinking-about-a-task-and-not-doing-it": {
+  "hero": "/guides/art/why-you-keep-thinking-about-a-task-and-not-doing-it-hero.webp",
+  "thumb": "/guides/art/why-you-keep-thinking-about-a-task-and-not-doing-it-thumb.webp",
+  "figure": "/guides/art/why-you-keep-thinking-about-a-task-and-not-doing-it-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A card asking what the next physical action is, with three examples, beside a second question about what needs to be in front of you.",
+  "caption": "The two questions that unstick most things. The options are examples."
+ },
+ "task-paralysis-what-to-do-in-the-next-ten-minutes": {
+  "hero": "/guides/art/task-paralysis-what-to-do-in-the-next-ten-minutes-hero.webp",
+  "thumb": "/guides/art/task-paralysis-what-to-do-in-the-next-ten-minutes-thumb.webp",
+  "figure": "/guides/art/task-paralysis-what-to-do-in-the-next-ten-minutes-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A timeline of ten minutes from picking a task to leaving a note, beside a note showing the insurance claim shrunk to one visible first step.",
+  "caption": "The ten minutes, minute by minute. The claim example is an illustration."
+ },
+ "scripts-for-the-admin-calls-everyone-dreads": {
+  "hero": "/guides/art/scripts-for-the-admin-calls-everyone-dreads-hero.webp",
+  "thumb": "/guides/art/scripts-for-the-admin-calls-everyone-dreads-thumb.webp",
+  "figure": "/guides/art/scripts-for-the-admin-calls-everyone-dreads-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A three-line script for opening a cancellation call, beside a checklist of four things to get before hanging up.",
+  "caption": "An opening that starts with the problem and ends with a question, plus what to get before you hang up."
+ },
+ "how-to-deal-with-something-you-have-put-off": {
+  "hero": "/guides/art/how-to-deal-with-something-you-have-put-off-hero.webp",
+  "thumb": "/guides/art/how-to-deal-with-something-you-have-put-off-thumb.webp",
+  "figure": "/guides/art/how-to-deal-with-something-you-have-put-off-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "Two short lines for naming a long delay and asking where things stand, beside a note to skip the explanation unless asked.",
+  "caption": "Two ways to name the gap in one sentence. Pick the one closest to how you feel."
+ },
+ "life-admin-with-brain-fog": {
+  "hero": "/guides/art/life-admin-with-brain-fog-hero.webp",
+  "thumb": "/guides/art/life-admin-with-brain-fog-thumb.webp",
+  "figure": "/guides/art/life-admin-with-brain-fog-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A checklist of five adjustments for low-capacity days, with two ticked, beside a note about how a system should hold up after three weeks of being ignored.",
+  "caption": "Adjustments that do not depend on knowing why, or on trying harder."
+ },
+ "executive-dysfunction-is-not-procrastination": {
+  "hero": "/guides/art/executive-dysfunction-is-not-procrastination-hero.webp",
+  "thumb": "/guides/art/executive-dysfunction-is-not-procrastination-thumb.webp",
+  "figure": "/guides/art/executive-dysfunction-is-not-procrastination-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "Two columns of things to try, one for choosing something nicer and one for being unable to start, beside a note with the question that tells them apart.",
+  "caption": "Tendencies, not a test. Plenty of people land in the middle."
+ },
+ "diagnosed-with-adhd-as-an-adult": {
+  "hero": "/guides/art/diagnosed-with-adhd-as-an-adult-hero.webp",
+  "thumb": "/guides/art/diagnosed-with-adhd-as-an-adult-thumb.webp",
+  "figure": "/guides/art/diagnosed-with-adhd-as-an-adult-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A blank page for keeping clinic, prescription and pharmacy references and a written history together, beside a note about repeat prescriptions.",
+  "caption": "A page to keep the references together. Your prescriber sets the schedule."
+ },
+ "how-to-start-when-everything-is-overdue": {
+  "hero": "/guides/art/how-to-start-when-everything-is-overdue-hero.webp",
+  "thumb": "/guides/art/how-to-start-when-everything-is-overdue-thumb.webp",
+  "figure": "/guides/art/how-to-start-when-everything-is-overdue-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A card sorting late tasks into three piles: a person waiting, a date attached, or no one waiting, beside a note that the rest can be put away tonight.",
+  "caption": "Put each thing in one pile instead of ranking the lot."
+ },
+ "paperwork-pile-where-to-start": {
+  "hero": "/guides/art/paperwork-pile-where-to-start-hero.webp",
+  "thumb": "/guides/art/paperwork-pile-where-to-start-thumb.webp",
+  "figure": "/guides/art/paperwork-pile-where-to-start-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A four-step timeline for a ten minute pass through a paperwork pile, beside a card saying one envelope is a real start.",
+  "caption": "Open, sort, then choose one small piece."
+ },
+ "how-to-say-no-or-give-bad-news-on-the-phone": {
+  "hero": "/guides/art/how-to-say-no-or-give-bad-news-on-the-phone-hero.webp",
+  "thumb": "/guides/art/how-to-say-no-or-give-bad-news-on-the-phone-thumb.webp",
+  "figure": "/guides/art/how-to-say-no-or-give-bad-news-on-the-phone-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A two-line opening script for saying no, beside a checklist of four things to settle before dialing.",
+  "caption": "An opening to start from. Change it to sound like you."
+ },
+ "the-email-you-keep-not-sending-and-how-to-chase-a-reply": {
+  "hero": "/guides/art/the-email-you-keep-not-sending-and-how-to-chase-a-reply-hero.webp",
+  "thumb": "/guides/art/the-email-you-keep-not-sending-and-how-to-chase-a-reply-thumb.webp",
+  "figure": "/guides/art/the-email-you-keep-not-sending-and-how-to-chase-a-reply-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A checklist of four checks before sending an email, beside a note about chasing by a different route and asking for a date.",
+  "caption": "Read it once against these, then send it."
+ },
+ "first-physical-step-20-examples": {
+  "hero": "/guides/art/first-physical-step-20-examples-hero.webp",
+  "thumb": "/guides/art/first-physical-step-20-examples-thumb.webp",
+  "figure": "/guides/art/first-physical-step-20-examples-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A table pairing four stuck tasks with a first physical step, beside a four-question checklist for testing your own step.",
+  "caption": "Four of the twenty first steps in the guide."
+ },
+ "a-weekly-reset-that-survives-a-bad-week": {
+  "hero": "/guides/art/a-weekly-reset-that-survives-a-bad-week-hero.webp",
+  "thumb": "/guides/art/a-weekly-reset-that-survives-a-bad-week-thumb.webp",
+  "figure": "/guides/art/a-weekly-reset-that-survives-a-bad-week-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A comparison of a reset that needs a good week and one that survives a bad week, beside a note that opening the pile and picking one thing counts.",
+  "caption": "The ten minute reset works the same after a missed week."
+ },
+ "why-you-abandon-planners-and-how-to-come-back": {
+  "hero": "/guides/art/why-you-abandon-planners-and-how-to-come-back-hero.webp",
+  "thumb": "/guides/art/why-you-abandon-planners-and-how-to-come-back-thumb.webp",
+  "figure": "/guides/art/why-you-abandon-planners-and-how-to-come-back-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A table of four things a planner needs and what happens in a hard week, beside a note to keep one page instead of starting over.",
+  "caption": "What usually breaks, in a hard week."
+ },
+ "why-you-keep-missing-bill-due-dates": {
+  "hero": "/guides/art/why-you-keep-missing-bill-due-dates-hero.webp",
+  "thumb": "/guides/art/why-you-keep-missing-bill-due-dates-thumb.webp",
+  "figure": "/guides/art/why-you-keep-missing-bill-due-dates-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A four-step timeline for keeping bill due dates in front of you without remembering, beside a note about keeping reminders private.",
+  "caption": "Four of the five steps in the guide."
+ },
+ "time-blindness-planning": {
+  "hero": "/guides/art/time-blindness-planning-hero.webp",
+  "thumb": "/guides/art/time-blindness-planning-thumb.webp",
+  "figure": "/guides/art/time-blindness-planning-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A table turning four vague plans into exact times, beside a note to name one time and keep it visible.",
+  "caption": "Example: vague plans and their exact versions."
+ },
+ "how-much-of-your-money-is-actually-safe-to-spend": {
+  "hero": "/guides/art/how-much-of-your-money-is-actually-safe-to-spend-hero.webp",
+  "thumb": "/guides/art/how-much-of-your-money-is-actually-safe-to-spend-thumb.webp",
+  "figure": "/guides/art/how-much-of-your-money-is-actually-safe-to-spend-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A ledger starting from a $2,340 available balance, taking off bills, held-back money and a promised deposit to reach $1,411 safe to spend, beside a card showing the $929 gap.",
+  "caption": "An example month: it is the 12th and payday is the 28th. Not anyone's real figures."
+ },
+ "how-to-find-every-subscription-you-are-paying-for": {
+  "hero": "/guides/art/how-to-find-every-subscription-you-are-paying-for-hero.webp",
+  "thumb": "/guides/art/how-to-find-every-subscription-you-are-paying-for-thumb.webp",
+  "figure": "/guides/art/how-to-find-every-subscription-you-are-paying-for-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A table of four repeating charges with how often each bills and its cost per year, beside a card showing $553.50 a year for all six charges found.",
+  "caption": "Example only, not real data: four of the six charges the sweep turns up, with the yearly cost of each."
+ },
+ "available-balance-vs-current-balance": {
+  "hero": "/guides/art/available-balance-vs-current-balance-hero.webp",
+  "thumb": "/guides/art/available-balance-vs-current-balance-thumb.webp",
+  "figure": "/guides/art/available-balance-vs-current-balance-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A table showing a checking account's current and available balances after a pending grocery purchase and a gas pump hold, beside a note about an autopay neither number includes.",
+  "caption": "Example figures only. Your bank may order or label these differently."
+ },
+ "why-budgeting-apps-stop-working-after-two-months": {
+  "hero": "/guides/art/why-budgeting-apps-stop-working-after-two-months-hero.webp",
+  "thumb": "/guides/art/why-budgeting-apps-stop-working-after-two-months-thumb.webp",
+  "figure": "/guides/art/why-budgeting-apps-stop-working-after-two-months-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A checklist of five traits of a budgeting tool that lasts past month two, beside a note telling you to ask what happens when you stop paying attention.",
+  "caption": "The five traits worth checking before you spend a weekend setting anything up."
+ },
+ "you-missed-a-payment-what-to-do-next": {
+  "hero": "/guides/art/you-missed-a-payment-what-to-do-next-hero.webp",
+  "thumb": "/guides/art/you-missed-a-payment-what-to-do-next-thumb.webp",
+  "figure": "/guides/art/you-missed-a-payment-what-to-do-next-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A four step timeline of the first 48 hours after a missed payment, beside a short script for the call to the lender.",
+  "caption": "The first 48 hours, in order, with two lines to say on the call."
+ },
+ "sort-out-your-finances-after-a-life-change": {
+  "hero": "/guides/art/sort-out-your-finances-after-a-life-change-hero.webp",
+  "thumb": "/guides/art/sort-out-your-finances-after-a-life-change-thumb.webp",
+  "figure": "/guides/art/sort-out-your-finances-after-a-life-change-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A four step timeline for sorting money after a job change, move or separation, beside a note to recalculate what is safe to spend.",
+  "caption": "Each stage depends on the one above it, which is why the order counts."
+ },
+ "what-to-check-before-each-direct-debit-date": {
+  "hero": "/guides/art/what-to-check-before-each-direct-debit-date-hero.webp",
+  "thumb": "/guides/art/what-to-check-before-each-direct-debit-date-thumb.webp",
+  "figure": "/guides/art/what-to-check-before-each-direct-debit-date-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A five item checklist to run before a direct debit date, beside a note about asking providers to move payment dates closer together.",
+  "caption": "The two minute check, run before the busiest date in your month."
+ },
+ "can-you-afford-it-before-you-buy-it": {
+  "hero": "/guides/art/can-you-afford-it-before-you-buy-it-hero.webp",
+  "thumb": "/guides/art/can-you-afford-it-before-you-buy-it-thumb.webp",
+  "figure": "/guides/art/can-you-afford-it-before-you-buy-it-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A four step timeline for testing a purchase: start from what is available, subtract the cost, divide by weeks to payday, then ask if you could live on it.",
+  "caption": "The thirty second test for one purchase, using your safe-to-spend number."
+ },
+ "how-to-budget-for-beginners": {
+  "hero": "/guides/art/how-to-budget-for-beginners-hero.webp",
+  "thumb": "/guides/art/how-to-budget-for-beginners-thumb.webp",
+  "figure": "/guides/art/how-to-budget-for-beginners-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A checklist of the four things to gather for a first monthly budget, beside a note describing the five minute weekly check.",
+  "caption": "The four things to gather before you set up a first monthly budget."
+ },
+ "how-to-budget-with-irregular-income": {
+  "hero": "/guides/art/how-to-budget-with-irregular-income-hero.webp",
+  "thumb": "/guides/art/how-to-budget-with-irregular-income-thumb.webp",
+  "figure": "/guides/art/how-to-budget-with-irregular-income-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A comparison of planning from expected pay versus received pay, beside a small sum taking $900 of bills and $350 kept from $1,850 to reach a safe number of $600.",
+  "caption": "Example month: a $600 client payment counts only once it lands, when the number becomes $1,200."
+ },
+ "how-to-build-a-first-1000-emergency-fund": {
+  "hero": "/guides/art/how-to-build-a-first-1000-emergency-fund-hero.webp",
+  "thumb": "/guides/art/how-to-build-a-first-1000-emergency-fund-thumb.webp",
+  "figure": "/guides/art/how-to-build-a-first-1000-emergency-fund-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A four month timeline for setting aside $250 a month to reach $1,000, beside a comparison of what does and does not count as an emergency.",
+  "caption": "An example pace only. Pick an amount that leaves your month intact."
+ },
+ "how-to-save-money-fast": {
+  "hero": "/guides/art/how-to-save-money-fast-hero.webp",
+  "thumb": "/guides/art/how-to-save-money-fast-thumb.webp",
+  "figure": "/guides/art/how-to-save-money-fast-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A checklist of four ways to save money in one month, beside a note about setting a small amount aside on day one.",
+  "caption": "Four moves for one month, in order of effort, not a lifestyle change."
+ },
+ "how-to-start-over-after-budget-failure": {
+  "hero": "/guides/art/how-to-start-over-after-budget-failure-hero.webp",
+  "thumb": "/guides/art/how-to-start-over-after-budget-failure-thumb.webp",
+  "figure": "/guides/art/how-to-start-over-after-budget-failure-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A comparison of catching up on old spending versus starting from today's balance, beside a note that a budget only needs to be true from today.",
+  "caption": "Two ways back to a budget you trust."
+ },
+ "end-of-month-money-review": {
+  "hero": "/guides/art/end-of-month-money-review-hero.webp",
+  "thumb": "/guides/art/end-of-month-money-review-thumb.webp",
+  "figure": "/guides/art/end-of-month-money-review-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A table showing that recurring income, bills and spending groups carry into next month while one-off spending does not, beside the five step ten minute review checklist.",
+  "caption": "Recurring things return; one-off things stay with the month they happened in."
+ },
+ "how-to-cancel-subscriptions": {
+  "hero": "/guides/art/how-to-cancel-subscriptions-hero.webp",
+  "thumb": "/guides/art/how-to-cancel-subscriptions-thumb.webp",
+  "figure": "/guides/art/how-to-cancel-subscriptions-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A script of three lines to say when a company resists a cancellation, beside a checklist for confirming the subscription really ended.",
+  "caption": "Keep it short and polite, and say the same thing again if you need to."
+ },
+ "debt-snowball-vs-avalanche": {
+  "hero": "/guides/art/debt-snowball-vs-avalanche-hero.webp",
+  "thumb": "/guides/art/debt-snowball-vs-avalanche-thumb.webp",
+  "figure": "/guides/art/debt-snowball-vs-avalanche-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A table comparing snowball and avalanche on three debts: first debt cleared, debt-free month and interest paid, beside a card showing a $113.94 difference.",
+  "caption": "A worked example of three debts with $200 a month extra. Your numbers will differ."
+ },
+ "monthly-bills-list": {
+  "hero": "/guides/art/monthly-bills-list-hero.webp",
+  "thumb": "/guides/art/monthly-bills-list-thumb.webp",
+  "figure": "/guides/art/monthly-bills-list-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A blank monthly bills list page with six fields, beside a card showing that a $612 quarterly insurance bill is $204 a month.",
+  "caption": "The six columns of a bills list that includes the quarterly and annual ones."
+ },
+ "organize-your-finances-from-scratch": {
+  "hero": "/guides/art/organize-your-finances-from-scratch-hero.webp",
+  "thumb": "/guides/art/organize-your-finances-from-scratch-thumb.webp",
+  "figure": "/guides/art/organize-your-finances-from-scratch-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A five step checklist for getting scattered finances into view in ten minutes, beside a note saying gaps are useful, not failures.",
+  "caption": "A starting path meant to be finished the same day and improved later."
+ },
+ "split-bills-with-a-partner-or-roommate": {
+  "hero": "/guides/art/split-bills-with-a-partner-or-roommate-hero.webp",
+  "thumb": "/guides/art/split-bills-with-a-partner-or-roommate-thumb.webp",
+  "figure": "/guides/art/split-bills-with-a-partner-or-roommate-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A table of three ways to split bills, equal, by income and by item, beside a checklist of four things to agree first.",
+  "caption": "Three common ways to split, and the four things to agree before you start."
+ },
+ "subscription-tracker-what-to-track": {
+  "hero": "/guides/art/subscription-tracker-what-to-track-hero.webp",
+  "thumb": "/guides/art/subscription-tracker-what-to-track-thumb.webp",
+  "figure": "/guides/art/subscription-tracker-what-to-track-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A blank subscription tracker page with six fields to fill in for each subscription, beside a note about a two week heads-up before annual renewals.",
+  "caption": "The six fields worth writing down for every subscription."
+ },
+ "bank-statement-csv-to-budget": {
+  "hero": "/guides/art/bank-statement-csv-to-budget-hero.webp",
+  "thumb": "/guides/art/bank-statement-csv-to-budget-thumb.webp",
+  "figure": "/guides/art/bank-statement-csv-to-budget-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A four step timeline for turning a bank statement CSV into a budget, beside a note that a transaction list cannot show what is coming.",
+  "caption": "Download, map, review, then categorize, with nothing counted until you have reviewed it."
+ },
+ "financial-binder-what-to-include": {
+  "hero": "/guides/art/financial-binder-what-to-include-hero.webp",
+  "thumb": "/guides/art/financial-binder-what-to-include-thumb.webp",
+  "figure": "/guides/art/financial-binder-what-to-include-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A table of confidence labels for a financial binder entry: confirmed, estimated, unresolved and stale, beside a note listing the seven sections.",
+  "caption": "Marking how sure you are stops a binder becoming a source of false confidence."
+ },
+ "sinking-funds-explained": {
+  "hero": "/guides/art/sinking-funds-explained-hero.webp",
+  "thumb": "/guides/art/sinking-funds-explained-thumb.webp",
+  "figure": "/guides/art/sinking-funds-explained-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A table working out a monthly sinking fund amount of $112.50 from $600 needed, $150 saved and four months left, beside a checklist of costs worth saving for.",
+  "caption": "Example figures: $600 needed by year end, $150 saved, four months left."
+ },
+ "50-30-20-rule-where-it-breaks": {
+  "hero": "/guides/art/50-30-20-rule-where-it-breaks-hero.webp",
+  "thumb": "/guides/art/50-30-20-rule-where-it-breaks-thumb.webp",
+  "figure": "/guides/art/50-30-20-rule-where-it-breaks-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A table of the 50/30/20 rule splitting after-tax income into needs, wants and savings, beside a comparison of when it fits and when it breaks.",
+  "caption": "The rule as a starting point: test it against your own month."
+ },
+ "budget-for-variable-bills": {
+  "hero": "/guides/art/budget-for-variable-bills-hero.webp",
+  "thumb": "/guides/art/budget-for-variable-bills-thumb.webp",
+  "figure": "/guides/art/budget-for-variable-bills-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A table showing a variable bill with a low of $60 and a high of $122, planning toward $122 and setting aside $62 in a low month, beside a checklist of bills that move.",
+  "caption": "An illustration only. Use your own twelve months."
+ },
+ "credit-card-minimum-payments-how-long": {
+  "hero": "/guides/art/credit-card-minimum-payments-how-long-hero.webp",
+  "thumb": "/guides/art/credit-card-minimum-payments-how-long-thumb.webp",
+  "figure": "/guides/art/credit-card-minimum-payments-how-long-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A table comparing three extra payment amounts on the same debts by debt-free date and interest, beside a card showing only $30 of a $90 minimum reduces the balance.",
+  "caption": "Example: three debts starting September 2026, constant rates. A comparison, not a forecast."
+ },
+ "why-productivity-tools-fail-at-life-admin": {
+  "hero": "/guides/art/why-productivity-tools-fail-at-life-admin-hero.webp",
+  "thumb": "/guides/art/why-productivity-tools-fail-at-life-admin-thumb.webp",
+  "figure": "/guides/art/why-productivity-tools-fail-at-life-admin-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A comparison of what knowledge work tools assume versus what life admin actually is, beside a note that a tool should say plainly when nothing needs you.",
+  "caption": "Three of the four mismatches between work tools and life admin."
+ },
+ "flight-changed-what-else-is-affected": {
+  "hero": "/guides/art/flight-changed-what-else-is-affected-hero.webp",
+  "thumb": "/guides/art/flight-changed-what-else-is-affected-thumb.webp",
+  "figure": "/guides/art/flight-changed-what-else-is-affected-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A two-column card of what a moved flight affects: transfer, hotel check-in and dinner booking, against what was booked before it, plus three questions to ask per booking.",
+  "caption": "When a flight moves, check what was booked after it. Nothing booked before it is affected."
+ },
+ "flight-delayed-with-a-connection-what-to-do-first": {
+  "hero": "/guides/art/flight-delayed-with-a-connection-what-to-do-first-hero.webp",
+  "thumb": "/guides/art/flight-delayed-with-a-connection-what-to-do-first-thumb.webp",
+  "figure": "/guides/art/flight-delayed-with-a-connection-what-to-do-first-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A timeline of the first twenty minutes after a delay, from checking the arrival time to knowing what you want at the desk, and a short script for the airline agent.",
+  "caption": "The order of the first twenty minutes when a delay threatens a connection."
+ },
+ "hotel-cannot-find-your-reservation": {
+  "hero": "/guides/art/hotel-cannot-find-your-reservation-hero.webp",
+  "thumb": "/guides/art/hotel-cannot-find-your-reservation-thumb.webp",
+  "figure": "/guides/art/hotel-cannot-find-your-reservation-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A three-line script for the hotel desk when the booking cannot be found, and a checklist of five ways to ask them to search for it.",
+  "caption": "An example opening for the desk. Change any of the words."
+ },
+ "organising-a-multi-stop-trip-without-a-spreadsheet": {
+  "hero": "/guides/art/organising-a-multi-stop-trip-without-a-spreadsheet-hero.webp",
+  "thumb": "/guides/art/organising-a-multi-stop-trip-without-a-spreadsheet-thumb.webp",
+  "figure": "/guides/art/organising-a-multi-stop-trip-without-a-spreadsheet-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A checklist of the four things to record per booking, and a note about writing down what each booking depends on.",
+  "caption": "The four things to record for every booking on a trip with many stops."
+ },
+ "travel-document-checklist": {
+  "hero": "/guides/art/travel-document-checklist-hero.webp",
+  "thumb": "/guides/art/travel-document-checklist-thumb.webp",
+  "figure": "/guides/art/travel-document-checklist-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A checklist of what to check months ahead: passport expiry, blank pages, visa, child consent and matching names, plus a note that a photo is not a backup.",
+  "caption": "What to check months before you travel, for every traveler."
+ },
+ "how-to-plan-a-group-trip": {
+  "hero": "/guides/art/how-to-plan-a-group-trip-hero.webp",
+  "thumb": "/guides/art/how-to-plan-a-group-trip-thumb.webp",
+  "figure": "/guides/art/how-to-plan-a-group-trip-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A small table showing how many people are on each of three bookings, and a checklist of three things a group decides first.",
+  "caption": "An example of recording who is on which booking. The numbers are illustrative."
+ },
+ "what-to-keep-on-paper-when-you-travel": {
+  "hero": "/guides/art/what-to-keep-on-paper-when-you-travel-hero.webp",
+  "thumb": "/guides/art/what-to-keep-on-paper-when-you-travel-thumb.webp",
+  "figure": "/guides/art/what-to-keep-on-paper-when-you-travel-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A printable one-page list with the address in the local language, booking references, phone numbers, insurance, passport numbers and a contact at home.",
+  "caption": "The one page worth printing before you travel."
+ },
+ "how-to-write-a-one-page-trip-itinerary": {
+  "hero": "/guides/art/how-to-write-a-one-page-trip-itinerary-hero.webp",
+  "thumb": "/guides/art/how-to-write-a-one-page-trip-itinerary-thumb.webp",
+  "figure": "/guides/art/how-to-write-a-one-page-trip-itinerary-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A table of the three columns for each line of a one-page itinerary: time, place and reference, with a note to leave the rest of the day empty.",
+  "caption": "The three things every line of a one-page itinerary answers."
+ },
+ "packing-list-for-a-week-away": {
+  "hero": "/guides/art/packing-list-for-a-week-away-hero.webp",
+  "thumb": "/guides/art/packing-list-for-a-week-away-thumb.webp",
+  "figure": "/guides/art/packing-list-for-a-week-away-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A checklist of the five basics every trip needs, with a note about adding two or three extras for this particular trip.",
+  "caption": "The first layer of a packing list, before you add what this trip needs."
+ },
+ "carry-on-only-packing-list": {
+  "hero": "/guides/art/carry-on-only-packing-list-hero.webp",
+  "thumb": "/guides/art/carry-on-only-packing-list-thumb.webp",
+  "figure": "/guides/art/carry-on-only-packing-list-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A checklist of four ways to make a week fit in a carry-on, and a note on the order: bag, list, pack, weigh.",
+  "caption": "Ways to make it fit, once the bag is chosen."
+ },
+ "packing-and-planning-for-a-trip-with-kids-or-a-baby": {
+  "hero": "/guides/art/packing-and-planning-for-a-trip-with-kids-or-a-baby-hero.webp",
+  "thumb": "/guides/art/packing-and-planning-for-a-trip-with-kids-or-a-baby-thumb.webp",
+  "figure": "/guides/art/packing-and-planning-for-a-trip-with-kids-or-a-baby-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A two-column comparison of travelling alone against travelling with a child or baby: packing, timing and plans, with a note on leaving gaps.",
+  "caption": "What changes when children come along."
+ },
+ "lost-passport-wallet-or-phone-abroad-what-to-have-ready": {
+  "hero": "/guides/art/lost-passport-wallet-or-phone-abroad-what-to-have-ready-hero.webp",
+  "thumb": "/guides/art/lost-passport-wallet-or-phone-abroad-what-to-have-ready-thumb.webp",
+  "figure": "/guides/art/lost-passport-wallet-or-phone-abroad-what-to-have-ready-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A checklist of five things to have ready before calling about a lost passport, wallet or phone, and a note to tell one person first.",
+  "caption": "What to gather before you make the first call."
+ },
+ "first-international-trip-checklist": {
+  "hero": "/guides/art/first-international-trip-checklist-hero.webp",
+  "thumb": "/guides/art/first-international-trip-checklist-thumb.webp",
+  "figure": "/guides/art/first-international-trip-checklist-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A timeline of a first international trip from checking the passport to sorting payment, phone and insurance, with a note to check rules at the official source.",
+  "caption": "The order to sort a first trip abroad, from the day you decide."
+ },
+ "road-trip-planning-checklist": {
+  "hero": "/guides/art/road-trip-planning-checklist-hero.webp",
+  "thumb": "/guides/art/road-trip-planning-checklist-thumb.webp",
+  "figure": "/guides/art/road-trip-planning-checklist-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A blank planning page with five things to fix before a road trip, and a checklist of four things to keep in the car.",
+  "caption": "The few decisions to make before you drive."
+ },
+ "night-before-you-travel-checklist": {
+  "hero": "/guides/art/night-before-you-travel-checklist-hero.webp",
+  "thumb": "/guides/art/night-before-you-travel-checklist-thumb.webp",
+  "figure": "/guides/art/night-before-you-travel-checklist-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A checklist of night-before checks: ID, card and cash, booking copies, phone charged and tomorrow's times, with a note about the house.",
+  "caption": "The night-before list. Six checks in all, the sixth is the house."
+ },
+ "what-is-due-on-my-car-right-now": {
+  "hero": "/guides/art/what-is-due-on-my-car-right-now-hero.webp",
+  "thumb": "/guides/art/what-is-due-on-my-car-right-now-thumb.webp",
+  "figure": "/guides/art/what-is-due-on-my-car-right-now-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A two-column card comparing how a car job comes due by miles and by months, with a note that whichever limit is reached first counts.",
+  "caption": "Work out each job both ways: distance since it was done, and months since."
+ },
+ "what-to-tell-a-mechanic-before-work-starts": {
+  "hero": "/guides/art/what-to-tell-a-mechanic-before-work-starts-hero.webp",
+  "thumb": "/guides/art/what-to-tell-a-mechanic-before-work-starts-thumb.webp",
+  "figure": "/guides/art/what-to-tell-a-mechanic-before-work-starts-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A three-line script for a repair shop: the specific job, a call before going over the limit, and a written estimate, plus optional extras.",
+  "caption": "A plain script, not legal advice. Say the job, the limit and the call."
+ },
+ "used-car-no-service-records-what-to-do": {
+  "hero": "/guides/art/used-car-no-service-records-what-to-do-hero.webp",
+  "thumb": "/guides/art/used-car-no-service-records-what-to-do-thumb.webp",
+  "figure": "/guides/art/used-car-no-service-records-what-to-do-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A four-step first-week timeline for a used car with no paperwork: ask the seller, note the mileage, find the manual, start a record.",
+  "caption": "Four steps for the first week with a used car that came with nothing on paper."
+ },
+ "car-maintenance-log-what-to-write-down": {
+  "hero": "/guides/art/car-maintenance-log-what-to-write-down-hero.webp",
+  "thumb": "/guides/art/car-maintenance-log-what-to-write-down-thumb.webp",
+  "figure": "/guides/art/car-maintenance-log-what-to-write-down-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A maintenance log table with columns for date, miles, what was done and who did it, marked as needed or optional, and a note to record facts.",
+  "caption": "The columns of a simple log. Cost or note is a fifth, optional one."
+ },
+ "selling-your-car-with-a-service-history": {
+  "hero": "/guides/art/selling-your-car-with-a-service-history-hero.webp",
+  "thumb": "/guides/art/selling-your-car-with-a-service-history-thumb.webp",
+  "figure": "/guides/art/selling-your-car-with-a-service-history-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A blank service record page with fields for date, miles, what was done, who did it and notes, beside a note to include only what you can back up.",
+  "caption": "The shape of a record to print for a buyer. Keep receipts separately."
+ },
+ "car-maintenance-by-mileage-start-with-your-manual": {
+  "hero": "/guides/art/car-maintenance-by-mileage-start-with-your-manual-hero.webp",
+  "thumb": "/guides/art/car-maintenance-by-mileage-start-with-your-manual-thumb.webp",
+  "figure": "/guides/art/car-maintenance-by-mileage-start-with-your-manual-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A blank three-row table with job, miles and months columns to fill in from the owner's manual, and a note about harder driving conditions.",
+  "caption": "A page to copy your manual's intervals onto, once. Leave a column blank if the manual does."
+ },
+ "winter-car-prep-checklist": {
+  "hero": "/guides/art/winter-car-prep-checklist-hero.webp",
+  "thumb": "/guides/art/winter-car-prep-checklist-thumb.webp",
+  "figure": "/guides/art/winter-car-prep-checklist-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A winter car checklist covering battery, tires, wiper blades, washer fluid and lights, with a note to check the emergency kit is complete.",
+  "caption": "Five checks plus the emergency kit. Note the date, even if nothing needed doing."
+ },
+ "two-cars-one-household-maintenance": {
+  "hero": "/guides/art/two-cars-one-household-maintenance-hero.webp",
+  "thumb": "/guides/art/two-cars-one-household-maintenance-thumb.webp",
+  "figure": "/guides/art/two-cars-one-household-maintenance-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A blank one-page record for a single car with name or plate, job, miles, insurance and registration dates, and a note to review both cars monthly.",
+  "caption": "Keep each car's record on its own page, and check both together."
+ },
+ "glove-box-checklist-what-to-keep": {
+  "hero": "/guides/art/glove-box-checklist-what-to-keep-hero.webp",
+  "thumb": "/guides/art/glove-box-checklist-what-to-keep-thumb.webp",
+  "figure": "/guides/art/glove-box-checklist-what-to-keep-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A comparison of what to keep in a glove box versus at home, beside a blank card with plate, VIN, oil, tire size, insurer and roadside number.",
+  "caption": "Keep the details in the car and the originals at home."
+ },
+ "car-paperwork-dates-organizer": {
+  "hero": "/guides/art/car-paperwork-dates-organizer-hero.webp",
+  "thumb": "/guides/art/car-paperwork-dates-organizer-thumb.webp",
+  "figure": "/guides/art/car-paperwork-dates-organizer-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A card showing six weeks as the look-ahead window for car paperwork dates, beside a checklist of the kind of paper, its date and where it is kept.",
+  "caption": "Registration, insurance, inspection: note the paper, the date and where it is."
+ },
+ "first-car-checklist-for-new-drivers": {
+  "hero": "/guides/art/first-car-checklist-for-new-drivers-hero.webp",
+  "thumb": "/guides/art/first-car-checklist-for-new-drivers-thumb.webp",
+  "figure": "/guides/art/first-car-checklist-for-new-drivers-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A five-item first-week checklist for a new driver: manual, mileage, papers, a record and a glove box card, with a note on the first entry.",
+  "caption": "None of it needs a garage: a notebook, a pen and about an hour."
+ },
+ "life-admin-the-work-nobody-teaches-you": {
+  "hero": "/guides/art/life-admin-the-work-nobody-teaches-you-hero.webp",
+  "thumb": "/guides/art/life-admin-the-work-nobody-teaches-you-thumb.webp",
+  "figure": "/guides/art/life-admin-the-work-nobody-teaches-you-figure.webp",
+  "figureWidth": 1000,
+  "figureHeight": 700,
+  "alt": "A checklist of five things life admin work needs, beside a note that no one notices admin that went right.",
+  "caption": "Five things this work actually needs. You may find you have only the first."
+ }
+}

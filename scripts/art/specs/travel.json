@@ -1,0 +1,490 @@
+[
+ {
+  "slug": "flight-changed-what-else-is-affected",
+  "area": "travel",
+  "line1": "The flight moved.",
+  "line2": "What else did it touch",
+  "pieces": [
+   {
+    "type": "compare",
+    "eyebrow": "Only walk downward",
+    "left": {
+     "label": "Booked after it",
+     "items": [
+      "Airport transfer",
+      "Hotel check-in",
+      "Dinner booking"
+     ]
+    },
+    "right": {
+     "label": "Booked before it",
+     "items": [
+      "Not affected",
+      "Do not walk upward"
+     ]
+    }
+   },
+   {
+    "type": "checklist",
+    "eyebrow": "Three questions, per booking",
+    "items": [
+     "What does this depend on?",
+     "What depends on this?",
+     "If it moves 3 hours, what first?"
+    ]
+   }
+  ],
+  "alt": "A two-column card of what a moved flight affects: transfer, hotel check-in and dinner booking, against what was booked before it, plus three questions to ask per booking.",
+  "caption": "When a flight moves, check what was booked after it. Nothing booked before it is affected."
+ },
+ {
+  "slug": "flight-delayed-with-a-connection-what-to-do-first",
+  "area": "travel",
+  "line1": "Delayed, connection next",
+  "line2": "The first 20 minutes",
+  "pieces": [
+   {
+    "type": "timeline",
+    "eyebrow": "The first twenty minutes",
+    "steps": [
+     {
+      "when": "First",
+      "what": "Check arrival time against your connection"
+     },
+     {
+      "when": "If it is tight",
+      "what": "Join the transfer or service desk queue"
+     },
+     {
+      "when": "While you queue",
+      "what": "Call the airline and check its app"
+     },
+     {
+      "when": "At the desk",
+      "what": "Know what you want before you reach it"
+     }
+    ]
+   },
+   {
+    "type": "script",
+    "eyebrow": "Two sentences at the desk",
+    "lines": [
+     {
+      "label": "Say",
+      "text": "My inbound flight is delayed, so I will miss my connection."
+     },
+     {
+      "label": "Ask",
+      "text": "Can you rebook me?"
+     }
+    ]
+   }
+  ],
+  "alt": "A timeline of the first twenty minutes after a delay, from checking the arrival time to knowing what you want at the desk, and a short script for the airline agent.",
+  "caption": "The order of the first twenty minutes when a delay threatens a connection."
+ },
+ {
+  "slug": "hotel-cannot-find-your-reservation",
+  "area": "travel",
+  "line1": "The desk says",
+  "line2": "there is no booking",
+  "pieces": [
+   {
+    "type": "script",
+    "eyebrow": "At the front desk",
+    "lines": [
+     {
+      "label": "Say",
+      "text": "I have a reservation and you are not able to find it."
+     },
+     {
+      "label": "Ask",
+      "text": "Can I give you a few ways to look it up?"
+     },
+     {
+      "label": "Then",
+      "text": "What can you do for me tonight?"
+     }
+    ]
+   },
+   {
+    "type": "checklist",
+    "eyebrow": "Ways to ask them to search",
+    "items": [
+     "The hotel's confirmation number",
+     "The booking site's reference",
+     "Surname of whoever paid",
+     "The card's last four digits",
+     "The dates alone"
+    ]
+   }
+  ],
+  "alt": "A three-line script for the hotel desk when the booking cannot be found, and a checklist of five ways to ask them to search for it.",
+  "caption": "An example opening for the desk. Change any of the words."
+ },
+ {
+  "slug": "organising-a-multi-stop-trip-without-a-spreadsheet",
+  "area": "travel",
+  "line1": "Many stops, one trip",
+  "line2": "without the spreadsheet",
+  "pieces": [
+   {
+    "type": "checklist",
+    "eyebrow": "Four things per booking",
+    "items": [
+     "What it is: provider and reference",
+     "When it starts, and ends",
+     "Which destination it belongs to",
+     "What it was booked around"
+    ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "The one everybody skips",
+    "text": "Write down what each booking was built on, once, when you book."
+   }
+  ],
+  "alt": "A checklist of the four things to record per booking, and a note about writing down what each booking depends on.",
+  "caption": "The four things to record for every booking on a trip with many stops."
+ },
+ {
+  "slug": "travel-document-checklist",
+  "area": "travel",
+  "line1": "An in-date passport",
+  "line2": "can still be refused",
+  "pieces": [
+   {
+    "type": "checklist",
+    "eyebrow": "Check these months ahead",
+    "items": [
+     "Passport expiry, every traveler",
+     "Blank pages",
+     "Visa or travel authorization",
+     "Consent for a child, one parent",
+     "Passport and booking names match"
+    ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "Not a backup",
+    "text": "A photo of a passport is not a travel document. Know where each real one is."
+   }
+  ],
+  "alt": "A checklist of what to check months ahead: passport expiry, blank pages, visa, child consent and matching names, plus a note that a photo is not a backup.",
+  "caption": "What to check months before you travel, for every traveler."
+ },
+ {
+  "slug": "how-to-plan-a-group-trip",
+  "area": "travel",
+  "line1": "Everyone asks you",
+  "line2": "who is on which booking",
+  "pieces": [
+   {
+    "type": "table",
+    "eyebrow": "Who is on what",
+    "columns": [
+     "Booking",
+     "People on it"
+    ],
+    "rows": [
+     [
+      "Flight",
+      "4 people"
+     ],
+     [
+      "Car hire",
+      "2 people"
+     ],
+     [
+      "Restaurant",
+      "3 people"
+     ]
+    ],
+    "example": true
+   },
+   {
+    "type": "checklist",
+    "eyebrow": "Decide these first",
+    "items": [
+     "Who is booking what",
+     "What is fixed, what is optional",
+     "Where the answers live"
+    ]
+   }
+  ],
+  "alt": "A small table showing how many people are on each of three bookings, and a checklist of three things a group decides first.",
+  "caption": "An example of recording who is on which booking. The numbers are illustrative."
+ },
+ {
+  "slug": "what-to-keep-on-paper-when-you-travel",
+  "area": "travel",
+  "line1": "Phone at four percent",
+  "line2": "in a taxi",
+  "pieces": [
+   {
+    "type": "page",
+    "eyebrow": "One page, printed",
+    "title": "What goes on it",
+    "rows": [
+     "Stay address, local language",
+     "Booking references",
+     "A phone number per booking",
+     "Insurance, assistance line",
+     "Passport numbers",
+     "One contact at home"
+    ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "Two copies",
+    "text": "One in hand luggage, one in a different bag or with another traveler."
+   }
+  ],
+  "alt": "A printable one-page list with the address in the local language, booking references, phone numbers, insurance, passport numbers and a contact at home.",
+  "caption": "The one page worth printing before you travel."
+ },
+ {
+  "slug": "how-to-write-a-one-page-trip-itinerary",
+  "area": "travel",
+  "line1": "A guidebook is not",
+  "line2": "an itinerary",
+  "pieces": [
+   {
+    "type": "table",
+    "eyebrow": "Three things on every line",
+    "columns": [
+     "Column",
+     "What goes in it"
+    ],
+    "rows": [
+     [
+      "Time",
+      "As on the booking"
+     ],
+     [
+      "Place",
+      "Where, in a few words"
+     ],
+     [
+      "Reference",
+      "Confirmation reference"
+     ]
+    ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "Leave room",
+    "text": "Leave the rest of the day empty on purpose."
+   }
+  ],
+  "alt": "A table of the three columns for each line of a one-page itinerary: time, place and reference, with a note to leave the rest of the day empty.",
+  "caption": "The three things every line of a one-page itinerary answers."
+ },
+ {
+  "slug": "packing-list-for-a-week-away",
+  "area": "travel",
+  "line1": "A packing list",
+  "line2": "you will actually tick",
+  "pieces": [
+   {
+    "type": "checklist",
+    "eyebrow": "Layer one: the basics",
+    "items": [
+     "Passport or photo ID",
+     "Bank card",
+     "Copies of your bookings",
+     "Some cash",
+     "Phone, and something to charge it"
+    ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "Layer two",
+    "text": "Add two or three things that make this trip different, not everything possible."
+   }
+  ],
+  "alt": "A checklist of the five basics every trip needs, with a note about adding two or three extras for this particular trip.",
+  "caption": "The first layer of a packing list, before you add what this trip needs."
+ },
+ {
+  "slug": "carry-on-only-packing-list",
+  "area": "travel",
+  "line1": "Pack the bag first",
+  "line2": "then the list",
+  "pieces": [
+   {
+    "type": "checklist",
+    "eyebrow": "Ways to make it fit",
+    "items": [
+     "Clothes that mix",
+     "Wear the heaviest shoes",
+     "Small containers for liquids",
+     "Leave what you can buy there"
+    ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "The order",
+    "text": "Choose the bag, write the list, pack to the list, weigh it before you leave."
+   }
+  ],
+  "alt": "A checklist of four ways to make a week fit in a carry-on, and a note on the order: bag, list, pack, weigh.",
+  "caption": "Ways to make it fit, once the bag is chosen."
+ },
+ {
+  "slug": "packing-and-planning-for-a-trip-with-kids-or-a-baby",
+  "area": "travel",
+  "line1": "Same trip,",
+  "line2": "with a child",
+  "pieces": [
+   {
+    "type": "compare",
+    "eyebrow": "What changes",
+    "left": {
+     "label": "On your own",
+     "items": [
+      "One bag of your own things",
+      "Flexible timing",
+      "A plan you can change"
+     ]
+    },
+    "right": {
+     "label": "With a child",
+     "items": [
+      "Extras for each child",
+      "Naps and meals set timing",
+      "Room for a bad day"
+     ]
+    }
+   },
+   {
+    "type": "note",
+    "eyebrow": "Pace",
+    "text": "Leave one gap in each day, and one day with nothing in it."
+   }
+  ],
+  "alt": "A two-column comparison of travelling alone against travelling with a child or baby: packing, timing and plans, with a note on leaving gaps.",
+  "caption": "What changes when children come along."
+ },
+ {
+  "slug": "lost-passport-wallet-or-phone-abroad-what-to-have-ready",
+  "area": "travel",
+  "line1": "Your passport is gone.",
+  "line2": "What to have ready",
+  "pieces": [
+   {
+    "type": "checklist",
+    "eyebrow": "Before you call anyone",
+    "items": [
+     "What was lost, and when last seen",
+     "Who issued it",
+     "Where copies or records are",
+     "How you can be reached now",
+     "Who else needs to know"
+    ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "Tell one person first",
+    "text": "One sentence: what was lost, where you are, what you need."
+   }
+  ],
+  "alt": "A checklist of five things to have ready before calling about a lost passport, wallet or phone, and a note to tell one person first.",
+  "caption": "What to gather before you make the first call."
+ },
+ {
+  "slug": "first-international-trip-checklist",
+  "area": "travel",
+  "line1": "Your first trip abroad.",
+  "line2": "What to do, and when",
+  "pieces": [
+   {
+    "type": "timeline",
+    "eyebrow": "In a sensible order",
+    "steps": [
+     {
+      "when": "As you decide",
+      "what": "Check your passport and entry rules"
+     },
+     {
+      "when": "A few months out",
+      "what": "Note when each document expires"
+     },
+     {
+      "when": "Once booked",
+      "what": "Keep confirmations in one place"
+     },
+     {
+      "when": "Before you leave",
+      "what": "Sort payment, phone and insurance"
+     }
+    ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "Check at the source",
+    "text": "Entry rules differ and change. Use the official pages for the country you visit."
+   }
+  ],
+  "alt": "A timeline of a first international trip from checking the passport to sorting payment, phone and insurance, with a note to check rules at the official source.",
+  "caption": "The order to sort a first trip abroad, from the day you decide."
+ },
+ {
+  "slug": "road-trip-planning-checklist",
+  "area": "travel",
+  "line1": "Nothing is fixed",
+  "line2": "until you leave",
+  "pieces": [
+   {
+    "type": "page",
+    "eyebrow": "Road trip planning page",
+    "title": "Fix these before you drive",
+    "rows": [
+     "Distance per day",
+     "Stays and references",
+     "Car check",
+     "Documents together",
+     "Who drives, and when"
+    ]
+   },
+   {
+    "type": "checklist",
+    "eyebrow": "In the car",
+    "items": [
+     "Water and snacks within reach",
+     "Chargers",
+     "Something to clean up with",
+     "A small bag for the night"
+    ]
+   }
+  ],
+  "alt": "A blank planning page with five things to fix before a road trip, and a checklist of four things to keep in the car.",
+  "caption": "The few decisions to make before you drive."
+ },
+ {
+  "slug": "night-before-you-travel-checklist",
+  "area": "travel",
+  "line1": "Ten minutes tonight",
+  "line2": "morning is only leaving",
+  "pieces": [
+   {
+    "type": "checklist",
+    "eyebrow": "The list",
+    "items": [
+     "Passport or ID, in your carry bag",
+     "Bank card, and some cash",
+     "Copies of your bookings",
+     "Phone charged, and a charger",
+     "Tomorrow's times, checked once"
+    ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "The house",
+    "text": "Things off, windows shut, someone who knows you are away."
+   }
+  ],
+  "alt": "A checklist of night-before checks: ID, card and cash, booking copies, phone charged and tomorrow's times, with a note about the house.",
+  "caption": "The night-before list. Six checks in all, the sixth is the house."
+ }
+]

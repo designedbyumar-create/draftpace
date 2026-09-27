@@ -30,7 +30,7 @@ import { collectionStructuredData, guideStructuredData, jsonLd } from "@/lib/str
 import Breadcrumbs, { type BreadcrumbItem } from "@/components/public/guides/Breadcrumbs";
 import NextSteps from "@/components/public/guides/NextSteps";
 import Sources from "@/components/public/guides/Sources";
-import { bodyWithImage, guideImage } from "@/content/guideImages";
+import { bodyWithFigure, guideArt } from "@/content/guideArt";
 import GuideNotice from "@/components/public/guides/GuideNotice";
 
 /**
@@ -111,7 +111,7 @@ export async function generateMetadata({
     },
     // Without this, every shared guide (and every Pinterest scrape of one)
     // inherited the homepage's title and description from the root layout.
-    // The image comes from opengraph-image.tsx beside this file.
+    // The image is the guide's own hero when it has one, and otherwise the text card from opengraph-image.tsx beside this file.
     openGraph: {
       type: "article",
       title: socialTitle,
@@ -122,8 +122,9 @@ export async function generateMetadata({
       publishedTime: guide.publishedAt,
       modifiedTime: guide.updatedAt ?? guide.publishedAt,
       ...(guideArea ? { section: guideArea.label } : {}),
+      ...(guideArt(guide.slug) ? { images: [{ url: guideArt(guide.slug)!.hero, width: 1200, height: 630, alt: guideArt(guide.slug)!.alt }] } : {}),
     },
-    twitter: { card: "summary_large_image", title: socialTitle, description },
+    twitter: { card: "summary_large_image", title: socialTitle, description, ...(guideArt(guide.slug) ? { images: [guideArt(guide.slug)!.hero] } : {}) },
   };
 }
 
@@ -146,7 +147,7 @@ export default async function GuideOrHubPage({ params }: { params: Promise<{ gui
   const headings = guideHeadings(guide.body);
   const { Mark } = areaIdentity(guide.areaSlug);
   const counterpart = localeCounterpart(guide);
-  const image = guideImage(guide.slug);
+  const art = guideArt(guide.slug);
 
   // The trail is built once and used twice: drawn above the title, and
   // emitted as BreadcrumbList data. Google only trusts the second when
@@ -175,7 +176,7 @@ export default async function GuideOrHubPage({ params }: { params: Promise<{ gui
               areaPath: guideArea ? `/guides/${guideArea.slug}` : undefined,
               wordCount: guideWordCount(guide),
               faq: faqItems,
-              image: image ? { url: image.cover, width: 1200, height: 630 } : undefined,
+              image: art ? { url: art.hero, width: 1200, height: 630 } : undefined,
             }),
           ),
         }}
@@ -189,7 +190,7 @@ export default async function GuideOrHubPage({ params }: { params: Promise<{ gui
         <Container width="wide" className="pb-10 pt-10 sm:pt-14">
           <Breadcrumbs trail={trail} />
 
-          <div className={`mt-5 grid gap-8 lg:items-center lg:gap-12 ${image ? "lg:grid-cols-[minmax(0,1fr)_320px]" : "lg:grid-cols-[minmax(0,1fr)_180px]"}`}>
+          <div className={`mt-5 grid gap-8 lg:items-center lg:gap-12 ${art ? "lg:grid-cols-[minmax(0,1fr)_340px]" : "lg:grid-cols-[minmax(0,1fr)_180px]"}`}>
             <div>
               <h1 className="max-w-[26ch] font-serif text-[30px] font-semibold leading-[1.1] tracking-tight text-balance sm:text-[40px]">
                 {guide.title}
@@ -234,13 +235,13 @@ export default async function GuideOrHubPage({ params }: { params: Promise<{ gui
             {/* The area mark. Decorative, and hidden on phones where the
                 headline should own the whole first screen. */}
             <div className="hidden text-[var(--area)] lg:block">
-              {image ? (
+              {art ? (
                 <Image
-                  src={image.cover}
+                  src={art.thumb}
                   alt=""
-                  width={1200}
-                  height={630}
-                  sizes="320px"
+                  width={800}
+                  height={600}
+                  sizes="340px"
                   priority
                   className="h-auto w-full rounded-[var(--radius-xl)] shadow-[0_10px_30px_-12px_rgba(0,0,0,0.25)]"
                 />
@@ -256,13 +257,13 @@ export default async function GuideOrHubPage({ params }: { params: Promise<{ gui
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_236px] lg:gap-16">
           <article className="min-w-0 max-w-[68ch]">
             <GuideContents headings={headings} variant="disclosure" />
-            <GuideBody blocks={bodyWithImage(guide)} />
+            <GuideBody blocks={bodyWithFigure(guide)} />
 
             {guide.sources && <Sources sources={guide.sources} />}
             <GuideNotice areaSlug={guide.areaSlug} />
 
             <NextSteps
-              next={nextGuide && guide.next ? { guide: nextGuide, reason: guide.next.reason } : undefined}
+              next={nextGuide && guide.next ? { guide: nextGuide, reason: guide.next.reason, thumb: guideArt(nextGuide.slug)?.thumb } : undefined}
               also={picks.filter((pick) => pick.guide.slug !== nextGuide?.slug)}
               hub={
                 guideArea
@@ -429,12 +430,12 @@ function AreaHub({ slug }: { slug: string }) {
                           href={`/guides/${guide.slug}`}
                           className="group flex h-full flex-col rounded-[var(--radius-xl)] border border-[var(--area)]/40 bg-[var(--area-soft)] p-4"
                         >
-                          {guideImage(guide.slug) && (
+                          {guideArt(guide.slug) && (
                             <Image
-                              src={guideImage(guide.slug)!.cover}
+                              src={guideArt(guide.slug)!.thumb}
                               alt=""
-                              width={1200}
-                              height={630}
+                              width={800}
+                              height={600}
                               sizes="(min-width: 640px) 220px, 100vw"
                               className="mb-3 h-auto w-full rounded-lg"
                             />
@@ -460,12 +461,24 @@ function AreaHub({ slug }: { slug: string }) {
                     <ul className="mt-4 flex flex-col divide-y divide-[var(--border)]">
                       {cluster.guides.map((guide) => (
                         <li key={guide.slug}>
-                          <Link href={`/guides/${guide.slug}`} className="group block py-4 first:pt-0">
-                            <span className="block text-[17px] font-semibold leading-snug text-[var(--text)] transition-colors group-hover:text-[var(--area)]">
-                              {guide.title}
+                          <Link href={`/guides/${guide.slug}`} className="group flex gap-4 py-4 first:pt-0">
+                            {guideArt(guide.slug) && (
+                              <Image
+                                src={guideArt(guide.slug)!.thumb}
+                                alt=""
+                                width={800}
+                                height={600}
+                                sizes="132px"
+                                className="hidden h-[99px] w-[132px] shrink-0 rounded-lg sm:block"
+                              />
+                            )}
+                            <span className="min-w-0">
+                              <span className="block text-[17px] font-semibold leading-snug text-[var(--text)] transition-colors group-hover:text-[var(--area)]">
+                                {guide.title}
+                              </span>
+                              <span className="mt-1.5 block text-[14.5px] leading-relaxed text-[var(--muted)]">{guide.dek}</span>
+                              <span className="mt-2 block font-mono text-[11px] text-[var(--faint)]">{readingTimeLabel(guide)}</span>
                             </span>
-                            <span className="mt-1.5 block text-[14.5px] leading-relaxed text-[var(--muted)]">{guide.dek}</span>
-                            <span className="mt-2 block font-mono text-[11px] text-[var(--faint)]">{readingTimeLabel(guide)}</span>
                           </Link>
                         </li>
                       ))}

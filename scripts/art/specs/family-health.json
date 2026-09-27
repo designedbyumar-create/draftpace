@@ -1,0 +1,328 @@
+[
+ {
+  "slug": "what-goes-in-a-family-health-binder",
+  "area": "family-health",
+  "line1": "Health info lives",
+  "line2": "in a head and a drawer",
+  "pieces": [
+   {
+    "type": "page",
+    "eyebrow": "Health page, one per person",
+    "title": "Name at the top",
+    "rows": [
+     "Name and date of birth",
+     "Allergies, and what happens",
+     "Medications",
+     "Conditions, in your words",
+     "Doctors and pharmacy",
+     "Insurance and who to call"
+    ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "One rule",
+    "text": "One page per person. Never two people on one page."
+   }
+  ],
+  "alt": "A blank health page with fields for name, allergies, medications, conditions, doctors and insurance, beside a note saying one page per person.",
+  "caption": "The fields worth writing down for each person, one page each."
+ },
+ {
+  "slug": "school-and-camp-health-forms-what-to-have-ready",
+  "area": "family-health",
+  "line1": "The same form,",
+  "line2": "every single year",
+  "pieces": [
+   {
+    "type": "table",
+    "eyebrow": "The order forms ask in",
+    "columns": [
+     "Section",
+     "What it asks"
+    ],
+    "rows": [
+     [
+      "Who and who to call",
+      "Child, emergency contact"
+     ],
+     [
+      "Insurance and doctors",
+      "Insurer, member ID, doctor"
+     ],
+     [
+      "Health",
+      "Allergies, medications"
+     ],
+     [
+      "Vaccines",
+      "Record or signed statement"
+     ]
+    ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "Before you copy",
+    "text": "Ask the camp or school what they need, and follow their instructions."
+   }
+  ],
+  "alt": "A table of the order camp and school forms usually ask in, from who and who to call through insurance, health and vaccines, with a note to ask the camp what it needs.",
+  "caption": "Many forms follow this order, so your page can too."
+ },
+ {
+  "slug": "babysitter-and-grandparent-info-sheet",
+  "area": "family-health",
+  "line1": "A sitter needs one page,",
+  "line2": "not a long talk",
+  "pieces": [
+   {
+    "type": "checklist",
+    "eyebrow": "Sitter sheet",
+    "title": "What to put on it",
+    "items": [
+     "Allergies first, and what happens",
+     "What is taken now, dose, how often",
+     "Who to call: you, a second person",
+     "What to do in an emergency",
+     "Bedtime, comforts and fears"
+    ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "Leave off",
+    "text": "Insurance member ID and the full vaccine record."
+   }
+  ],
+  "alt": "A sitter sheet checklist covering allergies, what is taken now, who to call, emergency steps and bedtime notes, beside a note on what to leave off.",
+  "caption": "What goes on a one-page sheet for a sitter or grandparent."
+ },
+ {
+  "slug": "doctor-appointment-prep-checklist",
+  "area": "family-health",
+  "line1": "Most visits are short.",
+  "line2": "Your list is not",
+  "pieces": [
+   {
+    "type": "timeline",
+    "eyebrow": "Around the visit",
+    "title": "Doctor appointment",
+    "steps": [
+     {
+      "when": "Day before",
+      "what": "Write questions, one per line"
+     },
+     {
+      "when": "Day before",
+      "what": "List what is taken now, note symptoms"
+     },
+     {
+      "when": "Day before",
+      "what": "Bring your insurance card"
+     },
+     {
+      "when": "After the visit",
+      "what": "Note what was said, while fresh"
+     }
+    ]
+   }
+  ],
+  "alt": "A timeline for a doctor visit: write questions, list what is taken and note symptoms the day before, bring the insurance card, then note what was said afterward.",
+  "caption": "A short paperwork list for the day before a doctor visit."
+ },
+ {
+  "slug": "questions-to-bring-to-the-doctor",
+  "area": "family-health",
+  "line1": "Write the question,",
+  "line2": "not the guess",
+  "pieces": [
+   {
+    "type": "compare",
+    "eyebrow": "How to write a question",
+    "left": {
+     "label": "Hard to answer",
+     "items": [
+      "Is swimming okay?"
+     ]
+    },
+    "right": {
+     "label": "Easier to answer",
+     "items": [
+      "Can she swim this week?"
+     ]
+    }
+   },
+   {
+    "type": "note",
+    "eyebrow": "In the room",
+    "text": "Tick each question as it is answered. Ask what is left before you go."
+   }
+  ],
+  "alt": "A comparison of a vague question, is swimming okay, with a specific one, can she swim this week, plus a note to tick questions off in the room.",
+  "caption": "One question per line, the important one first."
+ },
+ {
+  "slug": "medication-list-what-to-write-down",
+  "area": "family-health",
+  "line1": "Copy the label.",
+  "line2": "Do not paraphrase it",
+  "pieces": [
+   {
+    "type": "table",
+    "eyebrow": "Medication list, three columns",
+    "columns": [
+     "Column",
+     "What goes in it"
+    ],
+    "rows": [
+     [
+      "Name",
+      "The name on the label"
+     ],
+     [
+      "Dose",
+      "As given to you"
+     ],
+     [
+      "How often",
+      "As given, same words"
+     ]
+    ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "Then",
+    "text": "Note the date you last checked the list was right."
+   }
+  ],
+  "alt": "A table with three columns for a medication list, name, dose and how often, each copied as given, with a note to record the date last checked.",
+  "caption": "Write the dose and frequency exactly as the label gives them."
+ },
+ {
+  "slug": "symptom-notes-for-a-doctor-visit",
+  "area": "family-health",
+  "line1": "Write it that day,",
+  "line2": "not a week later",
+  "pieces": [
+   {
+    "type": "page",
+    "eyebrow": "Symptom note",
+    "title": "Notes, not answers",
+    "rows": [
+     "What it is",
+     "When it started",
+     "How long it lasted",
+     "How bad: mild, moderate, severe",
+     "What helped, in your words"
+    ]
+   }
+  ],
+  "alt": "A symptom note page with fields for what it is, when it started, how long it lasted, how bad it was and what helped.",
+  "caption": "Four short notes help at a visit. It records what you saw, not what it means."
+ },
+ {
+  "slug": "emergency-contact-information-sheet",
+  "area": "family-health",
+  "line1": "Who to call,",
+  "line2": "on one page",
+  "pieces": [
+   {
+    "type": "checklist",
+    "eyebrow": "Emergency sheet",
+    "title": "What to include",
+    "items": [
+     "Name and age",
+     "Allergies, easy to see",
+     "Who to call, with a number",
+     "Their doctor, with a number",
+     "Insurance, if you want it there"
+    ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "Good to know",
+    "text": "A printed card is not a medical ID. Keep it where people can find it."
+   }
+  ],
+  "alt": "An emergency sheet checklist listing name and age, allergies, who to call, their doctor and insurance, beside a note that a printed card is not a medical ID.",
+  "caption": "What goes on a one-page emergency sheet."
+ },
+ {
+  "slug": "new-doctor-intake-what-to-bring",
+  "area": "family-health",
+  "line1": "A new doctor starts",
+  "line2": "from what you wrote",
+  "pieces": [
+   {
+    "type": "page",
+    "eyebrow": "Intake summary",
+    "title": "For a first visit",
+    "rows": [
+     "Allergies, and what happens",
+     "Medications, dose, how often",
+     "Conditions, in your words",
+     "Family history, as far as known",
+     "Recent symptoms, with dates"
+    ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "Also",
+    "text": "Insurance information and a photo ID, if the clinic asks."
+   }
+  ],
+  "alt": "An intake summary page with fields for allergies, medications, conditions, family history and recent symptoms, beside a note about insurance and photo ID.",
+  "caption": "One page for a first visit, alongside the clinic's own paperwork."
+ },
+ {
+  "slug": "what-to-leave-off-a-health-page-you-hand-over",
+  "area": "family-health",
+  "line1": "Handing over everything",
+  "line2": "is rarely a good idea",
+  "pieces": [
+   {
+    "type": "checklist",
+    "eyebrow": "Before you print",
+    "title": "Ask three questions",
+    "items": [
+     "Do they need this fact?",
+     "Fine if it sat on a counter?",
+     "Is it current?"
+    ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "Keep",
+    "text": "Keep the full record for yourself. Each page is a selection."
+   }
+  ],
+  "alt": "A checklist of three questions to ask before printing a health page, whether they need it, whether it could sit on a counter and whether it is current.",
+  "caption": "Three questions to ask before you hand a page over."
+ },
+ {
+  "slug": "caring-for-a-parent-and-kids-one-place",
+  "area": "family-health",
+  "line1": "A parent and kids,",
+  "line2": "the same headings",
+  "pieces": [
+   {
+    "type": "checklist",
+    "eyebrow": "A simple rule",
+    "items": [
+     "One page per person, name on top",
+     "Same headings on every page",
+     "One place to keep them all",
+     "Print one person at a time"
+    ],
+    "done": [
+     0
+    ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "Headings",
+    "text": "Allergies, medications, doctors, insurance, who to call."
+   }
+  ],
+  "alt": "A four-line rule for keeping a parent's and children's health pages: one page per person, the same headings, one place, and print one person at a time.",
+  "caption": "Adults and children use the same kind of page."
+ }
+]
