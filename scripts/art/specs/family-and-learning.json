@@ -19,14 +19,14 @@
    },
    {
     "type": "stat",
-    "eyebrow": "Highest level",
+    "eyebrow": "High-regulation group",
     "value": "9",
-    "caption": "jurisdictions sit in the high group",
+    "caption": "states ask for a portfolio or formal assessment",
     "foot": "Confirm yours at the source"
    }
   ],
-  "alt": "A choice card asking which of four levels a state falls into, None, Low, Moderate or High, beside a card showing nine jurisdictions in the high group.",
-  "caption": "The four levels the state table sorts every state into. Laws change, so confirm yours."
+  "alt": "A choice card asking which of four levels a state falls into, None, Low, Moderate or High, beside a card showing nine states in the high group.",
+  "caption": "The four levels the table sorts every state into. Confirm yours at the source, since laws change."
  },
  {
   "slug": "homeschool-record-keeping-template",
@@ -141,29 +141,38 @@
  {
   "slug": "how-to-check-if-your-child-learned-something",
   "area": "family-and-learning",
-  "line1": "Covered is not",
-  "line2": "the same as learned",
+  "line1": "Did it stick?",
+  "line2": "Four results, not two",
   "pieces": [
    {
-    "type": "choice",
-    "eyebrow": "Four possible results",
-    "question": "What did the check tell you?",
-    "options": [
-     "Solid, move on",
-     "Worth another look",
-     "Mixed, more practice",
-     "Not enough to say"
+    "eyebrow": "One check, four results",
+    "columns": [
+     "Result",
+     "Next"
     ],
-    "picked": 3
-   },
-   {
-    "type": "note",
-    "eyebrow": "When to ask",
-    "text": "Ask weeks later, not at the end of the lesson. Four questions, written down."
+    "rows": [
+     [
+      "Solid",
+      "Move on"
+     ],
+     [
+      "Mixed",
+      "More practice"
+     ],
+     [
+      "Worth another look",
+      "Reteach differently"
+     ],
+     [
+      "Not enough to say",
+      "Ask again later"
+     ]
+    ],
+    "type": "table"
    }
   ],
-  "alt": "A choice card listing the four possible results of a learning check, ending in Not enough to say, beside a note to ask weeks after the lesson.",
-  "caption": "The four possible results of a short check. Not enough to say is a real answer."
+  "alt": "A four-row table pairing each check result, solid, mixed, worth another look, not enough to say, with what to do next.",
+  "caption": "The four results of a short check, and what each one means for what happens next."
  },
  {
   "slug": "preparing-for-a-homeschool-evaluation",
@@ -267,44 +276,43 @@
  {
   "slug": "how-long-to-keep-homeschool-records",
   "area": "family-and-learning",
-  "line1": "Fifty identical sheets",
-  "line2": "say nothing fifty times",
+  "line1": "How long to keep",
+  "line2": "homeschool records",
   "pieces": [
    {
     "type": "table",
-    "eyebrow": "What to do with what",
+    "eyebrow": "What to keep, how long",
     "columns": [
      "Item",
-     "What to do"
+     "How long"
     ],
     "rows": [
      [
-      "Dated progress work",
-      "Keep"
+      "Daily worksheets",
+      "A handful, then toss"
      ],
      [
-      "Test results",
+      "State test results",
       "Keep permanently"
      ],
      [
-      "Large projects",
-      "Photograph, recycle"
+      "Your own log",
+      "Keep permanently"
      ],
      [
-      "Daily worksheets",
-      "Keep a few, recycle"
+      "Florida portfolio",
+      "2 years, by law"
      ]
     ]
    },
    {
-    "type": "stat",
-    "eyebrow": "Named retention",
-    "value": "2 years",
-    "caption": "Florida and New Hampshire list a portfolio kept two years"
+    "type": "note",
+    "eyebrow": "Not legal advice",
+    "text": "Rules change. Check your own state's page before you toss anything."
    }
   ],
-  "alt": "A table sorting homeschool papers into keep, keep permanently, photograph and recycle, with a card noting two states that name a two year portfolio period.",
-  "caption": "Which papers to keep, photograph or recycle. Check your state before discarding anything."
+  "alt": "A small table showing what to keep and for how long: worksheets a handful, test results and the parent's own log kept permanently, and Florida's two-year portfolio law, next to a note to check your...",
+  "caption": "Retention windows from HSLDA's general guidance and Florida's own statute."
  },
  {
   "slug": "homeschool-weekly-plan-with-a-spare-day",
@@ -414,28 +422,35 @@
  {
   "slug": "do-you-have-to-count-homeschool-days-or-hours",
   "area": "family-and-learning",
-  "line1": "Days, hours, both or",
-  "line2": "nothing at all",
+  "line1": "One state counts,",
+  "line2": "one state does not",
   "pieces": [
    {
-    "type": "choice",
-    "eyebrow": "Find out once, properly",
-    "question": "Does my state ask for days, hours, both or neither?",
-    "options": [
-     "Days",
-     "Hours",
-     "Both",
-     "Neither"
-    ]
+    "eyebrow": "Two real state rules",
+    "left": {
+     "label": "Pennsylvania",
+     "items": [
+      "180 days or 900 hrs",
+      "Filed by August 1"
+     ]
+    },
+    "right": {
+     "label": "Texas",
+     "items": [
+      "No day/hour count",
+      "Not monitored by TEA"
+     ]
+    },
+    "type": "compare"
    },
    {
-    "type": "note",
-    "eyebrow": "If you have to count",
-    "text": "Mark a day as you go. A box ticked on the day beats a June reconstruction."
+    "eyebrow": "If yours does count",
+    "text": "Mark a day as you go. A box ticked on the day beats a June reconstruction.",
+    "type": "note"
    }
   ],
-  "alt": "A choice card asking whether a state counts days, hours, both or neither, beside a note to mark each day as you go.",
-  "caption": "The one question to answer at the start of the year, from the official source."
+  "alt": "A card comparing Pennsylvania's 180-day or 900-hour rule with Texas's no-count rule, beside a note to mark each day as you go if yours counts.",
+  "caption": "Two real states, shown as examples of the two patterns: a set count, and no count at all."
  },
  {
   "slug": "how-to-start-homeschooling-first-month-paperwork",
@@ -547,38 +562,33 @@
  {
   "slug": "homeschool-subject-not-working-what-to-change-first",
   "area": "family-and-learning",
-  "line1": "Before you replace",
-  "line2": "the curriculum",
+  "line1": "Try the cheap fix first",
+  "line2": "before new curriculum",
   "pieces": [
    {
-    "type": "timeline",
-    "eyebrow": "Cheapest change first",
+    "eyebrow": "The order that works",
     "steps": [
      {
-      "when": "Change the time",
-      "what": "Earlier, later or shorter"
+      "when": "1. The time",
+      "what": "Teach it first, not last in the day"
      },
      {
-      "when": "Then the amount",
-      "what": "Less of it, for now"
+      "when": "2. The amount",
+      "what": "Fewer problems or pages, same subject"
      },
      {
-      "when": "Go back a step",
-      "what": "Check the step before this one is solid"
+      "when": "3. One step back",
+      "what": "Check the skill right before this one"
      },
      {
-      "when": "Last: material",
-      "what": "Only if time, amount and step are right"
+      "when": "4. The material",
+      "what": "Only after the first three come back clean"
      }
-    ]
-   },
-   {
-    "type": "note",
-    "eyebrow": "One at a time",
-    "text": "Change one thing at a time, smallest first."
+    ],
+    "type": "timeline"
    }
   ],
-  "alt": "A four-step timeline for a homeschool subject that is not working, from changing the time to changing the material, with a note to change one thing at a time.",
-  "caption": "The order to try changes in, cheapest first."
+  "alt": "A four-step timeline: change the time of day, then the amount, then go back one step, then look at new material last.",
+  "caption": "The order to try when a subject stalls. Example: long division, in the guide."
  }
 ]

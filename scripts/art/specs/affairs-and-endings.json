@@ -151,27 +151,28 @@
  {
   "slug": "named-executor-what-you-agreed-to",
   "area": "affairs-and-endings",
-  "line1": "Someone named you.",
-  "line2": "Here is the actual job",
+  "line1": "Your first week",
+  "line2": "as executor",
   "pieces": [
    {
-    "type": "choice",
-    "eyebrow": "Named executor",
-    "question": "You were named executor. What now?",
-    "options": [
-     "Serve, following the steps in order",
-     "Bring in a probate attorney",
-     "Decline, before you start acting"
+    "type": "checklist",
+    "eyebrow": "First week as executor",
+    "items": [
+     "Get certified death certificates",
+     "Find the original will",
+     "Apply for an estate EIN",
+     "Open an estate bank account",
+     "Keep estate money separate"
     ]
    },
    {
     "type": "note",
-    "eyebrow": "The order counts",
-    "text": "Wait out your state's creditor claim period before you distribute anything."
+    "eyebrow": "You can say no",
+    "text": "Decline before you act. Once letters are issued, stepping back needs a court petition."
    }
   ],
-  "alt": "A choice card listing the options for someone named executor: serve, bring in a probate attorney, or decline before acting, beside a note about creditor claim periods.",
-  "caption": "You can decline formally, as long as you have not started acting as executor."
+  "alt": "A checklist card of an executor's first week, from certified death certificates to opening a separate estate bank account, beside a note that you can decline before you start acting.",
+  "caption": "The first week, roughly in order. Decline before this point if you cannot take it on."
  },
  {
   "slug": "named-executor-what-you-agreed-to-uk",
@@ -446,8 +447,8 @@
  {
   "slug": "hospital-for-two-weeks-what-would-someone-need-to-find",
   "area": "affairs-and-endings",
-  "line1": "If you were in the hospital",
-  "line2": "what gets paid?",
+  "line1": "If you were in hospital",
+  "line2": "what gets paid",
   "pieces": [
    {
     "type": "ledger",
@@ -553,80 +554,94 @@
  {
   "slug": "who-to-tell-when-someone-dies",
   "area": "affairs-and-endings",
-  "line1": "Who to tell first,",
+  "line1": "Who to call first,",
   "line2": "and what can wait",
   "pieces": [
    {
-    "type": "timeline",
-    "eyebrow": "A sensible order",
-    "steps": [
-     {
-      "when": "First",
-      "what": "Close family, told by a person"
-     },
-     {
-      "when": "First few days",
-      "what": "Funeral team and whoever handles affairs"
-     },
-     {
-      "when": "Within weeks",
-      "what": "Employer, banks and insurers, by phone"
-     },
-     {
-      "when": "When you can",
-      "what": "Utilities, subscriptions, the rest"
-     }
+    "type": "table",
+    "eyebrow": "Who to notify",
+    "columns": [
+     "Who",
+     "Needs",
+     "When"
+    ],
+    "rows": [
+     [
+      "Family",
+      "Just the news",
+      "Today"
+     ],
+     [
+      "Social Security",
+      "SSN, date",
+      "Days"
+     ],
+     [
+      "Bank, insurer",
+      "Death cert.",
+      "2 weeks"
+     ],
+     [
+      "Credit bureaus",
+      "Death cert.",
+      "1 month"
+     ]
     ]
    },
    {
-    "type": "note",
-    "eyebrow": "As you go",
-    "text": "Keep one page of who you told, when, and what they need next."
+    "type": "checklist",
+    "eyebrow": "What can wait",
+    "items": [
+     "Closing accounts",
+     "Canceling email or phone",
+     "Selling the house or car",
+     "Telling everyone yourself"
+    ]
    }
   ],
-  "alt": "A timeline of who to tell when someone dies, from close family first to utilities and subscriptions when you have the energy, beside a note to keep a log.",
-  "caption": "Most of the list is not urgent."
+  "alt": "A table listing who to notify after a death, from close family through Social Security, banks and credit bureaus, with what each needs and when, beside a short checklist of what can wait.",
+  "caption": "Who to notify and what can wait, in order. Example order only."
  },
  {
   "slug": "update-your-paperwork-after-a-life-change",
   "area": "affairs-and-endings",
-  "line1": "You moved. You married.",
-  "line2": "Now what is out of date",
+  "line1": "Paperwork goes stale",
+  "line2": "all at once",
   "pieces": [
    {
     "type": "table",
-    "eyebrow": "Where to look, by event",
+    "eyebrow": "By event",
     "columns": [
-     "What changed",
-     "Look again at"
+     "Event",
+     "Look at"
     ],
     "rows": [
      [
-      "You moved",
-      "Insurance, utilities"
+      "Married",
+      "Name, W-4, forms"
      ],
      [
-      "You married",
-      "Names on forms"
+      "Divorced",
+      "Beneficiary forms"
      ],
      [
-      "You had a child",
-      "Who would raise them"
+      "New baby",
+      "Coverage, 60 days"
      ],
      [
-      "You changed jobs",
-      "Old plan, who is named"
+      "New job",
+      "Old 401(k)"
      ]
     ]
    },
    {
     "type": "note",
-    "eyebrow": "Names first",
-    "text": "A divorce does not necessarily change who is named on a form by itself."
+    "eyebrow": "The real deadline",
+    "text": "Health coverage changes have a 60-day window from the event, not from when you get to it."
    }
   ],
-  "alt": "A table matching life events such as a move, a marriage, a new child or a new job to the paperwork worth looking at again, beside a note about names on forms.",
-  "caption": "Where to look, not what to do. Ask the provider or an attorney."
+  "alt": "A table of life events, marriage, divorce, a new baby and a new job, next to what to look at again for each, beside a note about the 60-day health coverage deadline.",
+  "caption": "Where to look again, by event."
  },
  {
   "slug": "safe-deposit-box-and-spare-keys-who-can-open-it",

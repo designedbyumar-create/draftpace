@@ -1,5 +1,4 @@
 import { LIFE_AREAS } from "./areas";
-import { HOMESCHOOL_STATE_REQUIREMENTS } from "@/lib/homeschoolStateRequirements";
 import { blockStrings } from "./guideText";
 
 /**
@@ -639,7 +638,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "homeschool-record-keeping-requirements-by-state",
     title: "Homeschool requirements by state: what records to keep",
-    dek: "A filterable table of all 50 states and DC in four levels, from nothing filed to portfolio or formal assessment. Confirm yours at the source.",
+    dek: "Our plain summary of what all 50 states and DC ask homeschoolers to keep, from nothing filed to a portfolio, plus how to confirm yours at the source.",
     primaryQuery: "homeschool requirements by state",
     next: { slug: "homeschool-notice-of-intent-explained", reason: "Once you know your level, this explains what a notice of intent is and how to find the form your state wants." },
     related: [
@@ -648,75 +647,284 @@ export const GUIDES: Guide[] = [
       { slug: "how-to-start-homeschooling-first-month-paperwork", reason: "Starting from scratch? Follow the order for the first month: what to file, what to record, what can wait." },
     ],
     publishedAt: "2026-08-30",
+    updatedAt: "2026-09-26",
     areaSlug: "family-and-learning",
+    sources: [
+      {
+        name: "HSLDA, Homeschool Laws By State",
+        url: "https://hslda.org/legal",
+        retrieved: "2026-09-26",
+        note: "General basis for grouping states by regulation level and confirming that requirements vary by state and change over time.",
+      },
+      {
+        name: "Texas Education Agency, Home Schooling",
+        url: "https://tea.texas.gov/texas-schools/general-information/finding-a-school-for-your-child/home-schooling",
+        retrieved: "2026-09-26",
+        note: "Backs the Texas None-group example, including that the state does not register or approve homeschool programs.",
+      },
+      {
+        name: "Pennsylvania Department of Education, Home Education Program",
+        url: "https://www.pa.gov/agencies/education/resources/policies-acts-and-laws/basic-education-circulars-becs/purdons-statutes/home-education-program",
+        retrieved: "2026-09-26",
+        note: "Backs the Pennsylvania High-group example: affidavit, portfolio, annual evaluation and grade-level testing.",
+      },
+      {
+        name: "Florida Department of Education, Home Education",
+        url: "https://www.fldoe.org/schools/school-choice/home-edu/",
+        retrieved: "2026-09-26",
+        note: "Backs the Florida High-group example: notice, portfolio of records and materials, annual evaluation.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Homeschool record requirements vary enormously between states. Some ask for nothing at all. Some want attendance only. A handful require a portfolio of work that an evaluator will actually look at.",
-          "The practical takeaway is that you should know which of four levels your state falls into, and then keep slightly more than it asks for, because the cost of keeping records is small and the cost of not having them when asked is not.",
-          "Laws change. Always confirm with your state homeschool association or department of education before relying on any summary, including this one.",
+          "Every state treats homeschool record keeping differently. In our summary of each state's own laws, 8 states file nothing with the state at all, 15 ask for a notice and basic records, 19 add some form of annual reporting or testing, and 9 require a portfolio or a formal yearly assessment. Find your state in the table below.",
+          "This is for a homeschooling parent who wants a plain read on where their state sits, not legal advice about their exact situation. It cannot tell you whether you are meeting the law today: state rules change, and only your state's department of education or a state homeschool association can confirm the current one.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Reading one row, as an example",
+        paragraphs: [
+          "Take Florida's row in the table below. It reads High, with the note: notice, portfolio of work and log kept two years, annual evaluation. Read plainly, that is a family filing something at the start of the year, keeping a running log and samples of a child's actual work for two years, and going through an evaluation once a year.",
+          "Now compare Alaska's row: None, with the note nothing filed, records for your own use. Both families can teach the same six subjects the same number of days a week. Only one of them has something to produce if anyone ever asks.",
         ],
       },
       {
         kind: "table",
         heading: "Every state, and what it asks you to keep",
-        intro: "Use the filter to find yours. The level is how much the state involves itself, not how hard homeschooling is there. Confirm against your state before relying on it, because these change.",
+        intro: "Sorted alphabetically. The level is how much the state involves itself, not how hard homeschooling is there or how good a job you are doing. Confirm against your own state before relying on it, because these rules change.",
         columns: ["State", "Level", "What you are asked to keep"],
-        // Derived, not duplicated: the Homeschooling Companion product
-        // reads the same array for its own setup, and this used to be a
-        // second hand-typed copy of it. One correction landed here while
-        // moving it: two entries used British spelling that had slipped
-        // past the locale pass already done on the rest of this layer.
-        rows: HOMESCHOOL_STATE_REQUIREMENTS.map((entry) => [entry.state, entry.level, entry.note]),
-      },
-      {
-        kind: "paragraphs",
-        heading: "Which states require a portfolio",
-        paragraphs: [
-          "Nine jurisdictions sit in the high group: the District of Columbia, Florida, Maryland, Massachusetts, New York, Ohio, Pennsylvania, South Carolina and Vermont. In our summary, those are the states that ask for a portfolio, a formal annual assessment or prior approval of your plan. A portfolio or work samples appear in six of the nine (the District of Columbia, Florida, Maryland, Ohio, Pennsylvania and South Carolina) and in four Moderate states (Louisiana, Maine, Missouri and New Hampshire). In Louisiana, Maine and Ohio a portfolio can stand in for a test.",
-          "If your state asks for a portfolio, someone may read it, and building it in April from memory is far harder than adding to it as you go.",
-        ],
-      },
-      {
-        kind: "paragraphs",
-        heading: "What a portfolio usually contains",
-        paragraphs: [
-          "A log of what was covered, samples of work from across the year rather than only the good pieces, attendance where your state counts it, and test results or an evaluator's report where those are required.",
-          "If you are in one of the nine high-regulation jurisdictions, the detail matters, and it is set out in [what actually goes in a homeschool portfolio](/guides/what-goes-in-a-homeschool-portfolio).",
+        rows: [
+          [
+            "Alabama",
+            "Low",
+            "Notice through a church or private school; attendance records",
+          ],
+          ["Alaska", "None", "Nothing filed; records for your own use"],
+          ["Arizona", "Low", "Notice of intent; keep your own records"],
+          ["Arkansas", "Moderate", "Notice of intent each year; records of instruction"],
+          [
+            "California",
+            "Moderate",
+            "Private school affidavit; attendance register and course list",
+          ],
+          [
+            "Colorado",
+            "Moderate",
+            "Notice; attendance, immunization and test or evaluation every other year",
+          ],
+          [
+            "Connecticut",
+            "None",
+            "Nothing required; portfolio only if you opt into review",
+          ],
+          ["Delaware", "Low", "Enrollment and attendance reported annually"],
+          [
+            "District of Columbia",
+            "High",
+            "Notice; portfolio available for review; annual reporting",
+          ],
+          [
+            "Florida",
+            "High",
+            "Notice; portfolio of work and log kept two years; annual evaluation",
+          ],
+          [
+            "Georgia",
+            "Moderate",
+            "Declaration of intent; attendance; annual progress reports kept",
+          ],
+          ["Hawaii", "Moderate", "Notice; record of curriculum; annual progress report"],
+          ["Idaho", "None", "Nothing filed; records for your own use"],
+          ["Illinois", "None", "Nothing filed; records for your own use"],
+          ["Indiana", "Low", "Attendance records, produced on request"],
+          [
+            "Iowa",
+            "Low",
+            "Options range from none to reporting; depends on the route chosen",
+          ],
+          ["Kansas", "Low", "Register as a non-accredited private school; keep attendance"],
+          ["Kentucky", "Low", "Notice; attendance and scholarship records"],
+          [
+            "Louisiana",
+            "Moderate",
+            "Application or notice; portfolio or test results annually",
+          ],
+          ["Maine", "Moderate", "Notice; annual assessment by test or portfolio review"],
+          [
+            "Maryland",
+            "High",
+            "Notice; portfolio reviewed by the district up to three times a year",
+          ],
+          [
+            "Massachusetts",
+            "High",
+            "Prior approval of your plan; progress reports as agreed",
+          ],
+          ["Michigan", "None", "Nothing filed under the home education route"],
+          [
+            "Minnesota",
+            "Moderate",
+            "Notice; annual testing; records of subjects and attendance",
+          ],
+          ["Mississippi", "Low", "Certificate of enrollment filed annually"],
+          [
+            "Missouri",
+            "Moderate",
+            "No notice, but a log of hours, samples of work and evaluations kept",
+          ],
+          ["Montana", "Low", "Notice; attendance and immunization records kept"],
+          [
+            "Nebraska",
+            "Moderate",
+            "Notice and information filed annually; attendance records",
+          ],
+          ["Nevada", "Low", "Notice of intent filed once; records for your own use"],
+          [
+            "New Hampshire",
+            "Moderate",
+            "Notice; portfolio kept two years; annual evaluation",
+          ],
+          ["New Jersey", "None", "Nothing filed; records for your own use"],
+          ["New Mexico", "Low", "Notice filed annually; immunization records"],
+          [
+            "New York",
+            "High",
+            "Notice; individualised plan; quarterly reports; annual assessment",
+          ],
+          [
+            "North Carolina",
+            "Moderate",
+            "Notice; attendance and immunization; annual standardised test kept",
+          ],
+          [
+            "North Dakota",
+            "Moderate",
+            "Notice; annual testing in certain grades; records kept",
+          ],
+          [
+            "Ohio",
+            "High",
+            "Notice; annual academic assessment by test or portfolio review",
+          ],
+          ["Oklahoma", "None", "Nothing filed; records for your own use"],
+          [
+            "Oregon",
+            "Moderate",
+            "Notice on starting; testing at certain grades, results kept",
+          ],
+          [
+            "Pennsylvania",
+            "High",
+            "Affidavit; log, portfolio, and annual evaluator review",
+          ],
+          [
+            "Rhode Island",
+            "Moderate",
+            "District approval; attendance and progress as the district requires",
+          ],
+          [
+            "South Carolina",
+            "High",
+            "Association or district option; portfolio, log and progress records",
+          ],
+          ["South Dakota", "Low", "Notice; testing at certain grades"],
+          [
+            "Tennessee",
+            "Moderate",
+            "Notice; attendance; testing at certain grades depending on route",
+          ],
+          ["Texas", "None", "Nothing filed; keep curriculum evidence for your own use"],
+          ["Utah", "Low", "One-time affidavit; records for your own use"],
+          ["Vermont", "High", "Enrollment filed annually; assessment and progress report"],
+          [
+            "Virginia",
+            "Moderate",
+            "Notice; annual evidence of progress by test or evaluation",
+          ],
+          [
+            "Washington",
+            "Moderate",
+            "Declaration of intent; annual test or assessment, results kept",
+          ],
+          ["West Virginia", "Moderate", "Notice; annual academic assessment kept"],
+          ["Wisconsin", "Low", "Annual enrollment report filed"],
+          ["Wyoming", "Low", "Curriculum submitted annually to the local board"],
         ],
       },
       {
         kind: "list",
-        checkable: true,
-        heading: "What to keep even where nothing is required",
-        intro: "Three things are worth recording regardless of your state, because they are the ones you will most want later.",
+        heading: "What the four levels mean",
+        intro: "This is our own summary, sorted by how much a state's law asks you to file or produce, not a rating of how strict or lenient it is to raise a family there.",
         items: [
-          "The date, the subject, and roughly what part of it. Unit 3, Lesson 12 is enough.",
-          "Whether it landed. One word does it: easy, about right, or difficult.",
-          "The occasional sentence about something that happened. She finally understood fractions. He reads better on the floor than at a desk.",
+          "None, 8 states: nothing is filed with the state. Records are for your own use.",
+          "Low, 15 states: a notice is typically filed, and basic records are kept, with no ongoing review.",
+          "Moderate, 19 states: notice plus some form of annual reporting or testing is typically required.",
+          "High, 9 states: a portfolio or a formal annual assessment is typically part of the law, not just a good habit.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Why most record keeping fails",
+        heading: "Which states ask for a portfolio",
         paragraphs: [
-          "It fails in one of two directions. Either nothing gets kept at all and a year cannot be accounted for, or somebody builds a system so heavy that it is abandoned by half term and the result is the same.",
-          "The version that survives is the one that takes under a minute a day and does not require you to feel behind when you miss a week.",
+          "Nine states sit in the high group: the District of Columbia, Florida, Maryland, Massachusetts, New York, Ohio, Pennsylvania, South Carolina and Vermont. In our summary, a portfolio or samples of work show up in ten states in total, those six of the nine High states, plus four Moderate ones: Louisiana, Maine, Missouri and New Hampshire. In Louisiana, Maine and Ohio, a portfolio review can stand in for a test rather than sit alongside one.",
+          "If your state asks for a portfolio, someone may actually read it. Building one in April from a year of memory is much harder than adding to it as you go, which is the whole case for [what actually goes in a homeschool portfolio](/guides/what-goes-in-a-homeschool-portfolio).",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Where this table can mislead you",
+        paragraphs: [
+          "None does not mean no rules exist, only that nothing is filed with the state. Texas sits in our None group, and Texas law still expects you to teach reading, spelling, grammar, math and good citizenship in a real and organized way, even though no one reviews your plan. Read None as low paperwork, not as no rules.",
+          "Our level is a summary, built from each state's own homeschool law or department of education guidance and sorted into four bands by how much the state asks you to file or produce. It is not a citation, and other sites sort the same states slightly differently, because there is no single official four-tier scale everyone uses. If you move states partway through a year, check both: what a notice or a portfolio needs at the state you are leaving rarely matches the one you are entering.",
+        ],
+      },
+      {
+        kind: "faq",
+        items: [
+          {
+            q: "Do I have to notify my state that I am homeschooling?",
+            a: "It depends on your state. In our summary, most states ask for some kind of notice, declaration or affidavit, though what counts as one and where it goes varies a lot, from a one-time filing to an annual one sent to your district. Eight states, including Texas, Illinois and Alaska, ask for nothing to be filed. Check your state's own department of education page to see what currently applies to you.",
+          },
+          {
+            q: "Which states require a homeschool portfolio?",
+            a: "In our summary, ten states expect a portfolio or samples of a child's actual work: the District of Columbia, Florida, Louisiana, Maine, Maryland, Missouri, New Hampshire, Ohio, Pennsylvania and South Carolina. In Louisiana, Maine and Ohio, a portfolio review can replace a test rather than sit alongside one. This is our own reading of each state's law, not a legal opinion, so confirm the current rule with your state.",
+          },
+          {
+            q: "Does my state require homeschool testing?",
+            a: "In our summary, 18 of the 51 jurisdictions include a required test or a formal evaluation in what they ask for, usually alongside a notice, and sometimes as an alternative to a portfolio rather than in addition to one. Where testing applies, it is often set at specific grades rather than every year. Confirm the actual grades and format with your state's department of education.",
+          },
+          {
+            q: "What does it mean if my state is in the None group?",
+            a: "Nothing is filed with the state, but that is not the same as no rules at all. Texas, for example, sits in our None group, and its own law still expects a real, organized education covering reading, spelling, grammar, math and good citizenship, even though no one reviews your plan. Keep basic records anyway. They cost little, and you may want them later for a transcript or a move to another state.",
+          },
+          {
+            q: "What should I do if I move to a different state partway through the year?",
+            a: "Check both. Look up the state you are leaving in the table above, in case anything is due before you go, then look up the one you are moving to, since its notice, testing or portfolio rules may differ and may run on a school-year calendar of its own. A state homeschool association in the new state is often the fastest way to confirm what applies now.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What the Companion does with your state",
+        paragraphs: [
+          "Homeschooling Companion reads this same summary to run the state picker on the Kids tab. Pick your state once, and for the 28 states in the Moderate or High groups, your printed My Homeschool Record gains an extra page that lists what your state's note asks for next to what you have actually recorded: a day count, a note count, or a check count. For the 23 None and Low states, your level and note still show on the Kids tab, but there is no extra printed page, because there is less for one to say. See how it looks on the [Homeschooling Companion](/shop/homeschooling-companion) page.",
         ],
       },
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Homeschooling Companion keeps the record as you go and prints it when you need it. Entries are always dated the day you make them, so it records forward from the day you start. It also lets you run short checks at home, with questions you choose, to find out honestly whether something stuck. There is no completion percentage anywhere in it, and no screen that tells you that you are behind.",
+        body: "Homeschooling Companion turns your state's level into a page on your printed record, for the 28 states with a checklist to show. It never claims you are compliant, only what is recorded against what your state's note asks for.",
       },
     ],
   },
 
   {
     slug: "home-maintenance-you-skip-that-costs-the-most",
-    title: "Most important home maintenance tasks: eight not to skip",
-    dek: "Gutters, heating, water heater, filters, roof, alarms, grout and outdoor taps: how often each is due and what a missed one turns into.",
+    title: "Home maintenance jobs that cost the most to skip",
+    dek: "Nine home maintenance jobs where a normal delay turns into real damage: how often each is really due, and what a missed one turns into.",
     primaryQuery: "most important home maintenance tasks",
     next: { slug: "how-often-home-systems-need-servicing", reason: "Once you know which eight jobs matter most, this gives the service interval for every system in the house." },
     related: [
@@ -725,64 +933,155 @@ export const GUIDES: Guide[] = [
       { slug: "fall-home-maintenance-checklist", reason: "Gutters and heating come first in fall, and this puts them in order across September to November." },
     ],
     publishedAt: "2026-08-30",
+    updatedAt: "2026-09-26",
     areaSlug: "home",
+    sources: [
+      {
+        name: "ENERGY STAR: Maintenance checklist for heating and cooling",
+        url: "https://www.energystar.gov/saveathome/heating-cooling/maintenance-checklist",
+        retrieved: "2026-09-26",
+        note: "Check filters monthly, change at least every 3 months; annual pre-season tune-up for heating and cooling.",
+      },
+      {
+        name: "Hotwater.com (A. O. Smith): Water heater maintenance guide",
+        url: "https://www.hotwater.com/info-center/water-heater-maintenance.html",
+        retrieved: "2026-09-26",
+        note: "Flush a tank water heater at least once a year.",
+      },
+      {
+        name: "USFA: Smoke alarms",
+        url: "https://www.usfa.fema.gov/prevention/home-fires/prepare-for-fire/smoke-alarms/",
+        retrieved: "2026-09-26",
+        note: "Test alarms monthly; replace the entire unit 10 years from the manufacture date.",
+      },
+      {
+        name: "USFA: Clothes dryer fire safety",
+        url: "https://www.usfa.fema.gov/downloads/pdf/publications/clothes_dryer_fire_safety_flyer.pdf",
+        retrieved: "2026-09-26",
+        note: "Lint buildup and a blocked vent are named fire causes; supports the dryer vent row (interval itself is our default, not government-sourced).",
+      },
+      {
+        name: "IBHS: Winter Weather Ready guide",
+        url: "https://ibhs.org/ibhs-news-releases/ibhs-winter-weather-ready-guide-provides-easy-to-do-actions-to-help-prevent-property-damage-from-colder-temperatures/",
+        retrieved: "2026-09-26",
+        note: "Change washing machine supply hoses connected to the plumbing supply once they are more than 10 years old.",
+      },
+      {
+        name: "Ready.gov: Winter weather",
+        url: "https://www.ready.gov/winter-weather",
+        retrieved: "2026-09-26",
+        note: "Disconnect hoses and drain outdoor faucets before winter weather.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Almost every house has a job that has been put off, and most have several. That is not carelessness. It is what happens when a lot of small facts and dates live nowhere except somebody's memory.",
-          "The problem is that deferred maintenance does not stay the same price. A small job put off tends to turn into a bigger one. The jobs below are the ones where that is most likely.",
+          "Nine home maintenance jobs turn expensive fast when you let them slide: the gutters, the furnace, the water heater, the HVAC filter, the roof, the smoke and CO alarms, the dryer vent, the washing machine hoses, and the outdoor faucets before a freeze. Each has a real interval, and pushing it past that interval is what turns a cheap job into a repair.",
+          "This is written for a house in the United States, and the intervals below are typical rather than a promise about your own systems. It cannot tell you the condition of your roof or your furnace today, only what tends to happen when a job like this runs long.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "An example: what a full gutter actually costs",
+        paragraphs: [
+          "Say the gutters filled with leaves last October and nobody cleared them. Water backs up at the roof edge instead of running to the downspout, so it soaks the fascia board behind the gutter every time it rains. Wood holds that moisture longer than it dries, so it starts to rot from the inside, where you cannot see it from the ground. By the time paint is peeling or the gutter itself sags, the job is no longer clearing the gutters. It is replacing fascia, and sometimes the sheathing behind it. The labor is the same crew either way. Only the price changes.",
         ],
       },
       {
         kind: "table",
-        heading: "The jobs where delay actually costs",
-        intro: "Intervals are typical rather than universal. Your manual wins over any table.",
-        columns: ["Job", "Roughly how often", "What it turns into"],
+        heading: "The jobs where skipping costs the most",
+        intro: "Sourced where a manufacturer, fire-safety or research body publishes a number; the rest is common trade practice. Your own manual wins over this table.",
+        columns: ["Job", "How often", "What skipping it turns into"],
         rows: [
-          ["Clear gutters", "Twice a year", "Water against the wall, then damp, then the fascia and sometimes the foundation"],
-          ["Service the boiler or furnace", "Annually", "Failure in the coldest week, when call-out rates are highest and parts are slowest"],
-          ["Flush the water heater", "Annually", "Sediment, lost efficiency, then a tank that fails years early"],
-          ["Replace HVAC filters", "Every 1 to 3 months", "Strained system, higher bills, shortened compressor life"],
-          ["Check roof and flashing", "Annually", "Small leak becomes decking, insulation and ceiling"],
-          ["Test smoke and CO alarms", "Monthly", "The only item on this list where the cost is not money"],
-          ["Reseal grout and caulk", "Every 1 to 2 years", "Water behind tile, which is invisible until the wall is opened"],
-          ["Winterize outdoor taps", "Once, before first freeze", "A burst pipe inside a wall, which can be the most expensive item here"],
+          [
+            "Clear the gutters",
+            "Twice a year, spring and fall",
+            "Water pools at the roof edge, then soaks the fascia, then rots wood you cannot see from the ground",
+          ],
+          [
+            "Service the furnace or heating system",
+            "Once a year, before the cold months",
+            "A breakdown in the coldest week, when technicians are booked out and parts are slow to arrive",
+          ],
+          [
+            "Flush the water heater",
+            "Once a year",
+            "Sediment settles on the tank floor, which lowers efficiency and shortens the tank's life",
+          ],
+          [
+            "Replace the HVAC filter",
+            "Every 1 to 3 months",
+            "A clogged filter strains the blower motor and raises the bill before it fails outright",
+          ],
+          [
+            "Inspect the roof and flashing",
+            "Once a year",
+            "A small gap at a flashing joint becomes a leak, then wet insulation, then a stained ceiling",
+          ],
+          [
+            "Test smoke and CO alarms; replace the units",
+            "Test monthly, replace at 10 years",
+            "The one job here where the cost of skipping is not measured in dollars",
+          ],
+          [
+            "Clean the dryer vent",
+            "Once a year, our default",
+            "Lint buildup restricts airflow and is a documented cause of house fires",
+          ],
+          [
+            "Replace the washing machine's rubber supply hoses",
+            "By 10 years, sooner if cracked or bulging",
+            "A burst hose floods a laundry room while nobody is home to catch it",
+          ],
+          [
+            "Shut off and drain outdoor faucets",
+            "Once, before the first hard freeze",
+            "Water trapped in the line freezes, expands, and splits the pipe inside the wall",
+          ],
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Why the reminder always arrives too late",
+        heading: "Start counting from the last time it was done, not from today",
         paragraphs: [
-          "Nobody forgets to service a boiler because they do not care. They forget because there is no natural moment to remember, and the reminder that finally arrives is a cold house or a stain on a ceiling.",
-          "The fix is not discipline. It is writing down when something was last done, so the next date is a fact rather than a guess.",
+          "A common mistake is to start every interval from the day you happen to write the list, which schedules a furnace service twelve months from an arbitrary Tuesday rather than twelve months from the last real service. If you know roughly when something was last done, count from that date. If you truly have no idea, treat it as due, because for nearly everything on this list an unnecessary check costs an hour, and a missed one costs a great deal more.",
+          "The freeze job on this list does not follow a rolling interval at all. Draining outdoor faucets belongs to the week before the first hard freeze, not exactly a year after the last time you did it. Setting every reminder to a fixed number of days is how a list ends up telling you to winterize a house in July.",
         ],
       },
       {
-        kind: "list",
-        checkable: true,
-        heading: "What to record about anything in your house",
-        intro: "Five fields, once, when you can actually see the appliance. This is the part that makes every future repair cheaper.",
+        kind: "faq",
+        heading: "Questions about which jobs matter most",
         items: [
-          "Make and model, which is usually on a plate inside a door, behind a kick panel, or on the back.",
-          "When it was installed or bought.",
-          "When the warranty ends.",
-          "When it was last serviced, and by whom.",
-          "Anything odd about it that a future engineer would want to know.",
+          {
+            q: "What is the most important home maintenance task?",
+            a: "There is no single answer, because the nine jobs above rank close together in what they cost to skip. If you can only do one this weekend, start with the furnace or the water heater: both tend to fail in the season you need them most, and both take under an hour to check or book.",
+          },
+          {
+            q: "How often should gutters be cleaned?",
+            a: "Twice a year for most houses: once in spring after winter debris, and once in fall once the leaves are down. Clean them more often with overhanging trees, since needles and small leaves clog a downspout faster than large leaves do.",
+          },
+          {
+            q: "How do I know if my furnace filter needs changing?",
+            a: "Hold it up to a light. If you cannot see light through it, it is overdue. As a default, check it monthly and replace it every one to three months, sooner with pets, allergies, or recent construction dust in the house.",
+          },
+          {
+            q: "What happens if you never flush a water heater?",
+            a: "Sediment settles on the bottom of the tank and acts as insulation between the burner or element and the water, so the unit works harder for the same result. Over years, that layer also corrodes the tank from the inside, which is one of the more common reasons a water heater fails early.",
+          },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Seasonal jobs are not interval jobs",
+        heading: "What Home Base does with this list",
         paragraphs: [
-          "A good deal of outdoor maintenance belongs to a month rather than to a rolling interval. Blowing out an irrigation system belongs in autumn, not three hundred and sixty five days after you happened to write it down.",
-          "Treating everything as an interval is how a reminder ends up telling you to winterize in July.",
+          "Home Base already holds an interval for each of its 148 built-in care jobs, ranks what to look at first by what happens if you skip it, and works out the next due date from when you last recorded the job rather than from an arbitrary start date. Record the make, model and last service on an item once, and every job above stays a fact instead of a guess. See it in [Home Base](/shop/home-management-companion).",
         ],
       },
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Home Base knows how often 148 common care jobs usually come round, rates each by what happens if you skip it and how much effort it takes, and understands which jobs belong to a season rather than a rolling date. It records the brand, model and service history of everything you add, so the next repair starts with facts instead of a torch and a phone camera behind the fridge.",
+        body: "Home Base rates each of its 148 care jobs by what happens if you skip it, and records the make, model and service history for anything you add. The next repair starts with a fact instead of a flashlight and a phone camera behind the fridge.",
       },
     ],
   },
@@ -2181,70 +2480,141 @@ export const GUIDES: Guide[] = [
       { slug: "who-to-tell-when-someone-dies", reason: "An executor has to notify banks, agencies and providers, and this lists who to tell and when." },
     ],
     publishedAt: "2026-08-30",
-    updatedAt: "2026-08-31",
+    updatedAt: "2026-09-26",
     areaSlug: "affairs-and-endings",
     locale: "us",
+    sources: [
+      {
+        name: "IRS: Are the fees I receive as an executor or administrator of an estate taxable?",
+        url: "https://www.irs.gov/help/ita/are-the-fees-i-receive-as-an-executor-or-administrator-of-an-estate-taxable",
+        retrieved: "2026-09-26",
+        note: "Executor compensation is taxable income to the executor, reported on their own return, unlike an inheritance",
+      },
+      {
+        name: "IRS: Apply for an Employer Identification Number (EIN) Online",
+        url: "https://www.irs.gov/businesses/small-businesses-self-employed/apply-for-an-employer-identification-number-ein-online",
+        retrieved: "2026-09-26",
+        note: "The online EIN application is free and issues an EIN immediately; never pay a site to get one",
+      },
+      {
+        name: "IRS: Instructions for Form 1041 (2025)",
+        url: "https://www.irs.gov/instructions/i1041",
+        retrieved: "2026-09-26",
+        note: "An estate must file its own income tax return once gross income reaches $600 in a year",
+      },
+      {
+        name: "IRS: Deceased Taxpayers: Probate, Filing Estate and Individual Returns, Paying Taxes Due",
+        url: "https://www.irs.gov/businesses/small-businesses-self-employed/deceased-taxpayers-probate-filing-estate-and-individual-returns-paying-taxes-due",
+        retrieved: "2026-09-26",
+        note: "General executor/administrator responsibility to file final and estate returns and pay taxes due",
+      },
+      {
+        name: "California Courts Self-Help: Probate",
+        url: "https://selfhelp.courts.ca.gov/probate",
+        retrieved: "2026-09-26",
+        note: "Example of one state's process for declining to serve as executor before probate begins",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Being an executor means you are legally responsible for gathering everything somebody owned, paying what they owed, and distributing the rest according to their will. It is an administrative job with legal weight, and it usually takes many months.",
-          "Most people find out they were named at the worst possible moment and have no idea what the role involves. Here is the honest version.",
+          "If you have been named executor of someone's will, you are now legally responsible for finding everything they owned, paying what they owed out of the estate, and handing out what is left the way the will says. It is real legal work, mostly in a fixed order, and most estates take many months from start to finish, not weeks.",
+          "This is for someone named executor of a will in the United States, doing it for the first time. It cannot tell you your state's exact rules, your county probate court's deadlines, or whether you need to hire an attorney, so where this disagrees with the clerk's office or a lawyer, go with them.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "An example: a fairly ordinary estate",
+        paragraphs: [
+          "Say your father named you executor. (This is an example, not a case.) He left a house with a small mortgage, two bank accounts, an old 401(k) from a job he left years ago, and a life insurance policy the family knew almost nothing about. The will is in his filing cabinet, and it names your sister as the backup if you cannot do it.",
+          "In the first week you order more certified death certificates than feels necessary, take the will to the probate court in the county where he lived, and go through twelve months of his bank statements looking for accounts and policies nobody mentioned. Nothing gets paid out yet. That comes later, once the estate has its own bank account and its own tax ID.",
         ],
       },
       {
         kind: "timeline",
-        heading: "What the job actually involves",
-        intro: "Six stages, in this order, and you cannot skip to the last one.",
+        heading: "What the job involves, in order",
+        intro: "Six stages, and you cannot skip ahead to the last one.",
         steps: [
           {
             when: "Find",
-            what: "Locate and secure everything: property, accounts, pensions, policies, possessions.",
+            what: "Locate and secure everything: the house, accounts, pensions, policies, and anything else of value.",
           },
           {
             when: "Value",
-            what: "Value the estate as at the date of death, which often needs professional valuations for property.",
+            what: "Value the estate as of the date of death, which often needs a professional valuation for property or a business.",
           },
           {
             when: "Apply",
-            what: "Petition the probate court in the county where they lived. What it issues is usually called letters testamentary, and it is the document banks will ask to see.",
+            what: "Petition the probate court in the county where they lived for authority to act. What it issues is usually called letters testamentary, the document banks ask to see.",
           },
           {
             when: "Settle",
-            what: "Settle debts and taxes before anybody inherits anything.",
+            what: "Pay debts and taxes before anyone inherits anything, including the estate's own income tax return if it earns income.",
           },
           {
             when: "Distribute",
-            what: "Distribute what remains according to the will.",
+            what: "Distribute what remains according to the will, once the creditor claim window has closed.",
           },
           {
             when: "Account",
-            what: "Keep records of all of it, because beneficiaries are entitled to see the accounts.",
+            what: "Keep records of all of it. Beneficiaries are entitled to see the accounting.",
           },
+        ],
+      },
+      {
+        kind: "list",
+        ordered: true,
+        heading: "Your first week, if you decide to act",
+        intro: "Do these before anything else, and in roughly this order.",
+        items: [
+          "Get certified copies of the death certificate, more than seems necessary. Banks, the pension administrator, and the DMV will each want their own.",
+          "Find the original will, not a photocopy, and take it to the probate court in the county where they lived.",
+          "Apply for an estate EIN from the IRS. The online application is free and takes minutes, and most banks will not open an estate account without one.",
+          "Once you have letters testamentary and the EIN, open a bank account in the estate's name. Every estate expense and every estate payment runs through it, and nothing else does.",
+          "Keep estate money and your own money separate from day one. Paying an estate bill from your own account, or the reverse, is the fastest way to create a mess an accountant has to untangle later.",
+          "Ask the probate court clerk how long creditors have to file a claim against the estate where you are. That window has to close before you distribute anything.",
         ],
       },
       {
         kind: "paragraphs",
         heading: "How long it really takes",
         paragraphs: [
-          "Even a simple estate takes many months. Anything involving real property, a business, out of state assets or a disagreement between beneficiaries takes considerably longer, and two years is not unusual.",
-          "The slow parts are rarely the ones people expect. Waiting for probate, waiting for a property to sell, and waiting for tax clearance take far longer than any of the tasks you actually perform.",
+          "A simple estate, one house, a couple of accounts, one beneficiary, still takes many months. Add real property that needs to sell, a business, assets in another state, or beneficiaries who disagree, and two years is not unusual.",
+          "The slow parts are not the tasks themselves. Waiting for the court to issue letters, waiting for a property to sell, and waiting out the creditor window take far longer than anything you actually do.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "The part worth taking seriously",
+        heading: "Where you could be personally liable",
         paragraphs: [
-          "Executors can be held personally liable for mistakes. Distributing the estate before debts are settled is the classic one: if a creditor appears afterwards, the shortfall can land on you rather than on the beneficiaries who already spent it.",
-          "This is why the order matters, and why you wait out your state creditor claim period before distributing anything. That window is set by state law, so ask the probate court or an attorney how long it is where your parent lived. Executors of anything complicated usually involve a probate attorney, paid from the estate rather than from their own pocket.",
+          "Executors can be held personally responsible for mistakes. Distributing the estate before debts are settled is the classic one: if a creditor turns up after the money is gone, the shortfall can land on you rather than on the beneficiaries who already spent it.",
+          "Mixing estate money with your own is the second one, even without any intent to misuse it. And if the estate earns $600 or more in income during the year, such as interest or rent, it owes its own income tax return, separate from the person's final one. Missing that is a liability too. Anything complicated is worth a probate attorney, paid from the estate rather than out of your own pocket.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "You can be paid for this",
+        paragraphs: [
+          "Executors are generally entitled to compensation for the work, either a flat amount the will sets or a fee state law sets, often a percentage of the estate. It is optional, and plenty of family members waive it.",
+          "If you take it, it counts as taxable income to you, reported on your own return, unlike an inheritance, which generally is not. Ask the probate court clerk what your state's default fee looks like if the will is silent on it.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Executor, administrator, and being a beneficiary too",
+        paragraphs: [
+          "If there is a will, you are the executor. If there is no will, or the named executor cannot serve, the court appoints someone instead, usually called the administrator, and the duties are the same either way.",
+          "Being named executor and being a beneficiary are not in conflict. Most executors inherit something too. The thing to hold onto is that you account for every decision the same way regardless, in writing, because the other beneficiaries are entitled to see it. If one of them disputes an appointment or a decision, that gets settled through the probate court, not informally.",
         ],
       },
       {
         kind: "paragraphs",
         heading: "You can say no",
         paragraphs: [
-          "Being named does not oblige you to serve. You can decline, formally, provided you have not already started acting as executor. Once you have begun dealing with the estate, stepping back becomes much harder.",
-          "Declining is not a betrayal. Somebody named you years ago, possibly before they had a business or a property abroad, and possibly before your own life got complicated. If you cannot give it the time, saying so at the start is far better than stalling for a year.",
+          "Being named does not require you to serve. You can decline, formally, as long as you have not already started acting, such as paying a bill from the estate or telling a bank you are the executor. Once the court has issued letters to you, stepping back takes a petition instead of a simple filing.",
+          "To decline, you file a written declination, sometimes called a renunciation, with the probate court before you act. Some states, California among them, let you file it alongside the initial petition for probate; the exact form and process differ by state, so ask the clerk's office in the county where they lived.",
+          "Declining is not a betrayal. Someone may have named you years ago, before they had a business or a property out of state, and before your own life got complicated. If you cannot give it the time, saying so at the start beats stalling for a year.",
         ],
       },
       {
@@ -2254,16 +2624,49 @@ export const GUIDES: Guide[] = [
         items: [
           "Certified copies of the death certificate, more than you think you need.",
           "The original will, not a copy.",
-          "Twelve months of bank statements, which is the fastest way to find accounts and policies nobody mentioned.",
+          "Twelve months of bank statements, the fastest way to find accounts and policies nobody mentioned.",
           "The most recent federal tax return, which lists income sources you may not know about.",
           "Details of any funeral plan already paid for.",
-          "Contact details for their accountant, attorney or financial adviser.",
+          "Contact details for their accountant, attorney, or financial adviser.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "What does an executor actually do?",
+            a: "An executor finds everything the person owned, gets court authority to act, values the estate, pays debts and taxes, then distributes what is left the way the will says. It is mostly paperwork in a fixed order, and it usually takes many months. You keep records the whole way through, since beneficiaries can ask to see them.",
+          },
+          {
+            q: "Do I have to accept if I am named executor?",
+            a: "No. You can decline, as long as you have not started acting, by filing a written declination with the probate court. Once the court has issued you letters testamentary, stepping back takes a court petition instead. Ask the clerk in the county where the person lived what your state requires.",
+          },
+          {
+            q: "What is the difference between an executor and an administrator?",
+            a: "An executor is named in a will. An administrator is appointed by the court when there is no will, or when the named executor cannot or will not serve. The job and the personal liability are the same either way, and both processes run through the probate court in the county where the person lived.",
+          },
+          {
+            q: "Can an executor also be a beneficiary?",
+            a: "Yes, and it is common. Being named to inherit something does not conflict with serving as executor. What it does mean is that you should keep the accounting especially careful and in writing, since other beneficiaries are entitled to see exactly what happened to the estate's money.",
+          },
+          {
+            q: "Am I personally liable for the estate's debts?",
+            a: "Not out of your own pocket for debts that exceed the estate. You can become liable for your own mistakes though, such as paying out inheritances before creditors have had their window to file a claim, or mixing estate money with your own. Careful order and separate accounts protect you.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "For your own affairs, later",
+        paragraphs: [
+          "Being handed someone else's estate with nothing written down is often what makes people decide their own should not work that way. Personal Life Affairs Companion is built for that side of it: it records who you would name as executor, whether you have a will and where it is kept, and one status question about how far along proving your executor's authority already is. It never asks for an account number or a password, and it prints a book someone could actually follow. [See Personal Life Affairs Companion](/shop/personal-life-affairs-companion).",
         ],
       },
       {
         kind: "callout",
-        label: "The Companion for this",
-        body: "Personal Life Affairs Companion is for the other side of this: recording what exists and where it is kept, in a printed book somebody could follow. If you are doing this now, it may be worth doing your own later.",
+        label: "Where to check",
+        body: "Rules differ by state, and sometimes by county. The probate court clerk or a probate attorney where the person lived can tell you exactly what applies to you.",
       },
     ],
   },
@@ -2606,8 +3009,8 @@ export const GUIDES: Guide[] = [
 
   {
     slug: "homeschool-record-keeping-template",
-    title: "Homeschool record keeping template: four columns to copy",
-    dek: "Date, subject and part, one word on how it went, and an occasional note. What to leave off, and how to choose paper, a spreadsheet or an app.",
+    title: "Homeschool record keeping template: three columns to copy",
+    dek: "Three columns for every entry, date, subject and where you are, how it went, plus a fourth for when it is worth it. Copy it as it is.",
     primaryQuery: "homeschool record keeping template",
     next: { slug: "simple-homeschool-record-keeping-system", reason: "For the habit behind the columns, this covers keeping entries under a minute and what to do after a bad week." },
     related: [
@@ -2616,69 +3019,146 @@ export const GUIDES: Guide[] = [
       { slug: "homeschool-record-keeping-requirements-by-state", reason: "Check what your state expects you to keep before you settle on a format, with all 50 states and DC in one table." },
     ],
     publishedAt: "2026-08-31",
+    updatedAt: "2026-09-26",
     areaSlug: "family-and-learning",
+    sources: [
+      {
+        name: "HSLDA, Homeschool Laws By State",
+        url: "https://hslda.org/legal",
+        retrieved: "2026-09-26",
+        note: "Backs the general point that few states require logging hours and that requirements vary by state.",
+      },
+      {
+        name: "TheHomeSchoolMom, Homeschool Record Keeping",
+        url: "https://www.thehomeschoolmom.com/homeschool-help/homeschool-planners/",
+        retrieved: "2026-09-26",
+        note: "Backs the practice of keeping a running log, dated samples and a subject list as the core of a usable record.",
+      },
+      {
+        name: "Pennsylvania Department of Education, Home Education Program",
+        url: "https://www.pa.gov/agencies/education/resources/policies-acts-and-laws/basic-education-circulars-becs/purdons-statutes/home-education-program",
+        retrieved: "2026-09-26",
+        note: "Example of a state where a log, a portfolio and test results are all part of the picture, used to illustrate the strictest end of the scale.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Search for a homeschool record keeping template and you will find hundreds. Most of them are beautiful, most of them ask for eight fields per child per day, and most of them are abandoned somewhere around October.",
-          "The template is not the hard part. Keeping it is. So what follows is the smallest structure that still shows what happened, and the reasoning for why each column earns its place.",
+          "A homeschool record keeping template needs three columns you fill in every time: the date, the subject and where you are in it, and one word on how it went. A fourth column, for an occasional note or sample, only earns its place a few times a term. Copy the table below into whatever you already keep open each day.",
+          "This is for a parent who wants the smallest usable record, on paper, in a spreadsheet or in an app, not a full curriculum plan or a grading system. It cannot tell you what your state legally requires you to keep: see [homeschool requirements by state](/guides/homeschool-record-keeping-requirements-by-state) for that, and confirm at your state's own source.",
         ],
       },
       {
         kind: "table",
-        heading: "The four columns that earn their place",
-        intro: "Copy this into whatever you already open every day. A notebook is fine. The format matters far less than whether it gets filled in.",
+        heading: "One child, one week, as an example",
+        intro: "An example week, not a real family's. The date column can be any format you like, as long as it is consistent.",
+        columns: ["Date", "Subject and where you are", "How it went"],
+        rows: [
+          ["Mon, Sep 14", "Math, Unit 3, Lesson 10", "About right"],
+          ["Mon, Sep 14", "Reading, chapter 6", "Easy"],
+          ["Tue, Sep 15", "Math, Unit 3, Lesson 11", "Difficult"],
+          ["Wed, Sep 16", "Writing, paragraph practice", "About right"],
+          ["Thu, Sep 17", "Math, Unit 3, Lesson 11 again", "Easy"],
+        ],
+      },
+      {
+        kind: "table",
+        heading: "The three columns that earn their place",
+        intro: "Copy this into whatever you already open every day. A notebook works fine. The format matters less than whether it gets filled in.",
         columns: ["Column", "Example", "Why it is there"],
         rows: [
-          ["Date", "14 Oct", "Requirements that count days or ask for a log are anchored to dates. Without them you have anecdotes."],
-          ["Subject", "Maths", "Evaluators and states ask what was covered, by subject, not by activity."],
-          ["What part", "Unit 3, Lesson 12", "Turns a year into a sequence somebody can follow. This is the column that helps show progress."],
-          ["How it went", "Difficult", "One word. It is the only column that helps you rather than an evaluator, and it is the one you will be glad of in March."],
+          [
+            "Date",
+            "Oct 14",
+            "Anything that counts days, or asks for a log, is anchored to dates. Without one you have a story, not a record.",
+          ],
+          [
+            "Subject and where you are",
+            "Math, Unit 3, Lesson 12",
+            "One column, not two. This is what a state or an evaluator asks for: what was covered, and how far you got.",
+          ],
+          [
+            "How it went",
+            "Difficult",
+            "One word. Easy, about right or difficult. This is the column that helps you rather than an evaluator, and the one you will be glad of by spring.",
+          ],
+        ],
+      },
+      {
+        kind: "list",
+        checkable: true,
+        heading: "The fourth thing, and when it earns its place",
+        intro: "These are what make a record persuasive rather than merely complete. A few times a term is plenty. None of them belong in the daily three columns above.",
+        items: [
+          "A dated sample of work per subject, an ordinary one, not the best one.",
+          "The curriculum or materials in use, and any change of them partway through the year.",
+          "A photo of anything three-dimensional. It holds up as evidence longer than the object does.",
+          "One sentence about something that happened, when it is worth writing down: she finally got equivalent fractions today.",
+          "Test or evaluation results, when your state's summary says it asks for them.",
         ],
       },
       {
         kind: "paragraphs",
         heading: "What to leave off, and why",
         paragraphs: [
-          "Hours, unless your state counts them. Most do not, and logging time turns a thirty second job into a two minute one.",
-          "Color coding. It is a pleasure to design and a chore to maintain, and it is a common reason a system gets dropped.",
-          "Anything requiring a written paragraph per child per day. Nobody sustains that past October, and the version you abandon in October is worth less than the crude one you keep all year.",
-        ],
-      },
-      {
-        kind: "list",
-        checkable: true,
-        heading: "What to add occasionally, not daily",
-        intro: "These are the things that make a record persuasive rather than merely complete. Once a term is plenty.",
-        items: [
-          "A dated sample of work per subject, ordinary rather than the best one.",
-          "The curriculum or materials you are using, and any change of them mid year.",
-          "A photograph of anything three dimensional, which is better evidence than the object itself.",
-          "One sentence about something that happened. She finally understood fractions.",
-          "Test or evaluation results, if your state requires them.",
+          "Hours, unless your state's note says otherwise. Most do not ask for them, and logging time turns a thirty-second entry into a two-minute one.",
+          "Color coding. It is a nice project to design and a hard habit to keep up, and it is a common reason a whole system gets dropped by the second month.",
+          "A written paragraph per child, per day. Almost no one keeps that up past the first few weeks, and a plain record you keep all year is worth more than a detailed one you keep for three.",
         ],
       },
       {
         kind: "paragraphs",
         heading: "Paper, spreadsheet or app",
         paragraphs: [
-          "All three work. The question is which one is open when the lesson finishes, because a record made an hour later is a record made from memory.",
-          "Paper wins on friction and loses on searching. A spreadsheet wins on totals and loses because it usually lives on a computer rather than in your hand. Whatever you pick, the test is whether you can complete an entry in under thirty seconds.",
+          "All three work. The real question is which one is open when the lesson ends, because a record made an hour later is a record made from memory, not from the lesson.",
+          "If you are not sure, start on paper. It costs nothing to set up and travels to wherever the lesson happens, at the table, in the car, on a walk. Move to a spreadsheet or an app later only if searching or totals become something you actually need.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Check what your state asks before you design anything",
+        heading: "Check what your state asks before you build anything elaborate",
         paragraphs: [
-          "Eight jurisdictions file nothing with the state, and nine sit in our top level, where a portfolio, a formal assessment or prior approval of your plan is part of the picture. Building for the strictest standard when you live in Texas wastes a weekend.",
-          "The full position is in [homeschool record keeping requirements, state by state](/guides/homeschool-record-keeping-requirements-by-state), and what a portfolio needs is in [what actually goes in a homeschool portfolio](/guides/what-goes-in-a-homeschool-portfolio).",
+          "Eight states, in our summary, file nothing with the state at all. Nine sit in our High group, where a portfolio, a formal assessment or approval of your plan is part of the picture, and that is worth building toward if you are one of them: see what a portfolio actually needs in [what actually goes in a homeschool portfolio](/guides/what-goes-in-a-homeschool-portfolio).",
+          "Building for the strictest standard when your own state asks for nothing is a weekend spent on paperwork no one will ask to see.",
+        ],
+      },
+      {
+        kind: "faq",
+        items: [
+          {
+            q: "Do I need to write down how many hours we spent on each subject?",
+            a: "Only if your state's summary says it counts hours, and few do. In our summary, most states that track anything track days or a log of what was covered, not minutes. Logging time turns a fast entry into a slow one, for information almost no state actually asks for. Check homeschool requirements by state for your own state's level if you are not sure.",
+          },
+          {
+            q: "Do I need to record a grade or a percentage for each entry?",
+            a: "No. The one-word column, easy, about right or difficult, is there for you, so you can see later which subjects keep coming up as difficult. It is not a grade, and no state summary in our table asks for one. Keep any percentage or grade from a curriculum's own test separate, if it has one.",
+          },
+          {
+            q: "What if my child does a subject with someone else, like a co-op?",
+            a: "Write it the same way: date, subject and where you are, how it went. There is no separate column for who taught it. Add that detail to the notes column only when you want it for yourself, since neither states nor evaluators ask who ran a particular lesson.",
+          },
+          {
+            q: "Should I keep a separate template for each child?",
+            a: "Yes, once you have more than one. A shared page mixing two children's entries is hard to read back, and harder still to hand to an evaluator, who wants one child's year, not two children's interleaved. File by child from the start rather than splitting a shared page later.",
+          },
+          {
+            q: "Is paper or an app better for a homeschool record keeping template?",
+            a: "Either works, and the right answer is whichever one is already open at the end of a lesson. Paper needs no setup and travels wherever the lesson happens. An app or a spreadsheet earns its place once you want to search entries or add up totals, usually somewhere past a hundred rows in.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What the Companion does with these three columns",
+        paragraphs: [
+          "Homeschooling Companion is built around the same three things, not the extra ones. Tap a subject done on the Today screen and it dates itself, keeps the subject and position you typed in for it, the same Math, Unit 3, Lesson 12 shape as the table above, and asks one optional question: how did it go, with easy, about right or difficult as the only answers. Add an occasional note in your own words on the Record tab, choose whether it goes on the printed page or stays private, and print a record per child when you want one. See it on the [Homeschooling Companion](/shop/homeschooling-companion) page.",
         ],
       },
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Homeschooling Companion is these four fields and nothing else, with the date filled in for you. The date is always the day you record, so it records forward from the day you start, and it prints a record per child covering what was done and when. There is no tally of days missed and no score, because a record that judges you is a record that gets avoided.",
+        body: "Homeschooling Companion is these three fields and nothing else, dated the day you record. There is no tally of days missed and no completion percentage: a record that makes you feel judged is a record you stop keeping.",
       },
     ],
   },
@@ -4070,62 +4550,152 @@ export const GUIDES: Guide[] = [
       { slug: "homeschool-weekly-plan-with-a-spare-day", reason: "Checks a week later need slack in the schedule. This weekly plan leaves a spare day on purpose." },
     ],
     publishedAt: "2026-08-30",
+    updatedAt: "2026-09-26",
     areaSlug: "family-and-learning",
+    sources: [
+      {
+        name: "8 Ways to Assess (and Document) Your Child's Learning (Sonlight)",
+        url: "https://blog.sonlight.com/assess-document-learning.html",
+        retrieved: "2026-09-26",
+        note: "Backs the named non-test techniques (narration, projects, spot checks) as ways to check what a homeschooled child has learned.",
+      },
+      {
+        name: "Narration: Evaluating Your Homeschooled Student's Learning (Triumphant Learning)",
+        url: "https://www.triumphantlearning.com/narration/",
+        retrieved: "2026-09-26",
+        note: "Backs narration, telling back what was read or done in the child's own words, as a way to reveal whether understanding is present.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "You covered fractions in October. It is March. Do they know fractions? Many homeschooling parents cannot say for sure, and the not knowing is uncomfortable.",
-          "Finding out does not require testing in the formal sense. It requires asking a small number of questions, some time after the teaching, and being willing to accept the answer.",
+          "You covered fractions in October. It's March, and you can't say for sure whether it stuck. That not-knowing is normal and doesn't mean you did anything wrong: covering material and keeping it are two different things, and homeschooling puts you in charge of checking both.",
+          "This is for a parent who wants a quick, plain read on whether something landed, not a formal assessment. It won't tell you a grade level or whether your child is ahead of or behind anyone else, and it isn't a stand-in for whatever your own state asks you to show, if you homeschool in the United States (see [preparing for a homeschool evaluation](/guides/preparing-for-a-homeschool-evaluation)).",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Ask later, not at the end of the lesson",
+        heading: "An example: checking fractions in March",
         paragraphs: [
-          "Checking understanding immediately after teaching measures short term recall, which is nearly always good and tells you very little. The useful check happens weeks later, when whatever was going to fade has faded.",
-          "This feels counterintuitive, because a check straight after a lesson produces flattering results. That is exactly why it is not worth running.",
+          "Say you taught equivalent fractions in October and haven't touched the topic since. Over breakfast in March, you ask four questions: What is one half the same as, written a different way? If you have three sixths, what's the simplest way to write that? Draw two fractions that look different but are equal. Why does multiplying the top and bottom of a fraction by the same number not change its value?",
+          "Two answers come fast and correct. One is close but the reasoning wobbles. One draws a blank. That's three of four answered, with a mixed result: worth going back over the why question, fine to move on from the rest.",
         ],
       },
       {
         kind: "list",
-        checkable: true,
-        heading: "What a useful check looks like",
+        heading: "Five ways to check it landed",
+        ordered: true,
         items: [
-          "Short. Four answered questions on one topic is the fewest that tells you anything, and much more tends to produce fatigue rather than information.",
-          "Mixed. Some recall, some application, and at least one that asks them to explain rather than to produce an answer.",
-          "Unannounced in tone. Not a test event, just a few questions over breakfast.",
-          "Written down. What you learn is worth nothing in three weeks if you did not record it.",
+          "Ask them to teach it back to you. If they can explain a step to a stuffed animal or a younger sibling, they understand it. If they can only repeat a memorized line, they don't yet.",
+          "Have them narrate what they just read or did, in their own words, without looking. A summary that includes why something happened, not just what happened, is the stronger sign.",
+          "Ask a few oral questions that mix recall and reasoning. \"What's 6 times 7\" checks recall. \"Why does that work\" checks understanding.",
+          "Do a short spot check from the workbook itself: cover the answer, have them solve it again a different way than the book showed.",
+          "Ask for a two-minute demonstration: build it, draw it, or show the step on paper. Watching them do it catches things a spoken answer hides.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Asking by age",
+        columns: ["Age", "Ask for", "A strong answer sounds like"],
+        rows: [
+          [
+            "Early elementary",
+            "A quick retelling or a demonstration",
+            "Two or three sentences, or showing you rather than telling you",
+          ],
+          [
+            "Upper elementary",
+            "One explain-it question per topic",
+            "Reasoning in their own words, not only the answer",
+          ],
+          [
+            "Middle grades",
+            "A mix of recall and one why question",
+            "They can defend the answer when you push back a little",
+          ],
+          [
+            "High school",
+            "A short explanation or a worked example on paper",
+            "They can teach the step to someone younger",
+          ],
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Four results, not two",
+        intro: "There's a middle ground between knows it and doesn't, and a fourth option worth naming plainly: not enough to tell.",
+        columns: ["Result", "What it looks like", "What to do next"],
+        rows: [
+          [
+            "Solid",
+            "Right answers, with reasoning attached, not just the number",
+            "Move on. Revisit it only if it comes up again on its own.",
+          ],
+          [
+            "Mixed",
+            "Some right, some shaky reasoning",
+            "More practice on the same material, not a new lesson yet.",
+          ],
+          [
+            "Worth another look",
+            "Mostly wrong or guessed",
+            "Reteach it, but change the approach before repeating it word for word.",
+          ],
+          [
+            "Not enough to say",
+            "Too few questions answered to conclude anything",
+            "Ask again, differently, another day. It isn't a fail, it's a small sample.",
+          ],
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What throws off a check",
+        items: [
+          "Asking right after the lesson. That measures short-term recall, which is almost always good and tells you very little about what will still be there in March.",
+          "Asking one question. One right answer could be luck, and one wrong answer could be a bad morning. Four is closer to a real read.",
+          "Turning three answers into a percentage. Three of four right isn't seventy-five percent understanding, it's a sample too small to grade at all.",
+          "Making it feel like a test. A tense kid gives you tense answers, not their actual understanding.",
+          "Grading the delivery instead of the reasoning. A shaky voice or a long pause isn't a gap; a wrong reason for a right answer is.",
+        ],
+      },
+      {
+        kind: "faq",
+        items: [
+          {
+            q: "How do I know if my homeschooler is actually learning?",
+            a: "Ask a small number of questions, weeks after you covered the material, not right after the lesson. Mix recall with at least one question that makes them explain their reasoning, and write down what came back. If the answers hold up weeks later, it landed.",
+          },
+          {
+            q: "What is narration, and does it work for checking understanding?",
+            a: "Narration means having your child tell back what they just read or did, in their own words, without prompts. It works because a child who only memorized a line can't reorganize it into their own sentences, while a child who understood it usually can.",
+          },
+          {
+            q: "How many questions should I ask to check understanding?",
+            a: "Four on one topic is about the fewest that tells you anything real. Fewer than that, and one lucky guess or one bad morning skews the whole result. You don't need many more; a handful of good questions beats a long quiz.",
+          },
+          {
+            q: "Is it a problem if my child can't answer any questions?",
+            a: "Not on its own. A blank morning happens for reasons that have nothing to do with understanding: tiredness, an off day, a question that's oddly worded. Ask again, a different way, on a different day, before you decide anything has actually changed.",
+          },
+          {
+            q: "Should I check understanding right after a lesson or later?",
+            a: "Later. Checking straight after teaching mostly measures short-term recall, and short-term recall is almost always good. A check a week or more later tells you what actually stayed, which is the question you're really asking.",
+          },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Four honest results, not two",
+        heading: "Where a Companion fits",
         paragraphs: [
-          "The temptation is to conclude either that they know it or they do not. There are really four outcomes, and the fourth is the one most systems refuse to report.",
-          "It looked solid, so move on. It is worth another look, so revisit it. It is mixed, which usually means more practice rather than reteaching. Or there is not enough to say, because they answered two questions and you cannot conclude anything from two.",
-        ],
-      },
-      {
-        kind: "paragraphs",
-        heading: "Not enough to say is a real answer",
-        paragraphs: [
-          "If a child answers three questions and gets two right, that is not sixty seven percent understanding. It is a sample too small to mean anything, and reporting it as a score invents confidence that does not exist.",
-          "Any tool that turns three answers into a percentage is lying to you politely. The honest response is that you do not know yet, which is genuinely useful information because it tells you to ask again rather than to act.",
-        ],
-      },
-      {
-        kind: "paragraphs",
-        heading: "The questions that ask them to explain matter most",
-        paragraphs: [
-          "A child can produce a correct number without understanding anything, particularly in maths, where a memorised procedure gets the right answer for a while and then collapses.",
-          "The questions worth including are the ones where they have to say why. There is no single right wording for those, which is exactly why no answer key can mark them and why you are the only person who can judge it.",
+          "[Homeschooling Companion](/shop/homeschooling-companion) runs a version of this check inside the app. You choose or write the questions per topic, mark each one right, not right or skipped as your child answers, and it reports one of the same four results above, including not enough to say when too few were answered. It never turns the result into a percentage or a grade, and it never compares your child to anyone else. It keeps the standing against the topic, so if the same result turns up twice, it tells you that too.",
         ],
       },
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Homeschooling Companion lets you run short checks at home, with questions you choose or write, and reports one of four standings including not enough to say when too few questions were answered to conclude anything. It keeps the result with the topic and says so if the same result comes up twice, and it never produces a score, a percentage or a comparison between children.",
+        body: "It's where you already keep track of what your child is covering, so a short check on one topic takes about as long as marking a lesson done. Use your own questions, your curriculum's test, or the printed check sheets, whichever you have on hand.",
       },
     ],
   },
@@ -4963,7 +5533,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "what-to-keep-after-a-home-repair",
     title: "What to keep after a home repair, besides the invoice",
-    dek: "The invoice shows the price. Write down the diagnosis, the part replaced and what the technician says comes next, before they drive away.",
+    dek: "The invoice says what you paid. Write down what was wrong, what was replaced, and what the technician said comes next, the same day.",
     primaryQuery: "home repair record",
     next: { slug: "home-maintenance-log-template", reason: "Repair notes are more useful in one running place, and this sets up a home log to hold them." },
     related: [
@@ -4972,13 +5542,50 @@ export const GUIDES: Guide[] = [
       { slug: "home-maintenance-you-skip-that-costs-the-most", reason: "To avoid repairs in the first place, this ranks the eight maintenance jobs that cost most when skipped." },
     ],
     publishedAt: "2026-08-30",
+    updatedAt: "2026-09-26",
     areaSlug: "home",
+    sources: [
+      {
+        name: "IRS Publication 523, Selling Your Home",
+        url: "https://www.irs.gov/publications/p523",
+        retrieved: "2026-09-26",
+        note: "Distinguishes repairs from improvements; only improvements add to a home's cost basis.",
+      },
+      {
+        name: "FTC Consumer Advice: How To Avoid a Home Improvement Scam",
+        url: "https://www.consumer.ftc.gov/articles/0242-hiring-contractor",
+        retrieved: "2026-09-26",
+        note: "Get verbal promises in writing and keep notes and copies of documents for your files.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Many people keep the invoice and forget everything else. The invoice tells you what you paid. It rarely tells you what was actually wrong, what was replaced, or what the engineer said would need doing next.",
-          "That second set is what makes the next repair faster, and it exists only in your memory, which fades fast.",
+          "The invoice tells you what you paid. It rarely says what was actually wrong, what part got replaced, or what the technician said might need doing next. Write those three things down the same day, while you still remember them exactly, not five months later when the same problem shows up again.",
+          "This is for any US homeowner or renter who just had someone out to fix something, a plumber, an HVAC technician, an appliance repair service. It can't tell you whether the price you were quoted was fair, and it isn't a substitute for a written estimate.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Example: a filled repair note",
+        intro: "A made-up visit, not a real one, showing what five minutes of writing looks like.",
+        columns: ["What to capture", "What you'd write"],
+        rows: [
+          [
+            "Symptom, in your words",
+            "Water heater making a popping sound, no hot water by evening",
+          ],
+          [
+            "What they said was wrong",
+            "Sediment built up around the heating element, tank was overheating locally",
+          ],
+          ["What was replaced", "Lower heating element and thermostat"],
+          [
+            "What they said comes next",
+            "Anode rod is original, worth checking within the next year",
+          ],
+          ["Who came, and the cost", "Ace Plumbing, $340, would use again"],
         ],
       },
       {
@@ -4986,50 +5593,90 @@ export const GUIDES: Guide[] = [
         checkable: true,
         heading: "Write these down the same day",
         items: [
-          "What the symptom was, in your own words, before anybody diagnosed it.",
-          "What they said was actually wrong.",
-          "What was replaced or adjusted, including any part number.",
-          "What they said to watch for, or what would need doing next and roughly when.",
-          "Who came, which company, and whether you would have them back.",
-          "What it cost, and whether any of it was under warranty.",
+          "The symptom, in your own words, before anyone diagnosed it.",
+          "What the technician said was actually wrong.",
+          "What was replaced or adjusted, including a part number if one was mentioned.",
+          "What they said to watch for next, and roughly when.",
+          "Who came, which company, and whether you'd call them again.",
+          "What it cost, and whether any of it was covered by a warranty.",
+        ],
+      },
+      {
+        kind: "scripts",
+        heading: "Questions to ask before the technician leaves",
+        intro: "Four short questions, asked while the van is still in the driveway.",
+        items: [
+          {
+            situation: "Before they pack up",
+            line: "What exactly was wrong with it, in plain words?",
+          },
+          {
+            situation: "On the part",
+            line: "What's the part number, in case I need it again?",
+          },
+          {
+            situation: "On what's next",
+            line: "Is there anything else you'd keep an eye on?",
+          },
+          {
+            situation: "On the invoice",
+            line: "Can you write that diagnosis on the invoice for me?",
+          },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "The diagnosis is worth more than the invoice",
+        heading: "Why the diagnosis outlasts the invoice",
         paragraphs: [
-          "When the same appliance misbehaves in two years, the single most useful sentence is what an engineer concluded last time. It shortens the next visit, and it sometimes prevents one entirely because you recognise the symptom.",
-          "It also protects you. An engineer telling you a part was replaced eighteen months ago is a very different conversation from one where nobody can remember.",
+          "A repair invoice proves you paid. It almost never explains what actually failed. When the same appliance acts up again in a year or two, the diagnosis a technician gave you the first time is what makes the second visit faster, and it sometimes stops the visit from being needed at all, because you recognize the symptom before it gets worse.",
+          "It also protects you in a different way. A technician telling you a part was replaced eighteen months ago is a very different conversation from one where no one involved can remember.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Record what they said would come next",
+        heading: "What tends to go wrong",
         paragraphs: [
-          "Technicians often mention that something else is nearing the end of its life, and that remark is rarely written down. Six months later the thing fails and nobody remembers being warned.",
-          "That one line is among the most useful things from the visit, because it is a heads-up about your own house.",
+          "Technicians are often out the door before you've thought to ask anything. If that happens, call the company the same day and ask what they have on file. Most keep their own service notes and will read them back to you over the phone. If the repair might be covered by a manufacturer's warranty, check the terms before you pay, since some warranties are void once an outside repair happens. [Appliance warranties: what to track](/guides/appliance-warranties-what-to-track) covers what to check first.",
+          "There's also a tax wrinkle worth knowing. A repair that just fixes something broken, like a new water heater after the old one failed, is not what the IRS calls an improvement, and it does not add to your home's cost basis when you sell (Publication 523 draws that line). If a small repair turns into a larger renovation, replacing a wall along with the leak behind it, keep that folder separate from ordinary repair notes.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "Do I need to keep the invoice from a home repair?",
+            a: "Keep it if any part of the job might be covered by a manufacturer's warranty, if you're tracking what the house has cost you, or if the repair was large enough to matter for your home's cost basis when you sell. For a small routine fix, the diagnosis and the part number are usually more useful later than the invoice itself.",
+          },
+          {
+            q: "How long should I keep home repair records?",
+            a: "As long as you own the item or the house, in practice. A repair record for an appliance is useful until you replace it. A record tied to the house, like a roof or a furnace, is worth keeping for as long as you live there, and worth handing to a buyer when you sell.",
+          },
+          {
+            q: "What if the technician doesn't explain what was wrong?",
+            a: "Ask directly before they leave, using plain words: what was actually wrong, and what should I watch for. If they've already gone, call the company that afternoon and ask what's on their service ticket. Most companies keep a written note of the visit even if no one told you what it said.",
+          },
+          {
+            q: "Does a home repair affect my taxes?",
+            a: "An ordinary repair, one that just restores something to working order, generally does not change your home's cost basis for tax purposes. A larger renovation that includes repair work as part of it can count as an improvement instead. This isn't tax advice; a tax professional can tell you which side of that line your project falls on.",
+          },
+          {
+            q: "Should I photograph a repair before and after?",
+            a: "It's worth thirty seconds if the work is visible, like a wall opened up or a fixture replaced. A photo with a timestamp backs up the invoice if a dispute ever comes up, and it's the easiest record to lose track of later if you don't save it somewhere you'll look again.",
+          },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Keep a note of who to call again",
+        heading: "What Home Base does with it",
         paragraphs: [
-          "Finding a good tradesperson can be harder than any of the admin around it, and the number is easy to lose in a text message.",
-          "Recording who came, alongside the thing they worked on, means the next problem starts with a phone number rather than a search.",
-        ],
-      },
-      {
-        kind: "paragraphs",
-        heading: "This is also what makes maintenance schedules real",
-        paragraphs: [
-          "A service interval only means something if you know when the last service happened. Without that, every schedule starts from an arbitrary date and drifts.",
-          "The intervals themselves are in [how often things actually need servicing](/guides/how-often-home-systems-need-servicing).",
+          "In Home Base, resolving a reported problem (the \"It's sorted\" toggle) asks when it was fixed, who did it or is coming, what it cost, and a line for anything worth remembering, the same kind of note as \"anode rod is due next time.\" That gets written to the item's History, dated automatically. The next time you report a problem in the same category, water and plumbing, heating, and so on, Home Base suggests the last provider you used for that kind of work, drawn only from your own past entries, never a directory. It does not store the invoice itself, only what you type. See [Home Base](/shop/home-management-companion).",
         ],
       },
       {
         kind: "callout",
-        label: "The Companion for this",
-        body: "Home Base keeps a service history against each thing in your house, including who did the work, so the next repair starts with facts rather than memory. Because it knows when something was last done, its idea of what is due next is based on reality rather than on when you happened to add the item.",
+        label: "Write it before you file the invoice",
+        body: "The price is already on the paper. The diagnosis and the part number are not, and those are the two things that save you money next time.",
       },
     ],
   },
@@ -5037,7 +5684,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "appliance-warranties-what-to-track",
     title: "How to keep track of appliance warranties",
-    dek: "What to record at purchase, the service condition that catches people out, and when to check the expiry date before you pay for a repair.",
+    dek: "What to record at purchase, the service condition that catches people out, and when to check the expiration date before you pay for a repair.",
     primaryQuery: "appliance warranty tracking",
     next: { slug: "what-to-record-when-you-buy-an-appliance", reason: "Warranty dates only help if you wrote them down at purchase, and this lists the facts to record." },
     related: [
@@ -5046,13 +5693,42 @@ export const GUIDES: Guide[] = [
       { slug: "how-to-make-a-home-binder", reason: "Warranty papers belong with your other home records, and this shows how to sort them into a binder." },
     ],
     publishedAt: "2026-08-30",
+    updatedAt: "2026-09-26",
     areaSlug: "home",
+    sources: [
+      {
+        name: "FTC Consumer Advice: Warranties",
+        url: "https://consumer.ftc.gov/articles/warranties",
+        retrieved: "2026-09-26",
+        note: "Save the receipt with the warranty; contact the seller first, then the manufacturer in writing if unresolved.",
+      },
+      {
+        name: "U.S. Consumer Product Safety Commission: Recalls",
+        url: "https://www.cpsc.gov/Recalls",
+        retrieved: "2026-09-26",
+        note: "Public recall listings and email subscription, independent of manufacturer product registration.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Warranty claims often fail for administrative reasons. No proof of purchase, no serial number, no record of the annual service the warranty required, or a claim made two weeks after expiry.",
-          "All four are avoidable with about two minutes of recording at the point of purchase.",
+          "Most appliance warranty claims fail on paperwork, not because a manufacturer refuses a valid one: no proof of purchase, no serial number, a missed service the warranty required, or a claim filed after the term ran out. Record five things when something is installed, and check the expiration date before you agree to pay for a repair.",
+          "This is for the manufacturer's warranty that comes with a new appliance in the US, not a paid whole-house home warranty plan, which is a separate kind of contract with its own rules. It can't tell you whether a specific manufacturer will honor your claim, and it isn't legal advice.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Example: a filled warranty record",
+        intro: "A made-up record, not a real one, for a single water heater.",
+        columns: ["Field", "What you'd write"],
+        rows: [
+          ["Item", "Water heater, 50 gallon gas"],
+          ["Purchased / installed", "3/14/2024, installed 3/18/2024"],
+          ["Serial number", "Photographed the plate, number is RH4482201"],
+          ["Warranty length", "6 years on the tank, 1 year on parts and labor"],
+          ["Condition attached", "None found in the manual"],
+          ["Proof of purchase", "Home Depot receipt, forwarded to an email folder"],
         ],
       },
       {
@@ -5060,49 +5736,114 @@ export const GUIDES: Guide[] = [
         checkable: true,
         heading: "What to record when something is installed",
         items: [
-          "Date of purchase and date of installation, which are often different, and the warranty says which one starts the clock.",
-          "Serial number, which is what a manufacturer will ask for first.",
-          "Where the proof of purchase is.",
-          "The warranty length, and whether it was extended or registered.",
-          "Any condition attached, most commonly an annual service requirement.",
+          "Purchase date and install date, which are often different, and the warranty terms say which one starts the clock.",
+          "Serial number, which is what a manufacturer asks for first.",
+          "Where the proof of purchase is, even if that's just a search term for your inbox.",
+          "The warranty length, and whether you registered it or paid to extend it.",
+          "Any condition attached, most often a required annual service.",
+        ],
+      },
+      {
+        kind: "compare",
+        heading: "Two different things people mix up",
+        left: {
+          label: "Manufacturer's warranty",
+          items: [
+            "Free with the purchase",
+            "Covers defects in that one item",
+            "Ends on a fixed date, no renewal",
+          ],
+        },
+        right: {
+          label: "Home warranty plan",
+          items: [
+            "A separate paid service contract",
+            "Covers many systems, with a fee per visit",
+            "Renews yearly, like insurance",
+          ],
+        },
+      },
+      {
+        kind: "paragraphs",
+        heading: "The service condition that catches people",
+        paragraphs: [
+          "Many furnace, heat pump and water heater warranties require a documented annual service, sometimes called an inspection or maintenance visit in the fine print. Skip one, and the manufacturer can void the rest of the warranty term, which most people discover only when they try to use it.",
+          "The requirement is easy to miss because it usually sits in a single paragraph on page four, not on the front of the card. Knowing it exists, and keeping the service dates written down, is the whole fix.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "The service condition is the one that catches people",
+        heading: "Registering can be worth two minutes",
         paragraphs: [
-          "Many boiler and heating warranties require a documented annual service. Miss one, and the warranty can be void for the rest of its term, which people usually discover at the exact moment they try to use it.",
-          "This is small print that can cost a lot, and the fix is knowing the condition exists and having the service dates recorded.",
+          "Registration sometimes stretches a warranty by a few months, and it's a form a lot of people skip because it looks like marketing. It's also one way a manufacturer reaches you directly if there's a recall.",
+          "If you'd rather not register anything, you can check for recalls yourself and subscribe to recall emails at the U.S. Consumer Product Safety Commission's site, which covers recalled appliances whether or not you ever registered yours.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Registering matters more than it should",
+        heading: "Check the expiration date before you pay",
         paragraphs: [
-          "With some manufacturers, registration extends a warranty, and it is a form many people skip because it looks like marketing.",
-          "It is also how manufacturers reach owners about recalls. A recall notice you never receive is worth remembering when deciding whether the form is worth two minutes.",
+          "This is the step everyone means to do and skips under pressure. Something breaks, you want it fixed today, and the expiration date only gets checked after the invoice is already in your hand.",
+          "Knowing the date in advance turns a bad surprise into an ordinary decision: fix it yourself, call the manufacturer, or pay for the repair with your eyes open.",
         ],
       },
       {
-        kind: "paragraphs",
-        heading: "Check the expiry before you pay for a repair",
-        paragraphs: [
-          "The obvious step that gets skipped under pressure. Something breaks, you want it fixed today, and nobody checks whether it is still covered until after the invoice.",
-          "Knowing your expiry dates in advance converts this from a discovery into a decision.",
+        kind: "list",
+        ordered: true,
+        heading: "If you do need to make a claim",
+        items: [
+          "Contact the seller first. Many warranty problems get resolved there before the manufacturer is even involved.",
+          "If that doesn't work, contact the manufacturer directly. The warranty document lists an address or a claims line.",
+          "Have the serial number, the purchase date and the proof of purchase ready before you call.",
+          "Ask what documentation they need, and get the outcome in writing, with a claim or reference number.",
+          "If a call goes nowhere, write to the manufacturer instead, keep a copy, and consider certified mail with a return receipt, so there's a record the letter arrived.",
         ],
       },
       {
         kind: "paragraphs",
         heading: "Think before buying an extended warranty",
         paragraphs: [
-          "Extended warranties are sold at a profit, so read what they cover and what they cost before agreeing at the counter, and check whether the standard warranty already covers the likely failures.",
-          "Cover can be worth weighing where a single failure would be very costly relative to the item's price. That is a judgment, not a rule, and it should be made with the expiry dates in front of you rather than at a counter.",
+          "We'd read what an extended warranty actually covers before agreeing to one at checkout, because it's sold at a profit and often duplicates coverage the standard warranty, or your credit card, already gives you.",
+          "It can be worth the cost where a single failure would be expensive relative to the item's price. That's a judgment worth making with the expiration dates in front of you, not at the counter.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "Do I need my receipt to make a warranty claim?",
+            a: "Usually, yes. The receipt is what proves the purchase date and that you're the original owner, and most manufacturers ask for it first. Save a copy separately from the paper one, since a printed receipt fades and a photo or forwarded email survives better than most people expect.",
+          },
+          {
+            q: "What voids an appliance warranty?",
+            a: "The common reasons are a missed required service, using unauthorized parts or repair services when the manufacturer supplied free ones, damage from misuse, and a claim filed after the term ends. Read the specific conditions in your warranty document rather than assuming; they vary by brand and by appliance.",
+          },
+          {
+            q: "Is an extended warranty worth it?",
+            a: "It depends on what it actually covers and what a single repair would cost. For an expensive appliance where a major failure is plausible, it can be worth it. For something cheap to replace, or already covered by a credit card's purchase protection, it's often paying twice for the same risk.",
+          },
+          {
+            q: "What's the difference between a manufacturer's warranty and a home warranty plan?",
+            a: "A manufacturer's warranty comes free with a purchase and covers defects in that one item for a fixed term. A home warranty plan is a separate paid service contract, usually renewed yearly, that covers many systems and appliances at once, typically with a fee charged per visit.",
+          },
+          {
+            q: "How do I find out if my appliance was recalled?",
+            a: "Check the U.S. Consumer Product Safety Commission's recall listings by brand or product type, or subscribe to their recall emails so new ones reach you directly. You don't need to have registered the product for this to work; the listings are public and searchable by anyone.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What Home Base does with it",
+        paragraphs: [
+          "Home Base records the purchase date, install date and warranty expiration for anything you add, with a Notes field where the serial number can go, since there's no separate field for it. A warranty shows up in the \"Coming up\" list 30 days before it ends, worded plainly, like \"Warranty ends in 3 weeks.\" A push reminder for that only goes out if you turn on the \"Warranties expiring soon\" setting, which is off by default. See [Home Base](/shop/home-management-companion).",
         ],
       },
       {
         kind: "callout",
-        label: "The Companion for this",
-        body: "Home Base records warranty end dates alongside the brand and model of everything you add, with a serial number going in Notes, and shows a warranty on Now 30 days before it ends. Reminders are off unless you turn on the warranty one. What to capture per type of thing is in [what to record about an appliance](/guides/what-to-record-when-you-buy-an-appliance).",
+        label: "Two minutes now",
+        body: "The five facts above take less time to write down than this page took to read. The alternative is guessing at a counter the day something breaks.",
       },
     ],
   },
@@ -5971,70 +6712,151 @@ export const GUIDES: Guide[] = [
       { slug: "home-maintenance-you-skip-that-costs-the-most", reason: "To decide where the first repair money goes, this ranks the eight jobs that cost most when skipped." },
     ],
     publishedAt: "2026-08-30",
+    updatedAt: "2026-09-26",
     areaSlug: "home",
+    sources: [
+      {
+        name: "Menlo Park Fire Protection District: Nominal Life Expectancy for Building Components",
+        url: "https://www.menlofire.gov/media/PDF/fca/Appendices/Appendix%204%20-%20Nominal%20Life%20Expectancy.pdf",
+        retrieved: "2026-09-26",
+        note: "General facilities-planning figures used for the furnace, roof and electrical panel typical-life rows.",
+      },
+      {
+        name: "Today's Homeowner: How Long Does a Water Heater Last?",
+        url: "https://todayshomeowner.com/plumbing/guides/how-long-does-a-water-heater-last/",
+        retrieved: "2026-09-26",
+        note: "Tank vs tankless typical lifespans, and the year-month serial number convention used in the worked example.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Sometimes you end up responsible for a house with no paperwork at all. An inherited property, a probate sale, or a purchase where the previous owner handed over keys and nothing else.",
-          "You are not starting from nothing. The house itself carries most of the information, and an afternoon with a torch and a phone camera recovers a surprising amount of it.",
+          "Most of what an inherited or unrecorded house needs to tell you is already written on it. An afternoon with a flashlight and your phone's camera, checking data plates, service stickers and any paperwork still in a drawer, recovers the age and condition of nearly everything, even with no manuals and no history from the last owner.",
+          "This is for the maintenance side only: dating what you have, and knowing what to check first. If you inherited this house because someone died, we're sorry, and this page has nothing to say about probate or how title passes, which are handled by the state the property sits in and are worth a local probate attorney's time, not a maintenance guide.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Example: reading an age out of a serial number",
+        paragraphs: [
+          "Say the sticker on the water heater reads Serial: 2308-114477. On some brands, not all, the first two digits are the year and the next two are the month, which would make this unit built in August 2023. That's one data point from one numbering scheme, not a certainty, so treat it as a starting guess until you confirm it against that brand's own page.",
+          "A fifteen year old water heater and a two year old one are different planning problems, regardless of whether either is misbehaving today. That's the one thing a manufacture date tells you that nothing else does.",
         ],
       },
       {
         kind: "list",
         checkable: true,
         heading: "The walk round",
-        intro: "Photograph every plate you find. Transcribing model numbers by hand in bad light produces errors.",
+        intro: "Photograph every plate and label you find instead of copying numbers by hand. Bad light and small print turn handwriting into guesswork.",
         items: [
-          "Boiler or furnace: model, serial, and any service sticker, which often lists dates and the engineer.",
-          "Water heater: the label often carries a manufacture date, sometimes coded in the serial number, which tells you its age even if nothing else does.",
-          "Consumer unit or breaker panel: often carries an installation or inspection certificate date.",
+          "Furnace, boiler or heat pump: model, serial, and any service sticker, which often lists dates and a technician's initials.",
+          "Water heater: the label usually carries a manufacture date, sometimes coded in the serial number, which tells you its age even when nothing else does.",
+          "Breaker panel: often carries an installation or inspection sticker with a date on it.",
           "Every major appliance: make, model, serial.",
-          "Meters: readings and serial numbers, plus which supplier the meter suggests.",
-          "Loft, cellar and cupboards, where manuals and paperwork usually survive when nothing else has.",
-        ],
-      },
-      {
-        kind: "paragraphs",
-        heading: "Manufacture dates tell you most of what you need",
-        paragraphs: [
-          "Many major appliances encode their manufacture date somewhere on the plate, sometimes in the serial number itself. A quick search for the model plus how to read the serial usually decodes it.",
-          "That gives you the one thing that matters most: how far through its life something is. A fifteen year old water heater is a different planning problem from a three year old one, regardless of whether either is misbehaving today.",
+          "Utility meters: readings and serial numbers, plus whichever company's name is printed on them.",
+          "Attic, basement and closets, where manuals and old paperwork tend to survive after everything else is gone.",
         ],
       },
       {
         kind: "table",
         heading: "Typical service lives",
-        intro: "Rough ranges from general guidance, not predictions, and not something Home Base tracks. Climate, use and upkeep change them a lot.",
+        intro: "General trade guidance, not a prediction for your house and not something Home Base tracks. Climate, use and upkeep change these a lot.",
         columns: ["System", "Typical life", "What to do if yours is near it"],
         rows: [
-          ["Boiler or furnace", "Often 15 years or more", "Get it serviced and ask directly about remaining life"],
-          ["Water heater", "Roughly a decade for a tank", "Budget for replacement rather than waiting for the failure"],
-          ["Air conditioning", "Often around a decade or more", "Service before summer, ask about refrigerant type"],
-          ["Roof covering", "Two decades or more, depending on material", "Get an inspection rather than guessing from the ground"],
-          ["Electrical panel", "Several decades", "Have it inspected, particularly if it looks original"],
+          [
+            "Furnace (gas)",
+            "Often 15 to 20 years",
+            "Get it serviced and ask directly about remaining life",
+          ],
+          [
+            "Water heater, tank",
+            "Roughly 8 to 12 years",
+            "Budget for replacement rather than waiting for a failure",
+          ],
+          [
+            "Water heater, tankless",
+            "Often 15 to 20 years",
+            "Descale on schedule and ask about the heat exchanger",
+          ],
+          [
+            "Central air conditioning",
+            "Often around 15 years",
+            "Service before summer, ask about the refrigerant type",
+          ],
+          [
+            "Asphalt shingle roof",
+            "15 to 30 years, depending on the product",
+            "Get an inspection rather than guessing from the ground",
+          ],
+          [
+            "Main electrical panel",
+            "Often 30 years or more",
+            "Have it inspected, particularly if it looks original",
+          ],
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Book one inspection rather than five",
+        heading: "Who should you call for a first inspection?",
         paragraphs: [
-          "If the house is genuinely undocumented, a single competent visit from a heating engineer or a general surveyor gives you more than weeks of guessing, and it produces a written record you now own.",
-          "The value is not only the findings. It is that you now have a dated starting point, which is what every future service interval will be measured from.",
+          "If the house is truly undocumented, one visit from a licensed home inspector, or a heating and cooling technician if you only care about that one system, tells you more in a couple of hours than weeks of guessing, and it produces something you can keep: a dated, written report.",
+          "The value isn't only the findings. It's that you now have a real starting point, which is what every future service interval gets measured from.",
         ],
       },
       {
         kind: "paragraphs",
         heading: "Treat unknowns as due",
         paragraphs: [
-          "Where you genuinely cannot find out when something was last done, assume it is due. For most of the maintenance list an unnecessary check costs an hour and a missed one costs a great deal more.",
-          "Once you have done it, you have a date, and the guessing stops permanently. The intervals to work from are in [how often things actually need servicing](/guides/how-often-home-systems-need-servicing).",
+          "Where you truly can't find out when something was last done, assume it's due. For most jobs on a home maintenance list, checking something that didn't need it costs an hour, and skipping something that did costs a great deal more.",
+          "Once you've done it, you have a real date, and the guessing stops for good. [How often things in your house actually need servicing](/guides/how-often-home-systems-need-servicing) has the intervals to work from next.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What the walk round won't tell you",
+        paragraphs: [
+          "A walk round finds what's visible. It won't tell you about wiring behind a wall, a slow leak under a slab, or whether a permit was ever pulled for work someone did years ago. If anything you find looks like older wiring, an unfamiliar panel brand, or metal pipe where you expected plastic, that's a reason to call an electrician or plumber, not a reason to keep guessing on your own.",
+          "And if you're here because of a death in the family, the maintenance list can wait. There's no deadline on a furnace filter that applies before you're ready to deal with any of this.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "How do I find out how old my furnace or water heater is?",
+            a: "Check the data plate for a manufacture date first; many list it outright. If not, the serial number often encodes it, though the format differs by brand, so search that brand's support page for how to read it. A purchase or install date written anywhere in the house also works as a rough substitute.",
+          },
+          {
+            q: "What should I check first in a house with no records?",
+            a: "Start with whatever would be worst to have fail without warning: the water heater, the furnace or heat pump, and the breaker panel. Photograph their plates, note the age if you can find it, and book one inspection if the house is completely undocumented. Everything else can follow at a slower pace.",
+          },
+          {
+            q: "Do I need a home inspection if I already live there?",
+            a: "Not always, but it's worth it for a house you have no history on. A licensed inspector will look at systems you can't easily assess yourself, wiring, structure, roofing, and give you a dated written report that becomes your new starting point for every future maintenance interval.",
+          },
+          {
+            q: "Is probate the same in every state?",
+            a: "No. Probate and how title passes after a death are set by the state the property is in, and the process, timeline and paperwork differ from state to state. This guide only covers home maintenance; for the estate itself, a probate attorney licensed in that state, or the local court handling probate for the county where the house sits, is the right place to start.",
+          },
+          {
+            q: "Can Home Base tell me how old my appliances are?",
+            a: "No. Home Base has no lifespan or age feature; it works from whatever dates you enter and tells you what's due based on those, not on a predicted replacement year. The typical-life table above is this guide's own general trade guidance, not something the app calculates or tracks.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What Home Base does with it",
+        paragraphs: [
+          "Home Base is built to be filled in from exactly this kind of walk round. Add each thing you find with just a name, and it only asks for the fields that make sense for that category, brand, model, install date, warranty, what to buy, so a water heater and a breaker panel don't get the same form. It works from whatever you know, not a complete history, and once a single date exists for something, it takes over the job of saying what's due next. See [Home Base](/shop/home-management-companion).",
         ],
       },
       {
         kind: "callout",
-        label: "The Companion for this",
-        body: "Home Base is designed to be filled in from exactly this kind of walk round, asking for the right fields per type of thing, and it will work from what you know rather than demanding a complete history. Once a date exists it takes over the arithmetic of what is due when.",
+        label: "Start with today's date",
+        body: "You don't know when anything was last done, and that's fine. Every date you write down from here is a real one, and real dates are what the rest of this depends on.",
       },
     ],
   },
@@ -7192,7 +8014,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "how-long-to-keep-homeschool-records",
     title: "How long to keep homeschool records, and what to throw away",
-    dek: "Which papers to keep, what to photograph and what to recycle. Florida and New Hampshire name two years for a portfolio; the rest is advice.",
+    dek: "Which papers to keep, what to photograph, and what to recycle. HSLDA's rule of thumb, what to keep forever, and Florida's two-year portfolio law.",
     primaryQuery: "how long to keep homeschool records",
     next: { slug: "what-goes-in-a-homeschool-portfolio", reason: "To know what belongs in the keep pile first, see the five portfolio contents and per-subject samples." },
     related: [
@@ -7201,65 +8023,140 @@ export const GUIDES: Guide[] = [
       { slug: "homeschool-record-keeping-requirements-by-state", reason: "Retention depends on your state. Look up your level in this table and confirm at the source." },
     ],
     publishedAt: "2026-08-30",
+    updatedAt: "2026-09-26",
     areaSlug: "family-and-learning",
+    sources: [
+      {
+        name: "HSLDA: Types of Homeschool Records",
+        url: "https://hslda.org/post/types-of-homeschool-records",
+        retrieved: "2026-09-26",
+        note: "Rolling three-year window for general work samples; permanent retention recommended for state-required test/evaluation results and correspondence with school officials.",
+      },
+      {
+        name: "HSLDA: The Essentials of High School Recordkeeping",
+        url: "https://hslda.org/post/the-essentials-of-high-school-recordkeeping",
+        retrieved: "2026-09-26",
+        note: "Permanent retention recommended for report cards, transcripts, standardized test results, college entrance test results and immunization records.",
+      },
+      {
+        name: "Florida Statutes § 1002.41",
+        url: "https://www.flsenate.gov/laws/statutes/2010/1002.41",
+        retrieved: "2026-09-26",
+        note: "Portfolio must be preserved by the parent for 2 years and made available to the district school superintendent on 15 days' written notice.",
+      },
+      {
+        name: "HSLDA: New Hampshire's HB 1268",
+        url: "https://hslda.org/post/hb-1268",
+        retrieved: "2026-09-26",
+        note: "New Hampshire's 2026 Home Education Freedom Act eliminated the state's former portfolio, notification and annual evaluation requirements.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "By March many homeschooling families have more paper than shelf. The instinct is to keep all of it, because throwing away a child's work feels like throwing away the year.",
-          "It is not. A representative sample proves a year far better than a complete archive, and it is the version you might actually be able to find something in.",
+          "For most homeschool paperwork, a rolling window works: this year's samples plus the two years before them. A shorter list goes in the keep-forever pile instead: any state-required test or evaluation result, any letter to or from a school official, and your own log. Florida sets an actual number in law: two years for a portfolio.",
+          "This is for a homeschooling parent in the United States staring at a stack of paper and wondering what has to stay. It can't tell you your own state's exact number, and it isn't legal advice: check your state's own page before you recycle anything a rule might cover.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "An example: a third-grade stack in June",
+        paragraphs: [
+          "Say it's June and you're holding a banker's box from third grade: forty worksheets, two photos of a baking-soda volcano, a spelling test with a mark on it, and the notebook you used as a log all year. You don't need all forty worksheets. You need a handful that show progress, the photos (the volcano itself already went in the recycling), the test if your state asked for one, and the log, which stays no matter what your state requires.",
         ],
       },
       {
         kind: "table",
-        heading: "What to do with what",
-        columns: ["Item", "What to do", "Why"],
+        heading: "What to keep, and for how long",
+        columns: ["Item", "How long", "Why"],
         rows: [
-          ["Dated work showing progress", "Keep", "Two points in a year is the most persuasive evidence there is"],
-          ["Standardised test results", "Keep permanently", "Slow to replace and sometimes needed years later"],
-          ["Evaluator reports", "Keep permanently", "Proof the year was reviewed"],
-          ["Your own log", "Keep permanently", "A record that ties everything together"],
-          ["Large projects and models", "Photograph, then recycle", "They prove nothing in a box in a loft"],
-          ["Daily worksheets and drills", "Keep a handful, recycle the rest", "Fifty identical sheets say nothing fifty times"],
-          ["Curriculum you have finished with", "Sell or pass on", "Another family may want it"],
+          [
+            "A representative sample of daily work",
+            "2 to 3 years",
+            "HSLDA's rule of thumb: this year plus the two before it",
+          ],
+          [
+            "A state-required test or evaluation result",
+            "Permanently",
+            "HSLDA recommends keeping these for good; a state can ask about an earlier year",
+          ],
+          [
+            "Any letter to or from a school official",
+            "Permanently",
+            "It's your proof of what was filed and when",
+          ],
+          [
+            "Your own log of what you did",
+            "Permanently",
+            "It's the record that ties every other paper to a date",
+          ],
+          [
+            "Large projects, models, science builds",
+            "Photograph, then let go",
+            "A dated photo proves what happened; the object doesn't have to survive to March",
+          ],
+          [
+            "Curriculum you're finished with",
+            "Sell, donate, or recycle",
+            "Another family may want it, and it isn't part of any record",
+          ],
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Photograph the things that cannot be filed",
+        heading: "Check your own state's number",
         paragraphs: [
-          "Models, posters, science experiments, anything three dimensional. A dated photograph is genuinely better evidence than the object, because it can go in a portfolio and the object cannot.",
-          "It also solves the thing nobody says out loud, which is that the object was probably going to be thrown away eventually anyway.",
+          "Florida puts an actual figure on it: the portfolio has to be preserved by the parent for two years, and made available to the district school superintendent on fifteen days' written notice. That isn't a suggestion. It's written into the statute.",
+          "Most other states either list required items with no stated retention period, or ask for nothing to be filed at all. Our [record keeping requirements by state](/guides/homeschool-record-keeping-requirements-by-state) summarizes what each state's page says today, and it says plainly that it's a summary, not a citation. Confirm anything you're relying on at your own state's source.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Keep a spread, not a highlight reel",
+        heading: "Where this goes wrong",
         paragraphs: [
-          "Three pieces from across the year beats twelve from one strong two week stretch. Keep something ordinary alongside something good, and keep at least one thing that was difficult.",
-          "A file of only polished work reads as curated, and it hides the thing that is actually impressive, which is the distance travelled between October and March.",
+          "The most common mistake isn't throwing too much away. It's keeping one pile that does two jobs at once: the record a state or evaluator might ask to see, and the box holding the first story they wrote and the drawing that made you laugh. Mix them and neither job gets done well. The sentimental pile gets thinned because it looks like clutter, and the compliance pile gets so full nobody can find the one report that actually counts.",
+          "A second mistake: keeping the object instead of photographing it. A poster board or a diorama takes up a shelf and proves nothing by itself. A dated photo, filed with that year's samples, proves exactly as much and takes no room.",
+          "A third: moving states mid-year and treating the move as a clean break. Keep everything from the transition year longer than you otherwise would. A new state's page, or the district that reviews your file, may ask how the year started, not just where it ended up.",
+          "Rules also change under you. New Hampshire required a portfolio, kept two years, for years. A law that took effect in mid-2026 removed that requirement along with the annual evaluation and the notification. A summary written even a few months earlier would have been wrong. Check your own state's current page, even for a rule you're sure you already know.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "How long should I keep homeschool records after graduation?",
+            a: "Keep high school transcripts, course lists, standardized test results and immunization records permanently. Colleges, employers and licensing boards can ask for them years later, and there's no state process to replace a lost one. Earlier grades can follow the shorter rolling window; high school is the stretch worth treating as forever.",
+          },
+          {
+            q: "Can I throw away completed workbooks?",
+            a: "Yes, once you've pulled a handful of representative pages. A page from early in the year and one from later shows more progress than the whole book, and it takes a fraction of the space. Keep the ones with a date on them if the workbook itself doesn't have one printed.",
+          },
+          {
+            q: "What if my state doesn't require a portfolio at all?",
+            a: "Some states list nothing to keep. That doesn't mean nothing is worth keeping: a light record still helps if you move to a state that does ask, if an evaluation ever comes up, or if you just want to remember what a school year looked like. HSLDA's rolling window is a reasonable default even where nothing is required.",
+          },
+          {
+            q: "Do I need to keep every standardized test result?",
+            a: "Keep the ones a state actually required, and keep those permanently. A test you took out of curiosity, with no state requirement behind it, can follow the shorter general window instead.",
+          },
+          {
+            q: "What should I photograph instead of keep?",
+            a: "Anything three-dimensional or too large to file: models, posters, science builds, art projects. Take a dated photo, add a line about what it was for, and file the photo with that year's samples. The object can go once the photo exists.",
+          },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Check your state before discarding anything",
         paragraphs: [
-          "Some states name a retention period. In our summary, Florida and New Hampshire list a portfolio kept two years. Anything longer in the table above is advice, not law.",
-          "The overall position is in [record keeping requirements by state](/guides/homeschool-record-keeping-requirements-by-state).",
-        ],
-      },
-      {
-        kind: "paragraphs",
-        heading: "The sentimental pile is allowed",
-        paragraphs: [
-          "Keep the first story they wrote and the drawing that made you laugh. That is a different pile with a different purpose, and it should not be confused with the compliance one.",
-          "Mixing them is what produces a box nobody can search, containing both a legal record and a birthday card.",
+          "[Homeschooling Companion](/shop/homeschooling-companion) keeps the one piece of paper on that list you can't reconstruct from memory: the log. Every subject you record is dated the day you record it, and the record prints per child, covering what was done and when, for up to the most recent 400 entries in your account. It doesn't store your test results, photos or projects, and it isn't an archive. What it gives you is the dated log to keep alongside whatever paper you decide to hold on to.",
         ],
       },
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Homeschooling Companion keeps a log of what was done and when, alongside the paper you keep. It prints as a per-child record covering what was done and when, so the paper you keep can be a genuine sample rather than the whole year.",
+        body: "It prints a dated, per-child record of what was done, the one piece of this list that's hardest to reconstruct from memory. Everything else here, the paper itself, is still yours to sort and store.",
       },
     ],
   },
@@ -8936,13 +9833,41 @@ export const GUIDES: Guide[] = [
       { slug: "how-often-home-systems-need-servicing", reason: "Heating service is one of the jobs on this interval table, so you can see when it next falls due." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "home",
+    sources: [
+      {
+        name: "NOAA National Weather Service: Glossary, Freeze and Hard Freeze",
+        url: "https://forecast.weather.gov/glossary.php?word=freeze",
+        retrieved: "2026-09-26",
+        note: "Freeze defined as 32°F or below; hard freeze as 28°F or below.",
+      },
+      {
+        name: "Portland, OR: How to prepare your plumbing for winter weather",
+        url: "https://www.portland.gov/water/prepare-winter",
+        retrieved: "2026-09-26",
+        note: "Disconnect and insulate outdoor faucets and hose bibs, drain lines, insulate exposed pipes, leave heat on low if away.",
+      },
+      {
+        name: "Amica Insurance: Winter Temperature for a Vacant House",
+        url: "https://www.amica.com/en/resources/home/maintenance/vacant-home-temperature.html",
+        retrieved: "2026-09-26",
+        note: "55°F as the commonly recommended minimum thermostat setting for an unoccupied home in winter.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Most home maintenance runs on an interval: change the filter every three months, flush the water heater every year. Winterizing does not. It runs on a date that you do not choose, which is the first night the temperature drops below freezing.",
-          "The good news is that the list is short. Five jobs cover a lot of what goes wrong. Most of them are not difficult. All of them are easier in a dry afternoon in October than in a cold snap in January.",
+          "Winterizing your house means five jobs finished before the first hard freeze: drain and disconnect the outdoor faucet, shut down or blow out the irrigation lines, bring in the window air conditioner, swap the humidifier pad, and seal the gaps around pipes and the garage door. Do them on a dry day before the freeze, not after.",
+          "This is written for a normal single-family house in a US climate that gets hard freezes, temperatures at or below 32°F according to the National Weather Service. It can't read your own forecast or tell you how your plumbing is laid out, and if your winters stay above freezing, skip to the note on mild climates below.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "An example: the two days before a freeze",
+        paragraphs: [
+          "Say the forecast on Tuesday shows the first hard freeze of the year for Thursday night, a low near 26°F. Wednesday afternoon, while it's still in the 40s, you'd shut off and drain the outdoor faucet, disconnect and coil the hose, blow out or shut the valve on the irrigation line, and cover any hose bib you can't shut off from inside. Thursday morning you'd bring in the window air conditioner and open the cabinet doors under any sink on an exterior wall, so warmer room air can reach the pipes overnight. That's four jobs in about ninety minutes, and it's the same order every year once you've done it once.",
         ],
       },
       {
@@ -8951,11 +9876,13 @@ export const GUIDES: Guide[] = [
         intro: "Tick them off as you go. This list lives on the page for this visit only.",
         checkable: true,
         items: [
-          "Shut off and drain the outdoor faucet before the freeze, and disconnect the hose.",
-          "Blow out the irrigation lines before the freeze, or book someone who has the compressor.",
+          "Shut off and drain the outdoor faucet, and disconnect the hose.",
+          "Blow out the irrigation lines, or shut the valve if you don't own a compressor.",
+          "Cover any outdoor faucet or hose bib you can't shut off, with a foam cover or wrapped insulation.",
+          "Insulate exposed pipes in the attic, crawl space, basement or garage.",
           "Take out the window air conditioner and store it for winter.",
           "Replace the humidifier pad.",
-          "Seal entry points before the cold, especially around pipes and the garage door.",
+          "Seal the gaps around pipes and the garage door, before mice go looking for them.",
         ],
       },
       {
@@ -8964,19 +9891,18 @@ export const GUIDES: Guide[] = [
         left: {
           label: "Interval jobs",
           items: [
-            "Replace the furnace filter every three months",
-            "Test the smoke alarm every month",
-            "Flush the water heater every year",
-            "Fine to do a few days late",
+            "Furnace filter, every 3 months",
+            "Smoke alarm test, every month",
+            "Water heater flush, every year",
+            "A few days late costs nothing",
           ],
         },
         right: {
-          label: "Date jobs",
+          label: "Date jobs, this list",
           items: [
-            "Drain the outdoor faucet before the first freeze",
-            "Blow out the irrigation lines before the freeze",
-            "Store the window air conditioner for winter",
-            "Not fine to do a few days late",
+            "Outdoor faucet, before the freeze",
+            "Irrigation lines, before the freeze",
+            "Window air conditioner, before the freeze",
           ],
         },
       },
@@ -8984,30 +9910,88 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Outside water first",
         paragraphs: [
-          "The outdoor faucet is a common freeze failure. Water left in the pipe between the shutoff and the tap freezes, expands and can split the pipe inside the wall, where you will not see it until the thaw. Disconnect the hose, shut the water off to that line if there is a valve for it inside the house, and let the tap run until it stops.",
-          "If your faucet has no interior shutoff or you are not sure how it is plumbed, that is a good question to ask a plumber once. This guide gives general information and is not a substitute for looking at your own plumbing. If you want to know where your main shutoff is before you need it, read [do you know where your main water shutoff is](/guides/where-is-my-water-shutoff).",
+          "The outdoor faucet is where freeze damage usually starts. Water left in the pipe between the shutoff and the tap freezes, expands, and can split the pipe inside the wall, where you won't see it until the thaw. If your faucet has an interior shutoff, close it, then open the outdoor tap and let it run until it stops. If it doesn't have one, or you're not sure, cover the faucet and hose bib with an insulated cover, or wrap it in cloth or plastic-wrapped rags, the same fix a city water department recommends when there's no shutoff to use.",
+          "Pipes in an unheated space, an attic, a crawl space, a basement or a garage, are the second common failure point. Wrap them with foam sleeves or heat tape from a hardware store. If you want to know where your own main shutoff is before any of this comes up, read [where is my water shutoff](/guides/where-is-my-water-shutoff).",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "The quiet jobs that still matter",
+        heading: "If you're leaving for the winter",
         paragraphs: [
-          "The humidifier pad and the mice are the two jobs people forget because nothing visibly breaks. A worn pad means the humidifier works harder for less. Small gaps around pipes and the garage door are how mice come in as soon as the weather turns.",
-          "Snow blowers and mowers belong on this list too if you own them. Service the blower before the first snow, and put winter fuel or a stabilizer in the mower.",
+          "If the house will sit empty for more than a few days over a freeze, don't turn the heat off. Insurers commonly use 55°F as the minimum thermostat setting for an unoccupied house in winter, because that keeps the air inside wall and floor cavities, where the plumbing actually runs, above freezing even though it feels high for an empty house. Ask someone to check on the house if you're away for a longer stretch, and open the cabinet doors under exterior-wall sinks before you go.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "If your winters don't freeze",
+        paragraphs: [
+          "If a hard freeze is rare where you live, most of the list above doesn't apply most years, or only applies the one night a cold snap is actually forecast. The window air conditioner, the humidifier pad and sealing entry points are still worth doing on your own timeline. They just aren't tied to a freeze deadline the way the outdoor water jobs are.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The jobs people skip",
+        paragraphs: [
+          "The humidifier pad and the pipe gaps are the two jobs people forget because nothing breaks right away. A worn pad means the humidifier works harder for less. A gap the width of a pencil is how a mouse gets in as the weather turns.",
+          "Snow blowers and mowers belong on the list too if you own them. Service the blower before the first snow, and put winter fuel or a stabilizer in the mower.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What can go wrong",
+        paragraphs: [
+          "A pipe that's already frozen is a job for a plumber, not this page. Shut off the water at the main if you can reach it, and don't use an open flame to try to thaw anything yourself. Blowing out irrigation lines without a compressor can leave water sitting in the system anyway, so pay someone for that one job if you don't own the equipment. And a foam pipe sleeve pushed onto a damp pipe traps the moisture instead of keeping it out, so dry the pipe first.",
         ],
       },
       {
         kind: "paragraphs",
         heading: "Write down the date you did it",
         paragraphs: [
-          "The cheapest thing you can do for next year is note the date. \"Drained faucet, October 21\" is enough. Next October you will know whether you were early or late, and you will know it is a job you have done before.",
-          "For the wider list of what falls due in the fall, see [the fall checklist by month](/guides/fall-home-maintenance-checklist).",
+          "The cheapest thing you can do for next year is note the date. \"Drained faucet, October 21\" is enough. Next October you'll know whether you were early or late, and that it's a job you've done before.",
+          "For the rest of what the season asks of a house, not just the freeze jobs, see [the fall checklist by month](/guides/fall-home-maintenance-checklist). And to keep every job's date in one running record, not just these seven, see [what to write in a home maintenance log](/guides/home-maintenance-log-template).",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "What temperature causes pipes to freeze?",
+            a: "The National Weather Service defines a freeze as the air temperature reaching 32°F or below. Pipes don't usually split from a brief dip, it's sustained cold, several hours or more, especially in an uninsulated space, that does the damage. Treat a forecast freeze as your deadline, not the day it actually arrives.",
+          },
+          {
+            q: "Do I need to winterize my house if I don't get hard freezes?",
+            a: "Only partly. Skip the outdoor faucet and irrigation jobs, or save them for the rare cold snap that is forecast. The window air conditioner, the humidifier pad and sealing gaps around pipes are still worth doing on your own schedule, since none of those depend on the weather.",
+          },
+          {
+            q: "What should I set my thermostat to if I'm away for the winter?",
+            a: "No lower than 55°F is the figure insurers commonly use for an unoccupied house, since it keeps the space inside walls and floors, where the pipes run, above freezing. Leave cabinet doors open under exterior-wall sinks, and ask someone to check on the house if you'll be gone more than a few days.",
+          },
+          {
+            q: "What do I do if a pipe already froze or burst?",
+            a: "Shut off the water at the main if you can reach it, and call a plumber. Don't use an open flame to thaw a pipe yourself. If water is actively coming through a ceiling or wall, treat it as an emergency and shut off electricity to that area if the panel is safe to reach.",
+          },
+          {
+            q: "When should I actually winterize, is there a set date?",
+            a: "There isn't one. Do the outdoor water jobs the day or two before the first hard freeze is forecast where you live, which changes every year. A reminder set to a fixed calendar date will eventually be wrong in one direction or the other.",
+          },
+          {
+            q: "Can I blow out my own irrigation lines?",
+            a: "Only if you own or can rent an air compressor rated for it, since the job is forcing water out of the pipes with pressurized air. Without one, water stays in the lines and can still freeze and crack a fitting. It's a common job to pay someone for once a year.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "How Home Base handles the freeze jobs",
+        paragraphs: [
+          "Home Base keeps these freeze jobs in the months they usually belong to, and marks a seasonal job due once its month arrives and it hasn't been logged, with a status line like \"Not logged yet, usually October\" until you record it. Tap Action on a job, say when you did it, who did it and what it cost, and that note is saved to the item's history and resets the clock. It doesn't read your local forecast, so treat the first hard freeze where you live as the real deadline, not the month on the app. See [Home Base](/shop/home-management-companion).",
         ],
       },
       {
         kind: "callout",
-        label: "The Companion for this",
-        body: "Home Base keeps the freeze jobs in the months they belong to and flags a seasonal job as due now once its month has come and it has not been logged. You record what you did and who did it, and the note stays with the item. It does not know your weather, and it does not send reminders unless you turn them on, so treat the first frost forecast as the deadline.",
+        label: "Freeze vs. hard freeze",
+        body: "A freeze is 32°F or below; a hard freeze is 28°F or below, cold enough to put unprotected outdoor plumbing at real risk, per the National Weather Service. Either one is your cue to finish this list, not just the second.",
       },
     ],
   },
@@ -9084,7 +10068,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "how-often-change-furnace-filter",
     title: "How often to change a furnace filter (and the size to note)",
-    dek: "Every three months is the working default; change it sooner with pets or dust. How to read the size numbers and where to write them once.",
+    dek: "Check it once a month and change it at least every three months, per ENERGY STAR and Carrier. How to read the size and where to write it down once.",
     primaryQuery: "how often to change furnace filter",
     next: { slug: "how-often-home-systems-need-servicing", reason: "Filters are one line on a longer list, and this gives the interval for every other system." },
     related: [
@@ -9093,13 +10077,40 @@ export const GUIDES: Guide[] = [
       { slug: "fall-home-maintenance-checklist", reason: "Heating prep in fall starts with the filter, and this puts the other jobs in order." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "home",
+    sources: [
+      {
+        name: "ENERGY STAR: Maintenance Checklist",
+        url: "https://www.energystar.gov/saveathome/heating-cooling/maintenance-checklist",
+        retrieved: "2026-09-26",
+        note: "Inspect, clean, or change air filters once a month in a central air conditioner, furnace, or heat pump.",
+      },
+      {
+        name: "Carrier: How Often to Change Air Filter",
+        url: "https://www.carrier.com/us/en/residential/hvac-resources/air-conditioners/how-often-to-change-air-filter/",
+        retrieved: "2026-09-26",
+        note: "Manufacturer guidance: 1-inch filters every 30 to 90 days, 4-inch media filters every 6 to 12 months, MERV rated 1 to 16.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "The furnace filter is the cheapest job in the house and one of the easiest to lose track of. It does not fail loudly. A clogged one just makes the system work harder, week after week, until something else gives.",
-          "Three months is a sensible default for a normal one inch filter in a normal house. The rest of this page is about when to shorten that, and how to stop doing the store-aisle guess.",
+          "Check a one inch furnace filter once a month, and change it once it looks dirty, at least every three months. That is ENERGY STAR's guidance for a central air conditioner, furnace, or heat pump filter. Change it sooner with pets, allergies, or fresh renovation dust, and less often in a house that sits empty.",
+          "This page is for a standard one inch filter in a US home. A thicker four inch media filter runs on a longer schedule, and your furnace's own manual has the final say over both. It will not tell you how dirty your filter is today, only how often to look.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Example: one filter, written down once",
+        intro: "An illustration, not a real household. The size, location and dates are placeholders.",
+        columns: ["What", "This filter"],
+        rows: [
+          ["Size printed on the frame", "16x25x1"],
+          ["Where it lives", "Furnace door, slides in from the side"],
+          ["Changed", "September 1"],
+          ["Check again", "October 1"],
         ],
       },
       {
@@ -9108,19 +10119,39 @@ export const GUIDES: Guide[] = [
         intro: "These are ordinary rules of thumb. Your manual and your system's maker have the final say.",
         columns: ["Situation", "What tends to happen", "A sensible change"],
         rows: [
-          ["Pets that shed", "The filter clogs with hair and dander faster", "Check monthly, change as needed"],
-          ["Someone with allergies", "You want the filter working at its best", "Check monthly"],
-          ["Renovation or heavy dust", "It can fill in days", "Check after the work, change if grey"],
-          ["An empty or seldom-used house", "It loads slowly", "Three months is usually plenty"],
-          ["Heating or cooling all season", "It works most of the year", "Every one to three months"],
+          [
+            "Pets that shed",
+            "The filter clogs with hair and dander faster",
+            "Check monthly, change as needed",
+          ],
+          [
+            "Someone with allergies",
+            "You want the filter working at its best",
+            "Check monthly",
+          ],
+          [
+            "Renovation or heavy dust",
+            "It can fill in days",
+            "Check after the work, change if grey",
+          ],
+          [
+            "An empty or seldom-used house",
+            "It loads slowly",
+            "Three months is usually plenty",
+          ],
+          [
+            "Heating or cooling all season",
+            "It works most of the year",
+            "Every one to three months",
+          ],
         ],
       },
       {
         kind: "paragraphs",
-        heading: "How to read the size",
+        heading: "What the numbers on the filter mean",
         paragraphs: [
-          "The three numbers on the edge of the filter are its length, width and depth in inches. A filter marked 16x25x1 is about sixteen inches by twenty-five inches, and one inch thick. Sizes are usually nominal, so the real dimensions can be a fraction of an inch smaller, which is why you buy by the printed number and not by measuring.",
-          "Write down the size on the day you change it. Also note the direction of the airflow arrow, and whether the filter slides in from the side or the front. These are the two things you will forget by the next change.",
+          "The three numbers on the frame are length, width and depth in inches. A filter marked 16x25x1 is about sixteen inches by twenty-five inches, and one inch thick. Sizes are usually nominal, so the real dimensions run a little smaller than the printed number, which is why you buy by the number on the frame and not by a tape measure.",
+          "A four inch media filter, the wider kind fitted in a cabinet near the furnace, holds far more dust than a one inch filter. Carrier's own guidance puts a one inch filter at 30 to 90 days and a four inch media filter at 6 to 12 months, which is a different schedule, not a longer version of the same one. If your filter carries a MERV number, a higher rating traps smaller particles, but it can also restrict airflow on a system that was not built for it, so match it to what your manual recommends rather than buying the strongest one on the shelf.",
         ],
       },
       {
@@ -9137,16 +10168,57 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "paragraphs",
-        heading: "Where to keep it",
+        heading: "Signs it is already overdue",
         paragraphs: [
-          "The best place is somewhere you will be standing when you need it: on a strip of tape on the furnace, on your phone, or on a card you keep in your wallet. The same goes for the bulb type, the part number for the humidifier pad, and any other fact you look up every time.",
-          "For the wider habit, see [how often things in your house actually need servicing](/guides/how-often-home-systems-need-servicing), and for finding a model number on an appliance, [how to find the model number on any appliance](/guides/how-to-find-the-model-number-on-any-appliance).",
+          "Hold it up to a light. If you cannot see light through it, or it looks grey and matted rather than white or lightly grey, change it regardless of the calendar. A system working harder than it should also tends to run longer to reach the same temperature, which shows up on the energy bill before anything visibly breaks.",
+          "Checking and changing are not the same task. ENERGY STAR's own checklist is to inspect monthly and change on a schedule. A filter that still looks clean at the one month mark does not need replacing yet, just checking again next month.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Where to keep the answer",
+        paragraphs: [
+          "The best place is somewhere you will be standing when you need it: on a strip of tape on the furnace, on your phone, or on a card in your wallet. The same goes for the bulb type, the part number for a humidifier pad, and any other fact you look up every time.",
+          "For the wider habit, see [how often things in your house actually need servicing](/guides/how-often-home-systems-need-servicing), and for locating a model number on any appliance, [how to find the model number on any appliance](/guides/how-to-find-the-model-number-on-any-appliance).",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Where Home Base fits",
+        paragraphs: [
+          "Home Base has a What to buy field on every item in the house. Put 16x25x1 filter there once, next to the furnace, and it prints on that item's one page Item Card, ready for the hardware store on your phone or on paper. The furnace filter job defaults to every three months; it does not know about your pets or your allergies, so shorten the interval yourself, or log the change and let the pattern show what your house actually needs. See [Home Base](/shop/home-management-companion) for what else it tracks.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "How often should you change a furnace filter?",
+            a: "Check it every month and change it once it looks dirty, at least every three months, per ENERGY STAR's home maintenance guidance for a central air conditioner, furnace, or heat pump. Shorten that to one month with pets, allergies, or recent renovation dust, and it can stretch closer to three months in a lightly used house.",
+          },
+          {
+            q: "Is the air conditioner filter the same as the furnace filter?",
+            a: "In most homes, yes. A central air conditioner and a furnace usually share one return air filter and one interval, so changing it once covers both the heating and cooling season. Check your system's manual if your setup uses a separate filter for each unit, since not every layout is built the same way.",
+          },
+          {
+            q: "What does the MERV number mean?",
+            a: "MERV rates how well a filter catches small particles on a scale that runs from 1 to 16 in most residential filters, with a higher number trapping smaller particles. A higher MERV is not automatically better for your system, because it can restrict airflow if your furnace was not built for it. Match it to what your manual recommends.",
+          },
+          {
+            q: "Does a dirty filter raise the energy bill?",
+            a: "A clogged filter makes the blower work harder to move the same amount of air, which uses more energy and can shorten the system's life. It will not spike a bill overnight, which is exactly why a fixed check-in schedule catches it before a manual glance would.",
+          },
+          {
+            q: "How do I know what size filter to buy?",
+            a: "Pull out the current filter and read the three numbers printed on its cardboard frame: length, width, and thickness in inches, such as 16x25x1. Buy by that printed number, not a tape measure, since real dimensions run a little smaller than the labeled size. Write it down once so you never have to pull it out again just to check.",
+          },
         ],
       },
       {
         kind: "callout",
-        label: "The Companion for this",
-        body: "Home Base has a What to buy field on every item. Put 16x25x1 filter there and it sits with the furnace, and it prints on the item's one-page Item Card, which you can take to the hardware store on paper or on your phone. Home Base uses three months for the furnace filter job by default. It does not know your household, so if you have pets or dust, change the filter sooner and log it when you do.",
+        label: "Where Home Base fits",
+        body: "The What to buy field on any item prints straight onto its Item Card, so the filter size travels with you to the store. The three month default is a starting point, not a diagnosis of your house.",
       },
     ],
   },
@@ -9163,13 +10235,40 @@ export const GUIDES: Guide[] = [
       { slug: "inherited-a-house-where-to-start", reason: "If you inherited a house, locating shutoffs is the first task, and this covers what else to check." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "home",
+    sources: [
+      {
+        name: "DC Water: Preparation Helps Keep You and Your Family Safe",
+        url: "https://www.dcwater.com/resources/emergencies/preparing-water-emergency",
+        retrieved: "2026-09-26",
+        note: "Public water utility guidance: look for the main valve where the water supply enters the house, and mark the shutoff so it can be found quickly.",
+      },
+      {
+        name: "SERVPRO: Main Water Shutoff Valve, Where It Is and How to Find It",
+        url: "https://www.servpro.com/resources/where-to-find-main-water-shutoff-valve",
+        retrieved: "2026-09-26",
+        note: "Typical valve locations by house type: basement, crawlspace, mechanical room, exterior wall, or an outside access panel.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "When a pipe fails, the fastest way to limit the damage is to stop the water at the source. That only works if you already know where the main shutoff is, everyone in the house knows too, and the valve turns.",
-          "Finding it takes about ten minutes on an ordinary afternoon. Few people do it, which is exactly why it is worth doing. This page is general information, not a repair guide. If water is actively coming through a ceiling or a wall, or you smell gas or see sparks, treat that as an emergency and call the right professional.",
+          "Water is coming out from under the washing machine, or a supply line has let go under a sink, and you need to stop it now. The main shutoff is usually near where the water line enters the house: a basement wall closest to the street, a utility closet, or a meter box near the curb. Find it before you need it, because most people go looking for the first time with water already running across the floor.",
+          "This page is general information for finding and marking the valve, not a repair guide. If water is actively coming through a ceiling or a wall, or you smell gas or see sparks, treat that as an emergency: shut off what you can safely reach and call a professional.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Example: one household's shutoff page, filled in",
+        intro: "An illustration, not a real address. Use it as a template for your own page.",
+        columns: ["Field", "Filled in"],
+        rows: [
+          ["Main shutoff", "Basement, left wall, next to the water heater"],
+          ["Turns", "Left, quarter turn, lever handle"],
+          ["Tool needed", "None"],
+          ["Draw where it is", "Sketch marked W near the water heater"],
         ],
       },
       {
@@ -9177,10 +10276,22 @@ export const GUIDES: Guide[] = [
         heading: "Where the main shutoff usually is",
         columns: ["Where to look", "What you are looking for"],
         rows: [
-          ["Near the water meter", "A valve on the pipe just before or after the meter"],
-          ["Where the line enters the house", "A valve where the pipe comes through the foundation or the floor"],
-          ["Basement or crawlspace", "Often on the wall closest to the street"],
-          ["An outside box", "A ground-level box near the street or the foundation, sometimes with a curb valve inside"],
+          [
+            "Near the water meter",
+            "A valve on the pipe just before or after the meter",
+          ],
+          [
+            "Where the line enters the house",
+            "A valve where the pipe comes through the foundation or the floor, often the basement wall closest to the street",
+          ],
+          [
+            "Basement or crawlspace",
+            "A wrench-turn or lever valve on an exposed section of pipe",
+          ],
+          [
+            "An outside box near the curb",
+            "A ground-level box, sometimes with a valve a utility crew also has access to",
+          ],
         ],
       },
       {
@@ -9213,16 +10324,24 @@ export const GUIDES: Guide[] = [
           "Find the valve and note where it is.",
           "Work out which way it turns, and write that down.",
           "Note any tool it needs, such as a wrench for a meter box.",
+          "Mark it with tape or paint so it is easy to find in the dark, the way a utility crew would mark theirs.",
           "Check that it moves without forcing it. A valve that will not turn is worth asking a plumber about.",
-          "Show everyone else in the house.",
-          "Draw the location on a page where it will be found in an emergency.",
+          "Show everyone else in the house, and draw the location on a page where it will be found in an emergency.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The valve near the street may not be yours to operate",
+        paragraphs: [
+          "A home can have two shutoffs: one inside the house that is yours to use any time, and one nearer the street or in a curb box that your water utility may consider its own, used mainly by a crew during a repair. Treat the inside valve as your first move, and note the outside one on the same page in case a plumber or a utility crew needs to find it.",
+          "If your own valve will not turn, do not force it. A stuck gate valve can snap. Note that it is stuck on your page, and get a plumber to free or replace it before you actually need it in a hurry.",
         ],
       },
       {
         kind: "paragraphs",
         heading: "Keep it turning",
         paragraphs: [
-          "A valve you never touch can seize. Some people turn the main shutoff off and on once a year, gently, to keep it free. Home Base has a yearly job for exactly this, called Turn the valve to keep it free. If yours does not move, stop and ask a plumber, because forcing it can break it.",
+          "A valve you never touch can seize. Some people turn the main shutoff off and on once a year, gently, to keep it free. Home Base has a yearly job for exactly this, called Turn the valve to keep it free.",
           "Also note the smaller shutoffs: the ones under the sinks and behind the toilets. Those are a quick way to stop a single leak without shutting off the whole house.",
         ],
       },
@@ -9230,13 +10349,46 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Write it where anyone can find it",
         paragraphs: [
-          "The most useful page in a home binder is the one titled if something goes wrong tonight: where the water, gas and electricity shut off, which way each turns, and who to call first. Fill in the water line today. For the gas and the electrical panel, note where they are and leave the operating to a qualified person. If you are starting a binder, see [what goes in a home binder](/guides/how-to-make-a-home-binder).",
+          "The most useful page in a home binder is titled if something goes wrong tonight: where the water, gas and electricity shut off, which way each turns, and who to call first. Fill in the water line today. For the gas line and the electrical panel, note where they are and leave the operating to a qualified person. If you are starting a binder, see [how to make a home binder](/guides/how-to-make-a-home-binder).",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Where Home Base fits",
+        paragraphs: [
+          "Home Base holds where things are and what they need, including the yearly job to keep the main shutoff turning. The Home Survey that comes with it has a page for exactly this, with boxes for water, gas and electricity, and a place to draw where each one is. It does not detect leaks, and when you report something dangerous it keeps your note and tells you it sounds urgent, but it does not tell you what to do next. Call a professional for that. See [Home Base](/shop/home-management-companion) for what else it holds about your home.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "Where is the main water shutoff usually located?",
+            a: "Most often near where the water line enters the house: a basement wall closest to the street, a utility closet, or a crawlspace. In warmer climates without a basement, it is sometimes outside near the foundation, or in a meter box near the curb. There is no single answer, which is exactly why it is worth finding and writing down once.",
+          },
+          {
+            q: "Which way do you turn the main shutoff off?",
+            a: "A lever handle, usually a ball valve, closes with a quarter turn, clockwise, until the lever sits across the pipe. A wheel handle, usually a gate valve, closes by turning clockwise several full turns until it stops. Write down which type yours is, so you are not guessing during an actual leak.",
+          },
+          {
+            q: "What if the shutoff valve is stuck and will not turn?",
+            a: "Do not force it with a wrench or a pipe, since an old gate valve can snap and turn a stuck valve into a broken one. Note that it is stuck, use a smaller shutoff under a sink or behind a toilet to slow a specific leak in the meantime, and call a plumber to free or replace the main valve before it is an emergency.",
+          },
+          {
+            q: "Is the valve near the street mine to operate?",
+            a: "Not always. Many homes have a curb valve or meter valve that the local water utility considers its own, used mainly by a crew. Treat the valve inside your house as the one you use, and keep the outside one noted on the same page in case a plumber or the utility needs it.",
+          },
+          {
+            q: "How do I know the water is actually off?",
+            a: "Open a faucet, ideally one on a low floor or outside, and check that nothing comes out beyond what was already in the pipes. If water keeps flowing, either the valve you closed is not the main one, or it has not fully seated, and you should check for a second shutoff or call a plumber.",
+          },
         ],
       },
       {
         kind: "callout",
-        label: "The Companion for this",
-        body: "Home Base holds where things are and what they need, including a yearly job to keep the main shutoff turning. The Home Survey that comes with it has a page for exactly this, with boxes for water, gas and electricity. It does not detect leaks, and when you report something dangerous it keeps your note and tells you it sounds urgent, but it does not tell you what to do. Call a professional for that.",
+        label: "Where Home Base fits",
+        body: "The yearly job Turn the valve to keep it free sits on the item once you add it, and the Home Survey's first page is built for exactly this record. Neither one turns the water off for you; that part is still a ten minute job today.",
       },
     ],
   },
@@ -9244,7 +10396,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "how-to-make-a-home-binder",
     title: "How to make a home binder: what goes in and what stays out",
-    dek: "Five sections cover almost everything a home binder needs, and one category of thing should never go in. You can build one in an afternoon.",
+    dek: "Five sections cover almost everything a home binder needs, and one category of thing should never go in. Build one in an afternoon.",
     primaryQuery: "how to make a home binder",
     next: { slug: "what-to-record-when-you-buy-an-appliance", reason: "The appliance sheet is the page most binders lack, and this shows exactly what to write on it." },
     related: [
@@ -9253,13 +10405,38 @@ export const GUIDES: Guide[] = [
       { slug: "appliance-warranties-what-to-track", reason: "Warranty paperwork has a place in the binder, and this covers what to track on each one." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "home",
+    sources: [
+      {
+        name: "U.S. Consumer Product Safety Commission: Recalls & Product Safety Warnings",
+        url: "https://www.cpsc.gov/Recalls",
+        retrieved: "2026-09-26",
+        note: "Recalls can be searched by product or brand name at any time, not only for items you registered.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "A home binder answers a single question at the worst possible moment: what do I need to know right now? It is not a filing cabinet and it is not a scrapbook. Anything that does not help you act quickly can live somewhere else.",
-          "A binder can fail in two ways. It can be so ambitious that nobody finishes it, or so thin that it helps with nothing. Five sections is enough to be useful.",
+          "A home binder answers one question fast: what do I need to know right now? Build it around five sections, one page per fact, starting with what to do if something goes wrong tonight. Skip anything that only looks impressive on a shelf.",
+          "This is for a paper or digital binder for one household, not a filing system for a business or a legal record. It will not tell you what your own state requires you to keep, or for how long, so check that separately for anything tax or insurance related.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Example: one binder's table of contents, filled in",
+        intro: "An illustration, not a real household. Use it as a starting template.",
+        columns: ["Section", "What's on the page"],
+        rows: [
+          [
+            "1. If something goes wrong",
+            "Water, gas and electrical shutoffs; who to call first",
+          ],
+          ["2. Numbers you look up", "Filter size 16x25x1, paint color, trash day"],
+          ["3. Who to call", "Ace Plumbing, Bright Spark Electric, a roofer"],
+          ["4. What has been done", "Date, job, who did it, what it cost"],
+          ["5. Dates that cost money", "Warranty ends, insurance renews, lease notice"],
         ],
       },
       {
@@ -9267,23 +10444,49 @@ export const GUIDES: Guide[] = [
         heading: "The five sections, in the order to fill them in",
         intro: "Start with the first and stop whenever you like. Each one is useful on its own.",
         steps: [
-          { when: "If something goes wrong", what: "Where the water, gas and electricity shut off, which way each turns, and who to call first. Ten minutes. Do this one tonight." },
-          { when: "Numbers you look up", what: "Filter sizes, bulb types, paint colors, meter numbers, trash and recycling days." },
-          { when: "Who to call", what: "Plumber, electrician, heating and cooling, roofer, and their phone numbers, plus anyone you would use again." },
-          { when: "What has been done", what: "A running log: date, what was done, on what, by whom and what it cost." },
-          { when: "Dates that cost money", what: "Warranty expiry dates, the insurance renewal, and, if you rent, the lease and the deposit." },
+          {
+            when: "If something goes wrong",
+            what: "Where the water, gas and electricity shut off, which way each turns, and who to call first. Ten minutes. Do this one tonight.",
+          },
+          {
+            when: "Numbers you look up",
+            what: "Filter sizes, bulb types, paint colors, meter numbers, trash and recycling days.",
+          },
+          {
+            when: "Who to call",
+            what: "Plumber, electrician, heating and cooling, roofer, and their phone numbers, plus anyone you would use again.",
+          },
+          {
+            when: "What has been done",
+            what: "A running log: date, what was done, on what, by whom and what it cost.",
+          },
+          {
+            when: "Dates that cost money",
+            what: "Warranty expiry dates, the insurance renewal, and, if you rent, the lease and the deposit.",
+          },
         ],
       },
       {
-        kind: "table",
-        heading: "What belongs, and where it comes from",
-        columns: ["Goes in", "Why", "How to get it"],
-        rows: [
-          ["Shutoff locations", "Speed in an emergency", "A walk of the house with a flashlight"],
-          ["Filter and bulb sizes", "No more guessing in the store", "Read them off the item once"],
-          ["Contacts", "A lookup, not a search", "Write each name and number the first time you use them"],
-          ["The log", "Answers when it last happened", "Fill in after each job"],
-          ["Warranty dates", "Claims fail on missed dates", "Copy from the paperwork"],
+        kind: "list",
+        heading: "What to put the pages in",
+        intro: "Paper, digital, or both. The five sections stay the same either way.",
+        items: [
+          "A 1 to 2 inch, three-ring binder, or a single folder if you go digital.",
+          "Sheet protectors for anything you would mind ruining with a spilled coffee.",
+          "Five tab dividers, one per section, labeled in plain words rather than numbers.",
+          "A digital mirror if you want one: one folder, five subfolders, the same five names.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Papers worth keeping as paper",
+        checkable: true,
+        items: [
+          "Closing documents, or your lease if you rent.",
+          "The home inspection report.",
+          "Permits for any work that needed one.",
+          "Manuals for appliances and systems you still own.",
+          "Warranty cards and receipts for the larger purchases.",
         ],
       },
       {
@@ -9292,29 +10495,58 @@ export const GUIDES: Guide[] = [
         body: "Passwords, alarm codes, the code to the garage keypad, and anything else that opens the house or your accounts. A binder gets lent to a house sitter, photographed for a repair quote and left on the counter. Write where things are and who to call. Never write the codes and passwords themselves.",
       },
       {
-        kind: "list",
-        heading: "Making one in an afternoon",
-        checkable: true,
-        items: [
-          "Take a flashlight and a pen and walk the house once, kitchen first, then utility, basement, attic and outside.",
-          "Fill in the emergency page before anything else.",
-          "Write down what you find without organizing it yet.",
-          "Put the pages in the binder in the order above.",
-          "Set a date to add one thing a week, not to finish it.",
+        kind: "paragraphs",
+        heading: "Two habits worth adding",
+        paragraphs: [
+          "Registering a major appliance takes about two minutes and is how a manufacturer reaches you about a safety recall, not only about a warranty. It is easy to skip because it looks like marketing.",
+          "You can also check the U.S. Consumer Product Safety Commission's recall list by brand and product name at any time, not only when you happen to remember. Worth a look after you buy anything large.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "If it stalls after one page",
+        paragraphs: [
+          "A binder that never gets past the first page is still worth having. The emergency page alone, filled in, beats an empty binder. Add one section a week instead of trying to finish it in one sitting, and keep it somewhere you will actually reach for it, not in a closet you forget exists.",
         ],
       },
       {
         kind: "paragraphs",
         heading: "Paper and app together",
         paragraphs: [
-          "A paper binder is easy to hand to someone, and it works when the power is out. It is also easy to lose track of, and it does not tell you when the filter is due. An app is the opposite. The two together are the best of both: paper for the emergency page and the numbers, an app for what falls due.",
-          "If you have just moved in, [the first week after buying a house](/guides/first-week-after-buying-a-house) is the best time to start, because you can still see every label. For the log itself, see [a home maintenance log that actually gets used](/guides/home-maintenance-log-template).",
+          "A paper binder is easy to hand to someone, and it works when the power is out. It does not tell you when the filter is due. An app is the opposite. The two together cover both: paper for the emergency page and the numbers, an app for what falls due next.",
+          "If you have just moved in, [the first week after buying a house](/guides/first-week-after-buying-a-house) is the best time to start, because you can still see every label. For the running log itself, see [a home maintenance log that actually gets used](/guides/home-maintenance-log-template).",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "What should go in a home binder?",
+            a: "Five sections cover most of it: what to do if something goes wrong tonight, the numbers you look up at a store, who to call for each trade, a log of what has been done, and the dates that cost money if you miss them. Add sections only once you notice yourself reaching for something these five do not cover.",
+          },
+          {
+            q: "Is a home binder the same as a home management binder?",
+            a: "Yes, they are two names for the same idea: one place with the facts about your house that you would otherwise have to remember or search for. Some people add a household side, like a family calendar or a cleaning schedule, but the core five sections here are the home-specific part.",
+          },
+          {
+            q: "Should a home binder be paper or digital?",
+            a: "Paper works without power and is easy to hand to a house sitter or a repair technician. Digital is searchable and impossible to leave behind. Many households keep the emergency page and quick numbers on paper, since those get used in a hurry, and the rest wherever they already keep documents.",
+          },
+          {
+            q: "What documents should I keep for my house?",
+            a: "Keep closing documents or your lease, the home inspection report, permits for any work that needed one, manuals for appliances you still own, and warranty cards or receipts for larger purchases. Everything else, like day-to-day repair notes, can live in a running log instead of as a stack of paper.",
+          },
+          {
+            q: "How long should I keep home repair receipts?",
+            a: "As long as you own the item the repair was for, at minimum, since you may need it for a warranty claim or to show a buyer later. Some repairs also affect your home's cost basis for tax purposes; that is a question for a tax preparer, not something this page can answer for your situation.",
+          },
         ],
       },
       {
         kind: "callout",
-        label: "The Companion for this",
-        body: "The Home Survey is a printable book that comes with Home Base: 36 pages on US Letter paper, with a page for the shutoffs, twelve areas of a house, every job and how often, a year plan, a page for who to call and a log. You fill it in on paper. Home Base keeps what falls due and what was done. It stores what you type, not the files, and it is not a place for passwords.",
+        label: "Where Home Base fits",
+        body: "The Home Survey is the printed version of this binder: 36 pages on US Letter paper, with a page for the shutoffs, twelve areas of a house, every job and how often, a year plan, who to call and a log. Home Base then keeps what falls due and what was done from wherever you left off. See [Home Base](/shop/home-management-companion) for how the two fit together.",
       },
     ],
   },
@@ -9331,13 +10563,40 @@ export const GUIDES: Guide[] = [
       { slug: "how-to-make-a-home-binder", reason: "To keep the lease and photos in one place, this shows how to make a binder for the home." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "home",
+    sources: [
+      {
+        name: "HUD (via San Diego Housing Commission): 10 Tips for Tenants from HUD",
+        url: "https://www.sdhousing.org/news-blog/10-tips-for-tenants-from-hud",
+        retrieved: "2026-09-26",
+        note: "HUD's tip to do a move-in walkthrough with the landlord and record existing conditions on a move-in statement or checklist.",
+      },
+      {
+        name: "New York Attorney General: Residential Tenants' Rights Guide",
+        url: "https://ag.ny.gov/publications/residential-tenants-rights-guide",
+        retrieved: "2026-09-26",
+        note: "Example of one state's specific deposit rules (deposit capped at one month's rent, 14-day return with an itemized statement in New York), used to show that these figures vary by state.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "When you leave a rental, the landlord compares the place to how it was. If nobody wrote down how it was, that comparison is one person's memory against another's. Photographs and dates turn it into a record.",
-          "This guide is about habit, not law. Rules about deposits, notice and repairs differ from place to place, and this is not legal advice. Check your own lease and local rules for the specifics.",
+          "Before you unpack, walk every room with your phone and photograph the walls, floors, and the inside of the appliances, with the date visible. Write down your lease dates, the deposit amount, and who holds it. HUD recommends recording the unit's condition on a signed move-in checklist, the record you will want if the landlord disputes it later.",
+          "This is for a US rental. Landlord-tenant law, including deposit limits, notice periods and what counts as normal wear, is set by your state and sometimes your city, not by this page, so check your own lease and your state's tenant rights guide for the specifics.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Example: one day-one record, filled in",
+        intro: "An illustration, not a real lease. Use it as a template for your own.",
+        columns: ["Field", "Filled in"],
+        rows: [
+          ["Photos taken", "22 rooms and closets, dated Sep 26"],
+          ["Lease started", "Sep 26, renews Sep 26 next year"],
+          ["Notice by", "60 days before renewal"],
+          ["Deposit", "$1,400, held by the property manager"],
         ],
       },
       {
@@ -9359,9 +10618,25 @@ export const GUIDES: Guide[] = [
         columns: ["Record", "What to write", "Why it helps later"],
         rows: [
           ["Photos", "Room, date, the problem if any", "Shows the condition on day one"],
-          ["Lease dates", "Started, renews on, notice by", "The dates that cost money to miss"],
+          [
+            "Lease dates",
+            "Started, renews on, notice by",
+            "The dates that cost money to miss",
+          ],
           ["Deposit", "Amount, held by, returned in", "You know what to ask for and when"],
-          ["What you reported", "Date, what, the answer", "A trail if a problem comes back"],
+          [
+            "What you reported",
+            "Date, what, the answer",
+            "A trail if a problem comes back",
+          ],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Normal wear and tear is not damage",
+        paragraphs: [
+          "A worn patch of carpet in a walkway, small nail holes from a picture, faded paint, or a sticking door are usually normal wear from ordinary living. A burn mark, a pet stain that soaked through, a broken tile, or a hole in a wall are usually damage. The line between the two is set by your state's law and can come down to specifics, so photograph the condition at move-in and lean on that record rather than a guess about the category.",
+          "If you are not sure which side something falls on, write it down and photograph it anyway. A record you did not end up needing costs nothing. A record you needed and do not have can cost a full month's deposit.",
         ],
       },
       {
@@ -9373,7 +10648,7 @@ export const GUIDES: Guide[] = [
             "Keeping the place clean",
             "Changing smoke alarm batteries, if your lease says so",
             "Reporting problems promptly",
-            "Renters insurance, if you have it",
+            "Renters insurance, if you carry it",
           ],
         },
         right: {
@@ -9390,21 +10665,47 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Report in writing, and log it",
         paragraphs: [
-          "When something breaks, tell the landlord in writing and keep a copy. A message is better than a phone call because it has a date. Add a line to your log with the date, what you said and what they answered. If the same problem comes back, that log is your record that you flagged it.",
-          "Renters do not have to write down the roof, the gutters or the furnace. The list that matters is short: the lease, the deposit, the smoke alarm, and what you reported.",
+          "When something breaks, tell the landlord in writing and keep a copy. A message has a date; a phone call does not, unless you follow it with one. Add a line to your log with the date, what you said and what they answered. If the same problem comes back, that log is your record that you flagged it first.",
+          "If the landlord does not respond, your options depend on your state and sometimes your city; some allow withholding rent or repair-and-deduct only under specific conditions, and getting that wrong can cost you the case. Keep documenting, then check your state's tenant rights guide or a local tenant hotline before you act on anything beyond writing and following up.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "The photos, done properly",
+        heading: "Where Home Base fits",
         paragraphs: [
-          "Take wide shots of each room, then close shots of anything that is scratched, stained or worn. Photograph the inside of the oven and the refrigerator, and the floor near the door. Keep the photos where you cannot lose them, and record the date you took them. The point is a set that anyone can look at and understand in a minute.",
+          "Home Base has a renter setup that stops asking about the roof and gutters and asks about the things above instead: the lease, the deposit, and what you have reported to the landlord and when. Its lease job, Decide before the notice deadline, is a yearly job to look at your notice date. It stores what you type, not photos or documents, so keep your photos in your own phone or cloud account. See [Home Base](/shop/home-management-companion) for the rest of the renter setup. This is not legal advice.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "What should I photograph when moving into a rental?",
+            a: "Every room, wide shots first, then close shots of anything scratched, stained or worn: the walls, the floors, the windows, and the inside of the oven, the refrigerator and any cabinets. HUD recommends recording the unit's condition on a checklist at move-in; photos with the date visible do the same job and are harder to dispute.",
+          },
+          {
+            q: "What counts as normal wear and tear versus damage?",
+            a: "Normal wear is what ordinary living causes over time: light carpet wear, small nail holes, faded paint. Damage is what would not have happened without an accident or neglect: a burn, a deep stain, a broken fixture. The exact line is set by your state's law, which is why a dated photo of the condition at move-in matters more than the label.",
+          },
+          {
+            q: "Does a landlord have to give me a move-in checklist?",
+            a: "It depends on your state and sometimes your city; some require a written, signed checklist before a deposit can be taken or deducted from, and others do not. Either way, HUD's general advice is to do a walkthrough and record the condition yourself, checklist or not, since your own photos and notes hold up regardless of the local rule.",
+          },
+          {
+            q: "Can a landlord keep my deposit for normal wear and tear?",
+            a: "Generally no; most state laws limit deductions to actual damage beyond normal wear, unpaid rent, or cleaning beyond what a normal move-out requires. What counts as each of those, and how long the landlord has to return the balance, varies by state. Your own move-in photos are what let you contest a deduction you disagree with.",
+          },
+          {
+            q: "Should I get renters insurance before I move in?",
+            a: "It is worth having before day one rather than after something happens, since it typically covers your belongings and some liability that the landlord's own building insurance does not. Some leases require it. It is not a Draftpace feature or a substitute for the deposit and lease records covered on this page, just a separate, common-sense step.",
+          },
         ],
       },
       {
         kind: "callout",
-        label: "The Companion for this",
-        body: "Home Base has a renter setup that stops asking about the roof and gutters and asks about the things above: the lease, the deposit, and what you have reported to the landlord and when. Its lease job, Decide before the notice deadline, is a yearly job to look at your notice date. It stores what you type, not photos or documents, so keep your photos in your own phone. It is not legal advice.",
+        label: "Where Home Base fits",
+        body: "The renter setup tracks the lease, the deposit and what you reported, and nothing about the roof or gutters. It stores what you type, not your photos, and none of this is legal advice.",
       },
     ],
   },
@@ -13243,7 +14544,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "do-you-have-to-count-homeschool-days-or-hours",
     title: "Do you have to count homeschool days or hours?",
-    dek: "Some states count days or hours and many do not. How to find out which yours does, what to look for, and the lightest way to keep the count.",
+    dek: "Some states count homeschool days or hours and many do not. How to find your own state's number, with one real state's rule as an example.",
     primaryQuery: "homeschool days or hours required",
     next: { slug: "homeschool-notice-of-intent-explained", reason: "Counting is one duty, filing is another. This explains the notice of intent and how to find yours." },
     related: [
@@ -13252,52 +14553,119 @@ export const GUIDES: Guide[] = [
       { slug: "four-day-homeschool-week", reason: "Counting days? See how a four-day week gets subjects spread across the days you actually teach." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "family-and-learning",
+    sources: [
+      {
+        name: "Home Education and Private Tutoring Guide (Pennsylvania Department of Education)",
+        url: "https://www.pa.gov/content/dam/copapwp-pagov/en/education/documents/instruction/home-education-and-private-tutoring/home%20education%20and%20private%20tutoring%20guide.pdf",
+        retrieved: "2026-09-26",
+        note: "180 days or 900/990 hours, affidavit due August 1, evaluation due June 30.",
+      },
+      {
+        name: "Home Schooling (Texas Education Agency)",
+        url: "https://tea.texas.gov/texas-schools/general-information/finding-a-school-for-your-child/home-schooling",
+        retrieved: "2026-09-26",
+        note: "TEA does not regulate, monitor or approve home school programs; no stated day or hour minimum.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "The honest answer is that it depends on your state, and it can change. Some places ask for a number of days or hours, and some ask for nothing to be counted at all. This guide cannot tell you which applies to you. It can help you find out, and help you keep the number lightly if you need one.",
+          "Some US states set a number: a count of days, a count of hours, or both. By most published counts roughly half do, and the rest ask for nothing to be counted at all. Which one applies to you depends on your own state, and states rewrite these numbers without much warning.",
+          "This is for a parent homeschooling in the United States who wants to know whether a count applies to them before building a record around one. It cannot tell you your own state's current number, because that has to come from your state, not from a guide.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Find out once, properly",
+        heading: "What one state's actual rule looks like",
         paragraphs: [
-          "Look at your state department of education website, and then at a state homeschool organization. Write down what you find in one place: whether a number of days or hours is required, what counts toward it, and whether you have to show the number to anyone.",
-          "Do this once, at the start of the year. Then you are not wondering about it every few weeks.",
+          "Take Pennsylvania. The Pennsylvania Department of Education's own guide, updated May 2026, sets a home education program at a minimum of 180 days of instruction, or 900 hours for an elementary-age student, or 990 hours for a secondary-age student, each year. You meet the day count or the hour count, not both, and the number sits alongside a notarized affidavit due to the district superintendent by August 1.",
+          "Texas takes the opposite approach. The Texas Education Agency says plainly that it does not regulate, index, monitor, approve, register or accredit home school programs, and it sets no day or hour minimum. Texas still expects a bona fide course of study that includes good citizenship, but there is no number of hours to clear.",
+          "Those are two real, current rules from two state agencies. Neither one is yours unless you live there. They show the shape a rule can take: a specific count tied to a filing, or no count at all tied to none.",
         ],
       },
       {
-        kind: "table",
-        heading: "What you are trying to find out",
-        columns: ["Question", "Why it matters"],
-        rows: [
-          ["Does my state ask for days, hours, both or neither?", "It decides whether you need to count at all"],
-          ["What counts as a day?", "Some places count a day of any instruction"],
-          ["Do I have to hand the number over?", "Some places ask, some do not"],
-          ["Is it checked, and by whom?", "It decides how careful the record needs to be"],
+        kind: "compare",
+        heading: "Two real states, side by side",
+        intro: "An example of each pattern, not a ranking of which is easier.",
+        left: {
+          label: "Pennsylvania: a count exists",
+          items: [
+            "180 days, or 900 hours elementary, or 990 hours secondary",
+            "One or the other, not both",
+            "Filed with a notarized affidavit by August 1",
+          ],
+        },
+        right: {
+          label: "Texas: no count is set",
+          items: [
+            "No day or hour minimum in state guidance",
+            "State agency does not monitor or approve programs",
+            "A course of study is still expected, just not timed",
+          ],
+        },
+      },
+      {
+        kind: "list",
+        heading: "How to find your own state's answer",
+        ordered: true,
+        intro: "Ten minutes, done once, is enough for most states.",
+        items: [
+          "Go to your own state's department of education website and search for \"home school\" or \"home education\", not a third-party ranking of states.",
+          "Read the section on instructional time specifically. Some states call it attendance, some call it hours, and some never use either word because they do not set one.",
+          "If a state homeschool association's page states a different number than the state agency's own page, trust the state agency's page and note the mismatch with a date.",
+          "Write down what you found, with the date you checked it, in the same place you keep the rest of your homeschool paperwork.",
+          "If a search turns up nothing about days or hours at all, treat that as your answer for a state that sets no count, not as a sign you searched wrong.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "If you have to count",
+        heading: "What goes wrong when you skip this",
         paragraphs: [
-          "Mark a day as you go. Do not try to rebuild it later. A simple box per day schooled, ticked on the day, is more accurate than any reconstruction made in June, and it takes seconds.",
-          "If you have fallen behind on the record, start from today and be honest about the earlier part. Our guide on [how to catch up on homeschool records](/guides/how-to-catch-up-on-homeschool-records) covers doing that without inventing anything.",
+          "The most common mistake is not checking at all, and assuming a state with no notice requirement also has no count, or the reverse. Those are two separate questions, and a state can answer them differently.",
+          "The second mistake is trusting a number you read once and never checking it again. States rewrite these rules, sometimes removing a count that used to exist, sometimes adding one. A page from a few years ago, even a good one, can be stale in a way that only the state's own current page will catch.",
+          "The third is trying to reconstruct a count after the fact. If your state does ask for a number, marking a day as you go, on the day, takes seconds and is more accurate than any total you rebuild from memory in June.",
+        ],
+      },
+      {
+        kind: "faq",
+        items: [
+          {
+            q: "Does every state count homeschool days or hours?",
+            a: "No. Roughly half do by most published counts, most often as a set number of days, a set number of hours, or either one. The rest set no count at all, though some of those still expect a course of study or basic records for your own use.",
+          },
+          {
+            q: "What is the difference between a day count and an hour count?",
+            a: "A day requirement asks whether you schooled on a given date at all, regardless of how long. An hour requirement adds up actual time and usually sets a different total for elementary and secondary students, as Pennsylvania does at 900 and 990.",
+          },
+          {
+            q: "Do I have to report my count to anyone?",
+            a: "It depends on the state. Some only expect you to have the number if asked; others want it filed or included with an annual notice or evaluation. Your own state's department of education page will say which, and it is worth writing down once you find it.",
+          },
+          {
+            q: "What if my state does not ask for a count at all?",
+            a: "Then a count is for you, if you want one, not for anyone else. A plain record of what you actually did most days is usually more useful day to day than a running total, and it takes less upkeep to maintain.",
+          },
+          {
+            q: "Can I just use a list I found online instead of checking my own state?",
+            a: "Only as a starting point. Third-party lists are useful for spotting the pattern, but they go stale as states change their laws, and two lists can disagree with each other. The state's own current page is the one that decides your answer.",
+          },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "If you do not have to count",
+        heading: "What the Companion does with a count, if you have one",
         paragraphs: [
-          "Then the number is for you, if you want it at all. A record of what was done is usually more useful than a count of days, and it is easier to keep. Our guide on [homeschool attendance: what to track](/guides/homeschool-attendance-what-to-track) explains the lighter options.",
+          "Homeschooling Companion does not hold a day or hour number for any state, and it does not do that math for you. Where you have saved a state on the Kids tab and that state has a structured page, [the printed state page](/shop/homeschooling-companion) shows a line for a log or record of instruction, and that line counts the distinct days you recorded something, not hours and not an attendance tally kept separately.",
+          "It states what is recorded, never whether that is enough, and every state page repeats the same line: laws change, confirm with your state before relying on this.",
         ],
       },
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Homeschooling Companion does not track hours. Where your state page lists a log or record of instruction, it shows how many days you have logged, counted as days with any entry. It says what is recorded, not whether it is enough, and every state page says Laws change. Confirm with your state before relying on this. It is a web app, $34 once.",
+        body: "The printed state page counts days you recorded, never hours, and sits under a line that says to confirm with your state before relying on it. It is the lightest way to keep a count if your own state asks for one, not a citation.",
       },
     ],
   },
@@ -13511,7 +14879,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "homeschool-subject-not-working-what-to-change-first",
     title: "Homeschool subject not working? What to change first",
-    dek: "Change the time, then the amount, then go back a step, and only then look at the material. A cheapest-first order for a stalled subject.",
+    dek: "When a homeschool subject stalls, change the time first, then the amount, then go back one step. Only then think about new material. Cheapest fix first.",
     primaryQuery: "homeschool subject not working",
     next: { slug: "how-to-check-if-your-child-learned-something", reason: "Not sure it is not working? First check what actually stuck, with four questions asked a week or more later." },
     related: [
@@ -13520,63 +14888,110 @@ export const GUIDES: Guide[] = [
       { slug: "four-day-homeschool-week", reason: "Reducing the amount is the second fix. This shows how many days each subject gets in a four-day week." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "family-and-learning",
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "When a subject is not working, the instinct is to change the curriculum. It is also often the most expensive change, and a cheaper order is worth trying first.",
-          "The idea is simple: change one thing at a time, starting with the smallest, and only move down the list when the smaller change has not helped.",
-        ],
-      },
-      {
-        kind: "timeline",
-        heading: "The order",
-        steps: [
-          {
-            when: "Change the time",
-            what: "Earlier in the day, later, or shorter. Some problems are about when, not what.",
-          },
-          {
-            when: "Then change the amount",
-            what: "Less of it, for now. A smaller amount done well beats a full amount done with resistance.",
-          },
-          {
-            when: "Then go back one step",
-            what: "Find the step before the one that is not working, and check whether that one is solid.",
-          },
-          {
-            when: "Only then consider the material",
-            what: "If the time, the amount and the step are all right, the material may be the problem.",
-          },
+          "When a subject stops working, change it in this order: the time of day first, then how much you're asking for, then the step just before the one that's stuck. Look at new material last. It's the cheapest change, and the one most likely to fix an ordinary rough patch.",
+          "This order works for any subject, whether it's long division, reading comprehension or spelling, and for a child of six or sixteen. If you're not sure it's really not working, [checking what actually stuck](/guides/how-to-check-if-your-child-learned-something) a week later beats guessing from one hard afternoon. It can't tell you whether something more than a rough patch is going on: if two or three weeks of really trying this changes nothing, that's a reason to ask someone else, not a reason to try harder alone.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Going back one step",
+        heading: "An example: division, four sessions in a row",
         paragraphs: [
-          "A skill usually rests on the one before it. If long division keeps going wrong, the trouble may be in multiplication. Ask a few short questions about the step before, and see whether it is solid. If it is not, that is where to start, and it is not a step backward. It is the way forward.",
+          "Say long division has gone from fine to a fight: three of the last four sessions ended in frustration, on the same kind of problem each time. Move it to the first thing you teach that day instead of the last, before either of you is worn down. A [weekly plan with a spare day already built in](/guides/homeschool-weekly-plan-with-a-spare-day) makes that easier to do without reshuffling everything else. If that changes nothing in a week, cut the amount: five problems instead of fifteen for the next week. Still stuck? Check the step behind it. In the Companion's own topic list, Division sits right before Long division, and Multiplication sits before that, so that's where to look first. Only after the time, the amount and that step have all come back clean do you have a real reason to think the material itself is the problem.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "The same order, three subjects",
+        intro: "Illustrative examples. Swap in your own subject and numbers.",
+        columns: ["Step", "Long division", "Reading comprehension", "Spelling"],
+        rows: [
+          [
+            "1. Change the time",
+            "Teach it first, not last",
+            "Read together earlier, before energy drops",
+            "Five minutes right after breakfast",
+          ],
+          [
+            "2. Change the amount",
+            "5 problems instead of 15",
+            "One chapter instead of three",
+            "5 words instead of 15, for a week",
+          ],
+          [
+            "3. Go back one step",
+            "Check division, then multiplication facts",
+            "Check vocabulary: can they explain the hard words first",
+            "Check letter sounds out loud, no writing",
+          ],
+          [
+            "4. Look at the material",
+            "Try a different explanation of the same method",
+            "Try a shorter or easier book on the same topic",
+            "Build a list from words they actually misspell",
+          ],
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Notice how a hard session felt",
         paragraphs: [
-          "A single hard day means little. A pattern across a few weeks means something. One word after each session, easy, about right or difficult, is enough to show the pattern without turning it into a project.",
-          "For a way to check what has landed, see [how to check if your child learned something](/guides/how-to-check-if-your-child-learned-something).",
+          "Cutting minutes inside a day is the amount step above. If a subject needs more room than that, cutting a day out of the week is the next lever: see [how a four-day week spreads subjects across the days you actually teach](/guides/four-day-homeschool-week). For a comprehension pattern like the one in the table, a [reading log](/guides/homeschool-reading-log) makes it easier to see which books are landing and which keep getting abandoned partway through.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "When this order doesn't fix it",
+        items: [
+          "You changed two things at once. You won't know which one worked, so change one, give it a real week, then move to the next.",
+          "You judged it after one session. One hard day is noise. A pattern across two or three weeks is a signal.",
+          "You skipped straight to new material. That's the expensive change. It's still worth trying last, not first, even when it turns out to be the right call eventually.",
+          "You went back a step but decided too fast. Wait a week, then run a short check on that one topic before deciding it's solid or not.",
+          "The trouble doesn't move no matter what changes. That's worth a conversation with your pediatrician, a tutor or an evaluator, not a longer version of this list.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "You are allowed to stop",
+        heading: "Where the Companion fits",
         paragraphs: [
-          "Putting something down for a while is a real option. Coming back to it in a month often works better than pushing through today. It is not giving up. It is choosing when.",
+          "[Homeschooling Companion](/shop/homeschooling-companion) tracks the first two steps for you without extra work: mark a session difficult on Today, and it comes back later under \"Worth going over again,\" with the reason \"Last time you said this was difficult\" attached, so you're not relying on memory for which session went badly.",
+          "For the \"go back one step\" step, tick the exact topic on your child's page, write four or more questions from your own head or your curriculum's test, and mark each answer yourself. The result says a topic looked solid, was mixed, is worth another look, or that there wasn't enough to say yet. It doesn't pick the order for you and it doesn't tell you what's wrong. It only holds what came back, so you can look at the pattern instead of guessing from one bad afternoon.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "How long should I try each change before moving to the next one?",
+            a: "Give each change a real week, not one session. One hard day tells you almost nothing; a pattern across five or six sessions tells you something. If a full week doesn't move anything, go to the next step in the order, and don't skip ahead to see if a later step would work faster.",
+          },
+          {
+            q: "What if my child says they hate the subject, not just this lesson?",
+            a: "It's still worth trying the order. A subject a child says they hate is often a subject where one piece never got solid, and the frustration shows up as dislike of the whole thing. Go back a step and check that piece before deciding the subject itself is wrong for them.",
+          },
+          {
+            q: "Should I switch curriculum if none of this works?",
+            a: "It's a reasonable move once you've tried the time, the amount and the step behind it, in that order, each for a real week. Switching first is common and usually doesn't answer much, because a new set of books still has the same step behind it that the old one did.",
+          },
+          {
+            q: "Is it normal for a subject to just stop working for a while?",
+            a: "Yes. A subject that was fine for months and then isn't happens in most homeschools at some point, and it doesn't automatically mean something is wrong with your child or your teaching. It's still worth working through the order rather than waiting for it to pass on its own.",
+          },
+          {
+            q: "When should this be more than a rough patch to me?",
+            a: "If the same subject stays stuck after you've tried the time, the amount and the step behind it, each for a real week, and the pattern doesn't move, raise it with your pediatrician or a tutor who can look closer than a parent teaching from home usually can.",
+          },
         ],
       },
       {
         kind: "callout",
-        label: "The Companion for this",
-        body: "In Homeschooling Companion, a session you mark difficult comes back on Today as Worth going over again, with the reason: Last time you said this was difficult. You can tick the topics you are actually teaching and run a short check you write or choose yourself, and results can say Not enough to say. It states what came back. It does not change your material or tell you what is wrong. It is a web app, $34 once.",
+        label: "One rule for every step",
+        body: "Judge each change after five or six sessions, not one. A single hard day tells you nothing; a pattern across a week or two is the only thing worth acting on.",
       },
     ],
   },
@@ -14026,7 +15441,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "who-to-tell-when-someone-dies",
     title: "Who to notify when someone dies, in order",
-    dek: "Who to tell first, what can wait, and how to keep track as you go, so the first phone calls are not the hardest part of the week.",
+    dek: "Who to tell first, what can wait, and what Social Security, the IRS and the credit reporting agencies actually ask for, in the United States.",
     primaryQuery: "who to notify when someone dies",
     next: { slug: "how-to-find-someones-accounts-after-they-die", reason: "When a bank or policy turns up unexpectedly, this covers how to trace accounts, pensions and policies." },
     related: [
@@ -14035,56 +15450,155 @@ export const GUIDES: Guide[] = [
       { slug: "named-executor-what-you-agreed-to", reason: "If you are the executor, this explains what the role includes and where you could be liable." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "affairs-and-endings",
+    sources: [
+      {
+        name: "USAGov: Agencies to notify when someone dies",
+        url: "https://www.usa.gov/report-a-death",
+        retrieved: "2026-09-26",
+        note: "List of government agencies and organizations to notify, and the note that funeral directors typically report to Social Security",
+      },
+      {
+        name: "Social Security Administration: What to do when someone dies",
+        url: "https://www.ssa.gov/personal-record/when-someone-dies",
+        retrieved: "2026-09-26",
+        note: "Reporting a death to Social Security, Form SSA-721, and the phone number for reporting",
+      },
+      {
+        name: "IRS: File the final income tax returns of a deceased person",
+        url: "https://www.irs.gov/individuals/file-the-final-income-tax-returns-of-a-deceased-person",
+        retrieved: "2026-09-26",
+        note: "Who is responsible for filing the final return and what it covers",
+      },
+      {
+        name: "Experian: How to report a relative's death to credit bureaus",
+        url: "https://www.experian.com/blogs/ask-experian/reporting-death-of-relative/",
+        retrieved: "2026-09-26",
+        note: "What credit bureaus need, who can report, and that notifying one bureau updates the other two",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "When someone dies, the list of people to tell feels endless. It is not. A small number of calls matter in the first days, and most of the rest can wait until there is more energy.",
-          "This guide gives an order. It cannot replace advice for your situation, and procedures vary by state. If there is an executor or a hospice or hospital team involved, they will often tell you the next step.",
+          "Tell close family and anyone who would want to hear it from you first, today. Notify Social Security within the first few days, since it decides what happens to a benefit payment already on its way. Everything else, from the bank to the gym membership, can wait a week or more without causing a problem.",
+          "This is a general order for the United States, built from what Social Security, the IRS and the three credit-reporting agencies actually ask for. It cannot tell you what your state or your family's situation specifically requires, and if there is an executor, a hospice team or a funeral director already involved, follow what they tell you first.",
         ],
       },
       {
-        kind: "timeline",
-        heading: "A sensible order",
-        steps: [
+        kind: "paragraphs",
+        heading: "One week, as an example",
+        paragraphs: [
+          "Say someone dies on a Tuesday morning. That day and the next, the calls are short and personal: her sister, her closest friend, the people who would be hurt to hear it from someone else. By Thursday, the funeral home has usually already reported the death to Social Security using the certificate you gave them, which is the fastest route and needs no extra call from you. By the following Monday, whoever is handling things has called her employer, her bank and her insurer, in whatever order certified copies of the death certificate arrive in the mail. The credit bureau letter and the gym membership cancellation happen whenever there is time, sometime in the following month. This is an example only, and a real week will not line up this neatly.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Who to notify, and what they will ask for",
+        columns: ["Who", "What they will need from you", "When"],
+        rows: [
+          [
+            "Close family and friends",
+            "Just the news, from you rather than someone else",
+            "Today",
+          ],
+          [
+            "Social Security",
+            "The Social Security number and date of death (the funeral home often reports this on Form SSA-721)",
+            "Within days",
+          ],
+          [
+            "Employer",
+            "A certified copy of the death certificate, for final pay and any benefits owed",
+            "Within the first week",
+          ],
+          [
+            "Banks and credit card companies",
+            "A certified copy of the death certificate; ask about joint accounts separately",
+            "Within two weeks",
+          ],
+          [
+            "Life insurance and pension providers",
+            "A certified copy of the death certificate, and a policy or plan number if you have one",
+            "Within two weeks",
+          ],
+          [
+            "Equifax, Experian, TransUnion",
+            "A certified copy of the death certificate; notifying one usually updates the other two",
+            "Within the first month",
+          ],
+          [
+            "State motor vehicles office",
+            "The driver's license or ID for cancellation, and the vehicle title for transfer",
+            "Within the first month",
+          ],
+          [
+            "IRS",
+            "Nothing sent separately; the final federal tax return is what tells them",
+            "At the normal filing deadline",
+          ],
+          [
+            "Utilities, subscriptions, memberships",
+            "An account number if you have one",
+            "Whenever there is time",
+          ],
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What can actually wait",
+        items: [
+          "Closing accounts. Freezing or simply notifying is enough for now, and closing something too soon can cut off access someone still needs.",
+          "Canceling the main email or phone. It is often the fastest way to find other accounts and contacts later, so leave it open until the search is further along.",
+          "Signing anything offered quickly, especially by someone claiming to help settle a debt before you have checked it independently.",
+          "Deciding what happens to the house, the car or anything of value. None of that has to be settled this month.",
+          "Telling every single person yourself. Ask one or two people close to you to help pass the word once the closest circle already knows.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Watch for scams aimed at the bereaved",
+        paragraphs: [
+          "Obituaries and public death notices get read by people other than mourners. Some try to open credit or run up debt in a dead person's name before the bureaus catch up, which is part of why notifying them sooner rather than later closes that window. Be cautious of anyone who calls claiming money is owed by the person who died and asks for payment before you have verified anything through the bank or provider directly, not through the caller.",
+        ],
+      },
+      {
+        kind: "faq",
+        items: [
           {
-            when: "First",
-            what: "Close family and the people who would want to hear it from a person, not from someone else. If there was a named first contact, start there.",
+            q: "How many certified copies of the death certificate do I need?",
+            a: "More than seems reasonable. Ask the funeral home for at least ten to start, since banks, insurers and the motor vehicles office each want their own certified copy and will not accept a photocopy. Ordering more later is possible but slower, so ordering extra at the start usually costs less time overall.",
           },
           {
-            when: "The first few days",
-            what: "The medical or funeral professionals involved, and the person named to handle affairs, if there is one.",
+            q: "Can I access their bank account before probate is finished?",
+            a: "Usually not on your own signature alone. A joint account holder can typically keep using the account; a sole account is generally frozen until whoever has legal authority, such as an executor holding the court paperwork naming them, presents it to the bank. Ask the bank directly what it requires, since practice varies by institution.",
           },
           {
-            when: "Within the first weeks",
-            what: "The employer, and the banks and insurers who will need to know. These can usually be done by phone, and many will tell you what they need.",
+            q: "Do I have to notify the IRS separately from everyone else?",
+            a: "Not with a phone call. The final federal income tax return, filed by the executor or surviving spouse, is what tells the IRS. It reports income up to the date of death and is generally due on the normal filing schedule for that tax year, not immediately.",
           },
           {
-            when: "When you have the energy",
-            what: "Utilities, subscriptions, social accounts and everything else. Most of it is not urgent.",
+            q: "Who pays for the funeral if no money was set aside?",
+            a: "Usually the estate once it can pay, or whoever agreed to pay and arranged it. This guide does not cover funeral costs. If money is a concern before the estate is settled, ask the funeral home about a payment plan before signing anything.",
+          },
+          {
+            q: "What if I do not know whether they had life insurance?",
+            a: "This list will not tell you that. [How to find someone's accounts after they die](/guides/how-to-find-someones-accounts-after-they-die) covers the search itself, including the free lookup tool insurers use to check for policies nobody knew existed.",
           },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Write it down as you go",
+        heading: "If this list is hard to build from nothing",
         paragraphs: [
-          "Keep a single page of who you told, when, and what they said they needed next. In the first days it is easy to lose track of who has been told and who has not.",
-        ],
-      },
-      {
-        kind: "paragraphs",
-        heading: "The list is easier when it already exists",
-        paragraphs: [
-          "The hardest calls are the ones where nobody knows who to call. If nobody knows who to call, much of the rest may never be found. A page that says who to contact first, written down in advance, is one of the kindest things a person can leave.",
-          "For the first two weeks in more detail, see [what to do when a parent dies](/guides/what-to-do-when-a-parent-dies), and for finding accounts nobody wrote down, see [how to find someone's accounts after they die](/guides/how-to-find-someones-accounts-after-they-die).",
+          "[Personal Life Affairs Companion](/shop/personal-life-affairs-companion) is not built for this week. It is built for the version of this week that does not have to happen the same way to whoever comes after you: a place where you write down, in advance, who should be called first and what they would need to know to start. It records a name and a way to reach them, not a full notify list and not a script, and it sends nothing to anyone on its own. What it produces is a book someone could pick up and start from, which is the difference between the list you are piecing together this week and one that already existed.",
         ],
       },
       {
         kind: "callout",
-        label: "The Companion for this",
-        body: "Personal Life Affairs Companion is for preparing, not for the days after. Its first step asks who should be called first, and a name is enough to begin with. It does not hold a list of who to notify, and it sends nothing to anyone. It prints a book that somebody could follow. It is a web app, $49 once, and it is not legal advice.",
+        label: "For your own list, later",
+        body: "None of this has to be decided today, and no guide replaces the funeral home, the executor or a lawyer who knows your state. When there is room for it, the useful next step is writing your own list down before someone else has to build one under pressure.",
       },
     ],
   },
@@ -14092,7 +15606,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "update-your-paperwork-after-a-life-change",
     title: "What to update after marriage, divorce, a move or a baby",
-    dek: "Where to look again after a move, marriage, new child or divorce, named people first, and what an attorney or provider can confirm.",
+    dek: "Where to look again after a marriage, divorce, move, new baby or new job in the United States: names on forms first, then the 60-day insurance window.",
     primaryQuery: "what to update after a life change",
     next: { slug: "beneficiary-forms-override-your-will", reason: "After a life change, the first form to check is your beneficiary designation, and this explains which one wins." },
     related: [
@@ -14101,47 +15615,126 @@ export const GUIDES: Guide[] = [
       { slug: "the-if-something-happens-to-me-file", reason: "To keep the updated details in one place, this file records what exists and where it is kept." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "affairs-and-endings",
+    sources: [
+      {
+        name: "HealthCare.gov: Special Enrollment Period",
+        url: "https://www.healthcare.gov/coverage-outside-open-enrollment/special-enrollment-period/",
+        retrieved: "2026-09-26",
+        note: "The 60-day window to add or change health coverage after marriage, birth, adoption or divorce with loss of coverage",
+      },
+      {
+        name: "Social Security Administration: How to change or correct your name on your Social Security card",
+        url: "https://www.ssa.gov/faqs/en/questions/KA-01981.html",
+        retrieved: "2026-09-26",
+        note: "Using form SS-5 with a marriage certificate or divorce decree to update a name",
+      },
+      {
+        name: "CBIZ: Automatic Revocation Upon Divorce",
+        url: "https://www.cbiz.com/insights/article/automatic-revocation-upon-divorce",
+        retrieved: "2026-09-26",
+        note: "Which states automatically revoke an ex-spouse as beneficiary, and the ERISA exception for 401(k)s and pensions",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Paperwork goes out of date all at once, not slowly. The week you move, marry, separate, have a child, change jobs or lose someone you named, several things stop being true together, and none of them announces itself.",
-          "This guide is a list of where to look, not advice about what to do. For what a change means legally, an attorney or the provider in question is the place to ask.",
+          "Paperwork does not go out of date gradually. Marriage, divorce, a move, a new baby or a new job changes several forms at once, in the same week, and none of them sends a reminder. Start with the names on your forms, then the one item with a real clock attached, then everything else as you get to it.",
+          "This is a list of where to look again in the United States, not advice about what a specific change means for you. For what a change does to your taxes, your will or a plan's rules, ask an attorney or the provider named on the form.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "A marriage, as an example",
+        paragraphs: [
+          "Say you get married in June. Your withholding at work, the W-4 on file with payroll, is now probably wrong, so it needs a new one. The health plan you are on, or your new spouse is on, gives you a 60-day window from the wedding date to add or switch coverage, and that window closes whether you use it or not. The 401(k) from the job before this one still names whoever it named before you married, and it will pay that person, not your spouse, unless you sit down and change the form by hand. None of it has to happen in June. All of it has to happen before it is forgotten.",
         ],
       },
       {
         kind: "table",
-        heading: "Where to look, by event",
-        columns: ["What changed", "What to look at again"],
+        heading: "Where to look again, by event",
+        columns: ["What changed", "Where to look again"],
         rows: [
-          ["You moved", "Where you live, insurance, utilities, who has a spare key"],
-          ["You married", "Who is named on forms, who to call first, who speaks for you about medical care"],
-          ["You separated or divorced", "Who is named on forms, who would sort things out, who speaks for you about medical care"],
-          ["You had or adopted a child", "Who would raise them, the details of their week, who is named on forms"],
-          ["You changed jobs", "The retirement plan and life insurance from the old job, and who is named on them"],
-          ["Someone you named has died", "Every place that person was the answer"],
+          [
+            "You married",
+            "Your name on forms if you changed it, starting with Social Security; your W-4 withholding; who is named on retirement and life insurance; who speaks for you medically; a 60-day window to add health coverage",
+          ],
+          [
+            "You divorced or separated",
+            "Who is named on retirement, life insurance and beneficiary forms (a decree does not remove an ex-spouse from these by itself); who would speak for you medically; health coverage if you shared a plan",
+          ],
+          [
+            "You had or adopted a child",
+            "Who would raise them if you could not; who is named on life insurance; a 60-day window to add them to health coverage from the day they arrived",
+          ],
+          [
+            "You moved",
+            "Your address with banks, insurers and the motor vehicles office; your voter registration; whether your homeowners or renters policy still covers the new address",
+          ],
+          [
+            "You changed jobs",
+            "The retirement plan and life insurance from the job you left, which do not follow you automatically; who is named on the new job's forms",
+          ],
+          [
+            "Someone you had named has died",
+            "Every form or plan where that person was the named contact, beneficiary or decision maker",
+          ],
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Named people first",
+        heading: "Start with the names, then the clock",
         paragraphs: [
-          "The most consequential things to look at are the names on forms. A retirement account or life insurance policy usually goes to whoever is named on the form, and a form filled in years ago at a previous job may still be the one that counts. See [your beneficiary forms quietly override your will](/guides/beneficiary-forms-override-your-will).",
-          "A separation or divorce does not necessarily change who is named on these forms by itself. Check with the plan provider and an attorney about what applies to you.",
+          "The most consequential items are the names on forms, because a retirement account or life insurance policy usually pays whoever is named on the form, regardless of what a will or a divorce decree says. A form filled in years ago at a previous job can still be the one that counts. See [your beneficiary forms quietly override your will](/guides/beneficiary-forms-override-your-will).",
+          "Health coverage is the one with a real deadline. Adding a spouse, a new child, or switching plans after a qualifying life event generally has a 60-day window from the event itself, not from whenever you get around to it. Miss it, and the next chance may be the next open enrollment period, months away.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Do not try to fix everything in a week",
+        heading: "What gets missed",
         paragraphs: [
-          "Start with the names, then who to call first, then the rest as you have energy. For the money side of the same events, see [how to sort out your finances after a job change, move or divorce](/guides/sort-out-your-finances-after-a-life-change).",
+          "A name change trips people up in both directions. Marrying or divorcing does not update your Social Security card by itself, and several other offices check your name against what Social Security has on file, so changing it there first, with form SS-5 and your marriage certificate or divorce decree, avoids a second round of paperwork later.",
+          "Going the other way, more than twenty states automatically remove an ex-spouse as a beneficiary on some accounts once a divorce is final, but 401(k)s, pensions and other plans governed by federal law are not covered by those state rules. They keep paying whoever the form names, ex-spouse included, until the form itself is changed by hand.",
+        ],
+      },
+      {
+        kind: "faq",
+        items: [
+          {
+            q: "Should I change my name with Social Security before my driver's license?",
+            a: "Generally yes. Several other offices check your name against Social Security's records, so updating your Social Security card first, using form SS-5 and your marriage certificate or divorce decree, avoids a mismatch that can slow down everything you try to change after it.",
+          },
+          {
+            q: "Does a divorce automatically remove my ex-spouse as a beneficiary?",
+            a: "It depends on the account and your state. Over twenty states automatically revoke an ex-spouse's beneficiary status on some accounts, but 401(k)s, pensions and other federally governed retirement plans are not covered by those state laws and keep paying whoever the form names. Check each account directly.",
+          },
+          {
+            q: "How long do I have to add a new baby to my health insurance?",
+            a: "Generally 60 days from the birth or adoption date, and coverage can start on the day of the event even if you enroll near the end of that window. After 60 days without acting, you may have to wait for the next open enrollment period.",
+          },
+          {
+            q: "What if I cannot remember every account that might need updating?",
+            a: "Start with what is in the table: your employer, your bank, your retirement plan, and anyone you named somewhere as a contact or a beneficiary. [What to write down in case something happens to you](/guides/what-to-write-down-in-case-something-happens-to-you) is a shorter starting list if this feels like too much at once.",
+          },
+          {
+            q: "Do I need a lawyer to update any of this?",
+            a: "Not for most of it. Checking who is named on a form is usually a phone call or a login. An attorney is worth involving for anything that touches a will, a trust, or a disagreement about what a document is supposed to mean.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "One card for all nine events",
+        paragraphs: [
+          "[Personal Life Affairs Companion](/shop/personal-life-affairs-companion) has a card in Settings called Has something changed, with nine life events, such as I moved, I got married or I changed jobs. Choose the one that applies and it goes back through what you already recorded, works out which parts a change like that could affect, and brings them back one at a time as questions rather than as a single long list. Nothing you already recorded is deleted or marked wrong while it waits for a second look.",
         ],
       },
       {
         kind: "callout",
-        label: "The Companion for this",
-        body: "Personal Life Affairs Companion has a card in Settings called Has something changed, with nine life events, such as I moved or I got married. Choose one and it finds the parts of what you recorded that are worth a second look, and brings them back one at a time as questions. Nothing is deleted and nothing is marked wrong. It is a web app, $49 once, and it is not legal advice.",
+        label: "What this does not do",
+        body: "It does not know your state's law or a plan's specific rules, and none of it is legal advice. It only points back, from your own earlier answers, to the parts worth a second look.",
       },
     ],
   },

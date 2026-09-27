@@ -41,8 +41,8 @@
   "figure": "/guides/art/named-executor-what-you-agreed-to-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A choice card listing the options for someone named executor: serve, bring in a probate attorney, or decline before acting, beside a note about creditor claim periods.",
-  "caption": "You can decline formally, as long as you have not started acting as executor."
+  "alt": "A checklist card of an executor's first week, from certified death certificates to opening a separate estate bank account, beside a note that you can decline before you start acting.",
+  "caption": "The first week, roughly in order. Decline before this point if you cannot take it on."
  },
  "named-executor-what-you-agreed-to-uk": {
   "hero": "/guides/art/named-executor-what-you-agreed-to-uk-hero.webp",
@@ -149,8 +149,8 @@
   "figure": "/guides/art/who-to-tell-when-someone-dies-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A timeline of who to tell when someone dies, from close family first to utilities and subscriptions when you have the energy, beside a note to keep a log.",
-  "caption": "Most of the list is not urgent."
+  "alt": "A table listing who to notify after a death, from close family through Social Security, banks and credit bureaus, with what each needs and when, beside a short checklist of what can wait.",
+  "caption": "Who to notify and what can wait, in order. Example order only."
  },
  "update-your-paperwork-after-a-life-change": {
   "hero": "/guides/art/update-your-paperwork-after-a-life-change-hero.webp",
@@ -158,8 +158,8 @@
   "figure": "/guides/art/update-your-paperwork-after-a-life-change-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A table matching life events such as a move, a marriage, a new child or a new job to the paperwork worth looking at again, beside a note about names on forms.",
-  "caption": "Where to look, not what to do. Ask the provider or an attorney."
+  "alt": "A table of life events, marriage, divorce, a new baby and a new job, next to what to look at again for each, beside a note about the 60-day health coverage deadline.",
+  "caption": "Where to look again, by event."
  },
  "safe-deposit-box-and-spare-keys-who-can-open-it": {
   "hero": "/guides/art/safe-deposit-box-and-spare-keys-who-can-open-it-hero.webp",
@@ -185,8 +185,8 @@
   "figure": "/guides/art/homeschool-record-keeping-requirements-by-state-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A choice card asking which of four levels a state falls into, None, Low, Moderate or High, beside a card showing nine jurisdictions in the high group.",
-  "caption": "The four levels the state table sorts every state into. Laws change, so confirm yours."
+  "alt": "A choice card asking which of four levels a state falls into, None, Low, Moderate or High, beside a card showing nine states in the high group.",
+  "caption": "The four levels the table sorts every state into. Confirm yours at the source, since laws change."
  },
  "homeschool-record-keeping-template": {
   "hero": "/guides/art/homeschool-record-keeping-template-hero.webp",
@@ -221,8 +221,8 @@
   "figure": "/guides/art/how-to-check-if-your-child-learned-something-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A choice card listing the four possible results of a learning check, ending in Not enough to say, beside a note to ask weeks after the lesson.",
-  "caption": "The four possible results of a short check. Not enough to say is a real answer."
+  "alt": "A four-row table pairing each check result, solid, mixed, worth another look, not enough to say, with what to do next.",
+  "caption": "The four results of a short check, and what each one means for what happens next."
  },
  "preparing-for-a-homeschool-evaluation": {
   "hero": "/guides/art/preparing-for-a-homeschool-evaluation-hero.webp",
@@ -257,8 +257,8 @@
   "figure": "/guides/art/how-long-to-keep-homeschool-records-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A table sorting homeschool papers into keep, keep permanently, photograph and recycle, with a card noting two states that name a two year portfolio period.",
-  "caption": "Which papers to keep, photograph or recycle. Check your state before discarding anything."
+  "alt": "A small table showing what to keep and for how long: worksheets a handful, test results and the parent's own log kept permanently, and Florida's two-year portfolio law, next to a note to check your...",
+  "caption": "Retention windows from HSLDA's general guidance and Florida's own statute."
  },
  "homeschool-weekly-plan-with-a-spare-day": {
   "hero": "/guides/art/homeschool-weekly-plan-with-a-spare-day-hero.webp",
@@ -293,8 +293,8 @@
   "figure": "/guides/art/do-you-have-to-count-homeschool-days-or-hours-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A choice card asking whether a state counts days, hours, both or neither, beside a note to mark each day as you go.",
-  "caption": "The one question to answer at the start of the year, from the official source."
+  "alt": "A card comparing Pennsylvania's 180-day or 900-hour rule with Texas's no-count rule, beside a note to mark each day as you go if yours counts.",
+  "caption": "Two real states, shown as examples of the two patterns: a set count, and no count at all."
  },
  "how-to-start-homeschooling-first-month-paperwork": {
   "hero": "/guides/art/how-to-start-homeschooling-first-month-paperwork-hero.webp",
@@ -329,8 +329,8 @@
   "figure": "/guides/art/homeschool-subject-not-working-what-to-change-first-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A four-step timeline for a homeschool subject that is not working, from changing the time to changing the material, with a note to change one thing at a time.",
-  "caption": "The order to try changes in, cheapest first."
+  "alt": "A four-step timeline: change the time of day, then the amount, then go back one step, then look at new material last.",
+  "caption": "The order to try when a subject stalls. Example: long division, in the guide."
  },
  "what-goes-in-a-family-health-binder": {
   "hero": "/guides/art/what-goes-in-a-family-health-binder-hero.webp",
@@ -437,8 +437,8 @@
   "figure": "/guides/art/home-maintenance-you-skip-that-costs-the-most-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A table of four maintenance jobs with how often each is due and what a skipped one turns into, beside a note about writing down the last done date.",
-  "caption": "Four of the eight jobs from the guide, with how often each is due and what skipping it leads to."
+  "alt": "A table of four home maintenance jobs and how often each is really due, beside a short note about counting from the last time a job was done.",
+  "caption": "Four of the guide's nine jobs, with how often each is really due."
  },
  "how-often-home-systems-need-servicing": {
   "hero": "/guides/art/how-often-home-systems-need-servicing-hero.webp",
@@ -482,8 +482,8 @@
   "figure": "/guides/art/what-to-keep-after-a-home-repair-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A checklist of what to write after a home repair: the symptom, the diagnosis, the part replaced, what to watch for next, and who came.",
-  "caption": "What to record before the technician drives away, besides the invoice."
+  "alt": "A checklist of six things to write down after a home repair, beside two questions to ask a technician before they leave.",
+  "caption": "Example. What to write down after a repair, and what to ask before the technician leaves."
  },
  "appliance-warranties-what-to-track": {
   "hero": "/guides/art/appliance-warranties-what-to-track-hero.webp",
@@ -491,8 +491,8 @@
   "figure": "/guides/art/appliance-warranties-what-to-track-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A card asking what to check before paying for a repair, listing warranty status, the annual service record, proof of purchase and serial number.",
-  "caption": "The four things that most often sink a warranty claim, per the guide."
+  "alt": "A checklist of five things to record when an appliance is installed, beside a note to check the warranty expiration date before paying for a repair.",
+  "caption": "Example. What to record about an appliance's warranty when it's installed."
  },
  "inherited-a-house-where-to-start": {
   "hero": "/guides/art/inherited-a-house-where-to-start-hero.webp",
@@ -500,8 +500,8 @@
   "figure": "/guides/art/inherited-a-house-where-to-start-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A table of typical service lives for boiler, water heater, air conditioning and roof, beside a note to treat unknown service dates as due.",
-  "caption": "Typical service lives from the guide. Your own equipment may differ."
+  "alt": "A checklist of what to photograph on a walk through an undocumented house, beside a note on reading a manufacture date from a serial number.",
+  "caption": "Example. What to photograph on a first walk through the house, and how to read one serial number format."
  },
  "how-to-find-the-model-number-on-any-appliance": {
   "hero": "/guides/art/how-to-find-the-model-number-on-any-appliance-hero.webp",
@@ -527,8 +527,8 @@
   "figure": "/guides/art/winterize-your-house-checklist-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A five-item winterizing checklist covering the outdoor faucet, irrigation, window air conditioner, humidifier pad and entry points, with a note on the freeze deadline.",
-  "caption": "The five winterizing jobs from the guide."
+  "alt": "A five-item winterizing checklist: drain the outdoor faucet, blow out irrigation lines, cover the hose bibs, store the window air conditioner, and replace the humidifier pad.",
+  "caption": "The winterizing list, before the first hard freeze."
  },
  "home-maintenance-log-template": {
   "hero": "/guides/art/home-maintenance-log-template-hero.webp",
@@ -545,8 +545,8 @@
   "figure": "/guides/art/how-often-change-furnace-filter-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A card showing three months as the default furnace filter interval, beside a checklist of the size and location facts to write down once.",
-  "caption": "The default interval and the facts to note, from the guide."
+  "alt": "A card showing a furnace filter's size, location, and the dates it was changed and is due to be checked again, marked as an example, beside a short list of reasons to check it sooner.",
+  "caption": "Example: one filter's card. The size and dates are placeholders."
  },
  "where-is-my-water-shutoff": {
   "hero": "/guides/art/where-is-my-water-shutoff-hero.webp",
@@ -554,8 +554,8 @@
   "figure": "/guides/art/where-is-my-water-shutoff-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "Two cards comparing a wheel handle gate valve with a lever handle ball valve, beside a note to write down which way it turns.",
-  "caption": "How to tell the two common main shutoff valve types apart."
+  "alt": "A page with blank lines for the main water shutoff, which way it turns, the tool it needs, the gas shutoff and the electrical panel, next to a card comparing a wheel valve and a lever valve.",
+  "caption": "A page like this takes about ten minutes to fill in."
  },
  "how-to-make-a-home-binder": {
   "hero": "/guides/art/how-to-make-a-home-binder-hero.webp",
@@ -563,8 +563,8 @@
   "figure": "/guides/art/how-to-make-a-home-binder-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "Two cards comparing what goes in a home binder, such as shutoff locations and contacts, with what never does, such as passwords and alarm codes.",
-  "caption": "Write where things are and who to call, never the codes themselves."
+  "alt": "A binder's table of contents listing five sections, from an emergency page to dates that cost money, next to a note card that says passwords and alarm codes never go in.",
+  "caption": "The five sections, and the one rule for what stays out."
  },
  "moving-into-a-rental-what-to-document": {
   "hero": "/guides/art/moving-into-a-rental-what-to-document-hero.webp",
@@ -572,8 +572,8 @@
   "figure": "/guides/art/moving-into-a-rental-what-to-document-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A table of four day-one rental records: photos, lease dates, deposit and what you reported, beside a note to report in writing.",
-  "caption": "The four records from the guide. Not legal advice; rules vary by place."
+  "alt": "A day-one checklist for a new rental: photograph every room, write down lease dates, record the deposit, and log what you report, next to an example record showing a deposit amount and notice period.",
+  "caption": "Example: one household's day-one numbers."
  },
  "how-to-make-a-phone-call-you-have-been-avoiding": {
   "hero": "/guides/art/how-to-make-a-phone-call-you-have-been-avoiding-hero.webp",
