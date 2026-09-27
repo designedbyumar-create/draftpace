@@ -39,114 +39,134 @@
  {
   "slug": "what-to-do-when-a-parent-dies-uk",
   "area": "affairs-and-endings",
-  "line1": "Your first fortnight,",
-  "line2": "in the order it is done",
+  "line1": "Register first",
+  "line2": "then Tell Us Once",
   "pieces": [
    {
     "type": "timeline",
-    "eyebrow": "The first 48 hours",
+    "eyebrow": "The first week",
     "steps": [
      {
       "when": "Straight away",
-      "what": "Get the medical cause of death certificate"
+      "what": "Get the medical certificate"
      },
      {
-      "when": "Within days",
-      "what": "Register the death: 5 days, 8 in Scotland"
+      "when": "Within 5 days",
+      "what": "Register the death (8 in Scotland)"
      },
      {
-      "when": "Same appointment",
-      "what": "Order extra certified copies"
+      "when": "At registration",
+      "what": "Buy more copies than feels needed"
      },
      {
-      "when": "Once registered",
-      "what": "Contact a funeral director"
+      "when": "Within 28 days",
+      "what": "Use Tell Us Once, if it applies"
      }
     ]
    },
    {
-    "type": "checklist",
-    "eyebrow": "Who to tell in two weeks",
-    "items": [
-     "Bank and building society",
-     "Pension provider or employer",
-     "Tell Us Once, via the registrar",
-     "Home and car insurers",
-     "Landlord or mortgage lender"
-    ],
-    "done": []
+    "type": "compare",
+    "eyebrow": "What Tell Us Once covers",
+    "left": {
+     "label": "Tell Us Once",
+     "items": [
+      "HMRC and DWP",
+      "Passport office, DVLA",
+      "Council tax, voting roll"
+     ]
+    },
+    "right": {
+     "label": "You still call",
+     "items": [
+      "Bank, building society",
+      "Private pensions",
+      "Insurers, landlord"
+     ]
+    }
    }
   ],
-  "alt": "A timeline of the first days after a death in the UK, from the medical certificate to the funeral director, beside a short checklist of who to tell.",
-  "caption": "The registration deadline is five days in England, Wales and Northern Ireland, and eight in Scotland."
+  "alt": "A timeline card for the first week after a parent dies in the UK, beside a card comparing what Tell Us Once covers against what you still have to contact yourself.",
+  "caption": "The first week in the UK: register first, then Tell Us Once covers most of government in one go."
  },
  {
   "slug": "how-to-find-someones-accounts-after-they-die",
   "area": "affairs-and-endings",
-  "line1": "There is no one list.",
-  "line2": "So start with statements",
+  "line1": "Where to actually",
+  "line2": "look, and in what order",
   "pieces": [
    {
     "type": "table",
-    "eyebrow": "Twelve months of statements",
+    "eyebrow": "Free tools worth trying",
     "columns": [
-     "Look for",
-     "It shows"
+     "Source",
+     "Finds"
     ],
     "rows": [
      [
-      "Regular outgoings",
-      "Policies, contracts"
+      "NAIC locator",
+      "Life insurance"
      ],
      [
-      "Regular incomings",
-      "Pensions, benefits"
+      "MissingMoney.com",
+      "Dormant accounts"
      ],
      [
-      "Annual payments",
-      "Look across 12 months"
-     ],
-     [
-      "Small recurring",
-      "Often no one knows"
+      "PBGC search",
+      "Lost pensions"
      ]
-    ]
+    ],
+    "example": true
    },
    {
-    "type": "note",
-    "eyebrow": "Keep the post",
-    "text": "Keep the post for at least a year. Annual statements find accounts no one knew about."
+    "type": "checklist",
+    "eyebrow": "Start with statements",
+    "items": [
+     "Twelve months, not three",
+     "Regular outgoings = policies",
+     "Annual payments are easy to miss",
+     "Small charges no one canceled"
+    ]
    }
   ],
-  "alt": "A table of what regular outgoings, incomings, annual payments and small recurring amounts in twelve months of bank statements can reveal, with a note to keep the post.",
-  "caption": "Bank statements leave the clearest trail. The guide lists the other places to look."
+  "alt": "A table of three free US tools for finding life insurance, dormant accounts and lost pensions, beside a checklist for reading a year of bank statements.",
+  "caption": "Three of the four free tools worth trying, example matches, before you pay for a search."
  },
  {
   "slug": "where-to-look-for-a-will",
   "area": "affairs-and-endings",
-  "line1": "Where do you look",
-  "line2": "when you cannot find it",
+  "line1": "Where wills",
+  "line2": "actually turn up",
   "pieces": [
    {
-    "type": "checklist",
+    "type": "timeline",
     "eyebrow": "The search order",
-    "items": [
-     "Home: filing box, desk, drawer",
-     "The lawyer who drafted it",
-     "A safe deposit box, if any",
-     "A will register, where one exists",
-     "Their executor or their adviser"
-    ],
-    "done": []
+    "steps": [
+     {
+      "when": "At home",
+      "what": "Filing box, drawer, a safe"
+     },
+     {
+      "when": "Their attorney",
+      "what": "May hold the signed original"
+     },
+     {
+      "when": "Deposit box",
+      "what": "Search it before letters are issued"
+     },
+     {
+      "when": "Probate court",
+      "what": "Many states require filing there"
+     }
+    ]
    },
    {
     "type": "note",
-    "eyebrow": "When you find it",
-    "text": "Read the executor clause first. That person has the authority to act."
+    "eyebrow": "If you find two",
+    "text": "The most recent valid one usually governs. Keep the older one anyway."
    }
   ],
-  "alt": "A checklist of places to look for a will, from home to the lawyer, a deposit box, a will register and the executor, beside a note to read the executor clause first.",
-  "caption": "Work down the list rather than across it: each place takes more effort than the one before."
+  "alt": "A timeline card showing where to search for a will, at home, with the attorney, in a deposit box, then the probate court, beside a note about keeping an older will.",
+  "caption": "The search order that turns up most wills, the probate court last."
  },
  {
   "slug": "named-executor-what-you-agreed-to",
@@ -204,76 +224,62 @@
  {
   "slug": "the-if-something-happens-to-me-file",
   "area": "affairs-and-endings",
-  "line1": "Not a will.",
-  "line2": "A map of where it all is",
+  "line1": "The file that says",
+  "line2": "where, not what",
   "pieces": [
    {
-    "type": "page",
-    "eyebrow": "If something happens to me",
-    "title": "Locations, not documents",
-    "rows": [
-     "Will, and who is executor",
-     "Banks and credit unions",
-     "Pensions, including old ones",
-     "Insurance policies",
-     "Property and deeds",
-     "Anything that would surprise"
+    "type": "checklist",
+    "eyebrow": "Eight areas",
+    "title": "Locations, not what's inside",
+    "items": [
+     "Who to contact first",
+     "Where the will is kept",
+     "Banks, by name only",
+     "Who has a spare key",
+     "What you'd want"
     ]
    },
    {
     "type": "note",
-    "eyebrow": "What stays out",
-    "text": "No passwords, PINs or full account numbers. Write where things are, not what they are."
+    "eyebrow": "Leave off",
+    "text": "Passwords and account numbers. Write where the recovery kit is kept instead."
    }
   ],
-  "alt": "A blank printable page titled If something happens to me, with lines for the will, banks, pensions, insurance, property and anything that would surprise someone.",
-  "caption": "The lines a file like this holds. Locations and references only, never the credentials."
+  "alt": "A checklist of five areas in an if-something-happens-to-me file, from who to contact first to what you'd want, with a note that passwords stay out and locations go in.",
+  "caption": "Five of the eight areas. Each line says where something is, never what's inside it."
  },
  {
   "slug": "beneficiary-forms-override-your-will",
   "area": "affairs-and-endings",
-  "line1": "You wrote a will.",
-  "line2": "Often the form wins",
+  "line1": "The form wins,",
+  "line2": "not the will",
   "pieces": [
    {
-    "type": "table",
-    "eyebrow": "What passes how",
-    "columns": [
-     "Asset",
-     "Usually passes by",
-     "Will controls?"
-    ],
-    "rows": [
-     [
-      "Pension",
-      "Beneficiary nomination",
-      "Usually not"
-     ],
-     [
-      "Life insurance",
-      "Named beneficiary",
-      "Usually not"
-     ],
-     [
-      "Joint bank account",
-      "Survivorship",
-      "Usually not"
-     ],
-     [
-      "Sole bank account",
-      "The estate",
-      "Yes"
+    "type": "compare",
+    "eyebrow": "Same will, two accounts",
+    "left": {
+     "label": "Life insurance",
+     "items": [
+      "Names: current spouse",
+      "Pays: current spouse"
      ]
-    ]
+    },
+    "right": {
+     "label": "Old 401(k)",
+     "items": [
+      "Names: ex-spouse",
+      "Pays: ex-spouse"
+     ]
+    }
    },
    {
     "type": "note",
-    "eyebrow": "One short afternoon",
-    "text": "Ask each provider who is currently named. They will tell you."
+    "eyebrow": "Check first",
+    "text": "These accounts pay whoever is named on the form, not whoever the will names."
    }
   ],
-  "alt": "A table showing how a pension, life insurance, a joint bank account and a sole account usually pass on, and whether the will controls each, beside a note.",
-  "caption": "Generalized, and details vary by country and provider. Not legal advice."
+  "alt": "A comparison card showing a life insurance policy paying a current spouse and an old 401(k) still paying an ex-spouse, though the will names the same person for both.",
+  "caption": "An example. The will says the same thing for both accounts; the forms decide differently."
  },
  {
   "slug": "what-to-write-down-in-case-something-happens-to-you",
@@ -300,122 +306,118 @@
  {
   "slug": "digital-accounts-after-a-death",
   "area": "affairs-and-endings",
-  "line1": "Email, photos, crypto.",
-  "line2": "What can be recovered",
+  "line1": "What a legacy contact",
+  "line2": "can actually get",
   "pieces": [
    {
     "type": "table",
-    "eyebrow": "Roughly what to expect",
+    "eyebrow": "Set up in advance",
     "columns": [
      "Account",
-     "Usual outcome",
-     "What helps"
+     "Without setup",
+     "With a legacy contact"
     ],
     "rows": [
      [
+      "Apple",
+      "Closed",
+      "Photos, notes, files"
+     ],
+     [
+      "Google",
+      "Closed",
+      "Some data, on request"
+     ],
+     [
       "Email",
       "Rarely released",
-      "A legacy contact"
-     ],
-     [
-      "Photo storage",
-      "Sometimes released",
-      "A legacy contact"
-     ],
-     [
-      "Subscriptions",
-      "Cancelled on request",
-      "Knowing they exist"
-     ],
-     [
-      "Cryptocurrency",
-      "Unrecoverable",
-      "Nothing but the keys"
+      "Recovery route works"
      ]
     ]
    },
    {
     "type": "note",
-    "eyebrow": "The step that works",
-    "text": "Set a legacy contact where it is offered. It takes minutes."
+    "eyebrow": "The one that works",
+    "text": "Set it up while you're alive. A death certificate alone rarely opens an account."
    }
   ],
-  "alt": "A table of what usually happens to email, photo storage, subscriptions and cryptocurrency after a death, and what helps, beside a note about legacy contacts.",
-  "caption": "Policies change and vary by country, so treat this as a starting point."
+  "alt": "A table comparing Apple and Google accounts with and without a legacy contact set up, showing photos and chosen data become reachable only with advance setup.",
+  "caption": "General patterns for major US providers. Confirm with each provider directly."
  },
  {
   "slug": "which-documents-to-keep-and-where-to-put-them",
   "area": "affairs-and-endings",
-  "line1": "Keep it all? Keep none?",
-  "line2": "Try three places",
+  "line1": "Not everything",
+  "line2": "needs to stay forever",
   "pieces": [
    {
     "type": "table",
-    "eyebrow": "Roughly how long to keep things",
+    "eyebrow": "How long to keep it",
     "columns": [
      "Document",
      "Keep for"
     ],
     "rows": [
      [
-      "Certificates",
-      "Permanently"
-     ],
-     [
-      "Property deeds",
-      "Permanently"
-     ],
-     [
       "Tax records",
-      "Several years"
+      "3 years"
      ],
      [
-      "Bills and statements",
-      "About a year"
+      "Certificates",
+      "Forever"
+     ],
+     [
+      "Pay stubs",
+      "1 year"
+     ],
+     [
+      "Home deed",
+      "Own it + 7 yrs"
      ]
     ]
    },
    {
     "type": "note",
-    "eyebrow": "Sort by urgency",
-    "text": "One thin emergency folder, one for active paperwork, one archive box."
+    "eyebrow": "Before it hits the bin",
+    "text": "Shred anything with an account number, a signature or a full address."
    }
   ],
-  "alt": "A table of how long to keep certificates, property deeds, tax records and bills, beside a note on sorting into emergency, active and archive.",
-  "caption": "General guidance. Tax retention rules vary by country, so check yours."
+  "alt": "A table card showing how long to keep tax records, certificates, pay stubs and a home deed, beside a note to shred anything with an account number.",
+  "caption": "Three folders, a shred pile, and the documents worth keeping forever."
  },
  {
   "slug": "talking-to-your-parents-about-their-affairs",
   "area": "affairs-and-endings",
-  "line1": "It is not about dying.",
-  "line2": "Ask where things are",
+  "line1": "Ask where it's kept,",
+  "line2": "not what it says",
   "pieces": [
    {
     "type": "script",
-    "eyebrow": "Openings worth trying",
+    "eyebrow": "Ways to open the conversation",
     "lines": [
      {
-      "label": "Say",
-      "text": "I have been sorting my own paperwork. No one would know where mine is."
+      "label": "Yourself",
+      "text": "I've been sorting my paperwork. Have you done yours?"
      },
      {
-      "label": "Then",
-      "text": "If you were both in hospital for two weeks, I would not know where to start."
-     },
-     {
-      "label": "Ask",
-      "text": "Where is the will kept? Which bank? Who is the lawyer?"
+      "label": "A what-if",
+      "text": "If we were both in the hospital, could we write the basics down?"
      }
     ]
    },
    {
-    "type": "note",
-    "eyebrow": "Take it slowly",
-    "text": "The will's location this month, the pensions next month."
+    "type": "checklist",
+    "eyebrow": "What to ask about",
+    "items": [
+     "Where the will is kept",
+     "Which bank, by name only",
+     "Who has power of attorney",
+     "Who makes medical decisions"
+    ]
    }
   ],
-  "alt": "A script card with three ways to open the conversation with a parent about their affairs, starting with your own paperwork, beside a note to go slowly.",
-  "caption": "Example wording. Ask for locations, not contents."
+  "alt": "A script card with two conversation openers about a parent's paperwork, beside a checklist of what to ask about: the will, the bank, power of attorney, medical decisions.",
+  "caption": "Two ways to start, and four things to ask about by location, not detail."
  },
  {
   "slug": "life-admin-binder-what-goes-in-it",
@@ -493,63 +495,87 @@
  {
   "slug": "emergency-contact-and-medical-decision-maker",
   "area": "affairs-and-endings",
-  "line1": "Too ill to speak?",
-  "line2": "Who speaks for you",
+  "line1": "Who decides",
+  "line2": "if you can't",
   "pieces": [
    {
+    "type": "timeline",
+    "eyebrow": "The order that works",
+    "steps": [
+     {
+      "when": "Choose",
+      "what": "Pick someone steady under pressure"
+     },
+     {
+      "when": "Ask",
+      "what": "Ask them before you name them"
+     },
+     {
+      "when": "Talk",
+      "what": "Say what you'd want, briefly"
+     },
+     {
+      "when": "Record",
+      "what": "Write down where the form is kept"
+     }
+    ]
+   },
+   {
     "type": "compare",
-    "eyebrow": "Two roles, one or two people",
+    "eyebrow": "Two different roles",
     "left": {
-     "label": "First contact",
+     "label": "Contact",
      "items": [
-      "The first person to call",
-      "Can be the same person"
+      "Called first",
+      "No legal authority"
      ]
     },
     "right": {
-     "label": "Decision maker",
+     "label": "Care agent",
      "items": [
-      "Speaks about your care",
-      "Can be a different person"
+      "Named on a state form",
+      "Decides if you can't"
      ]
     }
-   },
-   {
-    "type": "note",
-    "eyebrow": "Ask first",
-    "text": "Ask them before you write their name down, and name a second person."
    }
   ],
-  "alt": "A compare card of an emergency contact and a medical decision maker, two roles that can be one person or two, beside a note to ask first and name a second person.",
-  "caption": "Not legal or medical advice. The formal documents vary by state."
+  "alt": "A timeline card showing the order for naming a health care agent, choose, ask, talk, record, beside a card comparing an emergency contact to a health care agent.",
+  "caption": "The order that works, and how a health care agent differs from an emergency contact."
  },
  {
   "slug": "who-would-raise-your-children-guardian-checklist",
   "area": "affairs-and-endings",
   "line1": "Who would raise",
-  "line2": "your children?",
+  "line2": "your children",
   "pieces": [
    {
-    "type": "page",
-    "eyebrow": "If I could not raise them",
-    "title": "My choice, on one page",
-    "rows": [
-     "First choice, asked first",
-     "Second choice",
-     "A normal week: school days",
-     "The doctor's name",
-     "Who collects them, and when",
-     "Where the paperwork is kept"
+    "type": "checklist",
+    "eyebrow": "Guardian checklist",
+    "items": [
+     "Think values and daily life first",
+     "Ask them before you name them",
+     "Name a second choice",
+     "Write down an ordinary week",
+     "Name them in your will"
     ]
    },
    {
-    "type": "note",
+    "type": "script",
     "eyebrow": "Ask them first",
-    "text": "A name that would say no is worse than no name."
+    "lines": [
+     {
+      "label": "You say",
+      "text": "If something happened to both of us, would you raise the kids?"
+     },
+     {
+      "label": "Backup",
+      "text": "We're also asking you to be the backup, just so you know."
+     }
+    ]
    }
   ],
-  "alt": "A blank printable page for recording who you would want to raise your children, with a second choice, the details of a normal week and where paperwork is kept.",
-  "caption": "The human side of the choice. Confirm the legal side with an attorney in your state."
+  "alt": "A checklist card for naming a guardian, from thinking about values to naming them in a will, beside a script card for asking someone to take on the role.",
+  "caption": "The checklist, and two ways to actually ask them."
  },
  {
   "slug": "who-to-tell-when-someone-dies",
@@ -646,53 +672,51 @@
  {
   "slug": "safe-deposit-box-and-spare-keys-who-can-open-it",
   "area": "affairs-and-endings",
-  "line1": "A safe only one",
-  "line2": "person knows about",
+  "line1": "Who can open it",
+  "line2": "when you're not there",
   "pieces": [
    {
     "type": "checklist",
-    "eyebrow": "Three things to write down",
+    "eyebrow": "Before you need it",
     "items": [
-     "What it is: safe, box or lockbox",
+     "What it is, in plain words",
      "Where it is, precisely",
-     "Who can open it: a name, no code"
-    ],
-    "done": []
+     "Who can open it: a name"
+    ]
    },
    {
     "type": "note",
-    "eyebrow": "Never the combination",
-    "text": "Write who has the key or where the instructions are, not the instructions."
+    "eyebrow": "Never write this",
+    "text": "Never the combination, the PIN, or where the key is. Only who'd find out how."
    }
   ],
-  "alt": "A checklist of three things to write down about a safe or deposit box, what it is, where it is and who can open it, beside a note never to record the combination.",
-  "caption": "Say where, not what."
+  "alt": "A checklist card of what to record about a safe or deposit box, beside a note warning never to write down the combination or PIN.",
+  "caption": "What to write about a safe, box or spare key, and what never to write."
  },
  {
   "slug": "what-happens-to-your-pets-if-something-happens-to-you",
   "area": "affairs-and-endings",
-  "line1": "Who feeds the dog",
-  "line2": "if you cannot?",
+  "line1": "Who takes the pets",
+  "line2": "if you can't",
   "pieces": [
    {
     "type": "checklist",
-    "eyebrow": "A short note per animal",
+    "eyebrow": "For each animal you have",
     "items": [
-     "Who would take each animal",
-     "Food, medication and routines",
-     "Vet name and where records are",
-     "Papers: registration, microchip",
-     "A backup if the first cannot"
-    ],
-    "done": []
+     "Who would take them",
+     "What they need day to day",
+     "Vet name and records",
+     "Where the papers are",
+     "A second option"
+    ]
    },
    {
     "type": "note",
-    "eyebrow": "Ask first",
-    "text": "A person who agreed is a plan. A name on a page is a hope."
+    "eyebrow": "If a note isn't enough",
+    "text": "A will can name a caregiver. A pet trust adds a trustee and funding for the animal."
    }
   ],
-  "alt": "A checklist for a pet care note, covering who would take each animal, food and medication, the vet, papers and a backup, beside a note about asking first.",
-  "caption": "A few minutes per animal."
+  "alt": "A checklist card of what to write down for each pet, from who would take them to where the vet records are, beside a note about pet trusts.",
+  "caption": "What to write for each animal, and when a trust does more than a note."
  }
 ]

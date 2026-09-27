@@ -104,7 +104,7 @@ describe("public/auth copy avoids generic SaaS marketing language", () => {
 
 const FABRICATED_CLAIM_PATTERNS: { name: string; pattern: RegExp }[] = [
   { name: "star rating glyph", pattern: /★|☆/ },
-  { name: "numeric star rating (e.g. \"4.8 out of 5\")", pattern: /(?<![\d./])\d(\.\d)?\s*(out of|\/)\s*5(?![\d])/i },
+  { name: "numeric star rating (e.g. \"4.8 out of 5\")", pattern: /(?<![\d./])\d(\.\d)?\s*(out of|\/)\s*5(?![\d/])/i },
   { name: "customer/user count claim", pattern: /\b[\d,]+\+?\s*(customers|users|people)\s+(trust|love|use|joined)/i },
   { name: "bestseller badge", pattern: /bestseller/i },
   { name: "testimonial marker", pattern: /testimonial/i },

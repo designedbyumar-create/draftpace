@@ -456,7 +456,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "what-to-do-when-a-parent-dies-uk",
     title: "What to do when a parent dies: the first fortnight (UK)",
-    dek: "Registering the death, getting certificates and telling the right people, in the order it is done. Rules differ across the four UK nations.",
+    dek: "The few things that cannot wait, the many that can, and how Tell Us Once notifies government in one call. Steps in order, for the whole UK.",
     primaryQuery: "what to do when a parent dies uk",
     next: { slug: "named-executor-what-you-agreed-to-uk", reason: "If you have been named executor, this explains what the role involves, how long probate takes and how to step aside." },
     related: [
@@ -465,94 +465,181 @@ export const GUIDES: Guide[] = [
       { slug: "how-to-find-someones-accounts-after-they-die", reason: "If accounts, pensions or policies are missing from the paperwork, this sets out where to search and in what order." },
     ],
     publishedAt: "2026-08-30",
-    updatedAt: "2026-08-31",
+    updatedAt: "2026-09-26",
     areaSlug: "affairs-and-endings",
     locale: "uk",
+    sources: [
+      {
+        name: "GOV.UK: What to do when someone dies",
+        url: "https://www.gov.uk/after-a-death",
+        retrieved: "2026-09-26",
+        note: "Overall order of steps; registration deadline of 5 days (8 in Scotland)",
+      },
+      {
+        name: "GOV.UK: Tell Us Once",
+        url: "https://www.gov.uk/tell-us-once",
+        retrieved: "2026-09-26",
+        note: "What it covers, England/Scotland/Wales-only availability, 28-day window to use the reference number",
+      },
+      {
+        name: "mygov.scot: Register a death",
+        url: "https://www.mygov.scot/register-death",
+        retrieved: "2026-09-26",
+        note: "Scotland's 8-day deadline, any register office, procurator fiscal referrals delaying registration",
+      },
+      {
+        name: "GOV.UK: Wills, probate and inheritance",
+        url: "https://www.gov.uk/wills-probate-inheritance",
+        retrieved: "2026-09-26",
+        note: "Confirms Scotland and Northern Ireland run different probate rules to England and Wales",
+      },
+      {
+        name: "Scottish Courts and Tribunals Service: Small estates",
+        url: "https://www.scotcourts.gov.uk/taking-action/dealing-with-a-deceaseds-estate-in-scotland/small-estates",
+        retrieved: "2026-09-26",
+        note: "£36,000 small-estate threshold and the C1 form for confirmation without a solicitor",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "When a parent dies only a few things genuinely need doing in the first week, and many others feel urgent and are not. The difference matters, because you are being asked to do administration at the exact moment you are least able to.",
-          "This is the order that works. Register the death and get certified copies of the certificate, because almost nothing else can start without them. Find the will if there is one. Tell the small number of organisations that actually need telling now. Secure the property. Then stop, because the rest can genuinely wait, and most of it will take months anyway.",
-          "Nothing below is legal advice. Requirements differ by country and sometimes by region, and the registrar you speak to will tell you what applies where you are.",
+          "When a parent dies in the UK, two things cannot wait: get the medical certificate of cause of death, then register the death within 5 days in England, Wales and Northern Ireland, or 8 days in Scotland. Ask for several certified copies while you're there. Almost everything else, including probate and clearing the house, can wait weeks.",
+          "This is written for a death anywhere in the UK, though Scotland and Northern Ireland differ from England and Wales in places marked below. It isn't legal advice, and it can't see your family's exact situation, so where it disagrees with your registrar or a solicitor, go with them. If your parent died in the United States, use [the US version](/guides/what-to-do-when-a-parent-dies) instead.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "An example: what the first week can look like",
+        paragraphs: [
+          "Say your father dies in a hospital in Leeds on a Sunday morning. (This is an example, not a case.) Ward staff arrange the medical certificate of cause of death, and you collect it on Monday. You book an appointment at the register office for Wednesday, four days after he died, comfortably inside the 5 day limit.",
+          "At the register office you register the death, buy five certified copies (the bank, the pension provider, the mortgage lender, the car insurer, and one spare), and the registrar gives you a Tell Us Once reference number. That evening you use it online, and one form tells HMRC, the DWP, the passport office, the DVLA and the council together. The bank and the pension still need their own call. That's the whole week.",
         ],
       },
       {
         kind: "timeline",
-        heading: "The first 48 hours",
+        heading: "The first week",
         steps: [
           {
             when: "Straight away",
-            what: "Get the medical certificate of cause of death. If your parent died in hospital or a care home, staff arrange this. If they died at home unexpectedly, call emergency services first.",
+            what: "Get the medical certificate of cause of death. Hospital or care home staff arrange it. If the death was at home and unexpected, call 999.",
           },
           {
-            when: "Within a few days",
-            what: "Register the death with your local register office. The deadline is five days in England, Wales and Northern Ireland, and eight in Scotland.",
+            when: "Within 5 days (8 in Scotland)",
+            what: "Register the death at a register office. A relative who was present or lives nearby usually does this; the registrar can confirm who qualifies.",
           },
           {
-            when: "At the same appointment",
-            what: "Order certified copies of the death certificate. Order more than feels sensible, because several organisations will want their own certified copy.",
+            when: "At the register office",
+            what: "Buy certified copies of the certificate, more than feels necessary, and get the Tell Us Once reference number if the registrar can't set it up with you there.",
           },
           {
-            when: "Once it is registered",
+            when: "Within 28 days of that",
+            what: "Use Tell Us Once online or by phone, if you're in England, Scotland or Wales. Northern Ireland doesn't have it, so contact each department yourself.",
+          },
+          {
+            when: "Once it's registered",
             what: "Contact a funeral director, or check whether a plan was already paid for. Many people have one and never mention it.",
-          },
-          {
-            when: "Within thirty days",
-            what: "Secure the property. Lock it, redirect post, and if it is now empty, check what the home insurance says about unoccupied buildings, because many policies limit cover once a property has been empty for a set number of days.",
           },
         ],
       },
       {
-        kind: "paragraphs",
-        heading: "Why you need so many death certificates",
-        paragraphs: [
-          "Banks, pension providers, insurers, utilities and government departments will each want to see a certified copy, and most will not accept a photocopy or a scan. Some return them and some do not. Ordering several at registration is usually quicker than going back for more later.",
-          "It is easier to have them in hand than to ask again.",
-        ],
+        kind: "compare",
+        heading: "What Tell Us Once covers, and what it doesn't",
+        intro: "One notification, used within 28 days of getting the reference number, reaches most of government. It reaches none of the rest.",
+        left: {
+          label: "Tell Us Once notifies",
+          items: [
+            "HMRC, for tax and National Insurance",
+            "DWP, for benefits and the State Pension",
+            "The passport office and the DVLA",
+            "Your council, for council tax and the electoral roll",
+            "Public sector pensions, such as the NHS or the civil service",
+          ],
+        },
+        right: {
+          label: "You still tell yourself",
+          items: [
+            "Banks and building societies",
+            "Private and workplace pensions",
+            "Home, car and life insurers",
+            "The landlord or mortgage lender",
+          ],
+        },
       },
       {
         kind: "list",
         checkable: true,
-        heading: "Who to tell in the first two weeks",
-        intro: "Not everybody. Just the ones where delay causes a real problem.",
+        heading: "Who to tell yourself, in the first two weeks",
+        intro: "Tell Us Once handles government. This is the rest, roughly in the order it helps to do them.",
         items: [
-          "Their bank and any building society, so accounts can be frozen and direct debits stopped.",
-          "Their pension provider or employer, because overpaid pension is usually reclaimed and it is easier to stop it than repay it.",
-          "The government department handling benefits, tax and state pension, which in England, Scotland and Wales has a single service, Tell Us Once, that notifies several government departments at once. The registrar will explain it.",
-          "Home and car insurers, particularly if a property is now unoccupied.",
-          "Their landlord or mortgage lender.",
+          "The bank or building society, so it can freeze the account and stop direct debits.",
+          "The pension provider, whether it's a workplace scheme or a personal one. Overpaid pension is usually reclaimed, and it's simpler to stop it than repay it.",
+          "Home and car insurers, especially if a property is now empty. Many policies limit cover once a home has stood unoccupied for a while, so ask what the policy actually says.",
+          "The landlord or mortgage lender.",
+          "Their employer, if they were still working.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Where to look for the will",
+        heading: "Find the will, and read one clause first",
         paragraphs: [
-          "Start with the obvious places, because that is usually where it is: a home safe, a filing box, a bedside drawer. Then the less obvious. Many people leave a will with the solicitor who drafted it, and some countries have a central will register worth searching.",
-          "If you find a will, look for who is named as executor before you do anything else. That person has the legal authority to act, and if it is not you, several of the steps above become theirs rather than yours.",
+          "Look where people actually keep them: a home safe, a filing box, a bedside drawer, or with the solicitor who drew it up. [Where to look for a will](/guides/where-to-look-for-a-will) covers the wider search, including what to do if several turn up or none does.",
+          "When you find it, read who's named as executor before you read who inherits. That person has the legal authority to act, called confirmation in Scotland and probate in England, Wales and Northern Ireland, and a son or daughter arranging the funeral doesn't automatically have it.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "What can genuinely wait",
+        heading: "What can wait a while",
         paragraphs: [
-          "Probate takes months in most places, and there is no version of this where you finish it in a fortnight. Closing accounts, valuing the estate, dealing with tax and distributing anything are all downstream of steps you have not yet completed.",
-          "Clearing the house can wait too, and rushing it can mean throwing out papers you still need. It is fine if a wardrobe stays full until spring.",
+          "Probate or confirmation takes months almost everywhere, and there's no version of this where you finish it inside a fortnight. Closing accounts, valuing the estate and paying anything out are all downstream of steps you haven't reached yet.",
+          "Clearing the house can wait too. It's fine if a wardrobe stays full until spring, and rushing it risks throwing away papers you still need.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "The part nobody warns you about",
+        heading: "Scotland and Northern Ireland: what's different",
         paragraphs: [
-          "The hardest thing about this fortnight is rarely any single task. It is that you are trying to reconstruct somebody's entire administrative life from the outside, without a map, while grieving. Which bank. Which pension. Whether there was insurance. Whether the utilities were in their name. Who the solicitor was.",
-          "Families often find some of it and not the rest. Money sits unclaimed, subscriptions keep taking payments for years, and somebody spends a Sunday going through paper looking for a policy number that may not exist.",
-          "It is worth saying plainly, because it is the thing you will think about later: this is not something you can fix now, for the person who has died. It is something you can fix for the next person, which is usually you.",
+          "In Scotland you have 8 days to register instead of 5, and you can use any register office in the country rather than a local one. If the death is referred to the procurator fiscal, Scotland's version of a coroner, the registration clock can pause until that's resolved, and the registrar can talk you through an interim step if the funeral can't wait. Once you have the right to act, it's called confirmation rather than probate, and for a smaller estate, £36,000 or under, the local sheriff court can help you apply directly on form C1, without a solicitor.",
+          "Northern Ireland keeps the 5 day registration deadline but doesn't use Tell Us Once at all, so each government department has to be told separately. NI Direct's bereavement service can point you to the right forms for each one.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "How long do I have to register a death in the UK?",
+            a: "Five days in England, Wales and Northern Ireland, and eight days in Scotland, both counted from the death rather than from when you feel ready. If a death is referred to a coroner, or in Scotland the procurator fiscal, registration can be delayed until that's resolved, and the registrar will tell you what to do instead.",
+          },
+          {
+            q: "What does Tell Us Once actually cover?",
+            a: "One notification through Tell Us Once reaches HMRC, the DWP, the passport office, the DVLA, your council and public sector pension schemes. It doesn't reach banks, private or workplace pensions, or insurers, so you still contact those yourself. It's available in England, Scotland and Wales, and you have 28 days to use the reference number once you have it.",
+          },
+          {
+            q: "Is confirmation the same as probate?",
+            a: "They do the same job under different names. Confirmation is Scotland's court process for giving an executor the authority to deal with an estate, and probate is the equivalent in England, Wales and Northern Ireland. Neither is automatic, and a bank generally won't act on a will alone, whichever term applies where you are.",
+          },
+          {
+            q: "Do I have to register the death before the funeral can happen?",
+            a: "In most cases yes, because the funeral director needs the registrar's certificate before a burial or cremation can go ahead. If the death has been referred to a coroner or procurator fiscal, ask the registrar or funeral director about an interim certificate, which can let the funeral proceed while the fuller inquiry continues.",
+          },
+          {
+            q: "What if my parent died in Northern Ireland?",
+            a: "The registration deadline is the same 5 days as England and Wales, but Tell Us Once doesn't operate there. You'll need to contact HMRC, the DWP, the passport office and the DVLA separately, and NI Direct's bereavement service can point you to the right forms for each.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "For your own affairs, later",
+        paragraphs: [
+          "Reconstructing which bank, which pension and where a will was kept is often what convinces people to organise their own paperwork before it's needed. Personal Life Affairs Companion is the Draftpace product for that. It isn't built around UK law specifically, but its dates print in the UK date format and its printed book can be sized to A4 as well as US Letter. It asks one question at a time: who to contact first, where the will is kept, which bank, which pension, who has a spare key. It records where things are, not the documents themselves, never asks for an account number or a password, and prints a book someone could follow. It has no notify list, and it sends nothing to anyone. [See the Companion](/shop/personal-life-affairs-companion).",
         ],
       },
       {
         kind: "callout",
-        label: "The Companion for this",
-        body: "Personal Life Affairs Companion is built for the other side of this. It walks you through recording what exists and where it is kept, so nobody has to reconstruct it from the outside. It has no upload, only a place to note where a document is. It may be worth having for your own affairs, later.",
+        label: "Where to check",
+        body: "Rules differ across England, Wales, Scotland and Northern Ireland, and they change. Your local registrar, Citizens Advice, or NI Direct can confirm exactly what applies to you.",
       },
     ],
   },
@@ -560,7 +647,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "how-to-find-someones-accounts-after-they-die",
     title: "How to find someone's accounts after they die",
-    dek: "A search order for tracing bank accounts, pensions, policies and subscriptions when nothing was written down, starting with twelve months of statements.",
+    dek: "A search order for finding bank accounts, pensions and life insurance in the US: statements first, then four free locator tools before paying for a search.",
     primaryQuery: "how to find someone's accounts after they die",
     next: { slug: "digital-accounts-after-a-death", reason: "Once the money is traced, this covers photos, email and subscriptions, and what providers will and will not release." },
     related: [
@@ -569,68 +656,159 @@ export const GUIDES: Guide[] = [
       { slug: "what-to-do-when-a-parent-dies", reason: "For everything else in the first two weeks around the search, this gives the whole order of tasks." },
     ],
     publishedAt: "2026-08-30",
+    updatedAt: "2026-09-26",
     areaSlug: "affairs-and-endings",
+    sources: [
+      {
+        name: "NAIC: Life Insurance Policy Locator Service",
+        url: "https://eapps.naic.org/life-policy-locator/",
+        retrieved: "2026-09-26",
+        note: "How the free tool works and what identifying details it asks for",
+      },
+      {
+        name: "NAIC: Life Insurance Policy Locator Tool matches over $16 billion in benefits",
+        url: "https://content.naic.org/article/naic-life-insurance-policy-locator-tool-helps-match-consumers-more-16-billion-lost-and-unclaimed",
+        retrieved: "2026-09-26",
+        note: "That the locator is free and how matching works",
+      },
+      {
+        name: "NAUPA: MissingMoney.com, search beyond your state",
+        url: "https://unclaimed.org/search-beyond-your-state/",
+        retrieved: "2026-09-26",
+        note: "MissingMoney.com is free, NAUPA-endorsed, and covers 49 states",
+      },
+      {
+        name: "PBGC: Find unclaimed retirement benefits",
+        url: "https://www.pbgc.gov/workers-retirees/find-unclaimed-retirement-benefits/search-unclaimed",
+        retrieved: "2026-09-26",
+        note: "Free federal pension search by last name and last four digits of Social Security number",
+      },
+      {
+        name: "FTC: Debts and deceased relatives",
+        url: "https://consumer.ftc.gov/articles/debts-and-deceased-relatives",
+        retrieved: "2026-09-26",
+        note: "Who a debt collector can and can't contact about a deceased person's accounts",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "There is no single register you can search to find everything somebody owned. That is the honest answer, and it is why this task often takes months rather than an afternoon.",
-          "What works instead is a systematic sweep of four sources: their post, their bank statements, their email, and the official tracing services that exist for pensions and unclaimed assets. Between them you have the best chance of finding it.",
+          "There's no single database that lists everything a person owned. What works instead is a search in order: twelve months of their bank statements and mail, their email, then four free US locator services built for exactly this, life insurance, pensions and unclaimed property, before you spend money on a paid search.",
+          "This is written for a search in the United States. It can't promise you'll find everything, and it isn't legal or financial advice, so an attorney or the local probate office in the county where the person lived can tell you what your role actually lets you ask for.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "An example: a search that took six weeks",
+        paragraphs: [
+          "Say your mother kept nothing written down. (This is an example, not a case.) Her bank statements show a mortgage payment to a lender you'd never heard of and a small monthly premium with no name attached to it. Her email, searched for 'statement' and 'policy,' turns up a pension from a job she left in 1994.",
+          "The unnamed premium takes longer. Three weeks in, the NAIC's life insurance locator turns up a policy from a company that's since been bought twice, worth around $22,000. (This is an example figure, not a promise of what you'll find.) The pension and the policy together are worth more than the six weeks it took to find them.",
         ],
       },
       {
         kind: "list",
         checkable: true,
-        heading: "Start with twelve months of bank statements",
-        intro: "This is one of the most useful hours you will spend, because a great deal leaves a trace here.",
+        heading: "Start with twelve months of statements, not three",
+        intro: "This is the single most useful hour you'll spend on the whole search.",
         items: [
-          "Regular outgoings reveal insurance policies, subscriptions, service contracts and standing orders.",
-          "Regular incomings reveal pensions, annuities, benefits and rental income.",
-          "Annual payments are easy to miss, so look across a full twelve months rather than three.",
-          "Small recurring amounts are often the ones nobody knows about, and they keep taking money long after a death if nobody stops them.",
+          "Regular outgoings point to insurance, subscriptions and loan payments you didn't know existed.",
+          "Regular incomings point to pensions, annuities and rental income.",
+          "Annual payments are easy to miss in three months of statements and obvious across twelve.",
+          "Small recurring charges are often the ones no one in the family knew about, and they keep taking money for years if no one cancels them.",
         ],
       },
       {
-        kind: "paragraphs",
-        heading: "Keep the post for at least a year",
-        paragraphs: [
-          "Annual statements are the single best source for accounts nobody knew about. A pension the person had from a job in the 1980s will usually announce itself once a year and never otherwise.",
-          "This is why redirecting post matters so much, and why clearing a house too quickly causes problems. If post stops arriving and nobody kept the last year of it, the trail goes cold.",
+        kind: "table",
+        heading: "Where to search, and what you need to start",
+        intro: "Once the statements and mail are read, these four free services are built for exactly this search.",
+        columns: ["Where to search", "What it can find", "What you need to start"],
+        rows: [
+          [
+            "NAIC Life Insurance Policy Locator",
+            "Life insurance policies and annuities from participating companies",
+            "Legal name, Social Security number, date of birth, date of death",
+          ],
+          [
+            "MissingMoney.com, run by NAUPA for 49 states",
+            "Dormant bank accounts, uncashed checks and unclaimed utility deposits",
+            "Full name and the states they lived in",
+          ],
+          [
+            "PBGC's unclaimed retirement benefits search",
+            "Pension benefits from plans that ended and couldn't locate the person owed",
+            "Last name and the last four digits of their Social Security number",
+          ],
+          [
+            "A credit report, requested as executor",
+            "Every open account currently reporting to Equifax, Experian or TransUnion",
+            "Proof of death and proof of your authority to act for the estate",
+          ],
         ],
       },
       {
         kind: "list",
-        checkable: true,
-        heading: "Where else to look",
+        heading: "Where else to look, once the statements are read",
         items: [
-          "Their email, searched for words like statement, policy, renewal, premium and pension.",
-          "Their phone, for banking and authenticator apps that name institutions.",
-          "A pension tracing service, where your country runs one, which can find schemes from former employers.",
-          "Official unclaimed property or unclaimed money databases, where your state or country has one, which hold dormant accounts and lost policies.",
-          "Their accountant, attorney or solicitor, who often knows more than the family does.",
-          "The loft, the filing box, and the drawer nobody has opened, which sound like jokes and are where a great deal of this is actually found.",
+          "Their email, searched for the words statement, policy, renewal, premium and pension.",
+          "Their phone, for banking and two-factor apps that name the institution in the notification.",
+          "Their tax return or last year's 1099 forms, which list every account and pension that paid them interest, dividends or income.",
+          "Their accountant or attorney, who often knows more than the family does.",
+          "The safe, the filing box and the drawer no one has opened, which sound obvious and are where a great deal of this actually turns up.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "What you will need before anybody talks to you",
+        heading: "What you'll need before anyone will talk to you",
         paragraphs: [
-          "Almost every institution will want a certified copy of the death certificate, proof of your own identity, and evidence of your authority to act, which usually means the will naming you as executor plus the court document appointing you, called letters testamentary in most of the United States and a grant of probate in the United Kingdom.",
-          "It is worth assembling that set once and keeping it together, because you will be asked for the same three things again and again.",
+          "Almost every institution wants the same three things: a certified copy of the death certificate, proof of your own identity, and proof of your authority to act, usually the court document called the executor's or administrator's court paperwork. Assemble that set once and keep copies together, because you'll be asked for it again at every stop.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Accept that you will not find everything",
+        heading: "What can go wrong",
         paragraphs: [
-          "Some accounts and pensions are never traced, often because the only person who knew about them has died. A thorough search may not find everything, and at some point continuing to look may cost more than it recovers.",
-          "That is not a failure on your part. It is the predictable result of a system where the information lived in one person's head.",
+          "Some accounts and pensions are never traced, usually because the one person who knew about them has died. A search can be thorough and still miss something, and that isn't a failure on your part. It's what happens when the only record lived in someone's memory rather than on paper.",
+          "Watch for scams that specifically target people doing this search: a caller claiming to be from a locator service and asking for a fee upfront, or for the deceased's Social Security number over the phone rather than through a written form. Every tool in the table above is free, and none of them calls you first.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "Can I just call the bank and ask if my parent had an account there?",
+            a: "You can ask, but most banks will only confirm an account exists once they've seen a certified death certificate and some proof of who you are. They generally won't share the balance or let you act on the account until you can show you're the executor or a named beneficiary.",
+          },
+          {
+            q: "Are a deceased person's accounts frozen automatically?",
+            a: "Often, once the bank learns of the death, though the timing varies by bank and by account type. A joint account usually passes to the surviving owner and stays usable. A sole account is typically frozen for anyone but the executor once the bank has a certified death certificate.",
+          },
+          {
+            q: "What if there's no will?",
+            a: "The local probate office, in the county where they lived, appoints someone, usually the closest relative, as administrator, with the same authority an executor would have. The clerk's office can explain how to apply. [Where to look for a will](/guides/where-to-look-for-a-will) covers the search worth doing first, in case one turns up.",
+          },
+          {
+            q: "Do I need the executor's court paperwork just to search, or only to withdraw money?",
+            a: "Searching itself rarely needs it. The free locator tools above only ask for identifying details from the death certificate. the executor's or administrator's court paperwork become necessary once you want an institution to confirm an account, release funds, or discuss anything beyond whether a record exists.",
+          },
+          {
+            q: "Is there a fee to use the NAIC or MissingMoney search?",
+            a: "No. Both are free, run by the National Association of Insurance Commissioners and the National Association of Unclaimed Property Administrators. Anyone charging you to search a public unclaimed-property database, rather than to help file a claim afterward, is worth treating with caution.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "For your own affairs, later",
+        paragraphs: [
+          "Going through someone else's paperwork from the outside is usually what convinces people their own shouldn't work that way. Personal Life Affairs Companion records the names of your banks, every pension you've paid into and your life insurance, plus where the paperwork for each is kept, so this search never has to happen to the people who'd do it for you. It never asks for an account number or a password, and it prints a book someone could actually follow. [See Personal Life Affairs Companion](/shop/personal-life-affairs-companion).",
         ],
       },
       {
         kind: "callout",
-        label: "The Companion for this",
-        body: "Personal Life Affairs Companion records the names of your banks, your pensions, your life cover and any online accounts that charge money, and where the paperwork for each is kept, so this search never has to happen to your family. It has no upload and never asks for account numbers or passwords, and it produces a printed book somebody could follow if they had to.",
+        label: "Where to check",
+        body: "Institutions and states each set their own rules for what they'll release and to whom. The probate clerk's office in the county where the person lived, or an estate attorney, can tell you exactly what your authority allows.",
       },
     ],
   },
@@ -2238,75 +2416,244 @@ export const GUIDES: Guide[] = [
       { slug: "home-maintenance-log-template", reason: "Once a job is done, this shows what to write in the log so the next due date is easy to find." },
     ],
     publishedAt: "2026-08-30",
+    updatedAt: "2026-09-26",
     areaSlug: "home",
+    sources: [
+      {
+        name: "ENERGY STAR: Heat and Cool Efficiently, Maintenance Checklist",
+        url: "https://www.energystar.gov/saveathome/heating-cooling/maintenance-checklist",
+        retrieved: "2026-09-26",
+        note: "Inspect the filter monthly, change it at least every 3 months; schedule an annual pre-season tune-up.",
+      },
+      {
+        name: "A.O. Smith: Water Heater Maintenance Guide",
+        url: "https://www.hotwater.com/info-center/water-heater-maintenance.html",
+        retrieved: "2026-09-26",
+        note: "Flush most tank water heaters annually; inspect the anode rod once a year.",
+      },
+      {
+        name: "U.S. Fire Administration: Smoke Alarms",
+        url: "https://www.usfa.fema.gov/prevention/home-fires/prepare-for-fire/smoke-alarms/",
+        retrieved: "2026-09-26",
+        note: "Test smoke alarms monthly; replace the unit 10 years from its manufacture date.",
+      },
+      {
+        name: "CPSC: Overheated Clothes Dryers Can Cause Fires",
+        url: "https://www.cpsc.gov/Safety-Education/Safety-Guides/Home-Fire-Electronics-and-Electrical/Overheated-Clothes-Dryers-Can-Cause-Fires",
+        retrieved: "2026-09-26",
+        note: "Clean the dryer vent, exhaust duct and lint screen periodically; blocked lint is a documented fire risk.",
+      },
+      {
+        name: "South Carolina Farm Bureau Insurance: Washing Machine Hose Inspection and Replacement",
+        url: "https://www.scfbins.com/articles/washing-machine-hose-inspection-and-replacement",
+        retrieved: "2026-09-26",
+        note: "Replace washing machine supply hoses every 3 to 5 years; deterioration can start from the inside out.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Maintenance advice online is often a vague seasonal checklist. What follows is more specific: how often things typically need attention in a normal house.",
-          "Two rules before the table. Your own manual always wins, because a specific model may differ. And a job you have never done on a twenty year old system may need doing sooner than the interval suggests, because the interval assumes it was kept up.",
+          "Furnace and AC filters want attention every one to three months. A water heater wants a flush once a year and an anode rod check on the same schedule. Smoke alarms get tested monthly and replaced at 10 years. A handful of outdoor jobs run on a season instead of a date.",
+          "This is a reference table for a typical U.S. home, not your owner's manual, which always wins when the two disagree. It also can't tell you the condition of a system no one has looked at in years: treat anything unknown as already due, not as still within its interval.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Example: a house bought three years ago",
+        paragraphs: [
+          "Say you moved in three years ago. The furnace filter has never been changed, because no one mentioned it needed to be. The water heater has never been flushed. The smoke alarms are original to a house built in 2013, which puts them a year past the 10 year mark printed on the back of the unit.",
+          "None of that is unusual, and none of it is expensive to fix once you know it's due. That's what the rest of this page is for: a plain answer for each system, and what changes if you don't know the last time it was done.",
         ],
       },
       {
         kind: "table",
         heading: "Heating, cooling and water",
-        intro: "The systems where neglect is most expensive, and where a missed service usually shows up in the coldest or hottest week of the year.",
+        intro: "The systems where a missed service tends to show up in the coldest or hottest week of the year.",
         columns: ["Job", "Interval", "Why this interval"],
         rows: [
-          ["Boiler or furnace service", "Annually", "Often required by warranties, and the check that catches unsafe combustion"],
-          ["Replace HVAC filter", "1 to 3 months", "Depends on pets, dust and whether anyone in the house has allergies"],
-          ["Flush water heater", "Annually", "Sediment builds up over time and quietly lowers efficiency"],
-          ["Water heater anode rod check", "Every 3 to 5 years", "A cheap way to extend a tank's life"],
-          ["Bleed radiators", "Annually, before heating season", "Trapped air means cold tops and a system working harder than it should"],
-          ["Service air conditioning", "Annually, before summer", "A failure in August takes far longer to fix than one in April"],
-          ["Check and clean condensate drain", "Annually", "A blocked drain is a common and avoidable cause of water damage"],
-        ],
-      },
-      {
-        kind: "table",
-        heading: "Structure, water ingress and safety",
-        intro: "Cheap to do, expensive to skip. A lot of water damage starts with something on this list.",
-        columns: ["Job", "Interval", "Why this interval"],
-        rows: [
-          ["Clear gutters and downpipes", "Twice a year", "Autumn after leaf fall, and spring after winter debris"],
-          ["Inspect roof and flashing", "Annually", "Roof leaks often start at a joint, not in the middle of a slope"],
-          ["Reseal grout and caulk", "1 to 2 years", "Failed sealant lets water behind tile, where it is invisible for months"],
-          ["Test smoke and CO alarms", "Monthly", "The only job here where the cost of skipping is not measured in money"],
-          ["Replace smoke alarm units", "Every 10 years", "Sensors degrade whether or not the battery is fine"],
-          ["Check for leaks under sinks", "Twice a year", "A slow leak rots a cabinet base long before anyone notices"],
+          [
+            "Replace the furnace or AC filter",
+            "Every 1 to 3 months",
+            "A dirty filter restricts airflow, strains the blower, and raises the energy bill before it fails outright",
+          ],
+          [
+            "Book a heating tune-up",
+            "Annually, before the heating season",
+            "Catches an unsafe burner or a cracked heat exchanger before the coldest week finds it",
+          ],
+          [
+            "Book a cooling tune-up",
+            "Annually, before summer",
+            "A failure in August takes longer and costs more to fix than one caught in April",
+          ],
+          [
+            "Flush the water heater tank",
+            "Annually",
+            "Sediment settles on the tank floor and insulates the burner or element from the water, so it works harder for the same result",
+          ],
+          [
+            "Check the water heater anode rod",
+            "Once a year; most need replacing every 3 to 5 years",
+            "The rod corrodes on purpose so the tank doesn't. Once it's gone, the tank corrodes next",
+          ],
+          [
+            "Clean the furnace condensate drain line",
+            "Annually",
+            "A blocked drain line is a common, avoidable cause of water damage near the furnace",
+          ],
         ],
       },
       {
         kind: "paragraphs",
-        heading: "The jobs that belong to a month, not an interval",
         paragraphs: [
-          "A good deal of outdoor maintenance is seasonal rather than periodic. Winterizing outdoor taps belongs before the first freeze, not three hundred and sixty five days after you happened to write it down. Blowing out an irrigation system belongs in fall regardless of when it was last done.",
-          "Anything that tells you to winterize in July has told you something useless, and useless reminders teach people to stop reading the useful ones.",
+          "The furnace filter is the one job on this table people get wrong most often, mostly because the size printed on the frame is easy to lose track of. There's a full page on reading it and writing it down once: [how often to change a furnace filter](/guides/how-often-change-furnace-filter).",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Kitchen and laundry appliances",
+        intro: "Smaller jobs, easy to forget, real consequences when they're skipped.",
+        columns: ["Job", "Interval", "Why this interval"],
+        rows: [
+          [
+            "Clean the refrigerator condenser coils",
+            "Every 6 months",
+            "Dust-caked coils make the compressor run longer for the same amount of cooling",
+          ],
+          [
+            "Clean the dryer vent",
+            "At least once a year",
+            "Lint restricts airflow and is a documented cause of house fires",
+          ],
+          [
+            "Replace the washing machine's supply hoses",
+            "Every 3 to 5 years, sooner if cracked or bulging",
+            "A failed hose can empty hundreds of gallons into a laundry room in minutes",
+          ],
+          [
+            "Degrease the range hood filter",
+            "Monthly",
+            "A greasy filter is a fire risk and the reason the hood stops pulling smoke",
+          ],
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Structure, safety and exterior",
+        intro: "Cheap to do, expensive to skip. A lot of water and fire damage starts with something on this list.",
+        columns: ["Job", "Interval", "Why this interval"],
+        rows: [
+          [
+            "Clear the gutters",
+            "Twice a year, spring and fall",
+            "A clogged gutter sends water down the siding instead of away from the foundation",
+          ],
+          [
+            "Inspect the roof and flashing",
+            "Annually",
+            "Roof leaks usually start at a joint, not in the middle of a slope",
+          ],
+          [
+            "Reseal grout and caulk",
+            "Every 1 to 2 years",
+            "Failed sealant lets water behind tile or trim, where it's invisible for months",
+          ],
+          [
+            "Test smoke and CO alarms",
+            "Monthly",
+            "The one job here where the cost of skipping isn't measured in dollars",
+          ],
+          [
+            "Replace smoke alarm units",
+            "Every 10 years from the manufacture date",
+            "Sensors lose sensitivity with age even when the battery still tests fine",
+          ],
+          [
+            "Test GFCI outlets",
+            "Monthly",
+            "A GFCI that's stopped tripping still powers the outlet, so nothing looks wrong",
+          ],
+          [
+            "Test the garage door's auto-reverse",
+            "Every 6 months",
+            "A door that doesn't reverse on contact is a real hazard, not a maintenance nicety",
+          ],
+          [
+            "Test the sump pump",
+            "Every 6 months",
+            "An untested pump is one you find out about during the storm",
+          ],
         ],
       },
       {
         kind: "list",
         checkable: true,
-        heading: "Seasonal jobs, by when they belong",
+        heading: "Jobs that run on a season, not a date",
+        intro: "These don't follow a rolling interval. For the full month-by-month version, see [home maintenance checklist by month](/guides/home-maintenance-checklist-by-month).",
         items: [
-          "Before first freeze: shut off and drain outdoor taps, disconnect hoses, winterise irrigation.",
-          "Autumn: clear gutters after leaf fall, service heating before you need it, check draughts.",
-          "Spring: service cooling before summer, inspect the roof after winter, clear gutters again.",
-          "Summer: exterior paint and timber, fencing, anything needing dry weather.",
+          "Shut off and drain outdoor faucets before the first hard freeze, not 365 days after you last did it.",
+          "Blow out irrigation lines before the freeze, typically October in most U.S. climates.",
+          "Book the heating tune-up in fall and the cooling tune-up in spring, ahead of the season that will actually use it.",
+          "Reverse ceiling fans for winter in fall, and back again in spring.",
+          "Seal obvious rodent entry points before the cold arrives in September.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Start from the last done date, not from today",
+        heading: "Start counting from the last time it was actually done",
         paragraphs: [
-          "A common mistake when setting up a maintenance schedule is to start every interval from the day you wrote the list. That schedules a boiler service twelve months from an arbitrary Tuesday rather than twelve months from the last actual service.",
-          "If you know roughly when something was last done, use that. If you genuinely do not know, treat it as due, because for most of this list an unnecessary check costs an hour and a missed one costs considerably more. There is more on which of these bite hardest in [the maintenance you skip that costs the most](/guides/home-maintenance-you-skip-that-costs-the-most).",
+          "A common mistake is to start every interval from the day you happen to write the list, which schedules a furnace tune-up twelve months from an arbitrary Tuesday instead of twelve months from the last real service. If you know roughly when something was last done, count from that date.",
+          "If you truly don't know, treat it as due. For nearly everything on this page, an unnecessary check costs an hour and a missed one costs a great deal more. There's more on which of these bite hardest, in order, in [the home maintenance you skip that costs the most](/guides/home-maintenance-you-skip-that-costs-the-most).",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "When this table won't match your house",
+        paragraphs: [
+          "Your manual always wins over this page. A specific model can call for something different, and a tankless water heater is descaled on its own schedule rather than flushed like a tank.",
+          "An older system that's never been serviced doesn't get a pass because the interval hasn't technically arrived yet. If a 12-year-old water heater has never been flushed, or the furnace filter is the one that came with the house, treat the job as overdue starting now, not on a schedule that assumes it was kept up.",
+          "Climate changes some of these too. A furnace in a mild climate runs less and can sometimes stretch its tune-up interval; an AC in a hot climate works harder and shouldn't. These are typical U.S. ranges, not a substitute for what a technician sees in your specific system.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions about which jobs matter most",
+        items: [
+          {
+            q: "What is the most important home maintenance task?",
+            a: "There's no single answer, because the jobs on this page rank close together in what they cost to skip. If you can only do one this weekend, start with the furnace or the water heater: both tend to fail in the season you need them most, and both take under an hour to check or book.",
+          },
+          {
+            q: "How often should gutters be cleaned?",
+            a: "Twice a year for most houses: once in spring after winter debris settles, and once in fall once the leaves are down. Clean them more often with overhanging trees, since needles and small leaves clog a downspout faster than large leaves do.",
+          },
+          {
+            q: "How often should you change a furnace filter?",
+            a: "Check it monthly and change it at least every three months, per ENERGY STAR guidance. Shorten that to once a month with pets, allergies, or recent construction dust in the house, since airflow through a clogged filter drops well before it looks obviously dirty.",
+          },
+          {
+            q: "How often should a water heater be flushed?",
+            a: "Once a year for most tank water heaters, according to manufacturer guidance from brands including A.O. Smith. Flushing removes sediment that settles on the tank floor, which insulates the heating element from the water and makes it work harder for the same result over time.",
+          },
+          {
+            q: "How often do smoke detectors need to be replaced?",
+            a: "Every 10 years from the manufacture date, printed on the back or side of the unit, according to the U.S. Fire Administration. Test the alarm monthly in the meantime; a working battery doesn't mean the sensor inside is still reliable after a decade.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What Home Base does with this table",
+        paragraphs: [
+          "Home Base already holds an interval for each of its 148 built-in care jobs, ranks what to look at first by what happens if you skip it, and works out the next due date from when you actually last recorded the job rather than from an arbitrary start date. Record the brand and model on an item once, and every row above turns into a fact instead of a guess.",
+          "Once a job is done, [a maintenance log](/guides/home-maintenance-log-template) is where the date goes so the next one isn't a guess either. See how the intervals work in [Home Base](/shop/home-management-companion).",
         ],
       },
       {
         kind: "callout",
-        label: "The Companion for this",
-        body: "Home Base already knows how often 148 common care jobs usually come round, and which of them belong to a season instead. It works out what is worth doing now from when you last did it, rates each job by what happens if you skip it, and stays quiet about the rest. Snooze puts a job off for seven days.",
+        label: "Where Home Base fits",
+        body: "Home Base ranks its 148 built-in care jobs by what happens if you skip them, and counts each interval from the date you actually logged, not from today. It doesn't know your climate or your exact model, so your manual still wins when the two disagree.",
       },
     ],
   },
@@ -2323,63 +2670,144 @@ export const GUIDES: Guide[] = [
       { slug: "what-to-keep-after-a-home-repair", reason: "When the machine first breaks, this covers what to write down at the repair visit." },
     ],
     publishedAt: "2026-08-30",
+    updatedAt: "2026-09-26",
     areaSlug: "home",
+    sources: [
+      {
+        name: "CPSC: Recalls",
+        url: "https://www.cpsc.gov/Recalls",
+        retrieved: "2026-09-26",
+        note: "Recall listings are searchable by brand and product category and do not require product registration.",
+      },
+      {
+        name: "GE Appliances: Find Your Model and Serial Number",
+        url: "https://www.geappliances.com/ge/find-model-serial-number/",
+        retrieved: "2026-09-26",
+        note: "Confirms the rating plate carries both a model and a serial number, located per product type.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "The worst moment to look for a model number is when the thing has already broken, usually in the dark, usually with a phone torch, usually behind something heavy.",
-          "Five fields, written down once while the appliance is working and accessible, remove that moment permanently. It takes a couple of minutes per item.",
+          "A new appliance is delivered, plumbed in or plugged in, and working. That's the one moment its model plate is clean, legible and easy to reach. Write five things down now: the brand and model, the serial number, when it was bought and installed, and when the warranty ends.",
+          "This covers anything you plug in or plumb in, new or already in the house when you moved in. It takes about two minutes per item and it won't tell you whether an extended warranty is worth buying; that's a separate decision, covered in [appliance warranties: what to track](/guides/appliance-warranties-what-to-track).",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Example: a filled appliance record",
+        intro: "A made-up record for a single dishwasher, not a real one.",
+        columns: ["Field", "What you'd write"],
+        rows: [
+          ["Appliance", "Dishwasher, stainless"],
+          ["Brand and model", "Bosch SHXM4AY55N"],
+          ["Serial number", "Photographed the plate inside the door"],
+          ["Purchased / installed", "6/2/2024, installed 6/5/2024"],
+          ["Warranty ends", "6/2/2026, parts and labor"],
+          ["What to buy", "None; the filter is reusable"],
         ],
       },
       {
         kind: "list",
         checkable: true,
-        heading: "The five fields",
+        heading: "The five fields to write down",
         items: [
-          "Make and model. The exact model, not the marketing name on the front.",
-          "Serial number, where there is one. Warranty claims usually need it.",
-          "When it was installed or bought.",
-          "When the warranty ends.",
-          "When it was last serviced, and by whom.",
+          "Brand and exact model. Not the marketing name on the box; the string off the rating plate.",
+          "Serial number, photographed if it's long or hard to read. It's what a manufacturer asks for first on a warranty or recall claim.",
+          "When it was purchased and when it was installed. They're often different dates, and a warranty can start from either one.",
+          "When the warranty ends, and what it actually covers: parts, labor, or both.",
+          "What to buy for it: a filter size, a part number, a bulb type. The one fact worth having at the hardware store.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "What's worth adding for specific types",
+        intro: "The five fields cover most things. A few categories are worth one extra line.",
+        columns: ["Type", "Extra worth writing down"],
+        rows: [
+          [
+            "Refrigerator",
+            "Water filter part number, and the replacement interval printed inside",
+          ],
+          [
+            "Furnace or central air",
+            "Filter size, and whether it's a standard 1 inch or a thicker media filter",
+          ],
+          ["Water heater", "Tank size in gallons, and the fuel type: gas or electric"],
+          ["Garage door opener", "Remote or keypad type, not the code itself"],
+          [
+            "Dishwasher, range, microwave",
+            "Nothing extra; the standard five fields cover it",
+          ],
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Where the model number usually hides",
+        heading: "Where the plate usually hides",
         paragraphs: [
-          "It is almost never on the front. Fridges hide it inside near the salad drawer, washing machines around the door opening, dishwashers on the edge of the door where you only see it with the door open.",
-          "The full list by appliance type, including what to do when the label has worn away, is in [how to find the model number on any appliance](/guides/how-to-find-the-model-number-on-any-appliance).",
+          "It's almost never on the front. Refrigerators hide it inside, near the crisper drawers or on a side wall; washing machines keep it around the door opening; dishwashers put it on the edge of the door, visible only when the door is open.",
+          "The full list by appliance type, plus what to do when the label has worn away, is in [how to find the model number on any appliance](/guides/how-to-find-the-model-number-on-any-appliance).",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Why the serial number matters more than you expect",
+        heading: "Photograph the plate, then type the model number too",
         paragraphs: [
-          "A model number tells a supplier which part fits. A serial number tells a manufacturer which production run yours came from, which matters for warranty claims and for recalls.",
-          "Recalls are the underrated one. Manufacturers issue them regularly and reach owners through registration, which many people skip. If you have the serial number written down somewhere findable, you can check it against a recall list in a minute.",
+          "A model number is long and mixes letters and digits in ways that are easy to mistype in bad light. A photo of the plate takes a second and is always accurate.",
+          "Type the model number somewhere searchable as well, because a photo buried in three years of camera roll isn't findable the day you actually need it.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Photograph the plate rather than transcribing it",
+        heading: "Check for a recall while you're at it",
         paragraphs: [
-          "Model numbers are long, and they mix letters and digits in ways that are easy to get wrong in bad light. A photograph of the plate takes a second and is always right.",
-          "Keep the photograph, but also type the model number somewhere searchable, because a photo buried in three years of camera roll is not findable when you need it.",
+          "Recalls are the item on this list people are least likely to check again once the record is written. Manufacturers issue them for real hazards, from a washer's fire risk to a dishwasher's wiring, and the U.S. Consumer Product Safety Commission's recall listings are searchable by brand or product type without registering anything first.",
+          "Registering a new appliance isn't required for any of this, but it does get you a direct notice if the model is recalled later. If you'd rather skip the marketing emails, subscribing to CPSC's recall alerts does the same job without registering a single product.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "The best moment to do this is a move",
+        heading: "When the record is missing entirely",
         paragraphs: [
-          "Many facts about a house pass through your hands in the weeks around moving in, and few of them get written down. Meter readings, which utility is with whom, where the shutoff valve is, what came with the property.",
-          "A year later the boiler needs servicing and nobody remembers who installed it. Recording it while it is in front of you takes minutes and saves an afternoon.",
+          "Sometimes the plate itself is gone: steam, degreaser or a cabinet reface can wear a sticker past reading. Check the installation manual first, if you kept it, or look for a second plate inside a door or access panel, which sometimes survives longer than the exterior sticker.",
+          "For an appliance that came with the house and has no paperwork at all, [bought or inherited a house with no records](/guides/inherited-a-house-where-to-start) covers how to work out roughly how old something is and what to check first.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions about appliance records",
+        items: [
+          {
+            q: "Why does the serial number matter if I already have the model number?",
+            a: "A model number tells a parts supplier which part fits your appliance. A serial number identifies the specific unit and its manufacturing date, which is what a warranty claim or a recall search actually needs. Keep both written down; they answer different questions and a claim can need either one.",
+          },
+          {
+            q: "Where is the serial number on a refrigerator, washer, or dryer?",
+            a: "On most refrigerators it's on a plate inside, near the crisper drawers or on a side wall. On washers and dryers it's usually inside the door frame or on the back panel. The exact spot varies by brand and model, covered type by type in how to find the model number on any appliance.",
+          },
+          {
+            q: "Do I need to register a new appliance?",
+            a: "No. A warranty claim doesn't depend on registration since the receipt and serial number are enough on their own. Registering mainly gets you a direct notice if the model is recalled later, which you can also get by subscribing to the CPSC's recall emails, no product registration required.",
+          },
+          {
+            q: "What if the model number label is worn away or missing?",
+            a: "Check the installation manual or the original box if you kept either one. Some appliances carry a second plate inside a door or access panel that survives better than the exterior sticker. As a last resort, a parts retailer can sometimes identify a unit from photos of its features and dimensions.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What Home Base does with these fields",
+        paragraphs: [
+          "Home Base has fields for brand, model, purchase date, install date and warranty end, plus a Notes field where a serial number, a filter part number, or anything else can go, since there's no dedicated serial field. It shows the fields that make sense for the category, so a water heater and a garage door opener aren't asked the same six questions.",
+          "See how it holds an appliance's record in [Home Base](/shop/home-management-companion).",
         ],
       },
       {
         kind: "callout",
-        label: "The Companion for this",
-        body: "Home Base has fields for brand, model, purchase and install dates and warranty end, and a Notes field where a serial number can go. It shows the right fields per type of thing rather than the same form for a boiler and a lawnmower, and keeps the service history alongside them. It stores a link to where a document lives, never the document itself.",
+        label: "Two minutes now",
+        body: "The five fields above take less time to write down than this page took to read. Do it while the appliance still works and the plate is still legible, not after the first repair call.",
       },
     ],
   },
@@ -2387,7 +2815,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "where-to-look-for-a-will",
     title: "How to find a will after someone dies",
-    dek: "Where wills are usually kept, in the order to search, what to do if several turn up, and what applies when there is no will at all.",
+    dek: "Where wills are usually kept in the US, the order worth searching in, what a found original legally has to do next, and what happens if there's none.",
     primaryQuery: "how to find a will after someone dies",
     next: { slug: "named-executor-what-you-agreed-to", reason: "If the will names you, this explains what an executor does and where you could be personally liable." },
     related: [
@@ -2396,74 +2824,148 @@ export const GUIDES: Guide[] = [
       { slug: "safe-deposit-box-and-spare-keys-who-can-open-it", reason: "If the original may be in a deposit box or home safe, this covers who can open one and how." },
     ],
     publishedAt: "2026-08-30",
+    updatedAt: "2026-09-26",
     areaSlug: "affairs-and-endings",
+    sources: [
+      {
+        name: "California Probate Code section 8200",
+        url: "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=PROB&sectionNum=8200",
+        retrieved: "2026-09-26",
+        note: "30-day deadline for a will's custodian to deliver it to the county court, and liability for failing to",
+      },
+      {
+        name: "California Probate Code section 331",
+        url: "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=PROB&sectionNum=331",
+        retrieved: "2026-09-26",
+        note: "Limited pre-letters safe deposit box access to search for a will, what it takes and what can be removed",
+      },
+      {
+        name: "Florida Statutes section 732.901",
+        url: "https://www.flsenate.gov/Laws/Statutes/2025/732.901",
+        retrieved: "2026-09-26",
+        note: "Florida's 10-day deadline for a will's custodian to deposit it with the court, as a second state example",
+      },
+      {
+        name: "California Courts Self-Help: Probate",
+        url: "https://selfhelp.courts.ca.gov/probate",
+        retrieved: "2026-09-26",
+        note: "General overview of what probate requires once a will is located",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Start with the places people actually keep wills, which are duller than you expect: a home filing box, a bedroom drawer, a safe, or with the attorney or solicitor who drafted it.",
-          "Work through the list below in order. The later entries are less likely, and they exist because sometimes the will is not where anyone would expect.",
+          "Start with the dull places: a home filing box, a bedside drawer, a safe, or the attorney who drew it up. If none of those turn up anything, move to a safe deposit box, then the county probate clerk's office, since many states expect a found original to be filed there quickly.",
+          "This is written for a search in the United States, where the exact rules are set by each state, not the federal government. It can't tell you your state's deadline or process, so where it disagrees with the probate clerk's office in the county where the person lived, go with the clerk.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "An example: a will that surfaces twice",
+        paragraphs: [
+          "Say your uncle mentioned years ago that his will was 'with the lawyer.' (This is an example, not a case.) You call three firms in his town before one confirms it holds a will under his name, but the attorney who wrote it has since retired, and the file only holds a copy.",
+          "Two weeks later, going through his safe deposit box with the bank's help, you find the original, signed and witnessed, dated eight months after the copy. The original is the one that counts, and you deliver it to the probate clerk's office, as the state where he lived requires.",
         ],
       },
       {
         kind: "timeline",
         heading: "The search order",
-        intro: "Work down it rather than across it. Each place is more effort than the one before.",
+        intro: "Work down the list. Each step costs more effort than the one before it.",
         steps: [
           {
             when: "At home",
-            what: "The obvious places: filing box, desk, bedside drawer, safe, or a folder marked with anything official sounding.",
+            what: "The obvious places: filing box, desk, bedside drawer, a home safe, or a folder marked important or similar.",
           },
           {
-            when: "The lawyer",
-            what: "Many firms store the original and issue the family a copy, so a copy at home may mean the original is elsewhere.",
+            when: "Their attorney",
+            what: "Many firms keep the signed original and give the client only a copy, so a copy at home can mean the original is elsewhere.",
           },
           {
             when: "A safe deposit box",
-            what: "If they had one. Access after a death usually requires the death certificate and proof of your authority.",
+            what: "Most states let a key holder open a deceased person's box to search for a will alone, before any court authority is granted, under supervision.",
           },
           {
-            when: "A will register",
-            what: "Where one exists. Some countries maintain a central record of where wills are lodged.",
+            when: "The county probate office",
+            what: "Many states require whoever has custody of an original will to file it with the court soon after learning of the death, so it may already be on record.",
           },
           {
-            when: "The executor",
-            what: "If a family member was named, they may already hold it and not have mentioned it.",
+            when: "The named executor",
+            what: "If someone else was named, they may already hold it and not have said so yet.",
           },
           {
-            when: "Their adviser",
-            what: "Their accountant or financial adviser, who often knows whether a will exists even if they do not hold it.",
+            when: "Their accountant or adviser",
+            what: "Often knows a will exists even without holding it themselves.",
           },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Read the executor clause before anything else",
+        heading: "What a found original legally has to do next",
         paragraphs: [
-          "When you find it, the first thing to look for is not who inherits. It is who is named as executor, because that person has the legal authority to act and everybody else does not.",
-          "If it is not you, several of the things you were about to do are not yours to do. That is usually a relief rather than a slight, and it saves a great deal of duplicated effort. There is more on what that role involves in [being named executor](/guides/named-executor-what-you-agreed-to).",
+          "In California, whoever has custody of a will must deliver it to the clerk of the superior court in the county where the estate would be handled within 30 days of learning of the death, and mail a copy to the named executor or a beneficiary if the executor can't be found. In Florida the window is 10 days. Both states can hold a custodian who ignores this liable for damages, and neither charges a fee to file it. Check your own state's deadline, since it isn't the same everywhere.",
+          "Read who's named executor before you read who inherits. That person has the legal authority to act, and a son or daughter who found the will in a drawer doesn't automatically have it. [What being named executor involves](/guides/named-executor-what-you-agreed-to) covers the job.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "If you find more than one",
+        heading: "If it's in a safe deposit box",
         paragraphs: [
-          "Generally the most recent valid will is the one that counts, and a later will usually revokes earlier ones explicitly. Do not destroy the earlier versions. They can matter if the newest is challenged or turns out to be invalid.",
-          "If two wills appear close together in date, or one is unsigned or unwitnessed, that is the point to get advice rather than to decide yourself.",
+          "California is one of several states with a specific rule for this: a person with a key can ask the bank for access before any court authority has been granted, using only a death certificate and proof of identity, for the single purpose of looking for a will or burial instructions. The bank photocopies anything removed, and the original will still has to go to the court clerk afterward. Ask your bank directly what your state requires, since the details differ.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "If there genuinely is not one",
+        heading: "If more than one turns up",
         paragraphs: [
-          "Then the estate is distributed according to the intestacy rules where they lived, which are fixed and do not care what anybody intended. That often surprises families, because the rules rarely match what people assume, particularly for unmarried partners and stepchildren.",
-          "This is also the moment most people realise how much of the picture was never written down anywhere, which is a separate and larger problem covered in [how to find someone's accounts](/guides/how-to-find-someones-accounts-after-they-die).",
+          "The most recent valid one usually governs, and a later will typically revokes earlier ones by saying so directly. Don't destroy the older versions. They can become evidence if the newest one is challenged, undated, unsigned or unwitnessed, and that's a point to get advice rather than decide yourself which one is valid.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "If there really is no will",
+        paragraphs: [
+          "Then the estate passes under your state's intestacy rules, a fixed order of who inherits that doesn't ask what anyone actually wanted. It often surprises families, especially where an unmarried partner or a stepchild is involved, since neither is automatically included.",
+          "This is usually also the moment a family realizes how much else was never written down anywhere. [How to find someone's accounts after they die](/guides/how-to-find-someones-accounts-after-they-die) covers tracing the rest of it.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "Where do people usually keep their will?",
+            a: "Most commonly at home, in a filing box, a desk drawer or a home safe, or with the attorney who prepared it. A smaller number use a bank safe deposit box or a state will registry where one exists. If none of those turn up anything, the county probate office is worth checking, since some wills are filed there directly after a death.",
+          },
+          {
+            q: "Is a handwritten will valid?",
+            a: "Sometimes. Many states recognize a handwritten (holographic) will if it's signed and, depending on the state, written entirely in the person's own hand, even without witnesses. Other states don't recognize them at all. Whether one you've found is valid is exactly the kind of question to bring to the probate clerk's office or an attorney rather than decide yourself.",
+          },
+          {
+            q: "What happens if I hide or destroy a will?",
+            a: "Don't. Several states treat concealing, destroying or altering someone's will as a crime, separate from any civil liability to the people it would have benefited. If you're holding an original, deliver it to the county probate office, whatever it says.",
+          },
+          {
+            q: "Do I need a lawyer to find or file a will?",
+            a: "Not to search for one. Finding it is something you can do yourself by checking the places in this guide. Filing an original with the court, and opening probate afterward, is also something many people handle themselves for a simple estate, though an attorney is worth considering if the estate is large or a will is being disputed.",
+          },
+          {
+            q: "Can a will be filed with any court, or does it have to be a specific one?",
+            a: "It goes to the probate office, sometimes called the surrogate's or orphans' court, in the county where the person lived when they died, not where they died if that's different. If you're not sure which court that is, the clerk's office in that county can tell you.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "For your own affairs, later",
+        paragraphs: [
+          "Searching for someone else's will is usually what convinces people theirs should be easy to find. Personal Life Affairs Companion records whether you have a will, where it's kept, who else knows, and who you'd name to sort things out, so this search never has to happen to the people who'd do it for you. It has no upload for the document itself, only a place to say where it is, and it prints a book someone could actually follow. [See Personal Life Affairs Companion](/shop/personal-life-affairs-companion).",
         ],
       },
       {
         kind: "callout",
-        label: "The Companion for this",
-        body: "Personal Life Affairs Companion records whether you have a will, where it is kept, who else knows, and who you would name to sort things out, so this search never has to happen. It holds the location, and it has no upload for the document itself. It also produces a printed book, which is the format that actually survives the situation where somebody cannot get into an account.",
+        label: "Where to check",
+        body: "Deadlines for filing a will, and who can access a safe deposit box, are set by each state and can change. The probate clerk's office in the county where the person lived can tell you exactly what applies.",
       },
     ],
   },
@@ -2780,61 +3282,184 @@ export const GUIDES: Guide[] = [
       { slug: "emergency-contact-and-medical-decision-maker", reason: "Once you know who would speak for you, this covers choosing a health care proxy and recording where the forms are." },
     ],
     publishedAt: "2026-08-30",
+    updatedAt: "2026-09-26",
     areaSlug: "affairs-and-endings",
+    sources: [
+      {
+        name: "CaringInfo (National Alliance for Care at Home): Advance directives",
+        url: "https://www.caringinfo.org/planning/advance-directives/",
+        retrieved: "2026-09-26",
+        note: "Backs the point that health care preference forms are a state-specific legal document separate from an informal file, and that the person named to speak for care is a formal choice.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "A will says who gets what. It does not say which bank, which pension, where the deeds are, who your accountant is, or that there is a policy nobody knows about.",
-          "That gap is what leaves families searching for months. The fix is a plain record of what exists and where it is kept, which can be built in a few short sittings and is entirely separate from any legal document.",
-          "If you have no estate documents yet, this file is a far better place to start than a will, because it is useful immediately and requires nobody's signature.",
+          "An if-something-happens-to-me file is a plain written record of where things are: which bank, where the will sits, who has a key, which email address everything is registered to. It says where to look, not what to do with what's found. It takes a few short sittings, and a file that's half done is still useful to whoever reads it.",
+          "This is for anyone who wants a working record, whether you already have a will or not. It can't tell you whether you need a will or a trust in your state, or settle anything about who inherits what; that's a question for an attorney, and none of this is legal advice.",
         ],
       },
       {
-        kind: "list",
-        checkable: true,
-        heading: "What goes in it",
-        intro: "Locations and references, not the documents themselves. This is a map, not a vault.",
-        items: [
-          "Where the will is, who drafted it, and who is named executor.",
-          "Every bank, credit union and building society, with which accounts are where. Not passwords.",
-          "Pensions, including old ones from former employers, which are the most commonly lost.",
-          "Insurance policies: life, home, car, health, and anything bought through an employer.",
-          "Property: where the deeds are, mortgage lender, and any leasehold details.",
-          "Debts, including anything guaranteed for somebody else.",
-          "Digital: which email is the recovery address for everything, and where the password manager is, without the master password.",
-          "People: accountant, lawyer, adviser, and anybody who should be told.",
-          "Anything that would surprise somebody, which is often the most useful line in the file.",
+        kind: "paragraphs",
+        heading: "Not the same job as a will",
+        paragraphs: [
+          "A will decides who inherits what, and it has to meet your state's legal requirements to count. This file solves a different problem: even a current, valid will doesn't say which bank you use, where the deed to the house is, or that there's a life insurance policy no one else knew existed.",
+          "That gap, not the will itself, is what leaves families searching for months after someone dies. The fix is a plain record of what exists and where it is kept, built separately from any legal document and useful the moment you write the first line.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "One page, filled in (example)",
+        intro: "An invented household, to show how short a useful entry is. Every line says where something is or who to ask, never what's inside it.",
+        columns: ["Area", "What the page says"],
+        rows: [
+          [
+            "People",
+            "Contact first: Noor Whitfield (sister), 555-0148. Sorts things out: Callum Reyes (husband). Speaks for my medical care: Callum. We've talked about what I'd want.",
+          ],
+          [
+            "Documents",
+            "Will: filed with Hargrove & Associates, and a copy is in the fireproof box in the hall closet. Callum knows about the box. Passport and birth certificate: same box.",
+          ],
+          [
+            "Money",
+            "Banks: Meridian Credit Union (checking, savings), Founders Bank (joint with Callum). Workplace retirement plan through my employer, statements arrive by email.",
+          ],
+          [
+            "Digital life",
+            "Everything is registered to my personal email address. Password manager recovery kit: in the fireproof box. No passwords written down anywhere in this file.",
+          ],
+        ],
+      },
+      {
+        kind: "table",
+        heading: "What goes in it, area by area",
+        intro: "Skip any area that doesn't apply to you. Someone who rents has nothing to write under Home, and someone without a business skips that row entirely.",
+        columns: ["Area", "Write down", "Leave off"],
+        rows: [
+          [
+            "People",
+            "Who to contact first, who'd sort things out, who speaks for your medical care, and a backup for each.",
+            "Anyone you haven't actually asked",
+          ],
+          [
+            "Documents",
+            "Where the will is kept and who else knows, where your ID and birth certificate are, any safe or deposit box and who can open it.",
+            "Copies of the documents themselves",
+          ],
+          [
+            "Money",
+            "Every bank and retirement account by name, life insurance, what leaves your account automatically.",
+            "Account numbers",
+          ],
+          [
+            "Home",
+            "Own or rent, insurance company, mortgage lender, who has a spare key.",
+            "Alarm codes",
+          ],
+          [
+            "People and pets who depend on you",
+            "Who'd look after children, pets or anyone who depends on you, and what a normal week looks like.",
+            "Anything you'd only tell one person",
+          ],
+          [
+            "Digital life",
+            "The main email address, whether you use a password manager, and where its recovery kit is kept.",
+            "Passwords, PINs, the master password",
+          ],
+          [
+            "What you'd want",
+            "Preferences about medical care in your own words, and where any formal directive is kept. What you'd want for a funeral, if you've thought about it.",
+            "Legal wording you're not sure of",
+          ],
+          [
+            "Business, if you have one",
+            "Who could keep it running or wind it down, and where the paperwork is kept.",
+            "Client data",
+          ],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The wishes side, not just the where",
+        paragraphs: [
+          "Everything above is about locations: which bank, where the will sits, who has a key. The last row is different. It's your own words about what you'd want: preferences about medical treatment (see [choosing a health care proxy](/guides/emergency-contact-and-medical-decision-maker) for picking who'd speak for you), whether anything about a funeral or memorial is already arranged or paid for, and anyone you'd want told.",
+          "Keep this part short and plain. A sentence or two per topic is enough. It's also the part most files skip entirely, because it's the part that feels hardest to start.",
         ],
       },
       {
         kind: "paragraphs",
         heading: "What must not go in it",
         paragraphs: [
-          "Passwords, PINs and full account numbers do not belong here, because this document is deliberately findable and that is the whole point of it.",
-          "Record where the password manager is and who has recovery access, and stop there. A file that is safe to leave in a drawer is worth far more than a perfect one locked somewhere nobody can reach.",
+          "Passwords, PINs and full account numbers don't belong here. This file is deliberately easy to find, sitting in a drawer or a folder, and that's the whole point of it.",
+          "Write down where the password manager's recovery kit is kept, and who knows that, then stop. A file that's safe to leave out on a shelf is worth more than a perfect one locked somewhere no one can reach.",
         ],
       },
       {
         kind: "paragraphs",
         heading: "Where to keep it, and who should know",
         paragraphs: [
-          "At least two people should know it exists and where it is. A perfect record nobody can find is the same as no record, and this happens more often than you would think.",
-          "Paper is genuinely better here than a file on a laptop, because the laptop needs a password, the password is in the password manager, and the password manager is the thing they cannot get into.",
+          "At least two people should know this file exists and roughly where it is. A record no one can find works the same as no record at all, and that happens more often than you'd expect.",
+          "Paper works better here than a file on a laptop. The laptop needs a password, the password lives in a password manager, and the password manager is exactly the thing someone locked out can't get into.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Do it in passes, not in one sitting",
+        heading: "Do it in passes, and review it once a year",
         paragraphs: [
-          "The reason this never gets done is that people treat it as a single overwhelming project. It is not. Bank accounts on one evening, pensions another, digital on a third.",
-          "Any one of those passes on its own makes things meaningfully easier for whoever comes after. There is no version of this where a partial file is worthless.",
+          "This never gets finished when it's treated as one large project due today. Treat it as several small ones instead: people on one evening, money on another, digital on a third. If you'd rather organize it on paper with labeled sections, [life admin binder: what goes in it](/guides/life-admin-binder-what-goes-in-it) covers the physical set-up.",
+          "Any single pass makes things easier for whoever comes after you, even while the rest waits. Put a date on the first page, and reread it once a year, plus after a move, a marriage, a divorce, a new child or a death in the family. [What to update after a life change](/guides/update-your-paperwork-after-a-life-change) covers the same review broken out by event.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Where this goes wrong",
+        items: [
+          "It only exists on your computer, and the person who needs it doesn't have your password. Keep at least one copy on paper or somewhere findable without logging in.",
+          "It gets so detailed that it becomes a second job, and it stalls on page two. A short finished file works. A long unfinished one does not.",
+          "It goes stale. A bank you closed two years ago, a sister who moved, a phone number that changed: an outdated file is worse than a short one, because whoever reads it trusts it.",
+          "It never leaves the drawer. Tell at least one person it exists and roughly where it is, or none of this helps the one person who needs it.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "What is an if-something-happens-to-me file?",
+            a: "It's a plain written record of where things are and who to contact, kept somewhere findable, so someone else doesn't have to search or guess. Some people call it an emergency file or a life admin file. It records locations and names, not the documents or accounts themselves, and it carries no legal weight on its own.",
+          },
+          {
+            q: "Is this the same as a will?",
+            a: "No. A will says who gets what, and it has to meet your state's legal requirements to be valid. This file says where the will is kept, along with everything else someone would need to find. Having one doesn't replace the other, and this file is not a substitute for making a will if you don't have one.",
+          },
+          {
+            q: "Do I still need a will if I have this file?",
+            a: "This file records where things are. It doesn't decide who inherits what, name a guardian, or carry legal authority. If you don't have a will yet, this file is still worth starting today, but ask an attorney licensed in your state whether you need a will or something more, like a trust.",
+          },
+          {
+            q: "What should I leave out of the file?",
+            a: "Passwords, PINs, full account numbers and anything you wouldn't want a houseguest to read. Write down where the password manager's recovery instructions are kept, not the instructions themselves. This file sits somewhere people can find it, including visitors and contractors, so it should hold locations, not the keys.",
+          },
+          {
+            q: "How often should I update it?",
+            a: "Once a year is a reasonable rhythm, plus right after a move, a marriage, a divorce, a new child, a new job or a death in the family. Put a date on the first page so whoever reads it can tell how current it is. A full reread usually takes under half an hour.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Where a Companion helps",
+        paragraphs: [
+          "[Personal Life Affairs Companion](/shop/personal-life-affairs-companion) is built around this same idea. Eight short yes or no questions decide what it will and won't ask you about, then it works through the rest one short step at a time, across the same areas as above: who to contact, your documents, money, home, the people and pets who depend on you, your digital accounts, and what you'd want.",
+          "It never asks for a password, an account number or a document, only where each one is kept. When there's enough recorded, it prints a book called My Affairs that you hand over yourself. It doesn't write a will, and using it isn't legal advice.",
         ],
       },
       {
         kind: "callout",
-        label: "The Companion for this",
-        body: "Personal Life Affairs Companion covers much of this file. It sequences the job so it has a beginning instead of being a folder of blank forms, works out which parts are even relevant to you, and prints a book somebody could follow. It asks where things are kept, not for the things themselves, and it has no upload.",
+        label: "Start smaller than the file in your head",
+        body: "One evening on who to contact is a complete, useful thing on its own. Come back for the rest whenever you get to it.",
       },
     ],
   },
@@ -3175,13 +3800,41 @@ export const GUIDES: Guide[] = [
       { slug: "homeschool-record-keeping-requirements-by-state", reason: "Some states ask for a portfolio and some do not. This table shows which level yours falls in." },
     ],
     publishedAt: "2026-08-30",
+    updatedAt: "2026-09-26",
     areaSlug: "family-and-learning",
+    sources: [
+      {
+        name: "Homeschool Picks: Homeschool Portfolio Examples by Grade",
+        url: "https://homeschoolpicks.com/how-to-homeschool/homeschool-portfolio-examples-grade/",
+        retrieved: "2026-09-26",
+        note: "Backs the quality-over-quantity guidance and how portfolio contents shift from early elementary to high school.",
+      },
+      {
+        name: "HSLDA: Recordkeeping",
+        url: "https://hslda.org/teaching-my-kids/recordkeeping",
+        retrieved: "2026-09-26",
+        note: "Backs that what to keep depends on your state's law, your child's age, and their future plans, and that high school records lean toward transcript material.",
+      },
+      {
+        name: "TheHomeSchoolMom: Homeschool Evaluation Instead of Testing",
+        url: "https://www.thehomeschoolmom.com/using-a-homeschool-evaluator/",
+        retrieved: "2026-09-26",
+        note: "Backs collecting work samples from more than one point in the year rather than a single stretch.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "A portfolio is a record that your child was educated. It is not a scrapbook of best work, and it is not a performance. Evaluators are generally checking that something coherent happened across the year, not judging whether it was excellent.",
-          "In our summary of state requirements, a portfolio or work samples appear in ten jurisdictions: the District of Columbia, Florida, Louisiana, Maine, Maryland, Missouri, New Hampshire, Ohio, Pennsylvania and South Carolina. In Louisiana, Maine and Ohio a portfolio can stand in for a test. Requirements differ, so check yours in [record keeping requirements by state](/guides/homeschool-record-keeping-requirements-by-state) and with your state association.",
+          "A homeschool portfolio usually holds five things: a log of what you covered, dated work samples from two or more points in the year, your curriculum list, attendance where your state counts it, and test or evaluation results where required. Build it through the year, not in April.",
+          "This is for a parent putting one together for the first time, or checking an existing one before it goes in front of an evaluator. It can't tell you your own state's exact requirement, because states differ and change: confirm what yours expects at its official source, and see [homeschool requirements by state](/guides/homeschool-record-keeping-requirements-by-state) for our state-by-state summary, if you homeschool in the United States.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Example: one child's folder by October",
+        paragraphs: [
+          "Say your fourth grader is working through a math curriculum and a reading list you put together yourselves. By the end of October, her folder holds: two math pages showing a problem worked two different ways, a two-paragraph book report on a chapter book finished in September, a photo of a volcano model with a caption she dictated, and a running list of eleven books read or abandoned since school started. None of it is polished. That's the point: it shows a normal three months, not a highlight reel. This is an example, not a real child's file.",
         ],
       },
       {
@@ -3191,54 +3844,143 @@ export const GUIDES: Guide[] = [
         intro: "A typical portfolio holds these five things.",
         items: [
           "A log of educational activities, with reading materials named by title.",
-          "Samples of work across the year, dated, from several points rather than one good week.",
+          "Samples of work across the year, dated, from more than one point rather than one good week.",
           "A list of subjects covered and the materials or curriculum used.",
           "Attendance or days schooled, where your state counts them.",
           "Test results or an evaluator's written report, where required.",
         ],
       },
       {
+        kind: "table",
+        heading: "What to keep per subject",
+        intro: "A rough guide. Adjust to what your state and your evaluator ask for.",
+        columns: ["Subject", "Worth keeping", "How often"],
+        rows: [
+          [
+            "Math",
+            "Worked problems showing the method, not just the answer",
+            "A few pieces per term",
+          ],
+          [
+            "Writing",
+            "A first draft and the finished version of the same piece",
+            "Two or three per year",
+          ],
+          ["Reading", "A running list of books, finished and abandoned", "Ongoing"],
+          ["Science", "Photos of experiments, plus what was concluded", "Per topic"],
+          [
+            "History and geography",
+            "Anything with a date and an argument in it",
+            "Per topic",
+          ],
+          [
+            "Art and practical subjects",
+            "Photos, since the work itself rarely fits in a folder",
+            "As produced",
+          ],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Which states specifically ask for a portfolio",
+        paragraphs: [
+          "In our summary of state requirements, a portfolio or work samples are flagged for ten jurisdictions: the District of Columbia, Florida, Louisiana, Maine, Maryland, Missouri, New Hampshire, Ohio, Pennsylvania and South Carolina. In Louisiana, Maine and Ohio, a portfolio can stand in for a test rather than sitting alongside one.",
+          "If your state isn't on that list, a light portfolio still isn't wasted effort: it's the plainest answer you have if anyone, a future school, a relative, your own memory in ten years, ever asks what the year looked like.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "How much is enough",
+        paragraphs: [
+          "More samples are not automatically a stronger portfolio. One breakdown of portfolio contents by grade level recommends choosing a few pieces that show real growth over including everything a child produced, and calls this quality over quantity. Two or three dated pieces per subject, picked because they show a change, do more work than a folder stuffed with worksheets.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The contents shift by age",
+        paragraphs: [
+          "What belongs in the folder changes as your child gets older. Early elementary portfolios lean on early writing and math, ordinary spelling errors included, plus nature notes and photos. Middle school work runs to real projects and research pieces. By high school, the portfolio starts doing double duty for many families: it can support both whatever your state asks for and, later, a college application, which is one more reason to add course descriptions and outside test results as they happen rather than trying to reconstruct them senior year.",
+        ],
+      },
+      {
+        kind: "compare",
+        heading: "A binder or a digital folder",
+        intro: "Either works. Pick the one you'll actually keep filling in.",
+        left: {
+          label: "A binder",
+          items: [
+            "Tabbed by subject, one tab per child",
+            "Easy to hand over exactly as it is",
+            "Needs a shelf, not a login",
+          ],
+        },
+        right: {
+          label: "A digital folder",
+          items: [
+            "Photos and scans in dated subfolders",
+            "Easy to duplicate or send by email",
+            "Needs a backup you actually trust",
+          ],
+        },
+      },
+      {
         kind: "paragraphs",
         heading: "Include ordinary work, not only the best",
         paragraphs: [
-          "The instinct is to include only the pieces you are proud of. Resist it. A portfolio of nothing but finished, perfect work tells an evaluator very little, and can even read as curated rather than representative.",
-          "Include something from October and something from March on the same subject. Progress across a year is one of the clearest things a portfolio can show, and it is invisible if everything came from the same two weeks.",
-        ],
-      },
-      {
-        kind: "table",
-        heading: "What to keep per subject",
-        intro: "A rough guide. Adjust to what your state asks for.",
-        columns: ["Subject", "Worth keeping", "How often"],
-        rows: [
-          ["Maths", "Worked problems showing method, not just answers", "A few pieces per term"],
-          ["Writing", "A first draft and the final version of the same piece", "Two or three per year"],
-          ["Reading", "A running list of books, finished and abandoned", "Ongoing"],
-          ["Science", "Photographs of experiments, plus what was concluded", "Per topic"],
-          ["History and humanities", "Anything with a date and an argument in it", "Per topic"],
-          ["Art and practical", "Photographs, since the work itself rarely fits in a folder", "As produced"],
+          "The instinct is to save only the pieces you're proud of. Resist it. A portfolio of nothing but finished, polished work tells an evaluator very little, and can even read as curated rather than complete.",
+          "Include something from early in the term and something from later on the same subject. Progress across the year is one of the clearest things a portfolio can show, and it disappears if every sample came from the same good week.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Abandoned books belong on the reading list",
+        heading: "Keep the reading list, skip the duplicate work",
         paragraphs: [
-          "A reading log that only contains finished books is a less honest record and, oddly, a less impressive one. A child who is allowed to stop reading something may well keep starting things.",
-          "Note what was abandoned and roughly why. It shows judgement developing, which is a more interesting thing to evidence than volume.",
+          "A reading log belongs in the portfolio: book, when it was started, and when it was finished or set aside. [The homeschool reading log](/guides/homeschool-reading-log) covers what to write in it and why an abandoned book still belongs on the list.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Build it as you go, or it will not exist",
+        heading: "Build it as you go, or it won't exist",
         paragraphs: [
-          "The usual failure mode is this: nothing is kept until spring, and then a weekend disappears into reconstructing a year from undated worksheets and memory.",
-          "A folder per child and a habit of dropping things in as they happen is enough. It does not need a system. It needs to take under a minute so it survives a bad week.",
+          "The usual failure mode: nothing goes in the folder until spring, and then a weekend disappears into reconstructing a year from undated worksheets and memory.",
+          "A folder per child and a habit of dropping things in as they happen is enough. It doesn't need a system. It needs to take under a minute, so it survives a bad week. If yours has already gone quiet, [how to catch up on homeschool records](/guides/how-to-catch-up-on-homeschool-records) covers what's actually recoverable.",
+        ],
+      },
+      {
+        kind: "faq",
+        items: [
+          {
+            q: "What does a homeschool portfolio need to include?",
+            a: "Most portfolios hold five things: a log of what was covered, dated work samples from more than one point in the year, a list of curriculum and materials used, attendance or days schooled where your state counts them, and test or evaluation results where required. Exactly what counts as enough depends on your state and, often, on the specific evaluator or reviewer you use.",
+          },
+          {
+            q: "Do I need a portfolio if my state doesn't require one?",
+            a: "Not legally, but it's still worth keeping a light one. A folder with a reading list and a few samples per subject takes a few minutes a month and gives you something real if a curious relative, a future school, or your own memory ever asks what a school year actually looked like.",
+          },
+          {
+            q: "Should a portfolio include grades or test results?",
+            a: "Include test or evaluation results only where your state asks for them. Otherwise, a portfolio that shows the work itself, an early attempt next to a later one, tells an evaluator more than a grade does. Grades and letter marks are optional add-ons, not a required part of the folder.",
+          },
+          {
+            q: "How many work samples per subject is enough?",
+            a: "Two or three dated pieces per subject, chosen because they show a change over the year, count for more than a folder stuffed with every worksheet. Pick samples from more than one point in the term rather than reaching for whatever is on top of the pile in April.",
+          },
+          {
+            q: "Can a homeschool portfolio be digital?",
+            a: "Yes, for most states and most evaluators. Photos and scans in dated folders work as well as a binder, as long as you keep them backed up somewhere you actually trust and can hand over or share easily if asked.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Homeschooling Companion keeps this running as you go: tap a subject done and it's dated for you, and an occasional note stays attached to that day, yours to mark private or shareable. When you want the folder itself, [Homeschooling Companion](/shop/homeschooling-companion) prints a My Homeschool Record page per child, covering what was done and what you noted, to go in the folder alongside your own work samples, not instead of them.",
         ],
       },
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Homeschooling Companion keeps the log as you go and prints a record per child when you need one. Entries are always dated the day you make them. It also lets you run short checks at home, with questions you choose, to find out honestly whether something stuck, with four possible answers including not enough to say.",
+        body: "It records the day-to-day log and prints a dated summary per child. It doesn't choose your work samples or judge whether the folder is enough for your evaluator.",
       },
     ],
   },
@@ -4121,67 +4863,148 @@ export const GUIDES: Guide[] = [
       { slug: "moving-into-a-rental-what-to-document", reason: "Renting rather than buying, you need a different day-one list, and this covers deposit photos and lease dates." },
     ],
     publishedAt: "2026-08-30",
+    updatedAt: "2026-09-26",
     areaSlug: "home",
+    sources: [
+      {
+        name: "Insurance Information Institute (Triple-I): When No One's Home, Understanding the Role of Vacancy Insurance",
+        url: "https://insuranceindustryblog.iii.org/when-no-ones-home-understanding-roleof-vacancy-insurance/",
+        retrieved: "2026-09-26",
+        note: "Most homeowners policies limit or exclude coverage after 30 to 60 consecutive days of vacancy.",
+      },
+      {
+        name: "U.S. Fire Administration: Smoke Alarms",
+        url: "https://www.usfa.fema.gov/prevention/home-fires/prepare-for-fire/smoke-alarms/",
+        retrieved: "2026-09-26",
+        note: "Test monthly; replace the unit 10 years from its manufacture date, printed on the alarm.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "There is a short window, roughly the two weeks around moving in, when every fact about a house is either in front of you or one phone call away. The previous owner is still reachable. The surveyor's report is still open on your laptop. The boiler manual is still in a drawer rather than lost.",
-          "After that window, each of those facts costs an afternoon to recover, and some are gone permanently. This is time well spent.",
+          "You have the keys, and for about two weeks every fact about this house is either in front of you or one phone call away: meter readings, where the main shutoffs are, who serviced the furnace last, what the previous owner would tell you if you asked.",
+          "Capture it now. This page won't tell you what to fix or what it's worth, only what to write down before it disappears, and most of it does disappear within a month or two.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Example: the real window",
+        paragraphs: [
+          "Say you close on a Friday and move in over the weekend. By Monday, the shutoffs are found, the meters are photographed, and the smoke alarms are tested. By the following weekend, the inspection report is marked up with a date beside each item, and the previous owner, who's been quick to answer texts so far, has gone quiet.",
+          "That's the real window: about a week of easy access, then a slow decline toward zero. None of it is hard. Most of it takes minutes.",
         ],
       },
       {
         kind: "list",
         checkable: true,
         heading: "Day one, before anything else",
-        intro: "These are time sensitive in a way the rest are not.",
+        intro: "These are time sensitive in a way the rest of the list isn't.",
         items: [
-          "Meter readings for gas, electricity and water, photographed with the date visible.",
-          "Where the stopcock, fuse box, thermostat and gas shut off are. Find them now, not during an emergency.",
-          "Which utility supplier is on each service, and the account number if there is paperwork.",
-          "Whether the alarm has a code, and who holds it.",
-          "Test every smoke and carbon monoxide alarm, and note when the units expire.",
+          "Photograph the gas, electric and water meters, with the date visible, before anyone touches them.",
+          "Find the main water shutoff, the breaker panel, and the gas shutoff. Locate them now, not during an emergency.",
+          "Write down which company supplies each utility, and the account number if there's paperwork for it.",
+          "Find out whether the alarm system has a code, and who besides you has it.",
+          "Test every smoke and carbon monoxide alarm, and note the replacement date printed on each unit.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "The main shutoff deserves its own page, since finding it isn't always obvious and a stuck valve is its own small project: [where is your main water shutoff](/guides/where-is-my-water-shutoff).",
         ],
       },
       {
         kind: "list",
         checkable: true,
-        heading: "Week one, while it is still accessible",
+        heading: "Week one, while it's still easy to ask",
         items: [
-          "Make, model and serial for the boiler, water heater, and every appliance that came with the house.",
-          "When the boiler was last serviced, which is usually in a logbook near it or on a sticker.",
-          "The age of the roof, windows and any major system, from the survey or the previous owner.",
-          "Warranty end dates for anything recent, especially appliances left behind.",
-          "Any tradesperson the previous owner recommends. This is worth more than it sounds and expires the moment you lose contact.",
+          "Brand, model and serial for the furnace or boiler, water heater, and any appliance left behind.",
+          "When the furnace or boiler was last serviced, usually on a sticker or in a logbook near the unit.",
+          "The age of the roof, windows, and any major system, from the inspection report or the previous owner.",
+          "Warranty end dates for anything recent, especially appliances the previous owner left in the house.",
+          "Any technician the previous owner recommends. This is worth more than it sounds, and it expires the moment you lose contact with them.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Read the survey once more, as a to-do list",
         paragraphs: [
-          "The survey was read as a buying decision. Read it again now as a maintenance plan, because it is the only document that has systematically inspected the house and it usually names things that are fine now and will not be in three years.",
-          "Pull out anything with a timescale attached and give it a date. That is a maintenance schedule somebody else already did the hard part of.",
+          "Once the model plates are photographed, [what to write down when you buy an appliance](/guides/what-to-record-when-you-buy-an-appliance) covers which fields are worth keeping for each one, and which are optional.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "The insurance detail people miss",
+        heading: "Locks, codes, and the thing most lists skip",
         paragraphs: [
-          "If the property will be empty for a stretch between completion and moving in, check what your policy says about unoccupancy. Many policies lapse or reduce cover after a set number of days empty, and the period around a move is exactly when that bites.",
+          "Changing the locks is the item first-week checklists leave out most often. You have no way to know how many keys exist from before you owned the place, so rekey or replace every exterior lock before you move belongings in, not after: the front door, the back door, any gate, and the garage keypad code.",
+          "Write the new code or key location down on your own record once it's changed, so it isn't only in your head.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "What this saves you later",
+        heading: "The rest of day-one admin",
         paragraphs: [
-          "A year on, the boiler needs servicing and you know when it was last done and by whom. Something fails under warranty and you have the serial number. An engineer asks how old the system is and you have an answer.",
-          "Which fields matter for each kind of thing, and where model plates hide, is covered in [what to record about an appliance](/guides/what-to-record-when-you-buy-an-appliance).",
+          "Forward mail through the postal service, put the utilities in your name from the day you close so there's no service gap, and update your address with your bank, employer and insurer. None of this is specific to a house, but it's exactly the kind of task that gets lost in a move.",
+          "If the house will sit empty for a stretch between closing and moving in, check your policy's vacancy clause. Most homeowners policies limit or exclude coverage for vandalism, theft and water damage once a property has been vacant for 30 to 60 consecutive days, which is exactly the situation a slow move-in can create.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Read the inspection report again, as a to-do list",
+        paragraphs: [
+          "The inspection report was read once, as a buying decision. Read it again now as a maintenance plan, because it's the only document that has systematically gone through the house, and it usually names things that are fine today and won't be in three years.",
+          "Pull out anything with a timeframe attached and give it an actual date. That's a maintenance schedule somebody else already did the legwork on.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "If you're moving in as the weather turns",
+        paragraphs: [
+          "A house bought in September or October comes with extra jobs the list above doesn't cover: draining outdoor faucets, servicing the heating system before you need it, and sealing obvious gaps before the cold. [Fall home maintenance checklist](/guides/fall-home-maintenance-checklist) and [winterize your house](/guides/winterize-your-house-checklist) cover those in order. A spring or summer move skips this section entirely.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "When the window has already closed",
+        paragraphs: [
+          "If you're reading this six months in, most of it is still doable, just harder. The previous owner is less likely to answer, small facts like a filter size are already forgotten, and an unlabeled shutoff takes longer to trace without someone pointing at it.",
+          "Start with the highest-value items: the main shutoff, the breaker panel, and the smoke alarm dates, since those matter most in an actual emergency and are worth finding even late. If there's truly no paperwork at all, [bought or inherited a house with no records](/guides/inherited-a-house-where-to-start) covers how to work out what you have from what's left.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions about the first week",
+        items: [
+          {
+            q: "What should I do first when I buy a house?",
+            a: "Find the main water shutoff, the breaker panel and the gas shutoff before anything else, and test the smoke and carbon monoxide alarms. Those are the things you'd want fastest in an actual emergency, and the first week is the easiest time to find them, while the previous owner and the inspection report are still one call away.",
+          },
+          {
+            q: "Should I change the locks when I buy a house?",
+            a: "Yes. You have no way to know how many keys exist from before you owned the property, so rekey or replace every exterior lock, including the garage keypad, before you move belongings in. It's inexpensive relative to the risk, and a locksmith can usually do a full house in under two hours.",
+          },
+          {
+            q: "Do I need to test the smoke detectors in a new house?",
+            a: "Yes, on day one, regardless of how new the house looks. Press the test button on each alarm and check the manufacture date on the back or side. Per the U.S. Fire Administration, a unit more than 10 years old needs replacing outright, since a working battery doesn't mean the sensor inside is still reliable.",
+          },
+          {
+            q: "What documents should I keep after closing?",
+            a: "The inspection report, the closing disclosure, and any warranties or manuals the previous owner left behind are worth keeping permanently, not just filing away. The inspection report is worth a second read in week one, since it's the only systematic look anyone has taken at the house's condition.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What Home Base does with this list",
+        paragraphs: [
+          "Home Base is built for exactly this kind of capture. Tap what you have during setup, and it asks for the fields that make sense per category, brand and model for a furnace, lease dates for a rental, rather than one form for everything. You can also paste in notes or import a spreadsheet instead of typing each item by hand.",
+          "See it in [Home Base](/shop/home-management-companion).",
         ],
       },
       {
         kind: "callout",
-        label: "The Companion for this",
-        body: "Home Base is built for exactly this capture, and asks for the right fields per type of thing rather than one form for a boiler and a lawnmower. It then works out what needs doing and when, from real service intervals, and stays quiet about the rest. You can import a list rather than typing everything in.",
+        label: "Where Home Base fits",
+        body: "Home Base asks for the right fields per type of thing, not one form for a furnace and a lawnmower, and works out what needs doing next from real service intervals once you've entered it. It doesn't know what you haven't told it yet.",
       },
     ],
   },
@@ -4385,7 +5208,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "beneficiary-forms-override-your-will",
     title: "Beneficiary vs will: which one decides who gets it?",
-    dek: "Pensions, retirement accounts and life insurance go to the person named on the form, not the person in your will. What passes how, and how to check.",
+    dek: "A 401(k), IRA or life insurance policy pays whoever is named on the form, not whoever your will names. What passes how, and how to check yours.",
     primaryQuery: "beneficiary vs will",
     next: { slug: "update-your-paperwork-after-a-life-change", reason: "Beneficiary forms go stale after a divorce, marriage or birth, and this lists what to review by event." },
     related: [
@@ -4394,71 +5217,179 @@ export const GUIDES: Guide[] = [
       { slug: "talking-to-your-parents-about-their-affairs", reason: "If a parent's forms are a mystery, this offers scripts for asking about their will and finances without it going badly." },
     ],
     publishedAt: "2026-08-30",
+    updatedAt: "2026-09-26",
     areaSlug: "affairs-and-endings",
+    sources: [
+      {
+        name: "U.S. Department of Labor, EBSA: FAQs About Retirement Plans and ERISA",
+        url: "https://www.dol.gov/agencies/ebsa/about-ebsa/our-activities/resource-center/faqs/retirement-plans-and-erisa",
+        retrieved: "2026-09-26",
+        note: "A surviving spouse's automatic right to a 401(k)-type plan and the notarized spousal consent needed to name someone else.",
+      },
+      {
+        name: "CBIZ: Automatic Revocation Upon Divorce",
+        url: "https://www.cbiz.com/insights/article/automatic-revocation-upon-divorce",
+        retrieved: "2026-09-26",
+        note: "ERISA preempts state revocation-on-divorce statutes for 401(k)s and pensions; roughly 26 states have such a statute for non-ERISA assets like life insurance.",
+      },
+      {
+        name: "Bank of America: Beneficiaries FAQs",
+        url: "https://www.bankofamerica.com/deposits/beneficiaries-faqs/",
+        retrieved: "2026-09-26",
+        note: "How a payable-on-death (POD) beneficiary designation on a bank account works and passes outside the will.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Most people assume a will decides everything. For some of what they own, it does not.",
-          "Pensions, life insurance, and various other accounts pass to whoever is named on the plan's own beneficiary nomination. That nomination usually sits outside the estate entirely, which means the will never gets a say, no matter how recently it was written or how clearly it says otherwise.",
-          "This is one common way somebody's intentions quietly fail to happen.",
+          "A will does not control everything you own. A retirement account, a life insurance policy, and a payable-on-death bank account go to whoever is named on that account's own form, regardless of what your will says or how recently you updated it. Checking who is named takes one login or one phone call per account.",
+          "This is written for the United States, for anyone with a 401(k), an IRA, a life insurance policy or a payable-on-death account who hasn't checked the named beneficiary in years. It can't tell you what to write on a form, or whether you need a trust; that's a question for an attorney, and the details vary by state and by plan.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Example: the account that outruns the will",
+        paragraphs: [
+          "Say your will leaves everything to your children, and an old 401(k) from a job you left years ago still names your ex-spouse. The plan pays the person on the form. It does not read the will first, and in most cases divorce does not remove that name for you. (This is an example, not a case. Rules differ by plan and by state.)",
         ],
       },
       {
         kind: "table",
-        heading: "What passes how",
-        intro: "Generalized, and details vary by country and provider, but the shape is similar in many places.",
+        heading: "What the form decided (example)",
+        intro: "An invented set of accounts, to show how differently each one can pass even when the will says the same thing throughout.",
+        columns: ["Account", "Named beneficiary", "Will says", "Who actually gets it"],
+        rows: [
+          ["Old 401(k)", "Ex-spouse, never updated", "Everything to my children", "Ex-spouse"],
+          [
+            "Life insurance policy",
+            "Current spouse",
+            "Everything to my children",
+            "Current spouse",
+          ],
+          ["Payable-on-death savings account", "Sister", "Everything to my children", "Sister"],
+          [
+            "Regular brokerage account, no beneficiary on file",
+            "None named",
+            "Everything to my children",
+            "Passes through the will",
+          ],
+        ],
+      },
+      {
+        kind: "table",
+        heading: "What passes by form, and what the will controls",
+        intro: "General shape for the United States. Confirm the details with each plan or provider, since rules vary.",
         columns: ["Asset", "Usually passes by", "Does the will control it"],
         rows: [
-          ["Workplace or private pension", "Beneficiary nomination, often at trustee discretion", "Usually not"],
-          ["Life insurance policy", "Named beneficiary on the policy", "Usually not"],
-          ["Jointly owned property", "Survivorship, depending on how it is held", "Often not"],
-          ["Joint bank account", "Survivorship", "Usually not"],
-          ["Sole bank accounts and possessions", "The estate", "Yes"],
-          ["Anything held in trust", "The trust's own terms", "No"],
+          [
+            "401(k) or other workplace plan",
+            "Beneficiary form on file with the plan",
+            "No",
+          ],
+          [
+            "IRA (traditional or Roth)",
+            "Beneficiary form on file with the custodian",
+            "No",
+          ],
+          ["Life insurance policy", "Named beneficiary on the policy", "No"],
+          [
+            "Payable-on-death (POD) bank account",
+            "POD beneficiary named at the bank",
+            "No",
+          ],
+          ["Transfer-on-death (TOD) brokerage account", "TOD beneficiary on file", "No"],
+          [
+            "Jointly owned property with survivorship",
+            "Passes to the surviving owner",
+            "No",
+          ],
+          ["Anything held in a living trust", "The trust's own terms", "No"],
+          [
+            "Accounts and property with no beneficiary named",
+            "The estate, through probate",
+            "Yes",
+          ],
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Check your own forms, in this order",
+        intro: "A short afternoon of logins and phone calls. Write down what you find as you go.",
+        checkable: true,
+        items: [
+          "List every retirement account you have ever had, including 401(k)s and 403(b)s from jobs you've left.",
+          "List every life insurance policy, including any provided through an employer.",
+          "List any payable-on-death bank account or transfer-on-death brokerage account you've set up.",
+          "Log in to each account, or call the plan or provider, and ask who is currently named as primary and contingent beneficiary.",
+          "Update anything that's wrong, blank, or names someone who has since died.",
+          "Write down where each confirmation is kept, so the next check takes ten minutes instead of an afternoon.",
         ],
       },
       {
         kind: "paragraphs",
         heading: "Why this goes wrong so often",
         paragraphs: [
-          "Beneficiary forms are filled in once, usually during onboarding at a job, and then never looked at again. People marry, separate, have children and change jobs, and the form stays exactly as it was.",
-          "The result is predictable and still surprises people: a pension from a job somebody left fifteen years ago still names an ex-partner, or a parent who has since died, or nobody at all.",
-        ],
-      },
-      {
-        kind: "paragraphs",
-        heading: "If the nomination is blank or out of date",
-        paragraphs: [
-          "A blank nomination usually means the provider decides, often using its own rules or trustee discretion, and the outcome may not be what anybody expected.",
-          "Naming somebody who has died can push the money into the estate, which sounds fine until you remember that estates can be slower, may face different tax treatment, and are exposed to creditors in ways a direct nomination is not.",
+          "Beneficiary forms are usually filled in once, during onboarding at a new job or when a policy is first bought, and then never looked at again. People marry, divorce, have children and change jobs, and the form stays exactly as it was.",
+          "The result is predictable and still surprises people: a 401(k) from a job left fifteen years ago still names an ex-spouse, or a parent who has since died, or no one at all.",
         ],
       },
       {
         kind: "list",
-        checkable: true,
-        heading: "What to actually do",
-        intro: "This is a short afternoon of work, and worth doing.",
+        heading: "What can go wrong, and the rules behind it",
         items: [
-          "List every pension you have ever had, including from old employers.",
-          "List every life insurance policy, including any provided through work.",
-          "Ask each provider who is currently nominated. They will tell you.",
-          "Update anything that is wrong, blank, or names somebody who has died.",
-          "Write down where each nomination sits, so the next review takes ten minutes rather than an afternoon.",
+          "If you're married and want to name someone other than your spouse on a 401(k) or similar workplace plan, federal law generally requires your spouse's written, notarized or plan-witnessed consent first. Without it, the spouse is the default beneficiary. An IRA usually doesn't carry that same federal requirement, though it can in a community-property state.",
+          "Divorce doesn't automatically remove an ex-spouse from a 401(k), pension or other workplace retirement plan. Federal law generally overrides state laws that try to erase an ex-spouse's name automatically, so the pre-divorce form stays in force until you personally change it.",
+          "Many states do have a law that automatically removes an ex-spouse from things like life insurance and payable-on-death accounts after a divorce, but it doesn't apply everywhere or to every asset, so check the form yourself instead of assuming a divorce decree already handled it.",
+          "A blank beneficiary usually means the plan's own default order decides, which can push the money into your estate, where it moves slower and is reachable by creditors in ways a direct beneficiary payout is not.",
+          "Naming a minor directly on a form can mean a court has to appoint someone to manage the money until they turn 18, rather than the person you had in mind. Ask the plan or an attorney about naming a custodian or a trust instead.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Then check it again after anything changes",
+        heading: "Where to keep what you find",
         paragraphs: [
-          "Marriage, separation, a new child, a new job, a death in the family. Each of those is a moment when a nomination may now say the wrong thing, and none of them updates anything automatically.",
-          "Nothing here is legal advice, and the rules genuinely differ by country and by scheme. What matters everywhere is knowing what your forms currently say.",
+          "Once you've confirmed who's named on each account, write down where each confirmation is kept, not the account numbers themselves. [The if-something-happens-to-me file](/guides/the-if-something-happens-to-me-file) is one place to put that.",
+          "A beneficiary form is exactly the kind of paperwork that goes stale after a marriage, a divorce, a new job or a new child. [What to update after a life change](/guides/update-your-paperwork-after-a-life-change) covers the rest of what's worth checking at the same time.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "Does a beneficiary designation override a will?",
+            a: "Yes, for accounts that carry their own beneficiary form: retirement accounts, life insurance, and payable-on-death or transfer-on-death accounts. These pass directly to the named person and are not controlled by the will, even if the will says something different. Only property with no named beneficiary passes through the will.",
+          },
+          {
+            q: "Does divorce automatically remove my ex-spouse from my 401(k)?",
+            a: "Generally, no. Federal law usually overrides state rules that try to erase an ex-spouse from a workplace retirement plan automatically after a divorce, so the old form can stay in force. Update the beneficiary form yourself as soon as the divorce is final, and don't assume the decree already did it.",
+          },
+          {
+            q: "Do I need my spouse's permission to name someone else as my 401(k) beneficiary?",
+            a: "In most cases, yes. Federal rules generally require a married participant's spouse to consent in writing, with a notary or plan representative as witness, before someone other than the spouse can be named on a workplace retirement plan. An IRA usually doesn't carry this same requirement outside community-property states.",
+          },
+          {
+            q: "What happens if a beneficiary form is left blank?",
+            a: "The plan or provider's own default rules decide, which often means the money goes to your estate rather than directly to a person. That can mean probate, a slower payout, and exposure to creditors that a named beneficiary wouldn't have faced. Check every account rather than assume it's handled.",
+          },
+          {
+            q: "Can I name a minor child as a beneficiary?",
+            a: "You can name a minor, but a court may need to appoint someone to manage the money until they turn 18, which may not be who you had in mind. Ask the plan about naming a custodian under your state's transfer-to-minors law, or ask an attorney about a trust instead.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Where a Companion helps",
+        paragraphs: [
+          "[Personal Life Affairs Companion](/shop/personal-life-affairs-companion) has two steps built around exactly this. One has you check who's currently named on your pension or workplace retirement plan and your life cover; the other prompts you to update it once your situation has changed. It records the provider, where the paperwork is kept, and, if you choose to add it, who's currently named. It doesn't give advice on what to write on the form, and it can't check the form for you; that call still has to be made to the provider.",
         ],
       },
       {
         kind: "callout",
-        label: "The Companion for this",
-        body: "Personal Life Affairs Companion records your pensions and your life cover, where the paperwork for each is kept, and who is named to receive it, so the answer is somewhere findable rather than in a form you last saw in 2011. It has no upload, and it does not give advice on what any nomination should say.",
+        label: "Check this one first",
+        body: "If you've married, divorced, changed jobs or had a child since you filled out a beneficiary form, that form is the one most likely to be wrong. Start there before anywhere else.",
       },
     ],
   },
@@ -4475,65 +5406,170 @@ export const GUIDES: Guide[] = [
       { slug: "homeschool-attendance-what-to-track", reason: "Attendance is the record most often rebuilt last. This shows what counts as a school day and how to log it." },
     ],
     publishedAt: "2026-08-30",
+    updatedAt: "2026-09-26",
     areaSlug: "family-and-learning",
+    sources: [
+      {
+        name: "Coalition for Responsible Home Education: Homeschool Record Keeping",
+        url: "https://crhe.org/guides/resources-for-homeschool-parents/assessments-record-keeping/homeschool-record-keeping/",
+        retrieved: "2026-09-26",
+        note: "Backs why records matter beyond the year they're made: homeschool graduates have had to reach out years later needing records they lost.",
+      },
+      {
+        name: "HSLDA: Recordkeeping",
+        url: "https://hslda.org/teaching-my-kids/recordkeeping",
+        retrieved: "2026-09-26",
+        note: "Backs that what to keep and how depends on your state's law, not one fixed national rulebook.",
+      },
+      {
+        name: "TheHomeSchoolMom: Homeschool Evaluation Instead of Testing",
+        url: "https://www.thehomeschoolmom.com/using-a-homeschool-evaluator/",
+        retrieved: "2026-09-26",
+        note: "Backs that evaluators are generally looking for evidence of the year as a whole, not a complete unbroken log.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "This happens to many homeschooling families, and published advice is often aimed at the version of you who kept up.",
-          "The good news is that more is recoverable than it feels like right now. The rest of it you can be honest about, which is a genuinely acceptable outcome.",
+          "Most homeschool records are more recoverable than they feel right now. Workbook page numbers, dated phone photos, library history, receipts and your own calendar can rebuild a term in an afternoon, even with nothing logged as it happened. Mark anything you reconstruct as approximate, and start recording forward from today so this doesn't happen again.",
+          "This is for a parent with a gap of a month or more, not someone catching up on one missed week. It can't tell you whether what you rebuild is enough for your own state: check that at [homeschool requirements by state](/guides/homeschool-record-keeping-requirements-by-state), if you homeschool in the United States.",
         ],
       },
       {
-        kind: "list",
-        checkable: true,
-        heading: "What is actually recoverable",
-        intro: "Work through these in order. A usable picture of the year is often recoverable.",
+        kind: "table",
+        heading: "Example: rebuilding October to December",
+        intro: "None of this is a log on its own. Together, it rebuilds a term. This is one example, not a real family's records.",
+        columns: ["Where you look", "What it gives you", "Example"],
+        rows: [
+          [
+            "Workbook pages",
+            "Roughly how far you got, in order",
+            "Stops at page 61, so through Unit 4, Lesson 9",
+          ],
+          [
+            "Phone photos",
+            "Projects and the actual day it happened",
+            "A volcano photo dated Oct 14",
+          ],
+          [
+            "Library history",
+            "A dated reading list, no effort required",
+            "Six books checked out, Sep to Nov",
+          ],
+          [
+            "Receipts",
+            "When a curriculum or kit was bought",
+            "A fraction kit dated Sep 30",
+          ],
+          [
+            "Your calendar",
+            "Co-op days, classes and trips with a date",
+            "Three co-op Tuesdays in October",
+          ],
+          [
+            "Where you are right now",
+            "Working backward from today's position often reconstructs a term with reasonable accuracy",
+            "Currently on Unit 5, so October probably covered Units 3 and 4",
+          ],
+        ],
+      },
+      {
+        kind: "timeline",
+        heading: "One evening, in order",
+        intro: "Set a timer. Most of this takes under 90 minutes.",
+        steps: [
+          {
+            when: "Minutes 0 to 20",
+            what: "Gather workbooks, receipts and your phone. Sort photos by date, newest first.",
+          },
+          {
+            when: "Minutes 20 to 40",
+            what: "Write one line per subject per week you can place: date range, subject, how far you got.",
+          },
+          {
+            when: "Minutes 40 to 60",
+            what: "Add library and calendar entries as reading and co-op days. Mark anything approximate as approximate.",
+          },
+          {
+            when: "Minutes 60 to 75",
+            what: "Check what your state actually asks for before doing any more than that.",
+          },
+          {
+            when: "Minutes 75 to 90",
+            what: "Record today's session properly, so tomorrow starts the habit instead of another gap.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Reconstruct without inventing precision",
+        paragraphs: [
+          "Write approximate dates as approximate: October to December, not a made-up Tuesday. A record that says roughly when something happened is credible. A record with invented precision isn't, and if anyone ever checks closely, the precision is what damages you.",
+          "Evaluators and reviewers are, in general, looking for evidence that education happened across the year. A clearly reconstructed stretch, marked as reconstructed, is not an unusual thing for one to receive.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Check what your state actually asks for, before you rebuild more than that",
+        paragraphs: [
+          "In our summary of state requirements, eight states file nothing with the state at all, in which case this rebuild is for your own use and can be as rough as you like. Others ask for a portfolio or a formal evaluation, and those are worth doing properly. See [homeschool requirements by state](/guides/homeschool-record-keeping-requirements-by-state) for the level yours falls in, and confirm it at your state's own source, since laws change.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Why the gap happened, and how to not repeat it",
+        paragraphs: [
+          "Usually the system was too heavy to survive a bad week: a spreadsheet with nine columns, or a plan to write a paragraph a day about each child. Anything that takes much more than a minute is hard to keep up, and most years have a few weeks like that.",
+          "The version that lasts records three things every time: the date, the subject and roughly what part of it, and one word about how it went. See [homeschool record keeping template](/guides/homeschool-record-keeping-template) for the columns, filled in as an example.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Don't wait for the whole year to be perfect before you start again",
+        paragraphs: [
+          "The common failure now is deciding to reconstruct everything before recording anything new, and finishing neither. Start recording today, and rebuild the gap behind it in odd half hours, not all at once.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "When reconstruction doesn't get you all the way there",
+        paragraphs: [
+          "A gap of a few months is usually recoverable in an evening or two. A gap of a full year, across every subject, usually isn't, and treating it the same way sets you up for another burned weekend. Rebuild what you reasonably can, say plainly what you can't, and put most of your effort into the record you're keeping from today forward.",
+          "If a filing deadline or a scheduled evaluation has already passed, reconstruction won't undo that. Contact whoever set it, your evaluator or your state's homeschool office, and ask what they need from here, rather than trying to make a late record look like it was never late.",
+        ],
+      },
+      {
+        kind: "faq",
         items: [
-          "The physical work. Undated worksheets still tell you what was covered, and page numbers in a workbook tell you roughly how far you got.",
-          "Where you are in each curriculum right now. Working backwards from your current position reconstructs the term with reasonable accuracy.",
-          "Library records and reading history, which give you dated reading material without any effort.",
-          "Photographs on your phone, which are dated, and which capture projects, trips and experiments better than any log would.",
-          "Purchases. Receipts for books and materials date when a topic started.",
-          "Your calendar, for co-op sessions, classes, trips and anything with a time attached.",
+          {
+            q: "How far back can you reconstruct homeschool records?",
+            a: "Further than it feels like right now. Workbook page numbers, dated photos, library history, receipts and your calendar can rebuild a term or most of a year, especially for subjects with a physical workbook or a running project. What's hardest to rebuild is the day-to-day feel of how something went, which is why it's worth writing down even a single word per subject going forward.",
+          },
+          {
+            q: "Do I need to backdate the entries once I catch up?",
+            a: "Mark what you reconstruct with the period it covers, October to December rather than a specific day you can't verify, and note that it's reconstructed. A clearly labeled rebuild is a normal thing for an evaluator to see. Homeschooling Companion has no way to enter a past date, so any rebuild happens on paper or in a note, separate from the day-to-day log.",
+          },
+          {
+            q: "Will I get in trouble for gaps in my homeschool records?",
+            a: "That depends on your state and, if one is involved, your evaluator. In our summary, many states ask for nothing to be filed at all, in which case a gap has no consequence beyond your own use for the record. Where a state asks for a portfolio or a report, check what it actually requires at the source before assuming a gap is a problem.",
+          },
+          {
+            q: "What if I can't reconstruct a subject at all?",
+            a: "Say so, and move on. A note that reads no record kept, resumed in January, is more credible than a guess, and it's a normal thing for an evaluator to see after a hard stretch or a first year. From here, what counts is that the next entry is real.",
+          },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Reconstruct honestly, do not invent",
         paragraphs: [
-          "Write approximate dates as approximate. October to December, rather than a made up Tuesday. A record that says roughly when something happened is credible. A record with invented precision is not, and if anybody ever checks, the precision is what damages you.",
-          "Evaluators and reviewers are, in general, looking for evidence that education happened. They are not forensic auditors, and a clearly reconstructed term marked as reconstructed is a normal thing to receive.",
-        ],
-      },
-      {
-        kind: "paragraphs",
-        heading: "Check what your state actually requires first",
-        paragraphs: [
-          "Before spending a weekend on this, find out what you genuinely need. Several states require nothing to be filed, in which case this is for your own use and can be as rough as you like.",
-          "If your state asks for a portfolio or an evaluation, the requirements are specific and worth reading properly. Both are covered in [record keeping requirements by state](/guides/homeschool-record-keeping-requirements-by-state).",
-        ],
-      },
-      {
-        kind: "paragraphs",
-        heading: "Why it stopped in October",
-        paragraphs: [
-          "It is worth knowing, because otherwise it happens again in the second week of next term. Often the system was too heavy: a spreadsheet with nine columns, or a plan to write a paragraph a day about each child.",
-          "Anything that takes much more than a minute is hard to keep up through a bad week, and most years contain a few. The version that lasts records three things: the date, the subject and roughly what part of it, and one word about how it went.",
-        ],
-      },
-      {
-        kind: "paragraphs",
-        heading: "Do not backfill the whole year before restarting",
-        paragraphs: [
-          "The common failure now is deciding to reconstruct everything perfectly before recording anything new, and then doing neither.",
-          "Start recording today, and reconstruct backwards in odd half hours. Today onwards is the part you can be accurate about, and it is the part that stops this happening again.",
+          "Homeschooling Companion dates every entry with the day you record it, so it can't fill in past weeks for you: reconstruct those on paper or in a note, then use [Homeschooling Companion](/shop/homeschooling-companion) to record forward from today, which takes well under a minute a day once a subject is set up. It has no tally of days missed and no completion percentage to make the gap feel worse than it is.",
         ],
       },
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Homeschooling Companion dates every entry with the day you make it, so it cannot fill in past weeks. Reconstruct those on paper and record forward from today, which takes well under a minute a day. It has no completion percentage and no screen that tells you how many days you missed.",
+        body: "It records what you do from today onward, dated the day you make the entry. The reconstruction itself happens on paper, not in the app.",
       },
     ],
   },
@@ -5396,7 +6432,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "digital-accounts-after-a-death",
     title: "Digital accounts after a death: what can be recovered",
-    dek: "Photos, email, subscriptions and social accounts. What providers tend to release, what they do not, and what to set up now.",
+    dek: "Photos, email, subscriptions and social accounts. What providers will actually release, what they won't, and what to set up now for yourself.",
     primaryQuery: "digital accounts after death",
     next: { slug: "what-to-write-down-in-case-something-happens-to-you", reason: "To leave a usable record of logins and devices, start with this short list of what to write down." },
     related: [
@@ -5405,58 +6441,159 @@ export const GUIDES: Guide[] = [
       { slug: "the-if-something-happens-to-me-file", reason: "To store the setup somewhere a trusted person can find it, use this file." },
     ],
     publishedAt: "2026-08-30",
+    updatedAt: "2026-09-26",
     areaSlug: "affairs-and-endings",
+    sources: [
+      {
+        name: "Apple Support: How to add a Legacy Contact for your Apple Account",
+        url: "https://support.apple.com/en-us/102631",
+        retrieved: "2026-09-26",
+        note: "What a Legacy Contact can and can't access, the access key, and the death certificate requirement.",
+      },
+      {
+        name: "Google Account Help: About Inactive Account Manager",
+        url: "https://support.google.com/accounts/answer/3036546?hl=en",
+        retrieved: "2026-09-26",
+        note: "How Google's Inactive Account Manager decides inactivity, notifies the owner first, and what trusted contacts can receive.",
+      },
+      {
+        name: "LegalClarity: Revised Uniform Fiduciary Access to Digital Assets Act (RUFADAA)",
+        url: "https://legalclarity.org/revised-uniform-fiduciary-access-to-digital-assets-act-rufadaa/",
+        retrieved: "2026-09-26",
+        note: "The catalogue-versus-content distinction for what an executor can get from a provider without the deceased person's prior consent, and that most states have adopted some version of the law.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "The short version is that access to somebody's digital accounts after they die is much harder than people expect, and in many cases impossible regardless of documentation.",
-          "Providers are bound by their own terms and by privacy law, and a death certificate plus proof of executorship does not automatically grant access to an account. Some will memorialise. Some will close. Very few will simply hand over the contents.",
+          "After someone dies, a family member usually can't just log in to their email, photos or social accounts. Some providers will close an account on request. A few will hand a narrow set of data to a person the account owner named in advance. Very few will hand over full access on a death certificate alone.",
+          "This is written for the United States, and the rules differ by provider and by state. It can't get you into a locked account; it can only say what tends to work, what tends not to, and what's worth setting up now, for yourself.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Example: the phone that locks everyone out",
+        paragraphs: [
+          "Say a father dies and his phone is the way into almost everything: the bank's two-factor codes, the email that resets every other password, the photos no one backed up anywhere else. No one has his passcode, and after a handful of wrong guesses the phone locks itself further. Nothing on it is unrecoverable by policy alone; it's unrecoverable because no one wrote down how to get in. (An illustration, not a case.)",
         ],
       },
       {
         kind: "table",
-        heading: "Roughly what to expect",
-        intro: "Policies change and vary by country, so treat this as a starting point rather than a rule.",
-        columns: ["Account type", "Usual outcome", "What helps"],
+        heading: "What providers tend to do",
+        intro: "General patterns for major US providers, current as of this writing. Confirm with the provider directly, since policies change.",
+        columns: ["Account type", "Usual outcome without advance setup", "What actually helps"],
         rows: [
-          ["Email", "Rarely released. Sometimes closed on request.", "A legacy contact set up in advance"],
-          ["Photo storage", "Sometimes released to a designated contact", "A legacy or inactive account contact"],
-          ["Social media", "Memorialised or deleted, contents rarely released", "A legacy contact, or clear instructions"],
-          ["Subscriptions", "Cancelled on request with a death certificate", "Knowing they exist at all"],
-          ["Cloud storage", "Varies, and often refused", "Shared folders set up while alive"],
-          ["Domain names and websites", "Transferable, but registrar dependent", "Registrar details written down"],
-          ["Cryptocurrency", "Unrecoverable without the keys", "Nothing after the fact. Only preparation"],
+          [
+            "Email",
+            "Rarely handed over. Sometimes closed on request with a death certificate.",
+            "A password manager's own recovery route, so someone can reset it",
+          ],
+          [
+            "Apple Account (iCloud, photos)",
+            "Closed or left inactive; content generally not released",
+            "A Legacy Contact, set up in Settings before death",
+          ],
+          [
+            "Google Account (Gmail, Photos, Drive)",
+            "Closed after inactivity; limited data may be released",
+            "Inactive Account Manager, set up in advance",
+          ],
+          [
+            "Social media",
+            "Memorialized or deleted; content rarely released in full",
+            "A legacy contact or memorialization setting, where offered",
+          ],
+          [
+            "Subscriptions",
+            "Cancelled on request with a death certificate",
+            "Knowing they exist at all",
+          ],
+          [
+            "Cloud storage",
+            "Varies by provider, often refused without a court order",
+            "A shared folder set up while the owner was alive",
+          ],
+          [
+            "Cryptocurrency",
+            "Unrecoverable without the private keys",
+            "Nothing after the fact; only advance preparation",
+          ],
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Legacy contacts are the thing that actually works",
+        heading: "Legacy contacts are the part that actually works",
         paragraphs: [
-          "Several large providers let you nominate somebody in advance who can request access after your death. It takes minutes, it is free, and it is the single most effective step available.",
-          "It works because you granted permission while alive, which is a completely different legal situation from somebody requesting access afterwards. That distinction is why preparation succeeds where paperwork later usually fails.",
+          "Apple and Google both let you name someone in advance who can request a defined set of your data after you die. It takes a few minutes, it's free, and among everything in this guide, it's the step most likely to actually get someone in.",
+          "On Apple, adding a Legacy Contact generates an access key; that person later needs the key plus a death certificate to request account data such as photos, messages, notes, files and device backups. Purchased media like movies, music and books, and anything in iCloud Keychain such as saved passwords, stays out of reach even for a Legacy Contact. On Google, Inactive Account Manager lets you choose how long the account has to sit untouched, who gets notified, and what data, if any, they can download; Google contacts you first, and only messages a trusted contact if you don't respond.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "The subscriptions keep running",
+        heading: "What an executor can get without your advance consent",
         paragraphs: [
-          "This is the practical problem families hit first. Payments continue for months or years because nobody knows the subscriptions exist, and they are only discoverable through bank statements.",
-          "Twelve months of statements is the way to find them, for the same reason it is the way to find accounts and policies generally, which is covered in [how to find someone's accounts](/guides/how-to-find-someones-accounts-after-they-die).",
+          "Most states have adopted some version of a law that lets an executor request a deceased person's digital records from a provider. Without your prior consent, on many platforms that typically means a catalogue: who a message was sent to or from, the date, the subject line, not the content of what was said.",
+          "Getting the actual content, the words in an email or a message, generally needs either your advance authorization (a legacy contact tool counts) or a court weighing in. A death certificate and paperwork naming someone executor, on their own, usually isn't enough for a provider to hand over content.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Set this up now, for yourself",
+        intro: "None of this takes long, and each one only has to be done once.",
+        checkable: true,
+        items: [
+          "Make sure at least one other person can get into your phone. Write down how, not the passcode itself, in a place they'd know to look.",
+          "Set a Legacy Contact in Apple's settings, or an Inactive Account Manager on your Google Account, wherever the accounts you actually use offer one.",
+          "Write down which email address is the recovery address for everything else. It's the key to most of your other accounts.",
+          "Make sure someone can get into your password manager through its own recovery process, not through a written master password.",
+          "List the accounts you're actually paying for, so no one is left guessing what's still charging your card months later.",
+          "Write down where your photographs actually live: one cloud service, a phone, a backup drive. It's the thing people most often wish they'd known.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What can go wrong",
+        items: [
+          "The main email account gets closed too early. Closing it before every other account has been checked can break the password-reset route into everything else.",
+          "A Legacy Contact is set up, but the account holder never told them, and the access key was never saved anywhere findable. The setting only helps if the key survives.",
+          "Subscriptions keep charging a card for months because no one knew they existed. Bank and card statements are usually the way they surface.",
+          "Someone assumes a death certificate and proof of being the executor is enough to get into an email account. For most providers, it is not.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "Can a family member get into a deceased person's email account?",
+            a: "Usually not by simply asking. Most providers won't hand over login access, even with a death certificate. What tends to work is a recovery route the person set up in advance, such as a password manager's own recovery process, or, on some providers, a legacy contact who was named before death.",
+          },
+          {
+            q: "What is a legacy contact, and how do I set one up?",
+            a: "It's someone you name in advance who can request a defined slice of your account data after you die. On an Apple device, it's under Settings, Sign-In and Security, Legacy Contact. On a Google Account, it's called Inactive Account Manager, set up at myaccount.google.com. Both take a few minutes and are free.",
+          },
+          {
+            q: "Can an executor read someone's emails or text messages after they die?",
+            a: "Generally not without the deceased person's advance consent, such as a legacy contact setting, or a court order. Most states let an executor request records from a provider, but that typically means a catalogue of who messaged whom and when, not the actual content of what was said.",
+          },
+          {
+            q: "What happens to photos stored in the cloud after someone dies?",
+            a: "It depends on the provider and on what was set up beforehand. Apple's Legacy Contact can access photos with the access key and a death certificate. Without that kind of advance setup, cloud photo libraries are often the hardest thing to recover, which is why it's worth writing down where yours actually live.",
+          },
+          {
+            q: "Should I close a deceased person's accounts right away?",
+            a: "Not the main email address, at least not first. It's usually the way into everything else through password resets, so check it last. Subscriptions and accounts that are clearly costing money are the ones worth cancelling early, once you have the death certificate a provider is likely to ask for.",
+          },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "What to do now, for yourself",
+        heading: "Where a Companion helps",
         paragraphs: [
-          "Set legacy contacts where they are offered. Write down which email address is the recovery address for everything, because that account is the key to most of the others. Make sure somebody can get into the password manager, through its own recovery mechanism rather than through a written master password.",
-          "And write down what would be a real loss. Photographs are what families grieve twice over, and they are usually the most recoverable thing if a designated contact exists.",
+          "[Personal Life Affairs Companion](/shop/personal-life-affairs-companion) has six digital steps: making sure someone else can get into your phone, the main email address everything is registered to, where a password manager's recovery instructions are kept, which paid accounts exist, a reminder to set a legacy contact where one's offered, and where your photographs actually live. It records where things are, never the passwords or the access keys themselves.",
+          "For the money side of a search, [how to find someone's bank accounts, pensions and policies](/guides/how-to-find-someones-accounts-after-they-die) covers what to look for once someone has died; this guide is about the digital accounts that search doesn't reach.",
         ],
-      },
-      {
-        kind: "callout",
-        label: "The Companion for this",
-        body: "Personal Life Affairs Companion has six digital steps: getting into your phone, the main email address, recovering access to a password manager, online accounts that charge money, setting a legacy contact, and where your photographs live. It asks where things are, never for the credentials themselves.",
       },
     ],
   },
@@ -5464,7 +6601,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "which-documents-to-keep-and-where-to-put-them",
     title: "Which documents to keep, shred or store, and for how long",
-    dek: "A rough retention guide for household paperwork, what to shred, and a three-part filing approach based on how fast you would need each thing.",
+    dek: "How long the IRS says to keep tax records, which papers to keep forever, what to shred, and a three-folder system sorted by how fast you'd need each one.",
     primaryQuery: "how long to keep documents",
     next: { slug: "life-admin-binder-what-goes-in-it", reason: "Once you know what to keep, this shows how to lay it out in eight sections." },
     related: [
@@ -5473,59 +6610,186 @@ export const GUIDES: Guide[] = [
       { slug: "update-your-paperwork-after-a-life-change", reason: "After a move, marriage or new baby, some papers are out of date, and this lists where to look again." },
     ],
     publishedAt: "2026-08-30",
+    updatedAt: "2026-09-26",
     areaSlug: "affairs-and-endings",
+    sources: [
+      {
+        name: "IRS Topic no. 305, Recordkeeping",
+        url: "https://www.irs.gov/taxtopics/tc305",
+        retrieved: "2026-09-26",
+        note: "Backs the 3-year, 6-year and no-limit tax-record retention periods.",
+      },
+      {
+        name: "Better Money Habits (Bank of America): How Long to Keep Your Tax, Financial and Legal Documents",
+        url: "https://bettermoneyhabits.bankofamerica.com/en/privacy-security/how-long-to-keep-documents-before-shredding",
+        retrieved: "2026-09-26",
+        note: "Backs the deed, mortgage, home-improvement and insurance retention guidance in the table.",
+      },
+      {
+        name: "IRS Revenue Procedure 97-22",
+        url: "https://www.irs.gov/pub/irs-tege/rp-97-22.pdf",
+        retrieved: "2026-09-26",
+        note: "Backs the FAQ answer that a properly stored scanned record satisfies IRS recordkeeping rules.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Most households keep either everything or nothing. Everything means a box nobody can search. Nothing means an afternoon lost the one time a document is needed.",
-          "The workable middle is a short list of things worth keeping permanently, a shorter list worth keeping for a few years, and permission to shred the rest.",
+          "Keep tax returns and their backup for three years after you file, six if you left off more than a quarter of your income, and forever if you never filed. Birth certificates, a current will, and your deed last permanently. Pay stubs and utility bills get about a year, then the shredder.",
+          "This is for US households sorting ordinary paperwork, not a business or an estate. It can't tell you your own state's specific rules, or whether a document already tied to an open dispute is safe to toss, so treat anything contested as its own question for a professional.",
         ],
       },
       {
         kind: "table",
-        heading: "Roughly how long to keep things",
-        intro: "General guidance. Tax retention rules in particular vary by country, so check yours.",
+        heading: "Example: sorting a drawer no one has opened in years",
+        intro: "A made-up batch, not a real one, sorted using the rule below.",
+        columns: ["What was inside", "What to do with it"],
+        rows: [
+          [
+            "A 2019 tax return and its receipts",
+            "Past the three-year window with no sign of unreported income: shred it.",
+          ],
+          [
+            "The deed from a house sold in 2016",
+            "Well past the seven-year cost-basis window: shred it.",
+          ],
+          [
+            "A kitchen remodel receipt from last spring",
+            "Keep it. You still own the house, and it raises what you paid when you sell.",
+          ],
+          [
+            "A canceled cable bill from March",
+            "Shred it. This month's bill already replaced it.",
+          ],
+          [
+            "A life insurance policy from a job left in 2014",
+            "Don't shred yet. Call the provider first and confirm the policy is actually gone.",
+          ],
+        ],
+      },
+      {
+        kind: "table",
+        heading: "How long to actually keep things",
+        intro: "Rules of thumb for a US household. Where your state or your own situation differs, follow that instead.",
         columns: ["Document", "Keep for", "Why"],
         rows: [
-          ["Birth, marriage, death certificates", "Permanently", "Originals are slow and costly to replace"],
-          ["Wills and powers of attorney", "Permanently, current version", "Superseded versions still matter if challenged"],
-          ["Property deeds and mortgage records", "Permanently, or until well after sale", "Boundary and ownership disputes surface late"],
-          ["Pension and investment statements", "Permanently for the annual summary", "Old schemes are the most commonly lost asset"],
-          ["Tax records", "Several years, per local rules", "Audit windows differ by country"],
-          ["Home improvement receipts", "As long as you own the property", "Can matter for warranty and for tax on sale"],
-          ["Appliance receipts and manuals", "While you own the item", "Warranty claims need proof of purchase"],
-          ["Utility bills and bank statements", "About a year, unless needed for tax", "Superseded quickly, and available from providers"],
+          [
+            "Tax returns and the records behind them",
+            "3 years after filing, 6 if you may have left off more than 25% of your income, forever if you never filed",
+            "That's roughly how long the IRS has to come back and ask",
+          ],
+          [
+            "Birth, marriage and death certificates",
+            "Permanently",
+            "Originals are slow and expensive to replace",
+          ],
+          [
+            "A current will and any power of attorney",
+            "Permanently, and destroy the old version only once the new one is signed",
+            "An earlier will can still matter if the current one is contested",
+          ],
+          [
+            "Deed, mortgage payoff and closing papers",
+            "As long as you own the home, plus about 7 years after you sell",
+            "They set what you paid, which lowers the taxable gain later",
+          ],
+          [
+            "Home improvement receipts",
+            "As long as you own the home",
+            "Each one raises your cost basis the same way the deed does",
+          ],
+          [
+            "Retirement and investment statements",
+            "The annual summary, permanently; monthly statements, about a year",
+            "Old accounts from a long-gone job are the ones people lose",
+          ],
+          [
+            "Insurance policies",
+            "As long as the policy is active, plus about 3 years after it ends",
+            "A claim can still surface after a policy has lapsed",
+          ],
+          [
+            "Pay stubs",
+            "Until they match your W-2, then shred",
+            "A year of stubs rarely tells you more than the W-2 does",
+          ],
+          [
+            "Bank and credit card statements",
+            "About a year, unless one ties to a deduction or a home improvement",
+            "Most banks hold years of history online if you need one again",
+          ],
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Sort by how urgently you would need it",
+        heading: "Sort by how urgently you'd need it",
         paragraphs: [
-          "Filing by category is how filing systems die, because a document usually fits two categories and choosing costs a moment every time.",
-          "Sorting by urgency works better. One thin folder for things somebody might need in an emergency, one for active paperwork, one box for archive. Three destinations means no decision, which means things actually get filed.",
+          "Filing by category is how filing systems die. A given document usually fits two categories, and choosing between them costs a moment every single time you touch it.",
+          "Sorting by urgency works better: one thin folder for anything someone might need in an emergency, one for active paperwork, one box for archive. Three destinations, no real decision to make, so things actually get filed instead of stacked.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "What actually needs to be paper",
+        heading: "What actually needs to stay on paper",
         paragraphs: [
-          "Certificates, deeds, signed wills and anything with a wet signature or a seal. For most of the rest, a clear scan is fine and a great deal easier to find.",
-          "The exception worth respecting is anything somebody else would need in a hurry. Paper does not need a password, a battery, or a device somebody cannot get into.",
+          "Certificates, deeds, a signed will, and anything with a raised seal or a signature that has to be an original. For nearly everything else, a clear scan holds up: under IRS Revenue Procedure 97-22, a properly stored digital image counts as the record, and you're allowed to shred the paper once your storage meets its requirements.",
+          "If you don't actually know where the current will is kept, that's worth fixing before anything else on this page. [Where to look for a will](/guides/where-to-look-for-a-will) covers the usual places it turns up.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Shred rather than bin",
+        heading: "Shred it, don't just bin it",
         paragraphs: [
-          "Anything with an account number, a signature, a date of birth or a full address is worth shredding. That is most of what you are throwing away.",
-          "It is a small habit that removes a real and boring risk, and it makes the decision to discard something much easier, which is the actual barrier for most people.",
+          "Anything with an account number, a signature, a date of birth or a full address belongs in the shredder, not the recycling bin. That covers most of what a household actually throws away.",
+          "A basic cross-cut shredder handles the ordinary volume. For a backlog, most towns and several banks run free shredding events a few times a year, which is worth checking before you pay for a bulk service.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Where this goes wrong",
+        paragraphs: [
+          "The failure isn't usually keeping too much. It's shredding something the same week a dispute starts: a warranty claim, an insurance question, a line on a tax return the IRS wants explained. None of those announce themselves in advance.",
+          "If that happens, ask before you assume the record is gone. Banks, employers and the IRS itself can typically reissue years of statements, W-2s and past returns, sometimes for a small fee. It's slower than opening a folder, but it's rarely a dead end.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "How long should I keep bank statements?",
+            a: "About a year covers most households, since your bank can usually reissue older statements if you ever need one again. Keep a statement longer only if it backs up a tax deduction, a home improvement, or a dispute that's still open. Statements tied to a mortgage or a business account are worth holding for around seven years.",
+          },
+          {
+            q: "Do I need to keep pay stubs after I get my W-2?",
+            a: "No. Once a full year of stubs adds up to the numbers on your W-2, they've done their job and can go in the shredder. Keep the W-2 itself with that year's tax return instead, since it's the document that actually gets referenced later.",
+          },
+          {
+            q: "Is a scanned copy good enough for the IRS?",
+            a: "For most records, yes. IRS Revenue Procedure 97-22 treats a properly stored digital image the same as the paper original, and allows you to destroy the paper once your storage setup meets its requirements. The exception is anything that needs a wet signature to be valid at all, like a will or a deed, which stays paper regardless of how well you scan it.",
+          },
+          {
+            q: "What should never go straight in the trash?",
+            a: "Anything carrying an account number, a signature, a date of birth or a full address. That covers most bank and utility statements, old tax returns, expired insurance cards, and pre-approved credit offers. A home shredder handles the everyday volume; for a larger backlog, a local shredding event is usually free.",
+          },
+          {
+            q: "What if I get audited and I've already shredded something?",
+            a: "Ask the source before assuming it's unrecoverable. Banks, employers, brokers and the IRS itself can typically reissue several years of statements, W-2s and past returns, sometimes for a small fee. It's slower than pulling a folder from a drawer, but losing the backup this way is rarer than it feels in the moment.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What the Companion records",
+        paragraphs: [
+          "Personal Life Affairs Companion doesn't decide what you should keep or for how long. It records where the things worth keeping already are: your birth certificate and passport, your tax records, the current will, and any safe or deposit box, each as a short note of location rather than a scan or an upload. There's no upload field in the product at all, so the record itself is a much smaller thing to lose than the documents it points to. See [Personal Life Affairs Companion](/shop/personal-life-affairs-companion).",
         ],
       },
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Personal Life Affairs Companion records where key papers are kept, such as identity documents, tax records, the will and any safe or deposit box, so the question becomes a lookup rather than a search through a box. It has no upload, which is deliberate: a note of where things are is far less risky to hold than the documents themselves.",
+        body: "It records where each kept document actually is, not what's inside it, and there's no upload feature at all. A location is a far smaller thing to lose than the document itself.",
       },
     ],
   },
@@ -6227,13 +7491,86 @@ export const GUIDES: Guide[] = [
       { slug: "homeschool-attendance-what-to-track", reason: "Evaluators often ask about days. This shows what counts as a school day and the lightest record." },
     ],
     publishedAt: "2026-08-30",
+    updatedAt: "2026-09-26",
     areaSlug: "family-and-learning",
+    sources: [
+      {
+        name: "TheHomeSchoolMom: Homeschool Evaluation Instead of Testing",
+        url: "https://www.thehomeschoolmom.com/using-a-homeschool-evaluator/",
+        retrieved: "2026-09-26",
+        note: "Backs the evaluator process described: work samples from more than one point in the year, a booklist, and a letter the evaluator writes describing progress.",
+      },
+      {
+        name: "Coalition for Responsible Home Education: Homeschool Record Keeping",
+        url: "https://crhe.org/guides/resources-for-homeschool-parents/assessments-record-keeping/homeschool-record-keeping/",
+        retrieved: "2026-09-26",
+        note: "Backs that some states offer a portfolio review by a certified teacher or a narrative assessment as an alternative to a standardized test.",
+      },
+      {
+        name: "HSLDA: Recordkeeping",
+        url: "https://hslda.org/teaching-my-kids/recordkeeping",
+        retrieved: "2026-09-26",
+        note: "Backs that what an evaluation actually requires depends on your own state's law, not one fixed national process.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "An evaluation is generally a check that education is happening, not an inspection of whether you are doing it well. Who does the evaluating depends on your state, so ask yours what it wants to see.",
-          "The preparation that helps is assembling evidence that something coherent happened across the year, which is a smaller job than most people fear, particularly if anything at all was recorded as you went.",
+          "A homeschool evaluation is usually a review, not a test: someone confirms that real learning happened across the year and, in most cases, writes a short letter saying so. Bring a folder with your log, dated work samples from more than one point in the year, your subject and curriculum list, and anything else your own evaluator specifically asks for.",
+          "This is for a parent with an evaluation, review or portfolio check coming up, not a fixed legal checklist. It can't tell you what your own evaluator or state wants: ask them directly, and see [homeschool requirements by state](/guides/homeschool-record-keeping-requirements-by-state) for our state-by-state summary, if you homeschool in the United States.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Example: one folder, ready the night before",
+        intro: "This is an example folder, not a real family's records.",
+        columns: ["In the folder", "What's in it"],
+        rows: [
+          [
+            "The log",
+            "Sep 3 to May 20, dated by week, math and reading noted separately",
+          ],
+          [
+            "Work samples",
+            "A September math page and a May math page, same kind of problem",
+          ],
+          ["Reading list", "Fourteen books, two marked as stopped partway"],
+          [
+            "Curriculum list",
+            "A math curriculum, a library-built reading list, a co-op science class",
+          ],
+          [
+            "A short note per subject",
+            "Math: struggled with fractions until January, steady since",
+          ],
+        ],
+      },
+      {
+        kind: "timeline",
+        heading: "One evening, in order",
+        intro: "This assumes you already have work sitting around the house. If you're rebuilding months of records first, see how to catch up below.",
+        steps: [
+          {
+            when: "First 15 minutes",
+            what: "Confirm with your evaluator: meeting time, location, and anything specific they want to see.",
+          },
+          {
+            when: "Next 20 minutes",
+            what: "Pull one dated work sample per subject from early in the year and one from recently.",
+          },
+          {
+            when: "Next 15 minutes",
+            what: "Write a subject and curriculum list, one line each.",
+          },
+          {
+            when: "Next 15 minutes",
+            what: "Add a short note per subject: what changed, what was hard, what you'd do differently.",
+          },
+          {
+            when: "Last 10 minutes",
+            what: "Put it all in one folder, in the order your evaluator will likely go through it.",
+          },
         ],
       },
       {
@@ -6242,48 +7579,80 @@ export const GUIDES: Guide[] = [
         heading: "What to bring",
         items: [
           "The log of what was covered, with dates, even if approximate.",
-          "Work samples across the year, not from one strong two week stretch.",
+          "Work samples from more than one point in the year, not just one strong stretch.",
           "A list of curricula and materials used.",
           "Attendance or days schooled, if your state counts them.",
-          "Test results, if required where you are.",
+          "Test results, if your state requires them.",
           "A short note per subject on where you started and where you got to.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Progress across the year is worth showing",
+        heading: "Show progress, not just a pile of finished work",
         paragraphs: [
-          "One of the clearest things in any portfolio is the same subject at two points in the year. October and March writing samples side by side can say more than a quantity of finished work from one week.",
-          "It is also the easiest thing to provide, and the thing most people accidentally leave out by only keeping the pieces they were proud of.",
+          "One of the clearest things a folder can show is the same subject at two points in the year. A September math page next to a May one can say more than a stack of finished worksheets from one good week, and it's the thing most people accidentally leave out by only keeping what they were proud of.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Be honest about what did not go well",
+        heading: "Say what didn't go well",
         paragraphs: [
-          "Saying that maths was difficult until January, that you changed curriculum, and that it improved afterwards is a stronger position than implying everything went smoothly.",
-          "It shows that you were paying attention and adjusting. A portfolio with no difficulties in it reads as curated rather than complete.",
+          "Saying that math was difficult until January, that you changed curriculum, and that it improved afterward is a stronger position than implying everything went smoothly. It shows you were paying attention and adjusting, which is closer to what an evaluator is actually checking for than a folder with no rough patches in it.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "If you are behind on records",
+        heading: "If your records have a gap",
         paragraphs: [
-          "Reconstruct honestly, mark approximate dates as approximate, and do not invent precision. A clearly reconstructed term is a normal thing to hand over.",
-          "The full recovery method is in [when you have kept nothing since October](/guides/how-to-catch-up-on-homeschool-records).",
+          "Reconstruct without inventing precision. Mark approximate dates as approximate, October to December rather than a specific day you can't verify. A clearly reconstructed stretch is a normal thing to hand over. The full method is in [how to catch up on homeschool records](/guides/how-to-catch-up-on-homeschool-records).",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Check what your state actually requires",
+        heading: "Check what your evaluator and your state actually ask for",
         paragraphs: [
-          "Requirements differ enormously, and preparing for a stricter standard than yours wastes a weekend. The state-by-state position is in [record keeping requirements by state](/guides/homeschool-record-keeping-requirements-by-state).",
+          "Requirements differ a lot, and preparing for a stricter standard than yours wastes an evening. See [homeschool requirements by state](/guides/homeschool-record-keeping-requirements-by-state) for the level yours falls in, then ask your own evaluator what they specifically want to see, since that can be narrower or wider than the state minimum.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "When a general folder isn't what they want",
+        paragraphs: [
+          "Some evaluators or states ask for something specific this general list doesn't cover: a particular test, a set number of hours logged, or a form in their own format. A folder built from this guide won't satisfy that on its own, which is why confirming with your own evaluator before you assemble everything, not after, saves the most time.",
+          "If your evaluator asks for something you don't have, an hours log you never kept, say so plainly rather than estimating a number. A stated gap is easier for most evaluators to work with than a figure that turns out to be wrong.",
+        ],
+      },
+      {
+        kind: "faq",
+        items: [
+          {
+            q: "What does a homeschool evaluator actually look for?",
+            a: "Evidence that real learning happened across the year: a dated log, work samples from more than one point in the year, and a sense of what your child covered and how they grew. Most evaluators then write a short letter describing that progress, which you submit wherever your state asks for it. Ask your own evaluator what else they specifically want, since expectations vary.",
+          },
+          {
+            q: "Is a homeschool evaluation the same as a test?",
+            a: "Usually not. A review or evaluation is typically a conversation and a look through your child's folder, not a timed test with a pass-or-fail outcome. Some states offer a standardized test as an alternative path instead of a review, so check which one applies to you and confirm it with your state.",
+          },
+          {
+            q: "How far in advance should I prepare for a homeschool evaluation?",
+            a: "The strongest preparation happens through the year, a few minutes at a time. If you're starting from nothing, most of a basic folder, a log, a few samples, a curriculum list, can be pulled together in one evening. It takes longer if you're reconstructing months of records rather than gathering what's already in a drawer.",
+          },
+          {
+            q: "What if my child had a rough year?",
+            a: "Bring it anyway, with a short plain note about what changed. A folder that shows a hard stretch and an adjustment reads as more credible than one that implies nothing was ever difficult, and it's closer to what most evaluators are actually trying to confirm.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Homeschooling Companion prints a My Homeschool Record page per child covering what was done, when, and what you noted, which gives an evaluator something to read alongside your own work samples. Entries are always dated the day you make them, and its short checks report one of four plain outcomes, including not enough to say, rather than a percentage you'd then have to explain. See it on the [Homeschooling Companion](/shop/homeschooling-companion) page.",
         ],
       },
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Homeschooling Companion prints a record per child covering what was done, when, and what you noticed, which gives an evaluator a record to read alongside your work samples. Entries are always dated the day you make them, and its short checks report an honest standing, including not enough to say, rather than a score you would then have to explain.",
+        body: "It prints a dated record per child to bring alongside your work samples. It doesn't choose what your evaluator wants to see or replace whatever your state asks for.",
       },
     ],
   },
@@ -6623,7 +7992,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "talking-to-your-parents-about-their-affairs",
     title: "How to talk to your parents about their will and finances",
-    dek: "What to open with, what not to ask for, how to start with your own affairs, and scripts for a conversation that takes several tries.",
+    dek: "What to open with, which documents to ask about, what to do if they say no, and scripts for a conversation that usually takes several tries.",
     primaryQuery: "how to talk to your parents about their will",
     next: { slug: "emergency-contact-and-medical-decision-maker", reason: "A useful first question to raise is who would speak for a parent about their medical care." },
     related: [
@@ -6632,40 +8001,88 @@ export const GUIDES: Guide[] = [
       { slug: "what-to-do-when-a-parent-dies", reason: "To see what happens if the conversation never occurs, this gives the order of tasks after a parent dies." },
     ],
     publishedAt: "2026-08-30",
+    updatedAt: "2026-09-26",
     areaSlug: "affairs-and-endings",
+    sources: [
+      {
+        name: "National Institute on Aging: Getting Your Affairs in Order Checklist",
+        url: "https://www.nia.nih.gov/health/advance-care-planning/getting-your-affairs-order-checklist-documents-prepare-future",
+        retrieved: "2026-09-26",
+        note: "Backs the document list (will, durable power of attorney, health care proxy) and the advice to record locations rather than contents.",
+      },
+      {
+        name: "Fidelity: Talking About Estate Planning",
+        url: "https://www.fidelity.com/life-events/estate-planning/talking-estate-planning",
+        retrieved: "2026-09-26",
+        note: "Backs the advice on opening the conversation gradually and around specific moments rather than all at once.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "The conversation goes wrong when it sounds like a conversation about dying, or worse, about money. It goes fine when it sounds like a conversation about where things are kept.",
-          "That is not a trick. It is genuinely the useful part. You do not need to know what anybody is worth or who inherits. You need to know where the will is, which pension is with whom, and who to call.",
+          "The conversation works when it sounds like logistics, not mortality: where the will is kept, which bank, who the lawyer is. Skip the contents entirely, the values, the balances, who inherits what. Open by mentioning your own paperwork first, ask for locations only, and expect it to take more than one sitting.",
+          "This is for adult children in the US who want to start this conversation with a parent who is still able to have it. It has nothing to say about guardianship or undue influence, and if either is already a concern, an elder law attorney is the next call, not this page.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Example: what a reassuring answer doesn't tell you",
+        intro: "A typical exchange, not a real one.",
+        columns: ["What they say", "What you still don't know"],
+        rows: [
+          [
+            "\"It's all taken care of.\"",
+            "Whether there's a current will, or one from decades ago",
+          ],
+          ["\"Your uncle has a copy.\"", "Which uncle, and where he actually keeps it"],
+          ["\"We'll deal with that later.\"", "Whether later means next month or never"],
         ],
       },
       {
         kind: "scripts",
-        heading: "Openings worth trying",
-        intro: "Each of these makes the conversation about logistics rather than about them dying, which is the difference between a conversation and an argument.",
+        heading: "Ways to open the conversation",
+        intro: "Each one makes the conversation about logistics rather than about them, which is most of the difference between a conversation and an argument.",
         items: [
           {
             situation: "Start with yourself",
-            line: "I have been sorting out my own paperwork and realised nobody would know where anything of mine is. Have you done yours.",
+            line: "I've been sorting out my own paperwork, and I realized no one would know where any of it is. Have you done yours?",
           },
           {
-            situation: "Use a what if",
-            line: "If you were both in hospital for two weeks, I would not know how to keep things running. Can we write the basics down.",
+            situation: "Use a hypothetical",
+            line: "If you two were both in the hospital for two weeks, I wouldn't know how to keep things running. Can we write down the basics?",
           },
           {
-            situation: "Use somebody else's story",
-            line: "A friend has just been through this for their parent and it took months, mostly because nothing was written down.",
+            situation: "After a health scare",
+            line: "That scared me more than I expected. Can we make sure I'd know where to look for things, just in case?",
+          },
+          {
+            situation: "At a natural moment",
+            line: "Since we're already talking about the house, where do you keep the deed and the will?",
           },
         ],
       },
       {
+        kind: "list",
+        checkable: true,
+        heading: "What to ask about, once they're willing",
+        intro: "Locations and names, never balances or contents.",
+        items: [
+          "Where the will is kept, and whether it's the current one.",
+          "Which bank or banks they use, by name only.",
+          "Who their lawyer or financial advisor is, if they have one.",
+          "Who they've named to make medical decisions if they can't.",
+          "Whether a power of attorney exists, and who holds it.",
+          "Where the paperwork for the house or car is kept.",
+          "Which email address their accounts are mostly registered to.",
+        ],
+      },
+      {
         kind: "paragraphs",
-        heading: "Start with yourself",
+        heading: "Start with your own first",
         paragraphs: [
-          "One of the most effective moves is doing your own first and mentioning it. It removes any suggestion that this is about their age or their health, and it gives you something concrete to show.",
-          "It also means you are asking them to join something rather than to submit to it, which is a materially different request.",
+          "Doing your own paperwork first and mentioning it removes any suggestion that this is about their age or their health. It gives you something concrete to point to instead of an abstract request.",
+          "It also changes what you're asking. You're inviting them to join something you're already doing, not submitting them to a task you invented for them.",
         ],
       },
       {
@@ -6673,29 +8090,70 @@ export const GUIDES: Guide[] = [
         heading: "Ask for locations, not contents",
         paragraphs: [
           "Where the will is, not what it says. Which bank, not the balance. Who the lawyer is, not what was discussed.",
-          "Many people are more comfortable sharing locations than contents, and locations are what actually prevent the months of searching later.",
+          "Most people are far more comfortable naming a location than sharing a figure, and a location is what actually prevents months of searching later. Content can wait, or never come up at all.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Expect it to take several conversations",
+        heading: "If they say no, or change the subject",
         paragraphs: [
-          "Trying to complete this in one sitting is how it becomes a confrontation. Getting the will's location this month and the pensions next month is a completely normal pace and considerably more likely to finish.",
-          "If somebody shuts it down, that is information rather than a refusal. Try a different entry point later, or a different person: parents will often tell a sibling something they will not tell you, for no reason either of you could explain.",
+          "A parent who changes the subject, or says 'we'll get to it,' isn't necessarily refusing. Try a different opening later, or let it come from someone else; a parent will sometimes tell a sibling something they won't tell you, for no reason either of you could explain.",
+          "If the answer stays a flat no more than once, stop pushing and offer the version that doesn't run through you at all: 'Would you rather go through this with a lawyer instead of me? I can help you find one.' That removes you as the reason it feels uncomfortable, which is sometimes the actual problem.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Write it down at the time",
+        heading: "Write it down when you hear it",
         paragraphs: [
-          "The most common failure is having the conversation, feeling relieved, and recording nothing. Six months later you remember there was a lawyer and not which one.",
-          "What to capture is in [the if something happens to me file](/guides/the-if-something-happens-to-me-file).",
+          "The most common failure isn't a conversation that goes badly. It's one that goes fine, gets no follow-up, and evaporates. Six months later you remember there was a lawyer involved, and not which one.",
+          "Write down what you learn the same day, while the details are still exact. What to capture is in [the if something happens to me file](/guides/the-if-something-happens-to-me-file).",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Where this doesn't work",
+        paragraphs: [
+          "If a parent's memory or judgment has started to slip, or a family member appears to be steering their decisions, this conversation is the wrong tool. Those situations call for an elder law attorney, not a well-meaning relative, and pushing ahead informally can make a real problem harder to prove later.",
+          "The other common failure is agreement without follow-through. If a parent says yes and nothing happens, set the next conversation before you leave the room: a specific week, not 'soon.'",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "How do I bring this up without it sounding like I think they're dying?",
+            a: "Make it about logistics, not mortality. Ask where things are kept, not what's inside them, and mention that you're doing the same for your own paperwork first. A parent who hears 'I want to know where your will is' as 'you're about to die' usually relaxes once they realize it's a practical question, not a frightening one.",
+          },
+          {
+            q: "What if my parent refuses to talk about it?",
+            a: "Don't press it in one sitting. Try again later, from a different angle, or let another family member raise it instead. If the answer stays no, offer to step out of the conversation entirely and suggest a lawyer instead of you, which can remove the part that's actually bothering them.",
+          },
+          {
+            q: "Do I need power of attorney to help my parent with their finances?",
+            a: "Only if you'll actually act on their behalf, like paying bills or talking to their bank. A durable power of attorney names someone to do that if a parent can no longer manage it themselves, and it has to be set up by an attorney while they're still able to sign it. This isn't legal advice; an elder law attorney in their state can walk you through it.",
+          },
+          {
+            q: "What if my parent has already shown signs of memory loss?",
+            a: "This is where the informal version of this conversation stops being enough. Bring in an elder law attorney sooner rather than later. Whether someone can still legally sign documents, called capacity, is a real legal question, and it gets harder to answer the longer everyone waits.",
+          },
+          {
+            q: "Should I ask my parents for actual numbers, like account balances?",
+            a: "Not at this stage. Ask which bank, not the balance; who the lawyer is, not what was discussed. Balances and details are the parts that make people defensive, and you rarely need them just to know where to look if you ever have to find something.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What the Companion can and can't do",
+        paragraphs: [
+          "Personal Life Affairs Companion is built around a single account, so it can't be something you and a parent share or use together. What it can do is give you a blank copy to print, built from your own answers, so it leaves out whatever doesn't apply to you instead of listing every possible question. It won't be a perfect match for a parent's situation, but handing over a page of specific questions, in your own words, is often an easier opener than asking cold. See [Personal Life Affairs Companion](/shop/personal-life-affairs-companion).",
         ],
       },
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Personal Life Affairs Companion is designed to be worked through gradually rather than in one sitting, and it records where things are kept rather than what they contain, which is exactly the boundary that makes this conversation possible. Doing your own is also the easiest way to start the conversation at all.",
+        body: "It's built to be worked through gradually, in short sessions, which matches how this conversation usually goes as well. Doing your own copy first gives you something concrete to show, before you ask to see theirs.",
       },
     ],
   },
@@ -7084,61 +8542,129 @@ export const GUIDES: Guide[] = [
       { slug: "simple-homeschool-record-keeping-system", reason: "Attendance works best inside a habit you keep. This covers a system with three things per entry." },
     ],
     publishedAt: "2026-08-30",
+    updatedAt: "2026-09-26",
     areaSlug: "family-and-learning",
+    sources: [
+      {
+        name: "HSLDA, Types of Homeschool Records",
+        url: "https://hslda.org/post/types-of-homeschool-records",
+        retrieved: "2026-09-26",
+        note: "Backs that attendance means actual days of instruction rather than simply days at home, and that records kept as you go are more reliable than records reconstructed later.",
+      },
+      {
+        name: "Homeschool Planning, Homeschool Attendance Records: Days and Hours",
+        url: "https://homeschool-planning.com/attendance-records/",
+        retrieved: "2026-09-26",
+        note: "Backs the four to six hour range commonly used where a state counts hours, and that field trips and hands-on activities generally count as instruction.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Some states require a specific number of instructional days or hours. Others require nothing at all. Before building any tracking habit, find out which applies to you, because tracking attendance you will never be asked for is pure overhead.",
-          "Where it is required, the record needed is often lighter than people assume. A count of days, not a timetable.",
+          "A homeschool day is usually any day with planned instruction, whether that happens at a table, on a field trip, or over a book on the couch. Where hours count, most states treat four to six hours as a full day. The lightest record that holds up is a date and a line on what you covered.",
+          "This is for a parent in the United States trying to work out what to log before finding out whether logging is even required. It can't tell you your own state's number, if it has one, only what generally counts and the record that's light enough to keep up.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "What counts as a school day",
+        heading: "An example: two days that both count",
         paragraphs: [
-          "More than people expect. A museum visit, a long piece of reading, a project afternoon, a cooking session that was genuinely maths, and a day spent on one subject all generally count.",
-          "Requirements are usually expressed as days of instruction or hours of instruction, not as days that resembled a classroom. Learning that happened outside a table and a workbook still happened.",
+          "Say Tuesday is a trip to the science center: out the door at nine, four hours walking the exhibits with a scavenger-hunt sheet you wrote the night before, home for lunch. No workbook opened. Under most states' own wording, that's a full day of instruction, the same as a Thursday spent on a math lesson and forty minutes of reading that also ran about four hours.",
+          "Neither day needs a different kind of entry in the log. Both get a date and a line on what happened: \"Science center, states of matter exhibit\" or \"Math Unit 3, reading Ch. 6.\"",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "What usually counts, and what doesn't",
+        intro: "General practice across states, not a rule for yours specifically. Confirm anything you're relying on at your own state's source.",
+        columns: ["Day", "Generally counts as instruction"],
+        rows: [
+          ["A morning of workbook math and reading", "Yes"],
+          ["A field trip with a purpose you set in advance", "Yes, in most states"],
+          [
+            "A cooking session that worked through a recipe's fractions and measurements",
+            "Usually, if you can say what it covered",
+          ],
+          ["A co-op class someone else taught", "Yes, log it like any other subject"],
+          [
+            "A travel day with no planned learning",
+            "Not usually, unless your state counts differently",
+          ],
+          ["A day nothing happened at all", "No"],
         ],
       },
       {
         kind: "list",
         checkable: true,
-        heading: "The lightest record that works",
-        intro: "If your state counts days, this is often enough.",
+        heading: "The lightest record that holds up",
+        intro: "If your state counts days, hours, or nothing at all, this is enough to start from.",
         items: [
           "A date.",
-          "A tick, or a rough hours figure if your state counts hours.",
-          "One or two words on what was covered, which turns an attendance record into something also useful for a portfolio.",
+          "A line on what you covered, a few words is enough.",
+          "Hours, only if your state's own count is in hours rather than days.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Count as you go, because June reconstruction does not work",
+        heading: "If your state counts hours, not days",
         paragraphs: [
-          "Reconstructing a year of attendance from memory is hard, and unlike subject records there is little physical to work backwards from, although a calendar and dated photos help. A pile of undated worksheets does not show how many days you taught.",
-          "A grid you tick takes seconds a day. It is the one part of homeschool record keeping where doing it live is not merely better but effectively the only option.",
+          "A handful of states set a specific hour total instead of, or alongside, a day count. Where that's the rule, add up time spent on planned instruction across a week rather than logging a start and stop time for every subject. A rough weekly total is far less work than a stopwatch kept on each lesson, and it's what most hour-based reporting actually asks for. Confirm with your own state whether several short sessions can be added together, since that detail varies.",
+          "Our own summary in [homeschool record keeping requirements by state](/guides/homeschool-record-keeping-requirements-by-state) shows which states' notes mention attendance or hours at all, though it undercounts a few strict ones, so treat it as a starting point rather than a final answer. For a place to write the number once you know it, [homeschool record keeping template: three columns to copy](/guides/homeschool-record-keeping-template) has the columns.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "What is pointless",
+        heading: "What to show if someone asks",
         paragraphs: [
-          "Logging start and finish times, unless your state specifically requires hours. Recording which parent taught. Breaking a day into subject-by-subject minutes.",
-          "None of that is usually asked for, and every additional column is a reason the habit dies by half term.",
+          "If an evaluator, a district, or your state ever asks for proof, what holds up is the dated log itself, not a summary written after the fact. Bring the record as it stands, gaps included, rather than filling gaps in the night before.",
+          "A log with a few ordinary gaps across a steady year reads as normal. A perfect log with no gaps at all, built the week before a review, usually reads as exactly that.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Where to check what applies to you",
+        heading: "Where this goes wrong",
         paragraphs: [
-          "State requirements vary widely and change, so confirm with your state association or department of education. The overall picture is in [record keeping requirements by state](/guides/homeschool-record-keeping-requirements-by-state).",
+          "The record that fails is the one built after the fact. A stack of undated worksheets doesn't show how many days you taught, and a year reconstructed from memory in June is rarely accurate. A date logged the day it happens takes seconds and holds up better than any total rebuilt later.",
+          "The other common mistake is over-building: logging start and stop times when a state only asks for a day count, or tracking which parent taught when no state has ever asked for it. Every extra field is a reason the habit stops in October rather than June. [Do you have to count homeschool days or hours](/guides/do-you-have-to-count-homeschool-days-or-hours) covers how to find out what your own state actually wants before you build around a guess.",
+        ],
+      },
+      {
+        kind: "faq",
+        items: [
+          {
+            q: "Does a field trip count as a homeschool day?",
+            a: "In most states, yes, as long as it had a learning purpose you can name afterward: a museum, a historical site, a nature walk with a specific focus. Log it the same way as any other day, a date and a line on what it covered. Confirm the exact rule with your own state if you're relying on the day.",
+          },
+          {
+            q: "How many hours make a full homeschool day?",
+            a: "Where states count hours rather than days, four to six hours is the range used most often, though the total and how it's split between subjects varies by state. If your state counts days instead, hours usually don't matter at all. Check your state's own page rather than assuming a number from another state applies to yours.",
+          },
+          {
+            q: "Do sick days or travel count toward attendance?",
+            a: "Only if instruction actually happened. A sick day with no planned learning generally doesn't count, and neither does a travel day spent entirely in transit. A travel day that included reading, a planned stop at a historic site, or a workbook page in the back seat usually does, the same as any other day.",
+          },
+          {
+            q: "What if my state doesn't require attendance records at all?",
+            a: "Some states file nothing and set no day count, though that's separate from whether any records are worth keeping for yourself: several \"no filing\" states still expect a course of study even without a specific count. A day count kept for yourself is still useful for noticing a pattern, even where no one will ever ask to see it.",
+          },
+          {
+            q: "How do I catch up if I haven't logged any days this year?",
+            a: "You can't reconstruct exact days with confidence, but you can build a reasonable estimate from what you do have: a curriculum's own pacing guide, dated photos, receipts, or a calendar of what the family was doing. Start logging from today regardless, since every day forward is one you won't have to reconstruct later.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What the Companion does with a day",
+        paragraphs: [
+          "Homeschooling Companion records a subject as done the day you tap it, and a day counts on the printed record as any date with at least one recorded entry, math, reading, a field trip logged as a subject, any of it. It doesn't ask for hours and it has no attendance counter of its own: the count on the printed state page is just the number of distinct days something was recorded. For the habit that keeps a log like this going past the first month, see [a simple homeschool record keeping system you will keep](/guides/simple-homeschool-record-keeping-system). See it on the [Homeschooling Companion](/shop/homeschooling-companion) page.",
         ],
       },
       {
         kind: "callout",
-        label: "The Companion for this",
-        body: "Homeschooling Companion records the day alongside what was covered, so one entry serves as both a day count and part of the record rather than being two separate chores. It does not track hours and has no attendance counter.",
+        label: "One habit, not two",
+        body: "A day logged as you go doubles as the subject record and the attendance count, so there's only one thing to keep up, not two separate logs pulling at the same ten minutes.",
       },
     ],
   },
@@ -7146,7 +8672,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "simple-homeschool-record-keeping-system",
     title: "A simple homeschool record keeping system you will keep",
-    dek: "Three things per entry in under a minute, a plan for the bad week, and the occasional fourth note worth writing down. Notebook or app.",
+    dek: "Three things every time, the date, the subject and where you are, and one word on how it went, written right after the lesson, not from memory.",
     primaryQuery: "simple homeschool record keeping system",
     next: { slug: "homeschool-record-keeping-template", reason: "Ready for the paper or spreadsheet version? Copy the four columns and see what to leave off." },
     related: [
@@ -7155,63 +8681,111 @@ export const GUIDES: Guide[] = [
       { slug: "homeschool-record-keeping-requirements-by-state", reason: "Not sure how much your state wants you to keep? This table sets the level for all 50 states and DC." },
     ],
     publishedAt: "2026-08-30",
+    updatedAt: "2026-09-26",
     areaSlug: "family-and-learning",
+    sources: [
+      {
+        name: "HSLDA, Types of Homeschool Records",
+        url: "https://hslda.org/post/types-of-homeschool-records",
+        retrieved: "2026-09-26",
+        note: "Backs that it's easier to keep records as you go than to construct them later, the basis for the right-after-the-lesson recommendation.",
+      },
+      {
+        name: "Seeking Delectare, Simple Homeschool Record-Keeping",
+        url: "https://seekingdelectare.com/simple-homeschool-record-keeping/",
+        retrieved: "2026-09-26",
+        note: "A parent account backing the point that a system has to be simple to survive, used for why elaborate systems get abandoned.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Many homeschooling families build a record system in September and let it lapse within weeks. The system is rarely the problem in principle. It is that it was designed on a good day, for a version of the week that does not happen often.",
-          "The version that survives is the one that still gets done on the bad Tuesday, and that means it has to take well under a minute.",
+          "The record keeping system that lasts writes three things every time: the date, the subject and roughly where you are in it, and one word on how it went. Nothing else is required to make it useful. Write it in under a minute, right after the lesson, or you'll rebuild it from memory later and get it wrong.",
+          "This is for a parent in the United States who has already tried a system that died, or hasn't started one and wants to skip the version that doesn't last. It can't tell you what your own state requires you to keep, only what actually gets written down week after week: see [homeschool record keeping requirements by state](/guides/homeschool-record-keeping-requirements-by-state) for that.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Three things, every time",
+        heading: "An example: a week with two short days",
         paragraphs: [
-          "The date. The subject and roughly which part of it, where Unit 3, Lesson 12 is plenty. And one word about how it went: easy, about right, or difficult.",
-          "That third field is often the one people leave out, and it can be the most useful in March, because it tells you where to look when something has not stuck.",
+          "Monday and Thursday go as planned: math, reading and writing each get a line, same as any week. Tuesday, the toddler has an ear infection and the whole morning is gone, so the entry for Tuesday is one line, \"Read together on the couch, 20 minutes, easy,\" and nothing else. Friday, an orthodontist appointment eats the morning, so Friday gets \"Math Unit 3, 15 minutes, about right\" and stops there.",
+          "Neither short day gets a note explaining why, and neither gets left blank. A week like this one still produces four days with something written down, instead of two full days and two gaps, and the record reads as an ordinary week rather than a bad one.",
         ],
       },
       {
         kind: "list",
         checkable: true,
-        heading: "What kills a system",
-        intro: "Every one of these looks reasonable in September. Tick anything your current system asks of you.",
+        heading: "What makes the habit stop",
+        intro: "Every one of these feels reasonable in September. If your current system does two or more, that's usually why it stalled.",
         items: [
-          "More than about four fields per entry.",
-          "Anything requiring a paragraph of writing per child per day.",
-          "A spreadsheet that has to be opened on a computer rather than whatever is in your hand.",
-          "Colour coding, which is a pleasure to design and a chore to maintain.",
-          "Any tally of days missed, which converts a record into a judgement and gets the whole thing avoided.",
+          "Writing it from memory at the end of the week, instead of right after the lesson.",
+          "Keeping it somewhere that isn't already open or already in your hand.",
+          "Letting one missed day turn into two, then a blank month.",
+          "Deciding you'll catch up on it later, which tends to become never.",
+          "Waiting for the day to go well before it seems worth writing down.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Plan four days and record what happened",
+        heading: "Attach it to something that already happens",
         paragraphs: [
-          "A family that plans five days and manages four has failed at something every single week. A family that plans four and manages four has not. The work done is identical.",
-          "Recording is the same. If the habit assumes a perfect week, every ordinary week produces a gap, and gaps are a common reason people stop.",
+          "A record kept as a separate task competes with everything else in the day for a slot, and it's usually the thing that loses. A record attached to something you already do every day, closing a book, packing the table away, doesn't need a reminder, because the moment that triggers it is already built into the day.",
+          "Setting this up takes about two minutes: pick the moment, right after the last subject, right before lunch, whenever the workbooks go back on the shelf, and pick where it will live, whatever's already in reach at that moment. Write today's date on the first line and start. If you'd rather start from an already-formatted table than a blank page, [homeschool record keeping template: three columns to copy](/guides/homeschool-record-keeping-template) has the exact columns.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "The fourth thing, occasionally",
+        heading: "What doesn't fit the three things",
         paragraphs: [
-          "Once in a while something happens that no log captures. She finally understood fractions. He reads better lying on the floor. A bad two weeks turned out to be a cold rather than a problem.",
-          "Write those down the day they happen, in a sentence. In three years they are the only part of this you would not want to lose, and by next month you will have forgotten every one of them.",
+          "A photo of a project, or anything three-dimensional, is worth taking the day it happens, for the same reason a note is: it's hard to recreate later. It doesn't need its own place in the daily habit. Keep it wherever your phone already keeps photos, dated automatically, and mention what it was of in that day's line so you can find it again.",
+          "With more than one child, keep the habit the same per child rather than combining entries on one page. [Keeping records for more than one child without mixing them up](/guides/homeschool-record-keeping-for-multiple-children) covers filing by child in more detail.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "If it already collapsed this year",
+        heading: "When a bad week breaks it anyway",
         paragraphs: [
-          "That is the normal case rather than the exception, and more is recoverable than it feels like. The method is in [when you have kept nothing since October](/guides/how-to-catch-up-on-homeschool-records).",
+          "Some weeks nothing gets written for two or three days running: illness, travel, a week that simply falls apart. The system that survives isn't the one where that never happens. It's the one where a gap doesn't stop the next entry.",
+          "Write today's entry today, whatever gaps came before it. A week with three days logged and two blank is still a record of what happened, not a failure, and going back to fill in the blank days from memory usually makes the record less accurate, not more. If a bigger stretch has gone unrecorded, [how to catch up on homeschool records you have not kept](/guides/how-to-catch-up-on-homeschool-records) covers what's actually recoverable and what isn't.",
+        ],
+      },
+      {
+        kind: "faq",
+        items: [
+          {
+            q: "How much detail does each homeschool record entry actually need?",
+            a: "Three things: the date, the subject and roughly where you are in it (Unit 3, Lesson 12 is plenty), and one word on how it went, easy, about right, or difficult. Anything beyond that, a paragraph, a time log, a color code, is a reason the system gets heavier than a normal week can support and eventually stops.",
+          },
+          {
+            q: "What if I miss a few days in a row?",
+            a: "Write today's entry today and let the missed days stay blank rather than guessed at. A record with real gaps in it is more useful later than one padded with entries reconstructed from memory, because you'll actually know which parts you can trust. If the gap is bigger, a term or more, rebuilding it takes a different approach.",
+          },
+          {
+            q: "Should each child have a separate record?",
+            a: "Yes, once you have more than one child. A shared page mixing two children's entries is hard to read back a year later, and it's the first thing that makes a system feel heavier than it is. File by child from the start rather than splitting a combined page after the fact.",
+          },
+          {
+            q: "Is a notebook good enough, or do I need an app?",
+            a: "A notebook is good enough for the whole system described here: a date, a subject and where you are, one word. The real question is whether it's already open or in reach when a lesson ends, since a record made from memory an hour later is less accurate than one made in the moment.",
+          },
+          {
+            q: "What do I do with the occasional big thing worth remembering, like a breakthrough?",
+            a: "Write it the day it happens, in a sentence, separate from the daily three things: \"She finally got equivalent fractions today, after weeks of it not landing.\" It doesn't need to fit the usual format, and it's usually the one line from an entire year you'd actually want to keep.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What the Companion does with the habit",
+        paragraphs: [
+          "Homeschooling Companion is built around the same three things and nothing more. Tap a subject done on the Today screen and it's dated automatically, keeps the subject and position you already typed in, Math, Unit 3, Lesson 12, and asks one optional question, how did it go, with easy, about right, or difficult as the only answers. Marking a subject \"Did not get to it\" still records the day; it just comes back next time as a quiet flag to go over it again, not a blank. Add the occasional bigger note on the Record tab, in your own words, and choose whether it prints or stays private. See it on the [Homeschooling Companion](/shop/homeschooling-companion) page.",
         ],
       },
       {
         kind: "callout",
-        label: "The Companion for this",
-        body: "Homeschooling Companion is built around an entry that takes seconds and is always dated the day you make it. It contains no completion percentage, no streak, and no count of days missed.",
+        label: "No percentage, no tally",
+        body: "There's no percentage of days completed and no running count of days missed anywhere in the product. A record that makes a bad week look like a failure is one you stop keeping, so it doesn't turn one into a number.",
       },
     ],
   },
@@ -8354,66 +9928,110 @@ export const GUIDES: Guide[] = [
     related: [
     ],
     publishedAt: "2026-08-30",
+    updatedAt: "2026-09-26",
     areaSlug: SERIES,
+    sources: [
+      {
+        name: "Elizabeth Emens: The Invisible Labor of Life Admin (Psychology Today)",
+        url: "https://www.psychologytoday.com/us/blog/life-admin/201812/the-invisible-labor-of-life-admin",
+        retrieved: "2026-09-26",
+        note: "Origin and definition of the term life admin, the author's academic role, and why the work stays unseen.",
+      },
+      {
+        name: "Allison Daminger: The Cognitive Dimension of Household Labor (American Sociological Review, 2019)",
+        url: "https://www.allisondaminger.com/research",
+        retrieved: "2026-09-26",
+        note: "2019 study finding cognitive household labor, especially anticipating and monitoring, is gendered even in couples who see their split as even.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "There is a category of work that nobody teaches, nobody schedules, and nobody notices until it goes wrong. Renewing things. Chasing things. Knowing where documents are. Remembering that the boiler needs servicing and that a pension exists from a job you left in 2014.",
-          "It has no agreed name, which is part of why it stays invisible. Life admin is the closest thing we have.",
+          "Life admin is the unpaid, unscheduled work of keeping an adult life running: renewing things, chasing things, and remembering that a boiler needs servicing or a pension exists from a job you left years ago. It has no fixed hours, no manager and no finish line, which is most of why it goes undone until something breaks.",
+          "This is for anyone trying to name what keeps slipping, whether you carry it alone or split it with a household that has never actually agreed who does what. It won't tell you how to divide the load with a partner or which task to start with today; it names the category so you can see the shape of it first.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Three properties that make it uniquely awkward",
+        heading: "One move, as an example",
         paragraphs: [
-          "It is invisible when it goes right. Nobody notices the insurance that renewed correctly, so there is no feedback and no credit, only the absence of a problem.",
-          "It is connected. Almost nothing sits alone. A flight moves and three bookings become wrong. An address changes and many organizations need telling. A person dies and many small facts turn out to have lived in one head.",
-          "It arrives at bad moments. Bereavement, illness, moving, separation, a new baby. The administrative load tends to be heaviest when the capacity to handle it is lowest.",
+          "Say you move house in March. The obvious task is telling the post office. Less obvious: the bank mails your new card to the old address, the car insurance renewal quote still has the old postcode on it, a dentist reminder never arrives, and a parcel you were waiting on gets sent back to the sender. None of that sat on a list called change of address. It surfaced over about six weeks, one call at a time, each thread caught only because someone happened to notice it before it became a fee or a missed appointment.",
         ],
       },
       {
-        kind: "paragraphs",
-        heading: "Why generic tools do not help",
-        paragraphs: [
-          "A to-do list assumes the difficulty is remembering. For most of this it is not. The thing has been remembered constantly for weeks.",
-          "A calendar wants a date you do not have yet. A note-taking app holds text and knows nothing about how any of it relates. A spreadsheet holds facts and cannot tell you that changing one makes three others wrong.",
-          "The gap in all of them is the same: they store, and this work needs something that understands connection.",
+        kind: "list",
+        ordered: true,
+        heading: "Three traits that set it apart from a normal task list",
+        items: [
+          "It's invisible when it goes right. Nothing marks the insurance that renewed on time or the appointment that got moved before it clashed with anything, so there's no signal, only the absence of a problem, and the same silence when nothing got done at all.",
+          "It's connected rather than standalone. A flight moves and three separate bookings are suddenly wrong. An address changes and a dozen organizations need telling, each a different way. A death turns out to have kept dozens of small facts in one person's head, and nowhere else.",
+          "It lands hardest exactly when capacity is lowest: a new baby, a bereavement, an illness, a move. The volume of this work doesn't wait for a good week to show up.",
         ],
       },
       {
         kind: "list",
         checkable: true,
         heading: "What this work actually needs",
-        intro: "Tick whatever you already have somewhere. You may find you have the first and none of the rest.",
+        intro: "Check off anything you already have somewhere for this.",
         items: [
-          "Somewhere to put a detail so it is not held in your head.",
-          "Something that knows how the details relate, so one change surfaces what else it touches.",
-          "A short honest answer to what needs attention now, derived from real dates rather than invented urgency.",
-          "Help at the hard moment itself, which is usually a call or a form rather than the deciding.",
-          "Quiet when there is nothing, because most weeks genuinely need very little.",
+          "Somewhere to put a detail so it stops living only in your head.",
+          "Something that knows how the details connect, so one change surfaces what else it touches.",
+          "A short, accurate answer to what needs attention now, built from real dates rather than a guess.",
+          "Help at the moment itself, usually a call, a form or a script, not more planning.",
+          "Silence when there's nothing due, because most weeks need very little from you.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "It is unevenly distributed",
+        heading: "Who ends up carrying it",
         paragraphs: [
-          "In many households one person carries most of this, usually without it being discussed. It is often described as being organized, which frames a workload as a personality trait.",
-          "It is worth naming for that reason alone. Work that has no name is difficult to divide, difficult to hand over, and easy to assume somebody is simply better suited to.",
+          "In many households, one person tracks most of this without it ever being discussed or assigned. A 2019 study of cognitive labor in different-gender couples found that women did more of the anticipating and monitoring work, the parts that happen before anything visible gets done, even among couples who described their split as even. Calling that being naturally organized turns a workload into a compliment; naming it as work is the first step toward splitting it on purpose instead of by default.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "The competence trap",
+        heading: "Why remembering harder doesn't fix it",
         paragraphs: [
-          "People conclude they are bad at admin. Usually what has happened is that the amount is genuinely large, the tools are genuinely poor, and holding that many connected facts in a human memory was never a realistic expectation.",
-          "The productivity industry has spent decades selling harder trying as the solution. More on why that keeps failing in [why productivity tools fail at life admin](/guides/why-productivity-tools-fail-at-life-admin).",
+          "Once this pile is visible, the instinct is to remember better or write longer lists. That rarely holds, because the problem was never memory: most of this has already been remembered for weeks. What's missing is something that tracks how one fact connects to the next and flags it when that connection breaks. Where calendars and to-do lists fall short of that is covered in [why productivity tools fail at life admin](/guides/why-productivity-tools-fail-at-life-admin).",
+        ],
+      },
+      {
+        kind: "faq",
+        items: [
+          {
+            q: "Is life admin a real term or just internet slang?",
+            a: "It's a real, if informal, term. Columbia law professor Elizabeth Emens used it as the title of a book on the office-type work of running a household, from broken technology to funerals, and it has since been picked up as shorthand for exactly that category of unpaid, unscheduled work.",
+          },
+          {
+            q: "Why does life admin feel harder for some people in a household than others?",
+            a: "Partly because it's split unevenly to start with. A 2019 study of cognitive household labor found that women did more of the anticipating and monitoring stages, the work of noticing something is needed and tracking it until it's resolved, even in couples who believed their split was fair.",
+          },
+          {
+            q: "How much time does life admin actually take?",
+            a: "There's no reliable population figure for this, and the numbers that circulate online vary too widely to trust. What is measurable is that the planning happens in your head and your devices rather than on a timesheet, which is part of why it's easy to underestimate.",
+          },
+          {
+            q: "Is life admin the same thing as the mental load?",
+            a: "They overlap heavily. Mental load usually refers to the planning and remembering behind household and childcare tasks specifically. Life admin is the wider category, one that also covers renewals, paperwork, appointments and the calls that follow a life event. What applies to one mostly applies to the other.",
+          },
+          {
+            q: "Can any of this actually be handled by software instead of a person?",
+            a: "Some of it. A renewal date, a service interval or a document's expiry can be tracked and surfaced without you holding it in your head. The parts that need a decision, a phone call or a signature still need you; software can hand you the moment to decide, not make the decision for you.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Where the Companion Series fits",
+        paragraphs: [
+          "The Companion Series is nine Companions across six life areas, each holding the facts for one kind of admin instead of all of it in a single, generic pile. [See the Companion Series](/shop).",
         ],
       },
       {
         kind: "callout",
         label: "The Companion Series",
-        body: "Draftpace makes a Companion for each area of this work: money, home, mind and focus, family and learning, affairs and endings, travel, vehicles and family health. Each holds the state and the connections for one domain, works out what genuinely needs you now, and stays quiet when nothing does. None of them has a streak, a score, or a screen that tells you that you are behind.",
+        body: "Nine Companions, one per life area, each working from the dates you've given it rather than a list you keep sorted by hand. It says nothing when there's nothing due.",
       },
     ],
   },
@@ -8427,85 +10045,130 @@ export const GUIDES: Guide[] = [
     related: [
     ],
     publishedAt: "2026-08-30",
+    updatedAt: "2026-09-26",
     areaSlug: SERIES,
+    sources: [
+      {
+        name: "Wikipedia: Interruption science",
+        url: "https://en.wikipedia.org/wiki/Interruption_science",
+        retrieved: "2026-09-26",
+        note: "Summarizes research (including Gloria Mark's) finding workers take close to half an hour to resume a task after an interruption, and that switching tasks raises error rates.",
+      },
+      {
+        name: "Allison Daminger: The Cognitive Dimension of Household Labor (American Sociological Review, 2019)",
+        url: "https://www.allisondaminger.com/research",
+        retrieved: "2026-09-26",
+        note: "Defines cognitive labor as anticipating, identifying, deciding and monitoring, backing the point that admin requires domain knowledge a generic tool doesn't have.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Most productivity tools were designed around knowledge work: projects with owners, tasks with estimates, boards that move left to right. Applied to a job, they work reasonably well.",
-          "Applied to renewing a passport, chasing a refund and remembering the boiler service, they fall apart. Not because they are badly made, but because life admin has four properties the design never accounted for.",
+          "Productivity apps are built for knowledge work: tasks with owners, boards that move left to right, projects with a deadline. Life admin doesn't behave like that. Its tasks are connected rather than independent, so a generic list can track that something exists without ever telling you that changing one thing breaks three others.",
+          "This is for anyone who has set up a board or a list for personal admin and watched it go stale within a month. It won't tell you which specific app to pick; the mismatch sits in the structure, not the brand, and switching tools rarely fixes it on its own.",
         ],
       },
       {
-        kind: "compare",
-        heading: "The four mismatches",
-        left: {
-          label: "Knowledge work assumes",
-          items: [
-            "Tasks are independent.",
-            "The problem is remembering.",
-            "Work happens in sessions.",
-            "More visibility helps.",
+        kind: "paragraphs",
+        heading: "One change, as an example",
+        paragraphs: [
+          "Say a flight moves by four hours. In a task app, that's one card with a new time on it. In real life, it also touches the airport transfer booked separately, the hotel's check-in window, a pet sitter's schedule, and a connecting flight with its own tight layover. The list only knows about the card you edited. It has no way of knowing the transfer exists at all, let alone that it now needs a phone call before the driver shows up at the wrong time.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Where the assumptions and the work part ways",
+        columns: ["A task app assumes", "Life admin actually behaves like"],
+        rows: [
+          [
+            "A task is independent of the others.",
+            "Almost everything connects to something else; move one date and several other things go wrong with it.",
           ],
-        },
-        right: {
-          label: "Life admin actually is",
-          items: [
-            "Almost everything is connected to something else.",
-            "You have remembered it constantly for three weeks.",
-            "It arrives in interruptions, often at the worst moment.",
-            "Seeing all of it at once is the thing that stops you.",
+          [
+            "The hard part is remembering the task exists.",
+            "You've usually remembered it for weeks already; the hard part is tracking what it's connected to.",
           ],
-        },
-      },
-      {
-        kind: "paragraphs",
-        heading: "Independence is the big one",
-        paragraphs: [
-          "A board of tasks treats every card as a separate thing. Life admin is a web: change your address and a long list of things becomes wrong, move a flight and several bookings need looking at, and a death makes many facts urgent at once.",
-          "No general purpose tool models that, because modelling it requires knowing what kind of thing each item is. A tool that does not know a transfer was booked around a flight cannot tell you anything useful when the flight moves.",
+          [
+            "Work happens in planned sessions.",
+            "It arrives as an interruption, often during a call, a form, or a moment you didn't choose.",
+          ],
+          [
+            "Seeing everything on one board helps you act.",
+            "Seeing all of it at once is frequently what stalls you rather than what moves you forward.",
+          ],
         ],
       },
       {
         kind: "paragraphs",
-        heading: "The maintenance tax",
+        heading: "The upkeep that has no deadline",
         paragraphs: [
-          "Every general tool needs feeding. Categorise the transactions, update the board, tidy the tags. That upkeep is tolerable at work, where it is part of the job and happens in working hours.",
-          "For personal admin it is a second job with no deadline and no colleague noticing, so it stops. And once the data is stale the tool is worse than nothing, because now it is confidently wrong.",
+          "Every general-purpose tool needs feeding: categorizing, tagging, moving cards, archiving what's done. At a job that upkeep is part of the role and happens inside paid hours. For personal admin it's a second task with no deadline and no one checking, so it's usually the first thing dropped when a week gets busy.",
+          "Once the data is stale, the tool becomes worse than nothing, because it now answers confidently and wrong. A task board that still lists a subscription you cancelled months ago isn't neutral; it's actively misleading.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Scores and streaks make it actively worse",
+        heading: "Interruptions cost more than the interruption itself",
         paragraphs: [
-          "Gamification assumes you need motivating. For work that arrives during bereavement, illness and moving, a counter of how many days you have failed is not a motivator. It is a reason to close the app.",
-          "The likely outcome is deletion, which takes the only record of what actually needed doing with it.",
+          "Life admin rarely arrives as a scheduled session. It shows up as a call while you're doing something else, a letter you open between two other things, a form due while you're mid-task on something unrelated. Research on task switching backs up why that costs more than the few minutes the interruption itself takes: workers who get pulled off a task can take close to half an hour to return to it at the same level of focus, and the switch itself raises the odds of a mistake. A tool that assumes admin happens in one dedicated block is planning for a session that, in practice, rarely comes.",
         ],
       },
       {
         kind: "list",
-        heading: "What a tool for this has to do differently",
         ordered: true,
+        heading: "What a tool for this actually has to do",
         items: [
-          "Know what kind of thing each item is, so it can understand relationships instead of storing rows.",
-          "Derive what matters from stored facts rather than asking you to prioritise a list.",
-          "Stay roughly right when ignored for a month, because it will be.",
-          "Say plainly when nothing needs you, and mean it.",
-          "Never score the person using it.",
+          "Know what kind of thing each item is, not just that it exists, so it can show you what else a change touches.",
+          "Work out what's due from stored facts and real dates, rather than asking you to rank a list by hand.",
+          "Stay roughly accurate after being ignored for a month, because it will be, more than once.",
+          "Say plainly when nothing is due, and mean it, rather than manufacturing a reason to open the app.",
+          "Hold the connections between items across areas, not just a title and a due date.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Which is why these are separate products",
+        heading: "Why this ends up needing more than one app",
         paragraphs: [
-          "Understanding that a transfer depends on a flight, or that a warranty requires an annual service, or that a pension nomination overrides a will, requires knowing the domain. A single tool covering everything would have to know all of it, which is how you end up with something that stores rows and understands nothing.",
-          "The wider case for the category is in [life admin, the work nobody teaches you](/guides/life-admin-the-work-nobody-teaches-you).",
+          "Knowing that a transfer depends on a flight, or that a warranty needs an annual service to stay valid, or that a nomination on a pension can override a will, requires knowing the domain those facts live in. A single generic board covering everything would have to encode all of that at once, which is how you end up with a tool that stores rows and understands none of them.",
+        ],
+      },
+      {
+        kind: "faq",
+        items: [
+          {
+            q: "Why do I abandon my to-do list app for personal tasks after a few weeks?",
+            a: "Usually because the upkeep, categorizing, tagging, moving cards, outweighs what the app gives back. That trade works at a job, where the tidying is part of paid time. For personal admin there's no one checking the board, so tidying is the first thing to slip, and once it's stale the app stops being trustworthy. More on that pattern in [why you abandon planners and how to come back](/guides/why-you-abandon-planners-and-how-to-come-back).",
+          },
+          {
+            q: "Is a shared calendar enough for household admin?",
+            a: "For dated events, mostly. A calendar is poor at anything without a date yet, at facts such as a policy number or a serial number, and at showing that two entries are related. It also has no way to say a week needs nothing from you, which is half of what this kind of work needs answered.",
+          },
+          {
+            q: "Do rewards like points or daily check-ins help you keep using an admin app?",
+            a: "Not for this kind of work. Gamified prompts assume the barrier is motivation, but personal admin often arrives during a bereavement, an illness or a move, when a counter of missed days offers nothing helpful. It reads as one more thing going wrong, and the more common outcome is deleting the app, taking whatever record existed with it.",
+          },
+          {
+            q: "Can a spreadsheet do what a life admin tool does?",
+            a: "It can hold facts well: dates, numbers, account details. What it can't do on its own is tell you that changing one cell should change three others, or work out what's due without a formula you build and maintain yourself. It scales with your own upkeep, the same limit as any general tool.",
+          },
+          {
+            q: "What should I look for instead of a generic productivity app?",
+            a: "Something built around the kind of thing you're tracking rather than a blank task, so it already knows how a service interval or a policy renewal behaves, and can tell you plainly when nothing about it needs your attention this week.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Where the Companion Series fits",
+        paragraphs: [
+          "The Companion Series takes the opposite approach: nine Companions across six life areas, each built around the kind of admin its area actually contains rather than a single board asked to understand everything at once. [See the Companion Series](/shop).",
         ],
       },
       {
         kind: "callout",
         label: "The Companion Series",
-        body: "Each Draftpace Companion covers one area and knows what the things in it are, which is what lets it tell you that one change affects three others. None requires daily upkeep to stay useful, none contains a streak or a score, and each says plainly when nothing needs you.",
+        body: "Each of the nine Companions stays inside its own area and its own facts. None of them needs daily upkeep to stay accurate, and each says plainly when nothing in its area is due.",
       },
     ],
   },
@@ -10008,33 +11671,69 @@ export const GUIDES: Guide[] = [
       { slug: "moving-into-a-rental-what-to-document", reason: "In a rental, a dated record helps at move-out, and this covers what to document on day one." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "home",
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Many home maintenance logs stop being kept early. They ask for too much: model numbers, part costs, photos, reference codes. Every extra field is a reason to put it off until tomorrow.",
-          "A log that survives asks for very little. It is there to answer three questions later: when did we last do this, who did it, and what did it cost. Everything else is optional.",
+          "A home maintenance log needs four fields: the date, what was done, who did it, and what it cost. Add a fifth line, one note, only when there's something worth remembering. That's the whole format, on paper or in an app, and it's short on purpose: every extra field is a reason to put the entry off until tomorrow.",
+          "This works for any home, rented or owned, one system or a house full of them. It's a place to write down what happened, not a scheduler. For how often something is due in the first place, see [how often things in your house actually need servicing](/guides/how-often-home-systems-need-servicing).",
         ],
       },
       {
         kind: "table",
-        heading: "What to write each time",
-        columns: ["Field", "Example", "Why it matters"],
+        heading: "Example: three entries from one log",
+        intro: "A made-up week, not a real one, to show how little each entry needs.",
+        columns: ["Date", "What was done", "Who did it", "Cost", "Note"],
         rows: [
-          ["Date", "Aug 14", "Tells you when the clock started for the next one"],
-          ["What was done", "Flushed the water heater tank", "Says what changed, in plain words"],
-          ["Who did it", "Ace Plumbing, or you", "Gets you a phone number next time, not a search"],
-          ["What it cost", "$180.00", "Lets you compare quotes and spot a price that is off"],
-          ["One note", "Anode rod is due next time", "The one line that saves the next visit"],
+          [
+            "Aug 14",
+            "Flushed the water heater tank",
+            "Ace Plumbing",
+            "$180.00",
+            "Anode rod is due next time",
+          ],
+          [
+            "Oct 2",
+            "Cleaned the dryer vent",
+            "You",
+            "$0",
+            "More lint than expected, check every 6 months",
+          ],
+          [
+            "Nov 20",
+            "Furnace tune-up",
+            "Reliable Heat & Air",
+            "$145.00",
+            "Said the blower belt is wearing",
+          ],
         ],
+      },
+      {
+        kind: "table",
+        heading: "What each field is for",
+        columns: ["Field", "What it's for"],
+        rows: [
+          ["Date", "Tells you when the clock started for the next one"],
+          ["What was done", "Says what changed, in plain words"],
+          ["Who did it", "Gets you a phone number next time, not a search"],
+          ["What it cost", "Lets you compare quotes and spot a price that's off"],
+          ["One note", "The one line that saves the next visit"],
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Copy this format",
+        intro: "Five lines, blank, ready to fill in for your own first entry.",
+        items: ["Date:", "What was done:", "Who did it:", "What it cost:", "One note for next time:"],
       },
       {
         kind: "paragraphs",
         heading: "The note that saves money",
         paragraphs: [
-          "The most valuable field is the last one. When a technician tells you what is coming next, write it down. \"Belt is wearing.\" \"Other spring will go soon.\" \"Filter size is different from what the old one said.\" That sentence is the difference between a routine visit and an emergency, because you will remember to raise it when you book.",
-          "If a repair needed a diagnosis, write that down too. The diagnosis matters more than the invoice, which is covered in [what to keep after a home repair](/guides/what-to-keep-after-a-home-repair).",
+          "The most valuable field is the last one. When a technician tells you what's coming next, write it down. \"Belt is wearing.\" \"Other spring will go soon.\" \"Filter size is different from what the old one said.\" That sentence is the difference between a routine visit and a surprise, because you'll remember to raise it when you book the next one.",
+          "If a repair needed a diagnosis, write that down too. The diagnosis is worth more than the invoice, which is covered in [what to keep after a home repair](/guides/what-to-keep-after-a-home-repair).",
         ],
       },
       {
@@ -10043,24 +11742,62 @@ export const GUIDES: Guide[] = [
         checkable: true,
         items: [
           "Write it the same day, while you can still remember the detail.",
-          "Keep one log for the whole house, not one per room.",
-          "Write the cost even if it is a rough figure.",
+          "Keep one log for the whole house, not one per room or per appliance.",
+          "Write the cost even if it's a rough figure.",
           "Add the phone number the first time you use someone new.",
-          "Skip the fields you will never look at.",
+          "Skip the fields you'll never look at again.",
         ],
       },
       {
         kind: "paragraphs",
         heading: "Paper or app",
         paragraphs: [
-          "Either works. A single page in a binder is fine if the binder lives somewhere you can reach it. The Home Survey, a printable book from Draftpace, has a page laid out much like this for the home's memory, and the app version does the same job on your phone.",
-          "The point is not the format. It is that the answer is in one place when the water heater fails and someone asks how old the anode rod is.",
+          "Either works. A single page in a binder is fine if the binder lives somewhere you can actually reach. The Home Survey, a printable book from Draftpace, lays out a page much like this one for the home's memory, and the app version does the same job from your phone.",
+          "Format counts less than location. What decides whether a log survives is whether the answer is in one place the day the water heater fails and someone asks how old the anode rod is.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Why most logs stop after a few entries",
+        paragraphs: [
+          "Most maintenance logs die in the first month, not from one big failure but a small one: the notebook migrates to a drawer, or an app update adds two extra taps, and the next entry never happens.",
+          "If yours has stalled, cut it down to just the date and what was done until the habit is back, then add cost and who back in once it sticks. A log with two fields, kept, is worth more than a five-field log that stopped in March.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions about keeping a log",
+        items: [
+          {
+            q: "What should a home maintenance log include?",
+            a: "Four fields cover almost everything useful: the date, what was done, who did it, and what it cost. Add a fifth line only when a technician tells you something worth remembering for next time, since that note is often more useful later than the invoice itself.",
+          },
+          {
+            q: "How often should I update my maintenance log?",
+            a: "Write the entry the same day you do the work or the technician leaves, while the detail is still fresh. A log updated weeks later tends to lose the one line that actually helps next time, the note about what's coming.",
+          },
+          {
+            q: "Should I keep a separate log for each appliance or one for the whole house?",
+            a: "One log for the whole house is easier to keep than several. A single running list, sorted by date, answers 'when did we last do this' faster than hunting through separate appliance folders, and it's the format most printable and digital logs use.",
+          },
+          {
+            q: "Do I need to keep receipts along with the log?",
+            a: "Keep them somewhere, but they don't have to live in the log itself. Write the cost as a number in the entry, and keep the actual receipt or invoice wherever your paperwork already lives: a folder, an email, a scan. The log is the index, not the filing cabinet.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What Home Base does with this",
+        paragraphs: [
+          "Home Base has an Action button on every job. Tap it and it asks when, who did it, what it cost, and whether there's anything worth remembering. Saving writes a line to the home's History and resets the clock. It stores what you type, not receipts or files, so keep the paperwork where it already lives and link to it if useful.",
+          "See it in [Home Base](/shop/home-management-companion).",
         ],
       },
       {
         kind: "callout",
-        label: "The Companion for this",
-        body: "Home Base has an Action button on every job. Tap it and it asks when, who did it, what it cost, and whether there is anything worth remembering. Saving writes a line to the home's History and resets the clock. It stores what you type, not receipts or files, so keep the paperwork where it already lives and link to it if you like.",
+        label: "Where Home Base fits",
+        body: "Home Base's Action sheet asks the same four fields as this page, then writes them straight to the home's History. It doesn't hold receipts or files, only what you type.",
       },
     ],
   },
@@ -14323,66 +16060,132 @@ export const GUIDES: Guide[] = [
       { slug: "how-to-start-homeschooling-first-month-paperwork", reason: "New to all this? Here is the order to set things up in the first month, ending with a plain first week." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "family-and-learning",
+    sources: [
+      {
+        name: "Homeschool Connections, 8 Tips for Scheduling Your Homeschool Day",
+        url: "https://homeschoolconnections.com/how-to-schedule-homeschool-day-2/",
+        retrieved: "2026-09-26",
+        note: "Backs using a weekly buffer day for catch-up work, the general planning practice behind the spare day.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Most weekly homeschool schedules are written for a week in which nothing goes wrong. Nobody is ill, nobody has an appointment, and everybody is in a good mood at nine o'clock. Those weeks are rare, and a plan that only works in them fails by Wednesday.",
-          "A plan that survives a bad day has three parts: a day left empty on purpose, a short day decided in advance, and the hardest subject placed early. None of them needs a special tool. A sheet of paper is enough.",
+          "A homeschool weekly plan that survives a bad day plans four full days and leaves one spare, decided on paper before the week starts, not chosen on the fly. The hardest subject goes first, while everyone still has something left. The spare day absorbs whatever the week throws at it: an appointment, a sick morning, a lesson that ran long.",
+          "This is a planning method for homeschooling in the United States, on paper or in an app, not a rule any state sets. It can't tell you how many days or hours your own state expects, only how to build a week that survives an ordinary bad Tuesday: see [do you have to count homeschool days or hours](/guides/do-you-have-to-count-homeschool-days-or-hours) for that separate question.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Leave one day empty on purpose",
+        heading: "An example: four subjects, one spare Wednesday",
         paragraphs: [
-          "Write Monday to Friday, then mark one day as spare and leave it blank when you plan. It is not a day off. It is the day that absorbs whatever the week throws at you: the appointment, the sick morning, the lesson that took twice as long as it should have.",
-          "In a week where nothing goes wrong, the spare day becomes a lighter day, a catch-up, or a day out. In a week where something does, it is the reason one lost morning does not spill into the rest of the week.",
+          "Say a family teaches four subjects, math, reading, writing and science, four days a week each. Written out, the week is Monday, Tuesday, Thursday and Friday full, and Wednesday carries nothing at all: no math lesson planned, no reading chapter due. In an ordinary week, Wednesday becomes a lighter day, an errand day, or a trip to the library. In the week the toddler gets a stomach bug on Tuesday night, Wednesday is where Tuesday's math lesson actually happens, and nothing else in the week has to move.",
+          "Nothing about the subjects changed. Four days a week is still four days a week. The only decision was which day carries nothing, made in September rather than guessed at on a Tuesday morning.",
         ],
       },
       {
         kind: "table",
-        heading: "What the week looks like",
-        columns: ["Day", "Plan"],
+        heading: "How a four-day subject actually lands on the calendar",
+        intro: "The weekday pattern Homeschooling Companion uses once you set a subject to a given number of days a week. Wednesday only stays empty at four days or fewer, with this particular split.",
+        columns: ["Days a week", "Runs on"],
         rows: [
-          ["Monday", "The full plan"],
-          ["Tuesday", "The full plan"],
-          ["Wednesday", "Spare. Leave it empty when you plan."],
-          ["Thursday", "The full plan"],
-          ["Friday", "The full plan, or a lighter one"],
+          ["0", "Never (kept on record, not on Today)"],
+          ["1", "Wednesday"],
+          ["2", "Tuesday, Thursday"],
+          ["3", "Monday, Wednesday, Friday"],
+          ["4", "Monday, Tuesday, Thursday, Friday"],
+          ["5", "Monday through Friday"],
+          ["6", "Monday through Saturday"],
+          ["7", "Every day"],
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Put the hard thing first",
         paragraphs: [
-          "Whatever is hardest for your child, or for you, goes early in the day, while there is still something left in everyone. The rest of the day can then be shorter without being a failure, because the part that mattered most has already happened.",
-          "This is also the easiest rule to keep. You do not have to rewrite anything. You only change the order.",
+          "A subject set to three days a week or fewer already has slack built into the calendar. It's the four and five-day subjects, the ones that fill most of the week, where a spare day has to be planned on purpose, because nothing in the schedule leaves one for you.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Put the hardest subject first, and keep it short",
+        paragraphs: [
+          "Whatever is hardest, for your child or for you, goes first in the day, while there's still patience left on both sides. This isn't about adding time to it: keep the hard subject to its usual length, just move it earlier, so a rough start doesn't sour everything that comes after it.",
+          "If a subject is hard most days rather than occasionally, that's a different problem than timing. [When a homeschool subject is not working: what to change first](/guides/homeschool-subject-not-working-what-to-change-first) covers what to try before assuming the material itself is the issue.",
         ],
       },
       {
         kind: "list",
-        heading: "Decide in advance what a short day looks like",
-        intro: "Fill these in once, on a normal day, and keep them where you will see them. Deciding on a bad morning is much harder than following a decision you already made.",
         checkable: true,
+        heading: "Decide the short-day list before you need it",
+        intro: "Fill these in once, on an ordinary day, and keep them somewhere you'll actually see on the day you need them.",
         items: [
           "On a short day we always do: (two or three things, no more).",
           "On a very short day we always do: (one thing).",
-          "The thing we drop first is: (name it now).",
+          "The subject we drop first is: (name it now, not on the day).",
         ],
       },
       {
         kind: "paragraphs",
         heading: "What to record on a short day",
         paragraphs: [
-          "A short day still counts, and it is still worth one line: the date, what you did, and one word about how it went. A record made up of only full days quietly tells a story that is not true, and a short day written down is more honest than a blank one.",
-          "For a simple way to keep the record light enough to survive a bad week, see [the simplest homeschool record keeping system that actually lasts](/guides/simple-homeschool-record-keeping-system).",
+          "The same way as any other day: a date, what you actually covered, even if it's one subject for fifteen minutes, and one word on how it went. A record made only of full days tells a story that isn't true. A short day written down is worth more than a blank one.",
+          "For the habit that keeps a log like this going past the first month, see [a simple homeschool record keeping system you will keep](/guides/simple-homeschool-record-keeping-system).",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Where this plan breaks down",
+        paragraphs: [
+          "The most common mistake is treating the spare day as a day off every single week, whether or not anything went wrong. Do that, and the week you actually need it, the one with the stomach bug, has already been spent on a museum trip, and something else has to give instead.",
+          "The second is assuming an app or planner has a spare-day switch somewhere. Homeschooling Companion doesn't have one: a day with nothing scheduled just shows as a day with nothing scheduled, and it's specific to each subject's own day count, not a single feature you turn on for the whole week. The plan lives on your own calendar or a page like the handbook's weekly one, not inside a setting.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "More than one child, one spare day",
+        paragraphs: [
+          "The spare day covers the whole household, not one child at a time, but whatever it absorbs still needs recording per child once it happens. Log each child's short day the way you'd log any other day, on their own page, even when the cause was the same appointment or the same stomach bug for everyone. [Keeping records for more than one child without mixing them up](/guides/homeschool-record-keeping-for-multiple-children) covers filing by child in more detail.",
+        ],
+      },
+      {
+        kind: "faq",
+        items: [
+          {
+            q: "What is a spare day in a homeschool schedule?",
+            a: "A day left empty on purpose when you plan the week, so it can absorb whatever goes wrong, an appointment, a sick morning, a lesson that ran long, without pushing the rest of the week around. In a week where nothing goes wrong, it becomes a lighter day or a day out instead.",
+          },
+          {
+            q: "Is a four-day homeschool week enough?",
+            a: "For most families, yes, if the fifth day isn't simply dropped but planned as slack. A subject set to four days a week still gets four sessions; the difference is which specific days carry it. What a four-day week can't tell you is whether it satisfies your own state's day or hour count, if it sets one, so check that separately.",
+          },
+          {
+            q: "What if the spare day isn't needed some weeks?",
+            a: "Then use it for whatever the week could use: a lighter day, an outing, a trip to the library, or nothing at all. A spare day that goes unused isn't wasted. It did its job by existing, the same way a spare tire earns its place without ever being driven on.",
+          },
+          {
+            q: "How do I record a short day so it doesn't look like a failure?",
+            a: "The same way as any other day: a date, what you actually covered, even if it's one subject for fifteen minutes, and one word on how it went. Leaving the day blank hides that anything happened at all; a short line is a truer record than a gap.",
+          },
+          {
+            q: "Can I set a subject to run on specific days in Homeschooling Companion?",
+            a: "You choose how many days a week, from zero to seven, for each subject on a child's page, and the app spreads it across the week using a fixed pattern rather than letting you pick individual weekdays. Zero keeps a subject on record without putting it on the Today screen at all.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What the Companion does with the plan",
+        paragraphs: [
+          "Homeschooling Companion doesn't build a weekly plan for you, and it has no setting called a spare day. What it does is take the day count you choose for each subject, zero to seven, and show only what's due that day on the Today screen; a day with nothing scheduled reads \"Nothing scheduled today,\" plainly, not as a warning. Recording a subject is one tap, and marking one \"Did not get to it\" still records the day: it comes back next time as a quiet flag, \"Last time this was not finished,\" rather than a gap in the log. See it on the [Homeschooling Companion](/shop/homeschooling-companion) page.",
         ],
       },
       {
         kind: "callout",
-        label: "The Companion for this",
-        body: "In Homeschooling Companion, you choose how many days a week each subject happens, from 0 to 7, and Today shows what is planned for that day. Recording a subject is one tap, and marking Did not get to it is recorded as not finished, so it comes back next time as Last time this was not finished. It does not build a plan for you and it does not judge a short day. It has no spare-day setting: a day with nothing planned shows Nothing scheduled today. It is a web app, $34 once.",
+        label: "The plan is yours",
+        body: "The app tracks what happened once you've decided what to plan. Building the week, including which day stays empty, is entirely up to you and stays that way.",
       },
     ],
   },
@@ -14399,81 +16202,124 @@ export const GUIDES: Guide[] = [
       { slug: "homeschool-subject-not-working-what-to-change-first", reason: "If a subject gets four days and still is not moving, start here for the cheapest fix first." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "family-and-learning",
+    sources: [
+      {
+        name: "The Home School Mom: How to Create a Homeschool Schedule (with 10 Sample Schedules)",
+        url: "https://www.thehomeschoolmom.com/arranging-strong-week-homeschool-schedule/",
+        retrieved: "2026-09-26",
+        note: "General practice for four-day weeks: curricula built with four- and five-day plans, and the open day becoming a field-trip or errand day.",
+      },
+      {
+        name: "Proverbial Homemaker: Our Year-Round 4-Day a Week Homeschooling Schedule",
+        url: "https://www.proverbialhomemaker.com/4-day-homeschooling-schedule.html",
+        retrieved: "2026-09-26",
+        note: "Example of running four days year-round with shorter breaks instead of one long summer, used for the 'does four days cover the material' section.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "A family that plans five days and manages four has failed at something every single week. A family that plans four and manages four has not. The work done is identical. One of them has a plan that fits the week.",
-          "A four-day week is not a lesser week. It is a plan you can keep, which matters more than a plan that looks better on paper.",
-        ],
-      },
-      {
-        kind: "paragraphs",
-        heading: "Why four is easier to keep than five",
-        paragraphs: [
-          "Every homeschooling week contains interruptions: appointments, a sibling's illness, a day out that ran late, a morning that simply did not happen. A five-day plan has no room for any of them, so each one becomes a small failure.",
-          "A four-day plan has a spare day. When something goes wrong, the work moves to it. When nothing does, the day is free, and a free day can make a plan easier to keep.",
-        ],
-      },
-      {
-        kind: "compare",
-        heading: "Two families, the same amount of work",
-        left: {
-          label: "Plans five, manages four",
-          items: [
-            "Feels short every week",
-            "The plan is never met, so it stops being looked at",
-            "Records show gaps that were never really gaps",
-          ],
-        },
-        right: {
-          label: "Plans four, manages four",
-          items: [
-            "Meets the plan every week",
-            "The plan is kept, so it keeps being used",
-            "Records match what happened",
-          ],
-        },
-      },
-      {
-        kind: "paragraphs",
-        heading: "How to spread subjects across four days",
-        paragraphs: [
-          "Not every subject needs to happen every day. Start by deciding how many days each one gets, then place them so no single day is overloaded.",
+          "A four-day homeschool week means teaching on four fixed days and leaving the fifth open on purpose, then deciding how many of those four days each subject actually needs, because not every subject needs all four. Math might run all four days. Geography might run one. You decide the numbers once, and the plan follows them after that.",
+          "This is for a family in the United States moving from five teaching days to four, or starting out with four from day one. It won't tell you whether four days meets your state's required count of days or hours, since that's a separate question with a different answer in every state.",
         ],
       },
       {
         kind: "table",
-        heading: "One example, as a suggestion",
-        columns: ["Subject", "Days a week"],
+        heading: "Three ways to lay out four days",
+        intro: "Three real shapes this takes, as an example. None is the correct one. Pick whichever fits the day you actually have free.",
+        columns: ["Layout", "Days taught", "What happens to the fifth day"],
         rows: [
-          ["Math", "4"],
-          ["Reading", "4"],
-          ["Writing", "3"],
-          ["Science", "2"],
-          ["History", "2"],
-          ["Geography", "1"],
+          [
+            "Front-loaded",
+            "Monday, Tuesday, Wednesday, Thursday",
+            "Friday is open for a co-op, a field trip, or errands",
+          ],
+          [
+            "Split around a spare day",
+            "Monday, Tuesday, Thursday, Friday",
+            "Wednesday is open, so a bad Monday still leaves three days",
+          ],
+          [
+            "Back-loaded",
+            "Tuesday, Wednesday, Thursday, Friday",
+            "Monday is open, useful when an outside class runs that morning",
+          ],
+        ],
+      },
+      {
+        kind: "list",
+        heading: "How to decide the days per subject",
+        ordered: true,
+        intro: "Do this once, on paper, before the first Monday, not during it.",
+        items: [
+          "List every subject you plan to teach, then write a number of days a week next to each one, from zero to four.",
+          "Give the subjects that need steady practice, usually math and reading, the most days. A subject a child needs to keep touching to keep momentum belongs on most or all four.",
+          "Give lighter subjects fewer days. History, geography and science often hold up fine on one or two.",
+          "If a co-op, an outside class, or another family's schedule already fixes one day for you, build the other three around it instead of working against it.",
+          "Write the numbers down somewhere you will actually look at again. A number decided once and then forgotten is worse than no number at all.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "One shape, as a suggestion",
+        intro: "One family's split, not a rule. Change every number to fit your child.",
+        columns: ["Subject", "Days a week", "Why"],
+        rows: [
+          ["Math", "4", "Needs steady practice to hold"],
+          ["Reading", "4", "Same reason as math"],
+          ["Writing", "3", "Holds up fine with a day off between sessions"],
+          ["Science", "2", "A unit or an experiment doesn't need daily time"],
+          ["History", "2", "Reads well in fewer, longer sessions"],
+          ["Geography", "1", "A single focused session a week is often enough"],
         ],
       },
       {
         kind: "paragraphs",
+        heading: "Does four days cover the same material?",
         paragraphs: [
-          "That is only one shape. Change it to fit your child. The point is that the numbers are decided once, not renegotiated every morning.",
+          "The real worry under this question is not the schedule, it is whether four days adds up to enough over a year. There are two ways to handle it, and neither depends on stretching each day longer. Run four days across a standard school year, the same roughly 36 weeks most curricula are built for, and the fifth day simply is not taught. Some subjects lose a little ground that way, which is why lighter subjects work better with fewer days than heavy ones.",
+          "Some homeschooling families instead run four days year-round, taking shorter breaks spread across the calendar rather than one long summer, so the fifth day gets absorbed into a longer year instead of a shorter one. Neither approach is wrong. Pick whichever matches how your family actually uses the summer months.",
+        ],
+      },
+      {
+        kind: "faq",
+        items: [
+          {
+            q: "Does a four-day homeschool week cover the same material as five?",
+            a: "It can, if you spread the same total amount of work across the year rather than trying to fit five days of content into four. Run four days over a standard school year and the fifth day's material simply is not taught, which is fine for subjects that hold up on less time. Run four days year-round instead, with shorter breaks through the calendar, and nothing gets dropped at all.",
+          },
+          {
+            q: "Which day should be the one left free?",
+            a: "Whichever day a co-op, an outside class, or another family's schedule already fixes for you. Build the other three around that day instead of working against it. With nothing already fixed, a day in the middle of the week gives a bad Monday somewhere to recover, while a day at the end suits a family that wants a long weekend.",
+          },
+          {
+            q: "What if my child has a co-op or outside class on one of the four days?",
+            a: "Treat that day as already spoken for and plan the remaining three around it. A subject that meets at the co-op does not need a second session at home the same week, so it can often drop to zero or one day on your own schedule.",
+          },
+          {
+            q: "Does four days meet my state's required count?",
+            a: "That is a separate question from how you lay out the week. Some US states set a number of days or hours you have to clear regardless of how they are arranged, and many set no number at all. Check your own state's rule before assuming four days is or is not enough.",
+          },
+          {
+            q: "Do all subjects need the same number of days?",
+            a: "No. Subjects that need steady practice to hold, commonly math and reading, tend to do best with three or four days a week. Subjects read or covered in longer sessions, like history or geography, often hold up fine on one or two.",
+          },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "What to record",
+        heading: "What Homeschooling Companion does with the numbers",
         paragraphs: [
-          "Record what actually happened: the date, the subject, and one word about how it went. A four-day week produces four days of entries and a spare day with nothing on it. That is a complete record, not an incomplete one.",
-          "If your state asks for a number of days, find out what it counts, and find out early. Our guide on [homeschool attendance and what to track](/guides/homeschool-attendance-what-to-track) covers it, and the official source for your state is the one that decides.",
+          "In Homeschooling Companion, each subject on a child's page has its own \"How often\" number, a button from 0 to 7 days a week, and that number is the only thing that decides what shows up on Today. Set a subject to 1 and it runs on Wednesday. Set it to 4 and it runs Monday, Tuesday, Thursday and Friday. Set it to 0 and the subject stays on record without ever appearing on Today. It does not choose these numbers for you, and a day with nothing scheduled does not count as missed. See [Homeschooling Companion](/shop/homeschooling-companion).",
         ],
       },
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "In Homeschooling Companion, each subject has its own number of days a week, from 0 to 7, and Today shows what is planned for the day. You decide the numbers. A subject set to 4 days runs Monday, Tuesday, Thursday and Friday, which leaves Wednesday free. It does not choose the numbers for you and it does not count a day with nothing planned as missed. It is a web app, $34 once.",
+        body: "A subject set to four days a week runs Monday, Tuesday, Thursday and Friday, using the same weekday map for every number from 0 to 7. You decide the numbers, and a free day never counts as a missed one.",
       },
     ],
   },
@@ -14481,7 +16327,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "homeschool-notice-of-intent-explained",
     title: "Homeschool notice of intent: what it is, how to find yours",
-    dek: "Sometimes a declaration or affidavit. What a notice usually covers, whether it goes to the state or your district, and five steps to find yours.",
+    dek: "Sometimes called a declaration or affidavit. What a notice usually asks for, two real states as examples, and five steps to find your own.",
     primaryQuery: "homeschool notice of intent",
     next: { slug: "do-you-have-to-count-homeschool-days-or-hours", reason: "After the notice is filed, find out whether your state also wants a count of days or hours." },
     related: [
@@ -14490,21 +16336,75 @@ export const GUIDES: Guide[] = [
       { slug: "how-to-catch-up-on-homeschool-records", reason: "Missed a filing or a record from the start? This covers how to rebuild what you can and label it." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "family-and-learning",
+    sources: [
+      {
+        name: "Florida Homeschooling: Notice of Intent",
+        url: "https://florida-homeschooling.org/how-to-homeschool/public-or-private/registering-with-the-school-district/notice-of-intent/",
+        retrieved: "2026-09-26",
+        note: "Florida Statute 1002.41: notice to the district superintendent within 30 days of starting; name, date of birth, address; filed once.",
+      },
+      {
+        name: "New Mexico Public Education Department: Home Schooling",
+        url: "https://web.ped.nm.gov/bureaus/options-for-parents-and-families/home-schooling/",
+        retrieved: "2026-09-26",
+        note: "Registration within 30 days of starting, renewed annually June 1 to August 1, online or on paper, certified mail recommended for paper filings.",
+      },
+      {
+        name: "Coalition for Responsible Home Education: Inside Homeschool Policy",
+        url: "https://crhe.org/research/current-policy/",
+        retrieved: "2026-09-26",
+        note: "12 states require no notice of intent at all, per CRHE's tracking, used instead of an unverifiable annual/one-time split.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "A notice of intent is, in plain terms, a filing that tells your state or your local school district that you are homeschooling. In some places it is called a declaration, an affidavit, or a letter of intent. The name varies, and so does what it has to contain.",
-          "This guide explains what the phrase usually means and how to find out what applies to you. It is not legal advice, and it cannot tell you what your state requires. Laws change, and the official source is the one that counts.",
+          "A homeschool notice of intent is a form that tells your state or district a child will be taught at home. It goes to a state education department or a district superintendent depending on where you live, is due once or every year, and by one tracking group's count, 12 US states ask for none at all.",
+          "This explains what the phrase usually covers and how to find your own state's version. It is not legal advice, it cannot tell you your state's current requirement, and the official source for your state is the only one that decides.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "What it usually covers",
+        heading: "What two real states actually ask for",
         paragraphs: [
-          "Where a notice is required, it is typically a short document. It usually names the child, gives their age or grade, and states that they will be educated at home. Some places ask for more, and some ask for less.",
-          "Whether you file it once, once a year, or not at all depends on where you live. Some places require nothing to be filed. That is why the first job is finding out which kind of place yours is.",
+          "Take Florida. Under Florida Statute 1002.41, a parent files the notice with the district school superintendent's office where they live, within 30 days of starting the home education program. It has to include each child's name, date of birth and address, and it is filed once, not every year, for a child who will be six or older by February 1 of that school year.",
+          "New Mexico works differently. The state's Public Education Department wants a home school registered within 30 days of starting, then renewed every year between June 1 and August 1, filed with the state, not the local district, either online or on paper. For a paper filing, the department recommends certified mail with a delivery receipt, since a lost form with no proof of sending is a hard thing to argue about later.",
+          "Both are real, current rules from two state agencies. Neither is yours unless you live there. They show the two shapes a notice can take: a one-time filing to a district, or an annual filing to the state.",
+        ],
+      },
+      {
+        kind: "compare",
+        heading: "Two real states, side by side",
+        left: {
+          label: "Florida: one-time, to the district",
+          items: [
+            "Name, date of birth, address",
+            "Filed within 30 days of starting",
+            "Goes to the district superintendent",
+          ],
+        },
+        right: {
+          label: "New Mexico: annual, to the state",
+          items: [
+            "Registered online or on paper",
+            "Renewed every year, June 1 to August 1",
+            "Goes to the state education department",
+          ],
+        },
+      },
+      {
+        kind: "list",
+        heading: "What to have ready before you fill one out",
+        checkable: true,
+        items: [
+          "The child's full legal name, spelled exactly as on their birth certificate.",
+          "Date of birth or age, and grade if your state's form asks for it.",
+          "The family's home address.",
+          "The parent or instructor's name.",
+          "A short statement that the child will be taught at home. Most states want this plain, not a description of your curriculum.",
         ],
       },
       {
@@ -14512,31 +16412,58 @@ export const GUIDES: Guide[] = [
         heading: "How to find yours",
         checkable: true,
         items: [
-          "Go to your state department of education website and look for homeschool or home instruction.",
-          "Check whether the notice goes to the state or to your local district. It varies.",
-          "Note when it is due. Some places want it before you begin, and some after a set period.",
-          "Note whether it has to be filed again each year.",
-          "Keep a copy of what you filed, and the date you filed it.",
+          "Go to your state department of education's own website and search for home school or home instruction, not a third-party ranking.",
+          "Check whether the notice goes to the state directly or to your local district's superintendent. It varies, as Florida and New Mexico show above.",
+          "Note whether it is due once or has to be filed again every year, and if so, the exact window.",
+          "Ask a state homeschool organization to point you to the current form. They often explain it in plain language, then confirm it against the state's own page, since organizations can be out of date too.",
+          "Send it by certified mail with a return receipt if it is going by paper, and keep the receipt and a copy of what you sent.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "State organizations can help you find it",
+        heading: "A notice is not the whole of it",
         paragraphs: [
-          "Most states have a homeschool organization run by families who have already done this. They often explain the official process in plain language. Use them to orient yourself, then confirm against the official source, because organizations can be out of date too.",
+          "Filing the wrong document is the most common mistake. A notice of intent tells your state you are starting to homeschool. It is not the same thing as a withdrawal letter, which tells your child's current school you are taking them out, and some families need to send both. A state that asks for no notice at all can still expect a withdrawal letter if a child was already enrolled somewhere.",
+          "Filing late is the second mistake. Some states expect the notice before you begin, and treat homeschooling that starts without one as a truancy problem until it is filed, so do this early if your state requires it at all.",
+          "Assuming a state with no filing has no rules at all is the third. By the Coalition for Responsible Home Education's tracking, 12 US states ask for no notice, but several of those still expect a parent to teach a specific set of subjects or keep basic records. No notice is not the same as no requirements.",
+        ],
+      },
+      {
+        kind: "faq",
+        items: [
+          {
+            q: "What is the difference between a notice of intent and a withdrawal letter?",
+            a: "A notice of intent tells your state or district that a child will be taught at home going forward. A withdrawal letter tells a school your child is currently attending that you are taking them out. If your child is already enrolled somewhere, you may need to send both, and they often go to different places.",
+          },
+          {
+            q: "Is a notice of intent the same as an affidavit?",
+            a: "Often, yes, just under a different name. Some states call it a notice, some a declaration, and some an affidavit, which usually means it has to be signed under oath or notarized. The name your state uses is on its own homeschool page, and it changes what the form actually requires.",
+          },
+          {
+            q: "What happens if I do not file a required notice of intent?",
+            a: "It depends on your state, but it can range from nothing enforced in practice to a truancy referral if a district notices a school-age child not enrolled anywhere. Filing on time, and keeping a copy, is the simplest way to avoid the question ever coming up.",
+          },
+          {
+            q: "Can a homeschool organization file the notice for me?",
+            a: "Some states let you homeschool under a private school umbrella or association that files on your behalf instead of you filing directly, and some do not allow that structure at all. Check your state organization's own page for whether this option exists where you live.",
+          },
+          {
+            q: "Do I have to file a notice of intent every year?",
+            a: "It depends on the state. New Mexico, for one real example, wants it renewed annually between June 1 and August 1. Florida, another real example, wants it once, when you start. Your own state's page is the only way to know which pattern applies to you.",
+          },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "If you are also starting out",
+        heading: "What Homeschooling Companion shows about your state",
         paragraphs: [
-          "A notice is one step in getting started, not the whole of it. For the order of everything else, see [how to start homeschooling: the first-month paperwork order](/guides/how-to-start-homeschooling-first-month-paperwork). For what states ask you to keep once you are under way, see [record keeping requirements by state](/guides/homeschool-record-keeping-requirements-by-state).",
+          "Homeschooling Companion includes a summary of what each state typically asks, shown on the Kids tab as None, Low, Moderate or High. It is the product's own summary, not the law, and every state page repeats the same line: laws change, confirm with your state before relying on this. It does not file anything on your behalf and does not check whether you have met a requirement. See [Homeschooling Companion](/shop/homeschooling-companion).",
         ],
       },
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Homeschooling Companion includes a summary of what each state typically asks, listed as None, Low, Moderate or High regulation. It is a summary, not the law, and every state page says Laws change. Confirm with your state before relying on this. It does not file anything for you and does not tell you whether you meet a requirement. It is a web app, $34 once.",
+        body: "Homeschooling Companion's state summary is a starting point, labeled None, Low, Moderate or High, never a citation. It does not file your notice or tell you whether you have met one.",
       },
     ],
   },
@@ -14673,7 +16600,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "how-to-start-homeschooling-first-month-paperwork",
     title: "How to start homeschooling: what to do in the first month",
-    dek: "The order to follow: find your state's rules, file what is due, start a record on day one, and what can wait. Ends with a plain first week.",
+    dek: "The order to follow: find your state's rules, withdraw and request records if your child is enrolled, file what's due, and start recording.",
     primaryQuery: "how to start homeschooling",
     next: { slug: "homeschool-notice-of-intent-explained", reason: "The first thing due in many states. This explains what a notice covers and five steps to find yours." },
     related: [
@@ -14682,43 +16609,88 @@ export const GUIDES: Guide[] = [
       { slug: "homeschool-weekly-plan-with-a-spare-day", reason: "Ready to plan the week? This one leaves a spare day and a short-day list built in." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "family-and-learning",
+    sources: [
+      {
+        name: "Homeschool Association of California: Withdrawing Your Child from School",
+        url: "https://www.hsc.org/withdrawing-your-child-from-school",
+        retrieved: "2026-09-26",
+        note: "Two separate letters (withdrawal and records request), what the cumulative file includes, and the roughly six-week follow-up guideline.",
+      },
+      {
+        name: "Homeschool Better Together: Deschooling and Your Homeschool",
+        url: "https://homeschoolbettertogether.com/deschooling-and-homeschool/",
+        retrieved: "2026-09-26",
+        note: "The 'one month per year in school' deschooling guideline, described there as a rule of thumb, not a research finding, as stated in the guide.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "The first month of homeschooling can feel like a wall of things to do at once. It is not. There is an order to it, and most of the work is smaller than it looks.",
-          "You can begin before you have everything figured out. A record can start with a child's name and one subject, and the rest can be added as you go.",
+          "Starting homeschooling in the first month comes down to four things, in order: find out what your state and district actually require, withdraw formally and request records if your child is already enrolled somewhere, file anything due, and start a plain record on day one. Curriculum and a full schedule can wait.",
+          "This is for a family in the United States starting from scratch, whether your child is coming out of public or private school or has never been enrolled anywhere. It can't tell you your own state's rules or write your paperwork for you, only the order to do the parts in.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Example: two weeks for one family",
+        paragraphs: [
+          "Say you decide on a Tuesday that your nine-year-old will finish out the week at school and start homeschooling the following Monday. That Tuesday, you find your state's page and write down what it actually asks for. Wednesday, you write and hand-deliver a withdrawal letter to the school office, and ask the secretary to sign and date your copy. Thursday, you send a separate letter asking for your child's records, since a withdrawal letter and a records request are not the same document. By Friday, you know whether your state also wants a notice of intent, and if it does, you file it before the weekend.",
+          "The following Monday, you start. The first entry in your new record says nothing more than the date, the subject, and how it went. By the second Friday, you've filed what was due, requested the records, and have ten days of a real record started, which is further ahead than most families are after two weeks.",
         ],
       },
       {
         kind: "timeline",
-        heading: "The order",
+        heading: "The order to follow",
         steps: [
           {
             when: "Find your state's rules",
             what: "Once, from the official source. Your state department of education is the place to start.",
           },
           {
-            when: "Note what it asks",
-            what: "A notice, some records, a yearly review, or nothing at all. Write it down in one place.",
+            when: "Withdraw, if enrolled",
+            what: "A short letter to your child's current school, hand-delivered, with a signed and dated copy kept for you.",
           },
           {
-            when: "File anything that has to be filed",
-            what: "Where a notice is required, do it early and keep a copy. See [what a notice of intent is](/guides/homeschool-notice-of-intent-explained).",
+            when: "Request the records",
+            what: "A separate letter asking for the cumulative file: transcripts, test results, and any records you'll want later.",
           },
           {
-            when: "Start a simple record on day one",
-            what: "The date, the subject and roughly what part, and one word about how it went. That is enough.",
+            when: "File what's due",
+            what: "Where a notice of intent is required, file it early and keep a copy of what you sent.",
           },
+          {
+            when: "Start a record",
+            what: "The date, the subject and roughly what part, and one word about how it went, from day one.",
+          },
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Two letters, not one",
+        intro: "A withdrawal letter and a records request do different jobs. Most families withdrawing from a school need to send both.",
+        columns: ["Letter", "Says what", "Goes to"],
+        rows: [
+          [
+            "Withdrawal letter",
+            "Your child is leaving, as of a date you set",
+            "The school office, hand-delivered if you can",
+          ],
+          [
+            "Records request",
+            "Send the cumulative file: transcripts, test results, health and any IEP records",
+            "The same office, as a separate letter",
+          ],
         ],
       },
       {
         kind: "paragraphs",
         heading: "What can wait",
         paragraphs: [
-          "The curriculum does not have to be settled in the first week. The perfect schedule does not exist yet. A portfolio is built through the year, not on day one. Most of what feels urgent in the first month is not.",
-          "If you are not sure what you are doing yet, that is normal. Begin with what you have and change it as you learn what works.",
+          "Curriculum does not have to be settled in the first week, a schedule does not have to be perfect, and a portfolio builds through the year rather than on day one. Deciding between a five-day week and a [four-day week](/guides/four-day-homeschool-week) can wait too, until you've seen how a normal week actually goes. Testing or an evaluation, where your state asks for one, usually falls partway through the year or at the end, not in week one, so check the timing on your state's page and move on.",
+          "If you are starting after your child has been in school, give yourselves a stretch of lighter days before diving into a full schedule. Some homeschooling writers call this deschooling, and the rule of thumb repeated across their sites, not a research finding, is about one month of adjustment for every year your child spent in a traditional classroom. Treat it as a rough guide, not a countdown.",
         ],
       },
       {
@@ -14733,15 +16705,47 @@ export const GUIDES: Guide[] = [
       },
       {
         kind: "paragraphs",
-        heading: "Where to go next",
+        heading: "What to buy, and what to leave for later",
         paragraphs: [
-          "For a record that lasts past October, see [the simplest homeschool record keeping system that actually lasts](/guides/simple-homeschool-record-keeping-system). For what states usually ask you to keep, see [record keeping requirements by state](/guides/homeschool-record-keeping-requirements-by-state).",
+          "Buy less than feels necessary in the first month. A notebook or an app for records, and whatever your state's page says a notice needs, cover the paperwork side completely. A full curriculum is the one large purchase worth deferring: you can't yet know from a single week what your child needs more or less of, and most publishers sell individual subjects if you later decide you only need to replace one. If you are starting with more than one child at once, [keep each child's record separate from day one](/guides/homeschool-record-keeping-for-multiple-children) rather than untangling one shared notebook later.",
+        ],
+      },
+      {
+        kind: "faq",
+        items: [
+          {
+            q: "Do I have to withdraw my child in writing before I start homeschooling?",
+            a: "If your child is currently enrolled in a public or private school, yes, in most cases. A short letter stating the withdrawal date, hand-delivered with a signed and dated copy kept for you, is the standard approach recommended by state homeschool associations. A separate letter requesting your child's records is a different document, sent alongside it.",
+          },
+          {
+            q: "How do I get my child's school records after withdrawing?",
+            a: "Send a written request for the cumulative file, transcripts, report cards, test results, and any IEP or health records, to the school's front office. If nothing arrives within about six weeks, send a follow-up request in writing and keep a copy of both letters.",
+          },
+          {
+            q: "How long should deschooling last?",
+            a: "There is no official answer. A rule of thumb repeated across homeschooling blogs, not a research finding, suggests roughly one month of lighter days for every year your child spent in a traditional classroom. Treat it as a starting guess, not a deadline, and adjust based on how your child is actually doing.",
+          },
+          {
+            q: "Do I need to choose a curriculum before I start homeschooling?",
+            a: "No. You can begin with a page, a subject, and a plan to add the rest as you go. Most curriculum decisions get better, not worse, once you've seen a week or two of what your child actually needs.",
+          },
+          {
+            q: "What paperwork is actually required in the first month?",
+            a: "It depends entirely on your state. Some want a notice of intent before you begin, some want nothing filed at all, and if your child was previously enrolled in school, a withdrawal letter is usually expected regardless. Your state department of education's own page is the only way to know which of these applies to you.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What Homeschooling Companion does with a new child",
+        paragraphs: [
+          "Adding a child in Homeschooling Companion starts with how they are schooled. Mark a child as attending public or private school and the curriculum questions never come up at all, since there is nothing to record there yet. Mark a child as homeschooled and it asks one question: are you already following a curriculum? Answer Yes, we have one, No, we are doing our own, or Not sure yet, and for Not sure yet, a suggested starting outline is offered by age, clearly labeled a starting point you can change, keep, or throw away. It does not choose or sell a curriculum. See [Homeschooling Companion](/shop/homeschooling-companion).",
         ],
       },
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Adding a child in Homeschooling Companion asks one question: are you already following a curriculum? You can answer Yes, we have one, No, we are doing our own, or Not sure yet, and a suggested starting outline is offered by age, clearly labeled a suggestion you can change or ignore. It is a web app, $34 once.",
+        body: "Adding a child asks how they're schooled first, so a child already in public or private school never gets curriculum questions at all. For a homeschooled child who is not sure yet, a starting outline is offered, labeled a suggestion you can change or ignore.",
       },
     ],
   },
@@ -14758,52 +16762,114 @@ export const GUIDES: Guide[] = [
       { slug: "homeschool-reading-log", reason: "Shared read-alouds need logging once per child. This shows the three-column reading log." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "family-and-learning",
+    sources: [
+      {
+        name: "Coalition for Responsible Home Education, Homeschool Record Keeping",
+        url: "https://crhe.org/guides/resources-for-homeschool-parents/assessments-record-keeping/homeschool-record-keeping/",
+        retrieved: "2026-09-26",
+        note: "Backs keeping a complete, separate set of records for each child, including duplicating shared events across files.",
+      },
+      {
+        name: "Not Consumed, How to Create a Homeschool Portfolio or Notebook",
+        url: "https://www.notconsumed.com/how-to-create-a-homeschool-portfolio-or-notebook/",
+        retrieved: "2026-09-26",
+        note: "Example of a multi-child household keeping a fully separate physical record system per child.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Record keeping that works for one child often stops working at two. The same lesson gets logged once, or twice, or on the wrong child, and by spring nobody is sure which page belongs to whom.",
-          "The fix is a simple rule: everything is filed by child. The rest follows from it.",
+          "Keep one record per child, never one record shared by two. When a lesson happens with both kids in the room, a read-aloud, a science demonstration, a field trip, write it once in each child's own file, in that child's own words for how it landed.",
+          "This is for a family with more than one child learning at home, whether every child is homeschooled or only some are. It cannot tell you what your own state expects on file for each child: check [homeschool record keeping requirements by state](/guides/homeschool-record-keeping-requirements-by-state) for that, and confirm at your state's own source.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "One shared lesson, filed twice (example)",
+        intro: "Maya and Leo sat through the same read-aloud chapter, then split off for math. Two lines for the shared part, one apiece.",
+        columns: ["Child", "Subject", "How it went"],
+        rows: [
+          [
+            "Maya, age 10",
+            "History, chapter read-aloud",
+            "Easy. Asked to keep reading past the stop point.",
+          ],
+          [
+            "Leo, age 7",
+            "History, chapter read-aloud",
+            "About right. Sat through the whole thing, which is new for him.",
+          ],
+          ["Maya, age 10", "Math, fractions worksheet", "Difficult"],
+          ["Leo, age 7", "Math, counting by 5s", "Easy"],
         ],
       },
       {
         kind: "list",
-        heading: "Rules that keep it straight",
-        checkable: true,
+        heading: "Set it up so it holds",
+        ordered: true,
         items: [
-          "One record per child. Never two children in one document.",
-          "Log the shared morning once for each child, with that child's own note.",
-          "Different curricula per child are fine. Each child keeps their own.",
-          "A private note stays with the child it is about.",
+          "Start one record per child from the first entry. Splitting a shared page apart later means reading back through weeks of entries and guessing which line belonged to whom.",
+          "Log a shared lesson once for each child in the room, in that child's own words for how it went. A read-aloud, a science demonstration or a field trip counts once per child, not once for the group.",
+          "Let each child's pace and curriculum stay fully separate. One child a workbook behind the other, or on a different subject list entirely, needs no reconciling on the page.",
+          "Keep a private note tied to the child it is about. A note written about one child's reading is not evidence for a sibling, even if they read the same book.",
+          "Print one child at a time. A record with two children's names on one document is harder to read back and, for most evaluators, not what was asked for.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "The lesson you did together",
+        heading: "When one child is homeschooled and one is not",
         paragraphs: [
-          "A read-aloud, a science experiment, a trip. Both children were there, and it counts for both. Write it once for each child, in a line each. It feels like doubling the work, but it takes seconds, and it means each record stands on its own if anyone ever asks to see one.",
+          "Not every child in the house has to be homeschooled for this to work. Set up a full record for the child you are teaching at home, and a light one, or none at all, for a sibling in private or public school. There is no rule that both children's files have to look the same depth.",
+          "This helps at report time too. Whoever reviews your homeschooled child's record is not asking about a sibling in school, and keeping the file organized by child rather than by household keeps that separation obvious without you having to explain it to anyone.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Why separate records matter",
+        heading: "What can go wrong",
         paragraphs: [
-          "Where an evaluator, a reviewer or an authority asks to see a record, it is asked for by child. A record that mixes two children has to be pulled apart at the worst possible moment. Keeping them separate from the start costs almost nothing.",
-          "It also lets each child's record say what is true for them. One may find reading easier and math harder, and the other the reverse. Two records tell that story. One combined record does not.",
+          "The easiest way this fails is with the shared parts, not the separate ones. A read-aloud or a field trip that both children were at gets written once and never split into each child's own file, so the second child's record ends up thinner than it should be. Or a private note about one child lands on the wrong page because it was one more thing to write down at the end of a long day.",
+          "Comparing the two records is the other trap. One child's subject coming back as easy and the other's as difficult is not a ranking. It is two children on two different weeks with two different books, and turning one child's record into a comparison with a sibling's is the fastest way to stop wanting to fill in either one.",
+        ],
+      },
+      {
+        kind: "faq",
+        items: [
+          {
+            q: "Do I need a separate homeschool portfolio for each child?",
+            a: "Most guidance says yes. The Coalition for Responsible Home Education recommends keeping a complete set of records for each child, even where that means writing the same shared event into more than one file. If an evaluator or reviewer is involved, they are usually looking at one child's year, not a household's, so a combined portfolio has to be pulled apart before anyone can use it.",
+          },
+          {
+            q: "How do I log a lesson I taught to more than one child at once?",
+            a: "Write it once for each child who was there, using that child's own word for how it went. A shared read-aloud, a science demonstration or a field trip belongs in every participating child's file as its own line, even though the lesson itself only happened once.",
+          },
+          {
+            q: "Can one child be homeschooled while a sibling goes to public or private school?",
+            a: "Yes. Keeping records for one child does not depend on how a sibling is schooled. Set up a full record for the homeschooled child and a light one, or none at all, for the one in school. The two records do not need to match each other in depth.",
+          },
+          {
+            q: "Is there a limit to how many children's records I can keep?",
+            a: "In Homeschooling Companion, no: you can add any number of children, each with a fully separate page. The one shared limit is on total entries: the printed record and the record tab work from the most recent 400 lessons and 400 notes across the whole household, so more children logging regularly means that limit arrives sooner.",
+          },
+          {
+            q: "Do twins or same-age siblings need separate records?",
+            a: "Yes. Being the same age does not mean the pace or the curriculum is the same. One twin moving faster through fractions and the other spending longer on the same page is ordinary, and a shared record makes that hard to see or explain later. File each by name, not by grade or age.",
+          },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Where to go next",
+        heading: "What Homeschooling Companion does with more than one child",
         paragraphs: [
-          "For what belongs in each record, see [the simplest homeschool record keeping system that actually lasts](/guides/simple-homeschool-record-keeping-system) and [what goes in a homeschool portfolio](/guides/what-goes-in-a-homeschool-portfolio).",
+          "Homeschooling Companion keeps a fully separate page for every child under Kids, and Today stacks their sheets one under another, never interleaved, so a shared morning is one tap for each child rather than one tap you have to remember to repeat for the next. On the Record tab, once a second child is added, every note you save asks which child it is about, and the household view is a shared read of separate pages, never a shared page. Printing makes one PDF at a time, for the child you choose. The one real limit: the record and the printed page pull from the most recent 400 lessons and 400 notes for the whole household, not per child, so a family logging for two or three children fills that faster than a family with one. See it at [Homeschooling Companion](/shop/homeschooling-companion).",
         ],
       },
       {
         kind: "callout",
-        label: "The Companion for this",
-        body: "Homeschooling Companion keeps a separate page for each child, and Today groups what is planned by child, so a shared morning is two taps, one for each. The printed record is one child at a time and never combines two in a document. A private note stays private unless you choose to print it. It is a web app, $34 once.",
+        label: "Print one, not both",
+        body: "My Homeschool Record makes a single PDF for the child you choose, with nothing about a sibling on the page. Printing for two children is two separate saves, not one document split in half.",
       },
     ],
   },
@@ -14820,58 +16886,123 @@ export const GUIDES: Guide[] = [
       { slug: "homeschool-subject-not-working-what-to-change-first", reason: "Reading stalled? This gives the cheapest-first order for changing a subject that is not working." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "family-and-learning",
+    sources: [
+      {
+        name: "Pernille Ripp, How We Can Help Our Book Abandoners",
+        url: "https://pernillesripp.com/2015/10/15/how-we-can-help-our-book-abandoners/",
+        retrieved: "2026-09-26",
+        note: "Backs logging abandoned books separately from finished ones, and treating abandonment as useful information rather than a failure.",
+      },
+      {
+        name: "Treehouse Schoolhouse, 5 Favorite Ideas for Using Reading Logs",
+        url: "https://treehouseschoolhouse.com/blog/how-to-use-reading-log-free-pdf-printable-download",
+        retrieved: "2026-09-26",
+        note: "Example of a typical reading log format (date, title, author, rating), used to contrast with this guide's position of skipping a rating column.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "A reading log is a useful, low-effort record for a homeschooling family. It is evidence that reading happened and a memory aid when you look back over the year.",
-          "It does not need to be elaborate. Three columns are enough: the book, when it was started, and when it was finished or stopped.",
+          "A homeschool reading log needs three columns: the book, when it was started, and when it was finished or stopped. That is the whole list.",
+          "This is for a family who wants a record of what got read, for a portfolio, for a review, or just for their own memory. It cannot tell you whether a book was understood. For that, ask a question a week after the last page, not the day it closes.",
         ],
       },
       {
         kind: "table",
-        heading: "The three columns",
-        columns: ["Column", "What goes in it"],
+        heading: "Three rows from a log (example)",
+        intro: "Made-up dates and titles, to show the shape. Nothing here happened to a real family.",
+        columns: ["Book", "Started", "Finished or stopped"],
         rows: [
-          ["Book", "The title, and the author if you like"],
-          ["Started", "A date, roughly is fine"],
-          ["Finished or stopped", "A date, and either word"],
+          ["Winn-Dixie", "Sep 3", "Sep 11, finished"],
+          ["Wild Robot", "Sep 12", "Sep 19, finished"],
+          ["Ancient Egypt", "Sep 20", "Sep 22, stopped"],
+        ],
+      },
+      {
+        kind: "table",
+        heading: "The three columns, and what goes in each",
+        columns: ["Column", "What goes in it", "Why it is there"],
+        rows: [
+          [
+            "Book",
+            "Title, and the author if you feel like it",
+            "Enough to find it again or tell someone what your child read",
+          ],
+          [
+            "Started",
+            "A date, roughly is fine",
+            "Shows the reading happened over days, not all at once",
+          ],
+          [
+            "Finished or stopped",
+            "A date, and one of those two words",
+            "The plain ending. Not every book gets finished, and that is fine to write down",
+          ],
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Every book, finished or abandoned",
+        heading: "Quit books belong on the list",
         paragraphs: [
-          "Abandoned books belong on the list. A child who is allowed to stop may well keep starting. If stopping a book counts as a failure, a child may stop picking books that might be hard, or push through books they dislike.",
-          "A list with only finished books also tells a slightly false story. The real story includes the books that did not work, and that is valuable information about what your child likes.",
+          "Leave abandoned books on the log instead of leaving them off it. Teacher and reading researcher Pernille Ripp keeps a two-part log with her students for this exact reason, one section for books finished and one for books abandoned, because what a reader chose to put down says as much about them as what they finished. A log with only finished titles tells a slightly false story: it hides the false starts that are a normal part of a child working out what they actually like.",
+          "Write the word \"stopped\" in the last column and move on. No explanation is required unless your child wants to give one.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Let the child fill it in",
+        heading: "Let your child fill it in once they can write",
         paragraphs: [
-          "Once a child can write, the log is theirs to keep. It is a small job with a clear result, and the handwriting counts as writing practice. Younger children can tell you, and you write it down.",
+          "Once a child can write, handing them the log turns it into ten seconds of handwriting practice instead of one more thing on your list. They write the title, the date, and the last word themselves. Read them what goes where a few times, then step back.",
+          "Below writing age, ask what they read, or what you read together, and write it down yourself. A read-aloud counts. So does an audiobook and a library book that never got renewed.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "How it fits a portfolio",
+        heading: "What can go wrong",
         paragraphs: [
-          "Where a portfolio or a review is part of your picture, a reading log is one of the easiest things to include. It shows breadth without any extra work. See [what goes in a homeschool portfolio](/guides/what-goes-in-a-homeschool-portfolio) for the rest of it, and always confirm what your own evaluator or state wants.",
+          "A log built to impress someone gets abandoned fastest. A column for a rating or a grade turns a ten-second entry into a decision your child has to weigh, and it adds a judgment where none is needed: the finished-or-stopped column already carries the plain information, either the book held attention to the end or it did not.",
+          "Pages read or minutes spent do not need a column either, unless a specific evaluator has asked for one. The log answers what your child read, not how much, and a growing list across a school year makes the case for volume on its own.",
+        ],
+      },
+      {
+        kind: "faq",
+        items: [
+          {
+            q: "Should I log audiobooks and books we read together?",
+            a: "Yes. Write them the same way: title, when you started, when you finished or stopped. Audiobooks and read-alouds are still reading, and a log that only counts books read alone leaves out most of what happens with a younger reader.",
+          },
+          {
+            q: "Do I need to write down how many pages or minutes my child read?",
+            a: "No, unless a specific evaluator has asked for it. The three columns already show that reading happened regularly and over time. Adding pages or minutes turns a ten-second entry into a longer one, for information almost no one reading the log later will ask about.",
+          },
+          {
+            q: "How do I include a book my child gave up on?",
+            a: "Write \"stopped\" and the date in the last column, the same as you would \"finished.\" No reason is needed on the page. Leaving abandoned books off the list hides real information about what did not work for your reader, which is worth more than a perfect completion rate.",
+          },
+          {
+            q: "How does a reading log fit into a homeschool portfolio?",
+            a: "It is one of the easiest pieces to include, since it shows breadth without extra work at portfolio time. Add the finished list, or the whole log if your evaluator wants started dates too, and check with whoever is reviewing it about what they actually want to see. See [what actually goes in a homeschool portfolio](/guides/what-goes-in-a-homeschool-portfolio) for the rest of it.",
+          },
+          {
+            q: "Should the reading log include a rating for each book?",
+            a: "We would leave it off. A rating adds a judgment call to a fast entry, and the finished-or-stopped column already says the plain thing: the book held attention to the end or it did not. If your child wants to rate books for their own reasons, keep that separate from the log.",
+          },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "What a log cannot tell you",
+        heading: "What Homeschooling Companion does with reading",
         paragraphs: [
-          "A log says what was read, not how well it was understood. To find out whether something landed, ask your child to explain it a week later. See [how to check if your child learned something](/guides/how-to-check-if-your-child-learned-something).",
+          "Homeschooling Companion has no separate reading log screen, and that is worth knowing before you build a habit around one. Reading works the way every other subject does: tap it done on Today, and answer Easy, About right or Difficult if it is worth saying. For the book title itself, use \"Note something\" on the Record tab, dated the day you write it, and choose whether that note appears on the printed record or stays private. It will not keep a running, searchable list of titles on its own; a notebook, a spreadsheet, or the table above is the more reliable way to hold that list. See it at [Homeschooling Companion](/shop/homeschooling-companion).",
         ],
       },
       {
         kind: "callout",
-        label: "The Companion for this",
-        body: "Homeschooling Companion records reading as a subject like any other: you tap it on Today and add a short note if it is worth one. It has no separate book list screen. It is a web app, $34 once.",
+        label: "Keep the list on its own page",
+        body: "A reading log works best as its own page, on paper or in a spreadsheet, kept next to whatever else you use for the rest of the record. That is where the books live; Homeschooling Companion is where the day-to-day subjects do.",
       },
     ],
   },
@@ -15327,13 +17458,76 @@ export const GUIDES: Guide[] = [
       { slug: "who-would-raise-your-children-guardian-checklist", reason: "If you have children, naming who would raise them is the companion decision, with a checklist." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "affairs-and-endings",
+    sources: [
+      {
+        name: "National Institute on Aging: Choosing a Health Care Proxy",
+        url: "https://www.nia.nih.gov/health/advance-care-planning/choosing-health-care-proxy",
+        retrieved: "2026-09-26",
+        note: "How to choose a health care agent, talk to them about your wishes, and why the choice differs from an emergency contact",
+      },
+      {
+        name: "CaringInfo: Advance Directive Forms for Each State and Territory",
+        url: "https://www.caringinfo.org/planning/advance-directives/",
+        retrieved: "2026-09-26",
+        note: "Free state-specific advance directive forms, and that witnessing and notarizing requirements differ by state",
+      },
+      {
+        name: "Merck Manual (Consumer Version): Default Surrogate Decision Making",
+        url: "https://www.merckmanuals.com/home/special-subjects/legal-and-ethical-issues/default-surrogate-decision-making",
+        retrieved: "2026-09-26",
+        note: "The typical state priority order (spouse, adult child, parent, sibling) used when no agent has been named",
+      },
+      {
+        name: "American Bar Association Commission on Law and Aging: Recent Updates to Default Surrogate Statutes",
+        url: "https://www.americanbar.org/groups/law_aging/publications/bifocal/vol44/bifocal-vol-44-issue3/recent-updates-to-default-surrogate-statutes/",
+        retrieved: "2026-09-26",
+        note: "Massachusetts, Minnesota, Missouri, and Rhode Island are the states without a default surrogate consent statute",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "If you were too ill to speak for yourself, someone would need to. Who that is, and whether they know what you would want, is worth deciding before it matters. This guide is about the practical side: choosing, asking, and recording where things are. It is not legal or medical advice.",
-          "The formal documents involved, and who is allowed to speak for you if you have not chosen, vary by state. An attorney in your state, or your state's official source, is the place to confirm what applies to you.",
+          "If you couldn't speak for yourself in a hospital, someone else would need to. To choose that person: pick one you trust to stay steady under pressure, ask them before you name them, tell them what you'd want, and write down where any signed form is kept.",
+          "This is for anyone naming a health care agent or medical decision maker for the first time in the United States. It's not legal or medical advice, and the forms, the witnessing rules, and who decides if you haven't chosen anyone all vary by state, so check your state's own form before you sign anything.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Three different things get called this",
+        paragraphs: [
+          "Health care proxy, agent, and medical power of attorney are three names for the same role: the person you name to make medical decisions for you when you can't. A living will is different. It isn't a person, it's a written statement of what treatment you would or wouldn't want, and advance directive is the umbrella term that can cover either or both. Most states let you name an agent and record treatment wishes on a single form.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "What each one actually does",
+        columns: ["Term", "What it is", "What it does not do"],
+        rows: [
+          [
+            "Emergency contact",
+            "The person a hospital or school calls first.",
+            "Carries no legal authority to decide anything.",
+          ],
+          [
+            "Health care agent (proxy, or medical power of attorney)",
+            "The person you name on a state form to decide if you can't.",
+            "Doesn't take effect while you can still decide for yourself.",
+          ],
+          [
+            "Living will",
+            "A written statement of the treatment you would or wouldn't want.",
+            "Doesn't name a person, and can't answer for a situation it doesn't cover.",
+          ],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "An example: what the record actually looks like",
+        paragraphs: [
+          "Say you choose your sister. (This is an example, not a case.) The whole record is short: her name, how she's related to you, a phone number, and whether you've actually talked about what you'd want, not just that she agreed to be listed. If you'd want comfort-focused care rather than being kept on life support indefinitely, that's the kind of thing worth saying out loud once, not left for her to guess at in a hallway.",
         ],
       },
       {
@@ -15342,41 +17536,87 @@ export const GUIDES: Guide[] = [
         steps: [
           {
             when: "Choose",
-            what: "Pick one person you trust, who is likely to be reachable and who would be able to stay steady under pressure. It does not have to be the person closest to you.",
+            what: "Pick one person you trust who's likely to be reachable and able to stay steady under pressure. It doesn't have to be whoever is closest to you.",
           },
           {
             when: "Ask",
-            what: "Ask them before you write their name down. Being named without being asked is unfair to them and unreliable for you.",
+            what: "Ask them before you write their name down anywhere. Being named without being asked isn't fair to them, and it's not reliable for you.",
           },
           {
             when: "Talk",
-            what: "Tell them what you would want. It does not have to be a long conversation. What matters most, and what would be hard for you, is a good start.",
+            what: "Tell them what you'd want. It doesn't need to be a long conversation. What you'd want most, and what would be hardest for you, is enough to start with.",
           },
           {
             when: "Record",
-            what: "Write down who they are, how to reach them, and where any formal paperwork is kept.",
+            what: "Write down who they are, how to reach them, and where any signed form is kept. Give a copy to your doctor's office if you have one.",
           },
-        ],
-      },
-      {
-        kind: "paragraphs",
-        heading: "A first contact is different from a decision maker",
-        paragraphs: [
-          "An emergency contact is the person to call first. A medical decision maker is the person who would speak about your care. They can be the same person, but they do not have to be. Write both down, and say which is which.",
         ],
       },
       {
         kind: "paragraphs",
         heading: "Name a second person",
         paragraphs: [
-          "The person you choose may be traveling, unwell or unreachable on the day. A second name costs almost nothing and covers the gap.",
-          "For the wider picture of what to write down, see [what to write down in case something happens to you](/guides/what-to-write-down-in-case-something-happens-to-you).",
+          "The person you choose might be traveling, sick, or unreachable on the exact day. A second name costs almost nothing and covers that gap. For the wider list of what to write down beyond this one decision, see [what to write down in case something happens to you](/guides/what-to-write-down-in-case-something-happens-to-you).",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "If you haven't chosen anyone",
+        paragraphs: [
+          "Every state has some default rule for who can decide if you haven't named an agent, and the rules aren't the same everywhere. In most states, the law hands that authority to a priority list, typically a spouse or domestic partner first, then an adult child, a parent, a sibling, and then other relatives, moving down until someone is reachable. A handful of states, including Massachusetts, Minnesota, Missouri, and Rhode Island, don't have a default list at all, which makes naming someone yourself the only way to be sure who decides. If more than one person shares the same priority, such as several adult children, hospitals generally look for agreement among them before acting on a majority.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Forms differ by state, and by what you sign",
+        paragraphs: [
+          "The document that makes an agent official differs by state in its name, its witnessing rules, and whether it needs notarizing, and a form written for one state doesn't automatically work in another, though some states will honor one from elsewhere. Free, state-specific forms are available through nonprofit directories such as CaringInfo, which lists a form for every state and territory. Use the one for the state where you live or are likely to receive care, not a generic template.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What can go wrong",
+        paragraphs: [
+          "The most common problem isn't the form, it's that no one who needs to see it knows it exists. Keep a copy somewhere your agent and your doctor's office can actually find, not only in a drawer at home. The second problem is a document that says who decides but not what they should decide: a name without a conversation leaves your agent guessing at the worst possible time. Naming one person with legal authority, rather than leaving it to whoever is in the room, is what this whole process is for.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "What is the difference between a health care proxy and a medical power of attorney?",
+            a: "Nothing meaningful. They're two names, along with health care agent, for the same role: the person you name on a state form to make medical decisions if you can't. Some states use one term in their statute and the other in everyday speech. What counts is which form your state actually issues, not which name you call it.",
+          },
+          {
+            q: "Is an emergency contact the same as a health care proxy?",
+            a: "No. An emergency contact is just who gets called first, with no legal authority. A health care proxy, or agent, is the person you name on a state form to make medical decisions if you can't. They can be the same person, but they don't have to be, and only one of the two roles carries legal weight.",
+          },
+          {
+            q: "What happens if I haven't named anyone?",
+            a: "Most states have a default priority list, usually starting with a spouse, then an adult child, a parent, then a sibling, that a hospital will turn to. A few states, including Massachusetts, Minnesota, Missouri, and Rhode Island, don't have one at all. Either way, naming someone yourself is the only way to control who that person is.",
+          },
+          {
+            q: "Does a health care proxy form from one state work in another?",
+            a: "Not always. Witnessing and notarizing rules differ by state, and while some states honor a form signed elsewhere, others don't. If you split time between states or moved recently, use the form for the state where you currently live or are likely to receive care, available free through sites such as CaringInfo.",
+          },
+          {
+            q: "Is a living will the same thing as a health care proxy?",
+            a: "No. A living will is a written statement of the treatment you would or wouldn't want. A health care proxy names a person to decide on your behalf. Many states let you complete both on one advance directive form, and having both covers more situations than either alone.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Recording the choice",
+        paragraphs: [
+          "Personal Life Affairs Companion has a step for deciding who should speak for you about medical care. It asks for their name, how they're related to you, how to reach them, and whether you've actually talked with them about what you'd want, tracked as yes, not yet, or not sure. It records the choice in your own words. It doesn't generate a state form, doesn't file anything, and doesn't contact anyone on your behalf. [See Personal Life Affairs Companion](/shop/personal-life-affairs-companion).",
         ],
       },
       {
         kind: "callout",
-        label: "The Companion for this",
-        body: "Personal Life Affairs Companion has a step for deciding who should speak for you about medical care. It records their name, how to reach them, and whether you have talked to them about what you would want. It records the choice. It does not create a legal form, appoint anyone, or contact anyone. It is a web app, $49 once, and it is not legal or medical advice.",
+        label: "Not legal or medical advice",
+        body: "This page can help you choose and record who would speak for you. It can't tell you which form your state requires or make a document legally binding: that comes from signing the correct state form, witnessed the way your state requires.",
       },
     ],
   },
@@ -15393,13 +17633,41 @@ export const GUIDES: Guide[] = [
       { slug: "what-happens-to-your-pets-if-something-happens-to-you", reason: "If your household includes animals, this covers naming someone to take them in and what to write down." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "affairs-and-endings",
+    sources: [
+      {
+        name: "California Courts Self-Help Guide: Guardianships in California",
+        url: "https://selfhelp.courts.ca.gov/guardianship",
+        retrieved: "2026-09-26",
+        note: "Example of one state's process: a guardianship is opened and supervised by a court until the child turns 18 or the court ends it",
+      },
+      {
+        name: "FreeWill: What Is a Legal Guardian, and How to Choose One for Your Child",
+        url: "https://www.freewill.com/learn/what-is-a-guardian",
+        retrieved: "2026-09-26",
+        note: "A court must approve all guardian nominees, and what happens if no guardian was named and no relative is found or willing",
+      },
+      {
+        name: "Alliance for Children's Rights: Caregiver's Authorization Affidavit",
+        url: "https://allianceforchildrensrights.org/resources/caregivers-affidavit/",
+        retrieved: "2026-09-26",
+        note: "California's short-term caregiver authorization: what it lets a relative versus a non-relative caregiver consent to",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "For many parents this is the hardest question on the list, and often the reason people finally sit down to plan at all. It is also one where a little clarity now matters a great deal.",
-          "How a guardian is legally named, and what a court considers, varies by state. This guide covers the human side of the choice. Confirm the legal side with an attorney in your state.",
+          "If both parents were gone, a court in your state would decide who raises your kids, unless you'd already named someone. To do that: pick one person or couple, ask them before you name them, name a second choice in case the first can't do it, and write down the details of an ordinary week so whoever steps in isn't guessing.",
+          "This is the human side of naming a guardian for a minor child in the United States: who and how to ask, not how to draft the legal document. How a court weighs your nomination, and what happens if you haven't named anyone, differs by state, so confirm the specifics with an attorney or your state court's self-help resources.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "An example: what changes once you've decided",
+        paragraphs: [
+          "Say you and your partner agree your sister and her husband would raise your two kids. (This is an example, not a case.) You name them in your wills, name your brother as the backup, and write one page: which school, who the pediatrician is, that the younger one has a peanut allergy, and who picks the kids up on Wednesdays when practice runs late. None of that page is legally binding by itself. All of it is what your sister would actually need in the first week.",
         ],
       },
       {
@@ -15407,33 +17675,118 @@ export const GUIDES: Guide[] = [
         heading: "The checklist",
         checkable: true,
         items: [
-          "Think about values and daily life first, not only who is closest or who is wealthiest.",
-          "Choose one person or couple, and ask them before you name them.",
-          "Name a second choice, in case the first cannot or will not do it.",
-          "Write down the practical details of a normal week: school, the doctor, who collects them, what happens on which day.",
-          "Say where any formal paperwork is kept, and who knows that.",
-          "Come back to it when something changes: a move, a separation, a new child.",
+          "Think about values and daily life first, not just who's closest or who has the most money.",
+          "Choose one person or couple, and ask them before you name them anywhere.",
+          "Name a second choice, in case the first can't or won't do it when the time comes.",
+          "Write down the practical details of an ordinary week: school, the doctor, who picks the kids up, what happens on which day.",
+          "Name your guardian in a will, since an informal note or a conversation alone carries far less weight.",
+          "Come back to it when something changes: a move, a new baby, a separation, a falling out.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Ask them first",
+        heading: "A will names your choice. It doesn't appoint them on its own",
         paragraphs: [
-          "Naming someone who would say no is worse than naming nobody, because it looks settled when it is not. A short, honest conversation now spares everyone a surprise later. If the answer is no, that is useful information, and it costs you an hour and not a crisis.",
+          "A will is where you formally nominate a guardian, and it's the single most useful document for this, but naming someone there doesn't hand them custody by itself. If it's ever needed, a court in your state still opens a guardianship case and approves the nomination, and it generally does, unless the nominee is clearly unfit or someone objects. Skip the will and rely only on a note or a spoken understanding, and there's nothing for a court to work from at all.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "The children's week",
+        heading: "If you haven't named anyone",
         paragraphs: [
-          "The written details do more than they look like they will. Whoever steps in is trying to get a child through a normal Tuesday while everyone is upset. A page that says who collects them, what the doctor is called and which days matter turns a frightening week into a manageable one.",
-          "See also [what to write down in case something happens to you](/guides/what-to-write-down-in-case-something-happens-to-you).",
+          "If neither parent can care for the child and no guardian was named, custody doesn't default to a court's best guess of who you'd have wanted. A surviving parent is usually considered first. Past that, courts generally ask relatives to come forward and choose based on the child's best interests, weighing relationships, stability, and the child's own wishes if they're old enough. If no relative is found or willing, the outcome can be foster care, which is the strongest reason to name someone yourself rather than leave the question open. Exactly how a court runs this process, and how much weight it gives a parent's nomination, differs by state.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Two different jobs: raising the kids, and managing the money",
+        paragraphs: [
+          "Who raises your children and who manages any money or property they inherit don't have to be the same person. A guardian of the person handles daily life. A guardian of the estate, called a conservator in some states, handles finances until the child is an adult. Many parents name the same person for both, but if your first choice as a parent wouldn't be your first choice with money, a will can send that half of the job to someone else, or to a trust, instead.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Covering a shorter absence",
+        paragraphs: [
+          "None of this is the right tool for a two-week hospital stay or a work trip, since opening a guardianship case takes time even when everyone agrees. For a short absence, some states offer a simpler document that lets someone you choose enroll your child in school and consent to routine medical care without going to court. California's version, the Caregiver's Authorization Affidavit, lets a relative caregiver consent to school enrollment and to medical and dental care under California law; a non-relative caregiver gets narrower authority, limited to school-related care. Ask your state court's self-help site or a family law attorney what the equivalent is called where you live, since the name, the powers it grants, and who qualifies all vary.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Questions worth sitting with before you choose",
+        intro: "There's no perfect answer to any of these. There's a best one for your situation.",
+        items: [
+          "Do their values about raising kids look enough like yours, on the things you actually care about?",
+          "Where do they live, and would your kids have to change schools or leave their friends?",
+          "Are they healthy enough, and young enough, to realistically take this on for years, not months?",
+          "Can they afford it, or would money need to come from what you leave behind?",
+          "How would this affect your other children's relationships with siblings or cousins, if the group would get split up?",
+        ],
+      },
+      {
+        kind: "scripts",
+        heading: "Asking them, in your own words",
+        items: [
+          {
+            situation: "Naming your first choice",
+            line: "If something happened to both of us, would you be willing to raise the kids? No pressure to answer right now.",
+          },
+          {
+            situation: "Naming a backup",
+            line: "We're also asking you to be the backup, in case Sam isn't able to do it. Just so you know where you stand.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "When you and a co-parent don't agree",
+        paragraphs: [
+          "If you and the other parent can't agree on who should raise the kids, write down your own choice and your reasoning anyway. A recorded preference, even a disputed one, gives a court more to work with than silence from both of you. If you can't resolve it between you, a family law attorney can explain how your state weighs each parent's nomination when they conflict.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "A letter alongside the will",
+        paragraphs: [
+          "A short letter explaining why you chose this person, and what you'd want for how the kids are raised, isn't a legal document, but it's the part a guardian, and a court, actually reads to understand your reasoning. Keep it with your will, not instead of it. It can say things a will's legal language can't: what you'd want to stay the same for the kids, what worries you, what you'd want them to know about you. See [what to write down in case something happens to you](/guides/what-to-write-down-in-case-something-happens-to-you) for the wider list this fits into.",
+        ],
+      },
+      {
+        kind: "faq",
+        items: [
+          {
+            q: "Is naming a guardian in my will legally binding?",
+            a: "It's the nomination a court will almost always follow, but it doesn't hand over custody automatically. If it's ever needed, a court in your state still opens a guardianship case and approves it, generally unless your nominee is clearly unfit or someone objects. Skipping the will leaves the court with nothing to work from.",
+          },
+          {
+            q: "What happens to my kids if I don't name a guardian?",
+            a: "A surviving parent takes over first. If neither parent is available and no guardian was named, courts generally ask relatives to come forward and choose based on the child's best interests. If no one is found or willing, the outcome can be foster care, which is why naming someone yourself is worth doing even informally.",
+          },
+          {
+            q: "Can I name different people for guardianship and for managing money?",
+            a: "Yes. The person who raises your kids day to day, the guardian of the person, doesn't have to be the same one who manages money they inherit, sometimes handled by a guardian of the estate or a trust instead. Many parents choose the same person for both, but you don't have to.",
+          },
+          {
+            q: "What if my child's other parent and I disagree on a guardian?",
+            a: "Write down your own choice and your reasoning anyway. A recorded preference gives a court more to work with than no preference from either of you. If you can't reach agreement, a family law attorney can explain how your state weighs each parent's nomination when they conflict.",
+          },
+          {
+            q: "How do I arrange care for a short trip without a full guardianship?",
+            a: "Full guardianship takes too long to open for a short absence. Some states offer a simpler authorization that lets a chosen caregiver enroll your child in school and consent to routine medical care without a court case. California's version is called a Caregiver's Authorization Affidavit. Ask what your own state's equivalent is called.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Recording the choice, and the details that go with it",
+        paragraphs: [
+          "Personal Life Affairs Companion, if you have children under eighteen, has a step for deciding who would raise them, then asks you to talk to them first, then asks for a second choice and the practical details of an ordinary week: school, the doctor, who collects them, what happens on which day. It records your answers in your own words. It doesn't nominate a guardian in a legal document, doesn't file anything with a court, and doesn't contact the person you've named. [See Personal Life Affairs Companion](/shop/personal-life-affairs-companion).",
         ],
       },
       {
         kind: "callout",
-        label: "The Companion for this",
-        body: "Personal Life Affairs Companion, if you have children under eighteen, asks who you would want to raise them, then asks you to talk to them first, then asks for a second choice and the details of a normal week. It records your choice. It does not appoint a guardian or file anything, and it sends nothing to anyone. It is a web app, $49 once, and it is not legal advice.",
+        label: "Not legal advice",
+        body: "Whether a guardian you name will actually be approved, and what happens if you haven't named one, depends on your state's law. Confirm the specifics with an attorney or your state court's self-help resources before you rely on anything here.",
       },
     ],
   },
@@ -15751,13 +18104,36 @@ export const GUIDES: Guide[] = [
       { slug: "which-documents-to-keep-and-where-to-put-them", reason: "Deciding what deserves a box versus a shredder starts with this retention guide." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "affairs-and-endings",
+    sources: [
+      {
+        name: "FDIC: Five Things to Know About Safe Deposit Boxes, Home Safes and Your Valuables",
+        url: "https://www.fdic.gov/consumer-resource-center/five-things-know-about-safe-deposit-boxes-home-safes-and-your-valuables",
+        retrieved: "2026-09-26",
+        note: "Access after a renter's death depends on state law, and a bank does not police what a joint renter removes",
+      },
+      {
+        name: "FineMark Bank & Trust: Dear FineMark, who can access a safe deposit box after death?",
+        url: "https://www.finemarkbank.com/dearfinemark9/",
+        retrieved: "2026-09-26",
+        note: "A key alone doesn't grant access; an executor needs the court paperwork naming them executor or administrator; Florida allows a judge to permit a supervised search for a will",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Many households have a safe, a deposit box or a set of spare keys that only one person knows about. It holds the important things, and it becomes a problem the day that person is not available.",
-          "The fix is small: write down that it exists, where it is, and who is able to open it. Not how.",
+          "A joint renter can usually open a safe deposit box the same day, with a death certificate and ID. A box rented in one name alone is typically sealed until someone shows the bank proof of legal authority over the estate, court paperwork naming them executor or administrator, and the process depends on your state.",
+          "This is for people in the United States: writing down what you have now, or figuring out what to expect if you need to get into someone else's box after a death. It can't tell you your state's rule or your bank's own policy, so where this disagrees with the branch, follow the branch.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "An example: two ways this goes",
+        paragraphs: [
+          "Say your father rented a box in his name alone at a local branch. (This is an example, not a case.) The bank often learns of a death from an obituary or a family phone call, not automatically, and once it knows, it restricts the box. If his name was the only one on the rental agreement, the branch will ask for a certified death certificate and either the court paperwork naming you executor, or documers of administration if there was no will. Until you have that paperwork, the box waits.",
+          "Now say your parents rented the box jointly, both names on the agreement. In most cases the surviving renter can walk in with a death certificate and ID and open it that day. The difference isn't what's inside the box. It's whose name is on the rental agreement.",
         ],
       },
       {
@@ -15765,8 +18141,8 @@ export const GUIDES: Guide[] = [
         heading: "Three things to write down",
         checkable: true,
         items: [
-          "What it is: a home safe, a deposit box at a bank, a lockbox, a filing cabinet with a key.",
-          "Where it is, precisely enough that a stranger could find it.",
+          "What it is: a home safe, a bank deposit box, a lockbox, or a filing cabinet with a key.",
+          "Where it is, precise enough that a stranger could find it.",
           "Who is able to open it: a name, not a code.",
         ],
       },
@@ -15774,28 +18150,86 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Never write the combination",
         paragraphs: [
-          "Do not record the combination, the PIN or the location of the key on the same page as the location of the safe. Write where somebody would find out how to open it, such as who has the key or where the instructions are kept, not the instructions themselves.",
-          "This is the same rule as everything else in a life admin file: say where, not what. See [what goes in a life admin binder](/guides/life-admin-binder-what-goes-in-it).",
+          "Do not record the combination, the PIN, or the location of the key on the same page as the location of the safe. Write where someone would find out how to open it, such as who holds the key or where the instructions are kept, not the instructions themselves.",
+          "That's the same rule as the rest of a life admin file: say where, not what. See [what goes in a life admin binder](/guides/life-admin-binder-what-goes-in-it).",
         ],
       },
       {
         kind: "paragraphs",
         heading: "Spare keys",
         paragraphs: [
-          "Note who has a spare key to your home, and who could get one. A neighbor with a key is often the fastest route into a house in an emergency. It is worth knowing who that is, and worth telling them they are on the list.",
+          "Note who has a spare key to your home, and who could get one quickly. A neighbor with a key is often the fastest route into a house in an emergency, faster than anyone waiting on a locksmith. Tell that person they're on the list, and ask them to check, once, that the key still works.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "If you're the one trying to get in later",
+        intro: "Every bank runs its own process inside what your state allows, so treat this as what to expect, not a guarantee.",
+        columns: ["Your situation", "What usually happens", "What you'll likely need"],
+        rows: [
+          [
+            "You're a joint renter",
+            "You can typically open the box once the bank knows about the death, without waiting for probate.",
+            "A certified death certificate and your ID",
+          ],
+          [
+            "You're the executor, box in one name",
+            "The bank waits for proof you have legal authority over the estate before it lets anyone in.",
+            "the executor's or administrator's court paperwork, plus a death certificate",
+          ],
+          [
+            "No executor yet, but the will might be inside",
+            "Some states allow one supervised visit, with a bank officer present, to search only for a will and burial instructions.",
+            "A formal request to the bank, and in some states a court order",
+          ],
+          [
+            "The key is lost",
+            "The bank drills the box instead of forcing it open, and bills the cost to the renter or the estate.",
+            "Whatever proof of authority your situation above already requires",
+          ],
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Check it works",
+        heading: "Why the box is a bad place for the one thing everyone needs first",
         paragraphs: [
-          "Ask the person named whether they know where the box or safe is and how they would get access. A deposit box in your name alone may not be simple for someone else to open. The bank can tell you what its rules are, and an attorney can tell you what applies where you live.",
+          "A safe deposit box is a poor home for the only copy of a will, a funeral wish or a medical directive, because it can be the one thing sealed shut exactly when someone needs it fastest. Banks are cautious about opening a box before the family has legal authority, even when everyone agrees a will is what's inside. Keep an original will with an attorney or at home as well, and treat the box as backup, not the only copy.",
+          "The other common snag is a key that's gone missing by the time anyone needs the box. The bank will drill it instead of forcing the lock, and the renter or the estate pays for the drilling and the new lock afterward. If you're not sure where your key is, find it now, while that's a five-minute search instead of a fee.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "Does a will override who can access a safe deposit box?",
+            a: "No. A will names who inherits the contents, but it doesn't by itself get anyone into the box. The bank looks at whose name is on the rental agreement and, for a sole renter, at court paperwork proving legal authority over the estate. Being named in the will is a separate question from being able to open the box.",
+          },
+          {
+            q: "Can I add someone to my safe deposit box so they can access it after I die?",
+            a: "Yes. Most banks let you add a co-renter or an authorized signer while you're alive, and that person can usually open the box the same day you die with a death certificate and ID. Ask your branch what it calls the arrangement and what it needs from both of you to set it up.",
+          },
+          {
+            q: "What if I don't know which bank has the box, or whether there is one?",
+            a: "Check old bank statements and tax returns for a rental fee, and watch the mail for an annual renewal notice. Then ask each bank where the person did business whether a box is on the account. There's no single national registry of safe deposit boxes to search.",
+          },
+          {
+            q: "Can a bank keep a family out even with a death certificate?",
+            a: "Yes, if you're not the renter and don't yet have court paperwork proving you have authority over the estate. A death certificate alone is usually enough for a joint renter, but for a sole rental the bank is following its own policy and state law, not being difficult on purpose.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What the Companion does with this",
+        paragraphs: [
+          "Personal Life Affairs Companion has one step for any safe, lockbox or deposit box: what it is, where it is, who is able to open it, and where someone would find out how, with a hint that says never to record a combination there. A separate step covers who has a spare key to your home. It doesn't check your answers against a bank or a court, and it can't confirm that the person you named can actually get in, so testing that once is still on you. [See Personal Life Affairs Companion](/shop/personal-life-affairs-companion).",
         ],
       },
       {
         kind: "callout",
-        label: "The Companion for this",
-        body: "Personal Life Affairs Companion has a step for any safe, lockbox or deposit box. It asks what it is, where it is, who is able to open it, and where someone would find out how. The hint says to record a name, not a code, and never the combination. It also has a step for who has a spare key. It never asks for a combination and sends nothing to anyone. It is a web app, $49 once, and it is not legal advice.",
+        label: "Call the branch",
+        body: "Every bank runs this inside what your state allows, so the surest source is a call to yours: ask what a joint renter needs, and what a sole renter's executor needs to show. That answer is worth more than any general guide, including this one.",
       },
     ],
   },
@@ -15812,46 +18246,127 @@ export const GUIDES: Guide[] = [
       { slug: "hospital-for-two-weeks-what-would-someone-need-to-find", reason: "A hospital stay is the most likely reason someone needs to step in, and this test shows what they would need." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "affairs-and-endings",
+    sources: [
+      {
+        name: "ASPCA: Pet Trust Laws",
+        url: "https://www.aspca.org/pet-care/pet-planning/pet-trust-laws",
+        retrieved: "2026-09-26",
+        note: "All 50 states and DC now have a pet trust law; a trustee and a caregiver are named, and some states cap how much can be funded",
+      },
+      {
+        name: "FindLaw: Pet Trusts",
+        url: "https://www.findlaw.com/estate/trusts/pet-trust.html",
+        retrieved: "2026-09-26",
+        note: "Pets are legal property and a will can't leave money directly to one; a pet trust adds a trustee and an enforcement mechanism a will bequest doesn't have, and can take effect at incapacity, not only death",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "If you were suddenly away, someone would need to feed the dog, let the cat out and get the rabbit to the vet. Most people do not have a plan for this, and the person who steps in usually has to guess.",
-          "A short note fixes much of it. It takes a few minutes per animal, and it is one of the kindest things you can leave.",
+          "If you were suddenly hospitalized or died, someone would need to feed, walk and medicate your pets with no notice. Write down who would take each animal, what it needs day to day, and where the vet and its records are. A note won't fund the care; for that, you need a pet trust or a clause in your will.",
+          "This is for anyone with a pet in the United States who wants a plan in place before an emergency, not after one. It can't draft a pet trust or tell you what your state allows; for that, talk to an attorney who handles them.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "An example: what two people wrote down",
+        intro: "An illustration with two invented animals, not a real household.",
+        columns: ["Animal", "Who would take them", "What they need", "Vet and records"],
+        rows: [
+          [
+            "Milo, dog, 6",
+            "Neighbor Dana, asked and agreed",
+            "Two meals a day, a joint that needs a daily pill",
+            "Riverside Vet, records on their app",
+          ],
+          [
+            "Nora, cat, 3",
+            "Sister Priya, second choice if Dana can't",
+            "Indoor only, skittish around strangers",
+            "Same clinic as Milo, chip number on file",
+          ],
         ],
       },
       {
         kind: "list",
-        heading: "What to write",
+        heading: "What to write for each animal",
         checkable: true,
         items: [
-          "Who would take each animal, and whether you have asked them.",
-          "What each animal needs: food, medication, routines, quirks.",
-          "The name of the vet and where the records are.",
-          "Where papers are kept: registration, insurance, microchip details.",
-          "Who else could help if the first person cannot.",
+          "Who would take them, and whether you've asked.",
+          "What they need: food, medication, routine, quirks.",
+          "The vet's name and where the records are.",
+          "Where papers are kept: registration, insurance, microchip number.",
+          "A second person, in case the first can't.",
         ],
       },
       {
         kind: "paragraphs",
         heading: "Ask first",
         paragraphs: [
-          "As with any arrangement that depends on another person, ask before you write their name down. A person who has agreed, and knows what is involved, is a plan. A name on a page is only a hope.",
+          "As with any arrangement that depends on another person, ask before you write their name down. A person who has agreed, and knows what's involved, is a plan. A name on a page is only a hope.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "The vet is a useful second contact",
+        heading: "A trust or a clause in your will, if a note needs more backing",
         paragraphs: [
-          "A vet knows your animals' history and can be reached in an emergency. Tell your vet who to contact, and tell that person that they are on the list.",
-          "For the wider file this belongs in, see [what goes in a life admin binder](/guides/life-admin-binder-what-goes-in-it).",
+          "Pets are legally property, so a will can say who gets to keep them, but it can't leave money directly to an animal, and naming a caregiver in a will doesn't obligate that person to actually provide care. A pet trust is different: a trustee holds money set aside for the animal, an enforcer can hold the caregiver to it, and it can even take effect while you're alive but unable to look after the animal yourself, not only after death. Every state now has some form of pet trust law.",
+          "This is worth more than a note for a pet with ongoing medical costs, an exotic animal that's harder to place, or more than one or two animals. An estate attorney who has set one up before can tell you what your state requires to fund and enforce it. For most healthy pets with a willing family member nearby, the written note is enough.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Two more things worth doing",
+        checkable: true,
+        items: [
+          "Keep a card in your wallet naming your pets and who to call, so a first responder knows to look.",
+          "Put a note near your front door saying how many pets are inside, and make sure whoever holds [a spare key to your home](/guides/safe-deposit-box-and-spare-keys-who-can-open-it) knows about them too.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "When the plan doesn't hold",
+        paragraphs: [
+          "The person you named can change their mind, move, or develop an allergy years after you asked, so check in every couple of years rather than trusting a yes from a decade ago. If no one can be found in time, animals default to a shelter, and an exotic or less common pet can wait far longer there for a new home than a dog or cat would.",
+          "A boarding contact isn't the same as a caregiver. Boarding buys a few days for a short absence. It isn't a plan for a death or a long hospital stay, and most kennels won't keep an animal indefinitely without someone paying and making decisions for it.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "Can I leave money to my pet in my will?",
+            a: "Not directly. Pets are legally property, so a will can say who gets to keep them, but it can't leave money to an animal the way it can to a person. A pet trust does what a will can't: it sets aside funds and names a trustee to manage them for the animal's care.",
+          },
+          {
+            q: "Do I need a lawyer to set up a pet trust?",
+            a: "You don't have to, but the trust has to be funded and worded correctly to hold up and actually pay out, which is why an estate attorney usually drafts it. That attorney can also tell you what your state's pet trust law requires to enforce it.",
+          },
+          {
+            q: "What happens to my pet if no one is named at all?",
+            a: "Whoever handles your affairs decides, often a family member acting quickly under pressure, or the animal goes to a shelter until someone claims it. Naming even one person, and telling them, is usually enough to avoid that outcome.",
+          },
+          {
+            q: "Is a pet trust worth it for a healthy dog or cat?",
+            a: "Often not. If a family member or friend has agreed to take the animal and can cover routine costs, a written note naming them is usually enough. A trust earns its cost for pets with ongoing medical needs, exotic animals that are harder to place, or when you want the money, not just the goodwill, to be there.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What the Companion does with this",
+        paragraphs: [
+          "If you say yes to having pets, Personal Life Affairs Companion asks who would take each one and what they need, and lets you add more than one animal. Your own words print in the book someone would actually be handed, not a form filled in and never looked at again. It doesn't draft a pet trust, choose a caregiver for you, or arrange care if something happens; it records the plan you've already made. [See Personal Life Affairs Companion](/shop/personal-life-affairs-companion).",
         ],
       },
       {
         kind: "callout",
-        label: "The Companion for this",
-        body: "If you have pets, Personal Life Affairs Companion has a step for saying who would take them and what they need. It records the answer in your own words, and your answer prints in the book. It sends nothing to anyone and does not arrange care. It is a web app, $49 once, and it is not legal advice.",
+        label: "Before you pay for a trust",
+        body: "A pet trust is a legal document, not a template you fill in yourself, so talk to an estate attorney who has drafted one in your state before spending money on anything elaborate. The harder part is usually asking someone and writing down what the animal needs, not the paperwork.",
       },
     ],
   },

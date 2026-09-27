@@ -14,8 +14,8 @@
   "figure": "/guides/art/what-to-do-when-a-parent-dies-uk-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A timeline of the first days after a death in the UK, from the medical certificate to the funeral director, beside a short checklist of who to tell.",
-  "caption": "The registration deadline is five days in England, Wales and Northern Ireland, and eight in Scotland."
+  "alt": "A timeline card for the first week after a parent dies in the UK, beside a card comparing what Tell Us Once covers against what you still have to contact yourself.",
+  "caption": "The first week in the UK: register first, then Tell Us Once covers most of government in one go."
  },
  "how-to-find-someones-accounts-after-they-die": {
   "hero": "/guides/art/how-to-find-someones-accounts-after-they-die-hero.webp",
@@ -23,8 +23,8 @@
   "figure": "/guides/art/how-to-find-someones-accounts-after-they-die-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A table of what regular outgoings, incomings, annual payments and small recurring amounts in twelve months of bank statements can reveal, with a note to keep the post.",
-  "caption": "Bank statements leave the clearest trail. The guide lists the other places to look."
+  "alt": "A table of three free US tools for finding life insurance, dormant accounts and lost pensions, beside a checklist for reading a year of bank statements.",
+  "caption": "Three of the four free tools worth trying, example matches, before you pay for a search."
  },
  "where-to-look-for-a-will": {
   "hero": "/guides/art/where-to-look-for-a-will-hero.webp",
@@ -32,8 +32,8 @@
   "figure": "/guides/art/where-to-look-for-a-will-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A checklist of places to look for a will, from home to the lawyer, a deposit box, a will register and the executor, beside a note to read the executor clause first.",
-  "caption": "Work down the list rather than across it: each place takes more effort than the one before."
+  "alt": "A timeline card showing where to search for a will, at home, with the attorney, in a deposit box, then the probate court, beside a note about keeping an older will.",
+  "caption": "The search order that turns up most wills, the probate court last."
  },
  "named-executor-what-you-agreed-to": {
   "hero": "/guides/art/named-executor-what-you-agreed-to-hero.webp",
@@ -59,8 +59,8 @@
   "figure": "/guides/art/the-if-something-happens-to-me-file-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A blank printable page titled If something happens to me, with lines for the will, banks, pensions, insurance, property and anything that would surprise someone.",
-  "caption": "The lines a file like this holds. Locations and references only, never the credentials."
+  "alt": "A checklist of five areas in an if-something-happens-to-me file, from who to contact first to what you'd want, with a note that passwords stay out and locations go in.",
+  "caption": "Five of the eight areas. Each line says where something is, never what's inside it."
  },
  "beneficiary-forms-override-your-will": {
   "hero": "/guides/art/beneficiary-forms-override-your-will-hero.webp",
@@ -68,8 +68,8 @@
   "figure": "/guides/art/beneficiary-forms-override-your-will-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A table showing how a pension, life insurance, a joint bank account and a sole account usually pass on, and whether the will controls each, beside a note.",
-  "caption": "Generalized, and details vary by country and provider. Not legal advice."
+  "alt": "A comparison card showing a life insurance policy paying a current spouse and an old 401(k) still paying an ex-spouse, though the will names the same person for both.",
+  "caption": "An example. The will says the same thing for both accounts; the forms decide differently."
  },
  "what-to-write-down-in-case-something-happens-to-you": {
   "hero": "/guides/art/what-to-write-down-in-case-something-happens-to-you-hero.webp",
@@ -86,8 +86,8 @@
   "figure": "/guides/art/digital-accounts-after-a-death-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A table of what usually happens to email, photo storage, subscriptions and cryptocurrency after a death, and what helps, beside a note about legacy contacts.",
-  "caption": "Policies change and vary by country, so treat this as a starting point."
+  "alt": "A table comparing Apple and Google accounts with and without a legacy contact set up, showing photos and chosen data become reachable only with advance setup.",
+  "caption": "General patterns for major US providers. Confirm with each provider directly."
  },
  "which-documents-to-keep-and-where-to-put-them": {
   "hero": "/guides/art/which-documents-to-keep-and-where-to-put-them-hero.webp",
@@ -95,8 +95,8 @@
   "figure": "/guides/art/which-documents-to-keep-and-where-to-put-them-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A table of how long to keep certificates, property deeds, tax records and bills, beside a note on sorting into emergency, active and archive.",
-  "caption": "General guidance. Tax retention rules vary by country, so check yours."
+  "alt": "A table card showing how long to keep tax records, certificates, pay stubs and a home deed, beside a note to shred anything with an account number.",
+  "caption": "Three folders, a shred pile, and the documents worth keeping forever."
  },
  "talking-to-your-parents-about-their-affairs": {
   "hero": "/guides/art/talking-to-your-parents-about-their-affairs-hero.webp",
@@ -104,8 +104,8 @@
   "figure": "/guides/art/talking-to-your-parents-about-their-affairs-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A script card with three ways to open the conversation with a parent about their affairs, starting with your own paperwork, beside a note to go slowly.",
-  "caption": "Example wording. Ask for locations, not contents."
+  "alt": "A script card with two conversation openers about a parent's paperwork, beside a checklist of what to ask about: the will, the bank, power of attorney, medical decisions.",
+  "caption": "Two ways to start, and four things to ask about by location, not detail."
  },
  "life-admin-binder-what-goes-in-it": {
   "hero": "/guides/art/life-admin-binder-what-goes-in-it-hero.webp",
@@ -131,8 +131,8 @@
   "figure": "/guides/art/emergency-contact-and-medical-decision-maker-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A compare card of an emergency contact and a medical decision maker, two roles that can be one person or two, beside a note to ask first and name a second person.",
-  "caption": "Not legal or medical advice. The formal documents vary by state."
+  "alt": "A timeline card showing the order for naming a health care agent, choose, ask, talk, record, beside a card comparing an emergency contact to a health care agent.",
+  "caption": "The order that works, and how a health care agent differs from an emergency contact."
  },
  "who-would-raise-your-children-guardian-checklist": {
   "hero": "/guides/art/who-would-raise-your-children-guardian-checklist-hero.webp",
@@ -140,8 +140,8 @@
   "figure": "/guides/art/who-would-raise-your-children-guardian-checklist-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A blank printable page for recording who you would want to raise your children, with a second choice, the details of a normal week and where paperwork is kept.",
-  "caption": "The human side of the choice. Confirm the legal side with an attorney in your state."
+  "alt": "A checklist card for naming a guardian, from thinking about values to naming them in a will, beside a script card for asking someone to take on the role.",
+  "caption": "The checklist, and two ways to actually ask them."
  },
  "who-to-tell-when-someone-dies": {
   "hero": "/guides/art/who-to-tell-when-someone-dies-hero.webp",
@@ -167,8 +167,8 @@
   "figure": "/guides/art/safe-deposit-box-and-spare-keys-who-can-open-it-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A checklist of three things to write down about a safe or deposit box, what it is, where it is and who can open it, beside a note never to record the combination.",
-  "caption": "Say where, not what."
+  "alt": "A checklist card of what to record about a safe or deposit box, beside a note warning never to write down the combination or PIN.",
+  "caption": "What to write about a safe, box or spare key, and what never to write."
  },
  "what-happens-to-your-pets-if-something-happens-to-you": {
   "hero": "/guides/art/what-happens-to-your-pets-if-something-happens-to-you-hero.webp",
@@ -176,8 +176,8 @@
   "figure": "/guides/art/what-happens-to-your-pets-if-something-happens-to-you-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A checklist for a pet care note, covering who would take each animal, food and medication, the vet, papers and a backup, beside a note about asking first.",
-  "caption": "A few minutes per animal."
+  "alt": "A checklist card of what to write down for each pet, from who would take them to where the vet records are, beside a note about pet trusts.",
+  "caption": "What to write for each animal, and when a trust does more than a note."
  },
  "homeschool-record-keeping-requirements-by-state": {
   "hero": "/guides/art/homeschool-record-keeping-requirements-by-state-hero.webp",
@@ -203,8 +203,8 @@
   "figure": "/guides/art/what-goes-in-a-homeschool-portfolio-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A table of what to keep in a portfolio for math, writing, reading and science, with a note to include October and March samples of the same subject.",
-  "caption": "A rough guide to what to keep per subject. Adjust it to what your state asks for."
+  "alt": "A checklist of the five things a homeschool portfolio typically holds, beside a note about including ordinary work from more than one point in the year.",
+  "caption": "The five things a homeschool portfolio usually holds, from the guide's own checklist."
  },
  "how-to-catch-up-on-homeschool-records": {
   "hero": "/guides/art/how-to-catch-up-on-homeschool-records-hero.webp",
@@ -212,8 +212,8 @@
   "figure": "/guides/art/how-to-catch-up-on-homeschool-records-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A checklist of places to rebuild a homeschool year from, such as workbooks, library history and photos, beside a note on approximate dates.",
-  "caption": "Where to look, in order. Mark reconstructed terms as reconstructed."
+  "alt": "A table showing what workbook pages, photos, library history and receipts can rebuild, beside a four-step evening plan for catching up on homeschool records.",
+  "caption": "An example of what four kinds of evidence can rebuild, and the evening plan for using them."
  },
  "how-to-check-if-your-child-learned-something": {
   "hero": "/guides/art/how-to-check-if-your-child-learned-something-hero.webp",
@@ -230,8 +230,8 @@
   "figure": "/guides/art/preparing-for-a-homeschool-evaluation-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A printable-style folder list for a homeschool evaluation with six items, from the activity log to a note per subject, and a note about saying it plainly.",
-  "caption": "The six things to bring. Ask your own evaluator or state what it requires."
+  "alt": "A checklist of what to bring to a homeschool evaluation, log, samples, materials list, attendance, and a note per subject, beside a four-step evening prep plan.",
+  "caption": "What to bring, and the evening plan for pulling it together, from the guide."
  },
  "homeschool-attendance-what-to-track": {
   "hero": "/guides/art/homeschool-attendance-what-to-track-hero.webp",
@@ -239,8 +239,8 @@
   "figure": "/guides/art/homeschool-attendance-what-to-track-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A three-part attendance record checklist of date, tick and a few words, beside a comparison of what counts as a school day and what is pointless to log.",
-  "caption": "The lightest attendance record, and what is not worth writing down."
+  "alt": "A checklist card listing a date, what was covered, and hours only if the state counts them, beside a note about logging live rather than rebuilding a year later.",
+  "caption": "The three-part record that holds up whether your state counts days, hours, or nothing at all."
  },
  "simple-homeschool-record-keeping-system": {
   "hero": "/guides/art/simple-homeschool-record-keeping-system-hero.webp",
@@ -248,8 +248,8 @@
   "figure": "/guides/art/simple-homeschool-record-keeping-system-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A daily entry form with four lines, date, subject and part, how it went and an occasional sentence, next to a choice of easy, about right or difficult.",
-  "caption": "The three things to record each time, plus the occasional fourth."
+  "alt": "A checklist card listing the date, subject and position, and one word on how it went, beside a note to record right after the lesson rather than from memory.",
+  "caption": "The three things a homeschool record needs every time, nothing more."
  },
  "how-long-to-keep-homeschool-records": {
   "hero": "/guides/art/how-long-to-keep-homeschool-records-hero.webp",
@@ -266,8 +266,8 @@
   "figure": "/guides/art/homeschool-weekly-plan-with-a-spare-day-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A weekly timeline with full plan days and Wednesday left spare on purpose, plus a fill-in note for what a short day always includes.",
-  "caption": "One way to lay out the week. Pick the spare day that suits yours."
+  "alt": "A table showing which weekdays a subject lands on by days per week, one to five, beside a checklist for what a short day and a very short day include.",
+  "caption": "Homeschooling Companion's own weekday pattern, and the short-day list worth deciding in advance."
  },
  "four-day-homeschool-week": {
   "hero": "/guides/art/four-day-homeschool-week-hero.webp",
@@ -275,8 +275,8 @@
   "figure": "/guides/art/four-day-homeschool-week-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A table showing how many days a week each subject gets in a four-day plan, with a note that planning four and managing four is the same work as five.",
-  "caption": "An example spread of subjects across four days. Change the numbers to fit your child."
+  "alt": "A table splitting subject days across a four-day week, Math at four days down to Geography at one, beside a note on how a four-day subject runs in the app.",
+  "caption": "Example: one way to split subject days across a four-day week."
  },
  "homeschool-notice-of-intent-explained": {
   "hero": "/guides/art/homeschool-notice-of-intent-explained-hero.webp",
@@ -284,8 +284,8 @@
   "figure": "/guides/art/homeschool-notice-of-intent-explained-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A five-step checklist for finding a state's homeschool notice of intent, from the education website to keeping a copy, with a note that the official source counts.",
-  "caption": "Five steps to find what applies to you. Confirm against your state's official source."
+  "alt": "A card comparing Florida's one-time district filing with New Mexico's annual state filing, beside a checklist of what a notice of intent usually asks for.",
+  "caption": "Two real states, shown as examples of how a notice of intent can differ."
  },
  "do-you-have-to-count-homeschool-days-or-hours": {
   "hero": "/guides/art/do-you-have-to-count-homeschool-days-or-hours-hero.webp",
@@ -302,8 +302,8 @@
   "figure": "/guides/art/how-to-start-homeschooling-first-month-paperwork-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A four-step timeline for the first month of homeschooling, from finding state rules to starting a record, with a note on what can wait.",
-  "caption": "The first-month order, from the official source to a first dated entry."
+  "alt": "A timeline of the first-month order: find your state's rules, withdraw and request records, file what's due, then start a plain record on day one.",
+  "caption": "Example: one order to move through in the first month of homeschooling."
  },
  "homeschool-record-keeping-for-multiple-children": {
   "hero": "/guides/art/homeschool-record-keeping-for-multiple-children-hero.webp",
@@ -311,8 +311,8 @@
   "figure": "/guides/art/homeschool-record-keeping-for-multiple-children-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A comparison of one shared homeschool file against one record per child, with a note on logging a shared morning once for each child.",
-  "caption": "Why records are filed by child, and how to log a lesson you did together."
+  "alt": "Two homeschool record cards side by side, one per child, each logging the same shared history lesson separately with its own note and a different math entry.",
+  "caption": "A shared morning logged once per child, example."
  },
  "homeschool-reading-log": {
   "hero": "/guides/art/homeschool-reading-log-hero.webp",
@@ -320,8 +320,8 @@
   "figure": "/guides/art/homeschool-reading-log-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A three-column reading log layout for book, started and finished or stopped, with a note that abandoned books belong on the list.",
-  "caption": "The three columns of a reading log. Once they can write, let the child fill it in."
+  "alt": "A three-column homeschool reading log card showing a book title, the date it was started, and the date it was finished or marked stopped, for three example books.",
+  "caption": "Book, started, finished or stopped: the three columns, example rows."
  },
  "homeschool-subject-not-working-what-to-change-first": {
   "hero": "/guides/art/homeschool-subject-not-working-what-to-change-first-hero.webp",
@@ -446,8 +446,8 @@
   "figure": "/guides/art/how-often-home-systems-need-servicing-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "Two cards comparing service intervals: heating and water jobs on one side, safety and roof jobs on the other, each with how often it is due.",
-  "caption": "Typical intervals from the guide. Your own manual wins over any table."
+  "alt": "A table of typical service intervals for a furnace filter, water heater flush, smoke alarms and gutters, beside a note to count from when a job was last done.",
+  "caption": "Typical U.S. intervals from the guide. Your own manual wins when it says otherwise."
  },
  "what-to-record-when-you-buy-an-appliance": {
   "hero": "/guides/art/what-to-record-when-you-buy-an-appliance-hero.webp",
@@ -455,8 +455,8 @@
   "figure": "/guides/art/what-to-record-when-you-buy-an-appliance-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A blank one-page appliance record with five fields: make and model, serial number, install date, warranty end and last service.",
-  "caption": "The five fields to write while the appliance is in front of you."
+  "alt": "A checklist of five facts to record about a new appliance: brand, model, serial number, purchase and install dates, and warranty end.",
+  "caption": "The five fields to write down while the appliance is in front of you."
  },
  "first-week-after-buying-a-house": {
   "hero": "/guides/art/first-week-after-buying-a-house-hero.webp",
@@ -464,7 +464,7 @@
   "figure": "/guides/art/first-week-after-buying-a-house-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A day-one checklist for a new house covering meter photos, shutoffs, suppliers, alarm code and alarm tests, with a note about rereading the survey.",
+  "alt": "A day-one checklist for a new house covering meter photos, shutoffs, utility suppliers, the alarm code and alarm tests, with a note about changing the locks.",
   "caption": "The day-one list from the guide, to do while the previous owner is still reachable."
  },
  "home-maintenance-checklist-by-month": {
@@ -536,7 +536,7 @@
   "figure": "/guides/art/home-maintenance-log-template-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A blank home maintenance log page with fields for the date, what was done, who did it, what it cost and one note for next time.",
+  "alt": "A one-page home maintenance log with fields for date, what was done, who did it, what it cost and one note, beside a tip to write it the same day.",
   "caption": "The four fields and one note the guide says a log needs."
  },
  "how-often-change-furnace-filter": {
@@ -986,8 +986,8 @@
   "figure": "/guides/art/why-productivity-tools-fail-at-life-admin-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A comparison of what knowledge work tools assume versus what life admin actually is, beside a note that a tool should say plainly when nothing needs you.",
-  "caption": "Three of the four mismatches between work tools and life admin."
+  "alt": "A table comparing what task apps assume about work with how life admin actually behaves: connected, already remembered, interrupting, and overwhelming all at once.",
+  "caption": "Where a generic task app's assumptions and life admin's reality pull apart."
  },
  "flight-changed-what-else-is-affected": {
   "hero": "/guides/art/flight-changed-what-else-is-affected-hero.webp",
@@ -1229,7 +1229,7 @@
   "figure": "/guides/art/life-admin-the-work-nobody-teaches-you-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A checklist of five things life admin work needs, beside a note that no one notices admin that went right.",
-  "caption": "Five things this work actually needs. You may find you have only the first."
+  "alt": "A short checklist of what life admin work needs: somewhere for details, how they connect, a quick answer to what's due, help at the moment, and quiet when there's none.",
+  "caption": "What this kind of work actually needs, whatever you use to track it."
  }
 }

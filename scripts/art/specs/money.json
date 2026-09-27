@@ -976,63 +976,57 @@
   "slug": "life-admin-the-work-nobody-teaches-you",
   "area": "series",
   "line1": "The work no one",
-  "line2": "ever taught you",
+  "line2": "put on your list",
   "pieces": [
    {
     "type": "checklist",
     "eyebrow": "What this work needs",
-    "title": "Tick what you already have",
     "items": [
-     "A place to put each detail",
-     "Knows how details relate",
-     "A short answer on now",
-     "Help at the hard moment",
-     "Quiet when there is nothing"
-    ],
-    "done": []
-   },
-   {
-    "type": "note",
-    "eyebrow": "Invisible when it goes right",
-    "text": "No one notices the insurance that renewed correctly, so there is no feedback."
+     "Somewhere to put a detail",
+     "Knows how details connect",
+     "A short answer to what's due",
+     "Help at the moment itself",
+     "Quiet when nothing's due"
+    ]
    }
   ],
-  "alt": "A checklist of five things life admin work needs, beside a note that no one notices admin that went right.",
-  "caption": "Five things this work actually needs. You may find you have only the first."
+  "alt": "A short checklist of what life admin work needs: somewhere for details, how they connect, a quick answer to what's due, help at the moment, and quiet when there's none.",
+  "caption": "What this kind of work actually needs, whatever you use to track it."
  },
  {
   "slug": "why-productivity-tools-fail-at-life-admin",
   "area": "series",
-  "line1": "Life admin is a web,",
-  "line2": "not a task board",
+  "line1": "Built for a job,",
+  "line2": "not your life",
   "pieces": [
    {
-    "type": "compare",
-    "eyebrow": "The mismatch",
-    "left": {
-     "label": "Work assumes",
-     "items": [
-      "Tasks are independent",
-      "The problem is remembering",
-      "Work happens in sessions"
+    "type": "table",
+    "eyebrow": "Where apps get it wrong",
+    "columns": [
+     "Apps assume",
+     "Life admin is"
+    ],
+    "rows": [
+     [
+      "Tasks stand alone",
+      "Everything connects"
+     ],
+     [
+      "You forgot it",
+      "You knew for weeks"
+     ],
+     [
+      "Work is scheduled",
+      "It interrupts you"
+     ],
+     [
+      "More visibility helps",
+      "It overwhelms you"
      ]
-    },
-    "right": {
-     "label": "Life admin is",
-     "items": [
-      "Almost all connected",
-      "You remember it constantly",
-      "It comes in interruptions"
-     ]
-    }
-   },
-   {
-    "type": "note",
-    "eyebrow": "What a tool must do",
-    "text": "Say plainly when nothing needs you, and mean it."
+    ]
    }
   ],
-  "alt": "A comparison of what knowledge work tools assume versus what life admin actually is, beside a note that a tool should say plainly when nothing needs you.",
-  "caption": "Three of the four mismatches between work tools and life admin."
+  "alt": "A table comparing what task apps assume about work with how life admin actually behaves: connected, already remembered, interrupting, and overwhelming all at once.",
+  "caption": "Where a generic task app's assumptions and life admin's reality pull apart."
  }
 ]

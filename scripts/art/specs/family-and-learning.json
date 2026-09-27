@@ -73,70 +73,87 @@
  {
   "slug": "what-goes-in-a-homeschool-portfolio",
   "area": "family-and-learning",
-  "line1": "A portfolio is not",
-  "line2": "a highlight reel",
+  "line1": "What actually goes",
+  "line2": "in the folder",
   "pieces": [
    {
-    "type": "table",
-    "eyebrow": "What to keep per subject",
-    "columns": [
-     "Subject",
-     "Worth keeping"
-    ],
-    "rows": [
-     [
-      "Math",
-      "Worked problems"
-     ],
-     [
-      "Writing",
-      "Draft and final copy"
-     ],
-     [
-      "Reading",
-      "Finished, quit books"
-     ],
-     [
-      "Science",
-      "Photos, conclusions"
-     ]
+    "type": "checklist",
+    "eyebrow": "The five core contents",
+    "items": [
+     "Log of what was covered",
+     "Dated work samples",
+     "Subjects and materials used",
+     "Attendance, if it counts",
+     "Test or eval results"
     ]
    },
    {
     "type": "note",
-    "eyebrow": "Show progress",
-    "text": "Include something from October and something from March on the same subject."
+    "eyebrow": "One rule",
+    "text": "Include ordinary work, not only your best. Two points in the year beat one good week."
    }
   ],
-  "alt": "A table of what to keep in a portfolio for math, writing, reading and science, with a note to include October and March samples of the same subject.",
-  "caption": "A rough guide to what to keep per subject. Adjust it to what your state asks for."
+  "alt": "A checklist of the five things a homeschool portfolio typically holds, beside a note about including ordinary work from more than one point in the year.",
+  "caption": "The five things a homeschool portfolio usually holds, from the guide's own checklist."
  },
  {
   "slug": "how-to-catch-up-on-homeschool-records",
   "area": "family-and-learning",
-  "line1": "Kept nothing since Oct",
-  "line2": "More is recoverable",
+  "line1": "More is recoverable",
+  "line2": "than it feels like",
   "pieces": [
    {
-    "type": "checklist",
-    "eyebrow": "What is recoverable",
-    "title": "Work through these in order",
-    "items": [
-     "Workbook pages and worksheets",
-     "Where you are in each curriculum",
-     "Library and reading history",
-     "Dated photos on your phone",
-     "Receipts and your calendar"
-    ]
+    "type": "table",
+    "eyebrow": "What you can rebuild",
+    "columns": [
+     "Evidence",
+     "What it rebuilds"
+    ],
+    "rows": [
+     [
+      "Workbook pages",
+      "How far you got"
+     ],
+     [
+      "Dated photos",
+      "What happened, when"
+     ],
+     [
+      "Library history",
+      "A reading list"
+     ],
+     [
+      "Receipts",
+      "When it started"
+     ]
+    ],
+    "example": true
    },
    {
-    "type": "note",
-    "eyebrow": "Say it plainly",
-    "text": "Write approximate dates as approximate. October to December, not a made up Tuesday."
+    "type": "timeline",
+    "eyebrow": "One evening",
+    "steps": [
+     {
+      "when": "Gather",
+      "what": "Workbooks, receipts, photos by date"
+     },
+     {
+      "when": "Write it up",
+      "what": "One line per week you can place"
+     },
+     {
+      "when": "Check your state",
+      "what": "Before rebuilding any more than that"
+     },
+     {
+      "when": "Record today",
+      "what": "So tomorrow isn't another gap"
+     }
+    ]
    }
   ],
-  "alt": "A checklist of places to rebuild a homeschool year from, such as workbooks, library history and photos, beside a note on approximate dates.",
-  "caption": "Where to look, in order. Mark reconstructed terms as reconstructed."
+  "alt": "A table showing what workbook pages, photos, library history and receipts can rebuild, beside a four-step evening plan for catching up on homeschool records.",
+  "caption": "An example of what four kinds of evidence can rebuild, and the evening plan for using them."
  },
  {
   "slug": "how-to-check-if-your-child-learned-something",
@@ -177,101 +194,95 @@
  {
   "slug": "preparing-for-a-homeschool-evaluation",
   "area": "family-and-learning",
-  "line1": "The evaluator is not",
-  "line2": "an inspector",
+  "line1": "Ready in one evening",
+  "line2": "not two weeks",
   "pieces": [
    {
-    "type": "page",
-    "eyebrow": "Evaluation folder",
-    "title": "What to bring",
-    "rows": [
-     "Log of what was covered",
-     "Work samples across the year",
-     "Curricula and materials used",
-     "Attendance or days schooled",
-     "Test results, if required",
-     "One note per subject"
+    "type": "checklist",
+    "eyebrow": "What to bring",
+    "items": [
+     "Log with dates",
+     "Samples, two points in year",
+     "Curriculum and materials list",
+     "Attendance, if it counts",
+     "Short note per subject"
     ]
    },
    {
-    "type": "note",
-    "eyebrow": "Say it plainly",
-    "text": "Say what was hard. A portfolio with no difficulties reads as curated."
+    "type": "timeline",
+    "eyebrow": "The evening plan",
+    "steps": [
+     {
+      "when": "Confirm details",
+      "what": "Meeting time, place, what they want to see"
+     },
+     {
+      "when": "Pull samples",
+      "what": "One early, one recent, same subject"
+     },
+     {
+      "when": "Write the list",
+      "what": "Curriculum, materials, one line each"
+     },
+     {
+      "when": "Bag it up",
+      "what": "One folder, in the order they'll open it"
+     }
+    ]
    }
   ],
-  "alt": "A printable-style folder list for a homeschool evaluation with six items, from the activity log to a note per subject, and a note about saying it plainly.",
-  "caption": "The six things to bring. Ask your own evaluator or state what it requires."
+  "alt": "A checklist of what to bring to a homeschool evaluation, log, samples, materials list, attendance, and a note per subject, beside a four-step evening prep plan.",
+  "caption": "What to bring, and the evening plan for pulling it together, from the guide."
  },
  {
   "slug": "homeschool-attendance-what-to-track",
   "area": "family-and-learning",
-  "line1": "Count the days,",
-  "line2": "not the minutes",
+  "line1": "What actually counts",
+  "line2": "as a school day",
   "pieces": [
    {
-    "type": "checklist",
     "eyebrow": "The lightest record",
-    "title": "If your state counts days",
+    "title": "Log it, don't rebuild it",
     "items": [
      "A date",
-     "A tick, or hours if state counts",
-     "One or two words: what was covered"
-    ]
+     "A line on what you covered",
+     "Hours, only if yours counts them"
+    ],
+    "type": "checklist"
    },
    {
-    "type": "compare",
-    "eyebrow": "Day or not",
-    "left": {
-     "label": "Counts",
-     "items": [
-      "A museum visit",
-      "A long piece of reading",
-      "Cooking that was real math"
-     ]
-    },
-    "right": {
-     "label": "Pointless to log",
-     "items": [
-      "Start and finish times",
-      "Which parent taught",
-      "Minutes per subject"
-     ]
-    }
+    "eyebrow": "Where it goes wrong",
+    "text": "Reconstructing a year of days from memory in June rarely works. Log it live.",
+    "type": "note"
    }
   ],
-  "alt": "A three-part attendance record checklist of date, tick and a few words, beside a comparison of what counts as a school day and what is pointless to log.",
-  "caption": "The lightest attendance record, and what is not worth writing down."
+  "alt": "A checklist card listing a date, what was covered, and hours only if the state counts them, beside a note about logging live rather than rebuilding a year later.",
+  "caption": "The three-part record that holds up whether your state counts days, hours, or nothing at all."
  },
  {
   "slug": "simple-homeschool-record-keeping-system",
   "area": "family-and-learning",
-  "line1": "Under a minute,",
-  "line2": "or it will not last",
+  "line1": "Three things,",
+  "line2": "every time",
   "pieces": [
    {
-    "type": "page",
-    "eyebrow": "Daily entry, under a minute",
-    "rows": [
-     "Date",
-     "Subject and which part",
-     "How it went, one word",
-     "Occasionally: one sentence"
-    ]
+    "eyebrow": "The habit that lasts",
+    "title": "Three things, every time",
+    "items": [
+     "The date",
+     "Subject and where you are",
+     "One word: how it went"
+    ],
+    "type": "checklist"
    },
    {
-    "type": "choice",
-    "eyebrow": "How it went",
-    "question": "One word is enough",
-    "options": [
-     "Easy",
-     "About right",
-     "Difficult"
-    ],
-    "picked": 1
+    "eyebrow": "Attach it to something",
+    "text": "Record right after the lesson. An hour later, it's memory, not a record.",
+    "type": "note"
    }
   ],
-  "alt": "A daily entry form with four lines, date, subject and part, how it went and an occasional sentence, next to a choice of easy, about right or difficult.",
-  "caption": "The three things to record each time, plus the occasional fourth."
+  "alt": "A checklist card listing the date, subject and position, and one word on how it went, beside a note to record right after the lesson rather than from memory.",
+  "caption": "The three things a homeschool record needs every time, nothing more."
  },
  {
   "slug": "how-long-to-keep-homeschool-records",
@@ -317,60 +328,63 @@
  {
   "slug": "homeschool-weekly-plan-with-a-spare-day",
   "area": "family-and-learning",
-  "line1": "A week where nothing",
-  "line2": "goes wrong is rare",
+  "line1": "Four days planned,",
+  "line2": "one left spare",
   "pieces": [
    {
-    "type": "timeline",
-    "eyebrow": "What the week looks like",
-    "steps": [
-     {
-      "when": "Monday, Tuesday",
-      "what": "The full plan"
-     },
-     {
-      "when": "Wednesday",
-      "what": "Spare. Leave it empty when you plan."
-     },
-     {
-      "when": "Thursday",
-      "what": "The full plan"
-     },
-     {
-      "when": "Friday",
-      "what": "The full plan, or a lighter one"
-     }
-    ]
+    "eyebrow": "How a subject lands on the week",
+    "columns": [
+     "Days/wk",
+     "Runs on"
+    ],
+    "rows": [
+     [
+      "1",
+      "Wednesday"
+     ],
+     [
+      "3",
+      "Mon, Wed, Fri"
+     ],
+     [
+      "4",
+      "Mon, Tue, Thu, Fri"
+     ],
+     [
+      "5",
+      "Monday to Friday"
+     ]
+    ],
+    "type": "table"
    },
    {
-    "type": "note",
-    "eyebrow": "Decide it ahead",
-    "text": "On a short day we always do: two or three things, no more."
+    "eyebrow": "Decide it before you need it",
+    "items": [
+     "On a short day: two things",
+     "On a very short day: one thing",
+     "What we drop first: decided now"
+    ],
+    "type": "checklist"
    }
   ],
-  "alt": "A weekly timeline with full plan days and Wednesday left spare on purpose, plus a fill-in note for what a short day always includes.",
-  "caption": "One way to lay out the week. Pick the spare day that suits yours."
+  "alt": "A table showing which weekdays a subject lands on by days per week, one to five, beside a checklist for what a short day and a very short day include.",
+  "caption": "Homeschooling Companion's own weekday pattern, and the short-day list worth deciding in advance."
  },
  {
   "slug": "four-day-homeschool-week",
   "area": "family-and-learning",
-  "line1": "Plan five, manage four",
-  "line2": "and feel behind",
+  "line1": "Four days taught,",
+  "line2": "one day left open",
   "pieces": [
    {
-    "type": "table",
-    "eyebrow": "Days a week per subject",
+    "eyebrow": "One shape, as a suggestion",
     "columns": [
      "Subject",
-     "Days a week"
+     "Days/wk"
     ],
     "rows": [
      [
       "Math",
-      "4"
-     ],
-     [
-      "Reading",
       "4"
      ],
      [
@@ -380,44 +394,61 @@
      [
       "Science",
       "2"
+     ],
+     [
+      "Geography",
+      "1"
      ]
     ],
-    "example": true
+    "example": true,
+    "type": "table"
    },
    {
-    "type": "note",
-    "eyebrow": "Same work",
-    "text": "Plan four and manage four, and you have not failed. The work done is identical."
+    "eyebrow": "How the app runs it",
+    "text": "Set to 4 and it runs Monday, Tuesday, Thursday, Friday.",
+    "type": "note"
    }
   ],
-  "alt": "A table showing how many days a week each subject gets in a four-day plan, with a note that planning four and managing four is the same work as five.",
-  "caption": "An example spread of subjects across four days. Change the numbers to fit your child."
+  "alt": "A table splitting subject days across a four-day week, Math at four days down to Geography at one, beside a note on how a four-day subject runs in the app.",
+  "caption": "Example: one way to split subject days across a four-day week."
  },
  {
   "slug": "homeschool-notice-of-intent-explained",
   "area": "family-and-learning",
-  "line1": "The filing your state",
-  "line2": "may or may not want",
+  "line1": "One state, one form,",
+  "line2": "two different rules",
   "pieces": [
    {
-    "type": "checklist",
-    "eyebrow": "How to find yours",
-    "items": [
-     "Look up your state education site",
-     "Check: state or local district?",
-     "Note when it is due",
-     "Note if it repeats each year",
-     "Keep a copy and the filing date"
-    ]
+    "eyebrow": "Two real states' rules",
+    "left": {
+     "label": "Florida",
+     "items": [
+      "Files once, in 30 days",
+      "Goes to the district"
+     ]
+    },
+    "right": {
+     "label": "New Mexico",
+     "items": [
+      "Renews yearly by Aug 1",
+      "Goes to the state"
+     ]
+    },
+    "type": "compare"
    },
    {
-    "type": "note",
-    "eyebrow": "Not legal advice",
-    "text": "The official source is the one that counts. Laws change."
+    "eyebrow": "Before you fill one out",
+    "items": [
+     "Child's full legal name",
+     "Date of birth or age",
+     "Home address",
+     "Parent or instructor's name"
+    ],
+    "type": "checklist"
    }
   ],
-  "alt": "A five-step checklist for finding a state's homeschool notice of intent, from the education website to keeping a copy, with a note that the official source counts.",
-  "caption": "Five steps to find what applies to you. Confirm against your state's official source."
+  "alt": "A card comparing Florida's one-time district filing with New Mexico's annual state filing, beside a checklist of what a notice of intent usually asks for.",
+  "caption": "Two real states, shown as examples of how a notice of intent can differ."
  },
  {
   "slug": "do-you-have-to-count-homeschool-days-or-hours",
@@ -455,109 +486,110 @@
  {
   "slug": "how-to-start-homeschooling-first-month-paperwork",
   "area": "family-and-learning",
-  "line1": "The first month is",
-  "line2": "smaller than it looks",
+  "line1": "Two letters,",
+  "line2": "not one form",
   "pieces": [
    {
-    "type": "timeline",
-    "eyebrow": "The order",
+    "eyebrow": "The order to follow",
     "steps": [
      {
-      "when": "Find the rules",
-      "what": "Once, from your state education department"
+      "when": "Right away",
+      "what": "Find rules, withdraw if enrolled"
      },
      {
-      "when": "Note the ask",
-      "what": "A notice, records, a review, or nothing"
+      "when": "Before day one",
+      "what": "Request records, file what's due"
      },
      {
-      "when": "File what is due",
-      "what": "Do it early and keep a copy"
-     },
-     {
-      "when": "Start a record",
-      "what": "Date, subject and part, one word on how"
+      "when": "Day one",
+      "what": "Date, subject, one word on how it went"
      }
-    ]
+    ],
+    "type": "timeline"
    },
    {
-    "type": "note",
-    "eyebrow": "What can wait",
-    "text": "The curriculum and the perfect schedule do not have to be settled in week one."
+    "eyebrow": "Two letters, not one",
+    "text": "A withdrawal letter and a records request are different documents.",
+    "type": "note"
    }
   ],
-  "alt": "A four-step timeline for the first month of homeschooling, from finding state rules to starting a record, with a note on what can wait.",
-  "caption": "The first-month order, from the official source to a first dated entry."
+  "alt": "A timeline of the first-month order: find your state's rules, withdraw and request records, file what's due, then start a plain record on day one.",
+  "caption": "Example: one order to move through in the first month of homeschooling."
  },
  {
   "slug": "homeschool-record-keeping-for-multiple-children",
   "area": "family-and-learning",
-  "line1": "Whose worksheet is this?",
-  "line2": "One record per child",
+  "line1": "One record",
+  "line2": "per child",
   "pieces": [
    {
     "type": "compare",
-    "eyebrow": "Filing by child",
+    "eyebrow": "One morning, two records",
     "left": {
-     "label": "One shared file",
+     "label": "Maya, 10",
      "items": [
-      "Pulled apart when asked",
-      "One story for two children"
+      "History: easy",
+      "Math: difficult"
      ]
     },
     "right": {
-     "label": "One per child",
+     "label": "Leo, 7",
      "items": [
-      "Stands alone if asked",
-      "Each child's own story"
+      "History: about right",
+      "Math: easy"
      ]
     }
    },
    {
     "type": "note",
-    "eyebrow": "Shared morning",
-    "text": "Log it once for each child, in a line each, with that child's own note."
+    "eyebrow": "The one real limit",
+    "text": "400 lessons and 400 notes shared by the whole household, not per child."
    }
   ],
-  "alt": "A comparison of one shared homeschool file against one record per child, with a note on logging a shared morning once for each child.",
-  "caption": "Why records are filed by child, and how to log a lesson you did together."
+  "alt": "Two homeschool record cards side by side, one per child, each logging the same shared history lesson separately with its own note and a different math entry.",
+  "caption": "A shared morning logged once per child, example."
  },
  {
   "slug": "homeschool-reading-log",
   "area": "family-and-learning",
-  "line1": "The books they quit",
-  "line2": "belong on the list",
+  "line1": "Three columns,",
+  "line2": "quit books too",
   "pieces": [
    {
     "type": "table",
-    "eyebrow": "The three columns",
+    "eyebrow": "Three rows from a log",
     "columns": [
-     "Column",
-     "What goes in it"
+     "Book",
+     "Started",
+     "Ended"
     ],
     "rows": [
      [
-      "Book",
-      "Title, maybe author"
+      "Wild Robot",
+      "Sep 12",
+      "Sep 19, finished"
      ],
      [
-      "Started",
-      "Roughly is fine"
+      "Winn-Dixie",
+      "Sep 3",
+      "Sep 11, finished"
      ],
      [
-      "Finished or stopped",
-      "Date, and either word"
+      "Ancient Egypt",
+      "Sep 20",
+      "Sep 22, stopped"
      ]
-    ]
+    ],
+    "example": true
    },
    {
     "type": "note",
-    "eyebrow": "Every book",
-    "text": "Abandoned books belong on the list. A child who may stop may keep starting."
+    "eyebrow": "Why quit books stay",
+    "text": "Abandoned books belong on the list. It says what did not work, not just what did."
    }
   ],
-  "alt": "A three-column reading log layout for book, started and finished or stopped, with a note that abandoned books belong on the list.",
-  "caption": "The three columns of a reading log. Once they can write, let the child fill it in."
+  "alt": "A three-column homeschool reading log card showing a book title, the date it was started, and the date it was finished or marked stopped, for three example books.",
+  "caption": "Book, started, finished or stopped: the three columns, example rows."
  },
  {
   "slug": "homeschool-subject-not-working-what-to-change-first",
