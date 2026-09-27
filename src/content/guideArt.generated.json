@@ -338,8 +338,8 @@
   "figure": "/guides/art/what-goes-in-a-family-health-binder-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A blank health page with fields for name, allergies, medications, conditions, doctors and insurance, beside a note saying one page per person.",
-  "caption": "The fields worth writing down for each person, one page each."
+  "alt": "A one-page health sheet for a child with rows for allergies, medications, doctors, insurance, vaccines and who to call, beside a note about paper folders.",
+  "caption": "An example page for a made-up child. Copy answers from the card or label."
  },
  "school-and-camp-health-forms-what-to-have-ready": {
   "hero": "/guides/art/school-and-camp-health-forms-what-to-have-ready-hero.webp",
@@ -374,8 +374,8 @@
   "figure": "/guides/art/questions-to-bring-to-the-doctor-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A comparison of a vague question, is swimming okay, with a specific one, can she swim this week, plus a note to tick questions off in the room.",
-  "caption": "One question per line, the important one first."
+  "alt": "A checklist of four short questions for a child's doctor visit, the most important first, beside a note about ticking each one off in the room.",
+  "caption": "Example: four questions, one line each, the important one first."
  },
  "medication-list-what-to-write-down": {
   "hero": "/guides/art/medication-list-what-to-write-down-hero.webp",
@@ -383,8 +383,8 @@
   "figure": "/guides/art/medication-list-what-to-write-down-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A table with three columns for a medication list, name, dose and how often, each copied as given, with a note to record the date last checked.",
-  "caption": "Write the dose and frequency exactly as the label gives them."
+  "alt": "A sample medication list with four medicines and how often each is taken, beside a note with an allergy and the date the list was checked against the bottles.",
+  "caption": "Example: copied from the labels, with the date it was last checked."
  },
  "symptom-notes-for-a-doctor-visit": {
   "hero": "/guides/art/symptom-notes-for-a-doctor-visit-hero.webp",
@@ -392,8 +392,8 @@
   "figure": "/guides/art/symptom-notes-for-a-doctor-visit-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A symptom note page with fields for what it is, when it started, how long it lasted, how bad it was and what helped.",
-  "caption": "Four short notes help at a visit. It records what you saw, not what it means."
+  "alt": "A sample symptom log with three dated lines showing what happened and how bad it was, beside a note to write what you saw, not what you think it is.",
+  "caption": "Example: one dated line each time, what you saw and how bad."
  },
  "emergency-contact-information-sheet": {
   "hero": "/guides/art/emergency-contact-information-sheet-hero.webp",
@@ -401,8 +401,8 @@
   "figure": "/guides/art/emergency-contact-information-sheet-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "An emergency sheet checklist listing name and age, allergies, who to call, their doctor and insurance, beside a note that a printed card is not a medical ID.",
-  "caption": "What goes on a one-page emergency sheet."
+  "alt": "A sample emergency sheet for a child with the emergency number, an allergy, a first contact, the doctor and the poison help line, beside a note that it is not a medical ID.",
+  "caption": "Example: the lines someone needs first, with allergies near the top."
  },
  "new-doctor-intake-what-to-bring": {
   "hero": "/guides/art/new-doctor-intake-what-to-bring-hero.webp",
@@ -410,8 +410,8 @@
   "figure": "/guides/art/new-doctor-intake-what-to-bring-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "An intake summary page with fields for allergies, medications, conditions, family history and recent symptoms, beside a note about insurance and photo ID.",
-  "caption": "One page for a first visit, alongside the clinic's own paperwork."
+  "alt": "A one-page example intake summary for a first doctor visit with allergies, medicines, conditions, family history and symptoms, beside a note about ID, insurance card and bottles.",
+  "caption": "An example first-visit page, with made-up details."
  },
  "what-to-leave-off-a-health-page-you-hand-over": {
   "hero": "/guides/art/what-to-leave-off-a-health-page-you-hand-over-hero.webp",
@@ -419,8 +419,8 @@
   "figure": "/guides/art/what-to-leave-off-a-health-page-you-hand-over-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A checklist of three questions to ask before printing a health page, whether they need it, whether it could sit on a counter and whether it is current.",
-  "caption": "Three questions to ask before you hand a page over."
+  "alt": "A comparison of what goes on a sitter page (allergy, tonight's medicine, who to call) and what stays with the parent (family history, insurance ID, old symptoms).",
+  "caption": "An example of one child's page for a sitter, and what stays home."
  },
  "caring-for-a-parent-and-kids-one-place": {
   "hero": "/guides/art/caring-for-a-parent-and-kids-one-place-hero.webp",
@@ -428,8 +428,8 @@
   "figure": "/guides/art/caring-for-a-parent-and-kids-one-place-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A four-line rule for keeping a parent's and children's health pages: one page per person, the same headings, one place, and print one person at a time.",
-  "caption": "Adults and children use the same kind of page."
+  "alt": "A table comparing a child's and a parent's page under the same headings of allergies, medicines and doctors, beside a note: one person per page, print one at a time.",
+  "caption": "An example of the same headings for a child and a parent."
  },
  "home-maintenance-you-skip-that-costs-the-most": {
   "hero": "/guides/art/home-maintenance-you-skip-that-costs-the-most-hero.webp",
@@ -590,8 +590,8 @@
   "figure": "/guides/art/how-to-restart-a-project-you-gave-up-on-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A checklist of three lines to leave when you put a task down, with a note saying to resume at the next action rather than the beginning.",
-  "caption": "Three lines that turn a twenty minute restart into a two minute one."
+  "alt": "A restart note card with four rows: where you got to, what was missing, the next small piece, and whether it is still needed.",
+  "caption": "An example note that turns a twenty minute restart into two."
  },
  "why-to-do-lists-make-it-worse": {
   "hero": "/guides/art/why-to-do-lists-make-it-worse-hero.webp",
@@ -608,8 +608,8 @@
   "figure": "/guides/art/why-you-keep-thinking-about-a-task-and-not-doing-it-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A card asking what the next physical action is, with three examples, beside a second question about what needs to be in front of you.",
-  "caption": "The two questions that unstick most things. The options are examples."
+  "alt": "A table turning three looping thoughts into first physical actions, such as finding a renewal letter or writing one line of a reply.",
+  "caption": "Example: each thought becomes a verb you could watch happen."
  },
  "task-paralysis-what-to-do-in-the-next-ten-minutes": {
   "hero": "/guides/art/task-paralysis-what-to-do-in-the-next-ten-minutes-hero.webp",
@@ -626,8 +626,8 @@
   "figure": "/guides/art/scripts-for-the-admin-calls-everyone-dreads-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A three-line script for opening a cancellation call, beside a checklist of four things to get before hanging up.",
-  "caption": "An opening that starts with the problem and ends with a question, plus what to get before you hang up."
+  "alt": "A short refund call script with an opening line, the facts and a closing request, beside a four item checklist of what to get before hanging up.",
+  "caption": "Example call lines and the four things to get before you hang up."
  },
  "how-to-deal-with-something-you-have-put-off": {
   "hero": "/guides/art/how-to-deal-with-something-you-have-put-off-hero.webp",
@@ -689,8 +689,8 @@
   "figure": "/guides/art/how-to-say-no-or-give-bad-news-on-the-phone-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A two-line opening script for saying no, beside a checklist of four things to settle before dialing.",
-  "caption": "An opening to start from. Change it to sound like you."
+  "alt": "A short script card with three lines for saying no on a call, say it, pause, hold your answer, beside a note that you can ask for a minute.",
+  "caption": "An example of the order: news first, then a pause."
  },
  "the-email-you-keep-not-sending-and-how-to-chase-a-reply": {
   "hero": "/guides/art/the-email-you-keep-not-sending-and-how-to-chase-a-reply-hero.webp",
@@ -698,8 +698,8 @@
   "figure": "/guides/art/the-email-you-keep-not-sending-and-how-to-chase-a-reply-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A checklist of four checks before sending an email, beside a note about chasing by a different route and asking for a date.",
-  "caption": "Read it once against these, then send it."
+  "alt": "A four-step chase plan for an email that got no reply, day 0 to day 15, beside a note to read the draft once before sending.",
+  "caption": "Example days; shorten them if a deadline is close."
  },
  "first-physical-step-20-examples": {
   "hero": "/guides/art/first-physical-step-20-examples-hero.webp",
@@ -707,8 +707,8 @@
   "figure": "/guides/art/first-physical-step-20-examples-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A table pairing four stuck tasks with a first physical step, beside a four-question checklist for testing your own step.",
-  "caption": "Four of the twenty first steps in the guide."
+  "alt": "A three-row table pairing a task with its first physical step, dentist, insurance claim and spare room, beside a note to pick one step for today.",
+  "caption": "Example steps; copy the shape, not the task."
  },
  "a-weekly-reset-that-survives-a-bad-week": {
   "hero": "/guides/art/a-weekly-reset-that-survives-a-bad-week-hero.webp",
@@ -824,8 +824,8 @@
   "figure": "/guides/art/how-to-budget-for-beginners-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A checklist of the four things to gather for a first monthly budget, beside a note describing the five minute weekly check.",
-  "caption": "The four things to gather before you set up a first monthly budget."
+  "alt": "A ledger card showing an example month: $3,240 take-home pay, bills, groceries, savings and extras subtracted, leaving $97.",
+  "caption": "Example month: $3,240 in, every line subtracted, $97 left over."
  },
  "how-to-budget-with-irregular-income": {
   "hero": "/guides/art/how-to-budget-with-irregular-income-hero.webp",
@@ -833,8 +833,8 @@
   "figure": "/guides/art/how-to-budget-with-irregular-income-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A comparison of planning from expected pay versus received pay, beside a small sum taking $900 of bills and $350 kept from $1,850 to reach a safe number of $600.",
-  "caption": "Example month: a $600 client payment counts only once it lands, when the number becomes $1,200."
+  "alt": "A table of three example months of uneven deposits next to a steady $2,300 monthly pay set from the three lowest months.",
+  "caption": "Example: deposits swing from $1,850 to $4,100, pay stays at $2,300."
  },
  "how-to-build-a-first-1000-emergency-fund": {
   "hero": "/guides/art/how-to-build-a-first-1000-emergency-fund-hero.webp",
@@ -842,8 +842,8 @@
   "figure": "/guides/art/how-to-build-a-first-1000-emergency-fund-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A four month timeline for setting aside $250 a month to reach $1,000, beside a comparison of what does and does not count as an emergency.",
-  "caption": "An example pace only. Pick an amount that leaves your month intact."
+  "alt": "A table of example savings paces showing how long it takes to reach $1,000 at $25 or $50 a week, $100 every two weeks, or $200 a month.",
+  "caption": "Example paces: how long $1,000 takes at four different amounts."
  },
  "how-to-save-money-fast": {
   "hero": "/guides/art/how-to-save-money-fast-hero.webp",
@@ -851,8 +851,8 @@
   "figure": "/guides/art/how-to-save-money-fast-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A checklist of four ways to save money in one month, beside a note about setting a small amount aside on day one.",
-  "caption": "Four moves for one month, in order of effort, not a lifestyle change."
+  "alt": "A ledger card of five example moves, from cancelling subscriptions to selling one thing, adding up to $200 found in a month.",
+  "caption": "Example month: seven moves, $105 of it repeats every month."
  },
  "how-to-start-over-after-budget-failure": {
   "hero": "/guides/art/how-to-start-over-after-budget-failure-hero.webp",
@@ -896,8 +896,8 @@
   "figure": "/guides/art/monthly-bills-list-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A blank monthly bills list page with six fields, beside a card showing that a $612 quarterly insurance bill is $204 a month.",
-  "caption": "The six columns of a bills list that includes the quarterly and annual ones."
+  "alt": "A card showing eight bills added up to $1,891 a month, including three that are not billed monthly.",
+  "caption": "Example: $223 a month hides in the bills that are not monthly."
  },
  "organize-your-finances-from-scratch": {
   "hero": "/guides/art/organize-your-finances-from-scratch-hero.webp",
@@ -905,8 +905,8 @@
   "figure": "/guides/art/organize-your-finances-from-scratch-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A five step checklist for getting scattered finances into view in ten minutes, beside a note saying gaps are useful, not failures.",
-  "caption": "A starting path meant to be finished the same day and improved later."
+  "alt": "A checklist of six money areas to write down from memory, with question marks for the gaps.",
+  "caption": "Ten minutes, no statements needed. Mark every gap with a question mark."
  },
  "split-bills-with-a-partner-or-roommate": {
   "hero": "/guides/art/split-bills-with-a-partner-or-roommate-hero.webp",
@@ -914,8 +914,8 @@
   "figure": "/guides/art/split-bills-with-a-partner-or-roommate-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A table of three ways to split bills, equal, by income and by item, beside a checklist of four things to agree first.",
-  "caption": "Three common ways to split, and the four things to agree before you start."
+  "alt": "A card showing four shared bills and the two thirds share one partner pays, totaling $1,328 of $1,992.",
+  "caption": "Example: $4,200 and $2,100 take-home gives a 67 and 33 percent split."
  },
  "subscription-tracker-what-to-track": {
   "hero": "/guides/art/subscription-tracker-what-to-track-hero.webp",
@@ -923,8 +923,8 @@
   "figure": "/guides/art/subscription-tracker-what-to-track-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A blank subscription tracker page with six fields to fill in for each subscription, beside a note about a two week heads-up before annual renewals.",
-  "caption": "The six fields worth writing down for every subscription."
+  "alt": "A small tracker table listing three subscriptions with their renewal dates and a keep, cancel or deciding status.",
+  "caption": "Example: the annual rows are the ones with a decision waiting."
  },
  "bank-statement-csv-to-budget": {
   "hero": "/guides/art/bank-statement-csv-to-budget-hero.webp",
@@ -1031,8 +1031,8 @@
   "figure": "/guides/art/travel-document-checklist-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A checklist of what to check months ahead: passport expiry, blank pages, visa, child consent and matching names, plus a note that a photo is not a backup.",
-  "caption": "What to check months before you travel, for every traveler."
+  "alt": "A small table listing each traveler's passport with an expiry date beside the name, and the insurance card, one row per document.",
+  "caption": "Example: one row per document, with the expiry date beside the name."
  },
  "how-to-plan-a-group-trip": {
   "hero": "/guides/art/how-to-plan-a-group-trip-hero.webp",
@@ -1040,8 +1040,8 @@
   "figure": "/guides/art/how-to-plan-a-group-trip-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A small table showing how many people are on each of three bookings, and a checklist of three things a group decides first.",
-  "caption": "An example of recording who is on which booking. The numbers are illustrative."
+  "alt": "A table for a group of six listing each booking, who booked it, and which people are on it, including a dinner that one person skips.",
+  "caption": "Example: each booking, who made it, and who is on it."
  },
  "what-to-keep-on-paper-when-you-travel": {
   "hero": "/guides/art/what-to-keep-on-paper-when-you-travel-hero.webp",
@@ -1049,8 +1049,8 @@
   "figure": "/guides/art/what-to-keep-on-paper-when-you-travel-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A printable one-page list with the address in the local language, booking references, phone numbers, insurance, passport numbers and a contact at home.",
-  "caption": "The one page worth printing before you travel."
+  "alt": "A short checklist of what goes on the one printed travel page: local-language address, booking references, insurance, a home contact, passport copies.",
+  "caption": "The five things on the page, before you print two copies."
  },
  "how-to-write-a-one-page-trip-itinerary": {
   "hero": "/guides/art/how-to-write-a-one-page-trip-itinerary-hero.webp",
@@ -1058,8 +1058,8 @@
   "figure": "/guides/art/how-to-write-a-one-page-trip-itinerary-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A table of the three columns for each line of a one-page itinerary: time, place and reference, with a note to leave the rest of the day empty.",
-  "caption": "The three things every line of a one-page itinerary answers."
+  "alt": "A short itinerary table with a time, place and confirmation reference on each line, for a flight, hotel, tram tour and train.",
+  "caption": "Example: one line per booking, with the reference beside it."
  },
  "packing-list-for-a-week-away": {
   "hero": "/guides/art/packing-list-for-a-week-away-hero.webp",
@@ -1130,8 +1130,8 @@
   "figure": "/guides/art/what-is-due-on-my-car-right-now-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A two-column card comparing how a car job comes due by miles and by months, with a note that whichever limit is reached first counts.",
-  "caption": "Work out each job both ways: distance since it was done, and months since."
+  "alt": "A table of four car jobs with miles and months since each was done, showing which limit decides and one job with no date.",
+  "caption": "An example with made-up numbers. Miles or months, whichever comes first."
  },
  "what-to-tell-a-mechanic-before-work-starts": {
   "hero": "/guides/art/what-to-tell-a-mechanic-before-work-starts-hero.webp",
@@ -1139,8 +1139,8 @@
   "figure": "/guides/art/what-to-tell-a-mechanic-before-work-starts-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A three-line script for a repair shop: the specific job, a call before going over the limit, and a written estimate, plus optional extras.",
-  "caption": "A plain script, not legal advice. Say the job, the limit and the call."
+  "alt": "A card with three lines to say at a repair shop: the job you are requesting, a spending limit and a request for written prices.",
+  "caption": "Three sentences to say before the keys change hands. The amounts are examples."
  },
  "used-car-no-service-records-what-to-do": {
   "hero": "/guides/art/used-car-no-service-records-what-to-do-hero.webp",
@@ -1148,8 +1148,8 @@
   "figure": "/guides/art/used-car-no-service-records-what-to-do-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A four-step first-week timeline for a used car with no paperwork: ask the seller, note the mileage, find the manual, start a record.",
-  "caption": "Four steps for the first week with a used car that came with nothing on paper."
+  "alt": "A five-item checklist for the first week with a used car that has no service records, from asking the seller to starting a log.",
+  "caption": "Five steps for a car that came with no paperwork."
  },
  "car-maintenance-log-what-to-write-down": {
   "hero": "/guides/art/car-maintenance-log-what-to-write-down-hero.webp",
@@ -1157,8 +1157,8 @@
   "figure": "/guides/art/car-maintenance-log-what-to-write-down-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A maintenance log table with columns for date, miles, what was done and who did it, marked as needed or optional, and a note to record facts.",
-  "caption": "The columns of a simple log. Cost or note is a fifth, optional one."
+  "alt": "A sample car maintenance log with three lines, each showing a date, an odometer reading in miles and the work done.",
+  "caption": "An example log. Date, miles and what was done on every line."
  },
  "selling-your-car-with-a-service-history": {
   "hero": "/guides/art/selling-your-car-with-a-service-history-hero.webp",
@@ -1202,7 +1202,7 @@
   "figure": "/guides/art/glove-box-checklist-what-to-keep-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A comparison of what to keep in a glove box versus at home, beside a blank card with plate, VIN, oil, tire size, insurer and roadside number.",
+  "alt": "Two checklist cards, one listing what to keep in a glove box such as registration and proof of insurance, and one listing what to leave at home.",
   "caption": "Keep the details in the car and the originals at home."
  },
  "car-paperwork-dates-organizer": {
@@ -1211,8 +1211,8 @@
   "figure": "/guides/art/car-paperwork-dates-organizer-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A card showing six weeks as the look-ahead window for car paperwork dates, beside a checklist of the kind of paper, its date and where it is kept.",
-  "caption": "Registration, insurance, inspection: note the paper, the date and where it is."
+  "alt": "A small table of car registration and insurance dates with an act-by date six weeks earlier, and a note to look six weeks ahead once a month.",
+  "caption": "An example tracker with made-up dates."
  },
  "first-car-checklist-for-new-drivers": {
   "hero": "/guides/art/first-car-checklist-for-new-drivers-hero.webp",
@@ -1220,8 +1220,8 @@
   "figure": "/guides/art/first-car-checklist-for-new-drivers-figure.webp",
   "figureWidth": 1000,
   "figureHeight": 700,
-  "alt": "A five-item first-week checklist for a new driver: manual, mileage, papers, a record and a glove box card, with a note on the first entry.",
-  "caption": "None of it needs a garage: a notebook, a pen and about an hour."
+  "alt": "A timeline of the first week with a new car, from calling the insurer to setting up the glove box, and a note to match the VIN in three places.",
+  "caption": "The order that keeps the hard-to-fix things first."
  },
  "life-admin-the-work-nobody-teaches-you": {
   "hero": "/guides/art/life-admin-the-work-nobody-teaches-you-hero.webp",

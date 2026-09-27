@@ -2,30 +2,30 @@
  {
   "slug": "what-goes-in-a-family-health-binder",
   "area": "family-health",
-  "line1": "Health info lives",
-  "line2": "in a head and a drawer",
+  "line1": "What goes in a",
+  "line2": "medical binder",
   "pieces": [
    {
     "type": "page",
-    "eyebrow": "Health page, one per person",
-    "title": "Name at the top",
+    "eyebrow": "One page per person",
+    "title": "Amina, 8 (example)",
     "rows": [
-     "Name and date of birth",
-     "Allergies, and what happens",
-     "Medications",
-     "Conditions, in your words",
+     "Allergies and what happens",
+     "Medications now",
      "Doctors and pharmacy",
-     "Insurance and who to call"
+     "Insurance",
+     "Vaccines",
+     "Who to call"
     ]
    },
    {
     "type": "note",
-    "eyebrow": "One rule",
-    "text": "One page per person. Never two people on one page."
+    "eyebrow": "Keep in a paper folder",
+    "text": "Test results, scanned cards and signed forms."
    }
   ],
-  "alt": "A blank health page with fields for name, allergies, medications, conditions, doctors and insurance, beside a note saying one page per person.",
-  "caption": "The fields worth writing down for each person, one page each."
+  "alt": "A one-page health sheet for a child with rows for allergies, medications, doctors, insurance, vaccines and who to call, beside a note about paper folders.",
+  "caption": "An example page for a made-up child. Copy answers from the card or label."
  },
  {
   "slug": "school-and-camp-health-forms-what-to-have-ready",
@@ -131,198 +131,243 @@
  {
   "slug": "questions-to-bring-to-the-doctor",
   "area": "family-health",
-  "line1": "Write the question,",
-  "line2": "not the guess",
+  "line1": "The list you'll want",
+  "line2": "when the door closes",
+  "pieces": [
+   {
+    "type": "checklist",
+    "eyebrow": "Questions, most important first",
+    "title": "Amina, 8: tomorrow's visit",
+    "items": [
+     "Cough, two weeks: what now?",
+     "Can she swim this week?",
+     "Is the new brand the same drug?",
+     "Can you sign the camp form?"
+    ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "In the room",
+    "text": "Tick each line as it is answered. Ask what's left before you go."
+   }
+  ],
+  "alt": "A checklist of four short questions for a child's doctor visit, the most important first, beside a note about ticking each one off in the room.",
+  "caption": "Example: four questions, one line each, the important one first."
+ },
+ {
+  "slug": "medication-list-what-to-write-down",
+  "area": "family-health",
+  "line1": "Which pill is which?",
+  "line2": "Write it once, exactly",
+  "pieces": [
+   {
+    "type": "table",
+    "eyebrow": "Example medication list",
+    "columns": [
+     "Medicine",
+     "How often"
+    ],
+    "rows": [
+     [
+      "Metformin 500 mg",
+      "Breakfast and dinner"
+     ],
+     [
+      "Atorvastatin 20 mg",
+      "Once, at night"
+     ],
+     [
+      "Aspirin 81 mg",
+      "Once a day"
+     ],
+     [
+      "Fish oil capsule",
+      "Once a day"
+     ]
+    ],
+    "example": true
+   },
+   {
+    "type": "note",
+    "eyebrow": "Top of the page",
+    "text": "Allergy: penicillin (rash). Checked against the bottles 09/20/2026."
+   }
+  ],
+  "alt": "A sample medication list with four medicines and how often each is taken, beside a note with an allergy and the date the list was checked against the bottles.",
+  "caption": "Example: copied from the labels, with the date it was last checked."
+ },
+ {
+  "slug": "symptom-notes-for-a-doctor-visit",
+  "area": "family-health",
+  "line1": "It started after",
+  "line2": "the weekend. Or before.",
+  "pieces": [
+   {
+    "type": "table",
+    "eyebrow": "Example symptom log",
+    "columns": [
+     "Date",
+     "What",
+     "How bad"
+    ],
+    "rows": [
+     [
+      "09/14",
+      "Fever, warm to touch",
+      "Moderate"
+     ],
+     [
+      "09/15",
+      "Cough at night",
+      "Mild"
+     ],
+     [
+      "09/18",
+      "Cough at night",
+      "Mild"
+     ]
+    ],
+    "example": true
+   },
+   {
+    "type": "note",
+    "eyebrow": "One rule",
+    "text": "Write what you saw, not what you think it is."
+   }
+  ],
+  "alt": "A sample symptom log with three dated lines showing what happened and how bad it was, beside a note to write what you saw, not what you think it is.",
+  "caption": "Example: one dated line each time, what you saw and how bad."
+ },
+ {
+  "slug": "emergency-contact-information-sheet",
+  "area": "family-health",
+  "line1": "Who to call, and what",
+  "line2": "to say when you do",
+  "pieces": [
+   {
+    "type": "page",
+    "eyebrow": "Emergency sheet",
+    "title": "Amina, 8",
+    "rows": [
+     "In an emergency, call 911",
+     "Allergy: peanuts (hives)",
+     "Call: Sam (555) 010-0142",
+     "Doctor: Dr. Patel (555) 010-0100",
+     "Poison Help 1-800-222-1222"
+    ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "Not a medical ID",
+    "text": "A printed sheet is only what you typed, on the day you typed it."
+   }
+  ],
+  "alt": "A sample emergency sheet for a child with the emergency number, an allergy, a first contact, the doctor and the poison help line, beside a note that it is not a medical ID.",
+  "caption": "Example: the lines someone needs first, with allergies near the top."
+ },
+ {
+  "slug": "new-doctor-intake-what-to-bring",
+  "area": "family-health",
+  "line1": "First visit, one page",
+  "line2": "instead of a clipboard",
+  "pieces": [
+   {
+    "type": "page",
+    "eyebrow": "Example first-visit page",
+    "title": "Amina, 04/02/2018",
+    "rows": [
+     "Allergies: peanuts (hives)",
+     "Medicines, as labeled",
+     "Conditions and surgeries",
+     "Family history",
+     "Symptoms, with dates",
+     "Why we're coming"
+    ]
+   },
+   {
+    "type": "note",
+    "eyebrow": "Also bring",
+    "text": "Photo ID, insurance card, and the bottles."
+   }
+  ],
+  "alt": "A one-page example intake summary for a first doctor visit with allergies, medicines, conditions, family history and symptoms, beside a note about ID, insurance card and bottles.",
+  "caption": "An example first-visit page, with made-up details."
+ },
+ {
+  "slug": "what-to-leave-off-a-health-page-you-hand-over",
+  "area": "family-health",
+  "line1": "What a sitter needs",
+  "line2": "and what stays home",
   "pieces": [
    {
     "type": "compare",
-    "eyebrow": "How to write a question",
+    "eyebrow": "Example: one child, two readers",
     "left": {
-     "label": "Hard to answer",
+     "label": "Sitter page",
      "items": [
-      "Is swimming okay?"
+      "Allergy and reaction",
+      "Tonight's medicine",
+      "Two people to call"
      ]
     },
     "right": {
-     "label": "Easier to answer",
+     "label": "Stays with you",
      "items": [
-      "Can she swim this week?"
+      "Family history",
+      "Insurance ID",
+      "Old symptoms"
      ]
     }
    },
    {
     "type": "note",
-    "eyebrow": "In the room",
-    "text": "Tick each question as it is answered. Ask what is left before you go."
-   }
-  ],
-  "alt": "A comparison of a vague question, is swimming okay, with a specific one, can she swim this week, plus a note to tick questions off in the room.",
-  "caption": "One question per line, the important one first."
- },
- {
-  "slug": "medication-list-what-to-write-down",
-  "area": "family-health",
-  "line1": "Copy the label.",
-  "line2": "Do not paraphrase it",
-  "pieces": [
-   {
-    "type": "table",
-    "eyebrow": "Medication list, three columns",
-    "columns": [
-     "Column",
-     "What goes in it"
-    ],
-    "rows": [
-     [
-      "Name",
-      "The name on the label"
-     ],
-     [
-      "Dose",
-      "As given to you"
-     ],
-     [
-      "How often",
-      "As given, same words"
-     ]
-    ]
-   },
-   {
-    "type": "note",
-    "eyebrow": "Then",
-    "text": "Note the date you last checked the list was right."
-   }
-  ],
-  "alt": "A table with three columns for a medication list, name, dose and how often, each copied as given, with a note to record the date last checked.",
-  "caption": "Write the dose and frequency exactly as the label gives them."
- },
- {
-  "slug": "symptom-notes-for-a-doctor-visit",
-  "area": "family-health",
-  "line1": "Write it that day,",
-  "line2": "not a week later",
-  "pieces": [
-   {
-    "type": "page",
-    "eyebrow": "Symptom note",
-    "title": "Notes, not answers",
-    "rows": [
-     "What it is",
-     "When it started",
-     "How long it lasted",
-     "How bad: mild, moderate, severe",
-     "What helped, in your words"
-    ]
-   }
-  ],
-  "alt": "A symptom note page with fields for what it is, when it started, how long it lasted, how bad it was and what helped.",
-  "caption": "Four short notes help at a visit. It records what you saw, not what it means."
- },
- {
-  "slug": "emergency-contact-information-sheet",
-  "area": "family-health",
-  "line1": "Who to call,",
-  "line2": "on one page",
-  "pieces": [
-   {
-    "type": "checklist",
-    "eyebrow": "Emergency sheet",
-    "title": "What to include",
-    "items": [
-     "Name and age",
-     "Allergies, easy to see",
-     "Who to call, with a number",
-     "Their doctor, with a number",
-     "Insurance, if you want it there"
-    ]
-   },
-   {
-    "type": "note",
-    "eyebrow": "Good to know",
-    "text": "A printed card is not a medical ID. Keep it where people can find it."
-   }
-  ],
-  "alt": "An emergency sheet checklist listing name and age, allergies, who to call, their doctor and insurance, beside a note that a printed card is not a medical ID.",
-  "caption": "What goes on a one-page emergency sheet."
- },
- {
-  "slug": "new-doctor-intake-what-to-bring",
-  "area": "family-health",
-  "line1": "A new doctor starts",
-  "line2": "from what you wrote",
-  "pieces": [
-   {
-    "type": "page",
-    "eyebrow": "Intake summary",
-    "title": "For a first visit",
-    "rows": [
-     "Allergies, and what happens",
-     "Medications, dose, how often",
-     "Conditions, in your words",
-     "Family history, as far as known",
-     "Recent symptoms, with dates"
-    ]
-   },
-   {
-    "type": "note",
-    "eyebrow": "Also",
-    "text": "Insurance information and a photo ID, if the clinic asks."
-   }
-  ],
-  "alt": "An intake summary page with fields for allergies, medications, conditions, family history and recent symptoms, beside a note about insurance and photo ID.",
-  "caption": "One page for a first visit, alongside the clinic's own paperwork."
- },
- {
-  "slug": "what-to-leave-off-a-health-page-you-hand-over",
-  "area": "family-health",
-  "line1": "Handing over everything",
-  "line2": "is rarely a good idea",
-  "pieces": [
-   {
-    "type": "checklist",
     "eyebrow": "Before you print",
-    "title": "Ask three questions",
-    "items": [
-     "Do they need this fact?",
-     "Fine if it sat on a counter?",
-     "Is it current?"
-    ]
-   },
-   {
-    "type": "note",
-    "eyebrow": "Keep",
-    "text": "Keep the full record for yourself. Each page is a selection."
+    "text": "Does this person need this fact to do what I'm asking?"
    }
   ],
-  "alt": "A checklist of three questions to ask before printing a health page, whether they need it, whether it could sit on a counter and whether it is current.",
-  "caption": "Three questions to ask before you hand a page over."
+  "alt": "A comparison of what goes on a sitter page (allergy, tonight's medicine, who to call) and what stays with the parent (family history, insurance ID, old symptoms).",
+  "caption": "An example of one child's page for a sitter, and what stays home."
  },
  {
   "slug": "caring-for-a-parent-and-kids-one-place",
   "area": "family-health",
   "line1": "A parent and kids,",
-  "line2": "the same headings",
+  "line2": "one page each",
   "pieces": [
    {
-    "type": "checklist",
-    "eyebrow": "A simple rule",
-    "items": [
-     "One page per person, name on top",
-     "Same headings on every page",
-     "One place to keep them all",
-     "Print one person at a time"
+    "type": "table",
+    "eyebrow": "Example: same headings, two people",
+    "columns": [
+     "Heading",
+     "Amina, 8",
+     "Mom, 74"
     ],
-    "done": [
-     0
-    ]
+    "rows": [
+     [
+      "Allergies",
+      "Peanuts",
+      "Penicillin"
+     ],
+     [
+      "Medicines",
+      "One, as labeled",
+      "Six, checked 09/20"
+     ],
+     [
+      "Doctors",
+      "Pediatrician",
+      "Cardiologist"
+     ]
+    ],
+    "example": true
    },
    {
     "type": "note",
-    "eyebrow": "Headings",
-    "text": "Allergies, medications, doctors, insurance, who to call."
+    "eyebrow": "The rule",
+    "text": "One person per page. Print one at a time."
    }
   ],
-  "alt": "A four-line rule for keeping a parent's and children's health pages: one page per person, the same headings, one place, and print one person at a time.",
-  "caption": "Adults and children use the same kind of page."
+  "alt": "A table comparing a child's and a parent's page under the same headings of allergies, medicines and doctors, beside a note: one person per page, print one at a time.",
+  "caption": "An example of the same headings for a child and a parent."
  }
 ]

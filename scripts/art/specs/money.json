@@ -314,160 +314,165 @@
  {
   "slug": "how-to-budget-for-beginners",
   "area": "money",
-  "line1": "Your first budget",
-  "line2": "needs one number",
+  "line1": "How to make a budget",
+  "line2": "you will actually use",
   "pieces": [
    {
-    "type": "checklist",
-    "eyebrow": "Gather these four things",
-    "title": "Ten minutes and your banking app",
-    "items": [
-     "Money available today",
-     "Money expected, and which day",
-     "Bills to pay, with due dates",
-     "An amount to keep out of spending"
+    "type": "ledger",
+    "eyebrow": "One month, line by line",
+    "rows": [
+     [
+      "Take-home pay",
+      "$3,240"
+     ],
+     [
+      "Fixed bills and card minimum",
+      "$1,873"
+     ],
+     [
+      "Groceries and getting around",
+      "$580"
+     ],
+     [
+      "Savings",
+      "$150"
+     ],
+     [
+      "Everyday extras",
+      "$540"
+     ]
     ],
-    "done": []
-   },
-   {
-    "type": "note",
-    "eyebrow": "The weekly check",
-    "text": "Five minutes, four questions: income, bills, unlogged spending, reserve. All no? Done."
+    "total": [
+     "Left over",
+     "$97"
+    ],
+    "example": true
    }
   ],
-  "alt": "A checklist of the four things to gather for a first monthly budget, beside a note describing the five minute weekly check.",
-  "caption": "The four things to gather before you set up a first monthly budget."
+  "alt": "A ledger card showing an example month: $3,240 take-home pay, bills, groceries, savings and extras subtracted, leaving $97.",
+  "caption": "Example month: $3,240 in, every line subtracted, $97 left over."
  },
  {
   "slug": "how-to-budget-with-irregular-income",
   "area": "money",
   "line1": "Pay that swings?",
-  "line2": "Plan from what landed",
+  "line2": "Pay yourself a floor",
   "pieces": [
    {
-    "type": "compare",
-    "eyebrow": "Two ways to plan the same month",
-    "left": {
-     "label": "Expected pay",
-     "items": [
-      "Counts pay before it lands",
-      "Feels generous early",
-      "Breaks if a client is late"
-     ]
-    },
-    "right": {
-     "label": "Received pay",
-     "items": [
-      "Counts only arrived money",
-      "Feels tighter, then steady",
-      "Late pay changes nothing"
-     ]
-    }
-   },
-   {
-    "type": "ledger",
-    "eyebrow": "A worked month",
+    "type": "table",
+    "eyebrow": "Example, three of six months",
+    "columns": [
+     "Month",
+     "Deposits",
+     "You pay yourself"
+    ],
     "rows": [
      [
-      "Available",
-      "$1,850.00"
+      "Jan",
+      "$2,900",
+      "$2,300"
      ],
      [
-      "Bills still owed",
-      "-$900.00"
+      "Feb",
+      "$1,850",
+      "$2,300"
      ],
      [
-      "Kept untouched",
-      "-$350.00"
+      "Mar",
+      "$4,100",
+      "$2,300"
      ]
     ],
-    "total": [
-     "Safe number",
-     "$600.00"
-    ],
+    "example": true
+   },
+   {
+    "type": "stat",
+    "eyebrow": "Your steady pay",
+    "value": "$2,300",
+    "caption": "Average of your three lowest months, not the overall average",
     "example": true
    }
   ],
-  "alt": "A comparison of planning from expected pay versus received pay, beside a small sum taking $900 of bills and $350 kept from $1,850 to reach a safe number of $600.",
-  "caption": "Example month: a $600 client payment counts only once it lands, when the number becomes $1,200."
+  "alt": "A table of three example months of uneven deposits next to a steady $2,300 monthly pay set from the three lowest months.",
+  "caption": "Example: deposits swing from $1,850 to $4,100, pay stays at $2,300."
  },
  {
   "slug": "how-to-build-a-first-1000-emergency-fund",
   "area": "money",
-  "line1": "Start smaller:",
-  "line2": "your first $1,000",
+  "line1": "Your first $1,000",
+  "line2": "at a pace you can keep",
   "pieces": [
    {
-    "type": "timeline",
-    "eyebrow": "A pace you can keep",
-    "steps": [
-     {
-      "when": "Month 1",
-      "what": "Set aside $250, out of your spending number"
-     },
-     {
-      "when": "Month 2",
-      "what": "Another $250 if the month allows"
-     },
-     {
-      "when": "Month 3",
-      "what": "Same again; check your tightest day"
-     },
-     {
-      "when": "Month 4",
-      "what": "You reach $1,000"
-     }
-    ]
-   },
-   {
-    "type": "compare",
-    "eyebrow": "What counts as an emergency",
-    "left": {
-     "label": "Counts",
-     "items": [
-      "Repair to keep you working",
-      "Sudden medical or vet bill",
-      "Lost or stolen essentials"
+    "type": "table",
+    "eyebrow": "How long $1,000 takes",
+    "columns": [
+     "You save",
+     "To reach $1,000"
+    ],
+    "rows": [
+     [
+      "$25 a week",
+      "40 weeks"
+     ],
+     [
+      "$50 a week",
+      "20 weeks"
+     ],
+     [
+      "$100 every 2 weeks",
+      "20 weeks"
+     ],
+     [
+      "$200 a month",
+      "5 months"
      ]
-    },
-    "right": {
-     "label": "Does not count",
-     "items": [
-      "Sale on something planned",
-      "A holiday that came up",
-      "A bill you knew was coming"
-     ]
-    }
+    ],
+    "example": true
    }
   ],
-  "alt": "A four month timeline for setting aside $250 a month to reach $1,000, beside a comparison of what does and does not count as an emergency.",
-  "caption": "An example pace only. Pick an amount that leaves your month intact."
+  "alt": "A table of example savings paces showing how long it takes to reach $1,000 at $25 or $50 a week, $100 every two weeks, or $200 a month.",
+  "caption": "Example paces: how long $1,000 takes at four different amounts."
  },
  {
   "slug": "how-to-save-money-fast",
   "area": "money",
-  "line1": "Find the money that",
-  "line2": "leaves unnoticed",
+  "line1": "Find $200 this month",
+  "line2": "with seven small moves",
   "pieces": [
    {
-    "type": "checklist",
-    "eyebrow": "Four moves, in order of effort",
-    "items": [
-     "Check every recurring charge",
-     "Move a small amount first",
-     "Trim one flexible group, only one",
-     "Check your tightest day"
+    "type": "ledger",
+    "eyebrow": "One example month",
+    "rows": [
+     [
+      "Cancel two subscriptions",
+      "$26"
+     ],
+     [
+      "Lower phone and internet",
+      "$45"
+     ],
+     [
+      "Insurance quote and one fee",
+      "$34"
+     ],
+     [
+      "One lean week of food",
+      "$45"
+     ],
+     [
+      "Sell one thing",
+      "$50"
+     ]
     ],
-    "done": []
-   },
-   {
-    "type": "note",
-    "eyebrow": "Move it first",
-    "text": "Fifty dollars set aside on day one beats two hundred you meant to save on day thirty."
+    "total": [
+     "Found this month",
+     "$200"
+    ],
+    "example": true
    }
   ],
-  "alt": "A checklist of four ways to save money in one month, beside a note about setting a small amount aside on day one.",
-  "caption": "Four moves for one month, in order of effort, not a lifestyle change."
+  "alt": "A ledger card of five example moves, from cancelling subscriptions to selling one thing, adding up to $200 found in a month.",
+  "caption": "Example month: seven moves, $105 of it repeats every month."
  },
  {
   "slug": "how-to-start-over-after-budget-failure",
@@ -638,134 +643,134 @@
  {
   "slug": "monthly-bills-list",
   "area": "money",
-  "line1": "The bills you forget",
-  "line2": "are not monthly",
+  "line1": "Every bill, one list",
+  "line2": "the yearly ones too",
   "pieces": [
    {
-    "type": "page",
-    "eyebrow": "Monthly bills list",
-    "title": "One row per bill",
+    "type": "ledger",
+    "eyebrow": "Example: what a month costs",
     "rows": [
-     "Name",
-     "Amount, or a low and a high",
-     "Due day",
-     "How often",
-     "Essential: yes or no",
-     "Shared: who pays what"
-    ]
-   },
-   {
-    "type": "stat",
-    "eyebrow": "Make it monthly",
-    "value": "$204",
-    "caption": "a month: $612 every three months, divided by three",
+     [
+      "Bills that repeat monthly",
+      "$1,668"
+     ],
+     [
+      "Insurance, $612 quarterly",
+      "$204"
+     ],
+     [
+      "Registration, $132 a year",
+      "$11"
+     ],
+     [
+      "Membership, $96 a year",
+      "$8"
+     ]
+    ],
+    "total": [
+     "A normal month",
+     "$1,891"
+    ],
     "example": true
    }
   ],
-  "alt": "A blank monthly bills list page with six fields, beside a card showing that a $612 quarterly insurance bill is $204 a month.",
-  "caption": "The six columns of a bills list that includes the quarterly and annual ones."
+  "alt": "A card showing eight bills added up to $1,891 a month, including three that are not billed monthly.",
+  "caption": "Example: $223 a month hides in the bills that are not monthly."
  },
  {
   "slug": "organize-your-finances-from-scratch",
   "area": "money",
-  "line1": "Everything is scattered?",
-  "line2": "Start with ten minutes",
+  "line1": "Money everywhere?",
+  "line2": "Start with one page",
   "pieces": [
    {
     "type": "checklist",
-    "eyebrow": "The ten minute starting path",
+    "eyebrow": "Fill in from memory",
     "items": [
-     "Gather where your info lives",
-     "Write down what you know",
-     "Mark unknowns with a question mark",
-     "Pick the one number you want",
-     "Fix one gap, set a rhythm"
-    ],
-    "done": []
-   },
-   {
-    "type": "note",
-    "eyebrow": "The gaps are useful",
-    "text": "A gap is not a failure. It is something you now know to find."
+     "Accounts: where money sits",
+     "Income: what comes in, and when",
+     "Bills: what is due on a date",
+     "Subscriptions: what renews",
+     "Debts: what you owe, at what rate"
+    ]
    }
   ],
-  "alt": "A five step checklist for getting scattered finances into view in ten minutes, beside a note saying gaps are useful, not failures.",
-  "caption": "A starting path meant to be finished the same day and improved later."
+  "alt": "A checklist of six money areas to write down from memory, with question marks for the gaps.",
+  "caption": "Ten minutes, no statements needed. Mark every gap with a question mark."
  },
  {
   "slug": "split-bills-with-a-partner-or-roommate",
   "area": "money",
-  "line1": "Who paid what?",
-  "line2": "Write it down once",
+  "line1": "Split bills fairly",
+  "line2": "by what each earns",
   "pieces": [
    {
-    "type": "table",
-    "eyebrow": "Three ways to split",
-    "columns": [
-     "Approach",
-     "How it works",
-     "It assumes"
-    ],
+    "type": "ledger",
+    "eyebrow": "Example: a 67/33 split",
     "rows": [
      [
-      "Equal",
-      "Every bill halved",
-      "Similar income and use"
+      "Rent, your share",
+      "$1,200.00"
      ],
      [
-      "By income",
-      "Share matches earnings",
-      "Comfort sharing income"
+      "Electric, your share",
+      "$73.33"
      ],
      [
-      "By item",
-      "Each takes some bills",
-      "Bills of similar size"
+      "Internet, your share",
+      "$40.00"
+     ],
+     [
+      "Insurance, your share",
+      "$14.67"
      ]
-    ]
-   },
-   {
-    "type": "checklist",
-    "eyebrow": "Agree these four first",
-    "items": [
-     "Which bills count as shared",
-     "Each person's share, as a %",
-     "How often you settle",
-     "Where you write it down"
     ],
-    "done": []
+    "total": [
+     "You pay",
+     "$1,328.00"
+    ],
+    "example": true
    }
   ],
-  "alt": "A table of three ways to split bills, equal, by income and by item, beside a checklist of four things to agree first.",
-  "caption": "Three common ways to split, and the four things to agree before you start."
+  "alt": "A card showing four shared bills and the two thirds share one partner pays, totaling $1,328 of $1,992.",
+  "caption": "Example: $4,200 and $2,100 take-home gives a 67 and 33 percent split."
  },
  {
   "slug": "subscription-tracker-what-to-track",
   "area": "money",
-  "line1": "The date it renews",
-  "line2": "is the one that counts",
+  "line1": "Know the renewal date",
+  "line2": "before it charges",
   "pieces": [
    {
-    "type": "page",
-    "eyebrow": "Subscription tracker",
-    "title": "Six fields for each one",
+    "type": "table",
+    "eyebrow": "Example: three of the six fields",
+    "columns": [
+     "Subscription",
+     "Renews",
+     "Decision"
+    ],
     "rows": [
-     "Name",
-     "Charge each cycle",
-     "Cycle: monthly or annual",
-     "Renewal date",
-     "Your decision",
-     "Who shares it"
-    ]
-   },
-   {
-    "type": "note",
-    "eyebrow": "If you keep one habit",
-    "text": "Get a heads-up two weeks before any annual renewal, so there is time to decide."
+     [
+      "Video streaming",
+      "Monthly, 5th",
+      "Keep"
+     ],
+     [
+      "Fitness app",
+      "Nov 14, annual",
+      "Planned to cancel"
+     ],
+     [
+      "Antivirus",
+      "Jan 9, annual",
+      "Still deciding"
+     ]
+    ],
+    "example": true
    }
   ],
-  "alt": "A blank subscription tracker page with six fields to fill in for each subscription, beside a note about a two week heads-up before annual renewals.",
-  "caption": "The six fields worth writing down for every subscription."
+  "alt": "A small tracker table listing three subscriptions with their renewal dates and a keep, cancel or deciding status.",
+  "caption": "Example: the annual rows are the ones with a decision waiting."
  },
  {
   "slug": "bank-statement-csv-to-budget",

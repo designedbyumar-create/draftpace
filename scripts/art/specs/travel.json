@@ -150,135 +150,149 @@
  {
   "slug": "travel-document-checklist",
   "area": "travel",
-  "line1": "An in-date passport",
-  "line2": "can still be refused",
+  "line1": "What each traveler",
+  "line2": "needs, and where",
   "pieces": [
    {
-    "type": "checklist",
-    "eyebrow": "Check these months ahead",
-    "items": [
-     "Passport expiry, every traveler",
-     "Blank pages",
-     "Visa or travel authorization",
-     "Consent for a child, one parent",
-     "Passport and booking names match"
-    ]
-   },
-   {
-    "type": "note",
-    "eyebrow": "Not a backup",
-    "text": "A photo of a passport is not a travel document. Know where each real one is."
+    "type": "table",
+    "eyebrow": "One row per document",
+    "columns": [
+     "Document",
+     "Whose",
+     "Expires"
+    ],
+    "rows": [
+     [
+      "Passport",
+      "Dana",
+      "Mar 2029"
+     ],
+     [
+      "Passport",
+      "Sam",
+      "Nov 2026"
+     ],
+     [
+      "Passport",
+      "Ines",
+      "Jun 2028"
+     ],
+     [
+      "Insurance card",
+      "Family",
+      "Trip end"
+     ]
+    ],
+    "example": true
    }
   ],
-  "alt": "A checklist of what to check months ahead: passport expiry, blank pages, visa, child consent and matching names, plus a note that a photo is not a backup.",
-  "caption": "What to check months before you travel, for every traveler."
+  "alt": "A small table listing each traveler's passport with an expiry date beside the name, and the insurance card, one row per document.",
+  "caption": "Example: one row per document, with the expiry date beside the name."
  },
  {
   "slug": "how-to-plan-a-group-trip",
   "area": "travel",
-  "line1": "Everyone asks you",
-  "line2": "who is on which booking",
+  "line1": "Who is on which",
+  "line2": "booking, in one page",
   "pieces": [
    {
     "type": "table",
-    "eyebrow": "Who is on what",
+    "eyebrow": "A group of six",
     "columns": [
      "Booking",
-     "People on it"
+     "Booked by",
+     "Who's on it"
     ],
     "rows": [
      [
-      "Flight",
-      "4 people"
+      "Flights out",
+      "Priya",
+      "All six"
      ],
      [
-      "Car hire",
-      "2 people"
+      "Cabin",
+      "Marcus",
+      "All six"
      ],
      [
-      "Restaurant",
-      "3 people"
+      "Rental car",
+      "Tom",
+      "Tom, Priya, Lee"
+     ],
+     [
+      "Dinner Fri",
+      "Lee",
+      "Five, not Tom"
      ]
     ],
     "example": true
-   },
-   {
-    "type": "checklist",
-    "eyebrow": "Decide these first",
-    "items": [
-     "Who is booking what",
-     "What is fixed, what is optional",
-     "Where the answers live"
-    ]
    }
   ],
-  "alt": "A small table showing how many people are on each of three bookings, and a checklist of three things a group decides first.",
-  "caption": "An example of recording who is on which booking. The numbers are illustrative."
+  "alt": "A table for a group of six listing each booking, who booked it, and which people are on it, including a dinner that one person skips.",
+  "caption": "Example: each booking, who made it, and who is on it."
  },
  {
   "slug": "what-to-keep-on-paper-when-you-travel",
   "area": "travel",
-  "line1": "Phone at four percent",
-  "line2": "in a taxi",
+  "line1": "The one page",
+  "line2": "worth printing",
   "pieces": [
    {
-    "type": "page",
-    "eyebrow": "One page, printed",
-    "title": "What goes on it",
-    "rows": [
-     "Stay address, local language",
-     "Booking references",
-     "A phone number per booking",
-     "Insurance, assistance line",
-     "Passport numbers",
-     "One contact at home"
+    "type": "checklist",
+    "eyebrow": "On the page",
+    "items": [
+     "Address in the local language",
+     "Booking references and phones",
+     "Insurance policy and line",
+     "One contact at home",
+     "Passport copies, kept apart"
     ]
-   },
-   {
-    "type": "note",
-    "eyebrow": "Two copies",
-    "text": "One in hand luggage, one in a different bag or with another traveler."
    }
   ],
-  "alt": "A printable one-page list with the address in the local language, booking references, phone numbers, insurance, passport numbers and a contact at home.",
-  "caption": "The one page worth printing before you travel."
+  "alt": "A short checklist of what goes on the one printed travel page: local-language address, booking references, insurance, a home contact, passport copies.",
+  "caption": "The five things on the page, before you print two copies."
  },
  {
   "slug": "how-to-write-a-one-page-trip-itinerary",
   "area": "travel",
-  "line1": "A guidebook is not",
-  "line2": "an itinerary",
+  "line1": "Your trip on",
+  "line2": "one page",
   "pieces": [
    {
     "type": "table",
-    "eyebrow": "Three things on every line",
+    "eyebrow": "Time, place, reference",
     "columns": [
-     "Column",
-     "What goes in it"
+     "Time",
+     "Place",
+     "Ref"
     ],
     "rows": [
      [
-      "Time",
-      "As on the booking"
+      "Tue 18:40",
+      "Flight to Lisbon",
+      "K7QD2M"
      ],
      [
-      "Place",
-      "Where, in a few words"
+      "Wed 15:00",
+      "Hotel check-in",
+      "30291"
      ],
      [
-      "Reference",
-      "Confirmation reference"
+      "Thu 09:30",
+      "Tram tour",
+      "T-5520"
+     ],
+     [
+      "Fri 12:10",
+      "Train to Porto",
+      "P4471"
      ]
-    ]
-   },
-   {
-    "type": "note",
-    "eyebrow": "Leave room",
-    "text": "Leave the rest of the day empty on purpose."
+    ],
+    "example": true
    }
   ],
-  "alt": "A table of the three columns for each line of a one-page itinerary: time, place and reference, with a note to leave the rest of the day empty.",
-  "caption": "The three things every line of a one-page itinerary answers."
+  "alt": "A short itinerary table with a time, place and confirmation reference on each line, for a flight, hotel, tram tour and train.",
+  "caption": "Example: one line per booking, with the reference beside it."
  },
  {
   "slug": "packing-list-for-a-week-away",

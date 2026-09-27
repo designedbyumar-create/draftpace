@@ -2,155 +2,130 @@
  {
   "slug": "what-is-due-on-my-car-right-now",
   "area": "vehicles",
-  "line1": "What is due on your car",
-  "line2": "Miles or months, first",
+  "line1": "What is due on",
+  "line2": "your car right now",
   "pieces": [
    {
-    "type": "compare",
-    "eyebrow": "Two ways a job comes due",
-    "left": {
-     "label": "By miles",
-     "items": [
-      "Today's miles minus then",
-      "Compare to the interval"
+    "eyebrow": "Example, not your schedule",
+    "columns": [
+     "Job",
+     "Since then",
+     "Decides"
+    ],
+    "rows": [
+     [
+      "Oil and filter",
+      "4,200 mi, 5.6 mo",
+      "Months"
+     ],
+     [
+      "Tire rotation",
+      "7,400 mi",
+      "Miles"
+     ],
+     [
+      "Cabin air filter",
+      "13,300 mi, 11.3 mo",
+      "Months"
+     ],
+     [
+      "Brake fluid",
+      "No date",
+      "Nothing yet"
      ]
-    },
-    "right": {
-     "label": "By months",
-     "items": [
-      "Count months since the date",
-      "Compare to the interval"
-     ]
-    }
-   },
-   {
-    "type": "note",
-    "eyebrow": "Whichever comes first",
-    "text": "Whichever is further along its limit is the one that counts."
+    ],
+    "example": true,
+    "type": "table"
    }
   ],
-  "alt": "A two-column card comparing how a car job comes due by miles and by months, with a note that whichever limit is reached first counts.",
-  "caption": "Work out each job both ways: distance since it was done, and months since."
+  "alt": "A table of four car jobs with miles and months since each was done, showing which limit decides and one job with no date.",
+  "caption": "An example with made-up numbers. Miles or months, whichever comes first."
  },
  {
   "slug": "what-to-tell-a-mechanic-before-work-starts",
   "area": "vehicles",
-  "line1": "Say what you want,",
-  "line2": "and where it stops",
+  "line1": "What to tell a mechanic",
+  "line2": "before work starts",
   "pieces": [
    {
-    "type": "script",
-    "eyebrow": "Before you hand over the keys",
+    "eyebrow": "Say it at drop-off",
     "lines": [
      {
-      "label": "Say",
-      "text": "An oil and filter change and a tire rotation, please."
+      "label": "Request",
+      "text": "An oil change and a tire rotation, nothing else today."
      },
      {
-      "label": "Then",
-      "text": "Please do not go over this without calling me first."
+      "label": "Limit",
+      "text": "Please don't go over $250 without calling me first."
      },
      {
-      "label": "Ask",
-      "text": "For anything else, please give me the estimate in writing."
+      "label": "Extras",
+      "text": "Text me the price in writing before you start."
      }
-    ]
-   },
-   {
-    "type": "checklist",
-    "eyebrow": "Optional extras",
-    "items": [
-     "Keep any parts they replace",
-     "Leave a number they can reach",
-     "Note the mileage and the date"
-    ]
+    ],
+    "type": "script"
    }
   ],
-  "alt": "A three-line script for a repair shop: the specific job, a call before going over the limit, and a written estimate, plus optional extras.",
-  "caption": "A plain script, not legal advice. Say the job, the limit and the call."
+  "alt": "A card with three lines to say at a repair shop: the job you are requesting, a spending limit and a request for written prices.",
+  "caption": "Three sentences to say before the keys change hands. The amounts are examples."
  },
  {
   "slug": "used-car-no-service-records-what-to-do",
   "area": "vehicles",
-  "line1": "No service records?",
-  "line2": "Start your own today",
+  "line1": "Used car, no service",
+  "line2": "records: first week",
   "pieces": [
    {
-    "type": "timeline",
-    "eyebrow": "The first week",
-    "steps": [
-     {
-      "when": "Ask the seller",
-      "what": "Note what they recall, as theirs"
-     },
-     {
-      "when": "Note the mileage",
-      "what": "The odometer number and today's date"
-     },
-     {
-      "when": "Find the manual",
-      "what": "It says how often each job comes round"
-     },
-     {
-      "when": "Start a record",
-      "what": "Begin with today: date, miles, what was done"
-     }
-    ]
-   },
-   {
-    "type": "note",
-    "eyebrow": "Do not guess",
-    "text": "Treat each job as unknown until you have a real date for it."
+    "eyebrow": "Week one, in order",
+    "items": [
+     "Ask the seller for receipts and shop names",
+     "Write down the odometer and date",
+     "Check the VIN for open recalls",
+     "Get an independent inspection",
+     "Start your own log today"
+    ],
+    "type": "checklist"
    }
   ],
-  "alt": "A four-step first-week timeline for a used car with no paperwork: ask the seller, note the mileage, find the manual, start a record.",
-  "caption": "Four steps for the first week with a used car that came with nothing on paper."
+  "alt": "A five-item checklist for the first week with a used car that has no service records, from asking the seller to starting a log.",
+  "caption": "Five steps for a car that came with no paperwork."
  },
  {
   "slug": "car-maintenance-log-what-to-write-down",
   "area": "vehicles",
-  "line1": "A log a buyer could",
-  "line2": "read in a minute",
+  "line1": "Car maintenance log:",
+  "line2": "what to write down",
   "pieces": [
    {
-    "type": "table",
-    "eyebrow": "Maintenance log columns",
+    "eyebrow": "An example log",
     "columns": [
-     "Column",
-     "What goes in it",
-     "Needed?"
+     "Date",
+     "Miles",
+     "What was done"
     ],
     "rows": [
      [
-      "Date",
-      "The day it was done",
-      "Yes"
+      "Mar 3",
+      "48,100",
+      "Oil and filter"
      ],
      [
-      "Miles",
-      "Odometer at the time",
-      "Yes"
+      "Jun 21",
+      "50,600",
+      "Rear brake pads"
      ],
      [
-      "What was done",
-      "In plain words",
-      "Yes"
-     ],
-     [
-      "Who did it",
-      "Shop name, or yourself",
-      "Optional"
+      "Jul 9",
+      "51,400",
+      "Wiper blades"
      ]
-    ]
-   },
-   {
-    "type": "note",
-    "eyebrow": "Fact, not intention",
-    "text": "Write what was done, not what you meant to do."
+    ],
+    "example": true,
+    "type": "table"
    }
   ],
-  "alt": "A maintenance log table with columns for date, miles, what was done and who did it, marked as needed or optional, and a note to record facts.",
-  "caption": "The columns of a simple log. Cost or note is a fifth, optional one."
+  "alt": "A sample car maintenance log with three lines, each showing a date, an odometer reading in miles and the work done.",
+  "caption": "An example log. Date, miles and what was done on every line."
  },
  {
   "slug": "selling-your-car-with-a-service-history",
@@ -276,95 +251,110 @@
  {
   "slug": "glove-box-checklist-what-to-keep",
   "area": "vehicles",
-  "line1": "What stays in the car",
-  "line2": "and what goes home",
+  "line1": "What to keep",
+  "line2": "in your glove box",
   "pieces": [
    {
-    "type": "compare",
-    "eyebrow": "Glove box or home",
-    "left": {
-     "label": "In the car",
-     "items": [
-      "Insurance card",
-      "Roadside help number",
-      "The owner's manual"
-     ]
-    },
-    "right": {
-     "label": "At home",
-     "items": [
-      "Spare keys",
-      "The title",
-      "Papers with your address"
-     ]
-    }
+    "type": "checklist",
+    "eyebrow": "Worth having in the car",
+    "items": [
+     "Registration",
+     "Proof of insurance",
+     "Roadside help number",
+     "Owner's manual",
+     "Tire size and oil on one card"
+    ]
    },
    {
-    "type": "page",
-    "eyebrow": "Glove box card",
-    "rows": [
-     "Plate",
-     "VIN",
-     "Oil type",
-     "Tire size",
-     "Insurer and policy number",
-     "Roadside number"
+    "type": "checklist",
+    "eyebrow": "Leave at home",
+    "items": [
+     "The title",
+     "Spare keys",
+     "Extra ID"
     ]
    }
   ],
-  "alt": "A comparison of what to keep in a glove box versus at home, beside a blank card with plate, VIN, oil, tire size, insurer and roadside number.",
+  "alt": "Two checklist cards, one listing what to keep in a glove box such as registration and proof of insurance, and one listing what to leave at home.",
   "caption": "Keep the details in the car and the originals at home."
  },
  {
   "slug": "car-paperwork-dates-organizer",
   "area": "vehicles",
-  "line1": "Renewal dates that",
-  "line2": "do not sneak up",
+  "line1": "Car renewal dates",
+  "line2": "in one place",
   "pieces": [
    {
-    "type": "stat",
-    "eyebrow": "Look ahead once a month",
-    "value": "6 weeks",
-    "caption": "Act on any date that falls inside the next six weeks",
-    "foot": "Write the next date down the day you renew"
+    "type": "table",
+    "eyebrow": "Example tracker",
+    "columns": [
+     "Paper",
+     "Runs out",
+     "Act by"
+    ],
+    "rows": [
+     [
+      "Civic registration",
+      "Nov 30",
+      "Oct 19"
+     ],
+     [
+      "Civic insurance",
+      "Jan 14",
+      "Dec 3"
+     ],
+     [
+      "Van registration",
+      "Mar 15",
+      "Feb 1"
+     ]
+    ],
+    "example": true
    },
    {
-    "type": "checklist",
-    "eyebrow": "Note for each paper",
-    "items": [
-     "The kind of paper",
-     "The date it runs out",
-     "Where the paper is kept"
-    ]
+    "type": "note",
+    "eyebrow": "The rule of thumb",
+    "text": "Look six weeks ahead, once a month."
    }
   ],
-  "alt": "A card showing six weeks as the look-ahead window for car paperwork dates, beside a checklist of the kind of paper, its date and where it is kept.",
-  "caption": "Registration, insurance, inspection: note the paper, the date and where it is."
+  "alt": "A small table of car registration and insurance dates with an act-by date six weeks earlier, and a note to look six weeks ahead once a month.",
+  "caption": "An example tracker with made-up dates."
  },
  {
   "slug": "first-car-checklist-for-new-drivers",
   "area": "vehicles",
-  "line1": "New car, first week,",
-  "line2": "five things, one hour",
+  "line1": "Just got the car?",
+  "line2": "Do these first",
   "pieces": [
    {
-    "type": "checklist",
-    "eyebrow": "In the first week",
-    "items": [
-     "Find the owner's manual",
-     "Note today's mileage and date",
-     "Find registration and insurance",
-     "Start a record: date, miles, work",
-     "Put a card in the glove box"
+    "type": "timeline",
+    "eyebrow": "The first week, in order",
+    "steps": [
+     {
+      "when": "Before driving",
+      "what": "Call your insurer"
+     },
+     {
+      "when": "Day 1",
+      "what": "Match the VIN, count the keys"
+     },
+     {
+      "when": "Days 2 and 3",
+      "what": "Title and registration"
+     },
+     {
+      "when": "Days 4 to 7",
+      "what": "First record entry, glove box"
+     }
     ]
    },
    {
     "type": "note",
-    "eyebrow": "First entry",
-    "text": "The date you got the car and its mileage that day is enough."
+    "eyebrow": "Check the VIN",
+    "text": "Dashboard, door jamb and title should all match."
    }
   ],
-  "alt": "A five-item first-week checklist for a new driver: manual, mileage, papers, a record and a glove box card, with a note on the first entry.",
-  "caption": "None of it needs a garage: a notebook, a pen and about an hour."
+  "alt": "A timeline of the first week with a new car, from calling the insurer to setting up the glove box, and a note to match the VIN in three places.",
+  "caption": "The order that keeps the hard-to-fix things first."
  }
 ]

@@ -1157,7 +1157,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "how-to-restart-a-project-you-gave-up-on",
     title: "How to restart a project you gave up on",
-    dek: "Coming back costs more than starting did, mostly the rebuilding of where you got to. What to leave behind when you stop, and how to resume from there.",
+    dek: "Coming back costs more than starting did, mostly the rebuilding of where you got to. What to write down, and how to resume without re-reading everything.",
     primaryQuery: "restart a project you gave up on",
     next: { slug: "why-you-abandon-planners-and-how-to-come-back", reason: "If the project stalled because the system around it broke, this shows what usually fails and how to keep one page of it." },
     related: [
@@ -1166,54 +1166,125 @@ export const GUIDES: Guide[] = [
       { slug: "how-to-deal-with-something-you-have-put-off", reason: "If the shame of the gap is what keeps you away, this gives three lines to name the delay and get to the practical question." },
     ],
     publishedAt: "2026-08-30",
+    updatedAt: "2026-09-26",
     areaSlug: "mind-and-focus",
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Coming back to something you abandoned is harder than starting it was, and the reason is worth knowing. You are not just facing the task again. You are facing the task, plus the work of reconstructing where you got to, plus whatever you have decided your abandoning it says about you.",
-          "Only one of those three is actually the task. The other two are what make the second attempt feel heavier than the first, and both can be reduced.",
+          "Don't start over. Find the last thing you finished, write one line saying where you got to, name the smallest piece that comes next, and do only that piece. Re-reading everything first feels responsible and mostly delays you.",
+          "This is for the half-finished form, claim, application or clear-out, the admin kind of project. It can't tell you whether the thing deserves finishing, but step three below helps you decide that quickly.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "The reconstruction is the real cost",
+        heading: "Why the second start is harder than the first",
         paragraphs: [
-          "Most of the resistance to picking something up is not laziness. It is the accurate expectation that you will spend twenty minutes working out what you already did before you can do anything new.",
-          "Which forms were filled in. Whether you sent the email. What the person said. Where the reference number went. That work is genuinely tedious, your brain knows it is coming, and it is a large part of why the thing has sat for a month.",
+          "On day one you had a task. Six weeks later you have the task, plus the job of working out what you already did, plus a feeling about having stopped. You may spend twenty minutes finding out whether you sent the email, which pages are filled in, and where the reference number went. That job is dull, and a part of you knows it's waiting, which can be enough to keep the folder shut.",
+          "So the aim of a restart is small: get the reconstruction down to one written line and one next piece. Nothing more ambitious than that.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Example: a restart note, filled in",
+        intro: "An illustration, not a real case. Say you started a warranty claim on a dishwasher six weeks ago and stopped.",
+        columns: ["Question", "What the note says"],
+        rows: [
+          [
+            "Where did I get to?",
+            "Form filled in to page 2. Receipt photographed but not attached.",
+          ],
+          [
+            "Was anything missing?",
+            "The serial number. It's on a sticker inside the door.",
+          ],
+          [
+            "Smallest next piece",
+            "Open the door and photograph the serial number sticker.",
+          ],
+          ["Still needed?", "Yes. The claim window closes on the 30th."],
         ],
       },
       {
         kind: "list",
-        checkable: true,
-        heading: "What to leave behind when you stop",
-        intro: "Three lines when you put something down, which turn a twenty minute restart into a two minute one.",
+        ordered: true,
+        heading: "How to restart, in order",
+        intro: "Twenty minutes is plenty for the first sitting. You can stop earlier.",
         items: [
-          "Where you got to. Not what the task is, where you stopped inside it.",
-          "The next physical action, written as a verb. Call the number on the letter. Not chase the refund.",
-          "Anything you learned that is not written anywhere else, such as a reference number or the name of who you spoke to.",
+          "Put out what you already have. The form, the emails, the receipt, whatever you did last time, all where you can see it. Don't read it yet.",
+          "Write where you got to, in one line. Where you stopped inside the task, not what the task is. If you can't tell, look for the newest thing you produced: the last email sent, the last page filled in.",
+          "Check whether it still needs doing. Ask three questions: is anyone waiting on it, does it have a date that has passed or is coming, and would you be glad to have it done? If all three are no, letting it go is a decision, so write \"dropped on [date], because [reason]\" and close it.",
+          "Look for what was missing last time. A password, a document that never arrived, an answer someone else owed you. If it's still missing, getting it is your real next step, and it's often a short call or email. See [first physical step: 20 examples](/guides/first-physical-step-20-examples) for wording that step.",
+          "Name the smallest piece and do only that. Small enough that starting it isn't a decision: find the paperwork and put it on the desk, photograph one sticker, write the first line of the email.",
+          "Before you stop, leave the note for next time: where you got to, the next piece, and anything you learned that isn't written elsewhere, such as who you spoke to.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "How long it has been changes the first step",
+        columns: ["Time away", "What to add"],
+        rows: [
+          ["A week or two", "Read your last note and go straight to the next piece."],
+          [
+            "A month or so",
+            "As above, and leave yourself a note at the end of the sitting so next time starts from it.",
+          ],
+          [
+            "Longer than that",
+            "Do the still-needed check before you spend any effort. Dates may have passed.",
+          ],
+          [
+            "No idea",
+            "Look for the newest date on any paper or email. Treat it as a month, then follow that row.",
+          ],
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Do not restart from the beginning",
+        heading: "When it doesn't work",
         paragraphs: [
-          "The instinct on returning is to go back to the start and re-read everything, which feels responsible and is usually a way of not resuming. It also makes the whole thing feel larger than it is.",
-          "Go straight to the next action instead. If it turns out you needed context, you will find that out in about a minute, which is much cheaper than reviewing everything first.",
+          "The most common snag is choosing a piece that is too big. \"Finish the form\" is a project. \"Find the serial number\" is a piece. If you sit down and nothing happens, shrink it, or try [what to do in the next ten minutes when you're stuck](/guides/task-paralysis-what-to-do-in-the-next-ten-minutes).",
+          "The second snag is a passed date. Some things do get harder after a delay: a claim window closes, a form expires. Nothing here can reopen one. The move is to contact whoever runs the process and ask what's still possible, and [how to deal with something you have put off](/guides/how-to-deal-with-something-you-have-put-off) has lines for that.",
+          "The third is that the project stopped because the system around it broke, not the task. If your planner or list went quiet at the same time, see [why you abandon planners and how to come back](/guides/why-you-abandon-planners-and-how-to-come-back), and if the pile is many things, start with [how to start when everything is overdue](/guides/how-to-start-when-everything-is-overdue).",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "How do I restart something I stopped halfway?",
+            a: "Write one line about where you got to, name the smallest piece that comes next, and do only that. Skip re-reading from the beginning, because you'll find out within a minute if you needed the background. Then leave a note for next time so the restart isn't repeated.",
+          },
+          {
+            q: "Why is it so hard to go back to something I abandoned?",
+            a: "Returning means facing the task, rebuilding where you stood, and any feeling you attached to stopping. That rebuilding can be tedious enough to keep you away. A written note of where you got to removes most of it, which is why the steps above start there.",
+          },
+          {
+            q: "Should I start over or continue where I left off?",
+            a: "Continue, unless what you did is now wrong. Starting over makes the whole thing feel larger than it is. Check the parts you finished only if a date or fact may have changed, such as an amount or a deadline, and leave the rest alone.",
+          },
+          {
+            q: "How do I know whether to give up on it instead?",
+            a: "Ask if anyone is waiting on it, whether it has a date, and whether you'd be glad to have it done. Three no answers mean you can close it on purpose. Write down what you decided and why, so it stops nagging as an open question.",
+          },
+          {
+            q: "How do I stop leaving things half done?",
+            a: "You won't stop entirely, and that's fine. What you can change is what you leave behind: where you got to and the next piece, in one or two lines. A [weekly reset](/guides/a-weekly-reset-that-survives-a-bad-week) is a light way to look at what's stalled.",
+          },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "The story about yourself is optional",
+        heading: "Where a Companion can hold this for you",
         paragraphs: [
-          "There is a version of this where abandoning something becomes evidence about what sort of person you are, and that version makes returning much harder, because now picking it up means admitting to something.",
-          "Nothing was lost by stopping. The task is exactly where you left it, indifferent to how long it sat. A month of not doing something is not a month of failing at it, whatever a productivity app with a streak counter has implied.",
+          "[Alongside](/shop/alongside), the ADHD Life Companion, has a walkthrough called Pick something back up. It asks how long it has been, where you got to, whether anything was missing last time, and what the smallest piece is. Then it shows a short list of what to have out before you start. Your answers are kept, so next time you see them instead of working it out again. If you leave halfway, reopening the item puts you back at the exact question with earlier answers intact. It holds your own notes only, not documents or photos.",
         ],
       },
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "ADHD Life Companion is built so that leaving something is not a failure. Close a run halfway through and it changes nothing on the item, then returns you to the exact question you left rather than to the beginning. Everything you had already answered is still there. There is no streak, no completion percentage, and nothing anywhere that counts what you did not get to.",
+        body: "Leaving a run halfway does not change the item, add anything to its history, or count anything. Alongside is a web app for admin, not a treatment.",
       },
     ],
   },
@@ -2715,7 +2786,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "why-you-keep-thinking-about-a-task-and-not-doing-it",
     title: "Why you keep thinking about a task and not doing it",
-    dek: "You have not forgotten it, so writing it down again changes nothing. The gap is between knowing and starting, and two questions that help close it.",
+    dek: "You haven't forgotten it, so writing it down again changes nothing. The gap is between knowing and starting, and two questions that help close it.",
     primaryQuery: "keep thinking about a task",
     next: { slug: "task-paralysis-what-to-do-in-the-next-ten-minutes", reason: "When thinking about it has turned into being stuck, this is the main guide to getting unstuck in ten minutes." },
     related: [
@@ -2724,52 +2795,129 @@ export const GUIDES: Guide[] = [
       { slug: "why-to-do-lists-make-it-worse", reason: "If the task lives on a list you keep rewriting, this explains three ways lists get in the way of starting." },
     ],
     publishedAt: "2026-08-30",
+    updatedAt: "2026-09-26",
     areaSlug: "mind-and-focus",
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "You have not forgotten it. That is the confusing part. It arrives at eleven at night, in the shower, in the middle of something else, and it has been doing that for weeks.",
-          "So the problem may not be memory, and a tool built only around remembering may not help. Writing it down again does nothing, because it was never off the list.",
+          "Attach one physical action to the thought, and one thing you need in front of you to do it. Two questions do that: what is the next physical action, and what would have to be on the table for me to do it? Then do the action, or give it a day and a time.",
+          "This is for one task that keeps coming back at eleven at night. It can't tell you why it loops for you, and if the worrying is constant and about everything, a clinician is the right person to ask.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "The gap is between knowing and starting",
+        heading: "Thinking about it is not starting it",
         paragraphs: [
-          "Starting almost anything administrative requires holding several things at once: what this is about, what you want to happen, the two facts you will need, and enough spare capacity to think while somebody talks at you.",
-          "Many people find that is a lot to hold, and it feels heaviest at the moments you tend to attempt these things, which is late, tired, and already carrying the day. The task may not be hard. Assembling the conditions to begin it often is.",
+          "Picture it. You've thought about the insurance renewal in the shower, in the car, and again in bed. Each time it arrives as the whole task: sort out the insurance. That phrase has no first move in it, so the thought has nowhere to go and comes round again. You haven't forgotten it, which is why a fresh list entry changes nothing. It was never off the list.",
+          "Starting also asks you to hold several things at once: what this is about, what you want to happen, two facts you'll need, and enough spare attention to think while someone talks to you. That's a lot to assemble at a bad hour. Many people find that gathering those conditions is the hard part, more than the task itself.",
+        ],
+      },
+      {
+        kind: "compare",
+        heading: "How to tell circling from moving",
+        left: {
+          label: "Circling",
+          items: [
+            "You rehearse how they'll react",
+            "You reword the task on your list",
+            "The task is named by its outcome: sort out, deal with",
+            "Nothing you could photograph has happened",
+          ],
+        },
+        right: {
+          label: "Moving",
+          items: [
+            "You can name a verb: find, open, write, call",
+            "You know what paper or fact you need",
+            "It has a day, or you're doing it now",
+            "Someone watching could see it happen",
+          ],
+        },
+      },
+      {
+        kind: "table",
+        heading: "Example: three looping thoughts, worked through",
+        intro: "Illustrations, not real cases.",
+        columns: ["The thought", "Next physical action", "What needs to be in front of me"],
+        rows: [
+          [
+            "Sort out the insurance",
+            "Find the renewal letter and read the date on it",
+            "The letter and this year's quote",
+          ],
+          [
+            "I need to reply to Sam",
+            "Open the email and write: Sorry for the slow reply.",
+            "A decision: yes or no to Saturday",
+          ],
+          [
+            "Book the dentist",
+            "Look up the number and stick it by the phone",
+            "Two days that work for me",
+          ],
         ],
       },
       {
         kind: "list",
-        checkable: true,
-        heading: "The two questions that unstick most things",
+        ordered: true,
+        heading: "The two questions, step by step",
         items: [
-          "What is the next physical action? Not the outcome. Call the number on the letter, find the reference in the email, open the form. If you cannot name a physical action, that is why it has not moved.",
-          "What would have to be in front of me to do that? Usually a reference number, a date, and a decision about what you want. Get those into one place and the task shrinks to something you can actually attempt.",
+          "Say the thought as a task, out loud or on paper, in your own words. \"The insurance thing\" is fine.",
+          "Ask: what is the next physical action? A phone call, opening a form, finding a document. Not deciding and not planning. If you can't name one, that is why it hasn't moved. [First physical step: 20 examples](/guides/first-physical-step-20-examples) has models to borrow.",
+          "Ask: what would have to be in front of me to do that? Usually a reference number, a date, and a decision about what you want. Put them in one place, next to the action.",
+          "Choose: now, or a specific day and time. If it's a day, write it where you'll see it that morning. \"Sometime this week\" leaves the thought looping.",
+          "Then stop thinking about the rest. Finding the letter counts. You don't need to finish the renewal to have moved it.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "The thing gets heavier the longer it sits, but not for the reason you think",
+        heading: "What can go wrong",
         paragraphs: [
-          "The task itself does not change. What changes is that it acquires a story: that you have avoided it for a month, that this says something about you, that starting now means admitting to the delay.",
-          "That accumulated weight is not part of the job. It is worth naming, because it is usually the larger of the two things stopping you, and it is the one that disappears the moment you do anything at all.",
+          "Sometimes the action is still too heavy to begin. That's a different problem from circling, and [task paralysis: what to do in the next ten minutes](/guides/task-paralysis-what-to-do-in-the-next-ten-minutes) is the guide for it. If the action is a call, [how to make a phone call you have been avoiding](/guides/how-to-make-a-phone-call-you-have-been-avoiding) covers the five things to write out first.",
+          "Sometimes the thought has picked up weight from how long it has waited, and starting feels like admitting the delay. [How to deal with something you have put off](/guides/how-to-deal-with-something-you-have-put-off) has one-sentence lines for that. And if the thing lives on a list you keep rewriting, see [why to-do lists make it worse](/guides/why-to-do-lists-make-it-worse).",
+          "One more limit. If the same thoughts keep you awake most nights, or spread to everything, tell a doctor or therapist. This guide covers admin that keeps coming to mind, and nothing beyond that.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Aim for a smaller thing than finishing",
+        heading: "Tell one person",
         paragraphs: [
-          "Finding the reference number is progress. Getting through the opening sentence of a call is progress. Neither finishes anything and both remove the part that was actually blocking you.",
-          "If the thing is a call you have been dreading specifically, the preparation that helps is set out in [making a phone call you have been avoiding](/guides/how-to-make-a-phone-call-you-have-been-avoiding).",
+          "If the step needs a decision, saying it aloud to a friend can speed it up: \"I need to choose between the two plans by Friday.\" You're not asking them to fix it. Tonight, write the action on a sticky note and put it on the thing you'll touch first tomorrow.",
         ],
       },
       {
-        kind: "callout",
-        label: "The Companion for this",
-        body: "ADHD Life Companion is built for this gap rather than for remembering. You put the thing down once, it shows it on the day you chose, and when you are ready it walks you through it, holding the purpose and the outcome on screen so you are not carrying them. Nothing in it counts how long something sat.",
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "Why do I keep thinking about a task but not do it?",
+            a: "One common reason is that the thought has no first move attached. \"Sort out the insurance\" gives your mind nothing to act on, so it circles. Naming one physical action and what you need to hand often ends the loop. Persistent, wide-ranging worry is a question for a clinician.",
+          },
+          {
+            q: "Why can't I start a task I know I need to do?",
+            a: "Starting can mean holding the purpose, the outcome, some facts and spare attention all at once. That's a lot at the moment you try. Get the facts into one place and pick a first action small enough that starting isn't a decision, like opening the file.",
+          },
+          {
+            q: "Is this the same as task paralysis?",
+            a: "They overlap but feel different. Here you keep thinking about one task. In paralysis you may not be able to begin anything at all. The fixes overlap too: shrink the first step. The [task paralysis guide](/guides/task-paralysis-what-to-do-in-the-next-ten-minutes) covers the second case.",
+          },
+          {
+            q: "Does writing the task down help?",
+            a: "Only if the entry has a physical action in it. \"Insurance\" on a list is the same thought in a new place. \"Find the renewal letter\" is something you can do. Write the verb, not the topic, and note where the paper is.",
+          },
+          {
+            q: "When is it worth talking to a professional?",
+            a: "If the thoughts are constant, affect your sleep or work, or spread across everything, mention it to a doctor or therapist. A guide can help with the single stuck task. It can't work out why your mind behaves the way it does.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Where a Companion can hold this for you",
+        paragraphs: [
+          "[Alongside](/shop/alongside), the ADHD Life Companion, has a walkthrough called Break something down. It asks what the thing is, what would be true when it's finished, and what the first physical step is, plus optionally the next two. Then it asks which of them could happen today: one of them, not the list. The steps you aren't doing today go into Life, so you're not carrying them in your head. If you give an item a date, it appears on the day you chose with the line \"You said you would come back to this.\"",
+        ],
       },
     ],
   },
@@ -3443,67 +3591,183 @@ export const GUIDES: Guide[] = [
       { slug: "packing-and-planning-for-a-trip-with-kids-or-a-baby", reason: "Children need their own paperwork, so this covers what to note for each child and what to pack." },
     ],
     publishedAt: "2026-08-30",
+    updatedAt: "2026-09-26",
     areaSlug: "travel",
+    sources: [
+      {
+        name: "TSA: Identification",
+        url: "https://www.tsa.gov/travel/security-screening/identification",
+        retrieved: "2026-09-26",
+        note: "Adult ID at the checkpoint, REAL ID enforcement from May 7, 2025, children under 18, $45 ConfirmID fee.",
+      },
+      {
+        name: "TSA: REAL ID",
+        url: "https://www.tsa.gov/real-id",
+        retrieved: "2026-09-26",
+        note: "How to tell a compliant license (star, flag, Enhanced).",
+      },
+      {
+        name: "USAGov: International travel documents for children",
+        url: "https://www.usa.gov/travel-documents-children",
+        retrieved: "2026-09-26",
+        note: "Consent letter guidance for children traveling with one parent or other adults; check the destination embassy.",
+      },
+      {
+        name: "U.S. Department of State: Get Your Processing Time",
+        url: "https://travel.state.gov/content/travel/en/passports/how-apply/processing-times.html",
+        retrieved: "2026-09-26",
+        note: "Routine and expedited passport timing. The fetch tool got a 403; the figures come from a search summary of this page, so verify before publishing.",
+      },
+      {
+        name: "CBP: Six-Month Validity Update",
+        url: "https://www.cbp.gov/document/bulletins/six-month-validity-update",
+        retrieved: "2026-09-26",
+        note: "Background only: shows six-month validity rules are country-specific. It concerns visitors entering the U.S., not U.S. citizens leaving.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Travelling with other people means being responsible for documents that are not yours, usually including at least one person who cannot be responsible for their own.",
-          "Two categories matter. What has to be checked well in advance, because it cannot be fixed at an airport, and what has to be findable on the day.",
+          "For an international trip, a U.S. traveler needs a passport that meets the destination's validity rule, any visa or entry authorization, booking references, and insurance details. For a domestic flight, an adult needs a REAL ID-compliant license or a passport. Check every traveler, children included, before you book anything nonrefundable.",
+          "This is written for U.S. citizens flying out of the United States. It can't tell you what a particular country demands, because those rules differ and change. The destination's official entry page, and the State Department's country information for it, are the only place to confirm them.",
         ],
       },
       {
-        kind: "list",
-        checkable: true,
-        heading: "Check these months ahead",
-        intro: "Each of these can end a trip at a check-in desk.",
-        items: [
-          "Passport expiry for every traveler. Some countries require several months of validity beyond your return date, so an in-date passport can still be refused. Check the official entry page.",
-          "Blank pages, which some countries require and which nobody thinks about.",
-          "Visa or travel authorisation requirements, including electronic ones that are quick but not instant.",
-          "Whether a child travelling with one parent, or with neither, needs documented consent. Rules vary and are enforced unevenly, which is worse than being enforced consistently.",
-          "Name mismatches between passport and booking, which can stop you at check-in.",
+        kind: "table",
+        heading: "Example: four people, one folder",
+        intro: "An illustration, not a real family. One row per document, so a question at a desk has a three second answer. Notice the row that a plain checklist would miss: Sam's passport expires in November.",
+        columns: ["Document", "Whose", "Expires", "Where kept", "Carried by"],
+        rows: [
+          ["Passport", "Dana", "Mar 2029", "Zip pocket, carry-on", "Dana"],
+          ["Passport", "Sam", "Nov 2026", "Desk drawer, top left", "Sam"],
+          ["Passport", "Ines (age 10)", "Jun 2028", "Same folder as Dana's", "Dana"],
+          [
+            "Insurance card and phone line",
+            "Whole family",
+            "Trip end",
+            "Folder, plus paper page",
+            "Sam",
+          ],
+          ["Child consent letter", "Ines", "n/a", "Folder", "Dana"],
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Passport validity catches people every year",
+        heading: "The column that does the work",
         paragraphs: [
-          "Some destinations require your passport to remain valid for a set time after you arrive or leave, often several months. A passport that is in date can still be refused.",
-          "Check every traveller, not just the adults. Children's passports are usually valid for fewer years and expire at unhelpful moments precisely because nobody is watching them.",
+          "A checklist that says \"passport: yes\" would pass Sam. The table catches him, because it has a date beside each name. If the trip is in December and the destination wants three or six months left after you go home, Sam has a problem, and it's a much cheaper problem to have in the spring than at check-in.",
         ],
       },
       {
         kind: "list",
-        checkable: true,
-        heading: "What to have findable on the day",
+        heading: "Check these before you buy anything",
+        ordered: true,
         items: [
-          "Passports, obviously, and it is worth agreeing who is physically carrying which.",
+          "Open each passport to the photo page and write down the expiry date beside the person's name. Do this for every traveler, including children.",
+          "Look up the destination's entry page and note two things: how long the passport must stay valid after you arrive or leave, and how many blank pages it wants. Some destinations want three or six months beyond your trip, and some ask for one or two empty pages. Others only need it valid for your stay. Write the rule down in one line so you're not re-reading a website next month.",
+          "Check whether you need a visa or an electronic authorization. Some are quick online, but quick is not instant, so start early.",
+          "For children traveling with one parent or with other adults, decide about a consent letter. Guidance on the usa.gov page for children's travel documents is that a child traveling with one parent should have a letter from the other parent, and one traveling with someone else should have one signed by both parents, in English and notarized when possible. The destination's embassy can tell you whether it asks for more.",
+          "Make sure the name on each ticket matches the passport exactly. A mismatch is easy to fix when you book and awkward to fix at the desk.",
+          "Decide who physically carries which passport, and write it in the last column of the table.",
+        ],
+      },
+      {
+        kind: "timeline",
+        heading: "When to do it",
+        intro: "Passport processing has been running about 4 to 6 weeks for routine service and 2 to 3 weeks for expedited, according to the State Department. Check the current figure on its site, because it moves.",
+        steps: [
+          {
+            when: "6 months before",
+            what: "Read each passport's expiry. Look up entry rules.",
+          },
+          {
+            when: "3 months before",
+            what: "Start any renewal, visa or authorization.",
+          },
+          {
+            when: "1 month before",
+            what: "Confirm names on tickets. Sort consent letters.",
+          },
+          {
+            when: "Night before",
+            what: "Print the page. Check passports are in the bag.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Domestic flights need ID too",
+        paragraphs: [
+          "Don't stop at the international documents. Since May 7, 2025, TSA no longer accepts a state license or ID that isn't REAL ID compliant. A compliant card carries a star, a flag symbol or an \"Enhanced\" marking. A U.S. passport works instead, and so do a few other federal IDs. If your license isn't compliant and you have nothing else, TSA says you can pay a $45 fee to use its ConfirmID process, which is a poor way to start a holiday.",
+          "TSA doesn't require children under 18 to show ID on domestic flights, but airlines can set their own rule, so check the one you're flying.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What to have findable on the day",
+        intro: "These are the things you'll be asked for while people are waiting behind you.",
+        checkable: true,
+        items: [
+          "Driver's license or passport for every adult, one of them REAL ID compliant.",
           "Booking references for flights, stays and transfers, readable without hunting through email.",
-          "Travel insurance policy number and the emergency assistance phone number.",
-          "Any medication documentation, especially for anything that would raise questions at a border.",
-          "One phone number per booking that a human will actually answer.",
+          "Insurance policy number and the emergency assistance line.",
+          "Prescriptions in their original packaging, plus a note of what they are, if anything might raise a question at a border. Ask your prescriber or the destination's embassy about specifics.",
+          "A phone number per booking that a person actually answers.",
         ],
       },
       {
         kind: "paragraphs",
         heading: "A photo of a passport is not a backup",
         paragraphs: [
-          "It is useful for filling in forms and for proving to yourself what the number was. It is not a travel document, and it will not get anybody onto a plane.",
-          "The genuinely useful record is knowing what exists and where it is right now. Whose passport is in which bag. Whether the insurance is under one person's name. Which parent is carrying which child's documents. That is the information that resolves a problem at a desk, and it is the part nobody writes down.",
+          "It won't board you and it won't clear a border. What it's good for is filling in forms and knowing what a number was. The thing that resolves a problem at a desk is knowing what exists and where it is right now: whose passport is in which bag, whether the insurance is under one person's name, which parent has the child's letter.",
+          "We'd still keep a photo of each passport's photo page on your phone, and a printed copy in a different bag from the passport itself. If a passport is lost, the copy speeds up what comes next, which [this guide on lost passports, wallets and phones abroad](/guides/lost-passport-wallet-or-phone-abroad-what-to-have-ready) covers. For what to print, see [what to keep on paper when you travel](/guides/what-to-keep-on-paper-when-you-travel).",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Keep something on paper",
+        heading: "What goes wrong with more than one traveler",
         paragraphs: [
-          "A phone at four percent in a taxi is a normal situation, not a rare one. Passport numbers, the insurance line and the key references on one printed page cost nothing and work when nothing else does.",
+          "Two people can hold the same fact and both be wrong. Both of you assume the other renewed the passport. Each assumes the other packed the child's letter. The fix isn't more vigilance, it's one page that names the person responsible for each item. If you're sorting this for a whole group, [how to plan a group trip](/guides/how-to-plan-a-group-trip) covers who's on which booking. If you're bringing children, the [kids and baby guide](/guides/packing-and-planning-for-a-trip-with-kids-or-a-baby) covers what to note for each child.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What the Companion does with this",
+        paragraphs: [
+          "Travel Companion has a Documents section where you record the kind (passport, visa, insurance, ticket), a label, whose it is, where it's kept and an optional expiry date. It never accepts an upload. Anything with an expiry that falls before or during the trip, or up to about six months after it ends, shows up under \"Dates worth a look\". It only compares dates you entered and says so: it doesn't know any country's rules, so the entry page is still yours to read. The printed My Trip Book is blank, with a number column you fill in by hand. Details are on the [Travel Companion page](/shop/travel-companion).",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "How many months should my passport be valid for international travel?",
+            a: "It depends on the destination. Some ask for six months beyond your arrival or departure, some for three months beyond departure, and some only that it's valid for your stay. Check the entry page for each country on the route, including any you only connect through, and write the answer beside the expiry date.",
+          },
+          {
+            q: "How many blank pages do I need in my passport?",
+            a: "Some countries want one blank page, some want two, and a few care about which pages are blank. The number isn't the same everywhere and it changes, so don't rely on a rule of thumb. Look at the destination's official entry information, and if your passport is nearly full, renew it before you book.",
+          },
+          {
+            q: "Do I need a passport for a domestic flight in the U.S.?",
+            a: "No. Adults need an acceptable photo ID, and since May 7, 2025 that means a REAL ID-compliant license or another accepted document such as a passport. Children under 18 don't need ID for TSA, though the airline may ask.",
+          },
+          {
+            q: "Does a child need a notarized letter to travel?",
+            a: "Guidance on usa.gov says a child traveling with one parent should carry a letter from the other parent, and a child traveling with someone else should have one signed by both parents, in English and notarized where possible. It also says entry and exit rules vary, so ask the destination's embassy.",
+          },
+          {
+            q: "How long does it take to renew a passport?",
+            a: "The State Department has listed about 4 to 6 weeks for routine service and 2 to 3 weeks for expedited service, not counting mailing. Those figures change, so read the current ones on travel.state.gov before you plan around them, and start earlier than feels necessary.",
+          },
         ],
       },
       {
         kind: "callout",
-        label: "The Companion for this",
-        body: "Travel Companion records what documents exist, whose they are, and where each one is kept, and can flag the ones worth showing in the trip summary. It never accepts an upload, because no product on Draftpace stores files, and passport scans are the single most sensitive thing any of them would hold if they did. It also prints My Trip Book, which is blank paper you fill in by hand.",
+        label: "Not a travel document",
+        body: "A photo or scan of a passport helps with forms and with reporting a loss. It will not get you onto a plane or across a border, so the original always comes first.",
       },
     ],
   },
@@ -4094,39 +4358,82 @@ export const GUIDES: Guide[] = [
       { slug: "first-physical-step-20-examples", reason: "Twenty examples of a first step, including the call, for admin you are stuck on." },
     ],
     publishedAt: "2026-08-30",
+    updatedAt: "2026-09-26",
     areaSlug: "mind-and-focus",
+    sources: [
+      {
+        name: "Consumer Financial Protection Bureau: How do I dispute a charge on my credit card bill?",
+        url: "https://www.consumerfinance.gov/ask-cfpb/how-do-i-dispute-a-charge-on-my-credit-card-bill-en-61/",
+        retrieved: "2026-09-26",
+        note: "Written billing error notice within 60 calendar days; a call alone does not preserve those rights.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "The first fifteen seconds are the part almost everybody rehearses and dreads. Once you are through them the conversation generally carries itself, because the other person starts asking questions and you only have to answer.",
-          "So the useful preparation is not a full script. It is a first sentence, and knowing what you want before you dial.",
+          "Open with the problem, say what happened once, in order, then say what you want done. End your first sentence with a question so the other person has the next move. Before you hang up, get a reference number, a name, what happens next, and by when.",
+          "This is for customer service, billing and account calls in the US. It can't tell you what a company owes you, and it isn't legal advice. If the call itself is what you keep avoiding, start with [how to make a phone call you have been avoiding](/guides/how-to-make-a-phone-call-you-have-been-avoiding), which covers what to write down first.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Example: a whole call in five lines",
+        intro: "An illustration, not a real call. Say a refund promised two weeks ago hasn't arrived.",
+        columns: ["Stage", "What you say"],
+        rows: [
+          [
+            "Open",
+            "Hi, I'm waiting on a refund that hasn't arrived. Can you tell me whether it's been sent, and when?",
+          ],
+          [
+            "Facts, once",
+            "It's $45, for the order on the 3rd. Your colleague Dana said it would take five business days on the 9th.",
+          ],
+          ["The ask", "I'd like the refund sent today, or a date I can rely on."],
+          [
+            "Read back",
+            "So the refund goes out by Friday. Can I have a reference number for this call?",
+          ],
+          ["Close", "And your name, please? Thank you."],
         ],
       },
       {
         kind: "scripts",
-        heading: "Openings that work",
-        intro: "Every one of these opens with the problem rather than an apology, and ends with a question, which hands them the next move.",
+        heading: "Opening lines for the common calls",
+        intro: "Each opens with the problem, not an apology, and ends with a question. Change the wording until it sounds like you.",
         items: [
           {
-            situation: "Billing problem",
-            line: "Hello, I have been charged for something and the amount is not what I was expecting. Can you look into it for me.",
+            situation: "Wrong amount charged",
+            line: "Hi, the amount I've been charged isn't what I was expecting. Can you tell me what it's for?",
           },
           {
-            situation: "Chasing something overdue",
-            line: "Hello, I am following up on something I was told would be resolved by now. Can you tell me where it has got to.",
+            situation: "Charged twice",
+            line: "Hi, I've been charged twice for the same thing and I'd like to get it put right. Can you look at the account for me?",
           },
           {
-            situation: "Cancelling",
-            line: "Hello, I would like to cancel my account. Can you tell me what you need from me to do that.",
+            situation: "Charged after canceling",
+            line: "Hi, I canceled this and I've been charged since. Can you check when the cancellation was recorded?",
           },
           {
-            situation: "Complaining",
-            line: "Hello, something has gone wrong and I would like to explain what happened. Can I go through it with you.",
+            situation: "Charge you don't recognize",
+            line: "Hi, there's a charge on my account I don't recognize. Can you tell me what it is?",
           },
           {
-            situation: "Asking for help",
-            line: "Hello, I am trying to sort something out and I am not sure I am doing it right. Can you point me in the right direction.",
+            situation: "Refund hasn't arrived",
+            line: "Hi, I'm waiting on a refund that hasn't arrived. Can you tell me whether it's been sent, and when?",
+          },
+          {
+            situation: "Chasing something",
+            line: "Hi, I got in touch about this before and I'm calling to find out where it stands. Can you look it up for me?",
+          },
+          {
+            situation: "Canceling",
+            line: "Hi, I'd like to cancel. Can you tell me what you need from me to do that?",
+          },
+          {
+            situation: "Making a complaint",
+            line: "Hi, I'd like to make a complaint. Can you tell me how that works here, and who I need to speak to?",
           },
         ],
       },
@@ -4134,42 +4441,111 @@ export const GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Say what happened, once, in order",
         paragraphs: [
-          "Whoever answers can only help with the actual sequence of events. Give it once, cleanly, then say what you need. Leading with the ask before the facts almost always makes the call longer.",
-          "Two sentences is usually enough. What happened, and what you would like to happen now.",
+          "Whoever answers can only help with the actual sequence of events. Give it once, cleanly, then say what you'd like to happen. Two or three sentences is usually enough: what happened, when, and what you want now. Leading with the ask before the facts tends to make the call longer, because they have to stop you and ask for the facts anyway.",
+        ],
+      },
+      {
+        kind: "scripts",
+        heading: "When the answer is no, or you're passed along",
+        intro: "Polite and specific works better than firm. Keep these at the bottom of the page.",
+        items: [
+          {
+            situation: "They say they can't help",
+            line: "I understand that's the policy. What options do I have from here?",
+          },
+          {
+            situation: "Asking for a supervisor",
+            line: "Is there someone with more authority to change this that I can speak to? I'll hold.",
+          },
+          {
+            situation: "You're being transferred",
+            line: "Before you transfer me, can I have your name and a reference for this call, in case we're cut off?",
+          },
+          {
+            situation: "You're told to call back",
+            line: "Can you note on the account that I called today and what I asked for? Then I'll say so when I call again.",
+          },
+          {
+            situation: "You need a minute",
+            line: "Can you give me a moment? I want to find that so I give you the right answer.",
+          },
+          {
+            situation: "Nothing gets settled",
+            line: "Can you tell me in writing what you've told me today? Which email or address should I expect it from?",
+          },
         ],
       },
       {
         kind: "list",
-        checkable: true,
-        heading: "Four things before you hang up",
+        ordered: true,
+        heading: "Four things to get before you hang up",
         intro: "This is the part that saves the second call.",
         items: [
-          "Ask them to read back what has been agreed.",
-          "Get a reference number for the call itself.",
+          "Ask them to read back what has been agreed. If you've written it down, read it to them and ask if that's right.",
+          "Get a reference number for the call itself. Without it the next call starts from nothing.",
           "Get the name of who you spoke to.",
-          "Ask what happens next, and by when.",
+          "Ask what happens next, and by when. Ask for a date, not \"soon\".",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "A note to write straight after the call",
+        intro: "Two minutes. It's the note you'll want if you have to call again.",
+        items: [
+          "Date and time of the call, and the number you dialed.",
+          "Name of the person, and the reference number.",
+          "What was agreed, in their words if you can.",
+          "What they said happens next, and the date you'll check if it hasn't.",
+          "Anything you need to send or do, with a day.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "You do not have to be firm",
+        heading: "Voicemail, and when a call isn't enough",
         paragraphs: [
-          "A great deal of advice about difficult calls is really advice about being assertive, which assumes the problem is that you are too soft. Often the problem is capacity, not confidence.",
-          "Being polite and specific usually works well with call centers, because the person answering has a fixed set of options and is deciding which to offer. Clarity about what you want moves that further than firmness does.",
+          "A voicemail is a small version of the same call. Say your name, one line on why you're calling, your number slowly, then your number again, and when you're free. Then write down that you left it and when. For a longer chase, an email after the call, with the reference number and what was agreed, gives you something written. [The email you keep not sending](/guides/the-email-you-keep-not-sending-and-how-to-chase-a-reply) covers that.",
+          "One US-specific limit. For a wrong charge on a credit card, the Consumer Financial Protection Bureau says a phone call alone doesn't protect your rights: you send a written billing error notice to the card company within 60 calendar days after the charge appeared on your statement. Call first if you like, and then put it in writing. If it's an overdue bill you're calling about, see [you missed a payment: what to do next](/guides/you-missed-a-payment-what-to-do-next).",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "If the call does not resolve it",
+        heading: "Being polite is enough",
         paragraphs: [
-          "That is a normal outcome. Plenty of calls end with somebody else needing to look into it, and the reference number is what makes the next one continue rather than restart.",
-          "If the barrier is getting to the call at all rather than the call itself, that is a different problem, worked through in [making a phone call you have been avoiding](/guides/how-to-make-a-phone-call-you-have-been-avoiding).",
+          "A lot of advice about hard calls is really about being assertive, which assumes you're too soft. You may not be. On a billing call the person answering usually has a fixed set of options and is choosing which to offer, so being clear about what you want and having the facts ready tends to help more than a harder tone. For calls where you need to refuse or give bad news, see [how to say no or give bad news on the phone](/guides/how-to-say-no-or-give-bad-news-on-the-phone).",
         ],
       },
       {
-        kind: "callout",
-        label: "The Companion for this",
-        body: "ADHD Life Companion has authored procedures for these exact situations, including a billing problem, a follow up and a difficult call. It suggests an opening you can use or replace with your own, holds what you want on screen while you talk, and never tells you what to accept or settle for, because you are the one with the facts. The suggested wording is not saved, but wording you type yourself is.",
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "What do I say when I call customer service?",
+            a: "Open with the problem in one sentence, end with a question, and give the facts once in order: what happened, when, and what you want. For example: \"Hi, I've been charged twice for the same thing and I'd like to get it put right. Can you look at the account?\"",
+          },
+          {
+            q: "How do I ask for a supervisor politely?",
+            a: "Ask after they've said they can't help, and frame it as needing someone who can change the outcome: \"Is there someone with more authority to change this that I can speak to?\" Stay polite, get the agent's name and a call reference first, and be ready to wait.",
+          },
+          {
+            q: "What should I get before I hang up?",
+            a: "Four things: a read-back of what was agreed, a reference number for the call, the name of the person, and what happens next with a date. Write them on the page as you hear them. It saves you from starting over next time.",
+          },
+          {
+            q: "What do I say when I want to cancel something?",
+            a: "\"Hi, I'd like to cancel. Can you tell me what you need from me to do that?\" Then ask for a confirmation number and whether a written confirmation will come. If they offer a discount to stay and you don't want it, say no once, plainly, and repeat that you want to cancel.",
+          },
+          {
+            q: "Should I follow up a call in writing?",
+            a: "For anything with money or a promise in it, yes. A short email with the date, the name, the reference number and what was agreed gives you a record. For a disputed credit card charge in the US, the written notice is what protects your rights.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Where a Companion can hold this for you",
+        paragraphs: [
+          "[Alongside](/shop/alongside), the ADHD Life Companion, has walkthroughs for Make a phone call, Sort out a billing problem and Follow something up. Each asks a few short questions, such as what would sort it and what you have in front of you, then shows a suggested opening for your situation. You use it or write your own. During the call it shows a short list, including the reference number, the name, and what happens next. It holds no account numbers or amounts by design, only who the charge is from and how it went, in your words.",
+        ],
       },
     ],
   },
@@ -4339,62 +4715,117 @@ export const GUIDES: Guide[] = [
       { slug: "what-to-keep-on-paper-when-you-travel", reason: "Not everyone will open a phone app, so this covers the paper page worth handing out." },
     ],
     publishedAt: "2026-08-30",
+    updatedAt: "2026-09-26",
     areaSlug: "travel",
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Coordinating schedules is one of the hardest parts of planning a group trip.",
-          "The reason is that one person ends up holding the whole thing in their head, and that person is answering the same four questions repeatedly for two weeks.",
+          "Before anyone books, settle four things in writing: who is in, who books each thing, what's fixed versus optional, and where the answers live. Then keep one list of bookings with a name beside each and the people attached. That list ends most of the messages that start with \"what time are we leaving\".",
+          "This is for the person who ends up running a trip for four to twelve people, whether or not they wanted the job. It doesn't cover picking a destination by vote or splitting the money, which are separate problems that need their own tools.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The 14 messages",
+        paragraphs: [
+          "Say you open your phone and there are 14 unread messages in the group chat. Three of them ask what time you're leaving Thursday. One asks whether Lee is on the rental car. One is a photo of a menu. You know the answers, and so does the person who asked last week. The trouble is that the answers live in your head and in six email threads, so every question comes to you.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Example: the one page that stops the questions",
+        intro: "An illustration for a group of six. Every row answers two questions at once: whose job is it, and who does it involve. The dinner row is the one that saves an argument, because Tom knew he was skipping it and nobody else did.",
+        columns: ["Booking", "Booked by", "Who's on it", "Reference"],
+        rows: [
+          ["Flights out, Thu 9:15", "Priya", "All six", "Priya's email"],
+          ["Cabin, 3 nights", "Marcus", "All six", "Marcus, ref on his page"],
+          ["Rental car", "Tom", "Tom, Priya, Lee", "Tom's email"],
+          ["Dinner Friday, 7:30", "Lee", "Five, not Tom", "Restaurant, Lee"],
         ],
       },
       {
         kind: "list",
-        checkable: true,
-        heading: "Decide these three things first",
-        intro: "Much of the friction on a group trip comes from leaving these implicit.",
+        heading: "The method",
+        ordered: true,
         items: [
-          "Who is booking what. Not who is paying, who is actually making each booking.",
-          "What is fixed and what is optional. Flights and stays are usually fixed. Everything else should be explicitly optional so nobody feels obliged to attend a museum.",
-          "Where the answers live. One place everybody can read without asking you.",
+          "List everyone who is definitely in, and everyone who is a maybe with a date you'll stop waiting. A maybe with no deadline holds up every booking.",
+          "List what needs booking: transport, lodging, anything with a reserved time. For each, name one person who makes the booking. Not who pays, who makes it.",
+          "Mark each item fixed or optional. Flights and lodging are usually fixed. Everything else should be optional in plain words, so nobody feels obliged to join the museum.",
+          "Write down who is on each booking. Four on the flight, three in the car, five at the dinner. This is the step people skip, and it's the one that stops someone discovering at the airport that they were never on a booking.",
+          "Note what each person needs once: meals, a seat, mobility, medication that changes timing. Recorded against the person, it's there when a booking is made, not remembered afterward.",
+          "Put the answers on one page and send that page, not a link to a chat. See [how to write a one-page trip itinerary](/guides/how-to-write-a-one-page-trip-itinerary) for the layout.",
+        ],
+      },
+      {
+        kind: "scripts",
+        heading: "Three messages worth having ready",
+        intro: "Use them as written or change the words. The point is to say what you'll do and by when.",
+        items: [
+          {
+            situation: "A deadline on a maybe",
+            line: "I'm booking the cabin Sunday night. If you're in, tell me by then. If I haven't heard, I'll book for the people who've said yes.",
+          },
+          {
+            situation: "When someone drops out",
+            line: "Thanks for telling me early. I'll take you off the flight and the cabin list today. If you need anything from the booking, ask me now.",
+          },
+          {
+            situation: "When a shared booking moves",
+            line: "The flight moved to 11:40. That affects everyone on it, and I'm checking what else it touches before I tell you about the car.",
+          },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "The four questions you will be asked repeatedly",
+        heading: "When something moves, it moves for some of you",
         paragraphs: [
-          "What time are we leaving. Where are we staying. What is happening on Thursday. Am I on that booking.",
-          "Every one of those is a lookup rather than a decision. If the answers are readable somewhere, the questions mostly stop, and the ones that remain are genuine decisions worth your attention.",
+          "The hard part comes when something moves. A delayed flight affects the four people on it, not the two who came separately, and working out who to tell is a job of its own. Look up what depends on what, the way [what else your trip depends on](/guides/flight-changed-what-else-is-affected) does, then add one question: which of these people are on it? If the group splits across stops, [organising a multi-stop trip without a spreadsheet](/guides/organising-a-multi-stop-trip-without-a-spreadsheet) helps with the dependencies.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What can go wrong",
+        items: [
+          "One person books everything and everyone assumes they know the details. Spread the booking, but keep the page in one place.",
+          "Optional things drift into being mandatory. Say \"optional\" out loud.",
+          "Someone isn't on a booking they thought they were. Check the who's-on-it column before the week of travel.",
+          "Half the group never opens the shared document. Print or send the page, and see [what to keep on paper when you travel](/guides/what-to-keep-on-paper-when-you-travel).",
+          "Money. Nothing here settles who owes whom, and we'd settle that before deposits go down, in writing.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Record who is on what",
+        heading: "What the Companion does with this",
         paragraphs: [
-          "In a group, a booking is not simply an event. It is an event with a subset of people attached, and that subset is rarely everybody.",
-          "Four people on the flight, two on the car hire, three at the restaurant. Writing that down once answers a large share of the questions above and prevents the specific problem of somebody discovering at the airport that they were never on a booking.",
+          "Travel Companion holds one traveler list, links each booking to the people actually on it, and keeps each person's requirements, such as meals or a seat. When you record a change to one booking, it shows what was built on top of it, so working out who to tell starts from what's recorded. It's one person's record, not a shared one: travelers don't get accounts, and there's no share link. To hand the shape of the trip to the others, send the itinerary PDF or the one-page trip card. It also doesn't split costs. See the [Travel Companion page](/shop/travel-companion).",
         ],
       },
       {
-        kind: "paragraphs",
-        heading: "Note what each person needs",
-        paragraphs: [
-          "Dietary requirements, mobility needs, a seat preference, medication that affects timing. In a group these live in several heads and surface at inconvenient moments.",
-          "Recorded once against the person, they are available when a booking is made rather than remembered afterwards.",
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "How do you plan a group trip without being the organizer?",
+            a: "You can't fully avoid the job, but you can shrink it. Give each booking to a named person, put the answers on one page anyone can read, and mark what's optional. The organizer's load drops when questions become lookups instead of decisions.",
+          },
+          {
+            q: "What is the best way to keep a group trip organized?",
+            a: "One page with each booking, who made it, who's on it and the reference. Everything else is detail. Send that page rather than pointing people at a chat thread, and update it whenever something changes.",
+          },
+          {
+            q: "How far ahead should you plan a group trip?",
+            a: "Book the fixed things, flights and lodging, as soon as the group is settled and you've put a deadline on the maybes. Leave optional things loose. Prices and availability change, so we'd avoid giving a fixed number of months.",
+          },
+          {
+            q: "How do you handle someone dropping out of a group trip?",
+            a: "Ask them to tell you early, take them off each booking they were on, and check whether any of those bookings has a per-person price or minimum. Then tell the rest of the group what changed, not only who left.",
+          },
+          {
+            q: "What should a group itinerary include?",
+            a: "Time, place and reference for each fixed item, with the names of the people on it. Leave off unbooked ideas and unconfirmed hours. Keep those in a separate note so the page stays short enough to be read.",
+          },
         ],
-      },
-      {
-        kind: "paragraphs",
-        heading: "When something moves, it moves for a subset",
-        paragraphs: [
-          "This is where group trips get genuinely difficult. A delayed flight affects the four people on it and not the two who travelled separately, and working out who needs telling is its own task.",
-          "Knowing what depends on what is the same skill as in any trip, covered in [what else your trip depends on](/guides/flight-changed-what-else-is-affected). The group version simply adds the question of who is affected.",
-        ],
-      },
-      {
-        kind: "callout",
-        label: "The Companion for this",
-        body: "Travel Companion records travelers, links them to the bookings they are actually on, and holds what each person needs. When something changes it shows what was built on top of it, so working out who to tell starts from what is recorded rather than from memory. It is one person's record, not a shared one. To hand the shape of the trip to somebody else, send the itinerary PDF or the one-page trip card.",
       },
     ],
   },
@@ -5136,63 +5567,117 @@ export const GUIDES: Guide[] = [
       { slug: "night-before-you-travel-checklist", reason: "Do the printing the evening before with this short list of six checks that leave the morning free." },
     ],
     publishedAt: "2026-08-30",
+    updatedAt: "2026-09-26",
     areaSlug: "travel",
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "A phone at four percent in a taxi with no charger is not a rare event. Neither is no signal on landing, roaming that has not activated, or handing the phone to a child for eleven minutes.",
-          "None of that is an argument against using a phone. It is an argument for one page of paper that works when the phone does not.",
+          "Print one page: where you're staying, with the address in the local language if you don't read it; a booking reference and phone number for each flight, stay and transfer; your insurance policy number and assistance line; one contact at home; and a copy of each passport's photo page, kept away from the passport. Print two copies and put them in different bags.",
+          "This is for anyone traveling with a phone that will, at some point, be at 4 percent, in a taxi, in a city where you can't read the signs. It won't replace your passport or a boarding pass, and it can't help if you forget to print it.",
         ],
       },
       {
-        kind: "list",
-        checkable: true,
-        heading: "What goes on the page",
-        intro: "Short enough to fit on one side, or it will not get printed.",
-        items: [
-          "Where you are staying, with the address in the local language if that is not yours.",
-          "Confirmation references for flights, stays and transfers.",
-          "One phone number per booking that a human will actually answer.",
-          "Travel insurance policy number and its emergency assistance line.",
-          "Passport numbers for everybody travelling.",
-          "One contact at home who could help, and who knows your plans.",
+        kind: "paragraphs",
+        heading: "The taxi at midnight",
+        paragraphs: [
+          "You've landed. There's no signal yet, or roaming hasn't switched on. The driver asks where you're going, and the address is in your booking email, which is on a phone that won't load it. A printed page with the address written the way the driver reads it is the cheapest fix in this whole guide.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Example: what the page looks like",
+        intro: "An illustration with invented details. The whole page fits on one side, or it doesn't get printed. Write phone numbers that a person answers, not a general help line you'd need a code to reach.",
+        columns: ["Line", "What to write", "Example"],
+        rows: [
+          [
+            "Staying",
+            "Name, and address as written locally",
+            "Hotel Aurora, Rua das Flores 12, 1200-195 Lisboa",
+          ],
+          ["Flights", "Reference and airline phone", "Ref K7QD2M, airline desk 555-0100"],
+          ["Transfer", "Company, reference, phone", "Airport shuttle, ref 8841, 555-0142"],
+          [
+            "Insurance",
+            "Policy number, assistance line",
+            "Policy 4471, 24-hour line 555-0177",
+          ],
+          ["At home", "One person who knows your plans", "Jo, 555-0123"],
+          ["Passports", "Photo page copies, kept apart", "In the second bag"],
         ],
       },
       {
         kind: "paragraphs",
         heading: "The address in the local language",
         paragraphs: [
-          "This is the item that earns its place most often, and the one almost nobody thinks of. A taxi driver who does not read your alphabet can read the address as written locally.",
-          "It costs nothing to include and resolves the specific situation where you are tired, in the wrong place, and cannot explain where you need to be.",
+          "It earns its place more often than anything else on the page and almost no one adds it. A driver who doesn't read your alphabet can read the address as it's written locally. It costs nothing, and it fixes the moment when you're tired, in the wrong place and can't explain where you need to be. Copy it from your booking, or from the property's own website, exactly as it's written there.",
         ],
       },
       {
-        kind: "paragraphs",
-        heading: "What not to put on it",
-        paragraphs: [
-          "Card numbers, passwords, and anything that would be genuinely damaging if the page were lost. This document is deliberately carried around, which means it should be safe to lose.",
-          "Passport numbers are a judgement call. They are useful for reporting a loss and are worth carrying separately from the passports themselves rather than in the same pocket.",
+        kind: "list",
+        heading: "What to leave off",
+        items: [
+          "Card numbers, passwords, and anything that would hurt if the page were lost. The page is meant to be carried around, so treat it as something that could go missing.",
+          "Full passport numbers are a judgment call. They help when reporting a loss, but a photo-page copy kept in a separate bag does the same job, and we'd choose that.",
+          "Anything you'd have to update every day. If it changes, it belongs on the phone.",
         ],
       },
       {
         kind: "paragraphs",
         heading: "Two copies, in different bags",
         paragraphs: [
-          "One in hand luggage, one in a different bag or with a different traveller. The failure mode you are protecting against includes losing a bag, and a single copy in the lost bag helps nobody.",
+          "Put one copy in your hand luggage and one in a different bag, or with another traveler. The thing you're guarding against includes losing a bag, and a single copy in the lost bag helps no one. For a family, give each adult a copy.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Paper and phone should agree",
+        items: [
+          "Save the same information offline on your phone as a screenshot or a downloaded file. A page you have to load won't open without signal.",
+          "Send it to one person at home, so someone can read it to you if everything else fails.",
+          "Keep your itinerary in the same form: see [how to write a one-page trip itinerary](/guides/how-to-write-a-one-page-trip-itinerary).",
+          "Do the printing the evening before, with the [night-before list](/guides/night-before-you-travel-checklist).",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "It is also useful when nothing has gone wrong",
+        heading: "What paper can't do",
         paragraphs: [
-          "Handing somebody the page is faster than reading a reference aloud from a screen, and it means the person at the desk can read it themselves. Small, but it is the everyday case rather than the emergency one.",
+          "A printed page isn't a travel document. It doesn't replace a passport, a visa, a boarding pass or a ticket you're required to show, and the airline or border officer decides what they accept. For the documents themselves, see the [travel document checklist](/guides/travel-document-checklist). If the worst has happened and the paper is what you have left, [what to have ready if you lose your passport, wallet or phone](/guides/lost-passport-wallet-or-phone-abroad-what-to-have-ready) says who to tell first.",
         ],
       },
       {
-        kind: "callout",
-        label: "The Companion for this",
-        body: "Travel Companion prints My Trip Book, a blank structured planner covering bookings, travelers, documents, daily pages and the connection pages that are the point of the product. It has a fixed set of pages, and you print the ones you want. It also makes a one-page trip card from what you recorded, which carries no references, documents or notes, so write those beside it in pen.",
+        kind: "paragraphs",
+        heading: "What the Companion does with this",
+        paragraphs: [
+          "Travel Companion makes a one-page trip card from what you've recorded: who's going, where, how you're getting there and where you're staying, with children marked. It leaves out booking references, documents and notes on purpose, so you write those beside it in pen. It also prints My Trip Book, a blank planner of roughly 70 pages by default, in Letter or A4, and you print only the pages you want. Nothing you enter is copied into the book. See the [Travel Companion page](/shop/travel-companion).",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "Should I print my travel documents?",
+            a: "Print the ones you'd need if the phone failed: booking references, addresses, insurance details and a copy of each passport's photo page. Printing doesn't replace the originals. Carry the paper in a different bag from the passport, so one loss doesn't take both.",
+          },
+          {
+            q: "Should I carry a photocopy of my passport?",
+            a: "We'd carry a copy of the photo page, kept apart from the passport. It's not a travel document and it won't get you across a border, but it makes reporting a loss quicker. Keep an offline copy on your phone as well.",
+          },
+          {
+            q: "What should I print before an international trip?",
+            a: "One page: the address of where you're staying in the local language, references and phone numbers for each booking, insurance details, a contact at home, and any consent letter for a child. Add your itinerary if it's short enough for one page.",
+          },
+          {
+            q: "Do I need a printed hotel address in the local language?",
+            a: "It isn't required, but it helps when a driver or passerby doesn't read your alphabet. Copy the address exactly as the property writes it, and print it large enough to read in a moving car.",
+          },
+          {
+            q: "Is it enough to screenshot my bookings?",
+            a: "A screenshot works with no signal, but it depends on the phone still having battery and working. It's a good second copy, not a first one. Paper keeps working when the phone doesn't.",
+          },
+        ],
       },
     ],
   },
@@ -5667,7 +6152,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "how-to-budget-for-beginners",
     title: "How to make a monthly budget for the first time",
-    dek: "Skip the forty categories. Gather four things, find one number with a worked $1,850 example, and keep it with a five minute weekly check-in.",
+    dek: "Take-home pay, every bill, real spending from your statements, then subtract. A $3,240 example month, a fix for a negative number, a weekly check.",
     primaryQuery: "how to make a monthly budget",
     next: { slug: "how-much-of-your-money-is-actually-safe-to-spend", reason: "Take the one number from your first budget and turn it into what you can spend today." },
     related: [
@@ -5676,70 +6161,140 @@ export const GUIDES: Guide[] = [
       { slug: "why-budgeting-apps-stop-working-after-two-months", reason: "Wondering why first budgets get dropped? See four ways they break and what one that lasts needs." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "money",
+    sources: [
+      {
+        name: "CFPB: Budgeting, how to create a budget and stick with it",
+        url: "https://www.consumerfinance.gov/archive/blog/budgeting-how-to-create-a-budget-and-stick-with-it/",
+        retrieved: "2026-09-26",
+        note: "The four steps to build a budget (income, spending, bill due dates, working budget) and reviewing it each month.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Many first budgets fail for the same reason: they ask for too much. Every purchase logged, every category balanced, every day. That works for a week and then it stops, and a budget that has stopped is worse than none because it now shows a number you no longer believe.",
-          "A first budget only needs to answer one question: how much of this month's money is actually safe to spend. Everything below is in service of that number and nothing else.",
+          "Write down your take-home pay, list every bill with its due date, estimate everyday spending from your last two or three months of statements, and subtract. Put a savings line in before the extras. What's left over is your number for the month, and it should be zero or more.",
+          "This is for one person or household with mostly regular pay, in US dollars. If your pay swings from month to month, start with [how to budget with irregular income](/guides/how-to-budget-with-irregular-income). A budget can't tell you what you should spend, only what you do spend and what's left.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Say you're paid $1,495 every two weeks. Multiply by 26 paychecks and divide by 12 and you get about $3,240 a month, which is the figure to budget from. In the two months a year with a third paycheck, treat the extra one as a bonus and leave it out of the plan.",
+          "Here is the whole month, line by line. It's an example, so swap in your own numbers.",
+        ],
+        heading: "An example: $3,240 a month, one line at a time",
+      },
+      {
+        kind: "table",
+        columns: ["Line", "Amount", "Where the number comes from"],
+        rows: [
+          ["Take-home pay", "$3,240", "$1,495 x 26 paychecks / 12 months"],
+          [
+            "Fixed bills",
+            "$1,828",
+            "Rent $1,450, utilities $145, phone $55, internet $60, car insurance $118",
+          ],
+          [
+            "Groceries and getting around",
+            "$580",
+            "Groceries $420, fuel $160, from the last three statements",
+          ],
+          ["Card minimum", "$45", "The minimum due on the statement"],
+          ["Savings", "$150", "Set first, before the extras"],
+          [
+            "Everyday extras",
+            "$540",
+            "Eating out $190, entertainment $90, household and clothes $140, personal $120",
+          ],
+          ["Left over", "$97", "$3,240 minus everything above"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Two things to notice. Savings sits above the extras, so it gets paid before the flexible money is spent, not from whatever survives. And $97 is left over on purpose: a first budget that lands at exactly zero breaks the first time a grocery run comes in $30 high.",
         ],
       },
       {
         kind: "list",
-        heading: "Gather these four things",
-        intro: "Ten minutes, your banking app and last month's bills. You do not need a spreadsheet.",
-        checkable: true,
         items: [
-          "The money you have available today, across the accounts you spend from.",
-          "The money you expect to come in this month, and on which day.",
-          "The bills that must be paid, with their amounts and due dates.",
-          "A small amount you would like to keep out of your spending, if any.",
+          "Find your take-home pay. Use what lands in your account after tax and deductions, not your salary. Paid every two weeks, multiply one paycheck by 26 and divide by 12. Paid weekly, multiply by 52 and divide by 12.",
+          "List every bill with its due date. Open last month's statements and write down rent, utilities, phone, insurance, loan payments and card minimums. Anything that bills once or twice a year gets divided by 12; [sinking funds explained](/guides/sinking-funds-explained) shows how. The [monthly bills list](/guides/monthly-bills-list) has a layout to copy.",
+          "Estimate the rest from real statements. Add up groceries, fuel and eating out for each of the last two or three months and use the average, not what you think you spend. A guess almost always runs low.",
+          "Put savings and debt payments in before the extras. Even $25 a paycheck counts. With no cushion yet, [a first $1,000](/guides/how-to-build-a-first-1000-emergency-fund) is where to send it.",
+          "Subtract. Income minus every line above. Zero or more is a working budget. Below zero, use the next section.",
+          "Pick one weekday for a check-in and put it in your calendar today.",
         ],
+        heading: "How to build yours in about an hour",
+        ordered: true,
       },
       {
-        kind: "timeline",
-        heading: "Set it up in this order",
-        intro: "The order matters, because each step changes what the next one means.",
-        steps: [
-          { when: "This month", what: "Start from what you have today, not from what you had at the start of the month." },
-          { when: "Money coming in", what: "Add what you expect and the day you expect it. Expected money does not count until it arrives." },
-          { when: "Protect what must be paid", what: "Add each bill with its due date and mark it protected, so it comes out of your number before you can spend it." },
-          { when: "Your spending view", what: "Group the rest into three broad buckets. Keep it rough." },
-          { when: "Review", what: "Read the number back. If it looks wrong, one of the earlier steps is missing something." },
+        kind: "list",
+        items: [
+          "Has any income come in or changed?",
+          "Has a bill changed or been paid?",
+          "Is there spending you haven't added?",
+          "Does your savings or cushion need adjusting?",
+        ],
+        heading: "The five minute weekly check-in",
+        intro: "Once a week, ask these four. Update the line for any yes. If all four are no, you're finished for the week.",
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "If you fall behind for a few weeks, don't rebuild the gap. [Start from today's balance](/guides/how-to-start-over-after-budget-failure) and go forward. At the end of each month, [a short review](/guides/end-of-month-money-review) tells you which lines to change for the next one.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Protect the bills first",
         paragraphs: [
-          "The single most useful habit in budgeting is treating a bill you have not paid yet as money you no longer have. Your balance still shows it, which is why a balance feels comfortable right up until the day the rent leaves.",
-          "Say you have $1,850 available, $900 in bills still to pay and $350 you want to keep untouched. The number you can actually spend is $600. Not $1,850. Once you have seen the sum written out, it is hard to go back to trusting a balance.",
+          "Say the same month adds up to $3,410 against $3,240 of pay. You're $170 short. Before you cut anything, check the line you guessed. Pull the statements for your biggest estimated line, usually groceries or eating out, and see whether the estimate was low.",
+          "Then change one bill first, because it repeats every month: phone, internet and insurance are the usual candidates. Trim one flexible line after that, not all of them. If it's still short, the gap comes from income, and no trimming will close it, which is better to know in week one than in month three. [How to find $200 this month](/guides/how-to-save-money-fast) lists specific moves, and [the 50/30/20 rule](/guides/50-30-20-rule-where-it-breaks) shows why a fixed percentage split can fail in a tight month.",
+          "If you use a credit card, budget its purchases in the month you make them and don't count the card payment as a second expense.",
         ],
+        heading: "If your number comes out below zero",
       },
       {
-        kind: "table",
-        heading: "A rough spending view, not forty categories",
-        intro: "Three groups are enough to see where a month is going. Each can carry a guide amount, which is a rough target and not a hard limit.",
-        columns: ["Group", "What goes in it", "Examples"],
-        rows: [
-          ["Essentials", "Things you need every month that are not fixed bills", "Groceries, fuel, transit"],
-          ["Flexible", "Things that can stretch or shrink", "Eating out, entertainment, clothing"],
-          ["Personal", "Money that is simply yours to spend", "Hobbies, gifts, small treats"],
+        kind: "faq",
+        heading: "Common questions",
+        items: [
+          {
+            q: "What is the easiest way to make a budget for the first time?",
+            a: "Subtract your bills and your average spending from your take-home pay and see what's left. You don't need more than a few lines: bills, groceries and transit, extras and savings. The CFPB's steps are the same four: list income, look at spending, map bill due dates, then build a working budget you review every month.",
+          },
+          {
+            q: "How much should I put toward savings in a first budget?",
+            a: "Whatever you can keep up for three months, even $25 a paycheck. A rule like 20 percent is a starting point that can break in a tight month. Set the amount so the month still works at its lowest, then raise it once you've watched a month close with money to spare.",
+          },
+          {
+            q: "Do I have to track every purchase?",
+            a: "No. A first budget needs a look at last month's statements to set the numbers, then a weekly check on the few lines that move. Logging every purchase is the part that's easiest to drop, and the weekly check does most of the same work in five minutes.",
+          },
+          {
+            q: "How often should I check my budget?",
+            a: "Once a week for about five minutes, on a fixed day, plus a longer look at month end when you set the next month's numbers. A fixed day means it happens without a decision. Daily checking tends to turn into a chore you skip.",
+          },
+          {
+            q: "What if my income is different every month?",
+            a: "Budget from your lowest recent months rather than the average, and treat anything above that as extra. [How to budget with irregular income](/guides/how-to-budget-with-irregular-income) walks through it with a holding account and a steady monthly pay for yourself.",
+          },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "The weekly check-in",
         paragraphs: [
-          "Once a week, spend five minutes asking four questions. Has any income come in or changed? Has a bill changed or been paid? Is there spending you have not added? Does your reserve need adjusting? If the answer to any of them is yes, add it. If all four are no, you are finished.",
-          "That is the entire routine. It is deliberately small, because the budgets that survive are the ones that ask for very little. If you fall behind, [start from today rather than catching up](/guides/how-to-start-over-after-budget-failure).",
+          "[Monthly Money Reset](/free) takes the same inputs: what's in your account now, the income you expect and when, the bills you want held back, and any reserve. You type them in over five short steps and it shows one figure, what's safe to spend, with the working written out beneath it. It doesn't set category limits, so it isn't a full plan like the example above. It is the fastest way to see this month's number, and its four-question weekly check-in is the routine in this guide.",
+          "If your money is spread over several accounts, bills, subscriptions and debts, [Personal Finance Companion](/shop/personal-finance-companion) keeps them in one place and shows a typical month: what comes in, what goes out, what's set aside for goals and what's left over. You enter the numbers yourself; neither product connects to your bank.",
         ],
+        heading: "Where Companion products fit",
       },
       {
         kind: "callout",
-        label: "Try it free",
-        body: "Monthly Money Reset walks through exactly these steps in a few minutes and shows a live number as you go. It is free and complete, with no card and no bank connection. It covers one month at a time, and when you want a wider picture across accounts, bills and debt, Personal Finance Companion is the next step.",
+        label: "Before you start",
+        body: "Open last month's bank and card statements first. Every number in your budget should come from them, not from memory.",
       },
     ],
   },
@@ -5747,7 +6302,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "how-to-budget-with-irregular-income",
     title: "How to budget with irregular income: count what has landed",
-    dek: "Pay that swings breaks percentage budgets. Plan only from money that has arrived, hold back the bills and find your tightest day, with a $1,850 example.",
+    dek: "Budget from your lowest months, not your average. Pay yourself a steady amount from a holding account, set tax aside, and count only money that has landed.",
     primaryQuery: "how to budget with irregular income",
     next: { slug: "how-to-build-a-first-1000-emergency-fund", reason: "With pay that swings, a starter cushion covers the low months without reaching for a card." },
     related: [
@@ -5756,75 +6311,141 @@ export const GUIDES: Guide[] = [
       { slug: "budget-for-variable-bills", reason: "Bills that change in size add to the swing, and this sets a planning figure for each one." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "money",
+    sources: [
+      {
+        name: "IRS: Estimated taxes",
+        url: "https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes",
+        retrieved: "2026-09-26",
+        note: "Estimated payments generally due if you expect to owe $1,000 or more; four payment periods.",
+      },
+      {
+        name: "IRS: Self-employed individuals tax center",
+        url: "https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center",
+        retrieved: "2026-09-26",
+        note: "Self-employment tax is Social Security and Medicare tax, separate from income tax.",
+      },
+      {
+        name: "IRS: About Form 1040-ES",
+        url: "https://www.irs.gov/forms-pubs/about-form-1040-es",
+        retrieved: "2026-09-26",
+        note: "Estimated tax covers income without withholding, such as self-employment; Tax Withholding Estimator.",
+      },
+      {
+        name: "CFPB: Budgeting, how to create a budget and stick with it",
+        url: "https://www.consumerfinance.gov/archive/blog/budgeting-how-to-create-a-budget-and-stick-with-it/",
+        retrieved: "2026-09-26",
+        note: "Budgets start from all income sources, including self-employment, and bill due dates.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "If you freelance, work tips, take gig shifts or earn commission, most budgeting advice is quietly written for someone else. It assumes the same pay on the same day, so you can divide it into tidy percentages. Your pay does not do that, and a plan built on an average is wrong in exactly the months you can least afford it.",
-          "The fix is not a cleverer formula. It is a smaller promise: only plan from money that has actually landed.",
+          "Budget from your lowest recent months, not your average. Send every deposit to a holding account, then pay yourself the same amount on the same days, like a salary. Count only money that has actually arrived, and hold back bills before anything else. The holding account absorbs the gap between good and slow months.",
+          "This is for freelance, gig, tip, seasonal and commission income in US dollars. It can't set your tax rate, and it works best with a few months of history. With none, start with [a first $1,000 cushion](/guides/how-to-build-a-first-1000-emergency-fund).",
         ],
       },
       {
-        kind: "compare",
-        heading: "Two ways to plan the same month",
-        left: {
-          label: "Planning from expected pay",
-          items: [
-            "Counts a payment before it arrives",
-            "Feels generous early in the month",
-            "Breaks the moment a client pays late",
-            "Leaves you short with bills already committed",
-          ],
-        },
-        right: {
-          label: "Planning from received pay",
-          items: [
-            "Counts only money in your account",
-            "Feels tighter early, then holds steady",
-            "A late payment changes nothing you planned",
-            "Bills are held back before anything is spent",
-          ],
-        },
+        kind: "paragraphs",
+        paragraphs: [
+          "Say you freelance, and over six months $2,900, $1,850, $4,100, $2,300, $3,350 and $2,700 land in your account after you've moved your tax share aside. That's $17,200, or about $2,867 a month. Three of those six months came in under that average, so a budget built on it would have been wrong half the time.",
+          "Instead, average your three lowest months: ($1,850 + $2,300 + $2,700) / 3 is about $2,283. Round to $2,300 and pay yourself that every month from a holding account that started with $900. This is an example, not a forecast.",
+        ],
+        heading: "An example: six months of deposits",
+      },
+      {
+        kind: "table",
+        columns: ["Month", "Deposits", "You pay yourself", "Holding account after"],
+        rows: [
+          ["Jan", "$2,900", "$2,300", "$1,500"],
+          ["Feb", "$1,850", "$2,300", "$1,050"],
+          ["Mar", "$4,100", "$2,300", "$2,850"],
+          ["Apr", "$2,300", "$2,300", "$2,850"],
+          ["May", "$3,350", "$2,300", "$3,900"],
+          ["Jun", "$2,700", "$2,300", "$4,300"],
+        ],
       },
       {
         kind: "paragraphs",
-        heading: "Count only what has arrived",
         paragraphs: [
-          "Keep expected income visible, because it is useful to know it is coming, but keep it out of the number you spend from. When it lands, mark it received and the number rises. Not before.",
-          "A worked month. You have $1,850 available. You still owe $900 in bills and want to keep $350 untouched. Your safe number is $600, even though you are expecting a $600 client payment on the thirtieth. The day that payment lands, your number becomes $1,200. Until then, you have not spent it, which is the point.",
+          "In February you earned $450 less than your pay and nothing changed in checking. The holding account covered it and still held $1,050. By June it holds $4,300, which is your cue to raise your pay a little or start a fund for slow seasons. Six good months won't predict the next six, so keep the quarterly check in the steps below.",
         ],
       },
       {
         kind: "list",
-        heading: "Do these four things before you plan a month",
-        checkable: true,
         items: [
-          "Count only money that has arrived, not money you are owed.",
-          "List the bills that cannot slip: rent, utilities, phone, insurance.",
-          "Find the tightest day of the month, the day your balance will be lowest.",
-          "Keep a small reserve for the slow month that will eventually come.",
+          "Pull 6 to 12 months of deposits. Total what actually landed each month. With less history, use what you have and expect to adjust.",
+          "Set your pay near your low, not your average. Average the three lowest months, then check that it covers your bills with something left. If it doesn't, the bills need work first: see [budgeting for variable bills](/guides/budget-for-variable-bills) and the [monthly bills list](/guides/monthly-bills-list).",
+          "Move your tax share aside the day a deposit lands. If you're self-employed in the US, nobody withholds for you. The IRS says you generally need to make estimated tax payments if you expect to owe $1,000 or more when you file, spread over four payment periods, and self-employment tax comes on top of income tax. A tax professional or the IRS Tax Withholding Estimator can give you your share. This guide can't.",
+          "Open a holding account and send every deposit there. A second account at the same bank works. Nothing gets spent from it directly.",
+          "Pay yourself on a schedule. Move your pay into checking in two transfers, say the 1st and the 15th, so checking never holds a full month you could spend early. Bills come out of checking.",
+          "Review once a quarter. If the holding account holds more than a month of your pay, raise your pay a little. If it has shrunk three months in a row, lower it.",
+        ],
+        heading: "Set it up in six steps",
+        ordered: true,
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Between deposits, the risk is spending money that's coming but isn't here. An invoice you've sent isn't income until it clears. Keep it on a list so you know it's on the way, and keep it out of the number you spend from. When it lands, move the tax share, put the rest in the holding account, and only then does your month change. A client who pays late then costs you nothing you'd planned around.",
+          "Also find your tightest day. If your pay transfers land on the 1st and 15th but rent leaves on the 3rd, the low point is the 4th. Walk your checking balance forward day by day using only dated bills and transfers, and move a bill or a transfer date before the dip, not after.",
+        ],
+        heading: "Count only what has landed",
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Use a big month in this order: tax share first, then top up the holding account until it holds one month of your pay, then set money aside for [annual bills](/guides/sinking-funds-explained), then debt or savings, and extras last. Don't raise your pay after one good month. Wait for the quarterly review.",
+        ],
+        heading: "What to do with a big month",
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "It fails when your lowest month doesn't cover your bills, or when a slow spell lasts longer than the holding account can bridge. You then have two levers: cut fixed bills or raise the floor of your income. Neither is a budgeting trick, and no method makes up that gap. With a thin holding account, your first target is one month of pay.",
+        ],
+        heading: "When this doesn't work",
+      },
+      {
+        kind: "faq",
+        heading: "Common questions",
+        items: [
+          {
+            q: "How do you budget when your income changes every month?",
+            a: "Base the budget on your lowest recent months, not your average. Send deposits to a holding account and pay yourself a fixed amount from it on set dates. Pay bills from checking, and count only money that has already arrived. A good month tops up the holding account and a slow month draws it down.",
+          },
+          {
+            q: "Should I budget from my average income or my lowest month?",
+            a: "Your lowest months, or the average of the lowest three as in the example above. The average includes big months you can't count on. Budgeting near the low means most months finish above plan, and a month that beats your plan is the kind of surprise to have.",
+          },
+          {
+            q: "How much should a freelancer set aside for taxes?",
+            a: "There isn't one percentage that fits, because it depends on your income, deductions and state. The IRS says estimated payments are generally due if you expect to owe $1,000 or more, and self-employment tax applies too. Ask a tax professional or use the IRS estimator, then move that share aside the day each deposit lands.",
+          },
+          {
+            q: "How big should the holding account be?",
+            a: "Aim for one month of your pay first, then work toward three. Until you get there, keep your pay near your lowest months so the account grows in ordinary months. If you have nothing saved, a [first $1,000](/guides/how-to-build-a-first-1000-emergency-fund) comes before anything else.",
+          },
+          {
+            q: "What if a client pays late?",
+            a: "Nothing changes if you're paying yourself from the holding account and haven't counted the invoice as money. A late payment shows up as a smaller top-up later, not a missed bill. If it happens often, keep a list of open invoices and follow up a few days before each due date.",
+          },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Find the tightest day",
         paragraphs: [
-          "An average month can hide a very bad week. If rent leaves on the first and your client pays on the twentieth, the middle of the month is where you are actually exposed, even if the total looks fine.",
-          "Walk the balance forward day by day using only the bills and income that have dates. The lowest point is your tightest day. Knowing it in advance turns a surprise into a plan: you can move a bill, hold off a purchase, or chase an invoice before you need to.",
+          "[Monthly Money Reset](/free) is built on the received-only rule. Income you're expecting sits on the list and doesn't count until you mark it received, so the safe-to-spend figure only rises when money lands. You add bills with due dates and it holds them back. You can add your tax share and holding-account top-up as a reserve so they come out of the number too. It also shows about how much you have per week for the rest of the month, and names your tightest day when a real dip lies ahead.",
+          "It covers one month at a time and doesn't connect to your bank, so you type deposits in as they arrive.",
         ],
-      },
-      {
-        kind: "paragraphs",
-        heading: "A reserve is what makes a slow month survivable",
-        paragraphs: [
-          "The purpose of a reserve in an uneven income is not a savings goal. It is a buffer that turns a bad month into an ordinary one. Even a modest amount held back, and kept out of the number you spend from, changes how a low month feels. There is more on building one in [how to build your first $1,000 emergency fund](/guides/how-to-build-a-first-1000-emergency-fund).",
-        ],
+        heading: "Where Monthly Money Reset fits",
       },
       {
         kind: "callout",
-        label: "Try it free",
-        body: "Monthly Money Reset is built around this rule. Income you are expecting does not count until you mark it received, it shows the weekly figure for the rest of the month, and it flags your tightest day when there really is a dip ahead. It is free, needs no bank connection, and covers one month at a time.",
+        label: "One rule to keep",
+        body: "Nothing you're owed is income until it's in your account. Write invoices down, but spend only from what has landed.",
       },
     ],
   },
@@ -5832,7 +6453,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "how-to-build-a-first-1000-emergency-fund",
     title: "How to build your first $1,000 emergency fund",
-    dek: "A $1,000 starter fund will not cover everything, but it keeps small surprises off a card. A four step pace, where to keep it, when to use it.",
+    dek: "A $1,000 starter fund keeps small surprises off a card. Pick a weekly amount, find the first deposit, choose where to keep it and know when to use it.",
     primaryQuery: "$1,000 emergency fund",
     next: { slug: "sinking-funds-explained", reason: "Next, save monthly for predictable costs such as car repairs or annual fees so they do not tap this fund." },
     related: [
@@ -5841,84 +6462,155 @@ export const GUIDES: Guide[] = [
       { slug: "how-to-budget-with-irregular-income", reason: "If your pay changes month to month, see how to plan only from money that has arrived." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "money",
+    sources: [
+      {
+        name: "CFPB: An essential guide to building an emergency fund",
+        url: "https://www.consumerfinance.gov/an-essential-guide-to-building-an-emergency-fund/",
+        retrieved: "2026-09-26",
+        note: "Size a fund on past surprises; tax refunds, automatic transfers, paycheck splitting; account types; use it when needed and rebuild.",
+      },
+      {
+        name: "FDIC: National rates and rate caps",
+        url: "https://www.fdic.gov/national-rates-and-rate-caps",
+        retrieved: "2026-09-26",
+        note: "National average savings account rate of 0.37% in the latest posting.",
+      },
+      {
+        name: "FDIC: Deposit insurance",
+        url: "https://www.fdic.gov/deposit-insurance",
+        retrieved: "2026-09-26",
+        note: "$250,000 per depositor per insured bank.",
+      },
+      {
+        name: "Federal Reserve: Economic Well-Being of US Households in 2024, Savings and Investments",
+        url: "https://www.federalreserve.gov/publications/2025-economic-well-being-of-us-households-in-2024-savings-and-investments.htm",
+        retrieved: "2026-09-26",
+        note: "63 percent of adults could cover a $400 expense with cash or its equivalent.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "A full emergency fund of several months of expenses can feel out of reach, and that feeling is often the reason people never start. A first fund of one thousand dollars is a different kind of goal. It is small enough to reach, and it covers the things that most often go wrong: a car repair, a vet bill, a phone that stops working, a dentist visit.",
-          "It is not the finish line. It is the first step that keeps a small problem from becoming a credit card balance.",
+          "Open a separate savings account, then move a fixed amount into it every payday until it reaches $1,000. At $50 a week that takes 20 weeks, at $25 a week, 40. Start with a tax refund or something you sell if you can. Use it only for costs that are unexpected, necessary and can't wait.",
+          "This is a first cushion in US dollars, not a full emergency fund, which is usually sized in months of expenses. It can't tell you the right number for you. The CFPB suggests sizing a fund on the surprises you've actually had, so if a car or dependents make yours bigger, aim higher.",
         ],
       },
       {
-        kind: "timeline",
-        heading: "A pace you can keep",
-        intro: "Example only. Pick an amount that leaves your month intact, even if it looks small.",
-        steps: [
-          { when: "Month 1", what: "Set aside $250. Keep it out of the number you spend from." },
-          { when: "Month 2", what: "Set aside another $250, if the month allows it. If it does not, set aside less and carry on." },
-          { when: "Month 3", what: "Same again. Check your tightest day so you know the amount is not squeezing a bill." },
-          { when: "Month 4", what: "You reach $1,000. Keep it where it is and decide what comes next." },
+        kind: "table",
+        columns: ["You save", "How often", "Time to $1,000"],
+        rows: [
+          ["$25", "Every week", "40 weeks"],
+          ["$50", "Every week", "20 weeks"],
+          ["$100", "Every two weeks", "20 weeks (10 paychecks)"],
+          ["$200", "Every month", "5 months"],
+          ["$400", "Every month", "3 months (the third deposit can be $200)"],
         ],
-      },
-      {
-        kind: "paragraphs",
-        heading: "Where it lives",
-        paragraphs: [
-          "Keep it somewhere you can reach quickly but will not spend by accident. For many people that means a separate savings account. The specific account and its interest rate matter less than the separation: money that sits in the same account you spend from tends to get spent.",
-          "If you cannot open a separate account yet, you can still hold the amount out of your spending. That is the idea behind a reserve: an amount you tell yourself is not available.",
-        ],
+        heading: "How long $1,000 takes at different amounts",
       },
       {
         kind: "paragraphs",
-        heading: "Hold it back before you spend",
         paragraphs: [
-          "The reliable way to save is to set the money aside first and spend what is left, rather than spending first and saving whatever survives. In practice that means the reserve comes out of your number at the start of the month.",
-          "If you have $1,850 available, $900 in bills to pay and a $350 reserve, your safe number is $600. The $350 is not gone. It is simply not part of what you are allowed to spend from.",
+          "You don't have to build all of it from paychecks. Say you get a $410 tax refund and sell a bike for $180. That's $590 on day one. At $35 a week, the last $410 takes 12 weeks. Same $1,000, about a quarter of a year, and most of it never came out of your monthly budget. The numbers are an example; use your own.",
         ],
+        heading: "An example: a refund and one sale",
       },
       {
-        kind: "compare",
+        kind: "list",
+        items: [
+          "Open a separate savings account at an FDIC-insured bank. Skip the linked debit card if you can. A little friction is the point.",
+          "Choose an amount from the table. Pick the one that leaves your month intact, even if it looks small. A small amount you keep up beats a big one you drop after six weeks.",
+          "Automate it. Set a recurring transfer for the day after payday, or ask your employer to split your direct deposit. The CFPB lists both.",
+          "Find the first chunk. A tax refund, a bonus or a gift, something you sell, or one month of trims from [how to find $200 this month](/guides/how-to-save-money-fast).",
+          "Check your tightest day before the first transfer, so it doesn't pull checking under a bill. [How much of your money is safe to spend](/guides/how-much-of-your-money-is-actually-safe-to-spend) shows the check.",
+        ],
+        heading: "Set it up in five steps",
+        ordered: true,
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Keep it in an account that's separate from the one you spend from, insured, and reachable within a day or two. The FDIC insures deposits up to $250,000 per depositor per insured bank. Interest is minor at this size: the FDIC publishes a national average savings rate, 0.37% in its latest posting, which is $3.70 a year on $1,000. An account paying ten times that would earn $37. Rates vary by bank, so look at what yours pays, but don't hold up opening the account while you compare.",
+        ],
+        heading: "Where to keep it",
+      },
+      {
+        kind: "table",
+        columns: ["Situation", "Use the fund?", "Why"],
+        rows: [
+          [
+            "Car repair that keeps you getting to work",
+            "Yes",
+            "Unexpected, necessary, can't wait",
+          ],
+          ["Urgent vet or medical bill", "Yes", "Unexpected and can't wait"],
+          ["A slow week of lost hours", "Yes", "It replaces income you counted on"],
+          [
+            "Annual car insurance premium",
+            "No",
+            "You knew it was coming: use [a sinking fund](/guides/sinking-funds-explained)",
+          ],
+          ["A sale on a laptop", "No", "A want with a deadline set by the store"],
+          ["A friend's wedding trip", "No", "Predictable, so plan and save for it"],
+        ],
         heading: "What counts as an emergency",
-        left: {
-          label: "Counts",
-          items: [
-            "A repair you need to keep working or driving",
-            "An unexpected medical or vet bill",
-            "A lost or stolen essential item",
-            "A gap when income stops for a while",
-          ],
-        },
-        right: {
-          label: "Does not count",
-          items: [
-            "A sale on something you were planning to buy",
-            "A holiday that came up",
-            "A gift you had not budgeted for",
-            "A bill you knew was coming",
-          ],
-        },
       },
       {
         kind: "paragraphs",
-        heading: "When you dip into it",
         paragraphs: [
-          "You will, at some point. That is what it is for, and using it is not failing at saving. The only rule is to put it back when you can, and to notice that the fund worked: the emergency happened, and it did not land on a card.",
-          "Once you have reached the first thousand, you can decide whether to keep building. Until then, keep it simple. If the month is tight, look at [how to save money this month without a big life change](/guides/how-to-save-money-fast).",
+          "We'd build the $1,000 first even if you're carrying card debt. Without it, the next surprise goes on the card and undoes your payments. Once it's in place, send extra toward the debt; [snowball vs avalanche](/guides/debt-snowball-vs-avalanche) compares the orders.",
+          "The limits are plain. $1,000 won't cover a job loss or a large medical bill. A lost job is a different size of problem. When you spend from it, refill it, then aim for one month of bills, then three.",
         ],
+        heading: "Debt first, or the fund first?",
+      },
+      {
+        kind: "faq",
+        heading: "Common questions",
+        items: [
+          {
+            q: "How long does it take to save $1,000?",
+            a: "It depends on the amount you move each payday. $50 a week takes 20 weeks, $100 every two weeks also takes 20, and $200 a month takes 5 months. A tax refund or a one-time sale can cut that by months, so start with those if you have them.",
+          },
+          {
+            q: "Is $1,000 enough for an emergency fund?",
+            a: "It covers small surprises such as a car repair, a vet visit or a broken phone. It won't cover a job loss or a large medical bill, and full emergency funds are usually sized in months of expenses. Treat $1,000 as the first step, then build toward one month of bills and then three.",
+          },
+          {
+            q: "Should I pay off debt or build an emergency fund first?",
+            a: "We'd build the $1,000 first. Without a cushion, a surprise goes back on the card and undoes the payments you made. After the $1,000 is in place, put extra toward the debt, and refill the cushion whenever you use it.",
+          },
+          {
+            q: "Where should I keep my emergency fund?",
+            a: "In a savings account at an FDIC-insured bank, separate from your everyday account. It should be easy to reach within a day or two but not sitting next to your debit card. The CFPB also lists a credit union, a prepaid card or cash, though cash can be lost or stolen.",
+          },
+          {
+            q: "What counts as an emergency?",
+            a: "Something unexpected, necessary and unable to wait: an urgent repair, a medical or vet bill, or lost income. A sale, a trip or a bill you knew was coming doesn't count. Bills you can see coming belong in a [sinking fund](/guides/sinking-funds-explained), so the cushion stays for surprises.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "[Personal Finance Companion](/shop/personal-finance-companion) has a savings goal type called Emergency fund. You type in the target, what you've saved so far and, if you want a monthly figure, a target date. It then works out the monthly amount needed and shows progress on the Today screen. Progress is what you type: it doesn't connect to your bank or move money, and it flags a goal that has no target date.",
+          "If you only want to keep the cash out of reach, [Monthly Money Reset](/free) lets you hold an amount in reserve, so it comes out of your safe-to-spend figure. It doesn't track a goal or move money.",
+        ],
+        heading: "Where Companion products fit",
       },
       {
         kind: "callout",
-        label: "Try it free",
-        body: "Monthly Money Reset lets you add a reserve, an amount you do not want to spend, and takes it out of your safe-to-spend number. It does not move money for you or track a savings goal, so the actual saving still happens in your account. What it does is make sure the reserve is never counted as spending money. It is free and needs no bank connection.",
+        label: "Keep it simple",
+        body: "Automate one transfer and leave the account alone. The day you use it, write down the amount so refilling it is already on your list.",
       },
     ],
   },
 
   {
     slug: "how-to-save-money-fast",
-    title: "How to save money this month without a big life change",
-    dek: "Four small moves that free up cash within a single month, ranked by effort, plus the popular cuts that are not worth the trouble.",
+    title: "How to find $200 this month without a big life change",
+    dek: "Seven specific moves with rough dollar amounts, worked into an example month that adds up to $200, plus scripts for the calls.",
     primaryQuery: "how to save money this month",
     next: { slug: "how-to-build-a-first-1000-emergency-fund", reason: "Give the cash you free up somewhere to go, with a four step pace for a first $1,000." },
     related: [
@@ -5927,69 +6619,153 @@ export const GUIDES: Guide[] = [
       { slug: "budget-for-variable-bills", reason: "Bills that swing can hide easy savings, and this shows how to plan toward the high month." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "money",
+    sources: [
+      {
+        name: "CFPB: Budgeting, how to create a budget and stick with it",
+        url: "https://www.consumerfinance.gov/archive/blog/budgeting-how-to-create-a-budget-and-stick-with-it/",
+        retrieved: "2026-09-26",
+        note: "Tracking spending is the easiest way to look for places to cut back; map bill due dates.",
+      },
+      {
+        name: "CFPB: An essential guide to building an emergency fund",
+        url: "https://www.consumerfinance.gov/an-essential-guide-to-building-an-emergency-fund/",
+        retrieved: "2026-09-26",
+        note: "Automatic transfers, tax refunds and other windfalls as ways to start saving.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Fast saving advice tends to fall into two camps: give up the things you enjoy, or find a side income. Neither is a plan for a normal month. What works far more often is smaller and duller: find money that is leaving without you noticing, and stop it.",
-          "This is about one month. Not a year, not a lifestyle. The goal is to end this month with more than you would have.",
+          "To find $200 this month, cancel what you forgot you pay for, call your phone, internet and insurance providers and ask for a lower rate, waive one bank fee, plan one lean week of food, and sell one thing you don't use. Most of it repeats, so it keeps paying after the month ends.",
+          "This is for US households with a normal budget and one month to improve, not for a shortfall bigger than $200 a month. The amounts below are an example, not a promise. Your bills decide what's there to find.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Here is one month that adds up to exactly $200. Your list will look different, so use it as a menu.",
+        ],
+        heading: "An example: seven moves, $200",
+      },
+      {
+        kind: "table",
+        columns: ["Move", "Saves", "Repeats?"],
+        rows: [
+          [
+            "Cancel a $15.99 streaming plan and a $9.99 app you've stopped using",
+            "$26",
+            "Every month",
+          ],
+          ["Ask for a lower phone rate, from $85 to $55", "$30", "Every month"],
+          [
+            "Ask the internet provider for its lowest price for existing customers",
+            "$15",
+            "Until the price changes",
+          ],
+          ["Get two quotes and move car insurance", "$22", "Every month"],
+          [
+            "Drop a $12 monthly account fee, by changing account type or banks",
+            "$12",
+            "Every month",
+          ],
+          ["One week of meals from the pantry and freezer", "$45", "This month only"],
+          ["Sell one thing you no longer use", "$50", "Once"],
+          ["Total", "$200", ""],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "$105 of that repeats every month, which is $1,260 over a year. The other $95 is a boost for this month only. That's why we'd start at the top of the table, not the bottom.",
         ],
       },
       {
         kind: "list",
-        heading: "Four moves, in order of effort",
-        checkable: true,
         items: [
-          "Check every recurring charge, including the annual ones you have forgotten.",
-          "Move a small amount into savings first, before you spend anything else.",
-          "Trim one flexible group by a modest amount, and only one.",
-          "Check your tightest day so you know how much room the month really has.",
+          "Pull last month's bank and card statements and highlight every charge that repeats. The CFPB's budgeting guide calls tracking your spending the easiest way to look for places to cut back. For the full sweep, including annual charges, see [how to find every subscription you're paying for](/guides/how-to-find-every-subscription-you-are-paying-for).",
+          "Cancel first, then call. [How to cancel subscriptions](/guides/how-to-cancel-subscriptions) has the steps if a company pushes back. Note the date the cancellation takes effect: a plan canceled on the 20th may still bill on the 28th.",
+          "Call your phone, internet and car insurance providers with the script below.",
+          "Search your statements for the word fee. Ask about each one. Some can be waived, and some come from an account type you can change.",
+          "Plan one lean week of food, not a lean month. A single week is easy to finish.",
+          "Pick one thing to sell and list it today.",
+          "Move the money the day you free it. Send the amount to savings on payday, since the CFPB lists automatic transfers as a way to make saving stick.",
         ],
+        heading: "Work through it in this order",
+        ordered: true,
       },
       {
-        kind: "table",
-        heading: "Where a month's savings usually come from",
-        columns: ["Where to look", "What to look for", "Effort"],
-        rows: [
-          ["Recurring charges", "Subscriptions you no longer use, plans you could downgrade", "Low"],
-          ["Bills", "Phone or internet plans that have crept up since you signed", "Medium"],
-          ["Flexible spending", "The one group that has grown most this month", "Medium"],
-          ["Fees", "Bank or card fees you could avoid with a small change", "Low"],
+        kind: "scripts",
+        items: [
+          {
+            situation: "Phone plan",
+            line: "I've been with you a while and I'm paying $85 a month. I'd like to stay. What's the lowest rate you can give me on my current line?",
+          },
+          {
+            situation: "Internet",
+            line: "My price has gone up since I signed. What offers do you have for existing customers? I'd rather not switch, so what's the lowest monthly price for the same speed?",
+          },
+          {
+            situation: "Car insurance",
+            line: "I have a quote that's $22 a month lower for the same coverage. Can you match it, or tell me which discounts I'm missing?",
+          },
+          {
+            situation: "Bank fee",
+            line: "I see a $12 monthly maintenance fee. What would it take to waive it, or is there an account without one?",
+          },
+        ],
+        heading: "What to say on the calls",
+        intro: "Have your account number and your current monthly rate in front of you. If the first person can't help, ask for the retention or loyalty team.",
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Savings show up next month, not this one. A canceled plan usually stops at the next renewal and a new insurance rate starts with the new policy. For this month, the sale and the lean week are what you'll see in your account, which is $95 in the example.",
+          "A lower rate can also end, so ask when the price changes and note the date. Cutting small treats or chasing cashback saves little and costs attention, so leave them. And if your bills already exceed your income by more than $200, this list won't close the gap. Build [a first budget](/guides/how-to-budget-for-beginners) and look at the largest fixed bills.",
+          "Before you send the $200 to savings, check the lowest day your checking balance will reach this month, so you don't take out the rent. [How much of your money is safe to spend](/guides/how-much-of-your-money-is-actually-safe-to-spend) walks through it.",
+        ],
+        heading: "What can go wrong",
+      },
+      {
+        kind: "faq",
+        heading: "Common questions",
+        items: [
+          {
+            q: "How can I save $200 in a month?",
+            a: "Combine a few of the moves above: cancel unused subscriptions, ask your phone, internet and insurance providers for lower rates, drop a bank fee, plan one lean week of food and sell one thing. No single move gets to $200 for most households, but seven small ones can.",
+          },
+          {
+            q: "What is the fastest way to save money?",
+            a: "Cancel recurring charges you no longer use and sell something you don't need. Both can work within a week. Calls to providers take an hour but repeat every month. Cutting food or fun saves money too, and it's the hardest to keep up.",
+          },
+          {
+            q: "Is it worth calling to lower my bills?",
+            a: "It costs about an hour and the worst answer is no. Ask for a specific price, ask what offers exist for existing customers, and say you're comparing options. Results vary by provider and nothing is guaranteed, but a lower rate repeats every month once you have it.",
+          },
+          {
+            q: "Where should I put the $200 I save?",
+            a: "If you have no cushion, send it toward a first $1,000. [How to build your first $1,000 emergency fund](/guides/how-to-build-a-first-1000-emergency-fund) covers pace and where to keep it. If you carry card debt, a small cushion first still keeps the next surprise off the card.",
+          },
+          {
+            q: "What if I can't find $200?",
+            a: "Then find what you can. $60 a month that repeats is $720 in a year. If your bills are larger than your income, the answer lies in the big fixed lines such as rent, insurance and debt payments, not in small cuts.",
+          },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Start with what recurs",
         paragraphs: [
-          "A recurring charge is the best kind of saving, because you make the decision once and it keeps paying you back. Go through your statements for anything that repeats. If you have not looked in a while, [finding every subscription you are paying for](/guides/how-to-find-every-subscription-you-are-paying-for) walks through it.",
+          "[Personal Finance Companion](/shop/personal-finance-companion) has a subscriptions area. You add each one with its amount, how often it bills and its renewal date, then mark a decision: Keep, Reviewing, Planned cancellation or Cancelled. It shows a monthly total, with annual charges divided by 12, and flags a planned cancellation or a kept annual renewal 14 days ahead. It doesn't cancel anything or read your bank, so you type them in.",
+          "To stop the freed money from disappearing into spending, [Monthly Money Reset](/free) lets you add it as a reserve, which takes it out of your safe-to-spend figure.",
         ],
-      },
-      {
-        kind: "paragraphs",
-        heading: "Move a small amount first",
-        paragraphs: [
-          "Saving what is left over rarely works, because there is rarely anything left. Set a small amount aside at the start of the month, even if it feels too small to matter, and treat the rest as your spending money. Fifty dollars set aside on day one beats two hundred you meant to set aside on day thirty.",
-        ],
-      },
-      {
-        kind: "paragraphs",
-        heading: "Check the tightest day before you commit",
-        paragraphs: [
-          "Before you set money aside, check the lowest point your balance will reach this month. If saving another fifty dollars would leave you short the day rent leaves, it is not a saving, it is a loan from your future self. Knowing the tightest day tells you how much room is real.",
-        ],
-      },
-      {
-        kind: "paragraphs",
-        heading: "What is not worth the effort",
-        paragraphs: [
-          "Cutting small treats you enjoy usually saves very little and costs you a lot of goodwill toward the whole plan. Chasing a few dollars of cashback or tracking every coffee tends to take more attention than it returns. If a saving is going to cost you more in effort than it earns, leave it.",
-        ],
+        heading: "Where Companion products fit",
       },
       {
         kind: "callout",
-        label: "Try it free",
-        body: "Monthly Money Reset shows what is safe to spend once your bills and reserve are held back, gives you a rough weekly figure, and points out your tightest day. It is free, needs no bank connection, and takes a few minutes to set up. If you want somewhere to keep recurring charges as well, that is what Personal Finance Companion is for.",
+        label: "Try this today",
+        body: "Before you close this page, pick the one charge you're most sure you don't use and cancel it. Write down the date its next bill would have landed.",
       },
     ],
   },
@@ -6910,59 +7686,141 @@ export const GUIDES: Guide[] = [
       { slug: "split-bills-with-a-partner-or-roommate", reason: "Sharing rent and utilities? See how to divide each line on the list fairly between two or more people." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "money",
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "A bills list feels like the simplest possible piece of organizing, and it usually fails at the same point: it lists what arrives every month and forgets everything else. The bills that surprise you are often not the monthly ones.",
-          "A useful list has a small number of columns and includes the quarterly and annual bills from the start. It takes about half an hour to build the first time, and a few minutes a month to keep.",
+          "A monthly bills list has six columns: name, amount, due day, how often, essential or not, and shared or not. Write every bill on it, including the quarterly and annual ones, and divide those into a monthly amount so you can see what a normal month really costs. It takes about half an hour to build.",
+          "This is for anyone paying bills from one or two accounts who wants the whole picture on one page. It can't tell you what a changing bill will be next month, only how to plan for the high end, and it leaves out subscriptions, which have [their own tracker](/guides/subscription-tracker-what-to-track).",
         ],
       },
       {
         kind: "table",
-        heading: "The columns",
-        columns: ["Column", "What to write", "Why it matters"],
+        heading: "An example list: eight bills and one normal month",
+        intro: "Example only, not real data. The Shared column is left off because none of these bills are split. The last column is the one you add up.",
+        columns: ["Bill", "Amount", "Due", "How often", "Essential", "Per month"],
         rows: [
-          ["Name", "Rent, electric, car insurance", "You will scan for it by name"],
-          ["Amount", "A number, or a low and a high", "Some bills move; be honest about it"],
-          ["Due day", "The day of the month, or a specific date", "A bill with no date cannot be planned around"],
-          ["How often", "Monthly, quarterly, annual", "Tells you what a month really costs"],
-          ["Essential", "Yes or no", "What has to be paid before anything else"],
-          ["Shared", "Who pays part, and what share", "Stops you paying for someone else's half"],
+          ["Rent", "$1,450", "1st", "Monthly", "Yes", "$1,450"],
+          ["Electric", "$70 to $120", "18th", "Monthly", "Yes", "$120"],
+          ["Internet", "$45", "26th", "Monthly", "Yes", "$45"],
+          ["Phone", "$38", "9th", "Monthly", "Yes", "$38"],
+          ["Car insurance", "$612", "Jan, Apr, Jul, Oct 15", "Quarterly", "Yes", "$204"],
+          ["Car registration", "$132", "Aug 30", "Annual", "Yes", "$11"],
+          ["Streaming", "$15", "5th", "Monthly", "No", "$15"],
+          ["Gym membership", "$96", "Nov 12", "Annual", "No", "$8"],
+          ["Total", "", "", "", "", "$1,891"],
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Turn every bill into a monthly amount",
         paragraphs: [
-          "To see what a normal month costs, convert every bill to a monthly equivalent. A monthly bill is itself. A quarterly bill divided by three. An annual bill divided by twelve.",
-          "For example, car insurance of $612 every three months is $204 a month. A $96 annual renewal is $8 a month. Add those to the monthly bills and you have a more honest figure for what leaves in a month than the bills you can see in your banking app.",
+          "Add the five bills that land every month and you get $1,668. The real figure is $1,891. The $223 gap is car insurance, registration and the gym membership, and none of them shows up in a typical month of banking activity until the day it lands. Electric is counted at $120, the high end of its range, so a cheap month leaves you ahead instead of short.",
         ],
       },
       {
         kind: "list",
         heading: "Build it in four passes",
+        ordered: true,
+        items: [
+          "Open three months of statements and pull out every charge that repeated, with its amount. Three months catches everything monthly. It won't catch the rest, which is what the next pass is for.",
+          "Add the bills that don't come monthly. Look through last year's statements, search your email for the words renewal and invoice, and go through the checklist below. If you can't find one, write it down anyway with a question mark.",
+          "Write a due day against every row: the day of the month for monthly bills, a real date for the others. Anything you can't date goes on a short second list titled find the date, because a bill with no date can't be planned around.",
+          "Mark which bills are essential, fill in the Shared column for anything you split, then do the monthly math in the next table.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Turn every bill into a monthly amount",
+        intro: "Multiplying a weekly bill by four undercounts it, because a year has 52 weeks and not 48. Every two weeks has the same trap: it's 26 payments a year, not 24.",
+        columns: ["How often", "Do this", "Example"],
+        rows: [
+          ["Weekly", "Multiply by 52, divide by 12", "$20 a week is $86.67 a month"],
+          [
+            "Every two weeks",
+            "Multiply by 26, divide by 12",
+            "$50 every two weeks is $108.33 a month",
+          ],
+          ["Twice a month", "Multiply by 2", "$40 twice a month is $80"],
+          ["Monthly", "Use it as it is", "$45 stays $45"],
+          ["Quarterly", "Divide by 3", "$612 every three months is $204"],
+          ["Every six months", "Divide by 6", "$300 twice a year is $50"],
+          ["Annual", "Divide by 12", "$96 a year is $8"],
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Bills that tend to be missing from the list",
+        intro: "Tick the ones you pay. Each is easy to leave off because it doesn't land every month.",
+        ordered: false,
         checkable: true,
         items: [
-          "Pull the last three months of statements and list everything that repeated.",
-          "Add anything that comes less often: quarterly, twice a year, annual.",
-          "Write a due day or date against each one, and mark the ones you cannot find.",
-          "Mark which bills are essential, then note the ones that vary.",
+          "Renters or home insurance, if it's billed once or twice a year",
+          "Car registration and inspection",
+          "Property tax, if it isn't paid through your mortgage",
+          "HOA or condo fees, if they're billed quarterly",
+          "Professional license or union dues",
+          "Annual memberships and domain renewals",
+          "Tax preparation fees or software",
+          "Dental, vision or pet insurance billed yearly",
+          "School or activity fees paid by term",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Bills that move around",
+        heading: "Bills that change, and bills that don't come monthly",
         paragraphs: [
-          "Electric, water and phone bills change. Write a low and a high, and plan toward the high. There is a longer method in [how to budget for bills that change every month](/guides/budget-for-variable-bills).",
-          "For the non-monthly ones, a small monthly amount set aside for each is the quieter alternative to scrambling when they arrive. That idea has its own guide: [sinking funds](/guides/sinking-funds-explained).",
+          "Electric, water and phone bills move around. Write a low and a high in the Amount column and count the high. If you have twelve months of history, [how to budget for bills that change every month](/guides/budget-for-variable-bills) shows how to pick a planning figure.",
+          "For the non-monthly bills, putting a small amount aside each month is what keeps a $612 bill from feeling like an emergency. That's covered in [sinking funds](/guides/sinking-funds-explained). Today, pick the largest bill that isn't monthly and work out its monthly amount.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "When the list doesn't work",
+        paragraphs: [
+          "A list only helps while its dates are true. Three things break it. It gets built once and never checked. It has amounts but no dates, so it can't tell you what falls due before payday. Or it mixes what you owe with what you'd like to spend, and the total stops meaning anything.",
+          "Check it against your statement once a quarter, when the quarterly bills land. If you keep missing due dates even with a list in front of you, [why you keep missing bill due dates](/guides/why-you-keep-missing-bill-due-dates) is about the habit side, and [what to check before each direct debit date](/guides/what-to-check-before-each-direct-debit-date) covers which account each bill leaves from. A list shows what leaves your account. It doesn't tell you which bills can be negotiated or skipped, and it isn't advice on either.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions about a monthly bills list",
+        items: [
+          {
+            q: "What should be on a monthly bills list?",
+            a: "Every payment you owe on a schedule: rent or mortgage, utilities, insurance, phone, internet, loan and card minimums, plus the quarterly and annual bills. For each one write the amount, the due day, how often it comes and whether it's essential. Subscriptions can share the page or have their own list, as long as they're written down somewhere.",
+          },
+          {
+            q: "How do I list bills that aren't monthly?",
+            a: "Put them on the same list with their real due date and how often they come, then add a per-month column. Divide a quarterly bill by three, a six-monthly one by six and an annual one by twelve. A $612 quarterly insurance bill becomes $204 a month. The date tells you when to pay it, and the monthly figure tells you what to set aside.",
+          },
+          {
+            q: "Should I sort my bills by due date or by amount?",
+            a: "Sort by due date. The list's job is to show what falls due next, and date order shows the crowded weeks, such as three bills landing between the 1st and the 5th. If you get paid on a fixed schedule, you can add a column for which paycheck covers each bill.",
+          },
+          {
+            q: "Is a bills list the same as a budget?",
+            a: "No. A bills list covers only what you owe on a schedule, and its total is what a normal month costs before any spending. A budget adds income and everything else. Doing the list first gives a budget its firmest number, and [how to budget for beginners](/guides/how-to-budget-for-beginners) picks up from there.",
+          },
+          {
+            q: "How often should I update my bills list?",
+            a: "Update it when a bill changes, when you start or end a service, and once a quarter against your statements. Five minutes at the end of each month is usually enough, and the [end of month money review](/guides/end-of-month-money-review) has a place for it.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Where Draftpace fits",
+        paragraphs: [
+          "[Personal Finance Companion](/shop/personal-finance-companion) has a Bills screen with these fields: name, amount (blank if it varies, or a low and a high), frequency (monthly, quarterly, annual or custom), due day or date, essential, and a shared percentage. You type the bills in, or paste them from notes or a file and review each one before it counts. It shows the monthly total, what's left to pay this month as you tick bills off, and a note on any bill with no due date.",
+          "One thing to know before you rely on it: its Available Money figure subtracts a full month of bills whether or not you've ticked them paid, so read it as a month-level estimate. It doesn't read your bank. If you want the lighter route, [Monthly Money Reset](/free) is free and holds back the bills you still owe this month from a safe-to-spend figure.",
         ],
       },
       {
         kind: "callout",
-        label: "The Companion for this",
-        body: "Personal Finance Companion has a Bills screen with all of these fields, including frequency (monthly, quarterly, annual, custom), an amount that can vary, and a due day or date. It shows a monthly total and what is left to pay this month, lets you tick a bill paid, and flags any bill with no due date. You type the bills in, or paste them and review each one. It does not read your bank, and it counts a full month of bills toward Available Money whether or not you have ticked them paid. It is $49 once.",
+        label: "Do this today",
+        body: "Find the one bill on your list with no due date and look it up. Write the date next to it before you close this page.",
       },
     ],
   },
@@ -6970,7 +7828,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "organize-your-finances-from-scratch",
     title: "How to organize your finances when everything is scattered",
-    dek: "Bank apps, statements, a notes file and a lot in your head. A ten minute, six step starting path that works without every statement to hand.",
+    dek: "Bank apps, statements, a notes file and a lot in your head: a ten minute starting page you can fill in from memory, with the gaps marked.",
     primaryQuery: "how to organize your finances",
     next: { slug: "how-to-budget-for-beginners", reason: "Ready to turn the pile into a plan? Build a monthly budget from four things and a worked example." },
     related: [
@@ -6979,59 +7837,163 @@ export const GUIDES: Guide[] = [
       { slug: "monthly-bills-list", reason: "Write down every bill with its due date, the first thing worth pulling out of the mess." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "money",
+    sources: [
+      {
+        name: "IRS: How long should I keep records?",
+        url: "https://www.irs.gov/businesses/small-businesses-self-employed/how-long-should-i-keep-records",
+        retrieved: "2026-09-26",
+        note: "Three years from filing as the standard period, longer in some cases, check creditor and insurer requirements.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Most advice about organizing money starts with gathering every statement, every login and every bill. That is exactly what makes it hard to start. The picture you can build in ten minutes from what you already know is more useful than the perfect one you never begin.",
-          "This is a starting path, not a system. It is meant to be finished the same day, and improved later.",
+          "To organize scattered finances, take ten minutes and write down what you already know in six areas: accounts, income, bills, subscriptions, debts and goals. Put a question mark next to anything you're unsure of instead of guessing. Then pick one number to find first, close one gap, and set a day to look at the page again.",
+          "This is for the moment when your money information is spread across bank apps, a notes file, a drawer and your memory, and you couldn't say what's due next week. You don't need any statements to start. It won't find accounts you've forgotten exist, and it isn't tax or legal advice.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "An example page, filled in from memory",
+        intro: "Example only. Say it's a Sunday evening and this is everything you can write in five minutes with no logging in. The question marks are the useful part.",
+        columns: ["Area", "What you write", "Gap to close"],
+        rows: [
+          [
+            "Accounts",
+            "Checking at the credit union, about $1,900. Savings, about $4,000?",
+            "Log in and confirm both balances",
+          ],
+          [
+            "Income",
+            "Paycheck, about $2,600 every two weeks, next one Friday",
+            "Check the amount after taxes",
+          ],
+          [
+            "Bills",
+            "Rent $1,450 on the 1st. Electric ?. Car insurance ?, date ?",
+            "Find the electric range and the insurance date",
+          ],
+          [
+            "Subscriptions",
+            "Streaming, phone backup, gym?",
+            "Search your email for receipt and renewal",
+          ],
+          [
+            "Debts",
+            "Visa about $2,600, rate ?. Student loan, payment about $120",
+            "Find the Visa's interest rate",
+          ],
+          ["Goals", "Emergency fund, $5,000, by next summer", "None yet"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Every question mark on that page is a specific errand: log in, look up a date, find a rate. A page that says where it's unsure is more use than one that fills the blanks with guesses, because you can see which numbers not to plan around yet.",
         ],
       },
       {
         kind: "timeline",
-        heading: "The ten minute starting path",
+        heading: "The ten minutes, in order",
         steps: [
-          { when: "Gather", what: "Write down where your money information lives: bank apps, a statement folder, notes, a spreadsheet, or your head." },
-          { when: "Write what you know", what: "Accounts and roughly what is in them. What comes in and when. The bills you can name. The debts you owe." },
-          { when: "Mark what you do not", what: "Beside anything you are unsure of, write a question mark. Do not guess." },
-          { when: "Find one number", what: "Pick the single figure you most want: what is actually free to spend, or when the debt is gone." },
-          { when: "Fix one thing", what: "Choose the one gap that matters most and close it, such as a missing due date." },
-          { when: "Set a rhythm", what: "Choose a small, regular time to update it, weekly or monthly." },
+          {
+            when: "Minutes 0 to 2",
+            what: "List where your money information lives: bank apps, a statements folder, notes, a spreadsheet, a drawer, your head. Don't open any of them yet.",
+          },
+          {
+            when: "Minutes 2 to 6",
+            what: "Fill in the six areas from memory. Round numbers are fine. Write a question mark next to anything you'd be guessing.",
+          },
+          {
+            when: "Minute 7",
+            what: "Circle the number you most want: either what's free to spend, or when a debt ends. That decides which question mark you chase first.",
+          },
+          {
+            when: "Minutes 7 to 9",
+            what: "Close one gap. A good first one is a bill with no due date, since a missed date is what costs a fee.",
+          },
+          {
+            when: "Minute 10",
+            what: "Pick a day to look at the page again: weekly if you're catching up, monthly once things are steady. Put it in your calendar, with the page's location.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Why start from memory, not from a pile of statements",
+        paragraphs: [
+          "The usual advice is to collect every statement and login before you do anything. We'd skip that. When you already feel behind, the gathering is where it stalls: the folder is enormous, half the logins are lost and nothing has been decided yet. A page from memory is wrong in places, but it shows you which places, and it takes ten minutes instead of a weekend. Do the gathering afterward, one question mark at a time.",
         ],
       },
       {
         kind: "list",
-        heading: "Six areas to cover",
-        checkable: true,
+        heading: "Where to go next, by the number you picked",
+        ordered: false,
         items: [
-          "Accounts: where your money sits, and roughly how much.",
-          "Income: what comes in, how sure you are of it, and when.",
-          "Bills: what is due on a schedule, including the ones that are not monthly.",
-          "Subscriptions: what renews on its own.",
-          "Debts: what you owe, the rate and the minimum.",
-          "Goals: what you are saving toward, and by when.",
+          "You want to know what's free to spend: [how much of your money is actually safe to spend](/guides/how-much-of-your-money-is-actually-safe-to-spend) works from three numbers off your page.",
+          "You keep missing due dates: build [a monthly bills list](/guides/monthly-bills-list), which turns the Bills line into a schedule.",
+          "You suspect subscriptions: [find every subscription you pay for](/guides/how-to-find-every-subscription-you-are-paying-for).",
+          "You only have a downloaded bank file: [how to use a bank statement CSV](/guides/bank-statement-csv-to-budget).",
+          "You want a monthly plan: [how to budget for beginners](/guides/how-to-budget-for-beginners).",
+          "Everything already feels overdue: [how to start when everything is overdue](/guides/how-to-start-when-everything-is-overdue).",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "The gaps are useful",
+        heading: "What to keep, and how long",
         paragraphs: [
-          "A gap is not a failure. A bill with no due date, a debt with no interest rate and an account you have not checked in a month are all things you now know to find. A picture that says where it is unsure is more trustworthy than one that quietly fills the blanks.",
-          "If you want the simplest possible version to start with, [how much of your money is actually safe to spend](/guides/how-much-of-your-money-is-actually-safe-to-spend) gives you one number from three inputs.",
+          "Once the page exists, the papers need a home. For tax records, the IRS says to keep them for three years from the date you file in the usual case, with longer periods in some situations, and to check whether creditors or insurers want theirs kept longer. That's a general rule for the United States and not advice on your return. A [financial binder](/guides/financial-binder-what-to-include) gives the papers a place. The page is what you update.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Paper, notes or an app",
+        heading: "When it doesn't work",
         paragraphs: [
-          "Any of them works for the first pass. The thing that matters is that you can update it in a few minutes, because a picture that is two months old is worse than none. If you like paper, a printable workbook is a good way to gather. There is more on that in [how to make a financial binder](/guides/financial-binder-what-to-include).",
+          "Three things break this. You skip the question marks and guess, so the page looks finished and is wrong. It lives somewhere you won't open, such as a note buried in an app you never use, so put it where you already look. Or you build it once and never set the day, and by spring it's out of date. An old page can mislead you worse than having none.",
+          "If the gaps are mostly accounts or bills you're afraid to open, that's a different starting point, and the overdue guide above is the place for it.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions about getting organized",
+        items: [
+          {
+            q: "Where do I start when my finances are a mess?",
+            a: "Start with a page written from memory: accounts, income, bills, subscriptions, debts and goals, with a question mark wherever you're unsure. It takes ten minutes and shows you what's missing. Then close one gap, like a bill's due date, and set a day to look at the page again. Don't begin with a pile of statements.",
+          },
+          {
+            q: "What financial documents should I keep?",
+            a: "For taxes, the IRS says to keep records three years from filing in the usual case, and longer in some situations. Beyond that, a sensible default is loan and insurance paperwork for as long as the account is open, but check with each lender or insurer. The [financial binder guide](/guides/financial-binder-what-to-include) lists seven sections to sort them into.",
+          },
+          {
+            q: "How do I organize my finances without a spreadsheet?",
+            a: "A sheet of paper is enough for the first pass: six headings and a few lines under each. What counts is that you can update it in a few minutes, so choose the place you'll actually open. Paper, a notes app, a spreadsheet or the Companion all work. The one to avoid is a page that's two months old.",
+          },
+          {
+            q: "How often should I review my finances?",
+            a: "Weekly if you're catching up, monthly once things are steady. A ten minute check on the same day each time is easier to keep than a long session you have to plan. The [end of month money review](/guides/end-of-month-money-review) is a ten minute routine for the monthly version.",
+          },
+          {
+            q: "What if I don't know how much I owe?",
+            a: "Write the debt down with a question mark, then find three numbers for it from the lender's website or your latest statement: the balance, the interest rate and the minimum payment. That's the whole errand. You don't need a payoff plan yet, and [debt snowball vs avalanche](/guides/debt-snowball-vs-avalanche) is there when you do.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Where Draftpace fits",
+        paragraphs: [
+          "[Personal Finance Companion](/shop/personal-finance-companion) opens with the question this page starts from: where is your financial information right now? You choose mostly in your head, notes, a text file, a spreadsheet or CSV, or already known, and it goes one area at a time: accounts, income, bills, subscriptions, debts and savings. Nothing is required. You type things in, paste notes or upload a file, and anything imported is reviewed before it counts. Missing pieces, like a bill with no due date, show in its Attention list when you open it. It doesn't read your bank.",
+          "If you only want the one number, [Monthly Money Reset](/free) is free and takes a few minutes.",
         ],
       },
       {
         kind: "callout",
-        label: "The Companion for this",
-        body: "Personal Finance Companion starts by asking where your financial information is right now: mostly in your head, in notes, in a text file, in a spreadsheet, or already known. It then goes one area at a time, and nothing is required. You type it in, paste it, or import a CSV, and you review anything imported before it counts. Missing information is shown, not hidden, and the app suggests one next move at a time. It is $49 once.",
+        label: "If you have ten minutes now",
+        body: "Write the six headings on paper and fill in what you know. Put a question mark next to the rest and stop there.",
       },
     ],
   },
@@ -7039,7 +8001,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "split-bills-with-a-partner-or-roommate",
     title: "How to split bills with a partner or roommate: 3 methods",
-    dek: "Equal, by income or by item: what each one assumes, four things to agree first, and a one page record so the question stays settled.",
+    dek: "Equal, by income or by room: the formula with a worked example, what to agree before the first payment, and what to say when you bring it up.",
     primaryQuery: "how to split bills with a partner",
     next: { slug: "monthly-bills-list", reason: "List every shared bill with its amount and due date before you decide how to split the total." },
     related: [
@@ -7048,75 +8010,182 @@ export const GUIDES: Guide[] = [
       { slug: "what-to-check-before-each-direct-debit-date", reason: "Agree which account each shared bill leaves from and check it before each date." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "money",
+    sources: [
+      {
+        name: "ClearCash: How to split bills based on income",
+        url: "https://clearcash.app/blog/how-to-split-bills-based-on-income",
+        retrieved: "2026-09-26",
+        note: "Income ratio formula and the gross versus net discussion. A commercial site, used for the method only; the worked numbers are our own arithmetic.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Sharing a home or a life means sharing costs, and most arguments about it are not about the money. They are about not being able to remember who paid what. A little structure fixes most of that.",
-          "This guide is neutral about the answer. It describes three common ways to split, what each one assumes, and how to keep a record.",
+          "Split bills by income if your earnings differ a lot, and 50/50 if they're close. To find the share, add both incomes, divide each by the total, and apply that percentage to every shared bill. At $4,200 and $2,100 a month, that's two thirds and one third, so an $1,800 rent is $1,200 and $600.",
+          "This is for couples and roommates who want a split they can explain in one sentence. It can't tell you what's fair in your situation, only how each method works. A private split doesn't change your lease, which is a separate agreement with the landlord, and this isn't legal advice.",
         ],
       },
       {
         kind: "table",
-        heading: "Three ways to split",
-        columns: ["Approach", "How it works", "It assumes"],
+        heading: "An example: two incomes, four shared bills",
+        intro: "Example only. Take-home pay is $4,200 a month for you and $2,100 for them, which is 67 and 33 percent.",
+        columns: ["Bill", "Total", "You (two thirds)", "Them (one third)"],
         rows: [
-          ["Equal", "Every bill is split in half", "Similar income and similar use"],
-          ["By income", "Each person pays a share matching what they earn", "You are comfortable sharing income"],
-          ["By item", "Each person takes certain bills", "The bills are of similar size"],
+          ["Rent", "$1,800", "$1,200.00", "$600.00"],
+          ["Electric", "$110", "$73.33", "$36.67"],
+          ["Internet", "$60", "$40.00", "$20.00"],
+          ["Renters insurance", "$22", "$14.67", "$7.33"],
+          ["Total", "$1,992", "$1,328.00", "$664.00"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Under 50/50 each of you would pay $996. That is 24 percent of the higher take-home pay and 47 percent of the lower one. Under the income split, both pay about 32 percent of their own pay toward shared bills. That is the whole case for splitting by income, and the case against it is that it needs both of you to share how much you earn.",
         ],
       },
       {
         kind: "list",
-        heading: "Agree these four things first",
+        heading: "How to work out the share",
+        ordered: true,
+        items: [
+          "Pick one basis for both people, take-home or gross. We'd use take-home, because it's what each of you actually has to spend. Gross is simpler when one of you has pay that swings from retirement contributions or pre-tax benefits. Either works if you both use the same one.",
+          "Add the monthly incomes. With three or more people, add all of them.",
+          "Divide each income by the total: $2,100 divided by $6,300 is 0.33.",
+          "Multiply each share by the total of the shared bills.",
+          "Round to percentages you can both remember, such as 67 and 33, and write them down where you'll both see them.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Three ways to split, and what each assumes",
+        columns: ["Method", "How it works", "Suits", "Watch for"],
+        rows: [
+          [
+            "Equal",
+            "Every shared bill is halved",
+            "Incomes that are close",
+            "The lower earner pays a bigger share of their pay",
+          ],
+          [
+            "By income",
+            "Each pays a percentage matching earnings",
+            "Incomes that differ, one household",
+            "Needs both to share income figures",
+          ],
+          [
+            "By item",
+            "Each person owns certain bills",
+            "Bills of similar size",
+            "Utilities swing while rent stays put, so the totals drift apart",
+          ],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Roommates: splitting rent by room",
+        paragraphs: [
+          "Roommates don't always share income, and rooms are rarely the same size. A common method is to split rent by room size. Say a three bedroom rents for $2,700 and the rooms are 200, 150 and 150 square feet, 500 in all. Those are 40, 30 and 30 percent, so $1,080, $810 and $810. A private bathroom or a parking space is a reason to move one person's share up, and the final number is whatever the group agrees to. Utilities are often split evenly, since use doesn't follow room size. Agree all of it before the first payment.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Agree these before the first payment",
+        ordered: false,
         checkable: true,
         items: [
-          "Which bills count as shared, and which do not.",
-          "What each person's share is, as a percentage.",
-          "How often you settle: monthly, or when it adds up.",
-          "Where you write it down, so both of you can see it.",
+          "Which bills count as shared, written as a list.",
+          "Which method: equal, income or room size, and net or gross if by income.",
+          "Each person's share as a percentage.",
+          "The settling day and how, for example the day after payday by transfer, or into a shared account.",
+          "What triggers a re-run: a raise, a job loss, a move.",
+          "How one-off costs work: anything over an amount you pick gets agreed before it's bought.",
+          "Where the record lives, and who can see it.",
+        ],
+      },
+      {
+        kind: "scripts",
+        heading: "What to say when you bring it up",
+        intro: "Pick the line that fits, and say it before the first bill is due.",
+        items: [
+          {
+            situation: "Opening",
+            line: "Can we agree how we split the shared bills? I'd like to write it down once so neither of us has to remember it.",
+          },
+          {
+            situation: "If incomes differ a lot",
+            line: "Would a split by income work? We add up our take-home pay, and each of us pays that percentage of every shared bill.",
+          },
+          {
+            situation: "If they'd rather not share",
+            line: "We could split it equal, or each take certain bills. Which of those feels better to you?",
+          },
+          {
+            situation: "If it stops feeling fair",
+            line: "Can we run the numbers again? My pay changed, so the percentages have.",
+          },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Write down what is settled and what is owed",
+        heading: "When incomes change, and one-off costs",
         paragraphs: [
-          "The simplest habit is a running record: each shared bill, the amount, each person's share, and a mark when it is settled. When someone asks whether rent was paid, the answer is on the page.",
-          "A one-page statement of what is still owed, and what has already been settled, is often all you need to send. It turns a memory dispute into arithmetic.",
+          "Say one of you loses income for three months. Under an income split you re-run the same formula with the new figure, and you do it the day it happens, not after the first missed transfer. Decide together whether a drop is temporary and whether the difference is paid back later. Either answer works if it's written down.",
+          "For a couch or a vet bill, decide before you buy who pays and who keeps it if you split up. If you'd rather not share income figures at all, an income split can't work. Equal or by item is the fallback, and that's a fair thing to ask for.",
         ],
       },
       {
-        kind: "compare",
-        heading: "When a joint account helps, and when it does not",
-        left: {
-          label: "A joint account suits",
-          items: [
-            "Long-term partners who share most costs",
-            "Bills that are always the same amount",
-            "Two people who check in regularly",
-          ],
-        },
-        right: {
-          label: "Tracking separately suits",
-          items: [
-            "Roommates and short-term arrangements",
-            "Costs that are only partly shared",
-            "Anyone who wants to keep the rest private",
-          ],
-        },
+        kind: "paragraphs",
+        heading: "Joint account or separate, and the record",
+        paragraphs: [
+          "A joint account suits partners who share most costs, bills that are always the same amount, and two people who check in regularly. A middle route is for each person to transfer their share to a shared account on payday and pay everything from there. Separate tracking suits roommates and short arrangements, or anyone who wants the rest of their money private.",
+          "The record is the part that stops arguments. For each shared bill write the date, the amount, each share, and a mark when it's settled. When someone asks whether the rent was paid, the answer is on the page. If your bills mix monthly and non-monthly ones, [a monthly bills list](/guides/monthly-bills-list) is a good base to share from, and after a move or a split [sort out your finances after a life change](/guides/sort-out-your-finances-after-a-life-change) gives the order.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions about splitting bills",
+        items: [
+          {
+            q: "Should couples split bills 50/50 or by income?",
+            a: "There's no rule. 50/50 is simplest and works when incomes are close. When they differ a lot, it takes a bigger share of the lower earner's pay, which is why many couples split by income instead. Try both on your real bills, look at each person's share of their own pay, and pick the one you can both live with.",
+          },
+          {
+            q: "How do you split bills based on income?",
+            a: "Add both take-home incomes, divide each by the total, and apply those percentages to every shared bill. At $4,200 and $2,100, the shares are two thirds and one third, so a $2,000 bill is $1,333 and $667. Use the same basis for both people, either all take-home or all gross.",
+          },
+          {
+            q: "Should I use gross or net income to split bills?",
+            a: "Sources disagree. Take-home pay reflects what each person can spend. Gross is one figure you both know and doesn't shift with retirement contributions or benefits. Pick one and use it for everyone. We'd use take-home, unless one of you has large pre-tax deductions that would skew the split.",
+          },
+          {
+            q: "How do roommates split rent when rooms are different sizes?",
+            a: "A common method is square footage. Divide each room's size by the total of all the bedrooms, then apply that percentage to the rent. A 200 square foot room in a 500 square foot total pays 40 percent. Adjust for a private bathroom or parking if everyone agrees, and write the final numbers down.",
+          },
+          {
+            q: "How often should we settle up?",
+            a: "Monthly, a day or two after payday, is easy to remember. If you use a shared account, each person's transfer on payday replaces the settling. If you track separately, tick each bill as settled on the day the money moves.",
+          },
+          {
+            q: "What if one of us can't pay our share this month?",
+            a: "Talk on the day you know, and re-run the split on the new income if it will last. For a one-off shortfall, agree whether the difference is paid back and by when, and write it down. Your lease or lender still decides what each of you owes them.",
+          },
+        ],
       },
       {
         kind: "paragraphs",
-        heading: "Keep it plain",
+        heading: "Where Draftpace fits",
         paragraphs: [
-          "Avoid turning it into a ledger of every coffee. Agree the shared bills once, review them when something changes, and write down settlements as they happen. If your bills are a mix of monthly and non-monthly, [a monthly bills list](/guides/monthly-bills-list) is a good base to share from.",
+          "[Personal Finance Companion](/shop/personal-finance-companion) has a Shared Responsibility toggle on any bill or subscription. You enter your share as a percentage from 1 to 99, so 67 for the example above, and the row shows your share and their share. Tick a bill settled once the money has moved, and download a one page PDF of what's still owed to you and what's already settled. The other person doesn't need an account or login. It's a record only: it doesn't send money, request payment or track who paid, and the statement shows only what's owed to you.",
         ],
       },
       {
         kind: "callout",
-        label: "The Companion for this",
-        body: "In Personal Finance Companion, any bill or subscription can be marked Shared Responsibility with your share as a percentage. The row shows your share and their share, you tick it settled, and you can download a one-page PDF of what is still owed and what is already settled. The other person needs no account. It is manual: it does not send money, request payment or track who paid. It is $49 once.",
+        label: "Before you close this page",
+        body: "Add up your two incomes and work out the percentages on paper. Send your partner or roommate one message with the numbers.",
       },
     ],
   },
@@ -7133,58 +8202,142 @@ export const GUIDES: Guide[] = [
       { slug: "end-of-month-money-review", reason: "Fold the renewal check into a ten minute month end routine that covers every bill." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "money",
+    sources: [
+      {
+        name: "FTC: Getting In and Out of Free Trials, Auto-Renewals, and Negative Option Subscriptions",
+        url: "https://consumer.ftc.gov/articles/getting-and-out-free-trials-auto-renewals-and-negative-option-subscriptions",
+        retrieved: "2026-09-26",
+        note: "Calendar note for trial end dates, likelihood of being charged after a trial, and keeping records when canceling.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Finding your subscriptions is a one-time job, covered in [how to find every subscription you are paying for](/guides/how-to-find-every-subscription-you-are-paying-for). Keeping track of them is the ongoing one, and it needs far less than most trackers ask for.",
-          "The single most useful thing to record is not the price. It is the date it renews, because that is the last moment you can do anything about it.",
+          "Track six things for every subscription: the name as it appears on your statement, the charge, the billing cycle, the next renewal date, your decision (keep, still deciding, planned to cancel) and who shares it. The renewal date is the field to protect, because it is the last day you can act before you pay again.",
+          "This is for keeping a list of subscriptions you've already found. It can't find the ones you don't know about, so for that start with [how to find every subscription you are paying for](/guides/how-to-find-every-subscription-you-are-paying-for), and it doesn't cancel anything for you.",
         ],
       },
       {
         kind: "table",
-        heading: "The six fields",
-        columns: ["Field", "What to write", "Why"],
+        heading: "An example tracker with five rows",
+        intro: "Example only, not real data.",
+        columns: ["Name", "Charge", "Cycle", "Renews", "Decision", "Shared"],
         rows: [
-          ["Name", "The service", "So you can find it again"],
-          ["Charge", "What it costs each cycle", "The number that leaves your account"],
-          ["Cycle", "Monthly, annual, or something else", "Annual charges are the easy ones to miss"],
-          ["Renewal date", "The date it next charges", "The date you can act on"],
-          ["Your decision", "Keep, still deciding, or planned to cancel", "Turns a vague worry into a status"],
-          ["Who shares it", "If someone else pays part", "Stops two people paying for the same thing"],
+          ["Video streaming", "$15.49", "Monthly", "5th", "Keep", "No"],
+          ["Fitness app", "$79.99", "Annual", "Nov 14", "Planned to cancel", "No"],
+          ["Antivirus", "$59.99", "Annual", "Jan 9", "Still deciding", "No"],
+          ["Cloud storage", "$2.99", "Monthly", "21st", "Keep", "No"],
+          ["Family music plan", "$16.99", "Monthly", "12th", "Keep", "Yes, 50%"],
         ],
       },
       {
         kind: "paragraphs",
-        heading: "The annual trap",
+        heading: "Why the renewal date beats the price",
         paragraphs: [
-          "A charge you pay once a year is invisible for eleven months and then lands all at once. It is also the charge most likely to renew because you forgot. If you keep only one habit, make it a heads-up about two weeks before any annual renewal, so there is time to decide.",
+          "Two of the five rows are annual, and they're the two with a decision waiting. The monthly ones renew without any drama. The annual ones sit for months and then charge $79.99 or $59.99 in one go. For the fitness app, the heads-up date is October 31, two weeks before it renews on November 14, which leaves time to decide and cancel.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "What to write in each field",
+        columns: ["Field", "What to write", "Tip"],
+        rows: [
+          [
+            "Name",
+            "The service",
+            "Write it as it appears on your statement, since that's what you'll search for. It can differ from the app's name.",
+          ],
+          [
+            "Charge",
+            "What it costs each cycle",
+            "Update it when a charge lands at a different amount, because a price can change at renewal.",
+          ],
+          ["Cycle", "Monthly, annual or other", "Mark annual ones so they stand out."],
+          [
+            "Renewal date",
+            "The date it next charges",
+            "If you don't know it, take the last charge date and add one cycle, then confirm it in the account page.",
+          ],
+          [
+            "Decision",
+            "Keep, still deciding or planned to cancel",
+            "Still deciding needs a date to decide by, or it sits there for good.",
+          ],
+          [
+            "Who shares it",
+            "Anyone who pays part",
+            "Write their percentage, so two people don't both pay for one plan.",
+          ],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Free trials go on the list too",
+        paragraphs: [
+          "The FTC's consumer advice on free trials is plain: many trials ask for a card up front, and if you don't cancel in time you'll probably be charged. Its tip is to make a note on your calendar to cancel before the trial ends. Treat a trial as a subscription from day one. Add it with the day the trial ends, and mark the decision planned to cancel unless you already know you want it.",
         ],
       },
       {
         kind: "list",
         heading: "A five minute monthly check",
+        ordered: false,
         checkable: true,
         items: [
           "Look at anything renewing in the next two weeks.",
-          "For each one, keep it, decide, or plan to cancel it.",
-          "Look at anything marked still deciding and settle at least one.",
-          "Add any new subscription you started this month.",
-          "Remove anything you have already canceled.",
+          "For each one, choose keep or planned to cancel.",
+          "Open anything marked still deciding and settle at least one.",
+          "Add any subscription you started this month, including trials.",
+          "Remove anything you've already canceled and check the charge stopped.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Canceling is the easy part after you decide",
+        heading: "When it doesn't work",
         paragraphs: [
-          "Once a subscription is marked planned to cancel, the last step is to actually do it, which some services make harder than it should be. That is covered in [how to cancel a subscription that is hard to cancel](/guides/how-to-cancel-subscriptions).",
+          "Trackers fail in three ways. The renewal dates are guessed, so confirm them once in each account page. The list isn't updated when you sign up for something, so make adding it the last step of signing up. And the tracker sits in a file you never open, which is why the two week heads-up belongs in your calendar, where it finds you.",
+          "It also won't catch a subscription billed to someone else's account. Once a row says planned to cancel, the last step is doing it, and the FTC advises keeping a copy of your cancellation request and notes on any conversation. [How to cancel a subscription that is hard to cancel](/guides/how-to-cancel-subscriptions) has the steps and scripts. Trimming subscriptions is also one of the quicker wins in [how to save money fast](/guides/how-to-save-money-fast).",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions about tracking subscriptions",
+        items: [
+          {
+            q: "What should a subscription tracker include?",
+            a: "Six fields are enough: the name as it appears on your statement, what each charge costs, how often it bills, the next renewal date, your decision on it, and who shares the cost. If you keep only one field current, make it the renewal date, because that's the last day you can cancel without paying for another cycle.",
+          },
+          {
+            q: "Can I use a spreadsheet to track subscriptions?",
+            a: "Yes. Six columns and a row per subscription is all you need, and paper works the same way. What makes it useful is a calendar note two weeks before each annual renewal, because a spreadsheet only helps when you open it. The calendar note comes to you.",
+          },
+          {
+            q: "How do I remember to cancel a free trial?",
+            a: "Put the end date on your calendar the day you sign up, as the FTC suggests, and add the trial to your tracker with the decision planned to cancel. Set the reminder for a day or two before the end, since some services process cancellations only during set hours or take a day.",
+          },
+          {
+            q: "How often should I review my subscriptions?",
+            a: "A five minute check once a month is enough for most lists: look at anything renewing in the next two weeks, settle one that's still deciding, and add anything new. Folding it into your [end of month money review](/guides/end-of-month-money-review) means you don't need a separate habit.",
+          },
+          {
+            q: "What's the difference between a subscription and a bill?",
+            a: "A bill is owed on a schedule, such as rent or electric. A subscription renews on its own until you stop it, so the action is yours to take before the date. That's why they're worth tracking apart, and why [a monthly bills list](/guides/monthly-bills-list) is the companion to this one.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Where Draftpace fits",
+        paragraphs: [
+          "[Personal Finance Companion](/shop/personal-finance-companion) has a Subscriptions screen built on these fields: name, amount, monthly, annual or custom frequency, an optional renewal date, and a decision of keep, still deciding, planned to cancel or already canceled. A subscription can be marked shared with your percentage. It shows a monthly total and marks annual ones with a badge. When you open it, its Attention list flags a planned cancellation within 14 days of renewal and a kept annual subscription within 14 days, and Coming up lists renewals in the next 14 days. It doesn't show an annual total, it doesn't cancel anything, and it doesn't read your bank.",
         ],
       },
       {
         kind: "callout",
-        label: "The Companion for this",
-        body: "Personal Finance Companion tracks subscriptions with a decision on each one: keep, still deciding, planned to cancel, or already canceled. It shows a monthly total, and it puts a kept annual subscription in Attention when it is within 14 days of renewing. It tracks the decision and will not cancel anything for you. It does not show an annual total. It is $49 once.",
+        label: "The two week rule",
+        body: "Set a calendar note two weeks before each annual renewal. If you already have the list, add the earliest one now.",
       },
     ],
   },
@@ -7784,7 +8937,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "how-to-say-no-or-give-bad-news-on-the-phone",
     title: "How to say no, or give bad news, on the phone",
-    dek: "Some calls are hard because of what you have to say. Decide what you will not agree to before dialing, have an opening ready, and ask for a minute.",
+    dek: "Some calls are hard because of what you have to say. Decide what you won't agree to, put the news in your first two sentences, and ask for a minute.",
     primaryQuery: "give bad news on the phone",
     next: { slug: "how-to-make-a-phone-call-you-have-been-avoiding", reason: "For the general case of a call you keep avoiding, this walks through five things to prepare and a first sentence." },
     related: [
@@ -7793,62 +8946,203 @@ export const GUIDES: Guide[] = [
       { slug: "time-blindness-planning", reason: "Name one exact time to make a hard call, with a buffer before it, so it does not float." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "mind-and-focus",
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "A call where you have to say no, or tell someone something they will not want to hear, is harder than a call where you have to ask for something. The difficulty is not the phone. It is that you are about to disappoint someone and you have not decided how.",
-          "This guide is about the practical parts: what to decide, what to have ready, and what to say first. It is not therapy, negotiation coaching or advice about what you should agree to.",
+          "Decide what you will not agree to, write one line for what you want to be true when the call ends, and put the news in your first two sentences. Say it, then stop talking and let them answer. Before you hang up, say back what was agreed.",
+          "This is for refusals, bad news and money conversations. It can't tell you what you should accept or refuse, and it isn't therapy or negotiation coaching. It's practical preparation for a conversation you'd rather not have.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Example: saying no to a favor",
+        intro: "An illustration, not a real account. Say your sister has asked you to host the family weekend in March, and you can't do it. This is what goes on the page before you dial.",
+        columns: ["The thing", "What's on the page"],
+        rows: [
+          [
+            "What I want to be true",
+            "She knows today that I can't host, so she has time to ask someone else.",
+          ],
+          [
+            "What I won't agree to",
+            "Hosting even part of it. Being talked into a smaller version of the same thing.",
+          ],
+          ["Who to name if it gets heated", "No one. I'll say I'll call back."],
+          [
+            "First sentence",
+            "Hi, I've thought about it and I can't host in March. I wanted to tell you now rather than leave you waiting.",
+          ],
+          ["Two call-back times", "6:30 tonight, or Saturday at 10."],
         ],
       },
       {
         kind: "list",
         heading: "What makes this one hard?",
-        intro: "Naming it tells you what is worth having ready.",
-        checkable: true,
+        intro: "Pick the closest, because it changes what's worth having ready. More than one can be true.",
         items: [
-          "You are telling them something they will not want to hear.",
-          "You are saying no to something.",
+          "You're telling them something they won't want to hear.",
+          "You're saying no to something.",
           "Money is involved.",
-          "It is personal.",
-          "They have been difficult about this before.",
-        ],
-      },
-      {
-        kind: "timeline",
-        heading: "Before you dial",
-        steps: [
-          { when: "Say what you want", what: "One line: what you want to be true when you put the phone down." },
-          { when: "Decide what you will not agree to", what: "Deciding now means you are not deciding it while somebody waits on the line." },
-          { when: "Set the room", what: "A glass of water within reach, and somewhere you will not be overheard." },
-          { when: "Name two call-back times", what: "In case now turns out to be the wrong moment." },
-          { when: "Get the first sentence ready", what: "Getting the first sentence out is most of it." },
-        ],
-      },
-      {
-        kind: "scripts",
-        heading: "An opening to start from",
-        intro: "Pick the situation. Use it, or change it to sound like you.",
-        items: [
-          { situation: "Bad news", line: "Hi, it is me. There is something I need to tell you and it is not good news. Is now an all right time?" },
-          { situation: "Saying no", line: "Hi, I have thought about it and I am not going to be able to do it. I wanted to tell you rather than leave you waiting." },
-          { situation: "Money", line: "Hi, I need to talk to you about money, which I would rather do directly than by email. Do you have a few minutes?" },
-          { situation: "Difficult before", line: "Hi, I am calling about this again. I would like to get it sorted today if we can. Can you look at what has happened so far?" },
+          "It's personal.",
+          "They've been difficult about this before.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "You are allowed to ask for a minute",
         paragraphs: [
-          "During the call, you are allowed to ask for a minute to think, and you are allowed to say you will call back. Neither is a failure. Write down anything that was agreed, and, if it matters, the name of who you spoke to.",
-          "For everyday admin calls, there are scripts in [scripts for the admin calls everyone dreads](/guides/scripts-for-the-admin-calls-everyone-dreads).",
+          "The pattern is the same in each. A call where you ask for something has a clear end: you get it or you don't. A call where you refuse or deliver bad news has no end until the other person has reacted, and you can't control the reaction. That's why the preparation is about the parts you can control: your position, your first sentence, and how you'll pause if it goes somewhere you didn't expect.",
         ],
       },
       {
-        kind: "callout",
-        label: "The Companion for this",
-        body: "ADHD Life Companion has a Make a difficult phone call walkthrough. It asks what makes this one hard, who you are calling, what you want to be true, and whether there is anything you are not willing to agree to. It shows what is worth having ready, suggests an opening you can use or replace with your own, and keeps your own words on screen during the call. It never tells you what to accept or refuse. What you type in your own opening is saved. It is a web app, not therapy or medical advice. It is $49 once.",
+        kind: "list",
+        ordered: true,
+        heading: "Before you dial",
+        items: [
+          "Write what you want to be true when you put the phone down, in one line. This is the thing to come back to if the conversation wanders.",
+          "Write what you won't agree to. Deciding this now means you aren't deciding it while someone waits on the line. If there is nothing, write nothing.",
+          "If money is involved or they've been difficult before, put what you were told last time, and by whom, on the same page. A date and a name is enough.",
+          "Set the room. A glass of water within reach, and somewhere you won't be overheard if the news is personal.",
+          "Write two times you could call back, in case now turns out to be the wrong moment for them or for you.",
+          "Write your first sentence out in full, and say it aloud once.",
+        ],
+      },
+      {
+        kind: "scripts",
+        heading: "The first two sentences",
+        intro: "Lead with the news. A long lead-in makes people brace, and it makes the news sound worse when it arrives. Use the closest one, or change it until it sounds like you.",
+        items: [
+          {
+            situation: "Bad news",
+            line: "Hi, it's me. There's something I need to tell you and it's not good news. Is now an all right time?",
+          },
+          {
+            situation: "Saying no",
+            line: "Hi, I've thought about it and I'm not going to be able to do it. I wanted to tell you rather than leave you waiting.",
+          },
+          {
+            situation: "Money",
+            line: "Hi, I need to talk to you about money, which I'd rather do directly than by email. Do you have a few minutes?",
+          },
+          {
+            situation: "It's happened before",
+            line: "Hi, I'm calling about this again. I'd like to get it sorted today if we can. Can you look at what's happened so far?",
+          },
+          {
+            situation: "Something personal",
+            line: "Hi, there's something I'd like to talk to you about. Is now a good time, or shall I call back?",
+          },
+        ],
+      },
+      {
+        kind: "scripts",
+        heading: "A call, start to finish",
+        intro: "An example of how the middle can go when you've decided your position first. Your words will differ. The order is the point.",
+        items: [
+          {
+            situation: "1. Say it",
+            line: "I can't host in March. I know that's a lot to ask you to plan around, and I'm sorry to give you the news by phone.",
+          },
+          {
+            situation: "2. Stop and let them react",
+            line: "(Say nothing more. A pause of a few seconds feels long and isn't.)",
+          },
+          {
+            situation: "3. They push back",
+            line: "I understand it's disappointing. I've thought about it and my answer is still no.",
+          },
+          {
+            situation: "4. They ask why",
+            line: "I'd rather not go into all of it. It's just not something I can do this time.",
+          },
+          {
+            situation: "5. You need a moment",
+            line: "Can I have a minute to think about that? I'd like to call you back tonight.",
+          },
+          {
+            situation: "6. End it",
+            line: "So we're agreed I'm not hosting, and you'll ask Dan. Thanks for hearing me out. Talk soon.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "During the call",
+        paragraphs: [
+          "You don't owe a full explanation. A short reason is kind, and a long one gives the other person more to argue with. If they push, repeat your answer in fewer words rather than defending it in more.",
+        ],
+      },
+      {
+        kind: "list",
+        ordered: true,
+        items: [
+          "Say the thing you came to say, in your first two sentences.",
+          "Stop. Let them answer. You don't have to fill the silence.",
+          "You're allowed to ask for a minute to think. You're allowed to say you'll call back.",
+          "Ask what happens next, if there is a next step.",
+          "Write down anything that was agreed, and, for money or a repeat problem, the name of who you spoke to.",
+          "Say back what was agreed in one sentence before you hang up.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "After the call",
+        paragraphs: [
+          "If they'd rather have it in writing, or you want a record, a short message afterward works. Something like: \"Thanks for talking today. To confirm, I can't host in March, and you'll ask Dan.\" [The email you keep not sending](/guides/the-email-you-keep-not-sending-and-how-to-chase-a-reply) covers writing that first line.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What can go wrong",
+        intro: "None of these ruin the call. Each has a plain fix.",
+        items: [
+          "You say yes to end the discomfort. If you hear yourself starting to agree to something on your list, say \"Let me get back to you on that\" and hang up. A yes you regret is harder to undo than a pause.",
+          "You over-explain. Every extra reason is another thing to argue with. Say the short version again.",
+          "They get angry or upset. You can be kind and still not change your answer. If it's too much, say you'll call back when you've both had a break, and name a time.",
+          "You lose your place. Look at the line on your page. Say \"Sorry, I lost my thread\" and read it.",
+          "They don't pick up. Leave a short voicemail asking for a call back at one of your two times, without the news in it.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "How do you give bad news over the phone?",
+            a: "Say it in your first two sentences, after a short check that it's a good moment. Skip the long lead-in, because it makes people brace. Then stop and let them react. Say what happens next, and write down anything that's agreed. If it's urgent or emotional, a call is usually kinder than a message.",
+          },
+          {
+            q: "How do you say no on the phone politely?",
+            a: "Thank them for asking, give your answer in one clear sentence, and offer a short reason if you want to. Don't apologize more than once. If they push, repeat your answer in fewer words. Polite and firm are compatible. A soft no that leaves room for doubt often prompts a second ask.",
+          },
+          {
+            q: "What if I freeze on the call?",
+            a: "Say so. \"Sorry, I lost my place, can I have a second?\" is an ordinary sentence and people hear it often. Look at the first line on your page, read it, and continue. If you can't, ask to call back at one of the two times you wrote down.",
+          },
+          {
+            q: "Is it better to email or call to give bad news?",
+            a: "It depends on the news and the person. Bad news that affects someone's plans, feelings or money is usually kinder in a voice. A refusal that is routine, or that you want on record, can go in writing. Many people call first, then send a short written confirmation afterward.",
+          },
+          {
+            q: "Can I ask them to call me back?",
+            a: "Yes. If now is the wrong moment, offer one of the two times you wrote down: \"I'd rather do this properly. Could I call you at six?\" Then do it. A named time is a plan. \"Later\" tends to become another week of avoiding it.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Where the Companion fits",
+        paragraphs: [
+          "The Make a difficult phone call walkthrough in [ADHD Life Companion](/shop/alongside) asks what makes this one hard, who you're calling, what you want to be true when you put the phone down, and whether there's anything you're not willing to agree to. It shows what's worth having ready, suggests an opening for you to use or replace with your own, and asks whether to call now or name one exact time today. During the call it shows your own words back to you, including the line about what you won't agree to. It never tells you what to accept or refuse, and it isn't therapy or medical advice.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "For calls that are hard because you've been putting them off, not because of what you'll say, [how to make a phone call you have been avoiding](/guides/how-to-make-a-phone-call-you-have-been-avoiding) starts from the first sentence. To fix a time so the call stops floating, [planning when you cannot feel time pass](/guides/time-blindness-planning) has the method.",
+        ],
       },
     ],
   },
@@ -7856,7 +9150,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "the-email-you-keep-not-sending-and-how-to-chase-a-reply",
     title: "The email you keep not sending: first lines and follow-ups",
-    dek: "An email that does not say what it wants gets answered slowly. Decide three things, write the first line, and know what to do when no one replies.",
+    dek: "An email that doesn't say what it wants gets answered slowly. Decide three things, write the first line, and know how to chase when no one replies.",
     primaryQuery: "email you keep not sending",
     next: { slug: "how-to-say-no-or-give-bad-news-on-the-phone", reason: "If the message is a refusal or bad news, this covers what to decide first and asking for a minute." },
     related: [
@@ -7865,60 +9159,211 @@ export const GUIDES: Guide[] = [
       { slug: "first-physical-step-20-examples", reason: "Twenty examples of a first step, including drafting one line, for admin you are stuck on." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "mind-and-focus",
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "The email you keep not sending is rarely hard to write. It is hard to start. Most of the time it is waiting for a first line, and everything after that comes more easily.",
-          "This guide is practical help with the parts that stall: what the email is for, the first line, and what to do afterward if nobody replies. It is not medical advice.",
+          "Write one line saying what needs to happen because of this email, put it in the first three lines, read the draft once against a short check, and send it. If no one answers, wait a set number of days, then chase by a different route and ask for a date, not an update.",
+          "This is for the email that's been sitting in your drafts, or in your head, for days: a landlord, a school, a company, a relative. It can't tell you what to say about anything legal or medical, and it isn't advice on how you should feel about an email. It's practical help with the first line and the follow-up.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "You know who it's to. You know roughly what it's about. What's missing is a way to begin, so you open a blank message, write \"Hi,\", and close it again. The draft grows a paragraph of background, then an apology, then a second apology, and by then it's a bigger job than the one you started with.",
+          "A blank draft is the whole problem, so don't start blank",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Example: an email that's been avoided for a week",
+        intro: "An illustration, not a real account. Say your boiler has been making a noise for two weeks and you need the letting agent to send someone. Here is what goes on the page before you write a word of the email.",
+        columns: ["The decision", "What's on the page"],
+        rows: [
+          ["What it's for", "Asking for something."],
+          ["Who it's to", "The letting agent, Riverside Lettings."],
+          ["What needs to happen", "Someone comes to look at the boiler this week."],
+          [
+            "First line",
+            "Hello, I'm hoping you can help me with something. The boiler in flat 3 has been making a loud noise for two weeks and I'd like someone to come and look at it.",
+          ],
+          ["Subject line", "Boiler noise in flat 3: can someone visit this week?"],
         ],
       },
       {
         kind: "list",
-        heading: "Decide these three things first",
-        checkable: true,
+        ordered: true,
+        heading: "How to write it",
         items: [
-          "What the email is for: asking, replying, saying no, chasing, or explaining a problem.",
-          "Who it is to.",
-          "What needs to happen because of it, in one line.",
+          "Say what the email is for: asking, replying, saying no, chasing, or explaining a problem. If it's two of those, it's two emails.",
+          "Say who it's to, by name if you have one. It stops you writing to a crowd.",
+          "Write what needs to happen because of it, in one line, with a date if there is one. An email that doesn't say what it wants is answered slowly, or not at all.",
+          "Write your first line from the list below. Change it, or write your own. The rest is usually easier once this exists.",
+          "Add only what they need to act: the dates, the reference number, the one thing you already tried. Leave the history for later if they ask.",
+          "Write a subject line that says the ask, not just the topic.",
         ],
       },
       {
         kind: "scripts",
         heading: "A first line to start from",
-        intro: "The rest is usually easier once this exists. Use one, or write your own.",
+        intro: "Pick the closest. Getting this one sentence down is most of the work.",
         items: [
-          { situation: "Asking", line: "Hello, I am hoping you can help me with something." },
-          { situation: "Replying", line: "Hello, thank you for getting back to me. To answer your question:" },
-          { situation: "Saying no", line: "Hello, thank you for asking me. I am not going to be able to do it this time." },
-          { situation: "Chasing", line: "Hello, I got in touch about this a little while ago and I have not heard back yet. Could you let me know where it stands?" },
+          {
+            situation: "Asking",
+            line: "Hello, I'm hoping you can help me with something.",
+          },
+          {
+            situation: "Replying",
+            line: "Hello, thank you for getting back to me. To answer your question:",
+          },
+          {
+            situation: "Saying no",
+            line: "Hello, thank you for asking me. I'm not going to be able to do it this time.",
+          },
+          {
+            situation: "Chasing",
+            line: "Hello, I got in touch about this a little while ago and I haven't heard back yet. Could you let me know where it stands?",
+          },
+          {
+            situation: "Explaining a problem",
+            line: "Hello, I'm having a problem and I'd like to explain what's happened so it can be sorted out.",
+          },
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Subject lines that get opened",
+        intro: "Say the ask in the subject. Vague ones are easy to leave for later.",
+        columns: ["Instead of", "Try"],
+        rows: [
+          ["Question", "Question about my March invoice: can you confirm the amount?"],
+          ["Following up", "Reply needed by Friday: lease renewal form"],
+          ["Problem", "Boiler noise in flat 3: can someone visit this week?"],
+          ["Hi", "Can't host in March: telling you now so you have time"],
         ],
       },
       {
         kind: "list",
-        heading: "Before you send it",
-        intro: "Read it once against these, then send it. Reading it a fourth time does not make it better.",
         checkable: true,
+        heading: "Before you send it",
+        intro: "Read it once against these, then send it. Reading it a fourth time doesn't make it better.",
         items: [
           "What you want is in the first three lines.",
           "The date, if there is one, is in there.",
           "Anything you meant to attach is attached.",
-          "It is short enough to read on a phone.",
+          "It's short enough to read on a phone.",
+          "What you were told before is in there, if you're chasing or explaining a problem.",
+          "You've apologized no more than once, if you're saying no or chasing.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "When nobody replies",
         paragraphs: [
-          "Chasing by the same route that already went unanswered is usually the slower option. If you emailed, try a call, or the other way around. And ask for a date rather than an update. An update can be nothing. A date is something you can hold them to.",
-          "Then note when you will check back, so the waiting has an end. If the follow-up is by phone, [scripts for the admin calls everyone dreads](/guides/scripts-for-the-admin-calls-everyone-dreads) has an opening for chasing.",
+          "The moment you press send, the job changes from writing to waiting, and waiting needs its own plan. Without one, the email drops out of your head and you find out three weeks later that nothing happened.",
+          "When no one replies",
         ],
       },
       {
-        kind: "callout",
-        label: "The Companion for this",
-        body: "ADHD Life Companion has a Send the email walkthrough that asks what the email is for, who it is to and what needs to happen, suggests a first line you can use or replace with your own, and lists the checks before you send. A Follow something up walkthrough asks how you last got in touch and what you need from them now. Something you are waiting on can be kept as a Waiting item with a check-back date. It does not send email or read your inbox. It is a web app, not a treatment or medical advice. It is $49 once.",
+        kind: "timeline",
+        heading: "A chase plan (example)",
+        intro: "The days are a suggestion we'd use for something that isn't an emergency. Shorten them if a deadline is close. Write the check-back date down the day you send.",
+        steps: [
+          {
+            when: "Day 0: you send",
+            what: "Note the date, who it went to, and what you asked for.",
+          },
+          {
+            when: "Day 5: nothing yet",
+            what: "Chase by a different route, such as a call if you emailed. Ask for a date.",
+          },
+          {
+            when: "Day 10: still nothing",
+            what: "Write again to the same person and add a second person or a general address.",
+          },
+          {
+            when: "Day 15: still nothing",
+            what: "Decide whether it needs escalating, or whether you can let it go.",
+          },
+        ],
+      },
+      {
+        kind: "scripts",
+        heading: "Chase lines, by what you're waiting on",
+        intro: "Ask for a date rather than an update, because an update can be nothing. A date is something you can hold them to.",
+        items: [
+          {
+            situation: "A reply",
+            line: "Hello, I got in touch a little while ago about this and I haven't heard back. Could you tell me where it stands?",
+          },
+          {
+            situation: "A decision",
+            line: "Hello, I'm following up because I need to know either way. When do you think you'll be able to tell me?",
+          },
+          {
+            situation: "Money owed to you",
+            line: "Hello, I'm following up because it's still outstanding. Can you tell me when it will be dealt with?",
+          },
+          {
+            situation: "Something being fixed",
+            line: "Hello, I'm checking in because it hasn't been sorted yet. Can you tell me what's happening and when?",
+          },
+          {
+            situation: "A document or form",
+            line: "Hello, I'm still waiting on this. Could you tell me when I can expect it, or what you need from me first?",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Chasing by the same route that already went unanswered is usually the slower option. If you emailed, try a phone call, or the other way around. [How to make a phone call you have been avoiding](/guides/how-to-make-a-phone-call-you-have-been-avoiding) covers the preparation, and [scripts for the admin calls everyone dreads](/guides/scripts-for-the-admin-calls-everyone-dreads) has an opening for chasing.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What can go wrong",
+        items: [
+          "You keep editing. If you've changed the first line four times, send the fourth one. A slightly plain email you sent beats a polished one that's still in drafts.",
+          "You write everything at once. If the email is more than about ten lines, cut the background and offer to send it on request.",
+          "You chase too soon and feel rude. Waiting until your check-back date is the fix, so the date decides, not the feeling.",
+          "You chase in the same channel, again. A second unread email tends to get the same result as the first.",
+          "The email is really a refusal or bad news. For those, a call may be kinder. [How to say no or give bad news on the phone](/guides/how-to-say-no-or-give-bad-news-on-the-phone) covers it.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "How do I start an email I keep putting off?",
+            a: "Start with one line saying what you want, not with a greeting and background. Pick a first line that fits: asking, replying, saying no, chasing, or explaining a problem. Once that sentence exists the rest tends to follow. If you're stuck, write only the first line and save the draft. That counts as a start.",
+          },
+          {
+            q: "How long should I wait before following up on an email?",
+            a: "There's no fixed rule. For something that isn't urgent, many people wait somewhere around a week. If a deadline is close, wait two or three days. Whatever you choose, write the date down when you send, so the check-back is a plan, not a feeling.",
+          },
+          {
+            q: "How do I follow up politely when no one replied?",
+            a: "Keep it short and specific. Say when you last got in touch, then ask for a date rather than an update: \"Could you let me know when I can expect this?\" Avoid apologizing more than once. If the first message went by email, try a call this time.",
+          },
+          {
+            q: "Why do I dread replying to emails?",
+            a: "Emails can feel like open-ended obligations, and a first line is the hardest part to produce. Some people also find it uncomfortable to disappoint or ask. If dread of messages is getting in the way of work or health, a clinician is the right person to talk to. Practically, a fixed first line and a short check make the task smaller.",
+          },
+          {
+            q: "What if I still get no reply?",
+            a: "Change the route, then the person. Try a phone call, or write to a second contact or a general address, and mention that you've written before. Note each attempt with the date. If it involves money or a deadline, ask for a named person and a date.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Where the Companion fits",
+        paragraphs: [
+          "The Send the email walkthrough in [ADHD Life Companion](/shop/alongside) asks what the email is for, who it's to, and what needs to happen because of it, then offers a first line you can use or replace with your own and lists the checks to read before you send. A Follow something up walkthrough asks how you last got in touch and what you need from them now. When you say you're waiting on someone, it keeps the item as Waiting with a check-back date ten days out, and lets you keep a note of who. It doesn't send email or read your inbox, and it isn't a treatment or medical advice.",
+        ],
       },
     ],
   },
@@ -7926,7 +9371,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "first-physical-step-20-examples",
     title: "First physical step: 20 examples for stuck admin tasks",
-    dek: "A first step is something you could see happen. Twenty examples, from a call to a form to a document, and how to check your own.",
+    dek: "A first step is something you could see happen. Thirty examples, from a call to a form to a document, and how to check your own.",
     primaryQuery: "first physical step examples",
     next: { slug: "how-to-make-a-phone-call-you-have-been-avoiding", reason: "The most common first step is a call; this walks through five things to prepare and how to know when you can stop." },
     related: [
@@ -7935,65 +9380,225 @@ export const GUIDES: Guide[] = [
       { slug: "paperwork-pile-where-to-start", reason: "A concrete example of a first step: opening and sorting a paperwork pile in ten minutes." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "mind-and-focus",
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "When a task feels too big to start, planning it usually makes it bigger. What helps is a first step that is physical: something somebody watching you could see happen. Not deciding, not planning, not thinking about it.",
-          "This is a reference list. It is practical admin help, not medical advice. Read down it, find something like yours, and copy the shape of the step.",
+          "A first physical step is something a person watching you could see happen, such as finding a phone number, opening a form or putting a letter on the desk. It isn't deciding, planning or thinking it over. Pick the task, then find the example below closest to it and copy its shape.",
+          "This is a reference list of thirty first steps for stuck admin: calls, forms, messages, mail and home jobs. It can't choose your task or tell you how urgent it is, and it isn't a substitute for professional support if being unable to start is affecting your health or work.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "The task feels too big to start, so you plan it. The plan has eight steps and the second one is \"decide about the insurance.\" You look at it, feel worse, and go and do something else. Planning felt like progress and made the task heavier. A physical first step does the opposite: it costs a minute and it can't be done wrongly.",
+          "Why physical, and why the first step only",
         ],
       },
       {
         kind: "table",
-        heading: "Twenty first steps",
+        heading: "Example: the same task, three ways",
+        intro: "An illustration. Say the task is an insurance claim for a cracked phone screen. Only the last row is a first physical step.",
+        columns: ["What you write", "Is it a first step?"],
+        rows: [
+          [
+            "Sort out the insurance",
+            "No. It's the whole task. There is nothing to see happen.",
+          ],
+          [
+            "Decide what to do about the claim",
+            "No. Deciding is invisible, and it's the thing you're stuck on.",
+          ],
+          [
+            "Find the policy letter and put it on the desk",
+            "Yes. Someone watching sees it happen, and it takes a few minutes.",
+          ],
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Calls",
+        intro: "The most common first step is not the call itself. It's the piece of information the call will ask for.",
         columns: ["The task", "The first physical step"],
         rows: [
           ["Book the dentist", "Look up the phone number and write it down"],
-          ["Make an insurance claim", "Find the claim number or the policy letter"],
-          ["Reply to the tax letter", "Put the letter on the desk and read the first paragraph"],
-          ["Return a package", "Find the packing slip"],
-          ["Cancel a subscription", "Open the account page and find the cancel or manage option"],
-          ["Renew an ID", "Find the current one and check the expiry date"],
-          ["Sort out the spare room", "Call the charity shop about collection"],
-          ["Answer a difficult email", "Write only the first line"],
+          [
+            "Make a doctor's appointment",
+            "Find the phone number and the times you could go",
+          ],
+          ["Call the landlord", "Write what you'll say in one line"],
           ["Chase a refund", "Find the reference number from the last contact"],
+          ["Deal with a bill dispute", "Find the statement showing the charge"],
+          [
+            "Cancel a subscription",
+            "Open the account page and find the cancel or manage option",
+          ],
+          ["Book a repair", "Take a photo of the problem"],
+          [
+            "Call the school office",
+            "Write your question on one line and put it next to the phone",
+          ],
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Paperwork and forms",
+        intro: "Start with the thing the paperwork asks for first: a date, a number, a name.",
+        columns: ["The task", "The first physical step"],
+        rows: [
+          ["Make an insurance claim", "Find the claim number or the policy letter"],
+          [
+            "Reply to the tax letter",
+            "Put the letter on the desk and read the first paragraph",
+          ],
+          ["Renew an ID", "Find the current one and check the expiry date"],
+          [
+            "Renew a car registration",
+            "Find the renewal notice, or write the plate number on paper",
+          ],
           ["Fill in a form", "Open it and fill in your name and the date"],
           ["Change your address", "List the first three places that need it"],
-          ["Book a repair", "Take a photo of the problem"],
-          ["Sort the mail pile", "Open the top five items and do nothing else"],
+          ["Apply for something", "Find the deadline and write it on a piece of paper"],
+          ["Return a package", "Find the packing slip"],
+          [
+            "Sign up for something with a cutoff",
+            "Write the cutoff date on a sticky note where you'll see it",
+          ],
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Messages and replies",
+        intro: "Writing the first line or one word is a real action. The polish comes later.",
+        columns: ["The task", "The first physical step"],
+        rows: [
+          ["Answer a difficult email", "Write only the first line"],
           ["Ask for help", "Send one message that says what you need"],
-          ["Deal with a bill dispute", "Find the statement showing the charge"],
-          ["Prepare for an appointment", "Write down what you want to come away with"],
-          ["Call the landlord", "Write what you will say in one line"],
-          ["Apply for something", "Find out the deadline and write it on a piece of paper"],
+          ["Reply to an invitation", "Type the one word, yes or no, in the reply box"],
+          [
+            "Chase an email nobody answered",
+            "Open the old message and note the date you sent it",
+          ],
+          [
+            "Thank someone you never thanked",
+            "Write one sentence saying what they did",
+          ],
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Home and clutter",
+        intro: "Set up the job so the next step is obvious, before doing any of it.",
+        columns: ["The task", "The first physical step"],
+        rows: [
+          ["Sort out the spare room", "Call the charity shop about collection"],
+          ["Sort the mail pile", "Open the top five items and do nothing else"],
           ["Return to an old project", "Find where you left it and put it on the desk"],
-          ["Make a doctor's appointment", "Find the phone number and the times you could go"],
+          ["Clear the kitchen counter", "Put one bin bag by the door"],
+          [
+            "Fix a dripping tap",
+            "Take a photo of the tap and find the brand name on it",
+          ],
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Health admin and appointments",
+        intro: "Admin only: finding numbers and writing down what you want to ask.",
+        columns: ["The task", "The first physical step"],
+        rows: [
+          ["Prepare for an appointment", "Write down what you want to come away with"],
+          [
+            "Order a repeat prescription",
+            "Find the pharmacy's phone number or website",
+          ],
+          ["Find a new dentist", "Open three practice websites in separate tabs"],
         ],
       },
       {
         kind: "list",
         heading: "Check your own first step",
+        intro: "Run your step past these. If it fails one, shrink it.",
         checkable: true,
         items: [
           "Could someone watching see it happen?",
           "Can it be done in a few minutes?",
           "Is it a real action, not deciding or planning?",
           "Is it small enough that starting is not a decision?",
+          "Do you already have everything it needs?",
+        ],
+      },
+      {
+        kind: "list",
+        ordered: true,
+        heading: "How to turn any task into a first step",
+        items: [
+          "Say the task the way you'd say it to yourself, however rough. \"The spare room.\"",
+          "Say what would be true when it's finished. \"The bed is usable and the boxes are gone.\" Big things stay big partly because no one has said where they end.",
+          "Ask what the first action is that involves a phone, a screen, a form or a piece of paper. Not deciding, not planning.",
+          "If it's still fuzzy, ask what you'd need to find. Finding a document or a number is nearly always a valid first step.",
+          "Write the step as a verb plus an object: \"Find the policy letter.\"",
+          "Optionally write the second and third, but choose one to happen today.",
         ],
       },
       {
         kind: "paragraphs",
         heading: "One, not the list",
         paragraphs: [
-          "If you write two or three steps, pick one to happen today. Not the list, one. The rest are not lost. Writing the next one down is what stops the whole thing from having to be worked out again.",
-          "If even the first step is too much, [task paralysis: what to do in the next ten minutes](/guides/task-paralysis-what-to-do-in-the-next-ten-minutes) goes smaller still.",
+          "If you write two or three steps, pick one to happen today. Not the list, one. The rest aren't lost, and writing the next one down is what stops the whole thing from having to be worked out again. Put the others out of sight until the first one is done.",
         ],
       },
       {
-        kind: "callout",
-        label: "The Companion for this",
-        body: "ADHD Life Companion has a Break something down walkthrough. It asks what the thing is, what would be true when it is finished, and what the first physical step is, then optionally the next two, and which of them could happen today: one of them, not the list. The steps you are not doing today go into Life so you do not carry them. It is a web app, not a treatment or medical advice. It is $49 once.",
+        kind: "list",
+        heading: "When the first step still won't happen",
+        items: [
+          "Make it smaller. \"Find the policy letter\" becomes \"open the drawer where it might be.\"",
+          "Change the place, not the plan. Take the paper to a table you don't usually use.",
+          "Set a short window, such as ten minutes, and stop when it ends. You're allowed to stop.",
+          "Check that the step doesn't depend on something you don't have, such as a password or a decision someone else owes you. If it does, that missing thing is the real first step.",
+          "If nothing feels possible, [task paralysis: what to do in the next ten minutes](/guides/task-paralysis-what-to-do-in-the-next-ten-minutes) goes smaller still.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "What is a first physical step?",
+            a: "It's the first action that could be seen by someone watching, like finding a number, opening a form or putting a letter on the desk. It excludes deciding, planning and thinking. The point is that it needs no motivation and can't be done wrongly, so starting stops being a decision.",
+          },
+          {
+            q: "How do you break down a task when you can't start?",
+            a: "Say what finished looks like, then ask what the first visible action is. Write it as a verb and an object, such as \"find the policy letter.\" Write the next one or two if you can, then choose one for today. Leave the rest written down and out of sight.",
+          },
+          {
+            q: "How small should the first step be?",
+            a: "Small enough that it takes a few minutes and starting it is not a decision. If you keep not doing it, it's still too big. Shrink it: instead of \"call the dentist,\" try \"look up the number and write it down.\" A step you do beats a better step you don't.",
+          },
+          {
+            q: "Is finding a document really a first step?",
+            a: "Yes, and it's often the best one. Many stuck tasks are waiting on a number, a date or a piece of paper. Finding it is visible, quick and finishable, and it makes the next step possible. It also shows you whether the task needs a call, a form or nothing at all.",
+          },
+          {
+            q: "What if I do the first step and stop there?",
+            a: "That's a legitimate outcome. Write down where you got to and what the next step is, so it doesn't have to be worked out again. Returning to a task with a written next step is much easier than returning to a vague one.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Where the Companion fits",
+        paragraphs: [
+          "The Break something down walkthrough in [ADHD Life Companion](/shop/alongside) asks what the thing is, what would be true when it's finished, and what the first physical step is. It then optionally asks for the next two and which of them could happen today, with the note \"One of them. Not the list.\" The steps you're not doing today go into Life, so you don't have to carry them. It's a web app, not a list manager, so it doesn't hold everything, and it isn't treatment or medical advice.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "If the first step is a call, [how to make a phone call you have been avoiding](/guides/how-to-make-a-phone-call-you-have-been-avoiding) walks through what to put on the page. If the first step is opening the mail, [paperwork pile: where to start](/guides/paperwork-pile-where-to-start) has ten minutes' worth.",
+        ],
       },
     ],
   },
@@ -9354,7 +10959,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "how-to-write-a-one-page-trip-itinerary",
     title: "How to write a one-page trip itinerary",
-    dek: "A trip itinerary that survives a change is short, in time order, with the reference beside each booking. What goes on each line and what to leave off.",
+    dek: "A trip itinerary that survives a change is short, in time order, with the reference beside each booking. A worked example and what to leave off.",
     primaryQuery: "one page trip itinerary",
     next: { slug: "what-to-keep-on-paper-when-you-travel", reason: "With the itinerary written, this covers what else belongs on paper and why to print two copies." },
     related: [
@@ -9363,30 +10968,42 @@ export const GUIDES: Guide[] = [
       { slug: "flight-changed-what-else-is-affected", reason: "When a departure time moves, this shows which lines on the itinerary need checking first." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "travel",
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Most trip itineraries fail in the same way: they try to be a guidebook. Restaurant ideas, opening hours and three backup plans crowd out the few things you actually need to find quickly, which are where you have to be, when, and which booking it is.",
-          "A useful itinerary is closer to a timetable than a guidebook. It fits on one page, it is in time order, and every line answers three questions.",
+          "A one-page trip itinerary is a timetable, not a guidebook: one line per booking, in time order, with the time, the place and the confirmation reference. Group the lines by day, leave unbooked ideas off, and print it. If a line changes, you can see what it touches.",
+          "This is for trips with several bookings, alone or with others. It won't plan the trip for you and it doesn't suggest what to do, because it only records what's already booked.",
         ],
       },
       {
         kind: "table",
-        heading: "Three things on every line",
-        columns: ["Column", "What goes in it"],
+        heading: "Example: three days of a longer trip, on one page",
+        intro: "An illustration with invented bookings. Each line answers three questions: when, where and which booking. Note the Wednesday flight lands at 07:55 but hotel check-in is 15:00. That gap is visible on the page, which is the point.",
+        columns: ["Time", "Place", "Reference"],
         rows: [
-          ["Time", "When it starts, as it is on the booking"],
-          ["Place", "Where you need to be, in a few words"],
-          ["Reference", "The confirmation reference, beside the booking and not in an inbox"],
+          ["Tue 14 Oct, 18:40 (New York)", "Flight to Lisbon, terminal 1", "Ref K7QD2M"],
+          ["Wed 15 Oct, 07:55 (Lisbon)", "Land. Shuttle to hotel", "Shuttle ref 8841"],
+          ["Wed 15 Oct, 15:00", "Hotel check-in, Rua das Flores 12", "Hotel ref 30291"],
+          ["Thu 16 Oct, 09:30", "Tram tour, Praca do Comercio", "Ticket ref T-5520"],
+          ["Fri 17 Oct, 12:10", "Train to Porto", "Train ref P4471"],
+          ["Sun 19 Oct, 10:45", "Flight home", "Ref K7QD2M"],
         ],
       },
       {
-        kind: "paragraphs",
-        heading: "One block per day",
-        paragraphs: [
-          "Give each day its own block. Put the fixed things first: flights, trains, check-in, anything with a reserved time. Leave the rest of the day empty on purpose. A day with nothing on it is not a gap in the plan. It is room for the day to go the way it goes.",
+        kind: "list",
+        heading: "How to write it",
+        ordered: true,
+        items: [
+          "Collect every confirmation in one sitting. You want the time, the place and the reference for each.",
+          "Write one line per booking, with the time exactly as it appears on the booking. If you cross time zones, write local time and say so, as in \"18:40 (New York)\". The line for a landing is in the destination's time, not yours.",
+          "Put the lines in time order and give each day its own block. Fixed things first: flights, trains, check-in, anything with a reserved time.",
+          "Write the place in a few words. A name and a town are enough. Leave the address for the paper page described in [what to keep on paper when you travel](/guides/what-to-keep-on-paper-when-you-travel).",
+          "Copy the confirmation reference beside the line, not in an inbox.",
+          "Mark what depends on what. A shuttle built on a flight, a check-in built on a train. When the first moves, the rest need a look, which is the subject of [what else in your trip is affected when a flight changes](/guides/flight-changed-what-else-is-affected).",
+          "Leave the rest of each day empty on purpose. An empty afternoon isn't a hole in the plan, it's slack.",
         ],
       },
       {
@@ -9394,30 +11011,53 @@ export const GUIDES: Guide[] = [
         heading: "What to leave off",
         checkable: true,
         items: [
-          "Restaurant and sightseeing ideas that are not booked. Keep them in a separate note.",
-          "Opening hours you have not confirmed.",
-          "Long descriptions. A name and a place are enough.",
-          "Anything that would be useless if it changed. Put that in the notes.",
+          "Restaurant and sightseeing ideas that aren't booked. Keep them in a separate note.",
+          "Opening hours you haven't confirmed.",
+          "Long descriptions.",
+          "Anything that would be useless if it changed. Put that in your notes instead.",
+          "Cost. This page is about timing, not money.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Note what depends on what",
+        heading: "When it doesn't work",
         paragraphs: [
-          "The most useful thing you can add is which bookings rest on which. A transfer built on a flight, a check-in built on a train. When the first one moves, the rest need looking at, and the itinerary is where you will see it. See [how to work out what else in your trip is affected when a flight changes](/guides/flight-changed-what-else-is-affected).",
+          "A page that runs to two sheets is usually a guidebook in disguise. If you can't fit it on one side, move the unbooked material to a separate note and look again. If the trip is genuinely long with many stops, do one page per stop and a summary page on top, and see [organising a multi-stop trip](/guides/organising-a-multi-stop-trip-without-a-spreadsheet). If several people are traveling, add a name to each line, the way [how to plan a group trip](/guides/how-to-plan-a-group-trip) does.",
+          "The other failure is stale paper. An itinerary printed a month ago and never updated is worse than none, because you'll trust it. Change the page when a booking changes, and reprint the night before, per the [night-before list](/guides/night-before-you-travel-checklist).",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Print it",
+        heading: "What the Companion does with this",
         paragraphs: [
-          "A one-page itinerary is worth printing. It works when your phone does not, and it is the page you hand to whoever is meeting you. For what else earns a place on paper, see [what to keep on paper when you travel](/guides/what-to-keep-on-paper-when-you-travel).",
+          "In Travel Companion you name the trip and give it rough dates, and it's laid out day by day at once. You add each booking with its reference, its time and, if it rests on something else, what it depends on. Add the upstream booking first, because the dependency has to be picked when the booking is created. A day with nothing recorded says so and isn't filled in for you. Save as PDF makes the itinerary, and a separate button makes a one-page trip card. Dates print like \"Wed 8 Oct\" and times as \"15:00\", so a 3 p.m. check-in shows as 15:00. It records bookings you made elsewhere by hand. It doesn't book anything, track flights or suggest places. See the [Travel Companion page](/shop/travel-companion).",
         ],
       },
       {
-        kind: "callout",
-        label: "The Companion for this",
-        body: "In Travel Companion, you name a trip and give it rough dates, and it is laid out day by day straight away. Add what you have booked from there. A day with nothing recorded says so and is never filled in for you. Each booking card shows its confirmation reference, and the itinerary saves as a PDF. It records bookings you made elsewhere. It does not book anything, track flights or suggest where to go. It is a web app, $34 once.",
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "What should a trip itinerary include?",
+            a: "For each booking: the time, the place and the confirmation reference. For a group, add who's on it. Everything else, such as opening hours, ideas or long descriptions, belongs in a separate note. If you can't tell at a glance where to be, the page has too much on it.",
+          },
+          {
+            q: "How detailed should an itinerary be?",
+            a: "Detailed enough to act on, short enough to fit on one side. One line per booking is plenty. Leave the empty spaces in each day empty. If you find yourself adding descriptions, you're writing a guidebook.",
+          },
+          {
+            q: "How do I handle time zones on an itinerary?",
+            a: "Write the local time of each event and label the place, for example 18:40 (New York) for a departure and 07:55 (Lisbon) for the arrival. Don't convert to your home time. The booking shows local times, so the page should match it.",
+          },
+          {
+            q: "Should I print my itinerary?",
+            a: "Yes. A printed page works when the phone doesn't, and you can hand it to whoever is meeting you. Print two copies and keep them in different bags. Reprint if anything changes.",
+          },
+          {
+            q: "How do I share a group itinerary?",
+            a: "Send the page itself, as a file or a printout, rather than a link to a chat. Add the names of the people on each line, so everyone can see which items are theirs.",
+          },
+        ],
       },
     ],
   },
@@ -9892,50 +11532,109 @@ export const GUIDES: Guide[] = [
       { slug: "car-paperwork-dates-organizer", reason: "Registration and insurance have due dates too, and this shows how to track them alongside the service jobs." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "vehicles",
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Many people cannot say when their car last had its oil changed without digging through a glovebox or a phone. The question sounds simple, and the answer is often a guess.",
-          "You can answer it in a minute if you have two things written down: when each job was last done, and how often your car wants it. The second comes from your owner's manual. The first has to come from you.",
+          "A job is due when you reach its mileage or its months, whichever comes first. Take today's odometer reading, subtract the reading when the job was last done, count the months since that date, and compare both to the intervals in your owner's manual. The one that's closer to its limit decides.",
+          "This is for a car you drive in miles, with a manual or a maker's schedule to hand. It can't tell you what your car's intervals are, and it can't judge a job that has no date behind it. For that, start with a recorded date, even a rough one you label as rough.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "An example: four jobs on one car",
+        intro: "Say it's August 20, the odometer reads 52,300, and these are the intervals and last-done facts. They're an illustration, not your car's schedule.",
+        columns: ["Job", "Interval", "Last done", "Since then", "What decides"],
+        rows: [
+          [
+            "Engine oil and filter",
+            "5,000 mi or 6 mo",
+            "Mar 3, at 48,100",
+            "4,200 mi, 5.6 mo",
+            "Months: due about Sep 3",
+          ],
+          ["Tire rotation", "7,500 mi", "Jan 15, at 44,900", "7,400 mi", "Miles: about 100 left"],
+          [
+            "Cabin air filter",
+            "15,000 mi or 12 mo",
+            "Sep 10 last year, at 39,000",
+            "13,300 mi, 11.3 mo",
+            "Months: due about Sep 10",
+          ],
+          ["Brake fluid", "24 mo", "Not recorded", "Unknown", "Nothing to judge yet"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Reading the example",
+        paragraphs: [
+          "Look at the oil line. Only 4,200 of 5,000 miles are used, so it feels early. But 5.6 of 6 months are gone, so the months limit is the one that's about to be reached. A car that sits in a driveway most of the week hits the months first. A car that does a long commute hits the miles first.",
+          "The brake fluid row is the one to notice. No date means no answer, and a guessed date would give a false one. Leave it blank and say so, then find out the real date or start the clock from the next time it's done.",
         ],
       },
       {
         kind: "list",
-        heading: "The two numbers for every job",
-        checkable: true,
+        heading: "The method, five steps",
+        ordered: true,
         items: [
-          "The date it was last done, and the mileage at the time.",
-          "How often it comes round, in miles, in months, or in both. Your owner's manual is the source.",
+          "Find the intervals. Your owner's manual lists each job by miles, by months, or both. Many manuals also have a second, shorter schedule for severe driving, such as towing, mostly short trips, heavy dust or extreme heat or cold. If that's how you drive, use the shorter one. [This guide shows where to look in the manual](/guides/car-maintenance-by-mileage-start-with-your-manual).",
+          "Write down when each job was last done and the odometer reading at the time. A receipt, a sticker on the windshield or a shop's records can supply it. If you did it yourself, your own note does.",
+          "Read the odometer today. Write the number down beside the date, because the answer is only as good as this reading.",
+          "Subtract. Today's miles minus the last-done miles is the distance since. Count the months from the last-done date to today.",
+          "Compare each to its interval. Whichever is further along its limit is the one that decides, and it tells you how much is left. If both are past, it's due now.",
+          "If the manual gives only miles or only months for a job, use the one it gives. Don't invent the other.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "When the answer is wrong",
+        items: [
+          "The odometer reading is stale. If you last looked three weeks ago and you drive a lot, every miles figure is low. Look again before you decide anything.",
+          "There's no last-done date. Don't fill it in from memory of \"about last spring\". Mark the job as unknown, and either check with the shop that did it or treat the next service as day one. [If you bought the car without records, this covers where to look](/guides/used-car-no-service-records-what-to-do).",
+          "You drive in hard conditions and used the normal schedule. The severe-duty schedule usually comes round sooner, so the job you think is fine may be due.",
+          "The manual and the shop disagree. Shops sometimes suggest sooner intervals than the maker does. You can ask them to show you why for your car, and it's your call. What's due by the maker's schedule and what a shop recommends are two different questions, so keep them apart in your notes.",
+          "You have more than one car. The sum is the same, but the notes get mixed. [Keeping each car's jobs on its own line](/guides/two-cars-one-household-maintenance) avoids doing the arithmetic on the wrong odometer.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "How do I know when my car is due for service?",
+            a: "Compare two numbers for each job: the miles driven since it was last done and the months elapsed since then. Check both against the intervals in your owner's manual. The job is due when either limit is reached. If you have no record of when it was last done, you can't tell yet.",
+          },
+          {
+            q: "Is it miles or months, whichever comes first?",
+            a: "When a manual gives both, yes. The job comes due at whichever limit you reach first. Someone who drives little may reach the months limit while the odometer has barely moved, and a heavy driver reaches the miles first. If the manual gives only one, use that one.",
+          },
+          {
+            q: "What if I don't know when something was last done?",
+            a: "Don't guess a date. Write down that it's unknown. Then either ask the shop that serviced it, look for a receipt, or treat your next service as the starting point. A job with no date can't be called overdue, because there's nothing to measure from.",
+          },
+          {
+            q: "Where do I find my car's maintenance schedule?",
+            a: "In the owner's manual, usually in a section on maintenance or service. Most makers also post manuals on their owner websites, searchable by year and model. If you drive under severe conditions, look for a separate schedule for that.",
+          },
+          {
+            q: "How often should I check what's due?",
+            a: "Whenever you fill the tank is too often for most jobs, but every month or two is reasonable, and always right after the odometer passes a round number. A shorter habit is to check when you record a new job, since the reading is already fresh in your mind.",
+          },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Miles or months, whichever comes first",
+        heading: "Where the Companion fits",
         paragraphs: [
-          "Some jobs go by distance, some by time, and many by both. When a job has both, it comes due when the first one is reached. A car that barely moves can hit the months limit long before the miles. A car that covers long distances hits the miles first.",
-          "To work it out, take today's mileage and subtract the mileage when the job was last done. Then count the months since the date. Whichever is further along its limit is the one that counts.",
-        ],
-      },
-      {
-        kind: "paragraphs",
-        heading: "You need one recorded date to start",
-        paragraphs: [
-          "Nothing can be judged without a starting fact. If you do not know when something was last done, do not guess. Write that down honestly, and start from the next time you do it. A record that begins today is worth more than a guess that claims to begin last spring. See [what to do if you bought a used car with no service records](/guides/used-car-no-service-records-what-to-do).",
-        ],
-      },
-      {
-        kind: "paragraphs",
-        heading: "Keep it on one page",
-        paragraphs: [
-          "A single page is enough: the job, the date it was last done, the mileage then, and how often it is due. For what to write on each line, see [car maintenance log: what to write down](/guides/car-maintenance-log-what-to-write-down), and for where the intervals come from, see [car maintenance by mileage: start with your owner's manual](/guides/car-maintenance-by-mileage-start-with-your-manual).",
+          "[Vehicle Maintenance Companion](/shop/vehicle-maintenance-companion) does the subtraction from the numbers you enter. You type each job's interval in miles, months or both, and when it was last done, and its Due view lists what's due across every car you own, most urgent first. It says so plainly when nothing is due. A job with no recorded date shows as nothing to judge yet, never as overdue. It works in miles only, and it uses your intervals, not a factory schedule. It also asks you to update the mileage once it's more than 30 days old, because the answer depends on it.",
         ],
       },
       {
         kind: "callout",
-        label: "The Companion for this",
-        body: "Vehicle Maintenance Companion works out what is due from the intervals you enter and the dates you record. It shows what is due across every car you own, most urgent first, and says so plainly when nothing is due, with no score or percentage. A job with no recorded date reads as nothing to judge yet, never overdue. It uses your numbers, not a factory schedule. It is a web app, $34 once.",
+        label: "Before you go",
+        body: "Update the odometer reading first, every time. Then the rest of the sum is only subtraction.",
       },
     ],
   },
@@ -9943,7 +11642,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "what-to-tell-a-mechanic-before-work-starts",
     title: "What to tell a mechanic before the work starts",
-    dek: "Say what you are asking for, the most you will approve without a call, and ask for an estimate in writing. A short script and a page to hand over.",
+    dek: "Say what you are asking for, the most you will approve without a call, and ask for an estimate in writing. Scripts to say and a page to hand over.",
     primaryQuery: "what to tell a mechanic before repair",
     next: { slug: "car-maintenance-log-what-to-write-down", reason: "After the work is done, write it down with date and mileage so the next shop or buyer can see it." },
     related: [
@@ -9952,59 +11651,149 @@ export const GUIDES: Guide[] = [
       { slug: "two-cars-one-household-maintenance", reason: "If two cars go to the same shop, this keeps each job filed against the right vehicle." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "vehicles",
+    sources: [
+      {
+        name: "Auto Repair Basics (FTC Consumer Advice)",
+        url: "https://consumer.ftc.gov/articles/auto-repair-basics",
+        retrieved: "2026-09-26",
+        note: "Written estimate contents, approval past a limit, old parts, dispute steps.",
+      },
+      {
+        name: "Maintenance and repairs (California Bureau of Automotive Repair)",
+        url: "https://www.bar.ca.gov/auto-repairs",
+        retrieved: "2026-09-26",
+        note: "California example: estimate, authorization in written, oral or electronic form, extra work, returned parts.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Many disagreements at a repair shop start the same way: a small job grows while you are not there, and nobody wrote down what was agreed. You cannot control what a shop finds, but you can control what you say before they start.",
-          "This is a plain script, not legal advice. It will not force a shop to do anything. It makes your request clear, and clear requests are easier to keep.",
+          "Before the keys change hands, say three things: what you're asking for today, the most you'll approve without a call, and that you want any other work described and priced in writing before it starts. Then get that in a text or on paper, because a spoken request is easy to lose.",
+          "This is for a car going in for scheduled work or a repair in the United States. It can't make a shop do anything, and the rules on estimates and approval differ by state, so it's not legal advice. It makes your request clear, and a clear request is easier for a shop to follow and easier to point to later.",
         ],
       },
       {
-        kind: "timeline",
-        heading: "Before you hand over the keys",
-        steps: [
-          {
-            when: "Say what you are asking for",
-            what: "Be specific about today's job. \"An oil and filter change and a tire rotation\" is a request. \"Have a look at it\" is an invitation.",
-          },
-          {
-            when: "Say the limit",
-            what: "Tell them the most you will agree to without a call. It is a simple sentence: \"Please do not go over this without calling me first.\"",
-          },
-          {
-            when: "Ask for a call first",
-            what: "If something else comes up, ask them to call you before any further work begins, and to wait for your answer.",
-          },
-          {
-            when: "Ask for a written estimate",
-            what: "For anything else they find, ask for the estimate in writing before you say yes.",
-          },
-        ],
-      },
-      {
-        kind: "list",
-        heading: "Optional extras",
-        checkable: true,
+        kind: "scripts",
+        heading: "What to say, by moment",
+        intro: "Say these in your own words. The point is that each one names something the shop can act on.",
         items: [
-          "Ask them to keep any parts they replace, so you can see them.",
-          "Give a number they can reach you on during the day.",
-          "Note the mileage and the date on your copy.",
+          {
+            situation: "At drop-off",
+            line: "I'm asking for an oil and filter change and a tire rotation, and nothing else today. If you find anything else, please call me before you do any of it.",
+          },
+          {
+            situation: "Setting a limit",
+            line: "Please don't go over $250 without calling me first, and wait for my answer.",
+          },
+          {
+            situation: "A problem, not a job",
+            line: "The brakes squeal when I slow down. Please find out why and give me an estimate in writing before you fix anything.",
+          },
+          {
+            situation: "When they call about more",
+            line: "What exactly did you find, what does it cost with parts and labor, and can you text me that so I have it in writing?",
+          },
+          {
+            situation: "If you can't decide yet",
+            line: "Thanks for telling me. Please don't do that part today. I'll call you back by this afternoon.",
+          },
+          {
+            situation: "About the old parts",
+            line: "Please keep the parts you replace so I can see them when I pick up.",
+          },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Write it down",
+        heading: "An example of how the call goes",
         paragraphs: [
-          "A spoken request is easily forgotten by both of you. A page you both initial is not. It does not have to be formal: what you are requesting, the most you will agree to, and the sentence about calling you.",
-          "If you keep a record of what was done, the page is also the start of the entry. See [car maintenance log: what to write down](/guides/car-maintenance-log-what-to-write-down).",
+          "Say it's Tuesday and you drop off a car for an oil change. Your written request is one line. At noon the shop calls: the brake pads are thin and the job is $480. You didn't have a limit, so it's a live decision made over a phone in the middle of your workday.",
+          "With the sentence already said, the shop knows to wait. You can say \"text me that\", read it at your own pace, and answer yes, no or not today. That's the whole value of saying it first: the decision happens when you're ready, not when they are.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "The short version, in order",
+        ordered: true,
+        items: [
+          "Say what you're asking for in specific terms. \"An oil and filter change and a tire rotation\" is a request. \"Have a look at it\" gives the shop room to decide what's needed.",
+          "Give a limit if you have one, and a number to reach you on during the day.",
+          "Ask what a diagnosis costs before it starts. A shop can charge to find a problem, and whether that fee comes off the repair is worth knowing first.",
+          "Ask that any further work be estimated in writing, by text or email if you can, so you have a record with a date.",
+          "Note the odometer reading and the date on your own copy, and take a photo of the dash.",
+          "When the work is done, compare the final bill to the approved estimate line by line before you pay.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What the rules say, and where they stop",
+        paragraphs: [
+          "The FTC's advice is that a written estimate should describe the problem, the parts and the expected labor, and should say the shop will contact you for approval before going past a set amount of time or money. It also says shops should give you back replaced parts, and that state law may require it.",
+          "Some states go further. California's Bureau of Automotive Repair, for example, says a shop must give an estimate before starting and must contact you and get your approval for extra work, and it accepts your approval in written, oral or electronic form. Your state's attorney general or the agency that licenses repair shops will tell you what applies where you live.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "When it goes wrong",
+        items: [
+          "The bill is higher than the estimate and you didn't approve the difference. Ask the shop to show where the approval came from. Keep your text or your copy of the request.",
+          "Something was done that you didn't ask for. Ask the manager, in writing if you can, what authorized it. The FTC suggests speaking with the shop manager or owner first, then contacting your state attorney general or a local consumer protection agency, and it lists small claims court as an option that doesn't need a lawyer.",
+          "You're tempted to refuse the bill or take the car. Before you do, call your state's consumer office, because what a shop can do with a car and an unpaid bill depends on the state.",
+          "It's an emergency tow. You may have to say yes on the spot. Ask for the price before they hook up, and do the paper afterward.",
+          "You did everything right and the shop still went ahead. A written request is your evidence, not a guarantee. Keep it, along with the invoice and the dates.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "Can a mechanic charge more than the estimate?",
+            a: "In many states a shop needs your approval before going past the estimate, but the details depend on where you live. California's Bureau of Automotive Repair, for example, says the shop must contact you for approval of extra work. Check your state attorney general's consumer page for the rule that applies to you.",
+          },
+          {
+            q: "Do I need a written estimate before a repair?",
+            a: "The FTC advises getting one, listing the problem, parts and labor. Some states require it. If you can't get it on paper, ask for it by text or email so there's a dated record. Then keep it with the final invoice.",
+          },
+          {
+            q: "Should I tell the mechanic my budget?",
+            a: "Giving a limit isn't required, but it's useful. A sentence like \"call me before you go past $250\" tells the shop when to stop and ask, rather than deciding for you.",
+          },
+          {
+            q: "Can I ask for my old parts back?",
+            a: "Yes, you can ask. The FTC says shops should return replaced parts, and some states require it. It's best to ask before the work starts, not at pickup, and California's Bureau of Automotive Repair notes you can request them before authorizing.",
+          },
+          {
+            q: "What do I do if I was charged for work I didn't approve?",
+            a: "Keep every record, then talk to the shop manager or owner. If that fails, the FTC suggests your state attorney general or a local consumer protection agency, and small claims court is an option. Don't stop there if the shop is licensed, because a licensing agency may take complaints too.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Where the Companion fits",
+        paragraphs: [
+          "[Vehicle Maintenance Companion](/shop/vehicle-maintenance-companion) prints a page called the Service Boundary from the jobs you're tracking. It lists what you're requesting today with the date and mileage, says that anything not listed is not authorized, asks the shop to call before further work and to give a written estimate, and has an optional line for the most you'll go without a call. There are lines for you and the shop to initial. It's a written request, not a contract, and the app doesn't check or use the amount. It's made in your browser when you click.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Before you hand over the keys",
+        checkable: true,
+        items: [
+          "Say what you're asking for, and nothing more.",
+          "Say the most you'll approve without a call.",
+          "Get every extra in writing before you say yes.",
+          "Keep the request, the estimate and the invoice together.",
         ],
       },
       {
         kind: "callout",
-        label: "The Companion for this",
-        body: "Vehicle Maintenance Companion prints a page called the Service Boundary. It lists the jobs you are requesting today, states that anything not listed is not authorized, asks the shop to call before further work and to give a written estimate, and has an optional line for the most you will go without a call. It is your written request, not a contract, and the app does not check or use the amount. It is made in your browser. A web app, $34 once.",
+        label: "Next step",
+        body: "After the work is done, write the date, mileage and what was done into your record. [Here's what to write down](/guides/car-maintenance-log-what-to-write-down).",
       },
     ],
   },
@@ -10012,7 +11801,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "used-car-no-service-records-what-to-do",
     title: "Bought a used car with no service records? What to do",
-    dek: "No service history on your used car? Ask the seller, note the odometer, find the manual and start your own record from today.",
+    dek: "No service records on your used car? Ask the seller, read the odometer, get an independent inspection and start your own record from today.",
     primaryQuery: "used car no service records",
     next: { slug: "car-maintenance-log-what-to-write-down", reason: "Start your own record today: this lays out the columns and what to write on each line." },
     related: [
@@ -10021,56 +11810,165 @@ export const GUIDES: Guide[] = [
       { slug: "first-car-checklist-for-new-drivers", reason: "Use the first-week checklist to get the manual, papers and glove box sorted in one pass." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "vehicles",
+    sources: [
+      {
+        name: "Buying a Used Car From a Dealer (FTC Consumer Advice)",
+        url: "https://consumer.ftc.gov/articles/buying-used-car-dealer",
+        retrieved: "2026-09-26",
+        note: "History report does not show mechanical issues; independent inspection, even for certified cars; written report with cost estimates and VIN.",
+      },
+      {
+        name: "Check for Recalls (NHTSA)",
+        url: "https://www.nhtsa.gov/recalls",
+        retrieved: "2026-09-26",
+        note: "VIN recall lookup, free repair of open recalls. Page blocked automated fetch; content confirmed from search results only.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Plenty of used cars arrive with nothing on paper. That does not mean nothing was ever done to them, only that nobody wrote it down, or that the paper did not travel with the car.",
-          "You cannot reconstruct what you do not know. What you can do is start a record today and be honest about the part you cannot see.",
+          "Start with the seller: ask what they remember and whether any receipts exist, then read the odometer and write it down with today's date. Next, have an independent mechanic look the car over, check it for open recalls by VIN, and start your own record from today. Don't assume it was serviced, and don't assume it wasn't.",
+          "This is for someone in the United States who already owns a used car with no paperwork, or is about to. It can't tell you what was done to the car, and nothing here is a mechanical diagnosis.",
         ],
       },
       {
-        kind: "timeline",
-        heading: "The first week",
-        steps: [
+        kind: "scripts",
+        heading: "What to ask the seller",
+        intro: "If you haven't bought yet, ask before you pay. If you have, ask anyway, in a text so the answer is in writing.",
+        items: [
           {
-            when: "Ask the seller",
-            what: "Ask what they know and whether any receipts or notes exist. Anything they remember is worth writing down, marked as what the seller said.",
+            situation: "Any records at all",
+            line: "Do you have receipts, an invoice folder or notes on anything done to it, even oil changes?",
           },
           {
-            when: "Note today's mileage",
-            what: "Read the odometer and write down the number and the date. It is your starting point.",
+            situation: "Where it was serviced",
+            line: "Which shop or dealership did you use? I'd like to ask them what they have on file.",
           },
           {
-            when: "Find the manual",
-            what: "Your owner's manual says how often each job comes round for your car. If it is missing, the manufacturer may have a copy online.",
+            situation: "The last big jobs",
+            line: "Do you remember when the brakes, tires or timing belt were last done, even roughly?",
           },
           {
-            when: "Start a record",
-            what: "Begin with today. Each time something is done, write the date, the mileage and what was done.",
+            situation: "Who owned it before",
+            line: "Did it come with anything from the previous owner, or do you know who they were?",
+          },
+          {
+            situation: "Anything odd",
+            line: "Is there anything you know about that I should watch for?",
+          },
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Where a service history can turn up",
+        intro: "None of these is certain. Each is worth one phone call or one lookup.",
+        columns: ["Where", "What it can give you", "What it can't"],
+        rows: [
+          [
+            "The seller",
+            "Receipts, a folder, a remembered date, a shop name",
+            "Anything they can't remember",
+          ],
+          [
+            "The shop they name",
+            "Work they did, if they'll look it up by the car",
+            "Work done anywhere else",
+          ],
+          [
+            "A dealer for the brand",
+            "Some can look up a VIN for warranty and recall work",
+            "Work done by independent shops",
+          ],
+          [
+            "A vehicle history report",
+            "Title, salvage and insurance loss records, sometimes accidents",
+            "Whether the oil was ever changed",
+          ],
+          ["NHTSA recall lookup", "Open safety recalls, by VIN", "Routine maintenance"],
+          ["Your own inspection", "What the car looks like today", "What happened before"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "The lookups worth doing",
+        paragraphs: [
+          "The FTC is plain about the middle of that table: a vehicle history report won't identify mechanical problems, so it advises paying an independent mechanic to inspect the car, even when a dealer calls it certified, and asking for a written report with cost estimates and the VIN on it. NHTSA offers a free recall lookup by VIN at its recalls page, and an open recall is repaired at no cost.",
+          "If you're still deciding whether to buy, do these before the sale. If you've bought, they still apply, and the inspection is now your baseline.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "The first week, in order",
+        ordered: true,
+        items: [
+          "Read the odometer and write down the number and the date. That's day one.",
+          "Record what the seller said, marked as what they said: \"Seller says timing belt done around 90,000 miles, no receipt.\" A receipt you've seen is a different kind of fact. Keep the two labeled differently.",
+          "Look up the VIN for open recalls and run any history report you want.",
+          "Get the owner's manual. If it's missing, the maker's owner website usually has a copy by year and model. It tells you how often each job comes round. [Here's how to read it](/guides/car-maintenance-by-mileage-start-with-your-manual).",
+          "Take it to an independent mechanic and ask what they see: tires, brakes, fluids, belts, leaks. Write down what they say, and what it costs if they quote a job. [What to tell them first](/guides/what-to-tell-a-mechanic-before-work-starts).",
+          "Decide job by job. For oil and filter, coolant, brake fluid, tires and belts, choose one of three: do it now, check it now, or wait for a real date. You're allowed to do nothing about a job, as long as you write down that you chose to.",
+          "Start your log with these lines and add to it whenever something's done. [Here's the format](/guides/car-maintenance-log-what-to-write-down).",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "An example first entry, invented for illustration",
+        paragraphs: [
+          "Say the odometer is 84,000 and the seller has no records. You write: \"Bought Sep 12, 84,000 mi. Seller says oil changed 'regularly', no receipts. Timing belt: unknown.\" You get a $200 inspection and the mechanic reports the tires are at the wear limit and the fluid is dark. You write those down, decide to change the oil and coolant now, and leave the belt as unknown until you can check the interval in the manual.",
+          "That entry is small, but it's dated and it says what you knew. In two years it's the start of the history you wished you'd been handed.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What can go wrong",
+        items: [
+          "Assuming the worst and paying for a full service of everything at once. You may be replacing fluid that was changed last month.",
+          "Assuming the best and doing nothing. A car with no paper is a car you can't see into, and the risk is yours.",
+          "Writing down a date you don't have. \"About two years ago\" isn't a fact. Write \"unknown\" and move on.",
+          "Treating a history report as a service log. It records title and insurance events, not oil changes.",
+          "Doing all of this months later. The seller's memory fades fast, and the shop may stop answering.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "Is a car with no service history bad?",
+            a: "Not by itself. Plenty of well-kept cars have no paper, because nobody wrote it down. It does mean you can't see what was done, so an independent inspection matters more, and the price should reflect that risk. It's a reason to look harder, not to walk away automatically.",
+          },
+          {
+            q: "How do I find a used car's service history?",
+            a: "Ask the seller for receipts and the names of shops they used, then ask those shops what they have on file. A dealer for the brand may be able to look up warranty and recall work by VIN. A history report shows title events, not routine maintenance.",
+          },
+          {
+            q: "What should I do first after buying a used car with no records?",
+            a: "Record the odometer and date, check the VIN for open recalls, and get an independent mechanic's look. Then decide job by job whether to do it now or wait, and start your own log so the next owner has something.",
+          },
+          {
+            q: "Should I change everything right away?",
+            a: "Not automatically. Decide each job separately: oil and filter, brake fluid, coolant, tires, belts. Some are cheap enough that doing them now makes sense. Others are better checked than replaced. Ask the mechanic what they see.",
+          },
+          {
+            q: "Can I check a used car for recalls?",
+            a: "Yes. NHTSA has a free lookup on its recalls page: enter the 17-character VIN, found on the lower left of the windshield or inside the driver-side door. An open recall is repaired at no cost by a dealer for that brand.",
           },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Do not guess what was done",
+        heading: "Where the Companion fits",
         paragraphs: [
-          "The temptation with an unknown history is to assume the worst and do everything at once, or the best and do nothing. Neither is based on a fact. A better approach is to treat each job as unknown until you have a real date for it, and to decide job by job whether a check now is worth it.",
-          "If a mechanic looks at the car, ask what they see and write that down too. See [what to tell a mechanic before the work starts](/guides/what-to-tell-a-mechanic-before-work-starts).",
-        ],
-      },
-      {
-        kind: "paragraphs",
-        heading: "Your record becomes the history",
-        paragraphs: [
-          "In a couple of years, you will be the one with a service history and the next owner the one who asks for it. See [selling your car with a service history](/guides/selling-your-car-with-a-service-history).",
+          "[Vehicle Maintenance Companion](/shop/vehicle-maintenance-companion) lets you mark a vehicle's history as unknown from the change screen for that vehicle. After that, no job reads as overdue on a fact you never had. Each job waits at nothing to judge yet until you record when it was last done, and the same is true of any job with no date, on any car. Once you have real dates from the shop, the seller or your own next service, you enter them and the Due view starts working from them.",
         ],
       },
       {
         kind: "callout",
-        label: "The Companion for this",
-        body: "In Vehicle Maintenance Companion, you can say that a vehicle's history is unknown. Nothing is then assumed done: a job waits for a real fact before it says anything is due, and shows as nothing to judge yet until you record when it was last done. Nothing reads overdue on a fact you never had. It works the same way for any job with no recorded date. It is a web app, $34 once.",
+        label: "Also useful",
+        body: "Bought the car from someone who died, or inherited it? The paperwork side is its own job, and [the car paperwork guide](/guides/car-paperwork-dates-organizer) covers the dates. Then come back here for the mechanical side.",
       },
     ],
   },
@@ -10078,7 +11976,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "car-maintenance-log-what-to-write-down",
     title: "Car maintenance log: what to write down",
-    dek: "A car maintenance log needs three things on every line and two optional ones. What to write, what to leave off, and how to keep it up.",
+    dek: "What a car maintenance log needs on every line, what to leave off, and a filled-in example you can copy into a notebook or a spreadsheet.",
     primaryQuery: "car maintenance log",
     next: { slug: "what-is-due-on-my-car-right-now", reason: "With a log in hand, this shows how to read it against your intervals and see what is due now." },
     related: [
@@ -10087,55 +11985,127 @@ export const GUIDES: Guide[] = [
       { slug: "used-car-no-service-records-what-to-do", reason: "If the car came with no paperwork, this explains how to begin a record from the day you get it." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "vehicles",
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "A maintenance log has one job: to say what was done to the car, and when. It does not need to be beautiful. It needs to be complete enough that you, a mechanic or a buyer could read it in a minute.",
+          "Every line of a car maintenance log needs three things: the date, the odometer reading in miles, and what was done in plain words. Who did it and what it cost are worth adding but optional. A line like \"Mar 3, 48,100 mi, oil and filter change\" is a complete entry.",
+          "This is for a car you want to keep a record of, in a notebook, a spreadsheet or an app. It can't fill in the past for you, and it isn't a schedule: the log says what happened, and your owner's manual says how often it should.",
         ],
       },
       {
         kind: "table",
-        heading: "The columns",
-        columns: ["Column", "What goes in it", "Needed?"],
+        heading: "An example log",
+        intro: "A filled-in sample with made-up entries, so you can see what a good line looks like.",
+        columns: ["Date", "Miles", "What was done", "Who", "Cost / note"],
         rows: [
-          ["Date", "The day it was done", "Yes"],
-          ["Miles", "The odometer reading at the time", "Yes"],
-          ["What was done", "In plain words, such as an oil and filter change", "Yes"],
-          ["Who did it", "A shop name, or yourself", "Optional"],
-          ["Cost or note", "What it cost, or anything worth remembering", "Optional"],
+          [
+            "Mar 3",
+            "48,100",
+            "Oil and filter change",
+            "Main Street Garage",
+            "$74. 0W-20, filter part on receipt",
+          ],
+          ["Mar 3", "48,100", "Tire rotation", "Main Street Garage", "Included"],
+          [
+            "Jun 21",
+            "50,600",
+            "Replaced rear brake pads",
+            "Kwik Brakes",
+            "$310. Rotors measured fine",
+          ],
+          ["Jul 9", "51,400", "Replaced wiper blades", "Me", "$26. Both front"],
+          [
+            "Aug 2",
+            "52,000",
+            "Battery replaced after a slow start",
+            "Main Street Garage",
+            "$165. Old one was 5 years old",
+          ],
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Record the fact, not the intention",
+        heading: "Why those columns",
         paragraphs: [
-          "Write what was done, not what you meant to do. A line that says \"brake pads replaced\" is a fact. A line that says \"brakes need doing\" is a reminder, and belongs somewhere else.",
+          "The dates and miles are what make it useful. Everything in the last two columns is a bonus, and you can leave them out when you're in a hurry. A line with a date, a mileage and three words beats a beautiful log you stopped keeping.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What goes on each line",
+        ordered: true,
+        items: [
+          "Date. The day the work was done, not the day you got the bill.",
+          "Miles. The odometer at the time. If you forget to look, use the number on the receipt, which shops usually print.",
+          "What was done. Plain words: \"replaced front brake pads\", not \"brakes\". If a part matters, name it.",
+          "Who did it. A shop name or \"me\". It helps when you have a question later.",
+          "Cost or note. What it cost, or anything you'd want to remember, like an oil grade or a part number. Costs are optional and you can leave them out.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What else is worth writing",
+        items: [
+          "Repairs, not just scheduled jobs. A brake job after a squeal or a battery after a bad morning is often the line a next owner reads first.",
+          "Jobs you did yourself, with the same three facts.",
+          "Tire changes and rotations, since they're easy to forget when you last did them.",
+          "What a mechanic found, even if you didn't act on it: \"Rear tires near wear limit, told to watch.\" It's a dated fact.",
+          "Oil grade and filter part number in the note, if you'll want to buy the same one again.",
         ],
       },
       {
         kind: "list",
         heading: "What to leave off",
-        checkable: true,
         items: [
-          "Guesses about when something was done. If you do not know, leave it out.",
-          "Long descriptions. A short line and a receipt somewhere are enough.",
-          "Anything that is not about the car, such as your home address or account numbers.",
+          "A guess about the past. \"About last year\" isn't a date. Leave the job blank and start from the next one you do.",
+          "Things you meant to do. \"Brakes need doing\" is a reminder, and belongs somewhere else. The log records what happened.",
+          "A gap you'd rather hide. If something was done and it doesn't look great, leave it in. A buyer reads gaps, and a full log with a repair on it is easier to trust than a tidy one.",
+          "Anything about you: your address, account numbers, your VIN plate. The car's record doesn't need them.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "One-off repairs count too",
+        heading: "Where to keep it",
         paragraphs: [
-          "A log is not only for scheduled jobs. A repair after a breakdown belongs on it as well, with the same three fields. It is often the most interesting line for the next owner.",
-          "To use the log to work out what is due, see [what is due on my car right now](/guides/what-is-due-on-my-car-right-now).",
+          "Keep the receipts, and photograph each one the day you get it. A photo in a folder titled with the car's name is enough. The log is the summary, and the receipt is the proof.",
+          "A notebook works if it lives in the glove box. A spreadsheet works if you open it. What doesn't work is a log in two places, because one of them goes stale. Pick one, and update it the same day as the job. Ten seconds at the counter beats an evening of reconstruction.",
         ],
       },
       {
-        kind: "callout",
-        label: "The Companion for this",
-        body: "Vehicle Maintenance Companion keeps every service with its date, mileage, who did it, an optional cost and a note, grouped by year, newest first. You can also log a service that was never a tracked job, like a repair. Costs are optional and shown without a currency symbol. It is your own record. It is a web app, $34 once.",
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "What should be in a car maintenance log?",
+            a: "A date, the odometer reading in miles and a plain description of what was done on every line. Who did the work and what it cost are worth adding but optional. Repairs and one-off jobs belong alongside scheduled ones, since a log is a record of what happened.",
+          },
+          {
+            q: "How do I start a log for a car I already own?",
+            a: "Start with today: the odometer, the date and anything you know for certain. For older work, add only what you have a receipt or a reliable date for. Mark everything else unknown, and don't backfill guesses. [If the car came without records, this helps](/guides/used-car-no-service-records-what-to-do).",
+          },
+          {
+            q: "Is a paper log or an app better?",
+            a: "Whichever you'll update the same day. A notebook in the glove box is fine, and so is a spreadsheet. What matters is one place and the habit, not the tool. Keep photos of receipts wherever you keep the log.",
+          },
+          {
+            q: "Do I need to log oil changes and tire rotations?",
+            a: "Yes. They're the most common jobs and the easiest to lose track of. Each takes one line. The date and mileage are what let you work out [what's due next](/guides/what-is-due-on-my-car-right-now).",
+          },
+          {
+            q: "Does a log help when I sell the car?",
+            a: "A dated log lets a buyer see how the car was looked after, though it's your own record and not proof. Receipts stapled to it help. [Here's how to present it](/guides/selling-your-car-with-a-service-history).",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Where the Companion fits",
+        paragraphs: [
+          "[Vehicle Maintenance Companion](/shop/vehicle-maintenance-companion) keeps each service with its date, mileage, who did it, an optional cost and a note, grouped by year with the newest first. You can log a service that was never a tracked job, such as a repair. Draftpace doesn't sell a blank log template: the Service record printout is made from what you've entered, and there's no export or photo upload, so keep the receipts wherever you already do.",
+        ],
       },
     ],
   },
@@ -10374,7 +12344,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "glove-box-checklist-what-to-keep",
     title: "What to keep in your glove box (and what to leave home)",
-    dek: "The papers and numbers worth having in the car, what is better kept at home, and how to put the essentials on one card with blank lines for a pen.",
+    dek: "The papers and numbers worth keeping in your glove box, what belongs at home instead, and how to put the essentials on one card.",
     primaryQuery: "what to keep in your glove box",
     next: { slug: "car-paperwork-dates-organizer", reason: "Before you stock the glove box, this shows how to track the dates on the papers you keep in it." },
     related: [
@@ -10383,44 +12353,183 @@ export const GUIDES: Guide[] = [
       { slug: "winter-car-prep-checklist", reason: "Winter adds items like a scraper and kit, and this lists the checks to make before frost." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "vehicles",
+    sources: [
+      {
+        name: "LegalClarity, Which states allow electronic proof of insurance",
+        url: "https://www.legalclarity.org/which-states-allow-electronic-proof-of-insurance/",
+        retrieved: "2026-09-26",
+        note: "Electronic proof accepted nationwide with exceptions; officer discretion; paper backup",
+      },
+      {
+        name: "AARP, What to do after a car accident",
+        url: "https://www.aarp.org/auto/driver-safety/what-to-do-after-car-accident/",
+        retrieved: "2026-09-26",
+        note: "What to exchange and record after a collision",
+      },
+      {
+        name: "USA.gov, State motor vehicle services",
+        url: "https://www.usa.gov/motor-vehicle-services",
+        retrieved: "2026-09-26",
+        note: "Links to each state's motor vehicle agency for registration rules",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "A glove box tends to collect everything: old receipts, napkins, a manual for a car you no longer own. What you need in it is much shorter.",
+          "Keep your registration, proof of insurance, a roadside help number, the owner's manual and a card with your tire size and oil type in the glove box. Leave the title, spare keys and anything you would not want a stranger to read at home. Bulky safety gear goes in the trunk.",
+          "This is for a car you drive every day in the US. It can't tell you what your state requires you to carry, because that changes by state, and it isn't legal advice. Your state motor vehicle agency is the source for that one item.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Example: one card instead of a folder",
+        paragraphs: [
+          "Here is a filled card, made up from start to finish. The plate, the numbers and the insurer are invented, and two lines are left blank on purpose. A card like this replaces a folder of papers when you need a number fast: at the shop counter, on the phone with your insurer, or on the shoulder waiting for a tow.",
+          "Fill yours by hand, or from a record you already keep.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "A glove box card, filled in (example, not real numbers)",
+        columns: ["Line on the card", "Example entry"],
+        rows: [
+          ["Registration plate", "7ABC123"],
+          ["VIN", "Blank (see the trade-off below)"],
+          ["Tire size", "205/55 R16"],
+          ["Oil", "5W-30"],
+          ["Mileage, with the date", "48,200 on Sep 1"],
+          ["Insurer", "Example Mutual"],
+          ["Policy number", "Blank, or written in"],
+          ["Roadside help number", "800-555-0142"],
+        ],
+      },
+      {
+        kind: "table",
+        heading: "What is worth having in the car, and why",
+        intro: "Ask of each item: would I be stuck without it in the next ten minutes, on the side of a road? If yes, it earns the space.",
+        columns: ["Item", "Why it earns the space", "Also keep"],
+        rows: [
+          [
+            "Registration",
+            "You may be asked to show it at a stop. Many states expect it in the car.",
+            "Photo of it on your phone",
+          ],
+          [
+            "Proof of insurance",
+            "Needed at a stop and after a collision.",
+            "App or PDF copy on your phone",
+          ],
+          [
+            "Roadside help number",
+            "Easier to read off a card than to search for with a dead battery.",
+            "Saved in your phone",
+          ],
+          [
+            "Owner's manual",
+            "Has the oil type, tire pressure and what the dashboard lights mean.",
+            "The PDF, from the maker's site",
+          ],
+          [
+            "Tire size and oil type",
+            "The two facts a tire shop or quick-lube counter asks for.",
+            "On the card",
+          ],
+          [
+            "Pen and small notepad",
+            "For names, plates and numbers after a collision.",
+            "Phone notes app",
+          ],
+          [
+            "Tire pressure gauge",
+            "Pressure is easy to check once a month if the gauge is in reach.",
+            "Nothing else needed",
+          ],
         ],
       },
       {
         kind: "list",
-        heading: "Worth having in the car",
-        checkable: true,
-        items: [
-          "The registration paper or card, where your state expects you to carry it. Check with your state for what applies.",
-          "Your insurance card or the policy details.",
-          "A roadside help number you can call.",
-          "The owner's manual.",
-          "A note of your tire size and the oil type your car uses.",
-        ],
-      },
-      {
-        kind: "paragraphs",
         heading: "What is better kept at home",
-        paragraphs: [
-          "Anything you would not want a thief to find alongside your car. Spare keys, papers that show your home address, and the title are best kept elsewhere. Keep the details, not the originals. A card that lists your VIN and policy number carries those details too, so leave those lines blank if you would rather not keep them in the car.",
+        intro: "Keep the details, not the originals. Your registration may already show your address, and where your state expects it in the car you carry it. The rule is not to add to it.",
+        items: [
+          "The title. It is the paper that proves you own the car, and it is the one a thief most wants.",
+          "Spare keys. A thief who finds one in the car has the car.",
+          "Bills or letters that show your home address, beyond what your registration already shows.",
+          "Extra ID or a passport. Carry the ID you drive with, and leave the rest at home.",
+          "Old cards, expired policies and receipts you no longer need. They bury the current ones.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "One card, not a folder",
+        heading: "The VIN and policy number question",
         paragraphs: [
-          "A single card with the plate, the VIN, the oil, the tire size, the insurer and a roadside number is easier to find than a folder of papers. Fill it in by hand or from a record you keep. See [car paperwork dates](/guides/car-paperwork-dates-organizer) for the dates worth keeping in view.",
+          "A card that lists your VIN and policy number is handy, and it is also a small piece of paper in a car that can be broken into. That is a trade-off, and it's yours to make. We'd write the plate, tire size, oil and roadside number on the card and leave the VIN and policy number lines blank unless you'd rather have them at hand. Your insurance card and registration already carry those numbers, so a thief gains little from a card that repeats them, and you lose little by leaving them off.",
         ],
       },
       {
-        kind: "callout",
-        label: "The Companion for this",
-        body: "Vehicle Maintenance Companion prints a glove box card from the details you type: registration plate, VIN, oil, insurer, policy number, roadside number and the dates you are watching. Every line is typed by you and nothing is looked up or checked. Blank lines stay blank for a pen. It is made in your browser. A web app, $34 once.",
+        kind: "paragraphs",
+        heading: "Paper or phone for insurance",
+        paragraphs: [
+          "Nearly every state now accepts electronic proof of insurance at a traffic stop, according to a state-by-state summary from LegalClarity. A few sources name a handful of exceptions, and they don't all agree on which, so check your own state's motor vehicle site instead of relying on a list.",
+          "Even where it's accepted, a phone can die or lose signal, and an officer has some discretion. That is the reason to keep a paper card as well as a screenshot. Rules are different at some borders, and a digital card may not be taken at a motor vehicle office counter, so a paper copy earns its place there too. Keep the paper and the screenshot both current, and swap them the day a new policy card arrives.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "A pen card for after a collision",
+        intro: "This is the one thing most glove boxes lack. The AARP's after-a-crash checklist lists what to exchange and record, and a short version fits on the back of your card.",
+        items: [
+          "Your name, phone number and insurer, and the other driver's.",
+          "Both policy numbers, and both plates.",
+          "Make, model and VIN of each car, if the other driver is willing to share it.",
+          "The officer's name and badge number, if police come, so you can ask for the report.",
+          "Photos of every car, the damage and the scene, taken before anything is moved if it's safe.",
+          "Direction each car was going, the lanes, and any signals or signs. Write it while it's fresh.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What goes wrong",
+        paragraphs: [
+          "The usual failure is a glove box that has become a drawer. An expired insurance card sits on top of the current one, and you hand the wrong one to an officer. A manual for a car you sold is still in there. A stack of receipts hides the pen and the gauge.",
+          "A second one: papers that are current but cannot be found in the dark. The fix for both is a ten minute clear out on the day a renewal arrives. Put the new paper in and take the old one out in the same motion. There's more on tracking those dates in [how to track car registration and insurance renewals](/guides/car-paperwork-dates-organizer).",
+          "Things that move around in the glove box (a jack handle, a heavy flashlight) belong in the trunk instead. Winter adds a scraper and a small kit, listed in the [winter car prep checklist](/guides/winter-car-prep-checklist).",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "Do I have to keep my registration in the glove box?",
+            a: "It depends on your state. Many states expect you to be able to show registration when asked, and some accept an electronic copy. Check your state's motor vehicle site through USA.gov, which links to each one. Until you know, keep the paper copy in the car, and keep your title at home.",
+          },
+          {
+            q: "Can I show proof of insurance on my phone?",
+            a: "In nearly every state, yes, according to LegalClarity's state summary, though sources differ on a few exceptions. Officers have some discretion, a phone can die, and some places may not accept it. Keep a paper card as a backup, and hold your phone yourself instead of handing it over.",
+          },
+          {
+            q: "Should I keep my car title in the glove box?",
+            a: "No. The title proves ownership, and a thief who has your car and your title has a much easier time selling it. Keep it at home with other important papers, and keep a photo of it if you like. Carry the details, not the original.",
+          },
+          {
+            q: "What else should I keep in the glove box?",
+            a: "A pen, a small notepad, a tire pressure gauge and your roadside help number cover most needs. Keep bulky items like jumper cables, a flashlight and a first aid kit in the trunk, where they can't slide around or be hard to reach.",
+          },
+          {
+            q: "How often should I clean out my glove box?",
+            a: "Whenever a renewal arrives, because that is the day an old card should leave. Beyond that, a quick look every few months for expired cards and papers for a car you no longer own is enough.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Making the card",
+        paragraphs: [
+          "[Vehicle Maintenance Companion](/shop/vehicle-maintenance-companion) prints a glove box card from the details you type in: registration plate, VIN, tire size, oil, mileage, insurer, policy number, roadside help number, and the dates you're watching. Every line comes from you, nothing is looked up or checked, and any line you leave blank stays blank for a pen. The card is made in your browser as a PDF, sized for A4 paper, so on a US printer choose fit to page. It labels tire size as Tyre size.",
+        ],
       },
     ],
   },
@@ -10437,44 +12546,169 @@ export const GUIDES: Guide[] = [
       { slug: "what-is-due-on-my-car-right-now", reason: "Renewals sit beside service jobs, and this shows how to see what is due by miles and months." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "vehicles",
+    sources: [
+      {
+        name: "USA.gov, State motor vehicle services",
+        url: "https://www.usa.gov/motor-vehicle-services",
+        retrieved: "2026-09-26",
+        note: "Where to find your state's registration and inspection rules",
+      },
+      {
+        name: "LegalClarity, Which states allow electronic proof of insurance",
+        url: "https://www.legalclarity.org/which-states-allow-electronic-proof-of-insurance/",
+        retrieved: "2026-09-26",
+        note: "Digital insurance cards and where paper still helps",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Cars come with a handful of dates that matter: registration, insurance, an inspection, sometimes a warranty ending. They arrive by mail, get filed somewhere, and come round again a year later.",
-          "What each of these requires depends on where you live. This guide is about keeping track of the dates, not about what your state asks. For that, the official source is the one to trust.",
+          "For each car, write down four things on the day a new paper arrives: what it is, the date it runs out, where the paper is, and how it renews. Look at the list once a month and act on anything inside six weeks. That covers registration, insurance, inspection and a warranty.",
+          "This is for US drivers who want the dates in one place. It can't tell you what your state requires, how much a renewal costs, or when a lapse becomes a violation. Those live with your state motor vehicle agency and your insurer, and this isn't legal advice.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Example: two cars, six papers",
+        paragraphs: [
+          "Say a household has two cars. This is what the list looks like the week the newest paper comes in. Every date and name is made up. The right column is the date to act by: six weeks before the date, so a mailed form, a payment or an inspection appointment has room.",
         ],
       },
       {
         kind: "table",
-        heading: "Three things to note for each",
-        columns: ["What to note", "Why"],
+        heading: "A filled tracker (example, made-up dates)",
+        columns: ["Car and paper", "Runs out", "Where the paper is", "Act by"],
         rows: [
-          ["The kind of paper", "Registration, insurance, inspection, warranty or something else"],
-          ["The date", "The day it runs out or comes up"],
-          ["Where the paper is", "A drawer, a folder, a name, so you can find it on the day"],
+          ["Civic, registration", "Nov 30", "Glove box and folder", "Oct 19"],
+          ["Civic, insurance", "Jan 14", "Folder, and app on phone", "Dec 3"],
+          ["Civic, inspection", "Feb 28", "Sticker, report in folder", "Jan 17"],
+          ["Van, registration", "Mar 15", "Glove box", "Feb 1"],
+          ["Van, insurance", "Jan 14", "Folder", "Dec 3"],
+          ["Van, warranty", "Apr 1 or 60,000 mi", "Folder", "Feb 18"],
+        ],
+      },
+      {
+        kind: "list",
+        heading: "How to set it up",
+        ordered: true,
+        items: [
+          "Put the paper in front of you: registration card or renewal, insurance policy or card, any inspection report, the warranty booklet.",
+          "For each one, copy the end date printed on it. For insurance, that's the end of the policy term, not the date the bill is due.",
+          "Write where the paper lives, in words you'd understand in a hurry ('kitchen drawer, blue folder').",
+          "Write how it renews: mailed notice, online at your state's site, or automatic. Note the card on file if it's automatic.",
+          "Subtract six weeks from each date and put that in your calendar or on the list as the act-by date.",
+          "When a renewal comes through, write the next date that day, while the new paper is in your hand.",
+        ],
+      },
+      {
+        kind: "timeline",
+        heading: "One renewal, week by week",
+        intro: "Six weeks is our rule of thumb, not a legal one. Some renewals take a day and some take a month.",
+        steps: [
+          {
+            when: "Six weeks out",
+            what: "Look for the notice. If none has come, find out why: an old address, a different insurer, an email in spam.",
+          },
+          {
+            when: "Four weeks out",
+            what: "Start the renewal. Book an inspection if your state needs one.",
+          },
+          {
+            when: "Two weeks out",
+            what: "Renewal should be paid or in the mail. If not, treat it as urgent.",
+          },
+          {
+            when: "The day it runs out",
+            what: "Check the new paper is in hand. Put the old one in the recycling.",
+          },
+          {
+            when: "The same day",
+            what: "Write the next date on the tracker.",
+          },
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Which dates go on the list",
+        columns: ["Paper", "What the date is", "Watch for"],
+        rows: [
+          [
+            "Registration",
+            "The expiry on the card or the sticker",
+            "A renewal notice sent to an old address",
+          ],
+          [
+            "Insurance",
+            "The end of the policy term, often six or twelve months",
+            "A bill due date that is not the term date",
+          ],
+          [
+            "Inspection",
+            "The date on the sticker or report, if your state has one",
+            "Some states ask for none. Check yours.",
+          ],
+          [
+            "Warranty",
+            "Years or miles, whichever comes first",
+            "The miles, which move as you drive",
+          ],
+          [
+            "Anything else",
+            "A parking permit, a toll tag, a roadside plan",
+            "One-off dates that nobody else is tracking",
+          ],
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Note the date when you renew",
+        heading: "Where this goes wrong",
         paragraphs: [
-          "The best moment to record the next date is the day you renew. The new paper is in your hand and the new date is printed on it. Write it down straight away.",
+          "Most renewals slip for boring reasons. A move means the mailed notice goes to your old address, so update your address with your state's motor vehicle agency and your insurer at the same time. A switched insurer means a new term date, so change the tracker the day you switch. An automatic renewal fails when the card on file expires. Two cars with dates in the same month get treated as one job and one of them gets missed.",
+          "Insurance and registration are also linked in many places, and a lapse in one can cause trouble with the other. How that works differs from state to state, so look it up in yours instead of assuming. For the wider habit of catching yearly bills before they arrive, see [why you keep missing bill due dates](/guides/why-you-keep-missing-bill-due-dates).",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Look six weeks ahead",
+        heading: "Related lists",
         paragraphs: [
-          "Look at your dates once a month, and act on the ones within the next six weeks. Renewal can take time, and the day before is a poor time to find that something is missing.",
-          "For what to keep in the car itself, see [what to keep in your glove box](/guides/glove-box-checklist-what-to-keep).",
+          "Service jobs are on a different clock, by miles and months, and belong beside these dates. [What is due on my car right now](/guides/what-is-due-on-my-car-right-now) shows how to read them. Once the dates are tracked, [what to keep in your glove box](/guides/glove-box-checklist-what-to-keep) covers which papers ride in the car. With two cars, [two cars, one household](/guides/two-cars-one-household-maintenance) helps keep the sets apart, and a buyer will ask to see current papers, as [selling your car with a service history](/guides/selling-your-car-with-a-service-history) explains.",
         ],
       },
       {
-        kind: "callout",
-        label: "The Companion for this",
-        body: "Vehicle Maintenance Companion records a registration, insurance, inspection, warranty or other date, and where the paper is. Nothing is uploaded and it never says what any place requires. A date shows on Due from 45 days out or once past. If you switch reminders on, which are off until you do, you also get one notice two weeks ahead and one on the day, on that device. It is a web app, $34 once.",
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "How far ahead should I renew my car registration?",
+            a: "There's no single rule, and your state may have its own window. We'd start looking six weeks before the date, because a mailed notice, an inspection or a fee can each take time. Your state's motor vehicle site, found through USA.gov, says when renewal opens and what it needs.",
+          },
+          {
+            q: "Where do I find my car insurance renewal date?",
+            a: "On your policy declarations page or your insurer's app, as the end of the policy term. That can differ from your bill due date. Your insurer usually sends a renewal notice before the term ends, so if none arrives, call and ask.",
+          },
+          {
+            q: "Do I need to keep track of both registration and insurance?",
+            a: "Yes. They come round on different dates, are handled by different offices, and can affect each other. Put each on its own line with its own date, and write where each paper lives.",
+          },
+          {
+            q: "Can my state send me a renewal reminder?",
+            a: "Many states offer email or text reminders, and most mail a notice. Sign up on your state's motor vehicle site if it offers one. Don't rely on it alone, since notices go to old addresses and spam folders.",
+          },
+          {
+            q: "What if I just moved?",
+            a: "Update your address with your state's motor vehicle agency and your insurer, since a renewal notice goes to whatever address is on file. Rules on how soon you must change it differ by state, so check yours. Then update the tracker's 'where the paper is' line.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Doing it in the Companion",
+        paragraphs: [
+          "[Vehicle Maintenance Companion](/shop/vehicle-maintenance-companion) has a Paperwork screen for this. You pick registration, insurance, inspection, warranty or another date, type the date, and note where the paper is. Nothing is uploaded, and it never says what any place requires. A date shows on the Due screen from 45 days out, or once it has passed. Reminders are off until you switch them on. If you do, you get one notice two weeks ahead and one on the day, on that device. A date already past is not reminded.",
+        ],
       },
     ],
   },
@@ -10491,51 +12725,156 @@ export const GUIDES: Guide[] = [
       { slug: "car-paperwork-dates-organizer", reason: "Find and calendar the registration, insurance and inspection dates so none slip by." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "vehicles",
+    sources: [
+      {
+        name: "FTC, Buying a used car from a dealer",
+        url: "https://consumer.ftc.gov/articles/buying-used-car-dealer",
+        retrieved: "2026-09-26",
+        note: "Vehicle history report is not a substitute for an independent inspection; Buyers Guide",
+      },
+      {
+        name: "USA.gov, State motor vehicle services",
+        url: "https://www.usa.gov/motor-vehicle-services",
+        retrieved: "2026-09-26",
+        note: "Find your state's title and registration rules",
+      },
+      {
+        name: "NHTSA, Tire safety and inflation",
+        url: "https://www.nhtsa.gov/vehicle-safety/tires",
+        retrieved: "2026-09-26",
+        note: "Check cold pressure monthly; use the door placard, not the sidewall (seen in NHTSA search results, page itself blocked to fetch)",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "A first car brings a lot of small questions at once. Most of them can wait. A handful are worth doing in the first week, and they make everything after easier.",
+          "Before you drive it home, have insurance in place. In the first week, match the VIN to the paperwork, sort out title and registration, find the owner's manual and both keys, check the tire pressure, note the mileage and start a record. Do those and you've done the parts that are hard to fix later.",
+          "This is for someone getting the keys to a car in the US, new or used. Deadlines and paperwork rules vary by state, so it points you to your state's motor vehicle agency and doesn't say what yours requires. It isn't legal or mechanical advice.",
+        ],
+      },
+      {
+        kind: "timeline",
+        heading: "The first week, in order",
+        intro: "Insurance comes first because it has to be in place before you drive. The rest is roughly ordered by what is hardest to fix later.",
+        steps: [
+          {
+            when: "Before you drive it home",
+            what: "Call your insurer. Ask if the car is covered from the moment you own it, and what they need.",
+          },
+          {
+            when: "Day 1",
+            what: "Match the VIN, count the keys, look at the dash warning lights, find the manual.",
+          },
+          {
+            when: "Days 2 and 3",
+            what: "Handle title and registration. Ask the seller or dealer who is doing it.",
+          },
+          {
+            when: "Days 4 to 7",
+            what: "Write the first record entry, check tire pressure, set up the glove box.",
+          },
+          {
+            when: "Within the month",
+            what: "Look up what is due, and book anything overdue.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Example: a private sale on a Saturday",
+        paragraphs: [
+          "Say you buy a 2014 hatchback from a private seller on a Saturday. On the way home you call your insurer, who tells you what they need to cover it. On Sunday you sit in the driveway with the title, the registration papers and a phone. The VIN on the dashboard, seen through the windshield, and the VIN on the driver's door jamb should match the VIN on the title. If they don't, you stop and ask before anything else. That is a five minute check, and it's the most useful five minutes of the week.",
+          "For a dealer purchase, the dealer usually handles title and registration paperwork. With a private seller, you handle it yourself at your state's motor vehicle agency. Ask which one applies, and how long you have, on day one instead of finding out at day thirty.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "The first page of a record (example)",
+        intro: "This is the first entry in a car's history. It costs an hour and a pen, and it's what you'll be glad of at the next oil change and at resale.",
+        columns: ["Baseline page", "Example entry (made up)"],
+        rows: [
+          ["Date you got it", "Sat, Sep 12"],
+          ["Mileage that day", "62,410"],
+          ["VIN matches the title?", "Yes, all three places"],
+          ["Keys", "One key, no spare yet"],
+          ["Front and rear tire pressure", "Door sticker says 35 psi, gauge reads 31"],
+          ["Last oil change", "Unknown"],
+          [
+            "Papers, and where they are",
+            "Title in the folder at home, registration in the glove box",
+          ],
         ],
       },
       {
         kind: "list",
-        heading: "In the first week",
+        heading: "What to check on day one",
         checkable: true,
         items: [
-          "Find the owner's manual. It has the maintenance intervals for your car.",
-          "Note the mileage today, and the date.",
-          "Find the registration and insurance papers, and the title if the car came with one, and note where they are.",
-          "Start a record: a page with date, miles and what was done.",
-          "Put a card in the glove box with the essentials.",
+          "Match the VIN in three places: the dashboard by the windshield, the driver's door jamb, and the title. A mismatch is a reason to pause the purchase.",
+          "Count the keys. Ask the seller for the second key today. Replacing one later can cost far more than asking now.",
+          "Turn the key and watch the dashboard. Warning lights come on for a moment and go out. One that stays on is something to look up in the manual.",
+          "Check tire pressure against the sticker on the driver's door jamb, not the number on the tire sidewall. NHTSA says to check when tires are cold, at least once a month.",
+          "Find the jack and spare, if the car has them. Some cars have a sealant kit instead.",
+          "Find the owner's manual. If it's gone, the maker's site usually has a PDF for your model and year.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Do the small things first",
+        heading: "If the car is used",
         paragraphs: [
-          "None of this needs a garage. It is a notebook, a pen and an hour. The first entry in your record can be as simple as the date you got the car and its mileage that day.",
+          "A vehicle history report can show accidents and flood damage, but it typically won't show mechanical problems, and the FTC says it is not a substitute for an independent inspection. If you bought before getting one, you can still ask a mechanic to look the car over this week. A used car with no service records is a common start: [used car, no service records](/guides/used-car-no-service-records-what-to-do) covers what to do. If a shop starts quoting jobs, [what to tell a mechanic before work starts](/guides/what-to-tell-a-mechanic-before-work-starts) gives you words for it.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Learn what is due",
+        heading: "What can go wrong",
         paragraphs: [
-          "Your manual says how often each job comes round. Once you know, you can see what is coming up. See [car maintenance by mileage: start with your owner's manual](/guides/car-maintenance-by-mileage-start-with-your-manual) and [what is due on my car right now](/guides/what-is-due-on-my-car-right-now).",
+          "Insurance that isn't in place before you drive is the costly one, and the seller's word that the car is fine is not a check. The others are quieter: a title that names someone else, a single key, an oil change you assume was done, a warning light you decide to ignore. Each is cheap to sort out in week one and annoying in month six.",
+          "Don't try to fix the whole car in a week. Note what you don't know, write it down, and put it on the list. Getting the papers right is the job of the first week, and the car's history is the job of the first year.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Start the record today",
+        heading: "After week one",
         paragraphs: [
-          "The best time to start a car's record is the day you get it. In a few years it will be the history you hand over to the next owner. See [selling your car with a service history](/guides/selling-your-car-with-a-service-history).",
+          "Your manual has intervals for oil, tires, filters and more. [Car maintenance by mileage](/guides/car-maintenance-by-mileage-start-with-your-manual) shows how to pull them out, and [what is due on my car right now](/guides/what-is-due-on-my-car-right-now) shows how to read them against your mileage and date. Keep the record going with [the car maintenance log](/guides/car-maintenance-log-what-to-write-down), and put the essentials on a card with [what to keep in your glove box](/guides/glove-box-checklist-what-to-keep). Date the paperwork with [how to track car registration and insurance renewals](/guides/car-paperwork-dates-organizer). Years from now, that record is what you'll hand over in [selling your car with a service history](/guides/selling-your-car-with-a-service-history).",
         ],
       },
       {
-        kind: "callout",
-        label: "The Companion for this",
-        body: "Vehicle Maintenance Companion lets you name the car, log a service with its date and mileage, and see what is due from intervals you enter. Reminders are optional and off until you switch them on: one device, at most once an hour, for a job that has reached its interval or a date that is close. It is a web app, $34 once.",
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "What should I do first after buying a car?",
+            a: "Get insurance in place before you drive it, since many dealers ask for proof and your existing policy may cover a new car only for a limited time. Then match the VIN on the car to the title, and sort out title and registration. Everything else can follow in the first week.",
+          },
+          {
+            q: "How soon do I have to register a car after buying it?",
+            a: "It depends on your state, and the window can be days or weeks. A dealer usually handles it. With a private seller, you do it yourself. Look up your state's rule on day one, through USA.gov's link to your motor vehicle agency, and put the deadline on the calendar.",
+          },
+          {
+            q: "Where do I find my car's VIN?",
+            a: "Usually on the dashboard, seen through the windshield on the driver's side, and on the sticker inside the driver's door jamb. It's also on the title, registration and insurance card. Check that these agree before you go further.",
+          },
+          {
+            q: "How often should I check my tire pressure?",
+            a: "At least once a month, when the tires are cold, according to NHTSA. Use the number on the placard in the driver's door jamb or the owner's manual. The pressure printed on the tire sidewall is the maximum, not what your car wants.",
+          },
+          {
+            q: "Do I need a service history for a first car?",
+            a: "Not to start, but begin one now. A used car may have none, and that's fine. Write the date and mileage you got it, then log each job from here on. It becomes the history the next owner asks for.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Where the Companion fits",
+        paragraphs: [
+          "[Vehicle Maintenance Companion](/shop/vehicle-maintenance-companion) lets you name the car, log a service with its date and mileage, and see what is due from intervals you enter. When you add a car, it offers the usual jobs for that kind of vehicle as a starting point, with intervals you can change, and your manual stays the real source. Paperwork holds your registration and insurance dates. Reminders are off until you switch them on. If you'd rather use a notebook, the steps above are the same.",
+        ],
       },
     ],
   },
@@ -10543,7 +12882,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "what-goes-in-a-family-health-binder",
     title: "What to put in a family medical binder",
-    dek: "Eight things worth writing down for each person, what to leave out, and why one page per person keeps the wrong allergy off the wrong form.",
+    dek: "Eight things to write down for each person, a filled example page, and what belongs in a paper folder instead. One page per person.",
     primaryQuery: "what to put in a family medical binder",
     next: { slug: "medication-list-what-to-write-down", reason: "Once each person has a page, the medicine list is the section that goes stale fastest, and this shows how to write it." },
     related: [
@@ -10552,49 +12891,193 @@ export const GUIDES: Guide[] = [
       { slug: "caring-for-a-parent-and-kids-one-place", reason: "If you also look after a parent, this sets up the same binder with one page per person across both generations." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "family-health",
+    sources: [
+      {
+        name: "CDC: Keeping track of childhood vaccine records",
+        url: "https://www.cdc.gov/vaccines-children/records/index.html",
+        retrieved: "2026-09-26",
+        note: "Vaccine record advice; the CDC does not hold records; records come from the clinic, state registry or school.",
+      },
+      {
+        name: "CDC: Contacts for IIS immunization records",
+        url: "https://www.cdc.gov/iis/contacts-locate-records/index.html",
+        retrieved: "2026-09-26",
+        note: "Where to ask for a copy of a vaccine record (state immunization information system, provider, state health department).",
+      },
+      {
+        name: "MedlinePlus: Making the most of your doctor visit",
+        url: "https://medlineplus.gov/ency/patientinstructions/000860.htm",
+        retrieved: "2026-09-26",
+        note: "Writing down all medicines, vitamins and supplements including over-the-counter, and bringing an insurance card.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Many families keep their health information in their heads, a kitchen drawer and a few patient portals. It works until a form asks for something you have to look up, or a sitter needs to know something you have not written down.",
-          "A family health binder is a single place that holds the answers forms keep asking for. It is a record of what you know, not medical advice, and it supplements the paperwork a clinic gives you. It does not replace it.",
+          "Give each person one page with eight things on it: date of birth, allergies and what happens, current medications with the dose and how often, conditions in your own words, doctors and pharmacy with phone numbers, insurance member and group numbers, vaccine names and dates, and who to call. Print it or keep it where you can open it fast.",
+          "This is for anyone who ends up answering health questions for a household: kids, a partner, a parent. It can't tell you what any entry means or what anyone should do about it, and it doesn't replace the paperwork a clinic, school or camp gives you. It's paperwork help, not medical advice.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "An example: one filled page",
+        intro: "Say Amina is eight and you've been handed a clipboard at a new dentist. This is the page you'd want in your bag. Every name, number and date here is made up for the example.",
+        columns: ["What", "What's written", "Where the answer comes from"],
+        rows: [
+          ["Date of birth", "04/02/2018", "Any form you've filled in before"],
+          [
+            "Allergies",
+            "Peanuts (hives). Penicillin (rash).",
+            "Her doctor's office, or the label of anything she reacted to",
+          ],
+          ["Conditions", "Asthma", "Her doctor, in the words they used"],
+          [
+            "Medications now",
+            "Cetirizine, 5 mg, once a day, started 09/01/2026",
+            "The label on the bottle or box",
+          ],
+          [
+            "Doctors and pharmacy",
+            "Dr. Patel, pediatrics, (555) 010-0100. Corner Pharmacy, (555) 010-0177.",
+            "Your phone contacts, the pharmacy receipt",
+          ],
+          [
+            "Insurance",
+            "Acme Health. Member ID XYZ123456. Group G77.",
+            "The card, front and back",
+          ],
+          ["Vaccines", "MMR 05/01/2019, 06/02/2023", "Her vaccine record, copied exactly"],
+          ["Who to call", "Sam (dad), (555) 010-0142", "You decide, then tell them"],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Why one page per person",
+        paragraphs: [
+          "Keep each person on their own page, with the same eight headings every time. Adults and children are the same kind of record. When two people share a page, the wrong allergy ends up on the wrong form, and it happens at exactly the moment you're rushing.",
+          "Same headings also means you always know where to look. If you're also looking after a parent, [one place for a parent and kids](/guides/caring-for-a-parent-and-kids-one-place) shows how to run both generations the same way.",
         ],
       },
       {
         kind: "list",
-        heading: "Eight things worth writing down",
-        checkable: true,
+        heading: "Filling in the answers you don't have",
+        intro: "Most pages get filled in over a week, not in one sitting. Here's the order that takes the least effort.",
+        ordered: true,
         items: [
-          "Who they are: name, and date of birth if forms ask for it.",
-          "Allergies, and what happens.",
-          "Medications: the name, the dose as given to you, and how often.",
-          "Conditions, in your own words.",
-          "Doctors and pharmacy, with phone numbers.",
-          "Health insurance: the insurer, member ID and group number.",
-          "Vaccines, typed in from their record, with dates.",
-          "Who to call in an emergency.",
+          "Start with what's in your wallet: the insurance card gives you the insurer, the member ID and the group number. Copy it exactly, letters and zeros included.",
+          "Pull the medicine names from the labels, not from memory. Write the name, the dose as printed, and how often. Include over-the-counter medicines, vitamins and supplements, because MedlinePlus lists them among the things to have written down before a visit. [The medication list guide](/guides/medication-list-what-to-write-down) covers the details.",
+          "Ask the doctor's office and the pharmacy for their phone numbers if you don't have them saved, and write down which one is which.",
+          "For vaccines, ask the clinic that gave them for a copy of the record, then type the names and dates in as written. If a clinic is gone, the CDC says it doesn't hold vaccination records itself, and points you to your state's immunization information system, your provider or your state health department.",
+          "Add allergies last, and add what happens as well as what they're allergic to. \"Peanuts\" is a fact. \"Peanuts (hives)\" is something a sitter can use.",
+          "Choose who to call in an emergency, ask them, and put their number down. A name with no number isn't much help at 2 a.m.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "One page per person",
+        heading: "What belongs in a paper folder instead",
         paragraphs: [
-          "Keep each person's facts on their own page. Adults and children are the same kind of record. Mixing two people on one page is how the wrong allergy ends up on the wrong form.",
+          "A binder page is a list of answers. It isn't the place for test results, scanned insurance cards, discharge papers or signed forms. Those live better in a paper folder or in the clinic's own portal, and you copy the answers out of them onto the page.",
+          "Advance directives and the question of who speaks for you if you can't are a different job with its own paperwork. [Who would speak for you about medical care](/guides/emergency-contact-and-medical-decision-maker) covers choosing that person and noting where the documents are kept. Rules vary by state.",
+        ],
+      },
+      {
+        kind: "compare",
+        heading: "Paper binder or a screen",
+        intro: "Both work. They fail in different ways.",
+        left: {
+          label: "Paper binder",
+          items: [
+            "Nothing to sign in to at the front desk",
+            "Every change means recopying the page",
+            "A page can be handed over as it is",
+          ],
+        },
+        right: {
+          label: "On a screen",
+          items: [
+            "Change it once and every printout is current",
+            "Needs a phone or laptop and a sign-in",
+            "One place holds everyone, so nobody gets a stale copy of their own page",
+          ],
+        },
+      },
+      {
+        kind: "timeline",
+        heading: "Keeping it current",
+        intro: "A page goes stale in a few predictable places. Update it at these moments and it stays useful.",
+        steps: [
+          {
+            when: "After any visit",
+            what: "Add what changed: a new medicine, a stopped one, a new allergy.",
+          },
+          {
+            when: "When a medicine starts or stops",
+            what: "Change the line the same day, while the label is in your hand. Keep the stop date.",
+          },
+          {
+            when: "Each August and each spring",
+            what: "Check dates of birth, insurance and phone numbers before school and camp forms arrive.",
+          },
+          {
+            when: "When insurance changes",
+            what: "Replace the member and group numbers. An old card is worse than none.",
+          },
+          {
+            when: "Before a sitter or a trip",
+            what: "Reprint the pages you're handing over, and leave off what they don't need.",
+          },
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What goes wrong with these pages",
+        items: [
+          "A stopped medicine stays on the page. Someone reads it as current. Mark the stop date or take it off.",
+          "Insurance is last year's. Forms get refused or the wrong ID gets copied over.",
+          "Vaccine dates were typed from memory. Copy them from the record, or leave the line and ask for one.",
+          "The full page goes everywhere. A sitter doesn't need your insurance ID, and a school doesn't need every note. [What to leave off a page you hand over](/guides/what-to-leave-off-a-health-page-you-hand-over) has the rule of thumb.",
+          "Nobody knows the page exists. Tell the one other adult where it lives.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "What is the difference between a medical binder and a medical ID?",
+            a: "A binder is a set of pages you print or open and hand over. A medical ID is something worn or carried so it's found without you. A printed emergency card from your binder doesn't replace a medical ID, and the binder can't make anything appear on a locked phone.",
+          },
+          {
+            q: "How often should I update a family medical binder?",
+            a: "Update it when something changes, not on a schedule alone: a new or stopped medicine, a new allergy, a new insurance card, a change of doctor. Then do one sweep before school and camp forms arrive each year, checking every line against the card, label or record it came from.",
+          },
+          {
+            q: "Do I need a separate binder for each child?",
+            a: "One binder, one page per person, is easier to carry and keep current. The page is what stays separate, so a form for one child never picks up another child's allergy. If your children share a doctor, the phone number simply appears on each page.",
+          },
+          {
+            q: "Should I put a photo of my insurance card in the binder?",
+            a: "Copy the insurer, member ID and group number onto the page and keep the physical card in your wallet. A photo of a card is a document, and documents belong in your paper folder or wherever you already keep them. The page only needs the numbers a form asks for.",
+          },
+          {
+            q: "What should I leave out of a family medical binder?",
+            a: "Leave out guesses about what something means and anything you wouldn't want a sitter or school to read on a printout. Keep test results and signed papers in a folder, and copy only the answers forms ask for onto the page. Ask the clinic when you're unsure what a result says.",
+          },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "What to leave out",
         paragraphs: [
-          "Leave out anything you do not need to hand over: test results you do not understand, guesses about what something means, and anything you would not want a school or a sitter to read. A binder is a working record, not an archive of everything.",
-          "For what to do with the pages once you have them, see [school and camp health forms](/guides/school-and-camp-health-forms-what-to-have-ready) and [what to leave off a health page you hand over](/guides/what-to-leave-off-a-health-page-you-hand-over).",
+          "[Family Health Binder](/shop/family-health-binder) is the version of this page that you type in once. Each person gets a card with allergies, conditions, medications, vaccines, doctors, insurance and an emergency contact, and it prints from that card as a forms sheet, a caregiver sheet, an emergency card, a visit page and an intake summary. Anything you mark private stays in the app and is left off every printed page. It only records what you enter: it doesn't check a dose, say what's due or send a reminder, and it holds no documents, so the paper folder stays.",
         ],
       },
       {
         kind: "callout",
         label: "The Companion for this",
-        body: "Family Health Binder keeps what you type in for each person on one card: allergies, medications, conditions, doctors, insurance, vaccines and who to call. It prints five pages from that: a forms sheet, a caregiver sheet, an emergency card, a visit page and an intake summary. It records what you enter and never says what anyone should do. There are no reminders, no sharing and no AI. It is a web app, $34 once, and it is not medical advice.",
+        body: "Family Health Binder is a web app you sign in to, and it can't share a page with anyone: you download a PDF and print or hand it over. It records what you type and isn't medical advice.",
       },
     ],
   },
@@ -10776,45 +13259,154 @@ export const GUIDES: Guide[] = [
       { slug: "medication-list-what-to-write-down", reason: "Bring the current medicine list alongside your questions, and this explains how to write one." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "family-health",
+    sources: [
+      {
+        name: "Institute for Healthcare Improvement: Ask Me 3",
+        url: "https://www.ihi.org/library/tools/ask-me-3-good-questions-your-good-health",
+        retrieved: "2026-09-26",
+        note: "The three Ask Me 3 questions and what the program is.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "The best time to think of a question is rarely when the doctor is in front of you. Write it down when it occurs to you, and bring the page.",
-          "This guide is about how to write questions, not what to ask. What matters to your family is for you and your doctor to decide.",
+          "Write each question as one line, put the one you can't leave without first, and leave a gap under each for the answer. Bring the page and tick lines off as they're answered. Keep the list to what a short visit can hold.",
+          "This is for anyone heading into an appointment for themselves or a child. It covers how to write questions, not what to ask about anyone's health, and it can't tell you whether a question is worth asking. Your doctor can.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Say you've been keeping a note on your phone about Amina, 8, and the appointment is tomorrow. The note is a pile: her cough, swimming, something about the pharmacy, the camp form. Left like that, you'll get to the door with the pile still in your pocket. Here it is turned into lines you can read out.",
+        ],
+        heading: "A worked example: from a pile to a page",
+      },
+      {
+        kind: "table",
+        columns: ["What the note says", "The question line"],
+        rows: [
+          ["her cough again", "Cough, two weeks: what now?"],
+          ["swimming?", "Can she swim this week?"],
+          ["pharmacy gave something different", "Is the new brand the same drug?"],
+          ["camp form", "Can you sign the camp form?"],
+        ],
+        intro: "An example, not a list to copy. Each line is short enough to say in one breath, and each one can be answered in a sentence or two.",
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Now put them in order. The cough goes first, because it's the reason for the visit. The camp form goes last, because it can be handled at the desk if time runs out. If a question would still nag you on the drive home, it belongs near the top.",
         ],
       },
       {
         kind: "list",
-        heading: "How to write a good question",
-        checkable: true,
         items: [
-          "One question per line, so you can tick them off.",
-          "Be specific. \"Can she swim this week?\" is easier to answer than \"Is swimming okay?\"",
-          "Put the most important one first.",
-          "Leave a space beside each for the answer.",
-          "Keep the list short enough to get through in the time you have.",
+          "Empty your head onto one page the day before, or the moment a question occurs to you. Don't sort yet.",
+          "Turn each item into a question that ends in a question mark. \"Swimming?\" becomes \"Can she swim this week?\"",
+          "Make it specific. A question with a name, a date or a number in it gets a shorter answer than a vague one.",
+          "Put the one you can't leave without at the top. Number the rest.",
+          "Cut to what fits. If you have nine and the visit is short, keep the top four or five and say so at the start.",
+          "Leave two blank lines under each question for the answer.",
+          "Bring the page, a pen, and the medicine list if the visit involves anything Amina takes.",
+        ],
+        heading: "How to write the list",
+        ordered: true,
+      },
+      {
+        kind: "list",
+        items: [
+          "\"What is my main problem?\"",
+          "\"What do I need to do?\"",
+          "\"Why is it important for me to do this?\"",
+        ],
+        heading: "If you don't know what to ask",
+        intro: "The Institute for Healthcare Improvement runs a program called Ask Me 3, built around three questions for any health visit:",
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "We'd copy those three onto the bottom of every question page. They cost three lines, and they still work on a day when your own questions fail you. They're about understanding an answer, so they sit beside your own specific questions rather than replacing them.",
+        ],
+      },
+      {
+        kind: "scripts",
+        items: [
+          {
+            situation: "The doctor is short on time",
+            line: "I've got three questions. The first is the one I most need answered.",
+          },
+          {
+            situation: "You didn't follow an answer",
+            line: "Can I say that back to you, to make sure I've got it right?",
+          },
+          {
+            situation: "Something needs spelling",
+            line: "Could you write the name of that down for me?",
+          },
+          {
+            situation: "You're about to leave",
+            line: "Before we finish, I've got two questions left on my page.",
+          },
+        ],
+        heading: "In the room, in your own words",
+        intro: "You don't need to be polished. Reading from a page is a normal way to run a visit. These lines are here for the moments when you feel rushed.",
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Write the answer under the question, in the words you heard, not the words you'd have chosen. \"Call back if it's still there Friday\" is a note you can act on. \"She said it's fine\" isn't. Before you leave, look at the page: any line still blank is what you ask now, at the desk or the door.",
+        ],
+        heading: "After each answer",
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "A long list can crowd out the one question you came for, which is why the order matters. Some visits are booked for one problem only, so if you have five, mention it when you book and ask what fits. If you hear an answer you can't follow, a second question is fine, and saying it back is a good way to check. And if you think of something after you leave, ask the clinic how to send a question in. This page can't tell you whether a question is urgent. If you're worried, call the clinic, and in an emergency call 911.",
+        ],
+        heading: "When the list doesn't work",
+      },
+      {
+        kind: "faq",
+        heading: "Common questions",
+        items: [
+          {
+            q: "What questions should I ask my doctor?",
+            a: "It depends on the visit, and that's for you and the doctor to decide. If you're stuck, the three Ask Me 3 questions are a place to start: what is my main problem, what do I need to do, and why is it important to do it. Then add the specific ones only you know, like what changed and when.",
+          },
+          {
+            q: "How many questions should I bring?",
+            a: "As many as you'll get through, ranked. If you have more than four or five, tell the clinic when you book and ask how long the visit is. Put the one you can't leave without at the top, so that if time runs out you've already asked it.",
+          },
+          {
+            q: "Is it okay to read my questions from a list?",
+            a: "Yes. A page is the easiest way to keep the important question from getting lost when you're nervous or the room is busy. Hold it where you can see it, and tick each line off as it's answered so you both know what's left.",
+          },
+          {
+            q: "What if I forget to ask something?",
+            a: "Ask the clinic how to send a question after the visit, such as a phone call or a message through their patient portal, if they have one. Write the question on your page anyway, so it's ready the next time or when you call.",
+          },
+          {
+            q: "Should I write down the doctor's answers?",
+            a: "Yes, briefly, under each question and in the words you heard. It turns the page into a record you can read later or hand to another caregiver. Some people take a second person to the visit partly for this.",
+          },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Tick them off in the room",
         paragraphs: [
-          "Bring the page and tick each question as it is answered. Anything not ticked when you are about to leave is what to ask before you go. It is a small habit, and it works.",
+          "Family Health Binder has a \"Questions to ask\" field on each planned visit. You type one per line, and the Visit page prints them with a tick box each, next to allergies, what the person takes now, their last five symptoms and ruled lines for notes. After the visit you can add what was said or decided. It doesn't suggest questions or answer them, and it doesn't send a reminder about the visit. It's a record you [print and carry](/shop/family-health-binder).",
         ],
+        heading: "Where the page comes from",
       },
       {
         kind: "paragraphs",
-        heading: "Write the answers down",
         paragraphs: [
-          "A short note beside each question makes the page a record. See [doctor appointment prep checklist](/guides/doctor-appointment-prep-checklist) for what else to bring.",
+          "For the rest of the day before, see the [doctor appointment prep checklist](/guides/doctor-appointment-prep-checklist). Your questions land better with dated notes behind them, so read [symptom notes for a doctor visit](/guides/symptom-notes-for-a-doctor-visit) next, and bring the [medication list](/guides/medication-list-what-to-write-down) alongside. Next step: open a note, write down every question you have right now, and put a star by the first.",
         ],
-      },
-      {
-        kind: "callout",
-        label: "The Companion for this",
-        body: "Family Health Binder has a Questions to ask field on each planned visit, one question per line, and prints them on the Visit page with tick boxes. It does not suggest questions or answer them. It is a web app, $34 once, and it is not medical advice.",
+        heading: "What to do next",
       },
     ],
   },
@@ -10831,44 +13423,130 @@ export const GUIDES: Guide[] = [
       { slug: "new-doctor-intake-what-to-bring", reason: "For a first visit with a new doctor, this shows where the medication list fits among the other papers." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "family-health",
+    sources: [
+      {
+        name: "U.S. Food and Drug Administration: Create and Keep a Medication List for Your Health",
+        url: "https://www.fda.gov/consumers/consumer-updates/create-and-keep-medication-list-your-health",
+        retrieved: "2026-09-26",
+        note: "Four things per medicine, include OTC and supplements, update often, carry a copy as a photo, app or printout.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "A medication list is one of the most useful pages a family can carry. New doctors, urgent care, schools and sitters all ask what is taken now. Having it written down is quicker and more reliable than remembering.",
-          "This guide is about how to keep the list, not about any medication. It cannot tell you what to take, how much or when. For that, ask the prescriber or pharmacist and follow what they say.",
+          "Write down every medicine the person takes, prescription or not: the name and strength, what it's for, and when and how much, copied from the label. Add vitamins and supplements. Date the list, and change it the day anything does.",
+          "This is for whoever keeps track for a household. It's a record of what the labels say, not advice about doses, and your prescriber or pharmacist is the one to ask when a label and your list disagree.",
         ],
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "You're at a desk with a form that says \"current medications\" and a pen that's running out. You know the little white one is for blood pressure, or possibly cholesterol. A list you wrote last week takes that guess away. The U.S. Food and Drug Administration says a medicine list should have four things for each medicine: its name, its strength, what you take it for, and instructions for when, how and how much.",
+        ],
+        heading: "The list, filled in",
       },
       {
         kind: "table",
-        heading: "The three columns",
-        columns: ["Column", "What goes in it"],
+        columns: ["Medicine and strength", "What it's for", "How and when", "Started"],
         rows: [
-          ["Name", "The name on the label"],
-          ["Dose", "As given to you by the prescriber or on the label"],
-          ["How often", "As given to you, in the same words"],
+          ["Metformin 500 mg", "Blood sugar", "Breakfast and dinner", "03/2022"],
+          ["Atorvastatin 20 mg", "Cholesterol", "Once, at night", "03/2022"],
+          ["Aspirin 81 mg", "Heart", "Once a day", "11/2023"],
+          ["Fish oil capsule", "Supplement", "Once a day", "01/2025"],
+        ],
+        intro: "An example for a made-up person, Grandpa Joe, not a suggestion for anyone to take anything. Above it, in bigger type: \"Allergy: penicillin (rash). Checked against the bottles 09/20/2026.\"",
+      },
+      {
+        kind: "list",
+        items: [
+          "Line up everything the person takes: prescriptions, inhalers, eye drops, creams, patches, over-the-counter pills, vitamins and herbal products. The FDA says to include the ones used only some of the time.",
+          "Copy the name and strength from the label, letter for letter. If the label says \"500 mg,\" write 500 mg.",
+          "Copy the directions the same way. Don't shorten \"with food\" to nothing.",
+          "Write what it's for in the prescriber's or pharmacist's words. If you don't know, ask them at the next visit and leave the space empty until then.",
+          "Put allergies at the top, and say what the reaction was.",
+          "Write today's date on the page, and the words \"checked against the bottles\" if you did.",
+          "When something stops, move it to a separate line marked \"stopped\" with the date, and take it off the list you hand over.",
+        ],
+        heading: "How to write it",
+        ordered: true,
+      },
+      {
+        kind: "timeline",
+        steps: [
+          {
+            when: "The day something changes",
+            what: "New prescription, new dose or a stop: update the page that day.",
+          },
+          {
+            when: "Before any visit or form",
+            what: "Look at the bottles and correct the list.",
+          },
+          {
+            when: "Every few months",
+            what: "Read it against the bottles, even if nothing changed.",
+          },
+          {
+            when: "When a list is replaced",
+            what: "Recycle the old copy so two versions don't exist.",
+          },
+        ],
+        heading: "When to update it",
+        intro: "A list goes out of date without telling you, and an old list at a desk is worse than no list because it looks right. The FDA's advice is to review and update it often, including when a medicine is stopped or a dose changes. The schedule below is ours.",
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Copy, don't paraphrase. A list that repeats the label is easier to check than one you've rewritten from memory, and a child's liquid medicine is where this counts most: copy the amount and the unit exactly as printed, and don't convert it. If a label and your list ever disagree, the label and your prescriber win. Call the pharmacy and ask.",
+          "Don't keep two lists. One in the drawer and one on the phone will drift within a month. Pick one home, and take a photo or printout of it for the bag. The FDA suggests carrying a copy, whether a photo on your phone, an app or a printout, alongside your insurance card.",
+        ],
+        heading: "What goes wrong",
+      },
+      {
+        kind: "faq",
+        heading: "Common questions",
+        items: [
+          {
+            q: "What should be on a medication list?",
+            a: "For each medicine: its name, strength, what it's for, and when, how and how much you take. The FDA also suggests adding allergies and emergency contacts. Include over-the-counter medicines, vitamins and supplements, not just prescriptions.",
+          },
+          {
+            q: "Do I include vitamins and over-the-counter medicines?",
+            a: "Yes. The FDA says to list them, including any you use only some of the time. A doctor or pharmacist can only look at the whole picture if the whole picture is on the page.",
+          },
+          {
+            q: "How often should I update my medication list?",
+            a: "The day anything changes, and again before any visit. The FDA says to review and update it often. Our own habit would be to also read it against the bottles every few months, so a quiet change doesn't slip by.",
+          },
+          {
+            q: "Should I keep the list on paper or on my phone?",
+            a: "Either works. The FDA suggests a photo on your phone, an app or a printout carried with your insurance card. The point is one current copy you can reach quickly. Whichever you pick, put the date on it.",
+          },
+          {
+            q: "Who should I show my medication list to?",
+            a: "Doctors, pharmacists and anyone else who treats you, at every visit, according to the FDA. A sitter or grandparent minding a child who takes something regularly needs it too, in a shorter form.",
+          },
+          {
+            q: "What if the label and my list don't match?",
+            a: "Trust the label and ask your pharmacist or prescriber which is right. Then fix the list. This guide can't tell you which dose is correct; it only helps you keep what the labels say.",
+          },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Write what you are given",
         paragraphs: [
-          "Copy the dose and the frequency exactly as they appear on the label or in what the prescriber told you. Do not convert or round them. A list that copies the source is safer than one that paraphrases it.",
+          "Family Health Binder gives each person a medication list with name, dose, how often and a start date. \"Stopped taking it\" moves a medicine into a Stopped fold and takes it off every printed page. \"This list is right today\" stamps the date you last checked it against the bottles. The list prints on the forms sheet, sitter sheet, emergency card, visit page and intake summary. There's no \"what it's for\" field, so add that to the name if you want it. It doesn't remind you, or check doses or interactions. See the [Family Health Binder](/shop/family-health-binder).",
         ],
+        heading: "What the Companion does with the list",
       },
       {
         kind: "paragraphs",
-        heading: "Note when it was last right",
         paragraphs: [
-          "A list goes out of date quietly. Note the date you last checked that it was right. It tells whoever reads it how much to trust it. When something is stopped, mark it as stopped and leave it off the page you hand over.",
-          "For what to bring to a visit, see [doctor appointment prep checklist](/guides/doctor-appointment-prep-checklist).",
+          "Once the list is right, read [what to bring to a new doctor appointment](/guides/new-doctor-intake-what-to-bring) or the [doctor appointment prep checklist](/guides/doctor-appointment-prep-checklist). The same facts go on an [emergency contact sheet](/guides/emergency-contact-information-sheet). For dated notes about how someone has been feeling, see [symptom notes for a doctor visit](/guides/symptom-notes-for-a-doctor-visit). Next step: gather the bottles onto one table tonight and write the first line.",
         ],
-      },
-      {
-        kind: "callout",
-        label: "The Companion for this",
-        body: "In Family Health Binder, each medication has a name, a dose and how often, all typed by you and never checked. A button says the list is right today and keeps the date. A stopped medication stays in the app and leaves every printed page. It does not check doses or interactions, and it sends no reminders. It is a web app, $34 once, and it is not medical advice.",
+        heading: "What to do next",
       },
     ],
   },
@@ -10885,44 +13563,127 @@ export const GUIDES: Guide[] = [
       { slug: "medication-list-what-to-write-down", reason: "Doctors often ask what has been taken as well, so this shows how to keep the medicine list current." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "family-health",
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Doctors tend to ask the same questions about a symptom, and the answers are hard to give from memory. A few notes written as it happens make the visit more useful.",
-          "This guide is about taking notes, not about what any symptom means. It cannot tell you whether something is serious. If you are worried, contact your doctor, and in an emergency, call 911.",
+          "Write one line each time: what it is, the date it started, how long it lasted, how bad it was in your own words, and what helped. Do it the day it happens, not the night before the visit. Bring the page.",
+          "This is for anyone keeping notes on themselves or a child before an appointment. It can't tell you what a symptom means or whether to wait. Your clinic can, and in an emergency call 911.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "The doctor asks, \"When did this start?\" and you both look at the ceiling. It was after the weekend. Or before. A note with a date on it ends that conversation in one second. Here's a log for Amina, 8, with three lines in it.",
+        ],
+        heading: "What a few days of notes look like",
+      },
+      {
+        kind: "table",
+        columns: ["Date", "What", "How long", "How bad", "What helped"],
+        rows: [
+          ["09/14", "Fever, warm to touch", "1 day", "Moderate", "Rest and fluids"],
+          ["09/15", "Cough at night", "All night", "Mild", "Sat up in bed"],
+          ["09/18", "Cough at night", "2 hours", "Mild", "Nothing yet"],
+        ],
+        intro: "An example, not a real record. Nothing in it is a suggestion for what to do about a symptom.",
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Notice what the lines don't say. There's no guess at a cause and no \"probably a cold.\" Only what you saw, when, for how long, and how it went. The doctor decides what it means.",
         ],
       },
       {
         kind: "list",
-        heading: "Four short notes",
-        checkable: true,
         items: [
-          "When it started: the date, as best you know it.",
+          "What it is, in a few plain words: \"Cough at night,\" \"stomach pain after lunch.\"",
+          "The date it started, as close as you know. Write the day, not \"last week.\"",
           "How long it lasted: hours, days or weeks.",
-          "How bad it was: mild, moderate or severe, in your own view.",
-          "What helped, in your own words.",
+          "How bad it was: mild, moderate or severe, your own view.",
+          "What helped, in your own words. If nothing did, write that.",
+          "Anything else that stood out: time of day, what was going on, whether it came with something else.",
+        ],
+        heading: "What to write each time",
+        ordered: true,
+      },
+      {
+        kind: "list",
+        items: [
+          "If you take a temperature, write the number, the time, and how you took it.",
+          "If it comes and goes, write each time as its own line rather than one long note.",
+          "If it follows a medicine, note the medicine and when it was taken, copied from the label.",
+        ],
+        heading: "Extra detail for the fuller picture",
+      },
+      {
+        kind: "scripts",
+        items: [
+          {
+            situation: "Opening the visit",
+            line: "It started on the 14th. It comes and goes, and it's worst at night.",
+          },
+          {
+            situation: "When asked how bad",
+            line: "I'd say mild most nights, moderate the first day. I've got it written down.",
+          },
+          {
+            situation: "When asked what helped",
+            line: "Sitting up seemed to help. Nothing else made a difference.",
+          },
+        ],
+        heading: "Reading it out",
+        intro: "A page doesn't replace the conversation. It gives you the first sentence.",
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "A log fails when it becomes a chore. Keep it to a line, and skip a day if nothing happened. It also fails when it turns into a diary of worry, with each line a little longer than the last. If you notice that, stop writing and call the clinic. A page can't decide anything for you, and it can't tell you when to wait. Say the ordinary limit out loud: if you don't know whether something needs attention, your clinic can tell you, and in an emergency, call 911.",
+          "A child who can't describe it yet needs you to write what you can see, and the words they use, in quotation marks. Keep one page per person, so two children's coughs don't end up on the same page.",
+        ],
+        heading: "When it doesn't work",
+      },
+      {
+        kind: "faq",
+        heading: "Common questions",
+        items: [
+          {
+            q: "How do I describe my symptoms to a doctor?",
+            a: "Say what it is, when it started, how long it lasts, how bad it is and what helps or doesn't. Reading from a written page is fine. The date is the part memory loses first, so write it down the day it happens.",
+          },
+          {
+            q: "What should I write in a symptom log?",
+            a: "One line each time: the date, what it is, how long it lasted, how bad it was, and what helped. Add the time of day or what you were doing if it stood out. Write what you saw, not what you think it is.",
+          },
+          {
+            q: "How long should I keep a symptom log?",
+            a: "From the first day until the visit. There's no set length. What matters to a doctor is the dates and how things went, so a few dated lines beat a long page written from memory the night before.",
+          },
+          {
+            q: "Should I write down what I think is wrong?",
+            a: "No, or keep it apart from the notes. \"Started Tuesday, lasted three days, mild\" gives the doctor something to work with. A guess like \"probably a cold\" can point the conversation the wrong way. Leave the meaning to them.",
+          },
+          {
+            q: "Can I keep symptom notes on my phone?",
+            a: "Yes. What counts is that each note has a date and can be shown at the visit. A note on your phone is easy to add to in the moment. A printed page is easier to hand over. Many people keep both.",
+          },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Write it when it happens",
         paragraphs: [
-          "The date is the part people lose first. A note written on the day is more accurate than a memory a week later. It only takes a line.",
+          "Family Health Binder has a symptom form with four fields: what it is, when it started, how long (hours, days or weeks) and how bad (mild, moderate, severe), plus what helped. Records show as a dated list, newest first. There's no chart, no trend and no advice, and it can't tell you what anything means. Put extra detail, like time of day, into the \"What is it?\" line. The last five print on the visit page and the last eight on the intake summary. See the [Family Health Binder](/shop/family-health-binder).",
         ],
+        heading: "What the Companion does with your notes",
       },
       {
         kind: "paragraphs",
-        heading: "Notes, not answers",
         paragraphs: [
-          "Write what you saw, not what you think it is. \"Started Tuesday, lasted three days, mild\" helps a doctor. \"Probably a cold\" does not. Let them decide what it means. For what else to bring, see [doctor appointment prep checklist](/guides/doctor-appointment-prep-checklist).",
+          "Turn the notes into [questions to bring to the doctor](/guides/questions-to-bring-to-the-doctor), and put the [medication list](/guides/medication-list-what-to-write-down) beside them. For a first visit, see [what to bring to a new doctor appointment](/guides/new-doctor-intake-what-to-bring), and for the rest of the day before, the [doctor appointment prep checklist](/guides/doctor-appointment-prep-checklist). Next step: write today's date and one line about how it is right now.",
         ],
-      },
-      {
-        kind: "callout",
-        label: "The Companion for this",
-        body: "Family Health Binder lets you record a symptom with what it is, when it started, how long, how bad and what helped. It shows them as a dated list, newest first. It has no chart, no trend and no advice, and it does not tell you what a symptom means. Recent notes print on the visit page and the intake summary. It is a web app, $34 once, and it is not medical advice.",
+        heading: "What to do next",
       },
     ],
   },
@@ -10939,44 +13700,132 @@ export const GUIDES: Guide[] = [
       { slug: "caring-for-a-parent-and-kids-one-place", reason: "If a parent lives with you or relies on you, this shows how to keep one page each for everyone." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "family-health",
+    sources: [
+      {
+        name: "Poison Control (poison.org): Poison Help line",
+        url: "https://www.poison.org/",
+        retrieved: "2026-09-26",
+        note: "Poison Help number 1-800-222-1222, described as free, expert and confidential, and the 911 note for collapse or trouble breathing.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "An emergency information sheet is a page that tells someone who to call and what they should know. It is useful in a bag, on the fridge or in a sitter's hand. It is not medical advice, and it is not a medical ID.",
+          "An emergency sheet is one page with who to call, the person's allergies, what they take, their doctor and their insurer. Put allergies near the top, write every number with its area code, and keep the sheet where someone else could find it in a minute.",
+          "This is for US households, where the emergency number is 911. It's a page of what you typed, not medical advice, and it isn't a medical ID.",
         ],
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Someone is standing in your kitchen, a grandparent or a sitter, and something has happened. They don't know your daughter's allergy or which of your two phone numbers is the one that picks up. A page on the fridge answers both. Here's what one looks like, filled in for Amina, 8.",
+        ],
+        heading: "A filled sheet",
+      },
+      {
+        kind: "table",
+        columns: ["Field", "Example"],
+        rows: [
+          ["In an emergency", "In an emergency, call 911"],
+          ["Name and age", "Amina, 8"],
+          ["Allergies", "Allergy: peanuts (hives)"],
+          ["Takes now", "Albuterol inhaler, as the label says"],
+          ["Call first", "Call: Sam (555) 010-0142"],
+          ["Call second", "Aunt Priya (555) 010-0177"],
+          ["Doctor", "Doctor: Dr. Patel (555) 010-0100"],
+          ["Poison help", "Poison Help 1-800-222-1222"],
+          ["Home address", "12 Alder Street, so anyone can say it on the phone"],
+        ],
+        intro: "An example with made-up names and numbers.",
       },
       {
         kind: "list",
-        heading: "What to include",
-        checkable: true,
         items: [
-          "The person's name and age.",
-          "Allergies, in a place that is easy to see.",
-          "Who to call, with a phone number.",
-          "Their doctor, with a phone number.",
-          "Health insurance, if you want it on the page.",
+          "Put \"In an emergency, call 911\" at the top, so nobody has to think.",
+          "Write the person's name and age, and their date of birth if a form would want it.",
+          "Write allergies in the biggest type, with what the reaction is. \"Peanuts (hives)\" says more than \"peanuts.\"",
+          "List what they take now, copied from the labels: [the medication list](/guides/medication-list-what-to-write-down) is the source, and this is a short copy of it.",
+          "Add two people to call, and a way to tell them apart: \"Sam, cell\" and \"Aunt Priya, in a different town.\" Two numbers in the same place aren't much use in a power cut.",
+          "Add the doctor's name and number, and the pharmacy if you like.",
+          "Add the Poison Help number, 1-800-222-1222. It's free and confidential, and it's a US number.",
+          "Write your home address. Someone calling from your kitchen may not know it.",
+          "Date the sheet at the bottom, so the next person knows how old it is.",
+        ],
+        heading: "What goes on it, in order",
+        ordered: true,
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "A medical ID is a different thing from this page. It's meant to be worn or built into a phone so it can be found on the person, without anyone needing a key to your kitchen. Whether you want one is a question for your doctor. A printed sheet is only what you typed, on a day you typed it, and it can be out of date by spring.",
+        ],
+        heading: "A sheet is not a medical ID",
+      },
+      {
+        kind: "list",
+        items: [
+          "Fridge: one copy, at eye level.",
+          "Bag or glove box: a copy with the insurance line filled in.",
+          "Anyone minding the children: a copy handed over, plus a word about where the other is.",
+        ],
+        heading: "Where the copies live",
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "A fridge sheet is visible to anyone who comes into your house, so leave the insurance member ID off it and put it on the bag copy. For the sitter version, with bedtime and the green cup, see the [babysitter and grandparent info sheet](/guides/babysitter-and-grandparent-info-sheet). To choose what stays off a page you hand over, read [what to leave off a health page you hand over](/guides/what-to-leave-off-a-health-page-you-hand-over).",
+        ],
+        heading: "What to leave off the fridge copy",
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "The sheet fails in three ways. The numbers change and nobody updates it. It holds so much that the allergy gets lost. Or it's in a drawer nobody else knows about. Check the numbers when you change phones, and reread it whenever a medicine changes.",
+        ],
+        heading: "What goes wrong",
+      },
+      {
+        kind: "faq",
+        heading: "Common questions",
+        items: [
+          {
+            q: "What information goes on an emergency contact sheet?",
+            a: "Who to call, allergies, what the person takes now, their doctor, insurance, and your home address. Put \"call 911\" at the top. Keep it to one page, so the allergy line can't get lost among the rest.",
+          },
+          {
+            q: "How many emergency contacts should I list?",
+            a: "Two is a good working number, and better if they live in different places or carry different phones. Write how to tell them apart, such as \"cell\" and \"in another town.\" Say beside each name who they are to the person.",
+          },
+          {
+            q: "Is an emergency sheet the same as a medical ID?",
+            a: "No. A medical ID is worn or built into a phone so it can be found on the person. A printed sheet is a record of what you typed, and it can go out of date. Ask your doctor whether a medical ID makes sense for you.",
+          },
+          {
+            q: "Where should I keep it?",
+            a: "Where someone else could find it fast: the fridge, a bag, a glove box. Tell the sitter, grandparent or neighbor where it is. A sheet in a drawer helps only the person who filed it.",
+          },
+          {
+            q: "What is the poison control number?",
+            a: "In the US it's 1-800-222-1222. The Poison Help line describes itself as free, expert and confidential. In a life-threatening case, such as someone who has collapsed or can't breathe, call 911 instead.",
+          },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "A card is not a medical ID",
         paragraphs: [
-          "A printed card is a note of what you typed in. It reflects only what you wrote, and it can be out of date. A medical ID is a different thing, and a card does not replace it. If a medical ID matters for your situation, ask your doctor.",
+          "Family Health Binder prints an Emergency card from what you've entered: name, age, allergies, conditions, medications, who to call, their doctor and insurance. You cut it out along the dashed line, and it says what it is: it reflects only what was typed in, isn't medical advice and doesn't replace a medical ID. It's paper, wider than a wallet card, and it can't be opened from a locked phone. The sitter version, the Caregiver sheet, carries \"In an emergency, call 911.\" Emergency contact and insurance always print, so leave out what you don't want on paper. See the [Family Health Binder](/shop/family-health-binder).",
         ],
+        heading: "What the Companion prints",
       },
       {
         kind: "paragraphs",
-        heading: "Keep it where you can find it",
         paragraphs: [
-          "A sheet nobody can find helps nobody. Decide where it lives: the fridge, a bag, a glove box. Tell whoever might need it where it is. For what to put on a sheet for a sitter, see [what to put on a babysitter or grandparent info sheet](/guides/babysitter-and-grandparent-info-sheet).",
+          "If you also want to write down who would speak for you about medical care, that's a separate job, covered in [who would speak for you about medical care](/guides/emergency-contact-and-medical-decision-maker). Next step: fill the top three lines, allergies, first contact and doctor, and put the page on the fridge tonight.",
         ],
-      },
-      {
-        kind: "callout",
-        label: "The Companion for this",
-        body: "Family Health Binder prints an Emergency card: name, age, allergies, who to call, a doctor and insurance, on a small card you cut out of a US Letter page. It reflects only what was typed in, is not medical advice, and says it does not replace a medical ID. It is a printed paper card, not a wallet card, and it is not accessible from a locked phone. It is a web app, $34 once.",
+        heading: "What to do next",
       },
     ],
   },
@@ -10993,46 +13842,156 @@ export const GUIDES: Guide[] = [
       { slug: "caring-for-a-parent-and-kids-one-place", reason: "When the new patient is your parent, this covers keeping their information next to your children's." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "family-health",
+    sources: [
+      {
+        name: "Please bring ALL your medicines to your next appointment (AHRQ fact sheet)",
+        url: "https://www.ahrq.gov/sites/default/files/wysiwyg/professionals/quality-patient-safety/patient-family-engagement/pfeprimarycare/medmanage-ptfactsheet.pdf",
+        retrieved: "2026-09-26",
+        note: "Advice to bring all medicines, prescription and non-prescription, to an appointment and to carry a medicine list to a new appointment.",
+      },
+      {
+        name: "Getting Your Affairs in Order (National Institute on Aging)",
+        url: "https://www.nia.nih.gov/health/advance-care-planning/getting-your-affairs-order-checklist-documents-prepare-future",
+        retrieved: "2026-09-26",
+        note: "Medical files list every doctor and every medicine, vitamin, herbal remedy, over-the-counter drug and supplement.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "The first visit with a new doctor often begins with a clipboard. The questions are ordinary, and answering them from memory is where mistakes creep in. A one-page summary you prepared earlier is quicker and more accurate.",
-          "It supplements the paperwork the clinic gives you. It does not replace it, and it is not medical advice.",
+          "For a first visit with a new doctor, bring a photo ID, your insurance card, every medicine you take (a written list, or the bottles), your allergies, your conditions and past surgeries, family history, and a few dated lines on why you're coming. Records from your old doctor help, and the new clinic can tell you how to get them.",
+          "This is for an adult or a parent booking for a child. It can't tell you what your clinic requires, so call and ask. It isn't medical advice.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Example: one page for a first visit",
+        paragraphs: [
+          "Say you booked the appointment three weeks ago. This morning the clinic's form arrives with a box that says \"List all current medications,\" and you are standing in the kitchen trying to remember whether the allergy pill is 5 or 10 milligrams. Below is the page that would have saved you that minute, filled in for an invented eight-year-old.",
+        ],
+      },
+      {
+        kind: "table",
+        intro: "This is an example. The child and every detail are made up.",
+        columns: ["Section", "What the page says"],
+        rows: [
+          ["Name and birth date", "Amina, 04/02/2018"],
+          ["Allergies", "Peanuts (hives)"],
+          [
+            "Medicines now",
+            "Cetirizine 5 mg, once a day, as labeled. Inhaler, 2 puffs when needed, as labeled.",
+          ],
+          ["Conditions", "Asthma. Tonsils removed, 2023."],
+          ["Family history", "Asthma runs in the family."],
+          ["Recent symptoms", "Night cough since 09/14, mild. Rest and fluids helped."],
+          ["Why we're coming", "New pediatrician after a move. Yearly checkup."],
+        ],
+      },
+      {
+        kind: "paragraphs",
+        paragraphs: [
+          "Notice what is not on it: the doctor's own name, the insurance number, the vaccine dates. Those belong on a separate sheet, because a new clinic asks for them at a different moment, usually at the front desk rather than in the exam room.",
         ],
       },
       {
         kind: "list",
-        heading: "What to bring",
-        checkable: true,
+        heading: "Gather it in this order",
+        ordered: true,
+        intro: "Do this the week before, not the night before.",
         items: [
-          "Allergies, and what happens.",
-          "Medications, with the dose and how often as given to you.",
-          "Conditions, in your own words.",
-          "Family history, as far as you know it.",
-          "Recent symptoms, with dates.",
-          "Your insurance information and a photo ID, if the clinic asks.",
+          "Call the clinic and ask two things: what to bring, and whether new-patient forms come ahead of time. Some clinics send them by email or through a portal, and filling them in at home beats a clipboard in the waiting room.",
+          "Write the medicine list from the labels, not from memory. Name, dose and how often, exactly as printed. Include the ones you don't think of as medicine: over-the-counter pills, vitamins, supplements and herbal products. The [medication list guide](/guides/medication-list-what-to-write-down) shows the layout.",
+          "Put the bottles in a bag as well. The Agency for Healthcare Research and Quality's advice is to bring all your medicines, prescription and non-prescription, to the appointment. We'd bring the list and the bottles, and if they disagree, show the bottle.",
+          "Write allergies with what happens, in your words: \"peanuts, hives\" says more than \"nut allergy.\"",
+          "List conditions and past surgeries or hospital stays with the year. Roughly right is fine. Family history goes below it, as far as you know it.",
+          "Add the reason for the visit and any symptom with the date it started. If it's a symptom visit, [symptom notes for a doctor visit](/guides/symptom-notes-for-a-doctor-visit) has a four-line format.",
+          "Ask your old office how to transfer records and vaccine history, and start that now. See the next section.",
+          "Pack photo ID and your insurance card, and read the clinic's paperwork when it arrives instead of relying on this page.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Several doctors, one page",
+        heading: "Records from the old doctor",
         paragraphs: [
-          "When several doctors are involved, one page listing who they are and what each of them knows saves repeating it. Note the name, a phone number and a line on why you see them.",
+          "A written summary can't hold a lab result, a scan or a discharge paper. If your new doctor will want those, they come from the office or hospital that made them. Ask that office how it sends records to a new clinic. Many want a signed release, and some take days or longer, which is why the request belongs in week one.",
+          "For a child, vaccine history is the record clinics and schools ask for most. If you don't have it, your old clinic is the first place to ask. Write on your page where the record came from and the date.",
+        ],
+      },
+      {
+        kind: "timeline",
+        heading: "A schedule that works backwards from the visit",
+        steps: [
+          {
+            when: "A week before",
+            what: "Call the clinic. Ask what to bring and whether forms come first.",
+          },
+          {
+            when: "Six days before",
+            what: "Ask the old office how to send records. Start the release if one is needed.",
+          },
+          {
+            when: "Three days before",
+            what: "Write the medicine list from the labels. Add allergies and conditions.",
+          },
+          {
+            when: "The night before",
+            what: "Print the page. Put it, the bottles, ID and insurance card in one bag.",
+          },
+          {
+            when: "At the desk",
+            what: "Hand over the page. Ask them to check it against their form.",
+          },
+          {
+            when: "After the visit",
+            what: "Fix anything the doctor changed, and date the page.",
+          },
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What can go wrong",
+        items: [
+          "The page and the clinic's form disagree. The clinic's form is the record they keep, so fix your page to match what you actually take, and tell the front desk.",
+          "Several doctors are involved. A summary of your health doesn't list them, so keep a separate line with each doctor's name, phone number and why you see them.",
+          "You're going for a parent. Bring the same things, plus whatever permission their clinic wants before it talks to you. [Caring for a parent and kids in one place](/guides/caring-for-a-parent-and-kids-one-place) covers that part.",
+          "The page is old. A list that was right in March is a guess in September. Write \"checked\" and the date at the top each time.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "Do I bring my pill bottles to a new doctor?",
+            a: "It's worth doing. The Agency for Healthcare Research and Quality advises bringing all your medicines, including non-prescription ones like aspirin or antacids. A written list saves time, and the bottles settle any doubt about a dose or a name. If you can't bring bottles, photograph the labels.",
+          },
+          {
+            q: "What is a new patient packet?",
+            a: "It's the set of forms a clinic gives a first-time patient: contact details, insurance, medical history, medicines and consent forms. Some clinics send it ahead by email or portal. Ask when you book, and fill in what you can at home from your own page.",
+          },
+          {
+            q: "How do I get my records sent to a new doctor?",
+            a: "Ask the office that holds them how it transfers records. Many require a signed release form naming the new clinic, and some take days. Ask for immunization history at the same time. Start before the appointment, not after it.",
+          },
+          {
+            q: "Should I bring a list of my past surgeries?",
+            a: "Yes, with the year and, if you know it, the hospital. Exact dates are less important than getting the procedure and rough timing right. If a surgery was long ago and you're unsure, say so on the page instead of guessing.",
+          },
+          {
+            q: "What should I write for family history?",
+            a: "Write what you know, in plain words: which relative, and what condition, such as \"my mother, asthma.\" If you don't know a side of the family, write \"unknown.\" A short honest note is more use to a clinic than a long guess.",
+          },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Start with the facts",
+        heading: "Where the Family Health Binder fits",
         paragraphs: [
-          "Handing over a page can change how a first visit begins. Many clinics start from what you have written, and you can spend the time on questions. See [doctor appointment prep checklist](/guides/doctor-appointment-prep-checklist).",
+          "[Family Health Binder](/shop/family-health-binder) keeps the answers this page needs for each person, and its Intake summary prints them for a new doctor: allergies, current medicines, conditions, family history and the latest symptoms, with the person's name and birth date at the top. Doctors, dentists, pharmacies and insurance are kept too, but they print on its separate Forms sheet, not on the Intake summary. It only holds what you type in, it doesn't hold records or scans, and it doesn't fill in the clinic's own form. You can mark a record private so it stays off the printed page, and the page says how many it left off.",
         ],
-      },
-      {
-        kind: "callout",
-        label: "The Companion for this",
-        body: "Family Health Binder prints an Intake summary for a new doctor: allergies, medications, conditions, family history and recent symptoms on one page. Doctors, specialists, dentists and pharmacies are kept too, but they print on the Forms sheet, not on this summary. It supplements clinic paperwork and does not replace it. It is a web app, $34 once, and it is not medical advice.",
       },
     ],
   },
@@ -11049,46 +14008,154 @@ export const GUIDES: Guide[] = [
       { slug: "what-goes-in-a-family-health-binder", reason: "To keep the full set of private details in one place, start with the family medical binder." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "family-health",
+    sources: [
+      {
+        name: "Training for Babysitters and Caregivers (Kids With Food Allergies)",
+        url: "https://kidswithfoodallergies.org/living-with-food-allergies/planning-for-school/training-for-babysitters-and-caregivers/",
+        retrieved: "2026-09-26",
+        note: "Parents should give a sitter a written emergency plan, meet ahead of time, and practice with an auto-injector trainer.",
+      },
+      {
+        name: "Poison Control (America's Poison Centers)",
+        url: "https://www.poison.org/",
+        retrieved: "2026-09-26",
+        note: "Poison Help line 1-800-222-1222 is free and confidential; call 911 if the person collapses, has a seizure or trouble breathing.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Not everyone who needs some of your family's health information needs all of it. A sitter needs one set of facts, a camp another, a new doctor a third. Handing over everything is easy and rarely a good idea.",
-          "This guide is about choosing what goes on a page you print. It is not legal advice, and what a school, camp or clinic asks for is theirs to say.",
-        ],
-      },
-      {
-        kind: "table",
-        heading: "Who needs what",
-        columns: ["Who", "What they usually need"],
-        rows: [
-          ["A sitter or grandparent", "Allergies, what is taken now, who to call, routines"],
-          ["A school or camp", "What the form asks: who to call, insurance, allergies, medications"],
-          ["A new doctor", "Allergies, medications, conditions, family history, recent symptoms"],
-        ],
-      },
-      {
-        kind: "list",
-        heading: "Questions to ask before you print",
-        checkable: true,
-        items: [
-          "Does this person need this fact to do what I am asking of them?",
-          "Would I be comfortable if this page were left on a counter?",
-          "Is it current, or has something changed since I last checked?",
+          "Give a sitter what they would need to act on in the next four hours: allergies and what a reaction looks like, what is taken and when, who to call, and the routines. Give a school or camp what its form asks for, no more. Keep the rest on your own page.",
+          "This is for a parent deciding what to print. Once a page is on paper you can't control who reads it, and what a school, camp or clinic is required to ask for is theirs to say. It isn't legal or medical advice.",
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Keep a page for yourself",
+        heading: "Ten minutes before the sitter rings the bell",
         paragraphs: [
-          "Keep the full record in one place for yourself, and make each page a selection from it. That way the fullest version is never the one that travels. See [what goes in a family health binder](/guides/what-goes-in-a-family-health-binder).",
+          "It's 6:20 and the sitter arrives at 6:30. You have the full history open: every allergy, every past symptom, the note about last winter, the family history, the insurance member ID. The fastest thing to do is print all of it. The better thing is to pick.",
         ],
       },
       {
-        kind: "callout",
-        label: "The Companion for this",
-        body: "In Family Health Binder, any allergy, medication, symptom, vaccine or visit can be marked Keep this private. It stays in the app and is left off every printed page, and each printed page says how many records it left off. That is a print filter, not a lock: you can still see the record in the app. Emergency contact, insurance, providers and caregiver notes have no private setting. It is a web app, $34 once, and it is not medical advice.",
+        kind: "table",
+        heading: "Example: one child, three pages",
+        intro: "An invented child, Amina, and what each reader gets. The right column stays on your own page.",
+        columns: ["Reader", "Goes on their page", "Stays on yours"],
+        rows: [
+          [
+            "Sitter",
+            "Peanut allergy and hives, what is taken tonight, your cell, bedtime is 8, the green cup",
+            "Family history, insurance ID, old symptoms, conditions the sitter can't act on",
+          ],
+          [
+            "Camp form",
+            "What the form asks: birth date, who to call, allergy, medicines, doctor",
+            "Anything the form doesn't ask, including symptom notes",
+          ],
+          [
+            "New doctor",
+            "Allergies, medicines, conditions, family history, recent symptoms",
+            "Home routines, the sitter's bedtime notes",
+          ],
+        ],
+      },
+      {
+        kind: "list",
+        heading: "Three questions before you print",
+        ordered: true,
+        items: [
+          "Does this person need this fact to do what I'm asking of them? A sitter who will give a bedtime snack needs the allergy. A sitter probably doesn't need the family history.",
+          "Would I be fine if this page were left on a counter, photographed, or found by another parent? If not, take the line off.",
+          "Is it current? A wrong medicine on a sitter's page is worse than a missing one. Check the date on your list before you print.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What a sitter sheet needs, and what we'd skip",
+        intro: "A page for a sitter, grandparent or neighbor. We'd skip insurance numbers here, because the first thing a sitter needs is your phone, not a member ID.",
+        checkable: true,
+        items: [
+          "Your child's name, and the allergies with what happens: \"peanuts, hives.\"",
+          "What is taken now, with dose and when, as labeled.",
+          "Where the inhaler, auto-injector or other supplies are kept, if there are any.",
+          "Two people to call, with numbers, and the address of the house.",
+          "The Poison Help number, 1-800-222-1222, which is free in the United States.",
+          "In an emergency, call 911. Say it in writing.",
+          "Routines and comforts: bedtime, the cup, the fear of dogs.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "A page is not a handover",
+        paragraphs: [
+          "A parent's own advice isn't the same as a plan for a child's allergy. If your child has a food allergy, Kids With Food Allergies suggests going through a written emergency plan with the sitter and showing them how to use any auto-injector trainer, not just leaving a page. A sheet can hold the facts. It can't teach someone to act on them, and the person who prescribed the medicine or wrote the plan is the one to ask about that.",
+        ],
+      },
+      {
+        kind: "scripts",
+        heading: "When a form asks for more than seems needed",
+        intro: "You can ask before you answer.",
+        items: [
+          {
+            situation: "Field you don't understand",
+            line: "Is this field required, and who sees the form?",
+          },
+          {
+            situation: "Broad history request",
+            line: "Can I list only what affects the program, or do you need the full history?",
+          },
+          {
+            situation: "Sitter asks about it",
+            line: "Here's what to do if it comes up tonight. The rest isn't needed.",
+          },
+          {
+            situation: "Copies of the form",
+            line: "Where is this kept, and can I take my copy back at the end?",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "What happens once it is printed",
+        paragraphs: [
+          "Paper is easy to copy and hard to recall. A form handed to a camp may go to a nurse, a director and a counselor. A sheet left at the house may be seen by anyone who comes in. That is the reason to hand over a selection, and to keep the full record in one place of your own. The full version should never be the one that travels.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "How much medical information should I give a babysitter?",
+            a: "Enough to act on for the hours they are with your child: allergies and what a reaction looks like, medicines taken and when, who to call, and where any supplies are. Skip history they can't act on. Walk through the important parts in person, since a page doesn't replace a conversation.",
+          },
+          {
+            q: "What health information does a school need?",
+            a: "That is the school's and your state's decision, and it varies. Start from the form the school gives you. Common items are who to call, allergies and medicines taken at school. If a field seems unrelated, ask why it is needed before you fill it in.",
+          },
+          {
+            q: "Should I list every medicine on a sitter sheet?",
+            a: "List what could come up while the sitter is there: what is taken tonight, and anything the sitter might need to give or watch for. A medicine taken only at home, in the morning, may not need to be on it. When in doubt, write it in the way it appears on the label.",
+          },
+          {
+            q: "Is it safe to put insurance information on a babysitter sheet?",
+            a: "We'd leave it off. A sitter's first call is you, then the second contact. Insurance numbers are easy to copy from a page left on a counter. If a sitter has to take a child to urgent care, you can give the details by phone or leave the card.",
+          },
+          {
+            q: "How do I keep a private record but still share what a form needs?",
+            a: "Keep your full record in one place and treat every printed page as a selection from it. Choose per reader, using the three questions above. If your tool has a print filter, use it, but remember that once a page is printed, the filter can't take it back.",
+          },
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Where the Family Health Binder fits",
+        paragraphs: [
+          "In [Family Health Binder](/shop/family-health-binder), each allergy, medicine, symptom, vaccine or visit can be marked Keep this private. That record stays in the app and is left off every printed page, and each printed page says how many records it left off, so a page never looks complete when it isn't. It is a print filter, not a lock: you still see the record in the app. The emergency contact, insurance, doctors and caregiver notes have no private setting and print wherever they are used. Nothing is shared with the sitter, school or camp except the PDF you print and hand over.",
+        ],
       },
     ],
   },
@@ -11105,44 +14172,148 @@ export const GUIDES: Guide[] = [
       { slug: "what-to-leave-off-a-health-page-you-hand-over", reason: "When a sibling or helper needs some but not all of the information, this helps you choose what to share." },
     ],
     publishedAt: "2026-09-26",
+    updatedAt: "2026-09-26",
     areaSlug: "family-health",
+    sources: [
+      {
+        name: "Getting Your Affairs in Order checklist (National Institute on Aging)",
+        url: "https://www.nia.nih.gov/health/advance-care-planning/getting-your-affairs-order-checklist-documents-prepare-future",
+        retrieved: "2026-09-26",
+        note: "Medical files list every doctor and every medicine, vitamin, herbal remedy, over-the-counter drug and supplement with dose and schedule.",
+      },
+      {
+        name: "Getting Started With Caregiving (National Institute on Aging)",
+        url: "https://www.nia.nih.gov/health/caregiving/getting-started-caregiving",
+        retrieved: "2026-09-26",
+        note: "A caregiving notebook of medical care and contacts, paper or electronic, kept in a central place.",
+      },
+      {
+        name: "Taking Someone to a Doctor's Appointment: Tips for Caregivers (National Institute on Aging)",
+        url: "https://www.nia.nih.gov/health/medical-care-and-appointments/taking-someone-doctors-appointment-tips-caregivers",
+        retrieved: "2026-09-26",
+        note: "Giving permission in advance for a doctor to talk with a caregiver.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Looking after a parent and children at the same time means keeping track of two sets of appointments, two sets of medications and two sets of forms. The information ends up in different places, and you are the one who remembers where.",
-          "This guide is about organizing, not about anyone's care. It is not medical advice.",
+          "To keep a parent's and your children's health information in one place, give each person their own page with the same headings: allergies, medicines, doctors, insurance and who to call. Keep the pages together, note the date each was last checked, and print one person at a time.",
+          "This is for an adult looking after both generations in the United States. It covers paperwork, not care, and it can't tell you what a clinic will let you do on a parent's behalf. It isn't medical or legal advice.",
+        ],
+      },
+      {
+        kind: "paragraphs",
+        heading: "Two phone calls in one morning",
+        paragraphs: [
+          "Say it's a Tuesday. At 8:15 the pediatric office wants your daughter's insurance group number for a school form. At 8:40 your mother's cardiologist calls back and asks which blood thinner she is on now. You know both answers exist somewhere. They are on two different paper stacks, and a third is in your head.",
+        ],
+      },
+      {
+        kind: "table",
+        heading: "Example: same headings, two people",
+        intro: "An invented child and an invented parent. Every heading is identical, so you always know where to look.",
+        columns: ["Heading", "Amina, 8", "Mom, 74"],
+        rows: [
+          ["Allergies", "Peanuts, hives", "Penicillin, rash"],
+          [
+            "Medicines",
+            "Cetirizine 5 mg, once a day, as labeled",
+            "Six on the list, checked 09/20",
+          ],
+          ["Doctors", "Pediatrician, dentist", "Cardiologist, primary doctor, pharmacy"],
+          ["Insurance", "Through your plan", "Medicare card, plus a supplement"],
+          ["Who to call", "You, then Dad", "You, then your brother"],
+          ["How often it changes", "A few times a year", "Every appointment"],
         ],
       },
       {
         kind: "list",
-        heading: "A simple rule",
-        checkable: true,
+        heading: "Set it up in an evening",
+        ordered: true,
         items: [
-          "One page per person, with their name at the top.",
-          "The same headings on every page: allergies, medications, doctors, insurance, who to call.",
-          "One place to keep them all.",
-          "Print one person at a time, never several on one page.",
+          "Write each person's name at the top of a separate page. Don't put two people on one page. A form for one should never carry the other's allergy.",
+          "Use the same headings on every page: allergies, medicines, doctors, insurance, who to call. The [family medical binder guide](/guides/what-goes-in-a-family-health-binder) lists what goes under each.",
+          "For your parent, copy the medicine list from the labels, including over-the-counter pills, vitamins and supplements. The National Institute on Aging's advice for caregivers is to list every medicine, vitamin, herbal remedy and supplement, with dose and schedule.",
+          "Add every doctor your parent sees, with phone number and why. Their list is longer than a child's. Write the pharmacy, too.",
+          "Put the insurance details for each person on their own page, copied from the card.",
+          "Write a checked date beside each medicine list. A parent's list changes at every appointment, and a date tells you how far to trust it.",
+          "Keep all the pages in one place you can reach fast, and tell one other person where that is.",
+        ],
+      },
+      {
+        kind: "scripts",
+        heading: "Asking your parent",
+        intro: "Some parents hear \"can I keep your information\" as \"I'm taking over.\" Say what it's for.",
+        items: [
+          {
+            situation: "Starting the conversation",
+            line: "When you see the cardiologist, I'd like the medicine list right in my hand, so you don't have to remember it.",
+          },
+          {
+            situation: "Worried about privacy",
+            line: "It's only what you tell me. You can tell me to take anything off.",
+          },
+          {
+            situation: "About the clinic",
+            line: "Would you sign the form that lets their office talk to me, or would you rather I ask them what it needs?",
+          },
+          {
+            situation: "Handing it back",
+            line: "Here's what I have. Is anything wrong or out of date?",
+          },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Adults and children are the same kind of page",
+        heading: "Permission, and the legal papers",
         paragraphs: [
-          "The headings are the same for a child and a parent. Keeping them the same means you always know where to look. It also means a form for either one is quick to fill in.",
+          "A clinic may not discuss your parent's care with you unless your parent has given permission, and each clinic has its own form for that. Ask the office what it uses, and have your parent sign it while they can. The National Institute on Aging advises giving that permission in advance so a doctor can talk with a caregiver when needed.",
+          "Advance directives, powers of attorney and who speaks for your parent about medical care are legal documents. A health page can note who the person is and where the papers are kept, but it doesn't replace them. [Who speaks for you about medical care](/guides/emergency-contact-and-medical-decision-maker) explains the roles, and [talking to your parents about their affairs](/guides/talking-to-your-parents-about-their-affairs) covers starting the conversation.",
+        ],
+      },
+      {
+        kind: "list",
+        heading: "What can go wrong",
+        items: [
+          "The list drifts. A parent's medicines change more than a child's. If the checked date is old, treat the list as a draft and check the bottles.",
+          "Your siblings can't see it. The pages live under your account, and your parent has no access to them. Print a page and hand it over when a brother or a neighbor needs one, and say the date on it.",
+          "You print the wrong person. Two people on one page is how the wrong allergy lands on the wrong form. Print one person at a time and read the name at the top.",
+          "Your parent doesn't want it written down. Then keep only what they've agreed to, and the phone numbers. A partial page with the date is still more useful than none.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "What should be in a caregiver binder for an elderly parent?",
+            a: "Start with a medicine list (including over-the-counter pills and supplements), every doctor with a phone number, allergies, insurance details, emergency contacts and a note on where legal papers are kept. The National Institute on Aging also suggests a notebook of medical care, contacts and other details, on paper or electronic, kept in a central place.",
+          },
+          {
+            q: "Do I need my parent's permission to talk to their doctor?",
+            a: "Often, yes, in the form of a signed authorization the clinic keeps on file. Each clinic has its own form. Ask the front desk what it needs, and have your parent sign it ahead of time. If your parent is unable to sign, ask the clinic what it accepts.",
+          },
+          {
+            q: "How do I keep my parent's and my kids' medical information separate?",
+            a: "One page per person, with the person's name at the top, and printed one at a time. Use the same headings on each page so a form for either is quick to fill in. Don't combine pages just to save paper.",
+          },
+          {
+            q: "Can my siblings see the same binder?",
+            a: "That depends on where you keep it. With a paper binder, whoever holds it can read it. In Family Health Binder, the pages sit under one account and can't be shared, so you print a page for a sibling. Agree on who updates it, so two copies don't disagree.",
+          },
+          {
+            q: "Where do I keep power of attorney and advance directive papers?",
+            a: "Keep the originals with your other important papers, and tell your family where. Write the location on your parent's page instead of copying the document. If you're not sure which roles your parent has named, the guide linked above explains them.",
+          },
         ],
       },
       {
         kind: "paragraphs",
-        heading: "Note when you last checked",
+        heading: "Where the Family Health Binder fits",
         paragraphs: [
-          "A parent's medication list may change more often than a child's. Note when you last checked each one. See [medication list: what to write down](/guides/medication-list-what-to-write-down), and for what to hand to whom, see [what to leave off a health page you hand over](/guides/what-to-leave-off-a-health-page-you-hand-over).",
+          "In [Family Health Binder](/shop/family-health-binder), every person you look after gets their own card under your account: a child, a parent, a partner or you. You choose \"Parent\" or \"Child\" under Who are they to you, and each card has the same sections: allergies, conditions, medicines, vaccines, doctors, insurance and caregiver notes. You can print a Forms sheet, Caregiver sheet, Emergency card, Visit page and Intake summary for one person at a time, and each medicine list can be stamped with the date it was last checked. It has no separate accounts for children, no way to share the binder with a sibling, no upload of legal papers, and it sends no reminders. It only shows what you type in.",
         ],
-      },
-      {
-        kind: "callout",
-        label: "The Companion for this",
-        body: "Family Health Binder gives every person, child, parent, partner or you, their own card under your account, with the same sections for each. You can print a forms sheet, caregiver sheet, emergency card, visit page and intake summary for one person at a time. It has no separate accounts for children, and no way to share a binder with another person. It is a web app, $34 once, and it is not medical advice.",
       },
     ],
   },

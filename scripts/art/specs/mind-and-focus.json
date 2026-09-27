@@ -29,27 +29,39 @@
  {
   "slug": "how-to-restart-a-project-you-gave-up-on",
   "area": "mind-and-focus",
-  "line1": "Coming back costs more",
-  "line2": "than starting did",
+  "line1": "Half-finished thing?",
+  "line2": "Restart from one line",
   "pieces": [
    {
-    "type": "checklist",
-    "eyebrow": "Leave behind when you stop",
-    "title": "Three lines",
-    "items": [
-     "Where you got to",
-     "Next physical action, as a verb",
-     "Anything not written anywhere else"
-    ]
-   },
-   {
-    "type": "note",
-    "eyebrow": "When you return",
-    "text": "Go straight to the next action. Do not re-read everything first."
+    "type": "table",
+    "eyebrow": "Example restart note",
+    "columns": [
+     "Question",
+     "Note"
+    ],
+    "rows": [
+     [
+      "Where I got to",
+      "Form to page 2"
+     ],
+     [
+      "Missing",
+      "Serial number"
+     ],
+     [
+      "Next piece",
+      "Photograph the sticker"
+     ],
+     [
+      "Still needed?",
+      "Yes, closes on 30th"
+     ]
+    ],
+    "example": true
    }
   ],
-  "alt": "A checklist of three lines to leave when you put a task down, with a note saying to resume at the next action rather than the beginning.",
-  "caption": "Three lines that turn a twenty minute restart into a two minute one."
+  "alt": "A restart note card with four rows: where you got to, what was missing, the next small piece, and whether it is still needed.",
+  "caption": "An example note that turns a twenty minute restart into two."
  },
  {
   "slug": "why-to-do-lists-make-it-worse",
@@ -98,27 +110,35 @@
  {
   "slug": "why-you-keep-thinking-about-a-task-and-not-doing-it",
   "area": "mind-and-focus",
-  "line1": "You did not forget it",
-  "line2": "You have not started",
+  "line1": "Can't stop thinking",
+  "line2": "about the task?",
   "pieces": [
    {
-    "type": "choice",
-    "eyebrow": "Question one",
-    "question": "What is the next physical action?",
-    "options": [
-     "Call the number on the letter",
-     "Find the reference in the email",
-     "Open the form"
-    ]
-   },
-   {
-    "type": "note",
-    "eyebrow": "Question two",
-    "text": "What would have to be in front of me to do that?"
+    "type": "table",
+    "eyebrow": "Example: thought to action",
+    "columns": [
+     "Thought",
+     "First action"
+    ],
+    "rows": [
+     [
+      "Sort out the insurance",
+      "Find the renewal letter"
+     ],
+     [
+      "Reply to Sam",
+      "Write the first line"
+     ],
+     [
+      "Book the dentist",
+      "Put the number by the phone"
+     ]
+    ],
+    "example": true
    }
   ],
-  "alt": "A card asking what the next physical action is, with three examples, beside a second question about what needs to be in front of you.",
-  "caption": "The two questions that unstick most things. The options are examples."
+  "alt": "A table turning three looping thoughts into first physical actions, such as finding a renewal letter or writing one line of a reply.",
+  "caption": "Example: each thought becomes a verb you could watch happen."
  },
  {
   "slug": "task-paralysis-what-to-do-in-the-next-ten-minutes",
@@ -160,40 +180,41 @@
  {
   "slug": "scripts-for-the-admin-calls-everyone-dreads",
   "area": "mind-and-focus",
-  "line1": "Fifteen seconds",
-  "line2": "is the hard part",
+  "line1": "What to say on",
+  "line2": "the admin call",
   "pieces": [
    {
     "type": "script",
-    "eyebrow": "Cancelling, in one opening",
+    "eyebrow": "Example: a refund call",
     "lines": [
      {
-      "label": "Say",
-      "text": "Hello, I would like to cancel my account."
+      "label": "Open",
+      "text": "I'm waiting on a refund that hasn't arrived. Has it been sent?"
      },
      {
-      "label": "Ask",
-      "text": "Can you tell me what you need from me to do that?"
+      "label": "Facts",
+      "text": "It's $45, for the order on the 3rd."
      },
      {
-      "label": "Then",
-      "text": "Get a reference number and a name before you hang up."
+      "label": "Close",
+      "text": "Can I have a reference number and your name?"
      }
-    ]
+    ],
+    "example": true
    },
    {
     "type": "checklist",
-    "eyebrow": "Four things before you hang up",
+    "eyebrow": "Before you hang up",
     "items": [
      "Read back what was agreed",
-     "A reference number for the call",
-     "The name of who you spoke to",
-     "What happens next, and by when"
+     "Reference number",
+     "Their name",
+     "What happens next, by when"
     ]
    }
   ],
-  "alt": "A three-line script for opening a cancellation call, beside a checklist of four things to get before hanging up.",
-  "caption": "An opening that starts with the problem and ends with a question, plus what to get before you hang up."
+  "alt": "A short refund call script with an opening line, the facts and a closing request, beside a four item checklist of what to get before hanging up.",
+  "caption": "Example call lines and the four things to get before you hang up."
  },
  {
   "slug": "how-to-deal-with-something-you-have-put-off",
@@ -378,107 +399,110 @@
  {
   "slug": "how-to-say-no-or-give-bad-news-on-the-phone",
   "area": "mind-and-focus",
-  "line1": "You have to say no",
-  "line2": "Decide before you dial",
+  "line1": "Say it in the first",
+  "line2": "two sentences",
   "pieces": [
    {
     "type": "script",
-    "eyebrow": "Saying no, an opening",
+    "eyebrow": "A call, start to finish (example)",
     "lines": [
      {
-      "label": "Say",
-      "text": "Hi, I have thought about it and I am not going to be able to do it."
+      "label": "Say it",
+      "text": "I can't host in March. I'm sorry to give you the news by phone."
      },
      {
-      "label": "Then",
-      "text": "I wanted to tell you rather than leave you waiting."
+      "label": "Stop",
+      "text": "Say nothing more. A pause feels long and isn't."
+     },
+     {
+      "label": "Hold",
+      "text": "I understand it's disappointing. My answer is still no."
      }
     ]
    },
    {
-    "type": "checklist",
-    "eyebrow": "Before you dial",
-    "items": [
-     "Say what you want in one line",
-     "Decide what you will not agree to",
-     "Set the room",
-     "Name two call-back times"
-    ]
+    "type": "note",
+    "eyebrow": "During the call",
+    "text": "You're allowed to ask for a minute, and to say you'll call back."
    }
   ],
-  "alt": "A two-line opening script for saying no, beside a checklist of four things to settle before dialing.",
-  "caption": "An opening to start from. Change it to sound like you."
+  "alt": "A short script card with three lines for saying no on a call, say it, pause, hold your answer, beside a note that you can ask for a minute.",
+  "caption": "An example of the order: news first, then a pause."
  },
  {
   "slug": "the-email-you-keep-not-sending-and-how-to-chase-a-reply",
   "area": "mind-and-focus",
-  "line1": "One line starts it",
-  "line2": "The rest comes easier",
+  "line1": "Ask for a date,",
+  "line2": "not an update",
   "pieces": [
    {
-    "type": "checklist",
-    "eyebrow": "Before you send it",
-    "items": [
-     "Ask is in the first three lines",
-     "The date, if there is one",
-     "Anything you meant to attach",
-     "Short enough to read on a phone"
+    "type": "timeline",
+    "eyebrow": "A chase plan (example)",
+    "steps": [
+     {
+      "when": "Day 0",
+      "what": "Send it. Note the date and the ask."
+     },
+     {
+      "when": "Day 5",
+      "what": "Try a different route. Ask for a date."
+     },
+     {
+      "when": "Day 10",
+      "what": "Add a second person or address."
+     },
+     {
+      "when": "Day 15",
+      "what": "Escalate, or let it go."
+     }
     ]
    },
    {
     "type": "note",
-    "eyebrow": "When no one replies",
-    "text": "Try the other route, a call if you emailed, and ask for a date rather than an update."
+    "eyebrow": "Before you send it",
+    "text": "Read it once against the checks, then send it."
    }
   ],
-  "alt": "A checklist of four checks before sending an email, beside a note about chasing by a different route and asking for a date.",
-  "caption": "Read it once against these, then send it."
+  "alt": "A four-step chase plan for an email that got no reply, day 0 to day 15, beside a note to read the draft once before sending.",
+  "caption": "Example days; shorten them if a deadline is close."
  },
  {
   "slug": "first-physical-step-20-examples",
   "area": "mind-and-focus",
-  "line1": "Too big to start?",
-  "line2": "Do something visible",
+  "line1": "Something you could",
+  "line2": "see happen",
   "pieces": [
    {
     "type": "table",
-    "eyebrow": "Task to first physical step",
+    "eyebrow": "Three first steps (example)",
     "columns": [
      "The task",
-     "First physical step"
+     "First step"
     ],
     "rows": [
      [
       "Book the dentist",
-      "Write down the number"
+      "Write down the phone number"
      ],
      [
-      "Return a package",
-      "Find the packing slip"
+      "Insurance claim",
+      "Find the policy letter"
      ],
      [
-      "Renew an ID",
-      "Check the expiry date"
-     ],
-     [
-      "Fill in a form",
-      "Type name and date"
+      "Spare room",
+      "Call the charity shop"
      ]
-    ]
+    ],
+    "example": true
    },
    {
-    "type": "checklist",
-    "eyebrow": "Check your own step",
-    "items": [
-     "Could someone see it happen?",
-     "Doable in a few minutes?",
-     "A real action, not planning?",
-     "Starting it is not a decision"
-    ]
+    "type": "note",
+    "eyebrow": "One, not the list",
+    "text": "Pick one step to happen today. Write the next one down."
    }
   ],
-  "alt": "A table pairing four stuck tasks with a first physical step, beside a four-question checklist for testing your own step.",
-  "caption": "Four of the twenty first steps in the guide."
+  "alt": "A three-row table pairing a task with its first physical step, dentist, insurance claim and spare room, beside a note to pick one step for today.",
+  "caption": "Example steps; copy the shape, not the task."
  },
  {
   "slug": "a-weekly-reset-that-survives-a-bad-week",
