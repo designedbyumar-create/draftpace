@@ -77,7 +77,7 @@ export default function GuideContents({
               onClick={() => setOpen(false)}
               aria-current={active ? "location" : undefined}
               className={[
-                "group flex gap-2.5 rounded-md py-1.5 pl-3 pr-2 text-[13.5px] leading-snug transition-colors",
+                "group flex gap-2.5 rounded-md py-1.5 pl-3 pr-2 text-body-sm leading-snug transition-colors",
                 "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus-ring)]",
                 active
                   ? "bg-[var(--area-soft,var(--surface-muted))] font-semibold text-[var(--text)]"
@@ -103,7 +103,7 @@ export default function GuideContents({
   if (variant === "rail") {
     return (
       <nav aria-label="Contents" className="hidden lg:block lg:self-start">
-        <p className="mb-5 pl-3 text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">
+        <p className="mb-5 pl-3 text-eyebrow font-bold text-[var(--faint)]">
           In this guide
         </p>
         {list}
@@ -120,7 +120,7 @@ export default function GuideContents({
           aria-controls="guide-contents-mobile"
           className="flex w-full items-center justify-between gap-3 px-4 py-3 text-left focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-[var(--focus-ring)]"
         >
-          <span className="text-[13px] font-semibold text-[var(--text)]">
+          <span className="text-body-sm font-semibold text-[var(--text)]">
             In this guide
             <span className="ml-2 font-normal text-[var(--faint)]">{headings.length} sections</span>
           </span>

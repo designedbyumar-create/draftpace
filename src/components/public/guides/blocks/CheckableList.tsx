@@ -45,14 +45,14 @@ export default function CheckableList({
   return (
     <div className="mt-5 overflow-hidden rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface)]">
       <div className="flex items-center justify-between gap-3 border-b border-[var(--border)] bg-[var(--surface-muted)] px-4 py-2.5">
-        <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--muted)]">
+        <p className="text-eyebrow font-bold text-[var(--muted)]">
           {complete === 0 ? `${total} things to do` : `${complete} of ${total}`}
         </p>
         {complete > 0 && (
           <button
             type="button"
             onClick={() => setDone(new Set())}
-            className="inline-flex items-center gap-1.5 rounded-md px-1.5 py-1 text-[12px] font-semibold text-[var(--muted)] transition-colors hover:text-[var(--text)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus-ring)]"
+            className="inline-flex items-center gap-1.5 rounded-md px-1.5 py-1 text-caption font-semibold text-[var(--muted)] transition-colors hover:text-[var(--text)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus-ring)]"
           >
             <RotateCcw size={13} aria-hidden />
             Clear
@@ -100,7 +100,7 @@ export default function CheckableList({
                 </span>
                 <span
                   className={[
-                    "text-[15.5px] leading-[1.65] transition-colors",
+                    "text-body transition-colors",
                     checked ? "text-[var(--faint)]" : "text-[var(--text)]",
                   ].join(" ")}
                 >
@@ -112,7 +112,7 @@ export default function CheckableList({
         })}
       </ul>
 
-      <p className="border-t border-[var(--border)] bg-[var(--surface-muted)] px-4 py-2.5 text-[12px] text-[var(--faint)]">
+      <p className="border-t border-[var(--border)] bg-[var(--surface-muted)] px-4 py-2.5 text-caption text-[var(--faint)]">
         Ticks are for this visit only. Nothing here is saved anywhere.
       </p>
     </div>

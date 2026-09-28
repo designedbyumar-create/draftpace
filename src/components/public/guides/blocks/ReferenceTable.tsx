@@ -62,7 +62,7 @@ export default function ReferenceTable({
             onChange={(event) => setQuery(event.target.value)}
             placeholder={`Filter ${rows.length} rows`}
             aria-label={`Filter this table of ${rows.length} rows`}
-            className="w-full bg-transparent text-[14.5px] text-[var(--text)] outline-none placeholder:text-[var(--faint)] [&::-webkit-search-cancel-button]:hidden"
+            className="w-full bg-transparent text-body text-[var(--text)] outline-none placeholder:text-[var(--faint)] [&::-webkit-search-cancel-button]:hidden"
           />
           {query && (
             <button
@@ -84,7 +84,7 @@ export default function ReferenceTable({
       )}
 
       {visible.length === 0 ? (
-        <p className="rounded-[var(--radius-lg)] border border-dashed border-[var(--border-strong)] px-4 py-6 text-center text-[14px] text-[var(--muted)]">
+        <p className="rounded-[var(--radius-lg)] border border-dashed border-[var(--border-strong)] px-4 py-6 text-center text-body-sm text-[var(--muted)]">
           Nothing in this table matches {`"${query}"`}.
         </p>
       ) : (
@@ -96,16 +96,16 @@ export default function ReferenceTable({
                 key={r}
                 className="overflow-hidden rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface)]"
               >
-                <p className="border-b border-[var(--border)] bg-[var(--area-soft,var(--surface-muted))] px-4 py-2.5 text-[15px] font-semibold leading-snug text-[var(--text)]">
+                <p className="border-b border-[var(--border)] bg-[var(--area-soft,var(--surface-muted))] px-4 py-2.5 text-body font-semibold leading-snug text-[var(--text)]">
                   {renderInline(row[0], `mc-${idPrefix}-${r}`)}
                 </p>
                 <dl className="flex flex-col divide-y divide-[var(--border)]">
                   {row.slice(1).map((cell, c) => (
                     <div key={c} className="px-4 py-3">
-                      <dt className="text-[10.5px] font-bold uppercase tracking-[0.1em] text-[var(--faint)]">
+                      <dt className="text-eyebrow font-bold text-[var(--faint)]">
                         {columns[c + 1]}
                       </dt>
-                      <dd className="mt-1 text-[14.5px] leading-[1.6] text-[var(--text)]">
+                      <dd className="mt-1 text-body text-[var(--text)]">
                         {renderInline(cell, `md-${idPrefix}-${r}-${c}`)}
                       </dd>
                     </div>
@@ -117,14 +117,14 @@ export default function ReferenceTable({
 
           {/* Everywhere with room for one: a real table. */}
           <div className="hidden overflow-hidden rounded-[var(--radius-lg)] border border-[var(--border)] sm:block">
-            <table className="w-full border-collapse text-[14px]">
+            <table className="w-full border-collapse text-body-sm">
               <thead>
                 <tr>
                   {columns.map((column) => (
                     <th
                       key={column}
                       scope="col"
-                      className="border-b border-[var(--border)] bg-[var(--surface-muted)] px-4 py-2.5 text-left text-[11px] font-bold uppercase tracking-[0.1em] text-[var(--muted)]"
+                      className="border-b border-[var(--border)] bg-[var(--surface-muted)] px-4 py-2.5 text-left text-eyebrow font-bold text-[var(--muted)]"
                     >
                       {column}
                     </th>

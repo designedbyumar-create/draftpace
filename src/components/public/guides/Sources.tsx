@@ -12,12 +12,12 @@ export default function Sources({ sources }: { sources: GuideSource[] }) {
   if (sources.length === 0) return null;
   return (
     <section aria-labelledby="sources" className="mt-12 border-t border-[var(--border)] pt-6">
-      <h2 id="sources" className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">
+      <h2 id="sources" className="text-eyebrow font-bold text-[var(--faint)]">
         Sources and how we checked
       </h2>
       <ul className="mt-4 flex flex-col gap-3">
         {sources.map((source) => (
-          <li key={source.url} className="text-[14px] leading-relaxed text-[var(--muted)]">
+          <li key={source.url} className="text-body-sm leading-relaxed text-[var(--muted)]">
             <a href={source.url} rel="noopener" className="font-semibold text-[var(--area)] underline underline-offset-2">
               {source.name}
             </a>

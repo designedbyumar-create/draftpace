@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "@/design-system/Icon";
+import TextLink from "@/design-system/TextLink";
 import type { Guide } from "@/content/guides";
 
 type Pick = { guide: Guide; reason: string; thumb?: string };
@@ -26,7 +27,7 @@ export default function NextSteps({
   if (!next && also.length === 0 && !hub) return null;
   return (
     <section aria-labelledby="next-steps" className="mt-14 border-t border-[var(--border)] pt-8">
-      <h2 id="next-steps" className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">
+      <h2 id="next-steps" className="text-eyebrow font-bold text-[var(--faint)]">
         Where to go next
       </h2>
 
@@ -39,12 +40,12 @@ export default function NextSteps({
             <Image src={next.thumb} alt="" width={800} height={600} sizes="150px" className="hidden h-[112px] w-[150px] shrink-0 rounded-lg sm:block" />
           )}
           <span className="min-w-0">
-          <span className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--area)]">If this is where you are</span>
-          <span className="mt-1.5 flex items-center gap-2 text-[17px] font-semibold leading-snug text-[var(--text)]">
+          <span className="text-eyebrow font-bold text-[var(--area)]">If this is where you are</span>
+          <span className="mt-1.5 flex items-center gap-2 text-body-lg font-semibold leading-snug text-[var(--text)]">
             {next.guide.title}
             <ArrowRight size={15} aria-hidden className="shrink-0 text-[var(--area)]" />
           </span>
-          <span className="mt-1.5 block text-[14.5px] leading-relaxed text-[var(--muted)]">{next.reason}</span>
+          <span className="mt-1.5 block text-body leading-relaxed text-[var(--muted)]">{next.reason}</span>
           </span>
         </Link>
       )}
@@ -53,20 +54,23 @@ export default function NextSteps({
         <ul className="mt-5 flex flex-col gap-4">
           {also.map((pick) => (
             <li key={pick.guide.slug}>
-              <Link href={`/guides/${pick.guide.slug}`} className="text-[15.5px] font-semibold leading-snug text-[var(--area)] hover:underline">
+              {/* Not <TextLink>: this pairs the link with a separate reason
+                  paragraph underneath it, not one line of "text with
+                  somewhere to go", and TextLink hard-codes body-sm, which
+                  would flatten a real recommendation to footer-link weight. */}
+              <Link href={`/guides/${pick.guide.slug}`} className="text-body font-semibold leading-snug text-[var(--area)] hover:underline">
                 {pick.guide.title}
               </Link>
-              <p className="mt-1 text-[14px] leading-relaxed text-[var(--muted)]">{pick.reason}</p>
+              <p className="mt-1 text-body-sm leading-relaxed text-[var(--muted)]">{pick.reason}</p>
             </li>
           ))}
         </ul>
       )}
 
       {hub && (
-        <Link href={hub.href} className="mt-6 inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-[var(--area)] hover:underline">
+        <TextLink href={hub.href} arrow className="mt-6">
           {hub.label}
-          <ArrowRight size={14} aria-hidden />
-        </Link>
+        </TextLink>
       )}
     </section>
   );

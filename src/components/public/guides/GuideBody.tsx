@@ -166,10 +166,10 @@ export default function GuideBody({ blocks }: { blocks: GuideBlock[] }) {
             key={i}
             className="mt-9 rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--area-soft,var(--surface-muted))] px-5 py-4"
           >
-            <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--area,var(--primary))]">
+            <p className="text-eyebrow font-bold text-[var(--area,var(--primary))]">
               {block.label}
             </p>
-            <p className="mt-2 text-[15px] leading-relaxed text-[var(--text)]">
+            <p className="mt-2 text-body leading-relaxed text-[var(--text)]">
               {renderInline(block.body, `c-${i}`)}
             </p>
           </aside>

@@ -196,20 +196,42 @@ describe("colour semantics: teal acts, ink labels", () => {
 });
 
 /**
- * Phase 1 of the design-system consolidation: a named type scale
+ * The design-system consolidation: a named type scale
  * (docs/DESIGN-SYSTEM.md, "Type scale") replacing the arbitrary
  * text-[Npx] every component used to invent for itself, and TextLink
  * replacing the twenty-two hand-rolled versions of "plain inline link,
- * sometimes with an arrow". These guard the handful of call sites
- * Phase 1 actually converts, not the whole app: most of it still uses
- * its old arbitrary sizes until Phase 2/3 retrofit it.
+ * sometimes with an arrow". Phase 1 proved both on a handful of call
+ * sites; Phase 2 retrofit the whole guides layer, the highest-traffic
+ * part of the site, onto the same scale. The rest of the app (Phase 3)
+ * still uses arbitrary sizes until it gets the same pass.
  */
-describe("type scale and TextLink (phase 1)", () => {
-  it("keeps GuideBody's heading and long-form paragraphs on the named scale, not an arbitrary pixel value", () => {
-    const source = readFileSync(join(ROOT, "components/public/guides/GuideBody.tsx"), "utf8");
-    expect(source).not.toMatch(/text-\[(16\.5|20)px\]/);
-    expect(source).toContain("text-heading-sm");
-    expect(source).toContain("text-body-lg");
+describe("type scale and TextLink (guides layer)", () => {
+  /**
+   * The one real regression risk in a sweep like this is a value that
+   * slips through untouched. A per-file allowlist would rot the moment a
+   * new guide component is added, so this scans every .tsx under the
+   * guides layer instead. GuideContents.tsx's `01`/`02`… index prefix is
+   * the one documented exception: eyebrow's bundled letter-spacing is
+   * wrong on a width-aligned numeral, and tabular-nums is the structural
+   * marker for that, not a filename, so a genuinely new stray value
+   * elsewhere can't hide behind it.
+   */
+  it("keeps the whole guides layer off arbitrary pixel text sizes", () => {
+    const offenders: string[] = [];
+    for (const { path, source } of tsxUnder("app/(marketing)/guides", "components/public/guides")) {
+      for (const match of source.matchAll(/text-\[[0-9.]+px\]/g)) {
+        // The class STRING this match sits in, not just the match itself:
+        // the tabular-nums exception is a sibling utility, not part of
+        // the text-[Npx] token, so checking only the match would never
+        // see it.
+        const lineStart = source.lastIndexOf("\n", match.index) + 1;
+        const lineEnd = source.indexOf("\n", match.index);
+        const line = source.slice(lineStart, lineEnd === -1 ? source.length : lineEnd);
+        if (line.includes("tabular-nums")) continue;
+        offenders.push(`${path.replace(ROOT, "src")}: ${match[0]}`);
+      }
+    }
+    expect(offenders, `arbitrary text sizes still in the guides layer:\n${offenders.join("\n")}`).toEqual([]);
   });
 
   it("never lets the TextLink primitive's own class carry a raw pixel size", () => {
@@ -217,7 +239,7 @@ describe("type scale and TextLink (phase 1)", () => {
     expect(source).not.toMatch(/text-\[[0-9.]+px\]/);
   });
 
-  it("keeps every type-scale class the phase 1 call sites use resolvable in tailwind.config.js", () => {
+  it("keeps every type-scale class used in the guides layer resolvable in tailwind.config.js", () => {
     const config = readFileSync(join(process.cwd(), "tailwind.config.js"), "utf8");
     const declaredSteps = new Set(
       [...config.matchAll(/^\s{8}(eyebrow|caption|'body-sm'|body|'body-lg'|'heading-sm'|heading|'heading-lg'|display):/gm)].map(
@@ -225,22 +247,20 @@ describe("type scale and TextLink (phase 1)", () => {
       )
     );
 
-    const files = [
-      "components/public/guides/GuideBody.tsx",
-      "components/public/guides/GuideLinks.tsx",
-      "components/public/guides/GuidesExplorer.tsx",
+    const nonGuidesFiles = [
       "components/public/home/TrustSection.tsx",
       "design-system/textLinkStyles.ts",
       "app/(marketing)/page.tsx",
-      "app/(marketing)/guides/[guideSlug]/page.tsx",
       "app/(marketing)/shop/[productSlug]/page.tsx",
     ];
     const usedSteps = new Set<string>();
-    for (const file of files) {
+    const stepPattern = /text-(eyebrow|caption|body-sm|body|body-lg|heading-sm|heading|heading-lg|display)\b/g;
+    for (const { source } of tsxUnder("app/(marketing)/guides", "components/public/guides")) {
+      for (const [, step] of source.matchAll(stepPattern)) usedSteps.add(step);
+    }
+    for (const file of nonGuidesFiles) {
       const source = readFileSync(join(ROOT, file), "utf8");
-      for (const [, step] of source.matchAll(/text-(eyebrow|caption|body-sm|body|body-lg|heading-sm|heading|heading-lg|display)\b/g)) {
-        usedSteps.add(step);
-      }
+      for (const [, step] of source.matchAll(stepPattern)) usedSteps.add(step);
     }
 
     const missing = [...usedSteps].filter((step) => !declaredSteps.has(step));

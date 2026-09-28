@@ -13,7 +13,7 @@ export type BreadcrumbItem = { name: string; path: string };
 export default function Breadcrumbs({ trail }: { trail: BreadcrumbItem[] }) {
   return (
     <nav aria-label="Breadcrumb">
-      <ol className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-[12px] font-bold uppercase tracking-[0.1em] text-[var(--area)]">
+      <ol className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-eyebrow font-bold text-[var(--area)]">
         {trail.map((item, index) => {
           const last = index === trail.length - 1;
           return (

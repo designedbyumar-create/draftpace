@@ -37,7 +37,7 @@ export default function Figure({ src, alt, caption, width, height, layout = "inl
         sizes={aside ? "(min-width: 1024px) 260px, 300px" : "(min-width: 640px) 520px, 100vw"}
         className="h-auto w-full rounded-[var(--radius-lg)] border border-[var(--border)]"
       />
-      {caption && <figcaption className="mt-2 text-[13px] leading-snug text-[var(--muted)]">{caption}</figcaption>}
+      {caption && <figcaption className="mt-2 text-body-sm leading-snug text-[var(--muted)]">{caption}</figcaption>}
     </figure>
   );
 }

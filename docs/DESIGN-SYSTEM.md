@@ -103,6 +103,32 @@ Two rules matter here, both learned the hard way:
 Monthly Money Reset's bespoke `--mmr-*` tokens are the one documented
 exception to this mechanism, not a second undocumented system.
 
+## Guide area accent
+
+The guides layer runs the same pattern, with one real difference worth
+stating rather than treating as identical. `--product-*` injects a
+runtime light/dark *pair* inline, because a product's accent is defined
+once in `definition.ts` and has no other home. A guide area's colour
+already has one: `--area-money`, `--area-home`, … `--area-series`, each
+with a `-soft` partner, are ordinary tokens declared in `globals.css`
+across all three theme blocks (light, explicit dark, system dark), like
+any other colour token. `areaVars(areaSlug)`
+(`src/components/public/guides/areaIdentity.tsx`) does only one job: it
+points the local names `--area`/`--area-soft` at whichever global area
+token applies, as an inline style on the guide or hub page's root. It
+never carries a raw colour value past the dark-mode system the way a
+`--product-*` pair does — it is an alias, not a value.
+
+Everything below that root — headings, the Handover panel, `GuideCard`'s
+accent border, and `TextLink` itself via `text-[var(--area,var(--primary))]`
+— reads `--area`/`--area-soft` without knowing which of the six areas (or
+the Series sentinel) it's in. This is why `TextLink` needs no area-aware
+prop: inside a guide, `--area` is set and wins; everywhere else it is
+simply unset and the `var(--area, var(--primary))` fallback takes over.
+`GuideCard` sets `--area`/`--area-soft` locally per card (its `areaSlug`
+prop) rather than relying on an ambient page-level value, since a listing
+page like `/guides` renders cards from every area side by side.
+
 ## Product identity (beyond colour)
 
 Colour alone made nine products read as one product in nine outfits. A

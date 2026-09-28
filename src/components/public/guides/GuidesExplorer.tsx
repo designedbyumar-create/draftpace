@@ -69,7 +69,7 @@ export default function GuidesExplorer({
             onChange={(event) => setQuery(event.target.value)}
             placeholder={`Search ${guides.length} guides`}
             aria-label={`Search ${guides.length} guides by title or summary`}
-            className="w-full bg-transparent text-[15.5px] text-[var(--text)] outline-none placeholder:text-[var(--faint)] [&::-webkit-search-cancel-button]:hidden"
+            className="w-full bg-transparent text-body text-[var(--text)] outline-none placeholder:text-[var(--faint)] [&::-webkit-search-cancel-button]:hidden"
           />
           {query && (
             <button
@@ -109,13 +109,13 @@ export default function GuidesExplorer({
       </p>
 
       <div className="mt-8">
-        <p className="text-[13px] text-[var(--muted)]">
+        <p className="text-body-sm text-[var(--muted)]">
           {results.length === 0 ? "Nothing matches that." : `${results.length} guide${results.length === 1 ? "" : "s"}`}
         </p>
 
         {results.length === 0 ? (
           <div className="mt-4 rounded-[var(--radius-lg)] border border-dashed border-[var(--border-strong)] px-5 py-10 text-center">
-            <p className="text-[15px] text-[var(--muted)]">
+            <p className="text-body text-[var(--muted)]">
               Try a plainer word. These are filed by the situation somebody is in, so &ldquo;passport&rdquo; and
               &ldquo;probate&rdquo; work better than a category name.
             </p>
@@ -173,7 +173,7 @@ function Chip({
       aria-pressed={active}
       style={accent ? ({ "--area": accent } as React.CSSProperties) : undefined}
       className={[
-        "shrink-0 rounded-full border px-3.5 py-1.5 text-[13.5px] font-medium transition-colors",
+        "shrink-0 rounded-full border px-3.5 py-1.5 text-body-sm font-medium transition-colors",
         "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus-ring)]",
         active
           ? "border-[var(--area,var(--primary))] bg-[var(--area,var(--primary))] text-white"

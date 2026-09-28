@@ -1,5 +1,3 @@
-import Link from "next/link";
-import { ArrowRight } from "@/design-system/Icon";
 import TextLink from "@/design-system/TextLink";
 import { LIFE_AREAS, type LifeArea } from "@/content/areas";
 import { GUIDES, getGuideBySlug, guidesForArea, type Guide } from "@/content/guides";
@@ -43,11 +41,11 @@ export function StartWithGuides() {
 
   return (
     <div>
-      <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--brand-ink)]">Free guides</p>
-      <h2 className="mt-3 max-w-2xl font-serif text-[28px] font-semibold leading-tight tracking-tight sm:text-[34px]">
+      <p className="text-eyebrow font-bold text-[var(--brand-ink)]">Free guides</p>
+      <h2 className="mt-3 max-w-2xl text-heading font-serif font-semibold tracking-tight">
         Start with what is actually going wrong today.
       </h2>
-      <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-[var(--muted)]">
+      <p className="mt-3 max-w-2xl text-body text-[var(--muted)]">
         Plain answers to the questions people search for when money, a house, a trip or a paperwork pile gets away
         from them. Nothing to sign up for.
       </p>
@@ -93,12 +91,9 @@ export function GuidesForCompanion({ areaSlug }: { areaSlug: string }) {
           </li>
         ))}
       </ul>
-      <Link
-        href={`/guides/${area.slug}`}
-        className="mt-5 inline-flex items-center gap-1.5 text-[14px] font-semibold text-[var(--primary)] hover:underline"
-      >
-        All {guidesForArea(area.slug).length} {area.label.toLowerCase()} guides <ArrowRight size={14} aria-hidden />
-      </Link>
+      <TextLink href={`/guides/${area.slug}`} arrow className="mt-5">
+        All {guidesForArea(area.slug).length} {area.label.toLowerCase()} guides
+      </TextLink>
     </div>
   );
 }

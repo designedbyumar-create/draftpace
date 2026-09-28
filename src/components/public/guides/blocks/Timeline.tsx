@@ -59,10 +59,10 @@ export default function Timeline({
             className="relative z-10 mt-[6px] h-4 w-4 shrink-0 rounded-full border-[3px] border-[var(--area,var(--primary))] bg-[var(--bg)]"
           />
           <div className="min-w-0 flex-1">
-            <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--area,var(--primary))]">
+            <p className="text-eyebrow font-bold text-[var(--area,var(--primary))]">
               {step.when}
             </p>
-            <p className="mt-1.5 text-[15.5px] leading-[1.65] text-[var(--text)]">
+            <p className="mt-1.5 text-body text-[var(--text)]">
               {renderInline(step.what, `tl-${idPrefix}-${i}`)}
             </p>
           </div>

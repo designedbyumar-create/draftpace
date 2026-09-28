@@ -59,7 +59,7 @@ export default function ScriptPicker({
   return (
     <div className="mt-5 overflow-hidden rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface)]">
       <div className="border-b border-[var(--border)] p-3">
-        <p id={`${groupId}-label`} className="mb-2.5 px-1 text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--muted)]">
+        <p id={`${groupId}-label`} className="mb-2.5 px-1 text-eyebrow font-bold text-[var(--muted)]">
           Pick the one you are facing
         </p>
         <div role="tablist" aria-labelledby={`${groupId}-label`} className="flex flex-wrap gap-1.5">
@@ -78,7 +78,7 @@ export default function ScriptPicker({
                   setCopied(false);
                 }}
                 className={[
-                  "rounded-full border px-3 py-1.5 text-[13px] font-medium transition-colors",
+                  "rounded-full border px-3 py-1.5 text-body-sm font-medium transition-colors",
                   "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus-ring)]",
                   selected
                     ? "border-[var(--area,var(--primary))] bg-[var(--area,var(--primary))] text-white"
@@ -105,7 +105,7 @@ export default function ScriptPicker({
             id={`${groupId}-panel-${i}`}
             aria-labelledby={`${groupId}-tab-${i}`}
             hidden={i !== index}
-            className="font-serif text-[19px] leading-[1.5] text-[var(--text)] sm:text-[21px]"
+            className="font-serif text-heading-sm leading-[1.5] text-[var(--text)]"
           >
             &ldquo;{item.line}&rdquo;
           </p>
@@ -115,7 +115,7 @@ export default function ScriptPicker({
           <button
             type="button"
             onClick={copy}
-            className="mt-4 inline-flex items-center gap-1.5 rounded-lg border border-[var(--border-strong)] bg-[var(--surface)] px-3 py-1.5 text-[13px] font-semibold text-[var(--text)] transition-colors hover:border-[var(--area,var(--primary))] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus-ring)]"
+            className="mt-4 inline-flex items-center gap-1.5 rounded-lg border border-[var(--border-strong)] bg-[var(--surface)] px-3 py-1.5 text-body-sm font-semibold text-[var(--text)] transition-colors hover:border-[var(--area,var(--primary))] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus-ring)]"
           >
             {copied ? <Check size={13} aria-hidden /> : <LinkSimple size={13} aria-hidden />}
             {copied ? "Copied" : "Copy this line"}

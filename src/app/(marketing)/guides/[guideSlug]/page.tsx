@@ -193,16 +193,16 @@ export default async function GuideOrHubPage({ params }: { params: Promise<{ gui
 
           <div className={`mt-5 grid gap-8 lg:items-center lg:gap-12 ${art ? "lg:grid-cols-[minmax(0,1fr)_340px]" : "lg:grid-cols-[minmax(0,1fr)_180px]"}`}>
             <div>
-              <h1 className="max-w-[26ch] font-serif text-[30px] font-semibold leading-[1.1] tracking-tight text-balance sm:text-[40px]">
+              <h1 className="max-w-[26ch] text-heading-lg font-serif font-semibold tracking-tight text-balance">
                 {guide.title}
               </h1>
-              <p className="mt-4 max-w-[54ch] text-[17px] leading-relaxed text-[var(--muted)]">{guide.dek}</p>
+              <p className="mt-4 max-w-[54ch] text-body-lg leading-relaxed text-[var(--muted)]">{guide.dek}</p>
               {/* Loud, above the fold, and before a word of the procedure.
                   Six of these guides described UK probate with nothing
                   saying so, and an American reader was being told to do
                   something that does not exist where they live. */}
               {guide.locale && (
-                <p className="mt-5 inline-flex flex-wrap items-center gap-2 rounded-lg border border-[var(--area)] bg-[var(--surface)] px-3 py-2 text-[13.5px]">
+                <p className="mt-5 inline-flex flex-wrap items-center gap-2 rounded-lg border border-[var(--area)] bg-[var(--surface)] px-3 py-2 text-body-sm">
                   <span className="font-bold uppercase tracking-[0.1em] text-[var(--area)]">
                     {localeLabel(guide.locale)}
                   </span>
@@ -217,7 +217,7 @@ export default async function GuideOrHubPage({ params }: { params: Promise<{ gui
                 </p>
               )}
 
-              <p className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-[13px] text-[var(--muted)]">
+              <p className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-caption text-[var(--muted)]">
                 <span className="inline-flex items-center gap-1.5">
                   <Clock size={14} aria-hidden className="text-[var(--area)]" />
                   {readingTimeLabel(guide)}
@@ -325,12 +325,12 @@ function Handover({
     <aside className="mt-14 overflow-hidden rounded-[var(--radius-xl)] border border-[var(--area)] bg-[var(--area-soft)]">
       <div className="flex items-start gap-6 p-6">
         <div className="min-w-0 flex-1">
-          <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--area)]">{label}</p>
-          <h2 className="mt-2 font-serif text-[22px] font-semibold leading-tight text-[var(--text)]">{title}</h2>
-          <p className="mt-2.5 text-[14.5px] leading-relaxed text-[var(--muted)]">{body}</p>
+          <p className="text-eyebrow font-bold text-[var(--area)]">{label}</p>
+          <h2 className="mt-2 text-heading-sm font-serif font-semibold text-[var(--text)]">{title}</h2>
+          <p className="mt-2.5 text-body leading-relaxed text-[var(--muted)]">{body}</p>
           <Link
             href={href}
-            className="mt-4 inline-flex items-center gap-1.5 rounded-lg bg-[var(--area)] px-4 py-2.5 text-[14px] font-semibold text-white transition-transform active:scale-[0.985]"
+            className="mt-4 inline-flex items-center gap-1.5 rounded-lg bg-[var(--area)] px-4 py-2.5 text-body-sm font-semibold text-white transition-transform active:scale-[0.985]"
           >
             {cta}
             <ArrowRight size={15} aria-hidden />
@@ -388,14 +388,14 @@ function AreaHub({ slug }: { slug: string }) {
 
           <div className="mt-5 grid gap-8 sm:grid-cols-[minmax(0,1fr)_160px] sm:items-center sm:gap-12">
             <div>
-              <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--area)]">{area.label}</p>
-              <h1 className="mt-3 max-w-2xl font-serif text-[32px] font-semibold leading-[1.1] tracking-tight text-balance sm:text-[42px]">
+              <p className="text-eyebrow font-bold text-[var(--area)]">{area.label}</p>
+              <h1 className="mt-3 max-w-2xl text-heading-lg font-serif font-semibold tracking-tight text-balance">
                 {area.situation}
               </h1>
-              <p className="mt-5 max-w-[52ch] text-[16px] leading-relaxed text-[var(--muted)]">
+              <p className="mt-5 max-w-[52ch] text-body-lg leading-relaxed text-[var(--muted)]">
                 &ldquo;{area.inTheirWords}&rdquo;
               </p>
-              <p className="mt-5 font-mono text-[12px] text-[var(--faint)]">
+              <p className="mt-5 font-mono text-caption text-[var(--faint)]">
                 {guides.length} guide{guides.length === 1 ? "" : "s"} · {minutes} minutes of reading
               </p>
             </div>
@@ -410,15 +410,15 @@ function AreaHub({ slug }: { slug: string }) {
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-14">
           <div>
             {guides.length === 0 ? (
-              <p className="text-[15px] leading-relaxed text-[var(--muted)]">
+              <p className="text-body leading-relaxed text-[var(--muted)]">
                 Nothing written for this area yet. The Companion for it already exists.
               </p>
             ) : (
               <>
-                <p className="max-w-[58ch] text-[16px] leading-relaxed text-[var(--text)]">{area.intro}</p>
+                <p className="max-w-[58ch] text-body-lg leading-relaxed text-[var(--text)]">{area.intro}</p>
 
                 <section aria-labelledby="start-here" className="mt-8">
-                  <h2 id="start-here" className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--area)]">
+                  <h2 id="start-here" className="text-eyebrow font-bold text-[var(--area)]">
                     Start here
                   </h2>
                   <ul className="mt-3 grid gap-3 sm:grid-cols-3">
@@ -438,10 +438,10 @@ function AreaHub({ slug }: { slug: string }) {
                               className="mb-3 h-auto w-full rounded-lg"
                             />
                           )}
-                          <span className="font-serif text-[16px] font-semibold leading-snug text-[var(--text)] group-hover:text-[var(--area)]">
+                          <span className="font-serif text-body-lg font-semibold leading-snug text-[var(--text)] group-hover:text-[var(--area)]">
                             {guide.title}
                           </span>
-                          <span className="mt-auto pt-3 font-mono text-[11px] text-[var(--faint)]">
+                          <span className="mt-auto pt-3 font-mono text-caption text-[var(--faint)]">
                             {readingTimeLabel(guide)}
                           </span>
                         </Link>
@@ -452,10 +452,10 @@ function AreaHub({ slug }: { slug: string }) {
 
                 {clusters.map((cluster) => (
                   <section key={cluster.title} aria-labelledby={`cluster-${cluster.slug}`} className="mt-12">
-                    <h2 id={`cluster-${cluster.slug}`} className="font-serif text-[22px] font-semibold leading-snug tracking-tight">
+                    <h2 id={`cluster-${cluster.slug}`} className="text-heading-sm font-serif font-semibold tracking-tight">
                       {cluster.title}
                     </h2>
-                    <p className="mt-1 text-[14px] leading-relaxed text-[var(--muted)]">{cluster.blurb}</p>
+                    <p className="mt-1 text-body-sm leading-relaxed text-[var(--muted)]">{cluster.blurb}</p>
                     <ul className="mt-4 flex flex-col divide-y divide-[var(--border)]">
                       {cluster.guides.map((guide) => (
                         <li key={guide.slug}>
@@ -471,11 +471,11 @@ function AreaHub({ slug }: { slug: string }) {
                               />
                             )}
                             <span className="min-w-0">
-                              <span className="block text-[17px] font-semibold leading-snug text-[var(--text)] transition-colors group-hover:text-[var(--area)]">
+                              <span className="block text-body-lg font-semibold leading-snug text-[var(--text)] transition-colors group-hover:text-[var(--area)]">
                                 {guide.title}
                               </span>
-                              <span className="mt-1.5 block text-[14.5px] leading-relaxed text-[var(--muted)]">{guide.dek}</span>
-                              <span className="mt-2 block font-mono text-[11px] text-[var(--faint)]">{readingTimeLabel(guide)}</span>
+                              <span className="mt-1.5 block text-body leading-relaxed text-[var(--muted)]">{guide.dek}</span>
+                              <span className="mt-2 block font-mono text-caption text-[var(--faint)]">{readingTimeLabel(guide)}</span>
                             </span>
                           </Link>
                         </li>
@@ -490,17 +490,17 @@ function AreaHub({ slug }: { slug: string }) {
           {companion && (
             <aside className="lg:sticky lg:top-24 lg:self-start">
               <div className="rounded-[var(--radius-xl)] border border-[var(--area)] bg-[var(--area-soft)] p-5">
-                <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--area)]">
+                <p className="text-eyebrow font-bold text-[var(--area)]">
                   The Companion for this
                 </p>
-                <h2 className="mt-2 font-serif text-[19px] font-semibold leading-snug text-[var(--text)]">
+                <h2 className="mt-2 text-heading-sm font-serif font-semibold leading-snug text-[var(--text)]">
                   {companion.title}
                 </h2>
-                <p className="mt-2 text-[13.5px] leading-relaxed text-[var(--muted)]">{companion.promise}</p>
+                <p className="mt-2 text-body-sm leading-relaxed text-[var(--muted)]">{companion.promise}</p>
 
                 <ul className="mt-4 flex flex-col gap-2.5 border-t border-[var(--area)]/25 pt-4">
                   {area.whatHelps.map((line) => (
-                    <li key={line} className="flex gap-2.5 text-[13px] leading-relaxed text-[var(--text)]">
+                    <li key={line} className="flex gap-2.5 text-body-sm leading-relaxed text-[var(--text)]">
                       <span aria-hidden className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-[var(--area)]" />
                       {line}
                     </li>
@@ -509,7 +509,7 @@ function AreaHub({ slug }: { slug: string }) {
 
                 <Link
                   href={`/shop/${companion.slug}`}
-                  className="mt-5 inline-flex w-full items-center justify-center gap-1.5 rounded-lg bg-[var(--area)] px-4 py-2.5 text-[14px] font-semibold text-white transition-transform active:scale-[0.985]"
+                  className="mt-5 inline-flex w-full items-center justify-center gap-1.5 rounded-lg bg-[var(--area)] px-4 py-2.5 text-body-sm font-semibold text-white transition-transform active:scale-[0.985]"
                 >
                   See what it does
                   <ArrowRight size={14} aria-hidden />

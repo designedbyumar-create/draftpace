@@ -24,7 +24,7 @@ export default function Faq({ items, idPrefix }: { items: { q: string; a: string
     <div className="mt-2 flex flex-col divide-y divide-[var(--border)]">
       {items.map((item, i) => (
         <details key={item.q} open={i === 0} className="group py-5 first:pt-3 last:pb-0">
-          <summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-[17px] font-semibold leading-snug text-[var(--text)] [&::-webkit-details-marker]:hidden">
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-body-lg font-semibold leading-snug text-[var(--text)] [&::-webkit-details-marker]:hidden">
             {item.q}
             <CaretDown
               size={16}
@@ -32,7 +32,7 @@ export default function Faq({ items, idPrefix }: { items: { q: string; a: string
               className="shrink-0 text-[var(--faint)] transition-transform duration-[var(--dur)] group-open:rotate-180"
             />
           </summary>
-          <p className="mt-2 text-[16.5px] leading-[1.75] text-[var(--text)]">{renderInline(item.a, `${idPrefix}-a${i}`)}</p>
+          <p className="mt-2 text-body-lg text-[var(--text)]">{renderInline(item.a, `${idPrefix}-a${i}`)}</p>
         </details>
       ))}
     </div>

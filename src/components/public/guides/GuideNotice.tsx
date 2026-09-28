@@ -16,7 +16,7 @@ const AREA_LIMITS: Record<string, string> = {
 export default function GuideNotice({ areaSlug }: { areaSlug: string | null }) {
   const limit = (areaSlug ? AREA_LIMITS[areaSlug] : undefined) ?? "This is general information written to help you get organized, not professional advice.";
   return (
-    <aside aria-label="About this guide" className="mt-8 text-[13px] leading-relaxed text-[var(--muted)]">
+    <aside aria-label="About this guide" className="mt-8 text-body-sm leading-relaxed text-[var(--muted)]">
       <p>{limit}</p>
       <p className="mt-2">
         Draftpace publishes these guides and also sells the Companions they point to. We say so here, and the guide is written to be useful without buying anything. See{" "}

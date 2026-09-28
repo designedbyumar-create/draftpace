@@ -61,15 +61,15 @@ export default function GuidesIndexPage() {
 
   return (
     <Container width="wide" className="pb-24 pt-14 sm:pt-20">
-      <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--brand-ink)]">Guides</p>
-      <h1 className="mt-3 max-w-2xl font-serif text-[34px] font-semibold leading-[1.08] tracking-tight text-balance sm:text-[46px]">
+      <p className="text-eyebrow font-bold text-[var(--brand-ink)]">Guides</p>
+      <h1 className="mt-3 max-w-2xl text-heading-lg font-serif font-semibold tracking-tight text-balance">
         Practical help, whether or not you buy anything.
       </h1>
-      <p className="mt-4 max-w-xl text-[16px] leading-relaxed text-[var(--muted)]">
+      <p className="mt-4 max-w-xl text-body-lg leading-relaxed text-[var(--muted)]">
         Written for the moment you are actually in. Each one ends by pointing at the Companion built for that
         area, and each one is useful on its own if you would rather just read it and go.
       </p>
-      <p className="mt-4 font-mono text-[12px] text-[var(--faint)]">
+      <p className="mt-4 font-mono text-caption text-[var(--faint)]">
         {GUIDES.length} guides · {minutes} minutes · nothing gated
       </p>
 
@@ -91,10 +91,10 @@ export default function GuidesIndexPage() {
         >
           <div className="grid gap-6 p-6 sm:grid-cols-[minmax(0,1fr)_140px] sm:items-center sm:p-8">
             <div>
-              <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--area)]">
+              <p className="text-eyebrow font-bold text-[var(--area)]">
                 About this kind of work
               </p>
-              <p className="mt-2.5 max-w-lg text-[17px] leading-relaxed text-[var(--text)]">
+              <p className="mt-2.5 max-w-lg text-body-lg leading-relaxed text-[var(--text)]">
                 Two pieces about the category itself: what life admin actually is, and why the tools sold for
                 it keep being abandoned.
               </p>
@@ -125,7 +125,7 @@ export default function GuidesIndexPage() {
           the count growing. */}
       {orphans.length > 0 && (
         <section className="mt-14 border-t border-[var(--border)] pt-8">
-          <h2 className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">Also written</h2>
+          <h2 className="text-eyebrow font-bold text-[var(--faint)]">Also written</h2>
           <ul className="mt-4 flex flex-col gap-4">
             {orphans.map((guide) => (
               <li key={guide.slug}>

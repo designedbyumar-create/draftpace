@@ -90,12 +90,12 @@ export default function GuideCard({
         {media}
         <span className="flex flex-col gap-1.5">
           {guide.areaLabel && (
-            <span className="text-[10.5px] font-bold uppercase tracking-[0.12em] text-[var(--area)]">{guide.areaLabel}</span>
+            <span className="text-eyebrow font-bold text-[var(--area)]">{guide.areaLabel}</span>
           )}
-          <span className="text-[15px] font-semibold leading-snug text-[var(--text)] group-hover:text-[var(--area,var(--primary))]">
+          <span className="text-body font-semibold leading-snug text-[var(--text)] group-hover:text-[var(--area,var(--primary))]">
             {guide.title}
           </span>
-          {guide.dek && <span className="line-clamp-2 text-[13.5px] leading-relaxed text-[var(--muted)]">{guide.dek}</span>}
+          {guide.dek && <span className="line-clamp-2 text-body-sm leading-relaxed text-[var(--muted)]">{guide.dek}</span>}
         </span>
       </Link>
     );
@@ -104,13 +104,13 @@ export default function GuideCard({
   const text = (
     <span className="min-w-0 flex-1">
       {guide.areaLabel && (
-        <span className="block text-[10.5px] font-bold uppercase tracking-[0.12em] text-[var(--area)]">{guide.areaLabel}</span>
+        <span className="block text-eyebrow font-bold text-[var(--area)]">{guide.areaLabel}</span>
       )}
       <span
         className={[
           "block font-semibold leading-snug text-[var(--text)] group-hover:text-[var(--area,var(--primary))]",
           guide.areaLabel ? "mt-2" : "",
-          variant === "grid" ? "text-[16px]" : "text-[14.5px]",
+          variant === "grid" ? "text-body-lg" : "text-body",
         ].join(" ")}
       >
         {guide.title}
@@ -118,7 +118,7 @@ export default function GuideCard({
       {guide.dek && (
         <span
           className={[
-            "block text-[13.5px] leading-relaxed text-[var(--muted)]",
+            "block text-body-sm leading-relaxed text-[var(--muted)]",
             variant === "grid" ? "mt-1.5 flex-1" : "mt-1 hidden sm:block",
           ].join(" ")}
         >
@@ -126,13 +126,13 @@ export default function GuideCard({
         </span>
       )}
       {guide.readingTime && (
-        <span className="mt-2 block font-mono text-[11px] text-[var(--faint)]">{guide.readingTime}</span>
+        <span className="mt-2 block font-mono text-caption text-[var(--faint)]">{guide.readingTime}</span>
       )}
       {variant === "grid" && (
         // Not <TextLink>: this whole card is already one <Link>, and
         // nesting an <a> inside an <a> is invalid HTML. A plain span
         // styled to match is the correct exception here, not a bug.
-        <span className="mt-3 inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--area,var(--primary))]">
+        <span className="mt-3 inline-flex items-center gap-1.5 text-body-sm font-semibold text-[var(--area,var(--primary))]">
           Read the free guide
           <ArrowRight size={13} aria-hidden className="transition-transform group-hover:translate-x-0.5" />
         </span>

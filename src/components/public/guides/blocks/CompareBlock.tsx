@@ -54,7 +54,7 @@ export default function CompareBlock({
                 aria-controls={`${groupId}-panel-${entry.key}`}
                 onClick={() => setSide(entry.key)}
                 className={[
-                  "relative flex-1 px-3 pb-2.5 pt-1 text-left text-[13px] font-semibold leading-snug transition-colors",
+                  "relative flex-1 px-3 pb-2.5 pt-1 text-left text-body-sm font-semibold leading-snug transition-colors",
                   "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus-ring)]",
                   active ? "text-[var(--text)]" : "text-[var(--faint)]",
                 ].join(" ")}
@@ -83,7 +83,7 @@ export default function CompareBlock({
           >
             <ul className="flex flex-col gap-3 pt-4">
               {entry.items.map((item, i) => (
-                <li key={i} className="flex gap-3 text-[15px] leading-[1.6] text-[var(--text)]">
+                <li key={i} className="flex gap-3 text-body text-[var(--text)]">
                   <span
                     aria-hidden
                     className="mt-[9px] h-[5px] w-[5px] shrink-0 rounded-full bg-[var(--area,var(--primary))]"
@@ -108,7 +108,7 @@ export default function CompareBlock({
           >
             <p
               className={[
-                "text-[11px] font-bold uppercase tracking-[0.12em]",
+                "text-eyebrow font-bold",
                 index === 0 ? "text-[var(--faint)]" : "text-[var(--area,var(--primary))]",
               ].join(" ")}
             >
@@ -116,7 +116,7 @@ export default function CompareBlock({
             </p>
             <ul className="mt-3.5 flex flex-col gap-3">
               {entry.items.map((item, i) => (
-                <li key={i} className="flex gap-2.5 text-[14.5px] leading-[1.6] text-[var(--text)]">
+                <li key={i} className="flex gap-2.5 text-body text-[var(--text)]">
                   <span
                     aria-hidden
                     className={[
