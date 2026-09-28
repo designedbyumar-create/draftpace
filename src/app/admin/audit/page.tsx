@@ -6,7 +6,7 @@ export default function AdminAuditPage() {
     <AdminEmptyPage
       title="Audit history"
       icon={ShieldCheck}
-      description="Every admin action — entitlement grants, broad notifications, flag changes, migrations — with actor, reason, and before/after state. Requires the audit_events table."
+      description="Every admin action (entitlement grants, broad notifications, flag changes, migrations) with actor, reason, and before/after state. Requires the audit_events table."
     />
   );
 }

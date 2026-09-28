@@ -44,7 +44,7 @@ export default function AdminShell({ title, children }: { title: string; childre
       <aside className="hidden w-[224px] shrink-0 border-r border-[var(--border)] bg-[var(--surface)] px-3 py-4 lg:flex lg:flex-col">
         <Link href="/admin" className="flex items-center gap-2 px-2">
           <LogoMark size={20} />
-          <span className="text-[12px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">Admin</span>
+          <span className="text-eyebrow font-bold uppercase text-[var(--faint)]">Admin</span>
         </Link>
         <nav aria-label="Admin" className="mt-6 space-y-0.5">
           {NAV.map((item) => {
@@ -54,7 +54,7 @@ export default function AdminShell({ title, children }: { title: string; childre
                 key={item.href}
                 href={item.href}
                 aria-current={active ? "page" : undefined}
-                className={`flex items-center gap-2.5 rounded-md px-2.5 py-2 text-[12.5px] font-semibold transition ${
+                className={`flex items-center gap-2.5 rounded-md px-2.5 py-2 text-body-sm font-semibold transition ${
                   active
                     ? "bg-[var(--primary-soft)] text-[var(--primary)]"
                     : "text-[var(--muted)] hover:bg-[var(--surface-muted)] hover:text-[var(--text)]"
@@ -67,7 +67,7 @@ export default function AdminShell({ title, children }: { title: string; childre
           })}
         </nav>
         <div className="mt-auto pt-4">
-          <Link href="/app" className="block px-2.5 text-[12px] font-semibold text-[var(--muted)] hover:text-[var(--text)]">
+          <Link href="/app" className="block px-2.5 text-caption font-semibold text-[var(--muted)] hover:text-[var(--text)]">
             ← Back to platform
           </Link>
         </div>
@@ -75,7 +75,7 @@ export default function AdminShell({ title, children }: { title: string; childre
 
       <div className="flex min-w-0 flex-1 flex-col">
         <header className="flex h-14 items-center justify-between border-b border-[var(--border)] bg-[var(--surface)] px-4 lg:px-6">
-          <h1 className="text-[15px] font-semibold tracking-tight">{title}</h1>
+          <h1 className="text-body font-semibold tracking-tight">{title}</h1>
           <ThemeToggle compact />
         </header>
         <main className="flex-1 px-4 py-6 lg:px-6">{children}</main>

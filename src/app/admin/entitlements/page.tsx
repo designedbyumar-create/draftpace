@@ -6,7 +6,7 @@ export default function AdminEntitlementsPage() {
     <AdminEmptyPage
       title="Entitlements"
       icon={Check}
-      description="Grant, extend, revoke, or correct product access with a reason and audit trail. Requires the entitlements table — none exists yet."
+      description="Grant, extend, revoke, or correct product access with a reason and audit trail. Requires the entitlements table, none exists yet."
     />
   );
 }

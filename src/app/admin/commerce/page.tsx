@@ -6,7 +6,7 @@ export default function AdminCommercePage() {
     <AdminEmptyPage
       title="Commerce events"
       icon={CreditCard}
-      description="Orders, providers, webhook events, refunds, and activation attempts. The checkout/webhook routes are stubs today — see docs/MIGRATION-PLAN.md."
+      description="Orders, providers, webhook events, refunds, and activation attempts. The checkout/webhook routes are stubs today, see docs/MIGRATION-PLAN.md."
     />
   );
 }

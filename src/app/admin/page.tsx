@@ -33,15 +33,15 @@ export default function AdminOverviewPage() {
     <AdminShell title="Overview">
       <div className="mb-6 grid gap-3 sm:grid-cols-3">
         <Surface>
-          <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">Registered products</p>
+          <p className="text-eyebrow font-bold uppercase text-[var(--faint)]">Registered products</p>
           <p className="mt-2 text-2xl font-semibold text-[var(--text)]">{productCount}</p>
         </Surface>
         <Surface>
-          <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">Product families</p>
+          <p className="text-eyebrow font-bold uppercase text-[var(--faint)]">Product families</p>
           <p className="mt-2 text-2xl font-semibold text-[var(--text)]">{familyCount}</p>
         </Surface>
         <Surface>
-          <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">Environment</p>
+          <p className="text-eyebrow font-bold uppercase text-[var(--faint)]">Environment</p>
           <div className="mt-2 flex flex-wrap gap-1.5">
             <Badge tone={isAdminEnabled() ? "success" : "neutral"}>Admin {isAdminEnabled() ? "on" : "off"}</Badge>
             <Badge tone={areDevFixturesEnabled() ? "success" : "neutral"}>Fixtures {areDevFixturesEnabled() ? "on" : "off"}</Badge>
@@ -49,7 +49,7 @@ export default function AdminOverviewPage() {
         </Surface>
       </div>
 
-      <h2 className="mb-3 text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--faint)]">All sections</h2>
+      <h2 className="mb-3 text-eyebrow font-bold uppercase text-[var(--faint)]">All sections</h2>
       <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
         {SECTIONS.map((section) => (
           <Link
@@ -57,7 +57,7 @@ export default function AdminOverviewPage() {
             href={section.href}
             className="flex items-center justify-between gap-3 rounded-lg border border-[var(--border)] px-4 py-3 transition-colors hover:border-[var(--border-strong)]"
           >
-            <span className="text-[13px] font-semibold text-[var(--text)]">{section.label}</span>
+            <span className="text-body-sm font-semibold text-[var(--text)]">{section.label}</span>
             <Badge tone={section.status === "real" ? "success" : "neutral"}>
               {section.status === "real" ? "Live data" : "Not built"}
             </Badge>

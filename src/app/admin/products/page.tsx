@@ -10,8 +10,8 @@ export default function AdminProductsPage() {
 
   return (
     <AdminShell title="Products">
-      <p className="mb-4 text-[12px] text-[var(--muted)]">
-        Reads directly from the product registry — the same source of truth the customer platform uses. No separate
+      <p className="mb-4 text-caption text-[var(--muted)]">
+        Reads directly from the product registry, the same source of truth the customer platform uses. No separate
         admin data store exists (or should exist) for this.
       </p>
 
@@ -23,8 +23,8 @@ export default function AdminProductsPage() {
         />
       ) : (
         <div className="overflow-hidden rounded-lg border border-[var(--border)]">
-          <table className="w-full text-left text-[13px]">
-            <thead className="bg-[var(--surface-muted)] text-[11px] uppercase tracking-wide text-[var(--faint)]">
+          <table className="w-full text-left text-body-sm">
+            <thead className="bg-[var(--surface-muted)] text-eyebrow uppercase text-[var(--faint)]">
               <tr>
                 <th className="px-4 py-2.5 font-semibold">Title</th>
                 <th className="px-4 py-2.5 font-semibold">Family</th>
@@ -38,7 +38,7 @@ export default function AdminProductsPage() {
                 <tr key={product.slug}>
                   <td className="px-4 py-2.5">
                     <p className="font-semibold text-[var(--text)]">{product.title}</p>
-                    <p className="text-[11px] text-[var(--faint)]">{product.slug}</p>
+                    <p className="text-caption text-[var(--faint)]">{product.slug}</p>
                   </td>
                   <td className="px-4 py-2.5 text-[var(--muted)]">{familyRegistry.get(product.family)?.label ?? product.family}</td>
                   <td className="px-4 py-2.5 text-[var(--muted)]">{product.version}</td>

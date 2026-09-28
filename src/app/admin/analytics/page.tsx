@@ -6,7 +6,7 @@ export default function AdminAnalyticsPage() {
     <AdminEmptyPage
       title="Analytics"
       icon={ChartBar}
-      description="Activation, first value, retention, and completion metrics. No event pipeline exists yet — nothing here is fabricated in the meantime."
+      description="Activation, first value, retention, and completion metrics. No event pipeline exists yet, nothing here is fabricated in the meantime."
     />
   );
 }

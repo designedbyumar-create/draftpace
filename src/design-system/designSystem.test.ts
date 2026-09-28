@@ -271,9 +271,10 @@ describe("type scale and TextLink (guides layer)", () => {
 /**
  * Phase 3: the marketing pages and shared components outside the guides
  * layer and the Shop product page, both already done and excluded here.
- * src/products/** (each product's own live app screens) and /admin are
- * separately out of scope for this pass — the former was never in the
- * scanned directories below, the latter is filtered out explicitly.
+ * src/products/** (each product's own live app screens) is separately out
+ * of scope for this pass and was never in the scanned directories below.
+ * /admin got its own later pass (Phase 4, below), so it's filtered out
+ * here rather than folded into this block's own file list.
  */
 describe("type scale and TextLink (marketing and shared components)", () => {
   /**
@@ -324,6 +325,47 @@ describe("type scale and TextLink (marketing and shared components)", () => {
   });
 
   it("keeps every type-scale class used in this scope resolvable in tailwind.config.js", () => {
+    const config = readFileSync(join(process.cwd(), "tailwind.config.js"), "utf8");
+    const declaredSteps = new Set(
+      [...config.matchAll(/^\s{8}(eyebrow|caption|'body-sm'|body|'body-lg'|'heading-sm'|heading|'heading-lg'|display):/gm)].map(
+        (m) => m[1].replace(/'/g, "")
+      )
+    );
+
+    const usedSteps = new Set<string>();
+    const stepPattern = /text-(eyebrow|caption|body-sm|body|body-lg|heading-sm|heading|heading-lg|display)\b/g;
+    for (const { source } of scopedFiles()) {
+      for (const [, step] of source.matchAll(stepPattern)) usedSteps.add(step);
+    }
+
+    const missing = [...usedSteps].filter((step) => !declaredSteps.has(step));
+    expect(missing, `used but not declared in tailwind.config.js: ${missing.join(", ")}`).toEqual([]);
+  });
+});
+
+/**
+ * Phase 4: /admin, the last remaining slice of "the rest of the site"
+ * from docs/DESIGN-SYSTEM.md. Small (five files) and low-traffic, but
+ * held to the same rule as everywhere else: no arbitrary text-[Npx]
+ * outside the named scale. No inline or whole-file exceptions exist in
+ * this scope, unlike the guides layer and Phase 3.
+ */
+describe("type scale (admin)", () => {
+  function scopedFiles() {
+    return tsxUnder("app/admin", "components/admin");
+  }
+
+  it("keeps /admin off arbitrary pixel text sizes", () => {
+    const offenders: string[] = [];
+    for (const { path, source } of scopedFiles()) {
+      for (const match of source.matchAll(/text-\[[0-9.]+px\]/g)) {
+        offenders.push(`${path.replace(ROOT, "src")}: ${match[0]}`);
+      }
+    }
+    expect(offenders, `arbitrary text sizes still in /admin:\n${offenders.join("\n")}`).toEqual([]);
+  });
+
+  it("keeps every type-scale class used in /admin resolvable in tailwind.config.js", () => {
     const config = readFileSync(join(process.cwd(), "tailwind.config.js"), "utf8");
     const declaredSteps = new Set(
       [...config.matchAll(/^\s{8}(eyebrow|caption|'body-sm'|body|'body-lg'|'heading-sm'|heading|'heading-lg'|display):/gm)].map(

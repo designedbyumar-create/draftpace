@@ -6,7 +6,7 @@ export default function AdminCommunicationsPage() {
     <AdminEmptyPage
       title="Communications"
       icon={Bell}
-      description="Notification templates, schedules, delivery, and suppression. No notification sender exists yet — see /app/notifications for the customer-facing scaffold."
+      description="Notification templates, schedules, delivery, and suppression. No notification sender exists yet, see /app/notifications for the customer-facing scaffold."
     />
   );
 }
