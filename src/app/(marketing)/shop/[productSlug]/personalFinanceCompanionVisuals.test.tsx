@@ -63,8 +63,9 @@ describe("Personal Finance Companion's Shop drawings", () => {
     }
   });
 
-  it("draw the bottom bar the product has, in the order it has it", () => {
-    const drawn = [...visuals.matchAll(/\{ label: "(\w+)", Icon: /g)].map((match) => match[1]);
+  it("draw the tab row the product has, in the order it has it", () => {
+    const match = visuals.match(/const tabs = \[([^\]]+)\] as const;/);
+    const drawn = [...(match?.[1].matchAll(/"(\w+)"/g) ?? [])].map((m) => m[1]);
     expect(drawn).toEqual([definition.workspaceLabel, definition.destinationLabels?.start, "Attention", "Records"]);
     expect(definition.primaryNavigation).toEqual(["workspace", "start", "attention", "records"]);
   });

@@ -4,18 +4,17 @@
  * recreations of the shipped product UI, not screenshots and not a
  * generic template.
  *
- * Rewritten for the v2 product. The previous set drew the retired v1:
- * a "Needs attention" list, a separate Attention inbox, a three-area
- * Records hub, and a Today/Attention/Records tab bar. None of those
- * destinations exist any more, and the hero mockup put the word
- * "overdue" on the sales page, which is the one thing this product's
- * voice is forbidden from saying.
+ * Rewritten again for the current product. The set this replaces drew an
+ * earlier redesign: a static four-band grid and a two-tab (Home/History)
+ * bar. HomeView.tsx has since moved to a State Strip of jump-chips (Wrong
+ * / To care for / Coming up / Handled), tag-shaped rows with a punched
+ * eyelet, and a four-item bottom bar (Now, Seasons, History, Printables).
+ * None of those destinations existed when this file was last drawn.
  *
- * What is drawn here maps to what ships: HomeModule.tsx's narrative
- * headline and its Something's wrong / Worth taking care of / Coming up
- * bands with their Action and Snooze pair; CareActionSheet.tsx's record
- * of what actually happened; and SetupModule.tsx's tap-to-choose grid
- * over the twelve categories in homeKnowledge.ts.
+ * What is drawn here maps to what ships: HomeView.tsx's headline, State
+ * Strip and Something's wrong / Worth taking care of bands; CareActionSheet.tsx's
+ * record of what actually happened; and SetupModule.tsx's tap-to-choose
+ * grid over the categories in homeKnowledge.ts.
  *
  * Sage (#4f7a5c, the real theme.accent from definition.ts) distinguishes
  * it from PFC's teal and MMR's clay. Names below are illustrative but
@@ -27,6 +26,8 @@ const INK = "#1a2420";
 const MUTED = "#6b7570";
 const FAINT = "#8b9089";
 const SAGE = "#4f7a5c";
+const WARNING = "#a85d37";
+const WARNING_SOFT = "#f7ece4";
 const PAPER = "#f4f2ec";
 const LINE = "#e4e0d5";
 
@@ -43,14 +44,14 @@ function StatusBar({ tone = "light" }: { tone?: "light" | "dark" }) {
   );
 }
 
-/** The two tabs Home Base actually has. */
-function TabBar({ current }: { current: "Home" | "History" }) {
+/** The real four-item bottom bar: Now, Seasons, History, Printables. */
+function TabBar({ current }: { current: "Now" | "Seasons" | "History" | "Printables" }) {
   return (
     <div
-      className="mt-auto flex items-center gap-6 rounded-xl border bg-white px-3 py-2.5 text-[8.5px] font-semibold"
+      className="mt-auto flex items-center justify-between rounded-xl border bg-white px-3 py-2.5 text-[7.5px] font-semibold"
       style={{ borderColor: LINE, color: FAINT }}
     >
-      {(["Home", "History"] as const).map((tab) => (
+      {(["Now", "Seasons", "History", "Printables"] as const).map((tab) => (
         <span key={tab} style={tab === current ? { color: SAGE } : undefined}>
           {tab}
         </span>
@@ -59,80 +60,107 @@ function TabBar({ current }: { current: "Home" | "History" }) {
   );
 }
 
-function BandLabel({ children }: { children: string }) {
+/** The State Strip: a row of jump-chips, lit when that band has something to say. */
+function StateStrip({ lit }: { lit: boolean[] }) {
+  const cells = [
+    { label: "Wrong", tone: WARNING },
+    { label: "To care for", tone: SAGE },
+    { label: "Coming up", tone: MUTED },
+    { label: "Handled", tone: "#3f7a53" },
+  ];
   return (
-    <p className="mt-3.5 text-[7.5px] font-bold uppercase tracking-[0.12em]" style={{ color: FAINT }}>
-      {children}
-    </p>
+    <div className="-mx-0.5 mt-2.5 flex gap-1">
+      {cells.map((cell, i) => (
+        <span
+          key={cell.label}
+          className="rounded-full px-2 py-1 text-[7px] font-semibold"
+          style={
+            lit[i]
+              ? { backgroundColor: `color-mix(in srgb, ${cell.tone} 14%, white)`, color: cell.tone }
+              : { color: FAINT }
+          }
+        >
+          {cell.label}
+        </span>
+      ))}
+    </div>
   );
 }
 
-/** A care row exactly as Home draws it: what the job is, when it was last
- * done and how often it comes round, then Action and Snooze. Never a
- * countdown, and never the word this product does not say. */
-function CareRow({ title, status, actions = true }: { title: string; status: string; actions?: boolean }) {
+/** The tag: a plain card with a punched eyelet, cut more on the side it would hang from. */
+function TagRow({ title, detail, warning = false }: { title: string; detail: string; warning?: boolean }) {
   return (
-    <div className="rounded-xl border bg-white p-2.5" style={{ borderColor: LINE }}>
+    <div
+      className="relative rounded-l-[6px] rounded-r-[16px] border py-2.5 pl-[30px] pr-3"
+      style={warning ? { borderColor: "#e3c4ab", backgroundColor: WARNING_SOFT } : { borderColor: LINE, backgroundColor: "#fff" }}
+    >
+      <span
+        aria-hidden
+        className="absolute left-[10px] top-[13px] h-[8px] w-[8px] rounded-full border"
+        style={{ borderColor: warning ? WARNING : "#c7c2b4", backgroundColor: PAPER }}
+      />
+      {warning && (
+        <p className="mb-0.5 text-[7px] font-bold uppercase tracking-[0.1em]" style={{ color: WARNING }}>
+          Needs a look
+        </p>
+      )}
       <p className="text-[10px] font-semibold" style={{ color: INK }}>
         {title}
       </p>
       <p className="mt-0.5 text-[8.5px] leading-relaxed" style={{ color: MUTED }}>
-        {status}
+        {detail}
       </p>
-      {actions && (
-        <div className="mt-2 flex gap-1.5">
-          <span className="rounded-md px-2.5 py-1 text-[8px] font-semibold text-white" style={{ backgroundColor: SAGE }}>
-            Action
-          </span>
-          <span className="rounded-md border px-2.5 py-1 text-[8px] font-semibold" style={{ borderColor: LINE, color: INK }}>
-            Snooze
-          </span>
-        </div>
-      )}
     </div>
   );
 }
 
 /**
- * Screen 1: Home, the one surface the product has. Mirrors
- * HomeModule.tsx: a sentence about the home's condition set in the
- * product's narrative serif, the Something's wrong entry point, then the
- * bands in their real order.
+ * Screen 1: Now, the one surface the product has. Mirrors HomeView.tsx: a
+ * narrative headline, the State Strip, and the bands in their real order.
  */
 export function OverviewScreenMockup() {
   return (
     <PhoneFrame accent={SAGE}>
       <div className="flex h-full flex-col px-4 pb-4 pt-9" style={{ backgroundColor: PAPER }}>
         <StatusBar />
-        <p className="mt-3 text-[8px] font-bold uppercase tracking-[0.14em]" style={{ color: MUTED }}>
-          Your home
-        </p>
-        <p
-          className="mt-1 text-[15px] leading-tight"
-          style={{ color: INK, fontFamily: "var(--font-newsreader), ui-serif, Georgia, serif" }}
-        >
-          A couple of things worth taking care of
-        </p>
+        <div className="mt-3 flex items-start justify-between gap-2">
+          <div>
+            <p className="text-[8px] font-semibold uppercase tracking-[0.14em]" style={{ color: SAGE }}>
+              Your home
+            </p>
+            <p
+              className="mt-1 text-[15px] leading-tight"
+              style={{ color: INK, fontFamily: "var(--font-newsreader), ui-serif, Georgia, serif" }}
+            >
+              A few things need a look
+            </p>
+          </div>
+          <span
+            className="mt-0.5 shrink-0 rounded-lg border bg-white px-2 py-1 text-[7.5px] font-semibold"
+            style={{ borderColor: LINE, color: INK }}
+          >
+            Something&rsquo;s wrong
+          </span>
+        </div>
 
-        <span
-          className="mt-2.5 w-fit rounded-lg border bg-white px-2.5 py-1 text-[8.5px] font-semibold"
-          style={{ borderColor: LINE, color: INK }}
-        >
+        <StateStrip lit={[true, true, true, false]} />
+
+        <p className="mt-3.5 text-[7.5px] font-semibold uppercase tracking-[0.12em]" style={{ color: FAINT }}>
           Something&rsquo;s wrong
-        </span>
-
-        <BandLabel>Worth taking care of</BandLabel>
+        </p>
         <div className="mt-1.5 flex flex-col gap-1.5">
-          <CareRow title="Flush the tank" status="Last done 2 years ago, usually every year" />
-          <CareRow title="Shut off and drain before the freeze" status="Not logged yet, usually October" />
+          <TagRow title="Washing machine pipe is leaking" detail="Reported as a problem" warning />
         </div>
 
-        <BandLabel>Coming up</BandLabel>
-        <div className="mt-1.5">
-          <CareRow title="Test the alarm" status="Due in 3 weeks" actions={false} />
+        <p className="mt-3.5 text-[7.5px] font-semibold uppercase tracking-[0.12em]" style={{ color: FAINT }}>
+          Worth taking care of
+        </p>
+        <div className="mt-1.5 flex flex-col gap-1.5">
+          <TagRow title="Flush the tank" detail="Last done 2 years ago, usually every year" />
+          <TagRow title="Shut off and drain before the freeze" detail="Not logged yet, usually October" />
         </div>
 
-        <TabBar current="Home" />
+        <TabBar current="Now" />
       </div>
     </PhoneFrame>
   );
@@ -155,8 +183,11 @@ export function ActionRecordScreenMockup() {
         <p className="mt-1 text-[13px] font-semibold" style={{ color: INK }}>
           Flush the tank
         </p>
+        <p className="mt-1 text-[8.5px]" style={{ color: MUTED }}>
+          What happened?
+        </p>
 
-        <div className="mt-3 flex flex-col gap-1.5">
+        <div className="mt-1.5 flex flex-col gap-1.5">
           <div
             className="rounded-lg border-2 bg-white px-2.5 py-2 text-[9px] font-semibold"
             style={{ borderColor: SAGE, color: INK }}
@@ -172,7 +203,7 @@ export function ActionRecordScreenMockup() {
           {[
             ["When", "14 Aug 2026"],
             ["Who did it?", "Ace Plumbing"],
-            ["What it cost", "$180.00"],
+            ["What it cost (optional)", "$180.00"],
           ].map(([label, value]) => (
             <div key={label}>
               <p className="text-[7.5px] font-bold uppercase tracking-[0.1em]" style={{ color: FAINT }}>
@@ -188,7 +219,7 @@ export function ActionRecordScreenMockup() {
           ))}
           <div>
             <p className="text-[7.5px] font-bold uppercase tracking-[0.1em]" style={{ color: FAINT }}>
-              Anything worth remembering?
+              Anything worth remembering? (optional)
             </p>
             <div
               className="mt-1 rounded-lg border bg-white px-2.5 py-1.5 text-[8.5px] leading-relaxed"
@@ -200,10 +231,10 @@ export function ActionRecordScreenMockup() {
         </div>
 
         <div
-          className="mt-auto rounded-lg px-3 py-2.5 text-center text-[8.5px] font-semibold"
-          style={{ backgroundColor: "#e6ede2", color: SAGE }}
+          className="mt-auto rounded-lg px-3 py-2.5 text-center text-[8.5px] font-semibold text-white"
+          style={{ backgroundColor: SAGE }}
         >
-          Saved to this home&rsquo;s history
+          Save
         </div>
       </div>
     </PhoneFrame>
@@ -212,8 +243,9 @@ export function ActionRecordScreenMockup() {
 
 /**
  * Screen 3: setup, which is tapping rather than typing. Mirrors
- * SetupModule.tsx's grid over the twelve categories in homeKnowledge.ts,
- * including the ones an appliance tracker would never ask about.
+ * SetupModule.tsx's "what's here" step, over the categories in
+ * homeKnowledge.ts, including the ones an appliance tracker would never
+ * ask about.
  */
 export function SetupScreenMockup() {
   const picks: [string, boolean][] = [

@@ -6,8 +6,12 @@
  * What is drawn maps to what ships. Screen 1 is TodayView: the hero
  * banner with where the balance goes, the next thing to look at, and what
  * is coming up. Screen 2 is BillsModule: bills as a list you tick off for
- * the month. Screen 3 is the payoff plan on the Debt screen. The bottom
- * bar is the real one: Today, Companion, Attention, Records.
+ * the month. Screen 3 is the payoff plan on the Debt screen. The nav is
+ * the real one, too: this product uses ProductShell's tab chrome, not the
+ * rail/bottom-bar style most of the catalogue moved to, so the real
+ * destinations (Today, Companion, Attention, Records: all four declared
+ * primary in definition.ts) are a top tab row with an underline on the
+ * active one, never icons pinned to the bottom of the screen.
  *
  * Every figure is worked out by the same functions the product uses, from
  * a small set of sample records (balanceAllocation, deriveComingUp,
@@ -21,7 +25,6 @@
  * consistent, never presented as real account data.
  */
 import type { ReactNode } from "react";
-import { Bell, Compass, Layers3, User } from "@/design-system/Icon";
 import { formatCurrency } from "@/lib/currency";
 import { personalFinanceCompanionDefinition as definition } from "@/products/personal-finance-companion/definition";
 import { balanceAllocation, type FinancialPictureInputs } from "@/products/personal-finance-companion/companion/capability";
@@ -116,19 +119,28 @@ function StatusBar({ color }: { color: string }) {
   );
 }
 
-/** The four destinations the product actually has, an icon over a label, the accent only on the tab you are on. */
+/**
+ * The real chrome: a horizontally-scrolling row of text tabs under the
+ * header, exactly as ProductShell.tsx draws it, an underline on the
+ * active tab, never icons pinned to the bottom of the screen (that's the
+ * rail-style chrome most of the rest of the catalogue uses instead). All
+ * four of this product's destinations are primary, confirmed against the
+ * live shell, so all four are real tabs here, not three-plus-a-menu.
+ */
 function TabBar({ current }: { current: "Today" | "Companion" | "Attention" | "Records" }) {
-  const tabs = [
-    { label: "Today", Icon: Compass },
-    { label: "Companion", Icon: User },
-    { label: "Attention", Icon: Bell },
-    { label: "Records", Icon: Layers3 },
-  ] as const;
+  const tabs = ["Today", "Companion", "Attention", "Records"] as const;
   return (
-    <div className="-mx-4 -mb-4 mt-auto flex border-t" style={{ borderColor: RULE, backgroundColor: SURFACE }}>
-      {tabs.map(({ label, Icon }) => (
-        <span key={label} className="flex h-10 flex-1 flex-col items-center justify-center gap-px text-[7px] font-semibold" style={{ color: label === current ? ACCENT : MUTED }}>
-          <Icon size={12} aria-hidden />
+    <div className="-mx-4 mt-3 flex gap-3 overflow-x-auto border-b px-4" style={{ borderColor: RULE }}>
+      {tabs.map((label) => (
+        <span
+          key={label}
+          className="whitespace-nowrap border-b-[1.5px] py-1.5 text-[7px] font-semibold"
+          style={
+            label === current
+              ? { borderColor: ACCENT, color: ACCENT }
+              : { borderColor: "transparent", color: MUTED }
+          }
+        >
           {label}
         </span>
       ))}
@@ -136,11 +148,12 @@ function TabBar({ current }: { current: "Today" | "Companion" | "Attention" | "R
   );
 }
 
-function Screen({ children }: { children: ReactNode }) {
+function Screen({ current, children }: { current: "Today" | "Companion" | "Attention" | "Records"; children: ReactNode }) {
   return (
     <PhoneFrame accent={ACCENT}>
       <div className="flex h-full flex-col px-4 pb-4 pt-9" style={{ backgroundColor: DESK }}>
         <StatusBar color={INK} />
+        <TabBar current={current} />
         {children}
       </div>
     </PhoneFrame>
@@ -187,7 +200,7 @@ export function OverviewScreenMockup() {
   ];
   const [whole, cents] = money(allocation.availableMinorUnits).split(".");
   return (
-    <Screen>
+    <Screen current="Today">
       <Heading kicker={formatTodayLabel(NOW)} title="Today" />
       <div className="mt-2.5 overflow-hidden rounded-[15px] p-3" style={{ background: HERO_BACKGROUND, color: HERO_INK, boxShadow: `0 7px 11px -10px ${HERO_TO}` }}>
         <div className="flex items-center justify-between">
@@ -272,7 +285,6 @@ export function OverviewScreenMockup() {
           ))}
         </Group>
       </div>
-      <TabBar current="Today" />
     </Screen>
   );
 }
@@ -287,7 +299,7 @@ export function BillsScreenMockup() {
   const left = leftToPay(SAMPLE.bills, PAID, periodOf(NOW));
   const rows = SAMPLE.bills.map((b) => ({ bill: b, payment: PAID.find((p) => p.billId === b.id) }));
   return (
-    <Screen>
+    <Screen current="Records">
       <Heading kicker="What's owed on a schedule" title="Bills" />
       <div className="mt-2.5 grid grid-cols-2 overflow-hidden rounded-[9px] border" style={{ borderColor: RULE, backgroundColor: SURFACE }}>
         {[
@@ -335,7 +347,6 @@ export function BillsScreenMockup() {
           })}
         </Group>
       </div>
-      <TabBar current="Records" />
     </Screen>
   );
 }
@@ -350,7 +361,7 @@ export function PayoffScreenMockup() {
   const comparison = comparePayoff(planned, 10000, NOW);
   const plan = comparison.avalanche;
   return (
-    <Screen>
+    <Screen current="Records">
       <Heading kicker="What you owe, and when it could be gone." title="Debt" />
       <div className="mt-2.5 rounded-[9px] border p-2.5" style={{ borderColor: RULE, backgroundColor: SURFACE }}>
         <p className="text-[8.5px] font-semibold tracking-[-0.01em]" style={{ color: INK }}>
@@ -392,7 +403,6 @@ export function PayoffScreenMockup() {
           ))}
         </div>
       </div>
-      <TabBar current="Records" />
     </Screen>
   );
 }

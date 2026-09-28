@@ -1,13 +1,14 @@
 /**
  * Bespoke mobile mockups for the Homeschooling Companion's Shop page,
- * following the pattern its three siblings established: real
- * recreations of the shipped product UI, not screenshots and not a
- * generic template.
+ * following the pattern its siblings established: real recreations of the
+ * shipped product UI, not screenshots and not a generic template.
  *
- * What is drawn maps to what ships: TodayModule's per child grouping
- * with its source labels, CheckModule's results with a standing per
- * topic, and the printed book. The bottom bar is the real one: Today,
- * Kids, Record.
+ * Rewritten to match TodayView.tsx's current shape: a per-child header
+ * with an initial avatar and a "N of M recorded" count linking to their
+ * page, and task rows built around a tap-to-mark circle rather than a
+ * Done/Did-not-get-to-it button pair, with an occasional "worth going
+ * over again" callout surfaced from what was recorded last time. The
+ * bottom bar is still the real one: Today, Kids, Record.
  *
  * Plum (#6a4a72, the real theme.accent) distinguishes it from ink blue,
  * sage, teal and clay. Deliberately not a childish palette: the person
@@ -24,6 +25,7 @@ const INK = "#1a1d24";
 const MUTED = "#4a5262";
 const FAINT = "#8b93a1";
 const PLUM = "#6a4a72";
+const PLUM_SOFT = "#f1ebf2";
 const PAPER = "#fbfaf7";
 const LINE = "#e3e0d8";
 
@@ -63,50 +65,91 @@ function Eyebrow({ children }: { children: string }) {
 }
 
 /**
- * Screen 1: Today. Grouped by child, never interleaved, and every task
- * saying where it came from. The second child has nothing scheduled,
- * which is a normal day and is drawn as one rather than hidden.
+ * Screen 1: Today. Grouped by child, each with its own recorded count and
+ * a link to their page, and every row a tap-to-mark circle rather than a
+ * button pair. A row that was flagged last time surfaces the reason.
  */
 export function OverviewScreenMockup() {
   return (
     <PhoneFrame accent={PLUM}>
       <div className="flex h-full flex-col px-4 pb-4 pt-9" style={{ backgroundColor: PAPER }}>
         <StatusBar />
-        <div className="mt-5">
+        <div className="mt-4">
           <Eyebrow>Today</Eyebrow>
-          <h3 className="mt-2 font-serif text-[17px] leading-[1.15]" style={{ color: INK }}>
+          <h3 className="mt-1.5 font-serif text-[16px] leading-[1.15]" style={{ color: INK }}>
             What we are doing today.
           </h3>
 
-          <p className="mt-4 font-serif text-[12px]" style={{ color: INK }}>
-            Emma
-          </p>
-          {[
-            { subject: "Math", source: "Your curriculum", detail: "Abeka Grade 4, Unit 3, Lesson 12" },
-            { subject: "Reading", source: "Your plan", detail: "Chapter 6" },
-          ].map((task) => (
-            <div key={task.subject} className="mt-1.5 rounded-lg border bg-white p-2.5" style={{ borderColor: LINE }}>
-              <div className="flex items-baseline justify-between gap-2">
-                <span className="text-[10px] font-semibold" style={{ color: INK }}>
-                  {task.subject}
-                </span>
-                <span className="text-[7px] font-semibold uppercase tracking-[0.08em]" style={{ color: PLUM }}>
-                  {task.source}
-                </span>
-              </div>
-              <p className="mt-0.5 text-[8.5px]" style={{ color: MUTED }}>
-                {task.detail}
+          <div className="mt-3 flex items-center gap-2">
+            <span
+              className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[9px] font-semibold"
+              style={{ backgroundColor: PLUM_SOFT, color: PLUM }}
+            >
+              E
+            </span>
+            <div className="min-w-0 flex-1">
+              <p className="font-serif text-[12px]" style={{ color: INK }}>
+                Emma
               </p>
-              <div className="mt-2 flex gap-1.5">
-                <span className="rounded-md px-2.5 py-1 text-[8px] font-semibold text-white" style={{ backgroundColor: PLUM }}>
-                  Done
-                </span>
-                <span className="rounded-md border px-2 py-1 text-[8px] font-semibold" style={{ borderColor: LINE, color: INK }}>
-                  Did not get to it
-                </span>
+              <p className="text-[8px]" style={{ color: FAINT }}>
+                0 of 4 recorded
+              </p>
+            </div>
+            <span className="text-[8px] font-semibold" style={{ color: PLUM }}>
+              Their page ›
+            </span>
+          </div>
+
+          <div className="mt-1.5 flex flex-col gap-1.5">
+            <div className="rounded-lg border bg-white p-2.5" style={{ borderColor: LINE }}>
+              <div className="flex items-start gap-2">
+                <span className="mt-0.5 h-3 w-3 shrink-0 rounded-full border" style={{ borderColor: "#c7c2cc" }} />
+                <div className="min-w-0 flex-1">
+                  <p className="text-[10px] font-semibold" style={{ color: INK }}>
+                    Reading
+                  </p>
+                  <p className="mt-0.5 text-[8.5px]" style={{ color: MUTED }}>
+                    Chapter 6
+                  </p>
+                  <div className="mt-1.5 flex items-baseline justify-between">
+                    <span className="text-[7px] font-semibold" style={{ color: PLUM }}>
+                      Your plan
+                    </span>
+                    <span className="text-[7.5px] font-semibold" style={{ color: FAINT }}>
+                      Did not get to it
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
-          ))}
+
+            <div className="rounded-lg border bg-white p-2.5" style={{ borderColor: LINE }}>
+              <div className="flex items-start gap-2">
+                <span className="mt-0.5 h-3 w-3 shrink-0 rounded-full border" style={{ borderColor: "#c7c2cc" }} />
+                <div className="min-w-0 flex-1">
+                  <p className="text-[10px] font-semibold" style={{ color: INK }}>
+                    Math
+                  </p>
+                  <p className="mt-0.5 text-[8.5px]" style={{ color: MUTED }}>
+                    Fractions, Unit 4
+                  </p>
+                  <div className="mt-1.5 rounded-md p-1.5" style={{ backgroundColor: PLUM_SOFT }}>
+                    <p className="text-[7.5px] leading-relaxed" style={{ color: PLUM }}>
+                      Worth going over again. Last time you said this was difficult.
+                    </p>
+                  </div>
+                  <div className="mt-1.5 flex items-baseline justify-between">
+                    <span className="text-[7px] font-semibold" style={{ color: PLUM }}>
+                      Your curriculum
+                    </span>
+                    <span className="text-[7.5px] font-semibold" style={{ color: FAINT }}>
+                      Did not get to it
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <p className="mt-3 font-serif text-[12px]" style={{ color: INK }}>
             Noah
