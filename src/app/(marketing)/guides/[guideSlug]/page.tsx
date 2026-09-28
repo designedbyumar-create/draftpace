@@ -4,6 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import Container from "@/design-system/Container";
 import { ArrowRight, Clock } from "@/design-system/Icon";
+import TextLink from "@/design-system/TextLink";
 import GuideBody from "@/components/public/guides/GuideBody";
 import GuideContents from "@/components/public/guides/GuideContents";
 import ReadingProgress from "@/components/public/guides/ReadingProgress";
@@ -209,12 +210,9 @@ export default async function GuideOrHubPage({ params }: { params: Promise<{ gui
                     This describes the {localeLabel(guide.locale)} procedure.
                   </span>
                   {counterpart && (
-                    <Link
-                      href={`/guides/${counterpart.slug}`}
-                      className="font-semibold text-[var(--area)] underline underline-offset-2"
-                    >
+                    <TextLink href={`/guides/${counterpart.slug}`}>
                       Read the {localeLabel(counterpart.locale!)} version
-                    </Link>
+                    </TextLink>
                   )}
                 </p>
               )}

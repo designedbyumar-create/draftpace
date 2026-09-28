@@ -20,6 +20,42 @@ Two families, deliberately not four:
 Hanken Grotesk (used pre-Phase-2) was dropped — a third UI-adjacent sans
 competing with Inter added inconsistency without a clear job.
 
+## Type scale
+
+`tailwind.config.js`, `theme.extend.fontSize`, beside `fontFamily`. Nine
+named classes, no arbitrary `text-[Npx]` outside them:
+
+| Class | Size | Grounded in (existing usage before this scale) |
+|---|---|---|
+| `text-eyebrow` | 11px | Kickers: homepage section labels, guide card area labels, guide contents label |
+| `text-caption` | 12px | Meta/date lines |
+| `text-body-sm` | 13.5px | Card deks, link labels |
+| `text-body` | 15px | Default paragraph fallback |
+| `text-body-lg` | 16.5px | A guide article's own paragraph/intro/list text |
+| `text-heading-sm` | 20px | A guide article's own section headings |
+| `text-heading` | fluid 28→36px | Homepage section H2s |
+| `text-heading-lg` | fluid 30→42px | A guide's own H1, an area hub's own H1 |
+| `text-display` | fluid 38→60px | The homepage hero only |
+
+Why a Tailwind theme key and not a CSS custom property, unlike color: color
+genuinely varies at runtime (theme, product, guide area), so it has to be a
+custom property redefined per theme. Font size doesn't vary that way
+anywhere in this codebase — it follows the `font-serif`/`font-sans`
+precedent instead, a static key with zero runtime cost.
+
+Weight is deliberately not bundled into a step: `font-semibold` etc. stay a
+separate utility per call site, the way Tailwind's own scale never bundles
+weight either. The three fluid steps (`heading`, `heading-lg`, `display`)
+use CSS `clamp()` instead of a base class plus an `sm:` override, collapsing
+what used to be two arbitrary classes into one; the bounds use the standard
+fluid-type formula anchored at the 400px→640px jump the old `sm:` classes
+were already making.
+
+This scale exists and is proven at a handful of call sites (Phase 1 of the
+design-system consolidation). Most of the app still uses its old arbitrary
+sizes; retrofitting the guides layer onto this scale is Phase 2, the rest of
+the site is Phase 3.
+
 ## Color
 
 CSS custom properties on `html`, redefined under `html[data-theme="dark"]`
@@ -176,6 +212,31 @@ comment is the long version.
 Defaulting in-app buttons to `primary` is what once put the marketing CTA
 on roughly 175 product buttons that never asked for a variant.
 
+## Links: one shared primitive
+
+`TextLink` (`src/design-system/TextLink.tsx`, class logic split into
+`textLinkStyles.ts` for the same server/client reason `buttonStyles.ts` is
+split) is the one plain inline link — "See all N guides," "Read the full
+trust page," "Contact support" — for wherever the whole element isn't
+already a card or a filled button. Before it, twenty-two files each
+hand-rolled their own version of this with a slightly different size,
+weight, or gap.
+
+One shape, no `variant` prop: every real instance shares the same visual
+language, so a variant axis would just reinvent the fragmentation this
+removes. An optional `arrow` prop renders a fixed, non-configurable
+`ArrowRight`, the only icon this ever shows.
+
+Colour resolves via `text-[var(--area,var(--primary))]`, with no prop
+needed: inside a guide it takes that guide's area colour, inside a themed
+product shell it takes that product's accent, everywhere else the
+platform teal. A literal accent outside any themed context (the Shop
+pages) overrides it with an ordinary `style` prop, the same escape hatch
+`Button` already allows.
+
+A link styled to look like a filled, button-shaped CTA is `Button`'s job,
+not this one's.
+
 ## Shared product-layer components
 
 Built once, used by every product, rather than re-implemented per
@@ -234,7 +295,7 @@ product:
 
 ## Primitives (`src/design-system/`)
 
-`Button`, `Input`, `Badge` (status only, used sparingly), `EmptyState` (the
+`Button`, `TextLink`, `Input`, `Badge` (status only, used sparingly), `EmptyState` (the
 required honest-empty-state primitive — no fabricated data anywhere in the
 platform routes uses anything else), `Alert`, `Container`, `Surface`
 (bordered wrapper, used deliberately, not as a default for every section —

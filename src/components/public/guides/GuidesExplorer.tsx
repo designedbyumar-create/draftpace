@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { Search, X } from "@/design-system/Icon";
+import { textLinkClassName } from "@/design-system/textLinkStyles";
 import GuideCard from "./GuideCard";
 
 /**
@@ -124,7 +125,7 @@ export default function GuidesExplorer({
                 setQuery("");
                 setAreaSlug(null);
               }}
-              className="mt-4 text-[14px] font-semibold text-[var(--primary)] hover:underline"
+              className={textLinkClassName({ className: "mt-4" })}
             >
               Show everything again
             </button>

@@ -214,7 +214,7 @@ export default function HomePage() {
       {/* 4. The Companions, one to a section, each with a working demo */}
       <section className="border-t border-[var(--border)]">
         <Container width="wide" className="pb-14 pt-20 sm:pb-20 sm:pt-28">
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--brand-ink)]">The Companions</p>
+          <p className="text-eyebrow font-bold uppercase text-[var(--brand-ink)]">The Companions</p>
           <h2 className="mt-3 max-w-3xl font-serif text-[38px] font-semibold leading-[1.05] tracking-[-0.025em] sm:text-[60px]">
             Apps designed around your needs.
           </h2>

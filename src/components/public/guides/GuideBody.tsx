@@ -26,7 +26,7 @@ function Heading({ id, first, children }: { id: string; first?: boolean; childre
     <h2
       id={id}
       className={[
-        "scroll-mt-24 text-[20px] font-semibold leading-snug tracking-[-0.01em] text-[var(--text)]",
+        "scroll-mt-24 text-heading-sm font-semibold text-[var(--text)]",
         first ? "mt-0" : "mt-16",
       ].join(" ")}
     >
@@ -76,7 +76,7 @@ export default function GuideBody({ blocks }: { blocks: GuideBlock[] }) {
             <section key={i} className="mb-2">
               {heading && <Heading id={heading.id} first={isFirstHeading}>{heading.text}</Heading>}
               {block.paragraphs.map((paragraph, j) => (
-                <p key={j} className="mt-4 text-[16.5px] leading-[1.75] text-[var(--text)]">
+                <p key={j} className="mt-4 text-body-lg text-[var(--text)]">
                   {renderInline(paragraph, `p-${i}-${j}`)}
                 </p>
               ))}
@@ -89,7 +89,7 @@ export default function GuideBody({ blocks }: { blocks: GuideBlock[] }) {
             <section key={i} className="mb-2">
               {heading && <Heading id={heading.id} first={isFirstHeading}>{heading.text}</Heading>}
               {block.intro && (
-                <p className="mt-4 text-[16.5px] leading-[1.75] text-[var(--text)]">
+                <p className="mt-4 text-body-lg text-[var(--text)]">
                   {renderInline(block.intro, `li-${i}`)}
                 </p>
               )}
@@ -108,7 +108,7 @@ export default function GuideBody({ blocks }: { blocks: GuideBlock[] }) {
             <section key={i} className="mb-2">
               {heading && <Heading id={heading.id} first={isFirstHeading}>{heading.text}</Heading>}
               {block.intro && (
-                <p className="mt-4 text-[16.5px] leading-[1.75] text-[var(--text)]">
+                <p className="mt-4 text-body-lg text-[var(--text)]">
                   {renderInline(block.intro, `ti-${i}`)}
                 </p>
               )}
@@ -122,7 +122,7 @@ export default function GuideBody({ blocks }: { blocks: GuideBlock[] }) {
             <section key={i} className="mb-2">
               {heading && <Heading id={heading.id} first={isFirstHeading}>{heading.text}</Heading>}
               {block.intro && (
-                <p className="mt-4 text-[16.5px] leading-[1.75] text-[var(--text)]">
+                <p className="mt-4 text-body-lg text-[var(--text)]">
                   {renderInline(block.intro, `tli-${i}`)}
                 </p>
               )}
@@ -136,7 +136,7 @@ export default function GuideBody({ blocks }: { blocks: GuideBlock[] }) {
             <section key={i} className="mb-2">
               {heading && <Heading id={heading.id} first={isFirstHeading}>{heading.text}</Heading>}
               {block.intro && (
-                <p className="mt-4 text-[16.5px] leading-[1.75] text-[var(--text)]">
+                <p className="mt-4 text-body-lg text-[var(--text)]">
                   {renderInline(block.intro, `ci-${i}`)}
                 </p>
               )}
@@ -150,7 +150,7 @@ export default function GuideBody({ blocks }: { blocks: GuideBlock[] }) {
             <section key={i} className="mb-2">
               {heading && <Heading id={heading.id} first={isFirstHeading}>{heading.text}</Heading>}
               {block.intro && (
-                <p className="mt-4 text-[16.5px] leading-[1.75] text-[var(--text)]">
+                <p className="mt-4 text-body-lg text-[var(--text)]">
                   {renderInline(block.intro, `si-${i}`)}
                 </p>
               )}
@@ -192,7 +192,7 @@ function ListMarkup({
   const ListTag = ordered ? "ol" : "ul";
   return (
     <ListTag
-      className={`mt-4 flex list-outside flex-col gap-3 pl-5 text-[16.5px] leading-[1.7] text-[var(--text)] ${
+      className={`mt-4 flex list-outside flex-col gap-3 pl-5 text-body-lg text-[var(--text)] ${
         ordered ? "list-decimal" : "list-disc"
       }`}
     >

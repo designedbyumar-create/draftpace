@@ -194,3 +194,56 @@ describe("colour semantics: teal acts, ink labels", () => {
     expect(coarse).toMatch(/button\[role="switch"\]::after\s*\{[^}]*inset:\s*-10px 0;/);
   });
 });
+
+/**
+ * Phase 1 of the design-system consolidation: a named type scale
+ * (docs/DESIGN-SYSTEM.md, "Type scale") replacing the arbitrary
+ * text-[Npx] every component used to invent for itself, and TextLink
+ * replacing the twenty-two hand-rolled versions of "plain inline link,
+ * sometimes with an arrow". These guard the handful of call sites
+ * Phase 1 actually converts, not the whole app: most of it still uses
+ * its old arbitrary sizes until Phase 2/3 retrofit it.
+ */
+describe("type scale and TextLink (phase 1)", () => {
+  it("keeps GuideBody's heading and long-form paragraphs on the named scale, not an arbitrary pixel value", () => {
+    const source = readFileSync(join(ROOT, "components/public/guides/GuideBody.tsx"), "utf8");
+    expect(source).not.toMatch(/text-\[(16\.5|20)px\]/);
+    expect(source).toContain("text-heading-sm");
+    expect(source).toContain("text-body-lg");
+  });
+
+  it("never lets the TextLink primitive's own class carry a raw pixel size", () => {
+    const source = readFileSync(join(ROOT, "design-system/textLinkStyles.ts"), "utf8");
+    expect(source).not.toMatch(/text-\[[0-9.]+px\]/);
+  });
+
+  it("keeps every type-scale class the phase 1 call sites use resolvable in tailwind.config.js", () => {
+    const config = readFileSync(join(process.cwd(), "tailwind.config.js"), "utf8");
+    const declaredSteps = new Set(
+      [...config.matchAll(/^\s{8}(eyebrow|caption|'body-sm'|body|'body-lg'|'heading-sm'|heading|'heading-lg'|display):/gm)].map(
+        (m) => m[1].replace(/'/g, "")
+      )
+    );
+
+    const files = [
+      "components/public/guides/GuideBody.tsx",
+      "components/public/guides/GuideLinks.tsx",
+      "components/public/guides/GuidesExplorer.tsx",
+      "components/public/home/TrustSection.tsx",
+      "design-system/textLinkStyles.ts",
+      "app/(marketing)/page.tsx",
+      "app/(marketing)/guides/[guideSlug]/page.tsx",
+      "app/(marketing)/shop/[productSlug]/page.tsx",
+    ];
+    const usedSteps = new Set<string>();
+    for (const file of files) {
+      const source = readFileSync(join(ROOT, file), "utf8");
+      for (const [, step] of source.matchAll(/text-(eyebrow|caption|body-sm|body|body-lg|heading-sm|heading|heading-lg|display)\b/g)) {
+        usedSteps.add(step);
+      }
+    }
+
+    const missing = [...usedSteps].filter((step) => !declaredSteps.has(step));
+    expect(missing, `used but not declared in tailwind.config.js: ${missing.join(", ")}`).toEqual([]);
+  });
+});

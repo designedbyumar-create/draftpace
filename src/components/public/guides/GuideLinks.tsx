@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "@/design-system/Icon";
+import TextLink from "@/design-system/TextLink";
 import { LIFE_AREAS, type LifeArea } from "@/content/areas";
 import { GUIDES, getGuideBySlug, guidesForArea, type Guide } from "@/content/guides";
 import { guideArt } from "@/content/guideArt";
@@ -63,12 +64,9 @@ export function StartWithGuides() {
         ))}
       </div>
 
-      <Link
-        href="/guides"
-        className="mt-10 inline-flex items-center gap-1.5 text-[14px] font-semibold text-[var(--primary)] hover:underline"
-      >
-        See all {GUIDES.length} guides <ArrowRight size={14} aria-hidden />
-      </Link>
+      <TextLink href="/guides" arrow className="mt-10">
+        See all {GUIDES.length} guides
+      </TextLink>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import TextLink from "@/design-system/TextLink";
 
 const CLAIMS = [
   "Your account and preferences are stored with Supabase, our authentication and database provider, and encrypted in transit.",
@@ -14,9 +14,9 @@ export default function TrustSection() {
         <h2 className="mt-3 font-serif text-[30px] font-semibold leading-tight tracking-tight sm:text-[38px]">
           A living product is personal. The way it is handled should be clear.
         </h2>
-        <Link href="/trust" className="mt-4 inline-block text-[13px] font-semibold text-[var(--primary)] hover:underline">
+        <TextLink href="/trust" className="mt-4">
           Read the full trust page
-        </Link>
+        </TextLink>
       </div>
       <ul className="flex flex-col divide-y divide-[var(--border)]">
         {CLAIMS.map((claim) => (

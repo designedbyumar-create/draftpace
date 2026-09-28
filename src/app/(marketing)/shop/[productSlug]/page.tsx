@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound, permanentRedirect } from "next/navigation";
 import Link from "next/link";
 import Container from "@/design-system/Container";
+import TextLink from "@/design-system/TextLink";
 import Badge from "@/design-system/Badge";
 import Button from "@/design-system/Button";
 import { ArrowRight, Check, Lock, X } from "@/design-system/Icon";
@@ -549,9 +550,9 @@ function buildDetailTabs(
           <p className="mt-1.5 max-w-[42rem] text-[14.5px] leading-relaxed text-[var(--muted)]">
             {product.title} is a digital product delivered the moment your payment clears, so there are no refunds once access is granted. If something is not working, is not what you understood it to be, or you were charged in error, write to us and we will put it right.
           </p>
-          <Link href="/support" className="mt-3 inline-flex items-center gap-1.5 text-[14px] font-semibold hover:underline" style={{ color: accent }}>
-            Contact support <ArrowRight size={14} aria-hidden />
-          </Link>
+          <TextLink href="/support" arrow className="mt-3" style={{ color: accent }}>
+            Contact support
+          </TextLink>
         </div>
       </div>
     ),

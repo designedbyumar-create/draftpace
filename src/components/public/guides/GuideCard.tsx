@@ -129,6 +129,9 @@ export default function GuideCard({
         <span className="mt-2 block font-mono text-[11px] text-[var(--faint)]">{guide.readingTime}</span>
       )}
       {variant === "grid" && (
+        // Not <TextLink>: this whole card is already one <Link>, and
+        // nesting an <a> inside an <a> is invalid HTML. A plain span
+        // styled to match is the correct exception here, not a bug.
         <span className="mt-3 inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--area,var(--primary))]">
           Read the free guide
           <ArrowRight size={13} aria-hidden className="transition-transform group-hover:translate-x-0.5" />
