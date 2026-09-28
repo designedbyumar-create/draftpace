@@ -77,9 +77,15 @@ describe("every product a customer can get is installable", () => {
  * there rather than a nicety.
  */
 describe("both public product surfaces explain how to install", () => {
+  // The install copy itself lives in one shared component both pages
+  // render (PwaInstallSection), not duplicated per page. Concatenating
+  // each page's own source with the component's preserves what this
+  // guard actually promises — the page's rendered output covers all
+  // three platforms — without caring which file the JSX lives in.
+  const pwaInstallSection = read("src/components/public/shop/PwaInstallSection.tsx");
   const surfaces = {
-    "the paid product page": read("src/app/(marketing)/shop/[productSlug]/page.tsx"),
-    "the free product page": read("src/app/(marketing)/free/page.tsx"),
+    "the paid product page": read("src/app/(marketing)/shop/[productSlug]/page.tsx") + pwaInstallSection,
+    "the free product page": read("src/app/(marketing)/free/page.tsx") + pwaInstallSection,
   };
 
   for (const [name, source] of Object.entries(surfaces)) {

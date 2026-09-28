@@ -121,12 +121,12 @@ export const alongsideShopProduct: ShopProductInput = {
   compatibility: ["Works in any modern browser", "No download required", "Works on phone, tablet, or desktop"],
   inclusions: [
     "Now: what deserves your attention, derived fresh every time from dates and notes you set yourself, never invented",
-    "Life: everything you are holding, in four shapes (something to do, something you are waiting on, something ongoing, a detail worth keeping), never mixed together",
-    "The Companion: eight authored procedures for the situations that are hardest to start, including two ways into a phone call, an email, chasing somebody up, a billing problem, and an appointment",
-    "Direct entry: open the Companion with nothing recorded and get help with one thing today, with an offer to remember it afterward, never before",
-    "Real resume: leave a run half finished and come back to the exact question, with no duplicate and nothing lost",
-    "A full item page: what it is, the next thing worth attending to about it, its whole history, and a page to edit anything by hand",
-    "Suggested opening wording for the hardest conversations, editable in full and never saved once you have used it",
+    "Life: everything you are holding, in four shapes, never mixed together",
+    "The Companion: eight authored procedures for the situations that are hardest to start",
+    "Direct entry: get help with one thing today, with an offer to remember it afterward",
+    "Real resume: leave a run half finished, come back to the exact question",
+    "A full item page: what it is, what's next, its whole history, and a page to edit by hand",
+    "Suggested opening wording for the hardest conversations, never saved once used",
     "A private, real account, not a shared demo",
   ],
   expectedInputs: [

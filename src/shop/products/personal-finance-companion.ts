@@ -114,7 +114,7 @@ export const personalFinanceCompanionShopProduct: ShopProductInput = {
     "Bills you can tick paid for the month, and a typical month written out like a budget planner",
     "Optional account linking for debt and savings, without ever deriving a goal from a linked balance",
     "Paste-notes, text file, and CSV import with a review step before anything is confirmed",
-    "Shared Responsibility: a per-bill shared flag and split, a manually ticked settled date, and a generated statement of what is settled and what is still owed",
+    "Shared Responsibility: a per-bill split, a settled date, and a generated statement of what's owed",
     "A private, real account, not a shared demo",
   ],
   expectedInputs: [

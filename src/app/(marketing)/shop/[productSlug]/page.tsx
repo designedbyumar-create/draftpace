@@ -32,6 +32,8 @@ import { getGuideBySlug } from "@/content/guides";
 import { withPreservedUtm } from "@/lib/analytics/utm";
 import ViewProductTracker from "@/components/analytics/ViewProductTracker";
 import TrackedLink from "@/components/analytics/TrackedLink";
+import PwaInstallSection from "@/components/public/shop/PwaInstallSection";
+import InclusionsGrid from "./InclusionsGrid";
 
 export const dynamic = "force-dynamic";
 
@@ -400,38 +402,77 @@ function buildDetailTabs(
   const { accent, installedName, installable, decidingQuestions } = ctx;
   const tabs: DetailTab[] = [];
 
-  if (product.problemsSolved.length > 0) {
-    tabs.push({
-      id: "solves",
-      label: "The problem",
-      content: (
-        <>
-          <p className="mb-5 text-[var(--muted)]">{product.problem}</p>
-          <ProblemCards items={product.problemsSolved} />
-        </>
-      ),
-    });
-  }
-
   tabs.push({
     id: "included",
     label: "What's included",
     content: (
       <>
-        <div className="grid gap-x-10 gap-y-4 sm:grid-cols-2">
-          <Fold items={product.inclusions} keep={6} noun="things">
-            {(line) => (
-              <div key={line} className="flex items-start gap-2.5 border-b border-[var(--border)] pb-4">
-                <Check size={16} className="mt-1 shrink-0" style={{ color: accent }} aria-hidden />
-                <span className="text-[14.5px] leading-relaxed">{line}</span>
-              </div>
-            )}
-          </Fold>
-        </div>
-        {product.compatibility.length > 0 && <p className="mt-5 text-[13px] text-[var(--faint)]">{product.compatibility.join(" \u00b7 ")}</p>}
+        {installable && (
+          <div className="mb-10 border-b border-[var(--border)] pb-10">
+            <PwaInstallSection productName={installedName} accent={accent} />
+          </div>
+        )}
+        <InclusionsGrid items={product.inclusions} accent={accent} />
+        {product.compatibility.length > 0 && (
+          <p className="mt-5 text-caption text-[var(--faint)]">
+            {(installable ? product.compatibility.slice(0, 2) : product.compatibility).join(" \u00b7 ")}
+          </p>
+        )}
       </>
     ),
   });
+
+  if (product.problemsSolved.length > 0 || product.searchedProblems.length > 0 || product.audienceExclusions.length > 0) {
+    tabs.push({
+      id: "fit",
+      label: "Is it for you?",
+      content: (
+        <>
+          {product.problemsSolved.length > 0 && (
+            <div>
+              <p className="text-eyebrow font-bold uppercase text-[var(--faint)]">What this solves</p>
+              <p className="mb-5 mt-3 text-[var(--muted)]">{product.problem}</p>
+              <ProblemCards items={product.problemsSolved} />
+            </div>
+          )}
+          {product.searchedProblems.length > 0 && (
+            <div className={product.problemsSolved.length > 0 ? "mt-9 border-t border-[var(--border)] pt-8" : ""}>
+              <p className="text-eyebrow font-bold uppercase text-[var(--faint)]">Which of these sounds like you?</p>
+              <div className="mt-3">
+                <SearchedProblems
+                  items={product.searchedProblems.map((item) => {
+                    const guide = item.guideSlug ? getGuideBySlug(item.guideSlug) : undefined;
+                    return { phrase: item.phrase, answer: item.answer, guide: guide ? { slug: guide.slug, title: guide.title } : undefined };
+                  })}
+                />
+              </div>
+            </div>
+          )}
+          {product.audienceExclusions.length > 0 && (
+            <div
+              className={
+                product.problemsSolved.length > 0 || product.searchedProblems.length > 0
+                  ? "mt-9 border-t border-[var(--border)] pt-8"
+                  : ""
+              }
+            >
+              <p className="text-eyebrow font-bold uppercase text-[var(--faint)]">Maybe not for you if</p>
+              <ul className="mt-3 flex flex-col gap-2.5">
+                <Fold items={product.audienceExclusions} keep={3} noun="reasons">
+                  {(line) => (
+                    <li key={line} className="flex items-start gap-2.5 text-[var(--muted)]">
+                      <X size={17} className="mt-0.5 shrink-0 text-[var(--faint)]" aria-hidden />
+                      {line}
+                    </li>
+                  )}
+                </Fold>
+              </ul>
+            </div>
+          )}
+        </>
+      ),
+    });
+  }
 
   if (product.howItWorks.length > 0) {
     tabs.push({
@@ -472,88 +513,34 @@ function buildDetailTabs(
     });
   }
 
-  if (product.audienceExclusions.length > 0 || product.searchedProblems.length > 0) {
-    tabs.push({
-      id: "fit",
-      label: "Is it for you?",
-      content: (
-        <>
-          {product.searchedProblems.length > 0 && (
-            <>
-              <p className="mb-3 text-[14px] font-semibold text-[var(--text)]">Which of these sounds like you?</p>
-              <SearchedProblems
-                items={product.searchedProblems.map((item) => {
-                  const guide = item.guideSlug ? getGuideBySlug(item.guideSlug) : undefined;
-                  return { phrase: item.phrase, answer: item.answer, guide: guide ? { slug: guide.slug, title: guide.title } : undefined };
-                })}
-              />
-            </>
-          )}
-          {product.audienceExclusions.length > 0 && (
-            <div className={product.searchedProblems.length > 0 ? "mt-8" : ""}>
-              <p className="mb-3 text-[14px] font-semibold text-[var(--text)]">Maybe not for you if</p>
-              <ul className="flex flex-col gap-2.5">
-                <Fold items={product.audienceExclusions} keep={3} noun="reasons">
-                  {(line) => (
-                    <li key={line} className="flex items-start gap-2.5 text-[var(--muted)]">
-                      <X size={17} className="mt-0.5 shrink-0 text-[var(--faint)]" aria-hidden />
-                      {line}
-                    </li>
-                  )}
-                </Fold>
-              </ul>
-            </div>
-          )}
-        </>
-      ),
-    });
-  }
-
-  if (decidingQuestions.length > 0) {
-    tabs.push({
-      id: "questions",
-      label: "Questions",
-      content: (
-        <div className="flex flex-col divide-y divide-[var(--border)]">
-          {decidingQuestions.map((faq) => (
-            <details key={faq.question} className="group py-3 first:pt-0">
-              <summary className="cursor-pointer text-[15px] font-semibold text-[var(--text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]">{faq.question}</summary>
-              <p className="mt-2 leading-relaxed text-[var(--muted)]">{faq.answer}</p>
-            </details>
-          ))}
-        </div>
-      ),
-    });
-  }
-
+  // Unconditional: the refund entry below guarantees this tab always has
+  // content, even for a product with no deciding-stage FAQ of its own.
   tabs.push({
-    id: "fine-print",
-    label: "Data & refunds",
+    id: "questions",
+    label: "Questions",
     content: (
-      <div className="flex flex-col gap-7">
+      <div className="flex flex-col divide-y divide-[var(--border)]">
+        {decidingQuestions.map((faq) => (
+          <details key={faq.question} className="group py-3 first:pt-0">
+            <summary className="cursor-pointer text-[15px] font-semibold text-[var(--text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]">{faq.question}</summary>
+            <p className="mt-2 leading-relaxed text-[var(--muted)]">{faq.answer}</p>
+          </details>
+        ))}
         {product.privacyNotes && (
-          <div>
-            <p className="text-[14px] font-semibold text-[var(--text)]">Your data</p>
-            <p className="mt-1.5 max-w-[42rem] text-[14.5px] leading-relaxed text-[var(--muted)]">{product.privacyNotes}</p>
-          </div>
+          <details className="group py-3 first:pt-0">
+            <summary className="cursor-pointer text-[15px] font-semibold text-[var(--text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]">What happens to my data?</summary>
+            <p className="mt-2 leading-relaxed text-[var(--muted)]">{product.privacyNotes}</p>
+          </details>
         )}
-        {installable && (
-          <div>
-            <p className="text-[14px] font-semibold text-[var(--text)]">It works like an app, without an app store</p>
-            <p className="mt-1.5 max-w-[42rem] text-[14.5px] leading-relaxed text-[var(--muted)]">
-              It runs in your browser and installs as {installedName}, with its own icon and window. On iPhone, open it in Safari and tap Share, then Add to Home Screen. On Android, tap Install. On a computer it works as it is, and Chrome and Edge can install it as its own window too.
-            </p>
-          </div>
-        )}
-        <div>
-          <p className="text-[14px] font-semibold text-[var(--text)]">Refunds</p>
-          <p className="mt-1.5 max-w-[42rem] text-[14.5px] leading-relaxed text-[var(--muted)]">
+        <details className="group py-3 first:pt-0">
+          <summary className="cursor-pointer text-[15px] font-semibold text-[var(--text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]">What&apos;s your refund policy?</summary>
+          <p className="mt-2 leading-relaxed text-[var(--muted)]">
             {product.title} is a digital product delivered the moment your payment clears, so there are no refunds once access is granted. If something is not working, is not what you understood it to be, or you were charged in error, write to us and we will put it right.
           </p>
           <TextLink href="/support" arrow className="mt-3" style={{ color: accent }}>
             Contact support
           </TextLink>
-        </div>
+        </details>
       </div>
     ),
   });
