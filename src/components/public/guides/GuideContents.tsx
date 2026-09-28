@@ -14,7 +14,14 @@ import type { GuideHeading } from "@/content/guideHeadings";
  *
  * Desktop gets a rail beside the article, in the normal flow rather than
  * pinned to the viewport, with the section you are currently reading
- * marked. Phones get a collapsed disclosure at
+ * marked. Its top margin (lg:mt-14) is not decorative: the rail and the
+ * article are grid siblings that both start flush against the header's
+ * bottom border, and the article's own first line only appears to sit
+ * lower because GuideBody's internal spacing (mt-10 on the wrapper, mt-4
+ * on the first paragraph) pushes it down 56px. The rail has no such
+ * spacing of its own, so without this margin its heading rendered flush
+ * against the header, reading as stuck to the banner rather than seated
+ * beside the article. Phones get a collapsed disclosure at
  * the top, closed by default, because an open list of six links between
  * the headline and the first paragraph would push the article itself
  * below the fold.
@@ -102,7 +109,7 @@ export default function GuideContents({
 
   if (variant === "rail") {
     return (
-      <nav aria-label="Contents" className="hidden lg:block lg:self-start">
+      <nav aria-label="Contents" className="hidden lg:mt-14 lg:block lg:self-start">
         <p className="mb-5 pl-3 text-eyebrow font-bold text-[var(--faint)]">
           In this guide
         </p>
