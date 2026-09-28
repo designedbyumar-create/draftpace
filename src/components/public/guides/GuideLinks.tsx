@@ -46,7 +46,7 @@ export function StartWithGuides() {
         from them. Nothing to sign up for.
       </p>
 
-      <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-10 grid gap-x-10 gap-y-12 sm:grid-cols-2">
         {LIFE_AREAS.map((area) => {
           const { accent, Mark } = areaIdentity(area.slug);
           const guides = startGuides(area);
