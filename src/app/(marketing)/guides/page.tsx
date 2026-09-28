@@ -7,7 +7,7 @@ import GuidesExplorer, {
 import GuideCard from "@/components/public/guides/GuideCard";
 import { areaIdentity } from "@/components/public/guides/areaIdentity";
 import { guideArt } from "@/content/guideArt";
-import { GUIDES, SERIES, areasWithGuides, guidesForArea, readingMinutes, readingTimeLabel, seriesGuides } from "@/content/guides";
+import { GUIDES, SERIES, areasWithGuides, readingMinutes, readingTimeLabel, seriesGuides } from "@/content/guides";
 
 export const metadata: Metadata = {
   title: "Guides",
@@ -39,21 +39,7 @@ export default function GuidesIndexPage() {
   const minutes = GUIDES.reduce((total, guide) => total + readingMinutes(guide), 0);
   const populatedAreas = areasWithGuides();
 
-  const areas: ExplorerArea[] = populatedAreas.map((area) => {
-    const { Mark } = areaIdentity(area.slug);
-    return {
-      slug: area.slug,
-      label: area.label,
-      situation: area.situation,
-      mark: <Mark className="w-full" />,
-      guides: guidesForArea(area.slug).map((guide) => ({
-        slug: guide.slug,
-        title: guide.title,
-        readingTime: readingTimeLabel(guide),
-        thumb: guideArt(guide.slug)?.thumb,
-      })),
-    };
-  });
+  const areas: ExplorerArea[] = populatedAreas.map((area) => ({ slug: area.slug, label: area.label }));
 
   // Series guides are searchable alongside the rest but have no area
   // panel, because they are about the whole shelf rather than one part

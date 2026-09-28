@@ -1,28 +1,20 @@
 "use client";
 
-import { useMemo, useState, type ReactNode } from "react";
-import Link from "next/link";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, Search, X } from "@/design-system/Icon";
+import { useMemo, useState } from "react";
+import { Search, X } from "@/design-system/Icon";
 import GuideCard from "./GuideCard";
 
 /**
- * The guides index.
+ * The guides index: search, filter by area, one flat grid of cards.
  *
- * WHAT IT REPLACES
- *
- * Six bordered cards of the same colour carrying an area name, a
- * sentence and a count. You could not see a single article title from
- * the index of fifty four articles, there was nothing to distinguish
- * one area from another, and there was no way to look for anything.
- *
- * WHAT IT DOES
- *
- * Two views over the same set. At rest it is the shelf: one panel per
- * area, in the area's own colour and mark, showing real titles rather
- * than a count, so the index finally answers what is actually written
- * here. Type anything, or pick an area, and it becomes a result list
- * across all of them.
+ * This used to swap between two views, a "shelf" of eight boxed area
+ * panels at rest and a search grid once you typed or picked an area.
+ * The boxed panels were the whole complaint: colour-filled tiles that
+ * read as eight more category cards rather than as a collection of a
+ * hundred and thirty seven specific articles. One grid, always, is both
+ * simpler to reason about and closer to what this page is actually for:
+ * "Everything" is just the empty-filter case of the same list a search
+ * produces, not a different page.
  *
  * Searching matches titles and summaries rather than full body text.
  * Full text would need the whole library in the client bundle, and
@@ -33,10 +25,6 @@ import GuideCard from "./GuideCard";
 export interface ExplorerArea {
   slug: string;
   label: string;
-  situation: string;
-  /** Rendered server-side, so this client component never imports the content module. */
-  mark: ReactNode;
-  guides: { slug: string; title: string; readingTime: string; thumb?: string }[];
 }
 
 export interface ExplorerGuide {
@@ -46,12 +34,9 @@ export interface ExplorerGuide {
   readingTime: string;
   areaSlug: string;
   areaLabel: string;
-  /** guideArt(slug)?.thumb, resolved server-side for the same reason `mark` above is. */
+  /** guideArt(slug)?.thumb, resolved server-side so this client component never imports the content module. */
   thumb?: string;
 }
-
-/** How many titles a resting area panel shows before it becomes a link. */
-const PREVIEW = 3;
 
 export default function GuidesExplorer({
   areas,
@@ -60,7 +45,6 @@ export default function GuidesExplorer({
   areas: ExplorerArea[];
   guides: ExplorerGuide[];
 }) {
-  const reduceMotion = useReducedMotion();
   const [query, setQuery] = useState("");
   const [areaSlug, setAreaSlug] = useState<string | null>(null);
 
@@ -69,13 +53,9 @@ export default function GuidesExplorer({
     return guides.filter((guide) => {
       if (areaSlug && guide.areaSlug !== areaSlug) return false;
       if (!needle) return true;
-      return (
-        guide.title.toLowerCase().includes(needle) || guide.dek.toLowerCase().includes(needle)
-      );
+      return guide.title.toLowerCase().includes(needle) || guide.dek.toLowerCase().includes(needle);
     });
   }, [guides, query, areaSlug]);
-
-  const filtering = query.trim().length > 0 || areaSlug !== null;
 
   return (
     <div>
@@ -124,122 +104,52 @@ export default function GuidesExplorer({
       </div>
 
       <p aria-live="polite" className="sr-only">
-        {filtering
-          ? `${results.length} guide${results.length === 1 ? "" : "s"} ${results.length === 1 ? "matches" : "match"}`
-          : `Showing all ${areas.length} areas`}
+        {results.length} guide{results.length === 1 ? "" : "s"}
       </p>
 
-      <AnimatePresence mode="wait" initial={false}>
-        {filtering ? (
-          <motion.div
-            key="results"
-            initial={reduceMotion ? false : { opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -8 }}
-            transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-8"
-          >
-            <p className="text-[13px] text-[var(--muted)]">
-              {results.length === 0
-                ? "Nothing matches that."
-                : `${results.length} guide${results.length === 1 ? "" : "s"}`}
+      <div className="mt-8">
+        <p className="text-[13px] text-[var(--muted)]">
+          {results.length === 0 ? "Nothing matches that." : `${results.length} guide${results.length === 1 ? "" : "s"}`}
+        </p>
+
+        {results.length === 0 ? (
+          <div className="mt-4 rounded-[var(--radius-lg)] border border-dashed border-[var(--border-strong)] px-5 py-10 text-center">
+            <p className="text-[15px] text-[var(--muted)]">
+              Try a plainer word. These are filed by the situation somebody is in, so &ldquo;passport&rdquo; and
+              &ldquo;probate&rdquo; work better than a category name.
             </p>
-
-            {results.length === 0 ? (
-              <div className="mt-4 rounded-[var(--radius-lg)] border border-dashed border-[var(--border-strong)] px-5 py-10 text-center">
-                <p className="text-[15px] text-[var(--muted)]">
-                  Try a plainer word. These are filed by the situation somebody is in, so
-                  &ldquo;passport&rdquo; and &ldquo;probate&rdquo; work better than a category name.
-                </p>
-                <button
-                  type="button"
-                  onClick={() => {
-                    setQuery("");
-                    setAreaSlug(null);
-                  }}
-                  className="mt-4 text-[14px] font-semibold text-[var(--primary)] hover:underline"
-                >
-                  Show everything again
-                </button>
-              </div>
-            ) : (
-              <ul className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                {results.map((guide) => (
-                  <li key={guide.slug}>
-                    <GuideCard
-                      variant="grid"
-                      areaSlug={guide.areaSlug}
-                      thumb={guide.thumb}
-                      guide={{
-                        slug: guide.slug,
-                        title: guide.title,
-                        dek: guide.dek,
-                        readingTime: guide.readingTime,
-                        areaLabel: guide.areaLabel,
-                      }}
-                    />
-                  </li>
-                ))}
-              </ul>
-            )}
-          </motion.div>
+            <button
+              type="button"
+              onClick={() => {
+                setQuery("");
+                setAreaSlug(null);
+              }}
+              className="mt-4 text-[14px] font-semibold text-[var(--primary)] hover:underline"
+            >
+              Show everything again
+            </button>
+          </div>
         ) : (
-          <motion.div
-            key="shelf"
-            initial={reduceMotion ? false : { opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -8 }}
-            transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-8 grid gap-4 lg:grid-cols-2"
-          >
-            {areas.map((area) => (
-              <section
-                key={area.slug}
-                style={
-                  {
-                    "--area": `var(--area-${area.slug})`,
-                    "--area-soft": `var(--area-${area.slug}-soft)`,
-                  } as React.CSSProperties
-                }
-                className="flex flex-col overflow-hidden rounded-[var(--radius-xl)] border border-[var(--border)] bg-[var(--surface)]"
-              >
-                <div className="flex items-start gap-4 bg-[var(--area-soft)] p-5">
-                  <div className="min-w-0 flex-1">
-                    <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--area)]">
-                      {area.label}
-                    </p>
-                    <p className="mt-2 text-[16px] font-medium leading-snug text-[var(--text)]">
-                      {area.situation}
-                    </p>
-                  </div>
-                  <div className="w-[76px] shrink-0 text-[var(--area)]">{area.mark}</div>
-                </div>
-
-                <ul className="flex flex-1 flex-col divide-y divide-[var(--border)] px-5">
-                  {area.guides.slice(0, PREVIEW).map((guide) => (
-                    <li key={guide.slug} className="py-3">
-                      <GuideCard
-                        variant="row"
-                        areaSlug={area.slug}
-                        thumb={guide.thumb}
-                        guide={{ slug: guide.slug, title: guide.title, readingTime: guide.readingTime }}
-                      />
-                    </li>
-                  ))}
-                </ul>
-
-                <Link
-                  href={`/guides/${area.slug}`}
-                  className="flex items-center justify-between gap-2 border-t border-[var(--border)] px-5 py-3.5 text-[13.5px] font-semibold text-[var(--area)] transition-colors hover:bg-[var(--area-soft)]"
-                >
-                  All {area.guides.length} in {area.label.toLowerCase()}
-                  <ArrowRight size={14} aria-hidden />
-                </Link>
-              </section>
+          <ul className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {results.map((guide) => (
+              <li key={guide.slug}>
+                <GuideCard
+                  variant="grid"
+                  areaSlug={guide.areaSlug}
+                  thumb={guide.thumb}
+                  guide={{
+                    slug: guide.slug,
+                    title: guide.title,
+                    dek: guide.dek,
+                    readingTime: guide.readingTime,
+                    areaLabel: guide.areaLabel,
+                  }}
+                />
+              </li>
             ))}
-          </motion.div>
+          </ul>
         )}
-      </AnimatePresence>
+      </div>
     </div>
   );
 }
@@ -253,7 +163,7 @@ function Chip({
   active: boolean;
   accent?: string;
   onClick: () => void;
-  children: ReactNode;
+  children: React.ReactNode;
 }) {
   return (
     <button

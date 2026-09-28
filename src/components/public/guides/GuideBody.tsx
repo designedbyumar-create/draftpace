@@ -21,11 +21,14 @@ import Figure from "./blocks/Figure";
  * computed here, because the contents panel links to them.
  */
 
-function Heading({ id, children }: { id: string; children: string }) {
+function Heading({ id, first, children }: { id: string; first?: boolean; children: string }) {
   return (
     <h2
       id={id}
-      className="mt-11 scroll-mt-24 text-[20px] font-semibold leading-snug tracking-[-0.01em] text-[var(--text)] first:mt-0"
+      className={[
+        "scroll-mt-24 text-[20px] font-semibold leading-snug tracking-[-0.01em] text-[var(--text)]",
+        first ? "mt-0" : "mt-16",
+      ].join(" ")}
     >
       {children}
     </h2>
@@ -41,12 +44,14 @@ export default function GuideBody({ blocks }: { blocks: GuideBlock[] }) {
   return (
     <div className="mt-10 flex flex-col gap-1">
       {blocks.map((block, i) => {
-        const heading = blockHeading(block) ? headings[headingIndex++] : undefined;
+        const hasHeading = Boolean(blockHeading(block));
+        const isFirstHeading = hasHeading && headingIndex === 0;
+        const heading = hasHeading ? headings[headingIndex++] : undefined;
 
         if (block.kind === "faq") {
           return (
             <section key={i} className="mb-2">
-              {heading && <Heading id={heading.id}>{heading.text}</Heading>}
+              {heading && <Heading id={heading.id} first={isFirstHeading}>{heading.text}</Heading>}
               <Faq items={block.items} idPrefix={`f${i}`} />
             </section>
           );
@@ -69,7 +74,7 @@ export default function GuideBody({ blocks }: { blocks: GuideBlock[] }) {
         if (block.kind === "paragraphs") {
           return (
             <section key={i} className="mb-2">
-              {heading && <Heading id={heading.id}>{heading.text}</Heading>}
+              {heading && <Heading id={heading.id} first={isFirstHeading}>{heading.text}</Heading>}
               {block.paragraphs.map((paragraph, j) => (
                 <p key={j} className="mt-4 text-[16.5px] leading-[1.75] text-[var(--text)]">
                   {renderInline(paragraph, `p-${i}-${j}`)}
@@ -82,7 +87,7 @@ export default function GuideBody({ blocks }: { blocks: GuideBlock[] }) {
         if (block.kind === "list") {
           return (
             <section key={i} className="mb-2">
-              {heading && <Heading id={heading.id}>{heading.text}</Heading>}
+              {heading && <Heading id={heading.id} first={isFirstHeading}>{heading.text}</Heading>}
               {block.intro && (
                 <p className="mt-4 text-[16.5px] leading-[1.75] text-[var(--text)]">
                   {renderInline(block.intro, `li-${i}`)}
@@ -101,7 +106,7 @@ export default function GuideBody({ blocks }: { blocks: GuideBlock[] }) {
         if (block.kind === "table") {
           return (
             <section key={i} className="mb-2">
-              {heading && <Heading id={heading.id}>{heading.text}</Heading>}
+              {heading && <Heading id={heading.id} first={isFirstHeading}>{heading.text}</Heading>}
               {block.intro && (
                 <p className="mt-4 text-[16.5px] leading-[1.75] text-[var(--text)]">
                   {renderInline(block.intro, `ti-${i}`)}
@@ -115,7 +120,7 @@ export default function GuideBody({ blocks }: { blocks: GuideBlock[] }) {
         if (block.kind === "timeline") {
           return (
             <section key={i} className="mb-2">
-              {heading && <Heading id={heading.id}>{heading.text}</Heading>}
+              {heading && <Heading id={heading.id} first={isFirstHeading}>{heading.text}</Heading>}
               {block.intro && (
                 <p className="mt-4 text-[16.5px] leading-[1.75] text-[var(--text)]">
                   {renderInline(block.intro, `tli-${i}`)}
@@ -129,7 +134,7 @@ export default function GuideBody({ blocks }: { blocks: GuideBlock[] }) {
         if (block.kind === "compare") {
           return (
             <section key={i} className="mb-2">
-              {heading && <Heading id={heading.id}>{heading.text}</Heading>}
+              {heading && <Heading id={heading.id} first={isFirstHeading}>{heading.text}</Heading>}
               {block.intro && (
                 <p className="mt-4 text-[16.5px] leading-[1.75] text-[var(--text)]">
                   {renderInline(block.intro, `ci-${i}`)}
@@ -143,7 +148,7 @@ export default function GuideBody({ blocks }: { blocks: GuideBlock[] }) {
         if (block.kind === "scripts") {
           return (
             <section key={i} className="mb-2">
-              {heading && <Heading id={heading.id}>{heading.text}</Heading>}
+              {heading && <Heading id={heading.id} first={isFirstHeading}>{heading.text}</Heading>}
               {block.intro && (
                 <p className="mt-4 text-[16.5px] leading-[1.75] text-[var(--text)]">
                   {renderInline(block.intro, `si-${i}`)}

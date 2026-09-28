@@ -12,8 +12,9 @@ import type { GuideHeading } from "@/content/guideHeadings";
  * all. On desktop that wastes a wide empty margin; on a phone it means
  * scrolling past four sections to reach the table you came for.
  *
- * Desktop gets a sticky rail beside the article, with the section you
- * are currently reading marked. Phones get a collapsed disclosure at
+ * Desktop gets a rail beside the article, in the normal flow rather than
+ * pinned to the viewport, with the section you are currently reading
+ * marked. Phones get a collapsed disclosure at
  * the top, closed by default, because an open list of six links between
  * the headline and the first paragraph would push the article itself
  * below the fold.
@@ -101,7 +102,7 @@ export default function GuideContents({
 
   if (variant === "rail") {
     return (
-      <nav aria-label="Contents" className="hidden lg:sticky lg:top-24 lg:block lg:self-start">
+      <nav aria-label="Contents" className="hidden lg:block lg:self-start">
         <p className="mb-5 pl-3 text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">
           In this guide
         </p>
