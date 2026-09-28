@@ -100,20 +100,20 @@ export default function CompanionPicker({ panels }: { panels: PickerPanel[] }) {
           wrapping. The product name did exactly that, and pushed the
           page into a sideways scroll at 390px. */}
       <div className="min-w-0">
-        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--brand-ink)]">The Companion Series</p>
-        <h1 className="mt-3 font-serif text-[38px] font-semibold leading-[1.08] tracking-tight sm:text-[48px] lg:text-[54px]">
+        <p className="text-eyebrow font-bold uppercase text-[var(--brand-ink)]">The Companion Series</p>
+        <h1 className="mt-3 text-display font-serif font-semibold tracking-tight">
           For the parts of life that are hard to keep track of.
         </h1>
         {/* Three lines at most, and it names the areas outright: the
             previous version described how the products behave before
             saying what part of anybody's life they are for. */}
-        <p className="mt-5 max-w-lg text-[17px] leading-relaxed text-[var(--muted)]">
+        <p className="mt-5 max-w-lg text-body-lg leading-relaxed text-[var(--muted)]">
           Companions for the parts of everyday life that are hardest to stay on top of: money, home, focus, family,
           affairs, travel, vehicles and family health. Each one remembers your situation so you do not have to.
         </p>
 
         <fieldset className="mt-7 border-0 p-0">
-          <legend className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--faint)]">
+          <legend className="text-eyebrow font-bold uppercase text-[var(--faint)]">
             What are you dealing with?
           </legend>
           <div className="mt-3 flex flex-wrap gap-2">
@@ -141,7 +141,7 @@ export default function CompanionPicker({ panels }: { panels: PickerPanel[] }) {
                   // border is transparent when active so the pill is the
                   // only edge, and the box never changes size.
                   className={[
-                    "relative rounded-full border px-3.5 py-2 text-[13px] font-semibold transition-colors duration-[var(--dur)] ease-[var(--ease-out)]",
+                    "relative rounded-full border px-3.5 py-2 text-body-sm font-semibold transition-colors duration-[var(--dur)] ease-[var(--ease-out)]",
                     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]",
                     isActive
                       ? "border-transparent text-[var(--brand-ink-contrast)]"
@@ -193,7 +193,7 @@ export default function CompanionPicker({ panels }: { panels: PickerPanel[] }) {
         {/* The name of the thing, and what it costs, directly above what
             it gives you. */}
         <div className="flex items-start justify-between gap-4">
-          <p className="min-h-[48px] min-w-0 font-serif text-[20px] font-semibold leading-tight tracking-tight text-[var(--text)]">
+          <p className="min-h-[48px] min-w-0 text-heading-sm font-serif font-semibold text-[var(--text)]">
             {active.productTitle}
           </p>
           <PriceRow panel={active} />
@@ -286,12 +286,16 @@ export default function CompanionPicker({ panels }: { panels: PickerPanel[] }) {
             <a
               href={`#${active.productSlug}`}
               aria-label={`Try ${active.productTitle} live`}
-              className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[var(--brand-ink)] px-5 text-[14px] font-semibold text-[var(--brand-ink-contrast)] transition-opacity duration-[var(--dur)] hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]"
+              className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[var(--brand-ink)] px-5 text-body-sm font-semibold text-[var(--brand-ink-contrast)] transition-opacity duration-[var(--dur)] hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]"
             >
               Try it live
               <CaretDown size={14} aria-hidden />
             </a>
-            <Link href={`/shop/${active.productSlug}`} aria-label={`See ${active.productTitle} in detail`} className="inline-flex items-center gap-1.5 text-[14px] font-semibold text-[var(--muted)] hover:text-[var(--text)]">
+            {/* Not <TextLink>: this link is deliberately de-emphasised
+                (muted, not the accent), which TextLink's fixed colour
+                treatment doesn't offer without fighting Tailwind's
+                generated-class order for the colour override. */}
+            <Link href={`/shop/${active.productSlug}`} aria-label={`See ${active.productTitle} in detail`} className="inline-flex items-center gap-1.5 text-body-sm font-semibold text-[var(--muted)] hover:text-[var(--text)]">
               Full details <ArrowRight size={14} aria-hidden />
             </Link>
           </div>
@@ -321,9 +325,9 @@ function PriceRow({ panel }: { panel: PickerPanel }) {
   return (
     <div className="flex shrink-0 items-center gap-2 pt-1.5">
       {panel.compareAtLabel && (
-        <span className="font-serif text-[12px] text-[var(--faint)] line-through">{panel.compareAtLabel}</span>
+        <span className="font-serif text-caption text-[var(--faint)] line-through">{panel.compareAtLabel}</span>
       )}
-      <span className="font-serif text-[15px] font-semibold leading-none tracking-tight text-[var(--text)]">
+      <span className="font-serif text-body font-semibold leading-none tracking-tight text-[var(--text)]">
         {panel.priceLabel}
       </span>
       {panel.savingsPercent !== null && panel.savingsPercent > 0 && (

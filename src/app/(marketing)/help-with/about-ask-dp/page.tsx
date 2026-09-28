@@ -19,20 +19,20 @@ export const metadata: Metadata = {
 export default function AboutAskDPPage() {
   return (
     <Container width="narrow" className="pb-24 pt-16 sm:pt-20">
-      <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--brand-ink)]">Ask DP</p>
-      <h1 className="mt-3 font-serif text-[34px] font-semibold leading-tight tracking-tight sm:text-[44px]">
+      <p className="text-eyebrow font-bold uppercase text-[var(--brand-ink)]">Ask DP</p>
+      <h1 className="mt-3 text-heading-lg font-serif font-semibold tracking-tight">
         A library shaped around your problem, not the document.
       </h1>
-      <p className="mt-5 max-w-xl text-[16px] leading-relaxed text-[var(--muted)]">
+      <p className="mt-5 max-w-xl text-body-lg leading-relaxed text-[var(--muted)]">
         Most official information is written to cover every case there could ever be. A statute runs a hundred
         pages so it can hold up in every situation at once. Your situation is usually only a few lines of it.
         Ask DP exists to find that slice, show exactly where it came from, and say so plainly when it doesn&rsquo;t
         have it yet.
       </p>
 
-      <div className="mt-14 flex flex-col gap-10 text-[15px] leading-relaxed text-[var(--text)]">
+      <div className="mt-14 flex flex-col gap-10 text-body leading-relaxed text-[var(--text)]">
         <section>
-          <h2 className="text-[16px] font-semibold text-[var(--text)]">What it actually is</h2>
+          <h2 className="text-heading-sm font-semibold text-[var(--text)]">What it actually is</h2>
           <p className="mt-3">
             Think of Ask DP as a librarian, not a search engine and not a chatbot. It doesn&rsquo;t write answers,
             it finds them. Every entry in the library was researched and checked against a real source before it
@@ -44,7 +44,7 @@ export default function AboutAskDPPage() {
         </section>
 
         <section>
-          <h2 className="text-[16px] font-semibold text-[var(--text)]">Why it isn&rsquo;t organised like a law library</h2>
+          <h2 className="text-heading-sm font-semibold text-[var(--text)]">Why it isn&rsquo;t organised like a law library</h2>
           <p className="mt-3">
             A person asking &ldquo;is there a limit on my security deposit&rdquo; doesn&rsquo;t think in statute
             names or filing categories, they think in the actual words of the problem. So Ask DP runs as one flat
@@ -57,7 +57,7 @@ export default function AboutAskDPPage() {
         </section>
 
         <section>
-          <h2 className="text-[16px] font-semibold text-[var(--text)]">How it grows</h2>
+          <h2 className="text-heading-sm font-semibold text-[var(--text)]">How it grows</h2>
           <p className="mt-3">
             This library is not finished, and it doesn&rsquo;t pretend to be. It grows one properly researched
             entry at a time, across the United States, the United Kingdom and Canada for now, and it says so when
@@ -68,7 +68,7 @@ export default function AboutAskDPPage() {
         </section>
 
         <section>
-          <h2 className="text-[16px] font-semibold text-[var(--text)]">How it fits the rest of Draftpace</h2>
+          <h2 className="text-heading-sm font-semibold text-[var(--text)]">How it fits the rest of Draftpace</h2>
           <p className="mt-3">
             Every Draftpace Companion holds the state of one part of somebody&rsquo;s life, so they don&rsquo;t
             have to keep it in their head. Ask DP does the same job for information instead of ongoing state: it
@@ -80,21 +80,21 @@ export default function AboutAskDPPage() {
       </div>
 
       <div className="mt-16 border-t border-[var(--border)] pt-10">
-        <h2 className="text-[16px] font-semibold text-[var(--text)]">Questions about Ask DP itself</h2>
+        <h2 className="text-heading-sm font-semibold text-[var(--text)]">Questions about Ask DP itself</h2>
         <div className="mt-6 flex flex-col gap-8">
           {META_ENTRIES.map((meta) => (
             <div key={meta.slug}>
-              <p className="font-serif text-[17px] font-semibold leading-snug tracking-tight text-[var(--text)]">
+              <p className="text-heading-sm font-serif font-semibold leading-snug tracking-tight text-[var(--text)]">
                 {meta.question}
               </p>
-              <p className="mt-2 text-[14.5px] leading-relaxed text-[var(--muted)]">{meta.answer}</p>
+              <p className="mt-2 text-body leading-relaxed text-[var(--muted)]">{meta.answer}</p>
             </div>
           ))}
         </div>
       </div>
 
       <div className="mt-14 border-t border-[var(--border)] pt-8">
-        <Link href="/help-with" className="text-[13px] font-semibold text-[var(--primary)] hover:underline">
+        <Link href="/help-with" className="text-body-sm font-semibold text-[var(--primary)] hover:underline">
           ← Back to Ask DP
         </Link>
       </div>

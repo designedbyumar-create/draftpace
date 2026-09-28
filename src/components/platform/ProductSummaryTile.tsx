@@ -66,7 +66,7 @@ export default function ProductSummaryTile({
         <div className={wide ? "min-w-0 flex-1" : "contents"}>
           <div className="flex items-center gap-2.5">
             <ProductBadge definition={definition} />
-            <p className="min-w-0 truncate text-[11.5px] font-bold uppercase tracking-[0.1em] text-[var(--faint)]">
+            <p className="min-w-0 truncate text-eyebrow font-bold uppercase text-[var(--faint)]">
               {definition.title}
             </p>
             {needsSetup && <Badge tone="neutral">{status}</Badge>}
@@ -74,24 +74,24 @@ export default function ProductSummaryTile({
 
           {figure ? (
             <>
-              <p className="mt-3.5 font-serif text-[30px] font-semibold leading-none tracking-tight text-[var(--text)]">
+              <p className="mt-3.5 text-heading font-serif font-semibold leading-none tracking-tight text-[var(--text)]">
                 {figure}
               </p>
-              <p className="mt-1.5 text-[13px] text-[var(--muted)]">{summary!.headline}</p>
+              <p className="mt-1.5 text-body-sm text-[var(--muted)]">{summary!.headline}</p>
             </>
           ) : (
-            <p className="mt-3.5 text-[16.5px] font-medium leading-snug text-[var(--text)]">
+            <p className="mt-3.5 text-body-lg font-medium leading-snug text-[var(--text)]">
               {summary?.headline ?? (needsSetup ? "A few steps from your first result" : status)}
             </p>
           )}
 
           {summary?.supporting && (
-            <p className="mt-2 text-[12.5px] leading-5 text-[var(--faint)]">{summary.supporting}</p>
+            <p className="mt-2 text-caption leading-5 text-[var(--faint)]">{summary.supporting}</p>
           )}
         </div>
 
         <span
-          className={`inline-flex shrink-0 items-center gap-1.5 text-[13px] font-semibold text-[var(--primary)] ${
+          className={`inline-flex shrink-0 items-center gap-1.5 text-body-sm font-semibold text-[var(--primary)] ${
             wide ? "" : "mt-auto pt-4"
           }`}
         >

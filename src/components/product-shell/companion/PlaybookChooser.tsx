@@ -32,14 +32,14 @@ export default function PlaybookChooser<TContext extends string = string>({
 }) {
   return (
     <section className="mt-3 rounded-xl border border-[var(--border)] bg-[var(--surface-muted)] p-4">
-      <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">{title}</p>
+      <p className="text-eyebrow font-bold uppercase text-[var(--muted)]">{title}</p>
       <ul className="mt-3 flex flex-col gap-2">
         {available.map((playbook) => (
           <li key={playbook.key}>
             <button
               type="button"
               onClick={() => onPick(playbook)}
-              className="w-full rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3.5 py-3 text-left text-[14px] leading-5 text-[var(--text)] transition-colors hover:border-[var(--primary)]"
+              className="w-full rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3.5 py-3 text-left text-body-sm leading-5 text-[var(--text)] transition-colors hover:border-[var(--primary)]"
             >
               {playbook.situation}
             </button>
@@ -47,7 +47,7 @@ export default function PlaybookChooser<TContext extends string = string>({
         ))}
       </ul>
       {available.length === 0 && emptyLabel && (
-        <p className="mt-2 text-[13px] leading-5 text-[var(--muted)]">{emptyLabel}</p>
+        <p className="mt-2 text-body-sm leading-5 text-[var(--muted)]">{emptyLabel}</p>
       )}
       <div className="mt-3">
         <Button size="sm" variant="ghost" onClick={onCancel}>

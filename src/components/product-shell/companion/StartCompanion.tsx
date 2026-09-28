@@ -45,9 +45,9 @@ export default function StartCompanion<TContext extends string = string>({
   return (
     <section className="mx-auto flex w-full max-w-2xl flex-col gap-6">
       <div>
-        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">{eyebrow}</p>
+        <p className="text-eyebrow font-bold uppercase text-[var(--primary)]">{eyebrow}</p>
         <h1
-          className="mt-2 text-[26px] leading-tight text-[var(--text)]"
+          className="mt-2 text-heading leading-tight text-[var(--text)]"
           style={{ fontFamily: "var(--product-narrative-font, inherit)" }}
         >
           {prompt}
@@ -62,7 +62,7 @@ export default function StartCompanion<TContext extends string = string>({
       />
 
       <div>
-        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">{situationsLabel}</p>
+        <p className="text-eyebrow font-bold uppercase text-[var(--muted)]">{situationsLabel}</p>
         <ul className="mt-3 flex flex-col gap-2">
           {playbooks.map((playbook) => (
             <li key={playbook.key}>
@@ -71,7 +71,7 @@ export default function StartCompanion<TContext extends string = string>({
                 onClick={() => onStart(playbook, title.trim() || null)}
                 className="w-full rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-4 text-left transition-colors hover:border-[var(--primary)]"
               >
-                <p className="text-[15px] leading-6 text-[var(--text)]">{playbook.situation}</p>
+                <p className="text-body leading-6 text-[var(--text)]">{playbook.situation}</p>
               </button>
             </li>
           ))}

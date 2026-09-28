@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Container from "@/design-system/Container";
 import { founderStructuredData } from "@/lib/structuredData";
 
@@ -16,12 +15,12 @@ export default function AboutPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(founderStructuredData()) }}
       />
-      <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--brand-ink)]">About</p>
-      <h1 className="mt-3 font-serif text-[34px] font-semibold leading-tight tracking-tight sm:text-[44px]">
+      <p className="text-eyebrow font-bold uppercase text-[var(--brand-ink)]">About</p>
+      <h1 className="mt-3 text-heading-lg font-serif font-semibold tracking-tight">
         Nothing we make will tell you that you are behind.
       </h1>
 
-      <div className="mt-10 flex flex-col gap-6 text-[15px] leading-relaxed text-[var(--text)]">
+      <div className="mt-10 flex flex-col gap-6 text-body leading-relaxed text-[var(--text)]">
         <p>
           Draftpace started from a folder we all recognise: a budget spreadsheet, a course we meant to finish, a
           planner that looked perfect and did nothing once it was downloaded. Each one promised to change something,
@@ -42,7 +41,7 @@ export default function AboutPage() {
       </div>
 
       <div className="mt-14 border-t border-[var(--border)] pt-10">
-        <h2 className="text-[16px] font-semibold text-[var(--text)]">How we work</h2>
+        <h2 className="text-heading-sm font-semibold text-[var(--text)]">How we work</h2>
         <div className="mt-4 flex flex-col gap-4">
           {[
             {
@@ -59,16 +58,16 @@ export default function AboutPage() {
             },
           ].map((item) => (
             <div key={item.title} className="rounded-xl border border-[var(--border)] p-5">
-              <p className="text-[14px] font-semibold text-[var(--text)]">{item.title}</p>
-              <p className="mt-1.5 text-[13px] leading-relaxed text-[var(--muted)]">{item.body}</p>
+              <p className="text-body-sm font-semibold text-[var(--text)]">{item.title}</p>
+              <p className="mt-1.5 text-body-sm leading-relaxed text-[var(--muted)]">{item.body}</p>
             </div>
           ))}
         </div>
       </div>
 
       <div className="mt-14 border-t border-[var(--border)] pt-10">
-        <h2 className="text-[16px] font-semibold text-[var(--text)]">Who's behind it</h2>
-        <div className="mt-4 flex flex-col gap-4 text-[14px] leading-relaxed text-[var(--muted)]">
+        <h2 className="text-heading-sm font-semibold text-[var(--text)]">Who's behind it</h2>
+        <div className="mt-4 flex flex-col gap-4 text-body-sm leading-relaxed text-[var(--muted)]">
           <p>
             Draftpace is built by{" "}
             <a

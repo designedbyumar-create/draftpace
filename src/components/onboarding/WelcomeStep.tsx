@@ -24,11 +24,11 @@ export default function WelcomeStep({
 
   return (
     <div>
-      <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--primary)]">Welcome to Draftpace</p>
-      <h1 className="mt-3 font-serif text-[28px] font-semibold leading-tight tracking-tight text-[var(--text)] sm:text-[32px]">
+      <p className="text-eyebrow font-bold uppercase text-[var(--primary)]">Welcome to Draftpace</p>
+      <h1 className="mt-3 text-heading font-serif font-semibold tracking-tight text-[var(--text)]">
         Good to see you, {name}.
       </h1>
-      <p className="mt-3 text-[14px] leading-relaxed text-[var(--muted)]">
+      <p className="mt-3 text-body-sm leading-relaxed text-[var(--muted)]">
         Pick how this should look. It changes right now, not after you finish.
       </p>
 
@@ -51,8 +51,8 @@ export default function WelcomeStep({
                 <Icon size={18} aria-hidden />
               </div>
               <div className="min-w-0 flex-1">
-                <p className="text-[14px] font-semibold text-[var(--text)]">{label}</p>
-                <p className="text-[12.5px] leading-5 text-[var(--muted)]">{desc}</p>
+                <p className="text-body-sm font-semibold text-[var(--text)]">{label}</p>
+                <p className="text-caption leading-5 text-[var(--muted)]">{desc}</p>
               </div>
               {active && (
                 <motion.span

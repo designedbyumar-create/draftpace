@@ -205,19 +205,17 @@ export default function GuidedTour({
         className="pointer-events-auto fixed w-[300px] max-w-[calc(100vw-32px)] rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[shadow:var(--shadow-md)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]"
         style={popStyle}
       >
-        <p className="text-[11px] font-semibold text-[var(--faint)]">
+        <p className="text-eyebrow font-semibold text-[var(--faint)]">
           Step {index + 1} of {liveSteps.length}
         </p>
-        <h3 id={titleId} className="mt-1.5 text-[15px] font-semibold text-[var(--text)]">
+        <h3 id={titleId} className="mt-1.5 text-body font-semibold text-[var(--text)]">
           {step.title}
         </h3>
-        <p className="mt-1.5 text-[13px] leading-relaxed text-[var(--muted)]">{step.body}</p>
+        <p className="mt-1.5 text-body-sm leading-relaxed text-[var(--muted)]">{step.body}</p>
         <div className="mt-4 flex items-center justify-between">
-          <button
-            type="button"
-            onClick={onFinish}
-            className="text-[13px] font-semibold text-[var(--muted)] hover:text-[var(--text)]"
-          >
+          {/* Not textLinkClassName(): deliberately muted, not the
+              accent, so "Skip" doesn't outrank "Next"/"Got it". */}
+          <button type="button" onClick={onFinish} className="text-body-sm font-semibold text-[var(--muted)] hover:text-[var(--text)]">
             Skip
           </button>
           <Button variant="commit" size="sm" onClick={goNext}>

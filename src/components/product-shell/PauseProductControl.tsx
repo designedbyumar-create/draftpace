@@ -66,8 +66,8 @@ export default function PauseProductControl({ instanceId }: { instanceId: string
   return (
     <div className="flex items-center justify-between gap-3">
       <div>
-        <p className="text-[13px] font-semibold text-[var(--text)]">{pausedAt ? "Paused" : "Pause this product"}</p>
-        <p className="mt-0.5 text-[12px] text-[var(--muted)]">
+        <p className="text-body-sm font-semibold text-[var(--text)]">{pausedAt ? "Paused" : "Pause this product"}</p>
+        <p className="mt-0.5 text-caption text-[var(--muted)]">
           {pausedAt
             ? "It stays exactly as it is, and won't compete for attention on Home until you resume it."
             : "Going away for a while? Pausing keeps everything as it is and stops it from asking for attention."}

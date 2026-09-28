@@ -10,8 +10,8 @@ export default function TrustSection() {
   return (
     <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
       <div>
-        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--brand-ink)]">Trust</p>
-        <h2 className="mt-3 font-serif text-[30px] font-semibold leading-tight tracking-tight sm:text-[38px]">
+        <p className="text-eyebrow font-bold uppercase text-[var(--brand-ink)]">Trust</p>
+        <h2 className="mt-3 text-heading-lg font-serif font-semibold tracking-tight">
           A living product is personal. The way it is handled should be clear.
         </h2>
         <TextLink href="/trust" className="mt-4">
@@ -20,7 +20,7 @@ export default function TrustSection() {
       </div>
       <ul className="flex flex-col divide-y divide-[var(--border)]">
         {CLAIMS.map((claim) => (
-          <li key={claim} className="py-4 text-[14px] leading-relaxed text-[var(--text)] first:pt-0">
+          <li key={claim} className="py-4 text-body-sm leading-relaxed text-[var(--text)] first:pt-0">
             {claim}
           </li>
         ))}

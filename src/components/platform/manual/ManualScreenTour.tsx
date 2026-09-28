@@ -55,7 +55,7 @@ export default function ManualScreenTour({
       </div>
 
       {current.caption && (
-        <p className="mx-auto mt-5 max-w-sm text-center text-[13.5px] leading-relaxed text-[var(--muted)]">
+        <p className="mx-auto mt-5 max-w-sm text-center text-body-sm leading-relaxed text-[var(--muted)]">
           {current.caption}
         </p>
       )}

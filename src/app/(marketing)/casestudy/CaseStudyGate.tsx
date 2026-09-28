@@ -68,10 +68,10 @@ export default function CaseStudyGate({ children }: { children: React.ReactNode 
         <div className="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-[var(--surface-muted)]">
           <Lock size={18} className="text-[var(--muted)]" aria-hidden />
         </div>
-        <h1 className="mt-5 font-serif text-[22px] font-semibold tracking-tight text-[var(--text)]">
+        <h1 className="mt-5 text-heading-sm font-serif font-semibold tracking-tight text-[var(--text)]">
           This page is private for now
         </h1>
-        <p className="mt-2.5 text-[14px] leading-relaxed text-[var(--muted)]">
+        <p className="mt-2.5 text-body-sm leading-relaxed text-[var(--muted)]">
           Enter the code to read the Draftpace case study.
         </p>
 
@@ -90,6 +90,10 @@ export default function CaseStudyGate({ children }: { children: React.ReactNode 
             aria-invalid={error || undefined}
             aria-describedby={error ? "casestudy-gate-error" : undefined}
             placeholder="Code"
+            // 18px + wide letter-tracking is functional code-entry chrome,
+            // not prose hierarchy: a documented exception in
+            // designSystem.test.ts's type-scale guard, keyed off this
+            // tracking-[0.3em] marker, not a named scale step.
             className={[
               "h-12 w-full rounded-lg border bg-[var(--surface)] px-4 text-center text-[18px] tracking-[0.3em] text-[var(--text)] placeholder-[var(--faint)] placeholder:tracking-normal transition-colors",
               "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]",
@@ -97,7 +101,7 @@ export default function CaseStudyGate({ children }: { children: React.ReactNode 
             ].join(" ")}
           />
           {error && (
-            <p id="casestudy-gate-error" role="alert" className="mt-2 text-[13px] text-[var(--danger)]">
+            <p id="casestudy-gate-error" role="alert" className="mt-2 text-body-sm text-[var(--danger)]">
               That code is not right.
             </p>
           )}

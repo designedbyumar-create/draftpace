@@ -77,19 +77,19 @@ export default function LibraryShelfCard({
       <div className="flex flex-1 flex-col p-5">
         <div className="flex flex-wrap items-center gap-2">
           <ProductBadge definition={definition} size="sm" />
-          <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-[var(--faint)]">
+          <p className="text-eyebrow font-bold uppercase text-[var(--faint)]">
             {areaLabel ?? family?.label ?? definition.family}
           </p>
           {STATUS_TONE[status] && <Badge tone={STATUS_TONE[status]}>{status}</Badge>}
         </div>
 
-        <h3 className="mt-3 text-[17px] font-semibold leading-snug tracking-tight text-[var(--text)]">
+        <h3 className="mt-3 text-heading-sm font-semibold leading-snug tracking-tight text-[var(--text)]">
           {definition.title}
         </h3>
 
-        {promise && <p className="mt-2 line-clamp-3 text-[13.5px] leading-relaxed text-[var(--muted)]">{promise}</p>}
+        {promise && <p className="mt-2 line-clamp-3 text-body-sm leading-relaxed text-[var(--muted)]">{promise}</p>}
 
-        <p className="mt-3 text-[12px] text-[var(--faint)]">{boughtStartedLine(entitlement, instance)}</p>
+        <p className="mt-3 text-caption text-[var(--faint)]">{boughtStartedLine(entitlement, instance)}</p>
 
         {/* Two genuinely different doors, not one action and a decoration:
             get on with it, or learn to get more out of it. */}

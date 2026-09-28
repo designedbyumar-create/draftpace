@@ -171,17 +171,17 @@ export default function CaseStudyPage() {
       <section className="border-b border-[var(--border)]">
         <Container width="wide" className="py-16 sm:py-24 lg:py-28">
           <Eyebrow>{INTRO.eyebrow}</Eyebrow>
-          <h1 className="mt-5 max-w-4xl font-serif text-[38px] font-semibold leading-[1.06] tracking-tight sm:text-[52px] lg:text-[62px]">
+          <h1 className="mt-5 max-w-4xl text-display font-serif font-semibold tracking-tight">
             {INTRO.title}
           </h1>
-          <p className="mt-7 max-w-2xl text-[18px] leading-[1.65] text-[var(--muted)]">{INTRO.standfirst}</p>
-          <p className="mt-4 text-[14px] text-[var(--faint)]">{INTRO.byline}</p>
+          <p className="mt-7 max-w-2xl text-body-lg leading-[1.65] text-[var(--muted)]">{INTRO.standfirst}</p>
+          <p className="mt-4 text-body-sm text-[var(--faint)]">{INTRO.byline}</p>
 
           <dl className="mt-14 grid gap-x-8 gap-y-6 border-t border-[var(--border)] pt-8 sm:grid-cols-2 lg:grid-cols-4">
             {INTRO.meta.map((m) => (
               <div key={m.label}>
-                <dt className="text-[10px] font-bold uppercase tracking-[0.16em] text-[var(--faint)]">{m.label}</dt>
-                <dd className="mt-2 text-[14px] leading-relaxed text-[var(--text)]">{m.value}</dd>
+                <dt className="text-eyebrow font-bold uppercase text-[var(--faint)]">{m.label}</dt>
+                <dd className="mt-2 text-body-sm leading-relaxed text-[var(--text)]">{m.value}</dd>
               </div>
             ))}
           </dl>
@@ -206,7 +206,7 @@ export default function CaseStudyPage() {
             {PROBLEM.body.map((p) => (
               <Prose key={p.slice(0, 30)}>{p}</Prose>
             ))}
-            <p className="mt-8 max-w-2xl font-serif text-[21px] leading-snug tracking-tight text-[var(--text)] sm:text-[24px]">
+            <p className="mt-8 max-w-2xl text-heading-sm font-serif leading-snug tracking-tight text-[var(--text)]">
               {PROBLEM.kicker}
             </p>
             <ScatterFigure labels={PROBLEM.scatter} />
@@ -257,11 +257,11 @@ export default function CaseStudyPage() {
                       {[<HmcMockup key="h" />, <MmrMockup key="m" />, <TravelMockup key="t" />][i]}
                     </Screen>
                   </div>
-                  <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.16em] text-[var(--brand-ink)]">
+                  <p className="mt-7 text-eyebrow font-bold uppercase text-[var(--brand-ink)]">
                     {ex.area}
                   </p>
-                  <p className="mt-2 text-[13.5px] leading-relaxed text-[var(--faint)]">{ex.instead}</p>
-                  <p className="mt-2.5 text-[14.5px] leading-[1.68] text-[var(--muted)]">{ex.real}</p>
+                  <p className="mt-2 text-body-sm leading-relaxed text-[var(--faint)]">{ex.instead}</p>
+                  <p className="mt-2.5 text-body leading-[1.68] text-[var(--muted)]">{ex.real}</p>
                 </div>
               ))}
             </div>
@@ -280,11 +280,11 @@ export default function CaseStudyPage() {
                     <Screen width={180}>{item.mockup}</Screen>
                   </div>
                   <figcaption className="mt-6 text-center">
-                    <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[var(--faint)]">{item.area}</p>
-                    <p className="mt-1.5 font-serif text-[17px] font-semibold leading-snug tracking-tight text-[var(--text)]">
+                    <p className="text-eyebrow font-bold uppercase text-[var(--faint)]">{item.area}</p>
+                    <p className="mt-1.5 text-heading-sm font-serif font-semibold leading-snug tracking-tight text-[var(--text)]">
                       {item.title}
                     </p>
-                    <p className="mt-1 text-[13px] text-[var(--muted)]">{item.price}</p>
+                    <p className="mt-1 text-body-sm text-[var(--muted)]">{item.price}</p>
                   </figcaption>
                 </figure>
               ))}
@@ -309,7 +309,7 @@ export default function CaseStudyPage() {
               <Prose key={p.slice(0, 30)}>{p}</Prose>
             ))}
             <ProcessLoop steps={PROCESS.steps} />
-            <p className="mt-9 max-w-2xl font-serif text-[21px] leading-snug tracking-tight text-[var(--text)] sm:text-[24px]">
+            <p className="mt-9 max-w-2xl text-heading-sm font-serif leading-snug tracking-tight text-[var(--text)]">
               {PROCESS.kicker}
             </p>
           </Section>
@@ -349,7 +349,7 @@ export default function CaseStudyPage() {
               <RunningOrder side={REPOSITION.before} />
               <RunningOrder side={REPOSITION.after} />
             </div>
-            <p className="mt-8 max-w-[62ch] text-[15px] leading-[1.7] text-[var(--muted)]">{REPOSITION.reason}</p>
+            <p className="mt-8 max-w-[62ch] text-body text-[var(--muted)]">{REPOSITION.reason}</p>
           </Section>
 
           <Section id="deep-dives">
@@ -364,8 +364,8 @@ export default function CaseStudyPage() {
               {DEEP_DIVES.map((d, i) => (
                 <article key={d.slug} className="grid min-w-0 gap-10 lg:grid-cols-2 lg:items-start lg:gap-14">
                   <div className={i % 2 === 1 ? "lg:order-2" : ""}>
-                    <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[var(--faint)]">{d.area}</p>
-                    <h3 className="mt-2 font-serif text-[26px] font-semibold leading-tight tracking-tight text-[var(--text)] sm:text-[30px]">
+                    <p className="text-eyebrow font-bold uppercase text-[var(--faint)]">{d.area}</p>
+                    <h3 className="mt-2 text-heading font-serif font-semibold tracking-tight text-[var(--text)]">
                       {d.name}
                     </h3>
                     <DeepDiveRows
@@ -418,19 +418,19 @@ export default function CaseStudyPage() {
             <SectionHeading>What held up, and what is still a guess</SectionHeading>
             <div className="mt-12 grid gap-12 lg:grid-cols-2 lg:gap-16">
               <div>
-                <h3 className="font-serif text-[21px] font-semibold tracking-tight text-[var(--text)]">
+                <h3 className="text-heading-sm font-serif tracking-tight text-[var(--text)]">
                   {HELD_UP.heading}
                 </h3>
                 <AssessmentList items={HELD_UP.items} tone="held" />
               </div>
               <div>
-                <h3 className="font-serif text-[21px] font-semibold tracking-tight text-[var(--text)]">
+                <h3 className="text-heading-sm font-serif tracking-tight text-[var(--text)]">
                   {UNPROVEN.heading}
                 </h3>
                 <AssessmentList items={UNPROVEN.items} tone="unproven" />
               </div>
             </div>
-            <p className="mt-14 max-w-2xl border-l-2 border-[var(--primary)] pl-5 font-serif text-[21px] leading-snug tracking-tight text-[var(--text)] sm:text-[25px]">
+            <p className="mt-14 max-w-2xl border-l-2 border-[var(--primary)] pl-5 text-heading-sm font-serif leading-snug tracking-tight text-[var(--text)]">
               {UNPROVEN.kicker}
             </p>
           </Section>
@@ -439,7 +439,7 @@ export default function CaseStudyPage() {
             <Eyebrow>{STATS.eyebrow}</Eyebrow>
             <SectionHeading>{STATS.heading}</SectionHeading>
             <StatGrid items={STATS.items} />
-            <p className="mt-10 text-[12.5px] text-[var(--faint)]">{STATS.note}</p>
+            <p className="mt-10 text-caption text-[var(--faint)]">{STATS.note}</p>
           </Section>
 
           <Section id="next">
@@ -456,16 +456,16 @@ export default function CaseStudyPage() {
       <section className="border-b border-[var(--border)] bg-[var(--surface-muted)]">
         <Container width="wide" className="py-20 sm:py-28">
           <BigStatement quote={CLOSING.quote} lines={CLOSING.lines} />
-          <p className="mt-12 text-center text-[13px] text-[var(--faint)]">{CLOSING.byline}</p>
+          <p className="mt-12 text-center text-body-sm text-[var(--faint)]">{CLOSING.byline}</p>
         </Container>
       </section>
 
       <section>
         <Container width="narrow" className="py-16 text-center sm:py-20">
-          <h2 className="font-serif text-[26px] font-semibold leading-tight tracking-tight sm:text-[32px]">
+          <h2 className="text-heading font-serif font-semibold tracking-tight">
             The products are real. Go and look at them.
           </h2>
-          <p className="mx-auto mt-4 max-w-lg text-[15px] leading-relaxed text-[var(--muted)]">
+          <p className="mx-auto mt-4 max-w-lg text-body leading-relaxed text-[var(--muted)]">
             Everything described here is running. One of the nine is free, so you can see how it behaves without
             spending anything.
           </p>

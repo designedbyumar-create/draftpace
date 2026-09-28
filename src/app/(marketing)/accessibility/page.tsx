@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Container from "@/design-system/Container";
+import TextLink from "@/design-system/TextLink";
 
 export const metadata: Metadata = {
   title: "Accessibility",
@@ -33,11 +34,11 @@ const PRACTICES = [
 export default function AccessibilityPage() {
   return (
     <Container width="narrow" className="pb-24 pt-16 sm:pt-20">
-      <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--brand-ink)]">Accessibility</p>
-      <h1 className="mt-3 font-serif text-[34px] font-semibold leading-tight tracking-tight sm:text-[44px]">
+      <p className="text-eyebrow font-bold uppercase text-[var(--brand-ink)]">Accessibility</p>
+      <h1 className="mt-3 text-heading-lg font-serif font-semibold tracking-tight">
         What we do today, in plain terms.
       </h1>
-      <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-[var(--muted)]">
+      <p className="mt-4 max-w-lg text-body leading-relaxed text-[var(--muted)]">
         We're not going to claim a compliance certification we haven't earned. Here's what's actually implemented,
         and where we still have work to do.
       </p>
@@ -45,20 +46,18 @@ export default function AccessibilityPage() {
       <div className="mt-12 flex flex-col divide-y divide-[var(--border)]">
         {PRACTICES.map((practice) => (
           <div key={practice.title} className="py-6 first:pt-0">
-            <h2 className="text-[16px] font-semibold text-[var(--text)]">{practice.title}</h2>
-            <p className="mt-2 max-w-lg text-[14px] leading-relaxed text-[var(--muted)]">{practice.body}</p>
+            <h2 className="text-heading-sm font-semibold text-[var(--text)]">{practice.title}</h2>
+            <p className="mt-2 max-w-lg text-body-sm leading-relaxed text-[var(--muted)]">{practice.body}</p>
           </div>
         ))}
       </div>
 
       <div className="mt-12 rounded-xl border border-[var(--border)] bg-[var(--surface-muted)] p-6">
-        <p className="text-[14px] font-semibold text-[var(--text)]">Found a problem?</p>
-        <p className="mt-2 text-[13px] leading-relaxed text-[var(--muted)]">
+        <p className="text-body-sm font-semibold text-[var(--text)]">Found a problem?</p>
+        <p className="mt-2 text-body-sm leading-relaxed text-[var(--muted)]">
           If something doesn't work with a keyboard, screen reader, or assistive technology you use, we want to know
           specifically what happened. Email{" "}
-          <a href="mailto:support@draftpace.com" className="font-semibold text-[var(--primary)] hover:underline">
-            support@draftpace.com
-          </a>
+          <TextLink href="mailto:support@draftpace.com">support@draftpace.com</TextLink>
           .
         </p>
       </div>

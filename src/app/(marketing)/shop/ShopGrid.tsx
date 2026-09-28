@@ -4,6 +4,7 @@ import { useState, type ReactNode } from "react";
 import Link from "next/link";
 import Badge from "@/design-system/Badge";
 import Button from "@/design-system/Button";
+import TextLink from "@/design-system/TextLink";
 import { ArrowRight } from "@/design-system/Icon";
 import { cardHighlight, discountPercent, formatCompareAtPrice, formatPrice, type ShopProduct } from "@/shop/definition";
 import AddToLibraryButton from "./AddToLibraryButton";
@@ -53,7 +54,7 @@ export default function ShopGrid({ entries, areas }: { entries: ShopGridEntry[];
           <FilterChip key={area.slug} label={area.label} active={activeArea === area.slug} onClick={() => setActiveArea(area.slug)} />
         ))}
       </div>
-      <p className="mt-3.5 text-[13.5px] italic leading-relaxed text-[var(--faint)]">{situation}</p>
+      <p className="mt-3.5 text-body-sm italic leading-relaxed text-[var(--faint)]">{situation}</p>
 
       <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {visible.map((entry, position) => (
@@ -62,7 +63,7 @@ export default function ShopGrid({ entries, areas }: { entries: ShopGridEntry[];
       </div>
 
       {visible.length === 0 && (
-        <p className="mt-10 text-[13px] text-[var(--faint)]">Nothing in this area yet. Try a different one, or see everything.</p>
+        <p className="mt-10 text-body-sm text-[var(--faint)]">Nothing in this area yet. Try a different one, or see everything.</p>
       )}
     </div>
   );
@@ -77,7 +78,7 @@ function FilterChip({ label, active, onClick }: { label: string; active: boolean
       // Brand ink rather than raw --text, matching the homepage's own
       // area chips exactly. Both are the same control doing the same job
       // and now look it. See --brand-ink in globals.css.
-      className={`rounded-full border px-3.5 py-2 text-[13px] font-semibold transition-colors ${
+      className={`rounded-full border px-3.5 py-2 text-body-sm font-semibold transition-colors ${
         active
           ? "border-[var(--brand-ink)] bg-[var(--brand-ink)] text-[var(--brand-ink-contrast)]"
           : "border-[var(--border-strong)] bg-[var(--surface)] text-[var(--muted)] hover:border-[var(--brand-ink)] hover:text-[var(--text)]"
@@ -148,7 +149,7 @@ function ShopProductCard({ entry, position }: { entry: ShopGridEntry; position: 
 
       <div className="flex flex-1 flex-col p-5">
         {areaLabel && (
-          <p className="mb-2 text-[10.5px] font-bold uppercase tracking-[0.14em] text-[var(--faint)]">{areaLabel}</p>
+          <p className="mb-2 text-eyebrow font-bold uppercase text-[var(--faint)]">{areaLabel}</p>
         )}
         {(product.availability === "coming-soon" || product.devFixture) && (
           <div className="mb-2 flex flex-wrap items-center gap-1.5">
@@ -161,11 +162,11 @@ function ShopProductCard({ entry, position }: { entry: ShopGridEntry; position: 
             a different typographic world. */}
         <Link
           href={`/shop/${product.slug}`}
-          className="block font-serif text-[19px] font-semibold leading-[1.25] tracking-[-0.01em] text-[var(--text)] decoration-[var(--border-strong)] underline-offset-4 hover:underline"
+          className="block text-heading-sm font-serif font-semibold tracking-[-0.01em] text-[var(--text)] decoration-[var(--border-strong)] underline-offset-4 hover:underline"
         >
           {product.title}
         </Link>
-        <p className="mt-2 line-clamp-2 text-[13px] leading-relaxed text-[var(--muted)]">{product.promise}</p>
+        <p className="mt-2 line-clamp-2 text-body-sm leading-relaxed text-[var(--muted)]">{product.promise}</p>
 
         {/*
           A hairline and a line of text, not a grey slab with a green
@@ -174,7 +175,7 @@ function ShopProductCard({ entry, position }: { entry: ShopGridEntry; position: 
           down a grid is the single heaviest thing on the page.
         */}
         {firstOutcome && (
-          <p className="mt-3.5 border-l-2 border-[var(--border-strong)] pl-3 text-[12.5px] leading-relaxed text-[var(--text)]">
+          <p className="mt-3.5 border-l-2 border-[var(--border-strong)] pl-3 text-caption leading-relaxed text-[var(--text)]">
             {firstOutcome}
           </p>
         )}
@@ -189,8 +190,8 @@ function ShopProductCard({ entry, position }: { entry: ShopGridEntry; position: 
 
         {product.availability !== "coming-soon" && (
           <div className="flex flex-wrap items-baseline gap-x-2.5 gap-y-1 border-t border-[var(--border)] pt-4">
-            <p className="font-serif text-[26px] font-semibold leading-none tracking-tight text-[var(--text)]">{priceLabel}</p>
-            {compareAtLabel && <span className="text-[13px] text-[var(--faint)] line-through">{compareAtLabel}</span>}
+            <p className="text-heading font-serif font-semibold leading-none tracking-tight text-[var(--text)]">{priceLabel}</p>
+            {compareAtLabel && <span className="text-body-sm text-[var(--faint)] line-through">{compareAtLabel}</span>}
             {/*
               The saving stays, because it is true and it is the offer,
               but as type rather than a filled pill: nine green capsules
@@ -198,7 +199,7 @@ function ShopProductCard({ entry, position }: { entry: ShopGridEntry; position: 
               what this catalogue is meant to feel like.
             */}
             {savingsPercent !== null && savingsPercent > 0 && (
-              <span className="text-[11.5px] font-bold uppercase tracking-[0.08em] text-[var(--success)]">
+              <span className="text-eyebrow font-bold uppercase text-[var(--success)]">
                 {savingsPercent}% off
               </span>
             )}
@@ -224,10 +225,9 @@ function ShopProductCard({ entry, position }: { entry: ShopGridEntry; position: 
 function CardCta({ product, priceLabel }: { product: ShopProduct; priceLabel: string }) {
   if (product.availability === "coming-soon") {
     return (
-      <Link href={`/shop/${product.slug}`} className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--primary)] hover:underline">
+      <TextLink href={`/shop/${product.slug}`} arrow>
         Learn more
-        <ArrowRight size={14} aria-hidden />
-      </Link>
+      </TextLink>
     );
   }
 
@@ -260,7 +260,7 @@ function CardCta({ product, priceLabel }: { product: ShopProduct; priceLabel: st
       )}
       <Link
         href={`/shop/${product.slug}`}
-        className="text-center text-[12.5px] font-semibold text-[var(--muted)] hover:text-[var(--text)]"
+        className="text-center text-caption font-semibold text-[var(--muted)] hover:text-[var(--text)]"
       >
         Learn more
       </Link>

@@ -104,7 +104,7 @@ export default function PublicNav({ user }: { user: PublicNavSessionState }) {
             <Link
               key={link.href}
               href={link.href}
-              className="text-[13px] font-semibold text-[var(--muted)] hover:text-[var(--text)]"
+              className="text-body-sm font-semibold text-[var(--muted)] hover:text-[var(--text)]"
             >
               {link.label}
             </Link>
@@ -159,7 +159,7 @@ export default function PublicNav({ user }: { user: PublicNavSessionState }) {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-2 py-2.5 text-[14px] font-semibold text-[var(--text)] hover:bg-[var(--surface-muted)]"
+                className="rounded-lg px-2 py-2.5 text-body-sm font-semibold text-[var(--text)] hover:bg-[var(--surface-muted)]"
               >
                 {link.label}
               </Link>
@@ -182,7 +182,7 @@ export default function PublicNav({ user }: { user: PublicNavSessionState }) {
             </div>
           )}
           <div className="mt-3 border-t border-[var(--border)] pt-3">
-            <p className="mb-2.5 text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">Appearance</p>
+            <p className="mb-2.5 text-eyebrow font-bold uppercase text-[var(--faint)]">Appearance</p>
             <ThemeToggle />
           </div>
         </div>

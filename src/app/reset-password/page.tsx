@@ -8,7 +8,7 @@ import AuthCard from "@/components/auth/AuthCard";
 import Button from "@/design-system/Button";
 import Input from "@/design-system/Input";
 import Alert from "@/design-system/Alert";
-import Link from "next/link";
+import TextLink from "@/design-system/TextLink";
 
 type SessionState = "checking" | "ready" | "invalid" | "config-error";
 
@@ -86,7 +86,7 @@ function ResetPasswordForm() {
   if (sessionState === "checking") {
     return (
       <AuthCard title="Reset password" showLegalFooter={false}>
-        <p className="text-[13px] text-[var(--muted)]">Verifying your reset link…</p>
+        <p className="text-body-sm text-[var(--muted)]">Verifying your reset link…</p>
       </AuthCard>
     );
   }
@@ -125,9 +125,7 @@ function ResetPasswordForm() {
     <AuthCard
       title="Choose a new password"
       footer={
-        <Link href="/login" className="text-[13px] font-semibold text-[var(--primary)] hover:underline">
-          Back to sign in
-        </Link>
+        <TextLink href="/login">Back to sign in</TextLink>
       }
     >
       <form

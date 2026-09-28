@@ -132,7 +132,7 @@ export default function PlatformShell({
           ))}
         </nav>
 
-        <p className="mb-1.5 mt-6 px-3 text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--faint)]">
+        <p className="mb-1.5 mt-6 px-3 text-eyebrow font-bold uppercase text-[var(--faint)]">
           Account
         </p>
         <nav aria-label="Account" className="space-y-0.5">
@@ -149,7 +149,7 @@ export default function PlatformShell({
         <div className="mt-auto space-y-0.5">
           <Link
             href="/"
-            className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-left text-[13px] font-semibold text-[var(--faint)] hover:bg-[var(--surface-muted)] hover:text-[var(--text)]"
+            className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-left text-body-sm font-semibold text-[var(--faint)] hover:bg-[var(--surface-muted)] hover:text-[var(--text)]"
           >
             <Globe size={17} aria-hidden />
             Visit Draftpace website
@@ -157,7 +157,7 @@ export default function PlatformShell({
           <button
             type="button"
             onClick={() => signOutAndRedirect("/")}
-            className="flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-left text-[13px] font-semibold text-[var(--muted)] hover:bg-[var(--surface-muted)] hover:text-[var(--danger)]"
+            className="flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-left text-body-sm font-semibold text-[var(--muted)] hover:bg-[var(--surface-muted)] hover:text-[var(--danger)]"
           >
             <LogOut size={17} aria-hidden />
             Sign out
@@ -169,13 +169,13 @@ export default function PlatformShell({
         <header className="sticky top-0 z-30 border-b border-[var(--border)] bg-[var(--surface)]/95 px-4 py-2.5 backdrop-blur sm:px-6 lg:px-8">
           <div className="mx-auto flex max-w-5xl items-center justify-between gap-3">
             <div className="min-w-0 flex-1">
-              <p className="truncate text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--faint)]">
+              <p className="truncate text-eyebrow font-bold uppercase text-[var(--faint)]">
                 {online ? "Draftpace" : "Draftpace, offline"}
               </p>
-              <h1 className="mt-0.5 truncate text-[18px] font-semibold tracking-tight text-[var(--text)]">
+              <h1 className="mt-0.5 truncate text-heading-sm font-semibold tracking-tight text-[var(--text)]">
                 {title || `Good ${dayPart ?? "day"}, ${firstName}`}
               </h1>
-              {subtitle && <p className="mt-1 truncate text-[12px] leading-4 text-[var(--muted)]">{subtitle}</p>}
+              {subtitle && <p className="mt-1 truncate text-caption leading-4 text-[var(--muted)]">{subtitle}</p>}
             </div>
 
             <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
@@ -192,7 +192,7 @@ export default function PlatformShell({
                   since that's worth knowing on a phone as much as a
                   desktop. */}
               {!online && (
-                <div className="flex h-9 items-center gap-1.5 rounded-lg border border-[var(--warning)] bg-[var(--warning-soft)] px-2.5 text-[12px] font-semibold text-[var(--warning)]">
+                <div className="flex h-9 items-center gap-1.5 rounded-lg border border-[var(--warning)] bg-[var(--warning-soft)] px-2.5 text-caption font-semibold text-[var(--warning)]">
                   <WifiOff size={14} aria-hidden />
                   Offline
                 </div>
@@ -234,11 +234,11 @@ export default function PlatformShell({
                 type="button"
                 onClick={onClick}
                 aria-label="Account menu"
-                className={`flex h-14 w-full flex-col items-center justify-center gap-1 rounded-lg text-[10px] font-bold ${
+                className={`flex h-14 w-full flex-col items-center justify-center gap-1 rounded-lg text-eyebrow font-bold ${
                   accountActive ? "bg-[var(--primary-soft)] text-[var(--primary)]" : "text-[var(--faint)]"
                 }`}
               >
-                {accountActive ? <Avatar label={accountLabel} size="sm" className="h-[18px] w-[18px] text-[8px]" /> : <User size={18} aria-hidden />}
+                {accountActive ? <Avatar label={accountLabel} size="sm" className="h-[18px] w-[18px] text-eyebrow" /> : <User size={18} aria-hidden />}
                 Account
               </button>
             )}
@@ -268,7 +268,7 @@ function NavLink({
       href={item.href}
       onClick={onClick}
       aria-current={active ? "page" : undefined}
-      className={`flex items-center gap-3 rounded-lg px-3 py-2.5 text-[13px] font-semibold transition ${
+      className={`flex items-center gap-3 rounded-lg px-3 py-2.5 text-body-sm font-semibold transition ${
         active
           ? "bg-[var(--primary-soft)] text-[var(--primary)]"
           : "text-[var(--muted)] hover:bg-[var(--surface-muted)] hover:text-[var(--text)]"
@@ -294,7 +294,7 @@ function BottomNavLink({
     <Link
       href={item.href}
       aria-current={active ? "page" : undefined}
-      className={`flex h-14 flex-col items-center justify-center gap-1 rounded-lg text-[10px] font-bold ${
+      className={`flex h-14 flex-col items-center justify-center gap-1 rounded-lg text-eyebrow font-bold ${
         active ? "bg-[var(--primary-soft)] text-[var(--primary)]" : "text-[var(--faint)]"
       }`}
     >
@@ -352,8 +352,8 @@ export function InstallPromptCard() {
         <Sparkles size={17} aria-hidden />
       </div>
       <div className="min-w-0 flex-1">
-        <p className="text-[13px] font-semibold text-[var(--text)]">Keep Draftpace on your phone</p>
-        <p className="text-[12px] leading-5 text-[var(--muted)]">
+        <p className="text-body-sm font-semibold text-[var(--text)]">Keep Draftpace on your phone</p>
+        <p className="text-caption leading-5 text-[var(--muted)]">
           {ios && !canInstall
             ? 'Tap Share, then "Add to Home Screen", then "Add".'
             : "Open straight into the platform like a real app."}
@@ -362,14 +362,14 @@ export function InstallPromptCard() {
       {!(ios && !canInstall) && (
         <button
           onClick={install}
-          className="shrink-0 rounded-lg bg-[var(--primary)] px-3.5 py-2 text-[12px] font-semibold text-[var(--primary-contrast)]"
+          className="shrink-0 rounded-lg bg-[var(--primary)] px-3.5 py-2 text-caption font-semibold text-[var(--primary-contrast)]"
         >
           Install Draftpace
         </button>
       )}
       <button
         onClick={skip}
-        className="shrink-0 rounded-lg px-2.5 py-2 text-[12px] font-semibold text-[var(--muted)] hover:text-[var(--text)]"
+        className="shrink-0 rounded-lg px-2.5 py-2 text-caption font-semibold text-[var(--muted)] hover:text-[var(--text)]"
       >
         Not now
       </button>

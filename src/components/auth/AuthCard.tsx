@@ -49,7 +49,7 @@ export default function AuthCard({
       <div className="mb-6 w-full max-w-sm sm:absolute sm:left-5 sm:top-5 sm:mb-0 sm:w-auto sm:max-w-none">
         <Link
           href={backHref}
-          className="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-2 text-[13px] font-semibold text-[var(--muted)] transition-colors hover:text-[var(--text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]"
+          className="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-2 text-body-sm font-semibold text-[var(--muted)] transition-colors hover:text-[var(--text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]"
         >
           <ArrowLeft size={15} aria-hidden />
           {backLabel}
@@ -63,10 +63,10 @@ export default function AuthCard({
       <div className="w-full max-w-sm overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-[shadow:var(--shadow-soft)]">
         <div className="p-6 sm:p-8">
           {eyebrow && (
-            <p className="mb-1.5 text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">{eyebrow}</p>
+            <p className="mb-1.5 text-eyebrow font-bold uppercase text-[var(--primary)]">{eyebrow}</p>
           )}
-          <h1 className="text-[22px] font-semibold tracking-tight text-[var(--text)] sm:text-[26px]">{title}</h1>
-          {subtitle && <p className="mt-1.5 text-[14px] text-[var(--muted)]">{subtitle}</p>}
+          <h1 className="text-heading-sm font-semibold tracking-tight text-[var(--text)]">{title}</h1>
+          {subtitle && <p className="mt-1.5 text-body-sm text-[var(--muted)]">{subtitle}</p>}
 
           <div className="mt-6">{children}</div>
         </div>
@@ -74,7 +74,7 @@ export default function AuthCard({
       </div>
 
       {showLegalFooter && (
-        <p className="mt-6 max-w-sm text-center text-[11px] leading-5 text-[var(--faint)]">
+        <p className="mt-6 max-w-sm text-center text-caption leading-5 text-[var(--faint)]">
           By continuing you agree to our{" "}
           <Link href="/terms" className="underline hover:text-[var(--muted)]">
             Terms

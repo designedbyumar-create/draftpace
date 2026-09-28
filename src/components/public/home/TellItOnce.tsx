@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { Article, ArrowRight, Bell, BookOpen, CalendarCheck, Car, FirstAidKit, Globe, Home, Save, Wallet, type DraftpaceIcon } from "@/design-system/Icon";
+import { Article, Bell, BookOpen, CalendarCheck, Car, FirstAidKit, Globe, Home, Save, Wallet, type DraftpaceIcon } from "@/design-system/Icon";
 import { DEFAULTS, ITEMS, describe, type ItemId, type Options } from "./tellItOnceRules";
+import TextLink from "@/design-system/TextLink";
 
 /**
  * How every Companion works, as something to try.
@@ -49,11 +50,11 @@ export default function TellItOnce() {
 
   return (
     <div>
-      <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--brand-ink)]">How a Companion works</p>
-      <h2 className="mt-3 max-w-3xl font-serif text-[34px] font-semibold leading-[1.06] tracking-[-0.025em] sm:text-[52px]">
+      <p className="text-eyebrow font-bold uppercase text-[var(--brand-ink)]">How a Companion works</p>
+      <h2 className="mt-3 max-w-3xl text-display font-serif font-semibold tracking-[-0.025em]">
         Tell it once. It does the remembering.
       </h2>
-      <p className="mt-4 max-w-xl text-[16px] leading-relaxed text-[var(--muted)]">Pick something you would hate to forget, and watch what happens to it.</p>
+      <p className="mt-4 max-w-xl text-body-lg leading-relaxed text-[var(--muted)]">Pick something you would hate to forget, and watch what happens to it.</p>
 
       <div className="mt-10 grid gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:gap-8">
         <div>
@@ -74,7 +75,7 @@ export default function TellItOnce() {
                   <span aria-hidden className="flex h-9 w-9 items-center justify-center rounded-full" style={{ backgroundColor: a?.soft, color: a?.base }}>
                     <Icon size={20} />
                   </span>
-                  <span className="text-[15px] font-semibold leading-snug text-[var(--text)]">{it.name}</span>
+                  <span className="text-body font-semibold leading-snug text-[var(--text)]">{it.name}</span>
                 </button>
               );
             })}
@@ -82,7 +83,7 @@ export default function TellItOnce() {
 
           {item.control === "ago" && (
             <div className="mt-5">
-              <label htmlFor="tio-ago" className="flex items-baseline justify-between text-[14px] font-semibold text-[var(--text)]">
+              <label htmlFor="tio-ago" className="flex items-baseline justify-between text-body-sm font-semibold text-[var(--text)]">
                 Last done <span className="tabular-nums text-[var(--muted)]">{opts.ago === 0 ? "this month" : `${opts.ago} months ago`}</span>
               </label>
               <input id="tio-ago" type="range" min={0} max={24} step={1} value={opts.ago} onChange={(e) => setOpts((o) => ({ ...o, ago: Number(e.target.value) }))} className="mt-2 w-full" style={{ accentColor: accent.base }} />
@@ -90,7 +91,7 @@ export default function TellItOnce() {
           )}
           {item.control === "daysAway" && (
             <div className="mt-5">
-              <label htmlFor="tio-days" className="flex items-baseline justify-between text-[14px] font-semibold text-[var(--text)]">
+              <label htmlFor="tio-days" className="flex items-baseline justify-between text-body-sm font-semibold text-[var(--text)]">
                 Renews in <span className="tabular-nums text-[var(--muted)]">{opts.daysAway} days</span>
               </label>
               <input id="tio-days" type="range" min={0} max={120} step={1} value={opts.daysAway} onChange={(e) => setOpts((o) => ({ ...o, daysAway: Number(e.target.value) }))} className="mt-2 w-full" style={{ accentColor: accent.base }} />
@@ -110,8 +111,8 @@ export default function TellItOnce() {
               <span aria-hidden className="absolute top-0.5 h-5 w-5 rounded-full bg-white transition-[left] duration-[var(--dur)]" style={{ left: opts.remind ? 22 : 2 }} />
             </button>
             <div>
-              <p id="tio-remind" className="text-[14.5px] font-semibold text-[var(--text)]">Tell me before it is due</p>
-              <p className="mt-0.5 text-[13px] leading-snug text-[var(--muted)]">Off by default. A Companion never reminds you unless you switch this on.</p>
+              <p id="tio-remind" className="text-body font-semibold text-[var(--text)]">Tell me before it is due</p>
+              <p className="mt-0.5 text-body-sm leading-snug text-[var(--muted)]">Off by default. A Companion never reminds you unless you switch this on.</p>
             </div>
           </div>
         </div>
@@ -127,7 +128,7 @@ export default function TellItOnce() {
                     <Icon size={19} />
                   </span>
                   <div>
-                    <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">{i + 1}. {label}</p>
+                    <p className="text-eyebrow font-bold uppercase text-[var(--faint)]">{i + 1}. {label}</p>
                     <AnimatePresence mode="wait" initial={false}>
                       <motion.p
                         key={id + key}
@@ -135,7 +136,7 @@ export default function TellItOnce() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={reduceMotion ? undefined : { opacity: 0, y: -6 }}
                         transition={{ duration: 0.22, delay: reduceMotion ? 0 : i * 0.05 }}
-                        className={key === "worked" ? "mt-1 font-serif text-[26px] font-semibold leading-[1.15] tracking-tight text-[var(--text)]" : "mt-1 text-[16px] leading-relaxed text-[var(--text)]"}
+                        className={key === "worked" ? "mt-1 text-heading font-serif font-semibold tracking-tight text-[var(--text)]" : "mt-1 text-body-lg leading-relaxed text-[var(--text)]"}
                       >
                         {text}
                       </motion.p>
@@ -147,17 +148,17 @@ export default function TellItOnce() {
           </ol>
 
           <div className="mt-2 flex flex-wrap items-center justify-between gap-x-4 gap-y-3 border-t border-[var(--border)] pt-5">
-            <span className="inline-flex items-center gap-2 text-[13.5px] text-[var(--muted)]">
+            <span className="inline-flex items-center gap-2 text-body-sm text-[var(--muted)]">
               <Article size={16} aria-hidden /> Prints as {item.prints}
             </span>
-            <a href={`#${item.productSlug}`} className="inline-flex items-center gap-1.5 text-[14px] font-semibold hover:underline" style={{ color: accent.base }}>
-              This is how {item.product} works. See it below <ArrowRight size={14} aria-hidden />
-            </a>
+            <TextLink href={`#${item.productSlug}`} arrow style={{ color: accent.base }}>
+              This is how {item.product} works. See it below
+            </TextLink>
           </div>
         </div>
       </div>
 
-      <p className="mt-6 max-w-2xl text-[12.5px] leading-relaxed text-[var(--faint)]">
+      <p className="mt-6 max-w-2xl text-caption leading-relaxed text-[var(--faint)]">
         An example, with today as September 21, 2026. Each Companion does this for its own part of life, and none of them reads another&apos;s.
       </p>
     </div>

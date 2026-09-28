@@ -97,7 +97,7 @@ export default function ProductNav({ items }: { items: ProductNavItem[] }) {
                   e.preventDefault();
                   go(i);
                 }}
-                className="shrink-0 whitespace-nowrap rounded-full px-3.5 py-2 text-[13.5px] font-semibold transition-colors duration-[var(--dur)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]"
+                className="shrink-0 whitespace-nowrap rounded-full px-3.5 py-2 text-body-sm font-semibold transition-colors duration-[var(--dur)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]"
                 style={on ? { backgroundColor: item.accent, color: item.contrast } : { color: "var(--muted)" }}
               >
                 {item.label}
@@ -107,7 +107,7 @@ export default function ProductNav({ items }: { items: ProductNavItem[] }) {
         </div>
 
         <div className="flex shrink-0 items-center gap-1">
-          <span className="hidden pr-2 text-[13px] tabular-nums text-[var(--muted)] sm:block">
+          <span className="hidden pr-2 text-body-sm tabular-nums text-[var(--muted)] sm:block">
             {active + 1} of {items.length}
           </span>
           <button type="button" aria-label="Previous Companion" onClick={() => go(active - 1)} disabled={active === 0} className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--border-strong)] text-[var(--text)] disabled:opacity-35">

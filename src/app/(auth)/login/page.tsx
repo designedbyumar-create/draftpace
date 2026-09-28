@@ -2,7 +2,6 @@
 
 import { Suspense, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import Link from "next/link";
 import { supabase } from "@/lib/supabase/client";
 import { getSupabaseConfigStatus, getAuthUnavailableMessage } from "@/lib/supabase/config";
 import AuthCard from "@/components/auth/AuthCard";
@@ -11,6 +10,7 @@ import { getSafeRedirect, storeOAuthRedirect } from "@/components/auth/redirect"
 import Button from "@/design-system/Button";
 import Input from "@/design-system/Input";
 import Alert from "@/design-system/Alert";
+import TextLink from "@/design-system/TextLink";
 
 export default function LoginPage() {
   return (
@@ -85,11 +85,9 @@ function LoginForm() {
       title="Welcome back"
       subtitle="Sign in to your Draftpace account"
       footer={
-        <p className="text-[13px] text-[var(--muted)]">
+        <p className="text-body-sm text-[var(--muted)]">
           Don&apos;t have an account?{" "}
-          <Link href="/signup" className="font-semibold text-[var(--primary)] hover:underline">
-            Sign up free
-          </Link>
+          <TextLink href="/signup">Sign up free</TextLink>
         </p>
       }
     >
@@ -108,7 +106,7 @@ function LoginForm() {
           <div className="w-full border-t border-[var(--border)]" />
         </div>
         <div className="relative flex justify-center">
-          <span className="bg-[var(--surface)] px-3 text-[12px] text-[var(--faint)]">or sign in with email</span>
+          <span className="bg-[var(--surface)] px-3 text-caption text-[var(--faint)]">or sign in with email</span>
         </div>
       </div>
 
@@ -130,12 +128,10 @@ function LoginForm() {
         />
 
         <div className="mb-1.5 flex items-center justify-between">
-          <label htmlFor="password" className="text-[13px] font-semibold text-[var(--text)]">
+          <label htmlFor="password" className="text-body-sm font-semibold text-[var(--text)]">
             Password
           </label>
-          <Link href="/forgot-password" className="text-[12px] font-semibold text-[var(--primary)] hover:underline">
-            Forgot password?
-          </Link>
+          <TextLink href="/forgot-password">Forgot password?</TextLink>
         </div>
         <Input
           id="password"

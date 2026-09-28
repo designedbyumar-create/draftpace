@@ -52,18 +52,18 @@ function Section({ poster, flip }: { poster: PosterData; flip: boolean }) {
       <div className="mx-auto grid max-w-[1180px] gap-x-16 gap-y-8 px-5 py-16 sm:px-8 lg:grid-cols-[minmax(0,1fr)_440px] lg:gap-y-0 lg:py-24">
         <div className={`lg:row-start-1 lg:self-end ${flip ? "lg:col-start-2" : "lg:col-start-1"}`}>
           <div className="flex flex-wrap items-center gap-3">
-            <span className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[12px] font-semibold" style={{ backgroundColor: theme.soft, color: theme.accent }}>
+            <span className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-caption font-semibold" style={{ backgroundColor: theme.soft, color: theme.accent }}>
               <Play size={11} aria-hidden /> Live demo
             </span>
-            <span className={`text-[11px] font-bold uppercase text-[var(--poster-muted)] ${label}`}>{poster.area}</span>
+            <span className={`text-eyebrow font-bold uppercase text-[var(--poster-muted)] ${label}`}>{poster.area}</span>
           </div>
 
-          <h3 className="mt-5 text-[40px] font-semibold leading-[1.02] tracking-[-0.025em] sm:text-[56px]" style={{ fontFamily: theme.headlineFont }}>
+          <h3 className="mt-5 text-display font-semibold tracking-[-0.025em]" style={{ fontFamily: theme.headlineFont }}>
             {poster.title}
           </h3>
-          <p className="mt-4 max-w-md text-[19px] leading-snug text-[var(--poster-muted)]">{poster.headline}</p>
+          <p className="mt-4 max-w-md text-heading-sm leading-snug text-[var(--poster-muted)]">{poster.headline}</p>
 
-          <p className="mt-6 inline-flex items-center gap-2 text-[14px] font-semibold" style={{ color: theme.accent }}>
+          <p className="mt-6 inline-flex items-center gap-2 text-body-sm font-semibold" style={{ color: theme.accent }}>
             <HandWaving size={17} aria-hidden /> Try it: {HINTS[poster.productSlug]}
           </p>
         </div>
@@ -76,20 +76,20 @@ function Section({ poster, flip }: { poster: PosterData; flip: boolean }) {
           <ul className="flex max-w-lg flex-col lg:mt-7" role="list">
             {poster.beats.map((beat) => (
               <li key={beat.lead} className="border-t border-[var(--poster-border)] py-3.5">
-                <p className="text-[15.5px] font-semibold leading-snug">{beat.lead}</p>
-                <p className="mt-0.5 text-[14px] leading-relaxed text-[var(--poster-muted)]">{beat.text}</p>
+                <p className="text-body font-semibold leading-snug">{beat.lead}</p>
+                <p className="mt-0.5 text-body-sm leading-relaxed text-[var(--poster-muted)]">{beat.text}</p>
               </li>
             ))}
           </ul>
 
           <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
-            <p className="text-[13px] text-[var(--poster-muted)]">
-              <span className="text-[28px] font-semibold text-[var(--poster-text)]" style={{ fontFamily: theme.headlineFont }}>{poster.priceLabel}</span> once, yours for good
+            <p className="text-body-sm text-[var(--poster-muted)]">
+              <span className="text-heading font-semibold text-[var(--poster-text)]" style={{ fontFamily: theme.headlineFont }}>{poster.priceLabel}</span> once, yours for good
             </p>
             <Link
               href={`/shop/${poster.productSlug}`}
               aria-label={`See ${poster.title} in full`}
-              className="inline-flex items-center gap-2 px-5 py-3 text-[14px] font-semibold transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] focus-visible:ring-offset-2"
+              className="inline-flex items-center gap-2 px-5 py-3 text-body-sm font-semibold transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] focus-visible:ring-offset-2"
               style={{ backgroundColor: theme.accent, color: theme.accentContrast, borderRadius: theme.radius }}
             >
               See it in full <ArrowRight size={15} aria-hidden />

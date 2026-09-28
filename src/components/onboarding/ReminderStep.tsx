@@ -28,11 +28,11 @@ export default function ReminderStep({
 
   return (
     <div>
-      <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--primary)]">Optional</p>
-      <h1 className="mt-3 font-serif text-[26px] font-semibold leading-tight tracking-tight text-[var(--text)] sm:text-[28px]">
+      <p className="text-eyebrow font-bold uppercase text-[var(--primary)]">Optional</p>
+      <h1 className="mt-3 text-heading font-serif font-semibold tracking-tight text-[var(--text)]">
         Want a nudge to come back?
       </h1>
-      <p className="mt-3 text-[14px] leading-relaxed text-[var(--muted)]">
+      <p className="mt-3 text-body-sm leading-relaxed text-[var(--muted)]">
         Notifications stay off until you turn them on here. Skip this if you&apos;d rather not.
       </p>
 
@@ -45,7 +45,7 @@ export default function ReminderStep({
               type="button"
               aria-pressed={active}
               onClick={() => onSelectTime(time)}
-              className={`rounded-lg border px-4 py-3 text-[13px] font-semibold transition-colors duration-[var(--dur-fast)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] ${
+              className={`rounded-lg border px-4 py-3 text-body-sm font-semibold transition-colors duration-[var(--dur-fast)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] ${
                 active
                   ? "border-[var(--primary)] bg-[var(--primary-soft)] text-[var(--primary)]"
                   : "border-[var(--border)] bg-[var(--surface)] text-[var(--text)] hover:border-[var(--border-strong)]"
@@ -61,7 +61,7 @@ export default function ReminderStep({
         type="button"
         onClick={onRequestNotifications}
         disabled={notifications === "granted" || notifications === "unsupported"}
-        className="mt-3 flex w-full items-center justify-center gap-2 rounded-lg border border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-[13px] font-semibold text-[var(--text)] transition-colors duration-[var(--dur-fast)] disabled:opacity-60"
+        className="mt-3 flex w-full items-center justify-center gap-2 rounded-lg border border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-body-sm font-semibold text-[var(--text)] transition-colors duration-[var(--dur-fast)] disabled:opacity-60"
       >
         <Bell size={15} aria-hidden />
         <AnimatePresence mode="wait" initial={false}>

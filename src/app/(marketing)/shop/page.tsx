@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Image from "next/image";
 import Button from "@/design-system/Button";
 import Container from "@/design-system/Container";
+import TextLink from "@/design-system/TextLink";
 import { ArrowRight } from "@/design-system/Icon";
 import type { ShopProduct } from "@/shop/definition";
 import { shopRegistry } from "@/shop/registry";
@@ -78,7 +78,7 @@ function renderThumbnail(product: { slug: string; title: string; media: { src: s
   }
   return (
     <div className="flex h-full flex-col items-center justify-center gap-1 p-4 text-center">
-      <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">Preview coming soon</p>
+      <p className="text-eyebrow font-bold uppercase text-[var(--faint)]">Preview coming soon</p>
     </div>
   );
 }
@@ -137,11 +137,11 @@ export default function ShopIndexPage() {
 
   return (
     <Container width="wide" className="pb-24 pt-16 sm:pt-20">
-      <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--brand-ink)]">The Companion Series</p>
-      <h1 className="mt-3 max-w-2xl font-serif text-[34px] font-semibold leading-tight tracking-tight sm:text-[44px]">
+      <p className="text-eyebrow font-bold uppercase text-[var(--brand-ink)]">The Companion Series</p>
+      <h1 className="mt-3 max-w-2xl text-heading-lg font-serif font-semibold tracking-tight">
         Find the one that fits your situation.
       </h1>
-      <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-[var(--muted)]">
+      <p className="mt-4 max-w-xl text-body leading-relaxed text-[var(--muted)]">
         Each Companion is built around one thing that is genuinely hard to keep track of. Free and paid work the same
         way: your progress saves to your account either way.
       </p>
@@ -151,15 +151,13 @@ export default function ShopIndexPage() {
       {freeProducts.length > 0 && <FreeBand product={freeProducts[0]} />}
 
       <div className="mt-16 border-t border-[var(--border)] pt-8">
-        <h2 className="text-[15px] font-semibold text-[var(--text)]">How access works</h2>
-        <p className="mt-2 max-w-xl text-[13px] leading-relaxed text-[var(--muted)]">
+        <h2 className="text-body font-semibold text-[var(--text)]">How access works</h2>
+        <p className="mt-2 max-w-xl text-body-sm leading-relaxed text-[var(--muted)]">
           Free products are complete, not stripped-down previews. Paid products are billed once, not as a recurring
           subscription, unless a specific listing says otherwise. A struck-through price is the regular price a
           product moves to later, never an inflated number invented to make the current one look bigger. Everything
           you own lives in your{" "}
-          <Link href="/app/library" className="font-semibold text-[var(--primary)] hover:underline">
-            library
-          </Link>
+          <TextLink href="/app/library">library</TextLink>
           , on every device.
         </p>
       </div>
@@ -181,11 +179,11 @@ function FreeBand({ product }: { product: ShopProduct }) {
     <section className="mt-14 rounded-[var(--radius-xl)] border border-[var(--border-strong)] bg-[var(--surface-muted)] p-6 sm:p-8">
       <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between sm:gap-8">
         <div className="min-w-0">
-          <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--brand-ink)]">Start free</p>
-          <h2 className="mt-2 font-serif text-[22px] font-semibold leading-snug tracking-tight text-[var(--text)] sm:text-[26px]">
+          <p className="text-eyebrow font-bold uppercase text-[var(--brand-ink)]">Start free</p>
+          <h2 className="mt-2 text-heading-sm font-serif font-semibold leading-snug tracking-tight text-[var(--text)]">
             {product.title} costs nothing, and is not a trial.
           </h2>
-          <p className="mt-2 max-w-xl text-[14px] leading-relaxed text-[var(--muted)]">
+          <p className="mt-2 max-w-xl text-body-sm leading-relaxed text-[var(--muted)]">
             A complete, narrower product rather than a crippled preview of a paid one. It is the fastest way to find
             out whether a Companion suits how you think, before you spend anything.
           </p>
@@ -203,18 +201,14 @@ function FreeBand({ product }: { product: ShopProduct }) {
 function EmptyShop() {
   return (
     <div className="mt-12 max-w-lg rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[shadow:var(--shadow-xs)] sm:p-8">
-      <h2 className="text-[18px] font-semibold text-[var(--text)]">New products are on the way</h2>
-      <p className="mt-2 text-[14px] leading-relaxed text-[var(--muted)]">
+      <h2 className="text-heading-sm font-semibold text-[var(--text)]">New products are on the way</h2>
+      <p className="mt-2 text-body-sm leading-relaxed text-[var(--muted)]">
         Nothing is listed here until it is genuinely ready to use, never a placeholder inventory. The first products
         are being built now.
       </p>
-      <Link
-        href="/how-it-works"
-        className="mt-5 inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--primary)] hover:underline"
-      >
+      <TextLink href="/how-it-works" arrow className="mt-5">
         See how Draftpace works
-        <ArrowRight size={13} aria-hidden />
-      </Link>
+      </TextLink>
     </div>
   );
 }

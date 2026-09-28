@@ -45,13 +45,13 @@ export default function ManualContents({ sections }: { sections: { id: string; l
 
   return (
     <nav aria-label="In this manual" className="sticky top-24">
-      <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">In this manual</p>
+      <p className="text-eyebrow font-bold uppercase text-[var(--faint)]">In this manual</p>
       <ul className="mt-3 space-y-1 border-l border-[var(--border)]">
         {sections.map((section) => (
           <li key={section.id}>
             <a
               href={`#${section.id}`}
-              className={`-ml-px block border-l-2 py-1.5 pl-3 text-[13px] transition-colors ${
+              className={`-ml-px block border-l-2 py-1.5 pl-3 text-body-sm transition-colors ${
                 active === section.id
                   ? "border-[var(--primary)] font-semibold text-[var(--primary)]"
                   : "border-transparent text-[var(--muted)] hover:text-[var(--text)]"

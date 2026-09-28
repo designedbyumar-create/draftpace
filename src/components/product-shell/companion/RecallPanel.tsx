@@ -11,9 +11,9 @@ export default function RecallPanel({ entries }: { entries: { label: string; tex
     <dl aria-label="What you said" className="flex flex-col gap-3 rounded-xl bg-[var(--surface-muted)] px-4 py-3.5 ring-1 ring-inset ring-[var(--border)]">
       {entries.map((entry) => (
         <div key={entry.label}>
-          <dt className="text-[12px] font-semibold text-[var(--muted)]">{entry.label}</dt>
+          <dt className="text-caption font-semibold text-[var(--muted)]">{entry.label}</dt>
           <dd
-            className="mt-0.5 text-[17px] leading-snug text-[var(--text)]"
+            className="mt-0.5 text-body-lg leading-snug text-[var(--text)]"
             style={{ fontFamily: "var(--product-narrative-font, inherit)" }}
           >
             {entry.text}

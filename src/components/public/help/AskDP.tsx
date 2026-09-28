@@ -5,6 +5,8 @@ import Link from "next/link";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { ArrowRight, BadgeCheck, Check, Compass, Globe, MessageCircle, Search } from "@/design-system/Icon";
 import Badge from "@/design-system/Badge";
+import TextLink from "@/design-system/TextLink";
+import { textLinkClassName } from "@/design-system/textLinkStyles";
 import { getGuideBySlug } from "@/content/guides";
 import {
   ASK_ENTRIES,
@@ -248,7 +250,7 @@ export default function AskDP() {
           aria-controls="ask-dp-suggestions"
           aria-activedescendant={showSuggestions ? `ask-dp-suggestion-${highlighted}` : undefined}
           autoComplete="off"
-          className="h-14 w-full rounded-[var(--radius-lg)] border border-[var(--border-strong)] bg-[var(--surface)] pl-11 pr-28 text-[16px] text-[var(--text)] placeholder:text-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] focus:border-[var(--primary)]"
+          className="h-14 w-full rounded-[var(--radius-lg)] border border-[var(--border-strong)] bg-[var(--surface)] pl-11 pr-28 text-body-lg text-[var(--text)] placeholder:text-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] focus:border-[var(--primary)]"
         />
         {/* The real placeholder attribute above is a static, non-animating
             fallback (first-paint and screen readers). This overlay is
@@ -265,7 +267,7 @@ export default function AskDP() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={reduceMotion ? undefined : { opacity: 0, y: -5 }}
                 transition={{ duration: 0.28 }}
-                className="block truncate text-[16px] text-[var(--faint)]"
+                className="block truncate text-body-lg text-[var(--faint)]"
               >
                 {SEARCH_PLACEHOLDER_EXAMPLES[placeholderIndex]}
               </motion.span>
@@ -274,7 +276,7 @@ export default function AskDP() {
         )}
         <button
           type="submit"
-          className="absolute right-2 top-1/2 -translate-y-1/2 rounded-lg bg-[var(--brand-ink)] px-4 py-2.5 text-[13px] font-semibold text-[var(--brand-ink-contrast)] transition-colors hover:opacity-90"
+          className="absolute right-2 top-1/2 -translate-y-1/2 rounded-lg bg-[var(--brand-ink)] px-4 py-2.5 text-body-sm font-semibold text-[var(--brand-ink-contrast)] transition-colors hover:opacity-90"
         >
           Ask
         </button>
@@ -305,7 +307,7 @@ export default function AskDP() {
                     }}
                     onMouseEnter={() => setHighlighted(i)}
                     className={[
-                      "flex w-full items-center gap-2.5 px-4 py-2.5 text-left text-[14px] transition-colors",
+                      "flex w-full items-center gap-2.5 px-4 py-2.5 text-left text-body-sm transition-colors",
                       i === highlighted ? "bg-[var(--surface-muted)] text-[var(--text)]" : "text-[var(--muted)]",
                     ].join(" ")}
                   >
@@ -321,15 +323,12 @@ export default function AskDP() {
 
       {stage.step === "browse" && (
         <div className="mt-3 flex items-center justify-between gap-3">
-          <p className="text-[12.5px] text-[var(--faint)]">
+          <p className="text-caption text-[var(--faint)]">
             Real questions and real everyday problems, answered from the library, not guessed.
           </p>
-          <Link
-            href="/help-with/about-ask-dp"
-            className="shrink-0 text-[12.5px] font-semibold text-[var(--primary)] hover:underline"
-          >
+          <TextLink href="/help-with/about-ask-dp" className="shrink-0">
             Curious about this? Learn more
-          </Link>
+          </TextLink>
         </div>
       )}
 
@@ -348,7 +347,7 @@ export default function AskDP() {
                 key={q}
                 type="button"
                 onClick={() => chooseQuestion(q)}
-                className="rounded-full border border-[var(--border-strong)] bg-[var(--surface)] px-3.5 py-2 text-[13px] font-semibold text-[var(--muted)] transition-colors hover:border-[var(--brand-ink)] hover:text-[var(--text)]"
+                className="rounded-full border border-[var(--border-strong)] bg-[var(--surface)] px-3.5 py-2 text-body-sm font-semibold text-[var(--muted)] transition-colors hover:border-[var(--brand-ink)] hover:text-[var(--text)]"
               >
                 {q}
               </button>
@@ -380,9 +379,9 @@ export default function AskDP() {
           >
             <div className="flex items-center gap-2.5">
               <Globe size={17} className="text-[var(--primary)]" aria-hidden />
-              <p className="text-[13px] font-semibold text-[var(--text)]">This one depends on where you are.</p>
+              <p className="text-body-sm font-semibold text-[var(--text)]">This one depends on where you are.</p>
             </div>
-            <p className="mt-2 text-[14px] leading-relaxed text-[var(--muted)]">
+            <p className="mt-2 text-body-sm leading-relaxed text-[var(--muted)]">
               &ldquo;{stage.question}&rdquo; has a different answer by country. Which one are you asking about?
             </p>
             <div className="mt-5 flex flex-wrap gap-2">
@@ -393,7 +392,7 @@ export default function AskDP() {
                     key={c}
                     type="button"
                     onClick={() => setStage({ step: "answer", question: stage.question, country: c })}
-                    className="rounded-full border border-[var(--border-strong)] bg-[var(--bg)] px-4 py-2 text-[13px] font-semibold text-[var(--text)] transition-colors hover:border-[var(--primary)]"
+                    className="rounded-full border border-[var(--border-strong)] bg-[var(--bg)] px-4 py-2 text-body-sm font-semibold text-[var(--text)] transition-colors hover:border-[var(--primary)]"
                   >
                     {COUNTRY_LABEL[c]}
                   </button>
@@ -402,7 +401,7 @@ export default function AskDP() {
             <button
               type="button"
               onClick={reset}
-              className="mt-4 text-[12.5px] font-semibold text-[var(--faint)] hover:text-[var(--muted)]"
+              className="mt-4 text-caption font-semibold text-[var(--faint)] hover:text-[var(--muted)]"
             >
               ← Ask something else
             </button>
@@ -435,7 +434,7 @@ function KeepExploring({ topic, exclude, onPick }: { topic: AskTopic; exclude: s
   if (more.length === 0) return null;
   return (
     <div className="mt-5 border-t border-[var(--border)] pt-5">
-      <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">Keep exploring this</p>
+      <p className="text-eyebrow font-bold uppercase text-[var(--faint)]">Keep exploring this</p>
       <div className="mt-2.5 flex flex-wrap gap-2" role="list">
         {more.map((q) => (
           <button
@@ -443,7 +442,7 @@ function KeepExploring({ topic, exclude, onPick }: { topic: AskTopic; exclude: s
             type="button"
             role="listitem"
             onClick={() => onPick(q)}
-            className="rounded-full border border-[var(--border)] bg-[var(--bg)] px-3.5 py-1.5 text-left text-[13px] font-medium text-[var(--muted)] transition-colors hover:border-[var(--primary)] hover:text-[var(--text)]"
+            className="rounded-full border border-[var(--border)] bg-[var(--bg)] px-3.5 py-1.5 text-left text-body-sm font-medium text-[var(--muted)] transition-colors hover:border-[var(--primary)] hover:text-[var(--text)]"
           >
             {q}
           </button>
@@ -467,23 +466,26 @@ function NoMatchCard({
 
   return (
     <div className="rounded-[var(--radius-xl)] border border-dashed border-[var(--border)] p-6 sm:p-8">
-      <p className="text-[14.5px] leading-relaxed text-[var(--text)]">
+      <p className="text-body leading-relaxed text-[var(--text)]">
         Nothing in the library covers that yet, and it's not going to guess rather than say so.
       </p>
 
       {fallback.length > 0 && (
         <div className="mt-4">
-          <p className="text-[12.5px] font-semibold text-[var(--muted)]">
+          <p className="text-caption font-semibold text-[var(--muted)]">
             Based on what you asked, one of these official sources might help directly:
           </p>
           <ul className="mt-2 flex flex-col gap-1.5" role="list">
             {fallback.map((s) => (
               <li key={s.url}>
+                {/* Not <TextLink>: a citation is underlined by default
+                    and loses it on hover, the opposite of TextLink's
+                    hover:underline treatment. */}
                 <a
                   href={s.url}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="text-[13.5px] font-semibold text-[var(--primary)] underline decoration-[var(--border-strong)] underline-offset-2 hover:no-underline"
+                  className="text-body-sm font-semibold text-[var(--primary)] underline decoration-[var(--border-strong)] underline-offset-2 hover:no-underline"
                 >
                   {s.name}
                 </a>
@@ -494,14 +496,14 @@ function NoMatchCard({
       )}
 
       <div className="mt-5 border-t border-[var(--border)] pt-5">
-        <p className="text-[12.5px] font-semibold text-[var(--muted)]">Or try one of these:</p>
+        <p className="text-caption font-semibold text-[var(--muted)]">Or try one of these:</p>
         <div className="mt-2.5 flex flex-wrap gap-2">
           {FEATURED_QUESTIONS.map((q) => (
             <button
               key={q}
               type="button"
               onClick={() => onPick(q)}
-              className="rounded-full border border-[var(--border-strong)] bg-[var(--surface)] px-3.5 py-2 text-[13px] font-semibold text-[var(--muted)] transition-colors hover:border-[var(--brand-ink)] hover:text-[var(--text)]"
+              className="rounded-full border border-[var(--border-strong)] bg-[var(--surface)] px-3.5 py-2 text-body-sm font-semibold text-[var(--muted)] transition-colors hover:border-[var(--brand-ink)] hover:text-[var(--text)]"
             >
               {q}
             </button>
@@ -509,7 +511,7 @@ function NoMatchCard({
         </div>
       </div>
 
-      <button type="button" onClick={onAskAnother} className="mt-5 text-[13px] font-semibold text-[var(--primary)]">
+      <button type="button" onClick={onAskAnother} className={textLinkClassName({ className: "mt-5" })}>
         Ask something else
       </button>
     </div>
@@ -549,10 +551,10 @@ function AnswerCard({
     // real rather than assumed unreachable.
     return (
       <div className="rounded-[var(--radius-xl)] border border-dashed border-[var(--border)] p-8 text-center">
-        <p className="text-[14.5px] leading-relaxed text-[var(--muted)]">
+        <p className="text-body leading-relaxed text-[var(--muted)]">
           Nothing verified in the library covers this yet.
         </p>
-        <button type="button" onClick={onAskAnother} className="mt-3 text-[13px] font-semibold text-[var(--primary)]">
+        <button type="button" onClick={onAskAnother} className={textLinkClassName({ className: "mt-3" })}>
           Ask something else
         </button>
       </div>
@@ -562,7 +564,7 @@ function AnswerCard({
   return (
     <div className="rounded-[var(--radius-xl)] border border-[var(--border)] bg-[var(--surface)] p-5 sm:p-6">
       <div className="flex flex-wrap items-center gap-2">
-        <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.1em] text-[var(--success)]">
+        <span className="inline-flex items-center gap-1.5 text-eyebrow font-bold uppercase text-[var(--success)]">
           <BadgeCheck size={14} aria-hidden />
           Sourced answer
         </span>
@@ -575,19 +577,19 @@ function AnswerCard({
         )}
       </div>
 
-      <p className="mt-3 font-serif text-[19px] font-semibold leading-snug tracking-tight text-[var(--text)]">
+      <p className="mt-3 text-heading-sm font-serif font-semibold leading-snug tracking-tight text-[var(--text)]">
         {entry.question}
       </p>
 
       {entry.kind === "rule" ? (
-        <p className="mt-3.5 text-[15.5px] leading-[1.68] text-[var(--text)]">{entry.answer}</p>
+        <p className="mt-3.5 text-body leading-[1.68] text-[var(--text)]">{entry.answer}</p>
       ) : (
         <div className="mt-3.5">
-          <p className="font-serif text-[26px] font-semibold leading-none tracking-tight text-[var(--text)]">
+          <p className="text-heading font-serif font-semibold leading-none tracking-tight text-[var(--text)]">
             {entry.low}&ndash;{entry.high}
-            <span className="ml-1.5 text-[14px] font-normal text-[var(--muted)]">{entry.unit}</span>
+            <span className="ml-1.5 text-body-sm font-normal text-[var(--muted)]">{entry.unit}</span>
           </p>
-          <p className="mt-2.5 text-[13px] leading-relaxed text-[var(--faint)]">
+          <p className="mt-2.5 text-body-sm leading-relaxed text-[var(--faint)]">
             Varies by {entry.variesBy.join(", ")}.
           </p>
         </div>
@@ -595,52 +597,52 @@ function AnswerCard({
 
       {entry.changing && (
         <div className="mt-4 rounded-lg bg-[var(--warning-soft)] px-3.5 py-2.5">
-          <p className="text-[12.5px] font-semibold leading-relaxed text-[var(--warning)]">Currently changing: {entry.changing}</p>
+          <p className="text-caption font-semibold leading-relaxed text-[var(--warning)]">Currently changing: {entry.changing}</p>
         </div>
       )}
 
       <div className="mt-5 flex flex-wrap items-center justify-between gap-2 border-t border-[var(--border)] pt-4">
+        {/* Not <TextLink>: a citation is underlined by default and
+            loses it on hover, the opposite of TextLink's treatment. */}
         <a
           href={entry.source.url}
           target="_blank"
           rel="noreferrer noopener"
-          className="text-[12.5px] font-semibold text-[var(--muted)] underline decoration-[var(--border-strong)] underline-offset-2 hover:text-[var(--text)]"
+          className="text-caption font-semibold text-[var(--muted)] underline decoration-[var(--border-strong)] underline-offset-2 hover:text-[var(--text)]"
         >
           Source: {entry.source.name}
         </a>
-        <span className="text-[12px] text-[var(--faint)]">Verified {entry.verifiedAt}</span>
+        <span className="text-caption text-[var(--faint)]">Verified {entry.verifiedAt}</span>
       </div>
 
       {relatedGuide && (
-        <Link
-          href={`/guides/${relatedGuide.slug}`}
-          className="mt-3 inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--primary)] hover:underline"
-        >
+        <TextLink href={`/guides/${relatedGuide.slug}`} arrow className="mt-3">
           Full guide: {relatedGuide.title}
-          <ArrowRight size={13} aria-hidden />
-        </Link>
+        </TextLink>
       )}
 
       {entry.wealthdrafts && (
+        // Not <TextLink>: an external absolute URL. Next's <Link> is for
+        // internal routes, so this stays a raw <a> styled the same way.
         <a
           href={entry.wealthdrafts.url}
           target="_blank"
           rel="noopener"
-          className="mt-2 inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--primary)] hover:underline"
+          className={textLinkClassName({ className: "mt-2" })}
         >
           More from Wealth Drafts: {entry.wealthdrafts.title}
-          <ArrowRight size={13} aria-hidden />
+          <ArrowRight size={14} aria-hidden className="shrink-0 transition-transform group-hover:translate-x-0.5" />
         </a>
       )}
 
       {entry.relatedProductSlug && (
         <div className="mt-5 flex flex-col gap-2 border-t border-[var(--border)] pt-5">
-          <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">Keeps track of this for you</p>
+          <p className="text-eyebrow font-bold uppercase text-[var(--faint)]">Keeps track of this for you</p>
           <Link
             href={`/shop/${entry.relatedProductSlug}`}
             className="group flex items-center justify-between gap-3 rounded-lg border border-[var(--border)] px-3.5 py-3 transition-colors hover:border-[var(--primary)]"
           >
-            <span className="flex items-center gap-2 text-[14px] font-semibold text-[var(--text)]">
+            <span className="flex items-center gap-2 text-body-sm font-semibold text-[var(--text)]">
               <Check size={14} className="text-[var(--success)]" aria-hidden />
               See the product
             </span>
@@ -651,7 +653,7 @@ function AnswerCard({
 
       <KeepExploring topic={entry.topic} exclude={entry.question} onPick={onPick} />
 
-      <button type="button" onClick={onAskAnother} className="mt-5 text-[13px] font-semibold text-[var(--primary)]">
+      <button type="button" onClick={onAskAnother} className={textLinkClassName({ className: "mt-5" })}>
         Ask something else
       </button>
     </div>
@@ -679,38 +681,33 @@ function ProblemAnswerCard({
 
   return (
     <div className="rounded-[var(--radius-xl)] border border-[var(--border)] bg-[var(--surface)] p-5 sm:p-6">
-      <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.1em] text-[var(--primary)]">
+      <span className="inline-flex items-center gap-1.5 text-eyebrow font-bold uppercase text-[var(--primary)]">
         <Compass size={14} aria-hidden />
         Real problem, real redirect
       </span>
-      <p className="mt-3 font-serif text-[19px] font-semibold leading-snug tracking-tight text-[var(--text)]">
+      <p className="mt-3 text-heading-sm font-serif font-semibold leading-snug tracking-tight text-[var(--text)]">
         {problem.phrase}
       </p>
-      <p className="mt-3.5 text-[15.5px] leading-[1.68] text-[var(--text)]">{problem.response}</p>
+      <p className="mt-3.5 text-body leading-[1.68] text-[var(--text)]">{problem.response}</p>
 
       {guides.length > 0 && (
         <div className="mt-4 flex flex-col gap-2 border-t border-[var(--border)] pt-4">
           {guides.map((guide) => (
-            <Link
-              key={guide.slug}
-              href={`/guides/${guide.slug}`}
-              className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--primary)] hover:underline"
-            >
+            <TextLink key={guide.slug} href={`/guides/${guide.slug}`} arrow>
               Full guide: {guide.title}
-              <ArrowRight size={13} aria-hidden />
-            </Link>
+            </TextLink>
           ))}
         </div>
       )}
 
       {problem.relatedProductSlug && (
         <div className="mt-5 flex flex-col gap-2 border-t border-[var(--border)] pt-5">
-          <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">Keeps track of this for you</p>
+          <p className="text-eyebrow font-bold uppercase text-[var(--faint)]">Keeps track of this for you</p>
           <Link
             href={`/shop/${problem.relatedProductSlug}`}
             className="group flex items-center justify-between gap-3 rounded-lg border border-[var(--border)] px-3.5 py-3 transition-colors hover:border-[var(--primary)]"
           >
-            <span className="flex items-center gap-2 text-[14px] font-semibold text-[var(--text)]">
+            <span className="flex items-center gap-2 text-body-sm font-semibold text-[var(--text)]">
               <Check size={14} className="text-[var(--success)]" aria-hidden />
               See the product
             </span>
@@ -721,7 +718,7 @@ function ProblemAnswerCard({
 
       <KeepExploring topic={problem.topic} exclude={problem.phrase} onPick={onPick} />
 
-      <button type="button" onClick={onAskAnother} className="mt-5 text-[13px] font-semibold text-[var(--primary)]">
+      <button type="button" onClick={onAskAnother} className={textLinkClassName({ className: "mt-5" })}>
         Ask something else
       </button>
     </div>
@@ -739,22 +736,18 @@ function ProblemAnswerCard({
 function MetaAnswerCard({ meta, onAskAnother }: { meta: MetaEntry; onAskAnother: () => void }) {
   return (
     <div className="rounded-[var(--radius-xl)] border border-dashed border-[var(--border-strong)] bg-[var(--surface)] p-5 sm:p-6">
-      <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">
+      <span className="inline-flex items-center gap-1.5 text-eyebrow font-bold uppercase text-[var(--faint)]">
         <MessageCircle size={14} aria-hidden />
         About Ask DP
       </span>
-      <p className="mt-3 font-serif text-[19px] font-semibold leading-snug tracking-tight text-[var(--text)]">
+      <p className="mt-3 text-heading-sm font-serif font-semibold leading-snug tracking-tight text-[var(--text)]">
         {meta.question}
       </p>
-      <p className="mt-3.5 text-[15.5px] leading-[1.68] text-[var(--text)]">{meta.answer}</p>
-      <Link
-        href="/help-with/about-ask-dp"
-        className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--primary)] hover:underline"
-      >
+      <p className="mt-3.5 text-body leading-[1.68] text-[var(--text)]">{meta.answer}</p>
+      <TextLink href="/help-with/about-ask-dp" arrow className="mt-4">
         More about Ask DP
-        <ArrowRight size={13} aria-hidden />
-      </Link>
-      <button type="button" onClick={onAskAnother} className="mt-5 block text-[13px] font-semibold text-[var(--primary)]">
+      </TextLink>
+      <button type="button" onClick={onAskAnother} className={textLinkClassName({ className: "mt-5 block" })}>
         Ask something else
       </button>
     </div>

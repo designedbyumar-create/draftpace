@@ -2,7 +2,6 @@
 
 import { Suspense, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import Link from "next/link";
 import { supabase } from "@/lib/supabase/client";
 import { getSupabaseConfigStatus, getAuthUnavailableMessage } from "@/lib/supabase/config";
 import AuthCard from "@/components/auth/AuthCard";
@@ -11,6 +10,7 @@ import { getSafeRedirect, storeOAuthRedirect } from "@/components/auth/redirect"
 import Button from "@/design-system/Button";
 import Input from "@/design-system/Input";
 import Alert from "@/design-system/Alert";
+import TextLink from "@/design-system/TextLink";
 import { Check } from "@/design-system/Icon";
 
 const STEP_TITLES = ["What's your email?", "Create a password", "What should we call you?"];
@@ -99,11 +99,9 @@ function SignupForm() {
       title={STEP_TITLES[step - 1]}
       footer={
         step === 1 ? (
-          <p className="text-[13px] text-[var(--muted)]">
+          <p className="text-body-sm text-[var(--muted)]">
             Already have an account?{" "}
-            <Link href="/login" className="font-semibold text-[var(--primary)] hover:underline">
-              Sign in
-            </Link>
+            <TextLink href="/login">Sign in</TextLink>
           </p>
         ) : undefined
       }
@@ -145,7 +143,7 @@ function SignupForm() {
               <div className="w-full border-t border-[var(--border)]" />
             </div>
             <div className="relative flex justify-center">
-              <span className="bg-[var(--surface)] px-3 text-[12px] text-[var(--faint)]">or</span>
+              <span className="bg-[var(--surface)] px-3 text-caption text-[var(--faint)]">or</span>
             </div>
           </div>
 
@@ -157,7 +155,7 @@ function SignupForm() {
 
       {step === 2 && (
         <div>
-          <p className="mb-5 text-[13px] text-[var(--muted)]">
+          <p className="mb-5 text-body-sm text-[var(--muted)]">
             For <span className="font-semibold text-[var(--text)]">{email}</span>
           </p>
           <Input
@@ -182,7 +180,7 @@ function SignupForm() {
 
       {step === 3 && (
         <div>
-          <p className="mb-5 text-[13px] text-[var(--muted)]">Optional. We&apos;ll use your email name if you skip.</p>
+          <p className="mb-5 text-body-sm text-[var(--muted)]">Optional. We&apos;ll use your email name if you skip.</p>
           <Input
             label="Your name"
             value={name}
@@ -194,14 +192,14 @@ function SignupForm() {
           />
 
           <div className="mb-5 rounded-lg bg-[var(--primary-soft)] p-4">
-            <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--primary)]">What you&apos;re getting</p>
+            <p className="mb-3 text-eyebrow font-bold uppercase text-[var(--primary)]">What you&apos;re getting</p>
             <div className="flex flex-col gap-2.5">
               {["A Draftpace account", "Access to your products in one place"].map((item) => (
                 <div key={item} className="flex items-center gap-2.5">
                   <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-white/60 text-[var(--primary)]">
                     <Check size={12} aria-hidden />
                   </span>
-                  <span className="text-[13px] font-medium text-[var(--primary-strong)]">{item}</span>
+                  <span className="text-body-sm font-medium text-[var(--primary-strong)]">{item}</span>
                 </div>
               ))}
             </div>

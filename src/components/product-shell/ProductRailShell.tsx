@@ -117,7 +117,7 @@ export default function ProductRailShell({
         key={id}
         href={href(id)}
         onClick={onNavigate}
-        className={`block rounded-lg px-3 py-2.5 text-[14px] transition-colors ${
+        className={`block rounded-lg px-3 py-2.5 text-body-sm transition-colors ${
           isActive(id)
             ? "bg-[var(--surface-muted)] font-semibold text-[var(--primary)]"
             : "text-[var(--muted)] hover:bg-[var(--surface-muted)] hover:text-[var(--text)]"
@@ -135,14 +135,14 @@ export default function ProductRailShell({
           <Link
             href="/app"
             aria-label="Back to Draftpace"
-            className="mb-6 flex items-center gap-1.5 text-[12px] font-semibold text-[var(--muted)] hover:text-[var(--text)]"
+            className="mb-6 flex items-center gap-1.5 text-caption font-semibold text-[var(--muted)] hover:text-[var(--text)]"
           >
             <ArrowLeft size={14} aria-hidden />
             Draftpace
           </Link>
 
           <p
-            className="text-[15px] leading-snug text-[var(--text)]"
+            className="text-body leading-snug text-[var(--text)]"
             style={{ fontFamily: "var(--product-narrative-font, inherit)" }}
           >
             {definition.title}
@@ -158,7 +158,7 @@ export default function ProductRailShell({
                   href={href(id)}
                   data-tour-id={`rail-${id}`}
                   aria-current={active ? "page" : undefined}
-                  className={`rounded-lg px-3 py-2 text-[12px] font-bold uppercase tracking-[0.12em] transition-colors ${
+                  className={`rounded-lg px-3 py-2 text-eyebrow font-bold uppercase transition-colors ${
                     active
                       ? "bg-[var(--surface-muted)] text-[var(--primary)]"
                       : "text-[var(--muted)] hover:bg-[var(--surface-muted)] hover:text-[var(--text)]"
@@ -173,7 +173,7 @@ export default function ProductRailShell({
           <div className="mt-auto flex flex-col gap-1 pt-6">
             {secondary.length > 0 && (
               <>
-                <p className="px-3 pb-1 text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">More</p>
+                <p className="px-3 pb-1 text-eyebrow font-bold uppercase text-[var(--faint)]">More</p>
                 {moreLinks()}
               </>
             )}
@@ -194,12 +194,12 @@ export default function ProductRailShell({
             <Link
               href="/app"
               aria-label="Back to Draftpace"
-              className="flex h-11 shrink-0 items-center gap-1 rounded-lg px-1.5 text-[13px] font-semibold text-[var(--muted)] hover:text-[var(--text)]"
+              className="flex h-11 shrink-0 items-center gap-1 rounded-lg px-1.5 text-body-sm font-semibold text-[var(--muted)] hover:text-[var(--text)]"
             >
               <ArrowLeft size={16} aria-hidden />
               Draftpace
             </Link>
-            <h1 className="min-w-0 flex-1 truncate text-center text-[14px] font-semibold text-[var(--text)]">
+            <h1 className="min-w-0 flex-1 truncate text-center text-body-sm font-semibold text-[var(--text)]">
               {definition.title}
             </h1>
             <div className="flex h-11 shrink-0 items-center justify-end gap-1">
@@ -256,7 +256,7 @@ export default function ProductRailShell({
                   {/* The label always stays. Four glyphs alone would be a
                       guessing game, and this product is used twice a year
                       by people who will not have memorised them. */}
-                  <span className="truncate text-[10.5px] font-semibold tracking-[0.01em]">{label}</span>
+                  <span className="truncate text-eyebrow font-semibold">{label}</span>
                 </Link>
               </li>
             );

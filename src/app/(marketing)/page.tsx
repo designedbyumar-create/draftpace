@@ -215,10 +215,10 @@ export default function HomePage() {
       <section className="border-t border-[var(--border)]">
         <Container width="wide" className="pb-14 pt-20 sm:pb-20 sm:pt-28">
           <p className="text-eyebrow font-bold uppercase text-[var(--brand-ink)]">The Companions</p>
-          <h2 className="mt-3 max-w-3xl font-serif text-[38px] font-semibold leading-[1.05] tracking-[-0.025em] sm:text-[60px]">
+          <h2 className="mt-3 max-w-3xl text-display font-serif font-semibold tracking-[-0.025em]">
             Apps designed around your needs.
           </h2>
-          <p className="mt-5 max-w-xl text-[16px] leading-relaxed text-[var(--muted)]">
+          <p className="mt-5 max-w-xl text-body-lg leading-relaxed text-[var(--muted)]">
             The Companion Series is eight apps, each built for one hard thing and each with a look of its own. Every one
             below works, so touch it.{" "}
             A Companion never tells you that you are behind.
@@ -250,13 +250,13 @@ export default function HomePage() {
         <Container width="wide" className="py-16 sm:py-20">
           <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between lg:gap-16">
             <div className="min-w-0 max-w-xl">
-              <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--brand-ink)]">
+              <p className="text-eyebrow font-bold uppercase text-[var(--brand-ink)]">
                 Start free
               </p>
-              <h2 className="mt-3 font-serif text-[28px] font-semibold leading-tight tracking-tight sm:text-[34px]">
+              <h2 className="mt-3 text-heading font-serif font-semibold tracking-tight">
                 One of them costs nothing, and is not a trial.
               </h2>
-              <p className="mt-4 text-[15px] leading-relaxed text-[var(--muted)]">
+              <p className="mt-4 text-body leading-relaxed text-[var(--muted)]">
                 Monthly Money Reset shows what is genuinely safe to spend after what is already committed. It is a
                 complete, narrower product rather than a preview of a paid one, and it is the fastest way to find out
                 whether a Companion suits how you think before you spend anything.
@@ -288,11 +288,11 @@ export default function HomePage() {
       {/* 6. Owned, not rented */}
       <section className="border-b border-[var(--border)]">
         <Container width="narrow" className="py-16 text-center sm:py-20">
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--brand-ink)]">Owned, not rented</p>
-          <h2 className="mt-3 font-serif text-[30px] font-semibold leading-tight tracking-tight sm:text-[38px]">
+          <p className="text-eyebrow font-bold uppercase text-[var(--brand-ink)]">Owned, not rented</p>
+          <h2 className="mt-3 text-heading-lg font-serif font-semibold tracking-tight">
             You own it. It does not expire, and it does not watch you.
           </h2>
-          <p className="mx-auto mt-4 max-w-lg text-[15px] leading-relaxed text-[var(--muted)]">
+          <p className="mx-auto mt-4 max-w-lg text-body leading-relaxed text-[var(--muted)]">
             A Companion is yours to keep and open whenever you want. No feed, no ads, nothing sold about you. It works
             on your side, quietly.
           </p>
@@ -325,17 +325,17 @@ export default function HomePage() {
               },
             ].map((item) => (
               <div key={item.term}>
-                <dt className="font-serif text-[16px] font-semibold leading-snug tracking-tight text-[var(--text)]">
+                <dt className="text-heading-sm font-serif font-semibold leading-snug text-[var(--text)]">
                   {item.term}
                 </dt>
-                <dd className="mt-1.5 text-[13px] leading-relaxed text-[var(--muted)]">{item.detail}</dd>
+                <dd className="mt-1.5 text-body-sm leading-relaxed text-[var(--muted)]">{item.detail}</dd>
               </div>
             ))}
           </dl>
           <div className="mt-8">
             <Link
               href="/trust"
-              className="inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-[var(--muted)] underline-offset-4 transition-colors hover:text-[var(--text)] hover:underline"
+              className="inline-flex items-center gap-1.5 text-body-sm font-semibold text-[var(--muted)] underline-offset-4 transition-colors hover:text-[var(--text)] hover:underline"
             >
               How we handle your data
               <ArrowRight size={15} aria-hidden />
@@ -361,14 +361,14 @@ export default function HomePage() {
       {/* 8. Closing */}
       <section>
         <Container width="wide" className="py-16 text-center sm:py-24">
-          <h2 className="font-serif text-[28px] font-semibold leading-tight tracking-tight sm:text-[36px]">
+          <h2 className="text-heading font-serif font-semibold tracking-tight">
             Find the one that fits your situation.
           </h2>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Button href="/shop" size="lg" iconRight={<ArrowRight size={16} aria-hidden />}>
               See the Companion Series
             </Button>
-            <Link href="/login" className="text-[13px] font-semibold text-[var(--muted)] hover:text-[var(--text)]">
+            <Link href="/login" className="text-body-sm font-semibold text-[var(--muted)] hover:text-[var(--text)]">
               Already using Draftpace? Sign in
             </Link>
           </div>

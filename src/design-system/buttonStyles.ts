@@ -81,10 +81,14 @@ const variantClass: Record<ButtonVariant, string> = {
     "bg-[var(--danger)] text-white shadow-[shadow:var(--btn-raise-rest)] hover:brightness-[1.04]",
 };
 
+// sm and md land on the same named step (body-sm, 13.5px): the two
+// literal values they replace (13px/14px) were only 1px apart, and
+// body-sm is the nearest scale step to both. Their height/padding still
+// differ, so the two sizes remain visually distinct.
 const sizeClass: Record<ButtonSize, string> = {
-  sm: "min-h-9 rounded-lg px-3.5 py-2 text-[13px]",
-  md: "min-h-11 rounded-lg px-5 py-2.5 text-[14px]",
-  lg: "min-h-12 rounded-xl px-6 py-3.5 text-[15px]",
+  sm: "min-h-9 rounded-lg px-3.5 py-2 text-body-sm",
+  md: "min-h-11 rounded-lg px-5 py-2.5 text-body-sm",
+  lg: "min-h-12 rounded-xl px-6 py-3.5 text-body",
 };
 
 export function buttonClassName({

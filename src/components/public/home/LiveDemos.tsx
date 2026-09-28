@@ -15,6 +15,19 @@ import type { Hero } from "./posterTypes";
  * single card, about 400px wide, type no smaller than 13px, one or two
  * things to touch.
  *
+ * TYPE SCALE EXCEPTION
+ *
+ * Each mockup here recreates a different product's own UI chrome at
+ * deliberately miniature scale: a picture of what using the product feels
+ * like, not real Draftpace navigation or prose. Each card invents its own
+ * micro type scale on purpose, and no two cards need to agree, the same
+ * way the guides layer's numeral column needed `tabular-nums` instead of
+ * `eyebrow`'s tracking. A stray arbitrary size elsewhere in the marketing/
+ * components scope is still a real regression (see designSystem.test.ts's
+ * "type scale and TextLink" guard); this whole file is named as an
+ * explicit exemption there, since nothing in it is real Draftpace
+ * hierarchy for that guard to check.
+ *
  * WHAT IS REAL
  *
  * Wherever the product has logic that can run in a browser, the demo runs

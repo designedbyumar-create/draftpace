@@ -2,6 +2,7 @@
 
 import { familyRegistry } from "@/product-framework/families";
 import type { OwnedProductRow } from "@/product-framework/deriveOwnedProducts";
+import { textLinkClassName } from "@/design-system/textLinkStyles";
 
 /**
  * An owned product whose definition or progress failed to load, shown
@@ -28,17 +29,13 @@ export default function DegradedProductRow({
   return (
     <div className="flex items-center justify-between gap-4 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4 shadow-[shadow:var(--shadow-xs)]">
       <div className="min-w-0">
-        <p className="text-[14.5px] font-semibold text-[var(--text)]">{title}</p>
-        <p className="mt-1 text-[12.5px] text-[var(--muted)]">
+        <p className="text-body font-semibold text-[var(--text)]">{title}</p>
+        <p className="mt-1 text-caption text-[var(--muted)]">
           {family ? `${family.label} · ` : ""}
           {description}
         </p>
       </div>
-      <button
-        type="button"
-        onClick={onRetry}
-        className="shrink-0 text-[13px] font-semibold text-[var(--primary)] hover:underline"
-      >
+      <button type="button" onClick={onRetry} className={textLinkClassName({ className: "shrink-0" })}>
         Try again
       </button>
     </div>

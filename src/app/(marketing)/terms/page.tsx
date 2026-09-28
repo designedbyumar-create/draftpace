@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Container from "@/design-system/Container";
 import Alert from "@/design-system/Alert";
+import TextLink from "@/design-system/TextLink";
 
 export const metadata: Metadata = {
   title: "Terms of Use",
@@ -115,14 +116,14 @@ export default function TermsPage() {
   return (
     <main className="bg-[var(--bg)] text-[var(--text)]">
       <Container width="narrow" className="pb-6 pt-24">
-        <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--brand-ink)]">Legal</p>
-        <h1 className="mt-3 font-serif text-[36px] font-semibold leading-tight tracking-tight sm:text-[44px]">
+        <p className="text-eyebrow font-bold uppercase text-[var(--brand-ink)]">Legal</p>
+        <h1 className="mt-3 text-heading-lg font-serif font-semibold tracking-tight">
           Terms of Use
         </h1>
-        <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-[var(--muted)]">
+        <p className="mt-4 max-w-lg text-body leading-relaxed text-[var(--muted)]">
           Plain language. Here's what you're agreeing to when you use Draftpace.
         </p>
-        <p className="mt-2 text-[12px] text-[var(--faint)]">Last updated: August 2026</p>
+        <p className="mt-2 text-caption text-[var(--faint)]">Last updated: August 2026</p>
       </Container>
 
       <Container width="narrow" className="pb-6">
@@ -136,14 +137,14 @@ export default function TermsPage() {
           {SECTIONS.map((section, index) => (
             <div key={section.id} id={section.id}>
               <div className="mb-5 flex items-center gap-3">
-                <span className="text-[11px] font-bold tracking-widest text-[var(--faint)]">0{index + 1}</span>
-                <h2 className="text-[19px] font-semibold text-[var(--text)]">{section.title}</h2>
+                <span className="text-eyebrow font-bold uppercase tracking-widest text-[var(--faint)]">0{index + 1}</span>
+                <h2 className="text-heading-sm font-semibold text-[var(--text)]">{section.title}</h2>
               </div>
               <div className="flex flex-col gap-3">
                 {section.content.map((item) => (
                   <div key={item.sub} className="rounded-lg border border-[var(--border)] p-5">
-                    <p className="text-[13px] font-semibold text-[var(--text)]">{item.sub}</p>
-                    <p className="mt-1.5 text-[13px] leading-relaxed text-[var(--muted)]">{item.body}</p>
+                    <p className="text-body-sm font-semibold text-[var(--text)]">{item.sub}</p>
+                    <p className="mt-1.5 text-body-sm leading-relaxed text-[var(--muted)]">{item.body}</p>
                   </div>
                 ))}
               </div>
@@ -151,11 +152,9 @@ export default function TermsPage() {
           ))}
         </div>
 
-        <p className="mt-12 text-[13px] text-[var(--muted)]">
+        <p className="mt-12 text-body-sm text-[var(--muted)]">
           Questions?{" "}
-          <a href="mailto:legal@draftpace.com" className="font-semibold text-[var(--primary)] hover:underline">
-            legal@draftpace.com
-          </a>
+          <TextLink href="mailto:legal@draftpace.com">legal@draftpace.com</TextLink>
         </p>
       </Container>
     </main>

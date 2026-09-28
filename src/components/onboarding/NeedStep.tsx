@@ -70,11 +70,11 @@ export default function NeedStep({
 
   return (
     <div>
-      <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--primary)]">One thing first</p>
-      <h1 className="mt-3 font-serif text-[26px] font-semibold leading-tight tracking-tight text-[var(--text)] sm:text-[28px]">
+      <p className="text-eyebrow font-bold uppercase text-[var(--primary)]">One thing first</p>
+      <h1 className="mt-3 text-heading font-serif font-semibold tracking-tight text-[var(--text)]">
         What brings you here?
       </h1>
-      <p className="mt-3 text-[14px] leading-relaxed text-[var(--muted)]">
+      <p className="mt-3 text-body-sm leading-relaxed text-[var(--muted)]">
         Pick the one that&apos;s closest. You can explore the rest anytime from the Store.
       </p>
 
@@ -102,7 +102,7 @@ export default function NeedStep({
               >
                 <Icon size={16} aria-hidden />
               </span>
-              <span className="text-[13px] font-semibold leading-tight text-[var(--text)]">{need.label}</span>
+              <span className="text-body-sm font-semibold leading-tight text-[var(--text)]">{need.label}</span>
               {isActive && (
                 <motion.span
                   initial={reduceMotion ? false : { scale: 0.5, opacity: 0 }}
@@ -129,13 +129,13 @@ export default function NeedStep({
               transition={{ duration: 0.28, ease: EASE_OUT }}
               className="rounded-lg bg-[var(--surface-muted)] p-3.5"
             >
-              <p className="text-[13px] leading-relaxed text-[var(--muted)]">{active.situation}</p>
+              <p className="text-body-sm leading-relaxed text-[var(--muted)]">{active.situation}</p>
               {matchedProduct && (
                 <motion.p
                   initial={reduceMotion ? false : { opacity: 0, y: 6 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.32, delay: reduceMotion ? 0 : 0.13, ease: EASE_OUT }}
-                  className="mt-2 text-[13px] font-semibold text-[var(--primary)]"
+                  className="mt-2 text-body-sm font-semibold text-[var(--primary)]"
                 >
                   There&apos;s a free product for exactly this: {matchedProduct.title}.
                 </motion.p>

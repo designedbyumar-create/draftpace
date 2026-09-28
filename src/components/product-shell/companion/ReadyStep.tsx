@@ -54,7 +54,7 @@ export default function ReadyStepCard({
   if (phase === "counting") {
     return (
       <div className="flex flex-col items-center gap-2 py-6">
-        <span className="text-[56px] font-bold leading-none text-[var(--primary)]" aria-live="polite">
+        <span className="text-display font-bold leading-none text-[var(--primary)]" aria-live="polite">
           {count > 0 ? count : "Go"}
         </span>
       </div>

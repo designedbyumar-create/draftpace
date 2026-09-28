@@ -121,7 +121,7 @@ export default function HowItWorksFlow() {
                 className="flex w-full items-start gap-4 rounded-[var(--radius)] py-3.5 pl-0 pr-3 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]"
               >
                 <span
-                  className={`relative z-10 mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 text-[12px] font-bold transition-colors duration-[var(--dur)] ${
+                  className={`relative z-10 mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 text-caption font-bold transition-colors duration-[var(--dur)] ${
                     isActive
                       ? "border-[var(--primary)] bg-[var(--primary)] text-[var(--primary-contrast)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.35),var(--shadow-xs)]"
                       : isDone
@@ -132,17 +132,17 @@ export default function HowItWorksFlow() {
                   {isDone ? <Check size={14} aria-hidden /> : String(index + 1).padStart(2, "0")}
                 </span>
                 <span className="pt-0.5">
-                  <span className={`block text-[11px] font-bold uppercase tracking-[0.12em] ${isActive ? "text-[var(--primary)]" : "text-[var(--faint)]"}`}>
+                  <span className={`block text-eyebrow font-bold uppercase ${isActive ? "text-[var(--primary)]" : "text-[var(--faint)]"}`}>
                     {step.when}
                   </span>
-                  <span className={`mt-1 block text-[15px] font-semibold ${isActive ? "text-[var(--text)]" : "text-[var(--muted)]"}`}>
+                  <span className={`mt-1 block text-body font-semibold ${isActive ? "text-[var(--text)]" : "text-[var(--muted)]"}`}>
                     {step.title}
                   </span>
                   {isActive && (
                     <motion.span
                       initial={reduceMotion ? false : { opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: "auto" }}
-                      className="mt-1.5 block max-w-sm text-[13px] leading-relaxed text-[var(--muted)]"
+                      className="mt-1.5 block max-w-sm text-body-sm leading-relaxed text-[var(--muted)]"
                     >
                       {step.body}
                     </motion.span>
@@ -173,7 +173,7 @@ export default function HowItWorksFlow() {
             </motion.div>
           </AnimatePresence>
         </DeviceStage>
-        <p className="text-center text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--faint)]">{active.when}</p>
+        <p className="text-center text-eyebrow font-bold uppercase text-[var(--faint)]">{active.when}</p>
       </div>
     </div>
   );

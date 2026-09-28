@@ -45,7 +45,7 @@ export default function ManualOwnershipView({
   if (ownership.state === "not-owned") {
     return (
       <Frame>
-        <p className="text-[13.5px] text-[var(--muted)]">You don&apos;t own this one yet.</p>
+        <p className="text-body-sm text-[var(--muted)]">You don&apos;t own this one yet.</p>
         <Button href={`/shop/${productSlug}`} size="sm" variant="secondary" iconRight={<ArrowRight size={14} aria-hidden />}>
           See it in the Store
         </Button>
@@ -56,7 +56,7 @@ export default function ManualOwnershipView({
   if (ownership.state === "unavailable") {
     return (
       <Frame>
-        <p className="text-[13.5px] text-[var(--muted)]">
+        <p className="text-body-sm text-[var(--muted)]">
           Couldn&apos;t check where you are with this right now. Everything below is still accurate.
         </p>
       </Frame>
@@ -73,10 +73,10 @@ export default function ManualOwnershipView({
       <div className="min-w-0">
         <div className="flex flex-wrap items-center gap-2">
           {STATUS_TONE[status] && <Badge tone={STATUS_TONE[status]}>{status}</Badge>}
-          <span className="text-[12.5px] text-[var(--faint)]">{boughtStartedLine(entitlement, instance)}</span>
+          <span className="text-caption text-[var(--faint)]">{boughtStartedLine(entitlement, instance)}</span>
         </div>
         {instance?.nextActionLabel && instance.setupComplete && (
-          <p className="mt-1.5 text-[13.5px] text-[var(--muted)]">Next: {instance.nextActionLabel}</p>
+          <p className="mt-1.5 text-body-sm text-[var(--muted)]">Next: {instance.nextActionLabel}</p>
         )}
       </div>
       <Button href={destination} size="sm" iconRight={<ArrowRight size={14} aria-hidden />}>

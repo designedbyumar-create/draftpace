@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Container from "@/design-system/Container";
+import TextLink from "@/design-system/TextLink";
 
 export const metadata: Metadata = {
   title: "Editorial standards",
@@ -38,32 +38,28 @@ const SECTIONS = [
 export default function EditorialStandardsPage() {
   return (
     <Container width="narrow" className="pb-24 pt-16 sm:pt-20">
-      <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--brand-ink)]">Editorial standards</p>
-      <h1 className="mt-3 font-serif text-[34px] font-semibold leading-tight tracking-tight sm:text-[44px]">
+      <p className="text-eyebrow font-bold uppercase text-[var(--brand-ink)]">Editorial standards</p>
+      <h1 className="mt-3 text-heading-lg font-serif font-semibold tracking-tight">
         How the free guides are written, checked and corrected.
       </h1>
-      <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-[var(--muted)]">
+      <p className="mt-4 max-w-lg text-body leading-relaxed text-[var(--muted)]">
         The{" "}
-        <Link href="/guides" className="font-semibold text-[var(--primary)] hover:underline">
-          guides
-        </Link>{" "}
+        <TextLink href="/guides">guides</TextLink>{" "}
         cover hard life admin. This page says what stands behind them and what does not.
       </p>
 
       <div className="mt-12 flex flex-col divide-y divide-[var(--border)]">
         {SECTIONS.map((section) => (
           <div key={section.title} className="py-6 first:pt-0">
-            <h2 className="text-[16px] font-semibold text-[var(--text)]">{section.title}</h2>
-            <p className="mt-2 max-w-lg text-[14px] leading-relaxed text-[var(--muted)]">{section.body}</p>
+            <h2 className="text-heading-sm font-semibold text-[var(--text)]">{section.title}</h2>
+            <p className="mt-2 max-w-lg text-body-sm leading-relaxed text-[var(--muted)]">{section.body}</p>
           </div>
         ))}
       </div>
 
-      <p className="mt-10 text-[13px] text-[var(--muted)]">
+      <p className="mt-10 text-body-sm text-[var(--muted)]">
         Corrections and questions:{" "}
-        <a href="mailto:support@draftpace.com" className="font-semibold text-[var(--primary)] hover:underline">
-          support@draftpace.com
-        </a>
+        <TextLink href="mailto:support@draftpace.com">support@draftpace.com</TextLink>
       </p>
     </Container>
   );

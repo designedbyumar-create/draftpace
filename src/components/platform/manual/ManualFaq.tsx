@@ -29,7 +29,7 @@ export default function ManualFaq({ faqs }: { faqs: { question: string; answer: 
               aria-expanded={isOpen}
               className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left transition-colors hover:bg-[var(--surface-sunken)]"
             >
-              <span className="text-[14.5px] font-semibold text-[var(--text)]">{faq.question}</span>
+              <span className="text-body font-semibold text-[var(--text)]">{faq.question}</span>
               <motion.span
                 animate={{ rotate: isOpen ? 180 : 0 }}
                 transition={{ duration: reduceMotion ? 0 : 0.2, ease: "easeOut" }}
@@ -47,7 +47,7 @@ export default function ManualFaq({ faqs }: { faqs: { question: string; answer: 
                   transition={{ duration: 0.24, ease: "easeOut" }}
                   className="overflow-hidden"
                 >
-                  <p className="px-5 pb-5 text-[13.5px] leading-relaxed text-[var(--muted)]">{faq.answer}</p>
+                  <p className="px-5 pb-5 text-body-sm leading-relaxed text-[var(--muted)]">{faq.answer}</p>
                 </motion.div>
               )}
             </AnimatePresence>

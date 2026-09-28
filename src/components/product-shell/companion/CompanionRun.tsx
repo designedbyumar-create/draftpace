@@ -150,15 +150,15 @@ export default function CompanionRun<TFinishResult>({
     // Reachable only if a playbook's own steps are misconfigured (no
     // outcome step at the end); each product's own integrity tests
     // guard against that, so this is a floor, not an expected state.
-    return <p className="text-[13px] text-[var(--faint)]">Opening...</p>;
+    return <p className="text-body-sm text-[var(--faint)]">Opening...</p>;
   }
 
   return (
     <div className="mx-auto flex w-full max-w-xl flex-col gap-6">
       <header className="flex items-start justify-between gap-4">
         <div className="min-w-0">
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">{playbook.title}</p>
-          {contextLabel && <p className="mt-1 truncate text-[13px] text-[var(--muted)]">{contextLabel}</p>}
+          <p className="text-eyebrow font-bold uppercase text-[var(--primary)]">{playbook.title}</p>
+          {contextLabel && <p className="mt-1 truncate text-body-sm text-[var(--muted)]">{contextLabel}</p>}
         </div>
         <Button variant="ghost" size="sm" onClick={leave} iconLeft={<ArrowLeft size={14} aria-hidden />}>
           Leave this
@@ -180,10 +180,10 @@ export default function CompanionRun<TFinishResult>({
           coming back after three weeks will look for it. */}
       {resumeNote?.leftOff && step.kind !== "outcome" && (
         <div className="rounded-xl border border-[var(--border)] bg-[var(--surface-muted)] p-4">
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">Where you left off</p>
-          <p className="mt-1.5 text-[14px] leading-6 text-[var(--text)]">{resumeNote.leftOff}</p>
+          <p className="text-eyebrow font-bold uppercase text-[var(--muted)]">Where you left off</p>
+          <p className="mt-1.5 text-body-sm leading-6 text-[var(--text)]">{resumeNote.leftOff}</p>
           {resumeNote.nextStep && (
-            <p className="mt-1 text-[13px] leading-5 text-[var(--muted)]">Next: {resumeNote.nextStep}</p>
+            <p className="mt-1 text-body-sm leading-5 text-[var(--muted)]">Next: {resumeNote.nextStep}</p>
           )}
         </div>
       )}
@@ -202,7 +202,7 @@ export default function CompanionRun<TFinishResult>({
         onReadyNotNow={(time) => recordAndLeave(step.key, `not-now:${time}`)}
       />
 
-      {errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}
+      {errorMessage && <p className="text-body-sm text-[var(--danger)]">{errorMessage}</p>}
     </div>
   );
 }
@@ -235,12 +235,12 @@ function StepCard({
   const heading = (
     <div>
       <h1
-        className="text-[24px] leading-tight text-[var(--text)]"
+        className="text-heading-sm leading-tight text-[var(--text)]"
         style={{ fontFamily: "var(--product-narrative-font, inherit)" }}
       >
         {step.prompt}
       </h1>
-      {step.why && <p className="mt-2 text-[13px] leading-5 text-[var(--muted)]">{step.why}</p>}
+      {step.why && <p className="mt-2 text-body-sm leading-5 text-[var(--muted)]">{step.why}</p>}
     </div>
   );
 
@@ -255,7 +255,7 @@ function StepCard({
                 type="button"
                 disabled={pending}
                 onClick={() => onAnswer(choice.value)}
-                className="w-full rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3.5 text-left text-[15px] text-[var(--text)] transition-colors hover:border-[var(--primary)] disabled:opacity-60"
+                className="w-full rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3.5 text-left text-body text-[var(--text)] transition-colors hover:border-[var(--primary)] disabled:opacity-60"
               >
                 {choice.label}
               </button>
@@ -302,7 +302,7 @@ function StepCard({
           {lines.map((line) => (
             <li
               key={line}
-              className="flex items-start gap-3 rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-[15px] leading-6 text-[var(--text)]"
+              className="flex items-start gap-3 rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-body leading-6 text-[var(--text)]"
             >
               <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--primary)]" aria-hidden />
               <span>{line}</span>
@@ -327,7 +327,7 @@ function StepCard({
         {suggestions.map((suggestion) => (
           <blockquote
             key={suggestion}
-            className="rounded-xl border-l-2 border-[var(--primary)] bg-[var(--surface-muted)] px-4 py-3.5 text-[15px] leading-6 text-[var(--text)]"
+            className="rounded-xl border-l-2 border-[var(--primary)] bg-[var(--surface-muted)] px-4 py-3.5 text-body leading-6 text-[var(--text)]"
             style={{ fontFamily: "var(--product-narrative-font, inherit)" }}
           >
             {suggestion}
@@ -368,7 +368,7 @@ function StepCard({
     return (
       <section className="flex flex-col gap-5">
         <h1
-          className="text-[24px] leading-tight text-[var(--text)]"
+          className="text-heading-sm leading-tight text-[var(--text)]"
           style={{ fontFamily: "var(--product-narrative-font, inherit)" }}
         >
           {label}
@@ -396,7 +396,7 @@ function StepCard({
               type="button"
               disabled={pending}
               onClick={() => (option.asks ? onOutcome(option.value) : onComplete(option.value, null))}
-              className="flex w-full items-center gap-3 rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3.5 text-left text-[15px] text-[var(--text)] transition-colors hover:border-[var(--primary)] disabled:opacity-60"
+              className="flex w-full items-center gap-3 rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3.5 text-left text-body text-[var(--text)] transition-colors hover:border-[var(--primary)] disabled:opacity-60"
             >
               {option.value === "resolved" && <Check size={16} aria-hidden />}
               {option.label}

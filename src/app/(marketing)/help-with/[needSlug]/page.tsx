@@ -43,21 +43,21 @@ export default async function HelpWithNeedPage({
 
   return (
     <Container width="narrow" className="pb-24 pt-16 sm:pt-20">
-      <Link href="/help-with" className="text-[13px] font-semibold text-[var(--muted)] hover:text-[var(--text)]">
+      <Link href="/help-with" className="text-body-sm font-semibold text-[var(--muted)] hover:text-[var(--text)]">
         ← All situations
       </Link>
 
-      <h1 className="mt-4 font-serif text-[32px] font-semibold leading-tight tracking-tight sm:text-[40px]">
+      <h1 className="mt-4 text-heading-lg font-serif font-semibold tracking-tight">
         {need.label}
       </h1>
-      <p className="mt-4 text-[16px] leading-relaxed text-[var(--text)]">{need.situation}</p>
-      <p className="mt-4 text-[15px] leading-relaxed text-[var(--muted)]">{need.longDescription}</p>
+      <p className="mt-4 text-body-lg leading-relaxed text-[var(--text)]">{need.situation}</p>
+      <p className="mt-4 text-body leading-relaxed text-[var(--muted)]">{need.longDescription}</p>
 
       <section className="mt-10">
-        <h2 className="text-[13px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">What helps</h2>
+        <h2 className="text-eyebrow font-bold uppercase text-[var(--faint)]">What helps</h2>
         <ul className="mt-3 flex flex-col gap-2.5">
           {need.whatHelps.map((line) => (
-            <li key={line} className="flex items-start gap-2.5 text-[14px] leading-relaxed text-[var(--text)]">
+            <li key={line} className="flex items-start gap-2.5 text-body-sm leading-relaxed text-[var(--text)]">
               <Check size={14} className="mt-1 shrink-0 text-[var(--success)]" aria-hidden />
               {line}
             </li>
@@ -66,15 +66,15 @@ export default async function HelpWithNeedPage({
       </section>
 
       <section className="mt-10 rounded-lg bg-[var(--surface-muted)] p-5">
-        <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">What that looks like</p>
-        <p className="mt-2 text-[14px] font-medium text-[var(--text)]">{need.example}</p>
+        <p className="text-eyebrow font-bold uppercase text-[var(--faint)]">What that looks like</p>
+        <p className="mt-2 text-body-sm font-medium text-[var(--text)]">{need.example}</p>
       </section>
 
       <section className="mt-10">
-        <h2 className="text-[13px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">This is likely for you if</h2>
+        <h2 className="text-eyebrow font-bold uppercase text-[var(--faint)]">This is likely for you if</h2>
         <ul className="mt-3 flex flex-col gap-2">
           {need.whoThisIsFor.map((line) => (
-            <li key={line} className="text-[14px] leading-relaxed text-[var(--muted)]">
+            <li key={line} className="text-body-sm leading-relaxed text-[var(--muted)]">
               {line}
             </li>
           ))}
@@ -83,7 +83,7 @@ export default async function HelpWithNeedPage({
 
       {relatedProducts.length > 0 ? (
         <section className="mt-12 border-t border-[var(--border)] pt-8">
-          <h2 className="text-[13px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">Products for this</h2>
+          <h2 className="text-eyebrow font-bold uppercase text-[var(--faint)]">Products for this</h2>
           <div className="mt-4 flex flex-col gap-3">
             {relatedProducts.map((product) => (
               <Link
@@ -91,15 +91,15 @@ export default async function HelpWithNeedPage({
                 href={`/shop/${product.slug}`}
                 className="rounded-xl border border-[var(--border)] p-4 transition-colors hover:border-[var(--border-strong)]"
               >
-                <p className="text-[14px] font-semibold text-[var(--text)]">{product.title}</p>
-                <p className="mt-1 text-[13px] leading-5 text-[var(--muted)]">{product.problem}</p>
+                <p className="text-body-sm font-semibold text-[var(--text)]">{product.title}</p>
+                <p className="mt-1 text-body-sm leading-5 text-[var(--muted)]">{product.problem}</p>
               </Link>
             ))}
           </div>
         </section>
       ) : (
         <section className="mt-12 border-t border-[var(--border)] pt-8">
-          <p className="text-[13px] leading-relaxed text-[var(--muted)]">
+          <p className="text-body-sm leading-relaxed text-[var(--muted)]">
             There's no product for this specific situation yet. Create an account now, and it will be ready in
             your library the moment there is.
           </p>

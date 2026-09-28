@@ -43,7 +43,7 @@ export default function StepShell({
           <button
             type="button"
             onClick={onSkip}
-            className="rounded px-1 text-[12px] font-semibold text-[var(--muted)] transition-colors duration-[var(--dur-fast)] hover:text-[var(--text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]"
+            className="rounded px-1 text-caption font-semibold text-[var(--muted)] transition-colors duration-[var(--dur-fast)] hover:text-[var(--text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]"
           >
             Skip
           </button>
@@ -79,7 +79,7 @@ export default function StepShell({
             type="button"
             disabled={!canGoBack}
             onClick={onBack}
-            className="rounded-lg border border-[var(--border)] bg-[var(--surface)] px-5 py-3 text-[13px] font-semibold text-[var(--muted)] transition-colors duration-[var(--dur-fast)] disabled:opacity-40"
+            className="rounded-lg border border-[var(--border)] bg-[var(--surface)] px-5 py-3 text-body-sm font-semibold text-[var(--muted)] transition-colors duration-[var(--dur-fast)] disabled:opacity-40"
           >
             Back
           </button>

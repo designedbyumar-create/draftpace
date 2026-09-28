@@ -103,7 +103,7 @@ export default function Tabs({
             aria-controls={`${idPrefix}-panel-${tab.id}`}
             tabIndex={selected ? 0 : -1}
             onClick={() => onChange(tab.id)}
-            className={`shrink-0 whitespace-nowrap px-4 py-3 text-[13px] font-semibold transition-colors duration-[var(--dur-fast)] ease-[var(--ease-out)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)] ${
+            className={`shrink-0 whitespace-nowrap px-4 py-3 text-body-sm font-semibold transition-colors duration-[var(--dur-fast)] ease-[var(--ease-out)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)] ${
               selected ? "text-[var(--text)]" : "text-[var(--muted)] hover:text-[var(--text)]"
             }`}
           >

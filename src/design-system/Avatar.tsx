@@ -16,8 +16,8 @@ function initialsFrom(label: string): string {
 }
 
 const SIZE_CLASS = {
-  sm: "h-8 w-8 text-[11px]",
-  md: "h-10 w-10 text-[13px]",
+  sm: "h-8 w-8 text-eyebrow",
+  md: "h-10 w-10 text-body-sm",
 } as const;
 
 export default function Avatar({

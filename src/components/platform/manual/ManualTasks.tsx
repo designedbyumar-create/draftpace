@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, ChevronRight } from "@/design-system/Icon";
+import { ChevronRight } from "@/design-system/Icon";
 import { entranceVariant } from "@/design-system/motion";
+import TextLink from "@/design-system/TextLink";
 
 export type ManualTask = { label: string; answer: string; destination?: string };
 
@@ -48,7 +48,7 @@ export default function ManualTasks({ tasks, productSlug }: { tasks: ManualTask[
                 className="shrink-0 transition-transform"
                 style={{ transform: open ? "rotate(90deg)" : undefined, color: "var(--primary)" }}
               />
-              <span className="text-[15px] font-semibold leading-snug text-[var(--text)]">{task.label}</span>
+              <span className="text-body font-semibold leading-snug text-[var(--text)]">{task.label}</span>
             </button>
 
             {open && (
@@ -58,15 +58,11 @@ export default function ManualTasks({ tasks, productSlug }: { tasks: ManualTask[
                 variants={entranceVariant(Boolean(reduceMotion))}
                 className="px-4 pb-4 pl-[42px]"
               >
-                <p className="text-[14.5px] leading-relaxed text-[var(--muted)]">{task.answer}</p>
+                <p className="text-body leading-relaxed text-[var(--muted)]">{task.answer}</p>
                 {task.destination && (
-                  <Link
-                    href={`/app/products/${productSlug}/${task.destination}`}
-                    className="mt-3 inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-[var(--primary)] hover:underline"
-                  >
+                  <TextLink href={`/app/products/${productSlug}/${task.destination}`} arrow className="mt-3">
                     Take me there
-                    <ArrowRight size={14} aria-hidden />
-                  </Link>
+                  </TextLink>
                 )}
               </motion.div>
             )}

@@ -27,7 +27,7 @@ export default function ThemeToggle({ compact = false }: { compact?: boolean }) 
             role="radio"
             aria-checked={active}
             onClick={() => setTheme(value)}
-            className={`flex h-9 items-center justify-center gap-2 rounded-xl px-3 text-[12px] font-semibold transition-all ${
+            className={`flex h-9 items-center justify-center gap-2 rounded-xl px-3 text-caption font-semibold transition-all ${
               active
                 ? "bg-[var(--primary)] text-[var(--primary-contrast)]"
                 : "text-[var(--muted)] hover:bg-[var(--surface-muted)] hover:text-[var(--text)]"

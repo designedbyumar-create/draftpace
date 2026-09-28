@@ -7,7 +7,7 @@ import AuthCard from "@/components/auth/AuthCard";
 import Button from "@/design-system/Button";
 import Input from "@/design-system/Input";
 import Alert from "@/design-system/Alert";
-import Link from "next/link";
+import TextLink from "@/design-system/TextLink";
 
 export default function ForgotPasswordPage() {
   const [email, setEmail] = useState("");
@@ -45,9 +45,7 @@ export default function ForgotPasswordPage() {
       title="Reset your password"
       subtitle="Enter your Draftpace email and we'll send a secure reset link."
       footer={
-        <Link href="/login" className="text-[13px] font-semibold text-[var(--primary)] hover:underline">
-          Back to sign in
-        </Link>
+        <TextLink href="/login">Back to sign in</TextLink>
       }
     >
       {sent ? (

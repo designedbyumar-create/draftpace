@@ -31,8 +31,8 @@ export default function EmptyState({
         </div>
       )}
       <div>
-        <p className="text-[14px] font-semibold text-[var(--text)]">{title}</p>
-        {description && <p className="mx-auto mt-1.5 max-w-sm text-[13px] leading-5 text-[var(--muted)]">{description}</p>}
+        <p className="text-body-sm font-semibold text-[var(--text)]">{title}</p>
+        {description && <p className="mx-auto mt-1.5 max-w-sm text-body-sm leading-5 text-[var(--muted)]">{description}</p>}
       </div>
       {action}
     </div>

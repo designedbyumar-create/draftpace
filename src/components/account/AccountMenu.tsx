@@ -98,7 +98,7 @@ export default function AccountMenu({
             </button>
           )}
           <MobileSheet open={sheetOpen} onClose={() => setSheetOpen(false)} title="Account" triggerRef={mobileTriggerRef}>
-            <p className="mb-2 truncate px-3 text-[12px] font-semibold text-[var(--muted)]">{label}</p>
+            <p className="mb-2 truncate px-3 text-caption font-semibold text-[var(--muted)]">{label}</p>
             <div className="flex flex-col gap-0.5">
               {items.map((item) => (
                 <AccountMenuRow key={item.key} item={item} onSelect={() => setSheetOpen(false)} />
@@ -117,7 +117,7 @@ function AccountMenuRow({ item, onSelect }: { item: AccountMenuItem; onSelect: (
     item.tone === "danger"
       ? "text-[var(--danger)] hover:bg-[var(--danger-soft)]"
       : "text-[var(--text)] hover:bg-[var(--surface-muted)]";
-  const className = `flex w-full items-center gap-3 rounded-md px-3 py-2.5 text-left text-[13px] font-semibold transition ${toneClass}`;
+  const className = `flex w-full items-center gap-3 rounded-md px-3 py-2.5 text-left text-body-sm font-semibold transition ${toneClass}`;
 
   if (item.href) {
     return (

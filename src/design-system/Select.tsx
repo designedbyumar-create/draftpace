@@ -30,7 +30,7 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(function Select(
   return (
     <div className={containerClassName}>
       {label && (
-        <label htmlFor={selectId} className="mb-1.5 block text-[13px] font-semibold text-[var(--text)]">
+        <label htmlFor={selectId} className="mb-1.5 block text-body-sm font-semibold text-[var(--text)]">
           {label}
         </label>
       )}
@@ -41,9 +41,11 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(function Select(
           aria-invalid={error ? true : undefined}
           aria-describedby={[hintId, errorId].filter(Boolean).join(" ") || undefined}
           className={[
-            // 16px, not 14: same iOS auto-zoom-on-focus threshold as
-            // Input.tsx, and <select> triggers it exactly the same way.
-            "h-11 w-full appearance-none rounded-lg border bg-[var(--surface)] py-2.5 pl-3.5 pr-9 text-[16px] text-[var(--text)] transition-colors",
+            // body-lg (16.5px), not a smaller step: same iOS auto-zoom-on-
+            // focus threshold as Input.tsx, which fires under 16px.
+            // <select> triggers it exactly the same way, and 16.5 clears
+            // the threshold as safely as the literal 16px this replaces.
+            "h-11 w-full appearance-none rounded-lg border bg-[var(--surface)] py-2.5 pl-3.5 pr-9 text-body-lg text-[var(--text)] transition-colors",
             "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]",
             error ? "border-[var(--danger)]" : "border-[var(--border-strong)] focus:border-[var(--primary)]",
             className,
@@ -59,12 +61,12 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(function Select(
         />
       </div>
       {hint && !error && (
-        <p id={hintId} className="mt-1.5 text-[12px] leading-5 text-[var(--muted)]">
+        <p id={hintId} className="mt-1.5 text-caption leading-5 text-[var(--muted)]">
           {hint}
         </p>
       )}
       {error && (
-        <p id={errorId} role="alert" className="mt-1.5 text-[12px] leading-5 text-[var(--danger)]">
+        <p id={errorId} role="alert" className="mt-1.5 text-caption leading-5 text-[var(--danger)]">
           {error}
         </p>
       )}

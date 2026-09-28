@@ -111,7 +111,7 @@ export default function AwaitingGrant({ productSlug, productTitle }: { productSl
       />
       <div>
         <p className="font-semibold text-[var(--text)]">Payment received. Setting up {productTitle}.</p>
-        <p className="mt-1 text-[14px] text-[var(--muted)]">
+        <p className="mt-1 text-body-sm text-[var(--muted)]">
           This takes a few seconds. You do not need to refresh or do anything.
         </p>
       </div>

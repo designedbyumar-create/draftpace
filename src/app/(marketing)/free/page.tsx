@@ -15,6 +15,7 @@ import { getAreaForProduct } from "@/content/areas";
 import ViewProductTracker from "@/components/analytics/ViewProductTracker";
 import TrackedLink from "@/components/analytics/TrackedLink";
 import PwaInstallSection from "@/components/public/shop/PwaInstallSection";
+import TextLink from "@/design-system/TextLink";
 
 /**
  * The free product's own front door.
@@ -78,14 +79,13 @@ export default function FreeProductPage() {
   if (!product) {
     return (
       <Container width="wide" className="py-24">
-        <h1 className="font-serif text-[32px] font-semibold tracking-tight">Nothing free is published yet</h1>
-        <p className="mt-3 max-w-lg text-[15px] leading-relaxed text-[var(--muted)]">
+        <h1 className="text-heading-lg font-serif font-semibold tracking-tight">Nothing free is published yet</h1>
+        <p className="mt-3 max-w-lg text-body leading-relaxed text-[var(--muted)]">
           There is no free product listed right now. The Companion Series is over on the Shop.
         </p>
-        <Link href="/shop" className="mt-6 inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--primary)] hover:underline">
+        <TextLink href="/shop" arrow className="mt-6">
           See the Companion Series
-          <ArrowRight size={13} aria-hidden />
-        </Link>
+        </TextLink>
       </Container>
     );
   }
@@ -119,13 +119,13 @@ export default function FreeProductPage() {
         <Container width="wide" className="py-14 sm:py-16 lg:py-20">
           <div className="grid gap-10 lg:grid-cols-[1fr_1.05fr] lg:items-center lg:gap-14">
             <div className="min-w-0">
-              <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--brand-ink)]">
+              <p className="text-eyebrow font-bold uppercase text-[var(--brand-ink)]">
                 Free, and not a trial
               </p>
-              <h1 className="mt-3 font-serif text-[38px] font-semibold leading-[1.08] tracking-tight sm:text-[46px] lg:text-[52px]">
+              <h1 className="mt-3 text-display font-serif font-semibold tracking-tight">
                 Know what is actually safe to spend.
               </h1>
-              <p className="mt-5 max-w-lg text-[17px] leading-relaxed text-[var(--muted)]">
+              <p className="mt-5 max-w-lg text-body-lg leading-relaxed text-[var(--muted)]">
                 {product.promise}
               </p>
 
@@ -139,7 +139,7 @@ export default function FreeProductPage() {
                 >
                   Start free
                 </TrackedLink>
-                <p className="text-[13px] text-[var(--faint)]">
+                <p className="text-body-sm text-[var(--faint)]">
                   No card. No subscription. Takes a couple of minutes.
                 </p>
               </div>
@@ -154,7 +154,7 @@ export default function FreeProductPage() {
                 ].map((line) => (
                   <li key={line} className="flex items-start gap-2.5">
                     <Check size={14} className="mt-0.5 shrink-0 text-[var(--success)]" aria-hidden />
-                    <span className="text-[13.5px] leading-relaxed text-[var(--muted)]">{line}</span>
+                    <span className="text-body-sm leading-relaxed text-[var(--muted)]">{line}</span>
                   </li>
                 ))}
               </ul>
@@ -177,7 +177,7 @@ export default function FreeProductPage() {
           or the Library manual. */}
       <section className="border-b border-[var(--border)]">
         <Container width="wide" className="py-16 sm:py-20">
-          <h2 className="max-w-2xl font-serif text-[28px] font-semibold leading-tight tracking-tight sm:text-[34px]">
+          <h2 className="max-w-2xl text-heading font-serif font-semibold tracking-tight">
             What it takes off your plate.
           </h2>
           <ul role="list" className="mt-10 grid gap-5 sm:grid-cols-2">
@@ -186,8 +186,8 @@ export default function FreeProductPage() {
                 key={pair.problem}
                 className="rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface)] p-5"
               >
-                <p className="text-[14px] font-semibold leading-snug text-[var(--text)]">{pair.problem}</p>
-                <p className="mt-2 text-[13.5px] leading-relaxed text-[var(--muted)]">{pair.solution}</p>
+                <p className="text-body-sm font-semibold leading-snug text-[var(--text)]">{pair.problem}</p>
+                <p className="mt-2 text-body-sm leading-relaxed text-[var(--muted)]">{pair.solution}</p>
               </li>
             ))}
           </ul>
@@ -198,16 +198,16 @@ export default function FreeProductPage() {
           the thing before making an account. */}
       <section className="border-b border-[var(--border)]">
         <Container width="wide" className="py-16 sm:py-20">
-          <h2 className="max-w-2xl font-serif text-[28px] font-semibold leading-tight tracking-tight sm:text-[34px]">
+          <h2 className="max-w-2xl text-heading font-serif font-semibold tracking-tight">
             How it works.
           </h2>
           <ol className="mt-10 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
             {product.howItWorks.map((step, index) => (
               <li key={step} className="flex gap-4">
-                <span className="mt-0.5 shrink-0 font-serif text-[20px] font-semibold leading-none text-[var(--faint)]">
+                <span className="mt-0.5 shrink-0 text-heading-sm font-serif font-semibold leading-none text-[var(--faint)]">
                   {index + 1}
                 </span>
-                <p className="text-[13.5px] leading-relaxed text-[var(--muted)]">{step}</p>
+                <p className="text-body-sm leading-relaxed text-[var(--muted)]">{step}</p>
               </li>
             ))}
           </ol>
@@ -219,14 +219,14 @@ export default function FreeProductPage() {
       {deciding.length > 0 && (
         <section className="border-b border-[var(--border)]">
           <Container width="wide" className="py-16 sm:py-20">
-            <h2 className="max-w-2xl font-serif text-[28px] font-semibold leading-tight tracking-tight sm:text-[34px]">
+            <h2 className="max-w-2xl text-heading font-serif font-semibold tracking-tight">
               Before you start.
             </h2>
             <dl className="mt-10 grid gap-x-10 gap-y-7 sm:grid-cols-2">
               {deciding.map((entry) => (
                 <div key={entry.question}>
-                  <dt className="text-[14.5px] font-semibold leading-snug text-[var(--text)]">{entry.question}</dt>
-                  <dd className="mt-2 text-[13.5px] leading-relaxed text-[var(--muted)]">{entry.answer}</dd>
+                  <dt className="text-body font-semibold leading-snug text-[var(--text)]">{entry.question}</dt>
+                  <dd className="mt-2 text-body-sm leading-relaxed text-[var(--muted)]">{entry.answer}</dd>
                 </div>
               ))}
             </dl>
@@ -265,8 +265,8 @@ export default function FreeProductPage() {
       {/* The searches this product answers, for somebody who wants the answer before the tool. */}
       <section className="border-b border-[var(--border)]">
         <Container width="narrow" className="py-16 sm:py-20">
-          <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--brand-ink)]">Free guides</p>
-          <h2 className="mt-3 font-serif text-[26px] font-semibold leading-tight tracking-tight sm:text-[32px]">
+          <p className="text-eyebrow font-bold uppercase text-[var(--brand-ink)]">Free guides</p>
+          <h2 className="mt-3 text-heading font-serif font-semibold tracking-tight">
             Want the answer before the tool?
           </h2>
           <div className="mt-6">
@@ -277,21 +277,24 @@ export default function FreeProductPage() {
 
       <section className="border-b border-[var(--border)]">
         <Container width="narrow" className="py-16 sm:py-20">
-          <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--brand-ink)]">
+          <p className="text-eyebrow font-bold uppercase text-[var(--brand-ink)]">
             When you outgrow it
           </p>
-          <h2 className="mt-3 font-serif text-[26px] font-semibold leading-tight tracking-tight sm:text-[32px]">
+          <h2 className="mt-3 text-heading font-serif font-semibold tracking-tight">
             It handles one cycle at a time, on purpose.
           </h2>
-          <p className="mt-4 text-[15px] leading-relaxed text-[var(--muted)]">
+          <p className="mt-4 text-body leading-relaxed text-[var(--muted)]">
             That is the whole design, not a limitation waiting to be lifted. Most people never need more than it.
             If you find yourself wanting subscriptions, debt and savings held alongside the rest, that is a different
             product rather than a bigger version of this one, and it is there when you want it.
           </p>
           <div className="mt-7">
+            {/* Not <TextLink>: deliberately de-emphasised (muted, not
+                the accent), same reasoning as CompanionPicker.tsx's
+                "Full details" link. */}
             <Link
               href="/shop/personal-finance-companion"
-              className="inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-[var(--muted)] underline-offset-4 transition-colors hover:text-[var(--text)] hover:underline"
+              className="inline-flex items-center gap-1.5 text-body-sm font-semibold text-[var(--muted)] underline-offset-4 transition-colors hover:text-[var(--text)] hover:underline"
             >
               See Personal Finance Companion
               <ArrowRight size={15} aria-hidden />
@@ -304,10 +307,10 @@ export default function FreeProductPage() {
           read the whole page before deciding. */}
       <section>
         <Container width="wide" className="py-16 text-center sm:py-20">
-          <h2 className="font-serif text-[28px] font-semibold leading-tight tracking-tight sm:text-[34px]">
+          <h2 className="text-heading font-serif font-semibold tracking-tight">
             Start with the number that matters.
           </h2>
-          <p className="mx-auto mt-4 max-w-lg text-[15px] leading-relaxed text-[var(--muted)]">
+          <p className="mx-auto mt-4 max-w-lg text-body leading-relaxed text-[var(--muted)]">
             Free, complete, and yours to keep. If it is not for you, nothing was spent finding out.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
@@ -320,7 +323,7 @@ export default function FreeProductPage() {
             >
               Start free
             </TrackedLink>
-            <Link href="/shop" className="text-[13px] font-semibold text-[var(--muted)] hover:text-[var(--text)]">
+            <Link href="/shop" className="text-body-sm font-semibold text-[var(--muted)] hover:text-[var(--text)]">
               See the paid Companions
             </Link>
           </div>

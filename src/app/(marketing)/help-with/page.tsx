@@ -21,11 +21,11 @@ export const metadata: Metadata = {
 export default function NeedHelpPage() {
   return (
     <Container width="wide" className="pb-24 pt-16 sm:pt-20">
-      <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--brand-ink)]">Ask</p>
-      <h1 className="mt-3 max-w-2xl font-serif text-[34px] font-semibold leading-tight tracking-tight sm:text-[44px]">
+      <p className="text-eyebrow font-bold uppercase text-[var(--brand-ink)]">Ask</p>
+      <h1 className="mt-3 max-w-2xl text-heading-lg font-serif font-semibold tracking-tight">
         Ask a real question. Get an answer from what Draftpace actually knows.
       </h1>
-      <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-[var(--muted)]">
+      <p className="mt-4 max-w-xl text-body leading-relaxed text-[var(--muted)]">
         Not a chat that generates an answer. Every answer here comes from a sourced entry in Draftpace&rsquo;s own
         library, and it says so plainly when nothing in the library covers what you asked.
       </p>

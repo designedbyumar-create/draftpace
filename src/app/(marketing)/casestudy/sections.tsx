@@ -15,20 +15,20 @@ import { Check, ArrowRight } from "@/design-system/Icon";
 
 export function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[var(--brand-ink)]">{children}</p>
+    <p className="text-eyebrow font-bold uppercase text-[var(--brand-ink)]">{children}</p>
   );
 }
 
 export function SectionHeading({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="mt-4 max-w-2xl font-serif text-[30px] font-semibold leading-[1.12] tracking-tight sm:text-[38px]">
+    <h2 className="mt-4 max-w-2xl text-heading-lg font-serif font-semibold tracking-tight">
       {children}
     </h2>
   );
 }
 
 export function Prose({ children }: { children: string }) {
-  return <p className="mt-5 max-w-[62ch] text-[16.5px] leading-[1.72] text-[var(--muted)]">{children}</p>;
+  return <p className="mt-5 max-w-[62ch] text-body-lg text-[var(--muted)]">{children}</p>;
 }
 
 /**
@@ -47,16 +47,16 @@ export function BigStatement({
 }) {
   return (
     <div className="mx-auto max-w-3xl text-center">
-      <p className="font-serif text-[32px] font-semibold leading-[1.14] tracking-tight text-[var(--text)] sm:text-[46px] lg:text-[54px]">
+      <p className="text-display font-serif font-semibold tracking-tight text-[var(--text)]">
         {quote}
       </p>
       {support && (
-        <p className="mx-auto mt-7 max-w-xl text-[16px] leading-relaxed text-[var(--muted)]">{support}</p>
+        <p className="mx-auto mt-7 max-w-xl text-body-lg leading-relaxed text-[var(--muted)]">{support}</p>
       )}
       {lines && (
         <div className="mt-10 space-y-2">
           {lines.map((line) => (
-            <p key={line} className="font-serif text-[20px] font-semibold tracking-tight text-[var(--text)] sm:text-[24px]">
+            <p key={line} className="text-heading-sm font-serif font-semibold tracking-tight text-[var(--text)]">
               {line}
             </p>
           ))}
@@ -79,13 +79,13 @@ export function ScatterFigure({ labels }: { labels: string[] }) {
         {labels.map((label, i) => (
           <span
             key={label}
-            className={`${offsets[i % offsets.length]} rounded-full border border-[var(--border)] bg-[var(--surface)] px-3.5 py-1.5 text-[12.5px] text-[var(--muted)]`}
+            className={`${offsets[i % offsets.length]} rounded-full border border-[var(--border)] bg-[var(--surface)] px-3.5 py-1.5 text-caption text-[var(--muted)]`}
           >
             {label}
           </span>
         ))}
       </div>
-      <figcaption className="mt-3 text-center text-[12px] text-[var(--faint)]">
+      <figcaption className="mt-3 text-center text-caption text-[var(--faint)]">
         The system a person ends up maintaining themselves.
       </figcaption>
     </figure>
@@ -98,8 +98,8 @@ export function EvidenceLedger({ rows }: { rows: { kind: string; text: string }[
     <dl className="mt-9 grid gap-x-8 gap-y-5 sm:grid-cols-2">
       {rows.map((row) => (
         <div key={row.kind} className="border-t border-[var(--border)] pt-4">
-          <dt className="text-[10px] font-bold uppercase tracking-[0.16em] text-[var(--faint)]">{row.kind}</dt>
-          <dd className="mt-1.5 text-[14px] leading-relaxed text-[var(--muted)]">{row.text}</dd>
+          <dt className="text-eyebrow font-bold uppercase text-[var(--faint)]">{row.kind}</dt>
+          <dd className="mt-1.5 text-body-sm leading-relaxed text-[var(--muted)]">{row.text}</dd>
         </div>
       ))}
     </dl>
@@ -108,7 +108,7 @@ export function EvidenceLedger({ rows }: { rows: { kind: string; text: string }[
 
 export function Caveat({ children }: { children: React.ReactNode }) {
   return (
-    <p className="mt-8 max-w-[62ch] border-l-2 border-[var(--border-strong)] pl-4 text-[13.5px] leading-relaxed text-[var(--faint)]">
+    <p className="mt-8 max-w-[62ch] border-l-2 border-[var(--border-strong)] pl-4 text-body-sm leading-relaxed text-[var(--faint)]">
       {children}
     </p>
   );
@@ -126,19 +126,19 @@ export function DecisionCard({
 }) {
   return (
     <article className="rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface)] p-6">
-      <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[var(--faint)]">
+      <p className="text-eyebrow font-bold uppercase text-[var(--faint)]">
         Decision {String(index).padStart(2, "0")}
       </p>
-      <h3 className="mt-2.5 font-serif text-[20px] font-semibold leading-snug tracking-tight text-[var(--text)]">
+      <h3 className="mt-2.5 text-heading-sm font-serif font-semibold leading-snug tracking-tight text-[var(--text)]">
         {title}
       </h3>
       <dl className="mt-5 space-y-3.5">
         {rows.map((row) => (
           <div key={row.label} className="grid gap-1 sm:grid-cols-[88px_1fr] sm:gap-4">
-            <dt className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)] sm:pt-[3px]">
+            <dt className="text-eyebrow font-bold uppercase text-[var(--faint)] sm:pt-[3px]">
               {row.label}
             </dt>
-            <dd className="text-[14px] leading-[1.65] text-[var(--muted)]">{row.text}</dd>
+            <dd className="text-body-sm leading-[1.65] text-[var(--muted)]">{row.text}</dd>
           </div>
         ))}
       </dl>
@@ -166,12 +166,12 @@ export function RunningOrder({
   return (
     <div className="min-w-0 rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface)] p-6">
       <div className="flex items-baseline justify-between gap-3">
-        <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[var(--brand-ink)]">{side.label}</p>
-        <p className="text-[11px] text-[var(--faint)]">{side.provenance}</p>
+        <p className="text-eyebrow font-bold uppercase text-[var(--brand-ink)]">{side.label}</p>
+        <p className="text-eyebrow text-[var(--faint)]">{side.provenance}</p>
       </div>
 
-      <p className="mt-5 text-[10px] font-bold uppercase tracking-[0.14em] text-[var(--faint)]">{side.eyebrow}</p>
-      <p className="mt-1.5 font-serif text-[21px] font-semibold leading-tight tracking-tight text-[var(--text)]">
+      <p className="mt-5 text-eyebrow font-bold uppercase text-[var(--faint)]">{side.eyebrow}</p>
+      <p className="mt-1.5 text-heading-sm font-serif font-semibold tracking-tight text-[var(--text)]">
         {side.headline}
       </p>
 
@@ -182,7 +182,7 @@ export function RunningOrder({
             <li
               key={label}
               className={[
-                "flex gap-3 rounded-md px-2 py-1.5 text-[13.5px]",
+                "flex gap-3 rounded-md px-2 py-1.5 text-body-sm",
                 isProducts
                   ? "bg-[var(--primary-soft)] font-semibold text-[var(--text)]"
                   : "text-[var(--muted)]",
@@ -195,7 +195,7 @@ export function RunningOrder({
         })}
       </ol>
 
-      <p className="mt-5 text-[12.5px] leading-relaxed text-[var(--faint)]">
+      <p className="mt-5 text-caption leading-relaxed text-[var(--faint)]">
         The products were the{" "}
         <span className="font-semibold text-[var(--text)]">
           {side.productsAt === 1 ? "first" : `${side.productsAt}th`}
@@ -216,12 +216,12 @@ export function ProcessLoop({ steps }: { steps: { name: string; text: string }[]
           className="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--surface)] p-4"
         >
           <div className="flex items-center gap-2">
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[var(--brand-ink)] text-[10px] font-bold tabular-nums text-[var(--brand-ink-contrast)]">
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[var(--brand-ink)] text-eyebrow font-bold tabular-nums text-[var(--brand-ink-contrast)]">
               {i + 1}
             </span>
-            <p className="text-[13.5px] font-semibold text-[var(--text)]">{step.name}</p>
+            <p className="text-body-sm font-semibold text-[var(--text)]">{step.name}</p>
           </div>
-          <p className="mt-2 text-[13px] leading-relaxed text-[var(--muted)]">{step.text}</p>
+          <p className="mt-2 text-body-sm leading-relaxed text-[var(--muted)]">{step.text}</p>
         </li>
       ))}
     </ol>
@@ -234,10 +234,10 @@ export function SystemFlow({ steps }: { steps: string[] }) {
     <ol className="mt-10 space-y-2" role="list">
       {steps.map((step, i) => (
         <li key={step} className="flex items-center gap-3">
-          <span className="w-6 shrink-0 text-[11px] tabular-nums text-[var(--faint)]">{i + 1}</span>
+          <span className="w-6 shrink-0 text-eyebrow tabular-nums text-[var(--faint)]">{i + 1}</span>
           <div
             className={[
-              "flex-1 rounded-[var(--radius)] border px-4 py-3 text-[14px]",
+              "flex-1 rounded-[var(--radius)] border px-4 py-3 text-body-sm",
               i === steps.length - 1
                 ? "border-[var(--primary)] bg-[var(--primary-soft)] font-semibold text-[var(--text)]"
                 : "border-[var(--border)] bg-[var(--surface)] text-[var(--muted)]",
@@ -257,10 +257,10 @@ export function ComparisonTable({ rows }: { rows: { approach: string; startsWith
       <table className="w-full min-w-[520px] border-collapse text-left">
         <thead>
           <tr className="border-b border-[var(--border-strong)]">
-            <th className="pb-3 pr-6 text-[10px] font-bold uppercase tracking-[0.16em] text-[var(--faint)]">
+            <th className="pb-3 pr-6 text-eyebrow font-bold uppercase text-[var(--faint)]">
               Approach
             </th>
-            <th className="pb-3 text-[10px] font-bold uppercase tracking-[0.16em] text-[var(--faint)]">
+            <th className="pb-3 text-eyebrow font-bold uppercase text-[var(--faint)]">
               Starts with
             </th>
           </tr>
@@ -272,7 +272,7 @@ export function ComparisonTable({ rows }: { rows: { approach: string; startsWith
               <tr key={row.approach} className="border-b border-[var(--border)]">
                 <td
                   className={[
-                    "py-4 pr-6 text-[14.5px]",
+                    "py-4 pr-6 text-body",
                     isUs ? "font-semibold text-[var(--text)]" : "text-[var(--muted)]",
                   ].join(" ")}
                 >
@@ -280,7 +280,7 @@ export function ComparisonTable({ rows }: { rows: { approach: string; startsWith
                 </td>
                 <td
                   className={[
-                    "py-4 text-[14.5px]",
+                    "py-4 text-body",
                     isUs ? "font-semibold text-[var(--primary)]" : "text-[var(--muted)]",
                   ].join(" ")}
                 >
@@ -320,8 +320,8 @@ export function AssessmentList({
             />
           )}
           <div>
-            <p className="text-[15px] font-semibold leading-snug text-[var(--text)]">{item.head}</p>
-            <p className="mt-1.5 text-[14.5px] leading-[1.68] text-[var(--muted)]">{item.text}</p>
+            <p className="text-body font-semibold leading-snug text-[var(--text)]">{item.head}</p>
+            <p className="mt-1.5 text-body leading-[1.68] text-[var(--muted)]">{item.text}</p>
           </div>
         </li>
       ))}
@@ -336,10 +336,10 @@ export function StatGrid({ items }: { items: { value: string; label: string }[] 
         <div key={item.label}>
           <dt className="sr-only">{item.label}</dt>
           <dd>
-            <p className="font-serif text-[40px] font-semibold leading-none tracking-tight text-[var(--text)] sm:text-[46px]">
+            <p className="text-display font-serif font-semibold leading-none tracking-tight text-[var(--text)]">
               {item.value}
             </p>
-            <p className="mt-2.5 max-w-[24ch] text-[13.5px] leading-relaxed text-[var(--muted)]">{item.label}</p>
+            <p className="mt-2.5 max-w-[24ch] text-body-sm leading-relaxed text-[var(--muted)]">{item.label}</p>
           </dd>
         </div>
       ))}
@@ -356,8 +356,8 @@ export function DeepDiveRows({
     <dl className="mt-7 space-y-5">
       {rows.map((row) => (
         <div key={row.label}>
-          <dt className="text-[10px] font-bold uppercase tracking-[0.16em] text-[var(--brand-ink)]">{row.label}</dt>
-          <dd className="mt-1.5 text-[14.5px] leading-[1.68] text-[var(--muted)]">{row.text}</dd>
+          <dt className="text-eyebrow font-bold uppercase text-[var(--brand-ink)]">{row.label}</dt>
+          <dd className="mt-1.5 text-body leading-[1.68] text-[var(--muted)]">{row.text}</dd>
         </div>
       ))}
     </dl>

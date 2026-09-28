@@ -100,7 +100,7 @@ export default function CaseStudyNav({ sections }: { sections: { id: string; lab
         <div
           className="pointer-events-none fixed inset-x-0 bottom-0 z-50 flex justify-center px-4 pb-[max(env(safe-area-inset-bottom),12px)] sm:bottom-auto sm:top-[73px] sm:pb-0"
         >
-          <p className="pointer-events-auto max-w-full truncate rounded-full border border-[var(--border)] bg-[var(--surface)]/92 px-3.5 py-1.5 text-[11px] font-semibold text-[var(--muted)] shadow-[shadow:var(--shadow-soft)] backdrop-blur sm:py-1 sm:shadow-[shadow:var(--shadow-xs)]">
+          <p className="pointer-events-auto max-w-full truncate rounded-full border border-[var(--border)] bg-[var(--surface)]/92 px-3.5 py-1.5 text-eyebrow font-semibold uppercase text-[var(--muted)] shadow-[shadow:var(--shadow-soft)] backdrop-blur sm:py-1 sm:shadow-[shadow:var(--shadow-xs)]">
             <span className="tabular-nums text-[var(--faint)]">
               {String(index + 1).padStart(2, "0")} / {String(sections.length).padStart(2, "0")}
             </span>

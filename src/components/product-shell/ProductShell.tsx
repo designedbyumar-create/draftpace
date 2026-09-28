@@ -110,12 +110,12 @@ function ProductTabShell({
         <Link
           href="/app"
           aria-label="Back to Draftpace"
-          className="flex h-11 shrink-0 items-center gap-1 rounded-lg px-1.5 text-[13px] font-semibold text-[var(--muted)] hover:text-[var(--text)]"
+          className="flex h-11 shrink-0 items-center gap-1 rounded-lg px-1.5 text-body-sm font-semibold text-[var(--muted)] hover:text-[var(--text)]"
         >
           <ArrowLeft size={16} aria-hidden />
           Draftpace
         </Link>
-        <h1 className="min-w-0 flex-1 truncate text-center text-[14px] font-semibold text-[var(--text)]">
+        <h1 className="min-w-0 flex-1 truncate text-center text-body-sm font-semibold text-[var(--text)]">
           {definition.title}
         </h1>
         <div className="flex h-11 shrink-0 items-center justify-end">
@@ -129,7 +129,7 @@ function ProductTabShell({
           <Link
             href="/app"
             aria-label="Back to Draftpace"
-            className="flex items-center gap-1.5 text-[12px] font-semibold text-[var(--muted)] hover:text-[var(--text)]"
+            className="flex items-center gap-1.5 text-caption font-semibold text-[var(--muted)] hover:text-[var(--text)]"
           >
             <ArrowLeft size={14} aria-hidden />
             Draftpace
@@ -144,7 +144,7 @@ function ProductTabShell({
       <header className="hidden border-b border-[var(--border)] bg-[var(--surface)] px-4 py-5 sm:px-6 lg:block">
         <div className={`mx-auto ${widthClass}`}>
           <div className="flex flex-wrap items-center gap-2">
-            <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--primary)]">
+            <p className="text-eyebrow font-bold uppercase text-[var(--primary)]">
               {family?.label ?? definition.family}
             </p>
             {definition.devFixture && <Badge tone="neutral">Internal fixture</Badge>}
@@ -169,7 +169,7 @@ function ProductTabShell({
                   ref={active ? activeTabRef : undefined}
                   data-tour-id={`rail-${id}`}
                   aria-current={active ? "page" : undefined}
-                  className={`whitespace-nowrap border-b-2 px-3 py-3 text-[13px] font-semibold transition ${
+                  className={`whitespace-nowrap border-b-2 px-3 py-3 text-body-sm font-semibold transition ${
                     active
                       ? "border-[var(--primary)] text-[var(--primary)]"
                       : "border-transparent text-[var(--muted)] hover:text-[var(--text)]"
@@ -186,7 +186,7 @@ function ProductTabShell({
               {/* Desktop: anchored dropdown, as before. */}
               <details className="group relative hidden shrink-0 py-2 lg:block">
                 <summary
-                  className="flex cursor-pointer list-none items-center gap-1.5 rounded-md px-2.5 py-1.5 text-[13px] font-semibold text-[var(--muted)] hover:text-[var(--text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] [&::-webkit-details-marker]:hidden"
+                  className="flex cursor-pointer list-none items-center gap-1.5 rounded-md px-2.5 py-1.5 text-body-sm font-semibold text-[var(--muted)] hover:text-[var(--text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] [&::-webkit-details-marker]:hidden"
                   aria-label="More product options"
                 >
                   <Menu size={15} aria-hidden />
@@ -201,7 +201,7 @@ function ProductTabShell({
                         key={id}
                         href={href}
                         aria-current={active ? "page" : undefined}
-                        className={`block rounded-md px-3 py-2 text-[13px] font-medium transition ${
+                        className={`block rounded-md px-3 py-2 text-body-sm font-medium transition ${
                           active
                             ? "bg-[var(--surface-muted)] text-[var(--primary)]"
                             : "text-[var(--text)] hover:bg-[var(--surface-muted)]"
@@ -220,7 +220,7 @@ function ProductTabShell({
                 type="button"
                 onClick={() => setMoreSheetOpen(true)}
                 aria-label="More product options"
-                className="flex h-11 shrink-0 items-center gap-1.5 rounded-md px-2.5 text-[13px] font-semibold text-[var(--muted)] hover:text-[var(--text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] lg:hidden"
+                className="flex h-11 shrink-0 items-center gap-1.5 rounded-md px-2.5 text-body-sm font-semibold text-[var(--muted)] hover:text-[var(--text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] lg:hidden"
               >
                 <Menu size={16} aria-hidden />
                 More
@@ -241,7 +241,7 @@ function ProductTabShell({
                         href={href}
                         onClick={() => setMoreSheetOpen(false)}
                         aria-current={active ? "page" : undefined}
-                        className={`flex min-h-11 items-center rounded-md px-3 py-2.5 text-[14px] font-semibold transition ${
+                        className={`flex min-h-11 items-center rounded-md px-3 py-2.5 text-body-sm font-semibold transition ${
                           active
                             ? "bg-[var(--surface-muted)] text-[var(--primary)]"
                             : "text-[var(--text)] hover:bg-[var(--surface-muted)]"
@@ -252,7 +252,7 @@ function ProductTabShell({
                     );
                   })}
                   <div className="mt-1 flex items-center justify-between rounded-md px-3 py-2.5">
-                    <span className="text-[13px] font-semibold text-[var(--muted)]">Theme</span>
+                    <span className="text-body-sm font-semibold text-[var(--muted)]">Theme</span>
                     <ThemeToggle compact />
                   </div>
                 </div>

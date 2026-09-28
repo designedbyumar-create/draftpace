@@ -115,14 +115,14 @@ function Row({ poster, isOpen, onToggle }: { poster: PosterData; isOpen: boolean
 
           <div className="min-w-0 flex-1">
             <div className="flex flex-wrap items-baseline gap-x-2.5 gap-y-0.5">
-              <span id={`header-${poster.productSlug}`} className="text-[17px] font-semibold leading-tight sm:text-[19px]" style={{ fontFamily: theme.headlineFont }}>
+              <span id={`header-${poster.productSlug}`} className="text-heading-sm font-semibold leading-tight" style={{ fontFamily: theme.headlineFont }}>
                 {poster.title}
               </span>
-              <span className={`text-[10.5px] font-bold uppercase text-[var(--faint)] ${label}`} style={isOpen ? { color: theme.muted } : undefined}>
+              <span className={`text-eyebrow font-bold uppercase text-[var(--faint)] ${label}`} style={isOpen ? { color: theme.muted } : undefined}>
                 {poster.area}
               </span>
             </div>
-            <p className="mt-1.5 max-w-xl text-[14px] leading-relaxed" style={{ color: isOpen ? theme.muted : "var(--muted)" }}>
+            <p className="mt-1.5 max-w-xl text-body-sm leading-relaxed" style={{ color: isOpen ? theme.muted : "var(--muted)" }}>
               {BUYER_BLURB[poster.productSlug]}
             </p>
 
@@ -133,14 +133,14 @@ function Row({ poster, isOpen, onToggle }: { poster: PosterData; isOpen: boolean
                 so this doesn't repeat it. */}
             {!isOpen && (
               <div className="mt-4 flex flex-wrap items-center gap-4">
-                <span className="text-[16px] font-semibold" style={{ fontFamily: theme.headlineFont }}>
+                <span className="text-body-lg font-semibold" style={{ fontFamily: theme.headlineFont }}>
                   {poster.priceLabel}
                 </span>
                 <Link
                   href={`/shop/${poster.productSlug}`}
                   aria-label={`View ${poster.title}`}
                   onClick={(e) => e.stopPropagation()}
-                  className="inline-flex min-h-10 shrink-0 items-center gap-1.5 rounded-full px-4 text-[13.5px] font-semibold transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] focus-visible:ring-offset-2"
+                  className="inline-flex min-h-10 shrink-0 items-center gap-1.5 rounded-full px-4 text-body-sm font-semibold transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] focus-visible:ring-offset-2"
                   style={{ backgroundColor: theme.accent, color: theme.accentContrast }}
                 >
                   View <ArrowRight size={13} aria-hidden />
@@ -155,7 +155,7 @@ function Row({ poster, isOpen, onToggle }: { poster: PosterData; isOpen: boolean
           onClick={onToggle}
           aria-expanded={isOpen}
           aria-controls={`panel-${poster.productSlug}`}
-          className="flex shrink-0 items-center gap-1.5 rounded-full py-1.5 pl-2.5 pr-1.5 text-[13px] font-semibold text-[var(--muted)] transition-colors hover:bg-[var(--surface)] hover:text-[var(--text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]"
+          className="flex shrink-0 items-center gap-1.5 rounded-full py-1.5 pl-2.5 pr-1.5 text-body-sm font-semibold text-[var(--muted)] transition-colors hover:bg-[var(--surface)] hover:text-[var(--text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]"
           style={isOpen ? { color: theme.muted } : undefined}
         >
           {isOpen ? "Collapse this" : "Interact with this"}
@@ -184,7 +184,7 @@ function Row({ poster, isOpen, onToggle }: { poster: PosterData; isOpen: boolean
           >
             <div className="grid gap-x-16 gap-y-8 px-5 pb-10 pt-2 sm:px-6 lg:grid-cols-[minmax(0,1fr)_440px] lg:gap-y-0 lg:pb-14">
               <div className="lg:row-start-1 lg:self-end">
-                <p className="inline-flex items-center gap-2 text-[14px] font-semibold" style={{ color: theme.accent }}>
+                <p className="inline-flex items-center gap-2 text-body-sm font-semibold" style={{ color: theme.accent }}>
                   <HandWaving size={17} aria-hidden /> Try it: {HINTS[poster.productSlug]}
                 </p>
               </div>
@@ -197,8 +197,8 @@ function Row({ poster, isOpen, onToggle }: { poster: PosterData; isOpen: boolean
                 <ul className="flex max-w-lg flex-col" role="list">
                   {poster.beats.map((beat) => (
                     <li key={beat.lead} className="border-t py-3.5" style={{ borderColor: theme.border }}>
-                      <p className="text-[15px] font-semibold leading-snug">{beat.lead}</p>
-                      <p className="mt-0.5 text-[13.5px] leading-relaxed" style={{ color: theme.muted }}>
+                      <p className="text-body font-semibold leading-snug">{beat.lead}</p>
+                      <p className="mt-0.5 text-body-sm leading-relaxed" style={{ color: theme.muted }}>
                         {beat.text}
                       </p>
                     </li>
@@ -206,8 +206,8 @@ function Row({ poster, isOpen, onToggle }: { poster: PosterData; isOpen: boolean
                 </ul>
 
                 <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
-                  <p className="text-[13px]" style={{ color: theme.muted }}>
-                    <span className="text-[26px] font-semibold" style={{ fontFamily: theme.headlineFont }}>
+                  <p className="text-body-sm" style={{ color: theme.muted }}>
+                    <span className="text-heading font-semibold" style={{ fontFamily: theme.headlineFont }}>
                       {poster.priceLabel}
                     </span>{" "}
                     once, yours for good
@@ -215,7 +215,7 @@ function Row({ poster, isOpen, onToggle }: { poster: PosterData; isOpen: boolean
                   <Link
                     href={`/shop/${poster.productSlug}`}
                     aria-label={`See ${poster.title} in full`}
-                    className="inline-flex items-center gap-2 px-5 py-3 text-[14px] font-semibold transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] focus-visible:ring-offset-2"
+                    className="inline-flex items-center gap-2 px-5 py-3 text-body-sm font-semibold transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] focus-visible:ring-offset-2"
                     style={{ backgroundColor: theme.accent, color: theme.accentContrast, borderRadius: theme.radius }}
                   >
                     See it in full <ArrowRight size={15} aria-hidden />

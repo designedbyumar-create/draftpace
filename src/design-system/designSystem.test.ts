@@ -267,3 +267,77 @@ describe("type scale and TextLink (guides layer)", () => {
     expect(missing, `used but not declared in tailwind.config.js: ${missing.join(", ")}`).toEqual([]);
   });
 });
+
+/**
+ * Phase 3: the marketing pages and shared components outside the guides
+ * layer and the Shop product page, both already done and excluded here.
+ * src/products/** (each product's own live app screens) and /admin are
+ * separately out of scope for this pass — the former was never in the
+ * scanned directories below, the latter is filtered out explicitly.
+ */
+describe("type scale and TextLink (marketing and shared components)", () => {
+  /**
+   * Two whole-file exceptions, not one inline marker: LiveDemos.tsx and
+   * howItWorksVisuals.tsx recreate a different product's own UI chrome at
+   * deliberately miniature/varied scale, so nothing in them is real
+   * Draftpace hierarchy for this guard to check. Unlike the guides
+   * layer's tabular-nums case, there's no shared structural marker
+   * between the two files to key off instead, so they're named
+   * explicitly here — a path-substring pattern could accidentally exempt
+   * something else added later.
+   */
+  const EXCEPTION_FILES = [
+    join(ROOT, "components/public/home/LiveDemos.tsx"),
+    join(ROOT, "components/public/how/howItWorksVisuals.tsx"),
+  ];
+
+  function scopedFiles() {
+    return tsxUnder("app/(marketing)", "app/(auth)", "app/reset-password", "app/auth", "components").filter(
+      ({ path }) =>
+        !path.includes(`${join("app", "(marketing)", "guides")}`) &&
+        !path.includes(join("shop", "[productSlug]")) &&
+        !path.includes(`${join("app", "admin")}`) &&
+        !path.includes(join("components", "admin")) &&
+        !EXCEPTION_FILES.includes(path)
+    );
+  }
+
+  /**
+   * CaseStudyGate.tsx's OTP/access-code input is the one inline
+   * exception in this scope, the same shape as the guides layer's
+   * tabular-nums case: keyed to the co-located tracking-[0.3em] marker
+   * on its own class string, not a filename, so a genuinely new stray
+   * value elsewhere can't hide behind it.
+   */
+  it("keeps marketing pages and shared components off arbitrary pixel text sizes", () => {
+    const offenders: string[] = [];
+    for (const { path, source } of scopedFiles()) {
+      for (const match of source.matchAll(/text-\[[0-9.]+px\]/g)) {
+        const lineStart = source.lastIndexOf("\n", match.index) + 1;
+        const lineEnd = source.indexOf("\n", match.index);
+        const line = source.slice(lineStart, lineEnd === -1 ? source.length : lineEnd);
+        if (line.includes("tabular-nums") || line.includes("tracking-[0.3em]")) continue;
+        offenders.push(`${path.replace(ROOT, "src")}: ${match[0]}`);
+      }
+    }
+    expect(offenders, `arbitrary text sizes still outside the guides layer:\n${offenders.join("\n")}`).toEqual([]);
+  });
+
+  it("keeps every type-scale class used in this scope resolvable in tailwind.config.js", () => {
+    const config = readFileSync(join(process.cwd(), "tailwind.config.js"), "utf8");
+    const declaredSteps = new Set(
+      [...config.matchAll(/^\s{8}(eyebrow|caption|'body-sm'|body|'body-lg'|'heading-sm'|heading|'heading-lg'|display):/gm)].map(
+        (m) => m[1].replace(/'/g, "")
+      )
+    );
+
+    const usedSteps = new Set<string>();
+    const stepPattern = /text-(eyebrow|caption|body-sm|body|body-lg|heading-sm|heading|heading-lg|display)\b/g;
+    for (const { source } of scopedFiles()) {
+      for (const [, step] of source.matchAll(stepPattern)) usedSteps.add(step);
+    }
+
+    const missing = [...usedSteps].filter((step) => !declaredSteps.has(step));
+    expect(missing, `used but not declared in tailwind.config.js: ${missing.join(", ")}`).toEqual([]);
+  });
+});

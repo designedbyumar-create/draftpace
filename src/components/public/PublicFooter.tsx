@@ -31,12 +31,12 @@ export default function PublicFooter() {
         <div className="grid gap-10 sm:grid-cols-[1.3fr_1fr_1fr]">
           <div>
             <Logo height={40} />
-            <p className="mt-4 max-w-xs text-[13px] leading-6 text-[var(--muted)]">
+            <p className="mt-4 max-w-xs text-body-sm leading-6 text-[var(--muted)]">
               The Companion Series: products that remember your situation so you do not have to, yours to
               keep once you buy them.
             </p>
             <div className="mt-6">
-              <p className="mb-2.5 text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">Appearance</p>
+              <p className="mb-2.5 text-eyebrow font-bold uppercase text-[var(--faint)]">Appearance</p>
               <ThemeToggle />
             </div>
           </div>
@@ -46,10 +46,10 @@ export default function PublicFooter() {
         </div>
 
         <div className="mt-10 flex flex-col gap-4 border-t border-[var(--border)] pt-6 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-[12px] text-[var(--faint)]">© {new Date().getFullYear()} Draftpace.</p>
+          <p className="text-caption text-[var(--faint)]">© {new Date().getFullYear()} Draftpace.</p>
           <nav aria-label="Legal" className="flex gap-5">
             {LEGAL_LINKS.map((link) => (
-              <Link key={link.href} href={link.href} className="text-[12px] font-medium text-[var(--muted)] hover:text-[var(--text)]">
+              <Link key={link.href} href={link.href} className="text-caption font-medium text-[var(--muted)] hover:text-[var(--text)]">
                 {link.label}
               </Link>
             ))}
@@ -63,11 +63,11 @@ export default function PublicFooter() {
 function FooterColumn({ title, links }: { title: string; links: { href: string; label: string }[] }) {
   return (
     <div>
-      <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">{title}</p>
+      <p className="text-eyebrow font-bold uppercase text-[var(--faint)]">{title}</p>
       <ul className="mt-4 flex flex-col gap-2.5">
         {links.map((link) => (
           <li key={link.href}>
-            <Link href={link.href} className="text-[13px] text-[var(--muted)] hover:text-[var(--text)]">
+            <Link href={link.href} className="text-body-sm text-[var(--muted)] hover:text-[var(--text)]">
               {link.label}
             </Link>
           </li>

@@ -127,7 +127,7 @@ function AuthCallbackHandler() {
     <div className="flex min-h-screen flex-col items-center justify-center gap-4 bg-[var(--app-bg)]">
       <Logo height={30} />
       <div className="h-5 w-5 animate-spin rounded-full border-2 border-[var(--primary)] border-t-transparent" />
-      <p className="text-[13px] text-[var(--muted)]">Signing you in…</p>
+      <p className="text-body-sm text-[var(--muted)]">Signing you in…</p>
     </div>
   );
 }

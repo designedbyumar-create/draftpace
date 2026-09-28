@@ -22,7 +22,7 @@ export default function Alert({
   return (
     <div role={tone === "danger" ? "alert" : "status"} className={`flex items-start gap-3 rounded-lg px-4 py-3 ${bg}`}>
       <Icon size={16} className={`mt-0.5 shrink-0 ${text}`} aria-hidden />
-      <div className="text-[13px] leading-5">
+      <div className="text-body-sm leading-5">
         {title && <p className={`font-semibold ${text}`}>{title}</p>}
         <div className="text-[var(--text)]">{children}</div>
       </div>

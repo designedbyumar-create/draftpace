@@ -8,6 +8,13 @@ import { monthlyMoneyResetThemeVars } from "@/products/monthly-money-reset/theme
  * kit card. Numbers are illustrative but internally consistent, never
  * presented as real account data - marketing art, not the live product
  * surface CLAUDE.md's "no fabricated activity" rule governs.
+ *
+ * TYPE SCALE EXCEPTION: every text size in this file (mostly 8-10.5px,
+ * below the named scale's floor at eyebrow/11px) is deliberately
+ * miniature mockup chrome, not real content hierarchy: the same
+ * reasoning LiveDemos.tsx documents for its own cards. This file is
+ * named as an explicit exemption in designSystem.test.ts's type-scale
+ * guard, not covered by a blanket in-line marker.
  */
 
 const LIGHT_VARS = monthlyMoneyResetThemeVars("light");
