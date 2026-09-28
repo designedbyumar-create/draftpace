@@ -2,7 +2,9 @@ import Link from "next/link";
 import { ArrowRight } from "@/design-system/Icon";
 import { LIFE_AREAS, type LifeArea } from "@/content/areas";
 import { getGuideBySlug, guidesForArea, type Guide } from "@/content/guides";
+import { guideArt } from "@/content/guideArt";
 import { areaIdentity } from "./areaIdentity";
+import GuideCard from "./GuideCard";
 
 /**
  * The places the rest of the site points into the guides.
@@ -21,7 +23,17 @@ function startGuides(area: LifeArea): Guide[] {
   return area.startHere.map((slug) => getGuideBySlug(slug)).filter((g): g is Guide => Boolean(g));
 }
 
-/** The homepage strip: every area, three guides each, in the area's own colour. */
+/**
+ * The homepage strip: every area, three guides each, each guide its own
+ * card with its own thumbnail.
+ *
+ * This used to be a flat colour panel per area with plain text links
+ * inside, which read as another product tile rather than as editorial
+ * content, the same visual device the pricing panels use. Colour now
+ * comes only from the area kicker and each card's own hover accent, and
+ * every guide gets the thumbnail generated for it, so the block reads
+ * as three articles per area rather than one more offer.
+ */
 export function StartWithGuides() {
   return (
     <div>
@@ -34,35 +46,38 @@ export function StartWithGuides() {
         from them. Nothing to sign up for.
       </p>
 
-      <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
         {LIFE_AREAS.map((area) => {
-          const { accent, soft } = areaIdentity(area.slug);
+          const { accent, Mark } = areaIdentity(area.slug);
           const guides = startGuides(area);
           if (guides.length === 0) return null;
           return (
-            <section
-              key={area.slug}
-              aria-labelledby={`start-${area.slug}`}
-              className="flex flex-col rounded-2xl border border-[var(--border)] p-5"
-              style={{ background: soft }}
-            >
-              <h3 id={`start-${area.slug}`} className="text-[12px] font-bold uppercase tracking-[0.12em]" style={{ color: accent }}>
+            <section key={area.slug} aria-labelledby={`start-${area.slug}`} className="flex flex-col">
+              <h3
+                id={`start-${area.slug}`}
+                className="text-[11px] font-bold uppercase tracking-[0.14em]"
+                style={{ color: accent }}
+              >
                 <Link href={`/guides/${area.slug}`} className="hover:underline">
                   {area.label}
                 </Link>
               </h3>
-              <ul className="mt-3 flex flex-1 flex-col gap-2.5">
+              <ul className="mt-4 flex flex-1 flex-col gap-5">
                 {guides.map((guide) => (
                   <li key={guide.slug}>
-                    <Link href={`/guides/${guide.slug}`} className="text-[14.5px] font-semibold leading-snug text-[var(--text)] hover:underline">
-                      {guide.title}
-                    </Link>
+                    <GuideCard
+                      variant="row"
+                      areaSlug={area.slug}
+                      thumb={guideArt(guide.slug)?.thumb}
+                      fallback={<Mark />}
+                      guide={{ slug: guide.slug, title: guide.title }}
+                    />
                   </li>
                 ))}
               </ul>
               <Link
                 href={`/guides/${area.slug}`}
-                className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold hover:underline"
+                className="mt-5 inline-flex items-center gap-1.5 text-[13px] font-semibold hover:underline"
                 style={{ color: accent }}
               >
                 All {guidesForArea(area.slug).length} {area.label.toLowerCase()} guides <ArrowRight size={13} aria-hidden />
@@ -81,15 +96,19 @@ export function GuidesForCompanion({ areaSlug }: { areaSlug: string }) {
   if (!area) return null;
   const guides = startGuides(area);
   if (guides.length === 0) return null;
+  const { Mark } = areaIdentity(areaSlug);
   return (
     <div>
-      <ul className="flex flex-col gap-4">
+      <ul className="flex flex-col gap-5">
         {guides.map((guide) => (
           <li key={guide.slug}>
-            <Link href={`/guides/${guide.slug}`} className="text-[15.5px] font-semibold leading-snug text-[var(--primary)] hover:underline">
-              {guide.title}
-            </Link>
-            <p className="mt-1 max-w-[42rem] text-[14px] leading-relaxed text-[var(--muted)]">{guide.dek}</p>
+            <GuideCard
+              variant="row"
+              areaSlug={areaSlug}
+              thumb={guideArt(guide.slug)?.thumb}
+              fallback={<Mark />}
+              guide={{ slug: guide.slug, title: guide.title, dek: guide.dek }}
+            />
           </li>
         ))}
       </ul>

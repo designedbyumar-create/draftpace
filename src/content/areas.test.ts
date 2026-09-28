@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { LIFE_AREAS } from "./areas";
 import { GUIDES, getGuideBySlug } from "./guides";
+import { guideArt } from "./guideArt";
 import { registerRealShopProducts } from "../shop/products";
 import { shopRegistry } from "../shop/registry";
 
@@ -27,6 +28,14 @@ describe("start-here guides", () => {
       }
     }
     expect(problems).toEqual([]);
+  });
+
+  it("has article art for every start-here guide, so the homepage strip and a Companion's own page never fall back to a plain area mark", () => {
+    const missing: string[] = [];
+    for (const area of LIFE_AREAS) {
+      for (const slug of area.startHere) if (!guideArt(slug)) missing.push(`${area.slug}: ${slug}`);
+    }
+    expect(missing).toEqual([]);
   });
 });
 

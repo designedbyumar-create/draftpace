@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Container from "@/design-system/Container";
-import { ArrowRight } from "@/design-system/Icon";
 import GuidesExplorer, {
   type ExplorerArea,
   type ExplorerGuide,
 } from "@/components/public/guides/GuidesExplorer";
+import GuideCard from "@/components/public/guides/GuideCard";
 import { areaIdentity } from "@/components/public/guides/areaIdentity";
+import { guideArt } from "@/content/guideArt";
 import { GUIDES, SERIES, areasWithGuides, guidesForArea, readingMinutes, readingTimeLabel, seriesGuides } from "@/content/guides";
 
 export const metadata: Metadata = {
@@ -28,10 +28,10 @@ export const metadata: Metadata = {
  * reach, and give a reader who landed on one narrow article somewhere to
  * go next.
  *
- * The area marks are rendered here, server-side, and handed to the
- * explorer as nodes. That is deliberate: the explorer is a client
- * component and importing the identity module there would pull the
- * content module it depends on into the browser bundle.
+ * The area marks and every card's thumbnail are resolved here, server
+ * side, and handed to the explorer as plain data. That is deliberate:
+ * the explorer is a client component, and importing the identity or art
+ * modules there would pull the content layer into the browser bundle.
  */
 export default function GuidesIndexPage() {
   const series = seriesGuides();
@@ -50,6 +50,7 @@ export default function GuidesIndexPage() {
         slug: guide.slug,
         title: guide.title,
         readingTime: readingTimeLabel(guide),
+        thumb: guideArt(guide.slug)?.thumb,
       })),
     };
   });
@@ -66,6 +67,7 @@ export default function GuidesIndexPage() {
       readingTime: readingTimeLabel(guide),
       areaSlug: guide.areaSlug === SERIES ? SERIES : (area?.slug ?? SERIES),
       areaLabel: area?.label ?? "The Series",
+      thumb: guideArt(guide.slug)?.thumb,
     };
   });
 
@@ -116,27 +118,16 @@ export default function GuidesIndexPage() {
             </div>
           </div>
 
-          <ul className="flex flex-col divide-y divide-[var(--border)] border-t border-[var(--border)] bg-[var(--surface)]">
+          <ul className="flex flex-col divide-y divide-[var(--border)] border-t border-[var(--border)] bg-[var(--surface)] px-6 sm:px-8">
             {series.map((guide) => (
-              <li key={guide.slug}>
-                <Link
-                  href={`/guides/${guide.slug}`}
-                  className="group flex items-start justify-between gap-4 px-6 py-4 transition-colors hover:bg-[var(--area-soft)] sm:px-8"
-                >
-                  <span className="min-w-0">
-                    <span className="block text-[16px] font-semibold leading-snug text-[var(--text)] group-hover:text-[var(--area)]">
-                      {guide.title}
-                    </span>
-                    <span className="mt-1 block text-[13.5px] leading-relaxed text-[var(--muted)]">
-                      {guide.dek}
-                    </span>
-                  </span>
-                  <ArrowRight
-                    size={16}
-                    aria-hidden
-                    className="mt-1 shrink-0 text-[var(--faint)] transition-transform group-hover:translate-x-0.5 group-hover:text-[var(--area)]"
-                  />
-                </Link>
+              <li key={guide.slug} className="py-4">
+                <GuideCard
+                  variant="row"
+                  areaSlug={SERIES}
+                  guide={{ slug: guide.slug, title: guide.title, dek: guide.dek }}
+                  thumb={guideArt(guide.slug)?.thumb}
+                  fallback={<SeriesMark />}
+                />
               </li>
             ))}
           </ul>
@@ -149,15 +140,14 @@ export default function GuidesIndexPage() {
       {orphans.length > 0 && (
         <section className="mt-14 border-t border-[var(--border)] pt-8">
           <h2 className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">Also written</h2>
-          <ul className="mt-4 flex flex-col gap-3">
+          <ul className="mt-4 flex flex-col gap-4">
             {orphans.map((guide) => (
               <li key={guide.slug}>
-                <Link href={`/guides/${guide.slug}`} className="group">
-                  <p className="text-[15px] font-semibold text-[var(--text)] group-hover:text-[var(--primary)]">
-                    {guide.title}
-                  </p>
-                  <p className="mt-0.5 text-[13px] leading-relaxed text-[var(--muted)]">{guide.dek}</p>
-                </Link>
+                <GuideCard
+                  variant="row"
+                  guide={{ slug: guide.slug, title: guide.title, dek: guide.dek }}
+                  thumb={guideArt(guide.slug)?.thumb}
+                />
               </li>
             ))}
           </ul>

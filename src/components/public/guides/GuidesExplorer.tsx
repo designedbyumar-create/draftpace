@@ -4,6 +4,7 @@ import { useMemo, useState, type ReactNode } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, Search, X } from "@/design-system/Icon";
+import GuideCard from "./GuideCard";
 
 /**
  * The guides index.
@@ -35,7 +36,7 @@ export interface ExplorerArea {
   situation: string;
   /** Rendered server-side, so this client component never imports the content module. */
   mark: ReactNode;
-  guides: { slug: string; title: string; readingTime: string }[];
+  guides: { slug: string; title: string; readingTime: string; thumb?: string }[];
 }
 
 export interface ExplorerGuide {
@@ -45,6 +46,8 @@ export interface ExplorerGuide {
   readingTime: string;
   areaSlug: string;
   areaLabel: string;
+  /** guideArt(slug)?.thumb, resolved server-side for the same reason `mark` above is. */
+  thumb?: string;
 }
 
 /** How many titles a resting area panel shows before it becomes a link. */
@@ -163,24 +166,18 @@ export default function GuidesExplorer({
               <ul className="mt-4 grid gap-3 sm:grid-cols-2">
                 {results.map((guide) => (
                   <li key={guide.slug}>
-                    <Link
-                      href={`/guides/${guide.slug}`}
-                      style={{ "--area": `var(--area-${guide.areaSlug})` } as React.CSSProperties}
-                      className="group flex h-full flex-col rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface)] p-4 transition-colors hover:border-[var(--area)]"
-                    >
-                      <span className="text-[10.5px] font-bold uppercase tracking-[0.12em] text-[var(--area)]">
-                        {guide.areaLabel}
-                      </span>
-                      <span className="mt-2 text-[16px] font-semibold leading-snug text-[var(--text)] group-hover:text-[var(--area)]">
-                        {guide.title}
-                      </span>
-                      <span className="mt-1.5 flex-1 text-[13.5px] leading-relaxed text-[var(--muted)]">
-                        {guide.dek}
-                      </span>
-                      <span className="mt-3 font-mono text-[11px] text-[var(--faint)]">
-                        {guide.readingTime}
-                      </span>
-                    </Link>
+                    <GuideCard
+                      variant="grid"
+                      areaSlug={guide.areaSlug}
+                      thumb={guide.thumb}
+                      guide={{
+                        slug: guide.slug,
+                        title: guide.title,
+                        dek: guide.dek,
+                        readingTime: guide.readingTime,
+                        areaLabel: guide.areaLabel,
+                      }}
+                    />
                   </li>
                 ))}
               </ul>
@@ -220,18 +217,13 @@ export default function GuidesExplorer({
 
                 <ul className="flex flex-1 flex-col divide-y divide-[var(--border)] px-5">
                   {area.guides.slice(0, PREVIEW).map((guide) => (
-                    <li key={guide.slug}>
-                      <Link
-                        href={`/guides/${guide.slug}`}
-                        className="group flex items-baseline justify-between gap-4 py-3"
-                      >
-                        <span className="text-[14.5px] leading-snug text-[var(--text)] group-hover:text-[var(--area)]">
-                          {guide.title}
-                        </span>
-                        <span className="shrink-0 font-mono text-[11px] text-[var(--faint)]">
-                          {guide.readingTime}
-                        </span>
-                      </Link>
+                    <li key={guide.slug} className="py-3">
+                      <GuideCard
+                        variant="row"
+                        areaSlug={area.slug}
+                        thumb={guide.thumb}
+                        guide={{ slug: guide.slug, title: guide.title, readingTime: guide.readingTime }}
+                      />
                     </li>
                   ))}
                 </ul>

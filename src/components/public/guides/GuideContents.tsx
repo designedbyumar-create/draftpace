@@ -80,7 +80,7 @@ export default function GuideContents({
                 "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus-ring)]",
                 active
                   ? "bg-[var(--area-soft,var(--surface-muted))] font-semibold text-[var(--text)]"
-                  : "text-[var(--muted)] hover:text-[var(--text)]",
+                  : "text-[var(--muted)] hover:text-[var(--text)] hover:bg-[var(--area-soft,var(--surface-muted))]/50",
               ].join(" ")}
             >
               <span
@@ -105,7 +105,7 @@ export default function GuideContents({
         <p className="mb-3 pl-3 text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">
           In this guide
         </p>
-        <div className="border-l border-[var(--border)]">{list}</div>
+        <div className="border-l-2 border-[var(--area,var(--border))]">{list}</div>
       </nav>
     );
   }
