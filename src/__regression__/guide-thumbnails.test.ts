@@ -26,4 +26,17 @@ describe("guide listings render a real thumbnail, not bare text", () => {
   ])("%s references %s", (file, pattern) => {
     expect(read(file)).toMatch(pattern);
   });
+
+  it("GuideCard keeps its title-only homepage variant", () => {
+    expect(read("src/components/public/guides/GuideCard.tsx")).toMatch(/"minimal"/);
+  });
+});
+
+describe("the FAQ block stays a native accordion", () => {
+  it("Faq.tsx ships no client JavaScript and opens its first question by default", () => {
+    const source = read("src/components/public/guides/blocks/Faq.tsx");
+    expect(source).not.toMatch(/^"use client"/m);
+    expect(source).toMatch(/<details/);
+    expect(source).toMatch(/open=\{i === 0\}/);
+  });
 });

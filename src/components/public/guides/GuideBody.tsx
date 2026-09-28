@@ -27,9 +27,6 @@ function Heading({ id, children }: { id: string; children: string }) {
       id={id}
       className="mt-11 scroll-mt-24 text-[20px] font-semibold leading-snug tracking-[-0.01em] text-[var(--text)] first:mt-0"
     >
-      {/* The rule is the area accent, which is the only place an area
-          colour appears inside body copy. */}
-      <span aria-hidden className="mb-3 block h-[3px] w-8 rounded-full bg-[var(--area,var(--primary))]" />
       {children}
     </h2>
   );

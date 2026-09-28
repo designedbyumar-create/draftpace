@@ -11,9 +11,12 @@ import { ArrowRight } from "@/design-system/Icon";
  * Before this, four different places each hand-rolled their own anchor,
  * and none of them showed the guide's own thumbnail, so a guide read as
  * a line of text borrowed from a category rather than a thing that
- * exists on its own. This is the one card all four now share, in the
- * `row` and `grid` shapes `AreaHub` already proved on the area hub and
- * the guide page's own header.
+ * exists on its own. This is the one card all four now share, in three
+ * shapes: `row` (a compact list entry), `grid` (a full card with a
+ * visible "read the guide" affordance, for a page whose whole job is
+ * browsing articles), and `minimal` (thumbnail and title only, for a
+ * homepage teaser that should read as one flagship pick, not a card
+ * competing for attention with dek copy and a CTA line).
  *
  * It never imports `guideArt` itself. The thumbnail is resolved by the
  * caller and passed in as a plain string, the same boundary
@@ -43,8 +46,8 @@ export default function GuideCard({
   thumb?: string;
   /** Sets the card's accent color via --area / --area-soft. Omit for no accent (e.g. an orphan guide with no area). */
   areaSlug?: string | null;
-  /** `row`: a compact 132x99 thumb beside title/dek, for a list. `grid`: full-width thumb on top, for a grid of cards. */
-  variant: "row" | "grid";
+  /** `row`: a compact thumb beside title/dek, for a list. `grid`: a full card with a CTA line. `minimal`: thumb and title only. */
+  variant: "row" | "grid" | "minimal";
   sizes?: string;
   /** Shown in the thumbnail's place when there is no `thumb`, e.g. an area Mark. Omit to render text-only. */
   fallback?: ReactNode;
@@ -77,6 +80,27 @@ export default function GuideCard({
       </span>
     ) : null;
 
+  if (variant === "minimal") {
+    return (
+      <Link
+        href={`/guides/${guide.slug}`}
+        style={style}
+        className="group flex flex-col gap-3 rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus-ring)]"
+      >
+        {media}
+        <span className="flex flex-col gap-1.5">
+          {guide.areaLabel && (
+            <span className="text-[10.5px] font-bold uppercase tracking-[0.12em] text-[var(--area)]">{guide.areaLabel}</span>
+          )}
+          <span className="text-[15px] font-semibold leading-snug text-[var(--text)] group-hover:text-[var(--area,var(--primary))]">
+            {guide.title}
+          </span>
+          {guide.dek && <span className="line-clamp-2 text-[13.5px] leading-relaxed text-[var(--muted)]">{guide.dek}</span>}
+        </span>
+      </Link>
+    );
+  }
+
   const text = (
     <span className="min-w-0 flex-1">
       {guide.areaLabel && (
@@ -104,6 +128,12 @@ export default function GuideCard({
       {guide.readingTime && (
         <span className="mt-2 block font-mono text-[11px] text-[var(--faint)]">{guide.readingTime}</span>
       )}
+      {variant === "grid" && (
+        <span className="mt-3 inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--area,var(--primary))]">
+          Read the free guide
+          <ArrowRight size={13} aria-hidden className="transition-transform group-hover:translate-x-0.5" />
+        </span>
+      )}
     </span>
   );
 
@@ -112,7 +142,7 @@ export default function GuideCard({
       <Link
         href={`/guides/${guide.slug}`}
         style={style}
-        className="group flex h-full flex-col rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface)] p-4 transition-colors hover:border-[var(--area,var(--primary))] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus-ring)]"
+        className="group flex h-full flex-col rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface)] p-4 transition-[color,box-shadow,border-color] hover:border-[var(--area,var(--primary))] hover:shadow-[shadow:var(--shadow-xs)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus-ring)]"
       >
         {media}
         <span className={media ? "mt-3 flex flex-1 flex-col" : "flex flex-1 flex-col"}>{text}</span>

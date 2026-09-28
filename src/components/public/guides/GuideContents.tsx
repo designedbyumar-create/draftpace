@@ -102,10 +102,10 @@ export default function GuideContents({
   if (variant === "rail") {
     return (
       <nav aria-label="Contents" className="hidden lg:sticky lg:top-24 lg:block lg:self-start">
-        <p className="mb-3 pl-3 text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">
+        <p className="mb-5 pl-3 text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">
           In this guide
         </p>
-        <div className="border-l-2 border-[var(--area,var(--border))]">{list}</div>
+        {list}
       </nav>
     );
   }
