@@ -13,7 +13,10 @@ export const metadata: Metadata = {
   title: "Guides",
   description:
     "Practical guides for the parts of life that are hard to keep track of: money, home, focus, family, affairs and travel.",
-  alternates: { canonical: "/guides" },
+  alternates: {
+    canonical: "/guides",
+    types: { "application/rss+xml": "/guides/feed.xml" },
+  },
 };
 
 /**
