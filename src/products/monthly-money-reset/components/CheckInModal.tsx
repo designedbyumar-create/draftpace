@@ -260,7 +260,7 @@ export default function CheckInModal({
                       onClick={() => answerYes(question.key)}
                       className="rounded-lg border border-[var(--primary)] bg-[var(--primary-soft)] px-3 py-1.5 text-[12px] font-semibold text-[var(--primary)]"
                     >
-                      Yes — {question.actionLabel}
+                      Yes: {question.actionLabel}
                     </button>
                   </div>
                 )}
@@ -300,7 +300,7 @@ export default function CheckInModal({
                   }}
                   className="rounded-lg border border-[var(--primary)] bg-[var(--primary-soft)] px-3 py-1.5 text-[12px] font-semibold text-[var(--primary)]"
                 >
-                  Yes — Add it
+                  Yes: Add it
                 </button>
               </div>
             )}

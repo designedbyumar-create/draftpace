@@ -303,7 +303,7 @@ export default function HistoryModule({ definition }: { definition: ProductDefin
             Starting balance for {cycleKeyToLabel(nextCycleKey(state.cycle.cycleKey))}
           </p>
           <p className="mt-1 text-[12px] leading-relaxed text-[var(--muted)]">
-            Choose deliberately — nothing is preselected.
+            Choose deliberately, nothing is preselected.
           </p>
           <div className="mt-2.5 grid gap-2 sm:grid-cols-2">
             {STARTING_BALANCE_OPTIONS.map((option) => {
@@ -322,7 +322,7 @@ export default function HistoryModule({ definition }: { definition: ProductDefin
                   <p className="text-[13px] font-semibold text-[var(--text)]">{option.label}</p>
                   <p className="mt-0.5 text-[12px] leading-relaxed text-[var(--muted)]">
                     {option.mode === "suggested" &&
-                      `An estimate — ${formatCurrency(breakdown.safeToSpend, state.currency)}, this month's closing Safe-to-Spend. Not necessarily your real bank balance.`}
+                      `An estimate: ${formatCurrency(breakdown.safeToSpend, state.currency)}, this month's closing Safe-to-Spend. Not necessarily your real bank balance.`}
                     {option.mode === "actual" && "Enter what's really in your account right now."}
                     {option.mode === "custom" && "Enter a different starting amount."}
                     {option.mode === "fresh" && "Begin next month at $0, on purpose."}
