@@ -29,11 +29,11 @@ import CategoryIcon from "./shared/CategoryIcon";
 const CARD = "overflow-hidden rounded-[22px] border border-[var(--border)] bg-[var(--surface)]";
 const CARD_SHADOW = "shadow-[0_1px_2px_rgba(28,25,20,0.04),0_14px_28px_-22px_rgba(28,25,20,0.2)]";
 
-export function HomeHeader({ headline, size = "text-[30px] sm:text-[34px]" }: { headline: string; size?: string }) {
+export function HomeHeader({ headline, size = "text-heading" }: { headline: string; size?: string }) {
   const reduceMotion = useReducedMotion();
   return (
     <motion.div initial="hidden" animate="visible" variants={entranceVariant(Boolean(reduceMotion))}>
-      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--primary)]">Your home</p>
+      <p className="text-eyebrow font-semibold uppercase text-[var(--primary)]">Your home</p>
       <h1
         className={`mt-2 font-medium leading-[1.12] tracking-[-0.015em] text-[var(--text)] ${size}`}
         style={{ fontFamily: "var(--product-narrative-font)", textWrap: "balance" }}
@@ -68,7 +68,7 @@ function StateStrip({ lit }: { lit: boolean[] }) {
             {cell.label}
           </>
         );
-        const base = "flex h-9 shrink-0 items-center gap-1 rounded-full px-2 text-[12px] transition-colors";
+        const base = "flex h-9 shrink-0 items-center gap-1 rounded-full px-2 text-caption transition-colors";
         return on ? (
           <a
             key={cell.id}
@@ -95,7 +95,7 @@ function Band({ id, label, children }: { id: string; label: string; children: Re
   return (
     <section id={id} aria-label={label} className="scroll-mt-6">
       <div className="flex items-center gap-3">
-        <h2 className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">{label}</h2>
+        <h2 className="text-eyebrow font-semibold uppercase text-[var(--muted)]">{label}</h2>
         <span aria-hidden className="h-px flex-1 bg-[var(--border)]" />
       </div>
       <div className="mt-3 flex flex-col gap-2.5">{children}</div>
@@ -119,8 +119,8 @@ function TagRow({
   const warning = tone === "warning";
   const body = (
     <>
-      <h3 className="text-[15.5px] font-semibold leading-snug tracking-[-0.005em] text-[var(--text)]">{item.title}</h3>
-      <p className="mt-0.5 text-[13px] leading-[1.45] text-[var(--muted)]">{item.detail}</p>
+      <h3 className="text-body font-semibold leading-snug tracking-[-0.005em] text-[var(--text)]">{item.title}</h3>
+      <p className="mt-0.5 text-body-sm leading-[1.45] text-[var(--muted)]">{item.detail}</p>
     </>
   );
   return (
@@ -141,7 +141,7 @@ function TagRow({
       />
       <div className="min-w-0">
         {warning && (
-          <p className="mb-1 flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--warning)]">
+          <p className="mb-1 flex items-center gap-1.5 text-eyebrow font-semibold uppercase text-[var(--warning)]">
             <WarningCircle size={13} aria-hidden />
             Needs a look
           </p>
@@ -189,8 +189,8 @@ function QuietRow({
         {icon}
       </span>
       <div className="min-w-0 flex-1">
-        <h3 className="text-[14.5px] font-semibold leading-snug text-[var(--text)]">{title}</h3>
-        <p className="mt-0.5 text-[12.5px] leading-[1.4] text-[var(--muted)]">{detail}</p>
+        <h3 className="text-body font-semibold leading-snug text-[var(--text)]">{title}</h3>
+        <p className="mt-0.5 text-caption leading-[1.4] text-[var(--muted)]">{detail}</p>
       </div>
       {href && <ChevronRight size={15} aria-hidden className="mt-2 shrink-0 text-[var(--faint)]" />}
     </>
@@ -300,7 +300,7 @@ export default function HomeView({
             <button
               type="button"
               onClick={onShowAllCare}
-              className="-ml-1 self-start rounded-full px-3 py-2 text-[12.5px] font-semibold text-[var(--muted)] transition-colors hover:bg-[var(--surface-muted)] hover:text-[var(--text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]"
+              className="-ml-1 self-start rounded-full px-3 py-2 text-caption font-semibold text-[var(--muted)] transition-colors hover:bg-[var(--surface-muted)] hover:text-[var(--text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]"
             >
               {hiddenCare} more, when you get to {hiddenCare === 1 ? "it" : "them"}
             </button>
@@ -348,7 +348,7 @@ export default function HomeView({
           in the product's own voice. */}
       {closingLine && (
         <p
-          className="text-[17px] leading-relaxed text-[var(--muted)]"
+          className="text-body-lg leading-relaxed text-[var(--muted)]"
           style={{ fontFamily: "var(--product-narrative-font)" }}
         >
           {closingLine}
@@ -357,7 +357,7 @@ export default function HomeView({
 
       <section aria-label="In your home">
         <div className="flex items-center gap-3">
-          <h2 className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">In your home</h2>
+          <h2 className="text-eyebrow font-semibold uppercase text-[var(--muted)]">In your home</h2>
           <span aria-hidden className="h-px flex-1 bg-[var(--border)]" />
           <div ref={addRef} className="hidden lg:block">
             <Button size="sm" variant="secondary" iconLeft={<Plus size={14} aria-hidden />} onClick={onAdd}>
@@ -366,7 +366,7 @@ export default function HomeView({
           </div>
         </div>
         {activeItems.length === 0 ? (
-          <p className="mt-3 text-[13px] text-[var(--muted)]">Nothing in your home yet.</p>
+          <p className="mt-3 text-body-sm text-[var(--muted)]">Nothing in your home yet.</p>
         ) : (
           <ul className={`mt-3 ${CARD} ${CARD_SHADOW}`}>
             {activeItems.map((item) => (
@@ -377,8 +377,8 @@ export default function HomeView({
                 >
                   <CategoryIcon type={item.type} />
                   <div className="min-w-0 flex-1">
-                    <p className="truncate text-[14px] font-semibold text-[var(--text)]">{item.name}</p>
-                    <p className="mt-0.5 truncate text-[12.5px] text-[var(--muted)]">{describeItem(item)}</p>
+                    <p className="truncate text-body-sm font-semibold text-[var(--text)]">{item.name}</p>
+                    <p className="mt-0.5 truncate text-caption text-[var(--muted)]">{describeItem(item)}</p>
                   </div>
                   <ChevronRight size={15} aria-hidden className="shrink-0 text-[var(--faint)]" />
                 </Link>

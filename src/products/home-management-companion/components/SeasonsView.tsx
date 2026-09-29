@@ -39,7 +39,7 @@ export function SeasonsHeader({ selected, isCurrent }: { selected: SeasonSummary
       }}
     >
       <div className="flex items-start justify-between gap-3">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">
+        <p className="text-eyebrow font-semibold uppercase text-[var(--muted)]">
           {isCurrent ? "This season" : "Looking ahead"}
         </p>
         <span
@@ -51,12 +51,12 @@ export function SeasonsHeader({ selected, isCurrent }: { selected: SeasonSummary
         </span>
       </div>
       <h1
-        className="mt-3 text-[34px] font-medium leading-[1.06] tracking-[-0.02em] text-[var(--text)] [text-wrap:balance]"
+        className="mt-3 text-heading font-medium tracking-[-0.02em] text-[var(--text)] [text-wrap:balance]"
         style={{ fontFamily: "var(--product-narrative-font)" }}
       >
         {selected.label} home maintenance checklist
       </h1>
-      <p className="mt-3 text-[14px] leading-snug text-[var(--muted)]">
+      <p className="mt-3 text-body-sm leading-snug text-[var(--muted)]">
         The jobs that are best done from {selected.span}.
       </p>
     </div>
@@ -94,7 +94,7 @@ export default function SeasonsView({
               role="tab"
               aria-selected={on}
               onClick={() => onSelect(season.id)}
-              className={`flex h-10 shrink-0 items-center gap-1.5 rounded-full px-4 text-[13px] font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] ${
+              className={`flex h-10 shrink-0 items-center gap-1.5 rounded-full px-4 text-body-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] ${
                 on
                   ? "bg-[var(--primary)] text-[var(--primary-contrast)]"
                   : "text-[var(--muted)] hover:bg-[var(--surface-muted)] hover:text-[var(--text)]"
@@ -114,7 +114,7 @@ export default function SeasonsView({
       </div>
 
       {selected.jobs.length === 0 ? (
-        <p className="text-[14px] leading-relaxed text-[var(--muted)]">
+        <p className="text-body-sm leading-relaxed text-[var(--muted)]">
           Nothing in your home is tied to this season yet. As you add things and record what you do, the jobs that
           belong to it will appear here.
         </p>
@@ -124,7 +124,7 @@ export default function SeasonsView({
             <section key={monthKey} aria-label={monthLabel}>
               <div className="flex items-baseline gap-3">
                 <h2
-                  className="text-[22px] font-medium leading-none tracking-[-0.01em] text-[var(--text)]"
+                  className="text-heading-sm font-medium tracking-[-0.01em] text-[var(--text)]"
                   style={{ fontFamily: "var(--product-narrative-font)" }}
                 >
                   {monthLabel}
@@ -154,11 +154,11 @@ export default function SeasonsView({
                         <span className="h-[30px] w-[30px] rounded-full border-2 border-[color-mix(in_srgb,var(--primary)_65%,transparent)] transition-colors group-hover/tick:bg-[var(--primary-soft)]" />
                       </button>
                       <div className="min-w-0">
-                        <p className="text-[15px] font-semibold leading-snug text-[var(--text)]">{job.title}</p>
-                        <p className="mt-0.5 text-[13px] leading-snug text-[var(--muted)]">{job.about}</p>
+                        <p className="text-body font-semibold leading-snug text-[var(--text)]">{job.title}</p>
+                        <p className="mt-0.5 text-body-sm leading-snug text-[var(--muted)]">{job.about}</p>
                       </div>
                       {job.dueNow && (
-                        <span className="text-[11.5px] font-semibold text-[var(--warning)]">Due now</span>
+                        <span className="text-caption font-semibold text-[var(--warning)]">Due now</span>
                       )}
                     </motion.li>
                   ))}

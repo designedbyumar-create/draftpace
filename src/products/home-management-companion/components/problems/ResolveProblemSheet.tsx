@@ -166,7 +166,7 @@ export default function ResolveProblemSheet({
       }
     >
       <div>
-        <p className="mb-1.5 text-[13px] font-semibold text-[var(--text)]">What happened?</p>
+        <p className="mb-1.5 text-body-sm font-semibold text-[var(--text)]">What happened?</p>
         <div className="flex gap-2">
           <OutcomeChoice label="It's sorted" selected={outcome === "sorted"} onSelect={() => setOutcome("sorted")} />
           <OutcomeChoice label="Someone's coming" selected={outcome === "booked"} onSelect={() => setOutcome("booked")} />
@@ -230,7 +230,7 @@ export default function ResolveProblemSheet({
         </>
       )}
 
-      {error && <p className="text-[13px] text-[var(--danger)]">{error}</p>}
+      {error && <p className="text-body-sm text-[var(--danger)]">{error}</p>}
     </RecordFormSheet>
   );
 }
@@ -241,7 +241,7 @@ function OutcomeChoice({ label, selected, onSelect }: { label: string; selected:
       type="button"
       onClick={onSelect}
       aria-pressed={selected}
-      className={`flex-1 rounded-lg border px-3 py-2.5 text-[13px] font-semibold transition-colors duration-[var(--dur-fast)] ease-[var(--ease-out)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] ${
+      className={`flex-1 rounded-lg border px-3 py-2.5 text-body-sm font-semibold transition-colors duration-[var(--dur-fast)] ease-[var(--ease-out)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] ${
         selected
           ? "border-[var(--primary)] bg-[var(--primary-soft)] text-[var(--primary)]"
           : "border-[var(--border-strong)] text-[var(--muted)] hover:text-[var(--text)]"

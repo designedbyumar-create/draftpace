@@ -31,7 +31,7 @@ export default function PrintablesModule({ definition }: { definition: ProductDe
   return (
     <div className="flex flex-col gap-6">
       <div>
-        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">
+        <p className="text-eyebrow font-bold uppercase text-[var(--primary)]">
           Included with this product
         </p>
         <h1
@@ -40,7 +40,7 @@ export default function PrintablesModule({ definition }: { definition: ProductDe
         >
           The Home Survey
         </h1>
-        <p className="mt-2 max-w-lg text-[13px] leading-relaxed text-[var(--muted)]">
+        <p className="mt-2 max-w-lg text-body-sm leading-relaxed text-[var(--muted)]">
           Print it, carry it round the house once, and write down what you find. Model numbers live on stickers behind
           appliances, the filter size is printed on the filter, and the water shutoff is usually behind something heavy.
           Paper is the right tool for that walk. Bring it back here afterwards and Home Base works out the timing, so
@@ -63,9 +63,9 @@ export default function PrintablesModule({ definition }: { definition: ProductDe
                   <Article size={18} aria-hidden />
                 </div>
                 <div>
-                  <p className="text-[13px] font-semibold text-[var(--text)]">{asset.title}</p>
+                  <p className="text-body-sm font-semibold text-[var(--text)]">{asset.title}</p>
                   {ASSET_DESCRIPTION[asset.id] && (
-                    <p className="mt-0.5 text-[12px] text-[var(--muted)]">{ASSET_DESCRIPTION[asset.id]}</p>
+                    <p className="mt-0.5 text-caption text-[var(--muted)]">{ASSET_DESCRIPTION[asset.id]}</p>
                   )}
                 </div>
               </div>
@@ -82,7 +82,7 @@ export default function PrintablesModule({ definition }: { definition: ProductDe
         </div>
       )}
 
-      <p className="max-w-lg text-[12px] leading-relaxed text-[var(--muted)]">
+      <p className="max-w-lg text-caption leading-relaxed text-[var(--muted)]">
         Filled in, this book lists what you own and where your water and gas shut off. Keep it somewhere private, and
         leave passwords and alarm codes out of it. It travels round the building and sits on worktops while trades are
         in the house.

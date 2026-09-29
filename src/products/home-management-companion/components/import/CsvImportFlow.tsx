@@ -217,9 +217,9 @@ export default function CsvImportFlow({
     return (
       <Surface elevated className="flex flex-col gap-4">
         <div>
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">CSV import</p>
-          <h2 className="mt-1 text-[17px] font-semibold text-[var(--text)]">Upload a spreadsheet export.</h2>
-          <p className="mt-1.5 text-[13px] leading-relaxed text-[var(--muted)]">
+          <p className="text-eyebrow font-bold uppercase text-[var(--primary)]">CSV import</p>
+          <h2 className="mt-1 text-heading-sm font-semibold text-[var(--text)]">Upload a spreadsheet export.</h2>
+          <p className="mt-1.5 text-body-sm leading-relaxed text-[var(--muted)]">
             Works with a CSV of things, maintenance tasks, or service providers. You&apos;ll map the columns
             yourself on the next screen, since formats vary. Dates must read YYYY-MM-DD.
           </p>
@@ -238,7 +238,7 @@ export default function CsvImportFlow({
         <button
           type="button"
           onClick={() => inputRef.current?.click()}
-          className="rounded-lg border border-dashed border-[var(--border)] p-6 text-center text-[13px] font-medium text-[var(--muted)] hover:border-[var(--primary)] hover:text-[var(--text)]"
+          className="rounded-lg border border-dashed border-[var(--border)] p-6 text-center text-body-sm font-medium text-[var(--muted)] hover:border-[var(--primary)] hover:text-[var(--text)]"
         >
           Choose a .csv file
         </button>
@@ -253,9 +253,9 @@ export default function CsvImportFlow({
     return (
       <Surface elevated className="flex flex-col gap-4">
         <div>
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Map columns</p>
-          <h2 className="mt-1 text-[17px] font-semibold text-[var(--text)]">Tell Draftpace what each column means.</h2>
-          {parseErrorCount > 0 && <p className="mt-1 text-[12px] text-[var(--warning)]">{parseErrorCount} row(s) couldn&apos;t be parsed and were skipped.</p>}
+          <p className="text-eyebrow font-bold uppercase text-[var(--primary)]">Map columns</p>
+          <h2 className="mt-1 text-heading-sm font-semibold text-[var(--text)]">Tell Draftpace what each column means.</h2>
+          {parseErrorCount > 0 && <p className="mt-1 text-caption text-[var(--warning)]">{parseErrorCount} row(s) couldn&apos;t be parsed and were skipped.</p>}
         </div>
         {error && <Alert tone="danger">{error}</Alert>}
 
@@ -335,12 +335,12 @@ export default function CsvImportFlow({
         )}
 
         <div className="rounded-lg border border-[var(--border)] bg-[var(--surface-muted)] p-3">
-          <p className="text-[12px] font-semibold text-[var(--text)]">Preview</p>
+          <p className="text-caption font-semibold text-[var(--text)]">Preview</p>
           <div className="mt-2 flex gap-2">
             <Badge tone="success">{readyCount} ready</Badge>
             {ambiguousCount > 0 && <Badge tone="warning">{ambiguousCount} need review</Badge>}
           </div>
-          <ul className="mt-2 flex flex-col gap-1 text-[12px] text-[var(--muted)]">
+          <ul className="mt-2 flex flex-col gap-1 text-caption text-[var(--muted)]">
             {mappedRows.slice(0, 5).map((r, i) => (
               <li key={i}>{"name" in r.candidate.payload ? r.candidate.payload.name || "(no name)" : ""}</li>
             ))}
@@ -362,7 +362,7 @@ export default function CsvImportFlow({
   if (step === "confirming") {
     return (
       <Surface elevated className="flex flex-col gap-3">
-        <p className="text-[14px] font-medium text-[var(--text)]">
+        <p className="text-body-sm font-medium text-[var(--text)]">
           Importing {confirmProgress.done} of {confirmProgress.total}…
         </p>
       </Surface>

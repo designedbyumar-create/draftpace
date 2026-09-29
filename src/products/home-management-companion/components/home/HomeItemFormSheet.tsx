@@ -243,7 +243,7 @@ export default function HomeItemFormSheet({
           </>
         }
       >
-        {error && <p className="text-[13px] text-[var(--danger)]">{error}</p>}
+        {error && <p className="text-body-sm text-[var(--danger)]">{error}</p>}
         <ul className="flex flex-col gap-2">
           {suggestion.care.map((task, index) => (
             <li key={task.taskName}>
@@ -255,8 +255,8 @@ export default function HomeItemFormSheet({
                   className="mt-0.5 h-4 w-4 shrink-0 rounded border-[var(--border-strong)] text-[var(--primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]"
                 />
                 <span>
-                  <span className="block text-[13px] font-semibold text-[var(--text)]">{task.taskName}</span>
-                  <span className="block text-[12px] text-[var(--muted)]">
+                  <span className="block text-body-sm font-semibold text-[var(--text)]">{task.taskName}</span>
+                  <span className="block text-caption text-[var(--muted)]">
                     {describeCadence(task)}
                   </span>
                 </span>
@@ -381,7 +381,7 @@ export default function HomeItemFormSheet({
         value={values.notes}
         onChange={(event) => setValues({ ...values, notes: event.target.value })}
       />
-      {error && <p className="text-[13px] text-[var(--danger)]">{error}</p>}
+      {error && <p className="text-body-sm text-[var(--danger)]">{error}</p>}
     </RecordFormSheet>
   );
 }

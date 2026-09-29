@@ -159,7 +159,7 @@ export default function ReportProblemSheet({
       )}
 
       {match?.matchedOn && !itemTouched && (
-        <p className="text-[12px] text-[var(--muted)]">
+        <p className="text-caption text-[var(--muted)]">
           {match.kind === "item" && (
             <>
               Sounds like it&apos;s about your <span className="font-semibold text-[var(--text)]">{match.matchedOn}</span>.
@@ -195,7 +195,7 @@ export default function ReportProblemSheet({
       </Select>
 
       {providerSuggestion && (
-        <p className="text-[12px] text-[var(--muted)]">
+        <p className="text-caption text-[var(--muted)]">
           You&apos;ve used <span className="font-semibold text-[var(--text)]">{providerSuggestion.provider.name}</span>{" "}
           for {providerSuggestion.categoryLabel.toLowerCase()} issues before.
         </p>
@@ -216,7 +216,7 @@ export default function ReportProblemSheet({
         ))}
       </Select>
 
-      {error && <p className="text-[13px] text-[var(--danger)]">{error}</p>}
+      {error && <p className="text-body-sm text-[var(--danger)]">{error}</p>}
     </RecordFormSheet>
   );
 }

@@ -77,10 +77,10 @@ export default function RecordFormSheet({
       >
         <div className="mb-4 flex items-start justify-between gap-4">
           <div>
-            <p id="hmc-record-form-title" className="text-[16px] font-semibold text-[var(--text)]">
+            <p id="hmc-record-form-title" className="text-body-lg font-semibold text-[var(--text)]">
               {title}
             </p>
-            {description && <p className="mt-1 text-[13px] leading-relaxed text-[var(--muted)]">{description}</p>}
+            {description && <p className="mt-1 text-body-sm leading-relaxed text-[var(--muted)]">{description}</p>}
           </div>
           <button
             type="button"

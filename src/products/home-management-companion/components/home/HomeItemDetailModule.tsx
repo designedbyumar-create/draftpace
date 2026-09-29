@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
+import { textLinkClassName } from "@/design-system/textLinkStyles";
 import Badge from "@/design-system/Badge";
 import Button from "@/design-system/Button";
 import Surface from "@/design-system/Surface";
@@ -290,7 +291,7 @@ export default function HomeItemDetailModule() {
     <div className="pb-20 lg:pb-0">
       <Link
         href="/app/products/home-management-companion/workspace"
-        className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--muted)] hover:text-[var(--text)]"
+        className="inline-flex items-center gap-1.5 text-body-sm font-semibold text-[var(--muted)] hover:text-[var(--text)]"
       >
         <ArrowLeft size={14} aria-hidden />
         Your home
@@ -300,15 +301,15 @@ export default function HomeItemDetailModule() {
         <div className="flex min-w-0 items-start gap-3.5">
           <CategoryIcon type={item.type} size={19} />
           <div className="min-w-0">
-            <p className="text-[12px] font-semibold uppercase tracking-[0.12em] text-[var(--faint)]">{typeLabel(item.type)}</p>
+            <p className="text-caption font-semibold uppercase tracking-[0.12em] text-[var(--faint)]">{typeLabel(item.type)}</p>
             <h1
-              className="mt-1 text-[24px] font-medium leading-[1.15] tracking-[-0.01em] text-[var(--text)] sm:text-[28px]"
+              className="mt-1 text-heading font-medium tracking-[-0.01em] text-[var(--text)]"
               style={{ fontFamily: "var(--product-narrative-font)", textWrap: "balance" }}
             >
               {item.name}
             </h1>
             {(item.brand || item.model) && (
-              <p className="mt-1 text-[13px] text-[var(--muted)]">{[item.brand, item.model].filter(Boolean).join(" ")}</p>
+              <p className="mt-1 text-body-sm text-[var(--muted)]">{[item.brand, item.model].filter(Boolean).join(" ")}</p>
             )}
           </div>
         </div>
@@ -336,8 +337,8 @@ export default function HomeItemDetailModule() {
               </Surface>
               {item.notes && (
                 <Surface>
-                  <h2 className="text-[11px] font-bold uppercase tracking-[0.1em] text-[var(--faint)]">Notes</h2>
-                  <p className="mt-1.5 text-[13px] leading-relaxed text-[var(--text)]">{item.notes}</p>
+                  <h2 className="text-eyebrow font-bold uppercase text-[var(--faint)]">Notes</h2>
+                  <p className="mt-1.5 text-body-sm leading-relaxed text-[var(--text)]">{item.notes}</p>
                 </Surface>
               )}
               {item.documentLink && (
@@ -345,7 +346,7 @@ export default function HomeItemDetailModule() {
                   href={item.documentLink}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex w-fit items-center gap-1.5 text-[13px] font-semibold text-[var(--primary)] hover:underline"
+                  className={textLinkClassName({ className: "w-fit" })}
                 >
                   <LinkSimple size={14} aria-hidden />
                   Manual or receipt link
@@ -369,20 +370,20 @@ export default function HomeItemDetailModule() {
             <div className="flex flex-col gap-5">
               <div>
                 <div className="flex items-center justify-between">
-                  <h2 className="text-[11px] font-bold uppercase tracking-[0.1em] text-[var(--faint)]">Maintenance</h2>
+                  <h2 className="text-eyebrow font-bold uppercase text-[var(--faint)]">Maintenance</h2>
                   <Button size="sm" variant="ghost" iconLeft={<Plus size={13} aria-hidden />} onClick={() => setTaskFormOpen(true)}>
                     Add task
                   </Button>
                 </div>
                 {itemTasks.length === 0 ? (
-                  <p className="mt-2 text-[13px] text-[var(--muted)]">Nothing recurring set up for this yet.</p>
+                  <p className="mt-2 text-body-sm text-[var(--muted)]">Nothing recurring set up for this yet.</p>
                 ) : (
                   <ul className="mt-2 flex flex-col gap-2">
                     {itemTasks.map((task) => (
                       <li key={task.id} className="flex items-center justify-between gap-3 rounded-lg border border-[var(--border)] p-3.5">
                         <div>
-                          <p className="text-[13px] font-semibold text-[var(--text)]">{task.name}</p>
-                          <p className="mt-0.5 text-[12px] text-[var(--muted)]">{describeCareFor(task)}</p>
+                          <p className="text-body-sm font-semibold text-[var(--text)]">{task.name}</p>
+                          <p className="mt-0.5 text-caption text-[var(--muted)]">{describeCareFor(task)}</p>
                         </div>
                         <Button size="sm" variant="secondary" onClick={() => setActionTask(task)}>
                           Action
@@ -395,22 +396,22 @@ export default function HomeItemDetailModule() {
 
               <div>
                 <div className="flex items-center justify-between">
-                  <h2 className="text-[11px] font-bold uppercase tracking-[0.1em] text-[var(--faint)]">Open problems</h2>
+                  <h2 className="text-eyebrow font-bold uppercase text-[var(--faint)]">Open problems</h2>
                   <Button size="sm" variant="ghost" iconLeft={<Plus size={13} aria-hidden />} onClick={() => setReportOpen(true)}>
                     Report a problem
                   </Button>
                 </div>
                 {openProblems.length === 0 ? (
-                  <p className="mt-2 text-[13px] text-[var(--muted)]">Nothing currently broken here.</p>
+                  <p className="mt-2 text-body-sm text-[var(--muted)]">Nothing currently broken here.</p>
                 ) : (
                   <ul className="mt-2 flex flex-col gap-2">
                     {openProblems.map((problem) => (
                       <li key={problem.id} className="rounded-lg border border-[var(--warning)]/30 bg-[var(--warning-soft)] p-3.5">
                         <div className="flex items-center gap-2">
                           <WarningCircle className="h-4 w-4 shrink-0 text-[var(--warning)]" aria-hidden />
-                          <p className="text-[13px] font-semibold text-[var(--text)]">{problem.title}</p>
+                          <p className="text-body-sm font-semibold text-[var(--text)]">{problem.title}</p>
                         </div>
-                        <p className="mt-1 text-[12px] text-[var(--muted)]">
+                        <p className="mt-1 text-caption text-[var(--muted)]">
                           {SEVERITY_LABEL[problem.severity]}
                           {problem.resolutionStatus === "scheduled" && problem.scheduledAt && ` · someone's coming ${problem.scheduledAt}`}
                         </p>
@@ -431,17 +432,17 @@ export default function HomeItemDetailModule() {
             <ul className="flex flex-col gap-2">
               {itemLog.map((entry) => (
                 <li key={entry.id} className="rounded-lg border border-[var(--border)] p-3.5">
-                  <p className="text-[13px] font-semibold text-[var(--text)]">{entry.description}</p>
-                  <p className="mt-0.5 text-[12px] text-[var(--muted)]">
+                  <p className="text-body-sm font-semibold text-[var(--text)]">{entry.description}</p>
+                  <p className="mt-0.5 text-caption text-[var(--muted)]">
                     {describeEvent(entry, entry.providerId ? providerById.get(entry.providerId)?.name ?? null : null)}
                   </p>
-                  {entry.notes && <p className="mt-1.5 text-[12px] leading-relaxed text-[var(--text)]">{entry.notes}</p>}
+                  {entry.notes && <p className="mt-1.5 text-caption leading-relaxed text-[var(--text)]">{entry.notes}</p>}
                 </li>
               ))}
               {resolvedProblems.map((problem) => (
                 <li key={problem.id} className="rounded-lg border border-[var(--border)] p-3.5">
-                  <p className="text-[13px] font-semibold text-[var(--text)]">{problem.title}</p>
-                  <p className="mt-0.5 text-[12px] text-[var(--muted)]">
+                  <p className="text-body-sm font-semibold text-[var(--text)]">{problem.title}</p>
+                  <p className="mt-0.5 text-caption text-[var(--muted)]">
                     {problem.resolvedAt ? `Sorted ${describeElapsed(daysBetween(problem.resolvedAt, new Date()))}` : "Sorted"}
                   </p>
                 </li>
@@ -451,13 +452,13 @@ export default function HomeItemDetailModule() {
 
           <TabPanel id="records" activeId={activeTab} idPrefix="item-detail">
             <div className="flex items-center justify-between">
-              <h2 className="text-[11px] font-bold uppercase tracking-[0.1em] text-[var(--faint)]">Documents</h2>
+              <h2 className="text-eyebrow font-bold uppercase text-[var(--faint)]">Documents</h2>
               <Button size="sm" variant="ghost" iconLeft={<Plus size={13} aria-hidden />} onClick={() => setDocumentFormOpen(true)}>
                 Add document
               </Button>
             </div>
             {itemDocuments.length === 0 ? (
-              <p className="mt-2 text-[13px] text-[var(--muted)]">No warranty, receipt, or manual saved here yet.</p>
+              <p className="mt-2 text-body-sm text-[var(--muted)]">No warranty, receipt, or manual saved here yet.</p>
             ) : (
               <ul className="mt-2 flex flex-col gap-2">
                 {itemDocuments.map((doc) => (
@@ -466,11 +467,11 @@ export default function HomeItemDetailModule() {
                       href={doc.documentLink}
                       target="_blank"
                       rel="noreferrer"
-                      className="text-[13px] font-semibold text-[var(--text)] hover:text-[var(--primary)] hover:underline"
+                      className="text-body-sm font-semibold text-[var(--text)] hover:text-[var(--primary)] hover:underline"
                     >
                       {doc.label || doc.kind}
                     </a>
-                    <p className="mt-0.5 text-[12px] text-[var(--muted)]">
+                    <p className="mt-0.5 text-caption text-[var(--muted)]">
                       {doc.kind.charAt(0).toUpperCase() + doc.kind.slice(1)}
                       {doc.documentDate && ` · ${doc.documentDate}`}
                     </p>
@@ -485,12 +486,12 @@ export default function HomeItemDetailModule() {
               {peopleOnThisItem.map(({ provider, events }) => (
                 <li key={provider.id} className="rounded-lg border border-[var(--border)] p-3.5">
                   <div className="flex flex-wrap items-baseline justify-between gap-2">
-                    <p className="text-[14px] font-semibold text-[var(--text)]">{provider.name}</p>
-                    {provider.phone && <p className="text-[12px] text-[var(--muted)]">{provider.phone}</p>}
+                    <p className="text-body-sm font-semibold text-[var(--text)]">{provider.name}</p>
+                    {provider.phone && <p className="text-caption text-[var(--muted)]">{provider.phone}</p>}
                   </div>
                   <ul className="mt-2 flex flex-col gap-1">
                     {events.map((entry) => (
-                      <li key={entry.id} className="text-[12px] text-[var(--muted)]">
+                      <li key={entry.id} className="text-caption text-[var(--muted)]">
                         {entry.description} · {describeElapsed(daysBetween(entry.performedAt, new Date()))}
                         {entry.costMinorUnits !== null && ` · ${formatCurrency(entry.costMinorUnits, HOME_BASE_CURRENCY)}`}
                       </li>
@@ -546,8 +547,8 @@ export default function HomeItemDetailModule() {
 function Field({ label, value }: { label: string; value: string | null }) {
   return (
     <div>
-      <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-[var(--faint)]">{label}</p>
-      <p className="mt-1 text-[13px] text-[var(--text)]">{value || <span className="text-[var(--faint)]">Not set</span>}</p>
+      <p className="text-eyebrow font-bold uppercase text-[var(--faint)]">{label}</p>
+      <p className="mt-1 text-body-sm text-[var(--text)]">{value || <span className="text-[var(--faint)]">Not set</span>}</p>
     </div>
   );
 }

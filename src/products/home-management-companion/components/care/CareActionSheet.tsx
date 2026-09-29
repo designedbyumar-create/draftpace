@@ -177,7 +177,7 @@ export default function CareActionSheet({
       }
     >
       <div>
-        <p className="mb-1.5 text-[13px] font-semibold text-[var(--text)]">What happened?</p>
+        <p className="mb-1.5 text-body-sm font-semibold text-[var(--text)]">What happened?</p>
         <div className="flex gap-2">
           <OutcomeChoice label="I took care of it" selected={outcome === "done"} onSelect={() => setOutcome("done")} />
           <OutcomeChoice label="Skipping this round" selected={outcome === "skipped"} onSelect={() => setOutcome("skipped")} />
@@ -185,7 +185,7 @@ export default function CareActionSheet({
       </div>
 
       {outcome === "skipped" ? (
-        <p className="text-[13px] leading-relaxed text-[var(--muted)]">
+        <p className="text-body-sm leading-relaxed text-[var(--muted)]">
           No problem. This moves to its next round and Home Base will bring it up again then, as though this one had passed
           normally.
         </p>
@@ -241,7 +241,7 @@ export default function CareActionSheet({
         </>
       )}
 
-      {error && <p className="text-[13px] text-[var(--danger)]">{error}</p>}
+      {error && <p className="text-body-sm text-[var(--danger)]">{error}</p>}
     </RecordFormSheet>
   );
 }
@@ -252,7 +252,7 @@ function OutcomeChoice({ label, selected, onSelect }: { label: string; selected:
       type="button"
       onClick={onSelect}
       aria-pressed={selected}
-      className={`flex-1 rounded-lg border px-3 py-2.5 text-[13px] font-semibold transition-colors duration-[var(--dur-fast)] ease-[var(--ease-out)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] ${
+      className={`flex-1 rounded-lg border px-3 py-2.5 text-body-sm font-semibold transition-colors duration-[var(--dur-fast)] ease-[var(--ease-out)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] ${
         selected
           ? "border-[var(--primary)] bg-[var(--primary-soft)] text-[var(--primary)]"
           : "border-[var(--border-strong)] text-[var(--muted)] hover:text-[var(--text)]"

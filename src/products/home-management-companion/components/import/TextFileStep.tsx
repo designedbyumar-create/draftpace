@@ -89,9 +89,9 @@ export default function TextFileStep({
   return (
     <Surface elevated className="flex flex-col gap-4">
       <div>
-        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Text file</p>
-        <h2 className="mt-1 text-[17px] font-semibold text-[var(--text)]">Upload a plain text file.</h2>
-        <p className="mt-1.5 text-[13px] leading-relaxed text-[var(--muted)]">
+        <p className="text-eyebrow font-bold uppercase text-[var(--primary)]">Text file</p>
+        <h2 className="mt-1 text-heading-sm font-semibold text-[var(--text)]">Upload a plain text file.</h2>
+        <p className="mt-1.5 text-body-sm leading-relaxed text-[var(--muted)]">
           The same pattern-matching Draftpace uses for pasted notes, applied to a .txt file. The file itself is never
           stored: only what you confirm is saved.
         </p>
@@ -113,7 +113,7 @@ export default function TextFileStep({
         type="button"
         onClick={() => inputRef.current?.click()}
         disabled={busy}
-        className="rounded-lg border border-dashed border-[var(--border)] p-6 text-center text-[13px] font-medium text-[var(--muted)] hover:border-[var(--primary)] hover:text-[var(--text)]"
+        className="rounded-lg border border-dashed border-[var(--border)] p-6 text-center text-body-sm font-medium text-[var(--muted)] hover:border-[var(--primary)] hover:text-[var(--text)]"
       >
         {busy ? "Looking for records…" : fileName ? `Selected: ${fileName}` : "Choose a .txt file"}
       </button>

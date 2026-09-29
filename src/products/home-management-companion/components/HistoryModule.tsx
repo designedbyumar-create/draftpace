@@ -88,7 +88,7 @@ export default function HistoryModule() {
     <div className="flex flex-col gap-6">
       <div>
         <h1 className="text-xl font-semibold text-[var(--text)]">What&apos;s been done</h1>
-        <p className="mt-1 text-[13px] text-[var(--muted)]">
+        <p className="mt-1 text-body-sm text-[var(--muted)]">
           Your home&apos;s memory: what was taken care of, when, who did it, and what it cost.
         </p>
       </div>
@@ -105,9 +105,9 @@ export default function HistoryModule() {
             <li key={entry.id} className="flex items-start gap-3 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-3.5">
               <Clock className="mt-0.5 h-4 w-4 shrink-0 text-[var(--faint)]" aria-hidden />
               <div className="flex-1">
-                <p className="text-[13px] font-medium text-[var(--text)]">{entry.description}</p>
-                <p className="mt-0.5 text-[12px] text-[var(--muted)]">{describeEvent(entry, providerName(entry.providerId))}</p>
-                {entry.notes && <p className="mt-1.5 text-[12px] leading-relaxed text-[var(--text)]">{entry.notes}</p>}
+                <p className="text-body-sm font-medium text-[var(--text)]">{entry.description}</p>
+                <p className="mt-0.5 text-caption text-[var(--muted)]">{describeEvent(entry, providerName(entry.providerId))}</p>
+                {entry.notes && <p className="mt-1.5 text-caption leading-relaxed text-[var(--text)]">{entry.notes}</p>}
               </div>
             </li>
           ))}

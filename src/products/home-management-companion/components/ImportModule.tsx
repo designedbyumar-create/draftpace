@@ -122,7 +122,7 @@ export default function ImportModule() {
       <div className="flex flex-col gap-6">
         <div>
           <h1 className="text-xl font-semibold text-[var(--text)]">Tell Home Base about your home</h1>
-          <p className="mt-1 text-[13px] text-[var(--muted)]">
+          <p className="mt-1 text-body-sm text-[var(--muted)]">
             Tell Home Base what you already know about your home. It looks for patterns, never AI, and nothing is saved
             until you say so.
           </p>
@@ -193,7 +193,7 @@ export default function ImportModule() {
 
   return (
     <Surface elevated className="flex flex-col gap-4">
-      <p className="text-[15px] font-semibold text-[var(--text)]">
+      <p className="text-body font-semibold text-[var(--text)]">
         {confirmedCount} {confirmedCount === 1 ? "thing" : "things"} added to your home.
       </p>
       <div className="flex flex-wrap gap-2.5">
@@ -233,8 +233,8 @@ function MethodCard({
         <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[var(--primary-soft)] text-[var(--primary)]">
           <Icon size={15} aria-hidden />
         </div>
-        <p className="text-[14px] font-semibold text-[var(--text)]">{title}</p>
-        <p className="text-[12px] text-[var(--muted)]">{description}</p>
+        <p className="text-body-sm font-semibold text-[var(--text)]">{title}</p>
+        <p className="text-caption text-[var(--muted)]">{description}</p>
       </Surface>
     </button>
   );
@@ -242,7 +242,7 @@ function MethodCard({
 
 function BackToChooser({ onClick }: { onClick: () => void }) {
   return (
-    <button type="button" onClick={onClick} className="flex items-center gap-1.5 text-[12px] font-semibold text-[var(--muted)] hover:text-[var(--text)]">
+    <button type="button" onClick={onClick} className="flex items-center gap-1.5 text-caption font-semibold text-[var(--muted)] hover:text-[var(--text)]">
       <ArrowLeft size={13} aria-hidden />
       Choose a different method
     </button>

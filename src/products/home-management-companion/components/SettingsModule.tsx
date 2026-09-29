@@ -133,8 +133,8 @@ export default function SettingsModule() {
 
       <Surface className="flex items-center justify-between gap-4">
         <div>
-          <h2 className="text-[13px] font-semibold text-[var(--text)]">Your home</h2>
-          <p className="mt-0.5 text-[12px] leading-relaxed text-[var(--muted)]">Add or update what's in your home and how it's looked after.</p>
+          <h2 className="text-body-sm font-semibold text-[var(--text)]">Your home</h2>
+          <p className="mt-0.5 text-caption leading-relaxed text-[var(--muted)]">Add or update what's in your home and how it's looked after.</p>
         </div>
         <Button variant="secondary" href="/app/products/home-management-companion/setup">
           Manage your home
@@ -142,8 +142,8 @@ export default function SettingsModule() {
       </Surface>
 
       <Surface>
-        <h2 className="text-[13px] font-semibold text-[var(--text)]">Time zone</h2>
-        <p className="mt-0.5 text-[12px] text-[var(--muted)]">Used to keep reminders inside a reasonable local time, never sent late at night or before your day starts.</p>
+        <h2 className="text-body-sm font-semibold text-[var(--text)]">Time zone</h2>
+        <p className="mt-0.5 text-caption text-[var(--muted)]">Used to keep reminders inside a reasonable local time, never sent late at night or before your day starts.</p>
         <div className="mt-3 flex flex-wrap items-center gap-2">
           <div className="max-w-xs flex-1">
             {supportedTimeZones.length > 0 ? (
@@ -159,7 +159,7 @@ export default function SettingsModule() {
                 ))}
               </Select>
             ) : (
-              <p className="text-[13px] text-[var(--text)]">{preferences.timezone}</p>
+              <p className="text-body-sm text-[var(--text)]">{preferences.timezone}</p>
             )}
           </div>
           {detectedTimezone && detectedTimezone !== preferences.timezone && (
@@ -171,8 +171,8 @@ export default function SettingsModule() {
       </Surface>
 
       <Surface>
-        <h2 className="text-[13px] font-semibold text-[var(--text)]">Notification preview privacy</h2>
-        <p className="mt-0.5 text-[12px] text-[var(--muted)]">How much detail appears in a notification preview.</p>
+        <h2 className="text-body-sm font-semibold text-[var(--text)]">Notification preview privacy</h2>
+        <p className="mt-0.5 text-caption text-[var(--muted)]">How much detail appears in a notification preview.</p>
         <div className="mt-3 max-w-xs">
           <Select
             label="Privacy level"
@@ -189,14 +189,14 @@ export default function SettingsModule() {
       </Surface>
 
       <Surface>
-        <h2 className="text-[13px] font-semibold text-[var(--text)]">What Home Base should remember for you</h2>
-        <p className="mt-0.5 text-[12px] text-[var(--muted)]">
+        <h2 className="text-body-sm font-semibold text-[var(--text)]">What Home Base should remember for you</h2>
+        <p className="mt-0.5 text-caption text-[var(--muted)]">
           Nothing is sent unless a category is on here and notifications are enabled.
         </p>
         <div className="mt-3 flex flex-col gap-2">
           {notificationCategorySchema.options.map((category: NotificationCategory) => (
             <div key={category} className="flex items-center justify-between rounded-lg border border-[var(--border)] p-3">
-              <span className="text-[13px] font-medium text-[var(--text)]">{NOTIFICATION_CATEGORY_LABEL[category]}</span>
+              <span className="text-body-sm font-medium text-[var(--text)]">{NOTIFICATION_CATEGORY_LABEL[category]}</span>
               <Toggle
                 checked={preferences.categories[category] === true}
                 onChange={(checked) => persist({ ...preferences, categories: { ...preferences.categories, [category]: checked } })}

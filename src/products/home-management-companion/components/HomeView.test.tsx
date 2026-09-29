@@ -34,7 +34,7 @@ function render(state: HomeState, over: Partial<HomeViewProps> = {}) {
     <HomeView
       home={state}
       headline="Something needs a look"
-      headlineSize="text-[30px]"
+      headlineSize="text-heading"
       gap="gap-8"
       care={state.worthTakingCareOf}
       hiddenCare={0}

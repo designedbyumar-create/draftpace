@@ -58,11 +58,11 @@ function moodOf(home: HomeState): HomeMood {
  * needing action is not the moment for generous whitespace.
  */
 const MOOD_LAYOUT: Record<HomeMood, { gap: string; headline: string }> = {
-  unknown: { gap: "gap-8", headline: "text-[28px] sm:text-[34px]" },
-  settled: { gap: "gap-9", headline: "text-[28px] sm:text-[34px]" },
-  upcoming: { gap: "gap-8", headline: "text-[27px] sm:text-[32px]" },
-  todo: { gap: "gap-7", headline: "text-[25px] sm:text-[29px]" },
-  wrong: { gap: "gap-6", headline: "text-[25px] sm:text-[29px]" },
+  unknown: { gap: "gap-8", headline: "text-heading" },
+  settled: { gap: "gap-9", headline: "text-heading" },
+  upcoming: { gap: "gap-8", headline: "text-heading" },
+  todo: { gap: "gap-7", headline: "text-heading" },
+  wrong: { gap: "gap-6", headline: "text-heading" },
 };
 
 const TOUR_STEPS: TourStep[] = [

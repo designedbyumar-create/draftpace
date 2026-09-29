@@ -125,7 +125,7 @@ export default function HomeItemDocumentFormSheet({
         value={values.notes}
         onChange={(event) => setValues({ ...values, notes: event.target.value })}
       />
-      {error && <p className="text-[13px] text-[var(--danger)]">{error}</p>}
+      {error && <p className="text-body-sm text-[var(--danger)]">{error}</p>}
     </RecordFormSheet>
   );
 }

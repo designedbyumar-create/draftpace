@@ -147,8 +147,8 @@ export default function CandidateReviewQueue({
   if (pending.length === 0) {
     return (
       <Surface elevated className="flex flex-col gap-4">
-        <p className="text-[15px] font-semibold text-[var(--text)]">All caught up.</p>
-        <p className="text-[13px] text-[var(--muted)]">Every candidate from this import has been reviewed.</p>
+        <p className="text-body font-semibold text-[var(--text)]">All caught up.</p>
+        <p className="text-body-sm text-[var(--muted)]">Every candidate from this import has been reviewed.</p>
         <Button variant="commit" size="md" onClick={onDone}>
           Continue
         </Button>
@@ -159,8 +159,8 @@ export default function CandidateReviewQueue({
   return (
     <Surface elevated className="flex flex-col gap-4">
       <div>
-        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Review</p>
-        <h2 className="mt-1 text-[17px] font-semibold text-[var(--text)]">
+        <p className="text-eyebrow font-bold uppercase text-[var(--primary)]">Review</p>
+        <h2 className="mt-1 text-heading-sm font-semibold text-[var(--text)]">
           Here&apos;s what Home Base understood.
         </h2>
         <div className="mt-2 flex flex-wrap gap-1.5">
@@ -176,7 +176,7 @@ export default function CandidateReviewQueue({
 
       {needsAttention.length > 0 && (
         <div>
-          <h2 className="text-[12px] font-bold uppercase tracking-[0.1em] text-[var(--faint)]">Needs a look ({needsAttention.length})</h2>
+          <h2 className="text-caption font-bold uppercase tracking-[0.1em] text-[var(--faint)]">Needs a look ({needsAttention.length})</h2>
           <ul className="mt-2 flex flex-col gap-3">
             {needsAttention.map(({ candidate, isUnsupported, duplicate }) => {
               const summary = summarizeCandidate(candidate);
@@ -185,7 +185,7 @@ export default function CandidateReviewQueue({
 
               return (
                 <li key={candidate.id} className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4">
-                  <p className="text-[11px] font-bold uppercase tracking-[0.08em] text-[var(--faint)]">
+                  <p className="text-eyebrow font-bold uppercase text-[var(--faint)]">
                     {isUnsupported ? "Not sure about this one" : `Looks like ${CANDIDATE_TYPE_LABEL[candidate.candidateType]}`}
                   </p>
 
@@ -210,8 +210,8 @@ export default function CandidateReviewQueue({
                     </div>
                   ) : (
                     <>
-                      <p className="mt-1 text-[15px] font-semibold text-[var(--text)]">{summary.title}</p>
-                      <ul className="mt-0.5 flex flex-col text-[13px] text-[var(--muted)]">
+                      <p className="mt-1 text-body font-semibold text-[var(--text)]">{summary.title}</p>
+                      <ul className="mt-0.5 flex flex-col text-body-sm text-[var(--muted)]">
                         {summary.lines.map((line, i) => (
                           <li key={i}>{line}</li>
                         ))}
@@ -222,14 +222,14 @@ export default function CandidateReviewQueue({
                   {candidate.ambiguityNotes.length > 0 && !isEditing && (
                     <div className="mt-2 flex flex-col gap-1">
                       {candidate.ambiguityNotes.map((note, i) => (
-                        <p key={i} className="text-[12px] text-[var(--warning)]">
+                        <p key={i} className="text-caption text-[var(--warning)]">
                           {note}
                         </p>
                       ))}
                     </div>
                   )}
 
-                  {!isEditing && <p className="mt-2 text-[11px] italic text-[var(--faint)]">Based on: &ldquo;{candidate.sourceReference}&rdquo;</p>}
+                  {!isEditing && <p className="mt-2 text-caption italic text-[var(--faint)]">Based on: &ldquo;{candidate.sourceReference}&rdquo;</p>}
 
                   {duplicate && !isEditing && (
                     <div className="mt-2">
@@ -293,7 +293,7 @@ export default function CandidateReviewQueue({
       {looksRight.length > 0 && (
         <div>
           <div className="flex items-center justify-between">
-            <h2 className="text-[12px] font-bold uppercase tracking-[0.1em] text-[var(--faint)]">Looks right ({looksRight.length})</h2>
+            <h2 className="text-caption font-bold uppercase tracking-[0.1em] text-[var(--faint)]">Looks right ({looksRight.length})</h2>
             <Button size="sm" variant="secondary" onClick={handleConfirmAllLooksRight} disabled={bulkConfirming || busyId !== null}>
               {bulkConfirming ? "Adding…" : `Add all ${looksRight.length}`}
             </Button>
@@ -307,7 +307,7 @@ export default function CandidateReviewQueue({
               if (isEditing) {
                 return (
                   <li key={candidate.id} className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3">
-                    <p className="text-[11px] font-bold uppercase tracking-[0.08em] text-[var(--faint)]">
+                    <p className="text-eyebrow font-bold uppercase text-[var(--faint)]">
                       Looks like {CANDIDATE_TYPE_LABEL[candidate.candidateType]}
                     </p>
                     <div className="mt-2 flex flex-col gap-2.5">
@@ -331,8 +331,8 @@ export default function CandidateReviewQueue({
                   className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3 py-2"
                 >
                   <div className="min-w-0">
-                    <p className="truncate text-[13px] font-medium text-[var(--text)]">{summary.title}</p>
-                    <p className="truncate text-[12px] text-[var(--muted)]">{summary.lines.join(" · ")}</p>
+                    <p className="truncate text-body-sm font-medium text-[var(--text)]">{summary.title}</p>
+                    <p className="truncate text-caption text-[var(--muted)]">{summary.lines.join(" · ")}</p>
                   </div>
                   <div className="flex shrink-0 gap-1.5">
                     <Button variant="action" size="sm" onClick={() => handleConfirm(candidate)} disabled={isBusy || bulkConfirming}>

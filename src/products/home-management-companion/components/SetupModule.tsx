@@ -242,7 +242,7 @@ export default function SetupModule() {
           sub="Tap whatever you have. Home Base already knows what these usually need, so that part isn't your job."
         >
           {tenure && (
-            <p className="text-[12px] text-[var(--muted)]">
+            <p className="text-caption text-[var(--muted)]">
               {tenure === "rent" ? "Set up for a home you rent." : "Set up for a home you own."}{" "}
               <button
                 type="button"
@@ -258,7 +258,7 @@ export default function SetupModule() {
               <PickTile key={type.id} type={type} selected={picked.has(type.id)} onToggle={() => togglePick(type.id)} />
             ))}
           </div>
-          {errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}
+          {errorMessage && <p className="text-body-sm text-[var(--danger)]">{errorMessage}</p>}
           <div className="flex flex-wrap items-center gap-3">
             <Button variant="commit" disabled={picked.size === 0} iconRight={<ArrowRight size={14} aria-hidden />} onClick={() => setStep("care")}>
               {picked.size === 0 ? "Pick a few" : `Continue with ${picked.size}`}
@@ -277,7 +277,7 @@ export default function SetupModule() {
           sub="This is the part Home Base handles for you. Untick anything that doesn't apply, and change any of it later."
         >
           {proposedCare.length === 0 ? (
-            <p className="text-[13px] text-[var(--muted)]">Nothing worth proposing for those, which is fine.</p>
+            <p className="text-body-sm text-[var(--muted)]">Nothing worth proposing for those, which is fine.</p>
           ) : (
             <ul className="flex flex-col gap-2">
               {proposedCare.map(({ type, care }) => (
@@ -285,7 +285,7 @@ export default function SetupModule() {
               ))}
             </ul>
           )}
-          {errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}
+          {errorMessage && <p className="text-body-sm text-[var(--danger)]">{errorMessage}</p>}
           <div className="flex flex-wrap gap-3">
             <Button variant="commit"
               disabled={busy}
@@ -316,7 +316,7 @@ export default function SetupModule() {
             autoFocus
           />
           {addedCount > 0 && (
-            <p className="text-[13px] text-[var(--muted)]">
+            <p className="text-body-sm text-[var(--muted)]">
               {`${addedCount === 1 ? "One thing" : `${addedCount} things`} in so far. That's already enough for Home Base to be useful.`}
             </p>
           )}
@@ -337,12 +337,12 @@ function Ask({ headline, sub, children }: { headline: string; sub: string; child
     <div className="flex flex-col gap-6">
       <div>
         <h1
-          className="text-[27px] font-medium leading-[1.15] tracking-[-0.01em] text-[var(--text)] sm:text-[32px]"
+          className="text-heading font-medium tracking-[-0.01em] text-[var(--text)]"
           style={{ fontFamily: "var(--product-narrative-font)", textWrap: "balance" }}
         >
           {headline}
         </h1>
-        <p className="mt-2 max-w-prose text-[14px] leading-relaxed text-[var(--muted)]">{sub}</p>
+        <p className="mt-2 max-w-prose text-body-sm leading-relaxed text-[var(--muted)]">{sub}</p>
       </div>
       {children}
     </div>
@@ -356,8 +356,8 @@ function Choice({ label, detail, onSelect }: { label: string; detail: string; on
       onClick={onSelect}
       className="rounded-xl border border-[var(--border-strong)] bg-[var(--surface)] p-4 text-left transition-colors duration-[var(--dur)] ease-[var(--ease-out)] hover:border-[var(--primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]"
     >
-      <p className="text-[15px] font-semibold text-[var(--text)]">{label}</p>
-      <p className="mt-0.5 text-[13px] text-[var(--muted)]">{detail}</p>
+      <p className="text-body font-semibold text-[var(--text)]">{label}</p>
+      <p className="mt-0.5 text-body-sm text-[var(--muted)]">{detail}</p>
     </button>
   );
 }
@@ -376,7 +376,7 @@ function PickTile({ type, selected, onToggle }: { type: HomeItemTypeDefinition; 
       <span className={selected ? "text-[var(--primary)]" : "text-[var(--faint)]"}>
         <Icon size={18} aria-hidden />
       </span>
-      <span className={`text-[13px] font-semibold ${selected ? "text-[var(--primary)]" : "text-[var(--text)]"}`}>{type.label}</span>
+      <span className={`text-body-sm font-semibold ${selected ? "text-[var(--primary)]" : "text-[var(--text)]"}`}>{type.label}</span>
     </button>
   );
 }
@@ -402,8 +402,8 @@ function CareRow({
           className="mt-0.5 h-4 w-4 shrink-0 rounded border-[var(--border-strong)] text-[var(--primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]"
         />
         <span className="min-w-0">
-          <span className="block text-[13px] font-semibold text-[var(--text)]">{care.taskName}</span>
-          <span className="block text-[12px] text-[var(--muted)]">
+          <span className="block text-body-sm font-semibold text-[var(--text)]">{care.taskName}</span>
+          <span className="block text-caption text-[var(--muted)]">
             {type.label} · {describeCadence(care)}
           </span>
         </span>
@@ -417,7 +417,7 @@ function SkipLink({ onClick, children }: { onClick: () => void; children: React.
     <button
       type="button"
       onClick={onClick}
-      className="self-start text-[13px] font-semibold text-[var(--muted)] underline-offset-4 hover:text-[var(--text)] hover:underline"
+      className="self-start text-body-sm font-semibold text-[var(--muted)] underline-offset-4 hover:text-[var(--text)] hover:underline"
     >
       {children}
     </button>

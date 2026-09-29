@@ -61,9 +61,9 @@ export default function PasteNotesStep({
   return (
     <Surface elevated className="flex flex-col gap-4">
       <div>
-        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Notes or messages</p>
-        <h2 className="mt-1 text-[17px] font-semibold text-[var(--text)]">Paste what you already know.</h2>
-        <p className="mt-1.5 text-[13px] leading-relaxed text-[var(--muted)]">
+        <p className="text-eyebrow font-bold uppercase text-[var(--primary)]">Notes or messages</p>
+        <h2 className="mt-1 text-heading-sm font-semibold text-[var(--text)]">Paste what you already know.</h2>
+        <p className="mt-1.5 text-body-sm leading-relaxed text-[var(--muted)]">
           Draftpace looks for patterns like warranty dates, repeat schedules, and phone numbers, one line at a time.
           Nothing is saved until you say so.
         </p>
@@ -76,7 +76,7 @@ export default function PasteNotesStep({
         onChange={(e) => setText(e.target.value)}
         placeholder={PLACEHOLDER}
         rows={8}
-        className="w-full rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3 text-[13px] leading-relaxed text-[var(--text)] placeholder:text-[var(--faint)] focus:border-[var(--primary)] focus:outline-none"
+        className="w-full rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3 text-body-sm leading-relaxed text-[var(--text)] placeholder:text-[var(--faint)] focus:border-[var(--primary)] focus:outline-none"
       />
 
       <div className="flex flex-wrap gap-2.5">
