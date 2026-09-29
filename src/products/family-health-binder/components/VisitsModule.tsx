@@ -79,7 +79,7 @@ function VisitForm({
       <TextAreaField label="Questions to ask" value={questions} onChange={setQuestions} placeholder={"Is the cough something to worry about?\nCan she swim this week?"} hint="One per line. They print on the visit page." rows={4} />
       <TextAreaField label="What was said or decided (add after)" value={notes} onChange={setNotes} rows={3} />
       <PrivateField checked={priv} onChange={setPriv} leaves="the visit page" />
-      {error && <p role="alert" className="text-[13px] text-[var(--danger)]">{error}</p>}
+      {error && <p role="alert" className="text-body-sm text-[var(--danger)]">{error}</p>}
       <div className="flex flex-wrap items-center gap-2">
         <Button variant="commit" onClick={save} disabled={pending || reason.trim().length === 0 || visitOn === ""}>
           {pending ? "Saving..." : visit ? "Save" : "Save the visit"}
@@ -96,7 +96,7 @@ function questionList(visit: Visit) {
   const questions = parseQuestions(visit.questions);
   if (questions.length === 0) return null;
   return (
-    <ul className="mt-1 list-disc pl-5 text-[14px] leading-relaxed text-[var(--text)]">
+    <ul className="mt-1 list-disc pl-5 text-body-sm leading-relaxed text-[var(--text)]">
       {questions.map((q, i) => (
         <li key={i}>{q}</li>
       ))}
@@ -155,7 +155,7 @@ export default function VisitsModule() {
         note={
           <>
             {questionList(visit)}
-            {visit.notes && <span className="mt-2 block whitespace-pre-line text-[14px] leading-relaxed text-[var(--text)]">{visit.notes}</span>}
+            {visit.notes && <span className="mt-2 block whitespace-pre-line text-body-sm leading-relaxed text-[var(--text)]">{visit.notes}</span>}
           </>
         }
         actions={
@@ -181,14 +181,14 @@ export default function VisitsModule() {
         }
       />
       {members.length > 1 && <PersonPicker people={members} activeId={member.id} onPick={(id) => { setPersonId(id); setEditing(null); }} />}
-      {error && <p role="alert" className="text-[13px] text-[var(--danger)]">{error}</p>}
+      {error && <p role="alert" className="text-body-sm text-[var(--danger)]">{error}</p>}
       {editing === "new" && <VisitForm instanceId={instanceId} member={member} providers={providers} onSaved={saved} onCancel={() => setEditing(null)} />}
 
       <div className={`${CARD} flex flex-col gap-6 p-5`}>
         <Section title="Coming up" count={upcoming.length}>
-          {upcoming.length === 0 ? <p className="text-[14px] text-[var(--muted)]">No visit planned for {member.name}.</p> : upcoming.map((v) => row(v, false))}
+          {upcoming.length === 0 ? <p className="text-body-sm text-[var(--muted)]">No visit planned for {member.name}.</p> : upcoming.map((v) => row(v, false))}
           {upcoming.length > 0 && (
-            <p className="mt-3 text-[14px] text-[var(--muted)]">
+            <p className="mt-3 text-body-sm text-[var(--muted)]">
               The next one prints on the visit page.{" "}
               <Link href={`/app/products/${FAMILY_HEALTH_BINDER_SLUG}/printables`} className="font-semibold text-[var(--primary)] hover:underline">
                 Go to Print

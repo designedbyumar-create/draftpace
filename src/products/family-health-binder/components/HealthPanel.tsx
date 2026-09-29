@@ -104,7 +104,7 @@ export default function HealthPanel({
           )
         }
       >
-        {rows.length === 0 && !adding && <p className="text-[14px] text-[var(--muted)]">{empty}</p>}
+        {rows.length === 0 && !adding && <p className="text-body-sm text-[var(--muted)]">{empty}</p>}
         {renderRows(rows, kind, extra)}
         {adding && <FactForm instanceId={instanceId} member={member} kind={kind} onSaved={(saved) => { onFact(saved); setEditing(null); }} onCancel={() => setEditing(null)} />}
       </Section>
@@ -116,7 +116,7 @@ export default function HealthPanel({
 
   return (
     <div className={`${CARD} flex flex-col gap-7 p-5`}>
-      {error && <p role="alert" className="text-[13px] text-[var(--danger)]">{error}</p>}
+      {error && <p role="alert" className="text-body-sm text-[var(--danger)]">{error}</p>}
       {renderBlock("allergy", mine.filter((f) => f.kind === "allergy"), `No allergies recorded for ${member.name}.`)}
       {renderBlock("condition", mine.filter((f) => f.kind === "condition"), `No conditions recorded for ${member.name}.`)}
       <div>
@@ -127,7 +127,7 @@ export default function HealthPanel({
         ))}
         {current.length > 0 && (
           <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 rounded-[var(--radius)] bg-[var(--surface-muted)] px-4 py-3">
-            <p className="text-[14px] text-[var(--muted)]">{describeMedicationsCheck(member, today)}.</p>
+            <p className="text-body-sm text-[var(--muted)]">{describeMedicationsCheck(member, today)}.</p>
             <Button size="sm" variant="secondary" disabled={busyId === "check"} onClick={checkList}>
               This list is right today
             </Button>
@@ -135,7 +135,7 @@ export default function HealthPanel({
         )}
         {past.length > 0 && (
           <details className="mt-3">
-            <summary className="cursor-pointer text-[14px] font-semibold text-[var(--muted)]">Stopped ({past.length})</summary>
+            <summary className="cursor-pointer text-body-sm font-semibold text-[var(--muted)]">Stopped ({past.length})</summary>
             {renderRows(past, "medication", (fact) => (
               <TextAction disabled={busyId === fact.id} onClick={() => setStopped(fact, null)}>
                 Taking it again

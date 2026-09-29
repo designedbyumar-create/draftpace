@@ -37,7 +37,7 @@ export default function PersonOverview({
     <li className="flex flex-col gap-2">
       <CareCard member={member} index={index} facts={facts} today={today} compact />
       {(next || latest || gaps.length > 0) && (
-        <div className="mx-1 flex flex-col gap-1 text-[14px] leading-snug text-[var(--muted)]">
+        <div className="mx-1 flex flex-col gap-1 text-body-sm leading-snug text-[var(--muted)]">
           {next && (
             <p>
               <span className="font-semibold text-[var(--text)]">Next visit</span> {describeVisit(next)}, {describeVisitTiming(next, today).toLowerCase()}

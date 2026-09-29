@@ -34,8 +34,8 @@ export default function CareCard({
       <div className="flex items-center gap-4">
         <PersonMark index={index} name={member.name} size={compact ? 44 : 56} />
         <div className="min-w-0">
-          <h2 className={`truncate font-semibold tracking-[-0.015em] text-[var(--text)] ${compact ? "text-[18px]" : "text-[22px]"}`}>{member.name}</h2>
-          <p className="text-[14px] text-[var(--muted)]">{[RELATIONSHIP_LABEL[member.relationship], age].filter(Boolean).join(" · ")}</p>
+          <h2 className="truncate text-heading-sm font-semibold text-[var(--text)]">{member.name}</h2>
+          <p className="text-body-sm text-[var(--muted)]">{[RELATIONSHIP_LABEL[member.relationship], age].filter(Boolean).join(" · ")}</p>
         </div>
       </div>
 
@@ -54,7 +54,7 @@ export default function CareCard({
       )}
 
       {!compact && (
-        <p className="mt-4 text-[14px] leading-relaxed text-[var(--muted)]">
+        <p className="mt-4 text-body-sm leading-relaxed text-[var(--muted)]">
           {medications.length > 0 ? (
             <>
               <span className="font-semibold text-[var(--text)]">Takes </span>

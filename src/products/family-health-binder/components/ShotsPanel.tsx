@@ -54,7 +54,7 @@ function ShotForm({
       <Input type="date" label="Date given" value={givenOn} onChange={(e) => setGivenOn(e.target.value)} containerClassName="max-w-[220px]" />
       <Input label="Note (optional)" value={note} onChange={(e) => setNote(e.target.value)} placeholder="Dose 2 of 3, at the pediatrician" />
       <PrivateField checked={priv} onChange={setPriv} leaves="the forms sheet" />
-      {error && <p role="alert" className="text-[13px] text-[var(--danger)]">{error}</p>}
+      {error && <p role="alert" className="text-body-sm text-[var(--danger)]">{error}</p>}
       <div className="flex flex-wrap items-center gap-2">
         <Button variant="commit" onClick={save} disabled={pending || vaccine.trim().length === 0 || givenOn === ""}>
           {pending ? "Saving..." : shot ? "Save" : "Add"}
@@ -117,9 +117,9 @@ export default function ShotsPanel({
           )
         }
       >
-        {error && <p role="alert" className="mb-2 text-[13px] text-[var(--danger)]">{error}</p>}
+        {error && <p role="alert" className="mb-2 text-body-sm text-[var(--danger)]">{error}</p>}
         {mine.length === 0 && editing !== "new" && (
-          <p className="text-[14px] leading-relaxed text-[var(--muted)]">
+          <p className="text-body-sm leading-relaxed text-[var(--muted)]">
             No vaccines recorded for {member.name}. Type them in from their record. This list shows only what you enter and never says what is due.
           </p>
         )}

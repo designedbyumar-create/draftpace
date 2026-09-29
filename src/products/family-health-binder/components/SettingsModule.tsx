@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import TextLink from "@/design-system/TextLink";
 import PauseProductControl from "@/components/product-shell/PauseProductControl";
 import { FAMILY_HEALTH_BINDER_SLUG } from "../instanceData";
 import { CARD, Heading, Section } from "./Care";
@@ -26,7 +26,7 @@ export default function SettingsModule() {
 
       <div className={`${CARD} flex flex-col gap-7 p-5`}>
         <Section title="What stays private">
-          <ul className="flex list-disc flex-col gap-2 pl-5 text-[14.5px] leading-relaxed text-[var(--text)]">
+          <ul className="flex list-disc flex-col gap-2 pl-5 text-body leading-relaxed text-[var(--text)]">
             <li>Each allergy, medication, symptom, vaccine and visit has a &ldquo;keep this private&rdquo; box. A private record stays in the app and is left off every printed page.</li>
             <li>Every printed page says how many records it left off, so a page never looks complete when it is not.</li>
             <li>Your binder is tied to your sign-in and is not shared with anyone. Nothing in it is read by an AI model, and there is no reminder or message sent about anyone.</li>
@@ -35,14 +35,14 @@ export default function SettingsModule() {
         </Section>
 
         <Section title="Pause this binder">
-          <p className="mb-3 text-[14px] leading-relaxed text-[var(--muted)]">Pausing keeps everything exactly as it is and only stops this binder from asking for your attention on Home.</p>
+          <p className="mb-3 text-body-sm leading-relaxed text-[var(--muted)]">Pausing keeps everything exactly as it is and only stops this binder from asking for your attention on Home.</p>
           <PauseProductControl instanceId={instanceId} />
         </Section>
 
         <Section title="The tour">
-          <Link href={`/app/products/${FAMILY_HEALTH_BINDER_SLUG}/workspace?tour=1`} className="text-[14.5px] font-semibold text-[var(--primary)] hover:underline">
+          <TextLink href={`/app/products/${FAMILY_HEALTH_BINDER_SLUG}/workspace?tour=1`} arrow>
             Show me around again
-          </Link>
+          </TextLink>
         </Section>
       </div>
     </div>

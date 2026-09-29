@@ -50,7 +50,7 @@ function ProviderForm({
       <Input label={kind === "pharmacy" ? "Pharmacy" : "Name"} value={name} onChange={(e) => setName(e.target.value)} placeholder={kind === "pharmacy" ? "Corner Pharmacy" : "Dr. Patel"} autoFocus />
       <Input label="Phone (optional)" type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="(555) 010-0100" />
       <Input label="Note (optional)" value={note} onChange={(e) => setNote(e.target.value)} placeholder="Pediatrics, Main Street office" />
-      {error && <p role="alert" className="text-[13px] text-[var(--danger)]">{error}</p>}
+      {error && <p role="alert" className="text-body-sm text-[var(--danger)]">{error}</p>}
       <div className="flex flex-wrap items-center gap-2">
         <Button variant="commit" onClick={save} disabled={pending || name.trim().length === 0}>
           {pending ? "Saving..." : provider ? "Save" : "Add"}
@@ -106,11 +106,11 @@ export default function CareTeamPanel({
   return (
     <div className={`${CARD} flex flex-col gap-7 p-5`}>
       {gaps.length > 0 && (
-        <p className="text-[14px] leading-relaxed text-[var(--muted)]">
+        <p className="text-body-sm leading-relaxed text-[var(--muted)]">
           <Tag tone="quiet">Not on the forms sheet yet</Tag> <span className="ml-1">{gaps.join(", ")}.</span>
         </p>
       )}
-      {error && <p role="alert" className="text-[13px] text-[var(--danger)]">{error}</p>}
+      {error && <p role="alert" className="text-body-sm text-[var(--danger)]">{error}</p>}
 
       <Section
         title="Doctors and pharmacy"
@@ -123,7 +123,7 @@ export default function CareTeamPanel({
           )
         }
       >
-        {team.length === 0 && editing !== "new" && <p className="text-[14px] text-[var(--muted)]">No doctors or pharmacy recorded for {member.name}.</p>}
+        {team.length === 0 && editing !== "new" && <p className="text-body-sm text-[var(--muted)]">No doctors or pharmacy recorded for {member.name}.</p>}
         {team.map((p) =>
           editing === p.id ? (
             <div key={p.id} className="py-3">
@@ -165,9 +165,9 @@ export default function CareTeamPanel({
         {notes ? (
           <CaregiverNotesForm member={member} onSaved={(m) => { onMember(m); setNotes(false); }} onCancel={() => setNotes(false)} />
         ) : member.caregiverNotes ? (
-          <p className="whitespace-pre-line text-[14.5px] leading-relaxed text-[var(--text)]">{member.caregiverNotes}</p>
+          <p className="whitespace-pre-line text-body leading-relaxed text-[var(--text)]">{member.caregiverNotes}</p>
         ) : (
-          <p className="text-[14px] text-[var(--muted)]">Nothing yet. Bedtime, comforts, fears: whatever a sitter or grandparent would need.</p>
+          <p className="text-body-sm text-[var(--muted)]">Nothing yet. Bedtime, comforts, fears: whatever a sitter or grandparent would need.</p>
         )}
       </Section>
     </div>

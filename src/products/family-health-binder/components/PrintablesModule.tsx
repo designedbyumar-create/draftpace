@@ -79,7 +79,7 @@ export default function PrintablesModule() {
     <div className="mx-auto flex w-full max-w-2xl flex-col gap-5">
       <Heading kicker="The pages that leave the house" title="Print" />
       {members.length > 1 && <PersonPicker people={members} activeId={member.id} onPick={setPersonId} />}
-      <p className="text-[14px] leading-relaxed text-[var(--muted)]">
+      <p className="text-body-sm leading-relaxed text-[var(--muted)]">
         {hidden > 0
           ? `${hidden === 1 ? "One record" : `${hidden} records`} marked private for ${member.name} stay${hidden === 1 ? "s" : ""} off every page.`
           : `Nothing is marked private for ${member.name}. Anything you mark private stays off every page.`}
@@ -89,9 +89,9 @@ export default function PrintablesModule() {
         {docs.map((doc) => (
           <li key={doc.id} className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 py-4 [&:not(:first-child)]:border-t [&:not(:first-child)]:border-[var(--border)]">
             <div className="min-w-0 flex-1 basis-64">
-              <p className="text-[16px] font-semibold text-[var(--text)]">{doc.title}</p>
-              <p className="mt-0.5 text-[14px] leading-snug text-[var(--muted)]">{doc.blurb}</p>
-              {doc.note && <p className="mt-1 text-[13.5px] leading-snug text-[var(--muted)]">{doc.note}</p>}
+              <p className="text-body-lg font-semibold text-[var(--text)]">{doc.title}</p>
+              <p className="mt-0.5 text-body-sm leading-snug text-[var(--muted)]">{doc.blurb}</p>
+              {doc.note && <p className="mt-1 text-body-sm leading-snug text-[var(--muted)]">{doc.note}</p>}
             </div>
             <Button variant={doc.id === "forms" ? "commit" : "action"} size="sm" disabled={making !== null} onClick={() => make(doc.id)}>
               {making === doc.id ? "Preparing..." : "Make it"}
@@ -99,7 +99,7 @@ export default function PrintablesModule() {
           </li>
         ))}
       </ul>
-      {error && <p role="alert" className="text-[13px] text-[var(--danger)]">{error}</p>}
+      {error && <p role="alert" className="text-body-sm text-[var(--danger)]">{error}</p>}
     </div>
   );
 }

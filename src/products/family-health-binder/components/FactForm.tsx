@@ -81,7 +81,7 @@ export default function FactForm({
       )}
       {kind === "allergy" && <Input label="What happens (optional)" value={reaction} onChange={(e) => setReaction(e.target.value)} placeholder="Hives" />}
       <PrivateField checked={priv} onChange={setPriv} leaves="every printed page" />
-      {error && <p role="alert" className="text-[13px] text-[var(--danger)]">{error}</p>}
+      {error && <p role="alert" className="text-body-sm text-[var(--danger)]">{error}</p>}
       <div className="flex flex-wrap items-center gap-2">
         <Button variant="commit" onClick={save} disabled={pending || detail.trim().length === 0}>
           {pending ? "Saving..." : fact ? "Save" : "Add"}

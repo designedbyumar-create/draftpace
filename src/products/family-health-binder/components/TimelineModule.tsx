@@ -82,7 +82,7 @@ function SymptomForm({
       <ChoiceRow label="How bad" options={SEVERITY} value={severity} onChange={setSeverity} />
       <Input label="What helped (optional)" value={whatHelped} onChange={(e) => setWhatHelped(e.target.value)} placeholder="Rest and fluids" />
       <PrivateField checked={priv} onChange={setPriv} leaves="every printed page" />
-      {error && <p role="alert" className="text-[13px] text-[var(--danger)]">{error}</p>}
+      {error && <p role="alert" className="text-body-sm text-[var(--danger)]">{error}</p>}
       <div className="flex flex-wrap items-center gap-2">
         <Button variant="commit" onClick={save} disabled={pending || description.trim().length === 0 || onsetAt === ""}>
           {pending ? "Saving..." : event ? "Save" : "Record it"}
@@ -141,13 +141,13 @@ export default function TimelineModule() {
         }
       />
       {members.length > 1 && <PersonPicker people={members} activeId={member.id} onPick={(id) => { setPersonId(id); setEditing(null); }} />}
-      {error && <p role="alert" className="text-[13px] text-[var(--danger)]">{error}</p>}
+      {error && <p role="alert" className="text-body-sm text-[var(--danger)]">{error}</p>}
 
       {editing === "new" && <SymptomForm instanceId={instanceId} member={member} onSaved={saved} onCancel={() => setEditing(null)} />}
 
       <div className={`${CARD} px-5`}>
         {mine.length === 0 ? (
-          <p className="py-5 text-[14px] text-[var(--muted)]">Nothing recorded for {member.name} yet. Note a symptom when it starts and the dates are there when someone asks.</p>
+          <p className="py-5 text-body-sm text-[var(--muted)]">Nothing recorded for {member.name} yet. Note a symptom when it starts and the dates are there when someone asks.</p>
         ) : (
           mine.map((event) =>
             editing === event.id ? (

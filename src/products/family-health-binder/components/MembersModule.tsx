@@ -97,7 +97,7 @@ export default function MembersModule() {
                 <RemoveControl what={member.name} pending={removing} onConfirm={removePerson} />
               </div>
             )}
-            {error && <p role="alert" className="text-[13px] text-[var(--danger)]">{error}</p>}
+            {error && <p role="alert" className="text-body-sm text-[var(--danger)]">{error}</p>}
 
             <Segmented label={`${member.name}'s card`} options={TABS} value={tab} onChange={setTab} />
 

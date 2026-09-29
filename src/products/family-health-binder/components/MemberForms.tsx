@@ -14,7 +14,7 @@ const blankToNull = (v: string) => (v.trim() === "" ? null : v.trim());
 function Actions({ pending, canSave, label, onSave, onCancel, error }: { pending: boolean; canSave: boolean; label: string; onSave: () => void; onCancel: () => void; error: string | null }) {
   return (
     <>
-      {error && <p role="alert" className="text-[13px] text-[var(--danger)]">{error}</p>}
+      {error && <p role="alert" className="text-body-sm text-[var(--danger)]">{error}</p>}
       <div className="flex flex-wrap items-center gap-2">
         <Button variant="commit" onClick={onSave} disabled={pending || !canSave}>
           {pending ? "Saving..." : label}
@@ -92,12 +92,12 @@ export function ContactsForm({ member, onSaved, onCancel }: { member: FamilyMemb
 
   return (
     <FormPanel>
-      <p className="text-[14px] font-semibold text-[var(--text)]">Emergency contact</p>
+      <p className="text-body-sm font-semibold text-[var(--text)]">Emergency contact</p>
       <div className="flex flex-wrap gap-3">
         <Input label="Name" value={emergencyName} onChange={(e) => setEmergencyName(e.target.value)} placeholder="Sam (dad)" containerClassName="min-w-[180px] flex-1" autoFocus />
         <Input label="Phone" type="tel" value={emergencyPhone} onChange={(e) => setEmergencyPhone(e.target.value)} placeholder="(555) 010-0142" containerClassName="min-w-[160px] flex-1" />
       </div>
-      <p className="mt-1 text-[14px] font-semibold text-[var(--text)]">Health insurance</p>
+      <p className="mt-1 text-body-sm font-semibold text-[var(--text)]">Health insurance</p>
       <Input label="Insurer" value={insurer} onChange={(e) => setInsurer(e.target.value)} placeholder="Acme Health" />
       <div className="flex flex-wrap gap-3">
         <Input label="Member ID" value={memberId} onChange={(e) => setMemberId(e.target.value)} containerClassName="min-w-[160px] flex-1" />
