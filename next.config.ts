@@ -1,3 +1,4 @@
+import path from "node:path";
 import type { NextConfig } from "next";
 
 /**
@@ -15,6 +16,13 @@ import type { NextConfig } from "next";
  * equity lands somewhere specific.
  */
 const nextConfig: NextConfig = {
+  // Pins the workspace root to this repo. Without it, Next.js walks up
+  // the filesystem looking for a lockfile to infer the monorepo root and
+  // finds an unrelated one in this machine's home directory, which is
+  // wrong and only ever shows up as a build warning locally - but pinning
+  // it removes the ambiguity outright rather than leaving it to whatever
+  // else happens to sit above this checkout on any given machine.
+  outputFileTracingRoot: path.join(__dirname),
   async redirects() {
     return [
       {
