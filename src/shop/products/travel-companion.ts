@@ -196,6 +196,12 @@ export const travelCompanionShopProduct: ShopProductInput = {
       stage: ["deciding", "owning"],
     },
     {
+      question: "Can I plan more than one trip, or is it stuck on the first one?",
+      answer:
+        "As many as you want, one after another. Today, Trip and People always show the one trip currently in progress; mark it done when it's over and it moves to Travel history, still readable and printable, and you start the next one fresh.",
+      stage: ["deciding", "owning"],
+    },
+    {
       question: "Is this another itinerary planner?",
       answer:
         "A planner is about deciding what your trip will be. This is about running the trip once it exists and starts changing. It never suggests a destination, never fills a day for you, has no opinion about your itinerary, and every blank stays blank until you write in it.",
@@ -307,6 +313,12 @@ export const travelCompanionShopProduct: ShopProductInput = {
    * it happens on.
    */
   tasks: [
+    {
+      label: "Start a new trip",
+      answer:
+        "A name is the only thing required. Say whether you're going to a country or travelling locally, add rough dates if you know them, and start adding what it's made of. You can plan as many trips as you want, one after another; only one is ever the current trip, the rest live in Travel history once they're done.",
+      destination: "trip",
+    },
     {
       label: "Find out what's happening today",
       answer: "Today is derived fresh from what you recorded: what is happening, what is coming, what you are waiting on.",
