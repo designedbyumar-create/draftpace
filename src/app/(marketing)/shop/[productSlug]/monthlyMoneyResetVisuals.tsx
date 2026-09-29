@@ -56,7 +56,7 @@ export function OverviewScreenMockup() {
             $600<span className="text-[0.5em] tracking-[-0.02em] opacity-55">.00</span>
           </p>
           <p className="mt-2 max-w-[26ch] text-[9.5px] leading-[1.5] opacity-70">
-            Not your bank&apos;s balance. This already holds back what you&apos;ve told it about.
+            Not your bank&apos;s balance. This already holds back the bills and savings you&apos;ve told it about.
           </p>
           <div className="mt-3 flex flex-wrap gap-1.5">
             <span className="inline-flex items-center gap-1 rounded-full bg-white/10 px-2 py-1 text-[9px] font-semibold ring-1 ring-inset ring-white/15">

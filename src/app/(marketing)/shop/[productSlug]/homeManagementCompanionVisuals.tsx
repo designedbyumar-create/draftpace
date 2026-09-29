@@ -270,7 +270,7 @@ export function SetupScreenMockup() {
           What&rsquo;s in your home?
         </p>
         <p className="mt-1 text-[8.5px] leading-relaxed" style={{ color: MUTED }}>
-          Tap what you have. Skip anything you are not sure about.
+          Tap whatever you have. Home Base already knows what these usually need.
         </p>
 
         <div className="mt-3 grid grid-cols-2 gap-1.5">
