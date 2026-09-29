@@ -41,7 +41,7 @@ export default function HelpModule() {
   const [opening, setOpening] = useState(false);
   const [startError, setStartError] = useState<string | null>(null);
 
-  if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
+  if (status === "loading") return <p className="text-body-sm text-[var(--faint)]">Loading...</p>;
   if (status === "no-instance") {
     return (
       <EmptyState
@@ -116,7 +116,7 @@ export default function HelpModule() {
   }
 
   if (opening) {
-    return <p className="text-[13px] text-[var(--faint)]">Opening...</p>;
+    return <p className="text-body-sm text-[var(--faint)]">Opening...</p>;
   }
 
   if (!closing && !offer && !errorMessage && !startError) {
@@ -126,23 +126,23 @@ export default function HelpModule() {
   return (
     <div className="mx-auto flex w-full max-w-2xl flex-col gap-6">
       <header>
-        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">Help</p>
+        <p className="text-eyebrow font-bold uppercase text-[var(--muted)]">Help</p>
         <h1
-          className="mt-2 text-[26px] leading-tight text-[var(--text)]"
+          className="mt-2 text-heading text-[var(--text)]"
           style={{ fontFamily: "var(--product-narrative-font, inherit)" }}
         >
           What do you need to do?
         </h1>
       </header>
 
-      {closing && <p className="text-[13px] text-[var(--muted)]">{closing}</p>}
+      {closing && <p className="text-body-sm text-[var(--muted)]">{closing}</p>}
 
       {offer && (
         <KeepOffer title={offer.title} pending={pending} onKeep={keepOffer} onDecline={() => setOffer(null)} />
       )}
 
-      {startError && <p className="text-[13px] text-[var(--danger)]">{startError}</p>}
-      {errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}
+      {startError && <p className="text-body-sm text-[var(--danger)]">{startError}</p>}
+      {errorMessage && <p className="text-body-sm text-[var(--danger)]">{errorMessage}</p>}
 
       <div>
         <Button

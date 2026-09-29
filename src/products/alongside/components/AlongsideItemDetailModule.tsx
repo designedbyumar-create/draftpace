@@ -200,7 +200,7 @@ export default function AlongsideItemDetailModule() {
     load();
   }
 
-  if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
+  if (status === "loading") return <p className="text-body-sm text-[var(--faint)]">Loading...</p>;
   if (status === "no-instance" || status === "error") {
     return (
       <EmptyState
@@ -231,7 +231,7 @@ export default function AlongsideItemDetailModule() {
   }
 
   if (opening) {
-    return <p className="text-[13px] text-[var(--faint)]">Opening...</p>;
+    return <p className="text-body-sm text-[var(--faint)]">Opening...</p>;
   }
 
   const now = new Date();
@@ -244,14 +244,14 @@ export default function AlongsideItemDetailModule() {
     <div className="mx-auto flex w-full max-w-2xl flex-col gap-7">
       <Link
         href="/app/products/alongside/life"
-        className="inline-flex w-fit items-center gap-1.5 text-[13px] text-[var(--muted)] hover:text-[var(--text)]"
+        className="inline-flex w-fit items-center gap-1.5 text-body-sm text-[var(--muted)] hover:text-[var(--text)]"
       >
         <ArrowLeft size={14} aria-hidden />
         Life
       </Link>
 
       <header>
-        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">
+        <p className="text-eyebrow font-bold uppercase text-[var(--primary)]">
           {KIND_LABEL[item.kind]}
         </p>
         {editing ? (
@@ -263,14 +263,14 @@ export default function AlongsideItemDetailModule() {
           />
         ) : (
           <h1
-            className="mt-2 text-[26px] leading-tight text-[var(--text)]"
+            className="mt-2 text-heading text-[var(--text)]"
             style={{ fontFamily: "var(--product-narrative-font, inherit)" }}
           >
             {item.title}
           </h1>
         )}
         {item.status === "done" && (
-          <p className="mt-1 text-[13px] text-[var(--muted)]">This is sorted.</p>
+          <p className="mt-1 text-body-sm text-[var(--muted)]">This is sorted.</p>
         )}
       </header>
 
@@ -278,8 +278,8 @@ export default function AlongsideItemDetailModule() {
           thing, so there is no second, drifting version of the same
           rule written for this screen. */}
       <section className="rounded-xl border border-[var(--border)] bg-[var(--surface-muted)] p-4">
-        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">Next attention</p>
-        <p className="mt-1.5 text-[15px] leading-6 text-[var(--text)]">
+        <p className="text-eyebrow font-bold uppercase text-[var(--muted)]">Next attention</p>
+        <p className="mt-1.5 text-body leading-6 text-[var(--text)]">
           {item.status !== "open" ? "Nothing, it is closed." : nextSignal ? nextSignal.line : "Nothing needs you about this right now."}
         </p>
       </section>
@@ -288,12 +288,12 @@ export default function AlongsideItemDetailModule() {
         {editing ? (
           <>
             <label className="flex flex-col gap-1.5">
-              <span className="text-[13px] font-semibold text-[var(--text)]">Note</span>
+              <span className="text-body-sm font-semibold text-[var(--text)]">Note</span>
               <textarea
                 value={noteDraft}
                 onChange={(event) => setNoteDraft(event.target.value)}
                 rows={3}
-                className="rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3.5 py-2.5 text-[14px] text-[var(--text)] outline-none focus:border-[var(--primary)]"
+                className="rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3.5 py-2.5 text-body-sm text-[var(--text)] outline-none focus:border-[var(--primary)]"
               />
             </label>
             {item.kind === "waiting" && (
@@ -321,22 +321,22 @@ export default function AlongsideItemDetailModule() {
           </>
         ) : (
           <>
-            {item.note && <p className="text-[14px] leading-6 text-[var(--text)]">{item.note}</p>}
+            {item.note && <p className="text-body-sm leading-6 text-[var(--text)]">{item.note}</p>}
             {item.waitingOn && (
-              <p className="text-[14px] leading-6 text-[var(--text)]">Waiting on {item.waitingOn}</p>
+              <p className="text-body-sm leading-6 text-[var(--text)]">Waiting on {item.waitingOn}</p>
             )}
-            {resume.leftOff && <p className="text-[14px] leading-6 text-[var(--text)]">{resume.leftOff}</p>}
+            {resume.leftOff && <p className="text-body-sm leading-6 text-[var(--text)]">{resume.leftOff}</p>}
             {resume.nextStep && (
-              <p className="text-[14px] leading-6 text-[var(--muted)]">Next: {resume.nextStep}</p>
+              <p className="text-body-sm leading-6 text-[var(--muted)]">Next: {resume.nextStep}</p>
             )}
             {item.nextAt && (
-              <p className="text-[13px] text-[var(--muted)]">
+              <p className="text-body-sm text-[var(--muted)]">
                 {item.userChosenDate ? "You said you would come back to this on " : "Set for "}
                 {new Date(item.nextAt).toLocaleDateString(undefined, { day: "numeric", month: "long" })}
               </p>
             )}
             {since !== null && since > 0 && (
-              <p className="text-[12px] text-[var(--faint)]">Last touched {describeDaysSince(since)}</p>
+              <p className="text-caption text-[var(--faint)]">Last touched {describeDaysSince(since)}</p>
             )}
             {waitingForm ? (
               <div className="flex flex-col gap-3 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4">
@@ -390,19 +390,19 @@ export default function AlongsideItemDetailModule() {
         </div>
       )}
 
-      {startError && <p className="text-[13px] text-[var(--danger)]">{startError}</p>}
-      {errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}
+      {startError && <p className="text-body-sm text-[var(--danger)]">{startError}</p>}
+      {errorMessage && <p className="text-body-sm text-[var(--danger)]">{errorMessage}</p>}
 
       <section>
-        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">History</p>
+        <p className="text-eyebrow font-bold uppercase text-[var(--muted)]">History</p>
         {events.length === 0 ? (
-          <p className="mt-2 text-[13px] text-[var(--faint)]">Nothing recorded about this yet.</p>
+          <p className="mt-2 text-body-sm text-[var(--faint)]">Nothing recorded about this yet.</p>
         ) : (
           <ul className="mt-3 flex flex-col gap-2">
             {events.map((event) => (
               <li key={event.id} className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3">
-                <p className="text-[14px] leading-6 text-[var(--text)]">{event.line}</p>
-                <p className="mt-1 text-[12px] text-[var(--faint)]">
+                <p className="text-body-sm leading-6 text-[var(--text)]">{event.line}</p>
+                <p className="mt-1 text-caption text-[var(--faint)]">
                   {new Date(event.occurredAt).toLocaleDateString(undefined, {
                     day: "numeric",
                     month: "long",

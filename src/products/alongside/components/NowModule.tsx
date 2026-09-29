@@ -114,7 +114,7 @@ export default function NowModule() {
   // who it is for.
   const { tourOn, finishTour } = useFirstRunTour(ALONGSIDE_SLUG, status === "ready");
 
-  if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
+  if (status === "loading") return <p className="text-body-sm text-[var(--faint)]">Loading...</p>;
   if (status === "no-instance") {
     return (
       <EmptyState
@@ -224,7 +224,7 @@ export default function NowModule() {
   }
 
   if (opening) {
-    return <p className="text-[13px] text-[var(--faint)]">Opening...</p>;
+    return <p className="text-body-sm text-[var(--faint)]">Opening...</p>;
   }
 
   const now = new Date();

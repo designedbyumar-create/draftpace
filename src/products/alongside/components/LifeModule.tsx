@@ -91,7 +91,7 @@ export default function LifeModule() {
     refreshHistory();
   }, [refreshHistory]);
 
-  if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
+  if (status === "loading") return <p className="text-body-sm text-[var(--faint)]">Loading...</p>;
   if (status === "no-instance") {
     return (
       <EmptyState
@@ -179,7 +179,7 @@ export default function LifeModule() {
   }
 
   if (opening) {
-    return <p className="text-[13px] text-[var(--faint)]">Opening...</p>;
+    return <p className="text-body-sm text-[var(--faint)]">Opening...</p>;
   }
 
   const open = items.filter((item) => item.status === "open");
@@ -189,9 +189,9 @@ export default function LifeModule() {
     <div className="mx-auto flex w-full max-w-2xl flex-col gap-7">
       <header className="flex items-start justify-between gap-4">
         <div>
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">Life</p>
+          <p className="text-eyebrow font-bold uppercase text-[var(--muted)]">Life</p>
           <h1
-            className="mt-2 text-[26px] leading-tight text-[var(--text)]"
+            className="mt-2 text-heading text-[var(--text)]"
             style={{ fontFamily: "var(--product-narrative-font, inherit)" }}
           >
             Everything you are holding
@@ -232,7 +232,7 @@ export default function LifeModule() {
         if (group.length === 0) return null;
         return (
           <section key={kind} aria-label={KIND_LABEL[kind]}>
-            <h2 className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">
+            <h2 className="text-eyebrow font-bold uppercase text-[var(--muted)]">
               {KIND_LABEL[kind]}
             </h2>
             <ul className="mt-3 flex flex-col gap-2">
@@ -240,26 +240,30 @@ export default function LifeModule() {
                 const available = playbooksFor(item.kind);
                 return (
                   <li key={item.id} className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4">
+                    {/* Not TextLink: the whole title is the link, paired
+                        with sibling meta lines, and its own quiet
+                        always-underlined treatment (--text, not --primary)
+                        is deliberate. */}
                     <Link
                       href={`/app/products/alongside/item/${item.id}`}
-                      className="text-[15px] font-medium leading-6 text-[var(--text)] underline decoration-[var(--border)] underline-offset-4 hover:decoration-[var(--primary)]"
+                      className="text-body font-medium leading-6 text-[var(--text)] underline decoration-[var(--border)] underline-offset-4 hover:decoration-[var(--primary)]"
                     >
                       {item.title}
                     </Link>
                     {item.waitingOn && (
-                      <p className="mt-1 text-[13px] text-[var(--muted)]">Waiting on {item.waitingOn}</p>
+                      <p className="mt-1 text-body-sm text-[var(--muted)]">Waiting on {item.waitingOn}</p>
                     )}
                     {item.leftOffNote && (
-                      <p className="mt-1 text-[13px] leading-5 text-[var(--muted)]">{item.leftOffNote}</p>
+                      <p className="mt-1 text-body-sm leading-5 text-[var(--muted)]">{item.leftOffNote}</p>
                     )}
                     {item.nextStep && (
-                      <p className="mt-1 text-[13px] leading-5 text-[var(--muted)]">Next: {item.nextStep}</p>
+                      <p className="mt-1 text-body-sm leading-5 text-[var(--muted)]">Next: {item.nextStep}</p>
                     )}
                     {/* Vague on purpose past a fortnight. A precise
                         number nobody is going to act on is just a
                         reminder of how long it has been. */}
                     {footnote(item, latest[item.id], now) && (
-                      <p className="mt-2 text-[12px] text-[var(--faint)]">{footnote(item, latest[item.id], now)}</p>
+                      <p className="mt-2 text-caption text-[var(--faint)]">{footnote(item, latest[item.id], now)}</p>
                     )}
                     {choosing === item.id && (
                       <PlaybookChooser
@@ -290,8 +294,8 @@ export default function LifeModule() {
 
       <SortedList items={items} now={now} />
 
-      {startError && <p className="text-[13px] text-[var(--danger)]">{startError}</p>}
-      {errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}
+      {startError && <p className="text-body-sm text-[var(--danger)]">{startError}</p>}
+      {errorMessage && <p className="text-body-sm text-[var(--danger)]">{errorMessage}</p>}
     </div>
   );
 }

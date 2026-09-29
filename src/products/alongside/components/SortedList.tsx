@@ -18,23 +18,23 @@ export default function SortedList({ items, now }: { items: LifeItem[]; now: Dat
 
   return (
     <details className="group rounded-xl border border-[var(--border)] bg-[var(--surface)]">
-      <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-3 rounded-xl px-4 text-[14px] font-semibold text-[var(--text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] [&::-webkit-details-marker]:hidden">
+      <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-3 rounded-xl px-4 text-body-sm font-semibold text-[var(--text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] [&::-webkit-details-marker]:hidden">
         Sorted
         <span
           aria-hidden
-          className="text-[12px] font-medium text-[var(--muted)] group-open:hidden"
+          className="text-caption font-medium text-[var(--muted)] group-open:hidden"
         >
           Show
         </span>
         <span
           aria-hidden
-          className="hidden text-[12px] font-medium text-[var(--muted)] group-open:inline"
+          className="hidden text-caption font-medium text-[var(--muted)] group-open:inline"
         >
           Hide
         </span>
       </summary>
       <div className="border-t border-[var(--border)] px-4 pb-2 pt-3">
-        <p className="text-[13px] leading-5 text-[var(--muted)]">
+        <p className="text-body-sm leading-5 text-[var(--muted)]">
           Things you dealt with. Kept here in case you need to look something up.
         </p>
         <ul className="mt-1 flex flex-col">
@@ -45,14 +45,17 @@ export default function SortedList({ items, now }: { items: LifeItem[]; now: Dat
                 key={item.id}
                 className="flex flex-col gap-0.5 border-b border-[var(--border)] py-3 last:border-b-0"
               >
+                {/* Not TextLink: the whole title is the link, paired with
+                    a sibling meta line, and its own quiet always-underlined
+                    treatment (--text, not --primary) is deliberate. */}
                 <Link
                   href={`/app/products/alongside/item/${item.id}`}
-                  className="text-[15px] leading-6 text-[var(--text)] underline decoration-[var(--border)] underline-offset-4 hover:decoration-[var(--primary)]"
+                  className="text-body leading-6 text-[var(--text)] underline decoration-[var(--border)] underline-offset-4 hover:decoration-[var(--primary)]"
                 >
                   {item.title}
                 </Link>
                 {days !== null && (
-                  <p className="text-[12px] text-[var(--faint)]">Sorted {describeDaysSince(days)}</p>
+                  <p className="text-caption text-[var(--faint)]">Sorted {describeDaysSince(days)}</p>
                 )}
               </li>
             );

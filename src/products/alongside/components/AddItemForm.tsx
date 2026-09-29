@@ -74,11 +74,11 @@ export default function AddItemForm({
       />
 
       <fieldset className="flex flex-col gap-2">
-        <legend className="mb-1.5 text-[13px] font-semibold text-[var(--text)]">What kind of thing is it?</legend>
+        <legend className="mb-1.5 text-body-sm font-semibold text-[var(--text)]">What kind of thing is it?</legend>
         {KIND_ORDER.map((option) => (
           <label
             key={option}
-            className={`flex cursor-pointer items-center gap-3 rounded-lg border px-3.5 py-2.5 text-[14px] transition-colors ${
+            className={`flex cursor-pointer items-center gap-3 rounded-lg border px-3.5 py-2.5 text-body-sm transition-colors ${
               kind === option
                 ? "border-[var(--primary)] bg-[var(--surface-muted)] text-[var(--text)]"
                 : "border-[var(--border)] text-[var(--muted)]"
@@ -123,7 +123,7 @@ export default function AddItemForm({
         />
       )}
 
-      {errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}
+      {errorMessage && <p className="text-body-sm text-[var(--danger)]">{errorMessage}</p>}
 
       <div className="flex flex-wrap items-center gap-2">
         <Button variant="commit" onClick={save} disabled={pending || title.trim().length === 0}>

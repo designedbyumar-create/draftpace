@@ -52,14 +52,14 @@ export default function SettingsView({
   return (
     <div className="mx-auto flex w-full max-w-2xl flex-col gap-6">
       <header>
-        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">Settings</p>
+        <p className="text-eyebrow font-bold uppercase text-[var(--muted)]">Settings</p>
         <h1
-          className="mt-2 text-[26px] leading-tight text-[var(--text)]"
+          className="mt-2 text-heading text-[var(--text)]"
           style={{ fontFamily: "var(--product-narrative-font, inherit)" }}
         >
           Reminders
         </h1>
-        <p className="mt-2 max-w-[52ch] text-[14px] leading-6 text-[var(--muted)]">
+        <p className="mt-2 max-w-[52ch] text-body-sm leading-6 text-[var(--muted)]">
           Off unless you switch it on. When it is on, this only ever reminds you about a date you chose yourself.
           Nothing else here sends anything.
         </p>
@@ -68,8 +68,8 @@ export default function SettingsView({
       <section className="flex flex-col gap-5 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5">
         <div className="flex items-start justify-between gap-4">
           <div>
-            <p className="text-[15px] font-medium text-[var(--text)]">Remind me on the date I chose</p>
-            <p className="mt-1 text-[13px] leading-5 text-[var(--muted)]">
+            <p className="text-body font-medium text-[var(--text)]">Remind me on the date I chose</p>
+            <p className="mt-1 text-body-sm leading-5 text-[var(--muted)]">
               One notification on this device, once, when the day comes.
             </p>
           </div>
@@ -97,8 +97,8 @@ export default function SettingsView({
           <>
             <div className="flex items-start justify-between gap-4 border-t border-[var(--border)] pt-5">
               <div>
-                <p className="text-[15px] font-medium text-[var(--text)]">Say what it is about</p>
-                <p className="mt-1 text-[13px] leading-5 text-[var(--muted)]">
+                <p className="text-body font-medium text-[var(--text)]">Say what it is about</p>
+                <p className="mt-1 text-body-sm leading-5 text-[var(--muted)]">
                   Off, the notification only says you have a reminder. On, it shows the thing itself, which anyone
                   looking at your lock screen can read.
                 </p>
@@ -112,8 +112,8 @@ export default function SettingsView({
             </div>
 
             <div className="border-t border-[var(--border)] pt-5">
-              <p className="text-[15px] font-medium text-[var(--text)]">Quiet hours</p>
-              <p className="mt-1 text-[13px] leading-5 text-[var(--muted)]">
+              <p className="text-body font-medium text-[var(--text)]">Quiet hours</p>
+              <p className="mt-1 text-body-sm leading-5 text-[var(--muted)]">
                 Nothing is sent in this window. A reminder that arrives during it goes out afterwards.
               </p>
               <div className="mt-3 grid grid-cols-2 gap-3">
@@ -142,7 +142,7 @@ export default function SettingsView({
                   ))}
                 </Select>
               </div>
-              <p className="mt-2 text-[12px] text-[var(--faint)]">Times are in {prefs.timezone}.</p>
+              <p className="mt-2 text-caption text-[var(--faint)]">Times are in {prefs.timezone}.</p>
             </div>
 
             {capability === "subscribed" && (
@@ -156,7 +156,7 @@ export default function SettingsView({
         )}
 
         {message && (
-          <p role="status" className="text-[13px] text-[var(--muted)]">
+          <p role="status" className="text-body-sm text-[var(--muted)]">
             {message}
           </p>
         )}

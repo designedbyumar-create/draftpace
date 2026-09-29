@@ -19,8 +19,8 @@ export default function KeepOffer({
 }) {
   return (
     <section aria-label="Keep this" className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5">
-      <p className="text-[15px] leading-6 text-[var(--text)]">Want me to hold on to this?</p>
-      <p className="mt-1.5 text-[14px] leading-6 text-[var(--muted)]">{title}</p>
+      <p className="text-body leading-6 text-[var(--text)]">Want me to hold on to this?</p>
+      <p className="mt-1.5 text-body-sm leading-6 text-[var(--muted)]">{title}</p>
       <div className="mt-4 flex flex-wrap items-center gap-2">
         <Button variant="commit" size="sm" onClick={onKeep} disabled={pending}>
           Keep it

@@ -50,7 +50,7 @@ export interface NowViewProps {
 }
 
 const QUIET_ACTION =
-  "min-h-11 rounded-full px-4 text-[14px] font-medium text-[var(--muted)] transition-colors hover:bg-[var(--surface-muted)] hover:text-[var(--text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] disabled:opacity-50";
+  "min-h-11 rounded-full px-4 text-body-sm font-medium text-[var(--muted)] transition-colors hover:bg-[var(--surface-muted)] hover:text-[var(--text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] disabled:opacity-50";
 
 export default function NowView({
   signal,
@@ -98,7 +98,7 @@ export default function NowView({
         {closing && (
           <p
             role="status"
-            className="text-center text-[13px] text-[var(--muted)]"
+            className="text-center text-body-sm text-[var(--muted)]"
           >
             {closing}
           </p>
@@ -107,7 +107,7 @@ export default function NowView({
         {startError && (
           <p
             role="alert"
-            className="text-center text-[13px] text-[var(--danger)]"
+            className="text-center text-body-sm text-[var(--danger)]"
           >
             {startError}
           </p>
@@ -121,11 +121,11 @@ export default function NowView({
               className="flex flex-col gap-5 rounded-[var(--radius-xl)] border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[0_14px_32px_-16px_color-mix(in_srgb,var(--text)_30%,transparent)]"
               {...fade}
             >
-              <p className="text-[14px] font-semibold text-[var(--muted)]">
+              <p className="text-body-sm font-semibold text-[var(--muted)]">
                 {signal.line}
               </p>
               <h2
-                className="text-[36px] leading-[1.08] tracking-[-0.015em] text-[var(--text)] [text-wrap:balance]"
+                className="text-heading tracking-[-0.015em] text-[var(--text)] [text-wrap:balance]"
                 style={{
                   fontFamily: "var(--product-narrative-font, inherit)",
                   fontWeight: 500,
@@ -134,12 +134,12 @@ export default function NowView({
                 {signal.item.title}
               </h2>
               {signal.item.leftOffNote && (
-                <p className="text-[15px] leading-relaxed text-[var(--muted)]">
+                <p className="text-body leading-relaxed text-[var(--muted)]">
                   {signal.item.leftOffNote}
                 </p>
               )}
               {signal.item.nextStep && !signal.item.leftOffNote && (
-                <p className="text-[15px] leading-relaxed text-[var(--muted)]">
+                <p className="text-body leading-relaxed text-[var(--muted)]">
                   Next: {signal.item.nextStep}
                 </p>
               )}
@@ -152,7 +152,7 @@ export default function NowView({
                     variant="commit"
                     size="lg"
                     fullWidth
-                    className="mt-1 min-h-14 rounded-2xl text-[16px]"
+                    className="mt-1 min-h-14 rounded-2xl text-body-lg"
                     onClick={onDoThis}
                   >
                     Do this with me
@@ -185,7 +185,7 @@ export default function NowView({
               {...fade}
             >
               <h2
-                className="text-[36px] leading-[1.08] tracking-[-0.015em] text-[var(--text)] [text-wrap:balance]"
+                className="text-heading tracking-[-0.015em] text-[var(--text)] [text-wrap:balance]"
                 style={{
                   fontFamily: "var(--product-narrative-font, inherit)",
                   fontWeight: 500,
@@ -193,7 +193,7 @@ export default function NowView({
               >
                 {firstWin ? "What is one thing that has been sitting there?" : setDown ? "That is all for now" : QUIET_LINE}
               </h2>
-              <p className="text-[15px] leading-relaxed text-[var(--muted)]">
+              <p className="text-body leading-relaxed text-[var(--muted)]">
                 {firstWin
                   ? "Pick the closest. It walks you through that one thing, and you can stop at any point."
                   : setDown
@@ -207,7 +207,7 @@ export default function NowView({
                       <button
                         type="button"
                         onClick={() => onFirstWin(option.playbookKey)}
-                        className="min-h-14 w-full rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-5 text-left text-[16px] text-[var(--text)] transition-colors hover:border-[var(--primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]"
+                        className="min-h-14 w-full rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-5 text-left text-body-lg text-[var(--text)] transition-colors hover:border-[var(--primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]"
                       >
                         {option.label}
                       </button>
@@ -252,7 +252,7 @@ export default function NowView({
               variant="secondary"
               size="lg"
               fullWidth
-              className="min-h-14 rounded-2xl text-[16px]"
+              className="min-h-14 rounded-2xl text-body-lg"
               onClick={onKeep}
               iconLeft={<Plus size={16} aria-hidden />}
             >
