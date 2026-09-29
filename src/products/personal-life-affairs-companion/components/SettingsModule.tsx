@@ -115,7 +115,7 @@ export default function SettingsModule() {
     setAftermath(describeAftermath(event, affected));
   }
 
-  if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
+  if (status === "loading") return <p className="text-body-sm text-[var(--faint)]">Loading...</p>;
   if (status === "no-instance" || !instanceId) {
     return <EmptyState icon={Settings} title="Nothing to change yet" description="This product has not been set up on your account." />;
   }
@@ -126,21 +126,21 @@ export default function SettingsModule() {
   return (
     <div className="flex flex-col gap-6">
       <div>
-        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Settings</p>
+        <p className="text-eyebrow font-bold uppercase text-[var(--primary)]">Settings</p>
         <h1
-          className="mt-2 text-[24px] leading-tight text-[var(--text)]"
+          className="mt-2 text-heading text-[var(--text)]"
           style={{ fontFamily: "var(--product-narrative-font, inherit)" }}
         >
           If something in your life has changed.
         </h1>
-        <p className="mt-2 max-w-lg text-[13.5px] leading-relaxed text-[var(--muted)]">
+        <p className="mt-2 max-w-lg text-body-sm leading-relaxed text-[var(--muted)]">
           These answers decide what this product asks you about. Change one and it takes effect straight away. Nothing
           you have already recorded is deleted.
         </p>
       </div>
 
       {errorMessage && (
-        <p className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3 text-[13px] text-[var(--danger)]">
+        <p className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3 text-body-sm text-[var(--danger)]">
           {errorMessage}
         </p>
       )}
@@ -155,9 +155,9 @@ export default function SettingsModule() {
           return (
             <div key={q.gate} className="flex flex-wrap items-center justify-between gap-3 border-b border-[var(--border)] py-3.5">
               <div className="min-w-0 flex-1">
-                <h2 className="text-[14px] text-[var(--text)]">{q.question}</h2>
+                <h2 className="text-body-sm text-[var(--text)]">{q.question}</h2>
                 {typeof answer !== "boolean" && (
-                  <p className="mt-0.5 text-[12px] text-[var(--faint)]">Not answered yet</p>
+                  <p className="mt-0.5 text-caption text-[var(--faint)]">Not answered yet</p>
                 )}
               </div>
               <div className="flex shrink-0 gap-2">
@@ -184,8 +184,8 @@ export default function SettingsModule() {
       </section>
 
       <section aria-label="If your life has changed" className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5">
-        <h2 className="text-[15px] font-semibold text-[var(--text)]">Has something changed?</h2>
-        <p className="mt-1.5 max-w-lg text-[13px] leading-relaxed text-[var(--muted)]">
+        <h2 className="text-body font-semibold text-[var(--text)]">Has something changed?</h2>
+        <p className="mt-1.5 max-w-lg text-body-sm leading-relaxed text-[var(--muted)]">
           A picture of your affairs does not go out of date slowly. It goes out of date all at once, the week something
           happens. Tell us and we will work out what is worth a second look.
         </p>
@@ -193,7 +193,7 @@ export default function SettingsModule() {
         {aftermath && (
           <p
             role="status"
-            className="mt-4 rounded-lg border border-[var(--border)] bg-[var(--surface-muted)] p-3 text-[13px] leading-relaxed text-[var(--text)]"
+            className="mt-4 rounded-lg border border-[var(--border)] bg-[var(--surface-muted)] p-3 text-body-sm leading-relaxed text-[var(--text)]"
           >
             {aftermath}
           </p>
@@ -213,20 +213,20 @@ export default function SettingsModule() {
           ))}
         </div>
 
-        <p className="mt-3 max-w-lg text-[12px] leading-relaxed text-[var(--faint)]">
+        <p className="mt-3 max-w-lg text-caption leading-relaxed text-[var(--faint)]">
           Nothing is deleted and nothing is marked wrong. Anything affected simply comes back on the main screen as a
           question, one at a time.
         </p>
       </section>
 
       <section aria-label="How this keeps up" className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5">
-        <h2 className="text-[15px] font-semibold text-[var(--text)]">How this keeps up over the years</h2>
-        <p className="mt-1.5 max-w-lg text-[13px] leading-relaxed text-[var(--muted)]">
+        <h2 className="text-body font-semibold text-[var(--text)]">How this keeps up over the years</h2>
+        <p className="mt-1.5 max-w-lg text-body-sm leading-relaxed text-[var(--muted)]">
           Some answers go out of date on their own. Who is named on a pension, who would raise your children, where the
           paperwork lives. When one has been standing long enough to be worth a second look, it comes back on the main
           screen as a question rather than as a task you failed to do.
         </p>
-        <p className="mt-2 max-w-lg text-[13px] leading-relaxed text-[var(--muted)]">
+        <p className="mt-2 max-w-lg text-body-sm leading-relaxed text-[var(--muted)]">
           Nothing is sent to you yet. Reminders that reach you when the app is closed are not built for this product,
           and choosing how they should work is a decision that has not been made.
         </p>

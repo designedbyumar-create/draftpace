@@ -254,7 +254,7 @@ describe("type scale and TextLink (guides layer)", () => {
       "app/(marketing)/shop/[productSlug]/page.tsx",
     ];
     const usedSteps = new Set<string>();
-    const stepPattern = /text-(eyebrow|caption|body-sm|body|body-lg|heading-sm|heading|heading-lg|display)\b/g;
+    const stepPattern = /text-(eyebrow|caption|body-sm|body-lg|body|heading-sm|heading-lg|heading|display)\b/g;
     for (const { source } of tsxUnder("app/(marketing)/guides", "components/public/guides")) {
       for (const [, step] of source.matchAll(stepPattern)) usedSteps.add(step);
     }
@@ -333,7 +333,7 @@ describe("type scale and TextLink (marketing and shared components)", () => {
     );
 
     const usedSteps = new Set<string>();
-    const stepPattern = /text-(eyebrow|caption|body-sm|body|body-lg|heading-sm|heading|heading-lg|display)\b/g;
+    const stepPattern = /text-(eyebrow|caption|body-sm|body-lg|body|heading-sm|heading-lg|heading|display)\b/g;
     for (const { source } of scopedFiles()) {
       for (const [, step] of source.matchAll(stepPattern)) usedSteps.add(step);
     }
@@ -374,7 +374,7 @@ describe("type scale (admin)", () => {
     );
 
     const usedSteps = new Set<string>();
-    const stepPattern = /text-(eyebrow|caption|body-sm|body|body-lg|heading-sm|heading|heading-lg|display)\b/g;
+    const stepPattern = /text-(eyebrow|caption|body-sm|body-lg|body|heading-sm|heading-lg|heading|display)\b/g;
     for (const { source } of scopedFiles()) {
       for (const [, step] of source.matchAll(stepPattern)) usedSteps.add(step);
     }
@@ -416,7 +416,45 @@ describe("type scale (alongside)", () => {
     );
 
     const usedSteps = new Set<string>();
-    const stepPattern = /text-(eyebrow|caption|body-sm|body|body-lg|heading-sm|heading|heading-lg|display)\b/g;
+    const stepPattern = /text-(eyebrow|caption|body-sm|body-lg|body|heading-sm|heading-lg|heading|display)\b/g;
+    for (const { source } of scopedFiles()) {
+      for (const [, step] of source.matchAll(stepPattern)) usedSteps.add(step);
+    }
+
+    const missing = [...usedSteps].filter((step) => !declaredSteps.has(step));
+    expect(missing, `used but not declared in tailwind.config.js: ${missing.join(", ")}`).toEqual([]);
+  });
+});
+
+/**
+ * The src/products/** sweep, product 3 of 9: Personal Life Affairs
+ * Companion. No inline or whole-file exceptions exist in this scope.
+ */
+describe("type scale (personal-life-affairs-companion)", () => {
+  function scopedFiles() {
+    return tsxUnder("products/personal-life-affairs-companion");
+  }
+
+  it("keeps Personal Life Affairs Companion off arbitrary pixel text sizes", () => {
+    const offenders: string[] = [];
+    for (const { path, source } of scopedFiles()) {
+      for (const match of source.matchAll(/text-\[[0-9.]+px\]/g)) {
+        offenders.push(`${path.replace(ROOT, "src")}: ${match[0]}`);
+      }
+    }
+    expect(offenders, `arbitrary text sizes still in personal-life-affairs-companion:\n${offenders.join("\n")}`).toEqual([]);
+  });
+
+  it("keeps every type-scale class used in Personal Life Affairs Companion resolvable in tailwind.config.js", () => {
+    const config = readFileSync(join(process.cwd(), "tailwind.config.js"), "utf8");
+    const declaredSteps = new Set(
+      [...config.matchAll(/^\s{8}(eyebrow|caption|'body-sm'|body|'body-lg'|'heading-sm'|heading|'heading-lg'|display):/gm)].map(
+        (m) => m[1].replace(/'/g, "")
+      )
+    );
+
+    const usedSteps = new Set<string>();
+    const stepPattern = /text-(eyebrow|caption|body-sm|body-lg|body|heading-sm|heading-lg|heading|display)\b/g;
     for (const { source } of scopedFiles()) {
       for (const [, step] of source.matchAll(stepPattern)) usedSteps.add(step);
     }
@@ -458,7 +496,7 @@ describe("type scale (family-health-binder)", () => {
     );
 
     const usedSteps = new Set<string>();
-    const stepPattern = /text-(eyebrow|caption|body-sm|body|body-lg|heading-sm|heading|heading-lg|display)\b/g;
+    const stepPattern = /text-(eyebrow|caption|body-sm|body-lg|body|heading-sm|heading-lg|heading|display)\b/g;
     for (const { source } of scopedFiles()) {
       for (const [, step] of source.matchAll(stepPattern)) usedSteps.add(step);
     }

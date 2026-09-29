@@ -92,7 +92,7 @@ export default function PrintablesModule() {
     }
   }
 
-  if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
+  if (status === "loading") return <p className="text-body-sm text-[var(--faint)]">Loading...</p>;
   if (status === "no-instance") {
     return <EmptyState icon={BookOpen} title="Nothing to print yet" description="This product has not been set up on your account." />;
   }
@@ -111,14 +111,14 @@ export default function PrintablesModule() {
   return (
     <div className="flex flex-col gap-6">
       <div>
-        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">My affairs book</p>
+        <p className="text-eyebrow font-bold uppercase text-[var(--primary)]">My affairs book</p>
         <h1
-          className="mt-2 text-[26px] leading-tight text-[var(--text)]"
+          className="mt-2 text-heading text-[var(--text)]"
           style={{ fontFamily: "var(--product-narrative-font, inherit)" }}
         >
           {blank ? "Nothing in it yet, and you can still print it." : "What somebody would receive."}
         </h1>
-        <p className="mt-2 max-w-lg text-[13.5px] leading-relaxed text-[var(--muted)]">
+        <p className="mt-2 max-w-lg text-body-sm leading-relaxed text-[var(--muted)]">
           {blank
             ? "You have not established much yet. That is completely fine. The blank copy below has only the sections that apply to you, with room to write."
             : "A printable copy of everything you have established, in your own words. It is made on your device, so nothing about your affairs is sent anywhere to produce it."}
@@ -126,7 +126,7 @@ export default function PrintablesModule() {
       </div>
 
       {errorMessage && (
-        <p className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3 text-[13px] text-[var(--danger)]">
+        <p className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3 text-body-sm text-[var(--danger)]">
           {errorMessage}
         </p>
       )}
@@ -136,7 +136,7 @@ export default function PrintablesModule() {
 
       {/* --------------------------------------------------- the modes */}
       <div className="flex flex-wrap items-center gap-2">
-        <span className="text-[12px] text-[var(--muted)]">Paper size</span>
+        <span className="text-caption text-[var(--muted)]">Paper size</span>
         {(["LETTER", "A4"] as Size[]).map((option) => (
           <Button key={option} size="sm" variant={size === option ? "primary" : "secondary"} onClick={() => setSize(option)}>
             {option === "LETTER" ? "US Letter" : "A4"}
@@ -145,8 +145,8 @@ export default function PrintablesModule() {
       </div>
 
       <section className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5">
-        <h2 className="text-[15px] font-semibold text-[var(--text)]">Your book as it stands</h2>
-        <p className="mt-1.5 max-w-lg text-[13px] leading-relaxed text-[var(--muted)]">
+        <h2 className="text-body font-semibold text-[var(--text)]">Your book as it stands</h2>
+        <p className="mt-1.5 max-w-lg text-body-sm leading-relaxed text-[var(--muted)]">
           {blank
             ? "There is nothing established yet, so this would print as a copy saying so. Worth coming back to once you have recorded a few things."
             : "Everything you have established, with the date you last confirmed each one. This is the copy you would hand to somebody."}
@@ -164,8 +164,8 @@ export default function PrintablesModule() {
       </section>
 
       <section className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5">
-        <h2 className="text-[15px] font-semibold text-[var(--text)]">A blank copy to fill in by hand</h2>
-        <p className="mt-1.5 max-w-lg text-[13px] leading-relaxed text-[var(--muted)]">
+        <h2 className="text-body font-semibold text-[var(--text)]">A blank copy to fill in by hand</h2>
+        <p className="mt-1.5 max-w-lg text-body-sm leading-relaxed text-[var(--muted)]">
           The same questions this product asks, with room to write, and a line explaining why each one matters.
           {personalised
             ? " Built from your answers, so it leaves out everything that does not apply to you."
@@ -184,7 +184,7 @@ export default function PrintablesModule() {
         </div>
       </section>
 
-      <p className="max-w-lg text-[12px] leading-relaxed text-[var(--faint)]">
+      <p className="max-w-lg text-caption leading-relaxed text-[var(--faint)]">
         Nothing is invented. Where you have not told us something, the copy says so rather than filling in a plausible
         answer. Keep the filled copy somewhere private: it says where things are and who to speak to.
       </p>

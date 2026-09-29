@@ -35,7 +35,7 @@ export default function AffairsContents({
     <>
       {groups.map(({ area, entries }) => (
         <section key={area} aria-label={AFFAIR_DOMAIN_LABEL[area]}>
-          <h2 className="border-b border-[var(--border)] pb-1.5 text-[10.5px] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">
+          <h2 className="border-b border-[var(--border)] pb-1.5 text-eyebrow font-bold uppercase text-[var(--muted)]">
             {AFFAIR_DOMAIN_LABEL[area]}
           </h2>
           <div className="mt-1 flex flex-col">
@@ -50,7 +50,7 @@ export default function AffairsContents({
                 >
                   <span className="flex items-baseline gap-2">
                     <span
-                      className="text-[16px] text-[var(--text)]"
+                      className="text-body-lg text-[var(--text)]"
                       style={{ fontFamily: "var(--product-narrative-font, inherit)" }}
                     >
                       {item.label}
@@ -63,12 +63,12 @@ export default function AffairsContents({
                     />
                   </span>
                   {summarise(item).map((line) => (
-                    <span key={line} className="mt-0.5 block text-[12.5px] leading-relaxed text-[var(--muted)]">
+                    <span key={line} className="mt-0.5 block text-caption leading-relaxed text-[var(--muted)]">
                       {line}
                     </span>
                   ))}
                   {stale && (
-                    <span className="mt-0.5 block text-[11.5px] font-semibold text-[var(--primary)]">
+                    <span className="mt-0.5 block text-caption font-semibold text-[var(--primary)]">
                       Worth checking again
                     </span>
                   )}

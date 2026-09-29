@@ -111,7 +111,7 @@ export default function AffairsModule() {
     return true;
   }
 
-  if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
+  if (status === "loading") return <p className="text-body-sm text-[var(--faint)]">Loading...</p>;
   if (status === "no-instance") {
     return <EmptyState icon={Layers3} title="Nothing here yet" description="This product has not been set up on your account." />;
   }
@@ -160,28 +160,28 @@ export default function AffairsModule() {
         <button
           type="button"
           onClick={() => setOpenId(null)}
-          className="self-start text-[12px] font-semibold text-[var(--muted)] hover:text-[var(--text)]"
+          className="self-start text-caption font-semibold text-[var(--muted)] hover:text-[var(--text)]"
         >
           Back to your affairs
         </button>
 
         {errorMessage && (
-          <p className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3 text-[13px] text-[var(--danger)]">
+          <p className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3 text-body-sm text-[var(--danger)]">
             {errorMessage}
           </p>
         )}
 
         <div>
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">
+          <p className="text-eyebrow font-bold uppercase text-[var(--primary)]">
             {AFFAIR_DOMAIN_LABEL[open.area]}
           </p>
           <h1
-            className="mt-2 text-[26px] leading-tight text-[var(--text)]"
+            className="mt-2 text-heading text-[var(--text)]"
             style={{ fontFamily: "var(--product-narrative-font, inherit)" }}
           >
             {open.label}
           </h1>
-          {step && <p className="mt-2 max-w-lg text-[13px] leading-relaxed text-[var(--muted)]">{step.instruction}</p>}
+          {step && <p className="mt-2 max-w-lg text-body-sm leading-relaxed text-[var(--muted)]">{step.instruction}</p>}
         </div>
 
         <dl className="flex flex-col">
@@ -199,7 +199,7 @@ export default function AffairsModule() {
         </dl>
 
         {open.status === "incomplete" && (
-          <p className="rounded-lg border border-[var(--border)] bg-[var(--surface-muted)] p-3 text-[12.5px] leading-relaxed text-[var(--muted)]">
+          <p className="rounded-lg border border-[var(--border)] bg-[var(--surface-muted)] p-3 text-caption leading-relaxed text-[var(--muted)]">
             Partly recorded. You left something open here, which is fine. It prints as exactly that.
           </p>
         )}
@@ -239,14 +239,14 @@ export default function AffairsModule() {
 
         {changes.length > 0 && (
           <section aria-label="What has changed here">
-            <h2 className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">
+            <h2 className="text-eyebrow font-bold uppercase text-[var(--faint)]">
               What has changed here
             </h2>
             <div className="mt-2 flex flex-col">
               {changes.map((change) => (
                 <div key={change.id} className="border-b border-[var(--border)] py-2.5">
-                  <p className="text-[13px] leading-relaxed text-[var(--text)]">{change.summary}</p>
-                  <p className="mt-0.5 text-[12px] text-[var(--faint)]">{formatDate(change.createdAt)}</p>
+                  <p className="text-body-sm leading-relaxed text-[var(--text)]">{change.summary}</p>
+                  <p className="mt-0.5 text-caption text-[var(--faint)]">{formatDate(change.createdAt)}</p>
                 </div>
               ))}
             </div>
@@ -277,20 +277,20 @@ export default function AffairsModule() {
   return (
     <div className="flex flex-col gap-7">
       {errorMessage && (
-        <p className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3 text-[13px] text-[var(--danger)]">
+        <p className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3 text-body-sm text-[var(--danger)]">
           {errorMessage}
         </p>
       )}
 
       <div>
-        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">My affairs</p>
+        <p className="text-eyebrow font-bold uppercase text-[var(--primary)]">My affairs</p>
         <h1
-          className="mt-2 text-[26px] leading-tight text-[var(--text)]"
+          className="mt-2 text-heading text-[var(--text)]"
           style={{ fontFamily: "var(--product-narrative-font, inherit)" }}
         >
           What you have established so far.
         </h1>
-        <p className="mt-2 max-w-lg text-[13.5px] leading-relaxed text-[var(--muted)]">
+        <p className="mt-2 max-w-lg text-body-sm leading-relaxed text-[var(--muted)]">
           Everything here is in your own words. Nothing that does not apply to you appears, and nothing you have not
           got to yet is listed as missing.
         </p>
@@ -311,8 +311,8 @@ export default function AffairsModule() {
 function Row({ term, value }: { term: string; value: string }) {
   return (
     <div className="border-b border-[var(--border)] py-2.5">
-      <dt className="text-[11px] font-bold uppercase tracking-[0.1em] text-[var(--faint)]">{term}</dt>
-      <dd className="mt-0.5 text-[14px] leading-relaxed text-[var(--text)]">{value}</dd>
+      <dt className="text-eyebrow font-bold uppercase text-[var(--faint)]">{term}</dt>
+      <dd className="mt-0.5 text-body-sm leading-relaxed text-[var(--text)]">{value}</dd>
     </div>
   );
 }

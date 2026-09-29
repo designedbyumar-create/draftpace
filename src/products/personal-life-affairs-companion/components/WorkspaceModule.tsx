@@ -192,7 +192,7 @@ export default function WorkspaceModule() {
     setItems(result.data);
   }
 
-  if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
+  if (status === "loading") return <p className="text-body-sm text-[var(--faint)]">Loading...</p>;
   if (status === "no-instance") {
     return (
       <EmptyState
@@ -214,7 +214,7 @@ export default function WorkspaceModule() {
   const readiness = deriveReadiness({ profile, records, items }, now);
 
   const errorBanner = errorMessage && (
-    <p className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3 text-[13px] text-[var(--danger)]">
+    <p className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3 text-body-sm text-[var(--danger)]">
       {errorMessage}
     </p>
   );
@@ -226,12 +226,12 @@ export default function WorkspaceModule() {
         {errorBanner}
         <BookPage label="About you" head="A few questions first" ribbon>
           <h1
-            className="mt-4 text-[28px] leading-[1.15] text-[var(--text)] [text-wrap:balance]"
+            className="mt-4 text-heading text-[var(--text)] [text-wrap:balance]"
             style={{ fontFamily: "var(--product-narrative-font, inherit)" }}
           >
             {intake.question}
           </h1>
-          <p className="mt-3 text-[15px] leading-[1.6] text-[var(--muted)]">{intake.why}</p>
+          <p className="mt-3 text-body leading-[1.6] text-[var(--muted)]">{intake.why}</p>
           <div className="mt-5 flex flex-wrap gap-2">
             <Button variant="action" size="sm" disabled={pending} onClick={() => answerIntake(intake.gate, true)}>
               Yes
@@ -240,7 +240,7 @@ export default function WorkspaceModule() {
               No
             </Button>
           </div>
-          <p className="mt-5 border-t border-dotted border-[var(--border-strong)] pt-3 text-[12px] text-[var(--muted)]">
+          <p className="mt-5 border-t border-dotted border-[var(--border-strong)] pt-3 text-caption text-[var(--muted)]">
             {INTAKE_QUESTIONS.length} short questions. They decide what this product will and will not ask you about.
           </p>
         </BookPage>
@@ -392,12 +392,12 @@ export default function WorkspaceModule() {
       ) : (
         <BookPage label="Nothing needs your attention" head="Next">
           <h1
-            className="mt-4 text-[28px] leading-[1.15] text-[var(--text)] [text-wrap:balance]"
+            className="mt-4 text-heading text-[var(--text)] [text-wrap:balance]"
             style={{ fontFamily: "var(--product-narrative-font, inherit)" }}
           >
             Nothing needs your attention right now.
           </h1>
-          <p className="mt-3 text-[15px] leading-[1.6] text-[var(--muted)]">
+          <p className="mt-3 text-body leading-[1.6] text-[var(--muted)]">
             Everything you have told us about is currently in good shape. We will let you know when something is worth
             checking again.
           </p>
@@ -406,7 +406,7 @@ export default function WorkspaceModule() {
             keep somebody busy has stopped being useful to them and
             started being useful to itself.
           */}
-          <div className="mt-5 flex items-center gap-2 border-t border-dotted border-[var(--border-strong)] pt-3 text-[13px] text-[var(--primary)]">
+          <div className="mt-5 flex items-center gap-2 border-t border-dotted border-[var(--border-strong)] pt-3 text-body-sm text-[var(--primary)]">
             <CheckCircle2 size={17} aria-hidden />
             <span>
               {readiness.itemCount === 1 ? "One thing in order." : `${readiness.itemCount} things in order.`}
@@ -444,8 +444,8 @@ function AcknowledgementBanner({
       className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4"
       style={{ borderLeftWidth: 3, borderLeftColor: "var(--primary)" }}
     >
-      <p className="text-[14px] leading-relaxed text-[var(--text)]">{text}</p>
-      <p className="mt-1 text-[12px] text-[var(--faint)]">
+      <p className="text-body-sm leading-relaxed text-[var(--text)]">{text}</p>
+      <p className="mt-1 text-caption text-[var(--faint)]">
         {establishedCount === 1 ? "One thing in order." : `${establishedCount} things in order.`}
       </p>
       <div className="mt-3 flex flex-wrap gap-2">

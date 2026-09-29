@@ -38,8 +38,8 @@ export default function HandoffCheckPanel({ profile, records, items, nextHref }:
     >
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div className="min-w-0">
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Handoff check</p>
-          <h2 className="mt-1.5 text-[15px] font-semibold text-[var(--text)]">{describeHandoff(result)}</h2>
+          <p className="text-eyebrow font-bold uppercase text-[var(--primary)]">Handoff check</p>
+          <h2 className="mt-1.5 text-body font-semibold text-[var(--text)]">{describeHandoff(result)}</h2>
         </div>
         {result.allClear ? (
           <CheckCircle2 size={18} aria-hidden className="mt-1 shrink-0 text-[var(--primary)]" />
@@ -49,12 +49,12 @@ export default function HandoffCheckPanel({ profile, records, items, nextHref }:
       </div>
 
       {result.allClear ? (
-        <p className="mt-2 max-w-lg text-[13px] leading-relaxed text-[var(--muted)]">
+        <p className="mt-2 max-w-lg text-body-sm leading-relaxed text-[var(--muted)]">
           Every part of your affairs that applies to you has an answer somebody else could follow.
         </p>
       ) : (
         <>
-          <p className="mt-2 max-w-lg text-[13px] leading-relaxed text-[var(--muted)]">
+          <p className="mt-2 max-w-lg text-body-sm leading-relaxed text-[var(--muted)]">
             This looks at what you have recorded the way a stranger would: not step by step, but by what they would
             actually be trying to do.
           </p>
@@ -63,7 +63,7 @@ export default function HandoffCheckPanel({ profile, records, items, nextHref }:
             <ul className="mt-4 flex flex-col gap-3">
               {result.unclear.map((finding) => (
                 <li key={finding.scenario.key}>
-                  <p className="text-[13.5px] font-semibold text-[var(--text)]">{finding.scenario.need}</p>
+                  <p className="text-body-sm font-semibold text-[var(--text)]">{finding.scenario.need}</p>
                   {/*
                     One per line, not comma joined. Several of these
                     instructions contain commas of their own, and run
@@ -72,7 +72,7 @@ export default function HandoffCheckPanel({ profile, records, items, nextHref }:
                   */}
                   <ul className="mt-1 flex flex-col gap-0.5">
                     {finding.missing.map((step) => (
-                      <li key={step.key} className="flex gap-2 text-[12.5px] leading-relaxed text-[var(--muted)]">
+                      <li key={step.key} className="flex gap-2 text-caption leading-relaxed text-[var(--muted)]">
                         <span aria-hidden className="text-[var(--faint)]">
                           &middot;
                         </span>

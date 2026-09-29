@@ -120,11 +120,11 @@ export default function CompanionCapture({ step, spec, editing, pending, onSave,
     <BookPage label={step.instruction} head={AFFAIR_AREA_LABEL[step.area]} ribbon>
       <div className="flex flex-col gap-5 pt-4">
       <div>
-        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">
+        <p className="text-eyebrow font-bold uppercase text-[var(--muted)]">
           {editing ? "Bringing this up to date" : step.instruction.replace(/\.$/, "")}
         </p>
         {progress.total > 1 && (
-          <p className="mt-1.5 text-[12px] text-[var(--faint)]">
+          <p className="mt-1.5 text-caption text-[var(--faint)]">
             {/* Deliberately scoped to this one capture. A count across the
                 whole product would be the completion score this product
                 does not have. */}
@@ -136,13 +136,13 @@ export default function CompanionCapture({ step, spec, editing, pending, onSave,
       {answered.length > 0 && (
         <ul aria-label="What you have said so far" className="flex flex-col gap-1.5">
           {answered.map((p) => (
-            <li key={p.field} className="flex items-start gap-2.5 text-[13px] leading-relaxed">
+            <li key={p.field} className="flex items-start gap-2.5 text-body-sm leading-relaxed">
               <Check size={15} aria-hidden className="mt-[3px] shrink-0 text-[var(--primary)]" />
               <span className="min-w-0 flex-1 text-[var(--muted)]">{answers[p.field]}</span>
               <button
                 type="button"
                 onClick={() => setRevisiting(p.field)}
-                className="shrink-0 text-[12px] text-[var(--faint)] underline underline-offset-2 hover:text-[var(--text)]"
+                className="shrink-0 text-caption text-[var(--faint)] underline underline-offset-2 hover:text-[var(--text)]"
               >
                 Change
               </button>
@@ -163,13 +163,13 @@ export default function CompanionCapture({ step, spec, editing, pending, onSave,
         >
           <div>
             <h2
-              className="text-[22px] leading-snug text-[var(--text)]"
+              className="text-heading-sm text-[var(--text)]"
               style={{ fontFamily: "var(--product-narrative-font, inherit)" }}
             >
               {prompt.prompt}
             </h2>
             {prompt.hint && (
-              <p className="mt-1.5 max-w-lg text-[12.5px] leading-relaxed text-[var(--muted)]">{prompt.hint}</p>
+              <p className="mt-1.5 max-w-lg text-caption leading-relaxed text-[var(--muted)]">{prompt.hint}</p>
             )}
           </div>
 
@@ -196,7 +196,7 @@ export default function CompanionCapture({ step, spec, editing, pending, onSave,
               value={draftValue}
               placeholder={prompt.placeholder}
               onChange={(event) => setDraftValue(event.target.value)}
-              className="w-full rounded-lg border border-[var(--border-strong)] bg-[var(--surface)] px-3.5 py-3 text-[14px] leading-relaxed text-[var(--text)] placeholder-[var(--faint)] transition-colors focus:border-[var(--primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]"
+              className="w-full rounded-lg border border-[var(--border-strong)] bg-[var(--surface)] px-3.5 py-3 text-body-sm leading-relaxed text-[var(--text)] placeholder-[var(--faint)] transition-colors focus:border-[var(--primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]"
             />
           ) : (
             <Input
@@ -234,7 +234,7 @@ export default function CompanionCapture({ step, spec, editing, pending, onSave,
       ) : (
         <div className="flex flex-col gap-3">
           <h2
-            className="text-[20px] leading-snug text-[var(--text)]"
+            className="text-heading-sm text-[var(--text)]"
             style={{ fontFamily: "var(--product-narrative-font, inherit)" }}
           >
             That is everything worth asking about this one.

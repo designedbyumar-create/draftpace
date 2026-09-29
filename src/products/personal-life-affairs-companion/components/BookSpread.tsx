@@ -64,15 +64,15 @@ export default function BookSpread({
           aria-hidden
           className="absolute inset-y-0 left-0 w-[22px] bg-[color-mix(in_srgb,#000_22%,transparent)] shadow-[inset_-1px_0_0_color-mix(in_srgb,#fff_14%,transparent)]"
         />
-        <p className="text-[10px] font-bold uppercase tracking-[0.2em] opacity-75">{BOOK_ATTRIBUTION}</p>
+        <p className="text-eyebrow font-bold uppercase opacity-75">{BOOK_ATTRIBUTION}</p>
         <h2
-          className="mt-6 text-[40px] leading-none tracking-[-0.01em]"
+          className="mt-6 text-heading-lg tracking-[-0.01em]"
           style={{ fontFamily: "var(--product-narrative-font, inherit)", fontWeight: 500 }}
         >
           {BOOK_NAME}
         </h2>
         <div className="mt-6 h-px w-14" style={{ backgroundColor: COVER_INK, opacity: 0.55 }} />
-        {lastUpdated && <p className="mt-3 text-[12.5px] opacity-80">Last updated {lastUpdated}</p>}
+        {lastUpdated && <p className="mt-3 text-caption opacity-80">Last updated {lastUpdated}</p>}
       </div>
 
       {active && (
@@ -95,7 +95,7 @@ export default function BookSpread({
                   aria-controls="book-section"
                   tabIndex={isActive ? 0 : -1}
                   onClick={() => setSelected(area)}
-                  className={`relative shrink-0 rounded-t-[var(--radius-sm)] border border-b-0 px-3.5 pb-2 pt-2 text-[12px] font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] ${
+                  className={`relative shrink-0 rounded-t-[var(--radius-sm)] border border-b-0 px-3.5 pb-2 pt-2 text-caption font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] ${
                     isActive
                       ? "border-[var(--border)] bg-[var(--surface)] text-[var(--text)]"
                       : "border-transparent bg-[var(--surface-strong)] text-[var(--muted)] hover:text-[var(--text)]"
@@ -112,7 +112,7 @@ export default function BookSpread({
             aria-labelledby={`book-tab-${active.area}`}
             className="rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface)] px-5 py-5 shadow-[0_18px_30px_-24px_color-mix(in_srgb,#000_32%,transparent)]"
           >
-            <p className="border-b border-[var(--border)] pb-2 text-[10.5px] font-bold uppercase tracking-[0.16em] text-[var(--muted)]">
+            <p className="border-b border-[var(--border)] pb-2 text-eyebrow font-bold uppercase text-[var(--muted)]">
               {AFFAIR_AREA_LABEL[active.area]}
             </p>
             <ul className="mt-2 flex flex-col">
@@ -122,7 +122,7 @@ export default function BookSpread({
                   <li key={item.id} className="py-2">
                     <div className="flex items-baseline gap-2">
                       <span
-                        className="text-[16px] text-[var(--text)]"
+                        className="text-body-lg text-[var(--text)]"
                         style={{ fontFamily: "var(--product-narrative-font, inherit)" }}
                       >
                         {item.label}
@@ -130,14 +130,14 @@ export default function BookSpread({
                       <span aria-hidden className="min-w-4 flex-1 border-b border-dotted border-[var(--border-strong)]" />
                     </div>
                     {detail && detail !== item.label && (
-                      <p className="mt-0.5 text-[13px] leading-snug text-[var(--muted)]">{detail}</p>
+                      <p className="mt-0.5 text-body-sm leading-snug text-[var(--muted)]">{detail}</p>
                     )}
-                    {item.notes && <p className="mt-1 text-[12.5px] leading-relaxed text-[var(--muted)]">{item.notes}</p>}
+                    {item.notes && <p className="mt-1 text-caption leading-relaxed text-[var(--muted)]">{item.notes}</p>}
                   </li>
                 );
               })}
             </ul>
-            <p className="mt-4 border-t border-[var(--border)] pt-3 text-[12px] leading-relaxed text-[var(--muted)]">
+            <p className="mt-4 border-t border-[var(--border)] pt-3 text-caption leading-relaxed text-[var(--muted)]">
               The printed copy carries the date you last confirmed each entry, so whoever holds it can tell what is
               current.
             </p>

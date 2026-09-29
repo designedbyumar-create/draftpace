@@ -47,21 +47,21 @@ export default function NextStepPage({
   return (
     <BookPage label="Your next step" head={AFFAIR_AREA_LABEL[area]} ribbon>
       <p
-        className="mt-4 text-[14px] italic text-[var(--muted)]"
+        className="mt-4 text-body-sm italic text-[var(--muted)]"
         style={{ fontFamily: "var(--product-narrative-font, inherit)" }}
       >
         {lead}
       </p>
       <h1
-        className="mt-2 text-[30px] leading-[1.12] text-[var(--text)] [text-wrap:balance]"
+        className="mt-2 text-heading-lg text-[var(--text)] [text-wrap:balance]"
         style={{ fontFamily: "var(--product-narrative-font, inherit)" }}
       >
         {instruction}
       </h1>
-      <p className="mt-3 text-[15px] leading-[1.6] text-[var(--muted)]">{body}</p>
+      <p className="mt-3 text-body leading-[1.6] text-[var(--muted)]">{body}</p>
 
       {referOut && (
-        <p className="mt-4 rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface-muted)] p-3 text-[12.5px] leading-relaxed text-[var(--muted)]">
+        <p className="mt-4 rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface-muted)] p-3 text-caption leading-relaxed text-[var(--muted)]">
           {referOut}
         </p>
       )}
@@ -73,23 +73,23 @@ export default function NextStepPage({
         <ul aria-label="What is recorded now" className="mt-5 flex flex-col gap-3">
           {existing.map((entry) => (
             <li key={entry.id} className="border-l-2 border-[var(--border-strong)] pl-3">
-              <p className="text-[15px] text-[var(--text)]" style={{ fontFamily: "var(--product-narrative-font, inherit)" }}>
+              <p className="text-body text-[var(--text)]" style={{ fontFamily: "var(--product-narrative-font, inherit)" }}>
                 {entry.label}
               </p>
-              {entry.detail && <p className="mt-0.5 text-[12.5px] leading-relaxed text-[var(--muted)]">{entry.detail}</p>}
-              {entry.notes && <p className="mt-1 text-[12.5px] leading-relaxed text-[var(--muted)]">{entry.notes}</p>}
+              {entry.detail && <p className="mt-0.5 text-caption leading-relaxed text-[var(--muted)]">{entry.detail}</p>}
+              {entry.notes && <p className="mt-1 text-caption leading-relaxed text-[var(--muted)]">{entry.notes}</p>}
             </li>
           ))}
         </ul>
       )}
 
-      <div className="mt-5 flex flex-wrap items-baseline gap-x-2 border-t border-dotted border-[var(--border-strong)] pt-3 text-[12.5px] text-[var(--muted)]">
+      <div className="mt-5 flex flex-wrap items-baseline gap-x-2 border-t border-dotted border-[var(--border-strong)] pt-3 text-caption text-[var(--muted)]">
         <span>Goes in your book as</span>
         <span className="font-semibold text-[var(--text)]" style={{ fontFamily: "var(--product-narrative-font, inherit)" }}>
           {bookLabel}
         </span>
       </div>
-      <p className="mt-1.5 text-[12px] text-[var(--muted)]">About {minutes} minutes</p>
+      <p className="mt-1.5 text-caption text-[var(--muted)]">About {minutes} minutes</p>
 
       <div className="mt-5 flex flex-wrap gap-2">{actions}</div>
     </BookPage>

@@ -80,7 +80,7 @@ export default function HistoryModule() {
     load();
   }, [load]);
 
-  if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
+  if (status === "loading") return <p className="text-body-sm text-[var(--faint)]">Loading...</p>;
   if (status === "no-instance") {
     return <EmptyState icon={Clock} title="Nothing has changed yet" description="This product has not been set up on your account." />;
   }
@@ -109,14 +109,14 @@ export default function HistoryModule() {
   return (
     <div className="flex flex-col gap-7">
       <div>
-        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">History</p>
+        <p className="text-eyebrow font-bold uppercase text-[var(--primary)]">History</p>
         <h1
-          className="mt-2 text-[26px] leading-tight text-[var(--text)]"
+          className="mt-2 text-heading text-[var(--text)]"
           style={{ fontFamily: "var(--product-narrative-font, inherit)" }}
         >
           What has changed.
         </h1>
-        <p className="mt-2 max-w-lg text-[13.5px] leading-relaxed text-[var(--muted)]">
+        <p className="mt-2 max-w-lg text-body-sm leading-relaxed text-[var(--muted)]">
           Every change is kept, so when something is no longer true you can still see what it said before. Nothing here
           is ever overwritten.
         </p>
@@ -124,22 +124,22 @@ export default function HistoryModule() {
 
       {days.map((day) => (
         <section key={day.key} aria-label={formatDay(day.entries[0].createdAt, now)}>
-          <h2 className="text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">
+          <h2 className="text-eyebrow font-bold uppercase text-[var(--faint)]">
             {formatDay(day.entries[0].createdAt, now)}
           </h2>
           <div className="mt-2 flex flex-col">
             {day.entries.map((entry) => (
               <div key={entry.id} className="border-b border-[var(--border)] py-3">
                 <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                  <h3 className="text-[14px] font-semibold text-[var(--text)]">{entry.label}</h3>
-                  <span className="text-[11px] font-semibold text-[var(--primary)]">
+                  <h3 className="text-body-sm font-semibold text-[var(--text)]">{entry.label}</h3>
+                  <span className="text-caption font-semibold text-[var(--primary)]">
                     {CHANGE_LABEL[entry.changeKind]}
                   </span>
                 </div>
                 {entry.summary && (
-                  <p className="mt-0.5 text-[12.5px] leading-relaxed text-[var(--muted)]">{entry.summary}</p>
+                  <p className="mt-0.5 text-caption leading-relaxed text-[var(--muted)]">{entry.summary}</p>
                 )}
-                <p className="mt-0.5 text-[12px] text-[var(--faint)]">{AFFAIR_DOMAIN_LABEL[entry.area]}</p>
+                <p className="mt-0.5 text-caption text-[var(--faint)]">{AFFAIR_DOMAIN_LABEL[entry.area]}</p>
               </div>
             ))}
           </div>

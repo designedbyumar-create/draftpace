@@ -37,7 +37,7 @@ export default function BookPage({
           />
         )}
         {head && (
-          <p className="border-b border-[var(--border)] pb-2.5 pr-10 text-[10.5px] font-bold uppercase tracking-[0.16em] text-[var(--muted)]">
+          <p className="border-b border-[var(--border)] pb-2.5 pr-10 text-eyebrow font-bold uppercase text-[var(--muted)]">
             {head}
           </p>
         )}
