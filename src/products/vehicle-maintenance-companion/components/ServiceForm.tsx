@@ -67,7 +67,7 @@ export function RecordServiceForm({
     <div className="flex flex-col gap-3.5 rounded-xl border border-[var(--border)] bg-[var(--surface-muted)] p-4">
       {jobChoices && !item && (
         <label className="block">
-          <span className="mb-1.5 block text-[13px] font-semibold text-[var(--text)]">Which job was it?</span>
+          <span className="mb-1.5 block text-body-sm font-semibold text-[var(--text)]">Which job was it?</span>
           <select
             value={jobId}
             onChange={(event) => {
@@ -75,7 +75,7 @@ export function RecordServiceForm({
               const next = jobChoices.find((j) => j.id === event.target.value);
               if (next) set({ taskName: next.taskName });
             }}
-            className="h-11 w-full rounded-lg border border-[var(--border-strong)] bg-[var(--surface)] px-3 text-[16px] text-[var(--text)]"
+            className="h-11 w-full rounded-lg border border-[var(--border-strong)] bg-[var(--surface)] px-3 text-body-lg text-[var(--text)]"
           >
             <option value={NO_JOB}>Something else</option>
             {jobChoices.map((job) => (
@@ -104,7 +104,7 @@ export function RecordServiceForm({
         <Input label="Cost (optional)" inputMode="decimal" value={values.cost} onChange={(e) => set({ cost: e.target.value })} placeholder="120.50" containerClassName="flex-1" />
       </div>
       <Input label="Note (optional)" value={values.note} onChange={(e) => set({ note: e.target.value })} placeholder="Parts, brand, anything worth remembering" />
-      {error && <p className="text-[13px] text-[var(--danger)]">{error}</p>}
+      {error && <p className="text-body-sm text-[var(--danger)]">{error}</p>}
       <div className="flex flex-wrap items-center gap-2">
         <Button variant="commit" size="sm" onClick={save} disabled={pending}>
           {pending ? "Saving..." : submitLabel}
@@ -181,7 +181,7 @@ export function EditServiceForm({
         <Input label="Cost" inputMode="decimal" value={values.cost} onChange={(e) => set({ cost: e.target.value })} containerClassName="flex-1" />
       </div>
       <Input label="Note" value={values.note} onChange={(e) => set({ note: e.target.value })} />
-      {error && <p className="text-[13px] text-[var(--danger)]">{error}</p>}
+      {error && <p className="text-body-sm text-[var(--danger)]">{error}</p>}
       <div className="flex flex-wrap items-center gap-2">
         <Button variant="commit" size="sm" onClick={save} disabled={pending}>
           {pending ? "Saving..." : "Save changes"}

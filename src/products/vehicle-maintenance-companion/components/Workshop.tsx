@@ -22,11 +22,11 @@ export const ROW_RULE = "[&:not(:first-child)]:border-t [&:not(:first-child)]:bo
 export function Label({ children, meta }: { children: ReactNode; meta?: ReactNode }) {
   return (
     <div className="mb-2 flex items-center justify-between gap-3">
-      <p className={`${MONO} flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--muted)]`}>
+      <p className={`${MONO} flex items-center gap-2 text-eyebrow font-bold uppercase text-[var(--muted)]`}>
         <span aria-hidden className="h-[2px] w-3 bg-[var(--primary)]" />
         {children}
       </p>
-      {meta && <span className={`${MONO} text-[11px] text-[var(--faint)]`}>{meta}</span>}
+      {meta && <span className={`${MONO} text-caption text-[var(--faint)]`}>{meta}</span>}
     </div>
   );
 }
@@ -35,8 +35,8 @@ export function Label({ children, meta }: { children: ReactNode; meta?: ReactNod
 export function ScreenHeading({ kicker, title }: { kicker: string; title: string }) {
   return (
     <header>
-      <p className={`${MONO} text-[11px] uppercase tracking-[0.14em] text-[var(--muted)]`}>{kicker}</p>
-      <h1 className="mt-1 text-[30px] font-bold leading-none tracking-[-0.02em] text-[var(--text)]">{title}</h1>
+      <p className={`${MONO} text-eyebrow uppercase text-[var(--muted)]`}>{kicker}</p>
+      <h1 className="mt-1 text-heading-lg font-bold tracking-[-0.02em] text-[var(--text)]">{title}</h1>
     </header>
   );
 }
@@ -45,7 +45,7 @@ export function ScreenHeading({ kicker, title }: { kicker: string; title: string
 export function Plate({ children, tone = "surface" }: { children: ReactNode; tone?: "surface" | "hero" }) {
   return (
     <span
-      className={`${MONO} inline-block rounded-[var(--radius-sm)] border px-2 py-[3px] text-[12px] font-bold tracking-[0.12em] ${
+      className={`${MONO} inline-block rounded-[var(--radius-sm)] border px-2 py-[3px] text-caption font-bold tracking-[0.12em] ${
         tone === "hero" ? "border-white/30 bg-white/10" : "border-[var(--border-strong)] bg-[var(--surface-muted)] text-[var(--text)]"
       }`}
     >
@@ -76,7 +76,7 @@ export function ChipRow({
             type="button"
             aria-pressed={active}
             onClick={() => onPick(active && item.id !== null ? null : item.id)}
-            className={`${MONO} flex items-center gap-2 rounded-[var(--radius-sm)] border px-2.5 py-[7px] text-[12px] font-bold tracking-[0.08em] ${
+            className={`${MONO} flex items-center gap-2 rounded-[var(--radius-sm)] border px-2.5 py-[7px] text-caption font-bold tracking-[0.08em] ${
               active ? "border-[var(--text)] bg-[var(--text)] text-[var(--surface)]" : "border-[var(--border-strong)] bg-[var(--surface)] text-[var(--text)]"
             }`}
           >

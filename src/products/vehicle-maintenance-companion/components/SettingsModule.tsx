@@ -41,10 +41,10 @@ export default function SettingsModule() {
     };
   }, [instanceId]);
 
-  if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
+  if (status === "loading") return <p className="text-body-sm text-[var(--faint)]">Loading...</p>;
   if (status === "no-instance") return <EmptyState icon={Settings} title="Nothing to show yet" description="This product has not been set up on your account." />;
   if (status === "error") return <EmptyState icon={Settings} title="Couldn't load this" description={errorMessage ?? "Try again."} />;
-  if (!instanceId || !loaded) return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
+  if (!instanceId || !loaded) return <p className="text-body-sm text-[var(--faint)]">Loading...</p>;
 
   async function save(next: ReminderPreferences): Promise<boolean> {
     setBusy(true);

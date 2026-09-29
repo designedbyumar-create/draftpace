@@ -35,8 +35,8 @@ export function DetailsForm({ vehicle, onSaved, onCancel }: { vehicle: Vehicle; 
           <Input key={field.key} label={field.label} value={values[field.key]} placeholder={field.placeholder} onChange={(e) => setValues((c) => ({ ...c, [field.key]: e.target.value }))} />
         ))}
       </div>
-      <p className="text-[12px] leading-relaxed text-[var(--muted)]">Kept with your account and used only for the glove box card. None of it is looked up or checked.</p>
-      {error && <p className="text-[13px] text-[var(--danger)]">{error}</p>}
+      <p className="text-caption leading-relaxed text-[var(--muted)]">Kept with your account and used only for the glove box card. None of it is looked up or checked.</p>
+      {error && <p className="text-body-sm text-[var(--danger)]">{error}</p>}
       <div className="flex flex-wrap items-center gap-2">
         <Button variant="commit" size="sm" onClick={save} disabled={pending}>
           {pending ? "Saving..." : "Save details"}
@@ -94,11 +94,11 @@ export function RenewalForm({
   return (
     <div className="flex flex-col gap-3.5 rounded-xl border border-[var(--border)] bg-[var(--surface-muted)] p-4">
       <label className="block">
-        <span className="mb-1.5 block text-[13px] font-semibold text-[var(--text)]">What is it</span>
+        <span className="mb-1.5 block text-body-sm font-semibold text-[var(--text)]">What is it</span>
         <select
           value={values.kind}
           onChange={(e) => set({ kind: e.target.value as RenewalFormValues["kind"] })}
-          className="h-11 w-full rounded-lg border border-[var(--border-strong)] bg-[var(--surface)] px-3 text-[16px] text-[var(--text)]"
+          className="h-11 w-full rounded-lg border border-[var(--border-strong)] bg-[var(--surface)] px-3 text-body-lg text-[var(--text)]"
         >
           {RENEWAL_KINDS.map((kind) => (
             <option key={kind} value={kind}>
@@ -117,7 +117,7 @@ export function RenewalForm({
       />
       <Input label="Where the paper is (optional)" value={values.whereKept} onChange={(e) => set({ whereKept: e.target.value })} placeholder={RENEWAL_INFO[values.kind].kept} />
       <Input label="Note (optional)" value={values.note} onChange={(e) => set({ note: e.target.value })} />
-      {error && <p className="text-[13px] text-[var(--danger)]">{error}</p>}
+      {error && <p className="text-body-sm text-[var(--danger)]">{error}</p>}
       <div className="flex flex-wrap items-center gap-2">
         <Button variant="commit" size="sm" onClick={save} disabled={pending}>
           {pending ? "Saving..." : renewal ? "Save changes" : "Add this date"}

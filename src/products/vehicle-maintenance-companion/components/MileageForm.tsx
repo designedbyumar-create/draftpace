@@ -45,7 +45,7 @@ export default function MileageForm({ vehicle, onSaved, onCancel }: { vehicle: V
           Cancel
         </Button>
       </div>
-      {error && <p className="text-[13px] text-[var(--danger)]">{error}</p>}
+      {error && <p className="text-body-sm text-[var(--danger)]">{error}</p>}
     </div>
   );
 }

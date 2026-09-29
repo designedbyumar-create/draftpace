@@ -89,7 +89,7 @@ export function VehicleForm({
               type="button"
               aria-pressed={fuelType === fuel}
               onClick={() => setFuelType(fuelType === fuel ? null : fuel)}
-              className={`${MONO} rounded-[var(--radius-sm)] border px-3 py-2 text-[12px] font-bold uppercase tracking-[0.06em] ${
+              className={`${MONO} rounded-[var(--radius-sm)] border px-3 py-2 text-caption font-bold uppercase tracking-[0.06em] ${
                 fuelType === fuel ? "border-[var(--primary)] bg-[var(--primary)] text-[var(--primary-contrast)]" : "border-[var(--border-strong)] bg-[var(--surface)] text-[var(--muted)]"
               }`}
             >
@@ -97,23 +97,23 @@ export function VehicleForm({
             </button>
           ))}
         </div>
-        <p className="mt-1.5 text-[12px] text-[var(--muted)]">Optional. It decides which jobs are worth suggesting, nothing else.</p>
+        <p className="mt-1.5 text-caption text-[var(--muted)]">Optional. It decides which jobs are worth suggesting, nothing else.</p>
       </div>
 
       {!vehicle && (
         <Input label="Mileage (optional)" inputMode="numeric" value={currentMileage} onChange={(e) => setCurrentMileage(e.target.value)} placeholder="50000" />
       )}
 
-      <label className="flex items-start gap-2.5 text-[13px] text-[var(--text)]">
+      <label className="flex items-start gap-2.5 text-body-sm text-[var(--text)]">
         <input type="checkbox" checked={hardUse} onChange={(e) => setHardUse(e.target.checked)} className="mt-0.5 h-4 w-4 accent-[var(--primary)]" />
         <span>
           Mostly short trips, towing, or dust, heat or cold
-          <span className="block text-[12px] font-normal text-[var(--muted)]">Jobs that care start with severe duty on, which halves their interval.</span>
+          <span className="block text-caption font-normal text-[var(--muted)]">Jobs that care start with severe duty on, which halves their interval.</span>
         </span>
       </label>
 
       <details className="group">
-        <summary className="cursor-pointer text-[13px] font-semibold text-[var(--primary)]">Year, make and model (optional)</summary>
+        <summary className="cursor-pointer text-body-sm font-semibold text-[var(--primary)]">Year, make and model (optional)</summary>
         <div className="mt-3 flex flex-wrap gap-3">
           <Input label="Year" value={year} onChange={(e) => setYear(e.target.value)} placeholder="2019" containerClassName="w-24" />
           <Input label="Make" value={make} onChange={(e) => setMake(e.target.value)} placeholder="Honda" containerClassName="flex-1" />
@@ -123,8 +123,8 @@ export function VehicleForm({
 
       {vehicle && (
         <div>
-          <p className="text-[13px] font-semibold text-[var(--text)]">Do you know this vehicle&apos;s service history?</p>
-          <p className="mt-0.5 text-[12.5px] leading-relaxed text-[var(--muted)]">
+          <p className="text-body-sm font-semibold text-[var(--text)]">Do you know this vehicle&apos;s service history?</p>
+          <p className="mt-0.5 text-caption leading-relaxed text-[var(--muted)]">
             For a used car or one you inherited, it is normal not to. Either way nothing is assumed done: a job waits for a real fact before it says anything is due.
           </p>
           <div className="mt-2 flex flex-wrap gap-2">
@@ -138,7 +138,7 @@ export function VehicleForm({
         </div>
       )}
 
-      {errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}
+      {errorMessage && <p className="text-body-sm text-[var(--danger)]">{errorMessage}</p>}
       <div className="flex flex-wrap items-center gap-2">
         <Button variant="commit" onClick={save} disabled={pending || label.trim().length === 0}>
           {vehicle ? "Save changes" : "Add vehicle"}
@@ -212,8 +212,8 @@ export function ProfilePanel({
       <Label>Start with the usual jobs</Label>
       {list && jobs.length > 0 ? (
         <>
-          <p className="text-[13.5px] leading-relaxed text-[var(--text)]">{list.blurb}</p>
-          <p className="text-[12.5px] leading-relaxed text-[var(--muted)]">
+          <p className="text-body-sm leading-relaxed text-[var(--text)]">{list.blurb}</p>
+          <p className="text-caption leading-relaxed text-[var(--muted)]">
             {names.join(", ")}
             {more > 0 ? `, and ${more} more` : ""}.
           </p>
@@ -231,7 +231,7 @@ export function ProfilePanel({
         </>
       ) : (
         <>
-          <p className="text-[13.5px] leading-relaxed text-[var(--text)]">
+          <p className="text-body-sm leading-relaxed text-[var(--text)]">
             {list ? "Everything usual for this vehicle is already on it." : "Say what kind of vehicle it is under Change this vehicle and the usual jobs are one tap away. Or start from a list, or from your manual."}
           </p>
           <div className="flex flex-wrap items-center gap-2">
@@ -247,7 +247,7 @@ export function ProfilePanel({
           </div>
         </>
       )}
-      {message && <p className="text-[12.5px] text-[var(--danger)]">{message}</p>}
+      {message && <p className="text-caption text-[var(--danger)]">{message}</p>}
     </section>
   );
 }
@@ -291,7 +291,7 @@ export function ManualJobsForm({
   return (
     <section className={`${PANEL} flex flex-col gap-3 p-4`}>
       <Label>From your manual</Label>
-      <div className={`${MONO} grid grid-cols-[1fr_84px_72px] gap-2 text-[10.5px] uppercase tracking-[0.1em] text-[var(--muted)]`}>
+      <div className={`${MONO} grid grid-cols-[1fr_84px_72px] gap-2 text-eyebrow uppercase text-[var(--muted)]`}>
         <span>Job</span>
         <span>Miles</span>
         <span>Months</span>
@@ -299,9 +299,9 @@ export function ManualJobsForm({
       <div className="flex flex-col gap-2">
         {rows.map((row, index) => (
           <div key={index} className="grid grid-cols-[1fr_84px_72px] gap-2">
-            <input aria-label={`Job ${index + 1}`} list="vmc-job-names" value={row.taskName} onChange={(e) => setRow(index, { taskName: e.target.value })} placeholder="Engine oil and filter" className="h-11 rounded-[var(--radius-sm)] border border-[var(--border-strong)] bg-[var(--surface)] px-3 text-[16px] text-[var(--text)]" />
-            <input aria-label={`Miles for job ${index + 1}`} inputMode="numeric" value={row.miles} onChange={(e) => setRow(index, { miles: e.target.value })} placeholder="7500" className={`${MONO} h-11 rounded-[var(--radius-sm)] border border-[var(--border-strong)] bg-[var(--surface)] px-2 text-[16px] text-[var(--text)]`} />
-            <input aria-label={`Months for job ${index + 1}`} inputMode="numeric" value={row.months} onChange={(e) => setRow(index, { months: e.target.value })} placeholder="12" className={`${MONO} h-11 rounded-[var(--radius-sm)] border border-[var(--border-strong)] bg-[var(--surface)] px-2 text-[16px] text-[var(--text)]`} />
+            <input aria-label={`Job ${index + 1}`} list="vmc-job-names" value={row.taskName} onChange={(e) => setRow(index, { taskName: e.target.value })} placeholder="Engine oil and filter" className="h-11 rounded-[var(--radius-sm)] border border-[var(--border-strong)] bg-[var(--surface)] px-3 text-body-lg text-[var(--text)]" />
+            <input aria-label={`Miles for job ${index + 1}`} inputMode="numeric" value={row.miles} onChange={(e) => setRow(index, { miles: e.target.value })} placeholder="7500" className={`${MONO} h-11 rounded-[var(--radius-sm)] border border-[var(--border-strong)] bg-[var(--surface)] px-2 text-body-lg text-[var(--text)]`} />
+            <input aria-label={`Months for job ${index + 1}`} inputMode="numeric" value={row.months} onChange={(e) => setRow(index, { months: e.target.value })} placeholder="12" className={`${MONO} h-11 rounded-[var(--radius-sm)] border border-[var(--border-strong)] bg-[var(--surface)] px-2 text-body-lg text-[var(--text)]`} />
           </div>
         ))}
       </div>
@@ -315,7 +315,7 @@ export function ManualJobsForm({
           Add a row
         </Button>
       </div>
-      {error && <p className="text-[13px] text-[var(--danger)]">{error}</p>}
+      {error && <p className="text-body-sm text-[var(--danger)]">{error}</p>}
       <div className="flex flex-wrap items-center gap-2">
         <Button variant="commit" size="sm" onClick={save} disabled={pending}>
           {pending ? "Adding..." : "Add these jobs"}
@@ -402,14 +402,14 @@ export function ItemForm({
     <section className="flex flex-col gap-4 rounded-xl border border-[var(--border)] bg-[var(--surface-muted)] p-4">
       {!item && (
         <div>
-          <p className="text-[12.5px] font-semibold text-[var(--text)]">Start from a typical job (optional)</p>
+          <p className="text-caption font-semibold text-[var(--text)]">Start from a typical job (optional)</p>
           <div className="mt-1.5 flex flex-wrap gap-1.5">
             {MAINTENANCE_TEMPLATES.map((template) => (
               <button
                 key={template.id}
                 type="button"
                 onClick={() => pickTemplate(template.id)}
-                className="rounded-full border px-2.5 py-1 text-[11.5px] font-semibold"
+                className="rounded-full border px-2.5 py-1 text-caption font-semibold"
                 style={templateId === template.id ? { borderColor: "var(--primary)", color: "var(--primary)" } : { borderColor: "var(--border)", color: "var(--muted)" }}
               >
                 {template.taskName}
@@ -434,11 +434,11 @@ export function ItemForm({
         <Input label="Interval, months" inputMode="numeric" value={intervalMonths} onChange={(e) => setIntervalMonths(e.target.value)} placeholder="6" containerClassName="flex-1" />
       </div>
 
-      <label className="flex items-start gap-2.5 text-[13px] text-[var(--text)]">
+      <label className="flex items-start gap-2.5 text-body-sm text-[var(--text)]">
         <input type="checkbox" checked={severeDuty} onChange={(e) => setSevereDuty(e.target.checked)} className="mt-0.5 h-4 w-4 accent-[var(--primary)]" />
         <span>
           Severe duty for this job
-          <span className="block text-[12px] font-normal text-[var(--muted)]">
+          <span className="block text-caption font-normal text-[var(--muted)]">
             Towing, mostly short trips, heavy dust, or extreme heat or cold. Halves this job&apos;s interval; it never changes the number you typed above.
           </span>
         </span>
@@ -451,12 +451,12 @@ export function ItemForm({
             <Input label="Mileage when last done (optional)" inputMode="numeric" value={lastDoneMileage} onChange={(e) => setLastDoneMileage(e.target.value)} placeholder="45000" containerClassName="flex-1" />
           </div>
         ) : (
-          <p className="text-[12.5px] leading-relaxed text-[var(--muted)]">
+          <p className="text-caption leading-relaxed text-[var(--muted)]">
             This vehicle&apos;s history is unknown, so nothing is asked about when this was last done. It will read as nothing to judge yet until you record it done for real.
           </p>
         ))}
 
-      {errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}
+      {errorMessage && <p className="text-body-sm text-[var(--danger)]">{errorMessage}</p>}
       <div className="flex flex-wrap items-center gap-2">
         <Button variant="commit" size="sm" onClick={save} disabled={pending || taskName.trim().length === 0}>
           {item ? "Save changes" : "Add job"}
@@ -525,8 +525,8 @@ export function StarterListPicker({
   return (
     <section className="flex flex-col gap-3 rounded-xl border border-[var(--border)] bg-[var(--surface-muted)] p-4">
       <div>
-        <p className="text-[13px] font-semibold text-[var(--text)]">Start from a list</p>
-        <p className="mt-0.5 text-[12.5px] leading-relaxed text-[var(--muted)]">
+        <p className="text-body-sm font-semibold text-[var(--text)]">Start from a list</p>
+        <p className="mt-0.5 text-caption leading-relaxed text-[var(--muted)]">
           Each job is added with a typical interval you can change, and with nothing recorded against it, so none of it reads as overdue. Take what you want
           and close the rest.
         </p>
@@ -535,8 +535,8 @@ export function StarterListPicker({
         {STARTER_LISTS.map((list) => (
           <li key={list.id} className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3.5 py-3">
             <div className="min-w-0">
-              <p className="text-[13.5px] font-semibold text-[var(--text)]">{list.name}</p>
-              <p className="text-[12px] text-[var(--muted)]">{list.blurb}</p>
+              <p className="text-body-sm font-semibold text-[var(--text)]">{list.name}</p>
+              <p className="text-caption text-[var(--muted)]">{list.blurb}</p>
             </div>
             <Button size="sm" variant="secondary" disabled={pendingId !== null} onClick={() => add(list.id)}>
               {pendingId === list.id ? "Adding..." : "Add these jobs"}
@@ -544,7 +544,7 @@ export function StarterListPicker({
           </li>
         ))}
       </ul>
-      {message && <p className="text-[12.5px] text-[var(--muted)]">{message}</p>}
+      {message && <p className="text-caption text-[var(--muted)]">{message}</p>}
       <div>
         <Button size="sm" variant="ghost" onClick={onCancel} disabled={pendingId !== null}>
           Done

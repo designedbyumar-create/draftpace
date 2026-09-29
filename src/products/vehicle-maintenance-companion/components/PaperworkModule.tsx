@@ -33,7 +33,7 @@ export default function PaperworkModule({ definition }: { definition: { slug: st
     [vehicles, renewals, today]
   );
 
-  if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
+  if (status === "loading") return <p className="text-body-sm text-[var(--faint)]">Loading...</p>;
   if (status === "no-instance") return <EmptyState icon={Article} title="Nothing to show yet" description="This product has not been set up on your account." />;
   if (status === "error") return <EmptyState icon={Article} title="Couldn't load this" description={errorMessage ?? "Try again."} />;
   if (vehicles.length === 0) return <EmptyState icon={Article} title="No vehicles yet" description="Add a vehicle first. Its dates and glove box details live here." />;

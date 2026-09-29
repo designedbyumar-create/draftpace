@@ -41,19 +41,19 @@ function EntryRow({ event, showVehicle, label, props }: { event: ServiceEvent; s
   const facts = [event.shop, event.costMinorUnits !== null ? formatCost(event.costMinorUnits) : null, showVehicle ? label : null].filter(Boolean);
   return (
     <li className={`grid grid-cols-[96px_1fr] gap-x-4 px-4 py-3.5 ${ROW_RULE}`}>
-      <div className={`${MONO} text-[12px] leading-relaxed text-[var(--muted)]`}>
+      <div className={`${MONO} text-caption leading-relaxed text-[var(--muted)]`}>
         <p className="font-bold text-[var(--text)]">{event.doneOn}</p>
         {event.mileage !== null && <p>{event.mileage.toLocaleString()} mi</p>}
       </div>
       <div className="min-w-0">
-        <p className="text-[15px] font-semibold leading-tight tracking-[-0.01em] text-[var(--text)]">{event.taskName}</p>
-        {facts.length > 0 && <p className={`${MONO} mt-1 text-[12px] text-[var(--muted)]`}>{facts.join(" \u00b7 ")}</p>}
-        {event.note && <p className="mt-1 text-[12.5px] text-[var(--faint)]">{event.note}</p>}
+        <p className="text-body font-semibold leading-tight tracking-[-0.01em] text-[var(--text)]">{event.taskName}</p>
+        {facts.length > 0 && <p className={`${MONO} mt-1 text-caption text-[var(--muted)]`}>{facts.join(" \u00b7 ")}</p>}
+        {event.note && <p className="mt-1 text-caption text-[var(--faint)]">{event.note}</p>}
         <div className="mt-2 flex items-center gap-4">
-          <button type="button" onClick={() => props.onEdit(event.id)} className="text-[13px] font-semibold text-[var(--muted)] hover:text-[var(--text)]">
+          <button type="button" onClick={() => props.onEdit(event.id)} className="text-body-sm font-semibold text-[var(--muted)] hover:text-[var(--text)]">
             Change
           </button>
-          <button type="button" disabled={props.removingId === event.id} onClick={() => props.onRemove(event)} className="text-[13px] font-semibold text-[var(--muted)] hover:text-[var(--text)]">
+          <button type="button" disabled={props.removingId === event.id} onClick={() => props.onRemove(event)} className="text-body-sm font-semibold text-[var(--muted)] hover:text-[var(--text)]">
             {props.removingId === event.id ? "Removing..." : "Remove"}
           </button>
         </div>
@@ -83,12 +83,12 @@ export default function HistoryScreen(props: HistoryScreenProps) {
       </div>
 
       {!available && (
-        <p className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-4 text-[13px] leading-relaxed text-[var(--muted)]">
+        <p className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-4 text-body-sm leading-relaxed text-[var(--muted)]">
           The service record could not be loaded right now. Nothing has been lost; try again in a moment.
         </p>
       )}
 
-      {notice && <p className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3 text-[13px] text-[var(--danger)]">{notice}</p>}
+      {notice && <p className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3 text-body-sm text-[var(--danger)]">{notice}</p>}
 
       {available && choices.length > 1 && (
         <ChipRow label="Vehicle" activeId={selectedId} onPick={onSelect} items={[{ id: null, text: "ALL" }, ...choices.map((c) => ({ id: c.id, text: `${c.label}${c.closed ? " (closed)" : ""}` }))]} />
@@ -98,8 +98,8 @@ export default function HistoryScreen(props: HistoryScreenProps) {
 
       {available && groups.length === 0 && (
         <section className="rounded-[var(--radius)] border border-dashed border-[var(--border-strong)] p-5">
-          <p className="text-[14px] font-semibold text-[var(--text)]">Nothing recorded yet.</p>
-          <p className="mt-1 max-w-lg text-[13px] leading-relaxed text-[var(--muted)]">
+          <p className="text-body-sm font-semibold text-[var(--text)]">Nothing recorded yet.</p>
+          <p className="mt-1 max-w-lg text-body-sm leading-relaxed text-[var(--muted)]">
             When you say a job was done, from Due or Vehicles, it lands here with its date and mileage. You can also log a service that was never a tracked job, like a repair.
           </p>
         </section>
@@ -129,7 +129,7 @@ export default function HistoryScreen(props: HistoryScreenProps) {
           <Button size="sm" variant="secondary" disabled={printing || printLabel === null} onClick={onPrint}>
             {printing ? "Preparing..." : "Print the service record"}
           </Button>
-          <p className="text-[12.5px] text-[var(--muted)]">
+          <p className="text-caption text-[var(--muted)]">
             {printLabel === null ? "Choose one vehicle to print its record." : `For ${printLabel}, oldest first, ready to hand to a buyer.`}
           </p>
         </div>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import Button from "@/design-system/Button";
+import { textLinkClassName } from "@/design-system/textLinkStyles";
 import type { DueView, DueVehicleItem } from "../dueStatus";
 import { describeInterval, describeRemaining } from "../dueText";
 import { describeVehicle, type LampState, type VehicleLamp } from "../fleet";
@@ -83,13 +84,17 @@ function Odometer({ miles }: { miles: number }) {
         <span
           key={index}
           aria-hidden
+          // 24px is sized to the tile, not to prose hierarchy: a
+          // documented exception in designSystem.test.ts's type-scale
+          // guard, keyed off this h-[42px] w-[28px] marker, not a named
+          // scale step. Changing the tile changes the digit with it.
           className={`${MONO} flex h-[42px] w-[28px] items-center justify-center rounded-[var(--radius-sm)] border border-white/10 bg-black/50 text-[24px] font-bold`}
           style={{ opacity: index < lead ? 0.25 : 1 }}
         >
           {digit}
         </span>
       ))}
-      <span className={`${MONO} ml-2 pb-1 text-[11px] uppercase tracking-[0.12em] opacity-60`}>miles</span>
+      <span className={`${MONO} ml-2 pb-1 text-eyebrow uppercase opacity-60`}>miles</span>
     </div>
   );
 }
@@ -125,22 +130,22 @@ function ClusterHero({ entry, vehicle, open, onOpen }: { entry: DueVehicleItem |
     >
       <div className="flex items-center justify-between gap-3">
         <Plate tone="hero">{vehicle.plate ?? vehicle.label}</Plate>
-        {describeVehicle(vehicle) !== (vehicle.plate ?? vehicle.label) && <span className="text-[12px] opacity-70">{describeVehicle(vehicle)}</span>}
+        {describeVehicle(vehicle) !== (vehicle.plate ?? vehicle.label) && <span className="text-caption opacity-70">{describeVehicle(vehicle)}</span>}
       </div>
       {vehicle.currentMileage !== null ? (
         <>
           <div className="mt-5">
             <Odometer miles={vehicle.currentMileage} />
           </div>
-          <p className={`${MONO} mt-2 text-[10.5px] uppercase tracking-[0.1em] opacity-55`}>{vehicle.mileageUpdatedAt ? `as of ${shortDay(vehicle.mileageUpdatedAt, today)}` : "no date on this reading"}</p>
+          <p className={`${MONO} mt-2 text-eyebrow uppercase opacity-55`}>{vehicle.mileageUpdatedAt ? `as of ${shortDay(vehicle.mileageUpdatedAt, today)}` : "no date on this reading"}</p>
         </>
       ) : (
-        <p className="mt-5 text-[13px] opacity-75">No mileage yet</p>
+        <p className="mt-5 text-body-sm opacity-75">No mileage yet</p>
       )}
       <div className="mt-4">
         <Scale />
       </div>
-      <div className={`${MONO} mt-4 flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.16em]`}>
+      <div className={`${MONO} mt-4 flex items-center gap-2 text-eyebrow font-bold uppercase`}>
         {entry ? (
           <span aria-hidden className="h-2.5 w-2.5 rounded-full" style={{ background: "var(--primary)", boxShadow: "0 0 0 4px color-mix(in srgb, var(--primary) 32%, transparent)" }} />
         ) : (
@@ -150,8 +155,8 @@ function ClusterHero({ entry, vehicle, open, onOpen }: { entry: DueVehicleItem |
       </div>
       {entry ? (
         <>
-          <h2 className="mt-2 text-[26px] font-bold leading-[1.1] tracking-[-0.02em]">{entry.item.taskName}</h2>
-          <p className={`${MONO} mt-2 text-[12.5px] leading-relaxed opacity-80`}>
+          <h2 className="mt-2 text-heading font-bold tracking-[-0.02em]">{entry.item.taskName}</h2>
+          <p className={`${MONO} mt-2 text-caption leading-relaxed opacity-80`}>
             {describeRemaining(entry)}
             {describeInterval(entry.item) ? ` (${describeInterval(entry.item)})` : ""}
           </p>
@@ -165,8 +170,8 @@ function ClusterHero({ entry, vehicle, open, onOpen }: { entry: DueVehicleItem |
         </>
       ) : (
         <>
-          <h2 className="mt-2 text-[26px] font-bold leading-[1.1] tracking-[-0.02em]">Nothing is due right now.</h2>
-          <p className="mt-2 text-[13.5px] leading-relaxed opacity-80">Everything you&apos;re tracking is within its interval. This will update as intervals elapse or as you record work done.</p>
+          <h2 className="mt-2 text-heading font-bold tracking-[-0.02em]">Nothing is due right now.</h2>
+          <p className="mt-2 text-body-sm leading-relaxed opacity-80">Everything you&apos;re tracking is within its interval. This will update as intervals elapse or as you record work done.</p>
         </>
       )}
     </section>
@@ -180,11 +185,11 @@ function Row({ entry, lamp, open, onOpen, form, text, action }: { entry: DueVehi
         <Lamp state={lamp} className="mt-[7px]" />
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-            <h3 className="text-[15px] font-semibold leading-tight tracking-[-0.01em] text-[var(--text)]">{entry.item.taskName}</h3>
+            <h3 className="text-body font-semibold leading-tight tracking-[-0.01em] text-[var(--text)]">{entry.item.taskName}</h3>
             <Plate>{entry.vehicle.plate ?? entry.vehicle.label}</Plate>
           </div>
-          <p className={`${MONO} mt-1 text-[12px] leading-relaxed text-[var(--muted)]`}>{text}</p>
-          <div className="mt-2">{open ? form : <button type="button" onClick={onOpen} className="text-[13px] font-semibold text-[var(--primary)] hover:underline">{action}</button>}</div>
+          <p className={`${MONO} mt-1 text-caption leading-relaxed text-[var(--muted)]`}>{text}</p>
+          <div className="mt-2">{open ? form : <button type="button" onClick={onOpen} className={textLinkClassName()}>{action}</button>}</div>
         </div>
       </div>
     </li>
@@ -204,7 +209,7 @@ export default function DueScreen(props: DueScreenProps) {
 
       {vehicles.length > 1 && <FleetStrip lamps={lamps} filterId={filterId} onFilter={onFilter} />}
 
-      {actionError && <p className={`${PANEL} p-3 text-[13px] text-[var(--danger)]`}>{actionError}</p>}
+      {actionError && <p className={`${PANEL} p-3 text-body-sm text-[var(--danger)]`}>{actionError}</p>}
 
       <ClusterHero entry={hero} vehicle={heroVehicle} open={hero !== undefined && openItemId === hero.item.id} onOpen={() => hero && onOpen(hero.item.id)} />
       {hero && openItemId === hero.item.id && <div>{renderForm(hero)}</div>}
@@ -213,12 +218,12 @@ export default function DueScreen(props: DueScreenProps) {
         <section key={notice.vehicle.id} aria-label="Mileage" className={`${PANEL} flex gap-3 py-3 pl-0 pr-4`}>
           <span aria-hidden className="w-[3px] shrink-0 self-stretch" style={{ backgroundColor: "var(--primary)" }} />
           <div className="min-w-0 flex-1">
-            <p className="text-[13px] leading-relaxed text-[var(--text)]">{describeMileageNotice(notice)}</p>
+            <p className="text-body-sm leading-relaxed text-[var(--text)]">{describeMileageNotice(notice)}</p>
             <div className="mt-2">
               {openMileageId === notice.vehicle.id ? (
                 renderMileageForm(notice.vehicle)
               ) : (
-                <button type="button" onClick={() => onOpenMileage(notice.vehicle.id)} className="text-[13px] font-semibold text-[var(--primary)] hover:underline">
+                <button type="button" onClick={() => onOpenMileage(notice.vehicle.id)} className={textLinkClassName()}>
                   Update mileage
                 </button>
               )}
@@ -245,11 +250,11 @@ export default function DueScreen(props: DueScreenProps) {
             {renewals.map((entry) => (
               <li key={entry.renewal.id} className={ROW_RULE}>
                 <Link href={`${BASE}/paperwork`} className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 px-4 py-3.5 transition-colors hover:bg-[var(--surface-muted)]">
-                  <span className="text-[15px] font-semibold tracking-[-0.01em] text-[var(--text)]">
+                  <span className="text-body font-semibold tracking-[-0.01em] text-[var(--text)]">
                     {renewalTitle(entry.renewal)}
-                    <span className="ml-2 text-[12.5px] font-normal text-[var(--faint)]">{entry.vehicle.label}</span>
+                    <span className="ml-2 text-caption font-normal text-[var(--faint)]">{entry.vehicle.label}</span>
                   </span>
-                  <span className={`${MONO} text-[12px] ${entry.state === "pastDate" ? "text-[var(--danger)]" : "text-[var(--muted)]"}`}>
+                  <span className={`${MONO} text-caption ${entry.state === "pastDate" ? "text-[var(--danger)]" : "text-[var(--muted)]"}`}>
                     {describeRenewalTiming(entry.days)}, {entry.renewal.dueOn}
                   </span>
                 </Link>

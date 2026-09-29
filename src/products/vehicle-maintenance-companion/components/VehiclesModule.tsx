@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Button from "@/design-system/Button";
 import EmptyState from "@/design-system/EmptyState";
+import { textLinkClassName } from "@/design-system/textLinkStyles";
 import { describeResultError } from "@/product-framework/result";
 import { Car, Plus } from "@/design-system/Icon";
 import { archiveVehicle } from "../domain/vehicles";
@@ -62,15 +63,15 @@ function ItemRow({
   return (
     <div className="rounded-[var(--radius)] border border-[var(--border-strong)] bg-[var(--surface)] px-3.5 py-3">
       <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-        <h4 className="text-[13.5px] font-semibold text-[var(--text)]">{item.taskName}</h4>
+        <h4 className="text-body-sm font-semibold text-[var(--text)]">{item.taskName}</h4>
         {item.severeDuty && (
-          <span className="text-[10.5px] font-semibold uppercase tracking-[0.06em]" style={{ color: "var(--primary)" }}>
+          <span className="text-eyebrow font-semibold uppercase" style={{ color: "var(--primary)" }}>
             Severe duty
           </span>
         )}
       </div>
-      <p className={`${MONO} mt-0.5 text-[11.5px] text-[var(--muted)]`}>{describeInterval(item)}</p>
-      <p className="mt-1 text-[12px] text-[var(--faint)]">
+      <p className={`${MONO} mt-0.5 text-caption text-[var(--muted)]`}>{describeInterval(item)}</p>
+      <p className="mt-1 text-caption text-[var(--faint)]">
         {item.lastDoneAt ? `Last done ${item.lastDoneAt}${item.lastDoneMileage ? ` at ${item.lastDoneMileage.toLocaleString()} miles` : ""}` : "Nothing recorded yet"}
       </p>
       {mode === "done" ? (
@@ -89,18 +90,18 @@ function ItemRow({
         </div>
       ) : (
         <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1">
-          <button type="button" onClick={() => setMode("done")} className="text-[13px] font-semibold text-[var(--primary)] hover:underline">
+          <button type="button" onClick={() => setMode("done")} className={textLinkClassName()}>
             I had this done
           </button>
-          <button type="button" onClick={() => setMode("edit")} className="text-[13px] font-semibold text-[var(--muted)] hover:text-[var(--text)]">
+          <button type="button" onClick={() => setMode("edit")} className="text-body-sm font-semibold text-[var(--muted)] hover:text-[var(--text)]">
             Change
           </button>
-          <button type="button" disabled={pending} onClick={close} className="text-[13px] font-semibold text-[var(--muted)] hover:text-[var(--text)]">
+          <button type="button" disabled={pending} onClick={close} className="text-body-sm font-semibold text-[var(--muted)] hover:text-[var(--text)]">
             {pending ? "Closing..." : "Stop tracking"}
           </button>
         </div>
       )}
-      {error && <p className="mt-1 text-[12.5px] text-[var(--danger)]">{error}</p>}
+      {error && <p className="mt-1 text-caption text-[var(--danger)]">{error}</p>}
     </div>
   );
 }
@@ -164,11 +165,11 @@ function VehicleCard({
           <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
             <div className="flex items-center gap-3">
               {vehicle.plate && <Plate>{vehicle.plate}</Plate>}
-              <h3 className="text-[17px] font-bold tracking-[-0.01em] text-[var(--text)]">{vehicle.label}</h3>
+              <h3 className="text-heading-sm font-bold text-[var(--text)]">{vehicle.label}</h3>
             </div>
-            {!vehicle.historyKnown && <span className="text-[10.5px] font-semibold uppercase tracking-[0.06em] text-[var(--faint)]">History unknown</span>}
+            {!vehicle.historyKnown && <span className="text-eyebrow font-semibold uppercase text-[var(--faint)]">History unknown</span>}
           </div>
-          {identity && identity !== vehicle.label && <p className="mt-0.5 text-[12.5px] text-[var(--muted)]">{identity}</p>}
+          {identity && identity !== vehicle.label && <p className="mt-0.5 text-caption text-[var(--muted)]">{identity}</p>}
 
           {panel === "mileage" ? (
             <div className="mt-2">
@@ -182,7 +183,7 @@ function VehicleCard({
               />
             </div>
           ) : (
-            <button type="button" onClick={() => setPanel("mileage")} className={`${MONO} mt-1 text-left text-[12px] text-[var(--muted)] hover:text-[var(--text)]`}>
+            <button type="button" onClick={() => setPanel("mileage")} className={`${MONO} mt-1 text-left text-caption text-[var(--muted)] hover:text-[var(--text)]`}>
               {vehicle.currentMileage ? `${vehicle.currentMileage.toLocaleString()} miles` : "Add current mileage"}
               {vehicle.mileageUpdatedAt ? `, as of ${vehicle.mileageUpdatedAt}` : ""}
               {freshness.state === "stale" && vehicle.currentMileage ? ". Worth updating." : ""}
@@ -191,7 +192,7 @@ function VehicleCard({
 
           <div className="mt-3 flex flex-col gap-2">
             {activeItems.length === 0 ? (
-              <p className="text-[12.5px] text-[var(--faint)]">Nothing tracked on this vehicle yet.</p>
+              <p className="text-caption text-[var(--faint)]">Nothing tracked on this vehicle yet.</p>
             ) : (
               activeItems.map((item) => (
                 <ItemRow key={item.id} instanceId={instanceId} item={item} vehicle={vehicle} onChanged={onItemChanged} onRemoved={onItemRemoved} onRecorded={onRecorded} />
@@ -250,7 +251,7 @@ function VehicleCard({
 
           {panel === "close" && (
             <div className="mt-3 rounded-[var(--radius)] border border-[var(--border-strong)] bg-[var(--surface-muted)] p-3.5">
-              <p className="text-[13px] leading-relaxed text-[var(--text)]">
+              <p className="text-body-sm leading-relaxed text-[var(--text)]">
                 Closing a vehicle takes it out of Due and stops tracking its jobs. Nothing is deleted: its service record stays in History, so you can still print it after you sell the car.
               </p>
               <div className="mt-2.5 flex items-center gap-2">
@@ -263,7 +264,7 @@ function VehicleCard({
               </div>
             </div>
           )}
-          {error && <p className="mt-2 text-[12.5px] text-[var(--danger)]">{error}</p>}
+          {error && <p className="mt-2 text-caption text-[var(--danger)]">{error}</p>}
         </>
       )}
     </section>
@@ -276,7 +277,7 @@ export default function VehiclesModule() {
   const [newVehicleId, setNewVehicleId] = useState<string | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
 
-  if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
+  if (status === "loading") return <p className="text-body-sm text-[var(--faint)]">Loading...</p>;
   if (status === "no-instance") {
     return <EmptyState icon={Car} title="Nothing to show yet" description="This product has not been set up on your account." />;
   }
@@ -303,7 +304,7 @@ export default function VehiclesModule() {
         )}
       </header>
 
-      {notice && <p className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3 text-[13px] text-[var(--danger)]">{notice}</p>}
+      {notice && <p className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3 text-body-sm text-[var(--danger)]">{notice}</p>}
 
       {addingVehicle && (
         <VehicleForm

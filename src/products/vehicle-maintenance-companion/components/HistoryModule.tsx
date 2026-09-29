@@ -24,7 +24,7 @@ export default function HistoryModule({ definition }: { definition: { slug: stri
   const all = useMemo(() => [...vehicles, ...closedVehicles], [vehicles, closedVehicles]);
   const groups = useMemo(() => historyByYear(events, selectedId), [events, selectedId]);
 
-  if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
+  if (status === "loading") return <p className="text-body-sm text-[var(--faint)]">Loading...</p>;
   if (status === "no-instance") return <EmptyState icon={Clock} title="Nothing to show yet" description="This product has not been set up on your account." />;
   if (status === "error") return <EmptyState icon={Clock} title="Couldn't load this" description={errorMessage ?? "Try again."} />;
   if (all.length === 0) return <EmptyState icon={Clock} title="No vehicles yet" description="Add a vehicle first. Every service you record for it is kept here." />;
@@ -82,7 +82,7 @@ export default function HistoryModule({ definition }: { definition: { slug: stri
       renderLogForm={() => {
         if (!instanceId) return null;
         if (!logVehicle) {
-          return <p className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3 text-[13px] text-[var(--muted)]">Choose which vehicle it was for, above, then log the service.</p>;
+          return <p className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3 text-body-sm text-[var(--muted)]">Choose which vehicle it was for, above, then log the service.</p>;
         }
         return (
           <RecordServiceForm

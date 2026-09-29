@@ -45,7 +45,7 @@ export default function SettingsView({ prefs, capability, busy, message, onRemin
     <div className="mx-auto flex w-full max-w-2xl flex-col gap-6">
       <header>
         <ScreenHeading kicker="Only what you switch on" title="Reminders" />
-        <p className="mt-3 max-w-[52ch] text-[14px] leading-6 text-[var(--muted)]">
+        <p className="mt-3 max-w-[52ch] text-body-sm leading-6 text-[var(--muted)]">
           Off unless you switch it on. When it is on, you hear about two things only: a job that has reached the interval you set, and a date you recorded on
           Paperwork that is close. Nothing else here sends anything.
         </p>
@@ -54,8 +54,8 @@ export default function SettingsView({ prefs, capability, busy, message, onRemin
       <section className="flex flex-col gap-5 rounded-[var(--radius)] border border-[var(--border-strong)] bg-[var(--surface)] p-5">
         <div className="flex items-start justify-between gap-4">
           <div>
-            <p className="text-[15px] font-medium text-[var(--text)]">Remind me</p>
-            <p className="mt-1 text-[13px] leading-5 text-[var(--muted)]">
+            <p className="text-body font-medium text-[var(--text)]">Remind me</p>
+            <p className="mt-1 text-body-sm leading-5 text-[var(--muted)]">
               One notification on this device, at most once an hour, and each thing only once. A date is reminded two weeks ahead and again on the day.
             </p>
           </div>
@@ -73,8 +73,8 @@ export default function SettingsView({ prefs, capability, busy, message, onRemin
           <>
             <div className="flex items-start justify-between gap-4 border-t border-[var(--border)] pt-5">
               <div>
-                <p className="text-[15px] font-medium text-[var(--text)]">Say what it is about</p>
-                <p className="mt-1 text-[13px] leading-5 text-[var(--muted)]">
+                <p className="text-body font-medium text-[var(--text)]">Say what it is about</p>
+                <p className="mt-1 text-body-sm leading-5 text-[var(--muted)]">
                   Off, the notification only says something needs a look. On, it names the job or the date and the vehicle, which anyone looking at your lock screen can read.
                 </p>
               </div>
@@ -82,8 +82,8 @@ export default function SettingsView({ prefs, capability, busy, message, onRemin
             </div>
 
             <div className="border-t border-[var(--border)] pt-5">
-              <p className="text-[15px] font-medium text-[var(--text)]">Quiet hours</p>
-              <p className="mt-1 text-[13px] leading-5 text-[var(--muted)]">Nothing is sent in this window. A reminder that arrives during it goes out afterwards.</p>
+              <p className="text-body font-medium text-[var(--text)]">Quiet hours</p>
+              <p className="mt-1 text-body-sm leading-5 text-[var(--muted)]">Nothing is sent in this window. A reminder that arrives during it goes out afterwards.</p>
               <div className="mt-3 grid grid-cols-2 gap-3">
                 <Select label="From" value={prefs.quietStartHour} disabled={busy} onChange={(event) => onQuietChange(Number(event.target.value), prefs.quietEndHour)}>
                   {HOURS.map((hour) => (
@@ -100,7 +100,7 @@ export default function SettingsView({ prefs, capability, busy, message, onRemin
                   ))}
                 </Select>
               </div>
-              <p className="mt-2 text-[12px] text-[var(--faint)]">Times are in {prefs.timezone}.</p>
+              <p className="mt-2 text-caption text-[var(--faint)]">Times are in {prefs.timezone}.</p>
             </div>
 
             {capability === "subscribed" && (
@@ -114,7 +114,7 @@ export default function SettingsView({ prefs, capability, busy, message, onRemin
         )}
 
         {message && (
-          <p role="status" className="text-[13px] text-[var(--muted)]">
+          <p role="status" className="text-body-sm text-[var(--muted)]">
             {message}
           </p>
         )}

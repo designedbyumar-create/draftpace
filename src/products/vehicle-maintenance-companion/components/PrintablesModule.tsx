@@ -30,7 +30,7 @@ export default function PrintablesModule({ definition }: { definition: ProductDe
   const [making, setMaking] = useState<"boundary" | "record" | "card" | null>(null);
   const [generateError, setGenerateError] = useState<string | null>(null);
 
-  if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
+  if (status === "loading") return <p className="text-body-sm text-[var(--faint)]">Loading...</p>;
   if (status === "no-instance") {
     return <EmptyState icon={Car} title="Nothing to show yet" description="This product has not been set up on your account." />;
   }
@@ -82,7 +82,7 @@ export default function PrintablesModule({ definition }: { definition: ProductDe
     <div className="flex flex-col gap-6">
       <div>
         <ScreenHeading kicker="One for the shop, one for a buyer, one for the glove box" title="Print" />
-        <p className="mt-3 max-w-lg text-[13.5px] leading-relaxed text-[var(--muted)]">Each is made fresh, nothing is stored, and every line is something you typed.</p>
+        <p className="mt-3 max-w-lg text-body-sm leading-relaxed text-[var(--muted)]">Each is made fresh, nothing is stored, and every line is something you typed.</p>
       </div>
 
       {choices.length > 1 && (
@@ -91,13 +91,13 @@ export default function PrintablesModule({ definition }: { definition: ProductDe
 
       <Surface className="flex flex-col gap-4">
         <div>
-          <p className="text-[15px] font-semibold text-[var(--text)]">Service Boundary</p>
-          <p className="mt-0.5 text-[12.5px] leading-relaxed text-[var(--muted)]">
+          <p className="text-body font-semibold text-[var(--text)]">Service Boundary</p>
+          <p className="mt-0.5 text-caption leading-relaxed text-[var(--muted)]">
             A dated, mileage-stamped page you hand over before a shop touches the car: exactly what you are requesting today, and that anything else needs a call first.
           </p>
         </div>
         {isClosed ? (
-          <p className="text-[12.5px] text-[var(--faint)]">This vehicle is closed. A boundary is for a car you are about to take in.</p>
+          <p className="text-caption text-[var(--faint)]">This vehicle is closed. A boundary is for a car you are about to take in.</p>
         ) : (
           <>
             <div className="flex flex-wrap gap-3">
@@ -105,13 +105,13 @@ export default function PrintablesModule({ definition }: { definition: ProductDe
               <Input label="Number to call you on (optional)" value={callNumber} onChange={(e) => setCallNumber(e.target.value)} containerClassName="flex-1" />
             </div>
             <div>
-              <p className="text-[13px] font-semibold text-[var(--text)]">What are you requesting today?</p>
+              <p className="text-body-sm font-semibold text-[var(--text)]">What are you requesting today?</p>
               {vehicleItems.length === 0 ? (
-                <p className="mt-1 text-[12.5px] text-[var(--faint)]">Nothing is tracked on this vehicle yet. You can still write what you want below.</p>
+                <p className="mt-1 text-caption text-[var(--faint)]">Nothing is tracked on this vehicle yet. You can still write what you want below.</p>
               ) : (
                 <div className="mt-2 flex flex-col gap-2">
                   {vehicleItems.map((item) => (
-                    <label key={item.id} className="flex items-start gap-2.5 text-[13px] text-[var(--text)]">
+                    <label key={item.id} className="flex items-start gap-2.5 text-body-sm text-[var(--text)]">
                       <input type="checkbox" checked={requestedIds.has(item.id)} onChange={() => toggle(item.id)} className="mt-0.5 h-4 w-4 accent-[var(--primary)]" />
                       <span>{item.taskName}</span>
                     </label>
@@ -120,17 +120,17 @@ export default function PrintablesModule({ definition }: { definition: ProductDe
               )}
             </div>
             <label className="block">
-              <span className="mb-1.5 block text-[13px] font-semibold text-[var(--text)]">Anything else you are asking for (optional, one per line)</span>
+              <span className="mb-1.5 block text-body-sm font-semibold text-[var(--text)]">Anything else you are asking for (optional, one per line)</span>
               <textarea
                 value={alsoRequested}
                 onChange={(e) => setAlsoRequested(e.target.value)}
                 rows={3}
                 placeholder="Look at the noise from the rear left wheel"
-                className="w-full rounded-lg border border-[var(--border-strong)] bg-[var(--surface)] px-3.5 py-2.5 text-[16px] text-[var(--text)] placeholder-[var(--faint)]"
+                className="w-full rounded-lg border border-[var(--border-strong)] bg-[var(--surface)] px-3.5 py-2.5 text-body-lg text-[var(--text)] placeholder-[var(--faint)]"
               />
             </label>
             <Input label="Do not go over this without calling (optional)" value={ceiling} onChange={(e) => setCeiling(e.target.value)} placeholder="$200" hint="Printed as you type it. Draftpace does not check or use the amount." />
-            <label className="flex items-start gap-2.5 text-[13px] text-[var(--text)]">
+            <label className="flex items-start gap-2.5 text-body-sm text-[var(--text)]">
               <input type="checkbox" checked={askForOldParts} onChange={(e) => setAskForOldParts(e.target.checked)} className="mt-0.5 h-4 w-4 accent-[var(--primary)]" />
               <span>Ask them to keep any parts they replace, so I can see them</span>
             </label>
@@ -149,8 +149,8 @@ export default function PrintablesModule({ definition }: { definition: ProductDe
             <Article size={18} aria-hidden />
           </div>
           <div>
-            <p className="text-[15px] font-semibold text-[var(--text)]">Service record</p>
-            <p className="mt-0.5 text-[12.5px] text-[var(--muted)]">
+            <p className="text-body font-semibold text-[var(--text)]">Service record</p>
+            <p className="mt-0.5 text-caption text-[var(--muted)]">
               Everything recorded for {vehicle.label}, oldest first. It says it is your own record, not a shop&apos;s.
             </p>
           </div>
@@ -166,8 +166,8 @@ export default function PrintablesModule({ definition }: { definition: ProductDe
             <Article size={18} aria-hidden />
           </div>
           <div>
-            <p className="text-[15px] font-semibold text-[var(--text)]">Glove box card</p>
-            <p className="mt-0.5 text-[12.5px] text-[var(--muted)]">Registration plate, VIN, tire size, oil, insurance and the dates you are watching. Fill the details in on Paperwork first.</p>
+            <p className="text-body font-semibold text-[var(--text)]">Glove box card</p>
+            <p className="mt-0.5 text-caption text-[var(--muted)]">Registration plate, VIN, tire size, oil, insurance and the dates you are watching. Fill the details in on Paperwork first.</p>
           </div>
         </div>
         <Button variant="secondary" size="sm" disabled={making !== null} onClick={() => make("card")}>
@@ -175,7 +175,7 @@ export default function PrintablesModule({ definition }: { definition: ProductDe
         </Button>
       </Surface>
 
-      {generateError && <p className="text-[13px] text-[var(--danger)]">{generateError}</p>}
+      {generateError && <p className="text-body-sm text-[var(--danger)]">{generateError}</p>}
     </div>
   );
 }

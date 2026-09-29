@@ -66,7 +66,7 @@ export default function WorkspaceModule() {
     return notices;
   }, [vehicles, items, today]);
 
-  if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
+  if (status === "loading") return <p className="text-body-sm text-[var(--faint)]">Loading...</p>;
   if (status === "no-instance") {
     return <EmptyState icon={Car} title="Nothing to show yet" description="This product has not been set up on your account." />;
   }

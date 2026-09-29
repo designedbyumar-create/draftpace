@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Button from "@/design-system/Button";
+import { textLinkClassName } from "@/design-system/textLinkStyles";
 import { Label, MONO, PANEL, Plate, ROW_RULE, ScreenHeading } from "./Workshop";
 import { describeRenewalTiming, renewalTitle, type RenewalEntry } from "../renewals";
 import { DETAIL_FIELDS, detailsFromVehicle } from "../paperworkForm";
@@ -46,17 +47,17 @@ export default function PaperworkScreen(props: PaperworkScreenProps) {
     <div className="mx-auto flex w-full max-w-2xl flex-col gap-6">
       <div>
         <ScreenHeading kicker="Dates and glove box details" title="Paperwork" />
-        <p className="mt-3 max-w-[52ch] text-[13.5px] leading-relaxed text-[var(--muted)]">
+        <p className="mt-3 max-w-[52ch] text-body-sm leading-relaxed text-[var(--muted)]">
           Registration, insurance, an inspection, a warranty ending. You record the date and where the paper is. Nothing is uploaded, and nothing here says what any place requires.
         </p>
       </div>
 
       {!available && (
-        <p className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-4 text-[13px] leading-relaxed text-[var(--muted)]">
+        <p className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-4 text-body-sm leading-relaxed text-[var(--muted)]">
           The dates could not be loaded right now. Nothing has been lost; try again in a moment.
         </p>
       )}
-      {notice && <p className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3 text-[13px] text-[var(--danger)]">{notice}</p>}
+      {notice && <p className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3 text-body-sm text-[var(--danger)]">{notice}</p>}
 
       {vehicles.map(({ vehicle, entries }) => {
         const details = detailsFromVehicle(vehicle);
@@ -65,12 +66,12 @@ export default function PaperworkScreen(props: PaperworkScreenProps) {
           <section key={vehicle.id} aria-label={vehicle.label} className="flex flex-col gap-3">
             <div className="flex items-center gap-3">
               <Plate>{vehicle.plate ?? vehicle.label}</Plate>
-              {vehicle.plate && <span className="text-[15px] font-semibold text-[var(--text)]">{vehicle.label}</span>}
+              {vehicle.plate && <span className="text-body font-semibold text-[var(--text)]">{vehicle.label}</span>}
             </div>
 
             <div>
               <Label>Dates</Label>
-              {available && entries.length === 0 && <p className="rounded-[var(--radius)] border border-dashed border-[var(--border-strong)] px-4 py-4 text-[13px] text-[var(--faint)]">No dates recorded for this vehicle yet.</p>}
+              {available && entries.length === 0 && <p className="rounded-[var(--radius)] border border-dashed border-[var(--border-strong)] px-4 py-4 text-body-sm text-[var(--faint)]">No dates recorded for this vehicle yet.</p>}
               {entries.length > 0 && (
                 <ul className={PANEL}>
                   {entries.map((entry) => (
@@ -80,18 +81,18 @@ export default function PaperworkScreen(props: PaperworkScreenProps) {
                       ) : (
                         <>
                           <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-                            <h3 className="text-[15px] font-semibold tracking-[-0.01em] text-[var(--text)]">{renewalTitle(entry.renewal)}</h3>
-                            <span className={`${MONO} text-[12px] ${STATE_STYLE[entry.state]}`}>
+                            <h3 className="text-body font-semibold tracking-[-0.01em] text-[var(--text)]">{renewalTitle(entry.renewal)}</h3>
+                            <span className={`${MONO} text-caption ${STATE_STYLE[entry.state]}`}>
                               {describeRenewalTiming(entry.days)}, {entry.renewal.dueOn}
                             </span>
                           </div>
-                          {entry.renewal.whereKept && <p className="mt-0.5 text-[12.5px] text-[var(--muted)]">Kept: {entry.renewal.whereKept}</p>}
-                          {entry.renewal.note && <p className="mt-0.5 text-[12.5px] text-[var(--faint)]">{entry.renewal.note}</p>}
+                          {entry.renewal.whereKept && <p className="mt-0.5 text-caption text-[var(--muted)]">Kept: {entry.renewal.whereKept}</p>}
+                          {entry.renewal.note && <p className="mt-0.5 text-caption text-[var(--faint)]">{entry.renewal.note}</p>}
                           <div className="mt-2 flex items-center gap-4">
-                            <button type="button" onClick={() => props.onOpenRenewalForm(entry.renewal.id)} className="text-[13px] font-semibold text-[var(--primary)] hover:underline">
+                            <button type="button" onClick={() => props.onOpenRenewalForm(entry.renewal.id)} className={textLinkClassName()}>
                               Change or renew
                             </button>
-                            <button type="button" disabled={props.removingId === entry.renewal.id} onClick={() => props.onRemoveRenewal(entry)} className="text-[13px] font-semibold text-[var(--muted)] hover:text-[var(--text)]">
+                            <button type="button" disabled={props.removingId === entry.renewal.id} onClick={() => props.onRemoveRenewal(entry)} className="text-body-sm font-semibold text-[var(--muted)] hover:text-[var(--text)]">
                               {props.removingId === entry.renewal.id ? "Removing..." : "Remove"}
                             </button>
                           </div>
@@ -122,13 +123,13 @@ export default function PaperworkScreen(props: PaperworkScreenProps) {
                     <dl className={PANEL}>
                       {shown.map((f) => (
                         <div key={f.key} className={`flex items-baseline justify-between gap-4 px-4 py-3 ${ROW_RULE}`}>
-                          <dt className="text-[13px] text-[var(--muted)]">{f.label}</dt>
-                          <dd className={`${MONO} text-right text-[13.5px] font-bold text-[var(--text)]`}>{details[f.key]}</dd>
+                          <dt className="text-body-sm text-[var(--muted)]">{f.label}</dt>
+                          <dd className={`${MONO} text-right text-body-sm font-bold text-[var(--text)]`}>{details[f.key]}</dd>
                         </div>
                       ))}
                     </dl>
                   ) : (
-                    <p className="rounded-[var(--radius)] border border-dashed border-[var(--border-strong)] px-4 py-4 text-[13px] leading-relaxed text-[var(--faint)]">
+                    <p className="rounded-[var(--radius)] border border-dashed border-[var(--border-strong)] px-4 py-4 text-body-sm leading-relaxed text-[var(--faint)]">
                       Nothing recorded yet. Registration plate, VIN, tire size, oil, insurance and a roadside number all go on the card.
                     </p>
                   )}
