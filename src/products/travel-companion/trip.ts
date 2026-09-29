@@ -21,6 +21,9 @@
 
 export type TripStatus = "planning" | "active" | "past" | "archived";
 
+/** Which of the two setup paths a trip started from. Null for a trip created before this existed. */
+export type TravelType = "international" | "domestic";
+
 export interface Trip {
   id: string;
   title: string;
@@ -29,6 +32,15 @@ export interface Trip {
   endsAt: string | null;
   status: TripStatus;
   createdAt: string;
+  /** A free-text memory, written any time, usually once the trip is done. */
+  memoryNote: string | null;
+  /** A link to photos, a shared album, anything kept elsewhere. Never validated as reachable. */
+  memoryLink: string | null;
+  travelType: TravelType | null;
+  /** Set when travelType is "international": a name from geoData/countries.ts, or whatever was typed. */
+  destinationCountry: string | null;
+  /** Set when travelType is "domestic": a name from geoData/usStates.ts, or whatever was typed. */
+  destinationState: string | null;
 }
 
 export interface Person {

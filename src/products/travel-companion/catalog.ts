@@ -5,6 +5,7 @@ import ItineraryModule from "./components/ItineraryModule";
 import TripModule from "./components/TripModule";
 import PeopleModule from "./components/PeopleModule";
 import RecordModule from "./components/RecordModule";
+import TravelHistoryModule from "./components/TravelHistoryModule";
 import PrintablesModule from "./components/PrintablesModule";
 import { SettingsPlaceholder } from "./components/PlaceholderScreens";
 
@@ -24,6 +25,7 @@ export const travelCompanionCatalogEntry: ProductCatalogEntry = {
     "travel-companion.trip": TripModule,
     "travel-companion.people": PeopleModule,
     "travel-companion.record": RecordModule,
+    "travel-companion.travel-history": TravelHistoryModule,
     "travel-companion.printables": PrintablesModule,
     "travel-companion.settings": SettingsPlaceholder,
   },

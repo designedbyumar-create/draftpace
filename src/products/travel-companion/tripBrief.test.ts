@@ -12,6 +12,11 @@ const trip: Trip = {
   endsAt: "2026-10-21",
   status: "active",
   createdAt: "2026-08-01T00:00:00Z",
+  memoryNote: null,
+  memoryLink: null,
+  travelType: null,
+  destinationCountry: null,
+  destinationState: null,
 };
 
 const place = (over: Partial<Place> = {}): Place => ({

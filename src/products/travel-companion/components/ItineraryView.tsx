@@ -38,6 +38,8 @@ export interface ItineraryViewProps {
   compact: boolean;
   onAdd: (date: string) => void;
   actions: ReactNode;
+  /** A concluded trip's own record, looked back on rather than edited: no per-day Add button. */
+  readOnly?: boolean;
 }
 
 const ADD =
@@ -52,7 +54,7 @@ export function dayLabel(date: string): string {
   });
 }
 
-export default function ItineraryView({ tripTitle, rangeLabel, days, undated, compact, onAdd, actions }: ItineraryViewProps) {
+export default function ItineraryView({ tripTitle, rangeLabel, days, undated, compact, onAdd, actions, readOnly = false }: ItineraryViewProps) {
   return (
     <div className="mx-auto flex w-full max-w-2xl flex-col">
       <header>
@@ -79,9 +81,11 @@ export default function ItineraryView({ tripTitle, rangeLabel, days, undated, co
                     </p>
                   )}
                 </div>
-                <button type="button" onClick={() => onAdd(day.date)} className={ADD} aria-label={`Add something on ${day.label}`}>
-                  Add
-                </button>
+                {!readOnly && (
+                  <button type="button" onClick={() => onAdd(day.date)} className={ADD} aria-label={`Add something on ${day.label}`}>
+                    Add
+                  </button>
+                )}
               </div>
               {day.stops.length === 0 ? (
                 <p className="rounded-2xl border border-dashed border-[var(--border-strong)] px-4 py-3.5 text-body-sm text-[var(--muted)]">

@@ -101,8 +101,12 @@ export const travelCompanionDefinition: ProductDefinitionInput = {
    * placement Personal Finance Companion uses for its own included
    * printable: not primary, reached from the overflow menu, label left
    * to defaultDestinationLabel's own title-casing ("Printables").
+   *
+   * Travel history, added later, is where a trip lives once it is
+   * marked done: also secondary, since it is looked at occasionally,
+   * not the everyday surface Today or Trip are.
    */
-  navigation: ["workspace", "itinerary", "trip", "people", "record", "printables", "settings"],
+  navigation: ["workspace", "itinerary", "trip", "people", "record", "travel-history", "printables", "settings"],
   primaryNavigation: ["workspace", "itinerary", "trip", "people"],
   workspaceLabel: "Today",
   destinationLabels: {
@@ -110,6 +114,7 @@ export const travelCompanionDefinition: ProductDefinitionInput = {
     trip: "Trip",
     people: "People",
     record: "Record",
+    "travel-history": "Travel history",
     settings: "Settings",
   },
   navigationStyle: "rail",
@@ -134,6 +139,7 @@ export const travelCompanionDefinition: ProductDefinitionInput = {
     { id: "travel-companion.trip", destination: "trip" },
     { id: "travel-companion.people", destination: "people" },
     { id: "travel-companion.record", destination: "record" },
+    { id: "travel-companion.travel-history", destination: "travel-history" },
     { id: "travel-companion.printables", destination: "printables" },
     { id: "travel-companion.settings", destination: "settings" },
   ],

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import Button from "@/design-system/Button";
 import EmptyState from "@/design-system/EmptyState";
 import { textLinkClassName } from "@/design-system/textLinkStyles";
@@ -41,15 +42,23 @@ export default function PeopleModule() {
         </div>
       );
     }
+    const hasTravelHistory = trips.some((trip) => trip.status === "past");
     return (
       <EmptyState
         icon={Globe}
         title={trips.length === 0 ? "No trip yet" : "Nothing currently in progress"}
         description="Set up a trip before adding the people travelling on it."
         action={
-          <button type="button" onClick={() => setSettingUp(true)} className={textLinkClassName()}>
-            Set up a trip
-          </button>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+            <button type="button" onClick={() => setSettingUp(true)} className={textLinkClassName()}>
+              Set up a trip
+            </button>
+            {hasTravelHistory && (
+              <Link href="/app/products/travel-companion/travel-history" className={textLinkClassName()}>
+                See travel history
+              </Link>
+            )}
+          </div>
         }
       />
     );

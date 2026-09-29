@@ -20,13 +20,13 @@ function dateLabel(iso: string): string {
  * proposal §16. Resolved threads land here automatically, their own
  * closing line, merged with whatever the traveller wrote by hand.
  *
- * SCOPED TO THE CURRENT TRIP, SAME LIMITATION AS TODAY/TRIP/PEOPLE
+ * SCOPED TO THE CURRENT TRIP, SAME AS TODAY/TRIP/PEOPLE
  *
- * useTravelCompanion only loads the trip that is planning or active.
- * A trip switcher for "several trips, none obviously current" (the
- * proposal's own screen inventory) is not built yet, so a past trip's
- * own record is not reachable here in v1, the same acknowledged gap
- * every other screen on this product already has.
+ * useTravelCompanion only loads the trip that is planning or active,
+ * so this screen's own log stays about the trip in progress. A past
+ * trip's dated record is not lost, it moves to its own read-only page
+ * once the trip is marked done: see TravelHistoryDetailModule, reached
+ * from Travel history.
  */
 export default function RecordModule() {
   const { status, errorMessage, instanceId, trips, currentTrip, recordEntries, addRecordEntry } = useTravelCompanion();

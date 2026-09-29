@@ -61,7 +61,7 @@ const TOUR_STEPS: TourStep[] = [
  * nothing stored says so and stops.
  */
 export default function TodayModule() {
-  const { status, errorMessage, instanceId, currentTrip, places, bookings, threads, addTrip, upsertThread } = useTravelCompanion();
+  const { status, errorMessage, instanceId, trips, currentTrip, places, bookings, threads, addTrip, upsertThread } = useTravelCompanion();
   const [starting, setStarting] = useState(false);
   const [running, setRunning] = useState<{ playbook: Playbook; run: RunRecord; directTitle: string | null } | null>(null);
   const [opening, setOpening] = useState(false);
@@ -89,7 +89,7 @@ export default function TodayModule() {
     return (
       <>
         <FirstRunTour slug={TRAVEL_COMPANION_SLUG} steps={TOUR_STEPS} />
-        <TripStart instanceId={instanceId} onCreated={addTrip} />
+        <TripStart instanceId={instanceId} onCreated={addTrip} hasTravelHistory={trips.some((trip) => trip.status === "past")} />
       </>
     );
   }

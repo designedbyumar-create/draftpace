@@ -29,11 +29,9 @@ export type LoadStatus = "loading" | "ready" | "no-instance" | "error";
  * WHICH TRIP IS "CURRENT"
  *
  * The most recently created trip that is not past or archived. Good
- * enough for a v1 with realistically one active trip at a time; a real
- * switcher for "several trips in flight, none obviously current" is
- * listed in the proposal's screen inventory and not built yet. `trips`
- * is exposed in full so that UI can be added later without changing
- * how data loads.
+ * enough with realistically one active trip at a time. `trips` is
+ * exposed in full so the travel-history screens can read history without
+ * a second load path.
  */
 export function useTravelCompanion() {
   const [status, setStatus] = useState<LoadStatus>("loading");
@@ -165,6 +163,9 @@ export function useTravelCompanion() {
   const addTrip = useCallback((created: Trip) => {
     setTrips((current) => [created, ...current]);
   }, []);
+  const replaceTrip = useCallback((updated: Trip) => {
+    setTrips((current) => current.map((trip) => (trip.id === updated.id ? updated : trip)));
+  }, []);
 
   const replacePerson = useCallback((updated: Person) => {
     setPeople((current) => current.map((person) => (person.id === updated.id ? updated : person)));
@@ -230,6 +231,7 @@ export function useTravelCompanion() {
     recordEntries,
     load,
     addTrip,
+    replaceTrip,
     replacePerson,
     addPerson,
     replacePlace,

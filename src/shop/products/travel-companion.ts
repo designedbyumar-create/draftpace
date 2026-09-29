@@ -100,9 +100,18 @@ export const travelCompanionShopProduct: ShopProductInput = {
       problem: "You come back to the same place a year later and have forgotten everything you learned.",
       solution: "A dated record of what happened, and what's worth knowing before the next trip to the same place.",
     },
+    {
+      problem: "You don't know your return date yet, and every planner still wants one from you.",
+      solution:
+        "For a trip abroad, add your visa's expiry once, optionally, and it fills in a placeholder return date until you book a real flight.",
+    },
+    {
+      problem: "The trip is over, but it's still cluttering the screen you want for the next one.",
+      solution: "Mark it done and it moves to Travel history: still readable, still printable, never deleted.",
+    },
   ],
   howItWorks: [
-    "Set up a trip with a name and rough dates. That is the whole of the setup, and nothing is gated behind finishing it.",
+    "Set up a trip with a name, and say whether you're going to a country or travelling locally within the US, searching a real list as you type. Nothing else is required, and nothing is gated behind finishing it; leave the dates blank if you don't know them yet, or, for a trip abroad, use your visa's expiry as a placeholder return date until you book a real flight.",
     "Add what it is made of as you book it: destinations, travellers, flights, transfers, stays and reservations, each with its own provider and reference.",
     "For anything booked around something else, say so once with a 'this depends on' picker. Nothing is ever inferred from timing or place, because two things on the same day are not necessarily connected.",
     "Today shows the current state, derived fresh from what you recorded: what is happening now, what is worth knowing about, and what you are waiting on.",
@@ -110,7 +119,8 @@ export const travelCompanionShopProduct: ShopProductInput = {
     "For each one, the Companion walks you through it: nine authored situations covering booking, flight, hotel and transport problems, something lost or stolen, plus the general ones for reorganising and letting people know.",
     "Name a destination and it works out that place's real timezone from a small offline table, so today means today where you are. Unrecognised places are said to be undetected rather than guessed at, and you can set one by hand from the same table.",
     "Waiting to hear back becomes a real open thread, shown on Today until it is resolved, then filed into the record with the line it closed on.",
-    "Print My Trip Book whenever you want a paper copy, blank and structured, as long or short as your trip needs.",
+    "Mark a trip done when it's over. It moves to Travel history, still readable and printable, where you can add a note and a link for what you want to remember.",
+    "Print My Trip Book whenever you want a paper copy, blank and structured, as long or short as your trip needs. Once a trip is done, print its trip record instead: the same shape, already filled in with what you actually recorded.",
   ],
   access: "paid",
   // Launch pricing, Phase 4 of the pricing plan: $19 actual, marked up
@@ -139,14 +149,20 @@ export const travelCompanionShopProduct: ShopProductInput = {
     "A document registry: what exists and where it's kept, never a file, never an upload",
     "Record: what happened, dated, and what's worth knowing next time you go",
     "My Trip Book: a blank, structured, printable planner covering every part of the trip",
+    "Travel history: a trip you mark done stays readable and printable, never deleted",
+    "Memories: a note and a link you can save on a trip once it's done",
+    "A populated trip record: printed with your actual travellers, bookings, documents and dated log once a trip is finished, not a blank form",
     "A private, real account, not a shared demo",
   ],
   expectedInputs: [
     "A trip name and rough dates",
+    "Whether you're going to a country or travelling locally within the US",
+    "Your visa's expiry, if you have one and don't know your return date yet",
     "Bookings as you make them: what, when, who with, and the confirmation reference",
     "Which booking depends on which, said once, by you",
     "Who is travelling, and anything they need",
     "A change, when something moves",
+    "A note and a link for what you want to remember, once a trip is done",
   ],
   expectedOutputs: [
     "Today's state of the trip, in plain sentences that each trace to something you recorded",
@@ -157,9 +173,10 @@ export const travelCompanionShopProduct: ShopProductInput = {
     "A printable packing list, one page a traveller can tick with a pen",
     "A one-page trip card for the family: who is going, where, how you are getting there and where you are staying, with no booking references, documents or notes on it",
     "A printable trip book, as long as your trip needs and no longer",
+    "A printable trip record for a finished trip: your actual travellers, bookings, documents and dated log, filled in rather than blank",
   ],
   savingBehavior:
-    "Everything saves to your account automatically as you go. It is tied to your sign-in, not this device, so a trip you set up on a laptop is there on your phone at the airport. Nothing is ever deleted: a cancelled booking or a corrected entry is archived rather than removed, and the record of what happened is never edited after the fact.",
+    "Everything saves to your account automatically as you go. It is tied to your sign-in, not this device, so a trip you set up on a laptop is there on your phone at the airport. Nothing is ever deleted: a cancelled booking or a corrected entry is archived rather than removed, a finished trip is marked done rather than removed and stays in Travel history, and the record of what happened is never edited after the fact.",
   privacyNotes:
     "Your trip is private to your account. Draftpace does not sell your data or use it for advertising, and nothing here is read by an AI model: there is no model provider anywhere in this product. It stores no files at all, which means no passport scan, no visa PDF, and no boarding pass image can be uploaded to it even by accident. It holds no amount, currency, or balance, so it never becomes a record of what a trip cost. Suggested wording for a difficult call stays in your browser and is never saved, even after you use it.",
   faqs: [],
@@ -225,6 +242,18 @@ export const travelCompanionShopProduct: ShopProductInput = {
       answer:
         "One time, and yes. The account is what keeps your trip private and there on your phone at the airport after you set it up on a laptop.",
       stage: ["deciding"],
+    },
+    {
+      question: "Do I need to know my exact dates to set up a trip?",
+      answer:
+        "No. Only a name is required. Dates are a rough guess you can leave blank, and for a trip abroad you can add your visa's expiry to fill in a placeholder return date until you have a real flight booked.",
+      stage: ["deciding", "owning"],
+    },
+    {
+      question: "What happens to a trip once it's over?",
+      answer:
+        "You mark it done and it moves to Travel history. Nothing is deleted: it stays readable, still prints, and you can add a note and a link for what you want to remember about it.",
+      stage: ["owning"],
     },
   ],
 
@@ -312,6 +341,16 @@ export const travelCompanionShopProduct: ShopProductInput = {
       label: "Write down what's worth knowing next time",
       answer: "Record keeps what happened, dated, and what you would want to know before going back to the same place.",
       destination: "record",
+    },
+    {
+      label: "Mark a trip done",
+      answer: "It moves to Travel history: still readable, still printable, never deleted.",
+      destination: "trip",
+    },
+    {
+      label: "Look back at a past trip",
+      answer: "Travel history holds every finished trip, with its own page, memories and a printable trip record.",
+      destination: "travel-history",
     },
   ],
 

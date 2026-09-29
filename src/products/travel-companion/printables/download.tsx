@@ -10,6 +10,7 @@ import { TripBookDocument, type TripBookManifest } from "./document";
 import { ItineraryDocument, type ItineraryPrintData } from "./itinerary";
 import { PackingDocument, type PackingPrintData } from "./packing";
 import { TripCardDocument } from "./tripCard";
+import { TripRecordDocument, type TripRecordPrintData } from "./tripRecord";
 import type { TripCard } from "../tripCard";
 
 let fontsRegistered = false;
@@ -79,6 +80,20 @@ export async function downloadTripCard(card: TripCard, size: "LETTER" | "A4"): P
   const anchor = document.createElement("a");
   anchor.href = url;
   anchor.download = `trip-card-${new Date().toISOString().slice(0, 10)}.pdf`;
+  document.body.appendChild(anchor);
+  anchor.click();
+  anchor.remove();
+  URL.revokeObjectURL(url);
+}
+
+export async function downloadTripRecord(data: TripRecordPrintData): Promise<void> {
+  registerFonts();
+
+  const blob = await pdf(TripRecordDocument({ data })).toBlob();
+  const url = URL.createObjectURL(blob);
+  const anchor = document.createElement("a");
+  anchor.href = url;
+  anchor.download = `trip-record-${new Date().toISOString().slice(0, 10)}.pdf`;
   document.body.appendChild(anchor);
   anchor.click();
   anchor.remove();

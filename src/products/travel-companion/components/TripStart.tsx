@@ -1,6 +1,8 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { textLinkClassName } from "@/design-system/textLinkStyles";
 import { TRAVEL_COMPANION_SLUG } from "../instanceData";
 import type { Trip } from "../trip";
 import TripSetupForm from "./TripSetupForm";
@@ -21,9 +23,11 @@ import TripSetupForm from "./TripSetupForm";
 export default function TripStart({
   instanceId,
   onCreated,
+  hasTravelHistory = false,
 }: {
   instanceId: string;
   onCreated: (trip: Trip) => void;
+  hasTravelHistory?: boolean;
 }) {
   const router = useRouter();
   return (
@@ -44,6 +48,11 @@ export default function TripStart({
           router.push(`/app/products/${TRAVEL_COMPANION_SLUG}/itinerary`);
         }}
       />
+      {hasTravelHistory && (
+        <Link href={`/app/products/${TRAVEL_COMPANION_SLUG}/travel-history`} className={textLinkClassName()}>
+          See travel history
+        </Link>
+      )}
     </div>
   );
 }

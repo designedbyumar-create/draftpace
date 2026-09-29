@@ -30,7 +30,7 @@ function rangeLabel(range: { from: string; to: string } | null): string | null {
  */
 export default function ItineraryModule() {
   const travel = useTravelCompanion();
-  const { status, errorMessage, instanceId, currentTrip, places, bookings, people, addTrip, addBooking, addParticipants } = travel;
+  const { status, errorMessage, instanceId, trips, currentTrip, places, bookings, people, addTrip, addBooking, addParticipants } = travel;
   const [adding, setAdding] = useState<string | null>(null);
   const [making, setMaking] = useState(false);
   const [makingCard, setMakingCard] = useState(false);
@@ -50,7 +50,7 @@ export default function ItineraryModule() {
     return <EmptyState icon={CalendarCheck} title="Couldn't load this" description={errorMessage ?? "Try again."} />;
   }
   if (!instanceId) return null;
-  if (!currentTrip) return <TripStart instanceId={instanceId} onCreated={addTrip} />;
+  if (!currentTrip) return <TripStart instanceId={instanceId} onCreated={addTrip} hasTravelHistory={trips.some((trip) => trip.status === "past")} />;
 
   if (adding) {
     return (

@@ -25,7 +25,14 @@ import RecordChangeForm from "./RecordChangeForm";
 import CompanionRun from "./CompanionRun";
 import { findResumableRun, beginRun } from "./useResumableRun";
 import { playbooksForBooking, PLAYBOOK_BY_KEY } from "../playbooks";
-import { archivePreparationItem, setPreparationCompletion, createPreparationItem, loadRecordEntriesForPlaceNames, type RunRecord } from "../domain/travelData";
+import {
+  archivePreparationItem,
+  setPreparationCompletion,
+  createPreparationItem,
+  loadRecordEntriesForPlaceNames,
+  updateTrip,
+  type RunRecord,
+} from "../domain/travelData";
 import { checkDocuments } from "../documentChecks";
 import { packingSections } from "../packingLists";
 import type { Playbook } from "@/components/product-shell/companion/steps";
@@ -88,8 +95,12 @@ export default function TripModule() {
     addPreparationItem,
     replacePreparationItem,
     upsertThread,
+    replaceTrip,
   } = useTravelCompanion();
   const [settingUp, setSettingUp] = useState(false);
+  const [concluding, setConcluding] = useState(false);
+  const [askingToConclude, setAskingToConclude] = useState(false);
+  const [concludeError, setConcludeError] = useState<string | null>(null);
   const [addingPlace, setAddingPlace] = useState(false);
   const [addingBooking, setAddingBooking] = useState(false);
   const [addingDocument, setAddingDocument] = useState(false);
@@ -123,6 +134,7 @@ export default function TripModule() {
         </div>
       );
     }
+    const hasTravelHistory = trips.some((trip) => trip.status === "past");
     return (
       <div className="mx-auto flex w-full max-w-2xl flex-col gap-6">
         <header>
@@ -133,13 +145,35 @@ export default function TripModule() {
           title={trips.length === 0 ? "No trip yet" : "Nothing currently in progress"}
           description="Set up a trip to start connecting the people, places and bookings it depends on."
           action={
-            <button type="button" onClick={() => setSettingUp(true)} className={textLinkClassName()}>
-              Set up a trip
-            </button>
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+              <button type="button" onClick={() => setSettingUp(true)} className={textLinkClassName()}>
+                Set up a trip
+              </button>
+              {hasTravelHistory && (
+                <Link href="/app/products/travel-companion/travel-history" className={textLinkClassName()}>
+                  See travel history
+                </Link>
+              )}
+            </div>
           }
         />
       </div>
     );
+  }
+
+  /** Marking a trip done never deletes it: status moves to "past" and it lives on under Travel history. */
+  async function concludeTrip() {
+    if (!currentTrip) return;
+    setConcluding(true);
+    setConcludeError(null);
+    const result = await updateTrip(currentTrip.id, { status: "past" });
+    setConcluding(false);
+    if (!result.ok) {
+      setConcludeError("Couldn't mark this trip as done. Try again.");
+      return;
+    }
+    setAskingToConclude(false);
+    replaceTrip(result.data);
   }
 
   /**
@@ -283,15 +317,40 @@ export default function TripModule() {
   return (
     <div className="mx-auto flex w-full max-w-2xl flex-col gap-7">
       <header>
-        <p className="text-eyebrow font-bold uppercase text-[var(--primary)]">Trip</p>
-        <h1 className="mt-2 text-heading text-[var(--text)]" style={{ fontFamily: "var(--product-narrative-font, inherit)" }}>
-          {currentTrip.title}
-        </h1>
-        {(currentTrip.startsAt || currentTrip.endsAt) && (
-          <p className="mt-1 text-body-sm text-[var(--muted)]">
-            {currentTrip.startsAt ?? "?"} – {currentTrip.endsAt ?? "?"}
-          </p>
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <p className="text-eyebrow font-bold uppercase text-[var(--primary)]">Trip</p>
+            <h1 className="mt-2 text-heading text-[var(--text)]" style={{ fontFamily: "var(--product-narrative-font, inherit)" }}>
+              {currentTrip.title}
+            </h1>
+            {(currentTrip.startsAt || currentTrip.endsAt) && (
+              <p className="mt-1 text-body-sm text-[var(--muted)]">
+                {currentTrip.startsAt ?? "?"} – {currentTrip.endsAt ?? "?"}
+              </p>
+            )}
+          </div>
+          {!askingToConclude && (
+            <button
+              type="button"
+              onClick={() => setAskingToConclude(true)}
+              className={textLinkClassName({ className: "shrink-0" })}
+            >
+              Mark as done
+            </button>
+          )}
+        </div>
+        {askingToConclude && (
+          <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1.5 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-3.5 text-body-sm">
+            <span className="text-[var(--muted)]">Mark this trip as done? It moves to Travel history, nothing is deleted.</span>
+            <Button size="sm" variant="commit" disabled={concluding} onClick={concludeTrip}>
+              {concluding ? "Marking done..." : "Yes, mark as done"}
+            </Button>
+            <button type="button" onClick={() => setAskingToConclude(false)} className="text-body-sm font-semibold text-[var(--muted)] hover:text-[var(--text)]">
+              Keep it open
+            </button>
+          </div>
         )}
+        {concludeError && <p className="mt-2 text-body-sm text-[var(--danger)]">{concludeError}</p>}
       </header>
 
       <TripBriefCard brief={brief} />

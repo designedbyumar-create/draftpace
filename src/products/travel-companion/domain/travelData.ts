@@ -58,7 +58,8 @@ async function currentUserId(): Promise<Result<string>> {
 
 // ------------------------------------------------------------------ trips
 
-const TRIP_COLUMNS = "id, title, destination_summary, starts_at, ends_at, status, created_at";
+const TRIP_COLUMNS =
+  "id, title, destination_summary, starts_at, ends_at, status, created_at, memory_note, memory_link, travel_type, destination_country, destination_state";
 
 function toTrip(row: Record<string, unknown>): Trip {
   return {
@@ -69,6 +70,11 @@ function toTrip(row: Record<string, unknown>): Trip {
     endsAt: (row.ends_at as string | null) ?? null,
     status: row.status as TripStatus,
     createdAt: row.created_at as string,
+    memoryNote: (row.memory_note as string | null) ?? null,
+    memoryLink: (row.memory_link as string | null) ?? null,
+    travelType: (row.travel_type as Trip["travelType"]) ?? null,
+    destinationCountry: (row.destination_country as string | null) ?? null,
+    destinationState: (row.destination_state as string | null) ?? null,
   };
 }
 
@@ -89,6 +95,9 @@ export interface NewTrip {
   destinationSummary?: string | null;
   startsAt?: string | null;
   endsAt?: string | null;
+  travelType?: Trip["travelType"];
+  destinationCountry?: string | null;
+  destinationState?: string | null;
 }
 
 export async function createTrip(productInstanceId: string, draft: NewTrip): Promise<Result<Trip>> {
@@ -104,6 +113,9 @@ export async function createTrip(productInstanceId: string, draft: NewTrip): Pro
       destination_summary: draft.destinationSummary?.trim() || null,
       starts_at: draft.startsAt ?? null,
       ends_at: draft.endsAt ?? null,
+      travel_type: draft.travelType ?? null,
+      destination_country: draft.destinationCountry?.trim() || null,
+      destination_state: draft.destinationState?.trim() || null,
     })
     .select(TRIP_COLUMNS)
     .single();
@@ -118,6 +130,11 @@ export type TripPatch = Partial<{
   startsAt: string | null;
   endsAt: string | null;
   status: TripStatus;
+  memoryNote: string | null;
+  memoryLink: string | null;
+  travelType: Trip["travelType"];
+  destinationCountry: string | null;
+  destinationState: string | null;
 }>;
 
 const TRIP_PATCH_COLUMN: Record<keyof TripPatch, string> = {
@@ -126,6 +143,11 @@ const TRIP_PATCH_COLUMN: Record<keyof TripPatch, string> = {
   startsAt: "starts_at",
   endsAt: "ends_at",
   status: "status",
+  memoryNote: "memory_note",
+  memoryLink: "memory_link",
+  travelType: "travel_type",
+  destinationCountry: "destination_country",
+  destinationState: "destination_state",
 };
 
 export async function updateTrip(tripId: string, patch: TripPatch): Promise<Result<Trip>> {
