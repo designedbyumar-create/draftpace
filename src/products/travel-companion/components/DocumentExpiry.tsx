@@ -45,7 +45,7 @@ export default function DocumentExpiry({
           aria-label={`Expiry date for ${document.label}`}
           value={value}
           onChange={(event) => setValue(event.target.value)}
-          className="rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3 py-2 text-[14px] text-[var(--text)]"
+          className="rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3 py-2 text-body-sm text-[var(--text)]"
         />
         <Button size="sm" variant="commit" disabled={pending || !value} onClick={() => save(value)}>
           Save
@@ -58,18 +58,18 @@ export default function DocumentExpiry({
         <Button size="sm" variant="ghost" disabled={pending} onClick={() => setEditing(false)}>
           Cancel
         </Button>
-        {errorMessage && <p className="basis-full text-[13px] text-[var(--danger)]">{errorMessage}</p>}
+        {errorMessage && <p className="basis-full text-body-sm text-[var(--danger)]">{errorMessage}</p>}
       </div>
     );
   }
 
   return (
-    <p className="mt-1 flex flex-wrap items-center gap-2 text-[13px] text-[var(--muted)]">
+    <p className="mt-1 flex flex-wrap items-center gap-2 text-body-sm text-[var(--muted)]">
       {document.expiresOn ? `Expires ${formatDate(document.expiresOn)}` : null}
       <button
         type="button"
         onClick={() => setEditing(true)}
-        className="min-h-9 rounded-full px-2.5 text-[12.5px] font-semibold text-[var(--text)] hover:bg-[var(--surface-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]"
+        className="min-h-9 rounded-full px-2.5 text-caption font-semibold text-[var(--text)] hover:bg-[var(--surface-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]"
       >
         {document.expiresOn ? "Change" : "Add expiry date"}
       </button>

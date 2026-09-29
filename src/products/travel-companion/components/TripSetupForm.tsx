@@ -61,7 +61,7 @@ export default function TripSetupForm({
         />
         <Input type="date" label="Ends" value={endsAt} onChange={(e) => setEndsAt(e.target.value)} containerClassName="flex-1" />
       </div>
-      {errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}
+      {errorMessage && <p className="text-body-sm text-[var(--danger)]">{errorMessage}</p>}
       <div className="flex flex-wrap items-center gap-2">
         <Button variant="commit" onClick={save} disabled={pending || title.trim().length === 0}>
           Set up this trip

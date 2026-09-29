@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import Button from "@/design-system/Button";
+import { textLinkClassName } from "@/design-system/textLinkStyles";
 import EmptyState from "@/design-system/EmptyState";
 import { Globe, Plus } from "@/design-system/Icon";
 import { staggerContainer, staggerItem, pressProps } from "@/design-system/motion";
@@ -105,7 +106,7 @@ export default function TripModule() {
   const [startError, setStartError] = useState<string | null>(null);
   const reduceMotion = useReducedMotion();
 
-  if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
+  if (status === "loading") return <p className="text-body-sm text-[var(--faint)]">Loading...</p>;
   if (status === "no-instance") {
     return <EmptyState icon={Globe} title="Nothing to show yet" description="This product has not been set up on your account." />;
   }
@@ -125,14 +126,14 @@ export default function TripModule() {
     return (
       <div className="mx-auto flex w-full max-w-2xl flex-col gap-6">
         <header>
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Trip</p>
+          <p className="text-eyebrow font-bold uppercase text-[var(--primary)]">Trip</p>
         </header>
         <EmptyState
           icon={Globe}
           title={trips.length === 0 ? "No trip yet" : "Nothing currently in progress"}
           description="Set up a trip to start connecting the people, places and bookings it depends on."
           action={
-            <button type="button" onClick={() => setSettingUp(true)} className="text-[13px] font-semibold text-[var(--primary)] hover:underline">
+            <button type="button" onClick={() => setSettingUp(true)} className={textLinkClassName()}>
               Set up a trip
             </button>
           }
@@ -260,7 +261,7 @@ export default function TripModule() {
   }
 
   if (opening) {
-    return <p className="text-[13px] text-[var(--faint)]">Opening...</p>;
+    return <p className="text-body-sm text-[var(--faint)]">Opening...</p>;
   }
 
   const byId = new Map(bookings.map((booking) => [booking.id, booking]));
@@ -282,12 +283,12 @@ export default function TripModule() {
   return (
     <div className="mx-auto flex w-full max-w-2xl flex-col gap-7">
       <header>
-        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Trip</p>
-        <h1 className="mt-2 text-[26px] leading-tight text-[var(--text)]" style={{ fontFamily: "var(--product-narrative-font, inherit)" }}>
+        <p className="text-eyebrow font-bold uppercase text-[var(--primary)]">Trip</p>
+        <h1 className="mt-2 text-heading text-[var(--text)]" style={{ fontFamily: "var(--product-narrative-font, inherit)" }}>
           {currentTrip.title}
         </h1>
         {(currentTrip.startsAt || currentTrip.endsAt) && (
-          <p className="mt-1 text-[13px] text-[var(--muted)]">
+          <p className="mt-1 text-body-sm text-[var(--muted)]">
             {currentTrip.startsAt ?? "?"} – {currentTrip.endsAt ?? "?"}
           </p>
         )}
@@ -297,7 +298,7 @@ export default function TripModule() {
 
       <section>
         <div className="flex items-center justify-between gap-4">
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">Destinations</p>
+          <p className="text-eyebrow font-bold uppercase text-[var(--muted)]">Destinations</p>
           {!addingPlace && (
             <Button size="sm" variant="ghost" onClick={() => setAddingPlace(true)} iconLeft={<Plus size={14} aria-hidden />}>
               Add
@@ -316,14 +317,14 @@ export default function TripModule() {
           </div>
         )}
         {places.length === 0 && !addingPlace && (
-          <p className="mt-2 text-[13px] text-[var(--faint)]">No destinations recorded yet.</p>
+          <p className="mt-2 text-body-sm text-[var(--faint)]">No destinations recorded yet.</p>
         )}
         {places.length > 0 && (
           <ul className="mt-2 flex flex-wrap gap-2">
             {places.map((place) => (
               <li
                 key={place.id}
-                className="rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1.5 text-[13px] text-[var(--text)]"
+                className="rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1.5 text-body-sm text-[var(--text)]"
               >
                 {place.name}
               </li>
@@ -332,13 +333,13 @@ export default function TripModule() {
         )}
         {placeMatches && (
           <div className="mt-3 rounded-lg border border-[var(--border)] bg-[var(--background)] p-3.5">
-            <p className="text-[12px] font-semibold text-[var(--text)]">From a past trip to {placeMatches.place.name}:</p>
+            <p className="text-caption font-semibold text-[var(--text)]">From a past trip to {placeMatches.place.name}:</p>
             <ul className="mt-2 flex flex-col gap-2">
               {placeMatches.entries.map((entry) => (
                 <li key={entry.id} className="flex flex-wrap items-center justify-between gap-2">
-                  <span className="text-[13px] text-[var(--text)]">{entry.body}</span>
+                  <span className="text-body-sm text-[var(--text)]">{entry.body}</span>
                   {addedFromMatch.has(entry.id) ? (
-                    <span className="text-[12px] text-[var(--faint)]">Added.</span>
+                    <span className="text-caption text-[var(--faint)]">Added.</span>
                   ) : (
                     <Button size="sm" variant="ghost" onClick={() => addMatchToPreparation(entry)}>
                       Add to preparation
@@ -350,7 +351,7 @@ export default function TripModule() {
             <button
               type="button"
               onClick={() => setPlaceMatches(null)}
-              className="mt-2 text-[12px] font-semibold text-[var(--faint)] hover:underline"
+              className="mt-2 text-caption font-semibold text-[var(--faint)] hover:underline"
             >
               Dismiss
             </button>
@@ -360,7 +361,7 @@ export default function TripModule() {
 
       <section>
         <div className="flex items-center justify-between gap-4">
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">Bookings</p>
+          <p className="text-eyebrow font-bold uppercase text-[var(--muted)]">Bookings</p>
           {!addingBooking && (
             <Button size="sm" variant="ghost" onClick={() => setAddingBooking(true)} iconLeft={<Plus size={14} aria-hidden />}>
               Add
@@ -387,7 +388,7 @@ export default function TripModule() {
         )}
 
         {bookings.length === 0 && !addingBooking && (
-          <p className="mt-2 text-[13px] text-[var(--faint)]">No bookings recorded yet.</p>
+          <p className="mt-2 text-body-sm text-[var(--faint)]">No bookings recorded yet.</p>
         )}
 
         <ul className="mt-2 flex flex-col gap-2">
@@ -399,23 +400,23 @@ export default function TripModule() {
               <li key={booking.id} className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4">
                 <div className="flex items-start justify-between gap-3">
                   <div>
-                    <p className="text-[11px] font-bold uppercase tracking-[0.08em] text-[var(--faint)]">{booking.kind}</p>
-                    <p className="mt-0.5 text-[15px] font-medium text-[var(--text)]">{booking.title}</p>
+                    <p className="text-eyebrow font-bold uppercase text-[var(--faint)]">{booking.kind}</p>
+                    <p className="mt-0.5 text-body font-medium text-[var(--text)]">{booking.title}</p>
                   </div>
                   {booking.bookingStatus === "waiting" && (
-                    <span className="shrink-0 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--faint)]">
+                    <span className="shrink-0 text-eyebrow font-semibold uppercase text-[var(--faint)]">
                       Awaiting confirmation
                     </span>
                   )}
                 </div>
-                {booking.startsAt && <p className="mt-1 text-[13px] text-[var(--muted)]">{timeLabel(booking.startsAt)}</p>}
-                {place && <p className="mt-0.5 text-[13px] text-[var(--muted)]">{place.name}</p>}
-                {booking.reference && <p className="mt-0.5 text-[12px] text-[var(--faint)]">Ref: {booking.reference}</p>}
+                {booking.startsAt && <p className="mt-1 text-body-sm text-[var(--muted)]">{timeLabel(booking.startsAt)}</p>}
+                {place && <p className="mt-0.5 text-body-sm text-[var(--muted)]">{place.name}</p>}
+                {booking.reference && <p className="mt-0.5 text-caption text-[var(--faint)]">Ref: {booking.reference}</p>}
                 {dependsOn && (
-                  <p className="mt-1.5 text-[12px] text-[var(--faint)]">Depends on {dependsOn.title}</p>
+                  <p className="mt-1.5 text-caption text-[var(--faint)]">Depends on {dependsOn.title}</p>
                 )}
-                {names.length > 0 && <p className="mt-1.5 text-[12px] text-[var(--faint)]">{names.join(", ")}</p>}
-                {booking.notes && <p className="mt-1.5 whitespace-pre-line text-[13px] leading-5 text-[var(--muted)]">{booking.notes}</p>}
+                {names.length > 0 && <p className="mt-1.5 text-caption text-[var(--faint)]">{names.join(", ")}</p>}
+                {booking.notes && <p className="mt-1.5 whitespace-pre-line text-body-sm leading-5 text-[var(--muted)]">{booking.notes}</p>}
                 {choosingFor?.id === booking.id ? (
                   <div className="mt-3">
                     <PlaybookChooser
@@ -445,7 +446,7 @@ export default function TripModule() {
                 )}
                 {impact?.source.id === booking.id && (
                   <div className="mt-3 rounded-lg border border-[var(--border)] bg-[var(--background)] p-3.5">
-                    <p className="text-[12px] font-semibold text-[var(--text)]">
+                    <p className="text-caption font-semibold text-[var(--text)]">
                       This might affect {impact.affected.length === 1 ? "this" : `these ${impact.affected.length}`}, unchanged so far:
                     </p>
                     <motion.ul
@@ -460,7 +461,7 @@ export default function TripModule() {
                           variants={staggerItem(Boolean(reduceMotion))}
                           className="flex flex-wrap items-center justify-between gap-2"
                         >
-                          <span className="text-[13px] text-[var(--text)]">
+                          <span className="text-body-sm text-[var(--text)]">
                             {affected.title}
                             {affected.startsAt && <span className="text-[var(--muted)]"> · {timeLabel(affected.startsAt)}</span>}
                           </span>
@@ -477,7 +478,7 @@ export default function TripModule() {
                     <button
                       type="button"
                       onClick={() => setImpact(null)}
-                      className="mt-2 text-[12px] font-semibold text-[var(--faint)] hover:underline"
+                      className="mt-2 text-caption font-semibold text-[var(--faint)] hover:underline"
                     >
                       Dismiss
                     </button>
@@ -491,7 +492,7 @@ export default function TripModule() {
 
       <section>
         <div className="flex items-center justify-between gap-4">
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">Documents</p>
+          <p className="text-eyebrow font-bold uppercase text-[var(--muted)]">Documents</p>
           {!addingDocument && (
             <Button size="sm" variant="ghost" onClick={() => setAddingDocument(true)} iconLeft={<Plus size={14} aria-hidden />}>
               Add
@@ -515,7 +516,7 @@ export default function TripModule() {
         )}
 
         {documents.length === 0 && !addingDocument && (
-          <p className="mt-2 text-[13px] text-[var(--faint)]">Nothing recorded yet.</p>
+          <p className="mt-2 text-body-sm text-[var(--faint)]">Nothing recorded yet.</p>
         )}
 
         {documentChecks.length > 0 && (
@@ -530,10 +531,10 @@ export default function TripModule() {
               const person = document.personId ? people.find((p) => p.id === document.personId) : null;
               return (
                 <li key={document.id} className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4">
-                  <p className="text-[11px] font-bold uppercase tracking-[0.08em] text-[var(--faint)]">{document.kind}</p>
-                  <p className="mt-0.5 text-[14px] font-medium text-[var(--text)]">{document.label}</p>
-                  {person && <p className="mt-0.5 text-[13px] text-[var(--muted)]">{person.name}</p>}
-                  {document.keptWhere && <p className="mt-0.5 text-[13px] text-[var(--muted)]">{document.keptWhere}</p>}
+                  <p className="text-eyebrow font-bold uppercase text-[var(--faint)]">{document.kind}</p>
+                  <p className="mt-0.5 text-body-sm font-medium text-[var(--text)]">{document.label}</p>
+                  {person && <p className="mt-0.5 text-body-sm text-[var(--muted)]">{person.name}</p>}
+                  {document.keptWhere && <p className="mt-0.5 text-body-sm text-[var(--muted)]">{document.keptWhere}</p>}
                   <DocumentExpiry document={document} onChanged={replaceDocument} />
                 </li>
               );
@@ -544,7 +545,7 @@ export default function TripModule() {
 
       <section>
         <div className="flex items-center justify-between gap-4">
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">Preparation</p>
+          <p className="text-eyebrow font-bold uppercase text-[var(--muted)]">Preparation</p>
           {!addingPreparation && !startingPacking && (
             <div className="flex items-center gap-1">
               <Button size="sm" variant="ghost" onClick={() => setStartingPacking(true)}>
@@ -589,7 +590,7 @@ export default function TripModule() {
 
         {activePreparation.length === 0 && !addingPreparation && !startingPacking && (
           <div className="mt-2">
-            <p className="text-[13px] text-[var(--muted)]">Nothing on the list yet.</p>
+            <p className="text-body-sm text-[var(--muted)]">Nothing on the list yet.</p>
             {/*
               A packing list is something to choose to start, above. Nothing
               on this list is ever added unasked. Requirements for documents
@@ -597,7 +598,7 @@ export default function TripModule() {
               year must never sit in somebody's trip looking current, so
               that goes to the guide, where it is kept up to date and dated.
             */}
-            <p className="mt-1 text-[12px] text-[var(--muted)]">
+            <p className="mt-1 text-caption text-[var(--muted)]">
               Not sure where to start?{" "}
               <Link href="/guides/travel-document-checklist" className="font-semibold text-[var(--text)] underline hover:no-underline">
                 What each traveller needs, and where to keep it
@@ -635,8 +636,8 @@ export default function TripModule() {
                     className="mt-0.5 accent-[var(--primary)]"
                   />
                   <div>
-                    <p className={`text-[14px] ${done ? "text-[var(--faint)] line-through" : "text-[var(--text)]"}`}>{item.title}</p>
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--faint)]">{item.category}</p>
+                    <p className={`text-body-sm ${done ? "text-[var(--faint)] line-through" : "text-[var(--text)]"}`}>{item.title}</p>
+                    <p className="text-eyebrow font-semibold uppercase text-[var(--faint)]">{item.category}</p>
                   </div>
                 </li>
               );
@@ -645,8 +646,8 @@ export default function TripModule() {
         )}
       </section>
 
-      {startError && <p className="text-[13px] text-[var(--danger)]">{startError}</p>}
-      {errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}
+      {startError && <p className="text-body-sm text-[var(--danger)]">{startError}</p>}
+      {errorMessage && <p className="text-body-sm text-[var(--danger)]">{errorMessage}</p>}
     </div>
   );
 }

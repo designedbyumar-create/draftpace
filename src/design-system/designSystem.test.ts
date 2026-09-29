@@ -510,6 +510,48 @@ describe("type scale (vehicle-maintenance-companion)", () => {
 });
 
 /**
+ * The src/products/** sweep, product 5 of 9: Travel Companion. No
+ * inline or whole-file exceptions exist in this scope. Both Today and
+ * Itinerary's 38px page titles are the first use of `display` outside
+ * the marketing hero and a guide's own H1 — the product's page-level
+ * headline genuinely sits at the fluid scale's floor, not a compact
+ * heading-sm/heading fit.
+ */
+describe("type scale (travel-companion)", () => {
+  function scopedFiles() {
+    return tsxUnder("products/travel-companion");
+  }
+
+  it("keeps Travel Companion off arbitrary pixel text sizes", () => {
+    const offenders: string[] = [];
+    for (const { path, source } of scopedFiles()) {
+      for (const match of source.matchAll(/text-\[[0-9.]+px\]/g)) {
+        offenders.push(`${path.replace(ROOT, "src")}: ${match[0]}`);
+      }
+    }
+    expect(offenders, `arbitrary text sizes still in travel-companion:\n${offenders.join("\n")}`).toEqual([]);
+  });
+
+  it("keeps every type-scale class used in Travel Companion resolvable in tailwind.config.js", () => {
+    const config = readFileSync(join(process.cwd(), "tailwind.config.js"), "utf8");
+    const declaredSteps = new Set(
+      [...config.matchAll(/^\s{8}(eyebrow|caption|'body-sm'|body|'body-lg'|'heading-sm'|heading|'heading-lg'|display):/gm)].map(
+        (m) => m[1].replace(/'/g, "")
+      )
+    );
+
+    const usedSteps = new Set<string>();
+    const stepPattern = /text-(eyebrow|caption|body-sm|body-lg|body|heading-sm|heading-lg|heading|display)\b/g;
+    for (const { source } of scopedFiles()) {
+      for (const [, step] of source.matchAll(stepPattern)) usedSteps.add(step);
+    }
+
+    const missing = [...usedSteps].filter((step) => !declaredSteps.has(step));
+    expect(missing, `used but not declared in tailwind.config.js: ${missing.join(", ")}`).toEqual([]);
+  });
+});
+
+/**
  * The src/products/** sweep: each product's own live app screens, the
  * last remaining slice of arbitrary text-[Npx] usage in the app, done
  * one product at a time (each is its own accent colour and its own

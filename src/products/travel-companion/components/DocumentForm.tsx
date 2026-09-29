@@ -18,7 +18,7 @@ const KIND_OPTIONS: { value: DocumentKind; label: string }[] = [
 ];
 
 const SELECT_CLASS =
-  "w-full rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3.5 py-2.5 text-[14px] text-[var(--text)] outline-none focus:border-[var(--primary)]";
+  "w-full rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3.5 py-2.5 text-body-sm text-[var(--text)] outline-none focus:border-[var(--primary)]";
 
 /**
  * Adding a document. kept_where is the whole point: a registry entry,
@@ -68,7 +68,7 @@ export default function DocumentForm({
   return (
     <section className="flex flex-col gap-4 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5">
       <label className="flex flex-col gap-1.5">
-        <span className="text-[13px] font-semibold text-[var(--text)]">Kind</span>
+        <span className="text-body-sm font-semibold text-[var(--text)]">Kind</span>
         <select value={kind} onChange={(e) => setKind(e.target.value as DocumentKind)} className={SELECT_CLASS}>
           {KIND_OPTIONS.map((option) => (
             <option key={option.value} value={option.value}>
@@ -82,7 +82,7 @@ export default function DocumentForm({
 
       {people.length > 0 && (
         <label className="flex flex-col gap-1.5">
-          <span className="text-[13px] font-semibold text-[var(--text)]">Belongs to (optional)</span>
+          <span className="text-body-sm font-semibold text-[var(--text)]">Belongs to (optional)</span>
           <select value={personId} onChange={(e) => setPersonId(e.target.value)} className={SELECT_CLASS}>
             <option value="">Not tied to one traveller</option>
             {people.map((person) => (
@@ -110,7 +110,7 @@ export default function DocumentForm({
         hint="Only used to point out a date that falls before or during the trip."
       />
 
-      <label className="flex items-center gap-2 text-[13px] text-[var(--text)]">
+      <label className="flex items-center gap-2 text-body-sm text-[var(--text)]">
         <input
           type="checkbox"
           checked={surfaceInBrief}
@@ -120,7 +120,7 @@ export default function DocumentForm({
         Show in the Trip Brief
       </label>
 
-      {errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}
+      {errorMessage && <p className="text-body-sm text-[var(--danger)]">{errorMessage}</p>}
 
       <div className="flex flex-wrap items-center gap-2">
         <Button variant="commit" onClick={save} disabled={pending || label.trim().length === 0}>

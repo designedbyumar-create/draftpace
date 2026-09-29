@@ -55,14 +55,14 @@ export default function RecordChangeForm({
 
   return (
     <section className="flex flex-col gap-4 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5">
-      <p className="text-[13px] text-[var(--muted)]">
+      <p className="text-body-sm text-[var(--muted)]">
         Save the new time, and anything that depends on {booking.title} will be shown so you can deal with it.
       </p>
       <div className="flex flex-wrap gap-3">
         <Input type="datetime-local" label="New starts" value={startsAt} onChange={(e) => setStartsAt(e.target.value)} containerClassName="flex-1" />
         <Input type="datetime-local" label="New ends" value={endsAt} onChange={(e) => setEndsAt(e.target.value)} containerClassName="flex-1" />
       </div>
-      {errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}
+      {errorMessage && <p className="text-body-sm text-[var(--danger)]">{errorMessage}</p>}
       <div className="flex flex-wrap items-center gap-2">
         <Button variant="commit" onClick={save} disabled={pending}>
           Save the change

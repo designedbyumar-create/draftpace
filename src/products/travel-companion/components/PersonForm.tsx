@@ -45,7 +45,7 @@ export default function PersonForm({
   return (
     <section className="flex flex-col gap-4 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5">
       <Input label="Name" value={name} onChange={(e) => setName(e.target.value)} placeholder="Roha" autoFocus />
-      <label className="flex items-center gap-2 text-[13px] text-[var(--text)]">
+      <label className="flex items-center gap-2 text-body-sm text-[var(--text)]">
         <input type="checkbox" checked={isChild} onChange={(e) => setIsChild(e.target.checked)} className="accent-[var(--primary)]" />
         Travelling as a child
       </label>
@@ -62,7 +62,7 @@ export default function PersonForm({
         placeholder="Vegetarian meals, aisle seat"
         hint="Private by default. Nothing here is shown to anyone unless you choose to."
       />
-      {errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}
+      {errorMessage && <p className="text-body-sm text-[var(--danger)]">{errorMessage}</p>}
       <div className="flex flex-wrap items-center gap-2">
         <Button variant="commit" onClick={save} disabled={pending || name.trim().length === 0}>
           Add traveller

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { textLinkClassName } from "@/design-system/textLinkStyles";
 import type { TripBriefView } from "../tripBrief";
 
 function timeLabel(iso: string): string {
@@ -29,21 +30,21 @@ export default function TripBriefCard({ brief }: { brief: TripBriefView }) {
   return (
     <section className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4">
       <div className="flex flex-col gap-1">
-        <p className="text-[13px] text-[var(--text)]">{lines.where}</p>
-        <p className="text-[13px] text-[var(--text)]">{lines.today}</p>
-        <p className="text-[13px] text-[var(--text)]">{lines.next}</p>
+        <p className="text-body-sm text-[var(--text)]">{lines.where}</p>
+        <p className="text-body-sm text-[var(--text)]">{lines.today}</p>
+        <p className="text-body-sm text-[var(--text)]">{lines.next}</p>
       </div>
 
       {expanded && (
         <div className="mt-3 flex flex-col gap-3 border-t border-[var(--border)] pt-3">
           <div>
-            <p className="text-[11px] font-bold uppercase tracking-[0.08em] text-[var(--faint)]">Open</p>
+            <p className="text-eyebrow font-bold uppercase text-[var(--faint)]">Open</p>
             {brief.openThreads.count === 0 ? (
-              <p className="mt-1 text-[13px] text-[var(--muted)]">Nothing waiting on anyone.</p>
+              <p className="mt-1 text-body-sm text-[var(--muted)]">Nothing waiting on anyone.</p>
             ) : (
               <ul className="mt-1 flex flex-col gap-0.5">
                 {brief.openThreads.titles.map((title) => (
-                  <li key={title} className="text-[13px] text-[var(--muted)]">
+                  <li key={title} className="text-body-sm text-[var(--muted)]">
                     {title}
                   </li>
                 ))}
@@ -52,8 +53,8 @@ export default function TripBriefCard({ brief }: { brief: TripBriefView }) {
           </div>
 
           <div>
-            <p className="text-[11px] font-bold uppercase tracking-[0.08em] text-[var(--faint)]">Bookings</p>
-            <p className="mt-1 text-[13px] text-[var(--muted)]">
+            <p className="text-eyebrow font-bold uppercase text-[var(--faint)]">Bookings</p>
+            <p className="mt-1 text-body-sm text-[var(--muted)]">
               {brief.bookingCounts.confirmed} confirmed
               {brief.bookingCounts.waiting > 0 ? `, ${brief.bookingCounts.waiting} awaiting confirmation` : ""}
               {brief.bookingCounts.cancelled > 0 ? `, ${brief.bookingCounts.cancelled} cancelled` : ""}
@@ -61,13 +62,13 @@ export default function TripBriefCard({ brief }: { brief: TripBriefView }) {
           </div>
 
           <div>
-            <p className="text-[11px] font-bold uppercase tracking-[0.08em] text-[var(--faint)]">Important</p>
+            <p className="text-eyebrow font-bold uppercase text-[var(--faint)]">Important</p>
             {brief.important.length === 0 ? (
-              <p className="mt-1 text-[13px] text-[var(--muted)]">Nothing flagged.</p>
+              <p className="mt-1 text-body-sm text-[var(--muted)]">Nothing flagged.</p>
             ) : (
               <ul className="mt-1 flex flex-col gap-0.5">
                 {brief.important.map((doc) => (
-                  <li key={doc.id} className="text-[13px] text-[var(--muted)]">
+                  <li key={doc.id} className="text-body-sm text-[var(--muted)]">
                     {doc.label}
                     {doc.keptWhere ? `, ${doc.keptWhere}` : ""}
                   </li>
@@ -78,10 +79,10 @@ export default function TripBriefCard({ brief }: { brief: TripBriefView }) {
 
           {brief.today.length > 0 && (
             <div>
-              <p className="text-[11px] font-bold uppercase tracking-[0.08em] text-[var(--faint)]">Today, in full</p>
+              <p className="text-eyebrow font-bold uppercase text-[var(--faint)]">Today, in full</p>
               <ul className="mt-1 flex flex-col gap-0.5">
                 {brief.today.map((booking) => (
-                  <li key={booking.id} className="text-[13px] text-[var(--muted)]">
+                  <li key={booking.id} className="text-body-sm text-[var(--muted)]">
                     {booking.title}
                     {booking.startsAt ? `, ${timeLabel(booking.startsAt)}` : ""}
                   </li>
@@ -95,7 +96,7 @@ export default function TripBriefCard({ brief }: { brief: TripBriefView }) {
       <button
         type="button"
         onClick={() => setExpanded((current) => !current)}
-        className="mt-3 text-[12px] font-semibold text-[var(--primary)] hover:underline"
+        className={textLinkClassName({ className: "mt-3" })}
       >
         {expanded ? "Show less" : "Show more"}
       </button>

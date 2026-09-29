@@ -10,7 +10,7 @@ import { BOOKING_KIND_INFO, BOOKING_KINDS, type Booking, type BookingKind, type 
 const KIND_OPTIONS: { value: BookingKind; label: string }[] = BOOKING_KINDS.map((value) => ({ value, label: BOOKING_KIND_INFO[value].label }));
 
 const SELECT_CLASS =
-  "w-full rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3.5 py-2.5 text-[14px] text-[var(--text)] outline-none focus:border-[var(--primary)]";
+  "w-full rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3.5 py-2.5 text-body-sm text-[var(--text)] outline-none focus:border-[var(--primary)]";
 
 /**
  * Adding a booking.
@@ -110,7 +110,7 @@ export default function BookingForm({
   return (
     <section className="flex flex-col gap-4 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5">
       <label className="flex flex-col gap-1.5">
-        <span className="text-[13px] font-semibold text-[var(--text)]">Kind</span>
+        <span className="text-body-sm font-semibold text-[var(--text)]">Kind</span>
         <select value={kind} onChange={(e) => setKind(e.target.value as BookingKind)} className={SELECT_CLASS}>
           {KIND_OPTIONS.map((option) => (
             <option key={option.value} value={option.value}>
@@ -141,7 +141,7 @@ export default function BookingForm({
 
       {places.length > 0 && (
         <label className="flex flex-col gap-1.5">
-          <span className="text-[13px] font-semibold text-[var(--text)]">Destination (optional)</span>
+          <span className="text-body-sm font-semibold text-[var(--text)]">Destination (optional)</span>
           <select value={placeId} onChange={(e) => setPlaceId(e.target.value)} className={SELECT_CLASS}>
             <option value="">Not tied to one destination</option>
             {places.map((place) => (
@@ -155,7 +155,7 @@ export default function BookingForm({
 
       {existingBookings.length > 0 && (
         <label className="flex flex-col gap-1.5">
-          <span className="text-[13px] font-semibold text-[var(--text)]">Depends on (optional)</span>
+          <span className="text-body-sm font-semibold text-[var(--text)]">Depends on (optional)</span>
           <select value={dependsOnBookingId} onChange={(e) => setDependsOnBookingId(e.target.value)} className={SELECT_CLASS}>
             <option value="">Nothing upstream</option>
             {existingBookings.map((booking) => (
@@ -164,7 +164,7 @@ export default function BookingForm({
               </option>
             ))}
           </select>
-          <span className="text-[12px] text-[var(--faint)]">
+          <span className="text-caption text-[var(--faint)]">
             If this changes, whatever depends on it is what "what changed?" will point to later.
           </span>
         </label>
@@ -172,9 +172,9 @@ export default function BookingForm({
 
       {people.length > 0 && (
         <fieldset className="flex flex-col gap-2">
-          <legend className="mb-1 text-[13px] font-semibold text-[var(--text)]">Who's on this</legend>
+          <legend className="mb-1 text-body-sm font-semibold text-[var(--text)]">Who's on this</legend>
           {people.map((person) => (
-            <label key={person.id} className="flex items-center gap-2 text-[13px] text-[var(--text)]">
+            <label key={person.id} className="flex items-center gap-2 text-body-sm text-[var(--text)]">
               <input
                 type="checkbox"
                 checked={participantIds.has(person.id)}
@@ -189,7 +189,7 @@ export default function BookingForm({
 
       <Input label="Notes (optional)" value={notes} onChange={(e) => setNotes(e.target.value)} />
 
-      {errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}
+      {errorMessage && <p className="text-body-sm text-[var(--danger)]">{errorMessage}</p>}
 
       <div className="flex flex-wrap items-center gap-2">
         <Button variant="commit" onClick={save} disabled={pending || title.trim().length === 0}>

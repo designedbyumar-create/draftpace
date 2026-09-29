@@ -68,7 +68,7 @@ export default function TodayModule() {
   const [startError, setStartError] = useState<string | null>(null);
   const [closingNote, setClosingNote] = useState<string | null>(null);
 
-  if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
+  if (status === "loading") return <p className="text-body-sm text-[var(--faint)]">Loading...</p>;
   if (status === "no-instance") {
     return (
       <EmptyState
@@ -132,7 +132,7 @@ export default function TodayModule() {
   }
 
   if (opening) {
-    return <p className="text-[13px] text-[var(--faint)]">Opening...</p>;
+    return <p className="text-body-sm text-[var(--faint)]">Opening...</p>;
   }
 
   const now = new Date();
@@ -169,7 +169,7 @@ export default function TodayModule() {
       note={
         view.now.length === 0 ? (
           <div className="flex flex-col items-start gap-3">
-            {startsFact && <p className="text-[15px] leading-6 text-[var(--text)]">{startsFact}</p>}
+            {startsFact && <p className="text-body leading-6 text-[var(--text)]">{startsFact}</p>}
             <Button
               href={`/app/products/${TRAVEL_COMPANION_SLUG}/itinerary`}
               variant="secondary"
@@ -185,7 +185,7 @@ export default function TodayModule() {
           <Button variant="ghost" size="sm" onClick={() => setStarting(true)}>
             Need help with something?
           </Button>
-          {startError && <p className="mt-2 text-[13px] text-[var(--danger)]">{startError}</p>}
+          {startError && <p className="mt-2 text-body-sm text-[var(--danger)]">{startError}</p>}
         </>
       }
     />

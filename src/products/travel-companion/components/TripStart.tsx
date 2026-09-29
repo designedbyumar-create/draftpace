@@ -29,10 +29,10 @@ export default function TripStart({
   return (
     <div id="travel-tour-start" className="mx-auto flex w-full max-w-md flex-col gap-6 py-2">
       <div>
-        <h1 className="text-[36px] font-semibold leading-[1.08] tracking-[-0.02em] text-[var(--text)] [text-wrap:balance]">
+        <h1 className="text-heading font-semibold tracking-[-0.02em] text-[var(--text)] [text-wrap:balance]">
           Where are you going?
         </h1>
-        <p className="mt-3 text-[15px] leading-relaxed text-[var(--muted)]">
+        <p className="mt-3 text-body leading-relaxed text-[var(--muted)]">
           A name and rough dates are enough. You will see the trip laid out day by day straight away, and add
           what you have booked from there.
         </p>

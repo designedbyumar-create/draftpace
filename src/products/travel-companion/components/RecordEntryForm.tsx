@@ -17,7 +17,7 @@ const CATEGORY_OPTIONS: { value: RecordCategory; label: string }[] = [
 ];
 
 const SELECT_CLASS =
-  "w-full rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3.5 py-2.5 text-[14px] text-[var(--text)] outline-none focus:border-[var(--primary)]";
+  "w-full rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3.5 py-2.5 text-body-sm text-[var(--text)] outline-none focus:border-[var(--primary)]";
 
 /**
  * Adding a dated note by hand.
@@ -59,7 +59,7 @@ export default function RecordEntryForm({
   return (
     <section className="flex flex-col gap-4 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5">
       <label className="flex flex-col gap-1.5">
-        <span className="text-[13px] font-semibold text-[var(--text)]">Kind</span>
+        <span className="text-body-sm font-semibold text-[var(--text)]">Kind</span>
         <select value={category} onChange={(e) => setCategory(e.target.value as RecordCategory)} className={SELECT_CLASS}>
           {CATEGORY_OPTIONS.map((option) => (
             <option key={option.value} value={option.value}>
@@ -85,7 +85,7 @@ export default function RecordEntryForm({
         hint="If you ever go back to this place, this note will be offered again, never copied without you choosing to."
       />
 
-      {errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}
+      {errorMessage && <p className="text-body-sm text-[var(--danger)]">{errorMessage}</p>}
 
       <div className="flex flex-wrap items-center gap-2">
         <Button variant="commit" onClick={save} disabled={pending || body.trim().length === 0}>

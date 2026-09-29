@@ -69,14 +69,14 @@ export default function PlaceForm({
         daylight saving.
       */}
       <div>
-        <p className="text-[13px] font-semibold text-[var(--text)]">Timezone</p>
+        <p className="text-body-sm font-semibold text-[var(--text)]">Timezone</p>
         {timezone ? (
-          <p className="mt-1 text-[12.5px] text-[var(--muted)]">
+          <p className="mt-1 text-caption text-[var(--muted)]">
             {timezoneOverride ? "Set to" : "Detected as"} <span className="font-semibold text-[var(--text)]">{timezone}</span>.
             {!timezoneOverride && " Search below to change it."}
           </p>
         ) : (
-          <p className="mt-1 text-[12.5px] text-[var(--muted)]">
+          <p className="mt-1 text-caption text-[var(--muted)]">
             Not detected from that name. Search for it below if you know it, or leave it and dates will be compared in
             UTC.
           </p>
@@ -105,7 +105,7 @@ export default function PlaceForm({
         </datalist>
       </div>
 
-      {errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}
+      {errorMessage && <p className="text-body-sm text-[var(--danger)]">{errorMessage}</p>}
       <div className="flex flex-wrap items-center gap-2">
         <Button variant="commit" onClick={save} disabled={pending || name.trim().length === 0}>
           Add destination

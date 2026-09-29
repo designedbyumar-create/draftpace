@@ -25,11 +25,11 @@ export default function PackingView({ sections, onToggle, onRemove, actions }: P
       <div className="flex flex-wrap items-center gap-2">{actions}</div>
       {sections.map((section) => (
         <section key={section.key} aria-label={`Packing for ${section.heading}`} className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-4">
-          <h3 className="text-[16px] font-semibold text-[var(--text)]">{section.heading}</h3>
+          <h3 className="text-heading-sm font-semibold text-[var(--text)]">{section.heading}</h3>
           <div className="mt-3 flex flex-col gap-4">
             {section.groups.map((group) => (
               <div key={group.group}>
-                <p className="border-b border-[var(--border)] pb-1 text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">
+                <p className="border-b border-[var(--border)] pb-1 text-eyebrow font-bold uppercase text-[var(--muted)]">
                   {group.group}
                 </p>
                 <ul className="mt-1 flex flex-col">
@@ -42,7 +42,7 @@ export default function PackingView({ sections, onToggle, onRemove, actions }: P
                           onChange={() => onToggle(item.id, item.done)}
                           className="h-4 w-4 shrink-0 accent-[var(--primary)]"
                         />
-                        <span className={`text-[15px] ${item.done ? "text-[var(--muted)] line-through" : "text-[var(--text)]"}`}>
+                        <span className={`text-body ${item.done ? "text-[var(--muted)] line-through" : "text-[var(--text)]"}`}>
                           {item.title}
                         </span>
                       </label>
@@ -50,7 +50,7 @@ export default function PackingView({ sections, onToggle, onRemove, actions }: P
                         type="button"
                         onClick={() => onRemove(item.id)}
                         aria-label={`Remove ${item.title}`}
-                        className="min-h-9 shrink-0 rounded-full px-3 text-[12px] font-semibold text-[var(--muted)] hover:bg-[var(--surface-strong)] hover:text-[var(--text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]"
+                        className="min-h-9 shrink-0 rounded-full px-3 text-caption font-semibold text-[var(--muted)] hover:bg-[var(--surface-strong)] hover:text-[var(--text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]"
                       >
                         Remove
                       </button>

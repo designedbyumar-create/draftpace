@@ -20,10 +20,10 @@ export default function DocumentChecks({ checks }: { checks: DocumentCheck[] }) 
       aria-label="Dates worth a look"
       className="rounded-2xl border border-dashed border-[var(--border-strong)] bg-[var(--surface-muted)] p-4"
     >
-      <h3 className="text-[15px] font-semibold text-[var(--text)]">Dates worth a look</h3>
+      <h3 className="text-body font-semibold text-[var(--text)]">Dates worth a look</h3>
       <ul className="mt-2 flex flex-col gap-2">
         {checks.map((check) => (
-          <li key={check.documentId} className="text-[14px] leading-5 text-[var(--text)]">
+          <li key={check.documentId} className="text-body-sm leading-5 text-[var(--text)]">
             <span className="font-semibold">
               {check.personName && !check.label.toLowerCase().includes(check.personName.toLowerCase())
                 ? `${check.personName}: ${check.label}`
@@ -34,7 +34,7 @@ export default function DocumentChecks({ checks }: { checks: DocumentCheck[] }) 
           </li>
         ))}
       </ul>
-      <p className="mt-3 text-[12.5px] leading-5 text-[var(--muted)]">
+      <p className="mt-3 text-caption leading-5 text-[var(--muted)]">
         This only compares the dates you recorded. What each country asks for differs and changes, so check with the
         country you are visiting.{" "}
         <Link href="/guides/travel-document-checklist" className="font-semibold text-[var(--text)] underline hover:no-underline">

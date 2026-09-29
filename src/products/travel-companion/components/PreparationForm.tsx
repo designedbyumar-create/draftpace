@@ -18,7 +18,7 @@ const CATEGORY_OPTIONS: { value: PreparationCategory; label: string }[] = [
 ];
 
 const SELECT_CLASS =
-  "w-full rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3.5 py-2.5 text-[14px] text-[var(--text)] outline-none focus:border-[var(--primary)]";
+  "w-full rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3.5 py-2.5 text-body-sm text-[var(--text)] outline-none focus:border-[var(--primary)]";
 
 /** Adding a checklist item by hand: the title is always the user's own words. Starter packing lists are a separate, opt-in path (PackingStarter). */
 export default function PreparationForm({
@@ -52,7 +52,7 @@ export default function PreparationForm({
   return (
     <section className="flex flex-col gap-4 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5">
       <label className="flex flex-col gap-1.5">
-        <span className="text-[13px] font-semibold text-[var(--text)]">Category</span>
+        <span className="text-body-sm font-semibold text-[var(--text)]">Category</span>
         <select value={category} onChange={(e) => setCategory(e.target.value as PreparationCategory)} className={SELECT_CLASS}>
           {CATEGORY_OPTIONS.map((option) => (
             <option key={option.value} value={option.value}>
@@ -64,7 +64,7 @@ export default function PreparationForm({
 
       <Input label="What needs doing" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Renew Minha's passport" autoFocus />
 
-      {errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}
+      {errorMessage && <p className="text-body-sm text-[var(--danger)]">{errorMessage}</p>}
 
       <div className="flex flex-wrap items-center gap-2">
         <Button variant="commit" onClick={save} disabled={pending || title.trim().length === 0}>

@@ -36,7 +36,7 @@ export default function ItineraryModule() {
   const [makingCard, setMakingCard] = useState(false);
   const [printError, setPrintError] = useState<string | null>(null);
 
-  if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
+  if (status === "loading") return <p className="text-body-sm text-[var(--faint)]">Loading...</p>;
   if (status === "no-instance") {
     return (
       <EmptyState
@@ -140,7 +140,7 @@ export default function ItineraryModule() {
           )
         }
       />
-      {printError && <p className="mx-auto mt-3 w-full max-w-2xl text-[13px] text-[var(--danger)]">{printError}</p>}
+      {printError && <p className="mx-auto mt-3 w-full max-w-2xl text-body-sm text-[var(--danger)]">{printError}</p>}
     </>
   );
 }

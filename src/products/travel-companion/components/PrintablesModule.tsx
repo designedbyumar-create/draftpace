@@ -47,9 +47,9 @@ export default function PrintablesModule(_props: { definition: ProductDefinition
   return (
     <div className="flex flex-col gap-6">
       <div>
-        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Included with this product</p>
+        <p className="text-eyebrow font-bold uppercase text-[var(--primary)]">Included with this product</p>
         <h1 className="mt-2 text-xl font-semibold text-[var(--text)]">My Trip Book</h1>
-        <p className="mt-2 max-w-lg text-[13px] leading-relaxed text-[var(--muted)]">
+        <p className="mt-2 max-w-lg text-body-sm leading-relaxed text-[var(--muted)]">
           A standalone, modular travel planner, for the moments a screen is not the right tool. Trip overview,
           destinations, travellers, bookings, transport, accommodation, documents, threads and daily pages, blank for
           you to fill in by hand. It does not replace the live companion, and nothing here is filled in for you.
@@ -62,8 +62,8 @@ export default function PrintablesModule(_props: { definition: ProductDefinition
             <Article size={18} aria-hidden />
           </div>
           <div>
-            <p className="text-[13px] font-semibold text-[var(--text)]">My Trip Book</p>
-            <p className="mt-0.5 text-[12px] text-[var(--muted)]">A blank, printable travel planner. Generated fresh each time.</p>
+            <p className="text-body-sm font-semibold text-[var(--text)]">My Trip Book</p>
+            <p className="mt-0.5 text-caption text-[var(--muted)]">A blank, printable travel planner. Generated fresh each time.</p>
           </div>
         </div>
         <div className="flex flex-wrap items-center gap-2">
@@ -78,7 +78,7 @@ export default function PrintablesModule(_props: { definition: ProductDefinition
         </div>
       </Surface>
 
-      {errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}
+      {errorMessage && <p className="text-body-sm text-[var(--danger)]">{errorMessage}</p>}
     </div>
   );
 }

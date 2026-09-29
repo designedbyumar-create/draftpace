@@ -44,7 +44,7 @@ export default function RecordModule() {
     };
   }, [currentTrip]);
 
-  if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
+  if (status === "loading") return <p className="text-body-sm text-[var(--faint)]">Loading...</p>;
   if (status === "no-instance") {
     return <EmptyState icon={Clock} title="Nothing to show yet" description="This product has not been set up on your account." />;
   }
@@ -57,7 +57,7 @@ export default function RecordModule() {
     return (
       <div className="mx-auto flex w-full max-w-2xl flex-col gap-6">
         <header>
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Record</p>
+          <p className="text-eyebrow font-bold uppercase text-[var(--primary)]">Record</p>
         </header>
         <EmptyState
           icon={Clock}
@@ -91,8 +91,8 @@ export default function RecordModule() {
     <div className="mx-auto flex w-full max-w-2xl flex-col gap-6">
       <header className="flex items-start justify-between gap-4">
         <div>
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">Record</p>
-          <h1 className="mt-2 text-[26px] leading-tight text-[var(--text)]" style={{ fontFamily: "var(--product-narrative-font, inherit)" }}>
+          <p className="text-eyebrow font-bold uppercase text-[var(--primary)]">Record</p>
+          <h1 className="mt-2 text-heading text-[var(--text)]" style={{ fontFamily: "var(--product-narrative-font, inherit)" }}>
             {currentTrip.title}
           </h1>
         </div>
@@ -127,16 +127,16 @@ export default function RecordModule() {
         <ul className="flex flex-col gap-2">
           {feed.map((item) => (
             <li key={item.id} className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4">
-              <p className="text-[11px] font-bold uppercase tracking-[0.08em] text-[var(--faint)]">
+              <p className="text-eyebrow font-bold uppercase text-[var(--faint)]">
                 {dateLabel(item.occurredAt)} · {item.label}
               </p>
-              <p className="mt-1 text-[14px] leading-6 text-[var(--text)]">{item.body}</p>
+              <p className="mt-1 text-body-sm leading-6 text-[var(--text)]">{item.body}</p>
             </li>
           ))}
         </ul>
       )}
 
-      {errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}
+      {errorMessage && <p className="text-body-sm text-[var(--danger)]">{errorMessage}</p>}
     </div>
   );
 }

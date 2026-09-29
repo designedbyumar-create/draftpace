@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Button from "@/design-system/Button";
 import EmptyState from "@/design-system/EmptyState";
+import { textLinkClassName } from "@/design-system/textLinkStyles";
 import { Globe, Plus, User } from "@/design-system/Icon";
 import { useTravelCompanion } from "./useTravelCompanion";
 import TripSetupForm from "./TripSetupForm";
@@ -21,7 +22,7 @@ export default function PeopleModule() {
   const [settingUp, setSettingUp] = useState(false);
   const [adding, setAdding] = useState(false);
 
-  if (status === "loading") return <p className="text-[13px] text-[var(--faint)]">Loading...</p>;
+  if (status === "loading") return <p className="text-body-sm text-[var(--faint)]">Loading...</p>;
   if (status === "no-instance") {
     return (
       <EmptyState icon={User} title="Nothing to show yet" description="This product has not been set up on your account." />
@@ -46,7 +47,7 @@ export default function PeopleModule() {
         title={trips.length === 0 ? "No trip yet" : "Nothing currently in progress"}
         description="Set up a trip before adding the people travelling on it."
         action={
-          <button type="button" onClick={() => setSettingUp(true)} className="text-[13px] font-semibold text-[var(--primary)] hover:underline">
+          <button type="button" onClick={() => setSettingUp(true)} className={textLinkClassName()}>
             Set up a trip
           </button>
         }
@@ -58,10 +59,10 @@ export default function PeopleModule() {
     <div className="mx-auto flex w-full max-w-2xl flex-col gap-6">
       <header className="flex items-start justify-between gap-4">
         <div>
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">
+          <p className="text-eyebrow font-bold uppercase text-[var(--primary)]">
             {currentTrip.title.toUpperCase()}
           </p>
-          <h1 className="mt-2 text-[26px] leading-tight text-[var(--text)]" style={{ fontFamily: "var(--product-narrative-font, inherit)" }}>
+          <h1 className="mt-2 text-heading text-[var(--text)]" style={{ fontFamily: "var(--product-narrative-font, inherit)" }}>
             People
           </h1>
         </div>
@@ -92,15 +93,15 @@ export default function PeopleModule() {
         {people.map((person) => (
           <li key={person.id} className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4">
             <div className="flex items-center gap-2">
-              <p className="text-[15px] font-medium text-[var(--text)]">{person.name}</p>
+              <p className="text-body font-medium text-[var(--text)]">{person.name}</p>
               {person.isChild && (
-                <span className="rounded-full bg-[var(--surface-muted)] px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.08em] text-[var(--muted)]">
+                <span className="rounded-full bg-[var(--surface-muted)] px-2 py-0.5 text-eyebrow font-bold uppercase text-[var(--muted)]">
                   Child
                 </span>
               )}
             </div>
-            {person.relationshipNote && <p className="mt-1 text-[13px] text-[var(--muted)]">{person.relationshipNote}</p>}
-            {person.requirements && <p className="mt-1 text-[13px] text-[var(--muted)]">{person.requirements}</p>}
+            {person.relationshipNote && <p className="mt-1 text-body-sm text-[var(--muted)]">{person.relationshipNote}</p>}
+            {person.requirements && <p className="mt-1 text-body-sm text-[var(--muted)]">{person.requirements}</p>}
           </li>
         ))}
       </ul>

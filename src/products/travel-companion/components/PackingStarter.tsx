@@ -61,7 +61,7 @@ export default function PackingStarter({
 
   const group = (kind: "trip" | "with", legend: string) => (
     <fieldset className="flex flex-col gap-1">
-      <legend className="mb-1 text-[13px] font-semibold text-[var(--text)]">{legend}</legend>
+      <legend className="mb-1 text-body-sm font-semibold text-[var(--text)]">{legend}</legend>
       {STARTER_LISTS.filter((list) => list.kind === kind).map((list) => (
         <label key={list.id} className="flex min-h-11 items-start gap-3 rounded-xl px-1 py-2">
           <input
@@ -71,8 +71,8 @@ export default function PackingStarter({
             className="mt-1 h-4 w-4 shrink-0 accent-[var(--primary)]"
           />
           <span>
-            <span className="block text-[15px] text-[var(--text)]">{list.label}</span>
-            <span className="block text-[13px] text-[var(--muted)]">{list.blurb}</span>
+            <span className="block text-body text-[var(--text)]">{list.label}</span>
+            <span className="block text-body-sm text-[var(--muted)]">{list.blurb}</span>
           </span>
         </label>
       ))}
@@ -82,8 +82,8 @@ export default function PackingStarter({
   return (
     <section aria-label="Start a packing list" className="flex flex-col gap-5 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5">
       <div>
-        <h3 className="text-[18px] font-semibold text-[var(--text)]">Start a packing list</h3>
-        <p className="mt-1 text-[13px] leading-5 text-[var(--muted)]">
+        <h3 className="text-heading-sm font-semibold text-[var(--text)]">Start a packing list</h3>
+        <p className="mt-1 text-body-sm leading-5 text-[var(--muted)]">
           A starting point, not a rulebook. Nothing is added until you press the button, and you can remove or
           change any of it afterwards.
         </p>
@@ -92,13 +92,13 @@ export default function PackingStarter({
       {group("trip", "What kind of trip?")}
       {group("with", "Travelling with")}
 
-      <p className="text-[13px] leading-5 text-[var(--muted)]">
+      <p className="text-body-sm leading-5 text-[var(--muted)]">
         {active.length === 0
           ? "For nobody in particular, because no travellers are recorded on this trip yet."
           : `For ${active.map((person) => (person.isChild ? `${person.name} (child)` : person.name)).join(", ")}.`}
       </p>
 
-      {errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}
+      {errorMessage && <p className="text-body-sm text-[var(--danger)]">{errorMessage}</p>}
 
       <div className="flex flex-wrap items-center gap-2">
         <Button variant="commit" onClick={save} disabled={pending || rows.length === 0}>

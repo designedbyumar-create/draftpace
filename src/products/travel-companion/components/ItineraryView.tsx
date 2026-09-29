@@ -41,7 +41,7 @@ export interface ItineraryViewProps {
 }
 
 const ADD =
-  "min-h-9 shrink-0 rounded-full px-3 text-[13px] font-semibold text-[var(--text)] transition-colors hover:bg-[var(--surface-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]";
+  "min-h-9 shrink-0 rounded-full px-3 text-body-sm font-semibold text-[var(--text)] transition-colors hover:bg-[var(--surface-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]";
 
 export function dayLabel(date: string): string {
   return new Date(`${date}T12:00:00Z`).toLocaleDateString("en-GB", {
@@ -56,13 +56,13 @@ export default function ItineraryView({ tripTitle, rangeLabel, days, undated, co
   return (
     <div className="mx-auto flex w-full max-w-2xl flex-col">
       <header>
-        <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--muted)]">{tripTitle}</p>
-        <h1 className="mt-1.5 text-[38px] font-semibold leading-none tracking-[-0.02em] text-[var(--text)]">Itinerary</h1>
-        {rangeLabel && <p className="mt-2 text-[14px] text-[var(--muted)]">{rangeLabel}</p>}
+        <p className="text-eyebrow font-bold uppercase text-[var(--muted)]">{tripTitle}</p>
+        <h1 className="mt-1.5 text-display font-semibold tracking-[-0.02em] text-[var(--text)]">Itinerary</h1>
+        {rangeLabel && <p className="mt-2 text-body-sm text-[var(--muted)]">{rangeLabel}</p>}
       </header>
 
       {days.length === 0 ? (
-        <p className="mt-6 max-w-[46ch] text-[15px] leading-6 text-[var(--muted)]">
+        <p className="mt-6 max-w-[46ch] text-body leading-6 text-[var(--muted)]">
           Give the trip its dates, or add a booking with a time, and it is laid out here day by day.
         </p>
       ) : (
@@ -71,9 +71,9 @@ export default function ItineraryView({ tripTitle, rangeLabel, days, undated, co
             <li key={day.date} aria-label={day.label} className="mt-8 first:mt-6">
               <div className="mb-3 flex items-end justify-between gap-3 border-b border-[var(--border-strong)] pb-2">
                 <div className="min-w-0">
-                  <h2 className="text-[20px] font-semibold leading-tight text-[var(--text)]">{day.label}</h2>
+                  <h2 className="text-heading-sm font-semibold text-[var(--text)]">{day.label}</h2>
                   {day.place && (
-                    <p className="mt-0.5 flex items-center gap-1.5 text-[13px] text-[var(--muted)]">
+                    <p className="mt-0.5 flex items-center gap-1.5 text-body-sm text-[var(--muted)]">
                       <MapPin size={13} aria-hidden />
                       {day.place}
                     </p>
@@ -84,7 +84,7 @@ export default function ItineraryView({ tripTitle, rangeLabel, days, undated, co
                 </button>
               </div>
               {day.stops.length === 0 ? (
-                <p className="rounded-2xl border border-dashed border-[var(--border-strong)] px-4 py-3.5 text-[14px] text-[var(--muted)]">
+                <p className="rounded-2xl border border-dashed border-[var(--border-strong)] px-4 py-3.5 text-body-sm text-[var(--muted)]">
                   Nothing recorded for this day.
                 </p>
               ) : (
@@ -107,7 +107,7 @@ export default function ItineraryView({ tripTitle, rangeLabel, days, undated, co
       )}
 
       {compact && (
-        <p className="mt-6 text-[13px] leading-5 text-[var(--muted)]">
+        <p className="mt-6 text-body-sm leading-5 text-[var(--muted)]">
           This trip is long, so days with nothing recorded are not shown.
         </p>
       )}
