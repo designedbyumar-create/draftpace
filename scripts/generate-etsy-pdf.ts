@@ -27,6 +27,14 @@ import type { Size as TravelSize } from "../src/products/travel-companion/printa
 import { HomeschoolHandbook } from "../src/products/homeschooling-companion/printables/handbook";
 import { InOrderDocument } from "../src/products/personal-life-affairs-companion/printables/document";
 import { deriveReadiness } from "../src/products/personal-life-affairs-companion/completion";
+import { GloveBoxBookDocument, DEFAULT_MANIFEST as VMC_MANIFEST } from "../src/products/vehicle-maintenance-companion/printables/document";
+import type { Size as VmcSize } from "../src/products/vehicle-maintenance-companion/printables/document";
+import { FamilyHealthBinderDocument, DEFAULT_MANIFEST as FHB_MANIFEST } from "../src/products/family-health-binder/printables/document";
+import type { Size as FhbSize } from "../src/products/family-health-binder/printables/document";
+import { MoneyBookDocument, DEFAULT_MANIFEST as PFC_MANIFEST } from "../src/products/personal-finance-companion/printables/moneyBook";
+import type { Size as PfcSize } from "../src/products/personal-finance-companion/printables/moneyBook";
+import { AlongsideBookDocument, DEFAULT_MANIFEST as ALONGSIDE_MANIFEST } from "../src/products/alongside/printables/document";
+import type { Size as AlongsideSize } from "../src/products/alongside/printables/document";
 
 const OUT = process.env.OUT_DIR ?? "./.etsy-pdfs";
 const FONTS = path.join(OUT, "fonts");
@@ -65,6 +73,22 @@ const PRODUCTS: Record<string, { title: string; render: Renderer }> = {
         generatedAt: new Date(),
         code,
       }),
+  },
+  "vehicle-maintenance-companion": {
+    title: "The Glove Box Book",
+    render: (size, code) => GloveBoxBookDocument({ manifest: { ...VMC_MANIFEST, size: size as VmcSize }, code }),
+  },
+  "family-health-binder": {
+    title: "The Family Health Binder",
+    render: (size, code) => FamilyHealthBinderDocument({ manifest: { ...FHB_MANIFEST, size: size as FhbSize }, code }),
+  },
+  "personal-finance-companion": {
+    title: "The Money Book",
+    render: (size, code) => MoneyBookDocument({ manifest: { ...PFC_MANIFEST, size: size as PfcSize }, code }),
+  },
+  "alongside": {
+    title: "The Alongside Book",
+    render: (size, code) => AlongsideBookDocument({ manifest: { ...ALONGSIDE_MANIFEST, size: size as AlongsideSize }, code }),
   },
 };
 
