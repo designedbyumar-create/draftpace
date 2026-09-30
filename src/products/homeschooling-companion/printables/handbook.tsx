@@ -183,9 +183,83 @@ function MethodChapter({ chapter, size }: { chapter: Chapter; size: Size }) {
   );
 }
 
-type Size = "LETTER" | "A4";
+export type Size = "LETTER" | "A4";
 
-export function HomeschoolHandbook({ size }: { size: Size }): React.ReactElement<DocumentProps> {
+/**
+ * The one page that isn't part of the book itself: how it connects to
+ * the app. Only rendered when a code is supplied, so a family
+ * downloading their own copy from inside the app (no code needed, they
+ * already have it) sees exactly the book, nothing appended.
+ */
+function ActivatePage({ size, code }: { size: Size; code: string }) {
+  return (
+    <Page size={size} style={s.page}>
+      <Sheet section="Activate">
+        <Text style={s.eyebrow}>Included with this book</Text>
+        <Text style={s.h1}>Activate your digital Homeschooling Companion.</Text>
+        <View style={s.headRule} />
+        <Text style={s.p}>
+          The book works with a pencil and nothing else. The app is the other half: it remembers what you did, what
+          you noticed, and what came back from a check, kept per child and printable as a record whenever you want
+          one.
+        </Text>
+
+        {[
+          ["Go to draftpace.com and sign in", "Create an account with your email, or continue with Google."],
+          ["Open draftpace.com/app/redeem", "Or choose Redeem a code from your library once signed in."],
+          ["Enter the code below", "It unlocks the Homeschooling Companion on your account for good. One use per account, so keep it somewhere safe."],
+        ].map(([title, body], i) => (
+          <View key={title} style={{ flexDirection: "row", marginTop: 14, marginBottom: i === 2 ? 0 : 12 }} wrap={false}>
+            <View style={{ width: 30 }}>
+              <Text style={{ fontFamily: HEAD, fontSize: 18, color: C.plum, lineHeight: 1 }}>{i + 1}</Text>
+            </View>
+            <View style={{ flex: 1, borderLeftWidth: 0.7, borderLeftColor: C.rule, paddingLeft: 13 }}>
+              <Text style={{ fontSize: 9.6, color: C.ink }}>{title}</Text>
+              <Text style={{ fontSize: 8.2, color: C.muted, marginTop: 1 }}>{body}</Text>
+            </View>
+          </View>
+        ))}
+
+        <View
+          style={{
+            position: "relative",
+            borderWidth: 1,
+            borderColor: C.plum,
+            paddingVertical: 24,
+            alignItems: "center",
+            marginTop: 22,
+            marginBottom: 18,
+          }}
+        >
+          <Text style={{ fontSize: 6.8, letterSpacing: 1.8, color: C.plum, textTransform: "uppercase", marginBottom: 9 }}>
+            Your activation code
+          </Text>
+          <Text style={{ fontFamily: HEAD, fontSize: 28, letterSpacing: 3.5, color: C.ink }}>{code}</Text>
+        </View>
+
+        <Text style={s.boxLabel}>What the app does that the book cannot</Text>
+        <View style={[s.box, { marginTop: 6, flexDirection: "row" }]}>
+          {[
+            ["It remembers", "What was covered, what a child noticed, and how a check went, per child, dated."],
+            ["It's undated too", "Same discipline as the book: nothing expires, nothing assumes a school-year start."],
+            ["Nothing generated", "No model anywhere in it, the same rule this book itself follows."],
+          ].map(([title, body], i) => (
+            <View key={title} style={{ flex: 1, marginLeft: i === 0 ? 0 : 14, paddingLeft: i === 0 ? 0 : 14, borderLeftWidth: i === 0 ? 0 : 0.6, borderLeftColor: C.rule }}>
+              <Text style={{ fontFamily: HEAD, fontSize: 10.5, color: C.ink, marginBottom: 3 }}>{title}</Text>
+              <Text style={{ fontSize: 7.8, color: C.body, lineHeight: 1.5 }}>{body}</Text>
+            </View>
+          ))}
+        </View>
+
+        <Text style={[s.p, { marginTop: 18, fontSize: 8, color: C.faint }]}>
+          Trouble redeeming: draftpace.com/support.
+        </Text>
+      </Sheet>
+    </Page>
+  );
+}
+
+export function HomeschoolHandbook({ size, code }: { size: Size; code?: string }): React.ReactElement<DocumentProps> {
   return (
     <Document
       title={HANDBOOK_TITLE}
@@ -703,6 +777,7 @@ export function HomeschoolHandbook({ size }: { size: Size }): React.ReactElement
           </Text>
         </Sheet>
       </Page>
+      {code && <ActivatePage size={size} code={code} />}
     </Document>
   );
 }

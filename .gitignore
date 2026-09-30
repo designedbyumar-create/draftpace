@@ -46,3 +46,6 @@ next-env.d.ts
 
 # Generated printable proofs (regenerate with scripts/generate-home-survey.ts)
 .workbook/
+
+# Generated Etsy-edition PDFs (regenerate with scripts/generate-etsy-pdf.ts)
+.etsy-pdfs/

@@ -321,6 +321,106 @@ export interface DocumentInputs {
   preparedBy: string;
   readiness: Readiness;
   generatedAt: Date;
+  /** An Etsy print-run's activation code. Omitted entirely for a real copy someone downloads of their own affairs. */
+  code?: string;
+}
+
+/**
+ * The one page that isn't part of the book itself: how it connects to
+ * the app. Only ever appended to a genuinely blank copy (nobody's real
+ * affairs get a promotional page stapled to the back of them), and only
+ * when a code is supplied.
+ */
+function ActivatePage({ size, code }: { size: "LETTER" | "A4"; code: string }) {
+  return (
+    <Page size={size} style={s.page}>
+      <Sheet section="Activate">
+        <Text style={s.eyebrow}>Included with this book</Text>
+        <Text style={s.h1}>Activate your digital Personal Life Affairs Companion.</Text>
+        <View style={s.headRule} />
+        <Text style={{ fontSize: 9.5, color: C.body, lineHeight: 1.6, marginBottom: 14 }}>
+          This book works with a pen and nothing else. The app is where you keep it current: a page in this book is
+          exactly what you wrote the day you printed it, and the app is the copy that can change as your situation
+          does.
+        </Text>
+
+        {[
+          ["Go to draftpace.com and sign in", "Create an account with your email, or continue with Google."],
+          ["Open draftpace.com/app/redeem", "Or choose Redeem a code from your library once signed in."],
+          [
+            "Enter the code below",
+            "It unlocks the Personal Life Affairs Companion on your account for good. One use per account, so keep it somewhere safe.",
+          ],
+        ].map(([title, body], i) => (
+          <View key={title} style={{ flexDirection: "row", marginTop: 14, marginBottom: i === 2 ? 0 : 12 }} wrap={false}>
+            <View style={{ width: 30 }}>
+              <Text style={{ fontFamily: HEAD, fontSize: 18, color: C.deep, lineHeight: 1 }}>{i + 1}</Text>
+            </View>
+            <View style={{ flex: 1, borderLeftWidth: 0.7, borderLeftColor: C.rule, paddingLeft: 13 }}>
+              <Text style={{ fontSize: 9.6, color: C.ink }}>{title}</Text>
+              <Text style={{ fontSize: 8.2, color: C.muted, marginTop: 1 }}>{body}</Text>
+            </View>
+          </View>
+        ))}
+
+        <View
+          style={{
+            position: "relative",
+            borderWidth: 1,
+            borderColor: C.deep,
+            paddingVertical: 24,
+            alignItems: "center",
+            marginTop: 22,
+            marginBottom: 18,
+          }}
+        >
+          <Text style={{ fontSize: 6.8, letterSpacing: 1.8, color: C.deep, textTransform: "uppercase", marginBottom: 9 }}>
+            Your activation code
+          </Text>
+          <Text style={{ fontFamily: HEAD, fontSize: 28, letterSpacing: 3.5, color: C.ink }}>{code}</Text>
+        </View>
+
+        <Text style={{ fontSize: 6.8, letterSpacing: 1.3, color: C.deep, textTransform: "uppercase" }}>
+          What the app does that the book cannot
+        </Text>
+        <View
+          style={{
+            borderLeftWidth: 2.5,
+            borderLeftColor: C.deep,
+            backgroundColor: C.deepSoft,
+            paddingVertical: 12,
+            paddingHorizontal: 15,
+            marginTop: 6,
+            flexDirection: "row",
+          }}
+        >
+          {[
+            ["It stays current", "Confirm a fact again and the date updates; nothing here goes stale unnoticed."],
+            ["It shows what's missing", "Plainly, by area, never a guess at what should be filled in."],
+            ["Nothing generated", "No model anywhere in it. Every sentence in this book was written by a person."],
+          ].map(([title, body], i) => (
+            <View
+              key={title}
+              style={{
+                flex: 1,
+                marginLeft: i === 0 ? 0 : 14,
+                paddingLeft: i === 0 ? 0 : 14,
+                borderLeftWidth: i === 0 ? 0 : 0.6,
+                borderLeftColor: C.rule,
+              }}
+            >
+              <Text style={{ fontFamily: HEAD, fontSize: 10.5, color: C.ink, marginBottom: 3 }}>{title}</Text>
+              <Text style={{ fontSize: 7.8, color: C.body, lineHeight: 1.5 }}>{body}</Text>
+            </View>
+          ))}
+        </View>
+
+        <Text style={{ fontSize: 8, color: C.faint, marginTop: 18, lineHeight: 1.55 }}>
+          Trouble redeeming: draftpace.com/support.
+        </Text>
+      </Sheet>
+    </Page>
+  );
 }
 
 export function InOrderDocument({
@@ -328,6 +428,7 @@ export function InOrderDocument({
   preparedBy,
   readiness,
   generatedAt,
+  code,
 }: DocumentInputs): React.ReactElement<DocumentProps> {
   const blank = isBlankCopy(readiness);
   const generated = formatDate(generatedAt.toISOString());
@@ -596,6 +697,7 @@ export function InOrderDocument({
           </Sheet>
         </Page>
       ))}
+      {code && <ActivatePage size={size} code={code} />}
     </Document>
   );
 }

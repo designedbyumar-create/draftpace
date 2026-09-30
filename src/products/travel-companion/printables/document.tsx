@@ -702,9 +702,91 @@ function EndOfTripRecordPage({ size }: { size: Size }) {
   );
 }
 
+/**
+ * The one page that isn't blank: how this printed book turns into the
+ * real, connected product. Only rendered when a code is supplied, so
+ * the book a paying customer downloads from inside the app (no code
+ * needed, they already have it) stays exactly as it was.
+ */
+function ActivatePage({ size, code }: { size: Size; code: string }) {
+  return (
+    <Page size={size} style={s.page}>
+      <Sheet section="Activate">
+        <Text style={s.eyebrow}>Included with this book</Text>
+        <Text style={s.h1}>Activate your digital Travel Companion.</Text>
+        <View style={s.headRule} />
+        <Text style={s.p}>
+          Everything you write in this book by hand, this product also holds for you, connected. It works out what a
+          change to one booking touches, walks you through a hard call with an airline or a hotel, and remembers
+          what happened on this trip for the next one you take to the same place.
+        </Text>
+
+        {[
+          ["Go to draftpace.com and sign in", "Create an account with your email, or continue with Google."],
+          ["Open draftpace.com/app/redeem", "Or choose Redeem a code from your library once signed in."],
+          ["Enter the code below", "It unlocks Travel Companion on your account for good. One use per account, so keep it somewhere safe."],
+        ].map(([title, body], i) => (
+          <View key={title} style={{ flexDirection: "row", marginTop: 14, marginBottom: i === 2 ? 0 : 12 }} wrap={false}>
+            <View style={{ width: 30 }}>
+              <Text style={{ fontFamily: HEAD, fontSize: 18, color: C.amber, lineHeight: 1 }}>{i + 1}</Text>
+            </View>
+            <View style={{ flex: 1, borderLeftWidth: 0.7, borderLeftColor: C.rule, paddingLeft: 13 }}>
+              <Text style={{ fontSize: 9.6, color: C.ink }}>{title}</Text>
+              <Text style={{ fontSize: 8.2, color: C.muted, marginTop: 1 }}>{body}</Text>
+            </View>
+          </View>
+        ))}
+
+        <View
+          style={{
+            position: "relative",
+            borderWidth: 1,
+            borderColor: C.amber,
+            paddingVertical: 24,
+            alignItems: "center",
+            marginTop: 22,
+            marginBottom: 18,
+          }}
+        >
+          <Text style={{ fontSize: 6.8, letterSpacing: 1.8, color: C.amber, textTransform: "uppercase", marginBottom: 9 }}>
+            Your activation code
+          </Text>
+          <Text style={{ fontFamily: HEAD, fontSize: 28, letterSpacing: 3.5, color: C.ink }}>{code}</Text>
+        </View>
+
+        <Text style={s.boxLabel}>What it does that paper cannot</Text>
+        <View style={[s.box, { marginTop: 6, flexDirection: "row" }]}>
+          {[
+            ["It connects", "Say once what a booking depends on, and it remembers the shape of your whole trip."],
+            ["It walks the change", "Record a delay or a move and see exactly what else it touches, one booking at a time."],
+            ["It remembers the place", "What you learned on this trip is offered again, deterministically, next time you go back."],
+          ].map(([title, body], i) => (
+            <View key={title} style={{ flex: 1, marginLeft: i === 0 ? 0 : 14, paddingLeft: i === 0 ? 0 : 14, borderLeftWidth: i === 0 ? 0 : 0.6, borderLeftColor: C.rule }}>
+              <Text style={{ fontFamily: HEAD, fontSize: 10.5, color: C.ink, marginBottom: 3 }}>{title}</Text>
+              <Text style={{ fontSize: 7.8, color: C.body, lineHeight: 1.5 }}>{body}</Text>
+            </View>
+          ))}
+        </View>
+
+        <Text style={[s.p, { marginTop: 18, fontSize: 8, color: C.faint }]}>
+          Travel Companion has no connection to any airline, aggregator or booking site. Everything it shows is
+          something you recorded. Trouble redeeming: draftpace.com/support.
+        </Text>
+      </Sheet>
+    </Page>
+  );
+}
+
 // -------------------------------------------------------------- document
 
-export function TripBookDocument({ manifest = DEFAULT_MANIFEST }: { manifest?: TripBookManifest }): React.ReactElement<DocumentProps> {
+export function TripBookDocument({
+  manifest = DEFAULT_MANIFEST,
+  code,
+}: {
+  manifest?: TripBookManifest;
+  /** An Etsy print-run's activation code. Omitted entirely for a customer downloading their own copy from inside the app. */
+  code?: string;
+}): React.ReactElement<DocumentProps> {
   const { size } = manifest;
   const repeat = <T,>(count: number, render: (index: number, total: number) => T): T[] =>
     Array.from({ length: count }, (_, i) => render(i + 1, count));
@@ -749,6 +831,7 @@ export function TripBookDocument({ manifest = DEFAULT_MANIFEST }: { manifest?: T
       {repeat(manifest.tripRecordPages, (i, t) => <TripRecordPage key={`rec${i}`} size={size} index={i} total={t} />)}
       <TripNotesPage size={size} />
       <EndOfTripRecordPage size={size} />
+      {code && <ActivatePage size={size} code={code} />}
     </Document>
   );
 }
