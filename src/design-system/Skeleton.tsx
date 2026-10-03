@@ -24,18 +24,3 @@ export function SkeletonRow({ withControl = false }: { withControl?: boolean }) 
     </div>
   );
 }
-
-/** A row shaped like LibraryShelfCard: icon, title + description, action. */
-export function SkeletonProductRow() {
-  return (
-    <div className="flex items-center gap-3 rounded-xl border border-[var(--border)] bg-[var(--surface)] px-3.5 py-3">
-      <Skeleton className="h-8 w-8 shrink-0 rounded-full" />
-      <div className="min-w-0 flex-1 space-y-2">
-        <Skeleton className="h-4 w-40" />
-        <Skeleton className="h-3 w-56" />
-      </div>
-      <Skeleton className="h-8 w-8 shrink-0 rounded-lg" />
-      <Skeleton className="h-8 w-20 shrink-0 rounded-lg" />
-    </div>
-  );
-}
