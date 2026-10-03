@@ -35,7 +35,7 @@ archived content to a visitor.
 
 A listing's persuasive content lives in three fields, and one listing is
 the single source feeding two surfaces: the public Shop page and the
-owner's manual at `/app/library/[productSlug]`.
+owner's own companion page at `/app/companions/[productSlug]`.
 
 - **`questions`** — every worry, asked once, each tagged with the moment
   it matters (`stage: ["deciding"]`, `["owning"]`, or both). The Shop

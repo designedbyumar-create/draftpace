@@ -64,20 +64,24 @@ export const personalLifeAffairsCompanionShopProduct: ShopProductInput = {
     {
       problem: "You've meant to sort this out for years and never found a first step small enough to take.",
       solution: "One question on screen at a time, chosen for you, instead of a blank folder to organise yourself.",
+      label: "One question at a time",
     },
     {
       problem: "You don't actually know what costs the most to leave undone.",
       solution:
         "The things that cost the most raised first: who decides, who to call, where the will is, who's named on the forms that override it.",
+      label: "Highest-cost items first",
     },
     {
       problem: "Things written down once quietly stop being true.",
       solution: "A record that comes back years later and asks whether it's still true.",
+      label: "Stays current over time",
     },
     {
       problem: "You want something a person could actually use, not a login they'd have to inherit.",
       solution:
         "My Affairs: a printable book, in your own words, opening with what somebody would be trying to do first, that a person who has never used this could pick up and use.",
+      label: "A printable handoff book",
     },
     {
       problem: "Half of what a binder makes you fill in has nothing to do with your life.",

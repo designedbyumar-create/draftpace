@@ -70,18 +70,22 @@ export const familyHealthBinderShopProduct: ShopProductInput = {
     {
       problem: "Every form asks for the same answers, and you rebuild them from memory each time.",
       solution: "One card per person holds them, and the Forms sheet prints them in the order forms ask, with anything missing said plainly.",
+      label: "One card per person",
     },
     {
       problem: "A sitter or grandparent needs to know what to avoid and who to call, and a text message is not enough.",
       solution: "A Caregiver sheet: allergies first and largest, what is taken, who to call, and your own notes about the child.",
+      label: "Caregiver sheet",
     },
     {
       problem: "At an intake desk, you're reconstructing when a symptom started from memory, under pressure.",
       solution: "A structured symptom timeline: onset, duration and severity as real fields, recorded as it happens.",
+      label: "Symptom timeline",
     },
     {
       problem: "The questions you meant to ask the doctor vanish the moment you sit down.",
       solution: "Write them down before the visit, with what was said after it, and print a Visit page with a box to tick each question.",
+      label: "Questions before the visit",
     },
     {
       problem: "A medication that was stopped in the spring is still on the list you hand over in the fall.",

@@ -13,7 +13,7 @@ import { ensureShopRegistered } from "@/shop/ensureRegistered";
 import RichSection from "./RichSection";
 import type { ReactNode } from "react";
 import ProblemCards from "./ProblemCards";
-import AddToLibraryButton from "../AddToLibraryButton";
+import GetFreeProductButton from "../GetFreeProductButton";
 import ProductGallery from "./ProductGallery";
 import ProductScreenCarousel from "./ProductScreenCarousel";
 import DetailTabs, { type DetailTab } from "./DetailTabs";
@@ -288,7 +288,7 @@ export default async function ShopProductPage({
                 where does it run, and does it ever charge me again. */}
             <dl className="mt-7 grid grid-cols-3 gap-4 border-t border-[var(--border)] pt-6">
               {[
-                ["Delivery", "In your library the moment you pay"],
+                ["Delivery", "In your account the moment you pay"],
                 ["Runs on", "Any browser, or installed as its own app"],
                 ["Renews", "Never. One payment, kept for good"],
               ].map(([term, detail]) => (
@@ -583,9 +583,10 @@ async function resolveCheckout(product: ShopProduct, searchParams: Record<string
   return href ? { kind: "ready", href } : { kind: "not-configured" };
 }
 
-/** The get action. Free adds to the library; paid links to the real Lemon
- * Squeezy checkout once it's configured and the visitor is signed in. A
- * coming-soon product shows a disabled state instead of a live action. */
+/** The get action. Free adds the product to the visitor's account; paid
+ * links to the real Lemon Squeezy checkout once it's configured and the
+ * visitor is signed in. A coming-soon product shows a disabled state
+ * instead of a live action. */
 function GetAction({
   product,
   checkout,
@@ -614,19 +615,18 @@ function GetAction({
     );
   }
 
-  const label =
-    product.purchaseAction?.label ?? (product.access === "free" ? "Add to your library, free" : "Get Lifetime Access");
+  const label = product.purchaseAction?.label ?? (product.access === "free" ? "Get it, free" : "Get Lifetime Access");
 
   // A free product's own Shop page has already made the full case for it.
   // Posting straight to the activation endpoint (the same one
   // /app/activate/[productSlug]'s <form> already posts to) skips a second,
-  // near-duplicate "Add {title} to your library" confirmation screen for a
-  // decision the visitor already made here. /app/activate/[productSlug]
-  // stays intact as the confirmation screen for paid products (where a
-  // distinct "you're about to be charged" moment still matters) and as a
-  // safe fallback entry point.
+  // near-duplicate "Get {title}, free" confirmation screen for a decision
+  // the visitor already made here. /app/activate/[productSlug] stays
+  // intact as the confirmation screen for paid products (where a distinct
+  // "you're about to be charged" moment still matters) and as a safe
+  // fallback entry point.
   if (product.access === "free") {
-    return <AddToLibraryButton slug={product.slug} label={label} size={size} analytics={{ productName: product.title }} />;
+    return <GetFreeProductButton slug={product.slug} label={label} size={size} analytics={{ productName: product.title }} />;
   }
 
   // Paid, with a static href already set on the listing itself (e.g. a

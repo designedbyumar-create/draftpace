@@ -173,6 +173,15 @@ function TypesNote({ label, items }: { label: string; items: readonly string[] }
   );
 }
 
+/** One template page is printed per repeatable record, not a fixed run of blank copies. */
+function MoreCue({ text }: { text: string }) {
+  return (
+    <View style={{ marginTop: 16, paddingTop: 10, borderTopWidth: 0.6, borderTopColor: C.ruleSoft }}>
+      <Text style={{ fontSize: 7.8, color: C.faint, lineHeight: 1.5 }}>{text}</Text>
+    </View>
+  );
+}
+
 function RecordPage({
   section,
   eyebrow,
@@ -208,9 +217,9 @@ export interface GloveBoxBookManifest {
 }
 
 export const DEFAULT_MANIFEST: GloveBoxBookManifest = {
-  vehicles: 2,
+  vehicles: 1,
   serviceHistoryRows: 16,
-  serviceBoundaries: 2,
+  serviceBoundaries: 1,
   size: "LETTER",
 };
 
@@ -267,6 +276,9 @@ function VehicleProfilePage({ size, index, total }: { size: Size; index: number;
       <FieldRow fields={["Insurer", "Policy number"]} />
       <Field label="Roadside assistance number" />
       <Notes label="Anything else worth having to hand" count={2} />
+      {index === total && (
+        <MoreCue text="Own more than one car? Photocopy this page for each additional vehicle, or add it in the app, Vehicle Maintenance Companion tracks unlimited vehicles per account, each with its own schedule and history." />
+      )}
     </RecordPage>
   );
 }
@@ -338,6 +350,9 @@ function ServiceBoundaryPage({ size, index, total }: { size: Size; index: number
       <Notes label="Authorized today" count={4} />
       <Notes label="Not authorized without a call first" count={4} />
       <Field label="Phone number to call" />
+      {index === total && (
+        <MoreCue text="Handing the car off again? Photocopy this page for the next date, or keep it current in the app, updated in seconds instead of rewritten by hand." />
+      )}
     </RecordPage>
   );
 }
@@ -379,7 +394,7 @@ function ActivatePage({ size, code }: { size: Size; code: string }) {
 
         {[
           ["Go to draftpace.com and sign in", "Create an account with your email, or continue with Google."],
-          ["Open draftpace.com/app/redeem", "Or choose Redeem a code from your library once signed in."],
+          ["Open draftpace.com/app/redeem", "Or choose Redeem a code from your account once signed in."],
           [
             "Enter the code below",
             "It unlocks Vehicle Maintenance Companion on your account for good. One use per account, so keep it somewhere safe.",

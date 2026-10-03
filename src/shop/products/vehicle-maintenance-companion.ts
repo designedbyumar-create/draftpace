@@ -65,19 +65,23 @@ export const vehicleMaintenanceCompanionShopProduct: ShopProductInput = {
     {
       problem: "Nobody remembers the exact interval they were quoted for this specific vehicle.",
       solution: "A place to type it in once, and keep it, editable, against that vehicle for good.",
+      label: "Interval, kept for good",
     },
     {
       problem: "A used or inherited car has no honest service history to check.",
       solution: "A distinct unknown-history path: nothing is assumed done, nothing reads as overdue without a real fact.",
+      label: "Honest unknown-history path",
     },
     {
       problem: "\"While we had it up on the lift\" turns a routine visit into a much larger bill.",
       solution: "A dated, mileage-stamped Service Boundary stating what is requested today and what is not authorized.",
+      label: "A real Service Boundary",
     },
     {
       problem: "You have no proof the car was looked after when it is time to sell it.",
       solution:
         "Every service you record is kept with its day, mileage, who did it and what it cost, and prints as a service record that says plainly it is your own.",
+      label: "Printable proof of care",
     },
     {
       problem: "Registration, insurance and the inspection all come round on different days.",

@@ -152,6 +152,15 @@ function TypesNote({ label, items }: { label: string; items: readonly string[] }
   );
 }
 
+/** One template page is printed per repeatable record, not a fixed run of blank copies. */
+function MoreCue({ text }: { text: string }) {
+  return (
+    <View style={{ marginTop: 16, paddingTop: 10, borderTopWidth: 0.6, borderTopColor: C.ruleSoft }}>
+      <Text style={{ fontSize: 7.8, color: C.faint, lineHeight: 1.5 }}>{text}</Text>
+    </View>
+  );
+}
+
 function RecordPage({
   section,
   eyebrow,
@@ -185,7 +194,7 @@ export interface MoneyBookManifest {
 }
 
 export const DEFAULT_MANIFEST: MoneyBookManifest = {
-  monthlyLedgers: 3,
+  monthlyLedgers: 1,
   size: "LETTER",
 };
 
@@ -335,6 +344,9 @@ function MonthlyLedgerPage({ size, index, total }: { size: Size; index: number; 
         ]}
         rows={20}
       />
+      {index === total && (
+        <MoreCue text="Next month? Photocopy this page, undated on purpose so any copy works, or let the app keep your ledger going automatically, no rewriting the account and category columns by hand." />
+      )}
     </RecordPage>
   );
 }
@@ -394,7 +406,7 @@ function ActivatePage({ size, code }: { size: Size; code: string }) {
 
         {[
           ["Go to draftpace.com and sign in", "Create an account with your email, or continue with Google."],
-          ["Open draftpace.com/app/redeem", "Or choose Redeem a code from your library once signed in."],
+          ["Open draftpace.com/app/redeem", "Or choose Redeem a code from your account once signed in."],
           [
             "Enter the code below",
             "It unlocks Personal Finance Companion on your account for good. One use per account, so keep it somewhere safe.",

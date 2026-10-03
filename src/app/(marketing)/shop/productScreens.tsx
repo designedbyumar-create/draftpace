@@ -14,10 +14,10 @@ import { OverviewScreenMockup as FhbOverview, FormsSheetScreenMockup as FhbForms
  * that show what actually using it looks like.
  *
  * Lives here rather than inside shop/page.tsx because it is no longer
- * only the Shop's: the authenticated Library shelf and each owned
- * product's manual page draw the same screens, and a person who buys a
- * product should recognise it afterwards as the same thing they were
- * shown. One map, so those three surfaces can never disagree.
+ * only the Shop's: each owned product's own companion page draws the
+ * same screens, and a person who buys a product should recognise it
+ * afterwards as the same thing they were shown. One map, so those two
+ * surfaces can never disagree.
  *
  * A product with no entry gets an honest fallback at each call site
  * (listing media, then the product's own icon), never a fabricated

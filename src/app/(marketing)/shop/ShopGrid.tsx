@@ -7,7 +7,7 @@ import Button from "@/design-system/Button";
 import TextLink from "@/design-system/TextLink";
 import { ArrowRight } from "@/design-system/Icon";
 import { cardHighlight, discountPercent, formatCompareAtPrice, formatPrice, type ShopProduct } from "@/shop/definition";
-import AddToLibraryButton from "./AddToLibraryButton";
+import GetFreeProductButton from "./GetFreeProductButton";
 import { trackEvent } from "@/lib/analytics/gtag";
 
 export interface ShopFilterArea {
@@ -93,8 +93,8 @@ function FilterChip({ label, active, onClick }: { label: string; active: boolean
  * One marketplace-grade card, used for every listing regardless of
  * category size or free/paid status. Free and a real price render in
  * the same dedicated price row, same weight, same position, on every
- * card, and get exactly one matched primary action each: "Add to your
- * library, free" or "Get it, $N" (the same two labels GetAction already
+ * card, and get exactly one matched primary action each: "Get it,
+ * free" or "Get it, $N" (the same two labels GetAction already
  * uses on the product page itself, not a second, differently-worded
  * pair invented for the grid). Neither is a soft "Learn more" link
  * standing in for a real action - that stays, but as the secondary one.
@@ -217,7 +217,7 @@ function ShopProductCard({ entry, position }: { entry: ShopGridEntry; position: 
 /**
  * Two distinct actions, never one link doing double duty. The primary
  * button always commits to something real: a free product goes
- * straight into the visitor's library, a paid one goes to the page
+ * straight into the visitor's account, a paid one goes to the page
  * where the actual purchase happens. "Learn more" only ever navigates.
  * On a coming-soon listing there's nothing to commit to yet, so it's
  * the only action shown, same as before.
@@ -234,9 +234,9 @@ function CardCta({ product, priceLabel }: { product: ShopProduct; priceLabel: st
   return (
     <>
       {product.access === "free" ? (
-        <AddToLibraryButton
+        <GetFreeProductButton
           slug={product.slug}
-          label="Add to your library, free"
+          label="Get it, free"
           size="sm"
           fullWidth
           analytics={{ productName: product.title }}

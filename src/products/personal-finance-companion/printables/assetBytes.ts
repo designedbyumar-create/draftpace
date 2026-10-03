@@ -3,7 +3,7 @@ import { PRINTABLE_FINANCE_COMPANION_A4_BASE64 } from "./printableFinanceCompani
 
 /**
  * Server-only. Deliberately never imported by catalog.ts (which is reachable
- * from client components via manifest.ts, e.g. Library/Home) - only the
+ * from client components via manifest.ts, e.g. the sidebar/Home) - only the
  * download route (src/app/api/products/[productSlug]/printables/[assetId]/
  * route.ts) imports this file, so the ~270KB base64 payloads it pulls in
  * never end up in any client bundle. See printableAssets.ts for the

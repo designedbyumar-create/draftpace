@@ -110,7 +110,7 @@ export default async function WelcomePage({ params }: { params: Promise<{ produc
               </h1>
               <p className="mt-3 text-[16px] leading-relaxed text-[var(--muted)]">
                 {listing?.promise ??
-                  "It is in your library now, and it stays there. Nothing to renew, nothing to keep paying."}
+                  "It is in your account now, and it stays there. Nothing to renew, nothing to keep paying."}
               </p>
 
               <Surface className="mt-8 p-5">
@@ -122,7 +122,7 @@ export default async function WelcomePage({ params }: { params: Promise<{ produc
                     <Check size={15} className="mt-1 shrink-0 text-[var(--primary)]" aria-hidden />
                     <span>
                       It is in <Link href="/app" className="font-semibold text-[var(--primary)] hover:underline">your
-                      library</Link> permanently, on every device you sign in on.
+                      account</Link> permanently, on every device you sign in on.
                     </span>
                   </li>
                   <li className="flex gap-2.5">

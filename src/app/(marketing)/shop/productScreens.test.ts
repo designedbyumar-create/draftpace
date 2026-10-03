@@ -4,8 +4,8 @@ import { shopRegistry } from "@/shop/registry";
 import { ensureShopRegistered } from "@/shop/ensureRegistered";
 
 /**
- * The screens map is now shared by three surfaces (Shop cards, the
- * Library shelf, and each owned product's manual), and only the manual
+ * The screens map is now shared by two surfaces (Shop cards and each
+ * owned product's companion page), and only the companion page
  * shows the captions. That makes a caption easy to forget when a product
  * is added, and a missing one is invisible on the two surfaces that don't
  * use them, so it gets asserted here instead of noticed later.

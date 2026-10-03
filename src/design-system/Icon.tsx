@@ -17,10 +17,11 @@ import {
   Bell as PhosphorBell,
   BellRinging as PhosphorBellRinging,
   BookOpen as PhosphorBookOpen,
-  Books as PhosphorBooks,
   CalendarCheck as PhosphorCalendarCheck,
   CaretDown as PhosphorCaretDown,
   CaretRight as PhosphorCaretRight,
+  CaretLineLeft as PhosphorCaretLineLeft,
+  CaretLineRight as PhosphorCaretLineRight,
   ChartBar as PhosphorChartBar,
   ChatCircle as PhosphorChatCircle,
   Check as PhosphorCheck,
@@ -138,6 +139,8 @@ export const BellRinging = createIcon(PhosphorBellRinging, "BellRinging");
 export const BookOpen = createIcon(PhosphorBookOpen, "BookOpen");
 export const CalendarCheck = createIcon(PhosphorCalendarCheck, "CalendarCheck");
 export const CaretDown = createIcon(PhosphorCaretDown, "CaretDown");
+export const CaretLineLeft = createIcon(PhosphorCaretLineLeft, "CaretLineLeft");
+export const CaretLineRight = createIcon(PhosphorCaretLineRight, "CaretLineRight");
 export const ChartBar = createIcon(PhosphorChartBar, "ChartBar");
 export const Check = createIcon(PhosphorCheck, "Check");
 export const CheckCircle2 = createIcon(PhosphorCheckCircle, "CheckCircle2");
@@ -163,7 +166,6 @@ export const Home = createIcon(PhosphorHouse, "Home");
 export const Landmark = createIcon(PhosphorBank, "Landmark");
 export const Layers3 = createIcon(PhosphorStack, "Layers3");
 export const LifeBuoy = createIcon(PhosphorLifebuoy, "LifeBuoy");
-export const Library = createIcon(PhosphorBooks, "Library");
 export const ListChecks = createIcon(PhosphorListChecks, "ListChecks");
 export const LinkSimple = createIcon(PhosphorLinkSimple, "LinkSimple");
 export const Lightning = createIcon(PhosphorLightning, "Lightning");

@@ -101,7 +101,7 @@ export default async function HelpWithNeedPage({
         <section className="mt-12 border-t border-[var(--border)] pt-8">
           <p className="text-body-sm leading-relaxed text-[var(--muted)]">
             There's no product for this specific situation yet. Create an account now, and it will be ready in
-            your library the moment there is.
+            your account the moment there is.
           </p>
         </section>
       )}

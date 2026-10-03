@@ -49,7 +49,7 @@ export function useInstanceState(productSlug: string) {
       // asynchronously. Awaiting getSession() guarantees the client is
       // authenticated before the first RLS-scoped read below, which otherwise
       // races ahead and runs unauthenticated, returning no rows for an
-      // instance the user genuinely owns (Platform Home/Library happen to run
+      // instance the user genuinely owns (Platform Home/the sidebar happen to run
       // late enough to avoid this; the product modules query immediately).
       await supabase.auth.getSession();
       if (cancelled) return;

@@ -1,9 +1,7 @@
 import { describe, expect, it } from "vitest";
-import { boughtStartedLine, humanDate, humanStatus, visibleLibraryFilters } from "./ownedProductPresentation";
-import type { OwnedProductRow } from "./deriveOwnedProducts";
+import { boughtStartedLine, humanDate, humanStatus } from "./ownedProductPresentation";
 import type { EntitlementSummary } from "./entitlements";
 import type { ProductInstanceSummary } from "./instances";
-import type { ProductDefinition } from "./definition";
 
 describe("humanDate", () => {
   it("formats an ISO timestamp as a fixed, timezone-pinned date", () => {
@@ -46,35 +44,5 @@ describe("humanStatus", () => {
     expect(humanStatus({ setupComplete: false, lifecycleState: "active", pausedAt: "2026-08-15T00:00:00Z" })).toBe(
       "Setup not finished"
     );
-  });
-});
-
-describe("visibleLibraryFilters", () => {
-  function readyRow(cycleModel: "monthly" | "continuous"): OwnedProductRow {
-    return {
-      kind: "ready",
-      productSlug: "x",
-      entitlement: { id: "e", productSlug: "x", accessSource: "purchase", grantedAt: "2026-01-01T00:00:00Z" },
-      definition: { cycleModel } as ProductDefinition,
-      instance: null,
-      sortTimestamp: "2026-01-01T00:00:00Z",
-    };
-  }
-
-  it("hides Finished/Archived, but keeps Paused, when nothing owned is cycle-based — vacation-mode pause applies to any product", () => {
-    const rows = [readyRow("continuous"), readyRow("continuous")];
-    const ids = visibleLibraryFilters(rows).map((f) => f.id);
-    expect(ids).toEqual(["all", "in-progress", "paused"]);
-  });
-
-  it("shows the full set once a cycle-based product is owned", () => {
-    const rows = [readyRow("continuous"), readyRow("monthly")];
-    const ids = visibleLibraryFilters(rows).map((f) => f.id);
-    expect(ids).toEqual(["all", "in-progress", "paused", "finished", "archived"]);
-  });
-
-  it("shows the universal filters even for an empty library", () => {
-    const ids = visibleLibraryFilters([]).map((f) => f.id);
-    expect(ids).toEqual(["all", "in-progress", "paused"]);
   });
 });

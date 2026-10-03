@@ -12,8 +12,8 @@ import { setProductInstancePaused } from "@/product-framework/instances";
  * instance id it already has (`<PauseProductControl instanceId={id} />`).
  * Deliberately separate from Monthly Money Reset's own inline pause
  * button in its SettingsModule.tsx: that one calls
- * setProductInstanceLifecycle and leaves for Library, since pausing there
- * closes a whole monthly cycle. This calls setProductInstancePaused
+ * setProductInstanceLifecycle and leaves for its companion page, since
+ * pausing there closes a whole monthly cycle. This calls setProductInstancePaused
  * instead (a plain, cycle-agnostic flag — see its own migration's comment
  * for why they're kept separate) and stays on the page either way, since
  * pausing an ongoing product isn't leaving anything — it stays fully

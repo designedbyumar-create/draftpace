@@ -59,7 +59,7 @@ test("Visit Draftpace website returns to / without signing out, session still va
 
   // And the session is still good for a real protected navigation, not
   // just a cached header render.
-  await page.goto("/app/library");
+  await page.goto("/app");
   await expect(page).not.toHaveURL(/\/login/);
 });
 
@@ -72,7 +72,7 @@ test("product primary navigation stays separate from the platform bottom navigat
   });
   const page = await context.newPage();
 
-  await page.goto("/app/library");
+  await page.goto("/app");
   await expect(page.locator('nav[aria-label="Primary"]')).toBeVisible();
 
   await page.goto("/app/products/monthly-money-reset/workspace");

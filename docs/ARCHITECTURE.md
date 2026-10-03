@@ -47,7 +47,8 @@ src/products/manifest.ts             One import, one array entry. Nothing else.
 
 The definition holds **metadata only** — never a secret, never user data. From
 it the framework derives the product's theme, its routes, its PWA manifest at
-`/app/products/<slug>/manifest.webmanifest`, and its place in the library.
+`/app/products/<slug>/manifest.webmanifest`, and its own row in the sidebar's
+"My Companions" section.
 
 Adding a second product means one import and one array entry. If a change to
 the framework is ever needed to add a product, the framework is wrong.

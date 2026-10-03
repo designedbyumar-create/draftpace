@@ -4,7 +4,7 @@ import { supabase } from "@/lib/supabase/client";
 
 /**
  * Generic, product-agnostic access to product_instances — the lightweight
- * lifecycle/query-cache rows Library and Platform Home read from, never a
+ * lifecycle/query-cache rows the sidebar and Platform Home read from, never a
  * product's own full state (see docs/DATA-BOUNDARIES.md). Any product can
  * use this; nothing here is specific to Monthly Money Reset, even though
  * it's the first (and so far only) consumer.

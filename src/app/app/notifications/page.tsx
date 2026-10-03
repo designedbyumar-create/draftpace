@@ -7,7 +7,7 @@ import EmptyState from "@/design-system/EmptyState";
 import Surface from "@/design-system/Surface";
 import Button from "@/design-system/Button";
 import SettingsRow from "@/components/platform/SettingsRow";
-import Toggle from "@/design-system/Toggle";
+import { SkeletonRow } from "@/design-system/Skeleton";
 import Alert from "@/design-system/Alert";
 import Badge from "@/design-system/Badge";
 import { Bell, WarningCircle } from "@/design-system/Icon";
@@ -26,7 +26,6 @@ type PermissionState = NotificationPermission | "unsupported" | "checking";
  */
 export default function NotificationsPage() {
   const [permission, setPermission] = useState<PermissionState>("checking");
-  const [quietHours, setQuietHours] = useState(true);
   const [rows, setRows] = useState<UpdateRow[] | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);
   const [retryToken, setRetryToken] = useState(0);
@@ -74,16 +73,22 @@ export default function NotificationsPage() {
     <PlatformShell title="Updates" subtitle="What each product actually told you, in one place">
       <div className="space-y-8">
         <section>
-          <h2 className="mb-3 text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--faint)]">Updates</h2>
+          <h2 className="mb-3 text-eyebrow font-bold uppercase text-[var(--faint)]">Recent</h2>
           {rows === null && !loadError ? (
-            <p className="text-[13px] text-[var(--muted)]">Loading…</p>
+            <Surface padded={false}>
+              <div className="divide-y divide-[var(--border)] px-5">
+                {Array.from({ length: 4 }, (_, i) => (
+                  <SkeletonRow key={i} />
+                ))}
+              </div>
+            </Surface>
           ) : loadError ? (
             <EmptyState
               icon={WarningCircle}
               title="Couldn't load your updates"
               description="This was just a read failure, check your connection and try again."
               action={
-                <Button size="md" onClick={() => setRetryToken((t) => t + 1)}>
+                <Button size="md" variant="action" onClick={() => setRetryToken((t) => t + 1)}>
                   Try again
                 </Button>
               }
@@ -106,15 +111,15 @@ export default function NotificationsPage() {
         </section>
 
         <section>
-          <h2 className="mb-1 text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--faint)]">Permission</h2>
+          <h2 className="mb-1 text-eyebrow font-bold uppercase text-[var(--faint)]">Permission</h2>
           <Surface>
             {permission === "checking" ? (
-              <p className="text-[13px] text-[var(--muted)]">Checking browser support…</p>
+              <p className="text-body-sm text-[var(--muted)]">Checking browser support…</p>
             ) : permission === "unsupported" ? (
               <Alert tone="warning">Push notifications aren&apos;t supported in this browser.</Alert>
             ) : permission === "granted" ? (
               <div className="flex items-center justify-between gap-3">
-                <p className="text-[13px] text-[var(--text)]">Browser notifications are enabled.</p>
+                <p className="text-body-sm text-[var(--text)]">Browser notifications are enabled.</p>
                 <Badge tone="success">Granted</Badge>
               </div>
             ) : permission === "denied" ? (
@@ -125,30 +130,24 @@ export default function NotificationsPage() {
             ) : (
               <div className="flex items-center justify-between gap-3">
                 <div>
-                  <p className="text-[13px] font-semibold text-[var(--text)]">Enable browser notifications</p>
-                  <p className="mt-0.5 text-[12px] text-[var(--muted)]">
+                  <p className="text-body-sm font-semibold text-[var(--text)]">Enable browser notifications</p>
+                  <p className="mt-0.5 text-caption text-[var(--muted)]">
                     We ask only when you choose to — never before you&apos;ve seen why it&apos;s useful.
                   </p>
                 </div>
-                <button
-                  type="button"
-                  onClick={requestPermission}
-                  className="shrink-0 rounded-lg bg-[var(--primary)] px-3.5 py-2 text-[12px] font-semibold text-[var(--primary-contrast)]"
-                >
+                <Button size="sm" variant="action" onClick={requestPermission} className="shrink-0">
                   Enable
-                </button>
+                </Button>
               </div>
             )}
           </Surface>
         </section>
 
         <section>
-          <h2 className="mb-1 text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--faint)]">Preferences</h2>
+          <h2 className="mb-1 text-eyebrow font-bold uppercase text-[var(--faint)]">Preferences</h2>
           <Surface padded={false}>
             <div className="divide-y divide-[var(--border)] px-5">
-              <SettingsRow label="Quiet hours" description="No pushes between 9 PM and 8 AM, your local time.">
-                <Toggle checked={quietHours} onChange={setQuietHours} label="Quiet hours" />
-              </SettingsRow>
+              <SettingsRow label="Quiet hours" description="Reminders stay quiet from 9 PM to 8 AM, your local time. Not adjustable yet." unavailable />
               <SettingsRow label="Channels" description="Push, email, and in-app — configured per product." unavailable />
               <SettingsRow label="Per-product controls" description="Mute or adjust reminders for a specific product." unavailable />
             </div>
@@ -166,13 +165,13 @@ function UpdateRowView({ row, onAcknowledge }: { row: UpdateRow; onAcknowledge: 
     <div className="flex items-start justify-between gap-4 py-4">
       <div className="min-w-0 flex-1">
         <div className="flex items-center gap-2">
-          <p className="text-[14px] font-semibold text-[var(--text)]">{row.title}</p>
+          <p className="text-body-sm font-semibold text-[var(--text)]">{row.title}</p>
           {!handled && <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--primary)]" aria-hidden />}
         </div>
-        <p className="mt-1 text-[12.5px] leading-5 text-[var(--muted)]">{row.body}</p>
+        <p className="mt-1 text-caption leading-5 text-[var(--muted)]">{row.body}</p>
         <div className="mt-2 flex items-center gap-3">
-          <p className="text-[12px] text-[var(--faint)]">{formatRelativeTime(row.createdAt)}</p>
-          <Link href={row.url} className="text-[12px] font-semibold text-[var(--primary)] hover:underline">
+          <p className="text-caption text-[var(--faint)]">{formatRelativeTime(row.createdAt)}</p>
+          <Link href={row.url} className="text-caption font-semibold text-[var(--primary)] hover:underline">
             Open
           </Link>
         </div>
@@ -181,7 +180,7 @@ function UpdateRowView({ row, onAcknowledge }: { row: UpdateRow; onAcknowledge: 
         <button
           type="button"
           onClick={() => onAcknowledge(row.id)}
-          className="shrink-0 rounded-lg px-2.5 py-1.5 text-[12px] font-semibold text-[var(--muted)] hover:bg-[var(--surface-muted)] hover:text-[var(--text)]"
+          className="shrink-0 rounded-lg px-2.5 py-1.5 text-caption font-semibold text-[var(--muted)] hover:bg-[var(--surface-muted)] hover:text-[var(--text)]"
         >
           Mark as handled
         </button>

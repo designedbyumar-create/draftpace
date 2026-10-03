@@ -59,6 +59,7 @@ export default async function ProductStartPage({
 
       <Button
         href={`/app/products/${definition.slug}/${primaryDestination}`}
+        variant="commit"
         size="lg"
         className="mt-6"
         iconRight={<ArrowRight size={15} aria-hidden />}

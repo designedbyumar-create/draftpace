@@ -188,6 +188,15 @@ function RecordPage({
   );
 }
 
+/** One template page is printed per repeatable record, not a fixed run of blank copies. */
+function MoreCue({ text }: { text: string }) {
+  return (
+    <View style={{ marginTop: 16, paddingTop: 10, borderTopWidth: 0.6, borderTopColor: C.ruleSoft }}>
+      <Text style={{ fontSize: 7.8, color: C.faint, lineHeight: 1.5 }}>{text}</Text>
+    </View>
+  );
+}
+
 // ---------------------------------------------------------------- manifest
 
 export interface AlongsideBookManifest {
@@ -197,8 +206,8 @@ export interface AlongsideBookManifest {
 }
 
 export const DEFAULT_MANIFEST: AlongsideBookManifest = {
-  threads: 3,
-  weeklyReviews: 4,
+  threads: 1,
+  weeklyReviews: 1,
   size: "LETTER",
 };
 
@@ -277,6 +286,9 @@ function ThreadPage({ size, index, total }: { size: Size; index: number; total: 
       <FieldRow fields={["Last touched", "Check back on"]} />
       <Notes label="Where you left off" count={3} />
       <Field label="Next step" />
+      {index === total && (
+        <MoreCue text="More than one thing ongoing? Photocopy this page, or let the app surface it for you without you having to reread every page." />
+      )}
     </RecordPage>
   );
 }
@@ -300,6 +312,9 @@ function WeeklyReviewPage({ size, index, total }: { size: Size; index: number; t
       <Notes label="What's still open" count={3} />
       <Notes label="What moved" count={3} />
       <Notes label="What's stuck, and what it needs" count={3} />
+      {index === total && (
+        <MoreCue text="Next week? Photocopy this page, undated on purpose so any copy works, or keep the review in the app instead." />
+      )}
     </RecordPage>
   );
 }
@@ -340,7 +355,7 @@ function ActivatePage({ size, code }: { size: Size; code: string }) {
 
         {[
           ["Go to draftpace.com and sign in", "Create an account with your email, or continue with Google."],
-          ["Open draftpace.com/app/redeem", "Or choose Redeem a code from your library once signed in."],
+          ["Open draftpace.com/app/redeem", "Or choose Redeem a code from your account once signed in."],
           ["Enter the code below", "It unlocks Alongside on your account for good. One use per account, so keep it somewhere safe."],
         ].map(([title, body], i) => (
           <View key={title} style={{ flexDirection: "row", marginTop: 14, marginBottom: i === 2 ? 0 : 12 }} wrap={false}>

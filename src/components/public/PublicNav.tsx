@@ -30,7 +30,7 @@ const LINKS = [
   { href: "/about", label: "About" },
 ];
 
-export type PublicNavUser = { email: string | null; displayName: string | null } | null;
+export type PublicNavUser = { id: string; email: string | null; displayName: string | null; avatarSeed: string | null } | null;
 
 /**
  * `undefined` means the session has not been read yet. The account area is
@@ -50,6 +50,7 @@ export default function PublicNav({ user }: { user: PublicNavSessionState }) {
   const resolving = user === undefined;
   const [open, setOpen] = useState(false);
   const accountLabel = user?.displayName || user?.email || "Account";
+  const accountSeed = user?.avatarSeed || user?.id;
   const accountItems = useMemo(() => publicSignedInAccountMenuItems(() => signOutAndRedirect("/")), []);
 
   return (
@@ -116,7 +117,7 @@ export default function PublicNav({ user }: { user: PublicNavSessionState }) {
             <Button href="/app" size="sm">
               Open Draftpace
             </Button>
-            <AccountMenu items={accountItems} label={accountLabel} only="desktop" />
+            <AccountMenu items={accountItems} label={accountLabel} seed={accountSeed} only="desktop" />
           </div>
         ) : (
           <div className={`hidden items-center gap-2 lg:flex${resolving ? " invisible" : ""}`}>
@@ -130,7 +131,7 @@ export default function PublicNav({ user }: { user: PublicNavSessionState }) {
         )}
 
         <div className="flex items-center gap-1 lg:hidden">
-          {user && <AccountMenu items={accountItems} label={accountLabel} only="mobile" />}
+          {user && <AccountMenu items={accountItems} label={accountLabel} seed={accountSeed} only="mobile" />}
           <button
             type="button"
             aria-expanded={open}

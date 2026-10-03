@@ -174,6 +174,15 @@ function TypesNote({ label, items }: { label: string; items: readonly string[] }
   );
 }
 
+/** One template page is printed per repeatable record, not a fixed run of blank copies. */
+function MoreCue({ text }: { text: string }) {
+  return (
+    <View style={{ marginTop: 16, paddingTop: 10, borderTopWidth: 0.6, borderTopColor: C.ruleSoft }}>
+      <Text style={{ fontSize: 7.8, color: C.faint, lineHeight: 1.5 }}>{text}</Text>
+    </View>
+  );
+}
+
 function RecordPage({
   section,
   eyebrow,
@@ -207,7 +216,7 @@ export interface FamilyHealthBinderManifest {
 }
 
 export const DEFAULT_MANIFEST: FamilyHealthBinderManifest = {
-  members: 3,
+  members: 2,
   size: "LETTER",
 };
 
@@ -262,6 +271,9 @@ function MemberProfilePage({ size, index, total }: { size: Size; index: number; 
       <FieldRow fields={["Emergency contact name", "Emergency contact phone"]} />
       <Notes label="Care notes (routines, comforts, fears)" count={3} />
       <TypesNote label="Relationships" items={RELATIONSHIPS} />
+      {index === total && (
+        <MoreCue text="Bigger family than this? Photocopy this page for each additional person, or add them in the app instead." />
+      )}
     </RecordPage>
   );
 }
@@ -275,6 +287,9 @@ function MedicalFactsPage({ size, index, total }: { size: Size; index: number; t
       <RegisterTable columns={[{ label: "Allergy", flex: 1.4 }, { label: "Reaction", flex: 1.6 }]} rows={3} />
       <Text style={{ fontSize: 8.6, letterSpacing: 0.8, color: C.accent, textTransform: "uppercase", marginTop: 14, marginBottom: 4 }}>Conditions and history</Text>
       <RegisterTable columns={[{ label: "Detail", flex: 2.2 }, { label: "Noted", flex: 0.8 }]} rows={4} />
+      {index === total && (
+        <MoreCue text="One more page needed per person? Photocopy this page, or keep medical facts current in the app instead, one place to update instead of finding every page a fact appears on." />
+      )}
     </RecordPage>
   );
 }
@@ -340,6 +355,7 @@ function VisitPage({ size, index, total }: { size: Size; index: number; total: n
       <Notes label="Questions to ask" count={4} />
       <Notes label="What's been happening" count={2} />
       <Notes label="What was said or decided" count={4} />
+      {index === total && <MoreCue text="Another visit coming up? Photocopy this page, or prep for it in the app instead." />}
     </RecordPage>
   );
 }
@@ -409,7 +425,7 @@ function ActivatePage({ size, code }: { size: Size; code: string }) {
 
         {[
           ["Go to draftpace.com and sign in", "Create an account with your email, or continue with Google."],
-          ["Open draftpace.com/app/redeem", "Or choose Redeem a code from your library once signed in."],
+          ["Open draftpace.com/app/redeem", "Or choose Redeem a code from your account once signed in."],
           [
             "Enter the code below",
             "It unlocks the Family Health Binder on your account for good. One use per account, so keep it somewhere safe.",
@@ -491,7 +507,7 @@ export function FamilyHealthBinderDocument({
       <ProvidersPage size={size} />
       <ImmunizationPage size={size} />
 
-      {repeat(2, (i, t) => <VisitPage key={`vp${i}`} size={size} index={i} total={t} />)}
+      {repeat(1, (i, t) => <VisitPage key={`vp${i}`} size={size} index={i} total={t} />)}
 
       <EmergencyCardPage size={size} />
       <CaregiverSheetPage size={size} />

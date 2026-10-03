@@ -46,13 +46,13 @@ export function PhoneFrame({ children }: { children: React.ReactNode }) {
   );
 }
 
-/** Step: "own" - you buy it once, it lands in your library. */
+/** Step: "own" - you buy it once, it's yours to keep. */
 export function OwnScreen() {
   return (
     <PhoneFrame>
       <div className="flex h-full flex-col bg-[var(--mmr-ivory)] px-4 pb-4 pt-9">
         <StatusBar />
-        <p className="mt-3 text-[9px] font-bold uppercase tracking-[0.14em] text-[var(--mmr-muted)]">Library</p>
+        <p className="mt-3 text-[9px] font-bold uppercase tracking-[0.14em] text-[var(--mmr-muted)]">Home</p>
 
         <div className="mt-3 flex items-center gap-3 rounded-2xl border border-[var(--mmr-forest-700)] bg-[var(--mmr-sage-pale)] p-3.5">
           <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--mmr-forest-900)] text-[13px] font-bold text-[var(--mmr-ivory)]">

@@ -61,7 +61,7 @@ export function pressProps(reduceMotion: boolean): Pick<MotionProps, "whileTap" 
   };
 }
 
-/** Hover lift for cards and rows, already proven on Home's tiles and the Library shelf; this makes it the one shared implementation instead of a duplicated inline transition per component. */
+/** Hover lift for cards and rows, already proven on Home's tiles and the sidebar's product rows; this makes it the one shared implementation instead of a duplicated inline transition per component. */
 export function liftProps(reduceMotion: boolean): Pick<MotionProps, "whileHover" | "transition"> {
   return {
     whileHover: reduceMotion ? undefined : { y: -3 },

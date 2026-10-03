@@ -4,7 +4,7 @@ import type { EntitlementSummary } from "./entitlements";
 import type { ListInstancesResult, ProductInstanceSummary } from "./instances";
 
 /**
- * What Library and Platform Home actually render, one row per owned
+ * What the sidebar and Platform Home actually render, one row per owned
  * product. An entitlement is the only thing that ever removes a row (it
  * genuinely isn't owned); every other kind of failure degrades the row
  * instead of hiding it, so a read error is never mistaken for "you don't

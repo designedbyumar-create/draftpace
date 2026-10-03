@@ -19,7 +19,7 @@ const STEPS: Step[] = [
     id: "own",
     when: "The moment you buy",
     title: "You buy it once, and it is yours",
-    body: "It lands in your library to keep. No subscription to babysit, nothing that expires if you step away.",
+    body: "It's yours to keep. No subscription to babysit, nothing that expires if you step away.",
     Screen: OwnScreen,
   },
   {

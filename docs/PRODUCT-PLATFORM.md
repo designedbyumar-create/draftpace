@@ -32,7 +32,8 @@ one family; the platform must stay useful without them.
 - **Public surface (today):** a real public homepage at `/` explaining the
   platform and product-family model, plus legal and content pages
   (`docs/ROUTE-MAP.md`). No waitlist gate — Phase 2 removed it.
-- **Authenticated platform (`/app`):** Platform Home, Library, and five
+- **Authenticated platform (`/app`):** Platform Home, a sidebar "My
+  Companions" list with each owned product's own companion page, and five
   shared surfaces (notifications, account, settings, billing, support),
   protected by a real server-verified session.
 - **Product experience (`/app/products/[productSlug]/...`):** a universal

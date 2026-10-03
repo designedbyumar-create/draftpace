@@ -21,7 +21,7 @@ export const personalFinanceCompanionCatalogEntry: ProductCatalogEntry = {
   // Metadata only — id/title/filename. The actual PDF bytes live in
   // printables/assetBytes.ts, imported only by the download API route, never
   // from here (this file is reachable from client components via
-  // manifest.ts, e.g. Library/Home).
+  // manifest.ts, e.g. the sidebar/Home).
   printableAssets: [
     {
       id: "letter",

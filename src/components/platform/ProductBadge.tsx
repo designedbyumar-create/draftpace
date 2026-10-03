@@ -4,8 +4,9 @@ import type { ProductDefinition } from "@/product-framework/definition";
 
 /**
  * The one shared icon badge for an owned product, used on Home, in the
- * Library, on the Shop, and inside a product's own shell, so a product
- * looks like the same thing everywhere it's shown.
+ * sidebar, on its own companion page, on the Shop, and inside a
+ * product's own shell, so a product looks like the same thing everywhere
+ * it's shown.
  *
  * Reads the product's own `theme.accentScale` directly rather than the
  * ambient `--primary`/`--primary-soft` tokens: those are the platform's
@@ -19,22 +20,25 @@ import type { ProductDefinition } from "@/product-framework/definition";
  * products at the time of writing) falls back to the platform accent ,
  * an honest "no identity yet" rather than a colour invented here.
  */
+const DIMENSION: Record<"sm" | "md" | "lg", string> = { sm: "h-6 w-6", md: "h-7 w-7", lg: "h-10 w-10" };
+const ICON_SIZE: Record<"sm" | "md" | "lg", number> = { sm: 13, md: 15, lg: 20 };
+
 export default function ProductBadge({
   definition,
   size = "md",
 }: {
   definition: ProductDefinition;
-  size?: "sm" | "md";
+  size?: "sm" | "md" | "lg";
 }) {
   const Icon = iconForProduct(definition.slug);
   const scale = definition.theme.accentScale;
-  const dimension = size === "sm" ? "h-6 w-6" : "h-7 w-7";
-  const iconSize = size === "sm" ? 13 : 15;
+  const dimension = DIMENSION[size];
+  const iconSize = ICON_SIZE[size];
 
   // Both tone sets, with globals.css picking one per theme, the same
   // mechanism the product shells use. Painting the light wash directly
   // put a pale block on the dark page for every product tile on Home and
-  // in the Library.
+  // in the sidebar.
   const dark = scale ? deriveDarkTones(scale.base) : null;
   const style =
     scale && dark

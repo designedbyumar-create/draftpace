@@ -26,7 +26,7 @@ const SECTIONS = [
     content: [
       {
         sub: "The Draftpace platform",
-        body: "Draftpace hosts a set of guided tools, each built around a specific situation rather than one general-purpose piece of software. Your account holds your preferences and your library across whichever tools you use or start.",
+        body: "Draftpace hosts a set of guided tools, each built around a specific situation rather than one general-purpose piece of software. Your account holds your preferences and the products you own, across whichever tools you use or start.",
       },
       {
         sub: "Products are still shipping",

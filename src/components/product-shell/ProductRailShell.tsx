@@ -13,6 +13,7 @@ import AccountMenu from "@/components/account/AccountMenu";
 import { appAccountMenuItems } from "@/components/account/accountMenuItems";
 import { signOutAndRedirect } from "@/lib/supabase/signOut";
 import { useSession } from "@/design-system/shell/SessionProvider";
+import { resolveAvatarSeed } from "@/product-framework/avatarSeed";
 import { useStandaloneMode } from "@/lib/pwa/hooks";
 
 /**
@@ -98,6 +99,7 @@ export default function ProductRailShell({
   const [moreSheetOpen, setMoreSheetOpen] = useState(false);
 
   const accountLabel = user.user_metadata?.display_name || user.email || "Account";
+  const accountSeed = resolveAvatarSeed(user);
   const accountItems = appAccountMenuItems(() => signOutAndRedirect("/"));
 
   const href = (id: string) => `/app/products/${definition.slug}/${id}`;
@@ -178,7 +180,7 @@ export default function ProductRailShell({
               </>
             )}
             <div className="mt-2 border-t border-[var(--border)] pt-3">
-              <AccountMenu items={accountItems} label={accountLabel} only="desktop" />
+              <AccountMenu items={accountItems} label={accountLabel} seed={accountSeed} only="desktop" />
             </div>
           </div>
         </aside>
@@ -213,7 +215,7 @@ export default function ProductRailShell({
                   <Menu size={18} aria-hidden />
                 </button>
               )}
-              <AccountMenu items={accountItems} label={accountLabel} only="mobile" />
+              <AccountMenu items={accountItems} label={accountLabel} seed={accountSeed} only="mobile" />
             </div>
           </div>
 

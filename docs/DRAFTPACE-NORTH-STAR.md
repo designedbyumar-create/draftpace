@@ -173,8 +173,10 @@ central design-systems task of the next phase.
   themselves, presented richly, with their own identity previewed.
 - **App-type navigation, not a solutions funnel.** The "What do you need help
   with?" funnel framing is retired. Navigation is clean and app-like, Store,
-  (Categories when inventory warrants), Account/Library, the way a premium
-  app-maker's store is navigated, not a lead-gen questionnaire.
+  (Categories when inventory warrants), Account, the way a premium
+  app-maker's store is navigated, not a lead-gen questionnaire. Signed in,
+  re-entry to what you own lives in the sidebar's "My Companions" list, not
+  a separate page.
 - **Education is secondary.** How-it-works, guides, and trust content support the
   sale; they never lead it and never outrank the products.
 

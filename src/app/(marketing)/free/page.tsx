@@ -49,8 +49,8 @@ import TextLink from "@/design-system/TextLink";
  *
  * CONTENT COMES FROM THE LISTING, NOT FROM HERE
  *
- * Everything below reads the same ShopProduct the Shop and the Library
- * manual read, so the free product cannot end up described three
+ * Everything below reads the same ShopProduct the Shop and a product's own
+ * companion page read, so the free product cannot end up described three
  * different ways. See src/shop/products/monthly-money-reset.ts.
  */
 
@@ -174,7 +174,7 @@ export default function FreeProductPage() {
 
       {/* What it solves, in the reader's words. Straight from the
           listing's problemsSolved, so this can never drift from the Shop
-          or the Library manual. */}
+          or a product's own companion page. */}
       <section className="border-b border-[var(--border)]">
         <Container width="wide" className="py-16 sm:py-20">
           <h2 className="max-w-2xl text-heading font-serif font-semibold tracking-tight">

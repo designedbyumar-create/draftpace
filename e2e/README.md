@@ -33,7 +33,7 @@ something this suite should paper over.
 To create the dedicated test account itself the first time, sign up through
 the real app once (`/signup`), then set `E2E_TEST_EMAIL`/`E2E_TEST_PASSWORD`
 to match and activate Monthly Money Reset for it
-(`/app/activate/monthly-money-reset`) so `library.spec.ts` and
+(`/app/activate/monthly-money-reset`) so `home.spec.ts` and
 `canonical-route.spec.ts` have real ownership state to check against —
 `grant_free_product` is idempotent, so re-running activation is always safe.
 

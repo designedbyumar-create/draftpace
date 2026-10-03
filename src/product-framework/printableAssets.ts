@@ -3,7 +3,7 @@
  * Personal Finance Companion's paper companion. Deliberately holds no file
  * bytes: this registry is populated from catalog.ts (see manifest.ts's
  * ensureProductsRegistered), which is reachable from client components
- * (Library, Home), so anything registered here ships in the client bundle.
+ * (the sidebar, Home), so anything registered here ships in the client bundle.
  * The actual bytes live in each product's own server-only asset-loader
  * module, imported only by the download route - see
  * personal-finance-companion/printables/assetBytes.ts for that product's.

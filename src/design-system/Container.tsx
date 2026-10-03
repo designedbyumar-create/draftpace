@@ -3,7 +3,7 @@
  * max-width values. See docs/DESIGN-SYSTEM.md.
  *
  * - "wide"     max-w-6xl  — marketing hero / feature sections
- * - "standard" max-w-5xl  — platform surfaces (Home, Library, Account, etc.)
+ * - "standard" max-w-5xl  — platform surfaces (Home, the sidebar, Account, etc.)
  * - "narrow"   max-w-3xl  — product shell, auth forms, single-column reading
  */
 export type ContainerWidth = "wide" | "standard" | "narrow";

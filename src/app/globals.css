@@ -651,6 +651,18 @@ body {
   overscroll-behavior-y: contain;
 }
 
+/* Guards against a stray wide element creating a horizontal scrollbar.
+ * On html alone, never body too: setting overflow-x on both turns each
+ * into its own scroll container (overflow-x non-visible forces the other
+ * axis to compute as auto), and with two nested scrollers the one that
+ * actually scrolls is no longer the one position:sticky anchors against,
+ * which breaks every sticky header on the page. Also never on an
+ * intermediate wrapper further down the tree (PlatformShell's root, say)
+ * for the same reason. */
+html {
+  overflow-x: hidden;
+}
+
 /* A long press on a nav label should not select the label. Applies only to
  * chrome, never to content: anything a reader might legitimately want to
  * copy, including everything a product records for them, stays selectable. */

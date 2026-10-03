@@ -78,18 +78,22 @@ export const alongsideShopProduct: ShopProductInput = {
     {
       problem: "The same thing has been on your mind for three weeks and you still can't make yourself pick up the phone.",
       solution: "A hard call or email with an opening line ready, and a short list of what to have in front of you.",
+      label: "Opening line ready",
     },
     {
       problem: "A to-do list just becomes a longer thing to feel behind on.",
       solution: "Nothing needs you right now, said plainly, on the days that's true, instead of a list filling the space anyway.",
+      label: "Honest quiet days",
     },
     {
       problem: "You put something down half finished and lose where you were.",
       solution: "Somewhere to leave a half finished thing that remembers exactly where you got to.",
+      label: "Remembers your place",
     },
     {
       problem: "Every system eventually tells you that you've failed at it.",
       solution: "A record of what actually happened, in your own words, that never once says you failed at something.",
+      label: "No failure framing",
     },
     {
       problem: "Things you meant to come back to just quietly disappear.",
@@ -154,7 +158,7 @@ export const alongsideShopProduct: ShopProductInput = {
    * the same question twice, as were the two about being guilted, and the
    * two about a hard phone call.
    *
-   * The Shop page shows the deciding half. The Library manual shows the
+   * The Shop page shows the deciding half. The companion page shows the
    * owning half, which is where the mechanics questions belong: somebody
    * who already paid does not need the pitch answered again.
    */

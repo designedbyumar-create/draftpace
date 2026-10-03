@@ -1,4 +1,4 @@
-import { BookOpen, CreditCard, Globe, Home, LifeBuoy, LogOut, Settings, User } from "@/design-system/Icon";
+import { CreditCard, Globe, Home, LifeBuoy, LogOut, Settings, User } from "@/design-system/Icon";
 import type { AccountMenuItem } from "./AccountMenu";
 
 /**
@@ -21,7 +21,6 @@ export function appAccountMenuItems(onSignOut: () => void): AccountMenuItem[] {
 export function publicSignedInAccountMenuItems(onSignOut: () => void): AccountMenuItem[] {
   return [
     { key: "open-app", label: "Open Draftpace", href: "/app", icon: Home },
-    { key: "library", label: "Library", href: "/app/library", icon: BookOpen },
     { key: "account", label: "Account", href: "/app/account", icon: User },
     { key: "sign-out", label: "Sign out", onSelect: onSignOut, icon: LogOut, tone: "danger" },
   ];

@@ -38,7 +38,7 @@ const SECTIONS = [
     content: [
       {
         sub: "To run the platform",
-        body: "Your account and preference data power sign-in, your library, and the platform shell. Without it, the product doesn't work.",
+        body: "Your account and preference data power sign-in, your owned products, and the platform shell. Without it, the product doesn't work.",
       },
       {
         sub: "To send you reminders",

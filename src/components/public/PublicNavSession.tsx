@@ -20,13 +20,15 @@ export default function PublicNavSession() {
       return;
     }
     let live = true;
-    const show = (u: { email?: string | null; user_metadata?: Record<string, unknown> } | null | undefined) => {
+    const show = (u: { id: string; email?: string | null; user_metadata?: Record<string, unknown> } | null | undefined) => {
       if (!live) return;
       setUser(
         u
           ? {
+              id: u.id,
               email: u.email ?? null,
               displayName: typeof u.user_metadata?.display_name === "string" ? u.user_metadata.display_name : null,
+              avatarSeed: typeof u.user_metadata?.avatar_seed === "string" ? u.user_metadata.avatar_seed : null,
             }
           : null,
       );

@@ -83,7 +83,7 @@ export default async function ActivateProductPage({
           </div>
 
           <h1 className="mt-4 text-xl font-semibold tracking-tight text-[var(--text)]">
-            {isFree ? `Add ${definition.title} to your library` : `You do not have ${definition.title} yet`}
+            {isFree ? `Get ${definition.title}, free` : `You do not have ${definition.title} yet`}
           </h1>
           {definition.tagline && (
             <p className="mx-auto mt-2 max-w-md text-[14px] leading-relaxed text-[var(--muted)]">
@@ -94,7 +94,7 @@ export default async function ActivateProductPage({
           {error && (
             <div className="mt-5 text-left">
               <Alert tone="danger">
-                Something went wrong adding this to your library. Please try again.
+                Something went wrong adding this to your account. Please try again.
               </Alert>
             </div>
           )}
@@ -114,14 +114,15 @@ export default async function ActivateProductPage({
 
           {isFree ? (
             <form method="POST" action={`/api/products/${definition.slug}/activate`} className="mt-7">
-              <Button type="submit" size="lg" fullWidth iconRight={<ArrowRight size={15} aria-hidden />}>
-                Add to my library
+              <Button type="submit" variant="commit" size="lg" fullWidth iconRight={<ArrowRight size={15} aria-hidden />}>
+                Add to my account
               </Button>
             </form>
           ) : purchasable ? (
             <div className="mt-7">
               <Button
                 href={`/shop/${definition.slug}`}
+                variant="action"
                 size="lg"
                 fullWidth
                 iconRight={<ArrowRight size={15} aria-hidden />}
@@ -140,10 +141,10 @@ export default async function ActivateProductPage({
           )}
 
           <Link
-            href={isFree ? "/shop" : "/app/library"}
+            href={isFree ? "/shop" : "/app"}
             className="mt-4 inline-block text-[12px] font-semibold text-[var(--muted)] hover:text-[var(--text)]"
           >
-            {isFree ? "Not right now" : "Back to your library"}
+            {isFree ? "Not right now" : "Back to Home"}
           </Link>
 
           <p className="mt-6 flex items-center justify-center gap-1.5 text-[11px] text-[var(--faint)]">

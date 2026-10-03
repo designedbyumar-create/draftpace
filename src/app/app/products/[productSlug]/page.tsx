@@ -11,9 +11,9 @@ import RetryState from "@/components/product-shell/RetryState";
 /**
  * The canonical entry point for an owned product. Reached only after
  * [productSlug]/layout.tsx has already confirmed an active entitlement — this
- * route never re-checks that. It always redirects, never renders, so Library,
- * Home, and activation-success can all link here instead of each guessing a
- * destination themselves.
+ * route never re-checks that. It always redirects, never renders, so the
+ * sidebar, Home, and activation-success can all link here instead of each
+ * guessing a destination themselves.
  */
 export default async function ProductCanonicalPage({
   params,

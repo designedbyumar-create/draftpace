@@ -2,13 +2,15 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import PlatformShell, { InstallPromptCard } from "@/design-system/shell/PlatformShell";
 import { useSession } from "@/design-system/shell/SessionProvider";
 import EmptyState from "@/design-system/EmptyState";
-import Button from "@/design-system/Button";
+import Button, { type ButtonVariant } from "@/design-system/Button";
 import Badge from "@/design-system/Badge";
+import Skeleton from "@/design-system/Skeleton";
+import ProductBadge from "@/components/platform/ProductBadge";
 import { ArrowRight, WarningCircle } from "@/design-system/Icon";
-import { familyRegistry } from "@/product-framework/families";
 import { productRegistry } from "@/product-framework/registry";
 import { listMyEntitlements } from "@/product-framework/entitlements";
 import { listMyProductInstances } from "@/product-framework/instances";
@@ -22,6 +24,8 @@ import ProductSummaryTile from "@/components/platform/ProductSummaryTile";
 import { loadProductSummaries, type SharedProductSummary } from "@/product-framework/productSummary";
 import { LIFE_AREAS } from "@/content/areas";
 import { ensureProductsRegistered } from "@/products/manifest";
+import type { ProductDefinition } from "@/product-framework/definition";
+import { productThemeStyle, PRODUCT_THEME_ATTRIBUTE } from "@/product-framework/themeExtension";
 
 /**
  * Platform Home answers one question: "what should I do next?" with one
@@ -62,13 +66,24 @@ function focalStateFor(row: OwnedProductRow | null, attentionItem: SharedAttenti
 
 export default function AppHomePage() {
   const user = useSession();
+  const reduceMotion = useReducedMotion();
   const [rows, setRows] = useState<OwnedProductRow[] | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);
   const [retryToken, setRetryToken] = useState(0);
   const [topAttentionItem, setTopAttentionItem] = useState<SharedAttentionItem | null>(null);
   const [recentUpdates, setRecentUpdates] = useState<UpdateRow[]>([]);
   const [summaries, setSummaries] = useState<Record<string, SharedProductSummary>>({});
+  // Deliberately starts null, filled client-side only — same reasoning as
+  // PlatformShell's own dayPart: the server (a fixed region) and the
+  // visitor's own timezone can genuinely name a different calendar day
+  // for the same instant, and rendering that mismatch on first paint is
+  // a real hydration error, not a cosmetic one.
+  const [today, setToday] = useState<string | null>(null);
   const firstName = String(user.user_metadata?.display_name || user.email?.split("@")[0] || "there").split(" ")[0];
+
+  useEffect(() => {
+    setToday(new Date().toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" }));
+  }, []);
 
   useEffect(() => {
     ensureProductsRegistered();
@@ -142,6 +157,16 @@ export default function AppHomePage() {
   const attentionRow = topAttentionItem ? rows?.find((row) => row.productSlug === topAttentionItem.productSlug) ?? null : null;
   const focalRow = attentionRow ?? rows?.[0] ?? null;
 
+  // The one honest, comprehensive count available — setupComplete is
+  // tracked identically for all nine products, unlike attention items
+  // (only three products have that adapter yet, see attentionAdapter.ts),
+  // so this is a real total rather than a partial one dressed up as
+  // whole. Never repeats what the hero already says: the hero names the
+  // one most relevant product, this names how many altogether still need
+  // the same kind of look.
+  const readyRows = (rows ?? []).filter((row): row is Extract<OwnedProductRow, { kind: "ready" }> => row.kind === "ready");
+  const needsSetupCount = readyRows.filter((row) => !row.instance || !row.instance.setupComplete).length;
+
   // Home is organised by area of life, not by product: the section
   // heading is the part of your life, the products under it are how you
   // get there. Reuses LIFE_AREAS (src/content/areas.ts) — the same
@@ -167,24 +192,62 @@ export default function AppHomePage() {
   return (
     <PlatformShell>
       {rows === null && !loadError ? (
-        <p className="text-[13px] text-[var(--muted)]">Loading…</p>
+        <div className="space-y-8">
+          <div className="space-y-4 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[shadow:var(--shadow-soft)] sm:p-8">
+            <Skeleton className="h-3 w-24" />
+            <Skeleton className="h-7 w-2/3" />
+            <Skeleton className="h-4 w-1/2" />
+            <Skeleton className="h-11 w-36 rounded-lg" />
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {Array.from({ length: 2 }, (_, i) => (
+              <div key={i} className="space-y-3 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[shadow:var(--shadow-xs)]">
+                <Skeleton className="h-6 w-6 rounded-full" />
+                <Skeleton className="h-6 w-2/3" />
+                <Skeleton className="h-3.5 w-1/2" />
+              </div>
+            ))}
+          </div>
+        </div>
       ) : loadError ? (
         <EmptyState
           icon={WarningCircle}
           title="Couldn't load your home"
           description="Your access hasn't changed. This was just a read failure, check your connection and try again."
           action={
-            <Button size="md" onClick={retry}>
+            <Button size="md" variant="action" onClick={retry}>
               Try again
             </Button>
           }
         />
       ) : (
         <div className="space-y-10">
+          {readyRows.length > 0 && (
+            <motion.div
+              initial={reduceMotion ? false : { opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.3 }}
+              className="-mb-6 flex flex-wrap items-center gap-x-2 gap-y-1 text-[13px] text-[var(--faint)]"
+            >
+              {today && (
+                <>
+                  <span>{today}</span>
+                  <span aria-hidden>·</span>
+                </>
+              )}
+              <span>
+                {readyRows.length} {readyRows.length === 1 ? "companion" : "companions"}
+                {needsSetupCount > 0
+                  ? `, ${needsSetupCount} still ${needsSetupCount === 1 ? "needs" : "need"} setup`
+                  : ", all set up"}
+              </span>
+            </motion.div>
+          )}
+
           <FocalBlock row={focalRow} attentionItem={topAttentionItem} firstName={firstName} onRetry={retry} />
 
           {recentUpdates.length > 0 && (
-            <section>
+            <RevealSection index={0} reduceMotion={reduceMotion}>
               <h2 className="mb-3 text-[12px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">
                 Recently across your life
               </h2>
@@ -193,11 +256,11 @@ export default function AppHomePage() {
                   <RecentUpdateRow key={update.id} update={update} />
                 ))}
               </div>
-            </section>
+            </RevealSection>
           )}
 
-          {areaSections.map((section) => (
-            <section key={section.area.slug}>
+          {areaSections.map((section, i) => (
+            <RevealSection key={section.area.slug} index={i + 1} reduceMotion={reduceMotion}>
               <div className="mb-3.5">
                 <h2 className="text-[12px] font-bold uppercase tracking-[0.12em] text-[var(--faint)]">
                   {section.area.label}
@@ -214,7 +277,7 @@ export default function AppHomePage() {
                   />
                 ))}
               </div>
-            </section>
+            </RevealSection>
           ))}
 
           {degraded.length > 0 && (
@@ -253,13 +316,29 @@ function FocalBlock({
 }) {
   const state = focalStateFor(row, attentionItem);
 
-  // No owned products yet: a warm invitation to find the first one.
+  // No owned products yet: the one thing every new account can try right
+  // now, by name, not a generic "go pick something" sent off to the Store.
+  // Nothing else on Home has earned a mention yet — there's nothing else
+  // to say until this is true for someone.
   if (state === "none" || !row) {
+    const freeProduct = productRegistry.list().find((product) => product.access.model === "free");
+    if (freeProduct) {
+      return (
+        <FocalShell
+          eyebrow={`Good to see you, ${firstName}`}
+          title={`Try ${freeProduct.title}, free`}
+          body={freeProduct.tagline ?? "One Companion, free to use, no card required."}
+          primary={{ label: "Try it free", href: `/app/products/${freeProduct.slug}` }}
+          secondary={{ label: "Browse the full Store", href: "/shop" }}
+          definition={freeProduct}
+        />
+      );
+    }
     return (
       <FocalShell
         eyebrow={`Good to see you, ${firstName}`}
         title="Find your first product"
-        body="Every product here is built around one specific problem and stays with you. Start with something free."
+        body="Every product here is built around one specific problem and stays with you."
         primary={{ label: "Browse the Store", href: "/shop" }}
       />
     );
@@ -273,6 +352,7 @@ function FocalBlock({
         title={title}
         body="This was just a read failure, not a sign anything's missing. Try again."
         primary={{ label: "Try again", onClick: onRetry }}
+        definition={row.kind === "progress-unavailable" ? row.definition : undefined}
       />
     );
   }
@@ -280,7 +360,6 @@ function FocalBlock({
   if (row.kind !== "ready") return null; // unreachable: state is only "degraded" when row.kind !== "ready"
 
   const { definition } = row;
-  const family = familyRegistry.get(definition.family);
   const title = definition.title;
 
   if (state === "not-started") {
@@ -290,7 +369,7 @@ function FocalBlock({
         title={`Start ${title}`}
         body="You already own this. Jump in whenever you're ready."
         primary={{ label: `Start ${title}`, href: `/app/products/${definition.slug}` }}
-        familyLabel={family?.label}
+        definition={definition}
       />
     );
   }
@@ -306,7 +385,7 @@ function FocalBlock({
         title={`Pick up where you left off: finish setting up ${title}`}
         body="You are a few short steps from your first result. It saves as you go, so you can stop and come back anytime."
         primary={{ label: "Continue setup", href: destination }}
-        familyLabel={family?.label}
+        definition={definition}
       />
     );
   }
@@ -314,12 +393,12 @@ function FocalBlock({
   if (state === "paused") {
     return (
       <FocalShell
-        eyebrow="Paused"
+        eyebrow={title}
         title={`${title} is paused`}
         body="This is paused. Resume it from Settings whenever you're ready."
         primary={{ label: "Go to Settings", href: `/app/products/${definition.slug}/settings` }}
-        familyLabel={family?.label}
         badge={<Badge tone="neutral">Paused</Badge>}
+        definition={definition}
       />
     );
   }
@@ -327,12 +406,12 @@ function FocalBlock({
   if (state === "completed") {
     return (
       <FocalShell
-        eyebrow="Finished this cycle"
+        eyebrow={title}
         title={`Review ${title}`}
         body="This cycle is closed. Look back at how it went, or start the next one."
         primary={{ label: "Review results", href: destination }}
-        familyLabel={family?.label}
         badge={<Badge tone="success">Completed</Badge>}
+        definition={definition}
       />
     );
   }
@@ -345,7 +424,7 @@ function FocalBlock({
         body="It has been a little while. A few things may have changed. Update what is different, or just pick up where you left off."
         primary={{ label: "Update what changed", href: destination }}
         secondary={{ label: "Just continue", href: destination }}
-        familyLabel={family?.label}
+        definition={definition}
       />
     );
   }
@@ -353,14 +432,18 @@ function FocalBlock({
   if (state === "needs-attention") {
     // attentionItem is guaranteed here — focalStateFor only returns this
     // state when attentionItem exists and matches this row's product.
+    // The eyebrow names the product itself (not the generic "Companion"
+    // family every one of these products shares): "Needs a look" on its
+    // own told you nothing about which of your products it was.
     const item = attentionItem!;
     return (
       <FocalShell
-        eyebrow="Needs a look"
+        eyebrow={title}
         title={item.title}
         body={item.detail}
         primary={{ label: "Open", href: item.href }}
-        familyLabel={family?.label}
+        badge={<Badge tone="warning">Needs a look</Badge>}
+        definition={definition}
       />
     );
   }
@@ -372,45 +455,67 @@ function FocalBlock({
       title={`Continue ${title}`}
       body={instance.nextActionLabel ? `Your next move: ${instance.nextActionLabel}.` : "Pick up right where you left off."}
       primary={{ label: `Open ${title}`, href: destination }}
-      familyLabel={family?.label}
+      definition={definition}
     />
   );
 }
 
-/** Shared composition for the focal block: a genuine hero, not a list row. */
+/**
+ * Shared composition for the focal block: a genuine hero, not a list row.
+ *
+ * Themed to whichever product it's actually about, via the same
+ * productThemeStyle()/data-product-theme mechanism every product shell
+ * already uses — the hero's own icon, its primary button, its focus ring
+ * all pick up that product's real accent instead of the flat platform
+ * teal every state used to render in regardless of which of nine
+ * products it was about. Skipped only when there's genuinely no specific
+ * product behind the state (there never isn't, in practice: every
+ * shipped product declares an accentScale).
+ */
 function FocalShell({
   eyebrow,
   title,
   body,
   primary,
   secondary,
-  familyLabel,
   badge,
+  definition,
 }: {
   eyebrow: string;
   title: string;
   body: string;
   primary: FocalAction;
   secondary?: FocalAction;
-  familyLabel?: string;
   badge?: React.ReactNode;
+  definition?: ProductDefinition;
 }) {
+  const reduceMotion = useReducedMotion();
+  const themeProps = definition ? { [PRODUCT_THEME_ATTRIBUTE]: "", style: productThemeStyle(definition.theme) } : {};
+
   return (
-    <section className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[shadow:var(--shadow-soft)] sm:p-8">
-      <div className="flex flex-wrap items-center gap-2">
-        <p className="text-[12px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">{eyebrow}</p>
-        {familyLabel && <span className="text-[12px] text-[var(--faint)]">· {familyLabel}</span>}
-        {badge}
+    <motion.section
+      {...themeProps}
+      initial={reduceMotion ? false : { opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+      className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[shadow:var(--shadow-soft)] sm:p-8"
+    >
+      <div className="flex flex-wrap items-center gap-3">
+        {definition && <ProductBadge definition={definition} size="md" />}
+        <div className="flex flex-wrap items-center gap-2">
+          <p className="text-[12px] font-bold uppercase tracking-[0.14em] text-[var(--primary)]">{eyebrow}</p>
+          {badge}
+        </div>
       </div>
       <h1 className="mt-3 max-w-xl text-[24px] font-semibold leading-tight tracking-tight text-[var(--text)] sm:text-[28px]">
         {title}
       </h1>
       <p className="mt-2.5 max-w-lg text-[14px] leading-relaxed text-[var(--muted)]">{body}</p>
       <div className="mt-6 flex flex-wrap items-center gap-3">
-        <FocalActionButton action={primary} size="lg" iconRight={<ArrowRight size={16} aria-hidden />} />
+        <FocalActionButton action={primary} size="lg" variant="commit" iconRight={<ArrowRight size={16} aria-hidden />} />
         {secondary && <FocalActionButton action={secondary} size="lg" variant="ghost" />}
       </div>
-    </section>
+    </motion.section>
   );
 }
 
@@ -422,7 +527,7 @@ function FocalActionButton({
 }: {
   action: FocalAction;
   size: "sm" | "md" | "lg";
-  variant?: "primary" | "secondary" | "ghost" | "danger";
+  variant: ButtonVariant;
   iconRight?: React.ReactNode;
 }) {
   if ("href" in action) {
@@ -440,6 +545,33 @@ function FocalActionButton({
 }
 
 /**
+ * A fade-and-rise entrance, staggered by position down the page — the
+ * difference between everything appearing flat and at once (a page that
+ * "loaded") and sections settling in one after another (an app that
+ * "opened"). Delay is capped so an account with many life areas never
+ * makes the bottom of the list wait seconds to appear.
+ */
+function RevealSection({
+  index,
+  reduceMotion,
+  children,
+}: {
+  index: number;
+  reduceMotion: boolean | null;
+  children: React.ReactNode;
+}) {
+  return (
+    <motion.section
+      initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1], delay: Math.min(index * 0.06, 0.3) }}
+    >
+      {children}
+    </motion.section>
+  );
+}
+
+/**
  * One recent, real thing a product told the person — substantive content,
  * not a count or badge, so it stays inside ProductRailShell's "no counts,
  * no badges, no progress, no notification dots" rule despite living on
@@ -447,7 +579,6 @@ function FocalActionButton({
  */
 function RecentUpdateRow({ update }: { update: UpdateRow }) {
   const definition = productRegistry.getBySlug(update.productSlug);
-  const family = definition ? familyRegistry.get(definition.family) : undefined;
 
   return (
     <Link
@@ -457,7 +588,7 @@ function RecentUpdateRow({ update }: { update: UpdateRow }) {
       <div className="min-w-0">
         <p className="text-[14px] font-semibold text-[var(--text)]">{update.title}</p>
         <p className="mt-0.5 truncate text-[12px] text-[var(--faint)]">
-          {[family?.label ?? update.productSlug, formatRelativeTime(update.createdAt)].join(" · ")}
+          {[definition?.title ?? update.productSlug, formatRelativeTime(update.createdAt)].join(" · ")}
         </p>
       </div>
       <ArrowRight size={14} className="shrink-0 text-[var(--faint)]" aria-hidden />

@@ -16,7 +16,7 @@ import { familyHealthBinderCatalogEntry } from "./family-health-binder/catalog";
 /**
  * The one auditable list of every real product Draftpace registers. This is
  * the only file allowed to import a specific product's catalog entry —
- * routes, Home, Library, and activation all call the generic
+ * routes, Home, the sidebar, and activation all call the generic
  * ensureProductsRegistered() below and never name a product directly.
  *
  * Adding a second product means one new import and one new array entry here,

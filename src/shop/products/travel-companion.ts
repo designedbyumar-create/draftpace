@@ -73,19 +73,23 @@ export const travelCompanionShopProduct: ShopProductInput = {
     {
       problem: "Confirmation numbers live in six different inboxes and a screenshot.",
       solution: "One place that holds what you booked, who it's for, and what it depends on.",
+      label: "Everything in one place",
     },
     {
       problem: "When a flight moves, you're trying to remember from memory what else was booked around the old time.",
       solution: "An immediate answer to what else a change touches, walked one booking at a time.",
+      label: "Change-impact walk",
     },
     {
       problem: "Your phone is at four percent in a taxi, and that's the only copy of the plan.",
       solution: "A printed book you can carry, so the trip doesn't depend on one device staying charged.",
+      label: "A carryable backup",
     },
     {
       problem: "You can't tell what's actually happening today versus what's just noise.",
       solution:
         "Today's operational state on one screen, and on the days a trip needs nothing from you, an honest quiet screen rather than a list filling the space anyway.",
+      label: "Today, one screen",
     },
     {
       problem: "A booking crosses a time zone and you can't work out whether it's still today.",

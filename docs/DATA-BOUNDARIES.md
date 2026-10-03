@@ -64,9 +64,9 @@ instance:
 | `fhb_*` | Family Health Binder |
 
 Shared platform tables (`product_*`, `push_*`, `free_*`,
-`redeemable_*`, `launch_*`) hold no product-specific field, and no
-product reads another product's tables. There is no cross-product data
-sharing anywhere, by design.
+`redeemable_*`, `launch_*`, `support_*`) hold no product-specific field,
+and no product reads another product's tables. There is no cross-product
+data sharing anywhere, by design.
 
 Two boundaries worth naming because they are easy to erode:
 

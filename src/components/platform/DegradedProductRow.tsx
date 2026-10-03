@@ -12,8 +12,9 @@ import { textLinkClassName } from "@/design-system/textLinkStyles";
  * screens or the summary tile's headline treatment. One honest line and
  * one retry.
  *
- * Shared by Home and Library so a failure looks identical in both, and so
- * neither has to keep its own copy of what "couldn't load" looks like.
+ * Used by Home so a failure looks the same every time, and so there is
+ * one shared copy of what "couldn't load" looks like rather than a
+ * per-surface reimplementation.
  */
 export default function DegradedProductRow({
   row,

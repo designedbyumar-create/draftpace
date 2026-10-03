@@ -1,6 +1,7 @@
 "use client";
 
 import { supabase } from "@/lib/supabase/client";
+import { getOwnershipOverride, syncOwnershipOverrideFromUrl } from "./devOwnershipOverride";
 
 /**
  * Generic, product-agnostic access to entitlements — the real source of
@@ -54,6 +55,20 @@ export function interpretListEntitlementsResponse(
  * retryable instead of silently collapsing to an empty list.
  */
 export async function listMyEntitlements(): Promise<ListEntitlementsResult> {
+  syncOwnershipOverrideFromUrl();
+  const override = getOwnershipOverride();
+  if (override !== null) {
+    return {
+      status: "ok",
+      rows: override.map((slug) => ({
+        id: `dev-override-${slug}`,
+        productSlug: slug,
+        accessSource: "purchase",
+        grantedAt: new Date().toISOString(),
+      })),
+    };
+  }
+
   const { data, error } = await supabase
     .from("entitlements")
     .select("id, product_slug, access_source, granted_at")

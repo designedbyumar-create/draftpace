@@ -74,7 +74,7 @@ export default function RedeemPage() {
               autoCapitalize="characters"
             />
             {status === "error" && errorMessage && <p className="text-[13px] text-[var(--danger)]">{errorMessage}</p>}
-            <Button type="submit" disabled={status === "submitting"}>
+            <Button type="submit" variant="commit" disabled={status === "submitting"}>
               {status === "submitting" ? "Redeeming…" : "Redeem"}
             </Button>
           </form>

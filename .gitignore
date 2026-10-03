@@ -49,3 +49,6 @@ next-env.d.ts
 
 # Generated Etsy-edition PDFs (regenerate with scripts/generate-etsy-pdf.ts)
 .etsy-pdfs/
+
+# Generated Etsy listing images (regenerate with scripts/etsy-images/render.mjs)
+.etsy-images/

@@ -5,20 +5,20 @@ import { test, expect } from "@playwright/test";
  * only show up across multiple requests: a reload must not lose what was
  * just shown, and signing out and back in must not lose real, granted
  * ownership. Assumes Monthly Money Reset is already activated for the test
- * account (library.spec.ts's first test does this too, idempotently).
+ * account (home.spec.ts's first test does this too, idempotently).
  */
 
-test("Platform Home shows the owned free product, not just Library", async ({ page }) => {
+test("Platform Home shows the owned free product", async ({ page }) => {
   await page.goto("/app/activate/monthly-money-reset");
-  await page.getByRole("button", { name: "Add to my library" }).click();
+  await page.getByRole("button", { name: "Add to my account" }).click();
   await expect(page).toHaveURL(/\/app\/products\/monthly-money-reset\/start/);
 
   await page.goto("/app");
   await expect(page.getByText("Monthly Money Reset")).toBeVisible();
 });
 
-test("refreshing the library keeps the owned product visible", async ({ page }) => {
-  await page.goto("/app/library");
+test("refreshing Platform Home keeps the owned product visible", async ({ page }) => {
+  await page.goto("/app");
   await expect(page.getByText("Monthly Money Reset")).toBeVisible();
 
   await page.reload();
@@ -30,7 +30,7 @@ test("signing out and back in preserves ownership and access", async ({ page }) 
   const password = process.env.E2E_TEST_PASSWORD;
   if (!email || !password) throw new Error("E2E_TEST_EMAIL and E2E_TEST_PASSWORD must be set.");
 
-  await page.goto("/app/library");
+  await page.goto("/app");
   await expect(page.getByText("Monthly Money Reset")).toBeVisible();
 
   await page.getByRole("button", { name: "Sign out" }).click();
@@ -48,7 +48,7 @@ test("signing out and back in preserves ownership and access", async ({ page }) 
   await page.getByRole("button", { name: "Sign in" }).click();
   await expect(page).toHaveURL(/\/app\/products\/monthly-money-reset\/workspace/, { timeout: 15_000 });
 
-  await page.goto("/app/library");
+  await page.goto("/app");
   await expect(page.getByText("Monthly Money Reset")).toBeVisible();
 
   // supabase.auth.signOut() defaults to scope: "global" — it revokes the

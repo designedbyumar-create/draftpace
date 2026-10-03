@@ -922,7 +922,7 @@ function ActivatePage({ code }: { code: string }) {
 
       {[
         ["Go to draftpace.com and sign in", "Create an account with your email, or continue with Google."],
-        ["Open draftpace.com/app/redeem", "Or choose Redeem a code from your library."],
+        ["Open draftpace.com/app/redeem", "Or choose Redeem a code from your account."],
         ["Enter the code below", "It unlocks Home Base on your account permanently. One use only, so keep it somewhere safe."],
       ].map(([title, body], i) => (
         <View key={title} style={{ flexDirection: "row", marginBottom: 12 }} wrap={false}>

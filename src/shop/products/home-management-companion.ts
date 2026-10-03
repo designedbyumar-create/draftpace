@@ -55,19 +55,23 @@ export const homeManagementCompanionShopProduct: ShopProductInput = {
     {
       problem: "The filter size, the model number, the last flush date, none of it lives anywhere.",
       solution: "One page that answers whether anything needs you this week, in a sentence, instead of a dashboard to interpret.",
+      label: "One page, this week",
     },
     {
       problem: "The expensive stuff, the water heater, the gutters, the outside tap, gets caught too late, as a repair.",
       solution: "The boring, expensive jobs raised before they become repairs, not after.",
+      label: "Caught before it's a repair",
     },
     {
       problem: "Seasonal work gets remembered a year too late, long after its month has passed.",
       solution: "Seasonal work raised in the month it actually belongs to.",
+      label: "Seasonal work, on time",
     },
     {
       problem: "Nobody remembers who came out, what they did, or what it cost.",
       solution:
         "A record of who came out, what they did, and what it cost, and when you report a new problem it tells you who you already used for that kind of work.",
+      label: "Full service record",
     },
     {
       problem: "At two in the morning nobody can find the water shutoff, let alone remember which way it turns.",

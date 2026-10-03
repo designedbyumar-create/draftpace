@@ -41,28 +41,32 @@ export const personalFinanceCompanionShopProduct: ShopProductInput = {
   objections: [],
   // Emptied by the content collapse: all four were near-verbatim copies
   // of a problemsSolved solution, rendered separately on the Shop page
-  // and again in the Library manual.
+  // and again on the companion page.
   outcomes: [],
   problemsSolved: [
     {
       problem: "Your money is scattered across bank apps, statements, memory, and habit.",
       solution:
         "One Available Money figure in a banner that shows where the rest of your balance goes, with every figure's working one tap away.",
+      label: "One available-money figure",
     },
     {
       problem: "You have no idea when a debt will actually be gone.",
       solution:
         "A payoff plan from your own balances, rates and minimum payments: the month you are debt-free, the order the debts clear, and what the cheaper method saves. A debt with no rate is named as left out, never guessed at.",
+      label: "A real payoff plan",
     },
     {
       problem: "You cannot remember which bills you have paid this month.",
       solution:
         "Tick a bill paid for the month. What is left to pay is worked out from what you ticked, and a paid bill leaves the list of what is coming up.",
+      label: "One tap, bill paid",
     },
     {
       problem: "You cannot see what a normal month looks like once everything is counted.",
       solution:
         "A typical month written out from what you recorded: what comes in, what goes out, what is set aside to reach each goal on its date, and what is left. Anything it could not count is named underneath.",
+      label: "A typical month, laid out",
     },
     {
       problem: "You only find out something's wrong after it's already become a problem.",

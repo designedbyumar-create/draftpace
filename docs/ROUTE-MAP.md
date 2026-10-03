@@ -33,14 +33,13 @@ file if the two disagree.
 
 | Route | Purpose |
 |---|---|
-| `/app` | Platform Home — one focal block, then owned products grouped by life area (`src/content/areas.ts`), each tile showing that product's own current summary via `productSummary.ts` |
-| `/app/library` | The shelf — every owned product led by its real screens |
-| `/app/library/[productSlug]` | That product's manual. For a product with `tasks` on its listing this is a task index ("what do you want to do?"), each row linking to the screen it happens on, plus the owning half of its `questions`. The older prose shape still renders for the two internal layout fixtures, which have no tasks |
+| `/app` | Platform Home — one focal block, then owned products grouped by life area (`src/content/areas.ts`), each tile showing that product's own current summary via `productSummary.ts`. With nothing owned yet, the focal block spotlights the one free product by name rather than a generic "browse everything" prompt |
+| `/app/companions/[productSlug]` | A product's own home — reached from the sidebar's "My Companions" or the command palette. Readable whether or not you own the product. For a product with `tasks` on its listing this is a task index ("what do you want to do?"), each row linking to the screen it happens on, plus the owning half of its `questions`; older listings get the full prose shape. The ownership bar at the top is the one live, per-person part of the page and the way into the product itself |
 | `/app/notifications` | Inbox, real browser permission flow, quiet hours, per-product controls (not built) |
 | `/app/account` | Identity, sessions, security, sign-out (real); data export, deletion, 2FA (not built) |
 | `/app/settings` | Theme, working text-scale and reduce-motion overrides, locale/timezone (detected, read-only), reminder time |
 | `/app/billing` | Owned products; payment method / billing history (not built) |
-| `/app/support` | Contact entries routed to email; in-app case tracking not built |
+| `/app/support` | Real in-app "Report an issue" form (public.support_reports), with the reporter's own submitted reports listed back to them; no support mailbox configured yet |
 | `/app/activate/[productSlug]`, `/app/redeem` | Free-product activation and code redemption |
 
 ### Product destinations
@@ -85,7 +84,8 @@ product's own `manifest.webmanifest`.
 | `/admin/products` | Real — reads `productRegistry` |
 | `/admin/product-families` | Real — reads `familyRegistry` |
 | `/admin/operations` | Real feature-flag state; jobs/webhooks honestly empty |
-| `/admin/customers`, `/admin/entitlements`, `/admin/commerce`, `/admin/communications`, `/admin/support`, `/admin/analytics`, `/admin/audit` | Honest "not built yet" states — no fabricated customers, orders, or metrics |
+| `/admin/support` | Real — every report from `/app/support`'s form, read with the service-role client (read-only, no role model yet) |
+| `/admin/customers`, `/admin/entitlements`, `/admin/commerce`, `/admin/communications`, `/admin/analytics`, `/admin/audit` | Honest "not built yet" states — no fabricated customers, orders, or metrics |
 
 No Product Studio (definition authoring UI) exists — out of scope per the brief.
 

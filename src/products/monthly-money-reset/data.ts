@@ -144,7 +144,7 @@ export async function saveMonthlyMoneyResetState(params: {
   return interpretSaveResponse(row, error);
 }
 
-// Generic instance access (used by Platform Home and Library too, not just
+// Generic instance access (used by Platform Home and the sidebar too, not just
 // this product) lives in the product-framework, not here — re-exported for
 // callers that already import it from this file.
 export {

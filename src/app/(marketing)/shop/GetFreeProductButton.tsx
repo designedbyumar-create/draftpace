@@ -28,9 +28,9 @@ import { trackEvent } from "@/lib/analytics/gtag";
  * day a second free product exists and one of these two paths becomes
  * live again, rather than being event-less until someone remembers.
  */
-export default function AddToLibraryButton({
+export default function GetFreeProductButton({
   slug,
-  label = "Add to library",
+  label = "Get it, free",
   size = "md",
   fullWidth = false,
   analytics,

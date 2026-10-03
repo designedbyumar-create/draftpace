@@ -61,18 +61,22 @@ export const homeschoolingCompanionShopProduct: ShopProductInput = {
     {
       problem: "By March you can't remember what you covered in October.",
       solution: "A record of what you actually did, kept as it happened, that you could hand to somebody at year's end.",
+      label: "Year-end record",
     },
     {
       problem: "You're not sure whether something actually landed.",
       solution: "An honest answer about whether a topic stuck, including the honest answer that there isn't enough evidence to say.",
+      label: "Honest check",
     },
     {
       problem: "Keeping more than one child's records straight in your head has stopped working.",
       solution: "One page each morning that says what today looks like, per child.",
+      label: "One page per child",
     },
     {
       problem: "You need something to show, not a system so heavy it gets abandoned by half term.",
       solution: "A printed record per child, containing only what you chose to include.",
+      label: "Printed record",
     },
     {
       problem: "You don't know what your state actually asks you to keep, or whether you have it.",

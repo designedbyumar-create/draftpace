@@ -27,11 +27,14 @@ export type AccountMenuItem = {
 export default function AccountMenu({
   items,
   label,
+  seed,
   renderMobileTrigger,
   only,
 }: {
   items: AccountMenuItem[];
   label: string;
+  /** The account's Blobatar seed (see Avatar.tsx) — falls back to `label` if omitted. */
+  seed?: string;
   /**
    * Overrides the mobile trigger's appearance (e.g. to match sibling items
    * in a bottom-navigation bar) while reusing the same underlying sheet and
@@ -70,7 +73,7 @@ export default function AccountMenu({
             className="flex cursor-pointer list-none items-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)] [&::-webkit-details-marker]:hidden"
             aria-label={`Account menu for ${label}`}
           >
-            <Avatar label={label} size="sm" />
+            <Avatar label={label} seed={seed} size="sm" />
           </summary>
           <div className="absolute right-0 z-20 mt-2 min-w-[216px] rounded-lg border border-[var(--border)] bg-[var(--surface)] p-1 shadow-[shadow:var(--shadow-soft)]">
             {items.map((item) => (
@@ -94,7 +97,7 @@ export default function AccountMenu({
               aria-label={`Account menu for ${label}`}
               className="flex h-11 w-11 items-center justify-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] lg:hidden"
             >
-              <Avatar label={label} size="sm" />
+              <Avatar label={label} seed={seed} size="sm" />
             </button>
           )}
           <MobileSheet open={sheetOpen} onClose={() => setSheetOpen(false)} title="Account" triggerRef={mobileTriggerRef}>

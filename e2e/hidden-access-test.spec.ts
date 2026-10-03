@@ -36,8 +36,8 @@ test.describe("before any grant exists", () => {
     await expect(page).toHaveURL(/\/app\/activate\/hidden-access-test/);
   });
 
-  test("does not appear in the library", async ({ page }) => {
-    await page.goto("/app/library");
+  test("does not appear on Platform Home", async ({ page }) => {
+    await page.goto("/app");
     await expect(page.getByText("Hidden Access Test")).not.toBeVisible();
   });
 });
@@ -62,8 +62,8 @@ test.describe("after grant_admin_product has been run for the test account (manu
     await expect(page.getByText("This product has no real functionality")).toBeVisible();
   });
 
-  test("appears in the library", async ({ page }) => {
-    await page.goto("/app/library");
+  test("appears on Platform Home", async ({ page }) => {
+    await page.goto("/app");
     await expect(page.getByText("Hidden Access Test")).toBeVisible();
   });
 
@@ -78,10 +78,10 @@ test.describe("after grant_admin_product has been run for the test account (manu
     await page.reload();
     await expect(page).toHaveURL(/\/app\/products\/hidden-access-test\/workspace/);
 
-    // "Sign out" only lives in PlatformShell (Library/Home/Settings/Account),
-    // not in ProductShell — a product destination page has no sign-out
-    // control of its own, only a "Library" back-link.
-    await page.goto("/app/library");
+    // "Sign out" only lives in PlatformShell (Home/Settings/Account), not
+    // in ProductShell — a product destination page has no sign-out control
+    // of its own, only a "Back to Draftpace" link.
+    await page.goto("/app");
     await page.getByRole("button", { name: "Sign out" }).click();
     await expect(page).toHaveURL(/^http:\/\/localhost:3000\/?$/, { timeout: 15_000 });
 
@@ -114,7 +114,7 @@ test.describe("after revoke_entitlement has been run for the test account (manua
     await page.goto("/app/products/hidden-access-test/workspace");
     await expect(page).toHaveURL(/\/app\/activate\/hidden-access-test/);
 
-    await page.goto("/app/library");
+    await page.goto("/app");
     await expect(page.getByText("Hidden Access Test")).not.toBeVisible();
   });
 });

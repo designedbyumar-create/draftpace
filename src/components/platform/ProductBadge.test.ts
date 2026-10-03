@@ -15,7 +15,7 @@ ensureShopRegistered();
  * and its own icon, never the platform's generic teal/stack fallback.
  * Scoped to published Shop listings rather than every registered
  * product, since that is the actual set a customer ever sees side by
- * side (on Home, in the Library, on the Shop): a hidden internal
+ * side (on Home, in the sidebar, on the Shop): a hidden internal
  * product like hidden-access-test has no Shop listing and is
  * deliberately outside this concern.
  *
@@ -52,7 +52,7 @@ describe("every real product has its own badge identity", () => {
     }
   });
 
-  it("never gives two published products the exact same icon, since they can appear side by side on Home and in the Library", () => {
+  it("never gives two published products the exact same icon, since they can appear side by side on Home and in the sidebar", () => {
     const seen = new Map<string, string>();
     for (const product of realProducts) {
       const icon = iconForProduct(product.slug);

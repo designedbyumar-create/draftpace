@@ -35,11 +35,21 @@ const objectionSchema = z.object({
  * situation and a benefit as two separate flat lists a visitor had to
  * mentally reconnect themselves. This names the connection directly.
  * Optional and additive: `audience`/`outcomes` below are unchanged and
- * still power the Shop grid card and the Library manual page.
+ * still power the Shop grid card and a product's own companion page.
  */
 const problemSolvedSchema = z.object({
   problem: z.string().min(1),
   solution: z.string().min(1),
+  /**
+   * A short (two to four word) name for this solution — "Year-end
+   * record", not a restatement of the sentence. Optional because most
+   * listings were written before this existed: a card with no label
+   * falls back to the solution text alone, a real-but-plainer look
+   * rather than a placeholder. Only ever on a listing's own first four
+   * problemsSolved entries, which is all the companion page's "why
+   * people use this" grid shows — see src/app/app/companions.
+   */
+  label: z.string().min(1).optional(),
 });
 
 /**
@@ -52,7 +62,7 @@ const problemSolvedSchema = z.object({
  * questions asked at two different moments, so that is what this is.
  *
  * deciding: someone weighing the purchase. Shown on the Shop page.
- * owning: someone who already paid. Shown in the Library manual.
+ * owning: someone who already paid. Shown on the companion page.
  *
  * A question can be both, when it genuinely matters before and after.
  */
@@ -89,7 +99,7 @@ const searchedProblemSchema = z.object({
 
 /**
  * One thing an owner might want to do, and where in the product it
- * happens. The Library manual is built from these.
+ * happens. A product's own companion page is built from these.
  *
  * An owner is not deciding any more, so the manual should not re-argue
  * the pitch at them: it should answer "how do I do the thing I came here

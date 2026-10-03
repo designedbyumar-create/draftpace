@@ -14,7 +14,7 @@ import { trackEvent, type EventParams } from "@/lib/analytics/gtag";
  * ShopGrid.tsx) just calls trackEvent from its own onClick instead; this
  * exists only to cross that specific boundary.
  *
- * Never wraps CheckoutButton or AddToLibraryButton, which already fire
+ * Never wraps CheckoutButton or GetFreeProductButton, which already fire
  * their own events internally (see those files) — this is only for a
  * plain navigating link that needs one added.
  */

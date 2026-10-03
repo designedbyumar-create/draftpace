@@ -47,7 +47,7 @@ describe("SettingsModule: pause and reset are gated on their save/RPC result", (
   it("pauseProduct checks setProductInstanceLifecycle's result before navigating", () => {
     const callIndex = source.indexOf("setProductInstanceLifecycle(instanceId, \"paused\")");
     const gateIndex = source.indexOf("if (!result.ok)");
-    const navIndex = source.indexOf('router.push("/app/library")');
+    const navIndex = source.indexOf("router.push(`/app/companions/${definition.slug}`)");
     expect(callIndex).toBeGreaterThan(-1);
     expect(gateIndex).toBeGreaterThan(callIndex);
     expect(navIndex).toBeGreaterThan(gateIndex);

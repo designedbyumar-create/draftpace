@@ -16,6 +16,7 @@ import AccountMenu from "@/components/account/AccountMenu";
 import { appAccountMenuItems } from "@/components/account/accountMenuItems";
 import { signOutAndRedirect } from "@/lib/supabase/signOut";
 import { useSession } from "@/design-system/shell/SessionProvider";
+import { resolveAvatarSeed } from "@/product-framework/avatarSeed";
 import { useStandaloneMode } from "@/lib/pwa/hooks";
 import ProductRailShell from "./ProductRailShell";
 
@@ -93,6 +94,7 @@ function ProductTabShell({
   }, [pathname]);
 
   const accountLabel = user.user_metadata?.display_name || user.email || "Account";
+  const accountSeed = resolveAvatarSeed(user);
   const accountItems = appAccountMenuItems(() => signOutAndRedirect("/"));
 
   return (
@@ -119,7 +121,7 @@ function ProductTabShell({
           {definition.title}
         </h1>
         <div className="flex h-11 shrink-0 items-center justify-end">
-          <AccountMenu items={accountItems} label={accountLabel} only="mobile" />
+          <AccountMenu items={accountItems} label={accountLabel} seed={accountSeed} only="mobile" />
         </div>
       </div>
 
@@ -136,7 +138,7 @@ function ProductTabShell({
           </Link>
           <div className="flex items-center gap-3">
             <ThemeToggle compact />
-            <AccountMenu items={accountItems} label={accountLabel} only="desktop" />
+            <AccountMenu items={accountItems} label={accountLabel} seed={accountSeed} only="desktop" />
           </div>
         </div>
       </div>

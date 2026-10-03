@@ -103,6 +103,6 @@ instead.
 `state.setup.completedAt` is authoritative for "has setup been finished."
 `product_instances.setup_complete` is a denormalized copy of the same fact,
 written in the same `save_monthly_money_reset_state` call that writes the
-state row — never independently. Library and Platform Home read the cheap
-copy; nothing reads it as an independent truth that could drift from the
-real state.
+state row — never independently. The sidebar and Platform Home read the
+cheap copy; nothing reads it as an independent truth that could drift from
+the real state.

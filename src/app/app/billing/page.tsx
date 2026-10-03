@@ -6,6 +6,7 @@ import EmptyState from "@/design-system/EmptyState";
 import Surface from "@/design-system/Surface";
 import Button from "@/design-system/Button";
 import SettingsRow from "@/components/platform/SettingsRow";
+import { SkeletonRow } from "@/design-system/Skeleton";
 import { CreditCard, WarningCircle } from "@/design-system/Icon";
 import { familyRegistry } from "@/product-framework/families";
 import { listMyEntitlements, type AccessSource } from "@/product-framework/entitlements";
@@ -15,7 +16,7 @@ import { ensureProductsRegistered } from "@/products/manifest";
 /**
  * Owned products here used to be a permanent "No purchases yet" empty
  * state, regardless of what you actually owned: it never read the same
- * entitlements Home and Library already load. That's not an honest
+ * entitlements Home already loads. That's not an honest
  * "not built yet", it's a real bug, since the data was sitting right
  * there. Payment method and billing history genuinely don't exist yet
  * (no card on file, no invoice records), so those stay honest empty
@@ -70,18 +71,24 @@ export default function BillingPage() {
     <PlatformShell title="Billing" subtitle="Purchases, entitlements, and payment method">
       <div className="space-y-8">
         <section>
-          <h2 className="mb-3 text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--faint)]">
+          <h2 className="mb-3 text-eyebrow font-bold uppercase text-[var(--faint)]">
             Owned products
           </h2>
           {rows === null && !loadError ? (
-            <p className="text-[13px] text-[var(--muted)]">Loading…</p>
+            <Surface padded={false}>
+              <div className="divide-y divide-[var(--border)] px-5">
+                {Array.from({ length: 3 }, (_, i) => (
+                  <SkeletonRow key={i} />
+                ))}
+              </div>
+            </Surface>
           ) : loadError ? (
             <EmptyState
               icon={WarningCircle}
               title="Couldn't load your purchases"
               description="Your access hasn't changed. This was just a read failure, check your connection and try again."
               action={
-                <Button size="md" onClick={() => setRetryToken((t) => t + 1)}>
+                <Button size="md" variant="action" onClick={() => setRetryToken((t) => t + 1)}>
                   Try again
                 </Button>
               }
@@ -104,7 +111,7 @@ export default function BillingPage() {
         </section>
 
         <section>
-          <h2 className="mb-1 text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--faint)]">
+          <h2 className="mb-1 text-eyebrow font-bold uppercase text-[var(--faint)]">
             Payment method
           </h2>
           <Surface padded={false}>
@@ -115,7 +122,7 @@ export default function BillingPage() {
         </section>
 
         <section>
-          <h2 className="mb-1 text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--faint)]">
+          <h2 className="mb-1 text-eyebrow font-bold uppercase text-[var(--faint)]">
             Billing history
           </h2>
           <Surface padded={false}>
@@ -131,7 +138,7 @@ export default function BillingPage() {
 }
 
 /** One owned product's entitlement: what it is, how it was granted, and
- *  when — never its setup/lifecycle progress, that's Library's job. */
+ *  when — never its setup/lifecycle progress, that's its own companion page's job. */
 function OwnedProductRowView({ row }: { row: OwnedProductRow }) {
   const title =
     row.kind === "ready" || row.kind === "progress-unavailable" ? row.definition.title : row.productSlug;
@@ -141,13 +148,13 @@ function OwnedProductRowView({ row }: { row: OwnedProductRow }) {
   return (
     <div className="flex items-center justify-between gap-4 py-4">
       <div className="min-w-0">
-        <p className="text-[14px] font-semibold text-[var(--text)]">{title}</p>
-        <p className="mt-1 text-[12.5px] text-[var(--muted)]">
+        <p className="text-body-sm font-semibold text-[var(--text)]">{title}</p>
+        <p className="mt-1 text-caption text-[var(--muted)]">
           {family ? `${family.label} · ` : ""}
           {ACCESS_SOURCE_LABEL[row.entitlement.accessSource]}
         </p>
       </div>
-      <p className="shrink-0 text-[12.5px] text-[var(--faint)]">{formatGrantedDate(row.entitlement.grantedAt)}</p>
+      <p className="shrink-0 text-caption text-[var(--faint)]">{formatGrantedDate(row.entitlement.grantedAt)}</p>
     </div>
   );
 }

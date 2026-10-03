@@ -2,6 +2,7 @@
 
 import { Desktop, Moon, Sun } from "@/design-system/Icon";
 import { ThemeMode, useTheme } from "@/design-system/theme/ThemeProvider";
+import Tooltip from "@/design-system/Tooltip";
 
 const OPTIONS: { value: ThemeMode; label: string; Icon: typeof Sun }[] = [
   { value: "system", label: "System", Icon: Desktop },
@@ -20,7 +21,7 @@ export default function ThemeToggle({ compact = false }: { compact?: boolean }) 
     >
       {OPTIONS.map(({ value, label, Icon }) => {
         const active = theme === value;
-        return (
+        const button = (
           <button
             key={value}
             type="button"
@@ -37,6 +38,13 @@ export default function ThemeToggle({ compact = false }: { compact?: boolean }) 
             {!compact && <span>{label}</span>}
             {compact && <span className="sr-only">{label}</span>}
           </button>
+        );
+        return compact ? (
+          <Tooltip key={value} label={label}>
+            {button}
+          </Tooltip>
+        ) : (
+          button
         );
       })}
     </div>

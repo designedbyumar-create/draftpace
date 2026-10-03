@@ -43,7 +43,7 @@ const CLOSE_FAILURE_MESSAGES: Record<CloseSequenceFailureStep, (closedLabel: str
   "start-next-cycle": (closedLabel, nextLabel) =>
     `${closedLabel} is closed, but starting ${nextLabel} failed. Try again to continue.`,
   "carry-forward": (closedLabel, nextLabel) =>
-    `${closedLabel} is closed and ${nextLabel} was started, but carrying your details forward failed. Try again to finish, or open ${nextLabel} from your library and set it up directly.`,
+    `${closedLabel} is closed and ${nextLabel} was started, but carrying your details forward failed. Try again to finish, or open ${nextLabel} from its companion page and set it up directly.`,
 };
 
 function nextCycleKey(cycleKey: string): string {
@@ -87,11 +87,11 @@ export default function HistoryModule({ definition }: { definition: ProductDefin
     return (
       <EmptyState
         icon={Clock}
-        title="This product isn't set up in your library yet"
-        description="Add Monthly Money Reset to your library first."
+        title="This product isn't set up yet"
+        description="Add Monthly Money Reset to your account first."
         action={
           <Button variant="commit" href={`/app/activate/${definition.slug}`} size="md">
-            Add to my library
+            Add to my account
           </Button>
         }
       />

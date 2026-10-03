@@ -80,11 +80,11 @@ export default function PrintablesModule({ definition }: { definition: ProductDe
     return (
       <EmptyState
         icon={Wallet}
-        title="This product isn't set up in your library yet"
-        description="Add Monthly Money Reset to your library first, then come back here."
+        title="This product isn't set up yet"
+        description="Add Monthly Money Reset to your account first, then come back here."
         action={
           <Button variant="commit" href={`/app/activate/${definition.slug}`} size="md">
-            Add to my library
+            Add to my account
           </Button>
         }
       />

@@ -56,7 +56,7 @@ all twelve from the audit:
 | New signed-out visitor | Landing, Store, Product page | Sell and reassure; no account assumed |
 | Visitor ready to get a product | Product page, Get, Auth | Minimum friction; preserve intent across auth |
 | Brand-new account, zero-to-one | Auth, first-run Home | Invite to open the thing they just got, nothing else |
-| Returning owner | Home, Library | Continue outranks discover; do not re-sell what they own |
+| Returning owner | Home, a product's own companion page | Continue outranks discover; do not re-sell what they own |
 | Returning visitor, no account | Landing, Store | Treat as new but lighter; "sign in" available, not loud |
 
 Two states dominate and must be flawless: **"ready to get a product"** (the
@@ -82,13 +82,31 @@ nav is a lead-gen questionnaire and is removed.
 - Primary action for a stranger is **Browse the Store**, not "Open your library"
   (which dead-ends a first-timer at login, audit PUB-3). "Sign in" is quiet.
 
-**Platform (signed-in) navigation**
+**Platform (signed-in) navigation — superseded by a sidebar, not a top bar
+(see §10).** The original plan below was a horizontal "Home / Library /
+Store / bell / Account" bar, with Library as a dedicated owned-collection
+page. What shipped instead, after further iteration, reads:
+
 ```
-Home        Library        Store        (bell)        Account ▾
+Home
+MY COMPANIONS
+  (one row per owned product, straight to its own companion page)
++ Explore Companions
+Notifications · Account · Settings · Billing · Support
 ```
-- Home (continue), Library (own), Store (discover) are the three primary
-  destinations. Notifications is a count-only bell. Account is a single menu
-  holding profile, settings, billing, support, sign out (audit NAV-1, ACCT-1).
+
+- There is no separate "Library" page or destination. Every owned
+  product already has its own row in the sidebar's "My Companions"
+  section — that row *is* the re-entry point the old Library page
+  existed to provide, one click closer than a page you'd have to open
+  first. See §10 for what replaced Library and why.
+- "Store" as a top-level nav item became "+ Explore Companions," in the
+  sidebar rather than a top bar, for the same reason: discovery sits
+  beside what you already own instead of competing with it for a bar
+  slot.
+- Notifications, Account, Settings, Billing and Support remain separate
+  rows rather than one collapsed menu — the single-menu idea below was
+  never built this way.
 - The always-on "Online" pill and the omnipresent theme toggle are removed
   (audit NAV-2, NAV-3); theme lives in Settings.
 
@@ -171,8 +189,8 @@ product family, the IA still holds (categories become storefronts), but confirm.
 - **Trust framing kept (audit SHOP-3):** "Free tools are complete, not
   stripped-down previews. Paid tools are billed once, not a subscription, unless
   a listing says otherwise."
-- **State awareness:** a signed-in owner sees owned products marked "In your
-  library, open" instead of a buy action.
+- **State awareness:** a signed-in owner sees owned products marked "You own
+  this, open" instead of a buy action.
 
 ### Content
 
@@ -221,7 +239,7 @@ product family, the IA still holds (categories become storefronts), but confirm.
 ### Content
 
 - **Hero:** Title "Monthly Money Reset" · Tag "Free" · Promise as above.
-- **Primary action (free):** "Add to your library, free" · **(paid):** "Get it,
+- **Primary action (free):** "Try it, free" · **(paid):** "Get it,
   [price]"
 - **Objection block copy:**
   - "Worried you will abandon it like the others? It does the keeping-up, so you
@@ -247,15 +265,15 @@ product family, the IA still holds (categories become storefronts), but confirm.
 
 - **Decisions:** the confirmation is calm and one-action. It already reads well
   (verified in testing). Keep: "Free" and family tags, two reassurance checks,
-  one primary "Add to my library," a quiet "Not right now." Do not add friction.
+  one primary "Get it, free," a quiet "Not right now." Do not add friction.
 - **After add:** go **straight to the product's first useful screen** (Setup for
   MMR), not a re-explainer, per the audit's first-run fix. The "you now own this"
   feeling is the product opening, not a receipt page.
 - **Content:**
-  - Title: "Add Monthly Money Reset to your library"
+  - Title: "Get Monthly Money Reset, free"
   - Checks: "No payment now or later for this one." / "Your progress saves to your
     account automatically."
-  - Action: "Add to my library" · Quiet: "Not right now"
+  - Action: "Get it, free" · Quiet: "Not right now"
 
 ### 7b. Paid purchase (designed-ahead, not built)
 
@@ -288,8 +306,8 @@ it, let the experience earn the paid ones.
 ### Decisions
 
 - **Purpose:** the smallest possible interruption. Auth appears **only when an
-  action requires it** (getting a product, opening the library), never as a gate
-  in front of browsing.
+  action requires it** (getting a product, opening its companion page), never
+  as a gate in front of browsing.
 - **Preserve intent (audit AUTH-2):** when auth interrupts a get, name it. The
   screen says what they were doing, and completing auth drops them back exactly
   there, into the product they were adding.
@@ -304,7 +322,7 @@ it, let the experience earn the paid ones.
 ### Content
 
 - **Context line on an intent-driven auth:** "Sign in to add Monthly Money Reset
-  to your library." (Derived from the destination, not a generic "Sign in to
+  to your account." (Derived from the destination, not a generic "Sign in to
   continue.")
 - **Signup reassurance:** "Free to create. Your products and progress live here,
   on every device."
@@ -353,32 +371,48 @@ This is the highest-leverage screen in the whole journey and the weakest today
 
 ---
 
-## 10. Library: the owned collection
+## 10. My Companions: re-entry, no separate collection page
 
-**Route:** `/app/library` · **State:** owner returning to what they have.
+**Superseded design.** This section originally specified `/app/library`, a
+dedicated owned-collection page distinct from Home. That page was built, then
+deleted: every owned product already has its own row in the sidebar's "My
+Companions" section, one click from anywhere in `/app`, so a second page that
+only re-lists the same products added a stop without adding a capability.
+What shipped instead:
 
 ### Decisions
 
-- **Purpose:** re-entry to what you own. A **collection of owned experiences, not
-  a filtered database** (audit LIB-1).
-- **Distinct from Home and Store (audit LIB-2):** Home = the one thing to do now;
-  Library = everything you own, browsable; Store = things you do not own yet.
-  These must not look like the same card row.
-- **Structure:** lead with the products themselves, each in its own identity, with
-  a **human status line** ("This month, set up, $412 safe to spend") instead of
-  raw values (`active`, `2026-08`). One clear open action per item.
-- **Hide the filter bar until it is warranted** (roughly five-plus owned). Below
-  that, simple recency order. When filters appear, label lifecycle in human terms
-  ("In progress / Paused / Finished / Archived"), never the raw enum.
-- **Quiet path back to discovery** at the end: "Find more in the Store."
+- **Purpose:** re-entry to what you own, served by the sidebar itself rather
+  than a page you'd have to open first. The "collection of owned experiences,
+  not a filtered database" principle this section originally argued for
+  (audit LIB-1) still holds, it is just realized as sidebar rows plus each
+  product's own companion page instead of a list page.
+- **Distinct from Home and Explore Companions:** Home = the one thing to do
+  now; My Companions (sidebar) = everything you own, each one tapped straight
+  into its own place; Explore Companions = things you do not own yet. These
+  read as different things because they are different controls, not different
+  states of one page.
+- **Each sidebar row opens that product's own companion page** (`/app/
+  companions/[productSlug]`), which carries the human status line ("This
+  month, set up, $412 safe to spend") instead of raw values (`active`,
+  `2026-08`), plus how-to-use content and ownership status for that one
+  product. One clear open action, not a database row.
+- **No filter bar to hide or reveal.** With re-entry living in the sidebar,
+  the five-plus-owned filtering problem this section originally solved for
+  does not arise: the sidebar lists every owned product in simple recency
+  order and scrolls, rather than needing a second page's own pagination or
+  filters.
+- **Quiet path back to discovery** stays, as "+ Explore Companions" beneath
+  the My Companions list rather than a line at the end of a library page.
 
 ### Content
 
-- **Header:** "Your library" / "Everything you own, ready when you are."
-- **Item status line (MMR example):** "Monthly Money Reset · This month · $412
-  safe to spend" · Action: "Open"
-- **Empty (no products, should be rare post-onboarding):** "Nothing here yet.
-  Start with something free from the Store." Action: "Go to the Store"
+- **Sidebar section header:** "MY COMPANIONS"
+- **Companion-page status line (MMR example):** "Monthly Money Reset · This
+  month · $412 safe to spend" · Action: "Open"
+- **Empty (no products, should be rare post-onboarding):** Home's own
+  empty/free-product state covers this; there is no separate "nothing here
+  yet" page to design for.
 
 ---
 
@@ -397,7 +431,7 @@ the product's internal design is out of scope.
   MMR-1), which is product-visual work, deferred.
 - **The return path (audit SHELL-2):** the way back is always obvious and correct.
   Label it "Back to Draftpace" and return to Home (or to wherever they came from),
-  not always to Library.
+  not always to the same fixed destination.
 - **First-open vs return-open:** on first open, land on the product's genuine
   first-value screen (Setup for MMR, which already delivers a live number so they
   are never staring at a blank result). On return-open, land on the live working
@@ -420,7 +454,7 @@ Rather than duplicate the marketing doc, this journey inherits its voice and
 these journey-specific rules:
 
 - **Every button names the outcome,** not the mechanism. "Open Monthly Money
-  Reset," not "Launch." "Add to my library," not "Submit."
+  Reset," not "Launch." "Get it, free," not "Submit."
 - **Every empty or first-run state offers a step,** never describes the system
   (audit COPY-2). "Start with Monthly Money Reset," not "products will list here."
 - **No system vocabulary at the seam** (audit COPY-1): no "instance," "entitlement,"
@@ -442,8 +476,8 @@ what exists:
 | Free add (`/app/activate`) | Real and proven end to end (Phase 0) |
 | Paid purchase and checkout | **Not built.** §7b is target design only |
 | Auth | Real; keep, with the two fixes noted |
-| Platform Home | Exists as weak wireframe; needs the §9 rebuild |
-| Library | Exists as filtered list; needs the §10 rebuild |
+| Platform Home | Real; rebuilt per §9, with product-accent theming and a status strip |
+| My Companions (sidebar) + companion pages | Real; replaced the §10 library-page design with sidebar rows and a per-product companion page |
 | Opening a product | Real; session-at-seam fixed in Phase 0; return path and identity-to-shell are follow-ups |
 
 ---
@@ -473,8 +507,10 @@ Sequenced by leverage on the two make-or-break moments (conversion and
 zero-to-one):
 
 1. **Platform Home rebuild (§9).** Highest leverage; it is the weakest screen and
-   defines the return and first-open feeling. State-aware focal block.
-2. **Library rebuild (§10).** Owned-collection model; distinct from Home and Store.
+   defines the return and first-open feeling. State-aware focal block. Done.
+2. **My Companions sidebar + companion pages (§10).** Owned-product re-entry;
+   distinct from Home and Explore Companions. Done, superseding the original
+   library-page design.
 3. **Product page restructure (§6).** Visual-first, sticky get, compressed. This
    is the conversion surface and shows the product.
 4. **Store front door (§5).** Product-forward, threshold-aware layout.

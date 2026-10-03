@@ -38,11 +38,11 @@ export default function SettingsModule({ definition }: { definition: ProductDefi
     return (
       <EmptyState
         icon={Wallet}
-        title="This product isn't set up in your library yet"
-        description="Add Monthly Money Reset to your library first."
+        title="This product isn't set up yet"
+        description="Add Monthly Money Reset to your account first."
         action={
           <Button variant="commit" href={`/app/activate/${definition.slug}`} size="md">
-            Add to my library
+            Add to my account
           </Button>
         }
       />
@@ -66,15 +66,15 @@ export default function SettingsModule({ definition }: { definition: ProductDefi
     setPauseFailed(false);
     // Only navigates away once the lifecycle change is confirmed — the RPC
     // already reports { ok, message }; the previous version never checked
-    // it and would send the user to Library even if pausing had failed. See
-    // the MMR reliability pass, 2026-08-04.
+    // it and would send the user away even if pausing had failed. See the
+    // MMR reliability pass, 2026-08-04.
     const result = await setProductInstanceLifecycle(instanceId, "paused");
     if (!result.ok) {
       setPausing(false);
       setPauseFailed(true);
       return;
     }
-    router.push("/app/library");
+    router.push(`/app/companions/${definition.slug}`);
   }
 
   async function resetCurrentMonth() {
@@ -208,7 +208,7 @@ export default function SettingsModule({ definition }: { definition: ProductDefi
         <div>
           <p className="text-[13px] font-semibold text-[var(--text)]">Pause Monthly Money Reset</p>
           <p className="mt-1 text-[12px] leading-relaxed text-[var(--muted)]">
-            Keeps everything saved without reminders. You can pick it back up anytime from your library.
+            Keeps everything saved without reminders. You can pick it back up anytime from its companion page.
           </p>
           {pauseFailed && (
             <p className="mt-1.5 text-[12px] font-semibold text-[var(--danger)]">

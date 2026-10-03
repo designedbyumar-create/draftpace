@@ -14,8 +14,8 @@ import {
 
 /**
  * The one slug-to-icon map for owned products, shared by every surface
- * that draws one (Home's summary tiles, Library's shelf cards, a
- * product's manual page). Kept here rather than copied per component so a
+ * that draws one (Home's summary tiles, the sidebar's product rows, a
+ * product's companion page). Kept here rather than copied per component so a
  * product can never appear as a wallet in one place and a stack in
  * another.
  *

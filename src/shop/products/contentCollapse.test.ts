@@ -15,7 +15,7 @@ ensureProductsRegistered();
  * `objections`, again in `faqs`, and a third time as an `outcome` that
  * restated a `problemsSolved` solution word for word. The Shop page
  * rendered objections and faqs a few hundred pixels apart, and the
- * Library manual rendered outcomes again, so an owner read the same
+ * companion page rendered outcomes again, so an owner read the same
  * sentence in three places and learned nothing new from any of them.
  *
  * `questions`, `searchedProblems` and `tasks` replaced all of it. The

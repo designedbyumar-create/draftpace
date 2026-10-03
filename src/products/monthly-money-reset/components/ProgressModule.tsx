@@ -25,11 +25,11 @@ export default function ProgressModule({ definition }: { definition: ProductDefi
     return (
       <EmptyState
         icon={Wallet}
-        title="This product isn't set up in your library yet"
-        description="Add Monthly Money Reset to your library first."
+        title="This product isn't set up yet"
+        description="Add Monthly Money Reset to your account first."
         action={
           <Button variant="commit" href={`/app/activate/${definition.slug}`} size="md">
-            Add to my library
+            Add to my account
           </Button>
         }
       />

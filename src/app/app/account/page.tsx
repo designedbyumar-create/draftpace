@@ -9,12 +9,32 @@ import SettingsRow from "@/components/platform/SettingsRow";
 import Badge from "@/design-system/Badge";
 import Button from "@/design-system/Button";
 import Alert from "@/design-system/Alert";
+import Avatar from "@/design-system/Avatar";
+import { resolveAvatarSeed, randomAvatarSeed } from "@/product-framework/avatarSeed";
 
 export default function AccountPage() {
   const user = useSession();
   const [signingOut, setSigningOut] = useState(false);
 
   const provider = user.app_metadata?.provider === "google" ? "Google" : "Email and password";
+  const accountLabel = user.user_metadata?.display_name || user.email || "Account";
+
+  // useSession()'s user is a static snapshot from the server render (see
+  // its own comment), so a shuffle has to be reflected here directly
+  // rather than by re-reading user.user_metadata after the write — the
+  // same reason Settings page's reminder_time keeps its own local state
+  // instead of trusting the session to refresh.
+  const [avatarSeed, setAvatarSeed] = useState(() => resolveAvatarSeed(user));
+  const [shuffling, setShuffling] = useState(false);
+
+  const handleShuffle = async () => {
+    const nextSeed = randomAvatarSeed();
+    setShuffling(true);
+    const { error } = await supabase.auth.updateUser({ data: { avatar_seed: nextSeed } });
+    setShuffling(false);
+    if (!error) setAvatarSeed(nextSeed);
+  };
+
   // toLocaleString() depends on the runtime's locale and time zone, which
   // differ between the server render and the browser, so it can only be
   // computed after mount to avoid a hydration mismatch.
@@ -33,9 +53,17 @@ export default function AccountPage() {
     <PlatformShell title="Account" subtitle="Your identity, sessions, and data controls">
       <div className="space-y-8">
         <section>
-          <h2 className="mb-1 text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--faint)]">Identity</h2>
+          <h2 className="mb-1 text-eyebrow font-bold uppercase text-[var(--faint)]">Identity</h2>
           <Surface padded={false}>
             <div className="divide-y divide-[var(--border)] px-5">
+              <SettingsRow label="Avatar" description="Generated from your account, not uploaded — shuffle for a different one.">
+                <div className="flex items-center gap-3">
+                  <Avatar label={accountLabel} seed={avatarSeed} size="md" />
+                  <Button variant="secondary" size="sm" onClick={handleShuffle} disabled={shuffling}>
+                    {shuffling ? "Shuffling…" : "Shuffle"}
+                  </Button>
+                </div>
+              </SettingsRow>
               <SettingsRow label="Email" description={user.email || "—"} />
               <SettingsRow label="Name" description={String(user.user_metadata?.display_name || "Not set")} />
               <SettingsRow label="Sign-in method" description={provider} />
@@ -44,7 +72,7 @@ export default function AccountPage() {
         </section>
 
         <section>
-          <h2 className="mb-1 text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--faint)]">
+          <h2 className="mb-1 text-eyebrow font-bold uppercase text-[var(--faint)]">
             Sessions and devices
           </h2>
           <Surface padded={false}>
@@ -58,7 +86,7 @@ export default function AccountPage() {
         </section>
 
         <section>
-          <h2 className="mb-1 text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--faint)]">Security</h2>
+          <h2 className="mb-1 text-eyebrow font-bold uppercase text-[var(--faint)]">Security</h2>
           <Surface padded={false}>
             <div className="divide-y divide-[var(--border)] px-5">
               <SettingsRow label="Password" description="Change your password.">
@@ -77,7 +105,7 @@ export default function AccountPage() {
         </section>
 
         <section>
-          <h2 className="mb-1 text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--faint)]">
+          <h2 className="mb-1 text-eyebrow font-bold uppercase text-[var(--faint)]">
             Privacy and data
           </h2>
           <Surface padded={false}>

@@ -121,7 +121,7 @@ describe("[productSlug]/layout.tsx: server-side entitlement gate", () => {
 });
 
 describe("[productSlug]/page.tsx: canonical entry route", () => {
-  // A3 of the ownership/routing plan: the one route Library, Home, and
+  // A3 of the ownership/routing plan: the one route the sidebar, Home, and
   // activation-success all link to instead of guessing a destination
   // themselves. It relies entirely on the layout above it having already
   // confirmed entitlement — this file must never duplicate that check.

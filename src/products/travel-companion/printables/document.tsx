@@ -178,6 +178,19 @@ function TypesNote({ label, items }: { label: string; items: string[] }) {
   );
 }
 
+/**
+ * A one-page template is printed for each repeatable record type, not a
+ * fixed run of blank copies nobody asked for. This closes the page: how
+ * to get another one, on paper or in the connected app.
+ */
+function MoreCue({ text }: { text: string }) {
+  return (
+    <View style={{ marginTop: 16, paddingTop: 10, borderTopWidth: 0.6, borderTopColor: C.ruleSoft }}>
+      <Text style={{ fontSize: 7.8, color: C.faint, lineHeight: 1.5 }}>{text}</Text>
+    </View>
+  );
+}
+
 function RecordPage({
   section,
   eyebrow,
@@ -222,18 +235,18 @@ export interface TripBookManifest {
 }
 
 export const DEFAULT_MANIFEST: TripBookManifest = {
-  destinations: 3,
-  travellers: 4,
-  bookings: 10,
-  bookingConnections: 4,
-  transport: 6,
-  accommodation: 4,
-  reservations: 4,
-  threads: 6,
-  dailyOperations: 10,
-  changeImpacts: 3,
-  incidents: 2,
-  tripRecordPages: 2,
+  destinations: 2,
+  travellers: 2,
+  bookings: 1,
+  bookingConnections: 2,
+  transport: 1,
+  accommodation: 2,
+  reservations: 2,
+  threads: 1,
+  dailyOperations: 2,
+  changeImpacts: 1,
+  incidents: 1,
+  tripRecordPages: 1,
   size: "LETTER",
 };
 
@@ -355,6 +368,9 @@ function DestinationPage({ size, index, total }: { size: Size; index: number; to
       <FieldRow fields={["Arrival transport", "Departure transport"]} />
       <FieldRow fields={["Local contact", "Address"]} />
       <Notes count={3} />
+      {index === total && (
+        <MoreCue text="Visiting more places? Photocopy this page for each additional destination, or add it in Travel Companion, which holds as many as your trip needs." />
+      )}
     </RecordPage>
   );
 }
@@ -367,6 +383,9 @@ function TravellerPage({ size, index, total }: { size: Size; index: number; tota
       <FieldRow fields={["Nationality", "Emergency contact"]} />
       <Field label="Requirements" />
       <Notes count={3} />
+      {index === total && (
+        <MoreCue text="Travelling with more people? Photocopy this page for each additional traveller, or add them in the app instead." />
+      )}
     </RecordPage>
   );
 }
@@ -406,6 +425,7 @@ function BookingRegisterPage({ size }: { size: Size }) {
         rows={18}
       />
       <TypesNote label="Booking types" items={BOOKING_TYPES} />
+      <MoreCue text="This page is for a quick list. The next page is a full record for one booking that needs more detail. Travel Companion holds both, connected, with no page limit." />
     </RecordPage>
   );
 }
@@ -421,6 +441,9 @@ function BookingRecordPage({ size, index, total }: { size: Size; index: number; 
       <FieldRow fields={["Address", "Contact"]} />
       <Field label="Participants" />
       <Notes count={2} />
+      {index === total && (
+        <MoreCue text="More bookings than fit here? Use the booking register a few pages back for a quick list, photocopy this page for another full record, or add it in Travel Companion instead." />
+      )}
     </RecordPage>
   );
 }
@@ -433,6 +456,9 @@ function BookingConnectionPage({ size, index, total }: { size: Size; index: numb
       <Field label="Because" />
       <Notes label="What happens after this?" count={2} />
       <Notes label="If this changes, what else may be affected?" count={3} />
+      {index === total && (
+        <MoreCue text="More dependencies worth writing down? Photocopy this page, or let Travel Companion walk the change for you automatically, one booking at a time." />
+      )}
     </RecordPage>
   );
 }
@@ -453,6 +479,7 @@ function TransportRegisterPage({ size }: { size: Size }) {
         ]}
         rows={16}
       />
+      <MoreCue text="This page is for a quick list. The next page is a full record for one leg that needs more detail. Travel Companion holds both, connected, with no page limit." />
     </RecordPage>
   );
 }
@@ -467,6 +494,9 @@ function TransportRecordPage({ size, index, total }: { size: Size; index: number
       <FieldRow fields={["Pickup location", "Drop off location"]} />
       <FieldRow fields={["Participants", "Contact"]} />
       <Notes count={2} />
+      {index === total && (
+        <MoreCue text="More legs than fit here? Use the transport register a few pages back for a quick list, photocopy this page for another full record, or add it in the app instead." />
+      )}
     </RecordPage>
   );
 }
@@ -482,6 +512,9 @@ function AccommodationPage({ size, index, total }: { size: Size; index: number; 
       <FieldRow fields={["Contact", "Guests"]} />
       <FieldRow fields={["Room / unit", "Payment status"]} />
       <Notes count={2} />
+      {index === total && (
+        <MoreCue text="Staying more than one place? Photocopy this page for each additional stay, or add it in the app instead." />
+      )}
     </RecordPage>
   );
 }
@@ -495,6 +528,9 @@ function ReservationPage({ size, index, total }: { size: Size; index: number; to
       <FieldRow fields={["Location", "Reference"]} />
       <FieldRow fields={["Participants", "Contact"]} />
       <Notes count={3} />
+      {index === total && (
+        <MoreCue text="More reservations to record? Photocopy this page, or add it in the app instead." />
+      )}
     </RecordPage>
   );
 }
@@ -555,6 +591,7 @@ function OpenThreadsRegisterPage({ size }: { size: Size }) {
         ]}
         rows={16}
       />
+      <MoreCue text="This page is for a quick list. The next page is a full record for one thread that needs more detail. Travel Companion holds both, connected, with no page limit." />
     </RecordPage>
   );
 }
@@ -568,6 +605,9 @@ function ThreadRecordPage({ size, index, total }: { size: Size; index: number; t
       <Notes label="What are we waiting for?" count={2} />
       <Field label="Next action" />
       <FieldRow fields={["Outcome", "Notes"]} />
+      {index === total && (
+        <MoreCue text="More than one thing left open? Use the open threads register a few pages back for a quick list, photocopy this page for another full record, or add it in the app instead." />
+      )}
     </RecordPage>
   );
 }
@@ -608,6 +648,9 @@ function DailyOperationsPage({ size, index, total }: { size: Size; index: number
 
       <Notes label="Important information" count={1} />
       <Notes label="Notes" count={2} />
+      {index === total && (
+        <MoreCue text="Longer trip than this? Photocopy this page for each additional day, or let Travel Companion carry your daily plan automatically." />
+      )}
     </RecordPage>
   );
 }
@@ -626,6 +669,9 @@ function ChangeImpactPage({ size, index, total }: { size: Size; index: number; t
         What needs to be reviewed?
       </Text>
       <RegisterTable columns={[{ label: "Item", flex: 1.2 }, { label: "Reviewed", flex: 0.7 }, { label: "Action", flex: 1.4 }]} rows={5} />
+      {index === total && (
+        <MoreCue text="Something else changed? Photocopy this page, or record it in the app, which walks the impact for you automatically." />
+      )}
     </RecordPage>
   );
 }
@@ -643,6 +689,7 @@ function IncidentPage({ size, index, total }: { size: Size; index: number; total
       <Field label="Contact made" />
       <Notes label="Resolution" count={2} />
       <FieldRow fields={["Final outcome", "Notes"]} />
+      {index === total && <MoreCue text="More than one incident? Photocopy this page, or record it in the app instead." />}
     </RecordPage>
   );
 }
@@ -672,6 +719,7 @@ function TripRecordPage({ size, index, total }: { size: Size; index: number; tot
         columns={[{ label: "Date", flex: 0.7 }, { label: "Event / note", flex: 1.8 }, { label: "Related place", flex: 0.9 }, { label: "Related booking", flex: 1 }]}
         rows={20}
       />
+      {index === total && <MoreCue text="Filled this page? Photocopy it for the rest of the trip, or keep the record in the app instead." />}
     </RecordPage>
   );
 }
@@ -723,7 +771,7 @@ function ActivatePage({ size, code }: { size: Size; code: string }) {
 
         {[
           ["Go to draftpace.com and sign in", "Create an account with your email, or continue with Google."],
-          ["Open draftpace.com/app/redeem", "Or choose Redeem a code from your library once signed in."],
+          ["Open draftpace.com/app/redeem", "Or choose Redeem a code from your account once signed in."],
           ["Enter the code below", "It unlocks Travel Companion on your account for good. One use per account, so keep it somewhere safe."],
         ].map(([title, body], i) => (
           <View key={title} style={{ flexDirection: "row", marginTop: 14, marginBottom: i === 2 ? 0 : 12 }} wrap={false}>

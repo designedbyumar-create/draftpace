@@ -14,7 +14,7 @@ import { test, expect } from "@playwright/test";
 
 test("visiting the canonical route for an owned, not-yet-set-up product redirects to setup", async ({ page }) => {
   await page.goto("/app/activate/monthly-money-reset");
-  await page.getByRole("button", { name: "Add to my library" }).click();
+  await page.getByRole("button", { name: "Add to my account" }).click();
   await expect(page).toHaveURL(/\/app\/products\/monthly-money-reset\/start/);
 
   await page.goto("/app/products/monthly-money-reset");

@@ -44,9 +44,8 @@ describe("publicSignedInAccountMenuItems", () => {
     expect(items.find((item) => item.key === "open-app")?.href).toBe("/app");
   });
 
-  it("includes Library and Account with the correct targets", () => {
+  it("includes Account with the correct target", () => {
     const items = publicSignedInAccountMenuItems(() => {});
-    expect(items.find((item) => item.key === "library")?.href).toBe("/app/library");
     expect(items.find((item) => item.key === "account")?.href).toBe("/app/account");
   });
 

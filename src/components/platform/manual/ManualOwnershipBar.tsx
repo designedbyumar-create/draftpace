@@ -20,7 +20,7 @@ import ManualOwnershipView, { type Ownership } from "./ManualOwnershipView";
  * same discipline as deriveOwnedProducts, where an entitlement is the
  * only thing that ever means somebody doesn't own something.
  */
-export default function ManualOwnershipBar({ productSlug }: { productSlug: string }) {
+export default function ManualOwnershipBar({ productSlug, productTitle }: { productSlug: string; productTitle: string }) {
   const [ownership, setOwnership] = useState<Ownership>({ state: "loading" });
 
   useEffect(() => {
@@ -52,5 +52,5 @@ export default function ManualOwnershipBar({ productSlug }: { productSlug: strin
     };
   }, [productSlug]);
 
-  return <ManualOwnershipView ownership={ownership} productSlug={productSlug} />;
+  return <ManualOwnershipView ownership={ownership} productSlug={productSlug} productTitle={productTitle} />;
 }

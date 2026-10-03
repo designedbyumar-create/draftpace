@@ -54,8 +54,9 @@ export const dynamic = "force-dynamic";
  * words do not already say.
  *
  * The mockup-cycling card this replaced still exists and is still used by
- * the Library (see ShopCardMockup and productScreens.tsx), where an owner
- * benefits from live screens rather than a picture of them.
+ * a product's own companion page (see ShopCardMockup and
+ * productScreens.tsx, consumed there via ManualScreenTour), where an
+ * owner benefits from live screens rather than a picture of them.
  *
  * A listing with no images falls back to its own media, then to an honest
  * placeholder, never a fabricated image.
@@ -156,9 +157,7 @@ export default function ShopIndexPage() {
           Free products are complete, not stripped-down previews. Paid products are billed once, not as a recurring
           subscription, unless a specific listing says otherwise. A struck-through price is the regular price a
           product moves to later, never an inflated number invented to make the current one look bigger. Everything
-          you own lives in your{" "}
-          <TextLink href="/app/library">library</TextLink>
-          , on every device.
+          you own lives in <TextLink href="/app">your account</TextLink>, on every device.
         </p>
       </div>
     </Container>

@@ -31,28 +31,32 @@ export const monthlyMoneyResetShopProduct: ShopProductInput = {
   objections: [],
   // Emptied by the content collapse: all four of these restated a
   // problemsSolved solution almost word for word, and the Shop page and
-  // the Library manual rendered them separately, so the same sentence was
+  // the companion page rendered them separately, so the same sentence was
   // read twice.
   outcomes: [],
   problemsSolved: [
     {
       problem: "You don't know what's actually safe to spend without doing the math yourself, every time.",
       solution: "A single Safe-to-Spend figure that updates as the month goes on, no mental math required.",
+      label: "Safe-to-spend figure",
     },
     {
       problem: "A bill you haven't paid yet still feels like money you have.",
       solution:
         "Protected bills stay held back whether they're paid or not, so the number never assumes money you actually owe.",
+      label: "Bills stay protected",
     },
     {
       problem: "Staying on top of it usually turns into a chore, or gets abandoned by month two.",
       solution:
         "A short weekly check-in keeps the picture accurate, and a quiet way back in if you've been away, no overdue pile-up waiting.",
+      label: "A short weekly check-in",
     },
     {
       problem: "The month looks fine on average and still goes wrong on one particular day.",
       solution:
         "The tightest day this cycle, named with its date and the amount you'd be down to, worked out from the bill and income dates you already entered.",
+      label: "Your tightest day, named",
     },
   ],
   howItWorks: [
@@ -63,7 +67,7 @@ export const monthlyMoneyResetShopProduct: ShopProductInput = {
     "Close the month when you're ready. Recurring bills and income carry into the next one; everything else starts fresh.",
   ],
   access: "free",
-  purchaseAction: { label: "Add free to my library", href: "/app/activate/monthly-money-reset" },
+  purchaseAction: { label: "Get it, free", href: "/app/activate/monthly-money-reset" },
   // Only used by the Store list's small thumbnail (ProductVisual in
   // shop/page.tsx). The product page itself uses bespoke mobile mockups
   // (monthlyMoneyResetVisuals.tsx), not this screenshot.
@@ -108,7 +112,7 @@ export const monthlyMoneyResetShopProduct: ShopProductInput = {
    * it for a few weeks" were the same fear asked from two directions, so
    * they are one question now.
    *
-   * The Shop page shows the deciding half; the Library manual shows the
+   * The Shop page shows the deciding half; the companion page shows the
    * owning half, because somebody who already has it does not need the
    * pitch answered again.
    */

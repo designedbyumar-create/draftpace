@@ -346,7 +346,7 @@ function ActivatePage({ size, code }: { size: "LETTER" | "A4"; code: string }) {
 
         {[
           ["Go to draftpace.com and sign in", "Create an account with your email, or continue with Google."],
-          ["Open draftpace.com/app/redeem", "Or choose Redeem a code from your library once signed in."],
+          ["Open draftpace.com/app/redeem", "Or choose Redeem a code from your account once signed in."],
           [
             "Enter the code below",
             "It unlocks the Personal Life Affairs Companion on your account for good. One use per account, so keep it somewhere safe.",

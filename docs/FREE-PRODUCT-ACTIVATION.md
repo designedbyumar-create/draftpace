@@ -1,6 +1,6 @@
 # Free product activation
 
-How a customer goes from "Add free to my library" on the public Shop to a
+How a customer goes from "Get it, free" on the public Shop to a
 working product instance, and how that grant is kept safe. Monthly Money
 Reset is the first product to use this path; the mechanism is written to be
 reusable by a future free product without code changes, only a new row in
@@ -10,7 +10,7 @@ reusable by a future free product without code changes, only a new row in
 
 ```
 /shop/monthly-money-reset
-  "Add free to my library" → <Link href="/app/activate/monthly-money-reset">  (safe GET)
+  "Get it, free" → <Link href="/app/activate/monthly-money-reset">  (safe GET)
 
 /app/activate/monthly-money-reset                                            (safe GET)
   Under /app/**, so src/proxy.ts already redirects a signed-out visitor to
