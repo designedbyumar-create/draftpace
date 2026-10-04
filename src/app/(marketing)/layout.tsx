@@ -2,7 +2,7 @@ import PublicNavSession from "@/components/public/PublicNavSession";
 import PublicFooter from "@/components/public/PublicFooter";
 import { registerShopFixtures } from "@/shop/fixtures";
 import { registerRealShopProducts } from "@/shop/products";
-import { organizationStructuredData, websiteStructuredData } from "@/lib/structuredData";
+import { organizationStructuredData, websiteStructuredData, jsonLd } from "@/lib/structuredData";
 
 /**
  * No session read here. The header learns who is signed in in the browser
@@ -18,11 +18,11 @@ export default function MarketingLayout({ children }: { children: React.ReactNod
     <div className="flex min-h-screen flex-col bg-[var(--bg)] text-[var(--text)]">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationStructuredData()) }}
+        dangerouslySetInnerHTML={{ __html: jsonLd(organizationStructuredData()) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteStructuredData()) }}
+        dangerouslySetInnerHTML={{ __html: jsonLd(websiteStructuredData()) }}
       />
       <PublicNavSession />
       {/* overflow-x-clip, not hidden: a decorative element that bleeds

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import Button from "@/design-system/Button";
 import Container from "@/design-system/Container";
 import TextLink from "@/design-system/TextLink";
@@ -9,6 +10,7 @@ import { shopRegistry } from "@/shop/registry";
 import { ensureShopRegistered } from "@/shop/ensureRegistered";
 import { LIFE_AREAS } from "@/content/areas";
 import ShopGrid, { type ShopFilterArea, type ShopGridEntry } from "./ShopGrid";
+import { collectionStructuredData, jsonLd } from "@/lib/structuredData";
 
 /**
  * Slugs with generated store images in public/store. Listed rather than
@@ -138,7 +140,39 @@ export default function ShopIndexPage() {
 
   return (
     <Container width="wide" className="pb-24 pt-16 sm:pt-20">
-      <p className="text-eyebrow font-bold uppercase text-[var(--brand-ink)]">The Companion Series</p>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: jsonLd(
+            collectionStructuredData({
+              name: "The Companion Series",
+              description: "Find the one product that fits your situation. Every product is built around one specific problem.",
+              path: "/shop",
+              trail: [
+                { name: "Home", path: "/" },
+                { name: "Shop", path: "/shop" },
+              ],
+              items: entries.map((entry) => ({ title: entry.product.title, path: `/shop/${entry.product.slug}` })),
+            }),
+          ),
+        }}
+      />
+      <nav aria-label="Breadcrumb">
+        <ol className="flex items-center gap-1.5 text-eyebrow font-bold text-[var(--muted)]">
+          <li>
+            <Link href="/" className="transition-opacity hover:opacity-70">
+              Home
+            </Link>
+          </li>
+          <li aria-hidden className="opacity-60">
+            /
+          </li>
+          <li aria-current="page" className="text-[var(--faint)]">
+            Shop
+          </li>
+        </ol>
+      </nav>
+      <p className="mt-4 text-eyebrow font-bold uppercase text-[var(--brand-ink)]">The Companion Series</p>
       <h1 className="mt-3 max-w-2xl text-heading-lg font-serif font-semibold tracking-tight">
         Find the one that fits your situation.
       </h1>

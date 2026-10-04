@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Container from "@/design-system/Container";
-import { founderStructuredData } from "@/lib/structuredData";
+import { founderStructuredData, jsonLd } from "@/lib/structuredData";
 
 export const metadata: Metadata = {
   title: "About",
@@ -13,7 +13,7 @@ export default function AboutPage() {
     <Container width="narrow" className="pb-24 pt-16 sm:pt-20">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(founderStructuredData()) }}
+        dangerouslySetInnerHTML={{ __html: jsonLd(founderStructuredData()) }}
       />
       <p className="text-eyebrow font-bold uppercase text-[var(--brand-ink)]">About</p>
       <h1 className="mt-3 text-heading-lg font-serif font-semibold tracking-tight">

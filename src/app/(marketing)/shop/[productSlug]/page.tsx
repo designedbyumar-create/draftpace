@@ -27,6 +27,7 @@ import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { getLemonSqueezyCheckoutUrl, hasLemonSqueezyCheckout } from "@/shop/lemonSqueezyCheckout";
 import CheckoutButton from "@/components/shop/CheckoutButton";
 import { getAreaForProduct } from "@/content/areas";
+import { jsonLd } from "@/lib/structuredData";
 import { GuidesForCompanion } from "@/components/public/guides/GuideLinks";
 import { getGuideBySlug } from "@/content/guides";
 import { withPreservedUtm } from "@/lib/analytics/utm";
@@ -177,10 +178,10 @@ export default async function ShopProductPage({
     <div {...{ [PRODUCT_THEME_ATTRIBUTE]: "" }} style={definition ? productThemeStyle(definition.theme) : undefined}>
       <ViewProductTracker productId={product.id} productName={product.title} productCategory={productCategory} />
       {structuredData && (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(structuredData) }} />
       )}
       {faqStructuredData && (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(faqStructuredData) }} />
       )}
 
       <Container width="wide" className="pb-24 pt-10 sm:pt-12">

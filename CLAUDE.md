@@ -146,8 +146,9 @@ for the registry/contracts, `docs/PRODUCT-FAMILIES.md` for the six initial
 families, `docs/DATA-BOUNDARIES.md` for platform vs. product vs.
 product-instance state, `docs/DESIGN-SYSTEM.md` for tokens/primitives,
 `docs/COMMERCE.md` for the purchase flow end to end,
-`docs/ADMIN-AND-OPERATIONS.md` for the admin shell, and `docs/RUNBOOK.md`
-when something is broken in production.
+`docs/ADMIN-AND-OPERATIONS.md` for the admin shell, `docs/SEO-FOUNDATION.md`
+for crawlability, structured data, and the keyword/topic architecture, and
+`docs/RUNBOOK.md` when something is broken in production.
 
 `docs/archive/` holds superseded planning documents. They record how
 decisions were reached and are never current guidance.

@@ -25,6 +25,20 @@ const nextConfig: NextConfig = {
   outputFileTracingRoot: path.join(__dirname),
   async redirects() {
     return [
+      // /store was the pre-Phase-1 catalog route (src/app/store/page.tsx,
+      // since deleted), replaced by /shop. Google had it indexed
+      // (draftpace.com/store?category=habits, real impressions in Search
+      // Console) and it currently hard-404s. A permanent redirect to the
+      // one real catalog page is what actually retires the URL and passes
+      // its equity on, the same reasoning every redirect below already
+      // follows. /shop doesn't read a `category` query param itself, so
+      // one that rides along on an incoming request is simply ignored,
+      // not an error.
+      {
+        source: "/store",
+        destination: "/shop",
+        permanent: true,
+      },
       {
         source: "/guides/planning-a-move-without-losing-the-details",
         destination: "/guides/home",

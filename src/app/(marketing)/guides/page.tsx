@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Container from "@/design-system/Container";
 import GuidesExplorer, {
   type ExplorerArea,
@@ -8,6 +9,7 @@ import GuideCard from "@/components/public/guides/GuideCard";
 import { areaIdentity } from "@/components/public/guides/areaIdentity";
 import { guideArt } from "@/content/guideArt";
 import { GUIDES, SERIES, areasWithGuides, readingMinutes, readingTimeLabel, seriesGuides } from "@/content/guides";
+import { collectionStructuredData, jsonLd } from "@/lib/structuredData";
 
 export const metadata: Metadata = {
   title: "Guides",
@@ -59,9 +61,54 @@ export default function GuidesIndexPage() {
 
   const { Mark: SeriesMark } = areaIdentity(SERIES);
 
+  // Every area hub already carries a CollectionPage + BreadcrumbList pair
+  // (see the [guideSlug] route); the index one level up never did. Same
+  // shape here, so a crawler reads one consistent collection pattern
+  // across the whole guides tree rather than hubs doing it and the index
+  // not. The breadcrumb below matches this trail exactly, per
+  // collectionStructuredData's own rule that the markup must match what a
+  // reader can see.
+  const trail = [
+    { name: "Home", path: "/" },
+    { name: "Guides", path: "/guides" },
+  ];
+
   return (
     <Container width="wide" className="pb-24 pt-14 sm:pt-20">
-      <p className="text-eyebrow font-bold text-[var(--brand-ink)]">Guides</p>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: jsonLd(
+            collectionStructuredData({
+              name: "Guides",
+              description:
+                "Practical guides for the parts of life that are hard to keep track of: money, home, focus, family, affairs and travel.",
+              path: "/guides",
+              trail,
+              items: GUIDES.filter((guide) => guide.areaSlug !== null).map((guide) => ({
+                title: guide.title,
+                path: `/guides/${guide.slug}`,
+              })),
+            }),
+          ),
+        }}
+      />
+      <nav aria-label="Breadcrumb">
+        <ol className="flex items-center gap-1.5 text-eyebrow font-bold text-[var(--muted)]">
+          <li>
+            <Link href="/" className="transition-opacity hover:opacity-70">
+              Home
+            </Link>
+          </li>
+          <li aria-hidden className="opacity-60">
+            /
+          </li>
+          <li aria-current="page" className="text-[var(--faint)]">
+            Guides
+          </li>
+        </ol>
+      </nav>
+      <p className="mt-4 text-eyebrow font-bold text-[var(--brand-ink)]">Guides</p>
       <h1 className="mt-3 max-w-2xl text-heading-lg font-serif font-semibold tracking-tight text-balance">
         Practical help, whether or not you buy anything.
       </h1>

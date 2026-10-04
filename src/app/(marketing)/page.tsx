@@ -9,7 +9,7 @@ import type { SceneData, PosterTheme } from "@/components/public/home/posterType
 import TellItOnce from "@/components/public/home/TellItOnce";
 import TrustSection from "@/components/public/home/TrustSection";
 import { StartWithGuides } from "@/components/public/guides/GuideLinks";
-import { softwareApplicationStructuredData } from "@/lib/structuredData";
+import { softwareApplicationStructuredData, jsonLd } from "@/lib/structuredData";
 import { LIFE_AREAS } from "@/content/areas";
 import { POSTER_SCENES } from "@/content/homepagePosters";
 import { accentWash, deriveDarkTones } from "@/design-system/accentTone";
@@ -194,7 +194,7 @@ export default function HomePage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationStructuredData()) }}
+        dangerouslySetInnerHTML={{ __html: jsonLd(softwareApplicationStructuredData()) }}
       />
 
       {/* 1. Hero: which part of life is this for */}

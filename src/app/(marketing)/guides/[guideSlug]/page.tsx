@@ -377,7 +377,7 @@ function AreaHub({ slug }: { slug: string }) {
               description: `Guides for when ${area.situation.charAt(0).toLowerCase()}${area.situation.slice(1, -1)}.`,
               path: `/guides/${area.slug}`,
               trail: hubTrail,
-              guides,
+              items: guides.map((guide) => ({ title: guide.title, path: `/guides/${guide.slug}` })),
             }),
           ),
         }}

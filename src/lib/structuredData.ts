@@ -207,7 +207,8 @@ export function collectionStructuredData(input: {
   description: string;
   path: string;
   trail: Crumb[];
-  guides: { slug: string; title: string }[];
+  /** Each item's own full site-relative path (e.g. `/guides/x` or `/shop/x`), never assumed from this page's own path, since a collection can list a different route than it lives under. */
+  items: { title: string; path: string }[];
 }) {
   const url = `${SITE_URL}${input.path}`;
   return {
@@ -222,12 +223,12 @@ export function collectionStructuredData(input: {
         isPartOf: { "@type": "WebSite", name: "Draftpace", url: SITE_URL },
         mainEntity: {
           "@type": "ItemList",
-          numberOfItems: input.guides.length,
-          itemListElement: input.guides.map((guide, index) => ({
+          numberOfItems: input.items.length,
+          itemListElement: input.items.map((item, index) => ({
             "@type": "ListItem",
             position: index + 1,
-            name: guide.title,
-            url: `${SITE_URL}/guides/${guide.slug}`,
+            name: item.title,
+            url: `${SITE_URL}${item.path}`,
           })),
         },
       },

@@ -49,17 +49,33 @@ describe("guide structured data", () => {
 });
 
 describe("collection structured data", () => {
-  it("lists every guide with a position", () => {
+  it("lists every item with a position", () => {
     const graph = collectionStructuredData({
       name: "Vehicles guides",
       description: "d",
       path: "/guides/vehicles",
       trail: trail.slice(0, 3),
-      guides: [{ slug: "a", title: "A" }, { slug: "b", title: "B" }],
+      items: [{ title: "A", path: "/guides/a" }, { title: "B", path: "/guides/b" }],
     })["@graph"];
     const list = (graph[0] as { mainEntity: { numberOfItems: number; itemListElement: { position: number }[] } }).mainEntity;
     expect(list.numberOfItems).toBe(2);
     expect(list.itemListElement.map((i) => i.position)).toEqual([1, 2]);
+  });
+
+  // This function is shared by /guides (hubs and the index) and /shop, so
+  // each item's own path has to win. A hardcoded assumption here would
+  // silently point every Shop product's ListItem at a /guides/ URL that
+  // does not exist for it.
+  it("builds each item's url from its own path, not a hardcoded section", () => {
+    const graph = collectionStructuredData({
+      name: "The Companion Series",
+      description: "d",
+      path: "/shop",
+      trail: trail.slice(0, 2),
+      items: [{ title: "Vehicle Maintenance Companion", path: "/shop/vehicle-maintenance-companion" }],
+    })["@graph"];
+    const list = (graph[0] as { mainEntity: { itemListElement: { url: string }[] } }).mainEntity;
+    expect(list.itemListElement[0].url).toBe("https://draftpace.com/shop/vehicle-maintenance-companion");
   });
 });
 
