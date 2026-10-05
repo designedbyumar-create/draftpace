@@ -26,9 +26,15 @@ import type { GuideHeading } from "@/content/guideHeadings";
  * the headline and the first paragraph would push the article itself
  * below the fold.
  *
- * The active section is tracked with an IntersectionObserver against a
- * band near the top of the viewport rather than by comparing scroll
- * offsets on every frame.
+ * The active section is the last heading whose top has scrolled past a
+ * line near the top of the viewport, recomputed on every scroll tick
+ * (rAF-throttled) rather than tracked via IntersectionObserver: an
+ * observer only fires on entries to/from a watched band, so a heading
+ * whose band-crossing happens between two observer callbacks (any fast
+ * scroll, or a short section whose heading never lingers in a narrow
+ * band) is skipped entirely and the indicator is left stuck on
+ * whichever heading it last caught. Comparing positions directly on
+ * every tick can't skip one.
  */
 export default function GuideContents({
   headings,
@@ -55,20 +61,37 @@ export default function GuideContents({
       .filter((element): element is HTMLElement => element !== null);
     if (elements.length === 0) return;
 
-    // A band across the upper third: a heading is "current" from the
-    // moment it reaches the top area until the next one does.
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-        if (visible.length > 0) setActiveId(visible[0].target.id);
-      },
-      { rootMargin: "-88px 0px -66% 0px", threshold: 0 }
-    );
+    // Roughly the sticky header's height: a heading counts as "current"
+    // once it reaches this line, same line the old IntersectionObserver
+    // band started from.
+    const THRESHOLD = 88;
 
-    for (const element of elements) observer.observe(element);
-    return () => observer.disconnect();
+    function updateActive() {
+      let current: string | null = null;
+      for (const element of elements) {
+        if (element.getBoundingClientRect().top <= THRESHOLD) current = element.id;
+        else break;
+      }
+      setActiveId(current);
+    }
+
+    let ticking = false;
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        updateActive();
+        ticking = false;
+      });
+    }
+
+    updateActive();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, [headings]);
 
   if (headings.length < 3) return null;

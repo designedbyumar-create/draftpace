@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Avatar from "@/design-system/Avatar";
 import MobileSheet from "@/design-system/MobileSheet";
@@ -64,6 +64,17 @@ export default function AccountMenu({
   function closeDesktopMenu() {
     detailsRef.current?.removeAttribute("open");
   }
+
+  useEffect(() => {
+    function handleOutsideClick(event: MouseEvent) {
+      const details = detailsRef.current;
+      if (details?.hasAttribute("open") && !details.contains(event.target as Node)) {
+        closeDesktopMenu();
+      }
+    }
+    document.addEventListener("click", handleOutsideClick);
+    return () => document.removeEventListener("click", handleOutsideClick);
+  }, []);
 
   return (
     <>
