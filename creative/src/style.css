@@ -1,0 +1,62 @@
+/*
+ * Platform tokens copied VERBATIM (light mode only) from the real
+ * src/app/globals.css :root block, lines 25-173 as of this build. This
+ * project renders light mode only, so only those values are needed here.
+ * Not reconstructed, not approximated: copied from the real file. If
+ * globals.css changes these values, this file drifts and must be re-synced
+ * by hand for the MVP (see creative/README.md, "Known gaps").
+ *
+ * MMR's own --mmr-* tokens are NOT copied here: they come from the real
+ * src/products/monthly-money-reset/theme.ts functions at render time via
+ * ui-adapter/monthlyMoneyReset.tsx, so those stay a live import, not a copy.
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * NOT Inter / Space Mono for this MVP render. Both a live
+ * fonts.googleapis.com @import and a self-hosted public/fonts/ +
+ * staticFile() @font-face (src/fonts.ts, now unused) hung the Remotion
+ * render indefinitely in this environment, in two different render phases.
+ * Rather than keep fighting font-loading infrastructure, the MVP falls
+ * back to a close system stack below. This changes the exact typeface
+ * only — every real component, token, color, layout and data value is
+ * untouched. See README.md, "Known gaps," for the real fix later.
+ */
+
+:root {
+  --surface: #ffffff;
+  --surface-muted: #f1efe8;
+  --surface-strong: #e8e4da;
+  --surface-sunken: #efece4;
+  --text: #1b1a16;
+  --muted: #66625a;
+  --faint: #8a857a;
+  --primary-contrast: #ffffff;
+  --success: #12795b;
+  --success-soft: #e3f3ec;
+  --warning: #9a5a11;
+  --warning-soft: #f7eedb;
+  --danger: #b02820;
+  --danger-soft: #f9eae7;
+  --focus-ring: rgba(14, 110, 117, 0.4);
+
+  /* Matches the real app's next/font/google variable names so Tailwind's
+     font-sans/font-mono utilities (inherited via the preset) resolve the
+     same way. System stacks for this MVP render, not the real Inter/Space
+     Mono webfonts — see the comment above. */
+  --font-inter: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-space-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--surface);
+}
+
+* {
+  box-sizing: border-box;
+}

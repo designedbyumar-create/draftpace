@@ -1,0 +1,81 @@
+{
+  "id": "feature-posts-personal-finance-companion",
+  "posts": [
+    {
+      "id": "01-personal-finance-companion",
+      "themeSlug": "personal-finance-companion",
+      "layout": "tilt",
+      "eyebrow": "PERSONAL FINANCE COMPANION",
+      "headline": [
+        "Your money is",
+        "scattered across",
+        "five different apps."
+      ],
+      "ui": {
+        "kind": "screen",
+        "src": "screens/personal-finance-companion-records.png"
+      },
+      "product": {
+        "name": "Personal Finance Companion",
+        "price": "$49"
+      }
+    },
+    {
+      "id": "02-personal-finance-companion",
+      "themeSlug": "personal-finance-companion",
+      "layout": "window",
+      "eyebrow": "PERSONAL FINANCE COMPANION",
+      "headline": [
+        "You have no idea",
+        "when a debt will",
+        "actually be gone."
+      ],
+      "ui": {
+        "kind": "screen",
+        "src": "screens/personal-finance-companion-debt.png"
+      },
+      "product": {
+        "name": "Personal Finance Companion",
+        "price": "$49"
+      }
+    },
+    {
+      "id": "03-personal-finance-companion",
+      "themeSlug": "personal-finance-companion",
+      "layout": "tilt",
+      "eyebrow": "PERSONAL FINANCE COMPANION",
+      "headline": [
+        "Which bills have",
+        "you actually paid",
+        "this month?"
+      ],
+      "ui": {
+        "kind": "screen",
+        "src": "screens/personal-finance-companion-bills.png"
+      },
+      "product": {
+        "name": "Personal Finance Companion",
+        "price": "$49"
+      }
+    },
+    {
+      "id": "04-personal-finance-companion",
+      "themeSlug": "personal-finance-companion",
+      "layout": "window",
+      "eyebrow": "PERSONAL FINANCE COMPANION",
+      "headline": [
+        "What does a normal",
+        "month actually look like,",
+        "once it's counted?"
+      ],
+      "ui": {
+        "kind": "screen",
+        "src": "screens/personal-finance-companion-printables.png"
+      },
+      "product": {
+        "name": "Personal Finance Companion",
+        "price": "$49"
+      }
+    }
+  ]
+}

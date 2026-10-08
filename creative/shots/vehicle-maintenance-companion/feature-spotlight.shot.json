@@ -1,0 +1,127 @@
+{
+  "id": "feature-spotlight-vehicle-maintenance-companion",
+  "product": "vehicle-maintenance-companion",
+  "themeSlug": "vehicle-maintenance-companion",
+  "format": "feature-spotlight",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "beats": [
+    {
+      "id": "problem",
+      "kind": "typography",
+      "startFrame": 0,
+      "durationFrames": 85,
+      "typography": {
+        "lines": [
+          "Nobody remembers the",
+          "exact interval they",
+          "were quoted."
+        ]
+      },
+      "camera": {
+        "move": "static"
+      },
+      "transition": {
+        "out": "blurDissolve",
+        "frames": 15
+      },
+      "sound": {
+        "sfx": null
+      },
+      "caption": null
+    },
+    {
+      "id": "noise",
+      "kind": "noise",
+      "startFrame": 85,
+      "durationFrames": 75,
+      "typography": {
+        "lines": [
+          "was it 5,000 miles?",
+          "when was it last done?",
+          "is this even due?"
+        ]
+      },
+      "camera": {
+        "move": "static"
+      },
+      "transition": {
+        "in": "blurDissolve",
+        "out": "blurDissolve",
+        "frames": 15
+      },
+      "sound": {
+        "sfx": "whoosh-sweep"
+      },
+      "caption": null
+    },
+    {
+      "id": "wordmark",
+      "kind": "wordmark",
+      "startFrame": 160,
+      "durationFrames": 70,
+      "typography": {
+        "eyebrow": "DRAFTPACE",
+        "headline": "Vehicle Maintenance Companion"
+      },
+      "camera": {
+        "move": "static"
+      },
+      "transition": {
+        "in": "blurDissolve",
+        "frames": 15
+      },
+      "sound": {
+        "sfx": "chime-reveal"
+      },
+      "caption": null
+    },
+    {
+      "id": "reveal",
+      "kind": "screen",
+      "startFrame": 230,
+      "durationFrames": 200,
+      "screen": {
+        "src": "screens/vehicle-maintenance-companion-vehicles.png"
+      },
+      "camera": {
+        "move": "pushIn",
+        "fromScale": 1,
+        "toScale": 1.07
+      },
+      "transition": {
+        "in": "blurDissolve",
+        "frames": 15
+      },
+      "sound": {
+        "sfx": "click-settle"
+      },
+      "caption": "Type it in once. Keep it, editable, for good."
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "startFrame": 430,
+      "durationFrames": 50,
+      "typography": {
+        "headline": "Available now.",
+        "sub": "draftpace.com/shop · $34"
+      },
+      "camera": {
+        "move": "static"
+      },
+      "transition": {
+        "in": "blurDissolve",
+        "frames": 15
+      },
+      "sound": {
+        "sfx": null
+      },
+      "cta": {
+        "label": "Shop",
+        "url": "draftpace.com/shop"
+      }
+    }
+  ]
+}

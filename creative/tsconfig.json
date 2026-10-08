@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      // Points "@/*" at the REAL Draftpace app's src/, exactly like the
+      // app's own tsconfig.json. See remotion.config.ts for the matching
+      // webpack alias and why it replaces rather than merges with
+      // Remotion's own default "@" entry.
+      "@/*": ["../src/*"]
+    }
+  },
+  "include": ["src/**/*", "shots/**/*"]
+}

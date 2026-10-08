@@ -1,0 +1,78 @@
+{
+  "id": "feature-posts-monthly-money-reset",
+  "posts": [
+    {
+      "id": "01-safe-to-spend",
+      "layout": "tilt",
+      "eyebrow": "MONTHLY MONEY RESET",
+      "headline": [
+        "What's actually",
+        "safe to spend?",
+        "Stop doing the math."
+      ],
+      "ui": {
+        "kind": "safeToSpendCard"
+      },
+      "product": {
+        "name": "Monthly Money Reset",
+        "price": "Free"
+      },
+      "themeSlug": "monthly-money-reset"
+    },
+    {
+      "id": "02-bills-protected",
+      "layout": "window",
+      "eyebrow": "MONTHLY MONEY RESET",
+      "headline": [
+        "A bill you haven't paid",
+        "still feels like",
+        "money you have."
+      ],
+      "ui": {
+        "kind": "safeToSpendCard"
+      },
+      "product": {
+        "name": "Monthly Money Reset",
+        "price": "Free"
+      },
+      "themeSlug": "monthly-money-reset"
+    },
+    {
+      "id": "03-weekly-check-in",
+      "layout": "tilt",
+      "eyebrow": "MONTHLY MONEY RESET",
+      "headline": [
+        "Most budgets get",
+        "abandoned by",
+        "month two."
+      ],
+      "ui": {
+        "kind": "screen",
+        "src": "screens/monthly-money-reset-progress.png"
+      },
+      "product": {
+        "name": "Monthly Money Reset",
+        "price": "Free"
+      },
+      "themeSlug": "monthly-money-reset"
+    },
+    {
+      "id": "04-tightest-day",
+      "layout": "window",
+      "eyebrow": "MONTHLY MONEY RESET",
+      "headline": [
+        "The month looks fine",
+        "on average. It still",
+        "goes wrong on one day."
+      ],
+      "ui": {
+        "kind": "safeToSpendCard"
+      },
+      "product": {
+        "name": "Monthly Money Reset",
+        "price": "Free"
+      },
+      "themeSlug": "monthly-money-reset"
+    }
+  ]
+}

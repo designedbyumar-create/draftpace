@@ -1,0 +1,127 @@
+{
+  "id": "feature-spotlight-family-health-binder",
+  "product": "family-health-binder",
+  "themeSlug": "family-health-binder",
+  "format": "feature-spotlight",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "beats": [
+    {
+      "id": "problem",
+      "kind": "typography",
+      "startFrame": 0,
+      "durationFrames": 85,
+      "typography": {
+        "lines": [
+          "Every form asks",
+          "the same questions.",
+          "You rebuild from memory."
+        ]
+      },
+      "camera": {
+        "move": "static"
+      },
+      "transition": {
+        "out": "blurDissolve",
+        "frames": 15
+      },
+      "sound": {
+        "sfx": null
+      },
+      "caption": null
+    },
+    {
+      "id": "noise",
+      "kind": "noise",
+      "startFrame": 85,
+      "durationFrames": 75,
+      "typography": {
+        "lines": [
+          "what are they allergic to?",
+          "who's their doctor?",
+          "what dose again?"
+        ]
+      },
+      "camera": {
+        "move": "static"
+      },
+      "transition": {
+        "in": "blurDissolve",
+        "out": "blurDissolve",
+        "frames": 15
+      },
+      "sound": {
+        "sfx": "whoosh-sweep"
+      },
+      "caption": null
+    },
+    {
+      "id": "wordmark",
+      "kind": "wordmark",
+      "startFrame": 160,
+      "durationFrames": 70,
+      "typography": {
+        "eyebrow": "DRAFTPACE",
+        "headline": "Family Health Binder"
+      },
+      "camera": {
+        "move": "static"
+      },
+      "transition": {
+        "in": "blurDissolve",
+        "frames": 15
+      },
+      "sound": {
+        "sfx": "chime-reveal"
+      },
+      "caption": null
+    },
+    {
+      "id": "reveal",
+      "kind": "screen",
+      "startFrame": 230,
+      "durationFrames": 200,
+      "screen": {
+        "src": "screens/family-health-binder-members.png"
+      },
+      "camera": {
+        "move": "pushIn",
+        "fromScale": 1,
+        "toScale": 1.07
+      },
+      "transition": {
+        "in": "blurDissolve",
+        "frames": 15
+      },
+      "sound": {
+        "sfx": "click-settle"
+      },
+      "caption": "One card per person. Printed in the order the form asks."
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "startFrame": 430,
+      "durationFrames": 50,
+      "typography": {
+        "headline": "Available now.",
+        "sub": "draftpace.com/shop · $34"
+      },
+      "camera": {
+        "move": "static"
+      },
+      "transition": {
+        "in": "blurDissolve",
+        "frames": 15
+      },
+      "sound": {
+        "sfx": null
+      },
+      "cta": {
+        "label": "Shop",
+        "url": "draftpace.com/shop"
+      }
+    }
+  ]
+}

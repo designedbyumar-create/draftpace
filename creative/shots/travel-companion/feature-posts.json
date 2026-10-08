@@ -1,0 +1,81 @@
+{
+  "id": "feature-posts-travel-companion",
+  "posts": [
+    {
+      "id": "01-travel-companion",
+      "themeSlug": "travel-companion",
+      "layout": "tilt",
+      "eyebrow": "TRAVEL COMPANION",
+      "headline": [
+        "Confirmation numbers live",
+        "in six different",
+        "inboxes."
+      ],
+      "ui": {
+        "kind": "screen",
+        "src": "screens/travel-companion-itinerary.png"
+      },
+      "product": {
+        "name": "Travel Companion",
+        "price": "$34"
+      }
+    },
+    {
+      "id": "02-travel-companion",
+      "themeSlug": "travel-companion",
+      "layout": "window",
+      "eyebrow": "TRAVEL COMPANION",
+      "headline": [
+        "Your flight moved.",
+        "What else moved",
+        "with it?"
+      ],
+      "ui": {
+        "kind": "screen",
+        "src": "screens/travel-companion-trip.png"
+      },
+      "product": {
+        "name": "Travel Companion",
+        "price": "$34"
+      }
+    },
+    {
+      "id": "03-travel-companion",
+      "themeSlug": "travel-companion",
+      "layout": "tilt",
+      "eyebrow": "TRAVEL COMPANION",
+      "headline": [
+        "Phone's at 4%.",
+        "That's the only",
+        "copy of the plan."
+      ],
+      "ui": {
+        "kind": "screen",
+        "src": "screens/travel-companion-printables.png"
+      },
+      "product": {
+        "name": "Travel Companion",
+        "price": "$34"
+      }
+    },
+    {
+      "id": "04-travel-companion",
+      "themeSlug": "travel-companion",
+      "layout": "window",
+      "eyebrow": "TRAVEL COMPANION",
+      "headline": [
+        "What's actually",
+        "happening today,",
+        "versus just noise."
+      ],
+      "ui": {
+        "kind": "screen",
+        "src": "screens/travel-companion-workspace.png"
+      },
+      "product": {
+        "name": "Travel Companion",
+        "price": "$34"
+      }
+    }
+  ]
+}

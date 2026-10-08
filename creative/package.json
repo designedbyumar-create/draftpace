@@ -1,0 +1,33 @@
+{
+  "name": "draftpace-creative",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Draftpace Creative Engine. An isolated Remotion workspace that imports real Draftpace components, calculations and theme tokens from ../src to render product videos and images. Never run as part of the Next.js app. See .claude/skills/creative-engine/SKILL.md for the full guide.",
+  "scripts": {
+    "preview": "remotion studio src/index.ts",
+    "render": "bash scripts/render.sh",
+    "render:images": "node scripts/render-images.mjs",
+    "check-frames": "node scripts/check-frames.mjs"
+  },
+  "dependencies": {
+    "@phosphor-icons/react": "^2.1.10",
+    "@remotion/bundler": "^4.0.300",
+    "@remotion/cli": "^4.0.300",
+    "@remotion/renderer": "^4.0.300",
+    "framer-motion": "^12.40.0",
+    "next": "16.2.6",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "remotion": "^4.0.300",
+    "sharp": "^0.33.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "autoprefixer": "^10",
+    "postcss": "^8",
+    "postcss-loader": "^8.2.1",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^5"
+  }
+}

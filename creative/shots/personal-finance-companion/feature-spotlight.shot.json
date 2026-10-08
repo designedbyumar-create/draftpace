@@ -1,0 +1,127 @@
+{
+  "id": "feature-spotlight-personal-finance-companion",
+  "product": "personal-finance-companion",
+  "themeSlug": "personal-finance-companion",
+  "format": "feature-spotlight",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "beats": [
+    {
+      "id": "problem",
+      "kind": "typography",
+      "startFrame": 0,
+      "durationFrames": 85,
+      "typography": {
+        "lines": [
+          "Your money is",
+          "scattered across",
+          "five different apps."
+        ]
+      },
+      "camera": {
+        "move": "static"
+      },
+      "transition": {
+        "out": "blurDissolve",
+        "frames": 15
+      },
+      "sound": {
+        "sfx": null
+      },
+      "caption": null
+    },
+    {
+      "id": "noise",
+      "kind": "noise",
+      "startFrame": 85,
+      "durationFrames": 75,
+      "typography": {
+        "lines": [
+          "what did I spend?",
+          "is that bill paid?",
+          "what's left this month?"
+        ]
+      },
+      "camera": {
+        "move": "static"
+      },
+      "transition": {
+        "in": "blurDissolve",
+        "out": "blurDissolve",
+        "frames": 15
+      },
+      "sound": {
+        "sfx": "whoosh-sweep"
+      },
+      "caption": null
+    },
+    {
+      "id": "wordmark",
+      "kind": "wordmark",
+      "startFrame": 160,
+      "durationFrames": 70,
+      "typography": {
+        "eyebrow": "DRAFTPACE",
+        "headline": "Personal Finance Companion"
+      },
+      "camera": {
+        "move": "static"
+      },
+      "transition": {
+        "in": "blurDissolve",
+        "frames": 15
+      },
+      "sound": {
+        "sfx": "chime-reveal"
+      },
+      "caption": null
+    },
+    {
+      "id": "reveal",
+      "kind": "screen",
+      "startFrame": 230,
+      "durationFrames": 200,
+      "screen": {
+        "src": "screens/personal-finance-companion-records.png"
+      },
+      "camera": {
+        "move": "pushIn",
+        "fromScale": 1,
+        "toScale": 1.07
+      },
+      "transition": {
+        "in": "blurDissolve",
+        "frames": 15
+      },
+      "sound": {
+        "sfx": "click-settle"
+      },
+      "caption": "One Available Money figure. Every number behind it, one tap away."
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "startFrame": 430,
+      "durationFrames": 50,
+      "typography": {
+        "headline": "Available now.",
+        "sub": "draftpace.com/shop · $49"
+      },
+      "camera": {
+        "move": "static"
+      },
+      "transition": {
+        "in": "blurDissolve",
+        "frames": 15
+      },
+      "sound": {
+        "sfx": null
+      },
+      "cta": {
+        "label": "Shop",
+        "url": "draftpace.com/shop"
+      }
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "id": "feature-spotlight-personal-life-affairs-companion",
+  "product": "personal-life-affairs-companion",
+  "themeSlug": "personal-life-affairs-companion",
+  "format": "feature-spotlight",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "beats": [
+    {
+      "id": "problem",
+      "kind": "typography",
+      "startFrame": 0,
+      "durationFrames": 85,
+      "typography": {
+        "lines": [
+          "You've meant to",
+          "sort this out",
+          "for years."
+        ]
+      },
+      "camera": {
+        "move": "static"
+      },
+      "transition": {
+        "out": "blurDissolve",
+        "frames": 15
+      },
+      "sound": {
+        "sfx": null
+      },
+      "caption": null
+    },
+    {
+      "id": "noise",
+      "kind": "noise",
+      "startFrame": 85,
+      "durationFrames": 75,
+      "typography": {
+        "lines": [
+          "where's the will?",
+          "who do they call?",
+          "where do I even start?"
+        ]
+      },
+      "camera": {
+        "move": "static"
+      },
+      "transition": {
+        "in": "blurDissolve",
+        "out": "blurDissolve",
+        "frames": 15
+      },
+      "sound": {
+        "sfx": "whoosh-sweep"
+      },
+      "caption": null
+    },
+    {
+      "id": "wordmark",
+      "kind": "wordmark",
+      "startFrame": 160,
+      "durationFrames": 70,
+      "typography": {
+        "eyebrow": "DRAFTPACE",
+        "headline": "Personal Life Affairs Companion"
+      },
+      "camera": {
+        "move": "static"
+      },
+      "transition": {
+        "in": "blurDissolve",
+        "frames": 15
+      },
+      "sound": {
+        "sfx": "chime-reveal"
+      },
+      "caption": null
+    },
+    {
+      "id": "reveal",
+      "kind": "screen",
+      "startFrame": 230,
+      "durationFrames": 200,
+      "screen": {
+        "src": "screens/personal-life-affairs-companion-workspace.png"
+      },
+      "camera": {
+        "move": "pushIn",
+        "fromScale": 1,
+        "toScale": 1.07
+      },
+      "transition": {
+        "in": "blurDissolve",
+        "frames": 15
+      },
+      "sound": {
+        "sfx": "click-settle"
+      },
+      "caption": "One question on screen, chosen for you. Not a blank folder."
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "startFrame": 430,
+      "durationFrames": 50,
+      "typography": {
+        "headline": "Available now.",
+        "sub": "draftpace.com/shop · $49"
+      },
+      "camera": {
+        "move": "static"
+      },
+      "transition": {
+        "in": "blurDissolve",
+        "frames": 15
+      },
+      "sound": {
+        "sfx": null
+      },
+      "cta": {
+        "label": "Shop",
+        "url": "draftpace.com/shop"
+      }
+    }
+  ]
+}

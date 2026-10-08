@@ -1,0 +1,29 @@
+{
+  "id": "feature-carousel-monthly-money-reset",
+  "product": "monthly-money-reset",
+  "format": "feature-image",
+  "slides": [
+    {
+      "id": "01-problem",
+      "kind": "headline",
+      "typography": {
+        "eyebrow": "MONTHLY MONEY RESET",
+        "lines": ["Every month,", "the same question."]
+      }
+    },
+    {
+      "id": "02-clarity",
+      "kind": "safeToSpendCard",
+      "caption": "Not your bank's balance. Already holds back what's spoken for."
+    },
+    {
+      "id": "03-next-move",
+      "kind": "nextActionCard"
+    },
+    {
+      "id": "04-cta",
+      "kind": "cta",
+      "typography": { "lines": ["Start free."], "sub": "draftpace.com/free" }
+    }
+  ]
+}

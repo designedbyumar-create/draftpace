@@ -1,0 +1,154 @@
+{
+  "id": "feature-spotlight-monthly-money-reset",
+  "product": "monthly-money-reset",
+  "format": "feature-spotlight",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "beats": [
+    {
+      "id": "problem",
+      "kind": "typography",
+      "startFrame": 0,
+      "durationFrames": 85,
+      "typography": {
+        "lines": [
+          "Every month,",
+          "the same question."
+        ]
+      },
+      "camera": {
+        "move": "static"
+      },
+      "transition": {
+        "out": "blurDissolve",
+        "frames": 15
+      },
+      "sound": {
+        "sfx": null
+      },
+      "caption": null
+    },
+    {
+      "id": "mental-noise",
+      "kind": "noise",
+      "startFrame": 85,
+      "durationFrames": 75,
+      "typography": {
+        "lines": [
+          "what's safe to spend?",
+          "did that bill clear?",
+          "is this fine?"
+        ]
+      },
+      "camera": {
+        "move": "static"
+      },
+      "transition": {
+        "in": "blurDissolve",
+        "out": "blurDissolve",
+        "frames": 15
+      },
+      "sound": {
+        "sfx": "whoosh-sweep"
+      },
+      "caption": null
+    },
+    {
+      "id": "wordmark",
+      "kind": "wordmark",
+      "startFrame": 160,
+      "durationFrames": 70,
+      "typography": {
+        "eyebrow": "DRAFTPACE",
+        "headline": "Monthly Money Reset"
+      },
+      "camera": {
+        "move": "static"
+      },
+      "transition": {
+        "in": "blurDissolve",
+        "frames": 15
+      },
+      "sound": {
+        "sfx": "chime-reveal"
+      },
+      "caption": null
+    },
+    {
+      "id": "clarity",
+      "kind": "safeToSpendCard",
+      "startFrame": 230,
+      "durationFrames": 200,
+      "screen": "monthly-money-reset/workspace",
+      "camera": {
+        "move": "pushIn",
+        "fromScale": 1,
+        "toScale": 1.07
+      },
+      "ui": {
+        "reveal": "cardPop",
+        "countUp": {
+          "fromMinorUnits": 0,
+          "toMinorUnits": 4365,
+          "durationFrames": 24
+        }
+      },
+      "transition": {
+        "in": "blurDissolve",
+        "frames": 15
+      },
+      "caption": "Not your bank's balance. Already holds back what's spoken for.",
+      "sound": {
+        "sfx": "click-settle"
+      }
+    },
+    {
+      "id": "next-move",
+      "kind": "nextActionCard",
+      "startFrame": 430,
+      "durationFrames": 80,
+      "camera": {
+        "move": "pushIn",
+        "fromScale": 1,
+        "toScale": 1.04
+      },
+      "ui": {
+        "reveal": "cardPop"
+      },
+      "transition": {
+        "in": "blurDissolve",
+        "frames": 15
+      },
+      "caption": null,
+      "sound": {
+        "sfx": "click-settle"
+      }
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "startFrame": 510,
+      "durationFrames": 50,
+      "typography": {
+        "headline": "Start free.",
+        "sub": "draftpace.com/free"
+      },
+      "camera": {
+        "move": "static"
+      },
+      "transition": {
+        "in": "blurDissolve",
+        "frames": 15
+      },
+      "sound": {
+        "sfx": null
+      },
+      "cta": {
+        "label": "Start free",
+        "url": "draftpace.com/free"
+      }
+    }
+  ],
+  "themeSlug": "monthly-money-reset"
+}

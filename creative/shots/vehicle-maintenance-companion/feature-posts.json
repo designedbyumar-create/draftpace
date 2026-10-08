@@ -1,0 +1,81 @@
+{
+  "id": "feature-posts-vehicle-maintenance-companion",
+  "posts": [
+    {
+      "id": "01-vehicle-maintenance-companion",
+      "themeSlug": "vehicle-maintenance-companion",
+      "layout": "tilt",
+      "eyebrow": "VEHICLE MAINTENANCE COMPANION",
+      "headline": [
+        "Nobody remembers the",
+        "exact interval they",
+        "were quoted."
+      ],
+      "ui": {
+        "kind": "screen",
+        "src": "screens/vehicle-maintenance-companion-vehicles.png"
+      },
+      "product": {
+        "name": "Vehicle Maintenance Companion",
+        "price": "$34"
+      }
+    },
+    {
+      "id": "02-vehicle-maintenance-companion",
+      "themeSlug": "vehicle-maintenance-companion",
+      "layout": "window",
+      "eyebrow": "VEHICLE MAINTENANCE COMPANION",
+      "headline": [
+        "Inherited the car.",
+        "Not the service",
+        "history."
+      ],
+      "ui": {
+        "kind": "screen",
+        "src": "screens/vehicle-maintenance-companion-vehicles.png"
+      },
+      "product": {
+        "name": "Vehicle Maintenance Companion",
+        "price": "$34"
+      }
+    },
+    {
+      "id": "03-vehicle-maintenance-companion",
+      "themeSlug": "vehicle-maintenance-companion",
+      "layout": "tilt",
+      "eyebrow": "VEHICLE MAINTENANCE COMPANION",
+      "headline": [
+        "\"While we had it",
+        "up on the lift\"",
+        "just got expensive."
+      ],
+      "ui": {
+        "kind": "screen",
+        "src": "screens/vehicle-maintenance-companion-printables.png"
+      },
+      "product": {
+        "name": "Vehicle Maintenance Companion",
+        "price": "$34"
+      }
+    },
+    {
+      "id": "04-vehicle-maintenance-companion",
+      "themeSlug": "vehicle-maintenance-companion",
+      "layout": "window",
+      "eyebrow": "VEHICLE MAINTENANCE COMPANION",
+      "headline": [
+        "You have no proof",
+        "the car was",
+        "looked after."
+      ],
+      "ui": {
+        "kind": "screen",
+        "src": "screens/vehicle-maintenance-companion-history.png"
+      },
+      "product": {
+        "name": "Vehicle Maintenance Companion",
+        "price": "$34"
+      }
+    }
+  ]
+}

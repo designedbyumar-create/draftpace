@@ -1,0 +1,81 @@
+{
+  "id": "feature-posts-home-management-companion",
+  "posts": [
+    {
+      "id": "01-home-management-companion",
+      "themeSlug": "home-management-companion",
+      "layout": "tilt",
+      "eyebrow": "HOME BASE",
+      "headline": [
+        "The filter size.",
+        "The model number.",
+        "None of it lives anywhere."
+      ],
+      "ui": {
+        "kind": "screen",
+        "src": "screens/home-management-companion-workspace.png"
+      },
+      "product": {
+        "name": "Home Base",
+        "price": "$49"
+      }
+    },
+    {
+      "id": "02-home-management-companion",
+      "themeSlug": "home-management-companion",
+      "layout": "window",
+      "eyebrow": "HOME BASE",
+      "headline": [
+        "The expensive stuff",
+        "gets caught too late,",
+        "as a repair."
+      ],
+      "ui": {
+        "kind": "screen",
+        "src": "screens/home-management-companion-workspace.png"
+      },
+      "product": {
+        "name": "Home Base",
+        "price": "$49"
+      }
+    },
+    {
+      "id": "03-home-management-companion",
+      "themeSlug": "home-management-companion",
+      "layout": "tilt",
+      "eyebrow": "HOME BASE",
+      "headline": [
+        "Seasonal work gets",
+        "remembered a year",
+        "too late."
+      ],
+      "ui": {
+        "kind": "screen",
+        "src": "screens/home-management-companion-seasons.png"
+      },
+      "product": {
+        "name": "Home Base",
+        "price": "$49"
+      }
+    },
+    {
+      "id": "04-home-management-companion",
+      "themeSlug": "home-management-companion",
+      "layout": "window",
+      "eyebrow": "HOME BASE",
+      "headline": [
+        "Who came out.",
+        "What they did.",
+        "What it cost."
+      ],
+      "ui": {
+        "kind": "screen",
+        "src": "screens/home-management-companion-history.png"
+      },
+      "product": {
+        "name": "Home Base",
+        "price": "$49"
+      }
+    }
+  ]
+}

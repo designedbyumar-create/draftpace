@@ -1,0 +1,81 @@
+{
+  "id": "feature-posts-homeschooling-companion",
+  "posts": [
+    {
+      "id": "01-homeschooling-companion",
+      "themeSlug": "homeschooling-companion",
+      "layout": "tilt",
+      "eyebrow": "HOMESCHOOLING COMPANION",
+      "headline": [
+        "By March you",
+        "can't remember",
+        "October."
+      ],
+      "ui": {
+        "kind": "screen",
+        "src": "screens/homeschooling-companion-record.png"
+      },
+      "product": {
+        "name": "Homeschooling Companion",
+        "price": "$34"
+      }
+    },
+    {
+      "id": "02-homeschooling-companion",
+      "themeSlug": "homeschooling-companion",
+      "layout": "window",
+      "eyebrow": "HOMESCHOOLING COMPANION",
+      "headline": [
+        "Did it actually",
+        "land? You're",
+        "not sure."
+      ],
+      "ui": {
+        "kind": "screen",
+        "src": "screens/homeschooling-companion-workspace.png"
+      },
+      "product": {
+        "name": "Homeschooling Companion",
+        "price": "$34"
+      }
+    },
+    {
+      "id": "03-homeschooling-companion",
+      "themeSlug": "homeschooling-companion",
+      "layout": "tilt",
+      "eyebrow": "HOMESCHOOLING COMPANION",
+      "headline": [
+        "Keeping two kids'",
+        "records straight",
+        "stopped working."
+      ],
+      "ui": {
+        "kind": "screen",
+        "src": "screens/homeschooling-companion-kids.png"
+      },
+      "product": {
+        "name": "Homeschooling Companion",
+        "price": "$34"
+      }
+    },
+    {
+      "id": "04-homeschooling-companion",
+      "themeSlug": "homeschooling-companion",
+      "layout": "window",
+      "eyebrow": "HOMESCHOOLING COMPANION",
+      "headline": [
+        "Something to show.",
+        "Not a system",
+        "that gets abandoned."
+      ],
+      "ui": {
+        "kind": "screen",
+        "src": "screens/homeschooling-companion-record.png"
+      },
+      "product": {
+        "name": "Homeschooling Companion",
+        "price": "$34"
+      }
+    }
+  ]
+}

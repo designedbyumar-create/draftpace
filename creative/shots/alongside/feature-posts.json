@@ -1,0 +1,81 @@
+{
+  "id": "feature-posts-alongside",
+  "posts": [
+    {
+      "id": "01-alongside",
+      "themeSlug": "alongside",
+      "layout": "tilt",
+      "eyebrow": "ADHD LIFE COMPANION",
+      "headline": [
+        "Same thing on",
+        "your mind for",
+        "three weeks."
+      ],
+      "ui": {
+        "kind": "screen",
+        "src": "screens/alongside-workspace.png"
+      },
+      "product": {
+        "name": "ADHD Life Companion",
+        "price": "$49"
+      }
+    },
+    {
+      "id": "02-alongside",
+      "themeSlug": "alongside",
+      "layout": "window",
+      "eyebrow": "ADHD LIFE COMPANION",
+      "headline": [
+        "A to-do list",
+        "becomes a longer",
+        "thing to feel behind on."
+      ],
+      "ui": {
+        "kind": "screen",
+        "src": "screens/alongside-life.png"
+      },
+      "product": {
+        "name": "ADHD Life Companion",
+        "price": "$49"
+      }
+    },
+    {
+      "id": "03-alongside",
+      "themeSlug": "alongside",
+      "layout": "tilt",
+      "eyebrow": "ADHD LIFE COMPANION",
+      "headline": [
+        "Half finished,",
+        "and you lost",
+        "where you were."
+      ],
+      "ui": {
+        "kind": "screen",
+        "src": "screens/alongside-help.png"
+      },
+      "product": {
+        "name": "ADHD Life Companion",
+        "price": "$49"
+      }
+    },
+    {
+      "id": "04-alongside",
+      "themeSlug": "alongside",
+      "layout": "window",
+      "eyebrow": "ADHD LIFE COMPANION",
+      "headline": [
+        "Every system tells",
+        "you that you've",
+        "failed at it."
+      ],
+      "ui": {
+        "kind": "screen",
+        "src": "screens/alongside-life.png"
+      },
+      "product": {
+        "name": "ADHD Life Companion",
+        "price": "$49"
+      }
+    }
+  ]
+}
