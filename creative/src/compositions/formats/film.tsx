@@ -105,7 +105,7 @@ function Motif({ film, ctx, index }: { film: Film; ctx: Ctx; index: number }) {
     case "gauge": {
       const r = 70, len = Math.PI * r;
       return (
-        <svg width={180} height={110} style={{ position: "absolute", left: safe.left, top: safe.top - 40, opacity: 0.85 }}>
+        <svg width={180} height={110} style={{ position: "absolute", right: safe.right, top: safe.top - 40, opacity: 0.85 }}>
           <path d={`M 20 95 A ${r} ${r} 0 0 1 160 95`} fill="none" stroke="color-mix(in srgb, var(--fg) 18%, transparent)" strokeWidth={10} strokeLinecap="round" />
           <path d={`M 20 95 A ${r} ${r} 0 0 1 160 95`} fill="none" stroke="var(--hl)" strokeWidth={10} strokeLinecap="round" strokeDasharray={len} strokeDashoffset={len * (1 - progress)} />
         </svg>
