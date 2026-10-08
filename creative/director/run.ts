@@ -7,13 +7,14 @@
  * itself hands over to (guide.ts).
  */
 import fs from "node:fs";
-import { fileURLToPath } from "node:url";
+import path from "node:path";
 import { planVoiceover, type VoiceoverInput } from "./voiceover";
 import SLATE from "./slate.json";
 import { direct, type Brief } from "./direct";
 import { buildDossier, type Dossier } from "./dossier";
 import { guideMaterial, productForGuide } from "./guide";
 import { treatment } from "./treatment";
+import { CREATIVE_DIR } from "./write";
 import { SHOP_LISTINGS, productLine } from "../src/shop-listings";
 import { PRODUCT_DEFINITIONS, THEMES } from "../src/theme-registry";
 import type { Film } from "./film";
@@ -67,7 +68,7 @@ export function runSlate(
 // ------------------------------------------------------------------ voice-overs
 
 
-export const VOICEOVER_DIR = fileURLToPath(new URL("../voiceover/", import.meta.url));
+export const VOICEOVER_DIR = path.join(CREATIVE_DIR, "voiceover") + path.sep;
 
 /** Every voice-over's saved settings (voiceover/<id>/voiceover.json), in name order. */
 export function voiceoverInputs(): VoiceoverInput[] {

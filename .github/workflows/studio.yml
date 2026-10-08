@@ -1,0 +1,59 @@
+# Draftpace Studio (studio/) drives the Creative Engine and imports the
+# website's design system, so a change to any of them can break it without
+# failing the site's own gates. Its guards (studio/tests) run with the main
+# test step; this job typechecks it and builds it.
+name: Studio
+
+on:
+  pull_request:
+    paths:
+      - "studio/**"
+      - "creative/director/**"
+      - "creative/src/**"
+      - "src/design-system/**"
+      - "src/content/**"
+      - "src/shop/**"
+      - "src/products/**"
+      - ".github/workflows/studio.yml"
+  push:
+    branches: [main]
+    paths:
+      - "studio/**"
+      - "creative/director/**"
+      - "creative/src/**"
+      - "src/design-system/**"
+      - "src/content/**"
+      - "src/shop/**"
+      - "src/products/**"
+      - ".github/workflows/studio.yml"
+
+concurrency:
+  group: studio-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: typecheck and build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            creative/package-lock.json
+      - run: npm ci
+      # The live preview's Remotion Player comes from the engine's own dependencies.
+      - run: npm ci
+        working-directory: creative
+      - name: Typecheck
+        run: npm run studio:typecheck
+      - name: Lint
+        run: npx eslint studio
+      - name: Build
+        run: npx next build studio --webpack
+        env:
+          STUDIO_ACCESS_KEY: ci-build-only

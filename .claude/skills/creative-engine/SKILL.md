@@ -13,6 +13,15 @@ session, on any model, this document plus the code in `creative/` is
 everything you need. Don't rediscover the traps below; they already cost a
 lot of debugging time once.
 
+**Draftpace Studio** (`studio/`, `npm run studio`, port 3100) is the
+person-facing workspace on top of this engine: Make (plan a film from a
+product or guide, watched live before saving), Voice-over, Library
+(live preview, script with sources, review, render, publishing copy),
+Calendar, Sources, Channels, Email, Results. It plans, saves and renders
+through the same code as the scripts below (`director/write.ts`,
+`scripts/render-direct.mjs`), so either route gives the same files. See
+`studio/README.md`.
+
 ## What this produces
 
 **Two outputs only, by design.** Nothing else — no separate Pinterest-video

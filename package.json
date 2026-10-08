@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev --webpack",
+    "studio": "next dev studio --webpack --port 3100",
+    "studio:typecheck": "tsc --noEmit -p studio",
     "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint",
