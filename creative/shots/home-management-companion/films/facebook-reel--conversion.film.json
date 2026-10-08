@@ -1,0 +1,279 @@
+{
+  "id": "home-management-companion--facebook-reel--conversion",
+  "product": "home-management-companion",
+  "platform": "facebook-reel",
+  "goal": "conversion",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 603,
+  "structure": "honestNo",
+  "angle": {
+    "text": "You manage more than one property.",
+    "source": "audienceExclusions[3]"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "dolly",
+    "transitions": [
+      "slideUp",
+      "cardSlide",
+      "slideUp"
+    ],
+    "motif": "tag",
+    "grounds": [
+      "light",
+      "light",
+      "ink",
+      "accent"
+    ],
+    "pace": 1
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.2,
+    "energy": "mid"
+  },
+  "scenes": [
+    {
+      "id": "not",
+      "kind": "contrast",
+      "variant": "strike",
+      "copy": [
+        {
+          "text": "You manage more than one property.",
+          "source": "audienceExclusions[3]"
+        },
+        {
+          "text": "You want a full room-by-room inventory valued for insurance.",
+          "source": "audienceExclusions[1]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "Not for you if:",
+        "source": "micro"
+      },
+      "why": "Every other ad promises more. Saying what it refuses to do is rarer, and it is in the listing because it is true.",
+      "from": 0,
+      "dur": 252,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [
+        {
+          "at": 18,
+          "cue": "tick",
+          "volume": 0.3
+        },
+        {
+          "at": 102,
+          "cue": "tick",
+          "volume": 0.3
+        }
+      ]
+    },
+    {
+      "id": "instead",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Seasonal work raised in the month it actually belongs to.",
+        "source": "problemsSolved[2].solution"
+      },
+      "screen": {
+        "src": "screens/home-management-companion-seasons.png",
+        "pose": "tiltRight",
+        "focus": {
+          "at": 0.45,
+          "y": 82,
+          "h": 210,
+          "region": "season"
+        },
+        "scroll": []
+      },
+      "why": "Then the positive case, on a real screen. Screen: \"Fall home maintenance checklist\" (This season's checklist: the jobs best done from September to November, by month.) chosen because it is the real screen closest to \"Seasonal work raised in the month it actually belongs to.\"; focus on \"Fall home maintenance checklist\".",
+      "eyebrow": {
+        "text": "Instead:",
+        "source": "micro"
+      },
+      "from": 240,
+      "dur": 168,
+      "ground": "light",
+      "transition": "slideUp",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 76,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "privacy",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Your home records are private to your account.",
+          "source": "privacyNotes#0"
+        }
+      ],
+      "why": "The privacy line closes the trust argument.",
+      "from": 396,
+      "dur": 93,
+      "ground": "ink",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        }
+      ],
+      "lines": [
+        [
+          "Your home records",
+          "are private to your",
+          "account."
+        ]
+      ]
+    },
+    {
+      "id": "brand",
+      "kind": "brand",
+      "variant": "lockup",
+      "copy": [
+        {
+          "text": "Home Base",
+          "source": "title"
+        }
+      ],
+      "why": "The name lands on a film that has been honest with the viewer.",
+      "from": 477,
+      "dur": 54,
+      "ground": "accent",
+      "transition": "slideUp",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": -36,
+          "cue": "riser",
+          "volume": 0.24
+        },
+        {
+          "at": 2,
+          "cue": "impact",
+          "volume": 0.42
+        },
+        {
+          "at": 6,
+          "cue": "shimmer",
+          "volume": 0.18
+        }
+      ],
+      "lines": [
+        [
+          "Home Base"
+        ]
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "price",
+      "copy": [
+        {
+          "text": "Home Base",
+          "source": "title"
+        },
+        {
+          "text": "Available now.",
+          "source": "micro"
+        }
+      ],
+      "why": "Facebook Reel rewards a direct close: the real price against the real list price.",
+      "from": 519,
+      "dur": 84,
+      "ground": "light",
+      "transition": "slideUp",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Facebook Reel, 1080×1920, 12–26s, hook by 1.5s, sound off",
+      "because": "An older, sound-off-leaning audience: every point on screen, held long enough to read, plainly worded."
+    },
+    {
+      "topic": "Product",
+      "decision": "Home Base: $49 (list $99), motif \"tag\", calm personality, cool accent #4f7a5c",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You own or rent a home and would rather be told what needs you this week than keep a mental list you know is incomplete. / You want the boring, expensive things caught early: the water heater, the gutters, the outside tap before the first freeze.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "What it is not: Earn trust by stating what the product deliberately does not do, then show what it does instead.",
+      "because": "Best fit for a conversion film on Facebook Reel (platform fit 1, goal fit 3). Other candidates: One screen, closely (-1.4), In their words (-1.6)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"You manage more than one property.\"",
+      "because": "A trust film: the listing's own boundaries, then the thing it does instead, then how it treats your data."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"tag\"",
+      "because": "Transitions follow the product's own identity motif, \"tag\": things in the home are tagged, so scenes rise like a tag being lifted."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"dolly\"",
+      "because": "Camera \"dolly\": constant forward movement for a high-energy feed."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → light → ink → accent",
+      "because": "Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, mid-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "20.1s, 5 scenes",
+      "because": "Each scene is held for the time its words take to read on Facebook Reel (0.3s a word), inside 12–26s."
+    }
+  ]
+}

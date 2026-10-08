@@ -1,0 +1,275 @@
+{
+  "id": "travel-companion--youtube-short--consideration",
+  "product": "travel-companion",
+  "platform": "youtube-short",
+  "goal": "consideration",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 537,
+  "structure": "searched",
+  "angle": {
+    "text": "My flight changed and I don't know what else is affected",
+    "source": "searchedProblems[0].phrase"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "float",
+    "transitions": [
+      "slideLeft",
+      "whip",
+      "slideLeft"
+    ],
+    "motif": "timeline",
+    "grounds": [
+      "light",
+      "accent",
+      "light",
+      "ink"
+    ],
+    "pace": 1
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.2,
+    "energy": "mid"
+  },
+  "scenes": [
+    {
+      "id": "hook",
+      "kind": "title",
+      "variant": "quote",
+      "copy": [
+        {
+          "text": "My flight changed and I don't know what else is affected",
+          "source": "searchedProblems[0].phrase"
+        }
+      ],
+      "why": "Search-led placements reward the exact words someone typed; quoted, it reads as their thought, not our claim.",
+      "from": 0,
+      "dur": 107,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "My flight changed and",
+          "I don't know what else",
+          "is affected"
+        ]
+      ]
+    },
+    {
+      "id": "answer",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Record the change and it walks down everything you said was booked around it, one booking at a time, editing nothing for you.",
+        "source": "searchedProblems[0].answer"
+      },
+      "screen": {
+        "src": "screens/travel-companion-trip.png",
+        "pose": "flat",
+        "focus": {
+          "at": 0.45,
+          "y": 187,
+          "h": 126,
+          "region": "status"
+        }
+      },
+      "why": "The answer, shown working on the real screen it happens on. Screen: \"Lisbon and Porto\" (The trip: where you are now, destinations, and every booking with its reference, with Record a change on each.) chosen because it is the real screen closest to \"Record the change and it walks down everything you said was booked around it, on\"; focus on \"Not currently at a recorded destination\".",
+      "from": 95,
+      "dur": 269,
+      "ground": "accent",
+      "transition": "slideLeft",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 121,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "follow",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Add a booking",
+        "source": "tasks[2].label"
+      },
+      "screen": {
+        "src": "screens/travel-companion-printables.png",
+        "pose": "tiltRight",
+        "focus": {
+          "at": 0.45,
+          "y": 292,
+          "h": 161,
+          "region": "trip-book"
+        },
+        "scroll": []
+      },
+      "why": "A second, related thing an owner does here, so it reads as a tool, not a single trick. Screen: \"My Trip Book\" (My Trip Book: a blank, printable travel planner, generated fresh each time.) chosen because it is the real screen closest to \"Add a booking\"; focus on \"My Trip Book\".",
+      "from": 352,
+      "dur": 71,
+      "ground": "light",
+      "transition": "whip",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 32,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "brand",
+      "kind": "brand",
+      "variant": "center",
+      "copy": [
+        {
+          "text": "Travel Companion",
+          "source": "title"
+        }
+      ],
+      "why": "Named at the end, once the idea has earned the save.",
+      "from": 411,
+      "dur": 54,
+      "ground": "ink",
+      "transition": "slideLeft",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        },
+        {
+          "at": -36,
+          "cue": "riser",
+          "volume": 0.4
+        },
+        {
+          "at": 2,
+          "cue": "impact",
+          "volume": 0.7
+        },
+        {
+          "at": 6,
+          "cue": "shimmer",
+          "volume": 0.3
+        }
+      ],
+      "lines": [
+        [
+          "Travel Companion"
+        ]
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "soft",
+      "copy": [
+        {
+          "text": "Travel Companion",
+          "source": "title"
+        },
+        {
+          "text": "Available now.",
+          "source": "micro"
+        }
+      ],
+      "why": "YouTube Short punishes an obvious ad; a soft close names the product and where to find it.",
+      "from": 453,
+      "dur": 84,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "YouTube Short, 1080×1920, 12–30s, hook by 1.2s, sound on",
+      "because": "Search-adjacent audience that will watch a slightly longer explanation if it starts strong. Loops by default."
+    },
+    {
+      "topic": "Product",
+      "decision": "Travel Companion: $34 (list $69), motif \"timeline\", calm personality, cool accent #00626f",
+      "because": "From its definition and Shop listing. 4 real screens to show."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You are travelling with other people, and you are the one everybody asks what happens next. / Your trip has more than three moving parts: flights, transfers, stays and reservations that were booked around each other.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "In their words: Lead with a phrase people actually search, then show the real screen that answers it.",
+      "because": "Best fit for a consideration film on YouTube Short (platform fit 3, goal fit 2). Other candidates: The question before buying (5.0), What it is not (3.7)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"My flight changed and I don't know what else is affected\"",
+      "because": "A searched phrase, \"My flight changed and I don't know what else is affected\", and the listing's own answer to it."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"timeline\"",
+      "because": "Transitions follow the product's own identity motif, \"timeline\": a trip is a line through time, so scenes travel left to right along it."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → accent → light → ink",
+      "because": "Grounds light → accent → light → ink: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Full sound design, mid-energy bed",
+      "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
+    },
+    {
+      "topic": "Length",
+      "decision": "17.9s, 5 scenes",
+      "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 12–30s."
+    }
+  ]
+}

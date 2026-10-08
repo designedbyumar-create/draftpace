@@ -36,5 +36,23 @@ import f32 from "../shots/home-management-companion/films/tiktok--awareness.film
 import f33 from "../shots/homeschooling-companion/films/tiktok--awareness.film.json";
 import f34 from "../shots/personal-life-affairs-companion/films/tiktok--awareness.film.json";
 import f35 from "../shots/vehicle-maintenance-companion/films/tiktok--awareness.film.json";
+import f36 from "../shots/travel-companion/films/youtube-short--consideration.film.json";
+import f37 from "../shots/personal-finance-companion/films/youtube-short--consideration.film.json";
+import f38 from "../shots/alongside/films/youtube-short--consideration.film.json";
+import f39 from "../shots/monthly-money-reset/films/youtube-short--consideration.film.json";
+import f40 from "../shots/family-health-binder/films/youtube-short--consideration.film.json";
+import f41 from "../shots/home-management-companion/films/youtube-short--consideration.film.json";
+import f42 from "../shots/homeschooling-companion/films/youtube-short--consideration.film.json";
+import f43 from "../shots/personal-life-affairs-companion/films/youtube-short--consideration.film.json";
+import f44 from "../shots/vehicle-maintenance-companion/films/youtube-short--consideration.film.json";
+import f45 from "../shots/travel-companion/films/facebook-reel--conversion.film.json";
+import f46 from "../shots/personal-finance-companion/films/facebook-reel--conversion.film.json";
+import f47 from "../shots/alongside/films/facebook-reel--conversion.film.json";
+import f48 from "../shots/monthly-money-reset/films/facebook-reel--conversion.film.json";
+import f49 from "../shots/family-health-binder/films/facebook-reel--conversion.film.json";
+import f50 from "../shots/home-management-companion/films/facebook-reel--conversion.film.json";
+import f51 from "../shots/homeschooling-companion/films/facebook-reel--conversion.film.json";
+import f52 from "../shots/personal-life-affairs-companion/films/facebook-reel--conversion.film.json";
+import f53 from "../shots/vehicle-maintenance-companion/films/facebook-reel--conversion.film.json";
 
-export const FILMS = [f0, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14, f15, f16, f17, f18, f19, f20, f21, f22, f23, f24, f25, f26, f27, f28, f29, f30, f31, f32, f33, f34, f35] as unknown as Film[];
+export const FILMS = [f0, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14, f15, f16, f17, f18, f19, f20, f21, f22, f23, f24, f25, f26, f27, f28, f29, f30, f31, f32, f33, f34, f35, f36, f37, f38, f39, f40, f41, f42, f43, f44, f45, f46, f47, f48, f49, f50, f51, f52, f53] as unknown as Film[];

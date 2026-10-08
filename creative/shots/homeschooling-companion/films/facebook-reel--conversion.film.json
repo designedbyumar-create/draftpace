@@ -1,0 +1,249 @@
+{
+  "id": "homeschooling-companion--facebook-reel--conversion",
+  "product": "homeschooling-companion",
+  "platform": "facebook-reel",
+  "goal": "conversion",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 494,
+  "structure": "whatYouGet",
+  "angle": {
+    "text": "What you get",
+    "source": "micro"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "dolly",
+    "transitions": [
+      "lineWipe",
+      "slideUp",
+      "lineWipe"
+    ],
+    "motif": "register",
+    "grounds": [
+      "light",
+      "accent",
+      "light",
+      "ink"
+    ],
+    "pace": 1
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.2,
+    "energy": "mid"
+  },
+  "scenes": [
+    {
+      "id": "brand",
+      "kind": "brand",
+      "variant": "center",
+      "copy": [
+        {
+          "text": "Homeschooling Companion",
+          "source": "title"
+        }
+      ],
+      "why": "Conversion audiences already know the problem; opening on the product saves them a second.",
+      "from": 0,
+      "dur": 54,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [
+        {
+          "at": -36,
+          "cue": "riser",
+          "volume": 0.24
+        },
+        {
+          "at": 2,
+          "cue": "impact",
+          "volume": 0.42
+        },
+        {
+          "at": 6,
+          "cue": "shimmer",
+          "volume": 0.18
+        }
+      ],
+      "lines": [
+        [
+          "Homeschooling",
+          "Companion"
+        ]
+      ]
+    },
+    {
+      "id": "contents",
+      "kind": "list",
+      "variant": "inclusions",
+      "copy": [
+        {
+          "text": "A dated record of what was actually done",
+          "source": "expectedOutputs[1]"
+        },
+        {
+          "text": "The Homeschool Year",
+          "source": "inclusions[0]:head"
+        },
+        {
+          "text": "Six chapters of method",
+          "source": "inclusions[1]:head"
+        },
+        {
+          "text": "Undated working pages",
+          "source": "inclusions[2]:head"
+        }
+      ],
+      "eyebrow": {
+        "text": "What you get",
+        "source": "micro"
+      },
+      "why": "The listing's own inclusions, by name.",
+      "from": 42,
+      "dur": 330,
+      "ground": "accent",
+      "transition": "lineWipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "tick",
+          "volume": 0.36
+        },
+        {
+          "at": 10,
+          "cue": "tick",
+          "volume": 0.27
+        },
+        {
+          "at": 76,
+          "cue": "tick",
+          "volume": 0.27
+        },
+        {
+          "at": 142,
+          "cue": "tick",
+          "volume": 0.27
+        },
+        {
+          "at": 208,
+          "cue": "tick",
+          "volume": 0.27
+        }
+      ]
+    },
+    {
+      "id": "proof",
+      "kind": "phone",
+      "variant": "pair",
+      "copy": [],
+      "screen": {
+        "src": "screens/homeschooling-companion-record.png",
+        "also": "screens/homeschooling-companion-kids.png",
+        "pose": "pair"
+      },
+      "why": "Two real screens side by side (\"What has happened.\", \"Your children.\") show it is a whole tool, not one feature.",
+      "from": 360,
+      "dur": 62,
+      "ground": "light",
+      "transition": "slideUp",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "price",
+      "copy": [
+        {
+          "text": "Homeschooling Companion",
+          "source": "title"
+        },
+        {
+          "text": "Available now.",
+          "source": "micro"
+        }
+      ],
+      "why": "Facebook Reel rewards a direct close: the real price against the real list price.",
+      "from": 410,
+      "dur": 84,
+      "ground": "ink",
+      "transition": "lineWipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "tick",
+          "volume": 0.36
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Facebook Reel, 1080×1920, 12–26s, hook by 1.5s, sound off",
+      "because": "An older, sound-off-leaning audience: every point on screen, held long enough to read, plainly worded."
+    },
+    {
+      "topic": "Product",
+      "decision": "Homeschooling Companion: $34 (list $69), motif \"register\", calm personality, cool accent #6a4a72",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You already have a curriculum you chose on purpose and you want something that follows it rather than replacing it. / You teach more than one child and keeping their records separate in your head has stopped working.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "What you get: Open on the product, then show what is in it, then the price.",
+      "because": "Best fit for a conversion film on Facebook Reel (platform fit 2, goal fit 3, already used on Facebook Reel ×1). Other candidates: Before and after (1.1), What it is not (0.0)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"What you get\"",
+      "because": "A conversion film for people who already know the problem: product first, contents, price."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"register\"",
+      "because": "Transitions follow the product's own identity motif, \"register\": a register is filled line by line, so scenes are written in from the top."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"dolly\"",
+      "because": "Camera \"dolly\": constant forward movement for a high-energy feed."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → accent → light → ink",
+      "because": "Grounds light → accent → light → ink: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, mid-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "16.5s, 4 scenes",
+      "because": "Each scene is held for the time its words take to read on Facebook Reel (0.3s a word), inside 12–26s."
+    }
+  ]
+}

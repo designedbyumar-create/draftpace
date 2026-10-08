@@ -1,0 +1,229 @@
+{
+  "id": "monthly-money-reset--youtube-short--consideration",
+  "product": "monthly-money-reset",
+  "platform": "youtube-short",
+  "goal": "consideration",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 360,
+  "structure": "question",
+  "angle": {
+    "text": "Worried you'll abandon it like every other budgeting app?",
+    "source": "questions[0].question"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "float",
+    "transitions": [
+      "lineWipe",
+      "blurDissolve",
+      "lineWipe"
+    ],
+    "motif": "ledger",
+    "grounds": [
+      "ink",
+      "light",
+      "light",
+      "accent"
+    ],
+    "pace": 1
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.2,
+    "energy": "mid"
+  },
+  "scenes": [
+    {
+      "id": "q",
+      "kind": "title",
+      "variant": "quote",
+      "copy": [
+        {
+          "text": "Worried you'll abandon it like every other budgeting app?",
+          "source": "questions[0].question"
+        }
+      ],
+      "why": "The question a considering buyer is already asking, so the film meets them where they are.",
+      "from": 0,
+      "dur": 138,
+      "ground": "ink",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "Worried you'll abandon",
+          "it like every other",
+          "budgeting app?"
+        ]
+      ]
+    },
+    {
+      "id": "a",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "screen": {
+        "src": "screens/monthly-money-reset-progress.png",
+        "pose": "flat",
+        "focus": {
+          "at": 0.45,
+          "y": 138,
+          "h": 126,
+          "region": "bills"
+        },
+        "scroll": []
+      },
+      "why": "The answer, with the real screen it is about. Screen: \"Start\" (Progress this month: bills handled, check-ins, the reserve kept, and spending against your own guide.) chosen because it is the real screen closest to \"Worried you'll abandon it like every other budgeting app? There is no daily ritu\"; focus on \"2 of 4\".",
+      "from": 126,
+      "dur": 120,
+      "ground": "light",
+      "transition": "lineWipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "tick",
+          "volume": 0.6
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 54,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "brand",
+      "kind": "brand",
+      "variant": "center",
+      "copy": [
+        {
+          "text": "Monthly Money Reset",
+          "source": "title"
+        }
+      ],
+      "why": "Named once the doubt is answered.",
+      "from": 234,
+      "dur": 54,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": -36,
+          "cue": "riser",
+          "volume": 0.4
+        },
+        {
+          "at": 2,
+          "cue": "impact",
+          "volume": 0.7
+        },
+        {
+          "at": 6,
+          "cue": "shimmer",
+          "volume": 0.3
+        }
+      ],
+      "lines": [
+        [
+          "Monthly Money Reset"
+        ]
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "free",
+      "copy": [
+        {
+          "text": "Monthly Money Reset",
+          "source": "title"
+        },
+        {
+          "text": "Start free.",
+          "source": "micro"
+        }
+      ],
+      "why": "A free product closes on starting free; there is no price to state.",
+      "from": 276,
+      "dur": 84,
+      "ground": "accent",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "YouTube Short, 1080×1920, 12–30s, hook by 1.2s, sound on",
+      "because": "Search-adjacent audience that will watch a slightly longer explanation if it starts strong. Loops by default."
+    },
+    {
+      "topic": "Product",
+      "decision": "Monthly Money Reset: free, motif \"ledger\", calm personality, cool accent #214b3e",
+      "because": "From its definition and Shop listing. 1 real screens and live components (safeToSpendCard, nextActionCard) to show."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You want one clear number for what's actually safe to spend, not a full budget system. / You have a mix of bills, some paid automatically and some not, that you'd rather not accidentally spend past.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "The question before buying: Answer the question people actually ask before they decide, with the listing's own answer.",
+      "because": "Best fit for a consideration film on YouTube Short (platform fit 2, goal fit 3). Other candidates: Problem cascade (3.2), How it works (0.8)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"Worried you'll abandon it like every other budgeting app?\"",
+      "because": "A deciding-stage question from the listing, \"Worried you'll abandon it like every other budgeting app?\", and its own answer."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"ledger\"",
+      "because": "Transitions follow the product's own identity motif, \"ledger\": a ledger is ruled lines, so scenes are revealed row by row."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds ink → light → light → accent",
+      "because": "Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Full sound design, mid-energy bed",
+      "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
+    },
+    {
+      "topic": "Length",
+      "decision": "12.0s, 4 scenes",
+      "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 12–30s."
+    }
+  ]
+}

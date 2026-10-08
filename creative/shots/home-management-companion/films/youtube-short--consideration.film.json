@@ -1,0 +1,282 @@
+{
+  "id": "home-management-companion--youtube-short--consideration",
+  "product": "home-management-companion",
+  "platform": "youtube-short",
+  "goal": "consideration",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 749,
+  "structure": "cascade",
+  "angle": {
+    "text": "Nobody remembers who came out, what they did, or what it cost.",
+    "source": "problemsSolved[3].problem"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "float",
+    "transitions": [
+      "slideUp",
+      "cardSlide",
+      "slideUp"
+    ],
+    "motif": "tag",
+    "grounds": [
+      "ink",
+      "light",
+      "light",
+      "accent"
+    ],
+    "pace": 1
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.2,
+    "energy": "mid"
+  },
+  "scenes": [
+    {
+      "id": "hook",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "Nobody remembers who came out, what they did, or what it cost.",
+          "source": "problemsSolved[3].problem"
+        }
+      ],
+      "emphasis": [
+        "remembers"
+      ],
+      "why": "The hook is the problem itself, in the listing's own words: the first thing the right viewer recognises.",
+      "from": 0,
+      "dur": 115,
+      "ground": "ink",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "Nobody remembers who",
+          "came out, what they",
+          "did, or what it cost."
+        ]
+      ]
+    },
+    {
+      "id": "noise",
+      "kind": "contrast",
+      "variant": "noise",
+      "copy": [
+        {
+          "text": "I keep forgetting home maintenance",
+          "source": "searchedProblems[0].phrase"
+        },
+        {
+          "text": "I lost the manual, the receipt and the warranty",
+          "source": "searchedProblems[3].phrase"
+        },
+        {
+          "text": "Homeownership feels like a full-time job",
+          "source": "searchedProblems[5].phrase"
+        }
+      ],
+      "why": "The same worry as people actually search it: real searched phrases, stacked, so the problem feels lived-in.",
+      "from": 103,
+      "dur": 246,
+      "ground": "light",
+      "transition": "slideUp",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        },
+        {
+          "at": 10,
+          "cue": "pop",
+          "volume": 0.45
+        },
+        {
+          "at": 72,
+          "cue": "pop",
+          "volume": 0.45
+        },
+        {
+          "at": 134,
+          "cue": "pop",
+          "volume": 0.45
+        }
+      ]
+    },
+    {
+      "id": "brand",
+      "kind": "brand",
+      "variant": "center",
+      "copy": [
+        {
+          "text": "Home Base",
+          "source": "title"
+        }
+      ],
+      "why": "The turn: the product arrives after the problem, not before it.",
+      "from": 337,
+      "dur": 54,
+      "ground": "light",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        },
+        {
+          "at": -36,
+          "cue": "riser",
+          "volume": 0.4
+        },
+        {
+          "at": 2,
+          "cue": "impact",
+          "volume": 0.7
+        },
+        {
+          "at": 6,
+          "cue": "shimmer",
+          "volume": 0.3
+        }
+      ],
+      "lines": [
+        [
+          "Home Base"
+        ]
+      ]
+    },
+    {
+      "id": "proof",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "A record of who came out, what they did, and what it cost, and when you report a new problem it tells you who you already used for that kind of work.",
+        "source": "problemsSolved[3].solution"
+      },
+      "screen": {
+        "src": "screens/home-management-companion-history.png",
+        "pose": "flat",
+        "focus": {
+          "at": 0.45,
+          "y": 180,
+          "h": 200,
+          "region": "log"
+        },
+        "scroll": []
+      },
+      "why": "Proof: the real screen that does what the problem asked for, captioned with the listing's own answer. Screen: \"What's been done\" (Your home's memory: what was taken care of, when, who did it and what it cost.) chosen because it is the real screen closest to \"A record of who came out, what they did, and what it cost, and when you report a\"; focus on \"Annual service and safety check\".",
+      "from": 379,
+      "dur": 298,
+      "ground": "accent",
+      "transition": "slideUp",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 134,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "soft",
+      "copy": [
+        {
+          "text": "Home Base",
+          "source": "title"
+        },
+        {
+          "text": "Available now.",
+          "source": "micro"
+        }
+      ],
+      "why": "YouTube Short punishes an obvious ad; a soft close names the product and where to find it.",
+      "from": 665,
+      "dur": 84,
+      "ground": "ink",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "YouTube Short, 1080×1920, 12–30s, hook by 1.2s, sound on",
+      "because": "Search-adjacent audience that will watch a slightly longer explanation if it starts strong. Loops by default."
+    },
+    {
+      "topic": "Product",
+      "decision": "Home Base: $49 (list $99), motif \"tag\", calm personality, cool accent #4f7a5c",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You own or rent a home and would rather be told what needs you this week than keep a mental list you know is incomplete. / You want the boring, expensive things caught early: the water heater, the gutters, the outside tap before the first freeze.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "Problem cascade: Open on one real problem, let the related worries pile up, then cut to the product holding it.",
+      "because": "Best fit for a consideration film on YouTube Short (platform fit 2, goal fit 1). Other candidates: In their words (2.7), One screen, closely (2.3)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"Nobody remembers who came out, what they did, or what it cost.\"",
+      "because": "Problem 4 of the listing, \"Nobody remembers who came out, what they did, or what it cost.\", answered by its own solution."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"tag\"",
+      "because": "Transitions follow the product's own identity motif, \"tag\": things in the home are tagged, so scenes rise like a tag being lifted."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds ink → light → light → accent",
+      "because": "Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Full sound design, mid-energy bed",
+      "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
+    },
+    {
+      "topic": "Length",
+      "decision": "25.0s, 5 scenes",
+      "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 12–30s."
+    }
+  ]
+}
