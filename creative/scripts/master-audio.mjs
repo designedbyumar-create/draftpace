@@ -29,7 +29,7 @@ const SR = 48000;
 const LOOKAHEAD = Math.round(0.005 * SR);
 const RELEASE = 1 - Math.exp(-1 / (0.08 * SR)); // ~80 ms
 
-function ffmpeg() {
+export function ffmpeg() {
   const require = createRequire(import.meta.url);
   const dir = path.dirname(require.resolve("@remotion/compositor-linux-x64-gnu/package.json"));
   return { bin: path.join(dir, "ffmpeg"), env: { ...process.env, LD_LIBRARY_PATH: dir } };

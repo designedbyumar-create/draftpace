@@ -18,7 +18,17 @@ import { PLATFORMS, type Platform, type PlatformId, type Goal } from "./platform
 import type { Dossier, CopyUnit, ScreenAsset } from "./dossier";
 import { shape, similarity, MAX_SIMILARITY, type Film, type Scene, type Copy, type Ground, type FilmTransition, type Treatment, type SfxCue } from "./film";
 
-export type Brief = { product: string; platform: PlatformId; goal: Goal };
+/** A film to plan. With `guide`, it is a guide-driven film: it teaches from that guide and `product` is the product the guide hands over to. */
+export type Brief = { product: string; platform: PlatformId; goal: Goal; guide?: string };
+
+/** How long a guide-driven film may run: it teaches, so it is allowed longer than a product film on the same placement. */
+export const GUIDE_RUNTIME: Partial<Record<PlatformId, { min: number; max: number }>> = {
+  "youtube-short": { min: 18, max: 45 },
+  "tiktok": { min: 15, max: 40 },
+  "instagram-reel": { min: 15, max: 40 },
+  "facebook-reel": { min: 15, max: 40 },
+  "pinterest-video": { min: 12, max: 35 },
+};
 
 /** What earlier films in the slate already used, so this one can be different. */
 export type Slate = Film[];
@@ -50,6 +60,22 @@ function overlap(a: string, b: string): number {
   let n = 0;
   A.forEach((w) => B.has(w) && n++);
   return n / Math.max(1, Math.min(A.size, B.size));
+}
+
+/**
+ * How well `text` matches `about`, weighting each shared word by how rare
+ * it is across every product's material (d.background): "subscriptions" says what a line is
+ * about, "own" and "find" do not. 0 to 1, the share of the text's weight found.
+ */
+export function relevance(d: Dossier): (text: string, about: string) => number {
+  const docs = (d.background ?? [...d.copy.map((u) => u.text), ...d.screens.map((s) => [s.heading, s.shows, ...s.regions.map((r) => r.label)].join(" "))]).map(stems);
+  const idf = (w: string) => Math.log((docs.length + 1) / (docs.filter((x) => x.has(w)).length + 0.5));
+  return (text, about) => {
+    const A = stems(text), B = stems(about);
+    let hit = 0, all = 0;
+    A.forEach((w) => { const k = Math.max(0, idf(w)); all += k; if (B.has(w)) hit += k; });
+    return all ? hit / all : 0;
+  };
 }
 
 /** Balanced line breaks: as few lines as fit maxChars, then evened out. */
@@ -164,6 +190,8 @@ type Plan = { angle: Copy; scenes: Draft[]; story: string };
 
 type Structure = {
   id: string;
+  /** Product films plan from a listing; guide films from a guide and the product it hands over to. */
+  series?: "guide";
   name: string;
   /** What it is for, in a sentence: printed in the treatment. */
   purpose: string;
@@ -173,8 +201,10 @@ type Structure = {
   plan: (ctx: Ctx) => Plan;
 };
 
-function phoneScene(ctx: Ctx, id: string, about: string, caption: Copy | undefined, why: string, opts: Partial<Draft> = {}, shorter: (Copy | undefined)[] = []): Draft {
-  const s = screenFor(ctx, about, ctx.usedScreens);
+const screenAbout = (s: ScreenAsset) => [s.heading, s.shows, ...s.regions.map((r) => r.label), ...s.tasks.map((t) => t.text)].join(" ");
+
+function phoneScene(ctx: Ctx, id: string, about: string, caption: Copy | undefined, why: string, opts: Partial<Draft> = {}, shorter: (Copy | undefined)[] = [], chosen?: ScreenAsset): Draft {
+  const s = chosen ?? screenFor(ctx, about, ctx.usedScreens);
   if (!s) throw new Error(`${ctx.d.slug} has no screens`);
   ctx.usedScreens.push(s.src);
   const region = regionFor(s, about);
@@ -438,6 +468,193 @@ const STRUCTURES: Structure[] = [
   },
 ];
 
+// ------------------------------------------------------------------ guide-driven structures
+
+/** What each live component shows, in words, for matching it to a line. */
+export const LIVE_ABOUT: Record<string, string> = {
+  safeToSpendCard: "safe to spend money left figure number bills month week payday balance",
+  nextActionCard: "next step action check in week what to do now recommended",
+};
+
+/** A line that opens on a connective leans on the sentence before it, so it cannot stand alone on screen. */
+const leansBack = (u: CopyUnit) => /^(then|and|but|so|also|or)\b/i.test(u.text);
+
+/** The longest a guide step may be here: a step is one instruction, so it is held to a scene's worth of words. */
+const stepLimit = (ctx: Ctx) => Math.max(4, ctx.p.maxWordsPerScene + ctx.relax - ctx.brevity * 3);
+
+/** Real steps from a guide block, in the guide's order: the ones short enough to read, skipping the "nothing to do" kind. */
+function stepsOf(ctx: Ctx, block: NonNullable<Dossier["guide"]>["blocks"][number], n: number): number[] {
+  return block.items.map((u, i) => (u.words >= 3 && u.words <= stepLimit(ctx) && !/^nothing\b/i.test(u.text) ? i : -1)).filter((i) => i >= 0).slice(0, n);
+}
+
+/** Longest block heading that can sit above a checklist as its label. */
+const HEADING_CHARS = 44;
+
+/** A checklist to show: one the guide makes tickable, else a plain list whose heading can sit above it and say what it is. */
+function checklistOf(ctx: Ctx) {
+  const ok = (b: NonNullable<Dossier["guide"]>["blocks"][number]) => stepsOf(ctx, b, 4).length >= 3;
+  const blocks = ctx.d.guide?.blocks ?? [];
+  return blocks.find((b) => b.kind === "checklist" && ok(b))
+    ?? blocks.find((b) => b.kind === "list" && ok(b) && !!b.heading && b.heading.text.length <= HEADING_CHARS);
+}
+
+/** Numbered steps are a sequence: only an unbroken run from the guide's step 1, so the film counts 1, 2, 3 as the guide does. */
+function firstSteps(ctx: Ctx, block: NonNullable<Dossier["guide"]>["blocks"][number], n: number): number[] {
+  const ok = new Set(stepsOf(ctx, block, block.items.length));
+  const run: number[] = [];
+  for (let i = 0; i < Math.min(n, block.items.length) && ok.has(i); i++) run.push(i);
+  return run;
+}
+
+function stepCount(ctx: Ctx): number {
+  return ctx.brevity >= 2 ? 2 : ctx.brevity === 1 ? 3 : 4;
+}
+
+/** The turn from the guide to the product: the product's own line closest to what the guide teaches, on its real screen. */
+function guideTurn(ctx: Ctx): Draft {
+  const g = ctx.d.guide!;
+  const pool = (["solution", "output", "answer", "step"] as const).flatMap((k) => units(ctx, k, ctx.p.maxWordsPerScene + 4)).filter((u) => !leansBack(u));
+  // Ranked by what the guide is about (its title, search phrase and summary) first, its whole text second.
+  const fit = (u: CopyUnit) => overlap(u.text, g.topic) * 2 + overlap(u.text, g.about);
+  // The listing's own answer for this guide, where its author linked one, says it best; otherwise the closest line.
+  const authored = ctx.d.guideAnswers.filter((x) => x.guide === g.slug).map((x) => ctx.d.copy.find((u) => u.source === x.source)).find((u) => u && u.words <= 30);
+  const line = authored ?? [...pool].sort((a, b) => fit(b) - fit(a) || pool.indexOf(a) - pool.indexOf(b))[0];
+  const rel = relevance(ctx.d);
+  const live = [...ctx.d.liveComponents].sort((a, b) => rel(line?.text ?? "", LIVE_ABOUT[b] ?? "") - rel(line?.text ?? "", LIVE_ABOUT[a] ?? ""))[0] as Scene["live"] | undefined;
+  if (live) {
+    return {
+      id: "tool", kind: "live", variant: "after", copy: [], caption: line && c(line), live, eyebrow: { text: ctx.d.name, source: "title" }, hold: 0.6,
+      why: "The turn: the product the guide hands over to, as its real component computing a real number, captioned with its listing's line closest to what the guide teaches.",
+    };
+  }
+  // The screen that shows what the caption says: matched on the caption's distinctive words first, the guide's topic second.
+  const screen = [...ctx.d.screens].sort((a, b) => (rel(line?.text ?? "", screenAbout(b)) * 2 + rel(g.topic, screenAbout(b))) - (rel(line?.text ?? "", screenAbout(a)) * 2 + rel(g.topic, screenAbout(a))))[0];
+  return phoneScene(
+    ctx, "tool", `${line?.text ?? ""} ${g.title}`, line && c(line),
+    `The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches.`,
+    { eyebrow: { text: ctx.d.name, source: "title" } },
+    [line && labelFor(ctx, line)],
+    screen,
+  );
+}
+
+/** The close of a guide film: the full guide first, then the product, so the film stays useful before it is promotional. */
+function guideEnd(ctx: Ctx): Draft {
+  const url = ctx.d.copy.find((u) => u.kind === "guideUrl")!;
+  return {
+    id: "cta", kind: "cta", variant: "guide", copy: [{ text: ctx.d.name, source: "title" }, c(url)], eyebrow: micro("The full guide"),
+    why: "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+  };
+}
+
+const guideHook = (ctx: Ctx, variant: string): Draft => {
+  const t = ctx.d.copy.find((u) => u.kind === "guideTitle")!;
+  return { id: "hook", kind: "title", variant, copy: [c(t)], emphasis: emphasisOf(t.text), why: "The hook is the guide's own title: the question it answers, as a person would put it." };
+};
+
+const GUIDE_STRUCTURES: Structure[] = [
+  {
+    id: "guideTimeline",
+    series: "guide",
+    name: "In order",
+    purpose: "Walk the guide's own timeline, one marker at a time, then show the product that keeps it.",
+    fit: { "youtube-short": 3, "tiktok": 2, "pinterest-video": 2, "instagram-reel": 2, "facebook-reel": 2 },
+    goals: { awareness: 3, consideration: 2 },
+    available: (ctx) => !!ctx.d.guide?.blocks.some((b) => b.kind === "timeline" && stepsOf(ctx, b, 4).length >= 2),
+    plan: (ctx) => {
+      const block = ctx.d.guide!.blocks.find((b) => b.kind === "timeline" && stepsOf(ctx, b, 4).length >= 2)!;
+      const picked = stepsOf(ctx, block, stepCount(ctx));
+      return {
+        angle: c(ctx.d.copy.find((u) => u.kind === "guideTitle")!),
+        story: `The guide's timeline${block.heading ? ` "${block.heading.text}"` : ""}: ${picked.length} of its ${block.items.length} markers, in order.`,
+        scenes: [
+          guideHook(ctx, ctx.p.voice),
+          ...picked.map((i, n) => ({
+            id: `when-${n + 1}`, kind: "title" as const, variant: "label", copy: [c(block.items[i])], eyebrow: c(block.when![i]), emphasis: emphasisOf(block.items[i].text),
+            why: `Marker ${n + 1}: "${block.when![i].text}", with the first sentence of what the guide says to do then.`,
+          })),
+          guideTurn(ctx),
+          guideEnd(ctx),
+        ],
+      };
+    },
+  },
+  {
+    id: "guideSteps",
+    series: "guide",
+    name: "Do this",
+    purpose: "Open on the search itself, then the guide's own numbered steps, then the product.",
+    fit: { "youtube-short": 3, "pinterest-video": 3, "tiktok": 2, "instagram-reel": 2, "facebook-reel": 1 },
+    goals: { awareness: 3, consideration: 2 },
+    available: (ctx) => !!ctx.d.guide?.blocks.some((b) => b.kind === "steps" && firstSteps(ctx, b, 4).length >= 2),
+    plan: (ctx) => {
+      const block = ctx.d.guide!.blocks.find((b) => b.kind === "steps" && firstSteps(ctx, b, 4).length >= 2)!;
+      const picked = firstSteps(ctx, block, stepCount(ctx));
+      const q = ctx.d.copy.find((u) => u.kind === "guideQuery") ?? ctx.d.copy.find((u) => u.kind === "guideTitle")!;
+      return {
+        angle: c(q),
+        story: `Search-led: "${q.text}", answered by ${picked.length} of the guide's numbered steps${block.heading ? ` ("${block.heading.text}")` : ""}.`,
+        scenes: [
+          { id: "hook", kind: "title", variant: "quote", copy: [c(q)], why: "Opens on the exact phrase the guide is written to win, typed out the way it is typed into a search box." },
+          ...picked.map((i, n) => ({
+            id: `step-${n + 1}`, kind: "title" as const, variant: "editorial", copy: [c(block.items[i])], eyebrow: micro(String(i + 1)), emphasis: emphasisOf(block.items[i].text),
+            why: `Step ${i + 1} of the guide's numbered list, numbered as the guide numbers it, its first sentence: the instruction itself.`,
+          })),
+          guideTurn(ctx),
+          guideEnd(ctx),
+        ],
+      };
+    },
+  },
+  {
+    id: "guideChecklist",
+    series: "guide",
+    name: "The checklist",
+    purpose: "The guide's checklist on one screen, item by item, then the product that holds it.",
+    fit: { "pinterest-video": 3, "youtube-short": 2, "instagram-feed": 2, "instagram-reel": 2, "facebook-feed": 2 },
+    goals: { awareness: 3, consideration: 2 },
+    available: (ctx) => !!checklistOf(ctx),
+    plan: (ctx) => {
+      const block = checklistOf(ctx)!;
+      const picked = stepsOf(ctx, block, Math.max(3, stepCount(ctx)));
+      const label = block.heading && block.heading.text.length <= HEADING_CHARS ? c(block.heading) : undefined;
+      return {
+        angle: c(ctx.d.copy.find((u) => u.kind === "guideTitle")!),
+        story: `A checklist from the guide${block.heading ? `, "${block.heading.text}"` : ""}: ${picked.length} of its ${block.items.length} items.`,
+        scenes: [
+          guideHook(ctx, ctx.p.voice),
+          { id: "list", kind: "list", variant: "checklist", copy: picked.map((i) => c(block.items[i])), eyebrow: label, why: "The guide's own checklist, the first sentence of each item, ticked in as it is read." },
+          guideTurn(ctx),
+          guideEnd(ctx),
+        ],
+      };
+    },
+  },
+  {
+    id: "guideQuestion",
+    series: "guide",
+    name: "The question people ask",
+    purpose: "One of the guide's own questions, its plain answer, then the product.",
+    fit: { "youtube-short": 2, "facebook-feed": 2, "pinterest-video": 2, "facebook-reel": 2, "instagram-feed": 1 },
+    goals: { awareness: 2, consideration: 3 },
+    available: (ctx) => !!ctx.d.guide?.faq.some((f) => f.q.words <= 14 && f.a.words >= 5 && f.a.words <= stepLimit(ctx) + 4),
+    plan: (ctx) => {
+      const pool = ctx.d.guide!.faq.filter((f) => f.q.words <= 14 && f.a.words >= 5 && f.a.words <= stepLimit(ctx) + 4);
+      const f = pool.find((x) => !ctx.usedSources.has(x.q.source)) ?? pool[0];
+      return {
+        angle: c(f.q),
+        story: `A question from the guide's FAQ, "${f.q.text}", and the first sentence of its answer.`,
+        scenes: [
+          { id: "q", kind: "title", variant: "quote", copy: [c(f.q)], why: "The question as people ask it; the guide carries it because people search it." },
+          { id: "a", kind: "title", variant: "label", copy: [c(f.a)], emphasis: emphasisOf(f.a.text), hold: 0.6, why: "The guide's answer, its first sentence: the plain answer before any detail." },
+          guideTurn(ctx),
+          guideEnd(ctx),
+        ],
+      };
+    },
+  },
+];
+
 // ------------------------------------------------------------------ treatment
 
 const MOTIF_LANGUAGE: Record<string, { transitions: FilmTransition[]; says: string }> = {
@@ -533,8 +750,11 @@ function score(s: Structure, ctx: Ctx, slate: Slate): { total: number; notes: st
 
 export function direct(brief: Brief, d: Dossier, slate: Slate = []): Film {
   const p = PLATFORMS[brief.platform];
-  const id = `${d.slug}--${p.id}--${brief.goal}`;
-  const mine = slate.filter((f) => f.product === d.slug);
+  const series = d.guide ? "guide" : undefined;
+  const id = d.guide ? `guide-${d.guide.slug}--${p.id}` : `${d.slug}--${p.id}--${brief.goal}`;
+  const limits = d.guide ? GUIDE_RUNTIME[p.id] ?? { min: p.duration.min, max: p.duration.max + 10 } : p.duration;
+  // A product's guide films and its product films are separate series: each avoids repeating itself, not the other.
+  const mine = slate.filter((f) => f.product === d.slug && !!f.guide === !!d.guide);
   const ctx: Ctx = {
     d, p, goal: brief.goal, r: rng(id),
     usedProblems: new Set(mine.map((f) => problemIndex({ source: f.angle.source } as CopyUnit)).filter((n) => n >= 0)),
@@ -545,12 +765,13 @@ export function direct(brief: Brief, d: Dossier, slate: Slate = []): Film {
   };
 
   const reasoning: Film["reasoning"] = [
-    { topic: "Placement", decision: `${p.label}, ${p.width}×${p.height}, ${p.duration.min}–${p.duration.max}s, hook by ${p.hookBy}s, sound ${p.soundOn ? "on" : "off"}`, because: p.notes },
+    { topic: "Placement", decision: `${p.label}, ${p.width}×${p.height}, ${limits.min}–${limits.max}s, hook by ${p.hookBy}s, sound ${p.soundOn ? "on" : "off"}`, because: p.notes },
     { topic: "Product", decision: `${d.name}: ${d.free ? "free" : `${d.price}${d.compareAt ? ` (list ${d.compareAt})` : ""}`}, motif "${d.motif}", ${d.personality} personality, ${d.temperature} accent ${d.accent}`, because: `From its definition and Shop listing. ${d.screens.length} real screens${d.liveComponents.length ? ` and live components (${d.liveComponents.join(", ")})` : ""} to show.` },
+    ...(d.guide ? [{ topic: "Guide", decision: `"${d.guide.title}" (${d.guide.url})`, because: `Teaches from the guide first; ${d.name} is the product the guide hands over to. ${d.guide.blocks.length} lists and timelines, ${d.guide.faq.length} questions to draw from.` }] : []),
     { topic: "Audience", decision: d.copy.filter((u) => u.kind === "audience").slice(0, 2).map((u) => u.text).join(" / ") || "(none listed)", because: "The listing's own audience lines; the director writes for them." },
   ];
 
-  const rank = () => STRUCTURES.filter((s) => s.available(ctx))
+  const rank = () => [...STRUCTURES, ...GUIDE_STRUCTURES].filter((s) => s.series === series && s.available(ctx))
     .map((s) => ({ s, ...score(s, ctx, slate) }))
     .sort((a, b) => b.total - a.total);
   // A product never tells the same story twice. If every structure its
@@ -570,7 +791,7 @@ export function direct(brief: Brief, d: Dossier, slate: Slate = []): Film {
   // finish reading is worse than a line not shown. If it still won't fit,
   // plan again asking every unit for fewer words; if the best structure
   // can't fit at all, move to the runner-up rather than ship a long film.
-  const max = p.duration.max * SEC;
+  const max = limits.max * SEC;
   const OVER = p.voice === "native" ? 6 : 12;
   let chosen = ranked[0];
   let plan!: Plan;
@@ -595,7 +816,7 @@ export function direct(brief: Brief, d: Dossier, slate: Slate = []): Film {
       ctx.usedScreens = [];
       try { plan = chosen.s.plan(ctx); planned = true; } catch { break; }
       drafts = plan.scenes;
-      edits = brevity ? [{ topic: "Edit", decision: `Re-planned with ${brevity * 3} fewer words per line`, because: `The fullest real copy could not be read inside ${p.duration.max}s on ${p.label}.` }] : [];
+      edits = brevity ? [{ topic: "Edit", decision: `Re-planned with ${brevity * 3} fewer words per line`, because: `The fullest real copy could not be read inside ${limits.max}s on ${p.label}.` }] : [];
       while (total() > max) {
         const list = drafts.findIndex((s2) => (s2.kind === "list" || s2.kind === "contrast") && s2.copy.length > 2);
         const opt = drafts.map((s2) => !!s2.optional).lastIndexOf(true);
@@ -605,7 +826,7 @@ export function direct(brief: Brief, d: Dossier, slate: Slate = []): Film {
           edits.push({ topic: "Edit", decision: `Trimmed "${drafts[list].id}" to ${drafts[list].copy.length - 1} items`, because: "Fewer items read properly beats more items skimmed." });
           drafts = drafts.map((s2, j) => (j === list ? { ...s2, copy: s2.copy.slice(0, -1) } : s2));
         } else if (opt >= 0) {
-          edits.push({ topic: "Edit", decision: `Cut "${drafts[opt].id}"`, because: `It would run past ${p.duration.max}s, the most ${p.label} holds attention for${drafts[opt].kind === "brand" ? "; the end card still names the product" : ""}.` });
+          edits.push({ topic: "Edit", decision: `Cut "${drafts[opt].id}"`, because: `It would run past ${limits.max}s, the most ${p.label} holds attention for${drafts[opt].kind === "brand" ? "; the end card still names the product" : ""}.` });
           drafts = drafts.filter((_, j) => j !== opt);
         } else if (longCap >= 0) {
           const sc = drafts[longCap];
@@ -626,16 +847,16 @@ export function direct(brief: Brief, d: Dossier, slate: Slate = []): Film {
   reasoning.push({
     topic: "Structure",
     decision: `${chosen.s.name}: ${chosen.s.purpose}`,
-    because: `Best fit for a ${brief.goal} film on ${p.label} (${chosen.notes.join(", ")}).${skipped.length ? ` Passed over: ${skipped.join("; ")}, too long for ${p.duration.max}s.` : ""} Other candidates: ${ranked.filter((x) => x !== chosen).slice(0, 2).map((x) => `${x.s.name} (${x.total.toFixed(1)})`).join(", ")}.`,
+    because: `Best fit for a ${brief.goal} film on ${p.label} (${chosen.notes.join(", ")}).${skipped.length ? ` Passed over: ${skipped.join("; ")}, too long for ${limits.max}s.` : ""} Other candidates: ${ranked.filter((x) => x !== chosen).slice(0, 2).map((x) => `${x.s.name} (${x.total.toFixed(1)})`).join(", ")}.`,
   });
-  if (total() > max) edits.push({ topic: "Edit", decision: `Runs ${(total() / SEC).toFixed(1)}s, over ${p.duration.max}s`, because: "Every second left is reading time for real copy; flagged for review rather than cut." });
+  if (total() > max) edits.push({ topic: "Edit", decision: `Runs ${(total() / SEC).toFixed(1)}s, over ${limits.max}s`, because: "Every second left is reading time for real copy; flagged for review rather than cut." });
 
   reasoning.push({ topic: "Angle", decision: `"${plan.angle.text}"`, because: plan.story });
   why.forEach((w, i) => reasoning.push({ topic: i === 0 ? "Transitions" : i === 1 ? "Camera" : "Colour", decision: w.split(":")[0], because: w }));
   reasoning.push(...edits);
   const durs = times();
   // Too short for the placement: give the extra time to the scenes worth lingering on.
-  const short = p.duration.min * SEC - total();
+  const short = limits.min * SEC - total();
   const linger = drafts.map((x, i) => (x.kind === "phone" || x.kind === "title" || x.kind === "live" ? i : -1)).filter((i) => i >= 0);
   if (short > 0 && linger.length) linger.forEach((i, k) => (durs[i] += Math.floor(short / linger.length) + (k < short % linger.length ? 1 : 0)));
 
@@ -689,10 +910,10 @@ export function direct(brief: Brief, d: Dossier, slate: Slate = []): Film {
       ? "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
       : "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do.",
   });
-  reasoning.push({ topic: "Length", decision: `${(durationInFrames / SEC).toFixed(1)}s, ${scenes.length} scenes`, because: `Each scene is held for the time its words take to read on ${p.label} (${p.secondsPerWord}s a word), inside ${p.duration.min}–${p.duration.max}s.` });
+  reasoning.push({ topic: "Length", decision: `${(durationInFrames / SEC).toFixed(1)}s, ${scenes.length} scenes`, because: `Each scene is held for the time its words take to read on ${p.label} (${p.secondsPerWord}s a word), inside ${limits.min}–${limits.max}s.` });
 
   return {
-    id, product: d.slug, platform: p.id, goal: brief.goal,
+    id, product: d.slug, ...(d.guide ? { guide: d.guide.slug, runtime: limits } : {}), platform: p.id, goal: brief.goal,
     width: p.width, height: p.height, fps: SEC, durationInFrames,
     structure: chosen.s.id, angle: plan.angle, treatment: t,
     music: { bed: "audio/bed-relaxation-05.mp3", level: p.energy === "high" ? 0.24 : p.energy === "mid" ? 0.2 : 0.16, energy: p.energy },
@@ -700,4 +921,5 @@ export function direct(brief: Brief, d: Dossier, slate: Slate = []): Film {
   };
 }
 
-export { STRUCTURES };
+export { screenAbout };
+export { STRUCTURES, GUIDE_STRUCTURES, MOTIF_LANGUAGE, TRANSITION_SFX, overlap, emphasisOf, soundFor, rng };

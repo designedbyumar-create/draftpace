@@ -135,6 +135,77 @@ or variant: the `Scene` type, a block in `film.tsx`, and sound in
 describe it (heading, what it shows, focus regions in capture px) in
 `screens.catalog.json`.
 
+## Guide-driven Shorts: teach first, then the product
+
+`slate.json`'s `guides` list names a guide and a placement (today: each
+life area's three start-here guides as YouTube Shorts). The product is
+never chosen by hand: it is the first of the area's products **the guide
+itself links to** (`productForGuide` in `director/guide.ts`).
+
+- **Words come from the guide**, with sources like
+  `guide:<slug>/body[3].items[1]#0` (an item's first sentence: guides
+  write the instruction first and explain after) or
+  `guide:<slug>/body[2].steps[0].when`; links and emphasis are stripped
+  to their words, nothing else changes. `guide:<slug>/url` is the
+  address the film ends on.
+- **Four guide structures** (`GUIDE_STRUCTURES`): *In order* (the guide's
+  timeline, its real markers as eyebrows), *Do this* (numbered steps, only
+  an unbroken run from the guide's step 1, numbered as the guide numbers
+  them), *The checklist* (a tickable list, or a list whose heading can sit
+  above it), *The question people ask* (an FAQ question and its answer's
+  first sentence).
+- **The turn** to the product uses the listing's own answer written for
+  that guide (a `searchedProblems` entry with `guideSlug`) when there is
+  one, else its line closest to the guide's topic, never a line opening
+  on "Then/And". The screen (or live component) is matched to that
+  caption by `relevance()`, which weights words by how rare they are
+  across every product, so "subscriptions" counts and "own" does not.
+- **The close** is the guide's address first, the product and price
+  beneath it (`cta` variant `guide`).
+- Guide films run 18–45s on YouTube (`GUIDE_RUNTIME`): they teach.
+  Written to `shots/guides/<guide>/<platform>.film.json` and `.md`.
+
+Guards: the product is the one the guide links; at least two scenes of
+the guide before any product words; ends on the guide's address; step
+numbers equal the guide's own.
+
+## Voice-over to visuals: your words, real pictures, your length
+
+When you have a script (and maybe a recording) and need visuals for it:
+
+```bash
+mkdir voiceover/my-video                 # script.txt; optional captions.srt and voice.mp3/.wav/.m4a
+node scripts/voiceover.mjs my-video --product travel-companion --seconds 60
+node scripts/voiceover.mjs my-video --guide what-to-do-when-a-parent-dies   # product from the guide
+node scripts/render-direct.mjs Film-vo-my-video
+```
+
+- **Length**: `--seconds` 10–180 (15, 30, 45, 60, 90, 120, 180 are the
+  usual). With a recording the film runs as long as the recording; with a
+  caption file (SRT, which CapCut, Descript and most editors export)
+  every cut lands exactly on its line. The shot list says when the pace
+  is too fast or slow for the chosen length and what length suits it.
+- **Each line gets the visual whose words match it best**: a real screen
+  (with the matching region in focus), a live component, a guide
+  checklist (only on a strong match, once), the line itself as type
+  (short lines, and always the opening line), the name reveal when the
+  line says the product's name, and the end card on the last line. Never
+  the same visual twice in a row; a line over 6s is split into pictures
+  (none under 2.4s) at caption breaks. When nothing matches, the shot
+  list says it is B-roll rather than claiming a match.
+- **Captions are your words**, cut where a person pauses (optimised over
+  the whole line, never ending on "the"/"your"/"it"), each on screen
+  while it is said. Source `vo:<name>#<line>@<from>-<to>` is checked
+  against the script by the guards.
+- Settings persist in `voiceover/<name>/voiceover.json` (including the
+  recording's measured length), so re-running needs only the name, and
+  `node scripts/voiceover.mjs` alone re-plans them all. Recordings
+  themselves are gitignored.
+
+Guards: every line captioned in full and in order, captions in time and
+inside their shot, the length is the recording's / caption file's /
+chosen one, and the caption cutter's behaviour.
+
 ## Where every fact in a creative comes from
 
 Nothing about a product is typed into this workspace. A creative reads:
@@ -462,3 +533,14 @@ without the user's explicit go-ahead first**, every time.
 15. **Remotion's ffmpeg is a minimal build** (no `showspectrumpic`,
     `loudnorm`, `ebur128`). It decodes, encodes AAC and muxes, which is
     all `master-audio.mjs` needs; analysis is done in plain JS on PCM.
+16. **Guide films depend on `src/content/guides.ts`.** Editing a guide
+    (or a listing) changes the films planned from it, and the guard that
+    compares committed films fails until `node scripts/direct.mjs` is
+    re-run and committed. That is the point: a film never quotes a guide
+    that has since changed.
+17. **Plain word overlap picks the wrong screen.** A caption about
+    subscriptions matched the Debt screen on "own", "find" and "date".
+    Match captions to screens with `relevance()` (weighted by rarity
+    across all products), not `overlap()`. Product films still use
+    `overlap()` because they were reviewed with it; move them over only
+    with a re-review.

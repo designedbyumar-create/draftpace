@@ -19,6 +19,8 @@ export function treatment(film: Film): string {
   lines.push("");
   lines.push(`**${p.label}** · ${film.goal} · ${film.width}×${film.height} · ${(film.durationInFrames / film.fps).toFixed(1)}s · structure: **${film.structure}**`);
   lines.push("");
+  if (film.guide) lines.push(`Teaches from the guide [${film.guide}](https://draftpace.com/guides/${film.guide}), then hands over to **${film.product}**.`, "");
+  if (film.voiceover) lines.push(`Cut to the voice-over script \`${film.voiceover.script}\`, timed by ${film.voiceover.timing === "srt" ? "its caption file (exact)" : film.voiceover.timing === "audio" ? "the recording's length, spread by words" : "the chosen length, spread by words"}${film.voiceover.audio ? `, with the recording \`${film.voiceover.audio}\`` : ", silent until a recording is added"}.`, "");
   lines.push(`> Angle: "${film.angle.text}" — \`${film.angle.source}\``);
   lines.push("");
   lines.push("## Analysis and decisions");
@@ -44,6 +46,7 @@ export function treatment(film: Film): string {
     }
     if (s.live) lines.push(`- **Real UI:** live \`${s.live}\` computing the demo month`);
     if (s.caption) lines.push(`- **Caption:** "${s.caption.text}" — \`${s.caption.source}\``);
+    for (const k of s.captions ?? []) lines.push(`- **Voice ${tc(s.from + k.at, film.fps)}:** "${k.text}"`);
     if (s.sfx.length) lines.push(`- **Sound:** ${s.sfx.map((x) => `${x.cue} @${x.at >= 0 ? "+" : ""}${x.at}f (${x.volume.toFixed(2)})`).join(", ")}`);
     lines.push(`- **Why:** ${s.why}`);
     lines.push("");

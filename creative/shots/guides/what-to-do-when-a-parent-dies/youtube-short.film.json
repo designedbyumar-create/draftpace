@@ -1,0 +1,357 @@
+{
+  "id": "guide-what-to-do-when-a-parent-dies--youtube-short",
+  "product": "personal-life-affairs-companion",
+  "guide": "what-to-do-when-a-parent-dies",
+  "runtime": {
+    "min": 18,
+    "max": 45
+  },
+  "platform": "youtube-short",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 865,
+  "structure": "guideTimeline",
+  "angle": {
+    "text": "What to do when a parent dies: the first two weeks (US)",
+    "source": "guide:what-to-do-when-a-parent-dies/title"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "dolly",
+    "transitions": [
+      "pageTurn",
+      "blurDissolve",
+      "pageTurn"
+    ],
+    "motif": "book",
+    "grounds": [
+      "light",
+      "light",
+      "ink",
+      "accent"
+    ],
+    "pace": 1
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.2,
+    "energy": "mid"
+  },
+  "scenes": [
+    {
+      "id": "hook",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "What to do when a parent dies: the first two weeks (US)",
+          "source": "guide:what-to-do-when-a-parent-dies/title"
+        }
+      ],
+      "emphasis": [
+        "two"
+      ],
+      "why": "The hook is the guide's own title: the question it answers, as a person would put it.",
+      "from": 0,
+      "dur": 115,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "What to do when a",
+          "parent dies: the first",
+          "two weeks (US)"
+        ]
+      ]
+    },
+    {
+      "id": "when-1",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Get the death pronounced.",
+          "source": "guide:what-to-do-when-a-parent-dies/body[2].steps[0].what#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "Straight away",
+        "source": "guide:what-to-do-when-a-parent-dies/body[2].steps[0].when"
+      },
+      "emphasis": [
+        "pronounced"
+      ],
+      "why": "Marker 1: \"Straight away\", with the first sentence of what the guide says to do then.",
+      "from": 103,
+      "dur": 89,
+      "ground": "light",
+      "transition": "pageTurn",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "page",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "Get the death",
+          "pronounced."
+        ]
+      ]
+    },
+    {
+      "id": "when-2",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Choose a funeral home.",
+          "source": "guide:what-to-do-when-a-parent-dies/body[2].steps[1].what#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "Same day, when you can",
+        "source": "guide:what-to-do-when-a-parent-dies/body[2].steps[1].when"
+      },
+      "emphasis": [
+        "funeral"
+      ],
+      "why": "Marker 2: \"Same day, when you can\", with the first sentence of what the guide says to do then.",
+      "from": 180,
+      "dur": 112,
+      "ground": "ink",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "Choose a funeral home."
+        ]
+      ]
+    },
+    {
+      "id": "when-3",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Ask for the General Price List and choose only what you want.",
+          "source": "guide:what-to-do-when-a-parent-dies/body[2].steps[2].what#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "When you sit down with them",
+        "source": "guide:what-to-do-when-a-parent-dies/body[2].steps[2].when"
+      },
+      "emphasis": [
+        "only"
+      ],
+      "why": "Marker 3: \"When you sit down with them\", with the first sentence of what the guide says to do then.",
+      "from": 280,
+      "dur": 182,
+      "ground": "accent",
+      "transition": "pageTurn",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "page",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "Ask for the General",
+          "Price List and choose",
+          "only what you want."
+        ]
+      ]
+    },
+    {
+      "id": "when-4",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Ask the funeral home whether it reported the death to Social Security.",
+          "source": "guide:what-to-do-when-a-parent-dies/body[2].steps[4].what#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "Within a few days",
+        "source": "guide:what-to-do-when-a-parent-dies/body[2].steps[4].when"
+      },
+      "emphasis": [
+        "reported"
+      ],
+      "why": "Marker 4: \"Within a few days\", with the first sentence of what the guide says to do then.",
+      "from": 450,
+      "dur": 167,
+      "ground": "light",
+      "transition": "pageTurn",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "page",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "Ask the funeral home",
+          "whether it reported",
+          "the death to Social",
+          "Security."
+        ]
+      ]
+    },
+    {
+      "id": "tool",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Eight short questions about your situation.",
+        "source": "howItWorks[0]#0"
+      },
+      "screen": {
+        "src": "screens/personal-life-affairs-companion-workspace.png",
+        "pose": "tiltRight",
+        "focus": {
+          "at": 0.45,
+          "y": 82,
+          "h": 427,
+          "region": "question"
+        },
+        "scroll": []
+      },
+      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"Write down who should be called first.\" (One question at a time: write down who should be called first, with Start, Not relevant to me and Later.) chosen because it is the real screen closest to \"Eight short questions about your situation. What to do when a parent dies: the f\"; focus on \"Write down who should be called first.\".",
+      "eyebrow": {
+        "text": "Personal Life Affairs Companion",
+        "source": "title"
+      },
+      "from": 605,
+      "dur": 147,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 66,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Personal Life Affairs Companion",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/what-to-do-when-a-parent-dies",
+          "source": "guide:what-to-do-when-a-parent-dies/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 740,
+      "dur": 125,
+      "ground": "ink",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "YouTube Short, 1080×1920, 18–45s, hook by 1.2s, sound on",
+      "because": "Search-adjacent audience that will watch a slightly longer explanation if it starts strong. Loops by default."
+    },
+    {
+      "topic": "Product",
+      "decision": "Personal Life Affairs Companion: $49 (list $99), motif \"book\", calm personality, cool accent #26374f",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"What to do when a parent dies: the first two weeks (US)\" (draftpace.com/guides/what-to-do-when-a-parent-dies)",
+      "because": "Teaches from the guide first; Personal Life Affairs Companion is the product the guide hands over to. 3 lists and timelines, 5 questions to draw from."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You have been meaning to sort this out for a while and have never found a first step small enough to take. / You would rather be asked one question at a time than handed a folder and told to fill it in.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "In order: Walk the guide's own timeline, one marker at a time, then show the product that keeps it.",
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 3, goal fit 3, already used on YouTube Short ×2). Other candidates: The checklist (-4.8), The question people ask (-5.6)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"What to do when a parent dies: the first two weeks (US)\"",
+      "because": "The guide's timeline \"The first 48 hours\": 4 of its 5 markers, in order."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"book\"",
+      "because": "Transitions follow the product's own identity motif, \"book\": a handoff book, so scenes turn like pages."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"dolly\"",
+      "because": "Camera \"dolly\": constant forward movement for a high-energy feed."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → light → ink → accent",
+      "because": "Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Full sound design, mid-energy bed",
+      "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
+    },
+    {
+      "topic": "Length",
+      "decision": "28.8s, 7 scenes",
+      "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 18–45s."
+    }
+  ]
+}

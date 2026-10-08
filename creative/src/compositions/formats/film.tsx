@@ -164,6 +164,23 @@ function Caption({ text, frame, at, ctx, native }: { text: string; frame: number
   );
 }
 
+/** A voice-over's captions: one phrase at a time, each on screen while it is said. */
+function TimedCaptions({ s, ctx }: { s: Scene; ctx: Ctx }) {
+  const local = ctx.frame - s.from;
+  const k = s.captions!.find((c) => local >= c.at && local < c.at + c.dur);
+  if (!k) return null;
+  const p = interpolate(local, [k.at, k.at + 6], [0, 1], { ...clamp, easing: EXPO });
+  const { safe, H } = ctx.box;
+  const native = ctx.film.treatment.voice === "native";
+  return (
+    <div style={{ position: "absolute", left: safe.left, right: safe.right, top: H - safe.bottom - 170, display: "flex", justifyContent: "center", opacity: p, transform: `translateY(${(1 - p) * 14}px) scale(${0.96 + 0.04 * p})` }}>
+      <p style={{ margin: 0, textAlign: "center", fontFamily: "IBM Plex Sans", fontWeight: 700, fontSize: 58, lineHeight: 1.28, color: native ? "#111" : "var(--film-ink)", textWrap: "balance" }}>
+        <span style={{ background: native ? "#fff" : "color-mix(in srgb, var(--film-card) 94%, transparent)", boxDecorationBreak: "clone", WebkitBoxDecorationBreak: "clone", padding: "6px 18px", borderRadius: 12, boxShadow: native ? "none" : "0 0 0 2px var(--film-line)" }}>{k.text}</span>
+      </p>
+    </div>
+  );
+}
+
 // ------------------------------------------------------------------ camera
 
 function cameraTransform(film: Film, s: Scene, frame: number): string {
@@ -322,7 +339,8 @@ function PhoneScene({ s, ctx }: { s: Scene; ctx: Ctx }) {
   const sc = s.screen!;
   const t = (frame - s.from) / s.dur;
   const enter = spring({ frame: frame - s.from - 2, fps, config: { damping: 19, mass: 0.9, stiffness: 95 } });
-  const width = phoneWidth(ctx.box) * (sc.pose === "pair" ? 0.82 : 1);
+  // Under a voice-over's captions the phone steps back a little, so its foot never meets the words.
+  const width = phoneWidth(ctx.box) * (sc.pose === "pair" ? 0.82 : 1) * (s.captions ? 0.88 : 1);
   const size = screenSize(sc.src);
   const pageH = size.height * (390 / size.width);
   const f = sc.focus;
@@ -368,6 +386,11 @@ function LiveScene({ s, ctx }: { s: Scene; ctx: Ctx }) {
   const hand = interpolate(frame, [countEnd - 4, countEnd + 10], [0, 1], { ...clamp, easing: EXPO });
   return (
     <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", ...(demo.themeStyle as React.CSSProperties) }}>
+      {s.eyebrow && (
+        <div style={{ position: "absolute", left: ctx.box.safe.left, right: ctx.box.safe.right, top: ctx.box.safe.top - 10 }}>
+          <Eyebrow text={s.eyebrow.text} at={s.from} frame={frame} />
+        </div>
+      )}
       {hand < 1 && (
         <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", opacity: 1 - hand }}>
           <span style={{ fontFamily: "var(--font-inter)", fontWeight: 600, fontSize: 200, letterSpacing: "-0.05em", color: "var(--fg)", fontFeatureSettings: "'tnum' 1" }}>
@@ -377,7 +400,8 @@ function LiveScene({ s, ctx }: { s: Scene; ctx: Ctx }) {
       )}
       <div style={{ width: Math.min(720, W * 0.7), opacity: enter, transform: `translateY(${(1 - enter) * 600 - 80}px) perspective(2000px) rotateX(${(1 - enter) * 20}deg)`, filter: "drop-shadow(0 50px 70px rgba(16,20,24,0.3))" }}>
         {s.live === "nextActionCard"
-          ? <NextActionCard nextAction={demo.nextAction} checkInDay={demo.state.preferences.checkInDay} onDismiss={() => {}} onAct={() => {}} />
+          // A small card on its own: shown larger so its real words can be read on a phone.
+          ? <div style={{ transform: "scale(1.45)", transformOrigin: "50% 50%" }}><NextActionCard nextAction={demo.nextAction} checkInDay={demo.state.preferences.checkInDay} onDismiss={() => {}} onAct={() => {}} /></div>
           : <SafeToSpendCard breakdown={demo.breakdown} currency={demo.state.currency} updatedAt={demo.now} weeksRemaining={demo.weeksRemaining} tightestDay={demo.tightestDay} />}
       </div>
       {s.caption && <Caption text={s.caption.text} frame={frame} at={s.from + Math.round(s.dur * 0.4)} ctx={ctx} native={ctx.film.treatment.voice === "native"} />}
@@ -413,7 +437,36 @@ function BrandScene({ s, ctx }: { s: Scene; ctx: Ctx }) {
   );
 }
 
+/** The close of a guide film: where to read the whole guide, then the product it hands over to. */
+function GuideEnd({ s, ctx }: { s: Scene; ctx: Ctx }) {
+  const { frame, fps } = ctx;
+  const { W, safe } = ctx.box;
+  const t = frame - s.from;
+  const { name, price } = productLine(ctx.film.product);
+  const url = s.copy[1].text;
+  const cut = url.indexOf("/guides/") + "/guides/".length;
+  const card = spring({ frame: t - 6, fps, config: { damping: 16, mass: 0.8 } });
+  const tool = interpolate(t, [22, 40], [0, 1], { ...clamp, easing: EXPO });
+  const logoVars = { "--logo-mark": "var(--hl)", "--logo-mark-glyph": "var(--on-hl)" } as React.CSSProperties;
+  const width = W - safe.left - safe.right;
+  return (
+    <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", gap: 40, padding: `0 ${safe.right}px 0 ${safe.left}px` }}>
+      {s.eyebrow && <Eyebrow text={s.eyebrow.text} at={s.from} frame={frame} />}
+      <div style={{ width, maxWidth: 860, padding: "40px 48px", borderRadius: 32, background: "var(--hl)", color: "var(--on-hl)", transform: `translateY(${(1 - card) * 60}px) scale(${0.94 + 0.06 * card})`, opacity: Math.min(1, card * 1.4), boxShadow: "0 40px 80px -40px rgba(16,20,24,0.45)" }}>
+        <p style={{ margin: 0, fontFamily: "IBM Plex Sans", fontWeight: 500, fontSize: 34, opacity: 0.8 }}>{url.slice(0, cut)}</p>
+        <p style={{ margin: "8px 0 0", fontFamily: "IBM Plex Sans", fontWeight: 700, fontSize: 60, lineHeight: 1.12, letterSpacing: "-0.01em", overflowWrap: "anywhere" }}>{url.slice(cut)}</p>
+      </div>
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 18, opacity: tool, transform: `translateY(${(1 - tool) * 24}px)`, maxWidth: width }}>
+        <div style={logoVars}><LogoMark size={84} /></div>
+        <span style={{ fontFamily: "Newsreader", fontWeight: 600, fontSize: 64, lineHeight: 1.08, color: "var(--fg)", letterSpacing: "-0.01em", textAlign: "center", textWrap: "balance", maxWidth: 820 }}>{name}</span>
+        <span style={{ padding: "8px 24px", borderRadius: 999, background: "var(--chip)", color: "var(--fg)", fontFamily: "IBM Plex Sans", fontWeight: 600, fontSize: 36, whiteSpace: "nowrap", boxShadow: "0 0 0 2px color-mix(in srgb, var(--fg) 12%, transparent)" }}>{price}</span>
+      </div>
+    </AbsoluteFill>
+  );
+}
+
 function CtaScene({ s, ctx }: { s: Scene; ctx: Ctx }) {
+  if (s.variant === "guide") return <GuideEnd s={s} ctx={ctx} />;
   const { frame, fps } = ctx;
   const { W, safe } = ctx.box;
   const t = frame - s.from;
@@ -469,6 +522,7 @@ function SceneView({ s, i, ctx }: { s: Scene; i: number; ctx: Ctx }) {
       <Motif film={ctx.film} ctx={ctx} index={i} />
       <AbsoluteFill style={{ transform: cameraTransform(ctx.film, s, frame), opacity: out }}>{content}</AbsoluteFill>
       <WipeEdge kind={s.transition} p={p} />
+      {s.captions && <TimedCaptions s={s} ctx={ctx} />}
     </AbsoluteFill>
   );
 }
@@ -493,7 +547,8 @@ export function FilmComposition({ film }: { film: Film }) {
   } as React.CSSProperties;
   return (
     <AbsoluteFill style={{ ...postCssVars(theme), ...filmVars, background: theme.bg }}>
-      <Audio src={staticFile(film.music.bed)} volume={bed} />
+      {film.music.level > 0 && <Audio src={staticFile(film.music.bed)} volume={bed} />}
+      {film.voiceover?.audio && <Audio src={staticFile(film.voiceover.audio)} volume={1} />}
       {cues.filter((c) => c.cue in SFX_CUES).map((c, i) => (
         <Sequence key={`sfx-${i}`} from={c.abs} layout="none">
           <Audio src={staticFile(SFX_CUES[c.cue as keyof typeof SFX_CUES])} volume={c.volume} />

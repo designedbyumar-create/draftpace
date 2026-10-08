@@ -22,7 +22,9 @@ import MANIFEST from "../src/screens-manifest.json";
 export type CopyKind =
   | "problem" | "solution" | "label" | "phrase" | "answer" | "promise" | "story"
   | "audience" | "exclusion" | "step" | "inclusion" | "output" | "input"
-  | "task" | "question" | "privacy" | "saving";
+  | "task" | "question" | "privacy" | "saving"
+  // From a guide (guide.ts), never from a listing:
+  | "guideTitle" | "guideQuery" | "guideUrl" | "guideHeading" | "guideStep" | "guideWhen" | "guideQuestion" | "guideAnswer";
 
 export type CopyUnit = { source: string; text: string; kind: CopyKind; words: number };
 
@@ -53,6 +55,12 @@ export type Dossier = {
   liveComponents: string[];
   copy: CopyUnit[];
   screens: ScreenAsset[];
+  /** Listing answers written for a guide: searchedProblems entries that name the guide they lead to. */
+  guideAnswers: { guide: string; source: string }[];
+  /** Every product's words, for telling a distinctive word ("subscriptions") from a common one ("own"). Set by run.ts. */
+  background?: string[];
+  /** Set for a guide-driven film: the guide it teaches from. Its units are in `copy` too, with guide: sources. */
+  guide?: import("./guide").GuideMaterial;
 };
 
 /** Words a film may use that are not product claims: connective, structural, the brand's own. Keep this short and reviewed. */
@@ -70,7 +78,8 @@ export const MICROCOPY = [
   "What you get",
   "Sound familiar?",
   "Instead:",
-  "1", "2", "3", "4", "5",
+  "The full guide",
+  "1", "2", "3", "4", "5", "6", "7", "8", "9",
 ] as const;
 
 const words = (t: string) => t.trim().split(/\s+/).length;
@@ -181,6 +190,7 @@ export function buildDossier(args: {
     price: args.price,
     compareAt: args.compareAt,
     free: L.access === "free",
+    guideAnswers: (L.searchedProblems ?? []).flatMap((sp, i) => ("guideSlug" in sp && sp.guideSlug ? [{ guide: sp.guideSlug as string, source: `searchedProblems[${i}].answer` }] : [])),
     liveComponents: L.slug === "monthly-money-reset" ? ["safeToSpendCard", "nextActionCard"] : [],
     copy,
     screens,

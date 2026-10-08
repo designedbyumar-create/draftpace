@@ -1,5 +1,5 @@
 {
-  "$comment": "The briefs the director plans, in order. Order matters: each film is planned knowing every film before it, so it can avoid repeating a structure, an angle or a screen. Add a brief and run `node scripts/direct.mjs`.",
+  "$comment": "The briefs the director plans, in order. Order matters: each film is planned knowing every film before it, so it can avoid repeating a structure, an angle or a screen. Add a brief and run `node scripts/direct.mjs`. Guide briefs name a guide and a placement; the product is the one the guide hands over to. These are each life area's three start-here guides (src/content/areas.ts).",
   "briefs": [
     {
       "product": "travel-companion",
@@ -315,6 +315,104 @@
       "product": "vehicle-maintenance-companion",
       "platform": "instagram-feed",
       "goal": "consideration"
+    }
+  ],
+  "guides": [
+    {
+      "guide": "how-much-of-your-money-is-actually-safe-to-spend",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "you-missed-a-payment-what-to-do-next",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "how-to-find-every-subscription-you-are-paying-for",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "home-maintenance-checklist-by-month",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "how-to-make-a-home-binder",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "first-week-after-buying-a-house",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "how-to-make-a-phone-call-you-have-been-avoiding",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "task-paralysis-what-to-do-in-the-next-ten-minutes",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "paperwork-pile-where-to-start",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "homeschool-record-keeping-requirements-by-state",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "simple-homeschool-record-keeping-system",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "how-to-start-homeschooling-first-month-paperwork",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "what-to-do-when-a-parent-dies",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "how-to-find-someones-accounts-after-they-die",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "the-if-something-happens-to-me-file",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "flight-delayed-with-a-connection-what-to-do-first",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "travel-document-checklist",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "flight-changed-what-else-is-affected",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "what-to-tell-a-mechanic-before-work-starts",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "used-car-no-service-records-what-to-do",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "what-is-due-on-my-car-right-now",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "what-goes-in-a-family-health-binder",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "school-and-camp-health-forms-what-to-have-ready",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "doctor-appointment-prep-checklist",
+      "platform": "youtube-short"
     }
   ]
 }

@@ -68,7 +68,14 @@ New videos are planned, not templated: `director/` analyses each brief
 frame-exact script with a reasoned treatment, which `film.tsx` renders.
 See SKILL.md, "The Director". `node scripts/direct.mjs` plans the slate in
 `director/slate.json`; every film and its treatment lands in
-`shots/<product>/films/`.
+`shots/<product>/films/`, and guide-driven Shorts (a guide's real steps,
+then the product the guide links) in `shots/guides/`.
+
+Have your own voice-over? Put `script.txt` (and optionally
+`captions.srt` and `voice.mp3`) in `voiceover/<name>/` and run
+`node scripts/voiceover.mjs <name> --product <slug> --seconds 60`: it cuts
+real screens to your lines, burns in your words as captions, and writes a
+shot list with the timecode of every line to `shots/voiceover/<name>/`.
 
 ## Commands
 
@@ -83,5 +90,6 @@ node scripts/check-frames.mjs [id]       # frame gate; defaults to Monthly Money
 node scripts/frames.mjs <id> 20 120 300  # just these frames, as a contact sheet
 node scripts/synth-sfx.mjs               # regenerate the SFX kit
 node scripts/direct.mjs                  # plan every film in director/slate.json
-node scripts/render-direct.mjs Film-<part of id>   # render director films -> out/films/
+node scripts/render-direct.mjs Film-<part of id>   # render director films -> out/films/ (comma-separate several)
+node scripts/voiceover.mjs <name> --product <slug> --seconds 60   # cut visuals to your voice-over
 ```

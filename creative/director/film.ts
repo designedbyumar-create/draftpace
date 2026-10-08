@@ -37,6 +37,8 @@ export type Scene = {
     focus?: { at: number; y: number; h: number; region: string };
   };
   caption?: Copy;
+  /** Captions timed to a voice-over, frames relative to the scene. Used instead of `caption` when a voice carries the film. */
+  captions?: (Copy & { at: number; dur: number })[];
   live?: "safeToSpendCard" | "nextActionCard";
   sfx: SfxCue[];
   /** Why the director put this here. Printed in the treatment. */
@@ -55,6 +57,12 @@ export type Treatment = {
 export type Film = {
   id: string;
   product: string;
+  /** A guide-driven film: the guide it teaches from. Its product is the one the guide hands over to. */
+  guide?: string;
+  /** A voice-over film: the script it was cut to, and the recording if there is one (a path under public/). */
+  voiceover?: { script: string; audio?: string; timing: "srt" | "audio" | "length" };
+  /** Running-time limits when they are not the placement's own: a guide teaches for longer, a voice-over runs as long as the voice. */
+  runtime?: { min: number; max: number };
   platform: PlatformId;
   goal: Goal;
   width: number;
@@ -69,6 +77,13 @@ export type Film = {
   /** The director's analysis and decisions, in order, for the treatment document. */
   reasoning: { topic: string; decision: string; because: string }[];
 };
+
+/** Where a film's script and treatment live under shots/, without extension. */
+export function filmPath(f: Pick<Film, "product" | "platform" | "goal" | "guide" | "voiceover">): string {
+  if (f.voiceover) return `voiceover/${f.voiceover.script}/${f.platform}`;
+  if (f.guide) return `guides/${f.guide}/${f.platform}`;
+  return `${f.product}/films/${f.platform}--${f.goal}`;
+}
 
 /**
  * A film's shape with the product taken out: what two films would share

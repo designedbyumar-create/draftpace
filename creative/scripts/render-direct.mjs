@@ -9,6 +9,7 @@
  *
  *   node scripts/render-direct.mjs                        # every registered composition
  *   node scripts/render-direct.mjs MonthlyMoneyReset-FeatureSpotlight   # just one
+ *   node scripts/render-direct.mjs Film-guide-travel,Film-vo-            # several, comma-separated
  */
 import { bundle } from "@remotion/bundler";
 import { renderMedia, selectComposition, getCompositions } from "@remotion/renderer";
@@ -43,9 +44,11 @@ async function main() {
   log(`bundled: ${bundled}`);
 
   const all = await getCompositions(bundled, { browserExecutable });
-  // An exact id, or "Film" plus any part of a film id ("Film-travel", "Film-pinterest"), or (default) every Feature Spotlight.
+  // Exact ids, or "Film" plus any part of a film id ("Film-travel", "Film-guide-"), comma-separated; or (default) every Feature Spotlight.
+  const wanted = only ? only.split(",").filter(Boolean) : [];
+  const matches = (id, w) => id === w || (w.startsWith("Film") && id.startsWith("Film-") && id.includes(w.replace(/^Film-?/, "")));
   const targets = only
-    ? all.filter((c) => c.id === only || (only.startsWith("Film") && c.id.startsWith("Film-") && c.id.includes(only.replace(/^Film-?/, ""))))
+    ? all.filter((c) => wanted.some((w) => matches(c.id, w)))
     : all.filter((c) => c.id.endsWith("-FeatureSpotlight"));
   if (targets.length === 0) {
     throw new Error(only ? `No composition found with id "${only}"` : "No -FeatureSpotlight compositions found");

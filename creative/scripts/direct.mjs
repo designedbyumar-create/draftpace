@@ -5,6 +5,7 @@
  *
  *   shots/<product>/films/<platform>--<goal>.film.json   the frame-exact script the Film composition renders
  *   shots/<product>/films/<platform>--<goal>.md          the treatment: analysis, decisions and the script, for review
+ *   shots/guides/<guide>/<platform>.film.json / .md      the same, for a guide-driven film
  *   src/films.generated.ts                                every film, for Root.tsx
  *
  *   node scripts/direct.mjs            plan the whole slate
@@ -21,17 +22,17 @@ const vite = await createServer({
   resolve: { alias: { "@": path.resolve("../src") } },
 });
 const { runSlate } = await vite.ssrLoadModule(path.resolve("director/run.ts"));
+const { filmPath } = await vite.ssrLoadModule(path.resolve("director/film.ts"));
 const results = runSlate();
 await vite.close();
 
 const imports = [];
 for (const [i, { film, doc }] of results.entries()) {
-  const dir = path.join("shots", film.product, "films");
-  await mkdir(dir, { recursive: true });
-  const base = `${film.platform}--${film.goal}`;
-  await writeFile(path.join(dir, `${base}.film.json`), JSON.stringify(film, null, 2) + "\n");
-  await writeFile(path.join(dir, `${base}.md`), doc + "\n");
-  imports.push({ name: `f${i}`, file: `../shots/${film.product}/films/${base}.film.json` });
+  const base = path.join("shots", filmPath(film));
+  await mkdir(path.dirname(base), { recursive: true });
+  await writeFile(`${base}.film.json`, JSON.stringify(film, null, 2) + "\n");
+  await writeFile(`${base}.md`, doc + "\n");
+  imports.push({ name: `f${i}`, file: `../${base}.film.json` });
   if (!filter || film.id.includes(filter)) console.log(`${film.id.padEnd(60)} ${film.structure.padEnd(12)} ${(film.durationInFrames / 30).toFixed(1)}s  "${film.angle.text.slice(0, 60)}"`);
 }
 await writeFile("src/films.generated.ts",

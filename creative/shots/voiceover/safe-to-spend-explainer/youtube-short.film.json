@@ -1,0 +1,565 @@
+{
+  "id": "vo-safe-to-spend-explainer--youtube-short",
+  "product": "monthly-money-reset",
+  "guide": "how-much-of-your-money-is-actually-safe-to-spend",
+  "voiceover": {
+    "script": "safe-to-spend-explainer",
+    "timing": "length"
+  },
+  "runtime": {
+    "min": 54.95,
+    "max": 55.05
+  },
+  "platform": "youtube-short",
+  "goal": "consideration",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 1650,
+  "structure": "voiceover",
+  "angle": {
+    "text": "How much money is safe to spend after your bills?",
+    "source": "vo:safe-to-spend-explainer#0"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "float",
+    "transitions": [
+      "lineWipe",
+      "blurDissolve",
+      "lineWipe"
+    ],
+    "motif": "ledger",
+    "grounds": [
+      "light",
+      "ink",
+      "light",
+      "accent"
+    ],
+    "pace": 1
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.12,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "line-1",
+      "from": 0,
+      "dur": 157,
+      "transition": "cut",
+      "sfx": [],
+      "kind": "title",
+      "variant": "editorial",
+      "ground": "light",
+      "copy": [
+        {
+          "text": "How much money is safe to spend after your bills?",
+          "source": "vo:safe-to-spend-explainer#0"
+        }
+      ],
+      "lines": [
+        [
+          "How much money is",
+          "safe to spend after",
+          "your bills?"
+        ]
+      ],
+      "why": "\"How much money is safe to spend after your bills?\": the opening line, set large: it is the hook."
+    },
+    {
+      "id": "line-2-1",
+      "from": 149,
+      "dur": 101,
+      "transition": "lineWipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "tick",
+          "volume": 0.3
+        },
+        {
+          "at": 10,
+          "cue": "pop",
+          "volume": 0.21
+        }
+      ],
+      "kind": "live",
+      "variant": "after",
+      "ground": "light",
+      "copy": [],
+      "live": "safeToSpendCard",
+      "captions": [
+        {
+          "text": "Open the account you pay bills from",
+          "source": "vo:safe-to-spend-explainer#1@0-35",
+          "at": 0,
+          "dur": 93
+        }
+      ],
+      "why": "\"Open the account you pay bills from\": the live safeToSpendCard computes what it is about (0.23)."
+    },
+    {
+      "id": "line-2-2",
+      "from": 242,
+      "dur": 141,
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.168
+        },
+        {
+          "at": 10,
+          "cue": "pop",
+          "volume": 0.21
+        }
+      ],
+      "kind": "phone",
+      "variant": "proof",
+      "ground": "light",
+      "copy": [],
+      "captions": [
+        {
+          "text": "and write down the available balance,",
+          "source": "vo:safe-to-spend-explainer#1@36-73",
+          "at": 0,
+          "dur": 80
+        },
+        {
+          "text": "not the current one.",
+          "source": "vo:safe-to-spend-explainer#1@74-94",
+          "at": 80,
+          "dur": 53
+        }
+      ],
+      "screen": {
+        "src": "screens/monthly-money-reset-progress.png",
+        "pose": "flat",
+        "focus": {
+          "at": 0.4,
+          "y": 138,
+          "h": 126,
+          "region": "bills"
+        },
+        "scroll": []
+      },
+      "why": "\"and write down the available balance, not the current one.\": the real \"Start\" screen matches its words (0.10); focus on \"2 of 4\"."
+    },
+    {
+      "id": "line-3-1",
+      "from": 375,
+      "dur": 142,
+      "transition": "lineWipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "tick",
+          "volume": 0.3
+        },
+        {
+          "at": 10,
+          "cue": "pop",
+          "volume": 0.21
+        }
+      ],
+      "kind": "live",
+      "variant": "after",
+      "ground": "light",
+      "copy": [],
+      "live": "nextActionCard",
+      "captions": [
+        {
+          "text": "Write down your next payday,",
+          "source": "vo:safe-to-spend-explainer#2@0-28",
+          "at": 0,
+          "dur": 67
+        },
+        {
+          "text": "then list every bill, subscription",
+          "source": "vo:safe-to-spend-explainer#2@29-63",
+          "at": 67,
+          "dur": 67
+        }
+      ],
+      "why": "\"Write down your next payday, then list every bill, subscription\": the live nextActionCard computes what it is about (0.09)."
+    },
+    {
+      "id": "line-3-2",
+      "from": 509,
+      "dur": 101,
+      "transition": "lineWipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "tick",
+          "volume": 0.3
+        },
+        {
+          "at": 10,
+          "cue": "pop",
+          "volume": 0.21
+        }
+      ],
+      "kind": "live",
+      "variant": "after",
+      "ground": "light",
+      "copy": [],
+      "live": "safeToSpendCard",
+      "captions": [
+        {
+          "text": "and card payment that leaves before it.",
+          "source": "vo:safe-to-spend-explainer#2@64-103",
+          "at": 0,
+          "dur": 93
+        }
+      ],
+      "why": "\"and card payment that leaves before it.\": nothing in the product matches these words closely, so the least-shown real visual, the live safeToSpendCard."
+    },
+    {
+      "id": "line-4",
+      "from": 602,
+      "dur": 48,
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.168
+        }
+      ],
+      "kind": "title",
+      "variant": "editorial",
+      "ground": "ink",
+      "copy": [
+        {
+          "text": "Subtract them.",
+          "source": "vo:safe-to-spend-explainer#3"
+        }
+      ],
+      "lines": [
+        [
+          "Subtract them."
+        ]
+      ],
+      "why": "\"Subtract them.\": a short line, set large as type: the words are the picture."
+    },
+    {
+      "id": "line-5-1",
+      "from": 642,
+      "dur": 129,
+      "transition": "lineWipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "tick",
+          "volume": 0.3
+        },
+        {
+          "at": 10,
+          "cue": "pop",
+          "volume": 0.21
+        }
+      ],
+      "kind": "phone",
+      "variant": "proof",
+      "ground": "light",
+      "copy": [],
+      "captions": [
+        {
+          "text": "Subtract what you're holding back:",
+          "source": "vo:safe-to-spend-explainer#4@0-34",
+          "at": 0,
+          "dur": 67
+        },
+        {
+          "text": "tax money, a deposit,",
+          "source": "vo:safe-to-spend-explainer#4@35-56",
+          "at": 67,
+          "dur": 54
+        }
+      ],
+      "screen": {
+        "src": "screens/monthly-money-reset-progress.png",
+        "pose": "flat",
+        "focus": {
+          "at": 0.4,
+          "y": 650,
+          "h": 160,
+          "region": "guide"
+        },
+        "scroll": []
+      },
+      "why": "\"Subtract what you're holding back: tax money, a deposit,\": nothing in the product matches these words closely, so the least-shown real screen, \"Start\", focus on \"Spending against your own guide\"."
+    },
+    {
+      "id": "line-5-2",
+      "from": 763,
+      "dur": 101,
+      "transition": "lineWipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "tick",
+          "volume": 0.3
+        },
+        {
+          "at": 10,
+          "cue": "pop",
+          "volume": 0.21
+        }
+      ],
+      "kind": "live",
+      "variant": "after",
+      "ground": "light",
+      "copy": [],
+      "live": "nextActionCard",
+      "captions": [
+        {
+          "text": "the cushion you don't want to touch.",
+          "source": "vo:safe-to-spend-explainer#4@57-93",
+          "at": 0,
+          "dur": 93
+        }
+      ],
+      "why": "\"the cushion you don't want to touch.\": nothing in the product matches these words closely, so the least-shown real visual, the live nextActionCard."
+    },
+    {
+      "id": "line-6",
+      "from": 856,
+      "dur": 173,
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.168
+        }
+      ],
+      "kind": "title",
+      "variant": "editorial",
+      "ground": "light",
+      "copy": [
+        {
+          "text": "Write the result at the top of a note and date it.",
+          "source": "vo:safe-to-spend-explainer#5"
+        }
+      ],
+      "lines": [
+        [
+          "Write the result",
+          "at the top of a note",
+          "and date it."
+        ]
+      ],
+      "why": "\"Write the result at the top of a note and date it.\": a short line, set large as type: the words are the picture."
+    },
+    {
+      "id": "line-7",
+      "from": 1021,
+      "dur": 172,
+      "transition": "lineWipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "tick",
+          "volume": 0.3
+        },
+        {
+          "at": 4,
+          "cue": "shimmer",
+          "volume": 0.18
+        }
+      ],
+      "kind": "brand",
+      "variant": "lockup",
+      "ground": "ink",
+      "copy": [
+        {
+          "text": "Monthly Money Reset",
+          "source": "title"
+        }
+      ],
+      "captions": [
+        {
+          "text": "Monthly Money Reset does this sum",
+          "source": "vo:safe-to-spend-explainer#6@0-33",
+          "at": 0,
+          "dur": 82
+        },
+        {
+          "text": "for you from numbers you type.",
+          "source": "vo:safe-to-spend-explainer#6@34-64",
+          "at": 82,
+          "dur": 82
+        }
+      ],
+      "why": "\"Monthly Money Reset does this sum for you from numbers you type.\": it names Monthly Money Reset, so the name is revealed as it is said."
+    },
+    {
+      "id": "line-8-1",
+      "from": 1185,
+      "dur": 128,
+      "transition": "lineWipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "tick",
+          "volume": 0.3
+        },
+        {
+          "at": 10,
+          "cue": "pop",
+          "volume": 0.21
+        }
+      ],
+      "kind": "live",
+      "variant": "after",
+      "ground": "light",
+      "copy": [],
+      "live": "safeToSpendCard",
+      "captions": [
+        {
+          "text": "It works on the month",
+          "source": "vo:safe-to-spend-explainer#7@0-21",
+          "at": 0,
+          "dur": 67
+        },
+        {
+          "text": "rather than to payday,",
+          "source": "vo:safe-to-spend-explainer#7@22-44",
+          "at": 67,
+          "dur": 53
+        }
+      ],
+      "why": "\"It works on the month rather than to payday,\": the live safeToSpendCard computes what it is about (0.51)."
+    },
+    {
+      "id": "line-8-2",
+      "from": 1305,
+      "dur": 115,
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.168
+        },
+        {
+          "at": 10,
+          "cue": "pop",
+          "volume": 0.21
+        }
+      ],
+      "kind": "phone",
+      "variant": "proof",
+      "ground": "light",
+      "copy": [],
+      "captions": [
+        {
+          "text": "and it can go negative and says so.",
+          "source": "vo:safe-to-spend-explainer#7@45-80",
+          "at": 0,
+          "dur": 107
+        }
+      ],
+      "screen": {
+        "src": "screens/monthly-money-reset-progress.png",
+        "pose": "tiltRight",
+        "focus": {
+          "at": 0.4,
+          "y": 138,
+          "h": 126,
+          "region": "bills"
+        },
+        "scroll": []
+      },
+      "why": "\"and it can go negative and says so.\": nothing in the product matches these words closely, so the least-shown real screen, \"Start\", focus on \"2 of 4\"."
+    },
+    {
+      "id": "line-9",
+      "from": 1412,
+      "dur": 238,
+      "transition": "lineWipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "tick",
+          "volume": 0.3
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.27
+        }
+      ],
+      "kind": "cta",
+      "variant": "guide",
+      "ground": "light",
+      "copy": [
+        {
+          "text": "Monthly Money Reset",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/how-much-of-your-money-is-actually-safe-to-spend",
+          "source": "guide:how-much-of-your-money-is-actually-safe-to-spend/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "captions": [
+        {
+          "text": "It's only as current",
+          "source": "vo:safe-to-spend-explainer#8@0-20",
+          "at": 0,
+          "dur": 54
+        },
+        {
+          "text": "as your last update,",
+          "source": "vo:safe-to-spend-explainer#8@21-41",
+          "at": 54,
+          "dur": 54
+        },
+        {
+          "text": "and it doesn't connect to your bank.",
+          "source": "vo:safe-to-spend-explainer#8@42-78",
+          "at": 108,
+          "dur": 94
+        }
+      ],
+      "why": "The last line closes on the end card: the full guide, with the product beneath it."
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Canvas",
+      "decision": "YouTube Short, 1080×1920, 55.0s",
+      "because": "Your length, not the placement's. YouTube Short's safe areas keep captions clear of its buttons."
+    },
+    {
+      "topic": "Product",
+      "decision": "Monthly Money Reset, with the guide \"How much money is safe to spend after your bills?\"",
+      "because": "1 real screens, live safeToSpendCard, nextActionCard, 2 guide lists to cut to."
+    },
+    {
+      "topic": "Timing",
+      "decision": "Spread across the chosen 55s by words",
+      "because": "9 lines, 118 words, read naturally in about 50s. At this length the pace is natural: about 2.2 words a second. Record to the timecodes in the shot list, or add your recording and re-run."
+    },
+    {
+      "topic": "Visuals",
+      "decision": "13 shots for 9 lines: 3 real screens, 5 live, 0 guide lists, 3 lines set as type, 1 name reveal, then the end card",
+      "because": "Each shot shows the visual whose words best match what is being said, never the same one twice in a row; a line over 6s is split at a caption break into two pictures."
+    },
+    {
+      "topic": "Captions",
+      "decision": "Your words, burned in, a phrase at a time",
+      "because": "Most people watch muted; each caption is cut from your script at a natural break and shown while it is said."
+    }
+  ]
+}
