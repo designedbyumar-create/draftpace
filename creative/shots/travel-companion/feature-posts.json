@@ -15,7 +15,10 @@
       "ui": {
         "kind": "screen",
         "src": "screens/travel-companion-itinerary.png"
-      }
+      },
+      "emphasis": [
+        "six"
+      ]
     },
     {
       "id": "02-travel-companion",
@@ -31,7 +34,10 @@
       "ui": {
         "kind": "screen",
         "src": "screens/travel-companion-trip.png"
-      }
+      },
+      "emphasis": [
+        "moved"
+      ]
     },
     {
       "id": "03-travel-companion",
@@ -47,13 +53,16 @@
       "ui": {
         "kind": "screen",
         "src": "screens/travel-companion-printables.png"
-      }
+      },
+      "emphasis": [
+        "4%"
+      ]
     },
     {
       "id": "04-travel-companion",
       "themeSlug": "travel-companion",
       "problem": 3,
-      "layout": "window",
+      "layout": "fan",
       "eyebrow": "TRAVEL COMPANION",
       "headline": [
         "What's actually",
@@ -62,8 +71,15 @@
       ],
       "ui": {
         "kind": "screen",
-        "src": "screens/travel-companion-workspace.png"
-      }
+        "src": "screens/travel-companion-workspace.png",
+        "also": [
+          "screens/travel-companion-itinerary.png",
+          "screens/travel-companion-printables.png"
+        ]
+      },
+      "emphasis": [
+        "today"
+      ]
     }
   ]
 }

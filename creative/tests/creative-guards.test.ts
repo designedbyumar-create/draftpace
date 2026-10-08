@@ -78,9 +78,12 @@ describe("Creative Engine data", () => {
     }
   });
 
+  /** Every screen a file shows: each `src`, plus the extra screens of a fan layout (`also`). */
+  const screensOf = (json: unknown) => [...collect(json, "src"), ...collect(json, "also").flat()] as string[];
+
   it("shows only real captured screens that exist on disk", () => {
     for (const { file, json } of files) {
-      for (const src of collect(json, "src")) {
+      for (const src of screensOf(json)) {
         expect(fs.existsSync(path.join(ROOT, "public", src as string)), `${file} shows ${src}, which is not in creative/public/`).toBe(true);
       }
     }
@@ -88,7 +91,7 @@ describe("Creative Engine data", () => {
 
   it("never shows another product's screen", () => {
     for (const { file, slug, json } of files) {
-      for (const src of collect(json, "src")) {
+      for (const src of screensOf(json)) {
         expect(path.basename(src as string).startsWith(`${slug}-`), `${file} shows ${src}, a screen from a different product`).toBe(true);
       }
     }
@@ -108,6 +111,26 @@ describe("Creative Engine data", () => {
       expect(name).toBe(listing.title);
       if (listing.access === "free") expect(price).toBe("Free");
       else expect(price, `${slug} footer price`).toBe(`$${listing.price!.amount}`);
+    }
+  });
+
+  it("only emphasises words the text actually says", () => {
+    for (const { file, json } of files) {
+      const texts = [...collect(json, "headline"), ...collect(json, "lines")].flat().join(" ").toLowerCase();
+      for (const word of (collect(json, "emphasis").flat() as string[]).flatMap((e) => e.split(/\s+/))) {
+        expect(texts, `${file} emphasises "${word}", which none of its text says`).toContain(word.toLowerCase());
+      }
+    }
+  });
+
+  it("has an up-to-date size for every captured screen", () => {
+    const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, "src/screens-manifest.json"), "utf8"));
+    const dir = path.join(ROOT, "public/screens");
+    const pngs = fs.readdirSync(dir).filter((f) => f.endsWith(".png"));
+    expect(Object.keys(manifest).sort(), "src/screens-manifest.json is stale; run node scripts/screens-manifest.mjs").toEqual(pngs.map((f) => `screens/${f}`).sort());
+    for (const f of pngs) {
+      const head = fs.readFileSync(path.join(dir, f)).subarray(16, 24); // PNG IHDR: width, height
+      expect(manifest[`screens/${f}`], `${f} changed size; run node scripts/screens-manifest.mjs`).toEqual({ width: head.readUInt32BE(0), height: head.readUInt32BE(4) });
     }
   });
 

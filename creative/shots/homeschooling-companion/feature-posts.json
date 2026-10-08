@@ -15,7 +15,10 @@
       "ui": {
         "kind": "screen",
         "src": "screens/homeschooling-companion-record.png"
-      }
+      },
+      "emphasis": [
+        "October"
+      ]
     },
     {
       "id": "02-homeschooling-companion",
@@ -31,7 +34,10 @@
       "ui": {
         "kind": "screen",
         "src": "screens/homeschooling-companion-workspace.png"
-      }
+      },
+      "emphasis": [
+        "land"
+      ]
     },
     {
       "id": "03-homeschooling-companion",
@@ -47,13 +53,16 @@
       "ui": {
         "kind": "screen",
         "src": "screens/homeschooling-companion-kids.png"
-      }
+      },
+      "emphasis": [
+        "stopped"
+      ]
     },
     {
       "id": "04-homeschooling-companion",
       "themeSlug": "homeschooling-companion",
       "problem": 3,
-      "layout": "window",
+      "layout": "fan",
       "eyebrow": "HOMESCHOOLING COMPANION",
       "headline": [
         "Something to show.",
@@ -62,8 +71,15 @@
       ],
       "ui": {
         "kind": "screen",
-        "src": "screens/homeschooling-companion-record.png"
-      }
+        "src": "screens/homeschooling-companion-record.png",
+        "also": [
+          "screens/homeschooling-companion-kids.png",
+          "screens/homeschooling-companion-workspace.png"
+        ]
+      },
+      "emphasis": [
+        "abandoned"
+      ]
     }
   ]
 }

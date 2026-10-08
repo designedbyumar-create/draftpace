@@ -14,7 +14,10 @@
         "kind": "safeToSpendCard"
       },
       "themeSlug": "monthly-money-reset",
-      "problem": 0
+      "problem": 0,
+      "emphasis": [
+        "safe"
+      ]
     },
     {
       "id": "02-bills-protected",
@@ -29,7 +32,10 @@
         "kind": "safeToSpendCard"
       },
       "themeSlug": "monthly-money-reset",
-      "problem": 1
+      "problem": 1,
+      "emphasis": [
+        "money"
+      ]
     },
     {
       "id": "03-weekly-check-in",
@@ -45,7 +51,10 @@
         "src": "screens/monthly-money-reset-progress.png"
       },
       "themeSlug": "monthly-money-reset",
-      "problem": 2
+      "problem": 2,
+      "emphasis": [
+        "abandoned"
+      ]
     },
     {
       "id": "04-tightest-day",
@@ -60,7 +69,10 @@
         "kind": "safeToSpendCard"
       },
       "themeSlug": "monthly-money-reset",
-      "problem": 3
+      "problem": 3,
+      "emphasis": [
+        "one day"
+      ]
     }
   ]
 }

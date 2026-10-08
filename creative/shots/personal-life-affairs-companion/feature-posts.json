@@ -15,7 +15,10 @@
       "ui": {
         "kind": "screen",
         "src": "screens/personal-life-affairs-companion-workspace.png"
-      }
+      },
+      "emphasis": [
+        "years"
+      ]
     },
     {
       "id": "02-personal-life-affairs-companion",
@@ -31,7 +34,10 @@
       "ui": {
         "kind": "screen",
         "src": "screens/personal-life-affairs-companion-affairs.png"
-      }
+      },
+      "emphasis": [
+        "most"
+      ]
     },
     {
       "id": "03-personal-life-affairs-companion",
@@ -47,13 +53,16 @@
       "ui": {
         "kind": "screen",
         "src": "screens/personal-life-affairs-companion-affairs.png"
-      }
+      },
+      "emphasis": [
+        "true"
+      ]
     },
     {
       "id": "04-personal-life-affairs-companion",
       "themeSlug": "personal-life-affairs-companion",
       "problem": 3,
-      "layout": "window",
+      "layout": "fan",
       "eyebrow": "PERSONAL LIFE AFFAIRS COMPANION",
       "headline": [
         "Not a login",
@@ -62,8 +71,15 @@
       ],
       "ui": {
         "kind": "screen",
-        "src": "screens/personal-life-affairs-companion-printables.png"
-      }
+        "src": "screens/personal-life-affairs-companion-printables.png",
+        "also": [
+          "screens/personal-life-affairs-companion-affairs.png",
+          "screens/personal-life-affairs-companion-workspace.png"
+        ]
+      },
+      "emphasis": [
+        "inherit"
+      ]
     }
   ]
 }

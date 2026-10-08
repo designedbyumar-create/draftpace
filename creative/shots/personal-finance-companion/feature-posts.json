@@ -15,7 +15,10 @@
       "ui": {
         "kind": "screen",
         "src": "screens/personal-finance-companion-records.png"
-      }
+      },
+      "emphasis": [
+        "scattered"
+      ]
     },
     {
       "id": "02-personal-finance-companion",
@@ -31,7 +34,10 @@
       "ui": {
         "kind": "screen",
         "src": "screens/personal-finance-companion-debt.png"
-      }
+      },
+      "emphasis": [
+        "gone"
+      ]
     },
     {
       "id": "03-personal-finance-companion",
@@ -47,13 +53,16 @@
       "ui": {
         "kind": "screen",
         "src": "screens/personal-finance-companion-bills.png"
-      }
+      },
+      "emphasis": [
+        "paid"
+      ]
     },
     {
       "id": "04-personal-finance-companion",
       "themeSlug": "personal-finance-companion",
       "problem": 3,
-      "layout": "window",
+      "layout": "fan",
       "eyebrow": "PERSONAL FINANCE COMPANION",
       "headline": [
         "What does a normal",
@@ -62,8 +71,15 @@
       ],
       "ui": {
         "kind": "screen",
-        "src": "screens/personal-finance-companion-printables.png"
-      }
+        "src": "screens/personal-finance-companion-printables.png",
+        "also": [
+          "screens/personal-finance-companion-bills.png",
+          "screens/personal-finance-companion-debt.png"
+        ]
+      },
+      "emphasis": [
+        "normal"
+      ]
     }
   ]
 }

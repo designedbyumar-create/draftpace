@@ -18,6 +18,9 @@
           "The filter size.",
           "The model number.",
           "None of it lives anywhere."
+        ],
+        "emphasis": [
+          "anywhere"
         ]
       },
       "camera": {

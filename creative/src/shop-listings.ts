@@ -45,8 +45,12 @@ export function displayPrice(listing: ShopProductInput): string {
   }).format(amount);
 }
 
-/** What a post's footer prints: the real listing title and price. */
-export function productLine(slug: string): { name: string; price: string } {
+/** What a creative prints about the product: the real listing title, price, and the list price it's reduced from (if any). */
+export function productLine(slug: string): { name: string; price: string; compareAt: string | null } {
   const listing = listingFor(slug);
-  return { name: listing.title, price: displayPrice(listing) };
+  const compareAt =
+    listing.access !== "free" && listing.compareAtPrice
+      ? displayPrice({ ...listing, price: listing.compareAtPrice })
+      : null;
+  return { name: listing.title, price: displayPrice(listing), compareAt };
 }

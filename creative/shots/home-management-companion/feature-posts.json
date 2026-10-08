@@ -15,7 +15,10 @@
       "ui": {
         "kind": "screen",
         "src": "screens/home-management-companion-workspace.png"
-      }
+      },
+      "emphasis": [
+        "anywhere"
+      ]
     },
     {
       "id": "02-home-management-companion",
@@ -31,7 +34,10 @@
       "ui": {
         "kind": "screen",
         "src": "screens/home-management-companion-workspace.png"
-      }
+      },
+      "emphasis": [
+        "repair"
+      ]
     },
     {
       "id": "03-home-management-companion",
@@ -47,13 +53,16 @@
       "ui": {
         "kind": "screen",
         "src": "screens/home-management-companion-seasons.png"
-      }
+      },
+      "emphasis": [
+        "late"
+      ]
     },
     {
       "id": "04-home-management-companion",
       "themeSlug": "home-management-companion",
       "problem": 3,
-      "layout": "window",
+      "layout": "fan",
       "eyebrow": "HOME BASE",
       "headline": [
         "Who came out.",
@@ -62,8 +71,15 @@
       ],
       "ui": {
         "kind": "screen",
-        "src": "screens/home-management-companion-history.png"
-      }
+        "src": "screens/home-management-companion-history.png",
+        "also": [
+          "screens/home-management-companion-seasons.png",
+          "screens/home-management-companion-workspace.png"
+        ]
+      },
+      "emphasis": [
+        "cost"
+      ]
     }
   ]
 }

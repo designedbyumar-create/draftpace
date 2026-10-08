@@ -15,7 +15,10 @@
       "ui": {
         "kind": "screen",
         "src": "screens/vehicle-maintenance-companion-vehicles.png"
-      }
+      },
+      "emphasis": [
+        "interval"
+      ]
     },
     {
       "id": "02-vehicle-maintenance-companion",
@@ -31,7 +34,10 @@
       "ui": {
         "kind": "screen",
         "src": "screens/vehicle-maintenance-companion-vehicles.png"
-      }
+      },
+      "emphasis": [
+        "history"
+      ]
     },
     {
       "id": "03-vehicle-maintenance-companion",
@@ -47,13 +53,16 @@
       "ui": {
         "kind": "screen",
         "src": "screens/vehicle-maintenance-companion-printables.png"
-      }
+      },
+      "emphasis": [
+        "expensive"
+      ]
     },
     {
       "id": "04-vehicle-maintenance-companion",
       "themeSlug": "vehicle-maintenance-companion",
       "problem": 3,
-      "layout": "window",
+      "layout": "fan",
       "eyebrow": "VEHICLE MAINTENANCE COMPANION",
       "headline": [
         "You have no proof",
@@ -62,8 +71,15 @@
       ],
       "ui": {
         "kind": "screen",
-        "src": "screens/vehicle-maintenance-companion-history.png"
-      }
+        "src": "screens/vehicle-maintenance-companion-history.png",
+        "also": [
+          "screens/vehicle-maintenance-companion-printables.png",
+          "screens/vehicle-maintenance-companion-vehicles.png"
+        ]
+      },
+      "emphasis": [
+        "proof"
+      ]
     }
   ]
 }

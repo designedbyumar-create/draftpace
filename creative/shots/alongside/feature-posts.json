@@ -15,7 +15,10 @@
       "ui": {
         "kind": "screen",
         "src": "screens/alongside-workspace.png"
-      }
+      },
+      "emphasis": [
+        "three weeks"
+      ]
     },
     {
       "id": "02-alongside",
@@ -31,7 +34,10 @@
       "ui": {
         "kind": "screen",
         "src": "screens/alongside-life.png"
-      }
+      },
+      "emphasis": [
+        "behind"
+      ]
     },
     {
       "id": "03-alongside",
@@ -47,13 +53,16 @@
       "ui": {
         "kind": "screen",
         "src": "screens/alongside-help.png"
-      }
+      },
+      "emphasis": [
+        "lost"
+      ]
     },
     {
       "id": "04-alongside",
       "themeSlug": "alongside",
       "problem": 3,
-      "layout": "window",
+      "layout": "fan",
       "eyebrow": "ADHD LIFE COMPANION",
       "headline": [
         "Every system tells",
@@ -62,8 +71,15 @@
       ],
       "ui": {
         "kind": "screen",
-        "src": "screens/alongside-life.png"
-      }
+        "src": "screens/alongside-life.png",
+        "also": [
+          "screens/alongside-help.png",
+          "screens/alongside-workspace.png"
+        ]
+      },
+      "emphasis": [
+        "failed"
+      ]
     }
   ]
 }

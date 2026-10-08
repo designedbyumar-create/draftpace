@@ -15,7 +15,10 @@
       "ui": {
         "kind": "screen",
         "src": "screens/family-health-binder-members.png"
-      }
+      },
+      "emphasis": [
+        "memory"
+      ]
     },
     {
       "id": "02-family-health-binder",
@@ -31,7 +34,10 @@
       "ui": {
         "kind": "screen",
         "src": "screens/family-health-binder-printables.png"
-      }
+      },
+      "emphasis": [
+        "enough"
+      ]
     },
     {
       "id": "03-family-health-binder",
@@ -47,13 +53,16 @@
       "ui": {
         "kind": "screen",
         "src": "screens/family-health-binder-workspace.png"
-      }
+      },
+      "emphasis": [
+        "guessing"
+      ]
     },
     {
       "id": "04-family-health-binder",
       "themeSlug": "family-health-binder",
       "problem": 3,
-      "layout": "window",
+      "layout": "fan",
       "eyebrow": "FAMILY HEALTH BINDER",
       "headline": [
         "The questions vanish",
@@ -62,8 +71,15 @@
       ],
       "ui": {
         "kind": "screen",
-        "src": "screens/family-health-binder-printables.png"
-      }
+        "src": "screens/family-health-binder-printables.png",
+        "also": [
+          "screens/family-health-binder-members.png",
+          "screens/family-health-binder-workspace.png"
+        ]
+      },
+      "emphasis": [
+        "vanish"
+      ]
     }
   ]
 }
