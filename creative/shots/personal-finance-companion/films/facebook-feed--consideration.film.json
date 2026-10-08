@@ -1,0 +1,219 @@
+{
+  "id": "personal-finance-companion--facebook-feed--consideration",
+  "product": "personal-finance-companion",
+  "platform": "facebook-feed",
+  "goal": "consideration",
+  "width": 1080,
+  "height": 1350,
+  "fps": 30,
+  "durationInFrames": 341,
+  "structure": "question",
+  "angle": {
+    "text": "Worried it becomes another app you stop opening?",
+    "source": "questions[0].question"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "locked",
+    "transitions": [
+      "cardSlide",
+      "wipe",
+      "cardSlide"
+    ],
+    "motif": "index",
+    "grounds": [
+      "light",
+      "light",
+      "ink",
+      "accent"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "q",
+      "kind": "title",
+      "variant": "quote",
+      "copy": [
+        {
+          "text": "Worried it becomes another app you stop opening?",
+          "source": "questions[0].question"
+        }
+      ],
+      "why": "The question a considering buyer is already asking, so the film meets them where they are.",
+      "from": 0,
+      "dur": 112,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "Worried it becomes",
+          "another app you",
+          "stop opening?"
+        ]
+      ]
+    },
+    {
+      "id": "a",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "screen": {
+        "src": "screens/personal-finance-companion-debt.png",
+        "pose": "tiltLeft",
+        "focus": {
+          "at": 0.45,
+          "y": 579,
+          "h": 175,
+          "region": "plan"
+        }
+      },
+      "why": "The answer, with the real screen it is about. Screen: \"Debt\" (What you owe and when it could be gone: totals, a payoff plan worked out from your own numbers, and the debt-free date.) chosen because it is the real screen closest to \"Worried it becomes another app you stop opening? It opens on exactly one next ac\"; focus on \"Payoff plan\".",
+      "from": 100,
+      "dur": 100,
+      "ground": "light",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 45,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "brand",
+      "kind": "brand",
+      "variant": "center",
+      "copy": [
+        {
+          "text": "Personal Finance Companion",
+          "source": "title"
+        }
+      ],
+      "why": "Named once the doubt is answered.",
+      "from": 188,
+      "dur": 62,
+      "ground": "ink",
+      "transition": "wipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 6,
+          "cue": "shimmer",
+          "volume": 0.18
+        }
+      ],
+      "lines": [
+        [
+          "Personal Finance",
+          "Companion"
+        ]
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "price",
+      "copy": [
+        {
+          "text": "Personal Finance Companion",
+          "source": "title"
+        },
+        {
+          "text": "Available now.",
+          "source": "micro"
+        }
+      ],
+      "why": "Facebook feed video rewards a direct close: the real price against the real list price.",
+      "from": 238,
+      "dur": 103,
+      "ground": "accent",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Facebook feed video, 1080×1350, 8–20s, hook by 1.5s, sound off",
+      "because": "Scrolled past in a feed with sound off: say who it is for in the first seconds, name the product early, keep every point on screen and readable at a glance."
+    },
+    {
+      "topic": "Product",
+      "decision": "Personal Finance Companion: $49 (list $99), motif \"index\", calm personality, cool accent #0d3b2e",
+      "because": "From its definition and Shop listing. 4 real screens to show."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You have more than one account, bill, or income source and want them tracked in one real place, not five apps. / You want a next step handed to you, not a dashboard you have to interpret yourself every time.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "The question before buying: Answer the question people actually ask before they decide, with the listing's own answer.",
+      "because": "Best fit for a consideration film on Facebook feed video (platform fit 2, goal fit 3). Passed over: Is this you? (its real copy needs 30s to read), too long for 20s. Other candidates: Is this you? (6.4), In their words (3.6)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"Worried it becomes another app you stop opening?\"",
+      "because": "A deciding-stage question from the listing, \"Worried it becomes another app you stop opening?\", and its own answer."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"index\"",
+      "because": "Transitions follow the product's own identity motif, \"index\": an index of tabs, so scenes slide in like the next tab."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"locked\"",
+      "because": "Camera \"locked\": still and precise, so a slow, reading audience is never chasing the frame."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → light → ink → accent",
+      "because": "Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "11.4s, 4 scenes",
+      "because": "Each scene is held for the time its words take to read on Facebook feed video (0.32s a word), inside 8–20s."
+    }
+  ]
+}

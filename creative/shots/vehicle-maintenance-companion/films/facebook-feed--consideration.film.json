@@ -1,0 +1,202 @@
+{
+  "id": "vehicle-maintenance-companion--facebook-feed--consideration",
+  "product": "vehicle-maintenance-companion",
+  "platform": "facebook-feed",
+  "goal": "consideration",
+  "width": 1080,
+  "height": 1350,
+  "fps": 30,
+  "durationInFrames": 568,
+  "structure": "isThisYou",
+  "angle": {
+    "text": "You have been surprised at a shop counter by work you did not ask for.",
+    "source": "audience[3]"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "float",
+    "transitions": [
+      "radial",
+      "zoomThrough",
+      "radial"
+    ],
+    "motif": "gauge",
+    "grounds": [
+      "light",
+      "light",
+      "accent",
+      "light"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "who",
+      "kind": "list",
+      "variant": "audience",
+      "copy": [
+        {
+          "text": "You have been surprised at a shop counter by work you did not ask for.",
+          "source": "audience[3]"
+        }
+      ],
+      "eyebrow": {
+        "text": "If this is you:",
+        "source": "micro"
+      },
+      "why": "Feed audiences decide in a second whether something is for them; naming them in the listing's words is the fastest honest filter.",
+      "from": 0,
+      "dur": 268,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [
+        {
+          "at": 10,
+          "cue": "pop",
+          "volume": 0.27
+        }
+      ]
+    },
+    {
+      "id": "proof",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "A dated, mileage-stamped Service Boundary stating what is requested today and what is not authorized.",
+        "source": "problemsSolved[2].solution"
+      },
+      "screen": {
+        "src": "screens/vehicle-maintenance-companion-printables.png",
+        "pose": "tiltLeft",
+        "focus": {
+          "at": 0.45,
+          "y": 516,
+          "h": 140,
+          "region": "request"
+        }
+      },
+      "why": "What it does for exactly those people, on a real screen. Screen: \"Print\" (The Service Boundary: a dated, mileage-stamped page you hand over before a shop touches the car, with what you're asking for and a limit.) chosen because it is the real screen closest to \"A dated, mileage-stamped Service Boundary stating what is requested today and wh\"; focus on \"What are you requesting today?\".",
+      "from": 256,
+      "dur": 221,
+      "ground": "light",
+      "transition": "radial",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 99,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "price",
+      "copy": [
+        {
+          "text": "Vehicle Maintenance Companion",
+          "source": "title"
+        },
+        {
+          "text": "Available now.",
+          "source": "micro"
+        }
+      ],
+      "why": "Facebook feed video rewards a direct close: the real price against the real list price.",
+      "from": 465,
+      "dur": 103,
+      "ground": "accent",
+      "transition": "zoomThrough",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Facebook feed video, 1080×1350, 8–20s, hook by 1.5s, sound off",
+      "because": "Scrolled past in a feed with sound off: say who it is for in the first seconds, name the product early, keep every point on screen and readable at a glance."
+    },
+    {
+      "topic": "Product",
+      "decision": "Vehicle Maintenance Companion: $34 (list $69), motif \"gauge\", calm personality, warm accent #b45309",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You own more than one vehicle, or a vehicle with a maintenance history you already know by heart but have never written down anywhere. / You have bought a used car or inherited one, and its real service history is genuinely unknown to you.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "Is this you?: Name the audience in the listing's own descriptions, so the right people stop and everyone else scrolls on.",
+      "because": "Best fit for a consideration film on Facebook feed video (platform fit 3, goal fit 2, already used on Facebook feed video ×1). Other candidates: The question before buying (2.6), What it is not (1.7)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"You have been surprised at a shop counter by work you did not ask for.\"",
+      "because": "Targeting by recognition: the listing's own audience lines, then what the product does for them."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"gauge\"",
+      "because": "Transitions follow the product's own identity motif, \"gauge\": a gauge sweeps, so scenes are revealed by a radial sweep."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → light → accent → light",
+      "because": "Grounds light → light → accent → light: a warm accent, so light grounds lead and the accent is saved for the turns."
+    },
+    {
+      "topic": "Edit",
+      "decision": "Re-planned with 3 fewer words per line",
+      "because": "The fullest real copy could not be read inside 20s on Facebook feed video."
+    },
+    {
+      "topic": "Edit",
+      "decision": "Cut \"brand\"",
+      "because": "It would run past 20s, the most Facebook feed video holds attention for; the end card still names the product."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "18.9s, 3 scenes",
+      "because": "Each scene is held for the time its words take to read on Facebook feed video (0.32s a word), inside 8–20s."
+    }
+  ]
+}

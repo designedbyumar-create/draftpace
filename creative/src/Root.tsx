@@ -3,6 +3,8 @@ import { FeatureSpotlight, type Shot } from "./compositions/formats/feature-spot
 import { FeatureImage, type Slide } from "./compositions/formats/feature-image";
 import { FeaturePost, type Post } from "./compositions/formats/feature-post";
 import { ASPECT_RATIOS } from "../aspect-ratios.mjs";
+import { FilmComposition } from "./compositions/formats/film";
+import { FILMS } from "./films.generated";
 
 // Every product's shot files. Static imports, not a glob: webpack needs to
 // see each path literally, and this is a short, honest list of what's
@@ -52,6 +54,19 @@ function spotlightCompositionId(shot: Shot) {
 export const RemotionRoot: React.FC = () => {
   return (
     <>
+      {/* Every film the director planned (director/slate.json -> scripts/direct.mjs). */}
+      {FILMS.map((film) => (
+        <Composition
+          key={film.id}
+          id={`Film-${film.id}`}
+          component={FilmComposition}
+          durationInFrames={film.durationInFrames}
+          fps={film.fps}
+          width={film.width}
+          height={film.height}
+          defaultProps={{ film }}
+        />
+      ))}
       {ALL_SPOTLIGHTS.map((shot) => {
         const lastBeat = shot.beats[shot.beats.length - 1];
         const durationInFrames = lastBeat.startFrame + lastBeat.durationFrames;

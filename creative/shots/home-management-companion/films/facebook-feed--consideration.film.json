@@ -1,0 +1,202 @@
+{
+  "id": "home-management-companion--facebook-feed--consideration",
+  "product": "home-management-companion",
+  "platform": "facebook-feed",
+  "goal": "consideration",
+  "width": 1080,
+  "height": 1350,
+  "fps": 30,
+  "durationInFrames": 554,
+  "structure": "whatYouGet",
+  "angle": {
+    "text": "What you get",
+    "source": "micro"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "locked",
+    "transitions": [
+      "slideUp",
+      "cardSlide",
+      "slideUp"
+    ],
+    "motif": "tag",
+    "grounds": [
+      "light",
+      "light",
+      "ink",
+      "accent"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "contents",
+      "kind": "list",
+      "variant": "inclusions",
+      "copy": [
+        {
+          "text": "A sentence about your home's condition, and the few things worth doing",
+          "source": "expectedOutputs[0]"
+        },
+        {
+          "text": "A printable survey of your home you can fill in by hand",
+          "source": "expectedOutputs[3]"
+        }
+      ],
+      "eyebrow": {
+        "text": "What you get",
+        "source": "micro"
+      },
+      "why": "The listing's own inclusions, by name.",
+      "from": 0,
+      "dur": 391,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [
+        {
+          "at": 10,
+          "cue": "pop",
+          "volume": 0.27
+        },
+        {
+          "at": 140,
+          "cue": "pop",
+          "volume": 0.27
+        }
+      ]
+    },
+    {
+      "id": "proof",
+      "kind": "phone",
+      "variant": "pair",
+      "copy": [],
+      "screen": {
+        "src": "screens/home-management-companion-workspace.png",
+        "also": "screens/home-management-companion-seasons.png",
+        "pose": "pair"
+      },
+      "why": "Two real screens side by side (\"A couple of things need a look\", \"Fall home maintenance checklist\") show it is a whole tool, not one feature.",
+      "from": 379,
+      "dur": 90,
+      "ground": "light",
+      "transition": "slideUp",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "price",
+      "copy": [
+        {
+          "text": "Home Base",
+          "source": "title"
+        },
+        {
+          "text": "Available now.",
+          "source": "micro"
+        }
+      ],
+      "why": "Facebook feed video rewards a direct close: the real price against the real list price.",
+      "from": 457,
+      "dur": 97,
+      "ground": "ink",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Facebook feed video, 1080×1350, 8–20s, hook by 1.5s, sound off",
+      "because": "Scrolled past in a feed with sound off: say who it is for in the first seconds, name the product early, keep every point on screen and readable at a glance."
+    },
+    {
+      "topic": "Product",
+      "decision": "Home Base: $49 (list $99), motif \"tag\", calm personality, cool accent #4f7a5c",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You own or rent a home and would rather be told what needs you this week than keep a mental list you know is incomplete. / You want the boring, expensive things caught early: the water heater, the gutters, the outside tap before the first freeze.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "What you get: Open on the product, then show what is in it, then the price.",
+      "because": "Best fit for a consideration film on Facebook feed video (platform fit 2, goal fit 1). Other candidates: Problem cascade (2.0), What it is not (1.9)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"What you get\"",
+      "because": "A conversion film for people who already know the problem: product first, contents, price."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"tag\"",
+      "because": "Transitions follow the product's own identity motif, \"tag\": things in the home are tagged, so scenes rise like a tag being lifted."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"locked\"",
+      "because": "Camera \"locked\": still and precise, so a slow, reading audience is never chasing the frame."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → light → ink → accent",
+      "because": "Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Edit",
+      "decision": "Trimmed \"contents\" to 3 items",
+      "because": "Fewer items read properly beats more items skimmed."
+    },
+    {
+      "topic": "Edit",
+      "decision": "Trimmed \"contents\" to 2 items",
+      "because": "Fewer items read properly beats more items skimmed."
+    },
+    {
+      "topic": "Edit",
+      "decision": "Cut \"brand\"",
+      "because": "It would run past 20s, the most Facebook feed video holds attention for; the end card still names the product."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "18.5s, 3 scenes",
+      "because": "Each scene is held for the time its words take to read on Facebook feed video (0.32s a word), inside 8–20s."
+    }
+  ]
+}

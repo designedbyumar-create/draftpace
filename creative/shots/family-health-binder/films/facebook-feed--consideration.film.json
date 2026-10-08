@@ -1,0 +1,203 @@
+{
+  "id": "family-health-binder--facebook-feed--consideration",
+  "product": "family-health-binder",
+  "platform": "facebook-feed",
+  "goal": "consideration",
+  "width": 1080,
+  "height": 1350,
+  "fps": 30,
+  "durationInFrames": 579,
+  "structure": "isThisYou",
+  "angle": {
+    "text": "You have ever stood at an intake desk trying to remember exactly when a symptom started.",
+    "source": "audience[2]"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "locked",
+    "transitions": [
+      "cardSlide",
+      "blurDissolve",
+      "cardSlide"
+    ],
+    "motif": "card",
+    "grounds": [
+      "accent",
+      "light",
+      "light",
+      "accent"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "who",
+      "kind": "list",
+      "variant": "audience",
+      "copy": [
+        {
+          "text": "You have ever stood at an intake desk trying to remember exactly when a symptom started.",
+          "source": "audience[2]"
+        }
+      ],
+      "eyebrow": {
+        "text": "If this is you:",
+        "source": "micro"
+      },
+      "why": "Feed audiences decide in a second whether something is for them; naming them in the listing's words is the fastest honest filter.",
+      "from": 0,
+      "dur": 279,
+      "ground": "accent",
+      "transition": "cut",
+      "sfx": [
+        {
+          "at": 10,
+          "cue": "pop",
+          "volume": 0.27
+        }
+      ]
+    },
+    {
+      "id": "proof",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "A structured symptom timeline: onset, duration and severity as real fields, recorded as it happens.",
+        "source": "problemsSolved[2].solution"
+      },
+      "screen": {
+        "src": "screens/family-health-binder-workspace.png",
+        "pose": "float",
+        "focus": {
+          "at": 0.45,
+          "y": 156,
+          "h": 336,
+          "region": "people"
+        },
+        "scroll": []
+      },
+      "why": "What it does for exactly those people, on a real screen. Screen: \"Overview\" (Everyone at a glance: each person's card with allergies, the latest symptom, and what the forms sheet is missing.) chosen because it is the real screen closest to \"A structured symptom timeline: onset, duration and severity as real fields, reco\"; focus on \"Sam (example), Mia (example)\".",
+      "from": 267,
+      "dur": 221,
+      "ground": "light",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 99,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "price",
+      "copy": [
+        {
+          "text": "Family Health Binder",
+          "source": "title"
+        },
+        {
+          "text": "Available now.",
+          "source": "micro"
+        }
+      ],
+      "why": "Facebook feed video rewards a direct close: the real price against the real list price.",
+      "from": 476,
+      "dur": 103,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Facebook feed video, 1080×1350, 8–20s, hook by 1.5s, sound off",
+      "because": "Scrolled past in a feed with sound off: say who it is for in the first seconds, name the product early, keep every point on screen and readable at a glance."
+    },
+    {
+      "topic": "Product",
+      "decision": "Family Health Binder: $34 (list $69), motif \"card\", calm personality, warm accent #b23a5b",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You are the one who fills in every form, and everyone's allergies, medications and insurance number live only in your head. / You have more than one child, or a child and an aging parent, whose facts you are both responsible for.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "Is this you?: Name the audience in the listing's own descriptions, so the right people stop and everyone else scrolls on.",
+      "because": "Best fit for a consideration film on Facebook feed video (platform fit 3, goal fit 2). Other candidates: The question before buying (2.6), Problem cascade (2.0)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"You have ever stood at an intake desk trying to remember exactly when a symptom started.\"",
+      "because": "Targeting by recognition: the listing's own audience lines, then what the product does for them."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"card\"",
+      "because": "Transitions follow the product's own identity motif, \"card\": a binder of cards, so scenes slide in like the next card."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"locked\"",
+      "because": "Camera \"locked\": still and precise, so a slow, reading audience is never chasing the frame."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds accent → light → light → accent",
+      "because": "Grounds accent → light → light → accent: a warm accent, so light grounds lead and the accent is saved for the turns."
+    },
+    {
+      "topic": "Edit",
+      "decision": "Re-planned with 3 fewer words per line",
+      "because": "The fullest real copy could not be read inside 20s on Facebook feed video."
+    },
+    {
+      "topic": "Edit",
+      "decision": "Cut \"brand\"",
+      "because": "It would run past 20s, the most Facebook feed video holds attention for; the end card still names the product."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "19.3s, 3 scenes",
+      "because": "Each scene is held for the time its words take to read on Facebook feed video (0.32s a word), inside 8–20s."
+    }
+  ]
+}

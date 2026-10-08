@@ -38,7 +38,7 @@ export function KineticHeadline({
   lineStagger = 5,
   font = "Newsreader",
   weight = 600,
-  color = "var(--post-ink)",
+  color = "var(--fg, var(--post-ink))",
 }: {
   lines: string[];
   emphasis?: string[];
@@ -74,7 +74,7 @@ export function KineticHeadline({
                     fontWeight: weight,
                     fontSize,
                     letterSpacing: "-0.015em",
-                    color: accent ? "var(--post-accent)" : color,
+                    color: accent ? "var(--hl, var(--post-accent))" : color,
                     fontStyle: accent && font === "Newsreader" ? "italic" : "normal",
                   }}
                 >
@@ -88,7 +88,7 @@ export function KineticHeadline({
                       <path
                         d="M2 7 C 25 3, 55 3, 98 5"
                         fill="none"
-                        stroke="var(--post-accent)"
+                        stroke="var(--hl, var(--post-accent))"
                         strokeWidth={4}
                         strokeLinecap="round"
                         pathLength={1}

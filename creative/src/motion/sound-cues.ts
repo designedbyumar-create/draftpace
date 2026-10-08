@@ -17,6 +17,7 @@ export const SFX_CUES = {
   tick: "audio/kit/tick.wav",
   shimmer: "audio/kit/shimmer.wav",
   settle: "audio/kit/settle.wav",
+  page: "audio/kit/page.wav",
 } as const;
 
 export const BED = "audio/bed-relaxation-05.mp3";

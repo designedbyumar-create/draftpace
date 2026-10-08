@@ -75,6 +75,17 @@ jobs:
         run: node scripts/render-images.mjs 01- --ratio pinterest
         working-directory: creative
 
+      - name: Director films are current
+        # The guards in the main test step also check this; failing here says which step to re-run.
+        run: |
+          node scripts/direct.mjs > /dev/null
+          git diff --exit-code -- shots src/films.generated.ts || (echo "::error::Films are stale: run node scripts/direct.mjs and commit" && exit 1)
+        working-directory: creative
+
+      - name: Render one director film
+        run: node scripts/render-direct.mjs Film-travel-companion--tiktok
+        working-directory: creative
+
       - name: Render and frame-gate one video
         run: |
           node scripts/render-direct.mjs MonthlyMoneyReset-FeatureSpotlight

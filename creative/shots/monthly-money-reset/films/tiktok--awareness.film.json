@@ -1,0 +1,276 @@
+{
+  "id": "monthly-money-reset--tiktok--awareness",
+  "product": "monthly-money-reset",
+  "platform": "tiktok",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 562,
+  "structure": "honestNo",
+  "angle": {
+    "text": "You want automatic bank syncing or transaction import.",
+    "source": "audienceExclusions[0]#0"
+  },
+  "treatment": {
+    "voice": "native",
+    "camera": "dolly",
+    "transitions": [
+      "cut",
+      "whip",
+      "lineWipe"
+    ],
+    "motif": "ledger",
+    "grounds": [
+      "ink",
+      "light",
+      "light",
+      "accent"
+    ],
+    "pace": 0.85
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.24,
+    "energy": "high"
+  },
+  "scenes": [
+    {
+      "id": "not",
+      "kind": "contrast",
+      "variant": "strike",
+      "copy": [
+        {
+          "text": "You want automatic bank syncing or transaction import.",
+          "source": "audienceExclusions[0]#0"
+        },
+        {
+          "text": "You're looking for a full year-long budget or investment planning tool.",
+          "source": "audienceExclusions[1]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "Not for you if:",
+        "source": "micro"
+      },
+      "why": "Every other ad promises more. Saying what it refuses to do is rarer, and it is in the listing because it is true.",
+      "from": 0,
+      "dur": 229,
+      "ground": "ink",
+      "transition": "cut",
+      "sfx": [
+        {
+          "at": 18,
+          "cue": "tick",
+          "volume": 0.5
+        },
+        {
+          "at": 94,
+          "cue": "tick",
+          "volume": 0.5
+        }
+      ]
+    },
+    {
+      "id": "instead",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "A single Safe-to-Spend figure that updates as the month goes on, no mental math required.",
+        "source": "problemsSolved[0].solution"
+      },
+      "screen": {
+        "src": "screens/monthly-money-reset-progress.png",
+        "pose": "flat",
+        "focus": {
+          "at": 0.45,
+          "y": 138,
+          "h": 126,
+          "region": "bills"
+        },
+        "scroll": []
+      },
+      "why": "Then the positive case, on a real screen. Screen: \"Start\" (Progress this month: bills handled, check-ins, the reserve kept, and spending against your own guide.) chosen because it is the real screen closest to \"A single Safe-to-Spend figure that updates as the month goes on, no mental math \"; focus on \"2 of 4\".",
+      "eyebrow": {
+        "text": "Instead:",
+        "source": "micro"
+      },
+      "from": 223,
+      "dur": 157,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 71,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "privacy",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Your financial entries are private to your account.",
+          "source": "privacyNotes#0"
+        }
+      ],
+      "why": "The privacy line closes the trust argument.",
+      "from": 374,
+      "dur": 79,
+      "ground": "light",
+      "transition": "whip",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "Your financial",
+          "entries are",
+          "private to your",
+          "account."
+        ]
+      ]
+    },
+    {
+      "id": "brand",
+      "kind": "brand",
+      "variant": "lockup",
+      "copy": [
+        {
+          "text": "Monthly Money Reset",
+          "source": "title"
+        }
+      ],
+      "why": "The name lands on a film that has been honest with the viewer.",
+      "from": 447,
+      "dur": 43,
+      "ground": "accent",
+      "transition": "lineWipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "tick",
+          "volume": 0.6
+        },
+        {
+          "at": -36,
+          "cue": "riser",
+          "volume": 0.4
+        },
+        {
+          "at": 2,
+          "cue": "impact",
+          "volume": 0.7
+        },
+        {
+          "at": 6,
+          "cue": "shimmer",
+          "volume": 0.3
+        }
+      ],
+      "lines": [
+        [
+          "Monthly Money",
+          "Reset"
+        ]
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "free",
+      "copy": [
+        {
+          "text": "Monthly Money Reset",
+          "source": "title"
+        },
+        {
+          "text": "Start free.",
+          "source": "micro"
+        }
+      ],
+      "why": "A free product closes on starting free; there is no price to state.",
+      "from": 484,
+      "dur": 78,
+      "ground": "ink",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "TikTok, 1080×1920, 10–22s, hook by 0.8s, sound on",
+      "because": "Native, fast and plain-spoken; polish that looks like an ad gets skipped. Sound-on. Hook inside a second. The deepest bottom and right overlays of any placement."
+    },
+    {
+      "topic": "Product",
+      "decision": "Monthly Money Reset: free, motif \"ledger\", calm personality, cool accent #214b3e",
+      "because": "From its definition and Shop listing. 1 real screens and live components (safeToSpendCard, nextActionCard) to show."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You want one clear number for what's actually safe to spend, not a full budget system. / You have a mix of bills, some paid automatically and some not, that you'd rather not accidentally spend past.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "What it is not: Earn trust by stating what the product deliberately does not do, then show what it does instead.",
+      "because": "Best fit for a awareness film on TikTok (platform fit 2, goal fit 0). Other candidates: How it works (0.1), The question before buying (-1.0)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"You want automatic bank syncing or transaction import.\"",
+      "because": "A trust film: the listing's own boundaries, then the thing it does instead, then how it treats your data."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"ledger\"",
+      "because": "Transitions follow the product's own identity motif, \"ledger\": a ledger is ruled lines, so scenes are revealed row by row. TikTok wants native editing, so hard cuts and whips lead."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"dolly\"",
+      "because": "Camera \"dolly\": constant forward movement for a high-energy feed."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds ink → light → light → accent",
+      "because": "Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Full sound design, high-energy bed",
+      "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
+    },
+    {
+      "topic": "Length",
+      "decision": "18.7s, 5 scenes",
+      "because": "Each scene is held for the time its words take to read on TikTok (0.24s a word), inside 10–22s."
+    }
+  ]
+}

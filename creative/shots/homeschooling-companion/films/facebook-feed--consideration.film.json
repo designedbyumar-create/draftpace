@@ -1,0 +1,289 @@
+{
+  "id": "homeschooling-companion--facebook-feed--consideration",
+  "product": "homeschooling-companion",
+  "platform": "facebook-feed",
+  "goal": "consideration",
+  "width": 1080,
+  "height": 1350,
+  "fps": 30,
+  "durationInFrames": 590,
+  "structure": "walkthrough",
+  "angle": {
+    "text": "How it works",
+    "source": "micro"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "locked",
+    "transitions": [
+      "lineWipe",
+      "slideUp",
+      "lineWipe"
+    ],
+    "motif": "register",
+    "grounds": [
+      "light",
+      "light",
+      "ink",
+      "accent"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "open",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "How it works",
+          "source": "micro"
+        }
+      ],
+      "eyebrow": {
+        "text": "Homeschooling Companion",
+        "source": "title"
+      },
+      "why": "A considered viewer wants the mechanism; saying so up front sets the contract for the next ten seconds.",
+      "from": 0,
+      "dur": 103,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "How it works"
+        ]
+      ]
+    },
+    {
+      "id": "step-1",
+      "kind": "phone",
+      "variant": "step",
+      "copy": [],
+      "caption": {
+        "text": "Add a child.",
+        "source": "howItWorks[0]#0"
+      },
+      "screen": {
+        "src": "screens/homeschooling-companion-kids.png",
+        "pose": "flat",
+        "focus": {
+          "at": 0.45,
+          "y": 159,
+          "h": 126,
+          "region": "state"
+        },
+        "scroll": []
+      },
+      "why": "Step 1, from the listing's how-it-works. Screen: \"Your children.\" (Each child with their age and subjects, and the state's homeschool requirements kept alongside.) chosen because it is the real screen closest to \"Add a child.\"; focus on \"Oregon · Moderate regulation\".",
+      "eyebrow": {
+        "text": "1",
+        "source": "micro"
+      },
+      "from": 91,
+      "dur": 124,
+      "ground": "light",
+      "transition": "lineWipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "tick",
+          "volume": 0.36
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 56,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "step-2",
+      "kind": "phone",
+      "variant": "step",
+      "copy": [],
+      "caption": {
+        "text": "Set how often each subject runs.",
+        "source": "howItWorks[2]#0"
+      },
+      "screen": {
+        "src": "screens/homeschooling-companion-workspace.png",
+        "pose": "tiltRight",
+        "focus": {
+          "at": 0.45,
+          "y": 166,
+          "h": 364,
+          "region": "ava"
+        },
+        "scroll": []
+      },
+      "why": "Step 2, from the listing's how-it-works. Screen: \"What we are doing today.\" (Today, per child: each lesson in the plan, and what is worth going over again.) chosen because it is the real screen closest to \"Set how often each subject runs.\"; focus on \"Ava\".",
+      "eyebrow": {
+        "text": "2",
+        "source": "micro"
+      },
+      "from": 203,
+      "dur": 157,
+      "ground": "ink",
+      "transition": "slideUp",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 71,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "step-3",
+      "kind": "phone",
+      "variant": "step",
+      "copy": [],
+      "caption": {
+        "text": "Mark something done in one tap.",
+        "source": "howItWorks[4]#0"
+      },
+      "screen": {
+        "src": "screens/homeschooling-companion-record.png",
+        "pose": "tiltLeft",
+        "focus": {
+          "at": 0.45,
+          "y": 320,
+          "h": 406,
+          "region": "record"
+        }
+      },
+      "why": "Step 3, from the listing's how-it-works. Screen: \"What has happened.\" (The record: sessions across subjects, a printable homeschool record, and dated notes of what was done.) chosen because it is the real screen closest to \"Mark something done in one tap.\"; focus on \"My Homeschool Record\".",
+      "eyebrow": {
+        "text": "3",
+        "source": "micro"
+      },
+      "from": 348,
+      "dur": 157,
+      "ground": "accent",
+      "transition": "lineWipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "tick",
+          "volume": 0.36
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 71,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "price",
+      "copy": [
+        {
+          "text": "Homeschooling Companion",
+          "source": "title"
+        },
+        {
+          "text": "Available now.",
+          "source": "micro"
+        }
+      ],
+      "why": "Facebook feed video rewards a direct close: the real price against the real list price.",
+      "from": 493,
+      "dur": 97,
+      "ground": "light",
+      "transition": "lineWipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "tick",
+          "volume": 0.36
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Facebook feed video, 1080×1350, 8–20s, hook by 1.5s, sound off",
+      "because": "Scrolled past in a feed with sound off: say who it is for in the first seconds, name the product early, keep every point on screen and readable at a glance."
+    },
+    {
+      "topic": "Product",
+      "decision": "Homeschooling Companion: $34 (list $69), motif \"register\", calm personality, cool accent #6a4a72",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You already have a curriculum you chose on purpose and you want something that follows it rather than replacing it. / You teach more than one child and keeping their records separate in your head has stopped working.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "How it works: Three real steps, each on the real screen where it happens.",
+      "because": "Best fit for a consideration film on Facebook feed video (platform fit 2, goal fit 3, already used on Facebook feed video ×1). Passed over: Is this you? (its real copy needs 22s to read), too long for 20s. Other candidates: Is this you? (3.7), The question before buying (2.5)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"How it works\"",
+      "because": "The listing's own how-it-works, shortest three steps in their real order."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"register\"",
+      "because": "Transitions follow the product's own identity motif, \"register\": a register is filled line by line, so scenes are written in from the top."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"locked\"",
+      "because": "Camera \"locked\": still and precise, so a slow, reading audience is never chasing the frame."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → light → ink → accent",
+      "because": "Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "19.7s, 5 scenes",
+      "because": "Each scene is held for the time its words take to read on Facebook feed video (0.32s a word), inside 8–20s."
+    }
+  ]
+}

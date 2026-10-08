@@ -1,0 +1,220 @@
+{
+  "id": "alongside--pinterest-video--awareness",
+  "product": "alongside",
+  "platform": "pinterest-video",
+  "goal": "awareness",
+  "width": 1000,
+  "height": 1500,
+  "fps": 30,
+  "durationInFrames": 440,
+  "structure": "question",
+  "angle": {
+    "text": "Tried a to-do list and it just became another list to feel behind on?",
+    "source": "questions[0].question"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "float",
+    "transitions": [
+      "iris",
+      "blurDissolve",
+      "iris"
+    ],
+    "motif": "focus",
+    "grounds": [
+      "light",
+      "light",
+      "accent",
+      "light"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "q",
+      "kind": "title",
+      "variant": "quote",
+      "copy": [
+        {
+          "text": "Tried a to-do list and it just became another list to feel behind on?",
+          "source": "questions[0].question"
+        }
+      ],
+      "why": "The question a considering buyer is already asking, so the film meets them where they are.",
+      "from": 0,
+      "dur": 179,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "Tried a to-do list",
+          "and it just became",
+          "another list to feel",
+          "behind on?"
+        ]
+      ]
+    },
+    {
+      "id": "a",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "screen": {
+        "src": "screens/alongside-workspace.png",
+        "pose": "float",
+        "focus": {
+          "at": 0.45,
+          "y": 222,
+          "h": 294,
+          "region": "one-thing"
+        },
+        "scroll": []
+      },
+      "why": "The answer, with the real screen it is about. Screen: \"Book the six-month dental check\" (One thing at a time: a single next step, Book the six-month dental check, with Do this with me, Not now and It is sorted.) chosen because it is the real screen closest to \"Tried a to-do list and it just became another list to feel behind on? That is wh\"; focus on \"Book the six-month dental check\".",
+      "from": 167,
+      "dur": 109,
+      "ground": "light",
+      "transition": "iris",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 49,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "brand",
+      "kind": "brand",
+      "variant": "center",
+      "copy": [
+        {
+          "text": "ADHD Life Companion",
+          "source": "title"
+        }
+      ],
+      "why": "Named once the doubt is answered.",
+      "from": 264,
+      "dur": 62,
+      "ground": "accent",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 6,
+          "cue": "shimmer",
+          "volume": 0.18
+        }
+      ],
+      "lines": [
+        [
+          "ADHD Life Companion"
+        ]
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "save",
+      "copy": [
+        {
+          "text": "ADHD Life Companion",
+          "source": "title"
+        },
+        {
+          "text": "Save this for later.",
+          "source": "micro"
+        }
+      ],
+      "why": "Pinterest video pin is a planning surface; the close asks for the save, the price stays quiet.",
+      "from": 314,
+      "dur": 126,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Pinterest video pin, 1000×1500, 6–15s, hook by 1s, sound off",
+      "because": "People are planning, not scrolling: idea-led, calm and save-worthy, worded like what they searched for. Muted, looping, slow; a hard sell reads as an ad and loses the save."
+    },
+    {
+      "topic": "Product",
+      "decision": "ADHD Life Companion: $49 (list $99), motif \"focus\", calm personality, warm accent #86586a",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You have ADHD, or executive function that works like it does, and most productivity tools have made that worse rather than better. / You are dealing with brain fog from long covid, a concussion, chronic illness, grief, new parenthood, menopause, or depression, and holding a plan in your head has stopped being reliable.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "The question before buying: Answer the question people actually ask before they decide, with the listing's own answer.",
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 2, goal fit 0). Passed over: In their words (its real copy needs 17s to read), too long for 15s. Other candidates: In their words (7.7), How it works (2.7)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"Tried a to-do list and it just became another list to feel behind on?\"",
+      "because": "A deciding-stage question from the listing, \"Tried a to-do list and it just became another list to feel behind on?\", and its own answer."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"focus\"",
+      "because": "Transitions follow the product's own identity motif, \"focus\": it is about one thing at a time, so scenes open like an iris onto one thing."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → light → accent → light",
+      "because": "Grounds light → light → accent → light: a warm accent, so light grounds lead and the accent is saved for the turns."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "14.7s, 4 scenes",
+      "because": "Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 6–15s."
+    }
+  ]
+}

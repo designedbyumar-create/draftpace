@@ -43,7 +43,10 @@ async function main() {
   log(`bundled: ${bundled}`);
 
   const all = await getCompositions(bundled, { browserExecutable });
-  const targets = only ? all.filter((c) => c.id === only) : all.filter((c) => c.id.endsWith("-FeatureSpotlight"));
+  // An exact id, or "Film" plus any part of a film id ("Film-travel", "Film-pinterest"), or (default) every Feature Spotlight.
+  const targets = only
+    ? all.filter((c) => c.id === only || (only.startsWith("Film") && c.id.startsWith("Film-") && c.id.includes(only.replace(/^Film-?/, ""))))
+    : all.filter((c) => c.id.endsWith("-FeatureSpotlight"));
   if (targets.length === 0) {
     throw new Error(only ? `No composition found with id "${only}"` : "No -FeatureSpotlight compositions found");
   }
@@ -56,8 +59,12 @@ async function main() {
       90_000,
       `selectComposition(${compositionMeta.id})`
     );
+    const film = compositionMeta.id.startsWith("Film-");
     const slug = compositionMeta.id.replace(/-FeatureSpotlight$/, "");
-    const outPath = path.join(OUT_DIR, `${slug}-feature-spotlight.mp4`);
+    if (film) await mkdir(path.join(OUT_DIR, "films"), { recursive: true });
+    const outPath = film
+      ? path.join(OUT_DIR, "films", `${compositionMeta.id.slice(5)}.mp4`)
+      : path.join(OUT_DIR, `${slug}-feature-spotlight.mp4`);
     log(`rendering media for ${compositionMeta.id} -> ${outPath}...`);
     await withTimeout(
       renderMedia({

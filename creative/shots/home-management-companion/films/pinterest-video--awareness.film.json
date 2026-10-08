@@ -1,0 +1,219 @@
+{
+  "id": "home-management-companion--pinterest-video--awareness",
+  "product": "home-management-companion",
+  "platform": "pinterest-video",
+  "goal": "awareness",
+  "width": 1000,
+  "height": 1500,
+  "fps": 30,
+  "durationInFrames": 385,
+  "structure": "question",
+  "angle": {
+    "text": "Worried it becomes another app nagging you with a list?",
+    "source": "questions[0].question"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "float",
+    "transitions": [
+      "slideUp",
+      "cardSlide",
+      "slideUp"
+    ],
+    "motif": "tag",
+    "grounds": [
+      "light",
+      "accent",
+      "light",
+      "ink"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "q",
+      "kind": "title",
+      "variant": "quote",
+      "copy": [
+        {
+          "text": "Worried it becomes another app nagging you with a list?",
+          "source": "questions[0].question"
+        }
+      ],
+      "why": "The question a considering buyer is already asking, so the film meets them where they are.",
+      "from": 0,
+      "dur": 135,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "Worried it becomes",
+          "another app nagging",
+          "you with a list?"
+        ]
+      ]
+    },
+    {
+      "id": "a",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "screen": {
+        "src": "screens/home-management-companion-history.png",
+        "pose": "tiltLeft",
+        "focus": {
+          "at": 0.45,
+          "y": 180,
+          "h": 200,
+          "region": "log"
+        },
+        "scroll": []
+      },
+      "why": "The answer, with the real screen it is about. Screen: \"What's been done\" (Your home's memory: what was taken care of, when, who did it and what it cost.) chosen because it is the real screen closest to \"Worried it becomes another app nagging you with a list? It shows the few things \"; focus on \"Annual service and safety check\".",
+      "from": 123,
+      "dur": 109,
+      "ground": "accent",
+      "transition": "slideUp",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 49,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "brand",
+      "kind": "brand",
+      "variant": "lockup",
+      "copy": [
+        {
+          "text": "Home Base",
+          "source": "title"
+        }
+      ],
+      "why": "Named once the doubt is answered.",
+      "from": 220,
+      "dur": 62,
+      "ground": "light",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 6,
+          "cue": "shimmer",
+          "volume": 0.18
+        }
+      ],
+      "lines": [
+        [
+          "Home Base"
+        ]
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "save",
+      "copy": [
+        {
+          "text": "Home Base",
+          "source": "title"
+        },
+        {
+          "text": "Save this for later.",
+          "source": "micro"
+        }
+      ],
+      "why": "Pinterest video pin is a planning surface; the close asks for the save, the price stays quiet.",
+      "from": 270,
+      "dur": 115,
+      "ground": "ink",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Pinterest video pin, 1000×1500, 6–15s, hook by 1s, sound off",
+      "because": "People are planning, not scrolling: idea-led, calm and save-worthy, worded like what they searched for. Muted, looping, slow; a hard sell reads as an ad and loses the save."
+    },
+    {
+      "topic": "Product",
+      "decision": "Home Base: $49 (list $99), motif \"tag\", calm personality, cool accent #4f7a5c",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You own or rent a home and would rather be told what needs you this week than keep a mental list you know is incomplete. / You want the boring, expensive things caught early: the water heater, the gutters, the outside tap before the first freeze.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "The question before buying: Answer the question people actually ask before they decide, with the listing's own answer.",
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 2, goal fit 0, already used on Pinterest video pin ×1). Passed over: In their words (its real copy needs 16s to read), too long for 15s. Other candidates: In their words (7.7), Before and after (1.7)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"Worried it becomes another app nagging you with a list?\"",
+      "because": "A deciding-stage question from the listing, \"Worried it becomes another app nagging you with a list?\", and its own answer."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"tag\"",
+      "because": "Transitions follow the product's own identity motif, \"tag\": things in the home are tagged, so scenes rise like a tag being lifted."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → accent → light → ink",
+      "because": "Grounds light → accent → light → ink: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "12.8s, 4 scenes",
+      "because": "Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 6–15s."
+    }
+  ]
+}

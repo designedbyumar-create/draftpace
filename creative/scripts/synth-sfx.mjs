@@ -244,6 +244,18 @@ const KIT = {
     ]);
     return normalize(reverb(mix(...partials), { wet: 0.3, room: 0.86, tailS: 2.4 }), -6);
   },
+  /** Page turn: paper. Two quick, filtered rustles and a soft landing, moving across the stereo field. */
+  page() {
+    const n = buf(0.55).length;
+    const flutter = new Float32Array(n);
+    for (let i = 0; i < n; i++) {
+      const t = i / n;
+      flutter[i] = Math.pow(Math.sin(Math.PI * Math.min(1, t * 1.6)), 2) * (0.6 + 0.4 * Math.sin(t * 90));
+    }
+    const paper = biquad(pinkNoise(n, 81), "bp", (t) => 1800 + 2600 * t, 0.9).map((v, i) => v * flutter[i]);
+    const land = env(biquad(pinkNoise(n, 82), "lp", () => 700), 0.003, 0.08, 6);
+    return normalize(pan(reverb(mix([paper, 1], [land, 0.5, 0.36]), { wet: 0.1, room: 0.6, tailS: 0.25 }), (t) => -0.5 + t), -7);
+  },
   /** Settle: a low, warm two-note confirmation for "done" moments and the end card. */
   settle() {
     const n = buf(1.2).length;

@@ -1,0 +1,288 @@
+{
+  "id": "family-health-binder--tiktok--awareness",
+  "product": "family-health-binder",
+  "platform": "tiktok",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 510,
+  "structure": "searched",
+  "angle": {
+    "text": "I can never remember my child's medications at the doctor",
+    "source": "searchedProblems[0].phrase"
+  },
+  "treatment": {
+    "voice": "native",
+    "camera": "float",
+    "transitions": [
+      "cut",
+      "whip",
+      "cardSlide"
+    ],
+    "motif": "card",
+    "grounds": [
+      "light",
+      "light",
+      "accent",
+      "light"
+    ],
+    "pace": 0.85
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.24,
+    "energy": "high"
+  },
+  "scenes": [
+    {
+      "id": "hook",
+      "kind": "title",
+      "variant": "quote",
+      "copy": [
+        {
+          "text": "I can never remember my child's medications at the doctor",
+          "source": "searchedProblems[0].phrase"
+        }
+      ],
+      "why": "Search-led placements reward the exact words someone typed; quoted, it reads as their thought, not our claim.",
+      "from": 0,
+      "dur": 93,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "I can never",
+          "remember my",
+          "child's",
+          "medications at the",
+          "doctor"
+        ]
+      ]
+    },
+    {
+      "id": "answer",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "They are written down per person, with dose and how often, on whatever device is in your hand at the desk, and stopped ones leave the list.",
+        "source": "searchedProblems[0].answer"
+      },
+      "screen": {
+        "src": "screens/family-health-binder-workspace.png",
+        "pose": "tiltLeft",
+        "focus": {
+          "at": 0.45,
+          "y": 498,
+          "h": 48,
+          "region": "missing"
+        },
+        "scroll": []
+      },
+      "why": "The answer, shown working on the real screen it happens on. Screen: \"Overview\" (Everyone at a glance: each person's card with allergies, the latest symptom, and what the forms sheet is missing.) chosen because it is the real screen closest to \"They are written down per person, with dose and how often, on whatever device is\"; focus on \"Forms sheet is missing\".",
+      "from": 87,
+      "dur": 242,
+      "ground": "accent",
+      "transition": "whip",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 109,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "follow",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Write down questions for an appointment",
+        "source": "tasks[5].label"
+      },
+      "screen": {
+        "src": "screens/family-health-binder-printables.png",
+        "pose": "flat",
+        "focus": {
+          "at": 0.45,
+          "y": 294,
+          "h": 150,
+          "region": "forms-sheet"
+        }
+      },
+      "why": "A second, related thing an owner does here, so it reads as a tool, not a single trick. Screen: \"Print\" (The pages that leave the house: forms sheet, caregiver sheet, emergency card, visit page, intake summary, each with Make it.) chosen because it is the real screen closest to \"Write down questions for an appointment\"; focus on \"Forms sheet\".",
+      "from": 323,
+      "dur": 78,
+      "ground": "light",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 35,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "brand",
+      "kind": "brand",
+      "variant": "center",
+      "copy": [
+        {
+          "text": "Family Health Binder",
+          "source": "title"
+        }
+      ],
+      "why": "Named at the end, once the idea has earned the save.",
+      "from": 395,
+      "dur": 43,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": -36,
+          "cue": "riser",
+          "volume": 0.4
+        },
+        {
+          "at": 2,
+          "cue": "impact",
+          "volume": 0.7
+        },
+        {
+          "at": 6,
+          "cue": "shimmer",
+          "volume": 0.3
+        }
+      ],
+      "lines": [
+        [
+          "Family Health",
+          "Binder"
+        ]
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "soft",
+      "copy": [
+        {
+          "text": "Family Health Binder",
+          "source": "title"
+        },
+        {
+          "text": "Available now.",
+          "source": "micro"
+        }
+      ],
+      "why": "TikTok punishes an obvious ad; a soft close names the product and where to find it.",
+      "from": 432,
+      "dur": 78,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "TikTok, 1080×1920, 10–22s, hook by 0.8s, sound on",
+      "because": "Native, fast and plain-spoken; polish that looks like an ad gets skipped. Sound-on. Hook inside a second. The deepest bottom and right overlays of any placement."
+    },
+    {
+      "topic": "Product",
+      "decision": "Family Health Binder: $34 (list $69), motif \"card\", calm personality, warm accent #b23a5b",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You are the one who fills in every form, and everyone's allergies, medications and insurance number live only in your head. / You have more than one child, or a child and an aging parent, whose facts you are both responsible for.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "In their words: Lead with a phrase people actually search, then show the real screen that answers it.",
+      "because": "Best fit for a awareness film on TikTok (platform fit 2, goal fit 3, already used on TikTok ×2). Other candidates: One screen, closely (1.0), What it is not (-0.4)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"I can never remember my child's medications at the doctor\"",
+      "because": "A searched phrase, \"I can never remember my child's medications at the doctor\", and the listing's own answer to it."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"card\"",
+      "because": "Transitions follow the product's own identity motif, \"card\": a binder of cards, so scenes slide in like the next card. TikTok wants native editing, so hard cuts and whips lead."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"dolly\"",
+      "because": "Camera \"dolly\": constant forward movement for a high-energy feed."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → light → accent → light",
+      "because": "Grounds light → light → accent → light: a warm accent, so light grounds lead and the accent is saved for the turns."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.78 similar to alongside--tiktok--awareness; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Changed the camera",
+      "because": "Its shape was 0.85 similar to personal-finance-companion--tiktok--awareness; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Reordered the transitions",
+      "because": "Its shape was 0.78 similar to personal-finance-companion--tiktok--awareness; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Full sound design, high-energy bed",
+      "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
+    },
+    {
+      "topic": "Length",
+      "decision": "17.0s, 5 scenes",
+      "because": "Each scene is held for the time its words take to read on TikTok (0.24s a word), inside 10–22s."
+    }
+  ]
+}

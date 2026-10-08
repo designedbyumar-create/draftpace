@@ -1,0 +1,279 @@
+{
+  "id": "personal-life-affairs-companion--instagram-reel--conversion",
+  "product": "personal-life-affairs-companion",
+  "platform": "instagram-reel",
+  "goal": "conversion",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 578,
+  "structure": "honestNo",
+  "angle": {
+    "text": "You want a legal will drafted.",
+    "source": "audienceExclusions[1]#0"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "dolly",
+    "transitions": [
+      "pageTurn",
+      "blurDissolve",
+      "pageTurn"
+    ],
+    "motif": "book",
+    "grounds": [
+      "light",
+      "light",
+      "ink",
+      "accent"
+    ],
+    "pace": 1
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.2,
+    "energy": "mid"
+  },
+  "scenes": [
+    {
+      "id": "not",
+      "kind": "contrast",
+      "variant": "strike",
+      "copy": [
+        {
+          "text": "You want a legal will drafted.",
+          "source": "audienceExclusions[1]#0"
+        },
+        {
+          "text": "You want it to read your paperwork for you.",
+          "source": "audienceExclusions[3]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "Not for you if:",
+        "source": "micro"
+      },
+      "why": "Every other ad promises more. Saying what it refuses to do is rarer, and it is in the listing because it is true.",
+      "from": 0,
+      "dur": 229,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [
+        {
+          "at": 18,
+          "cue": "tick",
+          "volume": 0.5
+        },
+        {
+          "at": 94,
+          "cue": "tick",
+          "volume": 0.5
+        }
+      ]
+    },
+    {
+      "id": "instead",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "A record that comes back years later and asks whether it's still true.",
+        "source": "problemsSolved[2].solution"
+      },
+      "screen": {
+        "src": "screens/personal-life-affairs-companion-affairs.png",
+        "pose": "float",
+        "focus": {
+          "at": 0.45,
+          "y": 264,
+          "h": 462,
+          "region": "documents"
+        }
+      },
+      "why": "Then the positive case, on a real screen. Screen: \"What you have established so far.\" (Important documents, each with where it is kept: the will, lasting power of attorney, passports, insurance, deeds.) chosen because it is the real screen closest to \"A record that comes back years later and asks whether it's still true.\"; focus on \"Important documents\".",
+      "eyebrow": {
+        "text": "Instead:",
+        "source": "micro"
+      },
+      "from": 217,
+      "dur": 178,
+      "ground": "light",
+      "transition": "pageTurn",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "page",
+          "volume": 0.32
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 80,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "privacy",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Your records are private to your account.",
+          "source": "privacyNotes#0"
+        }
+      ],
+      "why": "The privacy line closes the trust argument.",
+      "from": 383,
+      "dur": 76,
+      "ground": "ink",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "Your records are",
+          "private to your",
+          "account."
+        ]
+      ]
+    },
+    {
+      "id": "brand",
+      "kind": "brand",
+      "variant": "lockup",
+      "copy": [
+        {
+          "text": "Personal Life Affairs Companion",
+          "source": "title"
+        }
+      ],
+      "why": "The name lands on a film that has been honest with the viewer.",
+      "from": 447,
+      "dur": 54,
+      "ground": "accent",
+      "transition": "pageTurn",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "page",
+          "volume": 0.32
+        },
+        {
+          "at": -36,
+          "cue": "riser",
+          "volume": 0.4
+        },
+        {
+          "at": 2,
+          "cue": "impact",
+          "volume": 0.7
+        },
+        {
+          "at": 6,
+          "cue": "shimmer",
+          "volume": 0.3
+        }
+      ],
+      "lines": [
+        [
+          "Personal Life Affairs",
+          "Companion"
+        ]
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "price",
+      "copy": [
+        {
+          "text": "Personal Life Affairs Companion",
+          "source": "title"
+        },
+        {
+          "text": "Available now.",
+          "source": "micro"
+        }
+      ],
+      "why": "Instagram Reel rewards a direct close: the real price against the real list price.",
+      "from": 489,
+      "dur": 89,
+      "ground": "light",
+      "transition": "pageTurn",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "page",
+          "volume": 0.32
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Instagram Reel, 1080×1920, 12–26s, hook by 1.2s, sound on",
+      "because": "Full-screen and swipeable: the first second decides whether anyone stays. Mostly watched with sound, but captions still carry every point. The right edge holds like/comment buttons and the bottom holds the caption, so text lives in the middle band."
+    },
+    {
+      "topic": "Product",
+      "decision": "Personal Life Affairs Companion: $49 (list $99), motif \"book\", calm personality, cool accent #26374f",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You have been meaning to sort this out for a while and have never found a first step small enough to take. / You would rather be asked one question at a time than handed a folder and told to fill it in.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "What it is not: Earn trust by stating what the product deliberately does not do, then show what it does instead.",
+      "because": "Best fit for a conversion film on Instagram Reel (platform fit 2, goal fit 3, already used on Instagram Reel ×1). Other candidates: Before and after (2.4), In their words (1.5)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"You want a legal will drafted.\"",
+      "because": "A trust film: the listing's own boundaries, then the thing it does instead, then how it treats your data."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"book\"",
+      "because": "Transitions follow the product's own identity motif, \"book\": a handoff book, so scenes turn like pages."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"dolly\"",
+      "because": "Camera \"dolly\": constant forward movement for a high-energy feed."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → light → ink → accent",
+      "because": "Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Full sound design, mid-energy bed",
+      "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
+    },
+    {
+      "topic": "Length",
+      "decision": "19.3s, 5 scenes",
+      "because": "Each scene is held for the time its words take to read on Instagram Reel (0.26s a word), inside 12–26s."
+    }
+  ]
+}

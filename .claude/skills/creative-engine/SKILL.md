@@ -49,6 +49,92 @@ product with a live-component adapter (`ui-adapter/monthlyMoneyReset.tsx`,
 `SafeToSpendCard`/`NextActionCard` actually mounted and computing); the
 other 8 use real captured screens.
 
+## The Director: every video planned, none templated
+
+**For any new video, use the director, not a fixed format.** It analyses
+the brief and writes a unique, frame-exact script; the Film composition
+renders whatever it writes. (The older Feature Spotlight is one fixed
+sequence and stays only for the existing per-product spotlights.)
+
+```
+brief (product · platform · goal)            director/slate.json
+  → platform profile                           director/platforms.ts   canvas, length, pacing, hook-by, sound on/off, safe area, close
+  → product dossier                            director/dossier.ts     every real copy unit with its exact source, screens, motif, palette
+  → structure, angle, treatment, sound          director/direct.ts      each decision recorded with its reason
+  → script (scenes, frames, copy+source, shots, transitions, sfx)        director/film.ts
+  → treatment document                         shots/<product>/films/<platform>--<goal>.md
+  → render                                     src/compositions/formats/film.tsx (FilmComposition)
+```
+
+```bash
+node scripts/direct.mjs                                  # plan the whole slate -> shots/*/films/*.film.json + .md + src/films.generated.ts
+node scripts/frames.mjs Film-<product>--<platform>--<goal> --even 8   # look at it
+node scripts/render-direct.mjs Film-travel               # render matching films (mastered) -> out/films/
+```
+
+**To make a new video**: add a brief to `director/slate.json` (order
+matters: each film is planned knowing every film before it), run
+`direct.mjs`, read the treatment `.md`, look at frames, then render. To
+change a film, change the brief, the director, or the product's own
+listing/screens and re-direct; never hand-edit a `.film.json` (a guard
+fails on it).
+
+How it decides:
+- **Placements** (`platforms.ts`): Instagram Reel/feed, Facebook
+  feed/Reel, TikTok, YouTube Short, Pinterest video, each with its own
+  canvas, length range, shot length, hook deadline, reading speed,
+  sound-on/off, safe area, voice and close (price / soft / save).
+- **Copy is chosen, never written.** The dossier breaks the Shop listing
+  into units with exact sources (`searchedProblems[2].phrase`,
+  `promise#1`, `inclusions[0]:head`). The only other words allowed are
+  the reviewed `MICROCOPY` list and text visible in a real capture
+  (`screen:<src>#<region>`, from `director/screens.catalog.json`).
+- **Nine structures**: cascade, searched (in their words), walkthrough,
+  is-this-you, honest-no, what-you-get, one-screen, before/after,
+  question. Each is scored for the placement and goal; a structure
+  already used for this product is heavily penalised, one used on this
+  platform penalised, and only structures suited to the placement
+  (fit > 0) are considered.
+- **Treatment from the product's identity motif** (its `theme.identity.
+  motif`): timeline → lateral slides and a progress rail; ledger → row
+  wipes and ruled lines; gauge → radial sweeps and an arc; card/index →
+  card slides and tabs; book → page turns and a spine; register →
+  line-wipes and check-ticks; focus → iris and a spotlight; tag → rising
+  tags. Camera, ground rhythm and voice follow the placement's energy and
+  the accent's temperature.
+- **Timing is reading time**: each scene holds for its words at the
+  placement's seconds-per-word; pace only tightens the air around them.
+  Too long → trim list items, cut optional scenes (a short placement's
+  brand beat first: the end card names the product), shorter real
+  captions (the same idea in the product's own words only), then
+  re-plan with fewer words per unit, then the runner-up structure.
+- **Never the same film twice**: a film's *shape* (structure, scene
+  kinds/variants, grounds, transitions, poses, camera, voice) is compared
+  with every film already in the slate; above 0.7 similarity the director
+  varies its own treatment and records why.
+- **Sound is designed from the script**: transition cues by motif
+  (page-turn for book, ticks for ledger/register), ticks under lists, a
+  riser into an impact on the reveal when the placement has energy, pops
+  as UI lands, a tap on focus, a settle on the close; lighter and quieter
+  on sound-off placements; bed level by energy, ducked under the big
+  moments; mastered.
+
+**Guards** (`creative/tests/film-guards.test.ts`, run by the root
+`npm run test`): every on-screen word equals its source; screens are the
+product's own and focus regions sit inside the capture; every scene is
+held long enough to read; canvas, length range, hook-by and sound cues
+per placement; no structure or hook repeated within a product; no two
+films' shapes at or above 0.7; and the committed films equal what the
+director produces now, so a listing change forces a re-direct.
+
+**Adding a structure**: one entry in `STRUCTURES` (`direct.ts`) with its
+purpose, platform and goal fit, an `available` check against the dossier,
+and a `plan` that builds scenes from real copy units. Adding a scene kind
+or variant: the `Scene` type, a block in `film.tsx`, and sound in
+`soundFor`. Adding a screen: capture it, run `screens-manifest.mjs`, and
+describe it (heading, what it shows, focus regions in capture px) in
+`screens.catalog.json`.
+
 ## Where every fact in a creative comes from
 
 Nothing about a product is typed into this workspace. A creative reads:

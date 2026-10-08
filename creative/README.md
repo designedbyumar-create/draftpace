@@ -61,6 +61,15 @@ listing (`shop-listings.ts`). Nothing about a product is typed in here;
 6. **One music bed for every product.** The SFX kit is ours and tuned to
    the calm personality; per-product or per-mood music is not chosen yet.
 
+## The director
+
+New videos are planned, not templated: `director/` analyses each brief
+(platform, product, audience, real material) and writes a unique,
+frame-exact script with a reasoned treatment, which `film.tsx` renders.
+See SKILL.md, "The Director". `node scripts/direct.mjs` plans the slate in
+`director/slate.json`; every film and its treatment lands in
+`shots/<product>/films/`.
+
 ## Commands
 
 ```bash
@@ -73,4 +82,6 @@ npm run render:images                    # renders every slide/post x every aspe
 node scripts/check-frames.mjs [id]       # frame gate; defaults to Monthly Money Reset
 node scripts/frames.mjs <id> 20 120 300  # just these frames, as a contact sheet
 node scripts/synth-sfx.mjs               # regenerate the SFX kit
+node scripts/direct.mjs                  # plan every film in director/slate.json
+node scripts/render-direct.mjs Film-<part of id>   # render director films -> out/films/
 ```

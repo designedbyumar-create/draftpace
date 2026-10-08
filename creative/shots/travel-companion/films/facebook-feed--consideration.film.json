@@ -1,0 +1,247 @@
+{
+  "id": "travel-companion--facebook-feed--consideration",
+  "product": "travel-companion",
+  "platform": "facebook-feed",
+  "goal": "consideration",
+  "width": 1080,
+  "height": 1350,
+  "fps": 30,
+  "durationInFrames": 489,
+  "structure": "walkthrough",
+  "angle": {
+    "text": "How it works",
+    "source": "micro"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "locked",
+    "transitions": [
+      "slideLeft",
+      "whip",
+      "slideLeft"
+    ],
+    "motif": "timeline",
+    "grounds": [
+      "light",
+      "accent",
+      "light",
+      "ink"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "open",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "How it works",
+          "source": "micro"
+        }
+      ],
+      "eyebrow": {
+        "text": "Travel Companion",
+        "source": "title"
+      },
+      "why": "A considered viewer wants the mechanism; saying so up front sets the contract for the next ten seconds.",
+      "from": 0,
+      "dur": 103,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "How it works"
+        ]
+      ]
+    },
+    {
+      "id": "step-1",
+      "kind": "phone",
+      "variant": "step",
+      "copy": [],
+      "caption": {
+        "text": "When something moves, record the change.",
+        "source": "howItWorks[4]#0"
+      },
+      "screen": {
+        "src": "screens/travel-companion-workspace.png",
+        "pose": "float",
+        "focus": {
+          "at": 0.45,
+          "y": 103,
+          "h": 189,
+          "region": "today"
+        },
+        "scroll": []
+      },
+      "why": "Step 1, from the listing's how-it-works. Screen: \"Today\" (Today: nothing scheduled right now, the trip starts Monday 2 November.) chosen because it is the real screen closest to \"When something moves, record the change.\"; focus on \"Today\".",
+      "eyebrow": {
+        "text": "1",
+        "source": "micro"
+      },
+      "from": 91,
+      "dur": 157,
+      "ground": "accent",
+      "transition": "slideLeft",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 71,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "step-2",
+      "kind": "phone",
+      "variant": "step",
+      "copy": [],
+      "caption": {
+        "text": "Mark a trip done when it's over.",
+        "source": "howItWorks[8]#0"
+      },
+      "screen": {
+        "src": "screens/travel-companion-trip.png",
+        "pose": "tiltLeft",
+        "focus": {
+          "at": 0.45,
+          "y": 187,
+          "h": 126,
+          "region": "status"
+        }
+      },
+      "why": "Step 2, from the listing's how-it-works. Screen: \"Lisbon and Porto\" (The trip: where you are now, destinations, and every booking with its reference, with Record a change on each.) chosen because it is the real screen closest to \"Mark a trip done when it's over.\"; focus on \"Not currently at a recorded destination\".",
+      "eyebrow": {
+        "text": "2",
+        "source": "micro"
+      },
+      "from": 236,
+      "dur": 168,
+      "ground": "light",
+      "transition": "whip",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 76,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "price",
+      "copy": [
+        {
+          "text": "Travel Companion",
+          "source": "title"
+        },
+        {
+          "text": "Available now.",
+          "source": "micro"
+        }
+      ],
+      "why": "Facebook feed video rewards a direct close: the real price against the real list price.",
+      "from": 392,
+      "dur": 97,
+      "ground": "ink",
+      "transition": "slideLeft",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Facebook feed video, 1080×1350, 8–20s, hook by 1.5s, sound off",
+      "because": "Scrolled past in a feed with sound off: say who it is for in the first seconds, name the product early, keep every point on screen and readable at a glance."
+    },
+    {
+      "topic": "Product",
+      "decision": "Travel Companion: $34 (list $69), motif \"timeline\", calm personality, cool accent #00626f",
+      "because": "From its definition and Shop listing. 4 real screens to show."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You are travelling with other people, and you are the one everybody asks what happens next. / Your trip has more than three moving parts: flights, transfers, stays and reservations that were booked around each other.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "How it works: Three real steps, each on the real screen where it happens.",
+      "because": "Best fit for a consideration film on Facebook feed video (platform fit 2, goal fit 3). Passed over: Is this you? (its real copy needs 22s to read), too long for 20s. Other candidates: Is this you? (6.3), The question before buying (5.1)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"How it works\"",
+      "because": "The listing's own how-it-works, shortest three steps in their real order."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"timeline\"",
+      "because": "Transitions follow the product's own identity motif, \"timeline\": a trip is a line through time, so scenes travel left to right along it."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"locked\"",
+      "because": "Camera \"locked\": still and precise, so a slow, reading audience is never chasing the frame."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → accent → light → ink",
+      "because": "Grounds light → accent → light → ink: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Edit",
+      "decision": "Re-planned with 6 fewer words per line",
+      "because": "The fullest real copy could not be read inside 20s on Facebook feed video."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "16.3s, 4 scenes",
+      "because": "Each scene is held for the time its words take to read on Facebook feed video (0.32s a word), inside 8–20s."
+    }
+  ]
+}

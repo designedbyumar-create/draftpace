@@ -1,0 +1,201 @@
+{
+  "id": "vehicle-maintenance-companion--pinterest-video--awareness",
+  "product": "vehicle-maintenance-companion",
+  "platform": "pinterest-video",
+  "goal": "awareness",
+  "width": 1000,
+  "height": 1500,
+  "fps": 30,
+  "durationInFrames": 385,
+  "structure": "walkthrough",
+  "angle": {
+    "text": "How it works",
+    "source": "micro"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "locked",
+    "transitions": [
+      "radial",
+      "zoomThrough",
+      "radial"
+    ],
+    "motif": "gauge",
+    "grounds": [
+      "light",
+      "ink",
+      "light",
+      "accent"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "open",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "How it works",
+          "source": "micro"
+        }
+      ],
+      "eyebrow": {
+        "text": "Vehicle Maintenance Companion",
+        "source": "title"
+      },
+      "why": "A considered viewer wants the mechanism; saying so up front sets the contract for the next ten seconds.",
+      "from": 0,
+      "dur": 115,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "How it works"
+        ]
+      ]
+    },
+    {
+      "id": "step-1",
+      "kind": "phone",
+      "variant": "step",
+      "copy": [],
+      "caption": {
+        "text": "Get its usual jobs in one tap.",
+        "source": "howItWorks[1]#0"
+      },
+      "screen": {
+        "src": "screens/vehicle-maintenance-companion-history.png",
+        "pose": "float",
+        "focus": {
+          "at": 0.45,
+          "y": 236,
+          "h": 364,
+          "region": "log"
+        },
+        "scroll": []
+      },
+      "why": "Step 1, from the listing's how-it-works. Screen: \"History\" (What has been done and when: each service dated, with the mileage, the shop and the cost.) chosen because it is the real screen closest to \"Get its usual jobs in one tap.\"; focus on \"Oil and filter change\".",
+      "eyebrow": {
+        "text": "1",
+        "source": "micro"
+      },
+      "from": 103,
+      "dur": 168,
+      "ground": "ink",
+      "transition": "radial",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 76,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "save",
+      "copy": [
+        {
+          "text": "Vehicle Maintenance Companion",
+          "source": "title"
+        },
+        {
+          "text": "Save this for later.",
+          "source": "micro"
+        }
+      ],
+      "why": "Pinterest video pin is a planning surface; the close asks for the save, the price stays quiet.",
+      "from": 259,
+      "dur": 126,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Pinterest video pin, 1000×1500, 6–15s, hook by 1s, sound off",
+      "because": "People are planning, not scrolling: idea-led, calm and save-worthy, worded like what they searched for. Muted, looping, slow; a hard sell reads as an ad and loses the save."
+    },
+    {
+      "topic": "Product",
+      "decision": "Vehicle Maintenance Companion: $34 (list $69), motif \"gauge\", calm personality, warm accent #b45309",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You own more than one vehicle, or a vehicle with a maintenance history you already know by heart but have never written down anywhere. / You have bought a used car or inherited one, and its real service history is genuinely unknown to you.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "How it works: Three real steps, each on the real screen where it happens.",
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 2, goal fit 0, already used on Pinterest video pin ×1). Passed over: In their words (its real copy needs 17s to read), too long for 15s. Other candidates: In their words (7.6), What it is not (-0.6)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"How it works\"",
+      "because": "The listing's own how-it-works, shortest three steps in their real order."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"gauge\"",
+      "because": "Transitions follow the product's own identity motif, \"gauge\": a gauge sweeps, so scenes are revealed by a radial sweep."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"locked\"",
+      "because": "Camera \"locked\": still and precise, so a slow, reading audience is never chasing the frame."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → ink → light → accent",
+      "because": "Grounds light → ink → light → accent: a warm accent, so light grounds lead and the accent is saved for the turns."
+    },
+    {
+      "topic": "Edit",
+      "decision": "Re-planned with 9 fewer words per line",
+      "because": "The fullest real copy could not be read inside 15s on Pinterest video pin."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "12.8s, 3 scenes",
+      "because": "Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 6–15s."
+    }
+  ]
+}

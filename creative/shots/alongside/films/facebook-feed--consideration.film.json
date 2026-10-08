@@ -1,0 +1,221 @@
+{
+  "id": "alongside--facebook-feed--consideration",
+  "product": "alongside",
+  "platform": "facebook-feed",
+  "goal": "consideration",
+  "width": 1080,
+  "height": 1350,
+  "fps": 30,
+  "durationInFrames": 561,
+  "structure": "honestNo",
+  "angle": {
+    "text": "You want it to track a diagnosis, medication, or symptoms.",
+    "source": "audienceExclusions[0]#0"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "locked",
+    "transitions": [
+      "iris",
+      "blurDissolve",
+      "iris"
+    ],
+    "motif": "focus",
+    "grounds": [
+      "light",
+      "light",
+      "accent",
+      "light"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "not",
+      "kind": "contrast",
+      "variant": "strike",
+      "copy": [
+        {
+          "text": "You want it to track a diagnosis, medication, or symptoms.",
+          "source": "audienceExclusions[0]#0"
+        },
+        {
+          "text": "You want a habit tracker, a streak, or a score.",
+          "source": "audienceExclusions[1]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "Not for you if:",
+        "source": "micro"
+      },
+      "why": "Every other ad promises more. Saying what it refuses to do is rarer, and it is in the listing because it is true.",
+      "from": 0,
+      "dur": 358,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [
+        {
+          "at": 18,
+          "cue": "tick",
+          "volume": 0.3
+        },
+        {
+          "at": 137,
+          "cue": "tick",
+          "volume": 0.3
+        }
+      ]
+    },
+    {
+      "id": "instead",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Remembers your place",
+        "source": "problemsSolved[2].label"
+      },
+      "screen": {
+        "src": "screens/alongside-workspace.png",
+        "pose": "tiltLeft",
+        "focus": {
+          "at": 0.45,
+          "y": 222,
+          "h": 294,
+          "region": "one-thing"
+        },
+        "scroll": []
+      },
+      "why": "Then the positive case, on a real screen. Screen: \"Book the six-month dental check\" (One thing at a time: a single next step, Book the six-month dental check, with Do this with me, Not now and It is sorted.) chosen because it is the real screen closest to \"Somewhere to leave a half finished thing that remembers exactly where you got to\"; focus on \"Book the six-month dental check\".",
+      "eyebrow": {
+        "text": "Instead:",
+        "source": "micro"
+      },
+      "from": 346,
+      "dur": 124,
+      "ground": "light",
+      "transition": "iris",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 56,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "price",
+      "copy": [
+        {
+          "text": "ADHD Life Companion",
+          "source": "title"
+        },
+        {
+          "text": "Available now.",
+          "source": "micro"
+        }
+      ],
+      "why": "Facebook feed video rewards a direct close: the real price against the real list price.",
+      "from": 458,
+      "dur": 103,
+      "ground": "accent",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Facebook feed video, 1080×1350, 8–20s, hook by 1.5s, sound off",
+      "because": "Scrolled past in a feed with sound off: say who it is for in the first seconds, name the product early, keep every point on screen and readable at a glance."
+    },
+    {
+      "topic": "Product",
+      "decision": "ADHD Life Companion: $49 (list $99), motif \"focus\", calm personality, warm accent #86586a",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You have ADHD, or executive function that works like it does, and most productivity tools have made that worse rather than better. / You are dealing with brain fog from long covid, a concussion, chronic illness, grief, new parenthood, menopause, or depression, and holding a plan in your head has stopped being reliable.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "What it is not: Earn trust by stating what the product deliberately does not do, then show what it does instead.",
+      "because": "Best fit for a consideration film on Facebook feed video (platform fit 2, goal fit 2). Other candidates: In their words (3.6), How it works (2.5)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"You want it to track a diagnosis, medication, or symptoms.\"",
+      "because": "A trust film: the listing's own boundaries, then the thing it does instead, then how it treats your data."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"focus\"",
+      "because": "Transitions follow the product's own identity motif, \"focus\": it is about one thing at a time, so scenes open like an iris onto one thing."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"locked\"",
+      "because": "Camera \"locked\": still and precise, so a slow, reading audience is never chasing the frame."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → light → accent → light",
+      "because": "Grounds light → light → accent → light: a warm accent, so light grounds lead and the accent is saved for the turns."
+    },
+    {
+      "topic": "Edit",
+      "decision": "Cut \"brand\"",
+      "because": "It would run past 20s, the most Facebook feed video holds attention for; the end card still names the product."
+    },
+    {
+      "topic": "Edit",
+      "decision": "Cut \"privacy\"",
+      "because": "It would run past 20s, the most Facebook feed video holds attention for."
+    },
+    {
+      "topic": "Edit",
+      "decision": "Shorter caption on \"instead\": \"Remembers your place\"",
+      "because": "The full line needs more reading time than Facebook feed video gives; the shorter one is the same idea in the product's own words."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "18.7s, 3 scenes",
+      "because": "Each scene is held for the time its words take to read on Facebook feed video (0.32s a word), inside 8–20s."
+    }
+  ]
+}

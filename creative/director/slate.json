@@ -1,0 +1,44 @@
+{
+  "$comment": "The briefs the director plans, in order. Order matters: each film is planned knowing every film before it, so it can avoid repeating a structure, an angle or a screen. Add a brief and run `node scripts/direct.mjs`.",
+  "briefs": [
+    { "product": "travel-companion", "platform": "instagram-reel", "goal": "conversion" },
+    { "product": "personal-finance-companion", "platform": "instagram-reel", "goal": "conversion" },
+    { "product": "alongside", "platform": "instagram-reel", "goal": "conversion" },
+    { "product": "monthly-money-reset", "platform": "instagram-reel", "goal": "awareness" },
+    { "product": "family-health-binder", "platform": "instagram-reel", "goal": "conversion" },
+    { "product": "home-management-companion", "platform": "instagram-reel", "goal": "conversion" },
+    { "product": "homeschooling-companion", "platform": "instagram-reel", "goal": "conversion" },
+    { "product": "personal-life-affairs-companion", "platform": "instagram-reel", "goal": "conversion" },
+    { "product": "vehicle-maintenance-companion", "platform": "instagram-reel", "goal": "conversion" },
+
+    { "product": "travel-companion", "platform": "pinterest-video", "goal": "awareness" },
+    { "product": "personal-finance-companion", "platform": "pinterest-video", "goal": "awareness" },
+    { "product": "alongside", "platform": "pinterest-video", "goal": "awareness" },
+    { "product": "monthly-money-reset", "platform": "pinterest-video", "goal": "awareness" },
+    { "product": "family-health-binder", "platform": "pinterest-video", "goal": "awareness" },
+    { "product": "home-management-companion", "platform": "pinterest-video", "goal": "awareness" },
+    { "product": "homeschooling-companion", "platform": "pinterest-video", "goal": "awareness" },
+    { "product": "personal-life-affairs-companion", "platform": "pinterest-video", "goal": "awareness" },
+    { "product": "vehicle-maintenance-companion", "platform": "pinterest-video", "goal": "awareness" },
+
+    { "product": "travel-companion", "platform": "facebook-feed", "goal": "consideration" },
+    { "product": "personal-finance-companion", "platform": "facebook-feed", "goal": "consideration" },
+    { "product": "alongside", "platform": "facebook-feed", "goal": "consideration" },
+    { "product": "monthly-money-reset", "platform": "facebook-feed", "goal": "consideration" },
+    { "product": "family-health-binder", "platform": "facebook-feed", "goal": "consideration" },
+    { "product": "home-management-companion", "platform": "facebook-feed", "goal": "consideration" },
+    { "product": "homeschooling-companion", "platform": "facebook-feed", "goal": "consideration" },
+    { "product": "personal-life-affairs-companion", "platform": "facebook-feed", "goal": "consideration" },
+    { "product": "vehicle-maintenance-companion", "platform": "facebook-feed", "goal": "consideration" },
+
+    { "product": "travel-companion", "platform": "tiktok", "goal": "awareness" },
+    { "product": "personal-finance-companion", "platform": "tiktok", "goal": "awareness" },
+    { "product": "alongside", "platform": "tiktok", "goal": "awareness" },
+    { "product": "monthly-money-reset", "platform": "tiktok", "goal": "awareness" },
+    { "product": "family-health-binder", "platform": "tiktok", "goal": "awareness" },
+    { "product": "home-management-companion", "platform": "tiktok", "goal": "awareness" },
+    { "product": "homeschooling-companion", "platform": "tiktok", "goal": "awareness" },
+    { "product": "personal-life-affairs-companion", "platform": "tiktok", "goal": "awareness" },
+    { "product": "vehicle-maintenance-companion", "platform": "tiktok", "goal": "awareness" }
+  ]
+}
