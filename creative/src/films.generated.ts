@@ -54,5 +54,14 @@ import f50 from "../shots/home-management-companion/films/facebook-reel--convers
 import f51 from "../shots/homeschooling-companion/films/facebook-reel--conversion.film.json";
 import f52 from "../shots/personal-life-affairs-companion/films/facebook-reel--conversion.film.json";
 import f53 from "../shots/vehicle-maintenance-companion/films/facebook-reel--conversion.film.json";
+import f54 from "../shots/travel-companion/films/instagram-feed--consideration.film.json";
+import f55 from "../shots/personal-finance-companion/films/instagram-feed--consideration.film.json";
+import f56 from "../shots/alongside/films/instagram-feed--consideration.film.json";
+import f57 from "../shots/monthly-money-reset/films/instagram-feed--consideration.film.json";
+import f58 from "../shots/family-health-binder/films/instagram-feed--consideration.film.json";
+import f59 from "../shots/home-management-companion/films/instagram-feed--consideration.film.json";
+import f60 from "../shots/homeschooling-companion/films/instagram-feed--consideration.film.json";
+import f61 from "../shots/personal-life-affairs-companion/films/instagram-feed--consideration.film.json";
+import f62 from "../shots/vehicle-maintenance-companion/films/instagram-feed--consideration.film.json";
 
-export const FILMS = [f0, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14, f15, f16, f17, f18, f19, f20, f21, f22, f23, f24, f25, f26, f27, f28, f29, f30, f31, f32, f33, f34, f35, f36, f37, f38, f39, f40, f41, f42, f43, f44, f45, f46, f47, f48, f49, f50, f51, f52, f53] as unknown as Film[];
+export const FILMS = [f0, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14, f15, f16, f17, f18, f19, f20, f21, f22, f23, f24, f25, f26, f27, f28, f29, f30, f31, f32, f33, f34, f35, f36, f37, f38, f39, f40, f41, f42, f43, f44, f45, f46, f47, f48, f49, f50, f51, f52, f53, f54, f55, f56, f57, f58, f59, f60, f61, f62] as unknown as Film[];

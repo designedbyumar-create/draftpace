@@ -270,6 +270,51 @@
       "product": "vehicle-maintenance-companion",
       "platform": "facebook-reel",
       "goal": "conversion"
+    },
+    {
+      "product": "travel-companion",
+      "platform": "instagram-feed",
+      "goal": "consideration"
+    },
+    {
+      "product": "personal-finance-companion",
+      "platform": "instagram-feed",
+      "goal": "consideration"
+    },
+    {
+      "product": "alongside",
+      "platform": "instagram-feed",
+      "goal": "consideration"
+    },
+    {
+      "product": "monthly-money-reset",
+      "platform": "instagram-feed",
+      "goal": "consideration"
+    },
+    {
+      "product": "family-health-binder",
+      "platform": "instagram-feed",
+      "goal": "consideration"
+    },
+    {
+      "product": "home-management-companion",
+      "platform": "instagram-feed",
+      "goal": "consideration"
+    },
+    {
+      "product": "homeschooling-companion",
+      "platform": "instagram-feed",
+      "goal": "consideration"
+    },
+    {
+      "product": "personal-life-affairs-companion",
+      "platform": "instagram-feed",
+      "goal": "consideration"
+    },
+    {
+      "product": "vehicle-maintenance-companion",
+      "platform": "instagram-feed",
+      "goal": "consideration"
     }
   ]
 }

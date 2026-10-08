@@ -97,11 +97,13 @@ type Ctx = {
   usedScreens: string[];
   /** 0 = the fullest copy that fits a scene; each step asks for ~3 fewer words per unit. */
   brevity: number;
+  /** Extra words a unit may have, used only when nothing unused fits at the normal limits. */
+  relax: number;
 };
 
 /** Copy of a kind short enough for this placement, unused by earlier films of this product first. */
 function units(ctx: Ctx, kind: CopyUnit["kind"], maxWords = ctx.p.maxWordsPerScene): CopyUnit[] {
-  const limit = Math.max(4, maxWords - ctx.brevity * 3);
+  const limit = Math.max(4, maxWords + ctx.relax - ctx.brevity * 3);
   const all = ctx.d.copy.filter((u) => u.kind === kind && u.words <= limit);
   return [...all.filter((u) => !ctx.usedSources.has(u.source)), ...all.filter((u) => ctx.usedSources.has(u.source))];
 }
@@ -539,6 +541,7 @@ export function direct(brief: Brief, d: Dossier, slate: Slate = []): Film {
     usedSources: new Set(mine.flatMap((f) => f.scenes.flatMap((s) => [...s.copy, s.caption].filter(Boolean).map((x) => x!.source)))),
     usedScreens: [],
     brevity: 0,
+    relax: 0,
   };
 
   const reasoning: Film["reasoning"] = [
@@ -547,9 +550,19 @@ export function direct(brief: Brief, d: Dossier, slate: Slate = []): Film {
     { topic: "Audience", decision: d.copy.filter((u) => u.kind === "audience").slice(0, 2).map((u) => u.text).join(" / ") || "(none listed)", because: "The listing's own audience lines; the director writes for them." },
   ];
 
-  const ranked = STRUCTURES.filter((s) => s.available(ctx))
+  const rank = () => STRUCTURES.filter((s) => s.available(ctx))
     .map((s) => ({ s, ...score(s, ctx, slate) }))
     .sort((a, b) => b.total - a.total);
+  // A product never tells the same story twice. If every structure its
+  // material supports is already used, allow slightly longer real lines
+  // (reading time still holds them) before ever repeating one.
+  const used = new Set(mine.map((f) => f.structure));
+  let ranked = rank();
+  if (!ranked.some((x) => !used.has(x.s.id))) {
+    ctx.relax = 4;
+    ranked = rank();
+    reasoning.push({ topic: "Material", decision: "Allowed real lines up to 4 words longer", because: `Every structure ${d.name}'s copy supports at ${p.label}'s normal line length is already used by its other films; a longer real line beats telling the same story twice.` });
+  }
   if (!ranked.length) throw new Error(`no structure can be made from ${d.slug}'s material`);
   // Plan, then fit the running time the way an editor would: shorter real
   // captions first, then fewer list items, then cut optional scenes, then
@@ -570,7 +583,8 @@ export function direct(brief: Brief, d: Dossier, slate: Slate = []): Film {
   const skipped: string[] = [];
   // Only structures suited to this placement (fit > 0), best first; the closest miss is kept if none fits.
   const suited = ranked.filter((x) => (x.s.fit[p.id] ?? 0) > 0);
-  const candidates = suited.length ? suited : ranked;
+  const fresh = suited.filter((x) => !used.has(x.s.id));
+  const candidates = fresh.length ? fresh : suited.length ? suited : ranked;
   let closest: { chosen: typeof chosen; plan: Plan; drafts: Draft[]; edits: Film["reasoning"]; t: Treatment; why: string[]; total: number } | undefined;
   for (const candidate of candidates) {
     chosen = candidate;

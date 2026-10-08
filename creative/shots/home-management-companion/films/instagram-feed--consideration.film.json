@@ -1,0 +1,199 @@
+{
+  "id": "home-management-companion--instagram-feed--consideration",
+  "product": "home-management-companion",
+  "platform": "instagram-feed",
+  "goal": "consideration",
+  "width": 1080,
+  "height": 1350,
+  "fps": 30,
+  "durationInFrames": 549,
+  "structure": "searched",
+  "angle": {
+    "text": "I just bought a house and have no idea what needs doing",
+    "source": "searchedProblems[1].phrase"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "float",
+    "transitions": [
+      "slideUp",
+      "cardSlide",
+      "slideUp"
+    ],
+    "motif": "tag",
+    "grounds": [
+      "ink",
+      "light",
+      "light",
+      "accent"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "hook",
+      "kind": "title",
+      "variant": "quote",
+      "copy": [
+        {
+          "text": "I just bought a house and have no idea what needs doing",
+          "source": "searchedProblems[1].phrase"
+        }
+      ],
+      "why": "Search-led placements reward the exact words someone typed; quoted, it reads as their thought, not our claim.",
+      "from": 0,
+      "dur": 148,
+      "ground": "ink",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "I just bought a house",
+          "and have no idea what",
+          "needs doing"
+        ]
+      ]
+    },
+    {
+      "id": "answer",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Tap what your home has across twelve areas and it tells you what each one needs and roughly when, before anything becomes a repair.",
+        "source": "searchedProblems[1].answer"
+      },
+      "screen": {
+        "src": "screens/home-management-companion-workspace.png",
+        "pose": "flat",
+        "focus": {
+          "at": 0.45,
+          "y": 222,
+          "h": 25,
+          "region": "status"
+        }
+      },
+      "why": "The answer, shown working on the real screen it happens on. Screen: \"A couple of things need a look\" (Your home now: what's wrong, what to care for, what's coming up and what's handled, with the fridge and a dripping tap flagged.) chosen because it is the real screen closest to \"Tap what your home has across twelve areas and it tells you what each one needs \"; focus on \"Wrong, To care for, Coming up, Handled\".",
+      "from": 136,
+      "dur": 328,
+      "ground": "light",
+      "transition": "slideUp",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 148,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "soft",
+      "copy": [
+        {
+          "text": "Home Base",
+          "source": "title"
+        },
+        {
+          "text": "Available now.",
+          "source": "micro"
+        }
+      ],
+      "why": "Instagram feed video punishes an obvious ad; a soft close names the product and where to find it.",
+      "from": 452,
+      "dur": 97,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Instagram feed video, 1080×1350, 8–20s, hook by 1.2s, sound off",
+      "because": "A 4:5 card in the grid of a feed, autoplayed muted. Craft and composition carry it; text is short and sits well inside the frame."
+    },
+    {
+      "topic": "Product",
+      "decision": "Home Base: $49 (list $99), motif \"tag\", calm personality, cool accent #4f7a5c",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You own or rent a home and would rather be told what needs you this week than keep a mental list you know is incomplete. / You want the boring, expensive things caught early: the water heater, the gutters, the outside tap before the first freeze.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "In their words: Lead with a phrase people actually search, then show the real screen that answers it.",
+      "because": "Best fit for a consideration film on Instagram feed video (platform fit 2, goal fit 2). Other candidates: One screen, closely (2.4), How it works (-2.4)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"I just bought a house and have no idea what needs doing\"",
+      "because": "A searched phrase, \"I just bought a house and have no idea what needs doing\", and the listing's own answer to it."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"tag\"",
+      "because": "Transitions follow the product's own identity motif, \"tag\": things in the home are tagged, so scenes rise like a tag being lifted."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds ink → light → light → accent",
+      "because": "Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Edit",
+      "decision": "Cut \"brand\"",
+      "because": "It would run past 20s, the most Instagram feed video holds attention for; the end card still names the product."
+    },
+    {
+      "topic": "Edit",
+      "decision": "Cut \"follow\"",
+      "because": "It would run past 20s, the most Instagram feed video holds attention for."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "18.3s, 3 scenes",
+      "because": "Each scene is held for the time its words take to read on Instagram feed video (0.3s a word), inside 8–20s."
+    }
+  ]
+}
