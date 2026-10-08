@@ -13,11 +13,8 @@
       "ui": {
         "kind": "safeToSpendCard"
       },
-      "product": {
-        "name": "Monthly Money Reset",
-        "price": "Free"
-      },
-      "themeSlug": "monthly-money-reset"
+      "themeSlug": "monthly-money-reset",
+      "problem": 0
     },
     {
       "id": "02-bills-protected",
@@ -31,11 +28,8 @@
       "ui": {
         "kind": "safeToSpendCard"
       },
-      "product": {
-        "name": "Monthly Money Reset",
-        "price": "Free"
-      },
-      "themeSlug": "monthly-money-reset"
+      "themeSlug": "monthly-money-reset",
+      "problem": 1
     },
     {
       "id": "03-weekly-check-in",
@@ -50,11 +44,8 @@
         "kind": "screen",
         "src": "screens/monthly-money-reset-progress.png"
       },
-      "product": {
-        "name": "Monthly Money Reset",
-        "price": "Free"
-      },
-      "themeSlug": "monthly-money-reset"
+      "themeSlug": "monthly-money-reset",
+      "problem": 2
     },
     {
       "id": "04-tightest-day",
@@ -68,11 +59,8 @@
       "ui": {
         "kind": "safeToSpendCard"
       },
-      "product": {
-        "name": "Monthly Money Reset",
-        "price": "Free"
-      },
-      "themeSlug": "monthly-money-reset"
+      "themeSlug": "monthly-money-reset",
+      "problem": 3
     }
   ]
 }

@@ -16,6 +16,7 @@
 import { AbsoluteFill, Img, staticFile } from "remotion";
 import { monthlyMoneyResetDemo, SafeToSpendCard } from "../../ui-adapter/monthlyMoneyReset";
 import { themeFor, postCssVars } from "../../theme-registry";
+import { productLine } from "../../shop-listings";
 
 export type Post = {
   id: string;
@@ -24,7 +25,6 @@ export type Post = {
   eyebrow: string;
   headline: string[];
   ui: { kind: "safeToSpendCard" } | { kind: "screen"; src: string };
-  product: { name: string; price: string };
 };
 
 function RealUi({ ui, frameWidth }: { ui: Post["ui"]; frameWidth: number }) {
@@ -63,7 +63,8 @@ function RealUi({ ui, frameWidth }: { ui: Post["ui"]; frameWidth: number }) {
   );
 }
 
-function Footer({ product }: { product: Post["product"] }) {
+function Footer({ themeSlug }: { themeSlug: string }) {
+  const product = productLine(themeSlug);
   return (
     <div
       style={{
@@ -166,7 +167,7 @@ function TiltLayout({ post }: { post: Post }) {
       >
         <RealUi ui={post.ui} frameWidth={420} />
       </div>
-      <Footer product={post.product} />
+      <Footer themeSlug={post.themeSlug} />
     </AbsoluteFill>
   );
 }
@@ -200,7 +201,7 @@ function WindowLayout({ post }: { post: Post }) {
       >
         <RealUi ui={post.ui} frameWidth={430} />
       </div>
-      <Footer product={post.product} />
+      <Footer themeSlug={post.themeSlug} />
     </AbsoluteFill>
   );
 }

@@ -19,6 +19,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // The Creative Engine is its own workspace with its own dependencies
+    // and its own CI job (.github/workflows/creative.yml).
+    "creative/**",
   ]),
 ]);
 

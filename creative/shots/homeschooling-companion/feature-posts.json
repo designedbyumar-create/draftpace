@@ -4,6 +4,7 @@
     {
       "id": "01-homeschooling-companion",
       "themeSlug": "homeschooling-companion",
+      "problem": 0,
       "layout": "tilt",
       "eyebrow": "HOMESCHOOLING COMPANION",
       "headline": [
@@ -14,15 +15,12 @@
       "ui": {
         "kind": "screen",
         "src": "screens/homeschooling-companion-record.png"
-      },
-      "product": {
-        "name": "Homeschooling Companion",
-        "price": "$34"
       }
     },
     {
       "id": "02-homeschooling-companion",
       "themeSlug": "homeschooling-companion",
+      "problem": 1,
       "layout": "window",
       "eyebrow": "HOMESCHOOLING COMPANION",
       "headline": [
@@ -33,15 +31,12 @@
       "ui": {
         "kind": "screen",
         "src": "screens/homeschooling-companion-workspace.png"
-      },
-      "product": {
-        "name": "Homeschooling Companion",
-        "price": "$34"
       }
     },
     {
       "id": "03-homeschooling-companion",
       "themeSlug": "homeschooling-companion",
+      "problem": 2,
       "layout": "tilt",
       "eyebrow": "HOMESCHOOLING COMPANION",
       "headline": [
@@ -52,15 +47,12 @@
       "ui": {
         "kind": "screen",
         "src": "screens/homeschooling-companion-kids.png"
-      },
-      "product": {
-        "name": "Homeschooling Companion",
-        "price": "$34"
       }
     },
     {
       "id": "04-homeschooling-companion",
       "themeSlug": "homeschooling-companion",
+      "problem": 3,
       "layout": "window",
       "eyebrow": "HOMESCHOOLING COMPANION",
       "headline": [
@@ -71,10 +63,6 @@
       "ui": {
         "kind": "screen",
         "src": "screens/homeschooling-companion-record.png"
-      },
-      "product": {
-        "name": "Homeschooling Companion",
-        "price": "$34"
       }
     }
   ]

@@ -15,6 +15,7 @@ import { renderMedia, selectComposition, getCompositions } from "@remotion/rende
 import path from "node:path";
 import { mkdir } from "node:fs/promises";
 import { webpackOverride } from "../webpack-override.mjs";
+import { browserExecutable } from "./browser.mjs";
 
 const OUT_DIR = path.resolve(process.cwd(), "out");
 const only = process.argv[2];
@@ -40,7 +41,7 @@ async function main() {
   );
   log(`bundled: ${bundled}`);
 
-  const all = await getCompositions(bundled);
+  const all = await getCompositions(bundled, { browserExecutable });
   const targets = only ? all.filter((c) => c.id === only) : all.filter((c) => c.id.endsWith("-FeatureSpotlight"));
   if (targets.length === 0) {
     throw new Error(only ? `No composition found with id "${only}"` : "No -FeatureSpotlight compositions found");
@@ -50,7 +51,7 @@ async function main() {
   for (const compositionMeta of targets) {
     log(`selecting composition ${compositionMeta.id}...`);
     const composition = await withTimeout(
-      selectComposition({ serveUrl: bundled, id: compositionMeta.id }),
+      selectComposition({ browserExecutable, serveUrl: bundled, id: compositionMeta.id }),
       90_000,
       `selectComposition(${compositionMeta.id})`
     );
@@ -59,6 +60,7 @@ async function main() {
     log(`rendering media for ${compositionMeta.id} -> ${outPath}...`);
     await withTimeout(
       renderMedia({
+        browserExecutable,
         composition,
         serveUrl: bundled,
         codec: "h264",
@@ -74,7 +76,9 @@ async function main() {
   }
 }
 
-main().catch((err) => {
+// Exit explicitly: a pending per-phase timeout timer would otherwise keep
+// the process alive for its full length after the work is done.
+main().then(() => process.exit(0)).catch((err) => {
   console.error(`[${new Date().toISOString()}] FAILED:`, err);
   process.exit(1);
 });

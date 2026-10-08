@@ -4,6 +4,7 @@
     {
       "id": "01-personal-life-affairs-companion",
       "themeSlug": "personal-life-affairs-companion",
+      "problem": 0,
       "layout": "tilt",
       "eyebrow": "PERSONAL LIFE AFFAIRS COMPANION",
       "headline": [
@@ -14,15 +15,12 @@
       "ui": {
         "kind": "screen",
         "src": "screens/personal-life-affairs-companion-workspace.png"
-      },
-      "product": {
-        "name": "Personal Life Affairs Companion",
-        "price": "$49"
       }
     },
     {
       "id": "02-personal-life-affairs-companion",
       "themeSlug": "personal-life-affairs-companion",
+      "problem": 1,
       "layout": "window",
       "eyebrow": "PERSONAL LIFE AFFAIRS COMPANION",
       "headline": [
@@ -33,15 +31,12 @@
       "ui": {
         "kind": "screen",
         "src": "screens/personal-life-affairs-companion-affairs.png"
-      },
-      "product": {
-        "name": "Personal Life Affairs Companion",
-        "price": "$49"
       }
     },
     {
       "id": "03-personal-life-affairs-companion",
       "themeSlug": "personal-life-affairs-companion",
+      "problem": 2,
       "layout": "tilt",
       "eyebrow": "PERSONAL LIFE AFFAIRS COMPANION",
       "headline": [
@@ -52,15 +47,12 @@
       "ui": {
         "kind": "screen",
         "src": "screens/personal-life-affairs-companion-affairs.png"
-      },
-      "product": {
-        "name": "Personal Life Affairs Companion",
-        "price": "$49"
       }
     },
     {
       "id": "04-personal-life-affairs-companion",
       "themeSlug": "personal-life-affairs-companion",
+      "problem": 3,
       "layout": "window",
       "eyebrow": "PERSONAL LIFE AFFAIRS COMPANION",
       "headline": [
@@ -71,10 +63,6 @@
       "ui": {
         "kind": "screen",
         "src": "screens/personal-life-affairs-companion-printables.png"
-      },
-      "product": {
-        "name": "Personal Life Affairs Companion",
-        "price": "$49"
       }
     }
   ]

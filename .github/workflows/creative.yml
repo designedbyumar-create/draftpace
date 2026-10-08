@@ -1,0 +1,83 @@
+# The Creative Engine (creative/) renders marketing video and images from
+# the real app's components, product definitions and Shop listings. A
+# change to any of those can break a render without failing a single app
+# gate, so this job renders on every change that could reach one.
+#
+# Its data guards (creative/tests) run with the main CI's test step; this
+# job is the part that needs creative's own dependencies: its typecheck,
+# one promotional post per product at Pinterest size, and one full video
+# put through the frame gate. The renders are uploaded so a reviewer can
+# look at them, because a render that completes is not one that looks right.
+name: Creative
+
+on:
+  pull_request:
+    paths:
+      - "creative/**"
+      - "src/products/**"
+      - "src/shop/**"
+      - "src/design-system/**"
+      - "src/product-framework/**"
+      - "src/app/globals.css"
+      - "public/fonts/**"
+      - ".github/workflows/creative.yml"
+  push:
+    branches: [main]
+    paths:
+      - "creative/**"
+      - "src/products/**"
+      - "src/shop/**"
+      - "src/design-system/**"
+      - "src/product-framework/**"
+      - "src/app/globals.css"
+      - "public/fonts/**"
+      - ".github/workflows/creative.yml"
+
+concurrency:
+  group: creative-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  render:
+    name: typecheck and render
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            creative/package-lock.json
+
+      # The real components creative renders resolve their own imports
+      # (zod, framer-motion, ...) from the app's node_modules.
+      - run: npm ci
+      - run: npm ci
+        working-directory: creative
+
+      - name: Typecheck
+        run: npx tsc --noEmit -p .
+        working-directory: creative
+
+      - name: Render one post per product (Pinterest size)
+        run: node scripts/render-images.mjs 01- --ratio pinterest
+        working-directory: creative
+
+      - name: Render and frame-gate one video
+        run: |
+          node scripts/render-direct.mjs MonthlyMoneyReset-FeatureSpotlight
+          node scripts/check-frames.mjs MonthlyMoneyReset-FeatureSpotlight
+        working-directory: creative
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: creative-renders
+          path: creative/out/
+          if-no-files-found: ignore
+          retention-days: 14

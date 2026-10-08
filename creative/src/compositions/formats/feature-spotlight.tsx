@@ -13,6 +13,7 @@ import { cardPop, countUpValue } from "../../motion/ui";
 import { SFX_FILES, BED_FILE, hasAudioAsset } from "../../motion/sound";
 import { monthlyMoneyResetDemo, SafeToSpendCard, NextActionCard, formatCurrency } from "../../ui-adapter/monthlyMoneyReset";
 import { themeFor, postCssVars } from "../../theme-registry";
+import { productLine } from "../../shop-listings";
 
 type Beat = {
   id: string;
@@ -44,6 +45,24 @@ export type Shot = {
   height: number;
   beats: Beat[];
 };
+
+/** Fills `{price}` / `{name}` in a beat's text from the product's real Shop listing, so no shot file states a price of its own. */
+function withListing(beat: Beat, slug: string): Beat {
+  const { name, price } = productLine(slug);
+  const fill = (t: string) => t.replaceAll("{price}", price).replaceAll("{name}", name);
+  const typo = beat.typography;
+  return {
+    ...beat,
+    caption: beat.caption ? fill(beat.caption) : beat.caption,
+    typography: typo && {
+      ...typo,
+      lines: typo.lines?.map(fill),
+      eyebrow: typo.eyebrow && fill(typo.eyebrow),
+      headline: typo.headline && fill(typo.headline),
+      sub: typo.sub && fill(typo.sub),
+    },
+  };
+}
 
 function TransitionWrap({ beat, frame, children }: { beat: Beat; frame: number; children: React.ReactNode }) {
   const edge = beat.transition?.frames ?? 15;
@@ -384,7 +403,7 @@ export function FeatureSpotlight({ shot }: { shot: Shot }) {
   return (
     <AbsoluteFill style={{ ...postCssVars(theme), background: "var(--post-bg)" } as React.CSSProperties}>
       <Audio src={BED_FILE} volume={bedVolume} />
-      {shot.beats.map((beat) => (
+      {shot.beats.map((b) => withListing(b, shot.product)).map((beat) => (
         <Sequence key={beat.id} from={beat.startFrame} durationInFrames={beat.durationFrames} layout="none">
           <TransitionWrap beat={beat} frame={frame}>
             {beat.kind === "typography" && <TypographyBeat beat={beat} frame={frame} />}

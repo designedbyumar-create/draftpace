@@ -2,6 +2,7 @@
   "id": "feature-spotlight-home-management-companion",
   "product": "home-management-companion",
   "themeSlug": "home-management-companion",
+  "problem": 0,
   "format": "feature-spotlight",
   "fps": 30,
   "width": 1080,
@@ -106,7 +107,7 @@
       "durationFrames": 50,
       "typography": {
         "headline": "Available now.",
-        "sub": "draftpace.com/shop · $49"
+        "sub": "draftpace.com/shop · {price}"
       },
       "camera": {
         "move": "static"

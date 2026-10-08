@@ -4,6 +4,7 @@
     {
       "id": "01-vehicle-maintenance-companion",
       "themeSlug": "vehicle-maintenance-companion",
+      "problem": 0,
       "layout": "tilt",
       "eyebrow": "VEHICLE MAINTENANCE COMPANION",
       "headline": [
@@ -14,15 +15,12 @@
       "ui": {
         "kind": "screen",
         "src": "screens/vehicle-maintenance-companion-vehicles.png"
-      },
-      "product": {
-        "name": "Vehicle Maintenance Companion",
-        "price": "$34"
       }
     },
     {
       "id": "02-vehicle-maintenance-companion",
       "themeSlug": "vehicle-maintenance-companion",
+      "problem": 1,
       "layout": "window",
       "eyebrow": "VEHICLE MAINTENANCE COMPANION",
       "headline": [
@@ -33,15 +31,12 @@
       "ui": {
         "kind": "screen",
         "src": "screens/vehicle-maintenance-companion-vehicles.png"
-      },
-      "product": {
-        "name": "Vehicle Maintenance Companion",
-        "price": "$34"
       }
     },
     {
       "id": "03-vehicle-maintenance-companion",
       "themeSlug": "vehicle-maintenance-companion",
+      "problem": 2,
       "layout": "tilt",
       "eyebrow": "VEHICLE MAINTENANCE COMPANION",
       "headline": [
@@ -52,15 +47,12 @@
       "ui": {
         "kind": "screen",
         "src": "screens/vehicle-maintenance-companion-printables.png"
-      },
-      "product": {
-        "name": "Vehicle Maintenance Companion",
-        "price": "$34"
       }
     },
     {
       "id": "04-vehicle-maintenance-companion",
       "themeSlug": "vehicle-maintenance-companion",
+      "problem": 3,
       "layout": "window",
       "eyebrow": "VEHICLE MAINTENANCE COMPANION",
       "headline": [
@@ -71,10 +63,6 @@
       "ui": {
         "kind": "screen",
         "src": "screens/vehicle-maintenance-companion-history.png"
-      },
-      "product": {
-        "name": "Vehicle Maintenance Companion",
-        "price": "$34"
       }
     }
   ]

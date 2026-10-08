@@ -4,6 +4,7 @@
     {
       "id": "01-personal-finance-companion",
       "themeSlug": "personal-finance-companion",
+      "problem": 0,
       "layout": "tilt",
       "eyebrow": "PERSONAL FINANCE COMPANION",
       "headline": [
@@ -14,15 +15,12 @@
       "ui": {
         "kind": "screen",
         "src": "screens/personal-finance-companion-records.png"
-      },
-      "product": {
-        "name": "Personal Finance Companion",
-        "price": "$49"
       }
     },
     {
       "id": "02-personal-finance-companion",
       "themeSlug": "personal-finance-companion",
+      "problem": 1,
       "layout": "window",
       "eyebrow": "PERSONAL FINANCE COMPANION",
       "headline": [
@@ -33,15 +31,12 @@
       "ui": {
         "kind": "screen",
         "src": "screens/personal-finance-companion-debt.png"
-      },
-      "product": {
-        "name": "Personal Finance Companion",
-        "price": "$49"
       }
     },
     {
       "id": "03-personal-finance-companion",
       "themeSlug": "personal-finance-companion",
+      "problem": 2,
       "layout": "tilt",
       "eyebrow": "PERSONAL FINANCE COMPANION",
       "headline": [
@@ -52,15 +47,12 @@
       "ui": {
         "kind": "screen",
         "src": "screens/personal-finance-companion-bills.png"
-      },
-      "product": {
-        "name": "Personal Finance Companion",
-        "price": "$49"
       }
     },
     {
       "id": "04-personal-finance-companion",
       "themeSlug": "personal-finance-companion",
+      "problem": 3,
       "layout": "window",
       "eyebrow": "PERSONAL FINANCE COMPANION",
       "headline": [
@@ -71,10 +63,6 @@
       "ui": {
         "kind": "screen",
         "src": "screens/personal-finance-companion-printables.png"
-      },
-      "product": {
-        "name": "Personal Finance Companion",
-        "price": "$49"
       }
     }
   ]

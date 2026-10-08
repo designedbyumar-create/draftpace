@@ -4,6 +4,7 @@
     {
       "id": "01-family-health-binder",
       "themeSlug": "family-health-binder",
+      "problem": 0,
       "layout": "tilt",
       "eyebrow": "FAMILY HEALTH BINDER",
       "headline": [
@@ -14,15 +15,12 @@
       "ui": {
         "kind": "screen",
         "src": "screens/family-health-binder-members.png"
-      },
-      "product": {
-        "name": "Family Health Binder",
-        "price": "$34"
       }
     },
     {
       "id": "02-family-health-binder",
       "themeSlug": "family-health-binder",
+      "problem": 1,
       "layout": "window",
       "eyebrow": "FAMILY HEALTH BINDER",
       "headline": [
@@ -33,15 +31,12 @@
       "ui": {
         "kind": "screen",
         "src": "screens/family-health-binder-printables.png"
-      },
-      "product": {
-        "name": "Family Health Binder",
-        "price": "$34"
       }
     },
     {
       "id": "03-family-health-binder",
       "themeSlug": "family-health-binder",
+      "problem": 2,
       "layout": "tilt",
       "eyebrow": "FAMILY HEALTH BINDER",
       "headline": [
@@ -52,15 +47,12 @@
       "ui": {
         "kind": "screen",
         "src": "screens/family-health-binder-workspace.png"
-      },
-      "product": {
-        "name": "Family Health Binder",
-        "price": "$34"
       }
     },
     {
       "id": "04-family-health-binder",
       "themeSlug": "family-health-binder",
+      "problem": 3,
       "layout": "window",
       "eyebrow": "FAMILY HEALTH BINDER",
       "headline": [
@@ -71,10 +63,6 @@
       "ui": {
         "kind": "screen",
         "src": "screens/family-health-binder-printables.png"
-      },
-      "product": {
-        "name": "Family Health Binder",
-        "price": "$34"
       }
     }
   ]

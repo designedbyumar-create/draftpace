@@ -4,6 +4,7 @@
     {
       "id": "01-home-management-companion",
       "themeSlug": "home-management-companion",
+      "problem": 0,
       "layout": "tilt",
       "eyebrow": "HOME BASE",
       "headline": [
@@ -14,15 +15,12 @@
       "ui": {
         "kind": "screen",
         "src": "screens/home-management-companion-workspace.png"
-      },
-      "product": {
-        "name": "Home Base",
-        "price": "$49"
       }
     },
     {
       "id": "02-home-management-companion",
       "themeSlug": "home-management-companion",
+      "problem": 1,
       "layout": "window",
       "eyebrow": "HOME BASE",
       "headline": [
@@ -33,15 +31,12 @@
       "ui": {
         "kind": "screen",
         "src": "screens/home-management-companion-workspace.png"
-      },
-      "product": {
-        "name": "Home Base",
-        "price": "$49"
       }
     },
     {
       "id": "03-home-management-companion",
       "themeSlug": "home-management-companion",
+      "problem": 2,
       "layout": "tilt",
       "eyebrow": "HOME BASE",
       "headline": [
@@ -52,15 +47,12 @@
       "ui": {
         "kind": "screen",
         "src": "screens/home-management-companion-seasons.png"
-      },
-      "product": {
-        "name": "Home Base",
-        "price": "$49"
       }
     },
     {
       "id": "04-home-management-companion",
       "themeSlug": "home-management-companion",
+      "problem": 3,
       "layout": "window",
       "eyebrow": "HOME BASE",
       "headline": [
@@ -71,10 +63,6 @@
       "ui": {
         "kind": "screen",
         "src": "screens/home-management-companion-history.png"
-      },
-      "product": {
-        "name": "Home Base",
-        "price": "$49"
       }
     }
   ]
