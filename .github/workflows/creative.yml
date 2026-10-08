@@ -45,6 +45,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          # stale-screens.mjs compares each screen's capture commit with HEAD.
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
@@ -62,6 +65,10 @@ jobs:
 
       - name: Typecheck
         run: npx tsc --noEmit -p .
+        working-directory: creative
+
+      - name: Report stale screens
+        run: node scripts/stale-screens.mjs
         working-directory: creative
 
       - name: Render one post per product (Pinterest size)

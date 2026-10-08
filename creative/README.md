@@ -38,18 +38,16 @@ any model can pick this up without re-learning them.
   `public/screens/`). No live component wired for these yet — still 100%
   real, just a photograph rather than a live instrument.
 
-Every product's real accent/background/ink tokens come from
-`theme-registry.ts`, which re-exports `scripts/video-plan/theme.mjs` (one
-source of truth, not duplicated).
+Every product's colours come from its own definition (`theme-registry.ts`),
+and its name, price, list price and `problemsSolved` from its real Shop
+listing (`shop-listings.ts`). Nothing about a product is typed in here;
+`tests/creative-guards.test.ts` checks that it stays that way.
 
 ## Known gaps
 
-1. **Not Inter / Space Mono for video and the plain carousel format** — a
-   system font stack instead. Two approaches to loading the real webfonts
-   each hung the render indefinitely in this environment (see SKILL.md
-   trap #6). The promotional-post format (`feature-post.tsx`) DOES use the
-   real fonts, inlined as base64 — `scripts/inline-fonts.mjs` — the fix is
-   proven, just not yet applied to the other two formats.
+1. **The plain carousel format still uses a system font stack.** The
+   video and the promotional posts use the real brand fonts (Newsreader,
+   IBM Plex Sans), inlined as base64 (SKILL.md trap #6).
 2. **Monthly Money Reset's demo data is frozen, not live** — see above.
 3. **The video's count-up (Monthly Money Reset only) is a separate
    overlay**, not `SafeToSpendCard`'s own digits animating — see SKILL.md
@@ -57,6 +55,11 @@ source of truth, not duplicated).
 4. **8 of 9 products use real screens, not live components.** A richer,
    live-computed hero (like Monthly Money Reset's) is possible for any of
    them — it's real integration work per product, not yet done.
+5. **Screens are 1x captures (390px wide).** Fine in a phone at its usual
+   size; a close focus zoom past ~1.2x softens them. Re-capturing at 3x is
+   the fix.
+6. **One music bed for every product.** The SFX kit is ours and tuned to
+   the calm personality; per-product or per-mood music is not chosen yet.
 
 ## Commands
 
@@ -68,4 +71,6 @@ node scripts/render-direct.mjs           # renders EVERY product's video
 node scripts/render-direct.mjs <id>      # or just one — see Root.tsx for ids
 npm run render:images                    # renders every slide/post x every aspect ratio, all 9 products
 node scripts/check-frames.mjs [id]       # frame gate; defaults to Monthly Money Reset
+node scripts/frames.mjs <id> 20 120 300  # just these frames, as a contact sheet
+node scripts/synth-sfx.mjs               # regenerate the SFX kit
 ```

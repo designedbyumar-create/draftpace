@@ -20,46 +20,49 @@ pipeline, no animated-GIF tier, no template marketplace.
 
 - **Images.** Two image formats exist, and they are NOT interchangeable:
   - `feature-post.tsx` (a Remotion `<Still>`) — **the one to reach for by
-    default.** Advertising-weight promotional posts: pastel blobs, a
-    Newsreader display headline, the real UI tilted or windowed into the
-    composition like a photograph, not floating flat on plain cream. Each
-    post sells one real, specific thing the product does (one real
-    `problemsSolved` entry), not a generic screenshot. This is what
-    "Pinterest pin," "Instagram post," or "promotional creative" means in
-    this engine — there is deliberately no separate, lesser-effort
-    "Pinterest pin" template; a pin is just this format at the Pinterest
-    ratio. See `shots/monthly-money-reset/feature-posts.json` for the
-    reference example.
+    default.** An advertising-weight promotional post that sells one real
+    problem the product solves (`problem`: an index into the product's real
+    Shop `problemsSolved`) with three real things: the problem as the
+    headline (Newsreader, `emphasis` words in the accent), the real UI in a
+    3D phone or a live component, and the product's own `solution` text
+    for that problem as a proof chip. Layouts: `tilt`, `window`, `fan`
+    (three of the product's real screens, `ui.also`). A Pinterest pin is
+    just this format at the Pinterest ratio; there is no separate pin
+    template.
   - `feature-image.tsx` (also a `<Still>`) — a plainer, single-slide
-    layout (headline/card/CTA, flat on the brand background). Useful for
-    a literal carousel narrative (`feature-carousel.shot.json`'s
-    problem→clarity→next-move→CTA sequence) where the point is the
-    sequence, not each image's individual persuasive weight. Don't use
-    this when the ask is "sell the product" — use `feature-post.tsx`.
-  - Both render at whichever ratio a platform wants, via
-    `aspect-ratios.mjs`.
-- **Video** (`creative/src/compositions/formats/feature-spotlight.tsx`, a
-  Remotion `<Composition>`): used for Instagram/Facebook/TikTok Reels,
-  YouTube Shorts, Pinterest video. One format exists so far —
-  "Feature Spotlight," a ~18s PROBLEM → NOISE → REVEAL → CLARITY → NEXT
-  MOVE arc. Other formats (problem→solution, before/after, launch, etc.)
-  are future work, not yet built — see "Adding a new format" below.
+    layout for a literal carousel narrative (`feature-carousel.shot.json`).
+    Don't use it when the ask is "sell the product".
+  - Posts render at `portrait` (4:5) and `pinterest` (2:3); carousel
+    slides at all three ratios in `aspect-ratios.mjs`.
+- **Video** (`feature-spotlight.tsx`, a `<Composition>`) for Reels,
+  TikTok, Shorts, Pinterest video: "Feature Spotlight", ~19s, PROBLEM →
+  NOISE → REVEAL → CLARITY → (NEXT MOVE) → CTA. One continuous set (the
+  product's Backdrop under every beat), kinetic brand type, a 3D phone
+  that enters, scrolls the real page and can focus a region of it, the real
+  Draftpace monogram on the reveal and end card, the real list and sale
+  price on the end card, sound designed from the beats, and a mastered
+  soundtrack. Other video formats (before/after, launch) are future work.
 
-Both outputs render through **the same engine** (Remotion), **the same
-real-UI adapter pattern**, and **the same brand tokens**. That's the
-self-contained part: one system, two outputs, not two separate tools.
+**All 9 products are live**: each has a `feature-posts.json` (4 posts) and
+a `feature-spotlight.shot.json` (one video). Monthly Money Reset is the one
+product with a live-component adapter (`ui-adapter/monthlyMoneyReset.tsx`,
+`SafeToSpendCard`/`NextActionCard` actually mounted and computing); the
+other 8 use real captured screens.
 
-**All 9 products are live today**, not just Monthly Money Reset: Personal
-Finance Companion, Home Base, Personal Life Affairs Companion,
-Homeschooling Companion, ADHD Life Companion (`alongside`), Travel
-Companion, Vehicle Maintenance Companion, and Family Health Binder all have
-a real theme entry (`theme-registry.ts`), a `feature-posts.json` (4 posts
-each), and a `feature-spotlight.shot.json` (one video each). Monthly Money
-Reset is the one product with a live-component adapter
-(`ui-adapter/monthlyMoneyReset.tsx`, `SafeToSpendCard`/`NextActionCard`
-actually mounted and computing); the other 8 use real captured screen
-images instead (see "Two ways to show real UI" below) — both are equally
-real, the difference is live-and-interactive vs. a real static capture.
+## Where every fact in a creative comes from
+
+Nothing about a product is typed into this workspace. A creative reads:
+
+| What | From |
+|---|---|
+| Colours | `theme-registry.ts`, which reads each product's own `definition.ts` (`theme.accentScale` + `theme.ground`), the platform ground (pinned to `globals.css` by a test) for products without one, and Monthly Money Reset's scoped `theme.ts` |
+| Name, price, list price | `shop-listings.ts`, which reads `src/shop/products/<slug>.ts` — the same object the Shop and checkout read. Shot text says `{price}` / `{name}`, never a figure |
+| The problem a creative sells and the answer it shows | that listing's `problemsSolved[problem]` |
+| UI | a real captured screen in `public/screens/`, or a live component |
+| Logo | `@/design-system/Logo` (`LogoMark`), coloured with the product accent |
+
+Change any of those in the app and the creatives follow on the next
+render.
 
 ## The one hard rule: real UI only
 
@@ -69,172 +72,213 @@ never recreated. There are two legitimate ways to do this; pick the
 cheaper one unless the richer one is actually needed:
 
 **Option A, real captured screen (what 8 of 9 products use today).**
-Fastest, lowest-risk, no component-integration work:
-1. Find a real capture in `marketing/product-reference/screens/<product>/`
-   (from the earlier product-reference work — honest seeded data, tour
-   overlays already dismissed).
-2. Copy it into `creative/public/screens/<product>-<screen>.png`.
-3. Reference it from a shot/post file: `{ "kind": "screen", "src":
-   "screens/<product>-<screen>.png" }`.
-No adapter file needed at all for this path — `theme-registry.ts` already
-has every product's real colors (see `scripts/video-plan/theme.mjs`,
-reused directly, not duplicated).
+1. Capture the real screen (honest seeded data, tour overlays dismissed)
+   at the 390px iPhone viewport. A capture may be taller than one viewport
+   (a whole page); the phone scrolls it.
+2. Save it as `creative/public/screens/<product>-<screen>.png` and run
+   `node scripts/screens-manifest.mjs` (the phone needs each capture's
+   height; a test fails if the manifest is stale).
+3. Reference it: `{ "kind": "screen", "src": "screens/<product>-<screen>.png" }`.
 
-**Option B, a live component (what Monthly Money Reset's hero card uses).**
-Richer — the number is actually computed, not a frozen picture of one —
-but real integration work. See `src/ui-adapter/monthlyMoneyReset.tsx`:
-1. Import the real presentational component (e.g. `SafeToSpendCard.tsx`).
-   It must be prop-driven with no data-fetching of its own — check its
-   imports before assuming it'll work standalone.
-2. Import the real calculation functions it needs (e.g.
-   `computeSafeToSpend`), not reimplemented math.
-3. Import the real theme-token functions (e.g.
-   `monthlyMoneyResetThemeVars`) for colors, not hand-picked hex values.
-4. Feed it a frozen copy of real seeded data (see
-   `scripts/product-reference/seed/seed-*.mjs` from the product-reference
-   work), with a comment stating exactly which real values it reproduces
-   and why it's frozen rather than a live query.
+**Option B, a live component (what Monthly Money Reset's cards use).**
+See `src/ui-adapter/monthlyMoneyReset.tsx`:
+1. Import the real presentational component. It must be prop-driven with
+   no data-fetching of its own.
+2. Import the real calculation functions it needs, not reimplemented math.
+3. Wrap it in the product's real scoped theme tokens (`demo.themeStyle`) —
+   without them the card renders without its own colours.
+4. Feed it a frozen copy of real seeded data, with a comment stating which
+   real values it reproduces.
 
 If neither a real screen nor a real component exists yet for what's being
 asked, that's a stop condition: say so, don't invent it. The only exception
-is the "before Draftpace" half of a Feature Spotlight's story (the
-problem/noise beats) — there's no real screen for "before the product," so
-that's kinetic typography only, never a fake mocked-up UI.
+is the "before Draftpace" half of a Feature Spotlight (problem/noise
+beats) — kinetic typography only, never a mocked-up UI.
+
+**The rule is enforced, not just written down.** `creative/tests/
+creative-guards.test.ts` (run by the main `npm run test`) fails on: a
+screen that isn't on disk, another product's screen, a hardcoded price, a
+headline that doesn't read as the real problem it names, an emphasis word
+the text doesn't contain, an unknown sound cue, a stale screen manifest,
+and theme drift from the products or `globals.css`.
 
 ## Quick start
 
 ```bash
 cd creative
-npm install              # first time only
-npm run preview          # Remotion Studio — scrub the timeline, check every beat visually before rendering
-node scripts/render-direct.mjs                              # renders EVERY registered video (all 9 products)
-node scripts/render-direct.mjs TravelCompanion-FeatureSpotlight   # or just one — see Root.tsx for exact ids
-node scripts/render-images.mjs        # renders every registered <Still>: every slide/post x every aspect ratio
-node scripts/check-frames.mjs [composition-id]        # frame-gate QA; defaults to Monthly Money Reset
+npm install              # first time only (the app's own npm install must have run too)
+npm run preview          # Remotion Studio — scrub the timeline
+node scripts/render-direct.mjs                                    # every video, mastered
+node scripts/render-direct.mjs TravelCompanion-FeatureSpotlight   # one video (ids: Root.tsx)
+node scripts/render-images.mjs                                    # every still
+node scripts/render-images.mjs travel-companion --ratio pinterest # filtered: id substrings, one ratio
+node scripts/frames.mjs TravelCompanion-FeatureSpotlight 20 120 300   # just these frames + a contact sheet
+node scripts/contact-sheet.mjs out/sheet.png 6 out/images/Post-*-portrait.png
+node scripts/check-frames.mjs [composition-id]                    # frame-gate QA
+node scripts/synth-sfx.mjs                                        # regenerate the SFX kit
 ```
 
 (NOT `npm run render` / `remotion render` directly — see trap #1.)
 
-**Always look at the actual render before calling something done** — open
-it in Remotion Studio, or load the rendered file in a browser tab and
-screenshot/scrub it. A render that "completed without error" is not the
-same as one that looks right. This was true for video and stayed true for
-images (the first image attempt would have shipped with wrong captions if
-not actually viewed).
+**Always look at the actual render before calling something done.** Use
+`frames.mjs` for a video (seconds, not a full render) and `contact-sheet.mjs`
+for a batch of stills, then read the sheet. A render that "completed
+without error" is not the same as one that looks right: in this engine's
+history that step caught wrong captions, a headline wrapping word by word,
+words running together, a live card rendering without its colours, a
+duplicated "Free", and a phone overlapping the footer.
 
 ## Architecture
 
 ```
 creative/
   webpack-override.mjs        # THE shared webpack fix (alias + PostCSS) — see traps below
-  aspect-ratios.mjs           # the 3 image ratios: square/portrait/pinterest
+  aspect-ratios.mjs (+ .d.mts) # the 3 image ratios: square/portrait/pinterest
   src/
     index.ts, Root.tsx        # registers every Composition and every Still
-    style.css                 # platform tokens (copied verbatim from globals.css) + system font fallback
-    motion/                   # shared primitives: camera.ts, typography.ts, transitions.ts, ui.ts, sound.ts
-    theme-registry.ts          # every product's real theme tokens (re-exports scripts/video-plan/theme.mjs) + postCssVars()
-    compositions/formats/     # feature-spotlight.tsx (video), feature-post.tsx (promotional posts — default for images), feature-image.tsx (plain carousel slides)
-    ui-adapter/                # live-component adapters — only monthlyMoneyReset.tsx exists; everything else uses Option A (real screens)
-  shots/<product>/            # the data: *.shot.json (video beats) + feature-posts.json (promotional posts), one pair per product
-  public/screens/              # real captures copied in for Option A products (from marketing/product-reference/screens/)
-  public/audio/                # licensed SFX/BGM (Mixkit, see ATTRIBUTION.md)
-  scripts/
-    inline-fonts.mjs           # regenerates src/fonts-inline.css from ../public/fonts/*.ttf — see trap #6
-    gen-posts-data.mjs, gen-video-data.mjs   # one-time generators that WROTE the 8 non-MMR shot/post JSON files — the JSON is the source of truth now, not these scripts; re-run only if starting that many products over from scratch
-    render-direct.mjs, render-images.mjs, check-frames.mjs
+    theme-registry.ts         # every product's palette, read from its own definition
+    shop-listings.ts          # name / price / list price / problemsSolved, from the real Shop listing
+    screens-manifest.json     # pixel size of every capture (scripts/screens-manifest.mjs)
+    visual/                   # Backdrop (light fields, grain, vignette), Phone (3D device, scroll, focus), Kinetic (word reveal, emphasis, fitFontSize)
+    motion/                   # camera, typography, transitions (edgeStyle: blurDissolve|wipe|zoomThrough|slideUp), ui (count-up), sound-cues (cue -> file), sound
+    compositions/formats/     # feature-spotlight.tsx (video), feature-post.tsx (posts), feature-image.tsx (carousel slides)
+    ui-adapter/               # live-component adapters (monthlyMoneyReset.tsx)
+  shots/<product>/            # the data: feature-spotlight.shot.json + feature-posts.json
+  public/screens/             # real captures
+  public/audio/               # Mixkit bed + legacy SFX (ATTRIBUTION.md); audio/kit/ = our own synthesized SFX
+  scripts/                    # render-direct (+ master-audio), render-images, frames, contact-sheet, check-frames, synth-sfx, screens-manifest, capture-screens, stale-screens, review, publish-pinterest, browser, inline-fonts
+  tests/                      # the real-UI guards (run by the root vitest)
   out/                        # rendered output, gitignored
 ```
 
-**The shot/slide data model is the actual interface.** A new creative is
-(almost always) a new JSON file, not new component code:
+**The shot data model is the interface.** A new creative is almost always a
+JSON edit, not new component code:
 
 ```jsonc
-// video beat, real screen (shots/<product>/feature-spotlight.shot.json) — what 8 of 9 products use
-{ "id": "reveal", "kind": "screen", "startFrame": 230, "durationFrames": 200,
-  "screen": { "src": "screens/travel-companion-trip.png" },
-  "camera": { "move": "pushIn", "fromScale": 1.0, "toScale": 1.07 },
-  "transition": { "in": "blurDissolve", "frames": 15 },
-  "sound": { "sfx": "click-settle" }, "caption": "..." }
+// spotlight (shots/<product>/feature-spotlight.shot.json)
+{ "product": "travel-companion", "themeSlug": "travel-companion", "problem": 0, "beats": [
+  { "id": "problem", "kind": "typography", "startFrame": 0, "durationFrames": 85,
+    "typography": { "lines": ["Confirmation numbers live", "in six different", "inboxes."], "emphasis": ["six"] },
+    "transition": { "out": "blurDissolve", "frames": 15 } },
+  { "id": "reveal", "kind": "screen", "startFrame": 230, "durationFrames": 200,
+    "screen": { "src": "screens/travel-companion-trip.png",
+                "scroll": [[0.3, 0], [0.85, 0.5]],                     // optional; tall pages auto-scroll
+                "focus": { "at": 0.6, "top": 0.42, "height": 0.12 } }, // optional; region of the page
+    "transition": { "in": "zoomThrough" }, "caption": "..." },
+  { "id": "cta", "kind": "cta", "startFrame": 430, "durationFrames": 90,
+    "typography": { "headline": "Available now." }, "cta": { "label": "Shop", "url": "draftpace.com/shop" } } ] }
 
-// video beat, live component (MMR only)
-{ "id": "clarity", "kind": "safeToSpendCard", "startFrame": 230, "durationFrames": 200, ... }
-
-// promotional post (shots/<product>/feature-posts.json)
-{ "id": "01-...", "themeSlug": "travel-companion", "layout": "tilt",
+// post (shots/<product>/feature-posts.json)
+{ "id": "01-travel-companion", "themeSlug": "travel-companion", "problem": 0, "layout": "tilt",
   "eyebrow": "TRAVEL COMPANION", "headline": ["Confirmation numbers live", "in six different", "inboxes."],
-  "ui": { "kind": "screen", "src": "screens/travel-companion-itinerary.png" },
-  "product": { "name": "Travel Companion", "price": "$34" } }
+  "emphasis": ["six"], "ui": { "kind": "screen", "src": "screens/travel-companion-itinerary.png" } }
 ```
 
-New `kind`s need a small addition to the composition file's switch — adding
-a product, a slide, or a new instance of an existing kind needs none.
+Line breaks in `lines`/`headline` are deliberate and never re-wrapped:
+`fitFontSize` sets a long line smaller instead. Keep text inside the
+spotlight's `SAFE` area (platform UI covers the top ~240px and the bottom
+~420px of a 9:16 frame).
+
+## From capture to publishing
+
+```
+capture-screens.mjs  ->  render  ->  review.mjs  ->  publish-pinterest.mjs
+(real app, 3x,           (render-direct,   (out/review/index.html:   (approved pins -> hosted JPEGs +
+ provenance)              render-images)    approve/reject, export)    Pinterest bulk-upload CSV)
+```
+
+- **Capture**: `CAPTURE_EMAIL=... CAPTURE_PASSWORD=... node
+  scripts/capture-screens.mjs [filter]` re-takes every screen in
+  `public/screens/` from its own route (`<product>-<destination>.png` is
+  `/app/products/<product>/<destination>`), at 3x, as a returning user
+  sees it (tour marked seen via the app's own `draftpace-tour-<slug>`
+  key), and records route + commit + time in `src/screens-provenance.json`.
+  Needs the app running against a Supabase project with a **seeded demo
+  account, never a real person's**. Not possible inside a container
+  without that (no Docker daemon in Claude Code cloud sessions).
+- **Freshness**: `node scripts/stale-screens.mjs` lists screens whose
+  product UI changed in git since capture (and screens with no
+  provenance). CI prints it to the job summary; `--strict` makes it fail.
+- **Review**: `node scripts/review.mjs`, open `out/review/index.html`,
+  approve/reject with notes, "Export decisions" -> `approvals.json`.
+- **Publish (Pinterest)**: `node scripts/publish-pinterest.mjs
+  approvals.json` converts approved pin-ratio posts to
+  `public/store/pinterest-creative/<product>/<id>.jpg` and writes
+  `out/pinterest-<date>.csv` in Pinterest's bulk-upload columns. Title,
+  description, link, name and price all come from the post and the real
+  Shop listing; boards come from `creative/publishing.json`
+  (`{ "pinterestBoards": { "<slug>": "<board>" } }`) and are left blank,
+  with a warning, when unset. It prepares an upload; it posts nothing.
+  The JPEGs only resolve as Media URLs once deployed.
 
 ## Adding a new product
 
-All 9 Draftpace products already have an entry — this is now "add a new
-*format/story* for an existing product" far more often than "add a new
-product from zero." If a genuinely new product ships later:
-
-**The fast path (Option A, screens — do this first):**
-1. `theme-registry.ts` already has every product that's gone through
-   `scripts/video-plan/theme.mjs`; if this is a newer product, add its real
-   tokens there the same way the existing 9 were (copied from its
-   `theme.ts`/`definition.ts`, see that file's own header comment).
-2. Copy 1-4 real screens into `creative/public/screens/<product>-<screen>.png`.
-3. Write `shots/<product>/feature-posts.json` and/or
-   `feature-spotlight.shot.json` using `{ "kind": "screen", ... }` — copy
-   an existing product's file as the template, swap theme slug, screens,
-   and real `problemsSolved`-grounded copy.
-4. Add the new imports to `Root.tsx`'s `ALL_SPOTLIGHTS/ALL_POSTS` arrays.
-5. `npm run preview`, scrub every beat/post, then render.
-
-**The richer path (Option B, a live component)** — only when a frozen
-screenshot genuinely isn't enough (e.g. the number itself is the point):
-follow `ui-adapter/monthlyMoneyReset.tsx`'s pattern, then reference the new
-`kind` from a format file the way `SafeToSpendBeat`/`SafeToSpendCard`-kind
-posts do.
+1. Nothing to do for colours, name or price: `theme-registry.ts` and
+   `shop-listings.ts` each need one import line for the new product's
+   definition and Shop listing.
+2. Capture 1-4 real screens (Option A above), run `screens-manifest.mjs`.
+3. Copy an existing product's `feature-posts.json` and
+   `feature-spotlight.shot.json`; write headlines from the product's real
+   `problemsSolved` and set `problem` to match.
+4. Add the imports to `Root.tsx`'s `ALL_SPOTLIGHTS/ALL_POSTS`.
+5. `npm run test` (guards), `frames.mjs` / `contact-sheet.mjs`, read them,
+   then render.
 
 ## Adding a new format
 
 A format is one React component in `compositions/formats/` that interprets
-a shot/slide shape, plus whatever new motion primitives it needs in
-`motion/`. Before building one: check whether an existing primitive
-(camera push, fade-up, blur-dissolve, card pop, count-up) already covers
-it. Don't add an abstraction until a second real use needs it — every
-rule below was learned by building one thing at a time, not by
-architecting ahead of a real need.
+a shot shape, built from `visual/` and `motion/`. Check what exists first
+(below). Don't add an abstraction until a second real use needs it.
 
-## Motion primitives that exist today
+## Visual and motion primitives that exist today
 
-- `camera.ts`: `pushIn` (slow continuous scale)
-- `typography.ts`: `fadeUpLine` (per-line fade + rise, staggered)
-- `transitions.ts`: `blurDissolve` (fade + blur + subtle scale, Draftpace's
-  own "calm" easing curve)
-- `ui.ts`: `cardPop` (Remotion-native spring reveal), `countUpValue`
-  (frame-driven number interpolation)
-- `sound.ts`: cue registry, `SFX_FILES` / `BED_FILE` via `staticFile()`
+- `visual/Backdrop`: the product palette as slowly drifting light fields,
+  animated film grain, vignette. `frame` drives it; `motion={0}` for stills.
+- `visual/Phone`: a real capture in a 3D phone (`rotateX/Y/Z`), `scroll`
+  0..1 down the real page, `focus` (dim the rest, ring the region);
+  `scrollToFocus`, `overflowPx`, `screenSize` helpers.
+- `visual/Kinetic`: `KineticHeadline` (masked word rise with blur, accent
+  emphasis with a drawn underline; at a large `frame` it is the settled
+  headline, which is how stills use it), `fitFontSize`.
+- `motion/transitions`: `edgeStyle(kind, "in"|"out", p)` for
+  `blurDissolve`, `wipe`, `zoomThrough`, `slideUp`; legacy `blurDissolve`.
+- `motion/ui`: `countUpValue`, `cardPop`. `motion/camera`: `pushIn`.
 
-Not built yet (camera orbit/parallax/2.5D depth, kinetic word/character
-reveal, wipe/match-cut/zoom transitions, list population, chart animation,
-cursor choreography, browser/device frames) — add them when a real
-creative actually needs one, following the pattern above.
+Not built yet: cursor choreography, list population, chart animation,
+match cuts, light leaks. Add them when a real creative needs one.
 
 ## Audio
 
-Licensed SFX/BGM live in `public/audio/`, sourced from Mixkit under their
-free commercial license (no attribution required) — see
-`public/audio/ATTRIBUTION.md` for exactly what was downloaded, from where,
-and when. **Never download audio from anywhere without the user's explicit
-go-ahead first**, every time, not just the first time — that approval
-doesn't carry forward automatically.
+**Sound design is derived from the beats** (`soundCues()` in
+`feature-spotlight.tsx`), not placed by hand: whoosh/swish on each
+transition, ticks under the noise beat, a riser into the reveal landing on
+a soft impact plus shimmer, a pop as UI lands, a tap on a focus, a settle
+on the CTA. The bed ducks under the riser, impact and settle. A beat's own
+`sound.sfx` still plays on top.
+
+**The SFX kit is ours**: `scripts/synth-sfx.mjs` synthesizes it
+(deterministic, seeded) into `public/audio/kit/`. Tune a sound there and
+re-run it; check the result with a spectrogram and level readout (a model
+can't listen), looking for hard tail cuts, ringing and clipping.
+
+**Mastering**: `render-direct.mjs` masters every video
+(`scripts/master-audio.mjs`): gain to about -15 dB, look-ahead limiter at
+-1 dBFS, video stream copied untouched. Remotion's own mix is right in
+balance but ~10 dB too quiet for social platforms.
+
+The music bed and the legacy SFX are Mixkit (see
+`public/audio/ATTRIBUTION.md`). **Never download audio from anywhere
+without the user's explicit go-ahead first**, every time.
 
 ## QA
 
-`scripts/check-frames.mjs` samples rendered frames (video) or checks
-rendered stills and flags: failed/corrupted frames, missing frames, extreme
-luminance jumps. It is a mechanical floor, not a replacement for actually
-watching the output. Run it before calling any render finished; a video
-that passes the gate but wasn't actually watched is not done.
+- `npm run test` (root) runs the real-UI guards.
+- `scripts/check-frames.mjs` samples a video's frames for corrupted or
+  missing frames and extreme luminance jumps.
+- The Creative CI workflow (`.github/workflows/creative.yml`) typechecks
+  this workspace, renders one post per product and one frame-gated video
+  on every relevant change, and uploads the renders as an artifact.
+- None of these replace looking: see Quick start.
 
 ## Traps already hit (do not re-learn them)
 
@@ -285,11 +329,9 @@ that passes the gate but wasn't actually watched is not done.
    by the CSS parser — no network, no `document.fonts.ready` race, nothing
    to hang on. `feature-post.tsx` uses this and it's reliable; re-run
    `node scripts/inline-fonts.mjs` if the source `.ttf` files ever change.
-   The video (`feature-spotlight.tsx`) and the plainer image format
-   (`feature-image.tsx`) still use the system-font fallback in
-   `style.css` (`--font-inter` / `--font-space-mono`) and haven't been
-   switched over to this fix yet — doing so is a small, safe follow-up,
-   not a research problem anymore.
+   Both `feature-spotlight.tsx` and `feature-post.tsx` set type in
+   "Newsreader" / "IBM Plex Sans" from this file; only the plain carousel
+   (`feature-image.tsx`) still uses the system fallback in `style.css`.
 7. **`SafeToSpendCard`'s own `useReducedMotion()` is forced true** by a
    `window.matchMedia` patch at the top of `src/index.ts`. This uses a
    real, already-shipped accessibility mode of the component (`hidden ===
@@ -306,3 +348,31 @@ that passes the gate but wasn't actually watched is not done.
    a separate overlay using the real formatting function, crossfading into
    the real component already at rest — see `SafeToSpendBeat` in
    `feature-spotlight.tsx`.
+10. **Remotion downloads its own Chromium on first render**, from
+    remotion.media, which a network allowlist (Claude Code cloud sessions)
+    answers with a 403. `scripts/browser.mjs` passes `browserExecutable`
+    to every renderer call: `REMOTION_BROWSER_EXECUTABLE`, else a
+    Playwright headless shell under `PLAYWRIGHT_BROWSERS_PATH`, else
+    Remotion's own download. Any new script that renders must pass it too.
+11. **A render script that finishes but never exits** is a pending
+    `withTimeout` timer, not a hang: the 15-minute timeout kept the
+    process alive long after "done". The scripts now end with
+    `process.exit(0)`; keep that in any new one, or CI burns 15 minutes.
+12. **The root typecheck must not see `creative/`.** Root `tsconfig.json`
+    excludes it and root eslint ignores it, because CI's root `npm ci`
+    never installs creative's dependencies (remotion and friends); the day
+    the engine was first committed, that turned main's CI red. creative/
+    has its own typecheck in the Creative workflow. Code under
+    `creative/tests` must therefore import nothing from remotion (that's
+    why `motion/sound-cues.ts` exists apart from `motion/sound.ts`).
+13. **Inline-block word spans eat the space between words.** Kinetic type
+    splits a line into one span per word; the space has to be padding on
+    each span (`0.25em`), or "numbers live" renders as "numberslive". And
+    an SVG `pathLength` dash trick breaks with
+    `vector-effect: non-scaling-stroke` (the underline rendered dashed).
+14. **Live components need their scoped theme tokens.** Monthly Money
+    Reset's cards read `--mmr-*`, set by `demo.themeStyle`; any new stage
+    that mounts them must spread it, or the hero panel renders white.
+15. **Remotion's ffmpeg is a minimal build** (no `showspectrumpic`,
+    `loudnorm`, `ebur128`). It decodes, encodes AAC and muxes, which is
+    all `master-audio.mjs` needs; analysis is done in plain JS on PCM.

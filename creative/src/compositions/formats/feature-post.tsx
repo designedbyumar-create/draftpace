@@ -49,7 +49,7 @@ function Ui({ ui, width, rotateY = 0, rotateX = 0, rotateZ = 0 }: { ui: Post["ui
     const demo = monthlyMoneyResetDemo();
     return (
       <div style={{ perspective: 2400 }}>
-        <div style={{ width: width * 1.35, transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`, filter: "drop-shadow(0 40px 60px rgba(16,20,24,0.3))" }}>
+        <div style={{ ...(demo.themeStyle as React.CSSProperties), width: width * 1.35, transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`, filter: "drop-shadow(0 40px 60px rgba(16,20,24,0.3))" }}>
           <SafeToSpendCard breakdown={demo.breakdown} currency={demo.state.currency} updatedAt={demo.now} weeksRemaining={demo.weeksRemaining} tightestDay={demo.tightestDay} />
         </div>
       </div>
@@ -90,8 +90,8 @@ function Footer({ themeSlug, width }: { themeSlug: string; width: number }) {
   const u = width / 1080;
   return (
     <div style={{ position: "absolute", left: "7%", right: "7%", bottom: "4.5%", display: "flex", justifyContent: "space-between", alignItems: "center", fontFamily: "IBM Plex Sans", color: "var(--post-ink)" }}>
-      <div style={{ display: "flex", alignItems: "center", gap: 16 * u, ["--logo-mark" as string]: "var(--post-accent)", ["--logo-mark-glyph" as string]: "var(--post-card)" }}>
-        <LogoMark size={46 * u} />
+      <div style={{ display: "flex", alignItems: "center", gap: 14 * u, padding: `${8 * u}px ${20 * u}px ${8 * u}px ${8 * u}px`, borderRadius: 999, background: "var(--post-card)", boxShadow: "0 0 0 1px var(--post-line)", ["--logo-mark" as string]: "var(--post-accent)", ["--logo-mark-glyph" as string]: "var(--post-card)" }}>
+        <LogoMark size={42 * u} />
         <span style={{ fontWeight: 600, fontSize: 26 * u }}>{name}</span>
       </div>
       <div style={{ display: "flex", alignItems: "baseline", gap: 12 * u, padding: `${10 * u}px ${22 * u}px`, borderRadius: 999, background: "var(--post-card)", boxShadow: "0 0 0 1px var(--post-line)" }}>
@@ -119,8 +119,8 @@ function TiltLayout({ post, width, height }: { post: Post; width: number; height
       <div style={{ position: "absolute", left: "8%", top: "7%", right: "8%" }}>
         <Headline post={post} width={width} align="left" maxWidth={width * 0.84} />
       </div>
-      <div style={{ position: "absolute", right: "6%", bottom: tall > 1.3 ? "11%" : "-14%" }}>
-        <Ui ui={post.ui} width={width * (tall > 1.3 ? 0.44 : 0.4)} rotateY={-20} rotateX={8} rotateZ={-3} />
+      <div style={{ position: "absolute", right: "6%", bottom: post.ui.kind === "screen" ? (tall > 1.3 ? "11%" : "-14%") : tall > 1.3 ? "17%" : "14%" }}>
+        <Ui ui={post.ui} width={width * (post.ui.kind === "screen" ? (tall > 1.3 ? 0.44 : 0.4) : tall > 1.3 ? 0.4 : 0.34)} rotateY={-20} rotateX={8} rotateZ={-3} />
       </div>
       <div style={{ position: "absolute", left: "7%", bottom: tall > 1.3 ? "16%" : "14%" }}>
         <ProofChip post={post} width={width} />

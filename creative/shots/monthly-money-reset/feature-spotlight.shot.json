@@ -132,7 +132,7 @@
       "id": "cta",
       "kind": "cta",
       "startFrame": 510,
-      "durationFrames": 50,
+      "durationFrames": 90,
       "typography": {
         "headline": "Start free.",
         "sub": "draftpace.com/free"

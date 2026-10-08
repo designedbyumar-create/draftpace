@@ -56,14 +56,14 @@ export function KineticHeadline({
   return (
     <div style={{ textAlign: align }}>
       {lines.map((line, li) => (
-        <div key={li} style={{ display: "block", whiteSpace: "nowrap", lineHeight: 1.08, paddingBottom: fontSize * 0.08 }}>
+        <div key={li} style={{ display: "block", whiteSpace: "nowrap", lineHeight: 1.08, paddingBottom: fontSize * 0.08, marginRight: -fontSize * 0.25 }}>
           {line.split(" ").map((word, wi) => {
             const at = start + wordIndex++ * wordStagger + li * lineStagger;
             const p = interpolate(frame, [at, at + 22], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: EASE });
             const accent = isEmphasised(word, emphasis);
             const underline = interpolate(frame, [at + 14, at + 34], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: EASE });
             return (
-              <span key={wi} style={{ display: "inline-block", overflow: "hidden", verticalAlign: "top", padding: `0 ${fontSize * 0.12}px ${fontSize * 0.1}px 0`, marginBottom: -fontSize * 0.1 }}>
+              <span key={wi} style={{ display: "inline-block", overflow: "hidden", verticalAlign: "top", padding: `0 ${fontSize * 0.25}px ${fontSize * 0.1}px 0`, marginBottom: -fontSize * 0.1 }}>
                 <span
                   style={{
                     position: "relative",
@@ -89,9 +89,8 @@ export function KineticHeadline({
                         d="M2 7 C 25 3, 55 3, 98 5"
                         fill="none"
                         stroke="var(--post-accent)"
-                        strokeWidth={3}
+                        strokeWidth={4}
                         strokeLinecap="round"
-                        vectorEffect="non-scaling-stroke"
                         pathLength={1}
                         strokeDasharray={1}
                         strokeDashoffset={1 - underline}

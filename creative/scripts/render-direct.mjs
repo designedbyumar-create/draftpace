@@ -16,6 +16,7 @@ import path from "node:path";
 import { mkdir } from "node:fs/promises";
 import { webpackOverride } from "../webpack-override.mjs";
 import { browserExecutable } from "./browser.mjs";
+import { masterVideo } from "./master-audio.mjs";
 
 const OUT_DIR = path.resolve(process.cwd(), "out");
 const only = process.argv[2];
@@ -72,6 +73,8 @@ async function main() {
       15 * 60_000,
       `renderMedia(${compositionMeta.id})`
     );
+    const lufs = masterVideo(outPath);
+    log(`mastered audio: ${lufs.before.toFixed(1)} dB -> ${lufs.after.toFixed(1)} dB`);
     log(`done: ${outPath}`);
   }
 }

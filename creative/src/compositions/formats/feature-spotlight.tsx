@@ -315,17 +315,21 @@ function ScreenBeat({ beat, frame, fps }: { beat: Beat; frame: number; fps: numb
   );
 }
 
-function CardStage({ beat, frame, fps, children }: { beat: Beat; frame: number; fps: number; children: React.ReactNode }) {
-  const enter = entrance(frame, beat.startFrame, fps);
+function CardStage({ beat, frame, fps, enterAt, children }: { beat: Beat; frame: number; fps: number; enterAt?: number; children: React.ReactNode }) {
+  const enter = entrance(frame, enterAt ?? beat.startFrame, fps);
   const push = beat.camera?.move === "pushIn"
     ? interpolate(frame, [beat.startFrame, beat.startFrame + beat.durationFrames], [beat.camera.fromScale ?? 1, beat.camera.toScale ?? 1.06], { ...clamp, easing: Easing.out(Easing.quad) })
     : drift(frame, beat.startFrame, beat.durationFrames);
+  // Live Monthly Money Reset components read the product's own scoped --mmr-* tokens.
+  const scoped = monthlyMoneyResetDemo().themeStyle as React.CSSProperties;
   return (
     <AbsoluteFill style={{ justifyContent: "center", alignItems: "center" }}>
       <div style={{ perspective: 2400 }}>
         <div
           style={{
+            ...scoped,
             width: 700,
+            opacity: Math.min(1, enter.s * 2),
             transform: `translateY(${enter.y - 80}px) rotateX(${enter.rotateX * 0.6}deg) rotateY(${enter.rotateY * 0.5}deg) scale(${push})`,
             filter: `drop-shadow(0 ${50 * enter.shadow}px ${70 * enter.shadow}px rgba(16,20,24,0.28))`,
           }}
@@ -341,25 +345,26 @@ function CardStage({ beat, frame, fps, children }: { beat: Beat; frame: number; 
 function SafeToSpendBeat({ beat, frame, fps }: { beat: Beat; frame: number; fps: number }) {
   const demo = monthlyMoneyResetDemo();
   const countUp = beat.ui?.countUp;
-  const countUpEnd = countUp ? beat.startFrame + countUp.durationFrames : beat.startFrame;
-  const showCountUp = countUp && frame < countUpEnd;
-  // The last 8 frames of the count-up crossfade into the real card already at rest (trap #9 in SKILL.md).
-  const countUpFade = countUp ? Math.min(1, Math.max(0, (frame - (countUpEnd - 8)) / 8)) : 1;
+  // The figure counts up large and alone, computed by the real
+  // formatCurrency, then hands over to the real card landing with the same
+  // figure in it (trap #9 in SKILL.md: never animate inside the component).
+  const countEnd = countUp ? beat.startFrame + countUp.durationFrames : beat.startFrame;
+  const handOver = countUp ? interpolate(frame, [countEnd - 4, countEnd + 10], [0, 1], { ...clamp, easing: EXPO }) : 1;
+  const countIn = countUp ? interpolate(frame, [beat.startFrame, beat.startFrame + 10], [0, 1], { ...clamp, easing: EXPO }) : 0;
   return (
-    <CardStage beat={beat} frame={frame} fps={fps}>
-      <div style={{ position: "relative" }}>
-        {countUp && (
-          <div style={{ position: "absolute", top: 96, left: 36, opacity: showCountUp ? 1 - countUpFade : 0, pointerEvents: "none" }}>
-            <span style={{ fontFamily: "var(--font-inter)", fontWeight: 600, fontSize: 86, letterSpacing: "-0.05em", color: "var(--mmr-hero-ink)", fontFeatureSettings: "'tnum' 1, 'cv11' 1" }}>
-              {formatCurrency(countUpValue({ frame, start: beat.startFrame, durationInFrames: countUp.durationFrames, from: countUp.fromMinorUnits, to: countUp.toMinorUnits }), demo.state.currency)}
-            </span>
-          </div>
-        )}
-        <div style={{ opacity: countUpFade }}>
-          <SafeToSpendCard breakdown={demo.breakdown} currency={demo.state.currency} updatedAt={demo.now} weeksRemaining={demo.weeksRemaining} tightestDay={demo.tightestDay} />
-        </div>
-      </div>
-    </CardStage>
+    <>
+      {countUp && handOver < 1 && (
+        <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", opacity: countIn * (1 - handOver), transform: `scale(${1 - handOver * 0.35}) translateY(${-handOver * 120}px)` }}>
+          <p style={{ margin: 0, fontFamily: "IBM Plex Sans", fontSize: 30, fontWeight: 600, letterSpacing: "0.22em", color: "var(--post-accent)" }}>SAFE TO SPEND</p>
+          <span style={{ fontFamily: "var(--font-inter)", fontWeight: 600, fontSize: 210, letterSpacing: "-0.05em", color: "var(--post-ink)", fontFeatureSettings: "'tnum' 1" }}>
+            {formatCurrency(countUpValue({ frame, start: beat.startFrame, durationInFrames: countUp.durationFrames, from: countUp.fromMinorUnits, to: countUp.toMinorUnits }), demo.state.currency)}
+          </span>
+        </AbsoluteFill>
+      )}
+      <CardStage beat={beat} frame={frame} fps={fps} enterAt={countUp ? countEnd - 6 : undefined}>
+        <SafeToSpendCard breakdown={demo.breakdown} currency={demo.state.currency} updatedAt={demo.now} weeksRemaining={demo.weeksRemaining} tightestDay={demo.tightestDay} />
+      </CardStage>
+    </>
   );
 }
 
@@ -367,7 +372,9 @@ function NextActionBeat({ beat, frame, fps }: { beat: Beat; frame: number; fps: 
   const demo = monthlyMoneyResetDemo();
   return (
     <CardStage beat={beat} frame={frame} fps={fps}>
-      <NextActionCard nextAction={demo.nextAction} checkInDay={demo.state.preferences.checkInDay} onDismiss={() => {}} onAct={() => {}} />
+      <div style={{ transform: "scale(1.25)", transformOrigin: "center" }}>
+        <NextActionCard nextAction={demo.nextAction} checkInDay={demo.state.preferences.checkInDay} onDismiss={() => {}} onAct={() => {}} />
+      </div>
     </CardStage>
   );
 }
@@ -389,10 +396,12 @@ function CtaBeat({ beat, frame, fps, slug }: { beat: Beat; frame: number; fps: n
         {beat.typography?.headline && (
           <KineticHeadline lines={[beat.typography.headline]} frame={frame} start={beat.startFrame + 8} fontSize={44} font="IBM Plex Sans" weight={500} color="var(--post-muted)" />
         )}
+        {!(price === "Free" && /free/i.test(beat.typography?.headline ?? "")) && (
         <div style={{ display: "flex", alignItems: "baseline", gap: 22, opacity: priceIn, transform: `translateY(${(1 - priceIn) * 20}px)` }}>
           {compareAt && <span style={{ fontFamily: "IBM Plex Sans", fontSize: 44, color: "var(--post-muted)", textDecoration: "line-through", textDecorationThickness: 3 }}>{compareAt}</span>}
           <span style={{ fontFamily: "Newsreader", fontWeight: 600, fontSize: 96, color: "var(--post-ink)", letterSpacing: "-0.02em" }}>{price}</span>
         </div>
+        )}
         {beat.cta && (
           <div
             style={{
