@@ -6,6 +6,7 @@
     "dev": "next dev --webpack",
     "studio": "node studio/scripts/start.mjs",
     "studio:typecheck": "tsc --noEmit -p studio",
+    "videos": "node creative/scripts/render-all.mjs",
     "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint",
