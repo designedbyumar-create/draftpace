@@ -9,10 +9,10 @@
  * Output goes to "Draftpace Videos" on the Desktop (or DRAFTPACE_VIDEOS):
  *
  *   Draftpace Videos/
- *     Pinterest/
+ *     1 Pinterest/
  *       Home Base - Seasonal home maintenance checklist.mp4
  *       Home Base - Seasonal home maintenance checklist.txt   the caption, title and tracked link to paste
- *     YouTube Shorts/ ...  TikTok/ ...  Instagram - Reels/ ...  Facebook - Feed/ ...
+ *     2 Facebook - Reels/ ...  3 Facebook - Feed/ ...  4 Instagram - Reels/ ...  6 YouTube Shorts/ ...
  *
  * A video already in its folder is skipped, so this can be stopped (Ctrl+C)
  * and started again at any time and carries on where it left off. Each file
@@ -38,15 +38,15 @@ const withVoiceover = process.argv.includes("--with-voiceover");
 const desktop = path.join(os.homedir(), "Desktop");
 const ROOT = process.env.DRAFTPACE_VIDEOS ?? (fs.existsSync(desktop) ? path.join(desktop, "Draftpace Videos") : path.join(CREATIVE, "out", "by-platform"));
 
-// The order folders are made in: the places people search first, since most films send people to a guide.
+// The order folders are made in, one platform finished before the next starts: Pinterest, then Facebook, then the rest.
 const FOLDERS = [
-  ["pinterest-video", "Pinterest"],
-  ["youtube-short", "YouTube Shorts"],
-  ["tiktok", "TikTok"],
-  ["instagram-reel", "Instagram - Reels"],
-  ["instagram-feed", "Instagram - Feed"],
-  ["facebook-reel", "Facebook - Reels"],
-  ["facebook-feed", "Facebook - Feed"],
+  ["pinterest-video", "1 Pinterest"],
+  ["facebook-reel", "2 Facebook - Reels"],
+  ["facebook-feed", "3 Facebook - Feed"],
+  ["instagram-reel", "4 Instagram - Reels"],
+  ["instagram-feed", "5 Instagram - Feed"],
+  ["youtube-short", "6 YouTube Shorts"],
+  ["tiktok", "7 TikTok"],
 ];
 
 const log = (m) => console.log(`[${new Date().toLocaleTimeString()}] ${m}`);
