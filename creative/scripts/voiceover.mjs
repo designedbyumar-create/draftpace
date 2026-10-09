@@ -25,10 +25,9 @@
  *   node scripts/render-direct.mjs Film-vo-<name>
  */
 import { copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync, readdirSync } from "node:fs";
-import { spawnSync } from "node:child_process";
 import path from "node:path";
 import { createServer } from "vite";
-import { ffmpeg } from "./master-audio.mjs";
+import { audioSeconds } from "./master-audio.mjs";
 
 const args = process.argv.slice(2);
 const flag = (name) => {
@@ -56,12 +55,10 @@ function fail(msg) {
 }
 
 /** The recording's length in seconds, read by the ffmpeg that ships with Remotion. */
-function audioSeconds(file) {
-  const { bin, env } = ffmpeg();
-  const out = spawnSync(bin, ["-hide_banner", "-i", file], { env, encoding: "utf8" }).stderr;
-  const m = out.match(/Duration:\s*(\d+):(\d+):(\d+(?:\.\d+)?)/);
-  if (!m) fail(`could not read the length of ${file}`);
-  return Math.round((Number(m[1]) * 3600 + Number(m[2]) * 60 + Number(m[3])) * 100) / 100;
+function recordingSeconds(file) {
+  const s = audioSeconds(file);
+  if (s === null) fail(`could not read the length of ${file}`);
+  return s;
 }
 
 if (name) {
@@ -90,7 +87,7 @@ if (name) {
     const ext = path.extname(voice).toLowerCase();
     mkdirSync("public/voiceover", { recursive: true });
     copyFileSync(path.join(dir, voice), `public/voiceover/${name}${ext}`);
-    audio = { src: `voiceover/${name}${ext}`, seconds: audioSeconds(path.join(dir, voice)) };
+    audio = { src: `voiceover/${name}${ext}`, seconds: recordingSeconds(path.join(dir, voice)) };
   }
 
   const secondsArg = flag("seconds") ? Number(flag("seconds")) : undefined;

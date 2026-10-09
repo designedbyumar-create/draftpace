@@ -5,11 +5,27 @@ render, schedule. It drives the Creative Engine (`../creative`) directly, so
 everything it shows is real: real products and guides from the site, real
 screens, the real film composition playing live in the browser.
 
+## Run it on your computer
+
+You need [Node.js](https://nodejs.org) (version 22 or newer; the "LTS" download is right) and
+this project on your computer. Then, in the project folder:
+
 ```bash
-npm install                 # repo root, once
-(cd creative && npm install)  # the engine's own dependencies (Remotion), once
-npm run studio              # http://localhost:3100
+npm install        # first time only
+npm run studio     # every time: starts Studio and opens it in your browser
 ```
+
+- The first start also installs the video engine's own packages (a few
+  minutes, once). The first page then takes about a minute to prepare.
+- Studio runs at http://localhost:3100 while that window is open. Press
+  **Ctrl+C** there to stop it.
+- The first render downloads Remotion's own browser (once). Renders run on
+  your computer: a 30-second film takes a few minutes.
+- Works on Mac, Windows and Linux. Nothing here costs money.
+- What you make is saved as files in `creative/` (films, scripts,
+  voice-overs) and `studio/.data/` (reviews and the calendar). Commit and
+  push `creative/` to keep your films in GitHub; `studio/.data/` stays on
+  your computer.
 
 ## What each area does
 

@@ -18,10 +18,10 @@
  *
  * Uses the ffmpeg that ships with @remotion/compositor (no system ffmpeg).
  */
-import { execFileSync } from "node:child_process";
+import { execFileSync, spawnSync } from "node:child_process";
 import { readFileSync, writeFileSync, renameSync, rmSync } from "node:fs";
 import path from "node:path";
-import { createRequire } from "node:module";
+import { RenderInternals } from "@remotion/renderer";
 
 const TARGET_DB = -15;
 const CEILING_DB = -1;
@@ -29,10 +29,24 @@ const SR = 48000;
 const LOOKAHEAD = Math.round(0.005 * SR);
 const RELEASE = 1 - Math.exp(-1 / (0.08 * SR)); // ~80 ms
 
+/**
+ * The ffmpeg in this machine's Remotion compositor package (Mac, Windows or
+ * Linux), with the library path each platform needs to load it, as
+ * Remotion itself sets it.
+ */
 export function ffmpeg() {
-  const require = createRequire(import.meta.url);
-  const dir = path.dirname(require.resolve("@remotion/compositor-linux-x64-gnu/package.json"));
-  return { bin: path.join(dir, "ffmpeg"), env: { ...process.env, LD_LIBRARY_PATH: dir } };
+  const bin = RenderInternals.getExecutablePath({ type: "ffmpeg", indent: false, logLevel: "error", binariesDirectory: null });
+  const dir = path.dirname(bin);
+  const libs = process.platform === "darwin" ? { DYLD_LIBRARY_PATH: dir } : process.platform === "linux" ? { LD_LIBRARY_PATH: dir } : {};
+  return { bin, env: { ...process.env, ...libs } };
+}
+
+/** A recording's length in seconds, or null if ffmpeg cannot read it. */
+export function audioSeconds(file) {
+  const { bin, env } = ffmpeg();
+  const out = spawnSync(bin, ["-hide_banner", "-i", file], { env, encoding: "utf8" }).stderr ?? "";
+  const m = out.match(/Duration:\s*(\d+):(\d+):(\d+(?:\.\d+)?)/);
+  return m ? Math.round((Number(m[1]) * 3600 + Number(m[2]) * 60 + Number(m[3])) * 100) / 100 : null;
 }
 
 function readPcm(file) {

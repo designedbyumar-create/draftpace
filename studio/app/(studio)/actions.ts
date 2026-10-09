@@ -2,7 +2,6 @@
 
 import { revalidatePath } from "next/cache";
 import { spawnSync } from "node:child_process";
-import { createRequire } from "node:module";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
@@ -105,14 +104,12 @@ export async function planVoiceoverAction(f: VoiceoverForm): Promise<{ film: Fil
   }
 }
 
-/** The recording's length, read by the ffmpeg that ships with the engine's renderer. */
+/** The recording's length in seconds, read by the engine's own ffmpeg (creative/scripts/audio-length.mjs, on any OS). */
 function audioSeconds(file: string): number {
-  const req = createRequire(path.join(CREATIVE_DIR, "package.json"));
-  const dir = path.dirname(req.resolve("@remotion/compositor-linux-x64-gnu/package.json"));
-  const out = spawnSync(path.join(dir, "ffmpeg"), ["-hide_banner", "-i", file], { env: { ...process.env, LD_LIBRARY_PATH: dir }, encoding: "utf8" }).stderr;
-  const m = out.match(/Duration:\s*(\d+):(\d+):(\d+(?:\.\d+)?)/);
-  if (!m) throw new Error("Could not read the recording's length. Is it an mp3, wav, m4a or aac file?");
-  return Math.round((Number(m[1]) * 3600 + Number(m[2]) * 60 + Number(m[3])) * 100) / 100;
+  const r = spawnSync(process.execPath, [path.join("scripts", "audio-length.mjs"), file], { cwd: CREATIVE_DIR, encoding: "utf8" });
+  const s = Number(r.stdout.trim());
+  if (r.status !== 0 || !Number.isFinite(s) || s <= 0) throw new Error("Could not read the recording's length. Is it an mp3, wav, m4a or aac file?");
+  return s;
 }
 
 export async function saveVoiceoverAction(form: FormData): Promise<{ id: string } | { error: string }> {
@@ -128,6 +125,7 @@ export async function saveVoiceoverAction(form: FormData): Promise<{ id: string 
       fs.writeFileSync(tmp, data);
       try { audio = { name: upload.name, data, seconds: audioSeconds(tmp) }; } finally { fs.rmSync(tmp, { force: true }); }
       if (audio.seconds > MAX_SECONDS) return { error: `The recording is ${Math.round(audio.seconds)}s; Studio makes films up to ${MAX_SECONDS}s.` };
+      if (audio.seconds < MIN_SECONDS) return { error: `The recording is ${audio.seconds.toFixed(1)}s; Studio makes films of ${MIN_SECONDS}s or more.` };
     }
     const id = saveVoiceover(draftOf(f), { srt: f.srt?.trim() || undefined, audio });
     revalidatePath("/", "layout");

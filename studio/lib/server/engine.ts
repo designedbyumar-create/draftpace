@@ -191,23 +191,28 @@ export function listVoiceovers(): VoiceoverInput[] {
 /** Save a voice-over's script and settings to creative/voiceover/<id>/ and re-plan every voice-over, as scripts/voiceover.mjs does. */
 export function saveVoiceover(v: VoiceoverDraft, files: { srt?: string; audio?: { name: string; data: Buffer; seconds: number } } = {}): string {
   if (!/^[a-z0-9-]+$/.test(v.id)) throw new Error("Use lowercase letters, numbers and dashes for the name.");
+  const ext = files.audio ? path.extname(files.audio.name).toLowerCase() : "";
+  let input: VoiceoverInput = { ...v } as VoiceoverInput;
+  if (files.audio) {
+    input = { ...input, audio: { src: `voiceover/${v.id}${ext}`, seconds: files.audio.seconds } };
+    delete input.seconds;
+  }
+  // Plan it before writing anything: a voice-over that cannot be planned must never reach disk,
+  // or every later re-plan (Studio, scripts/voiceover.mjs, the guards) fails on it.
+  const id = planVoiceover(input, voiceoverDossier(input.product, input.guide)).id;
   const dir = path.join(CREATIVE_DIR, "voiceover", v.id);
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(path.join(dir, "script.txt"), v.lines.join("\n") + "\n");
   if (files.srt) fs.writeFileSync(path.join(dir, "captions.srt"), files.srt);
-  let input: VoiceoverInput = { ...v } as VoiceoverInput;
   if (files.audio) {
-    const ext = path.extname(files.audio.name).toLowerCase();
     for (const f of fs.readdirSync(dir)) if (/^voice\./.test(f)) fs.rmSync(path.join(dir, f));
     fs.writeFileSync(path.join(dir, `voice${ext}`), files.audio.data);
     fs.mkdirSync(path.join(CREATIVE_DIR, "public", "voiceover"), { recursive: true });
     fs.writeFileSync(path.join(CREATIVE_DIR, "public", "voiceover", `${v.id}${ext}`), files.audio.data);
-    input = { ...input, audio: { src: `voiceover/${v.id}${ext}`, seconds: files.audio.seconds } };
-    delete input.seconds;
   }
   fs.writeFileSync(path.join(dir, "voiceover.json"), JSON.stringify(input, null, 2) + "\n");
   writeVoiceovers(runVoiceovers());
-  return planVoiceover(input, voiceoverDossier(input.product, input.guide)).id;
+  return id;
 }
 
 export function deleteVoiceover(id: string) {

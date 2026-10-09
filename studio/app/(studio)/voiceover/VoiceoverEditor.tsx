@@ -189,8 +189,11 @@ export default function VoiceoverEditor({ products, guides, platforms, saved, le
             <input ref={fileInput} type="file" accept="audio/mpeg,audio/wav,audio/x-wav,audio/mp4,audio/aac,.mp3,.wav,.m4a,.aac" className="sr-only" onChange={(e) => onAudio(e.target.files?.[0] ?? null)} />
             {audioFile ? <span className="text-caption"><Microphone size={13} className="mr-1 inline" />{audioFile.name} · {audioSeconds?.toFixed(1)}s <button className="ml-2 font-semibold text-[var(--muted)]" onClick={() => onAudio(null)}>Remove</button></span>
               : initial?.audio ? <span className="text-caption text-[var(--muted)]">Saved recording, {initial.audio.seconds.toFixed(1)}s</span>
-              : <span className="text-caption text-[var(--muted)]">mp3, wav, m4a or aac, up to 3 minutes</span>}
+              : <span className="text-caption text-[var(--muted)]">mp3, wav, m4a or aac, {limits.min} seconds to 3 minutes</span>}
           </div>
+          {audioFile && audioSeconds !== null && (audioSeconds < limits.min || audioSeconds > limits.max) && (
+            <p className="mt-2 text-caption text-[var(--danger)]">This recording is {audioSeconds.toFixed(1)}s. Studio makes films from {limits.min} seconds to {limits.max / 60} minutes.</p>
+          )}
           <div className="mt-4"><Toggle checked={noMusic} onChange={setNoMusic} label="No music bed (I will mix my own)" /></div>
         </Panel>
 
