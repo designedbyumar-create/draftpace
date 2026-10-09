@@ -23,11 +23,11 @@ import { GUIDES } from "@/content/guides";
 import { LIFE_AREAS } from "@/content/areas";
 import SLATE_FILE from "@engine/director/slate.json";
 
-export type FilmKind = "product" | "guide" | "voiceover";
+export type FilmKind = "product" | "guide" | "situation" | "voiceover";
 export type RenderedFile = { bytes: number; at: string };
 export type FilmEntry = { film: Film; kind: FilmKind; rendered: RenderedFile | null };
 
-export const kindOf = (f: Film): FilmKind => (f.voiceover ? "voiceover" : f.guide ? "guide" : "product");
+export const kindOf = (f: Film): FilmKind => (f.voiceover ? "voiceover" : f.situation ? "situation" : f.guide ? "guide" : "product");
 
 const SHOTS = path.join(CREATIVE_DIR, "shots");
 const OUT_FILMS = path.join(CREATIVE_DIR, "out", "films");
@@ -63,7 +63,7 @@ export function videoPath(id: string): string | null {
 /** Every committed film, product films first (slate order), then guide films, then voice-overs. */
 export function listFilms(): FilmEntry[] {
   const films = filmFiles().map((f) => JSON.parse(fs.readFileSync(f, "utf8")) as Film);
-  const order = (f: Film) => ({ product: 0, guide: 1, voiceover: 2 })[kindOf(f)];
+  const order = (f: Film) => ({ situation: 0, guide: 1, product: 2, voiceover: 3 })[kindOf(f)];
   return films
     .sort((a, b) => order(a) - order(b) || a.id.localeCompare(b.id))
     .map((film) => ({ film, kind: kindOf(film), rendered: renderedFile(film.id) }));
@@ -131,7 +131,7 @@ export function guidePreview(slug: string) {
 
 // ------------------------------------------------------------------ planning
 
-type SlateFile = { $comment?: string; briefs: Brief[]; guides?: { guide: string; platform: PlatformId; goal?: Goal }[] };
+type SlateFile = { $comment?: string; stage?: string; briefs: Brief[]; made?: Brief[]; guides?: { guide: string; platform: PlatformId; goal?: Goal }[] };
 const readSlate = (): SlateFile => JSON.parse(fs.readFileSync(SLATE_PATH, "utf8"));
 
 export type PlanRequest =
@@ -165,13 +165,15 @@ export function saveBrief(req: PlanRequest): string {
   const brief = briefOf(req);
   const id = idOf(brief);
   if (req.kind === "product") {
-    if (!slate.briefs.some((b) => idOf(b) === id)) slate.briefs.push({ product: req.product, platform: req.platform, goal: req.goal });
+    // Saved films go in "made", which is planned in every stage (the slate's own briefs wait for launch).
+    slate.made = slate.made ?? [];
+    if (!slate.made.some((b) => idOf(b) === id)) slate.made.push({ product: req.product, platform: req.platform, goal: req.goal });
   } else {
     slate.guides = slate.guides ?? [];
     if (!slate.guides.some((g) => g.guide === req.guide && g.platform === req.platform)) slate.guides.push({ guide: req.guide, platform: req.platform });
   }
   fs.writeFileSync(SLATE_PATH, JSON.stringify(slate, null, 2) + "\n");
-  writeDirected(runSlate(slate.briefs, slate.guides ?? []));
+  writeDirected(runSlate([...(slate.stage === "growth" ? slate.briefs : []), ...(slate.made ?? [])]));
   return id;
 }
 

@@ -1,0 +1,222 @@
+{
+  "id": "sit-personal-finance-companion-problem-4--tiktok",
+  "product": "personal-finance-companion",
+  "situation": "problemsSolved[3].problem",
+  "runtime": {
+    "min": 12,
+    "max": 35
+  },
+  "platform": "tiktok",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 518,
+  "structure": "situationMoment",
+  "angle": {
+    "text": "You cannot see what a normal month looks like once everything is counted.",
+    "source": "problemsSolved[3].problem"
+  },
+  "treatment": {
+    "voice": "native",
+    "camera": "float",
+    "transitions": [
+      "cut",
+      "whip",
+      "cardSlide"
+    ],
+    "motif": "index",
+    "grounds": [
+      "light",
+      "accent",
+      "light",
+      "ink"
+    ],
+    "pace": 0.85
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.24,
+    "energy": "high"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "native",
+      "copy": [
+        {
+          "text": "You cannot see what a normal month looks like once everything is counted.",
+          "source": "problemsSolved[3].problem"
+        }
+      ],
+      "emphasis": [
+        "everything"
+      ],
+      "why": "Opens on the moment as the listing describes it: the situation the viewer is in right now.",
+      "from": 0,
+      "dur": 115,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "You cannot see what a",
+          "normal month looks like",
+          "once everything is",
+          "counted."
+        ]
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "A typical month written out from what you recorded: what comes in, what goes out, what is set aside to reach each goal on its date, and what is left. Anything it could not count is named underneath.",
+        "source": "problemsSolved[3].solution"
+      },
+      "screen": {
+        "src": "screens/personal-finance-companion-bills.png",
+        "pose": "float",
+        "focus": {
+          "at": 0.45,
+          "y": 229,
+          "h": 224,
+          "region": "totals"
+        }
+      },
+      "why": "How Personal Finance Companion helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"Bills\" (What's owed on a schedule: the monthly total, what's left to pay, and each bill marked ready or essential.) chosen because it is the real screen closest to \"A typical month written out from what you recorded: what comes in, what goes out\"; focus on \"Monthly total, Left to pay this month\".",
+      "eyebrow": {
+        "text": "Personal Finance Companion",
+        "source": "title"
+      },
+      "from": 109,
+      "dur": 337,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 152,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "soft",
+      "copy": [
+        {
+          "text": "Personal Finance Companion",
+          "source": "title"
+        },
+        {
+          "text": "Available now.",
+          "source": "micro"
+        }
+      ],
+      "why": "TikTok punishes an obvious ad; a soft close names the product and where to find it.",
+      "from": 440,
+      "dur": 78,
+      "ground": "ink",
+      "transition": "cut",
+      "sfx": [
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "TikTok, 1080×1920, 12–35s, hook by 0.8s, sound on",
+      "because": "Native, fast and plain-spoken; polish that looks like an ad gets skipped. Sound-on. Hook inside a second. The deepest bottom and right overlays of any placement."
+    },
+    {
+      "topic": "Product",
+      "decision": "Personal Finance Companion: $49 (list $99), motif \"index\", calm personality, cool accent #0d3b2e",
+      "because": "From its definition and Shop listing. 4 real screens to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"You cannot see what a normal month looks like once everything is counted.\"",
+      "because": "One real moment from Personal Finance Companion's listing (problemsSolved[3].problem). The film is about this moment and how the product helps with it: \"A typical month written out from what you recorded: what comes in, what goes out, what is set aside to reach each goal on its date, and what is left. Anything it could not count is named underneath.\""
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You have more than one account, bill, or income source and want them tracked in one real place, not five apps. / You want a next step handed to you, not a dashboard you have to interpret yourself every time.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
+      "because": "Best fit for a awareness film on TikTok (platform fit 3, goal fit 3, already used for this product ×2, already used on TikTok ×3). Other candidates: Inside the tool (-26.2)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"You cannot see what a normal month looks like once everything is counted.\"",
+      "because": "The moment \"You cannot see what a normal month looks like once everything is counted.\", then how Personal Finance Companion helps."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"index\"",
+      "because": "Transitions follow the product's own identity motif, \"index\": an index of tabs, so scenes slide in like the next tab. TikTok wants native editing, so hard cuts and whips lead."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"dolly\"",
+      "because": "Camera \"dolly\": constant forward movement for a high-energy feed."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → accent → light → ink",
+      "because": "Grounds light → accent → light → ink: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.88 similar to sit-alongside-problem-3--tiktok; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Changed the camera",
+      "because": "Its shape was 0.88 similar to sit-family-health-binder-problem-2--tiktok; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Reordered the transitions",
+      "because": "Its shape was 0.78 similar to sit-family-health-binder-problem-2--tiktok; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Full sound design, high-energy bed",
+      "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
+    },
+    {
+      "topic": "Length",
+      "decision": "17.3s, 3 scenes",
+      "because": "Each scene is held for the time its words take to read on TikTok (0.24s a word), inside 12–35s."
+    }
+  ]
+}

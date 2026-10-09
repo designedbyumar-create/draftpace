@@ -144,6 +144,48 @@ or variant: the `Scene` type, a block in `film.tsx`, and sound in
 describe it (heading, what it shows, focus regions in capture px) in
 `screens.catalog.json`.
 
+## Before launch: situation films, not sales films
+
+`slate.json` has `"stage": "prelaunch"`. Until Draftpace has users, films
+are about **how the product and the guides help with real situations**,
+never about selling. So in this stage:
+
+- **Situation films** are the main series (`situationBriefs()` in
+  `director/run.ts`): one film for every real moment in every listing.
+  - The searched phrases (`searchedProblems[i].phrase`) are in people's own
+    words, and most are linked by the listing to the guide that helps.
+  - The problems the listing solves (`problemsSolved[i].problem`) are each
+    matched to the closest guide that hands over to the same product.
+  - Each film opens on the moment, shows what to do from the guide (real
+    steps, timeline or checklist), then how the product helps (the
+    listing's own answer or solution, on the real screen), and ends on the
+    free guide (or the product when no guide covers it).
+  - Four structures (`SITUATION_STRUCTURES`): In their words, The moment,
+    What to do first, Inside the tool.
+  - Written to `shots/situations/<product>/<search-n|problem-n>--<platform>`.
+- **Every guide gets a Short** (`allGuideBriefs()`), except guides a
+  situation film already teaches from.
+  - A guide with nothing short enough to teach from is skipped and
+    reported by `direct.mjs`, never allowed to stop the slate.
+- **Held back until launch** (`BUYER_STRUCTURES`): who it is not for,
+  questions before buying, what you get, and any price ending.
+  - Listing FAQ answers ("You pay once...") are never used as captions.
+- **Saved films:** films saved from Studio go in `slate.made` and are
+  planned in every stage. The slate's own `briefs` (one product film per
+  placement) wait for `"stage": "growth"`.
+
+The pool grows by itself: a new guide or a new line in a listing is a new
+film the next time `node scripts/direct.mjs` runs.
+
+Guards (`film-guards.test.ts`):
+- every listing situation has a film, which opens on that moment and
+  shows how the product helps with it;
+- each film's guide is the one its listing line links, or one that hands
+  over to the same product;
+- nothing in any film sells: no buyer structure, no exclusions or
+  purchase answers, no price ending;
+- one product's films never share a shape at or above 0.7.
+
 ## Guide-driven Shorts: teach first, then the product
 
 `slate.json`'s `guides` list names a guide and a placement (today: each

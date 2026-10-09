@@ -11,8 +11,8 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 865,
-  "structure": "guideTimeline",
+  "durationInFrames": 757,
+  "structure": "guideChecklist",
   "angle": {
     "text": "What to do when a parent dies: the first two weeks (US)",
     "source": "guide:what-to-do-when-a-parent-dies/title"
@@ -68,25 +68,34 @@
       ]
     },
     {
-      "id": "when-1",
-      "kind": "title",
-      "variant": "label",
+      "id": "list",
+      "kind": "list",
+      "variant": "checklist",
       "copy": [
         {
-          "text": "Get the death pronounced.",
-          "source": "guide:what-to-do-when-a-parent-dies/body[2].steps[0].what#0"
+          "text": "The bank or credit union.",
+          "source": "guide:what-to-do-when-a-parent-dies/body[4].items[1]#0"
+        },
+        {
+          "text": "The pension administrator or your parent's former employer.",
+          "source": "guide:what-to-do-when-a-parent-dies/body[4].items[2]#0"
+        },
+        {
+          "text": "The landlord or mortgage servicer.",
+          "source": "guide:what-to-do-when-a-parent-dies/body[4].items[5]#0"
+        },
+        {
+          "text": "Equifax, Experian and TransUnion, to report the death.",
+          "source": "guide:what-to-do-when-a-parent-dies/body[4].items[6]#0"
         }
       ],
       "eyebrow": {
-        "text": "Straight away",
-        "source": "guide:what-to-do-when-a-parent-dies/body[2].steps[0].when"
+        "text": "Who to tell in the first two weeks",
+        "source": "guide:what-to-do-when-a-parent-dies/body[4].heading"
       },
-      "emphasis": [
-        "pronounced"
-      ],
-      "why": "Marker 1: \"Straight away\", with the first sentence of what the guide says to do then.",
+      "why": "The guide's own checklist, the first sentence of each item, ticked in as it is read.",
       "from": 103,
-      "dur": 89,
+      "dur": 406,
       "ground": "light",
       "transition": "pageTurn",
       "sfx": [
@@ -94,123 +103,27 @@
           "at": 0,
           "cue": "page",
           "volume": 0.32
-        }
-      ],
-      "lines": [
-        [
-          "Get the death",
-          "pronounced."
-        ]
-      ]
-    },
-    {
-      "id": "when-2",
-      "kind": "title",
-      "variant": "label",
-      "copy": [
+        },
         {
-          "text": "Choose a funeral home.",
-          "source": "guide:what-to-do-when-a-parent-dies/body[2].steps[1].what#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "Same day, when you can",
-        "source": "guide:what-to-do-when-a-parent-dies/body[2].steps[1].when"
-      },
-      "emphasis": [
-        "funeral"
-      ],
-      "why": "Marker 2: \"Same day, when you can\", with the first sentence of what the guide says to do then.",
-      "from": 180,
-      "dur": 112,
-      "ground": "ink",
-      "transition": "blurDissolve",
-      "sfx": [
+          "at": 10,
+          "cue": "pop",
+          "volume": 0.45
+        },
         {
-          "at": 0,
-          "cue": "whoosh",
-          "volume": 0.32
-        }
-      ],
-      "lines": [
-        [
-          "Choose a funeral home."
-        ]
-      ]
-    },
-    {
-      "id": "when-3",
-      "kind": "title",
-      "variant": "label",
-      "copy": [
+          "at": 91,
+          "cue": "pop",
+          "volume": 0.45
+        },
         {
-          "text": "Ask for the General Price List and choose only what you want.",
-          "source": "guide:what-to-do-when-a-parent-dies/body[2].steps[2].what#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "When you sit down with them",
-        "source": "guide:what-to-do-when-a-parent-dies/body[2].steps[2].when"
-      },
-      "emphasis": [
-        "only"
-      ],
-      "why": "Marker 3: \"When you sit down with them\", with the first sentence of what the guide says to do then.",
-      "from": 280,
-      "dur": 182,
-      "ground": "accent",
-      "transition": "pageTurn",
-      "sfx": [
+          "at": 172,
+          "cue": "pop",
+          "volume": 0.45
+        },
         {
-          "at": 0,
-          "cue": "page",
-          "volume": 0.32
+          "at": 253,
+          "cue": "pop",
+          "volume": 0.45
         }
-      ],
-      "lines": [
-        [
-          "Ask for the General",
-          "Price List and choose",
-          "only what you want."
-        ]
-      ]
-    },
-    {
-      "id": "when-4",
-      "kind": "title",
-      "variant": "label",
-      "copy": [
-        {
-          "text": "Ask the funeral home whether it reported the death to Social Security.",
-          "source": "guide:what-to-do-when-a-parent-dies/body[2].steps[4].what#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "Within a few days",
-        "source": "guide:what-to-do-when-a-parent-dies/body[2].steps[4].when"
-      },
-      "emphasis": [
-        "reported"
-      ],
-      "why": "Marker 4: \"Within a few days\", with the first sentence of what the guide says to do then.",
-      "from": 450,
-      "dur": 167,
-      "ground": "light",
-      "transition": "pageTurn",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "page",
-          "volume": 0.32
-        }
-      ],
-      "lines": [
-        [
-          "Ask the funeral home",
-          "whether it reported",
-          "the death to Social",
-          "Security."
-        ]
       ]
     },
     {
@@ -238,9 +151,9 @@
         "text": "Personal Life Affairs Companion",
         "source": "title"
       },
-      "from": 605,
+      "from": 497,
       "dur": 147,
-      "ground": "light",
+      "ground": "ink",
       "transition": "blurDissolve",
       "sfx": [
         {
@@ -279,9 +192,9 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 740,
+      "from": 632,
       "dur": 125,
-      "ground": "ink",
+      "ground": "accent",
       "transition": "blurDissolve",
       "sfx": [
         {
@@ -314,19 +227,24 @@
       "because": "Teaches from the guide first; Personal Life Affairs Companion is the product the guide hands over to. 3 lists and timelines, 5 questions to draw from."
     },
     {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
       "topic": "Audience",
       "decision": "You have been meaning to sort this out for a while and have never found a first step small enough to take. / You would rather be asked one question at a time than handed a folder and told to fill it in.",
       "because": "The listing's own audience lines; the director writes for them."
     },
     {
       "topic": "Structure",
-      "decision": "In order: Walk the guide's own timeline, one marker at a time, then show the product that keeps it.",
-      "because": "Best fit for a awareness film on YouTube Short (platform fit 3, goal fit 3, already used on YouTube Short ×2). Other candidates: The checklist (-4.8), The question people ask (-5.6)."
+      "decision": "The checklist: The guide's checklist on one screen, item by item, then the product that holds it.",
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 3). Other candidates: In order (4.9), The question people ask (-0.2)."
     },
     {
       "topic": "Angle",
       "decision": "\"What to do when a parent dies: the first two weeks (US)\"",
-      "because": "The guide's timeline \"The first 48 hours\": 4 of its 5 markers, in order."
+      "because": "A checklist from the guide, \"Who to tell in the first two weeks\": 4 of its 7 items."
     },
     {
       "topic": "Transitions",
@@ -350,7 +268,7 @@
     },
     {
       "topic": "Length",
-      "decision": "28.8s, 7 scenes",
+      "decision": "25.2s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 18–45s."
     }
   ]

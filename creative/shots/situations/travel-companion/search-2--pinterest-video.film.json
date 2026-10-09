@@ -1,0 +1,267 @@
+{
+  "id": "sit-travel-companion-search-2--pinterest-video",
+  "product": "travel-companion",
+  "guide": "flight-delayed-with-a-connection-what-to-do-first",
+  "situation": "searchedProblems[1].phrase",
+  "runtime": {
+    "min": 10,
+    "max": 32
+  },
+  "platform": "pinterest-video",
+  "goal": "awareness",
+  "width": 1000,
+  "height": 1500,
+  "fps": 30,
+  "durationInFrames": 907,
+  "structure": "situationChecklist",
+  "angle": {
+    "text": "My flight is delayed and I have a connection",
+    "source": "searchedProblems[1].phrase"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "float",
+    "transitions": [
+      "slideLeft",
+      "whip",
+      "slideLeft"
+    ],
+    "motif": "timeline",
+    "grounds": [
+      "light",
+      "light",
+      "ink",
+      "accent"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "My flight is delayed and I have a connection",
+          "source": "searchedProblems[1].phrase"
+        }
+      ],
+      "emphasis": [
+        "connection"
+      ],
+      "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
+      "from": 0,
+      "dur": 124,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "My flight is delayed",
+          "and I have a",
+          "connection"
+        ]
+      ]
+    },
+    {
+      "id": "what-to-do",
+      "kind": "list",
+      "variant": "checklist",
+      "copy": [
+        {
+          "text": "Booking reference, and the name it's under.",
+          "source": "guide:flight-delayed-with-a-connection-what-to-do-first/body[7].items[0]#0"
+        },
+        {
+          "text": "Your onward flight number and its departure time.",
+          "source": "guide:flight-delayed-with-a-connection-what-to-do-first/body[7].items[1]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "What to have in hand",
+        "source": "guide:flight-delayed-with-a-connection-what-to-do-first/body[7].heading"
+      },
+      "why": "What to do about it, from the guide \"Flight delayed with a connection: what to do first\": its own checklist, the first sentence of each item.",
+      "from": 112,
+      "dur": 314,
+      "ground": "light",
+      "transition": "slideLeft",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 10,
+          "cue": "pop",
+          "volume": 0.27
+        },
+        {
+          "at": 115,
+          "cue": "pop",
+          "volume": 0.27
+        }
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "The connection, the transfer and whatever was booked after them are shown as potentially affected, with a walked-through call for any that need one.",
+        "source": "searchedProblems[1].answer"
+      },
+      "screen": {
+        "src": "screens/travel-companion-itinerary.png",
+        "pose": "tiltRight",
+        "focus": {
+          "at": 0.45,
+          "y": 264,
+          "h": 77,
+          "region": "flight"
+        }
+      },
+      "why": "How Travel Companion helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"Itinerary\" (The whole trip day by day: Lisbon and Porto, a flight and a hotel on day one, and days with nothing on them said plainly.) chosen because it is the real screen closest to \"The connection, the transfer and whatever was booked after them are shown as pot\"; focus on \"Flight to Lisbon\".",
+      "eyebrow": {
+        "text": "Travel Companion",
+        "source": "title"
+      },
+      "from": 414,
+      "dur": 366,
+      "ground": "ink",
+      "transition": "whip",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 165,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Travel Companion",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/flight-delayed-with-a-connection-what-to-do-first",
+          "source": "guide:flight-delayed-with-a-connection-what-to-do-first/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 768,
+      "dur": 139,
+      "ground": "accent",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Pinterest video pin, 1000×1500, 10–32s, hook by 1s, sound off",
+      "because": "People are planning, not scrolling: idea-led, calm and save-worthy, worded like what they searched for. Muted, looping, slow; a hard sell reads as an ad and loses the save."
+    },
+    {
+      "topic": "Product",
+      "decision": "Travel Companion: $34 (list $69), motif \"timeline\", calm personality, cool accent #00626f",
+      "because": "From its definition and Shop listing. 4 real screens to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"My flight is delayed and I have a connection\"",
+      "because": "One real moment from Travel Companion's listing (searchedProblems[1].phrase). The film is about this moment and how the product helps with it: \"The connection, the transfer and whatever was booked after them are shown as potentially affected, with a walked-through call for any that need one.\""
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"Flight delayed with a connection: what to do first\" (draftpace.com/guides/flight-delayed-with-a-connection-what-to-do-first)",
+      "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You are travelling with other people, and you are the one everybody asks what happens next. / Your trip has more than three moving parts: flights, transfers, stays and reservations that were booked around each other.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "What to do first: The moment, the guide's own checklist for it, then the product that keeps track of it.",
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 3, goal fit 3, already used on Pinterest video pin ×3). Other candidates: In their words (-12.8), Inside the tool (-14.8)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"My flight is delayed and I have a connection\"",
+      "because": "The moment \"My flight is delayed and I have a connection\", the checklist from \"Flight delayed with a connection: what to do first\", then how Travel Companion helps."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"timeline\"",
+      "because": "Transitions follow the product's own identity motif, \"timeline\": a trip is a line through time, so scenes travel left to right along it."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → light → ink → accent",
+      "because": "Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Edit",
+      "decision": "Trimmed \"what-to-do\" to 2 items",
+      "because": "Fewer items read properly beats more items skimmed."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "30.2s, 4 scenes",
+      "because": "Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 10–32s."
+    }
+  ]
+}

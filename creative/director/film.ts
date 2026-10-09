@@ -59,6 +59,8 @@ export type Film = {
   product: string;
   /** A guide-driven film: the guide it teaches from. Its product is the one the guide hands over to. */
   guide?: string;
+  /** A situation film: the listing line of the moment it is about ("searchedProblems[2].phrase"). `guide` is then the guide that helps with it. */
+  situation?: string;
   /** A voice-over film: the script it was cut to, and the recording if there is one (a path under public/). */
   voiceover?: { script: string; audio?: string; timing: "srt" | "audio" | "length" };
   /** Running-time limits when they are not the placement's own: a guide teaches for longer, a voice-over runs as long as the voice. */
@@ -79,8 +81,9 @@ export type Film = {
 };
 
 /** Where a film's script and treatment live under shots/, without extension. */
-export function filmPath(f: Pick<Film, "product" | "platform" | "goal" | "guide" | "voiceover">): string {
+export function filmPath(f: Pick<Film, "id" | "product" | "platform" | "goal" | "guide" | "voiceover" | "situation">): string {
   if (f.voiceover) return `voiceover/${f.voiceover.script}/${f.platform}`;
+  if (f.situation) return `situations/${f.product}/${f.id.slice(`sit-${f.product}-`.length)}`;
   if (f.guide) return `guides/${f.guide}/${f.platform}`;
   return `${f.product}/films/${f.platform}--${f.goal}`;
 }

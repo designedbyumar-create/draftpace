@@ -38,4 +38,5 @@ export const STRUCTURE_NAMES: Record<string, string> = {
   honestNo: "What it is not", whatYouGet: "What you get", oneScreen: "One screen, closely", beforeAfter: "Before and after",
   question: "The question before buying", guideTimeline: "In order", guideSteps: "Do this", guideChecklist: "The checklist",
   guideQuestion: "The question people ask", voiceover: "Cut to a voice-over",
+  situationWords: "In their words", situationMoment: "The moment", situationChecklist: "What to do first", situationInside: "Inside the tool",
 };

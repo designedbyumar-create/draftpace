@@ -20,7 +20,7 @@ const vite = await createServer({
   server: { middlewareMode: true }, optimizeDeps: { noDiscovery: true },
   resolve: { alias: { "@": path.resolve("../src") } },
 });
-const { runSlate } = await vite.ssrLoadModule(path.resolve("director/run.ts"));
+const { runSlate, skippedGuides } = await vite.ssrLoadModule(path.resolve("director/run.ts"));
 const { writeDirected } = await vite.ssrLoadModule(path.resolve("director/write.ts"));
 const results = runSlate();
 await vite.close();
@@ -30,4 +30,5 @@ for (const { film } of results) {
   if (!filter || film.id.includes(filter)) console.log(`${film.id.padEnd(60)} ${film.structure.padEnd(12)} ${(film.durationInFrames / 30).toFixed(1)}s  "${film.angle.text.slice(0, 60)}"`);
 }
 console.log(`${results.length} films planned`);
+if (skippedGuides.length) console.log(`No Short for ${skippedGuides.length} guide(s), nothing short enough to teach from: ${skippedGuides.join(", ")}`);
 process.exit(0);

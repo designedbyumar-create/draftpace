@@ -1,0 +1,256 @@
+{
+  "id": "guide-why-to-do-lists-make-it-worse--youtube-short",
+  "product": "alongside",
+  "guide": "why-to-do-lists-make-it-worse",
+  "runtime": {
+    "min": 18,
+    "max": 45
+  },
+  "platform": "youtube-short",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 540,
+  "structure": "guideQuestion",
+  "angle": {
+    "text": "Why don't to-do lists work for ADHD?",
+    "source": "guide:why-to-do-lists-make-it-worse/body[7].items[0].q"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "float",
+    "transitions": [
+      "iris",
+      "blurDissolve",
+      "iris"
+    ],
+    "motif": "focus",
+    "grounds": [
+      "light",
+      "light",
+      "accent",
+      "light"
+    ],
+    "pace": 1
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.2,
+    "energy": "mid"
+  },
+  "scenes": [
+    {
+      "id": "q",
+      "kind": "title",
+      "variant": "quote",
+      "copy": [
+        {
+          "text": "Why don't to-do lists work for ADHD?",
+          "source": "guide:why-to-do-lists-make-it-worse/body[7].items[0].q"
+        }
+      ],
+      "why": "The question as people ask it; the guide carries it because people search it.",
+      "from": 0,
+      "dur": 96,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "Why don't to-do lists",
+          "work for ADHD?"
+        ]
+      ]
+    },
+    {
+      "id": "a",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "There isn't one reason, and this guide can't speak to a diagnosis.",
+          "source": "guide:why-to-do-lists-make-it-worse/body[7].items[0].a#0"
+        }
+      ],
+      "emphasis": [
+        "one"
+      ],
+      "why": "The guide's answer, its first sentence: the plain answer before any detail.",
+      "from": 84,
+      "dur": 134,
+      "ground": "accent",
+      "transition": "iris",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "There isn't one",
+          "reason, and this guide",
+          "can't speak to a",
+          "diagnosis."
+        ]
+      ]
+    },
+    {
+      "id": "tool",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "A single page per thing you are holding, with everything about it in one place",
+        "source": "expectedOutputs[3]"
+      },
+      "screen": {
+        "src": "screens/alongside-workspace.png",
+        "pose": "tiltRight",
+        "focus": {
+          "at": 0.45,
+          "y": 222,
+          "h": 294,
+          "region": "one-thing"
+        },
+        "scroll": []
+      },
+      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"Book the six-month dental check\" (One thing at a time: a single next step, Book the six-month dental check, with Do this with me, Not now and It is sorted.) chosen because it is the real screen closest to \"A single page per thing you are holding, with everything about it in one place W\"; focus on \"Book the six-month dental check\".",
+      "eyebrow": {
+        "text": "ADHD Life Companion",
+        "source": "title"
+      },
+      "from": 206,
+      "dur": 228,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 103,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "ADHD Life Companion",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/why-to-do-lists-make-it-worse",
+          "source": "guide:why-to-do-lists-make-it-worse/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 422,
+      "dur": 118,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "YouTube Short, 1080×1920, 18–45s, hook by 1.2s, sound on",
+      "because": "Search-adjacent audience that will watch a slightly longer explanation if it starts strong. Loops by default."
+    },
+    {
+      "topic": "Product",
+      "decision": "ADHD Life Companion: $49 (list $99), motif \"focus\", calm personality, warm accent #86586a",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"Why to-do lists do not work when starting is the problem\" (draftpace.com/guides/why-to-do-lists-make-it-worse)",
+      "because": "Teaches from the guide first; ADHD Life Companion is the product the guide hands over to. 1 lists and timelines, 5 questions to draw from."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You have ADHD, or executive function that works like it does, and most productivity tools have made that worse rather than better. / You are dealing with brain fog from long covid, a concussion, chronic illness, grief, new parenthood, menopause, or depression, and holding a plan in your head has stopped being reliable.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Material",
+      "decision": "Allowed real lines up to 4 words longer",
+      "because": "Every structure ADHD Life Companion's copy supports at YouTube Short's normal line length is already used by its other films; a longer real line beats telling the same story twice."
+    },
+    {
+      "topic": "Structure",
+      "decision": "The question people ask: One of the guide's own questions, its plain answer, then the product.",
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 2, already used for this product ×1, already used on YouTube Short ×4). Other candidates: ."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"Why don't to-do lists work for ADHD?\"",
+      "because": "A question from the guide's FAQ, \"Why don't to-do lists work for ADHD?\", and the first sentence of its answer."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"focus\"",
+      "because": "Transitions follow the product's own identity motif, \"focus\": it is about one thing at a time, so scenes open like an iris onto one thing."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → light → accent → light",
+      "because": "Grounds light → light → accent → light: a warm accent, so light grounds lead and the accent is saved for the turns."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.74 similar to guide-how-to-find-someones-accounts-after-they-die--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Full sound design, mid-energy bed",
+      "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
+    },
+    {
+      "topic": "Length",
+      "decision": "18.0s, 4 scenes",
+      "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 18–45s."
+    }
+  ]
+}

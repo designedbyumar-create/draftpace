@@ -27,6 +27,7 @@ const STRUCTURE: Record<string, string> = {
   cascade: "Problem cascade", searched: "In their words", walkthrough: "How it works", isThisYou: "Is this you?", honestNo: "What it is not",
   whatYouGet: "What you get", oneScreen: "One screen, closely", beforeAfter: "Before and after", question: "The question before buying",
   guideTimeline: "In order", guideSteps: "Do this", guideChecklist: "The checklist", guideQuestion: "The question people ask",
+  situationWords: "In their words", situationMoment: "The moment", situationChecklist: "What to do first", situationInside: "Inside the tool",
 };
 
 const shape = (p: PlatformInfo) => (p.height / p.width > 1.7 ? "9:16" : p.height / p.width > 1.4 ? "2:3" : "4:5");

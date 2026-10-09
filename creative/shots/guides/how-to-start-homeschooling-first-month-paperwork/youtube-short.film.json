@@ -11,11 +11,11 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 767,
-  "structure": "guideChecklist",
+  "durationInFrames": 540,
+  "structure": "guideQuestion",
   "angle": {
-    "text": "How to start homeschooling: what to do in the first month",
-    "source": "guide:how-to-start-homeschooling-first-month-paperwork/title"
+    "text": "Do I have to withdraw my child in writing before I start homeschooling?",
+    "source": "guide:how-to-start-homeschooling-first-month-paperwork/body[7].items[0].q"
   },
   "treatment": {
     "voice": "editorial",
@@ -41,81 +41,61 @@
   },
   "scenes": [
     {
-      "id": "hook",
+      "id": "q",
       "kind": "title",
-      "variant": "editorial",
+      "variant": "quote",
       "copy": [
         {
-          "text": "How to start homeschooling: what to do in the first month",
-          "source": "guide:how-to-start-homeschooling-first-month-paperwork/title"
+          "text": "Do I have to withdraw my child in writing before I start homeschooling?",
+          "source": "guide:how-to-start-homeschooling-first-month-paperwork/body[7].items[0].q"
         }
       ],
-      "emphasis": [
-        "homeschooling"
-      ],
-      "why": "The hook is the guide's own title: the question it answers, as a person would put it.",
+      "why": "The question as people ask it; the guide carries it because people search it.",
       "from": 0,
-      "dur": 107,
-      "ground": "accent",
+      "dur": 152,
+      "ground": "light",
       "transition": "cut",
       "sfx": [],
       "lines": [
         [
-          "How to start",
-          "homeschooling: what",
-          "to do in the first",
-          "month"
+          "Do I have to withdraw my",
+          "child in writing before",
+          "I start homeschooling?"
         ]
       ]
     },
     {
-      "id": "list",
-      "kind": "list",
-      "variant": "checklist",
+      "id": "a",
+      "kind": "title",
+      "variant": "label",
       "copy": [
         {
-          "text": "Write your child's name and one subject on a page.",
-          "source": "guide:how-to-start-homeschooling-first-month-paperwork/body[5].items[0]#0"
-        },
-        {
-          "text": "Each day, note the date and what you did, in a line.",
-          "source": "guide:how-to-start-homeschooling-first-month-paperwork/body[5].items[1]#0"
-        },
-        {
-          "text": "At the end of the week, look at what happened and note one thing to change.",
-          "source": "guide:how-to-start-homeschooling-first-month-paperwork/body[5].items[2]#0"
+          "text": "If your child is currently enrolled in a public or private school, yes, in most cases.",
+          "source": "guide:how-to-start-homeschooling-first-month-paperwork/body[7].items[0].a#0"
         }
       ],
-      "eyebrow": {
-        "text": "A first week that does not need a plan",
-        "source": "guide:how-to-start-homeschooling-first-month-paperwork/body[5].heading"
-      },
-      "why": "The guide's own checklist, the first sentence of each item, ticked in as it is read.",
-      "from": 95,
-      "dur": 478,
-      "ground": "light",
+      "emphasis": [
+        "currently"
+      ],
+      "why": "The guide's answer, its first sentence: the plain answer before any detail.",
+      "from": 140,
+      "dur": 176,
+      "ground": "accent",
       "transition": "lineWipe",
       "sfx": [
         {
           "at": 0,
           "cue": "tick",
           "volume": 0.6
-        },
-        {
-          "at": 10,
-          "cue": "tick",
-          "volume": 0.45
-        },
-        {
-          "at": 130,
-          "cue": "tick",
-          "volume": 0.45
-        },
-        {
-          "at": 250,
-          "cue": "tick",
-          "volume": 0.45
         }
+      ],
+      "lines": [
+        [
+          "If your child is currently",
+          "enrolled in a public or",
+          "private school, yes, in most",
+          "cases."
+        ]
       ]
     },
     {
@@ -129,7 +109,7 @@
       },
       "screen": {
         "src": "screens/homeschooling-companion-kids.png",
-        "pose": "flat",
+        "pose": "tiltLeft",
         "focus": {
           "at": 0.45,
           "y": 159,
@@ -143,9 +123,9 @@
         "text": "Homeschooling Companion",
         "source": "title"
       },
-      "from": 561,
-      "dur": 108,
-      "ground": "ink",
+      "from": 304,
+      "dur": 138,
+      "ground": "light",
       "transition": "slideUp",
       "sfx": [
         {
@@ -159,7 +139,7 @@
           "volume": 0.42
         },
         {
-          "at": 49,
+          "at": 62,
           "cue": "tap",
           "volume": 0.55
         }
@@ -184,9 +164,9 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 657,
+      "from": 430,
       "dur": 110,
-      "ground": "light",
+      "ground": "ink",
       "transition": "blurDissolve",
       "sfx": [
         {
@@ -219,24 +199,24 @@
       "because": "Teaches from the guide first; Homeschooling Companion is the product the guide hands over to. 2 lists and timelines, 5 questions to draw from."
     },
     {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
       "topic": "Audience",
       "decision": "You already have a curriculum you chose on purpose and you want something that follows it rather than replacing it. / You teach more than one child and keeping their records separate in your head has stopped working.",
       "because": "The listing's own audience lines; the director writes for them."
     },
     {
-      "topic": "Material",
-      "decision": "Allowed real lines up to 4 words longer",
-      "because": "Every structure Homeschooling Companion's copy supports at YouTube Short's normal line length is already used by its other films; a longer real line beats telling the same story twice."
-    },
-    {
       "topic": "Structure",
-      "decision": "The checklist: The guide's checklist on one screen, item by item, then the product that holds it.",
-      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 3, already used for this product ×1, already used on YouTube Short ×3). Other candidates: The question people ask (-11.8)."
+      "decision": "The question people ask: One of the guide's own questions, its plain answer, then the product.",
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 2, already used on YouTube Short ×1). Other candidates: ."
     },
     {
       "topic": "Angle",
-      "decision": "\"How to start homeschooling: what to do in the first month\"",
-      "because": "A checklist from the guide, \"A first week that does not need a plan\": 3 of its 3 items."
+      "decision": "\"Do I have to withdraw my child in writing before I start homeschooling?\"",
+      "because": "A question from the guide's FAQ, \"Do I have to withdraw my child in writing before I start homeschooling?\", and the first sentence of its answer."
     },
     {
       "topic": "Transitions",
@@ -254,18 +234,13 @@
       "because": "Grounds light → accent → light → ink: a cool accent, so a darker ground is used for contrast at a turn."
     },
     {
-      "topic": "Variation",
-      "decision": "Rotated the ground rhythm",
-      "because": "Its shape was 0.82 similar to guide-simple-homeschool-record-keeping-system--youtube-short; a different film, not the same one re-coloured."
-    },
-    {
       "topic": "Sound",
       "decision": "Full sound design, mid-energy bed",
       "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
     },
     {
       "topic": "Length",
-      "decision": "25.6s, 4 scenes",
+      "decision": "18.0s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 18–45s."
     }
   ]

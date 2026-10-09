@@ -11,11 +11,11 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 745,
-  "structure": "guideChecklist",
+  "durationInFrames": 540,
+  "structure": "guideQuestion",
   "angle": {
-    "text": "How to find someone's accounts after they die",
-    "source": "guide:how-to-find-someones-accounts-after-they-die/title"
+    "text": "Are a deceased person's accounts frozen automatically?",
+    "source": "guide:how-to-find-someones-accounts-after-they-die/body[7].items[1].q"
   },
   "treatment": {
     "voice": "editorial",
@@ -41,19 +41,16 @@
   },
   "scenes": [
     {
-      "id": "hook",
+      "id": "q",
       "kind": "title",
-      "variant": "editorial",
+      "variant": "quote",
       "copy": [
         {
-          "text": "How to find someone's accounts after they die",
-          "source": "guide:how-to-find-someones-accounts-after-they-die/title"
+          "text": "Are a deceased person's accounts frozen automatically?",
+          "source": "guide:how-to-find-someones-accounts-after-they-die/body[7].items[1].q"
         }
       ],
-      "emphasis": [
-        "someone's"
-      ],
-      "why": "The hook is the guide's own title: the question it answers, as a person would put it.",
+      "why": "The question as people ask it; the guide carries it because people search it.",
       "from": 0,
       "dur": 83,
       "ground": "light",
@@ -61,33 +58,28 @@
       "sfx": [],
       "lines": [
         [
-          "How to find someone's",
-          "accounts after",
-          "they die"
+          "Are a deceased",
+          "person's accounts",
+          "frozen automatically?"
         ]
       ]
     },
     {
-      "id": "list",
-      "kind": "list",
-      "variant": "checklist",
+      "id": "a",
+      "kind": "title",
+      "variant": "label",
       "copy": [
         {
-          "text": "Regular outgoings point to insurance, subscriptions and loan payments you didn't know existed.",
-          "source": "guide:how-to-find-someones-accounts-after-they-die/body[2].items[0]#0"
-        },
-        {
-          "text": "Regular incomings point to pensions, annuities and rental income.",
-          "source": "guide:how-to-find-someones-accounts-after-they-die/body[2].items[1]#0"
-        },
-        {
-          "text": "Annual payments are easy to miss in three months of statements and obvious across twelve.",
-          "source": "guide:how-to-find-someones-accounts-after-they-die/body[2].items[2]#0"
+          "text": "Often, once the bank learns of the death, though the timing varies by bank and by account type.",
+          "source": "guide:how-to-find-someones-accounts-after-they-die/body[7].items[1].a#0"
         }
       ],
-      "why": "The guide's own checklist, the first sentence of each item, ticked in as it is read.",
+      "emphasis": [
+        "account"
+      ],
+      "why": "The guide's answer, its first sentence: the plain answer before any detail.",
       "from": 71,
-      "dur": 379,
+      "dur": 168,
       "ground": "light",
       "transition": "pageTurn",
       "sfx": [
@@ -95,22 +87,15 @@
           "at": 0,
           "cue": "page",
           "volume": 0.32
-        },
-        {
-          "at": 10,
-          "cue": "pop",
-          "volume": 0.45
-        },
-        {
-          "at": 105,
-          "cue": "pop",
-          "volume": 0.45
-        },
-        {
-          "at": 200,
-          "cue": "pop",
-          "volume": 0.45
         }
+      ],
+      "lines": [
+        [
+          "Often, once the bank learns",
+          "of the death, though the",
+          "timing varies by bank and",
+          "by account type."
+        ]
       ]
     },
     {
@@ -138,8 +123,8 @@
         "text": "Personal Life Affairs Companion",
         "source": "title"
       },
-      "from": 438,
-      "dur": 194,
+      "from": 227,
+      "dur": 200,
       "ground": "ink",
       "transition": "blurDissolve",
       "sfx": [
@@ -154,7 +139,7 @@
           "volume": 0.42
         },
         {
-          "at": 87,
+          "at": 90,
           "cue": "tap",
           "volume": 0.55
         }
@@ -179,7 +164,7 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 620,
+      "from": 415,
       "dur": 125,
       "ground": "accent",
       "transition": "blurDissolve",
@@ -214,6 +199,11 @@
       "because": "Teaches from the guide first; Personal Life Affairs Companion is the product the guide hands over to. 2 lists and timelines, 5 questions to draw from."
     },
     {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
       "topic": "Audience",
       "decision": "You have been meaning to sort this out for a while and have never found a first step small enough to take. / You would rather be asked one question at a time than handed a folder and told to fill it in.",
       "because": "The listing's own audience lines; the director writes for them."
@@ -225,13 +215,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "The checklist: The guide's checklist on one screen, item by item, then the product that holds it.",
-      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 3, already used on YouTube Short ×4). Other candidates: The question people ask (-5.7)."
+      "decision": "The question people ask: One of the guide's own questions, its plain answer, then the product.",
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 2, already used on YouTube Short ×2). Other candidates: The checklist (-2.5)."
     },
     {
       "topic": "Angle",
-      "decision": "\"How to find someone's accounts after they die\"",
-      "because": "A checklist from the guide, \"Start with twelve months of statements, not three\": 3 of its 4 items."
+      "decision": "\"Are a deceased person's accounts frozen automatically?\"",
+      "because": "A question from the guide's FAQ, \"Are a deceased person's accounts frozen automatically?\", and the first sentence of its answer."
     },
     {
       "topic": "Transitions",
@@ -255,7 +245,7 @@
     },
     {
       "topic": "Length",
-      "decision": "24.8s, 4 scenes",
+      "decision": "18.0s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 18–45s."
     }
   ]

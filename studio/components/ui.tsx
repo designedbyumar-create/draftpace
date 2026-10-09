@@ -45,6 +45,7 @@ export function Stat({ label, value, hint }: { label: string; value: ReactNode; 
 const KIND: Record<string, { label: string; tone: BadgeTone }> = {
   product: { label: "Product film", tone: "neutral" },
   guide: { label: "Guide Short", tone: "info" },
+  situation: { label: "Situation", tone: "success" },
   voiceover: { label: "Voice-over", tone: "primary" },
 };
 

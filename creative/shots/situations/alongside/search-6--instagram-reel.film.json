@@ -1,0 +1,298 @@
+{
+  "id": "sit-alongside-search-6--instagram-reel",
+  "product": "alongside",
+  "guide": "how-to-restart-a-project-you-gave-up-on",
+  "situation": "searchedProblems[5].phrase",
+  "runtime": {
+    "min": 12,
+    "max": 35
+  },
+  "platform": "instagram-reel",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 595,
+  "structure": "situationMoment",
+  "angle": {
+    "text": "I left something half finished and lost where I was",
+    "source": "searchedProblems[5].phrase"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "dolly",
+    "transitions": [
+      "iris",
+      "blurDissolve",
+      "iris"
+    ],
+    "motif": "focus",
+    "grounds": [
+      "light",
+      "light",
+      "accent",
+      "light"
+    ],
+    "pace": 1
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.2,
+    "energy": "mid"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "I left something half finished and lost where I was",
+          "source": "searchedProblems[5].phrase"
+        }
+      ],
+      "emphasis": [
+        "something"
+      ],
+      "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
+      "from": 0,
+      "dur": 99,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "I left something",
+          "half finished and",
+          "lost where I was"
+        ]
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "It remembers exactly where you got to, so picking it back up is not starting over.",
+        "source": "searchedProblems[5].answer"
+      },
+      "screen": {
+        "src": "screens/alongside-life.png",
+        "pose": "tiltRight",
+        "focus": {
+          "at": 0.45,
+          "y": 192,
+          "h": 330,
+          "region": "to-do"
+        }
+      },
+      "why": "How ADHD Life Companion helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"Everything you are holding\" (Everything being held, sorted into something to do, waiting on someone, something ongoing, each with Do this with me.) chosen because it is the real screen closest to \"It remembers exactly where you got to, so picking it back up is not starting ove\"; focus on \"Something to do\".",
+      "eyebrow": {
+        "text": "ADHD Life Companion",
+        "source": "title"
+      },
+      "from": 87,
+      "dur": 217,
+      "ground": "accent",
+      "transition": "iris",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 98,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "step-1",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "Put out what you already have.",
+          "source": "guide:how-to-restart-a-project-you-gave-up-on/body[3].items[0]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "1",
+        "source": "micro"
+      },
+      "emphasis": [
+        "already"
+      ],
+      "why": "Step 1 from the guide \"How to restart a project you gave up on\", numbered as the guide numbers it.",
+      "from": 292,
+      "dur": 97,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "Put out what you",
+          "already have."
+        ]
+      ]
+    },
+    {
+      "id": "step-2",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "Write where you got to, in one line.",
+          "source": "guide:how-to-restart-a-project-you-gave-up-on/body[3].items[1]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "2",
+        "source": "micro"
+      },
+      "emphasis": [
+        "one"
+      ],
+      "why": "Step 2 from the guide \"How to restart a project you gave up on\", numbered as the guide numbers it.",
+      "from": 377,
+      "dur": 112,
+      "ground": "light",
+      "transition": "iris",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "Write where you got",
+          "to, in one line."
+        ]
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "ADHD Life Companion",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/how-to-restart-a-project-you-gave-up-on",
+          "source": "guide:how-to-restart-a-project-you-gave-up-on/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 477,
+      "dur": 118,
+      "ground": "ink",
+      "transition": "iris",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Instagram Reel, 1080×1920, 12–35s, hook by 1.2s, sound on",
+      "because": "Full-screen and swipeable: the first second decides whether anyone stays. Mostly watched with sound, but captions still carry every point. The right edge holds like/comment buttons and the bottom holds the caption, so text lives in the middle band."
+    },
+    {
+      "topic": "Product",
+      "decision": "ADHD Life Companion: $49 (list $99), motif \"focus\", calm personality, warm accent #86586a",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"I left something half finished and lost where I was\"",
+      "because": "One real moment from ADHD Life Companion's listing (searchedProblems[5].phrase). The film is about this moment and how the product helps with it: \"It remembers exactly where you got to, so picking it back up is not starting over.\""
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"How to restart a project you gave up on\" (draftpace.com/guides/how-to-restart-a-project-you-gave-up-on)",
+      "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You have ADHD, or executive function that works like it does, and most productivity tools have made that worse rather than better. / You are dealing with brain fog from long covid, a concussion, chronic illness, grief, new parenthood, menopause, or depression, and holding a plan in your head has stopped being reliable.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
+      "because": "Best fit for a awareness film on Instagram Reel (platform fit 3, goal fit 3, already used for this product ×1). Other candidates: In their words (-6.6), Inside the tool (-7.5)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"I left something half finished and lost where I was\"",
+      "because": "The moment \"I left something half finished and lost where I was\", then how ADHD Life Companion helps, then what the guide \"How to restart a project you gave up on\" says to do."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"focus\"",
+      "because": "Transitions follow the product's own identity motif, \"focus\": it is about one thing at a time, so scenes open like an iris onto one thing."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"dolly\"",
+      "because": "Camera \"dolly\": constant forward movement for a high-energy feed."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → light → accent → light",
+      "because": "Grounds light → light → accent → light: a warm accent, so light grounds lead and the accent is saved for the turns."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.71 similar to sit-alongside-search-2--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Full sound design, mid-energy bed",
+      "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
+    },
+    {
+      "topic": "Length",
+      "decision": "19.8s, 5 scenes",
+      "because": "Each scene is held for the time its words take to read on Instagram Reel (0.26s a word), inside 12–35s."
+    }
+  ]
+}

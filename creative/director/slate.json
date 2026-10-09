@@ -1,5 +1,6 @@
 {
-  "$comment": "The briefs the director plans, in order. Order matters: each film is planned knowing every film before it, so it can avoid repeating a structure, an angle or a screen. Add a brief and run `node scripts/direct.mjs`. Guide briefs name a guide and a placement; the product is the one the guide hands over to. These are each life area's three start-here guides (src/content/areas.ts).",
+  "$comment": "Before launch (stage: prelaunch) the director plans one film for every real situation in every product listing, and one guide Short for every guide (director/run.ts). The briefs below are product films for later (stage: growth): who it is not for, questions before buying, what you get, the price. The guides below keep the placement chosen for them; every other guide is added automatically.",
+  "stage": "prelaunch",
   "briefs": [
     {
       "product": "travel-companion",

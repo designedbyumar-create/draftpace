@@ -1,0 +1,293 @@
+{
+  "id": "sit-family-health-binder-search-2--tiktok",
+  "product": "family-health-binder",
+  "guide": "doctor-appointment-prep-checklist",
+  "situation": "searchedProblems[1].phrase",
+  "runtime": {
+    "min": 12,
+    "max": 35
+  },
+  "platform": "tiktok",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 646,
+  "structure": "situationMoment",
+  "angle": {
+    "text": "What should I bring to a doctor's appointment",
+    "source": "searchedProblems[1].phrase"
+  },
+  "treatment": {
+    "voice": "native",
+    "camera": "dolly",
+    "transitions": [
+      "cut",
+      "whip",
+      "cardSlide"
+    ],
+    "motif": "card",
+    "grounds": [
+      "light",
+      "ink",
+      "light",
+      "accent"
+    ],
+    "pace": 0.85
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.24,
+    "energy": "high"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "native",
+      "copy": [
+        {
+          "text": "What should I bring to a doctor's appointment",
+          "source": "searchedProblems[1].phrase"
+        }
+      ],
+      "emphasis": [
+        "appointment"
+      ],
+      "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
+      "from": 0,
+      "dur": 79,
+      "ground": "ink",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "What should I",
+          "bring to a",
+          "doctor's",
+          "appointment"
+        ]
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "A Visit page for that person: your questions with a box to tick each, what is taken now, recent symptoms, and room for notes.",
+        "source": "searchedProblems[1].answer"
+      },
+      "screen": {
+        "src": "screens/family-health-binder-printables.png",
+        "pose": "flat",
+        "focus": {
+          "at": 0.45,
+          "y": 294,
+          "h": 150,
+          "region": "forms-sheet"
+        }
+      },
+      "why": "How Family Health Binder helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"Print\" (The pages that leave the house: forms sheet, caregiver sheet, emergency card, visit page, intake summary, each with Make it.) chosen because it is the real screen closest to \"A Visit page for that person: your questions with a box to tick each, what is ta\"; focus on \"Forms sheet\".",
+      "eyebrow": {
+        "text": "Family Health Binder",
+        "source": "title"
+      },
+      "from": 73,
+      "dur": 236,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 106,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "step-1",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Write the reason, then your questions in order.",
+          "source": "guide:doctor-appointment-prep-checklist/body[4].steps[0].what#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "The night before",
+        "source": "guide:doctor-appointment-prep-checklist/body[4].steps[0].when"
+      },
+      "emphasis": [
+        "questions"
+      ],
+      "why": "What to do, in order, from the guide \"Doctor appointment checklist for the day before\": \"The night before\".",
+      "from": 303,
+      "dur": 121,
+      "ground": "light",
+      "transition": "whip",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "Write the reason,",
+          "then your",
+          "questions in",
+          "order."
+        ]
+      ]
+    },
+    {
+      "id": "step-2",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "List every medicine, vitamin and supplement from the labels.",
+          "source": "guide:doctor-appointment-prep-checklist/body[4].steps[1].what#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "Same evening",
+        "source": "guide:doctor-appointment-prep-checklist/body[4].steps[1].when"
+      },
+      "emphasis": [
+        "every"
+      ],
+      "why": "What to do, in order, from the guide \"Doctor appointment checklist for the day before\": \"Same evening\".",
+      "from": 418,
+      "dur": 121,
+      "ground": "accent",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "List every",
+          "medicine, vitamin",
+          "and supplement",
+          "from the labels."
+        ]
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Family Health Binder",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/doctor-appointment-prep-checklist",
+          "source": "guide:doctor-appointment-prep-checklist/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 533,
+      "dur": 113,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "TikTok, 1080×1920, 12–35s, hook by 0.8s, sound on",
+      "because": "Native, fast and plain-spoken; polish that looks like an ad gets skipped. Sound-on. Hook inside a second. The deepest bottom and right overlays of any placement."
+    },
+    {
+      "topic": "Product",
+      "decision": "Family Health Binder: $34 (list $69), motif \"card\", calm personality, warm accent #b23a5b",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"What should I bring to a doctor's appointment\"",
+      "because": "One real moment from Family Health Binder's listing (searchedProblems[1].phrase). The film is about this moment and how the product helps with it: \"A Visit page for that person: your questions with a box to tick each, what is taken now, recent symptoms, and room for notes.\""
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"Doctor appointment checklist for the day before\" (draftpace.com/guides/doctor-appointment-prep-checklist)",
+      "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You are the one who fills in every form, and everyone's allergies, medications and insurance number live only in your head. / You have more than one child, or a child and an aging parent, whose facts you are both responsible for.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
+      "because": "Best fit for a awareness film on TikTok (platform fit 3, goal fit 3, already used on TikTok ×1). Other candidates: Inside the tool (1.3), In their words (-0.7)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"What should I bring to a doctor's appointment\"",
+      "because": "The moment \"What should I bring to a doctor's appointment\", then how Family Health Binder helps, then what the guide \"Doctor appointment checklist for the day before\" says to do."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"card\"",
+      "because": "Transitions follow the product's own identity motif, \"card\": a binder of cards, so scenes slide in like the next card. TikTok wants native editing, so hard cuts and whips lead."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"dolly\"",
+      "because": "Camera \"dolly\": constant forward movement for a high-energy feed."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → ink → light → accent",
+      "because": "Grounds light → ink → light → accent: a warm accent, so light grounds lead and the accent is saved for the turns."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Full sound design, high-energy bed",
+      "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
+    },
+    {
+      "topic": "Length",
+      "decision": "21.5s, 5 scenes",
+      "because": "Each scene is held for the time its words take to read on TikTok (0.24s a word), inside 12–35s."
+    }
+  ]
+}

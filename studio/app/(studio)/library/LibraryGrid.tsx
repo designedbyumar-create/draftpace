@@ -13,8 +13,9 @@ type Filters = { kind: string; product: string; platform: string; status: string
 
 const KINDS = [
   { id: "all", label: "All" },
-  { id: "product", label: "Product films" },
+  { id: "situation", label: "Situations" },
   { id: "guide", label: "Guide Shorts" },
+  { id: "product", label: "Product films" },
   { id: "voiceover", label: "Voice-overs" },
 ];
 

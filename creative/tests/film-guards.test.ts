@@ -22,8 +22,9 @@ const planned = runSlate();
 const voiced = runVoiceovers();
 /** Every film the director planned: product films and guide-driven films. */
 const directed = planned.map((x) => x.film);
-const productFilms = directed.filter((f) => !f.guide);
-const guideFilms = directed.filter((f) => f.guide);
+const productFilms = directed.filter((f) => !f.guide && !f.situation);
+const guideFilms = directed.filter((f) => f.guide && !f.situation);
+const situationFilms = directed.filter((f) => f.situation);
 const voiceFilms = voiced.map((x) => x.film);
 const inputOf = (f: Film) => voiced.find((x) => x.film === f)?.input as VoiceoverInput;
 const films = [...directed, ...voiceFilms];
@@ -57,8 +58,9 @@ function sourceText(f: Film, source: string): string | undefined {
 }
 
 describe("Director films", () => {
-  it("plans the whole slate", () => {
-    expect(productFilms.length).toBeGreaterThanOrEqual(36);
+  it("plans the whole slate: every situation in every listing, and the guides", () => {
+    const listed = Object.values(SHOP_LISTINGS).reduce((n, L) => n + (L.searchedProblems?.length ?? 0) + (L.problemsSolved?.length ?? 0), 0);
+    expect(situationFilms.length, "a listing situation has no film").toBe(listed);
     expect(guideFilms.length).toBeGreaterThanOrEqual(24);
   });
 
@@ -224,22 +226,61 @@ describe("Voice-over films", () => {
   });
 });
 
-describe("No two films are the same film", () => {
-  it("never repeats a structure or a hook within one product", () => {
-    const byProduct = new Map<string, Film[]>();
-    productFilms.forEach((f) => byProduct.set(f.product, [...(byProduct.get(f.product) ?? []), f]));
-    for (const [product, fs2] of byProduct) {
-      const structures = fs2.map((f) => f.structure);
-      expect(new Set(structures).size, `${product} repeats a structure: ${structures.join(", ")}`).toBe(structures.length);
-      const hooks = fs2.map((f) => f.angle.source).filter((s) => s !== "micro");
-      expect(new Set(hooks).size, `${product} repeats a hook: ${hooks.join(", ")}`).toBe(hooks.length);
+describe("Situation films", () => {
+  it("open on their moment, in the listing's words, and show how the product helps with it", () => {
+    for (const f of situationFilms) {
+      const listing = SHOP_LISTINGS[f.product];
+      expect(f.scenes[0].copy[0]?.source, `${f.id} does not open on its moment`).toBe(f.situation);
+      expect(f.scenes[0].copy[0]?.text).toBe(resolveSource(listing, f.situation!));
+      const help = f.situation!.replace(/\.phrase$/, ".answer").replace(/\.problem$/, ".solution");
+      const shown = f.scenes.flatMap((s) => [s.caption, ...s.copy]).some((c) => c?.source === help);
+      expect(shown, `${f.id} never shows how ${f.product} helps (${help})`).toBe(true);
     }
   });
 
-  // A voice-over's shape is its script's, so only the films the director shaped are held to this.
-  it(`keeps every pair of directed films structurally distinct (shape similarity under ${MAX_SIMILARITY})`, () => {
+  it("teach from a guide the listing links, or one that hands over to the same product", () => {
+    for (const f of situationFilms.filter((x) => x.guide)) {
+      const linked = SHOP_LISTINGS[f.product].searchedProblems?.find((_, i) => f.situation === `searchedProblems[${i}].phrase`)?.guideSlug;
+      const ok = linked ? linked === f.guide : productForGuide(f.guide!).product === f.product;
+      expect(ok, `${f.id} teaches from "${f.guide}", which ${linked ? "is not the guide its listing line links" : `hands over to ${productForGuide(f.guide!).product}`}`).toBe(true);
+    }
+  });
+});
+
+describe("Before launch", () => {
+  it("films sell nothing: no who-it-is-not-for, no questions before buying, no contents list, no price", () => {
+    const BUYER = /^(audienceExclusions|questions|privacyNotes)\b|^questions\[/;
+    for (const f of directed) {
+      expect(["honestNo", "question", "whatYouGet"], `${f.id} uses the buyer-facing "${f.structure}"`).not.toContain(f.structure);
+      for (const s of f.scenes) {
+        expect(s.kind === "cta" && s.variant === "price", `${f.id} closes on a price`).toBe(false);
+        for (const c of [s.eyebrow, ...s.copy, s.caption].filter(Boolean)) expect(BUYER.test(c!.source), `${f.id} ${s.id} shows "${c!.text}" (${c!.source})`).toBe(false);
+      }
+    }
+  });
+});
+
+describe("No two films are the same film", () => {
+  it("never tells the same moment twice for a product, and product films never repeat a structure", () => {
+    const series = (f: Film) => (f.situation ? "situation" : f.guide ? "guide" : "product");
+    const groups = new Map<string, Film[]>();
+    directed.forEach((f) => groups.set(`${f.product}/${series(f)}`, [...(groups.get(`${f.product}/${series(f)}`) ?? []), f]));
+    for (const [group, fs2] of groups) {
+      const hooks = fs2.map((f) => f.angle.source).filter((s) => s !== "micro");
+      expect(new Set(hooks).size, `${group} repeats a hook: ${hooks.join(", ")}`).toBe(hooks.length);
+      if (group.endsWith("/product")) {
+        const structures = fs2.map((f) => f.structure);
+        expect(new Set(structures).size, `${group} repeats a structure: ${structures.join(", ")}`).toBe(structures.length);
+      }
+    }
+  });
+
+  // A voice-over's shape is its script's, so only the films the director shaped are held to this. Situation films are a
+  // series about different moments, so the rule is per product: the films one product posts never look like one template.
+  it(`keeps every pair of one product's films structurally distinct (shape similarity under ${MAX_SIMILARITY})`, () => {
     for (let i = 0; i < directed.length; i++) {
       for (let j = i + 1; j < directed.length; j++) {
+        if (directed[i].product !== directed[j].product) continue;
         const sim = similarity(shape(directed[i]), shape(directed[j]));
         expect(sim, `${directed[i].id} and ${directed[j].id} are the same shape (${sim.toFixed(2)}): one of them is a template`).toBeLessThan(MAX_SIMILARITY);
       }

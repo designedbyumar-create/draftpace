@@ -1,0 +1,357 @@
+{
+  "id": "guide-car-paperwork-dates-organizer--youtube-short",
+  "product": "vehicle-maintenance-companion",
+  "guide": "car-paperwork-dates-organizer",
+  "runtime": {
+    "min": 18,
+    "max": 45
+  },
+  "platform": "youtube-short",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 765,
+  "structure": "guideTimeline",
+  "angle": {
+    "text": "How to track car registration and insurance renewals",
+    "source": "guide:car-paperwork-dates-organizer/title"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "float",
+    "transitions": [
+      "radial",
+      "zoomThrough",
+      "radial"
+    ],
+    "motif": "gauge",
+    "grounds": [
+      "light",
+      "ink",
+      "light",
+      "accent"
+    ],
+    "pace": 1
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.2,
+    "energy": "mid"
+  },
+  "scenes": [
+    {
+      "id": "hook",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "How to track car registration and insurance renewals",
+          "source": "guide:car-paperwork-dates-organizer/title"
+        }
+      ],
+      "emphasis": [
+        "registration"
+      ],
+      "why": "The hook is the guide's own title: the question it answers, as a person would put it.",
+      "from": 0,
+      "dur": 83,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "How to track car",
+          "registration and",
+          "insurance renewals"
+        ]
+      ]
+    },
+    {
+      "id": "when-1",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Look for the notice.",
+          "source": "guide:car-paperwork-dates-organizer/body[4].steps[0].what#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "Six weeks out",
+        "source": "guide:car-paperwork-dates-organizer/body[4].steps[0].when"
+      },
+      "emphasis": [
+        "notice"
+      ],
+      "why": "Marker 1: \"Six weeks out\", with the first sentence of what the guide says to do then.",
+      "from": 71,
+      "dur": 97,
+      "ground": "ink",
+      "transition": "radial",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "Look for the notice."
+        ]
+      ]
+    },
+    {
+      "id": "when-2",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Start the renewal.",
+          "source": "guide:car-paperwork-dates-organizer/body[4].steps[1].what#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "Four weeks out",
+        "source": "guide:car-paperwork-dates-organizer/body[4].steps[1].when"
+      },
+      "emphasis": [
+        "renewal"
+      ],
+      "why": "Marker 2: \"Four weeks out\", with the first sentence of what the guide says to do then.",
+      "from": 156,
+      "dur": 89,
+      "ground": "light",
+      "transition": "zoomThrough",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "Start the renewal."
+        ]
+      ]
+    },
+    {
+      "id": "when-3",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Renewal should be paid or in the mail.",
+          "source": "guide:car-paperwork-dates-organizer/body[4].steps[2].what#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "Two weeks out",
+        "source": "guide:car-paperwork-dates-organizer/body[4].steps[2].when"
+      },
+      "emphasis": [
+        "Renewal"
+      ],
+      "why": "Marker 3: \"Two weeks out\", with the first sentence of what the guide says to do then.",
+      "from": 233,
+      "dur": 128,
+      "ground": "accent",
+      "transition": "radial",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "Renewal should be paid",
+          "or in the mail."
+        ]
+      ]
+    },
+    {
+      "id": "when-4",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Check the new paper is in hand.",
+          "source": "guide:car-paperwork-dates-organizer/body[4].steps[3].what#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "The day it runs out",
+        "source": "guide:car-paperwork-dates-organizer/body[4].steps[3].when"
+      },
+      "emphasis": [
+        "Check"
+      ],
+      "why": "Marker 4: \"The day it runs out\", with the first sentence of what the guide says to do then.",
+      "from": 349,
+      "dur": 136,
+      "ground": "light",
+      "transition": "radial",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "Check the new paper",
+          "is in hand."
+        ]
+      ]
+    },
+    {
+      "id": "tool",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Add a vehicle: what you call it and what it runs on.",
+        "source": "howItWorks[0]#0"
+      },
+      "screen": {
+        "src": "screens/vehicle-maintenance-companion-vehicles.png",
+        "pose": "float",
+        "focus": {
+          "at": 0.45,
+          "y": 187,
+          "h": 77,
+          "region": "car"
+        }
+      },
+      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"Vehicles\" (What you own and what you track on it: each car with its intervals, when it was last done, and a commuter with history unknown.) chosen because it is the real screen closest to \"Add a vehicle: what you call it and what it runs on. How to track car registrati\"; focus on \"Family car\".",
+      "eyebrow": {
+        "text": "Vehicle Maintenance Companion",
+        "source": "title"
+      },
+      "from": 473,
+      "dur": 186,
+      "ground": "ink",
+      "transition": "zoomThrough",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 84,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Vehicle Maintenance Companion",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/car-paperwork-dates-organizer",
+          "source": "guide:car-paperwork-dates-organizer/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 647,
+      "dur": 118,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "YouTube Short, 1080×1920, 18–45s, hook by 1.2s, sound on",
+      "because": "Search-adjacent audience that will watch a slightly longer explanation if it starts strong. Loops by default."
+    },
+    {
+      "topic": "Product",
+      "decision": "Vehicle Maintenance Companion: $34 (list $69), motif \"gauge\", calm personality, warm accent #b45309",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"How to track car registration and insurance renewals\" (draftpace.com/guides/car-paperwork-dates-organizer)",
+      "because": "Teaches from the guide first; Vehicle Maintenance Companion is the product the guide hands over to. 2 lists and timelines, 5 questions to draw from."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You own more than one vehicle, or a vehicle with a maintenance history you already know by heart but have never written down anywhere. / You have bought a used car or inherited one, and its real service history is genuinely unknown to you.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "In order: Walk the guide's own timeline, one marker at a time, then show the product that keeps it.",
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 3, goal fit 3, already used on YouTube Short ×8). Other candidates: The question people ask (-37.2)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"How to track car registration and insurance renewals\"",
+      "because": "The guide's timeline \"One renewal, week by week\": 4 of its 5 markers, in order."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"gauge\"",
+      "because": "Transitions follow the product's own identity motif, \"gauge\": a gauge sweeps, so scenes are revealed by a radial sweep."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → ink → light → accent",
+      "because": "Grounds light → ink → light → accent: a warm accent, so light grounds lead and the accent is saved for the turns."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Full sound design, mid-energy bed",
+      "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
+    },
+    {
+      "topic": "Length",
+      "decision": "25.5s, 7 scenes",
+      "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 18–45s."
+    }
+  ]
+}

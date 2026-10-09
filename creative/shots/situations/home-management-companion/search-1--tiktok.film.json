@@ -1,0 +1,319 @@
+{
+  "id": "sit-home-management-companion-search-1--tiktok",
+  "product": "home-management-companion",
+  "guide": "home-maintenance-checklist-by-month",
+  "situation": "searchedProblems[0].phrase",
+  "runtime": {
+    "min": 12,
+    "max": 35
+  },
+  "platform": "tiktok",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 640,
+  "structure": "situationWords",
+  "angle": {
+    "text": "I keep forgetting home maintenance",
+    "source": "searchedProblems[0].phrase"
+  },
+  "treatment": {
+    "voice": "native",
+    "camera": "dolly",
+    "transitions": [
+      "cut",
+      "whip",
+      "slideUp"
+    ],
+    "motif": "tag",
+    "grounds": [
+      "light",
+      "accent",
+      "light",
+      "ink"
+    ],
+    "pace": 0.85
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.24,
+    "energy": "high"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "quote",
+      "copy": [
+        {
+          "text": "I keep forgetting home maintenance",
+          "source": "searchedProblems[0].phrase"
+        }
+      ],
+      "emphasis": [
+        "maintenance"
+      ],
+      "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
+      "from": 0,
+      "dur": 57,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "I keep forgetting",
+          "home maintenance"
+        ]
+      ]
+    },
+    {
+      "id": "step-1",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Walk the outside once the snow is gone.",
+          "source": "guide:home-maintenance-checklist-by-month/body[1].steps[2].what#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "March",
+        "source": "guide:home-maintenance-checklist-by-month/body[1].steps[2].when"
+      },
+      "emphasis": [
+        "outside"
+      ],
+      "why": "What to do, in order, from the guide \"Home maintenance checklist by month (short version)\": \"March\".",
+      "from": 51,
+      "dur": 107,
+      "ground": "accent",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "Walk the outside",
+          "once the snow",
+          "is gone."
+        ]
+      ]
+    },
+    {
+      "id": "step-2",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Have the AC serviced if you haven't.",
+          "source": "guide:home-maintenance-checklist-by-month/body[1].steps[4].what#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "May",
+        "source": "guide:home-maintenance-checklist-by-month/body[1].steps[4].when"
+      },
+      "emphasis": [
+        "serviced"
+      ],
+      "why": "What to do, in order, from the guide \"Home maintenance checklist by month (short version)\": \"May\".",
+      "from": 152,
+      "dur": 100,
+      "ground": "light",
+      "transition": "whip",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "Have the AC",
+          "serviced if you",
+          "haven't."
+        ]
+      ]
+    },
+    {
+      "id": "step-3",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "A light month.",
+          "source": "guide:home-maintenance-checklist-by-month/body[1].steps[5].what#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "June",
+        "source": "guide:home-maintenance-checklist-by-month/body[1].steps[5].when"
+      },
+      "emphasis": [
+        "light"
+      ],
+      "why": "What to do, in order, from the guide \"Home maintenance checklist by month (short version)\": \"June\".",
+      "from": 246,
+      "dur": 71,
+      "ground": "ink",
+      "transition": "slideUp",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "A light month."
+        ]
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "It holds the timing for you and raises a job when it is worth doing, then goes quiet again. Nothing sits on screen permanently.",
+        "source": "searchedProblems[0].answer"
+      },
+      "screen": {
+        "src": "screens/home-management-companion-seasons.png",
+        "pose": "flat",
+        "focus": {
+          "at": 0.45,
+          "y": 82,
+          "h": 210,
+          "region": "season"
+        },
+        "scroll": []
+      },
+      "why": "How Home Base helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"Fall home maintenance checklist\" (This season's checklist: the jobs best done from September to November, by month.) chosen because it is the real screen closest to \"It holds the timing for you and raises a job when it is worth doing, then goes q\"; focus on \"Fall home maintenance checklist\".",
+      "eyebrow": {
+        "text": "Home Base",
+        "source": "title"
+      },
+      "from": 311,
+      "dur": 229,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 103,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Home Base",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/home-maintenance-checklist-by-month",
+          "source": "guide:home-maintenance-checklist-by-month/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 534,
+      "dur": 106,
+      "ground": "accent",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "TikTok, 1080×1920, 12–35s, hook by 0.8s, sound on",
+      "because": "Native, fast and plain-spoken; polish that looks like an ad gets skipped. Sound-on. Hook inside a second. The deepest bottom and right overlays of any placement."
+    },
+    {
+      "topic": "Product",
+      "decision": "Home Base: $49 (list $99), motif \"tag\", calm personality, cool accent #4f7a5c",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"I keep forgetting home maintenance\"",
+      "because": "One real moment from Home Base's listing (searchedProblems[0].phrase). The film is about this moment and how the product helps with it: \"It holds the timing for you and raises a job when it is worth doing, then goes quiet again. Nothing sits on screen permanently.\""
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"Home maintenance checklist by month (short version)\" (draftpace.com/guides/home-maintenance-checklist-by-month)",
+      "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You own or rent a home and would rather be told what needs you this week than keep a mental list you know is incomplete. / You want the boring, expensive things caught early: the water heater, the gutters, the outside tap before the first freeze.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "In their words: The moment typed the way a person searches it, then what to do about it, then the product doing it.",
+      "because": "Best fit for a awareness film on TikTok (platform fit 2, goal fit 3). Other candidates: Inside the tool (0.2), The moment (-2.4)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"I keep forgetting home maintenance\"",
+      "because": "A situation people search for, \"I keep forgetting home maintenance\", with the steps from \"Home maintenance checklist by month (short version)\", and how Home Base helps."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"tag\"",
+      "because": "Transitions follow the product's own identity motif, \"tag\": things in the home are tagged, so scenes rise like a tag being lifted. TikTok wants native editing, so hard cuts and whips lead."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"dolly\"",
+      "because": "Camera \"dolly\": constant forward movement for a high-energy feed."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → accent → light → ink",
+      "because": "Grounds light → accent → light → ink: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Full sound design, high-energy bed",
+      "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
+    },
+    {
+      "topic": "Length",
+      "decision": "21.3s, 6 scenes",
+      "because": "Each scene is held for the time its words take to read on TikTok (0.24s a word), inside 12–35s."
+    }
+  ]
+}

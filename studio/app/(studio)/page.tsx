@@ -4,7 +4,7 @@ import EmptyState from "@/design-system/EmptyState";
 import Badge from "@/design-system/Badge";
 import { CalendarCheck, Microphone, Sparkles, ArrowRight } from "@/design-system/Icon";
 import { summaries } from "~/lib/server/catalog";
-import { listGuides, listProducts, platforms } from "~/lib/server/engine";
+import { listGuides, listProducts } from "~/lib/server/engine";
 import { readState } from "~/lib/server/store";
 import { jobStatus } from "~/lib/server/jobs";
 import { channelStatus } from "~/lib/channels";
@@ -26,13 +26,12 @@ export default function TodayPage() {
   const approvedUnscheduled = approved.filter((f) => !f.scheduled);
   const rendered = films.filter((f) => f.rendered).length;
   const guides = listGuides();
-  const shortsFor = new Set(films.filter((f) => f.kind === "guide").map((f) => f.guide));
+  // A guide is covered when any film teaches from it: its own Short, or a situation film built on it.
+  const shortsFor = new Set(films.filter((f) => f.guide).map((f) => f.guide));
   const products = listProducts();
-  const allPlatforms = platforms();
-  const missing = products.flatMap((p) => allPlatforms.filter((pl) => !films.some((f) => f.kind === "product" && f.product === p.slug && f.platform === pl.id)).map((pl) => ({ product: p, platform: pl })));
   // Guides without a Short, from the areas with the fewest Shorts first, so coverage evens out.
   const perArea = new Map<string, number>();
-  films.filter((f) => f.kind === "guide").forEach((f) => { const g = guides.find((x) => x.slug === f.guide); if (g) perArea.set(g.area, (perArea.get(g.area) ?? 0) + 1); });
+  films.filter((f) => f.guide).forEach((f) => { const g = guides.find((x) => x.slug === f.guide); if (g) perArea.set(g.area, (perArea.get(g.area) ?? 0) + 1); });
   const nextGuides = guides
     .filter((g) => g.product && !shortsFor.has(g.slug) && g.locale !== "uk" && g.query)
     .sort((a, b) => (perArea.get(a.area) ?? 0) - (perArea.get(b.area) ?? 0) || a.title.localeCompare(b.title))
@@ -53,7 +52,7 @@ export default function TodayPage() {
       />
 
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-5">
-        <Stat label="Films planned" value={films.length} hint={`${films.filter((f) => f.kind === "product").length} product · ${films.filter((f) => f.kind === "guide").length} guide · ${films.filter((f) => f.kind === "voiceover").length} voice-over`} />
+        <Stat label="Films planned" value={films.length} hint={`${films.filter((f) => f.kind === "situation").length} situation · ${films.filter((f) => f.kind === "guide").length} guide · ${films.filter((f) => f.kind === "product").length + films.filter((f) => f.kind === "voiceover").length} other`} />
         <Stat label="Waiting for review" value={toReview.length} hint="Not yet approved or rejected" />
         <Stat label="Approved" value={approved.length} hint={`${approvedUnscheduled.length} not on the calendar`} />
         <Stat label="Rendered" value={`${rendered}`} hint={`of ${films.length}; previews need no render`} />
@@ -108,7 +107,7 @@ export default function TodayPage() {
       </div>
 
       <div className="mt-4 grid grid-cols-1 gap-4 xl:grid-cols-3">
-        <Panel className="xl:col-span-2" title="Worth making next" description={`${guides.length - shortsFor.size} guides have no Short yet. These come from the areas with the fewest, so every area gets a voice.`}>
+        <Panel className="xl:col-span-2" title="Worth making next" description={nextGuides.length ? `${guides.filter((g) => g.product && g.locale !== "uk" && !shortsFor.has(g.slug)).length} guides have no film yet. These come from the areas with the fewest, so every area gets a voice.` : "Every guide and every situation in every listing has a film. A new guide or a new line in a listing becomes a new film the next time the slate is planned."}>
           <ul className="divide-y divide-[var(--border)]">
             {nextGuides.map((g) => (
               <li key={g.slug} className="flex items-center justify-between gap-3 py-2.5">
@@ -120,9 +119,6 @@ export default function TodayPage() {
               </li>
             ))}
           </ul>
-          <p className="mt-3 text-caption text-[var(--muted)]">
-            {missing.length ? `${missing.length} product and placement pairs have no film yet.` : "Every product has a film on every placement."}
-          </p>
         </Panel>
 
         <Panel title="Channels" description={`${channels.filter((c) => c.connected).length} of ${channels.filter((c) => c.kind === "api").length} posting connections live`}
