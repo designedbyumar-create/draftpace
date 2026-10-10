@@ -20,7 +20,7 @@
  * a folder never holds a half-made video.
  */
 import { bundle } from "@remotion/bundler";
-import { renderMedia, selectComposition } from "@remotion/renderer";
+import { makeCancelSignal, renderMedia, selectComposition } from "@remotion/renderer";
 import { createServer } from "vite";
 import fs from "node:fs";
 import os from "node:os";
@@ -130,12 +130,43 @@ fs.mkdirSync(tmpDir, { recursive: true });
 
 // One render. The first try uses Remotion's own speed; if the browser falls over (it can on a Mac
 // short of memory), the retry renders one frame at a time with a fresh browser, slower but steady.
+// A browser that falls over can also just hang, so a render that makes no progress for STALL_MS is
+// abandoned rather than waited on forever.
+const STALL_MS = Number(process.env.DRAFTPACE_STALL_SECONDS ?? 240) * 1000;
 async function render(j, tmp, steady) {
-  const opts = { browserExecutable, serveUrl: bundled, ...(steady ? { timeoutInMilliseconds: 120000 } : {}) };
-  const composition = await selectComposition({ ...opts, id: `Film-${j.film.id}` });
-  await renderMedia({ ...opts, composition, codec: "h264", outputLocation: tmp, ...(steady ? { concurrency: 1 } : {}) });
+  const { cancelSignal, cancel } = makeCancelSignal();
+  let last = Date.now(), seen = "", watch;
+  const stalled = new Promise((_, reject) => {
+    watch = setInterval(() => {
+      if (Date.now() - last < STALL_MS) return;
+      cancel();
+      reject(new Error(`no progress for ${Math.round(STALL_MS / 60000)} minutes, the browser hung`));
+    }, 5000);
+  });
+  const work = (async () => {
+    const opts = { browserExecutable, serveUrl: bundled, ...(steady ? { timeoutInMilliseconds: 120000 } : {}) };
+    const composition = await selectComposition({ ...opts, id: `Film-${j.film.id}` });
+    last = Date.now();
+    await renderMedia({
+      ...opts, composition, codec: "h264", outputLocation: tmp, cancelSignal,
+      ...(steady ? { concurrency: 1 } : {}),
+      onProgress: (p) => {
+        const now = `${p.renderedFrames}/${p.encodedFrames}/${p.stitchStage}`;
+        if (now !== seen) { seen = now; last = Date.now(); }
+      },
+    });
+  })();
+  work.catch(() => {}); // when the watchdog gives up first, the abandoned render's own failure is not news
+  try {
+    await Promise.race([work, stalled]);
+  } finally {
+    clearInterval(watch);
+  }
   masterVideo(tmp);
 }
+
+// A crashed browser can fail in the background after its render was given up on; note it and carry on.
+process.on("unhandledRejection", (e) => log(`  (a closed browser reported: ${String(e?.message ?? e).split("\n")[0]})`));
 
 const skipped = [];
 const started = Date.now();
