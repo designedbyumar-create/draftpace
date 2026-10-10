@@ -16,6 +16,11 @@
       "promise": {
         "text": "Camp and school health forms: what to have ready",
         "source": "guide:school-and-camp-health-forms-what-to-have-ready/title"
+      },
+      "art": {
+        "motif": "books",
+        "why": "the carousel's topic: the moment and its guide name \"school\", \"camp\"",
+        "also": "document"
       }
     },
     {
@@ -33,7 +38,11 @@
           "text": "Have your answers on one page, and know which part only the doctor can fill in.",
           "source": "guide:school-and-camp-health-forms-what-to-have-ready/dek#1"
         }
-      ]
+      ],
+      "art": {
+        "motif": "books",
+        "why": "the slide names \"school\", \"camp\""
+      }
     },
     {
       "kind": "step",
@@ -57,7 +66,11 @@
       ],
       "emphasis": [
         "instructions"
-      ]
+      ],
+      "art": {
+        "motif": "calendar",
+        "why": "the slide names \"date\", \"year\""
+      }
     },
     {
       "kind": "step",
@@ -81,7 +94,11 @@
       ],
       "emphasis": [
         "calendar"
-      ]
+      ],
+      "art": {
+        "motif": "doctor",
+        "why": "the slide names \"visit\""
+      }
     },
     {
       "kind": "step",
@@ -105,7 +122,11 @@
       ],
       "emphasis": [
         "copying"
-      ]
+      ],
+      "art": {
+        "motif": "notebook",
+        "why": "the slide names \"write\", \"page\""
+      }
     },
     {
       "kind": "step",
@@ -133,7 +154,11 @@
       ],
       "emphasis": [
         "vaccines"
-      ]
+      ],
+      "art": {
+        "motif": "health",
+        "why": "the slide names \"health\", \"vaccin\", \"care\""
+      }
     },
     {
       "kind": "step",
@@ -161,7 +186,11 @@
       ],
       "emphasis": [
         "including"
-      ]
+      ],
+      "art": {
+        "motif": "pills",
+        "why": "the slide names \"medicine\", \"medication\", \"pharmac\", \"vitamin\""
+      }
     },
     {
       "kind": "help",
@@ -203,12 +232,24 @@
       "save": {
         "text": "Save this for later.",
         "source": "micro"
+      },
+      "art": {
+        "motif": "books",
+        "why": "the carousel's topic: the moment and its guide name \"school\", \"camp\""
       }
     }
   ],
   "notes": [
     "Cover: \"Camp and school health forms every year\" (searchedProblems[2].phrase), as people search it.",
     "Steps: 5 of 8 from the guide's numbered steps \"Work through it in this order\", one per slide, each with the guide's own explanation.",
-    "Help: \"A Forms sheet with the answers those forms ask for, in the order they ask, so you copy from one page instead of finding each fact again.\" (searchedProblems[2].answer), on screens/family-health-binder-workspace.png (\"Overview\")."
+    "Help: \"A Forms sheet with the answers those forms ask for, in the order they ask, so you copy from one page instead of finding each fact again.\" (searchedProblems[2].answer), on screens/family-health-binder-workspace.png (\"Overview\").",
+    "Illustration on the cover: books with document, because the carousel's topic: the moment and its guide name \"school\", \"camp\".",
+    "Illustration on the answer: books, because the slide names \"school\", \"camp\".",
+    "Illustration on the step: calendar, because the slide names \"date\", \"year\".",
+    "Illustration on the step: doctor, because the slide names \"visit\".",
+    "Illustration on the step: notebook, because the slide names \"write\", \"page\".",
+    "Illustration on the step: health, because the slide names \"health\", \"vaccin\", \"care\".",
+    "Illustration on the step: pills, because the slide names \"medicine\", \"medication\", \"pharmac\", \"vitamin\".",
+    "Illustration on the close: books, because the carousel's topic: the moment and its guide name \"school\", \"camp\"."
   ]
 }

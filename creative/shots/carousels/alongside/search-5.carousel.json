@@ -16,6 +16,11 @@
       "promise": {
         "text": "Life admin with brain fog: long covid, illness, grief",
         "source": "guide:life-admin-with-brain-fog/title"
+      },
+      "art": {
+        "motif": "mind",
+        "why": "the carousel's topic: the moment and its guide name \"brain\", \"fog\"",
+        "also": "steps"
       }
     },
     {
@@ -33,7 +38,11 @@
           "text": "A handoff note, task sizes, and call lines that don't depend on knowing why.",
           "source": "guide:life-admin-with-brain-fog/dek#1"
         }
-      ]
+      ],
+      "art": {
+        "motif": "phone",
+        "why": "the slide names \"call\""
+      }
     },
     {
       "kind": "step",
@@ -65,7 +74,11 @@
       ],
       "emphasis": [
         "outside"
-      ]
+      ],
+      "art": {
+        "motif": "mind",
+        "why": "the slide names \"head\""
+      }
     },
     {
       "kind": "step",
@@ -89,7 +102,11 @@
       ],
       "emphasis": [
         "physical"
-      ]
+      ],
+      "art": {
+        "motif": "target",
+        "why": "the slide names \"goal\""
+      }
     },
     {
       "kind": "step",
@@ -113,7 +130,11 @@
       ],
       "emphasis": [
         "stopped"
-      ]
+      ],
+      "art": {
+        "motif": "notebook",
+        "why": "the slide names \"record\""
+      }
     },
     {
       "kind": "step",
@@ -132,7 +153,11 @@
       "body": [],
       "emphasis": [
         "importance"
-      ]
+      ],
+      "art": {
+        "motif": "speech",
+        "why": "the slide names \"ask\""
+      }
     },
     {
       "kind": "step",
@@ -156,7 +181,11 @@
       ],
       "emphasis": [
         "yourself"
-      ]
+      ],
+      "art": {
+        "motif": "document",
+        "why": "the slide names \"will\""
+      }
     },
     {
       "kind": "help",
@@ -198,12 +227,24 @@
       "save": {
         "text": "Save this for later.",
         "source": "micro"
+      },
+      "art": {
+        "motif": "mind",
+        "why": "the carousel's topic: the moment and its guide name \"brain\", \"fog\""
       }
     }
   ],
   "notes": [
     "Cover: \"I have brain fog and can't face life admin\" (searchedProblems[4].phrase), as people search it.",
     "Steps: 5 of 6 from the guide's numbered steps \"Six adjustments\", one per slide, each with the guide's own explanation.",
-    "Help: \"Built for the difficulty rather than the diagnosis, and it never asks why holding a plan in your head is unreliable right now.\" (searchedProblems[4].answer), on screens/alongside-life.png (\"Everything you are holding\")."
+    "Help: \"Built for the difficulty rather than the diagnosis, and it never asks why holding a plan in your head is unreliable right now.\" (searchedProblems[4].answer), on screens/alongside-life.png (\"Everything you are holding\").",
+    "Illustration on the cover: mind with steps, because the carousel's topic: the moment and its guide name \"brain\", \"fog\".",
+    "Illustration on the answer: phone, because the slide names \"call\".",
+    "Illustration on the step: mind, because the slide names \"head\".",
+    "Illustration on the step: target, because the slide names \"goal\".",
+    "Illustration on the step: notebook, because the slide names \"record\".",
+    "Illustration on the step: speech, because the slide names \"ask\".",
+    "Illustration on the step: document, because the slide names \"will\".",
+    "Illustration on the close: mind, because the carousel's topic: the moment and its guide name \"brain\", \"fog\"."
   ]
 }

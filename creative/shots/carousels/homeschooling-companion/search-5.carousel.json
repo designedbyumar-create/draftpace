@@ -16,6 +16,11 @@
       "promise": {
         "text": "Homeschool evaluation: what to bring and how to prepare",
         "source": "guide:preparing-for-a-homeschool-evaluation/title"
+      },
+      "art": {
+        "motif": "books",
+        "why": "the carousel's topic: the moment and its guide name \"homeschool\", \"evaluat\"",
+        "also": "notebook"
       }
     },
     {
@@ -33,7 +38,11 @@
           "text": "Ask your own evaluator or state what it requires.",
           "source": "guide:preparing-for-a-homeschool-evaluation/dek#1"
         }
-      ]
+      ],
+      "art": {
+        "motif": "books",
+        "why": "the slide names \"evaluat\""
+      }
     },
     {
       "kind": "step",
@@ -48,7 +57,11 @@
       "body": [],
       "emphasis": [
         "evaluator"
-      ]
+      ],
+      "art": {
+        "motif": "clock",
+        "why": "the slide names \"time\""
+      }
     },
     {
       "kind": "step",
@@ -63,7 +76,11 @@
       "body": [],
       "emphasis": [
         "recently"
-      ]
+      ],
+      "art": {
+        "motif": "calendar",
+        "why": "the slide names \"date\", \"year\""
+      }
     },
     {
       "kind": "step",
@@ -78,7 +95,11 @@
       "body": [],
       "emphasis": [
         "curriculum"
-      ]
+      ],
+      "art": {
+        "motif": "books",
+        "why": "the slide names \"subject\", \"curriculum\""
+      }
     },
     {
       "kind": "step",
@@ -93,7 +114,11 @@
       "body": [],
       "emphasis": [
         "differently"
-      ]
+      ],
+      "art": {
+        "motif": "books",
+        "why": "the slide names \"subject\""
+      }
     },
     {
       "kind": "step",
@@ -108,7 +133,11 @@
       "body": [],
       "emphasis": [
         "evaluator"
-      ]
+      ],
+      "art": {
+        "motif": "document",
+        "why": "the slide names \"will\""
+      }
     },
     {
       "kind": "checklist",
@@ -142,7 +171,11 @@
           "source": "guide:preparing-for-a-homeschool-evaluation/body[3].items[5]#0"
         }
       ],
-      "ticks": true
+      "ticks": true,
+      "art": {
+        "motif": "books",
+        "why": "the slide names \"school\", \"subject\", \"sample\""
+      }
     },
     {
       "kind": "help",
@@ -184,6 +217,10 @@
       "save": {
         "text": "Save this for later.",
         "source": "micro"
+      },
+      "art": {
+        "motif": "books",
+        "why": "the carousel's topic: the moment and its guide name \"homeschool\", \"evaluat\""
       }
     }
   ],
@@ -191,6 +228,15 @@
     "Cover: \"I need to prepare for a homeschool evaluation\" (searchedProblems[4].phrase), as people search it.",
     "Steps: 5 of 5 from the guide's timeline \"One evening, in order\", one per slide, each with the guide's own explanation.",
     "Checklist: 6 items from \"What to bring\".",
-    "Help: \"Print the record for one child. It contains only what you chose to include, and it says what is in it rather than how it is going.\" (searchedProblems[4].answer), on screens/homeschooling-companion-record.png (\"What has happened.\")."
+    "Help: \"Print the record for one child. It contains only what you chose to include, and it says what is in it rather than how it is going.\" (searchedProblems[4].answer), on screens/homeschooling-companion-record.png (\"What has happened.\").",
+    "Illustration on the cover: books with notebook, because the carousel's topic: the moment and its guide name \"homeschool\", \"evaluat\".",
+    "Illustration on the answer: books, because the slide names \"evaluat\".",
+    "Illustration on the step: clock, because the slide names \"time\".",
+    "Illustration on the step: calendar, because the slide names \"date\", \"year\".",
+    "Illustration on the step: books, because the slide names \"subject\", \"curriculum\".",
+    "Illustration on the step: books, because the slide names \"subject\".",
+    "Illustration on the step: document, because the slide names \"will\".",
+    "Illustration on the checklist: books, because the slide names \"school\", \"subject\", \"sample\".",
+    "Illustration on the close: books, because the carousel's topic: the moment and its guide name \"homeschool\", \"evaluat\"."
   ]
 }

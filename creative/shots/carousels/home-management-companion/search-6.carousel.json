@@ -16,6 +16,11 @@
       "promise": {
         "text": "How to make a home binder: what goes in and what stays out",
         "source": "guide:how-to-make-a-home-binder/title"
+      },
+      "art": {
+        "motif": "house",
+        "why": "the carousel's topic: the moment and its guide name \"home\", \"homeowner\"",
+        "also": "toolbox"
       }
     },
     {
@@ -33,7 +38,11 @@
           "text": "Build one in an afternoon.",
           "source": "guide:how-to-make-a-home-binder/dek#1"
         }
-      ]
+      ],
+      "art": {
+        "motif": "binder",
+        "why": "the slide names \"binder\", \"section\""
+      }
     },
     {
       "kind": "step",
@@ -57,7 +66,11 @@
       ],
       "emphasis": [
         "electricity"
-      ]
+      ],
+      "art": {
+        "motif": "phone",
+        "why": "the slide names \"call\""
+      }
     },
     {
       "kind": "step",
@@ -72,7 +85,11 @@
       "body": [],
       "emphasis": [
         "recycling"
-      ]
+      ],
+      "art": {
+        "motif": "bulb",
+        "why": "the slide names \"bulb\", \"filter\""
+      }
     },
     {
       "kind": "step",
@@ -87,7 +104,11 @@
       "body": [],
       "emphasis": [
         "electrician"
-      ]
+      ],
+      "art": {
+        "motif": "toolbox",
+        "why": "the slide names \"plumber\", \"electrician\""
+      }
     },
     {
       "kind": "step",
@@ -102,7 +123,11 @@
       "body": [],
       "emphasis": [
         "running"
-      ]
+      ],
+      "art": {
+        "motif": "calendar",
+        "why": "the slide names \"date\""
+      }
     },
     {
       "kind": "step",
@@ -117,7 +142,11 @@
       "body": [],
       "emphasis": [
         "insurance"
-      ]
+      ],
+      "art": {
+        "motif": "house",
+        "why": "the slide names \"rent\", \"lease\""
+      }
     },
     {
       "kind": "checklist",
@@ -143,7 +172,11 @@
           "source": "guide:how-to-make-a-home-binder/body[3].items[3]#0"
         }
       ],
-      "ticks": false
+      "ticks": false,
+      "art": {
+        "motif": "binder",
+        "why": "the slide names \"binder\", \"folder\", \"tab\", \"section\", \"divider\", \"sheet protector\""
+      }
     },
     {
       "kind": "help",
@@ -185,6 +218,10 @@
       "save": {
         "text": "Save this for later.",
         "source": "micro"
+      },
+      "art": {
+        "motif": "house",
+        "why": "the carousel's topic: the moment and its guide name \"home\", \"homeowner\""
       }
     }
   ],
@@ -192,6 +229,15 @@
     "Cover: \"Homeownership feels like a full-time job\" (searchedProblems[5].phrase), as people search it.",
     "Steps: 5 of 5 from the guide's timeline \"The five sections, in the order to fill them in\", one per slide, each with the guide's own explanation.",
     "Checklist: 4 items from \"What to put the pages in\".",
-    "Help: \"One page answers whether anything needs you this week. When the answer is no, it says so and leaves it there.\" (searchedProblems[5].answer), on screens/home-management-companion-workspace.png (\"A couple of things need a look\")."
+    "Help: \"One page answers whether anything needs you this week. When the answer is no, it says so and leaves it there.\" (searchedProblems[5].answer), on screens/home-management-companion-workspace.png (\"A couple of things need a look\").",
+    "Illustration on the cover: house with toolbox, because the carousel's topic: the moment and its guide name \"home\", \"homeowner\".",
+    "Illustration on the answer: binder, because the slide names \"binder\", \"section\".",
+    "Illustration on the step: phone, because the slide names \"call\".",
+    "Illustration on the step: bulb, because the slide names \"bulb\", \"filter\".",
+    "Illustration on the step: toolbox, because the slide names \"plumber\", \"electrician\".",
+    "Illustration on the step: calendar, because the slide names \"date\".",
+    "Illustration on the step: house, because the slide names \"rent\", \"lease\".",
+    "Illustration on the checklist: binder, because the slide names \"binder\", \"folder\", \"tab\", \"section\", \"divider\", \"sheet protector\".",
+    "Illustration on the close: house, because the carousel's topic: the moment and its guide name \"home\", \"homeowner\"."
   ]
 }

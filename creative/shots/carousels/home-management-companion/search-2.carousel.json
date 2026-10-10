@@ -16,6 +16,11 @@
       "promise": {
         "text": "New house checklist: what to do in the first week",
         "source": "guide:first-week-after-buying-a-house/title"
+      },
+      "art": {
+        "motif": "house",
+        "why": "the carousel's topic: the moment and its guide name \"house\"",
+        "also": "checklist"
       }
     },
     {
@@ -29,7 +34,11 @@
           "text": "Shutoffs, meter readings, alarms, appliance labels and the inspection report: what to capture in the first week, while it is all in front of you.",
           "source": "guide:first-week-after-buying-a-house/dek#0"
         }
-      ]
+      ],
+      "art": {
+        "motif": "bulb",
+        "why": "the slide names \"appliance\", \"label\""
+      }
     },
     {
       "kind": "checklist",
@@ -59,7 +68,11 @@
           "source": "guide:first-week-after-buying-a-house/body[2].items[4]#0"
         }
       ],
-      "ticks": true
+      "ticks": true,
+      "art": {
+        "motif": "water",
+        "why": "the slide names \"water\", \"shutoff\""
+      }
     },
     {
       "kind": "checklist",
@@ -81,7 +94,11 @@
           "source": "guide:first-week-after-buying-a-house/body[4].items[4]#0"
         }
       ],
-      "ticks": true
+      "ticks": true,
+      "art": {
+        "motif": "bulb",
+        "why": "the slide names \"appliance\", \"furnace\", \"heater\", \"warranty\", \"serial\""
+      }
     },
     {
       "kind": "help",
@@ -123,6 +140,10 @@
       "save": {
         "text": "Save this for later.",
         "source": "micro"
+      },
+      "art": {
+        "motif": "house",
+        "why": "the carousel's topic: the moment and its guide name \"house\""
       }
     }
   ],
@@ -130,6 +151,11 @@
     "Cover: \"I just bought a house and have no idea what needs doing\" (searchedProblems[1].phrase), as people search it.",
     "Checklist: 5 items from \"Day one, before anything else\".",
     "Checklist: 3 items from \"Week one, while it's still easy to ask\".",
-    "Help: \"Tap what your home has across twelve areas and it tells you what each one needs and roughly when, before anything becomes a repair.\" (searchedProblems[1].answer), on screens/home-management-companion-workspace.png (\"A couple of things need a look\")."
+    "Help: \"Tap what your home has across twelve areas and it tells you what each one needs and roughly when, before anything becomes a repair.\" (searchedProblems[1].answer), on screens/home-management-companion-workspace.png (\"A couple of things need a look\").",
+    "Illustration on the cover: house with checklist, because the carousel's topic: the moment and its guide name \"house\".",
+    "Illustration on the answer: bulb, because the slide names \"appliance\", \"label\".",
+    "Illustration on the checklist: water, because the slide names \"water\", \"shutoff\".",
+    "Illustration on the checklist: bulb, because the slide names \"appliance\", \"furnace\", \"heater\", \"warranty\", \"serial\".",
+    "Illustration on the close: house, because the carousel's topic: the moment and its guide name \"house\"."
   ]
 }

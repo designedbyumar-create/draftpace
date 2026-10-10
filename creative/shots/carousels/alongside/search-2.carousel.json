@@ -16,6 +16,11 @@
       "promise": {
         "text": "ADHD task paralysis: what to do in the next ten minutes",
         "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/title"
+      },
+      "art": {
+        "motif": "steps",
+        "why": "the carousel's topic: the moment and its guide name \"start\", \"next\"",
+        "also": "clock"
       }
     },
     {
@@ -33,7 +38,11 @@
           "text": "A ten minute way out that shrinks the first step until it needs no decision and no motivation.",
           "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/dek#1"
         }
-      ]
+      ],
+      "art": {
+        "motif": "steps",
+        "why": "the slide names \"step\", \"first\", \"begin\", \"shrink\""
+      }
     },
     {
       "kind": "step",
@@ -65,7 +74,11 @@
       ],
       "emphasis": [
         "task"
-      ]
+      ],
+      "art": {
+        "motif": "notebook",
+        "why": "the slide names \"paper\""
+      }
     },
     {
       "kind": "step",
@@ -89,7 +102,11 @@
       ],
       "emphasis": [
         "sentence"
-      ]
+      ],
+      "art": {
+        "motif": "speech",
+        "why": "the slide names \"sentence\", \"words\""
+      }
     },
     {
       "kind": "step",
@@ -125,7 +142,11 @@
       ],
       "emphasis": [
         "physical"
-      ]
+      ],
+      "art": {
+        "motif": "notebook",
+        "why": "the slide names \"write\", \"note\", \"paper\", \"line\""
+      }
     },
     {
       "kind": "step",
@@ -149,7 +170,11 @@
       ],
       "emphasis": [
         "deciding"
-      ]
+      ],
+      "art": {
+        "motif": "clock",
+        "why": "the slide names \"minute\""
+      }
     },
     {
       "kind": "step",
@@ -177,7 +202,11 @@
       ],
       "emphasis": [
         "past"
-      ]
+      ],
+      "art": {
+        "motif": "steps",
+        "why": "the slide names \"step\""
+      }
     },
     {
       "kind": "help",
@@ -219,12 +248,24 @@
       "save": {
         "text": "Save this for later.",
         "source": "micro"
+      },
+      "art": {
+        "motif": "steps",
+        "why": "the carousel's topic: the moment and its guide name \"start\", \"next\""
       }
     }
   ],
   "notes": [
     "Cover: \"I know exactly what I need to do and still can't start\" (searchedProblems[1].phrase), as people search it.",
     "Steps: 5 of 6 from the guide's timeline \"The next ten minutes, minute by minute\", one per slide, each with the guide's own explanation.",
-    "Help: \"A walked-through version of the hard thing, one step on screen at a time, so starting is not a decision you have to make alone.\" (searchedProblems[1].answer), on screens/alongside-help.png (\"What do you need to do?\")."
+    "Help: \"A walked-through version of the hard thing, one step on screen at a time, so starting is not a decision you have to make alone.\" (searchedProblems[1].answer), on screens/alongside-help.png (\"What do you need to do?\").",
+    "Illustration on the cover: steps with clock, because the carousel's topic: the moment and its guide name \"start\", \"next\".",
+    "Illustration on the answer: steps, because the slide names \"step\", \"first\", \"begin\", \"shrink\".",
+    "Illustration on the step: notebook, because the slide names \"paper\".",
+    "Illustration on the step: speech, because the slide names \"sentence\", \"words\".",
+    "Illustration on the step: notebook, because the slide names \"write\", \"note\", \"paper\", \"line\".",
+    "Illustration on the step: clock, because the slide names \"minute\".",
+    "Illustration on the step: steps, because the slide names \"step\".",
+    "Illustration on the close: steps, because the carousel's topic: the moment and its guide name \"start\", \"next\"."
   ]
 }

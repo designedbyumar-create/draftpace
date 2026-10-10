@@ -44,8 +44,13 @@ function carouselFiles(dir) {
 }
 
 const carousels = carouselFiles(path.join(CREATIVE, "shots", "carousels")).map((f) => JSON.parse(fs.readFileSync(f, "utf8")));
-/** A fingerprint of a carousel's slides: a folder made from an older version of it is made again. */
-const version = (car) => crypto.createHash("sha256").update(JSON.stringify(car.slides)).digest("hex").slice(0, 12);
+/**
+ * A fingerprint of a carousel's slides and of how slides are drawn: a folder made from an older version of
+ * either (new words, or a change to the design or the illustrations) is made again.
+ */
+const DESIGN = ["src/compositions/formats/situation-carousel.tsx", "src/visual/illustrations.tsx", "src/visual/Backdrop.tsx", "src/theme-registry.ts"]
+  .map((f) => fs.readFileSync(path.join(CREATIVE, f), "utf8")).join("\n");
+const version = (car) => crypto.createHash("sha256").update(JSON.stringify(car.slides)).update(DESIGN).digest("hex").slice(0, 12);
 const productName = (car) => car.slides.find((s) => s.kind === "help").name.text;
 const jobs = carousels
   .map((car) => ({ car, name: clean(`${productName(car)} - ${short(car.slides[0].quote.text.replace(/\.$/, ""), 70)}`) }))

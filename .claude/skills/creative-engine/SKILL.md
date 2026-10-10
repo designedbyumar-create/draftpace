@@ -225,6 +225,19 @@ Rules the planner keeps, each guarded in `tests/carousel-guards.test.ts`:
 The format is `src/compositions/formats/situation-carousel.tsx` (one
 `<Still>` per slide, `Carousel-<id>-<nn>`).
 
+**Illustrations.** Every slide but the product's own (its real screen is
+the picture there) carries a spot illustration from
+`src/visual/illustrations.tsx`: about 40 flat drawings of everyday objects
+and moments (phone, boarding pass, pill bottle, car, calendar...), drawn in
+code in the product's own palette. They set the scene only, never a fake
+screen or a fake number. `director/illustration.ts` picks one per slide
+from the slide's own words (`MOTIF_WORDS`: whole words, `*` for a stem,
+`~` for an everyday word that counts for less), records why, and keeps
+runs of one picture to two slides. The cover is a two-picture scene of the
+carousel's topic; the close returns to it. Review the whole set with
+`node scripts/render-images.mjs Gallery-Illustrations`. Illustrations stay
+in creative: the app's design system has none, on purpose.
+
 ## Guide-driven Shorts: teach first, then the product
 
 `slate.json`'s `guides` list names a guide and a placement (today: each

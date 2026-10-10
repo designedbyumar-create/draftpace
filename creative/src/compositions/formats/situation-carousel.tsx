@@ -12,10 +12,11 @@ import { AbsoluteFill, useVideoConfig } from "remotion";
 import { LogoMark } from "@/design-system/Logo";
 import { ArrowRight, Check } from "@/design-system/Icon";
 import { monthlyMoneyResetDemo, SafeToSpendCard, NextActionCard } from "../../ui-adapter/monthlyMoneyReset";
-import { themeFor, postCssVars } from "../../theme-registry";
+import { themeFor, postCssVars, type ProductTheme } from "../../theme-registry";
 import { Backdrop } from "../../visual/Backdrop";
 import { isEmphasised } from "../../visual/Kinetic";
 import { Phone } from "../../visual/Phone";
+import { Illustration, type Palette } from "../../visual/illustrations";
 import type { Carousel, Slide } from "../../../director/carousel";
 
 export type CarouselSlideProps = { carousel: Carousel; index: number };
@@ -43,6 +44,14 @@ function Rich({ text, emphasis = [], accent = "var(--post-accent)" }: { text: st
   );
 }
 
+/** A slide's spot illustration, in the product's palette. */
+function Art({ motif, size, palette, style, solid }: { motif?: string; size: number; palette: Palette; style: React.CSSProperties; solid?: boolean }) {
+  if (!motif) return null;
+  return <div style={{ position: "absolute", ...style }}><Illustration motif={motif} palette={palette} size={size} ground={solid ? 1 : undefined} /></div>;
+}
+
+const paletteOf = (t: ProductTheme): Palette => ({ ink: t.ink, accent: t.accent, soft: t.accentSoft, paper: t.card });
+
 function Eyebrow({ children, color = "var(--post-accent)" }: { children: React.ReactNode; color?: string }) {
   return <p style={{ margin: 0, fontFamily: SANS, fontWeight: 600, fontSize: 24, letterSpacing: "0.2em", textTransform: "uppercase", color }}>{children}</p>;
 }
@@ -68,19 +77,22 @@ function Dots({ index, count, dark }: { index: number; count: number; dark?: boo
   );
 }
 
-function Cover({ s }: { s: Extract<Slide, { kind: "cover" }> }) {
-  const size = sizeFor(s.quote.text.length, [[34, 128], [48, 112], [62, 100], [80, 88]], 78);
+function Cover({ s, palette }: { s: Extract<Slide, { kind: "cover" }>; palette: Palette }) {
+  const size = sizeFor(s.quote.text.length, [[34, 112], [48, 100], [62, 90], [80, 80]], 72);
   const light = "color-mix(in srgb, var(--post-accent) 62%, white)";
   return (
     <AbsoluteFill style={{ background: "var(--post-ink)" }}>
       <AbsoluteFill style={{ background: "radial-gradient(circle at 88% 6%, color-mix(in srgb, var(--post-accent) 42%, transparent) 0%, transparent 52%), radial-gradient(circle at 0% 100%, color-mix(in srgb, var(--post-accent) 18%, transparent) 0%, transparent 46%)" }} />
-      <div style={{ position: "absolute", left: 88, right: 88, top: 60, bottom: 260, display: "flex", flexDirection: "column", justifyContent: "center" }}>
-        <div style={{ fontFamily: SERIF, fontWeight: 600, fontSize: 240, lineHeight: 0.7, color: light, marginLeft: -8, height: 130 }}>“</div>
+      {/* The scene: the topic's two pictures, set low so the words own the top of the slide. */}
+      <Art motif={s.art?.also} size={300} palette={palette} solid style={{ left: 420, bottom: 140 }} />
+      <Art motif={s.art?.motif} size={500} palette={palette} solid style={{ left: 30, bottom: 100 }} />
+      <div style={{ position: "absolute", left: 88, right: 88, top: 110 }}>
+        <div style={{ fontFamily: SERIF, fontWeight: 600, fontSize: 200, lineHeight: 0.7, color: light, marginLeft: -8, height: 110 }}>“</div>
         <p style={{ margin: 0, fontFamily: SERIF, fontWeight: 500, fontSize: size, lineHeight: 1.1, letterSpacing: "-0.015em", color: "var(--post-bg)", textWrap: "balance" }}>
           <Rich text={s.quote.text} emphasis={s.emphasis} accent={light} />
         </p>
-        <div style={{ width: 72, height: 4, borderRadius: 2, background: light, margin: "56px 0 28px" }} />
-        <p style={{ margin: 0, maxWidth: 820, fontFamily: SANS, fontWeight: 500, fontSize: 38, lineHeight: 1.35, color: "var(--post-bg)", opacity: 0.78, textWrap: "balance" }}>{s.promise.text}</p>
+        <div style={{ width: 72, height: 4, borderRadius: 2, background: light, margin: "44px 0 24px" }} />
+        <p style={{ margin: 0, maxWidth: 820, fontFamily: SANS, fontWeight: 500, fontSize: 36, lineHeight: 1.35, color: "var(--post-bg)", opacity: 0.78, textWrap: "balance" }}>{s.promise.text}</p>
       </div>
       <div style={{ position: "absolute", right: 88, bottom: 150, width: 92, height: 92, borderRadius: 46, background: light, display: "flex", alignItems: "center", justifyContent: "center", color: "var(--post-ink)" }}>
         <ArrowRight size={44} />
@@ -89,11 +101,13 @@ function Cover({ s }: { s: Extract<Slide, { kind: "cover" }> }) {
   );
 }
 
-function Answer({ s }: { s: Extract<Slide, { kind: "answer" }> }) {
+function Answer({ s, palette }: { s: Extract<Slide, { kind: "answer" }>; palette: Palette }) {
   const text = s.lines.map((l) => l.text).join(" ");
   const size = sizeFor(text.length, [[110, 82], [170, 72], [230, 64], [300, 56]], 50);
   return (
-    <div style={{ position: "absolute", left: 88, right: 88, top: 0, bottom: 200, display: "flex", flexDirection: "column", justifyContent: "center", gap: 40 }}>
+    <>
+    <Art motif={s.art?.motif} size={400} palette={palette} style={{ right: 60, bottom: 150 }} />
+    <div style={{ position: "absolute", left: 88, right: 88, top: 170, display: "flex", flexDirection: "column", gap: 40 }}>
       <Eyebrow>{s.eyebrow.text}</Eyebrow>
       <div>
         {s.lines.map((l, i) => (
@@ -101,22 +115,26 @@ function Answer({ s }: { s: Extract<Slide, { kind: "answer" }> }) {
         ))}
       </div>
     </div>
+    </>
   );
 }
 
-function Step({ s }: { s: Extract<Slide, { kind: "step" }> }) {
+function Step({ s, palette }: { s: Extract<Slide, { kind: "step" }>; palette: Palette }) {
   const head = sizeFor(s.head.text.length, [[36, 96], [70, 80], [110, 68]], 60);
   const bodyText = s.body.map((b) => b.text).join(" ");
   const body = sizeFor(bodyText.length, [[140, 44], [220, 40]], 37);
   const timeline = !s.number && !!s.eyebrow;
   return (
     // Anchored at the same height on every step, so swiping through them the number stays put and only the words change.
+    // The illustration sits beside the number, where the slide is otherwise empty.
+    <>
+    <Art motif={s.art?.motif} size={380} palette={palette} style={{ right: 40, top: 60 }} />
     <div style={{ position: "absolute", left: 88, right: 88, top: 150, bottom: 200, display: "flex", flexDirection: "column" }}>
-      <div style={{ display: "flex", flexDirection: "column", gap: 48 }}>
-        {s.number && s.eyebrow && <Eyebrow color="color-mix(in srgb, var(--post-ink) 55%, transparent)">{s.eyebrow.text}</Eyebrow>}
+      <div style={{ display: "flex", flexDirection: "column", gap: 48, minHeight: 280 }}>
+        {s.number && s.eyebrow && <div style={{ maxWidth: 600 }}><Eyebrow color="color-mix(in srgb, var(--post-ink) 55%, transparent)">{s.eyebrow.text}</Eyebrow></div>}
         {s.number && <div style={{ fontFamily: SERIF, fontWeight: 600, fontSize: 250, lineHeight: 0.78, color: "var(--post-accent)", letterSpacing: "-0.03em" }}>{s.number.text}</div>}
         {timeline && (
-          <span style={{ alignSelf: "flex-start", padding: "14px 28px", borderRadius: 999, background: "var(--post-accent)", color: "var(--post-card)", fontFamily: SANS, fontWeight: 600, fontSize: 30 }}>{s.eyebrow!.text}</span>
+          <span style={{ alignSelf: "flex-start", maxWidth: 560, padding: "14px 28px", borderRadius: 999, background: "var(--post-accent)", color: "var(--post-card)", fontFamily: SANS, fontWeight: 600, fontSize: 30 }}>{s.eyebrow!.text}</span>
         )}
       </div>
       <div style={{ marginTop: 52 }}>
@@ -128,15 +146,18 @@ function Step({ s }: { s: Extract<Slide, { kind: "step" }> }) {
         )}
       </div>
     </div>
+    </>
   );
 }
 
-function Checklist({ s }: { s: Extract<Slide, { kind: "checklist" }> }) {
+function Checklist({ s, palette }: { s: Extract<Slide, { kind: "checklist" }>; palette: Palette }) {
   const longest = Math.max(...s.items.map((i) => i.text.length));
   const size = s.items.length > 5 || longest > 80 ? 32 : 36;
   return (
-    <div style={{ position: "absolute", left: 88, right: 88, top: 0, bottom: 180, display: "flex", flexDirection: "column", justifyContent: "center", gap: 44 }}>
-      {s.eyebrow && <p style={{ margin: 0, fontFamily: SERIF, fontWeight: 600, fontSize: s.eyebrow.text.length > 32 ? 56 : 66, lineHeight: 1.08, letterSpacing: "-0.015em", color: "var(--post-ink)", textWrap: "balance" }}>{s.eyebrow.text}</p>}
+    <>
+    <Art motif={s.art?.motif} size={260} palette={palette} style={{ right: 50, top: 50 }} />
+    <div style={{ position: "absolute", left: 88, right: 88, top: 120, bottom: 180, display: "flex", flexDirection: "column", justifyContent: "center", gap: 44 }}>
+      {s.eyebrow && <p style={{ margin: 0, maxWidth: 640, fontFamily: SERIF, fontWeight: 600, fontSize: s.eyebrow.text.length > 32 ? 56 : 66, lineHeight: 1.08, letterSpacing: "-0.015em", color: "var(--post-ink)", textWrap: "balance" }}>{s.eyebrow.text}</p>}
       <div style={{ borderRadius: 32, background: "var(--post-card)", boxShadow: "0 30px 60px -36px rgba(16,20,24,0.35), 0 0 0 1px var(--post-line)", padding: "12px 40px" }}>
         {s.items.map((item, i) => (
           <div key={i} style={{ display: "flex", gap: 26, alignItems: "flex-start", padding: "26px 0", borderTop: i ? "1px solid var(--post-line)" : "none" }}>
@@ -152,6 +173,7 @@ function Checklist({ s }: { s: Extract<Slide, { kind: "checklist" }> }) {
         ))}
       </div>
     </div>
+    </>
   );
 }
 
@@ -182,10 +204,11 @@ function Help({ s }: { s: Extract<Slide, { kind: "help" }> }) {
   );
 }
 
-function Close({ s }: { s: Extract<Slide, { kind: "close" }> }) {
+function Close({ s, palette }: { s: Extract<Slide, { kind: "close" }>; palette: Palette }) {
   const title = sizeFor(s.title.text.length, [[40, 76], [64, 66]], 58);
   return (
     <div style={{ position: "absolute", left: 88, right: 88, top: 0, bottom: 160, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center", gap: 0 }}>
+      {s.art && <div style={{ marginBottom: 36 }}><Illustration motif={s.art.motif} palette={palette} size={320} /></div>}
       <Eyebrow>{s.eyebrow.text}</Eyebrow>
       <p style={{ margin: "30px 0 0", fontFamily: SERIF, fontWeight: 600, fontSize: title, lineHeight: 1.08, letterSpacing: "-0.015em", color: "var(--post-ink)", textWrap: "balance" }}>{s.title.text}</p>
       <p style={{ margin: "30px 0 0", maxWidth: 820, fontFamily: SANS, fontWeight: 500, fontSize: 27, lineHeight: 1.4, color: "color-mix(in srgb, var(--post-ink) 60%, transparent)", overflowWrap: "anywhere" }}>{s.url.text}</p>
@@ -201,14 +224,15 @@ export function SituationCarouselSlide({ carousel, index }: CarouselSlideProps) 
   const s = carousel.slides[index];
   const name = carousel.slides.find((x): x is Extract<Slide, { kind: "help" }> => x.kind === "help")!.name.text;
   const dark = s.kind === "cover";
+  const palette = paletteOf(theme);
   return (
     <AbsoluteFill style={{ ...postCssVars(theme), transform: `scale(${width / 1080})`, transformOrigin: "0 0", width: 1080, height: 1350 } as React.CSSProperties}>
-      {dark ? <Cover s={s} /> : <Backdrop frame={0} motion={0} />}
-      {s.kind === "answer" && <Answer s={s} />}
-      {s.kind === "step" && <Step s={s} />}
-      {s.kind === "checklist" && <Checklist s={s} />}
+      {s.kind === "cover" ? <Cover s={s} palette={palette} /> : <Backdrop frame={0} motion={0} />}
+      {s.kind === "answer" && <Answer s={s} palette={palette} />}
+      {s.kind === "step" && <Step s={s} palette={palette} />}
+      {s.kind === "checklist" && <Checklist s={s} palette={palette} />}
       {s.kind === "help" && <Help s={s} />}
-      {s.kind === "close" && <Close s={s} />}
+      {s.kind === "close" && <Close s={s} palette={palette} />}
       {/* The help slide's phone runs off the bottom edge; the brand sits on a soft fade so it stays readable over it. */}
       {s.kind === "help" && <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 300, background: "linear-gradient(to top, var(--post-bg) 42%, transparent)" }} />}
       <Brand name={name} dark={dark} />

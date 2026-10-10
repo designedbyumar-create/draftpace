@@ -7,9 +7,11 @@
 import { describe, expect, it } from "vitest";
 import fs from "node:fs";
 import path from "node:path";
-import { planCarousels, carouselCopy, resolveCarouselSource, POINTS_ELSEWHERE, CAROUSEL_MICROCOPY, CAROUSELS_PER_PRODUCT, type Carousel, type Slide } from "../director/carousel";
+import { planCarousels, artText, carouselCopy, resolveCarouselSource, POINTS_ELSEWHERE, CAROUSEL_MICROCOPY, CAROUSELS_PER_PRODUCT, type Carousel, type Slide } from "../director/carousel";
 import { guideBySlug, guideSourceLinks, productForGuide } from "../director/guide";
 import { SHOP_LISTINGS } from "../src/shop-listings";
+import { MOTIFS } from "../src/visual/illustrations";
+import { MOTIF_WORDS, MAX_RUN, MIN_SCORE, rankMotifs } from "../director/illustration";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const carousels = planCarousels();
@@ -116,6 +118,47 @@ describe("Situation carousels", () => {
       expect(help.ui.src.startsWith(`screens/${car.product}-`), `${car.id} shows ${help.ui.src}`).toBe(true);
       expect(fs.existsSync(path.join(ROOT, "public", help.ui.src)), `${help.ui.src} is not on disk`).toBe(true);
     }
+  });
+
+  it("illustrate every slide but the product's own with a drawing that exists, chosen for a stated reason", () => {
+    expect(Object.keys(MOTIF_WORDS).sort(), "every illustration the matcher can pick is drawn, and every drawing can be picked").toEqual([...MOTIFS].sort());
+    for (const car of carousels) {
+      for (const [i, s] of car.slides.entries()) {
+        if (s.kind === "help") { expect("art" in s, `${car.id}: the product slide shows its real screen, not a drawing`).toBe(false); continue; }
+        expect(s.art, `${car.id} slide ${i + 1} (${s.kind}) has no illustration`).toBeDefined();
+        expect(MOTIFS, `${car.id} slide ${i + 1}: no drawing "${s.art!.motif}"`).toContain(s.art!.motif);
+        if (s.art!.also) expect(MOTIFS).toContain(s.art!.also);
+        expect(s.art!.why.length, `${car.id} slide ${i + 1}: no reason recorded`).toBeGreaterThan(10);
+      }
+      expect(car.slides[0].kind === "cover" && car.slides[0].art?.also, `${car.id}: the cover's scene has one picture`).toBeTruthy();
+    }
+  });
+
+  it("give a slide the picture its words name, and never more than two slides in a row the same picture", () => {
+    for (const car of carousels) {
+      let prev: string | undefined, run = 0;
+      for (const s of car.slides) {
+        if (s.kind === "help") { prev = undefined; run = 0; continue; }
+        run = s.art!.motif === prev ? run + 1 : 1;
+        prev = s.art!.motif;
+        expect(run, `${car.id}: ${run} slides in a row show ${prev}`).toBeLessThanOrEqual(MAX_RUN);
+        // A step or summary whose words name something drawable shows one of the things it names.
+        if (s.kind === "step" || s.kind === "answer") {
+          const text = artText(s);
+          const named = rankMotifs(text).filter((r) => r.score >= MIN_SCORE).map((r) => r.motif);
+          if (named.length && s.art!.why.startsWith("the slide names")) expect(named, `${car.id}: "${text.slice(0, 50)}" shows ${s.art!.motif}`).toContain(s.art!.motif);
+        }
+      }
+    }
+  });
+
+  it("match the obvious cases: a phone call to the phone, a flight to the plane, a medicine to the bottle", () => {
+    expect(rankMotifs("Call the airline from the queue.")[0].motif).toBe("phone");
+    expect(rankMotifs("My flight is delayed and I have a connection")[0].motif).toBe("plane");
+    expect(rankMotifs("List every medicine, vitamin and supplement from the labels.")[0].motif).toBe("pills");
+    expect(rankMotifs("Let each child's pace and curriculum stay fully separate.")[0].motif, "a child's curriculum is schoolwork, not a hotel stay").toBe("books");
+    expect(rankMotifs("Where the data plate hides on a fridge")[0].motif, "an appliance's data plate is not a car's number plate").toBe("bulb");
+    expect(rankMotifs("Write it.").filter((r) => r.score >= MIN_SCORE), "one everyday word names no picture").toEqual([]);
   });
 
   it("are the carousels committed in shots/carousels: re-run `node scripts/carousels.mjs` after changing a listing, a guide or the planner", () => {

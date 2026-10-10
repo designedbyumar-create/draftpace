@@ -16,6 +16,11 @@
       "promise": {
         "text": "How to keep track of maintenance on two cars",
         "source": "guide:two-cars-one-household-maintenance/title"
+      },
+      "art": {
+        "motif": "car",
+        "why": "the carousel's topic: the moment and its guide name \"car\"",
+        "also": "magnifier"
       }
     },
     {
@@ -33,7 +38,11 @@
           "text": "Keep a separate record for each car, label them by plate or name, and check both together once a month.",
           "source": "guide:two-cars-one-household-maintenance/dek#1"
         }
-      ]
+      ],
+      "art": {
+        "motif": "car",
+        "why": "the slide names \"car\""
+      }
     },
     {
       "kind": "step",
@@ -61,7 +70,11 @@
       ],
       "emphasis": [
         "label"
-      ]
+      ],
+      "art": {
+        "motif": "bulb",
+        "why": "the slide names \"label\""
+      }
     },
     {
       "kind": "step",
@@ -80,7 +93,11 @@
       "body": [],
       "emphasis": [
         "notebook"
-      ]
+      ],
+      "art": {
+        "motif": "binder",
+        "why": "the slide names \"tab\", \"section\""
+      }
     },
     {
       "kind": "step",
@@ -99,7 +116,11 @@
       "body": [],
       "emphasis": [
         "intervals"
-      ]
+      ],
+      "art": {
+        "motif": "clock",
+        "why": "the slide names \"interval\""
+      }
     },
     {
       "kind": "step",
@@ -123,7 +144,11 @@
       ],
       "emphasis": [
         "label"
-      ]
+      ],
+      "art": {
+        "motif": "notebook",
+        "why": "the slide names \"write\", \"log\", \"line\""
+      }
     },
     {
       "kind": "step",
@@ -147,7 +172,11 @@
       ],
       "emphasis": [
         "odometers"
-      ]
+      ],
+      "art": {
+        "motif": "calendar",
+        "why": "the slide names \"date\", \"day\", \"month\", \"sunday\""
+      }
     },
     {
       "kind": "help",
@@ -189,12 +218,24 @@
       "save": {
         "text": "Save this for later.",
         "source": "micro"
+      },
+      "art": {
+        "motif": "car",
+        "why": "the carousel's topic: the moment and its guide name \"car\""
       }
     }
   ],
   "notes": [
     "Cover: \"I have two cars and lose track of which needs what\" (searchedProblems[5].phrase), as people search it.",
     "Steps: 5 of 6 from the guide's numbered steps \"How to set it up\", one per slide, each with the guide's own explanation.",
-    "Help: \"Both sit in the same ranked list, most urgent first, each item saying which vehicle it belongs to.\" (searchedProblems[5].answer), on screens/vehicle-maintenance-companion-vehicles.png (\"Vehicles\")."
+    "Help: \"Both sit in the same ranked list, most urgent first, each item saying which vehicle it belongs to.\" (searchedProblems[5].answer), on screens/vehicle-maintenance-companion-vehicles.png (\"Vehicles\").",
+    "Illustration on the cover: car with magnifier, because the carousel's topic: the moment and its guide name \"car\".",
+    "Illustration on the answer: car, because the slide names \"car\".",
+    "Illustration on the step: bulb, because the slide names \"label\".",
+    "Illustration on the step: binder, because the slide names \"tab\", \"section\".",
+    "Illustration on the step: clock, because the slide names \"interval\".",
+    "Illustration on the step: notebook, because the slide names \"write\", \"log\", \"line\".",
+    "Illustration on the step: calendar, because the slide names \"date\", \"day\", \"month\", \"sunday\".",
+    "Illustration on the close: car, because the carousel's topic: the moment and its guide name \"car\"."
   ]
 }

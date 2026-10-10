@@ -16,6 +16,11 @@
       "promise": {
         "text": "Life admin binder: what to include, in 8 sections",
         "source": "guide:life-admin-binder-what-goes-in-it/title"
+      },
+      "art": {
+        "motif": "calendar",
+        "why": "the carousel's topic: the moment and its guide name \"tomorrow\"",
+        "also": "binder"
       }
     },
     {
@@ -29,7 +34,11 @@
           "text": "What goes in a life admin binder: eight tabs, a filled sample page, what to leave out, and why a short finished binder beats a long empty one.",
           "source": "guide:life-admin-binder-what-goes-in-it/dek#0"
         }
-      ]
+      ],
+      "art": {
+        "motif": "binder",
+        "why": "the slide names \"binder\", \"tab\""
+      }
     },
     {
       "kind": "step",
@@ -48,7 +57,11 @@
       "body": [],
       "emphasis": [
         "dividers"
-      ]
+      ],
+      "art": {
+        "motif": "binder",
+        "why": "the slide names \"binder\", \"tab\", \"divider\""
+      }
     },
     {
       "kind": "step",
@@ -76,7 +89,11 @@
       ],
       "emphasis": [
         "medical"
-      ]
+      ],
+      "art": {
+        "motif": "health",
+        "why": "the slide names \"medical\", \"care\""
+      }
     },
     {
       "kind": "step",
@@ -95,7 +112,11 @@
       "body": [],
       "emphasis": [
         "under"
-      ]
+      ],
+      "art": {
+        "motif": "document",
+        "why": "the slide names \"will\""
+      }
     },
     {
       "kind": "step",
@@ -119,7 +140,11 @@
       ],
       "emphasis": [
         "registered"
-      ]
+      ],
+      "art": {
+        "motif": "envelope",
+        "why": "the slide names \"email\""
+      }
     },
     {
       "kind": "help",
@@ -161,12 +186,23 @@
       "save": {
         "text": "Save this for later.",
         "source": "micro"
+      },
+      "art": {
+        "motif": "calendar",
+        "why": "the carousel's topic: the moment and its guide name \"tomorrow\""
       }
     }
   ],
   "notes": [
     "Cover: \"Nobody would know where to find anything if I died tomorrow\" (searchedProblems[5].phrase), as people search it.",
     "Steps: 4 of 7 from the guide's numbered steps \"Build it in this order\", one per slide, each with the guide's own explanation.",
-    "Help: \"A handoff check answers that scenario by scenario, by what somebody would be trying to do, and names the one thing worth fixing first.\" (searchedProblems[5].answer), on screens/personal-life-affairs-companion-printables.png (\"Nothing in it yet, and you can still print it.\")."
+    "Help: \"A handoff check answers that scenario by scenario, by what somebody would be trying to do, and names the one thing worth fixing first.\" (searchedProblems[5].answer), on screens/personal-life-affairs-companion-printables.png (\"Nothing in it yet, and you can still print it.\").",
+    "Illustration on the cover: calendar with binder, because the carousel's topic: the moment and its guide name \"tomorrow\".",
+    "Illustration on the answer: binder, because the slide names \"binder\", \"tab\".",
+    "Illustration on the step: binder, because the slide names \"binder\", \"tab\", \"divider\".",
+    "Illustration on the step: health, because the slide names \"medical\", \"care\".",
+    "Illustration on the step: document, because the slide names \"will\".",
+    "Illustration on the step: envelope, because the slide names \"email\".",
+    "Illustration on the close: calendar, because the carousel's topic: the moment and its guide name \"tomorrow\"."
   ]
 }

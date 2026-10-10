@@ -16,6 +16,11 @@
       "promise": {
         "text": "How to make a phone call you keep avoiding",
         "source": "guide:how-to-make-a-phone-call-you-have-been-avoiding/title"
+      },
+      "art": {
+        "motif": "phone",
+        "why": "the carousel's topic: the moment and its guide name \"phone\", \"call\"",
+        "also": "mind"
       }
     },
     {
@@ -33,7 +38,11 @@
           "text": "Prepare five things on paper, write the first sentence out, and know when you can stop.",
           "source": "guide:how-to-make-a-phone-call-you-have-been-avoiding/dek#1"
         }
-      ]
+      ],
+      "art": {
+        "motif": "notebook",
+        "why": "the slide names \"write\", \"paper\""
+      }
     },
     {
       "kind": "step",
@@ -61,7 +70,11 @@
       ],
       "emphasis": [
         "line"
-      ]
+      ],
+      "art": {
+        "motif": "phone",
+        "why": "the slide names \"phone\", \"call\""
+      }
     },
     {
       "kind": "step",
@@ -93,7 +106,11 @@
       ],
       "emphasis": [
         "result"
-      ]
+      ],
+      "art": {
+        "motif": "target",
+        "why": "the slide names \"result\", \"want\""
+      }
     },
     {
       "kind": "step",
@@ -121,7 +138,11 @@
       ],
       "emphasis": [
         "reference"
-      ]
+      ],
+      "art": {
+        "motif": "ticket",
+        "why": "the slide names \"booking\", \"reference\""
+      }
     },
     {
       "kind": "step",
@@ -153,7 +174,11 @@
       ],
       "emphasis": [
         "facts"
-      ]
+      ],
+      "art": {
+        "motif": "calendar",
+        "why": "the slide names \"date\""
+      }
     },
     {
       "kind": "step",
@@ -181,7 +206,11 @@
       ],
       "emphasis": [
         "sentence"
-      ]
+      ],
+      "art": {
+        "motif": "speech",
+        "why": "the slide names \"sentence\""
+      }
     },
     {
       "kind": "checklist",
@@ -211,7 +240,11 @@
           "source": "guide:how-to-make-a-phone-call-you-have-been-avoiding/body[4].items[4]#0"
         }
       ],
-      "ticks": true
+      "ticks": true,
+      "art": {
+        "motif": "notebook",
+        "why": "the slide names \"write\", \"page\", \"line\""
+      }
     },
     {
       "kind": "help",
@@ -253,6 +286,10 @@
       "save": {
         "text": "Save this for later.",
         "source": "micro"
+      },
+      "art": {
+        "motif": "phone",
+        "why": "the carousel's topic: the moment and its guide name \"phone\", \"call\""
       }
     }
   ],
@@ -260,6 +297,15 @@
     "Cover: \"I've been avoiding a phone call for weeks\" (searchedProblems[2].phrase), as people search it.",
     "Steps: 5 of 5 from the guide's numbered steps \"How to write each of the five\", one per slide, each with the guide's own explanation.",
     "Checklist: 5 items from \"Set up the room\".",
-    "Help: \"An opening line, the outcome you want, and the two things not to forget, held on screen while you make it.\" (searchedProblems[2].answer), on screens/alongside-life.png (\"Everything you are holding\")."
+    "Help: \"An opening line, the outcome you want, and the two things not to forget, held on screen while you make it.\" (searchedProblems[2].answer), on screens/alongside-life.png (\"Everything you are holding\").",
+    "Illustration on the cover: phone with mind, because the carousel's topic: the moment and its guide name \"phone\", \"call\".",
+    "Illustration on the answer: notebook, because the slide names \"write\", \"paper\".",
+    "Illustration on the step: phone, because the slide names \"phone\", \"call\".",
+    "Illustration on the step: target, because the slide names \"result\", \"want\".",
+    "Illustration on the step: ticket, because the slide names \"booking\", \"reference\".",
+    "Illustration on the step: calendar, because the slide names \"date\".",
+    "Illustration on the step: speech, because the slide names \"sentence\".",
+    "Illustration on the checklist: notebook, because the slide names \"write\", \"page\", \"line\".",
+    "Illustration on the close: phone, because the carousel's topic: the moment and its guide name \"phone\", \"call\"."
   ]
 }

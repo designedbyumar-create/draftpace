@@ -16,6 +16,11 @@
       "promise": {
         "text": "Beneficiary vs will: which one decides who gets it?",
         "source": "guide:beneficiary-forms-override-your-will/title"
+      },
+      "art": {
+        "motif": "document",
+        "why": "the carousel's topic: the moment and its guide name \"form\", \"will\"",
+        "also": "bank"
       }
     },
     {
@@ -33,7 +38,11 @@
           "text": "What passes how, and how to check yours.",
           "source": "guide:beneficiary-forms-override-your-will/dek#1"
         }
-      ]
+      ],
+      "art": {
+        "motif": "bank",
+        "why": "the slide names \"401\", \"ira\""
+      }
     },
     {
       "kind": "checklist",
@@ -59,7 +68,11 @@
           "source": "guide:beneficiary-forms-override-your-will/body[4].items[4]#0"
         }
       ],
-      "ticks": true
+      "ticks": true,
+      "art": {
+        "motif": "bank",
+        "why": "the slide names \"bank\", \"account\", \"401\", \"retirement\""
+      }
     },
     {
       "kind": "help",
@@ -101,12 +114,20 @@
       "save": {
         "text": "Save this for later.",
         "source": "micro"
+      },
+      "art": {
+        "motif": "document",
+        "why": "the carousel's topic: the moment and its guide name \"form\", \"will\""
       }
     }
   ],
   "notes": [
     "Cover: \"My pension goes to whoever is named on the form, not my will\" (searchedProblems[2].phrase), as people search it.",
     "Checklist: 4 items from \"Check your own forms, in this order\".",
-    "Help: \"Who is named on the forms that override a will is one of the first things it raises, because it is the one most often years out of date.\" (searchedProblems[2].answer), on screens/personal-life-affairs-companion-affairs.png (\"What you have established so far.\")."
+    "Help: \"Who is named on the forms that override a will is one of the first things it raises, because it is the one most often years out of date.\" (searchedProblems[2].answer), on screens/personal-life-affairs-companion-affairs.png (\"What you have established so far.\").",
+    "Illustration on the cover: document with bank, because the carousel's topic: the moment and its guide name \"form\", \"will\".",
+    "Illustration on the answer: bank, because the slide names \"401\", \"ira\".",
+    "Illustration on the checklist: bank, because the slide names \"bank\", \"account\", \"401\", \"retirement\".",
+    "Illustration on the close: document, because the carousel's topic: the moment and its guide name \"form\", \"will\"."
   ]
 }

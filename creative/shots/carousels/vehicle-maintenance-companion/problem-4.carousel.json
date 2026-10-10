@@ -16,6 +16,11 @@
       "promise": {
         "text": "Selling your car: how to present your service history",
         "source": "guide:selling-your-car-with-a-service-history/title"
+      },
+      "art": {
+        "motif": "car",
+        "why": "the carousel's topic: the moment and its guide name \"car\"",
+        "also": "document"
       }
     },
     {
@@ -33,7 +38,11 @@
           "text": "What to put on the page, what a record you kept yourself can and can't show, and how to print it.",
           "source": "guide:selling-your-car-with-a-service-history/dek#1"
         }
-      ]
+      ],
+      "art": {
+        "motif": "notebook",
+        "why": "the slide names \"page\", \"record\""
+      }
     },
     {
       "kind": "step",
@@ -61,7 +70,11 @@
       ],
       "emphasis": [
         "Collect"
-      ]
+      ],
+      "art": {
+        "motif": "receipt",
+        "why": "the slide names \"receipt\", \"statement\", \"invoice\""
+      }
     },
     {
       "kind": "step",
@@ -89,7 +102,11 @@
       ],
       "emphasis": [
         "odometer"
-      ]
+      ],
+      "art": {
+        "motif": "toolbox",
+        "why": "the slide names \"job\""
+      }
     },
     {
       "kind": "step",
@@ -113,7 +130,11 @@
       ],
       "emphasis": [
         "gaps"
-      ]
+      ],
+      "art": {
+        "motif": "magnifier",
+        "why": "the slide names \"gap\", \"where\""
+      }
     },
     {
       "kind": "step",
@@ -132,7 +153,11 @@
       "body": [],
       "emphasis": [
         "receipts"
-      ]
+      ],
+      "art": {
+        "motif": "receipt",
+        "why": "the slide names \"receipt\""
+      }
     },
     {
       "kind": "step",
@@ -156,7 +181,11 @@
       ],
       "emphasis": [
         "odometer"
-      ]
+      ],
+      "art": {
+        "motif": "car",
+        "why": "the slide names \"odometer\", \"mileage\""
+      }
     },
     {
       "kind": "help",
@@ -198,12 +227,24 @@
       "save": {
         "text": "Save this for later.",
         "source": "micro"
+      },
+      "art": {
+        "motif": "car",
+        "why": "the carousel's topic: the moment and its guide name \"car\""
       }
     }
   ],
   "notes": [
     "Cover: \"You have no proof the car was looked after when it is time to sell it.\" (problemsSolved[3].problem), as the listing describes the moment.",
     "Steps: 5 of 6 from the guide's numbered steps \"How to put the page together\", one per slide, each with the guide's own explanation.",
-    "Help: \"Every service you record is kept with its day, mileage, who did it and what it cost, and prints as a service record that says plainly it is your own.\" (problemsSolved[3].solution), on screens/vehicle-maintenance-companion-history.png (\"History\")."
+    "Help: \"Every service you record is kept with its day, mileage, who did it and what it cost, and prints as a service record that says plainly it is your own.\" (problemsSolved[3].solution), on screens/vehicle-maintenance-companion-history.png (\"History\").",
+    "Illustration on the cover: car with document, because the carousel's topic: the moment and its guide name \"car\".",
+    "Illustration on the answer: notebook, because the slide names \"page\", \"record\".",
+    "Illustration on the step: receipt, because the slide names \"receipt\", \"statement\", \"invoice\".",
+    "Illustration on the step: toolbox, because the slide names \"job\".",
+    "Illustration on the step: magnifier, because the slide names \"gap\", \"where\".",
+    "Illustration on the step: receipt, because the slide names \"receipt\".",
+    "Illustration on the step: car, because the slide names \"odometer\", \"mileage\".",
+    "Illustration on the close: car, because the carousel's topic: the moment and its guide name \"car\"."
   ]
 }

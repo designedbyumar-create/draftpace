@@ -16,6 +16,11 @@
       "promise": {
         "text": "Doctor appointment checklist for the day before",
         "source": "guide:doctor-appointment-prep-checklist/title"
+      },
+      "art": {
+        "motif": "doctor",
+        "why": "the carousel's topic: the moment and its guide name \"doctor\", \"appointment\"",
+        "also": "checklist"
       }
     },
     {
@@ -33,7 +38,11 @@
           "text": "A paperwork list, not medical advice.",
           "source": "guide:doctor-appointment-prep-checklist/dek#1"
         }
-      ]
+      ],
+      "art": {
+        "motif": "doctor",
+        "why": "the slide names \"doctor\", \"visit\""
+      }
     },
     {
       "kind": "step",
@@ -53,7 +62,11 @@
       ],
       "emphasis": [
         "questions"
-      ]
+      ],
+      "art": {
+        "motif": "notebook",
+        "why": "the slide names \"write\""
+      }
     },
     {
       "kind": "step",
@@ -73,7 +86,11 @@
       ],
       "emphasis": [
         "supplement"
-      ]
+      ],
+      "art": {
+        "motif": "pills",
+        "why": "the slide names \"medicine\", \"vitamin\""
+      }
     },
     {
       "kind": "step",
@@ -93,7 +110,11 @@
       ],
       "emphasis": [
         "insurance"
-      ]
+      ],
+      "art": {
+        "motif": "card",
+        "why": "the slide names \"card\""
+      }
     },
     {
       "kind": "step",
@@ -108,7 +129,11 @@
       "body": [],
       "emphasis": [
         "questions"
-      ]
+      ],
+      "art": {
+        "motif": "doctor",
+        "why": "the slide names \"nurse\""
+      }
     },
     {
       "kind": "step",
@@ -128,7 +153,11 @@
       ],
       "emphasis": [
         "important"
-      ]
+      ],
+      "art": {
+        "motif": "speech",
+        "why": "the slide names \"question\""
+      }
     },
     {
       "kind": "help",
@@ -170,12 +199,24 @@
       "save": {
         "text": "Save this for later.",
         "source": "micro"
+      },
+      "art": {
+        "motif": "doctor",
+        "why": "the carousel's topic: the moment and its guide name \"doctor\", \"appointment\""
       }
     }
   ],
   "notes": [
     "Cover: \"What should I bring to a doctor's appointment\" (searchedProblems[1].phrase), as people search it.",
     "Steps: 5 of 7 from the guide's timeline \"Before, during and after\", one per slide, each with the guide's own explanation.",
-    "Help: \"A Visit page for that person: your questions with a box to tick each, what is taken now, recent symptoms, and room for notes.\" (searchedProblems[1].answer), on screens/family-health-binder-printables.png (\"Print\")."
+    "Help: \"A Visit page for that person: your questions with a box to tick each, what is taken now, recent symptoms, and room for notes.\" (searchedProblems[1].answer), on screens/family-health-binder-printables.png (\"Print\").",
+    "Illustration on the cover: doctor with checklist, because the carousel's topic: the moment and its guide name \"doctor\", \"appointment\".",
+    "Illustration on the answer: doctor, because the slide names \"doctor\", \"visit\".",
+    "Illustration on the step: notebook, because the slide names \"write\".",
+    "Illustration on the step: pills, because the slide names \"medicine\", \"vitamin\".",
+    "Illustration on the step: card, because the slide names \"card\".",
+    "Illustration on the step: doctor, because the slide names \"nurse\".",
+    "Illustration on the step: speech, because the slide names \"question\".",
+    "Illustration on the close: doctor, because the carousel's topic: the moment and its guide name \"doctor\", \"appointment\"."
   ]
 }

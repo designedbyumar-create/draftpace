@@ -16,6 +16,11 @@
       "promise": {
         "text": "Flight delayed with a connection: what to do first",
         "source": "guide:flight-delayed-with-a-connection-what-to-do-first/title"
+      },
+      "art": {
+        "motif": "plane",
+        "why": "the carousel's topic: the moment and its guide name \"flight\", \"connection\"",
+        "also": "clock"
       }
     },
     {
@@ -33,7 +38,11 @@
           "text": "Do the arithmetic, join the line and call at the same time, and ask for a specific flight, not for help.",
           "source": "guide:flight-delayed-with-a-connection-what-to-do-first/dek#1"
         }
-      ]
+      ],
+      "art": {
+        "motif": "clock",
+        "why": "the slide names \"time\", \"delay\""
+      }
     },
     {
       "kind": "step",
@@ -53,7 +62,11 @@
       ],
       "emphasis": [
         "connecting"
-      ]
+      ],
+      "art": {
+        "motif": "plane",
+        "why": "the slide names \"flight\""
+      }
     },
     {
       "kind": "step",
@@ -73,7 +86,11 @@
       ],
       "emphasis": [
         "airline"
-      ]
+      ],
+      "art": {
+        "motif": "phone",
+        "why": "the slide names \"airline app\""
+      }
     },
     {
       "kind": "step",
@@ -93,7 +110,11 @@
       ],
       "emphasis": [
         "transfer"
-      ]
+      ],
+      "art": {
+        "motif": "plane",
+        "why": "the slide names \"gate\""
+      }
     },
     {
       "kind": "step",
@@ -113,7 +134,11 @@
       ],
       "emphasis": [
         "airline"
-      ]
+      ],
+      "art": {
+        "motif": "phone",
+        "why": "the slide names \"phone\", \"call\""
+      }
     },
     {
       "kind": "step",
@@ -128,7 +153,11 @@
       "body": [],
       "emphasis": [
         "different"
-      ]
+      ],
+      "art": {
+        "motif": "plane",
+        "why": "the slide names \"flight\""
+      }
     },
     {
       "kind": "checklist",
@@ -158,7 +187,11 @@
           "source": "guide:flight-delayed-with-a-connection-what-to-do-first/body[7].items[4]#0"
         }
       ],
-      "ticks": true
+      "ticks": true,
+      "art": {
+        "motif": "ticket",
+        "why": "the slide names \"booking\", \"reference\""
+      }
     },
     {
       "kind": "help",
@@ -200,6 +233,10 @@
       "save": {
         "text": "Save this for later.",
         "source": "micro"
+      },
+      "art": {
+        "motif": "plane",
+        "why": "the carousel's topic: the moment and its guide name \"flight\", \"connection\""
       }
     }
   ],
@@ -207,6 +244,15 @@
     "Cover: \"My flight is delayed and I have a connection\" (searchedProblems[1].phrase), as people search it.",
     "Steps: 5 of 6 from the guide's timeline \"What to do, in order\", one per slide, each with the guide's own explanation.",
     "Checklist: 5 items from \"What to have in hand\".",
-    "Help: \"The connection, the transfer and whatever was booked after them are shown as potentially affected, with a walked-through call for any that need one.\" (searchedProblems[1].answer), on screens/travel-companion-itinerary.png (\"Itinerary\")."
+    "Help: \"The connection, the transfer and whatever was booked after them are shown as potentially affected, with a walked-through call for any that need one.\" (searchedProblems[1].answer), on screens/travel-companion-itinerary.png (\"Itinerary\").",
+    "Illustration on the cover: plane with clock, because the carousel's topic: the moment and its guide name \"flight\", \"connection\".",
+    "Illustration on the answer: clock, because the slide names \"time\", \"delay\".",
+    "Illustration on the step: plane, because the slide names \"flight\".",
+    "Illustration on the step: phone, because the slide names \"airline app\".",
+    "Illustration on the step: plane, because the slide names \"gate\".",
+    "Illustration on the step: phone, because the slide names \"phone\", \"call\".",
+    "Illustration on the step: plane, because the slide names \"flight\".",
+    "Illustration on the checklist: ticket, because the slide names \"booking\", \"reference\".",
+    "Illustration on the close: plane, because the carousel's topic: the moment and its guide name \"flight\", \"connection\"."
   ]
 }

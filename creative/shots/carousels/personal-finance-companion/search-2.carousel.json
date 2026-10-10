@@ -16,6 +16,11 @@
       "promise": {
         "text": "How to find all your subscriptions, including annual ones",
         "source": "guide:how-to-find-every-subscription-you-are-paying-for/title"
+      },
+      "art": {
+        "motif": "card",
+        "why": "the carousel's topic: the moment and its guide name \"subscription\"",
+        "also": "receipt"
       }
     },
     {
@@ -29,7 +34,11 @@
           "text": "A twelve month statement sweep, plus the places charges hide: Apple and Google lists, PayPal, old cards and free trials that turned into paid plans.",
           "source": "guide:how-to-find-every-subscription-you-are-paying-for/dek#0"
         }
-      ]
+      ],
+      "art": {
+        "motif": "receipt",
+        "why": "the slide names \"statement\", \"charge\""
+      }
     },
     {
       "kind": "step",
@@ -57,7 +66,11 @@
       ],
       "emphasis": [
         "statements"
-      ]
+      ],
+      "art": {
+        "motif": "card",
+        "why": "the slide names \"card\", \"credit\", \"debit\""
+      }
     },
     {
       "kind": "step",
@@ -85,7 +98,11 @@
       ],
       "emphasis": [
         "statement"
-      ]
+      ],
+      "art": {
+        "motif": "magnifier",
+        "why": "the slide names \"search\", \"scan\""
+      }
     },
     {
       "kind": "help",
@@ -127,12 +144,21 @@
       "save": {
         "text": "Save this for later.",
         "source": "micro"
+      },
+      "art": {
+        "motif": "card",
+        "why": "the carousel's topic: the moment and its guide name \"subscription\""
       }
     }
   ],
   "notes": [
     "Cover: \"I keep getting charged for subscriptions I forgot about\" (searchedProblems[1].phrase), as people search it.",
     "Steps: 2 of 8 from the guide's numbered steps \"How to run the sweep\", one per slide, each with the guide's own explanation.",
-    "Help: \"Subscriptions are their own area, with amounts and renewal dates, and a missing renewal date shows up in Attention rather than being quietly ignored.\" (searchedProblems[1].answer), on screens/personal-finance-companion-records.png (\"Records\")."
+    "Help: \"Subscriptions are their own area, with amounts and renewal dates, and a missing renewal date shows up in Attention rather than being quietly ignored.\" (searchedProblems[1].answer), on screens/personal-finance-companion-records.png (\"Records\").",
+    "Illustration on the cover: card with receipt, because the carousel's topic: the moment and its guide name \"subscription\".",
+    "Illustration on the answer: receipt, because the slide names \"statement\", \"charge\".",
+    "Illustration on the step: card, because the slide names \"card\", \"credit\", \"debit\".",
+    "Illustration on the step: magnifier, because the slide names \"search\", \"scan\".",
+    "Illustration on the close: card, because the carousel's topic: the moment and its guide name \"subscription\"."
   ]
 }

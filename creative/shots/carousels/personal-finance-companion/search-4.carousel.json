@@ -16,6 +16,11 @@
       "promise": {
         "text": "Monthly bills list: include the bills that are not monthly",
         "source": "guide:monthly-bills-list/title"
+      },
+      "art": {
+        "motif": "checklist",
+        "why": "the carousel's topic: the moment and its guide name \"list\"",
+        "also": "chart"
       }
     },
     {
@@ -29,7 +34,11 @@
           "text": "A six column list, plus the math for turning quarterly and annual bills into a monthly amount: $612 every three months is $204 a month.",
           "source": "guide:monthly-bills-list/dek#0"
         }
-      ]
+      ],
+      "art": {
+        "motif": "calendar",
+        "why": "the slide names \"month\", \"annual\""
+      }
     },
     {
       "kind": "step",
@@ -57,7 +66,11 @@
       ],
       "emphasis": [
         "statements"
-      ]
+      ],
+      "art": {
+        "motif": "receipt",
+        "why": "the slide names \"statement\", \"charge\""
+      }
     },
     {
       "kind": "step",
@@ -76,7 +89,11 @@
       "body": [],
       "emphasis": [
         "monthly"
-      ]
+      ],
+      "art": {
+        "motif": "checklist",
+        "why": "the slide names nothing drawable; the carousel's topic (the moment and its guide name \"list\")"
+      }
     },
     {
       "kind": "step",
@@ -100,7 +117,11 @@
       ],
       "emphasis": [
         "monthly"
-      ]
+      ],
+      "art": {
+        "motif": "calendar",
+        "why": "the slide names \"date\", \"day\", \"month\", \"due\""
+      }
     },
     {
       "kind": "help",
@@ -142,12 +163,22 @@
       "save": {
         "text": "Save this for later.",
         "source": "micro"
+      },
+      "art": {
+        "motif": "checklist",
+        "why": "the carousel's topic: the moment and its guide name \"list\""
       }
     }
   ],
   "notes": [
     "Cover: \"I need a bill tracker that shows what I have paid\" (searchedProblems[3].phrase), as people search it.",
     "Steps: 3 of 4 from the guide's numbered steps \"Build it in four passes\", one per slide, each with the guide's own explanation.",
-    "Help: \"Bills you tick paid for the month, with what is left to pay worked out from the ticks.\" (searchedProblems[3].answer), on screens/personal-finance-companion-bills.png (\"Bills\")."
+    "Help: \"Bills you tick paid for the month, with what is left to pay worked out from the ticks.\" (searchedProblems[3].answer), on screens/personal-finance-companion-bills.png (\"Bills\").",
+    "Illustration on the cover: checklist with chart, because the carousel's topic: the moment and its guide name \"list\".",
+    "Illustration on the answer: calendar, because the slide names \"month\", \"annual\".",
+    "Illustration on the step: receipt, because the slide names \"statement\", \"charge\".",
+    "Illustration on the step: checklist, because the slide names nothing drawable; the carousel's topic (the moment and its guide name \"list\").",
+    "Illustration on the step: calendar, because the slide names \"date\", \"day\", \"month\", \"due\".",
+    "Illustration on the close: checklist, because the carousel's topic: the moment and its guide name \"list\"."
   ]
 }

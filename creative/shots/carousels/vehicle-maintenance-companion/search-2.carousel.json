@@ -16,6 +16,11 @@
       "promise": {
         "text": "What to tell a mechanic before the work starts",
         "source": "guide:what-to-tell-a-mechanic-before-work-starts/title"
+      },
+      "art": {
+        "motif": "wrench",
+        "why": "the carousel's topic: the moment and its guide name \"mechanic\", \"shop\"",
+        "also": "shield"
       }
     },
     {
@@ -33,7 +38,11 @@
           "text": "Scripts to say and a page to hand over.",
           "source": "guide:what-to-tell-a-mechanic-before-work-starts/dek#1"
         }
-      ]
+      ],
+      "art": {
+        "motif": "speech",
+        "why": "the slide names \"say\", \"script\", \"ask\""
+      }
     },
     {
       "kind": "step",
@@ -61,7 +70,11 @@
       ],
       "emphasis": [
         "specific"
-      ]
+      ],
+      "art": {
+        "motif": "wrench",
+        "why": "the slide names \"shop\", \"oil\", \"tire\""
+      }
     },
     {
       "kind": "step",
@@ -80,7 +93,11 @@
       "body": [],
       "emphasis": [
         "during"
-      ]
+      ],
+      "art": {
+        "motif": "target",
+        "why": "the slide names \"limit\""
+      }
     },
     {
       "kind": "step",
@@ -104,7 +121,11 @@
       ],
       "emphasis": [
         "diagnosis"
-      ]
+      ],
+      "art": {
+        "motif": "wrench",
+        "why": "the slide names \"shop\", \"repair\""
+      }
     },
     {
       "kind": "step",
@@ -123,7 +144,11 @@
       "body": [],
       "emphasis": [
         "estimated"
-      ]
+      ],
+      "art": {
+        "motif": "phone",
+        "why": "the slide names \"text\""
+      }
     },
     {
       "kind": "step",
@@ -142,7 +167,11 @@
       "body": [],
       "emphasis": [
         "odometer"
-      ]
+      ],
+      "art": {
+        "motif": "calendar",
+        "why": "the slide names \"date\""
+      }
     },
     {
       "kind": "checklist",
@@ -168,7 +197,11 @@
           "source": "guide:what-to-tell-a-mechanic-before-work-starts/body[8].items[3]#0"
         }
       ],
-      "ticks": true
+      "ticks": true,
+      "art": {
+        "motif": "target",
+        "why": "the slide names \"most you\""
+      }
     },
     {
       "kind": "help",
@@ -210,6 +243,10 @@
       "save": {
         "text": "Save this for later.",
         "source": "micro"
+      },
+      "art": {
+        "motif": "wrench",
+        "why": "the carousel's topic: the moment and its guide name \"mechanic\", \"shop\""
       }
     }
   ],
@@ -217,6 +254,15 @@
     "Cover: \"How do I stop a shop doing work I didn't authorize\" (searchedProblems[1].phrase), as people search it.",
     "Steps: 5 of 6 from the guide's numbered steps \"The short version, in order\", one per slide, each with the guide's own explanation.",
     "Checklist: 4 items from \"Before you hand over the keys\".",
-    "Help: \"Hand them a dated, mileage-stamped page saying what you are requesting today and that nothing else is authorized without a conversation first.\" (searchedProblems[1].answer), on screens/vehicle-maintenance-companion-printables.png (\"Print\")."
+    "Help: \"Hand them a dated, mileage-stamped page saying what you are requesting today and that nothing else is authorized without a conversation first.\" (searchedProblems[1].answer), on screens/vehicle-maintenance-companion-printables.png (\"Print\").",
+    "Illustration on the cover: wrench with shield, because the carousel's topic: the moment and its guide name \"mechanic\", \"shop\".",
+    "Illustration on the answer: speech, because the slide names \"say\", \"script\", \"ask\".",
+    "Illustration on the step: wrench, because the slide names \"shop\", \"oil\", \"tire\".",
+    "Illustration on the step: target, because the slide names \"limit\".",
+    "Illustration on the step: wrench, because the slide names \"shop\", \"repair\".",
+    "Illustration on the step: phone, because the slide names \"text\".",
+    "Illustration on the step: calendar, because the slide names \"date\".",
+    "Illustration on the checklist: target, because the slide names \"most you\".",
+    "Illustration on the close: wrench, because the carousel's topic: the moment and its guide name \"mechanic\", \"shop\"."
   ]
 }

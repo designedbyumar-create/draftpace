@@ -8,6 +8,7 @@ import { FILMS as DIRECTED } from "./films.generated";
 import { VOICEOVER_FILMS } from "./voiceover-films.generated";
 import { SituationCarouselSlide } from "./compositions/formats/situation-carousel";
 import { CAROUSELS } from "./carousels.generated";
+import { IllustrationGallery } from "./compositions/dev/illustration-gallery";
 
 const FILMS = [...DIRECTED, ...VOICEOVER_FILMS];
 
@@ -103,6 +104,10 @@ export const RemotionRoot: React.FC = () => {
           />
         ))
       )}
+      {/* The spot illustration set, per product palette: for review only. */}
+      {["travel-companion", "monthly-money-reset", "vehicle-maintenance-companion"].map((product) => (
+        <Still key={product} id={`Gallery-Illustrations-${product}`} component={IllustrationGallery} width={1960} height={1560} defaultProps={{ product }} />
+      ))}
       {/* Every situation carousel (scripts/carousels.mjs), one 4:5 still per slide: the size Instagram and Facebook show in full. */}
       {CAROUSELS.flatMap((carousel) =>
         carousel.slides.map((_, index) => (

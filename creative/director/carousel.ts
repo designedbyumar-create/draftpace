@@ -21,6 +21,7 @@ import { guideMaterial, guideSourceLinks, resolveGuideSource, type GuideMaterial
 import { resolveSource, sentences, type CopyUnit, type ScreenAsset } from "./dossier";
 import { dossierFor, situationBriefs } from "./run";
 import { relevance, screenAbout, emphasisOf, situationKey, LIVE_ABOUT } from "./direct";
+import { slideMotif, topicMotifs } from "./illustration";
 
 export type Copy = { text: string; source: string };
 
@@ -34,13 +35,16 @@ export const CAROUSEL_MICROCOPY = [
   "1", "2", "3", "4", "5", "6", "7", "8", "9",
 ] as const;
 
+/** A spot illustration (src/visual/illustrations.tsx) chosen from the slide's own words; the cover's scene has a second one. */
+export type Art = { motif: string; why: string; also?: string };
+
 export type Slide =
-  | { kind: "cover"; quote: Copy; emphasis: string[]; promise: Copy }
-  | { kind: "answer"; eyebrow: Copy; lines: Copy[] }
-  | { kind: "step"; eyebrow?: Copy; number?: Copy; head: Copy; body: Copy[]; emphasis: string[] }
-  | { kind: "checklist"; eyebrow?: Copy; items: Copy[]; ticks: boolean }
+  | { kind: "cover"; quote: Copy; emphasis: string[]; promise: Copy; art?: Art }
+  | { kind: "answer"; eyebrow: Copy; lines: Copy[]; art?: Art }
+  | { kind: "step"; eyebrow?: Copy; number?: Copy; head: Copy; body: Copy[]; emphasis: string[]; art?: Art }
+  | { kind: "checklist"; eyebrow?: Copy; items: Copy[]; ticks: boolean; art?: Art }
   | { kind: "help"; eyebrow: Copy; name: Copy; line: Copy; ui: { kind: "screen"; src: string } | { kind: "live"; live: "safeToSpendCard" | "nextActionCard" } }
-  | { kind: "close"; eyebrow: Copy; title: Copy; url: Copy; link: Copy; save: Copy };
+  | { kind: "close"; eyebrow: Copy; title: Copy; url: Copy; link: Copy; save: Copy; art?: Art };
 
 export type Carousel = {
   id: string;
@@ -187,6 +191,7 @@ export function planCarousel(product: string, situation: string, guide: string, 
     help(product, situation, usedScreens, notes),
     { kind: "close", eyebrow: micro("The full guide"), title: promise, url: { text: m.url, source: `guide:${guide}/url` }, link: micro("Free to read. Link in bio."), save: micro("Save this for later.") },
   ];
+  illustrate(product, quote.text, m.title, slides, notes);
   return { id: `car-${product}-${situationKey(situation)}`, product, guide, situation, slides, notes };
 }
 
@@ -205,6 +210,36 @@ function coverEmphasis(product: string, text: string, title: string): string[] {
   if (!words.length) return emphasisOf(text);
   const score = (w: string) => (inTitle.has(w.toLowerCase()) ? 2 : 0) + (1 - df(w.toLowerCase())) + Math.min(w.length, 12) * 0.04;
   return [words.reduce((a, b) => (score(b) > score(a) ? b : a))];
+}
+
+/** The words a slide's illustration is chosen from: a step's heading counts twice, since it says what the step is about. */
+export function artText(s: Slide): string {
+  switch (s.kind) {
+    case "answer": return s.lines.map((l) => l.text).join(" ");
+    case "step": return `${s.head.text} ${s.head.text} ${s.body.map((b) => b.text).join(" ")}`;
+    case "checklist": return `${s.eyebrow?.text ?? ""} ${s.items.map((i) => i.text).join(" ")}`;
+    default: return "";
+  }
+}
+
+/** Gives every slide but the product's own (its real screen is the picture there) the illustration its words name. */
+function illustrate(product: string, moment: string, guideTitle: string, slides: Slide[], notes: string[]) {
+  const topic = topicMotifs(product, moment, guideTitle);
+  let previous: string | undefined;
+  let run = 0;
+  for (const s of slides) {
+    if (s.kind === "help") { previous = undefined; run = 0; continue; }
+    if (s.kind === "cover" || s.kind === "close") {
+      // The cover sets the scene with the topic's two pictures; the close returns to the first, so the carousel ends where it began.
+      s.art = { motif: topic[0].motif, why: `the carousel's topic: ${topic[0].why}`, ...(s.kind === "cover" && topic[1] ? { also: topic[1].motif } : {}) };
+    } else {
+      const pick = slideMotif(artText(s), previous, topic, run);
+      s.art = { motif: pick.motif, why: pick.why };
+    }
+    run = s.art.motif === previous ? run + 1 : 1;
+    previous = s.art.motif;
+    notes.push(`Illustration on the ${s.kind}: ${s.art.motif}${s.art.also ? ` with ${s.art.also}` : ""}, because ${s.art.why}.`);
+  }
 }
 
 const usableGuide = (slug: string | undefined): slug is string => !!slug && GUIDES.some((x) => x.slug === slug && x.locale !== "uk");

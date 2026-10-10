@@ -16,6 +16,11 @@
       "promise": {
         "text": "How to tell if your homeschooler actually learned it",
         "source": "guide:how-to-check-if-your-child-learned-something/title"
+      },
+      "art": {
+        "motif": "books",
+        "why": "the carousel's topic: the moment and its guide name \"learn\", \"child\"",
+        "also": "speech"
       }
     },
     {
@@ -33,7 +38,11 @@
           "text": "Ask four questions a week or more later, write the answers down, and know when a result is not enough to say.",
           "source": "guide:how-to-check-if-your-child-learned-something/dek#1"
         }
-      ]
+      ],
+      "art": {
+        "motif": "speech",
+        "why": "the slide names \"say\", \"ask\", \"question\""
+      }
     },
     {
       "kind": "step",
@@ -61,7 +70,11 @@
       ],
       "emphasis": [
         "teach"
-      ]
+      ],
+      "art": {
+        "motif": "books",
+        "why": "the slide names \"teach\""
+      }
     },
     {
       "kind": "step",
@@ -85,7 +98,11 @@
       ],
       "emphasis": [
         "narrate"
-      ]
+      ],
+      "art": {
+        "motif": "speech",
+        "why": "the slide names \"words\""
+      }
     },
     {
       "kind": "step",
@@ -113,7 +130,11 @@
       ],
       "emphasis": [
         "reasoning"
-      ]
+      ],
+      "art": {
+        "motif": "speech",
+        "why": "the slide names \"ask\", \"question\""
+      }
     },
     {
       "kind": "step",
@@ -132,7 +153,11 @@
       "body": [],
       "emphasis": [
         "different"
-      ]
+      ],
+      "art": {
+        "motif": "books",
+        "why": "the slide names \"workbook\""
+      }
     },
     {
       "kind": "step",
@@ -156,7 +181,11 @@
       ],
       "emphasis": [
         "demonstration"
-      ]
+      ],
+      "art": {
+        "motif": "clock",
+        "why": "the slide names \"minute\""
+      }
     },
     {
       "kind": "help",
@@ -198,12 +227,24 @@
       "save": {
         "text": "Save this for later.",
         "source": "micro"
+      },
+      "art": {
+        "motif": "books",
+        "why": "the carousel's topic: the moment and its guide name \"learn\", \"child\""
       }
     }
   ],
   "notes": [
     "Cover: \"How do I know if my child actually learned something\" (searchedProblems[2].phrase), as people search it.",
     "Steps: 5 of 5 from the guide's numbered steps \"Five ways to check it landed\", one per slide, each with the guide's own explanation.",
-    "Help: \"A check of eight questions you supply and mark, reported one topic at a time, including the honest answer that there is not enough to say.\" (searchedProblems[2].answer), on screens/homeschooling-companion-record.png (\"What has happened.\")."
+    "Help: \"A check of eight questions you supply and mark, reported one topic at a time, including the honest answer that there is not enough to say.\" (searchedProblems[2].answer), on screens/homeschooling-companion-record.png (\"What has happened.\").",
+    "Illustration on the cover: books with speech, because the carousel's topic: the moment and its guide name \"learn\", \"child\".",
+    "Illustration on the answer: speech, because the slide names \"say\", \"ask\", \"question\".",
+    "Illustration on the step: books, because the slide names \"teach\".",
+    "Illustration on the step: speech, because the slide names \"words\".",
+    "Illustration on the step: speech, because the slide names \"ask\", \"question\".",
+    "Illustration on the step: books, because the slide names \"workbook\".",
+    "Illustration on the step: clock, because the slide names \"minute\".",
+    "Illustration on the close: books, because the carousel's topic: the moment and its guide name \"learn\", \"child\"."
   ]
 }

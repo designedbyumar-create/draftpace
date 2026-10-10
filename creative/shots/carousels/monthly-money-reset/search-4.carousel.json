@@ -16,6 +16,11 @@
       "promise": {
         "text": "Available vs current balance: which one can you spend?",
         "source": "guide:available-balance-vs-current-balance/title"
+      },
+      "art": {
+        "motif": "bank",
+        "why": "the carousel's topic: the moment and its guide name \"balance\", \"available\"",
+        "also": "wallet"
       }
     },
     {
@@ -37,7 +42,11 @@
           "text": "Neither one knows about the bills still coming.",
           "source": "guide:available-balance-vs-current-balance/dek#2"
         }
-      ]
+      ],
+      "art": {
+        "motif": "bank",
+        "why": "the slide names \"balance\", \"pending\", \"posted\", \"available\""
+      }
     },
     {
       "kind": "step",
@@ -61,7 +70,11 @@
       ],
       "emphasis": [
         "figures"
-      ]
+      ],
+      "art": {
+        "motif": "magnifier",
+        "why": "the slide names \"find\", \"look\""
+      }
     },
     {
       "kind": "step",
@@ -80,7 +93,11 @@
       "body": [],
       "emphasis": [
         "especially"
-      ]
+      ],
+      "art": {
+        "motif": "bank",
+        "why": "the slide names \"pending\""
+      }
     },
     {
       "kind": "step",
@@ -108,7 +125,11 @@
       ],
       "emphasis": [
         "deposits"
-      ]
+      ],
+      "art": {
+        "motif": "calendar",
+        "why": "the slide names \"date\""
+      }
     },
     {
       "kind": "step",
@@ -132,7 +153,11 @@
       ],
       "emphasis": [
         "agreement"
-      ]
+      ],
+      "art": {
+        "motif": "bank",
+        "why": "the slide names \"bank\", \"account\", \"balance\", \"available\""
+      }
     },
     {
       "kind": "step",
@@ -151,7 +176,11 @@
       "body": [],
       "emphasis": [
         "available"
-      ]
+      ],
+      "art": {
+        "motif": "calendar",
+        "why": "the slide names \"due\""
+      }
     },
     {
       "kind": "help",
@@ -193,12 +222,24 @@
       "save": {
         "text": "Save this for later.",
         "source": "micro"
+      },
+      "art": {
+        "motif": "bank",
+        "why": "the carousel's topic: the moment and its guide name \"balance\", \"available\""
       }
     }
   ],
   "notes": [
     "Cover: \"My balance says I have money but a bill is coming\" (searchedProblems[3].phrase), as people search it.",
     "Steps: 5 of 5 from the guide's numbered steps \"How to read your two numbers today\", one per slide, each with the guide's own explanation.",
-    "Help: \"Bills you protect are held back whether they are paid yet or not, so the figure never counts money you already owe.\" (searchedProblems[3].answer), on the live safeToSpendCard computing a real number."
+    "Help: \"Bills you protect are held back whether they are paid yet or not, so the figure never counts money you already owe.\" (searchedProblems[3].answer), on the live safeToSpendCard computing a real number.",
+    "Illustration on the cover: bank with wallet, because the carousel's topic: the moment and its guide name \"balance\", \"available\".",
+    "Illustration on the answer: bank, because the slide names \"balance\", \"pending\", \"posted\", \"available\".",
+    "Illustration on the step: magnifier, because the slide names \"find\", \"look\".",
+    "Illustration on the step: bank, because the slide names \"pending\".",
+    "Illustration on the step: calendar, because the slide names \"date\".",
+    "Illustration on the step: bank, because the slide names \"bank\", \"account\", \"balance\", \"available\".",
+    "Illustration on the step: calendar, because the slide names \"due\".",
+    "Illustration on the close: bank, because the carousel's topic: the moment and its guide name \"balance\", \"available\"."
   ]
 }

@@ -16,6 +16,11 @@
       "promise": {
         "text": "How to talk to your parents about their will and finances",
         "source": "guide:talking-to-your-parents-about-their-affairs/title"
+      },
+      "art": {
+        "motif": "speech",
+        "why": "the carousel's topic: the moment and its guide name \"talk\"",
+        "also": "people"
       }
     },
     {
@@ -29,7 +34,11 @@
           "text": "What to open with, which documents to ask about, what to do if they say no, and scripts for a conversation that usually takes several tries.",
           "source": "guide:talking-to-your-parents-about-their-affairs/dek#0"
         }
-      ]
+      ],
+      "art": {
+        "motif": "speech",
+        "why": "the slide names \"say\", \"conversation\", \"script\", \"ask\""
+      }
     },
     {
       "kind": "checklist",
@@ -63,7 +72,11 @@
           "source": "guide:talking-to-your-parents-about-their-affairs/body[3].items[5]#0"
         }
       ],
-      "ticks": true
+      "ticks": true,
+      "art": {
+        "motif": "document",
+        "why": "the slide names \"paperwork\", \"will\""
+      }
     },
     {
       "kind": "help",
@@ -105,12 +118,20 @@
       "save": {
         "text": "Save this for later.",
         "source": "micro"
+      },
+      "art": {
+        "motif": "speech",
+        "why": "the carousel's topic: the moment and its guide name \"talk\""
       }
     }
   ],
   "notes": [
     "Cover: \"How do I talk to my parents about their affairs\" (searchedProblems[4].phrase), as people search it.",
     "Checklist: 6 items from \"What to ask about, once they're willing\".",
-    "Help: \"Give them something with a first step small enough to take. One question at a time, and everything that does not apply to them never appears.\" (searchedProblems[4].answer), on screens/personal-life-affairs-companion-workspace.png (\"Write down who should be called first.\")."
+    "Help: \"Give them something with a first step small enough to take. One question at a time, and everything that does not apply to them never appears.\" (searchedProblems[4].answer), on screens/personal-life-affairs-companion-workspace.png (\"Write down who should be called first.\").",
+    "Illustration on the cover: speech with people, because the carousel's topic: the moment and its guide name \"talk\".",
+    "Illustration on the answer: speech, because the slide names \"say\", \"conversation\", \"script\", \"ask\".",
+    "Illustration on the checklist: document, because the slide names \"paperwork\", \"will\".",
+    "Illustration on the close: speech, because the carousel's topic: the moment and its guide name \"talk\"."
   ]
 }

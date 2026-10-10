@@ -16,6 +16,11 @@
       "promise": {
         "text": "What to include in a homeschool portfolio, by subject",
         "source": "guide:what-goes-in-a-homeschool-portfolio/title"
+      },
+      "art": {
+        "motif": "books",
+        "why": "the carousel's topic: the moment and its guide name \"homeschool\", \"subject\"",
+        "also": "binder"
       }
     },
     {
@@ -33,7 +38,11 @@
           "text": "Check your state's rules.",
           "source": "guide:what-goes-in-a-homeschool-portfolio/dek#1"
         }
-      ]
+      ],
+      "art": {
+        "motif": "calendar",
+        "why": "the slide names \"march\", \"october\""
+      }
     },
     {
       "kind": "checklist",
@@ -59,7 +68,11 @@
           "source": "guide:what-goes-in-a-homeschool-portfolio/body[2].items[4]#0"
         }
       ],
-      "ticks": true
+      "ticks": true,
+      "art": {
+        "motif": "books",
+        "why": "the slide names \"school\", \"subject\", \"curriculum\", \"reading\", \"evaluat\""
+      }
     },
     {
       "kind": "help",
@@ -101,12 +114,20 @@
       "save": {
         "text": "Save this for later.",
         "source": "micro"
+      },
+      "art": {
+        "motif": "books",
+        "why": "the carousel's topic: the moment and its guide name \"homeschool\", \"subject\""
       }
     }
   ],
   "notes": [
     "Cover: \"What goes in a homeschool portfolio\" (searchedProblems[3].phrase), as people search it.",
     "Checklist: 4 items from \"The core contents\".",
-    "Help: \"A dated record of what was done, notes in your own words about the day something landed, and check results per topic. You choose what is included before it prints.\" (searchedProblems[3].answer), on screens/homeschooling-companion-record.png (\"What has happened.\")."
+    "Help: \"A dated record of what was done, notes in your own words about the day something landed, and check results per topic. You choose what is included before it prints.\" (searchedProblems[3].answer), on screens/homeschooling-companion-record.png (\"What has happened.\").",
+    "Illustration on the cover: books with binder, because the carousel's topic: the moment and its guide name \"homeschool\", \"subject\".",
+    "Illustration on the answer: calendar, because the slide names \"march\", \"october\".",
+    "Illustration on the checklist: books, because the slide names \"school\", \"subject\", \"curriculum\", \"reading\", \"evaluat\".",
+    "Illustration on the close: books, because the carousel's topic: the moment and its guide name \"homeschool\", \"subject\"."
   ]
 }

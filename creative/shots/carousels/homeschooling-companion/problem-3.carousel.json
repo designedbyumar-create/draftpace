@@ -16,6 +16,11 @@
       "promise": {
         "text": "Homeschool record keeping for multiple children",
         "source": "guide:homeschool-record-keeping-for-multiple-children/title"
+      },
+      "art": {
+        "motif": "notebook",
+        "why": "the carousel's topic: the moment and its guide name \"record\"",
+        "also": "books"
       }
     },
     {
@@ -33,7 +38,11 @@
           "text": "File everything by child, log shared lessons once per child, and keep each record apart.",
           "source": "guide:homeschool-record-keeping-for-multiple-children/dek#1"
         }
-      ]
+      ],
+      "art": {
+        "motif": "books",
+        "why": "the slide names \"lesson\", \"subject\", \"child\""
+      }
     },
     {
       "kind": "step",
@@ -57,7 +66,11 @@
       ],
       "emphasis": [
         "entry"
-      ]
+      ],
+      "art": {
+        "motif": "notebook",
+        "why": "the slide names \"page\", \"line\", \"record\""
+      }
     },
     {
       "kind": "step",
@@ -81,7 +94,11 @@
       ],
       "emphasis": [
         "lesson"
-      ]
+      ],
+      "art": {
+        "motif": "books",
+        "why": "the slide names \"lesson\", \"child\""
+      }
     },
     {
       "kind": "step",
@@ -105,7 +122,11 @@
       ],
       "emphasis": [
         "curriculum"
-      ]
+      ],
+      "art": {
+        "motif": "books",
+        "why": "the slide names \"subject\", \"curriculum\", \"workbook\", \"child\""
+      }
     },
     {
       "kind": "step",
@@ -129,7 +150,11 @@
       ],
       "emphasis": [
         "private"
-      ]
+      ],
+      "art": {
+        "motif": "notebook",
+        "why": "the slide names \"note\""
+      }
     },
     {
       "kind": "step",
@@ -153,7 +178,11 @@
       ],
       "emphasis": [
         "Print"
-      ]
+      ],
+      "art": {
+        "motif": "books",
+        "why": "the slide names \"child\", \"evaluat\""
+      }
     },
     {
       "kind": "help",
@@ -195,12 +224,24 @@
       "save": {
         "text": "Save this for later.",
         "source": "micro"
+      },
+      "art": {
+        "motif": "notebook",
+        "why": "the carousel's topic: the moment and its guide name \"record\""
       }
     }
   ],
   "notes": [
     "Cover: \"Keeping more than one child's records straight in your head has stopped working.\" (problemsSolved[2].problem), as the listing describes the moment.",
     "Steps: 5 of 5 from the guide's numbered steps \"Set it up so it holds\", one per slide, each with the guide's own explanation.",
-    "Help: \"One page each morning that says what today looks like, per child.\" (problemsSolved[2].solution), on screens/homeschooling-companion-workspace.png (\"What we are doing today.\")."
+    "Help: \"One page each morning that says what today looks like, per child.\" (problemsSolved[2].solution), on screens/homeschooling-companion-workspace.png (\"What we are doing today.\").",
+    "Illustration on the cover: notebook with books, because the carousel's topic: the moment and its guide name \"record\".",
+    "Illustration on the answer: books, because the slide names \"lesson\", \"subject\", \"child\".",
+    "Illustration on the step: notebook, because the slide names \"page\", \"line\", \"record\".",
+    "Illustration on the step: books, because the slide names \"lesson\", \"child\".",
+    "Illustration on the step: books, because the slide names \"subject\", \"curriculum\", \"workbook\", \"child\".",
+    "Illustration on the step: notebook, because the slide names \"note\".",
+    "Illustration on the step: books, because the slide names \"child\", \"evaluat\".",
+    "Illustration on the close: notebook, because the carousel's topic: the moment and its guide name \"record\"."
   ]
 }

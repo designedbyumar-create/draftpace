@@ -16,6 +16,11 @@
       "promise": {
         "text": "You fell off your budget: how to restart this month",
         "source": "guide:how-to-start-over-after-budget-failure/title"
+      },
+      "art": {
+        "motif": "calendar",
+        "why": "the carousel's topic: the moment and its guide name \"month\"",
+        "also": "wallet"
       }
     },
     {
@@ -33,7 +38,11 @@
           "text": "You need today's balance, the bills still coming, and one clear number.",
           "source": "guide:how-to-start-over-after-budget-failure/dek#1"
         }
-      ]
+      ],
+      "art": {
+        "motif": "receipt",
+        "why": "the slide names \"receipt\""
+      }
     },
     {
       "kind": "step",
@@ -61,7 +70,11 @@
       ],
       "emphasis": [
         "Decide"
-      ]
+      ],
+      "art": {
+        "motif": "calendar",
+        "why": "the slide names \"day\", \"today\""
+      }
     },
     {
       "kind": "step",
@@ -80,7 +93,11 @@
       "body": [],
       "emphasis": [
         "balance"
-      ]
+      ],
+      "art": {
+        "motif": "bank",
+        "why": "the slide names \"account\", \"balance\""
+      }
     },
     {
       "kind": "step",
@@ -108,7 +125,11 @@
       ],
       "emphasis": [
         "credit"
-      ]
+      ],
+      "art": {
+        "motif": "card",
+        "why": "the slide names \"card\", \"credit\""
+      }
     },
     {
       "kind": "step",
@@ -132,7 +153,11 @@
       ],
       "emphasis": [
         "paycheck"
-      ]
+      ],
+      "art": {
+        "motif": "calendar",
+        "why": "the slide names \"date\", \"month\", \"due\""
+      }
     },
     {
       "kind": "step",
@@ -156,7 +181,11 @@
       ],
       "emphasis": [
         "surprises"
-      ]
+      ],
+      "art": {
+        "motif": "piggy",
+        "why": "the slide names \"cushion\""
+      }
     },
     {
       "kind": "help",
@@ -198,12 +227,24 @@
       "save": {
         "text": "Save this for later.",
         "source": "micro"
+      },
+      "art": {
+        "motif": "calendar",
+        "why": "the carousel's topic: the moment and its guide name \"month\""
       }
     }
   ],
   "notes": [
     "Cover: \"I tried YNAB or Mint and gave up\" (searchedProblems[1].phrase), as people search it.",
     "Steps: 5 of 7 from the guide's numbered steps \"The restart, step by step\", one per slide, each with the guide's own explanation.",
-    "Help: \"Those ask you to keep a whole system current. This asks for a few figures and does the keeping-up itself, so there is nothing to fall behind on.\" (searchedProblems[1].answer), on screens/monthly-money-reset-progress.png (\"Start\")."
+    "Help: \"Those ask you to keep a whole system current. This asks for a few figures and does the keeping-up itself, so there is nothing to fall behind on.\" (searchedProblems[1].answer), on screens/monthly-money-reset-progress.png (\"Start\").",
+    "Illustration on the cover: calendar with wallet, because the carousel's topic: the moment and its guide name \"month\".",
+    "Illustration on the answer: receipt, because the slide names \"receipt\".",
+    "Illustration on the step: calendar, because the slide names \"day\", \"today\".",
+    "Illustration on the step: bank, because the slide names \"account\", \"balance\".",
+    "Illustration on the step: card, because the slide names \"card\", \"credit\".",
+    "Illustration on the step: calendar, because the slide names \"date\", \"month\", \"due\".",
+    "Illustration on the step: piggy, because the slide names \"cushion\".",
+    "Illustration on the close: calendar, because the carousel's topic: the moment and its guide name \"month\"."
   ]
 }

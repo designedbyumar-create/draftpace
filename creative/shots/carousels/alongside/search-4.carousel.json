@@ -16,6 +16,11 @@
       "promise": {
         "text": "Executive dysfunction vs procrastination: the difference",
         "source": "guide:executive-dysfunction-is-not-procrastination/title"
+      },
+      "art": {
+        "motif": "mind",
+        "why": "the carousel's topic: the moment and its guide name \"procrastinat\", \"executive\"",
+        "also": "scale"
       }
     },
     {
@@ -33,7 +38,11 @@
           "text": "How to tell which one you're in today, and what lowers the cost of starting.",
           "source": "guide:executive-dysfunction-is-not-procrastination/dek#1"
         }
-      ]
+      ],
+      "art": {
+        "motif": "scale",
+        "why": "the slide names nothing drawable; the carousel's topic (the moment and its guide name \"vs\")"
+      }
     },
     {
       "kind": "step",
@@ -61,7 +70,11 @@
       ],
       "emphasis": [
         "rather"
-      ]
+      ],
+      "art": {
+        "motif": "mind",
+        "why": "the slide names nothing drawable; the carousel's topic (the moment and its guide name \"procrastinat\", \"executive\")"
+      }
     },
     {
       "kind": "step",
@@ -85,7 +98,11 @@
       ],
       "emphasis": [
         "physical"
-      ]
+      ],
+      "art": {
+        "motif": "document",
+        "why": "the slide names \"form\""
+      }
     },
     {
       "kind": "step",
@@ -113,7 +130,11 @@
       ],
       "emphasis": [
         "deadline"
-      ]
+      ],
+      "art": {
+        "motif": "clock",
+        "why": "the slide names \"hour\", \"delay\""
+      }
     },
     {
       "kind": "step",
@@ -132,7 +153,11 @@
       "body": [],
       "emphasis": [
         "pile"
-      ]
+      ],
+      "art": {
+        "motif": "mind",
+        "why": "the slide names nothing drawable; the carousel's topic (the moment and its guide name \"procrastinat\", \"executive\")"
+      }
     },
     {
       "kind": "step",
@@ -156,7 +181,11 @@
       ],
       "emphasis": [
         "grieving"
-      ]
+      ],
+      "art": {
+        "motif": "health",
+        "why": "the slide names \"ill\""
+      }
     },
     {
       "kind": "help",
@@ -198,12 +227,24 @@
       "save": {
         "text": "Save this for later.",
         "source": "micro"
+      },
+      "art": {
+        "motif": "mind",
+        "why": "the carousel's topic: the moment and its guide name \"procrastinat\", \"executive\""
       }
     }
   ],
   "notes": [
     "Cover: \"This isn't procrastination and to-do lists make it worse\" (searchedProblems[3].phrase), as people search it.",
     "Steps: 5 of 5 from the guide's numbered steps \"Five questions to ask yourself about today\", one per slide, each with the guide's own explanation.",
-    "Help: \"One thing at a time, chosen for you from what you already said mattered, and a plain \"nothing needs you\" on the days that is true.\" (searchedProblems[3].answer), on screens/alongside-workspace.png (\"Book the six-month dental check\")."
+    "Help: \"One thing at a time, chosen for you from what you already said mattered, and a plain \"nothing needs you\" on the days that is true.\" (searchedProblems[3].answer), on screens/alongside-workspace.png (\"Book the six-month dental check\").",
+    "Illustration on the cover: mind with scale, because the carousel's topic: the moment and its guide name \"procrastinat\", \"executive\".",
+    "Illustration on the answer: scale, because the slide names nothing drawable; the carousel's topic (the moment and its guide name \"vs\").",
+    "Illustration on the step: mind, because the slide names nothing drawable; the carousel's topic (the moment and its guide name \"procrastinat\", \"executive\").",
+    "Illustration on the step: document, because the slide names \"form\".",
+    "Illustration on the step: clock, because the slide names \"hour\", \"delay\".",
+    "Illustration on the step: mind, because the slide names nothing drawable; the carousel's topic (the moment and its guide name \"procrastinat\", \"executive\").",
+    "Illustration on the step: health, because the slide names \"ill\".",
+    "Illustration on the close: mind, because the carousel's topic: the moment and its guide name \"procrastinat\", \"executive\"."
   ]
 }

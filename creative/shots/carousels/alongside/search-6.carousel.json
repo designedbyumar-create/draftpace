@@ -16,6 +16,11 @@
       "promise": {
         "text": "How to restart a project you gave up on",
         "source": "guide:how-to-restart-a-project-you-gave-up-on/title"
+      },
+      "art": {
+        "motif": "steps",
+        "why": "the carousel's topic: the moment and its guide name \"restart\", \"half finished\"",
+        "also": "magnifier"
       }
     },
     {
@@ -33,7 +38,11 @@
           "text": "What to write down, and how to resume without re-reading everything.",
           "source": "guide:how-to-restart-a-project-you-gave-up-on/dek#1"
         }
-      ]
+      ],
+      "art": {
+        "motif": "books",
+        "why": "the slide names \"reading\""
+      }
     },
     {
       "kind": "step",
@@ -61,7 +70,11 @@
       ],
       "emphasis": [
         "already"
-      ]
+      ],
+      "art": {
+        "motif": "envelope",
+        "why": "the slide names \"email\""
+      }
     },
     {
       "kind": "step",
@@ -89,7 +102,11 @@
       ],
       "emphasis": [
         "Write"
-      ]
+      ],
+      "art": {
+        "motif": "notebook",
+        "why": "the slide names \"write\", \"page\", \"line\""
+      }
     },
     {
       "kind": "step",
@@ -113,7 +130,11 @@
       ],
       "emphasis": [
         "whether"
-      ]
+      ],
+      "art": {
+        "motif": "calendar",
+        "why": "the slide names \"date\""
+      }
     },
     {
       "kind": "step",
@@ -141,7 +162,11 @@
       ],
       "emphasis": [
         "missing"
-      ]
+      ],
+      "art": {
+        "motif": "magnifier",
+        "why": "the slide names \"look\", \"missing\""
+      }
     },
     {
       "kind": "step",
@@ -165,7 +190,11 @@
       ],
       "emphasis": [
         "smallest"
-      ]
+      ],
+      "art": {
+        "motif": "steps",
+        "why": "the slide names \"start\", \"first\", \"small\""
+      }
     },
     {
       "kind": "help",
@@ -207,12 +236,24 @@
       "save": {
         "text": "Save this for later.",
         "source": "micro"
+      },
+      "art": {
+        "motif": "steps",
+        "why": "the carousel's topic: the moment and its guide name \"restart\", \"half finished\""
       }
     }
   ],
   "notes": [
     "Cover: \"I left something half finished and lost where I was\" (searchedProblems[5].phrase), as people search it.",
     "Steps: 5 of 6 from the guide's numbered steps \"How to restart, in order\", one per slide, each with the guide's own explanation.",
-    "Help: \"It remembers exactly where you got to, so picking it back up is not starting over.\" (searchedProblems[5].answer), on screens/alongside-life.png (\"Everything you are holding\")."
+    "Help: \"It remembers exactly where you got to, so picking it back up is not starting over.\" (searchedProblems[5].answer), on screens/alongside-life.png (\"Everything you are holding\").",
+    "Illustration on the cover: steps with magnifier, because the carousel's topic: the moment and its guide name \"restart\", \"half finished\".",
+    "Illustration on the answer: books, because the slide names \"reading\".",
+    "Illustration on the step: envelope, because the slide names \"email\".",
+    "Illustration on the step: notebook, because the slide names \"write\", \"page\", \"line\".",
+    "Illustration on the step: calendar, because the slide names \"date\".",
+    "Illustration on the step: magnifier, because the slide names \"look\", \"missing\".",
+    "Illustration on the step: steps, because the slide names \"start\", \"first\", \"small\".",
+    "Illustration on the close: steps, because the carousel's topic: the moment and its guide name \"restart\", \"half finished\"."
   ]
 }

@@ -16,6 +16,11 @@
       "promise": {
         "text": "Babysitter information sheet: what to put on it",
         "source": "guide:babysitter-and-grandparent-info-sheet/title"
+      },
+      "art": {
+        "motif": "people",
+        "why": "the carousel's topic: the moment and its guide name \"babysitter\", \"grandparent\"",
+        "also": "books"
       }
     },
     {
@@ -33,7 +38,11 @@
           "text": "Plus what to leave off.",
           "source": "guide:babysitter-and-grandparent-info-sheet/dek#1"
         }
-      ]
+      ],
+      "art": {
+        "motif": "pills",
+        "why": "the slide names \"medicine\", \"allerg\""
+      }
     },
     {
       "kind": "step",
@@ -57,7 +66,11 @@
       ],
       "emphasis": [
         "allergies"
-      ]
+      ],
+      "art": {
+        "motif": "pills",
+        "why": "the slide names \"allerg\""
+      }
     },
     {
       "kind": "step",
@@ -81,7 +94,11 @@
       ],
       "emphasis": [
         "medicine"
-      ]
+      ],
+      "art": {
+        "motif": "bulb",
+        "why": "the slide names \"label\""
+      }
     },
     {
       "kind": "step",
@@ -105,7 +122,11 @@
       ],
       "emphasis": [
         "numbers"
-      ]
+      ],
+      "art": {
+        "motif": "phone",
+        "why": "the slide names \"phone\", \"call\""
+      }
     },
     {
       "kind": "step",
@@ -129,7 +150,11 @@
       ],
       "emphasis": [
         "address"
-      ]
+      ],
+      "art": {
+        "motif": "house",
+        "why": "the slide names \"address\""
+      }
     },
     {
       "kind": "step",
@@ -153,7 +178,11 @@
       ],
       "emphasis": [
         "control"
-      ]
+      ],
+      "art": {
+        "motif": "doctor",
+        "why": "the slide names \"doctor\""
+      }
     },
     {
       "kind": "help",
@@ -195,12 +224,24 @@
       "save": {
         "text": "Save this for later.",
         "source": "micro"
+      },
+      "art": {
+        "motif": "people",
+        "why": "the carousel's topic: the moment and its guide name \"babysitter\", \"grandparent\""
       }
     }
   ],
   "notes": [
     "Cover: \"What does a babysitter or grandparent need to know about my child\" (searchedProblems[3].phrase), as people search it.",
     "Steps: 5 of 8 from the guide's numbered steps \"Set it up in this order\", one per slide, each with the guide's own explanation.",
-    "Help: \"A Caregiver sheet: allergies first, what is taken, who to call, and your own notes about bedtime, comforts and fears.\" (searchedProblems[3].answer), on screens/family-health-binder-printables.png (\"Print\")."
+    "Help: \"A Caregiver sheet: allergies first, what is taken, who to call, and your own notes about bedtime, comforts and fears.\" (searchedProblems[3].answer), on screens/family-health-binder-printables.png (\"Print\").",
+    "Illustration on the cover: people with books, because the carousel's topic: the moment and its guide name \"babysitter\", \"grandparent\".",
+    "Illustration on the answer: pills, because the slide names \"medicine\", \"allerg\".",
+    "Illustration on the step: pills, because the slide names \"allerg\".",
+    "Illustration on the step: bulb, because the slide names \"label\".",
+    "Illustration on the step: phone, because the slide names \"phone\", \"call\".",
+    "Illustration on the step: house, because the slide names \"address\".",
+    "Illustration on the step: doctor, because the slide names \"doctor\".",
+    "Illustration on the close: people, because the carousel's topic: the moment and its guide name \"babysitter\", \"grandparent\"."
   ]
 }

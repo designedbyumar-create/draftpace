@@ -16,6 +16,11 @@
       "promise": {
         "text": "Hotel can't find your reservation: what to say",
         "source": "guide:hotel-cannot-find-your-reservation/title"
+      },
+      "art": {
+        "motif": "ticket",
+        "why": "the carousel's topic: the moment and its guide name \"reservation\"",
+        "also": "hotel"
       }
     },
     {
@@ -33,7 +38,11 @@
           "text": "Which references and names to try, what to ask for tonight, and the two sentences to open with at the counter.",
           "source": "guide:hotel-cannot-find-your-reservation/dek#1"
         }
-      ]
+      ],
+      "art": {
+        "motif": "speech",
+        "why": "the slide names \"say\", \"sentence\", \"ask\""
+      }
     },
     {
       "kind": "step",
@@ -52,7 +61,11 @@
       "body": [],
       "emphasis": [
         "confirmation"
-      ]
+      ],
+      "art": {
+        "motif": "ticket",
+        "why": "the slide names \"confirmation\""
+      }
     },
     {
       "kind": "step",
@@ -71,7 +84,11 @@
       "body": [],
       "emphasis": [
         "reference"
-      ]
+      ],
+      "art": {
+        "motif": "ticket",
+        "why": "the slide names \"booking\", \"reference\""
+      }
     },
     {
       "kind": "step",
@@ -90,7 +107,11 @@
       "body": [],
       "emphasis": [
         "surname"
-      ]
+      ],
+      "art": {
+        "motif": "hotel",
+        "why": "the slide names \"stay\""
+      }
     },
     {
       "kind": "step",
@@ -109,7 +130,11 @@
       "body": [],
       "emphasis": [
         "digits"
-      ]
+      ],
+      "art": {
+        "motif": "card",
+        "why": "the slide names \"card\""
+      }
     },
     {
       "kind": "step",
@@ -128,7 +153,11 @@
       "body": [],
       "emphasis": [
         "misspelled"
-      ]
+      ],
+      "art": {
+        "motif": "calendar",
+        "why": "the slide names \"date\""
+      }
     },
     {
       "kind": "checklist",
@@ -158,7 +187,11 @@
           "source": "guide:hotel-cannot-find-your-reservation/body[3].items[4]#0"
         }
       ],
-      "ticks": true
+      "ticks": true,
+      "art": {
+        "motif": "ticket",
+        "why": "the slide names \"booking\", \"confirmation\", \"reference\""
+      }
     },
     {
       "kind": "help",
@@ -200,6 +233,10 @@
       "save": {
         "text": "Save this for later.",
         "source": "micro"
+      },
+      "art": {
+        "motif": "ticket",
+        "why": "the carousel's topic: the moment and its guide name \"reservation\""
       }
     }
   ],
@@ -207,6 +244,15 @@
     "Cover: \"The hotel cannot find my reservation\" (searchedProblems[3].phrase), as people search it.",
     "Steps: 5 of 5 from the guide's numbered steps \"Ways to ask them to search, in order\", one per slide, each with the guide's own explanation.",
     "Checklist: 5 items from \"Have these on screen before you speak\".",
-    "Help: \"The provider and the confirmation reference are readable in three seconds, and there is an authored walkthrough for the conversation that follows.\" (searchedProblems[3].answer), on screens/travel-companion-workspace.png (\"Today\")."
+    "Help: \"The provider and the confirmation reference are readable in three seconds, and there is an authored walkthrough for the conversation that follows.\" (searchedProblems[3].answer), on screens/travel-companion-workspace.png (\"Today\").",
+    "Illustration on the cover: ticket with hotel, because the carousel's topic: the moment and its guide name \"reservation\".",
+    "Illustration on the answer: speech, because the slide names \"say\", \"sentence\", \"ask\".",
+    "Illustration on the step: ticket, because the slide names \"confirmation\".",
+    "Illustration on the step: ticket, because the slide names \"booking\", \"reference\".",
+    "Illustration on the step: hotel, because the slide names \"stay\".",
+    "Illustration on the step: card, because the slide names \"card\".",
+    "Illustration on the step: calendar, because the slide names \"date\".",
+    "Illustration on the checklist: ticket, because the slide names \"booking\", \"confirmation\", \"reference\".",
+    "Illustration on the close: ticket, because the carousel's topic: the moment and its guide name \"reservation\"."
   ]
 }

@@ -16,6 +16,11 @@
       "promise": {
         "text": "How to keep a family medication list",
         "source": "guide:medication-list-what-to-write-down/title"
+      },
+      "art": {
+        "motif": "pills",
+        "why": "the carousel's topic: the moment and its guide name \"medication\"",
+        "also": "doctor"
       }
     },
     {
@@ -33,7 +38,11 @@
           "text": "Always follow your prescriber or pharmacist.",
           "source": "guide:medication-list-what-to-write-down/dek#1"
         }
-      ]
+      ],
+      "art": {
+        "motif": "pills",
+        "why": "the slide names \"dose\", \"pharmac\""
+      }
     },
     {
       "kind": "step",
@@ -57,7 +66,11 @@
       ],
       "emphasis": [
         "prescriptions"
-      ]
+      ],
+      "art": {
+        "motif": "notebook",
+        "why": "the slide names \"line\""
+      }
     },
     {
       "kind": "step",
@@ -81,7 +94,11 @@
       ],
       "emphasis": [
         "strength"
-      ]
+      ],
+      "art": {
+        "motif": "bulb",
+        "why": "the slide names \"label\""
+      }
     },
     {
       "kind": "step",
@@ -105,7 +122,11 @@
       ],
       "emphasis": [
         "directions"
-      ]
+      ],
+      "art": {
+        "motif": "document",
+        "why": "the slide names \"copy\""
+      }
     },
     {
       "kind": "step",
@@ -129,7 +150,11 @@
       ],
       "emphasis": [
         "words"
-      ]
+      ],
+      "art": {
+        "motif": "pills",
+        "why": "the slide names \"pharmac\""
+      }
     },
     {
       "kind": "step",
@@ -148,7 +173,11 @@
       "body": [],
       "emphasis": [
         "allergies"
-      ]
+      ],
+      "art": {
+        "motif": "pills",
+        "why": "the slide names \"allerg\", \"reaction\""
+      }
     },
     {
       "kind": "help",
@@ -190,12 +219,24 @@
       "save": {
         "text": "Save this for later.",
         "source": "micro"
+      },
+      "art": {
+        "motif": "pills",
+        "why": "the carousel's topic: the moment and its guide name \"medication\""
       }
     }
   ],
   "notes": [
     "Cover: \"I can never remember my child's medications at the doctor\" (searchedProblems[0].phrase), as people search it.",
     "Steps: 5 of 7 from the guide's numbered steps \"How to write it\", one per slide, each with the guide's own explanation.",
-    "Help: \"They are written down per person, with dose and how often, on whatever device is in your hand at the desk, and stopped ones leave the list.\" (searchedProblems[0].answer), on screens/family-health-binder-members.png (\"Family\")."
+    "Help: \"They are written down per person, with dose and how often, on whatever device is in your hand at the desk, and stopped ones leave the list.\" (searchedProblems[0].answer), on screens/family-health-binder-members.png (\"Family\").",
+    "Illustration on the cover: pills with doctor, because the carousel's topic: the moment and its guide name \"medication\".",
+    "Illustration on the answer: pills, because the slide names \"dose\", \"pharmac\".",
+    "Illustration on the step: notebook, because the slide names \"line\".",
+    "Illustration on the step: bulb, because the slide names \"label\".",
+    "Illustration on the step: document, because the slide names \"copy\".",
+    "Illustration on the step: pills, because the slide names \"pharmac\".",
+    "Illustration on the step: pills, because the slide names \"allerg\", \"reaction\".",
+    "Illustration on the close: pills, because the carousel's topic: the moment and its guide name \"medication\"."
   ]
 }

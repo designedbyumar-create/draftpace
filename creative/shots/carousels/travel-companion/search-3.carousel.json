@@ -16,6 +16,11 @@
       "promise": {
         "text": "Multi-stop trip planner: organize it without a spreadsheet",
         "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/title"
+      },
+      "art": {
+        "motif": "suitcase",
+        "why": "the carousel's topic: the moment and its guide name \"trip\", \"stop\"",
+        "also": "binder"
       }
     },
     {
@@ -33,7 +38,11 @@
           "text": "Record four things per booking, in time order, and skip the rebuild after every change.",
           "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/dek#1"
         }
-      ]
+      ],
+      "art": {
+        "motif": "ticket",
+        "why": "the slide names \"booking\""
+      }
     },
     {
       "kind": "step",
@@ -61,7 +70,11 @@
       ],
       "emphasis": [
         "reference"
-      ]
+      ],
+      "art": {
+        "motif": "ticket",
+        "why": "the slide names \"reference\""
+      }
     },
     {
       "kind": "step",
@@ -85,7 +98,11 @@
       ],
       "emphasis": [
         "order"
-      ]
+      ],
+      "art": {
+        "motif": "route",
+        "why": "the slide names \"order\""
+      }
     },
     {
       "kind": "help",
@@ -127,12 +144,21 @@
       "save": {
         "text": "Save this for later.",
         "source": "micro"
+      },
+      "art": {
+        "motif": "suitcase",
+        "why": "the carousel's topic: the moment and its guide name \"trip\", \"stop\""
       }
     }
   ],
   "notes": [
     "Cover: \"How do I organise a multi-stop trip without a spreadsheet\" (searchedProblems[2].phrase), as people search it.",
     "Steps: 2 of 6 from the guide's numbered steps \"The method\", one per slide, each with the guide's own explanation.",
-    "Help: \"Destinations, bookings, travellers and documents in one place, with the shape of the trip held for you rather than in your head.\" (searchedProblems[2].answer), on screens/travel-companion-trip.png (\"Lisbon and Porto\")."
+    "Help: \"Destinations, bookings, travellers and documents in one place, with the shape of the trip held for you rather than in your head.\" (searchedProblems[2].answer), on screens/travel-companion-trip.png (\"Lisbon and Porto\").",
+    "Illustration on the cover: suitcase with binder, because the carousel's topic: the moment and its guide name \"trip\", \"stop\".",
+    "Illustration on the answer: ticket, because the slide names \"booking\".",
+    "Illustration on the step: ticket, because the slide names \"reference\".",
+    "Illustration on the step: route, because the slide names \"order\".",
+    "Illustration on the close: suitcase, because the carousel's topic: the moment and its guide name \"trip\", \"stop\"."
   ]
 }

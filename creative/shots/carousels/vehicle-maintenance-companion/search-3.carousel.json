@@ -16,6 +16,11 @@
       "promise": {
         "text": "Car maintenance schedule by mileage: check your manual",
         "source": "guide:car-maintenance-by-mileage-start-with-your-manual/title"
+      },
+      "art": {
+        "motif": "car",
+        "why": "the carousel's topic: the moment and its guide name \"car\", \"drive\", \"mileage\", \"tow\"",
+        "also": "suitcase"
       }
     },
     {
@@ -29,7 +34,11 @@
           "text": "Typical intervals by mileage to compare with your owner's manual, how to read its normal and severe columns, and how to write yours down once.",
           "source": "guide:car-maintenance-by-mileage-start-with-your-manual/dek#0"
         }
-      ]
+      ],
+      "art": {
+        "motif": "clock",
+        "why": "the slide names \"interval\""
+      }
     },
     {
       "kind": "step",
@@ -44,7 +53,11 @@
       "body": [],
       "emphasis": [
         "rotation"
-      ]
+      ],
+      "art": {
+        "motif": "wrench",
+        "why": "the slide names \"oil\", \"tire\""
+      }
     },
     {
       "kind": "step",
@@ -59,7 +72,11 @@
       "body": [],
       "emphasis": [
         "inspection"
-      ]
+      ],
+      "art": {
+        "motif": "wrench",
+        "why": "the slide names \"brake\", \"inspection\""
+      }
     },
     {
       "kind": "step",
@@ -74,7 +91,11 @@
       "body": [],
       "emphasis": [
         "filter"
-      ]
+      ],
+      "art": {
+        "motif": "car",
+        "why": "the slide names \"car\""
+      }
     },
     {
       "kind": "step",
@@ -89,7 +110,11 @@
       "body": [],
       "emphasis": [
         "transmission"
-      ]
+      ],
+      "art": {
+        "motif": "wrench",
+        "why": "the slide names \"coolant\", \"spark\", \"fluid\""
+      }
     },
     {
       "kind": "step",
@@ -104,7 +129,11 @@
       "body": [],
       "emphasis": [
         "engines"
-      ]
+      ],
+      "art": {
+        "motif": "wrench",
+        "why": "the slide names \"timing belt\""
+      }
     },
     {
       "kind": "help",
@@ -146,12 +175,24 @@
       "save": {
         "text": "Save this for later.",
         "source": "micro"
+      },
+      "art": {
+        "motif": "car",
+        "why": "the carousel's topic: the moment and its guide name \"car\", \"drive\", \"mileage\", \"tow\""
       }
     }
   ],
   "notes": [
     "Cover: \"How often should I really change the oil if I tow or drive short trips\" (searchedProblems[2].phrase), as people search it.",
     "Steps: 5 of 5 from the guide's timeline \"The same jobs, in the order they come round\", one per slide, each with the guide's own explanation.",
-    "Help: \"Enter the interval you actually believe, then turn on severe duty for that one job to halve it. Nothing here overrides your number with its own.\" (searchedProblems[2].answer), on screens/vehicle-maintenance-companion-vehicles.png (\"Vehicles\")."
+    "Help: \"Enter the interval you actually believe, then turn on severe duty for that one job to halve it. Nothing here overrides your number with its own.\" (searchedProblems[2].answer), on screens/vehicle-maintenance-companion-vehicles.png (\"Vehicles\").",
+    "Illustration on the cover: car with suitcase, because the carousel's topic: the moment and its guide name \"car\", \"drive\", \"mileage\", \"tow\".",
+    "Illustration on the answer: clock, because the slide names \"interval\".",
+    "Illustration on the step: wrench, because the slide names \"oil\", \"tire\".",
+    "Illustration on the step: wrench, because the slide names \"brake\", \"inspection\".",
+    "Illustration on the step: car, because the slide names \"car\".",
+    "Illustration on the step: wrench, because the slide names \"coolant\", \"spark\", \"fluid\".",
+    "Illustration on the step: wrench, because the slide names \"timing belt\".",
+    "Illustration on the close: car, because the carousel's topic: the moment and its guide name \"car\", \"drive\", \"mileage\", \"tow\"."
   ]
 }

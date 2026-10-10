@@ -16,6 +16,11 @@
       "promise": {
         "text": "How much money is safe to spend after your bills?",
         "source": "guide:how-much-of-your-money-is-actually-safe-to-spend/title"
+      },
+      "art": {
+        "motif": "wallet",
+        "why": "the carousel's topic: the moment and its guide name \"money\", \"spend\"",
+        "also": "shield"
       }
     },
     {
@@ -33,7 +38,11 @@
           "text": "Take off the bills still due and the money you are holding back, in five steps, and one number is left.",
           "source": "guide:how-much-of-your-money-is-actually-safe-to-spend/dek#1"
         }
-      ]
+      ],
+      "art": {
+        "motif": "wallet",
+        "why": "the slide names \"money\", \"spend\""
+      }
     },
     {
       "kind": "step",
@@ -52,7 +61,11 @@
       "body": [],
       "emphasis": [
         "available"
-      ]
+      ],
+      "art": {
+        "motif": "bank",
+        "why": "the slide names \"account\", \"balance\", \"available\""
+      }
     },
     {
       "kind": "step",
@@ -71,7 +84,11 @@
       "body": [],
       "emphasis": [
         "subscription"
-      ]
+      ],
+      "art": {
+        "motif": "card",
+        "why": "the slide names \"card\", \"subscription\""
+      }
     },
     {
       "kind": "step",
@@ -99,7 +116,11 @@
       ],
       "emphasis": [
         "Subtract"
-      ]
+      ],
+      "art": {
+        "motif": "bank",
+        "why": "the slide names \"balance\""
+      }
     },
     {
       "kind": "step",
@@ -123,7 +144,11 @@
       ],
       "emphasis": [
         "Subtract"
-      ]
+      ],
+      "art": {
+        "motif": "wallet",
+        "why": "the slide names \"money\""
+      }
     },
     {
       "kind": "step",
@@ -151,7 +176,11 @@
       ],
       "emphasis": [
         "result"
-      ]
+      ],
+      "art": {
+        "motif": "calendar",
+        "why": "the slide names \"date\", \"week\""
+      }
     },
     {
       "kind": "help",
@@ -193,12 +222,24 @@
       "save": {
         "text": "Save this for later.",
         "source": "micro"
+      },
+      "art": {
+        "motif": "wallet",
+        "why": "the carousel's topic: the moment and its guide name \"money\", \"spend\""
       }
     }
   ],
   "notes": [
     "Cover: \"How much of my money is actually safe to spend\" (searchedProblems[2].phrase), as people search it.",
     "Steps: 5 of 5 from the guide's numbered steps \"Work out your own number in five steps\", one per slide, each with the guide's own explanation.",
-    "Help: \"One figure, updated as the cycle goes on, with every number that feeds it shown line by line if you want to check the working.\" (searchedProblems[2].answer), on screens/monthly-money-reset-progress.png (\"Start\")."
+    "Help: \"One figure, updated as the cycle goes on, with every number that feeds it shown line by line if you want to check the working.\" (searchedProblems[2].answer), on screens/monthly-money-reset-progress.png (\"Start\").",
+    "Illustration on the cover: wallet with shield, because the carousel's topic: the moment and its guide name \"money\", \"spend\".",
+    "Illustration on the answer: wallet, because the slide names \"money\", \"spend\".",
+    "Illustration on the step: bank, because the slide names \"account\", \"balance\", \"available\".",
+    "Illustration on the step: card, because the slide names \"card\", \"subscription\".",
+    "Illustration on the step: bank, because the slide names \"balance\".",
+    "Illustration on the step: wallet, because the slide names \"money\".",
+    "Illustration on the step: calendar, because the slide names \"date\", \"week\".",
+    "Illustration on the close: wallet, because the carousel's topic: the moment and its guide name \"money\", \"spend\"."
   ]
 }

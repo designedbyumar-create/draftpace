@@ -16,6 +16,11 @@
       "promise": {
         "text": "What to write down in case something happens to me",
         "source": "guide:what-to-write-down-in-case-something-happens-to-you/title"
+      },
+      "art": {
+        "motif": "notebook",
+        "why": "the carousel's topic: the moment and its guide name \"write\"",
+        "also": "binder"
       }
     },
     {
@@ -33,7 +38,11 @@
           "text": "Places, not passwords.",
           "source": "guide:what-to-write-down-in-case-something-happens-to-you/dek#1"
         }
-      ]
+      ],
+      "art": {
+        "motif": "phone",
+        "why": "the slide names \"phone\", \"call\""
+      }
     },
     {
       "kind": "step",
@@ -57,7 +66,11 @@
       ],
       "emphasis": [
         "person"
-      ]
+      ],
+      "art": {
+        "motif": "phone",
+        "why": "the slide names \"call\""
+      }
     },
     {
       "kind": "step",
@@ -81,7 +94,11 @@
       ],
       "emphasis": [
         "automatic"
-      ]
+      ],
+      "art": {
+        "motif": "house",
+        "why": "the slide names \"rent\", \"mortgage\""
+      }
     },
     {
       "kind": "step",
@@ -105,7 +122,11 @@
       ],
       "emphasis": [
         "registered"
-      ]
+      ],
+      "art": {
+        "motif": "key",
+        "why": "the slide names \"get into\""
+      }
     },
     {
       "kind": "step",
@@ -124,7 +145,11 @@
       "body": [],
       "emphasis": [
         "commitment"
-      ]
+      ],
+      "art": {
+        "motif": "people",
+        "why": "the slide names \"children\", \"person\", \"who\""
+      }
     },
     {
       "kind": "step",
@@ -143,7 +168,11 @@
       "body": [],
       "emphasis": [
         "certificate"
-      ]
+      ],
+      "art": {
+        "motif": "document",
+        "why": "the slide names \"certificate\", \"will\""
+      }
     },
     {
       "kind": "help",
@@ -185,12 +214,24 @@
       "save": {
         "text": "Save this for later.",
         "source": "micro"
+      },
+      "art": {
+        "motif": "notebook",
+        "why": "the carousel's topic: the moment and its guide name \"write\""
       }
     }
   ],
   "notes": [
     "Cover: \"What should I write down in case something happens to me\" (searchedProblems[0].phrase), as people search it.",
     "Steps: 5 of 6 from the guide's numbered steps \"How to write it in one evening\", one per slide, each with the guide's own explanation.",
-    "Help: \"A hand-built list of 46 things that belong in order, asked one at a time and only where they apply to you.\" (searchedProblems[0].answer), on screens/personal-life-affairs-companion-workspace.png (\"Write down who should be called first.\")."
+    "Help: \"A hand-built list of 46 things that belong in order, asked one at a time and only where they apply to you.\" (searchedProblems[0].answer), on screens/personal-life-affairs-companion-workspace.png (\"Write down who should be called first.\").",
+    "Illustration on the cover: notebook with binder, because the carousel's topic: the moment and its guide name \"write\".",
+    "Illustration on the answer: phone, because the slide names \"phone\", \"call\".",
+    "Illustration on the step: phone, because the slide names \"call\".",
+    "Illustration on the step: house, because the slide names \"rent\", \"mortgage\".",
+    "Illustration on the step: key, because the slide names \"get into\".",
+    "Illustration on the step: people, because the slide names \"children\", \"person\", \"who\".",
+    "Illustration on the step: document, because the slide names \"certificate\", \"will\".",
+    "Illustration on the close: notebook, because the carousel's topic: the moment and its guide name \"write\"."
   ]
 }
