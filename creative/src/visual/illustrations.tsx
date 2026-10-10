@@ -12,7 +12,8 @@
  */
 import React from "react";
 
-export type Palette = { ink: string; accent: string; soft: string; paper: string };
+/** `pop` is an optional second colour for sparkles and dots; without it they take the accent (the carousels' look). */
+export type Palette = { ink: string; accent: string; soft: string; paper: string; pop?: string };
 type Draw = (c: Palette) => React.ReactNode;
 
 const W = 7; // the one line weight
@@ -20,9 +21,9 @@ const line = (c: Palette) => ({ stroke: c.ink, strokeWidth: W, strokeLinecap: "r
 const shape = (c: Palette, fill: string) => ({ ...line(c), fill });
 
 function Sparkle({ x, y, r = 10, c }: { x: number; y: number; r?: number; c: Palette }) {
-  return <path d={`M${x} ${y - r} Q${x} ${y} ${x + r} ${y} Q${x} ${y} ${x} ${y + r} Q${x} ${y} ${x - r} ${y} Q${x} ${y} ${x} ${y - r} Z`} fill={c.accent} />;
+  return <path d={`M${x} ${y - r} Q${x} ${y} ${x + r} ${y} Q${x} ${y} ${x} ${y + r} Q${x} ${y} ${x - r} ${y} Q${x} ${y} ${x} ${y - r} Z`} fill={c.pop ?? c.accent} />;
 }
-const Dot = ({ x, y, r = 6, c }: { x: number; y: number; r?: number; c: Palette }) => <circle cx={x} cy={y} r={r} fill={c.accent} opacity={0.55} />;
+const Dot = ({ x, y, r = 6, c }: { x: number; y: number; r?: number; c: Palette }) => <circle cx={x} cy={y} r={r} fill={c.pop ?? c.accent} opacity={c.pop ? 0.9 : 0.55} />;
 const Shadow = ({ y = 336, w = 150, c }: { y?: number; w?: number; c: Palette }) => <ellipse cx={200} cy={y} rx={w} ry={14} fill={c.ink} opacity={0.08} />;
 const Check = ({ x, y, s = 1, c, color }: { x: number; y: number; s?: number; c: Palette; color?: string }) => (
   <path d={`M${x - 10 * s} ${y} l${8 * s} ${8 * s} l${14 * s} ${-16 * s}`} fill="none" {...line(c)} stroke={color ?? c.ink} />

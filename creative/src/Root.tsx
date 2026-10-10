@@ -9,6 +9,9 @@ import { VOICEOVER_FILMS } from "./voiceover-films.generated";
 import { SituationCarouselSlide } from "./compositions/formats/situation-carousel";
 import { CAROUSELS } from "./carousels.generated";
 import { IllustrationGallery } from "./compositions/dev/illustration-gallery";
+import { FindsPinStill } from "./compositions/formats/finds-pin";
+import { FINDS_PINS } from "../pinterest/maple-main-finds";
+import { findsPinId } from "../pinterest/finds-ids";
 
 const FILMS = [...DIRECTED, ...VOICEOVER_FILMS];
 
@@ -107,6 +110,10 @@ export const RemotionRoot: React.FC = () => {
       {/* The spot illustration set, per product palette: for review only. */}
       {["travel-companion", "monthly-money-reset", "vehicle-maintenance-companion"].map((product) => (
         <Still key={product} id={`Gallery-Illustrations-${product}`} component={IllustrationGallery} width={1960} height={1560} defaultProps={{ product }} />
+      ))}
+      {/* Maple & Main Finds pins (pinterest/maple-main-finds.ts), 2:3, rendered at 2x by scripts/render-finds-pins.mjs. */}
+      {FINDS_PINS.map((pin, i) => (
+        <Still key={i} id={findsPinId(FINDS_PINS, i)} component={FindsPinStill} width={1000} height={1500} defaultProps={{ pin }} />
       ))}
       {/* Every situation carousel (scripts/carousels.mjs), one 4:5 still per slide: the size Instagram and Facebook show in full. */}
       {CAROUSELS.flatMap((carousel) =>

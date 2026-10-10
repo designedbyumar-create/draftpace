@@ -238,6 +238,29 @@ carousel's topic; the close returns to it. Review the whole set with
 `node scripts/render-images.mjs Gallery-Illustrations`. Illustrations stay
 in creative: the app's design system has none, on purpose.
 
+## Maple & Main Finds pins
+
+`pinterest/maple-main-finds.ts` holds illustrated Pinterest pins for the
+Maple & Main Finds account: ten per product, five layouts (scene, split,
+list, pov, board), written in finds-account lingo but promising only what
+each product's Shop listing says it does. Prices and names are never typed:
+`{price}` and `{name}` come from the listing. The format is
+`src/compositions/formats/finds-pin.tsx` (the carousel illustrations, a warm
+second colour from `popFor`, the real screen on split pins, "Made by
+Draftpace" on every pin).
+
+```bash
+npm run pins:maple     # (repo root) 2000x3000 JPEGs into public/store/pinterest-maple-main/finds/ + pinterest/maple-main-finds.csv
+```
+
+The CSV is Pinterest's Bulk create format (Title, Media URL, Pinterest
+board, Description, Link, Publish date, Keywords), interleaved so no
+product posts twice in a row, six a day from `SCHEDULE_START`. Its Media
+URLs only resolve once the site is deployed with the images.
+`tests/finds-pins-guards.test.ts` holds the voice rules, the no-typed-price
+rule, limits, screens, schedule and the committed CSV and images to what
+the pins say now.
+
 ## Guide-driven Shorts: teach first, then the product
 
 `slate.json`'s `guides` list names a guide and a placement (today: each

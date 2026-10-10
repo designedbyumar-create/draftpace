@@ -37,7 +37,7 @@ async function main() {
   const ratio = ratioAt >= 0 ? args.splice(ratioAt, 2)[1] : null;
   const filters = args;
   const stills = all
-    .filter((c) => c.id.startsWith("Image-") || c.id.startsWith("Post-") || c.id.startsWith("Carousel-") || c.id.startsWith("Gallery-"))
+    .filter((c) => c.id.startsWith("Image-") || c.id.startsWith("Post-") || c.id.startsWith("Carousel-") || c.id.startsWith("Gallery-") || c.id.startsWith("Pin-mm-"))
     .filter((c) => !ratio || c.id.endsWith(`-${ratio}`))
     .filter((c) => filters.length === 0 || filters.some((f) => c.id.includes(f)));
   if (stills.length === 0) throw new Error(`no stills match ${filters.join(", ")}`);
