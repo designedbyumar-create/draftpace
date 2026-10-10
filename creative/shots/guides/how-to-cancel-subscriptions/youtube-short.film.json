@@ -1,0 +1,326 @@
+{
+  "id": "guide-how-to-cancel-subscriptions--youtube-short",
+  "product": "personal-finance-companion",
+  "guide": "how-to-cancel-subscriptions",
+  "runtime": {
+    "min": 18,
+    "max": 45
+  },
+  "platform": "youtube-short",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 742,
+  "structure": "guideTimeline",
+  "angle": {
+    "text": "How to cancel a subscription that is hard to cancel",
+    "source": "guide:how-to-cancel-subscriptions/title"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "float",
+    "transitions": [
+      "cardSlide",
+      "wipe",
+      "cardSlide"
+    ],
+    "motif": "index",
+    "grounds": [
+      "light",
+      "accent",
+      "light",
+      "ink"
+    ],
+    "pace": 1
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.2,
+    "energy": "mid"
+  },
+  "scenes": [
+    {
+      "id": "hook",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "How to cancel a subscription that is hard to cancel",
+          "source": "guide:how-to-cancel-subscriptions/title"
+        }
+      ],
+      "emphasis": [
+        "subscription"
+      ],
+      "why": "The hook is the guide's own title: the question it answers, as a person would put it.",
+      "from": 0,
+      "dur": 99,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "How to cancel a",
+          "subscription that",
+          "is hard to cancel"
+        ]
+      ]
+    },
+    {
+      "id": "when-1",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Contact the company again, referring to your confirmation.",
+          "source": "guide:how-to-cancel-subscriptions/body[5].steps[0].what#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "The day you see the charge",
+        "source": "guide:how-to-cancel-subscriptions/body[5].steps[0].when"
+      },
+      "emphasis": [
+        "confirmation"
+      ],
+      "why": "Marker 1: \"The day you see the charge\", with the first sentence of what the guide says to do then.",
+      "from": 87,
+      "dur": 151,
+      "ground": "accent",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "Contact the company",
+          "again, referring to",
+          "your confirmation."
+        ]
+      ]
+    },
+    {
+      "id": "when-2",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Call the number on the back of your card.",
+          "source": "guide:how-to-cancel-subscriptions/body[5].steps[1].what#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "Same week, if it isn't fixed",
+        "source": "guide:how-to-cancel-subscriptions/body[5].steps[1].when"
+      },
+      "emphasis": [
+        "number"
+      ],
+      "why": "Marker 2: \"Same week, if it isn't fixed\", with the first sentence of what the guide says to do then.",
+      "from": 226,
+      "dur": 159,
+      "ground": "light",
+      "transition": "wipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "Call the number on the",
+          "back of your card."
+        ]
+      ]
+    },
+    {
+      "id": "when-3",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Send the card issuer a written billing error notice.",
+          "source": "guide:how-to-cancel-subscriptions/body[5].steps[2].what#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "Within 60 days of the statement",
+        "source": "guide:how-to-cancel-subscriptions/body[5].steps[2].when"
+      },
+      "emphasis": [
+        "written"
+      ],
+      "why": "Marker 3: \"Within 60 days of the statement\", with the first sentence of what the guide says to do then.",
+      "from": 373,
+      "dur": 159,
+      "ground": "ink",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "Send the card issuer",
+          "a written billing",
+          "error notice."
+        ]
+      ]
+    },
+    {
+      "id": "tool",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Come back anytime.",
+        "source": "howItWorks[5]#0"
+      },
+      "screen": {
+        "src": "screens/personal-finance-companion-printables.png",
+        "pose": "tiltLeft",
+        "focus": {
+          "at": 0.45,
+          "y": 369,
+          "h": 287,
+          "region": "printables"
+        },
+        "scroll": []
+      },
+      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"Printable Finance Companion\" (The paper version: printable finance companion in US Letter and A4, and a shared responsibility statement.) chosen because it is the real screen closest to \"Come back anytime. How to cancel a subscription that is hard to cancel\"; focus on \"Printable Finance Companion\".",
+      "eyebrow": {
+        "text": "Personal Finance Companion",
+        "source": "title"
+      },
+      "from": 520,
+      "dur": 116,
+      "ground": "light",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 52,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Personal Finance Companion",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/how-to-cancel-subscriptions",
+          "source": "guide:how-to-cancel-subscriptions/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 624,
+      "dur": 118,
+      "ground": "accent",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "YouTube Short, 1080×1920, 18–45s, hook by 1.2s, sound on",
+      "because": "Search-adjacent audience that will watch a slightly longer explanation if it starts strong. Loops by default."
+    },
+    {
+      "topic": "Product",
+      "decision": "Personal Finance Companion: $49 (list $99), motif \"index\", calm personality, cool accent #0d3b2e",
+      "because": "From its definition and Shop listing. 4 real screens to show."
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"How to cancel a subscription that is hard to cancel\" (draftpace.com/guides/how-to-cancel-subscriptions)",
+      "because": "Teaches from the guide first; Personal Finance Companion is the product the guide hands over to. 2 lists and timelines, 5 questions to draw from."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You have more than one account, bill, or income source and want them tracked in one real place, not five apps. / You want a next step handed to you, not a dashboard you have to interpret yourself every time.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "In order: Walk the guide's own timeline, one marker at a time, then show the product that keeps it.",
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 3, goal fit 3, already used on YouTube Short ×3). Other candidates: Do this (-4.3), The question people ask (-24.0)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"How to cancel a subscription that is hard to cancel\"",
+      "because": "The guide's timeline \"If they charge you anyway\": 3 of its 5 markers, in order."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"index\"",
+      "because": "Transitions follow the product's own identity motif, \"index\": an index of tabs, so scenes slide in like the next tab."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → accent → light → ink",
+      "because": "Grounds light → accent → light → ink: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Full sound design, mid-energy bed",
+      "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
+    },
+    {
+      "topic": "Length",
+      "decision": "24.7s, 6 scenes",
+      "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 18–45s."
+    }
+  ]
+}

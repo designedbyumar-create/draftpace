@@ -1,0 +1,197 @@
+{
+  "id": "sit-monthly-money-reset-problem-1--facebook-feed",
+  "product": "monthly-money-reset",
+  "situation": "problemsSolved[0].problem",
+  "runtime": {
+    "min": 10,
+    "max": 30
+  },
+  "platform": "facebook-feed",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1350,
+  "fps": 30,
+  "durationInFrames": 557,
+  "structure": "situationMoment",
+  "angle": {
+    "text": "You don't know what's actually safe to spend without doing the math yourself, every time.",
+    "source": "problemsSolved[0].problem"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "float",
+    "transitions": [
+      "lineWipe",
+      "blurDissolve",
+      "lineWipe"
+    ],
+    "motif": "ledger",
+    "grounds": [
+      "light",
+      "accent",
+      "light",
+      "ink"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "You don't know what's actually safe to spend without doing the math yourself, every time.",
+          "source": "problemsSolved[0].problem"
+        }
+      ],
+      "emphasis": [
+        "every"
+      ],
+      "why": "Opens on the moment as the listing describes it: the situation the viewer is in right now.",
+      "from": 0,
+      "dur": 190,
+      "ground": "ink",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "You don't know what's actually",
+          "safe to spend without doing",
+          "the math yourself, every time."
+        ]
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "live",
+      "variant": "after",
+      "copy": [],
+      "caption": {
+        "text": "A single Safe-to-Spend figure that updates as the month goes on, no mental math required.",
+        "source": "problemsSolved[0].solution"
+      },
+      "live": "safeToSpendCard",
+      "eyebrow": {
+        "text": "Monthly Money Reset",
+        "source": "title"
+      },
+      "why": "How Monthly Money Reset helps, in the listing's own words, as the real component computing a real number.",
+      "from": 178,
+      "dur": 288,
+      "ground": "light",
+      "transition": "lineWipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "tick",
+          "volume": 0.36
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "free",
+      "copy": [
+        {
+          "text": "Monthly Money Reset",
+          "source": "title"
+        },
+        {
+          "text": "Start free.",
+          "source": "micro"
+        }
+      ],
+      "why": "A free product closes on starting free; there is no price to state.",
+      "from": 454,
+      "dur": 103,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Facebook feed video, 1080×1350, 10–30s, hook by 1.5s, sound off",
+      "because": "Scrolled past in a feed with sound off: say who it is for in the first seconds, name the product early, keep every point on screen and readable at a glance."
+    },
+    {
+      "topic": "Product",
+      "decision": "Monthly Money Reset: free, motif \"ledger\", calm personality, cool accent #214b3e",
+      "because": "From its definition and Shop listing. 1 real screens and live components (safeToSpendCard, nextActionCard) to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"You don't know what's actually safe to spend without doing the math yourself, every time.\"",
+      "because": "One real moment from Monthly Money Reset's listing (problemsSolved[0].problem). The film is about this moment and how the product helps with it: \"A single Safe-to-Spend figure that updates as the month goes on, no mental math required.\""
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You want one clear number for what's actually safe to spend, not a full budget system. / You have a mix of bills, some paid automatically and some not, that you'd rather not accidentally spend past.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
+      "because": "Best fit for a awareness film on Facebook feed video (platform fit 2, goal fit 3, already used for this product ×1, already used on Facebook feed video ×2). Other candidates: ."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"You don't know what's actually safe to spend without doing the math yourself, every time.\"",
+      "because": "The moment \"You don't know what's actually safe to spend without doing the math yourself, every time.\", then how Monthly Money Reset helps."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"ledger\"",
+      "because": "Transitions follow the product's own identity motif, \"ledger\": a ledger is ruled lines, so scenes are revealed row by row."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → accent → light → ink",
+      "because": "Grounds light → accent → light → ink: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "18.6s, 3 scenes",
+      "because": "Each scene is held for the time its words take to read on Facebook feed video (0.32s a word), inside 10–30s."
+    }
+  ]
+}

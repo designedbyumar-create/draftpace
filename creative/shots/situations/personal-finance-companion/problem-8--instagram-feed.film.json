@@ -1,0 +1,227 @@
+{
+  "id": "sit-personal-finance-companion-problem-8--instagram-feed",
+  "product": "personal-finance-companion",
+  "situation": "problemsSolved[7].problem",
+  "runtime": {
+    "min": 10,
+    "max": 30
+  },
+  "platform": "instagram-feed",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1350,
+  "fps": 30,
+  "durationInFrames": 728,
+  "structure": "situationMoment",
+  "angle": {
+    "text": "You split bills with somebody and neither of you can remember what was actually squared up last time.",
+    "source": "problemsSolved[7].problem"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "locked",
+    "transitions": [
+      "cardSlide",
+      "wipe",
+      "cardSlide"
+    ],
+    "motif": "index",
+    "grounds": [
+      "ink",
+      "light",
+      "light",
+      "accent"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "You split bills with somebody and neither of you can remember what was actually squared up last time.",
+          "source": "problemsSolved[7].problem"
+        }
+      ],
+      "emphasis": [
+        "somebody"
+      ],
+      "why": "Opens on the moment as the listing describes it: the situation the viewer is in right now.",
+      "from": 0,
+      "dur": 210,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "You split bills with somebody",
+          "and neither of you can",
+          "remember what was actually",
+          "squared up last time."
+        ]
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Mark a bill or subscription shared, set your share of it, and tick it settled when it is genuinely settled. A generated statement says what is settled and what is still owed.",
+        "source": "problemsSolved[7].solution"
+      },
+      "screen": {
+        "src": "screens/personal-finance-companion-bills.png",
+        "pose": "tiltLeft",
+        "focus": {
+          "at": 0.45,
+          "y": 229,
+          "h": 224,
+          "region": "totals"
+        }
+      },
+      "why": "How Personal Finance Companion helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"Bills\" (What's owed on a schedule: the monthly total, what's left to pay, and each bill marked ready or essential.) chosen because it is the real screen closest to \"Mark a bill or subscription shared, set your share of it, and tick it settled wh\"; focus on \"Monthly total, Left to pay this month\".",
+      "eyebrow": {
+        "text": "Personal Finance Companion",
+        "source": "title"
+      },
+      "from": 198,
+      "dur": 442,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 199,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "soft",
+      "copy": [
+        {
+          "text": "Personal Finance Companion",
+          "source": "title"
+        },
+        {
+          "text": "Available now.",
+          "source": "micro"
+        }
+      ],
+      "why": "Instagram feed video punishes an obvious ad; a soft close names the product and where to find it.",
+      "from": 628,
+      "dur": 100,
+      "ground": "ink",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Instagram feed video, 1080×1350, 10–30s, hook by 1.2s, sound off",
+      "because": "A 4:5 card in the grid of a feed, autoplayed muted. Craft and composition carry it; text is short and sits well inside the frame."
+    },
+    {
+      "topic": "Product",
+      "decision": "Personal Finance Companion: $49 (list $99), motif \"index\", calm personality, cool accent #0d3b2e",
+      "because": "From its definition and Shop listing. 4 real screens to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"You split bills with somebody and neither of you can remember what was actually squared up last time.\"",
+      "because": "One real moment from Personal Finance Companion's listing (problemsSolved[7].problem). The film is about this moment and how the product helps with it: \"Mark a bill or subscription shared, set your share of it, and tick it settled when it is genuinely settled. A generated statement says what is settled and what is still owed.\""
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You have more than one account, bill, or income source and want them tracked in one real place, not five apps. / You want a next step handed to you, not a dashboard you have to interpret yourself every time.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
+      "because": "Best fit for a awareness film on Instagram feed video (platform fit 2, goal fit 3, already used for this product ×4, already used on Instagram feed video ×4). Other candidates: Inside the tool (-37.3)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"You split bills with somebody and neither of you can remember what was actually squared up last time.\"",
+      "because": "The moment \"You split bills with somebody and neither of you can remember what was actually squared up last time.\", then how Personal Finance Companion helps."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"index\"",
+      "because": "Transitions follow the product's own identity motif, \"index\": an index of tabs, so scenes slide in like the next tab."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds ink → light → light → accent",
+      "because": "Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.88 similar to sit-personal-finance-companion-problem-5--instagram-reel; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Changed the camera",
+      "because": "Its shape was 0.78 similar to sit-homeschooling-companion-problem-1--instagram-feed; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Reordered the transitions",
+      "because": "Its shape was 0.78 similar to sit-home-management-companion-problem-2--instagram-feed; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "24.3s, 3 scenes",
+      "because": "Each scene is held for the time its words take to read on Instagram feed video (0.3s a word), inside 10–30s."
+    }
+  ]
+}

@@ -1,0 +1,258 @@
+{
+  "id": "car-travel-companion-search-2",
+  "product": "travel-companion",
+  "guide": "flight-delayed-with-a-connection-what-to-do-first",
+  "situation": "searchedProblems[1].phrase",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "My flight is delayed and I have a connection",
+        "source": "searchedProblems[1].phrase"
+      },
+      "emphasis": [
+        "connection"
+      ],
+      "promise": {
+        "text": "Flight delayed with a connection: what to do first",
+        "source": "guide:flight-delayed-with-a-connection-what-to-do-first/title"
+      },
+      "art": {
+        "motif": "plane",
+        "why": "the carousel's topic: the moment and its guide name \"flight\", \"connection\"",
+        "also": "clock"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "A delay and a connection to catch.",
+          "source": "guide:flight-delayed-with-a-connection-what-to-do-first/dek#0"
+        },
+        {
+          "text": "Do the arithmetic, join the line and call at the same time, and ask for a specific flight, not for help.",
+          "source": "guide:flight-delayed-with-a-connection-what-to-do-first/dek#1"
+        }
+      ],
+      "art": {
+        "motif": "clock",
+        "why": "the slide names \"time\", \"delay\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "While still in the air",
+        "source": "guide:flight-delayed-with-a-connection-what-to-do-first/body[3].steps[0].when"
+      },
+      "head": {
+        "text": "Ask a flight attendant whether the connecting flight is holding or whether other passengers are on it.",
+        "source": "guide:flight-delayed-with-a-connection-what-to-do-first/body[3].steps[0].what#0"
+      },
+      "body": [
+        {
+          "text": "They sometimes know.",
+          "source": "guide:flight-delayed-with-a-connection-what-to-do-first/body[3].steps[0].what#1"
+        }
+      ],
+      "emphasis": [
+        "connecting"
+      ],
+      "art": {
+        "motif": "plane",
+        "why": "the slide names \"flight\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "On landing",
+        "source": "guide:flight-delayed-with-a-connection-what-to-do-first/body[3].steps[1].when"
+      },
+      "head": {
+        "text": "Open the airline app before you stand up.",
+        "source": "guide:flight-delayed-with-a-connection-what-to-do-first/body[3].steps[1].what#0"
+      },
+      "body": [
+        {
+          "text": "Rebooking is sometimes offered there before an agent is free.",
+          "source": "guide:flight-delayed-with-a-connection-what-to-do-first/body[3].steps[1].what#1"
+        }
+      ],
+      "emphasis": [
+        "airline"
+      ],
+      "art": {
+        "motif": "phone",
+        "why": "the slide names \"airline app\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "In the line",
+        "source": "guide:flight-delayed-with-a-connection-what-to-do-first/body[3].steps[2].when"
+      },
+      "head": {
+        "text": "Join the service or transfer desk queue, even if the gate might still work.",
+        "source": "guide:flight-delayed-with-a-connection-what-to-do-first/body[3].steps[2].what#0"
+      },
+      "body": [
+        {
+          "text": "You can always leave a line.",
+          "source": "guide:flight-delayed-with-a-connection-what-to-do-first/body[3].steps[2].what#1"
+        }
+      ],
+      "emphasis": [
+        "transfer"
+      ],
+      "art": {
+        "motif": "plane",
+        "why": "the slide names \"gate\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "In the same minutes",
+        "source": "guide:flight-delayed-with-a-connection-what-to-do-first/body[3].steps[3].when"
+      },
+      "head": {
+        "text": "Call the airline from the queue.",
+        "source": "guide:flight-delayed-with-a-connection-what-to-do-first/body[3].steps[3].what#0"
+      },
+      "body": [
+        {
+          "text": "The phone and the desk are separate lines.",
+          "source": "guide:flight-delayed-with-a-connection-what-to-do-first/body[3].steps[3].what#1"
+        }
+      ],
+      "emphasis": [
+        "airline"
+      ],
+      "art": {
+        "motif": "phone",
+        "why": "the slide names \"phone\", \"call\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Before you reach the desk",
+        "source": "guide:flight-delayed-with-a-connection-what-to-do-first/body[3].steps[4].when"
+      },
+      "head": {
+        "text": "Decide what to ask for: the next flight, a different routing, or a night in a hotel.",
+        "source": "guide:flight-delayed-with-a-connection-what-to-do-first/body[3].steps[4].what#0"
+      },
+      "body": [],
+      "emphasis": [
+        "different"
+      ],
+      "art": {
+        "motif": "plane",
+        "why": "the slide names \"flight\""
+      }
+    },
+    {
+      "kind": "checklist",
+      "eyebrow": {
+        "text": "What to have in hand",
+        "source": "guide:flight-delayed-with-a-connection-what-to-do-first/body[7].heading"
+      },
+      "items": [
+        {
+          "text": "Booking reference, and the name it's under.",
+          "source": "guide:flight-delayed-with-a-connection-what-to-do-first/body[7].items[0]#0"
+        },
+        {
+          "text": "Your onward flight number and its departure time.",
+          "source": "guide:flight-delayed-with-a-connection-what-to-do-first/body[7].items[1]#0"
+        },
+        {
+          "text": "Whether both flights are on one booking.",
+          "source": "guide:flight-delayed-with-a-connection-what-to-do-first/body[7].items[2]#0"
+        },
+        {
+          "text": "What's waiting at the other end: a transfer, a check-in, someone meeting you.",
+          "source": "guide:flight-delayed-with-a-connection-what-to-do-first/body[7].items[3]#0"
+        },
+        {
+          "text": "Paper or a second device to write on, because your phone may be at eleven percent.",
+          "source": "guide:flight-delayed-with-a-connection-what-to-do-first/body[7].items[4]#0"
+        }
+      ],
+      "ticks": true,
+      "art": {
+        "motif": "ticket",
+        "why": "the slide names \"booking\", \"reference\""
+      }
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "Travel Companion",
+        "source": "title"
+      },
+      "line": {
+        "text": "The connection, the transfer and whatever was booked after them are shown as potentially affected, with a walked-through call for any that need one.",
+        "source": "searchedProblems[1].answer"
+      },
+      "ui": {
+        "kind": "screen",
+        "src": "screens/travel-companion-itinerary.png"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "Flight delayed with a connection: what to do first",
+        "source": "guide:flight-delayed-with-a-connection-what-to-do-first/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/flight-delayed-with-a-connection-what-to-do-first",
+        "source": "guide:flight-delayed-with-a-connection-what-to-do-first/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      },
+      "art": {
+        "motif": "plane",
+        "why": "the carousel's topic: the moment and its guide name \"flight\", \"connection\""
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"My flight is delayed and I have a connection\" (searchedProblems[1].phrase), as people search it.",
+    "Steps: 5 of 6 from the guide's timeline \"What to do, in order\", one per slide, each with the guide's own explanation.",
+    "Checklist: 5 items from \"What to have in hand\".",
+    "Help: \"The connection, the transfer and whatever was booked after them are shown as potentially affected, with a walked-through call for any that need one.\" (searchedProblems[1].answer), on screens/travel-companion-itinerary.png (\"Itinerary\").",
+    "Illustration on the cover: plane with clock, because the carousel's topic: the moment and its guide name \"flight\", \"connection\".",
+    "Illustration on the answer: clock, because the slide names \"time\", \"delay\".",
+    "Illustration on the step: plane, because the slide names \"flight\".",
+    "Illustration on the step: phone, because the slide names \"airline app\".",
+    "Illustration on the step: plane, because the slide names \"gate\".",
+    "Illustration on the step: phone, because the slide names \"phone\", \"call\".",
+    "Illustration on the step: plane, because the slide names \"flight\".",
+    "Illustration on the checklist: ticket, because the slide names \"booking\", \"reference\".",
+    "Illustration on the close: plane, because the carousel's topic: the moment and its guide name \"flight\", \"connection\"."
+  ]
+}

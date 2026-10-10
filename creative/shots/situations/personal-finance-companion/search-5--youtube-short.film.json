@@ -1,0 +1,293 @@
+{
+  "id": "sit-personal-finance-companion-search-5--youtube-short",
+  "product": "personal-finance-companion",
+  "guide": "bank-statement-csv-to-budget",
+  "situation": "searchedProblems[4].phrase",
+  "runtime": {
+    "min": 15,
+    "max": 40
+  },
+  "platform": "youtube-short",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 618,
+  "structure": "situationMoment",
+  "angle": {
+    "text": "I have no idea where my money went",
+    "source": "searchedProblems[4].phrase"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "dolly",
+    "transitions": [
+      "cardSlide",
+      "wipe",
+      "cardSlide"
+    ],
+    "motif": "index",
+    "grounds": [
+      "light",
+      "light",
+      "ink",
+      "accent"
+    ],
+    "pace": 1
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.2,
+    "energy": "mid"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "I have no idea where my money went",
+          "source": "searchedProblems[4].phrase"
+        }
+      ],
+      "emphasis": [
+        "money"
+      ],
+      "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
+      "from": 0,
+      "dur": 83,
+      "ground": "ink",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "I have no idea where",
+          "my money went"
+        ]
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Transactions you enter or import, reviewed before anything joins your picture, so what you are looking at is what actually happened.",
+        "source": "searchedProblems[4].answer"
+      },
+      "screen": {
+        "src": "screens/personal-finance-companion-records.png",
+        "pose": "tiltLeft",
+        "focus": {
+          "at": 0.45,
+          "y": 222,
+          "h": 119,
+          "region": "accounts"
+        }
+      },
+      "why": "How Personal Finance Companion helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"Records\" (What's actually true right now, area by area: accounts, income, bills, subscriptions, transactions, debt.) chosen because it is the real screen closest to \"Transactions you enter or import, reviewed before anything joins your picture, s\"; focus on \"Accounts\".",
+      "eyebrow": {
+        "text": "Personal Finance Companion",
+        "source": "title"
+      },
+      "from": 71,
+      "dur": 256,
+      "ground": "light",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 115,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "step-1",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "Download whole calendar months.",
+          "source": "guide:bank-statement-csv-to-budget/body[3].items[0]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "1",
+        "source": "micro"
+      },
+      "emphasis": [
+        "Download"
+      ],
+      "why": "Step 1 from the guide \"How to import a bank statement CSV: check the file first\", numbered as the guide numbers it.",
+      "from": 315,
+      "dur": 81,
+      "ground": "ink",
+      "transition": "wipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "Download whole",
+          "calendar months."
+        ]
+      ]
+    },
+    {
+      "id": "step-2",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "Open a copy in a text editor, not a spreadsheet.",
+          "source": "guide:bank-statement-csv-to-budget/body[3].items[1]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "2",
+        "source": "micro"
+      },
+      "emphasis": [
+        "spreadsheet"
+      ],
+      "why": "Step 2 from the guide \"How to import a bank statement CSV: check the file first\", numbered as the guide numbers it.",
+      "from": 384,
+      "dur": 128,
+      "ground": "accent",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "Open a copy in a",
+          "text editor, not",
+          "a spreadsheet."
+        ]
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Personal Finance Companion",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/bank-statement-csv-to-budget",
+          "source": "guide:bank-statement-csv-to-budget/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 500,
+      "dur": 118,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "YouTube Short, 1080×1920, 15–40s, hook by 1.2s, sound on",
+      "because": "Search-adjacent audience that will watch a slightly longer explanation if it starts strong. Loops by default."
+    },
+    {
+      "topic": "Product",
+      "decision": "Personal Finance Companion: $49 (list $99), motif \"index\", calm personality, cool accent #0d3b2e",
+      "because": "From its definition and Shop listing. 4 real screens to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"I have no idea where my money went\"",
+      "because": "One real moment from Personal Finance Companion's listing (searchedProblems[4].phrase). The film is about this moment and how the product helps with it: \"Transactions you enter or import, reviewed before anything joins your picture, so what you are looking at is what actually happened.\""
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"How to import a bank statement CSV: check the file first\" (draftpace.com/guides/bank-statement-csv-to-budget)",
+      "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You have more than one account, bill, or income source and want them tracked in one real place, not five apps. / You want a next step handed to you, not a dashboard you have to interpret yourself every time.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 3, already used on YouTube Short ×4). Other candidates: Inside the tool (-13.5), In their words (-15.0)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"I have no idea where my money went\"",
+      "because": "The moment \"I have no idea where my money went\", then how Personal Finance Companion helps, then what the guide \"How to import a bank statement CSV: check the file first\" says to do."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"index\"",
+      "because": "Transitions follow the product's own identity motif, \"index\": an index of tabs, so scenes slide in like the next tab."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"dolly\"",
+      "because": "Camera \"dolly\": constant forward movement for a high-energy feed."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → light → ink → accent",
+      "because": "Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Full sound design, mid-energy bed",
+      "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
+    },
+    {
+      "topic": "Length",
+      "decision": "20.6s, 5 scenes",
+      "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 15–40s."
+    }
+  ]
+}

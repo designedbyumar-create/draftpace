@@ -1,0 +1,257 @@
+{
+  "id": "guide-safe-deposit-box-and-spare-keys-who-can-open-it--youtube-short",
+  "product": "personal-life-affairs-companion",
+  "guide": "safe-deposit-box-and-spare-keys-who-can-open-it",
+  "runtime": {
+    "min": 18,
+    "max": 45
+  },
+  "platform": "youtube-short",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 540,
+  "structure": "guideQuestion",
+  "angle": {
+    "text": "Can a bank keep a family out even with a death certificate?",
+    "source": "guide:safe-deposit-box-and-spare-keys-who-can-open-it/body[7].items[3].q"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "dolly",
+    "transitions": [
+      "pageTurn",
+      "blurDissolve",
+      "pageTurn"
+    ],
+    "motif": "book",
+    "grounds": [
+      "ink",
+      "light",
+      "light",
+      "accent"
+    ],
+    "pace": 1
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.2,
+    "energy": "mid"
+  },
+  "scenes": [
+    {
+      "id": "q",
+      "kind": "title",
+      "variant": "quote",
+      "copy": [
+        {
+          "text": "Can a bank keep a family out even with a death certificate?",
+          "source": "guide:safe-deposit-box-and-spare-keys-who-can-open-it/body[7].items[3].q"
+        }
+      ],
+      "why": "The question as people ask it; the guide carries it because people search it.",
+      "from": 0,
+      "dur": 122,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "Can a bank keep a",
+          "family out even with",
+          "a death certificate?"
+        ]
+      ]
+    },
+    {
+      "id": "a",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Yes, if you're not the renter and don't yet have court paperwork proving you have authority over the estate.",
+          "source": "guide:safe-deposit-box-and-spare-keys-who-can-open-it/body[7].items[3].a#0"
+        }
+      ],
+      "emphasis": [
+        "paperwork"
+      ],
+      "why": "The guide's answer, its first sentence: the plain answer before any detail.",
+      "from": 110,
+      "dur": 176,
+      "ground": "light",
+      "transition": "pageTurn",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "page",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "Yes, if you're not the renter",
+          "and don't yet have court",
+          "paperwork proving you have",
+          "authority over the estate."
+        ]
+      ]
+    },
+    {
+      "id": "tool",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Eight short questions about your situation.",
+        "source": "howItWorks[0]#0"
+      },
+      "screen": {
+        "src": "screens/personal-life-affairs-companion-workspace.png",
+        "pose": "tiltLeft",
+        "focus": {
+          "at": 0.45,
+          "y": 82,
+          "h": 427,
+          "region": "question"
+        },
+        "scroll": []
+      },
+      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"Write down who should be called first.\" (One question at a time: write down who should be called first, with Start, Not relevant to me and Later.) chosen because it is the real screen closest to \"Eight short questions about your situation. Who can open a safe deposit box or s\"; focus on \"Write down who should be called first.\".",
+      "eyebrow": {
+        "text": "Personal Life Affairs Companion",
+        "source": "title"
+      },
+      "from": 274,
+      "dur": 153,
+      "ground": "accent",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 69,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Personal Life Affairs Companion",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/safe-deposit-box-and-spare-keys-who-can-open-it",
+          "source": "guide:safe-deposit-box-and-spare-keys-who-can-open-it/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 415,
+      "dur": 125,
+      "ground": "ink",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "YouTube Short, 1080×1920, 18–45s, hook by 1.2s, sound on",
+      "because": "Search-adjacent audience that will watch a slightly longer explanation if it starts strong. Loops by default."
+    },
+    {
+      "topic": "Product",
+      "decision": "Personal Life Affairs Companion: $49 (list $99), motif \"book\", calm personality, cool accent #26374f",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"Who can open a safe deposit box or safe when you die?\" (draftpace.com/guides/safe-deposit-box-and-spare-keys-who-can-open-it)",
+      "because": "Teaches from the guide first; Personal Life Affairs Companion is the product the guide hands over to. 1 lists and timelines, 4 questions to draw from."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You have been meaning to sort this out for a while and have never found a first step small enough to take. / You would rather be asked one question at a time than handed a folder and told to fill it in.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Material",
+      "decision": "Allowed real lines up to 4 words longer",
+      "because": "Every structure Personal Life Affairs Companion's copy supports at YouTube Short's normal line length is already used by its other films; a longer real line beats telling the same story twice."
+    },
+    {
+      "topic": "Structure",
+      "decision": "The question people ask: One of the guide's own questions, its plain answer, then the product.",
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 2, already used for this product ×4, already used on YouTube Short ×10). Other candidates: ."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"Can a bank keep a family out even with a death certificate?\"",
+      "because": "A question from the guide's FAQ, \"Can a bank keep a family out even with a death certificate?\", and the first sentence of its answer."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"book\"",
+      "because": "Transitions follow the product's own identity motif, \"book\": a handoff book, so scenes turn like pages."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"dolly\"",
+      "because": "Camera \"dolly\": constant forward movement for a high-energy feed."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds ink → light → light → accent",
+      "because": "Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.74 similar to guide-home-maintenance-you-skip-that-costs-the-most--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Full sound design, mid-energy bed",
+      "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
+    },
+    {
+      "topic": "Length",
+      "decision": "18.0s, 4 scenes",
+      "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 18–45s."
+    }
+  ]
+}

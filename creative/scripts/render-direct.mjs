@@ -9,12 +9,15 @@
  *
  *   node scripts/render-direct.mjs                        # every registered composition
  *   node scripts/render-direct.mjs MonthlyMoneyReset-FeatureSpotlight   # just one
+ *   node scripts/render-direct.mjs Film-guide-travel,Film-vo-            # several, comma-separated
  */
 import { bundle } from "@remotion/bundler";
 import { renderMedia, selectComposition, getCompositions } from "@remotion/renderer";
 import path from "node:path";
 import { mkdir } from "node:fs/promises";
 import { webpackOverride } from "../webpack-override.mjs";
+import { browserExecutable } from "./browser.mjs";
+import { masterVideo } from "./master-audio.mjs";
 
 const OUT_DIR = path.resolve(process.cwd(), "out");
 const only = process.argv[2];
@@ -40,8 +43,13 @@ async function main() {
   );
   log(`bundled: ${bundled}`);
 
-  const all = await getCompositions(bundled);
-  const targets = only ? all.filter((c) => c.id === only) : all.filter((c) => c.id.endsWith("-FeatureSpotlight"));
+  const all = await getCompositions(bundled, { browserExecutable });
+  // Exact ids, or "Film" plus any part of a film id ("Film-travel", "Film-guide-"), comma-separated; or (default) every Feature Spotlight.
+  const wanted = only ? only.split(",").filter(Boolean) : [];
+  const matches = (id, w) => id === w || (w.startsWith("Film") && id.startsWith("Film-") && id.includes(w.replace(/^Film-?/, "")));
+  const targets = only
+    ? all.filter((c) => wanted.some((w) => matches(c.id, w)))
+    : all.filter((c) => c.id.endsWith("-FeatureSpotlight"));
   if (targets.length === 0) {
     throw new Error(only ? `No composition found with id "${only}"` : "No -FeatureSpotlight compositions found");
   }
@@ -50,15 +58,20 @@ async function main() {
   for (const compositionMeta of targets) {
     log(`selecting composition ${compositionMeta.id}...`);
     const composition = await withTimeout(
-      selectComposition({ serveUrl: bundled, id: compositionMeta.id }),
+      selectComposition({ browserExecutable, serveUrl: bundled, id: compositionMeta.id }),
       90_000,
       `selectComposition(${compositionMeta.id})`
     );
+    const film = compositionMeta.id.startsWith("Film-");
     const slug = compositionMeta.id.replace(/-FeatureSpotlight$/, "");
-    const outPath = path.join(OUT_DIR, `${slug}-feature-spotlight.mp4`);
+    if (film) await mkdir(path.join(OUT_DIR, "films"), { recursive: true });
+    const outPath = film
+      ? path.join(OUT_DIR, "films", `${compositionMeta.id.slice(5)}.mp4`)
+      : path.join(OUT_DIR, `${slug}-feature-spotlight.mp4`);
     log(`rendering media for ${compositionMeta.id} -> ${outPath}...`);
     await withTimeout(
       renderMedia({
+        browserExecutable,
         composition,
         serveUrl: bundled,
         codec: "h264",
@@ -70,11 +83,15 @@ async function main() {
       15 * 60_000,
       `renderMedia(${compositionMeta.id})`
     );
+    const lufs = masterVideo(outPath);
+    log(`mastered audio: ${lufs.before.toFixed(1)} dB -> ${lufs.after.toFixed(1)} dB`);
     log(`done: ${outPath}`);
   }
 }
 
-main().catch((err) => {
+// Exit explicitly: a pending per-phase timeout timer would otherwise keep
+// the process alive for its full length after the work is done.
+main().then(() => process.exit(0)).catch((err) => {
   console.error(`[${new Date().toISOString()}] FAILED:`, err);
   process.exit(1);
 });

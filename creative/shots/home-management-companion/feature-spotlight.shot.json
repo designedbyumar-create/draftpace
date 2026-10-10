@@ -2,6 +2,7 @@
   "id": "feature-spotlight-home-management-companion",
   "product": "home-management-companion",
   "themeSlug": "home-management-companion",
+  "problem": 0,
   "format": "feature-spotlight",
   "fps": 30,
   "width": 1080,
@@ -17,6 +18,9 @@
           "The filter size.",
           "The model number.",
           "None of it lives anywhere."
+        ],
+        "emphasis": [
+          "anywhere"
         ]
       },
       "camera": {
@@ -103,10 +107,10 @@
       "id": "cta",
       "kind": "cta",
       "startFrame": 430,
-      "durationFrames": 50,
+      "durationFrames": 90,
       "typography": {
         "headline": "Available now.",
-        "sub": "draftpace.com/shop · $49"
+        "sub": "draftpace.com/shop · {price}"
       },
       "camera": {
         "move": "static"

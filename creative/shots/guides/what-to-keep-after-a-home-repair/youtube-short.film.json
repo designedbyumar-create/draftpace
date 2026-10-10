@@ -1,0 +1,285 @@
+{
+  "id": "guide-what-to-keep-after-a-home-repair--youtube-short",
+  "product": "home-management-companion",
+  "guide": "what-to-keep-after-a-home-repair",
+  "runtime": {
+    "min": 18,
+    "max": 45
+  },
+  "platform": "youtube-short",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 843,
+  "structure": "guideChecklist",
+  "angle": {
+    "text": "What to keep after a home repair, besides the invoice",
+    "source": "guide:what-to-keep-after-a-home-repair/title"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "dolly",
+    "transitions": [
+      "slideUp",
+      "cardSlide",
+      "slideUp"
+    ],
+    "motif": "tag",
+    "grounds": [
+      "light",
+      "light",
+      "ink",
+      "accent"
+    ],
+    "pace": 1
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.2,
+    "energy": "mid"
+  },
+  "scenes": [
+    {
+      "id": "hook",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "What to keep after a home repair, besides the invoice",
+          "source": "guide:what-to-keep-after-a-home-repair/title"
+        }
+      ],
+      "emphasis": [
+        "besides"
+      ],
+      "why": "The hook is the guide's own title: the question it answers, as a person would put it.",
+      "from": 0,
+      "dur": 99,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "What to keep after",
+          "a home repair, besides",
+          "the invoice"
+        ]
+      ]
+    },
+    {
+      "id": "list",
+      "kind": "list",
+      "variant": "checklist",
+      "copy": [
+        {
+          "text": "The symptom, in your own words, before anyone diagnosed it.",
+          "source": "guide:what-to-keep-after-a-home-repair/body[2].items[0]#0"
+        },
+        {
+          "text": "What the technician said was actually wrong.",
+          "source": "guide:what-to-keep-after-a-home-repair/body[2].items[1]#0"
+        },
+        {
+          "text": "What was replaced or adjusted, including a part number if one was mentioned.",
+          "source": "guide:what-to-keep-after-a-home-repair/body[2].items[2]#0"
+        },
+        {
+          "text": "What they said to watch for next, and roughly when.",
+          "source": "guide:what-to-keep-after-a-home-repair/body[2].items[3]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "Write these down the same day",
+        "source": "guide:what-to-keep-after-a-home-repair/body[2].heading"
+      },
+      "why": "The guide's own checklist, the first sentence of each item, ticked in as it is read.",
+      "from": 87,
+      "dur": 500,
+      "ground": "ink",
+      "transition": "slideUp",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        },
+        {
+          "at": 10,
+          "cue": "pop",
+          "volume": 0.45
+        },
+        {
+          "at": 110,
+          "cue": "pop",
+          "volume": 0.45
+        },
+        {
+          "at": 210,
+          "cue": "pop",
+          "volume": 0.45
+        },
+        {
+          "at": 310,
+          "cue": "pop",
+          "volume": 0.45
+        }
+      ]
+    },
+    {
+      "id": "tool",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "The boring, expensive jobs raised before they become repairs, not after.",
+        "source": "problemsSolved[1].solution"
+      },
+      "screen": {
+        "src": "screens/home-management-companion-seasons.png",
+        "pose": "flat",
+        "focus": {
+          "at": 0.45,
+          "y": 82,
+          "h": 210,
+          "region": "season"
+        },
+        "scroll": []
+      },
+      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"Fall home maintenance checklist\" (This season's checklist: the jobs best done from September to November, by month.) chosen because it is the real screen closest to \"The boring, expensive jobs raised before they become repairs, not after. What to\"; focus on \"Fall home maintenance checklist\".",
+      "eyebrow": {
+        "text": "Home Base",
+        "source": "title"
+      },
+      "from": 575,
+      "dur": 170,
+      "ground": "accent",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 77,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Home Base",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/what-to-keep-after-a-home-repair",
+          "source": "guide:what-to-keep-after-a-home-repair/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 733,
+      "dur": 110,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "YouTube Short, 1080×1920, 18–45s, hook by 1.2s, sound on",
+      "because": "Search-adjacent audience that will watch a slightly longer explanation if it starts strong. Loops by default."
+    },
+    {
+      "topic": "Product",
+      "decision": "Home Base: $49 (list $99), motif \"tag\", calm personality, cool accent #4f7a5c",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"What to keep after a home repair, besides the invoice\" (draftpace.com/guides/what-to-keep-after-a-home-repair)",
+      "because": "Teaches from the guide first; Home Base is the product the guide hands over to. 1 lists and timelines, 5 questions to draw from."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You own or rent a home and would rather be told what needs you this week than keep a mental list you know is incomplete. / You want the boring, expensive things caught early: the water heater, the gutters, the outside tap before the first freeze.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Material",
+      "decision": "Allowed real lines up to 4 words longer",
+      "because": "Every structure Home Base's copy supports at YouTube Short's normal line length is already used by its other films; a longer real line beats telling the same story twice."
+    },
+    {
+      "topic": "Structure",
+      "decision": "The checklist: The guide's checklist on one screen, item by item, then the product that holds it.",
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 3, already used for this product ×1, already used on YouTube Short ×2). Other candidates: The question people ask (-15.3)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"What to keep after a home repair, besides the invoice\"",
+      "because": "A checklist from the guide, \"Write these down the same day\": 4 of its 6 items."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"tag\"",
+      "because": "Transitions follow the product's own identity motif, \"tag\": things in the home are tagged, so scenes rise like a tag being lifted."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"dolly\"",
+      "because": "Camera \"dolly\": constant forward movement for a high-energy feed."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → light → ink → accent",
+      "because": "Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.74 similar to guide-what-to-do-when-a-parent-dies--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Full sound design, mid-energy bed",
+      "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
+    },
+    {
+      "topic": "Length",
+      "decision": "28.1s, 4 scenes",
+      "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 18–45s."
+    }
+  ]
+}

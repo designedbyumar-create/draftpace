@@ -19,6 +19,13 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // The Creative Engine is its own workspace with its own dependencies
+    // and its own CI job (.github/workflows/creative.yml).
+    "creative/**",
+    // Draftpace Studio's build output and local state; its source is linted like the site's.
+    "studio/.next/**",
+    "studio/.data/**",
+    "studio/next-env.d.ts",
   ]),
 ]);
 

@@ -2,6 +2,7 @@
   "id": "feature-spotlight-homeschooling-companion",
   "product": "homeschooling-companion",
   "themeSlug": "homeschooling-companion",
+  "problem": 0,
   "format": "feature-spotlight",
   "fps": 30,
   "width": 1080,
@@ -17,6 +18,9 @@
           "By March you",
           "can't remember",
           "October."
+        ],
+        "emphasis": [
+          "October"
         ]
       },
       "camera": {
@@ -103,10 +107,10 @@
       "id": "cta",
       "kind": "cta",
       "startFrame": 430,
-      "durationFrames": 50,
+      "durationFrames": 90,
       "typography": {
         "headline": "Available now.",
-        "sub": "draftpace.com/shop · $34"
+        "sub": "draftpace.com/shop · {price}"
       },
       "camera": {
         "move": "static"

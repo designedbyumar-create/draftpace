@@ -64,7 +64,11 @@ product's data. See `docs/DATA-BOUNDARIES.md`.
 1. **One Next.js app.** No monorepo conversion. Keep clean internal
    boundaries (`src/product-framework/`, `src/design-system/`,
    `src/components/product-shell/`) that could be extracted into packages
-   later without a rewrite.
+   later without a rewrite. The two internal tools beside it are not
+   product apps: `creative/` (the Creative Engine, Remotion) and `studio/`
+   (Draftpace Studio, the content workspace that drives it). Neither is
+   deployed with the site, neither is imported by it, and Studio moves to
+   its own repo when it is hosted.
 2. **No family switch statements.** `ProductFamilyId` and
    `ProductCapabilityId` are open, validated, namespaced strings
    (`"companion.next-action"`, `"learning.lesson"`, ...), not closed TS
@@ -149,6 +153,11 @@ product-instance state, `docs/DESIGN-SYSTEM.md` for tokens/primitives,
 `docs/ADMIN-AND-OPERATIONS.md` for the admin shell, `docs/SEO-FOUNDATION.md`
 for crawlability, structured data, and the keyword/topic architecture, and
 `docs/RUNBOOK.md` when something is broken in production.
+
+Marketing content: `creative/` makes the videos and images from the real
+products (`.claude/skills/creative-engine/SKILL.md`), and `studio/` is the
+workspace for making, reviewing, rendering and scheduling them
+(`studio/README.md`, `npm run studio`).
 
 `docs/archive/` holds superseded planning documents. They record how
 decisions were reached and are never current guidance.

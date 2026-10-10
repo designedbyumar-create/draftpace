@@ -4,6 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev --webpack",
+    "studio": "node studio/scripts/start.mjs",
+    "studio:typecheck": "tsc --noEmit -p studio",
+    "videos": "node creative/scripts/render-all.mjs",
+    "carousels": "node creative/scripts/render-carousels.mjs",
+    "pins:maple": "node creative/scripts/render-finds-pins.mjs",
     "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint",

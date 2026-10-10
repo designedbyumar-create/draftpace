@@ -1,0 +1,258 @@
+{
+  "id": "sit-monthly-money-reset-search-1--pinterest-video",
+  "product": "monthly-money-reset",
+  "guide": "how-to-budget-for-beginners",
+  "situation": "searchedProblems[0].phrase",
+  "runtime": {
+    "min": 10,
+    "max": 32
+  },
+  "platform": "pinterest-video",
+  "goal": "awareness",
+  "width": 1000,
+  "height": 1500,
+  "fps": 30,
+  "durationInFrames": 917,
+  "structure": "situationChecklist",
+  "angle": {
+    "text": "I hate budgeting and I've tried everything",
+    "source": "searchedProblems[0].phrase"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "locked",
+    "transitions": [
+      "lineWipe",
+      "blurDissolve",
+      "lineWipe"
+    ],
+    "motif": "ledger",
+    "grounds": [
+      "light",
+      "light",
+      "ink",
+      "accent"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "I hate budgeting and I've tried everything",
+          "source": "searchedProblems[0].phrase"
+        }
+      ],
+      "emphasis": [
+        "everything"
+      ],
+      "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
+      "from": 0,
+      "dur": 101,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "I hate budgeting",
+          "and I've tried",
+          "everything"
+        ]
+      ]
+    },
+    {
+      "id": "what-to-do",
+      "kind": "list",
+      "variant": "checklist",
+      "copy": [
+        {
+          "text": "Has any income come in or changed?",
+          "source": "guide:how-to-budget-for-beginners/body[5].items[0]#0"
+        },
+        {
+          "text": "Has a bill changed or been paid?",
+          "source": "guide:how-to-budget-for-beginners/body[5].items[1]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "The five minute weekly check-in",
+        "source": "guide:how-to-budget-for-beginners/body[5].heading"
+      },
+      "why": "What to do about it, from the guide \"How to make a monthly budget for the first time\": its own checklist, the first sentence of each item.",
+      "from": 89,
+      "dur": 303,
+      "ground": "light",
+      "transition": "lineWipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "tick",
+          "volume": 0.36
+        },
+        {
+          "at": 10,
+          "cue": "tick",
+          "volume": 0.27
+        },
+        {
+          "at": 111,
+          "cue": "tick",
+          "volume": 0.27
+        }
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "live",
+      "variant": "after",
+      "copy": [],
+      "caption": {
+        "text": "This is not a budget. It is one number for what is safe to spend, with nothing to categorise and no plan to stick to.",
+        "source": "searchedProblems[0].answer"
+      },
+      "live": "safeToSpendCard",
+      "eyebrow": {
+        "text": "Monthly Money Reset",
+        "source": "title"
+      },
+      "why": "How Monthly Money Reset helps, in the listing's own words, as the real component computing a real number.",
+      "from": 380,
+      "dur": 399,
+      "ground": "ink",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Monthly Money Reset",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/how-to-budget-for-beginners",
+          "source": "guide:how-to-budget-for-beginners/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 767,
+      "dur": 150,
+      "ground": "accent",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Pinterest video pin, 1000×1500, 10–32s, hook by 1s, sound off",
+      "because": "People are planning, not scrolling: idea-led, calm and save-worthy, worded like what they searched for. Muted, looping, slow; a hard sell reads as an ad and loses the save."
+    },
+    {
+      "topic": "Product",
+      "decision": "Monthly Money Reset: free, motif \"ledger\", calm personality, cool accent #214b3e",
+      "because": "From its definition and Shop listing. 1 real screens and live components (safeToSpendCard, nextActionCard) to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"I hate budgeting and I've tried everything\"",
+      "because": "One real moment from Monthly Money Reset's listing (searchedProblems[0].phrase). The film is about this moment and how the product helps with it: \"This is not a budget. It is one number for what is safe to spend, with nothing to categorise and no plan to stick to.\""
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"How to make a monthly budget for the first time\" (draftpace.com/guides/how-to-budget-for-beginners)",
+      "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You want one clear number for what's actually safe to spend, not a full budget system. / You have a mix of bills, some paid automatically and some not, that you'd rather not accidentally spend past.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "What to do first: The moment, the guide's own checklist for it, then the product that keeps track of it.",
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 3, goal fit 3, already used on Pinterest video pin ×1). Other candidates: In their words (0.6), The moment (-7.7)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"I hate budgeting and I've tried everything\"",
+      "because": "The moment \"I hate budgeting and I've tried everything\", the checklist from \"How to make a monthly budget for the first time\", then how Monthly Money Reset helps."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"ledger\"",
+      "because": "Transitions follow the product's own identity motif, \"ledger\": a ledger is ruled lines, so scenes are revealed row by row."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"locked\"",
+      "because": "Camera \"locked\": still and precise, so a slow, reading audience is never chasing the frame."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → light → ink → accent",
+      "because": "Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Edit",
+      "decision": "Trimmed \"what-to-do\" to 3 items",
+      "because": "Fewer items read properly beats more items skimmed."
+    },
+    {
+      "topic": "Edit",
+      "decision": "Trimmed \"what-to-do\" to 2 items",
+      "because": "Fewer items read properly beats more items skimmed."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "30.6s, 4 scenes",
+      "because": "Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 10–32s."
+    }
+  ]
+}

@@ -1,0 +1,267 @@
+{
+  "id": "sit-travel-companion-problem-5--tiktok",
+  "product": "travel-companion",
+  "situation": "problemsSolved[4].problem",
+  "runtime": {
+    "min": 12,
+    "max": 35
+  },
+  "platform": "tiktok",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 446,
+  "structure": "situationMoment",
+  "angle": {
+    "text": "A booking crosses a time zone and you can't work out whether it's still today.",
+    "source": "problemsSolved[4].problem"
+  },
+  "treatment": {
+    "voice": "native",
+    "camera": "dolly",
+    "transitions": [
+      "cut",
+      "whip",
+      "slideLeft"
+    ],
+    "motif": "timeline",
+    "grounds": [
+      "ink",
+      "light",
+      "light",
+      "accent"
+    ],
+    "pace": 0.85
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.24,
+    "energy": "high"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "native",
+      "copy": [
+        {
+          "text": "A booking crosses a time zone and you can't work out whether it's still today.",
+          "source": "problemsSolved[4].problem"
+        }
+      ],
+      "emphasis": [
+        "booking"
+      ],
+      "why": "Opens on the moment as the listing describes it: the situation the viewer is in right now.",
+      "from": 0,
+      "dur": 129,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "A booking crosses a time",
+          "zone and you can't work",
+          "out whether it's still",
+          "today."
+        ]
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Each place carries its real timezone, worked out from what you named it, so today means today where you actually are and daylight saving cannot quietly shift it.",
+        "source": "problemsSolved[4].solution"
+      },
+      "screen": {
+        "src": "screens/travel-companion-trip.png",
+        "pose": "float",
+        "focus": {
+          "at": 0.45,
+          "y": 187,
+          "h": 126,
+          "region": "status"
+        }
+      },
+      "why": "How Travel Companion helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"Lisbon and Porto\" (The trip: where you are now, destinations, and every booking with its reference, with Record a change on each.) chosen because it is the real screen closest to \"Each place carries its real timezone, worked out from what you named it, so toda\"; focus on \"Not currently at a recorded destination\".",
+      "eyebrow": {
+        "text": "Travel Companion",
+        "source": "title"
+      },
+      "from": 123,
+      "dur": 258,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 116,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "soft",
+      "copy": [
+        {
+          "text": "Travel Companion",
+          "source": "title"
+        },
+        {
+          "text": "Available now.",
+          "source": "micro"
+        }
+      ],
+      "why": "TikTok punishes an obvious ad; a soft close names the product and where to find it.",
+      "from": 375,
+      "dur": 71,
+      "ground": "accent",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "TikTok, 1080×1920, 12–35s, hook by 0.8s, sound on",
+      "because": "Native, fast and plain-spoken; polish that looks like an ad gets skipped. Sound-on. Hook inside a second. The deepest bottom and right overlays of any placement."
+    },
+    {
+      "topic": "Product",
+      "decision": "Travel Companion: $34 (list $69), motif \"timeline\", calm personality, cool accent #00626f",
+      "because": "From its definition and Shop listing. 4 real screens to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"A booking crosses a time zone and you can't work out whether it's still today.\"",
+      "because": "One real moment from Travel Companion's listing (problemsSolved[4].problem). The film is about this moment and how the product helps with it: \"Each place carries its real timezone, worked out from what you named it, so today means today where you actually are and daylight saving cannot quietly shift it.\""
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You are travelling with other people, and you are the one everybody asks what happens next. / Your trip has more than three moving parts: flights, transfers, stays and reservations that were booked around each other.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
+      "because": "Best fit for a awareness film on TikTok (platform fit 3, goal fit 3, already used for this product ×3, already used on TikTok ×6). Other candidates: Inside the tool (-35.9)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"A booking crosses a time zone and you can't work out whether it's still today.\"",
+      "because": "The moment \"A booking crosses a time zone and you can't work out whether it's still today.\", then how Travel Companion helps."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"timeline\"",
+      "because": "Transitions follow the product's own identity motif, \"timeline\": a trip is a line through time, so scenes travel left to right along it. TikTok wants native editing, so hard cuts and whips lead."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"dolly\"",
+      "because": "Camera \"dolly\": constant forward movement for a high-energy feed."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds ink → light → light → accent",
+      "because": "Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.88 similar to sit-alongside-problem-3--tiktok; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Changed the camera",
+      "because": "Its shape was 1.00 similar to sit-family-health-binder-problem-2--tiktok; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Reordered the transitions",
+      "because": "Its shape was 0.88 similar to sit-family-health-binder-problem-2--tiktok; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Switched the brand reveal",
+      "because": "Its shape was 0.88 similar to sit-personal-finance-companion-problem-4--tiktok; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Re-posed the phones",
+      "because": "Its shape was 0.88 similar to sit-personal-finance-companion-problem-4--tiktok; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Set the grounds against the accent",
+      "because": "Its shape was 0.88 similar to sit-personal-finance-companion-problem-4--tiktok; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.88 similar to sit-travel-companion-problem-2--tiktok; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Changed the camera",
+      "because": "Its shape was 0.88 similar to sit-travel-companion-problem-2--tiktok; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Reordered the transitions",
+      "because": "Its shape was 0.78 similar to sit-travel-companion-problem-2--tiktok; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Switched the brand reveal",
+      "because": "Its shape was 0.78 similar to sit-alongside-problem-3--tiktok; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Re-posed the phones",
+      "because": "Its shape was 0.78 similar to sit-alongside-problem-3--tiktok; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Set the grounds against the accent",
+      "because": "Its shape was 0.78 similar to sit-alongside-problem-3--tiktok; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Full sound design, high-energy bed",
+      "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
+    },
+    {
+      "topic": "Length",
+      "decision": "14.9s, 3 scenes",
+      "because": "Each scene is held for the time its words take to read on TikTok (0.24s a word), inside 12–35s."
+    }
+  ]
+}

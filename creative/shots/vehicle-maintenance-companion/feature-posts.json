@@ -4,6 +4,7 @@
     {
       "id": "01-vehicle-maintenance-companion",
       "themeSlug": "vehicle-maintenance-companion",
+      "problem": 0,
       "layout": "tilt",
       "eyebrow": "VEHICLE MAINTENANCE COMPANION",
       "headline": [
@@ -15,14 +16,14 @@
         "kind": "screen",
         "src": "screens/vehicle-maintenance-companion-vehicles.png"
       },
-      "product": {
-        "name": "Vehicle Maintenance Companion",
-        "price": "$34"
-      }
+      "emphasis": [
+        "interval"
+      ]
     },
     {
       "id": "02-vehicle-maintenance-companion",
       "themeSlug": "vehicle-maintenance-companion",
+      "problem": 1,
       "layout": "window",
       "eyebrow": "VEHICLE MAINTENANCE COMPANION",
       "headline": [
@@ -34,14 +35,14 @@
         "kind": "screen",
         "src": "screens/vehicle-maintenance-companion-vehicles.png"
       },
-      "product": {
-        "name": "Vehicle Maintenance Companion",
-        "price": "$34"
-      }
+      "emphasis": [
+        "history"
+      ]
     },
     {
       "id": "03-vehicle-maintenance-companion",
       "themeSlug": "vehicle-maintenance-companion",
+      "problem": 2,
       "layout": "tilt",
       "eyebrow": "VEHICLE MAINTENANCE COMPANION",
       "headline": [
@@ -53,15 +54,15 @@
         "kind": "screen",
         "src": "screens/vehicle-maintenance-companion-printables.png"
       },
-      "product": {
-        "name": "Vehicle Maintenance Companion",
-        "price": "$34"
-      }
+      "emphasis": [
+        "expensive"
+      ]
     },
     {
       "id": "04-vehicle-maintenance-companion",
       "themeSlug": "vehicle-maintenance-companion",
-      "layout": "window",
+      "problem": 3,
+      "layout": "fan",
       "eyebrow": "VEHICLE MAINTENANCE COMPANION",
       "headline": [
         "You have no proof",
@@ -70,12 +71,15 @@
       ],
       "ui": {
         "kind": "screen",
-        "src": "screens/vehicle-maintenance-companion-history.png"
+        "src": "screens/vehicle-maintenance-companion-history.png",
+        "also": [
+          "screens/vehicle-maintenance-companion-printables.png",
+          "screens/vehicle-maintenance-companion-vehicles.png"
+        ]
       },
-      "product": {
-        "name": "Vehicle Maintenance Companion",
-        "price": "$34"
-      }
+      "emphasis": [
+        "proof"
+      ]
     }
   ]
 }

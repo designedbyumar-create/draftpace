@@ -1,0 +1,243 @@
+{
+  "id": "car-home-management-companion-search-6",
+  "product": "home-management-companion",
+  "guide": "how-to-make-a-home-binder",
+  "situation": "searchedProblems[5].phrase",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "Homeownership feels like a full-time job",
+        "source": "searchedProblems[5].phrase"
+      },
+      "emphasis": [
+        "Homeownership"
+      ],
+      "promise": {
+        "text": "How to make a home binder: what goes in and what stays out",
+        "source": "guide:how-to-make-a-home-binder/title"
+      },
+      "art": {
+        "motif": "house",
+        "why": "the carousel's topic: the moment and its guide name \"home\", \"homeowner\"",
+        "also": "toolbox"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "Five sections cover almost everything a home binder needs, and one category of thing should never go in.",
+          "source": "guide:how-to-make-a-home-binder/dek#0"
+        },
+        {
+          "text": "Build one in an afternoon.",
+          "source": "guide:how-to-make-a-home-binder/dek#1"
+        }
+      ],
+      "art": {
+        "motif": "binder",
+        "why": "the slide names \"binder\", \"section\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "If something goes wrong",
+        "source": "guide:how-to-make-a-home-binder/body[2].steps[0].when"
+      },
+      "head": {
+        "text": "Where the water, gas and electricity shut off, which way each turns, and who to call first.",
+        "source": "guide:how-to-make-a-home-binder/body[2].steps[0].what#0"
+      },
+      "body": [
+        {
+          "text": "Ten minutes.",
+          "source": "guide:how-to-make-a-home-binder/body[2].steps[0].what#1"
+        },
+        {
+          "text": "Do this one tonight.",
+          "source": "guide:how-to-make-a-home-binder/body[2].steps[0].what#2"
+        }
+      ],
+      "emphasis": [
+        "electricity"
+      ],
+      "art": {
+        "motif": "phone",
+        "why": "the slide names \"call\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Numbers you look up",
+        "source": "guide:how-to-make-a-home-binder/body[2].steps[1].when"
+      },
+      "head": {
+        "text": "Filter sizes, bulb types, paint colors, meter numbers, trash and recycling days.",
+        "source": "guide:how-to-make-a-home-binder/body[2].steps[1].what#0"
+      },
+      "body": [],
+      "emphasis": [
+        "recycling"
+      ],
+      "art": {
+        "motif": "bulb",
+        "why": "the slide names \"bulb\", \"filter\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Who to call",
+        "source": "guide:how-to-make-a-home-binder/body[2].steps[2].when"
+      },
+      "head": {
+        "text": "Plumber, electrician, heating and cooling, roofer, and their phone numbers, plus anyone you would use again.",
+        "source": "guide:how-to-make-a-home-binder/body[2].steps[2].what#0"
+      },
+      "body": [],
+      "emphasis": [
+        "electrician"
+      ],
+      "art": {
+        "motif": "toolbox",
+        "why": "the slide names \"plumber\", \"electrician\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "What has been done",
+        "source": "guide:how-to-make-a-home-binder/body[2].steps[3].when"
+      },
+      "head": {
+        "text": "A running log: date, what was done, on what, by whom and what it cost.",
+        "source": "guide:how-to-make-a-home-binder/body[2].steps[3].what#0"
+      },
+      "body": [],
+      "emphasis": [
+        "running"
+      ],
+      "art": {
+        "motif": "calendar",
+        "why": "the slide names \"date\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Dates that cost money",
+        "source": "guide:how-to-make-a-home-binder/body[2].steps[4].when"
+      },
+      "head": {
+        "text": "Warranty expiry dates, the insurance renewal, and, if you rent, the lease and the deposit.",
+        "source": "guide:how-to-make-a-home-binder/body[2].steps[4].what#0"
+      },
+      "body": [],
+      "emphasis": [
+        "insurance"
+      ],
+      "art": {
+        "motif": "house",
+        "why": "the slide names \"rent\", \"lease\""
+      }
+    },
+    {
+      "kind": "checklist",
+      "eyebrow": {
+        "text": "What to put the pages in",
+        "source": "guide:how-to-make-a-home-binder/body[3].heading"
+      },
+      "items": [
+        {
+          "text": "A 1 to 2 inch, three-ring binder, or a single folder if you go digital.",
+          "source": "guide:how-to-make-a-home-binder/body[3].items[0]#0"
+        },
+        {
+          "text": "Sheet protectors for anything you would mind ruining with a spilled coffee.",
+          "source": "guide:how-to-make-a-home-binder/body[3].items[1]#0"
+        },
+        {
+          "text": "Five tab dividers, one per section, labeled in plain words rather than numbers.",
+          "source": "guide:how-to-make-a-home-binder/body[3].items[2]#0"
+        },
+        {
+          "text": "A digital mirror if you want one: one folder, five subfolders, the same five names.",
+          "source": "guide:how-to-make-a-home-binder/body[3].items[3]#0"
+        }
+      ],
+      "ticks": false,
+      "art": {
+        "motif": "binder",
+        "why": "the slide names \"binder\", \"folder\", \"tab\", \"section\", \"divider\", \"sheet protector\""
+      }
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "Home Base",
+        "source": "title"
+      },
+      "line": {
+        "text": "One page answers whether anything needs you this week. When the answer is no, it says so and leaves it there.",
+        "source": "searchedProblems[5].answer"
+      },
+      "ui": {
+        "kind": "screen",
+        "src": "screens/home-management-companion-workspace.png"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "How to make a home binder: what goes in and what stays out",
+        "source": "guide:how-to-make-a-home-binder/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/how-to-make-a-home-binder",
+        "source": "guide:how-to-make-a-home-binder/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      },
+      "art": {
+        "motif": "house",
+        "why": "the carousel's topic: the moment and its guide name \"home\", \"homeowner\""
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"Homeownership feels like a full-time job\" (searchedProblems[5].phrase), as people search it.",
+    "Steps: 5 of 5 from the guide's timeline \"The five sections, in the order to fill them in\", one per slide, each with the guide's own explanation.",
+    "Checklist: 4 items from \"What to put the pages in\".",
+    "Help: \"One page answers whether anything needs you this week. When the answer is no, it says so and leaves it there.\" (searchedProblems[5].answer), on screens/home-management-companion-workspace.png (\"A couple of things need a look\").",
+    "Illustration on the cover: house with toolbox, because the carousel's topic: the moment and its guide name \"home\", \"homeowner\".",
+    "Illustration on the answer: binder, because the slide names \"binder\", \"section\".",
+    "Illustration on the step: phone, because the slide names \"call\".",
+    "Illustration on the step: bulb, because the slide names \"bulb\", \"filter\".",
+    "Illustration on the step: toolbox, because the slide names \"plumber\", \"electrician\".",
+    "Illustration on the step: calendar, because the slide names \"date\".",
+    "Illustration on the step: house, because the slide names \"rent\", \"lease\".",
+    "Illustration on the checklist: binder, because the slide names \"binder\", \"folder\", \"tab\", \"section\", \"divider\", \"sheet protector\".",
+    "Illustration on the close: house, because the carousel's topic: the moment and its guide name \"home\", \"homeowner\"."
+  ]
+}

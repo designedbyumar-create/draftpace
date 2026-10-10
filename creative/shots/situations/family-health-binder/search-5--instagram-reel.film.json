@@ -1,0 +1,280 @@
+{
+  "id": "sit-family-health-binder-search-5--instagram-reel",
+  "product": "family-health-binder",
+  "guide": "what-goes-in-a-family-health-binder",
+  "situation": "searchedProblems[4].phrase",
+  "runtime": {
+    "min": 12,
+    "max": 35
+  },
+  "platform": "instagram-reel",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 757,
+  "structure": "situationChecklist",
+  "angle": {
+    "text": "Where do I keep everyone's allergies and reactions",
+    "source": "searchedProblems[4].phrase"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "float",
+    "transitions": [
+      "cardSlide",
+      "blurDissolve",
+      "cardSlide"
+    ],
+    "motif": "card",
+    "grounds": [
+      "light",
+      "light",
+      "accent",
+      "light"
+    ],
+    "pace": 1
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.2,
+    "energy": "mid"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Where do I keep everyone's allergies and reactions",
+          "source": "searchedProblems[4].phrase"
+        }
+      ],
+      "emphasis": [
+        "everyone's"
+      ],
+      "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
+      "from": 0,
+      "dur": 83,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "Where do I keep",
+          "everyone's allergies",
+          "and reactions"
+        ]
+      ]
+    },
+    {
+      "id": "what-to-do",
+      "kind": "list",
+      "variant": "checklist",
+      "copy": [
+        {
+          "text": "A stopped medicine stays on the page.",
+          "source": "guide:what-goes-in-a-family-health-binder/body[7].items[0]#0"
+        },
+        {
+          "text": "Insurance is last year's.",
+          "source": "guide:what-goes-in-a-family-health-binder/body[7].items[1]#0"
+        },
+        {
+          "text": "Vaccine dates were typed from memory.",
+          "source": "guide:what-goes-in-a-family-health-binder/body[7].items[2]#0"
+        },
+        {
+          "text": "The full page goes everywhere.",
+          "source": "guide:what-goes-in-a-family-health-binder/body[7].items[3]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "What goes wrong with these pages",
+        "source": "guide:what-goes-in-a-family-health-binder/body[7].heading"
+      },
+      "why": "What to do about it, from the guide \"What to put in a family medical binder\": its own checklist, the first sentence of each item.",
+      "from": 71,
+      "dur": 359,
+      "ground": "light",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        },
+        {
+          "at": 10,
+          "cue": "pop",
+          "volume": 0.45
+        },
+        {
+          "at": 82,
+          "cue": "pop",
+          "volume": 0.45
+        },
+        {
+          "at": 154,
+          "cue": "pop",
+          "volume": 0.45
+        },
+        {
+          "at": 226,
+          "cue": "pop",
+          "volume": 0.45
+        }
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Per person, with what happens recorded alongside, in one place you can reach without a clinic portal login.",
+        "source": "searchedProblems[4].answer"
+      },
+      "screen": {
+        "src": "screens/family-health-binder-members.png",
+        "pose": "flat",
+        "focus": {
+          "at": 0.45,
+          "y": 528,
+          "h": 258,
+          "region": "health"
+        }
+      },
+      "why": "How Family Health Binder helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"Family\" (One person's card: age, allergies, medications, and tabs for health, vaccines and care team.) chosen because it is the real screen closest to \"Per person, with what happens recorded alongside, in one place you can reach wit\"; focus on \"Allergies, Conditions, Medications\".",
+      "eyebrow": {
+        "text": "Family Health Binder",
+        "source": "title"
+      },
+      "from": 418,
+      "dur": 233,
+      "ground": "accent",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 105,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Family Health Binder",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/what-goes-in-a-family-health-binder",
+          "source": "guide:what-goes-in-a-family-health-binder/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 639,
+      "dur": 118,
+      "ground": "light",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Instagram Reel, 1080×1920, 12–35s, hook by 1.2s, sound on",
+      "because": "Full-screen and swipeable: the first second decides whether anyone stays. Mostly watched with sound, but captions still carry every point. The right edge holds like/comment buttons and the bottom holds the caption, so text lives in the middle band."
+    },
+    {
+      "topic": "Product",
+      "decision": "Family Health Binder: $34 (list $69), motif \"card\", calm personality, warm accent #b23a5b",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"Where do I keep everyone's allergies and reactions\"",
+      "because": "One real moment from Family Health Binder's listing (searchedProblems[4].phrase). The film is about this moment and how the product helps with it: \"Per person, with what happens recorded alongside, in one place you can reach without a clinic portal login.\""
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"What to put in a family medical binder\" (draftpace.com/guides/what-goes-in-a-family-health-binder)",
+      "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You are the one who fills in every form, and everyone's allergies, medications and insurance number live only in your head. / You have more than one child, or a child and an aging parent, whose facts you are both responsible for.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "What to do first: The moment, the guide's own checklist for it, then the product that keeps track of it.",
+      "because": "Best fit for a awareness film on Instagram Reel (platform fit 2, goal fit 3). Other candidates: In their words (-0.7), The moment (-5.1)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"Where do I keep everyone's allergies and reactions\"",
+      "because": "The moment \"Where do I keep everyone's allergies and reactions\", the checklist from \"What to put in a family medical binder\", then how Family Health Binder helps."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"card\"",
+      "because": "Transitions follow the product's own identity motif, \"card\": a binder of cards, so scenes slide in like the next card."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → light → accent → light",
+      "because": "Grounds light → light → accent → light: a warm accent, so light grounds lead and the accent is saved for the turns."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Full sound design, mid-energy bed",
+      "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
+    },
+    {
+      "topic": "Length",
+      "decision": "25.2s, 4 scenes",
+      "because": "Each scene is held for the time its words take to read on Instagram Reel (0.26s a word), inside 12–35s."
+    }
+  ]
+}

@@ -48,3 +48,39 @@ export function blurDissolve({
   });
   return { opacity, filter: `blur(${blurPx}px)`, scale };
 }
+
+export type TransitionKind = "blurDissolve" | "wipe" | "zoomThrough" | "slideUp";
+
+/**
+ * One edge of a beat (its entrance or its exit) as a style, for any
+ * transition kind. `p` runs 0 -> 1 across the edge: for "in" 0 is
+ * invisible and 1 is settled; for "out" 0 is settled and 1 is gone.
+ */
+export function edgeStyle(kind: TransitionKind, direction: "in" | "out", p: number): React.CSSProperties {
+  const e = Easing.bezier(0.16, 1, 0.3, 1)(p); // expo-out
+  const v = direction === "in" ? e : 1 - Easing.bezier(0.7, 0, 0.84, 0)(p); // in: settle softly; out: leave decisively
+  switch (kind) {
+    case "wipe": {
+      // A soft-edged reveal rising from the bottom, the way a page turns up.
+      // edge runs 110 -> -20 so the 20%-wide soft band fully clears the frame at rest.
+      const edge = (1 - e) * 130 - 20;
+      const mask = `linear-gradient(to top, #000 ${100 - edge - 10}%, transparent ${100 - edge + 10}%)`;
+      return direction === "in"
+        ? { WebkitMaskImage: mask, maskImage: mask }
+        : { opacity: v, transform: `translateY(${-(1 - v) * 6}%)` };
+    }
+    case "zoomThrough":
+      return direction === "in"
+        ? { opacity: v, transform: `scale(${1.18 - 0.18 * e})`, filter: `blur(${(1 - e) * 14}px)` }
+        : { opacity: v, transform: `scale(${1 + (1 - v) * 0.35})`, filter: `blur(${(1 - v) * 18}px)` };
+    case "slideUp":
+      return direction === "in"
+        ? { opacity: Math.min(1, e * 1.6), transform: `translateY(${(1 - e) * 22}%)` }
+        : { opacity: v, transform: `translateY(${-(1 - v) * 14}%)` };
+    case "blurDissolve":
+    default:
+      return direction === "in"
+        ? { opacity: e, filter: `blur(${(1 - e) * 8}px)`, transform: `scale(${0.98 + 0.02 * e})` }
+        : { opacity: v, filter: `blur(${(1 - v) * 8}px)`, transform: `scale(${1 + (1 - v) * 0.01})` };
+  }
+}

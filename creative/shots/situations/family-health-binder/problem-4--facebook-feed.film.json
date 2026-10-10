@@ -1,0 +1,236 @@
+{
+  "id": "sit-family-health-binder-problem-4--facebook-feed",
+  "product": "family-health-binder",
+  "guide": "what-to-leave-off-a-health-page-you-hand-over",
+  "situation": "problemsSolved[3].problem",
+  "runtime": {
+    "min": 10,
+    "max": 30
+  },
+  "platform": "facebook-feed",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1350,
+  "fps": 30,
+  "durationInFrames": 682,
+  "structure": "situationChecklist",
+  "angle": {
+    "text": "The questions you meant to ask the doctor vanish the moment you sit down.",
+    "source": "problemsSolved[3].problem"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "locked",
+    "transitions": [
+      "cardSlide",
+      "blurDissolve",
+      "cardSlide"
+    ],
+    "motif": "card",
+    "grounds": [
+      "light",
+      "ink",
+      "light",
+      "accent"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "The questions you meant to ask the doctor vanish the moment you sit down.",
+          "source": "problemsSolved[3].problem"
+        }
+      ],
+      "emphasis": [
+        "questions"
+      ],
+      "why": "Opens on the moment as the listing describes it: the situation the viewer is in right now.",
+      "from": 0,
+      "dur": 179,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "The questions you meant",
+          "to ask the doctor vanish",
+          "the moment you sit down."
+        ]
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Write them down before the visit, with what was said after it, and print a Visit page with a box to tick each question.",
+        "source": "problemsSolved[3].solution"
+      },
+      "screen": {
+        "src": "screens/family-health-binder-printables.png",
+        "pose": "flat",
+        "focus": {
+          "at": 0.45,
+          "y": 294,
+          "h": 150,
+          "region": "forms-sheet"
+        }
+      },
+      "why": "How Family Health Binder helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"Print\" (The pages that leave the house: forms sheet, caregiver sheet, emergency card, visit page, intake summary, each with Make it.) chosen because it is the real screen closest to \"Write them down before the visit, with what was said after it, and print a Visit\"; focus on \"Forms sheet\".",
+      "eyebrow": {
+        "text": "Family Health Binder",
+        "source": "title"
+      },
+      "from": 167,
+      "dur": 377,
+      "ground": "ink",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 170,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Family Health Binder",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/what-to-leave-off-a-health-page-you-hand-over",
+          "source": "guide:what-to-leave-off-a-health-page-you-hand-over/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 532,
+      "dur": 150,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Facebook feed video, 1080×1350, 10–30s, hook by 1.5s, sound off",
+      "because": "Scrolled past in a feed with sound off: say who it is for in the first seconds, name the product early, keep every point on screen and readable at a glance."
+    },
+    {
+      "topic": "Product",
+      "decision": "Family Health Binder: $34 (list $69), motif \"card\", calm personality, warm accent #b23a5b",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"The questions you meant to ask the doctor vanish the moment you sit down.\"",
+      "because": "One real moment from Family Health Binder's listing (problemsSolved[3].problem). The film is about this moment and how the product helps with it: \"Write them down before the visit, with what was said after it, and print a Visit page with a box to tick each question.\""
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"What health information to share with a sitter or school\" (draftpace.com/guides/what-to-leave-off-a-health-page-you-hand-over)",
+      "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You are the one who fills in every form, and everyone's allergies, medications and insurance number live only in your head. / You have more than one child, or a child and an aging parent, whose facts you are both responsible for.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "What to do first: The moment, the guide's own checklist for it, then the product that keeps track of it.",
+      "because": "Best fit for a awareness film on Facebook feed video (platform fit 3, goal fit 3, already used for this product ×2). Other candidates: Inside the tool (-9.9), The moment (-20.6)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"The questions you meant to ask the doctor vanish the moment you sit down.\"",
+      "because": "The moment \"The questions you meant to ask the doctor vanish the moment you sit down.\", the checklist from \"What health information to share with a sitter or school\", then how Family Health Binder helps."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"card\"",
+      "because": "Transitions follow the product's own identity motif, \"card\": a binder of cards, so scenes slide in like the next card."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"locked\"",
+      "because": "Camera \"locked\": still and precise, so a slow, reading audience is never chasing the frame."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → ink → light → accent",
+      "because": "Grounds light → ink → light → accent: a warm accent, so light grounds lead and the accent is saved for the turns."
+    },
+    {
+      "topic": "Edit",
+      "decision": "Trimmed \"what-to-do\" to 3 items",
+      "because": "Fewer items read properly beats more items skimmed."
+    },
+    {
+      "topic": "Edit",
+      "decision": "Trimmed \"what-to-do\" to 2 items",
+      "because": "Fewer items read properly beats more items skimmed."
+    },
+    {
+      "topic": "Edit",
+      "decision": "Cut \"what-to-do\"",
+      "because": "It would run past 30s, the most Facebook feed video holds attention for."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "22.7s, 3 scenes",
+      "because": "Each scene is held for the time its words take to read on Facebook feed video (0.32s a word), inside 10–30s."
+    }
+  ]
+}

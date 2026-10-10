@@ -1,0 +1,419 @@
+{
+  "$comment": "Before launch (stage: prelaunch) the director plans one film for every real situation in every product listing, and one guide Short for every guide (director/run.ts). The briefs below are product films for later (stage: growth): who it is not for, questions before buying, what you get, the price. The guides below keep the placement chosen for them; every other guide is added automatically.",
+  "stage": "prelaunch",
+  "briefs": [
+    {
+      "product": "travel-companion",
+      "platform": "instagram-reel",
+      "goal": "conversion"
+    },
+    {
+      "product": "personal-finance-companion",
+      "platform": "instagram-reel",
+      "goal": "conversion"
+    },
+    {
+      "product": "alongside",
+      "platform": "instagram-reel",
+      "goal": "conversion"
+    },
+    {
+      "product": "monthly-money-reset",
+      "platform": "instagram-reel",
+      "goal": "awareness"
+    },
+    {
+      "product": "family-health-binder",
+      "platform": "instagram-reel",
+      "goal": "conversion"
+    },
+    {
+      "product": "home-management-companion",
+      "platform": "instagram-reel",
+      "goal": "conversion"
+    },
+    {
+      "product": "homeschooling-companion",
+      "platform": "instagram-reel",
+      "goal": "conversion"
+    },
+    {
+      "product": "personal-life-affairs-companion",
+      "platform": "instagram-reel",
+      "goal": "conversion"
+    },
+    {
+      "product": "vehicle-maintenance-companion",
+      "platform": "instagram-reel",
+      "goal": "conversion"
+    },
+    {
+      "product": "travel-companion",
+      "platform": "pinterest-video",
+      "goal": "awareness"
+    },
+    {
+      "product": "personal-finance-companion",
+      "platform": "pinterest-video",
+      "goal": "awareness"
+    },
+    {
+      "product": "alongside",
+      "platform": "pinterest-video",
+      "goal": "awareness"
+    },
+    {
+      "product": "monthly-money-reset",
+      "platform": "pinterest-video",
+      "goal": "awareness"
+    },
+    {
+      "product": "family-health-binder",
+      "platform": "pinterest-video",
+      "goal": "awareness"
+    },
+    {
+      "product": "home-management-companion",
+      "platform": "pinterest-video",
+      "goal": "awareness"
+    },
+    {
+      "product": "homeschooling-companion",
+      "platform": "pinterest-video",
+      "goal": "awareness"
+    },
+    {
+      "product": "personal-life-affairs-companion",
+      "platform": "pinterest-video",
+      "goal": "awareness"
+    },
+    {
+      "product": "vehicle-maintenance-companion",
+      "platform": "pinterest-video",
+      "goal": "awareness"
+    },
+    {
+      "product": "travel-companion",
+      "platform": "facebook-feed",
+      "goal": "consideration"
+    },
+    {
+      "product": "personal-finance-companion",
+      "platform": "facebook-feed",
+      "goal": "consideration"
+    },
+    {
+      "product": "alongside",
+      "platform": "facebook-feed",
+      "goal": "consideration"
+    },
+    {
+      "product": "monthly-money-reset",
+      "platform": "facebook-feed",
+      "goal": "consideration"
+    },
+    {
+      "product": "family-health-binder",
+      "platform": "facebook-feed",
+      "goal": "consideration"
+    },
+    {
+      "product": "home-management-companion",
+      "platform": "facebook-feed",
+      "goal": "consideration"
+    },
+    {
+      "product": "homeschooling-companion",
+      "platform": "facebook-feed",
+      "goal": "consideration"
+    },
+    {
+      "product": "personal-life-affairs-companion",
+      "platform": "facebook-feed",
+      "goal": "consideration"
+    },
+    {
+      "product": "vehicle-maintenance-companion",
+      "platform": "facebook-feed",
+      "goal": "consideration"
+    },
+    {
+      "product": "travel-companion",
+      "platform": "tiktok",
+      "goal": "awareness"
+    },
+    {
+      "product": "personal-finance-companion",
+      "platform": "tiktok",
+      "goal": "awareness"
+    },
+    {
+      "product": "alongside",
+      "platform": "tiktok",
+      "goal": "awareness"
+    },
+    {
+      "product": "monthly-money-reset",
+      "platform": "tiktok",
+      "goal": "awareness"
+    },
+    {
+      "product": "family-health-binder",
+      "platform": "tiktok",
+      "goal": "awareness"
+    },
+    {
+      "product": "home-management-companion",
+      "platform": "tiktok",
+      "goal": "awareness"
+    },
+    {
+      "product": "homeschooling-companion",
+      "platform": "tiktok",
+      "goal": "awareness"
+    },
+    {
+      "product": "personal-life-affairs-companion",
+      "platform": "tiktok",
+      "goal": "awareness"
+    },
+    {
+      "product": "vehicle-maintenance-companion",
+      "platform": "tiktok",
+      "goal": "awareness"
+    },
+    {
+      "product": "travel-companion",
+      "platform": "youtube-short",
+      "goal": "consideration"
+    },
+    {
+      "product": "personal-finance-companion",
+      "platform": "youtube-short",
+      "goal": "consideration"
+    },
+    {
+      "product": "alongside",
+      "platform": "youtube-short",
+      "goal": "consideration"
+    },
+    {
+      "product": "monthly-money-reset",
+      "platform": "youtube-short",
+      "goal": "consideration"
+    },
+    {
+      "product": "family-health-binder",
+      "platform": "youtube-short",
+      "goal": "consideration"
+    },
+    {
+      "product": "home-management-companion",
+      "platform": "youtube-short",
+      "goal": "consideration"
+    },
+    {
+      "product": "homeschooling-companion",
+      "platform": "youtube-short",
+      "goal": "consideration"
+    },
+    {
+      "product": "personal-life-affairs-companion",
+      "platform": "youtube-short",
+      "goal": "consideration"
+    },
+    {
+      "product": "vehicle-maintenance-companion",
+      "platform": "youtube-short",
+      "goal": "consideration"
+    },
+    {
+      "product": "travel-companion",
+      "platform": "facebook-reel",
+      "goal": "conversion"
+    },
+    {
+      "product": "personal-finance-companion",
+      "platform": "facebook-reel",
+      "goal": "conversion"
+    },
+    {
+      "product": "alongside",
+      "platform": "facebook-reel",
+      "goal": "conversion"
+    },
+    {
+      "product": "monthly-money-reset",
+      "platform": "facebook-reel",
+      "goal": "conversion"
+    },
+    {
+      "product": "family-health-binder",
+      "platform": "facebook-reel",
+      "goal": "conversion"
+    },
+    {
+      "product": "home-management-companion",
+      "platform": "facebook-reel",
+      "goal": "conversion"
+    },
+    {
+      "product": "homeschooling-companion",
+      "platform": "facebook-reel",
+      "goal": "conversion"
+    },
+    {
+      "product": "personal-life-affairs-companion",
+      "platform": "facebook-reel",
+      "goal": "conversion"
+    },
+    {
+      "product": "vehicle-maintenance-companion",
+      "platform": "facebook-reel",
+      "goal": "conversion"
+    },
+    {
+      "product": "travel-companion",
+      "platform": "instagram-feed",
+      "goal": "consideration"
+    },
+    {
+      "product": "personal-finance-companion",
+      "platform": "instagram-feed",
+      "goal": "consideration"
+    },
+    {
+      "product": "alongside",
+      "platform": "instagram-feed",
+      "goal": "consideration"
+    },
+    {
+      "product": "monthly-money-reset",
+      "platform": "instagram-feed",
+      "goal": "consideration"
+    },
+    {
+      "product": "family-health-binder",
+      "platform": "instagram-feed",
+      "goal": "consideration"
+    },
+    {
+      "product": "home-management-companion",
+      "platform": "instagram-feed",
+      "goal": "consideration"
+    },
+    {
+      "product": "homeschooling-companion",
+      "platform": "instagram-feed",
+      "goal": "consideration"
+    },
+    {
+      "product": "personal-life-affairs-companion",
+      "platform": "instagram-feed",
+      "goal": "consideration"
+    },
+    {
+      "product": "vehicle-maintenance-companion",
+      "platform": "instagram-feed",
+      "goal": "consideration"
+    }
+  ],
+  "guides": [
+    {
+      "guide": "how-much-of-your-money-is-actually-safe-to-spend",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "you-missed-a-payment-what-to-do-next",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "how-to-find-every-subscription-you-are-paying-for",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "home-maintenance-checklist-by-month",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "how-to-make-a-home-binder",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "first-week-after-buying-a-house",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "how-to-make-a-phone-call-you-have-been-avoiding",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "task-paralysis-what-to-do-in-the-next-ten-minutes",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "paperwork-pile-where-to-start",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "homeschool-record-keeping-requirements-by-state",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "simple-homeschool-record-keeping-system",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "how-to-start-homeschooling-first-month-paperwork",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "what-to-do-when-a-parent-dies",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "how-to-find-someones-accounts-after-they-die",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "the-if-something-happens-to-me-file",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "flight-delayed-with-a-connection-what-to-do-first",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "travel-document-checklist",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "flight-changed-what-else-is-affected",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "what-to-tell-a-mechanic-before-work-starts",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "used-car-no-service-records-what-to-do",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "what-is-due-on-my-car-right-now",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "what-goes-in-a-family-health-binder",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "school-and-camp-health-forms-what-to-have-ready",
+      "platform": "youtube-short"
+    },
+    {
+      "guide": "doctor-appointment-prep-checklist",
+      "platform": "youtube-short"
+    }
+  ]
+}

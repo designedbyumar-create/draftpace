@@ -1,0 +1,211 @@
+{
+  "id": "sit-vehicle-maintenance-companion-problem-6--facebook-feed",
+  "product": "vehicle-maintenance-companion",
+  "situation": "problemsSolved[5].problem",
+  "runtime": {
+    "min": 10,
+    "max": 30
+  },
+  "platform": "facebook-feed",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1350,
+  "fps": 30,
+  "durationInFrames": 514,
+  "structure": "situationMoment",
+  "angle": {
+    "text": "Towing or short-trip driving shortens some intervals, but not all of them equally.",
+    "source": "problemsSolved[5].problem"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "float",
+    "transitions": [
+      "radial",
+      "zoomThrough",
+      "radial"
+    ],
+    "motif": "gauge",
+    "grounds": [
+      "accent",
+      "light",
+      "light",
+      "accent"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "Towing or short-trip driving shortens some intervals, but not all of them equally.",
+          "source": "problemsSolved[5].problem"
+        }
+      ],
+      "emphasis": [
+        "short-trip"
+      ],
+      "why": "Opens on the moment as the listing describes it: the situation the viewer is in right now.",
+      "from": 0,
+      "dur": 168,
+      "ground": "ink",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "Towing or short-trip driving",
+          "shortens some intervals, but",
+          "not all of them equally."
+        ]
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "A one-time severe-duty toggle per job that halves only the interval you actually entered.",
+        "source": "problemsSolved[5].solution"
+      },
+      "screen": {
+        "src": "screens/vehicle-maintenance-companion-vehicles.png",
+        "pose": "float",
+        "focus": {
+          "at": 0.45,
+          "y": 922,
+          "h": 70,
+          "region": "unknown"
+        }
+      },
+      "why": "How Vehicle Maintenance Companion helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"Vehicles\" (What you own and what you track on it: each car with its intervals, when it was last done, and a commuter with history unknown.) chosen because it is the real screen closest to \"A one-time severe-duty toggle per job that halves only the interval you actually\"; focus on \"History unknown\".",
+      "eyebrow": {
+        "text": "Vehicle Maintenance Companion",
+        "source": "title"
+      },
+      "from": 156,
+      "dur": 267,
+      "ground": "light",
+      "transition": "radial",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 120,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "soft",
+      "copy": [
+        {
+          "text": "Vehicle Maintenance Companion",
+          "source": "title"
+        },
+        {
+          "text": "Available now.",
+          "source": "micro"
+        }
+      ],
+      "why": "Facebook feed video punishes an obvious ad; a soft close names the product and where to find it.",
+      "from": 411,
+      "dur": 103,
+      "ground": "light",
+      "transition": "zoomThrough",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Facebook feed video, 1080×1350, 10–30s, hook by 1.5s, sound off",
+      "because": "Scrolled past in a feed with sound off: say who it is for in the first seconds, name the product early, keep every point on screen and readable at a glance."
+    },
+    {
+      "topic": "Product",
+      "decision": "Vehicle Maintenance Companion: $34 (list $69), motif \"gauge\", calm personality, warm accent #b45309",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"Towing or short-trip driving shortens some intervals, but not all of them equally.\"",
+      "because": "One real moment from Vehicle Maintenance Companion's listing (problemsSolved[5].problem). The film is about this moment and how the product helps with it: \"A one-time severe-duty toggle per job that halves only the interval you actually entered.\""
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You own more than one vehicle, or a vehicle with a maintenance history you already know by heart but have never written down anywhere. / You have bought a used car or inherited one, and its real service history is genuinely unknown to you.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
+      "because": "Best fit for a awareness film on Facebook feed video (platform fit 2, goal fit 3, already used for this product ×3, already used on Facebook feed video ×3). Other candidates: Inside the tool (-37.8)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"Towing or short-trip driving shortens some intervals, but not all of them equally.\"",
+      "because": "The moment \"Towing or short-trip driving shortens some intervals, but not all of them equally.\", then how Vehicle Maintenance Companion helps."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"gauge\"",
+      "because": "Transitions follow the product's own identity motif, \"gauge\": a gauge sweeps, so scenes are revealed by a radial sweep."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds accent → light → light → accent",
+      "because": "Grounds accent → light → light → accent: a warm accent, so light grounds lead and the accent is saved for the turns."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "17.1s, 3 scenes",
+      "because": "Each scene is held for the time its words take to read on Facebook feed video (0.32s a word), inside 10–30s."
+    }
+  ]
+}

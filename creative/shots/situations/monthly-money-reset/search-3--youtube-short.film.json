@@ -1,0 +1,263 @@
+{
+  "id": "sit-monthly-money-reset-search-3--youtube-short",
+  "product": "monthly-money-reset",
+  "guide": "how-much-of-your-money-is-actually-safe-to-spend",
+  "situation": "searchedProblems[2].phrase",
+  "runtime": {
+    "min": 15,
+    "max": 40
+  },
+  "platform": "youtube-short",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 682,
+  "structure": "situationMoment",
+  "angle": {
+    "text": "How much of my money is actually safe to spend",
+    "source": "searchedProblems[2].phrase"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "float",
+    "transitions": [
+      "lineWipe",
+      "blurDissolve",
+      "lineWipe"
+    ],
+    "motif": "ledger",
+    "grounds": [
+      "light",
+      "accent",
+      "light",
+      "ink"
+    ],
+    "pace": 1
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.2,
+    "energy": "mid"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "How much of my money is actually safe to spend",
+          "source": "searchedProblems[2].phrase"
+        }
+      ],
+      "emphasis": [
+        "actually"
+      ],
+      "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
+      "from": 0,
+      "dur": 99,
+      "ground": "ink",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "How much of my money",
+          "is actually safe",
+          "to spend"
+        ]
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "One figure, updated as the cycle goes on, with every number that feeds it shown line by line if you want to check the working.",
+        "source": "searchedProblems[2].answer"
+      },
+      "screen": {
+        "src": "screens/monthly-money-reset-progress.png",
+        "pose": "tiltRight",
+        "focus": {
+          "at": 0.45,
+          "y": 138,
+          "h": 126,
+          "region": "bills"
+        },
+        "scroll": []
+      },
+      "why": "How Monthly Money Reset helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"Start\" (Progress this month: bills handled, check-ins, the reserve kept, and spending against your own guide.) chosen because it is the real screen closest to \"One figure, updated as the cycle goes on, with every number that feeds it shown \"; focus on \"2 of 4\".",
+      "eyebrow": {
+        "text": "Monthly Money Reset",
+        "source": "title"
+      },
+      "from": 87,
+      "dur": 287,
+      "ground": "light",
+      "transition": "lineWipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "tick",
+          "volume": 0.6
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 129,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "what-to-do",
+      "kind": "list",
+      "variant": "checklist",
+      "copy": [
+        {
+          "text": "It comes out negative.",
+          "source": "guide:how-much-of-your-money-is-actually-safe-to-spend/body[4].items[0]#0"
+        },
+        {
+          "text": "Money is coming but hasn't landed.",
+          "source": "guide:how-much-of-your-money-is-actually-safe-to-spend/body[4].items[1]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "When the number is wrong or misleading",
+        "source": "guide:how-much-of-your-money-is-actually-safe-to-spend/body[4].heading"
+      },
+      "why": "What to do about it, from the guide \"How much money is safe to spend after your bills?\": its own checklist.",
+      "from": 362,
+      "dur": 214,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 10,
+          "cue": "tick",
+          "volume": 0.45
+        },
+        {
+          "at": 81,
+          "cue": "tick",
+          "volume": 0.45
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Monthly Money Reset",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/how-much-of-your-money-is-actually-safe-to-spend",
+          "source": "guide:how-much-of-your-money-is-actually-safe-to-spend/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 564,
+      "dur": 118,
+      "ground": "ink",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "YouTube Short, 1080×1920, 15–40s, hook by 1.2s, sound on",
+      "because": "Search-adjacent audience that will watch a slightly longer explanation if it starts strong. Loops by default."
+    },
+    {
+      "topic": "Product",
+      "decision": "Monthly Money Reset: free, motif \"ledger\", calm personality, cool accent #214b3e",
+      "because": "From its definition and Shop listing. 1 real screens and live components (safeToSpendCard, nextActionCard) to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"How much of my money is actually safe to spend\"",
+      "because": "One real moment from Monthly Money Reset's listing (searchedProblems[2].phrase). The film is about this moment and how the product helps with it: \"One figure, updated as the cycle goes on, with every number that feeds it shown line by line if you want to check the working.\""
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"How much money is safe to spend after your bills?\" (draftpace.com/guides/how-much-of-your-money-is-actually-safe-to-spend)",
+      "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You want one clear number for what's actually safe to spend, not a full budget system. / You have a mix of bills, some paid automatically and some not, that you'd rather not accidentally spend past.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 3, already used on YouTube Short ×2). Other candidates: What to do first (-5.6), In their words (-5.6)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"How much of my money is actually safe to spend\"",
+      "because": "The moment \"How much of my money is actually safe to spend\", then how Monthly Money Reset helps, then what the guide \"How much money is safe to spend after your bills?\" says to do."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"ledger\"",
+      "because": "Transitions follow the product's own identity motif, \"ledger\": a ledger is ruled lines, so scenes are revealed row by row."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → accent → light → ink",
+      "because": "Grounds light → accent → light → ink: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Full sound design, mid-energy bed",
+      "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
+    },
+    {
+      "topic": "Length",
+      "decision": "22.7s, 4 scenes",
+      "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 15–40s."
+    }
+  ]
+}

@@ -1,0 +1,328 @@
+{
+  "id": "sit-monthly-money-reset-search-2--instagram-reel",
+  "product": "monthly-money-reset",
+  "guide": "how-to-start-over-after-budget-failure",
+  "situation": "searchedProblems[1].phrase",
+  "runtime": {
+    "min": 12,
+    "max": 35
+  },
+  "platform": "instagram-reel",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 765,
+  "structure": "situationWords",
+  "angle": {
+    "text": "I tried YNAB or Mint and gave up",
+    "source": "searchedProblems[1].phrase"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "dolly",
+    "transitions": [
+      "lineWipe",
+      "blurDissolve",
+      "lineWipe"
+    ],
+    "motif": "ledger",
+    "grounds": [
+      "ink",
+      "light",
+      "light",
+      "accent"
+    ],
+    "pace": 1
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.2,
+    "energy": "mid"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "quote",
+      "copy": [
+        {
+          "text": "I tried YNAB or Mint and gave up",
+          "source": "searchedProblems[1].phrase"
+        }
+      ],
+      "emphasis": [
+        "tried"
+      ],
+      "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
+      "from": 0,
+      "dur": 83,
+      "ground": "ink",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "I tried YNAB or",
+          "Mint and gave up"
+        ]
+      ]
+    },
+    {
+      "id": "step-1",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Do the sum above and write the number down.",
+          "source": "guide:how-to-start-over-after-budget-failure/body[5].steps[0].what#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "Day 1",
+        "source": "guide:how-to-start-over-after-budget-failure/body[5].steps[0].when"
+      },
+      "emphasis": [
+        "number"
+      ],
+      "why": "What to do, in order, from the guide \"You fell off your budget: how to restart this month\": \"Day 1\".",
+      "from": 71,
+      "dur": 128,
+      "ground": "light",
+      "transition": "lineWipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "tick",
+          "volume": 0.6
+        }
+      ],
+      "lines": [
+        [
+          "Do the sum above and",
+          "write the number down."
+        ]
+      ]
+    },
+    {
+      "id": "step-2",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Redo the sum from fresh balances.",
+          "source": "guide:how-to-start-over-after-budget-failure/body[5].steps[2].what#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "Day 7",
+        "source": "guide:how-to-start-over-after-budget-failure/body[5].steps[2].when"
+      },
+      "emphasis": [
+        "balances"
+      ],
+      "why": "What to do, in order, from the guide \"You fell off your budget: how to restart this month\": \"Day 7\".",
+      "from": 187,
+      "dur": 104,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "Redo the sum from",
+          "fresh balances."
+        ]
+      ]
+    },
+    {
+      "id": "step-3",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Do it again.",
+          "source": "guide:how-to-start-over-after-budget-failure/body[5].steps[3].what#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "Day 14",
+        "source": "guide:how-to-start-over-after-budget-failure/body[5].steps[3].when"
+      },
+      "emphasis": [
+        "again"
+      ],
+      "why": "What to do, in order, from the guide \"You fell off your budget: how to restart this month\": \"Day 14\".",
+      "from": 279,
+      "dur": 81,
+      "ground": "accent",
+      "transition": "lineWipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "tick",
+          "volume": 0.6
+        }
+      ],
+      "lines": [
+        [
+          "Do it again."
+        ]
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Those ask you to keep a whole system current. This asks for a few figures and does the keeping-up itself, so there is nothing to fall behind on.",
+        "source": "searchedProblems[1].answer"
+      },
+      "screen": {
+        "src": "screens/monthly-money-reset-progress.png",
+        "pose": "tiltRight",
+        "focus": {
+          "at": 0.45,
+          "y": 138,
+          "h": 126,
+          "region": "bills"
+        },
+        "scroll": []
+      },
+      "why": "How Monthly Money Reset helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"Start\" (Progress this month: bills handled, check-ins, the reserve kept, and spending against your own guide.) chosen because it is the real screen closest to \"Those ask you to keep a whole system current. This asks for a few figures and do\"; focus on \"2 of 4\".",
+      "eyebrow": {
+        "text": "Monthly Money Reset",
+        "source": "title"
+      },
+      "from": 348,
+      "dur": 311,
+      "ground": "ink",
+      "transition": "lineWipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "tick",
+          "volume": 0.6
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 140,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Monthly Money Reset",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/how-to-start-over-after-budget-failure",
+          "source": "guide:how-to-start-over-after-budget-failure/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 647,
+      "dur": 118,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Instagram Reel, 1080×1920, 12–35s, hook by 1.2s, sound on",
+      "because": "Full-screen and swipeable: the first second decides whether anyone stays. Mostly watched with sound, but captions still carry every point. The right edge holds like/comment buttons and the bottom holds the caption, so text lives in the middle band."
+    },
+    {
+      "topic": "Product",
+      "decision": "Monthly Money Reset: free, motif \"ledger\", calm personality, cool accent #214b3e",
+      "because": "From its definition and Shop listing. 1 real screens and live components (safeToSpendCard, nextActionCard) to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"I tried YNAB or Mint and gave up\"",
+      "because": "One real moment from Monthly Money Reset's listing (searchedProblems[1].phrase). The film is about this moment and how the product helps with it: \"Those ask you to keep a whole system current. This asks for a few figures and does the keeping-up itself, so there is nothing to fall behind on.\""
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"You fell off your budget: how to restart this month\" (draftpace.com/guides/how-to-start-over-after-budget-failure)",
+      "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You want one clear number for what's actually safe to spend, not a full budget system. / You have a mix of bills, some paid automatically and some not, that you'd rather not accidentally spend past.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "In their words: The moment typed the way a person searches it, then what to do about it, then the product doing it.",
+      "because": "Best fit for a awareness film on Instagram Reel (platform fit 2, goal fit 3, already used on Instagram Reel ×1). Other candidates: The moment (-2.2)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"I tried YNAB or Mint and gave up\"",
+      "because": "A situation people search for, \"I tried YNAB or Mint and gave up\", with the steps from \"You fell off your budget: how to restart this month\", and how Monthly Money Reset helps."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"ledger\"",
+      "because": "Transitions follow the product's own identity motif, \"ledger\": a ledger is ruled lines, so scenes are revealed row by row."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"dolly\"",
+      "because": "Camera \"dolly\": constant forward movement for a high-energy feed."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds ink → light → light → accent",
+      "because": "Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Full sound design, mid-energy bed",
+      "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
+    },
+    {
+      "topic": "Length",
+      "decision": "25.5s, 6 scenes",
+      "because": "Each scene is held for the time its words take to read on Instagram Reel (0.26s a word), inside 12–35s."
+    }
+  ]
+}

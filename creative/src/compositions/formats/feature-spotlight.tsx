@@ -1,43 +1,67 @@
 /**
- * Feature Spotlight format. Consumes a shot file (see
- * shots/monthly-money-reset/feature-spotlight.shot.json) rather than
- * hardcoding a timeline: every beat's timing, camera move, typography and
- * caption comes from that JSON. This is the one format built for the MVP —
- * see creative/README.md for the others still to come.
+ * Feature Spotlight: a 9:16 product film, PROBLEM -> NOISE -> REVEAL ->
+ * CLARITY -> NEXT MOVE -> CTA, driven entirely by a shot file
+ * (shots/<product>/feature-spotlight.shot.json). Every beat's timing,
+ * text, screen and transition comes from that JSON; this file decides how
+ * it is shot.
+ *
+ * How it is shot:
+ *  - One continuous set: the product's own backdrop (Backdrop.tsx) runs
+ *    under every beat, so cuts read as one film, not slides.
+ *  - Type is the brand's own (Newsreader display, IBM Plex Sans), kinetic,
+ *    with the shot's `emphasis` words in the product accent.
+ *  - Real UI only: a real captured screen held in a phone (Phone.tsx) that
+ *    enters in 3D, scrolls the real page and can focus a region of it; or
+ *    a live Monthly Money Reset component computing real numbers.
+ *  - Sound is designed from the beats, not placed by hand: a whoosh on
+ *    every transition, a riser into the product reveal landing on a soft
+ *    impact, a pop as the UI lands, a tap on focus, a settle on the CTA,
+ *    with the music bed ducking under the big moments. A beat can still
+ *    name its own `sound.sfx`, which is played as well.
+ *
+ * Everything text-safe stays inside SAFE (the area Reels/TikTok/Shorts
+ * don't cover with their own UI).
  */
-import { AbsoluteFill, Audio, Img, Sequence, staticFile, interpolate, useCurrentFrame, useVideoConfig } from "remotion";
-import { pushIn } from "../../motion/camera";
-import { fadeUpLine } from "../../motion/typography";
-import { blurDissolve } from "../../motion/transitions";
-import { cardPop, countUpValue } from "../../motion/ui";
-import { SFX_FILES, BED_FILE, hasAudioAsset } from "../../motion/sound";
+import React from "react";
+import { AbsoluteFill, Audio, Sequence, interpolate, spring, useCurrentFrame, useVideoConfig, staticFile, Easing } from "remotion";
+import { LogoMark } from "@/design-system/Logo";
+import { edgeStyle, type TransitionKind } from "../../motion/transitions";
+import { countUpValue } from "../../motion/ui";
+import { SFX_CUES, BED } from "../../motion/sound-cues";
 import { monthlyMoneyResetDemo, SafeToSpendCard, NextActionCard, formatCurrency } from "../../ui-adapter/monthlyMoneyReset";
 import { themeFor, postCssVars } from "../../theme-registry";
+import { productLine } from "../../shop-listings";
+import { Backdrop } from "../../visual/Backdrop";
+import { KineticHeadline, fitFontSize } from "../../visual/Kinetic";
+import { Phone, overflowPx, scrollToFocus, screenSize, type Focus } from "../../visual/Phone";
+
+/** Platform UI keeps out of these bands on a 1080x1920 frame. */
+export const SAFE = { top: 240, bottom: 1500, side: 80 };
 
 type Beat = {
   id: string;
   kind: "typography" | "noise" | "wordmark" | "safeToSpendCard" | "nextActionCard" | "screen" | "cta";
   startFrame: number;
   durationFrames: number;
-  typography?: { lines?: string[]; eyebrow?: string; headline?: string; sub?: string };
+  typography?: { lines?: string[]; eyebrow?: string; headline?: string; sub?: string; emphasis?: string[] };
   camera?: { move: "static" | "pushIn"; fromScale?: number; toScale?: number };
-  transition?: { in?: string; out?: string; frames?: number };
+  transition?: { in?: TransitionKind; out?: TransitionKind; frames?: number };
   ui?: { reveal?: "cardPop"; countUp?: { fromMinorUnits: number; toMinorUnits: number; durationFrames: number } };
-  screen?: { src: string };
+  /**
+   * scroll: [[at, to], ...] keyframes, `at` as a fraction of the beat, `to` 0..1 of the page's overflow.
+   * focus: a region of the real page (fractions of its height) brought forward at `at`.
+   */
+  screen?: { src: string; scroll?: [number, number][]; focus?: { at: number; top: number; height: number } };
   caption?: string | null;
   cta?: { label: string; url: string };
   sound?: { sfx?: string | null };
 };
 
-/** A very slow, continuous drift, applied to every beat (not just card beats) so the whole film reads as one steadily-moving camera rather than static slides cut together. */
-function ambientDrift(frame: number, start: number, durationInFrames: number) {
-  return pushIn({ frame, start, durationInFrames, fromScale: 1, toScale: 1.025 });
-}
-
 export type Shot = {
   id: string;
   product: string;
   themeSlug: string;
+  problem?: number;
   format: string;
   fps: number;
   width: number;
@@ -45,98 +69,163 @@ export type Shot = {
   beats: Beat[];
 };
 
-function TransitionWrap({ beat, frame, children }: { beat: Beat; frame: number; children: React.ReactNode }) {
+const EXPO = Easing.bezier(0.16, 1, 0.3, 1);
+const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
+
+/** Fills `{price}` / `{name}` in a beat's text from the product's real Shop listing, so no shot file states a price of its own. */
+function withListing(beat: Beat, slug: string): Beat {
+  const { name, price } = productLine(slug);
+  const fill = (t: string) => t.replaceAll("{price}", price).replaceAll("{name}", name);
+  const typo = beat.typography;
+  return {
+    ...beat,
+    caption: beat.caption ? fill(beat.caption) : beat.caption,
+    typography: typo && {
+      ...typo,
+      lines: typo.lines?.map(fill),
+      eyebrow: typo.eyebrow && fill(typo.eyebrow),
+      headline: typo.headline && fill(typo.headline),
+      sub: typo.sub && fill(typo.sub),
+    },
+  };
+}
+
+// ---------------------------------------------------------------- sound
+
+type Cue = { at: number; sfx: keyof typeof SFX_CUES; volume: number };
+
+/** The sound design, derived from the beats. */
+export function soundCues(beats: Beat[]): Cue[] {
+  const cues: Cue[] = [];
+  for (const b of beats) {
+    const s = b.startFrame;
+    if (b.transition?.in && s > 0) cues.push({ at: s - 6, sfx: b.transition.in === "wipe" || b.transition.in === "slideUp" ? "swish" : "whoosh", volume: 0.32 });
+    if (b.kind === "noise") (b.typography?.lines ?? []).forEach((_, i) => cues.push({ at: s + 6 + i * 10, sfx: "tick", volume: 0.5 }));
+    if (b.kind === "wordmark") {
+      cues.push({ at: s - 40, sfx: "riser", volume: 0.42 });
+      cues.push({ at: s, sfx: "impact", volume: 0.75 });
+      cues.push({ at: s + 4, sfx: "shimmer", volume: 0.28 });
+    }
+    if (b.kind === "screen" || b.kind === "safeToSpendCard" || b.kind === "nextActionCard") cues.push({ at: s + 14, sfx: "pop", volume: 0.45 });
+    if (b.kind === "screen" && b.screen?.focus) cues.push({ at: s + Math.round(b.screen.focus.at * b.durationFrames), sfx: "tap", volume: 0.6 });
+    if (b.kind === "cta") cues.push({ at: s + 10, sfx: "settle", volume: 0.5 });
+    const own = b.sound?.sfx;
+    if (own && own in SFX_CUES) cues.push({ at: s, sfx: own as keyof typeof SFX_CUES, volume: 0.25 });
+  }
+  return cues.map((c) => ({ ...c, at: Math.max(0, c.at) }));
+}
+
+/** 0..1: how hard the bed ducks at `frame`, from the cues that should cut through it. */
+function duck(frame: number, cues: Cue[]): number {
+  let d = 0;
+  for (const c of cues) {
+    if (c.sfx !== "impact" && c.sfx !== "settle" && c.sfx !== "riser") continue;
+    const len = c.sfx === "riser" ? 40 : 30;
+    d = Math.max(d, interpolate(frame, [c.at - 4, c.at + 2, c.at + len], [0, 1, 0], clamp));
+  }
+  return d;
+}
+
+// ---------------------------------------------------------------- shared pieces
+
+function Edge({ beat, frame, children }: { beat: Beat; frame: number; children: React.ReactNode }) {
   const edge = beat.transition?.frames ?? 15;
-  let opacity = 1;
-  let filter = "none";
-  let scale = 1;
-  if (beat.transition?.in) {
-    const d = blurDissolve({ frame, start: beat.startFrame, durationInFrames: beat.durationFrames, edgeFrames: edge, direction: "in" });
-    opacity = Math.min(opacity, d.opacity);
-    filter = d.filter;
-    scale = d.scale;
+  const end = beat.startFrame + beat.durationFrames;
+  let style: React.CSSProperties = {};
+  if (beat.transition?.in && frame < beat.startFrame + edge) {
+    style = edgeStyle(beat.transition.in, "in", interpolate(frame, [beat.startFrame, beat.startFrame + edge], [0, 1], clamp));
+  } else if (beat.transition?.out && frame > end - edge) {
+    style = edgeStyle(beat.transition.out, "out", interpolate(frame, [end - edge, end], [0, 1], clamp));
   }
-  if (beat.transition?.out) {
-    const d = blurDissolve({ frame, start: beat.startFrame, durationInFrames: beat.durationFrames, edgeFrames: edge, direction: "out" });
-    opacity = Math.min(opacity, d.opacity);
-    filter = d.filter;
-    scale = d.scale;
-  }
-  const sfx = beat.sound?.sfx;
+  return <AbsoluteFill style={style}>{children}</AbsoluteFill>;
+}
+
+/** Slow continuous drift so a held frame never goes dead. */
+function drift(frame: number, start: number, dur: number, amount = 0.03) {
+  return interpolate(frame, [start, start + dur], [1, 1 + amount], clamp);
+}
+
+function Caption({ text, frame, start }: { text: string; frame: number; start: number }) {
+  const p = interpolate(frame, [start, start + 20], [0, 1], { ...clamp, easing: EXPO });
   return (
-    <>
-      {hasAudioAsset(sfx) && <Audio src={SFX_FILES[sfx]} startFrom={0} />}
-      {/* position/width/height are load-bearing, not decorative: without them this
-          div doesn't establish a sized containing block, so the AbsoluteFill
-          beats mount inside it collapse to height 0 (confirmed via DOM inspection
-          in Remotion Studio: inset:0 against a 0-height ancestor still measures
-          0), which is why text rendered pinned to the top of the frame instead
-          of centered. */}
-      <div style={{ opacity, filter, transform: `scale(${scale})`, position: "relative", width: "100%", height: "100%" }}>{children}</div>
-    </>
+    <div style={{ position: "absolute", left: SAFE.side, right: SAFE.side, top: SAFE.bottom - 170, display: "flex", justifyContent: "center" }}>
+      <div
+        style={{
+          opacity: p,
+          transform: `translateY(${(1 - p) * 30}px)`,
+          display: "flex",
+          gap: 22,
+          alignItems: "stretch",
+          maxWidth: 860,
+          padding: "26px 34px 26px 26px",
+          borderRadius: 26,
+          background: "color-mix(in srgb, var(--post-card) 88%, transparent)",
+          backdropFilter: "blur(14px)",
+          boxShadow: "0 24px 60px -24px rgba(16,20,24,0.35), 0 0 0 1px var(--post-line)",
+        }}
+      >
+        <div style={{ width: 6, borderRadius: 3, background: "var(--post-accent)", flexShrink: 0 }} />
+        <p style={{ margin: 0, fontFamily: "IBM Plex Sans", fontWeight: 500, fontSize: 36, lineHeight: 1.32, color: "var(--post-ink)", textWrap: "balance" }}>{text}</p>
+      </div>
+    </div>
   );
 }
 
-function TypographyBeat({ beat, frame, align = "center" }: { beat: Beat; frame: number; align?: "center" }) {
+/** The 3D entrance every piece of real UI makes: up from below, tilted, settling almost flat. */
+function entrance(frame: number, start: number, fps: number) {
+  const s = spring({ frame: frame - start, fps, config: { damping: 19, mass: 0.95, stiffness: 90 } });
+  return {
+    s,
+    y: (1 - s) * 900,
+    rotateX: 4 + (1 - s) * 26,
+    rotateY: -7 - (1 - s) * 18,
+    rotateZ: (1 - s) * -5,
+    shadow: 0.6 + 0.4 * s,
+  };
+}
+
+// ---------------------------------------------------------------- beats
+
+function ProblemBeat({ beat, frame }: { beat: Beat; frame: number }) {
   const lines = beat.typography?.lines ?? [];
-  const drift = ambientDrift(frame, beat.startFrame, beat.durationFrames);
+  const size = fitFontSize(lines, 1080 - SAFE.side * 2 - 20, 112);
   return (
-    <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", padding: "0 96px", transform: drift }}>
-      <div style={{ textAlign: align }}>
-        {lines.map((line, i) => {
-          const { opacity, translateY } = fadeUpLine({ frame, start: beat.startFrame, index: i, staggerFrames: 7 });
-          return (
-            <p
-              key={line}
-              style={{
-                opacity,
-                transform: `translateY(${translateY}px)`,
-                fontFamily: "var(--font-inter)",
-                fontWeight: 600,
-                fontSize: 58,
-                lineHeight: 1.18,
-                letterSpacing: "-0.02em",
-                color: "var(--post-ink)",
-                margin: 0,
-              }}
-            >
-              {line}
-            </p>
-          );
-        })}
-      </div>
+    <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", padding: `0 ${SAFE.side + 10}px`, transform: `scale(${drift(frame, beat.startFrame, beat.durationFrames)})` }}>
+      <KineticHeadline lines={lines} emphasis={beat.typography?.emphasis} frame={frame} start={beat.startFrame + 4} fontSize={size} />
     </AbsoluteFill>
   );
 }
 
 function NoiseBeat({ beat, frame }: { beat: Beat; frame: number }) {
   const lines = beat.typography?.lines ?? [];
-  // Each fragment sits at a different depth: later, smaller, blurrier,
-  // quieter — a 2.5D-reading drift without any camera move or fake UI.
-  const positions = [
-    { x: -10, y: -120, size: 34, blur: 0 },
-    { x: 18, y: 0, size: 40, blur: 0.6 },
-    { x: -14, y: 120, size: 30, blur: 1.1 },
+  // Thoughts at three depths: nearer ones bigger, sharper, moving faster.
+  const layers = [
+    { x: -150, y: -260, size: 58, blur: 0, speed: 1.0, rot: -3 },
+    { x: 130, y: -10, size: 70, blur: 0, speed: 1.4, rot: 2 },
+    { x: -90, y: 250, size: 50, blur: 1.6, speed: 0.7, rot: -1.5 },
   ];
-  const drift = ambientDrift(frame, beat.startFrame, beat.durationFrames);
+  const t = frame - beat.startFrame;
   return (
-    <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", transform: drift }}>
+    <AbsoluteFill style={{ justifyContent: "center", alignItems: "center" }}>
       {lines.map((line, i) => {
-        const { opacity, translateY } = fadeUpLine({ frame, start: beat.startFrame, index: i, staggerFrames: 8, riseDistance: 10 });
-        const pos = positions[i % positions.length];
+        const L = layers[i % layers.length];
+        const at = 6 + i * 10;
+        const p = interpolate(t, [at, at + 18], [0, 1], { ...clamp, easing: EXPO });
         return (
           <p
-            key={line}
+            key={i}
             style={{
               position: "absolute",
-              opacity: opacity * 0.68,
-              transform: `translate(${pos.x}px, ${pos.y + translateY}px)`,
-              filter: `blur(${pos.blur}px)`,
-              fontFamily: "var(--font-inter)",
-              fontWeight: 500,
-              fontSize: pos.size,
-              color: "var(--post-muted)",
               margin: 0,
+              whiteSpace: "nowrap",
+              opacity: p * (L.blur ? 0.55 : 0.85),
+              transform: `translate(${L.x}px, ${L.y - t * L.speed * 1.2 + (1 - p) * 40}px) rotate(${L.rot}deg) scale(${0.9 + 0.1 * p})`,
+              filter: `blur(${L.blur + (1 - p) * 8}px)`,
+              fontFamily: "Newsreader",
+              fontStyle: "italic",
+              fontWeight: 500,
+              fontSize: L.size,
+              color: "var(--post-muted)",
             }}
           >
             {line}
@@ -147,254 +236,228 @@ function NoiseBeat({ beat, frame }: { beat: Beat; frame: number }) {
   );
 }
 
-function WordmarkBeat({ beat, frame }: { beat: Beat; frame: number }) {
-  const eyebrow = fadeUpLine({ frame, start: beat.startFrame, index: 0, staggerFrames: 6 });
-  const headline = fadeUpLine({ frame, start: beat.startFrame, index: 1, staggerFrames: 6 });
-  const drift = ambientDrift(frame, beat.startFrame, beat.durationFrames);
+function WordmarkBeat({ beat, frame, fps }: { beat: Beat; frame: number; fps: number }) {
+  const t = frame - beat.startFrame;
+  const mark = spring({ frame: t, fps, config: { damping: 13, mass: 0.7, stiffness: 110 } });
+  const eyebrow = interpolate(t, [10, 30], [0, 1], { ...clamp, easing: EXPO });
+  // A soft light bloom behind the mark on the impact.
+  const bloom = interpolate(t, [0, 6, 40], [0, 0.9, 0.35], clamp);
   return (
-    <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", transform: drift }}>
-      <div style={{ textAlign: "center" }}>
-        <p
+    <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", transform: `scale(${drift(frame, beat.startFrame, beat.durationFrames, 0.025)})` }}>
+      <div style={{ position: "absolute", width: 900, height: 900, borderRadius: "50%", background: "radial-gradient(circle, var(--post-card) 0%, transparent 62%)", opacity: bloom }} />
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 34 }}>
+        <div
           style={{
-            opacity: eyebrow.opacity,
-            transform: `translateY(${eyebrow.translateY}px)`,
-            fontFamily: "var(--font-space-mono)",
-            fontSize: 20,
-            letterSpacing: "0.22em",
-            color: "var(--post-accent)",
-            margin: 0,
+            transform: `scale(${0.55 + 0.45 * mark}) rotate(${(1 - mark) * -12}deg)`,
+            opacity: Math.min(1, mark * 1.5),
+            filter: "drop-shadow(0 30px 50px rgba(16,20,24,0.25))",
+            ["--logo-mark" as string]: "var(--post-accent)",
+            ["--logo-mark-glyph" as string]: "var(--post-card)",
           }}
         >
+          <LogoMark size={170} />
+        </div>
+        <KineticHeadline lines={[beat.typography?.headline ?? ""]} frame={frame} start={beat.startFrame + 8} fontSize={fitFontSize([beat.typography?.headline ?? ""], 900, 104)} wordStagger={4} />
+        <p style={{ margin: 0, opacity: eyebrow, transform: `translateY(${(1 - eyebrow) * 16}px)`, fontFamily: "IBM Plex Sans", fontWeight: 600, fontSize: 26, letterSpacing: "0.32em", color: "var(--post-accent)" }}>
           {beat.typography?.eyebrow}
         </p>
-        <p
+      </div>
+    </AbsoluteFill>
+  );
+}
+
+function ScreenBeat({ beat, frame, fps }: { beat: Beat; frame: number; fps: number }) {
+  const src = beat.screen!.src;
+  const t = (frame - beat.startFrame) / beat.durationFrames;
+  const enter = entrance(frame, beat.startFrame, fps);
+  const width = 560;
+
+  // Scroll: explicit keyframes, or a gentle auto-pan down a page taller than the viewport.
+  const focus = beat.screen?.focus;
+  const over = overflowPx(src);
+  const auto: [number, number][] = over > 120 ? [[0.3, 0], [0.85, Math.min(0.55, 900 / over)]] : [];
+  let keys = beat.screen?.scroll ?? auto;
+  if (focus) keys = [[0, 0], [Math.max(0.05, focus.at - 0.22), 0], [focus.at, scrollToFocus(src, focus)]];
+  const scroll = keys.length ? interpolate(t, keys.map((k) => k[0]), keys.map((k) => k[1]), { ...clamp, easing: Easing.inOut(Easing.cubic) }) : 0;
+
+  // Focus: dim the rest of the real page, ring the region, and push the camera in on it.
+  const fAmt = focus ? interpolate(t, [focus.at, focus.at + 0.12], [0, 1], { ...clamp, easing: EXPO }) : 0;
+  const zoom = 1 + 0.16 * fAmt;
+  const focusState: Focus | undefined = focus ? { top: focus.top, height: focus.height, amount: fAmt } : undefined;
+  // Where the focus region sits inside the phone, so the zoom can centre on it.
+  let shiftY = 0;
+  if (focus) {
+    const s = screenSize(src);
+    const k = (width * 0.93) / 390;
+    const pageH = s.height * (390 / s.width) * k;
+    const regionCentre = width * 0.035 + (focus.top + focus.height / 2) * pageH - over * k * scroll;
+    const phoneH = 844 * k + width * 0.07;
+    shiftY = (phoneH / 2 - regionCentre) * (zoom - 1) * 1.6;
+  }
+  const sway = Math.sin((frame - beat.startFrame) / 38) * 1.6;
+
+  return (
+    <AbsoluteFill style={{ justifyContent: "center", alignItems: "center" }}>
+      <div style={{ transform: `translateY(${enter.y - 90 + shiftY}px) scale(${zoom * drift(frame, beat.startFrame, beat.durationFrames, 0.03)})` }}>
+        <Phone
+          src={src}
+          width={width}
+          scroll={scroll}
+          rotateX={enter.rotateX * (1 - fAmt * 0.8)}
+          rotateY={(enter.rotateY + sway) * (1 - fAmt * 0.8)}
+          rotateZ={enter.rotateZ}
+          focus={focusState}
+          shadow={enter.shadow}
+        />
+      </div>
+      {beat.caption && <Caption text={beat.caption} frame={frame} start={beat.startFrame + Math.round(beat.durationFrames * 0.3)} />}
+    </AbsoluteFill>
+  );
+}
+
+function CardStage({ beat, frame, fps, enterAt, children }: { beat: Beat; frame: number; fps: number; enterAt?: number; children: React.ReactNode }) {
+  const enter = entrance(frame, enterAt ?? beat.startFrame, fps);
+  const push = beat.camera?.move === "pushIn"
+    ? interpolate(frame, [beat.startFrame, beat.startFrame + beat.durationFrames], [beat.camera.fromScale ?? 1, beat.camera.toScale ?? 1.06], { ...clamp, easing: Easing.out(Easing.quad) })
+    : drift(frame, beat.startFrame, beat.durationFrames);
+  // Live Monthly Money Reset components read the product's own scoped --mmr-* tokens.
+  const scoped = monthlyMoneyResetDemo().themeStyle as React.CSSProperties;
+  return (
+    <AbsoluteFill style={{ justifyContent: "center", alignItems: "center" }}>
+      <div style={{ perspective: 2400 }}>
+        <div
           style={{
-            opacity: headline.opacity,
-            transform: `translateY(${headline.translateY}px)`,
-            fontFamily: "var(--font-inter)",
-            fontWeight: 700,
-            fontSize: 52,
-            letterSpacing: "-0.02em",
-            color: "var(--post-ink)",
-            margin: "10px 0 0",
+            ...scoped,
+            width: 700,
+            opacity: Math.min(1, enter.s * 2),
+            transform: `translateY(${enter.y - 80}px) rotateX(${enter.rotateX * 0.6}deg) rotateY(${enter.rotateY * 0.5}deg) scale(${push})`,
+            filter: `drop-shadow(0 ${50 * enter.shadow}px ${70 * enter.shadow}px rgba(16,20,24,0.28))`,
           }}
         >
-          {beat.typography?.headline}
-        </p>
+          {children}
+        </div>
       </div>
+      {beat.caption && <Caption text={beat.caption} frame={frame} start={beat.startFrame + Math.round(beat.durationFrames * 0.45)} />}
     </AbsoluteFill>
   );
 }
 
 function SafeToSpendBeat({ beat, frame, fps }: { beat: Beat; frame: number; fps: number }) {
   const demo = monthlyMoneyResetDemo();
-  const pop = cardPop({ frame, start: beat.startFrame, fps });
-  const scale = beat.camera?.move === "pushIn"
-    ? pushIn({ frame, start: beat.startFrame, durationInFrames: beat.durationFrames, fromScale: beat.camera.fromScale, toScale: beat.camera.toScale })
-    : "scale(1)";
   const countUp = beat.ui?.countUp;
-  const countUpEnd = countUp ? beat.startFrame + countUp.durationFrames : beat.startFrame;
-  const showCountUp = countUp && frame < countUpEnd;
-  const countUpFade = countUp
-    ? Math.min(1, Math.max(0, (frame - (countUpEnd - 8)) / 8)) // last 8 frames of count-up fade it out as the real card fades in
-    : 0;
-
+  // The figure counts up large and alone, computed by the real
+  // formatCurrency, then hands over to the real card landing with the same
+  // figure in it (trap #9 in SKILL.md: never animate inside the component).
+  const countEnd = countUp ? beat.startFrame + countUp.durationFrames : beat.startFrame;
+  const handOver = countUp ? interpolate(frame, [countEnd - 4, countEnd + 10], [0, 1], { ...clamp, easing: EXPO }) : 1;
+  const countIn = countUp ? interpolate(frame, [beat.startFrame, beat.startFrame + 10], [0, 1], { ...clamp, easing: EXPO }) : 0;
   return (
-    <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", transform: `scale(${pop.scale})`, opacity: pop.opacity }}>
-      <div style={{ width: 620, transform: scale, transformOrigin: "center" }}>
-        <div style={{ position: "relative" }}>
-          {countUp && (
-            <div
-              style={{
-                position: "absolute",
-                top: 86,
-                left: 32,
-                opacity: showCountUp ? 1 - countUpFade : 0,
-                pointerEvents: "none",
-              }}
-            >
-              <span
-                style={{
-                  fontFamily: "var(--font-inter)",
-                  fontWeight: 600,
-                  fontSize: 76,
-                  letterSpacing: "-0.05em",
-                  color: "var(--mmr-hero-ink)",
-                  fontFeatureSettings: "'tnum' 1, 'cv11' 1",
-                }}
-              >
-                {formatCurrency(
-                  countUpValue({ frame, start: beat.startFrame, durationInFrames: countUp.durationFrames, from: countUp.fromMinorUnits, to: countUp.toMinorUnits }),
-                  demo.state.currency
-                )}
-              </span>
-            </div>
-          )}
-          <div style={{ opacity: countUp ? countUpFade : 1 }}>
-            <SafeToSpendCard
-              breakdown={demo.breakdown}
-              currency={demo.state.currency}
-              updatedAt={demo.now}
-              weeksRemaining={demo.weeksRemaining}
-              tightestDay={demo.tightestDay}
-            />
-          </div>
-        </div>
-      </div>
-      {beat.caption && (
-        <p
-          style={{
-            position: "absolute",
-            bottom: 420,
-            left: 96,
-            right: 96,
-            textAlign: "center",
-            fontFamily: "var(--font-inter)",
-            fontSize: 26,
-            lineHeight: 1.4,
-            color: "var(--post-muted)",
-            opacity: Math.min(1, Math.max(0, (frame - (beat.startFrame + 140)) / 20)),
-          }}
-        >
-          {beat.caption}
-        </p>
+    <>
+      {countUp && handOver < 1 && (
+        <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", opacity: countIn * (1 - handOver), transform: `scale(${1 - handOver * 0.35}) translateY(${-handOver * 120}px)` }}>
+          <p style={{ margin: 0, fontFamily: "IBM Plex Sans", fontSize: 30, fontWeight: 600, letterSpacing: "0.22em", color: "var(--post-accent)" }}>SAFE TO SPEND</p>
+          <span style={{ fontFamily: "var(--font-inter)", fontWeight: 600, fontSize: 210, letterSpacing: "-0.05em", color: "var(--post-ink)", fontFeatureSettings: "'tnum' 1" }}>
+            {formatCurrency(countUpValue({ frame, start: beat.startFrame, durationInFrames: countUp.durationFrames, from: countUp.fromMinorUnits, to: countUp.toMinorUnits }), demo.state.currency)}
+          </span>
+        </AbsoluteFill>
       )}
-    </AbsoluteFill>
-  );
-}
-
-/** The product-agnostic real-UI beat: a real captured screen image, pushed in on. This is what every product besides Monthly Money Reset uses, since only MMR has live components wired into the ui-adapter today. */
-function ScreenBeat({ beat, frame, fps }: { beat: Beat; frame: number; fps: number }) {
-  const pop = cardPop({ frame, start: beat.startFrame, fps });
-  const scale = beat.camera?.move === "pushIn"
-    ? pushIn({ frame, start: beat.startFrame, durationInFrames: beat.durationFrames, fromScale: beat.camera.fromScale, toScale: beat.camera.toScale })
-    : "scale(1)";
-  return (
-    <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", transform: `scale(${pop.scale})`, opacity: pop.opacity }}>
-      <div
-        style={{
-          width: 420,
-          height: 420 * 1.8,
-          transform: scale,
-          transformOrigin: "center",
-          overflow: "hidden",
-          borderRadius: 32,
-          background: "#15151a",
-          padding: 12,
-          boxShadow: "0 50px 90px -30px rgba(20,20,20,0.4)",
-        }}
-      >
-        <div style={{ width: "100%", height: "100%", overflow: "hidden", borderRadius: 22 }}>
-          {beat.screen && (
-            <Img
-              src={staticFile(beat.screen.src)}
-              style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }}
-            />
-          )}
-        </div>
-      </div>
-      {beat.caption && (
-        <p
-          style={{
-            position: "absolute",
-            bottom: 160,
-            left: 96,
-            right: 96,
-            textAlign: "center",
-            fontFamily: "var(--font-inter)",
-            fontSize: 26,
-            lineHeight: 1.4,
-            color: "var(--post-muted)",
-            opacity: Math.min(1, Math.max(0, (frame - (beat.startFrame + 60)) / 20)),
-          }}
-        >
-          {beat.caption}
-        </p>
-      )}
-    </AbsoluteFill>
+      <CardStage beat={beat} frame={frame} fps={fps} enterAt={countUp ? countEnd - 6 : undefined}>
+        <SafeToSpendCard breakdown={demo.breakdown} currency={demo.state.currency} updatedAt={demo.now} weeksRemaining={demo.weeksRemaining} tightestDay={demo.tightestDay} />
+      </CardStage>
+    </>
   );
 }
 
 function NextActionBeat({ beat, frame, fps }: { beat: Beat; frame: number; fps: number }) {
   const demo = monthlyMoneyResetDemo();
-  const pop = cardPop({ frame, start: beat.startFrame, fps });
-  const scale = beat.camera?.move === "pushIn"
-    ? pushIn({ frame, start: beat.startFrame, durationInFrames: beat.durationFrames, fromScale: beat.camera.fromScale, toScale: beat.camera.toScale })
-    : "scale(1)";
   return (
-    <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", transform: `scale(${pop.scale})`, opacity: pop.opacity }}>
-      <div style={{ width: 620, transform: scale, transformOrigin: "center" }}>
+    <CardStage beat={beat} frame={frame} fps={fps}>
+      <div style={{ transform: "scale(1.25)", transformOrigin: "center" }}>
         <NextActionCard nextAction={demo.nextAction} checkInDay={demo.state.preferences.checkInDay} onDismiss={() => {}} onAct={() => {}} />
+      </div>
+    </CardStage>
+  );
+}
+
+function CtaBeat({ beat, frame, fps, slug }: { beat: Beat; frame: number; fps: number; slug: string }) {
+  const t = frame - beat.startFrame;
+  const { name, price, compareAt } = productLine(slug);
+  const mark = spring({ frame: t, fps, config: { damping: 16, mass: 0.7 } });
+  const priceIn = interpolate(t, [14, 32], [0, 1], { ...clamp, easing: EXPO });
+  const pillIn = spring({ frame: t - 20, fps, config: { damping: 14, mass: 0.8 } });
+  const pulse = 1 + 0.025 * Math.max(0, Math.sin((t - 36) / 7));
+  return (
+    <AbsoluteFill style={{ justifyContent: "center", alignItems: "center" }}>
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 38, marginTop: -60 }}>
+        <div style={{ opacity: mark, transform: `scale(${0.7 + 0.3 * mark})`, ["--logo-mark" as string]: "var(--post-accent)", ["--logo-mark-glyph" as string]: "var(--post-card)" }}>
+          <LogoMark size={110} />
+        </div>
+        <KineticHeadline lines={[name]} frame={frame} start={beat.startFrame + 2} fontSize={fitFontSize([name], 900, 88)} wordStagger={3} />
+        {beat.typography?.headline && (
+          <KineticHeadline lines={[beat.typography.headline]} frame={frame} start={beat.startFrame + 8} fontSize={44} font="IBM Plex Sans" weight={500} color="var(--post-muted)" />
+        )}
+        {!(price === "Free" && /free/i.test(beat.typography?.headline ?? "")) && (
+        <div style={{ display: "flex", alignItems: "baseline", gap: 22, opacity: priceIn, transform: `translateY(${(1 - priceIn) * 20}px)` }}>
+          {compareAt && <span style={{ fontFamily: "IBM Plex Sans", fontSize: 44, color: "var(--post-muted)", textDecoration: "line-through", textDecorationThickness: 3 }}>{compareAt}</span>}
+          <span style={{ fontFamily: "Newsreader", fontWeight: 600, fontSize: 96, color: "var(--post-ink)", letterSpacing: "-0.02em" }}>{price}</span>
+        </div>
+        )}
+        {beat.cta && (
+          <div
+            style={{
+              transform: `scale(${pillIn * pulse})`,
+              opacity: Math.min(1, pillIn * 1.4),
+              padding: "26px 54px",
+              borderRadius: 999,
+              background: "var(--post-accent)",
+              color: "var(--post-card)",
+              fontFamily: "IBM Plex Sans",
+              fontWeight: 600,
+              fontSize: 38,
+              letterSpacing: "0.01em",
+              boxShadow: "0 24px 50px -18px color-mix(in srgb, var(--post-accent) 70%, transparent)",
+            }}
+          >
+            {beat.cta.url}
+          </div>
+        )}
       </div>
     </AbsoluteFill>
   );
 }
 
-function CtaBeat({ beat, frame }: { beat: Beat; frame: number }) {
-  const headline = fadeUpLine({ frame, start: beat.startFrame, index: 0, staggerFrames: 6 });
-  const sub = fadeUpLine({ frame, start: beat.startFrame, index: 1, staggerFrames: 6 });
-  const drift = ambientDrift(frame, beat.startFrame, beat.durationFrames);
-  return (
-    <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", transform: drift }}>
-      <div style={{ textAlign: "center" }}>
-        <p
-          style={{
-            opacity: headline.opacity,
-            transform: `translateY(${headline.translateY}px)`,
-            fontFamily: "var(--font-inter)",
-            fontWeight: 700,
-            fontSize: 54,
-            letterSpacing: "-0.02em",
-            color: "var(--post-ink)",
-            margin: 0,
-          }}
-        >
-          {beat.typography?.headline}
-        </p>
-        <p
-          style={{
-            opacity: sub.opacity,
-            transform: `translateY(${sub.translateY}px)`,
-            fontFamily: "var(--font-space-mono)",
-            fontSize: 22,
-            letterSpacing: "0.04em",
-            color: "var(--post-accent)",
-            margin: "14px 0 0",
-          }}
-        >
-          {beat.typography?.sub}
-        </p>
-      </div>
-    </AbsoluteFill>
-  );
-}
+// ---------------------------------------------------------------- film
 
 export function FeatureSpotlight({ shot }: { shot: Shot }) {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const theme = themeFor(shot.themeSlug);
-  const totalDuration = shot.beats[shot.beats.length - 1].startFrame + shot.beats[shot.beats.length - 1].durationFrames;
-  const bedVolume = interpolate(
-    frame,
-    [0, 20, totalDuration - 30, totalDuration],
-    [0, 0.12, 0.12, 0],
-    { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
-  );
+  const beats = shot.beats.map((b) => withListing(b, shot.product));
+  const last = beats[beats.length - 1];
+  const total = last.startFrame + last.durationFrames;
+  const cues = soundCues(beats);
+  const bed = (f: number) => interpolate(f, [0, 24, total - 36, total], [0, 0.2, 0.2, 0], clamp) * (1 - 0.55 * duck(f, cues));
 
   return (
-    <AbsoluteFill style={{ ...postCssVars(theme), background: "var(--post-bg)" } as React.CSSProperties}>
-      <Audio src={BED_FILE} volume={bedVolume} />
-      {shot.beats.map((beat) => (
+    <AbsoluteFill style={{ ...postCssVars(theme) } as React.CSSProperties}>
+      <Backdrop frame={frame} />
+      <Audio src={staticFile(BED)} volume={bed} />
+      {cues.map((c, i) => (
+        <Sequence key={`cue-${i}`} from={c.at} layout="none">
+          <Audio src={staticFile(SFX_CUES[c.sfx])} volume={c.volume} />
+        </Sequence>
+      ))}
+      {beats.map((beat) => (
         <Sequence key={beat.id} from={beat.startFrame} durationInFrames={beat.durationFrames} layout="none">
-          <TransitionWrap beat={beat} frame={frame}>
-            {beat.kind === "typography" && <TypographyBeat beat={beat} frame={frame} />}
+          <Edge beat={beat} frame={frame}>
+            {beat.kind === "typography" && <ProblemBeat beat={beat} frame={frame} />}
             {beat.kind === "noise" && <NoiseBeat beat={beat} frame={frame} />}
-            {beat.kind === "wordmark" && <WordmarkBeat beat={beat} frame={frame} />}
+            {beat.kind === "wordmark" && <WordmarkBeat beat={beat} frame={frame} fps={fps} />}
             {beat.kind === "safeToSpendCard" && <SafeToSpendBeat beat={beat} frame={frame} fps={fps} />}
             {beat.kind === "nextActionCard" && <NextActionBeat beat={beat} frame={frame} fps={fps} />}
             {beat.kind === "screen" && <ScreenBeat beat={beat} frame={frame} fps={fps} />}
-            {beat.kind === "cta" && <CtaBeat beat={beat} frame={frame} />}
-          </TransitionWrap>
+            {beat.kind === "cta" && <CtaBeat beat={beat} frame={frame} fps={fps} slug={shot.product} />}
+          </Edge>
         </Sequence>
       ))}
     </AbsoluteFill>

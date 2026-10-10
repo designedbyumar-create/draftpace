@@ -1,0 +1,250 @@
+{
+  "id": "car-vehicle-maintenance-companion-problem-4",
+  "product": "vehicle-maintenance-companion",
+  "guide": "selling-your-car-with-a-service-history",
+  "situation": "problemsSolved[3].problem",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "You have no proof the car was looked after when it is time to sell it.",
+        "source": "problemsSolved[3].problem"
+      },
+      "emphasis": [
+        "proof"
+      ],
+      "promise": {
+        "text": "Selling your car: how to present your service history",
+        "source": "guide:selling-your-car-with-a-service-history/title"
+      },
+      "art": {
+        "motif": "car",
+        "why": "the carousel's topic: the moment and its guide name \"car\"",
+        "also": "document"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "A dated record shows a buyer how a car was looked after.",
+          "source": "guide:selling-your-car-with-a-service-history/dek#0"
+        },
+        {
+          "text": "What to put on the page, what a record you kept yourself can and can't show, and how to print it.",
+          "source": "guide:selling-your-car-with-a-service-history/dek#1"
+        }
+      ],
+      "art": {
+        "motif": "notebook",
+        "why": "the slide names \"page\", \"record\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "How to put the page together",
+        "source": "guide:selling-your-car-with-a-service-history/body[3].heading"
+      },
+      "number": {
+        "text": "1",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Collect what exists.",
+        "source": "guide:selling-your-car-with-a-service-history/body[3].items[0]#0"
+      },
+      "body": [
+        {
+          "text": "Check the glove box, your email for shop receipts and invoices, and your bank statements for garage names.",
+          "source": "guide:selling-your-car-with-a-service-history/body[3].items[0]#1"
+        },
+        {
+          "text": "A shop that has serviced the car can usually print its own history if you ask.",
+          "source": "guide:selling-your-car-with-a-service-history/body[3].items[0]#2"
+        }
+      ],
+      "emphasis": [
+        "Collect"
+      ],
+      "art": {
+        "motif": "receipt",
+        "why": "the slide names \"receipt\", \"statement\", \"invoice\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "How to put the page together",
+        "source": "guide:selling-your-car-with-a-service-history/body[3].heading"
+      },
+      "number": {
+        "text": "2",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Write one line per job, oldest first: date, odometer, what was done, who did it.",
+        "source": "guide:selling-your-car-with-a-service-history/body[3].items[1]#0"
+      },
+      "body": [
+        {
+          "text": "Add the cost if you know it.",
+          "source": "guide:selling-your-car-with-a-service-history/body[3].items[1]#1"
+        },
+        {
+          "text": "If you did a job yourself, write \"Me\" and what parts you used.",
+          "source": "guide:selling-your-car-with-a-service-history/body[3].items[1]#2"
+        }
+      ],
+      "emphasis": [
+        "odometer"
+      ],
+      "art": {
+        "motif": "toolbox",
+        "why": "the slide names \"job\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "How to put the page together",
+        "source": "guide:selling-your-car-with-a-service-history/body[3].heading"
+      },
+      "number": {
+        "text": "3",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Mark the gaps.",
+        "source": "guide:selling-your-car-with-a-service-history/body[3].items[2]#0"
+      },
+      "body": [
+        {
+          "text": "Where you don't know, write \"not recorded\" instead of guessing a date.",
+          "source": "guide:selling-your-car-with-a-service-history/body[3].items[2]#1"
+        }
+      ],
+      "emphasis": [
+        "gaps"
+      ],
+      "art": {
+        "motif": "magnifier",
+        "why": "the slide names \"gap\", \"where\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "How to put the page together",
+        "source": "guide:selling-your-car-with-a-service-history/body[3].heading"
+      },
+      "number": {
+        "text": "4",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Put the receipts behind the page in the same order as the lines, so the buyer can check one against the other.",
+        "source": "guide:selling-your-car-with-a-service-history/body[3].items[3]#0"
+      },
+      "body": [],
+      "emphasis": [
+        "receipts"
+      ],
+      "art": {
+        "motif": "receipt",
+        "why": "the slide names \"receipt\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "How to put the page together",
+        "source": "guide:selling-your-car-with-a-service-history/body[3].heading"
+      },
+      "number": {
+        "text": "5",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Read the last line against your odometer today.",
+        "source": "guide:selling-your-car-with-a-service-history/body[3].items[4]#0"
+      },
+      "body": [
+        {
+          "text": "If the last service was long ago, add today's date and mileage at the bottom.",
+          "source": "guide:selling-your-car-with-a-service-history/body[3].items[4]#1"
+        }
+      ],
+      "emphasis": [
+        "odometer"
+      ],
+      "art": {
+        "motif": "car",
+        "why": "the slide names \"odometer\", \"mileage\""
+      }
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "Vehicle Maintenance Companion",
+        "source": "title"
+      },
+      "line": {
+        "text": "Every service you record is kept with its day, mileage, who did it and what it cost, and prints as a service record that says plainly it is your own.",
+        "source": "problemsSolved[3].solution"
+      },
+      "ui": {
+        "kind": "screen",
+        "src": "screens/vehicle-maintenance-companion-history.png"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "Selling your car: how to present your service history",
+        "source": "guide:selling-your-car-with-a-service-history/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/selling-your-car-with-a-service-history",
+        "source": "guide:selling-your-car-with-a-service-history/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      },
+      "art": {
+        "motif": "car",
+        "why": "the carousel's topic: the moment and its guide name \"car\""
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"You have no proof the car was looked after when it is time to sell it.\" (problemsSolved[3].problem), as the listing describes the moment.",
+    "Steps: 5 of 6 from the guide's numbered steps \"How to put the page together\", one per slide, each with the guide's own explanation.",
+    "Help: \"Every service you record is kept with its day, mileage, who did it and what it cost, and prints as a service record that says plainly it is your own.\" (problemsSolved[3].solution), on screens/vehicle-maintenance-companion-history.png (\"History\").",
+    "Illustration on the cover: car with document, because the carousel's topic: the moment and its guide name \"car\".",
+    "Illustration on the answer: notebook, because the slide names \"page\", \"record\".",
+    "Illustration on the step: receipt, because the slide names \"receipt\", \"statement\", \"invoice\".",
+    "Illustration on the step: toolbox, because the slide names \"job\".",
+    "Illustration on the step: magnifier, because the slide names \"gap\", \"where\".",
+    "Illustration on the step: receipt, because the slide names \"receipt\".",
+    "Illustration on the step: car, because the slide names \"odometer\", \"mileage\".",
+    "Illustration on the close: car, because the carousel's topic: the moment and its guide name \"car\"."
+  ]
+}

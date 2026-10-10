@@ -1,0 +1,217 @@
+{
+  "id": "sit-vehicle-maintenance-companion-problem-2--instagram-reel",
+  "product": "vehicle-maintenance-companion",
+  "situation": "problemsSolved[1].problem",
+  "runtime": {
+    "min": 12,
+    "max": 35
+  },
+  "platform": "instagram-reel",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 392,
+  "structure": "situationMoment",
+  "angle": {
+    "text": "A used or inherited car has no honest service history to check.",
+    "source": "problemsSolved[1].problem"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "dolly",
+    "transitions": [
+      "radial",
+      "zoomThrough",
+      "radial"
+    ],
+    "motif": "gauge",
+    "grounds": [
+      "light",
+      "ink",
+      "light",
+      "accent"
+    ],
+    "pace": 1
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.2,
+    "energy": "mid"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "A used or inherited car has no honest service history to check.",
+          "source": "problemsSolved[1].problem"
+        }
+      ],
+      "emphasis": [
+        "inherited"
+      ],
+      "why": "Opens on the moment as the listing describes it: the situation the viewer is in right now.",
+      "from": 0,
+      "dur": 115,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "A used or inherited",
+          "car has no honest",
+          "service history to",
+          "check."
+        ]
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "A distinct unknown-history path: nothing is assumed done, nothing reads as overdue without a real fact.",
+        "source": "problemsSolved[1].solution"
+      },
+      "screen": {
+        "src": "screens/vehicle-maintenance-companion-vehicles.png",
+        "pose": "tiltRight",
+        "focus": {
+          "at": 0.45,
+          "y": 922,
+          "h": 70,
+          "region": "unknown"
+        }
+      },
+      "why": "How Vehicle Maintenance Companion helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"Vehicles\" (What you own and what you track on it: each car with its intervals, when it was last done, and a commuter with history unknown.) chosen because it is the real screen closest to \"A distinct unknown-history path: nothing is assumed done, nothing reads as overd\"; focus on \"History unknown\".",
+      "eyebrow": {
+        "text": "Vehicle Maintenance Companion",
+        "source": "title"
+      },
+      "from": 103,
+      "dur": 217,
+      "ground": "light",
+      "transition": "radial",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 98,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "soft",
+      "copy": [
+        {
+          "text": "Vehicle Maintenance Companion",
+          "source": "title"
+        },
+        {
+          "text": "Available now.",
+          "source": "micro"
+        }
+      ],
+      "why": "Instagram Reel punishes an obvious ad; a soft close names the product and where to find it.",
+      "from": 308,
+      "dur": 84,
+      "ground": "ink",
+      "transition": "zoomThrough",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Instagram Reel, 1080×1920, 12–35s, hook by 1.2s, sound on",
+      "because": "Full-screen and swipeable: the first second decides whether anyone stays. Mostly watched with sound, but captions still carry every point. The right edge holds like/comment buttons and the bottom holds the caption, so text lives in the middle band."
+    },
+    {
+      "topic": "Product",
+      "decision": "Vehicle Maintenance Companion: $34 (list $69), motif \"gauge\", calm personality, warm accent #b45309",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"A used or inherited car has no honest service history to check.\"",
+      "because": "One real moment from Vehicle Maintenance Companion's listing (problemsSolved[1].problem). The film is about this moment and how the product helps with it: \"A distinct unknown-history path: nothing is assumed done, nothing reads as overdue without a real fact.\""
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You own more than one vehicle, or a vehicle with a maintenance history you already know by heart but have never written down anywhere. / You have bought a used car or inherited one, and its real service history is genuinely unknown to you.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
+      "because": "Best fit for a awareness film on Instagram Reel (platform fit 3, goal fit 3, already used for this product ×1, already used on Instagram Reel ×7). Other candidates: Inside the tool (-29.0)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"A used or inherited car has no honest service history to check.\"",
+      "because": "The moment \"A used or inherited car has no honest service history to check.\", then how Vehicle Maintenance Companion helps."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"gauge\"",
+      "because": "Transitions follow the product's own identity motif, \"gauge\": a gauge sweeps, so scenes are revealed by a radial sweep."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"dolly\"",
+      "because": "Camera \"dolly\": constant forward movement for a high-energy feed."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → ink → light → accent",
+      "because": "Grounds light → ink → light → accent: a warm accent, so light grounds lead and the accent is saved for the turns."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.88 similar to sit-vehicle-maintenance-companion-search-6--instagram-reel; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Full sound design, mid-energy bed",
+      "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
+    },
+    {
+      "topic": "Length",
+      "decision": "13.1s, 3 scenes",
+      "because": "Each scene is held for the time its words take to read on Instagram Reel (0.26s a word), inside 12–35s."
+    }
+  ]
+}
