@@ -1,0 +1,5664 @@
+[
+  {
+    "wave": "wave2",
+    "file": "adhd/pin-4.3",
+    "product": "alongside",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "Three Piles for Any Paperwork Mountain",
+    "sub": "Sort the mail by who is waiting.",
+    "scene": [
+      "document",
+      "clock",
+      "calendar"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: document, clock, calendar"
+  },
+  {
+    "wave": "wave2",
+    "file": "health/pin-4.1",
+    "product": "family-health-binder",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "Doctor Appointment Prep Checklist",
+    "sub": "A short list for the day before a visit: what to write down, what to bring, and what to leave to the doctor.",
+    "scene": [
+      "doctor",
+      "checklist",
+      "health"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: doctor, checklist, health"
+  },
+  {
+    "wave": "wave2",
+    "file": "health/pin-4.2",
+    "product": "family-health-binder",
+    "layout": "scene",
+    "tag": "Small fix, big relief",
+    "head": "Write the Questions Down Before You Go",
+    "sub": "Plan a visit and write your questions, one per line.",
+    "scene": [
+      "notebook",
+      "speech",
+      "doctor"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: notebook, speech, doctor"
+  },
+  {
+    "wave": "wave2",
+    "file": "health/pin-4.3",
+    "product": "family-health-binder",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "Questions to Bring to the Doctor, on One Page",
+    "sub": "Writing questions down means you still have them when you are in the room.",
+    "scene": [
+      "doctor",
+      "speech",
+      "notebook"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: doctor, speech, notebook"
+  },
+  {
+    "wave": "wave2",
+    "file": "ple/pin-3.1",
+    "product": "personal-life-affairs-companion",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "Your Beneficiary Forms Quietly Override Your Will",
+    "sub": "Retirement accounts and life insurance usually pass by nomination, not by will.",
+    "scene": [
+      "document",
+      "bank",
+      "toolbox"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: document, bank, toolbox"
+  },
+  {
+    "wave": "wave2",
+    "file": "ple/pin-3.2",
+    "product": "personal-life-affairs-companion",
+    "layout": "scene",
+    "tag": "Small fix, big relief",
+    "head": "A Step That Checks Who Is Named on the Form",
+    "sub": "One step asks you to check who is named on your workplace retirement plan.",
+    "scene": [
+      "steps",
+      "document",
+      "people"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: steps, document, people"
+  },
+  {
+    "wave": "wave2",
+    "file": "travel/pin-3.1",
+    "product": "travel-companion",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "Packing List for a Week Away, by Person",
+    "sub": "A packing list that starts with the things every trip needs and then adds what this one asks for.",
+    "scene": [
+      "suitcase",
+      "checklist",
+      "calendar"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: suitcase, checklist, calendar"
+  },
+  {
+    "wave": "wave2",
+    "file": "travel/pin-3.2",
+    "product": "travel-companion",
+    "layout": "scene",
+    "tag": "Small fix, big relief",
+    "head": "Start a Packing List From the Kind of Trip",
+    "sub": "Eleven starting lists in Travel Companion, from the basics to beach, city break, camping.",
+    "scene": [
+      "suitcase",
+      "steps",
+      "checklist"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: suitcase, steps, checklist"
+  },
+  {
+    "wave": "wave2",
+    "file": "homeschool/pin-3.1",
+    "product": "homeschooling-companion",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "Homeschool Record Keeping Requirements, State by State",
+    "sub": "A plain summary of what each state asks you to keep.",
+    "scene": [
+      "document",
+      "books",
+      "notebook"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: document, books, notebook"
+  },
+  {
+    "wave": "wave2",
+    "file": "homeschool/pin-3.2",
+    "product": "homeschooling-companion",
+    "layout": "scene",
+    "tag": "Small fix, big relief",
+    "head": "State Homeschool Requirements Shown Beside Your Own Records",
+    "sub": "On the printed record, Homeschooling Companion adds a page summarizing what your state asks you to keep.",
+    "scene": [
+      "notebook",
+      "document",
+      "books"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: notebook, document, books"
+  },
+  {
+    "wave": "wave2",
+    "file": "mmr/pin-3.1",
+    "product": "monthly-money-reset",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "How to Budget on Irregular Income, Month by Month",
+    "sub": "Freelance, tips, gig work or commission.",
+    "scene": [
+      "calendar",
+      "wallet",
+      "toolbox"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: calendar, wallet, toolbox"
+  },
+  {
+    "wave": "wave2",
+    "file": "mmr/pin-3.2",
+    "product": "monthly-money-reset",
+    "layout": "scene",
+    "tag": "Small fix, big relief",
+    "head": "Budget Tool for Irregular Income: Count Only What Has Arrived",
+    "sub": "A free budget tool for uneven pay.",
+    "scene": [
+      "wallet",
+      "toolbox",
+      "calendar"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: wallet, toolbox, calendar"
+  },
+  {
+    "wave": "wave2",
+    "file": "homebase/pin-2.1",
+    "product": "home-management-companion",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "Home Maintenance Schedule: What Is Wrong, What Is Due, What Is Done",
+    "sub": "A good home maintenance schedule sorts your house into four honest piles: something is wrong.",
+    "scene": [
+      "calendar",
+      "house",
+      "toolbox"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: calendar, house, toolbox"
+  },
+  {
+    "wave": "wave2",
+    "file": "vehicle/pin-2.1",
+    "product": "vehicle-maintenance-companion",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "What to Tell a Mechanic Before the Work Starts",
+    "sub": "Say what you are asking for, say the most you will agree to without a call.",
+    "scene": [
+      "speech",
+      "document",
+      "wrench"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: speech, document, wrench"
+  },
+  {
+    "wave": "wave2",
+    "file": "pfc/pin-4.4",
+    "product": "personal-finance-companion",
+    "layout": "split",
+    "tag": "This is your sign",
+    "head": "Bills That Change Every Month Belong in a Range",
+    "sub": "Electric, water and phone bills move around.",
+    "scene": [
+      "calendar",
+      "phone",
+      "water"
+    ],
+    "screen": "screens/personal-finance-companion-bills.png",
+    "cta": "price",
+    "why": "illustrations named by its words: calendar, phone, water; screen screens/personal-finance-companion-bills.png (\"Bills\") matches its words best"
+  },
+  {
+    "wave": "wave2",
+    "file": "pfc/pin-4.5",
+    "product": "personal-finance-companion",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "How to Budget for Bills That Change Every Month",
+    "sub": "Pull twelve months, note the low and the high, budget toward the high.",
+    "scene": [
+      "calendar",
+      "wallet",
+      "phone"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: calendar, wallet, phone"
+  },
+  {
+    "wave": "wave2",
+    "file": "pfc/pin-5.1",
+    "product": "personal-finance-companion",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "How to Organize Your Finances When Everything Is Scattered",
+    "sub": "Money information lives in bank apps, statements, your head and a spreadsheet nobody trusts.",
+    "scene": [
+      "laptop",
+      "binder",
+      "clock"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: laptop, binder, clock"
+  },
+  {
+    "wave": "wave2",
+    "file": "adhd/pin-4.4",
+    "product": "alongside",
+    "layout": "scene",
+    "tag": "Small fix, big relief",
+    "head": "Pick Something Back Up Without Rebuilding It in Your Head",
+    "sub": "A short walk through where you got to, what was missing, and the smallest piece to do next.",
+    "scene": [
+      "mind",
+      "magnifier",
+      "laptop"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: mind, magnifier, laptop"
+  },
+  {
+    "wave": "wave2",
+    "file": "adhd/pin-4.5",
+    "product": "alongside",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "You Do Not Have to Do the Whole Pile",
+    "sub": "The pile does not need to be finished today.",
+    "scene": [
+      "clock",
+      "mind",
+      "steps"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: clock"
+  },
+  {
+    "wave": "wave2",
+    "file": "adhd/pin-5.1",
+    "product": "alongside",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "How to Say No, or Give Bad News, on the Phone",
+    "sub": "Some calls are hard because of what you have to say.",
+    "scene": [
+      "phone",
+      "speech",
+      "clock"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: phone, speech, clock"
+  },
+  {
+    "wave": "wave2",
+    "file": "health/pin-4.4",
+    "product": "family-health-binder",
+    "layout": "scene",
+    "tag": "Found it",
+    "head": "A Visit Page to Take With You",
+    "sub": "The Visit page prints your questions with tick boxes, what is taken now.",
+    "scene": [
+      "doctor",
+      "notebook",
+      "health"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: doctor, notebook, health"
+  },
+  {
+    "wave": "wave2",
+    "file": "health/pin-4.5",
+    "product": "family-health-binder",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "Write It Down Before You Walk In",
+    "sub": "Questions before, answers after, on one page.",
+    "scene": [
+      "notebook",
+      "health",
+      "pills"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: notebook"
+  },
+  {
+    "wave": "wave2",
+    "file": "health/pin-5.1",
+    "product": "family-health-binder",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "Medication List: What to Write Down",
+    "sub": "A medication list for the family, with what to write and how to keep it current.",
+    "scene": [
+      "pills",
+      "checklist",
+      "notebook"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: pills, checklist, notebook"
+  },
+  {
+    "wave": "wave2",
+    "file": "ple/pin-3.3",
+    "product": "personal-life-affairs-companion",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "The Beneficiary Form You Filled In on Your First Day",
+    "sub": "The nomination you made years ago may never have been updated.",
+    "scene": [
+      "document",
+      "bank",
+      "calendar"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: document, bank, calendar"
+  },
+  {
+    "wave": "wave2",
+    "file": "ple/pin-3.4",
+    "product": "personal-life-affairs-companion",
+    "layout": "scene",
+    "tag": "Found it",
+    "head": "Update the Named Person When Your Situation Changes",
+    "sub": "A separate step is for when your situation has changed.",
+    "scene": [
+      "laptop",
+      "notebook",
+      "steps"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: laptop, notebook, steps"
+  },
+  {
+    "wave": "wave2",
+    "file": "travel/pin-3.3",
+    "product": "travel-companion",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "A Carry-On Only Packing List",
+    "sub": "Traveling with only a carry-on is a matter of a short list and a firm rule.",
+    "scene": [
+      "suitcase",
+      "checklist",
+      "house"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: suitcase, checklist, house"
+  },
+  {
+    "wave": "wave2",
+    "file": "travel/pin-3.4",
+    "product": "travel-companion",
+    "layout": "scene",
+    "tag": "Found it",
+    "head": "A Printable Packing List, One Section Per Person",
+    "sub": "The packing list groups items under Everyone and then each person, and saves as a PDF with tick boxes.",
+    "scene": [
+      "checklist",
+      "suitcase",
+      "people"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: checklist, suitcase, people"
+  },
+  {
+    "wave": "wave2",
+    "file": "homeschool/pin-3.3",
+    "product": "homeschooling-companion",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "What a Homeschool Notice of Intent Is, and How to Find Yours",
+    "sub": "A notice of intent is the first thing many states ask for.",
+    "scene": [
+      "document",
+      "books",
+      "magnifier"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: document, books, magnifier"
+  },
+  {
+    "wave": "wave2",
+    "file": "homeschool/pin-3.4",
+    "product": "homeschooling-companion",
+    "layout": "scene",
+    "tag": "Found it",
+    "head": "Pick Your State and See a Plain Summary",
+    "sub": "Choose your state once and the Kids tab shows its level of regulation and a one-line summary.",
+    "scene": [
+      "document",
+      "bulb",
+      "binder"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: document, bulb, binder"
+  },
+  {
+    "wave": "wave2",
+    "file": "mmr/pin-3.3",
+    "product": "monthly-money-reset",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "Paid Different Every Month? Do These 4 Things First",
+    "sub": "Before you plan a month with uneven pay, do four things.",
+    "scene": [
+      "calendar",
+      "steps",
+      "wallet"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: calendar, steps, wallet"
+  },
+  {
+    "wave": "wave2",
+    "file": "mmr/pin-3.4",
+    "product": "monthly-money-reset",
+    "layout": "scene",
+    "tag": "Found it",
+    "head": "Variable Income Budget: Plan From What Has Arrived",
+    "sub": "A variable income budget works best when it starts from money in hand.",
+    "scene": [
+      "wallet",
+      "shield",
+      "calendar"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: wallet, shield, calendar"
+  },
+  {
+    "wave": "wave2",
+    "file": "homebase/pin-2.2",
+    "product": "home-management-companion",
+    "layout": "scene",
+    "tag": "Small fix, big relief",
+    "head": "Home Maintenance App With a Reason Under Every Row",
+    "sub": "Every job in Home Base states its own fact: \"Last done 4 months ago.",
+    "scene": [
+      "house",
+      "toolbox",
+      "calendar"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: house, toolbox, calendar"
+  },
+  {
+    "wave": "wave2",
+    "file": "vehicle/pin-2.2",
+    "product": "vehicle-maintenance-companion",
+    "layout": "scene",
+    "tag": "Small fix, big relief",
+    "head": "A Page to Hand the Shop Before They Touch the Car",
+    "scene": [
+      "car",
+      "wrench",
+      "calendar"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: car, wrench, calendar"
+  },
+  {
+    "wave": "wave2",
+    "file": "pfc/pin-5.2",
+    "product": "personal-finance-companion",
+    "layout": "scene",
+    "tag": "Found it",
+    "head": "One Next Move at a Time, Never a To-Do Wall",
+    "sub": "Personal Finance Companion shows exactly one useful next step, drawn from a real gap in your records.",
+    "scene": [
+      "steps",
+      "calendar",
+      "magnifier"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: steps, calendar, magnifier"
+  },
+  {
+    "wave": "wave2",
+    "file": "pfc/pin-5.3",
+    "product": "personal-finance-companion",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "Where Is Your Financial Information Right Now?",
+    "sub": "Mostly in your head.",
+    "scene": [
+      "steps",
+      "phone",
+      "envelope"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: steps, phone, envelope"
+  },
+  {
+    "wave": "wave2",
+    "file": "pfc/pin-5.4",
+    "product": "personal-finance-companion",
+    "layout": "scene",
+    "tag": "Small fix, big relief",
+    "head": "From a Pile of Tabs to One Picture",
+    "sub": "Bank apps, statements, a spreadsheet and memory turn into one always-current picture with one next step.",
+    "scene": [
+      "laptop",
+      "binder",
+      "magnifier"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: laptop, binder, magnifier"
+  },
+  {
+    "wave": "wave2",
+    "file": "adhd/pin-5.2",
+    "product": "alongside",
+    "layout": "split",
+    "tag": "This is your sign",
+    "head": "Decide What You Will Not Agree To Before You Dial",
+    "sub": "Deciding this now means you are not deciding it while somebody waits on the line.",
+    "scene": [
+      "phone",
+      "document",
+      "laptop"
+    ],
+    "screen": "screens/alongside-help.png",
+    "cta": "price",
+    "why": "illustrations named by its words: phone, document, laptop; screen screens/alongside-help.png (\"What do you need to do?\") matches its words best"
+  },
+  {
+    "wave": "wave2",
+    "file": "adhd/pin-5.3",
+    "product": "alongside",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "What to Have Ready Before a Hard Call",
+    "sub": "A glass of water.",
+    "scene": [
+      "phone",
+      "document",
+      "water"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: phone, document, water"
+  },
+  {
+    "wave": "wave2",
+    "file": "adhd/pin-5.4",
+    "product": "alongside",
+    "layout": "split",
+    "tag": "Worth it",
+    "head": "Ready to Call? Now, or Name One Exact Time",
+    "sub": "Either answer is a real answer.",
+    "scene": [
+      "phone",
+      "clock",
+      "laptop"
+    ],
+    "screen": "screens/alongside-workspace.png",
+    "cta": "price",
+    "why": "illustrations named by its words: phone, clock, laptop; screen screens/alongside-workspace.png (\"Book the six-month dental check\") matches its words best"
+  },
+  {
+    "wave": "wave2",
+    "file": "health/pin-5.2",
+    "product": "family-health-binder",
+    "layout": "split",
+    "tag": "Worth it",
+    "head": "A Medication List You Can Check Off as Right Today",
+    "sub": "Type in a medication, its dose and how often.",
+    "scene": [
+      "pills",
+      "calendar",
+      "checklist"
+    ],
+    "screen": "screens/family-health-binder-members.png",
+    "cta": "price",
+    "why": "illustrations named by its words: pills, calendar, checklist; screen screens/family-health-binder-members.png (\"Family\") matches its words best"
+  },
+  {
+    "wave": "wave2",
+    "file": "health/pin-5.3",
+    "product": "family-health-binder",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "When Was This List Last Right?",
+    "sub": "A medication list is only useful if you know when it was last checked.",
+    "scene": [
+      "checklist",
+      "pills",
+      "health"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: checklist, pills"
+  },
+  {
+    "wave": "wave2",
+    "file": "health/pin-5.4",
+    "product": "family-health-binder",
+    "layout": "split",
+    "tag": "This is your sign",
+    "head": "A Stopped Medication Leaves the Printed Page",
+    "sub": "When a medication is stopped, it stays in the app and leaves every printed page.",
+    "scene": [
+      "pills",
+      "notebook",
+      "laptop"
+    ],
+    "screen": "screens/family-health-binder-members.png",
+    "cta": "price",
+    "why": "illustrations named by its words: pills, notebook, laptop; screen screens/family-health-binder-members.png (\"Family\") matches its words best"
+  },
+  {
+    "wave": "wave2",
+    "file": "ple/pin-3.5",
+    "product": "personal-life-affairs-companion",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "A Form Filled In Years Ago Quietly Wins",
+    "sub": "Start with the one document most people have not looked at since they signed it.",
+    "scene": [
+      "document",
+      "calendar",
+      "people"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: document, calendar, people"
+  },
+  {
+    "wave": "wave2",
+    "file": "ple/pin-4.1",
+    "product": "personal-life-affairs-companion",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "Where to Look for a Will When You Cannot Find One",
+    "sub": "A search order for finding a will, what to do if there genuinely is not one.",
+    "scene": [
+      "magnifier",
+      "document",
+      "people"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: magnifier, document, people"
+  },
+  {
+    "wave": "wave2",
+    "file": "travel/pin-3.5",
+    "product": "travel-companion",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "A Starting Point, Not a Rulebook",
+    "sub": "No packing list fits every trip.",
+    "scene": [
+      "suitcase",
+      "steps",
+      "plane"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: suitcase, steps"
+  },
+  {
+    "wave": "wave2",
+    "file": "travel/pin-4.1",
+    "product": "travel-companion",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "Travel Document Checklist: What to Carry and Where to Keep It",
+    "sub": "What each traveler needs, what to check months before you go.",
+    "scene": [
+      "checklist",
+      "document",
+      "suitcase"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: checklist, document, suitcase"
+  },
+  {
+    "wave": "wave2",
+    "file": "homeschool/pin-3.5",
+    "product": "homeschooling-companion",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "Do You Have to Count Homeschool Days or Hours?",
+    "sub": "Some states ask for a number and some ask for none at all.",
+    "scene": [
+      "clock",
+      "books",
+      "speech"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: clock, books, speech"
+  },
+  {
+    "wave": "wave2",
+    "file": "homeschool/pin-4.1",
+    "product": "homeschooling-companion",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "What Actually Goes in a Homeschool Portfolio",
+    "sub": "What to include, what evaluators are really looking for.",
+    "scene": [
+      "binder",
+      "books",
+      "calendar"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: binder, books, calendar"
+  },
+  {
+    "wave": "wave2",
+    "file": "mmr/pin-3.5",
+    "product": "monthly-money-reset",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "Why Budgeting With Expected Income Backfires",
+    "sub": "The payment you are waiting on can be late, smaller, or never come.",
+    "scene": [
+      "wallet",
+      "calendar",
+      "clock"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: wallet, calendar, clock"
+  },
+  {
+    "wave": "wave2",
+    "file": "mmr/pin-4.1",
+    "product": "monthly-money-reset",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "Weekly Money Check-in: 4 Questions in 5 Minutes",
+    "sub": "A weekly money check-in should take five minutes, not a Sunday.",
+    "scene": [
+      "wallet",
+      "checklist",
+      "clock"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: wallet, checklist, clock"
+  },
+  {
+    "wave": "wave2",
+    "file": "homebase/pin-2.3",
+    "product": "home-management-companion",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "How Often Things in Your House Actually Need Servicing",
+    "sub": "Manufacturers tell you to service things twice as often as needed.",
+    "scene": [
+      "calendar",
+      "house",
+      "bulb"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: calendar, house, bulb"
+  },
+  {
+    "wave": "wave2",
+    "file": "vehicle/pin-2.3",
+    "product": "vehicle-maintenance-companion",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "Call Me Before Any Further Work",
+    "sub": "The one sentence that keeps a small job from becoming a big one, and when to say it.",
+    "scene": [
+      "phone",
+      "speech",
+      "toolbox"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: phone, speech, toolbox"
+  },
+  {
+    "wave": "wave2",
+    "file": "pfc/pin-5.5",
+    "product": "personal-finance-companion",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "You Do Not Need Everything Ready to Start",
+    "sub": "A financial picture can start with three numbers and a lot of gaps.",
+    "scene": [
+      "steps",
+      "magnifier",
+      "receipt"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: steps, magnifier, receipt"
+  },
+  {
+    "wave": "wave2",
+    "file": "pfc/pin-6.1",
+    "product": "personal-finance-companion",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "What to Write Down for Every Subscription",
+    "sub": "The renewal date matters more than the price.",
+    "scene": [
+      "calendar",
+      "card",
+      "receipt"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: calendar, card, receipt"
+  },
+  {
+    "wave": "wave2",
+    "file": "pfc/pin-6.2",
+    "product": "personal-finance-companion",
+    "layout": "split",
+    "tag": "This is your sign",
+    "head": "Subscription Tracker That Does Not Cancel Anything For You",
+    "sub": "Mark each subscription keep, still deciding or planned to cancel.",
+    "scene": [
+      "card",
+      "calendar",
+      "receipt"
+    ],
+    "screen": "screens/personal-finance-companion-bills.png",
+    "cta": "price",
+    "why": "illustrations named by its words: card, calendar, receipt; screen screens/personal-finance-companion-bills.png (\"Bills\") matches its words best"
+  },
+  {
+    "wave": "wave2",
+    "file": "adhd/pin-5.5",
+    "product": "alongside",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "An Opening Line for Saying No",
+    "sub": "Getting the first sentence out is most of it.",
+    "scene": [
+      "speech",
+      "notebook",
+      "mind"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: speech, notebook"
+  },
+  {
+    "wave": "wave2",
+    "file": "adhd/pin-6.1",
+    "product": "alongside",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "How to Write the Email You Have Been Avoiding",
+    "sub": "An email that does not say what it wants gets answered slowly, or not at all.",
+    "scene": [
+      "envelope",
+      "mind",
+      "notebook"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: envelope, mind, notebook"
+  },
+  {
+    "wave": "wave2",
+    "file": "adhd/pin-6.2",
+    "product": "alongside",
+    "layout": "scene",
+    "tag": "Small fix, big relief",
+    "head": "The First Line of an Email Is the Hard Part",
+    "sub": "The rest is usually easier once the first line exists.",
+    "scene": [
+      "envelope",
+      "notebook",
+      "steps"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: envelope, notebook, steps"
+  },
+  {
+    "wave": "wave2",
+    "file": "health/pin-5.5",
+    "product": "family-health-binder",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "Bring the List, Not Your Memory",
+    "sub": "A printed list beats remembering.",
+    "scene": [
+      "mind",
+      "checklist",
+      "health"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: mind, checklist"
+  },
+  {
+    "wave": "wave2",
+    "file": "health/pin-6.1",
+    "product": "family-health-binder",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "Symptom Notes for a Doctor Visit: What to Write Down",
+    "sub": "The four things a doctor usually asks: when it started, how long, how bad, and what helped.",
+    "scene": [
+      "doctor",
+      "health",
+      "notebook"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: doctor, health, notebook"
+  },
+  {
+    "wave": "wave2",
+    "file": "health/pin-6.2",
+    "product": "family-health-binder",
+    "layout": "scene",
+    "tag": "Found it",
+    "head": "Record a Symptom: When, How Long, How Bad",
+    "sub": "Write down what it is, when it started, how long, how bad and what helped.",
+    "scene": [
+      "notebook",
+      "health",
+      "calendar"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: notebook, health, calendar"
+  },
+  {
+    "wave": "wave2",
+    "file": "ple/pin-4.2",
+    "product": "personal-life-affairs-companion",
+    "layout": "split",
+    "tag": "Worth it",
+    "head": "Write Down Where the Will Is, in Your Own Words",
+    "sub": "Do you have a will, and where is it kept?",
+    "scene": [
+      "document",
+      "notebook",
+      "magnifier"
+    ],
+    "screen": "screens/personal-life-affairs-companion-affairs.png",
+    "cta": "price",
+    "why": "illustrations named by its words: document, notebook, magnifier; screen screens/personal-life-affairs-companion-affairs.png (\"What you have established so far.\") matches its words best"
+  },
+  {
+    "wave": "wave2",
+    "file": "ple/pin-4.3",
+    "product": "personal-life-affairs-companion",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "You Have Been Named Executor: What You Agreed To",
+    "sub": "What the role involves, how long it really takes, what you are personally responsible for.",
+    "scene": [
+      "people",
+      "binder",
+      "document"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: people"
+  },
+  {
+    "wave": "wave2",
+    "file": "travel/pin-4.2",
+    "product": "travel-companion",
+    "layout": "split",
+    "tag": "Worth it",
+    "head": "Dates Worth a Look Before You Go",
+    "scene": [
+      "calendar",
+      "suitcase",
+      "document"
+    ],
+    "screen": "screens/travel-companion-trip.png",
+    "cta": "price",
+    "why": "illustrations named by its words: calendar, suitcase, document; screen screens/travel-companion-trip.png (\"Lisbon and Porto\") matches its words best"
+  },
+  {
+    "wave": "wave2",
+    "file": "travel/pin-4.3",
+    "product": "travel-companion",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "A Photo of a Passport Is Not a Backup Plan",
+    "sub": "Three things to write down for every document: what it is, whose it is, and where it is kept.",
+    "scene": [
+      "document",
+      "plane",
+      "suitcase"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: document"
+  },
+  {
+    "wave": "wave2",
+    "file": "homeschool/pin-4.2",
+    "product": "homeschooling-companion",
+    "layout": "split",
+    "tag": "Worth it",
+    "head": "A Printed Homeschool Record for One Child, Made on Your Own Device",
+    "sub": "One child, on paper, made on your own device so nothing about them is sent anywhere to produce it.",
+    "scene": [
+      "books",
+      "notebook",
+      "calendar"
+    ],
+    "screen": "screens/homeschooling-companion-record.png",
+    "cta": "price",
+    "why": "illustrations named by its words: books, notebook; screen screens/homeschooling-companion-record.png (\"What has happened.\") matches its words best"
+  },
+  {
+    "wave": "wave2",
+    "file": "homeschool/pin-4.3",
+    "product": "homeschooling-companion",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "Preparing for a Homeschool Evaluation in an Evening",
+    "sub": "What evaluators look for, what to bring, and how to prepare in an evening rather than two weeks.",
+    "scene": [
+      "books",
+      "moon",
+      "calendar"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: books, moon, calendar"
+  },
+  {
+    "wave": "wave2",
+    "file": "mmr/pin-4.2",
+    "product": "monthly-money-reset",
+    "layout": "split",
+    "tag": "Worth it",
+    "head": "A Weekly Budget Check-in You Can Actually Keep Up",
+    "sub": "End each check-in with one clear next move instead of a to-do wall.",
+    "scene": [
+      "checklist",
+      "hotel",
+      "wallet"
+    ],
+    "screen": "screens/monthly-money-reset-progress.png",
+    "cta": "price",
+    "why": "illustrations named by its words: checklist, hotel, wallet; screen screens/monthly-money-reset-progress.png (\"Start\") matches its words best"
+  },
+  {
+    "wave": "wave2",
+    "file": "mmr/pin-4.3",
+    "product": "monthly-money-reset",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "Why You Quit Budgeting After Two Months (and What Helps)",
+    "sub": "If you have started and dropped a budget more than once, the budget is the problem, not you.",
+    "scene": [
+      "wallet",
+      "calendar",
+      "shield"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: wallet, calendar"
+  },
+  {
+    "wave": "wave2",
+    "file": "homebase/pin-2.4",
+    "product": "home-management-companion",
+    "layout": "scene",
+    "tag": "Found it",
+    "head": "Home Maintenance Tracker That Ranks by What Costs Most to Ignore",
+    "sub": "Home Base sorts your house into four bands and never shows a red number: something is wrong.",
+    "scene": [
+      "house",
+      "toolbox",
+      "health"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: house, toolbox, health"
+  },
+  {
+    "wave": "wave2",
+    "file": "vehicle/pin-2.4",
+    "product": "vehicle-maintenance-companion",
+    "layout": "scene",
+    "tag": "Found it",
+    "head": "The Most You Will Agree to Without a Call",
+    "sub": "Type what you are requesting today and, if you like, an amount you do not want to go over without a call.",
+    "scene": [
+      "target",
+      "phone",
+      "document"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: target, phone, document"
+  },
+  {
+    "wave": "wave2",
+    "file": "pfc/pin-6.3",
+    "product": "personal-finance-companion",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "4 Places a Subscription Hides Its Cancel Button",
+    "sub": "Some subscriptions take a click to start and a phone call to stop.",
+    "scene": [
+      "card",
+      "phone",
+      "chart"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: card, phone"
+  },
+  {
+    "wave": "wave2",
+    "file": "pfc/pin-6.4",
+    "product": "personal-finance-companion",
+    "layout": "split",
+    "tag": "Worth it",
+    "head": "A Heads-Up Before an Annual Charge Renews",
+    "sub": "One large charge a year is easy to forget.",
+    "scene": [
+      "calendar",
+      "receipt",
+      "mind"
+    ],
+    "screen": "screens/personal-finance-companion-printables.png",
+    "cta": "price",
+    "why": "illustrations named by its words: calendar, receipt, mind; screen screens/personal-finance-companion-printables.png (\"Printable Finance Companion\") matches its words best"
+  },
+  {
+    "wave": "wave2",
+    "file": "pfc/pin-6.5",
+    "product": "personal-finance-companion",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "The Renewal Date Is the Number That Matters",
+    "sub": "A subscription is cheap until it renews when you were not looking.",
+    "scene": [
+      "calendar",
+      "clock",
+      "card"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: calendar, clock, card"
+  },
+  {
+    "wave": "wave2",
+    "file": "adhd/pin-6.3",
+    "product": "alongside",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "Before You Send It: Three Checks",
+    "sub": "What you want is in the first three lines.",
+    "scene": [
+      "calendar",
+      "books",
+      "scale"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: calendar, books, scale"
+  },
+  {
+    "wave": "wave2",
+    "file": "adhd/pin-6.4",
+    "product": "alongside",
+    "layout": "scene",
+    "tag": "Found it",
+    "head": "How to Follow Up When Nobody Replied",
+    "sub": "Chasing by the same route that went unanswered is usually the slower option.",
+    "scene": [
+      "route",
+      "laptop",
+      "mind"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: route, laptop"
+  },
+  {
+    "wave": "wave2",
+    "file": "adhd/pin-6.5",
+    "product": "alongside",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "Reading It a Fourth Time Does Not Make It Better",
+    "sub": "The email you keep polishing is already good enough.",
+    "scene": [
+      "books",
+      "scale",
+      "envelope"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: books, scale, envelope"
+  },
+  {
+    "wave": "wave2",
+    "file": "health/pin-6.3",
+    "product": "family-health-binder",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "Onset, Length, Severity, What Helped",
+    "sub": "A few words on each is enough.",
+    "scene": [
+      "doctor",
+      "health",
+      "pills"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: doctor"
+  },
+  {
+    "wave": "wave2",
+    "file": "health/pin-6.4",
+    "product": "family-health-binder",
+    "layout": "scene",
+    "tag": "Small fix, big relief",
+    "head": "A Dated List, Newest First",
+    "sub": "Each symptom you record appears as a dated line, newest first, with how bad, how long and what helped.",
+    "scene": [
+      "calendar",
+      "notebook",
+      "steps"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: calendar, notebook, steps"
+  },
+  {
+    "wave": "wave2",
+    "file": "health/pin-6.5",
+    "product": "family-health-binder",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "Notes, Not Answers",
+    "sub": "You write it down.",
+    "scene": [
+      "notebook",
+      "doctor",
+      "health"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: notebook, doctor"
+  },
+  {
+    "wave": "wave2",
+    "file": "ple/pin-4.4",
+    "product": "personal-life-affairs-companion",
+    "layout": "split",
+    "tag": "This is your sign",
+    "head": "Where Does Your Executor's Authority Stand?",
+    "sub": "A single step records whether anything has been started to prove your executor can act: not looked into.",
+    "scene": [
+      "people",
+      "steps",
+      "magnifier"
+    ],
+    "screen": "screens/personal-life-affairs-companion-workspace.png",
+    "cta": "price",
+    "why": "illustrations named by its words: people, steps, magnifier; screen screens/personal-life-affairs-companion-workspace.png (\"Write down who should be called first.\") matches its words best"
+  },
+  {
+    "wave": "wave2",
+    "file": "ple/pin-4.5",
+    "product": "personal-life-affairs-companion",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "Does Anyone Else Know Where It Is?",
+    "sub": "The second question matters as much as the first.",
+    "scene": [
+      "magnifier",
+      "document",
+      "binder"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: magnifier, document"
+  },
+  {
+    "wave": "wave2",
+    "file": "travel/pin-4.4",
+    "product": "travel-companion",
+    "layout": "split",
+    "tag": "This is your sign",
+    "head": "Where It Is Kept, Not the File",
+    "sub": "A document record says what exists and where it is kept.",
+    "scene": [
+      "binder",
+      "magnifier",
+      "notebook"
+    ],
+    "screen": "screens/travel-companion-trip.png",
+    "cta": "price",
+    "why": "illustrations named by its words: binder, magnifier, notebook; screen screens/travel-companion-trip.png (\"Lisbon and Porto\") matches its words best"
+  },
+  {
+    "wave": "wave2",
+    "file": "travel/pin-4.5",
+    "product": "travel-companion",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "Your Phone Is a Single Point of Failure",
+    "sub": "The short list worth printing, and why it is shorter than you think.",
+    "scene": [
+      "phone",
+      "plane",
+      "suitcase"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: phone"
+  },
+  {
+    "wave": "wave2",
+    "file": "homeschool/pin-4.4",
+    "product": "homeschooling-companion",
+    "layout": "split",
+    "tag": "This is your sign",
+    "head": "What Prints on a Homeschool Record Is Up to You",
+    "sub": "Their name is included so the record says whose it is.",
+    "scene": [
+      "notebook",
+      "books",
+      "calendar"
+    ],
+    "screen": "screens/homeschooling-companion-kids.png",
+    "cta": "price",
+    "why": "illustrations named by its words: notebook, books; screen screens/homeschooling-companion-kids.png (\"Your children.\") matches its words best"
+  },
+  {
+    "wave": "wave2",
+    "file": "homeschool/pin-4.5",
+    "product": "homeschooling-companion",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "A Record Is Not an Assessment",
+    "sub": "A record says what was done.",
+    "scene": [
+      "notebook",
+      "speech",
+      "books"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: notebook, speech"
+  },
+  {
+    "wave": "wave2",
+    "file": "mmr/pin-4.4",
+    "product": "monthly-money-reset",
+    "layout": "split",
+    "tag": "This is your sign",
+    "head": "A Simple Weekly Budget Review for People Who Hate Budgeting",
+    "sub": "A simple weekly budget review in three moves.",
+    "scene": [
+      "wallet",
+      "magnifier",
+      "people"
+    ],
+    "screen": "screens/monthly-money-reset-progress.png",
+    "cta": "price",
+    "why": "illustrations named by its words: wallet, magnifier, people; screen screens/monthly-money-reset-progress.png (\"Start\") matches its words best"
+  },
+  {
+    "wave": "wave2",
+    "file": "mmr/pin-4.5",
+    "product": "monthly-money-reset",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "Missed a Week of Budgeting? How to Pick It Back Up",
+    "sub": "You skipped a week.",
+    "scene": [
+      "calendar",
+      "wallet",
+      "bulb"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: calendar, wallet, bulb"
+  },
+  {
+    "wave": "wave2",
+    "file": "homebase/pin-2.5",
+    "product": "home-management-companion",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "Which Home Maintenance Jobs Matter Most, and Which Can Wait",
+    "sub": "Not every job on a home maintenance list is equal.",
+    "scene": [
+      "toolbox",
+      "house",
+      "scale"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: toolbox, house, scale"
+  },
+  {
+    "wave": "wave2",
+    "file": "vehicle/pin-2.5",
+    "product": "vehicle-maintenance-companion",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "Anything Else Needs a Call First",
+    "sub": "Short, polite and written down.",
+    "scene": [
+      "phone",
+      "steps",
+      "car"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: phone, steps"
+  },
+  {
+    "wave": "wave2",
+    "file": "pfc/pin-7.1",
+    "product": "personal-finance-companion",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "How Couples and Roommates Split Bills Without Keeping Score",
+    "sub": "There is no single right way to split a bill.",
+    "scene": [
+      "scale",
+      "people",
+      "speech"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: scale, people, speech"
+  },
+  {
+    "wave": "wave2",
+    "file": "pfc/pin-7.2",
+    "product": "personal-finance-companion",
+    "layout": "scene",
+    "tag": "Small fix, big relief",
+    "head": "A Bill Splitting Statement You Can Send",
+    "sub": "Mark a bill as shared, set your percentage, tick it settled.",
+    "scene": [
+      "receipt",
+      "checklist",
+      "bank"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: receipt, checklist, bank"
+  },
+  {
+    "wave": "wave2",
+    "file": "pfc/pin-7.3",
+    "product": "personal-finance-companion",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "4 Things to Agree Before You Split a Bill",
+    "sub": "Which bills count, what the split is, how often you settle, and where you write it down.",
+    "scene": [
+      "scale",
+      "wallet",
+      "chart"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: scale, wallet"
+  },
+  {
+    "wave": "wave2",
+    "file": "adhd/pin-7.1",
+    "product": "alongside",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "Task Paralysis: What to Do in the Next Ten Minutes",
+    "sub": "When you cannot start anything at all, the useful move is smaller than a plan.",
+    "scene": [
+      "mind",
+      "phone",
+      "clock"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: mind, phone, clock"
+  },
+  {
+    "wave": "wave2",
+    "file": "adhd/pin-7.2",
+    "product": "alongside",
+    "layout": "split",
+    "tag": "Worth it",
+    "head": "Which of Those Could Happen Today? One of Them, Not the List",
+    "sub": "Break something down asks for the first step, then the next, and then which could happen today.",
+    "scene": [
+      "steps",
+      "calendar",
+      "scale"
+    ],
+    "screen": "screens/alongside-life.png",
+    "cta": "price",
+    "why": "illustrations named by its words: steps, calendar, scale; screen screens/alongside-life.png (\"Everything you are holding\") matches its words best"
+  },
+  {
+    "wave": "wave2",
+    "file": "adhd/pin-7.3",
+    "product": "alongside",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "The First Physical Step: Examples for Admin You Are Stuck On",
+    "sub": "A first step is something you could see happen: a call, an email, a form, a document.",
+    "scene": [
+      "steps",
+      "document",
+      "mind"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: steps, document, mind"
+  },
+  {
+    "wave": "wave2",
+    "file": "health/pin-7.1",
+    "product": "family-health-binder",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "Emergency Contact Information Sheet: What to Include",
+    "sub": "A one-page sheet with names, numbers and the few facts someone would need.",
+    "scene": [
+      "health",
+      "shield",
+      "notebook"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: health, shield, notebook"
+  },
+  {
+    "wave": "wave2",
+    "file": "health/pin-7.2",
+    "product": "family-health-binder",
+    "layout": "split",
+    "tag": "This is your sign",
+    "head": "A Small Card for a Bag or the Fridge",
+    "sub": "The Emergency card prints name, allergies, who to call, a doctor and insurance on a small card you cut out.",
+    "scene": [
+      "card",
+      "car",
+      "bulb"
+    ],
+    "screen": "screens/family-health-binder-members.png",
+    "cta": "price",
+    "why": "illustrations named by its words: card, car, bulb; screen screens/family-health-binder-members.png (\"Family\") matches its words best"
+  },
+  {
+    "wave": "wave2",
+    "file": "health/pin-7.3",
+    "product": "family-health-binder",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "A Card Is Not a Medical ID",
+    "sub": "A printed card is a helpful note.",
+    "scene": [
+      "card",
+      "car",
+      "health"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: card, car, health"
+  },
+  {
+    "wave": "wave2",
+    "file": "ple/pin-5.1",
+    "product": "personal-life-affairs-companion",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "What Goes in a Life Admin Binder",
+    "sub": "A life admin binder is easier to keep when it says where things are rather than holding the things themselves.",
+    "scene": [
+      "binder",
+      "document",
+      "people"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: binder"
+  },
+  {
+    "wave": "wave3",
+    "file": "ple/pin-5.2",
+    "product": "personal-life-affairs-companion",
+    "layout": "scene",
+    "tag": "Found it",
+    "head": "A Printable Book That Says Where Everything Is",
+    "sub": "Personal Life Affairs Companion prints as a book called My Affairs.",
+    "scene": [
+      "phone",
+      "route",
+      "scale"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: phone, route, scale"
+  },
+  {
+    "wave": "wave3",
+    "file": "travel/pin-5.1",
+    "product": "travel-companion",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "Your Flight Is Delayed and You Have a Connection: What to Do First",
+    "sub": "The order that helps in the twenty minutes after a delay is announced.",
+    "scene": [
+      "clock",
+      "plane",
+      "steps"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: clock, plane, steps"
+  },
+  {
+    "wave": "wave3",
+    "file": "travel/pin-5.2",
+    "product": "travel-companion",
+    "layout": "scene",
+    "tag": "Found it",
+    "head": "What Has Happened? Five Choices",
+    "sub": "Travel Companion walks you through a flight problem one question at a time: delayed, cancelled.",
+    "scene": [
+      "plane",
+      "clock",
+      "suitcase"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: plane, clock, suitcase"
+  },
+  {
+    "wave": "wave3",
+    "file": "homeschool/pin-5.1",
+    "product": "homeschooling-companion",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "How to Check Whether Your Child Actually Learned Something",
+    "sub": "Covering a topic and learning it are different.",
+    "scene": [
+      "books",
+      "house",
+      "notebook"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: books, house"
+  },
+  {
+    "wave": "wave3",
+    "file": "homeschool/pin-5.2",
+    "product": "homeschooling-companion",
+    "layout": "scene",
+    "tag": "Found it",
+    "head": "A Short Check You Run at Home, Marked by You",
+    "sub": "This product does not write the questions.",
+    "scene": [
+      "house",
+      "books",
+      "laptop"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: house, books, laptop"
+  },
+  {
+    "wave": "wave3",
+    "file": "mmr/pin-5.1",
+    "product": "monthly-money-reset",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "Can I Afford This? Check Before You Buy",
+    "sub": "The best time to check if you can afford something is before you buy it.",
+    "scene": [
+      "wallet",
+      "steps",
+      "shield"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: wallet, steps, shield"
+  },
+  {
+    "wave": "wave3",
+    "file": "mmr/pin-5.2",
+    "product": "monthly-money-reset",
+    "layout": "scene",
+    "tag": "Found it",
+    "head": "How to Stop Overspending Without Tracking Every Coffee",
+    "sub": "You do not need forty categories to stop overspending.",
+    "scene": [
+      "suitcase",
+      "magnifier",
+      "calendar"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: suitcase, magnifier, calendar"
+  },
+  {
+    "wave": "wave3",
+    "file": "homebase/pin-3.1",
+    "product": "home-management-companion",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "New Homeowner Checklist: Start With What Is in Your House",
+    "sub": "You have keys and no idea what your house needs.",
+    "scene": [
+      "house",
+      "bulb",
+      "checklist"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: house, bulb, checklist"
+  },
+  {
+    "wave": "wave3",
+    "file": "vehicle/pin-3.1",
+    "product": "vehicle-maintenance-companion",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "You Bought a Used Car With No Service Records: What to Do",
+    "sub": "A used car with no service history is normal.",
+    "scene": [
+      "car",
+      "notebook",
+      "wrench"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: car, notebook, wrench"
+  },
+  {
+    "wave": "wave3",
+    "file": "pfc/pin-7.4",
+    "product": "personal-finance-companion",
+    "layout": "scene",
+    "tag": "Found it",
+    "head": "Split a Bill in Three Moves: Share, Settle, Send",
+    "sub": "Set the share on the bill, tick it settled when you square up, and send the PDF.",
+    "scene": [
+      "scale",
+      "checklist",
+      "wallet"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: scale, checklist, wallet"
+  },
+  {
+    "wave": "wave3",
+    "file": "pfc/pin-7.5",
+    "product": "personal-finance-companion",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "Write Down What Is Settled and What Is Owed",
+    "sub": "Most bill splitting arguments are memory disputes.",
+    "scene": [
+      "chart",
+      "notebook",
+      "mind"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: chart, notebook, mind"
+  },
+  {
+    "wave": "wave3",
+    "file": "pfc/pin-8.1",
+    "product": "personal-finance-companion",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "How to Turn a Bank Statement CSV Into a Budget",
+    "sub": "Download the CSV, check the headers and the sign convention, map date, description and amount.",
+    "scene": [
+      "receipt",
+      "wallet",
+      "bank"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: receipt, wallet, bank"
+  },
+  {
+    "wave": "wave3",
+    "file": "adhd/pin-7.4",
+    "product": "alongside",
+    "layout": "split",
+    "tag": "This is your sign",
+    "head": "Break Something Down in Three Questions",
+    "sub": "What is the thing?",
+    "scene": [
+      "speech",
+      "steps",
+      "laptop"
+    ],
+    "screen": "screens/alongside-help.png",
+    "cta": "price",
+    "why": "illustrations named by its words: speech, steps, laptop; screen screens/alongside-help.png (\"What do you need to do?\") matches its words best"
+  },
+  {
+    "wave": "wave3",
+    "file": "adhd/pin-7.5",
+    "product": "alongside",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "Small Enough That Starting Is Not a Decision",
+    "sub": "When starting feels impossible, make the step smaller until it is not a decision.",
+    "scene": [
+      "steps",
+      "mind",
+      "notebook"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: steps"
+  },
+  {
+    "wave": "wave3",
+    "file": "adhd/pin-8.1",
+    "product": "alongside",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "How to Restart a Project You Gave Up On",
+    "sub": "Restarting is harder than starting, for a specific reason.",
+    "scene": [
+      "steps",
+      "mind",
+      "notebook"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: steps"
+  },
+  {
+    "wave": "wave3",
+    "file": "health/pin-7.4",
+    "product": "family-health-binder",
+    "layout": "split",
+    "tag": "Worth it",
+    "head": "Emergency Contact and Insurance, Typed In",
+    "sub": "Add an emergency contact and health insurance details for each person.",
+    "scene": [
+      "health",
+      "shield",
+      "laptop"
+    ],
+    "screen": "screens/family-health-binder-members.png",
+    "cta": "price",
+    "why": "illustrations named by its words: health, shield, laptop; screen screens/family-health-binder-members.png (\"Family\") matches its words best"
+  },
+  {
+    "wave": "wave3",
+    "file": "health/pin-7.5",
+    "product": "family-health-binder",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "Keep It Where You Can Find It",
+    "sub": "A sheet nobody can find helps nobody.",
+    "scene": [
+      "magnifier",
+      "health",
+      "pills"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: magnifier"
+  },
+  {
+    "wave": "wave3",
+    "file": "health/pin-8.1",
+    "product": "family-health-binder",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "New Doctor? What to Bring to the First Visit",
+    "sub": "A new doctor asks the same things as the last.",
+    "scene": [
+      "doctor",
+      "steps",
+      "health"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: doctor, steps, health"
+  },
+  {
+    "wave": "wave3",
+    "file": "ple/pin-5.3",
+    "product": "personal-life-affairs-companion",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "If You Were in the Hospital for Two Weeks, What Would Someone Need to Find?",
+    "sub": "You do not have to imagine the worst to plan for two weeks away.",
+    "scene": [
+      "calendar",
+      "people",
+      "magnifier"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: calendar, people, magnifier"
+  },
+  {
+    "wave": "wave3",
+    "file": "ple/pin-5.4",
+    "product": "personal-life-affairs-companion",
+    "layout": "scene",
+    "tag": "Small fix, big relief",
+    "head": "A Page That Opens on What Someone Is Trying to Do",
+    "scene": [
+      "people",
+      "document",
+      "notebook"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: people, document, notebook"
+  },
+  {
+    "wave": "wave3",
+    "file": "travel/pin-5.3",
+    "product": "travel-companion",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "The Hotel Cannot Find Your Reservation: What to Say",
+    "sub": "What to have open before you reach the desk, why the booking is often there under something else.",
+    "scene": [
+      "ticket",
+      "hotel",
+      "speech"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: ticket, hotel, speech"
+  },
+  {
+    "wave": "wave3",
+    "file": "travel/pin-5.4",
+    "product": "travel-companion",
+    "layout": "scene",
+    "tag": "Small fix, big relief",
+    "head": "Your Opening Line, Ready to Use or Replace",
+    "sub": "For a call or a desk conversation, Travel Companion suggests an opening you can edit or replace.",
+    "scene": [
+      "speech",
+      "phone",
+      "piggy"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: speech, phone, piggy"
+  },
+  {
+    "wave": "wave3",
+    "file": "homeschool/pin-5.3",
+    "product": "homeschooling-companion",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "Four Questions Is the Floor",
+    "sub": "Below four answers, the honest conclusion is that you do not know yet.",
+    "scene": [
+      "scale",
+      "speech",
+      "books"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: scale, speech"
+  },
+  {
+    "wave": "wave3",
+    "file": "homeschool/pin-5.4",
+    "product": "homeschooling-companion",
+    "layout": "scene",
+    "tag": "Small fix, big relief",
+    "head": "A Check That Can Say \"Not Enough to Say\"",
+    "sub": "Results say Looked solid, Worth another look, or Not enough to say.",
+    "scene": [
+      "speech",
+      "house",
+      "target"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: speech, house, target"
+  },
+  {
+    "wave": "wave3",
+    "file": "mmr/pin-5.3",
+    "product": "monthly-money-reset",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "Before You Buy It: 4 Questions to Ask",
+    "sub": "Before you buy something, ask four things.",
+    "scene": [
+      "speech",
+      "calendar",
+      "clock"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: speech, calendar, clock"
+  },
+  {
+    "wave": "wave3",
+    "file": "mmr/pin-5.4",
+    "product": "monthly-money-reset",
+    "layout": "scene",
+    "tag": "Small fix, big relief",
+    "head": "Stop Overspending: Check First, Decide Second",
+    "sub": "Stop overspending by flipping the order.",
+    "scene": [
+      "suitcase",
+      "bulb",
+      "card"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: suitcase, bulb, card"
+  },
+  {
+    "wave": "wave3",
+    "file": "homebase/pin-3.2",
+    "product": "home-management-companion",
+    "layout": "split",
+    "tag": "Worth it",
+    "head": "Home Base: Set Up Your House in a Few Taps",
+    "sub": "Tap what is in your house and Home Base already knows what it usually needs.",
+    "scene": [
+      "house",
+      "checklist",
+      "card"
+    ],
+    "screen": "screens/home-management-companion-workspace.png",
+    "cta": "price",
+    "why": "illustrations named by its words: house, checklist, card; screen screens/home-management-companion-workspace.png (\"A couple of things need a look\") matches its words best"
+  },
+  {
+    "wave": "wave3",
+    "file": "vehicle/pin-3.2",
+    "product": "vehicle-maintenance-companion",
+    "layout": "split",
+    "tag": "Worth it",
+    "head": "Nothing Is Assumed Overdue",
+    "scene": [
+      "car",
+      "toolbox",
+      "notebook"
+    ],
+    "screen": "screens/vehicle-maintenance-companion-vehicles.png",
+    "cta": "price",
+    "why": "illustrations named by its words: car, toolbox, notebook; screen screens/vehicle-maintenance-companion-vehicles.png (\"Vehicles\") matches its words best"
+  },
+  {
+    "wave": "wave3",
+    "file": "pfc/pin-8.2",
+    "product": "personal-finance-companion",
+    "layout": "split",
+    "tag": "Worth it",
+    "head": "Paste Your Notes and Get Records to Review",
+    "sub": "Paste what you already have: an account balance, a paycheck, a bill, a debt.",
+    "scene": [
+      "notebook",
+      "magnifier",
+      "bank"
+    ],
+    "screen": "screens/personal-finance-companion-printables.png",
+    "cta": "price",
+    "why": "illustrations named by its words: notebook, magnifier, bank; screen screens/personal-finance-companion-printables.png (\"Printable Finance Companion\") matches its words best"
+  },
+  {
+    "wave": "wave3",
+    "file": "pfc/pin-8.3",
+    "product": "personal-finance-companion",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "5 Things to Check in a Bank CSV Before You Import It",
+    "sub": "The headers, whether spending is negative, whether there is one amount column or two, the date format.",
+    "scene": [
+      "laptop",
+      "receipt",
+      "bank"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: laptop, receipt, bank"
+  },
+  {
+    "wave": "wave3",
+    "file": "pfc/pin-8.4",
+    "product": "personal-finance-companion",
+    "layout": "split",
+    "tag": "This is your sign",
+    "head": "You Map the Columns Yourself, So It Never Guesses",
+    "sub": "Bank CSVs vary, so Personal Finance Companion asks you what each column means: date, description, amount.",
+    "scene": [
+      "laptop",
+      "receipt",
+      "card"
+    ],
+    "screen": "screens/personal-finance-companion-printables.png",
+    "cta": "price",
+    "why": "illustrations named by its words: laptop, receipt, card; screen screens/personal-finance-companion-printables.png (\"Printable Finance Companion\") matches its words best"
+  },
+  {
+    "wave": "wave3",
+    "file": "adhd/pin-8.2",
+    "product": "alongside",
+    "layout": "scene",
+    "tag": "Found it",
+    "head": "Leave It Halfway and Come Back to the Exact Question",
+    "sub": "Close a walkthrough partway and reopening it takes you back to the exact question.",
+    "scene": [
+      "speech",
+      "laptop",
+      "mind"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: speech, laptop"
+  },
+  {
+    "wave": "wave3",
+    "file": "adhd/pin-8.3",
+    "product": "alongside",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "Three Questions Before You Restart Something",
+    "sub": "Where did you get to?",
+    "scene": [
+      "steps",
+      "magnifier",
+      "speech"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: steps, magnifier, speech"
+  },
+  {
+    "wave": "wave3",
+    "file": "adhd/pin-8.4",
+    "product": "alongside",
+    "layout": "scene",
+    "tag": "Small fix, big relief",
+    "head": "Start Again From the Beginning, or From Where You Left Off",
+    "sub": "A note you wrote when you stopped is what you see when you come back.",
+    "scene": [
+      "mind",
+      "laptop",
+      "magnifier"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: mind, laptop, magnifier"
+  },
+  {
+    "wave": "wave3",
+    "file": "health/pin-8.2",
+    "product": "family-health-binder",
+    "layout": "scene",
+    "tag": "Small fix, big relief",
+    "head": "An Intake Summary for a New Doctor",
+    "sub": "The Intake summary prints allergies, medications, conditions.",
+    "scene": [
+      "doctor",
+      "pills",
+      "document"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: doctor, pills, document"
+  },
+  {
+    "wave": "wave3",
+    "file": "health/pin-8.3",
+    "product": "family-health-binder",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "Three Specialists, One Page",
+    "sub": "When several doctors are involved, one page of who they are and what they know saves repeating it.",
+    "scene": [
+      "notebook",
+      "piggy",
+      "doctor"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: notebook, piggy, doctor"
+  },
+  {
+    "wave": "wave3",
+    "file": "health/pin-8.4",
+    "product": "family-health-binder",
+    "layout": "scene",
+    "tag": "Found it",
+    "head": "Doctors and Pharmacy, in One Place",
+    "sub": "Record each doctor, specialist, dentist and pharmacy with a phone number and a note.",
+    "scene": [
+      "binder",
+      "doctor",
+      "pills"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: binder, doctor, pills"
+  },
+  {
+    "wave": "wave3",
+    "file": "ple/pin-5.5",
+    "product": "personal-life-affairs-companion",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "Keep It Somewhere Private",
+    "sub": "A filled-in copy says where things are and who to speak to.",
+    "scene": [
+      "speech",
+      "people",
+      "binder"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: speech, people"
+  },
+  {
+    "wave": "wave3",
+    "file": "ple/pin-6.1",
+    "product": "personal-life-affairs-companion",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "Skip What Does Not Apply to You",
+    "sub": "A list built for everyone is mostly noise for you.",
+    "scene": [
+      "toolbox",
+      "people",
+      "binder"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: toolbox, people"
+  },
+  {
+    "wave": "wave3",
+    "file": "travel/pin-5.5",
+    "product": "travel-companion",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "Get the Name of Who You Spoke To",
+    "sub": "One habit that makes every later conversation easier.",
+    "scene": [
+      "speech",
+      "people",
+      "plane"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: speech, people"
+  },
+  {
+    "wave": "wave3",
+    "file": "travel/pin-6.1",
+    "product": "travel-companion",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "Lost Your Passport, Wallet or Phone Abroad: What to Have Ready",
+    "sub": "The order that helps when something important goes missing while you are away, and what to have ready first.",
+    "scene": [
+      "phone",
+      "suitcase",
+      "steps"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: phone, suitcase, steps"
+  },
+  {
+    "wave": "wave3",
+    "file": "homeschool/pin-5.5",
+    "product": "homeschooling-companion",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "Wait a Week, Then Ask Them to Explain It",
+    "sub": "Checking the same day tells you what they remember.",
+    "scene": [
+      "calendar",
+      "speech",
+      "mind"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: calendar, speech, mind"
+  },
+  {
+    "wave": "wave3",
+    "file": "homeschool/pin-6.1",
+    "product": "homeschooling-companion",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "How to Start Homeschooling: The First-Month Paperwork Order",
+    "sub": "Starting homeschooling has a paperwork order that is easier to follow than it looks: find your state's rules.",
+    "scene": [
+      "document",
+      "books",
+      "steps"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: document, books, steps"
+  },
+  {
+    "wave": "wave3",
+    "file": "mmr/pin-5.5",
+    "product": "monthly-money-reset",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "Small Purchases Add Up: See the Real Cost Before You Spend",
+    "sub": "A forty-two dollar purchase is easy to shrug off.",
+    "scene": [
+      "wallet",
+      "steps",
+      "calendar"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: wallet, steps"
+  },
+  {
+    "wave": "wave3",
+    "file": "mmr/pin-6.1",
+    "product": "monthly-money-reset",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "End of Month Money Review in 10 Minutes",
+    "sub": "An end of month money review does not need a spreadsheet.",
+    "scene": [
+      "calendar",
+      "magnifier",
+      "clock"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: calendar, magnifier, clock"
+  },
+  {
+    "wave": "wave3",
+    "file": "homebase/pin-3.3",
+    "product": "home-management-companion",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "First Week in a New House: What to Write Down Before You Forget",
+    "sub": "The best time to record your house is the week you move in, when you can still see every label.",
+    "scene": [
+      "bulb",
+      "calendar",
+      "house"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: bulb, calendar, house"
+  },
+  {
+    "wave": "wave3",
+    "file": "vehicle/pin-3.3",
+    "product": "vehicle-maintenance-companion",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "The First Week With a Used Car",
+    "sub": "Ask the seller what they know, note the mileage today, and start a record.",
+    "scene": [
+      "car",
+      "steps",
+      "calendar"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: car, steps, calendar"
+  },
+  {
+    "wave": "wave3",
+    "file": "pfc/pin-8.5",
+    "product": "personal-finance-companion",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "No Bank Link Needed to Understand Your Spending",
+    "sub": "You can work with your own statement data without connecting an account to anything.",
+    "scene": [
+      "receipt",
+      "bank",
+      "wallet"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: receipt, bank, wallet"
+  },
+  {
+    "wave": "wave3",
+    "file": "pfc/pin-9.1",
+    "product": "personal-finance-companion",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "How to Make a Financial Binder: What Goes In and How Often to Update It",
+    "sub": "Seven sections cover most of a financial binder: accounts, income, bills, subscriptions, debt.",
+    "scene": [
+      "binder",
+      "wallet",
+      "card"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: binder, wallet, card"
+  },
+  {
+    "wave": "wave3",
+    "file": "pfc/pin-9.2",
+    "product": "personal-finance-companion",
+    "layout": "scene",
+    "tag": "Found it",
+    "head": "81-Page Printable Finance Workbook, Plus the App That Keeps It Current",
+    "sub": "A private workbook for gathering and preparing your money: accounts, income, bills, subscriptions, debt.",
+    "scene": [
+      "books",
+      "wallet",
+      "laptop"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: books, wallet, laptop"
+  },
+  {
+    "wave": "wave3",
+    "file": "adhd/pin-8.5",
+    "product": "alongside",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "Leave Yourself a Note for Next Time",
+    "sub": "A sentence about where you got to saves an hour later.",
+    "scene": [
+      "clock",
+      "notebook",
+      "speech"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: clock, notebook, speech"
+  },
+  {
+    "wave": "wave3",
+    "file": "adhd/pin-9.1",
+    "product": "alongside",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "A Weekly Reset That Survives a Bad Week",
+    "sub": "Most resets assume a normal week.",
+    "scene": [
+      "calendar",
+      "clock",
+      "chart"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: calendar, clock, chart"
+  },
+  {
+    "wave": "wave3",
+    "file": "adhd/pin-9.2",
+    "product": "alongside",
+    "layout": "split",
+    "tag": "This is your sign",
+    "head": "A Task App With a Button for \"Did Not Get to It\"",
+    "sub": "It does not change the item, add anything to its history, or count anything.",
+    "scene": [
+      "laptop",
+      "mind",
+      "steps"
+    ],
+    "screen": "screens/alongside-help.png",
+    "cta": "price",
+    "why": "illustrations named by its words: laptop; screen screens/alongside-help.png (\"What do you need to do?\") matches its words best"
+  },
+  {
+    "wave": "wave3",
+    "file": "health/pin-8.5",
+    "product": "family-health-binder",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "Start the Visit With the Facts",
+    "sub": "One page in hand changes how a first visit begins.",
+    "scene": [
+      "doctor",
+      "steps",
+      "health"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: doctor, steps"
+  },
+  {
+    "wave": "wave3",
+    "file": "health/pin-9.1",
+    "product": "family-health-binder",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "What to Leave Off a Health Page You Hand Over",
+    "sub": "A sitter, a teacher and a new doctor need different things.",
+    "scene": [
+      "health",
+      "notebook",
+      "doctor"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: health, notebook, doctor"
+  },
+  {
+    "wave": "wave3",
+    "file": "health/pin-9.2",
+    "product": "family-health-binder",
+    "layout": "split",
+    "tag": "Worth it",
+    "head": "Keep This Private: Left Off Every Printed Page",
+    "sub": "Mark any record private and it stays in the app and is left off every printed page.",
+    "scene": [
+      "notebook",
+      "laptop",
+      "bulb"
+    ],
+    "screen": "screens/family-health-binder-members.png",
+    "cta": "price",
+    "why": "illustrations named by its words: notebook, laptop, bulb; screen screens/family-health-binder-members.png (\"Family\") matches its words best"
+  },
+  {
+    "wave": "wave3",
+    "file": "ple/pin-6.2",
+    "product": "personal-life-affairs-companion",
+    "layout": "split",
+    "tag": "This is your sign",
+    "head": "Do You Own the Place You Live? One of Eight Questions",
+    "sub": "Eight yes or no questions decide what Personal Life Affairs Companion will and will not ask about.",
+    "scene": [
+      "document",
+      "house",
+      "speech"
+    ],
+    "screen": "screens/personal-life-affairs-companion-workspace.png",
+    "cta": "price",
+    "why": "illustrations named by its words: document, house, speech; screen screens/personal-life-affairs-companion-workspace.png (\"Write down who should be called first.\") matches its words best"
+  },
+  {
+    "wave": "wave3",
+    "file": "ple/pin-6.3",
+    "product": "personal-life-affairs-companion",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "Renters Skip the Deed, Pet-Free Skip the Pets",
+    "sub": "A binder built for one household does not fit another.",
+    "scene": [
+      "document",
+      "binder",
+      "house"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: document, binder, house"
+  },
+  {
+    "wave": "wave3",
+    "file": "travel/pin-6.2",
+    "product": "travel-companion",
+    "layout": "split",
+    "tag": "This is your sign",
+    "head": "What Has Been Lost or Stolen?",
+    "sub": "A short set of questions for a lost passport, bank cards, a phone, a bag or tickets.",
+    "scene": [
+      "phone",
+      "card",
+      "bank"
+    ],
+    "screen": "screens/travel-companion-itinerary.png",
+    "cta": "price",
+    "why": "illustrations named by its words: phone, card, bank; screen screens/travel-companion-itinerary.png (\"Itinerary\") matches its words best"
+  },
+  {
+    "wave": "wave3",
+    "file": "travel/pin-6.3",
+    "product": "travel-companion",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "Who to Tell First When Something Goes Missing",
+    "sub": "Someone who is with you, someone waiting for you, and someone at home.",
+    "scene": [
+      "people",
+      "magnifier",
+      "speech"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: people, magnifier, speech"
+  },
+  {
+    "wave": "wave3",
+    "file": "homeschool/pin-6.2",
+    "product": "homeschooling-companion",
+    "layout": "split",
+    "tag": "This is your sign",
+    "head": "Already Have a Curriculum? Homeschooling Companion Stays Out of the Way",
+    "sub": "Adding a child asks one question: are you already following a curriculum?",
+    "scene": [
+      "books",
+      "binder",
+      "laptop"
+    ],
+    "screen": "screens/homeschooling-companion-record.png",
+    "cta": "price",
+    "why": "illustrations named by its words: books, binder, laptop; screen screens/homeschooling-companion-record.png (\"What has happened.\") matches its words best"
+  },
+  {
+    "wave": "wave3",
+    "file": "homeschool/pin-6.3",
+    "product": "homeschooling-companion",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "Keeping Homeschool Records for More Than One Child",
+    "sub": "Two children, three subjects each, and one shared afternoon.",
+    "scene": [
+      "books",
+      "notebook",
+      "people"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: books, notebook, people"
+  },
+  {
+    "wave": "wave3",
+    "file": "mmr/pin-6.2",
+    "product": "monthly-money-reset",
+    "layout": "split",
+    "tag": "This is your sign",
+    "head": "Monthly Money Reset: Close One Month, Start the Next",
+    "sub": "Close last month and start the next in a few minutes.",
+    "scene": [
+      "calendar",
+      "wallet",
+      "steps"
+    ],
+    "screen": "screens/monthly-money-reset-progress.png",
+    "cta": "price",
+    "why": "illustrations named by its words: calendar, wallet, steps; screen screens/monthly-money-reset-progress.png (\"Start\") matches its words best"
+  },
+  {
+    "wave": "wave3",
+    "file": "mmr/pin-6.3",
+    "product": "monthly-money-reset",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "What to Carry Into Next Month (and What to Leave Behind)",
+    "sub": "Starting a new month is easier when you know what to keep.",
+    "scene": [
+      "calendar",
+      "wallet",
+      "receipt"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: calendar, wallet, receipt"
+  },
+  {
+    "wave": "wave3",
+    "file": "homebase/pin-3.4",
+    "product": "home-management-companion",
+    "layout": "split",
+    "tag": "This is your sign",
+    "head": "New Homeowner Maintenance Made Simple: Tap, See, Add",
+    "sub": "New homeowner maintenance in three moves.",
+    "scene": [
+      "house",
+      "toolbox",
+      "calendar"
+    ],
+    "screen": "screens/home-management-companion-workspace.png",
+    "cta": "price",
+    "why": "illustrations named by its words: house, toolbox; screen screens/home-management-companion-workspace.png (\"A couple of things need a look\") matches its words best"
+  },
+  {
+    "wave": "wave3",
+    "file": "vehicle/pin-3.4",
+    "product": "vehicle-maintenance-companion",
+    "layout": "split",
+    "tag": "This is your sign",
+    "head": "Do You Know This Vehicle's History?",
+    "sub": "For a used car or one you inherited, it is normal not to know.",
+    "scene": [
+      "car",
+      "calendar",
+      "toolbox"
+    ],
+    "screen": "screens/vehicle-maintenance-companion-vehicles.png",
+    "cta": "price",
+    "why": "illustrations named by its words: car, calendar, toolbox; screen screens/vehicle-maintenance-companion-vehicles.png (\"Vehicles\") matches its words best"
+  },
+  {
+    "wave": "wave3",
+    "file": "pfc/pin-9.3",
+    "product": "personal-finance-companion",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "What Goes in a Financial Binder: 7 Sections",
+    "sub": "Accounts, income, bills, subscriptions, debt, savings and a written summary.",
+    "scene": [
+      "binder",
+      "wallet",
+      "card"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: binder, wallet, card"
+  },
+  {
+    "wave": "wave3",
+    "file": "pfc/pin-9.4",
+    "product": "personal-finance-companion",
+    "layout": "scene",
+    "tag": "Small fix, big relief",
+    "head": "A Ten Minute Starting Path for Your Money",
+    "sub": "The workbook's quick reference card has a six step path: gather, write what you know, mark what you do not.",
+    "scene": [
+      "clock",
+      "wallet",
+      "laptop"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: clock, wallet, laptop"
+  },
+  {
+    "wave": "wave3",
+    "file": "pfc/pin-9.5",
+    "product": "personal-finance-companion",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "Paper Gathers, an App Keeps It Current",
+    "sub": "A paper binder is easy to hand over and works without power.",
+    "scene": [
+      "notebook",
+      "laptop",
+      "calendar"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: notebook, laptop, calendar"
+  },
+  {
+    "wave": "wave3",
+    "file": "adhd/pin-9.3",
+    "product": "alongside",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "The Ten Minute Weekly Reset",
+    "sub": "Open the pile.",
+    "scene": [
+      "calendar",
+      "clock",
+      "mind"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: calendar, clock"
+  },
+  {
+    "wave": "wave3",
+    "file": "adhd/pin-9.4",
+    "product": "alongside",
+    "layout": "split",
+    "tag": "Worth it",
+    "head": "Nothing Counted: How This App Treats a Missed Week",
+    "sub": "A missed week does not pile up as a number.",
+    "scene": [
+      "calendar",
+      "laptop",
+      "mind"
+    ],
+    "screen": "screens/alongside-workspace.png",
+    "cta": "price",
+    "why": "illustrations named by its words: calendar, laptop; screen screens/alongside-workspace.png (\"Book the six-month dental check\") matches its words best"
+  },
+  {
+    "wave": "wave3",
+    "file": "adhd/pin-9.5",
+    "product": "alongside",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "A System Has to Survive a Missed Week",
+    "sub": "If a system only works when everything goes to plan, it will not last.",
+    "scene": [
+      "calendar",
+      "document",
+      "mind"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: calendar, document"
+  },
+  {
+    "wave": "wave3",
+    "file": "health/pin-9.3",
+    "product": "family-health-binder",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "Not Every Page Needs Every Fact",
+    "sub": "A short guide to what belongs on a forms page, a sitter page and a doctor page.",
+    "scene": [
+      "notebook",
+      "document",
+      "doctor"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: notebook, document, doctor"
+  },
+  {
+    "wave": "wave3",
+    "file": "health/pin-9.4",
+    "product": "family-health-binder",
+    "layout": "split",
+    "tag": "This is your sign",
+    "head": "A Page That Says What It Left Off",
+    "sub": "Every printed page says how many records it left off, so a page never looks complete when it is not.",
+    "scene": [
+      "notebook",
+      "speech",
+      "laptop"
+    ],
+    "screen": "screens/family-health-binder-members.png",
+    "cta": "price",
+    "why": "illustrations named by its words: notebook, speech, laptop; screen screens/family-health-binder-members.png (\"Family\") matches its words best"
+  },
+  {
+    "wave": "wave3",
+    "file": "health/pin-9.5",
+    "product": "family-health-binder",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "You Decide",
+    "sub": "You choose what goes on each page.",
+    "scene": [
+      "bulb",
+      "health",
+      "pills"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: bulb"
+  },
+  {
+    "wave": "wave3",
+    "file": "ple/pin-6.4",
+    "product": "personal-life-affairs-companion",
+    "layout": "split",
+    "tag": "Worth it",
+    "head": "Eight Yes or No Questions That Shape the Whole Book",
+    "sub": "Children, a partner, an employer retirement plan, a home, life insurance, someone who depends on you, pets.",
+    "scene": [
+      "people",
+      "speech",
+      "bank"
+    ],
+    "screen": "screens/personal-life-affairs-companion-workspace.png",
+    "cta": "price",
+    "why": "illustrations named by its words: people, speech, bank; screen screens/personal-life-affairs-companion-workspace.png (\"Write down who should be called first.\") matches its words best"
+  },
+  {
+    "wave": "wave3",
+    "file": "ple/pin-6.5",
+    "product": "personal-life-affairs-companion",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "Nothing That Does Not Apply to You",
+    "sub": "A list that fits you is a list you can finish.",
+    "scene": [
+      "checklist",
+      "binder",
+      "document"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: checklist"
+  },
+  {
+    "wave": "wave3",
+    "file": "travel/pin-6.4",
+    "product": "travel-companion",
+    "layout": "split",
+    "tag": "Worth it",
+    "head": "Let Somebody Know, in Your Own Words",
+    "sub": "Choose who needs to hear about it and Travel Companion helps you word it.",
+    "scene": [
+      "people",
+      "envelope",
+      "suitcase"
+    ],
+    "screen": "screens/travel-companion-printables.png",
+    "cta": "price",
+    "why": "illustrations named by its words: people, envelope, suitcase; screen screens/travel-companion-printables.png (\"My Trip Book\") matches its words best"
+  },
+  {
+    "wave": "wave3",
+    "file": "travel/pin-6.5",
+    "product": "travel-companion",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "You Choose the Words",
+    "sub": "The hardest part of a bad day away is finding the words.",
+    "scene": [
+      "speech",
+      "bulb",
+      "plane"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: speech, bulb"
+  },
+  {
+    "wave": "wave3",
+    "file": "homeschool/pin-6.4",
+    "product": "homeschooling-companion",
+    "layout": "split",
+    "tag": "Worth it",
+    "head": "A Starting Outline You Can Change, Keep, or Throw Away",
+    "sub": "Not sure yet?",
+    "scene": [
+      "steps",
+      "bulb",
+      "people"
+    ],
+    "screen": "screens/homeschooling-companion-kids.png",
+    "cta": "price",
+    "why": "illustrations named by its words: steps, bulb, people; screen screens/homeschooling-companion-kids.png (\"Your children.\") matches its words best"
+  },
+  {
+    "wave": "wave3",
+    "file": "homeschool/pin-6.5",
+    "product": "homeschooling-companion",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "You Can Begin Before You Have Everything Figured Out",
+    "sub": "A record can start with a child's name and one subject.",
+    "scene": [
+      "steps",
+      "books",
+      "calendar"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: steps, books, calendar"
+  },
+  {
+    "wave": "wave3",
+    "file": "mmr/pin-6.4",
+    "product": "monthly-money-reset",
+    "layout": "split",
+    "tag": "Worth it",
+    "head": "How to Reset Your Budget at the Start of a Month",
+    "sub": "How to reset your budget at the start of a month.",
+    "scene": [
+      "calendar",
+      "wallet",
+      "steps"
+    ],
+    "screen": "screens/monthly-money-reset-progress.png",
+    "cta": "price",
+    "why": "illustrations named by its words: calendar, wallet, steps; screen screens/monthly-money-reset-progress.png (\"Start\") matches its words best"
+  },
+  {
+    "wave": "wave3",
+    "file": "mmr/pin-6.5",
+    "product": "monthly-money-reset",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "How to Do a Monthly Money Reset Without the Guilt",
+    "sub": "A monthly reset is a look, not a verdict.",
+    "scene": [
+      "wallet",
+      "clock",
+      "calendar"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: wallet, clock"
+  },
+  {
+    "wave": "wave3",
+    "file": "homebase/pin-3.5",
+    "product": "home-management-companion",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "What to Capture in the First Week After Buying a House",
+    "sub": "Everything about a house passes through your hands once, during the move: the labels, the manuals.",
+    "scene": [
+      "calendar",
+      "house",
+      "bulb"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: calendar, house, bulb"
+  },
+  {
+    "wave": "wave3",
+    "file": "vehicle/pin-3.5",
+    "product": "vehicle-maintenance-companion",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "Nothing Is Assumed",
+    "sub": "A record you start today is worth more than one you wish you had.",
+    "scene": [
+      "notebook",
+      "car",
+      "wrench"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: notebook"
+  },
+  {
+    "wave": "wave3",
+    "file": "pfc/pin-10.1",
+    "product": "personal-finance-companion",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "The 50/30/20 Rule and Where It Breaks for Real Budgets",
+    "sub": "The rule is neat: half to needs, thirty percent to wants, twenty to savings.",
+    "scene": [
+      "wallet",
+      "calendar",
+      "piggy"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: wallet, calendar, piggy"
+  },
+  {
+    "wave": "wave3",
+    "file": "pfc/pin-10.2",
+    "product": "personal-finance-companion",
+    "layout": "split",
+    "tag": "This is your sign",
+    "head": "See a Typical Month: Coming In, Going Out, Left Over",
+    "sub": "Your income, your bills and subscriptions, what you are setting aside for goals, and what is left.",
+    "scene": [
+      "calendar",
+      "wallet",
+      "card"
+    ],
+    "screen": "screens/personal-finance-companion-records.png",
+    "cta": "price",
+    "why": "illustrations named by its words: calendar, wallet, card; screen screens/personal-finance-companion-records.png (\"Records\") matches its words best"
+  },
+  {
+    "wave": "wave3",
+    "file": "pfc/pin-10.3",
+    "product": "personal-finance-companion",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "4 Costs You Can See Coming: Sinking Fund Ideas",
+    "sub": "Car registration, insurance, holidays and gifts arrive on a schedule.",
+    "scene": [
+      "piggy",
+      "calendar",
+      "document"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: piggy, calendar, document"
+  },
+  {
+    "wave": "wave3",
+    "file": "adhd/pin-10.1",
+    "product": "alongside",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "Why You Keep Missing Bill Due Dates, and a System That Does Not Rely on Remembering",
+    "sub": "Forgetting is often not remembering too late, it is never reaching the moment.",
+    "scene": [
+      "calendar",
+      "mind",
+      "clock"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: calendar, mind, clock"
+  },
+  {
+    "wave": "wave3",
+    "file": "adhd/pin-10.2",
+    "product": "alongside",
+    "layout": "scene",
+    "tag": "Small fix, big relief",
+    "head": "Reminders You Switch On Yourself, Only for Dates You Chose",
+    "sub": "Off unless you switch it on.",
+    "scene": [
+      "laptop",
+      "calendar",
+      "clock"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: laptop, calendar, clock"
+  },
+  {
+    "wave": "wave3",
+    "file": "adhd/pin-10.3",
+    "product": "alongside",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "Planning When You Cannot Feel Time Pass",
+    "sub": "Name one exact time.",
+    "scene": [
+      "clock",
+      "phone",
+      "mind"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: clock, phone"
+  },
+  {
+    "wave": "wave3",
+    "file": "health/pin-10.1",
+    "product": "family-health-binder",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "Caring for a Parent and Kids: Everyone's Information in One Place",
+    "sub": "When you look after a parent and your children, the paperwork multiplies.",
+    "scene": [
+      "people",
+      "binder",
+      "car"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: people, binder, car"
+  },
+  {
+    "wave": "wave3",
+    "file": "health/pin-10.2",
+    "product": "family-health-binder",
+    "layout": "scene",
+    "tag": "Found it",
+    "head": "Adults and Children, the Same Kind of Card",
+    "sub": "Add a child, a parent, a partner or yourself.",
+    "scene": [
+      "people",
+      "card",
+      "car"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: people, card, car"
+  },
+  {
+    "wave": "wave3",
+    "file": "health/pin-10.3",
+    "product": "family-health-binder",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "Keep Everyone's Facts on Their Own Page",
+    "sub": "Keep each person's facts on their own page, so nothing gets mixed up.",
+    "scene": [
+      "people",
+      "notebook",
+      "health"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: people, notebook"
+  },
+  {
+    "wave": "wave3",
+    "file": "ple/pin-7.1",
+    "product": "personal-life-affairs-companion",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "Who Would Speak for You About Medical Care?",
+    "sub": "Choosing a person, asking them, and writing down where the formal paperwork is.",
+    "scene": [
+      "health",
+      "document",
+      "speech"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: health, document, speech"
+  },
+  {
+    "wave": "wave3",
+    "file": "ple/pin-7.2",
+    "product": "personal-life-affairs-companion",
+    "layout": "scene",
+    "tag": "Small fix, big relief",
+    "head": "Have You Talked to Them About What You Would Want?",
+    "sub": "One step records who should speak for you about medical care, how to reach them.",
+    "scene": [
+      "speech",
+      "notebook",
+      "health"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: speech, notebook, health"
+  },
+  {
+    "wave": "wave3",
+    "file": "travel/pin-7.1",
+    "product": "travel-companion",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "How to Plan a Group Trip Without Becoming the Organizer",
+    "sub": "Coordinating schedules is the hard part of group travel.",
+    "scene": [
+      "suitcase",
+      "binder",
+      "calendar"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: suitcase, binder, calendar"
+  },
+  {
+    "wave": "wave3",
+    "file": "travel/pin-7.2",
+    "product": "travel-companion",
+    "layout": "scene",
+    "tag": "Small fix, big relief",
+    "head": "Who Is on This Booking?",
+    "sub": "When you add a booking, tick who it is for.",
+    "scene": [
+      "ticket",
+      "people",
+      "checklist"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: ticket, people, checklist"
+  },
+  {
+    "wave": "wave3",
+    "file": "homeschool/pin-7.1",
+    "product": "homeschooling-companion",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "The Four-Day Homeschool Week: How to Set One Up",
+    "sub": "A family that plans five days and manages four has failed at something every week.",
+    "scene": [
+      "calendar",
+      "books",
+      "people"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: calendar, books, people"
+  },
+  {
+    "wave": "wave3",
+    "file": "homeschool/pin-7.2",
+    "product": "homeschooling-companion",
+    "layout": "scene",
+    "tag": "Small fix, big relief",
+    "head": "A Homeschool Handbook and Working Pages, Undated So It Starts When You Do",
+    "sub": "Six short chapters and seven working pages for keeping track of what you actually do.",
+    "scene": [
+      "books",
+      "notebook",
+      "steps"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: books, notebook, steps"
+  },
+  {
+    "wave": "wave4",
+    "file": "mmr/pin-7.1",
+    "product": "monthly-money-reset",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "Your Budget Failed. How to Restart This Month",
+    "sub": "You fell off your budget.",
+    "scene": [
+      "calendar",
+      "wallet",
+      "steps"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: calendar, wallet, steps"
+  },
+  {
+    "wave": "wave4",
+    "file": "mmr/pin-7.2",
+    "product": "monthly-money-reset",
+    "layout": "scene",
+    "tag": "Small fix, big relief",
+    "head": "Budget Reset: Start Over Without Redoing Everything",
+    "sub": "Reset your budget in a few minutes.",
+    "scene": [
+      "wallet",
+      "bank",
+      "clock"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: wallet, bank, clock"
+  },
+  {
+    "wave": "wave4",
+    "file": "homebase/pin-4.1",
+    "product": "home-management-companion",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "Fall Home Maintenance Checklist by Month",
+    "sub": "Fall is when the jobs pile up: gutters, furnace, outdoor faucets, sprinkler lines.",
+    "scene": [
+      "calendar",
+      "house",
+      "toolbox"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: calendar, house, toolbox"
+  },
+  {
+    "wave": "wave4",
+    "file": "vehicle/pin-4.1",
+    "product": "vehicle-maintenance-companion",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "Car Maintenance Log: What to Write Down",
+    "sub": "A car maintenance log needs three things on every line, and two optional ones.",
+    "scene": [
+      "notebook",
+      "car",
+      "toolbox"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: notebook, car, toolbox"
+  },
+  {
+    "wave": "wave4",
+    "file": "pfc/pin-10.4",
+    "product": "personal-finance-companion",
+    "layout": "split",
+    "tag": "Worth it",
+    "head": "How Much to Set Aside Each Month for a Goal",
+    "sub": "Enter the target, what is saved and the date.",
+    "scene": [
+      "piggy",
+      "calendar",
+      "bank"
+    ],
+    "screen": "screens/personal-finance-companion-records.png",
+    "cta": "price",
+    "why": "illustrations named by its words: piggy, calendar, bank; screen screens/personal-finance-companion-records.png (\"Records\") matches its words best"
+  },
+  {
+    "wave": "wave4",
+    "file": "pfc/pin-10.5",
+    "product": "personal-finance-companion",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "The Annual Bill Should Not Be a Surprise",
+    "sub": "An annual bill is a small monthly amount you did not set aside.",
+    "scene": [
+      "calendar",
+      "piggy",
+      "chart"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: calendar, piggy"
+  },
+  {
+    "wave": "wave4",
+    "file": "adhd/pin-10.4",
+    "product": "alongside",
+    "layout": "scene",
+    "tag": "Found it",
+    "head": "What Time Today? Name One Exact Time",
+    "sub": "When you are not ready to call now, name one exact time today.",
+    "scene": [
+      "clock",
+      "calendar",
+      "phone"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: clock, calendar, phone"
+  },
+  {
+    "wave": "wave4",
+    "file": "adhd/pin-10.5",
+    "product": "alongside",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "Later Today Is Not a Time",
+    "sub": "A vague later is where things go missing.",
+    "scene": [
+      "magnifier",
+      "clock",
+      "calendar"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: magnifier, clock, calendar"
+  },
+  {
+    "wave": "wave4",
+    "file": "health/pin-10.4",
+    "product": "family-health-binder",
+    "layout": "scene",
+    "tag": "Small fix, big relief",
+    "head": "Five Printed Pages From What You Typed Once",
+    "sub": "Forms sheet, Caregiver sheet, Emergency card, Visit page and Intake summary.",
+    "scene": [
+      "doctor",
+      "notebook",
+      "document"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: doctor, notebook, document"
+  },
+  {
+    "wave": "wave4",
+    "file": "health/pin-10.5",
+    "product": "family-health-binder",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "Everyone, Once",
+    "sub": "The point of a binder is to stop repeating yourself.",
+    "scene": [
+      "people",
+      "binder",
+      "health"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: people, binder"
+  },
+  {
+    "wave": "wave4",
+    "file": "ple/pin-7.3",
+    "product": "personal-life-affairs-companion",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "Who Would Raise Your Children? A Checklist for Naming Someone",
+    "sub": "Naming someone who would say no is worse than naming nobody, because it looks settled when it is not.",
+    "scene": [
+      "people",
+      "checklist",
+      "speech"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: people, checklist, speech"
+  },
+  {
+    "wave": "wave4",
+    "file": "ple/pin-7.4",
+    "product": "personal-life-affairs-companion",
+    "layout": "scene",
+    "tag": "Found it",
+    "head": "A Name Is Enough to Begin With",
+    "sub": "The first step asks who should be contacted first, and that a name is enough.",
+    "scene": [
+      "steps",
+      "laptop",
+      "speech"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: steps, laptop, speech"
+  },
+  {
+    "wave": "wave4",
+    "file": "travel/pin-7.3",
+    "product": "travel-companion",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "Packing and Planning for a Trip With Kids or a Baby",
+    "sub": "What changes on a trip with children or a baby: the packing list, the paperwork and the pace.",
+    "scene": [
+      "suitcase",
+      "books",
+      "checklist"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: suitcase, books, checklist"
+  },
+  {
+    "wave": "wave4",
+    "file": "travel/pin-7.4",
+    "product": "travel-companion",
+    "layout": "scene",
+    "tag": "Found it",
+    "head": "A Packing List That Adds Items for Each Child",
+    "sub": "Two starting lists, Children and A baby, add items for each child you have recorded.",
+    "scene": [
+      "checklist",
+      "books",
+      "suitcase"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: checklist, books, suitcase"
+  },
+  {
+    "wave": "wave4",
+    "file": "homeschool/pin-7.3",
+    "product": "homeschooling-companion",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "Decide in Advance What a Short Day Looks Like",
+    "sub": "A short day is easier when you decided ahead what it is.",
+    "scene": [
+      "calendar",
+      "bulb",
+      "magnifier"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: calendar, bulb, magnifier"
+  },
+  {
+    "wave": "wave4",
+    "file": "homeschool/pin-7.4",
+    "product": "homeschooling-companion",
+    "layout": "scene",
+    "tag": "Found it",
+    "head": "Put the Hard Thing First",
+    "sub": "One of the six chapters is about running a week that survives a bad Tuesday.",
+    "scene": [
+      "calendar",
+      "steps",
+      "key"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: calendar, steps, key"
+  },
+  {
+    "wave": "wave4",
+    "file": "mmr/pin-7.3",
+    "product": "monthly-money-reset",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "Before You Give Up on Budgeting, Try This",
+    "sub": "Before you give up on budgeting, try this.",
+    "scene": [
+      "wallet",
+      "calendar",
+      "steps"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: wallet, calendar, steps"
+  },
+  {
+    "wave": "wave4",
+    "file": "mmr/pin-7.4",
+    "product": "monthly-money-reset",
+    "layout": "scene",
+    "tag": "Found it",
+    "head": "How to Restart Budgeting Without Catching Up on Old Spending",
+    "sub": "You do not have to log six weeks of old spending to start again.",
+    "scene": [
+      "wallet",
+      "steps",
+      "receipt"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: wallet, steps, receipt"
+  },
+  {
+    "wave": "wave4",
+    "file": "homebase/pin-4.2",
+    "product": "home-management-companion",
+    "layout": "scene",
+    "tag": "Found it",
+    "head": "A Home Maintenance Calendar That Matches Your House",
+    "sub": "Generic seasonal checklists list jobs you may not need.",
+    "scene": [
+      "house",
+      "toolbox",
+      "calendar"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: house, toolbox, calendar"
+  },
+  {
+    "wave": "wave4",
+    "file": "vehicle/pin-4.2",
+    "product": "vehicle-maintenance-companion",
+    "layout": "scene",
+    "tag": "Found it",
+    "head": "Every Service, Newest First, by Year",
+    "sub": "History keeps every service with its date, mileage, who did it and any note, grouped by year.",
+    "scene": [
+      "calendar",
+      "wrench",
+      "notebook"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: calendar, wrench, notebook"
+  },
+  {
+    "wave": "wave4",
+    "file": "ple/pin-7.5",
+    "product": "personal-life-affairs-companion",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "Who to Tell When Someone Dies, and in What Order",
+    "sub": "A plain order for who to tell first and what can wait.",
+    "scene": [
+      "phone",
+      "people",
+      "speech"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: phone, people, speech"
+  },
+  {
+    "wave": "wave4",
+    "file": "ple/pin-8.1",
+    "product": "personal-life-affairs-companion",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "Can Someone Unlock Your Phone?",
+    "sub": "Two-factor codes, photographs and many accounts live behind one screen.",
+    "scene": [
+      "phone",
+      "people",
+      "bank"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: phone, people, bank"
+  },
+  {
+    "wave": "wave4",
+    "file": "travel/pin-7.5",
+    "product": "travel-companion",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "One Place Everybody Can Ask For",
+    "sub": "A shared trip does not need a shared app.",
+    "scene": [
+      "binder",
+      "people",
+      "suitcase"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: binder, people, suitcase"
+  },
+  {
+    "wave": "wave4",
+    "file": "travel/pin-8.1",
+    "product": "travel-companion",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "Many Stops, One Page",
+    "sub": "A trip with several places to stay needs a way to see them in order, with what each one depends on.",
+    "scene": [
+      "suitcase",
+      "notebook",
+      "plane"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: suitcase, notebook"
+  },
+  {
+    "wave": "wave4",
+    "file": "homeschool/pin-7.5",
+    "product": "homeschooling-companion",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "Only One of Them Still Wants to Be Doing This in March",
+    "sub": "A plan you can keep beats a plan you cannot.",
+    "scene": [
+      "calendar",
+      "target",
+      "books"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: calendar, target"
+  },
+  {
+    "wave": "wave4",
+    "file": "homeschool/pin-8.1",
+    "product": "homeschooling-companion",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "The Homeschool Reading Log: What to Write and Why Abandoned Books Belong on It",
+    "sub": "Abandoned books belong on the list: a child who is allowed to stop is a child who keeps starting.",
+    "scene": [
+      "books",
+      "notebook",
+      "people"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: books, notebook, people"
+  },
+  {
+    "wave": "wave4",
+    "file": "mmr/pin-7.5",
+    "product": "monthly-money-reset",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "Fell Off Your Budget? You Can Start From Today",
+    "sub": "The old month is over.",
+    "scene": [
+      "wallet",
+      "calendar",
+      "steps"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: wallet, calendar, steps"
+  },
+  {
+    "wave": "wave4",
+    "file": "mmr/pin-8.1",
+    "product": "monthly-money-reset",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "One-Page Monthly Budget You Can Actually Keep Up",
+    "sub": "A one-page monthly budget beats a twelve tab spreadsheet you never open.",
+    "scene": [
+      "wallet",
+      "shield",
+      "notebook"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: wallet, shield, notebook"
+  },
+  {
+    "wave": "wave4",
+    "file": "homebase/pin-4.3",
+    "product": "home-management-companion",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "Home Maintenance Checklist by Month, Minus the Jobs That Do Not Matter",
+    "sub": "Most home maintenance checklists list everything and get ignored.",
+    "scene": [
+      "calendar",
+      "toolbox",
+      "checklist"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: calendar, toolbox, checklist"
+  },
+  {
+    "wave": "wave4",
+    "file": "vehicle/pin-4.3",
+    "product": "vehicle-maintenance-companion",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "Selling Your Car? Bring the Service History",
+    "sub": "A dated record of what was done helps a buyer see how a car was looked after.",
+    "scene": [
+      "car",
+      "calendar",
+      "notebook"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: car, calendar, notebook"
+  },
+  {
+    "wave": "wave4",
+    "file": "ple/pin-8.2",
+    "product": "personal-life-affairs-companion",
+    "layout": "split",
+    "tag": "Worth it",
+    "head": "Where the Recovery Kit Is, Without Writing the Password",
+    "sub": "Personal Life Affairs Companion asks where your recovery instructions are kept.",
+    "scene": [
+      "key",
+      "magnifier",
+      "notebook"
+    ],
+    "screen": "screens/personal-life-affairs-companion-printables.png",
+    "cta": "price",
+    "why": "illustrations named by its words: key, magnifier, notebook; screen screens/personal-life-affairs-companion-printables.png (\"Nothing in it yet, and you can still print it.\") matches its words best"
+  },
+  {
+    "wave": "wave4",
+    "file": "ple/pin-8.3",
+    "product": "personal-life-affairs-companion",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "Which Email Is Everything Registered To?",
+    "sub": "When nobody wrote down which accounts exist, the email address is where the search starts.",
+    "scene": [
+      "envelope",
+      "bank",
+      "magnifier"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: envelope, bank, magnifier"
+  },
+  {
+    "wave": "wave4",
+    "file": "travel/pin-8.2",
+    "product": "travel-companion",
+    "layout": "split",
+    "tag": "Worth it",
+    "head": "Add a Destination and Its Time Zone",
+    "sub": "Add a destination and Travel Companion detects its time zone from a built-in list.",
+    "scene": [
+      "route",
+      "scale",
+      "clock"
+    ],
+    "screen": "screens/travel-companion-trip.png",
+    "cta": "price",
+    "why": "illustrations named by its words: route, scale, clock; screen screens/travel-companion-trip.png (\"Lisbon and Porto\") matches its words best"
+  },
+  {
+    "wave": "wave4",
+    "file": "travel/pin-8.3",
+    "product": "travel-companion",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "First International Trip Checklist",
+    "sub": "A first trip abroad has a short list of things worth sorting early.",
+    "scene": [
+      "suitcase",
+      "checklist",
+      "steps"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: suitcase, checklist, steps"
+  },
+  {
+    "wave": "wave4",
+    "file": "homeschool/pin-8.2",
+    "product": "homeschooling-companion",
+    "layout": "split",
+    "tag": "Worth it",
+    "head": "A Printable Reading Log With Space for Books You Did Not Finish",
+    "sub": "The reading log in The Homeschool Year has three columns: the book, when started, and finished or stopped.",
+    "scene": [
+      "books",
+      "notebook",
+      "calendar"
+    ],
+    "screen": "screens/homeschooling-companion-record.png",
+    "cta": "price",
+    "why": "illustrations named by its words: books, notebook, calendar; screen screens/homeschooling-companion-record.png (\"What has happened.\") matches its words best"
+  },
+  {
+    "wave": "wave4",
+    "file": "homeschool/pin-8.3",
+    "product": "homeschooling-companion",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "Three Columns Are Enough for a Reading Log",
+    "sub": "You do not need ratings, summaries or minutes.",
+    "scene": [
+      "notebook",
+      "laptop",
+      "books"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: notebook, laptop, books"
+  },
+  {
+    "wave": "wave4",
+    "file": "mmr/pin-8.2",
+    "product": "monthly-money-reset",
+    "layout": "split",
+    "tag": "Worth it",
+    "head": "Save Your Monthly Budget as a One-Page PDF, Free",
+    "sub": "Build your month in the free tool, then save it as a one-page PDF: safe to spend, about how much a week.",
+    "scene": [
+      "wallet",
+      "piggy",
+      "calendar"
+    ],
+    "screen": "screens/monthly-money-reset-progress.png",
+    "cta": "price",
+    "why": "illustrations named by its words: wallet, piggy, calendar; screen screens/monthly-money-reset-progress.png (\"Start\") matches its words best"
+  },
+  {
+    "wave": "wave4",
+    "file": "mmr/pin-8.3",
+    "product": "monthly-money-reset",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "What Belongs on a One-Page Budget",
+    "sub": "A one-page budget only works if it holds the right things.",
+    "scene": [
+      "wallet",
+      "shield",
+      "notebook"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: wallet, shield, notebook"
+  },
+  {
+    "wave": "wave4",
+    "file": "homebase/pin-4.4",
+    "product": "home-management-companion",
+    "layout": "scene",
+    "tag": "Small fix, big relief",
+    "head": "Some Months of Home Maintenance Are Empty, and That Is Fine",
+    "sub": "A good home maintenance plan has quiet months.",
+    "scene": [
+      "calendar",
+      "house",
+      "toolbox"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: calendar, house, toolbox"
+  },
+  {
+    "wave": "wave4",
+    "file": "vehicle/pin-4.4",
+    "product": "vehicle-maintenance-companion",
+    "layout": "scene",
+    "tag": "Small fix, big relief",
+    "head": "A Service Record You Can Hand to a Buyer",
+    "sub": "Print everything recorded for one vehicle, oldest first.",
+    "scene": [
+      "notebook",
+      "wrench",
+      "receipt"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: notebook, wrench, receipt"
+  },
+  {
+    "wave": "wave4",
+    "file": "ple/pin-8.4",
+    "product": "personal-life-affairs-companion",
+    "layout": "split",
+    "tag": "This is your sign",
+    "head": "Stop It, Keep It Going, or Not Sure",
+    "sub": "For each online account that charges money, say what someone should do about it: stop it, keep it going.",
+    "scene": [
+      "laptop",
+      "suitcase",
+      "notebook"
+    ],
+    "screen": "screens/personal-life-affairs-companion-workspace.png",
+    "cta": "price",
+    "why": "illustrations named by its words: laptop, suitcase, notebook; screen screens/personal-life-affairs-companion-workspace.png (\"Write down who should be called first.\") matches its words best"
+  },
+  {
+    "wave": "wave4",
+    "file": "ple/pin-8.5",
+    "product": "personal-life-affairs-companion",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "Where Do Your Photographs Actually Live?",
+    "sub": "The one people say they wish they had known.",
+    "scene": [
+      "magnifier",
+      "people",
+      "binder"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: magnifier, people"
+  },
+  {
+    "wave": "wave4",
+    "file": "travel/pin-8.4",
+    "product": "travel-companion",
+    "layout": "split",
+    "tag": "This is your sign",
+    "head": "Today Shows Where You Are",
+    "sub": "Today shows where you are, what is booked, and what you are still waiting to hear back on.",
+    "scene": [
+      "calendar",
+      "magnifier",
+      "laptop"
+    ],
+    "screen": "screens/travel-companion-itinerary.png",
+    "cta": "price",
+    "why": "illustrations named by its words: calendar, magnifier, laptop; screen screens/travel-companion-itinerary.png (\"Itinerary\") matches its words best"
+  },
+  {
+    "wave": "wave4",
+    "file": "travel/pin-8.5",
+    "product": "travel-companion",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "Check Each Rule at the Source",
+    "sub": "Entry rules change.",
+    "scene": [
+      "doctor",
+      "plane",
+      "suitcase"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: doctor"
+  },
+  {
+    "wave": "wave4",
+    "file": "homeschool/pin-8.4",
+    "product": "homeschooling-companion",
+    "layout": "split",
+    "tag": "This is your sign",
+    "head": "Things Worth Remembering: A Dated Page for What You Notice",
+    "sub": "A page of dated lines for what you notice.",
+    "scene": [
+      "calendar",
+      "mind",
+      "notebook"
+    ],
+    "screen": "screens/homeschooling-companion-record.png",
+    "cta": "price",
+    "why": "illustrations named by its words: calendar, mind, notebook; screen screens/homeschooling-companion-record.png (\"What has happened.\") matches its words best"
+  },
+  {
+    "wave": "wave4",
+    "file": "homeschool/pin-8.5",
+    "product": "homeschooling-companion",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "A Child Who Is Allowed to Stop Keeps Starting",
+    "sub": "A gentle way to keep a reading list that does not turn books into homework.",
+    "scene": [
+      "books",
+      "suitcase",
+      "people"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: books, suitcase, people"
+  },
+  {
+    "wave": "wave4",
+    "file": "mmr/pin-8.4",
+    "product": "monthly-money-reset",
+    "layout": "split",
+    "tag": "This is your sign",
+    "head": "How to Make a One-Page Monthly Budget in 3 Steps",
+    "sub": "How to make a one-page monthly budget in three steps.",
+    "scene": [
+      "wallet",
+      "steps",
+      "notebook"
+    ],
+    "screen": "screens/monthly-money-reset-progress.png",
+    "cta": "price",
+    "why": "illustrations named by its words: wallet, steps, notebook; screen screens/monthly-money-reset-progress.png (\"Start\") matches its words best"
+  },
+  {
+    "wave": "wave4",
+    "file": "mmr/pin-8.5",
+    "product": "monthly-money-reset",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "Why a One-Page Budget Beats a 12 Tab Spreadsheet",
+    "sub": "Big budgeting systems need big attention.",
+    "scene": [
+      "wallet",
+      "laptop",
+      "binder"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: wallet, laptop, binder"
+  },
+  {
+    "wave": "wave4",
+    "file": "homebase/pin-4.5",
+    "product": "home-management-companion",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "Why Seasonal Home Jobs Belong on a Calendar, Not a Timer",
+    "sub": "Some jobs run on a season, not on a timer.",
+    "scene": [
+      "toolbox",
+      "calendar",
+      "house"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: toolbox, calendar, house"
+  },
+  {
+    "wave": "wave4",
+    "file": "vehicle/pin-4.5",
+    "product": "vehicle-maintenance-companion",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "A Record You Can Hand Over",
+    "sub": "The simplest thing a seller can bring.",
+    "scene": [
+      "notebook",
+      "car",
+      "wrench"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: notebook"
+  },
+  {
+    "wave": "wave4",
+    "file": "ple/pin-9.1",
+    "product": "personal-life-affairs-companion",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "After a Move, a Marriage or a New Baby: What to Look At Again",
+    "sub": "A picture of your paperwork goes out of date all at once, the week something happens.",
+    "scene": [
+      "calendar",
+      "magnifier",
+      "document"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: calendar, magnifier, document"
+  },
+  {
+    "wave": "wave4",
+    "file": "ple/pin-9.2",
+    "product": "personal-life-affairs-companion",
+    "layout": "scene",
+    "tag": "Found it",
+    "head": "Tell It Something Changed, and It Finds What to Look At",
+    "sub": "Nine life events, like I moved or I got married.",
+    "scene": [
+      "magnifier",
+      "laptop",
+      "speech"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: magnifier, laptop, speech"
+  },
+  {
+    "wave": "wave4",
+    "file": "travel/pin-9.1",
+    "product": "travel-companion",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "What to Keep on Paper When You Travel",
+    "sub": "Your phone is a single point of failure.",
+    "scene": [
+      "notebook",
+      "suitcase",
+      "phone"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: notebook, suitcase, phone"
+  },
+  {
+    "wave": "wave4",
+    "file": "travel/pin-9.2",
+    "product": "travel-companion",
+    "layout": "scene",
+    "tag": "Found it",
+    "head": "A One-Page Trip Card",
+    "sub": "One page with who is going, where, how you are getting there and where you are staying.",
+    "scene": [
+      "notebook",
+      "card",
+      "suitcase"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: notebook, card, suitcase"
+  },
+  {
+    "wave": "wave4",
+    "file": "homeschool/pin-9.1",
+    "product": "homeschooling-companion",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "Homeschool Attendance: What to Track and What Is Pointless",
+    "sub": "Which places count days, what counts as a school day, and the lightest record that satisfies a requirement.",
+    "scene": [
+      "books",
+      "document",
+      "notebook"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: books, document, notebook"
+  },
+  {
+    "wave": "wave4",
+    "file": "homeschool/pin-9.2",
+    "product": "homeschooling-companion",
+    "layout": "scene",
+    "tag": "Found it",
+    "head": "A Days Schooled Page: One Box Per Day",
+    "sub": "Mark days as you go: a month on the left, one box per day schooled, a running total on the right.",
+    "scene": [
+      "books",
+      "calendar",
+      "notebook"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: books, calendar, notebook"
+  },
+  {
+    "wave": "wave4",
+    "file": "mmr/pin-9.1",
+    "product": "monthly-money-reset",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "How to Build Your First $1,000 Emergency Fund",
+    "sub": "Your first $1,000 emergency fund is the one that stops a small problem becoming a big one.",
+    "scene": [
+      "piggy",
+      "steps",
+      "shield"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: piggy, steps, shield"
+  },
+  {
+    "wave": "wave4",
+    "file": "mmr/pin-9.2",
+    "product": "monthly-money-reset",
+    "layout": "scene",
+    "tag": "Found it",
+    "head": "Budget Tool That Holds Savings Back Before You Spend",
+    "sub": "Set a reserve, and it is taken off your safe to spend number before you see it.",
+    "scene": [
+      "wallet",
+      "piggy",
+      "toolbox"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: wallet, piggy, toolbox"
+  },
+  {
+    "wave": "wave4",
+    "file": "homebase/pin-5.1",
+    "product": "home-management-companion",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "Winterize Your House: Jobs to Finish Before the First Freeze",
+    "sub": "Freeze jobs have a deadline, and it is the weather, not the calendar.",
+    "scene": [
+      "water",
+      "toolbox",
+      "house"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: water, toolbox, house"
+  },
+  {
+    "wave": "wave4",
+    "file": "vehicle/pin-5.1",
+    "product": "vehicle-maintenance-companion",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "Car Maintenance by Mileage: Start With Your Owner's Manual",
+    "sub": "Generic maintenance charts are a guess.",
+    "scene": [
+      "car",
+      "toolbox",
+      "bulb"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: car, toolbox, bulb"
+  },
+  {
+    "wave": "wave4",
+    "file": "ple/pin-9.3",
+    "product": "personal-life-affairs-companion",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "What Paperwork to Look At After a Separation or Divorce",
+    "sub": "Who is named on what does not change on its own.",
+    "scene": [
+      "document",
+      "magnifier",
+      "binder"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: document, magnifier"
+  },
+  {
+    "wave": "wave4",
+    "file": "ple/pin-9.4",
+    "product": "personal-life-affairs-companion",
+    "layout": "scene",
+    "tag": "Small fix, big relief",
+    "head": "Still True? A Question, Not a Task You Failed",
+    "sub": "Forty-one steps come back for a second look after twelve, twenty-four or thirty-six months.",
+    "scene": [
+      "laptop",
+      "speech",
+      "calendar"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: laptop, speech, calendar"
+  },
+  {
+    "wave": "wave4",
+    "file": "travel/pin-9.3",
+    "product": "travel-companion",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "Print the Itinerary, Keep the Reference Beside It",
+    "sub": "An itinerary you can act on has three things on each line.",
+    "scene": [
+      "route",
+      "ticket",
+      "plane"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: route, ticket"
+  },
+  {
+    "wave": "wave4",
+    "file": "travel/pin-9.4",
+    "product": "travel-companion",
+    "layout": "scene",
+    "tag": "Small fix, big relief",
+    "head": "A Blank Travel Planner for When a Screen Is the Wrong Tool",
+    "sub": "My Trip Book is a blank, printable travel planner, roughly 70 pages by default.",
+    "scene": [
+      "suitcase",
+      "toolbox",
+      "laptop"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: suitcase, toolbox, laptop"
+  },
+  {
+    "wave": "wave4",
+    "file": "homeschool/pin-9.3",
+    "product": "homeschooling-companion",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "How to Catch Up on Homeschool Records You Have Not Kept",
+    "sub": "What is genuinely recoverable, how to reconstruct a homeschool year honestly.",
+    "scene": [
+      "books",
+      "calendar",
+      "notebook"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: books, calendar, notebook"
+  },
+  {
+    "wave": "wave4",
+    "file": "homeschool/pin-9.4",
+    "product": "homeschooling-companion",
+    "layout": "scene",
+    "tag": "Small fix, big relief",
+    "head": "Days Are Counted From What You Recorded",
+    "sub": "The record counts distinct days with any entry.",
+    "scene": [
+      "notebook",
+      "calendar",
+      "clock"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: notebook, calendar, clock"
+  },
+  {
+    "wave": "wave4",
+    "file": "mmr/pin-9.3",
+    "product": "monthly-money-reset",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "4 Ways to Save Money This Month Without Big Changes",
+    "sub": "You can save money this month without giving anything up.",
+    "scene": [
+      "calendar",
+      "wallet",
+      "piggy"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: calendar, wallet, piggy"
+  },
+  {
+    "wave": "wave4",
+    "file": "mmr/pin-9.4",
+    "product": "monthly-money-reset",
+    "layout": "scene",
+    "tag": "Small fix, big relief",
+    "head": "Emergency Fund Budget: Set Savings Aside First",
+    "sub": "Build an emergency fund by holding it back before you spend.",
+    "scene": [
+      "piggy",
+      "wallet",
+      "shield"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: piggy, wallet, shield"
+  },
+  {
+    "wave": "wave4",
+    "file": "homebase/pin-5.2",
+    "product": "home-management-companion",
+    "layout": "split",
+    "tag": "This is your sign",
+    "head": "Printable Home Maintenance Calendar: What Belongs to Which Month",
+    "sub": "The Home Survey book that comes with Home Base has a year plate: every month, every seasonal job.",
+    "scene": [
+      "calendar",
+      "house",
+      "toolbox"
+    ],
+    "screen": "screens/home-management-companion-seasons.png",
+    "cta": "price",
+    "why": "illustrations named by its words: calendar, house, toolbox; screen screens/home-management-companion-seasons.png (\"Fall home maintenance checklist\") matches its words best"
+  },
+  {
+    "wave": "wave4",
+    "file": "vehicle/pin-5.2",
+    "product": "vehicle-maintenance-companion",
+    "layout": "split",
+    "tag": "This is your sign",
+    "head": "Type Your Manual's Intervals Once",
+    "sub": "Add jobs from your owner's manual: the job, the miles and the months, one row each.",
+    "scene": [
+      "toolbox",
+      "bulb",
+      "calendar"
+    ],
+    "screen": "screens/vehicle-maintenance-companion-vehicles.png",
+    "cta": "price",
+    "why": "illustrations named by its words: toolbox, bulb, calendar; screen screens/vehicle-maintenance-companion-vehicles.png (\"Vehicles\") matches its words best"
+  },
+  {
+    "wave": "wave4",
+    "file": "ple/pin-9.5",
+    "product": "personal-life-affairs-companion",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "A Picture Goes Out of Date All at Once",
+    "sub": "Life events break the assumptions your finances and paperwork were built on.",
+    "scene": [
+      "calendar",
+      "document",
+      "people"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: calendar, document, people"
+  },
+  {
+    "wave": "wave4",
+    "file": "ple/pin-10.1",
+    "product": "personal-life-affairs-companion",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "The Safe, the Deposit Box and the Spare Key: Who Can Open Them?",
+    "sub": "A box nobody can open helps nobody.",
+    "scene": [
+      "key",
+      "shield",
+      "notebook"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: key, shield, notebook"
+  },
+  {
+    "wave": "wave4",
+    "file": "travel/pin-9.5",
+    "product": "travel-companion",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "Print What You Need",
+    "sub": "The list of what earns a place on paper is short.",
+    "scene": [
+      "notebook",
+      "plane",
+      "suitcase"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: notebook"
+  },
+  {
+    "wave": "wave4",
+    "file": "travel/pin-10.1",
+    "product": "travel-companion",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "The Night-Before List",
+    "sub": "A short list for the evening before a trip, so the morning is only leaving.",
+    "scene": [
+      "moon",
+      "checklist",
+      "suitcase"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: moon, checklist, suitcase"
+  },
+  {
+    "wave": "wave4",
+    "file": "homeschool/pin-9.5",
+    "product": "homeschooling-companion",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "Reconstructing a Year of Attendance in June Is Impossible",
+    "sub": "A note from the handbook that is worth taking seriously: mark days as you go.",
+    "scene": [
+      "calendar",
+      "books",
+      "notebook"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: calendar"
+  },
+  {
+    "wave": "wave4",
+    "file": "homeschool/pin-10.1",
+    "product": "homeschooling-companion",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "When a Homeschool Subject Is Not Working: What to Change First",
+    "sub": "Change the time before you change anything else.",
+    "scene": [
+      "books",
+      "steps",
+      "notebook"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: books, steps"
+  },
+  {
+    "wave": "wave4",
+    "file": "mmr/pin-9.5",
+    "product": "monthly-money-reset",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "Why $1,000 Is a Good First Emergency Fund Goal",
+    "sub": "Ten thousand dollars can feel out of reach.",
+    "scene": [
+      "piggy",
+      "shield",
+      "target"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: piggy, shield, target"
+  },
+  {
+    "wave": "wave4",
+    "file": "mmr/pin-10.1",
+    "product": "monthly-money-reset",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "Bills Due Soon? Protect That Money Before You Spend It",
+    "sub": "The easiest way to miss a payment is to spend money that was already spoken for.",
+    "scene": [
+      "wallet",
+      "shield",
+      "calendar"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: wallet, shield, calendar"
+  },
+  {
+    "wave": "wave4",
+    "file": "homebase/pin-5.3",
+    "product": "home-management-companion",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "Winterize Home Checklist: 5 Jobs Before the Cold Arrives",
+    "sub": "Five jobs stop most winter home problems: drain outdoor faucets, blow out irrigation lines.",
+    "scene": [
+      "house",
+      "toolbox",
+      "checklist"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: house, toolbox, checklist"
+  },
+  {
+    "wave": "wave4",
+    "file": "vehicle/pin-5.3",
+    "product": "vehicle-maintenance-companion",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "Miles, Months, or Both",
+    "sub": "Some jobs go by distance, some by time, some by both.",
+    "scene": [
+      "calendar",
+      "car",
+      "toolbox"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: calendar, car, toolbox"
+  },
+  {
+    "wave": "wave4",
+    "file": "ple/pin-10.2",
+    "product": "personal-life-affairs-companion",
+    "layout": "split",
+    "tag": "This is your sign",
+    "head": "A Name, Not a Code",
+    "scene": [
+      "notebook",
+      "shield",
+      "laptop"
+    ],
+    "screen": "screens/personal-life-affairs-companion-printables.png",
+    "cta": "price",
+    "why": "illustrations named by its words: notebook, shield, laptop; screen screens/personal-life-affairs-companion-printables.png (\"Nothing in it yet, and you can still print it.\") matches its words best"
+  },
+  {
+    "wave": "wave4",
+    "file": "ple/pin-10.3",
+    "product": "personal-life-affairs-companion",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "What Happens to Your Pets If Something Happens to You",
+    "sub": "A name, what each animal needs, and where the papers are.",
+    "scene": [
+      "notebook",
+      "calendar",
+      "steps"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: notebook, calendar, steps"
+  },
+  {
+    "wave": "wave4",
+    "file": "travel/pin-10.2",
+    "product": "travel-companion",
+    "layout": "split",
+    "tag": "This is your sign",
+    "head": "Tomorrow, Worth Knowing",
+    "sub": "Today shows what is happening, what is worth knowing about tomorrow, and what you are still waiting on.",
+    "scene": [
+      "calendar",
+      "laptop",
+      "plane"
+    ],
+    "screen": "screens/travel-companion-workspace.png",
+    "cta": "price",
+    "why": "illustrations named by its words: calendar, laptop; screen screens/travel-companion-workspace.png (\"Today\") matches its words best"
+  },
+  {
+    "wave": "wave4",
+    "file": "travel/pin-10.3",
+    "product": "travel-companion",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "Road Trip Planning Checklist",
+    "sub": "Stops, stays and what to pack for a road trip, in an order that makes sense.",
+    "scene": [
+      "suitcase",
+      "checklist",
+      "plane"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: suitcase, checklist"
+  },
+  {
+    "wave": "wave4",
+    "file": "homeschool/pin-10.2",
+    "product": "homeschooling-companion",
+    "layout": "split",
+    "tag": "This is your sign",
+    "head": "Worth Going Over Again: How a Hard Session Comes Back",
+    "sub": "If a subject was difficult or not finished last time, Today says so in a quiet line.",
+    "scene": [
+      "books",
+      "laptop",
+      "notebook"
+    ],
+    "screen": "screens/homeschooling-companion-workspace.png",
+    "cta": "price",
+    "why": "illustrations named by its words: books, laptop; screen screens/homeschooling-companion-workspace.png (\"What we are doing today.\") matches its words best"
+  },
+  {
+    "wave": "wave4",
+    "file": "homeschool/pin-10.3",
+    "product": "homeschooling-companion",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "Go Back One Step",
+    "sub": "When a topic stalls, the problem is often the one before it.",
+    "scene": [
+      "steps",
+      "books",
+      "notebook"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: steps"
+  },
+  {
+    "wave": "wave4",
+    "file": "mmr/pin-10.2",
+    "product": "monthly-money-reset",
+    "layout": "split",
+    "tag": "This is your sign",
+    "head": "Budget Without Linking Your Bank: Type It, See It",
+    "sub": "You do not have to link your bank to see where you stand.",
+    "scene": [
+      "bank",
+      "wallet",
+      "calendar"
+    ],
+    "screen": "screens/monthly-money-reset-progress.png",
+    "cta": "price",
+    "why": "illustrations named by its words: bank, wallet, calendar; screen screens/monthly-money-reset-progress.png (\"Start\") matches its words best"
+  },
+  {
+    "wave": "wave4",
+    "file": "mmr/pin-10.3",
+    "product": "monthly-money-reset",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "How to Find Every Subscription You Are Paying For",
+    "sub": "Most people are paying for something they forgot.",
+    "scene": [
+      "card",
+      "calendar",
+      "receipt"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: card, calendar, receipt"
+  },
+  {
+    "wave": "wave4",
+    "file": "homebase/pin-5.4",
+    "product": "home-management-companion",
+    "layout": "split",
+    "tag": "Worth it",
+    "head": "Do Home Maintenance Before the Freeze, Not After the Pipe Bursts",
+    "sub": "Most freeze damage was preventable in October.",
+    "scene": [
+      "water",
+      "calendar",
+      "toolbox"
+    ],
+    "screen": "screens/home-management-companion-seasons.png",
+    "cta": "price",
+    "why": "illustrations named by its words: water, calendar, toolbox; screen screens/home-management-companion-seasons.png (\"Fall home maintenance checklist\") matches its words best"
+  },
+  {
+    "wave": "wave4",
+    "file": "vehicle/pin-5.4",
+    "product": "vehicle-maintenance-companion",
+    "layout": "split",
+    "tag": "Worth it",
+    "head": "Severe Duty Halves the Interval, With One Tap",
+    "sub": "If you tow, drive mostly short trips, or live with heavy dust, heat or cold.",
+    "scene": [
+      "clock",
+      "car",
+      "checklist"
+    ],
+    "screen": "screens/vehicle-maintenance-companion-vehicles.png",
+    "cta": "price",
+    "why": "illustrations named by its words: clock, car, checklist; screen screens/vehicle-maintenance-companion-vehicles.png (\"Vehicles\") matches its words best"
+  },
+  {
+    "wave": "wave4",
+    "file": "ple/pin-10.4",
+    "product": "personal-life-affairs-companion",
+    "layout": "split",
+    "tag": "Worth it",
+    "head": "Could Someone Pick This Up and Know What to Do?",
+    "sub": "The Handoff Check looks at what you have recorded the way a stranger would.",
+    "scene": [
+      "notebook",
+      "laptop",
+      "bulb"
+    ],
+    "screen": "screens/personal-life-affairs-companion-affairs.png",
+    "cta": "price",
+    "why": "illustrations named by its words: notebook, laptop, bulb; screen screens/personal-life-affairs-companion-affairs.png (\"What you have established so far.\") matches its words best"
+  },
+  {
+    "wave": "wave4",
+    "file": "ple/pin-10.5",
+    "product": "personal-life-affairs-companion",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "Start With Your Own",
+    "sub": "Doing your own is the easiest way to start the conversation with a parent about theirs.",
+    "scene": [
+      "speech",
+      "steps",
+      "people"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: speech, steps, people"
+  },
+  {
+    "wave": "wave4",
+    "file": "travel/pin-10.4",
+    "product": "travel-companion",
+    "layout": "split",
+    "tag": "Worth it",
+    "head": "Seven Kinds of To-Do Before You Go",
+    "sub": "Preparation has seven kinds of to-do: documents, packing, transport, money, home, people and bookings.",
+    "scene": [
+      "checklist",
+      "document",
+      "wallet"
+    ],
+    "screen": "screens/travel-companion-trip.png",
+    "cta": "price",
+    "why": "illustrations named by its words: checklist, document, wallet; screen screens/travel-companion-trip.png (\"Lisbon and Porto\") matches its words best"
+  },
+  {
+    "wave": "wave4",
+    "file": "travel/pin-10.5",
+    "product": "travel-companion",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "Short on Purpose",
+    "sub": "A list you finish is worth more than a list you admire.",
+    "scene": [
+      "checklist",
+      "plane",
+      "suitcase"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: checklist"
+  },
+  {
+    "wave": "wave4",
+    "file": "homeschool/pin-10.4",
+    "product": "homeschooling-companion",
+    "layout": "split",
+    "tag": "Worth it",
+    "head": "Tick What You Are Actually Teaching",
+    "sub": "Seventy-one topics across six subjects, ticked by you, so a check can draw only on what you are teaching.",
+    "scene": [
+      "books",
+      "checklist",
+      "laptop"
+    ],
+    "screen": "screens/homeschooling-companion-record.png",
+    "cta": "price",
+    "why": "illustrations named by its words: books, checklist, laptop; screen screens/homeschooling-companion-record.png (\"What has happened.\") matches its words best"
+  },
+  {
+    "wave": "wave4",
+    "file": "homeschool/pin-10.5",
+    "product": "homeschooling-companion",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "You Cannot Keep Everything, and You Do Not Need To",
+    "sub": "What is worth archiving, what to photograph, and what to recycle without guilt.",
+    "scene": [
+      "books",
+      "notebook",
+      "calendar"
+    ],
+    "cta": "guide",
+    "why": "its words name nothing drawable; the product's own pictures"
+  },
+  {
+    "wave": "wave4",
+    "file": "mmr/pin-10.4",
+    "product": "monthly-money-reset",
+    "layout": "split",
+    "tag": "Worth it",
+    "head": "Monthly Bills Budget: Protect What Must Be Paid",
+    "sub": "A monthly bills budget starts with the bills.",
+    "scene": [
+      "wallet",
+      "shield",
+      "card"
+    ],
+    "screen": "screens/monthly-money-reset-progress.png",
+    "cta": "price",
+    "why": "illustrations named by its words: wallet, shield, card; screen screens/monthly-money-reset-progress.png (\"Start\") matches its words best"
+  },
+  {
+    "wave": "wave4",
+    "file": "mmr/pin-10.5",
+    "product": "monthly-money-reset",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "How to Cancel a Subscription That Is Hard to Cancel",
+    "sub": "Some subscriptions are easy to start and hard to stop.",
+    "scene": [
+      "card",
+      "wallet",
+      "calendar"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: card"
+  },
+  {
+    "wave": "wave4",
+    "file": "homebase/pin-5.5",
+    "product": "home-management-companion",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "Why Freeze Jobs Are Date Jobs, Not Interval Jobs",
+    "sub": "A furnace filter runs on an interval.",
+    "scene": [
+      "toolbox",
+      "calendar",
+      "clock"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: toolbox, calendar, clock"
+  },
+  {
+    "wave": "wave4",
+    "file": "vehicle/pin-5.5",
+    "product": "vehicle-maintenance-companion",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "Your Manual First",
+    "sub": "A chart from the internet is a starting point.",
+    "scene": [
+      "bulb",
+      "steps",
+      "car"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: bulb, steps"
+  },
+  {
+    "wave": "wave5",
+    "file": "homebase/pin-6.1",
+    "product": "home-management-companion",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "Home Maintenance Log: What to Write Every Time",
+    "sub": "A home maintenance log only works if it is short enough to actually fill in.",
+    "scene": [
+      "notebook",
+      "house",
+      "toolbox"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: notebook, house, toolbox"
+  },
+  {
+    "wave": "wave5",
+    "file": "vehicle/pin-6.1",
+    "product": "vehicle-maintenance-companion",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "Winter Car Prep Checklist",
+    "sub": "Cold is hard on batteries, tires and wipers.",
+    "scene": [
+      "checklist",
+      "car",
+      "calendar"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: checklist, car, calendar"
+  },
+  {
+    "wave": "wave5",
+    "file": "homebase/pin-6.2",
+    "product": "home-management-companion",
+    "layout": "scene",
+    "tag": "Small fix, big relief",
+    "head": "Home Maintenance Tracker That Keeps Your House's History",
+    "sub": "Every job you record stays in Home Base: what was done, when, by whom and what it cost.",
+    "scene": [
+      "house",
+      "toolbox",
+      "phone"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: house, toolbox, phone"
+  },
+  {
+    "wave": "wave5",
+    "file": "vehicle/pin-6.2",
+    "product": "vehicle-maintenance-companion",
+    "layout": "scene",
+    "tag": "Small fix, big relief",
+    "head": "Four Starter Lists: Before Winter, Long Drive, Yearly, By the Miles",
+    "sub": "Each list adds jobs with a typical starting interval you can change and nothing recorded against them.",
+    "scene": [
+      "car",
+      "checklist",
+      "clock"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: car, checklist, clock"
+  },
+  {
+    "wave": "wave5",
+    "file": "homebase/pin-6.3",
+    "product": "home-management-companion",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "What to Write Down After Every Home Repair",
+    "sub": "Five minutes after a technician leaves is worth an hour next time.",
+    "scene": [
+      "clock",
+      "wrench",
+      "house"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: clock, wrench, house"
+  },
+  {
+    "wave": "wave5",
+    "file": "vehicle/pin-6.3",
+    "product": "vehicle-maintenance-companion",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "Three Things the Cold Is Hard On",
+    "sub": "The three things most worth checking before winter, and what to look for.",
+    "scene": [
+      "car",
+      "wrench",
+      "calendar"
+    ],
+    "cta": "guide",
+    "why": "its words name nothing drawable; the product's own pictures"
+  },
+  {
+    "wave": "wave5",
+    "file": "homebase/pin-6.4",
+    "product": "home-management-companion",
+    "layout": "scene",
+    "tag": "Found it",
+    "head": "Stop Digging Through Drawers for the Repair Receipt",
+    "sub": "The receipt is in a drawer, the invoice is in your email and the phone number is on a magnet.",
+    "scene": [
+      "receipt",
+      "wrench",
+      "phone"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: receipt, wrench, phone"
+  },
+  {
+    "wave": "wave5",
+    "file": "vehicle/pin-6.4",
+    "product": "vehicle-maintenance-companion",
+    "layout": "scene",
+    "tag": "Found it",
+    "head": "Usual Jobs in One Tap",
+    "sub": "Say what kind of vehicle it is and Vehicle Maintenance Companion suggests the usual jobs.",
+    "scene": [
+      "toolbox",
+      "car",
+      "clock"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: toolbox, car, clock"
+  },
+  {
+    "wave": "wave5",
+    "file": "homebase/pin-6.5",
+    "product": "home-management-companion",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "The Diagnosis Matters More Than the Invoice",
+    "sub": "When a repair fails again, the invoice tells you what you paid.",
+    "scene": [
+      "receipt",
+      "wrench",
+      "wallet"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: receipt, wrench, wallet"
+  },
+  {
+    "wave": "wave5",
+    "file": "vehicle/pin-6.5",
+    "product": "vehicle-maintenance-companion",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "Cold Is Hard on Batteries, Tires and Wipers",
+    "sub": "A short reason to look before the first frost.",
+    "scene": [
+      "wrench",
+      "car",
+      "calendar"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: wrench"
+  },
+  {
+    "wave": "wave5",
+    "file": "homebase/pin-7.1",
+    "product": "home-management-companion",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "Furnace Filter Size: Write It Down Once, Never Guess Again",
+    "sub": "Every filter change starts with the same question: what size is it?",
+    "scene": [
+      "bulb",
+      "notebook",
+      "magnifier"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: bulb, notebook, magnifier"
+  },
+  {
+    "wave": "wave5",
+    "file": "vehicle/pin-7.1",
+    "product": "vehicle-maintenance-companion",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "Two Cars, One Household: Keeping Maintenance Straight",
+    "sub": "With two cars it is easy to lose track of which one needs what.",
+    "scene": [
+      "car",
+      "toolbox",
+      "notebook"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: car, toolbox, notebook"
+  },
+  {
+    "wave": "wave5",
+    "file": "homebase/pin-7.2",
+    "product": "home-management-companion",
+    "layout": "split",
+    "tag": "Worth it",
+    "head": "Print the Item Card and Take It to the Hardware Store",
+    "sub": "One page for one thing in your house: brand, model, location, what to buy, install date, warranty.",
+    "scene": [
+      "card",
+      "car",
+      "bulb"
+    ],
+    "screen": "screens/home-management-companion-workspace.png",
+    "cta": "price",
+    "why": "illustrations named by its words: card, car, bulb; screen screens/home-management-companion-workspace.png (\"A couple of things need a look\") matches its words best"
+  },
+  {
+    "wave": "wave5",
+    "file": "vehicle/pin-7.2",
+    "product": "vehicle-maintenance-companion",
+    "layout": "split",
+    "tag": "Worth it",
+    "head": "Every Car on One Strip",
+    "sub": "With two or more vehicles, a strip of plates shows which one needs you, and one tap filters Due to that car.",
+    "scene": [
+      "car",
+      "calendar",
+      "bulb"
+    ],
+    "screen": "screens/vehicle-maintenance-companion-vehicles.png",
+    "cta": "price",
+    "why": "illustrations named by its words: car, calendar, bulb; screen screens/vehicle-maintenance-companion-vehicles.png (\"Vehicles\") matches its words best"
+  },
+  {
+    "wave": "wave5",
+    "file": "homebase/pin-7.3",
+    "product": "home-management-companion",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "How to Find the Model Number on Any Appliance",
+    "sub": "The label you need is never where you look first.",
+    "scene": [
+      "bulb",
+      "magnifier",
+      "steps"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: bulb, magnifier, steps"
+  },
+  {
+    "wave": "wave5",
+    "file": "vehicle/pin-7.3",
+    "product": "vehicle-maintenance-companion",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "Which Car Needs What",
+    "sub": "Three habits that keep two cars from blurring into one.",
+    "scene": [
+      "car",
+      "scale",
+      "wrench"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: car, scale"
+  },
+  {
+    "wave": "wave5",
+    "file": "homebase/pin-7.4",
+    "product": "home-management-companion",
+    "layout": "split",
+    "tag": "This is your sign",
+    "head": "Write the Filter Size Once: Note, Print, Bring",
+    "sub": "The filter size, the part number, the bulb type: one fact per thing, written once.",
+    "scene": [
+      "bulb",
+      "notebook",
+      "card"
+    ],
+    "screen": "screens/home-management-companion-workspace.png",
+    "cta": "price",
+    "why": "illustrations named by its words: bulb, notebook, card; screen screens/home-management-companion-workspace.png (\"A couple of things need a look\") matches its words best"
+  },
+  {
+    "wave": "wave5",
+    "file": "vehicle/pin-7.4",
+    "product": "vehicle-maintenance-companion",
+    "layout": "split",
+    "tag": "This is your sign",
+    "head": "Add a Vehicle in One Short Screen",
+    "sub": "Give the vehicle a name and, if you like, its year, make and model.",
+    "scene": [
+      "car",
+      "laptop",
+      "calendar"
+    ],
+    "screen": "screens/vehicle-maintenance-companion-vehicles.png",
+    "cta": "price",
+    "why": "illustrations named by its words: car, laptop, calendar; screen screens/vehicle-maintenance-companion-vehicles.png (\"Vehicles\") matches its words best"
+  },
+  {
+    "wave": "wave5",
+    "file": "homebase/pin-7.5",
+    "product": "home-management-companion",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "The Model Number Is Behind the Fridge (and Other Home Truths)",
+    "sub": "The filter size is on the filter, the model number is behind the fridge.",
+    "scene": [
+      "bulb",
+      "house",
+      "water"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: bulb, house, water"
+  },
+  {
+    "wave": "wave5",
+    "file": "vehicle/pin-7.5",
+    "product": "vehicle-maintenance-companion",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "One Strip for Every Car You Own",
+    "sub": "One glance across everything you own.",
+    "scene": [
+      "car",
+      "wrench",
+      "calendar"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: car"
+  },
+  {
+    "wave": "wave5",
+    "file": "homebase/pin-8.1",
+    "product": "home-management-companion",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "Home Repair Record: Write the Problem Down First",
+    "sub": "When something goes wrong in a house, the first thing to do is write it down in your own words.",
+    "scene": [
+      "notebook",
+      "house",
+      "wrench"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: notebook, house, wrench"
+  },
+  {
+    "wave": "wave5",
+    "file": "vehicle/pin-8.1",
+    "product": "vehicle-maintenance-companion",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "What to Keep in Your Glove Box",
+    "sub": "A short list of the papers and numbers worth having in the car, and what is better kept at home.",
+    "scene": [
+      "notebook",
+      "car",
+      "house"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: notebook, car, house"
+  },
+  {
+    "wave": "wave5",
+    "file": "homebase/pin-8.2",
+    "product": "home-management-companion",
+    "layout": "scene",
+    "tag": "Found it",
+    "head": "Home Repair Tracker That Remembers Who You Called Last Time",
+    "sub": "Report a problem in your own words and Home Base recalls who you used before for that kind of job.",
+    "scene": [
+      "house",
+      "phone",
+      "wrench"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: house, phone, wrench"
+  },
+  {
+    "wave": "wave5",
+    "file": "vehicle/pin-8.2",
+    "product": "vehicle-maintenance-companion",
+    "layout": "scene",
+    "tag": "Found it",
+    "head": "A Glove Box Card You Print Yourself",
+    "sub": "One card with your plate, VIN, oil and insurance details, and the dates you are watching.",
+    "scene": [
+      "card",
+      "car",
+      "calendar"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: card, car, calendar"
+  },
+  {
+    "wave": "wave5",
+    "file": "homebase/pin-8.3",
+    "product": "home-management-companion",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "Do You Know Where Your Main Water Shutoff Is?",
+    "sub": "A leak at two in the morning is the wrong time to start looking for the valve.",
+    "scene": [
+      "water",
+      "magnifier",
+      "house"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: water, magnifier, house"
+  },
+  {
+    "wave": "wave5",
+    "file": "vehicle/pin-8.3",
+    "product": "vehicle-maintenance-companion",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "Three Papers Worth Having in the Car",
+    "sub": "The registration, the policy and a roadside number.",
+    "scene": [
+      "notebook",
+      "car",
+      "document"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: notebook, car, document"
+  },
+  {
+    "wave": "wave5",
+    "file": "homebase/pin-8.4",
+    "product": "home-management-companion",
+    "layout": "scene",
+    "tag": "Small fix, big relief",
+    "head": "Fill In This Page Tonight: If Something Goes Wrong",
+    "sub": "Plate 01 of the Home Survey is the one page to fill in first: where the water, gas and electricity shut off.",
+    "scene": [
+      "house",
+      "moon",
+      "notebook"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: house, moon, notebook"
+  },
+  {
+    "wave": "wave5",
+    "file": "vehicle/pin-8.4",
+    "product": "vehicle-maintenance-companion",
+    "layout": "scene",
+    "tag": "Small fix, big relief",
+    "head": "Glove Box Details, Typed by You",
+    "sub": "Registration plate, insurer, roadside help number.",
+    "scene": [
+      "car",
+      "document",
+      "card"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: car, document, card"
+  },
+  {
+    "wave": "wave5",
+    "file": "homebase/pin-8.5",
+    "product": "home-management-companion",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "Why You Should Find Your Water Shutoff Today",
+    "sub": "Nobody looks for the water shutoff until water is coming through a ceiling.",
+    "scene": [
+      "water",
+      "magnifier",
+      "clock"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: water, magnifier, clock"
+  },
+  {
+    "wave": "wave5",
+    "file": "vehicle/pin-8.5",
+    "product": "vehicle-maintenance-companion",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "Keep It Short",
+    "sub": "A card you can find beats a folder you cannot.",
+    "scene": [
+      "binder",
+      "card",
+      "car"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: binder, card, car"
+  },
+  {
+    "wave": "wave5",
+    "file": "homebase/pin-9.1",
+    "product": "home-management-companion",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "Home Binder: What Goes In It and What Does Not",
+    "sub": "A home binder is only useful if the right things are in it.",
+    "scene": [
+      "binder",
+      "house",
+      "phone"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: binder, house, phone"
+  },
+  {
+    "wave": "wave5",
+    "file": "vehicle/pin-9.1",
+    "product": "vehicle-maintenance-companion",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "Car Paperwork Dates: Registration, Insurance, Inspection",
+    "sub": "A way to keep track of the dates on your car's paperwork without a folder.",
+    "scene": [
+      "document",
+      "calendar",
+      "car"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: document, calendar, car"
+  },
+  {
+    "wave": "wave5",
+    "file": "homebase/pin-9.2",
+    "product": "home-management-companion",
+    "layout": "split",
+    "tag": "This is your sign",
+    "head": "Home Maintenance Printable: A 36-Page Home Survey Book",
+    "sub": "The Home Survey is a 36 page US Letter book with 19 plates: the shutoffs, twelve areas of a house.",
+    "scene": [
+      "house",
+      "toolbox",
+      "notebook"
+    ],
+    "screen": "screens/home-management-companion-history.png",
+    "cta": "price",
+    "why": "illustrations named by its words: house, toolbox, notebook; screen screens/home-management-companion-history.png (\"What's been done\") matches its words best"
+  },
+  {
+    "wave": "wave5",
+    "file": "vehicle/pin-9.2",
+    "product": "vehicle-maintenance-companion",
+    "layout": "split",
+    "tag": "This is your sign",
+    "head": "A Date and Where the Paper Is",
+    "sub": "Record a registration, insurance, inspection or warranty date and where the paper is.",
+    "scene": [
+      "notebook",
+      "calendar",
+      "magnifier"
+    ],
+    "screen": "screens/vehicle-maintenance-companion-history.png",
+    "cta": "price",
+    "why": "illustrations named by its words: notebook, calendar, magnifier; screen screens/vehicle-maintenance-companion-history.png (\"History\") matches its words best"
+  },
+  {
+    "wave": "wave5",
+    "file": "homebase/pin-9.3",
+    "product": "home-management-companion",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "What to Put in a Home Binder: 5 Sections That Matter",
+    "sub": "Five sections cover most of what a home binder needs: an emergency page, the numbers you look up every time.",
+    "scene": [
+      "binder",
+      "house",
+      "wallet"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: binder, house, wallet"
+  },
+  {
+    "wave": "wave5",
+    "file": "vehicle/pin-9.3",
+    "product": "vehicle-maintenance-companion",
+    "layout": "hero",
+    "tag": "Bookmark this",
+    "head": "What to Write Next to Each Date",
+    "sub": "Three short notes that make a renewal easy to find.",
+    "scene": [
+      "calendar",
+      "notebook",
+      "steps"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: calendar, notebook, steps"
+  },
+  {
+    "wave": "wave5",
+    "file": "homebase/pin-9.4",
+    "product": "home-management-companion",
+    "layout": "split",
+    "tag": "Worth it",
+    "head": "Home Binder in Four Steps: Walk, Write, Enter, Forget",
+    "sub": "Four steps, and only one of them is work.",
+    "scene": [
+      "house",
+      "mind",
+      "steps"
+    ],
+    "screen": "screens/home-management-companion-workspace.png",
+    "cta": "price",
+    "why": "illustrations named by its words: house, mind, steps; screen screens/home-management-companion-workspace.png (\"A couple of things need a look\") matches its words best"
+  },
+  {
+    "wave": "wave5",
+    "file": "vehicle/pin-9.4",
+    "product": "vehicle-maintenance-companion",
+    "layout": "split",
+    "tag": "Worth it",
+    "head": "Paperwork Dates Show Up on Due",
+    "sub": "A date shows on Due when it is 45 days away or past.",
+    "scene": [
+      "calendar",
+      "document",
+      "laptop"
+    ],
+    "screen": "screens/vehicle-maintenance-companion-history.png",
+    "cta": "price",
+    "why": "illustrations named by its words: calendar, document, laptop; screen screens/vehicle-maintenance-companion-history.png (\"History\") matches its words best"
+  },
+  {
+    "wave": "wave5",
+    "file": "homebase/pin-9.5",
+    "product": "home-management-companion",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "What Not to Put in a Home Binder",
+    "sub": "A home binder gets lent, photographed and left on counters.",
+    "scene": [
+      "house",
+      "binder",
+      "phone"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: house, binder, phone"
+  },
+  {
+    "wave": "wave5",
+    "file": "vehicle/pin-9.5",
+    "product": "vehicle-maintenance-companion",
+    "layout": "hero",
+    "tag": "Free guide",
+    "head": "Where Is the Paper?",
+    "sub": "The date is easy.",
+    "scene": [
+      "notebook",
+      "magnifier",
+      "calendar"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: notebook, magnifier, calendar"
+  },
+  {
+    "wave": "wave5",
+    "file": "homebase/pin-10.1",
+    "product": "home-management-companion",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "Renter's Move-In Checklist: What to Document on Day One",
+    "sub": "The deposit conversation at the end of a lease starts on day one.",
+    "scene": [
+      "checklist",
+      "notebook",
+      "calendar"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: checklist, notebook, calendar"
+  },
+  {
+    "wave": "wave5",
+    "file": "vehicle/pin-10.1",
+    "product": "vehicle-maintenance-companion",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "First Car Checklist for New Drivers",
+    "sub": "A short list of what to sort in the first week with a car: the papers, the manual, the first record.",
+    "scene": [
+      "car",
+      "checklist",
+      "notebook"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: car, checklist, notebook"
+  },
+  {
+    "wave": "wave5",
+    "file": "homebase/pin-10.2",
+    "product": "home-management-companion",
+    "layout": "scene",
+    "tag": "Small fix, big relief",
+    "head": "Lease and Deposit Tracker for Renters",
+    "sub": "Renters get their own setup in Home Base: the lease, the deposit, what you look after.",
+    "scene": [
+      "house",
+      "toolbox",
+      "calendar"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: house"
+  },
+  {
+    "wave": "wave5",
+    "file": "vehicle/pin-10.2",
+    "product": "vehicle-maintenance-companion",
+    "layout": "scene",
+    "tag": "Small fix, big relief",
+    "head": "Log a Service: Date, Miles, What Was Done",
+    "sub": "Log a service in a few fields: which job, what was done, the date, the mileage, who did it.",
+    "scene": [
+      "notebook",
+      "calendar",
+      "car"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: notebook, calendar, car"
+  },
+  {
+    "wave": "wave5",
+    "file": "homebase/pin-10.3",
+    "product": "home-management-companion",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "What to Document When You Move Into a Rental",
+    "sub": "Four records protect a deposit and a lease: dated photos of every room, the lease renewal and notice dates.",
+    "scene": [
+      "calendar",
+      "notebook",
+      "document"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: calendar, notebook, document"
+  },
+  {
+    "wave": "wave5",
+    "file": "vehicle/pin-10.3",
+    "product": "vehicle-maintenance-companion",
+    "layout": "scene",
+    "tag": "Worth knowing",
+    "head": "Week One With Your First Car",
+    "sub": "Find the owner's manual, note the mileage, start a record.",
+    "scene": [
+      "car",
+      "calendar",
+      "notebook"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: car, calendar, notebook"
+  },
+  {
+    "wave": "wave5",
+    "file": "homebase/pin-10.4",
+    "product": "home-management-companion",
+    "layout": "scene",
+    "tag": "Found it",
+    "head": "Renter Records: From \"Where Is the Lease?\" to One Notice Date",
+    "sub": "The lease is in an email, the deposit receipt is in a drawer and the notice date is in your head.",
+    "scene": [
+      "house",
+      "calendar",
+      "notebook"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: house, calendar, notebook"
+  },
+  {
+    "wave": "wave5",
+    "file": "vehicle/pin-10.4",
+    "product": "vehicle-maintenance-companion",
+    "layout": "scene",
+    "tag": "Found it",
+    "head": "Reminders You Switch On Yourself",
+    "sub": "Reminders are off until you turn them on.",
+    "scene": [
+      "clock",
+      "calendar",
+      "toolbox"
+    ],
+    "cta": "price",
+    "why": "illustrations named by its words: clock, calendar, toolbox"
+  },
+  {
+    "wave": "wave5",
+    "file": "homebase/pin-10.5",
+    "product": "home-management-companion",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "Photograph Everything on Day One",
+    "sub": "If you rent, day one is when the deposit is won or lost.",
+    "scene": [
+      "calendar",
+      "checklist",
+      "hotel"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: calendar, checklist, hotel"
+  },
+  {
+    "wave": "wave5",
+    "file": "vehicle/pin-10.5",
+    "product": "vehicle-maintenance-companion",
+    "layout": "scene",
+    "tag": "Save this",
+    "head": "Start the Record Today",
+    "sub": "The best time to start a car's record is the day you get it.",
+    "scene": [
+      "notebook",
+      "calendar",
+      "steps"
+    ],
+    "cta": "guide",
+    "why": "illustrations named by its words: notebook, calendar, steps"
+  }
+]

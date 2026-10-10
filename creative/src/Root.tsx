@@ -12,6 +12,8 @@ import { IllustrationGallery } from "./compositions/dev/illustration-gallery";
 import { FindsPinStill } from "./compositions/formats/finds-pin";
 import { FINDS_PINS } from "../pinterest/maple-main-finds";
 import { findsPinId } from "../pinterest/finds-ids";
+import DRAFTPACE_PINS from "../pinterest/draftpace/pins.generated.json";
+import type { PinArt } from "./compositions/formats/finds-pin";
 
 const FILMS = [...DIRECTED, ...VOICEOVER_FILMS];
 
@@ -114,6 +116,10 @@ export const RemotionRoot: React.FC = () => {
       {/* Maple & Main Finds pins (pinterest/maple-main-finds.ts), 2:3 at 1000x1500, rendered by scripts/render-finds-pins.mjs. */}
       {FINDS_PINS.map((pin, i) => (
         <Still key={i} id={findsPinId(FINDS_PINS, i)} component={FindsPinStill} width={1000} height={1500} defaultProps={{ pin }} />
+      ))}
+      {/* Draftpace's own pins, waves 2 to 5 (pinterest/draftpace-pins.ts), drawn by scripts/draftpace-pins.mjs --render. */}
+      {(DRAFTPACE_PINS as unknown as (PinArt & { file: string })[]).map((pin) => (
+        <Still key={pin.file} id={`Pin-dp-${pin.file.replace(/[/.]/g, "-")}`} component={FindsPinStill} width={1000} height={1500} defaultProps={{ pin: { ...pin, byline: "draftpace.com" } }} />
       ))}
       {/* Every situation carousel (scripts/carousels.mjs), one 4:5 still per slide: the size Instagram and Facebook show in full. */}
       {CAROUSELS.flatMap((carousel) =>

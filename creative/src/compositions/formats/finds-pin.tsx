@@ -15,6 +15,20 @@ import { Illustration, type Palette } from "../../visual/illustrations";
 import { Phone } from "../../visual/Phone";
 import type { FindsPin } from "../../../pinterest/maple-main-finds";
 
+/**
+ * What a pin draws: a Maple & Main find, or one of Draftpace's own pins
+ * (pinterest/draftpace-pins.ts), which may link to a free guide instead of
+ * the product and may have no line under its headline.
+ */
+export type PinArt = Pick<FindsPin, "product" | "tag" | "head" | "scene" | "points" | "screen"> & {
+  layout: FindsPin["layout"] | "hero";
+  sub?: string;
+  /** "price" (the default) shows the real price; "guide" says the guide is free. */
+  cta?: "price" | "guide";
+  /** The small line under the product name. */
+  byline?: string;
+};
+
 const SERIF = "Newsreader";
 const SANS = "IBM Plex Sans";
 const W = 1000;
@@ -49,18 +63,19 @@ function Tag({ text, dark }: { text: string; dark?: boolean }) {
 }
 
 /** The product, its real price, and who makes it. */
-function ProductLine({ product, dark }: { product: string; dark?: boolean }) {
+function ProductLine({ product, dark, cta = "price", byline = "Made by Draftpace" }: { product: string; dark?: boolean; cta?: PinArt["cta"]; byline?: string }) {
   const { name, price } = productLine(product);
+  const pill = cta === "guide" ? "Free guide" : price === "Free" ? "Free" : `${price} once`;
   return (
     <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 20 }}>
       <div style={{ display: "flex", alignItems: "center", gap: 16, ["--logo-mark" as string]: "var(--post-accent)", ["--logo-mark-glyph" as string]: "var(--post-card)" }}>
         <LogoMark size={56} />
         <div>
           <div style={{ fontFamily: SANS, fontWeight: 700, fontSize: 30, color: dark ? "var(--post-card)" : "var(--post-ink)", lineHeight: 1.1 }}>{name}</div>
-          <div style={{ fontFamily: SANS, fontWeight: 500, fontSize: 20, color: dark ? "var(--post-card)" : "var(--post-ink)", opacity: 0.6, marginTop: 4 }}>Made by Draftpace</div>
+          <div style={{ fontFamily: SANS, fontWeight: 500, fontSize: 20, color: dark ? "var(--post-card)" : "var(--post-ink)", opacity: 0.6, marginTop: 4 }}>{byline}</div>
         </div>
       </div>
-      <span style={{ flexShrink: 0, padding: "12px 26px", borderRadius: 999, background: "var(--post-accent)", color: "var(--post-card)", fontFamily: SANS, fontWeight: 700, fontSize: 30 }}>{price === "Free" ? "Free" : `${price} once`}</span>
+      <span style={{ flexShrink: 0, padding: "12px 26px", borderRadius: 999, background: "var(--post-accent)", color: "var(--post-card)", fontFamily: SANS, fontWeight: 700, fontSize: 30 }}>{pill}</span>
     </div>
   );
 }
@@ -93,7 +108,7 @@ const Sub = ({ text, color = "var(--post-ink)" }: { text: string; color?: string
   <p style={{ margin: 0, fontFamily: SANS, fontWeight: 500, fontSize: size(text.length, [[60, 36], [90, 32]], 29), lineHeight: 1.36, color, textWrap: "pretty" }}>{text}</p>
 );
 
-function SceneLayout({ pin, palette }: { pin: FindsPin; palette: Palette }) {
+function SceneLayout({ pin, palette }: { pin: PinArt; palette: Palette }) {
   return (
     <div style={{ position: "absolute", inset: "70px 60px 60px", display: "flex", flexDirection: "column" }}>
       <div style={{ padding: "0 10px" }}>
@@ -101,39 +116,56 @@ function SceneLayout({ pin, palette }: { pin: FindsPin; palette: Palette }) {
         <div style={{ marginTop: 30 }}><Head text={pin.head} /></div>
       </div>
       <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center" }}><Scene motifs={pin.scene} palette={palette} w={760} /></div>
-      <Card><Sub text={pin.sub} /><div style={{ height: 1, background: "var(--post-line)", margin: "28px 0" }} /><ProductLine product={pin.product} /></Card>
+      <Card>{pin.sub && <><Sub text={pin.sub} /><div style={{ height: 1, background: "var(--post-line)", margin: "28px 0" }} /></>}<ProductLine product={pin.product} cta={pin.cta} byline={pin.byline} /></Card>
     </div>
   );
 }
 
-function SplitLayout({ pin, palette }: { pin: FindsPin; palette: Palette }) {
+/** The picture first: a large scene on a tinted panel, then the headline and its line, then the product. */
+function HeroLayout({ pin, palette }: { pin: PinArt; palette: Palette }) {
+  return (
+    <>
+      <div style={{ position: "absolute", left: 40, right: 40, top: 40, height: 700, borderRadius: 44, background: "color-mix(in srgb, var(--post-accent) 14%, var(--post-card))", overflow: "hidden" }}>
+        <div style={{ position: "absolute", left: 40, top: 34 }}><Tag text={pin.tag} /></div>
+        <div style={{ position: "absolute", left: 120, top: 120 }}><Scene motifs={pin.scene} palette={palette} w={680} stage={false} ground={0.9} /></div>
+      </div>
+      <div style={{ position: "absolute", left: 70, right: 70, top: 800 }}>
+        <Head text={pin.head} max={78} />
+        {pin.sub && <div style={{ marginTop: 22 }}><Sub text={pin.sub} color="color-mix(in srgb, var(--post-ink) 76%, transparent)" /></div>}
+      </div>
+      <div style={{ position: "absolute", left: 70, right: 70, bottom: 64 }}><ProductLine product={pin.product} cta={pin.cta} byline={pin.byline} /></div>
+    </>
+  );
+}
+
+function SplitLayout({ pin, palette }: { pin: PinArt; palette: Palette }) {
   return (
     <>
       <div style={{ position: "absolute", left: 0, right: 0, top: 0, height: 700, background: "var(--post-ink)", overflow: "hidden" }}>
         <div style={{ position: "absolute", right: 30, bottom: 10 }}><Scene motifs={pin.scene.slice(0, 2)} palette={palette} w={420} ground={1} stage={false} /></div>
         <div style={{ position: "absolute", left: 70, right: 70, top: 70 }}>
-          <Tag text="The problem" dark />
+          <Tag text={pin.cta ? pin.tag : "The problem"} dark />
           <div style={{ marginTop: 30, maxWidth: 600 }}><Head text={pin.head} color="var(--post-card)" max={74} /></div>
         </div>
       </div>
       <div style={{ position: "absolute", left: 70, top: 760, width: 470 }}>
-        <Tag text="The fix" />
-        <div style={{ marginTop: 26 }}><Sub text={pin.sub} /></div>
+        <Tag text={pin.cta ? "How it helps" : "The fix"} />
+        {pin.sub && <div style={{ marginTop: 26 }}><Sub text={pin.sub} /></div>}
       </div>
       {pin.screen && <div style={{ position: "absolute", right: 60, top: 740 }}><Phone src={pin.screen} width={340} rotateY={-14} rotateX={6} /></div>}
       <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 260, background: "linear-gradient(to top, var(--post-bg) 62%, transparent)" }} />
-      <div style={{ position: "absolute", left: 70, right: 70, bottom: 64 }}><ProductLine product={pin.product} /></div>
+      <div style={{ position: "absolute", left: 70, right: 70, bottom: 64 }}><ProductLine product={pin.product} cta={pin.cta} byline={pin.byline} /></div>
     </>
   );
 }
 
-function ListLayout({ pin, palette }: { pin: FindsPin; palette: Palette }) {
+function ListLayout({ pin, palette }: { pin: PinArt; palette: Palette }) {
   return (
     <>
       <div style={{ position: "absolute", left: 70, right: 70, top: 70 }}>
         <Tag text={pin.tag} />
         <div style={{ marginTop: 30 }}><Head text={pin.head} max={76} /></div>
-        <div style={{ marginTop: 18 }}><Sub text={pin.sub} color="color-mix(in srgb, var(--post-ink) 70%, transparent)" /></div>
+        <div style={{ marginTop: 18 }}><Sub text={pin.sub ?? ""} color="color-mix(in srgb, var(--post-ink) 70%, transparent)" /></div>
       </div>
       <div style={{ position: "absolute", left: 60, right: 60, top: pin.points!.length > 3 ? 500 : 560, display: "flex", flexDirection: "column", gap: pin.points!.length > 3 ? 16 : 22 }}>
         {pin.points!.map((p, i) => (
@@ -143,12 +175,12 @@ function ListLayout({ pin, palette }: { pin: FindsPin; palette: Palette }) {
           </Card>
         ))}
       </div>
-      <div style={{ position: "absolute", left: 70, right: 70, bottom: 64 }}><ProductLine product={pin.product} /></div>
+      <div style={{ position: "absolute", left: 70, right: 70, bottom: 64 }}><ProductLine product={pin.product} cta={pin.cta} byline={pin.byline} /></div>
     </>
   );
 }
 
-function PovLayout({ pin, palette }: { pin: FindsPin; palette: Palette }) {
+function PovLayout({ pin, palette }: { pin: PinArt; palette: Palette }) {
   const s = size(pin.head.length, [[50, 70], [70, 62], [90, 54]], 48);
   return (
     <>
@@ -162,13 +194,13 @@ function PovLayout({ pin, palette }: { pin: FindsPin; palette: Palette }) {
       </div>
       <div style={{ position: "absolute", left: 0, right: 0, top: 560, bottom: 330, display: "flex", alignItems: "center", justifyContent: "center" }}><Scene motifs={pin.scene} palette={palette} w={640} /></div>
       <div style={{ position: "absolute", left: 60, right: 60, bottom: 60 }}>
-        <Card><Sub text={pin.sub} /><div style={{ height: 1, background: "var(--post-line)", margin: "28px 0" }} /><ProductLine product={pin.product} /></Card>
+        <Card>{pin.sub && <><Sub text={pin.sub} /><div style={{ height: 1, background: "var(--post-line)", margin: "28px 0" }} /></>}<ProductLine product={pin.product} cta={pin.cta} byline={pin.byline} /></Card>
       </div>
     </>
   );
 }
 
-function BoardLayout({ pin, palette }: { pin: FindsPin; palette: Palette }) {
+function BoardLayout({ pin, palette }: { pin: PinArt; palette: Palette }) {
   const pts = pin.points!;
   const tilt = [-3, 2.5, 2, -2.5, -1.5, 3];
   const cardW = 400, img = pts.length > 4 ? 150 : 190;
@@ -188,16 +220,16 @@ function BoardLayout({ pin, palette }: { pin: FindsPin; palette: Palette }) {
           </div>
         ))}
       </div>
-      <div style={{ position: "absolute", left: 70, right: 70, bottom: 64 }}><ProductLine product={pin.product} /></div>
+      <div style={{ position: "absolute", left: 70, right: 70, bottom: 64 }}><ProductLine product={pin.product} cta={pin.cta} byline={pin.byline} /></div>
     </>
   );
 }
 
-export function FindsPinStill({ pin }: { pin: FindsPin }) {
+export function FindsPinStill({ pin }: { pin: PinArt }) {
   const t = themeFor(pin.product);
   const palette: Palette = { ink: t.ink, accent: t.accent, soft: t.accentSoft, paper: t.card, pop: popFor(t.accent) };
-  const filled = { ...pin, head: fillPin(pin.head, pin.product), sub: fillPin(pin.sub, pin.product) };
-  const Layout = { scene: SceneLayout, split: SplitLayout, list: ListLayout, pov: PovLayout, board: BoardLayout }[pin.layout];
+  const filled = { ...pin, head: fillPin(pin.head, pin.product), sub: pin.sub && fillPin(pin.sub, pin.product) };
+  const Layout = { scene: SceneLayout, hero: HeroLayout, split: SplitLayout, list: ListLayout, pov: PovLayout, board: BoardLayout }[pin.layout];
   return (
     <AbsoluteFill style={{ ...postCssVars(t), background: "var(--post-bg)", width: W, height: 1500, overflow: "hidden" } as React.CSSProperties}>
       {/* A soft wash of the product's tint behind everything, so every pin reads as its product at a glance. */}
