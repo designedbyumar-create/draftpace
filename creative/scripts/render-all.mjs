@@ -50,7 +50,10 @@ const FOLDERS = [
 ];
 
 const log = (m) => console.log(`[${new Date().toLocaleTimeString()}] ${m}`);
-const clean = (t) => t.replace(/[\/\\:*?"<>|]+/g, "").replace(/\s+/g, " ").trim();
+// "/" becomes "-" so "50/30/20" stays readable; the other characters a file name cannot hold are dropped.
+const clean = (t) => t.replace(/\//g, "-").replace(/[\\:*?"<>|]+/g, "").replace(/\s+/g, " ").trim();
+// The names files were given before that, so a video already made under one is kept, not made twice.
+const oldClean = (t) => t.replace(/[\/\\:*?"<>|]+/g, "").replace(/\s+/g, " ").trim();
 const short = (t, n) => (t.length <= n ? t : t.slice(0, n).replace(/\s+\S*$/, ""));
 
 // Words and copy come from the engine's own modules (the listings, the guides, Studio's publishing drafts).
@@ -81,8 +84,13 @@ for (const [platform, folder] of FOLDERS) {
   for (const film of films.filter((f) => f.platform === platform).sort((a, b) => a.id.localeCompare(b.id))) {
     const product = SHOP_LISTINGS[film.product].title;
     let name = clean(`${product} - ${short(film.angle.text, 70)}`);
-    if (taken.has(`${folder}/${name}`)) name = clean(`${name} (${film.id.slice(-24)})`);
+    let old = oldClean(`${product} - ${short(film.angle.text, 70)}`);
+    if (taken.has(`${folder}/${name}`)) { name = clean(`${name} (${film.id.slice(-24)})`); old = oldClean(`${old} (${film.id.slice(-24)})`); }
     taken.add(`${folder}/${name}`);
+    for (const ext of [".mp4", ".txt"]) {
+      const from = path.join(ROOT, folder, `${old}${ext}`), to = path.join(ROOT, folder, `${name}${ext}`);
+      if (old !== name && fs.existsSync(from) && !fs.existsSync(to)) fs.renameSync(from, to);
+    }
     const guide = film.guide ? GUIDES.find((g) => g.slug === film.guide) : undefined;
     jobs.push({ film, folder, name, copy: publishCopy(film, { productName: product, guideDek: guide?.dek }) });
   }
@@ -120,6 +128,16 @@ const bundled = await bundle({ entryPoint: path.join(CREATIVE, "src", "index.ts"
 const tmpDir = path.join(CREATIVE, "out", "render-all-tmp");
 fs.mkdirSync(tmpDir, { recursive: true });
 
+// One render. The first try uses Remotion's own speed; if the browser falls over (it can on a Mac
+// short of memory), the retry renders one frame at a time with a fresh browser, slower but steady.
+async function render(j, tmp, steady) {
+  const opts = { browserExecutable, serveUrl: bundled, ...(steady ? { timeoutInMilliseconds: 120000 } : {}) };
+  const composition = await selectComposition({ ...opts, id: `Film-${j.film.id}` });
+  await renderMedia({ ...opts, composition, codec: "h264", outputLocation: tmp, ...(steady ? { concurrency: 1 } : {}) });
+  masterVideo(tmp);
+}
+
+const skipped = [];
 const started = Date.now();
 for (const [i, j] of todo.entries()) {
   const dir = path.join(ROOT, j.folder);
@@ -127,14 +145,19 @@ for (const [i, j] of todo.entries()) {
   const tmp = path.join(tmpDir, `${j.film.id}.mp4`);
   log(`${i + 1}/${todo.length}  ${j.folder} / ${j.name}`);
   try {
-    const composition = await selectComposition({ browserExecutable, serveUrl: bundled, id: `Film-${j.film.id}` });
-    await renderMedia({ browserExecutable, composition, serveUrl: bundled, codec: "h264", outputLocation: tmp });
-    masterVideo(tmp);
+    try {
+      await render(j, tmp, false);
+    } catch (e) {
+      log(`  the browser stumbled (${e.message.split("\n")[0]}); trying this one again, slower...`);
+      fs.rmSync(tmp, { force: true });
+      await render(j, tmp, true);
+    }
     fs.renameSync(tmp, path.join(dir, `${j.name}.mp4`));
     writeCaption(j);
   } catch (e) {
-    log(`  could not make this one, skipping it: ${e.message.split("\n")[0]}`);
+    log(`  could not make this one, skipping it for now: ${e.message.split("\n")[0]}`);
     fs.rmSync(tmp, { force: true });
+    skipped.push(j);
     continue;
   }
   const each = (Date.now() - started) / (i + 1);
@@ -143,4 +166,9 @@ for (const [i, j] of todo.entries()) {
 }
 fs.rmSync(tmpDir, { recursive: true, force: true });
 log(`Finished. Your videos are in "${ROOT}".`);
+if (skipped.length) {
+  log(`${skipped.length} could not be made this time:`);
+  for (const j of skipped) log(`  ${j.folder} / ${j.name}`);
+  log("Run the same command again to make just those; everything already made is skipped.");
+}
 process.exit(0);
