@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Renders the Maple & Main Finds pins (pinterest/maple-main-finds.ts) at
- * 2000 x 3000 into public/store/pinterest-maple-main/finds/, where the
+ * 1000 x 1500, Pinterest's recommended size, into public/store/pinterest-maple-main/finds/, where the
  * site serves them once deployed, and writes the Pinterest bulk-upload CSV
  * to pinterest/maple-main-finds.csv.
  *
@@ -45,7 +45,7 @@ const serveUrl = await bundle({ entryPoint: path.join(CREATIVE, "src", "index.ts
 const browser = await openBrowser("chrome", { browserExecutable });
 for (const [n, j] of jobs.entries()) {
   const composition = await selectComposition({ browserExecutable, serveUrl, id: j.id, puppeteerInstance: browser });
-  await renderStill({ browserExecutable, composition, serveUrl, output: path.join(OUT, j.file), imageFormat: "jpeg", jpegQuality: 90, scale: 2, puppeteerInstance: browser });
+  await renderStill({ browserExecutable, composition, serveUrl, output: path.join(OUT, j.file), imageFormat: "jpeg", jpegQuality: 90, scale: 1, puppeteerInstance: browser });
   log(`${n + 1}/${jobs.length}  ${j.file}`);
 }
 await browser.close({ silent: true });

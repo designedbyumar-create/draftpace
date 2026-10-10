@@ -250,13 +250,15 @@ second colour from `popFor`, the real screen on split pins, "Made by
 Draftpace" on every pin).
 
 ```bash
-npm run pins:maple     # (repo root) 2000x3000 JPEGs into public/store/pinterest-maple-main/finds/ + pinterest/maple-main-finds.csv
+npm run pins:maple     # (repo root) 1000x1500 JPEGs into public/store/pinterest-maple-main/finds/ + pinterest/maple-main-finds.csv
 ```
 
 The CSV is Pinterest's Bulk create format (Title, Media URL, Pinterest
 board, Description, Link, Publish date, Keywords), interleaved so no
 product posts twice in a row, six a day from `SCHEDULE_START`. Its Media
-URLs only resolve once the site is deployed with the images.
+URLs only resolve once the site is deployed with the images. Keep every
+hosted pin at 1000x1500 (`node scripts/pinterest-pins-host/shrink.mjs`
+after any pin build): each deployment carries a full copy of `public/`.
 `tests/finds-pins-guards.test.ts` holds the voice rules, the no-typed-price
 rule, limits, screens, schedule and the committed CSV and images to what
 the pins say now.

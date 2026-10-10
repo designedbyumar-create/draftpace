@@ -1,6 +1,6 @@
 /**
- * Finds pin: an illustration-led Pinterest pin (1000 x 1500, rendered at
- * 2x) for the Maple & Main Finds account. Five layouts, one product
+ * Finds pin: an illustration-led Pinterest pin (1000 x 1500, Pinterest's
+ * recommended size) for the Maple & Main Finds account. Five layouts, one product
  * palette each, the same spot illustrations as the carousels, and the
  * product's real screen on the split layout. The product line at the foot
  * carries the real name and price from the Shop listing, and every pin

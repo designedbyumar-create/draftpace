@@ -111,7 +111,7 @@ export const RemotionRoot: React.FC = () => {
       {["travel-companion", "monthly-money-reset", "vehicle-maintenance-companion"].map((product) => (
         <Still key={product} id={`Gallery-Illustrations-${product}`} component={IllustrationGallery} width={1960} height={1560} defaultProps={{ product }} />
       ))}
-      {/* Maple & Main Finds pins (pinterest/maple-main-finds.ts), 2:3, rendered at 2x by scripts/render-finds-pins.mjs. */}
+      {/* Maple & Main Finds pins (pinterest/maple-main-finds.ts), 2:3 at 1000x1500, rendered by scripts/render-finds-pins.mjs. */}
       {FINDS_PINS.map((pin, i) => (
         <Still key={i} id={findsPinId(FINDS_PINS, i)} component={FindsPinStill} width={1000} height={1500} defaultProps={{ pin }} />
       ))}
