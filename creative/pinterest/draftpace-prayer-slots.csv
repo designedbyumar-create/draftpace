@@ -1,4 +1,4 @@
-Pin,Day,Prayer,Prayer time (New York),Pin time (New York),Publish date (UTC, for the CSV)
+Pin,Day,Prayer,Prayer time (New York),Pin time (New York),Publish date UTC (as in the upload CSVs)
 1,2026-10-17,Fajr,05:54,2026-10-17 06:09,2026-10-17T10:09:00
 2,2026-10-17,Fajr,05:54,2026-10-17 06:39,2026-10-17T10:39:00
 3,2026-10-17,Zuhr,12:41,2026-10-17 12:11,2026-10-17T16:11:00
