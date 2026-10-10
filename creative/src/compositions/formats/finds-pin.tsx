@@ -142,14 +142,14 @@ function SplitLayout({ pin, palette }: { pin: PinArt; palette: Palette }) {
   return (
     <>
       <div style={{ position: "absolute", left: 0, right: 0, top: 0, height: 700, background: "var(--post-ink)", overflow: "hidden" }}>
-        <div style={{ position: "absolute", right: 30, bottom: 10 }}><Scene motifs={pin.scene.slice(0, 2)} palette={palette} w={420} ground={1} stage={false} /></div>
+        <div style={{ position: "absolute", right: 30, bottom: 10 }}><Scene motifs={pin.scene.slice(0, 2)} palette={palette} w={370} ground={1} stage={false} /></div>
         <div style={{ position: "absolute", left: 70, right: 70, top: 70 }}>
           <Tag text={pin.cta ? pin.tag : "The problem"} dark />
-          <div style={{ marginTop: 30, maxWidth: 600 }}><Head text={pin.head} color="var(--post-card)" max={74} /></div>
+          <div style={{ marginTop: 30, maxWidth: 520 }}><Head text={pin.head} color="var(--post-card)" max={72} /></div>
         </div>
       </div>
       <div style={{ position: "absolute", left: 70, top: 760, width: 470 }}>
-        <Tag text={pin.cta ? "How it helps" : "The fix"} />
+        {pin.sub && <Tag text={pin.cta ? "How it helps" : "The fix"} />}
         {pin.sub && <div style={{ marginTop: 26 }}><Sub text={pin.sub} /></div>}
       </div>
       {pin.screen && <div style={{ position: "absolute", right: 60, top: 740 }}><Phone src={pin.screen} width={340} rotateY={-14} rotateX={6} /></div>}
