@@ -1,0 +1,200 @@
+{
+  "id": "car-vehicle-maintenance-companion-search-6",
+  "product": "vehicle-maintenance-companion",
+  "guide": "two-cars-one-household-maintenance",
+  "situation": "searchedProblems[5].phrase",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "I have two cars and lose track of which needs what",
+        "source": "searchedProblems[5].phrase"
+      },
+      "emphasis": [
+        "track"
+      ],
+      "promise": {
+        "text": "How to keep track of maintenance on two cars",
+        "source": "guide:two-cars-one-household-maintenance/title"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "Which car needs the oil change?",
+          "source": "guide:two-cars-one-household-maintenance/dek#0"
+        },
+        {
+          "text": "Keep a separate record for each car, label them by plate or name, and check both together once a month.",
+          "source": "guide:two-cars-one-household-maintenance/dek#1"
+        }
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "How to set it up",
+        "source": "guide:two-cars-one-household-maintenance/body[3].heading"
+      },
+      "number": {
+        "text": "1",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Give each car a label.",
+        "source": "guide:two-cars-one-household-maintenance/body[3].items[0]#0"
+      },
+      "body": [
+        {
+          "text": "A plate is the safest, or a name that can't be mistaken, like the work van.",
+          "source": "guide:two-cars-one-household-maintenance/body[3].items[0]#1"
+        },
+        {
+          "text": "Put the year and make beside it, so a stranger could tell them apart.",
+          "source": "guide:two-cars-one-household-maintenance/body[3].items[0]#2"
+        }
+      ],
+      "emphasis": [
+        "label"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "How to set it up",
+        "source": "guide:two-cars-one-household-maintenance/body[3].heading"
+      },
+      "number": {
+        "text": "2",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Start one page, tab or notebook section per car, with the same columns on each: date, odometer, what was done, who did it.",
+        "source": "guide:two-cars-one-household-maintenance/body[3].items[1]#0"
+      },
+      "body": [],
+      "emphasis": [
+        "notebook"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "How to set it up",
+        "source": "guide:two-cars-one-household-maintenance/body[3].heading"
+      },
+      "number": {
+        "text": "3",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Write each car's intervals on its own page, from its own manual.",
+        "source": "guide:two-cars-one-household-maintenance/body[3].items[2]#0"
+      },
+      "body": [],
+      "emphasis": [
+        "intervals"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "How to set it up",
+        "source": "guide:two-cars-one-household-maintenance/body[3].heading"
+      },
+      "number": {
+        "text": "4",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Log the job on the day, and start the line with the car's label.",
+        "source": "guide:two-cars-one-household-maintenance/body[3].items[3]#0"
+      },
+      "body": [
+        {
+          "text": "If you're at the shop with both keys, write it down before you leave the lot.",
+          "source": "guide:two-cars-one-household-maintenance/body[3].items[3]#1"
+        }
+      ],
+      "emphasis": [
+        "label"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "How to set it up",
+        "source": "guide:two-cars-one-household-maintenance/body[3].heading"
+      },
+      "number": {
+        "text": "5",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Once a month, read both odometers on the same day and check each page.",
+        "source": "guide:two-cars-one-household-maintenance/body[3].items[4]#0"
+      },
+      "body": [
+        {
+          "text": "Pick a date you'll remember, such as the first Sunday.",
+          "source": "guide:two-cars-one-household-maintenance/body[3].items[4]#1"
+        }
+      ],
+      "emphasis": [
+        "odometers"
+      ]
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "Vehicle Maintenance Companion",
+        "source": "title"
+      },
+      "line": {
+        "text": "Both sit in the same ranked list, most urgent first, each item saying which vehicle it belongs to.",
+        "source": "searchedProblems[5].answer"
+      },
+      "ui": {
+        "kind": "screen",
+        "src": "screens/vehicle-maintenance-companion-vehicles.png"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "How to keep track of maintenance on two cars",
+        "source": "guide:two-cars-one-household-maintenance/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/two-cars-one-household-maintenance",
+        "source": "guide:two-cars-one-household-maintenance/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"I have two cars and lose track of which needs what\" (searchedProblems[5].phrase), as people search it.",
+    "Steps: 5 of 6 from the guide's numbered steps \"How to set it up\", one per slide, each with the guide's own explanation.",
+    "Help: \"Both sit in the same ranked list, most urgent first, each item saying which vehicle it belongs to.\" (searchedProblems[5].answer), on screens/vehicle-maintenance-companion-vehicles.png (\"Vehicles\")."
+  ]
+}

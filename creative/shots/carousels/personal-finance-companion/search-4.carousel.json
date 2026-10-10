@@ -1,0 +1,153 @@
+{
+  "id": "car-personal-finance-companion-search-4",
+  "product": "personal-finance-companion",
+  "guide": "monthly-bills-list",
+  "situation": "searchedProblems[3].phrase",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "I need a bill tracker that shows what I have paid",
+        "source": "searchedProblems[3].phrase"
+      },
+      "emphasis": [
+        "tracker"
+      ],
+      "promise": {
+        "text": "Monthly bills list: include the bills that are not monthly",
+        "source": "guide:monthly-bills-list/title"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "A six column list, plus the math for turning quarterly and annual bills into a monthly amount: $612 every three months is $204 a month.",
+          "source": "guide:monthly-bills-list/dek#0"
+        }
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Build it in four passes",
+        "source": "guide:monthly-bills-list/body[3].heading"
+      },
+      "number": {
+        "text": "1",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Open three months of statements and pull out every charge that repeated, with its amount.",
+        "source": "guide:monthly-bills-list/body[3].items[0]#0"
+      },
+      "body": [
+        {
+          "text": "Three months catches everything monthly.",
+          "source": "guide:monthly-bills-list/body[3].items[0]#1"
+        },
+        {
+          "text": "It won't catch the rest, which is what the next pass is for.",
+          "source": "guide:monthly-bills-list/body[3].items[0]#2"
+        }
+      ],
+      "emphasis": [
+        "statements"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Build it in four passes",
+        "source": "guide:monthly-bills-list/body[3].heading"
+      },
+      "number": {
+        "text": "2",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Add the bills that don't come monthly.",
+        "source": "guide:monthly-bills-list/body[3].items[1]#0"
+      },
+      "body": [],
+      "emphasis": [
+        "monthly"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Build it in four passes",
+        "source": "guide:monthly-bills-list/body[3].heading"
+      },
+      "number": {
+        "text": "3",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Write a due day against every row: the day of the month for monthly bills, a real date for the others.",
+        "source": "guide:monthly-bills-list/body[3].items[2]#0"
+      },
+      "body": [
+        {
+          "text": "Anything you can't date goes on a short second list titled find the date, because a bill with no date can't be planned around.",
+          "source": "guide:monthly-bills-list/body[3].items[2]#1"
+        }
+      ],
+      "emphasis": [
+        "monthly"
+      ]
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "Personal Finance Companion",
+        "source": "title"
+      },
+      "line": {
+        "text": "Bills you tick paid for the month, with what is left to pay worked out from the ticks.",
+        "source": "searchedProblems[3].answer"
+      },
+      "ui": {
+        "kind": "screen",
+        "src": "screens/personal-finance-companion-bills.png"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "Monthly bills list: include the bills that are not monthly",
+        "source": "guide:monthly-bills-list/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/monthly-bills-list",
+        "source": "guide:monthly-bills-list/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"I need a bill tracker that shows what I have paid\" (searchedProblems[3].phrase), as people search it.",
+    "Steps: 3 of 4 from the guide's numbered steps \"Build it in four passes\", one per slide, each with the guide's own explanation.",
+    "Help: \"Bills you tick paid for the month, with what is left to pay worked out from the ticks.\" (searchedProblems[3].answer), on screens/personal-finance-companion-bills.png (\"Bills\")."
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "id": "car-personal-finance-companion-search-1",
+  "product": "personal-finance-companion",
+  "guide": "organize-your-finances-from-scratch",
+  "situation": "searchedProblems[0].phrase",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "My finances are scattered across too many apps",
+        "source": "searchedProblems[0].phrase"
+      },
+      "emphasis": [
+        "scattered"
+      ],
+      "promise": {
+        "text": "How to organize your finances when everything is scattered",
+        "source": "guide:organize-your-finances-from-scratch/title"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "Bank apps, statements, a notes file and a lot in your head: a ten minute starting page you can fill in from memory, with the gaps marked.",
+          "source": "guide:organize-your-finances-from-scratch/dek#0"
+        }
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Minutes 0 to 2",
+        "source": "guide:organize-your-finances-from-scratch/body[3].steps[0].when"
+      },
+      "head": {
+        "text": "List where your money information lives: bank apps, a statements folder, notes, a spreadsheet, a drawer, your head.",
+        "source": "guide:organize-your-finances-from-scratch/body[3].steps[0].what#0"
+      },
+      "body": [
+        {
+          "text": "Don't open any of them yet.",
+          "source": "guide:organize-your-finances-from-scratch/body[3].steps[0].what#1"
+        }
+      ],
+      "emphasis": [
+        "information"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Minutes 2 to 6",
+        "source": "guide:organize-your-finances-from-scratch/body[3].steps[1].when"
+      },
+      "head": {
+        "text": "Fill in the six areas from memory.",
+        "source": "guide:organize-your-finances-from-scratch/body[3].steps[1].what#0"
+      },
+      "body": [
+        {
+          "text": "Round numbers are fine.",
+          "source": "guide:organize-your-finances-from-scratch/body[3].steps[1].what#1"
+        },
+        {
+          "text": "Write a question mark next to anything you'd be guessing.",
+          "source": "guide:organize-your-finances-from-scratch/body[3].steps[1].what#2"
+        }
+      ],
+      "emphasis": [
+        "memory"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Minute 7",
+        "source": "guide:organize-your-finances-from-scratch/body[3].steps[2].when"
+      },
+      "head": {
+        "text": "Circle the number you most want: either what's free to spend, or when a debt ends.",
+        "source": "guide:organize-your-finances-from-scratch/body[3].steps[2].what#0"
+      },
+      "body": [
+        {
+          "text": "That decides which question mark you chase first.",
+          "source": "guide:organize-your-finances-from-scratch/body[3].steps[2].what#1"
+        }
+      ],
+      "emphasis": [
+        "Circle"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Minutes 7 to 9",
+        "source": "guide:organize-your-finances-from-scratch/body[3].steps[3].when"
+      },
+      "head": {
+        "text": "Close one gap.",
+        "source": "guide:organize-your-finances-from-scratch/body[3].steps[3].what#0"
+      },
+      "body": [
+        {
+          "text": "A good first one is a bill with no due date, since a missed date is what costs a fee.",
+          "source": "guide:organize-your-finances-from-scratch/body[3].steps[3].what#1"
+        }
+      ],
+      "emphasis": [
+        "Close"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Minute 10",
+        "source": "guide:organize-your-finances-from-scratch/body[3].steps[4].when"
+      },
+      "head": {
+        "text": "Pick a day to look at the page again: weekly if you're catching up, monthly once things are steady.",
+        "source": "guide:organize-your-finances-from-scratch/body[3].steps[4].what#0"
+      },
+      "body": [
+        {
+          "text": "Put it in your calendar, with the page's location.",
+          "source": "guide:organize-your-finances-from-scratch/body[3].steps[4].what#1"
+        }
+      ],
+      "emphasis": [
+        "catching"
+      ]
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "Personal Finance Companion",
+        "source": "title"
+      },
+      "line": {
+        "text": "One place holding accounts, income, bills, subscriptions, transactions, debt and savings, with a single figure for what is actually available.",
+        "source": "searchedProblems[0].answer"
+      },
+      "ui": {
+        "kind": "screen",
+        "src": "screens/personal-finance-companion-records.png"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "How to organize your finances when everything is scattered",
+        "source": "guide:organize-your-finances-from-scratch/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/organize-your-finances-from-scratch",
+        "source": "guide:organize-your-finances-from-scratch/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"My finances are scattered across too many apps\" (searchedProblems[0].phrase), as people search it.",
+    "Steps: 5 of 5 from the guide's timeline \"The ten minutes, in order\", one per slide, each with the guide's own explanation.",
+    "Help: \"One place holding accounts, income, bills, subscriptions, transactions, debt and savings, with a single figure for what is actually available.\" (searchedProblems[0].answer), on screens/personal-finance-companion-records.png (\"Records\")."
+  ]
+}

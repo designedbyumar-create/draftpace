@@ -1,0 +1,209 @@
+{
+  "id": "car-alongside-search-4",
+  "product": "alongside",
+  "guide": "executive-dysfunction-is-not-procrastination",
+  "situation": "searchedProblems[3].phrase",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "This isn't procrastination and to-do lists make it worse",
+        "source": "searchedProblems[3].phrase"
+      },
+      "emphasis": [
+        "procrastination"
+      ],
+      "promise": {
+        "text": "Executive dysfunction vs procrastination: the difference",
+        "source": "guide:executive-dysfunction-is-not-procrastination/title"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "They can look identical from outside, and they can overlap.",
+          "source": "guide:executive-dysfunction-is-not-procrastination/dek#0"
+        },
+        {
+          "text": "How to tell which one you're in today, and what lowers the cost of starting.",
+          "source": "guide:executive-dysfunction-is-not-procrastination/dek#1"
+        }
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Five questions to ask yourself about today",
+        "source": "guide:executive-dysfunction-is-not-procrastination/body[4].heading"
+      },
+      "number": {
+        "text": "1",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Is there something you'd rather be doing?",
+        "source": "guide:executive-dysfunction-is-not-procrastination/body[4].items[0]#0"
+      },
+      "body": [
+        {
+          "text": "If yes, you're probably choosing.",
+          "source": "guide:executive-dysfunction-is-not-procrastination/body[4].items[0]#1"
+        },
+        {
+          "text": "If you're doing nothing, or something you don't enjoy, starting itself may be the wall.",
+          "source": "guide:executive-dysfunction-is-not-procrastination/body[4].items[0]#2"
+        }
+      ],
+      "emphasis": [
+        "rather"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Five questions to ask yourself about today",
+        "source": "guide:executive-dysfunction-is-not-procrastination/body[4].heading"
+      },
+      "number": {
+        "text": "2",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Could you say the first physical action out loud, such as open the form or find the account number?",
+        "source": "guide:executive-dysfunction-is-not-procrastination/body[4].items[1]#0"
+      },
+      "body": [
+        {
+          "text": "If you can't, the task hasn't been broken down yet.",
+          "source": "guide:executive-dysfunction-is-not-procrastination/body[4].items[1]#1"
+        }
+      ],
+      "emphasis": [
+        "physical"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Five questions to ask yourself about today",
+        "source": "guide:executive-dysfunction-is-not-procrastination/body[4].heading"
+      },
+      "number": {
+        "text": "3",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Would a deadline in an hour get you moving?",
+        "source": "guide:executive-dysfunction-is-not-procrastination/body[4].items[2]#0"
+      },
+      "body": [
+        {
+          "text": "If it would, delay is more likely.",
+          "source": "guide:executive-dysfunction-is-not-procrastination/body[4].items[2]#1"
+        },
+        {
+          "text": "If you'd sit there looking at it anyway, more pressure probably isn't the missing piece.",
+          "source": "guide:executive-dysfunction-is-not-procrastination/body[4].items[2]#2"
+        }
+      ],
+      "emphasis": [
+        "deadline"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Five questions to ask yourself about today",
+        "source": "guide:executive-dysfunction-is-not-procrastination/body[4].heading"
+      },
+      "number": {
+        "text": "4",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Is it one task, or a pile?",
+        "source": "guide:executive-dysfunction-is-not-procrastination/body[4].items[3]#0"
+      },
+      "body": [],
+      "emphasis": [
+        "pile"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Five questions to ask yourself about today",
+        "source": "guide:executive-dysfunction-is-not-procrastination/body[4].heading"
+      },
+      "number": {
+        "text": "5",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Are you also short on sleep, ill, grieving or flat?",
+        "source": "guide:executive-dysfunction-is-not-procrastination/body[4].items[4]#0"
+      },
+      "body": [
+        {
+          "text": "Those change how much capacity you have on any given day, and a smaller first step is a fair response to all of them.",
+          "source": "guide:executive-dysfunction-is-not-procrastination/body[4].items[4]#1"
+        }
+      ],
+      "emphasis": [
+        "grieving"
+      ]
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "ADHD Life Companion",
+        "source": "title"
+      },
+      "line": {
+        "text": "One thing at a time, chosen for you from what you already said mattered, and a plain \"nothing needs you\" on the days that is true.",
+        "source": "searchedProblems[3].answer"
+      },
+      "ui": {
+        "kind": "screen",
+        "src": "screens/alongside-workspace.png"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "Executive dysfunction vs procrastination: the difference",
+        "source": "guide:executive-dysfunction-is-not-procrastination/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/executive-dysfunction-is-not-procrastination",
+        "source": "guide:executive-dysfunction-is-not-procrastination/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"This isn't procrastination and to-do lists make it worse\" (searchedProblems[3].phrase), as people search it.",
+    "Steps: 5 of 5 from the guide's numbered steps \"Five questions to ask yourself about today\", one per slide, each with the guide's own explanation.",
+    "Help: \"One thing at a time, chosen for you from what you already said mattered, and a plain \"nothing needs you\" on the days that is true.\" (searchedProblems[3].answer), on screens/alongside-workspace.png (\"Book the six-month dental check\")."
+  ]
+}

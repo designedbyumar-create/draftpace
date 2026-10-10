@@ -1,0 +1,197 @@
+{
+  "id": "car-personal-life-affairs-companion-search-4",
+  "product": "personal-life-affairs-companion",
+  "guide": "named-executor-what-you-agreed-to",
+  "situation": "searchedProblems[3].phrase",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "I have been named executor and do not know what that involves",
+        "source": "searchedProblems[3].phrase"
+      },
+      "emphasis": [
+        "executor"
+      ],
+      "promise": {
+        "text": "Named executor of a will: what you agreed to (US)",
+        "source": "guide:named-executor-what-you-agreed-to/title"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "What an executor does, how long it takes, where you can be personally liable, and how to say no if you cannot take the role on.",
+          "source": "guide:named-executor-what-you-agreed-to/dek#0"
+        }
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Find",
+        "source": "guide:named-executor-what-you-agreed-to/body[2].steps[0].when"
+      },
+      "head": {
+        "text": "Locate and secure everything: the house, accounts, pensions, policies, and anything else of value.",
+        "source": "guide:named-executor-what-you-agreed-to/body[2].steps[0].what#0"
+      },
+      "body": [],
+      "emphasis": [
+        "pensions"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Value",
+        "source": "guide:named-executor-what-you-agreed-to/body[2].steps[1].when"
+      },
+      "head": {
+        "text": "Value the estate as of the date of death, which often needs a professional valuation for property or a business.",
+        "source": "guide:named-executor-what-you-agreed-to/body[2].steps[1].what#0"
+      },
+      "body": [],
+      "emphasis": [
+        "professional"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Apply",
+        "source": "guide:named-executor-what-you-agreed-to/body[2].steps[2].when"
+      },
+      "head": {
+        "text": "Petition the probate court in the county where they lived for authority to act.",
+        "source": "guide:named-executor-what-you-agreed-to/body[2].steps[2].what#0"
+      },
+      "body": [
+        {
+          "text": "What it issues is usually called letters testamentary, the document banks ask to see.",
+          "source": "guide:named-executor-what-you-agreed-to/body[2].steps[2].what#1"
+        }
+      ],
+      "emphasis": [
+        "authority"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Settle",
+        "source": "guide:named-executor-what-you-agreed-to/body[2].steps[3].when"
+      },
+      "head": {
+        "text": "Pay debts and taxes before anyone inherits anything, including the estate's own income tax return if it earns income.",
+        "source": "guide:named-executor-what-you-agreed-to/body[2].steps[3].what#0"
+      },
+      "body": [],
+      "emphasis": [
+        "including"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Distribute",
+        "source": "guide:named-executor-what-you-agreed-to/body[2].steps[4].when"
+      },
+      "head": {
+        "text": "Distribute what remains according to the will, once the creditor claim window has closed.",
+        "source": "guide:named-executor-what-you-agreed-to/body[2].steps[4].what#0"
+      },
+      "body": [],
+      "emphasis": [
+        "Distribute"
+      ]
+    },
+    {
+      "kind": "checklist",
+      "eyebrow": {
+        "text": "What to ask for immediately if you are acting",
+        "source": "guide:named-executor-what-you-agreed-to/body[9].heading"
+      },
+      "items": [
+        {
+          "text": "Certified copies of the death certificate, more than you think you need.",
+          "source": "guide:named-executor-what-you-agreed-to/body[9].items[0]#0"
+        },
+        {
+          "text": "The original will, not a copy.",
+          "source": "guide:named-executor-what-you-agreed-to/body[9].items[1]#0"
+        },
+        {
+          "text": "Twelve months of bank statements, the fastest way to find accounts and policies nobody mentioned.",
+          "source": "guide:named-executor-what-you-agreed-to/body[9].items[2]#0"
+        },
+        {
+          "text": "The most recent federal tax return, which lists income sources you may not know about.",
+          "source": "guide:named-executor-what-you-agreed-to/body[9].items[3]#0"
+        },
+        {
+          "text": "Details of any funeral plan already paid for.",
+          "source": "guide:named-executor-what-you-agreed-to/body[9].items[4]#0"
+        },
+        {
+          "text": "Contact details for their accountant, attorney, or financial adviser.",
+          "source": "guide:named-executor-what-you-agreed-to/body[9].items[5]#0"
+        }
+      ],
+      "ticks": true
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "Personal Life Affairs Companion",
+        "source": "title"
+      },
+      "line": {
+        "text": "It records where things stand on proving that authority, so nobody discovers at a bank counter that being named is not the same as being able to act.",
+        "source": "searchedProblems[3].answer"
+      },
+      "ui": {
+        "kind": "screen",
+        "src": "screens/personal-life-affairs-companion-affairs.png"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "Named executor of a will: what you agreed to (US)",
+        "source": "guide:named-executor-what-you-agreed-to/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/named-executor-what-you-agreed-to",
+        "source": "guide:named-executor-what-you-agreed-to/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"I have been named executor and do not know what that involves\" (searchedProblems[3].phrase), as people search it.",
+    "Steps: 5 of 6 from the guide's timeline \"What the job involves, in order\", one per slide, each with the guide's own explanation.",
+    "Checklist: 6 items from \"What to ask for immediately if you are acting\".",
+    "Help: \"It records where things stand on proving that authority, so nobody discovers at a bank counter that being named is not the same as being able to act.\" (searchedProblems[3].answer), on screens/personal-life-affairs-companion-affairs.png (\"What you have established so far.\")."
+  ]
+}

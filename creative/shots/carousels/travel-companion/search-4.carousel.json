@@ -1,0 +1,212 @@
+{
+  "id": "car-travel-companion-search-4",
+  "product": "travel-companion",
+  "guide": "hotel-cannot-find-your-reservation",
+  "situation": "searchedProblems[3].phrase",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "The hotel cannot find my reservation",
+        "source": "searchedProblems[3].phrase"
+      },
+      "emphasis": [
+        "reservation"
+      ],
+      "promise": {
+        "text": "Hotel can't find your reservation: what to say",
+        "source": "guide:hotel-cannot-find-your-reservation/title"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "The desk says there's no booking.",
+          "source": "guide:hotel-cannot-find-your-reservation/dek#0"
+        },
+        {
+          "text": "Which references and names to try, what to ask for tonight, and the two sentences to open with at the counter.",
+          "source": "guide:hotel-cannot-find-your-reservation/dek#1"
+        }
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Ways to ask them to search, in order",
+        "source": "guide:hotel-cannot-find-your-reservation/body[5].heading"
+      },
+      "number": {
+        "text": "1",
+        "source": "micro"
+      },
+      "head": {
+        "text": "The hotel's own confirmation number.",
+        "source": "guide:hotel-cannot-find-your-reservation/body[5].items[0]#0"
+      },
+      "body": [],
+      "emphasis": [
+        "confirmation"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Ways to ask them to search, in order",
+        "source": "guide:hotel-cannot-find-your-reservation/body[5].heading"
+      },
+      "number": {
+        "text": "2",
+        "source": "micro"
+      },
+      "head": {
+        "text": "The booking site's reference, which is usually a different format.",
+        "source": "guide:hotel-cannot-find-your-reservation/body[5].items[1]#0"
+      },
+      "body": [],
+      "emphasis": [
+        "reference"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Ways to ask them to search, in order",
+        "source": "guide:hotel-cannot-find-your-reservation/body[5].heading"
+      },
+      "number": {
+        "text": "3",
+        "source": "micro"
+      },
+      "head": {
+        "text": "The surname of whoever paid or booked, not whoever is staying.",
+        "source": "guide:hotel-cannot-find-your-reservation/body[5].items[2]#0"
+      },
+      "body": [],
+      "emphasis": [
+        "surname"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Ways to ask them to search, in order",
+        "source": "guide:hotel-cannot-find-your-reservation/body[5].heading"
+      },
+      "number": {
+        "text": "4",
+        "source": "micro"
+      },
+      "head": {
+        "text": "The last four digits of the card.",
+        "source": "guide:hotel-cannot-find-your-reservation/body[5].items[3]#0"
+      },
+      "body": [],
+      "emphasis": [
+        "digits"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Ways to ask them to search, in order",
+        "source": "guide:hotel-cannot-find-your-reservation/body[5].heading"
+      },
+      "number": {
+        "text": "5",
+        "source": "micro"
+      },
+      "head": {
+        "text": "The dates alone, which often surfaces a booking with a misspelled name.",
+        "source": "guide:hotel-cannot-find-your-reservation/body[5].items[4]#0"
+      },
+      "body": [],
+      "emphasis": [
+        "misspelled"
+      ]
+    },
+    {
+      "kind": "checklist",
+      "eyebrow": {
+        "text": "Have these on screen before you speak",
+        "source": "guide:hotel-cannot-find-your-reservation/body[3].heading"
+      },
+      "items": [
+        {
+          "text": "The hotel's confirmation number, and separately the booking site's reference if you used one.",
+          "source": "guide:hotel-cannot-find-your-reservation/body[3].items[0]#0"
+        },
+        {
+          "text": "The exact name the booking is under, which may not be yours.",
+          "source": "guide:hotel-cannot-find-your-reservation/body[3].items[1]#0"
+        },
+        {
+          "text": "The dates, and the card used to pay.",
+          "source": "guide:hotel-cannot-find-your-reservation/body[3].items[2]#0"
+        },
+        {
+          "text": "The confirmation email itself.",
+          "source": "guide:hotel-cannot-find-your-reservation/body[3].items[3]#0"
+        },
+        {
+          "text": "A second copy: a printout, or a screenshot in case there's no signal.",
+          "source": "guide:hotel-cannot-find-your-reservation/body[3].items[4]#0"
+        }
+      ],
+      "ticks": true
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "Travel Companion",
+        "source": "title"
+      },
+      "line": {
+        "text": "The provider and the confirmation reference are readable in three seconds, and there is an authored walkthrough for the conversation that follows.",
+        "source": "searchedProblems[3].answer"
+      },
+      "ui": {
+        "kind": "screen",
+        "src": "screens/travel-companion-workspace.png"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "Hotel can't find your reservation: what to say",
+        "source": "guide:hotel-cannot-find-your-reservation/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/hotel-cannot-find-your-reservation",
+        "source": "guide:hotel-cannot-find-your-reservation/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"The hotel cannot find my reservation\" (searchedProblems[3].phrase), as people search it.",
+    "Steps: 5 of 5 from the guide's numbered steps \"Ways to ask them to search, in order\", one per slide, each with the guide's own explanation.",
+    "Checklist: 5 items from \"Have these on screen before you speak\".",
+    "Help: \"The provider and the confirmation reference are readable in three seconds, and there is an authored walkthrough for the conversation that follows.\" (searchedProblems[3].answer), on screens/travel-companion-workspace.png (\"Today\")."
+  ]
+}

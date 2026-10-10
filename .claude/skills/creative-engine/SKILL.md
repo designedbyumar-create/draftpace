@@ -186,6 +186,45 @@ Guards (`film-guards.test.ts`):
   purchase answers, no price ending;
 - one product's films never share a shape at or above 0.7.
 
+## Situation carousels: Instagram and Facebook, five per product
+
+`director/carousel.ts` plans swipeable 4:5 carousels the same way the
+films are planned: chosen real lines, each with its source, nothing written.
+Five per product, each about one moment the listing records people
+searching for (`searchedProblems[i].phrase`), taught from the guide the
+listing links it to; a product with too few teachable ones falls back to
+`problemsSolved` moments that a guide covers.
+
+```
+1  cover      the moment in the person's words, dark, with the guide's title beneath
+2  In short   the guide's summary (its dek)
+3+ steps      one step per slide: the guide's first sentence as the heading, its own explanation under it
+              (numbered steps as the guide numbers them, or timeline markers); then one checklist slide
+n-1 help      "How it helps": the listing's own answer to that moment, on the product's real screen
+n  close      "The full guide", its title and address, "Free to read. Link in bio.", "Save this for later."
+```
+
+```bash
+node scripts/carousels.mjs              # plan -> shots/carousels/<product>/<moment>.carousel.json + src/carousels.generated.ts
+node scripts/render-images.mjs car-travel-companion-search-2    # the slides -> out/images/Carousel-*.png
+npm run carousels                       # (repo root) every carousel as JPEGs + Caption.txt, into Desktop/Draftpace Videos/8 Carousels...
+```
+
+Rules the planner keeps, each guarded in `tests/carousel-guards.test.ts`:
+- every word resolves to its source, or is one of `CAROUSEL_MICROCOPY`;
+- product words are only its name and its own answer to the moment, so
+  nothing sells (no price, no purchase answers);
+- a step's explanation stops before a sentence that was a link in the guide
+  or points at another part of it ("see the table below");
+- lists of what goes wrong are left out: only checklists and lists whose
+  heading says what to have, bring or do;
+- the cover's and steps' accent word is the one shared with the guide's
+  title, else the rarest across every product's words, never an ordinary
+  one ("something", "actually").
+
+The format is `src/compositions/formats/situation-carousel.tsx` (one
+`<Still>` per slide, `Carousel-<id>-<nn>`).
+
 ## Guide-driven Shorts: teach first, then the product
 
 `slate.json`'s `guides` list names a guide and a placement (today: each

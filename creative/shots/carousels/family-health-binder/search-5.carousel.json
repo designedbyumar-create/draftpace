@@ -1,0 +1,205 @@
+{
+  "id": "car-family-health-binder-search-5",
+  "product": "family-health-binder",
+  "guide": "what-goes-in-a-family-health-binder",
+  "situation": "searchedProblems[4].phrase",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "Where do I keep everyone's allergies and reactions",
+        "source": "searchedProblems[4].phrase"
+      },
+      "emphasis": [
+        "reactions"
+      ],
+      "promise": {
+        "text": "What to put in a family medical binder",
+        "source": "guide:what-goes-in-a-family-health-binder/title"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "Eight things to write down for each person, a filled example page, and what belongs in a paper folder instead.",
+          "source": "guide:what-goes-in-a-family-health-binder/dek#0"
+        },
+        {
+          "text": "One page per person.",
+          "source": "guide:what-goes-in-a-family-health-binder/dek#1"
+        }
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Filling in the answers you don't have",
+        "source": "guide:what-goes-in-a-family-health-binder/body[3].heading"
+      },
+      "number": {
+        "text": "1",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Start with what's in your wallet: the insurance card gives you the insurer, the member ID and the group number.",
+        "source": "guide:what-goes-in-a-family-health-binder/body[3].items[0]#0"
+      },
+      "body": [
+        {
+          "text": "Copy it exactly, letters and zeros included.",
+          "source": "guide:what-goes-in-a-family-health-binder/body[3].items[0]#1"
+        }
+      ],
+      "emphasis": [
+        "insurance"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Filling in the answers you don't have",
+        "source": "guide:what-goes-in-a-family-health-binder/body[3].heading"
+      },
+      "number": {
+        "text": "2",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Pull the medicine names from the labels, not from memory.",
+        "source": "guide:what-goes-in-a-family-health-binder/body[3].items[1]#0"
+      },
+      "body": [
+        {
+          "text": "Write the name, the dose as printed, and how often.",
+          "source": "guide:what-goes-in-a-family-health-binder/body[3].items[1]#1"
+        }
+      ],
+      "emphasis": [
+        "medicine"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Filling in the answers you don't have",
+        "source": "guide:what-goes-in-a-family-health-binder/body[3].heading"
+      },
+      "number": {
+        "text": "3",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Ask the doctor's office and the pharmacy for their phone numbers if you don't have them saved, and write down which one is which.",
+        "source": "guide:what-goes-in-a-family-health-binder/body[3].items[2]#0"
+      },
+      "body": [],
+      "emphasis": [
+        "pharmacy"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Filling in the answers you don't have",
+        "source": "guide:what-goes-in-a-family-health-binder/body[3].heading"
+      },
+      "number": {
+        "text": "4",
+        "source": "micro"
+      },
+      "head": {
+        "text": "For vaccines, ask the clinic that gave them for a copy of the record, then type the names and dates in as written.",
+        "source": "guide:what-goes-in-a-family-health-binder/body[3].items[3]#0"
+      },
+      "body": [
+        {
+          "text": "If a clinic is gone, the CDC says it doesn't hold vaccination records itself, and points you to your state's immunization information system, your provider or your state health department.",
+          "source": "guide:what-goes-in-a-family-health-binder/body[3].items[3]#1"
+        }
+      ],
+      "emphasis": [
+        "vaccines"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Filling in the answers you don't have",
+        "source": "guide:what-goes-in-a-family-health-binder/body[3].heading"
+      },
+      "number": {
+        "text": "5",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Add allergies last, and add what happens as well as what they're allergic to.",
+        "source": "guide:what-goes-in-a-family-health-binder/body[3].items[4]#0"
+      },
+      "body": [
+        {
+          "text": "\"Peanuts\" is a fact.",
+          "source": "guide:what-goes-in-a-family-health-binder/body[3].items[4]#1"
+        },
+        {
+          "text": "\"Peanuts (hives)\" is something a sitter can use.",
+          "source": "guide:what-goes-in-a-family-health-binder/body[3].items[4]#2"
+        }
+      ],
+      "emphasis": [
+        "allergies"
+      ]
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "Family Health Binder",
+        "source": "title"
+      },
+      "line": {
+        "text": "Per person, with what happens recorded alongside, in one place you can reach without a clinic portal login.",
+        "source": "searchedProblems[4].answer"
+      },
+      "ui": {
+        "kind": "screen",
+        "src": "screens/family-health-binder-members.png"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "What to put in a family medical binder",
+        "source": "guide:what-goes-in-a-family-health-binder/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/what-goes-in-a-family-health-binder",
+        "source": "guide:what-goes-in-a-family-health-binder/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"Where do I keep everyone's allergies and reactions\" (searchedProblems[4].phrase), as people search it.",
+    "Steps: 5 of 6 from the guide's numbered steps \"Filling in the answers you don't have\", one per slide, each with the guide's own explanation.",
+    "Help: \"Per person, with what happens recorded alongside, in one place you can reach without a clinic portal login.\" (searchedProblems[4].answer), on screens/family-health-binder-members.png (\"Family\")."
+  ]
+}

@@ -50,8 +50,14 @@ export function guideBySlug(slug: string): Guide {
   return g;
 }
 
+/** Whether the sentence a guide source names linked somewhere in the guide: out of the guide, it points at nothing. */
+export function guideSourceLinks(source: string): boolean {
+  const raw = resolveGuideSource(source, true);
+  return !!raw && /\]\(/.test(raw);
+}
+
 /** What a guide source says, or undefined. The guards use this too, so they can never disagree with the films. */
-export function resolveGuideSource(source: string): string | undefined {
+export function resolveGuideSource(source: string, raw = false): string | undefined {
   const m = source.match(/^guide:([a-z0-9-]+)\/(.+?)(?:#(\d+))?$/);
   if (!m) return undefined;
   const g = GUIDES.find((x) => x.slug === m[1]);
@@ -65,7 +71,7 @@ export function resolveGuideSource(source: string): string | undefined {
     if (k[2] !== undefined) v = Array.isArray(v) ? v[Number(k[2])] : undefined;
   }
   if (typeof v !== "string") return undefined;
-  const text = plain(v);
+  const text = raw ? v : plain(v);
   return m[3] === undefined ? text : sentences(text)[Number(m[3])];
 }
 

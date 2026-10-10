@@ -1,0 +1,223 @@
+{
+  "id": "car-personal-finance-companion-search-3",
+  "product": "personal-finance-companion",
+  "guide": "debt-snowball-vs-avalanche",
+  "situation": "searchedProblems[2].phrase",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "Debt snowball or avalanche, which is better for me",
+        "source": "searchedProblems[2].phrase"
+      },
+      "emphasis": [
+        "avalanche"
+      ],
+      "promise": {
+        "text": "Debt snowball vs avalanche: which costs less, which sticks",
+        "source": "guide:debt-snowball-vs-avalanche/title"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "A three-debt example with interest totals, why the two orders often finish close, and how to pick the one you will keep.",
+          "source": "guide:debt-snowball-vs-avalanche/dek#0"
+        }
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "How to run either method",
+        "source": "guide:debt-snowball-vs-avalanche/body[12].heading"
+      },
+      "number": {
+        "text": "1",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Pay the minimum on every debt each month, on time.",
+        "source": "guide:debt-snowball-vs-avalanche/body[12].items[0]#0"
+      },
+      "body": [
+        {
+          "text": "A missed minimum can cost a fee and, at 30 days late, a mark on your report.",
+          "source": "guide:debt-snowball-vs-avalanche/body[12].items[0]#1"
+        }
+      ],
+      "emphasis": [
+        "minimum"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "How to run either method",
+        "source": "guide:debt-snowball-vs-avalanche/body[12].heading"
+      },
+      "number": {
+        "text": "2",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Decide how much extra you can add each month, and keep it steady.",
+        "source": "guide:debt-snowball-vs-avalanche/body[12].items[1]#0"
+      },
+      "body": [],
+      "emphasis": [
+        "steady"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "How to run either method",
+        "source": "guide:debt-snowball-vs-avalanche/body[12].heading"
+      },
+      "number": {
+        "text": "3",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Point the extra at the target debt: the smallest balance for snowball, the highest rate for avalanche.",
+        "source": "guide:debt-snowball-vs-avalanche/body[12].items[2]#0"
+      },
+      "body": [],
+      "emphasis": [
+        "avalanche"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "How to run either method",
+        "source": "guide:debt-snowball-vs-avalanche/body[12].heading"
+      },
+      "number": {
+        "text": "4",
+        "source": "micro"
+      },
+      "head": {
+        "text": "When that debt is gone, move its whole payment, minimum and extra, to the next target.",
+        "source": "guide:debt-snowball-vs-avalanche/body[12].items[3]#0"
+      },
+      "body": [
+        {
+          "text": "That rolling is what makes both methods speed up.",
+          "source": "guide:debt-snowball-vs-avalanche/body[12].items[3]#1"
+        }
+      ],
+      "emphasis": [
+        "payment"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "How to run either method",
+        "source": "guide:debt-snowball-vs-avalanche/body[12].heading"
+      },
+      "number": {
+        "text": "5",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Every three months, update the balances and check that no rate has changed.",
+        "source": "guide:debt-snowball-vs-avalanche/body[12].items[4]#0"
+      },
+      "body": [
+        {
+          "text": "A balance transfer or a lender's rate change can reorder the list.",
+          "source": "guide:debt-snowball-vs-avalanche/body[12].items[4]#1"
+        }
+      ],
+      "emphasis": [
+        "balances"
+      ]
+    },
+    {
+      "kind": "checklist",
+      "eyebrow": {
+        "text": "Write these down for each debt first",
+        "source": "guide:debt-snowball-vs-avalanche/body[11].heading"
+      },
+      "items": [
+        {
+          "text": "The balance you owe today.",
+          "source": "guide:debt-snowball-vs-avalanche/body[11].items[0]#0"
+        },
+        {
+          "text": "The interest rate.",
+          "source": "guide:debt-snowball-vs-avalanche/body[11].items[1]#0"
+        },
+        {
+          "text": "The minimum payment.",
+          "source": "guide:debt-snowball-vs-avalanche/body[11].items[2]#0"
+        },
+        {
+          "text": "The date the payment is due each month.",
+          "source": "guide:debt-snowball-vs-avalanche/body[11].items[3]#0"
+        },
+        {
+          "text": "Whether the rate is promotional and the date it ends.",
+          "source": "guide:debt-snowball-vs-avalanche/body[11].items[4]#0"
+        }
+      ],
+      "ticks": true
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "Personal Finance Companion",
+        "source": "title"
+      },
+      "line": {
+        "text": "The payoff plan runs both on your own balances, rates and minimums and says which costs less in interest, with the month you would be debt-free either way.",
+        "source": "searchedProblems[2].answer"
+      },
+      "ui": {
+        "kind": "screen",
+        "src": "screens/personal-finance-companion-debt.png"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "Debt snowball vs avalanche: which costs less, which sticks",
+        "source": "guide:debt-snowball-vs-avalanche/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/debt-snowball-vs-avalanche",
+        "source": "guide:debt-snowball-vs-avalanche/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"Debt snowball or avalanche, which is better for me\" (searchedProblems[2].phrase), as people search it.",
+    "Steps: 5 of 5 from the guide's numbered steps \"How to run either method\", one per slide, each with the guide's own explanation.",
+    "Checklist: 5 items from \"Write these down for each debt first\".",
+    "Help: \"The payoff plan runs both on your own balances, rates and minimums and says which costs less in interest, with the month you would be debt-free either way.\" (searchedProblems[2].answer), on screens/personal-finance-companion-debt.png (\"Debt\")."
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "id": "car-monthly-money-reset-search-3",
+  "product": "monthly-money-reset",
+  "guide": "how-much-of-your-money-is-actually-safe-to-spend",
+  "situation": "searchedProblems[2].phrase",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "How much of my money is actually safe to spend",
+        "source": "searchedProblems[2].phrase"
+      },
+      "emphasis": [
+        "spend"
+      ],
+      "promise": {
+        "text": "How much money is safe to spend after your bills?",
+        "source": "guide:how-much-of-your-money-is-actually-safe-to-spend/title"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "Your balance is not what you can spend.",
+          "source": "guide:how-much-of-your-money-is-actually-safe-to-spend/dek#0"
+        },
+        {
+          "text": "Take off the bills still due and the money you are holding back, in five steps, and one number is left.",
+          "source": "guide:how-much-of-your-money-is-actually-safe-to-spend/dek#1"
+        }
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Work out your own number in five steps",
+        "source": "guide:how-much-of-your-money-is-actually-safe-to-spend/body[3].heading"
+      },
+      "number": {
+        "text": "1",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Open the account you pay bills from and write down the available balance, not the current one.",
+        "source": "guide:how-much-of-your-money-is-actually-safe-to-spend/body[3].items[0]#0"
+      },
+      "body": [],
+      "emphasis": [
+        "available"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Work out your own number in five steps",
+        "source": "guide:how-much-of-your-money-is-actually-safe-to-spend/body[3].heading"
+      },
+      "number": {
+        "text": "2",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Write down your next payday, then list every bill, subscription and card payment that leaves before it.",
+        "source": "guide:how-much-of-your-money-is-actually-safe-to-spend/body[3].items[1]#0"
+      },
+      "body": [],
+      "emphasis": [
+        "subscription"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Work out your own number in five steps",
+        "source": "guide:how-much-of-your-money-is-actually-safe-to-spend/body[3].heading"
+      },
+      "number": {
+        "text": "3",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Subtract them.",
+        "source": "guide:how-much-of-your-money-is-actually-safe-to-spend/body[3].items[2]#0"
+      },
+      "body": [
+        {
+          "text": "If you pay a credit card in full, that card's balance is a bill too.",
+          "source": "guide:how-much-of-your-money-is-actually-safe-to-spend/body[3].items[2]#1"
+        },
+        {
+          "text": "If you carry a balance, subtract the payment you'll actually make.",
+          "source": "guide:how-much-of-your-money-is-actually-safe-to-spend/body[3].items[2]#2"
+        }
+      ],
+      "emphasis": [
+        "Subtract"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Work out your own number in five steps",
+        "source": "guide:how-much-of-your-money-is-actually-safe-to-spend/body[3].heading"
+      },
+      "number": {
+        "text": "4",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Subtract what you're holding back: tax money, a deposit, the cushion you don't want to touch.",
+        "source": "guide:how-much-of-your-money-is-actually-safe-to-spend/body[3].items[3]#0"
+      },
+      "body": [
+        {
+          "text": "Then subtract anything you've committed to but not paid, like a booking or a repair.",
+          "source": "guide:how-much-of-your-money-is-actually-safe-to-spend/body[3].items[3]#1"
+        }
+      ],
+      "emphasis": [
+        "Subtract"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Work out your own number in five steps",
+        "source": "guide:how-much-of-your-money-is-actually-safe-to-spend/body[3].heading"
+      },
+      "number": {
+        "text": "5",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Write the result at the top of a note and date it.",
+        "source": "guide:how-much-of-your-money-is-actually-safe-to-spend/body[3].items[4]#0"
+      },
+      "body": [
+        {
+          "text": "If you want a weekly figure, divide by the weeks left.",
+          "source": "guide:how-much-of-your-money-is-actually-safe-to-spend/body[3].items[4]#1"
+        },
+        {
+          "text": "Next time you're about to spend, look at that number first, then look at the balance.",
+          "source": "guide:how-much-of-your-money-is-actually-safe-to-spend/body[3].items[4]#2"
+        }
+      ],
+      "emphasis": [
+        "result"
+      ]
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "Monthly Money Reset",
+        "source": "title"
+      },
+      "line": {
+        "text": "One figure, updated as the cycle goes on, with every number that feeds it shown line by line if you want to check the working.",
+        "source": "searchedProblems[2].answer"
+      },
+      "ui": {
+        "kind": "screen",
+        "src": "screens/monthly-money-reset-progress.png"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "How much money is safe to spend after your bills?",
+        "source": "guide:how-much-of-your-money-is-actually-safe-to-spend/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/how-much-of-your-money-is-actually-safe-to-spend",
+        "source": "guide:how-much-of-your-money-is-actually-safe-to-spend/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"How much of my money is actually safe to spend\" (searchedProblems[2].phrase), as people search it.",
+    "Steps: 5 of 5 from the guide's numbered steps \"Work out your own number in five steps\", one per slide, each with the guide's own explanation.",
+    "Help: \"One figure, updated as the cycle goes on, with every number that feeds it shown line by line if you want to check the working.\" (searchedProblems[2].answer), on screens/monthly-money-reset-progress.png (\"Start\")."
+  ]
+}

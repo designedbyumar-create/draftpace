@@ -6,6 +6,8 @@ import { ASPECT_RATIOS } from "../aspect-ratios.mjs";
 import { FilmComposition } from "./compositions/formats/film";
 import { FILMS as DIRECTED } from "./films.generated";
 import { VOICEOVER_FILMS } from "./voiceover-films.generated";
+import { SituationCarouselSlide } from "./compositions/formats/situation-carousel";
+import { CAROUSELS } from "./carousels.generated";
 
 const FILMS = [...DIRECTED, ...VOICEOVER_FILMS];
 
@@ -98,6 +100,19 @@ export const RemotionRoot: React.FC = () => {
             width={ratio.width}
             height={ratio.height}
             defaultProps={{ slide }}
+          />
+        ))
+      )}
+      {/* Every situation carousel (scripts/carousels.mjs), one 4:5 still per slide: the size Instagram and Facebook show in full. */}
+      {CAROUSELS.flatMap((carousel) =>
+        carousel.slides.map((_, index) => (
+          <Still
+            key={`${carousel.id}-${index}`}
+            id={`Carousel-${carousel.id}-${String(index + 1).padStart(2, "0")}`}
+            component={SituationCarouselSlide}
+            width={1080}
+            height={1350}
+            defaultProps={{ carousel, index }}
           />
         ))
       )}

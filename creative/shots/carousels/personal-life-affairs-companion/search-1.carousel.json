@@ -1,0 +1,196 @@
+{
+  "id": "car-personal-life-affairs-companion-search-1",
+  "product": "personal-life-affairs-companion",
+  "guide": "what-to-write-down-in-case-something-happens-to-you",
+  "situation": "searchedProblems[0].phrase",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "What should I write down in case something happens to me",
+        "source": "searchedProblems[0].phrase"
+      },
+      "emphasis": [
+        "write"
+      ],
+      "promise": {
+        "text": "What to write down in case something happens to me",
+        "source": "guide:what-to-write-down-in-case-something-happens-to-you/title"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "One page, written in an evening: who to call, what's due this week, where the papers are and how someone gets into your phone.",
+          "source": "guide:what-to-write-down-in-case-something-happens-to-you/dek#0"
+        },
+        {
+          "text": "Places, not passwords.",
+          "source": "guide:what-to-write-down-in-case-something-happens-to-you/dek#1"
+        }
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "How to write it in one evening",
+        "source": "guide:what-to-write-down-in-case-something-happens-to-you/body[3].heading"
+      },
+      "number": {
+        "text": "1",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Write the one person to call first, and how to reach them.",
+        "source": "guide:what-to-write-down-in-case-something-happens-to-you/body[3].items[0]#0"
+      },
+      "body": [
+        {
+          "text": "A name and a number is enough.",
+          "source": "guide:what-to-write-down-in-case-something-happens-to-you/body[3].items[0]#1"
+        }
+      ],
+      "emphasis": [
+        "person"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "How to write it in one evening",
+        "source": "guide:what-to-write-down-in-case-something-happens-to-you/body[3].heading"
+      },
+      "number": {
+        "text": "2",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Write what's going out of your account this month: rent or mortgage, insurance, any automatic payments.",
+        "source": "guide:what-to-write-down-in-case-something-happens-to-you/body[3].items[1]#0"
+      },
+      "body": [
+        {
+          "text": "Names of things, not numbers.",
+          "source": "guide:what-to-write-down-in-case-something-happens-to-you/body[3].items[1]#1"
+        }
+      ],
+      "emphasis": [
+        "automatic"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "How to write it in one evening",
+        "source": "guide:what-to-write-down-in-case-something-happens-to-you/body[3].heading"
+      },
+      "number": {
+        "text": "3",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Write which email address everything is registered to, and how somebody would get into your phone.",
+        "source": "guide:what-to-write-down-in-case-something-happens-to-you/body[3].items[2]#0"
+      },
+      "body": [
+        {
+          "text": "If you can't answer the second one, that's your first real task.",
+          "source": "guide:what-to-write-down-in-case-something-happens-to-you/body[3].items[2]#1"
+        }
+      ],
+      "emphasis": [
+        "registered"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "How to write it in one evening",
+        "source": "guide:what-to-write-down-in-case-something-happens-to-you/body[3].heading"
+      },
+      "number": {
+        "text": "4",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Write who or what relies on you: children's pickup, a person you care for, pets, a work commitment.",
+        "source": "guide:what-to-write-down-in-case-something-happens-to-you/body[3].items[3]#0"
+      },
+      "body": [],
+      "emphasis": [
+        "commitment"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "How to write it in one evening",
+        "source": "guide:what-to-write-down-in-case-something-happens-to-you/body[3].heading"
+      },
+      "number": {
+        "text": "5",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Write where the papers are: will, passport, birth certificate, insurance policies, any safe or deposit box, and who can open it.",
+        "source": "guide:what-to-write-down-in-case-something-happens-to-you/body[3].items[4]#0"
+      },
+      "body": [],
+      "emphasis": [
+        "certificate"
+      ]
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "Personal Life Affairs Companion",
+        "source": "title"
+      },
+      "line": {
+        "text": "A hand-built list of 46 things that belong in order, asked one at a time and only where they apply to you.",
+        "source": "searchedProblems[0].answer"
+      },
+      "ui": {
+        "kind": "screen",
+        "src": "screens/personal-life-affairs-companion-workspace.png"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "What to write down in case something happens to me",
+        "source": "guide:what-to-write-down-in-case-something-happens-to-you/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/what-to-write-down-in-case-something-happens-to-you",
+        "source": "guide:what-to-write-down-in-case-something-happens-to-you/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"What should I write down in case something happens to me\" (searchedProblems[0].phrase), as people search it.",
+    "Steps: 5 of 6 from the guide's numbered steps \"How to write it in one evening\", one per slide, each with the guide's own explanation.",
+    "Help: \"A hand-built list of 46 things that belong in order, asked one at a time and only where they apply to you.\" (searchedProblems[0].answer), on screens/personal-life-affairs-companion-workspace.png (\"Write down who should be called first.\")."
+  ]
+}

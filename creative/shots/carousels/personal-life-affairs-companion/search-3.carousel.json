@@ -1,0 +1,112 @@
+{
+  "id": "car-personal-life-affairs-companion-search-3",
+  "product": "personal-life-affairs-companion",
+  "guide": "beneficiary-forms-override-your-will",
+  "situation": "searchedProblems[2].phrase",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "My pension goes to whoever is named on the form, not my will",
+        "source": "searchedProblems[2].phrase"
+      },
+      "emphasis": [
+        "will"
+      ],
+      "promise": {
+        "text": "Beneficiary vs will: which one decides who gets it?",
+        "source": "guide:beneficiary-forms-override-your-will/title"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "A 401(k), IRA or life insurance policy pays whoever is named on the form, not whoever your will names.",
+          "source": "guide:beneficiary-forms-override-your-will/dek#0"
+        },
+        {
+          "text": "What passes how, and how to check yours.",
+          "source": "guide:beneficiary-forms-override-your-will/dek#1"
+        }
+      ]
+    },
+    {
+      "kind": "checklist",
+      "eyebrow": {
+        "text": "Check your own forms, in this order",
+        "source": "guide:beneficiary-forms-override-your-will/body[4].heading"
+      },
+      "items": [
+        {
+          "text": "List every retirement account you have ever had, including 401(k)s and 403(b)s from jobs you've left.",
+          "source": "guide:beneficiary-forms-override-your-will/body[4].items[0]#0"
+        },
+        {
+          "text": "List every life insurance policy, including any provided through an employer.",
+          "source": "guide:beneficiary-forms-override-your-will/body[4].items[1]#0"
+        },
+        {
+          "text": "List any payable-on-death bank account or transfer-on-death brokerage account you've set up.",
+          "source": "guide:beneficiary-forms-override-your-will/body[4].items[2]#0"
+        },
+        {
+          "text": "Update anything that's wrong, blank, or names someone who has since died.",
+          "source": "guide:beneficiary-forms-override-your-will/body[4].items[4]#0"
+        }
+      ],
+      "ticks": true
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "Personal Life Affairs Companion",
+        "source": "title"
+      },
+      "line": {
+        "text": "Who is named on the forms that override a will is one of the first things it raises, because it is the one most often years out of date.",
+        "source": "searchedProblems[2].answer"
+      },
+      "ui": {
+        "kind": "screen",
+        "src": "screens/personal-life-affairs-companion-affairs.png"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "Beneficiary vs will: which one decides who gets it?",
+        "source": "guide:beneficiary-forms-override-your-will/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/beneficiary-forms-override-your-will",
+        "source": "guide:beneficiary-forms-override-your-will/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"My pension goes to whoever is named on the form, not my will\" (searchedProblems[2].phrase), as people search it.",
+    "Checklist: 4 items from \"Check your own forms, in this order\".",
+    "Help: \"Who is named on the forms that override a will is one of the first things it raises, because it is the one most often years out of date.\" (searchedProblems[2].answer), on screens/personal-life-affairs-companion-affairs.png (\"What you have established so far.\")."
+  ]
+}

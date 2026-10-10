@@ -1,0 +1,196 @@
+{
+  "id": "car-homeschooling-companion-search-5",
+  "product": "homeschooling-companion",
+  "guide": "preparing-for-a-homeschool-evaluation",
+  "situation": "searchedProblems[4].phrase",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "I need to prepare for a homeschool evaluation",
+        "source": "searchedProblems[4].phrase"
+      },
+      "emphasis": [
+        "evaluation"
+      ],
+      "promise": {
+        "text": "Homeschool evaluation: what to bring and how to prepare",
+        "source": "guide:preparing-for-a-homeschool-evaluation/title"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "What an evaluator looks for, a six-item folder list, and how to get ready in one evening.",
+          "source": "guide:preparing-for-a-homeschool-evaluation/dek#0"
+        },
+        {
+          "text": "Ask your own evaluator or state what it requires.",
+          "source": "guide:preparing-for-a-homeschool-evaluation/dek#1"
+        }
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "First 15 minutes",
+        "source": "guide:preparing-for-a-homeschool-evaluation/body[2].steps[0].when"
+      },
+      "head": {
+        "text": "Confirm with your evaluator: meeting time, location, and anything specific they want to see.",
+        "source": "guide:preparing-for-a-homeschool-evaluation/body[2].steps[0].what#0"
+      },
+      "body": [],
+      "emphasis": [
+        "evaluator"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Next 20 minutes",
+        "source": "guide:preparing-for-a-homeschool-evaluation/body[2].steps[1].when"
+      },
+      "head": {
+        "text": "Pull one dated work sample per subject from early in the year and one from recently.",
+        "source": "guide:preparing-for-a-homeschool-evaluation/body[2].steps[1].what#0"
+      },
+      "body": [],
+      "emphasis": [
+        "recently"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Next 15 minutes",
+        "source": "guide:preparing-for-a-homeschool-evaluation/body[2].steps[2].when"
+      },
+      "head": {
+        "text": "Write a subject and curriculum list, one line each.",
+        "source": "guide:preparing-for-a-homeschool-evaluation/body[2].steps[2].what#0"
+      },
+      "body": [],
+      "emphasis": [
+        "curriculum"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Next 15 minutes",
+        "source": "guide:preparing-for-a-homeschool-evaluation/body[2].steps[3].when"
+      },
+      "head": {
+        "text": "Add a short note per subject: what changed, what was hard, what you'd do differently.",
+        "source": "guide:preparing-for-a-homeschool-evaluation/body[2].steps[3].what#0"
+      },
+      "body": [],
+      "emphasis": [
+        "differently"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Last 10 minutes",
+        "source": "guide:preparing-for-a-homeschool-evaluation/body[2].steps[4].when"
+      },
+      "head": {
+        "text": "Put it all in one folder, in the order your evaluator will likely go through it.",
+        "source": "guide:preparing-for-a-homeschool-evaluation/body[2].steps[4].what#0"
+      },
+      "body": [],
+      "emphasis": [
+        "evaluator"
+      ]
+    },
+    {
+      "kind": "checklist",
+      "eyebrow": {
+        "text": "What to bring",
+        "source": "guide:preparing-for-a-homeschool-evaluation/body[3].heading"
+      },
+      "items": [
+        {
+          "text": "The log of what was covered, with dates, even if approximate.",
+          "source": "guide:preparing-for-a-homeschool-evaluation/body[3].items[0]#0"
+        },
+        {
+          "text": "Work samples from more than one point in the year, not just one strong stretch.",
+          "source": "guide:preparing-for-a-homeschool-evaluation/body[3].items[1]#0"
+        },
+        {
+          "text": "A list of curricula and materials used.",
+          "source": "guide:preparing-for-a-homeschool-evaluation/body[3].items[2]#0"
+        },
+        {
+          "text": "Attendance or days schooled, if your state counts them.",
+          "source": "guide:preparing-for-a-homeschool-evaluation/body[3].items[3]#0"
+        },
+        {
+          "text": "Test results, if your state requires them.",
+          "source": "guide:preparing-for-a-homeschool-evaluation/body[3].items[4]#0"
+        },
+        {
+          "text": "A short note per subject on where you started and where you got to.",
+          "source": "guide:preparing-for-a-homeschool-evaluation/body[3].items[5]#0"
+        }
+      ],
+      "ticks": true
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "Homeschooling Companion",
+        "source": "title"
+      },
+      "line": {
+        "text": "Print the record for one child. It contains only what you chose to include, and it says what is in it rather than how it is going.",
+        "source": "searchedProblems[4].answer"
+      },
+      "ui": {
+        "kind": "screen",
+        "src": "screens/homeschooling-companion-record.png"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "Homeschool evaluation: what to bring and how to prepare",
+        "source": "guide:preparing-for-a-homeschool-evaluation/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/preparing-for-a-homeschool-evaluation",
+        "source": "guide:preparing-for-a-homeschool-evaluation/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"I need to prepare for a homeschool evaluation\" (searchedProblems[4].phrase), as people search it.",
+    "Steps: 5 of 5 from the guide's timeline \"One evening, in order\", one per slide, each with the guide's own explanation.",
+    "Checklist: 6 items from \"What to bring\".",
+    "Help: \"Print the record for one child. It contains only what you chose to include, and it says what is in it rather than how it is going.\" (searchedProblems[4].answer), on screens/homeschooling-companion-record.png (\"What has happened.\")."
+  ]
+}

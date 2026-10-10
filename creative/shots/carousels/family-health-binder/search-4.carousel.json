@@ -1,0 +1,206 @@
+{
+  "id": "car-family-health-binder-search-4",
+  "product": "family-health-binder",
+  "guide": "babysitter-and-grandparent-info-sheet",
+  "situation": "searchedProblems[3].phrase",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "What does a babysitter or grandparent need to know about my child",
+        "source": "searchedProblems[3].phrase"
+      },
+      "emphasis": [
+        "babysitter"
+      ],
+      "promise": {
+        "text": "Babysitter information sheet: what to put on it",
+        "source": "guide:babysitter-and-grandparent-info-sheet/title"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "A one-page sheet for a sitter or grandparent: allergies first, medicines, who to call, your address and bedtime notes.",
+          "source": "guide:babysitter-and-grandparent-info-sheet/dek#0"
+        },
+        {
+          "text": "Plus what to leave off.",
+          "source": "guide:babysitter-and-grandparent-info-sheet/dek#1"
+        }
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Set it up in this order",
+        "source": "guide:babysitter-and-grandparent-info-sheet/body[5].heading"
+      },
+      "number": {
+        "text": "1",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Write the allergies first and put them in a box.",
+        "source": "guide:babysitter-and-grandparent-info-sheet/body[5].items[0]#0"
+      },
+      "body": [
+        {
+          "text": "Say what happens in your own words: \"peanuts, hives\" is clearer than \"nut allergy.\"",
+          "source": "guide:babysitter-and-grandparent-info-sheet/body[5].items[0]#1"
+        }
+      ],
+      "emphasis": [
+        "allergies"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Set it up in this order",
+        "source": "guide:babysitter-and-grandparent-info-sheet/body[5].heading"
+      },
+      "number": {
+        "text": "2",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Copy the medicine line from the label, not from memory: name, dose, how often.",
+        "source": "guide:babysitter-and-grandparent-info-sheet/body[5].items[1]#0"
+      },
+      "body": [
+        {
+          "text": "If a medicine is only given some days, say which.",
+          "source": "guide:babysitter-and-grandparent-info-sheet/body[5].items[1]#1"
+        }
+      ],
+      "emphasis": [
+        "medicine"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Set it up in this order",
+        "source": "guide:babysitter-and-grandparent-info-sheet/body[5].heading"
+      },
+      "number": {
+        "text": "3",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Add two numbers for you and a second adult, and say which to call first.",
+        "source": "guide:babysitter-and-grandparent-info-sheet/body[5].items[2]#0"
+      },
+      "body": [
+        {
+          "text": "A second name helps when your phone is in a movie theater.",
+          "source": "guide:babysitter-and-grandparent-info-sheet/body[5].items[2]#1"
+        }
+      ],
+      "emphasis": [
+        "numbers"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Set it up in this order",
+        "source": "guide:babysitter-and-grandparent-info-sheet/body[5].heading"
+      },
+      "number": {
+        "text": "4",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Write the address and the nearest cross street.",
+        "source": "guide:babysitter-and-grandparent-info-sheet/body[5].items[3]#0"
+      },
+      "body": [
+        {
+          "text": "A sitter shouldn't have to read the mailbox in a hurry, and a caller to 911 needs it.",
+          "source": "guide:babysitter-and-grandparent-info-sheet/body[5].items[3]#1"
+        }
+      ],
+      "emphasis": [
+        "address"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Set it up in this order",
+        "source": "guide:babysitter-and-grandparent-info-sheet/body[5].heading"
+      },
+      "number": {
+        "text": "5",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Add the doctor's name and number, and a poison control number.",
+        "source": "guide:babysitter-and-grandparent-info-sheet/body[5].items[4]#0"
+      },
+      "body": [
+        {
+          "text": "The National Capital Poison Center's site lists 1-800-222-1222 as a free, expert and confidential line.",
+          "source": "guide:babysitter-and-grandparent-info-sheet/body[5].items[4]#1"
+        }
+      ],
+      "emphasis": [
+        "control"
+      ]
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "Family Health Binder",
+        "source": "title"
+      },
+      "line": {
+        "text": "A Caregiver sheet: allergies first, what is taken, who to call, and your own notes about bedtime, comforts and fears.",
+        "source": "searchedProblems[3].answer"
+      },
+      "ui": {
+        "kind": "screen",
+        "src": "screens/family-health-binder-printables.png"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "Babysitter information sheet: what to put on it",
+        "source": "guide:babysitter-and-grandparent-info-sheet/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/babysitter-and-grandparent-info-sheet",
+        "source": "guide:babysitter-and-grandparent-info-sheet/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"What does a babysitter or grandparent need to know about my child\" (searchedProblems[3].phrase), as people search it.",
+    "Steps: 5 of 8 from the guide's numbered steps \"Set it up in this order\", one per slide, each with the guide's own explanation.",
+    "Help: \"A Caregiver sheet: allergies first, what is taken, who to call, and your own notes about bedtime, comforts and fears.\" (searchedProblems[3].answer), on screens/family-health-binder-printables.png (\"Print\")."
+  ]
+}

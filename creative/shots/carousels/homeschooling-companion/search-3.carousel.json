@@ -1,0 +1,209 @@
+{
+  "id": "car-homeschooling-companion-search-3",
+  "product": "homeschooling-companion",
+  "guide": "how-to-check-if-your-child-learned-something",
+  "situation": "searchedProblems[2].phrase",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "How do I know if my child actually learned something",
+        "source": "searchedProblems[2].phrase"
+      },
+      "emphasis": [
+        "learned"
+      ],
+      "promise": {
+        "text": "How to tell if your homeschooler actually learned it",
+        "source": "guide:how-to-check-if-your-child-learned-something/title"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "Covered is not learned.",
+          "source": "guide:how-to-check-if-your-child-learned-something/dek#0"
+        },
+        {
+          "text": "Ask four questions a week or more later, write the answers down, and know when a result is not enough to say.",
+          "source": "guide:how-to-check-if-your-child-learned-something/dek#1"
+        }
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Five ways to check it landed",
+        "source": "guide:how-to-check-if-your-child-learned-something/body[2].heading"
+      },
+      "number": {
+        "text": "1",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Ask them to teach it back to you.",
+        "source": "guide:how-to-check-if-your-child-learned-something/body[2].items[0]#0"
+      },
+      "body": [
+        {
+          "text": "If they can explain a step to a stuffed animal or a younger sibling, they understand it.",
+          "source": "guide:how-to-check-if-your-child-learned-something/body[2].items[0]#1"
+        },
+        {
+          "text": "If they can only repeat a memorized line, they don't yet.",
+          "source": "guide:how-to-check-if-your-child-learned-something/body[2].items[0]#2"
+        }
+      ],
+      "emphasis": [
+        "teach"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Five ways to check it landed",
+        "source": "guide:how-to-check-if-your-child-learned-something/body[2].heading"
+      },
+      "number": {
+        "text": "2",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Have them narrate what they just read or did, in their own words, without looking.",
+        "source": "guide:how-to-check-if-your-child-learned-something/body[2].items[1]#0"
+      },
+      "body": [
+        {
+          "text": "A summary that includes why something happened, not just what happened, is the stronger sign.",
+          "source": "guide:how-to-check-if-your-child-learned-something/body[2].items[1]#1"
+        }
+      ],
+      "emphasis": [
+        "narrate"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Five ways to check it landed",
+        "source": "guide:how-to-check-if-your-child-learned-something/body[2].heading"
+      },
+      "number": {
+        "text": "3",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Ask a few oral questions that mix recall and reasoning.",
+        "source": "guide:how-to-check-if-your-child-learned-something/body[2].items[2]#0"
+      },
+      "body": [
+        {
+          "text": "\"What's 6 times 7\" checks recall.",
+          "source": "guide:how-to-check-if-your-child-learned-something/body[2].items[2]#1"
+        },
+        {
+          "text": "\"Why does that work\" checks understanding.",
+          "source": "guide:how-to-check-if-your-child-learned-something/body[2].items[2]#2"
+        }
+      ],
+      "emphasis": [
+        "reasoning"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Five ways to check it landed",
+        "source": "guide:how-to-check-if-your-child-learned-something/body[2].heading"
+      },
+      "number": {
+        "text": "4",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Do a short spot check from the workbook itself: cover the answer, have them solve it again a different way than the book showed.",
+        "source": "guide:how-to-check-if-your-child-learned-something/body[2].items[3]#0"
+      },
+      "body": [],
+      "emphasis": [
+        "different"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Five ways to check it landed",
+        "source": "guide:how-to-check-if-your-child-learned-something/body[2].heading"
+      },
+      "number": {
+        "text": "5",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Ask for a two-minute demonstration: build it, draw it, or show the step on paper.",
+        "source": "guide:how-to-check-if-your-child-learned-something/body[2].items[4]#0"
+      },
+      "body": [
+        {
+          "text": "Watching them do it catches things a spoken answer hides.",
+          "source": "guide:how-to-check-if-your-child-learned-something/body[2].items[4]#1"
+        }
+      ],
+      "emphasis": [
+        "demonstration"
+      ]
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "Homeschooling Companion",
+        "source": "title"
+      },
+      "line": {
+        "text": "A check of eight questions you supply and mark, reported one topic at a time, including the honest answer that there is not enough to say.",
+        "source": "searchedProblems[2].answer"
+      },
+      "ui": {
+        "kind": "screen",
+        "src": "screens/homeschooling-companion-record.png"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "How to tell if your homeschooler actually learned it",
+        "source": "guide:how-to-check-if-your-child-learned-something/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/how-to-check-if-your-child-learned-something",
+        "source": "guide:how-to-check-if-your-child-learned-something/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"How do I know if my child actually learned something\" (searchedProblems[2].phrase), as people search it.",
+    "Steps: 5 of 5 from the guide's numbered steps \"Five ways to check it landed\", one per slide, each with the guide's own explanation.",
+    "Help: \"A check of eight questions you supply and mark, reported one topic at a time, including the honest answer that there is not enough to say.\" (searchedProblems[2].answer), on screens/homeschooling-companion-record.png (\"What has happened.\")."
+  ]
+}

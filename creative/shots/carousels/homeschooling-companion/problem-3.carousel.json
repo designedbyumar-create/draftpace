@@ -1,0 +1,206 @@
+{
+  "id": "car-homeschooling-companion-problem-3",
+  "product": "homeschooling-companion",
+  "guide": "homeschool-record-keeping-for-multiple-children",
+  "situation": "problemsSolved[2].problem",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "Keeping more than one child's records straight in your head has stopped working.",
+        "source": "problemsSolved[2].problem"
+      },
+      "emphasis": [
+        "straight"
+      ],
+      "promise": {
+        "text": "Homeschool record keeping for multiple children",
+        "source": "guide:homeschool-record-keeping-for-multiple-children/title"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "Two children, three subjects each, one shared afternoon.",
+          "source": "guide:homeschool-record-keeping-for-multiple-children/dek#0"
+        },
+        {
+          "text": "File everything by child, log shared lessons once per child, and keep each record apart.",
+          "source": "guide:homeschool-record-keeping-for-multiple-children/dek#1"
+        }
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Set it up so it holds",
+        "source": "guide:homeschool-record-keeping-for-multiple-children/body[2].heading"
+      },
+      "number": {
+        "text": "1",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Start one record per child from the first entry.",
+        "source": "guide:homeschool-record-keeping-for-multiple-children/body[2].items[0]#0"
+      },
+      "body": [
+        {
+          "text": "Splitting a shared page apart later means reading back through weeks of entries and guessing which line belonged to whom.",
+          "source": "guide:homeschool-record-keeping-for-multiple-children/body[2].items[0]#1"
+        }
+      ],
+      "emphasis": [
+        "entry"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Set it up so it holds",
+        "source": "guide:homeschool-record-keeping-for-multiple-children/body[2].heading"
+      },
+      "number": {
+        "text": "2",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Log a shared lesson once for each child in the room, in that child's own words for how it went.",
+        "source": "guide:homeschool-record-keeping-for-multiple-children/body[2].items[1]#0"
+      },
+      "body": [
+        {
+          "text": "A read-aloud, a science demonstration or a field trip counts once per child, not once for the group.",
+          "source": "guide:homeschool-record-keeping-for-multiple-children/body[2].items[1]#1"
+        }
+      ],
+      "emphasis": [
+        "lesson"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Set it up so it holds",
+        "source": "guide:homeschool-record-keeping-for-multiple-children/body[2].heading"
+      },
+      "number": {
+        "text": "3",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Let each child's pace and curriculum stay fully separate.",
+        "source": "guide:homeschool-record-keeping-for-multiple-children/body[2].items[2]#0"
+      },
+      "body": [
+        {
+          "text": "One child a workbook behind the other, or on a different subject list entirely, needs no reconciling on the page.",
+          "source": "guide:homeschool-record-keeping-for-multiple-children/body[2].items[2]#1"
+        }
+      ],
+      "emphasis": [
+        "curriculum"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Set it up so it holds",
+        "source": "guide:homeschool-record-keeping-for-multiple-children/body[2].heading"
+      },
+      "number": {
+        "text": "4",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Keep a private note tied to the child it is about.",
+        "source": "guide:homeschool-record-keeping-for-multiple-children/body[2].items[3]#0"
+      },
+      "body": [
+        {
+          "text": "A note written about one child's reading is not evidence for a sibling, even if they read the same book.",
+          "source": "guide:homeschool-record-keeping-for-multiple-children/body[2].items[3]#1"
+        }
+      ],
+      "emphasis": [
+        "private"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Set it up so it holds",
+        "source": "guide:homeschool-record-keeping-for-multiple-children/body[2].heading"
+      },
+      "number": {
+        "text": "5",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Print one child at a time.",
+        "source": "guide:homeschool-record-keeping-for-multiple-children/body[2].items[4]#0"
+      },
+      "body": [
+        {
+          "text": "A record with two children's names on one document is harder to read back and, for most evaluators, not what was asked for.",
+          "source": "guide:homeschool-record-keeping-for-multiple-children/body[2].items[4]#1"
+        }
+      ],
+      "emphasis": [
+        "Print"
+      ]
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "Homeschooling Companion",
+        "source": "title"
+      },
+      "line": {
+        "text": "One page each morning that says what today looks like, per child.",
+        "source": "problemsSolved[2].solution"
+      },
+      "ui": {
+        "kind": "screen",
+        "src": "screens/homeschooling-companion-workspace.png"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "Homeschool record keeping for multiple children",
+        "source": "guide:homeschool-record-keeping-for-multiple-children/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/homeschool-record-keeping-for-multiple-children",
+        "source": "guide:homeschool-record-keeping-for-multiple-children/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"Keeping more than one child's records straight in your head has stopped working.\" (problemsSolved[2].problem), as the listing describes the moment.",
+    "Steps: 5 of 5 from the guide's numbered steps \"Set it up so it holds\", one per slide, each with the guide's own explanation.",
+    "Help: \"One page each morning that says what today looks like, per child.\" (problemsSolved[2].solution), on screens/homeschooling-companion-workspace.png (\"What we are doing today.\")."
+  ]
+}

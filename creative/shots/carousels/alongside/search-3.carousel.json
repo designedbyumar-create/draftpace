@@ -1,0 +1,265 @@
+{
+  "id": "car-alongside-search-3",
+  "product": "alongside",
+  "guide": "how-to-make-a-phone-call-you-have-been-avoiding",
+  "situation": "searchedProblems[2].phrase",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "I've been avoiding a phone call for weeks",
+        "source": "searchedProblems[2].phrase"
+      },
+      "emphasis": [
+        "avoiding"
+      ],
+      "promise": {
+        "text": "How to make a phone call you keep avoiding",
+        "source": "guide:how-to-make-a-phone-call-you-have-been-avoiding/title"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "A call is several jobs at once, which is why it stalls.",
+          "source": "guide:how-to-make-a-phone-call-you-have-been-avoiding/dek#0"
+        },
+        {
+          "text": "Prepare five things on paper, write the first sentence out, and know when you can stop.",
+          "source": "guide:how-to-make-a-phone-call-you-have-been-avoiding/dek#1"
+        }
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "How to write each of the five",
+        "source": "guide:how-to-make-a-phone-call-you-have-been-avoiding/body[3].heading"
+      },
+      "number": {
+        "text": "1",
+        "source": "micro"
+      },
+      "head": {
+        "text": "What it's about, in one line.",
+        "source": "guide:how-to-make-a-phone-call-you-have-been-avoiding/body[3].items[0]#0"
+      },
+      "body": [
+        {
+          "text": "Write it the way you'd say it to a friend: \"the double charge on my phone bill.\" If it takes two lines, it's really two calls.",
+          "source": "guide:how-to-make-a-phone-call-you-have-been-avoiding/body[3].items[0]#1"
+        },
+        {
+          "text": "Pick the one that comes first and put the other on a separate page.",
+          "source": "guide:how-to-make-a-phone-call-you-have-been-avoiding/body[3].items[0]#2"
+        }
+      ],
+      "emphasis": [
+        "line"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "How to write each of the five",
+        "source": "guide:how-to-make-a-phone-call-you-have-been-avoiding/body[3].heading"
+      },
+      "number": {
+        "text": "2",
+        "source": "micro"
+      },
+      "head": {
+        "text": "The result you want, in one line.",
+        "source": "guide:how-to-make-a-phone-call-you-have-been-avoiding/body[3].items[1]#0"
+      },
+      "body": [
+        {
+          "text": "Decide it now, because it's the thing that slips away halfway through explaining how you got here.",
+          "source": "guide:how-to-make-a-phone-call-you-have-been-avoiding/body[3].items[1]#1"
+        },
+        {
+          "text": "A refund, a new date, a cancellation confirmed in writing.",
+          "source": "guide:how-to-make-a-phone-call-you-have-been-avoiding/body[3].items[1]#2"
+        },
+        {
+          "text": "If the call wanders, this line is where you come back to.",
+          "source": "guide:how-to-make-a-phone-call-you-have-been-avoiding/body[3].items[1]#3"
+        }
+      ],
+      "emphasis": [
+        "result"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "How to write each of the five",
+        "source": "guide:how-to-make-a-phone-call-you-have-been-avoiding/body[3].heading"
+      },
+      "number": {
+        "text": "3",
+        "source": "micro"
+      },
+      "head": {
+        "text": "The reference.",
+        "source": "guide:how-to-make-a-phone-call-you-have-been-avoiding/body[3].items[2]#0"
+      },
+      "body": [
+        {
+          "text": "Account number, order number, booking code, or the name and address the account is under.",
+          "source": "guide:how-to-make-a-phone-call-you-have-been-avoiding/body[3].items[2]#1"
+        },
+        {
+          "text": "Put it where you can read it, not where you could find it.",
+          "source": "guide:how-to-make-a-phone-call-you-have-been-avoiding/body[3].items[2]#2"
+        }
+      ],
+      "emphasis": [
+        "reference"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "How to write each of the five",
+        "source": "guide:how-to-make-a-phone-call-you-have-been-avoiding/body[3].heading"
+      },
+      "number": {
+        "text": "4",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Two facts.",
+        "source": "guide:how-to-make-a-phone-call-you-have-been-avoiding/body[3].items[3]#0"
+      },
+      "body": [
+        {
+          "text": "A date and an amount, or a name and a date.",
+          "source": "guide:how-to-make-a-phone-call-you-have-been-avoiding/body[3].items[3]#1"
+        },
+        {
+          "text": "Two, not ten.",
+          "source": "guide:how-to-make-a-phone-call-you-have-been-avoiding/body[3].items[3]#2"
+        },
+        {
+          "text": "Anything more lives on the statement or email you've put next to the page.",
+          "source": "guide:how-to-make-a-phone-call-you-have-been-avoiding/body[3].items[3]#3"
+        }
+      ],
+      "emphasis": [
+        "facts"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "How to write each of the five",
+        "source": "guide:how-to-make-a-phone-call-you-have-been-avoiding/body[3].heading"
+      },
+      "number": {
+        "text": "5",
+        "source": "micro"
+      },
+      "head": {
+        "text": "The first sentence, word for word.",
+        "source": "guide:how-to-make-a-phone-call-you-have-been-avoiding/body[3].items[4]#0"
+      },
+      "body": [
+        {
+          "text": "A full sentence, written out.",
+          "source": "guide:how-to-make-a-phone-call-you-have-been-avoiding/body[3].items[4]#1"
+        },
+        {
+          "text": "Leaving it as \"I'll work out how to begin\" is how the number stays in your phone another week.",
+          "source": "guide:how-to-make-a-phone-call-you-have-been-avoiding/body[3].items[4]#2"
+        }
+      ],
+      "emphasis": [
+        "sentence"
+      ]
+    },
+    {
+      "kind": "checklist",
+      "eyebrow": {
+        "text": "Set up the room",
+        "source": "guide:how-to-make-a-phone-call-you-have-been-avoiding/body[4].heading"
+      },
+      "items": [
+        {
+          "text": "The five things are on one page, in front of you.",
+          "source": "guide:how-to-make-a-phone-call-you-have-been-avoiding/body[4].items[0]#0"
+        },
+        {
+          "text": "A pen, and space on the page to write the reference they give you.",
+          "source": "guide:how-to-make-a-phone-call-you-have-been-avoiding/body[4].items[1]#0"
+        },
+        {
+          "text": "You've checked when the line is open, and picked one exact time inside those hours.",
+          "source": "guide:how-to-make-a-phone-call-you-have-been-avoiding/body[4].items[2]#0"
+        },
+        {
+          "text": "You're somewhere you can talk without being overheard, if the call is personal.",
+          "source": "guide:how-to-make-a-phone-call-you-have-been-avoiding/body[4].items[3]#0"
+        },
+        {
+          "text": "Speakerphone or earbuds are ready, if having both hands free helps you write.",
+          "source": "guide:how-to-make-a-phone-call-you-have-been-avoiding/body[4].items[4]#0"
+        }
+      ],
+      "ticks": true
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "ADHD Life Companion",
+        "source": "title"
+      },
+      "line": {
+        "text": "An opening line, the outcome you want, and the two things not to forget, held on screen while you make it.",
+        "source": "searchedProblems[2].answer"
+      },
+      "ui": {
+        "kind": "screen",
+        "src": "screens/alongside-life.png"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "How to make a phone call you keep avoiding",
+        "source": "guide:how-to-make-a-phone-call-you-have-been-avoiding/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/how-to-make-a-phone-call-you-have-been-avoiding",
+        "source": "guide:how-to-make-a-phone-call-you-have-been-avoiding/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"I've been avoiding a phone call for weeks\" (searchedProblems[2].phrase), as people search it.",
+    "Steps: 5 of 5 from the guide's numbered steps \"How to write each of the five\", one per slide, each with the guide's own explanation.",
+    "Checklist: 5 items from \"Set up the room\".",
+    "Help: \"An opening line, the outcome you want, and the two things not to forget, held on screen while you make it.\" (searchedProblems[2].answer), on screens/alongside-life.png (\"Everything you are holding\")."
+  ]
+}

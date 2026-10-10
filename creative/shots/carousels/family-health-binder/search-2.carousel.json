@@ -1,0 +1,181 @@
+{
+  "id": "car-family-health-binder-search-2",
+  "product": "family-health-binder",
+  "guide": "doctor-appointment-prep-checklist",
+  "situation": "searchedProblems[1].phrase",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "What should I bring to a doctor's appointment",
+        "source": "searchedProblems[1].phrase"
+      },
+      "emphasis": [
+        "appointment"
+      ],
+      "promise": {
+        "text": "Doctor appointment checklist for the day before",
+        "source": "guide:doctor-appointment-prep-checklist/title"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "What to write down, gather and bring the day before a doctor visit, and where to keep the notes after it.",
+          "source": "guide:doctor-appointment-prep-checklist/dek#0"
+        },
+        {
+          "text": "A paperwork list, not medical advice.",
+          "source": "guide:doctor-appointment-prep-checklist/dek#1"
+        }
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "The night before",
+        "source": "guide:doctor-appointment-prep-checklist/body[4].steps[0].when"
+      },
+      "head": {
+        "text": "Write the reason, then your questions in order.",
+        "source": "guide:doctor-appointment-prep-checklist/body[4].steps[0].what#0"
+      },
+      "body": [
+        {
+          "text": "Write what has changed, with dates.",
+          "source": "guide:doctor-appointment-prep-checklist/body[4].steps[0].what#1"
+        }
+      ],
+      "emphasis": [
+        "questions"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Same evening",
+        "source": "guide:doctor-appointment-prep-checklist/body[4].steps[1].when"
+      },
+      "head": {
+        "text": "List every medicine, vitamin and supplement from the labels.",
+        "source": "guide:doctor-appointment-prep-checklist/body[4].steps[1].what#0"
+      },
+      "body": [
+        {
+          "text": "Put the bottles in the bag.",
+          "source": "guide:doctor-appointment-prep-checklist/body[4].steps[1].what#1"
+        }
+      ],
+      "emphasis": [
+        "supplement"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Morning of",
+        "source": "guide:doctor-appointment-prep-checklist/body[4].steps[2].when"
+      },
+      "head": {
+        "text": "Add photo ID and your insurance card.",
+        "source": "guide:doctor-appointment-prep-checklist/body[4].steps[2].what#0"
+      },
+      "body": [
+        {
+          "text": "If someone is coming with you, tell them the top question.",
+          "source": "guide:doctor-appointment-prep-checklist/body[4].steps[2].what#1"
+        }
+      ],
+      "emphasis": [
+        "insurance"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "At check-in",
+        "source": "guide:doctor-appointment-prep-checklist/body[4].steps[3].when"
+      },
+      "head": {
+        "text": "Tell the desk or the nurse you have questions, so the time can be planned around them.",
+        "source": "guide:doctor-appointment-prep-checklist/body[4].steps[3].what#0"
+      },
+      "body": [],
+      "emphasis": [
+        "questions"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "In the room",
+        "source": "guide:doctor-appointment-prep-checklist/body[4].steps[4].when"
+      },
+      "head": {
+        "text": "Start with your most important question.",
+        "source": "guide:doctor-appointment-prep-checklist/body[4].steps[4].what#0"
+      },
+      "body": [
+        {
+          "text": "Take notes, or let the person with you take them.",
+          "source": "guide:doctor-appointment-prep-checklist/body[4].steps[4].what#1"
+        }
+      ],
+      "emphasis": [
+        "important"
+      ]
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "Family Health Binder",
+        "source": "title"
+      },
+      "line": {
+        "text": "A Visit page for that person: your questions with a box to tick each, what is taken now, recent symptoms, and room for notes.",
+        "source": "searchedProblems[1].answer"
+      },
+      "ui": {
+        "kind": "screen",
+        "src": "screens/family-health-binder-printables.png"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "Doctor appointment checklist for the day before",
+        "source": "guide:doctor-appointment-prep-checklist/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/doctor-appointment-prep-checklist",
+        "source": "guide:doctor-appointment-prep-checklist/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"What should I bring to a doctor's appointment\" (searchedProblems[1].phrase), as people search it.",
+    "Steps: 5 of 7 from the guide's timeline \"Before, during and after\", one per slide, each with the guide's own explanation.",
+    "Help: \"A Visit page for that person: your questions with a box to tick each, what is taken now, recent symptoms, and room for notes.\" (searchedProblems[1].answer), on screens/family-health-binder-printables.png (\"Print\")."
+  ]
+}

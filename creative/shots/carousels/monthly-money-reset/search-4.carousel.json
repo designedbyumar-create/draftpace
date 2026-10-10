@@ -1,0 +1,204 @@
+{
+  "id": "car-monthly-money-reset-search-4",
+  "product": "monthly-money-reset",
+  "guide": "available-balance-vs-current-balance",
+  "situation": "searchedProblems[3].phrase",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "My balance says I have money but a bill is coming",
+        "source": "searchedProblems[3].phrase"
+      },
+      "emphasis": [
+        "balance"
+      ],
+      "promise": {
+        "text": "Available vs current balance: which one can you spend?",
+        "source": "guide:available-balance-vs-current-balance/title"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "Current balance counts what has posted.",
+          "source": "guide:available-balance-vs-current-balance/dek#0"
+        },
+        {
+          "text": "Available balance also subtracts holds and pending items.",
+          "source": "guide:available-balance-vs-current-balance/dek#1"
+        },
+        {
+          "text": "Neither one knows about the bills still coming.",
+          "source": "guide:available-balance-vs-current-balance/dek#2"
+        }
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "How to read your two numbers today",
+        "source": "guide:available-balance-vs-current-balance/body[5].heading"
+      },
+      "number": {
+        "text": "1",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Open the account and find both figures.",
+        "source": "guide:available-balance-vs-current-balance/body[5].items[0]#0"
+      },
+      "body": [
+        {
+          "text": "If your app shows only one, look for a label such as \"available\" or \"posted\", or check the ATM receipt.",
+          "source": "guide:available-balance-vs-current-balance/body[5].items[0]#1"
+        }
+      ],
+      "emphasis": [
+        "figures"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "How to read your two numbers today",
+        "source": "guide:available-balance-vs-current-balance/body[5].heading"
+      },
+      "number": {
+        "text": "2",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Look at the pending list and add up anything marked as a hold or pre-authorization, especially fuel, hotels and rental cars.",
+        "source": "guide:available-balance-vs-current-balance/body[5].items[1]#0"
+      },
+      "body": [],
+      "emphasis": [
+        "especially"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "How to read your two numbers today",
+        "source": "guide:available-balance-vs-current-balance/body[5].heading"
+      },
+      "number": {
+        "text": "3",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Check your recent deposits.",
+        "source": "guide:available-balance-vs-current-balance/body[5].items[2]#0"
+      },
+      "body": [
+        {
+          "text": "If any is a check, find the date your bank says the money is released.",
+          "source": "guide:available-balance-vs-current-balance/body[5].items[2]#1"
+        },
+        {
+          "text": "The notice you got when you deposited it lists that date.",
+          "source": "guide:available-balance-vs-current-balance/body[5].items[2]#2"
+        }
+      ],
+      "emphasis": [
+        "deposits"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "How to read your two numbers today",
+        "source": "guide:available-balance-vs-current-balance/body[5].heading"
+      },
+      "number": {
+        "text": "4",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Read your account agreement or ask the bank once whether the available figure includes an overdraft line.",
+        "source": "guide:available-balance-vs-current-balance/body[5].items[3]#0"
+      },
+      "body": [
+        {
+          "text": "It changes how you read every balance afterward.",
+          "source": "guide:available-balance-vs-current-balance/body[5].items[3]#1"
+        }
+      ],
+      "emphasis": [
+        "agreement"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "How to read your two numbers today",
+        "source": "guide:available-balance-vs-current-balance/body[5].heading"
+      },
+      "number": {
+        "text": "5",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Subtract what is due before payday from the available figure.",
+        "source": "guide:available-balance-vs-current-balance/body[5].items[4]#0"
+      },
+      "body": [],
+      "emphasis": [
+        "available"
+      ]
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "Monthly Money Reset",
+        "source": "title"
+      },
+      "line": {
+        "text": "Bills you protect are held back whether they are paid yet or not, so the figure never counts money you already owe.",
+        "source": "searchedProblems[3].answer"
+      },
+      "ui": {
+        "kind": "live",
+        "live": "safeToSpendCard"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "Available vs current balance: which one can you spend?",
+        "source": "guide:available-balance-vs-current-balance/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/available-balance-vs-current-balance",
+        "source": "guide:available-balance-vs-current-balance/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"My balance says I have money but a bill is coming\" (searchedProblems[3].phrase), as people search it.",
+    "Steps: 5 of 5 from the guide's numbered steps \"How to read your two numbers today\", one per slide, each with the guide's own explanation.",
+    "Help: \"Bills you protect are held back whether they are paid yet or not, so the figure never counts money you already owe.\" (searchedProblems[3].answer), on the live safeToSpendCard computing a real number."
+  ]
+}

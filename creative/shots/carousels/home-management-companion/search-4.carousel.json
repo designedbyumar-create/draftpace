@@ -1,0 +1,195 @@
+{
+  "id": "car-home-management-companion-search-4",
+  "product": "home-management-companion",
+  "guide": "appliance-warranties-what-to-track",
+  "situation": "searchedProblems[3].phrase",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "I lost the manual, the receipt and the warranty",
+        "source": "searchedProblems[3].phrase"
+      },
+      "emphasis": [
+        "warranty"
+      ],
+      "promise": {
+        "text": "How to keep track of appliance warranties",
+        "source": "guide:appliance-warranties-what-to-track/title"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "What to record at purchase, the service condition that catches people out, and when to check the expiration date before you pay for a repair.",
+          "source": "guide:appliance-warranties-what-to-track/dek#0"
+        }
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "If you do need to make a claim",
+        "source": "guide:appliance-warranties-what-to-track/body[7].heading"
+      },
+      "number": {
+        "text": "1",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Contact the seller first.",
+        "source": "guide:appliance-warranties-what-to-track/body[7].items[0]#0"
+      },
+      "body": [
+        {
+          "text": "Many warranty problems get resolved there before the manufacturer is even involved.",
+          "source": "guide:appliance-warranties-what-to-track/body[7].items[0]#1"
+        }
+      ],
+      "emphasis": [
+        "Contact"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "If you do need to make a claim",
+        "source": "guide:appliance-warranties-what-to-track/body[7].heading"
+      },
+      "number": {
+        "text": "2",
+        "source": "micro"
+      },
+      "head": {
+        "text": "If that doesn't work, contact the manufacturer directly.",
+        "source": "guide:appliance-warranties-what-to-track/body[7].items[1]#0"
+      },
+      "body": [
+        {
+          "text": "The warranty document lists an address or a claims line.",
+          "source": "guide:appliance-warranties-what-to-track/body[7].items[1]#1"
+        }
+      ],
+      "emphasis": [
+        "manufacturer"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "If you do need to make a claim",
+        "source": "guide:appliance-warranties-what-to-track/body[7].heading"
+      },
+      "number": {
+        "text": "3",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Have the serial number, the purchase date and the proof of purchase ready before you call.",
+        "source": "guide:appliance-warranties-what-to-track/body[7].items[2]#0"
+      },
+      "body": [],
+      "emphasis": [
+        "purchase"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "If you do need to make a claim",
+        "source": "guide:appliance-warranties-what-to-track/body[7].heading"
+      },
+      "number": {
+        "text": "4",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Ask what documentation they need, and get the outcome in writing, with a claim or reference number.",
+        "source": "guide:appliance-warranties-what-to-track/body[7].items[3]#0"
+      },
+      "body": [],
+      "emphasis": [
+        "documentation"
+      ]
+    },
+    {
+      "kind": "checklist",
+      "eyebrow": {
+        "text": "What to record when something is installed",
+        "source": "guide:appliance-warranties-what-to-track/body[2].heading"
+      },
+      "items": [
+        {
+          "text": "Serial number, which is what a manufacturer asks for first.",
+          "source": "guide:appliance-warranties-what-to-track/body[2].items[1]#0"
+        },
+        {
+          "text": "Where the proof of purchase is, even if that's just a search term for your inbox.",
+          "source": "guide:appliance-warranties-what-to-track/body[2].items[2]#0"
+        },
+        {
+          "text": "The warranty length, and whether you registered it or paid to extend it.",
+          "source": "guide:appliance-warranties-what-to-track/body[2].items[3]#0"
+        },
+        {
+          "text": "Any condition attached, most often a required annual service.",
+          "source": "guide:appliance-warranties-what-to-track/body[2].items[4]#0"
+        }
+      ],
+      "ticks": true
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "Home Base",
+        "source": "title"
+      },
+      "line": {
+        "text": "Make, model, install date, warranty end and the what-to-buy line live on the thing itself, and print onto one card when you need them.",
+        "source": "searchedProblems[3].answer"
+      },
+      "ui": {
+        "kind": "screen",
+        "src": "screens/home-management-companion-workspace.png"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "How to keep track of appliance warranties",
+        "source": "guide:appliance-warranties-what-to-track/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/appliance-warranties-what-to-track",
+        "source": "guide:appliance-warranties-what-to-track/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"I lost the manual, the receipt and the warranty\" (searchedProblems[3].phrase), as people search it.",
+    "Steps: 4 of 5 from the guide's numbered steps \"If you do need to make a claim\", one per slide, each with the guide's own explanation.",
+    "Checklist: 4 items from \"What to record when something is installed\".",
+    "Help: \"Make, model, install date, warranty end and the what-to-buy line live on the thing itself, and print onto one card when you need them.\" (searchedProblems[3].answer), on screens/home-management-companion-workspace.png (\"A couple of things need a look\")."
+  ]
+}

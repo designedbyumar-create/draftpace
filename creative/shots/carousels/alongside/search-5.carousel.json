@@ -1,0 +1,209 @@
+{
+  "id": "car-alongside-search-5",
+  "product": "alongside",
+  "guide": "life-admin-with-brain-fog",
+  "situation": "searchedProblems[4].phrase",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "I have brain fog and can't face life admin",
+        "source": "searchedProblems[4].phrase"
+      },
+      "emphasis": [
+        "admin"
+      ],
+      "promise": {
+        "text": "Life admin with brain fog: long covid, illness, grief",
+        "source": "guide:life-admin-with-brain-fog/title"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "When holding a plan in your head has become unreliable, build for the bad day.",
+          "source": "guide:life-admin-with-brain-fog/dek#0"
+        },
+        {
+          "text": "A handoff note, task sizes, and call lines that don't depend on knowing why.",
+          "source": "guide:life-admin-with-brain-fog/dek#1"
+        }
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Six adjustments",
+        "source": "guide:life-admin-with-brain-fog/body[3].heading"
+      },
+      "number": {
+        "text": "1",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Put the details outside your head.",
+        "source": "guide:life-admin-with-brain-fog/body[3].items[0]#0"
+      },
+      "body": [
+        {
+          "text": "Not a task list, but the things you'd otherwise hold: reference numbers, what you've already tried, who you spoke to and when.",
+          "source": "guide:life-admin-with-brain-fog/body[3].items[0]#1"
+        },
+        {
+          "text": "Paper by the phone works.",
+          "source": "guide:life-admin-with-brain-fog/body[3].items[0]#2"
+        },
+        {
+          "text": "So does one page per matter.",
+          "source": "guide:life-admin-with-brain-fog/body[3].items[0]#3"
+        }
+      ],
+      "emphasis": [
+        "outside"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Six adjustments",
+        "source": "guide:life-admin-with-brain-fog/body[3].heading"
+      },
+      "number": {
+        "text": "2",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Write the next physical action, not the goal.",
+        "source": "guide:life-admin-with-brain-fog/body[3].items[1]#0"
+      },
+      "body": [
+        {
+          "text": "\"Call the number on the letter\" is doable on a low day.",
+          "source": "guide:life-admin-with-brain-fog/body[3].items[1]#1"
+        }
+      ],
+      "emphasis": [
+        "physical"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Six adjustments",
+        "source": "guide:life-admin-with-brain-fog/body[3].heading"
+      },
+      "number": {
+        "text": "3",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Record where you stopped, every time.",
+        "source": "guide:life-admin-with-brain-fog/body[3].items[2]#0"
+      },
+      "body": [
+        {
+          "text": "Rebuilding where you were is the most expensive part of any restart, and the easiest to skip.",
+          "source": "guide:life-admin-with-brain-fog/body[3].items[2]#1"
+        }
+      ],
+      "emphasis": [
+        "stopped"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Six adjustments",
+        "source": "guide:life-admin-with-brain-fog/body[3].heading"
+      },
+      "number": {
+        "text": "4",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Sort tasks by how much they ask of you, not by importance.",
+        "source": "guide:life-admin-with-brain-fog/body[3].items[3]#0"
+      },
+      "body": [],
+      "emphasis": [
+        "importance"
+      ]
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Six adjustments",
+        "source": "guide:life-admin-with-brain-fog/body[3].heading"
+      },
+      "number": {
+        "text": "5",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Expect to repeat yourself.",
+        "source": "guide:life-admin-with-brain-fog/body[3].items[4]#0"
+      },
+      "body": [
+        {
+          "text": "Institutions will ask the same questions across four different people, so keep your notes where you can read them off.",
+          "source": "guide:life-admin-with-brain-fog/body[3].items[4]#1"
+        }
+      ],
+      "emphasis": [
+        "yourself"
+      ]
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "ADHD Life Companion",
+        "source": "title"
+      },
+      "line": {
+        "text": "Built for the difficulty rather than the diagnosis, and it never asks why holding a plan in your head is unreliable right now.",
+        "source": "searchedProblems[4].answer"
+      },
+      "ui": {
+        "kind": "screen",
+        "src": "screens/alongside-life.png"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "Life admin with brain fog: long covid, illness, grief",
+        "source": "guide:life-admin-with-brain-fog/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/life-admin-with-brain-fog",
+        "source": "guide:life-admin-with-brain-fog/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"I have brain fog and can't face life admin\" (searchedProblems[4].phrase), as people search it.",
+    "Steps: 5 of 6 from the guide's numbered steps \"Six adjustments\", one per slide, each with the guide's own explanation.",
+    "Help: \"Built for the difficulty rather than the diagnosis, and it never asks why holding a plan in your head is unreliable right now.\" (searchedProblems[4].answer), on screens/alongside-life.png (\"Everything you are holding\")."
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "id": "car-homeschooling-companion-search-4",
+  "product": "homeschooling-companion",
+  "guide": "what-goes-in-a-homeschool-portfolio",
+  "situation": "searchedProblems[3].phrase",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "What goes in a homeschool portfolio",
+        "source": "searchedProblems[3].phrase"
+      },
+      "emphasis": [
+        "homeschool"
+      ],
+      "promise": {
+        "text": "What to include in a homeschool portfolio, by subject",
+        "source": "guide:what-goes-in-a-homeschool-portfolio/title"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "The five core contents, what to keep per subject, and why October and March samples say more than a highlight reel.",
+          "source": "guide:what-goes-in-a-homeschool-portfolio/dek#0"
+        },
+        {
+          "text": "Check your state's rules.",
+          "source": "guide:what-goes-in-a-homeschool-portfolio/dek#1"
+        }
+      ]
+    },
+    {
+      "kind": "checklist",
+      "eyebrow": {
+        "text": "The core contents",
+        "source": "guide:what-goes-in-a-homeschool-portfolio/body[2].heading"
+      },
+      "items": [
+        {
+          "text": "A log of educational activities, with reading materials named by title.",
+          "source": "guide:what-goes-in-a-homeschool-portfolio/body[2].items[0]#0"
+        },
+        {
+          "text": "A list of subjects covered and the materials or curriculum used.",
+          "source": "guide:what-goes-in-a-homeschool-portfolio/body[2].items[2]#0"
+        },
+        {
+          "text": "Attendance or days schooled, where your state counts them.",
+          "source": "guide:what-goes-in-a-homeschool-portfolio/body[2].items[3]#0"
+        },
+        {
+          "text": "Test results or an evaluator's written report, where required.",
+          "source": "guide:what-goes-in-a-homeschool-portfolio/body[2].items[4]#0"
+        }
+      ],
+      "ticks": true
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "Homeschooling Companion",
+        "source": "title"
+      },
+      "line": {
+        "text": "A dated record of what was done, notes in your own words about the day something landed, and check results per topic. You choose what is included before it prints.",
+        "source": "searchedProblems[3].answer"
+      },
+      "ui": {
+        "kind": "screen",
+        "src": "screens/homeschooling-companion-record.png"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "What to include in a homeschool portfolio, by subject",
+        "source": "guide:what-goes-in-a-homeschool-portfolio/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/what-goes-in-a-homeschool-portfolio",
+        "source": "guide:what-goes-in-a-homeschool-portfolio/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"What goes in a homeschool portfolio\" (searchedProblems[3].phrase), as people search it.",
+    "Checklist: 4 items from \"The core contents\".",
+    "Help: \"A dated record of what was done, notes in your own words about the day something landed, and check results per topic. You choose what is included before it prints.\" (searchedProblems[3].answer), on screens/homeschooling-companion-record.png (\"What has happened.\")."
+  ]
+}

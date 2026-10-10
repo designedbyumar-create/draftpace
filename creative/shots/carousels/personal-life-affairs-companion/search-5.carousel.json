@@ -1,0 +1,116 @@
+{
+  "id": "car-personal-life-affairs-companion-search-5",
+  "product": "personal-life-affairs-companion",
+  "guide": "talking-to-your-parents-about-their-affairs",
+  "situation": "searchedProblems[4].phrase",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "How do I talk to my parents about their affairs",
+        "source": "searchedProblems[4].phrase"
+      },
+      "emphasis": [
+        "parents"
+      ],
+      "promise": {
+        "text": "How to talk to your parents about their will and finances",
+        "source": "guide:talking-to-your-parents-about-their-affairs/title"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "What to open with, which documents to ask about, what to do if they say no, and scripts for a conversation that usually takes several tries.",
+          "source": "guide:talking-to-your-parents-about-their-affairs/dek#0"
+        }
+      ]
+    },
+    {
+      "kind": "checklist",
+      "eyebrow": {
+        "text": "What to ask about, once they're willing",
+        "source": "guide:talking-to-your-parents-about-their-affairs/body[3].heading"
+      },
+      "items": [
+        {
+          "text": "Where the will is kept, and whether it's the current one.",
+          "source": "guide:talking-to-your-parents-about-their-affairs/body[3].items[0]#0"
+        },
+        {
+          "text": "Which bank or banks they use, by name only.",
+          "source": "guide:talking-to-your-parents-about-their-affairs/body[3].items[1]#0"
+        },
+        {
+          "text": "Who their lawyer or financial advisor is, if they have one.",
+          "source": "guide:talking-to-your-parents-about-their-affairs/body[3].items[2]#0"
+        },
+        {
+          "text": "Who they've named to make medical decisions if they can't.",
+          "source": "guide:talking-to-your-parents-about-their-affairs/body[3].items[3]#0"
+        },
+        {
+          "text": "Whether a power of attorney exists, and who holds it.",
+          "source": "guide:talking-to-your-parents-about-their-affairs/body[3].items[4]#0"
+        },
+        {
+          "text": "Where the paperwork for the house or car is kept.",
+          "source": "guide:talking-to-your-parents-about-their-affairs/body[3].items[5]#0"
+        }
+      ],
+      "ticks": true
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "Personal Life Affairs Companion",
+        "source": "title"
+      },
+      "line": {
+        "text": "Give them something with a first step small enough to take. One question at a time, and everything that does not apply to them never appears.",
+        "source": "searchedProblems[4].answer"
+      },
+      "ui": {
+        "kind": "screen",
+        "src": "screens/personal-life-affairs-companion-workspace.png"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "How to talk to your parents about their will and finances",
+        "source": "guide:talking-to-your-parents-about-their-affairs/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/talking-to-your-parents-about-their-affairs",
+        "source": "guide:talking-to-your-parents-about-their-affairs/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"How do I talk to my parents about their affairs\" (searchedProblems[4].phrase), as people search it.",
+    "Checklist: 6 items from \"What to ask about, once they're willing\".",
+    "Help: \"Give them something with a first step small enough to take. One question at a time, and everything that does not apply to them never appears.\" (searchedProblems[4].answer), on screens/personal-life-affairs-companion-workspace.png (\"Write down who should be called first.\")."
+  ]
+}

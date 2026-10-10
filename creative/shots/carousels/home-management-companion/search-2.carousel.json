@@ -1,0 +1,135 @@
+{
+  "id": "car-home-management-companion-search-2",
+  "product": "home-management-companion",
+  "guide": "first-week-after-buying-a-house",
+  "situation": "searchedProblems[1].phrase",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "I just bought a house and have no idea what needs doing",
+        "source": "searchedProblems[1].phrase"
+      },
+      "emphasis": [
+        "house"
+      ],
+      "promise": {
+        "text": "New house checklist: what to do in the first week",
+        "source": "guide:first-week-after-buying-a-house/title"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "Shutoffs, meter readings, alarms, appliance labels and the inspection report: what to capture in the first week, while it is all in front of you.",
+          "source": "guide:first-week-after-buying-a-house/dek#0"
+        }
+      ]
+    },
+    {
+      "kind": "checklist",
+      "eyebrow": {
+        "text": "Day one, before anything else",
+        "source": "guide:first-week-after-buying-a-house/body[2].heading"
+      },
+      "items": [
+        {
+          "text": "Photograph the gas, electric and water meters, with the date visible, before anyone touches them.",
+          "source": "guide:first-week-after-buying-a-house/body[2].items[0]#0"
+        },
+        {
+          "text": "Find the main water shutoff, the breaker panel, and the gas shutoff.",
+          "source": "guide:first-week-after-buying-a-house/body[2].items[1]#0"
+        },
+        {
+          "text": "Write down which company supplies each utility, and the account number if there's paperwork for it.",
+          "source": "guide:first-week-after-buying-a-house/body[2].items[2]#0"
+        },
+        {
+          "text": "Find out whether the alarm system has a code, and who besides you has it.",
+          "source": "guide:first-week-after-buying-a-house/body[2].items[3]#0"
+        },
+        {
+          "text": "Test every smoke and carbon monoxide alarm, and note the replacement date printed on each unit.",
+          "source": "guide:first-week-after-buying-a-house/body[2].items[4]#0"
+        }
+      ],
+      "ticks": true
+    },
+    {
+      "kind": "checklist",
+      "eyebrow": {
+        "text": "Week one, while it's still easy to ask",
+        "source": "guide:first-week-after-buying-a-house/body[4].heading"
+      },
+      "items": [
+        {
+          "text": "Brand, model and serial for the furnace or boiler, water heater, and any appliance left behind.",
+          "source": "guide:first-week-after-buying-a-house/body[4].items[0]#0"
+        },
+        {
+          "text": "Warranty end dates for anything recent, especially appliances the previous owner left in the house.",
+          "source": "guide:first-week-after-buying-a-house/body[4].items[3]#0"
+        },
+        {
+          "text": "Any technician the previous owner recommends.",
+          "source": "guide:first-week-after-buying-a-house/body[4].items[4]#0"
+        }
+      ],
+      "ticks": true
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "Home Base",
+        "source": "title"
+      },
+      "line": {
+        "text": "Tap what your home has across twelve areas and it tells you what each one needs and roughly when, before anything becomes a repair.",
+        "source": "searchedProblems[1].answer"
+      },
+      "ui": {
+        "kind": "screen",
+        "src": "screens/home-management-companion-workspace.png"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "New house checklist: what to do in the first week",
+        "source": "guide:first-week-after-buying-a-house/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/first-week-after-buying-a-house",
+        "source": "guide:first-week-after-buying-a-house/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"I just bought a house and have no idea what needs doing\" (searchedProblems[1].phrase), as people search it.",
+    "Checklist: 5 items from \"Day one, before anything else\".",
+    "Checklist: 3 items from \"Week one, while it's still easy to ask\".",
+    "Help: \"Tap what your home has across twelve areas and it tells you what each one needs and roughly when, before anything becomes a repair.\" (searchedProblems[1].answer), on screens/home-management-companion-workspace.png (\"A couple of things need a look\")."
+  ]
+}
