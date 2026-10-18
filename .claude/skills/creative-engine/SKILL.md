@@ -495,6 +495,13 @@ capture-screens.mjs  ->  render  ->  review.mjs  ->  publish-pinterest.mjs
   (`{ "pinterestBoards": { "<slug>": "<board>" } }`) and are left blank,
   with a warning, when unset. It prepares an upload; it posts nothing.
   The JPEGs only resolve as Media URLs once deployed.
+- **Never redraw a pin under a URL that has already served a picture.**
+  Pinterest (and the CDN) keep the picture they first fetched from a URL,
+  so a redrawn pin under its old name still imports as the old one. The
+  redrawn Draftpace pins live under `public/store/pinterest-pins/
+  illustrated/`, a path no old picture ever had, and the guard in
+  `tests/draftpace-pins-guards.test.ts` fails if a CSV points back at an
+  old URL.
 
 ## Adding a new product
 
