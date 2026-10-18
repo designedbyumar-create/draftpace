@@ -1,0 +1,1294 @@
+{
+  "product": "monthly-money-reset",
+  "audience": [
+    "people living paycheck to paycheck who open the banking app and still don't know what is really theirs to spend",
+    "freelancers, tipped, gig and commission workers whose pay lands on different days in different amounts",
+    "people who have started and dropped a budget (or YNAB, or a 12-tab spreadsheet) more than once and are tired of catching up",
+    "beginners who search 'budgeting for beginners' and save one-page budget sheets and weekly money check-in lists",
+    "savers building a first $1,000 emergency fund, and people who save cash-envelope and savings-tracker pins",
+    "anyone resetting at the end of the month or before holiday spending, who wants to start clean from today's balance"
+  ],
+  "visualWorld": {
+    "setting": "A kitchen table and fridge door on a Sunday evening, seen flat-lay from above or straight on: the paper side of month-to-month money. Kraft envelopes holding bill money back, a wall calendar with bill stickers and paydays, a torn till receipt that shows the working, a price tag on a coffee cup, a jar on the counter, a one-page printout under a fridge magnet. One month at a time, always paper, never a bank dashboard (that is Personal Finance Companion's world: accounts, debt payoff curves, statement imports, subscriptions lists across cards).",
+    "props": [
+      {
+        "id": "receipt-slot",
+        "draw": "A deep forest rounded rectangle (the 'Number' panel) with a dark slot line cut across its lower edge; a tall off-white till receipt hangs from the slot. Receipt: straight top edge, zigzag torn bottom (12px teeth), faint drop shadow, rows of label + dotted leader + right-aligned mono figure, a sign column (+ in sage-green, minus in muted grey), a double rule above the bold total line. Mirrors SafeToSpendCard.tsx."
+      },
+      {
+        "id": "cash-envelopes",
+        "draw": "Kraft envelopes (rectangle plus a flap drawn as a downward triangle with a 3px darker edge), each with a white label window (rounded rectangle) holding a name, an amount and a due date. Sealed variant: a clay paper band wrapped round the middle. Open variant: flap up, a slip of paper with a figure poking out. No banknotes, no coins: the envelope stands for money held back, not a cash system."
+      },
+      {
+        "id": "bill-calendar",
+        "draw": "A wall-calendar page hanging from a black binder clip: header strip with the month name, 7 columns x 5 rows of squares with small date numerals top-left; bill stickers are clay rounded tabs with a name and amount; paydays are sage tabs; one date ringed by a hand-drawn clay circle (an open ellipse with a slight overlap)."
+      },
+      {
+        "id": "balance-line",
+        "draw": "A thin step line running under the calendar, one step per dated bill or payday, dropping at bills and rising at pay; the lowest step gets a filled clay dot and a pill chip reading 'Tightest' + date + mono amount, the same chip shape the product shows."
+      },
+      {
+        "id": "paycheck-stub",
+        "draw": "A short wide slip with a perforated left edge (row of small circles), a name line and a mono amount. 'Received' version: solid outline and a small sage check. 'Expected' version: dashed outline, 60% opacity, a small grey stamp-box reading 'not counted yet'."
+      },
+      {
+        "id": "coffee-cup",
+        "draw": "A takeaway cup: tapered trapezoid body, a lid as a flat rounded band, a kraft sleeve band round the middle; a swing tag on a curved string hangs from the lid."
+      },
+      {
+        "id": "price-tag",
+        "draw": "A kraft tag: rectangle with two clipped top corners, a punched hole (circle) with a looped string; large mono price; optional verdict written underneath in small sans."
+      },
+      {
+        "id": "grocery-bag",
+        "draw": "A flat paper grocery bag: rectangle with a zigzag top edge and a folded side gusset line, one leafy shape (three ellipses) poking out."
+      },
+      {
+        "id": "savings-jar",
+        "draw": "A mason jar: rounded body, a lid of two horizontal bands, a measuring scale of short ticks on one side with labels up to $1,000, the fill drawn as stacked horizontal colour bands (each band a deposit), a couple of coins (circles with an inner ring) dropping in from above."
+      },
+      {
+        "id": "fridge-door",
+        "draw": "The full canvas as a fridge door: soft warm-white panel, one long vertical handle (rounded bar) at the left edge, a faint seam line near the top. Holds paper with round and square magnets (flat circles with a highlight crescent)."
+      },
+      {
+        "id": "printable-sheet",
+        "draw": "A sheet of paper rotated -2 degrees with a thin header rule, small caps section labels, rows with dotted leaders and right-aligned figures, or square tick boxes with ticks drawn as two-stroke check marks."
+      },
+      {
+        "id": "checklist-card",
+        "draw": "A ruled index card: rectangle with one red-clay top rule and pale blue-grey lines, square tick boxes at the left of each line."
+      },
+      {
+        "id": "kitchen-timer",
+        "draw": "A round kitchen timer: circle with a smaller dial circle, tick marks round the edge, a pointer at the minute mark the pin names, a small knob on top."
+      },
+      {
+        "id": "sticky-note",
+        "draw": "A square note with a slightly curled bottom-right corner (a small triangle in a darker tint), held by one magnet."
+      },
+      {
+        "id": "month-pages",
+        "draw": "Two calendar or ledger pages side by side: the left one greyed and curling at one corner, the right one crisp; a bold clay arrow between them."
+      },
+      {
+        "id": "receipt-pile",
+        "draw": "A shoebox (open box drawn as a parallelogram rim and front face) overflowing with curled grey receipt strips; drawn at low contrast, the thing you no longer need to sort."
+      },
+      {
+        "id": "tab-binder",
+        "draw": "A thick ring binder seen from the side with twelve coloured index tabs sticking out, slightly bulging; drawn heavy, the 'whole system' in a contrast pin."
+      },
+      {
+        "id": "toggle-row",
+        "draw": "A row with a label and a pill toggle (rounded track, circle knob at the right when on, forest-filled)."
+      },
+      {
+        "id": "phone-screenshot",
+        "draw": "A rounded phone frame (390-wide aspect) holding the real capture creative/public/screens/monthly-money-reset-progress.png, cropped to its top cards or its footer line; never a re-drawn or invented screen."
+      },
+      {
+        "id": "pencil",
+        "draw": "A short pencil: hexagonal body as a long rectangle, a cone tip, a clay ferrule band and eraser."
+      }
+    ],
+    "palette": "The product's own tokens from src/products/monthly-money-reset/theme.ts: forest #173c32 (hero panels, headline ink on light grounds), sage #96a58f / sage-soft #dce2d7 / sage-pale #edf0e9 (paydays, received income, calm fills), ivory #f5f0e8 and paper #fffdf9 (table, receipts, sheets), ink #18231f, line #ded8cd. Clay #b86f4a and clay-soft #f2e2d8 are the single warm accent: envelope bands, bill stickers, the tightest-day ring, price tags. Kraft is clay-soft deepened toward line #cbc3b7, not a new hue. No alarm red; a negative number would use the product's own danger #9e4f44 sparingly.",
+    "mood": "Calm and practical: a quiet Sunday sort-out at the kitchen table, not a hustle or a no-spend dare. Honest paper, real figures with their working shown, nothing scored or streaked. The tone of the product itself: 'It shows you the picture; the decisions stay yours.'"
+  },
+  "archetypes": [
+    {
+      "id": "safe-to-spend-receipt",
+      "name": "The receipt",
+      "clicks": "Money pins that show a specific figure and the arithmetic behind it are the niche's staple: benefit-led, number-forward headlines are recommended over generic labels (Tailwind), and finance pins that promise a specific outcome or number are the advice from finance bloggers (businessjournalism.org). A receipt reads instantly as 'here is the math' and is saved as a reference for doing your own sum. It is also this product's real signature: the Number panel with a torn receipt hanging from it (SafeToSpendCard.tsx).",
+      "layout": "1000x1500 on ivory. Small Draftpace logo top-left (40px, never bottom-right). Headline y 90-430, left-aligned at x 70, forest ink, bold sans, 2-3 lines, max ~64px. Forest Number panel y 470-660 spanning x 70-930 with a small-caps label (e.g. 'SAFE TO SPEND NOW') and the big total in mono. The receipt hangs from the panel's slot, x 180-820, y 640-1260, torn bottom edge; 4-7 rows of label, dotted leader, mono figure; double rule; bold total. Sub line y 1290-1350 at x 70. Product line (name, free/price) bottom-left y 1390-1450; keep x>800, y>1350 empty.",
+      "visual": "The forest panel, the hanging receipt with its working, optionally a paycheck stub or keypad clipped beside it.",
+      "text": "Headline; panel label and total; receipt lines copied from the product's real labels (SafeToSpendCard.tsx / PrintablesModule.tsx BREAKDOWN_LINES) with figures from DEMO_STATE or a guide's worked example, labelled 'Example'; one real sub line.",
+      "bestFor": "safe to spend, one-page budget, restart from today, check-in result, no bank linking, savings taken off first"
+    },
+    {
+      "id": "held-back-envelopes",
+      "name": "Held-back envelopes",
+      "clicks": "Cash-envelope and cash-stuffing flat-lays are one of the most recognisable money aesthetics online: cash stuffing passed 700 million TikTok views (Tom's Guide) and Pinterest reported envelope-challenge searches up 145% in its 2023 predictions coverage. The audience stops on labelled envelopes. Here the envelopes hold back named bills and reserves, which is exactly what 'protected' means in the product, without claiming a cash system.",
+      "layout": "Top-down flat-lay on an ivory table. Logo top-left. Headline y 80-420. Envelopes fan diagonally across y 500-1220, 3-5 of them, largest at front, each label window legible (name / mono amount / due date). Sealed ones carry a clay band; one open envelope at front-left with a slip showing what is left. A small 'Money available right now' slip or paycheck stub can sit top-right of the fan. Sub y 1270-1340. Product line bottom-left; bottom-right clear.",
+      "visual": "Kraft envelopes with label windows, clay bands, one open envelope with a figure slip, optionally a paycheck stub or coffee cup tucked in.",
+      "text": "Envelope labels are real bill/reserve/group names and amounts from DEMO_STATE or real labels from the product (Essentials / Flexible / Personal, 'Carries over' rows from the guide table); headline and one sub line.",
+      "bestFor": "protect bills, reserve and savings held back first, spending groups instead of 40 categories, what carries into next month"
+    },
+    {
+      "id": "tightest-day-calendar",
+      "name": "Bill calendar with the tightest day",
+      "clicks": "Bill calendars and paycheck-budget printables are a standard format in the niche (budget-by-paycheck and bill-calendar templates are sold and pinned widely), because a date is concrete in a way an average is not. A ringed date with an amount is a single, mobile-readable idea (Pinterest's own advice: concise copy, product front and centre). It shows the product's most distinctive feature, the tightest day, which no generic budget pin shows.",
+      "layout": "Logo top-left. Headline y 80-400. Wall calendar hangs from a binder clip, x 90-910, y 440-1180: month header, 7x5 grid, clay bill tabs and sage payday tabs on their dates, one date ringed in clay. Balance line y 1190-1300 under the grid, its lowest step dotted with the 'Tightest' chip. Sub y 1320-1370. Product line bottom-left. Variant for week-by-week topics: replace the grid with 6-8 week rows.",
+      "visual": "Calendar page, bill and payday stickers, ringed day, balance step line, optional dashed 'expected' stub or a price tag pinned to a day.",
+      "text": "Month name, real bill names/amounts/dates from DEMO_STATE (or a guide's dated example, labelled), the chip 'Tightest' + date + amount as the product prints it (SafeToSpendCard.tsx), headline, sub.",
+      "bestFor": "tightest day, paycheck to paycheck, irregular income dates, bills due soon, starting again on day one, budgets that drift"
+    },
+    {
+      "id": "price-tag-test",
+      "name": "The price-tag test",
+      "clicks": "'Can I afford this?' is how this audience actually searches (it is one of the product's sourced searchedProblems), and a relatable object with a price makes the pin instantly about them. A tag plus a before/after figure is a number-forward comparison, the benefit-led format Tailwind recommends, and it suits POV-style Maple pins.",
+      "layout": "Logo top-left. Headline as a question y 80-400. Hero object (coffee cup, grocery bag or a row of tags on a rail) left half x 70-480, y 470-1180, with a big kraft swing tag. Right half x 520-930: 2-4 narrow result tickets stacked (if you buy / left to spend / per week / verdict), mono figures. Sub y 1230-1320. Product line bottom-left.",
+      "visual": "Coffee cup, grocery bag or tag rail; kraft swing tags; stacked result tickets.",
+      "text": "Prices and results from a guide's worked table (can-you-afford-it-before-you-buy-it, how-to-find-every-subscription-you-are-paying-for) labelled 'Example', or the product mockup's '$600.00 to $558.00' line; verdict words copied from the guide.",
+      "bestFor": "can I afford it, overspending, impulse buys, subscriptions' yearly cost, mental math at the checkout, ways to save this month"
+    },
+    {
+      "id": "fridge-printable",
+      "name": "On the fridge",
+      "clicks": "Checklists and printable sheets are the niche's most-saved reference format: budget-checklist pin templates, savings trackers and budget binders are sold and pinned in bulk, and people save them to come back to. Pinterest's guidance favours one clear idea readable on a phone. A sheet under a fridge magnet says 'routine' and 'keep this', and the product really does make a one-page PDF meant for the fridge (wave4 pin 8.2: 'Stick it on the fridge').",
+      "layout": "Canvas is the fridge door; handle bar down the left edge. Logo top-left inside the door. Headline y 70-360 as large type on the door. Sheet x 140-880, y 400-1260, rotated -2 degrees, held by 2 magnets; 3-6 tick-box rows or the PDF snapshot's sections. Optional: a kitchen timer magnet top-right of the sheet, a sticky note, or a phone with the real Progress screenshot leaning bottom-left (x 70-380, y 1050-1400) in place of the sub. Sub y 1290-1350. Product line bottom-left.",
+      "visual": "Fridge door, printed sheet or index card with tick boxes, magnets, timer, sticky note, optional phone with the real screenshot.",
+      "text": "Check-in questions from CheckInModal.tsx QUESTIONS, step lists copied from the pin's own description or its guide, or the PDF section labels from printables/generatePdf.tsx with DEMO_STATE figures.",
+      "bestFor": "weekly check-in, step lists, end-of-month review, the one-page PDF, picking it back up after a missed week, cancellation note"
+    },
+    {
+      "id": "page-turn",
+      "name": "Turn the page",
+      "clicks": "Fresh-start and reset content is a seasonal driver (month end, New Year, before the holidays) and the 'reset' framing is how this product is named. A two-page before/after is the simplest visual story Pinterest users read at a glance: what you leave behind, what you keep. It answers the restart fear ('do I have to catch up?') with a picture rather than a claim.",
+      "layout": "Logo top-left. Headline y 80-400. Two sheets on the table y 460-1200: left x 60-470 greyed and curling (old month, receipt pile or a 12-tab binder), right x 530-940 crisp (new month with toggle rows or the starting-balance choices); clay arrow between at y ~830. Three-step variant: three cards stepping diagonally down-right with numbered circles. Sub y 1250-1320. Product line bottom-left.",
+      "visual": "Month pages, receipt pile or tab binder on the left, carry-forward toggles or starting-balance chips on the right, a clay arrow; optional phone with the real Progress screenshot as the right page.",
+      "text": "Carry-forward labels and starting-balance options from HistoryModule.tsx (Recurring income, Recurring bills, Spending groups, Reserve preference, Check-in preference; Suggested, Actual balance, Custom amount, Start fresh), Setup step titles from SetupModule.tsx STEPS, or step words from the pin's own description.",
+      "bestFor": "close the month, monthly reset, restart after falling off, one page vs a whole system, three-step how-tos"
+    },
+    {
+      "id": "savings-jar",
+      "name": "The jar",
+      "clicks": "Savings trackers to colour in (jars, thermometers, 52-week and bi-weekly charts) are among the most pinned money printables; Pinterest reported bi-weekly savings challenge searches more than tripled (Pinterest Predicts 2023 coverage). '$1,000' is a specific, reachable goal, the outcome-led number finance pins are advised to lead with. Used only where the guide supplies the numbers, since the product holds a reserve back but does not track a savings goal.",
+      "layout": "Logo top-left. Headline y 80-380. Tall jar centred x 300-700, y 420-1220, tick scale on its right side to $1,000, fill bands per deposit; to the left x 60-280, the guide's table as tick labels (amount / how often / time). Coins dropping at the top. Irregular-income variant: six paycheck stubs of different heights feeding the jar labelled 'Holding account', one even stub leaving it. Tracker variant (no money amounts): four colour-in cells. Sub y 1260-1330. Product line bottom-left.",
+      "visual": "Mason jar with scale and fill bands, coins, paycheck stubs, or colour-in cells.",
+      "text": "Only a guide's own example numbers, labelled 'Example from the guide', or the pin's own words in the tracker variant.",
+      "bestFor": "first $1,000 emergency fund, irregular income holding account, small-wins tracker"
+    }
+  ],
+  "pins": [
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-3.1",
+      "title": "How to Budget on Irregular Income, Month by Month",
+      "archetype": "savings-jar",
+      "content": {
+        "items": [
+          "Example from the guide: deposits Jan $2,900, Feb $1,850, Mar $4,100, Apr $2,300, May $3,350, Jun $2,700",
+          "You pay yourself $2,300 every month",
+          "Holding account after: $1,500, $1,050, $2,850, $2,850, $3,900, $4,300"
+        ],
+        "source": "src/content/guides.ts, guide how-to-budget-with-irregular-income, table under 'An example: six months of deposits'"
+      },
+      "headline": "How to Budget on Irregular Income, Month by Month",
+      "sub": "Freelance, tips, gig work or commission.",
+      "props": [
+        "paycheck-stub",
+        "savings-jar"
+      ],
+      "why": "Six uneven pay stubs becoming one steady pay is the guide's method in one picture; it reads as a savings tracker to the people who save those."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-3.2",
+      "title": "Budget Tool for Irregular Income: Count Only What Has Arrived",
+      "archetype": "safe-to-spend-receipt",
+      "content": {
+        "items": [
+          "Money available right now $1,842.50",
+          "+ Income received $900.00 (Freelance work)",
+          "- Ordinary spending recorded $145.85",
+          "- Bill payments made $1,574.00",
+          "- Savings transfers made $500.00",
+          "- Protected bills not yet paid $179.00",
+          "- Reserve still held $300.00",
+          "Safe to spend $43.65",
+          "Clipped stub: Salary $3,200.00, expected Oct 28, 'Income still expected (not counted yet)'"
+        ],
+        "source": "creative/src/ui-adapter/monthlyMoneyReset.tsx DEMO_STATE (frozen copy of the real seeded demo account, cycle October 2026, 'today' 2026-10-08); totals computed by the real computeSafeToSpend(), weeklyGuideAmount(), computeTightestDay() and computeNextAction() in src/products/monthly-money-reset/ (verified by running them: safe to spend $43.65, about $10.91 a week, tightest Oct 20 at $343.65, next action \"Complete this week's check-in\"); line labels from PrintablesModule.tsx BREAKDOWN_LINES; stub label from SetupModule.tsx review rows"
+      },
+      "headline": "Count Only What Has Arrived",
+      "sub": "Money you expect does not count until you mark it received.",
+      "props": [
+        "receipt-slot",
+        "paycheck-stub"
+      ],
+      "why": "The received-only rule shown literally: the freelance payment is on the receipt, the expected salary stub hangs beside it, uncounted."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-3.3",
+      "title": "Irregular Income Budget: Paid Different Every Month? Do These 4 Things First",
+      "archetype": "fridge-printable",
+      "content": {
+        "items": [
+          "Count only money that has arrived.",
+          "List the bills that cannot slip.",
+          "Find the tightest day.",
+          "Keep a small reserve."
+        ],
+        "source": "creative/pinterest/draftpace/wave2.csv mmr/pin-3.3 row, Description column"
+      },
+      "headline": "Paid Different Every Month? Do These 4 Things First",
+      "sub": "Before you plan a month with uneven pay, do four things.",
+      "props": [
+        "fridge-door",
+        "printable-sheet",
+        "pencil"
+      ],
+      "why": "A four-box checklist under a magnet is the saveable 'do this first' format, with the pin's own four steps."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-3.4",
+      "title": "Variable Income Budget: Plan From What Has Arrived",
+      "archetype": "held-back-envelopes",
+      "content": {
+        "items": [
+          "Stub, received: Freelance work $900.00",
+          "Envelope: Electricity $94.00, Oct 14",
+          "Envelope: Mobile phone $85.00, Oct 20",
+          "Envelope: Car repairs $200.00",
+          "Envelope: Gifts $100.00",
+          "Open envelope: Safe to spend $43.65"
+        ],
+        "source": "creative/src/ui-adapter/monthlyMoneyReset.tsx DEMO_STATE (frozen copy of the real seeded demo account, cycle October 2026, 'today' 2026-10-08); totals computed by the real computeSafeToSpend(), weeklyGuideAmount(), computeTightestDay() and computeNextAction() in src/products/monthly-money-reset/ (verified by running them: safe to spend $43.65, about $10.91 a week, tightest Oct 20 at $343.65, next action \"Complete this week's check-in\")"
+      },
+      "headline": "Variable Income Budget: Plan From What Has Arrived",
+      "sub": "Enter what has arrived, protect the bills, and see what is safe to spend.",
+      "props": [
+        "paycheck-stub",
+        "cash-envelopes"
+      ],
+      "why": "Money in, envelopes held back, what is left: the description's three moves as a flat-lay envelope fans recognise."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-3.5",
+      "title": "Why Budgeting With Expected Income Backfires",
+      "archetype": "tightest-day-calendar",
+      "content": {
+        "items": [
+          "Example from the guide: pay transfers land on the 1st and 15th",
+          "Rent leaves on the 3rd",
+          "The low point is the 4th",
+          "Dashed stub: the payment you are waiting on, 'late, smaller, or never'"
+        ],
+        "source": "src/content/guides.ts, guide how-to-budget-with-irregular-income, section 'Count only what has landed'; stub words from creative/pinterest/draftpace/wave2.csv mmr/pin-3.5 row, Description column"
+      },
+      "headline": "Why Budgeting With Expected Income Backfires",
+      "sub": "The payment you are waiting on can be late, smaller, or never come.",
+      "props": [
+        "bill-calendar",
+        "paycheck-stub",
+        "balance-line"
+      ],
+      "why": "A ringed 4th after rent on the 3rd makes the risk of spending expected money visible on a date."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-4.1",
+      "title": "Weekly Money Check-in: 4 Questions in 5 Minutes",
+      "archetype": "fridge-printable",
+      "content": {
+        "items": [
+          "Has any income changed or come in?",
+          "Has a bill changed or been paid?",
+          "Is there spending you haven't added yet?",
+          "Do you need to adjust your reserve or savings?"
+        ],
+        "source": "src/products/monthly-money-reset/components/CheckInModal.tsx QUESTIONS (same four in guide how-to-budget-for-beginners, 'The five minute weekly check-in')"
+      },
+      "headline": "Weekly Money Check-in: 4 Questions in 5 Minutes",
+      "sub": "A weekly money check-in should take five minutes, not a Sunday.",
+      "props": [
+        "fridge-door",
+        "checklist-card",
+        "kitchen-timer"
+      ],
+      "why": "The product's real four questions on a card with a five-minute timer: a routine people save to reuse."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-4.2",
+      "title": "A Weekly Budget Check-in You Can Actually Keep Up",
+      "archetype": "safe-to-spend-receipt",
+      "content": {
+        "items": [
+          "Check-in complete",
+          "Safe-to-Spend $43.65",
+          "What changed",
+          "Your next move: Nothing needs attention right now"
+        ],
+        "source": "Labels from src/products/monthly-money-reset/components/CheckInModal.tsx receipt phase; figure from creative/src/ui-adapter/monthlyMoneyReset.tsx DEMO_STATE (frozen copy of the real seeded demo account, cycle October 2026, 'today' 2026-10-08); totals computed by the real computeSafeToSpend(), weeklyGuideAmount(), computeTightestDay() and computeNextAction() in src/products/monthly-money-reset/ (verified by running them: safe to spend $43.65, about $10.91 a week, tightest Oct 20 at $343.65, next action \"Complete this week's check-in\")"
+      },
+      "headline": "A Weekly Budget Check-in You Can Actually Keep Up",
+      "sub": "End each check-in with one clear next move instead of a to-do wall.",
+      "props": [
+        "receipt-slot",
+        "pencil"
+      ],
+      "why": "The check-in really ends on a receipt with one next move; showing it is more convincing than saying it."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-4.3",
+      "title": "Weekly Budget Check-in: Why You Quit Budgeting After Two Months (and What Helps)",
+      "archetype": "tightest-day-calendar",
+      "content": {
+        "items": [
+          "Week 1: A true picture",
+          "Week 2: A true picture again",
+          "Week 3: Wrong, and you can't say by how much",
+          "Week 4: Still wrong",
+          "Week 6: Wrong, and you know it",
+          "Week 8: Deleted, or ignored for good",
+          "41 transactions waiting to be sorted"
+        ],
+        "source": "src/content/guides.ts, guide why-budgeting-apps-stop-working-after-two-months, table 'How the drift plays out' and section 'What week six looks like' (an illustration in the guide)"
+      },
+      "headline": "Why You Quit Budgeting After Two Months (and What Helps)",
+      "sub": "If you have started and dropped a budget more than once, the budget is the problem, not you.",
+      "props": [
+        "bill-calendar",
+        "receipt-pile"
+      ],
+      "why": "Week rows going from true to wrong turn the guide's drift table into something people recognise from their own app."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-4.4",
+      "title": "A Simple Weekly Budget Review for People Who Hate Budgeting",
+      "archetype": "page-turn",
+      "content": {
+        "items": [
+          "1. Answer four questions",
+          "2. Add only what changed",
+          "3. See your next move",
+          "Step 2 card: Spending, Income received, Bill paid, Savings set aside, Correction"
+        ],
+        "source": "creative/pinterest/draftpace/wave2.csv mmr/pin-4.4 row, Description column; step 2 entry types from monthlyMoneyResetVisuals.tsx AddInfoScreenMockup (mirrors QuickAddModal.tsx)"
+      },
+      "headline": "A Simple Weekly Budget Review for People Who Hate Budgeting",
+      "sub": "A simple weekly budget review in three moves.",
+      "props": [
+        "month-pages",
+        "checklist-card"
+      ],
+      "why": "Three cards stepping down make 'three moves' feel small, which is the promise to people who hate budgeting."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-4.5",
+      "title": "Budgeting for Beginners: Missed a Week of Budgeting? How to Pick It Back Up",
+      "archetype": "fridge-printable",
+      "content": {
+        "items": [
+          "Sticky note: You skipped a week. Maybe two.",
+          "If you fall behind, don't rebuild the gap. Restart from today's balance and go forward.",
+          "Phone (real screen): This is a record of what actually happened, not a competition. Nothing here tracks streaks or penalizes a quiet week."
+        ],
+        "source": "creative/pinterest/draftpace/wave2.csv mmr/pin-4.5 row, Description column; src/content/guides.ts, guide why-budgeting-apps-stop-working-after-two-months, list 'The upkeep small enough to keep'; creative/public/screens/monthly-money-reset-progress.png (real capture of the Progress view on the demo account)"
+      },
+      "headline": "Missed a Week of Budgeting? How to Pick It Back Up",
+      "sub": "You skipped a week.",
+      "props": [
+        "fridge-door",
+        "sticky-note",
+        "phone-screenshot"
+      ],
+      "why": "A forgiving note on the fridge and the product's real no-streaks line answer the guilt directly."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-5.1",
+      "title": "Can I Afford This? Check Before You Buy",
+      "archetype": "price-tag-test",
+      "content": {
+        "items": [
+          "Example: $600 safe to spend, four weeks to payday, a normal week costs about $110",
+          "Nothing: $600 left, $150 a week, Room to spare",
+          "A $42 item: $558 left, $139.50 a week, Fine",
+          "A $180 item: $420 left, $105 a week, A little short",
+          "A $480 item: $120 left, $30 a week, No, not before payday"
+        ],
+        "source": "src/content/guides.ts, guide can-you-afford-it-before-you-buy-it, table under 'An example: $600 safe to spend, four weeks to payday'"
+      },
+      "headline": "Can I Afford This? Check Before You Buy",
+      "sub": "The best time to check if you can afford something is before you buy it.",
+      "props": [
+        "price-tag",
+        "coffee-cup"
+      ],
+      "why": "Three tags with three verdicts answer the exact question the audience types, with the guide's worked numbers."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-5.2",
+      "title": "How to Stop Overspending Without Tracking Every Coffee",
+      "archetype": "held-back-envelopes",
+      "content": {
+        "items": [
+          "Essentials $138.40 of $600.00",
+          "Flexible $0.00 of $300.00",
+          "Personal $7.45 of $150.00",
+          "Coffee shop $7.45"
+        ],
+        "source": "creative/public/screens/monthly-money-reset-progress.png (real capture of the Progress view on the demo account) ('Spending against your own guide'); groups and the coffee entry from creative/src/ui-adapter/monthlyMoneyReset.tsx DEMO_STATE (frozen copy of the real seeded demo account, cycle October 2026, 'today' 2026-10-08); totals computed by the real computeSafeToSpend(), weeklyGuideAmount(), computeTightestDay() and computeNextAction() in src/products/monthly-money-reset/ (verified by running them: safe to spend $43.65, about $10.91 a week, tightest Oct 20 at $343.65, next action \"Complete this week's check-in\")"
+      },
+      "headline": "How to Stop Overspending Without Tracking Every Coffee",
+      "sub": "You do not need forty categories to stop overspending.",
+      "props": [
+        "cash-envelopes",
+        "coffee-cup"
+      ],
+      "why": "Three envelopes instead of forty categories, with the real $7.45 coffee tucked into Personal: the headline's joke made literal."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-5.3",
+      "title": "How to Stop Overspending: Before You Buy It: 4 Questions to Ask",
+      "archetype": "fridge-printable",
+      "content": {
+        "items": [
+          "Is this money already spoken for?",
+          "Would it leave me short before payday?",
+          "What is my tightest day?",
+          "Can it wait a week?"
+        ],
+        "source": "creative/pinterest/draftpace/wave3.csv mmr/pin-5.3 row, Description column"
+      },
+      "headline": "Before You Buy It: 4 Questions to Ask",
+      "sub": "Before you buy something, ask four things.",
+      "props": [
+        "fridge-door",
+        "checklist-card",
+        "price-tag"
+      ],
+      "why": "A tear-off question card is a pin people keep for the next shopping trip."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-5.4",
+      "title": "Stop Overspending: Check First, Decide Second",
+      "archetype": "price-tag-test",
+      "content": {
+        "items": [
+          "Example: Groceries $42.00",
+          "Safe-to-Spend would change from $600.00 to $558.00."
+        ],
+        "source": "src/app/(marketing)/shop/[productSlug]/monthlyMoneyResetVisuals.tsx (OverviewScreenMockup rows and AddInfoScreenMockup), self-described as illustrative but internally consistent; the same $1,850 / $900 / $350 / $600 example is the worked example in guide can-you-afford-it-before-you-buy-it. Label it 'Example'."
+      },
+      "headline": "Stop Overspending: Check First, Decide Second",
+      "sub": "Stop overspending by flipping the order.",
+      "props": [
+        "grocery-bag",
+        "price-tag"
+      ],
+      "why": "A grocery bag with its tag and a before/after ticket shows 'check first' as one glance."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-5.5",
+      "title": "Stop Impulse Buying: Small Purchases Add Up: See the Real Cost Before You Spend",
+      "archetype": "tightest-day-calendar",
+      "content": {
+        "items": [
+          "October 2026",
+          "Electricity $94.00, Oct 14",
+          "Mobile phone $85.00, Oct 20",
+          "Salary $3,200.00 expected, Oct 28",
+          "Chip: Tightest Oct 20 $343.65",
+          "A $42 tag pinned to the ringed day"
+        ],
+        "source": "creative/src/ui-adapter/monthlyMoneyReset.tsx DEMO_STATE (frozen copy of the real seeded demo account, cycle October 2026, 'today' 2026-10-08); totals computed by the real computeSafeToSpend(), weeklyGuideAmount(), computeTightestDay() and computeNextAction() in src/products/monthly-money-reset/ (verified by running them: safe to spend $43.65, about $10.91 a week, tightest Oct 20 at $343.65, next action \"Complete this week's check-in\"); the $42 from creative/pinterest/draftpace/wave3.csv mmr/pin-5.5 row, Description column"
+      },
+      "headline": "Small Purchases Add Up: See the Real Cost Before You Spend",
+      "sub": "A forty-two dollar purchase is easy to shrug off.",
+      "props": [
+        "bill-calendar",
+        "balance-line",
+        "price-tag"
+      ],
+      "why": "A small tag pinned to the tightest day shows why small buys matter, on the date they matter."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-6.1",
+      "title": "End of Month Money Review in 10 Minutes",
+      "archetype": "fridge-printable",
+      "content": {
+        "items": [
+          "Write down every balance (2 minutes)",
+          "Compare with the start of the month (1 minute)",
+          "Check that every bill was paid (3 minutes)",
+          "Scan the statements for what you don't recognize (2 minutes)",
+          "Look one month ahead (1 minute)",
+          "Write two lines (1 minute)"
+        ],
+        "source": "src/content/guides.ts, guide end-of-month-money-review, list 'The ten minute review, in order'"
+      },
+      "headline": "End of Month Money Review in 10 Minutes",
+      "sub": "An end of month money review does not need a spreadsheet.",
+      "props": [
+        "fridge-door",
+        "printable-sheet",
+        "kitchen-timer"
+      ],
+      "why": "A timed checklist that adds up to ten minutes is the most saveable form of a routine."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-6.2",
+      "title": "Monthly Money Reset: Close One Month, Start the Next",
+      "archetype": "safe-to-spend-receipt",
+      "content": {
+        "items": [
+          "October 2026",
+          "Bills handled 2 of 4",
+          "Check-ins 1",
+          "Reserve maintained $300.00",
+          "Safe to spend $43.65",
+          "How did this month go? (optional)",
+          "Close and start November 2026"
+        ],
+        "source": "creative/public/screens/monthly-money-reset-progress.png (real capture of the Progress view on the demo account); close-screen labels from src/products/monthly-money-reset/components/HistoryModule.tsx; total from creative/src/ui-adapter/monthlyMoneyReset.tsx DEMO_STATE (frozen copy of the real seeded demo account, cycle October 2026, 'today' 2026-10-08); totals computed by the real computeSafeToSpend(), weeklyGuideAmount(), computeTightestDay() and computeNextAction() in src/products/monthly-money-reset/ (verified by running them: safe to spend $43.65, about $10.91 a week, tightest Oct 20 at $343.65, next action \"Complete this week's check-in\") (as of Oct 8, not a month-end figure)"
+      },
+      "headline": "Close One Month, Start the Next",
+      "sub": "Close last month and start the next in a few minutes.",
+      "props": [
+        "receipt-slot",
+        "pencil"
+      ],
+      "why": "A closing receipt ending in 'Close and start November' makes the month close feel finished and small."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-6.3",
+      "title": "End of Month Money Review: What to Carry Into Next Month (and What to Leave Behind)",
+      "archetype": "held-back-envelopes",
+      "content": {
+        "items": [
+          "Carries over: Recurring income, Recurring bills, Your reserve or cushion",
+          "Stays behind: One-off purchases, Last month's spending detail"
+        ],
+        "source": "src/content/guides.ts, guide end-of-month-money-review, table 'What carries into next month'"
+      },
+      "headline": "What to Carry Into Next Month (and What to Leave Behind)",
+      "sub": "Starting a new month is easier when you know what to keep.",
+      "props": [
+        "cash-envelopes",
+        "receipt-pile"
+      ],
+      "why": "Two labelled envelopes, keep and leave, sort the month the way envelope budgeters already think."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-6.4",
+      "title": "How to Reset Your Budget at the Start of a Month",
+      "archetype": "tightest-day-calendar",
+      "content": {
+        "items": [
+          "October 2026 page tearing away, November 2026 underneath",
+          "Carried stickers: Recurring income, Recurring bills",
+          "Starting point: Suggested, Actual balance, Custom amount, Start fresh"
+        ],
+        "source": "src/products/monthly-money-reset/components/HistoryModule.tsx (CarryForwardRow labels, STARTING_BALANCE_OPTIONS)"
+      },
+      "headline": "How to Reset Your Budget at the Start of a Month",
+      "sub": "Look back at what happened, choose what carries forward, then start with a fresh number.",
+      "props": [
+        "bill-calendar",
+        "month-pages"
+      ],
+      "why": "A calendar page tearing to a fresh month is the plainest 'reset' image there is, carrying only real options."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-6.5",
+      "title": "How to Do a Monthly Money Reset Without the Guilt",
+      "archetype": "page-turn",
+      "content": {
+        "items": [
+          "Left page: How did this month go? (optional)",
+          "Right page: One thing that worked this month and one thing to change next month",
+          "Phone (real screen): This is a record of what actually happened, not a competition."
+        ],
+        "source": "HistoryModule.tsx reflection label; src/content/guides.ts, guide end-of-month-money-review, step 'Write two lines'; creative/public/screens/monthly-money-reset-progress.png (real capture of the Progress view on the demo account)"
+      },
+      "headline": "How to Do a Monthly Money Reset Without the Guilt",
+      "sub": "A monthly reset is a look, not a verdict.",
+      "props": [
+        "month-pages",
+        "phone-screenshot",
+        "pencil"
+      ],
+      "why": "Two short lines and a no-competition screen replace the lecture people expect from a review."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-7.1",
+      "title": "Your Budget Failed. How to Restart This Month",
+      "archetype": "safe-to-spend-receipt",
+      "content": {
+        "items": [
+          "Example from the guide: the 18th, three weeks of nothing logged",
+          "Checking account today $1,640",
+          "Card balance you'll pay in full on the 25th $410",
+          "Phone bill, due the 24th $55",
+          "Electric bill, due the 27th $85",
+          "Car insurance, due the 30th $132",
+          "A cushion you'd rather not touch $150",
+          "Left to spend until the 1st $808",
+          "About $62 a day"
+        ],
+        "source": "src/content/guides.ts, guide how-to-start-over-after-budget-failure, table 'An example: the 18th, three weeks of nothing logged'"
+      },
+      "headline": "Your Budget Failed. How to Restart This Month",
+      "sub": "You need today's balance, the bills still coming, and one clear number.",
+      "props": [
+        "receipt-slot"
+      ],
+      "why": "The whole restart fits on one receipt with no old spending on it, which is the guide's point."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-7.2",
+      "title": "Budget Reset: Start Over Without Redoing Everything",
+      "archetype": "page-turn",
+      "content": {
+        "items": [
+          "Left: a shoebox of old receipts, set aside",
+          "Right: This month, Money coming in, Protect what must be paid, Set your spending view, Review"
+        ],
+        "source": "src/products/monthly-money-reset/components/SetupModule.tsx STEPS; 'needs no old receipts' from creative/pinterest/draftpace/wave4.csv mmr/pin-7.2 row, Description column"
+      },
+      "headline": "Budget Reset: Start Over Without Redoing Everything",
+      "sub": "Reset your budget in a few minutes.",
+      "props": [
+        "receipt-pile",
+        "month-pages",
+        "checklist-card"
+      ],
+      "why": "Receipts pushed aside and five short steps on a fresh page show 'without redoing everything'."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-7.3",
+      "title": "Budgeting for Beginners: Before You Give Up on Budgeting, Try This",
+      "archetype": "fridge-printable",
+      "content": {
+        "items": [
+          "Forget last month.",
+          "Enter today's balance.",
+          "Add the bills still coming.",
+          "Ignore the rest."
+        ],
+        "source": "creative/pinterest/draftpace/wave4.csv mmr/pin-7.3 row, Description column"
+      },
+      "headline": "Before You Give Up on Budgeting, Try This",
+      "sub": "Four small steps get you back to a number you can trust.",
+      "props": [
+        "fridge-door",
+        "sticky-note"
+      ],
+      "why": "Four tiny sticky-note steps feel doable before quitting; small text, big ticks."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-7.4",
+      "title": "How to Restart Budgeting Without Catching Up on Old Spending",
+      "archetype": "tightest-day-calendar",
+      "content": {
+        "items": [
+          "Past weeks greyed out",
+          "Day 1: Do the sum and write the number down",
+          "Day 3: Jot each purchase since day one as a single line",
+          "Day 7: Redo the sum from fresh balances",
+          "Day 14: Do it again",
+          "Next payday: the end of month review"
+        ],
+        "source": "src/content/guides.ts, guide how-to-start-over-after-budget-failure, timeline 'The first two weeks back'"
+      },
+      "headline": "How to Restart Budgeting Without Catching Up on Old Spending",
+      "sub": "You do not have to log six weeks of old spending to start again.",
+      "props": [
+        "bill-calendar",
+        "pencil"
+      ],
+      "why": "Greyed weeks and a ringed Day 1 show that the past stays untouched."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-7.5",
+      "title": "Fell Off Your Budget? You Can Start From Today",
+      "archetype": "page-turn",
+      "content": {
+        "items": [
+          "Left page: The old month is over.",
+          "Right page: Actual balance (highlighted), Suggested, Custom amount, Start fresh"
+        ],
+        "source": "creative/pinterest/draftpace/wave4.csv mmr/pin-7.5 row, Description column; options from HistoryModule.tsx STARTING_BALANCE_OPTIONS"
+      },
+      "headline": "Fell Off Your Budget? You Can Start From Today",
+      "sub": "The old month is over. What matters is what is true today.",
+      "props": [
+        "month-pages",
+        "receipt-pile"
+      ],
+      "why": "The page turning from the old month to today's real balance is the whole message."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-8.1",
+      "title": "One-Page Monthly Budget You Can Actually Keep Up",
+      "archetype": "safe-to-spend-receipt",
+      "content": {
+        "items": [
+          "Example from the guide: Take-home pay $3,240",
+          "Fixed bills $1,828",
+          "Groceries and getting around $580",
+          "Card minimum $45",
+          "Savings $150",
+          "Everyday extras $540",
+          "Left over $97"
+        ],
+        "source": "src/content/guides.ts, guide how-to-budget-for-beginners, table 'An example: $3,240 a month, one line at a time'"
+      },
+      "headline": "One-Page Monthly Budget You Can Actually Keep Up",
+      "sub": "A one-page monthly budget beats a twelve tab spreadsheet you never open.",
+      "props": [
+        "receipt-slot"
+      ],
+      "why": "Money in, bills, left over on one receipt: the budget-sheet people search for, with the guide's real example."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-8.2",
+      "title": "Save Your Monthly Budget as a One-Page PDF, Free",
+      "archetype": "fridge-printable",
+      "content": {
+        "items": [
+          "MONTHLY MONEY RESET, October 2026",
+          "SAFE TO SPEND NOW $43.65",
+          "About $10.91 a week for the rest of the month.",
+          "YOUR NEXT MOVE: Complete this week's check-in",
+          "WHAT IS PROTECTED: Bills not yet paid $179.00, Reserve still held $300.00",
+          "UPCOMING BILLS: Electricity $94.00, Mobile phone $85.00"
+        ],
+        "source": "Section labels from src/products/monthly-money-reset/printables/generatePdf.tsx; figures from creative/src/ui-adapter/monthlyMoneyReset.tsx DEMO_STATE (frozen copy of the real seeded demo account, cycle October 2026, 'today' 2026-10-08); totals computed by the real computeSafeToSpend(), weeklyGuideAmount(), computeTightestDay() and computeNextAction() in src/products/monthly-money-reset/ (verified by running them: safe to spend $43.65, about $10.91 a week, tightest Oct 20 at $343.65, next action \"Complete this week's check-in\")"
+      },
+      "headline": "Save Your Monthly Budget as a One-Page PDF, Free",
+      "sub": "Stick it on the fridge or keep it on your phone.",
+      "props": [
+        "fridge-door",
+        "printable-sheet"
+      ],
+      "why": "The real one-page PDF under a magnet: the printable this audience saves, and it is genuinely what the tool makes."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-8.3",
+      "title": "Budget Planner: What Belongs on a One-Page Budget",
+      "archetype": "held-back-envelopes",
+      "content": {
+        "items": [
+          "Safe to spend: $43.65",
+          "About how much per week: $10.91",
+          "What is protected: Bills not yet paid $179.00, Reserve still held $300.00",
+          "Bills coming up: Electricity $94.00, Mobile phone $85.00"
+        ],
+        "source": "Four labels from creative/pinterest/draftpace/wave4.csv mmr/pin-8.3 row, Description column; figures from creative/src/ui-adapter/monthlyMoneyReset.tsx DEMO_STATE (frozen copy of the real seeded demo account, cycle October 2026, 'today' 2026-10-08); totals computed by the real computeSafeToSpend(), weeklyGuideAmount(), computeTightestDay() and computeNextAction() in src/products/monthly-money-reset/ (verified by running them: safe to spend $43.65, about $10.91 a week, tightest Oct 20 at $343.65, next action \"Complete this week's check-in\")"
+      },
+      "headline": "What Belongs on a One-Page Budget",
+      "sub": "A one-page budget only works if it holds the right things.",
+      "props": [
+        "cash-envelopes"
+      ],
+      "why": "Four labelled envelopes, one per thing that belongs on the page, and nothing else on the table."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-8.4",
+      "title": "How to Make a One-Page Monthly Budget in 3 Steps",
+      "archetype": "fridge-printable",
+      "content": {
+        "items": [
+          "1. Add your numbers",
+          "2. See the picture",
+          "3. Save the page"
+        ],
+        "source": "creative/pinterest/draftpace/wave4.csv mmr/pin-8.4 row, Description column"
+      },
+      "headline": "How to Make a One-Page Monthly Budget in 3 Steps",
+      "sub": "The free tool does the arithmetic and shows its working.",
+      "props": [
+        "fridge-door",
+        "checklist-card",
+        "printable-sheet"
+      ],
+      "why": "Three ticks on a card beside the finished page show the steps and the result together."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-8.5",
+      "title": "Budget Planner: Why a One-Page Budget Beats a 12 Tab Spreadsheet",
+      "archetype": "page-turn",
+      "content": {
+        "items": [
+          "Left: a binder with twelve tabs",
+          "Right: one page",
+          "A single page, updated weekly, is easier to keep than a spreadsheet that needs a Sunday."
+        ],
+        "source": "creative/pinterest/draftpace/wave4.csv mmr/pin-8.5 row, Description column"
+      },
+      "headline": "Why a One-Page Budget Beats a 12 Tab Spreadsheet",
+      "sub": "Big budgeting systems need big attention.",
+      "props": [
+        "tab-binder",
+        "printable-sheet",
+        "month-pages"
+      ],
+      "why": "A bulging 12-tab binder next to one sheet makes the argument without a word more."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-9.1",
+      "title": "How to Build Your First $1,000 Emergency Fund",
+      "archetype": "savings-jar",
+      "content": {
+        "items": [
+          "Example from the guide: $25 every week: 40 weeks",
+          "$50 every week: 20 weeks",
+          "$100 every two weeks: 20 weeks (10 paychecks)",
+          "$200 every month: 5 months",
+          "$400 every month: 3 months"
+        ],
+        "source": "src/content/guides.ts, guide how-to-build-a-first-1000-emergency-fund, table 'How long $1,000 takes at different amounts'"
+      },
+      "headline": "How to Build Your First $1,000 Emergency Fund",
+      "sub": "Your first $1,000 emergency fund is the one that stops a small problem becoming a big one.",
+      "props": [
+        "savings-jar"
+      ],
+      "why": "A jar with a $1,000 line and the guide's timetable is the savings-tracker pin this audience already saves."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-9.2",
+      "title": "Savings Plan: Budget Tool That Holds Savings Back Before You Spend",
+      "archetype": "held-back-envelopes",
+      "content": {
+        "items": [
+          "Reserve still held: Car repairs $200.00",
+          "Reserve still held: Gifts $100.00",
+          "Savings transfers made: Emergency fund $500.00",
+          "Open envelope: Safe to spend $43.65"
+        ],
+        "source": "creative/src/ui-adapter/monthlyMoneyReset.tsx DEMO_STATE (frozen copy of the real seeded demo account, cycle October 2026, 'today' 2026-10-08); totals computed by the real computeSafeToSpend(), weeklyGuideAmount(), computeTightestDay() and computeNextAction() in src/products/monthly-money-reset/ (verified by running them: safe to spend $43.65, about $10.91 a week, tightest Oct 20 at $343.65, next action \"Complete this week's check-in\")"
+      },
+      "headline": "Budget Tool That Holds Savings Back Before You Spend",
+      "sub": "Set a reserve, and it is taken off your safe to spend number before you see it.",
+      "props": [
+        "cash-envelopes"
+      ],
+      "why": "Sealed reserve envelopes in front of the spending envelope show 'savings first' as an order of things on the table."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-9.3",
+      "title": "4 Ways to Save Money This Month Without Big Changes",
+      "archetype": "price-tag-test",
+      "content": {
+        "items": [
+          "Look at every recurring charge.",
+          "Move a small amount first.",
+          "Trim one flexible group.",
+          "Check your tightest day."
+        ],
+        "source": "creative/pinterest/draftpace/wave4.csv mmr/pin-9.3 row, Description column (guide how-to-save-money-fast's $200 table may be added only as a labelled example)"
+      },
+      "headline": "4 Ways to Save Money This Month Without Big Changes",
+      "sub": "You can save money this month without giving anything up.",
+      "props": [
+        "price-tag",
+        "coffee-cup"
+      ],
+      "why": "Four kraft tags on a rail, one way each, read like a small shopping list of savings."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-9.4",
+      "title": "Emergency Fund Budget: Set Savings Aside First",
+      "archetype": "safe-to-spend-receipt",
+      "content": {
+        "items": [
+          "Money available right now $1,842.50",
+          "+ Income received $900.00",
+          "- Ordinary spending recorded $145.85",
+          "- Bill payments made $1,574.00",
+          "- Savings transfers made $500.00 (highlighted)",
+          "- Protected bills not yet paid $179.00",
+          "- Reserve still held $300.00 (highlighted)",
+          "Safe to spend $43.65"
+        ],
+        "source": "creative/src/ui-adapter/monthlyMoneyReset.tsx DEMO_STATE (frozen copy of the real seeded demo account, cycle October 2026, 'today' 2026-10-08); totals computed by the real computeSafeToSpend(), weeklyGuideAmount(), computeTightestDay() and computeNextAction() in src/products/monthly-money-reset/ (verified by running them: safe to spend $43.65, about $10.91 a week, tightest Oct 20 at $343.65, next action \"Complete this week's check-in\"); labels from PrintablesModule.tsx BREAKDOWN_LINES"
+      },
+      "headline": "Emergency Fund Budget: Set Savings Aside First",
+      "sub": "Build an emergency fund by holding it back before you spend.",
+      "props": [
+        "receipt-slot"
+      ],
+      "why": "The two savings lines highlighted on the real receipt prove they come off before the spendable number."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-9.5",
+      "title": "Why $1,000 Is a Good First Emergency Fund Goal",
+      "archetype": "savings-jar",
+      "content": {
+        "items": [
+          "Example from the guide: a $410 tax refund",
+          "Sell a bike for $180",
+          "$590 on day one",
+          "$35 a week",
+          "The last $410 takes 12 weeks"
+        ],
+        "source": "src/content/guides.ts, guide how-to-build-a-first-1000-emergency-fund, section 'An example: a refund and one sale'"
+      },
+      "headline": "Why $1,000 Is a Good First Emergency Fund Goal",
+      "sub": "Ten thousand dollars can feel out of reach. One thousand does not.",
+      "props": [
+        "savings-jar",
+        "paycheck-stub"
+      ],
+      "why": "A jar already more than half full on day one makes $1,000 look reachable, which is the pin's argument."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-10.1",
+      "title": "Bills Due Soon? Protect That Money Before You Spend It",
+      "archetype": "held-back-envelopes",
+      "content": {
+        "items": [
+          "Sealed: Electricity $94.00, Oct 14",
+          "Sealed: Mobile phone $85.00, Oct 20",
+          "Band: Protected bills not yet paid $179.00",
+          "Open envelope: Safe to spend $43.65"
+        ],
+        "source": "creative/src/ui-adapter/monthlyMoneyReset.tsx DEMO_STATE (frozen copy of the real seeded demo account, cycle October 2026, 'today' 2026-10-08); totals computed by the real computeSafeToSpend(), weeklyGuideAmount(), computeTightestDay() and computeNextAction() in src/products/monthly-money-reset/ (verified by running them: safe to spend $43.65, about $10.91 a week, tightest Oct 20 at $343.65, next action \"Complete this week's check-in\")"
+      },
+      "headline": "Bills Due Soon? Protect That Money Before You Spend It",
+      "sub": "The easiest way to miss a payment is to spend money that was already spoken for.",
+      "props": [
+        "cash-envelopes"
+      ],
+      "why": "Bill money sealed in envelopes before anything else is the 'protect it first' habit envelope savers know."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-10.2",
+      "title": "Budget Without Linking Your Bank: Type It, See It",
+      "archetype": "safe-to-spend-receipt",
+      "content": {
+        "items": [
+          "Money available right now $1,850.00",
+          "- Protected bills not yet paid $900.00",
+          "- Reserve still held $350.00",
+          "Safe to spend $600.00",
+          "Not your bank's balance. This already holds back the bills and savings you've told it about."
+        ],
+        "source": "src/app/(marketing)/shop/[productSlug]/monthlyMoneyResetVisuals.tsx (OverviewScreenMockup rows and AddInfoScreenMockup), self-described as illustrative but internally consistent; the same $1,850 / $900 / $350 / $600 example is the worked example in guide can-you-afford-it-before-you-buy-it. Label it 'Example'."
+      },
+      "headline": "Budget Without Linking Your Bank: Type It, See It",
+      "sub": "You do not have to link your bank to see where you stand.",
+      "props": [
+        "receipt-slot",
+        "pencil"
+      ],
+      "why": "A typed receipt with a pencil beside it, and no bank logo anywhere, says 'you enter it' visually."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-10.3",
+      "title": "Cancel Subscriptions: How to Find Every Subscription You Are Paying For",
+      "archetype": "price-tag-test",
+      "content": {
+        "items": [
+          "Example from the guide: Video streaming $15.49 monthly, $185.88 a year",
+          "Music streaming $10.99 monthly, $131.88 a year",
+          "Cloud storage $2.99 monthly, $35.88 a year",
+          "Photo editing app $4.99 monthly, $59.88 a year",
+          "Fitness app $79.99 once a year",
+          "Antivirus $59.99 once a year",
+          "Total $553.50 a year"
+        ],
+        "source": "src/content/guides.ts, guide how-to-find-every-subscription-you-are-paying-for, table 'An example sweep, with the yearly cost of each'"
+      },
+      "headline": "How to Find Every Subscription You Are Paying For",
+      "sub": "Most people are paying for something they forgot.",
+      "props": [
+        "price-tag"
+      ],
+      "why": "Small monthly tags flipping to their yearly cost is the surprise that makes people save the pin."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-10.4",
+      "title": "Monthly Bills Budget: Protect What Must Be Paid",
+      "archetype": "tightest-day-calendar",
+      "content": {
+        "items": [
+          "October 2026",
+          "Rent $1,450.00, Oct 1, paid",
+          "Car insurance $124.00, Oct 5, paid",
+          "Electricity $94.00, Oct 14",
+          "Mobile phone $85.00, Oct 20",
+          "Bills handled 2 of 4. Paid this cycle. The rest are already protected."
+        ],
+        "source": "creative/src/ui-adapter/monthlyMoneyReset.tsx DEMO_STATE (frozen copy of the real seeded demo account, cycle October 2026, 'today' 2026-10-08); totals computed by the real computeSafeToSpend(), weeklyGuideAmount(), computeTightestDay() and computeNextAction() in src/products/monthly-money-reset/ (verified by running them: safe to spend $43.65, about $10.91 a week, tightest Oct 20 at $343.65, next action \"Complete this week's check-in\"); 'Bills handled' card text from creative/public/screens/monthly-money-reset-progress.png (real capture of the Progress view on the demo account)"
+      },
+      "headline": "Monthly Bills Budget: Protect What Must Be Paid",
+      "sub": "A monthly bills budget starts with the bills.",
+      "props": [
+        "bill-calendar"
+      ],
+      "why": "A bill calendar with two ticked and two protected is the bill-tracker printable look, with real product wording."
+    },
+    {
+      "account": "draftpace",
+      "id": "mmr/pin-10.5",
+      "title": "How to Cancel a Subscription That Is Hard to Cancel",
+      "archetype": "fridge-printable",
+      "content": {
+        "items": [
+          "Example from the guide: Service and amount: Streaming plan, $15.49 a month",
+          "When you cancelled: The 9th, 8:40 pm, on the website",
+          "Confirmation: Email with reference CX-48213, screenshot saved",
+          "When it ends: The 12th, the end of the paid period",
+          "Next charge you expect: None. It would have been the 12th",
+          "When you'll check: The statement that lists the 12th"
+        ],
+        "source": "src/content/guides.ts, guide how-to-cancel-subscriptions, table 'An example: what your cancellation note should hold'"
+      },
+      "headline": "How to Cancel a Subscription That Is Hard to Cancel",
+      "sub": "Some subscriptions are easy to start and hard to stop.",
+      "props": [
+        "fridge-door",
+        "printable-sheet",
+        "sticky-note"
+      ],
+      "why": "A filled-in cancellation note under a magnet is a template people save and copy."
+    },
+    {
+      "account": "maple",
+      "id": "Pin-mm-monthly-money-reset-01",
+      "title": "How Much Can I Spend This Month? A Free Safe to Spend Number",
+      "archetype": "safe-to-spend-receipt",
+      "content": {
+        "items": [
+          "Example: SAFE TO SPEND NOW $600.00",
+          "Money available right now $1,850.00",
+          "Income received $0.00",
+          "Bill payments made $0.00",
+          "Protected bills not yet paid $900.00",
+          "Reserve still held $350.00",
+          "About $150.00 a week"
+        ],
+        "source": "src/app/(marketing)/shop/[productSlug]/monthlyMoneyResetVisuals.tsx (OverviewScreenMockup rows and AddInfoScreenMockup), self-described as illustrative but internally consistent; the same $1,850 / $900 / $350 / $600 example is the worked example in guide can-you-afford-it-before-you-buy-it. Label it 'Example'."
+      },
+      "headline": "How much can I actually spend this month? One number.",
+      "sub": "Your bills held back first, updated as the month goes on.",
+      "props": [
+        "receipt-slot"
+      ],
+      "why": "The one number, on the product's own receipt, answers the headline in a glance."
+    },
+    {
+      "account": "maple",
+      "id": "Pin-mm-monthly-money-reset-02",
+      "title": "Available Balance vs Bills: See What's Really Yours to Spend",
+      "archetype": "held-back-envelopes",
+      "content": {
+        "items": [
+          "Slip: Money available right now $1,842.50",
+          "Sealed: Electricity $94.00, Oct 14",
+          "Sealed: Mobile phone $85.00, Oct 20",
+          "Phone (real screen): Bills handled 2 of 4. Paid this cycle. The rest are already protected."
+        ],
+        "source": "creative/src/ui-adapter/monthlyMoneyReset.tsx DEMO_STATE (frozen copy of the real seeded demo account, cycle October 2026, 'today' 2026-10-08); totals computed by the real computeSafeToSpend(), weeklyGuideAmount(), computeTightestDay() and computeNextAction() in src/products/monthly-money-reset/ (verified by running them: safe to spend $43.65, about $10.91 a week, tightest Oct 20 at $343.65, next action \"Complete this week's check-in\"); creative/public/screens/monthly-money-reset-progress.png (real capture of the Progress view on the demo account) (the pin's existing screen)"
+      },
+      "headline": "The balance looks fine. The bill coming Friday says otherwise.",
+      "sub": "Protected bills stay held back, paid or not.",
+      "props": [
+        "cash-envelopes",
+        "phone-screenshot"
+      ],
+      "why": "A big balance slip half-covered by sealed bill envelopes shows the gap between balance and spendable money."
+    },
+    {
+      "account": "maple",
+      "id": "Pin-mm-monthly-money-reset-03",
+      "title": "Budget for People Who Hate Budgeting: One Number, Free",
+      "archetype": "fridge-printable",
+      "content": {
+        "items": [
+          "One number, nothing to categorise",
+          "A short weekly check-in",
+          "A way back in after weeks away"
+        ],
+        "source": "creative/pinterest/maple-main-finds.ts FINDS_PINS, monthly-money-reset block (points), backed by src/shop/products/monthly-money-reset.ts problemsSolved"
+      },
+      "headline": "A budget for people who hate budgeting",
+      "sub": "No categories to keep up with.",
+      "props": [
+        "fridge-door",
+        "sticky-note"
+      ],
+      "why": "Three sticky notes instead of a budget sheet: the anti-budget promise as a fridge door."
+    },
+    {
+      "account": "maple",
+      "id": "Pin-mm-monthly-money-reset-04",
+      "title": "Find Your Tightest Day of the Month Before It Happens",
+      "archetype": "tightest-day-calendar",
+      "content": {
+        "items": [
+          "The 23rd ringed on a month calendar (no amount: the date is the headline's, not product data)",
+          "It names your tightest day and how low you'd get, ahead of time."
+        ],
+        "source": "creative/pinterest/maple-main-finds.ts FINDS_PINS, monthly-money-reset block"
+      },
+      "headline": "POV: the month looks fine until the 23rd",
+      "sub": "It names your tightest day and how low you'd get, ahead of time.",
+      "props": [
+        "bill-calendar",
+        "balance-line"
+      ],
+      "why": "A calm calendar with one ringed date makes the POV joke land and shows the feature at once."
+    },
+    {
+      "account": "maple",
+      "id": "Pin-mm-monthly-money-reset-05",
+      "title": "Small Money Wins: A Free Monthly Money Reset",
+      "archetype": "savings-jar",
+      "content": {
+        "items": [
+          "Know your safe-to-spend",
+          "Protect the bills first",
+          "Spot your tightest day",
+          "Close the month, carry it forward"
+        ],
+        "source": "creative/pinterest/maple-main-finds.ts FINDS_PINS, monthly-money-reset block (board points)"
+      },
+      "headline": "Small money wins for this month",
+      "sub": "Four small moves, one free app.",
+      "props": [
+        "savings-jar",
+        "pencil"
+      ],
+      "why": "Tracker variant: four colour-in cells in a jar, the micro-wins tracker look, with no money amounts claimed."
+    },
+    {
+      "account": "maple",
+      "id": "Pin-mm-monthly-money-reset-06",
+      "title": "Paycheck to Paycheck Budgeting: Find Your Tightest Day",
+      "archetype": "tightest-day-calendar",
+      "content": {
+        "items": [
+          "October 2026",
+          "Electricity $94.00, Oct 14",
+          "Mobile phone $85.00, Oct 20",
+          "Salary $3,200.00 expected, Oct 28",
+          "Chip: Tightest Oct 20 $343.65"
+        ],
+        "source": "creative/src/ui-adapter/monthlyMoneyReset.tsx DEMO_STATE (frozen copy of the real seeded demo account, cycle October 2026, 'today' 2026-10-08); totals computed by the real computeSafeToSpend(), weeklyGuideAmount(), computeTightestDay() and computeNextAction() in src/products/monthly-money-reset/ (verified by running them: safe to spend $43.65, about $10.91 a week, tightest Oct 20 at $343.65, next action \"Complete this week's check-in\")"
+      },
+      "headline": "Paycheck to paycheck? Find your tightest day first",
+      "sub": "Worked out from the bill and income dates you already entered.",
+      "props": [
+        "bill-calendar",
+        "balance-line",
+        "paycheck-stub"
+      ],
+      "why": "The real tightest-day chip under a real bill calendar shows exactly what 'worked out from your dates' means."
+    },
+    {
+      "account": "maple",
+      "id": "Pin-mm-monthly-money-reset-07",
+      "title": "How to Restart Budgeting After You Fell Off",
+      "archetype": "page-turn",
+      "content": {
+        "items": [
+          "Left: month two, a shoebox of unsorted receipts",
+          "Right (real screen): This is a record of what actually happened, not a competition."
+        ],
+        "source": "creative/public/screens/monthly-money-reset-progress.png (real capture of the Progress view on the demo account) (the pin's existing screen)"
+      },
+      "headline": "Fell off budgeting by month two? Again?",
+      "sub": "No overdue pile-up waiting. Just a way back in.",
+      "props": [
+        "receipt-pile",
+        "month-pages",
+        "phone-screenshot"
+      ],
+      "why": "The pile you dread on the left, the calm real screen on the right: the way back in."
+    },
+    {
+      "account": "maple",
+      "id": "Pin-mm-monthly-money-reset-08",
+      "title": "Weekly Money Check-In: A 5 Minute Budget Routine",
+      "archetype": "fridge-printable",
+      "content": {
+        "items": [
+          "Any income in, or changed?",
+          "Any bill changed, or paid?",
+          "Spending you haven't added?"
+        ],
+        "source": "creative/pinterest/maple-main-finds.ts FINDS_PINS, monthly-money-reset block (points), shortened from CheckInModal.tsx QUESTIONS"
+      },
+      "headline": "What a five minute money check-in looks like",
+      "sub": "Once a week. That's it.",
+      "props": [
+        "fridge-door",
+        "checklist-card",
+        "kitchen-timer"
+      ],
+      "why": "A ruled card with three ticks and a five-minute timer shows the routine is that small."
+    },
+    {
+      "account": "maple",
+      "id": "Pin-mm-monthly-money-reset-09",
+      "title": "Stop Doing Mental Math: Know What's Safe to Spend",
+      "archetype": "price-tag-test",
+      "content": {
+        "items": [
+          "Coffee shop $7.45",
+          "Tag: Safe to spend $43.65"
+        ],
+        "source": "creative/src/ui-adapter/monthlyMoneyReset.tsx DEMO_STATE (frozen copy of the real seeded demo account, cycle October 2026, 'today' 2026-10-08); totals computed by the real computeSafeToSpend(), weeklyGuideAmount(), computeTightestDay() and computeNextAction() in src/products/monthly-money-reset/ (verified by running them: safe to spend $43.65, about $10.91 a week, tightest Oct 20 at $343.65, next action \"Complete this week's check-in\")"
+      },
+      "headline": "Me doing mental math in the checkout line",
+      "sub": "Or: one number that already did it.",
+      "props": [
+        "coffee-cup",
+        "price-tag"
+      ],
+      "why": "A coffee in hand with a scribbled thought bubble versus one tag that already has the answer."
+    },
+    {
+      "account": "maple",
+      "id": "Pin-mm-monthly-money-reset-10",
+      "title": "Free Money App for Beginners That Isn't a Full Budget",
+      "archetype": "page-turn",
+      "content": {
+        "items": [
+          "Left: a binder with twelve tabs (a whole budget system)",
+          "Right card: Safe-to-Spend, Weekly check-ins, Tightest day, Your next useful move"
+        ],
+        "source": "creative/pinterest/maple-main-finds.ts FINDS_PINS, monthly-money-reset block (board points)"
+      },
+      "headline": "A money app that isn't a whole budget system",
+      "sub": "Free, and small on purpose.",
+      "props": [
+        "tab-binder",
+        "checklist-card"
+      ],
+      "why": "The heavy binder beside a four-line card shows 'small on purpose' instead of saying it."
+    }
+  ]
+}

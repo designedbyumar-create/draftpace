@@ -1,0 +1,451 @@
+{
+  "product": "vehicle-maintenance-companion",
+  "audience": [
+    "a new driver, or the parent setting up a teen's first car, working through the first week with the keys",
+    "someone who just bought a used car, or inherited one, with no service records in the glove box",
+    "a two-car household where nobody can say which car is due for what",
+    "someone who dreads the shop counter and has been surprised by work they did not ask for",
+    "the owner who tows, drives short trips, or lives with dust, heat or cold",
+    "a seller about to list the car who wants to show it was looked after",
+    "the person who does the winter prep: battery, tires, wipers, the kit in the trunk"
+  ],
+  "visualWorld": {
+    "setting": "Daylight in an ordinary driveway, a garage bay and the seat of the car, never a showroom and never a race track. The pins live in the objects an owner actually handles: the instrument cluster with its odometer, the dropped-open glove box, the clipboard at the shop counter, the manila key tag a shop hangs on your keys, the licence plate, the spiral log on the passenger seat, the frosted windscreen, the open trunk with the winter kit. The car itself is always a generic, unbranded shape (no badge, no grille logo, no real model). Nothing is ever drawn plugged into the car: no OBD dongle, no signal waves from car to phone, no lit check-engine lamp, because the product reads nothing from the vehicle.",
+    "props": [
+      { "id": "odometer-cluster", "draw": "Instrument binnacle as a wide rounded rectangle in ink outline with a soft fill; two round dials left and right (thin tick marks around the arc, a needle as a tapered line with a small hub circle); in the centre a rectangular odometer window with six digit rollers, each a small rounded rect alternating paper and soft-accent fill, digits set in the monospace face; a tiny 'mi' label. No warning lamps lit." },
+      { "id": "fuel-gauge", "draw": "Small half-circle dial with E and F at the ends, a few ticks, a needle; a pump glyph made of a rounded rect with a hose curve. Used only to say the person chose a fuel type, never as live data." },
+      { "id": "mileage-road", "draw": "A road ribbon in graphite with a dashed accent centre line that winds down the pin in two or three soft S-curves; mile-marker posts along it as thin rectangles with a small rectangular sign on top, each sign carrying one timeline label; a tiny side-view car shape on the road near the top." },
+      { "id": "windscreen-sticker", "draw": "The top corner of a windscreen as a trapezoid of pale glass with one diagonal highlight stripe and a dark rubber edge; a small rounded-rect sticker stuck in the corner with an accent header band and two or three blank ruled lines (left blank: the pin never prints a service interval on it)." },
+      { "id": "glove-box", "draw": "A band of dashboard in graphite with a rounded underside; below it a hatch dropped open at about 30 degrees, drawn as a trapezoid with a soft inner face and a slim chrome latch rectangle; the dark cavity behind as a rounded rect in ink at low opacity; contents fan out of it and overlap the hatch edge, each with a thin leader line to its label." },
+      { "id": "registration-card", "draw": "Rounded rectangle card in paper fill with an accent header stripe, a short bold line for the plate characters (drawn as blocks, no real plate), two thin muted lines, a tiny folded corner triangle." },
+      { "id": "insurance-card", "draw": "Same card shape as registration-card but with a soft-accent fill, a small shield-free badge circle top left, three thin lines; slightly rotated to overlap the registration card." },
+      { "id": "roadside-card", "draw": "A narrow card with a simple handset outline and one long blank line for a number, punched hole at the top corner." },
+      { "id": "owners-manual", "draw": "Thick booklet seen at a slight angle: a rectangle cover with a darker spine band in accent, a simple generic car silhouette on the cover (rounded body, two wheels), a ribbon bookmark hanging out of the bottom as a narrow strip with a notched end; when open, two pages with ruled lines and a small three-column table." },
+      { "id": "tire-gauge", "draw": "Pen-style pressure gauge: a slim cylinder body in steel grey, an angled chuck head at one end (short angled rect with a round opening), a measuring rod sliding out of the other end with tick marks." },
+      { "id": "tyre", "draw": "Front view of a tyre: a thick graphite ring, tread blocks as small rectangles notched around the outer circumference, a five-spoke rim in paper fill with a centre hub circle; a tread-depth gauge as a small T-shaped tool pressed into a groove." },
+      { "id": "battery-frost", "draw": "A rounded box battery in graphite with an accent label band, two terminals as short cylinders marked + and minus; a white scalloped cap of frost along the top edge, three small icicle triangles hanging from the label band, two or three snowflake sparkles around it." },
+      { "id": "wiper", "draw": "A long thin wiper arm pivoting from the bottom of a windscreen, the blade as a slightly thicker bar with a dark rubber edge; the glass behind covered in a pale frost texture (stippled dots) with one clean cleared arc where the blade has swept." },
+      { "id": "washer-fluid", "draw": "Plastic jug with an integrated handle loop and a screw cap; translucent soft fill with a wavy liquid line two-thirds up; a small windscreen-spray glyph on the label." },
+      { "id": "winter-kit", "draw": "Rear of a hatchback with the tailgate raised (a tilted rounded panel above), the boot floor as a flat trapezoid holding: coiled jumper cables (two looping lines, one accent, one ink, with toothed clamp jaws), a cylinder flashlight, a folded blanket as three stacked rounded rects with a stripe, a water bottle, an ice scraper (trapezoid blade on a handle), a snow brush (handle with a bristle block), a small sand bag tied at the neck, a charging cable loop." },
+      { "id": "car-side", "draw": "Generic unbranded car in side or three-quarter view: a rounded body shape in paper fill with an ink outline, two window shapes in pale glass tint, two tyres as graphite circles with paper hubs, a small door handle line. Variants: frost tint on windscreen and roof with snowflakes; raised on a two-post lift; towing a small box trailer; a wordless sign (rect with blank lines) in the rear side window; driver door open showing the door-jamb sticker." },
+      { "id": "car-front", "draw": "Front view of a generic car: a wide rounded body, windscreen as a pale trapezoid, two round headlamps, a simple grille slot without any badge, a licence-plate rect under the grille, tyres as two dark blocks at the bottom corners. A taller boxy variant stands in for the van." },
+      { "id": "car-lift", "draw": "Two vertical posts in steel grey either side, each with a short arm reaching under the car's sills; the car raised above head height; the garage bay behind as a ribbed roller door (horizontal lines) and a darker floor band." },
+      { "id": "trailer", "draw": "A small box trailer behind the car: rectangle body, single wheel, A-frame tongue to a ball hitch; light dust puffs (overlapping soft circles) behind the wheels and a flat sun disc with short rays in the sky." },
+      { "id": "service-boundary-ticket", "draw": "A clipboard (rounded board with a metal clip at the top: rounded rect plus a small arc) holding a page with an eyebrow line, the title 'Service Boundary' in accent, two labelled field boxes side by side, a 'REQUESTED TODAY' label over two or three rows with hairline rules, a shaded box near the foot containing the not-authorized lines and a blank ceiling field, and two short initials lines at the very bottom." },
+      { "id": "shop-counter", "draw": "A countertop edge as a long horizontal band with a darker front face; a service bell (dome with a small knob on a flat base) and a cup of pens as optional small props." },
+      { "id": "key-ring", "draw": "A round split ring with two simple keys (a round head with a hole and a notched blade) and one fob; optionally a manila repair-shop key tag on a short string loop." },
+      { "id": "key-tag", "draw": "Manila repair-shop key tag: a rectangle with the top corners cut off, a reinforced hole as a small ring at the top, a string loop; tag fill is the soft accent tone; words written on the tag in the monospace face, like a shop's tag." },
+      { "id": "service-log-page", "draw": "Spiral-bound notebook page (a row of small loops along the top) or a loose ruled sheet, rotated about 3 degrees; column headers in small uppercase monospace with hairline column rules; filled rows in monospace, blank rows left as rules for a pen; year divider rows as an accent rule with the year beside it." },
+      { "id": "service-record-print", "draw": "An A4 sheet with a small uppercase eyebrow 'VEHICLE MAINTENANCE COMPANION', the title 'Service record' in accent, a vehicle line, and a five-column table (DATE, MILES, WORK DONE, BY, COST) with hairline rules, oldest row first." },
+      { "id": "glove-box-card", "draw": "A small card with a dashed cut border and a scissors glyph at one corner (two loops with crossing blades); the title 'Glove box card'; label column in small uppercase muted text and a ruled value column, most lines left blank for a pen." },
+      { "id": "receipt-folder", "draw": "A manila folder with a tab, slightly open, with three receipts sticking out; each receipt a narrow white strip with a zig-zag torn bottom edge and a few short lines." },
+      { "id": "licence-plate", "draw": "Rounded rectangle with a raised border (inner offset rect), two screw holes as small circles near the top, a thin top band left blank (no state or country name), large uppercase characters in a plate-like condensed face. Characters are only ever a vehicle label from the product's own demo data or the pin's own headline, never a real-looking registration number." },
+      { "id": "plate-lamp", "draw": "A small circle beside a plate chip in three states from the product: filled dot (something is due), ring (something is close), empty thin ring (clear)." },
+      { "id": "calendar-page", "draw": "Tear-off calendar page: a rectangle with an accent top band, two ring holes, and a grid of small squares; one square circled by hand. No specific date unless the pin's content gives one." },
+      { "id": "toggle-switch", "draw": "A dashboard rocker switch: a rounded rectangle housing with a tilted paddle, one end marked OFF in small uppercase; its on state shows the paddle flipped and a small accent glow." },
+      { "id": "door-jamb-sticker", "draw": "The edge of an open driver door: a vertical strip of door frame with a small rectangular placard stuck to it, the placard showing a tiny tyre outline and blank lines." },
+      { "id": "home-drawer", "draw": "A kitchen drawer pulled half open (front panel with a bar handle, sides in perspective) with a blue folder lying inside, its tab sticking up; the only blue in the vehicle set, taken from the guide's own 'kitchen drawer, blue folder'." },
+      { "id": "pen", "draw": "A simple ballpoint: a long rounded rect barrel, a clip line, a conical tip; laid diagonally across a page." },
+      { "id": "phone-screenshot", "draw": "A plain phone frame (rounded rect with a thin bezel, no brand) holding one of the product's real captures from creative/public/screens/ (vehicle-maintenance-companion-vehicles.png, -history.png or -printables.png), cropped to the card the pin is about. Never a drawn or mocked screen." }
+    ],
+    "palette": "Built on the product's own accent so the pins and the app read as one thing: burnt amber #b45309 (dark-mode partner #f2a04a) as the single accent, the colour of an amber dash lamp and a manila shop tag; soft #fbe8d5 and wash #fdf3e8 for fills and tags; the printables' ink #211f1a, muted #6f6c62, hairline #e2e0d8 and paper #f4f3ee/#ffffff; graphite (ink at about 85 percent) for tyres, road, dashboard and counter. Winter pins add only a pale frost (white over the wash, stippled), never icy-blue backgrounds. One exception: the blue folder in home-drawer, because the guide names it. No alarm red anywhere.",
+    "mood": "Calm workshop, in writing. Practical, tidy, daylight; the feeling of having the paper ready before you hand over the keys. Never panic, never 'your car is in danger', never a lit warning lamp. Headlines set in a sturdy heavy sans (not the serif of the current template), every number, date and field label in the monospace the product itself uses for mileage and dates, small uppercase letter-spaced labels like the printables' field labels."
+  },
+  "archetypes": [
+    {
+      "id": "service-boundary-ticket",
+      "name": "The page at the shop counter",
+      "clicks": "Printable mockups (a real page you can hold) are the dominant visual for car paperwork on Pinterest and Etsy, and 'car repair tips / mechanic tips / car tips for women' searches want something to bring to the counter. A clipboard on a counter with a car up on the lift behind it is the exact moment people dread, so it stops the scroll; the page itself is the save.",
+      "layout": "1000x1500. Small tag line at y 70-110, left-aligned at x 64. Headline y 120-380, max three lines, heavy sans in ink. Visual y 400-1290: the counter edge as a band at y 1130-1290; the clipboard tilted -4 degrees, about 640x860, centred slightly left (x 120-760, y 420-1280) and overlapping the counter; in the top-right behind it, cropped and at reduced contrast, the garage bay with the car up on the lift (x 640-1000, y 400-760). Key ring with a manila key tag on the counter at x 60-260. On product pins, a phone with the real printables screenshot overlaps the clipboard's right edge (x 640-940, y 760-1240), ending above y 1260 so the lower-right corner stays clear of Pinterest's own icons. Product line bottom-left y 1360-1430: 'Vehicle Maintenance Companion' and 'Draftpace' in small type; the lower-right 240x200 is left empty.",
+      "visual": "Clipboard with the Service Boundary page, shop counter, key ring and manila tag, car on a two-post lift in the background, optional real printables screenshot.",
+      "text": "On the page only the real Service Boundary strings from printables/generateServiceBoundary.tsx: 'Service Boundary', 'Shop', 'Call me on', 'REQUESTED TODAY', 'Anything not listed above is not authorized.', 'please call me before any further work begins, and wait for my answer', 'Please do not go over, without a call', 'Owner initials', 'Shop initials'. Requested rows use job names from the printables screenshot (Oil and filter change, Tyre rotation). The ceiling field is left blank or carries the screenshot's own placeholder.",
+      "bestFor": "Mechanic and repair-shop pins, the Service Boundary, the 'while we had it up on the lift' Maple pin."
+    },
+    {
+      "id": "printed-page",
+      "name": "The log page on the passenger seat",
+      "clicks": "'Car maintenance log printable' is an established Pinterest and Etsy format: a ruled page with date, mileage, service and cost columns, often shown in a binder or on a desk. Infographic and printable pins earn saves because people want to keep the information (one agency A/B test reported 35 percent more saves for infographic pins). The ruled columns read as 'a log' even at thumbnail size.",
+      "layout": "Headline y 80-360 across the full width. The page (a spiral notebook page, an A4 service record, a glove box card or a 'From your manual' table) fills y 390-1300, about 820 wide, rotated -3 degrees, on a softly tinted surface (car seat fabric suggested by a few stitched seam lines at the edges). Column headers in small uppercase monospace; three to five filled rows in monospace; the rest left as blank rules for a pen. A pen lies diagonally across the lower-left of the page. On product pins, a phone with the real history or vehicles screenshot overlaps the left edge (x 40-340, y 820-1280). Product line bottom-left; lower-right corner clear.",
+      "visual": "A ruled log or printed record seen from slightly above, a pen, sometimes receipts or a manila folder peeking from under it.",
+      "text": "Column names and rows copied from the real printables (generateServiceRecord.tsx, generateGloveBoxCard.tsx), the product UI (VehicleForms.tsx, DueScreen.tsx), the demo data visible in the real screenshots, or the guides' own example tables, which the guides label as made-up examples; when a guide example is used, a small 'example' label sits above the table.",
+      "bestFor": "Car maintenance log, service record for a buyer, glove box card, manual intervals, paperwork tracker, winter log entry, first record."
+    },
+    {
+      "id": "odometer-and-road",
+      "name": "The odometer and the road ahead",
+      "clicks": "Mileage schedules (the '30-60-90' style chart) and step-by-step timelines are the niche's staple saveable infographic, and the odometer is the one number every driver recognises. A road with mile-marker posts turns any ordered list into a picture that reads top to bottom on a phone.",
+      "layout": "Headline y 80-300. The instrument cluster across the full width at y 320-660 with the odometer rollers as the focal point (or blank rollers when no real number belongs there). From under the cluster a road ribbon winds down to y 1320 in two soft S-curves; three to five mile-marker posts sit alternately left and right of the road, each with a label block beside it (monospace label in accent, one line of real text in ink). A small car shape travels on the road near the top. Product line bottom-left; the road ends before the lower-right corner.",
+      "visual": "Instrument cluster with odometer and fuel gauge, the windscreen-sticker in a corner where relevant, the mileage road with marker posts.",
+      "text": "Timeline steps copied from the guides' timeline and ordered-list blocks; typical mileage figures only from the mileage guide's own timeline and always captioned with its words 'Typical' and 'your manual wins'. Odometer digits are blank or come from the real screenshots' demo data.",
+      "bestFor": "Car maintenance by mileage, first week with a car, used car day one, history by year, usual jobs by fuel type, paperwork lead time."
+    },
+    {
+      "id": "glove-box-open",
+      "name": "The glove box (or trunk), opened and labelled",
+      "clicks": "'What to keep in your car', 'must haves in your car', 'car essentials for new drivers' and glove box organisation are evergreen list searches on Pinterest, often pinned by parents setting up a teen's car. A labelled flat-lay of real objects is the format those pins use; drawn flat, every item is legible at thumbnail size.",
+      "layout": "Headline y 80-340. A band of dashboard in graphite across y 400-540; the glove box hatch dropped open below it (x 140-860, y 540-1100) with contents fanned out over the hatch edge. Thin leader lines run from each item to a label in two columns (left x 40-300, right x 700-960). Optional 'keep at home' strip at y 1140-1300: a kitchen drawer with the title and spare keys. For the winter variant the same layout uses the open trunk instead of the glove box. Product line bottom-left; labels stop above y 1300 on the right.",
+      "visual": "Glove box with registration card, insurance card, owner's manual, roadside card, tyre pressure gauge, pen and notepad, glove box card; or the trunk with the winter kit.",
+      "text": "Item names copied from the glove box guide's tables ('What is worth having in the car', 'What is better kept at home'), RENEWAL_INFO in renewals.ts, or the pin's own description.",
+      "bestFor": "Glove box organisation, where the paper is, owner's manual first, handing the car over, 'everything in one place'."
+    },
+    {
+      "id": "car-callouts",
+      "name": "The car, with numbered callouts",
+      "clicks": "Car infographic boards on Pinterest are built around labelled diagrams: a car or an engine bay with numbered parts and short notes ('diagram of under the hood', car maintenance basics infographics). It is the niche's most recognisable infographic shape and it turns a checklist into something you can point at on your own car.",
+      "layout": "Headline y 80-330. The car drawn large (about 880 wide) in side or three-quarter view at y 400-1000, in the variant the topic needs: frosted with the boot open, on a two-post lift, towing a trailer in dust, a wordless sign in the window, the driver's door open. Numbered accent circles sit on the parts, each with a leader line to a label block; labels in two columns at y 1030-1310 (or around the car when there are three or fewer). Optional real screenshot as a small inset at upper right on product pins. Product line bottom-left; the right-hand label column ends above y 1300.",
+      "visual": "Generic unbranded car plus the parts the topic is about: battery-frost, tyre, wiper, washer-fluid, winter-kit, door-jamb-sticker, trailer, car-lift.",
+      "text": "Callout labels copied verbatim from the guides' tables and checklists (the winter table's 'Check' column, the first-car 'What to check on day one' list, the paperwork table) or the pin's own description; never more than eight callouts.",
+      "bestFor": "Winter prep, first car day one, used car first week, severe duty, selling the car, paperwork dates, what to say with the car on the lift."
+    },
+    {
+      "id": "side-by-side",
+      "name": "Side by side",
+      "clicks": "Two things next to each other read instantly at thumbnail size and answer 'which one?', the question behind two-car households, 'miles or months' and 'dealer or manual'. Comparison and 'say this, not that' layouts are a common infographic formula, and the two-panel split keeps the text short enough for a phone feed.",
+      "layout": "Headline y 80-330. Two panels (or three or four tags on one key ring) from y 380 to 1240 split by a thin vertical rule or a road centre-line; each panel has its prop at the top (a car from the front with its plate, an odometer dial or a calendar page, a manila key tag, a glove box or a kitchen drawer), a bold monospace label, and one to three short real lines. A shared line spanning both panels at y 1260-1320 states the rule they share. Product line bottom-left.",
+      "visual": "Two cars from the front (sedan and van, or the demo 'Family car' and 'Commuter'), odometer versus calendar, two manila key tags, glove box versus home drawer, the dealer's clipboard versus the owner's manual, four key tags on one ring.",
+      "text": "Labels and lines from the guides' example tables, compare blocks and scripts, STARTER_LISTS names and blurbs, the vehicles screenshot, or the pin's description.",
+      "bestFor": "Two cars, miles or months, known versus unknown history, starter lists, in the car versus at home, reminders off versus on, dealer versus manual, request versus 'have a look at it'."
+    },
+    {
+      "id": "plate-strip",
+      "name": "Headline on a licence plate",
+      "clicks": "A licence plate is the fastest 'this is about my car' signal at thumbnail size, and Pinterest guidance favours a short, high-contrast overlay of a few words. Putting the headline on the plate makes the type itself the car-world object; a strip of smaller plates with lamps underneath shows the product's real plate strip.",
+      "layout": "Small tag line y 70-110. One large licence plate (about 860x420) at y 180-600 carrying the headline in uppercase plate type, up to three short lines (pins with long titles use a cut that keeps the title's words). Under it, y 680-1000, either a strip of two or three smaller plate chips each with a plate-lamp, or a single plate with a manila tag hanging from a screw hole. Supporting real line y 1060-1260 in sans, with any UI wording in monospace. Product line bottom-left.",
+      "visual": "Licence plates (characters are vehicle labels or the headline, never registration-like numbers), plate lamps in the three real states, manila tag.",
+      "text": "Headline on the plate; chip labels from the real screenshots ('ALL', 'Family car', 'Commuter'); lamp meanings and supporting lines copied from the two-cars guide, DueScreen.tsx or the pin's description.",
+      "bestFor": "The strip of plates, adding a vehicle, glove box details, 'nothing is due', 'nothing is assumed'."
+    }
+  ],
+  "pins": [
+    {
+      "account": "draftpace", "id": "vehicle/pin-2.1", "title": "What to Tell a Mechanic Before the Work Starts", "archetype": "car-callouts",
+      "content": { "items": ["what you're asking for today", "the most you'll approve without a call", "that you want any other work described and priced in writing before it starts"], "source": "src/content/guides.ts, guide what-to-tell-a-mechanic-before-work-starts, opening paragraph ('say three things: ...')" },
+      "headline": "What to Tell a Mechanic Before the Work Starts", "sub": "Say what you are asking for, say the most you will agree to without a call.",
+      "props": ["car-side", "car-lift", "key-ring"], "why": "The car up on the lift is the moment the guide is about; three numbered callouts make the three things to say a checklist worth saving."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-2.2", "title": "A Page to Hand the Shop Before They Touch the Car", "archetype": "service-boundary-ticket",
+      "content": { "items": ["Service Boundary", "REQUESTED TODAY", "Oil and filter change", "Tyre rotation", "Anything not listed above is not authorized.", "Please do not go over, without a call", "Owner initials", "Shop initials"], "source": "printables/generateServiceBoundary.tsx (rendered strings) in src/products/vehicle-maintenance-companion/; job rows from creative/public/screens/vehicle-maintenance-companion-printables.png" },
+      "headline": "A Page to Hand the Shop Before They Touch the Car", "sub": "A dated, mileage-stamped page you hand over before a shop touches the car.",
+      "props": ["service-boundary-ticket", "shop-counter", "key-ring", "car-lift", "phone-screenshot"], "why": "Shows the actual page on a clipboard at the counter, with the real printables screen beside it as proof it exists."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-2.3", "title": "Car Repair Tips: Call Me Before Any Further Work", "archetype": "side-by-side",
+      "content": { "items": ["\"Have a look at it\" gives the shop room to decide what's needed.", "\"An oil and filter change and a tire rotation\" is a request.", "If you find anything else, please call me before you do any of it."], "source": "src/content/guides.ts, guide what-to-tell-a-mechanic-before-work-starts, list 'The short version, in order' item 1 and scripts 'At drop-off'" },
+      "headline": "Call Me Before Any Further Work", "sub": "The one sentence that keeps a small job from becoming a big one, and when to say it.",
+      "props": ["key-tag", "key-ring"], "why": "Two manila shop key tags side by side, the vague request against the specific one, with the guide's sentence underneath."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-2.4", "title": "What to Tell Your Mechanic: The Most You Will Agree to Without a Call", "archetype": "service-boundary-ticket",
+      "content": { "items": ["Do not go over this without calling (optional)", "Printed as you type it. Draftpace does not check or use the amount.", "Please do not go over, without a call"], "source": "creative/public/screens/vehicle-maintenance-companion-printables.png (form label and hint); printables/generateServiceBoundary.tsx (printed field label)" },
+      "headline": "The Most You Will Agree to Without a Call", "sub": "Type what you are requesting today and, if you like, an amount you do not want to go over without a call.",
+      "props": ["service-boundary-ticket", "pen", "shop-counter", "phone-screenshot"], "why": "A close crop on the shaded box of the page, the ceiling line blank for a pen, so the limit is the hero."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-2.5", "title": "Auto Repair Checklist: Anything Else Needs a Call First", "archetype": "car-callouts",
+      "content": { "items": ["At drop-off: If you find anything else, please call me before you do any of it.", "When they call about more: can you text me that so I have it in writing?", "About the old parts: Please keep the parts you replace so I can see them when I pick up."], "source": "src/content/guides.ts, guide what-to-tell-a-mechanic-before-work-starts, scripts block 'What to say, by moment'" },
+      "headline": "Anything Else Needs a Call First", "sub": "Short, polite and written down.",
+      "props": ["car-side", "car-lift", "key-tag"], "why": "The car on the lift again, but now with three callouts for the three moments in the visit, so it reads as a step list, not a repeat of 2.1."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-3.1", "title": "You Bought a Used Car With No Service Records: What to Do", "archetype": "odometer-and-road",
+      "content": { "items": ["Read the odometer and write down the number and the date. That's day one.", "Record what the seller said, marked as what they said.", "Look up the VIN for open recalls.", "Get the owner's manual.", "Take it to an independent mechanic and ask what they see.", "Start your log."], "source": "src/content/guides.ts, guide used-car-no-service-records-what-to-do, list 'The first week, in order' (first sentence of each item)" },
+      "headline": "You Bought a Used Car With No Service Records", "sub": "A used car with no service history is normal.",
+      "props": ["odometer-cluster", "mileage-road", "owners-manual", "pen"], "why": "Starts where the guide starts, at the odometer on day one, then the first week as mile markers down the road."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-3.2", "title": "Used Car Maintenance: Nothing Is Assumed Overdue", "archetype": "printed-page",
+      "content": { "items": ["HISTORY UNKNOWN", "Nothing to judge yet", "This vehicle's history is unknown.", "Record when it was last done"], "source": "components/DueScreen.tsx strings; 'HISTORY UNKNOWN' badge in creative/public/screens/vehicle-maintenance-companion-vehicles.png" },
+      "headline": "Nothing Is Assumed Overdue", "sub": "Nothing reads overdue on a fact you never had.",
+      "props": ["service-log-page", "pen", "phone-screenshot"], "why": "A log page whose rows honestly say 'Nothing to judge yet' instead of invented dates, next to the real Commuter card marked HISTORY UNKNOWN."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-3.3", "title": "The First Week With a Used Car", "archetype": "car-callouts",
+      "content": { "items": ["Ask the seller what they know", "Note the mileage today", "Start a record"], "source": "creative/pinterest/draftpace/wave3.csv, pin-3.3 description; matches guide used-car-no-service-records-what-to-do" },
+      "headline": "The First Week With a Used Car", "sub": null,
+      "props": ["car-side", "key-ring", "odometer-cluster", "service-log-page"], "why": "Three callouts on the car itself: the keys changing hands at the door, the odometer, the glove box where the record starts."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-3.4", "title": "Used Car Maintenance: Do You Know This Vehicle's History?", "archetype": "side-by-side",
+      "content": { "items": ["Do you know this vehicle's service history?", "Family car: Last done 2026-06-10 at 56,100 miles", "Commuter: HISTORY UNKNOWN"], "source": "components/VehicleForms.tsx (question); demo vehicles in creative/public/screens/vehicle-maintenance-companion-vehicles.png" },
+      "headline": "Do You Know This Vehicle's History?", "sub": "For a used car or one you inherited, it is normal not to know.",
+      "props": ["car-front", "licence-plate", "key-tag", "phone-screenshot"], "why": "Two cars from the front, one with a known last-done line and one with a HISTORY UNKNOWN tag, exactly as the real screen shows them."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-3.5", "title": "Used Car Checklist: Nothing Is Assumed", "archetype": "plate-strip",
+      "content": { "items": ["Writing down a date you don't have. \"About two years ago\" isn't a fact. Write \"unknown\" and move on."], "source": "src/content/guides.ts, guide used-car-no-service-records-what-to-do, list 'What can go wrong'" },
+      "headline": "Nothing Is Assumed", "sub": "A record you start today is worth more than one you wish you had.",
+      "props": ["licence-plate", "key-tag"], "why": "Three words fit a plate; a manila tag hanging from the plate reads 'unknown', the guide's own word."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-4.1", "title": "Car Maintenance Log: What to Write Down", "archetype": "printed-page",
+      "content": { "items": ["Date", "Miles", "What was done", "Who", "Cost / note", "Mar 3 · 48,100 · Oil and filter change · Main Street Garage", "Mar 3 · 48,100 · Tire rotation · Main Street Garage", "Jul 9 · 51,400 · Replaced wiper blades · Me"], "source": "src/content/guides.ts, guide car-maintenance-log-what-to-write-down, table 'An example log' (made-up entries, labelled example on the pin)" },
+      "headline": "Car Maintenance Log: What to Write Down", "sub": "A car maintenance log needs three things on every line, and two optional ones.",
+      "props": ["service-log-page", "pen", "receipt-folder"], "why": "The classic log-printable mockup the search expects, with the guide's own example lines and the three required columns marked in accent."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-4.2", "title": "Car Maintenance Log: Every Service, Newest First, by Year", "archetype": "odometer-and-road",
+      "content": { "items": ["2026", "2026-06-10 · 56,100 mi · Oil and filter change", "2026-03-02 · 52,000 mi · Tyre rotation", "2025", "2025-11-18 · 49,800 mi · Cabin air filter"], "source": "demo data in creative/public/screens/vehicle-maintenance-companion-history.png" },
+      "headline": "Every Service, Newest First, by Year", "sub": "History keeps every service with its date, mileage, who did it and any note, grouped by year.",
+      "props": ["odometer-cluster", "mileage-road", "phone-screenshot"], "why": "Each recorded service becomes a mile marker on the road, year signs as dividers, with the real History screen as proof."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-4.3", "title": "Selling Your Car? Bring the Service History", "archetype": "car-callouts",
+      "content": { "items": ["Every service in date order", "The odometer reading at each", "What was done and who did it", "The receipts you kept, in a folder behind it", "Say at the top that it's your own record, and say where it starts."], "source": "src/content/guides.ts, guide selling-your-car-with-a-service-history, opening paragraph" },
+      "headline": "Selling Your Car? Bring the Service History", "sub": "A dated record of what was done helps a buyer see how a car was looked after.",
+      "props": ["car-side", "service-record-print", "receipt-folder"], "why": "A car with a wordless sign in the window and the one page lying on the seat, the guide's own picture of a private sale."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-4.4", "title": "A Service Record You Can Hand to a Buyer", "archetype": "printed-page",
+      "content": { "items": ["Service record", "DATE", "MILES", "WORK DONE", "BY", "COST", "2025-11-18 · 49,800 · Cabin air filter · 24.00", "2026-03-02 · 52,000 · Tyre rotation · Local service centre", "2026-06-10 · 56,100 · Oil and filter change · Local service centre · 89.00"], "source": "printables/generateServiceRecord.tsx (title and columns); rows are the Family car demo entries in creative/public/screens/vehicle-maintenance-companion-history.png, oldest first" },
+      "headline": "A Service Record You Can Hand to a Buyer", "sub": "Print everything recorded for one vehicle, oldest first.",
+      "props": ["service-record-print", "key-ring", "receipt-folder"], "why": "The real printout's own columns, drawn as a page about to be handed over with the keys."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-4.5", "title": "Car Service Record: A Record You Can Hand Over", "archetype": "glove-box-open",
+      "content": { "items": ["Clear out the glove box before the handover and decide which papers stay with the car.", "Print two copies. One goes to the buyer or lies on the seat during a test drive, and one stays with you."], "source": "src/content/guides.ts, guide selling-your-car-with-a-service-history, related link reason and list 'How to put the page together' item 6" },
+      "headline": "A Record You Can Hand Over", "sub": "The simplest thing a seller can bring.",
+      "props": ["glove-box", "service-record-print", "receipt-folder", "key-ring"], "why": "The glove box opened for the handover, the record folded on top of the receipts, keys on the hatch."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-5.1", "title": "Car Maintenance by Mileage: Start With Your Owner's Manual", "archetype": "odometer-and-road",
+      "content": { "items": ["Every 5,000 to 6,000 miles: Oil and filter, tire rotation, a look at tread and pressure.", "Every 12 months or so: Brake inspection, cabin and engine air filters, battery test.", "Around 30,000 miles: Brake fluid and fuel filter, if your car has one to change.", "Around 60,000 miles: Coolant, transmission fluid and spark plugs.", "Around 90,000 miles: Timing belt, on engines that have a belt rather than a chain.", "Typical. Where the two disagree, your manual wins."], "source": "src/content/guides.ts, guide car-maintenance-by-mileage-start-with-your-manual, timeline 'The same jobs, in the order they come round' and opening paragraph; same figures as MAINTENANCE_TEMPLATES in vehicleKnowledge.ts (always labelled typical)" },
+      "headline": "Car Maintenance by Mileage", "sub": "Start with your owner's manual.",
+      "props": ["odometer-cluster", "mileage-road", "owners-manual"], "why": "The mileage-milestone chart the niche saves, honestly captioned as typical with the manual on the road's first marker."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-5.2", "title": "Car Maintenance Checklist: Type Your Manual's Intervals Once", "archetype": "printed-page",
+      "content": { "items": ["From your manual", "Job", "Miles", "Months", "Engine oil and filter"], "source": "components/VehicleForms.tsx ('From your manual' heading, 'Months' column, 'Engine oil and filter' placeholder); guide car-maintenance-by-mileage-start-with-your-manual, 'Where the Companion fits' (job, miles and months columns)" },
+      "headline": "Type Your Manual's Intervals Once", "sub": "Add jobs from your owner's manual: the job, the miles and the months, one row each.",
+      "props": ["owners-manual", "service-log-page", "pen", "phone-screenshot"], "why": "The open manual beside the product's own three-column table, rows blank except the placeholder, so the reader's numbers fill it."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-5.3", "title": "Car Maintenance Schedule: Miles, Months, or Both", "archetype": "side-by-side",
+      "content": { "items": ["Miles", "Months", "A job is due when you reach its mileage or its months, whichever comes first.", "If the manual gives only miles or only months for a job, use the one it gives. Don't invent the other."], "source": "src/content/guides.ts, guide what-is-due-on-my-car-right-now, opening paragraph and list 'The method, five steps' item 6" },
+      "headline": "Miles, Months, or Both", "sub": "Some jobs go by distance, some by time, some by both.",
+      "props": ["odometer-cluster", "calendar-page"], "why": "An odometer on one side and a calendar page on the other, the two clocks a job runs on, with 'whichever comes first' spanning both."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-5.4", "title": "Car Maintenance by Mileage: Severe Duty Halves the Interval, With One Tap", "archetype": "car-callouts",
+      "content": { "items": ["tow", "mostly short trips", "heavy dust, heat or cold", "SEVERE DUTY", "every 2,500 miles, every 3 months"], "source": "creative/pinterest/draftpace/wave4.csv, pin-5.4 description; 'SEVERE DUTY' card in creative/public/screens/vehicle-maintenance-companion-vehicles.png (Commuter demo vehicle)" },
+      "headline": "Severe Duty Halves the Interval, With One Tap", "sub": "It never changes the number you typed.",
+      "props": ["car-side", "trailer", "phone-screenshot"], "why": "A car towing a trailer through dust under a hard sun shows 'severe' without a word; the real severe-duty card is the inset."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-5.5", "title": "Car Maintenance Checklist: Your Manual First", "archetype": "glove-box-open",
+      "content": { "items": ["Owner's manual: Has the oil type, tire pressure and what the dashboard lights mean.", "If it's gone, the maker's site usually has a PDF for your model and year."], "source": "src/content/guides.ts, guide glove-box-checklist-what-to-keep table 'What is worth having in the car'; guide first-car-checklist-for-new-drivers, list 'What to check on day one' item 6" },
+      "headline": "Your Manual First", "sub": "A chart from the internet is a starting point. Your manual is the answer.",
+      "props": ["glove-box", "owners-manual", "tire-gauge"], "why": "The manual being pulled out of the glove box, ribbon hanging, the one source the whole product defers to."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-6.1", "title": "Winter Car Prep Checklist", "archetype": "car-callouts",
+      "content": { "items": ["Battery", "Tires", "Wiper blades", "Washer fluid", "Coolant", "Lights", "Heater and defroster", "Kit in the car"], "source": "src/content/guides.ts, guide winter-car-prep-checklist, table 'What to look at, and what to write down', column 'Check'" },
+      "headline": "Winter Car Prep Checklist", "sub": "Cold is hard on batteries, tires and wipers.",
+      "props": ["car-side", "battery-frost", "tyre", "wiper", "washer-fluid", "winter-kit"], "why": "The niche's labelled-car infographic: a frosted car with eight numbered checks, the boot open on the kit."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-6.2", "title": "Winter Car Prep: Four Starter Lists: Before Winter, Long Drive, Yearly, By the Miles", "archetype": "side-by-side",
+      "content": { "items": ["Before winter: Cold is hard on batteries, tires and wipers.", "Before a long summer drive: The checks worth doing before a road trip.", "Once a year: The yearly round most vehicles want.", "By the miles: The bigger jobs that come round every so many thousand miles."], "source": "src/products/vehicle-maintenance-companion/vehicleKnowledge.ts, STARTER_LISTS (name and blurb)" },
+      "headline": "Four Starter Lists", "sub": "Each list adds jobs with a typical starting interval you can change and nothing recorded against them.",
+      "props": ["key-ring", "key-tag"], "why": "Four manila key tags on one ring, each a starter list with a tiny drawing (frost, road, calendar, odometer), so the four lists read as four things to grab."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-6.3", "title": "Winter Car Maintenance: Three Things the Cold Is Hard On", "archetype": "car-callouts",
+      "content": { "items": ["Battery: Slow cranking, dim lights, a battery three or more years old.", "Tires: Tread depth, uneven wear, and pressure set to the sticker in the driver's door jamb.", "Wiper blades: Smearing, chatter, split rubber."], "source": "src/content/guides.ts, guide winter-car-prep-checklist, table 'What to look at, and what to write down', column 'What to look for'" },
+      "headline": "Three Things the Cold Is Hard On", "sub": "The three things most worth checking before winter, and what to look for.",
+      "props": ["battery-frost", "tyre", "wiper", "car-side"], "why": "A close crop of the frosted car with only three big callouts: the frosted battery, the tyre with a tread gauge, the wiper's cleared arc."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-6.4", "title": "Winter Car Maintenance: Usual Jobs in One Tap", "archetype": "odometer-and-road",
+      "content": { "items": ["petrol", "diesel", "hybrid", "plug-in hybrid", "electric", "Its fuel type, its age and its mileage choose a short list of typical jobs to start from, or you can type them in from your own manual.", "Start with the usual jobs"], "source": "vehicleProfile.ts FUEL_LABEL; src/shop/products/vehicle-maintenance-companion.ts howItWorks[1]; components/VehicleForms.tsx ('Start with the usual jobs')" },
+      "headline": "Usual Jobs in One Tap", "sub": "Every interval is a starting point you can change and your manual is the real source.",
+      "props": ["odometer-cluster", "fuel-gauge", "phone-screenshot"], "why": "The cluster's fuel gauge and odometer stand for the two things the person tells it; fuel-type chips sit under it, the real vehicles screen beside."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-6.5", "title": "Cold Is Hard on Batteries, Tires and Wipers", "archetype": "printed-page",
+      "content": { "items": ["October 14 · 61,200", "Battery tested at the shop, passed, about four years old.", "Tires 33, 33, 32, 33 psi, set to the sticker.", "New front wipers, $28.", "Washer fluid topped up.", "Lights all working."], "source": "src/content/guides.ts, guide winter-car-prep-checklist, 'An example: what a winter entry might look like' (labelled example on the pin)" },
+      "headline": "Cold Is Hard on Batteries, Tires and Wipers", "sub": "A short reason to look before the first frost.",
+      "props": ["service-log-page", "tire-gauge", "pen"], "why": "The guide's own winter log entry, handwritten-style on a page with frost creeping in at the corner, shows what 'looking' produces."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-7.1", "title": "Two Cars, One Household: Keeping Maintenance Straight", "archetype": "side-by-side",
+      "content": { "items": ["Sedan · 52,300 · Oil last done Feb 10, at 49,800 · Months: overdue", "Van · 88,100 · Oil last done Jun 20, at 84,300 · Miles: about 1,200 left"], "source": "src/content/guides.ts, guide two-cars-one-household-maintenance, table 'An example: why the two records have to stay apart' (made-up, labelled example)" },
+      "headline": "Two Cars, One Household", "sub": "With two cars it is easy to lose track of which one needs what.",
+      "props": ["car-front", "licence-plate", "odometer-cluster"], "why": "Sedan and van nose to nose, each with its own odometer and verdict: the quiet car is the late one."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-7.2", "title": "Car Binder: Every Car on One Strip", "archetype": "plate-strip",
+      "content": { "items": ["ALL", "Family car", "Commuter", "A filled dot means something is due, a ring means something is close, and an empty ring means clear."], "source": "src/content/guides.ts, guide two-cars-one-household-maintenance, 'Where the Companion fits'; chip labels from creative/public/screens/vehicle-maintenance-companion-history.png" },
+      "headline": "Every Car on One Strip", "sub": "With two or more vehicles, a strip of plates shows which one needs you, and one tap filters Due to that car.",
+      "props": ["licence-plate", "plate-lamp"], "why": "The product's real plate strip, drawn as actual plates with their lamps, under a headline plate."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-7.3", "title": "Car Paperwork Organization: Which Car Needs What", "archetype": "printed-page",
+      "content": { "items": ["Give each car a label.", "Log the job on the day, and start the line with the car's label.", "Once a month, read both odometers on the same day and check each page."], "source": "src/content/guides.ts, guide two-cars-one-household-maintenance, list 'How to set it up' items 1, 4 and 5 (first sentences)" },
+      "headline": "Which Car Needs What", "sub": "Three habits that keep two cars from blurring into one.",
+      "props": ["service-log-page", "licence-plate", "pen"], "why": "Two overlapping log pages with tabs labelled Sedan and Van (the guide's example names), each line starting with its car."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-7.4", "title": "Glove Box Organization: Add a Vehicle in One Short Screen", "archetype": "plate-strip",
+      "content": { "items": ["What do you call it", "What kind is it", "Mileage (optional)", "Year, make and model (optional)", "Do you know this vehicle's service history?"], "source": "src/products/vehicle-maintenance-companion/components/VehicleForms.tsx (field labels)" },
+      "headline": "Add a Vehicle in One Short Screen", "sub": "Give the vehicle a name and, if you like, its year, make and model.",
+      "props": ["licence-plate", "key-tag"], "why": "A blank plate whose characters are 'What do you call it', the form's real first question, with the other four fields as a short tag."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-7.5", "title": "Car Binder: One Strip for Every Car You Own", "archetype": "side-by-side",
+      "content": { "items": ["Family car", "Commuter", "ALL"], "source": "demo vehicle labels in creative/public/screens/vehicle-maintenance-companion-history.png and -vehicles.png; strip described in guide two-cars-one-household-maintenance" },
+      "headline": "One Strip for Every Car You Own", "sub": "One glance across everything you own.",
+      "props": ["car-front", "licence-plate", "plate-lamp"], "why": "Two cars parked side by side in a driveway, their plates lit by the strip's lamps: the strip as a real driveway rather than as chips."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-8.1", "title": "What to Keep in Your Glove Box", "archetype": "glove-box-open",
+      "content": { "items": ["Registration", "Proof of insurance", "Roadside help number", "Owner's manual", "Tire size and oil type", "Pen and small notepad", "Tire pressure gauge", "At home: The title", "At home: Spare keys"], "source": "src/content/guides.ts, guide glove-box-checklist-what-to-keep, tables 'What is worth having in the car' and list 'What is better kept at home'" },
+      "headline": "What to Keep in Your Glove Box", "sub": "A short list of the papers and numbers worth having in the car, and what is better kept at home.",
+      "props": ["glove-box", "registration-card", "insurance-card", "roadside-card", "owners-manual", "tire-gauge", "pen", "home-drawer"], "why": "The labelled glove-box flat-lay the 'what to keep in your car' search expects, with a small 'keep at home' drawer underneath."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-8.2", "title": "A Glove Box Card You Print Yourself", "archetype": "printed-page",
+      "content": { "items": ["Glove box card", "Cut along the dashed line, or fold, and keep it in the car.", "Registration plate", "VIN", "Tyre size", "Oil", "Mileage", "Insurer", "Policy number", "Roadside help"], "source": "src/products/vehicle-maintenance-companion/printables/generateGloveBoxCard.tsx (rendered strings)" },
+      "headline": "A Glove Box Card You Print Yourself", "sub": "Nothing is looked up or checked.",
+      "props": ["glove-box-card", "pen", "glove-box", "phone-screenshot"], "why": "The real card's labels with every value blank for a pen and a dashed cut line, resting on the edge of the open glove box."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-8.3", "title": "Car Paperwork Organization: Three Papers Worth Having in the Car", "archetype": "side-by-side",
+      "content": { "items": ["Registration: You may be asked to show it at a stop.", "Proof of insurance: Needed at a stop and after a collision.", "Roadside help number: Easier to read off a card than to search for with a dead battery."], "source": "src/content/guides.ts, guide glove-box-checklist-what-to-keep, table 'What is worth having in the car', column 'Why it earns the space'" },
+      "headline": "Three Papers Worth Having in the Car", "sub": null,
+      "props": ["registration-card", "insurance-card", "roadside-card"], "why": "Three cards standing in a row, one reason each, readable in a single glance."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-8.4", "title": "Glove Box Details, Typed by You", "archetype": "plate-strip",
+      "content": { "items": ["Registration plate", "Insurer", "Roadside help number", "None of it is looked up or checked."], "source": "creative/pinterest/draftpace/wave5.csv, pin-8.4 description; field names as in printables/generateGloveBoxCard.tsx" },
+      "headline": "Glove Box Details, Typed by You", "sub": "Kept with your account and used only for the glove box card.",
+      "props": ["licence-plate", "insurance-card", "roadside-card"], "why": "A plate whose characters are blank underscores waiting to be typed, with the insurer and roadside cards tucked behind it."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-8.5", "title": "Glove Box Organization: Keep It Short", "archetype": "glove-box-open",
+      "content": { "items": ["A card you can find beats a folder you cannot.", "The fix for both is a ten minute clear out on the day a renewal arrives."], "source": "creative/pinterest/draftpace/wave5.csv, pin-8.5 description; src/content/guides.ts, guide glove-box-checklist-what-to-keep, 'What goes wrong'" },
+      "headline": "Glove Box Organization: Keep It Short", "sub": "A card you can find beats a folder you cannot.",
+      "props": ["glove-box", "glove-box-card", "receipt-folder"], "why": "One clean card on top of the open glove box, a fat stuffed folder pushed to the back: the contrast is the message."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-9.1", "title": "Car Paperwork Dates: Registration, Insurance, Inspection", "archetype": "car-callouts",
+      "content": { "items": ["Registration: The expiry on the card or the sticker", "Insurance: The end of the policy term", "Inspection: The date on the sticker or report, if your state has one", "Warranty: Years or miles, whichever comes first"], "source": "src/content/guides.ts, guide car-paperwork-dates-organizer, table 'Which dates go on the list', column 'What the date is'" },
+      "headline": "Car Paperwork Dates: Registration, Insurance, Inspection", "sub": "What each date is, where the paper is, and what to check with the official source.",
+      "props": ["car-front", "windscreen-sticker", "licence-plate", "insurance-card", "odometer-cluster"], "why": "Each date is pinned to where it physically lives on the car: the plate, the windscreen sticker, the glove box, the odometer for warranty miles."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-9.2", "title": "Glove Box Organization: A Date and Where the Paper Is", "archetype": "glove-box-open",
+      "content": { "items": ["Where the registration paper or card is", "Where the policy paper or card is", "Where the last inspection result is", "Where the warranty paperwork is"], "source": "src/products/vehicle-maintenance-companion/renewals.ts, RENEWAL_INFO (kept)" },
+      "headline": "A Date and Where the Paper Is", "sub": "Nothing is uploaded, and it never says what any place requires.",
+      "props": ["glove-box", "registration-card", "insurance-card", "owners-manual"], "why": "Each paper in the glove box wears a small string tag with the product's own 'where it is' question."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-9.3", "title": "Car Binder: What to Write Next to Each Date", "archetype": "printed-page",
+      "content": { "items": ["Where the paper lives, in words you'd understand in a hurry ('kitchen drawer, blue folder').", "How it renews: mailed notice, online at your state's site, or automatic.", "Subtract six weeks from each date and put that in your calendar or on the list as the act-by date.", "Van, registration · Mar 15 · Glove box · Feb 1"], "source": "src/content/guides.ts, guide car-paperwork-dates-organizer, list 'How to set it up' items 3-5 and table 'A filled tracker' (made-up, labelled example)" },
+      "headline": "What to Write Next to Each Date", "sub": "Three short notes that make a renewal easy to find.",
+      "props": ["service-log-page", "calendar-page", "pen"], "why": "A tracker page with one example row and the three notes as arrows to its columns."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-9.4", "title": "Car Paperwork Organization: Paperwork Dates Show Up on Due", "archetype": "odometer-and-road",
+      "content": { "items": ["45 days away or past", "If you switch reminders on", "one notice two weeks ahead", "and one on the day", "Off until you switch it on."], "source": "creative/pinterest/draftpace/wave5.csv, pin-9.4 description; renewals.ts RENEWAL_SOON_DAYS = 45; vehicleReminders.ts RENEWAL_LEAD_DAYS = 14" },
+      "headline": "Paperwork Dates Show Up on Due", "sub": "A date shows on Due when it is 45 days away or past.",
+      "props": ["mileage-road", "calendar-page", "toggle-switch"], "why": "The road counts down in days instead of miles: three markers, with the reminder markers drawn faint until the dashboard switch is on."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-9.5", "title": "Glove Box Organization: Where Is the Paper?", "archetype": "side-by-side",
+      "content": { "items": ["In the car: Registration, Proof of insurance", "At home: The title, Spare keys", "'kitchen drawer, blue folder'"], "source": "src/content/guides.ts, guide glove-box-checklist-what-to-keep (table and 'What is better kept at home'); guide car-paperwork-dates-organizer, 'How to set it up' item 3" },
+      "headline": "Where Is the Paper?", "sub": "The date is easy. Finding the paper is the hard part.",
+      "props": ["glove-box", "home-drawer", "registration-card"], "why": "The glove box on one side, the kitchen drawer with the blue folder on the other: the two places the paper can be."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-10.1", "title": "First Car Checklist for New Drivers", "archetype": "car-callouts",
+      "content": { "items": ["Match the VIN in three places", "Count the keys", "Turn the key and watch the dashboard", "Check tire pressure against the sticker on the driver's door jamb", "Find the jack and spare, if the car has them", "Find the owner's manual"], "source": "src/content/guides.ts, guide first-car-checklist-for-new-drivers, checklist 'What to check on day one' (first clause of each item)" },
+      "headline": "First Car Checklist for New Drivers", "sub": "A short list of what to sort in the first week with a car.",
+      "props": ["car-side", "door-jamb-sticker", "key-ring", "tire-gauge", "owners-manual"], "why": "A car with the driver's door open and six numbered spots to check on day one, the format parents pin for a teen's first car."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-10.2", "title": "First Car Checklist: Log a Service: Date, Miles, What Was Done", "archetype": "printed-page",
+      "content": { "items": ["which job", "what was done", "the date", "the mileage", "who did it", "any cost or note"], "source": "creative/pinterest/draftpace/wave5.csv, pin-10.2 description; shown against creative/public/screens/vehicle-maintenance-companion-history.png" },
+      "headline": "Log a Service: Date, Miles, What Was Done", "sub": "Works for one-off repairs too.",
+      "props": ["service-log-page", "pen", "phone-screenshot"], "why": "One log line drawn large with its six parts labelled, the real History screen beside it."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-10.3", "title": "Week One With Your First Car", "archetype": "odometer-and-road",
+      "content": { "items": ["Before you drive it home: Call your insurer.", "Day 1: Match the VIN, count the keys, look at the dash warning lights, find the manual.", "Days 2 and 3: Handle title and registration.", "Days 4 to 7: Write the first record entry, check tire pressure, set up the glove box.", "Within the month: Look up what is due, and book anything overdue."], "source": "src/content/guides.ts, guide first-car-checklist-for-new-drivers, timeline 'The first week, in order'" },
+      "headline": "Week One With Your First Car", "sub": "Find the owner's manual, note the mileage, start a record.",
+      "props": ["odometer-cluster", "mileage-road", "car-side"], "why": "A first drive down a road with five day-markers: the timeline as a journey, starting from an odometer at its first reading."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-10.4", "title": "New Driver Tips: Reminders You Switch On Yourself", "archetype": "side-by-side",
+      "content": { "items": ["Off until you turn them on", "a job that has reached its interval", "a date that is close", "One device, at most once an hour."], "source": "creative/pinterest/draftpace/wave5.csv, pin-10.4 description; src/shop/products/vehicle-maintenance-companion.ts questions ('Does it send me a reminder...')" },
+      "headline": "Reminders You Switch On Yourself", "sub": "Reminders are off until you turn them on.",
+      "props": ["toggle-switch", "odometer-cluster", "calendar-page"], "why": "A dashboard rocker switch at OFF on the left; on the right, switched on, only two things: an odometer (interval reached) and a calendar page (a date close)."
+    },
+    {
+      "account": "draftpace", "id": "vehicle/pin-10.5", "title": "First Car Checklist: Start the Record Today", "archetype": "printed-page",
+      "content": { "items": ["Date you got it", "Mileage that day", "VIN matches the title?", "Keys", "Front and rear tire pressure", "Last oil change: Unknown", "Papers, and where they are"], "source": "src/content/guides.ts, guide first-car-checklist-for-new-drivers, table 'The first page of a record (example)', column 'Baseline page'" },
+      "headline": "Start the Record Today", "sub": "The best time to start a car's record is the day you get it.",
+      "props": ["service-log-page", "key-ring", "pen"], "why": "Page one of a new notebook with the guide's baseline lines, values blank for a pen, 'Unknown' honestly allowed."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-vehicle-maintenance-companion-01", "title": "Car Maintenance Tracker: Keep the Interval Your Mechanic Quoted", "archetype": "odometer-and-road",
+      "content": { "items": ["Oil and filter change", "every 5,000 miles, every 6 months", "Last done 2026-06-10 at 56,100 miles"], "source": "Family car demo card in creative/public/screens/vehicle-maintenance-companion-vehicles.png" },
+      "headline": "Write down the interval the mechanic quoted. Once.", "sub": "Kept against that car, editable, for good.",
+      "props": ["windscreen-sticker", "odometer-cluster", "phone-screenshot"], "why": "The faded oil-change sticker in the windscreen corner is where quoted intervals usually get lost; the real vehicle card shows where it lives instead."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-vehicle-maintenance-companion-02", "title": "Avoid Surprise Car Repair Bills: Put Your Request in Writing", "archetype": "service-boundary-ticket",
+      "content": { "items": ["Service Boundary", "REQUESTED TODAY", "Anything not listed above is not authorized.", "please call me before any further work begins"], "source": "printables/generateServiceBoundary.tsx (rendered strings); creative/public/screens/vehicle-maintenance-companion-printables.png" },
+      "headline": "\"While we had it up on the lift...\"", "sub": "A dated Service Boundary: what's requested today, and what isn't authorized.",
+      "props": ["car-lift", "service-boundary-ticket", "shop-counter", "phone-screenshot"], "why": "The quote sits over the car on the lift; the clipboard in front answers it."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-vehicle-maintenance-companion-03", "title": "Used Car With No Service Records: What to Do First", "archetype": "side-by-side",
+      "content": { "items": ["Unknown history: nothing assumed done", "Log each real fact as you learn it", "Usual jobs for its age and use", "HISTORY UNKNOWN"], "source": "creative/pinterest/maple-main-finds.ts, this pin's points; badge from creative/public/screens/vehicle-maintenance-companion-vehicles.png" },
+      "headline": "Bought a used car with no service history?", "sub": "Start the record from today.",
+      "props": ["car-front", "key-tag", "service-log-page"], "why": "The used car with a 'HISTORY UNKNOWN' key tag on one side, the first honest log line on the other."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-vehicle-maintenance-companion-04", "title": "Car Service History Log: Mileage, Date and Cost Every Time", "archetype": "printed-page",
+      "content": { "items": ["2026-06-10", "56,100 mi", "Oil and filter change", "Local service centre · 89.00"], "source": "demo entry in creative/public/screens/vehicle-maintenance-companion-history.png" },
+      "headline": "POV: the shop asks your mileage at the last oil change", "sub": "Every service kept with its day, mileage, shop and cost.",
+      "props": ["shop-counter", "service-log-page", "phone-screenshot"], "why": "The POV line in a speech bubble from across the counter, the answer on the History screen in your hand."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-vehicle-maintenance-companion-05", "title": "Selling Your Car: How to Show Its Service History", "archetype": "car-callouts",
+      "content": { "items": ["Every service, dated", "Mileage at each one", "Who did it", "A printable record for the buyer"], "source": "creative/pinterest/maple-main-finds.ts, this pin's points; record from printables/generateServiceRecord.tsx" },
+      "headline": "Selling your car? Show it was looked after", "sub": "A printable service record, in your own hand.",
+      "props": ["car-side", "service-record-print", "key-ring"], "why": "The car ready for a buyer with four callouts, the printed record on the seat."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-vehicle-maintenance-companion-06", "title": "Car Maintenance App Without the Fake Urgency", "archetype": "plate-strip",
+      "content": { "items": ["Nothing is due right now.", "Everything you're tracking is within its interval."], "source": "src/products/vehicle-maintenance-companion/components/DueScreen.tsx (empty state)" },
+      "headline": "A car app that doesn't cry wolf", "sub": "What's due, ranked. And 'nothing is due' when nothing is.",
+      "props": ["licence-plate", "plate-lamp"], "why": "Two plates whose lamps are all empty rings ('clear'), and the product's own calm sentence beneath: no alarm anywhere."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-vehicle-maintenance-companion-07", "title": "Severe Driving Conditions: Adjust Your Car Maintenance Intervals", "archetype": "car-callouts",
+      "content": { "items": ["Towing", "short trips", "heat", "dust", "SEVERE DUTY"], "source": "creative/pinterest/maple-main-finds.ts, this pin's head; 'SEVERE DUTY' card in creative/public/screens/vehicle-maintenance-companion-vehicles.png" },
+      "headline": "Towing, short trips, heat or dust?", "sub": "A severe-duty switch halves only the interval you entered, job by job.",
+      "props": ["car-side", "trailer", "phone-screenshot"], "why": "Each of the four words is a callout on the drawing (trailer, short hop, sun, dust); the real severe-duty card is the inset."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-vehicle-maintenance-companion-08", "title": "Car Maintenance for Beginners Who Don't Speak Mechanic", "archetype": "printed-page",
+      "content": { "items": ["Typical starting intervals, labelled typical", "Every one editable to your manual", "Due when it's actually due", "Typical starting point. Change it to whatever your vehicle actually needs."], "source": "creative/pinterest/maple-main-finds.ts, this pin's points; components/VehicleForms.tsx (interval hint)" },
+      "headline": "Car care for people who don't speak mechanic", "sub": "Your manual wins. Always.",
+      "props": ["owners-manual", "service-log-page", "pen"], "why": "The owner's manual open beside a plain interval card with the product's own 'Typical starting point' hint, no jargon in sight."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-vehicle-maintenance-companion-09", "title": "Dealer vs Owner's Manual: Which Maintenance Schedule to Follow", "archetype": "side-by-side",
+      "content": { "items": ["What's due by the maker's schedule and what a shop recommends are two different questions, so keep them apart in your notes."], "source": "src/content/guides.ts, guide what-is-due-on-my-car-right-now, list 'When the answer is wrong'" },
+      "headline": "POV: the dealer says it's due. Your manual says it isn't.", "sub": "Your number wins here. Every interval stays editable.",
+      "props": ["service-boundary-ticket", "owners-manual"], "why": "A shop clipboard on the left, the open manual on the right, the guide's line across both."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-vehicle-maintenance-companion-10", "title": "Car Organization: Service History, Paperwork and Costs", "archetype": "glove-box-open",
+      "content": { "items": ["Every vehicle", "Service history", "Paperwork dates", "Service Boundary", "Costs by year"], "source": "creative/pinterest/maple-main-finds.ts, this pin's points; costs by year as in components/HistoryScreen.tsx ('entered, on N of M entries')" },
+      "headline": "Everything about your car, in one tidy place", "sub": "For every vehicle you own.",
+      "props": ["glove-box", "licence-plate", "service-log-page", "registration-card", "service-boundary-ticket", "receipt-folder"], "why": "A tidy open glove box where each labelled object is one part of the product."
+    }
+  ]
+}
