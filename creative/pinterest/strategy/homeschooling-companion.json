@@ -1,0 +1,620 @@
+{
+  "product": "homeschooling-companion",
+  "audience": [
+    "a parent who already chose a curriculum on purpose and wants the record kept, not a new curriculum",
+    "a parent teaching two or three children at one kitchen table whose records have started to blur together",
+    "a family in a state that asks for a notice, a log, a portfolio or a yearly evaluation, saving pins before the review",
+    "a first-year homeschooler, often starting mid-year, working out the paperwork order",
+    "a parent who writes on paper some weeks and on a phone other weeks, and wants both to count",
+    "a parent of a reluctant reader who keeps a reading list and wants it to stay gentle"
+  ],
+  "visualWorld": {
+    "setting": "The kitchen-table classroom, drawn flat and from slightly above: an oak table with a few grain lines, the working pages of The Homeschool Year lying on it, a stack of picture books, pencils in a mug, a portfolio binder with divider tabs, a child's drawing pinned to a cork board or the fridge, and a phone propped against the books showing the real app. Everything is paper, pencil and a binder. It is a parent's desk, not a classroom and not a children's app.",
+    "props": [
+      { "id": "kitchen-table", "draw": "Wide rounded rectangle in warm oak (#d9c3a5) with three or four thin, slightly lighter grain strokes and a soft darker ellipse shadow under it. Seen from about 30 degrees above, so the far edge is narrower than the near edge. No legs needed when cropped." },
+      { "id": "working-page", "draw": "Portrait cream sheet (#fbfaf7) with a 3.5 px plum spine bar along the top edge, a tiny uppercase plum eyebrow line, a serif title, a thin rule under it, then the page's own grid in light rules (#ddd8d0). Lies on the table rotated 2 to 4 degrees with a flat drop shadow. Handwritten entries drawn as Newsreader italic in pencil grey (#8a8478) or as wavy pencil scribble lines where no real words exist." },
+      { "id": "reading-log-page", "draw": "working-page with the title 'The reading log' and three columns separated by faint vertical rules: 'Book' (wide), 'Started', 'Finished or stopped'. Seventeen ruled rows. Entries in pencil." },
+      { "id": "days-schooled-page", "draw": "working-page titled 'Days schooled': twelve rows, each a short underline on the left for the month, then sixteen small empty squares, then a short underline on the right for the running total. Ticks drawn as short plum check strokes inside some squares." },
+      { "id": "daily-log-page", "draw": "working-page titled 'The daily log' with four column heads 'Date', 'Subject', 'What we did', 'How it went', sixteen ruled rows and faint column rules." },
+      { "id": "weekly-plan-page", "draw": "working-page titled 'A week at a time': two short write lines at the top ('Week beginning', 'Who this is for'), then six small plum uppercase day labels 'Monday' to 'Friday' and 'Spare day', each with two write lines. The Spare day block is left empty and drawn with a dashed plum outline." },
+      { "id": "remembering-page", "draw": "working-page titled 'Things worth remembering': seven entries, each a short date stub line on the left and a long line beside it, plus one more full-width line under." },
+      { "id": "subject-record-page", "draw": "working-page titled 'One subject, over a term' with labelled write blocks: 'Where we started', 'What we covered', 'What went well', 'What we are coming back to', 'Work kept, and where'." },
+      { "id": "check-sheet", "draw": "working-page with a topic title (e.g. 'Multiplication'), eight numbered question lines, and its bottom quarter folded back behind itself: draw the fold as a lighter trapezoid with a diagonal crease shadow and the word 'Answers' upside down on the flap, so the key is visibly out of the child's sight." },
+      { "id": "result-chips", "draw": "Four rounded pills stacked or in a row: outline pills in plum-soft (#f1ebf2) with plum text, the one being argued for filled in plum (#6a4a72) with white text." },
+      { "id": "topic-ticklist", "draw": "Clipboard (rounded rectangle board in kraft #c9a87a with a dark ink clip at the top) holding a sheet of short lines, each with a small square tick box on the left; ticked boxes carry a plum check stroke." },
+      { "id": "portfolio-binder", "draw": "Open three-ring binder seen from above: two rectangles side by side (left cover plum #6a4a72 or kraft, right page cream), three ring circles on the spine, and five divider tabs sticking out of the right edge as small staggered rounded rectangles in plum-soft, plum-mid and cream, each with a numeral or a short label." },
+      { "id": "record-cover", "draw": "The real My Homeschool Record cover from printables/document.tsx: cream page, tiny plum uppercase 'Homeschooling Companion', seven thin plum lines of different lengths (one bolder), a heavy ink rule near the bottom, 'My Homeschool Record' in serif, and a plum-soft box with a plum left border at the foot." },
+      { "id": "state-page", "draw": "The printed record's 'What your state asks for.' page: plum eyebrow '<State>, <Level> regulation', serif title, the state's one-line note, then rows each with a requirement label on the left and a small pill tag on the right, and a faint footer line." },
+      { "id": "us-tile-map", "draw": "Fifty-one equal rounded squares (50 states plus DC) arranged in the standard US tile-grid layout, each with a two-letter abbreviation in small sans. Fill by level from HOMESCHOOL_STATE_REQUIREMENTS: None = cream with a plum outline, Low = #f1ebf2, Moderate = #8e6f95, High = #4a3350 with white letters. A picked state gets a thicker ink outline and a pencil arrow." },
+      { "id": "level-legend", "draw": "Four small squares in the map's four fills, each followed by the level name and its count, in a single row or a 2 x 2 grid." },
+      { "id": "index-card", "draw": "3 x 5 card in white with a plum top rule and four or five faint grey ruled lines, a large serif numeral in the top-left corner, held on with a short strip of washi tape (translucent plum-soft rectangle, slightly rotated) or a push pin (circle with a smaller highlight circle)." },
+      { "id": "cork-board", "draw": "Rounded rectangle in warm cork (#cfa77a) with a scatter of tiny darker dots for texture and a thin oak frame. Cards and the child's drawing are pinned on it." },
+      { "id": "childs-drawing", "draw": "A slightly crooked sheet with loose, thick, round-capped strokes: a sun as a circle with short rays, a house as a square under a triangle, two stick figures. Strokes in muted ochre, sage and plum, never primaries. No words." },
+      { "id": "picture-book-stack", "draw": "Four or five lying rectangles of varied width and thickness with spine colours in plum, ochre (#d8a657), sage (#a3b18a), dusty rose (#d9a5a0) and ink; one ribbon bookmark hanging off the top book. No titles on the spines." },
+      { "id": "stopped-book", "draw": "One closed picture book lying slightly apart from the stack with a paper bookmark sticking out near the front, so it reads as a book that was started and set down." },
+      { "id": "pencils-in-mug", "draw": "Side-view mug (rounded rectangle body, open arc handle) in cream with a plum band, holding three pencils: long thin hexagonal rectangles in ochre with a cream wood cone, a graphite tip and a dusty-rose eraser." },
+      { "id": "coffee-mug", "draw": "Top-down mug: a cream ring with an inner brown circle and a small handle stub, plus a faint ring stain on the table beside it." },
+      { "id": "pencil", "draw": "Single pencil lying diagonally across a page: ochre hexagon body, wood cone, graphite tip, dusty-rose eraser with a thin metal band." },
+      { "id": "workbook", "draw": "Spiral-bound workbook: rectangle with a row of small loops along the top edge, a plain coloured cover with two blank label lines, one corner dog-eared." },
+      { "id": "the-homeschool-year-book", "draw": "The printed handbook: cream cover with a plum spine stripe, 'The Homeschool Year' in serif, and a thin line of small text under it. Can be drawn closed, or open to a working page." },
+      { "id": "phone-real-screen", "draw": "Simple ink phone frame (rounded rectangle, thin bezel) propped against the book stack, containing one of the product's REAL screenshots from creative/public/screens/ (homeschooling-companion-workspace.png, -record.png or -kids.png), cropped to the part the pin talks about." },
+      { "id": "laptop-real-screen", "draw": "Flat laptop: screen rectangle with thin ink bezel over a trapezoid keyboard deck, showing a real screenshot cropped to its top section." },
+      { "id": "week-board", "draw": "A wide card or pinned paper divided into day columns with small plum uppercase day labels. Subjects are rounded tiles in plum-soft with the subject name. An empty day column is drawn with a dashed outline and pale diagonal hatching." },
+      { "id": "wall-calendar", "draw": "Hanging calendar: a small nail and string at the top, a month name in serif, a 7 x 5 grid of thin squares, previous months drawn as the edges of pages flipped up behind it." },
+      { "id": "wall-clock", "draw": "Circle with a thin ink rim, twelve short tick marks, two hands; placed on the wall behind the table." },
+      { "id": "step-blocks", "draw": "Three cream blocks stacked as a staircase from lower right to upper left, each block's front face carrying a topic name, with a small pencil arrow pointing down one step." },
+      { "id": "reading-rug", "draw": "Oval rug in plum-soft with a fringe of short strokes; a child figure lying on it on their front (circle head, rounded-rectangle body, two bent legs raised) holding an open book; a cushion as a rounded square." },
+      { "id": "catch-up-evidence", "draw": "Small flat objects scattered on the table: a receipt (narrow strip with zigzag bottom edge and grey lines), a library card (small rounded rectangle with a barcode of thin bars), a phone showing a grid of photo squares, an open workbook showing a page corner." },
+      { "id": "keep-photo-recycle", "draw": "Three zones on the table: a closed binder, a phone held above a simple model volcano (cone with a crater), and a cardboard box (open flaps) holding two workbooks." }
+    ],
+    "palette": "Paper first, plum second. Light cream ground (#fbfaf7 and #f5f1ea from the handbook), ink #1a1d24 for type, the product's own plum #6a4a72 with #4a3350 / #8e6f95 / #f1ebf2 / #f6f1f7 for the accent scale, and warm natural prop colours that sit beside plum without competing: oak #d9c3a5, kraft #c9a87a, cork #cfa77a, pencil ochre #d8a657, sage #a3b18a, dusty rose #d9a5a0, rule grey #ddd8d0 and pencil grey #8a8478. No primary reds, blues or yellows: the product definition says its colour must never read as children's software.",
+    "mood": "Calm, bookish and lived-in. A real table on an ordinary Tuesday: a little untidy, honest, pencil-marked, never a staged classroom and never a cartoon. The pin should feel like a page a parent would actually fill in."
+  },
+  "archetypes": [
+    {
+      "id": "working-page",
+      "name": "The working page on the table",
+      "clicks": "Printable previews dominate homeschool record keeping, portfolio and reading log searches on Pinterest: the pin shows the page itself so the saver knows exactly what they get. Search results for record keeping forms, reading logs and attendance trackers are almost all page previews. Clean, readable, structured layouts are what Pinterest's own educator guidance says performs.",
+      "layout": "Ground: oak table filling the frame. Top band (y 60 to 330): headline in Newsreader, ink, left aligned at x 70, max 3 lines. Middle (y 360 to 1240): one working page, about 760 x 900, rotated 2 to 4 degrees, centred, with its real title and column heads legible; a pencil lies across its lower right and a mug or book stack overlaps the top left corner. Below the page (y 1260 to 1360): one sub line in Plex Sans. Foot (y 1390 to 1460): product line at bottom left (name and price, or 'Free guide'); bottom right kept clear for Pinterest's UI.",
+      "visual": "One real page from The Homeschool Year, drawn with its real structure (columns, rows, boxes), a few pencil entries, and two or three table props.",
+      "text": "Headline (the pin's title), the page's own printed title and column heads (from printables/handbook.tsx), pencil entries only where a guide or the handbook gives example words, and the sub line from the pin's own description.",
+      "bestFor": "Reading log, days schooled, daily log, things worth remembering, the full set of working pages, a first page."
+    },
+    {
+      "id": "state-tile-map",
+      "name": "The state tile map",
+      "clicks": "The colour-coded state map of regulation levels (the HSLDA-style map reproduced by AOP, SheKnows and others) is the reference visual this audience already knows and saves. A map pin promises 'find your state' in one glance, which is the job a searcher has.",
+      "layout": "Cream ground. Top (y 60 to 300): headline, centred, 2 to 3 lines. Middle (y 330 to 1000): the 51-square tile map, about 880 wide, centred. Under the map (y 1020 to 1110): the four-level legend in one row with counts. Lower band (y 1140 to 1360): either the sub line, or an inset card (a cropped real Kids screenshot or a drawn state page) overlapping the map's lower right with a pencil arrow to the picked state. Foot: 'Laws change. Confirm with your state.' in small grey, then the product line at bottom left.",
+      "visual": "Fifty-one squares filled by the level in HOMESCHOOL_STATE_REQUIREMENTS, with an optional picked state outlined in ink.",
+      "text": "Level names and counts computed from src/lib/homeschoolStateRequirements.ts (HOMESCHOOL_STATE_REQUIREMENTS); one state's real level and note when a state is picked; the caution line from the product's own copy.",
+      "bestFor": "Requirements by state, laws by state, 'pick your state', what your state asks you to keep."
+    },
+    {
+      "id": "portfolio-binder",
+      "name": "The portfolio binder",
+      "clicks": "Portfolio and evaluation content on Pinterest is built around the binder: tabbed dividers per subject or per child, a cover page, a list of what goes inside. Parents save it as the checklist they will assemble against, which is exactly the use evaluation-season pins get.",
+      "layout": "Cream ground with a strip of oak table across the lower half. Top (y 60 to 320): headline, left aligned. Middle (y 340 to 1200): open binder, about 900 wide, slightly rotated, divider tabs on the right edge; the right page carries the real content (a list, the record cover, the state page or the printed log). Optional second binder half behind it for two children. Bottom (y 1230 to 1360): sub line. Foot: product line at bottom left.",
+      "visual": "An open three-ring binder with labelled tabs and one real printed page from the product (record cover, state page, log page) or the guide's list of contents.",
+      "text": "Tab labels and list items copied from the portfolio, evaluation and record-keeping guides or from the printed record's real labels in printables/document.tsx and book.ts.",
+      "bestFor": "What goes in a portfolio, preparing for an evaluation, the printed record, what prints, more than one child, what to keep."
+    },
+    {
+      "id": "index-cards",
+      "name": "Numbered index cards on the cork board",
+      "clicks": "'How to start' and 'what to do first' content is searched as steps, and the beginner guides that rank are numbered step lists. Numbered, short, high-contrast phrases are what pin design guidance says readers absorb in the one second a scroll gives them. Cards on a board also look like a real family's planning wall.",
+      "layout": "Cork board fills the frame inside an oak frame. Top (y 60 to 300): headline on a cream paper strip taped across the board. Middle (y 330 to 1300): three to five index cards in a loose column or zigzag, each about 760 x 190, numbered 1 to 5 in large serif, each with one short line; the child's drawing pinned in one gap for warmth. Foot: product line on a small cream tag at bottom left.",
+      "visual": "Index cards with a big numeral and one line each, push pins and washi tape, a child's drawing pinned among them. Variants: two cards side by side for a comparison, or a staircase of cards for 'go back one step'.",
+      "text": "Each card is a step or rule copied from the pin's guide (its 'steps' or list items) or from handbookContent.ts METHOD sections. No paraphrase.",
+      "bestFor": "First-month paperwork order, notice of intent steps, what to change first, short-day list, evaluation evening, three columns of a reading log."
+    },
+    {
+      "id": "week-board",
+      "name": "The four-day week board",
+      "clicks": "Weekly schedules and planners are among the most saved homeschool printables, but nearly every one assumes Monday to Friday. A Pinterest search for four-day homeschool planners found none built for it, so a board with one deliberately empty day stands out in a feed full of five-column grids.",
+      "layout": "Cream ground. Top (y 60 to 300): headline. Middle (y 330 to 1150): a wide week board, day columns Monday to Friday plus an empty 'Spare day' column, with subject tiles placed on the days the product's real weekday pattern puts them; or a wall calendar for month views. Under it (y 1170 to 1340): a short legend or the sub line. Foot: product line at bottom left.",
+      "visual": "Day columns with subject tiles, one day left visibly empty (dashed, hatched); or a wall calendar with ticked days; or one lane per child.",
+      "text": "Day names from the weekly plan page (printables/handbook.tsx), subject days from the four-day-week guide or from startingOutline.ts SHAPES with today.ts WEEKDAYS_BY_FREQUENCY, labels like 'Your curriculum' from learning.ts SOURCE_LABEL.",
+      "bestFor": "Four-day week, starting outline, wait a week, what counts as a school day, attendance in June, per-child today."
+    },
+    {
+      "id": "home-scene",
+      "name": "The kitchen-table scene with the real app",
+      "clicks": "Pinterest's own creative guidance is to show the product in use, in a setting people recognise, so they can picture using it. A homeschool kitchen table is that setting for this audience, and the real screenshot on a phone propped against the books proves the product exists.",
+      "layout": "Full-bleed illustrated scene: wall at the top third (cork board, child's drawing, clock or calendar), table across the middle and lower half. Headline sits on the wall area (y 60 to 330), left aligned. The focal object (phone or laptop with a real screenshot, or the printed handbook) sits at the table's centre (y 600 to 1180), larger than everything else. Sub line in a cream band (y 1240 to 1360). Foot: product line at bottom left.",
+      "visual": "The kitchen table with books, mug, pencils and paper, and a phone or laptop carrying one of the three real screenshots; variants for morning, evening, three place settings, or a reading rug.",
+      "text": "Headline, the sub line from the description, and whatever words are on the real screenshot. Small labels on props only when they are copied from the pin's description or guide.",
+      "bestFor": "Product pins about Today, the record, choosing a curriculum stance, paper and screen, several children; catch-up evening; the reading corner."
+    },
+    {
+      "id": "check-clipboard",
+      "name": "The parent's clipboard: check sheet and results",
+      "clicks": "Assessment pins in this niche are saved as ready-to-use question sheets; the folded answer key and the honest result labels show at a glance that this is a gentle check run at home, not a test, which is the reassurance 'gentle homeschooling' searchers look for.",
+      "layout": "Cream ground. Top (y 60 to 300): headline. Middle (y 330 to 1180): a clipboard holding a check sheet with eight numbered questions, its bottom folded back to hide 'Answers'; or a topic tick list. Right side or below (y 1000 to 1300): the four result pills stacked, the relevant one filled in plum. Foot: product line at bottom left.",
+      "visual": "Kraft clipboard, check sheet with real questions, folded answer flap, four result pills.",
+      "text": "Questions copied from CHECK_SHEETS in printables/handbookContent.ts, result labels from STANDING_LABEL in check.ts, topic names from TOPICS in taxonomy.ts.",
+      "bestFor": "Did it stick, how to check learning, not enough to say, tick what you are teaching."
+    }
+  ],
+  "pins": [
+    {
+      "account": "draftpace", "id": "homeschool/pin-3.1",
+      "title": "Homeschool Record Keeping Requirements, State by State",
+      "archetype": "state-tile-map",
+      "content": { "items": ["None, 8 states", "Low, 15 states", "Moderate, 19 states", "High, 9 states", "each of the 51 tiles filled by its own level"], "source": "src/lib/homeschoolStateRequirements.ts HOMESCHOOL_STATE_REQUIREMENTS (counts computed: 8/15/19/9; the same counts are printed in src/content/guides.ts homeschool-record-keeping-requirements-by-state, 'What the four levels mean')" },
+      "headline": "Homeschool Record Keeping Requirements, State by State",
+      "sub": "A plain summary of what each state asks you to keep.",
+      "props": ["us-tile-map", "level-legend", "pencil"],
+      "why": "The searched phrase drawn as the map this audience already recognises, coloured from the product's own 51 rows."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-3.2",
+      "title": "State Homeschool Requirements Shown Beside Your Own Records",
+      "archetype": "portfolio-binder",
+      "content": { "items": ["Pennsylvania, High regulation", "Affidavit; log, portfolio, and annual evaluator review", "A log or record of instruction", "Samples of work or a portfolio", "A test score or evaluation", "Nothing recorded yet (on one row only; the other tag pills drawn blank, no invented counts)", "This says what is recorded, not whether it is enough."], "source": "Pennsylvania row and checklist from src/lib/homeschoolStateRequirements.ts HOMESCHOOL_STATE_REQUIREMENTS; row labels and tag wording from src/products/homeschooling-companion/book.ts stateComplianceRows; footer from printables/document.tsx" },
+      "headline": "State Homeschool Requirements Shown Beside Your Own Records",
+      "sub": "It says what is recorded, not whether it is enough.",
+      "props": ["portfolio-binder", "state-page", "pencil", "coffee-mug"],
+      "why": "Shows the actual printed state page clipped into a binder, so 'beside your own records' is visible rather than claimed."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-3.3",
+      "title": "What a Homeschool Notice of Intent Is, and How to Find Yours",
+      "archetype": "index-cards",
+      "content": { "items": ["1 Go to your state department of education's own website", "2 Check whether the notice goes to the state directly or to your local district's superintendent", "3 Note whether it is due once or has to be filed again every year", "4 Ask a state homeschool organization to point you to the current form", "5 Send it by certified mail with a return receipt if it is going by paper"], "source": "src/content/guides.ts homeschool-notice-of-intent-explained, list 'How to find yours' (opening clause of each item, verbatim)" },
+      "headline": "What a Homeschool Notice of Intent Is, and How to Find Yours",
+      "sub": "A notice of intent is the first thing many states ask for.",
+      "props": ["cork-board", "index-card", "childs-drawing"],
+      "why": "Five numbered steps is the 'how to find yours' half of the title, and a step list is what this searcher saves."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-3.4",
+      "title": "Homeschool Laws by State: Pick Your State and See a Plain Summary",
+      "archetype": "state-tile-map",
+      "content": { "items": ["Oregon tile picked and outlined", "Oregon · Moderate regulation", "Notice on starting; testing at certain grades, results kept", "Laws change. Confirm with your state before relying on this."], "source": "Inset is a crop of the real screenshot creative/public/screens/homeschooling-companion-kids.png; Oregon's level and note match src/lib/homeschoolStateRequirements.ts HOMESCHOOL_STATE_REQUIREMENTS" },
+      "headline": "Pick Your State and See a Plain Summary",
+      "sub": "Choose your state once and the Kids tab shows its level of regulation and a one-line summary.",
+      "props": ["us-tile-map", "phone-real-screen", "pencil"],
+      "why": "The map plus the real Kids-tab card makes 'pick your state' literal: tap a tile, read its line."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-3.5",
+      "title": "Homeschool Requirements by State: Do You Have to Count Homeschool Days or Hours?",
+      "archetype": "index-cards",
+      "content": { "items": ["Pennsylvania: a count exists", "180 days, or 900 hours elementary, or 990 hours secondary", "Texas: no count is set", "No day or hour minimum in state guidance", "Confirm your state's rules at the source"], "source": "src/content/guides.ts do-you-have-to-count-homeschool-days-or-hours, compare block 'Two real states, side by side' (the day and hour figures exist only in this guide, not in HOMESCHOOL_STATE_REQUIREMENTS); footer from the pin's own description" },
+      "headline": "Do You Have to Count Homeschool Days or Hours?",
+      "sub": "Some states ask for a number and some ask for none at all.",
+      "props": ["cork-board", "index-card", "days-schooled-page"],
+      "why": "Two cards side by side answer the yes-or-no question in one glance, with a days-schooled grid peeking behind."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-4.1",
+      "title": "What Actually Goes in a Homeschool Portfolio",
+      "archetype": "portfolio-binder",
+      "content": { "items": ["A log of educational activities, with reading materials named by title.", "Samples of work across the year, dated, from more than one point rather than one good week.", "A list of subjects covered and the materials or curriculum used.", "Attendance or days schooled, where your state counts them.", "Test results or an evaluator's written report, where required."], "source": "src/content/guides.ts what-goes-in-a-homeschool-portfolio, list 'The core contents' (tabs numbered 1 to 5, the list written on the facing page)" },
+      "headline": "What Actually Goes in a Homeschool Portfolio",
+      "sub": "What to include, what evaluators are really looking for.",
+      "props": ["portfolio-binder", "picture-book-stack", "childs-drawing"],
+      "why": "Five tabbed dividers are the portfolio itself; the saver gets the checklist and the picture of how to file it."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-4.2",
+      "title": "A Printed Homeschool Record for One Child, Made on Your Own Device",
+      "archetype": "home-scene",
+      "content": { "items": ["My Homeschool Record", "What was done, day by day", "Notes you have marked for the record", "Results of checks you ran", "US Letter", "A4", "Save as PDF"], "source": "Laptop shows the real screenshot creative/public/screens/homeschooling-companion-record.png; printed cover drawn from printables/document.tsx" },
+      "headline": "A Printed Homeschool Record for One Child",
+      "sub": "One child, on paper, made on your own device so nothing about them is sent anywhere to produce it.",
+      "props": ["kitchen-table", "laptop-real-screen", "record-cover", "pencils-in-mug"],
+      "why": "The real Record screen beside the paper it makes: screen and printout on one table is the whole promise."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-4.3",
+      "title": "Preparing for a Homeschool Evaluation in an Evening",
+      "archetype": "index-cards",
+      "content": { "items": ["First 15 minutes: Confirm with your evaluator", "Next 20 minutes: Pull one dated work sample per subject from early in the year and one from recently.", "Next 15 minutes: Write a subject and curriculum list, one line each.", "Next 15 minutes: Add a short note per subject", "Last 10 minutes: Put it all in one folder"], "source": "src/content/guides.ts preparing-for-a-homeschool-evaluation, steps 'One evening, in order' (when labels verbatim, what lines verbatim or their opening clause)" },
+      "headline": "Preparing for a Homeschool Evaluation in an Evening",
+      "sub": "Always confirm what your own evaluator wants.",
+      "props": ["cork-board", "index-card", "wall-clock"],
+      "why": "Timed cards turn 'in an evening' into a plan you can follow tonight; the clock on the board makes the time visible."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-4.4",
+      "title": "What Prints on a Homeschool Record Is Up to You",
+      "archetype": "portfolio-binder",
+      "content": { "items": ["What was done, day by day (ticked)", "Notes you have marked for the record (ticked)", "Results of checks you ran (unticked)", "Notes you have kept private are never included"], "source": "Labels from src/products/homeschooling-companion/components/RecordModule.tsx; ticked state from book.ts DEFAULT_BOOK_SECTIONS (history true, observations true, checks false); privacy line from the real record screenshot creative/public/screens/homeschooling-companion-record.png" },
+      "headline": "What Prints on a Homeschool Record Is Up to You",
+      "sub": "Their name is included so the record says whose it is. Age and your notes start out left off.",
+      "props": ["portfolio-binder", "record-cover", "topic-ticklist"],
+      "why": "Three real tick boxes in their real default state show the choice without a word of claim."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-4.5",
+      "title": "Homeschool Records: A Record Is Not an Assessment",
+      "archetype": "working-page",
+      "content": { "items": ["Date | Subject | What we did | How it went", "Mon, Sep 14 | Math | Unit 3, Lesson 10 | About right", "Mon, Sep 14 | Reading | chapter 6 | Easy", "Tue, Sep 15 | Math | Unit 3, Lesson 11 | Difficult", "Wed, Sep 16 | Writing | paragraph practice | About right"], "source": "Column heads from printables/handbook.tsx 'The daily log'; pencil rows from src/content/guides.ts homeschool-record-keeping-template, table 'One child, one week, as an example' (its 'Subject and where you are' cell split across the page's two columns)" },
+      "headline": "A Record Is Not an Assessment",
+      "sub": "A record says what was done. It does not say how well.",
+      "props": ["daily-log-page", "pencil", "coffee-mug", "kitchen-table"],
+      "why": "A daily log with no grade column shows the distinction better than any sentence could."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-5.1",
+      "title": "Homeschool Progress Check: How to Check Whether Your Child Actually Learned Something",
+      "archetype": "check-clipboard",
+      "content": { "items": ["Multiplication", "What is 6 times 7?", "What is 8 times 4?", "What is 9 times 6?", "A box holds 12 pencils. How many pencils in 5 boxes?", "(questions 5 to 8 as further ruled lines)", "Answers (on the folded flap)"], "source": "src/products/homeschooling-companion/printables/handbookContent.ts CHECK_SHEETS[0] (topicKey math.multiplication)" },
+      "headline": "How to Check Whether Your Child Actually Learned Something",
+      "sub": "Covering a topic and learning it are different.",
+      "props": ["topic-ticklist", "check-sheet", "pencil"],
+      "why": "A real eight-question sheet with the key folded away is the low-effort check the guide describes, shown not told."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-5.2",
+      "title": "A Short Check You Run at Home, Marked by You",
+      "archetype": "home-scene",
+      "content": { "items": ["your curriculum's own test", "the printed check sheets", "or write a few", "It keeps them for next time."], "source": "The pin's own description (CSV wave3 homeschool/pin-5.2); listing questions[] 'How can it check my child if it has no lessons?' says the same" },
+      "headline": "A Short Check You Run at Home, Marked by You",
+      "sub": "This product does not write the questions.",
+      "props": ["kitchen-table", "workbook", "check-sheet", "pencils-in-mug", "childs-drawing"],
+      "why": "Three question sources lying side by side on the table: a workbook, a check sheet, a blank notepad, so 'you supply the questions' is the picture."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-5.3",
+      "title": "Homeschool Assessment: Four Questions Is the Floor",
+      "archetype": "index-cards",
+      "content": { "items": ["Below four answers, the honest conclusion is that you do not know yet.", "mostly right means move on", "mostly missed means go over it again", "a split means more practice"], "source": "The pin's own description (CSV wave3 homeschool/pin-5.3); handbookContent.ts METHOD[3] 'Four questions is the floor'" },
+      "headline": "Four Questions Is the Floor",
+      "sub": null,
+      "props": ["cork-board", "index-card"],
+      "why": "Four cards pinned in a row with the fourth as the threshold makes the rule countable at a glance."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-5.4",
+      "title": "Homeschool Assessment: A Check That Can Say \"Not Enough to Say\"",
+      "archetype": "check-clipboard",
+      "content": { "items": ["Looked solid", "Mixed", "Worth another look", "Not enough to say (filled in plum)"], "source": "src/products/homeschooling-companion/check.ts STANDING_LABEL" },
+      "headline": "A Check That Can Say \"Not Enough to Say\"",
+      "sub": "It is a short check you ran at home, not an assessment.",
+      "props": ["check-sheet", "result-chips", "topic-ticklist"],
+      "why": "The four real result labels, with the unusual one lit up, is the product's honest difference in one visual."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-5.5",
+      "title": "Homeschool Tips: Wait a Week, Then Ask Them to Explain It",
+      "archetype": "week-board",
+      "content": { "items": ["the same day", "a week later", "Checking the same day tells you what they remember.", "Checking a week later tells you what they know."], "source": "The pin's own description (CSV wave3 homeschool/pin-5.5); handbookContent.ts METHOD[3] 'Wait a week'" },
+      "headline": "Wait a Week, Then Ask Them to Explain It",
+      "sub": "Checking a week later tells you what they know.",
+      "props": ["week-board", "wall-calendar", "pencil"],
+      "why": "Two weeks drawn side by side with the same day ringed in each makes 'wait a week' a calendar move."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-6.1",
+      "title": "How to Start Homeschooling: The First-Month Paperwork Order",
+      "archetype": "index-cards",
+      "content": { "items": ["1 Find your state's rules", "2 Withdraw, if enrolled", "3 Request the records", "4 File what's due", "5 Start a record"], "source": "src/content/guides.ts how-to-start-homeschooling-first-month-paperwork, steps 'The order to follow' (when labels)" },
+      "headline": "How to Start Homeschooling: The First-Month Paperwork Order",
+      "sub": "Starting homeschooling has a paperwork order that is easier to follow than it looks.",
+      "props": ["cork-board", "index-card", "childs-drawing"],
+      "why": "The beginner format that wins this search: five numbered steps, each a few words."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-6.2",
+      "title": "How to Start Homeschooling: Already Have a Curriculum? Homeschooling Companion Stays Out of the Way",
+      "archetype": "home-scene",
+      "content": { "items": ["Yes, we have one", "No, we are doing our own", "Not sure yet", "We will organize what you are already doing and stay out of the way."], "source": "src/products/homeschooling-companion/setup.ts CURRICULUM_STANCE_LABEL and CURRICULUM_STANCE_NOTE['have-one']; phone shows the real screenshot creative/public/screens/homeschooling-companion-kids.png" },
+      "headline": "Already Have a Curriculum? Homeschooling Companion Stays Out of the Way",
+      "sub": "We will organize what you are already doing and stay out of the way.",
+      "props": ["kitchen-table", "workbook", "picture-book-stack", "phone-real-screen"],
+      "why": "The family's own workbooks take the centre of the table and the app sits small beside them, which is the point."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-6.3",
+      "title": "Keeping Homeschool Records for More Than One Child",
+      "archetype": "portfolio-binder",
+      "content": { "items": ["Maya, age 10: History, chapter read-aloud, Easy", "Maya, age 10: Math, fractions worksheet, Difficult", "Leo, age 7: History, chapter read-aloud, About right", "Leo, age 7: Math, counting by 5s, Easy"], "source": "src/content/guides.ts homeschool-record-keeping-for-multiple-children, table 'One shared lesson, filed twice (example)' (labelled an example in the guide)" },
+      "headline": "Keeping Homeschool Records for More Than One Child",
+      "sub": "Two children, three subjects each, and one shared afternoon.",
+      "props": ["portfolio-binder", "picture-book-stack"],
+      "why": "Two binders side by side, the same read-aloud filed in each, shows 'once per child' instantly."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-6.4",
+      "title": "Homeschool for Beginners: A Starting Outline You Can Change, Keep, or Throw Away",
+      "archetype": "week-board",
+      "content": { "items": ["Math, 35 min: Mon, Tue, Thu, Fri", "Reading, 30 min: Mon to Fri", "Writing, 25 min: Mon, Wed, Fri", "Science, 35 min: Tue, Thu", "History, 30 min: Tue, Thu", "Geography, 30 min: Wed", "Draftpace suggestion", "This is a starting point, not a required curriculum. Change anything, remove anything, and add whatever you want."], "source": "Minutes and days from src/products/homeschooling-companion/startingOutline.ts SHAPES (the 'middle' band, ages 8 to 10), placed on weekdays by today.ts WEEKDAYS_BY_FREQUENCY; label from learning.ts SOURCE_LABEL.draftpace; footer from startingOutline.ts OUTLINE_DISCLAIMER" },
+      "headline": "A Starting Outline You Can Change, Keep, or Throw Away",
+      "sub": "Not sure yet? We will put together a starting outline you can change, keep, or throw away.",
+      "props": ["week-board", "pencil"],
+      "why": "The real outline the app generates for one age band, laid on a week, with the suggestion label stamped on it."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-6.5",
+      "title": "How to Start Homeschooling: You Can Begin Before You Have Everything Figured Out",
+      "archetype": "working-page",
+      "content": { "items": ["Write your child's name and one subject on a page.", "Each day, note the date and what you did, in a line.", "At the end of the week, look at what happened and note one thing to change."], "source": "src/content/guides.ts how-to-start-homeschooling-first-month-paperwork, list 'A first week that does not need a plan'" },
+      "headline": "You Can Begin Before You Have Everything Figured Out",
+      "sub": "A record can start with a child's name and one subject.",
+      "props": ["working-page", "pencil", "coffee-mug", "kitchen-table"],
+      "why": "An almost blank page with one name line and one subject written makes 'begin now' feel small enough to do."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-7.1",
+      "title": "The Four-Day Homeschool Week: How to Set One Up",
+      "archetype": "week-board",
+      "content": { "items": ["Monday, Tuesday, Wednesday, Thursday", "Friday is open for a co-op, a field trip, or errands", "Math 4", "Reading 4", "Writing 3", "Science 2", "History 2", "Geography 1"], "source": "src/content/guides.ts four-day-homeschool-week, tables 'Three ways to lay out four days' (Front-loaded row) and 'One shape, as a suggestion' (days drawn as dots beside each subject, not placed on specific days)" },
+      "headline": "The Four-Day Homeschool Week: How to Set One Up",
+      "sub": "A family that plans five days and manages four has failed at something every week.",
+      "props": ["week-board", "pencils-in-mug"],
+      "why": "Four filled columns and one hatched Friday is the format no five-column planner in the feed shows."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-7.2",
+      "title": "Four Day Homeschool Week: A Homeschool Handbook and Working Pages, Undated So It Starts When You Do",
+      "archetype": "working-page",
+      "content": { "items": ["The year at a glance", "A week at a time", "The daily log", "One subject, over a term", "The reading log", "Things worth remembering", "Days schooled"], "source": "src/products/homeschooling-companion/printables/handbook.tsx, Contents page 'Part two, the working pages'" },
+      "headline": "A Homeschool Handbook and Working Pages, Undated So It Starts When You Do",
+      "sub": "Six short chapters and seven working pages for keeping track of what you actually do.",
+      "props": ["the-homeschool-year-book", "weekly-plan-page", "daily-log-page", "reading-log-page", "days-schooled-page", "kitchen-table"],
+      "why": "Seven real pages fanned across the table is the 'what's inside' preview printable buyers click for."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-7.3",
+      "title": "Four Day Homeschool Week: Decide in Advance What a Short Day Looks Like",
+      "archetype": "index-cards",
+      "content": { "items": ["On a short day we always do:", "On a very short day we always do:", "The thing we drop first is:"], "source": "src/products/homeschooling-companion/printables/handbookContent.ts METHOD[0] section 'Decide in advance what a short day looks like', list" },
+      "headline": "Decide in Advance What a Short Day Looks Like",
+      "sub": "A short day is easier when you decided ahead what it is.",
+      "props": ["cork-board", "index-card", "childs-drawing"],
+      "why": "Three blank fill-in cards invite the saver to write their own answers, which is why it gets saved."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-7.4",
+      "title": "Four Day Homeschool Week: Put the Hard Thing First",
+      "archetype": "home-scene",
+      "content": { "items": ["Plan four days, not five", "Put the hard thing first", "Decide in advance what a short day looks like"], "source": "src/products/homeschooling-companion/printables/handbookContent.ts METHOD[0] ('A week that survives a bad Tuesday') section headings" },
+      "headline": "Put the Hard Thing First",
+      "sub": "One of the six chapters is about running a week that survives a bad Tuesday.",
+      "props": ["kitchen-table", "wall-clock", "workbook", "coffee-mug", "the-homeschool-year-book"],
+      "why": "Morning light, a full mug and the hard workbook on top of the pile: the first hour, drawn."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-7.5",
+      "title": "Homeschool Schedule: Only One of Them Still Wants to Be Doing This in March",
+      "archetype": "week-board",
+      "content": { "items": ["plans five days and manages four", "plans four and manages four", "Monday, Tuesday, Wednesday, Thursday, Friday, Spare day", "The work done is identical."], "source": "handbookContent.ts METHOD[0] 'Plan four days, not five' (and the pin-7.1 description); day labels from printables/handbook.tsx 'A week at a time'" },
+      "headline": "Only One of Them Still Wants to Be Doing This in March",
+      "sub": "A plan you can keep beats a plan you cannot.",
+      "props": ["week-board", "weekly-plan-page"],
+      "why": "Two week boards, same four ticks, one with a failed fifth day and one with a spare day, makes the argument visually."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-8.1",
+      "title": "The Homeschool Reading Log: What to Write and Why Abandoned Books Belong on It",
+      "archetype": "working-page",
+      "content": { "items": ["Book | Started | Finished or stopped", "Winn-Dixie | Sep 3 | Sep 11, finished", "Wild Robot | Sep 12 | Sep 19, finished", "Ancient Egypt | Sep 20 | Sep 22, stopped"], "source": "Column heads from printables/handbook.tsx 'The reading log'; rows from src/content/guides.ts homeschool-reading-log, table 'Three rows from a log (example)' (the guide labels them made up)" },
+      "headline": "The Homeschool Reading Log: What to Write and Why Abandoned Books Belong on It",
+      "sub": "Abandoned books belong on the list: a child who is allowed to stop is a child who keeps starting.",
+      "props": ["reading-log-page", "picture-book-stack", "stopped-book", "pencil"],
+      "why": "The real three-column page with a 'stopped' row in pencil is the printable preview reading-log searchers click."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-8.2",
+      "title": "A Printable Reading Log With Space for Books You Did Not Finish",
+      "archetype": "home-scene",
+      "content": { "items": ["The reading log", "Book", "Started", "Finished or stopped"], "source": "printables/handbook.tsx 'The reading log' page and the pin's own description" },
+      "headline": "A Printable Reading Log With Space for Books You Did Not Finish",
+      "sub": "The reading log in The Homeschool Year has three columns: the book, when started, and finished or stopped.",
+      "props": ["kitchen-table", "the-homeschool-year-book", "picture-book-stack", "stopped-book", "pencils-in-mug"],
+      "why": "The printed book open at the reading log beside a real pile of picture books, one set aside with its bookmark in."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-8.3",
+      "title": "Three Columns Are Enough for a Reading Log",
+      "archetype": "index-cards",
+      "content": { "items": ["1 Book: Title, and the author if you feel like it", "2 Started: A date, roughly is fine", "3 Finished or stopped: A date, and one of those two words"], "source": "src/content/guides.ts homeschool-reading-log, table 'The three columns, and what goes in each'" },
+      "headline": "Three Columns Are Enough for a Reading Log",
+      "sub": "You do not need ratings, summaries or minutes.",
+      "props": ["cork-board", "index-card", "picture-book-stack"],
+      "why": "Three cards, one per column, makes 'three is enough' countable."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-8.4",
+      "title": "Homeschool Reading Log: Things Worth Remembering: A Dated Page for What You Notice",
+      "archetype": "working-page",
+      "content": { "items": ["Things worth remembering", "She finally understood fractions.", "He reads better lying on the floor than at a desk.", "Nobody has ever successfully reconstructed one in December."], "source": "Page from printables/handbook.tsx 'Things worth remembering'; entries from handbookContent.ts METHOD[1] section 'The fourth thing, when it is worth it'; footer from the handbook page text (date stubs left as pencil dashes, no invented dates)" },
+      "headline": "Things Worth Remembering: A Dated Page for What You Notice",
+      "sub": "A page of dated lines for what you notice.",
+      "props": ["remembering-page", "pencil", "coffee-mug", "childs-drawing"],
+      "why": "Two real handwritten moments on the page make it the keepsake page parents save."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-8.5",
+      "title": "Reading Log for Kids: A Child Who Is Allowed to Stop Keeps Starting",
+      "archetype": "home-scene",
+      "content": { "items": [], "source": "No extra words: the scene draws the handbook's own example 'He reads better lying on the floor than at a desk' (handbookContent.ts METHOD[1]) without quoting it" },
+      "headline": "A Child Who Is Allowed to Stop Keeps Starting",
+      "sub": "A gentle way to keep a reading list that does not turn books into homework.",
+      "props": ["reading-rug", "picture-book-stack", "stopped-book"],
+      "why": "A child reading on the rug with a set-aside book beside them is the feeling the pin sells; no chart needed."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-9.1",
+      "title": "Homeschool Attendance: What to Track and What Is Pointless",
+      "archetype": "week-board",
+      "content": { "items": ["A morning of workbook math and reading: Yes", "A field trip with a purpose you set in advance: Yes, in most states", "A cooking session that worked through a recipe's fractions and measurements: Usually, if you can say what it covered", "Confirm your state's rules at the source."], "source": "src/content/guides.ts homeschool-attendance-what-to-track, table 'What usually counts, and what doesn't'; footer from the pin's description" },
+      "headline": "Homeschool Attendance: What to Track and What Is Pointless",
+      "sub": "What counts as a school day, and the lightest record that satisfies a requirement.",
+      "props": ["week-board", "workbook", "pencil"],
+      "why": "Three different days on one board, each marked with whether it counts, answers the question people actually search."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-9.2",
+      "title": "Homeschool Attendance: A Days Schooled Page: One Box Per Day",
+      "archetype": "working-page",
+      "content": { "items": ["Days schooled", "12 rows: month line, 16 boxes, running-total line", "Month on the left, one box per day schooled, running total on the right."], "source": "src/products/homeschooling-companion/printables/handbook.tsx 'Days schooled' page (structure and caption). Ticks are drawn marks; month and total lines stay blank so no count is invented." },
+      "headline": "A Days Schooled Page: One Box Per Day",
+      "sub": "Mark days as you go: a month on the left, one box per day schooled, a running total on the right.",
+      "props": ["days-schooled-page", "pencil", "coffee-mug"],
+      "why": "The attendance tracker format this niche saves most, drawn from the product's own page."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-9.3",
+      "title": "How to Catch Up on Homeschool Records You Have Not Kept",
+      "archetype": "home-scene",
+      "content": { "items": ["Workbook pages", "Phone photos", "Library history", "Receipts", "Your calendar"], "source": "src/content/guides.ts how-to-catch-up-on-homeschool-records, table 'Example: rebuilding October to December', column 'Where you look'" },
+      "headline": "How to Catch Up on Homeschool Records You Have Not Kept",
+      "sub": "What is genuinely recoverable, how to reconstruct a homeschool year honestly.",
+      "props": ["kitchen-table", "catch-up-evidence", "workbook", "wall-calendar"],
+      "why": "The evidence laid out on the evening table, each piece labelled, shows that a year can be rebuilt from what is lying around."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-9.4",
+      "title": "Homeschool Record Keeping: Days Are Counted From What You Recorded",
+      "archetype": "portfolio-binder",
+      "content": { "items": ["The log", "Sunday, 4 October 2026: Math, Lesson 3: Thirds (Easy · No help needed); Reading, Chapter 6 (Not finished)", "Saturday, 3 October 2026: Science, Lesson 1: Air pressure (Difficult · A lot of help)", "No hours, no daily tally to keep up, and no days-missed counter."], "source": "Entries are the demo data on the real screenshot creative/public/screens/homeschooling-companion-record.png; page structure 'The log' from printables/document.tsx; footer from the pin's own description" },
+      "headline": "Days Are Counted From What You Recorded",
+      "sub": "The record counts distinct days with any entry.",
+      "props": ["portfolio-binder", "record-cover", "pencil"],
+      "why": "Dated day headings on the printed log are the days; the binder shows there is nothing else to tally."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-9.5",
+      "title": "Reconstructing a Year of Attendance in June Is Impossible",
+      "archetype": "week-board",
+      "content": { "items": ["June", "Reconstructing a year of attendance in June is genuinely impossible."], "source": "printables/handbook.tsx 'Days schooled' page text; month name from the pin title" },
+      "headline": "Reconstructing a Year of Attendance in June Is Impossible",
+      "sub": "A note from the handbook that is worth taking seriously: mark days as you go.",
+      "props": ["wall-calendar", "days-schooled-page"],
+      "why": "A June calendar with ten months of blank pages flipped up behind it lands the point without a number."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-10.1",
+      "title": "Homeschool Help: When a Homeschool Subject Is Not Working: What to Change First",
+      "archetype": "index-cards",
+      "content": { "items": ["1 Change the time before you change anything else", "2 Then change the amount", "3 Then go back one step", "4 Only then consider the material"], "source": "src/products/homeschooling-companion/printables/handbookContent.ts METHOD[5] ('When it is not working') section headings" },
+      "headline": "When a Homeschool Subject Is Not Working: What to Change First",
+      "sub": "Change the time before you change anything else.",
+      "props": ["cork-board", "index-card", "wall-clock"],
+      "why": "An ordered list of four, cheapest first, is the save-for-later format for a stuck week."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-10.2",
+      "title": "Homeschool Struggles: Worth Going Over Again: How a Hard Session Comes Back",
+      "archetype": "home-scene",
+      "content": { "items": ["Worth going over again. Last time this was not finished.", "Worth going over again. Last time you said this was difficult."], "source": "Phone shows the real screenshot creative/public/screens/homeschooling-companion-workspace.png (lines rendered by components/TodayView.tsx and today.ts)" },
+      "headline": "Worth Going Over Again: How a Hard Session Comes Back",
+      "sub": "If a subject was difficult or not finished last time, Today says so in a quiet line.",
+      "props": ["kitchen-table", "phone-real-screen", "workbook", "pencils-in-mug"],
+      "why": "The real Today screen with its quiet line, propped on the workbook it is about."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-10.3",
+      "title": "Homeschool Tips: Go Back One Step",
+      "archetype": "index-cards",
+      "content": { "items": ["Multiplication", "Division", "Understanding fractions", "Fractions fail when division is shaky."], "source": "Step names from src/products/homeschooling-companion/taxonomy.ts TOPICS (Math, in their own order); line from handbookContent.ts METHOD[5] 'Then go back one step'" },
+      "headline": "Go Back One Step",
+      "sub": "When a topic stalls, the problem is often the one before it.",
+      "props": ["step-blocks", "index-card", "pencil"],
+      "why": "A staircase of real topic cards with an arrow down one step is the idea as a picture."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-10.4",
+      "title": "Homeschool Help: Tick What You Are Actually Teaching",
+      "archetype": "check-clipboard",
+      "content": { "items": ["Math", "Place value", "Multiplication", "Division", "Understanding fractions", "Equivalent fractions", "Decimals", "(some ticked, some not)"], "source": "src/products/homeschooling-companion/taxonomy.ts TOPICS (Math slice); 71 = 20 Math + 12 Reading + 10 Writing + 13 Science + 8 History + 8 Geography" },
+      "headline": "Tick What You Are Actually Teaching",
+      "sub": "Seventy-one topics across six subjects, ticked by you.",
+      "props": ["topic-ticklist", "workbook", "pencil"],
+      "why": "A tick list of real topic names shows the five-second job exactly as it is."
+    },
+    {
+      "account": "draftpace", "id": "homeschool/pin-10.5",
+      "title": "Homeschool Struggles: You Cannot Keep Everything, and You Do Not Need To",
+      "archetype": "portfolio-binder",
+      "content": { "items": ["Your own log of what you did: Permanently", "Large projects, models, science builds: Photograph, then let go", "Curriculum you're finished with: Sell, donate, or recycle"], "source": "src/content/guides.ts how-long-to-keep-homeschool-records, table 'What to keep, and for how long'" },
+      "headline": "You Cannot Keep Everything, and You Do Not Need To",
+      "sub": "What is worth archiving, what to photograph, and what to recycle without guilt.",
+      "props": ["keep-photo-recycle", "portfolio-binder", "kitchen-table"],
+      "why": "Binder, phone and box as three piles turns the guide's table into a sorting job the reader can picture."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-homeschooling-companion-01",
+      "title": "Easy Homeschool Record Keeping You'll Actually Keep Up With",
+      "archetype": "home-scene",
+      "content": { "items": ["Today", "What we are doing today.", "Math", "Reading", "Science", "Your plan", "Did not get to it"], "source": "Phone shows the real screenshot creative/public/screens/homeschooling-companion-workspace.png" },
+      "headline": "Homeschool records that keep up with you",
+      "sub": "Log what you actually did, as it happens. Hand it over at year's end.",
+      "props": ["kitchen-table", "phone-real-screen", "picture-book-stack", "pencils-in-mug", "childs-drawing"],
+      "why": "The finds-account 'look what I found' moment: the real app on a real-looking kitchen table."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-homeschooling-companion-02",
+      "title": "Homeschool Log: Remember What You Covered All Year",
+      "archetype": "week-board",
+      "content": { "items": ["October", "March", "Math, Lesson 3: Thirds", "Reading, Chapter 6", "Science, Lesson 1: Air pressure"], "source": "October entries are the demo data on the real screenshot creative/public/screens/homeschooling-companion-record.png (dated 3 and 4 October 2026); month names from the pin's own headline" },
+      "headline": "By March, can you remember what you covered in October?",
+      "sub": "A record of what you actually did, kept as it happened.",
+      "props": ["wall-calendar", "phone-real-screen"],
+      "why": "A March calendar page with October flipped up behind it, written in, makes the question visual."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-homeschooling-companion-03",
+      "title": "Homeschool Planner Printables: Year, Week, Day, Reading Log",
+      "archetype": "working-page",
+      "content": { "items": ["year planner", "weekly plan", "daily log", "subject record", "reading log", "days schooled"], "source": "src/shop/products/homeschooling-companion.ts inclusions[2]; page drawings from printables/handbook.tsx" },
+      "headline": "Homeschool planner pages for the whole year",
+      "sub": "Undated, so they work whenever you start.",
+      "props": ["weekly-plan-page", "daily-log-page", "subject-record-page", "reading-log-page", "days-schooled-page", "kitchen-table"],
+      "why": "Six real pages fanned out is the printable-bundle preview this search rewards."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-homeschooling-companion-04",
+      "title": "Homeschooling Multiple Kids: One Daily Page per Child",
+      "archetype": "home-scene",
+      "content": { "items": ["Ava", "Leo", "0 of 2 recorded", "0 of 1 recorded"], "source": "Phone shows the real screenshot creative/public/screens/homeschooling-companion-workspace.png (Today grouped by child)" },
+      "headline": "POV: three kids, three curriculums, one kitchen table",
+      "sub": "One page each morning that says what today looks like, per child.",
+      "props": ["kitchen-table", "workbook", "phone-real-screen", "coffee-mug", "pencils-in-mug"],
+      "why": "Top-down table with three place settings, three different workbooks, and the per-child Today screen in the middle."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-homeschooling-companion-05",
+      "title": "Homeschool Handbook Printable: Method, Pages and Check Sheets",
+      "archetype": "portfolio-binder",
+      "content": { "items": ["The handbook", "The working pages", "The check sheets", "Six chapters of method", "Undated working pages", "Six check sheets", "Answer key at the back"], "source": "Tab labels from printables/handbook.tsx dividers (Part one, two, three titles); points from the pin itself (creative/pinterest/maple-main-finds.ts), which trace to the listing inclusions" },
+      "headline": "Inside the 30 page Homeschool Year book",
+      "sub": "Yours to keep and print.",
+      "props": ["portfolio-binder", "the-homeschool-year-book", "check-sheet"],
+      "why": "The printed book in a binder with its three part dividers is the 'what's inside' look-through."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-homeschooling-companion-06",
+      "title": "Homeschool Requirements by State: See What You're Missing",
+      "archetype": "state-tile-map",
+      "content": { "items": ["None, 8 states", "Low, 15 states", "Moderate, 19 states", "High, 9 states", "A log or record of instruction", "Attendance or hours", "Samples of work or a portfolio", "A test score or evaluation", "Nothing recorded yet"], "source": "Map from src/lib/homeschoolStateRequirements.ts HOMESCHOOL_STATE_REQUIREMENTS; inset row labels and tag from book.ts stateComplianceRows" },
+      "headline": "Know what your state asks you to keep, before someone checks",
+      "sub": "Your state's requirements, line by line, against what you've recorded.",
+      "props": ["us-tile-map", "level-legend", "state-page"],
+      "why": "Map for 'your state', state-page inset with an empty tag for 'see the gap first'."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-homeschooling-companion-07",
+      "title": "How to Know If Your Homeschooler Actually Learned It",
+      "archetype": "check-clipboard",
+      "content": { "items": ["Equivalent fractions", "Write a fraction that is the same as one half.", "Is 2/4 the same as 1/2?", "Is 3/9 the same as 1/3?", "Looked solid", "Mixed", "Worth another look", "Not enough to say"], "source": "Questions from printables/handbookContent.ts CHECK_SHEETS[1]; result labels from check.ts STANDING_LABEL" },
+      "headline": "Did it actually stick?",
+      "sub": "Short checks per topic, including the answer 'not enough evidence to say'.",
+      "props": ["check-sheet", "result-chips", "pencil"],
+      "why": "A real fractions check with its result pills: the question and the honest answer in one frame."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-homeschooling-companion-08",
+      "title": "Gentle Homeschool Assessment Ideas: No Tests Needed",
+      "archetype": "index-cards",
+      "content": { "items": ["Eight questions per check", "71 curriculum-neutral topics", "Answer key kept out of sight"], "source": "The pin's own points (creative/pinterest/maple-main-finds.ts), which trace to the listing inclusions" },
+      "headline": "Check learning without turning the table into an exam hall",
+      "sub": "Eight questions, marked by you.",
+      "props": ["cork-board", "index-card", "childs-drawing"],
+      "why": "Soft cards and a child's drawing on the board say 'not an exam hall' before the words do."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-homeschooling-companion-09",
+      "title": "Homeschool Planner That Works on Paper and on Screen",
+      "archetype": "home-scene",
+      "content": { "items": ["A week at a time", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Spare day"], "source": "Left: weekly plan page from printables/handbook.tsx; right: phone with the real screenshot creative/public/screens/homeschooling-companion-workspace.png" },
+      "headline": "Paper some weeks, screen other weeks. Both count.",
+      "sub": "A printed book that works with a pencil, and an app when you want it.",
+      "props": ["kitchen-table", "weekly-plan-page", "pencil", "phone-real-screen"],
+      "why": "The table split down the middle: pencil on the printed week on one side, the phone on the other."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-homeschooling-companion-10",
+      "title": "Homeschool Tracker That Works With Any Curriculum",
+      "archetype": "week-board",
+      "content": { "items": ["Your curriculum", "Your plan", "Draftpace suggestion", "Unit 3, Lesson 12", "Follows your curriculum", "Unlimited children", "A printed record per child", "Only what you choose to include"], "source": "Source labels from learning.ts SOURCE_LABEL; position example from the listing howItWorks[1] ('like Unit 3, Lesson 12'); points from the pin itself (creative/pinterest/maple-main-finds.ts)" },
+      "headline": "Keeps up with the curriculum you chose",
+      "sub": "It follows you. It doesn't replace you.",
+      "props": ["week-board", "workbook"],
+      "why": "One lane per child, each subject tagged with where it came from, shows 'your curriculum' as the organising thing."
+    }
+  ]
+}

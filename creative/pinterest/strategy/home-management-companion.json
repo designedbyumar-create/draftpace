@@ -1,0 +1,841 @@
+{
+  "product": "home-management-companion",
+  "audience": [
+    "first-time homeowners in the week after closing, keys in hand, no idea what the house needs",
+    "homeowners in freezing northern US states pinning fall and winterizing lists in September and October",
+    "people who keep forgetting home maintenance and want to be told what needs them this week",
+    "home-binder and household-binder makers who print checklists and fill them in by hand",
+    "renters moving into an apartment who want the deposit back and the notice date remembered",
+    "the person in the house who gets asked 'where is the water shutoff?' and 'what size is the filter?'"
+  ],
+  "visualWorld": {
+    "setting": "The house itself, drawn the way the Home Survey book draws it: an architect's section through an ordinary two-storey American house with a basement, laid on warm drawing paper with registration ticks in the corners and a faint squared grid (both taken from the Home Survey printable, src/products/home-management-companion/printables/workbook.tsx: Ticks and GridField). Every pin is a sheet from that drawing set: a whole-house section, a close-up plate of one object, the fridge door in the kitchen, the open binder, the year as a wheel. Renter pins switch the section for an apartment floor plan.",
+    "props": [
+      { "id": "house-cutaway", "draw": "Front section of a two-storey gable house: outer wall as a 14px warm-paper band, pitched roof as two straight slopes with a 3px shingle hatch, gutter as a small U channel at each eave, downspout as a thin vertical rectangle ending in an elbow. Inside: four rooms (kitchen, laundry/utility, bedroom with hallway, living room) as flat tinted rectangles, an attic triangle with insulation as a soft zigzag fill, a basement band below a 6px ground line with soil as a stipple of 4px dots. Fixtures are simple silhouettes placed where they really live; callouts are 2px ink leader lines ending in a 10px open circle on the object and a label block in the margin." },
+      { "id": "apartment-section", "draw": "Same drawing language as house-cutaway but a single-floor flat: one storey box, no roof slope, no gutters, one exterior wall with a window. Optional ghost: the roof and gutters of a house drawn as a 2px dashed outline only, to show what renter setup stops asking about." },
+      { "id": "furnace", "draw": "Tall rounded rectangle cabinet with a front louvre panel (5 short horizontal slots), a flue pipe rising from the top as a narrow rectangle with one elbow, a slot on the side where the filter slides in, shown with the filter edge sticking out 12px." },
+      { "id": "furnace-filter", "draw": "Flat rectangle in 3/4 view: cardboard frame as a 22px border in kraft tan, pleated media inside as a zigzag polyline in off-white, an airflow arrow printed on the frame, and the size '16x25x1' printed on the frame in condensed caps. Optional grey-tone duplicate for a used filter." },
+      { "id": "water-heater", "draw": "Upright cylinder (rectangle with elliptical top cap), cold and hot pipes as two vertical lines from the top, the pressure relief valve as a small lever on the side with a discharge pipe running down, a drain valve near the base as a tiny spout, and a rating label as a small white rectangle near the top." },
+      { "id": "boiler", "draw": "Wall-hung white box with rounded corners, a small display rectangle and two dials, pipes leaving the bottom; one radiator elsewhere drawn as 6 vertical rounded fins with a bleed key at the top corner." },
+      { "id": "main-shutoff-valve", "draw": "A horizontal pipe crossing the frame. Ball-valve version: a flat lever handle, drawn along the pipe for open and across the pipe for closed. Gate-valve version: a round wheel handle with 5 spokes on a short stem. A strip of bright tape wrapped round the pipe beside it, and an optional paper tag on a string." },
+      { "id": "outdoor-faucet", "draw": "Hose bib on a siding wall: a short spout with a round or cross handle, a garden hose as a thick curved line coiled into 3 loops on the ground, an optional foam cover as a rounded dome over the bib. Winter variant: icicle triangles under the spout." },
+      { "id": "frozen-pipe", "draw": "A copper pipe in section inside a wall cavity (two vertical stud rectangles either side, pink insulation zigzag). Before: pipe with a blue water channel. After: a pale ice plug, a jagged split line along the pipe wall, and three water drops falling. No flames, no tools." },
+      { "id": "gutter-downspout", "draw": "Eave close-up: gutter as a U-channel profile, leaves as small almond shapes piled inside, downspout dropping to an elbow and a splash block pointing away from the foundation line." },
+      { "id": "smoke-alarm", "draw": "Ceiling disc: circle with an inner ring of 8 vent slots, a small test button circle, a tiny indicator dot in the accent colour." },
+      { "id": "dryer-vent", "draw": "Dryer as a square cabinet with a round door; flexible duct behind it as a ribbed tube (series of parallel arcs) running to an outside flap hood on the wall." },
+      { "id": "fridge-door", "draw": "A refrigerator front filling most of the pin: rounded rectangle, one long vertical handle bar, a freezer split line in the top third, flat off-white enamel colour with a very soft highlight stripe. It is a noticeboard: paper, cards and magnets sit on it." },
+      { "id": "fridge-note", "draw": "A torn notepad sheet (straight top, slightly ragged bottom via a 6-point polyline) held by two magnets, with ruled lines and square checkboxes; text set in the pin's sans, not fake handwriting. Variants: a single sticky square, a two-column 'keep / leave out' sheet." },
+      { "id": "magnet", "draw": "Small flat shapes with a 4px drop shadow: a circle, a little house pentagon, and a business-card rectangle with blank lines (no invented company names or numbers)." },
+      { "id": "item-card", "draw": "A paper card, slightly rotated (-3deg), with a header line and six label/value rows in the order the real printable uses: Brand, Model, Location, What to buy, Installed, Warranty expires (src/products/home-management-companion/printables/generateItemCard.tsx FIELD_LABEL). A hole punch circle top-left." },
+      { "id": "model-plate", "draw": "Silver-grey rectangle with 4 rivet dots in the corners, rows of condensed caps: MODEL, SERIAL, VOLTS / WATTS, and a small square for the QR/barcode block." },
+      { "id": "survey-binder", "draw": "Open three-ring binder seen from above: two page rectangles, three rings as circles down the gutter, coloured tab dividers sticking out of the right edge as rounded rectangles with short labels. The right page shows one Home Survey plate: plate number in small caps, a serif title, ruled fields, and the registration ticks in its corners." },
+      { "id": "year-wheel", "draw": "A donut ring split into 12 wedges, January at 12 o'clock. Wedge fill strength = number of seasonal jobs that month (Plate 15 counts). Empty months stay paper-coloured with a tiny 'Clear' label. A highlighted wedge can be pulled out 24px from the ring. Centre disc holds one seasonal glyph (leaf for autumn, snowflake for winter, bud for spring) and at most one short line." },
+      { "id": "tool-caddy", "draw": "Open-top carry box: trapezoid body, central handle bar, a few tool silhouettes sticking up (screwdriver, adjustable wrench, a roll of tape, a torch). Used as a stand for the phone-screen." },
+      { "id": "phone-screen", "draw": "Plain rounded-rectangle phone frame (no brand), 40px corner radius, holding one real screenshot from creative/public/screens/home-management-companion-*.png cropped above the dev overlay (the black 'N' badge and the 'Start' bar near y=790-840 on the 390px-wide captures must be cropped out)." },
+      { "id": "window-ac", "draw": "Box unit sitting in a window frame: front grille as horizontal slats, two small dials; winter variant is the same box on a shelf with a dust cover outline." },
+      { "id": "humidifier-pad", "draw": "Furnace-mounted humidifier as a small box on the duct, with the pad pulled out beside it: a rectangle with a honeycomb/diamond texture." },
+      { "id": "irrigation-head", "draw": "Sprinkler head as a short cylinder in a grass strip, with dashed lines for the buried line and an arrow showing air blown through it." },
+      { "id": "mouse-gap", "draw": "Where a pipe enters the wall: a pencil-width gap drawn as a dark sliver, with a small round mouse silhouette (two circle ears, long tail line) outside it; after-state shows the gap filled with a caulk bead." },
+      { "id": "leaf-and-frost", "draw": "Season markers: almond leaves in two warm tones for autumn, a six-armed snowflake and a thermometer reading 32°F for the hard freeze (the National Weather Service threshold cited in the winterize guide)." },
+      { "id": "rental-floorplan", "draw": "Top-down plan of a one-bedroom flat: 6px walls, door swings as quarter arcs, kitchen counter run with a sink circle, bath with tub rectangle. Camera viewfinder corner brackets drawn in each room, and a numbered dotted walking path through the rooms." },
+      { "id": "photo-tile", "draw": "Flat photo frames (no photography): a white border with a drawn close-up inside, e.g. a wall with a scuff, the inside of an oven, a window latch, a carpet edge. A small date stamp in the corner." },
+      { "id": "lease-card", "draw": "A paper card captioned 'The lease' with ruled fields Started / Renews on / Notice by, beside a second card 'The deposit' with Amount / Held by / Returned in (Home Survey Plate 19)." },
+      { "id": "paper-clutter", "draw": "The 'before' scatter: an envelope, a half-open drawer with a receipt sticking out, a thought cloud with a blank calendar square in it." },
+      { "id": "store-shelf", "draw": "Two shelf planks with three or four furnace filters standing on edge, each with a different blank size label, and one with '16x25x1' highlighted." },
+      { "id": "paint-chip", "draw": "A tall paint swatch strip with three colour blocks and two ruled lines labelled Room and Colour and code (Home Survey Plate 16)." },
+      { "id": "walk-kit", "draw": "Flat-lay of the Home Survey's 'What to bring': a torch, a phone, a cloth, the book, a pen, and a small clock face for half an hour." }
+    ],
+    "palette": "Built on Home Base's own accent and the Home Survey's palette, not a new scheme. Paper #f4f2ec (manifest background) and #fbfaf6 (survey paper); ink #1a2420; sage #4f7a5c as the one accent (product accent), sage deep #3d6149 for headline emphasis, sage soft #e6ede2 for room fills and calm panels; ochre #8a5a11 with ochre soft #f6edda only for 'needs a look' and SAFETY tags (the product's own warm warning, as in the workspace screen); kraft tan for filters, cards and cardboard. One cool tone, a muted slate blue, is allowed only for water and ice. Autumn pins may add the peach of the Seasons screen's 'This season' card, sampled from home-management-companion-seasons.png. No red, no alarm colours, no countdown numbers.",
+    "mood": "Calm competence: a well-kept technical drawing of your own house, the feeling of finally knowing where things are. Light, roomy and precise, with thin 2-3px lines rather than the thick cartoon outlines of the shared finds template. Never alarmist, never 'overdue' (the product forbids the word), never a disaster photo. Even the frozen pipe is drawn as a diagram, not a catastrophe."
+  },
+  "archetypes": [
+    {
+      "id": "house-cutaway",
+      "name": "Labelled house cutaway",
+      "clicks": "Home-maintenance pins are saved as reference. A house with labelled spots answers 'what is in my house and where' at a glance, the same question the shutoff and home-binder guidance says people should mark on a plan (abuyerschoice.com on marking shutoffs). Pinterest's own advice is that the topic must be obvious from the image on a phone, and a labelled house is legible even at thumbnail size. Infographic-style how-to content is among the formats Tailwind and Pinterest's business community report being saved.",
+      "layout": "1000x1500. Headline block y 60-320, left-aligned at x 60, serif, max 3 lines, ink with one phrase in sage deep. House section centred, x 90-910, y 360-1180. Up to 6 callouts: 2px leader lines from a 10px ring on the object to label blocks in the left (x 40-250) and right (x 750-960) margins; each label is the item label in bold sans 30px over its task or fact in 24px. Optional phone-screen at x 60-330, y 1000-1440, overlapping the basement. Product line bottom-left at y 1360-1440 ('Home Base' wordmark + sub, max 2 lines), right edge no further than x 780 so the lower-right 200x200 stays clear for Pinterest's icons.",
+      "visual": "The house-cutaway (or apartment-section for renters) with the relevant fixtures drawn in their real places and only the called-out ones in full colour; everything else stays in pale sage-soft line so the eye goes to the labels.",
+      "text": "Headline = the pin's existing title. Callout labels = item labels and care task names from HOME_ITEM_TYPES in src/products/home-management-companion/homeKnowledge.ts, or real rows from the screenshots, or lines from the linked guide. Sub = a sentence from the pin's own description.",
+      "bestFor": "what is in your house, what matters most, ranked by consequence, new-homeowner setup, where the shutoff/plates are, history pinned to things, winterizing tour, renter setup"
+    },
+    {
+      "id": "year-wheel",
+      "name": "The year as a wheel",
+      "clicks": "Month-by-month and seasonal calendars are the dominant packaging for home-maintenance printables in search results (monthly/seasonal/yearly checklists from Prudent Reviews, Scattered Squirrel, Free Organizing Printables, onotto's 'seasonal tasks'), and seasonal pins are searched well ahead of the season (Simple Pin Media: pin about 45 days ahead; Tailwind: 60-90 days). A wheel is that calendar as one graphic shape, which reads at thumbnail size and makes empty months visible.",
+      "layout": "Headline y 60-300, centred, serif, max 3 lines. Wheel centred at (500, 800), outer radius 380, ring width 140; month initials on the ring. Highlighted wedge(s) pulled out 24px with a leader to a job card. Job card y 1210-1400, x 60-780: 2-5 real jobs with their item label, 26px sans. Product line y 1410-1460 bottom-left.",
+      "visual": "year-wheel with fill strength from Plate 15 counts (Jan 0, Feb 1, Mar 4, Apr 9, May 8, Jun 1, Jul 0, Aug 0, Sep 10, Oct 11, Nov 2, Dec 0), plus leaf-and-frost markers. Empty wedges labelled 'Clear'.",
+      "text": "Month names, counts ('Clear', '1 job', '10 jobs' as Plate 15 prints them) and job names from HOME_ITEM_TYPES care templates that carry months; the line 'Nothing seasonal. A good month.' from workbook.tsx SeasonalPage.",
+      "bestFor": "calendar pins, empty months, date jobs vs interval jobs, gutters in December, furnace service timing"
+    },
+    {
+      "id": "fridge-list",
+      "name": "The list on the fridge",
+      "clicks": "Printable checklist pins are the staple of this niche ('free printable home maintenance checklist' is how almost every result is framed), and checklists are one of the formats Tailwind and Pinterest's business community name as getting saves. Putting the list on a fridge door makes it a home object rather than a document, and it is the place a household actually keeps one.",
+      "layout": "Headline top full-width y 60-300. Fridge-door x 300-960, y 320-1500 (bleeds off the bottom edge). Fridge-note pinned at x 360-880, y 420-1250 with 4-7 rows: checkbox, task in 30px sans, optional small grey reason/month tag in 22px. One or two magnets and at most one extra card. Left strip x 40-280 holds the product line and sub, vertically centred near y 1250-1440, so nothing important sits in the lower-right corner.",
+      "visual": "fridge-door with fridge-note and magnets; optionally an item-card or business-card magnet. Ticks on 0-2 rows at most, so the list looks usable, not finished.",
+      "text": "List rows = real tasks: from the linked guide's own list (src/content/guides.ts), from HOME_ITEM_TYPES care templates, or rows visible on the real workspace screenshot. Reason lines use the product's real voice ('Last done 6 months ago, usually every 6 months').",
+      "bestFor": "fall and winterize lists, first-day lists, 'what's due this week', write-the-problem-down, keep/leave-out lists"
+    },
+    {
+      "id": "plate-closeup",
+      "name": "Close-up plate of one object",
+      "clicks": "The questions people search here are concrete and object-shaped: what size filter, where is the model number, which way does the valve turn. A single object drawn large with the fact printed on it ('16x25x1', MODEL / SERIAL, lever across the pipe) is the answer itself, which is what makes a reference pin worth saving. Pinterest advises a big, clear subject over a busy composition for mobile feeds.",
+      "layout": "Headline y 60-300. Object drawn at scale, centred, y 340-1120, taking ~65% of the width, with up to 3 short callouts. An item-card or note card overlaps the object's lower-left at -3deg, x 60-520, y 1050-1400. Product line bottom-left y 1410-1460.",
+      "visual": "furnace-filter, water-heater, model-plate, or main-shutoff-valve, drawn like a Home Survey plate with registration ticks and a faint grid behind it.",
+      "text": "The fact printed on the object, field labels from the Item Card or the Home Survey, and example values taken from the linked guide's own example table (e.g. 16x25x1 from how-often-change-furnace-filter).",
+      "bestFor": "filter size, model number, item card, repair diagnosis on the water heater, shutoff valve types"
+    },
+    {
+      "id": "survey-binder",
+      "name": "The open home binder",
+      "clicks": "Home binders are an established Pinterest genre (household/home management binders, emergency info pages at the front, tabbed sections: The Homes I Have Made's Family HUB, Scattered Squirrel's emergency contacts printables, Etsy binder kits). The tabs themselves communicate 'organised' and the open page shows exactly what you'd fill in, which is why binder pins get saved for later.",
+      "layout": "Headline y 60-300. Binder open flat, centred, y 340-1330, rotated 0deg; tabs on the right page edge, x 880-960, one per section. Right page shows one plate with its real plate number, title and 4-8 ruled fields; left page shows the table of contents or the tab names. Product line bottom-left y 1360-1450.",
+      "visual": "survey-binder with real Home Survey plate content; optional walk-kit items at the margin.",
+      "text": "Plate numbers, titles and field labels exactly as workbook.tsx prints them (Plate 01 'If something goes wrong tonight.', Plate 15 'What belongs to which month.', Plate 18 'The home's memory.', Plate 19 'The dates that cost money to miss.'), or the five binder sections from the how-to-make-a-home-binder guide.",
+      "bestFor": "home binder pins, the Home Survey printable, emergency page, maintenance log page, twelve areas"
+    },
+    {
+      "id": "then-and-now",
+      "name": "Then and now panels",
+      "clicks": "Step-by-step and before/after are the core how-to shapes on Pinterest (Pinterest's own how-to pin format, Buffer on step-by-step pins). In this niche the before/after has a real physical story the guides already tell: a drained faucet in October versus a split pipe in January. Stacked panels also read cleanly on a phone, one idea per band.",
+      "layout": "Headline y 60-290. 2 to 4 full-width panels stacked from y 320 to 1330, 16px gutters, 24px radius, alternating paper and sage-soft fills. Each panel: small-caps label at top-left (e.g. 'October' / 'January', 'Walk' / 'Write' / 'Enter' / 'Forget'), one drawing on one side, one real line of text on the other. Product line bottom-left y 1360-1450.",
+      "visual": "frozen-pipe, outdoor-faucet, paper-clutter vs lease-card, store-shelf, item-card, or the real workspace screenshot in a phone-screen in the final panel.",
+      "text": "Panel labels and lines are taken from the pin's own description or the linked guide (step names, the date-job/interval-job lists, the invoice vs diagnosis lines).",
+      "bestFor": "freeze before/after, date vs interval, broken vs due, tap/see/add, note/print/bring, walk/write/enter/forget, renter records before/after"
+    },
+    {
+      "id": "move-in-walkthrough",
+      "name": "Renter's move-in photo walk-through",
+      "clicks": "Renter move-in guidance converges on one ritual: photograph every room before unpacking, wall by wall, with dates (Tellus, Happy.co, Manaky renter guides; HUD as cited in the product's own guide). A floor plan with a numbered walking route and dated photo tiles turns that ritual into a map renters can follow and save before move-in day.",
+      "layout": "Headline y 60-290. Rental floor plan x 80-920, y 320-960 with a numbered dotted route and viewfinder corners in each room. A row of 3 photo-tiles y 990-1280, slightly overlapping, each with a 'Sep 26' date stamp. Short checklist of 3-5 lines under or beside the tiles, y 1290-1400. Product line bottom-left y 1410-1460.",
+      "visual": "rental-floorplan, photo-tile, optional lease-card.",
+      "text": "The day-one list and the example record from the moving-into-a-rental-what-to-document guide (including its example date 'Sep 26').",
+      "bestFor": "renter move-in, deposit protection, photograph everything"
+    }
+  ],
+  "pins": [
+    {
+      "account": "draftpace", "id": "homebase/pin-2.1",
+      "title": "Home Maintenance Schedule: What Is Wrong, What Is Due, What Is Done",
+      "archetype": "house-cutaway",
+      "content": {
+        "items": ["Wrong: Dripping tap in the kitchen (kitchen sink)", "Wrong: Fridge humming louder at night (fridge)", "To care for: Clean the condenser coils (fridge)", "Coming up: Test the smoke alarms (hallway ceiling)", "Coming up: Annual boiler service (boiler, utility cupboard)", "Handled: Tested every alarm, replaced one battery"],
+        "source": "creative/public/screens/home-management-companion-workspace.png (band chips Wrong / To care for / Coming up / Handled and the rows under each)"
+      },
+      "headline": "What Is Wrong, What Is Due, What Is Done",
+      "sub": "Something is wrong, something is worth taking care of, something is coming up, and something was recently handled.",
+      "props": ["house-cutaway", "fridge-door", "smoke-alarm", "boiler"],
+      "why": "Puts the four real bands onto the actual spots in a house, so the schedule reads as a place, not a list."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-2.2",
+      "title": "Home Maintenance App With a Reason Under Every Row",
+      "archetype": "fridge-list",
+      "content": {
+        "items": ["Clean the condenser coils / Last done 6 months ago, usually every 6 months", "Test the smoke alarms / Due in 2 weeks", "Annual boiler service / Due in 9 days", "Pull quote: \"Last done 4 months ago, usually every 3 months.\""],
+        "source": "rows from creative/public/screens/home-management-companion-workspace.png; quote from the pin description (also the example in src/products/home-management-companion/homeVoice.ts header)"
+      },
+      "headline": "Home Maintenance App With a Reason Under Every Row",
+      "sub": "No guessing why it is on your list.",
+      "props": ["fridge-door", "fridge-note", "magnet", "phone-screen"],
+      "screen": "screens/home-management-companion-workspace.png (crop y 640-1060 of the 390px capture, the 'Worth taking care of' and 'Coming up' cards, avoiding the dev overlay)",
+      "why": "The grey reason line under each fridge-list row is the product's actual differentiator, made visible."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-2.3",
+      "title": "House Maintenance Schedule: How Often Things in Your House Actually Need Servicing",
+      "archetype": "year-wheel",
+      "content": {
+        "items": ["Wheel: seasonal jobs per month (Jan 0, Feb 1, Mar 4, Apr 9, May 8, Jun 1, Jul 0, Aug 0, Sep 10, Oct 11, Nov 2, Dec 0)", "Interval rail: Replace the furnace or AC filter, every 1 to 3 months", "Flush the water heater tank, annually", "Clean the dryer vent, at least once a year", "Clean the refrigerator condenser coils, every 6 months", "Test smoke and CO alarms, every month"],
+        "source": "wheel counts: months on care templates in HOME_ITEM_TYPES (homeKnowledge.ts), as printed on Home Survey Plate 15 (workbook.tsx seasonalByMonth); interval rail: src/content/guides.ts how-often-home-systems-need-servicing tables and home-maintenance-checklist-by-month 'Jobs that look seasonal and aren't'"
+      },
+      "headline": "How Often Things in Your House Actually Need Servicing",
+      "sub": "Real intervals for filters, alarms, water heaters and dryer vents, plus the jobs that belong to a season rather than a date.",
+      "props": ["year-wheel", "furnace-filter", "smoke-alarm", "dryer-vent"],
+      "why": "Variant of the wheel with an interval rail beside it: the two kinds of 'how often' in one picture."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-2.4",
+      "title": "Home Maintenance Tracker That Ranks by What Costs Most to Ignore",
+      "archetype": "house-cutaway",
+      "content": {
+        "items": ["SAFETY: Smoke or CO detector, Press the test button", "SAFETY: Dryer, Clean the dryer vent", "SAFETY: Water heater, Test the pressure relief valve", "SAFETY: Outdoor faucet, Shut off and drain before the freeze", "COSTLY: Furnace, Replace the air filter", "COSTLY: Gutters, Clear the gutters", "(greyed) Washing machine, Clean the detergent drawer"],
+        "source": "HOME_ITEM_TYPES consequence field in homeKnowledge.ts (2 = safety or serious damage, 1 = costly over time, 0 = cosmetic); SAFETY / COSTLY tag words from Home Survey Plate 14 (workbook.tsx)"
+      },
+      "headline": "Ranks by What Costs Most to Ignore",
+      "sub": "It ranks by consequence and effort, so the one thing worth doing sits at the top.",
+      "props": ["house-cutaway", "smoke-alarm", "dryer-vent", "water-heater", "outdoor-faucet", "gutter-downspout"],
+      "why": "Callouts tagged by real consequence show the ranking without inventing a rank order (the live order depends on due dates)."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-2.5",
+      "title": "Which Home Maintenance Jobs Matter Most, and Which Can Wait",
+      "archetype": "then-and-now",
+      "content": {
+        "items": ["Panel 'Safety or serious damage': Clean the dryer vent; Press the test button (smoke alarm); Shut off and drain before the freeze (outdoor faucet); Replace the fill hoses (washing machine)", "Panel 'Cosmetic': Clean the detergent drawer; Deep clean (oven); Reverse the direction and dust the blades (ceiling fan)"],
+        "source": "homeKnowledge.ts CareConsequence comment ('0 cosmetic, 1 costly over time, 2 safety or serious damage') and the care templates with consequence 2 and 0 in HOME_ITEM_TYPES"
+      },
+      "headline": "Which Home Maintenance Jobs Matter Most, and Which Can Wait",
+      "sub": "Some prevent a fire or a flood, and some are cosmetic.",
+      "props": ["dryer-vent", "smoke-alarm", "outdoor-faucet", "fridge-note"],
+      "why": "Two stacked panels, heavy versus light, make 'matters most vs can wait' a visual weight comparison."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-3.1",
+      "title": "New Homeowner Checklist: Start With What Is in Your House",
+      "archetype": "fridge-list",
+      "content": {
+        "items": ["Water heater: Flush the tank", "Furnace: Replace the air filter", "Gutters: Clear the gutters (April, November)", "Smoke or CO detector: Press the test button"],
+        "source": "the four items named in the pin description; task names and months from HOME_ITEM_TYPES care templates (homeKnowledge.ts: water-heater.flush-tank, furnace.air-filter, gutter.clean, smoke-detector.test)"
+      },
+      "headline": "New Homeowner Checklist: Start With What Is in Your House",
+      "sub": "Start with what is there: the water heater, furnace, gutters, smoke alarms.",
+      "props": ["fridge-door", "fridge-note", "magnet"],
+      "why": "A first-home fridge with a short, real list is the moment new owners recognise."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-3.2",
+      "title": "Home Base: Set Up Your House in a Few Taps",
+      "archetype": "house-cutaway",
+      "content": {
+        "items": ["Tap dots on: Refrigerator, Dishwasher, Oven or range, Microwave, Washing machine, Dryer, Furnace, Central air conditioning, Thermostat, Water heater, Smoke or CO detector, Roof, Gutters, Garage door, Irrigation system, Lawn, Mattress, Wifi router", "Labelled callouts (max 6): Water heater, Furnace, Gutters, Smoke or CO detector, Dryer, Garage door"],
+        "source": "HOME_ITEM_TYPES entries with offerAtSetup: true (20 in all; the two renter ones, Lease and Renters insurance, are left off the house drawing)"
+      },
+      "headline": "Set Up Your House in a Few Taps",
+      "sub": "Twenty common items to start, 122 kinds of thing in all, written by hand.",
+      "props": ["house-cutaway", "water-heater", "furnace", "gutter-downspout", "smoke-alarm", "dryer-vent"],
+      "why": "Tap rings with checkmarks across the real house turn 'tap, don't type' into a picture."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-3.3",
+      "title": "First Week in a New House: What to Write Down Before You Forget",
+      "archetype": "plate-closeup",
+      "content": {
+        "items": ["Main shutoff / Turns / Tool needed", "Filter sizes: Furnace", "Make and model", "Paint: Room / Colour and code"],
+        "source": "field labels from Home Survey Plate 01, Plate 16 and the walk plates (src/products/home-management-companion/printables/workbook.tsx); the four facts named in the pin description"
+      },
+      "headline": "First Week in a New House: What to Write Down Before You Forget",
+      "sub": "The best time to record your house is the week you move in, when you can still see every label.",
+      "props": ["model-plate", "furnace-filter", "paint-chip", "main-shutoff-valve"],
+      "why": "A cluster of the actual labels you'd copy (plate, filter frame, paint chip, valve tag) instead of a generic notebook."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-3.4",
+      "title": "New Homeowner Maintenance Made Simple: Tap, See, Add",
+      "archetype": "then-and-now",
+      "content": {
+        "items": ["Tap: Water heater", "See: Flush the tank / Test the pressure relief valve / Inspect the anode rod", "Add: Add those jobs with one button."],
+        "source": "steps from the pin description; suggested jobs = water-heater care templates in HOME_ITEM_TYPES (homeKnowledge.ts)"
+      },
+      "headline": "New Homeowner Maintenance Made Simple: Tap, See, Add",
+      "sub": "Home Base handles the part you do not know yet.",
+      "props": ["water-heater", "fridge-note", "phone-screen"],
+      "screen": "screens/home-management-companion-workspace.png (optional, 'In your home' list, y 1270-1560)",
+      "why": "Three panels, one per verb, follow one real object through setup."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-3.5",
+      "title": "What to Capture in the First Week After Buying a House",
+      "archetype": "house-cutaway",
+      "content": {
+        "items": ["Water heater: rating label on the outside of the tank, usually near the top", "Furnace: label inside the front panel or blower door", "Refrigerator: inside, on a side wall", "Main water shutoff: where the line enters the house", "Breaker panel", "Gas shutoff"],
+        "source": "src/content/guides.ts how-to-find-the-model-number-on-any-appliance ('Where to look, by appliance') and first-week-after-buying-a-house ('Day one, before anything else')"
+      },
+      "headline": "What to Capture in the First Week After Buying a House",
+      "sub": "Everything about a house passes through your hands once, during the move: the labels, the manuals, the shutoff valves.",
+      "props": ["house-cutaway", "water-heater", "furnace", "fridge-door", "main-shutoff-valve", "model-plate"],
+      "why": "A where-to-look map of the house: each callout is a place to stand with your phone camera."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-4.1",
+      "title": "Fall Home Maintenance Checklist by Month",
+      "archetype": "fridge-list",
+      "content": {
+        "items": ["September: Book the professional furnace tune-up", "September: Seal the gaps mice use", "September: Clean the dryer vent", "October: Drain the outdoor faucet and blow out irrigation lines", "October: Replace the humidifier pad", "October: Take the window air conditioner out", "November: Clear the gutters once the leaves are down"],
+        "source": "src/content/guides.ts fall-home-maintenance-checklist, 'The fall list, month by month' timeline"
+      },
+      "headline": "Fall Home Maintenance Checklist by Month",
+      "sub": "Fall is when the jobs pile up: gutters, furnace, outdoor faucets, sprinkler lines.",
+      "props": ["fridge-door", "fridge-note", "magnet", "leaf-and-frost"],
+      "why": "Three month headers on one fridge sheet is the classic fall printable, filled with the guide's real order."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-4.2",
+      "title": "A Home Maintenance Calendar That Matches Your House",
+      "archetype": "year-wheel",
+      "content": {
+        "items": ["Fall wedge (September to November) pulled out", "Furnace: Book a professional tune-up (September, October)", "Gutters: Clear the gutters (November)", "Outdoor faucet: Shut off and drain before the freeze (October, November)", "Pool: Close it for the season (September), drawn as a dashed ghost: skipped if you have no pool"],
+        "source": "months on care templates in HOME_ITEM_TYPES (homeKnowledge.ts); season span from seasons.ts seasonSpan; screen copy from home-management-companion-seasons.png"
+      },
+      "headline": "A Home Maintenance Calendar That Matches Your House",
+      "sub": "The fall page shows your furnace and your gutters and skips the pool you do not have.",
+      "props": ["year-wheel", "furnace", "gutter-downspout", "outdoor-faucet", "phone-screen", "leaf-and-frost"],
+      "screen": "screens/home-management-companion-seasons.png (crop y 80-560: 'Fall home maintenance checklist' card, season tabs, October list)",
+      "why": "The ghosted pool wedge shows the calendar is built from what is in your house."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-4.3",
+      "title": "Home Maintenance Checklist by Month, Minus the Jobs That Do Not Matter",
+      "archetype": "then-and-now",
+      "content": {
+        "items": ["Panel 1: a long list drawn as grey bars, label 'Forty-item lists get abandoned around item twelve'", "Panel 2: September: Book the furnace tune-up now, before the first cold week", "October: Disconnect hoses and drain outdoor faucets, blow out irrigation lines", "November: Clear the gutters once the leaves are down"],
+        "source": "src/content/guides.ts home-maintenance-checklist-by-month ('Where a month-based list goes wrong' and the month timeline)"
+      },
+      "headline": "Home Maintenance Checklist by Month, Minus the Jobs That Do Not Matter",
+      "sub": "Most home maintenance checklists list everything and get ignored.",
+      "props": ["fridge-note", "leaf-and-frost"],
+      "why": "Long abandoned list against a short real one makes the 'minus' in the title visible."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-4.4",
+      "title": "Some Months of Home Maintenance Are Empty, and That Is Fine",
+      "archetype": "year-wheel",
+      "content": {
+        "items": ["January, July, August, December: Clear, 'Nothing seasonal. A good month.'", "April: 9 jobs", "October: 11 jobs", "September: 10 jobs"],
+        "source": "Home Survey Plate 15 (workbook.tsx SeasonalPage, counts from the months on HOME_ITEM_TYPES care templates)"
+      },
+      "headline": "Some Months of Home Maintenance Are Empty, and That Is Fine",
+      "sub": "Nothing seasonal. A good month.",
+      "props": ["year-wheel", "leaf-and-frost"],
+      "why": "The wheel with four blank wedges is the whole argument in one shape."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-4.5",
+      "title": "Why Seasonal Home Jobs Belong on a Calendar, Not a Timer",
+      "archetype": "then-and-now",
+      "content": {
+        "items": ["Panel 'A date job': Outdoor faucet, Shut off and drain before the freeze, 'Not logged yet, usually October'", "Panel 'An interval job': Furnace, Replace the air filter, every 3 months"],
+        "source": "care templates hose-bib.winterize (months 10, 11) and furnace.air-filter (90 days) in homeKnowledge.ts; status line from homeVoice.test.ts / winterize-your-house-checklist guide; framing from the winterize guide 'Date jobs and interval jobs'"
+      },
+      "headline": "Why Seasonal Home Jobs Belong on a Calendar, Not a Timer",
+      "sub": "Draining an outside tap belongs before the first freeze, not 365 days after you last thought about it.",
+      "props": ["outdoor-faucet", "furnace-filter", "leaf-and-frost"],
+      "why": "A calendar page beside a dial: two kinds of reminder side by side."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-5.1",
+      "title": "Winterize Your House: Jobs to Finish Before the First Freeze",
+      "archetype": "house-cutaway",
+      "content": {
+        "items": ["Outdoor faucet: Shut off and drain the outdoor faucet, and disconnect the hose", "Irrigation: Blow out the irrigation lines", "Attic, crawl space, garage: Insulate exposed pipes", "Window: Take out the window air conditioner", "Furnace: Replace the humidifier pad", "Garage door: Seal the gaps around pipes and the garage door"],
+        "source": "src/content/guides.ts winterize-your-house-checklist, 'The winterizing list'"
+      },
+      "headline": "Winterize Your House: Jobs to Finish Before the First Freeze",
+      "sub": "Freeze jobs have a deadline, and it is the weather, not the calendar.",
+      "props": ["house-cutaway", "outdoor-faucet", "irrigation-head", "window-ac", "humidifier-pad", "mouse-gap", "leaf-and-frost"],
+      "why": "A winter cutaway with a frost line on the ground is the tour of every freeze spot."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-5.2",
+      "title": "Printable Home Maintenance Calendar: What Belongs to Which Month",
+      "archetype": "survey-binder",
+      "content": {
+        "items": ["Right page: Plate 15 · The year, 'What belongs to which month.'", "Rows: September 10 jobs, October 11 jobs, November 2 jobs, December Clear 'Nothing seasonal. A good month.'", "October rows: Book a professional tune-up, Bleed the radiators, Remove and store for winter, Replace the pad, Shut off and drain before the freeze", "Tabs: Before you walk, The walk, What it needs, The record"],
+        "source": "workbook.tsx SeasonalPage and contents list (parts and plates); October jobs from HOME_ITEM_TYPES care templates with month 10"
+      },
+      "headline": "Printable Home Maintenance Calendar: What Belongs to Which Month",
+      "sub": "Every month, every seasonal job, and plain notes like \"Nothing seasonal. A good month.\"",
+      "props": ["survey-binder", "leaf-and-frost"],
+      "why": "Shows the real printed year plate inside the book, which is what this pin sells."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-5.3",
+      "title": "Winterize Home Checklist: 5 Jobs Before the Cold Arrives",
+      "archetype": "fridge-list",
+      "content": {
+        "items": ["Drain outdoor faucets (October, November)", "Blow out irrigation lines (October)", "Take out window air conditioners (October)", "Replace the humidifier pad (October)", "Seal entry points before mice move in (September)"],
+        "source": "the five jobs in the pin description; month tags from HOME_ITEM_TYPES care templates hose-bib.winterize, irrigation.blowout, window-ac.store, humidifier.pad, rodent-check.seal (homeKnowledge.ts)"
+      },
+      "headline": "Winterize Home Checklist: 5 Jobs Before the Cold Arrives",
+      "sub": "Five jobs stop most winter home problems.",
+      "props": ["fridge-door", "fridge-note", "magnet", "leaf-and-frost"],
+      "why": "A numbered five-line list with month tags is the most saveable shape for this title."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-5.4",
+      "title": "Do Home Maintenance Before the Freeze, Not After the Pipe Bursts",
+      "archetype": "then-and-now",
+      "content": {
+        "items": ["Panel 'October': hose disconnected and coiled, outdoor faucet drained, chip 'Not logged yet, usually October'", "Panel 'January': pipe inside the wall, ice plug and split, line 'Water trapped in the line freezes, expands, and splits the pipe inside the wall'"],
+        "source": "src/content/guides.ts home-maintenance-you-skip-that-costs-the-most (outdoor faucet row) and winterize-your-house-checklist ('Outside water first'); status line from homeVoice"
+      },
+      "headline": "Before the Freeze, Not After the Pipe Bursts",
+      "sub": "Most freeze damage was preventable in October.",
+      "props": ["outdoor-faucet", "frozen-pipe", "leaf-and-frost"],
+      "why": "The frozen pipe before/after, drawn as a calm diagram, is the most recognisable image in the winter niche."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-5.5",
+      "title": "Before the First Freeze: Why Freeze Jobs Are Date Jobs, Not Interval Jobs",
+      "archetype": "year-wheel",
+      "content": {
+        "items": ["Freeze wedge October-November highlighted with a frost line", "Outdoor faucet: Shut off and drain before the freeze (October, November)", "Irrigation system: Blow out the lines before the freeze (October)", "Window air conditioner: Remove and store for winter (October)", "Snow blower: Service it before you need it (October)", "Centre: Furnace filter, every 3 months"],
+        "source": "HOME_ITEM_TYPES care templates with months 10/11 (homeKnowledge.ts); interval from furnace.air-filter"
+      },
+      "headline": "Before the First Freeze: Why Freeze Jobs Are Date Jobs",
+      "sub": "A furnace filter runs on an interval. A freeze job runs on a date, and the date is the first hard frost.",
+      "props": ["year-wheel", "leaf-and-frost", "outdoor-faucet", "irrigation-head"],
+      "why": "A frosted wedge on the year shows that freeze jobs live at a fixed place on the calendar."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-6.1",
+      "title": "Home Maintenance Log: What to Write Every Time",
+      "archetype": "survey-binder",
+      "content": {
+        "items": ["Plate 18 · What has been done, 'The home's memory.'", "Columns: Date / What was done / On what / By whom / Cost", "Aug 14 · Flushed the water heater tank · Ace Plumbing · $180.00", "Oct 2 · Cleaned the dryer vent · You · $0", "Nov 20 · Furnace tune-up · Reliable Heat & Air · $145.00"],
+        "source": "workbook.tsx Plate 18 headers; example entries from src/content/guides.ts home-maintenance-log-template ('Example: three entries from one log')"
+      },
+      "headline": "Home Maintenance Log: What to Write Every Time",
+      "sub": "Four fields matter: the date, what was done, who did it and what it cost.",
+      "props": ["survey-binder"],
+      "why": "The log page of the real book, filled with the guide's own three entries."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-6.2",
+      "title": "Home Maintenance Tracker That Keeps Your House's History",
+      "archetype": "house-cutaway",
+      "content": {
+        "items": ["Smoke alarms: Tested every alarm, replaced one battery · 2 weeks ago · by Self", "Fridge: Cleaned the condenser coils · 6 months ago · by Self", "Boiler: Annual service and safety check · 12 months ago · by Gas engineer · $115.00"],
+        "source": "creative/public/screens/home-management-companion-history.png"
+      },
+      "headline": "Home Maintenance Tracker That Keeps Your House's History",
+      "sub": "When something fails, you can see who touched it last.",
+      "props": ["house-cutaway", "smoke-alarm", "fridge-door", "boiler", "phone-screen"],
+      "screen": "screens/home-management-companion-history.png (crop y 70-420)",
+      "why": "History entries hung like paper tags on the objects they belong to."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-6.3",
+      "title": "What to Write Down After Every Home Repair",
+      "archetype": "plate-closeup",
+      "content": {
+        "items": ["Symptom, in your words: Water heater making a popping sound, no hot water by evening", "What they said was wrong: Sediment built up around the heating element, tank was overheating locally", "What was replaced: Lower heating element and thermostat", "What they said comes next: Anode rod is original, worth checking within the next year", "Who came, and the cost: Ace Plumbing, $340, would use again"],
+        "source": "src/content/guides.ts what-to-keep-after-a-home-repair ('Example: a filled repair note')"
+      },
+      "headline": "What to Write Down After Every Home Repair",
+      "sub": "Five minutes after a technician leaves is worth an hour next time.",
+      "props": ["water-heater", "item-card"],
+      "why": "The water heater drawn open with the repair note card beside it: the note belongs to the thing."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-6.4",
+      "title": "Home Repair Log: Stop Digging Through Drawers for the Repair Receipt",
+      "archetype": "fridge-list",
+      "content": {
+        "items": ["Business-card magnet with blank lines (the phone number is on a magnet)", "One line on the note: Oct 2 · Cleaned the dryer vent · You · $0", "Small print: It stores what you type, not the files."],
+        "source": "pin description; example line from src/content/guides.ts home-maintenance-log-template"
+      },
+      "headline": "Stop Digging Through Drawers for the Repair Receipt",
+      "sub": "Home Base keeps one line: what was done, who did it, what it cost.",
+      "props": ["fridge-door", "magnet", "fridge-note", "paper-clutter"],
+      "why": "The fridge where the plumber's magnet already lives, with one tidy line beside it."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-6.5",
+      "title": "Home Repair Log: The Diagnosis Matters More Than the Invoice",
+      "archetype": "then-and-now",
+      "content": {
+        "items": ["Panel 'The invoice': Ace Plumbing, $340", "Panel 'The diagnosis': Sediment built up around the heating element, tank was overheating locally"],
+        "source": "src/content/guides.ts what-to-keep-after-a-home-repair (example repair note)"
+      },
+      "headline": "The Diagnosis Matters More Than the Invoice",
+      "sub": "The invoice tells you what you paid. The diagnosis tells you why.",
+      "props": ["water-heater", "paper-clutter"],
+      "why": "A receipt panel against a diagnosis panel shows the 'more than' in the title."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-7.1",
+      "title": "Furnace Filter Size: Write It Down Once, Never Guess Again",
+      "archetype": "plate-closeup",
+      "content": {
+        "items": ["Size printed on the frame: 16x25x1", "Where it lives: Furnace door, slides in from the side", "Changed: September 1", "Check again: October 1"],
+        "source": "src/content/guides.ts how-often-change-furnace-filter ('Example: one filter, written down once')"
+      },
+      "headline": "Furnace Filter Size: Write It Down Once, Never Guess Again",
+      "sub": "Check it once a month and change it at least every three months.",
+      "props": ["furnace-filter", "furnace", "item-card"],
+      "why": "The filter itself, huge, with its size printed on the frame: the exact thing they will look at in the basement."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-7.2",
+      "title": "Furnace Filter Tips: Print the Item Card and Take It to the Hardware Store",
+      "archetype": "house-cutaway",
+      "content": {
+        "items": ["Furnace callout expands into the Item Card", "Card rows: Brand, Model, Location, What to buy (16x25x1 filter), Installed, Warranty expires"],
+        "source": "field labels from printables/generateItemCard.tsx FIELD_LABEL; '16x25x1 filter' from src/content/guides.ts how-often-change-furnace-filter ('Where Home Base fits')"
+      },
+      "headline": "Print the Item Card and Take It to the Hardware Store",
+      "sub": "When the filter runs out, you know exactly what to ask for.",
+      "props": ["house-cutaway", "furnace", "item-card", "store-shelf"],
+      "why": "One callout grows into a card: 'one page for one thing in your house'."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-7.3",
+      "title": "How to Find the Model Number on Any Appliance",
+      "archetype": "plate-closeup",
+      "content": {
+        "items": ["Plate: MODEL ABC1234XYZ / SERIAL VF1234567 / VOLTS / WATTS 240V, 5400W (the guide's own made-up example values)", "Dryer: inside the door, on the rim", "Refrigerator: inside, on a side wall", "Dishwasher: on the tub frame or edge", "Water heater: a rating label on the outside of the tank, usually near the top"],
+        "source": "src/content/guides.ts how-to-find-the-model-number-on-any-appliance ('What a plate actually says' and 'Where to look, by appliance')"
+      },
+      "headline": "How to Find the Model Number on Any Appliance",
+      "sub": "The label you need is never where you look first.",
+      "props": ["model-plate", "dryer-vent", "fridge-door", "water-heater"],
+      "why": "The plate drawn large, with four small appliance silhouettes and a dot where each one hides it."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-7.4",
+      "title": "Write the Filter Size Once: Note, Print, Bring",
+      "archetype": "then-and-now",
+      "content": {
+        "items": ["Note: What to buy, 16x25x1 filter, on the furnace", "Print: the Item Card", "Bring: to the hardware store shelf"],
+        "source": "steps from the pin description; 'What to buy' field from generateItemCard.tsx; example size from how-often-change-furnace-filter guide"
+      },
+      "headline": "Write the Filter Size Once: Note, Print, Bring",
+      "sub": "The filter size, the part number, the bulb type: one fact per thing, written once.",
+      "props": ["furnace-filter", "item-card", "store-shelf"],
+      "why": "Three panels, three verbs, one filter travelling from basement to shop."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-7.5",
+      "title": "The Model Number Is Behind the Fridge (and Other Home Truths)",
+      "archetype": "house-cutaway",
+      "content": {
+        "items": ["Furnace: The filter size is on the filter", "Fridge (pulled out from the wall): the model number is behind the fridge", "Water heater (blank tag): the last time anyone flushed the water heater is nowhere at all"],
+        "source": "pin description and the product listing's problem statement (src/shop/products/home-management-companion.ts)"
+      },
+      "headline": "The Model Number Is Behind the Fridge (and Other Home Truths)",
+      "sub": "Here is how to fix all three in one afternoon.",
+      "props": ["house-cutaway", "furnace-filter", "fridge-door", "water-heater", "model-plate"],
+      "why": "Three truths placed in the house where each one actually hides."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-8.1",
+      "title": "Home Repair Record: Write the Problem Down First",
+      "archetype": "fridge-list",
+      "content": {
+        "items": ["Dripping tap in the kitchen / Drips about once a minute when shut off", "Fridge humming louder at night / Started after the coils were cleaned"],
+        "source": "'Something's wrong' rows on creative/public/screens/home-management-companion-workspace.png"
+      },
+      "headline": "Home Repair Record: Write the Problem Down First",
+      "sub": "Write it down in your own words: what you heard, saw or smelled, and when.",
+      "props": ["fridge-door", "fridge-note", "magnet"],
+      "why": "Problems written in plain words on the fridge, the way the product records them."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-8.2",
+      "title": "Home Repair Tracker That Remembers Who You Called Last Time",
+      "archetype": "then-and-now",
+      "content": {
+        "items": ["Panel 1: Dripping tap in the kitchen", "Panel 2: \"You've used Ace Plumbing for water and plumbing issues before.\""],
+        "source": "problem row from the workspace screenshot; provider line from the pin description (behaviour in providerSuggestion.ts)"
+      },
+      "headline": "Home Repair Tracker That Remembers Who You Called Last Time",
+      "sub": "It is your own history, not a directory.",
+      "props": ["outdoor-faucet", "magnet", "phone-screen"],
+      "screen": "screens/home-management-companion-workspace.png (optional, 'Something's wrong' cards y 280-610)",
+      "why": "Problem panel then answer panel: the recall is the reveal."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-8.3",
+      "title": "Do You Know Where Your Main Water Shutoff Is?",
+      "archetype": "house-cutaway",
+      "content": {
+        "items": ["Near the water meter", "Where the line enters the house", "Basement or crawlspace", "An outside box near the curb"],
+        "source": "src/content/guides.ts where-is-my-water-shutoff ('Where the main shutoff usually is')"
+      },
+      "headline": "Do You Know Where Your Main Water Shutoff Is?",
+      "sub": "A leak at two in the morning is the wrong time to start looking for the valve.",
+      "props": ["house-cutaway", "main-shutoff-valve"],
+      "why": "Four candidate spots circled on the house turn the question into a search you can do today."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-8.4",
+      "title": "Home Emergency Prep: Fill In This Page Tonight: If Something Goes Wrong",
+      "archetype": "survey-binder",
+      "content": {
+        "items": ["Plate 01 · Fill this one in first, 'If something goes wrong tonight.'", "Water: Main shutoff / Turns / Tool needed", "Gas: Shutoff / Emergency", "Electricity: Panel / Main breaker", "Draw where they are (squared grid)", "The first call: Plumber / Electrician / Insurance / Policy number"],
+        "source": "printables/workbook.tsx Plate 01"
+      },
+      "headline": "Fill In This Page Tonight: If Something Goes Wrong",
+      "sub": "It takes ten minutes and almost nobody does it.",
+      "props": ["survey-binder", "main-shutoff-valve"],
+      "why": "The real Plate 01 page, blank and ready, is the exact thing the pin asks you to do."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-8.5",
+      "title": "Why You Should Find Your Water Shutoff Today",
+      "archetype": "plate-closeup",
+      "content": {
+        "items": ["Ball valve: turns a quarter turn, closed when the lever sits across the pipe", "Gate valve: turns several times, often stiff if unused for years", "Tag: Turns: Left, quarter turn, lever handle", "Yearly job: Turn the valve to keep it free"],
+        "source": "src/content/guides.ts where-is-my-water-shutoff ('Two kinds of valve' and the filled-in example); care template water-shutoff.exercise in homeKnowledge.ts"
+      },
+      "headline": "Why You Should Find Your Water Shutoff Today",
+      "sub": "Ten minutes on a quiet afternoon changes what a leak costs you.",
+      "props": ["main-shutoff-valve"],
+      "why": "The two valve types drawn big so people recognise theirs."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-9.1",
+      "title": "Home Binder: What Goes In It and What Does Not",
+      "archetype": "survey-binder",
+      "content": {
+        "items": ["Tabs: If something goes wrong / Numbers you look up / Who to call / What has been done / Dates that cost money", "Slip in the front pocket: Not passwords, alarm codes, or anything that opens the house."],
+        "source": "five sections from src/content/guides.ts how-to-make-a-home-binder; slip text from workbook.tsx QuickReference caption"
+      },
+      "headline": "Home Binder: What Goes In It and What Does Not",
+      "sub": "The emergency shutoffs, the filter sizes, who to call, what was done and when.",
+      "props": ["survey-binder"],
+      "why": "Five real tabs plus one 'keep out' slip answer both halves of the title."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-9.2",
+      "title": "Home Maintenance Printable: A 36-Page Home Survey Book",
+      "archetype": "house-cutaway",
+      "content": {
+        "items": ["Dotted walking route: Kitchen → Utility → Basement → Attic → Outside", "What to bring: A torch, A phone camera, A cloth, This book, A pen, Half an hour"],
+        "source": "printables/workbook.tsx ('A sensible order' and 'What to bring')"
+      },
+      "headline": "Home Maintenance Printable: A 36-Page Home Survey Book",
+      "sub": "19 plates: the shutoffs, twelve areas of a house, every care job and how often, a year plan, who to call, and a log.",
+      "props": ["house-cutaway", "survey-binder", "walk-kit"],
+      "why": "Shows what the book is for, the walk round the house, rather than another flat cover mockup."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-9.3",
+      "title": "What to Put in a Home Binder: 5 Sections That Matter",
+      "archetype": "survey-binder",
+      "content": {
+        "items": ["1. If something goes wrong: Water, gas and electrical shutoffs; who to call first", "2. Numbers you look up: Filter size 16x25x1, paint color, trash day", "3. Who to call: Ace Plumbing, Bright Spark Electric, a roofer", "4. What has been done: Date, job, who did it, what it cost", "5. Dates that cost money: Warranty ends, insurance renews, lease notice"],
+        "source": "src/content/guides.ts how-to-make-a-home-binder ('Example: one binder's table of contents, filled in')"
+      },
+      "headline": "What to Put in a Home Binder: 5 Sections That Matter",
+      "sub": "Five sections cover most of what a home binder needs.",
+      "props": ["survey-binder", "furnace-filter", "paint-chip"],
+      "why": "Contents page view (left page) with the five tabs, distinct from 9.1's single-plate view."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-9.4",
+      "title": "Home Binder in Four Steps: Walk, Write, Enter, Forget",
+      "archetype": "then-and-now",
+      "content": {
+        "items": ["Walk: One lap with this book and a torch.", "Write: Names, model numbers, dates, and where things live.", "Enter: Into Home Base once.", "Forget: Home Base raises each thing when it is due and stays quiet otherwise."],
+        "source": "printables/workbook.tsx 'How this works' steps (trimmed to their first sentence)"
+      },
+      "headline": "Home Binder in Four Steps: Walk, Write, Enter, Forget",
+      "sub": "Four steps, and only one of them is work.",
+      "props": ["walk-kit", "survey-binder", "phone-screen"],
+      "screen": "screens/home-management-companion-workspace.png (optional, in the 'Enter' panel)",
+      "why": "Four stacked bands, one verb each, the book's own method."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-9.5",
+      "title": "What Not to Put in a Home Binder",
+      "archetype": "fridge-list",
+      "content": {
+        "items": ["Keep: where things are, who to call", "Leave out: passwords, alarm codes, anything that opens the house"],
+        "source": "pin description; workbook.tsx QuickReference caption"
+      },
+      "headline": "What Not to Put in a Home Binder",
+      "sub": "A home binder gets lent, photographed and left on counters.",
+      "props": ["fridge-door", "fridge-note", "magnet", "survey-binder"],
+      "why": "A two-column keep / leave-out sheet on the fridge, the binder sitting on the counter below."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-10.1",
+      "title": "Renter's Move-In Checklist: What to Document on Day One",
+      "archetype": "move-in-walkthrough",
+      "content": {
+        "items": ["Photograph every room, every wall, the floors, the windows and the inside of the appliances", "Write down the lease start date, the renewal date, and the notice date", "Record the deposit amount, who holds it, and when it is due back", "Note anything already damaged, and send it to the landlord in writing", "Keep a log of everything you report", "Photo date stamp: Sep 26"],
+        "source": "src/content/guides.ts moving-into-a-rental-what-to-document ('The day one list' and example record)"
+      },
+      "headline": "Renter's Move-In Checklist: What to Document on Day One",
+      "sub": "The deposit conversation at the end of a lease starts on day one.",
+      "props": ["rental-floorplan", "photo-tile", "lease-card"],
+      "why": "A numbered route through the flat is the checklist as a walk."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-10.2",
+      "title": "Lease and Deposit Tracker for Renters",
+      "archetype": "house-cutaway",
+      "content": {
+        "items": ["Lease: Decide before the notice deadline", "Security deposit", "Renters insurance: Review before it renews", "Smoke or CO detector: Replace the battery", "Maintenance requests: what you reported to the landlord and when", "Ghosted roof and gutters"],
+        "source": "renting and renterRelevant entries in HOME_ITEM_TYPES (homeKnowledge.ts); 'what you reported to the landlord and when' from the listing's renter question (src/shop/products/home-management-companion.ts)"
+      },
+      "headline": "Lease and Deposit Tracker for Renters",
+      "sub": "It stops asking about the roof and gutters.",
+      "props": ["apartment-section", "smoke-alarm", "lease-card"],
+      "why": "The apartment section with a ghosted roof shows renter setup is a different house."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-10.3",
+      "title": "What to Document When You Move Into a Rental",
+      "archetype": "fridge-list",
+      "content": {
+        "items": ["Photos: Room, date, the problem if any", "Lease dates: Started, renews on, notice by", "Deposit: Amount, held by, returned in", "What you reported: Date, what, the answer"],
+        "source": "src/content/guides.ts moving-into-a-rental-what-to-document ('The four records' table)"
+      },
+      "headline": "What to Document When You Move Into a Rental",
+      "sub": "This is not legal advice, but it is a solid habit.",
+      "props": ["fridge-door", "fridge-note", "magnet", "photo-tile"],
+      "why": "Four records on a rental fridge, with one photo tile pinned beside them."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-10.4",
+      "title": "Renter Records: From \"Where Is the Lease?\" to One Notice Date",
+      "archetype": "then-and-now",
+      "content": {
+        "items": ["Before: the lease is in an email, the deposit receipt is in a drawer and the notice date is in your head", "After: The lease, Started / Renews on / Notice by; The deposit, Amount / Held by / Returned in", "Example value: Notice by, 60 days before renewal"],
+        "source": "pin description; field labels from workbook.tsx Plate 19; example value from moving-into-a-rental-what-to-document guide"
+      },
+      "headline": "From \"Where Is the Lease?\" to One Notice Date",
+      "sub": "Home Base keeps the lease, the deposit and what you reported to the landlord in one place.",
+      "props": ["paper-clutter", "lease-card"],
+      "why": "Scatter versus one card: the title's 'from... to...' drawn literally."
+    },
+    {
+      "account": "draftpace", "id": "homebase/pin-10.5",
+      "title": "Rental Move In Checklist: Photograph Everything on Day One",
+      "archetype": "move-in-walkthrough",
+      "content": {
+        "items": ["Photo tiles: a wall with a scratch, the inside of the oven, a window, the floor", "Date stamp: Sep 26", "Before you unpack"],
+        "source": "pin description; example date from moving-into-a-rental-what-to-document guide"
+      },
+      "headline": "Rental Move In Checklist: Photograph Everything on Day One",
+      "sub": "Take dated photos of every room, every scratch and every appliance, before you unpack.",
+      "props": ["rental-floorplan", "photo-tile"],
+      "why": "Photo-tile led variant: tiles large, floor plan small, so it differs from 10.1."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-home-management-companion-01",
+      "title": "Home Maintenance Checklist App: What's Due This Week",
+      "archetype": "fridge-list",
+      "content": {
+        "items": ["Top line: A couple of things need a look", "Clean the condenser coils / Last done 6 months ago, usually every 6 months", "Test the smoke alarms / Due in 2 weeks"],
+        "source": "home headline sentence from homeVoice.ts and the workspace screenshot; rows from creative/public/screens/home-management-companion-workspace.png"
+      },
+      "headline": "The home checklist that just tells you what's due this week",
+      "sub": "One sentence about this week. Then it stays out of the way.",
+      "props": ["fridge-door", "fridge-note", "magnet"],
+      "why": "A single sticky note with one sentence is the 'just tells you' in the headline."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-home-management-companion-02",
+      "title": "Home Repair Tracker: Separate What's Broken From What's Due",
+      "archetype": "then-and-now",
+      "content": {
+        "items": ["Panel 'Something's wrong': Dripping tap in the kitchen", "Panel 'Coming up': Annual boiler service, Due in 9 days"],
+        "source": "creative/public/screens/home-management-companion-workspace.png"
+      },
+      "headline": "Is it broken, or just due?",
+      "sub": "What's wrong right now, kept apart from what's merely due.",
+      "props": ["outdoor-faucet", "boiler", "phone-screen"],
+      "screen": "screens/home-management-companion-workspace.png (crop y 270-1060)",
+      "why": "Two panels in two temperatures, ochre for wrong and sage for due, mirror the real screen."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-home-management-companion-03",
+      "title": "Easy Home Maintenance for People Who Hate Home Maintenance",
+      "archetype": "fridge-list",
+      "content": {
+        "items": ["Tap what your home has, no typing", "Seasonal jobs in the month they belong", "Reminders before it gets expensive"],
+        "source": "the pin's own three points in creative/pinterest/maple-main-finds.ts"
+      },
+      "headline": "Home maintenance for people who hate home maintenance",
+      "sub": "Tap, don't type.",
+      "props": ["fridge-door", "fridge-note", "magnet", "tool-caddy"],
+      "why": "Three-line fridge note with a tool caddy left untouched on the floor: low effort, said visually."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-home-management-companion-04",
+      "title": "Seasonal Home Maintenance Reminders That Arrive on Time",
+      "archetype": "year-wheel",
+      "content": {
+        "items": ["Pointer at December (Clear)", "Gutters wedges highlighted: April and November, Clear the gutters"],
+        "source": "gutter.clean care template, months [4, 11], in HOME_ITEM_TYPES (homeKnowledge.ts)"
+      },
+      "headline": "POV: you remember the gutters in December",
+      "sub": "Seasonal jobs raised in the month they belong, before they're a repair.",
+      "props": ["year-wheel", "gutter-downspout", "leaf-and-frost"],
+      "why": "The wheel's hand points at December while the gutters wedge sits one month back: the joke, drawn."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-home-management-companion-05",
+      "title": "Home Maintenance Schedule: 122 Kinds of Thing, Handled",
+      "archetype": "house-cutaway",
+      "content": {
+        "items": ["Water heater: Flush the tank", "Gutters: Clear the gutters", "Filters: Replace the air filter", "Outside taps: Shut off and drain before the freeze"],
+        "source": "the pin's four board points (maple-main-finds.ts); task names from HOME_ITEM_TYPES care templates"
+      },
+      "headline": "122 kinds of thing, one care schedule",
+      "sub": "The boring, expensive jobs, caught early.",
+      "props": ["house-cutaway", "water-heater", "gutter-downspout", "furnace-filter", "outdoor-faucet"],
+      "why": "Four expensive spots lit up in an otherwise pale house."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-home-management-companion-06",
+      "title": "First Time Homeowner Checklist: Start With 12 Areas",
+      "archetype": "survey-binder",
+      "content": {
+        "items": ["Twelve tabs: Kitchen, Laundry, Heating, cooling and air, Water and plumbing, Power and electrical, Safety and security, Structure and exterior, Grounds and garden, Pests and damp, Everyday things, Papers and facts, Renting"],
+        "source": "HOME_ITEM_CATEGORY_LABEL in homeKnowledge.ts (also the Home Survey's Plates 02-13)"
+      },
+      "headline": "Start with twelve areas, not a 200-item list",
+      "sub": "Tap what your home has, from kitchen and laundry to the structure.",
+      "props": ["survey-binder"],
+      "why": "Twelve fanned tabs on a binder are the twelve areas at a glance."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-home-management-companion-07",
+      "title": "Water Heater Maintenance and the Jobs Homeowners Forget",
+      "archetype": "plate-closeup",
+      "content": {
+        "items": ["Flush the tank (yearly)", "Test the pressure relief valve (yearly)", "Inspect the anode rod (every 3 to 4 years)"],
+        "source": "water-heater care templates in HOME_ITEM_TYPES (homeKnowledge.ts); interval wording as Plate 14 prints it (workbook.tsx intervalWords)"
+      },
+      "headline": "That water heater you've never once thought about",
+      "sub": "The boring, expensive jobs raised before they're repairs.",
+      "props": ["water-heater"],
+      "why": "The neglected tank drawn as the hero, with its three real jobs tagged on its parts."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-home-management-companion-08",
+      "title": "Room by Room Home Maintenance Checklist for Homeowners",
+      "archetype": "house-cutaway",
+      "content": {
+        "items": ["Kitchen and laundry: Clean the condenser coils, Clean the dryer vent", "Water and plumbing: Flush the tank, Turn the valve to keep it free", "Roof and structure: Inspect for damage (April), Clear the gutters (April, November)"],
+        "source": "the pin's three points (maple-main-finds.ts); task names and months from HOME_ITEM_TYPES"
+      },
+      "headline": "Room by room: what your house needs and when",
+      "sub": "Tap what you have. It fills in the rest.",
+      "props": ["house-cutaway", "fridge-door", "dryer-vent", "water-heater", "main-shutoff-valve", "gutter-downspout"],
+      "why": "The cutaway with three room zones tinted, each zone with two real jobs."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-home-management-companion-09",
+      "title": "How Often to Service Your Furnace and Other Home Systems",
+      "archetype": "year-wheel",
+      "content": {
+        "items": ["Furnace: Book a professional tune-up (September, October)", "Centre: Replace the air filter, every 3 months"],
+        "source": "furnace care templates in HOME_ITEM_TYPES (homeKnowledge.ts)"
+      },
+      "headline": "Me pretending I know how often the furnace needs a service",
+      "sub": "A care schedule that knows, and raises it in the right month.",
+      "props": ["year-wheel", "furnace", "furnace-filter"],
+      "why": "Answers the POV with the real answer: two wedges on the wheel."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-home-management-companion-10",
+      "title": "Home Organization App for Homeowners Who Hate Notifications",
+      "archetype": "then-and-now",
+      "content": {
+        "items": ["Panel 'A quiet week': Your home is in good shape", "Panel 'A week with something due': A couple of things need a look"],
+        "source": "homeVoice.ts home headline sentences"
+      },
+      "headline": "A home app that only speaks up when something's due",
+      "sub": "Then it goes back to minding its business.",
+      "props": ["house-cutaway", "phone-screen"],
+      "screen": "screens/home-management-companion-workspace.png (optional, header only, y 60-260)",
+      "why": "Two weeks, two sentences: the silence is the feature."
+    }
+  ]
+}

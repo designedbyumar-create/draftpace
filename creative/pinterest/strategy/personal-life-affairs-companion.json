@@ -125,7 +125,7 @@
       "archetype": "one-question",
       "content": {
         "items": ["Eyebrow: Money coming in and going out", "Check the named person on your workplace retirement plan.", "Goes in your book as: The workplace plan was checked", "About 10 minutes", "Start / Not relevant to me / Later"],
-        "source": "affairsKnowledge.ts AFFAIR_STEPS money.retirement-employer (instruction, bookLabel, minutes); AFFAIR_AREA_LABEL.money; button labels from creative/public/screens/personal-life-affairs-companion-workspace.png"
+        "source": "affairsKnowledge.ts AFFAIR_STEPS money.retirement-employer (instruction, bookLabel, minutes); AFFAIR_AREA_LABEL.money; 'Goes in your book as' and 'About {minutes} minutes' templates from components/NextStepPage.tsx; button labels from creative/public/screens/personal-life-affairs-companion-workspace.png"
       },
       "headline": "A Step That Checks Who Is Named on the Form",
       "sub": "It records that you checked. It does not tell you who to name.",
@@ -672,7 +672,7 @@
       "archetype": "one-question",
       "content": {
         "items": ["Who decides, and who to call", "Let us start with one thing.", "Write down who should be called first.", "About 2 minutes", "Start / Not relevant to me / Later"],
-        "source": "creative/public/screens/personal-life-affairs-companion-workspace.png; affairsKnowledge.ts people.emergency-contact (instruction, minutes 2)"
+        "source": "creative/public/screens/personal-life-affairs-companion-workspace.png; affairsKnowledge.ts people.emergency-contact (instruction, minutes 2); lead line from components/WorkspaceModule.tsx; 'About {minutes} minutes' from components/NextStepPage.tsx"
       },
       "headline": "POV: you've meant to sort this out for six years",
       "sub": "One small question on screen at a time, chosen for you.",
