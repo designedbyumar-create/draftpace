@@ -1,7 +1,9 @@
 /**
  * Guards for Draftpace's own pins, waves 2 to 5: the words on every pin are
  * the ones already written for it, the rescheduled CSVs change nothing but
- * the Media URL and the Publish date, every date sits on the prayer
+ * the Media URL, the Publish date and the search wording (an original
+ * title and description only ever gain search phrases, never lose a word,
+ * and every pin has Keywords), every date sits on the prayer
  * schedule in the order the pins were queued, wave 1 (already on Pinterest)
  * is never redrawn, and every Media URL points at a redrawn image under a
  * path that never held an old picture (a reused URL served the old one).
@@ -12,6 +14,7 @@ import path from "node:path";
 import { planDraftpacePins, rescheduledCsvs, parseCsv, mediaUrlOf, WAVES, START, FOLDER_PRODUCT, HOSTED } from "../pinterest/draftpace-pins";
 import { prayerSlots, csvTime } from "../pinterest/prayer-schedule";
 import { MOTIFS } from "../src/visual/illustrations";
+import { BOARD_SEARCH, TITLE_LIMIT, DESCRIPTION_LIMIT, KEYWORD_LIMIT } from "../pinterest/draftpace-seo";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const DIR = path.join(ROOT, "pinterest/draftpace");
@@ -41,6 +44,10 @@ describe("Draftpace pins, waves 2 to 5", () => {
     }
   });
 
+  it("have search phrases for every board they are pinned to", () => {
+    for (const { row } of planned) expect(BOARD_SEARCH[row["Pinterest board"]], `no search phrases for the board "${row["Pinterest board"]}" in pinterest/draftpace-seo.ts`).toBeDefined();
+  });
+
   it("draw illustrations that exist and only the product's own screen", () => {
     for (const { pin } of planned) {
       for (const m of pin.scene) expect(MOTIFS, `${pin.file}: no drawing "${m}"`).toContain(m);
@@ -48,7 +55,7 @@ describe("Draftpace pins, waves 2 to 5", () => {
     }
   });
 
-  it("change nothing in the upload files but the Media URL and the Publish date, which follows the prayer schedule in the order the pins were queued", () => {
+  it("change nothing in the upload files but the Media URL, the Publish date (on the prayer schedule, in the order the pins were queued) and the search wording", () => {
     const csvs = rescheduledCsvs(sources);
     for (const w of WAVES) expect(read(`${w}.csv`), `pinterest/draftpace/${w}.csv is stale: run node scripts/draftpace-pins.mjs`).toBe(csvs[w]);
     const before = new Map(planned.map(({ row, pin }) => [mediaUrlOf(pin.file), row]));
@@ -57,7 +64,15 @@ describe("Draftpace pins, waves 2 to 5", () => {
     for (const r of after) {
       const was = before.get(r["Media URL"]);
       expect(was, `${r.Title}: Media URL ${r["Media URL"]} is not its redrawn pin`).toBeDefined();
-      for (const col of ["Title", "Pinterest board", "Description", "Link", "Keywords"] as const) expect(r[col], `${r.Title}: ${col} changed`).toBe(was![col]);
+      for (const col of ["Pinterest board", "Link"] as const) expect(r[col], `${r.Title}: ${col} changed`).toBe(was![col]);
+      expect(r.Title === was!.Title || r.Title.endsWith(`: ${was!.Title}`), `"${r.Title}" lost the original title "${was!.Title}"`).toBe(true);
+      expect(r.Title.length, `${r.Title}: over Pinterest's title limit`).toBeLessThanOrEqual(TITLE_LIMIT);
+      expect(r.Description.startsWith(was!.Description), `${r.Title}: the description no longer opens with its original words`).toBe(true);
+      expect(r.Description.length, `${r.Title}: over Pinterest's description limit`).toBeLessThanOrEqual(DESCRIPTION_LIMIT);
+      const terms = r.Keywords.split(", ").filter(Boolean);
+      expect(terms.length, `${r.Title}: no Keywords, so nothing tells Pinterest what it is about`).toBeGreaterThan(0);
+      expect(terms.length).toBeLessThanOrEqual(KEYWORD_LIMIT);
+      for (const t of terms) expect(BOARD_SEARCH[r["Pinterest board"]].terms, `${r.Title}: keyword "${t}" is not one of its board's search phrases`).toContain(t);
     }
     const queued = [...planned].sort((a, b) => a.row["Publish date"].localeCompare(b.row["Publish date"])).map((p) => mediaUrlOf(p.pin.file));
     const slots = prayerSlots(START, 350).map((s) => csvTime(s.at));

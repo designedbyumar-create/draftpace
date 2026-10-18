@@ -502,6 +502,13 @@ capture-screens.mjs  ->  render  ->  review.mjs  ->  publish-pinterest.mjs
   illustrated/`, a path no old picture ever had, and the guard in
   `tests/draftpace-pins-guards.test.ts` fails if a CSV points back at an
   old URL.
+- **Pins are found by search, so the upload file says what people type.**
+  `pinterest/draftpace-seo.ts` holds each board's search phrases: a title
+  with none of its board's search words gets the best-fitting phrase in
+  front ("Symptom Tracker: A Dated List, Newest First"), the description
+  gains one plain sentence, and Keywords are the board's phrases, seasonal
+  ones (holiday budget, winterizing) only where the topic truly is. The
+  pin image and the original words never change.
 
 ## Adding a new product
 

@@ -6,8 +6,10 @@
  * The words are the ones already written for each pin, in
  * pinterest/draftpace/source/wave*.csv: the title is the headline, the
  * description's first sentence (or its first clause, when the sentence is
- * long) the line beneath. Nothing is reworded. Only the picture, its
- * Media URL and the Publish date change.
+ * long) the line beneath. Nothing on the pin is reworded. In the upload
+ * file a title with no search words gets its board's search phrase in
+ * front, the description gains one sentence of what a searcher is looking
+ * for, and the Keywords are the board's search phrases (draftpace-seo.ts).
  *
  * Each pin's illustrations are chosen from its own words, the same way the
  * carousels choose theirs (director/illustration.ts), and a product pin
@@ -17,6 +19,7 @@ import { rankMotifs, MIN_SCORE } from "../director/illustration";
 import { relevance, screenAbout } from "../director/direct";
 import { dossierFor } from "../director/run";
 import { prayerSlots, csvTime } from "./prayer-schedule";
+import { BOARD_SEARCH, TITLE_LIMIT, DESCRIPTION_LIMIT, KEYWORD_LIMIT } from "./draftpace-seo";
 
 /** The CSV folder names the earlier pin builder used, and the product each one is. */
 export const FOLDER_PRODUCT: Record<string, string> = {
@@ -148,17 +151,57 @@ export function planDraftpacePins(sources: Record<(typeof WAVES)[number], string
   return out;
 }
 
-/** The four waves' CSVs, word for word, with the Media URL at the redrawn pin and the Publish date moved to the prayer schedule, in the order the pins were already queued. */
+const GENERIC = new Set("a an the to for of and in on at your you how what why when where who which with by before after it is are be do can not if from into up out so my one this that there they them their tips ideas checklist list help".split(" "));
+/** The words a search would match on: lowercased, without filler, plurals and possessives folded ("Renter's", "renters" and "renter" are one word). */
+const stems = (t: string) => new Set(t.toLowerCase().replace(/'s\b/g, "").split(/[^a-z0-9]+/).filter((w) => w && !GENERIC.has(w)).map((w) => (w.length > 3 && w.endsWith("s") && !w.endsWith("ss") ? w.slice(0, -1) : w)));
+
+/** A row as Pinterest search will find it: the original words kept, the board's search phrase put first where the title has none of its own. */
+export function searchable(row: SourceRow, leadsUsed: Map<string, Map<string, number>>): Pick<SourceRow, "Title" | "Description" | "Keywords"> {
+  const board = row["Pinterest board"];
+  const seo = BOARD_SEARCH[board];
+  if (!seo) throw new Error(`no search phrases for the board "${board}" (pinterest/draftpace-seo.ts)`);
+  const vocab = stems([...seo.leads, ...(seo.fits ?? []), ...seo.terms].join(" "));
+  const own = [...stems(row.Title)].filter((w) => vocab.has(w));
+  const flat = (t: string) => ` ${t.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim()} `;
+  const named = [...seo.leads, ...(seo.fits ?? []), ...seo.terms].some((t) => flat(row.Title).includes(flat(t)));
+  let Title = row.Title;
+  // A search phrase already in the title ("Medication List: What to Write Down"), or two of the board's search words ("Budget Tool for Irregular Income"), is a searchable title; leave it alone.
+  if (!named && own.length < 2) {
+    const words = stems(`${row.Title} ${row.Description}`);
+    const used = leadsUsed.get(board) ?? new Map<string, number>();
+    // A narrower lead that fits says more than a general one that fits as well.
+    const narrow = new Set(seo.fits ?? []);
+    const fit = (l: string) => [...stems(l)].filter((w) => words.has(w)).length + (narrow.has(l) ? 0.5 : 0);
+    // The lead that shares most words with the pin; among equals the least used, so a board's pins do not all open alike.
+    const lead = [...seo.leads, ...(seo.fits ?? []).filter((l) => fit(l) > 0.5)]
+      .filter((l) => `${l}: ${row.Title}`.length <= TITLE_LIMIT)
+      .sort((a, b) => fit(b) - fit(a) || (used.get(a) ?? 0) - (used.get(b) ?? 0))[0];
+    if (lead) {
+      Title = `${lead}: ${row.Title}`;
+      used.set(lead, (used.get(lead) ?? 0) + 1);
+      leadsUsed.set(board, used);
+    }
+  }
+  const more = `${row.Description} ${seo.line}`;
+  return { Title, Description: more.length <= DESCRIPTION_LIMIT ? more : row.Description, Keywords: seo.terms.slice(0, KEYWORD_LIMIT).join(", ") };
+}
+
+/** The four waves' CSVs: the Media URL at the redrawn pin, the Publish date on the prayer schedule in the order the pins were already queued, and the words made searchable. */
 export function rescheduledCsvs(sources: Record<(typeof WAVES)[number], string>, start = START): Record<(typeof WAVES)[number], string> {
   const planned = planDraftpacePins(sources);
   const order = [...planned].sort((a, b) => a.row["Publish date"].localeCompare(b.row["Publish date"]));
   const slots = prayerSlots(start, order.length);
   const when = new Map(order.map((p, i) => [p.pin.file, csvTime(slots[i].at)]));
+  const leadsUsed = new Map<string, Map<string, number>>();
+  const found = new Map(order.map((p) => [p.pin.file, searchable(p.row, leadsUsed)]));
   const field = (v: string) => (/[",\n\r]/.test(v) ? `"${v.replace(/"/g, '""')}"` : v);
   const header = ["Title", "Media URL", "Pinterest board", "Description", "Link", "Publish date", "Keywords"] as const;
   return Object.fromEntries(WAVES.map((wave) => {
     const rows = planned.filter((p) => p.pin.wave === wave).sort((a, b) => when.get(a.pin.file)!.localeCompare(when.get(b.pin.file)!));
-    const lines = [header.join(","), ...rows.map(({ row, pin }) => header.map((h) => field(h === "Publish date" ? when.get(pin.file)! : h === "Media URL" ? mediaUrlOf(pin.file) : row[h])).join(","))];
+    const lines = [header.join(","), ...rows.map(({ row, pin }) => {
+      const out: SourceRow = { ...row, ...found.get(pin.file)!, "Media URL": mediaUrlOf(pin.file), "Publish date": when.get(pin.file)! };
+      return header.map((h) => field(out[h])).join(",");
+    })];
     return [wave, lines.join("\r\n") + "\r\n"];
   })) as Record<(typeof WAVES)[number], string>;
 }
