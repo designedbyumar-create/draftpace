@@ -33,8 +33,8 @@ export const FOLDER_PRODUCT: Record<string, string> = {
 };
 
 export const WAVES = ["wave2", "wave3", "wave4", "wave5"] as const;
-/** The first day (New York) of the new schedule: the day after wave 1's last pin. */
-export const START = "2026-10-17";
+/** The first day (New York) of the schedule: 18 October, the first prayer slot after the waves were imported (1 PM PKT). */
+export const START = "2026-10-18";
 
 export type SourceRow = { Title: string; "Media URL": string; "Pinterest board": string; Description: string; Link: string; "Publish date": string; Keywords: string };
 
