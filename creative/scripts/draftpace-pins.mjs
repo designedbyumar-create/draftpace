@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 /**
  * Draftpace's own pins, waves 2 to 5 (pinterest/draftpace-pins.ts):
- * plans each pin from its source row, rescheduleds the four waves around
+ * plans each pin from its source row, reschedules the four waves around
  * the prayers, and with --render draws every pin into
- * public/store/pinterest-pins/<folder>/<pin>.jpg at 1000 x 1500, replacing
- * the old picture under the same name.
+ * public/store/pinterest-pins/illustrated/<folder>/<pin>.jpg at 1000 x 1500:
+ * a new path, so no cache can answer its Media URL with the old picture.
  *
  *   node scripts/draftpace-pins.mjs              plan + CSVs only
  *   node scripts/draftpace-pins.mjs --render     ...and draw all 350
@@ -50,7 +50,7 @@ log("preparing the engine...");
 const serveUrl = await bundle({ entryPoint: path.join(CREATIVE, "src", "index.ts"), webpackOverride });
 const browser = await openBrowser("chrome", { browserExecutable });
 for (const [n, file] of jobs.entries()) {
-  const out = path.resolve(CREATIVE, "..", "public/store/pinterest-pins", `${file}.jpg`);
+  const out = path.resolve(CREATIVE, "..", "public", D.HOSTED, `${file}.jpg`);
   const composition = await selectComposition({ browserExecutable, serveUrl, id: idOf(file), puppeteerInstance: browser });
   await renderStill({ browserExecutable, composition, serveUrl, output: out, imageFormat: "jpeg", jpegQuality: 88, scale: 1, puppeteerInstance: browser });
   if ((n + 1) % 25 === 0 || n + 1 === jobs.length) log(`${n + 1}/${jobs.length}`);

@@ -6,9 +6,8 @@
  * The words are the ones already written for each pin, in
  * pinterest/draftpace/source/wave*.csv: the title is the headline, the
  * description's first sentence (or its first clause, when the sentence is
- * long) the line beneath. Nothing is reworded. The image keeps its file
- * name, so each CSV row's Media URL still points at its pin; only the
- * picture and the Publish date change.
+ * long) the line beneath. Nothing is reworded. Only the picture, its
+ * Media URL and the Publish date change.
  *
  * Each pin's illustrations are chosen from its own words, the same way the
  * carousels choose theirs (director/illustration.ts), and a product pin
@@ -32,9 +31,18 @@ export const FOLDER_PRODUCT: Record<string, string> = {
   vehicle: "vehicle-maintenance-companion",
 };
 
+/**
+ * Where the redrawn pins are hosted: a new path, never the old file names.
+ * A URL that has already served the old picture keeps serving it from a
+ * cache (Pinterest's or the CDN's), which is how the first redrawn upload
+ * still showed the old pins. A URL that never held an old picture cannot.
+ */
+export const HOSTED = "store/pinterest-pins/illustrated";
+export const mediaUrlOf = (file: string) => `https://draftpace.com/${HOSTED}/${file}.jpg`;
+
 export const WAVES = ["wave2", "wave3", "wave4", "wave5"] as const;
-/** The first day (New York) of the new schedule: the day after wave 1's last pin. */
-export const START = "2026-10-17";
+/** The first day (New York) of the schedule: 18 October, the first prayer slot after the waves were imported (1 PM PKT). */
+export const START = "2026-10-18";
 
 export type SourceRow = { Title: string; "Media URL": string; "Pinterest board": string; Description: string; Link: string; "Publish date": string; Keywords: string };
 
@@ -140,7 +148,7 @@ export function planDraftpacePins(sources: Record<(typeof WAVES)[number], string
   return out;
 }
 
-/** The four waves' CSVs, word for word, with only the Publish date moved to the prayer schedule, in the order the pins were already queued. */
+/** The four waves' CSVs, word for word, with the Media URL at the redrawn pin and the Publish date moved to the prayer schedule, in the order the pins were already queued. */
 export function rescheduledCsvs(sources: Record<(typeof WAVES)[number], string>, start = START): Record<(typeof WAVES)[number], string> {
   const planned = planDraftpacePins(sources);
   const order = [...planned].sort((a, b) => a.row["Publish date"].localeCompare(b.row["Publish date"]));
@@ -150,7 +158,7 @@ export function rescheduledCsvs(sources: Record<(typeof WAVES)[number], string>,
   const header = ["Title", "Media URL", "Pinterest board", "Description", "Link", "Publish date", "Keywords"] as const;
   return Object.fromEntries(WAVES.map((wave) => {
     const rows = planned.filter((p) => p.pin.wave === wave).sort((a, b) => when.get(a.pin.file)!.localeCompare(when.get(b.pin.file)!));
-    const lines = [header.join(","), ...rows.map(({ row, pin }) => header.map((h) => field(h === "Publish date" ? when.get(pin.file)! : row[h])).join(","))];
+    const lines = [header.join(","), ...rows.map(({ row, pin }) => header.map((h) => field(h === "Publish date" ? when.get(pin.file)! : h === "Media URL" ? mediaUrlOf(pin.file) : row[h])).join(","))];
     return [wave, lines.join("\r\n") + "\r\n"];
   })) as Record<(typeof WAVES)[number], string>;
 }

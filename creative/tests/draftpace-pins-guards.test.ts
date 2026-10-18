@@ -1,14 +1,15 @@
 /**
  * Guards for Draftpace's own pins, waves 2 to 5: the words on every pin are
  * the ones already written for it, the rescheduled CSVs change nothing but
- * the Publish date, every date sits on the prayer schedule in the order the
- * pins were queued, wave 1 (already on Pinterest) is never redrawn, and
- * every redrawn image exists under its original name.
+ * the Media URL and the Publish date, every date sits on the prayer
+ * schedule in the order the pins were queued, wave 1 (already on Pinterest)
+ * is never redrawn, and every Media URL points at a redrawn image under a
+ * path that never held an old picture (a reused URL served the old one).
  */
 import { describe, expect, it } from "vitest";
 import fs from "node:fs";
 import path from "node:path";
-import { planDraftpacePins, rescheduledCsvs, parseCsv, WAVES, START, FOLDER_PRODUCT } from "../pinterest/draftpace-pins";
+import { planDraftpacePins, rescheduledCsvs, parseCsv, mediaUrlOf, WAVES, START, FOLDER_PRODUCT, HOSTED } from "../pinterest/draftpace-pins";
 import { prayerSlots, csvTime } from "../pinterest/prayer-schedule";
 import { MOTIFS } from "../src/visual/illustrations";
 
@@ -47,26 +48,32 @@ describe("Draftpace pins, waves 2 to 5", () => {
     }
   });
 
-  it("change nothing in the upload files but the Publish date, which follows the prayer schedule in the order the pins were queued", () => {
+  it("change nothing in the upload files but the Media URL and the Publish date, which follows the prayer schedule in the order the pins were queued", () => {
     const csvs = rescheduledCsvs(sources);
     for (const w of WAVES) expect(read(`${w}.csv`), `pinterest/draftpace/${w}.csv is stale: run node scripts/draftpace-pins.mjs`).toBe(csvs[w]);
-    const before = new Map(planned.map(({ row }) => [row["Media URL"], row]));
+    const before = new Map(planned.map(({ row, pin }) => [mediaUrlOf(pin.file), row]));
     const after = WAVES.flatMap((w) => parseCsv(csvs[w]));
     expect(after.length).toBe(350);
     for (const r of after) {
-      const was = before.get(r["Media URL"])!;
-      for (const col of ["Title", "Pinterest board", "Description", "Link", "Keywords"] as const) expect(r[col], `${r.Title}: ${col} changed`).toBe(was[col]);
+      const was = before.get(r["Media URL"]);
+      expect(was, `${r.Title}: Media URL ${r["Media URL"]} is not its redrawn pin`).toBeDefined();
+      for (const col of ["Title", "Pinterest board", "Description", "Link", "Keywords"] as const) expect(r[col], `${r.Title}: ${col} changed`).toBe(was![col]);
     }
-    const queued = [...planned].sort((a, b) => a.row["Publish date"].localeCompare(b.row["Publish date"])).map((p) => p.row["Media URL"]);
+    const queued = [...planned].sort((a, b) => a.row["Publish date"].localeCompare(b.row["Publish date"])).map((p) => mediaUrlOf(p.pin.file));
     const slots = prayerSlots(START, 350).map((s) => csvTime(s.at));
     const at = new Map(after.map((r) => [r["Media URL"], r["Publish date"]]));
     queued.forEach((url, i) => expect(at.get(url), `${url} is not at its place in the schedule`).toBe(slots[i]));
   });
 
-  it("are redrawn and on disk under their original names", () => {
-    for (const { pin } of planned) {
-      const file = path.join(ROOT, "..", "public/store/pinterest-pins", `${pin.file}.jpg`);
+  it("are on disk at their Media URL, a path that never served the old picture, and the old picture is gone", () => {
+    const old = new Set(planned.map(({ row }) => row["Media URL"]));
+    for (const { pin, row } of planned) {
+      const url = mediaUrlOf(pin.file);
+      expect(old.has(url), `${row.Title}: ${url} is the URL the old picture was uploaded from, so Pinterest can show the old picture`).toBe(false);
+      const file = path.join(ROOT, "..", "public", HOSTED, `${pin.file}.jpg`);
       expect(fs.existsSync(file), `${file} is missing`).toBe(true);
+      const was = path.join(ROOT, "..", "public/store/pinterest-pins", `${pin.file}.jpg`);
+      expect(fs.existsSync(was), `${was} still holds a picture for a redrawn pin`).toBe(false);
     }
     const committed = JSON.parse(read("pins.generated.json"));
     expect(committed, "pins.generated.json is stale: run node scripts/draftpace-pins.mjs").toEqual(planned.map((p) => p.pin));

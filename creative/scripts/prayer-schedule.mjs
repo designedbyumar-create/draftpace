@@ -20,7 +20,7 @@ await vite.close();
 
 const slots = S.prayerSlots(start, Number(count));
 const names = { fajr: "Fajr", dhuhr: "Zuhr", asr: "Asr", maghrib: "Maghrib", isha: "Isha" };
-const rows = ["Pin,Day,Prayer,Prayer time (New York),Pin time (New York),Publish date (UTC, for the CSV)"];
+const rows = ["Pin,Day,Prayer,Prayer time (New York),Pin time (New York),Publish date UTC (as in the upload CSVs)"];
 slots.forEach((s, i) => {
   const prayerAt = S.prayerTimes(s.date)[s.prayer];
   rows.push([i + 1, s.date, names[s.prayer], S.local(prayerAt).slice(11), S.local(s.at), S.csvTime(s.at)].join(","));
