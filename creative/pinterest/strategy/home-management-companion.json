@@ -330,8 +330,8 @@
       "title": "Printable Home Maintenance Calendar: What Belongs to Which Month",
       "archetype": "survey-binder",
       "content": {
-        "items": ["Right page: Plate 15 · The year, 'What belongs to which month.'", "Rows: September 10 jobs, October 11 jobs, November 2 jobs, December Clear 'Nothing seasonal. A good month.'", "October rows: Book a professional tune-up, Bleed the radiators, Remove and store for winter, Replace the pad, Shut off and drain before the freeze", "Tabs: Before you walk, The walk, What it needs, The record"],
-        "source": "workbook.tsx SeasonalPage and contents list (parts and plates); October jobs from HOME_ITEM_TYPES care templates with month 10"
+        "items": ["Right page: Plate 15 · The year, 'What belongs to which month.'", "Rows: September 10 jobs, October 11 jobs, November 2 jobs, December Clear 'Nothing seasonal. A good month.'", "October rows, as the plate prints them: Book a professional tune-up (furnace) / Bleed the radiators (boiler) / Remove and store for winter (window air conditioner) / Replace the pad (humidifier) / Shut off and drain before the freeze (outdoor faucet)", "Tabs: Before you walk, The walk, What it needs, The record"],
+        "source": "workbook.tsx SeasonalPage, seasonalByMonth() ('taskName (label)') and the contents list (parts and plates); October jobs from HOME_ITEM_TYPES care templates with month 10"
       },
       "headline": "Printable Home Maintenance Calendar: What Belongs to Which Month",
       "sub": "Every month, every seasonal job, and plain notes like \"Nothing seasonal. A good month.\"",
