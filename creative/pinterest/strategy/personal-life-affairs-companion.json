@@ -1,0 +1,761 @@
+{
+  "product": "personal-life-affairs-companion",
+  "audience": [
+    "adults who have meant to 'sort this out' for years and never found a first step small enough to take (listing: audience[0], problemsSolved[0])",
+    "people saving 'in case of emergency binder', 'if something happens to me file' and 'life admin binder' ideas, who abandoned a printable binder at tab 2",
+    "parents of young children working out who would raise them and who is named on the pension or life cover",
+    "people named as an executor, or adult children trying to find a parent's will and accounts (guides: named-executor-what-you-agreed-to, talking-to-your-parents-about-their-affairs)",
+    "anyone after a move, marriage, new baby, job change or separation who knows their paperwork is now out of date",
+    "pet owners and people with dependants who want one note that says who steps in",
+    "privacy-minded planners who will not write passwords in a binder and want 'where, not what'"
+  ],
+  "visualWorld": {
+    "setting": "A calm study desk in daylight: cream paper on a warmer cream ground, a navy cloth-bound book called My Affairs, a ring binder, a filing box, a key ring with manila tags, a home safe and a bank deposit box. Everything is about where things are and who to ask, never the thing itself: tags carry names and places, never numbers or codes.",
+    "props": [
+      { "id": "emergency-book", "draw": "Upright rectangle in ink navy #26374f with a slightly darker spine strip on the left (8% of width), a thin cream rule two-thirds down, the title 'My Affairs' in Newsreader serif in cream, and a brass #9a7b3f ribbon bookmark (narrow rectangle with a V-notch at the bottom) hanging out of the top edge. Matches the real cover in creative/public/screens/personal-life-affairs-companion-printables.png." },
+      { "id": "bookshelf", "draw": "One horizontal plank (warm cream #e4ded0, 24px tall, darker under-edge line) with 4 to 6 plain spines of varying height and width in muted creams and greys (#cfc8b6, #e2dccd, #565c68 at 30%), no titles. The emergency-book stands among them, pulled half out or leaning at 8 degrees so it is the only coloured object." },
+      { "id": "open-book-page", "draw": "Two cream #fbf8f1 pages side by side with a shallow centre gutter shadow; left page carries an eyebrow in small caps ('START HERE'), a serif heading and a hairline rule; right page lists 5 to 7 short lines with right-aligned section labels in navy, separated by dotted leaders. Real text only (see pins)." },
+      { "id": "ring-binder", "draw": "Binder opened flat seen from above: left board navy, three brass ring circles on the spine line, right board holding a cream page. Tab dividers stick out of the right edge in a staggered column." },
+      { "id": "tab-dividers", "draw": "Rounded-corner rectangles stepping down the binder's right edge, alternating cream #fbf8f1 and slate #e6eaf0 with a navy 2px outline, each with a short real label in IBM Plex Sans. An absent tab is simply absent (a gap), never crossed out." },
+      { "id": "will-envelope", "draw": "Long cream envelope (ratio 2.2:1) with a V flap outline and a brass circle seal on the flap point; the word 'Will' handwritten-style in navy (a plain serif italic, not a script font). Optionally a manila-tag tied to it." },
+      { "id": "beneficiary-form", "draw": "Portrait cream sheet tilted -4 degrees with a navy header bar, 6 to 8 grey ruled lines, small sans field labels taken from the guide ('Named beneficiary', 'Account'), and ONE line highlighted with a brass-soft #f6efe0 highlighter stroke (rounded rectangle, 70% opacity) under a name line left as a plain rule. A paperclip (two nested rounded U strokes) on the top edge. No real or fake personal names." },
+      { "id": "date-stamp", "draw": "Circle or rounded rectangle outline in navy at 60% with inner ring, slightly rotated; carries a real phrase only (e.g. 'Still true', '12 months'), never an invented date." },
+      { "id": "key-ring", "draw": "A brass split ring (two concentric circles, 3px stroke) hanging from a small hook, with 2 or 3 flat keys (circle bow with a hole, straight shank, 3 to 4 square teeth) and manila tags on short string lines." },
+      { "id": "manila-tag", "draw": "Luggage-tag shape (rectangle with the two top corners clipped) in #f1e6c8, a reinforced hole ring at the top, string as a thin curved navy line; carries 1 to 2 lines of real text in Plex Sans." },
+      { "id": "deposit-box", "draw": "Long shallow metal box seen from the front: slate-grey rectangle with a hinged lid line, two keyholes (circle plus small trapezoid) side by side, a small plain nameplate rectangle with no number." },
+      { "id": "home-safe", "draw": "Squat cube front: navy-grey square with a rounded inner door, a dial (circle with tick marks only, no digits) and a short handle bar. Optionally a manila-tag on the handle." },
+      { "id": "fireproof-box", "draw": "Small chest-shaped box in slate with a carry handle on top and a single latch; a folder edge peeks out from the lid line." },
+      { "id": "filing-box", "draw": "Open banker's box seen at 3/4: cream body, handle cut-out, hanging folders with staggered tabs labelled with real area names." },
+      { "id": "phone-lock", "draw": "Rounded-rectangle phone, navy frame, slate screen with a padlock glyph (rounded body plus arch) and a row of 6 empty circles for a passcode, deliberately blank. A manila-tag on a string tied to the phone carries the real step label." },
+      { "id": "photo-stack", "draw": "Three overlapping square photo frames with thick white borders, each holding a flat landscape (two hills and a sun circle) or a simple two-figure silhouette, plus a cloud outline (three arcs on a base line) behind, and a small shoebox lid. No faces." },
+      { "id": "pet-with-note", "draw": "Sitting cat or dog silhouette in navy built from circles and a rounded body, a brass collar with a round tag, and an index card (cream rectangle with a red-free top rule) propped beside a food bowl (half-ellipse)." },
+      { "id": "contact-chain", "draw": "Vertical stack of 4 to 6 rounded cards (cream, 1px #cfc8b6 border) joined on the left by a dotted brass line through numbered navy discs (1, 2, 3...). Each card has a person glyph (circle head over a rounded-shoulder shape) or a small object glyph, a bold short label and one muted line." },
+      { "id": "calendar-strip", "draw": "Horizontal ruler-like band in slate #e6eaf0 with tick marks and three labelled marks ('12 months', '24 months', '36 months'), small paper cards resting on it that flip from cream to brass-edged when confirmed." },
+      { "id": "life-event-stamps", "draw": "Round navy-outline stamps, each with a simple glyph: a house roof (I moved), two interlocked rings (I got married), a split circle (I separated or divorced), a pram (I had or adopted a child), a briefcase (I changed jobs), a key in a door (I bought a place), a laptop (I started working for myself), a paw (I no longer have a pet); labels are the exact LIFE_EVENTS labels." },
+      { "id": "question-card", "draw": "The app's own step card as a flat illustration (not a screenshot): cream #fbf8f1 card with a 1px #e2dccd border and soft shadow, a navy ribbon bookmark at the top right, a small-caps area eyebrow, a large Newsreader question, a muted hint line, and answer pills. Text copied exactly from captures.ts or affairsKnowledge.ts." },
+      { "id": "answer-chips", "draw": "Pill buttons in a row or stack: outlined cream pills for options, one filled navy pill; labels are the real choices from captures.ts (e.g. 'Yes', 'No', \"I'm not sure\")." },
+      { "id": "phone-frame", "draw": "Rounded navy device frame holding one of the real screenshots from creative/public/screens/personal-life-affairs-companion-*.png, cropped from the top, shown at 300 to 380px wide. Only used where the screenshot actually shows that pin's subject." },
+      { "id": "brass-check", "draw": "Small brass circle with a cream tick. Spent only on something confirmed or done, as the product itself does (document.tsx: brass marks confirmation)." }
+    ],
+    "palette": "The product's own ink and paper: ink navy #26374f (strong #1a2738), cream ground #efebe2, paper #fbf8f1, deeper cream #e4ded0, slate wash #e6eaf0, text #1b1f27, muted #565c68. Brass #9a7b3f with brass-soft #f6efe0 is the single warm accent and only marks something confirmed, highlighted or done. Manila #f1e6c8 is allowed for tags. No sage/teal and no red/black: definition.ts notes those are what Pinterest's results for this kind of product already look like, so navy on cream is the open seat in that feed.",
+    "mood": "Calm, orderly, quietly reassuring: a well-kept study on a weekday morning. Respectful, never morbid: no candles, lilies, gravestones, hourglasses, black backgrounds or 'when I die' imagery. Objects are tidy and findable; people appear only as simple glyphs, never faces."
+  },
+  "archetypes": [
+    {
+      "id": "shelf-book",
+      "name": "The Book on the Shelf",
+      "clicks": "This niche sells printables, and sellers' guidance is consistent that mockups showing the printable in use, and previews of different pages, lift click-through (expertbeacon.com, dodopayments.com). This product's output is literally a printed book, so a book you could take off the shelf is the honest mockup. The shelf also answers the niche's most-asked follow-up, 'where should I keep it' (somewhere private but findable).",
+      "layout": "1000x1500 on cream #efebe2. 60-130: small tag and subtle Draftpace mark top-left (never lower-right, which Pinterest's own UI covers). 140-470: headline in Newsreader, navy, 64-84px, max 3 lines, left-aligned with 80px margins. 500-1120: the visual, a shelf plank at y=1080 running edge to edge with plain spines and the navy My Affairs book pulled out or leaning (closed variant) OR the book lying open showing a real page (open variant, pages 760px wide). 1150-1340: one real line or 2 to 3 short real items on a paper card. 1370-1470: product line (name and real price from the listing, or 'Free guide')." ,
+      "visual": "bookshelf with plain spines and the navy My Affairs emergency-book with brass ribbon; open variant shows the open-book-page with real text.",
+      "text": "Headline; on the book or page only real strings: 'My Affairs' (document.tsx), the 'If you need to.' page with HANDOFF_SCENARIOS needs and AFFAIR_AREA_LABEL section names, or a real sentence from the pin's description, the listing or the guide.",
+      "bestFor": "The printable book, opening page, how to keep the file, starting with your own, the 'if something happens to me file' itself."
+    },
+    {
+      "id": "inside-the-binder",
+      "name": "Inside the Binder",
+      "clicks": "The dominant format in this niche is the 'what to include' section list: emergency and death binder guides are organised by section (frugalconfessions.com, newlynamed.com), retail 'If I Die' binders sell on their section count (walmart.com listing with 16 sections), and multi-step reference content is what people save to come back to (schedulala.com). Showing the tabs is the visual form of that list.",
+      "layout": "Cream ground. 70-120 tag. 130-400: headline, navy, 62-78px. 430-1300: ring-binder opened flat, rotated -3 degrees, occupying 860px width; tab-dividers stepping down the right edge carry the real labels (up to 8); the right page shows the same labels as a contents list with dotted leaders and a one-line 'what goes here' for the first two tabs. Gaps where a tab does not apply. 1330-1470: product line.",
+      "visual": "ring-binder with tab-dividers; variant: an executor's folder (filing-box) with paper-clipped sheets for the executor guide.",
+      "text": "Tab labels and contents copied from the guide table 'The eight tabs, and what to leave off each' (life-admin-binder-what-goes-in-it), AFFAIR_DOMAIN_LABEL / AFFAIR_AREA_LABEL in affairsKnowledge.ts, or the guide list being visualised.",
+      "bestFor": "What goes in a life admin / ICE binder, the 'skip what does not apply' angle, the executor's 'what to ask for' list."
+    },
+    {
+      "id": "the-name-line",
+      "name": "The Line on the Form",
+      "clicks": "A single recognisable document, large and centred, survives Pinterest's grid crop and reads at thumbnail size (marpipe.com: keep the product large and centred; Pinterest's text-overlay advice: short, legible, high contrast). The beneficiary-vs-will fact is a 'did you know' surprise, and a highlighted line on a form makes that surprise visible without words. Inference from the research, not a measured result.",
+      "layout": "Top band 0-560 in ink navy with the headline in cream Newsreader 66-80px (60-500), tag above it. The beneficiary-form (or will-envelope) is laid on the cream lower half, 560-1300, tilted -4 degrees and overlapping the band edge by 60px so the paper reads as 'pulled out'. One line on the form highlighted in brass-soft; 3 to 4 real table rows printed on the sheet. A will-envelope tucked behind at +6 degrees. 1330-1470: product line.",
+      "visual": "beneficiary-form with highlighted name line, will-envelope, paperclip; for medical decisions, three overlapping sheets labelled with the guide's three terms.",
+      "text": "Headline in the navy band; on the paper only real rows from the guide tables (beneficiary-forms-override-your-will, emergency-contact-and-medical-decision-maker) or the product's book labels (AFFAIR_STEPS bookLabel).",
+      "bestFor": "Beneficiary forms, will vs form, health care proxy, guardian naming, paperwork after divorce."
+    },
+    {
+      "id": "where-not-what",
+      "name": "Where, Not What",
+      "clicks": "Most binder printables in this niche include a passwords log (the search results list 'a passwords log' among standard printables), while digital-legacy and binder guides warn against writing passwords or combinations down (TechHappy digital legacy PDF; the binder guides' own caveats). A pin that shows the object with a tag saying who can open it, not the code, is the trustworthy contrarian tip and matches exactly what the product records. Object close-ups also hold up in the grid.",
+      "layout": "Visual first, headline lower, so it looks different from the others. 0-900: the object hanging or standing centre-frame on cream (key-ring from a hook at y=0, or a home-safe / deposit-box / phone-lock / pet), 600-760px wide, with 2 to 3 manila-tags each carrying one real line. 930-1230: headline, navy, 60-76px, left-aligned. 1240-1330: one real line in muted sans. 1370-1470: product line.",
+      "visual": "key-ring with manila-tags, home-safe, deposit-box, fireproof-box, phone-lock, photo-stack, pet-with-note, will-envelope with tag.",
+      "text": "Tags carry real prompts, hints, placeholders or field labels from captures.ts (e.g. 'A name, not a code. Never record the combination here.') or a real guide line. Never a number, code or password, even a fake one.",
+      "bestFor": "Safes, deposit boxes and spare keys, phone access, photographs, pets, where the will is kept and who knows, where to keep the binder."
+    },
+    {
+      "id": "in-this-order",
+      "name": "In This Order",
+      "clicks": "Step-by-step 'how to' is what most top-performing pins have in common (Tailwind's analysis of top pins), and sequenced checklists are what people save (schedulala.com). In this niche specifically, executor kits sell on a dated order: a 'First 90 Days' map and a notification log (payhip.com executor binder listing).",
+      "layout": "Cream ground. 70-120 tag. 130-390: headline, navy, 60-76px. 420-1320: contact-chain of 4 to 6 numbered cards down the left 700px with a dotted brass connector; each card a bold short 'who/when' plus one muted line; a single supporting prop (phone, will-envelope, filing-box) at the right edge, 220px wide, at the height of card 1. 1350-1470: product line.",
+      "visual": "contact-chain with numbered discs and person/object glyphs; optional calendar-strip ticks for day-based timelines.",
+      "text": "Ordered items copied from a guide timeline or ordered list (e.g. where-to-look-for-a-will 'The search order', who-to-tell-when-someone-dies table, hospital guide timeline) or from HANDOFF_SCENARIOS. May be cut after the first clause, never reworded.",
+      "bestFor": "Who to tell and in what order, where to search for a will or accounts, the hospital two-week test, the guardian checklist, the handoff check."
+    },
+    {
+      "id": "one-question",
+      "name": "One Question at a Time",
+      "clicks": "Product pins do best when they show the real product in use (expertbeacon.com on preview images; Pinterest's own guidance for product sellers favours showing the product clearly). This product's difference from every binder in the feed is that it asks one question at a time, so the honest product shot is one real question with its real answer choices: it reads like a quick self-check, which invites the save.",
+      "layout": "Slate wash #e6eaf0 ground (the only archetype not on cream, so shop pins are recognisable). 70-120 tag. 130-360: headline, navy, 58-72px. 400-1120: question-card at 820px wide, rotated -2 degrees with soft shadow: ribbon bookmark top-right, area eyebrow, question in Newsreader 52px, hint in muted 26px, answer-chips row. 1000-1400: phone-frame with the real screenshot overlapping the card's lower-left corner ONLY when the screenshot shows that subject; otherwise a second smaller card with the follow-up prompt. 1370-1470: product line with the real price.",
+      "visual": "question-card, answer-chips, phone-frame (real screenshot where it matches).",
+      "text": "The exact prompt, hint and choices from captures.ts CAPTURE_SPECS, the instruction/bookLabel/minutes from AFFAIR_STEPS, the intake question and its 'why' from INTAKE_QUESTIONS, or LIFE_EVENTS labels. Area eyebrow from AFFAIR_AREA_LABEL. The card is drawn as an illustration, never passed off as a screenshot.",
+      "bestFor": "Every shop-linked pin about a specific step: will location, executor authority, medical decision maker, emergency contact, recovery kit, accounts that charge money, intake questions, life events, safes."
+    },
+    {
+      "id": "still-true",
+      "name": "Still True?",
+      "clicks": "Every emergency-binder guide in the research says to review it at least once a year or after a big change (frugalconfessions.com, newlynamed.com, protective.com), and the most common failure of a binder is staleness. A pin about time passing, with life-event stamps, answers the saver's quiet worry that a binder is out of date the moment it is finished, which is also this product's distinctive feature.",
+      "layout": "Cream ground. 70-120 tag. 130-430: headline, navy, 62-78px. 470-820: calendar-strip across the full width at y=640 with labelled interval marks, life-event-stamps sitting on it and 3 small paper cards above the marks. 860-1000: two pills side by side, 'Still true' (brass outline, brass-check) and 'Update it' (navy filled). 1040-1320: 2 to 5 short real lines (e.g. what each event brings back). 1370-1470: product line.",
+      "visual": "calendar-strip, life-event-stamps, date-stamp, brass-check, answer-chips.",
+      "text": "Interval labels from confirmEveryMonths in AFFAIR_STEPS (12, 24, 36 months), button labels from WorkspaceModule.tsx ('Still true', 'Update it'), event labels from LIFE_EVENTS (lifeEvents.ts) and the guide table 'Where to look again, by event'.",
+      "bestFor": "Keeping it current, life changes, the old form left on a first day, still-true reviews."
+    }
+  ],
+  "pins": [
+    {
+      "account": "draftpace", "id": "ple/pin-3.1",
+      "title": "Beneficiary Checklist: Your Beneficiary Forms Quietly Override Your Will",
+      "archetype": "the-name-line",
+      "content": {
+        "items": ["401(k) or other workplace plan: Beneficiary form on file with the plan. Does the will control it: No", "IRA (traditional or Roth): Beneficiary form on file with the custodian. No", "Life insurance policy: Named beneficiary on the policy. No", "Payable-on-death (POD) bank account: POD beneficiary named at the bank. No"],
+        "source": "src/content/guides.ts, beneficiary-forms-override-your-will, table 'What passes by form, and what the will controls'"
+      },
+      "headline": "Your Beneficiary Forms Quietly Override Your Will",
+      "sub": "Retirement accounts and life insurance usually pass by nomination, not by will.",
+      "props": ["beneficiary-form", "will-envelope", "brass-check"],
+      "why": "The form beside the will, with 'No' under 'does the will control it', makes the surprise visible."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-3.2",
+      "title": "Estate Planning Checklist: A Step That Checks Who Is Named on the Form",
+      "archetype": "one-question",
+      "content": {
+        "items": ["Eyebrow: Money coming in and going out", "Check the named person on your workplace retirement plan.", "Goes in your book as: The workplace plan was checked", "About 10 minutes", "Start / Not relevant to me / Later"],
+        "source": "affairsKnowledge.ts AFFAIR_STEPS money.retirement-employer (instruction, bookLabel, minutes); AFFAIR_AREA_LABEL.money; button labels from creative/public/screens/personal-life-affairs-companion-workspace.png"
+      },
+      "headline": "A Step That Checks Who Is Named on the Form",
+      "sub": "It records that you checked. It does not tell you who to name.",
+      "props": ["question-card", "answer-chips", "beneficiary-form"],
+      "why": "Shows the actual step and its honest limit; no screenshot since the captured screen shows a different step."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-3.3",
+      "title": "Update Your Beneficiary: The Beneficiary Form You Filled In on Your First Day",
+      "archetype": "in-this-order",
+      "content": {
+        "items": ["List every retirement account you have ever had, including 401(k)s and 403(b)s from jobs you've left.", "List every life insurance policy, including any provided through an employer.", "List any payable-on-death bank account or transfer-on-death brokerage account you've set up."],
+        "source": "src/content/guides.ts, beneficiary-forms-override-your-will, list 'Check your own forms, in this order' (first three items = the description's 'three places to look')"
+      },
+      "headline": "The Beneficiary Form You Filled In on Your First Day",
+      "sub": "The nomination you made years ago may never have been updated.",
+      "props": ["contact-chain", "beneficiary-form", "filing-box"],
+      "why": "The description promises three places to look; a numbered chain delivers exactly those three."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-3.4",
+      "title": "Update Your Beneficiary: Update the Named Person When Your Situation Changes",
+      "archetype": "still-true",
+      "content": {
+        "items": ["Update the named person if your situation has changed.", "I got married", "I separated or divorced", "I had or adopted a child", "I changed jobs", "Someone I named has died"],
+        "source": "affairsKnowledge.ts AFFAIR_STEPS money.beneficiary-after-change (instruction); lifeEvents.ts LIFE_EVENTS labels"
+      },
+      "headline": "Update the Named Person When Your Situation Changes",
+      "sub": "A separate step is for when your situation has changed.",
+      "props": ["calendar-strip", "life-event-stamps", "beneficiary-form"],
+      "why": "Situation changes are events on a timeline; stamps make 'when' the subject."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-3.5",
+      "title": "Estate Planning for Beginners: A Form Filled In Years Ago Quietly Wins",
+      "archetype": "the-name-line",
+      "content": {
+        "items": ["Who is named to receive it?", "This form usually overrides a will, which is why it is worth knowing."],
+        "source": "captures.ts CAPTURE_SPECS money.pensions (namedToReceive prompt and hint)"
+      },
+      "headline": "A Form Filled In Years Ago Quietly Wins",
+      "sub": "Start with the one document most people have not looked at since they signed it.",
+      "props": ["beneficiary-form", "date-stamp", "will-envelope"],
+      "why": "One old, paper-clipped form with its name line highlighted is the whole story at thumbnail size."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-4.1",
+      "title": "Executor Checklist: Where to Look for a Will When You Cannot Find One",
+      "archetype": "in-this-order",
+      "content": {
+        "items": ["At home: filing box, desk, bedside drawer, a home safe", "Their attorney", "A safe deposit box", "The county probate office", "The named executor"],
+        "source": "src/content/guides.ts, where-to-look-for-a-will, timeline 'The search order' (when labels; first 'what' cut after its list)"
+      },
+      "headline": "Where to Look for a Will When You Cannot Find One",
+      "sub": "A search order for finding a will, what to do if there genuinely is not one.",
+      "props": ["contact-chain", "will-envelope", "deposit-box"],
+      "why": "The guide literally gives a search order; numbered stops are what a searching executor saves."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-4.2",
+      "title": "Important Documents Checklist: Write Down Where the Will Is, in Your Own Words",
+      "archetype": "one-question",
+      "content": {
+        "items": ["Eyebrow: Where the paperwork is", "Do you have a will?", "Yes / No / I'm not sure", "Where is it kept?", "In your own words. A will nobody can find does nothing at all.", "Does anyone else have a copy, or know where it is?"],
+        "source": "captures.ts CAPTURE_SPECS paperwork.will-exists; UNSURE constant; AFFAIR_AREA_LABEL.paperwork; screen creative/public/screens/personal-life-affairs-companion-affairs.png (shows the Will entry)"
+      },
+      "headline": "Write Down Where the Will Is, in Your Own Words",
+      "sub": "Do you have a will, and where is it kept?",
+      "props": ["question-card", "answer-chips", "phone-frame"],
+      "why": "The real three-way answer, including 'I'm not sure', plus the real Affairs screen showing a will's location recorded."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-4.3",
+      "title": "Executor Checklist: You Have Been Named Executor: What You Agreed To",
+      "archetype": "inside-the-binder",
+      "content": {
+        "items": ["Certified copies of the death certificate, more than you think you need.", "The original will, not a copy.", "Twelve months of bank statements", "The most recent federal tax return", "Details of any funeral plan already paid for.", "Contact details for their accountant, attorney, or financial adviser."],
+        "source": "src/content/guides.ts, named-executor-what-you-agreed-to, list 'What to ask for immediately if you are acting' (US version)"
+      },
+      "headline": "You Have Been Named Executor: What You Agreed To",
+      "sub": "What the role involves, how long it really takes, what you are personally responsible for.",
+      "props": ["filing-box", "tab-dividers", "will-envelope"],
+      "why": "An executor's folder opened to its six paper-clipped items is a 'what's inside' list they will save."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-4.4",
+      "title": "Executor Checklist: Where Does Your Executor's Authority Stand?",
+      "archetype": "one-question",
+      "content": {
+        "items": ["Eyebrow: Where the paperwork is", "Has anything already been started to prove your executor can act?", "Letters Testamentary, probate, or whatever your local process is called.", "Not looked into yet / Looked into, nothing started / Already started / I'm not sure"],
+        "source": "captures.ts CAPTURE_SPECS paperwork.proof-of-authority (prompt, hint, choices)"
+      },
+      "headline": "Where Does Your Executor's Authority Stand?",
+      "sub": "A single step records whether anything has been started to prove your executor can act.",
+      "props": ["question-card", "answer-chips"],
+      "why": "Four real status choices stacked as pills make 'a status note, not a probate tool' obvious; no screenshot matches this step."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-4.5",
+      "title": "Where to Keep Important Documents: Does Anyone Else Know Where It Is?",
+      "archetype": "where-not-what",
+      "content": {
+        "items": ["Tag 1: Does anyone else have a copy, or know where it is?", "Tag 2: Copy also held by", "Line: Most commonly at home, in a filing box, a desk drawer or a home safe, or with the attorney who prepared it."],
+        "source": "captures.ts CAPTURE_SPECS paperwork.will-exists (third prompt); printables/document.tsx field label copyHeldBy; guides.ts where-to-look-for-a-will FAQ 'Where do people usually keep their will?'"
+      },
+      "headline": "Does Anyone Else Know Where It Is?",
+      "sub": "The second question matters as much as the first.",
+      "props": ["will-envelope", "manila-tag", "home-safe"],
+      "why": "A sealed will with a tag left blank for a name asks the question without a word of explanation."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-5.1",
+      "title": "What Goes in a Life Admin Binder",
+      "archetype": "inside-the-binder",
+      "content": {
+        "items": ["1. Who to call", "2. Paperwork", "3. Money", "4. Home", "5. People and pets", "6. Accounts and devices", "7. What you'd want", "8. Business", "Leave off: Passwords and the master password"],
+        "source": "src/content/guides.ts, life-admin-binder-what-goes-in-it, table 'The eight tabs, and what to leave off each'"
+      },
+      "headline": "What Goes in a Life Admin Binder",
+      "sub": "A life admin binder is easier to keep when it says where things are rather than holding the things themselves.",
+      "props": ["ring-binder", "tab-dividers"],
+      "why": "The niche's classic 'what's inside' format, with the guide's real eight tabs."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-5.2",
+      "title": "Life Admin Binder: A Printable Book That Says Where Everything Is",
+      "archetype": "shelf-book",
+      "content": {
+        "items": ["My Affairs", "US Letter / A4", "It is a map, not a vault."],
+        "source": "printables/document.tsx (book title); paper-size choice from creative/public/screens/personal-life-affairs-companion-printables.png; 'map, not a vault' from the pin's own CSV description (wave3.csv)"
+      },
+      "headline": "A Printable Book That Says Where Everything Is",
+      "sub": "Personal Life Affairs Companion prints as a book called My Affairs.",
+      "props": ["bookshelf", "emergency-book", "phone-frame"],
+      "why": "The product's real output as a real-looking book on a shelf, with the printables screen as proof."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-5.3",
+      "title": "Emergency Binder: If You Were in the Hospital for Two Weeks, What Would Someone Need to Find?",
+      "archetype": "in-this-order",
+      "content": {
+        "items": ["Day 1: Someone is called, or should be.", "Day 1 to 2: The hospital asks who speaks for you.", "By day 3: Your employer or school needs telling, and your phone needs to be reachable.", "Week 1: The first manual bills approach.", "Week 2: Mail piles up, pets and plants need care."],
+        "source": "src/content/guides.ts, hospital-for-two-weeks-what-would-someone-need-to-find, timeline 'What someone runs into, in order' (first sentence of each)"
+      },
+      "headline": "If You Were in the Hospital for Two Weeks, What Would Someone Need to Find?",
+      "sub": "You do not have to imagine the worst to plan for two weeks away.",
+      "props": ["contact-chain", "calendar-strip", "phone-lock"],
+      "why": "A two-week timeline keeps it practical and alive, not morbid; long headline gets the larger top area."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-5.4",
+      "title": "In Case of Emergency Binder: A Page That Opens on What Someone Is Trying to Do",
+      "archetype": "shelf-book",
+      "content": {
+        "items": ["START HERE", "If you need to.", "Someone needs to know who to contact. / Who decides, and who to call", "Someone needs to find the important paperwork. / Where the paperwork is", "Someone needs to get to your accounts and devices. / Accounts and devices", "Someone needs to look after the people who rely on you. / People and animals who rely on you"],
+        "source": "printables/document.tsx 'If you need to' page (eyebrow, heading); handoff.ts HANDOFF_SCENARIOS need; affairsKnowledge.ts AFFAIR_AREA_LABEL as the section label"
+      },
+      "headline": "A Page That Opens on What Someone Is Trying to Do",
+      "sub": "In the filled copy, page two lists what someone might be trying to do and points to the section that answers it.",
+      "props": ["open-book-page", "emergency-book"],
+      "why": "Open variant: the actual page, reproduced as an illustration, is the proof."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-5.5",
+      "title": "In Case of Emergency Binder: Keep It Somewhere Private",
+      "archetype": "where-not-what",
+      "content": {
+        "items": ["Tag: Somewhere private but findable", "Tag: Tell at least one person where it is.", "Line: Keep the filled copy somewhere private: it says where things are and who to speak to."],
+        "source": "guides.ts life-admin-binder-what-goes-in-it FAQ 'Where should I keep the binder?'; footer line on creative/public/screens/personal-life-affairs-companion-printables.png"
+      },
+      "headline": "Keep It Somewhere Private",
+      "sub": "A filled-in copy says where things are and who to speak to.",
+      "props": ["fireproof-box", "emergency-book", "manila-tag"],
+      "why": "The book half inside a fireproof box with a tag: private, findable, and calm."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-6.1",
+      "title": "Life Admin Binder: Skip What Does Not Apply to You",
+      "archetype": "inside-the-binder",
+      "content": {
+        "items": ["People", "Important documents", "Money", "Digital life", "Important instructions", "Skip freely. Anything that does not apply to you can stay blank."],
+        "source": "affairsKnowledge.ts AFFAIR_DOMAIN_LABEL (tabs shown for an example renter with no children, pets or business: Home, Pets and dependants, Business absent); printables/document.tsx 'How to use this' item 'Skip freely.'"
+      },
+      "headline": "Skip What Does Not Apply to You",
+      "sub": "A list built for everyone is mostly noise for you.",
+      "props": ["ring-binder", "tab-dividers"],
+      "why": "Visible gaps in the tab column show 'absent, not crossed out' without a single extra word."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-6.2",
+      "title": "Life Admin Checklist: Do You Own the Place You Live? One of Eight Questions",
+      "archetype": "one-question",
+      "content": {
+        "items": ["Do you own the place you live?", "Owning brings a deed and usually a mortgage, both of which need finding. If you rent, we will skip all of that rather than ask you about it.", "Yes / No"],
+        "source": "intake.ts INTAKE_QUESTIONS gate ownsHome (question, why); yes/no per the listing's 'Eight yes or no answers'"
+      },
+      "headline": "Do You Own the Place You Live? One of Eight Questions",
+      "sub": "Eight yes or no questions decide what Personal Life Affairs Companion will and will not ask about.",
+      "props": ["question-card", "answer-chips"],
+      "why": "The real question and its real reason; the house is implied by the words, not a stock house icon."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-6.3",
+      "title": "Life Admin Binder: Renters Skip the Deed, Pet-Free Skip the Pets",
+      "archetype": "shelf-book",
+      "content": {
+        "items": ["Somebody who rents, has no children and no business is asked about 33 things instead of 46", "A short finished copy is better than a long half-filled one."],
+        "source": "src/shop/products/personal-life-affairs-companion.ts questions[2] answer; printables/document.tsx 'Skip freely.' line"
+      },
+      "headline": "Renters Skip the Deed, Pet-Free Skip the Pets",
+      "sub": "A binder built for one household does not fit another.",
+      "props": ["bookshelf", "emergency-book", "ring-binder"],
+      "why": "A fat generic binder next to a slim My Affairs on the same shelf shows 'shorter is finished'."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-6.4",
+      "title": "Life Admin Checklist: Eight Yes or No Questions That Shape the Whole Book",
+      "archetype": "one-question",
+      "content": {
+        "items": ["Do you have children under eighteen?", "Are you married or living with a partner?", "Do you have a pension or retirement plan through an employer?", "Do you own the place you live?", "Do you have life cover?", "Does anyone depend on you for ongoing care?", "Do you have pets?", "Do you own a business or work for yourself?"],
+        "source": "intake.ts INTAKE_QUESTIONS (all eight, in order)"
+      },
+      "headline": "Eight Yes or No Questions That Shape the Whole Book",
+      "sub": "Children, a partner, an employer retirement plan, a home, life insurance, someone who depends on you, pets, a business.",
+      "props": ["question-card", "answer-chips"],
+      "why": "Variant: eight small question cards in a 2x4 stack with Yes/No pills; the real list is the content."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-6.5",
+      "title": "Adulting Checklist: Nothing That Does Not Apply to You",
+      "archetype": "inside-the-binder",
+      "content": {
+        "items": ["Who decides, and who to call", "Where the paperwork is", "Money coming in and going out", "Accounts and devices", "What you would want"],
+        "source": "affairsKnowledge.ts AFFAIR_AREA_LABEL (the book's section names; example with Where you live, People and animals who rely on you, The business absent)"
+      },
+      "headline": "Nothing That Does Not Apply to You",
+      "sub": "A list that fits you is a list you can finish.",
+      "props": ["filing-box", "tab-dividers"],
+      "why": "Filing-box variant (not the ring binder) with five hanging folders: a finishable list, visibly."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-7.1",
+      "title": "Medical Decision Maker: Who Would Speak for You About Medical Care?",
+      "archetype": "the-name-line",
+      "content": {
+        "items": ["Emergency contact", "Health care agent (proxy, or medical power of attorney)", "Living will"],
+        "source": "src/content/guides.ts, emergency-contact-and-medical-decision-maker, table 'What each one actually does' (Term column)"
+      },
+      "headline": "Who Would Speak for You About Medical Care?",
+      "sub": "Choosing a person, asking them, and writing down where the formal paperwork is.",
+      "props": ["beneficiary-form", "date-stamp"],
+      "why": "Three overlapping sheets labelled with the three terms people confuse; the agent's name line is the highlighted one."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-7.2",
+      "title": "Medical Decision Maker: Have You Talked to Them About What You Would Want?",
+      "archetype": "one-question",
+      "content": {
+        "items": ["Eyebrow: Who decides, and who to call", "Who should speak for you about medical care?", "Have you talked to them about what you would want?", "Yes, we have talked about it / Not yet / I'm not sure"],
+        "source": "captures.ts CAPTURE_SPECS people.health-decisions (prompts and choices)"
+      },
+      "headline": "Have You Talked to Them About What You Would Want?",
+      "sub": "One step records who should speak for you about medical care, how to reach them.",
+      "props": ["question-card", "answer-chips"],
+      "why": "'Not yet' as a real, acceptable answer is the gentle hook."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-7.3",
+      "title": "Who Would Raise Your Children? A Checklist for Naming Someone",
+      "archetype": "the-name-line",
+      "content": {
+        "items": ["Who would raise the children", "The guardian has been asked", "The second choice", "Why them? This is the one line a court or a family member is most likely to read."],
+        "source": "affairsKnowledge.ts AFFAIR_STEPS dependants.guardian / guardian-asked / guardian-backup (bookLabel); captures.ts dependants.guardian 'Why them?' prompt and hint"
+      },
+      "headline": "Who Would Raise Your Children? A Checklist for Naming Someone",
+      "sub": "Naming someone who would say no is worse than naming nobody, because it looks settled when it is not.",
+      "props": ["beneficiary-form", "brass-check"],
+      "why": "A page with a first-choice line, a second-choice line and an 'asked' brass check: settled versus looks settled."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-7.4",
+      "title": "End of Life Planning: A Name Is Enough to Begin With",
+      "archetype": "one-question",
+      "content": {
+        "items": ["Who should someone contact first?", "A name is enough to begin with.", "What are they to you?", "How would someone reach them? (optional)", "Is there anything they should know? (optional)"],
+        "source": "captures.ts CAPTURE_SPECS people.emergency-contact; screen creative/public/screens/personal-life-affairs-companion-workspace.png ('Write down who should be called first.')"
+      },
+      "headline": "A Name Is Enough to Begin With",
+      "sub": "The first step asks who should be contacted first, and that a name is enough.",
+      "props": ["question-card", "phone-frame"],
+      "why": "The one pin where the real workspace screenshot shows exactly this step."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-7.5",
+      "title": "Who to Tell When Someone Dies, and in What Order",
+      "archetype": "in-this-order",
+      "content": {
+        "items": ["Close family and friends: Today", "Social Security: Within days", "Employer: Within the first week", "Banks and credit card companies: Within two weeks", "Life insurance and pension providers: Within two weeks", "Equifax, Experian, TransUnion: Within the first month"],
+        "source": "src/content/guides.ts, who-to-tell-when-someone-dies, table 'Who to notify, and what they will ask for' (Who and When columns)"
+      },
+      "headline": "Who to Tell When Someone Dies, and in What Order",
+      "sub": "A plain order for who to tell first and what can wait.",
+      "props": ["contact-chain", "phone-lock"],
+      "why": "Who plus when on a calm numbered chain: the reference people save for the week they need it."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-8.1",
+      "title": "Password and Account List: Can Someone Unlock Your Phone?",
+      "archetype": "where-not-what",
+      "content": {
+        "items": ["Tag: Someone can unlock the phone", "Line: Make sure at least one other person can get into your phone. Write down how, not the passcode itself, in a place they'd know to look."],
+        "source": "affairsKnowledge.ts AFFAIR_STEPS digital.phone-access (bookLabel); guides.ts digital-accounts-after-a-death list 'Set this up now, for yourself' item 1"
+      },
+      "headline": "Can Someone Unlock Your Phone?",
+      "sub": "Two-factor codes, photographs and many accounts live behind one screen.",
+      "props": ["phone-lock", "manila-tag"],
+      "why": "A locked phone with blank passcode dots and a tag is instantly recognisable and never shows a code."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-8.2",
+      "title": "Password and Account List: Where the Recovery Kit Is, Without Writing the Password",
+      "archetype": "one-question",
+      "content": {
+        "items": ["Eyebrow: Accounts and devices", "Do you use a password manager?", "Yes / No / I'm not sure", "Where are the recovery instructions kept?", "Where somebody would find out how to get in. Never the master password, and never write it here."],
+        "source": "captures.ts CAPTURE_SPECS digital.password-manager (prompts, hint, choices)"
+      },
+      "headline": "Where the Recovery Kit Is, Without Writing the Password",
+      "sub": "Personal Life Affairs Companion asks where your recovery instructions are kept.",
+      "props": ["question-card", "answer-chips", "home-safe"],
+      "why": "The hint itself ('never write it here') is the trust signal; a small safe sits behind the card."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-8.3",
+      "title": "Password and Account List: Which Email Is Everything Registered To?",
+      "archetype": "in-this-order",
+      "content": {
+        "items": ["Their email, searched for the words statement, policy, renewal, premium and pension.", "Their phone, for banking and two-factor apps", "Their tax return or last year's 1099 forms", "Their accountant or attorney", "The safe, the filing box and the drawer no one has opened"],
+        "source": "src/content/guides.ts, how-to-find-someones-accounts-after-they-die, list 'Where else to look, once the statements are read' (cut after first clause)"
+      },
+      "headline": "Which Email Is Everything Registered To?",
+      "sub": "When nobody wrote down which accounts exist, the email address is where the search starts.",
+      "props": ["contact-chain", "phone-lock", "filing-box"],
+      "why": "The email is step one of a search order; numbering it first makes the headline's point."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-8.4",
+      "title": "Password and Account List: Stop It, Keep It Going, or Not Sure",
+      "archetype": "one-question",
+      "content": {
+        "items": ["Which account charges money?", "A domain name, cloud storage, a subscription", "Should it be stopped, or kept going?", "Stop it / Keep it going / I'm not sure"],
+        "source": "captures.ts CAPTURE_SPECS digital.accounts-that-cost (prompt, placeholder, choices)"
+      },
+      "headline": "Stop It, Keep It Going, or Not Sure",
+      "sub": "For each online account that charges money, say what someone should do about it.",
+      "props": ["question-card", "answer-chips"],
+      "why": "Variant: three rows (the placeholder's three examples) each with the three real choice pills."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-8.5",
+      "title": "Digital Estate Planning: Where Do Your Photographs Actually Live?",
+      "archetype": "where-not-what",
+      "content": {
+        "items": ["Tag: Where the photographs are", "Line: Write down where your photographs actually live: one cloud service, a phone, a backup drive. It's the thing people most often wish they'd known.", "Prompt: Is there anything you would want kept?"],
+        "source": "affairsKnowledge.ts AFFAIR_STEPS digital.photos (bookLabel); guides.ts digital-accounts-after-a-death 'Set this up now, for yourself' item 6; captures.ts digital.photos notes prompt"
+      },
+      "headline": "Where Do Your Photographs Actually Live?",
+      "sub": "The one people say they wish they had known.",
+      "props": ["photo-stack", "manila-tag", "phone-lock"],
+      "why": "The warmest prop in the set: a photo stack, a cloud and a shoebox, tagged, without faces."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-9.1",
+      "title": "Adulting Checklist: After a Move, a Marriage or a New Baby: What to Look At Again",
+      "archetype": "still-true",
+      "content": {
+        "items": ["You moved: your address with banks, insurers and the motor vehicles office", "You married: who is named on retirement and life insurance; who speaks for you medically", "You had or adopted a child: who would raise them if you could not; who is named on life insurance"],
+        "source": "src/content/guides.ts, update-your-paperwork-after-a-life-change, table 'Where to look again, by event' (cut to clauses)"
+      },
+      "headline": "After a Move, a Marriage or a New Baby: What to Look At Again",
+      "sub": "A picture of your paperwork goes out of date all at once, the week something happens.",
+      "props": ["calendar-strip", "life-event-stamps"],
+      "why": "Three stamps on the timeline, each with what it touches underneath."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-9.2",
+      "title": "Life Admin Binder: Tell It Something Changed, and It Finds What to Look At",
+      "archetype": "one-question",
+      "content": {
+        "items": ["I moved", "I got married", "I separated or divorced", "I had or adopted a child", "I changed jobs", "I bought a place", "I started working for myself", "Someone I named has died", "I no longer have a pet"],
+        "source": "lifeEvents.ts LIFE_EVENTS labels (all nine)"
+      },
+      "headline": "Tell It Something Changed, and It Finds What to Look At",
+      "sub": "Nine life events, like I moved or I got married.",
+      "props": ["question-card", "answer-chips"],
+      "why": "Nine real event chips on one card: the menu is the feature."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-9.3",
+      "title": "What Paperwork to Look At After a Separation or Divorce",
+      "archetype": "the-name-line",
+      "content": {
+        "items": ["Account: Old 401(k)", "Named beneficiary: Ex-spouse, never updated", "Will says: Everything to my children", "Who actually gets it: Ex-spouse", "(example)"],
+        "source": "src/content/guides.ts, beneficiary-forms-override-your-will, table 'What the form decided (example)' row 1, labelled as an example as the guide does"
+      },
+      "headline": "What Paperwork to Look At After a Separation or Divorce",
+      "sub": "Who is named on what does not change on its own.",
+      "props": ["beneficiary-form", "will-envelope", "date-stamp"],
+      "why": "The guide's own example row on the form, with 'Ex-spouse, never updated' as the highlighted line."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-9.4",
+      "title": "Life Admin Checklist: Still True? A Question, Not a Task You Failed",
+      "archetype": "still-true",
+      "content": {
+        "items": ["12 months", "24 months", "36 months", "Still true", "Update it"],
+        "source": "affairsKnowledge.ts AFFAIR_STEPS confirmEveryMonths values; components/WorkspaceModule.tsx button labels"
+      },
+      "headline": "Still True? A Question, Not a Task You Failed",
+      "sub": "Forty-one steps come back for a second look after twelve, twenty-four or thirty-six months.",
+      "props": ["calendar-strip", "answer-chips", "brass-check"],
+      "why": "The archetype's purest form: intervals on the strip, the two real buttons below."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-9.5",
+      "title": "Life Admin Binder: A Picture Goes Out of Date All at Once",
+      "archetype": "in-this-order",
+      "content": {
+        "items": ["Confirm the real dates for income.", "List what leaves your accounts and from which one.", "Fix whatever points at the wrong place.", "Deal with what the old situation left behind", "Update your tax withholding.", "Redo your safe-to-spend number."],
+        "source": "src/content/guides.ts, sort-out-your-finances-after-a-life-change, list 'The order, in six steps' (first sentence of each)"
+      },
+      "headline": "A Picture Goes Out of Date All at Once",
+      "sub": "Life events break the assumptions your finances and paperwork were built on.",
+      "props": ["contact-chain", "calendar-strip"],
+      "why": "The linked guide gives six steps in order; a numbered chain is the honest preview."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-10.1",
+      "title": "In Case of Emergency: The Safe, the Deposit Box and the Spare Key: Who Can Open Them?",
+      "archetype": "where-not-what",
+      "content": {
+        "items": ["What it is: a home safe, a bank deposit box, a lockbox, or a filing cabinet with a key.", "Where it is, precise enough that a stranger could find it.", "Who is able to open it: a name, not a code.", "Who has a spare key"],
+        "source": "src/content/guides.ts, safe-deposit-box-and-spare-keys-who-can-open-it, list 'Three things to write down'; affairsKnowledge.ts home.keys bookLabel"
+      },
+      "headline": "The Safe, the Deposit Box and the Spare Key: Who Can Open Them?",
+      "sub": "A box nobody can open helps nobody.",
+      "props": ["key-ring", "manila-tag", "deposit-box", "home-safe"],
+      "why": "A key ring hanging over a deposit box, three tags with the three things: the archetype's signature image."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-10.2",
+      "title": "Important Documents Checklist: A Name, Not a Code",
+      "archetype": "one-question",
+      "content": {
+        "items": ["What is it? (Home safe, deposit box at the bank)", "Where is it?", "Who is able to open it?", "A name, not a code. Never record the combination here.", "Where would someone find out how to open it?"],
+        "source": "captures.ts CAPTURE_SPECS paperwork.safe-deposit (prompts, placeholder, hints)"
+      },
+      "headline": "A Name, Not a Code",
+      "sub": null,
+      "props": ["question-card", "home-safe"],
+      "why": "The real hint is the headline's proof; the safe dial has ticks and no digits."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-10.3",
+      "title": "Pet Emergency Plan: What Happens to Your Pets If Something Happens to You",
+      "archetype": "where-not-what",
+      "content": {
+        "items": ["Who would take them, and whether you've asked.", "What they need: food, medication, routine, quirks.", "The vet's name and where the records are.", "A second person, in case the first can't."],
+        "source": "src/content/guides.ts, what-happens-to-your-pets-if-something-happens-to-you, list 'What to write for each animal'"
+      },
+      "headline": "What Happens to Your Pets If Something Happens to You",
+      "sub": "A name, what each animal needs, and where the papers are.",
+      "props": ["pet-with-note", "manila-tag"],
+      "why": "A sitting pet with a collar tag and a care card: the most clickable, least morbid image in the set."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-10.4",
+      "title": "Where to Keep Important Documents: Could Someone Pick This Up and Know What to Do?",
+      "archetype": "in-this-order",
+      "content": {
+        "items": ["Someone needs to know who to contact.", "Someone needs to find the important paperwork.", "Someone needs to understand what is coming in and going out.", "Someone needs to get to your accounts and devices.", "Someone needs to know what you would want.", "One thing may still be unclear to somebody else."],
+        "source": "handoff.ts HANDOFF_SCENARIOS need and describeHandoff(); screen creative/public/screens/personal-life-affairs-companion-affairs.png (Handoff Check panel)"
+      },
+      "headline": "Could Someone Pick This Up and Know What to Do?",
+      "sub": "The Handoff Check looks at what you have recorded the way a stranger would.",
+      "props": ["contact-chain", "brass-check", "phone-frame"],
+      "why": "Scenario cards with brass checks on the clear ones and a count line, never a percentage, as the product does."
+    },
+    {
+      "account": "draftpace", "id": "ple/pin-10.5",
+      "title": "In Case of Emergency: Start With Your Own",
+      "archetype": "shelf-book",
+      "content": {
+        "items": ["I've been sorting out my own paperwork, and I realized no one would know where any of it is. Have you done yours?", "Where the will is, not what it says. Which bank, not the balance."],
+        "source": "src/content/guides.ts, talking-to-your-parents-about-their-affairs, scripts 'Ways to open the conversation' (Start with yourself) and section 'Ask for locations, not contents'"
+      },
+      "headline": "Start With Your Own",
+      "sub": "Doing your own is the easiest way to start the conversation with a parent about theirs.",
+      "props": ["bookshelf", "emergency-book"],
+      "why": "Your own book already on the shelf, with the opening line on a paper card beside it."
+    },
+
+    {
+      "account": "maple", "id": "Pin-mm-personal-life-affairs-companion-01",
+      "title": "If Something Happens to Me File: Done One Question at a Time",
+      "archetype": "shelf-book",
+      "content": {
+        "items": ["My Affairs", "105 questions answered in a sentence, one at a time, only where they apply to you"],
+        "source": "printables/document.tsx (title); src/shop/products/personal-life-affairs-companion.ts inclusions[1]"
+      },
+      "headline": "The 'if something happens to me' file, one question at a time",
+      "sub": "105 questions, and only the ones that apply to you.",
+      "props": ["bookshelf", "emergency-book"],
+      "why": "Names the file people search for and shows it as a finished book."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-personal-life-affairs-companion-02",
+      "title": "In Case of Emergency Binder: Start With What Matters Most",
+      "archetype": "where-not-what",
+      "content": {
+        "items": ["Tag: Where is it kept?", "Tag: Copy also held by", "Line: A will nobody can find does nothing at all."],
+        "source": "captures.ts paperwork.will-exists (prompt and hint); printables/document.tsx field label copyHeldBy; affairsKnowledge.ts paperwork.will-exists why"
+      },
+      "headline": "Would anyone know where your will is?",
+      "sub": "Where the will is, who decides, who to call: raised first.",
+      "props": ["will-envelope", "manila-tag", "phone-frame"],
+      "why": "The will envelope with a blank 'copy also held by' tag; workspace screen kept small as on the original split."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-personal-life-affairs-companion-03",
+      "title": "ICE Binder Checklist: The 3 Things to Write Down First",
+      "archetype": "inside-the-binder",
+      "content": {
+        "items": ["Where the will is", "Who decides, and who to call", "Who's named on the forms that override it"],
+        "source": "creative/pinterest/maple-main-finds.ts points (from listing problemsSolved[1]); 'Who decides, and who to call' = AFFAIR_AREA_LABEL.people"
+      },
+      "headline": "ICE binder: the three things that matter most",
+      "sub": "Before the folder of everything.",
+      "props": ["ring-binder", "tab-dividers"],
+      "why": "Only three tabs on a binder built for many: a 'start here' binder."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-personal-life-affairs-companion-04",
+      "title": "Getting Your Affairs in Order When You Don't Know Where to Start",
+      "archetype": "one-question",
+      "content": {
+        "items": ["Who decides, and who to call", "Let us start with one thing.", "Write down who should be called first.", "About 2 minutes", "Start / Not relevant to me / Later"],
+        "source": "creative/public/screens/personal-life-affairs-companion-workspace.png; affairsKnowledge.ts people.emergency-contact (instruction, minutes 2)"
+      },
+      "headline": "POV: you've meant to sort this out for six years",
+      "sub": "One small question on screen at a time, chosen for you.",
+      "props": ["question-card", "phone-frame"],
+      "why": "The POV is answered by the real first step at its real two minutes."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-personal-life-affairs-companion-05",
+      "title": "Printable Life Binder Your Family Can Use Without a Login",
+      "archetype": "shelf-book",
+      "content": {
+        "items": ["If you need to.", "Someone needs to know who to contact.", "Someone needs to find the important paperwork.", "Someone needs to look after your animals.", "Opens on 'if you need to' / In your own words / Most urgent first / Usable without a login"],
+        "source": "printables/document.tsx 'If you need to' page; handoff.ts HANDOFF_SCENARIOS; maple-main-finds.ts points"
+      },
+      "headline": "Print a book your family can actually use",
+      "sub": "In your words, most urgent first.",
+      "props": ["open-book-page", "emergency-book"],
+      "why": "Open variant: the first page a family member would see."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-personal-life-affairs-companion-06",
+      "title": "Beneficiary vs Will: Why Your Forms May Override Your Will",
+      "archetype": "the-name-line",
+      "content": {
+        "items": ["Who is named to receive it?", "This form usually overrides a will, which is why it is worth knowing."],
+        "source": "captures.ts CAPTURE_SPECS money.pensions (namedToReceive prompt and hint)"
+      },
+      "headline": "Your beneficiary forms can override your will",
+      "sub": "It asks who's named on yours, early.",
+      "props": ["beneficiary-form", "will-envelope"],
+      "why": "Form over will, the name line in brass: the myth-buster at a glance."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-personal-life-affairs-companion-07",
+      "title": "Keep Your Emergency Binder Up to Date Without Starting Over",
+      "archetype": "one-question",
+      "content": {
+        "items": ["Still true", "Update it", "A record of every change, so you can still see what it used to say"],
+        "source": "components/WorkspaceModule.tsx button labels; listing inclusions[9]; screen creative/public/screens/personal-life-affairs-companion-affairs.png"
+      },
+      "headline": "Wrote it all down once, years ago?",
+      "sub": "It comes back and asks whether it's still true.",
+      "props": ["question-card", "answer-chips", "phone-frame"],
+      "why": "The returning entry as a question card with the two real buttons, on the real Affairs screen."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-personal-life-affairs-companion-08",
+      "title": "Life Changes That Mean You Should Update Your Paperwork",
+      "archetype": "still-true",
+      "content": {
+        "items": ["I moved", "I separated or divorced", "Someone I named has died"],
+        "source": "lifeEvents.ts LIFE_EVENTS labels (the three Maple points)"
+      },
+      "headline": "Life changes that make your paperwork wrong",
+      "sub": "Nine life events, each bringing forward what it changed.",
+      "props": ["calendar-strip", "life-event-stamps"],
+      "why": "Three stamps on a timeline; the sub carries the nine."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-personal-life-affairs-companion-09",
+      "title": "Could Your Family Manage Your Affairs? A Handoff Check",
+      "archetype": "in-this-order",
+      "content": {
+        "items": ["Someone needs to know who to contact.", "Someone needs to find the important paperwork.", "Someone needs to understand where you live.", "Someone needs to get to your accounts and devices.", "Someone needs to look after the people who rely on you."],
+        "source": "handoff.ts HANDOFF_SCENARIOS need"
+      },
+      "headline": "Could someone else actually handle it if they had to?",
+      "sub": "A handoff check, scenario by scenario.",
+      "props": ["contact-chain", "brass-check"],
+      "why": "Scenario by scenario, drawn as a chain; the original was a POV."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-personal-life-affairs-companion-10",
+      "title": "Life Admin Binder That Skips Everything That Doesn't Apply",
+      "archetype": "inside-the-binder",
+      "content": {
+        "items": ["People", "Important documents", "Money", "Digital life", "Important instructions", "46 things, in order"],
+        "source": "affairsKnowledge.ts AFFAIR_DOMAIN_LABEL (Home, Pets and dependants, Business shown as gaps); maple-main-finds.ts points; listing inclusions[0]"
+      },
+      "headline": "A life admin binder minus the pages that aren't you",
+      "sub": "A simpler life makes a shorter binder.",
+      "props": ["ring-binder", "tab-dividers"],
+      "why": "Gaps in the tabs are the 'minus'."
+    }
+  ]
+}

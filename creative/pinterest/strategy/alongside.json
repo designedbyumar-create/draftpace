@@ -1,0 +1,557 @@
+{
+  "product": "alongside",
+  "productName": "ADHD Life Companion",
+  "accent": { "base": "#86586a", "strong": "#5f3d4b", "soft": "#f1e7eb", "wash": "#f7f1f3", "appBg": "#f4f0f1", "source": "src/products/alongside/definition.ts theme.accentScale" },
+  "audience": [
+    "adults with ADHD, or executive function that works like it, who have tried planners and to-do apps and ended up feeling more behind",
+    "people with brain fog from long covid, a concussion, chronic illness, grief, new parenthood, menopause or depression, for whom holding a plan in their head has stopped working (named in the listing audience)",
+    "the person who has been avoiding a phone call for three weeks and saves phone-anxiety scripts and 'what to say' cards",
+    "the person with a bag or drawer of unopened mail (a doom pile) who searches paperwork organization and mail organization",
+    "people who save gentle, no-guilt systems: 'weekly reset for a bad week', 'planner that does not punish a missed day'"
+  ],
+  "visualWorld": {
+    "setting": "A real home-admin corner seen from above or straight on: a desk or kitchen counter with the unopened mail pile, a phone that has to make a call, a laptop with the email that has not been sent, sticky notes, an index card holding the one next step, a wall calendar with one circled date. Flat, warm, slightly cluttered at the edges and calm in the middle, because every pin moves from many things to one thing. The product appears as itself: a phone showing one Companion question at a time, or one of the three real screens.",
+    "props": [
+      { "id": "mail-pile", "draw": "Doom pile: 6 to 9 overlapping rectangles at -15 to +20 degrees. Kraft tan and off-white envelopes, each with a V flap (two lines meeting at the centre), some with a pale window rectangle, one with a small stamp square. A soft flat ellipse shadow under the pile. No legible words on the envelopes." },
+      { "id": "mail-bag", "draw": "Paper shopping bag by a door: a trapezoid in kraft tan with two thin arc handles, 4 to 5 envelope tops poking out at angles. Door suggested by one tall rounded rectangle edge and a circle knob." },
+      { "id": "sorted-stacks", "draw": "Three (or four) neat stacks of 3 to 4 envelopes each, edges offset by 4px so the stack reads, each sitting on a rounded-rect label tab in the accent soft colour. Labels are set in type, not drawn." },
+      { "id": "kitchen-timer", "draw": "A round dial (circle, 2px ink stroke) with a small knob rectangle on top and a pie wedge filled in accent showing ten minutes of the face. One tick label '10' at most. Guide pins only: the product does not have a timer (time-blindness-planning guide says so)." },
+      { "id": "sticky-note", "draw": "A square with a slightly curled bottom-right corner (a darker triangle fold) and a 2-degree rotation. Butter yellow (the existing pop hsl(43 92% 70%)), blush, or accent soft. Text set in a handwriting font, 1 to 3 short lines." },
+      { "id": "sticky-note-wall", "draw": "A monitor (rounded rectangle on a short neck and oval foot) covered edge to edge with 9 sticky notes at random small rotations, overlapping each other and the screen bezel, each with one or two words from the real list." },
+      { "id": "index-card", "draw": "A cream 5:3 rectangle with one accent rule across the top and four pale grey ruled lines. Holds exactly one step in handwriting. A small drop shadow so it lifts off the clutter behind it." },
+      { "id": "script-card", "draw": "An index card with a small tab on the top edge, a tiny phone or envelope glyph in the corner, large curly quotation marks in accent, and the real opening line in serif. Can be paper-clipped (two nested rounded loops) to the phone or notepad." },
+      { "id": "card-file-box", "draw": "Recipe-box style: a front panel trapezoid in accent strong, with 8 index cards fanned upward behind it, each with a staggered tab carrying one playbook title." },
+      { "id": "notepad", "draw": "A spiral notepad: tall rectangle, a row of 10 small circles along the top for the spiral, pale horizontal rules, checkbox squares down the left with hand-drawn tick strokes (one quadratic curve each). Text in handwriting font." },
+      { "id": "clipboard", "draw": "Rounded board rectangle in kraft, a clip at the top (rounded rectangle with a circle cut-out), holding a notepad page." },
+      { "id": "phone-outgoing-call", "draw": "Phone outline (rounded rectangle, notch pill), screen with a circle avatar, two concentric arcs radiating to suggest ringing out, and two round buttons at the bottom (accent and muted). No invented words on screen." },
+      { "id": "phone-frame", "draw": "The existing device frame (creative/src/visual/Phone.tsx) holding either a real screen from creative/public/screens/ (alongside-workspace.png, alongside-help.png, alongside-life.png) or a drawn single Companion step card." },
+      { "id": "step-card", "draw": "A drawn Companion step, clearly an illustration and not a fake screenshot: a rounded card on the product surface colour, the prompt in serif, a one-line 'why' in small grey sans, and choice pills (rounded rectangles, one filled with accent). Every string comes from the playbook file named on the pin." },
+      { "id": "countdown", "draw": "The numerals 5 4 3 2 1 and 'Go' in accent, decreasing in size and opacity left to right, matching the product's real Call now countdown (ReadyStep.tsx, READY_COUNTDOWN_START = 5)." },
+      { "id": "lock-screen", "draw": "Phone on a nightstand: phone rectangle with a dark screen, one notification bubble (rounded rectangle, white at 90%) with two lines of real copy, a crescent moon glyph for quiet hours. The nightstand is a flat rectangle with a drawer line and knob." },
+      { "id": "settings-toggles", "draw": "Three rows, each a label in sans and a pill switch (rounded track, circle thumb); the first one on (accent track), the others off." },
+      { "id": "email-compose", "draw": "A laptop-style window: rounded rectangle with a title bar and three dots, two grey bars for To and Subject, the body with real text or just 'Hi,' and a vertical cursor bar in accent, and a Send pill bottom-left." },
+      { "id": "wall-calendar", "draw": "A month grid (7 by 5 squares) under a header band with two binder rings. One date circled with a hand-drawn loop in accent; optionally a sticky note attached to that square." },
+      { "id": "analog-clock", "draw": "Circle face, 12 short ticks, two hands set to 3:30 (the guide's exact time), a centre dot in accent." },
+      { "id": "planner-open", "draw": "A two-page spread: left page with three days of dense scribble lines (abstract, not words), right page with one fully empty day box, ribbon bookmark hanging off the bottom. Envelopes from mail-pile overlapping one corner." },
+      { "id": "planner-shelf", "draw": "5 to 6 book spines of different heights and colours on a shelf line, each with a band or ribbon, one leaning; the point is several bought, none finished. No brand names." },
+      { "id": "folder", "draw": "Manila folder: rectangle with a tab on top, two sheets peeking out at an angle, a sticky note on the front." },
+      { "id": "letter-face-down", "draw": "The back of an envelope: rectangle with the four flap lines meeting at the centre, lying on the desk at a slight angle." },
+      { "id": "glass-of-water", "draw": "A trapezoid glass with a light blue fill to two thirds, a white highlight stroke, and a small ellipse for the rim." },
+      { "id": "bookmark-ribbon", "draw": "An accent ribbon with a notched V tail, hanging off a card or page to mark the exact place." },
+      { "id": "life-trays", "draw": "Four shallow stacked letter trays (parallelograms with a front lip), each with a label tab carrying one of the four life shapes." },
+      { "id": "desk-surface", "draw": "A flat top-down surface band in the product appBg with a subtle darker edge line; props cast short flat shadows (ellipses at 8% ink)." },
+      { "id": "laptop-closed", "draw": "A closed laptop seen from above: rounded rectangle with a slightly darker hinge edge, a sticky note on the lid, a key ring (two circles and a key shape) beside it." },
+      { "id": "marks", "draw": "Hand-drawn editing marks in accent or ink: a strike-through line with a slight wobble, a circle loop, a tick. Used to cross out the 'not that' side and circle the 'this' side." },
+      { "id": "thought-bubble", "draw": "Cloud shape built from 5 overlapping circles, trailing two small circles toward the thinker point." },
+      { "id": "streak-flame-percent", "draw": "A flame shape and a progress ring arc with a percent glyph, each struck through with a marks strike. Used only to say the product has none of them." },
+      { "id": "fog", "draw": "Three to four soft overlapping circles at 30 to 40% opacity in the accent wash, drifting across the top of a scene." }
+    ],
+    "palette": "Ground: the product's own blush-grey (appBg #f4f0f1, wash #f7f1f3, paper #fcfafb), so pins stay light, which is what most top pins share. Ink #241e21 for type. Mulberry accent #86586a (strong #5f3d4b) only for the one thing: the circled date, the ticked box, the chosen card, the opening-line quote marks. Paper props carry the warmth: butter sticky notes (the existing pop hsl(43 92% 70%)), kraft envelope tan, cream index cards, a little blush. No new brand colours: the accent stays the only saturated colour, so a pin reads as this product even in a grid of other ADHD pins.",
+    "mood": "Calm in the middle of the mess. Recognisable clutter at the edges (the pile, the wall of notes, the phone you are avoiding) and one clear, kind thing in the centre (one card, one line, one date). Never shaming, never 'productivity hack' loud, no red warning colours, no lateness marks on the product's own side.",
+    "type": "Headline in Newsreader (already used), UI strings in IBM Plex Sans as the product uses them, and handwritten text on sticky notes, notepads and index cards. The creative engine has no handwriting font today (creative/public/fonts has Inter and Space Mono only), so one OFL handwriting face (for example Caveat or Patrick Hand from Google Fonts) needs adding before archetypes C, D and F can be rendered as described."
+  },
+  "archetypes": [
+    {
+      "id": "opening-line-card",
+      "name": "The opening line card",
+      "clicks": "Phone-anxiety advice consistently says the opening is the hardest part and to write it word for word (EWU), and printable point-form script cards are a known save format in this exact niche (Life Skills Advocate's 'Before You Call' card). A pin that hands over the actual sentence is useful at a glance, which is what gets saved for later.",
+      "layout": "1000x1500. Top 0-330: headline in Newsreader, 64-76px, left-aligned with 72px side margins, max 3 lines. 360-1060: the script card, 820x520, rotated -2 degrees, centred, the real line in serif 42-48px inside large accent quote marks; behind its top-right corner, overlapping by 80px, the phone-outgoing-call or email-compose prop at 40% of card size. 1090-1240: sub line (one real line) in sans 30px, plus up to two small 'have in front of you' chips if the pin uses them. 1300-1440: product line (name and price, or 'Free guide'); small logo top-left, never bottom-right.",
+      "visual": "One index card with the real first sentence, paper-clipped to a ringing phone or stuck to an email window. For the eight-playbook pin, the card-file-box with eight tabbed cards.",
+      "text": "The opening line is copied verbatim from the playbook's suggestedWording (src/products/alongside/playbooks/*.ts) or, on guide pins, from the guide's scripts block in src/content/guides.ts. Situation labels come from the playbook's choices.",
+      "bestFor": "Phone calls you avoid, saying no, first line of an email, chasing a reply, the 'scripts for hard calls' Maple pin."
+    },
+    {
+      "id": "pile-sort",
+      "name": "Doom pile to piles",
+      "clicks": "'Doom pile' (Didn't Organize, Only Moved) is established ADHD vocabulary (ADDitude, Psychology Today) and sort-into-categories methods like the doom diamond spread as practical how-tos (Apartment Therapy). A before-and-after transformation in one image shows the method working without reading, which suits a 1-second scroll.",
+      "layout": "1000x1500. Top 0-300: headline. 300-760: the mess, a wide mail-pile (or brain-dump scraps) drawn large and slightly cropped by the left and right edges so it feels too big. 760-840: a hand-drawn accent arrow or three short arrows fanning down. 840-1220: three or four neat stacks or trays side by side, each with a label tab in type, the 'act on this' stack ringed in accent. 1230-1290: sub line. 1310-1440: product line.",
+      "visual": "Unopened mail (or loose notes) becoming labelled stacks; for the product pin, the loose things drop into the four life-trays.",
+      "text": "Stack labels from the pin's own description or the linked guide; for the product, the four KIND_LABEL names in src/products/alongside/life.ts.",
+      "bestFor": "Paperwork and mail pins, the weekly reset (pull one thing out of the pile), 'what it holds' brain-dump pin."
+    },
+    {
+      "id": "sticky-note-wall-to-one-card",
+      "name": "Sticky notes on the thing",
+      "clicks": "Visible sticky notes are the most common ADHD advice for keeping a task in sight (Focus Bear, URMC: 'get options out of your head and onto paper or sticky notes'), and Pinterest's 2026 forecast reports renewed interest in handwriting. A handwritten note stuck on a real object is instantly recognisable as 'my desk' to this audience.",
+      "layout": "1000x1500. Top 0-280: headline. 280-1100: one object drawn large (monitor, laptop lid, phone, folder, mail pile) with sticky notes on it. Variant 'too many': 6-9 notes covering the object, with one index card held in front at 1.15 scale, centred at y 860. Variant 'one note': a single sticky note at 1.6 scale, centred, its words readable at thumbnail size (min 44px handwriting). 1120-1260: sub line. 1300-1440: product line.",
+      "visual": "The real list on notes (from the guide), or the one real next step on one note, stuck where you will pass it.",
+      "text": "Note contents are copied from guide examples (first-physical-step, task paralysis, to-do lists, restart, planners, time blindness) or from the pin's own Maple points.",
+      "bestFor": "To-do lists, task paralysis, leave yourself a note, 'later today is not a time', planners."
+    },
+    {
+      "id": "notepad-checklist",
+      "name": "The notepad checklist",
+      "clicks": "Checklists and how-tos are the formats Pinterest business users most often report earning saves and clicks (Pinterest Business Community), and they are the save-for-later format by nature: the pin is the tool. Brain-dump worksheets are a whole printable category in this niche (Etsy, Gumroad, Payhip).",
+      "layout": "1000x1500. Top 0-300: headline. 300-1180: a notepad or clipboard, 760px wide, rotated 1.5 degrees, with 3 to 4 items in handwriting 38-44px, each with a checkbox; ticks drawn in accent; a prop at the pad's lower edge (glass of water, folder, small phone) overlapping by 60px to say where this happens. 1200-1270: sub line. 1300-1440: product line. Keep to 4 items: more becomes unreadable on mobile.",
+      "visual": "A spiral notepad page with real items, three or four, some ticked.",
+      "text": "Items verbatim from a playbook's prepare/check items or step prompts, or from the guide list the pin links to. Never more items than the source has.",
+      "bestFor": "What to have ready, the three checks before sending, three questions, a system for bill dates, the Maple '3 ways' list."
+    },
+    {
+      "id": "companion-step-phone",
+      "name": "One question on the phone",
+      "clicks": "Shop-link pins need to show what the thing is. A real or faithfully drawn app screen tells the viewer this is a tool, not another $2 printable (brain-dump printables sell for a few dollars on Etsy, which is the comparison the listing wants to avoid). One question per screen also proves the product's promise in the picture itself.",
+      "layout": "1000x1500. Top 0-300: headline. 300-1180: phone-frame, 470px wide, centred or offset right to x 560 with one supporting prop on the left (bookmark ribbon, calendar, clock, fog). Inside: either a real screen from creative/public/screens/ (crop out the Next.js dev 'N' badge at bottom-left, it is in all three captures) or a drawn step-card with real strings. 1200-1270: sub line. 1300-1440: product line with the real price from the listing.",
+      "visual": "One Companion step on a phone: the question, the why line, and the choices, one of them in accent.",
+      "text": "Prompts, whys, choices and placeholders from the playbook files; outcome labels from OUTCOME_OPTIONS in src/components/product-shell/companion/steps.ts; ready-step strings from src/components/product-shell/companion/ReadyStep.tsx; quiet line from src/products/alongside/attention.ts.",
+      "bestFor": "Pins that link to /shop/alongside and describe a specific behaviour of the app."
+    },
+    {
+      "id": "pov-desk-scene",
+      "name": "The relatable scene",
+      "clicks": "Relatable 'POV' and 'tell me without telling me' framing is how this niche talks about itself, and the Maple account already uses it. A wordless scene of the face-down letter, the planner under the post, or the draft rewritten four times gets the 'that's me' recognition that drives saves, with the headline doing the talking.",
+      "layout": "1000x1500. Top 0-360: headline, larger than other archetypes (76-88px) because the scene carries no text; for Maple POV pins, inside a speech bubble. 360-1180: a full-width scene, top-down or straight-on, with 4 to 6 props and one small accent detail that resolves it (an index card, a bookmark, a notification). 1200-1270: sub line. 1300-1440: product line.",
+      "visual": "A specific domestic moment from the guide's own 'say it's...' example, drawn wordlessly.",
+      "text": "Only the headline, the sub, and at most one short real string inside the scene.",
+      "bestFor": "Guide pins that open with a scenario, Maple POV pins, the missed-week and planner pins, lock-screen reminder pin."
+    },
+    {
+      "id": "this-not-that",
+      "name": "Two columns: this, not that",
+      "clicks": "Side-by-side 'instead of / try' comparisons let a viewer get the whole idea in one look and are a common shape for ADHD tips. Measured data on comparison pins is thin (see the brief), but the guides already contain real two-column material, so the format costs nothing to try and contrasts well with the other archetypes in a feed.",
+      "layout": "1000x1500. Top 0-280: headline. 300-340: two column labels in sans caps, left muted, right accent. 360-1180: two columns 410px wide with a 40px gutter; left items struck through with marks, right items circled or ticked; one small prop at the head of each column (sticky note vs clock, page stack vs bookmark). 1200-1270: sub line. 1300-1440: product line.",
+      "visual": "Crossed-out vague version on the left, the concrete version on the right.",
+      "text": "Both columns copied from a guide table or compare block (time-blindness 'Vague versus exact', weekly reset 'Two kinds of reset', first-physical-step tables) or from the ready step's two real buttons.",
+      "bestFor": "Time blindness, first physical step, weekly reset, call now or name a time, planners that grade you."
+    }
+  ],
+  "pins": [
+    {
+      "account": "draftpace", "id": "adhd/pin-4.3",
+      "title": "Paperwork Organization: Three Piles for Any Paperwork Mountain",
+      "archetype": "pile-sort",
+      "content": { "items": ["A person", "A date", "Nobody"], "source": "Pin's own description (creative/pinterest/draftpace/wave2.csv): 'Sort the mail by who is waiting. A person, a date, or nobody.'; pile meanings in src/content/guides.ts how-to-start-when-everything-is-overdue ('A person is waiting', 'A date is attached', 'No one is waiting')" },
+      "headline": "Three Piles for Any Paperwork Mountain",
+      "sub": "Sort the mail by who is waiting.",
+      "props": ["mail-pile", "sorted-stacks", "kitchen-timer"],
+      "why": "The doom pile turning into three labelled stacks is the method in one picture; the timer is the description's 'It takes ten minutes'."
+    },
+    {
+      "account": "draftpace", "id": "adhd/pin-4.4",
+      "title": "ADHD Organization: Pick Something Back Up Without Rebuilding It in Your Head",
+      "archetype": "companion-step-phone",
+      "content": { "items": ["How long has it been?", "Where did you get to?", "Was anything missing last time?", "What is the smallest piece you could do next?", "Two of the four rooms are done"], "source": "src/products/alongside/playbooks/resumeSomethingAbandoned.ts steps how-long, state (with its placeholder), missing, smallest" },
+      "headline": "Pick Something Back Up Without Rebuilding It in Your Head",
+      "sub": "Written here, so next time you see it instead of working it out again.",
+      "props": ["phone-frame", "step-card", "folder", "bookmark-ribbon"],
+      "why": "Shows the real Pick something back up questions, one card on screen and the others stacked behind it."
+    },
+    {
+      "account": "draftpace", "id": "adhd/pin-4.5",
+      "title": "How to Organize Mail: You Do Not Have to Do the Whole Pile",
+      "archetype": "sticky-note-wall-to-one-card",
+      "content": { "items": ["Open the top five items and do nothing else"], "source": "src/content/guides.ts first-physical-step-20-examples, 'Home and clutter' table, row 'Sort the mail pile'" },
+      "headline": "You Do Not Have to Do the Whole Pile",
+      "sub": "The pile does not need to be finished today. It needs to be started.",
+      "props": ["mail-pile", "sticky-note", "kitchen-timer"],
+      "why": "One big sticky note on top of the pile with the real first step makes 'started, not finished' visible."
+    },
+    {
+      "account": "draftpace", "id": "adhd/pin-5.1",
+      "title": "How to Say No, or Give Bad News, on the Phone",
+      "archetype": "pov-desk-scene",
+      "content": { "items": ["What I want to be true", "What I won't agree to", "First sentence"], "source": "src/content/guides.ts how-to-say-no-or-give-bad-news-on-the-phone, table 'Example: saying no to a favor', column one labels" },
+      "headline": "How to Say No, or Give Bad News, on the Phone",
+      "sub": "Some calls are hard because of what you have to say.",
+      "props": ["desk-surface", "phone-outgoing-call", "notepad", "glass-of-water"],
+      "why": "The desk before a hard call: phone, water, and a page with the guide's three headings ready to fill."
+    },
+    {
+      "account": "draftpace", "id": "adhd/pin-5.2",
+      "title": "Difficult Conversations: Decide What You Will Not Agree To Before You Dial",
+      "archetype": "companion-step-phone",
+      "content": { "items": ["Is there anything you are not willing to agree to?", "Deciding this now means you are not deciding it while somebody waits on the line.", "What you want", "What you will not agree to"], "source": "src/products/alongside/playbooks/makeADifficultPhoneCall.ts step 'line' (prompt, why) and step 'during' recall labels" },
+      "headline": "Decide What You Will Not Agree To Before You Dial",
+      "sub": "It never tells you what to accept or refuse.",
+      "props": ["phone-frame", "step-card"],
+      "why": "The real step on screen, with the two recall labels shown as the 'held during the call' panel."
+    },
+    {
+      "account": "draftpace", "id": "adhd/pin-5.3",
+      "title": "Phone Anxiety Tips: What to Have Ready Before a Hard Call",
+      "archetype": "notepad-checklist",
+      "content": { "items": ["What you want to be true, written where you can see it", "A glass of water within reach", "Somewhere you will not be overheard", "Two times you could call back, if now turns out to be wrong"], "source": "src/products/alongside/playbooks/makeADifficultPhoneCall.ts step 'prepare' items (same items in the pin description)" },
+      "headline": "What to Have Ready Before a Hard Call",
+      "sub": "Small things that make a hard call easier to start.",
+      "props": ["notepad", "glass-of-water", "phone-outgoing-call", "desk-surface"],
+      "why": "A checklist pin is the saveable version of the description; each item is also a drawable object beside the pad."
+    },
+    {
+      "account": "draftpace", "id": "adhd/pin-5.4",
+      "title": "How to Say No: Ready to Call? Now, or Name One Exact Time",
+      "archetype": "this-not-that",
+      "content": { "items": ["Ready to call?", "Call now", "5 4 3 2 1 Go", "Not now", "What time today?", "That is the plan"], "source": "src/products/alongside/playbooks/makeADifficultPhoneCall.ts step 'ready' prompt; src/components/product-shell/companion/ReadyStep.tsx (button labels, READY_COUNTDOWN_START = 5, 'Go', input label, confirm button)" },
+      "headline": "Ready to Call? Now, or Name One Exact Time",
+      "sub": "Either answer is a real answer.",
+      "props": ["countdown", "analog-clock", "marks"],
+      "why": "Two columns, both kept (no strike-through here): the real countdown on the left, the real time question on the right."
+    },
+    {
+      "account": "draftpace", "id": "adhd/pin-5.5",
+      "title": "How to Say No: An Opening Line for Saying No",
+      "archetype": "opening-line-card",
+      "content": { "items": ["Hi, I've thought about it and I'm not going to be able to do it. I wanted to tell you rather than leave you waiting."], "source": "src/content/guides.ts how-to-say-no-or-give-bad-news-on-the-phone, scripts 'The first two sentences', situation 'Saying no' (same line in makeADifficultPhoneCall.ts suggestedWording for saying-no)" },
+      "headline": "An Opening Line for Saying No",
+      "sub": "Getting the first sentence out is most of it.",
+      "props": ["script-card", "phone-outgoing-call"],
+      "why": "The pin's promise is a sentence, so the sentence is the picture."
+    },
+    {
+      "account": "draftpace", "id": "adhd/pin-6.1",
+      "title": "How to Write the Email You Have Been Avoiding",
+      "archetype": "sticky-note-wall-to-one-card",
+      "content": { "items": ["Hi,", "What it's for", "Who it's to", "What needs to happen"], "source": "src/content/guides.ts the-email-you-keep-not-sending-and-how-to-chase-a-reply: opening paragraph ('write \"Hi,\", and close it again') and table 'Example: an email that's been avoided for a week', column 'The decision'" },
+      "headline": "How to Write the Email You Have Been Avoiding",
+      "sub": "An email that does not say what it wants gets answered slowly, or not at all.",
+      "props": ["email-compose", "sticky-note", "marks"],
+      "why": "The avoided email is a compose window stuck at 'Hi,'; three sticky notes on the screen edge are the three decisions."
+    },
+    {
+      "account": "draftpace", "id": "adhd/pin-6.2",
+      "title": "The First Line of an Email Is the Hard Part",
+      "archetype": "opening-line-card",
+      "content": { "items": ["Hello, I am hoping you can help me with something.", "Asking for something", "Replying to something", "Saying no", "Chasing something up", "Explaining a problem"], "source": "src/products/alongside/playbooks/sendTheEmail.ts step 'opening' suggestedWording (asking) and step 'purpose' choices" },
+      "headline": "The First Line of an Email Is the Hard Part",
+      "sub": "The rest is usually easier once the first line exists.",
+      "props": ["email-compose", "script-card"],
+      "why": "The real suggested first line on a card clipped to the compose window, with the purpose chips beneath."
+    },
+    {
+      "account": "draftpace", "id": "adhd/pin-6.3",
+      "title": "How to Write a Hard Email: Before You Send It: Three Checks",
+      "archetype": "notepad-checklist",
+      "content": { "items": ["What you want is in the first three lines", "The date, if there is one, is in there", "Anything you meant to attach is attached"], "source": "src/products/alongside/playbooks/sendTheEmail.ts step 'check' items 1-3 (also the guide's 'Before you send it' list)" },
+      "headline": "Before You Send It: Three Checks",
+      "sub": "Read it once against these, then send it.",
+      "props": ["notepad", "email-compose", "marks"],
+      "why": "Three ticked boxes is exactly the pin's promise and a classic save-for-later checklist."
+    },
+    {
+      "account": "draftpace", "id": "adhd/pin-6.4",
+      "title": "Follow Up Email Tips: How to Follow Up When Nobody Replied",
+      "archetype": "opening-line-card",
+      "content": { "items": ["Hello, I got in touch a little while ago about this and I have not heard back. Could you tell me where it has got to?", "How did you last get in touch?", "Phone", "Email or a message", "In person", "I cannot remember", "Ask for a date rather than an update"], "source": "src/products/alongside/playbooks/followUpWithSomeone.ts: step 'opening' suggestedWording (reply), step 'how' prompt and choices, step 'during' item 2" },
+      "headline": "How to Follow Up When Nobody Replied",
+      "sub": "Chasing by the same route that went unanswered is usually the slower option.",
+      "props": ["script-card", "email-compose", "phone-outgoing-call", "marks"],
+      "why": "The chase line on a card, with a dotted route from the unanswered envelope to the phone to show 'change the route'."
+    },
+    {
+      "account": "draftpace", "id": "adhd/pin-6.5",
+      "title": "Email Anxiety: Reading It a Fourth Time Does Not Make It Better",
+      "archetype": "pov-desk-scene",
+      "content": { "items": ["If you've changed the first line four times, send the fourth one."], "source": "src/content/guides.ts the-email-you-keep-not-sending-and-how-to-chase-a-reply, 'What can go wrong', item 1" },
+      "headline": "Reading It a Fourth Time Does Not Make It Better",
+      "sub": "The email you keep polishing is already good enough.",
+      "props": ["email-compose", "marks"],
+      "why": "A draft with three struck-out first lines (drawn as grey bars, no invented words) and the fourth circled next to Send."
+    },
+    {
+      "account": "draftpace", "id": "adhd/pin-7.1",
+      "title": "Task Paralysis: What to Do in the Next Ten Minutes",
+      "archetype": "sticky-note-wall-to-one-card",
+      "content": { "items": ["Sort out the insurance claim.", "Call the insurer.", "Find the letter with the claim number on it and put it next to the phone."], "source": "src/content/guides.ts task-paralysis-what-to-do-in-the-next-ten-minutes, 'Example: the same task, shrunk three times' (versions one to three)" },
+      "headline": "Task Paralysis: What to Do in the Next Ten Minutes",
+      "sub": "When you cannot start anything at all, the useful move is smaller than a plan.",
+      "props": ["sticky-note", "index-card", "kitchen-timer", "letter-face-down", "phone-outgoing-call"],
+      "why": "Three notes shrinking, the last one an index card next to the letter and the phone; the guide's ten-minute timer sits beside them."
+    },
+    {
+      "account": "draftpace", "id": "adhd/pin-7.2",
+      "title": "ADHD Task Paralysis: Which of Those Could Happen Today? One of Them, Not the List",
+      "archetype": "companion-step-phone",
+      "content": { "items": ["Which of those could happen today?", "One of them. Not the list.", "The first one", "The second one", "The third one", "None of them today"], "source": "src/products/alongside/playbooks/breakDownSomethingTooBig.ts step 'today' (prompt, why, choices)" },
+      "headline": "Which of Those Could Happen Today? One of Them, Not the List",
+      "sub": "None of them today is a fine answer.",
+      "props": ["phone-frame", "step-card", "index-card"],
+      "why": "The real step with 'The first one' chosen in accent; three index cards fanned behind the phone stand for the three steps."
+    },
+    {
+      "account": "draftpace", "id": "adhd/pin-7.3",
+      "title": "Task Paralysis Tips: The First Physical Step: Examples for Admin You Are Stuck On",
+      "archetype": "this-not-that",
+      "content": { "items": ["Sort out the insurance", "Decide what to do about the claim", "Find the policy letter and put it on the desk", "Book the dentist: Look up the phone number and write it down", "Call the landlord: Write what you'll say in one line", "Sort the mail pile: Open the top five items and do nothing else"], "source": "src/content/guides.ts first-physical-step-20-examples: table 'Example: the same task, three ways' (first two struck, third circled) and tables 'Calls' and 'Home and clutter'" },
+      "headline": "The First Physical Step: Examples for Admin You Are Stuck On",
+      "sub": "A first step is something you could see happen: a call, an email, a form, a document.",
+      "props": ["marks", "index-card", "phone-outgoing-call", "letter-face-down"],
+      "why": "Struck-out vague tasks on the left, visible first steps on the right: the guide's own test drawn."
+    },
+    {
+      "account": "draftpace", "id": "adhd/pin-7.4",
+      "title": "How to Get Started: Break Something Down in Three Questions",
+      "archetype": "notepad-checklist",
+      "content": { "items": ["What is the thing? / Sort out the spare room", "What would be true when it is finished? / The bed is usable and the boxes are gone", "What is the first physical step? / Ring the charity shop about collection"], "source": "src/products/alongside/playbooks/breakDownSomethingTooBig.ts steps thing, done, first (prompts and placeholders)" },
+      "headline": "Break Something Down in Three Questions",
+      "sub": "Big things stay big partly because nobody has said where they end.",
+      "props": ["notepad", "phone-frame"],
+      "why": "Questions printed, answers handwritten from the playbook's own placeholders; a small phone at the pad's corner says it is the app."
+    },
+    {
+      "account": "draftpace", "id": "adhd/pin-7.5",
+      "title": "ADHD Task Paralysis: Small Enough That Starting Is Not a Decision",
+      "archetype": "pov-desk-scene",
+      "content": { "items": ["Find the letter", "walk to the room where the letter is"], "source": "src/content/guides.ts task-paralysis-what-to-do-in-the-next-ten-minutes, 'Three ways to go smaller' item 1; scene from 'What it looks like from the inside' (the letter face down on the desk)" },
+      "headline": "Small Enough That Starting Is Not a Decision",
+      "sub": "When starting feels impossible, make the step smaller until it is not a decision.",
+      "props": ["desk-surface", "letter-face-down", "index-card", "marks"],
+      "why": "The face-down letter from the guide, with one index card where 'Find the letter' is struck and the smaller step written under it."
+    },
+    {
+      "account": "draftpace", "id": "adhd/pin-8.1",
+      "title": "How to Restart a Project You Gave Up On",
+      "archetype": "sticky-note-wall-to-one-card",
+      "content": { "items": ["Where did I get to? Form filled in to page 2.", "Was anything missing? The serial number.", "Smallest next piece: Open the door and photograph the serial number sticker."], "source": "src/content/guides.ts how-to-restart-a-project-you-gave-up-on, table 'Example: a restart note, filled in' (rows 1-3, trimmed to their first sentence)" },
+      "headline": "How to Restart a Project You Gave Up On",
+      "sub": "Restarting is harder than starting, for a specific reason.",
+      "props": ["folder", "sticky-note"],
+      "why": "A shut folder with the restart note stuck on the front is the guide's whole method."
+    },
+    {
+      "account": "draftpace", "id": "adhd/pin-8.2",
+      "title": "ADHD Unfinished Projects: Leave It Halfway and Come Back to the Exact Question",
+      "archetype": "companion-step-phone",
+      "content": { "items": ["Where you left off", "Where did you get to?", "Two of the four rooms are done"], "source": "src/components/product-shell/companion/CompanionRun.tsx eyebrow 'Where you left off'; src/products/alongside/playbooks/resumeSomethingAbandoned.ts step 'state' prompt and placeholder" },
+      "headline": "Leave It Halfway and Come Back to the Exact Question",
+      "sub": "Close a walkthrough partway and reopening it takes you back to the exact question.",
+      "props": ["phone-frame", "step-card", "bookmark-ribbon"],
+      "why": "A bookmark ribbon hanging out of the phone at the exact step makes 'keeps your place' literal."
+    },
+    {
+      "account": "draftpace", "id": "adhd/pin-8.3",
+      "title": "How to Restart a Project: Three Questions Before You Restart Something",
+      "archetype": "notepad-checklist",
+      "content": { "items": ["Where did you get to?", "Was anything missing last time?", "What is the smallest piece you could do next?"], "source": "Pin's own description (wave3.csv); same prompts in src/products/alongside/playbooks/resumeSomethingAbandoned.ts" },
+      "headline": "Three Questions Before You Restart Something",
+      "sub": "Three questions that replace rebuilding the whole thing in your head.",
+      "props": ["notepad", "folder"],
+      "why": "Numbered questions on a pad with blank lines to answer: a template the viewer can use without the product."
+    },
+    {
+      "account": "draftpace", "id": "adhd/pin-8.4",
+      "title": "ADHD Motivation: Start Again From the Beginning, or From Where You Left Off",
+      "archetype": "this-not-that",
+      "content": { "items": ["Start again from the beginning", "From where you left off", "A note you wrote when you stopped is what you see when you come back."], "source": "Pin title and description (wave3.csv)" },
+      "headline": "Start Again From the Beginning, or From Where You Left Off",
+      "sub": "A note you wrote when you stopped is what you see when you come back.",
+      "props": ["folder", "bookmark-ribbon", "sticky-note", "marks"],
+      "why": "Left: a tall stack of pages from page one, struck; right: the stack opened at the bookmark with the note on it."
+    },
+    {
+      "account": "draftpace", "id": "adhd/pin-8.5",
+      "title": "ADHD Unfinished Projects: Leave Yourself a Note for Next Time",
+      "archetype": "sticky-note-wall-to-one-card",
+      "content": { "items": ["I stopped after the school form, next is the dentist call."], "source": "src/content/guides.ts why-you-abandon-planners-and-how-to-come-back, timeline 'Write where you got to'; placement from 'Put it where you'll pass it' ('On the keys, on the kettle, on the laptop')" },
+      "headline": "Leave Yourself a Note for Next Time",
+      "sub": "A sentence about where you got to saves an hour later.",
+      "props": ["laptop-closed", "sticky-note"],
+      "why": "One handwritten note on a closed laptop, keys beside it: the note you will meet next time."
+    },
+    {
+      "account": "draftpace", "id": "adhd/pin-9.1",
+      "title": "A Weekly Reset That Survives a Bad Week",
+      "archetype": "this-not-that",
+      "content": { "items": ["Needs a good week: Reviews everything that happened / Plans the whole week / Breaks after one missed day / Leaves a catch-up job", "Survives a bad one: Looks at what's in front of you / Picks one thing / Reads the same after a missed week / Leaves nothing to catch up on"], "source": "src/content/guides.ts a-weekly-reset-that-survives-a-bad-week, compare block 'Two kinds of reset'" },
+      "headline": "A Weekly Reset That Survives a Bad Week",
+      "sub": "Most resets assume a normal week.",
+      "props": ["wall-calendar", "marks"],
+      "why": "The guide already has the two columns; struck left, ticked right."
+    },
+    {
+      "account": "draftpace", "id": "adhd/pin-9.2",
+      "title": "ADHD Weekly Reset: A Task App With a Button for \"Did Not Get to It\"",
+      "archetype": "companion-step-phone",
+      "content": { "items": ["How did it go?", "It is sorted", "Made progress", "Waiting on someone now", "There is something I need to do", "Did not get to it", "Something else"], "source": "src/components/product-shell/companion/steps.ts OUTCOME_OPTIONS labels; prompt from src/products/alongside/playbooks/makeAPhoneCall.ts step 'result'" },
+      "headline": "A Task App With a Button for \"Did Not Get to It\"",
+      "sub": "It does not change the item, add anything to its history, or count anything.",
+      "props": ["phone-frame", "step-card"],
+      "why": "The real outcome buttons with 'Did not get to it' in accent: the button the headline promises, shown."
+    },
+    {
+      "account": "draftpace", "id": "adhd/pin-9.3",
+      "title": "The Ten Minute Weekly Reset",
+      "archetype": "pile-sort",
+      "content": { "items": ["Book the dentist: This is the one. Put Tuesday on it.", "Reply to Sam about the deposit", "Library card expires", "Closet is a mess", "Parking ticket, unopened"], "source": "src/content/guides.ts a-weekly-reset-that-survives-a-bad-week, table 'Example: one ten minutes, filled in'; steps from the pin description 'Open the pile. Pick one thing. Put one date on it.'" },
+      "headline": "The Ten Minute Weekly Reset",
+      "sub": "Open the pile. Pick one thing. Put one date on it.",
+      "props": ["mail-pile", "sticky-note", "index-card", "wall-calendar", "kitchen-timer"],
+      "why": "Five things in a loose pile, one pulled out onto an index card with Tuesday circled on the calendar; the rest stay where they are."
+    },
+    {
+      "account": "draftpace", "id": "adhd/pin-9.4",
+      "title": "ADHD Planning System: Nothing Counted: How This App Treats a Missed Week",
+      "archetype": "companion-step-phone",
+      "content": { "items": ["Nothing needs you right now", "Anything you have recorded is still here in Life."], "source": "src/products/alongside/attention.ts QUIET_LINE; src/products/alongside/components/NowView.tsx quiet-state line" },
+      "headline": "Nothing Counted: How This App Treats a Missed Week",
+      "sub": "A missed week does not pile up as a number.",
+      "props": ["phone-frame", "step-card", "wall-calendar"],
+      "why": "The quiet Now card on the phone beside a calendar whose missed week is simply blank, with no marks."
+    },
+    {
+      "account": "draftpace", "id": "adhd/pin-9.5",
+      "title": "ADHD Planning System: A System Has to Survive a Missed Week",
+      "archetype": "pov-desk-scene",
+      "content": { "items": ["It survives a missed week without extra work from you.", "It doesn't count or display what you didn't do, so a gap is invisible.", "You can put it down halfway and pick it up again where you stopped."], "source": "src/content/guides.ts why-you-abandon-planners-and-how-to-come-back, list 'What to look for in the next one' items 1, 2, 4; scene from 'Say it's the third week' (the blank Thursday, the book under a pile of post)" },
+      "headline": "A System Has to Survive a Missed Week",
+      "sub": "If a system only works when everything goes to plan, it will not last.",
+      "props": ["planner-open", "mail-pile"],
+      "why": "The guide's own scene: full Monday to Wednesday, empty Thursday, the book half under the post. The three criteria sit small below it."
+    },
+    {
+      "account": "draftpace", "id": "adhd/pin-10.1",
+      "title": "Why You Keep Missing Bill Due Dates, and a System That Does Not Rely on Remembering",
+      "archetype": "notepad-checklist",
+      "content": { "items": ["Put the date on the item.", "Choose the reminder yourself", "Look once a week at what has a date in the next few days.", "Pay the water bill"], "source": "src/content/guides.ts why-you-keep-missing-bill-due-dates, list 'A system that doesn't rely on remembering' items 4, 5 (leading phrase), 6; 'Pay the water bill' from item 4" },
+      "headline": "Why You Keep Missing Bill Due Dates",
+      "sub": "Forgetting is often not remembering too late, it is never reaching the moment.",
+      "props": ["notepad", "wall-calendar", "sticky-note"],
+      "why": "A short checklist next to a calendar with one circled date carrying the 'Pay the water bill' note. No amounts anywhere, matching the guide."
+    },
+    {
+      "account": "draftpace", "id": "adhd/pin-10.2",
+      "title": "Reminders You Switch On Yourself, Only for Dates You Chose",
+      "archetype": "pov-desk-scene",
+      "content": { "items": ["A reminder you set", "You said you would come back to something.", "Remind me on the date I chose", "Say what it is about", "Quiet hours"], "source": "src/products/alongside/reminders.ts (TITLE and the generic body); src/products/alongside/components/SettingsView.tsx toggle labels" },
+      "headline": "Reminders You Switch On Yourself, Only for Dates You Chose",
+      "sub": "Off unless you switch it on.",
+      "props": ["lock-screen", "settings-toggles"],
+      "why": "A phone on a nightstand with the real generic lock-screen notification and a moon for quiet hours; the three toggles sit beside it."
+    },
+    {
+      "account": "draftpace", "id": "adhd/pin-10.3",
+      "title": "ADHD Time Blindness: Planning When You Cannot Feel Time Pass",
+      "archetype": "this-not-that",
+      "content": { "items": ["I'll call later / I'll call at 3:30", "This afternoon / After lunch, at 2:00", "Sometime this week / Thursday at 10:00", "When I have a minute / Right after this meeting ends"], "source": "src/content/guides.ts time-blindness-planning, table 'Vague versus exact' rows 1-4" },
+      "headline": "Planning When You Cannot Feel Time Pass",
+      "sub": "Name one exact time.",
+      "props": ["sticky-note", "analog-clock", "marks"],
+      "why": "Vague phrases struck through on the left, exact times circled on the right, a clock at 3:30 heading the right column."
+    },
+    {
+      "account": "draftpace", "id": "adhd/pin-10.4",
+      "title": "ADHD Time Blindness: What Time Today? Name One Exact Time",
+      "archetype": "companion-step-phone",
+      "content": { "items": ["Ready to call?", "Not now", "What time today?", "That is the plan"], "source": "src/products/alongside/playbooks/makeAPhoneCall.ts step 'ready' prompt; src/components/product-shell/companion/ReadyStep.tsx (button, input label, confirm button)" },
+      "headline": "What Time Today? Name One Exact Time",
+      "sub": "When you are not ready to call now, name one exact time today.",
+      "props": ["phone-frame", "step-card", "analog-clock"],
+      "why": "The real 'What time today?' field on the phone with 'That is the plan' as the one accent button."
+    },
+    {
+      "account": "draftpace", "id": "adhd/pin-10.5",
+      "title": "ADHD Time Blindness: Later Today Is Not a Time",
+      "archetype": "sticky-note-wall-to-one-card",
+      "content": { "items": ["I'll call later", "I'll call at 3:30"], "source": "src/content/guides.ts time-blindness-planning, table 'Vague versus exact' row 1; placement from 'How to plan around it' item 2 ('a sticky note on the phone itself')" },
+      "headline": "Later Today Is Not a Time",
+      "sub": "A vague later is where things go missing.",
+      "props": ["sticky-note", "phone-outgoing-call", "analog-clock", "marks"],
+      "why": "One sticky note on the phone: 'later' struck through, '3:30' written under it, exactly where the guide says to put it."
+    },
+
+    {
+      "account": "maple", "id": "Pin-mm-alongside-01",
+      "title": "ADHD Phone Call Anxiety: Make the Call You Keep Avoiding",
+      "archetype": "opening-line-card",
+      "content": { "items": ["Hi, I am calling to ask about something. Is this the right team for that?", "Your account or reference number, if there is one", "A pen and something to write on, or this screen"], "source": "src/products/alongside/playbooks/makeAPhoneCall.ts step 'opening' suggestedWording (information/other) and step 'prepare' items 1-2" },
+      "headline": "For the phone call you've been avoiding for three weeks",
+      "sub": "It hands you an opening line and what to have in front of you. Then you dial.",
+      "props": ["script-card", "phone-outgoing-call", "sticky-note"],
+      "why": "The sub promises an opening line and a short list, so the pin shows exactly those two things."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-alongside-02",
+      "title": "ADHD Planner Alternative for When To-Do Lists Make It Worse",
+      "archetype": "sticky-note-wall-to-one-card",
+      "content": { "items": ["Taxes", "Dentist", "Car", "Mom's birthday", "Spare room", "Airline refund", "Email Priya", "Insurance", "Laundry", "screen: creative/public/screens/alongside-workspace.png"], "source": "src/content/guides.ts why-to-do-lists-make-it-worse, 'Example: one Tuesday list, before and after' (the nine rows); real Now screen from creative/public/screens/alongside-workspace.png" },
+      "headline": "To-do lists just make me feel more behind",
+      "sub": "A screen that says nothing needs you right now, on the days that's true.",
+      "props": ["sticky-note-wall", "phone-frame"],
+      "why": "The nine-note monitor is the to-do list that makes you feel behind; the phone in front shows the real Now screen holding one thing."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-alongside-03",
+      "title": "ADHD Task Paralysis Tips: 3 Ways to Start When You're Stuck",
+      "archetype": "notepad-checklist",
+      "content": { "items": ["Get help with one thing today, nothing to set up first", "Leave it half done. It remembers the exact question you stopped on", "Hear about it only on the date you set"], "source": "creative/pinterest/maple-main-finds.ts, this pin's points (each traces to the listing's problemsSolved and inclusions)" },
+      "headline": "3 ADHD-friendly ways to start when you're stuck",
+      "sub": "Small enough to do today.",
+      "props": ["notepad", "bookmark-ribbon", "wall-calendar"],
+      "why": "A numbered notepad list is the save-format for a '3 ways' pin; one small prop per line."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-alongside-04",
+      "title": "ADHD Unfinished Projects: Pick Up Exactly Where You Left Off",
+      "archetype": "pov-desk-scene",
+      "content": { "items": ["Where you left off"], "source": "src/components/product-shell/companion/CompanionRun.tsx eyebrow 'Where you left off'" },
+      "headline": "POV: you put it down half finished and lost where you were",
+      "sub": "This one remembers the exact question you stopped on.",
+      "props": ["desk-surface", "folder", "phone-frame", "bookmark-ribbon"],
+      "why": "A half-filled form and a pen abandoned on the desk; the phone beside it carries a bookmark ribbon at the 'Where you left off' card."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-alongside-05",
+      "title": "ADHD Brain Dump App: Everything You're Holding in One Place",
+      "archetype": "pile-sort",
+      "content": { "items": ["The call you're dreading", "The thing you keep meaning to do", "Dates you set yourself", "Someone who's gone quiet", "Where you left off", "Something to do", "Waiting on someone", "Something ongoing", "Worth having to hand"], "source": "creative/pinterest/maple-main-finds.ts this pin's points (the five scraps); src/products/alongside/life.ts KIND_LABEL (the four trays)" },
+      "headline": "What it holds, so your head doesn't have to",
+      "sub": "Write it down once. Hear about it when it matters.",
+      "props": ["thought-bubble", "sticky-note", "life-trays"],
+      "why": "The brain dump leaving a thought bubble as five notes and landing in the product's real four shapes."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-alongside-06",
+      "title": "ADHD-Friendly Planner That Doesn't Make You Feel Like You Failed",
+      "archetype": "this-not-that",
+      "content": { "items": ["streak", "percentage", "attempt counter", "screen crop: creative/public/screens/alongside-life.png (an item with its history line)"], "source": "src/shop/products/alongside.ts questions, 'Will it guilt me for not finishing something?' ('There is no streak, no percentage and no attempt counter anywhere in it.'); real Life screen creative/public/screens/alongside-life.png" },
+      "headline": "A planner that never tells you that you failed",
+      "sub": "Just a record of what actually happened, in your own words.",
+      "props": ["streak-flame-percent", "marks", "phone-frame"],
+      "why": "Left: the three things the listing says it never has, struck through. Right: a real Life card showing history in the person's own words."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-alongside-07",
+      "title": "Life Admin With Brain Fog: Long Covid, Grief, New Parenthood",
+      "archetype": "companion-step-phone",
+      "content": { "items": ["screen: creative/public/screens/alongside-help.png", "Open one envelope", "Copy a number onto the page", "Put the letter by the phone"], "source": "Real Help screen creative/public/screens/alongside-help.png (the eight situations); small notes from src/content/guides.ts life-admin-with-brain-fog, compare 'Fine on a foggy day'" },
+      "headline": "Brain fog and a pile of life admin?",
+      "sub": "Help with one thing today, built for when holding a plan in your head has stopped working.",
+      "props": ["fog", "phone-frame", "sticky-note"],
+      "why": "Soft fog over the top of the pin clearing around the real Help screen; three foggy-day-sized tasks on notes beside it."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-alongside-08",
+      "title": "Scripts for Hard Phone Calls and Emails When You Have ADHD",
+      "archetype": "opening-line-card",
+      "content": { "items": ["Make a phone call", "Make a difficult phone call", "Send the email", "Follow something up", "Sort out a billing problem", "Book an appointment and be ready for it", "Pick something back up", "Break something down"], "source": "src/products/alongside/playbooks/index.ts PLAYBOOKS order; each title from its playbook file" },
+      "headline": "Scripts for the things that are hardest to start",
+      "sub": "Eight walk-throughs, one question at a time.",
+      "props": ["card-file-box", "script-card"],
+      "why": "A recipe box of eight tabbed cards, the real eight playbooks; the front card shows one real opening line."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-alongside-09",
+      "title": "ADHD Procrastination: When the Same Task Sits for Weeks",
+      "archetype": "pov-desk-scene",
+      "content": { "items": [], "source": "Headline and sub only; the three-weeks idea is the listing's first problemsSolved line in src/shop/products/alongside.ts" },
+      "headline": "Tell me you have ADHD without telling me: same task on your mind for three weeks",
+      "sub": "It walks you through the hard version, one question at a time.",
+      "props": ["wall-calendar", "sticky-note", "thought-bubble", "phone-outgoing-call"],
+      "why": "Three calendar weeks with the same blank sticky note moved forward each week, and the phone in a thought bubble: no words needed."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-alongside-10",
+      "title": "Best Planner for ADHD Adults Who Gave Up on Planners",
+      "archetype": "sticky-note-wall-to-one-card",
+      "content": { "items": ["Helps before you set anything up", "Only what matters today", "Back to exactly where you stopped", "Your own words, never a grade"], "source": "creative/pinterest/maple-main-finds.ts, this pin's points" },
+      "headline": "For the brain that's tried every planner",
+      "sub": "No setup, no score, no catching up.",
+      "props": ["planner-shelf", "sticky-note"],
+      "why": "A shelf of barely used planners, with the four points as sticky notes stuck along the shelf edge."
+    }
+  ],
+  "notes": [
+    "Product line: name and price come from src/shop/products/alongside.ts at render time (currently $49, compare at $99), never typed on the pin.",
+    "All three real screens (creative/public/screens/alongside-*.png) show the Next.js dev indicator ('N' circle, bottom-left); crop or mask it before use. Their items (dental check, insurance, car hire) are demo data in a real UI, which is fine to show as UI but should not be quoted as claims.",
+    "The kitchen-timer prop is only for guide pins: the time-blindness guide states the Companion does not do timers. The only timed thing in the product is the 5-second Call now countdown.",
+    "Keep logos small and out of the bottom-right corner, where Pinterest overlays its own icons."
+  ]
+}

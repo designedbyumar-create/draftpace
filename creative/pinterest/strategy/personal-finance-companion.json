@@ -1,0 +1,490 @@
+{
+  "product": "personal-finance-companion",
+  "audience": [
+    "people with more than one account, bill or income source who want them in one real place, not five apps (shop listing, audience)",
+    "the person rebuilding a financial binder or money binder for the end-of-year check, who pins printable section pages and tracker sheets",
+    "someone who keeps getting charged for subscriptions they forgot about and wants a list with renewal dates (shop listing, searchedProblems)",
+    "couples and roommates who split rent and utilities and can't remember what was squared up last time",
+    "people who download a bank statement CSV rather than link their bank, and want it turned into a usable list",
+    "planners who save sinking fund trackers, variable-bill worksheets and 'what a normal month costs' pages",
+    "people sorting their money out after a move, a job change or a breakup (shop listing, searchedProblems)"
+  ],
+  "visualWorld": {
+    "setting": "A private desk where someone keeps their whole financial life in order: an open three-ring financial binder with numbered index tabs, the 81-page Printable Finance Companion workbook pages beside it, a pencil, and a phone that shows the live app. It is the archive of a whole financial life, area by area (accounts, income, bills, subscriptions, transactions, debt, savings), and not one month's envelope. That keeps it separate from Monthly Money Reset, whose world is this month's safe-to-spend number. The product's own identity motif is literally 'index' (src/products/personal-finance-companion/definition.ts, theme.identity.motif), so tabs, registers and labelled rows are its natural language.",
+    "props": [
+      { "id": "financial-binder", "draw": "Open three-ring binder seen flat from above: two rounded-rect covers (accent #0d3b2e outside, wash #eef4f1 inside), a narrow spine rect, three ring circles (stroke only) on the left page edge, a workbook-page on the right. Seven index tabs stick out of the right edge, stepped down, each a rounded-top rect in a tint of the accent scale with a two-digit number and short section name." },
+      { "id": "index-tabs", "draw": "Divider tabs on their own: rounded-top rects 120x56, stacked with 8px overlap, numbered 01 to 07 or 01 to 10 in Newsreader, labels in IBM Plex Sans caps. The active tab is solid accent with white text; the others are soft #dbe8e2 with ink text." },
+      { "id": "workbook-page", "draw": "Portrait paper rect (#fafbf9) at 8.5:11 ratio with a 3.5px accent bar across the top (the 'spine' the real workbook and Money Book print), a small running head in caps, an eyebrow in accent caps, a Newsreader title, a 1.2px ink rule under it, ruled write lines (#c8d6cd), and a folio number bottom right. Copy the real page's eyebrow and title exactly." },
+      { "id": "workbook-fan", "draw": "Five to six workbook-pages fanned from a shared pivot below the frame, rotated -14, -7, 0, 7, 14 degrees. Each has a flat offset shadow (same rect, 8px down-right, ink at 8% opacity), and its real title is readable on the top page and the two pages either side." },
+      { "id": "tracker-sheet", "draw": "One workbook-page shown large, tilted 3 to 4 degrees, with a table: an ink 1px header rule, header labels in small caps, 5 to 12 rows of #c8d6cd lines. Entries are set in IBM Plex Sans in a body-ink colour so they read as written in, with tabular figures. A pencil lies across one corner." },
+      { "id": "pencil", "draw": "Long hexagonal pencil: butter-yellow body rect with two faint facet lines, a pink eraser cap, a thin metal ferrule band, a wood cone triangle and a graphite tip triangle." },
+      { "id": "confidence-labels", "draw": "Five rounded pill stamps with a 2px outline and caps text: CONFIRMED (accent fill, white text), ESTIMATED (soft fill), UNRESOLVED (outline only), MISSING (dashed outline), STALE (faint grey). These are the workbook's real labels; place them next to rows like stamps, slightly rotated." },
+      { "id": "csv-strip", "draw": "A torn-edge paper strip or plain text panel in a monospace face: a header line and raw comma-separated rows, quotes visible around '\"1,612.40\"', minus signs visible. Zigzag polygon on the bottom edge for the tear." },
+      { "id": "tidy-table", "draw": "A rounded white card (radius 20) with three header chips (Date, Description, Amount) in soft-accent pills, ruled rows, amounts right-aligned in tabular figures, and one row tinted amber with a small flag shape to mark a likely duplicate." },
+      { "id": "mapping-arrows", "draw": "Two or three curved accent arrows (quadratic bezier path, 4px stroke, round caps, small triangular head) running from raw header words on the csv-strip to the header chips on the tidy-table." },
+      { "id": "source-objects", "draw": "Five small flat objects in a row or loose pile: a thought bubble (circle plus two small circles), a speech or sticky-note square with three lines, a .txt file (rect with a folded corner triangle), a spreadsheet sheet (rect with a 3x4 grid), and a ticked checklist. One per real starting option in OrientationStep.tsx." },
+      { "id": "record-card", "draw": "An app-style record card: white rounded rect with a 1px border (#e5e8e6), a name in semibold, a small status pill (e.g. 'Annual' badge or 'Ready'), the amount right-aligned, a secondary line in muted grey. Shown big, as if lifted out of the app." },
+      { "id": "calendar-leaf", "draw": "The app's own date leaf from TodayView.tsx: a 42x46 rounded rect with a coloured band on top holding a three-letter month in caps and the day number large below. Scale it up 4 to 6 times." },
+      { "id": "next-move-card", "draw": "One large card in front: wash background (#eef4f1), a 6px accent bar on the left edge (the Money Book 'box' style), one sentence in Newsreader, and a small accent arrow chip. Behind it, faded to 25% opacity, a wall of 12 to 16 blank sticky squares at random small angles, with grey lines only and no words." },
+      { "id": "settled-tick", "draw": "The app's paid/settled control: a 2px circle; when ticked, an accent-filled circle with a white check path. Draw one empty and one ticked side by side when contrast helps." },
+      { "id": "split-bar", "draw": "A thick rounded horizontal bar for one shared bill, split into two segments by share (e.g. 67 and 33) in accent and soft accent, with a person glyph at each end (circle head and rounded-shoulder arc). Each segment carries its amount." },
+      { "id": "shared-statement", "draw": "A one-page sheet titled 'Shared Responsibility' in a serif, a muted 'As of' line, two short lists (settled lines with a tick, still-owed lines without), and a ruled 'Total owed to you' row in bold. A paper-plane or envelope outline sits beside it for 'send'." },
+      { "id": "sinking-fund-jars", "draw": "Mason jars: a rounded-rect glass body with 10% ink outline, a lid band rect with a thread line, an accent fill rect clipped to the body to show how full it is, and a small paper label rect with the fund name and monthly amount. Labels only ever carry a real example from the sinking funds guide." },
+      { "id": "range-gauge", "draw": "A horizontal track with a shaded band between a low cap and a high cap, a small tick marked 'midpoint', and the low and high amounts written under the caps. It reads as a thermometer laid on its side, without the bulb." },
+      { "id": "payoff-ladder", "draw": "The workbook's payoff ladder (page 38): a ladder of five rungs numbered 1 at the bottom to 5 at the top, side rails as two tall rounded rects, the lower rungs filled accent ('shaded as cleared') and the upper ones outline only." },
+      { "id": "typical-month-bar", "draw": "One long rounded bar split into three segments, as on the app's MonthCard (TodayView.tsx): Going out (dark ink tint), Set aside for goals (mid tint), Left over (accent), with labels under each segment and 'coming in' written above the whole bar." },
+      { "id": "quick-reference-card", "draw": "An index card (rounded rect at a 5:3 ratio, with a faint ruled-line texture and a punched hole circle top left) titled 'Quick reference card' and six numbered lines, numbers in accent Newsreader." },
+      { "id": "countdown-strip", "draw": "A row of 15 small day squares from a heads-up date to a renewal date. The first square is outlined in accent ('heads-up'), the last is filled accent with the calendar-leaf on top ('renews'), and a bracket underneath says '14 days'." },
+      { "id": "decision-chips", "draw": "Three pill toggles in a row: Keep, Still deciding, Planned to cancel. One is selected (accent fill); the others are outlined. No scissors or cancel icons, because the product never cancels anything." },
+      { "id": "phone-screenshot", "draw": "The existing Phone frame (creative/src/visual/Phone) holding one real screenshot from creative/public/screens/personal-finance-companion-*.png (bills, debt, printables, records). It is used small and to one side so the drawn prop stays the hero." },
+      { "id": "loose-papers", "draw": "A messy pile of 4 to 6 rects at random angles: a statement with ruled lines, a receipt with a zigzag bottom edge, a sticky note, and two rounded-rect app tiles with a single generic bank glyph (columns and pediment). They are grey-toned so the tidy result stands out." }
+    ],
+    "palette": "Built from the product's own accent scale (definition.ts theme.accentScale): forest/ink #0d3b2e as the one strong colour, strong #08281f for headline ink on light grounds, soft #dbe8e2 and wash #eef4f1 for tabs and cards. Paper and rules come from the Money Book (printables/moneyBook.tsx): paper #fafbf9, ink #161d1a, body #333c37, rule #dde5e0, write lines #c8d6cd. One warm pop only, the pink popFor() already returns for this accent (hsl(340 80% 80%)) or a butter yellow for the pencil, used for at most one highlight per pin (a highlighted renewal date, an active tab). Amber is reserved for the real 'needs a look' or duplicate flag. Dark-hero pins may use the app's hero gradient #256049 to #0d3b2e with white type. Type matches the workbook: Newsreader for headlines and page titles, IBM Plex Sans for labels and table text, Fraunces only for a single figure where the figure is the point.",
+    "mood": "Quiet, orderly and private: the feeling of a well-kept binder on a Sunday evening. Paper texture and ruled lines, generous margins, nothing shouting. It should feel competent and calm, never 'get rich' or hustle. Gaps are shown honestly (Missing, a question mark, a dashed outline) because the product treats a known gap as useful."
+  },
+  "archetypes": [
+    {
+      "id": "binder-tabs",
+      "name": "The tabbed financial binder",
+      "clicks": "Money binders and budget binders are an established printable genre on Pinterest and Etsy, with sellers still publishing yearly binder sets (e.g. a free 2026 budget binder). Section-by-section binder pins answer 'what goes in it', which is a save-for-later question. Search interest for 'budget binder' itself is reported as softening, so this archetype leads with the sections and the binder is the frame.",
+      "layout": "1000x1500. Top 0-330: headline in Newsreader, 2-3 lines, left-aligned at x=72, with an optional small caps tag above it. 330-1230: the open financial-binder drawn about 860 wide, centred and tilted -3 degrees, with its seven index tabs on the right edge each carrying a real section name; the open page shows one section's real content (or, on product pins, a phone-screenshot clipped into the page as if the page were the app). 1250-1340: one sub line. 1360-1460: product line (name, 'Made by Draftpace', price or 'Free guide'), kept clear of the bottom-right corner where Pinterest UI sits.",
+      "visual": "Open three-ring binder with numbered index tabs; the open page is a workbook-page or the live Records screen.",
+      "text": "Tab labels are real section names: the binder guide's seven (src/content/guides.ts financial-binder-what-to-include, timeline 'The seven sections, in the order to fill them') or the workbook's (Printable Finance Companion PDF, section dividers 01-10). The page content is copied from the guide's example tables or the workbook's real page headings.",
+      "bestFor": "financial binder, 'what goes in', 'all in one place', seven areas, section-by-section explainers"
+    },
+    {
+      "id": "workbook-fan",
+      "name": "What's inside the 81-page workbook",
+      "clicks": "Printable sellers are advised to show several images of the actual pages rather than one cover, and pin designers report that collage-style pins showing several pages or steps in one 2:3 frame earn saves. A fanned stack of real, named pages is the 'what's inside' pin that printable buyers expect, and it proves the product exists.",
+      "layout": "Top 0-300: headline. 300-1100: workbook-fan of 5-6 real pages fanned from a pivot below centre, about 820 wide, with the top page's title legible at about 30px. 1100-1250: three fact chips in a row (e.g. '81 pages', 'US Letter and A4', 'Twelve monthly reviews'). 1250-1330: sub line. 1360-1460: product line. Optionally a phone-screenshot (printables screen) overlapping the lower right of the fan at 30% of the width.",
+      "visual": "Fanned pages of the real Printable Finance Companion workbook, each with its real eyebrow and title.",
+      "text": "Page titles copied from the workbook PDF (src/products/personal-finance-companion/printables/printableFinanceCompanionLetter.base64.ts, decoded: 81 pages; e.g. 'Subscription inventory' p26, 'Variable bills worksheet' p22, 'Debt payoff method comparison' p38, 'Sinking funds worksheet' p42, 'Net worth snapshot' p46, 'January: review' p54). Fact chips come from the binder guide's closing paragraph ('81-page form, in US Letter and A4', 'twelve monthly review spreads').",
+      "bestFor": "the workbook itself, paper-plus-app pins, 'what you get' pins, gentle-start pins that show the workbook's gap pages"
+    },
+    {
+      "id": "tracker-sheet",
+      "name": "One tracker sheet, filled in",
+      "clicks": "Tracker and log printables (savings trackers, sinking fund trackers, bill logs) are among the most common money printables, and budget trackers are among the best-selling Etsy printable categories. Checklists, templates and filled examples are the save-for-later formats. A sheet filled with a believable example row set shows exactly how to use it.",
+      "layout": "Top 0-300: headline. 300-1180: one tracker-sheet about 820 wide, tilted 3 degrees, with a real column header row and 4-12 filled rows. A pencil crosses the lower-left corner, and one cell is highlighted with the pop colour (the field the pin is about). 1200-1320: sub line. 1360-1460: product line or 'Free guide'.",
+      "visual": "A workbook-style register page with real column headers and example entries written in.",
+      "text": "Column headers come from the workbook page or guide table the pin is about. Row entries come only from that guide's own 'Example only' tables, never invented. Each pin's content.source names the table.",
+      "bestFor": "subscription tracker, variable bills, sinking funds worksheet, accounts page with confidence labels, shared statement, one-page monthly budget, CSV check sheet"
+    },
+    {
+      "id": "intake",
+      "name": "Statement in, tidy table out",
+      "clicks": "Before-and-after pins are listed among the formats that get saved, and 'turn X into Y' is the shape of the CSV, notes and scattered-finances pins. A transformation shown in one frame (raw text on one side, clean rows on the other) explains the product in a glance, with no promise of bank linking.",
+      "layout": "Top 0-280: headline. 280-640: the 'before' (csv-strip, loose-papers or source-objects), slightly grey and tilted. 640-760: mapping-arrows or one bold down-arrow in accent. 760-1200: the 'after' (tidy-table, or a phone-screenshot of the Records screen), crisp and straight. 1210-1320: sub line. 1360-1460: product line.",
+      "visual": "Raw CSV text, pasted notes or a pile of scattered sources becoming one clean, reviewed table.",
+      "text": "Raw rows are the CSV guide's four example rows (bank-statement-csv-to-budget, the Date/Description/Amount table). Header chips are the app's real mapping labels (CsvImportFlow.tsx: 'Description column', 'Separate Debit / Credit columns'). Source labels are the real Companion options (OrientationStep.tsx). The review note is real copy ('Nothing from an import joins your picture until you confirm it.', TodayView.tsx).",
+      "bestFor": "bank statement CSV, budgeting from statements, scattered finances, 'from a pile of tabs to one picture', importing notes"
+    },
+    {
+      "id": "side-by-side",
+      "name": "Two sides of one bill (or one choice)",
+      "clicks": "Comparison and 'which is better' charts are a staple money-pin format, and the couples niche is built around comparing split methods (equal versus income-based versus by item). A side-by-side answers a decision in one look and invites a save to 'show my partner'.",
+      "layout": "Top 0-300: headline. 300-1150: the frame divided into two columns (or one split-bar across the width with a person glyph at each end); each side has a header in caps and 2-4 short lines, with a settled-tick or shared-statement where relevant. 1170-1320: sub line. 1360-1460: product line.",
+      "visual": "A shared bill split into your share and their share, a settled tick, the one-page Shared Responsibility statement; or snowball and avalanche as two columns.",
+      "text": "Split numbers are the split-bills guide's own example ($4,200 and $2,100 take-home, 67/33, Rent $1,800 to $1,200.00 and $600.00). The methods table is from the same guide. Snowball and avalanche results are from the debt-snowball-vs-avalanche guide's worked example. Statement wording is from generateSharedStatement.tsx ('Shared Responsibility', 'Total owed to you').",
+      "bestFor": "couples and roommates splitting bills, settled versus owed, snowball versus avalanche"
+    },
+    {
+      "id": "one-card",
+      "name": "One card, not a to-do wall",
+      "clicks": "Pinterest's own guidance is to keep one clear focal subject with short, legible overlay text. A single oversized card against a faded wall of blank notes is the strongest single image for the product's core promise of one next move, and it works as a 'how it works' pin for one record (a subscription, a goal, a quick reference card).",
+      "layout": "Top 0-300: headline. 330-1150: one card about 780x520 to 780x700, centred and straight, with a soft shadow; behind it either the faded sticky wall (next-move pins) or nothing but paper texture. Small numbered callouts (1, 2, 3) may point at fields on the card. 1170-1320: sub line. 1360-1460: product line.",
+      "visual": "One big card: a next-move message, one subscription record, one savings goal, one shared bill row, or the workbook's quick reference card.",
+      "text": "Card copy uses the app's real message templates (attention.ts, e.g. '${bill.name} needs a due date.'; TodayView.tsx 'You're caught up.'), filled with names and figures from the guides' own examples; or real field labels (SubscriptionFormSheet.tsx, CandidateReviewQueue.tsx); or the workbook quick reference card (PDF p79).",
+      "bestFor": "one next move, the Attention inbox, renewal date, goal monthly amount, a shared row, the ten-minute starting path, importing notes, CSV mapping"
+    },
+    {
+      "id": "measure",
+      "name": "Jars, ranges and ladders",
+      "clicks": "Visual progress trackers you colour in or fill (sinking fund envelope trackers, savings charts, 'colour a heart when you save') are among the most common money printables, because seeing the gap is clearer than a number. The workbook itself says so on its savings goal visualization page. Turning a guide's example into jars, a range band or a ladder makes an abstract method concrete.",
+      "layout": "Top 0-300: headline. 300-1150: the measuring prop full width: a row of 3-5 sinking-fund-jars on a shelf line, or one range-gauge drawn large with the low and high written under it, or a payoff-ladder beside a small phone-screenshot of the debt screen, or a countdown-strip. Labels sit directly under each object. 1170-1320: sub line. 1360-1460: product line.",
+      "visual": "Labelled jars filled to real proportions, a variable bill as a low-to-high range, the workbook's payoff ladder, the typical-month bar, a 14-day heads-up strip.",
+      "text": "All figures are the guides' own worked examples (sinking-funds-explained, budget-for-variable-bills, 50-30-20-rule-where-it-breaks, subscription-tracker-what-to-track) or the workbook's own labels (payoff ladder p38). No figure is made up for the drawing.",
+      "bestFor": "sinking funds, annual costs, variable bills, 50/30/20, debt payoff, typical month, renewal heads-up"
+    }
+  ],
+  "pins": [
+    {
+      "account": "draftpace", "id": "pfc/pin-4.4", "title": "Monthly Bills Tracker: Bills That Change Every Month Belong in a Range",
+      "archetype": "measure",
+      "content": { "items": ["Electric", "Water", "Phone", "low $60", "high $122", "midpoint"], "source": "pin description (wave2.csv: 'Mark a bill as varying, enter a range, and the monthly total uses the midpoint'); low/high from src/content/guides.ts budget-for-variable-bills (twelve-month electric example: lowest $60, highest $122); bill.amountRangeMinorUnits in src/products/personal-finance-companion/state.ts; midpoint in components/bills/billLogic.ts" },
+      "headline": "Bills That Change Every Month Belong in a Range",
+      "sub": "Personal Finance Companion does not pretend a moving bill is a fixed one.",
+      "props": ["range-gauge", "phone-screenshot", "calendar-leaf"],
+      "why": "The product's actual behaviour (a range, counted at its midpoint) drawn as a gauge, with the Bills screen beside it."
+    },
+    {
+      "account": "draftpace", "id": "pfc/pin-4.5", "title": "How to Budget for Bills That Change Every Month",
+      "archetype": "tracker-sheet",
+      "content": { "items": ["Variable bills worksheet", "Bill name", "Typical low amount", "Typical high amount", "Jan $118", "Feb $122", "Mar $96", "Apr $74", "May $62", "Jun $84", "Jul $108", "Aug $114", "Sep $88", "Oct $66", "Nov $60", "Dec $96", "$1,088 for the year", "average $90.67"], "source": "workbook PDF p22 'Variable bills worksheet' (column headers); src/content/guides.ts budget-for-variable-bills (twelve monthly amounts, total and average)" },
+      "headline": "How to Budget for Bills That Change Every Month",
+      "sub": "Pull twelve months, note the low and the high, budget toward the high.",
+      "props": ["tracker-sheet", "pencil"],
+      "why": "The whole method fits on one filled worksheet, with the high month circled in pop colour."
+    },
+    {
+      "account": "draftpace", "id": "pfc/pin-5.1", "title": "How to Organize Your Finances When Everything Is Scattered",
+      "archetype": "binder-tabs",
+      "content": { "items": ["Accounts: Checking at the credit union, about $1,900. Savings, about $4,000?", "Income: Paycheck, about $2,600 every two weeks", "Bills: Rent $1,450 on the 1st. Electric ?", "Subscriptions: Streaming, phone backup, gym?", "Debts: Visa about $2,600, rate ?", "Goals: Emergency fund, $5,000, by next summer"], "source": "src/content/guides.ts organize-your-finances-from-scratch, table 'An example page, filled in from memory'" },
+      "headline": "How to Organize Your Finances When Everything Is Scattered",
+      "sub": "A ten minute starting path: gather what you know, mark what you do not.",
+      "props": ["financial-binder", "index-tabs", "pencil"],
+      "why": "Six tabs, each with one remembered line and its question mark, show that the gaps are the starting point."
+    },
+    {
+      "account": "draftpace", "id": "pfc/pin-5.2", "title": "Organize Your Finances: One Next Move at a Time, Never a To-Do Wall",
+      "archetype": "one-card",
+      "content": { "items": ["Electric needs a due date.", "You're caught up.", "Nothing needs your attention right now."], "source": "message template '${bill.name} needs a due date.' in src/products/personal-finance-companion/attention.ts, filled with the bill name 'Electric' from the organize-your-finances-from-scratch example page; 'You're caught up.' and 'Nothing needs your attention right now.' from components/TodayView.tsx" },
+      "headline": "One Next Move at a Time, Never a To-Do Wall",
+      "sub": "Fix it and it leaves. When there is nothing, it says you are caught up.",
+      "props": ["next-move-card", "phone-screenshot"],
+      "why": "The literal picture of the promise: one crisp card in front of a faded wall of blank notes."
+    },
+    {
+      "account": "draftpace", "id": "pfc/pin-5.3", "title": "Financial Organization: Where Is Your Financial Information Right Now?",
+      "archetype": "intake",
+      "content": { "items": ["Mostly in my head", "Notes or messages", "A text file", "A spreadsheet or CSV", "I already know most of it, let's go"], "source": "src/products/personal-finance-companion/components/companion/OrientationStep.tsx (the five starting options); the pin description lists the same four sources" },
+      "headline": "Where Is Your Financial Information Right Now?",
+      "sub": "You do not need everything ready before you start.",
+      "props": ["source-objects", "financial-binder"],
+      "why": "Five recognisable starting points drawn as objects, all arrowed into one binder."
+    },
+    {
+      "account": "draftpace", "id": "pfc/pin-5.4", "title": "Get Your Finances Together: From a Pile of Tabs to One Picture",
+      "archetype": "binder-tabs",
+      "content": { "items": ["Accounts", "Income", "Bills", "Subscriptions", "Transactions", "Debt", "Savings", "You type it, paste it or import it, and review before it counts."], "source": "seven areas from src/shop/products/personal-finance-companion.ts inclusions[0]; sub from the pin description (wave2.csv); open page = creative/public/screens/personal-finance-companion-records.png" },
+      "headline": "From a Pile of Tabs to One Picture",
+      "sub": "You type it, paste it or import it, and review before it counts.",
+      "props": ["loose-papers", "financial-binder", "index-tabs", "phone-screenshot"],
+      "why": "Loose papers on the left slide into seven real tabs whose open page is the live Records screen."
+    },
+    {
+      "account": "draftpace", "id": "pfc/pin-5.5", "title": "Financial Organization: You Do Not Need Everything Ready to Start",
+      "archetype": "workbook-fan",
+      "content": { "items": ["Start here", "Information confidence key", "Initial missing information list", "Account inventory", "Confirmed", "Estimated", "Unresolved", "Missing", "Stale"], "source": "workbook PDF p5 'Start here', p10 'Information confidence key' (five labels), p11 'Initial missing information list', p13 'Account inventory'" },
+      "headline": "You Do Not Need Everything Ready to Start",
+      "sub": "The gaps are useful: they tell you what to find next.",
+      "props": ["workbook-fan", "confidence-labels"],
+      "why": "The workbook really has a page for what is missing; fanning it with the confidence key makes 'start with gaps' tangible."
+    },
+    {
+      "account": "draftpace", "id": "pfc/pin-6.1", "title": "Subscription Tracker: What to Write Down for Every Subscription",
+      "archetype": "tracker-sheet",
+      "content": { "items": ["Name | Charge | Cycle | Renews | Decision | Shared", "Video streaming | $15.49 | Monthly | 5th | Keep | No", "Fitness app | $79.99 | Annual | Nov 14 | Planned to cancel | No", "Antivirus | $59.99 | Annual | Jan 9 | Still deciding | No", "Cloud storage | $2.99 | Monthly | 21st | Keep | No", "Family music plan | $16.99 | Monthly | 12th | Keep | Yes, 50%"], "source": "src/content/guides.ts subscription-tracker-what-to-track, table 'An example tracker with five rows'" },
+      "headline": "What to Write Down for Every Subscription",
+      "sub": "The renewal date matters more than the price.",
+      "props": ["tracker-sheet", "pencil", "calendar-leaf"],
+      "why": "The classic tracker-preview pin, with the Renews column highlighted in pop colour."
+    },
+    {
+      "account": "draftpace", "id": "pfc/pin-6.2", "title": "Subscription Tracker That Does Not Cancel Anything For You",
+      "archetype": "binder-tabs",
+      "content": { "items": ["04 Subscriptions", "Keep, review, or cancel decisions", "Keep", "Still deciding", "Planned to cancel", "Draftpace tracks subscription decisions; it does not cancel subscriptions on your behalf."], "source": "workbook PDF p25 section 04, p27 'Keep, review, or cancel decisions', p26 reminder line; decision labels from components/subscriptions/SubscriptionFormSheet.tsx; screen creative/public/screens/personal-finance-companion-records.png (Subscriptions card)" },
+      "headline": "Subscription Tracker That Does Not Cancel Anything For You",
+      "sub": "Personal Finance Companion tracks the decision and warns you before an annual charge.",
+      "props": ["financial-binder", "index-tabs", "decision-chips", "phone-screenshot"],
+      "why": "The Subscriptions tab opened to its three decision columns states the honest boundary in the product's own words."
+    },
+    {
+      "account": "draftpace", "id": "pfc/pin-6.3", "title": "4 Places a Subscription Hides Its Cancel Button",
+      "archetype": "tracker-sheet",
+      "content": { "items": ["Directly on the company's site: Account, then Billing or Membership, then Cancel or Manage plan", "Through Apple: Settings, tap your name, then Subscriptions", "Through Google Play: Play Store, your profile, Payments and subscriptions, then Subscriptions", "Through a phone or internet provider: The provider's account page, or a call to customer service"], "source": "src/content/guides.ts how-to-cancel-subscriptions, table 'Where the cancel option usually hides' (four of its six rows)" },
+      "headline": "4 Places a Subscription Hides Its Cancel Button",
+      "sub": "Cancel in the place that bills you.",
+      "props": ["tracker-sheet", "pencil"],
+      "why": "A two-column reference sheet (where you signed up, where to look) is the save-for-later format for a how-to."
+    },
+    {
+      "account": "draftpace", "id": "pfc/pin-6.4", "title": "Cancel Subscriptions: A Heads-Up Before an Annual Charge Renews",
+      "archetype": "measure",
+      "content": { "items": ["Oct 31 heads-up", "Nov 14 renews", "Fitness app, $79.99, Annual", "14 days", "Fitness app renews on Nov 14, its one charge for the year."], "source": "dates and row from src/content/guides.ts subscription-tracker-what-to-track ('the heads-up date is October 31, two weeks before it renews on November 14'); message template '${subscription.name} renews on ${subscription.renewalDate}, its one charge for the year.' in attention.ts; 14-day window from the pin description" },
+      "headline": "A Heads-Up Before an Annual Charge Renews",
+      "sub": "When a kept annual subscription is within 14 days of renewing, it shows in Attention with the date.",
+      "props": ["countdown-strip", "calendar-leaf", "record-card"],
+      "why": "A 14-day strip ending on a big calendar leaf makes the warning window visible."
+    },
+    {
+      "account": "draftpace", "id": "pfc/pin-6.5", "title": "Save Money on Subscriptions: The Renewal Date Is the Number That Matters",
+      "archetype": "one-card",
+      "content": { "items": ["Fitness app", "$79.99", "Annual", "Renews Nov 14", "Planned to cancel"], "source": "src/content/guides.ts subscription-tracker-what-to-track example row; 'Annual' badge from components/SubscriptionsModule.tsx" },
+      "headline": "The Renewal Date Is the Number That Matters",
+      "sub": "Track the date you can act on, not just what it costs.",
+      "props": ["record-card", "calendar-leaf"],
+      "why": "One subscription card where the price is small and the renewal leaf is huge: the argument made visually."
+    },
+    {
+      "account": "draftpace", "id": "pfc/pin-7.1", "title": "How Couples and Roommates Split Bills Without Keeping Score",
+      "archetype": "side-by-side",
+      "content": { "items": ["Equal: Every shared bill is halved", "By income: Each pays a percentage matching earnings", "By item: Each person owns certain bills", "Rent $1,800: $1,200.00 and $600.00"], "source": "src/content/guides.ts split-bills-with-a-partner-or-roommate, tables 'Three ways to split, and what each assumes' and 'An example: two incomes, four shared bills'" },
+      "headline": "How Couples and Roommates Split Bills Without Keeping Score",
+      "sub": "There is no single right way to split a bill.",
+      "props": ["split-bar", "settled-tick"],
+      "why": "Three split methods shown as three versions of the same rent bar, the comparison couples pins are built on."
+    },
+    {
+      "account": "draftpace", "id": "pfc/pin-7.2", "title": "A Bill Splitting Statement You Can Send",
+      "archetype": "tracker-sheet",
+      "content": { "items": ["Shared Responsibility", "As of", "Rent $600.00", "Electric $36.67", "Internet $20.00", "Renters insurance $7.33", "Total owed to you"], "source": "statement headings from src/products/personal-finance-companion/printables/generateSharedStatement.tsx; line amounts are the 'Them (one third)' column of the split-bills guide's example table (src/content/guides.ts)" },
+      "headline": "A Bill Splitting Statement You Can Send",
+      "sub": "The other person needs no account.",
+      "props": ["shared-statement", "settled-tick"],
+      "why": "The one-page PDF is the product; drawing it as the hero sheet shows exactly what gets sent."
+    },
+    {
+      "account": "draftpace", "id": "pfc/pin-7.3", "title": "4 Things to Agree Before You Split a Bill",
+      "archetype": "side-by-side",
+      "content": { "items": ["Which bills count", "What the split is", "How often you settle", "Where you write it down"], "source": "pin description (wave2.csv); the guide's longer list is 'Agree these before the first payment' in src/content/guides.ts split-bills-with-a-partner-or-roommate" },
+      "headline": "4 Things to Agree Before You Split a Bill",
+      "sub": "Four short agreements that prevent most disagreements about shared money.",
+      "props": ["split-bar", "settled-tick"],
+      "why": "Two person glyphs facing each other with the four agreements ticked between them reads as 'agree once'."
+    },
+    {
+      "account": "draftpace", "id": "pfc/pin-7.4", "title": "Split a Bill in Three Moves: Share, Settle, Send",
+      "archetype": "one-card",
+      "content": { "items": ["Rent", "Shared Responsibility", "Your share (%) 67", "$1,200.00", "$600.00", "Settled", "Download shared statement"], "source": "labels from components/subscriptions/SubscriptionFormSheet.tsx ('Shared Responsibility', 'Your share (%)') and the printables screen ('Download shared statement', creative/public/screens/personal-finance-companion-printables.png); 67% and amounts from the split-bills guide example" },
+      "headline": "Split a Bill in Three Moves: Share, Settle, Send",
+      "sub": "It does not send money or track payments.",
+      "props": ["record-card", "settled-tick", "shared-statement"],
+      "why": "One bill row blown up with callouts 1 Share, 2 Settle, 3 Send maps the three moves onto the real controls."
+    },
+    {
+      "account": "draftpace", "id": "pfc/pin-7.5", "title": "Roommate Bill Splitting: Write Down What Is Settled and What Is Owed",
+      "archetype": "side-by-side",
+      "content": { "items": ["Settled", "Still owed", "the date, the amount, each share, and a mark when it's settled"], "source": "settled/unsettled split from src/products/personal-finance-companion/domain/sharedResponsibility.ts; record fields from src/content/guides.ts split-bills-with-a-partner-or-roommate ('Joint account or separate, and the record')" },
+      "headline": "Write Down What Is Settled and What Is Owed",
+      "sub": "A simple written record turns memory disputes into arithmetic.",
+      "props": ["settled-tick", "shared-statement"],
+      "why": "Two columns, ticked and unticked, are the record that ends the 'did I pay you back' argument."
+    },
+    {
+      "account": "draftpace", "id": "pfc/pin-8.1", "title": "How to Turn a Bank Statement CSV Into a Budget",
+      "archetype": "intake",
+      "content": { "items": ["Date,Description,Amount", "09/03/2026,GROCERY MART 114,-84.20", "09/03/2026,GROCERY MART 114,-84.20", "09/05/2026,PAYROLL ACME INC,\"1,612.40\"", "09/13/2026,TRANSFER TO SAVINGS,-200.00"], "source": "src/content/guides.ts bank-statement-csv-to-budget, table 'An example: four rows and what each one shows'" },
+      "headline": "How to Turn a Bank Statement CSV Into a Budget",
+      "sub": "Check the headers and the sign convention, map the columns, and catch duplicates.",
+      "props": ["csv-strip", "mapping-arrows", "tidy-table"],
+      "why": "The guide's own four rows go from raw text to a clean table, with the repeated grocery row flagged."
+    },
+    {
+      "account": "draftpace", "id": "pfc/pin-8.2", "title": "Budget From Bank Statements: Paste Your Notes and Get Records to Review",
+      "archetype": "one-card",
+      "content": { "items": ["Paycheck, about $2,600 every two weeks", "Confirm income source", "Edit", "Skip", "Nothing from an import joins your picture until you confirm it."], "source": "pasted line from the organize-your-finances-from-scratch example page (src/content/guides.ts); buttons from components/companion/import/CandidateReviewQueue.tsx with CANDIDATE_TYPE_LABEL in import/candidateSummary.ts; review line from components/TodayView.tsx" },
+      "headline": "Paste Your Notes and Get Records to Review",
+      "sub": "Nothing joins your picture until you confirm it.",
+      "props": ["source-objects", "record-card"],
+      "why": "A sticky note above one candidate card with its real Confirm / Edit / Skip buttons shows the review step."
+    },
+    {
+      "account": "draftpace", "id": "pfc/pin-8.3", "title": "Track Your Spending: 5 Things to Check in a Bank CSV Before You Import It",
+      "archetype": "tracker-sheet",
+      "content": { "items": ["The headers", "Whether spending is negative", "One amount column or two", "The date format", "Duplicate rows"], "source": "pin description (wave3.csv); expanded in src/content/guides.ts bank-statement-csv-to-budget" },
+      "headline": "5 Things to Check in a Bank CSV Before You Import It",
+      "sub": "A two minute check that avoids a messy import.",
+      "props": ["tracker-sheet", "csv-strip", "pencil"],
+      "why": "A five-box checklist sheet clipped over a CSV printout is a saveable checklist pin."
+    },
+    {
+      "account": "draftpace", "id": "pfc/pin-8.4", "title": "Budget From Bank Statements: You Map the Columns Yourself, So It Never Guesses",
+      "archetype": "intake",
+      "content": { "items": ["Date", "Description column", "Amount", "Separate Debit / Credit columns", "Ambiguous cells are rejected, not guessed."], "source": "mapping labels from components/companion/import/CsvImportFlow.tsx; rejection rule from import/csvParse.ts parseCsvMoneyToMinorUnits and the pin description" },
+      "headline": "You Map the Columns Yourself, So It Never Guesses",
+      "sub": "It imports transactions only. No bank login.",
+      "props": ["csv-strip", "mapping-arrows", "tidy-table"],
+      "why": "The mapping arrows themselves are the subject: you draw the connections, not the software."
+    },
+    {
+      "account": "draftpace", "id": "pfc/pin-8.5", "title": "No Bank Link Needed to Understand Your Spending",
+      "archetype": "one-card",
+      "content": { "items": ["bank-2026-09-30.csv", "Download whole calendar months.", "Keep the original download untouched and work from a copy."], "source": "src/content/guides.ts bank-statement-csv-to-budget (six steps, item 1, and the callout 'Before you import')" },
+      "headline": "No Bank Link Needed to Understand Your Spending",
+      "sub": "Use a plain CSV from your bank, and know what it can and cannot show.",
+      "props": ["record-card", "csv-strip"],
+      "why": "One downloaded file card, named as the guide recommends, says 'a file you hold' without drawing a crossed-out bank."
+    },
+    {
+      "account": "draftpace", "id": "pfc/pin-9.1", "title": "How to Make a Financial Binder: What Goes In and How Often to Update It",
+      "archetype": "tracker-sheet",
+      "content": { "items": ["Everyday checking | $1,240 | Confirmed | Sep 25", "Savings | $2,000 | Confirmed | Sep 25", "Cash in the drawer | about $60 | Estimated | Sep 20", "Joint account with Sam | unknown | Missing | not yet", "Fifteen minutes on the same day each month is enough."], "source": "src/content/guides.ts financial-binder-what-to-include (example accounts table; 'Keeping it current' intro)" },
+      "headline": "How to Make a Financial Binder: What Goes In and How Often to Update It",
+      "sub": "Fifteen minutes on the same day each month is enough.",
+      "props": ["tracker-sheet", "confidence-labels", "pencil"],
+      "why": "One filled accounts page with Confirmed/Estimated/Missing stamps teaches the binder's best habit at a glance."
+    },
+    {
+      "account": "draftpace", "id": "pfc/pin-9.2", "title": "81-Page Printable Finance Workbook, Plus the App That Keeps It Current",
+      "archetype": "workbook-fan",
+      "content": { "items": ["Subscription inventory", "Variable bills worksheet", "Debt payoff method comparison", "Sinking funds worksheet", "Net worth snapshot", "January: review", "81 pages", "US Letter and A4", "Twelve monthly reviews"], "source": "page titles from the workbook PDF (printables/printableFinanceCompanionLetter.base64.ts, pp 26, 22, 38, 42, 46, 54); facts from src/content/guides.ts financial-binder-what-to-include closing paragraph; screen creative/public/screens/personal-finance-companion-printables.png" },
+      "headline": "81-Page Printable Finance Workbook, Plus the App That Keeps It Current",
+      "sub": "It comes with Personal Finance Companion.",
+      "props": ["workbook-fan", "phone-screenshot"],
+      "why": "The bundle-mockup pin printable buyers click: real, named pages fanned out, with the app beside them."
+    },
+    {
+      "account": "draftpace", "id": "pfc/pin-9.3", "title": "What Goes in a Financial Binder: 7 Sections",
+      "archetype": "binder-tabs",
+      "content": { "items": ["01 Accounts", "02 Income", "03 Bills", "04 Subscriptions", "05 Debt", "06 Savings goals", "07 A written summary"], "source": "src/content/guides.ts financial-binder-what-to-include, timeline 'The seven sections, in the order to fill them'" },
+      "headline": "What Goes in a Financial Binder: 7 Sections",
+      "sub": "What each section holds and the one question it answers.",
+      "props": ["financial-binder", "index-tabs"],
+      "why": "Seven numbered tabs are the answer to the headline, readable in the feed."
+    },
+    {
+      "account": "draftpace", "id": "pfc/pin-9.4", "title": "Money Binder: A Ten Minute Starting Path for Your Money",
+      "archetype": "one-card",
+      "content": { "items": ["1 List your accounts and rough balances.", "2 Note income and when it next arrives.", "3 Write down required bills and due rules.", "4 List subscriptions and one decision each.", "5 Mark anything uncertain as missing or estimated.", "6 Enter what is confirmed into Draftpace."], "source": "workbook PDF p79 'Quick reference card', 'A ten minute starting path' (the pin's CSV description paraphrases six different steps; the card's real wording is used here)" },
+      "headline": "A Ten Minute Starting Path for Your Money",
+      "sub": "Paper gathers, the app keeps it.",
+      "props": ["quick-reference-card", "pencil"],
+      "why": "The workbook's actual quick reference card, drawn as an index card, is the item the pin describes."
+    },
+    {
+      "account": "draftpace", "id": "pfc/pin-9.5", "title": "Financial Binder: Paper Gathers, an App Keeps It Current",
+      "archetype": "workbook-fan",
+      "content": { "items": ["Paper gathers, clarifies, and prepares.", "Draftpace stores, validates, calculates, imports, tracks, and shows your current next action.", "Draftpace update checklist", "Monthly Review"], "source": "workbook PDF p79 'The one rule', p51 'Draftpace update checklist', p53 section 10 'Monthly Review'; screen creative/public/screens/personal-finance-companion-records.png" },
+      "headline": "Paper Gathers, an App Keeps It Current",
+      "sub": "The two together do the job of each.",
+      "props": ["workbook-fan", "phone-screenshot"],
+      "why": "Pages on one side, the live phone on the other, with the workbook's own one-rule line between them."
+    },
+    {
+      "account": "draftpace", "id": "pfc/pin-10.1", "title": "The 50/30/20 Rule and Where It Breaks for Real Budgets",
+      "archetype": "measure",
+      "content": { "items": ["$3,500: Needs $1,750, Wants $1,050, Savings and extra debt $700", "$2,400 with $1,300 rent: needs $2,075, or 86 percent", "$325 left for wants and savings"], "source": "src/content/guides.ts 50-30-20-rule-where-it-breaks (both example tables)" },
+      "headline": "The 50/30/20 Rule and Where It Breaks for Real Budgets",
+      "sub": "It breaks when rent is high, pay is uneven or debt payments count as needs.",
+      "props": ["sinking-fund-jars"],
+      "why": "Three jars sized 50/30/20, then the same jars with Needs overflowing at 86%, show the break."
+    },
+    {
+      "account": "draftpace", "id": "pfc/pin-10.2", "title": "Monthly Budget: See a Typical Month: Coming In, Going Out, Left Over",
+      "archetype": "tracker-sheet",
+      "content": { "items": ["coming in", "Going out", "Set aside for goals", "Left over", "Irregular income and bills with no amount are named, not counted."], "source": "labels from components/TodayView.tsx MonthCard; note from the pin description (wave3.csv); listing problemsSolved 'A typical month, laid out'" },
+      "headline": "See a Typical Month: Coming In, Going Out, Left Over",
+      "sub": "Irregular income and bills with no amount are named, not counted.",
+      "props": ["tracker-sheet", "typical-month-bar"],
+      "why": "The one-page monthly budget pin, with the app's four real lines and blank amounts (no made-up figures)."
+    },
+    {
+      "account": "draftpace", "id": "pfc/pin-10.3", "title": "4 Costs You Can See Coming: Sinking Fund Ideas",
+      "archetype": "measure",
+      "content": { "items": ["Car insurance, $90.00 a month", "Car registration, $10.00 a month", "Holiday gifts, $37.50 a month", "Annual subscription, $8.00 a month"], "source": "src/content/guides.ts sinking-funds-explained, example table (four of its five rows)" },
+      "headline": "4 Costs You Can See Coming: Sinking Fund Ideas",
+      "sub": "A sinking fund turns each into a small monthly amount.",
+      "props": ["sinking-fund-jars"],
+      "why": "Four labelled jars are the sinking-fund visual this niche saves most."
+    },
+    {
+      "account": "draftpace", "id": "pfc/pin-10.4", "title": "Monthly Budget: How Much to Set Aside Each Month for a Goal",
+      "archetype": "one-card",
+      "content": { "items": ["Target $600", "Saved so far $150", "Target date December, four months to go", "$112.50 a month", "Progress is what you record; it never reads a bank account."], "source": "worked example from src/content/guides.ts sinking-funds-explained ('Need $600 by December, have $150, four months to go: $112.50 a month'); field names from moneyBook.tsx Savings goals register; last line from the pin description" },
+      "headline": "How Much to Set Aside Each Month for a Goal",
+      "sub": "Progress is what you record; it never reads a bank account.",
+      "props": ["record-card", "sinking-fund-jars"],
+      "why": "One goal card working the formula through to a single monthly figure, with a small quarter-full jar."
+    },
+    {
+      "account": "draftpace", "id": "pfc/pin-10.5", "title": "Monthly Budget: The Annual Bill Should Not Be a Surprise",
+      "archetype": "tracker-sheet",
+      "content": { "items": ["Future cost | Due month or date | Target | Saved snapshot | Funding source | Next step", "Car insurance, $540 per six months | January and July", "Car registration, $120 | March", "Holiday gifts, $450 | December", "Annual subscription, $96 | One month a year", "Dental and vision, $360 a year | Spread across the year", "All five together $175.50"], "source": "headers from workbook PDF p42 'Sinking funds worksheet'; rows from src/content/guides.ts sinking-funds-explained example table" },
+      "headline": "The Annual Bill Should Not Be a Surprise",
+      "sub": "Divide what remains by the months left and the number becomes ordinary.",
+      "props": ["tracker-sheet", "pencil"],
+      "why": "The real worksheet filled with the guide's year of costs, totalled at the foot."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-personal-finance-companion-01", "title": "Organize Your Finances: All Your Money in One Place",
+      "archetype": "intake",
+      "content": { "items": ["Bank apps", "Statements", "Memory", "Habit", "Accounts, bills, subscriptions, debt and savings, always current."], "source": "creative/pinterest/maple-main-finds.ts (description and sub); screen creative/public/screens/personal-finance-companion-records.png" },
+      "headline": "All your money in one place, not five apps",
+      "sub": "Accounts, bills, subscriptions, debt and savings, always current.",
+      "props": ["loose-papers", "phone-screenshot"],
+      "why": "Five scattered grey tiles funnel into the one Records screen."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-personal-finance-companion-02", "title": "Debt Payoff Plan: See the Month You'll Be Debt Free",
+      "archetype": "measure",
+      "content": { "items": ["Payoff ladder", "Smallest balance first", "Highest rate first", "Debt-free in"], "source": "workbook PDF p38 payoff ladder; toggle labels and 'Debt-free in' from creative/public/screens/personal-finance-companion-debt.png" },
+      "headline": "When will this debt actually be gone?",
+      "sub": "A payoff plan from your own balances and rates, with the month you're debt-free.",
+      "props": ["payoff-ladder", "phone-screenshot"],
+      "why": "A ladder with its lower rungs shaded beside the real debt screen gives a sense of progress without a made-up date."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-personal-finance-companion-03", "title": "Debt Snowball vs Avalanche Calculator on Your Own Numbers",
+      "archetype": "side-by-side",
+      "content": { "items": ["Snowball: smallest balance first", "Avalanche: highest rate first", "First debt cleared: Store card, March 2027 / Visa, October 2028", "Debt-free: September 2029 / September 2029", "Interest along the way: $5,109.78 / $4,995.84"], "source": "src/content/guides.ts debt-snowball-vs-avalanche ('The two orders' compare block and 'What each order does with those numbers' table)" },
+      "headline": "Debt snowball vs avalanche, worked out for you",
+      "sub": "On your real numbers, not an example.",
+      "props": ["payoff-ladder"],
+      "why": "Two ladders side by side, labelled with the guide's worked results. Mark the figures 'Example' so the sub ('your real numbers') stays true."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-personal-finance-companion-04", "title": "Monthly Bill Tracker: See What You've Paid at a Glance",
+      "archetype": "tracker-sheet",
+      "content": { "items": ["Rent", "Electric", "Water", "Paid", "Tick it paid. What's left to pay works itself out."], "source": "bill names from the head ('water bill') and the organize-your-finances example page; 'Paid 5 Sep' format from components/bills/PaidToggle.tsx; screen creative/public/screens/personal-finance-companion-bills.png" },
+      "headline": "POV: did I pay the water bill, or just think about it?",
+      "sub": "Tick it paid. What's left to pay works itself out.",
+      "props": ["tracker-sheet", "settled-tick", "phone-screenshot"],
+      "why": "A short bill list with tick circles, the water bill unticked and circled, matches the POV and the real Bills screen."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-personal-finance-companion-05", "title": "How to Split Bills With a Partner or Roommate Fairly",
+      "archetype": "side-by-side",
+      "content": { "items": ["Your share of each bill", "Tick it settled", "A statement of what's owed", "Rent $1,800: $1,200.00 and $600.00"], "source": "points from creative/pinterest/maple-main-finds.ts; example split from the split-bills guide (src/content/guides.ts)" },
+      "headline": "Splitting bills with a partner or roommate?",
+      "sub": "No more 'wait, did I pay you back?'",
+      "props": ["split-bar", "settled-tick", "shared-statement"],
+      "why": "Two people at either end of one rent bar, the settled tick in the middle, the statement below."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-personal-finance-companion-06", "title": "Monthly Budget Planner: What a Normal Month Really Costs",
+      "archetype": "measure",
+      "content": { "items": ["coming in", "Going out", "Set aside for goals", "Left over", "Anything it couldn't count is named underneath."], "source": "labels from components/TodayView.tsx MonthCard; last line from the Maple description in creative/pinterest/maple-main-finds.ts" },
+      "headline": "What does a normal month really cost you?",
+      "sub": "A typical month written out from what you recorded, like a budget planner.",
+      "props": ["typical-month-bar"],
+      "why": "One big three-part bar is the 'normal month' at a glance; segments are proportional shapes, not invented figures."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-personal-finance-companion-07", "title": "Import Bank Statement CSV Into Your Budget, No Retyping",
+      "archetype": "intake",
+      "content": { "items": ["09/03/2026,GROCERY MART 114,-84.20", "09/05/2026,PAYROLL ACME INC,\"1,612.40\"", "Date", "Description", "Amount"], "source": "rows from src/content/guides.ts bank-statement-csv-to-budget example; screen creative/public/screens/personal-finance-companion-records.png" },
+      "headline": "Still re-typing your bank statement by hand?",
+      "sub": "Import a CSV or paste notes, review what changed, then confirm.",
+      "props": ["csv-strip", "mapping-arrows", "tidy-table"],
+      "why": "A raw strip flowing into tidy rows is the 'no retyping' promise without words."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-personal-finance-companion-08", "title": "Money Tracker That Flags Problems Before They Cost You",
+      "archetype": "one-card",
+      "content": { "items": ["Visa is missing an interest rate.", "Gaps in your own records", "Never a made-up task", "One useful next move"], "source": "template '${debt.name} is missing an interest rate.' in attention.ts, filled with 'Visa' from the organize-your-finances example page ('Visa about $2,600, rate ?'); points from creative/pinterest/maple-main-finds.ts" },
+      "headline": "A money tracker that only flags real problems",
+      "sub": "From your own records. Never made up.",
+      "props": ["next-move-card"],
+      "why": "One real-gap card in front of a blank wall says 'only real flags' more convincingly than a list."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-personal-finance-companion-09", "title": "Subscription Tracker: Find the Ones You Forgot About",
+      "archetype": "tracker-sheet",
+      "content": { "items": ["Subscription inventory", "Subscription | Amount | Frequency | Renewal date | Decision | Cancellation notes", "Antivirus | $59.99 | Annual | Jan 9 | Still deciding"], "source": "workbook PDF p26 'Subscription inventory' headers; row from src/content/guides.ts subscription-tracker-what-to-track example" },
+      "headline": "Me finding a subscription I forgot I had",
+      "sub": "Subscriptions with amounts and renewal dates, and a missing date flagged.",
+      "props": ["tracker-sheet", "pencil"],
+      "why": "An inventory page with one row lifted and highlighted is the 'found one' moment."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-personal-finance-companion-10", "title": "Personal Finance Organizer: Accounts, Bills, Debt, Savings",
+      "archetype": "binder-tabs",
+      "content": { "items": ["Accounts", "Income", "Bills", "Subscriptions", "Debt", "Savings"], "source": "points from creative/pinterest/maple-main-finds.ts; seven areas in src/shop/products/personal-finance-companion.ts inclusions[0]; screen creative/public/screens/personal-finance-companion-records.png" },
+      "headline": "Every money area, one picture",
+      "sub": "Always current, never a guess.",
+      "props": ["financial-binder", "index-tabs", "phone-screenshot"],
+      "why": "Six tabs on a binder whose open page is the live Records screen: organiser shape, app truth."
+    }
+  ]
+}
