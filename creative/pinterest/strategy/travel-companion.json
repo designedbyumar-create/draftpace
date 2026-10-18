@@ -1,0 +1,1367 @@
+{
+  "product": "travel-companion",
+  "audience": [
+    "the person everybody in the group asks what happens next (listing audience[0])",
+    "parents packing for children or a baby, one list per child",
+    "people planning a first trip abroad and checking passports, entry rules and paper copies",
+    "multi-stop travellers whose flights, transfers, stays and reservations were booked around each other",
+    "people who have lived through a delay cascade and now save 'what to do if your flight is delayed' pins",
+    "people who want a paper copy for when the phone is at four percent in a taxi",
+    "road trippers and carry-on-only packers who save packing checklists"
+  ],
+  "visualWorld": {
+    "setting": "The travel desk and the departure hall, seen from above or straight on: an open suitcase on a floor, a passport and its paperwork laid out in a travel folder, a departure board over a gate, boarding passes and luggage tags, a printed itinerary on a clipboard, a route drawn across a simple map. Everything is the stuff a traveller actually handles, drawn flat. No people's faces, no destinations' landmarks, no photos.",
+    "props": [
+      {
+        "id": "open-suitcase",
+        "draw": "Top-down open hard-shell case: two rounded rects side by side (lid and base) joined by a zip seam drawn as a dashed line; soft lining fill; two thin crossed elastic straps in the base; a rounded bar handle on the outer edge; four small circle wheels at the corners."
+      },
+      {
+        "id": "carry-on-bag",
+        "draw": "Upright cabin trolley: tall rounded rect body, front pocket as an inner rounded rect with a zip line, telescopic handle as two thin vertical rects plus a crossbar, two circle wheels."
+      },
+      {
+        "id": "packing-items",
+        "draw": "Knolled small items, each 3-6 shapes: folded clothes (stacked rounded rects with a fold line), socks (two L shapes), shoes (two sole shapes with a heel notch), toothbrush (thin rect + small bristle block), medication bottle (rect, cap rect, blank label band), bank card (rounded rect + chip square), cash (rect with an oval), phone (rounded rect, dark screen), charger (plug block + looping cable path), power bank (rounded rect + four LED dots), sunglasses (two circles + bridge), sun hat (ellipse brim + dome), folded copies (rect with a corner fold). Laid on a grid with even gaps, all axis-aligned."
+      },
+      {
+        "id": "clear-liquids-bag",
+        "draw": "Quart zip bag: translucent rounded rect (low-opacity fill, solid outline), zip strip as a thicker band on top, three small bottles inside (rect + cap)."
+      },
+      {
+        "id": "kids-items",
+        "draw": "Baby bottle (rect, teat as a dome), nappy (rounded trapezoid with tab rects), comfort toy (bear silhouette: circle head, two ear circles, rounded body), small water bottle, picture book (two rects with a spine line)."
+      },
+      {
+        "id": "passport",
+        "draw": "Closed: portrait rounded rect (about 0.7 ratio) in the strong accent, a foil emblem as a plain circle-and-ring, no country, no crest, no lettering. Open: two pages, the photo page as a square photo placeholder (silhouette circle + shoulders) and two rows of short dashes for the machine-readable lines, no characters."
+      },
+      {
+        "id": "travel-folder",
+        "draw": "Open document wallet: two panels side by side with pocket flaps (trapezoids), an elastic band as a thin vertical strip, and coloured index tabs along the top edge that can carry real labels."
+      },
+      {
+        "id": "envelope-confirmation",
+        "draw": "Envelope (rect + triangular flap line) with a folded sheet sliding out; the sheet shows a header bar and one bold line that carries a real booking reference."
+      },
+      {
+        "id": "wallet-and-cards",
+        "draw": "Bifold wallet rounded rect with a stitch line, two card edges peeking out, a banknote corner with an oval."
+      },
+      {
+        "id": "boarding-pass",
+        "draw": "Wide rounded rect; perforation as a dashed vertical line with two semicircle notches cut from top and bottom edges; stub on the right; barcode as 20-30 vertical bars of varying width (decorative, no digits); a small plane glyph between two large fields; label/value grid in small caps. Labels and values must be real words from the pin's source, never airline codes or invented gates and seats."
+      },
+      {
+        "id": "luggage-tag",
+        "draw": "Tag shape: rounded rect with the two top corners chamfered, a reinforced eyelet (two concentric circles), a string loop drawn as a single curved stroke; kraft or coral fill; one writing area with a ruled line. Carries one real item per tag."
+      },
+      {
+        "id": "hotel-key-card",
+        "draw": "Card-ratio rounded rect with a magnetic stripe band or a small chip square, tucked half into a paper sleeve (rect with a diagonal flap). Carries one real line each."
+      },
+      {
+        "id": "service-desk-bell",
+        "draw": "Half-circle dome on a flat ellipse base, a small knob on top, two short motion lines."
+      },
+      {
+        "id": "departure-board",
+        "draw": "Dark rounded panel with a slim frame; a header row of column labels in small caps; rows of split-flap cells (each character in its own small rect with a hairline across the middle, slight gap between cells); an optional status column of pill-shaped flaps; a small round clock top left. Rows are the pin's real lines."
+      },
+      {
+        "id": "clock-face",
+        "draw": "Circle, 12 tick marks, two hands; when several clocks sit together their hands show real relative offsets for one chosen instant, or are drawn without hands."
+      },
+      {
+        "id": "route-map",
+        "draw": "Pale map ground with two or three loose land blobs (no real coastline, no country names), a dashed bezier arc between round teardrop location pins, a tiny plane or train glyph riding the line; each pin can carry a small card with a real stop name and booking."
+      },
+      {
+        "id": "road-route",
+        "draw": "Winding road ribbon with a dashed centre line, side-view flat car (body rect, window rects, two wheel circles), small stop markers: fuel drop, cabin (pentagon roof + door), house."
+      },
+      {
+        "id": "dependency-chain",
+        "draw": "Small booking cards connected top to bottom by a thick line with arrowheads, each card a rounded rect with a kind label in small caps; an 'affected' card gets a dashed outline, never a red alarm."
+      },
+      {
+        "id": "people-figures",
+        "draw": "Simple figures: head circle and rounded-shoulder body, no faces, 3-6 in different tints; used beside a booking card, never as portraits."
+      },
+      {
+        "id": "printed-sheet",
+        "draw": "Portrait white sheet with a soft drop shadow and one curled corner (triangle); header eyebrow and title; rows with square tick boxes; a ticked row gets a check and a strike line (the PDF really prints ticked items struck through)."
+      },
+      {
+        "id": "trip-book",
+        "draw": "Stack of 4-6 offset sheets with a staple or spiral (row of small circles) on the left; top page titled with the real book title; coloured side tabs carrying real section names."
+      },
+      {
+        "id": "clipboard",
+        "draw": "Board rect with rounded corners and a clip (small rounded rect + semicircle) at the top centre holding a printed sheet."
+      },
+      {
+        "id": "index-card",
+        "draw": "Landscape card, red top rule and pale blue ruled lines, slightly rotated, holding a short real wording."
+      },
+      {
+        "id": "postcard",
+        "draw": "Landscape card split by a vertical rule: message area left, three address lines right (blank), stamp as a rect with a scalloped border (circles along the edge) and wavy postmark strokes with no lettering."
+      },
+      {
+        "id": "sticky-note",
+        "draw": "Square with a folded bottom-right corner, tilted 3-5 degrees, holding one short real line."
+      },
+      {
+        "id": "pen",
+        "draw": "Long thin rect with a tapered tip triangle and a clip strip."
+      },
+      {
+        "id": "phone-with-screen",
+        "draw": "Rounded phone frame with a thin bezel and pill notch, the real screenshot from creative/public/screens/ clipped inside, cropped to the part the pin talks about; never redrawn or edited."
+      },
+      {
+        "id": "phone-low-battery",
+        "draw": "Phone face-up with a dark blank screen and a large battery glyph (rounded rect + nub) with only a thin sliver of fill; no app UI, no notification."
+      }
+    ],
+    "palette": "Start from the product's own accent in src/products/travel-companion/definition.ts (base #00626f, strong #00434d, soft #d9eef0, page #eef4f5): the teal is the 'airline livery' colour for passports, board frames, route lines and pins. Add the materials of travel as neutrals: kraft/manila for tags and folders, warm white for boarding passes and paper, a near-black teal for the departure board with warm amber flap letters, and one warm coral pop (the soft coral of the time chips in the itinerary screenshot) for luggage tags and the single highlighted item. Never more than one pop colour per pin; the teal stays recognisably this product's.",
+    "mood": "Calm competence at the airport: the feeling of having the reference ready before the desk asks. Orderly, tactile, a little nostalgic in the paper objects, never frantic, never glossy-luxury, never wanderlust. The tone of the listing: practical, quiet, nothing promised that the app does not do."
+  },
+  "archetypes": [
+    {
+      "id": "packing-flatlay",
+      "name": "Packing flat-lay",
+      "clicks": "Packing lists are the most reliable traffic driver in travel Pinterest (Simple Pin Media); Pinterest reported 'packing guide' searches up 480% year over year (via Social Media Today), and travellers say they use Pinterest to decide what to pack (Skift, citing Deep Focus). The knolled top-down flat-lay is the dominant look of packing pins: the eye scans it like a checklist, so it reads as useful and gets saved for later.",
+      "layout": "1000x1500. Top 0-330: headline block on the page colour, left-aligned at x=64, max 3 lines; eyebrow above it if the title has a 'Keyword:' prefix. 330-1180: top-down open suitcase (or carry-on, or a grid of small bags) filling the width with 48px margins; 6-15 knolled items on an even grid, each with a small label in a kraft label strip beneath it. 1180-1330: the sub line, one or two lines. 1330-1500: product line 'Travel Companion' + small mark at bottom-left (keep the bottom-right corner empty for Pinterest's icons).",
+      "visual": "open-suitcase or carry-on-bag seen from above, the real items knolled around or inside it, a clear liquids bag where relevant, sometimes split into two zones (shared / personal).",
+      "text": "Headline = the pin's title. Item labels = the real items, copied exactly from STARTER_LISTS in src/products/travel-companion/packingLists.ts or the matching packing guide in src/content/guides.ts. Zone labels only where the source has them ('Shared, packed once' / 'Personal, one each'; group names like 'Documents and money').",
+      "bestFor": "packing list pins: week away, carry-on only, the basics, kids and baby, night-before bag"
+    },
+    {
+      "id": "luggage-tags",
+      "name": "Luggage tags and key cards",
+      "clicks": "A numbered or itemised list is a staple travel pin format ('10 traveler secrets to packing smart' style teasers, per Social Media Today's best-practices piece; list posts perform well per Simple Pin Media). Hanging each item on its own tag makes the list scannable at thumbnail size and turns a plain list into a travel object; one idea per pin (Houfy) with the items as the payoff.",
+      "layout": "1000x1500. Headline top-left 64-330. A horizontal rail or a suitcase handle across y=400; 3-11 tags hang from it on strings of different lengths, staggered in two rows if more than 6, each tag 200-280px wide with one real item written on it (tag number optional, only if the source list is ordered). For hotel topics the tags become key cards fanned out of a sleeve. Sub line at 1200-1320, product line bottom-left.",
+      "visual": "luggage-tag x N tied to a suitcase handle or a passport, or hotel-key-card fan with a service-desk-bell.",
+      "text": "One real item per tag, copied verbatim from the product's data (list labels, preparation categories, playbook choices) or the guide's list; heading from the source list if it has one.",
+      "bestFor": "pins whose content is a short set of named options or steps: kinds of trip, kinds of to-do, what was lost, three things to write down, who is on a booking, hotel search order"
+    },
+    {
+      "id": "trip-paper",
+      "name": "Paper in hand (printable mockup)",
+      "clicks": "Printable-mockup pins are how planner and travel-binder printables are sold on Pinterest: the buyer sees the page they will hold (planner sellers' listings and pin template packs all lead with the printed page). Paper backups are a recurring travel-binder theme ('technology can fail when traveling', Savor and Savvy). It also shows the product's real printables, which no competitor pin can.",
+      "layout": "1000x1500. Headline top 64-300. 300-1250: a printed-sheet, trip-book, clipboard, index card or postcard at a slight 2-4 degree tilt, occupying ~75% width, shown big enough that its rows are legible at phone size (min 26px text); a supporting prop overlaps one corner (pen, phone-low-battery, passport edge, sticky-note). Optional real screenshot in a phone frame overlapping the lower left, max 30% of width. Sub 1260-1360, product line bottom-left.",
+      "visual": "the product's own printed outputs drawn as paper: the packing list PDF, My Trip Book with its section tabs, the one-page trip card, the trip record; or a handwritten index card or postcard carrying the Companion's authored wording.",
+      "text": "Sheet titles and section names copied from src/products/travel-companion/printables (BOOK_TITLE, SECTION_LIST, tripCard.tsx labels, packing.tsx) and rows from the product data or guide; wording on cards copied from the playbooks' suggestedWording.",
+      "bestFor": "printables, what to keep on paper, packing list PDF, scripts/opening lines, let somebody know, trip record"
+    },
+    {
+      "id": "document-wallet",
+      "name": "Passport and documents flat-lay",
+      "clicks": "Travel document checklists and travel binders/organisers are an established Pinterest category (travel binder printables with document sections; passport-and-documents flat-lays are a standard travel stock composition). The passport is the single most recognisable 'international travel' object, so the pin is read as a documents checklist instantly.",
+      "layout": "1000x1500. Headline top 64-300. 320-1220: an open travel-folder seen from above, passport(s) open or closed, wallet, envelopes, insurance card, each document carrying a small kraft label card with its real 'whose / where kept' line, aligned to a loose grid; index tabs on the folder carry the real document types. Sub 1240-1340, product line bottom-left.",
+      "visual": "travel-folder, passport, envelope-confirmation, wallet-and-cards, sticky-note tabs, optionally phone-with-screen of the Trip documents list.",
+      "text": "Document types from DOCUMENT_TYPES (printables/bookContent.ts) or DocumentForm.tsx KIND_OPTIONS; 'where kept' lines from the guide's example table or the real screenshot.",
+      "bestFor": "travel document checklist, where it is kept, lost passport/wallet/phone, first international trip timeline, confirmation numbers"
+    },
+    {
+      "id": "departure-board",
+      "name": "Departure board",
+      "clicks": "Ordered, time-stamped steps are the format of 'what to do if your flight is delayed' advice (step-by-step guides from airlines, banks and travel sites dominate this query), and itinerary graphics are one of the recommended travel pin types (AdvertiseMint/Social Media Today). A split-flap board is the instantly-recognised airport sign, so a schedule or ordered list reads as 'travel' before a word is read.",
+      "layout": "1000x1500. Headline top 64-300 on the page colour (not on the board). 330-1250: the dark departure-board panel full width minus 40px margins, a header row of real column labels, 4-9 rows of split-flap text (max ~28 characters per cell row, so long lines are cut to their first clause using the source's own words); an optional status column. Sub 1270-1360 below the board, product line bottom-left.",
+      "visual": "departure-board with split-flap rows; clock-face top-left of the panel; for time zones, a row of clock-faces above the board.",
+      "text": "Rows copied from guide tables/timelines (times, steps, references) or product data (playbook titles, timezone table, Today labels). Column labels only from the source table's own column names.",
+      "bestFor": "flight delay first steps, itinerary with references, night-before timing, time zones, 'what happens tomorrow', the nine situations"
+    },
+    {
+      "id": "boarding-pass",
+      "name": "Boarding pass",
+      "clicks": "Boarding-pass graphics are a widely used travel design device (invitations, trip reveals, giveaways; Morphic, Hongkiat) because the format already means 'trip'. The structured label/value grid also improves readability of a small amount of information, and the tear-off stub gives a natural second hierarchy for a checklist or choice set.",
+      "layout": "1000x1500. Headline top 64-320. One large boarding pass rotated 90 degrees to run vertically (pass body 330-1180, stub 1180-1330 below a perforation), or 2-4 passes stacked with offsets. Main body: up to 4 label/value pairs in small caps labels + bold values; stub: the choice set or short checklist with tick boxes. Barcode as decoration only. Sub 1340-1400, product line bottom-left.",
+      "visual": "boarding-pass (single, stacked, or the back of a pass with pen notes), a passport edge or phone-with-screen tucked under it.",
+      "text": "Labels and values are real: playbook prompts and choices (flightProblem.ts), trip card labels (tripCard.tsx), the guide's own booking table, or values from the real screenshots. No invented flight numbers, gates, seats, airport codes or times.",
+      "bestFor": "flight problem choices, notes for the desk, who booked what, the one-page trip card, one-way trips"
+    },
+    {
+      "id": "route-map",
+      "name": "Route map",
+      "clicks": "Map and itinerary graphics are core travel-pin imagery and the multi-stop/itinerary pins are what Pinterest travellers use to 'map out their itineraries' (Skift). A dotted route with pins is the shorthand for a trip; using it to show what depends on what makes the product's one unique idea (the change-impact walk) visible in a single glance.",
+      "layout": "1000x1500. Headline top 64-300. 320-1250: map ground full bleed; 2-4 location pins along a dashed arc or road-route from top-left to bottom-right; each pin has a booking card (kind label + title + time/reference) offset to the open side; dependency arrows between cards where the source says one booking is built on another. Sub 1270-1360 on a solid band, product line bottom-left.",
+      "visual": "route-map or road-route with location pins, dependency-chain cards, clock-faces for time-zone pins, phone-with-screen for the Today pin.",
+      "text": "Stop names, times and references from the guides' worked examples (multi-stop, flight-changed, one-page itinerary, road trip) or the real screenshots; zone names from TIMEZONE_PLACES.",
+      "bestFor": "multi-stop trips, flight moved and what else it affects, time zones, who to tell, road trip days, Today shows where you are"
+    }
+  ],
+  "pins": [
+    {
+      "account": "draftpace",
+      "id": "travel/pin-3.1",
+      "title": "Packing List for a Week Away, by Person",
+      "archetype": "packing-flatlay",
+      "content": {
+        "items": [
+          "Shared, packed once: First aid kit and pain relief",
+          "A multi-port charger and one adapter",
+          "Sunscreen or bug spray",
+          "Snacks for the trip",
+          "A laundry bag, an umbrella",
+          "Personal, one each: Passport or ID and bank card",
+          "Clothing and shoes",
+          "Medication and glasses",
+          "Toothbrush and daily toiletries",
+          "Phone cable and headphones"
+        ],
+        "source": "src/content/guides.ts, guide packing-list-for-a-week-away, compare block 'Shared and personal'"
+      },
+      "headline": "Packing List for a Week Away, by Person",
+      "sub": "A packing list that starts with the things every trip needs and then adds what this one asks for.",
+      "props": [
+        "open-suitcase",
+        "packing-items",
+        "passport"
+      ],
+      "why": "The suitcase is split into a shared half and a personal half, so 'by person' is visible before it is read."
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-3.2",
+      "title": "Start a Packing List From the Kind of Trip",
+      "archetype": "luggage-tags",
+      "content": {
+        "items": [
+          "The basics",
+          "Beach",
+          "City break",
+          "Cold weather",
+          "Camping",
+          "Road trip",
+          "Cruise",
+          "Business trip",
+          "Carry-on only",
+          "Children",
+          "A baby"
+        ],
+        "source": "src/products/travel-companion/packingLists.ts, STARTER_LISTS[].label (11 lists, matching the description's 'Eleven starting lists')"
+      },
+      "headline": "Start a Packing List From the Kind of Trip",
+      "sub": "A starting point, not a rulebook: nothing is added until you press the button.",
+      "props": [
+        "luggage-tag",
+        "carry-on-bag"
+      ],
+      "why": "Eleven tags on one handle make 'pick your kind of trip' the whole picture."
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-3.3",
+      "title": "A Carry-On Only Packing List",
+      "archetype": "packing-flatlay",
+      "content": {
+        "items": [
+          "Your documents or phone",
+          "Medication and anything you can't replace",
+          "A change of underwear and a shirt",
+          "Your charger and headphones",
+          "A snack and an empty water bottle",
+          "Liquids in a clear bag"
+        ],
+        "source": "src/content/guides.ts, guide carry-on-only-packing-list, list 'What stays in reach, in case the bag gets checked'; 'Liquids in a clear bag' from packingLists.ts STARTER_LISTS id carry-on"
+      },
+      "headline": "A Carry-On Only Packing List",
+      "sub": "Traveling with only a carry-on is a matter of a short list and a firm rule.",
+      "props": [
+        "carry-on-bag",
+        "clear-liquids-bag",
+        "packing-items"
+      ],
+      "why": "One small bag and a few knolled items: the restraint is the message."
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-3.4",
+      "title": "A Printable Packing List, One Section Per Person",
+      "archetype": "trip-paper",
+      "content": {
+        "items": [
+          "Packing list",
+          "Everyone: Copies of your bookings, Some cash, Power adaptor, Portable battery",
+          "Sam: Passport or photo ID, Bank card, Phone and charger",
+          "Mia: Passport or photo ID, Bank card, Phone and charger"
+        ],
+        "source": "Items: packingLists.ts STARTER_LISTS id essentials (groups 'Documents and money', 'Phone and power'); section order 'Everyone' then each traveller from packingSections(); eyebrow 'Packing list' from printables/packing.tsx; traveller names Sam and Mia from creative/public/screens/travel-companion-trip.png"
+      },
+      "headline": "A Printable Packing List, One Section Per Person",
+      "sub": "The packing list groups items under Everyone and then each person, and saves as a PDF with tick boxes.",
+      "props": [
+        "printed-sheet",
+        "pen",
+        "clipboard"
+      ],
+      "why": "Shows the real PDF's shape, including one ticked row struck through, which the description says it does."
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-3.5",
+      "title": "Packing List: A Starting Point, Not a Rulebook",
+      "archetype": "packing-flatlay",
+      "content": {
+        "items": [
+          "Documents and money: Passport or photo ID, Bank card, Copies of your bookings, Some cash",
+          "Phone and power: Phone and charger, Power adaptor, Portable battery",
+          "Clothing: Underwear, Socks, Sleepwear, Comfortable shoes",
+          "Toiletries: Toothbrush and toothpaste, Any medication you take, Travel-size toiletries, First aid basics"
+        ],
+        "source": "packingLists.ts STARTER_LISTS id essentials ('The basics')"
+      },
+      "headline": "Packing List: A Starting Point, Not a Rulebook",
+      "sub": "No packing list fits every trip. Start from the basics and change anything.",
+      "props": [
+        "packing-items",
+        "sticky-note"
+      ],
+      "why": "A four-quadrant knolled grid of the basics, no suitcase, so it differs from 3.1 and 3.3."
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-4.1",
+      "title": "Travel Document Checklist: What to Carry and Where to Keep It",
+      "archetype": "document-wallet",
+      "content": {
+        "items": [
+          "Passport · Dana · Mar 2029 · Zip pocket, carry-on",
+          "Passport · Sam · Nov 2026 · Desk drawer, top left",
+          "Passport · Ines (age 10) · Jun 2028 · Same folder as Dana's",
+          "Insurance card and phone line · Whole family · Folder, plus paper page",
+          "Child consent letter · Ines · Folder"
+        ],
+        "source": "src/content/guides.ts, guide travel-document-checklist, table 'Example: four people, one folder'"
+      },
+      "headline": "Travel Document Checklist: What to Carry and Where to Keep It",
+      "sub": "What each traveler needs, what to check months before you go.",
+      "props": [
+        "travel-folder",
+        "passport",
+        "envelope-confirmation"
+      ],
+      "why": "Three passports and their 'where kept' labels in one folder is the guide's own example made physical."
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-4.2",
+      "title": "Travel Document Checklist: Dates Worth a Look Before You Go",
+      "archetype": "departure-board",
+      "content": {
+        "items": [
+          "6 months before · Read each passport's expiry. Look up entry rules.",
+          "3 months before · Start any renewal, visa or authorization.",
+          "1 month before · Confirm names on tickets. Sort consent letters.",
+          "Night before · Print the page. Check passports are in the bag.",
+          "Legend: before the trip starts / during the trip / after the trip ends"
+        ],
+        "source": "src/content/guides.ts, guide travel-document-checklist, timeline 'When to do it'; legend words from the three line templates in src/products/travel-companion/documentChecks.ts"
+      },
+      "headline": "Travel Document Checklist: Dates Worth a Look Before You Go",
+      "sub": "It only compares the dates you typed.",
+      "props": [
+        "departure-board",
+        "passport"
+      ],
+      "why": "Dates read as departures; the legend shows the only three things the product flags."
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-4.3",
+      "title": "Travel Documents Organizer: A Photo of a Passport Is Not a Backup Plan",
+      "archetype": "luggage-tags",
+      "content": {
+        "items": [
+          "what it is",
+          "whose it is",
+          "where it is kept"
+        ],
+        "source": "The pin's own description ('Three things to write down for every document: what it is, whose it is, and where it is kept.')"
+      },
+      "headline": "Travel Documents Organizer: A Photo of a Passport Is Not a Backup Plan",
+      "sub": "Three things to write down for every document:",
+      "props": [
+        "passport",
+        "luggage-tag"
+      ],
+      "why": "A closed passport with three tags tied to it says 'label it' without a phone in sight."
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-4.4",
+      "title": "Travel Document Checklist: Where It Is Kept, Not the File",
+      "archetype": "document-wallet",
+      "content": {
+        "items": [
+          "Passport · Sam's passport · Home safe, passports folder",
+          "Passport · Mia's passport · Home safe, passports folder",
+          "Confirmation · Outbound flight confirmation · Email, starred",
+          "Insurance · Travel insurance policy · Printed copy in the travel folder",
+          "Folder tabs: Passport, Visa, Insurance, Ticket, Confirmation, Agreement, Other"
+        ],
+        "source": "Document rows from creative/public/screens/travel-companion-trip.png (Documents section); tabs from DOCUMENT_TYPES in src/products/travel-companion/printables/bookContent.ts"
+      },
+      "headline": "Travel Document Checklist: Where It Is Kept, Not the File",
+      "sub": "Nothing is uploaded or stored as a file.",
+      "props": [
+        "travel-folder",
+        "passport",
+        "phone-with-screen"
+      ],
+      "why": "The physical folder next to the app's registry of it shows record, not upload.",
+      "screen": "creative/public/screens/travel-companion-trip.png"
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-4.5",
+      "title": "Travel Organization: Your Phone Is a Single Point of Failure",
+      "archetype": "trip-paper",
+      "content": {
+        "items": [
+          "Staying · Name, and address as written locally",
+          "Flights · Reference and airline phone",
+          "Transfer · Company, reference, phone",
+          "Insurance · Policy number, assistance line",
+          "At home · One person who knows your plans",
+          "Passports · Photo page copies, kept apart"
+        ],
+        "source": "src/content/guides.ts, guide what-to-keep-on-paper-when-you-travel, table 'Example: what the page looks like' (columns Line, What to write)"
+      },
+      "headline": "Travel Organization: Your Phone Is a Single Point of Failure",
+      "sub": "The short list worth printing, and why it is shorter than you think.",
+      "props": [
+        "printed-sheet",
+        "phone-low-battery"
+      ],
+      "why": "A dead phone beside the one printed page is the whole argument in one image."
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-5.1",
+      "title": "Your Flight Is Delayed and You Have a Connection: What to Do First",
+      "archetype": "departure-board",
+      "content": {
+        "items": [
+          "While still in the air · Ask a flight attendant whether the connecting flight is holding",
+          "On landing · Open the airline app before you stand up",
+          "In the line · Join the service or transfer desk queue",
+          "In the same minutes · Call the airline from the queue",
+          "Before you reach the desk · Decide what to ask for",
+          "Before you leave the desk · Get the agent's name and a reference"
+        ],
+        "source": "src/content/guides.ts, guide flight-delayed-with-a-connection-what-to-do-first, timeline 'What to do, in order' (each 'what' cut to its first clause)"
+      },
+      "headline": "Your Flight Is Delayed and You Have a Connection: What to Do First",
+      "sub": "The order that helps in the twenty minutes after a delay is announced.",
+      "props": [
+        "departure-board",
+        "clock-face"
+      ],
+      "why": "A departure board is where a delay is first seen; its rows become the order of what to do."
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-5.2",
+      "title": "Travel Problems: What Has Happened? Five Choices",
+      "archetype": "boarding-pass",
+      "content": {
+        "items": [
+          "What's happened?",
+          "Delayed",
+          "Cancelled",
+          "Going to miss the connection",
+          "A baggage problem",
+          "Something else"
+        ],
+        "source": "src/products/travel-companion/playbooks/flightProblem.ts, step 'problem' prompt and choices"
+      },
+      "headline": "Travel Problems: What Has Happened? Five Choices",
+      "sub": "Travel Companion walks you through a flight problem one question at a time.",
+      "props": [
+        "boarding-pass",
+        "pen"
+      ],
+      "why": "The five choices sit on the stub as tick boxes: the first screen of the walk-through, on the object it is about."
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-5.3",
+      "title": "The Hotel Cannot Find Your Reservation: What to Say",
+      "archetype": "luggage-tags",
+      "content": {
+        "items": [
+          "Ways to ask them to search, in order",
+          "The hotel's own confirmation number.",
+          "The booking site's reference, which is usually a different format.",
+          "The surname of whoever paid or booked, not whoever is staying.",
+          "The last four digits of the card.",
+          "The dates alone, which often surfaces a booking with a misspelled name."
+        ],
+        "source": "src/content/guides.ts, guide hotel-cannot-find-your-reservation, list 'Ways to ask them to search, in order'"
+      },
+      "headline": "The Hotel Cannot Find Your Reservation: What to Say",
+      "sub": "What to have open before you reach the desk.",
+      "props": [
+        "hotel-key-card",
+        "service-desk-bell"
+      ],
+      "why": "Key-card variant: five numbered cards fanned on a front-desk counter, the hotel world rather than the airport."
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-5.4",
+      "title": "Holiday Travel Tips: Your Opening Line, Ready to Use or Replace",
+      "archetype": "trip-paper",
+      "content": {
+        "items": [
+          "Your opening",
+          "Hello, my flight is delayed and I need to know what my options are. Can you help me with that?",
+          "While you are talking to them: Say what you need · Get the name of who you spoke to"
+        ],
+        "source": "src/products/travel-companion/playbooks/flightProblem.ts, steps 'opening' (suggestedWording for delayed) and 'during'"
+      },
+      "headline": "Holiday Travel Tips: Your Opening Line, Ready to Use or Replace",
+      "sub": "The wording is not saved or sent anywhere.",
+      "props": [
+        "index-card",
+        "passport",
+        "pen"
+      ],
+      "why": "An index card tucked into a passport, the authored opening line written on it."
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-5.5",
+      "title": "Flight Delay Tips: Get the Name of Who You Spoke To",
+      "archetype": "boarding-pass",
+      "content": {
+        "items": [
+          "Say what you need",
+          "Ask what your options actually are, before choosing one",
+          "Ask where you will be able to sleep or wait, if it comes to that",
+          "Ask for anything in writing that confirms what was agreed",
+          "Get the name of who you spoke to"
+        ],
+        "source": "src/products/travel-companion/playbooks/flightProblem.ts, step 'during' items"
+      },
+      "headline": "Flight Delay Tips: Get the Name of Who You Spoke To",
+      "sub": "One habit that makes every later conversation easier.",
+      "props": [
+        "boarding-pass",
+        "pen"
+      ],
+      "why": "The back of a boarding pass with pen notes, the last line circled: the habit, in the place people actually write it."
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-6.1",
+      "title": "Lost Your Passport, Wallet or Phone Abroad: What to Have Ready",
+      "archetype": "document-wallet",
+      "content": {
+        "items": [
+          "What exactly was lost, and roughly when and where you last had it.",
+          "Who issued it",
+          "A number where you can be reached now",
+          "Where your copies or records are",
+          "Your hotel's name and address, your dates, and your booking references.",
+          "Who else needs to know"
+        ],
+        "source": "src/content/guides.ts, guide lost-passport-wallet-or-phone-abroad-what-to-have-ready, list 'Have this in front of you first' (long items cut to their first clause)"
+      },
+      "headline": "Lost Your Passport, Wallet or Phone Abroad: What to Have Ready",
+      "sub": "Steps vary by country and by what was lost, so confirm with the official source.",
+      "props": [
+        "passport",
+        "wallet-and-cards",
+        "phone-low-battery",
+        "sticky-note"
+      ],
+      "why": "Passport, wallet and phone laid out with one drawn as a dashed empty outline: the gap is what was lost."
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-6.2",
+      "title": "International Travel Checklist: What Has Been Lost or Stolen?",
+      "archetype": "luggage-tags",
+      "content": {
+        "items": [
+          "A passport or ID",
+          "Bank cards or a wallet",
+          "A phone",
+          "A bag or luggage",
+          "Tickets or booking confirmations",
+          "Something else"
+        ],
+        "source": "src/products/travel-companion/playbooks/lostOrStolen.ts, step 'what' choices"
+      },
+      "headline": "International Travel Checklist: What Has Been Lost or Stolen?",
+      "sub": "It helps you gather what you need before you make the call.",
+      "props": [
+        "luggage-tag",
+        "passport",
+        "wallet-and-cards"
+      ],
+      "why": "Lost-property tags, one per choice, each tied to the small drawn object it names."
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-6.3",
+      "title": "Travel Checklist: Who to Tell First When Something Goes Missing",
+      "archetype": "route-map",
+      "content": {
+        "items": [
+          "Someone who is with you",
+          "someone waiting for you",
+          "someone at home"
+        ],
+        "source": "The pin's own description; matches contactSomeone.ts choices (Someone travelling with you / Someone waiting to meet you / Someone at home)"
+      },
+      "headline": "Travel Checklist: Who to Tell First When Something Goes Missing",
+      "sub": null,
+      "props": [
+        "route-map",
+        "people-figures"
+      ],
+      "why": "Three pins on a map, where you are, where you are going, home: the three people are three places."
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-6.4",
+      "title": "International Travel Checklist: Let Somebody Know, in Your Own Words",
+      "archetype": "trip-paper",
+      "content": {
+        "items": [
+          "Hi, quick update on the trip so you're not wondering. Everything is being sorted, just later than planned."
+        ],
+        "source": "src/products/travel-companion/playbooks/contactSomeone.ts, step 'message' suggestedWording for home"
+      },
+      "headline": "International Travel Checklist: Let Somebody Know, in Your Own Words",
+      "sub": "It sends nothing for you: you pass the message on yourself.",
+      "props": [
+        "postcard",
+        "pen"
+      ],
+      "why": "A postcard home carrying the authored message: warm, travel-specific, and honest that you send it yourself."
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-6.5",
+      "title": "Road Trip Checklist: You Choose the Words",
+      "archetype": "departure-board",
+      "content": {
+        "items": [
+          "Passport · Report to local police, note the report number",
+          "Bank cards or wallet · Call the card issuer, freeze the card",
+          "Phone · Lock or erase it from another device",
+          "Bag or tickets · Tell the airline, hotel or transport provider"
+        ],
+        "source": "src/content/guides.ts, guide lost-passport-wallet-or-phone-abroad-what-to-have-ready, table 'What to do, by what you lost' (columns Lost, Do first)"
+      },
+      "headline": "Road Trip Checklist: You Choose the Words",
+      "sub": "A short way to say what happened and what you need.",
+      "props": [
+        "departure-board"
+      ],
+      "why": "Four rows, lost item then first move, read like a board of what to do next."
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-7.1",
+      "title": "How to Plan a Group Trip Without Becoming the Organizer",
+      "archetype": "boarding-pass",
+      "content": {
+        "items": [
+          "Flights out, Thu 9:15 · Booked by Priya",
+          "Cabin, 3 nights · Booked by Marcus",
+          "Rental car · Booked by Tom",
+          "Dinner Friday, 7:30 · Booked by Lee"
+        ],
+        "source": "src/content/guides.ts, guide how-to-plan-a-group-trip, table 'Example: the one page that stops the questions' (columns Booking, Booked by)"
+      },
+      "headline": "How to Plan a Group Trip Without Becoming the Organizer",
+      "sub": "Coordinating schedules is the hard part of group travel.",
+      "props": [
+        "boarding-pass",
+        "people-figures"
+      ],
+      "why": "Four stacked tickets, each with a different person's name as 'Booked by': the work is visibly spread."
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-7.2",
+      "title": "Family Vacation Planning: Who Is on This Booking?",
+      "archetype": "luggage-tags",
+      "content": {
+        "items": [
+          "Flight to Lisbon · Nov 2, 08:15 AM · Ref: EX7KQ2",
+          "Sam Rivera",
+          "Jordan Rivera",
+          "Mia Rivera"
+        ],
+        "source": "Booking card and traveller names from creative/public/screens/travel-companion-trip.png (Bookings section)"
+      },
+      "headline": "Family Vacation Planning: Who Is on This Booking?",
+      "sub": "When you add a booking, tick who it is for.",
+      "props": [
+        "luggage-tag",
+        "boarding-pass",
+        "phone-with-screen"
+      ],
+      "why": "Three bags with name tags, each tied by a string to one booking card.",
+      "screen": "creative/public/screens/travel-companion-trip.png"
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-7.3",
+      "title": "Packing and Planning for a Trip With Kids or a Baby",
+      "archetype": "packing-flatlay",
+      "content": {
+        "items": [
+          "Baby (under 1): Diapers, wipes, 2 outfits, formula or milk, a blanket",
+          "Toddler (1 to 3): Diapers, wipes, 2 outfits, snacks, a comfort toy",
+          "Child (4 to 12): 1 change of clothes, snacks, a book, headphones"
+        ],
+        "source": "src/content/guides.ts, guide packing-and-planning-for-a-trip-with-kids-or-a-baby, table 'Example: the bag you carry, by age' (column Plane bag)"
+      },
+      "headline": "Packing and Planning for a Trip With Kids or a Baby",
+      "sub": "What changes on a trip with children or a baby: the packing list, the paperwork and the pace.",
+      "props": [
+        "kids-items",
+        "packing-items",
+        "carry-on-bag"
+      ],
+      "why": "Three small bags in a row, by age, each with its own knolled contents."
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-7.4",
+      "title": "Group Trip Planning: A Packing List That Adds Items for Each Child",
+      "archetype": "trip-paper",
+      "content": {
+        "items": [
+          "Children: For the journey: Snacks, Something to do, Favourite comfort toy, Water bottle · Clothing: Spare clothes, Sun hat · Care: Any medicine they take",
+          "A baby: Feeding: Bottles and feeding supplies, Muslin cloths · Changing: Nappies, Wipes, Nappy cream · Sleeping: Comforter, Baby sleeping bag or blanket"
+        ],
+        "source": "packingLists.ts STARTER_LISTS ids children and baby"
+      },
+      "headline": "Group Trip Planning: A Packing List That Adds Items for Each Child",
+      "sub": "Two starting lists, Children and A baby, add items for each child you have recorded.",
+      "props": [
+        "printed-sheet",
+        "kids-items"
+      ],
+      "why": "Two printed lists side by side, one per starter list, with a comfort toy on the corner."
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-7.5",
+      "title": "Group Trip Planning: One Place Everybody Can Ask For",
+      "archetype": "departure-board",
+      "content": {
+        "items": [
+          "Flights out, Thu 9:15 · All six",
+          "Cabin, 3 nights · All six",
+          "Rental car · Tom, Priya, Lee",
+          "Dinner Friday, 7:30 · Five, not Tom"
+        ],
+        "source": "src/content/guides.ts, guide how-to-plan-a-group-trip, table 'Example: the one page that stops the questions' (columns Booking, Who's on it)"
+      },
+      "headline": "Group Trip Planning: One Place Everybody Can Ask For",
+      "sub": "Keep one plan and hand out the page.",
+      "props": [
+        "departure-board",
+        "people-figures"
+      ],
+      "why": "One board everyone in the group can read, the 'who's on it' column as the status flaps."
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-8.1",
+      "title": "Trip Itinerary: Many Stops, One Page",
+      "archetype": "route-map",
+      "content": {
+        "items": [
+          "Flight to Lisbon · Tue 18:40 · K7QD2M",
+          "Train to Porto · Fri 12:10 · P4471 · Built on: Hotel, Lisbon",
+          "Flight to Madrid · Sun 11:50 · V3XK9P · Built on: Hotel, Porto"
+        ],
+        "source": "src/content/guides.ts, guide organising-a-multi-stop-trip-without-a-spreadsheet, table 'The record, one line per booking'"
+      },
+      "headline": "Trip Itinerary: Many Stops, One Page",
+      "sub": "A trip with several places to stay needs a way to see them in order, with what each one depends on.",
+      "props": [
+        "route-map",
+        "dependency-chain"
+      ],
+      "why": "Lisbon, Porto, Madrid on one dotted route, each leg's card saying what it is built on."
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-8.2",
+      "title": "Add a Destination and Its Time Zone",
+      "archetype": "departure-board",
+      "content": {
+        "items": [
+          "Lisbon · Europe/Lisbon",
+          "London · Europe/London",
+          "New York · America/New_York",
+          "Tokyo · Asia/Tokyo"
+        ],
+        "source": "src/products/travel-companion/timezoneLookup.ts, TIMEZONE_PLACES"
+      },
+      "headline": "Add a Destination and Its Time Zone",
+      "sub": "Places not on the list compare in UTC.",
+      "props": [
+        "departure-board",
+        "clock-face"
+      ],
+      "why": "The airport wall of world clocks over a board of real place names and the zone names the product stores."
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-8.3",
+      "title": "First International Trip Checklist",
+      "archetype": "document-wallet",
+      "content": {
+        "items": [
+          "4 to 5 months out · Read every passport's expiry. Open the destination's entry page.",
+          "Before you pay for anything · Check the visa or entry authorization question. Match names to passports.",
+          "8 to 12 weeks out · Start any visa or authorization.",
+          "About 4 weeks out · Call your bank. Sort the phone plan. Enroll in STEP.",
+          "One week out · Print one page of references.",
+          "Night before · Documents in the bag you carry, phone charged."
+        ],
+        "source": "src/content/guides.ts, guide first-international-trip-checklist, table 'Example: working backward from a departure' (columns When, Job; long jobs cut to their first sentence)"
+      },
+      "headline": "First International Trip Checklist",
+      "sub": "Rules vary by country and change, so check each with the official source.",
+      "props": [
+        "passport",
+        "travel-folder",
+        "sticky-note"
+      ],
+      "why": "An open passport with six dated sticky tabs fanned along its edge, earliest at the top."
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-8.4",
+      "title": "Travel Itinerary Planner: Today Shows Where You Are",
+      "archetype": "route-map",
+      "content": {
+        "items": [
+          "Today",
+          "Tomorrow, worth knowing",
+          "Waiting",
+          "Nothing scheduled for today, right now."
+        ],
+        "source": "Labels and quiet line from src/products/travel-companion/components/TodayView.tsx; screen creative/public/screens/travel-companion-workspace.png"
+      },
+      "headline": "Travel Itinerary Planner: Today Shows Where You Are",
+      "sub": "It looks two days ahead, no further.",
+      "props": [
+        "route-map",
+        "phone-with-screen"
+      ],
+      "why": "A 'you are here' pin on the route with the real Today screen in a phone beside it.",
+      "screen": "creative/public/screens/travel-companion-workspace.png"
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-8.5",
+      "title": "First International Trip: Check Each Rule at the Source",
+      "archetype": "luggage-tags",
+      "content": {
+        "items": [
+          "The passport is valid on paper but not for the destination's rule.",
+          "The rule you read was for your destination, and you missed the country you connect through.",
+          "The name on the ticket has a middle name or a spelling the passport doesn't."
+        ],
+        "source": "src/content/guides.ts, guide first-international-trip-checklist, list 'What goes wrong on a first trip' (first three items)"
+      },
+      "headline": "First International Trip: Check Each Rule at the Source",
+      "sub": "Entry rules change.",
+      "props": [
+        "luggage-tag",
+        "passport"
+      ],
+      "why": "Three tags hanging off a passport strap, each a real way a first trip goes wrong."
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-9.1",
+      "title": "Travel Planner Printable: What to Keep on Paper When You Travel",
+      "archetype": "trip-paper",
+      "content": {
+        "items": [
+          "Staying · Hotel Aurora, Rua das Flores 12, 1200-195 Lisboa",
+          "Flights · Ref K7QD2M, airline desk 555-0100",
+          "Transfer · Airport shuttle, ref 8841, 555-0142",
+          "Insurance · Policy 4471, 24-hour line 555-0177",
+          "At home · Jo, 555-0123",
+          "Passports · In the second bag"
+        ],
+        "source": "src/content/guides.ts, guide what-to-keep-on-paper-when-you-travel, table 'Example: what the page looks like' (columns Line, Example)"
+      },
+      "headline": "Travel Planner Printable: What to Keep on Paper When You Travel",
+      "sub": "Your phone is a single point of failure.",
+      "props": [
+        "printed-sheet",
+        "carry-on-bag",
+        "passport"
+      ],
+      "why": "The filled-in example page, folded half into a carry-on's front pocket, with a second copy peeking from another bag."
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-9.2",
+      "title": "Travel Planner: A One-Page Trip Card",
+      "archetype": "boarding-pass",
+      "content": {
+        "items": [
+          "Who is going · Sam Rivera, Jordan Rivera, Mia Rivera",
+          "Where · Lisbon, Porto",
+          "Getting there · Flight to Lisbon, Train Lisbon to Porto, Flight home from Porto",
+          "Staying · Hotel in Lisbon, Hotel in Porto"
+        ],
+        "source": "Labels from src/products/travel-companion/printables/tripCard.tsx; values from creative/public/screens/travel-companion-trip.png and creative/public/screens/travel-companion-itinerary.png"
+      },
+      "headline": "Travel Planner: A One-Page Trip Card",
+      "sub": "Booking references and notes are not on it.",
+      "props": [
+        "boarding-pass",
+        "people-figures"
+      ],
+      "why": "The trip card's four labels set as a boarding pass for the whole family, with no reference anywhere on it."
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-9.3",
+      "title": "Printable Itinerary: Print the Itinerary, Keep the Reference Beside It",
+      "archetype": "departure-board",
+      "content": {
+        "items": [
+          "Tue 14 Oct, 18:40 (New York) · Flight to Lisbon, terminal 1 · Ref K7QD2M",
+          "Wed 15 Oct, 07:55 (Lisbon) · Land. Shuttle to hotel · Shuttle ref 8841",
+          "Wed 15 Oct, 15:00 · Hotel check-in, Rua das Flores 12 · Hotel ref 30291",
+          "Thu 16 Oct, 09:30 · Tram tour, Praca do Comercio · Ticket ref T-5520",
+          "Fri 17 Oct, 12:10 · Train to Porto · Train ref P4471"
+        ],
+        "source": "src/content/guides.ts, guide how-to-write-a-one-page-trip-itinerary, table 'Example: three days of a longer trip, on one page' (columns Time, Place, Reference)"
+      },
+      "headline": "Printable Itinerary: Print the Itinerary, Keep the Reference Beside It",
+      "sub": "An itinerary you can act on has three things on each line.",
+      "props": [
+        "departure-board"
+      ],
+      "why": "Time, place, reference are literally a departure board's three columns."
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-9.4",
+      "title": "A Blank Travel Planner for When a Screen Is the Wrong Tool",
+      "archetype": "trip-paper",
+      "content": {
+        "items": [
+          "My Trip Book",
+          "Trip overview",
+          "Destinations",
+          "Travellers",
+          "Bookings",
+          "Booking connections",
+          "Document registry",
+          "Daily operations",
+          "Change impact",
+          "US Letter",
+          "A4"
+        ],
+        "source": "BOOK_TITLE and SECTION_LIST in src/products/travel-companion/printables/bookContent.ts; paper sizes from creative/public/screens/travel-companion-printables.png"
+      },
+      "headline": "A Blank Travel Planner for When a Screen Is the Wrong Tool",
+      "sub": "Print only what you need. US Letter or A4.",
+      "props": [
+        "trip-book",
+        "pen",
+        "phone-with-screen"
+      ],
+      "why": "The printed book with its real section tabs, the Generate screen small beside it.",
+      "screen": "creative/public/screens/travel-companion-printables.png"
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-9.5",
+      "title": "Travel Planner Printable: Print What You Need",
+      "archetype": "luggage-tags",
+      "content": {
+        "items": [
+          "Staying",
+          "Flights",
+          "Transfer",
+          "Insurance",
+          "At home",
+          "Passports"
+        ],
+        "source": "src/content/guides.ts, guide what-to-keep-on-paper-when-you-travel, table 'Example: what the page looks like' (column Line)"
+      },
+      "headline": "Travel Planner Printable: Print What You Need",
+      "sub": "The list of what earns a place on paper is short.",
+      "props": [
+        "luggage-tag",
+        "carry-on-bag"
+      ],
+      "why": "Six tags only: the shortness of the list is the visual."
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-10.1",
+      "title": "Road Trip Checklist: The Night-Before List",
+      "archetype": "trip-paper",
+      "content": {
+        "items": [
+          "In the bag you carry",
+          "Times and rides",
+          "The house: Take out the bins and anything that spoils. · Windows and doors locked · Thermostat set for an empty house · Someone knows you're away",
+          "Anything you think of after the list is done goes on one sticky note by the door."
+        ],
+        "source": "src/content/guides.ts, guide night-before-you-travel-checklist, list headings and 'The house' items (cut to first clause), sticky-note line from 'What to skip tonight'"
+      },
+      "headline": "Road Trip Checklist: The Night-Before List",
+      "sub": "A short list for the evening before a trip, so the morning is only leaving.",
+      "props": [
+        "clipboard",
+        "sticky-note",
+        "carry-on-bag"
+      ],
+      "why": "A clipboard on a packed bag by the door, one sticky note on it: evening, done."
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-10.2",
+      "title": "Travel Checklist: Tomorrow, Worth Knowing",
+      "archetype": "departure-board",
+      "content": {
+        "items": [
+          "Today",
+          "Tomorrow, worth knowing · Hotel · Check-in begins",
+          "Tomorrow, worth knowing · Rental · Pickup begins",
+          "Waiting · Hotel has not confirmed late arrival"
+        ],
+        "source": "Section labels from components/TodayView.tsx; 'Check-in begins' / 'Pickup begins' from BOOKING_KIND_INFO in src/products/travel-companion/trip.ts; waiting line from the Thread doc comment in trip.ts; matches the night-before guide ('such as a hotel check-in window or a rental pickup')"
+      },
+      "headline": "Travel Checklist: Tomorrow, Worth Knowing",
+      "sub": "Today shows what is happening, what is worth knowing about tomorrow, and what you are still waiting on.",
+      "props": [
+        "departure-board",
+        "clock-face"
+      ],
+      "why": "Today's real sections as board headings, the next day's windows as rows."
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-10.3",
+      "title": "Road Trip Planning Checklist",
+      "archetype": "route-map",
+      "content": {
+        "items": [
+          "Day 1 · About 6 hours · Motel near the highway",
+          "Day 2 · About 5 hours · Cabin",
+          "Day 3 · About 4 hours · Home"
+        ],
+        "source": "src/content/guides.ts, guide road-trip-planning-checklist, table 'Example: three driving days on one page' (columns Day, Driving, Night)"
+      },
+      "headline": "Road Trip Planning Checklist",
+      "sub": "Stops, stays and what to pack for a road trip, in an order that makes sense.",
+      "props": [
+        "road-route",
+        "dependency-chain"
+      ],
+      "why": "A winding road with three night stops is the one pin in the set that is a drive, not a flight."
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-10.4",
+      "title": "International Travel Checklist: Seven Kinds of To-Do Before You Go",
+      "archetype": "luggage-tags",
+      "content": {
+        "items": [
+          "Documents",
+          "Packing",
+          "Transport",
+          "Money",
+          "Home",
+          "People",
+          "Bookings"
+        ],
+        "source": "PreparationCategory in src/products/travel-companion/trip.ts (same seven in the pin's description and the night-before guide)"
+      },
+      "headline": "International Travel Checklist: Seven Kinds of To-Do Before You Go",
+      "sub": "Tick them off, or remove them.",
+      "props": [
+        "luggage-tag",
+        "open-suitcase",
+        "phone-with-screen"
+      ],
+      "why": "Seven tags, seven kinds, on one suitcase handle; the real Preparation list on the phone beside it.",
+      "screen": "creative/public/screens/travel-companion-trip.png"
+    },
+    {
+      "account": "draftpace",
+      "id": "travel/pin-10.5",
+      "title": "Travel Checklist: Short on Purpose",
+      "archetype": "packing-flatlay",
+      "content": {
+        "items": [
+          "ID for every adult",
+          "For a trip abroad, the passport",
+          "Bank card and some cash",
+          "Prescriptions and other medication in original packaging",
+          "Phone charged, a charger, and any power bank",
+          "Boarding pass or check-in done",
+          "One printed page"
+        ],
+        "source": "src/content/guides.ts, guide night-before-you-travel-checklist, list 'In the bag you carry' (items cut to their first clause)"
+      },
+      "headline": "Travel Checklist: Short on Purpose",
+      "sub": "A list you finish is worth more than a list you admire.",
+      "props": [
+        "packing-items",
+        "passport",
+        "boarding-pass"
+      ],
+      "why": "Only seven knolled items on a wide empty ground: short is shown, not said."
+    },
+    {
+      "account": "maple",
+      "id": "Pin-mm-travel-companion-01",
+      "title": "Flight Changed? See Everything Else It Affects in Your Trip",
+      "archetype": "route-map",
+      "content": {
+        "items": [
+          "Airport shuttle, pickup 14:45",
+          "Hotel check-in from 15:00",
+          "Dinner, Friday 19:30"
+        ],
+        "source": "src/content/guides.ts, guide flight-changed-what-else-is-affected, table 'What that flight was holding up' (column Booked)"
+      },
+      "headline": "Flight moved? See everything else it affects",
+      "sub": "The transfer, the check-in, the dinner booked around it, one at a time.",
+      "props": [
+        "route-map",
+        "dependency-chain"
+      ],
+      "why": "A flight arc with three bookings hanging below it in a chain, each drawn dashed as potentially affected."
+    },
+    {
+      "account": "maple",
+      "id": "Pin-mm-travel-companion-02",
+      "title": "Travel Organization: Every Confirmation Number in One Place",
+      "archetype": "document-wallet",
+      "content": {
+        "items": [
+          "Flight to Lisbon · Ref: EX7KQ2",
+          "Hotel in Lisbon · Ref: ES-30418",
+          "Train Lisbon to Porto · Ref: TR-2290",
+          "Hotel in Porto · Ref: ES-30977",
+          "Flight home from Porto · Ref: EX9WL5"
+        ],
+        "source": "Bookings and references from creative/public/screens/travel-companion-trip.png"
+      },
+      "headline": "Confirmation numbers in six different inboxes?",
+      "sub": "The reference and the provider, readable in three seconds.",
+      "props": [
+        "envelope-confirmation",
+        "travel-folder",
+        "phone-with-screen"
+      ],
+      "why": "Six envelopes sliding into one folder, each confirmation showing its real reference.",
+      "screen": "creative/public/screens/travel-companion-trip.png"
+    },
+    {
+      "account": "maple",
+      "id": "Pin-mm-travel-companion-03",
+      "title": "Group Trip Planning Tips for the Friend Who Plans Everything",
+      "archetype": "luggage-tags",
+      "content": {
+        "items": [
+          "who's travelling",
+          "their requirements and documents",
+          "what each booking depends on",
+          "packing lists per traveller"
+        ],
+        "source": "The pin's own description in creative/pinterest/maple-main-finds.ts"
+      },
+      "headline": "Group trip planning for the friend who plans everything",
+      "sub": "You, but with backup.",
+      "props": [
+        "luggage-tag",
+        "people-figures",
+        "carry-on-bag"
+      ],
+      "why": "A row of the group's bags, one tag each, all tags in the planner's handwriting."
+    },
+    {
+      "account": "maple",
+      "id": "Pin-mm-travel-companion-04",
+      "title": "Printable Trip Planner So Your Plans Aren't Only on Your Phone",
+      "archetype": "trip-paper",
+      "content": {
+        "items": [
+          "My Trip Book",
+          "Trip overview",
+          "Bookings",
+          "Accommodation",
+          "Daily operations"
+        ],
+        "source": "BOOK_TITLE and SECTION_LIST in src/products/travel-companion/printables/bookContent.ts"
+      },
+      "headline": "POV: phone at 4% in a taxi and the whole plan is on it",
+      "sub": "A printed trip book, so the plan isn't on one phone.",
+      "props": [
+        "phone-low-battery",
+        "trip-book"
+      ],
+      "why": "A near-empty battery phone on the back seat beside the printed trip book."
+    },
+    {
+      "account": "maple",
+      "id": "Pin-mm-travel-companion-05",
+      "title": "Multi-Stop Trip Planner Without a Spreadsheet",
+      "archetype": "departure-board",
+      "content": {
+        "items": [
+          "Flight to Lisbon · Tue 18:40 · Lisbon · K7QD2M",
+          "Hotel, 3 nights · Wed from 15:00 · Lisbon · 30291",
+          "Train to Porto · Fri 12:10 · Porto · P4471",
+          "Hotel, 2 nights · Fri from 15:00 · Porto · 88412",
+          "Flight to Madrid · Sun 11:50 · Madrid · V3XK9P",
+          "Hotel, 4 nights · Sun from 14:00 · Madrid · 57730"
+        ],
+        "source": "src/content/guides.ts, guide organising-a-multi-stop-trip-without-a-spreadsheet, table 'The record, one line per booking'"
+      },
+      "headline": "Multi-stop trip, zero spreadsheets",
+      "sub": "The shape of your trip, held for you.",
+      "props": [
+        "departure-board"
+      ],
+      "why": "A board instead of a spreadsheet: the same rows, in the form travellers already read."
+    },
+    {
+      "account": "maple",
+      "id": "Pin-mm-travel-companion-06",
+      "title": "Time Zone Travel Tips: Never Mix Up Your Dates Again",
+      "archetype": "route-map",
+      "content": {
+        "items": [
+          "Tue 14 Oct, 18:40 (New York)",
+          "Wed 15 Oct, 07:55 (Lisbon)",
+          "America/New_York",
+          "Europe/Lisbon"
+        ],
+        "source": "Times from src/content/guides.ts, guide how-to-write-a-one-page-trip-itinerary example table; zone names from TIMEZONE_PLACES in src/products/travel-companion/timezoneLookup.ts"
+      },
+      "headline": "Crossing time zones? Today means today where you are",
+      "sub": "Every place carries its real time zone, daylight saving included.",
+      "props": [
+        "route-map",
+        "clock-face"
+      ],
+      "why": "An ocean-crossing arc with a clock at each end, departure and landing on different dates."
+    },
+    {
+      "account": "maple",
+      "id": "Pin-mm-travel-companion-07",
+      "title": "One Way Trip Planning When You Don't Have a Return Date",
+      "archetype": "boarding-pass",
+      "content": {
+        "items": [
+          "placeholder return date",
+          "your visa's expiry"
+        ],
+        "source": "src/shop/products/travel-companion.ts problemsSolved (visa expiry solution) and the pin's own sub"
+      },
+      "headline": "Haven't booked your flight home yet?",
+      "sub": "Add your visa's expiry and it holds a placeholder return date.",
+      "props": [
+        "boarding-pass",
+        "passport",
+        "phone-with-screen"
+      ],
+      "why": "An outbound pass with its return stub drawn as a dashed outline labelled 'placeholder return date'.",
+      "screen": "creative/public/screens/travel-companion-itinerary.png"
+    },
+    {
+      "account": "maple",
+      "id": "Pin-mm-travel-companion-08",
+      "title": "What to Do When Travel Goes Wrong: Step by Step",
+      "archetype": "departure-board",
+      "content": {
+        "items": [
+          "Deal with a flight problem",
+          "Sort out a hotel problem",
+          "Sort out a transport problem",
+          "Sort out a booking problem",
+          "Deal with something lost or stolen",
+          "Deal with something that changed",
+          "Reorganize part of the trip",
+          "Let somebody know",
+          "Deal with something that went wrong"
+        ],
+        "source": "Playbook titles in src/products/travel-companion/playbooks/*.ts (the nine authored situations)"
+      },
+      "headline": "When travel goes sideways, you're not winging it",
+      "sub": "Walk-throughs for the worst moments.",
+      "props": [
+        "departure-board"
+      ],
+      "why": "Nine rows on a board, one per authored situation: proof of 'nine', not a claim of it."
+    },
+    {
+      "account": "maple",
+      "id": "Pin-mm-travel-companion-09",
+      "title": "Family Trip Organization: Today's Plan on One Screen",
+      "archetype": "boarding-pass",
+      "content": {
+        "items": [
+          "Nothing scheduled for today, right now.",
+          "Your trip starts Monday 2 November."
+        ],
+        "source": "Lines from creative/public/screens/travel-companion-workspace.png"
+      },
+      "headline": "POV: you're the one everybody asks what time we leave",
+      "sub": "Today's plan on one screen, for the whole group.",
+      "props": [
+        "boarding-pass",
+        "phone-with-screen",
+        "people-figures"
+      ],
+      "why": "A fan of the family's boarding passes with the real Today screen on the phone on top of them.",
+      "screen": "creative/public/screens/travel-companion-workspace.png"
+    },
+    {
+      "account": "maple",
+      "id": "Pin-mm-travel-companion-10",
+      "title": "Travel Journal Ideas: Remember What to Know Next Time",
+      "archetype": "trip-paper",
+      "content": {
+        "items": [
+          "Trip record",
+          "A dated record of what happened",
+          "what's worth knowing next time you go",
+          "Travel history"
+        ],
+        "source": "'Trip record' from SECTION_LIST in printables/bookContent.ts; other lines from src/shop/products/travel-companion.ts (problemsSolved, inclusions)"
+      },
+      "headline": "Remember what you learned the last time you went",
+      "sub": "Your trips, kept and printable.",
+      "props": [
+        "printed-sheet",
+        "passport",
+        "pen"
+      ],
+      "why": "A printed trip record with dated lines, a closed passport resting on it like a souvenir."
+    }
+  ]
+}

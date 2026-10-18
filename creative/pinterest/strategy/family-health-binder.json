@@ -1,0 +1,386 @@
+{
+  "product": "family-health-binder",
+  "audience": [
+    "the parent who fills in every school, camp and sports form, with everyone's allergies, medications and insurance numbers kept only in their head",
+    "parents of more than one child, or of a child and an aging parent: the sandwich-generation caregiver juggling two stacks of papers",
+    "the parent standing at an intake desk trying to remember exactly when a symptom started",
+    "parents leaving kids with a sitter or grandparent who want one page that says what to avoid and who to call",
+    "people who already search for and save 'family medical binder', 'medication list printable', 'emergency contact sheet' and 'questions to ask your doctor' printables"
+  ],
+  "visualWorld": {
+    "setting": "A warm home, not a clinic: the kitchen table, the fridge door, the bathroom medicine cabinet, the hall where the bag waits, and the moments that leave the house (an intake counter, a camp check-in table, the sitter at the door). Everything is paper a family keeps, drawn flat, on warm paper ground.",
+    "props": [
+      { "id": "tabbed-binder", "draw": "Top-down open 3-ring binder: two rounded rectangles side by side (cover halves) in rose #b23a5b with a darker spine strip between them, three ring circles (stroke only) on the spine edge, a white US Letter page lying on the right half with 4 to 6 ruled lines. Slight drop shadow ellipse beneath." },
+      { "id": "divider-tabs", "draw": "A column of 5 to 8 small rounded rectangles sticking out of the binder's right edge, staggered vertically, each filled in one PERSON_HUES colour (or rose tints) and carrying one short label in the sans; the open section's tab is pulled forward and outlined in ink." },
+      { "id": "clipboard", "draw": "Tall rounded rectangle board in warm tan (#d5c3ba) with a silver clip on top: a rounded trapezoid plus a small ring, a white page clipped under it, tilted 3 to 5 degrees." },
+      { "id": "letter-page", "draw": "White rectangle at 8.5:11 with a thin rose bar across the top (the printed pages' spine bar), a small 'FAMILY HEALTH BINDER' eyebrow, block labels in small caps rose, and ruled fill lines drawn as short grey strokes (never fake handwriting text)." },
+      { "id": "tick-box", "draw": "Small rounded square outline in ink beside each question line; one or two carry a rose check stroke." },
+      { "id": "fridge-door", "draw": "Tall rounded rectangle in pale warm grey filling one side of the pin, a vertical bar handle (rounded rect) on the edge, a faint split line for the freezer door near the top." },
+      { "id": "magnet", "draw": "Small flat circle or rounded heart-less blob in butter or peach (the pop colour) with a tiny highlight arc, overlapping the top edge of a card or sheet." },
+      { "id": "emergency-card", "draw": "Wallet-proportioned rounded rectangle (about 1.6:1) with a dashed cut-line border, a bold 'ALLERGIES' row first, then 5 short label rows (CONDITIONS, MEDICATIONS, CALL, DOCTOR, INSURANCE) with grey value strokes, and a tiny footer line." },
+      { "id": "wallet", "draw": "Folded rounded rectangle in tan leather tone with a stitched dashed inner border; the emergency card or an insurance card peeks out of the top slot." },
+      { "id": "scissors", "draw": "Two ring handles (circles, stroke) in rose and two crossing blades as long thin triangles, placed on the dashed cut line." },
+      { "id": "medicine-cabinet", "draw": "Wall cabinet as a rounded rectangle with the mirror door swung open as a parallelogram (mirror shown with two pale diagonal glints), two shelves inside as thin horizontal bars." },
+      { "id": "pill-bottle", "draw": "Short rounded cylinders: amber body (#b0791a tint), white cap with ridge lines, a white label band with two grey strokes and NO drug names." },
+      { "id": "pill-organiser", "draw": "Set dressing only: a long rounded rectangle with seven square lids, plain, no day letters and no times, so it never implies a dosing schedule or reminder (the product has neither)." },
+      { "id": "med-list-sheet", "draw": "A letter-page taped inside the cabinet door with two small washi-tape rectangles; a table head row (Name, Dosage, Frequency, Started) over 3 to 4 ruled rows; optionally one row folded down under a 'Stopped' fold strip." },
+      { "id": "checked-stamp", "draw": "A rounded pill shape in rose soft (#f9e3ea) with a small check circle and the real words 'This list is right today' or 'Checked today', like a stamp on the corner of the list." },
+      { "id": "sticky-notes", "draw": "Three or four slightly rotated squares in butter and peach with a darker folded corner triangle; they carry either short real guide phrases or plain grey scribble strokes." },
+      { "id": "printout-pile", "draw": "The 'kitchen drawer of printouts': five to seven overlapping rectangles at random angles, some with corners curled (small triangles), grey strokes for text, one paperclip." },
+      { "id": "kitchen-drawer", "draw": "Open drawer seen from the front-top: a shallow box in warm wood tone with a knob, papers spilling over its rim." },
+      { "id": "phone-screen", "draw": "The existing creative Phone frame (rounded rect, dark bezel) holding one of the product's REAL screenshots from creative/public/screens/, cropped so the bottom nav does not cover the content being discussed." },
+      { "id": "person-card", "draw": "Medical-ID-style card from the product's own identity (definition.ts THE CARD): white rounded rectangle, a circle mark with one initial in a PERSON_HUES tint at top-left, a name bar, a relationship label (You, Child, Parent), and an allergy tag (rose pill with a small alert circle) as the first row." },
+      { "id": "intake-counter", "draw": "A low counter seen from the waiting side: long rounded rectangle top, a front panel in a darker tone, a small service bell (semicircle on a base) and a pen on a coil." },
+      { "id": "tote-bag", "draw": "Trapezoid bag in canvas cream with two loop handles; items poke out of its mouth (folded page, bottle cap, card corner)." },
+      { "id": "insurance-card", "draw": "Small rounded rectangle in pale blue (#3f6fb5 tint) with a chip-less stripe and three grey strokes; no insurer logo or name." },
+      { "id": "photo-id", "draw": "Small rounded rectangle with a grey head-and-shoulders silhouette square and two grey strokes." },
+      { "id": "pen", "draw": "Long thin rounded rectangle in ink with a rose clip and a triangular tip." },
+      { "id": "stethoscope", "draw": "The 'new doctor' reader: a Y of two rounded strokes for ear tubes joining one long curving tube that ends in a circle chest-piece. No red cross anywhere (protected emblem, and the product avoids medical red)." },
+      { "id": "house-key", "draw": "The 'sitter' reader: a key (circle bow with hole, bar with two teeth) on a small ring with a round fob." },
+      { "id": "camp-backpack", "draw": "The 'school or camp' reader: a rounded backpack with a front pocket, two straps and a small name-tag rectangle, in sage or butter." },
+      { "id": "school-form", "draw": "A generic form: page with a grid of small checkbox squares and many short grey label strokes, deliberately wordless, to stand for 'school, camp, sports and new-patient forms'." },
+      { "id": "two-stacks", "draw": "Two short piles of paper on a table, one with a child's crayon-coloured corner (a school form) and one with a pharmacy bag (paper bag with folded top) beside it, so two generations read at a glance without words." },
+      { "id": "number-badge", "draw": "Big numerals 1, 2, 3 in the serif-free sans, set inside rose soft circles 110px across, each paired with a 120px spot drawing." },
+      { "id": "kitchen-table", "draw": "Ground plane for flat-lays: a warm wood or linen rectangle filling the pin behind everything, with a faint grain stroke pattern at 6 percent opacity." }
+    ],
+    "palette": "The product's own rose on warm paper (definition.ts theme): accent #b23a5b, strong #86233f, soft #f9e3ea, wash #fdf1f4, ground #faf6f3, surface #fffdfb, ink #241a1b, borders #eaddd6 and #d5c3ba. People and tabs take PERSON_HUES (#b23a5b, #3f6fb5, #2f8a68, #b0791a, #7a55ad, #c25a2e) as quiet tints, a label for a person and never a health signal. One warm pop (butter or peach, via popFor) for magnets and sticky notes. Never clinical white-and-blue, never medical red, never a red cross.",
+    "mood": "A kitchen-table record a parent keeps, calm and capable: the relief of having the answer in hand. Warm, tidy, slightly handmade; no alarm, no hospital, no glowing tech."
+  },
+  "archetypes": [
+    {
+      "id": "binder-flatlay",
+      "name": "Tabbed binder on the kitchen table",
+      "clicks": "The 'family medical binder' niche is built on binder sets with colour-coded dividers and sample pages (Kiddycharts, Sarah Titus dividers, Mom Colored Glasses' coordinating tabs per family member, Family Caregivers Online's 'sections using binder tabs'). A top-down binder with legible tab labels is the image the searcher already expects, so it reads as 'this is the thing I searched for' and gets saved as a reference.",
+      "layout": "1000x1500. Top 0-360: headline in the sans, 2-3 lines, left-aligned at x=64, ink on warm paper. 360-1220: kitchen-table ground with the open binder rotated -6 degrees, filling width 880, tabs running down its right edge (labels at 26-30px, readable on mobile); the open section's page shows 3-5 real labels. 1220-1330: one sub line. 1330-1500: product line (logo mark, name, price or 'free guide') aligned LEFT, nothing in the bottom-right 220x160 where Pinterest overlays icons.",
+      "visual": "Open tabbed binder, a pen and one small prop from the pin's topic (insurance card, stethoscope, pharmacy bag) on a wood/linen table.",
+      "text": "Headline; tab labels taken from real data (book section names in document.tsx, or RELATIONSHIP_LABEL, or the five printable names); 3-5 labels on the open page; optional sub from the pin description.",
+      "bestFor": "binder ideas, 'what goes in', care team / specialists, two-generation caregiver binder, '5 printables' lists"
+    },
+    {
+      "id": "page-closeup",
+      "name": "The printed page, up close",
+      "clicks": "Printable sellers on Pinterest lead with styled mockups of the actual page (sample-page pins such as 'Free Printable Medical Binder and Worksheets Sample Pages'; mockup kits for clipboards and paper flat-lays exist precisely for this). Pinterest's own seller guidance says put the product front and centre. Seeing the real field labels lets the saver judge the sheet before clicking.",
+      "layout": "1000x1500. Top 0-300: headline. 300-1240: one US Letter page (or card) at 640x830 on a clipboard, tilted 3 degrees, centred-left, its block labels set large enough to read (24px min); a single highlighted element (a tick box, a footer note, a stopped line) gets a rose soft marker band and a thin leader line to a 1-line callout on the right margin. 1240-1330: sub. 1330-1500: product line, left.",
+      "visual": "A clipboard (or the intake counter, or a camp table) holding one of the product's five printed pages or a blank book page, with fill lines as grey strokes.",
+      "text": "Only the page's real block/field labels (generate*.tsx, document.tsx) plus one real line highlighted; headline; sub from the pin description.",
+      "bestFor": "shop pins about a specific printed page: Visit page, Intake summary, Forms sheet, Emergency card note, Symptom log, privacy footer"
+    },
+    {
+      "id": "fridge-and-wallet",
+      "name": "On the fridge, in the wallet",
+      "clicks": "Emergency 'fridge sheet' pages are a staple of the niche (sold as their own page in emergency and caregiver packs) and the fridge is where the guide itself says the sheet lives. A recognisable home location tells the viewer where to use it, which is what makes an emergency printable feel worth saving.",
+      "layout": "1000x1500. Headline spans the top 0-320 across the full width over a soft wash band. The fridge door then occupies 320-1260 on the left (x 0-620), with the card/sheet held by a magnet at eye level (centre ~ y 640) at 420px wide; the right column (x 660-940) stacks the wallet with the card peeking out and the scissors on a dashed line, or 2-3 short 'where it lives' captions. 1260-1340 sub, 1340-1500 product line left.",
+      "visual": "Fridge door with a magnet holding the Emergency card or Caregiver sheet; a wallet or bag with a second copy; scissors on the dashed cut line.",
+      "text": "The card or sheet's real row labels (generateEmergencyCard.tsx, generateCaregiverSheet.tsx); optional captions from the emergency guide's 'Where the copies live'.",
+      "bestFor": "emergency card / emergency contact sheet, babysitter and grandparent sheet, 'keep it where you can find it'"
+    },
+    {
+      "id": "numbered-list",
+      "name": "What to write, numbered",
+      "clicks": "Checklist and 'what to include' pins are the dominant guide format in this niche (question worksheets with numbered lines, binder 'what to include' posts, page-by-page inventories on bundle listings). A visible count promises a quick, complete answer and is saved as a reference to come back to. Pinterest and Tailwind both advise concise, legible type, so each line stays short.",
+      "layout": "1000x1500. Top 0-340: headline, large. 340-1260: 3 to 6 rows, each 150-180px tall: a number-badge (110px circle) at x=64, a 120px spot drawing beside it, and one line of real text (30-34px) wrapping to max two lines; rows separated by thin dashed rules. For 6+ items switch to a 2x3 grid of sticker tiles. 1260-1340 sub, 1340-1500 product line left.",
+      "visual": "Number badges with one small drawn object per row (bottle, ID card, calendar, phone, page), on warm paper with faint ruled-line texture.",
+      "text": "Items copied from the linked guide's ordered list or timeline (src/content/guides.ts), or the pin's own points; nothing paraphrased beyond cutting at a clause.",
+      "bestFor": "guide-linked pins titled 'What to write down', 'What to include', 'What to bring', checklists and timelines"
+    },
+    {
+      "id": "medicine-cabinet",
+      "name": "The medicine cabinet and the list",
+      "clicks": "Medication trackers and medication lists are among the most common pages in every medical/caregiver binder set found (Sarah Titus, Kiddycharts, caregiver packs on Etsy and Payhip). The open cabinet is the instantly recognisable home scene for 'what does everyone take', and setting the list beside the bottles shows the habit the guide teaches: check the list against the bottles.",
+      "layout": "1000x1500. Top 0-320: headline. 320-1240: open medicine cabinet centred, 760px wide: shelves with 5-7 blank-label pill bottles on the left, the swung-open mirror door on the right carrying the med-list-sheet taped inside (column heads readable at 24px); a checked-stamp overlaps the list's corner. 1240-1340 sub, 1340-1500 product line left.",
+      "visual": "Open cabinet, blank-label bottles, the medication list taped inside the door, a 'Stopped' fold or a 'Checked today' stamp.",
+      "text": "List column heads from document.tsx MedicalFactsPage; UI strings 'This list is right today', 'Stopped taking it', 'Checked today' from HealthPanel.tsx and medications.ts. No drug names, no doses.",
+      "bestFor": "medication list pins: what to write, last checked, stopped medications, 'bring the list'"
+    },
+    {
+      "id": "page-fan",
+      "name": "One record, many readers",
+      "clicks": "Bundle pins that fan out several pages and say what each is for sell the 'what's included' value at a glance (a pattern printable sellers recommend for multi-page sets). Pairing each page with its reader (sitter, camp, new doctor) is this product's real point of difference: different pages for different people.",
+      "layout": "1000x1500. Top 0-320: headline. 320-1180: 3 to 5 pages fanned in an arc from a single point near bottom-centre (each 300x390, rotated -18 to +18 degrees), each with its real title on its top bar; above each page a 90px reader prop (house-key = sitter, camp-backpack = school/camp, stethoscope = new doctor, fridge magnet = emergency card). 1180-1320: one short real caption under each reader or the sub. 1340-1500 product line left.",
+      "visual": "Fanned printed pages or person-cards, each with a small object standing for who receives it.",
+      "text": "Page titles from PrintablesModule.tsx docs; reader captions from the 'what to leave off' guide table; or relationship labels for person-cards.",
+      "bestFor": "what to leave off / privacy, five printables, sandwich-generation 'a card per person'"
+    },
+    {
+      "id": "pile-to-page",
+      "name": "From the drawer of printouts to one page",
+      "clicks": "Before/after is a proven Pinterest organisation format, and the listing's own problem is exactly that picture: 'a kitchen drawer of printouts and a portal you cannot open at 2am'. The messy top half is relatable; the tidy bottom half is the save. It also lets a shop pin show a REAL screenshot in context instead of a floating phone.",
+      "layout": "1000x1500. Top 0-280: headline. 280-760 'before' panel: printout-pile, sticky-notes, kitchen-drawer or two-stacks, slightly desaturated, on a darker warm band. A rose arrow or fold line at ~780. 800-1260 'after' panel: one clean letter-page, person-card, or phone-screen with a real screenshot, on bright paper. 1260-1340 sub, 1340-1500 product line left.",
+      "visual": "Messy paper (drawer, sticky notes, two stacks, bottles) above; one page or the real app screen below.",
+      "text": "Before side: wordless or real guide phrases (e.g. the questions guide's 'pile' notes). After side: real labels or real screenshot text.",
+      "bestFor": "'typed once', 'bring the list, not your memory', camp/intake POV pins, caregiver two-stacks, shop pins with a real screen"
+    }
+  ],
+  "pins": [
+    {
+      "account": "draftpace", "id": "health/pin-4.1", "title": "Doctor Appointment Prep Checklist", "archetype": "numbered-list",
+      "content": { "items": ["The night before: Write the reason, then your questions in order.", "Same evening: List every medicine, vitamin and supplement from the labels.", "Morning of: Add photo ID and your insurance card.", "In the room: Start with your most important question.", "That evening: Write down what was said and decided while you still remember it."], "source": "src/content/guides.ts, guide doctor-appointment-prep-checklist, timeline block 'Before, during and after' (when + first sentence of what)" },
+      "headline": "Doctor Appointment Prep Checklist", "sub": "A short list for the day before a visit: what to write down, what to bring, and what to leave to the doctor.",
+      "props": ["number-badge", "letter-page", "pill-bottle", "photo-id", "insurance-card", "pen"], "why": "A timeline checklist is the niche's top guide format and matches the guide's own structure."
+    },
+    {
+      "account": "draftpace", "id": "health/pin-4.2", "title": "Questions to Ask Your Doctor: Write the Questions Down Before You Go", "archetype": "page-closeup",
+      "content": { "items": ["Questions to ask (a tick box per line)", "Allergies", "Taking now", "Recent symptoms", "Notes from the visit"], "source": "src/products/family-health-binder/printables/generateVisitPrep.tsx (Block labels); printSheets.ts buildVisitPrep" },
+      "headline": "Write the Questions Down Before You Go", "sub": "Plan a visit and write your questions, one per line.",
+      "props": ["clipboard", "letter-page", "tick-box", "pen"], "why": "Shows the real Visit page with its tick boxes, the thing the shop link sells."
+    },
+    {
+      "account": "draftpace", "id": "health/pin-4.3", "title": "Questions to Bring to the Doctor, on One Page", "archetype": "pile-to-page",
+      "content": { "items": ["Before (sticky notes): 'her cough again', 'swimming?', 'pharmacy gave something different', 'camp form'", "After (one page): 'Cough, two weeks: what now?', 'Can she swim this week?', 'Is the new brand the same drug?', 'Can you sign the camp form?'"], "source": "src/content/guides.ts, guide questions-to-bring-to-the-doctor, table 'A worked example: from a pile to a page' (the guide labels it an example; keep a small 'Example' tag on the pin)" },
+      "headline": "Questions to Bring to the Doctor, on One Page", "sub": "Writing questions down means you still have them when you are in the room.",
+      "props": ["sticky-notes", "letter-page", "tick-box", "pen"], "why": "The guide's own pile-to-page example is a ready-made before/after."
+    },
+    {
+      "account": "draftpace", "id": "health/pin-4.4", "title": "Symptom Tracker: A Visit Page to Take With You", "archetype": "binder-flatlay",
+      "content": { "items": ["Tabs: Family member, Medical facts, Symptom log, Care team, Immunizations, Visit, Emergency card, Caregiver sheet", "Open at 'Visit': Questions to ask, Allergies, Taking now, Recent symptoms, Notes from the visit"], "source": "Tabs: src/products/family-health-binder/printables/document.tsx (RecordPage section names, in FamilyHealthBinderDocument order). Page labels: printables/generateVisitPrep.tsx" },
+      "headline": "A Visit Page to Take With You", "sub": "The Visit page prints your questions with tick boxes, what is taken now.",
+      "props": ["tabbed-binder", "divider-tabs", "letter-page", "tote-bag", "pen"], "why": "Puts the Visit page where binder-searchers expect it: behind its own tab."
+    },
+    {
+      "account": "draftpace", "id": "health/pin-4.5", "title": "Questions to Ask Your Doctor: Write It Down Before You Walk In", "archetype": "page-closeup",
+      "content": { "items": ["Who", "Date", "With whom / where", "Reason for this visit", "Questions to ask", "What's been happening", "What was said or decided"], "source": "src/products/family-health-binder/printables/document.tsx VisitPage (FieldRow and Notes labels)" },
+      "headline": "Write It Down Before You Walk In", "sub": "Questions before, answers after, on one page.",
+      "props": ["clipboard", "letter-page", "pen", "intake-counter"], "why": "The blank book Visit page literally has questions at the top and 'what was said' at the bottom."
+    },
+    {
+      "account": "draftpace", "id": "health/pin-5.1", "title": "Medication List: What to Write Down", "archetype": "medicine-cabinet",
+      "content": { "items": ["Medications: Name, Dosage, Frequency, Started", "Allergies: Allergy, Reaction", "Put allergies at the top, and say what the reaction was.", "Write today's date on the page, and the words \"checked against the bottles\" if you did."], "source": "Columns: src/products/family-health-binder/printables/document.tsx MedicalFactsPage (RegisterTable columns). Lines: src/content/guides.ts, guide medication-list-what-to-write-down, list 'How to write it' items 5 and 6" },
+      "headline": "Medication List: What to Write Down", "sub": "A medication list for the family, with what to write and how to keep it current.",
+      "props": ["medicine-cabinet", "pill-bottle", "med-list-sheet"], "why": "The cabinet is where the list gets checked against the bottles, the guide's core habit."
+    },
+    {
+      "account": "draftpace", "id": "health/pin-5.2", "title": "A Medication List You Can Check Off as Right Today", "archetype": "pile-to-page",
+      "content": { "items": ["Before: blank-label bottles lined up on the counter", "After (real screen): Medications, 'Not checked yet.', 'This list is right today'", "Stamp: 'Checked today'"], "source": "creative/public/screens/family-health-binder-members.png (crop to the medication check row); strings in src/products/family-health-binder/components/HealthPanel.tsx and medications.ts describeMedicationsCheck" },
+      "headline": "A Medication List You Can Check Off as Right Today", "sub": "Type in a medication, its dose and how often.",
+      "props": ["pill-bottle", "phone-screen", "checked-stamp"], "why": "Real screenshot of the one-tap check, set against the bottles it is checked against."
+    },
+    {
+      "account": "draftpace", "id": "health/pin-5.3", "title": "Medication List: When Was This List Last Right?", "archetype": "numbered-list",
+      "content": { "items": ["The day something changes: New prescription, new dose or a stop: update the page that day.", "Before any visit or form: Look at the bottles and correct the list.", "Every few months: Read it against the bottles, even if nothing changed.", "When a list is replaced: Recycle the old copy so two versions don't exist."], "source": "src/content/guides.ts, guide medication-list-what-to-write-down, timeline 'When to update it'" },
+      "headline": "When Was This List Last Right?", "sub": "A medication list is only useful if you know when it was last checked.",
+      "props": ["number-badge", "pill-bottle", "school-form", "med-list-sheet"], "why": "Four dated moments answer the headline's question directly."
+    },
+    {
+      "account": "draftpace", "id": "health/pin-5.4", "title": "Medication Tracker: A Stopped Medication Leaves the Printed Page", "archetype": "page-closeup",
+      "content": { "items": ["Medications (printed block)", "Stopped taking it", "Stopped (1)", "A stopped medication stays here and leaves every printed page."], "source": "Block label: printables/generateFormsSheet.tsx. Actions and fold: components/HealthPanel.tsx. Hint: components/FactForm.tsx" },
+      "headline": "A Stopped Medication Leaves the Printed Page", "sub": "When a medication is stopped, it stays in the app and leaves every printed page.",
+      "props": ["clipboard", "letter-page", "med-list-sheet"], "why": "One line visibly folding off the page shows the feature without a screen."
+    },
+    {
+      "account": "draftpace", "id": "health/pin-5.5", "title": "Health Record Organization: Bring the List, Not Your Memory", "archetype": "medicine-cabinet",
+      "content": { "items": ["Name, Dosage, Frequency, Started", "checked against the bottles"], "source": "document.tsx MedicalFactsPage columns; guides.ts medication-list-what-to-write-down, 'How to write it' item 6" },
+      "headline": "Bring the List, Not Your Memory", "sub": "A printed list beats remembering.",
+      "props": ["medicine-cabinet", "pill-bottle", "med-list-sheet", "tote-bag"], "why": "The list leaves the cabinet door for the tote bag: the habit in one picture."
+    },
+    {
+      "account": "draftpace", "id": "health/pin-6.1", "title": "Symptom Notes for a Doctor Visit: What to Write Down", "archetype": "numbered-list",
+      "content": { "items": ["When it started", "How long", "How bad", "What helped"], "source": "The pin's own description ('when it started, how long, how bad, and what helped'); same four in src/content/guides.ts symptom-notes-for-a-doctor-visit dek" },
+      "headline": "Symptom Notes for a Doctor Visit: What to Write Down", "sub": "The four things a doctor usually asks: when it started, how long, how bad, and what helped.",
+      "props": ["number-badge", "letter-page", "pen", "sticky-notes"], "why": "Four big numbers make the 'four things' promise visible."
+    },
+    {
+      "account": "draftpace", "id": "health/pin-6.2", "title": "Symptom Tracker: Record a Symptom: When, How Long, How Bad", "archetype": "page-closeup",
+      "content": { "items": ["Who", "What happened", "Onset", "Duration", "Severity", "What helped", "Severity: mild, moderate, severe", "Duration in hours, days or weeks"], "source": "src/products/family-health-binder/printables/document.tsx SymptomLogPage (columns and TypesNote); state.ts severitySchema and durationUnitSchema" },
+      "headline": "Record a Symptom: When, How Long, How Bad", "sub": "Write down what it is, when it started, how long, how bad and what helped.",
+      "props": ["clipboard", "letter-page", "pen"], "why": "The register's real columns show the fields are structured, not a diary."
+    },
+    {
+      "account": "draftpace", "id": "health/pin-6.3", "title": "Doctor Appointment Prep: Onset, Length, Severity, What Helped", "archetype": "binder-flatlay",
+      "content": { "items": ["Open tab: Symptom log", "Column heads: Onset, Duration, Severity, What helped"], "source": "document.tsx SymptomLogPage (section name and columns)" },
+      "headline": "Onset, Length, Severity, What Helped", "sub": "A few words on each is enough.",
+      "props": ["tabbed-binder", "divider-tabs", "letter-page", "pen"], "why": "Binder open on the symptom log ties the headline's four words to a real page."
+    },
+    {
+      "account": "draftpace", "id": "health/pin-6.4", "title": "Symptom Tracker: A Dated List, Newest First", "archetype": "pile-to-page",
+      "content": { "items": ["Before: a wall calendar with scribbles and question marks (no words)", "After, newest first (Example): '09/18 Cough at night, 2 hours, Mild, Nothing yet'; '09/15 Cough at night, All night, Mild, Sat up in bed'; '09/14 Fever, warm to touch, 1 day, Moderate, Rest and fluids'"], "source": "src/content/guides.ts, guide symptom-notes-for-a-doctor-visit, table 'What a few days of notes look like' (the guide says 'An example, not a real record'; the pin must carry an 'Example' tag). Newest-first order from the pin description" },
+      "headline": "A Dated List, Newest First", "sub": "Each symptom you record appears as a dated line, newest first, with how bad, how long and what helped.",
+      "props": ["sticky-notes", "letter-page"], "why": "Messy memory versus three dated lines is the whole benefit."
+    },
+    {
+      "account": "draftpace", "id": "health/pin-6.5", "title": "Doctor Appointment Prep: Notes, Not Answers", "archetype": "page-closeup",
+      "content": { "items": ["What's been happening", "What was said or decided"], "source": "document.tsx VisitPage Notes labels" },
+      "headline": "Notes, Not Answers", "sub": "You write it down. The doctor decides what it means.",
+      "props": ["clipboard", "letter-page", "stethoscope", "pen"], "why": "Your half of the page filled, the doctor's half left open: the no-advice line made visual."
+    },
+    {
+      "account": "draftpace", "id": "health/pin-7.1", "title": "Emergency Contact Information Sheet: What to Include", "archetype": "numbered-list",
+      "content": { "items": ["Put \"In an emergency, call 911\" at the top", "Write the person's name and age", "Write allergies in the biggest type, with what the reaction is", "List what they take now, copied from the labels", "Add two people to call", "Add the doctor's name and number", "Date the sheet at the bottom"], "source": "src/content/guides.ts, guide emergency-contact-information-sheet, list 'What goes on it, in order' (items 1-6 and 9, cut at the first clause)" },
+      "headline": "Emergency Contact Information Sheet: What to Include", "sub": "A one-page sheet with names, numbers and the few facts someone would need.",
+      "props": ["number-badge", "letter-page", "magnet", "pen"], "why": "'What to include' plus a numbered list is the niche's most-saved guide shape."
+    },
+    {
+      "account": "draftpace", "id": "health/pin-7.2", "title": "Emergency Information Card: A Small Card for a Bag or the Fridge", "archetype": "fridge-and-wallet",
+      "content": { "items": ["ALLERGIES", "CONDITIONS", "MEDICATIONS", "CALL", "DOCTOR", "INSURANCE", "Cut along the dashed line and fold or keep flat."], "source": "src/products/family-health-binder/printables/generateEmergencyCard.tsx (rows and instruction line)" },
+      "headline": "A Small Card for a Bag or the Fridge", "sub": "The Emergency card prints name, allergies, who to call, a doctor and insurance on a small card you cut out.",
+      "props": ["fridge-door", "magnet", "emergency-card", "wallet", "scissors"], "why": "The headline names two places; the pin shows both."
+    },
+    {
+      "account": "draftpace", "id": "health/pin-7.3", "title": "A Card Is Not a Medical ID", "archetype": "page-closeup",
+      "content": { "items": ["It reflects only what was typed in, is not medical advice, and does not replace a medical ID."], "source": "generateEmergencyCard.tsx footer text" },
+      "headline": "A Card Is Not a Medical ID", "sub": "A printed card is a helpful note.",
+      "props": ["emergency-card", "scissors"], "why": "The card's own printed footer says the headline, highlighted."
+    },
+    {
+      "account": "draftpace", "id": "health/pin-7.4", "title": "Emergency Contact and Insurance, Typed In", "archetype": "pile-to-page",
+      "content": { "items": ["Before: wallet with an insurance card, a phone contact list (wordless)", "After: About: Date of birth, Emergency contact", "Health insurance: Insurer, Member ID, Group number"], "source": "printables/generateFormsSheet.tsx (Block and Field labels)" },
+      "headline": "Emergency Contact and Insurance, Typed In", "sub": "Add an emergency contact and health insurance details for each person.",
+      "props": ["wallet", "insurance-card", "letter-page"], "why": "From the card in your wallet to the block on the Forms sheet."
+    },
+    {
+      "account": "draftpace", "id": "health/pin-7.5", "title": "Emergency Contact Sheet: Keep It Where You Can Find It", "archetype": "fridge-and-wallet",
+      "content": { "items": ["Fridge: one copy, at eye level.", "Bag or glove box: a copy with the insurance line filled in.", "Anyone minding the children: a copy handed over"], "source": "src/content/guides.ts, guide emergency-contact-information-sheet, list 'Where the copies live'" },
+      "headline": "Keep It Where You Can Find It", "sub": "A sheet nobody can find helps nobody.",
+      "props": ["fridge-door", "magnet", "letter-page", "tote-bag", "house-key"], "why": "Three real places, three drawings."
+    },
+    {
+      "account": "draftpace", "id": "health/pin-8.1", "title": "New Doctor? What to Bring to the First Visit", "archetype": "numbered-list",
+      "content": { "items": ["a photo ID", "your insurance card", "every medicine you take (a written list, or the bottles)", "your allergies", "your conditions and past surgeries", "family history", "a few dated lines on why you're coming"], "source": "src/content/guides.ts, guide new-doctor-intake-what-to-bring, first paragraph (the bring list)" },
+      "headline": "New Doctor? What to Bring to the First Visit", "sub": "A new doctor asks the same things as the last.",
+      "props": ["number-badge", "tote-bag", "photo-id", "insurance-card", "pill-bottle", "letter-page"], "why": "A 'what to bring' tote checklist answers the question in the title."
+    },
+    {
+      "account": "draftpace", "id": "health/pin-8.2", "title": "An Intake Summary for a New Doctor", "archetype": "page-closeup",
+      "content": { "items": ["Allergies", "Medications", "Conditions", "Family history", "Recent symptoms"], "source": "src/products/family-health-binder/printables/generateIntakeSummary.tsx (Block labels)" },
+      "headline": "An Intake Summary for a New Doctor", "sub": "It supplements clinic paperwork and does not replace it.",
+      "props": ["intake-counter", "clipboard", "letter-page", "pen"], "why": "The real summary page at the counter where it gets handed over."
+    },
+    {
+      "account": "draftpace", "id": "health/pin-8.3", "title": "New Doctor Checklist: Three Specialists, One Page", "archetype": "binder-flatlay",
+      "content": { "items": ["Open tab: Care team", "Columns: Name, Kind, For whom, Phone, Notes", "Kinds: doctor, specialist, dentist, pharmacy, other"], "source": "document.tsx ProvidersPage (section 'Care team', RegisterTable columns, PROVIDER_KINDS)" },
+      "headline": "Three Specialists, One Page", "sub": "When several doctors are involved, one page of who they are and what they know saves repeating it.",
+      "props": ["tabbed-binder", "divider-tabs", "letter-page", "stethoscope"], "why": "The care team register is exactly the 'one page' of doctors."
+    },
+    {
+      "account": "draftpace", "id": "health/pin-8.4", "title": "New Doctor Checklist: Doctors and Pharmacy, in One Place", "archetype": "pile-to-page",
+      "content": { "items": ["Before: loose appointment cards and a pharmacy bag (wordless)", "After: Doctors and pharmacy: Doctor, Specialist, Dentist, Pharmacy (one row each, name and phone as grey strokes)"], "source": "printables/generateFormsSheet.tsx ('Doctors and pharmacy' block); providers.ts PROVIDER_LABEL" },
+      "headline": "Doctors and Pharmacy, in One Place", "sub": "Record each doctor, specialist, dentist and pharmacy with a phone number and a note.",
+      "props": ["printout-pile", "letter-page", "two-stacks"], "why": "Scattered cards collapse into one block of the Forms sheet."
+    },
+    {
+      "account": "draftpace", "id": "health/pin-8.5", "title": "Medical Binder: Start the Visit With the Facts", "archetype": "numbered-list",
+      "content": { "items": ["A week before: Call the clinic.", "Six days before: Ask the old office how to send records.", "Three days before: Write the medicine list from the labels.", "The night before: Print the page.", "At the desk: Hand over the page.", "After the visit: Fix anything the doctor changed, and date the page."], "source": "src/content/guides.ts, guide new-doctor-intake-what-to-bring, timeline 'A schedule that works backwards from the visit' (first sentence of each step)" },
+      "headline": "Start the Visit With the Facts", "sub": "One page in hand changes how a first visit begins.",
+      "props": ["number-badge", "letter-page", "intake-counter"], "why": "A countdown makes 'start with the facts' concrete."
+    },
+    {
+      "account": "draftpace", "id": "health/pin-9.1", "title": "Health Binder Ideas: What to Leave Off a Health Page You Hand Over", "archetype": "page-fan",
+      "content": { "items": ["Sitter: Peanut allergy and hives, what is taken tonight, your cell, bedtime is 8, the green cup", "Camp form: What the form asks: birth date, who to call, allergy, medicines, doctor", "New doctor: Allergies, medicines, conditions, family history, recent symptoms"], "source": "src/content/guides.ts, guide what-to-leave-off-a-health-page-you-hand-over, table 'Example: one child, three pages' ('Goes on their page' column; an invented example per the guide)" },
+      "headline": "What to Leave Off a Health Page You Hand Over", "sub": "A sitter, a teacher and a new doctor need different things.",
+      "props": ["letter-page", "house-key", "camp-backpack", "stethoscope"], "why": "Three readers, three pages: the guide's table drawn."
+    },
+    {
+      "account": "draftpace", "id": "health/pin-9.2", "title": "Family Health Records: Keep This Private: Left Off Every Printed Page", "archetype": "page-closeup",
+      "content": { "items": ["Keep this private (checkbox)", "One record marked private is left off."], "source": "components/Care.tsx ('Keep this private'); printables/pdfKit.tsx Note (hiddenCount === 1 wording)" },
+      "headline": "Keep This Private: Left Off Every Printed Page", "sub": "Mark any record private and it stays in the app and is left off every printed page.",
+      "props": ["letter-page", "tick-box", "clipboard"], "why": "The ticked box and the page's own footer count show the feature honestly. No padlock: it is a print filter, not a lock."
+    },
+    {
+      "account": "draftpace", "id": "health/pin-9.3", "title": "Family Medical Binder: Not Every Page Needs Every Fact", "archetype": "numbered-list",
+      "content": { "items": ["Does this person need this fact to do what I'm asking of them?", "Would I be fine if this page were left on a counter, photographed, or found by another parent?", "Is it current?"], "source": "src/content/guides.ts, guide what-to-leave-off-a-health-page-you-hand-over, list 'Three questions before you print' (first sentence each)" },
+      "headline": "Not Every Page Needs Every Fact", "sub": "A short guide to what belongs on a forms page, a sitter page and a doctor page.",
+      "props": ["number-badge", "letter-page", "house-key", "camp-backpack", "stethoscope"], "why": "Three questions to ask before printing, numbered."
+    },
+    {
+      "account": "draftpace", "id": "health/pin-9.4", "title": "Family Health Records: A Page That Says What It Left Off", "archetype": "page-fan",
+      "content": { "items": ["Forms sheet", "Caregiver sheet", "Emergency card", "Footer on each: 'One record marked private is left off.'"], "source": "Titles: components/PrintablesModule.tsx docs. Footer: printables/pdfKit.tsx Note and generateEmergencyCard.tsx" },
+      "headline": "A Page That Says What It Left Off", "sub": "Every printed page says how many records it left off, so a page never looks complete when it is not.",
+      "props": ["letter-page", "emergency-card"], "why": "Fanned pages with the footer highlighted on each."
+    },
+    {
+      "account": "draftpace", "id": "health/pin-9.5", "title": "Family Medical Binder: You Decide", "archetype": "pile-to-page",
+      "content": { "items": ["Before: the full, thick binder", "After (a short sitter page with tick boxes): Your child's name, and the allergies with what happens; What is taken now, with dose and when, as labeled; Two people to call, with numbers, and the address of the house; In an emergency, call 911.; Routines and comforts"], "source": "src/content/guides.ts, guide what-to-leave-off-a-health-page-you-hand-over, checkable list 'What a sitter sheet needs, and what we'd skip' (items 1, 2, 4, 6, 7, cut at the first clause)" },
+      "headline": "You Decide", "sub": "You choose what goes on each page.",
+      "props": ["tabbed-binder", "letter-page", "tick-box"], "why": "Everything above, your choice below."
+    },
+    {
+      "account": "draftpace", "id": "health/pin-10.1", "title": "Caring for a Parent and Kids: Everyone's Information in One Place", "archetype": "binder-flatlay",
+      "content": { "items": ["Person tabs: Child, Child, Parent, You (each in its PERSON_HUES tint)", "Same headings on every page: allergies, medicines, doctors, insurance, who to call"], "source": "Tabs: src/products/family-health-binder/labels.ts RELATIONSHIP_LABEL; colours: personColors.ts PERSON_HUES. Headings: src/content/guides.ts, guide caring-for-a-parent-and-kids-one-place, 'Set it up in an evening' item 2" },
+      "headline": "Caring for a Parent and Kids: Everyone's Information in One Place", "sub": "When you look after a parent and your children, the paperwork multiplies.",
+      "props": ["tabbed-binder", "divider-tabs", "letter-page", "pill-bottle"], "why": "One tab per person across two generations is the caregiver binder searchers picture."
+    },
+    {
+      "account": "draftpace", "id": "health/pin-10.2", "title": "Caring for Aging Parents: Adults and Children, the Same Kind of Card", "archetype": "pile-to-page",
+      "content": { "items": ["Before: two-stacks (a school form pile and a pharmacy bag pile)", "After (real screen): Overview with 'Sam (example)' You, 38 years, and 'Mia (example)' Child, 9 years, with a Peanuts tag"], "source": "creative/public/screens/family-health-binder-workspace.png" },
+      "headline": "Adults and Children, the Same Kind of Card", "sub": "Add a child, a parent, a partner or yourself.",
+      "props": ["two-stacks", "phone-screen"], "why": "Two generations of paper become two identical cards on the real Overview."
+    },
+    {
+      "account": "draftpace", "id": "health/pin-10.3", "title": "Caregiver Binder: Keep Everyone's Facts on Their Own Page", "archetype": "page-closeup",
+      "content": { "items": ["Two pages side by side, headed Child and Parent", "Identical headings on each: Allergies, Medicines, Doctors, Insurance, Who to call"], "source": "Headings: src/content/guides.ts, guide caring-for-a-parent-and-kids-one-place, table 'Example: same headings, two people' (Heading column). Page heads: labels.ts RELATIONSHIP_LABEL instead of the guide's invented names" },
+      "headline": "Keep Everyone's Facts on Their Own Page", "sub": "Keep each person's facts on their own page, so nothing gets mixed up.",
+      "props": ["letter-page", "clipboard", "pen"], "why": "Two matching pages show 'separate but the same' at a glance."
+    },
+    {
+      "account": "draftpace", "id": "health/pin-10.4", "title": "Caregiver Binder: Five Printed Pages From What You Typed Once", "archetype": "page-fan",
+      "content": { "items": ["Forms sheet", "Caregiver sheet", "Emergency card", "Visit page", "Intake summary"], "source": "components/PrintablesModule.tsx docs titles; shop listing inclusions ('Five printable pages on US Letter')" },
+      "headline": "Five Printed Pages From What You Typed Once", "sub": "Each made in your browser on US Letter from what you typed in once.",
+      "props": ["letter-page", "emergency-card", "house-key", "camp-backpack", "stethoscope", "magnet"], "why": "Five fanned pages each tagged with who gets it: the 'what's included' format."
+    },
+    {
+      "account": "draftpace", "id": "health/pin-10.5", "title": "Caregiver Binder: Everyone, Once", "archetype": "pile-to-page",
+      "content": { "items": ["Before: four wordless forms standing for school, camp, sports and new-patient forms", "After: one closed binder titled 'The Family Health Binder'"], "source": "Form types: src/shop/products/family-health-binder.ts expectedOutputs ('school, camp, sports and new-patient forms'). Title: printables/document.tsx BOOK_TITLE" },
+      "headline": "Everyone, Once", "sub": "The point of a binder is to stop repeating yourself.",
+      "props": ["school-form", "printout-pile", "tabbed-binder"], "why": "Many forms in, one binder out: the two-word headline drawn."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-family-health-binder-01", "title": "School Forms Hack: Every Health Answer in One Printable Sheet", "archetype": "page-closeup",
+      "content": { "items": ["About", "Health insurance", "Doctors and pharmacy", "Allergies", "Conditions", "Medications", "Vaccines"], "source": "printables/generateFormsSheet.tsx (Block labels, in print order)" },
+      "headline": "Stop rewriting the same answers on every school form", "sub": "Allergies, meds, doctors and insurance, entered once. Print the Forms sheet.",
+      "props": ["clipboard", "letter-page", "school-form", "camp-backpack"], "why": "The Forms sheet lying beside a school form is exactly how it is used."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-family-health-binder-02", "title": "Babysitter Info Sheet Printable: Allergies, Meds, Who to Call", "archetype": "fridge-and-wallet",
+      "content": { "items": ["ALLERGIES (large box)", "Medications now", "Conditions", "Who to call", "Good to know about ...", "In an emergency, call 911."], "source": "printables/generateCaregiverSheet.tsx (block labels; the 'Good to know about' label takes the person's name, drawn as a fill line)" },
+      "headline": "Leaving the kids with a sitter or grandparent?", "sub": "A one-page Caregiver sheet: allergies first and largest, then who to call.",
+      "props": ["fridge-door", "magnet", "letter-page", "house-key"], "why": "The sitter sheet on the fridge, allergies box first, as the guide recommends."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-family-health-binder-03", "title": "Family Medical Binder Printables: 5 Pages Every Family Needs", "archetype": "binder-flatlay",
+      "content": { "items": ["Numbered tabs 1-5: Forms sheet, Caregiver sheet, Emergency card, Visit page, Intake summary"], "source": "components/PrintablesModule.tsx docs titles" },
+      "headline": "5 printables every family health binder needs", "sub": "All five print from what you entered once.",
+      "props": ["tabbed-binder", "divider-tabs", "letter-page", "pen"], "why": "Five tabs answer '5 printables' in the most binder-native way."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-family-health-binder-04", "title": "Kids Symptom Tracker: Answer the Doctor's Questions Fast", "archetype": "pile-to-page",
+      "content": { "items": ["Before: intake-counter with a blank clipboard and a thought bubble of scribbles", "After: What is it, When it started, How long (hours, days or weeks), How bad (mild, moderate, severe), What helped"], "source": "src/content/guides.ts symptom-notes-for-a-doctor-visit, closing paragraph ('what it is, when it started, how long (hours, days or weeks) and how bad (mild, moderate, severe), plus what helped'); state.ts severitySchema, durationUnitSchema" },
+      "headline": "POV: the intake desk asks exactly when the fever started", "sub": "A symptom timeline with onset, duration and severity, logged as it happens.",
+      "props": ["intake-counter", "clipboard", "letter-page"], "why": "The POV moment on top, the fields that answer it below."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-family-health-binder-05", "title": "Family Health Information Organizer for Busy Parents", "archetype": "numbered-list",
+      "content": { "items": ["Medications", "Allergies", "Doctors", "Insurance", "Vaccines", "Who to call"], "source": "creative/pinterest/maple-main-finds.ts, this pin's points" },
+      "headline": "Everything the forms ask, in one place", "sub": "For every person in your family.",
+      "props": ["number-badge", "pill-bottle", "stethoscope", "insurance-card", "person-card"], "why": "A 2x3 sticker grid, one drawn object per answer."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-family-health-binder-06", "title": "Questions to Ask the Doctor: Printable Visit Page", "archetype": "page-closeup",
+      "content": { "items": ["Questions to ask (a tick box per line)", "Allergies", "Taking now", "Recent symptoms", "Notes from the visit"], "source": "printables/generateVisitPrep.tsx (Block labels)" },
+      "headline": "The questions you meant to ask the doctor, written down", "sub": "Print a Visit page with a box to tick for each one.",
+      "props": ["clipboard", "letter-page", "tick-box", "pen"], "why": "Tick boxes close up: the promise in the sub."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-family-health-binder-07", "title": "Medication List Template That Stays Up to Date", "archetype": "medicine-cabinet",
+      "content": { "items": ["Name, Dosage, Frequency, Started", "Stopped (1)", "Checked today"], "source": "document.tsx MedicalFactsPage columns; components/HealthPanel.tsx ('Stopped' fold); medications.ts describeMedicationsCheck" },
+      "headline": "Old meds still on the list you hand over?", "sub": "Mark it stopped. It leaves every printed page and stays in the record.",
+      "props": ["medicine-cabinet", "pill-bottle", "med-list-sheet", "checked-stamp"], "why": "An old bottle at the back of the cabinet, its line folded away on the list."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-family-health-binder-08", "title": "Sandwich Generation Organization: Kids and Aging Parent Health", "archetype": "page-fan",
+      "content": { "items": ["Three person-cards fanned: Child, Child, Parent", "Card sections: Health, Vaccines, Care team", "A card per person, adults and kids alike", "Each one's meds, doses and allergies", "Doctors and who to call for each"], "source": "Relationships: labels.ts RELATIONSHIP_LABEL. Sections: components/MembersModule.tsx TABS. Points: maple-main-finds.ts, this pin's points" },
+      "headline": "Caring for your kids and your parent too?", "sub": "One binder for all of them, no separate logins.",
+      "props": ["person-card", "two-stacks"], "why": "A hand of identical cards for two generations."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-family-health-binder-09", "title": "Summer Camp Forms: Have Health Info and Insurance Ready", "archetype": "pile-to-page",
+      "content": { "items": ["Before: camp check-in table, backpack, wallet turned out", "After: Health insurance: Insurer, Member ID, Group number"], "source": "printables/generateFormsSheet.tsx ('Health insurance' block)" },
+      "headline": "Me at camp check-in, trying to remember the insurance number", "sub": "It's on the Forms sheet, in the order the form asks.",
+      "props": ["camp-backpack", "wallet", "insurance-card", "letter-page"], "why": "The relatable rummage, then the block that ends it."
+    },
+    {
+      "account": "maple", "id": "Pin-mm-family-health-binder-10", "title": "Family Health Records: Keep Private Details Off Printouts", "archetype": "numbered-list",
+      "content": { "items": ["Mark any record private", "Left off every printout", "Each page says how many it left off"], "source": "creative/pinterest/maple-main-finds.ts, this pin's points (backed by SettingsModule.tsx and pdfKit.tsx Note)" },
+      "headline": "Hand a stranger only what they need", "sub": "A private choice on every record.",
+      "props": ["number-badge", "tick-box", "letter-page", "house-key"], "why": "Three steps, no padlock imagery, since it is a print filter and not a lock."
+    }
+  ]
+}
