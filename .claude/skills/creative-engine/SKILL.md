@@ -510,6 +510,29 @@ capture-screens.mjs  ->  render  ->  review.mjs  ->  publish-pinterest.mjs
   ones (holiday budget, winterizing) only where the topic truly is. The
   pin image and the original words never change.
 
+## Explainer films (the Anatomy style)
+
+`creative/explainers/` holds films that explain how a product works as a
+real machine, drawn with the Anatomy kit (vendored, MIT, in
+`explainers/anatomy-kit/`; source github.com/wheresryan22). The first is
+Home Base (`explainers/home-base/`, `node explainers/home-base/render.mjs`,
+writes `out/explainers/home-base.mp4`; `--stills 7,19` for review PNGs).
+
+- **Truth first.** `truth.ts` runs the product's own code (here
+  `deriveAttentionItems`, through vite) on the dates the film visits. The
+  rack's order, every token's height, the detail lines and the empty
+  December are that code's answers, and `tests/home-base-explainer.test.ts`
+  fails if the product changes under the film.
+- **The machine** (`machine.mjs`): a care-calendar drum with a pin per job
+  per month, push-rods, a beam the tokens rise from, a chute, a rack whose
+  front row is Home's first four (the row behind is "1 more, when you get
+  to it"), a bin for done jobs and a flag for "Nothing needs you today."
+- **The film** (`film.mjs`): dates, token routes, camera shots and the
+  product's own lines on screen. The render refuses a timeline where two
+  tokens on the rack come closer than a token's width.
+- **Sound**: the licensed Mixkit bed, a click per landing, the chime when
+  the flag goes up. Nothing else.
+
 ## Adding a new product
 
 1. Nothing to do for colours, name or price: `theme-registry.ts` and
