@@ -3184,15 +3184,35 @@ export const GUIDES: Guide[] = [
       { slug: "how-to-find-someones-accounts-after-they-die", reason: "To trace accounts, pensions and policies for the estate, this gives a search order that works when little is written down." },
     ],
     publishedAt: "2026-08-30",
-    updatedAt: "2026-08-31",
+    updatedAt: "2026-10-22",
     areaSlug: "affairs-and-endings",
     locale: "uk",
+    sources: [
+      {
+        name: "GOV.UK: Applying for probate",
+        url: "https://www.gov.uk/applying-for-probate",
+        retrieved: "2026-10-22",
+        note: "The original will must go with the application, not a photocopy. An executor who does not want to apply now can hold power reserved, or give up the right permanently with form PA15.",
+      },
+      {
+        name: "GOV.UK (HMRC): Inheritance Tax Manual, IHTM05101, types of grant",
+        url: "https://www.gov.uk/hmrc-internal-manuals/inheritance-tax-manual/ihtm05101",
+        retrieved: "2026-10-22",
+        note: "Letters of administration are granted where somebody dies without a valid will, authorising the administrator to act in place of an executor.",
+      },
+      {
+        name: "legislation.gov.uk: Trustee Act 2000, Part V",
+        url: "https://www.legislation.gov.uk/ukpga/2000/29/contents",
+        retrieved: "2026-10-22",
+        note: "Sections 28 and 29 limit payment for a trustee's or executor's own time to trust corporations and those acting in a professional capacity, unless the will itself says otherwise.",
+      },
+    ],
     body: [
       {
         kind: "paragraphs",
         paragraphs: [
           "Being an executor means you are legally responsible for gathering everything somebody owned, paying what they owed, and distributing the rest according to their will. It is an administrative job with legal weight, and it usually takes many months.",
-          "Most people find out they were named at the worst possible moment and have no idea what the role involves. Here is the honest version.",
+          "Most people find out they were named at the worst possible moment and have no idea what the role involves. Here is the honest version. If you are also handling registration and the certificates right now, [the UK first-fortnight guide](/guides/what-to-do-when-a-parent-dies-uk) covers that side of it.",
         ],
       },
       {
@@ -3260,6 +3280,32 @@ export const GUIDES: Guide[] = [
           "Twelve months of bank statements, which is the fastest way to find accounts and policies nobody mentioned.",
           "Details of any funeral plan already paid for.",
           "Contact details for their accountant, solicitor or adviser.",
+        ],
+      },
+      {
+        kind: "faq",
+        heading: "Questions people ask",
+        items: [
+          {
+            q: "What does an executor actually do in the UK?",
+            a: "An executor finds everything the person owned, applies for the grant of probate (confirmation in Scotland), values the estate, pays debts and tax, then distributes what is left the way the will says. It is mostly paperwork in a fixed order, and it usually takes many months. You keep records the whole way through, since beneficiaries can ask to see them.",
+          },
+          {
+            q: "Do I have to accept if I am named executor?",
+            a: "No. If another executor is named alongside you, you can have power reserved, which keeps your right to apply later without you acting now. To give the role up for good before you have started dealing with the estate, you sign form PA15 to renounce it. Once you have already acted, such as paying a bill from the estate, stepping back becomes much harder.",
+          },
+          {
+            q: "What is the difference between an executor and an administrator?",
+            a: "An executor is named in a will and applies for a grant of probate. An administrator is appointed when somebody dies without a valid will, or the named executors cannot or will not act, and applies instead for letters of administration. The underlying job, finding, valuing, settling and distributing the estate, is the same either way.",
+          },
+          {
+            q: "Can an executor also be a beneficiary?",
+            a: "Yes, and it is common. Being named to inherit something does not conflict with serving as executor. Keep the accounting careful and in writing regardless, since the other beneficiaries are entitled to see exactly what happened to the estate's money.",
+          },
+          {
+            q: "Am I entitled to be paid for doing this?",
+            a: "Generally no, if you are a family member or friend rather than a professional. A lay executor cannot charge for their own time unless the will itself includes a clause saying so. You can still claim back genuine expenses, such as postage, probate fees and travel. A solicitor named as a professional executor can charge for their time, which is one reason some people appoint one instead of a relative.",
+          },
         ],
       },
       {
