@@ -35,16 +35,6 @@ import ViewProductTracker from "@/components/analytics/ViewProductTracker";
 import TrackedLink from "@/components/analytics/TrackedLink";
 import PwaInstallSection from "@/components/public/shop/PwaInstallSection";
 import InclusionsGrid from "./InclusionsGrid";
-import TryItDemo from "@/components/public/shop/TryItDemo";
-
-/**
- * First campaign focus (2026 Q4 finance/homeschool product-discovery
- * push): the two products getting a reachable, working demo on their own
- * Shop page rather than only the homepage accordion. Scoped to these two
- * slugs on purpose, so every other product's page renders exactly as it
- * did before this change.
- */
-const TRY_IT_DEMO_SLUGS = new Set(["personal-finance-companion", "homeschooling-companion"]);
 
 export const dynamic = "force-dynamic";
 
@@ -312,12 +302,6 @@ export default async function ShopProductPage({
           </div>
         </section>
       </Container>
-
-      {TRY_IT_DEMO_SLUGS.has(product.slug) && (
-        <Container width="standard" className="pb-4">
-          <TryItDemo slug={product.slug} productId={product.id} productName={product.title} />
-        </Container>
-      )}
 
       <Container width="standard" className="pb-28">
         {/*

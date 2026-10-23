@@ -2,6 +2,8 @@
 
 First acquisition-campaign pass for the two prioritized Companions. No new applications were created, none of the 137 guides were rewritten, and the other six Companions are unchanged (verified below, not just claimed). Everything here comes from reading this repository's own real product definitions, page code, and existing analytics, plus web research on real competitor positioning and real user language where it was findable. Where research could not confirm something (no Reddit threads surfaced, no live Capterra/G2 data), that gap is stated rather than papered over.
 
+**Scope note:** an earlier revision of this branch also embedded the existing `LiveDemo` component directly on both products' Shop pages and in their guide `Handover` panels (plus a matching `view_product_demo`/`interact_product_demo` analytics event), as a fix for the discoverability gap in finding #1 below. That embed was removed after review. Sections 5 and 6 below describe what was built and then taken back out, so the decision and the reasoning behind it stay on record; nothing from that embed ships in this branch. The messaging changes in Section 4 are unaffected and still ship. The pre-existing `LiveDemo` on the homepage accordion and `/how-it-works` was never part of this change and is untouched either way.
+
 ## 1. Current visitor journey (as it existed before this branch)
 
 ```
@@ -73,52 +75,34 @@ Both changes are a single-field edit to the real `promise` text already read by 
 - After: "A printed handbook and an app that remembers, each child kept entirely separate. You decide what your children learn; this keeps track of what each one actually did, tells you the next useful thing per child, and helps you check whether it landed, never compared to anyone else's pace."
 - Why: surfaces the single most differentiating, independently-validated fact (separate per-child tracking) in the first sentence instead of the second audience bullet, and states the product's real "no comparison" behavior (already answered in `questions`) as a benefit up front rather than only as a defensive FAQ answer.
 
-## 5. Discoverability: the real demo, made reachable
+## 5. Discoverability: the real demo, built and then removed
 
-New component `TryItDemo` (`src/components/public/shop/TryItDemo.tsx`) renders the existing `LiveDemo` in place, themed in the product's own real colours (reusing `posterTheme`, extracted unchanged from the homepage into `src/product-framework/posterTheme.ts` so both surfaces share one derivation instead of two copies). It is **opt-in per call site**: nothing renders it for a product that doesn't explicitly ask for it.
+A component called `TryItDemo` rendered the existing `LiveDemo` directly on both products' Shop pages (a new "See it work" section below the buy box, before the detail tabs) and in their guide `Handover` panels, themed in each product's own real colours. It was gated to the two priority slugs only, and the other six products' pages were confirmed unchanged by code and by screenshot while it existed.
 
-Two call sites, both gated to the two priority slugs only:
-1. `/shop/personal-finance-companion` and `/shop/homeschooling-companion`: a new "See it work" section directly below the buy box, before the detail tabs, so it's the first thing encountered after the fold rather than requiring a trip back to the homepage.
-2. The guide `Handover` panel, for guides filed under the Money or Family & Learning areas: the same demo now renders under the existing pitch, so a convinced reader sees proof in place of only a repeated sentence.
+**This was removed after review.** The finding it was answering (#1 in Section 2: the real demo had no path to it from either product's own page or from a guide) is still accurate and still worth having on record, and nothing above stops being true. The specific fix, embedding the demo inline on these surfaces, didn't land well and was taken back out rather than kept. What shipped in its place: nothing yet. The discoverability gap in finding #1 is unresolved in this branch; if it's worth fixing, it needs a different approach than this one.
 
-No fake or disconnected demo was built. `LiveDemo`'s own file documents that it runs the product's real logic (`comparePayoff` for the debt plan, the real check-off state machine for Homeschooling) against clearly-labeled sample data, never anyone's real records. This pass reuses that existing, already-tested component rather than authoring a new one.
+## 6. Analytics: built and removed along with the demo
 
-The other six products' Shop pages and guide handovers render through the exact same shared code paths, gated off by the same slug check, and are confirmed unchanged by screenshot (Section 7) and by the fact that no other product file was edited.
-
-## 6. Privacy-conscious funnel analytics (implemented)
-
-New event, added to the existing GA4 pipeline (`src/lib/analytics/gtag.ts`, unchanged), which already documents "NEVER PASS PII HERE" and accepts only scalar values:
-
-- `view_product_demo` — fires once when the new demo section mounts, with `product_id` and `product_slug` only.
-- `interact_product_demo` — fires once, on the visitor's first click/tap/keypress inside the demo, same two scalar parameters.
-
-This fills a real, previously-missing mid-funnel signal: the existing pipeline already had `view_product` (page load) and a checkout-click event, but nothing in between answering "did anyone actually engage with the proof, or did they scroll past it." Implemented as `ProductDemoTracker` (`src/components/analytics/ProductDemoTracker.tsx`), following the same pattern as the existing `ViewProductTracker`. It never reads or reports anything the visitor enters (the demo itself uses fixed, labeled sample data, never real account or child information), and nothing here touches checkout, pricing, Supabase auth, or Lemon Squeezy code.
+A `view_product_demo` / `interact_product_demo` GA4 event pair (scalar `product_id`/`product_slug` only, following the same privacy-safe pattern as the existing `view_product` event) existed solely to measure engagement with the embedded demo in Section 5. With that demo gone, there's nothing left for it to measure, so it was removed in the same pass rather than left shipping dead code. No analytics change ships in this branch.
 
 ## 7. Verification
 
-- **Checkout and pricing:** not modified. Personal Finance Companion still prices at $49 (was $99, 51% off) and Homeschooling Companion at $34 (was $69, 51% off), confirmed by screenshot against the running app (Section 8's image list), and no `price`, `compareAtPrice`, `access`, or checkout-resolution code was touched in any file this branch changes.
-- **Mobile presentation:** confirmed by screenshot at a 390px viewport for both priority products; the new demo section reflows to full width with no horizontal overflow.
-- **The other six products:** confirmed unchanged both by code (the new render paths are gated by an explicit two-slug allowlist, and no other product's `.ts` listing file was edited) and by screenshot of Travel Companion's Shop page, which renders identically in structure to before, with no new section.
-- **Links:** the new "See it work" sections and the guide `Handover` demo introduce no new outbound links; the existing "See what it does" / "Get Lifetime Access" links are untouched.
-- **Page speed:** no new library was added and no new network request is introduced; `LiveDemo` was already shipped in the client bundle for the homepage, and this reuses that same component rather than adding a second implementation. A precise before/after bundle-size number could not be produced (this Next.js version's build output didn't print a per-route size table in this environment), so this is reported as "minimal by construction," not as a measured figure.
-- **Quality gates**, all run against this branch:
+- **Checkout and pricing:** not modified. Personal Finance Companion still prices at $49 (was $99, 51% off) and Homeschooling Companion at $34 (was $69, 51% off), and no `price`, `compareAtPrice`, `access`, or checkout-resolution code was touched in any file this branch changes.
+- **The other six products:** untouched — no other product's `.ts` listing file was edited, and this branch's only route-level changes are the two `promise` edits (data, not page code).
+- **Quality gates**, all run against this branch in its current, demo-free state:
   - `npx tsc --noEmit`: clean.
-  - `npx eslint .`: 0 errors, 9 pre-existing warnings unrelated to this change (verified identical warning set against the base branch's known pattern).
-  - `npm run test`: 3431 tests passed, 259 files, including all 63 Shop-listing tests (banned words, no-em-dash, bank-connection disclosure) and the full `src/content` guides suite.
-  - `npm run build`: compiled successfully, all static and dynamic routes generated, including `/shop/[productSlug]` and `/guides/[guideSlug]` and their 137+ generated guide paths.
+  - `npx eslint .`: 0 errors, 9 pre-existing warnings unrelated to this change.
+  - `npm run test`: 63/63 Shop-listing tests passing (banned words, no-em-dash, bank-connection disclosure) for the two edited listings.
+  - `npm run build`: compiled successfully.
+
+(The mobile-presentation and Travel Companion screenshots taken while the demo embed existed are no longer representative of this branch and aren't included here, since that code is gone.)
 
 ## 8. Files actually changed
 
-- `src/product-framework/posterTheme.ts` — new. Theme-token derivation extracted unchanged from the homepage.
-- `src/app/(marketing)/page.tsx` — homepage now imports `posterTheme` instead of defining it locally; behavior unchanged (same function, same inputs, same outputs), confirmed by the full homepage-adjacent test suite passing and the Travel Companion screenshot.
-- `src/components/analytics/ProductDemoTracker.tsx` — new. Privacy-safe demo view/interact event wrapper.
-- `src/components/public/shop/TryItDemo.tsx` — new. The reusable "See it work" panel.
-- `src/app/(marketing)/shop/[productSlug]/page.tsx` — adds the gated "See it work" section.
-- `src/app/(marketing)/guides/[guideSlug]/page.tsx` — `Handover` gains an optional `demo` prop, passed only for the two priority slugs.
 - `src/shop/products/personal-finance-companion.ts` — `promise` field only.
 - `src/shop/products/homeschooling-companion.ts` — `promise` field only.
 
-Nothing else changed. No guide content, no pricing, no checkout logic, no account/auth code, no other product's listing.
+Nothing else changed. No guide content, no pricing, no checkout logic, no account/auth code, no other product's listing, and no page/component code (the demo embed described in Sections 5-6 was built, then fully removed, in this same branch's history).
 
 ## 9. What this does not cover
 
