@@ -33,6 +33,14 @@ import NextSteps from "@/components/public/guides/NextSteps";
 import Sources from "@/components/public/guides/Sources";
 import { bodyWithFigure, guideArt } from "@/content/guideArt";
 import GuideNotice from "@/components/public/guides/GuideNotice";
+import TryItDemo from "@/components/public/shop/TryItDemo";
+
+/**
+ * Same campaign scope as the Shop page's TRY_IT_DEMO_SLUGS (see that
+ * file): only these two companions' guide handover panels gain a working
+ * demo. Every other guide's handover renders exactly as it did before.
+ */
+const TRY_IT_DEMO_SLUGS = new Set(["personal-finance-companion", "homeschooling-companion"]);
 
 /**
  * One route serving two page types: a life-area hub, or a guide.
@@ -281,6 +289,11 @@ export default async function GuideOrHubPage({ params }: { params: Promise<{ gui
                 href={`/shop/${companion.slug}`}
                 cta="See what it does"
                 Mark={Mark}
+                demo={
+                  TRY_IT_DEMO_SLUGS.has(companion.slug) ? (
+                    <TryItDemo slug={companion.slug} productId={companion.id} productName={companion.title} />
+                  ) : undefined
+                }
               />
             )}
 
@@ -313,6 +326,7 @@ function Handover({
   href,
   cta,
   Mark,
+  demo,
 }: {
   label: string;
   title: string;
@@ -320,6 +334,8 @@ function Handover({
   href: string;
   cta: string;
   Mark: (props: { className?: string }) => React.ReactElement;
+  /** Opt-in only (see TRY_IT_DEMO_SLUGS above): a reachable, working demo for the Companion this guide hands over to, shown under the pitch rather than only told. */
+  demo?: React.ReactNode;
 }) {
   return (
     <aside className="mt-14 overflow-hidden rounded-[var(--radius-xl)] border border-[var(--area)] bg-[var(--area-soft)]">
@@ -340,6 +356,7 @@ function Handover({
           <Mark className="w-full" />
         </div>
       </div>
+      {demo && <div className="border-t border-[var(--area)] p-6 pt-5">{demo}</div>}
     </aside>
   );
 }

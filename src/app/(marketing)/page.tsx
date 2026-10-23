@@ -5,15 +5,14 @@ import Container from "@/design-system/Container";
 import { ArrowRight } from "@/design-system/Icon";
 import CompanionPicker, { type PickerPanel } from "@/components/public/home/CompanionPicker";
 import CompanionAccordion from "@/components/public/home/CompanionAccordion";
-import type { SceneData, PosterTheme } from "@/components/public/home/posterTypes";
+import type { SceneData } from "@/components/public/home/posterTypes";
 import TellItOnce from "@/components/public/home/TellItOnce";
 import TrustSection from "@/components/public/home/TrustSection";
 import { StartWithGuides } from "@/components/public/guides/GuideLinks";
 import { softwareApplicationStructuredData, jsonLd } from "@/lib/structuredData";
 import { LIFE_AREAS } from "@/content/areas";
 import { POSTER_SCENES } from "@/content/homepagePosters";
-import { accentWash, deriveDarkTones } from "@/design-system/accentTone";
-import { productRegistry } from "@/product-framework/registry";
+import { posterTheme } from "@/product-framework/posterTheme";
 import { ensureProductsRegistered } from "@/products/manifest";
 import { discountPercent, formatCompareAtPrice, formatPrice } from "@/shop/definition";
 import { shopRegistry } from "@/shop/registry";
@@ -96,62 +95,9 @@ const AREA_SECOND_MOCKUP: Record<string, React.ReactNode> = {
   "family-health": <FhbSecond />,
 };
 
-/** The face each product's own headings speak in, and the one that labels everything in monospace. */
-const HEADLINE_FONT: Record<string, string> = {
-  "personal-finance-companion": "var(--font-fraunces), ui-serif, Georgia, serif",
-  "travel-companion": "var(--font-inter), ui-sans-serif, system-ui, sans-serif",
-  "vehicle-maintenance-companion": "var(--font-inter), ui-sans-serif, system-ui, sans-serif",
-  "family-health-binder": "var(--font-inter), ui-sans-serif, system-ui, sans-serif",
-};
-const SERIF = "var(--font-newsreader), ui-serif, Georgia, serif";
-const RADIUS: Record<string, number> = { sharp: 4, standard: 16, soft: 24 };
-
 export default function HomePage() {
   ensureShopRegistered();
   ensureProductsRegistered();
-
-  /*
-    Each poster wears its own product's colours: the ground and accent from
-    its definition, so re-theming a product moves its poster with it. A
-    product with no ground of its own (Home Base, Homeschooling) gets a
-    pale wash of its accent, worked out the way the Shop's store images are.
-
-    Every value is a `light-dark()` pair rather than a single resolved
-    colour. A poster section sets these as literal --poster-* custom
-    properties (CompanionShowcase.tsx), and an inline custom property
-    can't answer a media query on its own: a single light value would
-    stay light no matter the visitor's theme, the same failure
-    productThemeStyle() was rewritten once already to avoid (see its own
-    comment). `light-dark()` resolves against the page's `color-scheme`,
-    which globals.css already sets correctly for all three theme states,
-    so no extra plumbing is needed to make eight product sections behave
-    like the rest of the page in dark mode.
-  */
-  function posterTheme(slug: string): PosterTheme | null {
-    const theme = productRegistry.getBySlug(slug)?.theme;
-    const scale = theme?.accentScale;
-    if (!theme || !scale) return null;
-    const groundLight = theme.ground?.light;
-    const groundDark = theme.ground?.dark;
-    const darkScale = theme.accentScaleDark ?? deriveDarkTones(scale.base);
-    const heroLight = theme.hero?.light;
-    const heroDark = theme.hero?.dark;
-    const ld = (light: string, dark: string) => `light-dark(${light}, ${dark})`;
-    return {
-      bg: ld(groundLight?.appBg ?? accentWash(scale.base, 0.955), groundDark?.appBg ?? accentWash(scale.base, 0.13)),
-      surface: ld(groundLight?.surface ?? accentWash(scale.base, 0.995), groundDark?.surface ?? accentWash(scale.base, 0.17)),
-      text: ld(groundLight?.text ?? "#1c1917", groundDark?.text ?? "#f5f2ea"),
-      muted: ld(groundLight?.muted ?? "#57534e", groundDark?.muted ?? "#b1aa9d"),
-      border: ld(groundLight?.border ?? accentWash(scale.base, 0.86), groundDark?.border ?? accentWash(scale.base, 0.26)),
-      accent: ld(scale.base, darkScale.base),
-      accentContrast: ld(scale.contrast, darkScale.contrast),
-      soft: ld(scale.soft, darkScale.soft),
-      radius: RADIUS[theme.identity?.shape ?? "standard"],
-      headlineFont: HEADLINE_FONT[slug] ?? SERIF,
-      monoLabels: slug === "vehicle-maintenance-companion",
-      hero: heroLight && heroDark ? { from: ld(heroLight.from, heroDark.from), mid: ld(heroLight.mid, heroDark.mid), to: ld(heroLight.to, heroDark.to), ink: ld(heroLight.ink, heroDark.ink) } : undefined,
-    };
-  }
 
   const scenes: SceneData[] = POSTER_SCENES.flatMap((scene) => {
     const posters = scene.products.flatMap((content) => {
