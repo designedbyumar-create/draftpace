@@ -76,6 +76,7 @@ const PAGES = {
     eyebrow: "Debt",
     title: "Debt payoff method comparison",
     desc: "Two common ways to order debt payoff. Avalanche pays the highest interest rate first and usually costs the least. Snowball clears the smallest balance first and gives quicker wins.",
+    compact: true,
     body: () => `
       <div class="two">${[["Avalanche", "Highest rate first"], ["Snowball", "Smallest balance first"]].map(([a, b]) => `<div><div class="mh"><b>${a}</b><span>${b}</span></div>${[1, 2, 3, 4, 5, 6].map((n) => `<div class="nl"><em>${n}</em><i></i></div>`).join("")}</div>`).join("")}</div>
       <div class="q">Payoff ladder <span class="note">Work your chosen order from the bottom rung up. Shade each rung as it is cleared.</span></div>
@@ -125,13 +126,29 @@ function workbookPage(folio, title, place) {
     <div class="ey">${esc(pg.eyebrow)}</div>
     <div class="ti">${esc(pg.title)}</div>
     <div class="ul"></div>
-    <p class="ds">${esc(pg.desc)}</p>
+    <p class="ds${pg.compact ? " tight" : ""}">${esc(pg.desc)}</p>
     <div class="bd">${pg.body()}</div>
     ${pg.reminder ? reminder(pg.reminder) : ""}
     <div class="fo"><span>${esc(s.name)}</span><span>&bull; ${folio}</span></div>
     <div class="edge"></div>
   </div>`;
 }
+
+/** The workbook's pencil: butter-yellow hexagonal body, ferrule, pink eraser, sharpened tip. */
+const PENCIL = `
+  <svg class="pencil" viewBox="-10 -20 460 80" aria-hidden="true">
+    <defs><filter id="pshadow" x="-10%" y="-80%" width="120%" height="260%"><feGaussianBlur stdDeviation="5"/></filter></defs>
+    <path d="M6 30 H384 L438 22 L384 12 Z" transform="translate(4 12)" fill="#1e2a24" opacity=".22" filter="url(#pshadow)"/>
+    <rect x="0" y="4" width="34" height="26" rx="7" fill="#f2a7c0"/>
+    <rect x="30" y="3" width="26" height="28" rx="2" fill="#b9bdb8"/>
+    ${[36, 43, 50].map((x) => `<line x1="${x}" y1="3" x2="${x}" y2="31" stroke="#8e938d" stroke-width="2"/>`).join("")}
+    <rect x="56" y="4" width="326" height="26" fill="#f2d16b"/>
+    <rect x="56" y="4" width="326" height="7" fill="#f7e19a"/>
+    <rect x="56" y="22" width="326" height="8" fill="#e2bb4c"/>
+    <path d="M382 4 L428 15 Q432 17 428 19 L382 30 Z" fill="#ecd2a8"/>
+    <path d="M382 4 L392 9 L382 13 L392 17 L382 21 L392 25 L382 30 Z" fill="#f2d16b"/>
+    <path d="M414 11.5 L430 16 Q433 17 430 18 L414 22.5 Z" fill="#3a3d3b"/>
+  </svg>`;
 
 function workbookFan() {
   const pin = plan("pfc/pin-9.2");
@@ -152,6 +169,7 @@ function workbookFan() {
   </div>
   <div class="desk" data-check="workbook">
     ${spread.map(([folio, title, place]) => workbookPage(folio, need(pin, title), place)).join("")}
+    ${PENCIL}
   </div>
   <ul class="facts" data-check="facts">${facts.map((f) => `<li>${esc(f)}</li>`).join("")}</ul>
   <p class="sub" data-check="sub">${esc(pin.sub)}</p>
@@ -168,6 +186,7 @@ function workbookFan() {
   .wb .ul{width:30px;height:2.5px;background:var(--sec);margin-top:7px}
   .wb .ds{margin-top:10px;font-size:10.5px;line-height:1.42;color:#514f49}
   .wb .bd{margin-top:12px}
+  .wb .ds.tight{font-size:9.6px;line-height:1.36}
   .wb .tb{margin-top:4px}
   .wb .th{display:grid;gap:4px;background:var(--tint);border-top:1.4px solid #232220;padding:7px 6px;font:600 8.6px "Plex";color:#232220;white-space:nowrap}
   .wb .th span{overflow:hidden}
@@ -184,11 +203,11 @@ function workbookFan() {
   .wb .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
   .wb .mh{display:flex;justify-content:space-between;align-items:baseline;background:var(--tint);padding:6px 8px;font-size:10.5px;border-radius:2px}
   .wb .mh span{font-size:8px;color:#6e6b63}
-  .wb .nl{display:flex;gap:8px;align-items:flex-end;height:19px}
+  .wb .nl{display:flex;gap:8px;align-items:flex-end;height:16px}
   .wb .nl em{font:normal 600 9px "Plex";color:var(--sec);width:8px}
   .wb .nl i{flex:1;border-bottom:1px solid #c8c4b8}
   .wb .ladder{margin-top:6px;border:1px solid #c8c4b8}
-  .wb .rung{display:grid;grid-template-columns:20px 1.6fr 1fr 1fr;gap:8px;align-items:center;height:21px;padding:0 6px;font-size:7.6px;color:#6e6b63;border-bottom:1px solid #e3e0d8}
+  .wb .rung{display:grid;grid-template-columns:20px 1.6fr 1fr 1fr;gap:8px;align-items:center;height:19px;padding:0 6px;font-size:7.6px;color:#6e6b63;border-bottom:1px solid #e3e0d8}
   .wb .rung:nth-child(even){background:#f4f2ec}
   .wb .rung em{font:normal 600 8px/13px "Plex";width:13px;height:13px;border-radius:2px;background:var(--sec);color:#fff;text-align:center}
   .wb .tot{margin-top:8px;font-size:8.6px;color:#6e6b63}
@@ -198,6 +217,7 @@ function workbookFan() {
   .wb .rm b{flex:none;color:#232220;font-weight:600}
   .wb .fo{position:absolute;left:24px;right:24px;bottom:14px;display:flex;justify-content:space-between;border-top:1px solid #c8c4b8;padding-top:6px;font-size:8.6px;color:#6e6b63}
   .wb .edge{position:absolute;right:0;top:47%;width:4px;height:30px;background:var(--sec)}
+  .pencil{position:absolute;left:58px;top:590px;width:400px;height:70px;transform:rotate(-13deg);z-index:9}
   .facts{position:absolute;left:64px;right:64px;top:1196px;height:60px;list-style:none;display:flex;gap:14px}
   .facts li{display:flex;align-items:center;padding:0 24px;border-radius:999px;background:var(--soft);color:var(--strong);font-weight:600;font-size:25px;white-space:nowrap}
   .sub{position:absolute;left:64px;right:64px;top:1284px;height:44px;font-size:28px;line-height:1.35;color:var(--muted)}
@@ -245,10 +265,10 @@ function jar(level, name, i) {
     <rect x="-76" y="${top + 24}" width="152" height="18" rx="6" fill="#256049"/>
     <rect x="-60" y="${top + 28}" width="70" height="4" rx="2" fill="#fff" opacity=".25"/>
     <g transform="rotate(${[-2, 1.5, -1, 2][i]} 0 -150)">
-      <rect x="-74" y="-206" width="148" height="104" rx="8" fill="#fafbf9" stroke="#c8d6cd" stroke-width="2"/>
-      <line x1="-60" y1="-120" x2="60" y2="-120" stroke="#c8d6cd" stroke-width="2"/>
-      <text x="0" y="-166" text-anchor="middle" font-family="Hand" font-weight="700" font-size="34" fill="#161d1a">${esc(name[0])}</text>
-      <text x="0" y="-128" text-anchor="middle" font-family="Hand" font-weight="700" font-size="34" fill="#161d1a">${esc(name[1])}</text>
+      <rect x="-82" y="-206" width="164" height="104" rx="8" fill="#fafbf9" stroke="#c8d6cd" stroke-width="2"/>
+      <line x1="-66" y1="-120" x2="66" y2="-120" stroke="#c8d6cd" stroke-width="2"/>
+      <text x="0" y="-166" text-anchor="middle" font-family="Hand" font-weight="700" font-size="32" fill="#161d1a">${esc(name[0])}</text>
+      <text x="0" y="-128" text-anchor="middle" font-family="Hand" font-weight="700" font-size="32" fill="#161d1a">${esc(name[1])}</text>
     </g>
   </g>`;
 }
@@ -267,6 +287,7 @@ function sinkingJars() {
   <svg class="scene" data-check="jars" viewBox="0 0 1000 480" aria-hidden="true">
     <defs>
       <filter id="blur"><feGaussianBlur stdDeviation="6"/></filter>
+      <filter id="wall" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="14"/></filter>
       <linearGradient id="fund" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f6e53"/><stop offset="1" stop-color="#0d3b2e"/></linearGradient>
       <linearGradient id="plank" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d8c3a0"/><stop offset="1" stop-color="#cdb48c"/></linearGradient>
     </defs>
@@ -274,6 +295,7 @@ function sinkingJars() {
     <rect x="20" y="${shelfY}" width="960" height="16" rx="3" fill="url(#plank)"/>
     <rect x="20" y="${shelfY + 14}" width="960" height="36" rx="3" fill="#c2a57b"/>
     <path d="M40 ${shelfY + 26} q300 -6 600 2 t320 -2" fill="none" stroke="#b39469" stroke-width="2" opacity=".6"/>
+    ${xs.map((x) => `<rect x="${x - 96}" y="${shelfY - 300}" width="212" height="300" rx="40" fill="#1e3a2f" opacity=".07" filter="url(#wall)"/>`).join("")}
     ${funds.map((f, i) => `<g transform="translate(${xs[i]} ${shelfY + 4}) scale(1.1)">${jar(f.value / most * 0.8, f.name, i)}</g>`).join("")}
   </svg>`;
   const body = `
@@ -285,22 +307,23 @@ function sinkingJars() {
   <span class="example tag">Example</span>
   ${scene}
   <ul class="funds" data-check="funds">${funds.map((f) => `
-    <li><b class="mono">${esc(f.monthly)}</b><span>a month</span><em>${esc(f.cost)}<br>&divide; ${f.months} months</em></li>`).join("")}
+    <li><b class="mono">${esc(f.monthly)}</b><span>a month</span><em>${esc(f.cost)}<br><i>&divide; ${f.months} months</i></em></li>`).join("")}
   </ul>
   <p class="sub" data-check="sub">${esc(pin.sub)}</p>
   ${foot(p, { cta: "guide" })}`;
   const css = `
   .top{position:absolute;left:64px;right:64px;top:64px;height:290px}
   .top h1{font-size:76px;line-height:1.02;letter-spacing:-.02em;margin-top:16px;font-weight:500;color:var(--strong)}
-  .rule{position:absolute;left:64px;right:64px;top:370px;height:96px;padding-left:24px;border-left:6px solid var(--accent);font:italic 400 31px/1.38 "Newsreader",serif;color:var(--strong)}
-  .tag{position:absolute;right:64px;top:494px}
-  .scene{position:absolute;left:0;top:430px;width:1000px;height:480px}
-  .funds{position:absolute;left:20px;right:20px;top:928px;height:200px;list-style:none;display:grid;grid-template-columns:repeat(4,1fr)}
+  .rule{position:absolute;left:64px;right:64px;top:372px;height:52px;padding:4px 0 0 24px;border-left:6px solid var(--accent);font:italic 400 31px/1.3 "Newsreader",serif;color:var(--strong)}
+  .tag{position:absolute;right:64px;top:476px}
+  .scene{position:absolute;left:0;top:446px;width:1000px;height:480px}
+  .funds{position:absolute;left:20px;right:20px;top:944px;height:200px;list-style:none;display:grid;grid-template-columns:repeat(4,1fr)}
   .funds li{display:flex;flex-direction:column;align-items:center;text-align:center}
   .funds b{font-size:40px;font-weight:600;color:var(--strong);letter-spacing:-.01em}
   .funds span{font-size:23px;color:var(--strong);margin-top:2px}
+  .funds em i{font-style:normal;color:var(--accent);font-weight:600}
   .funds em{font-style:normal;font-size:22px;line-height:1.4;color:var(--muted);margin-top:14px;padding-top:12px;border-top:1.5px solid #c8d6cd;min-width:150px}
-  .sub{position:absolute;left:64px;right:64px;top:1186px;height:120px;padding-top:30px;border-top:1.5px solid #c8d6cd;font-size:30px;line-height:1.35;color:var(--ink)}
+  .sub{position:absolute;left:64px;right:64px;top:1196px;height:120px;padding-top:30px;border-top:1.5px solid #c8d6cd;font-size:30px;line-height:1.35;color:var(--ink)}
   `;
   return { id: "pin-10.3-sinking-jars", html: page(p, { body, css, paper: "#eef4f1", ink: "#161d1a", muted: "#56605a" }) };
 }
