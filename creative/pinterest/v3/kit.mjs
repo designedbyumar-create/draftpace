@@ -25,10 +25,12 @@ export const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;")
 export function product(slug) {
   const listing = fs.readFileSync(path.join(ROOT, "src/shop/products", `${slug}.ts`), "utf8");
   const name = listing.match(/\b(?:title|name):\s*"([^"]+)"/)?.[1];
-  const price = Number(listing.match(/\bprice:\s*\{\s*amount:\s*(\d+(?:\.\d+)?)/)?.[1]);
+  // A free product (access: "free") has no price; its product line says "Free".
+  const free = /\baccess:\s*"free"/.test(listing);
+  const price = free ? 0 : Number(listing.match(/\bprice:\s*\{\s*amount:\s*(\d+(?:\.\d+)?)/)?.[1]);
   const definition = fs.readFileSync(path.join(ROOT, "src/products", slug, "definition.ts"), "utf8");
   const pick = (key) => definition.match(new RegExp(`${key}:\\s*"(#[0-9a-fA-F]{6})"`))?.[1];
-  if (!name || !price) throw new Error(`${slug}: no name or price in its Shop listing`);
+  if (!name || (!free && !price)) throw new Error(`${slug}: no name or price in its Shop listing`);
   return { slug, name, price, accent: pick("base") ?? "#17473a", strong: pick("strong") ?? "#0f2f27", soft: pick("soft") ?? "#e4ece8" };
 }
 
@@ -66,7 +68,7 @@ html,body{width:${W}px;height:${H}px;overflow:hidden}
  * and a guide pin's "Free guide" or a product pin's real price.
  */
 export function foot(p, { cta, dark = false } = {}) {
-  const label = cta === "guide" ? "Free guide" : `$${p.price} once`;
+  const label = cta === "guide" ? "Free guide" : p.price === 0 ? "Free" : `$${p.price} once`;
   return `<div class="foot${dark ? " on-dark" : ""}"><div class="mark">d</div><div class="who"><b>${esc(p.name)}</b><span>draftpace.com</span></div><div class="cta">${esc(label)}</div></div>`;
 }
 
