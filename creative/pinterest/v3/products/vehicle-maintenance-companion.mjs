@@ -258,8 +258,8 @@ function gloveBoxPin() {
   .lab{position:absolute;width:214px;height:68px;display:flex;align-items:center;font-weight:600;font-size:26px;line-height:1.16;color:var(--ink)}
   .lab.L{left:40px;justify-content:flex-end;text-align:right}
   .lab.R{left:${RX}px}
-  .home{position:absolute;left:40px;right:40px;top:1108px;height:206px;border-radius:22px;background:${WASH};box-shadow:inset 0 0 0 2px #f1dcc4;display:flex;align-items:center;gap:36px;padding:0 24px}
-  .drawer{width:264px;height:147px;flex:none}
+  .home{position:absolute;left:40px;width:700px;top:1100px;height:214px;border-radius:22px;background:${WASH};box-shadow:inset 0 0 0 2px #f1dcc4;display:flex;align-items:center;gap:36px;padding:0 24px}
+  .drawer{width:324px;height:180px;flex:none}
   .home-text .eyebrow{font-size:21px}
   .home-text ul{list-style:none;margin-top:10px}
   .home-text li{font-weight:600;font-size:30px;line-height:1.38;color:var(--ink);display:flex;align-items:center;gap:14px}
@@ -289,8 +289,9 @@ const tyre = (cx, cy) => {
     ${Array.from({ length: 5 }, (_, k) => { const a = ((k * 72 - 90) * Math.PI) / 180; return `<circle cx="${(cx + Math.cos(a) * 8).toFixed(1)}" cy="${(cy + Math.sin(a) * 8).toFixed(1)}" r="2" fill="#9d978b"/>`; }).join("")}`;
 };
 
-/** A six-armed frost sparkle. */
-const flake = (x, y, r, o = 1) => `<g transform="translate(${x} ${y})" stroke="#fff" stroke-width="${r > 10 ? 3 : 2.2}" stroke-linecap="round" opacity="${o}">${[0, 60, 120].map((a) => `<line x1="0" y1="${-r}" x2="0" y2="${r}" transform="rotate(${a})"/>`).join("")}${[0, 60, 120, 180, 240, 300].map((a) => `<path d="M${-r * 0.3} ${-r * 0.75} L0 ${-r * 0.5} L${r * 0.3} ${-r * 0.75}" fill="none" transform="rotate(${a})"/>`).join("")}</g>`;
+/** A six-armed frost sparkle, white with a faint warm edge so it reads on light paper. */
+const flake = (x, y, r, o = 1) => `<g transform="translate(${x} ${y})" opacity="${o}">${flakeArms(r, "#d9cfbf", r > 10 ? 6 : 4.5)}${flakeArms(r, "#fff", r > 10 ? 3 : 2.2)}</g>`;
+const flakeArms = (r, colour, w) => `<g stroke="${colour}" stroke-width="${w}" stroke-linecap="round">${[0, 60, 120].map((a) => `<line x1="0" y1="${-r}" x2="0" y2="${r}" transform="rotate(${a})"/>`).join("")}${[0, 60, 120, 180, 240, 300].map((a) => `<path d="M${-r * 0.3} ${-r * 0.75} L0 ${-r * 0.5} L${r * 0.3} ${-r * 0.75}" fill="none" transform="rotate(${a})"/>`).join("")}</g>`;
 
 /** A numbered accent circle with a leader to the part it names. */
 const callout = (n, [cx, cy], [tx, ty]) => `
@@ -309,7 +310,7 @@ function winterCar() {
   const R = [690, 884]; // rear wheel
   const body = `M160 934 L142 934 Q120 934 118 912 L114 846 Q114 808 150 798 L384 752 L498 630 Q506 620 520 620 L742 616 Q760 616 772 628 L838 706 Q848 718 850 736 L854 906 Q854 934 828 934 L760 934 A86 86 0 1 0 620 934 L352 934 A86 86 0 1 0 212 934 Z`;
   return `
-  <svg class="scene" data-check="winter-car" viewBox="0 380 1000 650" aria-hidden="true">
+  <svg class="scene" data-check="winter-car" viewBox="0 380 1000 730" aria-hidden="true">
     <defs>
       <filter id="soft"><feGaussianBlur stdDeviation="7"/></filter>
       <filter id="haze"><feGaussianBlur stdDeviation="12"/></filter>
@@ -317,10 +318,11 @@ function winterCar() {
       <clipPath id="body"><path d="${body}"/></clipPath>
     </defs>
 
-    ${flake(90, 470, 16, 0.95)}${flake(930, 430, 13, 0.9)}${flake(560, 438, 10, 0.85)}${flake(980, 640, 9, 0.8)}${flake(36, 640, 9, 0.8)}${flake(420, 520, 8, 0.75)}${flake(800, 500, 9, 0.8)}
+    ${flake(110, 470, 20)}${flake(900, 420, 16)}${flake(640, 440, 12)}${flake(960, 660, 11)}${flake(40, 610, 12)}${flake(470, 500, 10)}${flake(220, 560, 9)}${flake(780, 520, 11)}
 
     <!-- snowy driveway -->
-    <path d="M-10 950 Q120 936 260 946 Q420 958 560 944 Q720 932 860 946 Q940 954 1010 944 L1010 1030 L-10 1030 Z" fill="#fbf8f2"/>
+    <path d="M-10 950 Q120 936 260 946 Q420 958 560 944 Q720 932 860 946 Q940 954 1010 944 L1010 1110 L-10 1110 Z" fill="#fbf8f2"/>
+    <path d="M-10 990 Q300 972 600 986 Q820 996 1010 982" fill="none" stroke="#ece5d8" stroke-width="3"/>
     <ellipse cx="490" cy="960" rx="420" ry="20" fill="#5b4a33" opacity=".22" filter="url(#haze)"/>
 
     <!-- washer fluid jug in front of the car -->
@@ -355,22 +357,23 @@ function winterCar() {
 
     <!-- engine bay behind the raised hood -->
     <path d="M150 800 L150 784 Q156 768 186 764 L366 742 L384 756 Z" fill="${G1}"/>
-    <!-- coolant reservoir -->
+    <!-- coolant reservoir, front of the bay -->
     <g>
-      <rect x="166" y="744" width="42" height="56" rx="10" fill="#f1e6d4"/>
-      <path d="M166 770 Q178 764 187 770 Q197 776 208 770 L208 790 Q208 800 198 800 L176 800 Q166 800 166 790 Z" fill="#f0c48e"/>
-      <rect x="176" y="734" width="22" height="12" rx="4" fill="${G2}"/>
+      <rect x="150" y="730" width="50" height="66" rx="12" fill="#f4ece0"/>
+      <path d="M150 760 Q162 754 174 760 Q186 766 200 760 L200 784 Q200 796 188 796 L162 796 Q150 796 150 784 Z" fill="#f0c48e"/>
+      <line x1="156" y1="748" x2="168" y2="748" stroke="#b9ad99" stroke-width="2"/><line x1="156" y1="776" x2="168" y2="776" stroke="#b9ad99" stroke-width="2"/>
+      <rect x="161" y="718" width="28" height="14" rx="5" fill="${G2}"/>
     </g>
     <!-- battery, frosted -->
     <g>
-      <rect x="222" y="700" width="108" height="78" rx="8" fill="${G2}"/>
-      <rect x="222" y="726" width="108" height="20" fill="${p.accent}"/>
-      <rect x="238" y="688" width="16" height="14" rx="3" fill="#bdb9b1"/>
-      <rect x="298" y="688" width="16" height="14" rx="3" fill="#bdb9b1"/>
-      <path d="M241 694 h10 M246 689 v10" stroke="${INK}" stroke-width="2.2"/>
-      <path d="M301 694 h10" stroke="${INK}" stroke-width="2.2"/>
-      <path d="M222 708 Q222 700 230 700 L322 700 Q330 700 330 708 L330 712 Q324 718 318 712 Q312 706 306 712 Q298 718 290 712 Q282 706 274 712 Q266 718 258 712 Q250 706 242 712 Q234 718 228 712 Q222 706 222 712 Z" fill="#fff"/>
-      ${[240, 270, 302].map((x, i) => `<path d="M${x} 746 L${x + 5} ${762 + i * 3} L${x + 10} 746 Z" fill="#fff"/>`).join("")}
+      <rect x="216" y="702" width="104" height="74" rx="8" fill="${G2}"/>
+      <rect x="216" y="728" width="104" height="18" fill="${p.accent}"/>
+      <rect x="230" y="688" width="16" height="16" rx="3" fill="#bdb9b1"/>
+      <rect x="290" y="688" width="16" height="16" rx="3" fill="#bdb9b1"/>
+      <path d="M233 695 h10 M238 690 v10" stroke="${INK}" stroke-width="2.2"/>
+      <path d="M293 695 h10" stroke="${INK}" stroke-width="2.2"/>
+      <path d="M216 710 Q216 702 224 702 L312 702 Q320 702 320 710 L320 714 Q314 720 308 714 Q302 708 296 714 Q288 720 280 714 Q272 708 264 714 Q256 720 248 714 Q240 708 232 714 Q224 720 216 714 Z" fill="#fff"/>
+      ${flake(338, 700, 9)}
     </g>
 
     <!-- the car -->
@@ -413,21 +416,23 @@ function winterCar() {
     <path d="M440 712 L478 668" stroke="${G1}" stroke-width="8" stroke-linecap="round"/>
     <circle cx="394" cy="750" r="6" fill="${G1}"/>
 
-    <!-- hood up on its prop rod -->
-    <line x1="156" y1="796" x2="246" y2="584" stroke="${STEEL}" stroke-width="5" stroke-linecap="round"/>
-    <path d="M386 750 L240 562 Q236 556 230 560 L224 566 Q222 572 226 576 L372 762 Z" fill="${BODY}"/>
-    <path d="M378 758 L232 570 L226 576 L372 762 Z" fill="#8b857a"/>
-    <path d="M300 640 Q320 618 330 640" fill="none" stroke="#fff" stroke-width="0"/>
+    <!-- hood up, held on gas struts at the hinge -->
+    <line x1="372" y1="742" x2="350" y2="652" stroke="${STEEL}" stroke-width="4" stroke-linecap="round"/>
+    <path d="M388 750 L330 520 Q328 510 318 512 L300 516 Q290 520 292 530 L352 760 Z" fill="#8b857a"/>
+    <path d="M384 748 L328 524 L318 526 L370 744 Z" fill="#a19a8d"/>
+    <path d="M300 520 L292 528 L350 760 L358 758 Z" fill="${BODY}"/>
+    <path d="M330 520 Q328 510 318 512 L300 516 Q290 520 292 530 L296 532 L330 524 Z" fill="${BODY}"/>
 
     <!-- tailgate raised -->
     <line x1="826" y1="720" x2="872" y2="596" stroke="${STEEL}" stroke-width="5" stroke-linecap="round"/>
-    <path d="M766 614 L930 552 Q942 548 946 558 L950 570 Q952 578 944 582 L782 640 Z" fill="${BODY}"/>
-    <path d="M800 614 L916 570 L922 584 L806 628 Z" fill="${GLASS}"/>
-    <path d="M800 614 L916 570 L922 584 L806 628 Z" fill="url(#frost)"/>
+    <path d="M764 612 L928 546 Q942 540 948 552 L954 570 Q957 580 946 585 L784 646 Z" fill="${BODY}"/>
+    <path d="M784 646 L946 585 L950 595 L788 656 Z" fill="${BODY_LO}"/>
+    <path d="M798 612 L916 566 L924 586 L806 632 Z" fill="${GLASS}"/>
+    <path d="M798 612 L916 566 L924 586 L806 632 Z" fill="url(#frost)"/>
 
     ${tyre(...F)}
     ${tyre(...R)}
-    <path d="M196 940 Q240 930 282 934 Q330 930 372 942 L372 960 L196 960 Z M604 940 Q650 930 692 934 Q736 930 780 942 L780 960 L604 960 Z" fill="#fbf8f2"/>
+    <path d="M176 958 Q206 932 246 934 Q282 926 318 934 Q358 932 390 958 Z M584 958 Q614 932 654 934 Q690 926 726 934 Q766 932 798 958 Z" fill="#fbf8f2"/>
   </svg>`;
 }
 
@@ -438,14 +443,14 @@ function winterPin() {
   if (checks.join("|") !== want.join("|")) throw new Error("pin-6.1 checks changed in the strategy; move the callouts");
   // Each check's numbered circle and the point on the drawing it names.
   const at = {
-    Battery: [[276, 628], [276, 704]],
-    Tires: [[150, 990], [222, 930]],
-    "Wiper blades": [[400, 618], [446, 706]],
-    "Washer fluid": [[62, 790], [62, 846]],
-    Coolant: [[130, 700], [176, 760]],
-    Lights: [[60, 900], [130, 822]],
-    "Heater and defroster": [[520, 560], [484, 680]],
-    "Kit in the car": [[900, 796], [916, 866]],
+    Battery: [[248, 616], [248, 704]],
+    Tires: [[388, 994], [338, 922]],
+    "Wiper blades": [[440, 590], [452, 692]],
+    "Washer fluid": [[62, 768], [62, 842]],
+    Coolant: [[96, 680], [170, 740]],
+    Lights: [[906, 700], [846, 762]],
+    "Heater and defroster": [[556, 560], [502, 676]],
+    "Kit in the car": [[962, 800], [930, 870]],
   };
   const svg = winterCar().replace("</svg>", `${checks.map((c, i) => callout(i + 1, ...at[c])).join("")}</svg>`);
   const body = `
@@ -458,12 +463,12 @@ function winterPin() {
   <ol class="checks" data-check="checklist">${checks.map((c, i) => `<li><span class="n">${i + 1}</span><span class="t">${esc(c)}</span><span class="box"></span></li>`).join("")}</ol>
   ${foot(p, { cta: "guide" })}`;
   const css = `${HEAD_CSS}
-  .scene{position:absolute;left:0;top:380px;width:1000px;height:650px}
-  .checks{position:absolute;left:40px;right:40px;top:1040px;height:262px;list-style:none;background:${PAPER};border-radius:20px;box-shadow:0 18px 40px -24px rgba(59,42,20,.45);padding:22px 30px;display:grid;grid-template-columns:1fr 1fr;grid-auto-flow:column;grid-template-rows:repeat(4,1fr);column-gap:44px}
+  .scene{position:absolute;left:0;top:360px;width:1000px;height:730px}
+  .checks{position:absolute;left:40px;right:40px;top:1016px;height:284px;list-style:none;background:${PAPER};border-radius:20px;box-shadow:0 18px 40px -24px rgba(59,42,20,.45);padding:22px 30px;display:grid;grid-template-columns:1fr 1fr;grid-auto-flow:column;grid-template-rows:repeat(4,1fr);column-gap:44px}
   .checks li{display:flex;align-items:center;gap:16px;border-bottom:2px solid ${HAIR}}
   .checks li:nth-child(4n){border-bottom:0}
   .checks .n{flex:none;width:40px;height:40px;border-radius:50%;background:var(--accent);color:#fff;font:600 21px/40px "Plex Mono";text-align:center}
-  .checks .t{flex:1;font-weight:600;font-size:27px;color:var(--ink);white-space:nowrap}
+  .checks .t{flex:1;font-weight:600;font-size:29px;color:var(--ink);white-space:nowrap}
   .checks .box{flex:none;width:26px;height:26px;border:2.5px solid #c9c2b3;border-radius:6px}
   `;
   return { id: "pin-6.1-winter-car-callouts", html: page(p, { body, css, paper: "#f1eadf", ink: INK, muted: MUTED }) };
