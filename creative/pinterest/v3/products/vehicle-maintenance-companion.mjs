@@ -255,7 +255,7 @@ function gloveBoxPin() {
   const css = `${HEAD_CSS}
   .scene{position:absolute;left:0;top:380px;width:1000px;height:700px}
   .labels{position:absolute;left:0;top:0;width:1000px;height:1080px;pointer-events:none}
-  .lab{position:absolute;width:214px;height:68px;display:flex;align-items:center;font-weight:600;font-size:26px;line-height:1.16;color:var(--ink)}
+  .lab{position:absolute;width:214px;height:68px;display:flex;align-items:center;text-wrap:balance;font-weight:600;font-size:26px;line-height:1.16;color:var(--ink)}
   .lab.L{left:40px;justify-content:flex-end;text-align:right}
   .lab.R{left:${RX}px}
   .home{position:absolute;left:40px;width:700px;top:1100px;height:214px;border-radius:22px;background:${WASH};box-shadow:inset 0 0 0 2px #f1dcc4;display:flex;align-items:center;gap:36px;padding:0 24px}
@@ -315,13 +315,14 @@ function winterCar() {
       <filter id="soft"><feGaussianBlur stdDeviation="7"/></filter>
       <filter id="haze"><feGaussianBlur stdDeviation="12"/></filter>
       <pattern id="frost" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="3" cy="4" r="1.6" fill="#fff"/><circle cx="10" cy="10" r="1.2" fill="#fff"/><circle cx="11" cy="2" r=".9" fill="#fff"/><circle cx="4" cy="11" r=".8" fill="#fff"/></pattern>
+      <linearGradient id="snowfade" x1="0" y1="940" x2="0" y2="1100" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fbf8f2"/><stop offset=".55" stop-color="#fbf8f2"/><stop offset="1" stop-color="#f1eadf"/></linearGradient>
       <clipPath id="body"><path d="${body}"/></clipPath>
     </defs>
 
     ${flake(110, 470, 20)}${flake(900, 420, 16)}${flake(640, 440, 12)}${flake(960, 660, 11)}${flake(40, 610, 12)}${flake(470, 500, 10)}${flake(220, 560, 9)}${flake(780, 520, 11)}
 
     <!-- snowy driveway -->
-    <path d="M-10 950 Q120 936 260 946 Q420 958 560 944 Q720 932 860 946 Q940 954 1010 944 L1010 1110 L-10 1110 Z" fill="#fbf8f2"/>
+    <path d="M-10 950 Q120 936 260 946 Q420 958 560 944 Q720 932 860 946 Q940 954 1010 944 L1010 1110 L-10 1110 Z" fill="url(#snowfade)"/>
     <path d="M-10 990 Q300 972 600 986 Q820 996 1010 982" fill="none" stroke="#ece5d8" stroke-width="3"/>
     <ellipse cx="490" cy="960" rx="420" ry="20" fill="#5b4a33" opacity=".22" filter="url(#haze)"/>
 
@@ -331,9 +332,10 @@ function winterCar() {
       <path d="M-38 -2 Q-24 -8 -8 -2 Q8 4 32 -2 L32 46 Q32 54 24 54 L-30 54 Q-38 54 -38 46 Z" fill="#f2c79a"/>
       <path d="M-4 -48 L-4 -30 Q-4 -22 4 -22 L20 -22 L14 -48 Z" fill="none" stroke="#e7cfae" stroke-width="7"/>
       <rect x="-32" y="-64" width="24" height="18" rx="4" fill="${p.accent}"/>
-      <rect x="-26" y="8" width="44" height="30" rx="5" fill="${PAPER}"/>
-      <path d="M-18 30 Q-4 14 10 30" fill="none" stroke="${p.accent}" stroke-width="3"/>
-      ${[-10, -4, 2].map((x, i) => `<circle cx="${x}" cy="${16 - i}" r="1.8" fill="${p.accent}"/>`).join("")}
+      <rect x="-28" y="6" width="48" height="36" rx="5" fill="${PAPER}"/>
+      <path d="M-20 34 L-14 20 L6 20 L12 34 Z" fill="none" stroke="${p.accent}" stroke-width="2.6" stroke-linejoin="round"/>
+      <path d="M-12 32 L0 23" stroke="${INK}" stroke-width="2.4" stroke-linecap="round"/>
+      ${[[-12, 14], [-4, 12], [4, 14]].map(([x, y]) => `<path d="M${x} ${y - 4} Q${x + 3} ${y} ${x} ${y + 2} Q${x - 3} ${y} ${x} ${y - 4} Z" fill="${p.accent}"/>`).join("")}
     </g>`, 62, 896, 0, 1)}
 
     <!-- kit out of the boot, on the snow -->
@@ -432,7 +434,7 @@ function winterCar() {
 
     ${tyre(...F)}
     ${tyre(...R)}
-    <path d="M176 958 Q206 932 246 934 Q282 926 318 934 Q358 932 390 958 Z M584 958 Q614 932 654 934 Q690 926 726 934 Q766 932 798 958 Z" fill="#fbf8f2"/>
+    <path d="M170 976 Q178 950 206 940 Q240 928 282 930 Q326 928 360 940 Q388 950 396 976 Z M578 976 Q586 950 614 940 Q648 928 690 930 Q734 928 768 940 Q796 950 804 976 Z" fill="#fbf8f2"/>
   </svg>`;
 }
 
