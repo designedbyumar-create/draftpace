@@ -137,8 +137,8 @@ function binderFlatlay() {
   const thePage = `
     <rect x="${PX}" y="${PY}" width="${PW}" height="${PH}" rx="4" fill="#ffffff"/>
     <rect x="${PX}" y="${PY}" width="${PW}" height="12" fill="${C.rose}"/>
-    <circle cx="${TX + 10}" cy="${PY + 64}" r="26" fill="${tint(hues[open], 28)}"/>
-    <text x="${TX + 50}" y="${PY + 77}" font-family="Newsreader" font-weight="500" font-size="40" fill="${C.ink}">${esc(people[open])}</text>
+    <rect x="${TX - 18}" y="${PY + 42}" width="12" height="46" rx="6" fill="${hues[open]}"/>
+    <text x="${TX + 8}" y="${PY + 77}" font-family="Newsreader" font-weight="500" font-size="40" fill="${C.ink}">${esc(people[open])}</text>
     ${sec}
     ${ringsY.map((dy) => `<circle cx="${PX + 24}" cy="${dy}" r="9" fill="#efe6e0"/>`).join("")}`;
 
@@ -191,14 +191,15 @@ function binderFlatlay() {
   const body = `
   <div class="top" data-check="headline">
     <div class="eyebrow">One page each</div>
-    <h1 class="serif">${pin.headline.split(": ").map(esc).join(":<br>")}</h1>
+    <h1 class="serif">${pin.headline.split(": ").map((part, i, all) => `<span>${esc(part)}${i < all.length - 1 ? ":" : ""}</span>`).join(" ")}</h1>
   </div>
   ${scene}
   <p class="sub" data-check="sub">${esc(pin.sub)}</p>
   ${foot(p, { cta: "guide" })}`;
   const css = `
   .top{position:absolute;left:64px;right:64px;top:62px;height:290px}
-  .top h1{font-size:64px;line-height:1.04;letter-spacing:-.015em;margin-top:16px;font-weight:500;text-wrap:balance}
+  .top h1{font-size:64px;line-height:1.04;letter-spacing:-.015em;margin-top:16px;font-weight:500}
+  .top h1 span{display:block;text-wrap:balance}
   .scene{position:absolute;left:0;top:360px;width:1000px;height:860px}
   .sub{position:absolute;left:64px;right:64px;top:1246px;height:90px;font-size:28px;line-height:1.35;color:var(--muted)}
   `;
@@ -260,16 +261,16 @@ function fridgeAndWallet() {
       <linearGradient id="door" x1="0" x2="1"><stop offset="0" stop-color="#ebe6e1"/><stop offset=".8" stop-color="#f2eeea"/><stop offset="1" stop-color="#e4ded8"/></linearGradient>
     </defs>
     <rect x="-40" y="0" width="660" height="960" rx="30" fill="#d6cec7"/>
-    <rect x="-40" y="0" width="650" height="236" rx="26" fill="url(#door)"/>
-    <rect x="-40" y="248" width="650" height="740" rx="26" fill="url(#door)"/>
-    <rect x="-40" y="230" width="650" height="6" fill="#ddd6cf"/>
-    <rect x="568" y="60" width="22" height="130" rx="11" fill="#cbc3bb"/><rect x="573" y="64" width="9" height="122" rx="4.5" fill="#f8f5f2"/>
-    <rect x="568" y="290" width="22" height="330" rx="11" fill="#cbc3bb"/><rect x="573" y="294" width="9" height="322" rx="4.5" fill="#f8f5f2"/>
-    <g transform="translate(250 46) rotate(3)"><g filter="url(#sh-s)">${drawing}</g><g transform="translate(104 4)" filter="url(#sh-s)">${magnet(C.peach, "#e0976f", 22)}</g></g>
-    <g transform="translate(60 330) rotate(-2)">
-      <g filter="url(#sh)">${emergencyCard(labels, { w: 492, h: 430, label: 23 })}</g>
+    <rect x="-40" y="0" width="650" height="276" rx="26" fill="url(#door)"/>
+    <rect x="-40" y="288" width="650" height="700" rx="26" fill="url(#door)"/>
+    <rect x="-40" y="270" width="650" height="6" fill="#ddd6cf"/>
+    <rect x="568" y="90" width="22" height="140" rx="11" fill="#cbc3bb"/><rect x="573" y="94" width="9" height="132" rx="4.5" fill="#f8f5f2"/>
+    <rect x="568" y="330" width="22" height="340" rx="11" fill="#cbc3bb"/><rect x="573" y="334" width="9" height="332" rx="4.5" fill="#f8f5f2"/>
+    <g transform="translate(232 62) rotate(3)"><g filter="url(#sh-s)">${drawing}</g><g transform="translate(104 4)" filter="url(#sh-s)">${magnet(C.peach, "#e0976f", 22)}</g></g>
+    <g transform="translate(52 374) rotate(-2)">
+      <g filter="url(#sh)">${emergencyCard(labels, { w: 500, h: 460, label: 24 })}</g>
     </g>
-    <g transform="translate(306 324)" filter="url(#sh-s)">${magnet(C.butter, "#e2b84f")}</g>
+    <g transform="translate(300 370)" filter="url(#sh-s)">${magnet(C.butter, "#e2b84f")}</g>
   </svg>`;
 
   // Right column, top: the printed page with the card on it, half cut out.
@@ -287,11 +288,14 @@ function fridgeAndWallet() {
       <rect x="48" y="132" width="96" height="8" rx="4" fill="#d7a7b4"/>
       ${strokes(38, 162, [150, 120, 166], { gap: 17, h: 7 })}
       ${strokes(22, 236, [228, 160], { gap: 16, h: 6 })}
-      <g transform="translate(150 218)">
-        <path d="M0 -3 L-128 -10 L-128 -4 Z" fill="#c9d0d5"/><path d="M0 3 L-118 16 L-120 9 Z" fill="#aab3ba"/>
-        <circle r="6" fill="#7d878e"/>
-        <ellipse cx="44" cy="-20" rx="28" ry="18" transform="rotate(-18 44 -20)" fill="none" stroke="${C.rose}" stroke-width="11"/>
-        <ellipse cx="48" cy="24" rx="28" ry="18" transform="rotate(14 48 24)" fill="none" stroke="${C.strong}" stroke-width="11"/>
+      <g transform="translate(140 218) rotate(-4)">
+        <path d="M6 -6 L-136 -18 Q-140 -14 -136 -11 L6 2 Z" fill="#cdd4d9"/><path d="M-136 -18 Q-140 -14 -136 -11 L-60 -4 Z" fill="#e8ecef"/>
+        <path d="M6 6 L-128 12 Q-131 17 -127 19 L6 -2 Z" fill="#a9b2b9"/>
+        <path d="M2 -4 C 18 -10, 26 -16, 34 -22" stroke="${C.rose}" stroke-width="12" stroke-linecap="round" fill="none"/>
+        <path d="M2 4 C 18 10, 26 16, 34 22" stroke="${C.strong}" stroke-width="12" stroke-linecap="round" fill="none"/>
+        <ellipse cx="58" cy="-32" rx="25" ry="16" transform="rotate(-20 58 -32)" fill="none" stroke="${C.rose}" stroke-width="9"/>
+        <ellipse cx="58" cy="32" rx="25" ry="16" transform="rotate(20 58 32)" fill="none" stroke="${C.strong}" stroke-width="9"/>
+        <circle r="6" fill="#7d878e"/><circle r="2.5" fill="#dfe4e8"/>
       </g>
     </g>
   </svg>`;
@@ -310,7 +314,7 @@ function fridgeAndWallet() {
         <text x="28" y="65" font-family="Plex" font-weight="700" font-size="20" letter-spacing="1.4" fill="${C.rose}">${esc(labels[0])}</text>
       </g>
       <path d="M0 112 Q0 98 16 98 H112 Q122 98 124 108 A20 20 0 0 0 164 108 Q166 98 176 98 H272 Q288 98 288 112 V244 Q288 264 268 264 H20 Q0 264 0 244 Z" fill="#b07a55"/>
-      <path d="M12 116 Q12 110 20 110 H108 M180 110 H268 Q276 110 276 118 V240 Q276 252 264 252 H24 Q12 252 12 240 Z" fill="none" stroke="#e6c9a8" stroke-width="2.5" stroke-dasharray="8 7"/>
+      <path d="M180 110 H268 Q276 110 276 118 V240 Q276 252 264 252 H24 Q12 252 12 240 V118 Q12 110 20 110 H108" fill="none" stroke="#e6c9a8" stroke-width="2.5" stroke-dasharray="8 7"/>
       <path d="M0 196 H288" stroke="#9a6644" stroke-width="2.5" opacity=".6"/>
     </g>
   </svg>`;
@@ -334,7 +338,7 @@ function fridgeAndWallet() {
   .fridge{position:absolute;left:0;top:330px;width:640px;height:940px}
   .sheet{position:absolute;left:660px;top:372px;width:320px;height:400px}
   .cut{position:absolute;left:684px;right:36px;top:790px;height:96px;font-size:24px;line-height:1.32;color:var(--muted)}
-  .wallet{position:absolute;left:664px;top:930px;width:320px;height:290px}
+  .wallet{position:absolute;left:652px;top:930px;width:320px;height:290px}
   .sub{position:absolute;left:64px;right:64px;top:1290px;height:76px;font-size:26px;line-height:1.35;color:var(--muted)}
   `;
   return { id: "pin-7.2-fridge-and-wallet", html: page(p, { body, css, paper: C.ground, ink: C.ink, muted: "#6f5f5c" }) };
