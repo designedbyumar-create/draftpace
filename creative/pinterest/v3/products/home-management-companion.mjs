@@ -225,8 +225,8 @@ function houseScene() {
       <path d="M306 1004 v-36 M313 1004 v-36" stroke="${C.water}" stroke-width="0"/>
       <rect x="306" y="962" width="7" height="44" fill="${C.water}"/>
       <rect x="349" y="962" width="7" height="44" fill="#b8784a"/>
-      <rect x="302" y="1062" width="30" height="20" rx="2" fill="#fff" stroke="${C.inkSoft}" stroke-width="1.5"/>
-      <line x1="306" y1="1069" x2="326" y2="1069" stroke="${C.pale}" stroke-width="2"/><line x1="306" y1="1075" x2="320" y2="1075" stroke="${C.pale}" stroke-width="2"/>
+      <rect x="324" y="1078" width="32" height="22" rx="2" fill="#fff" stroke="${C.inkSoft}" stroke-width="1.5"/>
+      <line x1="328" y1="1085" x2="350" y2="1085" stroke="${C.pale}" stroke-width="2"/><line x1="328" y1="1092" x2="342" y2="1092" stroke="${C.pale}" stroke-width="2"/>
       <rect x="370" y="1058" width="12" height="10" fill="#b9b3a5" stroke="${C.ink}" stroke-width="1.5"/>
       <rect x="378" y="1048" width="4" height="14" fill="${C.ink}" transform="rotate(-30 380 1058)"/>
       <rect x="378" y="1068" width="6" height="104" fill="#b8784a" opacity=".85"/>
@@ -300,12 +300,12 @@ function houseCutaway() {
   // Where each label sits on the page, and where its leader meets the object (page coordinates).
   const callouts = [
     { it: by("Gutters"), box: { left: 40, top: 360, width: 230 }, from: [150, 488], to: [188, 540], via: [150, 516] },
-    { it: by("Smoke or CO detector"), box: { left: 40, top: 586, width: 160 }, from: [196, 610], to: [362, 566], via: [300, 610] },
-    { it: by("Water heater"), box: { left: 40, top: 1040, width: 168 }, from: [196, 1100], to: [322, 1100], via: [250, 1100] },
+    { it: by("Smoke or CO detector"), box: { left: 40, top: 586, width: 160 }, from: [142, 608], to: [362, 566], via: [300, 608] },
+    { it: by("Water heater"), box: { left: 40, top: 1040, width: 168 }, from: [142, 1062], to: [306, 1062] },
     { it: by("Furnace"), box: { left: 360, top: 1236, width: 300, center: true }, from: [482, 1236], to: [482, 1124] },
     { it: by("Outdoor faucet"), box: { left: 812, top: 672, width: 160 }, from: [840, 866], to: [794, 900] },
-    { it: by("Dryer"), box: { left: 812, top: 1022, width: 160 }, from: [826, 1026], to: [776, 980], via: [800, 1000] },
-    { it: by("Washing machine"), box: { left: 812, top: 1160, width: 160 }, from: [810, 1176], to: [742, 1160], dashed: true },
+    { it: by("Dryer"), box: { left: 812, top: 1022, width: 160 }, from: [846, 1018], to: [778, 982] },
+    { it: by("Washing machine"), box: { left: 812, top: 1160, width: 160 }, from: [802, 1172], to: [742, 1160], dashed: true },
   ];
 
   const tag = (t) => (t ? `<span class="tag ${t.toLowerCase()}">${esc(t)}</span>` : "");
@@ -331,8 +331,8 @@ function houseCutaway() {
   .top p{font-size:27px;line-height:1.35;color:var(--muted);margin-top:20px;max-width:840px}
   .scene{position:absolute;left:0;top:330px;width:1000px;height:1030px}
   .leaders{position:absolute;inset:0;width:1000px;height:1500px;pointer-events:none}
-  .callout{position:absolute;display:flex;flex-direction:column;align-items:flex-start;gap:4px;background:${C.paper};padding:6px 0}
-  .callout.center{align-items:center;text-align:center;background:transparent}
+  .callout{position:absolute;display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:6px 0}
+  .callout.center{align-items:center;text-align:center}
   .callout b{font-weight:600;font-size:27px;line-height:1.12;color:${C.ink}}
   .callout span:not(.tag){font-size:22px;line-height:1.25;color:${C.inkSoft}}
   .callout.greyed b,.callout.greyed span{color:#9aa49e}
