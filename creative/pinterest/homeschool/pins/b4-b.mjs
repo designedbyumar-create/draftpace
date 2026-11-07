@@ -215,18 +215,22 @@ function palletBoard() {
       <div style="${at(72, 128, 290, 340)}">${scrib({ w: 290, rows: 5, gap: 84, amp: tidy ? 4 : 11, seed, sw: 3.2 })}</div>
     </div>`;
   const pages = `${sheetEl(62, 420, -2.6, "September", 3, false)}${sheetEl(540, 440, 2, "May", 8, true)}
-    ${binderClip({ x: 220, y: 390, rot: -3, size: 104 }).replace("position:absolute", "position:absolute;z-index:6")}
-    ${binderClip({ x: 700, y: 410, rot: 3, size: 104 }).replace("position:absolute", "position:absolute;z-index:6")}`;
+    ${binderClip({ x: 340, y: 392, rot: -3, size: 104 }).replace("position:absolute", "position:absolute;z-index:6")}
+    ${binderClip({ x: 822, y: 412, rot: 3, size: 104 }).replace("position:absolute", "position:absolute;z-index:6")}`;
 
   const strip = `<div style="${at(84, 1002, 832, 118, "transform:rotate(-.6deg);z-index:4")}">
       <div style="${at(0, 0, 832, 118, `background:linear-gradient(160deg,#fbf6e6,#efe5cb);box-shadow:${SHADOW}`)}"></div>
-      <div data-check="line one" style="${at(36, 0, 760, 118, "display:flex;align-items:center;font:600 31px/1.25 'Plex',sans-serif;color:#2a2620")}">${esc(one)}</div></div>
-    ${tape(60, 1000, 110, -30, "rgba(138,161,130,.88)")}${tape(776, 1000, 110, 30, "rgba(138,161,130,.88)")}`;
+      <div data-check="line one" style="${at(104, 0, 624, 118, "display:flex;align-items:center;font:600 31px/1.25 'Plex',sans-serif;color:#2a2620")}">${esc(one)}</div></div>
+    ${tape(56, 1030, 100, -90, "rgba(138,161,130,.88)")}${tape(776, 1030, 100, 90, "rgba(138,161,130,.88)")}`;
 
   // A thick stack of worksheets, crossed through in marker; the bank's words beside it.
-  const sheetsStack = Array.from({ length: 9 }, (_, k) => `<div style="${at(k % 2 ? 4 : 0, 150 - k * 11, 320, 120, `transform:rotate(${(k % 3) - 1}deg);background:${ruled},#f9f5ea;box-shadow:0 2px 3px rgba(0,0,0,.3);border-radius:2px;opacity:.9`)}"></div>`).join("");
-  const stack = `<div style="${at(82, 1150, 330, 270, "z-index:3;opacity:.62;filter:saturate(.7)")}">${sheetsStack}</div>
-    <svg style="${at(70, 1130, 360, 200, "z-index:4")}" viewBox="0 0 360 200" aria-hidden="true"><path d="M20 20 L340 180 M340 14 L26 186" stroke="#b3322a" stroke-width="12" stroke-linecap="round" opacity=".85"/></svg>`;
+  const edge = "repeating-linear-gradient(180deg,#f4efe2 0 3px,#cfc8b6 3px 4px)";
+  const stack = `<div style="${at(84, 1150, 330, 180, "z-index:3;filter:drop-shadow(0 12px 10px rgba(0,0,0,.45))")}">
+      <div style="${at(0, 74, 330, 100, `background:${edge};border-radius:2px;box-shadow:inset 0 -6px 8px rgba(80,60,30,.25)`)}"></div>
+      <div style="${at(0, 0, 330, 82, `background:${ruled},#fbf8ee;border-radius:2px;transform:skewX(-6deg) translateX(10px)`)}"></div>
+      <div style="${at(40, 18, 200, 8, "background:#9aa4b3;border-radius:5px;opacity:.7")}"></div>
+    </div>
+    <svg style="${at(66, 1128, 366, 210, "z-index:4")}" viewBox="0 0 366 210" aria-hidden="true"><path d="M16 18 L350 192 M350 14 L22 196" stroke="#b3322a" stroke-width="12" stroke-linecap="round" opacity=".88"/></svg>`;
   const slip = `<div style="${at(470, 1158, 450, 160, "transform:rotate(1.4deg);z-index:4")}">
       <div style="${at(0, 0, 450, 160, `background:linear-gradient(160deg,#d3b183,#c4a06f);box-shadow:${SHADOW}`)}"></div>
       <div data-check="line two" style="${at(30, 0, 400, 160, "display:flex;align-items:center;font:600 33px/1.25 'Plex',sans-serif;color:#2a2013")}">${esc(two)}</div></div>`;
