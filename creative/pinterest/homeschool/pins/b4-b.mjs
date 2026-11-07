@@ -80,7 +80,7 @@ function question() {
 
   // Dividers peeking behind the front card.
   const divider = (x, y, tab, c, rot) => `<div style="${at(x, y, 190, 300, `z-index:4;transform:rotate(${rot}deg);background:linear-gradient(#f6f0e2,#e9e0cc);box-shadow:0 8px 14px rgba(40,25,5,.3);border-radius:3px`)}"><div style="${at(24 + tab * 60, -26, 64, 36, `background:${c};border-radius:6px 6px 0 0;box-shadow:0 -2px 4px rgba(40,25,5,.2)`)}"></div></div>`;
-  const dividers = `${divider(622, 936, 0, "#8aa182", -2)}${divider(704, 930, 1, "#e0a95a", 2)}${divider(776, 940, 2, "#b9a0cc", 1)}`;
+  const dividers = `${divider(612, 936, 0, "#8aa182", -2)}${divider(686, 930, 1, "#e0a95a", 2)}${divider(752, 940, 2, "#b9a0cc", 1)}`;
 
   // The standing card: a ruled index card with a plum header line.
   const card = `<div style="${at(64, 428, 520, 700, "transform:rotate(-1.6deg);z-index:4")}">
@@ -273,11 +273,11 @@ function dividedBox() {
       <div style="${at(44, 92, 170, 280)}">${scrib({ w: 170, rows: 5, gap: 62, amp: 8, seed, sw: 3 })}</div></div>`;
   const pages = `${plain(412, 466, -2.4, "October", 6)}${plain(666, 458, 1.8, "March", 12)}`;
 
-  const card = (x, y, w, rot, head, body, key, fs = 29) => `<div style="${at(x, y, w, 330, `transform:rotate(${rot}deg);z-index:5`)}">
-      <div style="${at(0, 0, w, 330, `background:linear-gradient(#fffdf3,#f6f0df);box-shadow:${SHADOW};border-radius:5px`)}"></div>
+  const card = (x, y, w, rot, head, body, key, fs = 29) => `<div style="${at(x, y, w, 372, `transform:rotate(${rot}deg);z-index:5`)}">
+      <div style="${at(0, 0, w, 372, `background:linear-gradient(#fffdf3,#f6f0df);box-shadow:${SHADOW};border-radius:5px`)}"></div>
       <div style="${at(0, 0, w, 10, "background:#6b3f78;border-radius:5px 5px 0 0")}"></div>
-      <div data-check="${key}" style="${at(24, 26, w - 48, 286, "overflow:hidden;font:500 ${fs}px/1.3 'Plex',sans-serif;color:#26232b")}"><div style="font:700 25px/1.2 'Plex',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#6b3f78;margin-bottom:10px">${esc(head)}</div>${esc(body)}</div></div>`;
-  const cards = `${card(88, 934, 306, -1.4, hLead, hText, "highlight reel", 30)}${card(430, 934, 484, 1.2, oLead, oText, "october and march", 36)}`;
+      <div data-check="${key}" style="${at(24, 26, w - 48, 328, `overflow:hidden;font:500 ${fs}px/1.3 'Plex',sans-serif;color:#26232b`)}"><div style="font:700 25px/1.2 'Plex',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#6b3f78;margin-bottom:10px">${esc(head)}</div>${esc(body)}</div></div>`;
+  const cards = `${card(88, 912, 306, -1.4, hLead, hText, "highlight reel", 29)}${card(430, 912, 484, 1.2, oLead, oText, "october and march", 36)}`;
   const scene = `${denim}${box}${glossy}${pages}${cards}`;
   return printable({ n, paper: "#efe7d6", extraCss: ".top h1{font-size:62px}", scene });
 }

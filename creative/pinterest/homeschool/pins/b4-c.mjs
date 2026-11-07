@@ -30,8 +30,8 @@ function pin9() {
     { bg: "#8f6a9a", top: "#a883b3", ink: "#ffffff", edge: "#6f4d79" },
     { bg: "#4a3350", top: "#65496c", ink: "#ffffff", edge: "#2f1f34" },
   ];
-  const widths = [770, 840, 910, 980];
-  const heights = [168, 212, 256, 300];
+  const widths = [800, 862, 924, 986];
+  const heights = [162, 196, 232, 268];
   let y = 396;
   const steps = i.items.map((t, k) => {
     const [head, ...rest] = t.split(": ");
@@ -40,15 +40,15 @@ function pin9() {
     const h = heights[k];
     const html = `<div class="step" data-check="step${k}" style="left:0;top:${y}px;width:${widths[k]}px;height:${h}px;background:${tn.bg};color:${tn.ink};border-right:10px solid ${tn.edge}">
       <div class="tread" style="background:${tn.top}"></div>
-      <div class="sin" style="padding-left:${50 + k * 8}px"><div class="hd serif" style="font-size:${40 + k * 5}px">${esc(head)}</div><div class="bd">${esc(body)}</div></div></div>`;
+      <div class="sin" style="padding-left:${50 + k * 8}px"><div class="hd serif" style="font-size:${38 + k * 5}px">${esc(head)}:</div><div class="bd">${esc(body)}</div></div></div>`;
     y += h + 4;
     return html;
   }).join("");
   const wall = `<div style="${abs(0, SCENE_TOP, 1000, 1500 - SCENE_TOP, "background:linear-gradient(90deg,rgba(255,255,255,.18),transparent 30%),repeating-linear-gradient(90deg,rgba(120,90,40,.05) 0 2px,transparent 2px 120px),#efe3c6")}"></div>
   <div style="${abs(0, 1196, 1000, 8, "background:rgba(120,90,40,.1)")}"></div>`;
   const scene = `${wall}${steps}
-  ${pencil({ x: 700, y: 560, len: 260, rot: -58 }).replace("<svg", '<svg data-z')}
-  <div class="caut" data-check="caution" style="${abs(40, 1270, 920, 44)}">${esc(CAUTION)}</div>`;
+  ${pencil({ x: 805, y: 465, len: 150, rot: 90 }).replace("<svg", '<svg data-z')}
+  <div class="caut" data-check="caution" style="${abs(40, 1284, 920, 44)}">${esc(CAUTION)}</div>`;
   return printable({
     n: 9,
     scene,
@@ -56,11 +56,11 @@ function pin9() {
     extraCss: `
     .step{position:absolute;box-shadow:0 3px 3px rgba(40,25,5,.25),0 18px 24px rgba(40,25,5,.28);border-radius:0 10px 10px 0}
     .tread{position:absolute;left:0;right:0;top:0;height:16px;border-radius:0 8px 0 0}
-    .sin{position:absolute;left:0;right:30px;top:34px}
+    .sin{position:absolute;left:0;right:30px;top:22px}
     .hd{font-weight:600;letter-spacing:-.01em;line-height:1.1}
     .bd{font-size:31px;line-height:40px;margin-top:10px}
     .caut{font:500 27px/44px "Plex";color:#3c3224}
-    .top h1{font-size:68px}`,
+    .top p{font-size:25px;margin-top:12px}`,
   });
 }
 
@@ -70,20 +70,21 @@ function envelope({ x, y, w, h, rot, color, shade, address, z = 3, stamp = true 
   const flap = `<svg style="${abs(0, 0, w, h)}" viewBox="0 0 ${w} ${h}" aria-hidden="true"><path d="M0 0 L${w / 2} ${h * 0.52} L${w} 0" fill="none" stroke="${shade}" stroke-width="3"/><path d="M0 ${h} L${w * 0.36} ${h * 0.46}" fill="none" stroke="${shade}" stroke-width="2.5" opacity=".7"/><path d="M${w} ${h} L${w * 0.64} ${h * 0.46}" fill="none" stroke="${shade}" stroke-width="2.5" opacity=".7"/></svg>`;
   const st = stamp ? `<div style="${abs(w - 118, 20, 82, 98, "background:#f8f4e8;border:3px dotted #c8bfa6;padding:7px;box-shadow:0 2px 3px rgba(0,0,0,.2)")}"><div style="width:100%;height:100%;background:linear-gradient(#bfe0d4 0 62%,#7fae7a 62%);position:relative"><div style="${abs(22, 22, 24, 22, "background:#c4573e")}"></div><div style="${abs(14, 8, 40, 16, "background:#7a4b8a;clip-path:polygon(50% 0,100% 100%,0 100%)")}"></div><div style="${abs(52, 6, 14, 14, "background:#f2c14e;border-radius:50%")}"></div></div></div>` : "";
   return `<div style="${abs(x, y, w, h, `transform:rotate(${rot}deg);z-index:${z};background:linear-gradient(170deg,${color},${shade}22 160%),${color};border-radius:6px;box-shadow:${SHADOW}`)}">${flap}${st}
-    <div class="addr hand" data-check="address" style="${abs(48, h * 0.38, w - 230, h * 0.5)}">${esc(address)}</div></div>`;
+    <div class="addr hand" data-check="address" style="${abs(40, h * 0.3, w - 210, h * 0.62, "background:rgba(255,255,255,.6);padding:0 22px;border-radius:4px")}">${esc(address)}</div></div>`;
 }
 
 function letter({ x, y, w, h, rot, head, body, accent, z = 2 }) {
   return `<div class="ltr" data-check="letter" style="${abs(x, y, w, h, `transform:rotate(${rot}deg);z-index:${z};border-top:14px solid ${accent}`)}">
-    <div class="lh serif">${esc(head)}</div><div class="lb serif">${esc(body)}</div>
-    <div style="${abs(38, h - 92, 200, 8, "background:#d8d1c2;border-radius:4px")}"></div><div style="${abs(38, h - 66, 150, 8, "background:#d8d1c2;border-radius:4px")}"></div></div>`;
+    <div class="lh serif">${esc(head)}</div><div class="lb serif">${esc(body)}</div></div>`;
 }
 
 function pin19() {
   const i = idea(19);
   const [wd, rr, toA, toB] = i.items;
-  const [wh, wb] = wd.split(": ");
-  const [rh, rb] = rr.split(": ");
+  const [wh, ...wrest] = wd.split(": ");
+  const wb = wrest.join(": ");
+  const [rh, ...rrest] = rr.split(": ");
+  const rb = rrest.join(": ");
   const blotter = `${desk({ top: SCENE_TOP, height: 1500 - SCENE_TOP, base: "#6d4c35", dark: "#5c3f2b", planks: 4, seed: 11 })}
   <div style="${abs(26, 394, 948, 940, "background:linear-gradient(160deg,#3e546b,#2f4256);border-radius:10px;box-shadow:0 4px 6px rgba(0,0,0,.35),0 26px 40px rgba(0,0,0,.45)")}"></div>
   <div style="${abs(26, 394, 948, 940, "border-radius:10px;border:3px solid rgba(255,255,255,.08);background:repeating-linear-gradient(45deg,transparent 0 6px,rgba(255,255,255,.015) 6px 7px)")}"></div>
@@ -104,7 +105,7 @@ function pin19() {
     .ltr{background:#fffdf6;border-radius:4px;padding:22px 38px;box-shadow:0 2px 3px rgba(0,0,0,.25),0 10px 16px rgba(0,0,0,.25);overflow:hidden}
     .lh{font-size:54px;line-height:1.05;font-weight:600;color:#1f1b17}
     .lb{font-size:35px;line-height:1.22;margin-top:12px;color:#38322b}
-    .addr{font-size:44px;line-height:1.1;color:#2a2f4a;font-weight:600;display:flex;align-items:center;transform:rotate(-1deg)}
+    .addr{font-size:40px;line-height:1.1;color:#2a2f4a;font-weight:600;display:flex;align-items:center;transform:rotate(-1deg)}
     .plus{z-index:5;border-radius:50%;background:${C.plum};color:#fff;font:600 78px/92px "Plex";text-align:center;box-shadow:0 8px 14px rgba(0,0,0,.4);border:5px solid #f6efe0}
     .top h1{font-size:86px}`,
   });
@@ -154,9 +155,9 @@ function pin23() {
     .icard{border-radius:10px 10px 0 0;box-shadow:0 -4px 8px rgba(0,0,0,.25);padding:22px 40px;border-top:3px solid rgba(255,255,255,.7)}
     .icard .tabl{position:absolute;top:-47px;width:230px;height:48px;border-radius:10px 10px 0 0;background:inherit;box-shadow:0 -4px 6px rgba(0,0,0,.22);font:600 26px/50px "Plex";letter-spacing:.06em;color:#3a2a18;text-align:center;border-top:3px solid rgba(255,255,255,.7)}
     .icard .frag{font-size:34px;line-height:44px;color:#241a10}
-    .icard .frag.big{font-size:42px;line-height:54px;margin-top:22px}
+    .icard .frag.big{font-size:40px;line-height:50px;margin-top:14px}
     .ans{background:#fdf7e6;border:7px solid #b98f35;border-radius:6px;display:grid;place-items:center;box-shadow:inset 0 2px 5px rgba(0,0,0,.25)}
-    .ans div{font-size:45px;font-weight:600;color:#25190e;text-align:center;line-height:1.1;padding:0 14px}`,
+    .ans div{font-size:39px;font-weight:600;color:#25190e;text-align:center;line-height:1.1;padding:0 14px}`,
   });
 }
 
@@ -165,7 +166,7 @@ function pin23() {
 function pin27() {
   const i = idea(27);
   const [eyebrow, rest] = i.headline.split(": ");
-  const sky = `<svg style="${abs(0, 0, 1000, 930)}" viewBox="0 0 1000 930" aria-hidden="true"><defs>
+  const sky = `<div style="${abs(0, 0, 1000, 1000, "transform:translateY(-60px)")}"><svg style="${abs(0, 0, 1000, 930)}" viewBox="0 0 1000 930" aria-hidden="true"><defs>
     <linearGradient id="sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfe6f4"/><stop offset=".55" stop-color="#f7e8d2"/><stop offset="1" stop-color="#f6c9a0"/></linearGradient>
     <radialGradient id="sun" cx="78%" cy="76%" r="40%"><stop offset="0" stop-color="#fff6d0" stop-opacity=".95"/><stop offset="1" stop-color="#fff6d0" stop-opacity="0"/></radialGradient></defs>
     <rect width="1000" height="930" fill="url(#sk)"/><rect width="1000" height="930" fill="url(#sun)"/>
@@ -176,8 +177,9 @@ function pin27() {
     <path d="M0 760 C 180 722 400 760 640 736 C 800 720 900 748 1000 734 V930 H0Z" fill="#7f9c78"/>
     <g fill="#5f7f5b"><circle cx="300" cy="730" r="30"/><rect x="295" y="740" width="10" height="34"/><circle cx="888" cy="722" r="26"/><rect x="883" y="732" width="10" height="34"/></g>
     <rect x="0" y="0" width="1000" height="930" fill="none" stroke="#fffdf6" stroke-width="30"/><rect x="0" y="0" width="1000" height="930" fill="none" stroke="#000" stroke-opacity=".08" stroke-width="2" transform="translate(15 15) scale(.97)"/></svg>`;
+  const clouds = [[560, 470, 1.1], [90, 520, .8], [740, 330, .7]].map(([x, y, sc]) => `<div style="${abs(x, y, 230 * sc, 70 * sc, "opacity:.85;filter:blur(1px)")}"><div style="${abs(0, 28 * sc, 230 * sc, 42 * sc, "background:#fff;border-radius:40px")}"></div><div style="${abs(36 * sc, 4 * sc, 94 * sc, 60 * sc, "background:#fff;border-radius:50%")}"></div><div style="${abs(104 * sc, 12 * sc, 84 * sc, 52 * sc, "background:#fff;border-radius:50%")}"></div></div>`).join("");
   // the window sill, with a stack of folders under a closed laptop, a mug, and a small plant
-  const sill = `<div style="${abs(0, 892, 1000, 36, "background:linear-gradient(#fffdf8,#ece4d4);box-shadow:0 6px 10px rgba(30,15,50,.3)")}"></div>
+  const sill = `${clouds}<div style="${abs(0, 892, 1000, 36, "background:linear-gradient(#fffdf8,#ece4d4);box-shadow:0 6px 10px rgba(30,15,50,.3)")}"></div>
   <div style="${abs(0, 928, 1000, 22, "background:#d9cfbb;box-shadow:0 8px 14px rgba(30,15,50,.35)")}"></div>
   <svg style="${abs(70, 700, 560, 194, "filter:drop-shadow(0 10px 8px rgba(30,15,50,.35))")}" viewBox="0 0 560 194" aria-hidden="true">
     <rect x="10" y="156" width="430" height="34" rx="5" fill="#d9b66f"/><rect x="10" y="156" width="430" height="9" fill="#fff" opacity=".25"/><rect x="430" y="160" width="14" height="26" fill="#f2ecd9"/>
@@ -188,10 +190,10 @@ function pin27() {
     <path d="M52 40 C 40 22 66 14 56 0 M84 40 C 72 22 98 14 88 0" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="5" stroke-linecap="round"/>
     <path d="M18 62 H128 L120 196 H26Z" fill="#fbf5ea"/><path d="M18 62 H128 L126 82 H20Z" fill="#000" opacity=".06"/><path d="M128 84 C 164 82 164 150 124 150" fill="none" stroke="#fbf5ea" stroke-width="16" stroke-linecap="round"/>
     <ellipse cx="73" cy="62" rx="55" ry="10" fill="#6b4226"/></svg>
-  <svg style="${abs(830, 760, 140, 136, "filter:drop-shadow(0 8px 6px rgba(30,15,50,.35))")}" viewBox="0 0 140 136" aria-hidden="true"><path d="M36 76 H104 L97 132 H43Z" fill="#c4724a"/><rect x="30" y="66" width="80" height="16" rx="4" fill="#d4825a"/><g fill="#5d8a56"><path d="M70 68 C 40 30 20 32 8 12 C 40 10 66 30 70 68Z"/><path d="M70 68 C 100 24 124 26 134 8 C 104 2 74 26 70 68Z"/><path d="M70 68 C 62 36 70 16 70 2 C 82 22 80 48 70 68Z"/></g></svg>`;
-  const band = `<div style="${abs(0, 950, 1000, 404, "background:linear-gradient(#6a4a72,#4a3350)")}"></div>
-  <div style="${abs(0, 950, 1000, 8, "background:rgba(255,255,255,.18)")}"></div>
-  <div class="ans" data-check="answer" style="${abs(64, 988, 872, 352)}"><div class="a1 serif">${esc(i.sub)}</div><div class="a2">${esc(i.items[0])}</div></div>`;
+  <svg style="${abs(830, 760, 140, 136, "filter:drop-shadow(0 8px 6px rgba(30,15,50,.35))")}" viewBox="0 0 140 136" aria-hidden="true"><path d="M36 76 H104 L97 132 H43Z" fill="#c4724a"/><rect x="30" y="66" width="80" height="16" rx="4" fill="#d4825a"/><g fill="#5d8a56"><path d="M70 68 C 40 30 20 32 8 12 C 40 10 66 30 70 68Z"/><path d="M70 68 C 100 24 124 26 134 8 C 104 2 74 26 70 68Z"/><path d="M70 68 C 62 36 70 16 70 2 C 82 22 80 48 70 68Z"/></g></svg></div>`;
+  const band = `<div style="${abs(0, 890, 1000, 464, "background:linear-gradient(#6a4a72,#4a3350)")}"></div>
+  <div style="${abs(0, 890, 1000, 8, "background:rgba(255,255,255,.18)")}"></div>
+  <div class="ans" data-check="answer" style="${abs(64, 930, 872, 400)}"><div class="a1 serif">${esc(i.sub)}</div><div class="a2">${esc(i.items[0])}</div></div>`;
   const body = `${sky}${sill}${band}
   <div class="q" data-check="question" style="${abs(64, 60, 872, 380)}"><div class="eb">${esc(eyebrow)}</div><h1 class="serif">${esc(rest)}</h1></div>
   <div class="footbar"></div>${footFor(i)}`;
@@ -199,10 +201,10 @@ function pin27() {
   .footbar{position:absolute;left:0;right:0;bottom:0;height:146px;background:#efe6d6;box-shadow:0 -8px 22px rgba(30,15,50,.35);z-index:5}
   .foot{z-index:7}
   .q .eb{font:600 24px "Plex";letter-spacing:.16em;text-transform:uppercase;color:#4a3350}
-  .q h1{font-weight:500;font-size:96px;line-height:1.02;letter-spacing:-.02em;color:#17304a;margin-top:18px;text-shadow:0 1px 0 rgba(255,255,255,.5)}
-  .ans .a1{font-size:62px;line-height:1.08;color:#fff;font-weight:500;letter-spacing:-.01em;padding-top:8px}
-  .ans .a2{font-size:35px;line-height:46px;color:#f1e8f3;margin-top:22px;border-top:2px solid rgba(255,255,255,.3);padding-top:22px}`;
-  return { n: 27, id: slug(i), html: page(p, { body, css, paper: "#efe6d6" }) };
+  .q h1{font-weight:500;font-size:108px;line-height:1.02;letter-spacing:-.02em;color:#17304a;margin-top:18px;text-shadow:0 1px 0 rgba(255,255,255,.5)}
+  .ans .a1{font-size:56px;line-height:1.08;color:#fff;font-weight:500;letter-spacing:-.01em;padding-top:8px}
+  .ans .a2{font-size:37px;line-height:50px;color:#f1e8f3;margin-top:24px;border-top:2px solid rgba(255,255,255,.3);padding-top:22px}`;
+  return { n: 27, id: slug(i), html: page(p, { body, css, paper: "#cfe6f4" }) };
 }
 
 /* ---------------------------------------------------------------- #31 */
@@ -224,20 +226,20 @@ function pin31() {
   <div style="${abs(0, SCENE_TOP, 1000, 1500 - SCENE_TOP, "background:repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 2px,transparent 2px 9px)")}"></div>
   ${Array.from({ length: 70 }, (_, k) => { const a = (k * 9301 + 49297) % 233280; return `<div style="${abs((a * 7) % 1000, SCENE_TOP + ((a * 13) % 980), 4, 4, "border-radius:50%;background:rgba(255,255,255,.07)")}"></div>`; }).join("")}`;
   const scene = `${counter}<div class="stack">${cards}</div>
-  ${pencil({ x: 540, y: 1318, len: 380, rot: -2 }).replace("<svg", '<svg data-z')}`;
+  ${pencil({ x: 836, y: 478, len: 190, rot: 90 }).replace("<svg", '<svg data-z')}`;
   return printable({
     n: 31,
     scene: scene.replace(/<svg data-z style="/, '<svg style="z-index:6;'),
     paper: "#f1ebdc",
     extraCss: `
     .top h1{font-size:68px}
-    .stack{position:absolute;left:0;top:${SCENE_TOP + 22}px;width:1000px;display:flex;flex-direction:column}
-    .rc{position:relative;width:790px;background:linear-gradient(#e46a5b 0 3px,transparent 3px),repeating-linear-gradient(transparent 0 38px,rgba(80,120,170,.3) 38px 40px),#fffdf3;border-radius:6px;box-shadow:0 2px 3px rgba(0,0,0,.28),0 14px 22px rgba(0,0,0,.34);padding:22px 36px 20px 112px;border-top:30px solid #fffdf3}
+    .stack{position:absolute;left:0;top:${SCENE_TOP + 18}px;width:1000px;display:flex;flex-direction:column}
+    .rc{position:relative;width:790px;background:linear-gradient(#e46a5b 0 3px,transparent 3px),repeating-linear-gradient(transparent 0 38px,rgba(80,120,170,.3) 38px 40px),#fffdf3;border-radius:6px;box-shadow:0 2px 3px rgba(0,0,0,.28),0 14px 22px rgba(0,0,0,.34);padding:14px 36px 16px 112px;border-top:18px solid #fffdf3}
     .rc.l{margin-left:46px}.rc.r{margin-left:168px}
-    .rc::before{content:"";position:absolute;left:0;right:0;top:-30px;height:3px;background:#e46a5b}
-    .rc .num{position:absolute;left:22px;top:6px;width:70px;height:70px;border-radius:50%;background:${C.plum};color:#fff;font-size:46px;line-height:68px;text-align:center;font-weight:600;box-shadow:0 4px 6px rgba(0,0,0,.3)}
+    .rc::before{content:"";position:absolute;left:0;right:0;top:-18px;height:3px;background:#e46a5b}
+    .rc .num{position:absolute;left:22px;top:2px;width:70px;height:70px;border-radius:50%;background:${C.plum};color:#fff;font-size:46px;line-height:68px;text-align:center;font-weight:600;box-shadow:0 4px 6px rgba(0,0,0,.3)}
     .rc .rt{font-size:32px;line-height:40px;color:#1f1b17}
-    .gap{height:40px;position:relative}
+    .gap{height:42px;position:relative}
     .gap .arr{position:absolute;top:-4px;width:150px;height:50px}
     .gap.l .arr{left:330px}.gap.r .arr{left:420px}`,
   });
