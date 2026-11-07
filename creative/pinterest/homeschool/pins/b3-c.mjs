@@ -26,7 +26,7 @@ const magnet = (x, y, color, d = 56) =>
 function pin17() {
   const i = idea(17);
   const offs = [0, 60, 10, 50, 0];
-  const widths = [740, 760, 640, 700, 500];
+  const widths = [740, 760, 640, 700, 560];
   const rots = [-1.2, 1, -0.8, 1.3, -1];
   const mags = ["#d9694f", "#e0a95a", "#7fa08a", "#7a4b8a", "#4f6c8c"];
   const cards = i.items.map((t, k) => `<div class="icard serif" style="margin-left:${offs[k]}px;width:${widths[k]}px;transform:rotate(${rots[k]}deg)">
@@ -39,17 +39,17 @@ function pin17() {
   <div style="${abs(94, 540, 38, 18, "background:#8d9399;border-radius:3px;box-shadow:4px 6px 6px rgba(30,45,55,.3)")}"></div>
   <div style="${abs(94, 1160, 38, 18, "background:#8d9399;border-radius:3px;box-shadow:4px 6px 6px rgba(30,45,55,.3)")}"></div>
   <div class="stack">${cards}</div>
-  ${drawing({ x: 700, y: 1168, w: 230, rot: 4 })}
-  ${magnet(820, 1172, "#e0a95a")}
-  <div style="${abs(766, 408, 190, 64, "background:#fffdf6;border-radius:6px;transform:rotate(2deg);box-shadow:0 2px 3px rgba(20,30,40,.25),0 12px 18px rgba(20,30,40,.3);display:grid;place-items:center;z-index:3")}"><span class="example" style="font-size:24px;padding:5px 12px;color:#4b4339">Example</span></div>
-  ${magnet(861, 410, "#d9694f", 46)}`;
+  ${drawing({ x: 710, y: 1150, w: 220, rot: 4 })}
+  ${magnet(826, 1154, "#e0a95a")}
+  <div style="${abs(770, 392, 190, 56, "background:#fffdf6;border-radius:6px;transform:rotate(2deg);box-shadow:0 2px 3px rgba(20,30,40,.25),0 12px 18px rgba(20,30,40,.3);display:grid;place-items:center;z-index:3")}"><span class="example" style="font-size:24px;padding:5px 12px;color:#4b4339">Example</span></div>
+  ${magnet(866, 394, "#d9694f", 46)}`;
   return printable({
     n: 17,
     scene,
     paper: "#f4eee4",
     extraCss: `
     .top{top:52px}.top h1{font-size:78px}.top p{font-size:26px;margin-top:12px}
-    .stack{position:absolute;left:130px;top:446px;width:830px;display:flex;flex-direction:column;gap:28px;z-index:4}
+    .stack{position:absolute;left:130px;top:468px;width:830px;display:flex;flex-direction:column;gap:22px;z-index:4}
     .icard{position:relative;width:640px;padding:48px 30px 12px;background:
       linear-gradient(#d2584a,#d2584a) 0 36px/100% 3px no-repeat,
       repeating-linear-gradient(transparent 0 40px,#aac3d3 40px 42px) 0 48px/100% 100% no-repeat,#fffdf6;
@@ -75,26 +75,26 @@ function pin21() {
   const tick = `<svg viewBox="0 0 72 72" style="position:absolute;left:-6px;top:-14px;width:84px;height:84px;overflow:visible" aria-hidden="true"><path d="M12 38 L28 56 L66 6" fill="none" stroke="#27509c" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
   const rows = i.items.map((t) => `<div class="row"><div class="box">${tick}</div><div class="hand txt">${esc(t)}</div></div>`).join("");
   const scene = `${felt()}
-  <div style="${abs(40, 1088, 560, 270, "transform:rotate(-7deg);z-index:1")}">${drawing({ x: 60, y: 90, w: 300, rot: 0 })}</div>
-  <div style="${abs(66, 436, 868, 900, "transform:rotate(-1.6deg);background:#25282d;border-radius:14px;box-shadow:0 4px 6px rgba(0,0,0,.35),0 34px 50px rgba(0,0,0,.5)")}"></div>
-  <div class="nb" style="${abs(78, 428, 844, 890, "transform:rotate(-1.6deg)")}">
+  <div style="${abs(40, 1060, 560, 300, "transform:rotate(-7deg)")}">${drawing({ x: 70, y: 110, w: 330, rot: 0 })}</div>
+  <div style="${abs(66, 436, 868, 800, "transform:rotate(-1.6deg);background:#303845;border-radius:14px;box-shadow:0 4px 6px rgba(0,0,0,.35),0 34px 50px rgba(0,0,0,.5)")}"></div>
+  <div class="nb" style="${abs(78, 428, 844, 790, "transform:rotate(-1.6deg)")}">
     <div class="paper"></div>
     <svg style="${abs(0, -4, 844, 70, "z-index:3")}" viewBox="0 0 844 70" aria-hidden="true">${rings}</svg>
     <div class="rows">${rows}</div>
   </div>
-  ${pencil({ x: 440, y: 1272, len: 470, rot: -5 })}`;
+  ${pencil({ x: 440, y: 1262, len: 470, rot: -4 })}`;
   return printable({
     n: 21,
     scene,
     paper: "#efe9dc",
     extraCss: `
     .nb .paper{position:absolute;left:0;right:0;top:20px;bottom:0;background:
-      linear-gradient(90deg,transparent 108px,#d98279 108px 111px,transparent 111px),
+      linear-gradient(90deg,transparent 100px,#d98279 100px 103px,transparent 103px),
       repeating-linear-gradient(transparent 0 70px,#a9c0d6 70px 72px) 0 112px/100% 100% no-repeat,#fbf7ea;
       border-radius:6px;box-shadow:inset 0 0 40px rgba(120,90,40,.12)}
-    .rows{position:absolute;left:0;right:30px;top:112px;z-index:2}
-    .row{position:relative;padding-left:150px;margin-bottom:72px}
-    .row .box{position:absolute;left:34px;top:14px;width:62px;height:62px;border:5px solid #3a3a44;border-radius:9px;background:#fffdf6}
+    .rows{position:absolute;left:0;right:30px;top:128px;z-index:2}
+    .row{position:relative;padding-left:214px;margin-bottom:72px}
+    .row .box{position:absolute;left:124px;top:6px;width:62px;height:62px;border:5px solid #3a3a44;border-radius:9px;background:#fffdf6}
     .row .txt{font-weight:700;font-size:58px;line-height:72px;color:#2b2a33;margin-top:-2px}`,
   });
 }

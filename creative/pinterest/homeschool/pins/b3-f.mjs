@@ -7,7 +7,7 @@
  */
 import { printable, SCENE_TOP } from "../kit/printable.mjs";
 import { idea, C } from "../kit/bank.mjs";
-import { desk, drawing } from "../kit/paper.mjs";
+import { desk, drawing, pencil } from "../kit/paper.mjs";
 import { esc } from "../../v3/kit.mjs";
 
 const abs = (x, y, w, h, extra = "") => `position:absolute;left:${x}px;top:${y}px;width:${w}px;height:${h}px;${extra}`;
@@ -61,17 +61,17 @@ function pin43() {
   const drawer = `<div style="${abs(0, SCENE_TOP, 1000, 1500 - SCENE_TOP, "background:linear-gradient(180deg,#26221f 0,#3a3532 60%,#2c2825 100%)")}"></div>
     <div style="${abs(0, SCENE_TOP, 22, 1500, "background:linear-gradient(90deg,#6c6a68,#9c9a97 60%,#5a5856)")}"></div>
     <div style="${abs(978, SCENE_TOP, 22, 1500, "background:linear-gradient(90deg,#5a5856,#9c9a97 40%,#6c6a68)")}"></div>`;
-  const folders = rows.map((r, k) => {
+  const folders = `<div style="${abs(0, 0, 1000, 1500, "z-index:1")}">${rows.map((r, k) => {
     const y = top0 + k * pitch;
     const col = cols[k];
     return `<div style="${abs(40, y, W, 760, `z-index:${k + 1};filter:drop-shadow(0 -5px 9px rgba(0,0,0,.5))`)}">
       <div style="${abs(tabX[k % 3] - 40, 0, 380, tabH + 6, `background:${col};border-radius:16px 16px 0 0;display:flex;align-items:center;padding:0 24px;font:600 27px/1 Plex;color:${INK}`)}">${esc(r.subject)}</div>
       <div style="${abs(0, tabH, W, 720, `background:linear-gradient(180deg,${col} 0,${col} 70%,rgba(0,0,0,.08) 100%);border-radius:${k % 3 === 0 ? "0 14px 6px 6px" : "14px 14px 6px 6px"}`)}">
         <div style="${abs(0, 7, W, 2, "background:rgba(0,0,0,.14)")}"></div>
-        <div data-check="folder-${k}" style="${abs(26, 14, 590, 96, `display:flex;align-items:center;font:500 27px/1.2 Plex;color:${INK}`)}">${esc(r.line)}</div>
+        <div data-check="folder-${k}" style="${abs(26, 14, 560, 96, `display:flex;align-items:center;font:500 27px/1.2 Plex;color:${INK}`)}">${esc(r.line)}</div>
         <div data-check="tag-${k}" style="position:absolute;right:24px;top:30px;height:52px;display:flex;align-items:center;padding:0 22px;border-radius:999px;background:${C.plumDeep};color:#fff;font:600 24px/1 Plex;white-space:nowrap">${esc(r.tag)}</div>
       </div></div>`;
-  }).join("");
+  }).join("")}</div>`;
   return printable({ n: 43, paper: "#f1e9dc", scene: `${drawer}${folders}` });
 }
 
@@ -114,7 +114,7 @@ function pin49() {
   const report = sheetBase(570, 454, 300, 318, 2.2, `<div style="${abs(0, 0, 300, 318, ruled + ";background-position:0 20px")}"></div><div style="${abs(34, 0, 2, 318, "background:#e3a3a3;opacity:.7")}"></div>${scribSvg(21, 300, 1, 30, { y0: 42, x0: 50, sw: 4, min: .45, max: .5, color: "#3d3a44" })}${scribSvg(23, 300, 4, 33, { y0: 84, x0: 50, max: .98 })}${scribSvg(29, 300, 4, 33, { y0: 232, x0: 50, max: .98 })}`.replace("0 20px", "0 20px"), 3);
 
   // Photo of the volcano model.
-  const photo = volcanoPrint(96, 940, -3);
+  const photo = volcanoPrint(96, 940, -3) + pencil({ x: 250, y: 1060, len: 300, rot: 74 }).replace("position:absolute", "z-index:3;position:absolute");
 
   // Running list of books: eleven rows.
   const listRows = Array.from({ length: 11 }, (_, k) => `<div style="${abs(0, 34 + k * 25, 260, 1, "background:#c8d6e3")}"></div><div style="${abs(14, 34 + k * 25 - 17, 14, 14, "border:2px solid #7d7a85;border-radius:3px")}"></div>`).join("");
@@ -145,14 +145,14 @@ function pin51() {
       <div style="${abs(220, 190, 200, 110, "background:radial-gradient(ellipse,rgba(90,86,96,.35),transparent 70%);filter:blur(6px)")}"></div>
       <div style="${abs(110, 214, 210, 60, "background:radial-gradient(ellipse,rgba(251,247,236,.95),rgba(251,247,236,.7) 55%,transparent 75%);filter:blur(3px)")}"></div>
       <svg style="${abs(0, 0, 520, 370)}" viewBox="0 0 520 370" aria-hidden="true"><path d="M60 290 L300 280" stroke="#55525c" stroke-width="3" opacity=".75"/><path d="M300 300 q10 -14 22 -2 t24 -2 t26 0" fill="none" stroke="#55525c" stroke-width="2.6" opacity=".6"/></svg>
-    </div>${tape(660, 876, 120, 3, "rgba(196,87,62,.75)")}`;
+    </div>`;
 
   const quote = `<div style="${abs(86, 420, 828, 528, "transform:rotate(-1.2deg);z-index:4")}">
       <div data-check="quote" style="${abs(0, 0, 828, 528, `background:#fdf9ee;border-radius:3px;filter:${SHADOW};padding:34px 58px 30px;overflow:hidden`)}">
         <div class="serif" style="font-size:132px;line-height:.8;height:62px;color:${C.plum};font-weight:600">&ldquo;</div>
         <div class="serif" style="font-size:45px;line-height:1.2;color:${INK};letter-spacing:-.005em;margin-top:8px">${esc(i.sub)}</div>
         <div style="width:110px;height:5px;background:${C.plum};margin:26px 0 20px;border-radius:3px"></div>
-        <div style="font:500 28px/1.3 Plex;color:#4b4339">${esc(i.items[0])}</div>
+        <div style="font:500 30px/1.3 Plex;color:#4b4339">${esc(i.items[0])}</div>
       </div>
       ${tape(180, 4, 150, -6, "rgba(138,161,130,.85)")}${tape(650, 2, 150, 5, "rgba(122,75,138,.6)")}
     </div>`;
@@ -160,7 +160,7 @@ function pin51() {
   // Pencil jar and a small plant on the shelf.
   const pens = ["#e7b23f", "#c4573e", "#5f8a8f", "#7a4b8a", "#e7b23f", "#8aa182"].map((c, k) => {
     const a = -16 + k * 6.5, h = 150 + (k % 3) * 22;
-    return `<div style="${abs(36 + k * 12, 1072 - (h - 150), 14, h, `background:linear-gradient(90deg,${c},${c} 50%,rgba(0,0,0,.2));transform:rotate(${a}deg);transform-origin:50% 100%;border-radius:3px 3px 0 0;clip-path:polygon(0 12%,50% 0,100% 12%,100% 100%,0 100%)`)}"></div>`;
+    return `<div style="${abs(36 + k * 12, 96 - h, 14, h, `background:linear-gradient(90deg,${c},${c} 50%,rgba(0,0,0,.2));transform:rotate(${a}deg);transform-origin:50% 100%;border-radius:3px 3px 0 0;clip-path:polygon(0 12%,50% 0,100% 12%,100% 100%,0 100%)`)}"></div>`;
   }).join("");
   const jar = `<div style="${abs(70, 1010, 140, 222, "z-index:3")}">${pens}<div style="${abs(0, 62, 140, 160, "background:linear-gradient(90deg,#c9694b,#e08565 40%,#a9533a);border-radius:10px 10px 14px 14px;box-shadow:0 12px 14px rgba(60,35,5,.45)")}"></div><div style="${abs(0, 62, 140, 14, "background:rgba(0,0,0,.18);border-radius:10px 10px 0 0")}"></div><div style="${abs(0, 120, 140, 26, "background:#fdf9ee;opacity:.9")}"></div></div>`;
   const plant = `<div style="${abs(780, 1060, 170, 172, "z-index:3")}"><svg style="${abs(0, 0, 170, 172)}" viewBox="0 0 170 172" aria-hidden="true"><g fill="#5c7f4f"><path d="M85 100 C 60 60 30 60 20 20 C 56 24 82 50 85 100 Z"/><path d="M85 100 C 110 56 140 56 150 14 C 112 20 88 48 85 100 Z" fill="#6f9660"/><path d="M85 104 C 80 60 90 30 84 2 C 108 30 100 70 85 104 Z" fill="#4c6e42"/></g><path d="M44 104 H126 L116 172 H54 Z" fill="#e8e0d0"/><path d="M44 104 H126 L124 118 H46 Z" fill="#cfc6b3"/></svg></div>`;
@@ -189,20 +189,20 @@ function pin48() {
   const card = (x, y, w, h, rot, inner, { plum = false, z = 4, mag = "#c4573e" } = {}) => `<div style="${abs(x, y, w, h, `transform:rotate(${rot}deg);z-index:${z}`)}">
       <div data-check="card" style="${abs(0, 0, w, h, `background:${plum ? "#fffdf6" : "#f4f6f8"};border-radius:6px;filter:drop-shadow(0 2px 2px rgba(20,35,50,.28)) drop-shadow(0 9px 10px rgba(20,35,50,.3));${plum ? `border-left:10px solid ${C.plum};border-top:3px solid ${C.plum};border-right:3px solid ${C.plum};border-bottom:3px solid ${C.plum}` : "border:2px solid #aeb8c1"};padding:36px 22px 20px ${plum ? 22 : 24}px;overflow:hidden`)}">${inner}</div>
       ${magnet(w / 2, 10, mag)}</div>`;
-  const body = (t) => `<div style="font:600 30px/1.2 Plex;color:${INK}">${esc(t)}</div>`;
+  const body = (t) => `<div style="font:600 32px/1.2 Plex;color:${INK}">${esc(t)}</div>`;
   const note = (t, plum) => `<div style="margin-top:12px;display:inline-block;padding:7px 15px;border-radius:999px;font:600 24px/1.2 Plex;${plum ? `background:${C.plumSoft};color:${C.plumDeep}` : "background:#e3e8ed;color:#46525e"}">${esc(t)}</div>`;
 
   const head = (x, y, text, plum) => `<div data-check="head" style="${abs(x, y, 396, 92, `transform:rotate(${plum ? -0.8 : 0.8}deg);z-index:4;display:flex;align-items:center;justify-content:center;border-radius:8px;font:500 46px/1 Newsreader;letter-spacing:-.01em;filter:drop-shadow(0 8px 8px rgba(20,35,50,.3));${plum ? `background:${C.plum};color:#fff` : "background:#f4f6f8;color:#2f3943;border:3px solid #aeb8c1"}`)}">${esc(text)}</div>`;
 
   const left = `${head(46, 414, a.label, true)}
-    ${card(46, 546, 396, 168, -1.2, body(a.text), { plum: true, mag: "#e0a95a" })}
-    ${card(46, 748, 396, 236, 1, body(b.text) + note(b.note, true), { plum: true, mag: "#5f8a8f" })}
-    ${card(46, 1018, 396, 268, -.8, body(c.text) + note(c.note, true), { plum: true, mag: "#c4573e" })}`;
+    ${card(46, 546, 396, 176, -1.2, body(a.text), { plum: true, mag: "#e0a95a" })}
+    ${card(46, 760, 396, 256, 1, body(b.text) + note(b.note, true), { plum: true, mag: "#5f8a8f" })}
+    ${card(46, 1050, 396, 256, -.8, body(c.text) + note(c.note, true), { plum: true, mag: "#c4573e" })}`;
 
   const crayon = drawing({ x: 650, y: 1140, w: 240, rot: 5 }).replace("position:absolute", "z-index:4;position:absolute");
   const right = `${head(558, 414, d.label, false)}
-    ${card(558, 546, 396, 252, .9, body(d.text) + note(d.note, false), { mag: "#7a4b8a" })}
-    ${card(558, 842, 396, 230, -1, `<div style="display:inline-block;margin-bottom:10px;padding:4px 20px;border:3px solid #46525e;border-radius:8px;font:700 38px/1.1 Newsreader;color:#2f3943">${esc(e.label)}</div>${body(e.text)}`, { mag: "#e0a95a" })}
+    ${card(558, 546, 396, 280, .9, body(d.text) + note(d.note, false), { mag: "#7a4b8a" })}
+    ${card(558, 870, 396, 240, -1, `<div style="display:inline-block;margin-bottom:10px;padding:4px 20px;border:3px solid #46525e;border-radius:8px;font:700 38px/1.1 Newsreader;color:#2f3943">${esc(e.label)}</div>${body(e.text)}`, { mag: "#e0a95a" })}
     ${crayon}${magnet(748, 1150, "#c4573e")}${magnet(832, 1150, "#5f8a8f")}`;
 
   return printable({ n: 48, paper: "#f1e6d2", scene: `${wall}${doors}${left}${right}` });

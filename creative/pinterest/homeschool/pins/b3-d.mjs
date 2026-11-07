@@ -59,8 +59,8 @@ function pin33() {
         }
         return `<div data-check="open" style="${abs(x, y, tileW, 124, "border-radius:14px;border:3px dashed #5f7d75;background:rgba(255,255,255,.4);color:#4a6a62;display:grid;place-items:center;font:600 25px Plex;letter-spacing:-.01em;box-shadow:inset 0 2px 5px rgba(50,80,75,.18)")}">${d}</div>`;
       }).join("");
-      const note = `<div data-check="caption" style="${abs(x0 + 12, top + 206, 790, 84, `background:#fffefa;border-radius:4px;transform:rotate(${-rot * 0.7}deg);box-shadow:0 2px 3px rgba(30,50,45,.25),0 9px 14px rgba(30,50,45,.22);display:flex;align-items:center;padding:0 24px 0 44px;font:500 26px/1.22 Plex;color:#2a2530;z-index:2`)}">${esc(r.caption)}</div>`;
-      return label + tiles + note + roundMagnet(x0 + 40, top + 248, ["#e0a95a", "#c4573e", "#5b7a9a"][k], 14);
+      const note = `<div data-check="caption" style="${abs(x0 + 12, top + 206, 790, 84, `background:#fffefa;border-radius:4px;transform:rotate(${-rot * 0.7}deg);box-shadow:0 2px 3px rgba(30,50,45,.25),0 9px 14px rgba(30,50,45,.22);display:flex;align-items:center;padding:0 24px 0 56px;text-wrap:balance;font:500 26px/1.22 Plex;color:#2a2530;z-index:2`)}">${esc(r.caption)}</div>`;
+      return label + tiles + note + roundMagnet(x0 + 36, top + 248, ["#e0a95a", "#c4573e", "#5b7a9a"][k], 14);
     })
     .join("");
   return printable({ n: 33, paper: "#e7eeea", scene: `${fridge}${rows}`, extraCss: ".top h1{font-size:80px}" });
@@ -170,7 +170,7 @@ function pin38() {
         <div style="${abs(26, 168, 548, 40, "font:500 22px/1.2 Plex;color:#2a2530;white-space:nowrap")}">${sw(chipCol[0], "math")}${sw(chipCol[1], "reading")}${sw(chipCol[2], "writing")}${sw(chipCol[3], "science")}</div>
       </div>${tape(295, 6, 130, -2, "rgba(138,161,130,.85)")}
     </div>`;
-  const exampleTag = `<span class="example" style="position:absolute;left:480px;top:1096px;transform:rotate(-2deg);z-index:6;font-size:20px;padding:5px 10px;background:#fffdf6;box-shadow:none;border-color:#6b5f4f;color:#4b4339">Example</span>`;
+  const exampleTag = `<span class="example" style="position:absolute;left:480px;top:1096px;transform:rotate(-2deg);z-index:6;font-size:22px;padding:4px 10px;background:#fffdf6;box-shadow:none;border-color:#6b5f4f;color:#4b4339">Example</span>`;
   const props = mug({ x: 724, y: 1110, size: 190, color: "#f3ede4", drink: "#6b4226" }) + pencil({ x: 380, y: 1316, len: 420, rot: -3 });
   return printable({ n: 38, paper: "#f6ecd3", scene: `${blanket}${notebook}${arrow}${legend}${props}${exampleTag}`, extraCss: `${exampleCss}.top h1{font-size:60px}` });
 }
@@ -216,11 +216,11 @@ function pin62() {
   const rA = ribbon({ y: 404, label: "five days of content", pattern: A, color: "#c4573e", cellH: 5 });
   const rB = ribbon({ y: 640, label: "four days year-round", pattern: bPattern, color: C.plum, cellH: 4 });
   const tapes = tape(110, 408, 120, -3, "rgba(224,169,90,.85)") + tape(900, 410, 120, 3, "rgba(224,169,90,.85)") + tape(110, 644, 120, 3, "rgba(224,169,90,.85)") + tape(900, 646, 120, -3, "rgba(224,169,90,.85)");
-  const card = `<div style="${abs(56, 920, 640, 370, "transform:rotate(-1.6deg);z-index:3")}">
-    <div style="${abs(0, 0, 640, 370, `background:#fffdf6;border-radius:6px;filter:${SHADOW};overflow:hidden`)}">
-      <div style="${abs(0, 0, 640, 370, "background:repeating-linear-gradient(180deg,transparent 0 57px,#c4d3e3 57px 59px);top:30px;opacity:.85")}"></div>
+  const card = `<div style="${abs(56, 940, 640, 330, "transform:rotate(-1.6deg);z-index:3")}">
+    <div style="${abs(0, 0, 640, 330, `background:#fffdf6;border-radius:6px;filter:${SHADOW};overflow:hidden`)}">
+      <div style="${abs(0, 0, 640, 330, "background:repeating-linear-gradient(180deg,transparent 0 57px,#c4d3e3 57px 59px);top:30px;opacity:.85")}"></div>
       <div style="${abs(0, 54, 640, 3, "background:#e08a8a")}"></div>
-      <div data-check="answer" style="${abs(34, 20, 580, 330, "font:700 46px/1.1 Hand;color:#2a2540;overflow:hidden;display:flex;align-items:center")}">${esc(i.items[0])}</div>
+      <div data-check="answer" style="${abs(34, 20, 580, 300, "font:700 46px/1.1 Hand;color:#2a2540;overflow:hidden;display:flex;align-items:center")}">${esc(i.items[0])}</div>
     </div>${tape(320, 4, 140, -2, "rgba(138,161,130,.85)")}
   </div>`;
   const props = mug({ x: 726, y: 960, size: 190, color: "#f3ede4", drink: "#a86a2c" }) + toast({ x: 732, y: 1130 });

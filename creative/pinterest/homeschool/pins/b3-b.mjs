@@ -68,7 +68,7 @@ function pin8() {
     <rect x="884" y="470" width="14" height="40" fill="#8e949b"/><rect x="884" y="1010" width="14" height="40" fill="#8e949b"/></svg>`;
 
   const strikeBox = (x, y, s = 74) => `<svg style="${abs(x, y, s, s)}" viewBox="0 0 74 74" aria-hidden="true"><path d="M8 10 L66 8 L64 66 L10 64 Z" fill="#fffdf6" stroke="#2c2540" stroke-width="5" stroke-linejoin="round"/><path d="M14 16 L60 60 M60 14 L16 60" stroke="#b4472f" stroke-width="7" stroke-linecap="round"/></svg>`;
-  const txt = (t, size, w, extra = "") => `<div data-check="item" class="hand" style="position:absolute;left:150px;width:${w}px;`+`${(`top:50%;transform:translateY(-50%);font-size:${size}px;line-height:1;font-weight:700;color:#2c2540;text-decoration:line-through;text-decoration-color:#b4472f;text-decoration-thickness:6px;${extra}`)}">${esc(t)}</div>`;
+  const txt = (t, size, w, extra = "") => `<div data-check="item" class="hand" style="position:absolute;left:150px;width:${w}px;top:50%;transform:translateY(-50%);font-size:${size}px;line-height:1.12;font-weight:700;color:#2c2540;text-decoration:line-through;text-decoration-color:#b4472f;text-decoration-thickness:6px;${extra}">${esc(t)}</div>`;
 
   const kraft = `<div style="${abs(70, 428, 770, 250, `transform:rotate(-1.6deg);filter:${SHADOW}`)}">
     <div style="${abs(0, 0, 770, 250, "background:#cda877;border-radius:6px")}"><div style="${abs(0, 0, 770, 250, "background:repeating-linear-gradient(180deg,transparent 0 56px,rgba(80,50,20,.18) 56px 58px);top:34px;height:216px")}"></div>
@@ -80,7 +80,7 @@ function pin8() {
     <div style="${abs(0, 0, 790, 270, "background:#f6dd7e;border-radius:4px;overflow:hidden")}"><div style="${abs(0, 0, 790, 40, "background:linear-gradient(#e6c658,#f6dd7e)")}"></div><div style="${abs(0, 40, 790, 230, "background:repeating-linear-gradient(180deg,transparent 0 62px,rgba(140,100,20,.2) 62px 64px)")}"></div>
     ${strikeBox(40, 100)}${txt(i.items[2], 60, 600, "padding-top:14px")}</div></div>`;
   const magnets = magnet(455, 436, "#c4573e") + magnet(470, 730, "#e0a95a") + magnet(475, 986, "#7a4b8a") + magnet(906, 1270, "#5f8a8f", 24) + magnet(120, 1290, "#e0a95a", 24);
-  return printable({ n: 8, paper: "#e7efe6", scene: `${door}${kraft}${white}${yellow}${magnets}` });
+  return printable({ n: 8, paper: "#e7efe6", extraCss: ".top h1{font-size:70px}", scene: `${door}${kraft}${white}${yellow}${magnets}` });
 }
 
 /* ------------------------------------------------------------------ #10 */
@@ -105,7 +105,7 @@ function pin10() {
         <div style="${abs(190, 100, 640, 760)}">${rows}</div>
       </div></div>`;
   // the crossed-out "later" note, stuck over the top corner of the page
-  const note = `<div style="${abs(618, 392, 250, 96, `transform:rotate(3deg);filter:${SHADOW};z-index:4`)}"><div class="hand" style="${abs(0, 0, 250, 96, "background:#f3d77b;display:grid;place-items:center;font-size:58px;font-weight:700;color:#2c2540;text-decoration:line-through;text-decoration-color:#a5402b;text-decoration-thickness:7px")}">later</div></div>${tape(745, 396, 100, 2, "rgba(138,161,130,.85)")}`;
+  const note = `<div style="${abs(618, 410, 250, 96, `transform:rotate(3deg);filter:${SHADOW};z-index:4`)}"><div class="hand" style="${abs(0, 0, 250, 96, "background:#f3d77b;display:grid;place-items:center;font-size:58px;font-weight:700;color:#2c2540;text-decoration:line-through;text-decoration-color:#a5402b;text-decoration-thickness:5px")}">later</div></div>${tape(745, 408, 100, 2, "rgba(138,161,130,.85)")}`;
   const pen = pencil({ x: 725, y: 1010, len: 440, rot: 90, body: "#4e7a8c" });
   return printable({ n: 10, paper: "#e4e8ee", scene: `${linen}${sheet}${note}${pen}` });
 }
@@ -154,7 +154,7 @@ function pin12() {
   const right = `${folder({ x: 546, y: 492, color: "#d9b46b", deep: "#c39a4c", rot: -2, seed: 5 })}${folder({ x: 566, y: 740, color: "#c9b6d6", deep: "#a98ec0", rot: 1.6, seed: 9 })}`;
 
   return printable({
-    n: 12, paper: "#f1e9d6",
+    n: 12, paper: "#f1e9d6", extraCss: ".top h1{font-size:70px}",
     scene: `${halves}${chip(46, 300, lab1)}${page}${note(40, esc(t1))}${chip(530, 360, lab2)}${right}${note(530, `${esc(t2)}<div style="height:2px;background:#d8cfbd;margin:12px 0"></div>${esc(t3)}`)}`,
   });
 }
@@ -182,46 +182,43 @@ function pin14() {
   const cup = `<svg style="${abs(690, 400, 280, 230, "filter:drop-shadow(0 12px 9px rgba(20,30,40,.4))")}" viewBox="0 0 280 230" aria-hidden="true"><ellipse cx="130" cy="120" rx="118" ry="100" fill="#fbfaf7"/><ellipse cx="130" cy="120" rx="118" ry="100" fill="none" stroke="#000" stroke-opacity=".08" stroke-width="3"/>
     <path d="M206 88 C 262 80 262 152 206 152" fill="none" stroke="#e9e3d6" stroke-width="22" stroke-linecap="round"/><circle cx="118" cy="116" r="76" fill="#e9e3d6"/><circle cx="118" cy="116" r="64" fill="#fbfaf7"/><circle cx="118" cy="118" r="56" fill="#a5642f"/><ellipse cx="98" cy="98" rx="24" ry="16" fill="#fff" opacity=".2"/></svg>`;
 
-  const card = ({ x, y, rot, name, subject, note, ink, nameSize, weight, spacing, bg }) => `<div style="${abs(x, y, 440, 560, `transform:rotate(${rot}deg);filter:${SHADOW}`)}">
-      <div style="${abs(0, 0, 440, 560, `background:${bg};border-radius:6px;overflow:hidden`)}">
-        <div style="${abs(0, 96, 440, 464, "background:repeating-linear-gradient(180deg,transparent 0 51px,#b9cde0 51px 53px)")}"></div>
+  const card = ({ x, y, rot, name, subject, note, ink, nameSize, weight, spacing, bg }) => `<div style="${abs(x, y, 440, 500, `transform:rotate(${rot}deg);filter:${SHADOW}`)}">
+      <div style="${abs(0, 0, 440, 500, `background:${bg};border-radius:6px;overflow:hidden`)}">
+        <div style="${abs(0, 96, 440, 404, "background:repeating-linear-gradient(180deg,transparent 0 51px,#b9cde0 51px 53px);background-position:0 20px")}"></div>
         <div style="${abs(0, 94, 440, 3, "background:#d9776b")}"></div>
-        <div data-check="entry" class="hand" style="${abs(28, 18, 390, 520, `color:${ink};font-weight:${weight};letter-spacing:${spacing}em;overflow:hidden`)}">
+        <div data-check="entry" class="hand" style="${abs(28, 18, 390, 470, `color:${ink};font-weight:${weight};letter-spacing:${spacing}em;overflow:hidden`)}">
           <div style="font-size:${nameSize}px;line-height:70px;font-weight:700">${esc(name)}</div>
           <div style="font-size:40px;line-height:53px;margin-top:35px">${esc(subject)}</div>
           <div style="font-size:40px;line-height:53px;margin-top:53px">${esc(note)}</div>
         </div></div></div>`;
   const [n1, s1, t1, n2, s2, t2] = i.items;
-  const cards = card({ x: 46, y: 706, rot: -2, name: n1, subject: s1, note: t1, ink: "#23478a", nameSize: 60, weight: 600, spacing: 0, bg: "#fffdf6" })
-    + card({ x: 514, y: 722, rot: 2, name: n2, subject: s2, note: t2, ink: "#3a3a44", nameSize: 58, weight: 400, spacing: 0.035, bg: "#fcf6e4" })
-    + tape(266, 708, 120, 3, "rgba(224,169,90,.85)") + tape(734, 722, 120, -3, "rgba(122,75,138,.6)");
+  const cards = card({ x: 46, y: 716, rot: -2, name: n1, subject: s1, note: t1, ink: "#23478a", nameSize: 60, weight: 600, spacing: 0, bg: "#fffdf6" })
+    + card({ x: 514, y: 732, rot: 2, name: n2, subject: s2, note: t2, ink: "#3a3a44", nameSize: 58, weight: 500, spacing: 0, bg: "#fcf6e4" })
+    + tape(266, 718, 120, 3, "rgba(224,169,90,.85)") + tape(734, 732, 120, -3, "rgba(122,75,138,.6)");
   const drawing = `${bookDrawing(335, 404)}${tape(500, 408, 130, 2, "rgba(138,161,130,.85)")}`;
   const tag = `<span class="example" style="position:absolute;left:46px;top:1290px;transform:rotate(-2deg);z-index:4">Example</span>`;
-  return printable({ n: 14, paper: "#e8eff4", extraCss: exampleCss, scene: `${table}${plate}${cup}${drawing}${cards}${tag}` });
+  return printable({ n: 14, paper: "#e8eff4", extraCss: exampleCss, scene: `${table}${plate}${cup}${drawing}${cards}${pencil({ x: 300, y: 1262, len: 440, rot: -3 })}${tag}` });
 }
 
 /* ------------------------------------------------------------------ #16 */
 
 function crumple(w, h, seed) {
   const r = seeded(seed);
-  const cx = w / 2, cy = h / 2, pts = [];
-  const n = 16;
+  const cx = w / 2, cy = h / 2, n = 14;
+  const ring = (k, f) => { const a = ((k + (r() - 0.5) * 0.5) / n) * Math.PI * 2; const rad = f * (0.8 + r() * 0.2); return [cx + Math.cos(a) * (w / 2 - 6) * rad, cy + Math.sin(a) * (h / 2 - 6) * rad]; };
+  const outer = Array.from({ length: n }, (_, k) => ring(k, 1)), inner = Array.from({ length: n }, (_, k) => ring(k + 0.5, 0.5));
+  const shades = ["#d9d5ca", "#bdb9ae", "#e8e4d9", "#a9a59b", "#cfcbc0", "#f1ede3", "#c4c0b4"];
+  const sh = () => shades[Math.floor(r() * shades.length)];
+  const P = (p) => `${p[0].toFixed(1)} ${p[1].toFixed(1)}`;
+  let facets = "";
   for (let k = 0; k < n; k++) {
-    const a = (k / n) * Math.PI * 2;
-    const rad = 0.78 + r() * 0.22;
-    pts.push([cx + Math.cos(a) * (w / 2 - 6) * rad, cy + Math.sin(a) * (h / 2 - 6) * rad]);
+    const k2 = (k + 1) % n;
+    facets += `<path d="M${cx} ${cy} L${P(inner[k])} L${P(inner[k2])} Z" fill="${sh()}"/><path d="M${P(inner[k])} L${P(outer[k])} L${P(outer[k2])} Z" fill="${sh()}"/><path d="M${P(inner[k])} L${P(outer[k2])} L${P(inner[k2])} Z" fill="${sh()}"/>`;
   }
-  const shades = ["#d9d5ca", "#bdb9ae", "#e8e4d9", "#a9a59b", "#cfcbc0", "#f1ede3"];
-  const facets = pts.map((p, k) => {
-    const q = pts[(k + 1) % n];
-    const m = [(p[0] + q[0]) / 2 + (r() - 0.5) * 60, (p[1] + q[1]) / 2 + (r() - 0.5) * 50];
-    return `<path d="M${cx} ${cy} L${p[0].toFixed(1)} ${p[1].toFixed(1)} L${m[0].toFixed(1)} ${m[1].toFixed(1)} L${q[0].toFixed(1)} ${q[1].toFixed(1)} Z" fill="${shades[Math.floor(r() * shades.length)]}"/>`;
-  }).join("");
   let marks = "";
-  for (let k = 0; k < 11; k++) marks += `<path d="${scribble(r, 50 + r() * 40, 60 + k * 24, 120 + r() * 160, 5)}" fill="none" stroke="#3d3d4c" stroke-width="2.6" opacity=".55" stroke-linecap="round"/>`;
-  const outline = pts.map((p) => `${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(" ");
-  const creases = Array.from({ length: 9 }, () => `<path d="M${(r() * w).toFixed(0)} ${(r() * h).toFixed(0)} L${(r() * w).toFixed(0)} ${(r() * h).toFixed(0)}" stroke="#6d695f" stroke-width="2" opacity=".35"/>`).join("");
-  return `<svg viewBox="0 0 ${w} ${h}" style="${abs(0, 0, w, h)}" aria-hidden="true"><defs><clipPath id="cr${seed}"><polygon points="${outline}"/></clipPath></defs><g clip-path="url(#cr${seed})">${facets}${marks}${creases}</g></svg>`;
+  for (let k = 0; k < 11; k++) marks += `<path d="${scribble(r, 50 + r() * 40, 60 + k * 24, 120 + r() * 160, 5)}" fill="none" stroke="#3d3d4c" stroke-width="2.6" opacity=".5" stroke-linecap="round"/>`;
+  const creases = Array.from({ length: 10 }, () => `<path d="M${(r() * w).toFixed(0)} ${(r() * h).toFixed(0)} L${(r() * w).toFixed(0)} ${(r() * h).toFixed(0)}" stroke="#6d695f" stroke-width="2" opacity=".3"/>`).join("");
+  return `<svg viewBox="0 0 ${w} ${h}" style="${abs(0, 0, w, h)}" aria-hidden="true"><defs><clipPath id="cr${seed}"><polygon points="${outer.map((p) => `${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(" ")}"/></clipPath></defs><g clip-path="url(#cr${seed})">${facets}${marks}${creases}</g></svg>`;
 }
 
 function pin16() {
@@ -237,20 +234,20 @@ function pin16() {
   const sun = `<div style="${abs(0, 800, 1000, 554, "background:linear-gradient(115deg,rgba(255,244,205,.5) 0 22%,transparent 22% 34%,rgba(255,244,205,.35) 34% 50%,transparent 50%);mix-blend-mode:soft-light")}"></div>`;
 
   const ball = `<div style="${abs(40, 408, 450, 400, `transform:rotate(-7deg);filter:drop-shadow(0 16px 14px rgba(0,0,0,.55));z-index:3`)}">${crumple(450, 400, 3)}</div>`;
-  const beforeCard = `<div style="${abs(520, 430, 430, 340, `transform:rotate(1.6deg);filter:drop-shadow(0 12px 14px rgba(0,0,0,.5));z-index:3`)}">
-      <div style="${abs(0, 0, 430, 340, "background:#e7e2d6;border-radius:5px;padding:26px 28px;overflow:hidden")}" data-check="before">
+  const beforeCard = `<div style="${abs(520, 430, 430, 320, `transform:rotate(1.6deg);filter:drop-shadow(0 12px 14px rgba(0,0,0,.5));z-index:3`)}">
+      <div style="${abs(0, 0, 430, 320, "background:#e7e2d6;border-radius:5px;padding:26px 28px;overflow:hidden")}" data-check="before">
         <div style="font:600 25px Plex;letter-spacing:.16em;text-transform:uppercase;color:#59606f">Before</div>
         <div style="font:500 34px/1.28 Plex;color:#2a2f3a;margin-top:12px">${esc(beforeText)}</div></div></div>`;
 
   const sheet = `<div style="${abs(60, 868, 880, 458, `transform:rotate(-.5deg);filter:${SHADOW};z-index:3`)}">
       <div style="${abs(0, 0, 880, 458, "background:#fffdf6;border-radius:5px;overflow:hidden")}">
-        <div style="${abs(0, 0, 880, 458, "background:repeating-linear-gradient(180deg,transparent 0 53px,#b9cde0 53px 55px);background-position:0 128px")}"></div>
+        <div style="${abs(0, 0, 880, 458, "background:repeating-linear-gradient(180deg,transparent 0 53px,#b9cde0 53px 55px);background-position:0 152px")}"></div>
         <div style="${abs(96, 0, 2, 458, "background:#e3a3a3;opacity:.7")}"></div>
-        <div data-check="after" style="${abs(124, 34, 724, 100, `font:500 40px/50px Newsreader;color:${C.plumDeep}`)}">${esc(afterText)}</div>
-        <div data-check="entry" class="hand" style="${abs(124, 132, 724, 170, "font-size:50px;line-height:55px;font-weight:600;color:#25304a;overflow:hidden")}">${esc(entry)}</div>
+        <div data-check="after" style="${abs(124, 52, 724, 110, `font:500 40px/55px Newsreader;color:${C.plumDeep}`)}">${esc(afterText)}</div>
+        <div data-check="entry" class="hand" style="${abs(124, 162, 724, 170, "font-size:50px;line-height:55px;font-weight:600;color:#25304a;overflow:hidden")}">${esc(entry)}</div>
       </div></div>
     <div style="${abs(86, 826, 160, 56, `background:${C.plum};border-radius:10px 10px 0 0;display:grid;place-items:center;font:600 28px Plex;color:#fff;letter-spacing:.06em;z-index:3`)}">After</div>`;
-  const pen = pencil({ x: 470, y: 1226, len: 440, rot: -5 });
+  const pen = `<div style="z-index:4">${pencil({ x: 470, y: 1236, len: 440, rot: -5 })}</div>`;
   return printable({ n: 16, paper: "#f1e9dc", scene: `${oak}${dusk}${sun}${ball}${beforeCard}${sheet}${pen}` });
 }
 
