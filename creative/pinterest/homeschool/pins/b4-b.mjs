@@ -5,9 +5,9 @@
  * each scene reads its words from the bank and throws if the record is not
  * the one it was drawn for.
  *
- *   #47  question      a wooden recipe box on a birch counter against a dusty-teal wall: one index card standing
- *                      tall out of the box, a work-sample page taped up beside it with a clipped hand-written note
- *   #53  checklist     a green leather desk blotter on dark walnut: the six-line list slid into a kraft folder, plum ticks
+ *   #47  question      a sunny window: the card and a work-sample page with a clipped note taped to the glass, a plant and a jar of pencils on the sill
+
+ *   #53  checklist     a canvas tote on terracotta hall tiles: the six-line list slid into a kraft folder in the tote, plum ticks
  *   #98  quote-card    a navy bookcase: the ruled page propped on a shelf, pencil underline, a manila folder corner
  *   #41  comparison    a grey-washed pallet-wood board: a September page and a May page clipped side by side
  *   #99  comparison    a divided kraft box on denim: one glossy page alone, two plain dated pages together
@@ -56,50 +56,47 @@ function question() {
   if (i.items.length !== 2 || !i.items[0].startsWith("Math: struggled with fractions")) throw new Error("#47: the bank's items are not the note and the credibility line");
   const [note, line] = i.items;
 
-  // The wall: dusty teal with a slanted patch of window light, and a birch counter below.
-  const wall = `<div style="${at(0, SCENE_TOP, 1000, 640, "background:linear-gradient(180deg,#86a9aa,#6b9093)")}"></div>
-    <div style="${at(0, SCENE_TOP, 1000, 640, "background:linear-gradient(115deg,transparent 0 38%,rgba(255,255,255,.17) 38% 62%,transparent 62%)")}"></div>
-    <div style="${at(0, SCENE_TOP, 1000, 640, "background:radial-gradient(ellipse at 22% 10%,rgba(255,255,255,.14),rgba(10,40,45,.3))")}"></div>`;
-  const counter = `<div style="${at(0, 1012, 1000, 488, "background:repeating-linear-gradient(0deg,rgba(120,80,30,.07) 0 2px,transparent 2px 9px),linear-gradient(180deg,#e6cda1,#d3b183)")}"></div>
-    <div style="${at(0, 1004, 1000, 14, "background:linear-gradient(#5d4a2c,#9d8458);opacity:.55")}"></div>
-    <div style="${at(0, 1018, 1000, 120, "background:linear-gradient(rgba(60,40,10,.3),transparent)")}"></div>`;
+  // A window: white frame, one big pane of pale sky with a sun glow, a cross-bar, a sill below with a plant and a jar.
+  const sky = `<div style="${at(0, SCENE_TOP, 1000, 1500 - SCENE_TOP, "background:#e9e4d6")}"></div>
+    <div style="${at(40, 404, 920, 790, "background:linear-gradient(180deg,#bcdcea,#e4f1ee 78%,#f4efdc);box-shadow:inset 0 6px 14px rgba(40,70,90,.35)")}"></div>
+    <div style="${at(40, 404, 920, 790, "background:radial-gradient(ellipse at 84% 8%,rgba(255,250,220,.95),rgba(255,250,220,0) 46%)")}"></div>
+    <svg style="${at(40, 404, 920, 790)}" viewBox="0 0 920 790" aria-hidden="true"><g fill="#fff" opacity=".65"><ellipse cx="170" cy="150" rx="120" ry="26"/><ellipse cx="250" cy="130" rx="80" ry="24"/><ellipse cx="700" cy="330" rx="130" ry="24"/><ellipse cx="770" cy="312" rx="70" ry="22"/></g><path d="M0 700 Q 120 640 240 690 T 480 680 T 720 690 T 920 650 V 790 H 0 Z" fill="#a6c39a" opacity=".55"/></svg>`;
+  const frame = `<div style="${at(16, 380, 968, 838, "border:34px solid #f6f3ea;border-radius:6px;box-shadow:0 4px 8px rgba(40,30,15,.35),inset 0 0 0 3px rgba(120,110,90,.3)")}"></div>
+    <div style="${at(40, 1020, 920, 26, "background:linear-gradient(#fbf9f2,#e4dfd0);box-shadow:0 3px 5px rgba(40,30,15,.3)")}"></div>`;
+  const sill = `<div style="${at(0, 1200, 1000, 60, "background:linear-gradient(#fbf9f2,#ddd7c6);box-shadow:0 10px 16px rgba(40,30,15,.4)")}"></div>
+    <div style="${at(0, 1260, 1000, 100, "background:linear-gradient(#d8d0bd,#cbc3ae)")}"></div>
+    <div style="${at(0, 1260, 1000, 40, "background:linear-gradient(rgba(60,45,20,.28),transparent)")}"></div>`;
 
-  // The work-sample page taped up, with a note clipped over it.
-  const page = `<div style="${at(596, 410, 340, 470, "transform:rotate(2.6deg);z-index:3")}">
-      <div style="${at(0, 0, 340, 470, `background:repeating-linear-gradient(180deg,transparent 0 37px,rgba(80,115,170,.3) 37px 39px),#fffdf5;box-shadow:${SHADOW}`)}"></div>
-      <div style="${at(0, 0, 3, 470, "left:44px;background:rgba(200,80,80,.45)")}"></div>
+  // The plant and the jar of pencils stand on the sill, in front of the lower pane.
+  const plant = `<svg style="${at(40, 1040, 280, 230, "z-index:6;filter:drop-shadow(0 8px 6px rgba(40,30,15,.35))")}" viewBox="0 0 280 230" aria-hidden="true">
+      <g fill="#5f9a62"><path d="M140 140 C 70 120 40 70 62 30 C 110 50 136 90 140 140 Z"/><path d="M140 140 C 210 120 244 70 218 30 C 170 50 144 90 140 140 Z"/><path d="M140 140 C 120 90 128 40 142 8 C 160 44 160 96 140 140 Z" fill="#74af72"/><path d="M140 140 C 60 150 20 120 16 92 C 70 92 118 108 140 140 Z" fill="#4f8a55"/></g>
+      <path d="M140 140 V 20 M140 140 L 60 40 M140 140 L 220 40" stroke="#3f7547" stroke-width="2.4" fill="none" opacity=".6"/>
+      <path d="M78 150 H 202 L 188 226 H 92 Z" fill="#c4673f"/><rect x="70" y="140" width="140" height="24" rx="5" fill="#d4784e"/><path d="M96 170 H 184" stroke="#fff" stroke-opacity=".2" stroke-width="5"/></svg>`;
+  const pencils = ["#e7b23f", "#c4573e", "#5f8a8f", "#7a4b8a", "#8aa182"].map((c, k) => `<div style="${at(808 + k * 17, 1058 - (k % 3) * 18, 12, 140, `background:linear-gradient(90deg,${c},#fff3 50%,${c});transform:rotate(${(k - 2) * 7}deg);transform-origin:bottom;border-radius:2px 2px 0 0;z-index:5`)}"></div>`).join("");
+  const jar = `<div style="${at(790, 1110, 120, 96, "z-index:6;background:linear-gradient(90deg,rgba(255,255,255,.55),rgba(200,225,230,.45) 40%,rgba(255,255,255,.5));border:3px solid rgba(255,255,255,.7);border-radius:6px 6px 14px 14px;box-shadow:0 8px 10px rgba(40,30,15,.3)")}"></div>`;
+
+  // The work-sample page taped to the glass, with a note clipped over it.
+  const page = `<div style="${at(600, 430, 340, 470, "transform:rotate(2.2deg);z-index:3")}">
+      <div style="${at(0, 0, 340, 470, `background:repeating-linear-gradient(180deg,transparent 0 37px,rgba(80,115,170,.3) 37px 39px),#fffdf5;box-shadow:0 2px 3px rgba(20,40,50,.22),0 14px 24px rgba(20,40,50,.28)`)}"></div>
+      <div style="${at(44, 0, 3, 470, "background:rgba(200,80,80,.45)")}"></div>
       <div style="${at(60, 54, 250, 200)}">${scrib({ w: 250, rows: 5, gap: 38, seed: 4 })}</div>
       <div style="${at(60, 300, 250, 120)}">${scrib({ w: 250, rows: 3, gap: 38, seed: 9 })}</div>
     </div>
-    ${tape(716, 392, 120, -4, "rgba(138,161,130,.88)")}`;
-  const noteEl = `<div style="${at(618, 540, 312, 296, "transform:rotate(-2.4deg);z-index:5")}">
-      <div style="${at(0, 0, 312, 296, `background:linear-gradient(160deg,#fffae4,#f6eab8);box-shadow:${SHADOW}`)}"></div>
+    ${tape(718, 414, 120, -4, "rgba(138,161,130,.88)")}`;
+  const noteEl = `<div style="${at(620, 560, 312, 296, "transform:rotate(-2.4deg);z-index:5")}">
+      <div style="${at(0, 0, 312, 296, `background:linear-gradient(160deg,#fffae4,#f6eab8);box-shadow:0 2px 3px rgba(20,40,50,.25),0 14px 24px rgba(20,40,50,.3)`)}"></div>
       <div data-check="note" class="hand" style="${at(22, 44, 272, 240, "font-size:46px;line-height:1.02;font-weight:700;color:#2c2e5a;overflow:hidden")}">${esc(note)}</div>
     </div>
-    ${binderClip({ x: 720, y: 498, rot: 4, size: 96 }).replace("position:absolute", "position:absolute;z-index:6")}`;
+    ${binderClip({ x: 722, y: 518, rot: 4, size: 96 }).replace("position:absolute", "position:absolute;z-index:6")}`;
 
-  // Dividers peeking behind the front card.
-  const divider = (x, y, tab, c, rot) => `<div style="${at(x, y, 190, 300, `z-index:4;transform:rotate(${rot}deg);background:linear-gradient(#f6f0e2,#e9e0cc);box-shadow:0 8px 14px rgba(40,25,5,.3);border-radius:3px`)}"><div style="${at(24 + tab * 60, -26, 64, 36, `background:${c};border-radius:6px 6px 0 0;box-shadow:0 -2px 4px rgba(40,25,5,.2)`)}"></div></div>`;
-  const dividers = `${divider(612, 936, 0, "#8aa182", -2)}${divider(686, 930, 1, "#e0a95a", 2)}${divider(752, 940, 2, "#b9a0cc", 1)}`;
-
-  // The standing card: a ruled index card with a plum header line.
-  const card = `<div style="${at(64, 428, 520, 700, "transform:rotate(-1.6deg);z-index:4")}">
-      <div style="${at(0, 0, 520, 700, `background:repeating-linear-gradient(180deg,transparent 0 71px,rgba(80,115,170,.26) 71px 73px),#fffdf3;box-shadow:${SHADOW};border-radius:6px`)}"></div>
-      <div style="${at(0, 52, 520, 4, "background:#b3524a;opacity:.75")}"></div>
-      <div data-check="line" class="serif" style="${at(38, 74, 450, 480, "font-size:43px;line-height:73px;font-weight:500;color:#1f1d26;overflow:hidden;padding-top:0")}">${esc(line)}</div>
-    </div>`;
-
-  // The recipe box: a wooden front with a brass label plate and corner pieces.
-  const planks = Array.from({ length: 11 }, (_, k) => `<div style="${at(k * 80, 0, 2, 270, "background:rgba(60,35,10,.28)")}"></div>`).join("");
-  const box = `<div style="${at(46, 1066, 908, 268, "z-index:7;filter:drop-shadow(0 22px 16px rgba(40,25,5,.5))")}">
-      <div style="${at(0, 0, 908, 268, "background:linear-gradient(180deg,#c99a63,#a97b44);border-radius:12px;overflow:hidden")}">${planks}
-        <div style="${at(0, 0, 908, 26, "background:linear-gradient(#e4b983,#c8975c);box-shadow:0 3px 4px rgba(60,35,10,.35)")}"></div>
-        <div style="${at(0, 26, 908, 244, "background:radial-gradient(ellipse at 24% 8%,rgba(255,255,255,.2),rgba(60,30,5,.22))")}"></div></div>
-      <div style="${at(344, 92, 220, 108, "background:linear-gradient(#e6c778,#b8913f 60%,#d9b765);border-radius:10px;box-shadow:0 5px 8px rgba(40,25,5,.5),inset 0 2px 2px rgba(255,255,255,.6)")}">
-        <div style="${at(16, 14, 188, 80, "background:#fbf6e6;border-radius:4px;box-shadow:inset 0 2px 4px rgba(0,0,0,.25)")}"></div></div>
-      ${[[18, 118], [868, 118]].map(([x, y]) => `<div style="${at(x, y, 22, 22, "border-radius:50%;background:radial-gradient(circle at 35% 30%,#f2dc9a,#a98530);box-shadow:0 2px 3px rgba(40,25,5,.5)")}"></div>`).join("")}
-    </div>`;
-  const scene = `${wall}${counter}${dividers}${page}${noteEl}${card}${box}${exampleTag(640, 846, 3)}`;
+  // The standing card, taped to the glass too.
+  const card = `<div style="${at(64, 436, 500, 560, "transform:rotate(-1.6deg);z-index:4")}">
+      <div style="${at(0, 0, 500, 560, `background:repeating-linear-gradient(180deg,transparent 0 71px,rgba(80,115,170,.26) 71px 73px),#fffdf3;box-shadow:0 2px 3px rgba(20,40,50,.22),0 14px 24px rgba(20,40,50,.3);border-radius:6px`)}"></div>
+      <div style="${at(0, 52, 500, 4, "background:#b3524a;opacity:.75")}"></div>
+      <div data-check="line" class="serif" style="${at(36, 74, 440, 470, "font-size:43px;line-height:73px;font-weight:500;color:#1f1d26;overflow:hidden")}">${esc(line)}</div>
+    </div>
+    ${tape(240, 418, 130, 2, "rgba(214,186,128,.88)")}`;
+  const scene = `${sky}${page}${noteEl}${card}${frame}${sill}${plant}${jar}${pencils}${exampleTag(640, 904, 3)}`;
   return printable({ n, paper: "#eef0ea", extraCss: EXAMPLE_CSS, scene });
 }
 
@@ -110,29 +107,33 @@ function checklist() {
   const i = idea(n);
   if (i.items.length !== 6 || !i.items[0].startsWith("The log of what was covered")) throw new Error("#53: the bank's items are not the six folder lines");
 
-  const walnut = `<div style="${at(0, SCENE_TOP, 1000, 1500 - SCENE_TOP, "background:repeating-linear-gradient(90deg,rgba(0,0,0,.1) 0 2px,transparent 2px 7px),linear-gradient(180deg,#5b3d28,#4a301f)")}"></div>
-    <div style="${at(0, SCENE_TOP, 1000, 1500 - SCENE_TOP, "background:radial-gradient(ellipse at 24% 10%,rgba(255,235,200,.16),rgba(10,5,0,.45))")}"></div>`;
-  // The leather blotter with brass-edged corner pieces.
-  const corner = (x, y, flipX, flipY) => `<svg style="${at(x, y, 120, 120, `transform:scale(${flipX ? -1 : 1},${flipY ? -1 : 1})`)}" viewBox="0 0 120 120" aria-hidden="true"><path d="M0 0 H120 L0 120 Z" fill="#c9a24d"/><path d="M0 0 H104 L0 104 Z" fill="#e0bf6c"/><path d="M0 0 H120" stroke="#8a6a25" stroke-width="3"/></svg>`;
-  const blotter = `<div style="${at(36, 398, 928, 940, "background:linear-gradient(135deg,#3d6b57,#2f574a);border-radius:10px;box-shadow:0 4px 5px rgba(0,0,0,.4),0 30px 50px rgba(0,0,0,.5)")}"></div>
-    <div style="${at(52, 414, 896, 908, "border:2px solid rgba(255,255,255,.14);border-radius:6px")}"></div>
-    ${corner(36, 398, false, false)}${corner(844, 398, true, false)}${corner(36, 1218, false, true)}${corner(844, 1218, true, true)}`;
+  // A hall floor of terracotta and cream tiles.
+  const tiles = [];
+  const T = 124;
+  for (let r = 0; r < 10; r++) for (let c = 0; c < 9; c++) tiles.push(`<rect x="${c * T}" y="${r * T}" width="${T}" height="${T}" fill="${(r + c) % 2 ? "#d9734f" : "#efe3cb"}"/>`);
+  const floor = `<svg style="${at(0, SCENE_TOP, 1000, 1500 - SCENE_TOP)}" viewBox="0 0 1000 ${1500 - SCENE_TOP}" aria-hidden="true">${tiles.join("")}<path d="${Array.from({ length: 10 }, (_, k) => `M${k * T} 0V1200M0 ${k * T}H1000`).join("")}" stroke="#7a5a3a" stroke-opacity=".35" stroke-width="3"/></svg>
+    <div style="${at(0, SCENE_TOP, 1000, 1500 - SCENE_TOP, "background:radial-gradient(ellipse at 24% 12%,rgba(255,255,255,.2),rgba(50,20,5,.42))")}"></div>`;
 
-  // The kraft folder, back panel with a tab; the page slides into it; the front panel covers the page's foot.
-  const folderBack = `<div style="${at(66, 1070, 868, 270, "background:linear-gradient(160deg,#d3b183,#bf9a68);border-radius:10px 10px 0 0;box-shadow:0 18px 30px rgba(0,0,0,.45)")}"></div>
-    <div style="${at(800, 1030, 134, 52, "background:linear-gradient(160deg,#d6b688,#c4a06f);border-radius:12px 12px 0 0;box-shadow:0 -2px 4px rgba(0,0,0,.2)")}"></div>`;
-  const paperTop = 424;
+  // The tote: handles arch behind the page; its inside and the folder; then the striped canvas front.
+  const handles = `<svg style="${at(0, 400, 1000, 700)}" viewBox="0 0 1000 700" aria-hidden="true"><path d="M100 700 C 100 80 280 40 500 40 C 720 40 900 80 900 700" fill="none" stroke="#1f3558" stroke-width="40" stroke-linecap="round" opacity=".95"/><path d="M100 700 C 100 80 280 40 500 40 C 720 40 900 80 900 700" fill="none" stroke="#fff" stroke-opacity=".15" stroke-width="8" transform="translate(-9 0)"/></svg>
+    <div style="${at(60, 1030, 880, 140, "background:linear-gradient(#b9a77f,#8f7d58);border-radius:12px 12px 0 0;box-shadow:0 20px 40px rgba(30,15,5,.5)")}"></div>`;
+  const folderBack = `<div style="${at(110, 1056, 780, 120, "background:linear-gradient(160deg,#d3b183,#bf9a68);border-radius:10px 10px 0 0")}"></div>
+    <div style="${at(740, 1020, 130, 50, "background:linear-gradient(160deg,#d6b688,#c4a06f);border-radius:12px 12px 0 0;box-shadow:0 -2px 4px rgba(0,0,0,.2)")}"></div>`;
   const rows = i.items.map((t) => `<div style="display:flex;gap:22px;align-items:flex-start"><span style="flex:none;position:relative;margin-top:5px;width:40px;height:40px;border:3.5px solid #4a3a55;border-radius:7px;background:#fffdf8">${tick()}</span><span data-check="item" style="font:500 31px/1.28 'Plex',sans-serif;color:#26232b">${esc(t)}</span></div>`).join("");
-  const paper = `<div style="${at(96, paperTop, 696, 800, "transform:rotate(-.9deg)")}">
+  const paper = `<div style="${at(130, 420, 696, 800, "transform:rotate(-.9deg)")}">
       <div style="${at(0, 0, 696, 800, `background:repeating-linear-gradient(180deg,transparent 0 43px,rgba(80,115,170,.2) 43px 45px),#fffdf3;box-shadow:0 3px 5px rgba(0,0,0,.35),0 20px 36px rgba(0,0,0,.4)`)}"></div>
       <div style="${at(52, 0, 3, 800, "background:rgba(200,80,80,.4)")}"></div>
       <div style="${at(80, 36, 592, 700, "display:flex;flex-direction:column;gap:26px")}">${rows}</div>
     </div>`;
-  const folderFront = `<div style="${at(56, 1130, 888, 212, "background:linear-gradient(170deg,#dbbb8c,#c7a272);border-radius:10px 10px 0 0;box-shadow:0 -6px 12px rgba(0,0,0,.3),0 22px 30px rgba(0,0,0,.4)")}"></div>
-    <div style="${at(56, 1130, 888, 10, "background:rgba(255,255,255,.28);border-radius:10px 10px 0 0")}"></div>`;
-  const pen = pencil({ x: 380, y: 1250, len: 460, rot: -7, body: "#7a4b8a", band: "#c3c3c9", tip: "#e9c9a0" });
-  const scene = `${walnut}${blotter}${folderBack}${paper}${folderFront}${pen}`;
-  return printable({ n, paper: "#efe9dd", scene });
+  const folderFront = `<div style="${at(100, 1104, 800, 120, "background:linear-gradient(170deg,#dbbb8c,#c7a272);border-radius:8px 8px 0 0;box-shadow:0 -4px 10px rgba(0,0,0,.3)")}"></div>
+    <div style="${at(100, 1104, 800, 8, "background:rgba(255,255,255,.3);border-radius:8px 8px 0 0")}"></div>`;
+  const toteFront = `<div style="${at(50, 1170, 900, 170, "background:repeating-linear-gradient(180deg,transparent 0 40px,#1f3558 40px 54px),repeating-linear-gradient(90deg,rgba(120,95,55,.1) 0 2px,transparent 2px 5px),#eadcbc;border-radius:6px 6px 26px 26px;box-shadow:0 -6px 12px rgba(30,15,5,.35),0 24px 30px rgba(30,15,5,.5);overflow:hidden")}">
+      <div style="${at(0, 0, 900, 14, "background:linear-gradient(#f4ead2,#e0d0aa)")}"></div>
+      <div style="${at(0, 0, 900, 170, "background:radial-gradient(ellipse at 24% 0%,rgba(255,255,255,.25),rgba(60,40,10,.2))")}"></div>
+      <div style="${at(40, 18, 820, 0, "border-top:3px dashed rgba(90,70,40,.5)")}"></div></div>`;
+  const pen = pencil({ x: 360, y: 1250, len: 460, rot: -5, body: "#7a4b8a", band: "#c3c3c9", tip: "#e9c9a0" });
+  const scene = `${floor}${handles}${folderBack}${paper}${folderFront}${toteFront}${pen}`;
+  return printable({ n, paper: "#f1e6d0", scene });
 }
 
 /* ============================================================ #98 quote card */
