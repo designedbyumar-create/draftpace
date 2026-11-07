@@ -51,7 +51,7 @@ function pin24() {
   const i = idea(24);
   const [bookH, startedH, finH, t1, s1, f1, t2, s2, f2] = i.items;
   const ink = "#2c3552";
-  const PW = 800, X = 70, Y = 428;
+  const PW = 800, X = 100, Y = 446;
   const colW = [244, 150, 306];
   const inner = 52;
   const ROW0 = 258, ROWH = 100, ROWS = 8;
@@ -68,7 +68,7 @@ function pin24() {
   const rx0 = inner + colW[0] + colW[1] + 4;
   const ringBox = { w: 270, h: 70 };
   const stoppedRing = `<svg style="${abs(rx0 + 2, rowTop(1) + 14, ringBox.w + 40, ringBox.h + 30, "overflow:visible")}" viewBox="0 0 ${ringBox.w + 40} ${ringBox.h + 30}" aria-hidden="true"><path d="${ring(ringBox.w + 24, ringBox.h + 14, 4, 6)}" transform="translate(8 8)" fill="none" stroke="${C.plum}" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" opacity=".92"/></svg>`;
-  const page = `<div data-check="page" style="${abs(X, Y, PW, 1000, "background:#fbfaf7;transform:rotate(1.6deg);transform-origin:50% 0;box-shadow:0 2px 3px rgba(20,35,25,.3),0 22px 38px rgba(10,25,15,.45),0 46px 70px -20px rgba(10,25,15,.5);z-index:2")}">
+  const page = `<div data-check="page" style="${abs(X, Y, PW, 1000, "background:#fbfaf7;transform:rotate(1.6deg) scale(.94);transform-origin:50% 0;box-shadow:0 2px 3px rgba(20,35,25,.3),0 22px 38px rgba(10,25,15,.45),0 46px 70px -20px rgba(10,25,15,.5);z-index:2")}">
     <div style="${abs(0, 0, PW, 10, `background:${C.plum}`)}"></div>
     <div style="${abs(inner, 52, 520, 90, "font:400 70px/1.15 'Newsreader',serif;color:#1d1d20;white-space:nowrap")}">The reading log</div>
     <div style="${abs(PW - inner - 150, 64, 150, 46, "z-index:3;transform:rotate(3deg)")}"><span class="example" style="display:inline-block;border:none">Example</span></div>
@@ -86,11 +86,11 @@ function pin24() {
   const daisies = [[60, 150], [940, 560], [30, 1010], [960, 930], [900, 70]].map(([x, y]) => `<g transform="translate(${x} ${y})">${[0, 60, 120, 180, 240, 300].map((a2) => `<ellipse cx="0" cy="-13" rx="5" ry="11" fill="#fffdf4" transform="rotate(${a2})"/>`).join("")}<circle r="6" fill="#e9b94a"/></g>`).join("");
   const lawn = `<div style="${abs(0, SCENE_TOP, 1000, SH, "background:linear-gradient(180deg,#78a257,#6a9a4e)")}"></div>
     <svg style="${abs(0, SCENE_TOP, 1000, SH)}" viewBox="0 0 1000 ${SH}" aria-hidden="true">${blades}${daisies}</svg>`;
-  const blanket = `<div style="${abs(-60, SCENE_TOP + 34, 1120, SH + 120, "transform:rotate(2.2deg);transform-origin:50% 0;background:repeating-linear-gradient(90deg,#c9694b 0 70px,#f2e6cf 70px 84px,#c9694b 84px 154px,#e0b04f 154px 164px,#c9694b 164px 230px);box-shadow:0 3px 4px rgba(20,35,10,.35),0 22px 34px rgba(20,35,10,.4);z-index:1")}">
-      <div style="${abs(0, 0, 1120, SH + 120, "background:repeating-linear-gradient(0deg,rgba(0,0,0,.06) 0 2px,rgba(255,255,255,.05) 2px 5px),radial-gradient(ellipse at 30% 10%,rgba(255,255,255,.14),rgba(60,20,5,.3))")}"></div>
-      <div style="${abs(0, -16, 1120, 18, "background:repeating-linear-gradient(90deg,#e9dcc0 0 5px,transparent 5px 10px);opacity:.9")}"></div></div>`;
+  const blanket = `<div style="${abs(60, SCENE_TOP + 40, 880, SH + 120, "transform:rotate(2.2deg);transform-origin:50% 0;background:repeating-linear-gradient(90deg,#c9694b 0 70px,#f2e6cf 70px 84px,#c9694b 84px 154px,#e0b04f 154px 164px,#c9694b 164px 230px);box-shadow:0 3px 4px rgba(20,35,10,.35),0 22px 34px rgba(20,35,10,.4);z-index:1")}">
+      <div style="${abs(0, 0, 880, SH + 120, "background:repeating-linear-gradient(0deg,rgba(0,0,0,.06) 0 2px,rgba(255,255,255,.05) 2px 5px),radial-gradient(ellipse at 30% 10%,rgba(255,255,255,.14),rgba(60,20,5,.3))")}"></div>
+      <div style="${abs(0, -16, 880, 18, "background:repeating-linear-gradient(90deg,#e9dcc0 0 5px,transparent 5px 10px);opacity:.9")}"></div></div>`;
   // a library book lying half on the page, half on the blotter (seen from above, spine at the left)
-  const book = `<svg style="${abs(716, 1010, 420, 300, "transform:rotate(11deg);filter:drop-shadow(0 4px 4px rgba(10,25,15,.4)) drop-shadow(0 20px 22px rgba(10,25,15,.45));z-index:4")}" viewBox="0 0 420 300" aria-hidden="true">
+  const book = `<svg style="${abs(736, 1020, 420, 300, "transform:rotate(11deg);filter:drop-shadow(0 4px 4px rgba(10,25,15,.4)) drop-shadow(0 20px 22px rgba(10,25,15,.45));z-index:4")}" viewBox="0 0 420 300" aria-hidden="true">
     <rect x="14" y="14" width="396" height="282" rx="6" fill="#efe6d0"/><rect x="6" y="6" width="396" height="280" rx="8" fill="#2f6a73"/>
     <rect x="6" y="6" width="42" height="280" rx="8" fill="#234f57"/><rect x="48" y="6" width="3" height="280" fill="#000" opacity=".2"/>
     <rect x="76" y="34" width="298" height="224" rx="4" fill="none" stroke="#d9b36a" stroke-width="3"/>
