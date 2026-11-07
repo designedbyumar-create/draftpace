@@ -68,7 +68,7 @@ function pin8() {
     <rect x="884" y="470" width="14" height="40" fill="#8e949b"/><rect x="884" y="1010" width="14" height="40" fill="#8e949b"/></svg>`;
 
   const strikeBox = (x, y, s = 74) => `<svg style="${abs(x, y, s, s)}" viewBox="0 0 74 74" aria-hidden="true"><path d="M8 10 L66 8 L64 66 L10 64 Z" fill="#fffdf6" stroke="#2c2540" stroke-width="5" stroke-linejoin="round"/><path d="M14 16 L60 60 M60 14 L16 60" stroke="#b4472f" stroke-width="7" stroke-linecap="round"/></svg>`;
-  const txt = (t, size, w, extra = "") => `<div data-check="item" class="hand" style="${abs(150, 0, w, 0, `height:auto;top:50%;transform:translateY(-50%);font-size:${size}px;line-height:1;font-weight:700;color:#2c2540;text-decoration:line-through;text-decoration-color:#b4472f;text-decoration-thickness:6px;${extra}`)}">${esc(t)}</div>`;
+  const txt = (t, size, w, extra = "") => `<div data-check="item" class="hand" style="position:absolute;left:150px;width:${w}px;`+`${(`top:50%;transform:translateY(-50%);font-size:${size}px;line-height:1;font-weight:700;color:#2c2540;text-decoration:line-through;text-decoration-color:#b4472f;text-decoration-thickness:6px;${extra}`)}">${esc(t)}</div>`;
 
   const kraft = `<div style="${abs(70, 428, 770, 250, `transform:rotate(-1.6deg);filter:${SHADOW}`)}">
     <div style="${abs(0, 0, 770, 250, "background:#cda877;border-radius:6px")}"><div style="${abs(0, 0, 770, 250, "background:repeating-linear-gradient(180deg,transparent 0 56px,rgba(80,50,20,.18) 56px 58px);top:34px;height:216px")}"></div>

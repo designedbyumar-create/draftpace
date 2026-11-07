@@ -25,10 +25,11 @@ const magnet = (x, y, color, d = 56) =>
 
 function pin17() {
   const i = idea(17);
-  const offs = [0, 90, 20, 100, 10];
+  const offs = [0, 60, 10, 50, 0];
+  const widths = [740, 760, 640, 700, 500];
   const rots = [-1.2, 1, -0.8, 1.3, -1];
   const mags = ["#d9694f", "#e0a95a", "#7fa08a", "#7a4b8a", "#4f6c8c"];
-  const cards = i.items.map((t, k) => `<div class="icard serif" style="margin-left:${offs[k]}px;${k === 4 ? "width:500px;" : ""}transform:rotate(${rots[k]}deg)">
+  const cards = i.items.map((t, k) => `<div class="icard serif" style="margin-left:${offs[k]}px;width:${widths[k]}px;transform:rotate(${rots[k]}deg)">
       <span style="position:absolute;left:50%;top:-26px;margin-left:-28px;width:56px;height:56px;border-radius:50%;background:radial-gradient(circle at 34% 28%,rgba(255,255,255,.65),${mags[k]} 36%,${mags[k]});box-shadow:0 3px 3px rgba(20,30,40,.35),0 10px 10px rgba(20,30,40,.25)"></span>${esc(t)}</div>`).join("");
   const scene = `
   <div style="${abs(0, SCENE_TOP, 1000, 1500 - SCENE_TOP, "background:linear-gradient(90deg,#a9c4cf 0,#bcd5de 6%,#c9dfe6 36%,#bdd6df 64%,#aac5d0 100%)")}"></div>
@@ -38,8 +39,8 @@ function pin17() {
   <div style="${abs(94, 540, 38, 18, "background:#8d9399;border-radius:3px;box-shadow:4px 6px 6px rgba(30,45,55,.3)")}"></div>
   <div style="${abs(94, 1160, 38, 18, "background:#8d9399;border-radius:3px;box-shadow:4px 6px 6px rgba(30,45,55,.3)")}"></div>
   <div class="stack">${cards}</div>
-  ${drawing({ x: 720, y: 1150, w: 220, rot: 4 })}
-  ${magnet(830, 1150, "#e0a95a")}
+  ${drawing({ x: 700, y: 1168, w: 230, rot: 4 })}
+  ${magnet(820, 1172, "#e0a95a")}
   <div style="${abs(766, 408, 190, 64, "background:#fffdf6;border-radius:6px;transform:rotate(2deg);box-shadow:0 2px 3px rgba(20,30,40,.25),0 12px 18px rgba(20,30,40,.3);display:grid;place-items:center;z-index:3")}"><span class="example" style="font-size:24px;padding:5px 12px;color:#4b4339">Example</span></div>
   ${magnet(861, 410, "#d9694f", 46)}`;
   return printable({
@@ -48,11 +49,11 @@ function pin17() {
     paper: "#f4eee4",
     extraCss: `
     .top{top:52px}.top h1{font-size:78px}.top p{font-size:26px;margin-top:12px}
-    .stack{position:absolute;left:150px;top:446px;width:810px;display:flex;flex-direction:column;gap:30px;z-index:4}
+    .stack{position:absolute;left:130px;top:446px;width:830px;display:flex;flex-direction:column;gap:28px;z-index:4}
     .icard{position:relative;width:640px;padding:48px 30px 12px;background:
       linear-gradient(#d2584a,#d2584a) 0 36px/100% 3px no-repeat,
-      repeating-linear-gradient(transparent 0 42px,#aac3d3 42px 44px) 0 48px/100% 100% no-repeat,#fffdf6;
-      font-size:36px;line-height:44px;color:#26221d;border-radius:6px;box-shadow:0 2px 3px rgba(20,30,40,.25),0 14px 22px rgba(20,30,40,.3)}`,
+      repeating-linear-gradient(transparent 0 40px,#aac3d3 40px 42px) 0 48px/100% 100% no-repeat,#fffdf6;
+      font-size:34px;line-height:42px;color:#26221d;border-radius:6px;box-shadow:0 2px 3px rgba(20,30,40,.25),0 14px 22px rgba(20,30,40,.3)}`,
   });
 }
 
