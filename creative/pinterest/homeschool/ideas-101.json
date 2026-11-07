@@ -1,0 +1,3844 @@
+[
+  {
+    "slice": "rules",
+    "angle": "question",
+    "headline": "Homeschool Days or Hours: Does Your State Even Count Them?",
+    "sub": "Some US states set a number: a count of days, a count of hours, or both.",
+    "items": [
+      "180 days, or 900 hours elementary, or 990 hours secondary",
+      "No day or hour minimum in state guidance"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "do-you-have-to-count-homeschool-days-or-hours"
+    },
+    "proof": [
+      "Some US states set a number: a count of days, a count of hours, or both.",
+      "180 days, or 900 hours elementary, or 990 hours secondary",
+      "No day or hour minimum in state guidance"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "do you have to count homeschool days or hours",
+    "board": "Homeschool Attendance",
+    "when": "evergreen; August to October as families start",
+    "visual": "Index-cards archetype on a kitchen-table cream background: a big handwritten-style question on the top card, two smaller cards below labelled with the guide's own two example shapes (a count exists / no count is set), no state names needed on the cards. Free guide strip at the foot.",
+    "flags": [],
+    "reserve": false,
+    "n": 1
+  },
+  {
+    "slice": "records",
+    "angle": "template-preview",
+    "headline": "Homeschool Record Keeping Template: Three Columns to Copy",
+    "sub": "Copy this into whatever you already open every day.",
+    "items": [
+      "Date",
+      "Subject and where you are",
+      "How it went",
+      "Math, Unit 3, Lesson 12",
+      "Difficult"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-template"
+    },
+    "proof": [
+      "Copy this into whatever you already open every day.",
+      "Subject and where you are",
+      "Math, Unit 3, Lesson 12",
+      "How it went"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool record keeping template",
+    "board": "Homeschool Record Keeping",
+    "when": "evergreen; peaks Aug-Sep and Jan",
+    "visual": "template-preview on cream ruled paper (working-page archetype): a three-column table with the column heads Date / Subject and where you are / How it went and one filled example row (Oct 14, Math, Unit 3, Lesson 12, Difficult), pencil laid across the foot. Free-guide tag.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 2
+  },
+  {
+    "slice": "rules",
+    "angle": "how-to-steps",
+    "headline": "Just Pulled Your Kids Out of School? Do These 5 Things in Order",
+    "sub": "Withdraw formally and request records if your child is already enrolled somewhere.",
+    "items": [
+      "Find your state's rules",
+      "Withdraw, if enrolled",
+      "Request the records",
+      "File what's due",
+      "Start a record"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-start-homeschooling-first-month-paperwork"
+    },
+    "proof": [
+      "withdraw formally and request records if your child is already enrolled somewhere",
+      "Find your state's rules",
+      "Withdraw, if enrolled",
+      "Request the records",
+      "File what's due",
+      "Start a record"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "just pulled my kids out of school what now homeschool",
+    "board": "How to Start Homeschooling",
+    "when": "evergreen; peaks August to October and January",
+    "visual": "Numbered 1 to 5 on a cork board, one kraft index card pinned per step, a pencil and a mug at the edge; the first-timer 'what now' moment. Free guide strip at the foot.",
+    "flags": [],
+    "reserve": false,
+    "n": 3
+  },
+  {
+    "slice": "records",
+    "angle": "mockup-printable",
+    "headline": "Homeschool Daily Log Printable: When, What and How It Went",
+    "sub": "What actually happened, written the same day.",
+    "items": [
+      "Date",
+      "Subject",
+      "What we did",
+      "How it went"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "proof": [
+      "What actually happened, written the same day.",
+      "Working page, print as many as you need",
+      "How it went"
+    ],
+    "proofFile": "src/products/homeschooling-companion/printables/handbook.tsx",
+    "query": "homeschool daily log printable",
+    "board": "Homeschool Planner Printables",
+    "when": "evergreen; peaks Aug-Sep",
+    "visual": "mockup-printable: the REAL daily log page of The Homeschool Year (book PDF page 14, 'The daily log', four column heads, ruled rows left empty) printed on a clipboard on an oak table, tilted about 6 degrees, a pencil and a mug beside it. Product line (with price) at the foot, no price in the headline.",
+    "flags": [],
+    "reserve": false,
+    "n": 4
+  },
+  {
+    "slice": "rules",
+    "angle": "checklist",
+    "headline": "Homeschool Notice of Intent Checklist: What to Have Ready Before You Fill It Out",
+    "sub": null,
+    "items": [
+      "The child's full legal name, spelled exactly as on their birth certificate.",
+      "Date of birth or age, and grade if your state's form asks for it.",
+      "The family's home address.",
+      "The parent or instructor's name.",
+      "A short statement that the child will be taught at home. Most states want this plain, not a description of your curriculum."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-notice-of-intent-explained"
+    },
+    "proof": [
+      "The child's full legal name, spelled exactly as on their birth certificate.",
+      "Date of birth or age, and grade if your state's form asks for it.",
+      "The family's home address.",
+      "The parent or instructor's name.",
+      "A short statement that the child will be taught at home. Most states want this plain, not a description of your curriculum."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool notice of intent checklist",
+    "board": "Homeschool Requirements by State",
+    "when": "evergreen; before the start of the school year",
+    "visual": "Check-clipboard archetype: a clipboard with five empty tick boxes and the five lines in a plain printed list, a pen clipped on, oak desk behind. Free guide strip at the foot.",
+    "flags": [],
+    "reserve": false,
+    "n": 5
+  },
+  {
+    "slice": "records",
+    "angle": "how-to-steps",
+    "headline": "How to Catch Up on Homeschool Records in One Evening",
+    "sub": "Set a timer. Most of this takes under 90 minutes.",
+    "items": [
+      "Minutes 0 to 20: Gather workbooks, receipts and your phone. Sort photos by date, newest first.",
+      "Minutes 20 to 40: Write one line per subject per week you can place: date range, subject, how far you got.",
+      "Minutes 40 to 60: Add library and calendar entries as reading and co-op days. Mark anything approximate as approximate.",
+      "Minutes 60 to 75: Check what your state actually asks for before doing any more than that.",
+      "Minutes 75 to 90: Record today's session properly, so tomorrow starts the habit instead of another gap."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-catch-up-on-homeschool-records"
+    },
+    "proof": [
+      "Set a timer. Most of this takes under 90 minutes.",
+      "Minutes 0 to 20",
+      "Minutes 20 to 40",
+      "Minutes 40 to 60",
+      "Minutes 60 to 75",
+      "Minutes 75 to 90",
+      "Gather workbooks, receipts and your phone. Sort photos by date, newest first.",
+      "Write one line per subject per week you can place: date range, subject, how far you got.",
+      "Add library and calendar entries as reading and co-op days. Mark anything approximate as approximate.",
+      "Check what your state actually asks for before doing any more than that.",
+      "Record today's session properly, so tomorrow starts the habit instead of another gap."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to catch up on homeschool records",
+    "board": "Homeschool Mid-Year Reset",
+    "when": "Jan, Feb, May-Jun (before reviews), evergreen",
+    "visual": "how-to-steps: five numbered index cards fanned on a kitchen table (index-cards archetype), a kitchen timer and a phone at the edge; each card carries its minute range in bold. Free-guide tag.",
+    "flags": [],
+    "reserve": false,
+    "n": 6
+  },
+  {
+    "slice": "rules",
+    "angle": "myth-vs-truth",
+    "headline": "Homeschool Notice of Intent: No Notice Does Not Mean No Rules",
+    "sub": null,
+    "items": [
+      "Myth: no filing means no rules at all",
+      "Truth: No notice is not the same as no requirements."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-notice-of-intent-explained"
+    },
+    "proof": [
+      "Assuming a state with no filing has no rules at all",
+      "No notice is not the same as no requirements."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "do you have to notify the state you are homeschooling",
+    "board": "Homeschool Requirements by State",
+    "when": "evergreen",
+    "visual": "Two-column myth-vs-truth card: left column crossed-out myth on a crumpled kraft slip, right column the truth on cream paper with a plum rule. No state names, no map. Free guide strip at the foot.",
+    "flags": [],
+    "reserve": false,
+    "n": 7
+  },
+  {
+    "slice": "records",
+    "angle": "checklist",
+    "headline": "Homeschool Record Keeping: What to Leave Off the Page",
+    "sub": "A plain record you keep all year is worth more than a detailed one you keep for three.",
+    "items": [
+      "Hours, unless your state's note says otherwise.",
+      "Color coding.",
+      "A written paragraph per child, per day."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-template"
+    },
+    "proof": [
+      "a plain record you keep all year is worth more than a detailed one you keep for three.",
+      "Hours, unless your state's note says otherwise.",
+      "Color coding.",
+      "A written paragraph per child, per day."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to include in homeschool records",
+    "board": "Homeschool Record Keeping",
+    "when": "evergreen; Aug-Sep, Jan",
+    "visual": "checklist on a kraft index card pinned to cork: three items each with a hand-drawn strike-through box (crossed off, not ticked), headline above. Strike marks only, no icons per row. Free-guide tag.",
+    "flags": [],
+    "reserve": false,
+    "n": 8
+  },
+  {
+    "slice": "rules",
+    "angle": "infographic",
+    "headline": "The 4 Levels of Homeschool Regulation, Explained in Plain English",
+    "sub": "This is our own summary, sorted by how much a state's law asks you to file or produce",
+    "items": [
+      "None, 8 states: nothing is filed with the state. Records are for your own use.",
+      "Low, 15 states: a notice is typically filed, and basic records are kept, with no ongoing review.",
+      "Moderate, 19 states: notice plus some form of annual reporting or testing is typically required.",
+      "High, 9 states: a portfolio or a formal annual assessment is typically part of the law, not just a good habit."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-requirements-by-state"
+    },
+    "proof": [
+      "This is our own summary, sorted by how much a state's law asks you to file or produce",
+      "None, 8 states: nothing is filed with the state. Records are for your own use.",
+      "Low, 15 states: a notice is typically filed, and basic records are kept, with no ongoing review.",
+      "Moderate, 19 states: notice plus some form of annual reporting or testing is typically required.",
+      "High, 9 states: a portfolio or a formal annual assessment is typically part of the law, not just a good habit."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool laws by state levels of regulation",
+    "board": "Homeschool Requirements by State",
+    "when": "evergreen",
+    "visual": "Four stacked steps of increasing height (None, Low, Moderate, High) in tints of plum, each with its guide line beside it; small caption 'Laws change. Confirm with your state before relying on this.' (the product's own line). Not a map, no individual states. Free guide strip at the foot.",
+    "flags": [],
+    "reserve": false,
+    "n": 9
+  },
+  {
+    "slice": "records",
+    "angle": "myth-vs-truth",
+    "headline": "Why Homeschool Record Keeping Stalls: Habits to Stop",
+    "sub": "Every one of these feels reasonable in September.",
+    "items": [
+      "Writing it from memory at the end of the week, instead of right after the lesson.",
+      "Keeping it somewhere that isn't already open or already in your hand.",
+      "Letting one missed day turn into two, then a blank month.",
+      "Deciding you'll catch up on it later, which tends to become never.",
+      "Waiting for the day to go well before it seems worth writing down."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "simple-homeschool-record-keeping-system"
+    },
+    "proof": [
+      "Every one of these feels reasonable in September.",
+      "Writing it from memory at the end of the week, instead of right after the lesson.",
+      "Keeping it somewhere that isn't already open or already in your hand.",
+      "Letting one missed day turn into two, then a blank month.",
+      "Deciding you'll catch up on it later, which tends to become never.",
+      "Waiting for the day to go well before it seems worth writing down."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "why homeschool record keeping doesn't work",
+    "board": "Homeschool Record Keeping",
+    "when": "Oct-Nov (when systems die), Jan",
+    "visual": "stop-doing-this layout: five habits each stamped with a red-brown 'STOP' tick on a torn lined page, a small crossed-out 'later' note in the corner. Free-guide tag.",
+    "flags": [],
+    "reserve": false,
+    "n": 10
+  },
+  {
+    "slice": "rules",
+    "angle": "quote-card",
+    "headline": "Homeschool Attendance Log: Mark the Day as You Go, Not in June",
+    "sub": null,
+    "items": [
+      "marking a day as you go, on the day, takes seconds and is more accurate than any total you rebuild from memory in June"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "do-you-have-to-count-homeschool-days-or-hours"
+    },
+    "proof": [
+      "marking a day as you go, on the day, takes seconds and is more accurate than any total you rebuild from memory in June"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool attendance log how to keep",
+    "board": "Homeschool Attendance",
+    "when": "evergreen; spring when families realise they are behind",
+    "visual": "Quote-card on cream paper: the sentence in large serif type with 'June' picked out in plum, a single pencil drawn across the bottom, a corner of a days-schooled grid peeking in. Free guide strip at the foot.",
+    "flags": [],
+    "reserve": false,
+    "n": 11
+  },
+  {
+    "slice": "records",
+    "angle": "comparison",
+    "headline": "Homeschool Records for Multiple Children: One Page or One Per Child?",
+    "sub": "Keep one record per child, never one record shared by two.",
+    "items": [
+      "One shared page: Splitting a shared page apart later means reading back through weeks of entries and guessing which line belonged to whom.",
+      "One record per child: Start one record per child from the first entry.",
+      "One record per child: Print one child at a time."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-for-multiple-children"
+    },
+    "proof": [
+      "Keep one record per child, never one record shared by two.",
+      "Splitting a shared page apart later means reading back through weeks of entries and guessing which line belonged to whom.",
+      "Start one record per child from the first entry.",
+      "Print one child at a time."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool record keeping multiple children",
+    "board": "Homeschool Record Keeping",
+    "when": "Aug-Sep, Jan; evergreen",
+    "visual": "comparison split: left a single page with two children's lines tangled together (strike marks), right two separate tidy folders each labelled with a child's name tab (portfolio-binder archetype). Free-guide tag.",
+    "flags": [],
+    "reserve": false,
+    "n": 12
+  },
+  {
+    "slice": "rules",
+    "angle": "before-after",
+    "headline": "Homeschool Notice of Intent: Mail It So You Can Prove You Sent It",
+    "sub": null,
+    "items": [
+      "Before: a lost form with no proof of sending is a hard thing to argue about later",
+      "After: Send it by certified mail with a return receipt if it is going by paper, and keep the receipt and a copy of what you sent."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-notice-of-intent-explained"
+    },
+    "proof": [
+      "a lost form with no proof of sending is a hard thing to argue about later",
+      "Send it by certified mail with a return receipt if it is going by paper, and keep the receipt and a copy of what you sent."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to file homeschool notice of intent",
+    "board": "Homeschool Requirements by State",
+    "when": "evergreen; before the start of the school year",
+    "visual": "Split card: left half a plain envelope with nothing kept, right half the same envelope with a receipt stub and a photocopy clipped beside it on a kitchen table. Free guide strip at the foot.",
+    "flags": [],
+    "reserve": false,
+    "n": 13
+  },
+  {
+    "slice": "records",
+    "angle": "scenario",
+    "headline": "Homeschooling Two Kids: One Read-Aloud, Two Records",
+    "sub": "Two lines for the shared part, one apiece.",
+    "items": [
+      "Maya, age 10",
+      "History, chapter read-aloud",
+      "Easy. Asked to keep reading past the stop point.",
+      "Leo, age 7",
+      "History, chapter read-aloud",
+      "About right. Sat through the whole thing, which is new for him."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-for-multiple-children"
+    },
+    "proof": [
+      "Maya, age 10",
+      "Leo, age 7",
+      "History, chapter read-aloud",
+      "Maya and Leo sat through the same read-aloud chapter, then split off for math. Two lines for the shared part, one apiece.",
+      "Easy. Asked to keep reading past the stop point.",
+      "About right. Sat through the whole thing, which is new for him."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to keep homeschool records for two kids",
+    "board": "Homeschool Record Keeping",
+    "when": "evergreen; Aug-Sep",
+    "visual": "scenario: a child's drawing of a chapter book at the top, below it two entry cards side by side, one headed Maya, age 10 and one Leo, age 7, each in its own handwriting. Home-scene warmth, oak table. The names are the guide's own made-up example; label it as an example on the pin. Free-guide tag.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 14
+  },
+  {
+    "slice": "rules",
+    "angle": "comparison",
+    "headline": "Homeschool Notice of Intent: One-Time to the District or Annual to the State",
+    "sub": "They show the two shapes a notice can take: a one-time filing to a district, or an annual filing to the state.",
+    "items": [
+      "Florida: one-time, to the district",
+      "Name, date of birth, address",
+      "Filed within 30 days of starting",
+      "Goes to the district superintendent",
+      "New Mexico: annual, to the state",
+      "Registered online or on paper",
+      "Renewed every year, June 1 to August 1",
+      "Goes to the state education department"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-notice-of-intent-explained"
+    },
+    "proof": [
+      "They show the two shapes a notice can take: a one-time filing to a district, or an annual filing to the state.",
+      "Florida: one-time, to the district",
+      "Name, date of birth, address",
+      "Filed within 30 days of starting",
+      "Goes to the district superintendent",
+      "New Mexico: annual, to the state",
+      "Registered online or on paper",
+      "Renewed every year, June 1 to August 1",
+      "Goes to the state education department"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool notice of intent annual or one time",
+    "board": "Homeschool Requirements by State",
+    "when": "evergreen",
+    "visual": "Side-by-side two-column comparison card, the guide's own 'two real states' pair, in plum and kraft, with the two shapes named large and the states small. Free guide strip at the foot.",
+    "flags": [],
+    "reserve": false,
+    "n": 15
+  },
+  {
+    "slice": "records",
+    "angle": "before-after",
+    "headline": "Simple Homeschool Record Keeping: From Memory to Right After the Lesson",
+    "sub": "Written right after the lesson, not from memory.",
+    "items": [
+      "Before: Writing it from memory at the end of the week, instead of right after the lesson.",
+      "After: Write it in under a minute, right after the lesson.",
+      "The date, the subject and roughly where you are in it, and one word on how it went."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "simple-homeschool-record-keeping-system"
+    },
+    "proof": [
+      "Writing it from memory at the end of the week, instead of right after the lesson.",
+      "Write it in under a minute, right after the lesson, or you'll rebuild it from memory later and get it wrong.",
+      "the date, the subject and roughly where you are in it, and one word on how it went.",
+      "written right after the lesson, not from memory."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "simple homeschool record keeping system",
+    "board": "Homeschool Record Keeping",
+    "when": "Aug-Sep, Jan",
+    "visual": "before-after: left, a crumpled sheet of Friday-night memory scribbles; right, a clean three-line entry on a ruled page with a pencil still on it. Cream and oak, plum accent on the 'after' label. Free-guide tag.",
+    "flags": [],
+    "reserve": false,
+    "n": 16
+  },
+  {
+    "slice": "rules",
+    "angle": "scenario",
+    "headline": "How to Start Homeschooling Next Monday: One Family's First Two Weeks",
+    "sub": "Say you decide on a Tuesday that your nine-year-old will finish out the week at school and start homeschooling the following Monday.",
+    "items": [
+      "That Tuesday, you find your state's page and write down what it actually asks for.",
+      "Wednesday, you write and hand-deliver a withdrawal letter to the school office, and ask the secretary to sign and date your copy.",
+      "Thursday, you send a separate letter asking for your child's records",
+      "By Friday, you know whether your state also wants a notice of intent",
+      "The following Monday, you start."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-start-homeschooling-first-month-paperwork"
+    },
+    "proof": [
+      "Say you decide on a Tuesday that your nine-year-old will finish out the week at school and start homeschooling the following Monday.",
+      "That Tuesday, you find your state's page and write down what it actually asks for.",
+      "Wednesday, you write and hand-deliver a withdrawal letter to the school office, and ask the secretary to sign and date your copy.",
+      "Thursday, you send a separate letter asking for your child's records",
+      "By Friday, you know whether your state also wants a notice of intent",
+      "The following Monday, you start."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to start homeschooling mid year",
+    "board": "Homeschool Mid-Year Reset",
+    "when": "evergreen; January and the weeks after a hard fall",
+    "visual": "Week-board archetype: a Tuesday-to-Monday strip on a cork board with a small note per day, a child's drawing pinned at the corner. Marked as the guide's own example.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 17
+  },
+  {
+    "slice": "records",
+    "angle": "quote-card",
+    "headline": "Homeschool Records: A Plan Is Not a Record",
+    "sub": "The Homeschool Year, chapter 02: What to write down, and what to leave alone",
+    "items": [
+      "A plan is not a record. A record is what happened, and its whole value is that it is true."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "proof": [
+      "Do not record what you meant to do. A plan is not a record. A record is what happened, and its whole value is that it is true.",
+      "What to write down, and what to leave alone"
+    ],
+    "proofFile": "src/products/homeschooling-companion/printables/handbookContent.ts",
+    "query": "homeschool record keeping tips",
+    "board": "Homeschool Record Keeping",
+    "when": "evergreen",
+    "visual": "quote-card: the sentence set large in a serif on cream paper, like a page of the printed book, plum rule above, the chapter label small below. Optional corner of the book page (PDF page 6) peeking in. Product line at the foot.",
+    "flags": [],
+    "reserve": false,
+    "n": 18
+  },
+  {
+    "slice": "rules",
+    "angle": "comparison",
+    "headline": "Homeschool Withdrawal Letter vs Records Request: You Need Two Letters",
+    "sub": "A withdrawal letter and a records request do different jobs.",
+    "items": [
+      "Withdrawal letter: Your child is leaving, as of a date you set",
+      "Records request: Send the cumulative file: transcripts, test results, health and any IEP records",
+      "The school office, hand-delivered if you can",
+      "The same office, as a separate letter"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-start-homeschooling-first-month-paperwork"
+    },
+    "proof": [
+      "A withdrawal letter and a records request do different jobs.",
+      "Your child is leaving, as of a date you set",
+      "Send the cumulative file: transcripts, test results, health and any IEP records",
+      "The school office, hand-delivered if you can",
+      "The same office, as a separate letter"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool withdrawal letter and records request",
+    "board": "How to Start Homeschooling",
+    "when": "evergreen; August to October and January",
+    "visual": "Two sheets of notepaper side by side on oak, one headed 'Withdrawal letter', one 'Records request', each with the guide's one-line job and where it goes. Free guide strip at the foot.",
+    "flags": [],
+    "reserve": false,
+    "n": 19
+  },
+  {
+    "slice": "records",
+    "angle": "question",
+    "headline": "How Long Should You Keep Homeschool Records?",
+    "sub": "A rolling window works: this year's samples plus the two years before them.",
+    "items": [
+      "Any state-required test or evaluation result",
+      "Any letter to or from a school official",
+      "Your own log"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-long-to-keep-homeschool-records"
+    },
+    "proof": [
+      "For most homeschool paperwork, a rolling window works: this year's samples plus the two years before them.",
+      "any state-required test or evaluation result, any letter to or from a school official, and your own log"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how long to keep homeschool records",
+    "board": "Homeschool Portfolio and Evaluation",
+    "when": "May-Jul (end of year clear-out)",
+    "visual": "question card: big question headline over a banker's box with a short stack of papers, a sticky note reading 'keep forever' beside three lines (test result, letter, log). Kraft box, cream background. Free-guide tag. Confirm at your state's own source line at the foot.",
+    "flags": [],
+    "reserve": false,
+    "n": 20
+  },
+  {
+    "slice": "rules",
+    "angle": "checklist",
+    "headline": "Homeschool First Week Checklist: A First Week That Does Not Need a Plan",
+    "sub": null,
+    "items": [
+      "Write your child's name and one subject on a page.",
+      "Each day, note the date and what you did, in a line.",
+      "At the end of the week, look at what happened and note one thing to change."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-start-homeschooling-first-month-paperwork"
+    },
+    "proof": [
+      "A first week that does not need a plan",
+      "Write your child's name and one subject on a page.",
+      "Each day, note the date and what you did, in a line.",
+      "At the end of the week, look at what happened and note one thing to change."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "first week of homeschooling checklist",
+    "board": "Homeschool Mid-Year Reset",
+    "when": "evergreen; August to September and January",
+    "visual": "Check-clipboard archetype: a lined page on a clipboard with three tick boxes and the three lines, one pencil, a child's drawing under the clip. Free guide strip at the foot.",
+    "flags": [],
+    "reserve": false,
+    "n": 21
+  },
+  {
+    "slice": "records",
+    "angle": "comparison",
+    "headline": "What to Keep, Photograph or Recycle From a Homeschool Year",
+    "sub": "A dated photo proves what happened; the object doesn't have to survive to March.",
+    "items": [
+      "A representative sample of daily work: 2 to 3 years",
+      "Your own log of what you did: Permanently",
+      "Large projects, models, science builds: Photograph, then let go",
+      "Curriculum you're finished with: Sell, donate, or recycle"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-long-to-keep-homeschool-records"
+    },
+    "proof": [
+      "A dated photo proves what happened; the object doesn't have to survive to March",
+      "A representative sample of daily work",
+      "2 to 3 years",
+      "Your own log of what you did",
+      "Permanently",
+      "Large projects, models, science builds",
+      "Photograph, then let go",
+      "Curriculum you're finished with",
+      "Sell, donate, or recycle"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to keep from homeschool year",
+    "board": "Homeschool Portfolio and Evaluation",
+    "when": "May-Jul",
+    "visual": "comparison in three piles on an oak table: a labelled folder (Keep), a phone showing a volcano photo (Photograph), a recycling crate (Sell, donate, or recycle), each with its row from the guide's table. Free-guide tag.",
+    "flags": [],
+    "reserve": false,
+    "n": 22
+  },
+  {
+    "slice": "rules",
+    "angle": "question",
+    "headline": "Is a Homeschool Notice of Intent the Same as an Affidavit?",
+    "sub": "Often, yes, just under a different name.",
+    "items": [
+      "Some states call it a notice, some a declaration, and some an affidavit, which usually means it has to be signed under oath or notarized."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-notice-of-intent-explained"
+    },
+    "proof": [
+      "Often, yes, just under a different name. Some states call it a notice, some a declaration, and some an affidavit, which usually means it has to be signed under oath or notarized."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "is a notice of intent the same as an affidavit homeschool",
+    "board": "Homeschool Requirements by State",
+    "when": "evergreen",
+    "visual": "Question card: the question in big type over three index cards labelled notice, declaration, affidavit, with a short answer under them. Free guide strip at the foot.",
+    "flags": [],
+    "reserve": false,
+    "n": 23
+  },
+  {
+    "slice": "records",
+    "angle": "template-preview",
+    "headline": "Homeschool Reading Log Printable: Book, Started, Finished or Stopped",
+    "sub": "That is the whole list.",
+    "items": [
+      "Book",
+      "Started",
+      "Finished or stopped",
+      "Winn-Dixie",
+      "Sep 3",
+      "Sep 11, finished",
+      "Ancient Egypt",
+      "Sep 20",
+      "Sep 22, stopped"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-reading-log"
+    },
+    "proof": [
+      "A homeschool reading log needs three columns: the book, when it was started, and when it was finished or stopped. That is the whole list.",
+      "Winn-Dixie",
+      "Sep 3",
+      "Sep 20",
+      "Sep 11, finished",
+      "Ancient Egypt",
+      "Sep 22, stopped"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool reading log printable",
+    "board": "Homeschool Reading Log",
+    "when": "evergreen; peaks Aug-Sep and summer",
+    "visual": "template-preview: a ruled three-column log on cream paper with three filled rows in a child's handwriting; the 'Sep 22, stopped' row is ringed in plum. Pencil, a library book at the edge. The titles and dates are the guide's own made-up example. Free-guide tag.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 24
+  },
+  {
+    "slice": "rules",
+    "angle": "infographic",
+    "headline": "First Month of Homeschooling: What to File, What to Record, What Can Wait",
+    "sub": null,
+    "items": [
+      "File: Where a notice of intent is required, file it early and keep a copy of what you sent.",
+      "Record: The date, the subject and roughly what part, and one word about how it went, from day one.",
+      "Can wait: Curriculum does not have to be settled in the first week",
+      "Can wait: a schedule does not have to be perfect",
+      "Can wait: a portfolio builds through the year rather than on day one"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-start-homeschooling-first-month-paperwork"
+    },
+    "proof": [
+      "Where a notice of intent is required, file it early and keep a copy of what you sent.",
+      "The date, the subject and roughly what part, and one word about how it went, from day one.",
+      "Curriculum does not have to be settled in the first week",
+      "a schedule does not have to be perfect",
+      "a portfolio builds through the year rather than on day one"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "first month of homeschooling what to do",
+    "board": "How to Start Homeschooling",
+    "when": "evergreen; August to October and January",
+    "visual": "Three-lane board (File, Record, Can wait) on a kraft backing with cream cards, the Can wait lane drawn lighter with a small pencil resting on it. Free guide strip at the foot.",
+    "flags": [],
+    "reserve": false,
+    "n": 25
+  },
+  {
+    "slice": "records",
+    "angle": "mockup-printable",
+    "headline": "Homeschool Reading Log: Every Book, Finished or Abandoned",
+    "sub": "A child who is allowed to stop is a child who keeps starting.",
+    "items": [
+      "Book",
+      "Started",
+      "Finished or stopped"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "proof": [
+      "Every book, finished or abandoned.",
+      "Abandoned books belong on the list: a child who is allowed to stop is a",
+      "child who keeps starting.",
+      "Finished or stopped"
+    ],
+    "proofFile": "src/products/homeschooling-companion/printables/handbook.tsx",
+    "query": "reading log for homeschool kids",
+    "board": "Homeschool Reading Log",
+    "when": "evergreen; summer reading, Aug-Sep",
+    "visual": "mockup-printable: the REAL reading log page of The Homeschool Year (book PDF page 17, 'The reading log', three column heads) in a binder on a kitchen table, tilted, a stack of picture books and a pencil beside it. Product line (with price) at the foot, no price in the headline.",
+    "flags": [],
+    "reserve": false,
+    "n": 26
+  },
+  {
+    "slice": "rules",
+    "angle": "question",
+    "headline": "Homeschooling Paperwork: What Is Actually Required in the First Month?",
+    "sub": "It depends entirely on your state.",
+    "items": [
+      "Some want a notice of intent before you begin, some want nothing filed at all, and if your child was previously enrolled in school, a withdrawal letter is usually expected regardless."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-start-homeschooling-first-month-paperwork"
+    },
+    "proof": [
+      "It depends entirely on your state.",
+      "Some want a notice of intent before you begin, some want nothing filed at all, and if your child was previously enrolled in school, a withdrawal letter is usually expected regardless."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool paperwork what do I need to start",
+    "board": "How to Start Homeschooling",
+    "when": "evergreen; August to October and January",
+    "visual": "Home-scene archetype: a first-year parent's kitchen table with a folder, a mug and a laptop closed; the question large in the sky area, the short answer in a plum band below. Free guide strip at the foot.",
+    "flags": [],
+    "reserve": false,
+    "n": 27
+  },
+  {
+    "slice": "records",
+    "angle": "how-to-steps",
+    "headline": "Homeschool Record Keeping for Multiple Children: Five Steps",
+    "sub": "Set it up so it holds.",
+    "items": [
+      "Start one record per child from the first entry.",
+      "Log a shared lesson once for each child in the room, in that child's own words for how it went.",
+      "Let each child's pace and curriculum stay fully separate.",
+      "Keep a private note tied to the child it is about.",
+      "Print one child at a time."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-for-multiple-children"
+    },
+    "proof": [
+      "Set it up so it holds",
+      "Start one record per child from the first entry.",
+      "Log a shared lesson once for each child in the room, in that child's own words for how it went.",
+      "Let each child's pace and curriculum stay fully separate.",
+      "Keep a private note tied to the child it is about.",
+      "Print one child at a time."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool record keeping multiple children",
+    "board": "Homeschool Record Keeping",
+    "when": "Aug-Sep, Jan",
+    "visual": "how-to-steps: five numbered tabs down the side of a three-ring binder with different child-name tab dividers (portfolio-binder archetype); step text on the pages. Free-guide tag.",
+    "flags": [],
+    "reserve": false,
+    "n": 28
+  },
+  {
+    "slice": "rules",
+    "angle": "myth-vs-truth",
+    "headline": "Homeschool Deschooling: One Month per Year in School Is a Rule of Thumb, Not Research",
+    "sub": "Treat it as a rough guide, not a countdown.",
+    "items": [
+      "give yourselves a stretch of lighter days before diving into a full schedule",
+      "the rule of thumb repeated across their sites, not a research finding, is about one month of adjustment for every year your child spent in a traditional classroom"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-start-homeschooling-first-month-paperwork"
+    },
+    "proof": [
+      "give yourselves a stretch of lighter days before diving into a full schedule",
+      "the rule of thumb repeated across their sites, not a research finding, is about one month of adjustment for every year your child spent in a traditional classroom",
+      "Treat it as a rough guide, not a countdown."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how long should deschooling last homeschool",
+    "board": "Homeschool Mid-Year Reset",
+    "when": "January and August to October",
+    "visual": "Myth-vs-truth card: the 'research says' myth on a crumpled slip, the truth in plain print with a calendar page of light days, kitchen-table light. Free guide strip at the foot.",
+    "flags": [],
+    "reserve": false,
+    "n": 29
+  },
+  {
+    "slice": "records",
+    "angle": "before-after",
+    "headline": "How to Catch Up on Homeschool Records: Mark What You Reconstruct",
+    "sub": "October to December, not a made-up Tuesday.",
+    "items": [
+      "Before: a made-up Tuesday",
+      "After: October to December",
+      "A record that says roughly when something happened is credible."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-catch-up-on-homeschool-records"
+    },
+    "proof": [
+      "Write approximate dates as approximate: October to December, not a made-up Tuesday.",
+      "A record that says roughly when something happened is credible."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to reconstruct homeschool records",
+    "board": "Homeschool Mid-Year Reset",
+    "when": "Jan, Feb, May-Jun",
+    "visual": "before-after: left a ruled line with an invented exact date crossed out; right the same line reading 'October to December' with a small 'reconstructed' stamp. Workbook and phone photos at the edge. Free-guide tag.",
+    "flags": [],
+    "reserve": false,
+    "n": 30
+  },
+  {
+    "slice": "rules",
+    "angle": "how-to-steps",
+    "headline": "How to Find Your State's Homeschool Notice of Intent in 5 Steps",
+    "sub": "Sometimes called a declaration or affidavit.",
+    "items": [
+      "Go to your state department of education's own website and search for home school or home instruction, not a third-party ranking.",
+      "Check whether the notice goes to the state directly or to your local district's superintendent.",
+      "Note whether it is due once or has to be filed again every year, and if so, the exact window.",
+      "Ask a state homeschool organization to point you to the current form.",
+      "Send it by certified mail with a return receipt if it is going by paper, and keep the receipt and a copy of what you sent."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-notice-of-intent-explained"
+    },
+    "proof": [
+      "Sometimes called a declaration or affidavit.",
+      "Go to your state department of education's own website and search for home school or home instruction, not a third-party ranking.",
+      "Check whether the notice goes to the state directly or to your local district's superintendent.",
+      "Note whether it is due once or has to be filed again every year, and if so, the exact window.",
+      "Ask a state homeschool organization to point you to the current form.",
+      "Send it by certified mail with a return receipt if it is going by paper, and keep the receipt and a copy of what you sent."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to find homeschool notice of intent for my state",
+    "board": "Homeschool Requirements by State",
+    "when": "evergreen; before the start of the school year",
+    "visual": "Numbered steps 1 to 5 on a cream page with a pencil-drawn arrow between them; each step cut to its first clause on the pin. Free guide strip at the foot.",
+    "flags": [],
+    "reserve": false,
+    "n": 31
+  },
+  {
+    "slice": "records",
+    "angle": "mockup-printable",
+    "headline": "Homeschool Journal Page: Things Worth Remembering",
+    "sub": "Not what was taught: what happened.",
+    "items": [
+      "The page you will be glad of in three years.",
+      "Not what was taught: what happened.",
+      "Write these the day they happen."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "proof": [
+      "The page you will be glad of in three years.",
+      "Not what was taught: what happened.",
+      "Write these the day they happen.",
+      "Things worth remembering"
+    ],
+    "proofFile": "src/products/homeschooling-companion/printables/handbook.tsx",
+    "query": "homeschool journal printable",
+    "board": "Homeschool Planner Printables",
+    "when": "evergreen; end of year, Dec",
+    "visual": "mockup-printable: the REAL 'Things worth remembering' page of The Homeschool Year (book PDF page 18) lying on a desk beside a cup of pencils and a child's drawing, tilted. Product line (with price) at the foot, no price in the headline.",
+    "flags": [],
+    "reserve": false,
+    "n": 32
+  },
+  {
+    "slice": "rhythm",
+    "angle": "infographic",
+    "headline": "Four Day Homeschool Week: Three Ways to Lay Out the Days",
+    "sub": "None is the correct one. Pick whichever fits the day you actually have free.",
+    "items": [
+      "Front-loaded: Monday, Tuesday, Wednesday, Thursday. Friday is open for a co-op, a field trip, or errands",
+      "Split around a spare day: Monday, Tuesday, Thursday, Friday. Wednesday is open, so a bad Monday still leaves three days",
+      "Back-loaded: Tuesday, Wednesday, Thursday, Friday. Monday is open, useful when an outside class runs that morning"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "four-day-homeschool-week"
+    },
+    "proof": [
+      "Front-loaded",
+      "Monday, Tuesday, Wednesday, Thursday",
+      "Friday is open for a co-op, a field trip, or errands",
+      "Split around a spare day",
+      "Monday, Tuesday, Thursday, Friday",
+      "Wednesday is open, so a bad Monday still leaves three days",
+      "Back-loaded",
+      "Tuesday, Wednesday, Thursday, Friday",
+      "Monday is open, useful when an outside class runs that morning",
+      "None is the correct one. Pick whichever fits the day you actually have free."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "4 day homeschool week schedule",
+    "board": "Four Day Homeschool Week",
+    "when": "evergreen; peaks Jul-Sep and Jan",
+    "visual": "Three stacked mini week boards on cream paper (week-board archetype), Monday to Friday columns, the taught days filled in plum and the open day left as an empty dashed column labelled with its guide caption. Oak table edge and a pencil at the foot. Free guide tag.",
+    "flags": [],
+    "reserve": false,
+    "n": 33
+  },
+  {
+    "slice": "rules",
+    "angle": "how-to-steps",
+    "headline": "How to Find Out If Your State Counts Homeschool Days or Hours",
+    "sub": "Ten minutes, done once, is enough for most states.",
+    "items": [
+      "Go to your own state's department of education website and search for home school or home education, not a third-party ranking of states.",
+      "Read the section on instructional time specifically.",
+      "If a state homeschool association's page states a different number than the state agency's own page, trust the state agency's page and note the mismatch with a date.",
+      "Write down what you found, with the date you checked it, in the same place you keep the rest of your homeschool paperwork.",
+      "If a search turns up nothing about days or hours at all, treat that as your answer for a state that sets no count, not as a sign you searched wrong."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "do-you-have-to-count-homeschool-days-or-hours"
+    },
+    "proof": [
+      "Ten minutes, done once, is enough for most states.",
+      "Go to your own state's department of education website and search for ",
+      "Read the section on instructional time specifically.",
+      "If a state homeschool association's page states a different number than the state agency's own page, trust the state agency's page and note the mismatch with a date.",
+      "Write down what you found, with the date you checked it, in the same place you keep the rest of your homeschool paperwork.",
+      "If a search turns up nothing about days or hours at all, treat that as your answer for a state that sets no count, not as a sign you searched wrong."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to find homeschool hours requirement for my state",
+    "board": "Homeschool Attendance",
+    "when": "evergreen",
+    "visual": "Numbered steps 1 to 5 as stacked kraft tags on a string, a small clock and calendar sketched in pencil at the corner. Free guide strip at the foot.",
+    "flags": [],
+    "reserve": false,
+    "n": 34
+  },
+  {
+    "slice": "records",
+    "angle": "quote-card",
+    "headline": "Do Not Grade Your Own Child: A Homeschool Record Keeping Rule",
+    "sub": "The Homeschool Year, chapter 02: What not to record",
+    "items": [
+      "Do not grade your own child.",
+      "It is anxiety with a number attached."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "proof": [
+      "Do not grade your own child. A percentage on a piece of work you set, marked by the person who taught it, measured against nothing, is not information. It is anxiety with a number attached.",
+      "What not to record"
+    ],
+    "proofFile": "src/products/homeschooling-companion/printables/handbookContent.ts",
+    "query": "should i grade my homeschooler",
+    "board": "Homeschool Assessment at Home",
+    "when": "evergreen",
+    "visual": "quote-card: the two sentences in large serif on cream paper with a thin plum rule, chapter label small below. Quiet, no props. Product line at the foot.",
+    "flags": [],
+    "reserve": false,
+    "n": 35
+  },
+  {
+    "slice": "rhythm",
+    "angle": "infographic",
+    "headline": "Homeschool Schedule: How Many Days a Week Does Each Subject Need?",
+    "sub": "One family's split, not a rule. Change every number to fit your child.",
+    "items": [
+      "Math, 4 days: Needs steady practice to hold",
+      "Reading, 4 days: Same reason as math",
+      "Writing, 3 days: Holds up fine with a day off between sessions",
+      "Science, 2 days: A unit or an experiment doesn't need daily time",
+      "History, 2 days: Reads well in fewer, longer sessions",
+      "Geography, 1 day: A single focused session a week is often enough"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "four-day-homeschool-week"
+    },
+    "proof": [
+      "Needs steady practice to hold",
+      "Same reason as math",
+      "Holds up fine with a day off between sessions",
+      "A unit or an experiment doesn't need daily time",
+      "Reads well in fewer, longer sessions",
+      "A single focused session a week is often enough",
+      "One family's split, not a rule. Change every number to fit your child."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how many days a week for each homeschool subject",
+    "board": "Four Day Homeschool Week",
+    "when": "evergreen; peaks Jul-Sep",
+    "visual": "Subject-by-day grid on kraft paper (week-board): six subject rows, a row of day dots per subject showing 4/4/3/2/2/1, the guide's one-line why beside each. Numbers are the guide's own example. Free guide tag.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 36
+  },
+  {
+    "slice": "records",
+    "angle": "question",
+    "headline": "Homeschool Record Keeping: Do You Need to Log Hours?",
+    "sub": "Only if your state's summary says it counts hours, and few do.",
+    "items": [
+      "Logging time turns a fast entry into a slow one, for information almost no state actually asks for."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-template"
+    },
+    "proof": [
+      "Do I need to write down how many hours we spent on each subject?",
+      "Only if your state's summary says it counts hours, and few do.",
+      "Logging time turns a fast entry into a slow one, for information almost no state actually asks for."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "do i have to log homeschool hours",
+    "board": "Homeschool Attendance",
+    "when": "evergreen; Aug-Sep, Jan",
+    "visual": "question: a clock face drawn on cream paper, the question as headline, the short answer on a kraft tab beneath. Free-guide tag. Footer line: Laws change. Confirm with your state before relying on this.",
+    "flags": [],
+    "reserve": false,
+    "n": 37
+  },
+  {
+    "slice": "rhythm",
+    "angle": "scenario",
+    "headline": "Homeschool Weekly Plan: What a Spare Wednesday Does When Tuesday Goes Wrong",
+    "sub": "Nothing about the subjects changed. Four days a week is still four days a week.",
+    "items": [
+      "the week is Monday, Tuesday, Thursday and Friday full, and Wednesday carries nothing at all",
+      "In the week the toddler gets a stomach bug on Tuesday night, Wednesday is where Tuesday's math lesson actually happens, and nothing else in the week has to move."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-weekly-plan-with-a-spare-day"
+    },
+    "proof": [
+      "Say a family teaches four subjects, math, reading, writing and science, four days a week each.",
+      "the week is Monday, Tuesday, Thursday and Friday full, and Wednesday carries nothing at all",
+      "In the week the toddler gets a stomach bug on Tuesday night, Wednesday is where Tuesday's math lesson actually happens, and nothing else in the week has to move.",
+      "Nothing about the subjects changed. Four days a week is still four days a week."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool weekly schedule with a spare day",
+    "board": "Four Day Homeschool Week",
+    "when": "evergreen; peaks Aug-Sep and winter cold season",
+    "visual": "Two-panel scenario on cream paper: panel one the ordinary week (Wednesday empty), panel two the sick-Tuesday week with an arrow carrying Tuesday's math to Wednesday. Home-scene feel, mug and a sleeping toddler's blanket corner only as props. Free guide tag.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 38
+  },
+  {
+    "slice": "portfolio",
+    "angle": "checklist",
+    "headline": "What to Include in a Homeschool Portfolio: The Five Core Contents",
+    "sub": "A typical portfolio holds these five things.",
+    "items": [
+      "A log of educational activities, with reading materials named by title.",
+      "Samples of work across the year, dated, from more than one point rather than one good week.",
+      "A list of subjects covered and the materials or curriculum used.",
+      "Attendance or days schooled, where your state counts them.",
+      "Test results or an evaluator's written report, where required."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "what-goes-in-a-homeschool-portfolio"
+    },
+    "proof": [
+      "A typical portfolio holds these five things.",
+      "A log of educational activities, with reading materials named by title.",
+      "Samples of work across the year, dated, from more than one point rather than one good week.",
+      "A list of subjects covered and the materials or curriculum used.",
+      "Attendance or days schooled, where your state counts them.",
+      "Test results or an evaluator's written report, where required."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to include in a homeschool portfolio",
+    "board": "Homeschool Portfolio and Evaluation",
+    "when": "evergreen; peaks late summer and fall when a portfolio is started, and spring before year-end reviews",
+    "visual": "Archetype portfolio-binder / check-clipboard: five tick-box rows on a cream clipboard sheet, each box ticked in plum pencil, a kraft folder edge behind. Free guide tag on the pin, no price.",
+    "flags": [],
+    "reserve": false,
+    "n": 39
+  },
+  {
+    "slice": "rhythm",
+    "angle": "how-to-steps",
+    "headline": "How to Decide How Many Days a Week Each Homeschool Subject Gets",
+    "sub": "Do this once, on paper, before the first Monday, not during it.",
+    "items": [
+      "List every subject you plan to teach, then write a number of days a week next to each one, from zero to four.",
+      "Give the subjects that need steady practice, usually math and reading, the most days.",
+      "Give lighter subjects fewer days.",
+      "If a co-op, an outside class, or another family's schedule already fixes one day for you, build the other three around it instead of working against it.",
+      "Write the numbers down somewhere you will actually look at again."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "four-day-homeschool-week"
+    },
+    "proof": [
+      "Do this once, on paper, before the first Monday, not during it.",
+      "List every subject you plan to teach, then write a number of days a week next to each one, from zero to four.",
+      "Give the subjects that need steady practice, usually math and reading, the most days.",
+      "Give lighter subjects fewer days.",
+      "If a co-op, an outside class, or another family's schedule already fixes one day for you, build the other three around it instead of working against it.",
+      "Write the numbers down somewhere you will actually look at again."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to make a homeschool schedule",
+    "board": "Four Day Homeschool Week",
+    "when": "evergreen; peaks Jul-Sep",
+    "visual": "Numbered 1-5 step list on lined notebook paper with a pencil, each number a hand-drawn circle (index-card archetype). Step 4 can be shortened to its first clause on the pin if space is tight (cut keeps its words). Free guide tag.",
+    "flags": [],
+    "reserve": false,
+    "n": 40
+  },
+  {
+    "slice": "portfolio",
+    "angle": "comparison",
+    "headline": "Homeschool Portfolio Samples: A September Page Next to a May One",
+    "sub": "One of the clearest things a folder can show is the same subject at two points in the year.",
+    "items": [
+      "A September math page and a May math page, same kind of problem",
+      "not a stack of finished worksheets from one good week"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "preparing-for-a-homeschool-evaluation"
+    },
+    "proof": [
+      "One of the clearest things a folder can show is the same subject at two points in the year.",
+      "A September math page and a May math page, same kind of problem",
+      "a stack of finished worksheets from one good week"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool portfolio work samples examples",
+    "board": "Homeschool Portfolio and Evaluation",
+    "when": "evergreen; peaks spring and late summer",
+    "visual": "Archetype portfolio-binder, two-up comparison: left a single lined math page labelled September, right a page labelled May (blank-ish worksheets drawn as ruled paper with plain scribbles, no real child's work, no invented problems), clipped side by side to cork board; beneath, a faint thick stack of worksheets crossed out in the margin. Free guide.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 41
+  },
+  {
+    "slice": "rhythm",
+    "angle": "quote-card",
+    "headline": "Homeschool Subject Not Working? Shortening the Session Is Not Lowering Standards",
+    "sub": "Then change the amount",
+    "items": [
+      "Shortening a session is not lowering your standards, it is the standard being met."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "proof": [
+      "Then change the amount",
+      "Shortening a session is not",
+      "lowering your standards, it is the standard being met."
+    ],
+    "proofFile": "/tmp/claude-0/-home-user-draftpace/3601f45e-71e9-5dd0-a897-05358699fd6f/scratchpad/hsbook/book.txt",
+    "query": "homeschool lessons ending in tears what to change",
+    "board": "Homeschool Help",
+    "when": "evergreen; peaks Nov-Feb",
+    "visual": "Large serif quote on a cream page-spread of The Homeschool Year (chapter 06 'When it is not working', book page 10), oak table, pencil laid across. Attribute to 'The Homeschool Year'. Proof is split at the book's line break. Do not use the book's preceding line, it says 'maths' (British spelling). Foot line is the product line with its price, taken from the listing's price.amount.",
+    "flags": [],
+    "reserve": false,
+    "n": 42
+  },
+  {
+    "slice": "portfolio",
+    "angle": "infographic",
+    "headline": "What to Keep per Subject in a Homeschool Portfolio",
+    "sub": "A rough guide. Adjust to what your state and your evaluator ask for.",
+    "items": [
+      "Math: Worked problems showing the method, not just the answer (A few pieces per term)",
+      "Writing: A first draft and the finished version of the same piece (Two or three per year)",
+      "Reading: A running list of books, finished and abandoned (Ongoing)",
+      "Science: Photos of experiments, plus what was concluded (Per topic)",
+      "History and geography: Anything with a date and an argument in it (Per topic)",
+      "Art and practical subjects: Photos, since the work itself rarely fits in a folder (As produced)"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "what-goes-in-a-homeschool-portfolio"
+    },
+    "proof": [
+      "A rough guide. Adjust to what your state and your evaluator ask for.",
+      "Worked problems showing the method, not just the answer",
+      "A few pieces per term",
+      "A first draft and the finished version of the same piece",
+      "Two or three per year",
+      "A running list of books, finished and abandoned",
+      "Photos of experiments, plus what was concluded",
+      "Anything with a date and an argument in it",
+      "Photos, since the work itself rarely fits in a folder",
+      "As produced"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool portfolio by subject what to keep",
+    "board": "Homeschool Portfolio and Evaluation",
+    "when": "evergreen; peaks late summer and fall",
+    "visual": "Archetype portfolio-binder as a tab map: six coloured divider tabs down the right edge of an open binder, each tab one subject with its 'worth keeping' line and a small 'how often' tag in plum. Cream paper, no per-card icons.",
+    "flags": [],
+    "reserve": false,
+    "n": 43
+  },
+  {
+    "slice": "rhythm",
+    "angle": "comparison",
+    "headline": "Homeschool Subject Not Working? The Same Fix Order for Division, Reading, Spelling",
+    "sub": "Illustrative examples. Swap in your own subject and numbers.",
+    "items": [
+      "1. Change the time: Teach it first, not last | Read together earlier, before energy drops | Five minutes right after breakfast",
+      "2. Change the amount: 5 problems instead of 15 | One chapter instead of three | 5 words instead of 15, for a week",
+      "3. Go back one step: Check division, then multiplication facts | Check vocabulary: can they explain the hard words first | Check letter sounds out loud, no writing"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-subject-not-working-what-to-change-first"
+    },
+    "proof": [
+      "1. Change the time",
+      "Teach it first, not last",
+      "Read together earlier, before energy drops",
+      "Five minutes right after breakfast",
+      "2. Change the amount",
+      "5 problems instead of 15",
+      "One chapter instead of three",
+      "5 words instead of 15, for a week",
+      "3. Go back one step",
+      "Check division, then multiplication facts",
+      "Check vocabulary: can they explain the hard words first",
+      "Check letter sounds out loud, no writing",
+      "Illustrative examples. Swap in your own subject and numbers."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool subject not working",
+    "board": "Homeschool Help",
+    "when": "evergreen; peaks Nov-Feb and mid-year slumps",
+    "visual": "A three-row by three-column grid (columns Long division / Reading comprehension / Spelling, rows the three steps) on a cork board with index-card cells. Column heads are the guide's own. Free guide tag.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 44
+  },
+  {
+    "slice": "portfolio",
+    "angle": "mockup-printable",
+    "headline": "Homeschool Record Printable: Three Tick Boxes Decide What Goes on Paper",
+    "sub": "One child, on paper, made on your own device so nothing about them is sent anywhere to produce it.",
+    "items": [
+      "What was done, day by day",
+      "Notes you have marked for the record",
+      "Results of checks you ran",
+      "Notes you have kept private are never included, whatever is ticked here."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "proof": [
+      "One child, on paper, made on your own device so nothing about them is sent anywhere to produce it.",
+      "What was done, day by day",
+      "Notes you have marked for the record",
+      "Results of checks you ran",
+      "Notes you have kept private are never included, whatever is ticked here.",
+      "Check results start out excluded"
+    ],
+    "proofFile": "src/products/homeschooling-companion/components/RecordModule.tsx",
+    "query": "printable homeschool record for one child",
+    "board": "Homeschool Portfolio and Evaluation",
+    "when": "evergreen; peaks spring",
+    "visual": "mockup-printable: the real 'My Homeschool Record' card from creative/public/screens/homeschooling-companion-record.png, cropped to about y 315-730 (the card only, which excludes the Next.js 'N' badge near y 805 and every demo name), shown as a phone-width card laid on a desk with a printed record page (document.tsx 'Notes' sheet, headed 'Written at the time') tilted beneath it. The two ticked boxes and the unticked 'Results of checks you ran' are visible in the crop. Product pin: Homeschooling Companion line with its listing price.",
+    "flags": [],
+    "reserve": false,
+    "n": 45
+  },
+  {
+    "slice": "rhythm",
+    "angle": "myth-vs-truth",
+    "headline": "Homeschool Attendance Log: Do Not Fill the Gaps the Night Before a Review",
+    "sub": "Bring the record as it stands, gaps included, rather than filling gaps in the night before.",
+    "items": [
+      "STOP: A perfect log with no gaps at all, built the week before a review, usually reads as exactly that.",
+      "INSTEAD: A log with a few ordinary gaps across a steady year reads as normal."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-attendance-what-to-track"
+    },
+    "proof": [
+      "Bring the record as it stands, gaps included, rather than filling gaps in the night before.",
+      "A log with a few ordinary gaps across a steady year reads as normal.",
+      "A perfect log with no gaps at all, built the week before a review, usually reads as exactly that."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool attendance log evaluation",
+    "board": "Homeschool Attendance",
+    "when": "peaks Apr-Jun (reviews) and Aug-Sep",
+    "visual": "Split pin: left half a too-neat attendance grid crossed through in red pencil, right half a real grid with a few empty boxes and a tick. 'Stop doing this' register (red pencil mark, not an emoji). Portfolio-binder desk colours. Free guide tag.",
+    "flags": [],
+    "reserve": false,
+    "n": 46
+  },
+  {
+    "slice": "portfolio",
+    "angle": "question",
+    "headline": "Homeschool Evaluation: What If My Child Had a Rough Year?",
+    "sub": "Bring it anyway, with a short plain note about what changed.",
+    "items": [
+      "Math: struggled with fractions until January, steady since",
+      "A folder that shows a hard stretch and an adjustment reads as more credible than one that implies nothing was ever difficult"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "preparing-for-a-homeschool-evaluation"
+    },
+    "proof": [
+      "What if my child had a rough year?",
+      "Bring it anyway, with a short plain note about what changed.",
+      "Math: struggled with fractions until January, steady since",
+      "A folder that shows a hard stretch and an adjustment reads as more credible than one that implies nothing was ever difficult"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what if my homeschooler had a bad year evaluation",
+    "board": "Homeschool Portfolio and Evaluation",
+    "when": "spring (before year-end reviews); evergreen for worried parents",
+    "visual": "Archetype index-cards: a question card on top ('What if my child had a rough year?') with the answer card beneath, and a small paper note clipped to a work-sample page showing the one-line 'Math: struggled with fractions until January, steady since' in handwriting. Cream, kitchen table, pencil. Free guide.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 47
+  },
+  {
+    "slice": "rhythm",
+    "angle": "comparison",
+    "headline": "What Counts as a Homeschool School Day? Field Trips, Co-op and Travel Days",
+    "sub": "General practice across states, not a rule for yours specifically. Confirm anything you're relying on at your own state's source.",
+    "items": [
+      "Generally counts: A morning of workbook math and reading",
+      "Generally counts: A field trip with a purpose you set in advance (Yes, in most states)",
+      "Generally counts: A co-op class someone else taught (Yes, log it like any other subject)",
+      "Not usually: A travel day with no planned learning (unless your state counts differently)",
+      "No: A day nothing happened at all"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-attendance-what-to-track"
+    },
+    "proof": [
+      "A morning of workbook math and reading",
+      "A field trip with a purpose you set in advance",
+      "Yes, in most states",
+      "A co-op class someone else taught",
+      "Yes, log it like any other subject",
+      "A travel day with no planned learning",
+      "Not usually, unless your state counts differently",
+      "A day nothing happened at all",
+      "General practice across states, not a rule for yours specifically. Confirm anything you're relying on at your own state's source."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what counts as a homeschool day",
+    "board": "Homeschool Attendance",
+    "when": "peaks Aug-Sep and Apr-Jun",
+    "visual": "Two-column this-or-that board: 'Generally counts' on a plum-edged card, 'Not usually' on a plain card, items on index cards pinned to each side. Include the guide's 'confirm at your own state's source' line small at the foot. Not a legal claim. Free guide tag.",
+    "flags": [],
+    "reserve": false,
+    "n": 48
+  },
+  {
+    "slice": "portfolio",
+    "angle": "scenario",
+    "headline": "A Homeschool Portfolio by October: What One Fourth Grader's Folder Holds",
+    "sub": "None of it is polished. That's the point: it shows a normal three months, not a highlight reel.",
+    "items": [
+      "two math pages showing a problem worked two different ways",
+      "a two-paragraph book report on a chapter book finished in September",
+      "a photo of a volcano model with a caption she dictated",
+      "a running list of eleven books read or abandoned since school started"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "what-goes-in-a-homeschool-portfolio"
+    },
+    "proof": [
+      "By the end of October, her folder holds:",
+      "two math pages showing a problem worked two different ways",
+      "a two-paragraph book report on a chapter book finished in September",
+      "a photo of a volcano model with a caption she dictated",
+      "a running list of eleven books read or abandoned since school started",
+      "None of it is polished. That's the point: it shows a normal three months, not a highlight reel."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool portfolio examples elementary",
+    "board": "Homeschool Portfolio and Evaluation",
+    "when": "fall (October and November, a few months in); evergreen",
+    "visual": "Archetype portfolio-binder: an open kraft folder on the kitchen table with the four items fanned out (two math pages, a short report page, a photo print of a clay volcano model with a caption strip, a list page of books), a child's crayon drawing at the corner. Items labelled with the guide's own words; caption must say this is an example, not a real child's file. Free guide.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 49
+  },
+  {
+    "slice": "rhythm",
+    "angle": "checklist",
+    "headline": "Homeschool Attendance Record: The Lightest Version That Holds Up",
+    "sub": "If your state counts days, hours, or nothing at all, this is enough to start from.",
+    "items": [
+      "A date.",
+      "A line on what you covered, a few words is enough.",
+      "Hours, only if your state's own count is in hours rather than days."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-attendance-what-to-track"
+    },
+    "proof": [
+      "If your state counts days, hours, or nothing at all, this is enough to start from.",
+      "A date.",
+      "A line on what you covered, a few words is enough.",
+      "Hours, only if your state's own count is in hours rather than days."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool attendance record",
+    "board": "Homeschool Attendance",
+    "when": "peaks Aug-Sep",
+    "visual": "Three-line tick-box checklist on a clipboard (check-clipboard archetype), third line drawn lighter to show it is conditional. Free guide tag.",
+    "flags": [],
+    "reserve": false,
+    "n": 50
+  },
+  {
+    "slice": "portfolio",
+    "angle": "quote-card",
+    "headline": "Include Ordinary Homeschool Work in Your Portfolio, Not Only the Best",
+    "sub": "A portfolio of nothing but finished, polished work tells an evaluator very little, and can even read as curated rather than complete.",
+    "items": [
+      "Include something from early in the term and something from later on the same subject."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "what-goes-in-a-homeschool-portfolio"
+    },
+    "proof": [
+      "A portfolio of nothing but finished, polished work tells an evaluator very little, and can even read as curated rather than complete.",
+      "Include something from early in the term and something from later on the same subject."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool portfolio tips what to put in",
+    "board": "Homeschool Portfolio and Evaluation",
+    "when": "evergreen",
+    "visual": "Archetype working-page as a quote card: the first sentence set large in a serif on cream paper, the line underneath in small type, a single smudged pencil-written worksheet corner peeking from the edge (ordinary, not polished). No price. Free guide.",
+    "flags": [],
+    "reserve": false,
+    "n": 51
+  },
+  {
+    "slice": "rhythm",
+    "angle": "mockup-printable",
+    "headline": "Homeschool Attendance Tracker Printable: One Box per Day, Running Total",
+    "sub": "Some places require a number of days and some require none at all.",
+    "items": [
+      "Month on the left, one box per day schooled, running total on the right.",
+      "If yours does, mark them here as you go."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "proof": [
+      "Some places require a number of days and some require none at all.",
+      "If yours does, mark them here as you go.",
+      "Month on the left, one box per day schooled, running total on the right."
+    ],
+    "proofFile": "/tmp/claude-0/-home-user-draftpace/3601f45e-71e9-5dd0-a897-05358699fd6f/scratchpad/hsbook/book.txt",
+    "query": "homeschool attendance tracker printable",
+    "board": "Homeschool Attendance",
+    "when": "peaks Aug-Sep",
+    "visual": "Mockup: the real 'Days schooled' working page (The Homeschool Year, PDF page 19; rasterise with pdftoppm -r 80 -f 19 -l 19) printed and tilted ~6 degrees on an oak desk beside a pencil and a mug, page left blank as printed (no invented ticks). Headline above in plum. Foot line is the product line with its price, taken from the listing's price.amount.",
+    "flags": [],
+    "reserve": false,
+    "n": 52
+  },
+  {
+    "slice": "portfolio",
+    "angle": "checklist",
+    "headline": "Homeschool Evaluation: What to Bring to the Meeting, a Six-Item Folder List",
+    "sub": "Ask your own evaluator or state what it requires.",
+    "items": [
+      "The log of what was covered, with dates, even if approximate.",
+      "Work samples from more than one point in the year, not just one strong stretch.",
+      "A list of curricula and materials used.",
+      "Attendance or days schooled, if your state counts them.",
+      "Test results, if your state requires them.",
+      "A short note per subject on where you started and where you got to."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "preparing-for-a-homeschool-evaluation"
+    },
+    "proof": [
+      "Ask your own evaluator or state what it requires.",
+      "The log of what was covered, with dates, even if approximate.",
+      "Work samples from more than one point in the year, not just one strong stretch.",
+      "A list of curricula and materials used.",
+      "Attendance or days schooled, if your state counts them.",
+      "Test results, if your state requires them.",
+      "A short note per subject on where you started and where you got to."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool evaluation what to bring",
+    "board": "Homeschool Portfolio and Evaluation",
+    "when": "spring (the weeks before a year-end review); evergreen",
+    "visual": "Archetype check-clipboard: a clipboard with a six-line checklist, plum pencil ticks, a kraft folder under it with a tab; cream page. Distinct from the portfolio checklist by showing a folder being packed (tick = packed). Free guide.",
+    "flags": [],
+    "reserve": false,
+    "n": 53
+  },
+  {
+    "slice": "rhythm",
+    "angle": "quote-card",
+    "headline": "Homeschool Schedule Falling Apart? The Plan Had No Room for an Ordinary Bad Day",
+    "sub": null,
+    "items": [
+      "Most homeschool weeks do not fail because of a bad plan. They fail because the plan had no room in it for an ordinary bad day"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "proof": [
+      "Most homeschool weeks do not fail because of a bad plan. They fail because the plan had no room in it",
+      "for an ordinary bad day"
+    ],
+    "proofFile": "/tmp/claude-0/-home-user-draftpace/3601f45e-71e9-5dd0-a897-05358699fd6f/scratchpad/hsbook/book.txt",
+    "query": "homeschool schedule that works bad days",
+    "board": "Homeschool Help",
+    "when": "evergreen; peaks Sep-Oct and Jan",
+    "visual": "Quote card in serif on the opening spread of chapter 01 'A week that survives a bad Tuesday' (book page 5), cream paper on the kitchen table, a half-drunk mug. Cut the quote before 'and one missed morning turned into a fortnight' (British word). Attribute to 'The Homeschool Year'. Foot line is the product line with its price, taken from the listing's price.amount. Proof is split at the book's line break; it is one sentence.",
+    "flags": [],
+    "reserve": false,
+    "n": 54
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Homeschool Planner App: One Page Each Morning, Per Child",
+    "sub": null,
+    "items": [
+      "See what today looks like: Today shows what is scheduled per child, with where each thing came from.",
+      "Record what we actually did: One tap marks a subject done.",
+      "Add a child: Name, age and how they are schooled.",
+      "Worth going over again: Last time this was not finished."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "display": [
+      "One Page",
+      "Each Morning,",
+      "Per Child"
+    ],
+    "highlight": [
+      "One Page",
+      "Per Child"
+    ],
+    "appName": "Homeschooling Companion",
+    "appTagline": "keep track of what you actually taught",
+    "features": [
+      {
+        "icon": "calendar-check",
+        "label": "See what today looks like",
+        "text": "Today shows what is scheduled per child, with where each thing came from."
+      },
+      {
+        "icon": "check-circle",
+        "label": "Record what we actually did",
+        "text": "One tap marks a subject done."
+      },
+      {
+        "icon": "user-plus",
+        "label": "Add a child",
+        "text": "Name, age and how they are schooled."
+      },
+      {
+        "icon": "arrow-counter-clockwise",
+        "label": "Worth going over again",
+        "text": "Last time this was not finished."
+      }
+    ],
+    "screen": "homeschooling-companion-workspace.png",
+    "crop": "top half: the 'What we are doing today.' heading, Ava's two subject cards (Math, Reading with its 'Worth going over again.' note) and the top of Leo's; y 60-780 of the 390x879 capture, which drops the Next.js 'N' badge and the bottom tab bar. Phone tilted about 8 degrees, large, bleeding off the right edge.",
+    "prop": "A mug and two sharpened pencils on an oak table corner, a child's crayon drawing edge at the bottom left.",
+    "price": "$34, one time",
+    "proof": [
+      "Today shows what is scheduled per child, with where each thing came from.",
+      "One tap marks a subject done.",
+      "Name, age and how they are schooled."
+    ],
+    "proofFile": "src/shop/products/homeschooling-companion.ts",
+    "proofMore": [
+      {
+        "file": "src/products/homeschooling-companion/today.ts",
+        "proof": [
+          "Last time this was not finished."
+        ]
+      },
+      {
+        "file": "src/products/homeschooling-companion/components/TodayView.tsx",
+        "proof": [
+          "Worth going over again."
+        ]
+      }
+    ],
+    "query": "homeschool planner app for multiple kids",
+    "board": "Homeschool Record Keeping",
+    "when": "evergreen; peaks Aug-Sep",
+    "visual": "mockup-app, plum panel (#4a3350 to #6a4a72). Real Today screen (workspace.png) in the phone, cropped to the two children's cards. Rows copy the listing's task answers and the screen's own 'Worth going over again.' note. Screen rows are demo data (Ava, Leo).",
+    "flags": [
+      "demo-data"
+    ],
+    "reserve": false,
+    "n": 55
+  },
+  {
+    "slice": "rhythm",
+    "angle": "mockup-printable",
+    "headline": "Weekly Homeschool Planner Printable With a Spare Day Row",
+    "sub": "The spare day is the point of this page.",
+    "items": [
+      "MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SPARE DAY",
+      "The spare day is the point of this page. Leave it empty when you plan, and it will be there for the week that needs it."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "proof": [
+      "WEEK BEGINNING",
+      "WHO THIS IS FOR",
+      "SPARE DAY",
+      "The spare day is the point of this page. Leave it empty when you plan, and it will be there for the week that needs it."
+    ],
+    "proofFile": "/tmp/claude-0/-home-user-draftpace/3601f45e-71e9-5dd0-a897-05358699fd6f/scratchpad/hsbook/book.txt",
+    "query": "weekly homeschool planner printable",
+    "board": "Homeschool Planner Printables",
+    "when": "peaks Jul-Sep and Jan",
+    "visual": "Mockup: the real 'A week at a time' working page (The Homeschool Year, PDF page 13) on a cork board or clipboard, slightly tilted, with the SPARE DAY row circled in plum pen on the pin art. Page itself stays as printed. Binder clip and pencil props. Foot line is the product line with its price, taken from the listing's price.amount.",
+    "flags": [],
+    "reserve": false,
+    "n": 56
+  },
+  {
+    "slice": "states",
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-requirements-by-state"
+    },
+    "proofFile": "src/lib/homeschoolStateRequirements.ts",
+    "when": "evergreen; peaks Jul-Sep (new school year)",
+    "flags": [],
+    "reserve": false,
+    "sub": "Nothing is filed with the state. Records are for your own use.",
+    "angle": "infographic",
+    "headline": "Homeschool Record Keeping: 8 States Where Nothing Is Filed With the State",
+    "items": [
+      "Alaska",
+      "Connecticut",
+      "Idaho",
+      "Illinois",
+      "Michigan",
+      "New Jersey",
+      "Oklahoma",
+      "Texas",
+      "Laws change. Confirm with your state before relying on this."
+    ],
+    "proof": [
+      "Nothing is filed with the state. Records are for your own use.",
+      "state: \"Alaska\", level: \"None\"",
+      "state: \"Connecticut\", level: \"None\"",
+      "state: \"Idaho\", level: \"None\"",
+      "state: \"Illinois\", level: \"None\"",
+      "state: \"Michigan\", level: \"None\"",
+      "state: \"New Jersey\", level: \"None\"",
+      "state: \"Oklahoma\", level: \"None\"",
+      "state: \"Texas\", level: \"None\""
+    ],
+    "proofExtra": [
+      {
+        "file": "src/content/guides.ts",
+        "proof": [
+          "None, 8 states:"
+        ]
+      },
+      {
+        "file": "src/content/guides.ts",
+        "proof": [
+          "Read None as low paperwork, not as no rules."
+        ]
+      }
+    ],
+    "query": "states with no homeschool requirements",
+    "board": "Homeschool Requirements by State",
+    "visual": "Tile map of the US, the 8 states tiled in plum with their names, the other 43 jurisdictions faded cream; big count '8' in the corner; state-tile-map archetype on cream paper. Optional footer line 'Read None as low paperwork, not as no rules.' (the guide's own sentence). Caution line small at the foot.",
+    "n": 57
+  },
+  {
+    "slice": "rhythm",
+    "angle": "question",
+    "headline": "When Should You Teach the Hard Homeschool Subject? First in the Day",
+    "sub": "Keep the hard subject to its usual length, just move it earlier.",
+    "items": [
+      "Whatever is hardest, for your child or for you, goes first in the day, while there's still patience left on both sides.",
+      "keep the hard subject to its usual length, just move it earlier, so a rough start doesn't sour everything that comes after it."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-weekly-plan-with-a-spare-day"
+    },
+    "proof": [
+      "Whatever is hardest, for your child or for you, goes first in the day, while there's still patience left on both sides.",
+      "keep the hard subject to its usual length, just move it earlier, so a rough start doesn't sour everything that comes after it."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "when to teach hardest subject homeschool",
+    "board": "Homeschool Help",
+    "when": "evergreen; peaks Aug-Sep",
+    "visual": "Big question on the top third, short answer card beneath, a small sun-up-to-afternoon timeline with the hard subject marked first (home-scene morning light, breakfast table). Free guide tag.",
+    "flags": [],
+    "reserve": false,
+    "n": 58
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Homeschool State Requirements Set Beside What You Recorded",
+    "sub": null,
+    "items": [
+      "Find out what my state asks for: Set your state once.",
+      "Beside what you have recorded: The record then shows each requirement beside what you have recorded against it.",
+      "Print the record for one child: Generated on your own device, containing only what you chose to include.",
+      "A summary, not a citation: Laws change. Confirm with your state before relying on this."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "display": [
+      "Your State's",
+      "Requirements,",
+      "Beside Your Own",
+      "Records"
+    ],
+    "highlight": [
+      "Requirements,",
+      "Records"
+    ],
+    "appName": "Homeschooling Companion",
+    "appTagline": "keep track of what you actually taught",
+    "features": [
+      {
+        "icon": "flag",
+        "label": "Find out what my state asks for",
+        "text": "Set your state once."
+      },
+      {
+        "icon": "list-checks",
+        "label": "Beside what you have recorded",
+        "text": "The record then shows each requirement beside what you have recorded against it."
+      },
+      {
+        "icon": "printer",
+        "label": "Print the record for one child",
+        "text": "Generated on your own device, containing only what you chose to include."
+      },
+      {
+        "icon": "scales",
+        "label": "A summary, not a citation",
+        "text": "Laws change. Confirm with your state before relying on this."
+      }
+    ],
+    "screen": "homeschooling-companion-kids.png",
+    "crop": "top third: the 'Your children.' heading and the state card ('Oregon · Moderate regulation / Notice on starting; testing at certain grades, results kept / Laws change. Confirm with your state before relying on this.'), then Ava's row; y 60-420. Phone shown from the top edge, tilted about 6 degrees, the state card is the brightest thing on it (add a soft plum glow).",
+    "prop": "A closed kraft folder and a pencil lying across a sheet of cream paper, at the foot.",
+    "price": "$34, one time",
+    "proof": [
+      "Set your state once.",
+      "The record then shows each requirement beside what you have recorded against it.",
+      "Generated on your own device, containing only what you chose to include."
+    ],
+    "proofFile": "src/shop/products/homeschooling-companion.ts",
+    "proofMore": [
+      {
+        "file": "src/products/homeschooling-companion/components/HouseholdState.tsx",
+        "proof": [
+          "Laws change. Confirm with your state before relying on this."
+        ]
+      },
+      {
+        "file": "src/lib/homeschoolStateRequirements.ts",
+        "proof": [
+          "Notice on starting; testing at certain grades, results kept"
+        ]
+      }
+    ],
+    "query": "homeschool requirements by state",
+    "board": "Homeschool Requirements by State",
+    "when": "evergreen; peaks Aug-Sep and before a review",
+    "visual": "mockup-app. The real state card on the Kids screen is the hero; it shows Oregon because that is what the capture has, and the pin must not imply Oregon is the only state. The caution line is a feature row on purpose, so the pin never reads as legal advice. No 'required' wording beyond the file's own note.",
+    "flags": [
+      "demo-data",
+      "state-shown-is-oregon"
+    ],
+    "reserve": false,
+    "n": 59
+  },
+  {
+    "slice": "rhythm",
+    "angle": "scenario",
+    "headline": "Long Division Turned Into a Fight? Change One Thing at a Time, Cheapest First",
+    "sub": "Only after the time, the amount and that step have all come back clean do you have a real reason to think the material itself is the problem.",
+    "items": [
+      "three of the last four sessions ended in frustration, on the same kind of problem each time",
+      "Move it to the first thing you teach that day instead of the last, before either of you is worn down.",
+      "If that changes nothing in a week, cut the amount: five problems instead of fifteen for the next week.",
+      "Still stuck? Check the step behind it."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-subject-not-working-what-to-change-first"
+    },
+    "proof": [
+      "three of the last four sessions ended in frustration, on the same kind of problem each time",
+      "Move it to the first thing you teach that day instead of the last, before either of you is worn down.",
+      "If that changes nothing in a week, cut the amount: five problems instead of fifteen for the next week.",
+      "Still stuck? Check the step behind it.",
+      "Only after the time, the amount and that step have all come back clean do you have a real reason to think the material itself is the problem."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool math not working what to do",
+    "board": "Homeschool Help",
+    "when": "evergreen; peaks Nov-Feb",
+    "visual": "Home-scene: a worked long-division page with a crumpled corner at the table, then three small arrows (time, amount, step behind). Sketch-style, no child faces. Free guide tag.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 60
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Printable Homeschool Handbook: 30 Pages You Keep and Print Again",
+    "sub": "A handbook and a set of working pages, for keeping track of what you actually do.",
+    "items": [
+      "The Homeschool Year",
+      "Undated, so it starts whenever you do.",
+      "The handbook",
+      "The working pages",
+      "The check sheets"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "price": "$34, one time",
+    "page": "book.pdf page 1 (cover, cream with the plum square on the grid), with page 4 or 11 (a full plum divider, 'The handbook') peeking from beneath it.",
+    "scene": "A small stack: the cover on top, tilted 7 degrees, a plum divider page under it and a corner of a working page; on a pale oak desk, a pencil and a paper clip. Warm side light.",
+    "proof": [
+      "A handbook and a set of working pages, for keeping track of",
+      "what you actually do.",
+      "Undated, so it starts whenever you do.",
+      "The handbook",
+      "The working pages",
+      "The check sheets"
+    ],
+    "proofFile": "/tmp/claude-0/-home-user-draftpace/3601f45e-71e9-5dd0-a897-05358699fd6f/scratchpad/hsbook/book.txt",
+    "proofMore": [
+      {
+        "file": "src/shop/products/homeschooling-companion.ts",
+        "proof": [
+          "The Homeschool Year: a 30 page printed book, yours to keep and print as often as you like"
+        ]
+      }
+    ],
+    "query": "homeschool handbook printable",
+    "board": "Homeschool Planner Printables",
+    "when": "evergreen; peaks Aug-Sep",
+    "visual": "mockup-printable. pdftoppm -r 200 -f 1 -l 1 and -f 4 -l 4 on hsbook/book.pdf. Reads as the 'what you get' pin: the plum is the brand colour so it ties to the app promos.",
+    "flags": [],
+    "reserve": false,
+    "n": 61
+  },
+  {
+    "slice": "rhythm",
+    "angle": "question",
+    "headline": "Does a Four Day Homeschool Week Cover the Same Material as Five?",
+    "sub": "Run four days year-round instead, with shorter breaks through the calendar, and nothing gets dropped at all.",
+    "items": [
+      "It can, if you spread the same total amount of work across the year rather than trying to fit five days of content into four."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "four-day-homeschool-week"
+    },
+    "proof": [
+      "Does a four-day homeschool week cover the same material as five?",
+      "It can, if you spread the same total amount of work across the year rather than trying to fit five days of content into four.",
+      "Run four days year-round instead, with shorter breaks through the calendar, and nothing gets dropped at all."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "does a 4 day homeschool week cover enough",
+    "board": "Four Day Homeschool Week",
+    "when": "evergreen; peaks Jul-Sep",
+    "visual": "Question headline over a two-line calendar strip: a standard school year vs a year-round strip with short breaks, no numbers added beyond the guide's. Index-card answer. Free guide tag.",
+    "flags": [],
+    "reserve": false,
+    "n": 62
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Print a Homeschool Record for One Child, Your Choice of What's In",
+    "sub": null,
+    "items": [
+      "Print the record for one child: Generated on your own device, containing only what you chose to include.",
+      "Private notes stay private: Private notes are never printed.",
+      "Made on your own device: One child, on paper, made on your own device so nothing about them is sent anywhere to produce it.",
+      "No claim about how it went: what was done and makes no claim about how any of it went."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "display": [
+      "Print a",
+      "Homeschool Record",
+      "for One Child"
+    ],
+    "highlight": [
+      "Homeschool Record",
+      "One Child"
+    ],
+    "appName": "Homeschooling Companion",
+    "appTagline": "keep track of what you actually taught",
+    "features": [
+      {
+        "icon": "printer",
+        "label": "Print the record for one child",
+        "text": "Generated on your own device, containing only what you chose to include."
+      },
+      {
+        "icon": "lock-simple",
+        "label": "Private notes stay private",
+        "text": "Private notes are never printed."
+      },
+      {
+        "icon": "device-mobile",
+        "label": "Made on your own device",
+        "text": "One child, on paper, made on your own device so nothing about them is sent anywhere to produce it."
+      },
+      {
+        "icon": "note",
+        "label": "No claim about how it went",
+        "text": "what was done and makes no claim about how any of it went."
+      }
+    ],
+    "screen": "homeschooling-companion-record.png",
+    "crop": "the 'My Homeschool Record' card only: its description, the three ticked boxes ('What was done, day by day', 'Notes you have marked for the record', 'Results of checks you ran') and the US Letter / A4 / Save as PDF buttons; y 310-735, x 0-390. Zoomed so the card fills the phone; tilt about 10 degrees.",
+    "prop": "A stapled printed record page and a paperclip on the desk, with a mug ring on the wood.",
+    "price": "$34, one time",
+    "proof": [
+      "Generated on your own device, containing only what you chose to include.",
+      "Private notes are never printed."
+    ],
+    "proofFile": "src/shop/products/homeschooling-companion.ts",
+    "proofMore": [
+      {
+        "file": "src/products/homeschooling-companion/components/RecordModule.tsx",
+        "proof": [
+          "One child, on paper, made on your own device so nothing about them is sent anywhere to produce it.",
+          "what was done and makes no claim about how any of it went.",
+          "What was done, day by day",
+          "Notes you have marked for the record",
+          "Results of checks you ran"
+        ]
+      }
+    ],
+    "query": "homeschool record to print for evaluation",
+    "board": "Homeschool Portfolio and Evaluation",
+    "when": "evergreen; peaks before a review (spring and June)",
+    "visual": "mockup-app. Zoomed crop of the real Record card, the one screen that shows the print choice. The last row's text begins lower-case because it is a cut of 'It says what was done and ...'; on the pin write it as 'It says what was done and makes no claim about how any of it went.' (same words, whole sentence; the proof substring is its second half).",
+    "flags": [
+      "demo-data"
+    ],
+    "reserve": false,
+    "n": 63
+  },
+  {
+    "slice": "rhythm",
+    "angle": "scenario",
+    "headline": "Homeschool Assessment at Home: Fractions Taught in October, Four Questions in March",
+    "sub": "You covered fractions in October. It's March, and you can't say for sure whether it stuck.",
+    "items": [
+      "What is one half the same as, written a different way?",
+      "If you have three sixths, what's the simplest way to write that?",
+      "Draw two fractions that look different but are equal.",
+      "Why does multiplying the top and bottom of a fraction by the same number not change its value?"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-check-if-your-child-learned-something"
+    },
+    "proof": [
+      "You covered fractions in October. It's March, and you can't say for sure whether it stuck.",
+      "Over breakfast in March, you ask four questions: What is one half the same as, written a different way? If you have three sixths, what's the simplest way to write that? Draw two fractions that look different but are equal. Why does multiplying the top and bottom of a fraction by the same number not change its value?"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to check if my homeschooler remembers fractions",
+    "board": "Homeschool Assessment at Home",
+    "when": "peaks Feb-Apr and May-Jun",
+    "visual": "Breakfast-table scene with a calendar page showing October and March, and four index cards carrying the four questions (index-cards / home-scene). The questions are the guide's own example. Free guide tag.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 64
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Homeschool Weekly Planner Printable With a Spare Day",
+    "sub": "The spare day is the point of this page. Leave it empty when you plan, and it will be there for the week that needs it.",
+    "items": [
+      "A week at a time",
+      "WEEK BEGINNING",
+      "WHO THIS IS FOR",
+      "MONDAY",
+      "TUESDAY",
+      "WEDNESDAY",
+      "THURSDAY",
+      "FRIDAY",
+      "SPARE DAY"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "price": "$34, one time",
+    "page": "book.pdf page 13, 'A week at a time' (the six day rows, Monday to Friday plus SPARE DAY).",
+    "scene": "The page punched and clipped into a white three-ring binder on a kitchen table, tilted about 6 degrees, the SPARE DAY row ringed once with a pencil circle (a drawn highlight only, nothing written in it); a mug at the edge.",
+    "proof": [
+      "A week at a time",
+      "WEEK BEGINNING",
+      "WHO THIS IS FOR",
+      "SPARE DAY",
+      "The spare day is the point of this page. Leave it empty when you plan, and it will be there for the week that needs it."
+    ],
+    "proofFile": "/tmp/claude-0/-home-user-draftpace/3601f45e-71e9-5dd0-a897-05358699fd6f/scratchpad/hsbook/book.txt",
+    "proofMore": [],
+    "query": "homeschool weekly planner printable",
+    "board": "Four Day Homeschool Week",
+    "when": "evergreen; peaks Aug-Sep",
+    "visual": "mockup-printable. pdftoppm -r 200 -f 13 -l 13. Crop slightly into the page so the six rows fill the frame. The empty SPARE DAY row is the story, so leave it blank.",
+    "flags": [],
+    "reserve": false,
+    "n": 65
+  },
+  {
+    "slice": "rhythm",
+    "angle": "myth-vs-truth",
+    "headline": "Homeschool Assessment at Home: 5 Things That Throw Off a Check",
+    "sub": "One right answer could be luck, and one wrong answer could be a bad morning.",
+    "items": [
+      "Asking right after the lesson.",
+      "Asking one question.",
+      "Turning three answers into a percentage.",
+      "Making it feel like a test.",
+      "Grading the delivery instead of the reasoning."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-check-if-your-child-learned-something"
+    },
+    "proof": [
+      "Asking right after the lesson.",
+      "Asking one question.",
+      "Turning three answers into a percentage.",
+      "Making it feel like a test.",
+      "Grading the delivery instead of the reasoning.",
+      "One right answer could be luck, and one wrong answer could be a bad morning."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to assess homeschool learning without tests",
+    "board": "Homeschool Assessment at Home",
+    "when": "peaks Apr-Jun and Dec-Jan",
+    "visual": "'Stop doing this' list on a clipboard, each line struck through in red pencil (check-clipboard). Five lines only, short heads as written. Free guide tag.",
+    "flags": [],
+    "reserve": false,
+    "n": 66
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Homeschool Log App: A Record of What You Actually Did",
+    "sub": null,
+    "items": [
+      "Year-end record: A record of what you actually did, kept as it happened.",
+      "Record what we actually did: One tap marks a subject done.",
+      "Note something: notes in your own words about the day something landed",
+      "Archived, not deleted: Nothing is ever deleted: records are archived rather than destroyed"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "display": [
+      "A Record of",
+      "What You",
+      "Actually Did"
+    ],
+    "highlight": [
+      "Record",
+      "Actually Did"
+    ],
+    "appName": "Homeschooling Companion",
+    "appTagline": "keep track of what you actually taught",
+    "features": [
+      {
+        "icon": "book-open",
+        "label": "Year-end record",
+        "text": "A record of what you actually did, kept as it happened."
+      },
+      {
+        "icon": "check-circle",
+        "label": "Record what we actually did",
+        "text": "One tap marks a subject done."
+      },
+      {
+        "icon": "note-pencil",
+        "label": "Note something",
+        "text": "notes in your own words about the day something landed"
+      },
+      {
+        "icon": "archive",
+        "label": "Archived, not deleted",
+        "text": "Nothing is ever deleted: records are archived rather than destroyed"
+      }
+    ],
+    "screen": "homeschooling-companion-record.png",
+    "crop": "the lower log: the day headings 'SUNDAY, 4 OCTOBER 2026' and 'SATURDAY, 3 OCTOBER 2026' with 'Math, Lesson 3: Thirds / Easy · No help needed', 'Reading, Chapter 6 / Not finished', 'Science, Lesson 1: Air pressure / Difficult · A lot of help'; y 950-1240 (below the floating tab bar and the N badge). Phone tilted the other way (about -8 degrees) so it differs from the print-record promo.",
+    "prop": "A paper daily-log page curling at the foot, and three pencils fanned out.",
+    "price": "$34, one time",
+    "proof": [
+      "A record of what you actually did, kept as it happened",
+      "One tap marks a subject done.",
+      "Nothing is ever deleted: records are archived rather than destroyed"
+    ],
+    "proofFile": "src/shop/products/homeschooling-companion.ts",
+    "proofMore": [
+      {
+        "file": "src/shop/products/homeschooling-companion.ts",
+        "proof": [
+          "notes in your own words about the day something landed"
+        ]
+      }
+    ],
+    "query": "homeschool log what we did each day",
+    "board": "Homeschool Record Keeping",
+    "when": "evergreen; peaks Aug-Sep and Jan (mid-year reset)",
+    "visual": "mockup-app. The real log (day headings, entries with how it went) fills the phone. Entries are demo data. Do not show the word 'Kept private' row (it is below the tab bar in the capture).",
+    "flags": [
+      "demo-data"
+    ],
+    "reserve": false,
+    "n": 67
+  },
+  {
+    "slice": "rhythm",
+    "angle": "comparison",
+    "headline": "Homeschool Progress Check: What a Result Can Tell You and What It Cannot",
+    "sub": null,
+    "items": [
+      "CAN: Looked solid. Most of it came back right. Worth moving on when you are ready.",
+      "CAN: Mixed. Some of it is there and some is not. Usually means more practice, not going back.",
+      "CAN: Worth another look. Most of it was missed. Go over it again before building on it.",
+      "CAN: Not enough to say. Fewer than four questions on the topic. This is not a failure to conclude, it is the correct conclusion.",
+      "CANNOT: It cannot tell you whether your child is behind.",
+      "CANNOT: It cannot tell you whether they are gifted, struggling, or average.",
+      "CANNOT: It cannot tell you whether you are doing a good job."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "proof": [
+      "Looked solid. Most of it came back right. Worth moving on when you are ready.",
+      "Mixed. Some of it is there and some is not. Usually means more practice, not going back.",
+      "Worth another look. Most of it was missed. Go over it again before building on it.",
+      "Not enough to say. Fewer than four questions on the topic. This is not a failure to conclude, it is the correct",
+      "conclusion.",
+      "It cannot tell you whether your child is behind.",
+      "It cannot tell you whether they are gifted, struggling, or average.",
+      "It cannot tell you whether you are doing a good job."
+    ],
+    "proofFile": "/tmp/claude-0/-home-user-draftpace/3601f45e-71e9-5dd0-a897-05358699fd6f/scratchpad/hsbook/book.txt",
+    "query": "homeschool progress check results what do they mean",
+    "board": "Homeschool Assessment at Home",
+    "when": "peaks Apr-Jun",
+    "visual": "Two-column board on a clipboard: left 'What a result can tell you' with four labelled rows (labels exactly Looked solid / Mixed / Worth another look / Not enough to say, matching the product's own labels in check.ts), right 'What it cannot tell you' with three. Shorten rows to their first sentence if space is tight. Book chapter 05 (page 9). Foot line is the product line with its price, taken from the listing's price.amount. Proof is split at the book's line break.",
+    "flags": [],
+    "reserve": false,
+    "n": 68
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Homeschool Daily Log Printable: Three Columns, Written the Same Day",
+    "sub": "What actually happened, written the same day. Three columns, because those are the three things worth having later: when, what, and how it went.",
+    "items": [
+      "The daily log",
+      "DATE",
+      "SUBJECT",
+      "WHAT WE DID",
+      "HOW IT WENT",
+      "easy, about right, or difficult"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "price": "$34, one time",
+    "page": "book.pdf page 14, 'The daily log' (the column header row DATE / SUBJECT / WHAT WE DID / HOW IT WENT over the ruled lines).",
+    "scene": "The page on a wooden clipboard laid on a kitchen table at a slight angle, a pencil lying in the 'HOW IT WENT' column; in that column write by hand only the three real words 'easy', 'about right', 'difficult' on three lines, nothing else filled in.",
+    "proof": [
+      "The daily log",
+      "What actually happened, written the same day. Three columns, because those are the three things worth having later:",
+      "when, what, and how it went.",
+      "For the last column, one word is enough: easy, about right, or difficult."
+    ],
+    "proofFile": "/tmp/claude-0/-home-user-draftpace/3601f45e-71e9-5dd0-a897-05358699fd6f/scratchpad/hsbook/book.txt",
+    "proofMore": [],
+    "query": "homeschool daily log printable",
+    "board": "Homeschool Record Keeping",
+    "when": "evergreen; peaks Aug-Sep",
+    "visual": "mockup-printable. pdftoppm -r 200 -f 14 -l 14. Column headings are small caps in the PDF (DATE, SUBJECT, WHAT WE DID, HOW IT WENT); set them in the same caps. Sub is two adjacent lines of the page joined; the proof strings are the two contiguous halves.",
+    "flags": [],
+    "reserve": false,
+    "n": 69
+  },
+  {
+    "slice": "states",
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-requirements-by-state"
+    },
+    "proofFile": "src/lib/homeschoolStateRequirements.ts",
+    "when": "evergreen; peaks Jul-Sep (new school year)",
+    "flags": [],
+    "reserve": false,
+    "sub": "A notice is typically filed, and basic records are kept, but there is no ongoing review.",
+    "angle": "question",
+    "headline": "Which States Ask for a Notice and Basic Homeschool Records? The 15 at Low",
+    "items": [
+      "Alabama",
+      "Arizona",
+      "Delaware",
+      "Indiana",
+      "Iowa",
+      "Kansas",
+      "Kentucky",
+      "Mississippi",
+      "Montana",
+      "Nevada",
+      "New Mexico",
+      "South Dakota",
+      "Utah",
+      "Wisconsin",
+      "Wyoming",
+      "Laws change. Confirm with your state before relying on this."
+    ],
+    "proof": [
+      "A notice is typically filed, and basic records are kept, but there is no ongoing review.",
+      "state: \"Alabama\", level: \"Low\"",
+      "state: \"Arizona\", level: \"Low\"",
+      "state: \"Delaware\", level: \"Low\"",
+      "state: \"Indiana\", level: \"Low\"",
+      "state: \"Iowa\", level: \"Low\"",
+      "state: \"Kansas\", level: \"Low\"",
+      "state: \"Kentucky\", level: \"Low\"",
+      "state: \"Mississippi\", level: \"Low\"",
+      "state: \"Montana\", level: \"Low\"",
+      "state: \"Nevada\", level: \"Low\"",
+      "state: \"New Mexico\", level: \"Low\"",
+      "state: \"South Dakota\", level: \"Low\"",
+      "state: \"Utah\", level: \"Low\"",
+      "state: \"Wisconsin\", level: \"Low\"",
+      "state: \"Wyoming\", level: \"Low\""
+    ],
+    "proofExtra": [
+      {
+        "file": "src/content/guides.ts",
+        "proof": [
+          "Low, 15 states:"
+        ]
+      }
+    ],
+    "query": "homeschool states with low regulation",
+    "board": "Homeschool Requirements by State",
+    "visual": "Question card on cream paper: the headline as the question, then the 15 state names set as a tidy three-column list under 'Low' with the level's one-line definition as the short answer. Index-card archetype, kraft backing. Caution at the foot.",
+    "n": 70
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Homeschooling Multiple Kids: Each Child Keeps Their Own Page",
+    "sub": null,
+    "items": [
+      "Unlimited children: each with their own curriculum, subjects, plan and checks",
+      "Add a child: Name, age and how they are schooled.",
+      "One page per child: One page each morning that says what today looks like, per child.",
+      "Never mixed together: Each has their own curriculum, subjects, plan, record and checks, never mixed together."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "display": [
+      "Each Child",
+      "Keeps Their",
+      "Own Page"
+    ],
+    "highlight": [
+      "Each Child",
+      "Own Page"
+    ],
+    "appName": "Homeschooling Companion",
+    "appTagline": "keep track of what you actually taught",
+    "features": [
+      {
+        "icon": "users-three",
+        "label": "Unlimited children",
+        "text": "each with their own curriculum, subjects, plan and checks"
+      },
+      {
+        "icon": "user-plus",
+        "label": "Add a child",
+        "text": "Name, age and how they are schooled."
+      },
+      {
+        "icon": "calendar-check",
+        "label": "One page per child",
+        "text": "One page each morning that says what today looks like, per child."
+      },
+      {
+        "icon": "squares-four",
+        "label": "Never mixed together",
+        "text": "Each has their own curriculum, subjects, plan, record and checks, never mixed together."
+      }
+    ],
+    "screen": "homeschooling-companion-kids.png",
+    "crop": "the children list: 'Ava / Age 9 · Homeschool / Math Journey / Math, Reading', 'Leo / Age 12 · Homeschool / Earth Science Projects / Science' and the 'Add another child' button; y 300-600 (the 'N' badge and tab bar are below). Phone shown small and centred, tilted about 5 degrees, with two overlapping copies behind it (the same crop, offset) to suggest several children.",
+    "prop": "Three pencils in different heights standing in a jar, one exercise book per child stacked at the foot.",
+    "price": "$34, one time",
+    "proof": [
+      "The app: unlimited children, each with their own curriculum, subjects, plan and checks",
+      "Name, age and how they are schooled.",
+      "One page each morning that says what today looks like, per child."
+    ],
+    "proofFile": "src/shop/products/homeschooling-companion.ts",
+    "proofMore": [
+      {
+        "file": "src/shop/products/homeschooling-companion.ts",
+        "proof": [
+          "Each has their own curriculum, subjects, plan, record and checks, never mixed together."
+        ]
+      }
+    ],
+    "query": "homeschool app for multiple children",
+    "board": "Homeschool Record Keeping",
+    "when": "evergreen; peaks Aug-Sep",
+    "visual": "mockup-app. The real Kids list in the phone. The first row's text is a cut of the inclusion 'The app: unlimited children, each with their own curriculum, ...'; show it as 'Unlimited children, each with their own curriculum, subjects, plan and checks' (same words). Child names/ages are demo data. Not a copy of existing pin 6.3 or maple 04: those are binder/home-scene guide pins, this is a product screen.",
+    "flags": [
+      "demo-data"
+    ],
+    "reserve": false,
+    "n": 71
+  },
+  {
+    "slice": "states",
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-requirements-by-state"
+    },
+    "proofFile": "src/lib/homeschoolStateRequirements.ts",
+    "when": "evergreen; peaks Jul-Sep (new school year)",
+    "flags": [],
+    "reserve": false,
+    "sub": "Notice and some form of annual reporting or testing is typically required.",
+    "angle": "infographic",
+    "headline": "Homeschool Record Keeping: The 19 States at the Moderate Level",
+    "items": [
+      "Arkansas",
+      "California",
+      "Colorado",
+      "Georgia",
+      "Hawaii",
+      "Louisiana",
+      "Maine",
+      "Minnesota",
+      "Missouri",
+      "Nebraska",
+      "New Hampshire",
+      "North Carolina",
+      "North Dakota",
+      "Oregon",
+      "Rhode Island",
+      "Tennessee",
+      "Virginia",
+      "Washington",
+      "West Virginia",
+      "Laws change. Confirm with your state before relying on this."
+    ],
+    "proof": [
+      "Notice and some form of annual reporting or testing is typically required.",
+      "state: \"Arkansas\", level: \"Moderate\"",
+      "state: \"California\", level: \"Moderate\"",
+      "state: \"Colorado\", level: \"Moderate\"",
+      "state: \"Georgia\", level: \"Moderate\"",
+      "state: \"Hawaii\", level: \"Moderate\"",
+      "state: \"Louisiana\", level: \"Moderate\"",
+      "state: \"Maine\", level: \"Moderate\"",
+      "state: \"Minnesota\", level: \"Moderate\"",
+      "state: \"Missouri\", level: \"Moderate\"",
+      "state: \"Nebraska\", level: \"Moderate\"",
+      "state: \"New Hampshire\", level: \"Moderate\"",
+      "state: \"North Carolina\", level: \"Moderate\"",
+      "state: \"North Dakota\", level: \"Moderate\"",
+      "state: \"Oregon\", level: \"Moderate\"",
+      "state: \"Rhode Island\", level: \"Moderate\"",
+      "state: \"Tennessee\", level: \"Moderate\"",
+      "state: \"Virginia\", level: \"Moderate\"",
+      "state: \"Washington\", level: \"Moderate\"",
+      "state: \"West Virginia\", level: \"Moderate\""
+    ],
+    "proofExtra": [
+      {
+        "file": "src/content/guides.ts",
+        "proof": [
+          "Moderate, 19 states:"
+        ]
+      }
+    ],
+    "query": "homeschool states with annual testing or reporting",
+    "board": "Homeschool Requirements by State",
+    "visual": "Two-column roster of the 19 state names on an oak-and-cream board, a large '19' numeral beside the level definition; each name on a small tag. Caution at the foot. Distinct from the None tile map: a list board, not a map.",
+    "n": 72
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Homeschool Subject Record Printable: One Page for Each Subject",
+    "sub": "WORKING PAGE, ONE PER SUBJECT",
+    "items": [
+      "One subject, over a term",
+      "SUBJECT",
+      "WHAT WE ARE USING",
+      "WHERE WE STARTED",
+      "WHAT WE COVERED",
+      "WHAT WENT WELL",
+      "WHAT WE ARE COMING BACK TO",
+      "WORK KEPT, AND WHERE"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "price": "$34, one time",
+    "page": "book.pdf page 15, 'One subject, over a term' (labelled blocks stacked down the page).",
+    "scene": "The page in a kraft folder with a hand-lettered tab, tilted about 5 degrees on a desk, a child's pencil drawing sliding in from the corner and one sharpened pencil; the blocks are left empty.",
+    "proof": [
+      "One subject, over a term",
+      "WORKING PAGE, ONE PER SUBJECT",
+      "SUBJECT",
+      "WHAT WE ARE USING",
+      "WHERE WE STARTED",
+      "WHAT WE COVERED",
+      "WHAT WENT WELL",
+      "WHAT WE ARE COMING BACK TO",
+      "WORK KEPT, AND WHERE"
+    ],
+    "proofFile": "/tmp/claude-0/-home-user-draftpace/3601f45e-71e9-5dd0-a897-05358699fd6f/scratchpad/hsbook/book.txt",
+    "proofMore": [],
+    "query": "homeschool subject record sheet",
+    "board": "Homeschool Planner Printables",
+    "when": "evergreen; peaks Aug-Sep and Jan",
+    "visual": "mockup-printable. pdftoppm -r 200 -f 15 -l 15. Page 16 is its blank continuation: use page 15 only. The sub 'One page per subject, for a term.' is a paraphrase of the page's own tag 'WORKING PAGE, ONE PER SUBJECT' and title; to keep it verbatim, use 'WORKING PAGE, ONE PER SUBJECT' as the sub instead.",
+    "flags": [],
+    "reserve": false,
+    "n": 73
+  },
+  {
+    "slice": "states",
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-requirements-by-state"
+    },
+    "proofFile": "src/lib/homeschoolStateRequirements.ts",
+    "when": "evergreen; peaks Aug-Sep (new school year) and Apr-May (portfolio and evaluation season)",
+    "flags": [],
+    "reserve": false,
+    "sub": "A portfolio or a formal annual assessment is typically part of the law, not just a good habit.",
+    "angle": "quote-card",
+    "headline": "Homeschool Record Keeping: The 9 States at the High Level",
+    "items": [
+      "District of Columbia",
+      "Florida",
+      "Maryland",
+      "Massachusetts",
+      "New York",
+      "Ohio",
+      "Pennsylvania",
+      "South Carolina",
+      "Vermont",
+      "Laws change. Confirm with your state before relying on this."
+    ],
+    "proof": [
+      "A portfolio or a formal annual assessment is typically part of the law, not just a good habit.",
+      "state: \"District of Columbia\", level: \"High\"",
+      "state: \"Florida\", level: \"High\"",
+      "state: \"Maryland\", level: \"High\"",
+      "state: \"Massachusetts\", level: \"High\"",
+      "state: \"New York\", level: \"High\"",
+      "state: \"Ohio\", level: \"High\"",
+      "state: \"Pennsylvania\", level: \"High\"",
+      "state: \"South Carolina\", level: \"High\"",
+      "state: \"Vermont\", level: \"High\""
+    ],
+    "proofExtra": [
+      {
+        "file": "src/content/guides.ts",
+        "proof": [
+          "High, 9 states:"
+        ]
+      }
+    ],
+    "query": "states that require homeschool portfolio",
+    "board": "Homeschool Requirements by State",
+    "visual": "Quote-card: the High definition sentence set large in a serif, in quotation marks, attributed 'Our summary of record keeping by state'; the 9 names listed in a row of small tiles beneath. Plum on soft plum (#f0eaf1). Caution at the foot.",
+    "n": 74
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Check Whether It Landed: Honest Results, One Topic at a Time",
+    "sub": null,
+    "items": [
+      "Check whether a topic stuck: You supply eight questions and mark them.",
+      "Looked solid: Most of it came back right. Worth moving on when you are ready.",
+      "Worth another look: Most of it was missed. Go over it again before building on it.",
+      "Not enough to say: Fewer than four questions on the topic."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "display": [
+      "An Honest",
+      "Check, Even When",
+      "It Says Not",
+      "Enough to Say"
+    ],
+    "highlight": [
+      "Honest",
+      "Not",
+      "Enough to Say"
+    ],
+    "appName": "Homeschooling Companion",
+    "appTagline": "keep track of what you actually taught",
+    "features": [
+      {
+        "icon": "shield-check",
+        "label": "Check whether a topic stuck",
+        "text": "You supply eight questions and mark them."
+      },
+      {
+        "icon": "check-circle",
+        "label": "Looked solid",
+        "text": "Most of it came back right. Worth moving on when you are ready."
+      },
+      {
+        "icon": "arrows-clockwise",
+        "label": "Worth another look",
+        "text": "Most of it was missed. Go over it again before building on it."
+      },
+      {
+        "icon": "question",
+        "label": "Not enough to say",
+        "text": "Fewer than four questions on the topic."
+      }
+    ],
+    "screen": "needs-capture: the 'What came back' result screen of a check (CheckModule), with at least one 'Looked solid.' topic and one 'Not enough here to say anything about ...' topic",
+    "crop": "the heading 'What came back' and two or three topic rows with their standing labels (Looked solid / Mixed / Worth another look / Not enough to say). Capture at 390 wide with the dev badge hidden.",
+    "prop": "A clipboard with a printed check sheet (the book's Multiplication page) and a pencil at the foot.",
+    "price": "$34, one time",
+    "proof": [
+      "You supply eight questions and mark them."
+    ],
+    "proofFile": "src/shop/products/homeschooling-companion.ts",
+    "proofMore": [
+      {
+        "file": "/tmp/claude-0/-home-user-draftpace/3601f45e-71e9-5dd0-a897-05358699fd6f/scratchpad/hsbook/book.txt",
+        "proof": [
+          "Most of it came back right. Worth moving on when you are ready.",
+          "Most of it was missed. Go over it again before building on it.",
+          "Fewer than four questions on the topic."
+        ]
+      },
+      {
+        "file": "src/products/homeschooling-companion/check.ts",
+        "proof": [
+          "Looked solid",
+          "Mixed",
+          "Worth another look",
+          "Not enough to say"
+        ]
+      }
+    ],
+    "query": "how to know if my homeschooler learned it",
+    "board": "Homeschool Assessment at Home",
+    "when": "evergreen; peaks Jan and May",
+    "visual": "mockup-app. Needs a fresh capture of the result screen; none of the three existing screens shows it. The rows' texts come from the book's chapter 05 ('What a result can tell you'); the app's own labels are the four standings. Keep the line 'You supply eight questions and mark them.' so the pin never suggests the app tests or grades. No percentage or score anywhere. Distinct from existing pin 5.4 (check-clipboard) by being the app screen.",
+    "flags": [
+      "needs-capture: check result screen 'What came back'",
+      "demo-data",
+      "two-sources: listing + book.txt"
+    ],
+    "reserve": false,
+    "n": 75
+  },
+  {
+    "slice": "states",
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-requirements-by-state"
+    },
+    "proofFile": "src/lib/homeschoolStateRequirements.ts",
+    "when": "evergreen; peaks Jul-Sep",
+    "flags": [],
+    "reserve": false,
+    "sub": "Our summary puts Texas at None.",
+    "angle": "question",
+    "headline": "Homeschool Requirements in Texas: What the Record Keeping Note Says",
+    "items": [
+      "Texas - None",
+      "Nothing filed; keep curriculum evidence for your own use",
+      "Laws change. Confirm with your state before relying on this."
+    ],
+    "proof": [
+      "state: \"Texas\", level: \"None\", note: \"Nothing filed; keep curriculum evidence for your own use\""
+    ],
+    "proofExtra": [],
+    "query": "homeschool requirements in Texas",
+    "board": "Homeschool Requirements by State",
+    "visual": "Question card on cream paper: 'Texas' large with a plum 'None' badge, the note in a serif as the answer ('Nothing filed; keep curriculum evidence for your own use'), small caution below. No checklist exists for None, so none is drawn. Kitchen-table-and-pencil backdrop, working-page archetype.",
+    "n": 76
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Homeschool Math Check Sheet Printable: Multiplication, Eight Questions",
+    "sub": "Answers are at the back, so this page can be handed over as it is.",
+    "items": [
+      "Multiplication",
+      "What is 6 times 7?",
+      "A box holds 12 pencils. How many pencils in 5 boxes?",
+      "Explain how you would work out 15 times 4 without writing it down.",
+      "Ask for the answer out loud where you can. It is faster and you hear the hesitation."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "price": "$34, one time",
+    "page": "book.pdf page 21, 'Multiplication' (WHO / DATE line, eight numbered questions, the plum 'READING THIS' box).",
+    "scene": "On a clipboard beside a sharpened pencil and a small stack of the other check sheets (fanned edges only), on a kitchen table; the page tilted 8 degrees; WHO and DATE lines left blank, the answer lines left blank.",
+    "proof": [
+      "Multiplication",
+      "What is 6 times 7?",
+      "A box holds 12 pencils. How many pencils in 5 boxes?",
+      "Explain how you would work out 15 times 4 without writing it down.",
+      "Ask for the answer out loud where you can. It is faster and you hear the hesitation.",
+      "Answers are at the back, so this page can be handed over as it is."
+    ],
+    "proofFile": "/tmp/claude-0/-home-user-draftpace/3601f45e-71e9-5dd0-a897-05358699fd6f/scratchpad/hsbook/book.txt",
+    "proofMore": [
+      {
+        "file": "src/shop/products/homeschooling-companion.ts",
+        "proof": [
+          "Six printable check sheets of eight questions each, answer key kept at the back where the child can't read it"
+        ]
+      }
+    ],
+    "query": "homeschool math check sheet",
+    "board": "Homeschool Assessment at Home",
+    "when": "evergreen; peaks Jan and May",
+    "visual": "mockup-printable. pdftoppm -r 200 -f 21 -l 21. The questions are the page's own wording; do not add answers. Different from existing pin 5.x (clipboard graphics): this is the real printed page photographed.",
+    "flags": [],
+    "reserve": false,
+    "n": 77
+  },
+  {
+    "slice": "states",
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-requirements-by-state"
+    },
+    "proofFile": "src/lib/homeschoolStateRequirements.ts",
+    "when": "evergreen; peaks Jun-Aug (evaluation and notice season)",
+    "flags": [],
+    "reserve": false,
+    "sub": "Our summary puts Florida at High.",
+    "angle": "checklist",
+    "headline": "Homeschool Record Keeping in Florida: What the Note Asks You to Keep",
+    "items": [
+      "Florida - High",
+      "Notice; portfolio of work and log kept two years; annual evaluation",
+      "[x] A log or record of instruction",
+      "[ ] Attendance or hours",
+      "[x] Samples of work or a portfolio",
+      "[x] A test score or evaluation",
+      "Laws change. Confirm with your state before relying on this."
+    ],
+    "proof": [
+      "state: \"Florida\", level: \"High\", note: \"Notice; portfolio of work and log kept two years; annual evaluation\"",
+      "checklist: { log: true, attendanceOrHours: false, workSamples: true, testOrEvaluation: true, otherNotes: [] }"
+    ],
+    "proofExtra": [
+      {
+        "file": "src/products/homeschooling-companion/book.ts",
+        "proof": [
+          "A log or record of instruction",
+          "Attendance or hours",
+          "Samples of work or a portfolio",
+          "A test score or evaluation"
+        ]
+      }
+    ],
+    "query": "homeschool record keeping Florida",
+    "board": "Homeschool Requirements by State",
+    "visual": "Clipboard checklist (check-clipboard archetype): 'Florida, High' on the clip, the note above, then four rows with the first, third and fourth ticked in plum (log, samples of work or a portfolio, test score or evaluation) and 'Attendance or hours' left an empty box. Caution at the foot.",
+    "n": 78
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Private Homeschool Records, Printed on Your Own Device",
+    "sub": null,
+    "items": [
+      "Printed on your own device: The printed record is generated in your own browser",
+      "An age, never a date of birth: It stores an age and never a date of birth.",
+      "Children do not have accounts: Children do not have accounts and cannot sign in.",
+      "A private, real account: A private, real account, not a shared demo"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "display": [
+      "Private",
+      "Homeschool Records,",
+      "Printed on",
+      "Your Own Device"
+    ],
+    "highlight": [
+      "Private",
+      "Your Own Device"
+    ],
+    "appName": "Homeschooling Companion",
+    "appTagline": "keep track of what you actually taught",
+    "features": [
+      {
+        "icon": "device-mobile",
+        "label": "Printed on your own device",
+        "text": "The printed record is generated in your own browser"
+      },
+      {
+        "icon": "calendar-blank",
+        "label": "An age, never a date of birth",
+        "text": "It stores an age and never a date of birth."
+      },
+      {
+        "icon": "user-circle",
+        "label": "Children do not have accounts",
+        "text": "Children do not have accounts and cannot sign in."
+      },
+      {
+        "icon": "lock-key",
+        "label": "A private, real account",
+        "text": "A private, real account, not a shared demo"
+      }
+    ],
+    "screen": "needs-capture: a child's page (ChildDetailModule), scrolled to the section 'What appears on anything you print' with its toggles and the sentence 'Nothing here is ever public: this only decides what is on the page when you print.'",
+    "crop": "the section heading 'What appears on anything you print', its explanatory paragraph and the first few switches; 390 wide, dev badge hidden.",
+    "prop": "A closed notebook with a plum ribbon and a small brass padlock charm beside it (a prop only, no lock icon on the screen).",
+    "price": "$34, one time",
+    "proof": [
+      "It stores an age and never a date of birth.",
+      "The printed record is generated in your own browser",
+      "Children do not have accounts and cannot sign in.",
+      "A private, real account, not a shared demo"
+    ],
+    "proofFile": "src/shop/products/homeschooling-companion.ts",
+    "proofMore": [
+      {
+        "file": "src/products/homeschooling-companion/components/ChildDetailModule.tsx",
+        "proof": [
+          "What appears on anything you print",
+          "Nothing here is ever public: this only decides what is on the page when you print."
+        ]
+      }
+    ],
+    "query": "homeschool records privacy children data",
+    "board": "Homeschool Record Keeping",
+    "when": "evergreen",
+    "visual": "mockup-app. Privacy is a real, listed feature (privacyNotes). Do not write 'secure', 'encrypted' or 'GDPR/COPPA': none of that is in the source. 'No AI' is true per privacyNotes but kept out of this pin (it is not a headline reason to buy for this audience).",
+    "flags": [
+      "needs-capture: child page, 'What appears on anything you print' section"
+    ],
+    "reserve": false,
+    "n": 79
+  },
+  {
+    "slice": "states",
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-requirements-by-state"
+    },
+    "proofFile": "src/lib/homeschoolStateRequirements.ts",
+    "when": "evergreen; peaks Aug-Sep and Apr-Jun",
+    "flags": [
+      "needs-capture",
+      "demo-data"
+    ],
+    "reserve": false,
+    "sub": "Our summary puts Pennsylvania at High.",
+    "angle": "mockup-printable",
+    "headline": "Homeschool Record Keeping in Pennsylvania: What Your State Asks For",
+    "items": [
+      "Pennsylvania - High",
+      "Affidavit; log, portfolio, and annual evaluator review",
+      "[x] A log or record of instruction",
+      "[ ] Attendance or hours",
+      "[x] Samples of work or a portfolio",
+      "[x] A test score or evaluation",
+      "Laws change. Confirm with your state before relying on this."
+    ],
+    "proof": [
+      "state: \"Pennsylvania\", level: \"High\", note: \"Affidavit; log, portfolio, and annual evaluator review\"",
+      "checklist: { log: true, attendanceOrHours: false, workSamples: true, testOrEvaluation: true, otherNotes: [] }"
+    ],
+    "proofExtra": [
+      {
+        "file": "src/products/homeschooling-companion/book.ts",
+        "proof": [
+          "A log or record of instruction",
+          "Attendance or hours",
+          "Samples of work or a portfolio",
+          "A test score or evaluation"
+        ]
+      },
+      {
+        "file": "src/products/homeschooling-companion/printables/document.tsx",
+        "proof": [
+          "What your state asks for",
+          "regulation</Text>",
+          "Laws change. Confirm with your state before relying on this."
+        ]
+      }
+    ],
+    "query": "homeschool record keeping Pennsylvania",
+    "board": "Homeschool Requirements by State",
+    "visual": "Printable mockup on a desk beside a binder, tilted: the My Homeschool Record page 'What your state asks for.' with eyebrow 'Pennsylvania, High regulation', the note, three rows (a log or record of instruction; samples of work or a portfolio; a test score or evaluation) each with its recorded count generated by the product from the demo child, and the caution line. NEEDS-CAPTURE: render the real PDF page with a demo household set to Pennsylvania (printables/document.tsx, the state page), do not mock it up by hand. Counts must come from the app's own output, none invented.",
+    "n": 80
+  },
+  {
+    "slice": "seasonal",
+    "angle": "how-to-steps",
+    "headline": "Homeschool Mid-Year Slump: What to Change First, in Order",
+    "sub": "Cheapest fix first.",
+    "items": [
+      "1. Change the time",
+      "2. Change the amount",
+      "3. Go back one step",
+      "4. Look at the material"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-subject-not-working-what-to-change-first"
+    },
+    "proof": [
+      "change it in this order: the time of day first, then how much you're asking for, then the step just before the one that's stuck",
+      "Cheapest fix first.",
+      "1. Change the time",
+      "2. Change the amount",
+      "3. Go back one step",
+      "4. Look at the material"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool mid year slump what to do",
+    "board": "Homeschool Help",
+    "when": "mid-October to mid-November (peak search early October to late November); again in January and February",
+    "visual": "Index-cards archetype on a kitchen-table cream background: four numbered cards fanned left to right, the first card on top, each one a step; a pencil and a cold mug at the edge. Free guide strip at the foot. The 'slump' framing lives in the headline only; every step wording is the guide's own.",
+    "flags": [],
+    "reserve": false,
+    "n": 81
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Homeschool Schedule by Subject: Zero Days Is Allowed",
+    "sub": null,
+    "items": [
+      "How often each subject runs: This is the only thing that decides what turns up each day",
+      "Zero days is allowed: Nothing scheduled means nothing shown.",
+      "Where it came from: your curriculum, your plan, or a suggestion",
+      "Did not get to it: Mark something done in one tap."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "display": [
+      "Set How Often",
+      "Each Subject Runs.",
+      "Zero Days",
+      "Is Allowed"
+    ],
+    "highlight": [
+      "Each Subject",
+      "Zero Days"
+    ],
+    "appName": "Homeschooling Companion",
+    "appTagline": "keep track of what you actually taught",
+    "features": [
+      {
+        "icon": "sliders-horizontal",
+        "label": "How often each subject runs",
+        "text": "This is the only thing that decides what turns up each day"
+      },
+      {
+        "icon": "calendar-x",
+        "label": "Zero days is allowed",
+        "text": "Nothing scheduled means nothing shown."
+      },
+      {
+        "icon": "signpost",
+        "label": "Where it came from",
+        "text": "your curriculum, your plan, or a suggestion"
+      },
+      {
+        "icon": "circle",
+        "label": "Did not get to it",
+        "text": "Mark something done in one tap."
+      }
+    ],
+    "screen": "homeschooling-companion-workspace.png",
+    "crop": "the lower half: Ava's 'Reading' card with its 'Worth going over again.' note and 'Your plan' label, and Leo's 'Science / Earth Science Projects, Lesson 2: Reading a weather map' card; y 340-780. Tilt about 12 degrees, phone cut off at the bottom by the prop.",
+    "prop": "A weekly wall planner pad (blank) pinned to cork behind the phone, a drawing pin and a pencil at the foot.",
+    "price": "$34, one time",
+    "proof": [
+      "Set how often each subject runs. This is the only thing that decides what turns up each day, and zero days is allowed.",
+      "Nothing scheduled means nothing shown.",
+      "Mark something done in one tap."
+    ],
+    "proofFile": "src/shop/products/homeschooling-companion.ts",
+    "proofMore": [
+      {
+        "file": "src/shop/products/homeschooling-companion.ts",
+        "proof": [
+          "with where each thing came from: your curriculum, your plan, or a suggestion"
+        ]
+      }
+    ],
+    "query": "homeschool schedule by subject",
+    "board": "Homeschool Planner Printables",
+    "when": "evergreen; peaks Aug-Sep",
+    "visual": "mockup-app. Different crop of the same workspace screen as promo 1 (lower cards, not the top). Fourth row is an honest button label from the screen ('Did not get to it') paired with the real how-it-works line. Does not claim reminders or auto-scheduling: it says what the parent sets.",
+    "flags": [
+      "demo-data"
+    ],
+    "reserve": false,
+    "n": 82
+  },
+  {
+    "slice": "states",
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-requirements-by-state"
+    },
+    "proofFile": "src/lib/homeschoolStateRequirements.ts",
+    "when": "evergreen; peaks Jun-Sep",
+    "flags": [
+      "source-spelling"
+    ],
+    "reserve": false,
+    "sub": "Our summary puts New York at High.",
+    "angle": "checklist",
+    "headline": "New York Homeschool Requirements: What the Record Keeping Note Asks You to Keep",
+    "items": [
+      "New York - High",
+      "Notice; individualised plan; quarterly reports; annual assessment",
+      "[x] A log or record of instruction",
+      "[ ] Attendance or hours",
+      "[ ] Samples of work or a portfolio",
+      "[x] A test score or evaluation",
+      "Your plan is individualised and filed in advance.",
+      "Laws change. Confirm with your state before relying on this."
+    ],
+    "proof": [
+      "state: \"New York\", level: \"High\", note: \"Notice; individualised plan; quarterly reports; annual assessment\"",
+      "checklist: { log: true, attendanceOrHours: false, workSamples: false, testOrEvaluation: true, otherNotes: [\"Your plan is individualised and filed in advance.\"] }"
+    ],
+    "proofExtra": [
+      {
+        "file": "src/products/homeschooling-companion/book.ts",
+        "proof": [
+          "A log or record of instruction",
+          "Attendance or hours",
+          "Samples of work or a portfolio",
+          "A test score or evaluation"
+        ]
+      }
+    ],
+    "query": "New York homeschool requirements",
+    "board": "Homeschool Requirements by State",
+    "visual": "Check-clipboard on oak: 'New York, High' on the clip, the note ('Notice; individualised plan; quarterly reports; annual assessment' exactly as in the data), rows for a log or record of instruction and a test score or evaluation ticked, the other two empty, and the extra line 'Your plan is individualised and filed in advance.' set as a margin note. Caution at the foot.",
+    "n": 83
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Equivalent Fractions Check Sheet for Homeschool, Answers at the Back",
+    "sub": "The last two matter most. A child can match fractions by rule without seeing why they are the same.",
+    "items": [
+      "Equivalent fractions",
+      "Is 2/4 the same as 1/2?",
+      "Draw two shapes that show 1/2 and 2/4 are the same amount.",
+      "Explain why 5/10 is the same as 1/2."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "price": "$34, one time",
+    "page": "book.pdf page 22, 'Equivalent fractions'.",
+    "scene": "The page on kraft paper with coloured pencils lined up along its edge; in the margin beside question 7 a child's pencil drawing of a halved and a quartered rectangle (a drawn prop, labelled nothing); tilted 5 degrees, top-down.",
+    "proof": [
+      "Equivalent fractions",
+      "The last two matter most. A child can match fractions by rule without seeing why they are the same.",
+      "Is 2/4 the same as 1/2?",
+      "Draw two shapes that show 1/2 and 2/4 are the same amount.",
+      "Explain why 5/10 is the same as 1/2."
+    ],
+    "proofFile": "/tmp/claude-0/-home-user-draftpace/3601f45e-71e9-5dd0-a897-05358699fd6f/scratchpad/hsbook/book.txt",
+    "proofMore": [],
+    "query": "equivalent fractions homeschool",
+    "board": "Homeschool Assessment at Home",
+    "when": "evergreen; peaks Jan and Feb",
+    "visual": "mockup-printable. pdftoppm -r 200 -f 22 -l 22. The child's drawing is an illustrated prop; the actual question 7 line stays unaltered. Do not add a 'grade' or age.",
+    "flags": [],
+    "reserve": false,
+    "n": 84
+  },
+  {
+    "slice": "states",
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-requirements-by-state"
+    },
+    "proofFile": "src/lib/homeschoolStateRequirements.ts",
+    "when": "evergreen; peaks Aug-Sep and Apr-May",
+    "flags": [],
+    "reserve": false,
+    "sub": "Our summary puts Ohio at High.",
+    "angle": "question",
+    "headline": "Ohio Homeschool Requirements: Test or Portfolio Review, Which One?",
+    "items": [
+      "Ohio - High",
+      "Notice; annual academic assessment by test or portfolio review",
+      "[ ] A log or record of instruction",
+      "[ ] Attendance or hours",
+      "[x] Samples of work or a portfolio",
+      "[x] A test score or evaluation",
+      "Test and portfolio review are alternatives.",
+      "Laws change. Confirm with your state before relying on this."
+    ],
+    "proof": [
+      "state: \"Ohio\", level: \"High\", note: \"Notice; annual academic assessment by test or portfolio review\"",
+      "checklist: { log: false, attendanceOrHours: false, workSamples: true, testOrEvaluation: true, otherNotes: [\"Test and portfolio review are alternatives.\"] }"
+    ],
+    "proofExtra": [
+      {
+        "file": "src/products/homeschooling-companion/book.ts",
+        "proof": [
+          "A log or record of instruction",
+          "Attendance or hours",
+          "Samples of work or a portfolio",
+          "A test score or evaluation"
+        ]
+      }
+    ],
+    "query": "Ohio homeschool requirements test or portfolio",
+    "board": "Homeschool Requirements by State",
+    "visual": "Question card: 'Test or portfolio?' large; beneath it the note ('Notice; annual academic assessment by test or portfolio review'), two ticked rows (samples of work or a portfolio; a test score or evaluation) joined by a small 'or' bracket carrying the line 'Test and portfolio review are alternatives.' Plum on cream, index-card archetype. Caution at foot.",
+    "n": 85
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Homeschool Progress Without Comparison: Same Child, Weeks Earlier",
+    "sub": null,
+    "items": [
+      "Compare against a year group?: No, and it refuses to on purpose.",
+      "One comparison only: The only comparison it ever makes is the same child, on the same topic, a few weeks earlier.",
+      "No score: It never produces a score.",
+      "What has happened: It says what was done and makes no claim about how any of it went."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "display": [
+      "No Score.",
+      "No Comparing.",
+      "Same Child,",
+      "A Few Weeks Earlier"
+    ],
+    "highlight": [
+      "No Score.",
+      "Same Child,"
+    ],
+    "appName": "Homeschooling Companion",
+    "appTagline": "keep track of what you actually taught",
+    "features": [
+      {
+        "icon": "prohibit",
+        "label": "Compare against a year group?",
+        "text": "No, and it refuses to on purpose."
+      },
+      {
+        "icon": "equals",
+        "label": "One comparison only",
+        "text": "The only comparison it ever makes is the same child, on the same topic, a few weeks earlier."
+      },
+      {
+        "icon": "hash",
+        "label": "No score",
+        "text": "It never produces a score."
+      },
+      {
+        "icon": "book-open",
+        "label": "What has happened",
+        "text": "It says what was done and makes no claim about how any of it went."
+      }
+    ],
+    "screen": "homeschooling-companion-record.png",
+    "crop": "the top of the Record screen only: 'RECORD / What has happened.', the line '4 sessions across 3 subjects and 1 observation.', the Everyone / Ava / Leo chips and 'Note something'; y 60-290, enlarged to fill the phone. Phone upright with a slight 4 degree tilt.",
+    "prop": "Two identical pencil-marked height-chart cards of the same paper (a child measured twice), kept plain, at the foot.",
+    "price": "$34, one time",
+    "proof": [
+      "No, and it refuses to on purpose.",
+      "The only comparison it ever makes is the same child, on the same topic, a few weeks earlier.",
+      "It never produces a score."
+    ],
+    "proofFile": "src/shop/products/homeschooling-companion.ts",
+    "proofMore": [
+      {
+        "file": "src/products/homeschooling-companion/components/RecordModule.tsx",
+        "proof": [
+          "What has happened.",
+          "what was done and makes no claim about how any of it went."
+        ]
+      }
+    ],
+    "query": "homeschool progress tracking without grades",
+    "board": "Homeschool Assessment at Home",
+    "when": "evergreen; peaks Jan and May",
+    "visual": "mockup-app. Reassurance pin for the parent who dreads comparison. The 'It never produces a score.' line sits in the check answer in the listing, so the pin is about checks, not the record; the fourth row restates the record's own screen text (whole sentence on the pin: 'It says what was done and makes no claim about how any of it went.'). Never use the words behind, ahead, grade level. Counts on the screen are demo data.",
+    "flags": [
+      "demo-data"
+    ],
+    "reserve": false,
+    "n": 86
+  },
+  {
+    "slice": "states",
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-requirements-by-state"
+    },
+    "proofFile": "src/lib/homeschoolStateRequirements.ts",
+    "when": "evergreen; peaks Jul-Sep",
+    "flags": [],
+    "reserve": false,
+    "sub": "Our summary puts California at Moderate.",
+    "angle": "quote-card",
+    "headline": "California Homeschool Requirements: What the Record Keeping Note Says",
+    "items": [
+      "California - Moderate",
+      "Private school affidavit; attendance register and course list",
+      "[x] A log or record of instruction",
+      "[x] Attendance or hours",
+      "[ ] Samples of work or a portfolio",
+      "[ ] A test score or evaluation",
+      "Laws change. Confirm with your state before relying on this."
+    ],
+    "proof": [
+      "state: \"California\", level: \"Moderate\", note: \"Private school affidavit; attendance register and course list\"",
+      "checklist: { log: true, attendanceOrHours: true, workSamples: false, testOrEvaluation: false, otherNotes: [] }"
+    ],
+    "proofExtra": [
+      {
+        "file": "src/products/homeschooling-companion/book.ts",
+        "proof": [
+          "A log or record of instruction",
+          "Attendance or hours",
+          "Samples of work or a portfolio",
+          "A test score or evaluation"
+        ]
+      }
+    ],
+    "query": "California homeschool requirements",
+    "board": "Homeschool Requirements by State",
+    "visual": "Quote-card: the note set large in a serif inside quotation marks ('Private school affidavit; attendance register and course list'), 'California, Moderate' as the attribution, two ticked rows beneath (a log or record of instruction; attendance or hours). Cream paper, plum rule. Caution at foot.",
+    "n": 87
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Homeschool Evaluation Prep: Print the Record for One Child",
+    "sub": "It contains only what you chose to include, and it says what is in it rather than how it is going.",
+    "items": [
+      "My Homeschool Record",
+      "What your state asks for.",
+      "The log",
+      "This is a record of what was done, kept by a parent. It is not an assessment, not a transcript, and it makes no claim about how any of it went."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "price": "$34, one time",
+    "page": "needs-capture: a real My Homeschool Record PDF generated from the demo household (Ava), pages: cover, 'What your state asks for.', 'The log'. Generated by the app's own printables/document.tsx, US Letter.",
+    "scene": "The three record pages fanned on a desk, the state page on top, tilted; a paperclip and a pen. Demo child names appear on them, so keep the page text small and soft-focused or flag as demo data.",
+    "proof": [
+      "It contains only what you chose to include, and it says what is in it rather than how it is going."
+    ],
+    "proofFile": "src/shop/products/homeschooling-companion.ts",
+    "proofMore": [
+      {
+        "file": "src/products/homeschooling-companion/printables/document.tsx",
+        "proof": [
+          "My Homeschool Record",
+          "What your state asks for.",
+          "The log"
+        ]
+      },
+      {
+        "file": "src/products/homeschooling-companion/book.ts",
+        "proof": [
+          "This is a record of what was done, kept by a parent. It is not an assessment, not a transcript, and it makes no claim about how any of it went."
+        ]
+      }
+    ],
+    "query": "homeschool evaluation preparation what to bring",
+    "board": "Homeschool Portfolio and Evaluation",
+    "when": "evergreen; peaks Apr-Jun",
+    "visual": "mockup-printable of the real printed record, not a book page. Needs a capture run (Save as PDF on the Record page with a demo child) and a rasterise. The headline's 'Evaluation Prep' follows the listing's searchedProblems ('I need to prepare for a homeschool evaluation'); do not say any state requires an evaluation.",
+    "flags": [
+      "needs-capture: My Homeschool Record PDF from demo child",
+      "demo-data"
+    ],
+    "reserve": false,
+    "n": 88
+  },
+  {
+    "slice": "states",
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-requirements-by-state"
+    },
+    "proofFile": "src/lib/homeschoolStateRequirements.ts",
+    "when": "evergreen",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "sub": "Only one of them has something to produce if anyone ever asks.",
+    "angle": "comparison",
+    "headline": "Homeschool Record Keeping Compared: Florida at High, Alaska at None",
+    "items": [
+      "Florida - High: Notice; portfolio of work and log kept two years; annual evaluation",
+      "Alaska - None: Nothing filed; records for your own use",
+      "Laws change. Confirm with your state before relying on this."
+    ],
+    "proof": [
+      "state: \"Florida\", level: \"High\", note: \"Notice; portfolio of work and log kept two years; annual evaluation\"",
+      "state: \"Alaska\", level: \"None\", note: \"Nothing filed; records for your own use\""
+    ],
+    "proofExtra": [
+      {
+        "file": "src/content/guides.ts",
+        "proof": [
+          "Only one of them has something to produce if anyone ever asks."
+        ]
+      }
+    ],
+    "query": "homeschool requirements strict vs relaxed states",
+    "board": "Homeschool Requirements by State",
+    "visual": "Two-column comparison on cream: left a heavy plum stack of paper (a binder) under 'Florida, High' with its note; right a bare kitchen table under 'Alaska, None' with its note. The guide's 'Reading one row' example, so it keeps the guide's pairing. Caution at foot.",
+    "n": 89
+  },
+  {
+    "slice": "seasonal",
+    "angle": "scenario",
+    "headline": "Homeschool Schedule for a Rough Week: Leave One Day Empty on Purpose",
+    "sub": "Wednesday is where Tuesday's math lesson actually happens, and nothing else in the week has to move.",
+    "items": [
+      "Monday, Tuesday, Thursday and Friday full, and Wednesday carries nothing at all",
+      "Nothing about the subjects changed."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-weekly-plan-with-a-spare-day"
+    },
+    "proof": [
+      "In the week the toddler gets a stomach bug on Tuesday night, Wednesday is where Tuesday's math lesson actually happens, and nothing else in the week has to move.",
+      "Monday, Tuesday, Thursday and Friday full, and Wednesday carries nothing at all",
+      "Nothing about the subjects changed."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool weekly schedule when everything falls apart",
+    "board": "Four Day Homeschool Week",
+    "when": "mid-October to mid-November; again December and January",
+    "visual": "Week-board archetype: a five-column week on cork or oak, Wednesday left as a visibly empty slot with a small arrow carrying Tuesday's math card into it. Warm, slightly worn kitchen-table feel. Free guide strip at the foot.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 90
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Homeschool Year Planner Printable: One Line per Month",
+    "sub": "Fill in the months as you reach them rather than all at once in September.",
+    "items": [
+      "The year at a glance",
+      "One line per month. Write the shape of it: terms, breaks, anything already fixed."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "price": "$34, one time",
+    "page": "book.pdf page 12, 'The year at a glance' (the long ruled month lines).",
+    "scene": "The page pinned with a red pushpin to a cork board, a few real blank index cards pinned beside it; tilted 4 degrees; a pencil on the ledge below.",
+    "proof": [
+      "The year at a glance",
+      "One line per month. Write the shape of it: terms, breaks, anything already fixed.",
+      "Fill in the months as you reach them",
+      "rather than all at once in September."
+    ],
+    "proofFile": "/tmp/claude-0/-home-user-draftpace/3601f45e-71e9-5dd0-a897-05358699fd6f/scratchpad/hsbook/book.txt",
+    "proofMore": [],
+    "query": "homeschool year planner printable",
+    "board": "Homeschool Planner Printables",
+    "when": "evergreen; peaks Jul-Sep",
+    "visual": "mockup-printable. pdftoppm -r 200 -f 12 -l 12. Reserve: the page is mostly empty lines, so it is the least photogenic of the pages.",
+    "flags": [],
+    "reserve": false,
+    "n": 91
+  },
+  {
+    "slice": "states",
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-requirements-by-state"
+    },
+    "proofFile": "src/lib/homeschoolStateRequirements.ts",
+    "when": "evergreen; peaks Jul-Sep",
+    "flags": [
+      "demo-data"
+    ],
+    "reserve": false,
+    "sub": "Your state's record keeping requirements, set line by line against what you've recorded",
+    "angle": "mockup-app",
+    "headline": "Homeschool Requirements by State: Name Yours Once and See Your Level",
+    "items": [
+      "Which state do you homeschool in?",
+      "Oregon · Moderate regulation",
+      "Notice on starting; testing at certain grades, results kept",
+      "Your state's record keeping requirements, set line by line against what you've recorded",
+      "Laws change. Confirm with your state before relying on this."
+    ],
+    "proof": [
+      "state: \"Oregon\", level: \"Moderate\", note: \"Notice on starting; testing at certain grades, results kept\""
+    ],
+    "proofExtra": [
+      {
+        "file": "src/products/homeschooling-companion/components/HouseholdState.tsx",
+        "proof": [
+          "Which state do you homeschool in?"
+        ]
+      },
+      {
+        "file": "src/content/guides.ts",
+        "proof": [
+          "Homeschooling Companion reads this same summary to run the state picker on the Kids tab. Pick your state once"
+        ]
+      },
+      {
+        "file": "src/shop/products/homeschooling-companion.ts",
+        "proof": [
+          "Your state's record keeping requirements, set line by line against what you've recorded"
+        ]
+      }
+    ],
+    "query": "homeschool requirements by state",
+    "board": "Homeschool Requirements by State",
+    "visual": "mockup-app per creative/pinterest/homeschool/reference-mockup.png: plum panel (#4a3350), app name 'Homeschooling Companion' at top, two-tone headline, three feature rows (the question 'Which state do you homeschool in?'; the state card line; the set-against-your-record line), large tilted phone on the right showing the REAL screen creative/public/screens/homeschooling-companion-kids.png cropped to remove the Next.js dev badge: it already shows the state card (Oregon, Moderate regulation, its note, the caution line) above the children rows (demo data: Ava and Leo). The open picker (the dropdown 'Choose a state', Save, Skip for now) is not in any captured screen; only capture it if the pin should show the picker itself. Oregon is simply the state the demo household carries. Foot prop: a pencil on cream paper.",
+    "n": 92
+  },
+  {
+    "slice": "seasonal",
+    "angle": "infographic",
+    "headline": "Homeschool Records Over Winter Break: One Evening to Catch Up",
+    "sub": "Set a timer. Most of this takes under 90 minutes.",
+    "items": [
+      "Minutes 0 to 20: Gather workbooks, receipts and your phone.",
+      "Minutes 20 to 40: Write one line per subject per week you can place.",
+      "Minutes 40 to 60: Add library and calendar entries as reading and co-op days.",
+      "Minutes 60 to 75: Check what your state actually asks for.",
+      "Minutes 75 to 90: Record today's session properly."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-catch-up-on-homeschool-records"
+    },
+    "proof": [
+      "Set a timer. Most of this takes under 90 minutes.",
+      "Minutes 0 to 20",
+      "Gather workbooks, receipts and your phone.",
+      "Minutes 20 to 40",
+      "Write one line per subject per week you can place",
+      "Minutes 40 to 60",
+      "Add library and calendar entries as reading and co-op days.",
+      "Minutes 60 to 75",
+      "Check what your state actually asks for",
+      "Minutes 75 to 90",
+      "Record today's session properly"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool record keeping catch up over christmas break",
+    "board": "Homeschool Mid-Year Reset",
+    "when": "mid-December to early January (pin from mid-November)",
+    "visual": "Timeline infographic: a single horizontal evening clock-bar, five segments labelled with the guide's own minute ranges, each with a short label; a cream paper background with a small kitchen timer and a stack of workbooks in the corner. Reads as a December page, not a Christmas card (no holiday imagery beyond a mug).",
+    "flags": [],
+    "reserve": false,
+    "n": 93
+  },
+  {
+    "slice": "seasonal",
+    "angle": "mockup-printable",
+    "headline": "Homeschool Planner Printables: Undated, So They Start Whenever You Do",
+    "sub": "Print what you use and ignore the rest.",
+    "items": [
+      "year planner",
+      "weekly plan",
+      "daily log",
+      "subject record",
+      "reading log",
+      "days schooled"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "proof": [
+      "Undated, so it starts whenever you do.",
+      "Undated, so they start whenever you do.",
+      "Print what you use and",
+      "ignore the rest. Nothing here has to be filled in for anything else to"
+    ],
+    "proofFile": "/tmp/claude-0/-home-user-draftpace/3601f45e-71e9-5dd0-a897-05358699fd6f/scratchpad/hsbook/book.txt",
+    "proofExtra": [
+      {
+        "file": "src/shop/products/homeschooling-companion.ts",
+        "proof": [
+          "Undated working pages: year planner, weekly plan, daily log, subject record, reading log, and days schooled"
+        ]
+      }
+    ],
+    "query": "undated homeschool planner printable",
+    "board": "Homeschool Planner Printables",
+    "when": "late December to January (a new-year start) and July to August (back to homeschool); the book is undated, so any month a family starts",
+    "visual": "Mockup-printable: tilted real book pages on an oak desk with a pencil. Page 1 (the cover, 'Undated, so it starts whenever you do.') on top, with page 11 (the working-pages divider: 'Undated, so they start whenever you do. Print what you use and ignore the rest.') fanned beneath it. Product strip at the foot with the product line and its price read from the listing at render time (never in the headline). No app screen needed.",
+    "flags": [],
+    "reserve": false,
+    "n": 94
+  },
+  {
+    "slice": "seasonal",
+    "angle": "checklist",
+    "headline": "Homeschool January Review: Four Questions to Check What Stuck",
+    "sub": "Covered is not learned. Ask four questions a week or more later, write the answers down",
+    "items": [
+      "What is one half the same as, written a different way?",
+      "If you have three sixths, what's the simplest way to write that?",
+      "Draw two fractions that look different but are equal.",
+      "Why does multiplying the top and bottom of a fraction by the same number not change its value?"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-check-if-your-child-learned-something"
+    },
+    "proof": [
+      "Covered is not learned. Ask four questions a week or more later, write the answers down",
+      "What is one half the same as, written a different way?",
+      "If you have three sixths, what's the simplest way to write that?",
+      "Draw two fractions that look different but are equal.",
+      "Why does multiplying the top and bottom of a fraction by the same number not change its value?"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool mid year review how is my child doing",
+    "board": "Homeschool Assessment at Home",
+    "when": "January, first weeks back from the break; also late December",
+    "visual": "Check-clipboard archetype: a clipboard on a kitchen table with four ticked-box lines for the four questions, a pencil, a child's drawing of two equal fractions tucked under the clip. Label the fractions questions 'One example, in fractions' since they are the guide's own example. Free guide strip at the foot.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 95
+  },
+  {
+    "slice": "seasonal",
+    "angle": "scenario",
+    "headline": "Switching to Homeschool Mid-Year? Your First Two Weeks, Day by Day",
+    "sub": "A withdrawal letter and a records request are not the same document",
+    "items": [
+      "Tuesday: you find your state's page and write down what it actually asks for.",
+      "Wednesday: you write and hand-deliver a withdrawal letter to the school office.",
+      "Thursday: you send a separate letter asking for your child's records.",
+      "Friday: you know whether your state also wants a notice of intent.",
+      "The following Monday: the first entry says nothing more than the date, the subject, and how it went."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-start-homeschooling-first-month-paperwork"
+    },
+    "proof": [
+      "a withdrawal letter and a records request are not the same document",
+      "you find your state's page and write down what it actually asks for",
+      "Wednesday, you write and hand-deliver a withdrawal letter to the school office",
+      "Thursday, you send a separate letter asking for your child's records",
+      "By Friday, you know whether your state also wants a notice of intent",
+      "The first entry in your new record says nothing more than the date, the subject, and how it went."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to start homeschooling mid year",
+    "board": "How to Start Homeschooling",
+    "when": "late December to mid-January (pin from mid-November); any month a family switches mid-school-year",
+    "visual": "Week-board archetype: a five-day paper calendar on a kitchen table with Tuesday to Friday each carrying a single index card in the guide's words and the next Monday marked as the first entry. Plain, unhurried, no school-building imagery. Free guide strip at the foot.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 96
+  },
+  {
+    "slice": "seasonal",
+    "angle": "comparison",
+    "headline": "Withdrawal Letter vs Records Request: Homeschooling Mid-Year Paperwork",
+    "sub": "Most families withdrawing from a school need to send both.",
+    "items": [
+      "Withdrawal letter: Your child is leaving, as of a date you set. Goes to the school office, hand-delivered if you can.",
+      "Records request: Send the cumulative file: transcripts, test results, health and any IEP records. Goes to the same office, as a separate letter."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-start-homeschooling-first-month-paperwork"
+    },
+    "proof": [
+      "Most families withdrawing from a school need to send both.",
+      "Your child is leaving, as of a date you set",
+      "The school office, hand-delivered if you can",
+      "Send the cumulative file: transcripts, test results, health and any IEP records",
+      "The same office, as a separate letter"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool withdrawal letter and records request",
+    "board": "How to Start Homeschooling",
+    "when": "December to February, when families decide over the break to withdraw mid-year",
+    "visual": "Comparison layout: two sheets of cream paper side by side on oak, left headed 'Withdrawal letter', right 'Records request', each with the guide's own one-line 'says what' and 'goes to' text, a paperclip joining them at the top. Free guide strip at the foot.",
+    "flags": [],
+    "reserve": false,
+    "n": 97
+  },
+  {
+    "slice": "seasonal",
+    "angle": "quote-card",
+    "headline": "Homeschool Evaluation: Say What Didn't Go Well",
+    "sub": "It shows you were paying attention and adjusting",
+    "items": [
+      "Saying that math was difficult until January, that you changed curriculum, and that it improved afterward is a stronger position than implying everything went smoothly."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "preparing-for-a-homeschool-evaluation"
+    },
+    "proof": [
+      "Saying that math was difficult until January, that you changed curriculum, and that it improved afterward is a stronger position than implying everything went smoothly.",
+      "It shows you were paying attention and adjusting"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool evaluation what to say",
+    "board": "Homeschool Portfolio and Evaluation",
+    "when": "March to May (evaluation and review season; pin from February)",
+    "visual": "Quote-card on the working-page archetype: the guide sentence set large in a serif on a ruled cream page, a single pencil underline beneath 'difficult until January', a corner of a manila folder at the foot. Attribute to the guide ('Free guide'), not to a person.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 98
+  },
+  {
+    "slice": "seasonal",
+    "angle": "comparison",
+    "headline": "Homeschool Portfolio: October and March Samples vs a Highlight Reel",
+    "sub": "Progress across the year is one of the clearest things a portfolio can show",
+    "items": [
+      "A highlight reel: A portfolio of nothing but finished, polished work tells an evaluator very little",
+      "October and March: Include something from early in the term and something from later on the same subject."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "what-goes-in-a-homeschool-portfolio"
+    },
+    "proof": [
+      "why October and March samples say more than a highlight reel",
+      "A portfolio of nothing but finished, polished work tells an evaluator very little",
+      "Include something from early in the term and something from later on the same subject.",
+      "Progress across the year is one of the clearest things a portfolio can show"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool portfolio work samples what to include",
+    "board": "Homeschool Portfolio and Evaluation",
+    "when": "February to April (prep for spring review; the second sample is the March one)",
+    "visual": "Portfolio-binder archetype with a two-sample split: left, one glossy finished page alone on a clip; right, two plain dated pages (labelled October and March) of the same kind of problem side by side in a binder. Kraft and cream palette, binder rings visible. Free guide strip at the foot.",
+    "flags": [],
+    "reserve": false,
+    "n": 99
+  },
+  {
+    "slice": "seasonal",
+    "angle": "scenario",
+    "headline": "Homeschool End of Year Records: What to Do With the June Stack",
+    "sub": "Check your state's own page before you recycle anything a rule might cover.",
+    "items": [
+      "Forty worksheets, two photos of a baking-soda volcano, a spelling test with a mark on it, and the notebook you used as a log all year",
+      "You don't need all forty worksheets.",
+      "Keep: a handful that show progress, the photos, the test if your state asked for one",
+      "The log stays no matter what your state requires"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-long-to-keep-homeschool-records"
+    },
+    "proof": [
+      "check your state's own page before you recycle anything a rule might cover",
+      "forty worksheets, two photos of a baking-soda volcano, a spelling test with a mark on it, and the notebook you used as a log all year",
+      "You don't need all forty worksheets.",
+      "a handful that show progress, the photos",
+      "the test if your state asked for one",
+      "the log, which stays no matter what your state requires"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool end of year records what to keep",
+    "board": "Homeschool Record Keeping",
+    "when": "May to June (end-of-year wrap-up; pin from April)",
+    "visual": "Home-scene archetype: a banker's box open on a kitchen table in warm early-summer light, a thin pile of worksheets pulled out beside a notebook, two phone photos propped against it. No finished-school-year imagery like diplomas. Free guide strip at the foot.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 100
+  },
+  {
+    "slice": "seasonal",
+    "angle": "quote-card",
+    "headline": "Homeschool Record Keeping After a Gap: October to December, Not a Made-Up Tuesday",
+    "sub": "A record that says roughly when something happened is credible.",
+    "items": [
+      "Write approximate dates as approximate: October to December, not a made-up Tuesday."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-catch-up-on-homeschool-records"
+    },
+    "proof": [
+      "Write approximate dates as approximate: October to December, not a made-up Tuesday.",
+      "A record that says roughly when something happened is credible."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to catch up on homeschool records",
+    "board": "Homeschool Mid-Year Reset",
+    "when": "mid-December to January",
+    "visual": "Quote-card: the sentence set large over a ruled page, 'October to December' handwritten-style with a bracket over a calendar strip of the three months. Cream paper, a pencil. Free guide strip at the foot. Weakest of the slice: same guide as the winter-break timeline.",
+    "flags": [],
+    "reserve": false,
+    "n": 101
+  }
+]

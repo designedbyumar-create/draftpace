@@ -51,6 +51,8 @@ for (const slice of SLICES) {
   list.forEach((idea, i) => {
     // Slices were written by different agents: normalise the two shapes they varied.
     if (idea.link?.kind === "product") idea.link = { ...idea.link, kind: "shop" };
+    // A board is its name only: a proposed new board's reason belongs in the notes, not the board.
+    if (idea.board) idea.board = idea.board.replace(/\s*\(.*$/, "").trim();
     if (idea.proofExtra && !Array.isArray(idea.proofExtra)) idea.proofExtra = [idea.proofExtra];
     all.push({ ...idea, slice, order: i });
   });
