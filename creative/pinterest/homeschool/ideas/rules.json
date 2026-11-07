@@ -1,0 +1,516 @@
+[
+  {
+    "slice": "rules",
+    "angle": "question",
+    "headline": "Homeschool Days or Hours: Does Your State Even Count Them?",
+    "sub": "Some US states set a number: a count of days, a count of hours, or both.",
+    "items": [
+      "180 days, or 900 hours elementary, or 990 hours secondary",
+      "No day or hour minimum in state guidance"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "do-you-have-to-count-homeschool-days-or-hours"
+    },
+    "proof": [
+      "Some US states set a number: a count of days, a count of hours, or both.",
+      "180 days, or 900 hours elementary, or 990 hours secondary",
+      "No day or hour minimum in state guidance"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "do you have to count homeschool days or hours",
+    "board": "Homeschool Attendance",
+    "when": "evergreen; August to October as families start",
+    "visual": "Index-cards archetype on a kitchen-table cream background: a big handwritten-style question on the top card, two smaller cards below labelled with the guide's own two example shapes (a count exists / no count is set), no state names needed on the cards. Free guide strip at the foot.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "rules",
+    "angle": "how-to-steps",
+    "headline": "Just Pulled Your Kids Out of School? Do These 5 Things in Order",
+    "sub": "Withdraw formally and request records if your child is already enrolled somewhere.",
+    "items": [
+      "Find your state's rules",
+      "Withdraw, if enrolled",
+      "Request the records",
+      "File what's due",
+      "Start a record"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-start-homeschooling-first-month-paperwork"
+    },
+    "proof": [
+      "withdraw formally and request records if your child is already enrolled somewhere",
+      "Find your state's rules",
+      "Withdraw, if enrolled",
+      "Request the records",
+      "File what's due",
+      "Start a record"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "just pulled my kids out of school what now homeschool",
+    "board": "How to Start Homeschooling",
+    "when": "evergreen; peaks August to October and January",
+    "visual": "Numbered 1 to 5 on a cork board, one kraft index card pinned per step, a pencil and a mug at the edge; the first-timer 'what now' moment. Free guide strip at the foot.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "rules",
+    "angle": "checklist",
+    "headline": "Homeschool Notice of Intent Checklist: What to Have Ready Before You Fill It Out",
+    "sub": null,
+    "items": [
+      "The child's full legal name, spelled exactly as on their birth certificate.",
+      "Date of birth or age, and grade if your state's form asks for it.",
+      "The family's home address.",
+      "The parent or instructor's name.",
+      "A short statement that the child will be taught at home. Most states want this plain, not a description of your curriculum."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-notice-of-intent-explained"
+    },
+    "proof": [
+      "The child's full legal name, spelled exactly as on their birth certificate.",
+      "Date of birth or age, and grade if your state's form asks for it.",
+      "The family's home address.",
+      "The parent or instructor's name.",
+      "A short statement that the child will be taught at home. Most states want this plain, not a description of your curriculum."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool notice of intent checklist",
+    "board": "Homeschool Requirements by State",
+    "when": "evergreen; before the start of the school year",
+    "visual": "Check-clipboard archetype: a clipboard with five empty tick boxes and the five lines in a plain printed list, a pen clipped on, oak desk behind. Free guide strip at the foot.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "rules",
+    "angle": "myth-vs-truth",
+    "headline": "Homeschool Notice of Intent: No Notice Does Not Mean No Rules",
+    "sub": "None does not mean no rules exist, only that nothing is filed with the state.",
+    "items": [
+      "Myth: no filing means no rules at all",
+      "Truth: No notice is not the same as no requirements."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-notice-of-intent-explained"
+    },
+    "proof": [
+      "Assuming a state with no filing has no rules at all",
+      "No notice is not the same as no requirements.",
+      "None does not mean no rules exist, only that nothing is filed with the state."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "do you have to notify the state you are homeschooling",
+    "board": "Homeschool Requirements by State",
+    "when": "evergreen",
+    "visual": "Two-column myth-vs-truth card: left column crossed-out myth on a crumpled kraft slip, right column the truth on cream paper with a plum rule. No state names, no map. Free guide strip at the foot.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "rules",
+    "angle": "infographic",
+    "headline": "The 4 Levels of Homeschool Regulation, Explained in Plain English",
+    "sub": "This is our own summary, sorted by how much a state's law asks you to file or produce",
+    "items": [
+      "None, 8 states: nothing is filed with the state. Records are for your own use.",
+      "Low, 15 states: a notice is typically filed, and basic records are kept, with no ongoing review.",
+      "Moderate, 19 states: notice plus some form of annual reporting or testing is typically required.",
+      "High, 9 states: a portfolio or a formal annual assessment is typically part of the law, not just a good habit."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-requirements-by-state"
+    },
+    "proof": [
+      "This is our own summary, sorted by how much a state's law asks you to file or produce",
+      "None, 8 states: nothing is filed with the state. Records are for your own use.",
+      "Low, 15 states: a notice is typically filed, and basic records are kept, with no ongoing review.",
+      "Moderate, 19 states: notice plus some form of annual reporting or testing is typically required.",
+      "High, 9 states: a portfolio or a formal annual assessment is typically part of the law, not just a good habit."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool laws by state levels of regulation",
+    "board": "Homeschool Requirements by State",
+    "when": "evergreen",
+    "visual": "Four stacked steps of increasing height (None, Low, Moderate, High) in tints of plum, each with its guide line beside it; small caption 'Laws change. Confirm with your state before relying on this.' (the product's own line). Not a map, no individual states. Free guide strip at the foot.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "rules",
+    "angle": "quote-card",
+    "headline": "Homeschool Attendance Log: Mark the Day as You Go, Not in June",
+    "sub": null,
+    "items": [
+      "marking a day as you go, on the day, takes seconds and is more accurate than any total you rebuild from memory in June"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "do-you-have-to-count-homeschool-days-or-hours"
+    },
+    "proof": [
+      "marking a day as you go, on the day, takes seconds and is more accurate than any total you rebuild from memory in June"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool attendance log how to keep",
+    "board": "Homeschool Attendance",
+    "when": "evergreen; spring when families realise they are behind",
+    "visual": "Quote-card on cream paper: the sentence in large serif type with 'June' picked out in plum, a single pencil drawn across the bottom, a corner of a days-schooled grid peeking in. Free guide strip at the foot.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "rules",
+    "angle": "before-after",
+    "headline": "Homeschool Notice of Intent: Mail It So You Can Prove You Sent It",
+    "sub": null,
+    "items": [
+      "Before: a lost form with no proof of sending is a hard thing to argue about later",
+      "After: Send it by certified mail with a return receipt if it is going by paper, and keep the receipt and a copy of what you sent."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-notice-of-intent-explained"
+    },
+    "proof": [
+      "a lost form with no proof of sending is a hard thing to argue about later",
+      "Send it by certified mail with a return receipt if it is going by paper, and keep the receipt and a copy of what you sent."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to file homeschool notice of intent",
+    "board": "Homeschool Requirements by State",
+    "when": "evergreen; before the start of the school year",
+    "visual": "Split card: left half a plain envelope with nothing kept, right half the same envelope with a receipt stub and a photocopy clipped beside it on a kitchen table. Free guide strip at the foot.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "rules",
+    "angle": "scenario",
+    "headline": "How to Start Homeschooling Next Monday: One Family's First Two Weeks",
+    "sub": "Say you decide on a Tuesday that your nine-year-old will finish out the week at school and start homeschooling the following Monday.",
+    "items": [
+      "That Tuesday, you find your state's page and write down what it actually asks for.",
+      "Wednesday, you write and hand-deliver a withdrawal letter to the school office, and ask the secretary to sign and date your copy.",
+      "Thursday, you send a separate letter asking for your child's records",
+      "By Friday, you know whether your state also wants a notice of intent",
+      "The following Monday, you start."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-start-homeschooling-first-month-paperwork"
+    },
+    "proof": [
+      "Say you decide on a Tuesday that your nine-year-old will finish out the week at school and start homeschooling the following Monday.",
+      "That Tuesday, you find your state's page and write down what it actually asks for.",
+      "Wednesday, you write and hand-deliver a withdrawal letter to the school office, and ask the secretary to sign and date your copy.",
+      "Thursday, you send a separate letter asking for your child's records",
+      "By Friday, you know whether your state also wants a notice of intent",
+      "The following Monday, you start."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to start homeschooling mid year",
+    "board": "Homeschool Mid-Year Reset",
+    "when": "evergreen; January and the weeks after a hard fall",
+    "visual": "Week-board archetype: a Tuesday-to-Monday strip on a cork board with a small note per day, a child's drawing pinned at the corner. Marked as the guide's own example.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "rules",
+    "angle": "comparison",
+    "headline": "Homeschool Notice of Intent: One-Time to the District or Annual to the State",
+    "sub": "They show the two shapes a notice can take: a one-time filing to a district, or an annual filing to the state.",
+    "items": [
+      "Florida: one-time, to the district",
+      "Name, date of birth, address",
+      "Filed within 30 days of starting",
+      "Goes to the district superintendent",
+      "New Mexico: annual, to the state",
+      "Registered online or on paper",
+      "Renewed every year, June 1 to August 1",
+      "Goes to the state education department"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-notice-of-intent-explained"
+    },
+    "proof": [
+      "They show the two shapes a notice can take: a one-time filing to a district, or an annual filing to the state.",
+      "Florida: one-time, to the district",
+      "Name, date of birth, address",
+      "Filed within 30 days of starting",
+      "Goes to the district superintendent",
+      "New Mexico: annual, to the state",
+      "Registered online or on paper",
+      "Renewed every year, June 1 to August 1",
+      "Goes to the state education department"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool notice of intent annual or one time",
+    "board": "Homeschool Requirements by State",
+    "when": "evergreen",
+    "visual": "Side-by-side two-column comparison card, the guide's own 'two real states' pair, in plum and kraft, with the two shapes named large and the states small. Free guide strip at the foot.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "rules",
+    "angle": "comparison",
+    "headline": "Homeschool Withdrawal Letter vs Records Request: You Need Two Letters",
+    "sub": "A withdrawal letter and a records request do different jobs.",
+    "items": [
+      "Withdrawal letter: Your child is leaving, as of a date you set",
+      "Records request: Send the cumulative file: transcripts, test results, health and any IEP records",
+      "The school office, hand-delivered if you can",
+      "The same office, as a separate letter"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-start-homeschooling-first-month-paperwork"
+    },
+    "proof": [
+      "A withdrawal letter and a records request do different jobs.",
+      "Your child is leaving, as of a date you set",
+      "Send the cumulative file: transcripts, test results, health and any IEP records",
+      "The school office, hand-delivered if you can",
+      "The same office, as a separate letter"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool withdrawal letter and records request",
+    "board": "How to Start Homeschooling",
+    "when": "evergreen; August to October and January",
+    "visual": "Two sheets of notepaper side by side on oak, one headed 'Withdrawal letter', one 'Records request', each with the guide's one-line job and where it goes. Free guide strip at the foot.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "rules",
+    "angle": "question",
+    "headline": "Is a Homeschool Notice of Intent the Same as an Affidavit?",
+    "sub": "Often, yes, just under a different name.",
+    "items": [
+      "Some states call it a notice, some a declaration, and some an affidavit, which usually means it has to be signed under oath or notarized."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-notice-of-intent-explained"
+    },
+    "proof": [
+      "Often, yes, just under a different name. Some states call it a notice, some a declaration, and some an affidavit, which usually means it has to be signed under oath or notarized."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "is a notice of intent the same as an affidavit homeschool",
+    "board": "Homeschool Requirements by State",
+    "when": "evergreen",
+    "visual": "Question card: the question in big type over three index cards labelled notice, declaration, affidavit, with a short answer under them. Free guide strip at the foot.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "rules",
+    "angle": "question",
+    "headline": "Homeschooling Paperwork: What Is Actually Required in the First Month?",
+    "sub": "It depends entirely on your state.",
+    "items": [
+      "Some want a notice of intent before you begin, some want nothing filed at all, and if your child was previously enrolled in school, a withdrawal letter is usually expected regardless."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-start-homeschooling-first-month-paperwork"
+    },
+    "proof": [
+      "It depends entirely on your state.",
+      "Some want a notice of intent before you begin, some want nothing filed at all, and if your child was previously enrolled in school, a withdrawal letter is usually expected regardless."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool paperwork what do I need to start",
+    "board": "How to Start Homeschooling",
+    "when": "evergreen; August to October and January",
+    "visual": "Home-scene archetype: a first-year parent's kitchen table with a folder, a mug and a laptop closed; the question large in the sky area, the short answer in a plum band below. Free guide strip at the foot.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "rules",
+    "angle": "checklist",
+    "headline": "Homeschool First Week Checklist: A First Week That Does Not Need a Plan",
+    "sub": null,
+    "items": [
+      "Write your child's name and one subject on a page.",
+      "Each day, note the date and what you did, in a line.",
+      "At the end of the week, look at what happened and note one thing to change."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-start-homeschooling-first-month-paperwork"
+    },
+    "proof": [
+      "A first week that does not need a plan",
+      "Write your child's name and one subject on a page.",
+      "Each day, note the date and what you did, in a line.",
+      "At the end of the week, look at what happened and note one thing to change."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "first week of homeschooling checklist",
+    "board": "Homeschool Mid-Year Reset",
+    "when": "evergreen; August to September and January",
+    "visual": "Check-clipboard archetype: a lined page on a clipboard with three tick boxes and the three lines, one pencil, a child's drawing under the clip. Free guide strip at the foot.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "rules",
+    "angle": "infographic",
+    "headline": "First Month of Homeschooling: What to File, What to Record, What Can Wait",
+    "sub": null,
+    "items": [
+      "File: Where a notice of intent is required, file it early and keep a copy of what you sent.",
+      "Record: The date, the subject and roughly what part, and one word about how it went, from day one.",
+      "Can wait: Curriculum does not have to be settled in the first week",
+      "Can wait: a schedule does not have to be perfect",
+      "Can wait: a portfolio builds through the year rather than on day one"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-start-homeschooling-first-month-paperwork"
+    },
+    "proof": [
+      "Where a notice of intent is required, file it early and keep a copy of what you sent.",
+      "The date, the subject and roughly what part, and one word about how it went, from day one.",
+      "Curriculum does not have to be settled in the first week",
+      "a schedule does not have to be perfect",
+      "a portfolio builds through the year rather than on day one"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "first month of homeschooling what to do",
+    "board": "How to Start Homeschooling",
+    "when": "evergreen; August to October and January",
+    "visual": "Three-lane board (File, Record, Can wait) on a kraft backing with cream cards, the Can wait lane drawn lighter with a small pencil resting on it. Free guide strip at the foot.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "rules",
+    "angle": "how-to-steps",
+    "headline": "How to Find Your State's Homeschool Notice of Intent in 5 Steps",
+    "sub": "Sometimes called a declaration or affidavit.",
+    "items": [
+      "Go to your state department of education's own website and search for home school or home instruction, not a third-party ranking.",
+      "Check whether the notice goes to the state directly or to your local district's superintendent.",
+      "Note whether it is due once or has to be filed again every year, and if so, the exact window.",
+      "Ask a state homeschool organization to point you to the current form.",
+      "Send it by certified mail with a return receipt if it is going by paper, and keep the receipt and a copy of what you sent."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-notice-of-intent-explained"
+    },
+    "proof": [
+      "Sometimes called a declaration or affidavit.",
+      "Go to your state department of education's own website and search for home school or home instruction, not a third-party ranking.",
+      "Check whether the notice goes to the state directly or to your local district's superintendent.",
+      "Note whether it is due once or has to be filed again every year, and if so, the exact window.",
+      "Ask a state homeschool organization to point you to the current form.",
+      "Send it by certified mail with a return receipt if it is going by paper, and keep the receipt and a copy of what you sent."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to find homeschool notice of intent for my state",
+    "board": "Homeschool Requirements by State",
+    "when": "evergreen; before the start of the school year",
+    "visual": "Numbered steps 1 to 5 on a cream page with a pencil-drawn arrow between them; each step cut to its first clause on the pin. Free guide strip at the foot.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "rules",
+    "angle": "how-to-steps",
+    "headline": "How to Find Out If Your State Counts Homeschool Days or Hours",
+    "sub": "Ten minutes, done once, is enough for most states.",
+    "items": [
+      "Go to your own state's department of education website and search for home school or home education, not a third-party ranking of states.",
+      "Read the section on instructional time specifically.",
+      "If a state homeschool association's page states a different number than the state agency's own page, trust the state agency's page and note the mismatch with a date.",
+      "Write down what you found, with the date you checked it, in the same place you keep the rest of your homeschool paperwork.",
+      "If a search turns up nothing about days or hours at all, treat that as your answer for a state that sets no count, not as a sign you searched wrong."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "do-you-have-to-count-homeschool-days-or-hours"
+    },
+    "proof": [
+      "Ten minutes, done once, is enough for most states.",
+      "Go to your own state's department of education website and search for ",
+      "Read the section on instructional time specifically.",
+      "If a state homeschool association's page states a different number than the state agency's own page, trust the state agency's page and note the mismatch with a date.",
+      "Write down what you found, with the date you checked it, in the same place you keep the rest of your homeschool paperwork.",
+      "If a search turns up nothing about days or hours at all, treat that as your answer for a state that sets no count, not as a sign you searched wrong."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to find homeschool hours requirement for my state",
+    "board": "Homeschool Attendance",
+    "when": "evergreen",
+    "visual": "Numbered steps 1 to 5 as stacked kraft tags on a string, a small clock and calendar sketched in pencil at the corner. Free guide strip at the foot.",
+    "flags": [],
+    "reserve": true
+  },
+  {
+    "slice": "rules",
+    "angle": "quote-card",
+    "headline": "Starting Homeschooling Mid-Year? Curriculum and a Full Schedule Can Wait",
+    "sub": null,
+    "items": [
+      "Curriculum and a full schedule can wait."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-start-homeschooling-first-month-paperwork"
+    },
+    "proof": [
+      "Curriculum and a full schedule can wait."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "starting homeschooling mid year what to do first",
+    "board": "Homeschool Mid-Year Reset",
+    "when": "January to March; late October",
+    "visual": "Quote-card: the sentence in large type on cream paper, a plain notebook and a pencil at the foot. Overlaps in message with the existing pin 6.5, so a reserve.",
+    "flags": [],
+    "reserve": true
+  },
+  {
+    "slice": "rules",
+    "angle": "myth-vs-truth",
+    "headline": "Homeschool Deschooling: One Month per Year in School Is a Rule of Thumb, Not Research",
+    "sub": "Treat it as a rough guide, not a countdown.",
+    "items": [
+      "give yourselves a stretch of lighter days before diving into a full schedule",
+      "the rule of thumb repeated across their sites, not a research finding, is about one month of adjustment for every year your child spent in a traditional classroom"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-start-homeschooling-first-month-paperwork"
+    },
+    "proof": [
+      "give yourselves a stretch of lighter days before diving into a full schedule",
+      "the rule of thumb repeated across their sites, not a research finding, is about one month of adjustment for every year your child spent in a traditional classroom",
+      "Treat it as a rough guide, not a countdown."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how long should deschooling last homeschool",
+    "board": "Homeschool Mid-Year Reset",
+    "when": "January and August to October",
+    "visual": "Myth-vs-truth card: the 'research says' myth on a crumpled slip, the truth in plain print with a calendar page of light days, kitchen-table light. Free guide strip at the foot.",
+    "flags": [],
+    "reserve": false
+  }
+]

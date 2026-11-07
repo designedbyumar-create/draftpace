@@ -1,0 +1,272 @@
+[
+  {
+    "slice": "portfolio",
+    "angle": "checklist",
+    "headline": "What to Include in a Homeschool Portfolio: The Five Core Contents",
+    "sub": "A typical portfolio holds these five things.",
+    "items": [
+      "A log of educational activities, with reading materials named by title.",
+      "Samples of work across the year, dated, from more than one point rather than one good week.",
+      "A list of subjects covered and the materials or curriculum used.",
+      "Attendance or days schooled, where your state counts them.",
+      "Test results or an evaluator's written report, where required."
+    ],
+    "link": { "kind": "guide", "slug": "what-goes-in-a-homeschool-portfolio" },
+    "proof": [
+      "A typical portfolio holds these five things.",
+      "A log of educational activities, with reading materials named by title.",
+      "Samples of work across the year, dated, from more than one point rather than one good week.",
+      "A list of subjects covered and the materials or curriculum used.",
+      "Attendance or days schooled, where your state counts them.",
+      "Test results or an evaluator's written report, where required."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to include in a homeschool portfolio",
+    "board": "Homeschool Portfolio and Evaluation",
+    "when": "evergreen; peaks late summer and fall when a portfolio is started, and spring before year-end reviews",
+    "visual": "Archetype portfolio-binder / check-clipboard: five tick-box rows on a cream clipboard sheet, each box ticked in plum pencil, a kraft folder edge behind. Free guide tag on the pin, no price.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "portfolio",
+    "angle": "how-to-steps",
+    "headline": "Homeschool Evaluation Prep: Get Ready in One Evening, Step by Step",
+    "sub": "This assumes you already have work sitting around the house.",
+    "items": [
+      "First 15 minutes: Confirm with your evaluator: meeting time, location, and anything specific they want to see.",
+      "Next 20 minutes: Pull one dated work sample per subject from early in the year and one from recently.",
+      "Next 15 minutes: Write a subject and curriculum list, one line each.",
+      "Next 15 minutes: Add a short note per subject: what changed, what was hard, what you'd do differently.",
+      "Last 10 minutes: Put it all in one folder, in the order your evaluator will likely go through it."
+    ],
+    "link": { "kind": "guide", "slug": "preparing-for-a-homeschool-evaluation" },
+    "proof": [
+      "This assumes you already have work sitting around the house.",
+      "First 15 minutes",
+      "Confirm with your evaluator: meeting time, location, and anything specific they want to see.",
+      "Next 20 minutes",
+      "Pull one dated work sample per subject from early in the year and one from recently.",
+      "Write a subject and curriculum list, one line each.",
+      "Add a short note per subject: what changed, what was hard, what you'd do differently.",
+      "Last 10 minutes",
+      "Put it all in one folder, in the order your evaluator will likely go through it."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to prepare for a homeschool evaluation",
+    "board": "Homeschool Portfolio and Evaluation",
+    "when": "spring (the weeks before a year-end review); also whenever a review date is set",
+    "visual": "Archetype working-page: a numbered vertical timeline (five steps, the clock times in plum small caps on the left) on a cream page, kitchen-table oak edge and a pencil. Weakest of the slice because pin 4.3 already covers the same guide section as index cards; the numbered clock-time layout is the only new thing.",
+    "flags": [],
+    "reserve": true
+  },
+  {
+    "slice": "portfolio",
+    "angle": "comparison",
+    "headline": "Homeschool Portfolio Samples: A September Page Next to a May One",
+    "sub": "One of the clearest things a folder can show is the same subject at two points in the year.",
+    "items": [
+      "A September math page and a May math page, same kind of problem",
+      "not a stack of finished worksheets from one good week"
+    ],
+    "link": { "kind": "guide", "slug": "preparing-for-a-homeschool-evaluation" },
+    "proof": [
+      "One of the clearest things a folder can show is the same subject at two points in the year.",
+      "A September math page and a May math page, same kind of problem",
+      "a stack of finished worksheets from one good week"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool portfolio work samples examples",
+    "board": "Homeschool Portfolio and Evaluation",
+    "when": "evergreen; peaks spring and late summer",
+    "visual": "Archetype portfolio-binder, two-up comparison: left a single lined math page labelled September, right a page labelled May (blank-ish worksheets drawn as ruled paper with plain scribbles, no real child's work, no invented problems), clipped side by side to cork board; beneath, a faint thick stack of worksheets crossed out in the margin. Free guide.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slice": "portfolio",
+    "angle": "infographic",
+    "headline": "What to Keep per Subject in a Homeschool Portfolio",
+    "sub": "A rough guide. Adjust to what your state and your evaluator ask for.",
+    "items": [
+      "Math: Worked problems showing the method, not just the answer (A few pieces per term)",
+      "Writing: A first draft and the finished version of the same piece (Two or three per year)",
+      "Reading: A running list of books, finished and abandoned (Ongoing)",
+      "Science: Photos of experiments, plus what was concluded (Per topic)",
+      "History and geography: Anything with a date and an argument in it (Per topic)",
+      "Art and practical subjects: Photos, since the work itself rarely fits in a folder (As produced)"
+    ],
+    "link": { "kind": "guide", "slug": "what-goes-in-a-homeschool-portfolio" },
+    "proof": [
+      "A rough guide. Adjust to what your state and your evaluator ask for.",
+      "Worked problems showing the method, not just the answer",
+      "A few pieces per term",
+      "A first draft and the finished version of the same piece",
+      "Two or three per year",
+      "A running list of books, finished and abandoned",
+      "Photos of experiments, plus what was concluded",
+      "Anything with a date and an argument in it",
+      "Photos, since the work itself rarely fits in a folder",
+      "As produced"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool portfolio by subject what to keep",
+    "board": "Homeschool Portfolio and Evaluation",
+    "when": "evergreen; peaks late summer and fall",
+    "visual": "Archetype portfolio-binder as a tab map: six coloured divider tabs down the right edge of an open binder, each tab one subject with its 'worth keeping' line and a small 'how often' tag in plum. Cream paper, no per-card icons.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "portfolio",
+    "angle": "mockup-printable",
+    "headline": "A Homeschool Record Is Not an Assessment: What the Cover Page Says",
+    "sub": "About this record",
+    "items": [
+      "This is a record of what was done, kept by a parent. It is not an assessment, not a transcript, and it makes no claim about how any of it went."
+    ],
+    "link": { "kind": "product", "slug": "homeschooling-companion" },
+    "proof": [
+      "This is a record of what was done, kept by a parent. It is not an assessment, not a transcript, and it makes no claim about how any of it went."
+    ],
+    "proofFile": "src/products/homeschooling-companion/book.ts",
+    "query": "homeschool record keeping for evaluation",
+    "board": "Homeschool Portfolio and Evaluation",
+    "when": "evergreen; peaks spring before year-end reviews",
+    "visual": "mockup-printable: the real My Homeschool Record cover (document.tsx first Page: plum spine, ruled lines, 'My Homeschool Record' title, plum-soft 'About this record' box) printed on letter paper, slightly tilted on an oak desk beside a pencil and a kraft folder. Render the cover with no child name (book.name null) so no demo name appears. Product pin: Homeschooling Companion line with its listing price. Weakest of the slice: pin 4.5 already uses this idea as a working-page; only the printed-cover mockup is new.",
+    "flags": [],
+    "reserve": true
+  },
+  {
+    "slice": "portfolio",
+    "angle": "mockup-printable",
+    "headline": "Homeschool Record Printable: Three Tick Boxes Decide What Goes on Paper",
+    "sub": "One child, on paper, made on your own device so nothing about them is sent anywhere to produce it.",
+    "items": [
+      "What was done, day by day",
+      "Notes you have marked for the record",
+      "Results of checks you ran",
+      "Notes you have kept private are never included, whatever is ticked here."
+    ],
+    "link": { "kind": "product", "slug": "homeschooling-companion" },
+    "proof": [
+      "One child, on paper, made on your own device so nothing about them is sent anywhere to produce it.",
+      "What was done, day by day",
+      "Notes you have marked for the record",
+      "Results of checks you ran",
+      "Notes you have kept private are never included, whatever is ticked here.",
+      "Check results start out excluded"
+    ],
+    "proofFile": "src/products/homeschooling-companion/components/RecordModule.tsx",
+    "query": "printable homeschool record for one child",
+    "board": "Homeschool Portfolio and Evaluation",
+    "when": "evergreen; peaks spring",
+    "visual": "mockup-printable: the real 'My Homeschool Record' card from creative/public/screens/homeschooling-companion-record.png, cropped to about y 315-730 (the card only, which excludes the Next.js 'N' badge near y 805 and every demo name), shown as a phone-width card laid on a desk with a printed record page (document.tsx 'Notes' sheet, headed 'Written at the time') tilted beneath it. The two ticked boxes and the unticked 'Results of checks you ran' are visible in the crop. Product pin: Homeschooling Companion line with its listing price.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "portfolio",
+    "angle": "question",
+    "headline": "Homeschool Evaluation: What If My Child Had a Rough Year?",
+    "sub": "Bring it anyway, with a short plain note about what changed.",
+    "items": [
+      "Math: struggled with fractions until January, steady since",
+      "A folder that shows a hard stretch and an adjustment reads as more credible than one that implies nothing was ever difficult"
+    ],
+    "link": { "kind": "guide", "slug": "preparing-for-a-homeschool-evaluation" },
+    "proof": [
+      "What if my child had a rough year?",
+      "Bring it anyway, with a short plain note about what changed.",
+      "Math: struggled with fractions until January, steady since",
+      "A folder that shows a hard stretch and an adjustment reads as more credible than one that implies nothing was ever difficult"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what if my homeschooler had a bad year evaluation",
+    "board": "Homeschool Portfolio and Evaluation",
+    "when": "spring (before year-end reviews); evergreen for worried parents",
+    "visual": "Archetype index-cards: a question card on top ('What if my child had a rough year?') with the answer card beneath, and a small paper note clipped to a work-sample page showing the one-line 'Math: struggled with fractions until January, steady since' in handwriting. Cream, kitchen table, pencil. Free guide.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slice": "portfolio",
+    "angle": "scenario",
+    "headline": "A Homeschool Portfolio by October: What One Fourth Grader's Folder Holds",
+    "sub": "None of it is polished. That's the point: it shows a normal three months, not a highlight reel.",
+    "items": [
+      "two math pages showing a problem worked two different ways",
+      "a two-paragraph book report on a chapter book finished in September",
+      "a photo of a volcano model with a caption she dictated",
+      "a running list of eleven books read or abandoned since school started"
+    ],
+    "link": { "kind": "guide", "slug": "what-goes-in-a-homeschool-portfolio" },
+    "proof": [
+      "By the end of October, her folder holds:",
+      "two math pages showing a problem worked two different ways",
+      "a two-paragraph book report on a chapter book finished in September",
+      "a photo of a volcano model with a caption she dictated",
+      "a running list of eleven books read or abandoned since school started",
+      "None of it is polished. That's the point: it shows a normal three months, not a highlight reel."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool portfolio examples elementary",
+    "board": "Homeschool Portfolio and Evaluation",
+    "when": "fall (October and November, a few months in); evergreen",
+    "visual": "Archetype portfolio-binder: an open kraft folder on the kitchen table with the four items fanned out (two math pages, a short report page, a photo print of a clay volcano model with a caption strip, a list page of books), a child's crayon drawing at the corner. Items labelled with the guide's own words; caption must say this is an example, not a real child's file. Free guide.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slice": "portfolio",
+    "angle": "checklist",
+    "headline": "Homeschool Evaluation: What to Bring to the Meeting, a Six-Item Folder List",
+    "sub": "Ask your own evaluator or state what it requires.",
+    "items": [
+      "The log of what was covered, with dates, even if approximate.",
+      "Work samples from more than one point in the year, not just one strong stretch.",
+      "A list of curricula and materials used.",
+      "Attendance or days schooled, if your state counts them.",
+      "Test results, if your state requires them.",
+      "A short note per subject on where you started and where you got to."
+    ],
+    "link": { "kind": "guide", "slug": "preparing-for-a-homeschool-evaluation" },
+    "proof": [
+      "Ask your own evaluator or state what it requires.",
+      "The log of what was covered, with dates, even if approximate.",
+      "Work samples from more than one point in the year, not just one strong stretch.",
+      "A list of curricula and materials used.",
+      "Attendance or days schooled, if your state counts them.",
+      "Test results, if your state requires them.",
+      "A short note per subject on where you started and where you got to."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool evaluation what to bring",
+    "board": "Homeschool Portfolio and Evaluation",
+    "when": "spring (the weeks before a year-end review); evergreen",
+    "visual": "Archetype check-clipboard: a clipboard with a six-line checklist, plum pencil ticks, a kraft folder under it with a tab; cream page. Distinct from the portfolio checklist by showing a folder being packed (tick = packed). Free guide.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "portfolio",
+    "angle": "quote-card",
+    "headline": "Include Ordinary Homeschool Work in Your Portfolio, Not Only the Best",
+    "sub": "A portfolio of nothing but finished, polished work tells an evaluator very little, and can even read as curated rather than complete.",
+    "items": [
+      "Include something from early in the term and something from later on the same subject."
+    ],
+    "link": { "kind": "guide", "slug": "what-goes-in-a-homeschool-portfolio" },
+    "proof": [
+      "A portfolio of nothing but finished, polished work tells an evaluator very little, and can even read as curated rather than complete.",
+      "Include something from early in the term and something from later on the same subject."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool portfolio tips what to put in",
+    "board": "Homeschool Portfolio and Evaluation",
+    "when": "evergreen",
+    "visual": "Archetype working-page as a quote card: the first sentence set large in a serif on cream paper, the line underneath in small type, a single smudged pencil-written worksheet corner peeking from the edge (ordinary, not polished). No price. Free guide.",
+    "flags": [],
+    "reserve": false
+  }
+]
