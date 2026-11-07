@@ -273,13 +273,13 @@ function dividedBox() {
       <div style="${at(44, 92, 170, 280)}">${scrib({ w: 170, rows: 5, gap: 62, amp: 8, seed, sw: 3 })}</div></div>`;
   const pages = `${plain(412, 466, -2.4, "October", 6)}${plain(666, 458, 1.8, "March", 12)}`;
 
-  const card = (x, y, w, rot, head, body, key) => `<div style="${at(x, y, w, 330, `transform:rotate(${rot}deg);z-index:5`)}">
+  const card = (x, y, w, rot, head, body, key, fs = 29) => `<div style="${at(x, y, w, 330, `transform:rotate(${rot}deg);z-index:5`)}">
       <div style="${at(0, 0, w, 330, `background:linear-gradient(#fffdf3,#f6f0df);box-shadow:${SHADOW};border-radius:5px`)}"></div>
       <div style="${at(0, 0, w, 10, "background:#6b3f78;border-radius:5px 5px 0 0")}"></div>
-      <div data-check="${key}" style="${at(24, 26, w - 48, 286, "overflow:hidden;font:500 29px/1.3 'Plex',sans-serif;color:#26232b")}"><div style="font:700 25px/1.2 'Plex',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#6b3f78;margin-bottom:10px">${esc(head)}</div>${esc(body)}</div></div>`;
-  const cards = `${card(88, 934, 306, -1.4, hLead, hText, "highlight reel")}${card(430, 934, 484, 1.2, oLead, oText, "october and march")}`;
+      <div data-check="${key}" style="${at(24, 26, w - 48, 286, "overflow:hidden;font:500 ${fs}px/1.3 'Plex',sans-serif;color:#26232b")}"><div style="font:700 25px/1.2 'Plex',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#6b3f78;margin-bottom:10px">${esc(head)}</div>${esc(body)}</div></div>`;
+  const cards = `${card(88, 934, 306, -1.4, hLead, hText, "highlight reel", 30)}${card(430, 934, 484, 1.2, oLead, oText, "october and march", 36)}`;
   const scene = `${denim}${box}${glossy}${pages}${cards}`;
-  return printable({ n, paper: "#efe7d6", scene });
+  return printable({ n, paper: "#efe7d6", extraCss: ".top h1{font-size:62px}", scene });
 }
 
 export const pins = [question(), checklist(), quoteCard(), palletBoard(), dividedBox()];
