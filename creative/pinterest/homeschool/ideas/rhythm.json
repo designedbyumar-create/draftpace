@@ -1,0 +1,599 @@
+[
+  {
+    "slice": "rhythm",
+    "angle": "infographic",
+    "headline": "Four Day Homeschool Week: Three Ways to Lay Out the Days",
+    "sub": "None is the correct one. Pick whichever fits the day you actually have free.",
+    "items": [
+      "Front-loaded: Monday, Tuesday, Wednesday, Thursday. Friday is open for a co-op, a field trip, or errands",
+      "Split around a spare day: Monday, Tuesday, Thursday, Friday. Wednesday is open, so a bad Monday still leaves three days",
+      "Back-loaded: Tuesday, Wednesday, Thursday, Friday. Monday is open, useful when an outside class runs that morning"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "four-day-homeschool-week"
+    },
+    "proof": [
+      "Front-loaded",
+      "Monday, Tuesday, Wednesday, Thursday",
+      "Friday is open for a co-op, a field trip, or errands",
+      "Split around a spare day",
+      "Monday, Tuesday, Thursday, Friday",
+      "Wednesday is open, so a bad Monday still leaves three days",
+      "Back-loaded",
+      "Tuesday, Wednesday, Thursday, Friday",
+      "Monday is open, useful when an outside class runs that morning",
+      "None is the correct one. Pick whichever fits the day you actually have free."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "4 day homeschool week schedule",
+    "board": "Four Day Homeschool Week",
+    "when": "evergreen; peaks Jul-Sep and Jan",
+    "visual": "Three stacked mini week boards on cream paper (week-board archetype), Monday to Friday columns, the taught days filled in plum and the open day left as an empty dashed column labelled with its guide caption. Oak table edge and a pencil at the foot. Free guide tag.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "rhythm",
+    "angle": "infographic",
+    "headline": "Homeschool Schedule: How Many Days a Week Does Each Subject Need?",
+    "sub": "One family's split, not a rule. Change every number to fit your child.",
+    "items": [
+      "Math, 4 days: Needs steady practice to hold",
+      "Reading, 4 days: Same reason as math",
+      "Writing, 3 days: Holds up fine with a day off between sessions",
+      "Science, 2 days: A unit or an experiment doesn't need daily time",
+      "History, 2 days: Reads well in fewer, longer sessions",
+      "Geography, 1 day: A single focused session a week is often enough"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "four-day-homeschool-week"
+    },
+    "proof": [
+      "Needs steady practice to hold",
+      "Same reason as math",
+      "Holds up fine with a day off between sessions",
+      "A unit or an experiment doesn't need daily time",
+      "Reads well in fewer, longer sessions",
+      "A single focused session a week is often enough",
+      "One family's split, not a rule. Change every number to fit your child."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how many days a week for each homeschool subject",
+    "board": "Four Day Homeschool Week",
+    "when": "evergreen; peaks Jul-Sep",
+    "visual": "Subject-by-day grid on kraft paper (week-board): six subject rows, a row of day dots per subject showing 4/4/3/2/2/1, the guide's one-line why beside each. Numbers are the guide's own example. Free guide tag.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "rhythm",
+    "angle": "scenario",
+    "headline": "Homeschool Weekly Plan: What a Spare Wednesday Does When Tuesday Goes Wrong",
+    "sub": "Nothing about the subjects changed. Four days a week is still four days a week.",
+    "items": [
+      "the week is Monday, Tuesday, Thursday and Friday full, and Wednesday carries nothing at all",
+      "In the week the toddler gets a stomach bug on Tuesday night, Wednesday is where Tuesday's math lesson actually happens, and nothing else in the week has to move."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-weekly-plan-with-a-spare-day"
+    },
+    "proof": [
+      "Say a family teaches four subjects, math, reading, writing and science, four days a week each.",
+      "the week is Monday, Tuesday, Thursday and Friday full, and Wednesday carries nothing at all",
+      "In the week the toddler gets a stomach bug on Tuesday night, Wednesday is where Tuesday's math lesson actually happens, and nothing else in the week has to move.",
+      "Nothing about the subjects changed. Four days a week is still four days a week."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool weekly schedule with a spare day",
+    "board": "Four Day Homeschool Week",
+    "when": "evergreen; peaks Aug-Sep and winter cold season",
+    "visual": "Two-panel scenario on cream paper: panel one the ordinary week (Wednesday empty), panel two the sick-Tuesday week with an arrow carrying Tuesday's math to Wednesday. Home-scene feel, mug and a sleeping toddler's blanket corner only as props. Free guide tag.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "rhythm",
+    "angle": "how-to-steps",
+    "headline": "How to Decide How Many Days a Week Each Homeschool Subject Gets",
+    "sub": "Do this once, on paper, before the first Monday, not during it.",
+    "items": [
+      "List every subject you plan to teach, then write a number of days a week next to each one, from zero to four.",
+      "Give the subjects that need steady practice, usually math and reading, the most days.",
+      "Give lighter subjects fewer days.",
+      "If a co-op, an outside class, or another family's schedule already fixes one day for you, build the other three around it instead of working against it.",
+      "Write the numbers down somewhere you will actually look at again."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "four-day-homeschool-week"
+    },
+    "proof": [
+      "Do this once, on paper, before the first Monday, not during it.",
+      "List every subject you plan to teach, then write a number of days a week next to each one, from zero to four.",
+      "Give the subjects that need steady practice, usually math and reading, the most days.",
+      "Give lighter subjects fewer days.",
+      "If a co-op, an outside class, or another family's schedule already fixes one day for you, build the other three around it instead of working against it.",
+      "Write the numbers down somewhere you will actually look at again."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to make a homeschool schedule",
+    "board": "Four Day Homeschool Week",
+    "when": "evergreen; peaks Jul-Sep",
+    "visual": "Numbered 1-5 step list on lined notebook paper with a pencil, each number a hand-drawn circle (index-card archetype). Step 4 can be shortened to its first clause on the pin if space is tight (cut keeps its words). Free guide tag.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "rhythm",
+    "angle": "comparison",
+    "headline": "Homeschool Subject Not Working? The Same Fix Order for Division, Reading, Spelling",
+    "sub": "Illustrative examples. Swap in your own subject and numbers.",
+    "items": [
+      "1. Change the time: Teach it first, not last | Read together earlier, before energy drops | Five minutes right after breakfast",
+      "2. Change the amount: 5 problems instead of 15 | One chapter instead of three | 5 words instead of 15, for a week",
+      "3. Go back one step: Check division, then multiplication facts | Check vocabulary: can they explain the hard words first | Check letter sounds out loud, no writing"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-subject-not-working-what-to-change-first"
+    },
+    "proof": [
+      "1. Change the time",
+      "Teach it first, not last",
+      "Read together earlier, before energy drops",
+      "Five minutes right after breakfast",
+      "2. Change the amount",
+      "5 problems instead of 15",
+      "One chapter instead of three",
+      "5 words instead of 15, for a week",
+      "3. Go back one step",
+      "Check division, then multiplication facts",
+      "Check vocabulary: can they explain the hard words first",
+      "Check letter sounds out loud, no writing",
+      "Illustrative examples. Swap in your own subject and numbers."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool subject not working",
+    "board": "Homeschool Help",
+    "when": "evergreen; peaks Nov-Feb and mid-year slumps",
+    "visual": "A three-row by three-column grid (columns Long division / Reading comprehension / Spelling, rows the three steps) on a cork board with index-card cells. Column heads are the guide's own. Free guide tag.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "rhythm",
+    "angle": "quote-card",
+    "headline": "Homeschool Subject Not Working? Shortening the Session Is Not Lowering Standards",
+    "sub": "Then change the amount",
+    "items": [
+      "Shortening a session is not lowering your standards, it is the standard being met."
+    ],
+    "link": {
+      "kind": "product",
+      "slug": "homeschooling-companion"
+    },
+    "proof": [
+      "Then change the amount",
+      "Shortening a session is not lowering your standards, it is the standard being met."
+    ],
+    "proofFile": "/tmp/claude-0/-home-user-draftpace/3601f45e-71e9-5dd0-a897-05358699fd6f/scratchpad/hsbook/book.txt",
+    "query": "homeschool lessons ending in tears what to change",
+    "board": "Homeschool Help",
+    "when": "evergreen; peaks Nov-Feb",
+    "visual": "Large serif quote on a cream page-spread of The Homeschool Year (chapter 06 'When it is not working', book page 10), oak table, pencil laid across. Attribute to 'The Homeschool Year'. Do not use the book's following line, it says 'maths' (British spelling). Foot line is the product line with its price, taken from the listing's price.amount.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "rhythm",
+    "angle": "myth-vs-truth",
+    "headline": "Homeschool Attendance Log: Do Not Fill the Gaps the Night Before a Review",
+    "sub": "Bring the record as it stands, gaps included, rather than filling gaps in the night before.",
+    "items": [
+      "STOP: A perfect log with no gaps at all, built the week before a review, usually reads as exactly that.",
+      "INSTEAD: A log with a few ordinary gaps across a steady year reads as normal."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-attendance-what-to-track"
+    },
+    "proof": [
+      "Bring the record as it stands, gaps included, rather than filling gaps in the night before.",
+      "A log with a few ordinary gaps across a steady year reads as normal.",
+      "A perfect log with no gaps at all, built the week before a review, usually reads as exactly that."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool attendance log evaluation",
+    "board": "Homeschool Attendance",
+    "when": "peaks Apr-Jun (reviews) and Aug-Sep",
+    "visual": "Split pin: left half a too-neat attendance grid crossed through in red pencil, right half a real grid with a few empty boxes and a tick. 'Stop doing this' register (red pencil mark, not an emoji). Portfolio-binder desk colours. Free guide tag.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "rhythm",
+    "angle": "comparison",
+    "headline": "What Counts as a Homeschool School Day? Field Trips, Co-op and Travel Days",
+    "sub": "General practice across states, not a rule for yours specifically. Confirm anything you're relying on at your own state's source.",
+    "items": [
+      "Generally counts: A morning of workbook math and reading",
+      "Generally counts: A field trip with a purpose you set in advance (Yes, in most states)",
+      "Generally counts: A co-op class someone else taught (Yes, log it like any other subject)",
+      "Not usually: A travel day with no planned learning (unless your state counts differently)",
+      "No: A day nothing happened at all"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-attendance-what-to-track"
+    },
+    "proof": [
+      "A morning of workbook math and reading",
+      "A field trip with a purpose you set in advance",
+      "Yes, in most states",
+      "A co-op class someone else taught",
+      "Yes, log it like any other subject",
+      "A travel day with no planned learning",
+      "Not usually, unless your state counts differently",
+      "A day nothing happened at all",
+      "General practice across states, not a rule for yours specifically. Confirm anything you're relying on at your own state's source."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what counts as a homeschool day",
+    "board": "Homeschool Attendance",
+    "when": "peaks Aug-Sep and Apr-Jun",
+    "visual": "Two-column this-or-that board: 'Generally counts' on a plum-edged card, 'Not usually' on a plain card, items on index cards pinned to each side. Include the guide's 'confirm at your own state's source' line small at the foot. Not a legal claim. Free guide tag.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "rhythm",
+    "angle": "checklist",
+    "headline": "Homeschool Attendance Record: The Lightest Version That Holds Up",
+    "sub": "If your state counts days, hours, or nothing at all, this is enough to start from.",
+    "items": [
+      "A date.",
+      "A line on what you covered, a few words is enough.",
+      "Hours, only if your state's own count is in hours rather than days."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-attendance-what-to-track"
+    },
+    "proof": [
+      "If your state counts days, hours, or nothing at all, this is enough to start from.",
+      "A date.",
+      "A line on what you covered, a few words is enough.",
+      "Hours, only if your state's own count is in hours rather than days."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool attendance record",
+    "board": "Homeschool Attendance",
+    "when": "peaks Aug-Sep",
+    "visual": "Three-line tick-box checklist on a clipboard (check-clipboard archetype), third line drawn lighter to show it is conditional. Free guide tag.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "rhythm",
+    "angle": "mockup-printable",
+    "headline": "Homeschool Attendance Tracker Printable: One Box per Day, Running Total",
+    "sub": "Some places require a number of days and some require none at all.",
+    "items": [
+      "Month on the left, one box per day schooled, running total on the right.",
+      "If yours does, mark them here as you go."
+    ],
+    "link": {
+      "kind": "product",
+      "slug": "homeschooling-companion"
+    },
+    "proof": [
+      "Some places require a number of days and some require none at all.",
+      "If yours does, mark them here as you go.",
+      "Month on the left, one box per day schooled, running total on the right."
+    ],
+    "proofFile": "/tmp/claude-0/-home-user-draftpace/3601f45e-71e9-5dd0-a897-05358699fd6f/scratchpad/hsbook/book.txt",
+    "query": "homeschool attendance tracker printable",
+    "board": "Homeschool Attendance",
+    "when": "peaks Aug-Sep",
+    "visual": "Mockup: the real 'Days schooled' working page (The Homeschool Year, PDF page 19; rasterise with pdftoppm -r 80 -f 19 -l 19) printed and tilted ~6 degrees on an oak desk beside a pencil and a mug, page left blank as printed (no invented ticks). Headline above in plum. Foot line is the product line with its price, taken from the listing's price.amount.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "rhythm",
+    "angle": "mockup-printable",
+    "headline": "Weekly Homeschool Planner Printable With a Spare Day Row",
+    "sub": "The spare day is the point of this page.",
+    "items": [
+      "MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SPARE DAY",
+      "The spare day is the point of this page. Leave it empty when you plan, and it will be there for the week that needs it."
+    ],
+    "link": {
+      "kind": "product",
+      "slug": "homeschooling-companion"
+    },
+    "proof": [
+      "WEEK BEGINNING",
+      "WHO THIS IS FOR",
+      "SPARE DAY",
+      "The spare day is the point of this page. Leave it empty when you plan, and it will be there for the week that needs it."
+    ],
+    "proofFile": "/tmp/claude-0/-home-user-draftpace/3601f45e-71e9-5dd0-a897-05358699fd6f/scratchpad/hsbook/book.txt",
+    "query": "weekly homeschool planner printable",
+    "board": "Homeschool Planner Printables",
+    "when": "peaks Jul-Sep and Jan",
+    "visual": "Mockup: the real 'A week at a time' working page (The Homeschool Year, PDF page 13) on a cork board or clipboard, slightly tilted, with the SPARE DAY row circled in plum pen on the pin art. Page itself stays as printed. Binder clip and pencil props. Foot line is the product line with its price, taken from the listing's price.amount.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "rhythm",
+    "angle": "template-preview",
+    "headline": "Homeschool Short Day Plan: Three Lines to Fill In Before You Need Them",
+    "sub": "Fill these in once, on an ordinary day, and keep them somewhere you'll actually see on the day you need them.",
+    "items": [
+      "On a short day we always do:",
+      "On a very short day we always do:",
+      "The subject we drop first is:"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-weekly-plan-with-a-spare-day"
+    },
+    "proof": [
+      "Fill these in once, on an ordinary day, and keep them somewhere you'll actually see on the day you need them.",
+      "On a short day we always do:",
+      "On a very short day we always do:",
+      "The subject we drop first is:"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool short day plan",
+    "board": "Homeschool Planner Printables",
+    "when": "evergreen; peaks Nov-Feb (sick season)",
+    "visual": "Three ruled fill-in lines on a cream half-sheet, blank, as a template preview (working-page archetype). Free guide tag. Overlaps existing pin-7.3, which is why it is a reserve.",
+    "flags": [],
+    "reserve": true
+  },
+  {
+    "slice": "rhythm",
+    "angle": "quote-card",
+    "headline": "Homeschool Schedule Falling Apart? The Plan Had No Room for an Ordinary Bad Day",
+    "sub": null,
+    "items": [
+      "Most homeschool weeks do not fail because of a bad plan. They fail because the plan had no room in it for an ordinary bad day"
+    ],
+    "link": {
+      "kind": "product",
+      "slug": "homeschooling-companion"
+    },
+    "proof": [
+      "Most homeschool weeks do not fail because of a bad plan. They fail because the plan had no room in it",
+      "for an ordinary bad day"
+    ],
+    "proofFile": "/tmp/claude-0/-home-user-draftpace/3601f45e-71e9-5dd0-a897-05358699fd6f/scratchpad/hsbook/book.txt",
+    "query": "homeschool schedule that works bad days",
+    "board": "Homeschool Help",
+    "when": "evergreen; peaks Sep-Oct and Jan",
+    "visual": "Quote card in serif on the opening spread of chapter 01 'A week that survives a bad Tuesday' (book page 5), cream paper on the kitchen table, a half-drunk mug. Cut the quote before 'and one missed morning turned into a fortnight' (British word). Attribute to 'The Homeschool Year'. Foot line is the product line with its price, taken from the listing's price.amount. Proof is split at the book's line break; it is one sentence.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "rhythm",
+    "angle": "question",
+    "headline": "When Should You Teach the Hard Homeschool Subject? First in the Day",
+    "sub": "Keep the hard subject to its usual length, just move it earlier.",
+    "items": [
+      "Whatever is hardest, for your child or for you, goes first in the day, while there's still patience left on both sides.",
+      "keep the hard subject to its usual length, just move it earlier, so a rough start doesn't sour everything that comes after it."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-weekly-plan-with-a-spare-day"
+    },
+    "proof": [
+      "Whatever is hardest, for your child or for you, goes first in the day, while there's still patience left on both sides.",
+      "keep the hard subject to its usual length, just move it earlier, so a rough start doesn't sour everything that comes after it."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "when to teach hardest subject homeschool",
+    "board": "Homeschool Help",
+    "when": "evergreen; peaks Aug-Sep",
+    "visual": "Big question on the top third, short answer card beneath, a small sun-up-to-afternoon timeline with the hard subject marked first (home-scene morning light, breakfast table). Free guide tag.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "rhythm",
+    "angle": "question",
+    "headline": "Does a Four Day Homeschool Week Cover the Same Material as Five?",
+    "sub": "Run four days year-round instead, with shorter breaks through the calendar, and nothing gets dropped at all.",
+    "items": [
+      "It can, if you spread the same total amount of work across the year rather than trying to fit five days of content into four."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "four-day-homeschool-week"
+    },
+    "proof": [
+      "Does a four-day homeschool week cover the same material as five?",
+      "It can, if you spread the same total amount of work across the year rather than trying to fit five days of content into four.",
+      "Run four days year-round instead, with shorter breaks through the calendar, and nothing gets dropped at all."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "does a 4 day homeschool week cover enough",
+    "board": "Four Day Homeschool Week",
+    "when": "evergreen; peaks Jul-Sep",
+    "visual": "Question headline over a two-line calendar strip: a standard school year vs a year-round strip with short breaks, no numbers added beyond the guide's. Index-card answer. Free guide tag.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "rhythm",
+    "angle": "scenario",
+    "headline": "Long Division Turned Into a Fight? Change One Thing at a Time, Cheapest First",
+    "sub": "Only after the time, the amount and that step have all come back clean do you have a real reason to think the material itself is the problem.",
+    "items": [
+      "three of the last four sessions ended in frustration, on the same kind of problem each time",
+      "Move it to the first thing you teach that day instead of the last, before either of you is worn down.",
+      "If that changes nothing in a week, cut the amount: five problems instead of fifteen for the next week.",
+      "Still stuck? Check the step behind it."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-subject-not-working-what-to-change-first"
+    },
+    "proof": [
+      "three of the last four sessions ended in frustration, on the same kind of problem each time",
+      "Move it to the first thing you teach that day instead of the last, before either of you is worn down.",
+      "If that changes nothing in a week, cut the amount: five problems instead of fifteen for the next week.",
+      "Still stuck? Check the step behind it.",
+      "Only after the time, the amount and that step have all come back clean do you have a real reason to think the material itself is the problem."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool math not working what to do",
+    "board": "Homeschool Help",
+    "when": "evergreen; peaks Nov-Feb",
+    "visual": "Home-scene: a worked long-division page with a crumpled corner at the table, then three small arrows (time, amount, step behind). Sketch-style, no child faces. Free guide tag.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "rhythm",
+    "angle": "scenario",
+    "headline": "Homeschool Assessment at Home: Fractions Taught in October, Four Questions in March",
+    "sub": "You covered fractions in October. It's March, and you can't say for sure whether it stuck.",
+    "items": [
+      "What is one half the same as, written a different way?",
+      "If you have three sixths, what's the simplest way to write that?",
+      "Draw two fractions that look different but are equal.",
+      "Why does multiplying the top and bottom of a fraction by the same number not change its value?"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-check-if-your-child-learned-something"
+    },
+    "proof": [
+      "You covered fractions in October. It's March, and you can't say for sure whether it stuck.",
+      "Over breakfast in March, you ask four questions: What is one half the same as, written a different way? If you have three sixths, what's the simplest way to write that? Draw two fractions that look different but are equal. Why does multiplying the top and bottom of a fraction by the same number not change its value?"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to check if my homeschooler remembers fractions",
+    "board": "Homeschool Assessment at Home",
+    "when": "peaks Feb-Apr and May-Jun",
+    "visual": "Breakfast-table scene with a calendar page showing October and March, and four index cards carrying the four questions (index-cards / home-scene). The questions are the guide's own example. Free guide tag.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "rhythm",
+    "angle": "myth-vs-truth",
+    "headline": "Homeschool Assessment at Home: 5 Things That Throw Off a Check",
+    "sub": "One right answer could be luck, and one wrong answer could be a bad morning.",
+    "items": [
+      "Asking right after the lesson.",
+      "Asking one question.",
+      "Turning three answers into a percentage.",
+      "Making it feel like a test.",
+      "Grading the delivery instead of the reasoning."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-check-if-your-child-learned-something"
+    },
+    "proof": [
+      "Asking right after the lesson.",
+      "Asking one question.",
+      "Turning three answers into a percentage.",
+      "Making it feel like a test.",
+      "Grading the delivery instead of the reasoning.",
+      "One right answer could be luck, and one wrong answer could be a bad morning."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to assess homeschool learning without tests",
+    "board": "Homeschool Assessment at Home",
+    "when": "peaks Apr-Jun and Dec-Jan",
+    "visual": "'Stop doing this' list on a clipboard, each line struck through in red pencil (check-clipboard). Five lines only, short heads as written. Free guide tag.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "rhythm",
+    "angle": "comparison",
+    "headline": "Homeschool Progress Check: What a Result Can Tell You and What It Cannot",
+    "sub": null,
+    "items": [
+      "CAN: Looked solid. Most of it came back right. Worth moving on when you are ready.",
+      "CAN: Mixed. Some of it is there and some is not. Usually means more practice, not going back.",
+      "CAN: Worth another look. Most of it was missed. Go over it again before building on it.",
+      "CAN: Not enough to say. Fewer than four questions on the topic. This is not a failure to conclude, it is the correct conclusion.",
+      "CANNOT: It cannot tell you whether your child is behind.",
+      "CANNOT: It cannot tell you whether they are gifted, struggling, or average.",
+      "CANNOT: It cannot tell you whether you are doing a good job."
+    ],
+    "link": {
+      "kind": "product",
+      "slug": "homeschooling-companion"
+    },
+    "proof": [
+      "Looked solid. Most of it came back right. Worth moving on when you are ready.",
+      "Mixed. Some of it is there and some is not. Usually means more practice, not going back.",
+      "Worth another look. Most of it was missed. Go over it again before building on it.",
+      "Not enough to say. Fewer than four questions on the topic. This is not a failure to conclude, it is the correct",
+      "conclusion.",
+      "It cannot tell you whether your child is behind.",
+      "It cannot tell you whether they are gifted, struggling, or average.",
+      "It cannot tell you whether you are doing a good job."
+    ],
+    "proofFile": "/tmp/claude-0/-home-user-draftpace/3601f45e-71e9-5dd0-a897-05358699fd6f/scratchpad/hsbook/book.txt",
+    "query": "homeschool progress check results what do they mean",
+    "board": "Homeschool Assessment at Home",
+    "when": "peaks Apr-Jun",
+    "visual": "Two-column board on a clipboard: left 'What a result can tell you' with four labelled rows (labels exactly Looked solid / Mixed / Worth another look / Not enough to say, matching the product's own labels in check.ts), right 'What it cannot tell you' with three. Shorten rows to their first sentence if space is tight. Book chapter 05 (page 9). Foot line is the product line with its price, taken from the listing's price.amount. Proof is split at the book's line break.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "rhythm",
+    "angle": "how-to-steps",
+    "headline": "How to Check If Your Homeschooler Learned It: Wait a Week, Explain It, Ask Four",
+    "sub": null,
+    "items": [
+      "1. Wait a week. Almost anything looks learned on the day.",
+      "2. Ask them to explain it, not to do it. A child can often perform a procedure they do not understand.",
+      "3. Four questions is the floor. One question tells you nothing. Two tells you nothing."
+    ],
+    "link": {
+      "kind": "product",
+      "slug": "homeschooling-companion"
+    },
+    "proof": [
+      "Wait a week",
+      "Almost anything looks learned on the day.",
+      "Ask them to explain it, not to do it",
+      "A child can often perform a procedure they do not understand.",
+      "Four questions is the floor",
+      "One question tells you nothing. Two tells you nothing."
+    ],
+    "proofFile": "/tmp/claude-0/-home-user-draftpace/3601f45e-71e9-5dd0-a897-05358699fd6f/scratchpad/hsbook/book.txt",
+    "query": "how to tell if my homeschooler learned it",
+    "board": "Homeschool Assessment at Home",
+    "when": "peaks Apr-Jun",
+    "visual": "Three numbered steps over the chapter 04 'Telling whether something landed' page (book page 8), a calendar with one week ringed. Overlaps existing pins 5.3 and 5.5 in topic, which is why it is a reserve. Foot line is the product line with its price, taken from the listing's price.amount.",
+    "flags": [],
+    "reserve": true
+  }
+]

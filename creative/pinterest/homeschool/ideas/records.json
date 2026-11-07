@@ -105,6 +105,11 @@
     },
     "proof": [
       "Set a timer. Most of this takes under 90 minutes.",
+      "Minutes 0 to 20",
+      "Minutes 20 to 40",
+      "Minutes 40 to 60",
+      "Minutes 60 to 75",
+      "Minutes 75 to 90",
       "Gather workbooks, receipts and your phone. Sort photos by date, newest first.",
       "Write one line per subject per week you can place: date range, subject, how far you got.",
       "Add library and calendar entries as reading and co-op days. Mark anything approximate as approximate.",
@@ -197,6 +202,9 @@
       "slug": "homeschool-record-keeping-for-multiple-children"
     },
     "proof": [
+      "Maya, age 10",
+      "Leo, age 7",
+      "History, chapter read-aloud",
       "Maya and Leo sat through the same read-aloud chapter, then split off for math. Two lines for the shared part, one apiece.",
       "Easy. Asked to keep reading past the stop point.",
       "About right. Sat through the whole thing, which is new for him."
@@ -215,7 +223,7 @@
     "slice": "records",
     "angle": "before-after",
     "headline": "Simple Homeschool Record Keeping: From Memory to Right After the Lesson",
-    "sub": "Three things every time, written in under a minute.",
+    "sub": "Written right after the lesson, not from memory.",
     "items": [
       "Before: Writing it from memory at the end of the week, instead of right after the lesson.",
       "After: Write it in under a minute, right after the lesson.",
@@ -228,7 +236,8 @@
     "proof": [
       "Writing it from memory at the end of the week, instead of right after the lesson.",
       "Write it in under a minute, right after the lesson, or you'll rebuild it from memory later and get it wrong.",
-      "the date, the subject and roughly where you are in it, and one word on how it went."
+      "the date, the subject and roughly where you are in it, and one word on how it went.",
+      "written right after the lesson, not from memory."
     ],
     "proofFile": "src/content/guides.ts",
     "query": "simple homeschool record keeping system",
@@ -374,6 +383,8 @@
     "proof": [
       "A homeschool reading log needs three columns: the book, when it was started, and when it was finished or stopped. That is the whole list.",
       "Winn-Dixie",
+      "Sep 3",
+      "Sep 20",
       "Sep 11, finished",
       "Ancient Egypt",
       "Sep 22, stopped"
@@ -430,6 +441,7 @@
       "slug": "homeschool-reading-log"
     },
     "proof": [
+      "the finished-or-stopped column already carries the plain information",
       "A column for a rating or a grade turns a ten-second entry into a decision your child has to weigh, and it adds a judgment where none is needed: the finished-or-stopped column already carries the plain information",
       "Pages read or minutes spent do not need a column either, unless a specific evaluator has asked for one."
     ],
