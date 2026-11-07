@@ -183,13 +183,14 @@
     },
     "proof": [
       "Then change the amount",
-      "Shortening a session is not lowering your standards, it is the standard being met."
+      "Shortening a session is not",
+      "lowering your standards, it is the standard being met."
     ],
     "proofFile": "/tmp/claude-0/-home-user-draftpace/3601f45e-71e9-5dd0-a897-05358699fd6f/scratchpad/hsbook/book.txt",
     "query": "homeschool lessons ending in tears what to change",
     "board": "Homeschool Help",
     "when": "evergreen; peaks Nov-Feb",
-    "visual": "Large serif quote on a cream page-spread of The Homeschool Year (chapter 06 'When it is not working', book page 10), oak table, pencil laid across. Attribute to 'The Homeschool Year'. Do not use the book's following line, it says 'maths' (British spelling). Foot line is the product line with its price, taken from the listing's price.amount.",
+    "visual": "Large serif quote on a cream page-spread of The Homeschool Year (chapter 06 'When it is not working', book page 10), oak table, pencil laid across. Attribute to 'The Homeschool Year'. Proof is split at the book's line break. Do not use the book's preceding line, it says 'maths' (British spelling). Foot line is the product line with its price, taken from the listing's price.amount.",
     "flags": [],
     "reserve": false
   },

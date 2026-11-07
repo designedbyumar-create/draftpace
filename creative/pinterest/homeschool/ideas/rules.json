@@ -92,7 +92,7 @@
     "slice": "rules",
     "angle": "myth-vs-truth",
     "headline": "Homeschool Notice of Intent: No Notice Does Not Mean No Rules",
-    "sub": "None does not mean no rules exist, only that nothing is filed with the state.",
+    "sub": null,
     "items": [
       "Myth: no filing means no rules at all",
       "Truth: No notice is not the same as no requirements."
@@ -103,8 +103,7 @@
     },
     "proof": [
       "Assuming a state with no filing has no rules at all",
-      "No notice is not the same as no requirements.",
-      "None does not mean no rules exist, only that nothing is filed with the state."
+      "No notice is not the same as no requirements."
     ],
     "proofFile": "src/content/guides.ts",
     "query": "do you have to notify the state you are homeschooling",
@@ -462,7 +461,7 @@
     "when": "evergreen",
     "visual": "Numbered steps 1 to 5 as stacked kraft tags on a string, a small clock and calendar sketched in pencil at the corner. Free guide strip at the foot.",
     "flags": [],
-    "reserve": true
+    "reserve": false
   },
   {
     "slice": "rules",

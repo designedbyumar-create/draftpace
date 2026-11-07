@@ -1,0 +1,1110 @@
+[
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Homeschool Planner App: One Page Each Morning, Per Child",
+    "sub": null,
+    "items": [
+      "See what today looks like: Today shows what is scheduled per child, with where each thing came from.",
+      "Record what we actually did: One tap marks a subject done.",
+      "Add a child: Name, age and how they are schooled.",
+      "Worth going over again: Last time this was not finished."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "display": [
+      "One Page",
+      "Each Morning,",
+      "Per Child"
+    ],
+    "highlight": [
+      "One Page",
+      "Per Child"
+    ],
+    "appName": "Homeschooling Companion",
+    "appTagline": "keep track of what you actually taught",
+    "features": [
+      {
+        "icon": "calendar-check",
+        "label": "See what today looks like",
+        "text": "Today shows what is scheduled per child, with where each thing came from."
+      },
+      {
+        "icon": "check-circle",
+        "label": "Record what we actually did",
+        "text": "One tap marks a subject done."
+      },
+      {
+        "icon": "user-plus",
+        "label": "Add a child",
+        "text": "Name, age and how they are schooled."
+      },
+      {
+        "icon": "arrow-counter-clockwise",
+        "label": "Worth going over again",
+        "text": "Last time this was not finished."
+      }
+    ],
+    "screen": "homeschooling-companion-workspace.png",
+    "crop": "top half: the 'What we are doing today.' heading, Ava's two subject cards (Math, Reading with its 'Worth going over again.' note) and the top of Leo's; y 60-780 of the 390x879 capture, which drops the Next.js 'N' badge and the bottom tab bar. Phone tilted about 8 degrees, large, bleeding off the right edge.",
+    "prop": "A mug and two sharpened pencils on an oak table corner, a child's crayon drawing edge at the bottom left.",
+    "price": "$34, one time",
+    "proof": [
+      "Today shows what is scheduled per child, with where each thing came from.",
+      "One tap marks a subject done.",
+      "Name, age and how they are schooled."
+    ],
+    "proofFile": "src/shop/products/homeschooling-companion.ts",
+    "proofMore": [
+      {
+        "file": "src/products/homeschooling-companion/today.ts",
+        "proof": [
+          "Last time this was not finished."
+        ]
+      },
+      {
+        "file": "src/products/homeschooling-companion/components/TodayView.tsx",
+        "proof": [
+          "Worth going over again."
+        ]
+      }
+    ],
+    "query": "homeschool planner app for multiple kids",
+    "board": "Homeschool Record Keeping",
+    "when": "evergreen; peaks Aug-Sep",
+    "visual": "mockup-app, plum panel (#4a3350 to #6a4a72). Real Today screen (workspace.png) in the phone, cropped to the two children's cards. Rows copy the listing's task answers and the screen's own 'Worth going over again.' note. Screen rows are demo data (Ava, Leo).",
+    "flags": [
+      "demo-data"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Homeschool State Requirements Set Beside What You Recorded",
+    "sub": null,
+    "items": [
+      "Find out what my state asks for: Set your state once.",
+      "Beside what you have recorded: The record then shows each requirement beside what you have recorded against it.",
+      "Print the record for one child: Generated on your own device, containing only what you chose to include.",
+      "A summary, not a citation: Laws change. Confirm with your state before relying on this."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "display": [
+      "Your State's",
+      "Requirements,",
+      "Beside Your Own",
+      "Records"
+    ],
+    "highlight": [
+      "Requirements,",
+      "Records"
+    ],
+    "appName": "Homeschooling Companion",
+    "appTagline": "keep track of what you actually taught",
+    "features": [
+      {
+        "icon": "flag",
+        "label": "Find out what my state asks for",
+        "text": "Set your state once."
+      },
+      {
+        "icon": "list-checks",
+        "label": "Beside what you have recorded",
+        "text": "The record then shows each requirement beside what you have recorded against it."
+      },
+      {
+        "icon": "printer",
+        "label": "Print the record for one child",
+        "text": "Generated on your own device, containing only what you chose to include."
+      },
+      {
+        "icon": "scales",
+        "label": "A summary, not a citation",
+        "text": "Laws change. Confirm with your state before relying on this."
+      }
+    ],
+    "screen": "homeschooling-companion-kids.png",
+    "crop": "top third: the 'Your children.' heading and the state card ('Oregon · Moderate regulation / Notice on starting; testing at certain grades, results kept / Laws change. Confirm with your state before relying on this.'), then Ava's row; y 60-420. Phone shown from the top edge, tilted about 6 degrees, the state card is the brightest thing on it (add a soft plum glow).",
+    "prop": "A closed kraft folder and a pencil lying across a sheet of cream paper, at the foot.",
+    "price": "$34, one time",
+    "proof": [
+      "Set your state once.",
+      "The record then shows each requirement beside what you have recorded against it.",
+      "Generated on your own device, containing only what you chose to include."
+    ],
+    "proofFile": "src/shop/products/homeschooling-companion.ts",
+    "proofMore": [
+      {
+        "file": "src/products/homeschooling-companion/components/HouseholdState.tsx",
+        "proof": [
+          "Laws change. Confirm with your state before relying on this."
+        ]
+      },
+      {
+        "file": "src/lib/homeschoolStateRequirements.ts",
+        "proof": [
+          "Notice on starting; testing at certain grades, results kept"
+        ]
+      }
+    ],
+    "query": "homeschool requirements by state",
+    "board": "Homeschool Requirements by State",
+    "when": "evergreen; peaks Aug-Sep and before a review",
+    "visual": "mockup-app. The real state card on the Kids screen is the hero; it shows Oregon because that is what the capture has, and the pin must not imply Oregon is the only state. The caution line is a feature row on purpose, so the pin never reads as legal advice. No 'required' wording beyond the file's own note.",
+    "flags": [
+      "demo-data",
+      "state-shown-is-oregon"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Print a Homeschool Record for One Child, Your Choice of What's In",
+    "sub": null,
+    "items": [
+      "Print the record for one child: Generated on your own device, containing only what you chose to include.",
+      "Private notes stay private: Private notes are never printed.",
+      "Made on your own device: One child, on paper, made on your own device so nothing about them is sent anywhere to produce it.",
+      "No claim about how it went: what was done and makes no claim about how any of it went."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "display": [
+      "Print a",
+      "Homeschool Record",
+      "for One Child"
+    ],
+    "highlight": [
+      "Homeschool Record",
+      "One Child"
+    ],
+    "appName": "Homeschooling Companion",
+    "appTagline": "keep track of what you actually taught",
+    "features": [
+      {
+        "icon": "printer",
+        "label": "Print the record for one child",
+        "text": "Generated on your own device, containing only what you chose to include."
+      },
+      {
+        "icon": "lock-simple",
+        "label": "Private notes stay private",
+        "text": "Private notes are never printed."
+      },
+      {
+        "icon": "device-mobile",
+        "label": "Made on your own device",
+        "text": "One child, on paper, made on your own device so nothing about them is sent anywhere to produce it."
+      },
+      {
+        "icon": "note",
+        "label": "No claim about how it went",
+        "text": "what was done and makes no claim about how any of it went."
+      }
+    ],
+    "screen": "homeschooling-companion-record.png",
+    "crop": "the 'My Homeschool Record' card only: its description, the three ticked boxes ('What was done, day by day', 'Notes you have marked for the record', 'Results of checks you ran') and the US Letter / A4 / Save as PDF buttons; y 310-735, x 0-390. Zoomed so the card fills the phone; tilt about 10 degrees.",
+    "prop": "A stapled printed record page and a paperclip on the desk, with a mug ring on the wood.",
+    "price": "$34, one time",
+    "proof": [
+      "Generated on your own device, containing only what you chose to include.",
+      "Private notes are never printed."
+    ],
+    "proofFile": "src/shop/products/homeschooling-companion.ts",
+    "proofMore": [
+      {
+        "file": "src/products/homeschooling-companion/components/RecordModule.tsx",
+        "proof": [
+          "One child, on paper, made on your own device so nothing about them is sent anywhere to produce it.",
+          "what was done and makes no claim about how any of it went.",
+          "What was done, day by day",
+          "Notes you have marked for the record",
+          "Results of checks you ran"
+        ]
+      }
+    ],
+    "query": "homeschool record to print for evaluation",
+    "board": "Homeschool Portfolio and Evaluation",
+    "when": "evergreen; peaks before a review (spring and June)",
+    "visual": "mockup-app. Zoomed crop of the real Record card, the one screen that shows the print choice. The last row's text begins lower-case because it is a cut of 'It says what was done and ...'; on the pin write it as 'It says what was done and makes no claim about how any of it went.' (same words, whole sentence; the proof substring is its second half).",
+    "flags": [
+      "demo-data"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Homeschool Log App: A Record of What You Actually Did",
+    "sub": null,
+    "items": [
+      "Year-end record: A record of what you actually did, kept as it happened.",
+      "Record what we actually did: One tap marks a subject done.",
+      "Note something: notes in your own words about the day something landed",
+      "Archived, not deleted: Nothing is ever deleted: records are archived rather than destroyed"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "display": [
+      "A Record of",
+      "What You",
+      "Actually Did"
+    ],
+    "highlight": [
+      "Record",
+      "Actually Did"
+    ],
+    "appName": "Homeschooling Companion",
+    "appTagline": "keep track of what you actually taught",
+    "features": [
+      {
+        "icon": "book-open",
+        "label": "Year-end record",
+        "text": "A record of what you actually did, kept as it happened."
+      },
+      {
+        "icon": "check-circle",
+        "label": "Record what we actually did",
+        "text": "One tap marks a subject done."
+      },
+      {
+        "icon": "note-pencil",
+        "label": "Note something",
+        "text": "notes in your own words about the day something landed"
+      },
+      {
+        "icon": "archive",
+        "label": "Archived, not deleted",
+        "text": "Nothing is ever deleted: records are archived rather than destroyed"
+      }
+    ],
+    "screen": "homeschooling-companion-record.png",
+    "crop": "the lower log: the day headings 'SUNDAY, 4 OCTOBER 2026' and 'SATURDAY, 3 OCTOBER 2026' with 'Math, Lesson 3: Thirds / Easy · No help needed', 'Reading, Chapter 6 / Not finished', 'Science, Lesson 1: Air pressure / Difficult · A lot of help'; y 950-1240 (below the floating tab bar and the N badge). Phone tilted the other way (about -8 degrees) so it differs from the print-record promo.",
+    "prop": "A paper daily-log page curling at the foot, and three pencils fanned out.",
+    "price": "$34, one time",
+    "proof": [
+      "A record of what you actually did, kept as it happened",
+      "One tap marks a subject done.",
+      "Nothing is ever deleted: records are archived rather than destroyed"
+    ],
+    "proofFile": "src/shop/products/homeschooling-companion.ts",
+    "proofMore": [
+      {
+        "file": "src/shop/products/homeschooling-companion.ts",
+        "proof": [
+          "notes in your own words about the day something landed"
+        ]
+      }
+    ],
+    "query": "homeschool log what we did each day",
+    "board": "Homeschool Record Keeping",
+    "when": "evergreen; peaks Aug-Sep and Jan (mid-year reset)",
+    "visual": "mockup-app. The real log (day headings, entries with how it went) fills the phone. Entries are demo data. Do not show the word 'Kept private' row (it is below the tab bar in the capture).",
+    "flags": [
+      "demo-data"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Homeschooling Multiple Kids: Each Child Keeps Their Own Page",
+    "sub": null,
+    "items": [
+      "Unlimited children: each with their own curriculum, subjects, plan and checks",
+      "Add a child: Name, age and how they are schooled.",
+      "One page per child: One page each morning that says what today looks like, per child.",
+      "Never mixed together: Each has their own curriculum, subjects, plan, record and checks, never mixed together."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "display": [
+      "Each Child",
+      "Keeps Their",
+      "Own Page"
+    ],
+    "highlight": [
+      "Each Child",
+      "Own Page"
+    ],
+    "appName": "Homeschooling Companion",
+    "appTagline": "keep track of what you actually taught",
+    "features": [
+      {
+        "icon": "users-three",
+        "label": "Unlimited children",
+        "text": "each with their own curriculum, subjects, plan and checks"
+      },
+      {
+        "icon": "user-plus",
+        "label": "Add a child",
+        "text": "Name, age and how they are schooled."
+      },
+      {
+        "icon": "calendar-check",
+        "label": "One page per child",
+        "text": "One page each morning that says what today looks like, per child."
+      },
+      {
+        "icon": "squares-four",
+        "label": "Never mixed together",
+        "text": "Each has their own curriculum, subjects, plan, record and checks, never mixed together."
+      }
+    ],
+    "screen": "homeschooling-companion-kids.png",
+    "crop": "the children list: 'Ava / Age 9 · Homeschool / Math Journey / Math, Reading', 'Leo / Age 12 · Homeschool / Earth Science Projects / Science' and the 'Add another child' button; y 300-600 (the 'N' badge and tab bar are below). Phone shown small and centred, tilted about 5 degrees, with two overlapping copies behind it (the same crop, offset) to suggest several children.",
+    "prop": "Three pencils in different heights standing in a jar, one exercise book per child stacked at the foot.",
+    "price": "$34, one time",
+    "proof": [
+      "The app: unlimited children, each with their own curriculum, subjects, plan and checks",
+      "Name, age and how they are schooled.",
+      "One page each morning that says what today looks like, per child."
+    ],
+    "proofFile": "src/shop/products/homeschooling-companion.ts",
+    "proofMore": [
+      {
+        "file": "src/shop/products/homeschooling-companion.ts",
+        "proof": [
+          "Each has their own curriculum, subjects, plan, record and checks, never mixed together."
+        ]
+      }
+    ],
+    "query": "homeschool app for multiple children",
+    "board": "Homeschool Record Keeping",
+    "when": "evergreen; peaks Aug-Sep",
+    "visual": "mockup-app. The real Kids list in the phone. The first row's text is a cut of the inclusion 'The app: unlimited children, each with their own curriculum, ...'; show it as 'Unlimited children, each with their own curriculum, subjects, plan and checks' (same words). Child names/ages are demo data. Not a copy of existing pin 6.3 or maple 04: those are binder/home-scene guide pins, this is a product screen.",
+    "flags": [
+      "demo-data"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Check Whether It Landed: Honest Results, One Topic at a Time",
+    "sub": null,
+    "items": [
+      "Check whether a topic stuck: You supply eight questions and mark them.",
+      "Looked solid: Most of it came back right. Worth moving on when you are ready.",
+      "Worth another look: Most of it was missed. Go over it again before building on it.",
+      "Not enough to say: Fewer than four questions on the topic."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "display": [
+      "An Honest",
+      "Check, Even When",
+      "It Says Not",
+      "Enough to Say"
+    ],
+    "highlight": [
+      "Honest",
+      "Not",
+      "Enough to Say"
+    ],
+    "appName": "Homeschooling Companion",
+    "appTagline": "keep track of what you actually taught",
+    "features": [
+      {
+        "icon": "shield-check",
+        "label": "Check whether a topic stuck",
+        "text": "You supply eight questions and mark them."
+      },
+      {
+        "icon": "check-circle",
+        "label": "Looked solid",
+        "text": "Most of it came back right. Worth moving on when you are ready."
+      },
+      {
+        "icon": "arrows-clockwise",
+        "label": "Worth another look",
+        "text": "Most of it was missed. Go over it again before building on it."
+      },
+      {
+        "icon": "question",
+        "label": "Not enough to say",
+        "text": "Fewer than four questions on the topic."
+      }
+    ],
+    "screen": "needs-capture: the 'What came back' result screen of a check (CheckModule), with at least one 'Looked solid.' topic and one 'Not enough here to say anything about ...' topic",
+    "crop": "the heading 'What came back' and two or three topic rows with their standing labels (Looked solid / Mixed / Worth another look / Not enough to say). Capture at 390 wide with the dev badge hidden.",
+    "prop": "A clipboard with a printed check sheet (the book's Multiplication page) and a pencil at the foot.",
+    "price": "$34, one time",
+    "proof": [
+      "You supply eight questions and mark them."
+    ],
+    "proofFile": "src/shop/products/homeschooling-companion.ts",
+    "proofMore": [
+      {
+        "file": "/tmp/claude-0/-home-user-draftpace/3601f45e-71e9-5dd0-a897-05358699fd6f/scratchpad/hsbook/book.txt",
+        "proof": [
+          "Most of it came back right. Worth moving on when you are ready.",
+          "Most of it was missed. Go over it again before building on it.",
+          "Fewer than four questions on the topic."
+        ]
+      },
+      {
+        "file": "src/products/homeschooling-companion/check.ts",
+        "proof": [
+          "Looked solid",
+          "Mixed",
+          "Worth another look",
+          "Not enough to say"
+        ]
+      }
+    ],
+    "query": "how to know if my homeschooler learned it",
+    "board": "Homeschool Assessment at Home",
+    "when": "evergreen; peaks Jan and May",
+    "visual": "mockup-app. Needs a fresh capture of the result screen; none of the three existing screens shows it. The rows' texts come from the book's chapter 05 ('What a result can tell you'); the app's own labels are the four standings. Keep the line 'You supply eight questions and mark them.' so the pin never suggests the app tests or grades. No percentage or score anywhere. Distinct from existing pin 5.4 (check-clipboard) by being the app screen.",
+    "flags": [
+      "needs-capture: check result screen 'What came back'",
+      "demo-data",
+      "two-sources: listing + book.txt"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Private Homeschool Records, Printed on Your Own Device",
+    "sub": null,
+    "items": [
+      "Printed on your own device: The printed record is generated in your own browser",
+      "An age, never a date of birth: It stores an age and never a date of birth.",
+      "Children do not have accounts: Children do not have accounts and cannot sign in.",
+      "A private, real account: A private, real account, not a shared demo"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "display": [
+      "Private",
+      "Homeschool Records,",
+      "Printed on",
+      "Your Own Device"
+    ],
+    "highlight": [
+      "Private",
+      "Your Own Device"
+    ],
+    "appName": "Homeschooling Companion",
+    "appTagline": "keep track of what you actually taught",
+    "features": [
+      {
+        "icon": "device-mobile",
+        "label": "Printed on your own device",
+        "text": "The printed record is generated in your own browser"
+      },
+      {
+        "icon": "calendar-blank",
+        "label": "An age, never a date of birth",
+        "text": "It stores an age and never a date of birth."
+      },
+      {
+        "icon": "user-circle",
+        "label": "Children do not have accounts",
+        "text": "Children do not have accounts and cannot sign in."
+      },
+      {
+        "icon": "lock-key",
+        "label": "A private, real account",
+        "text": "A private, real account, not a shared demo"
+      }
+    ],
+    "screen": "needs-capture: a child's page (ChildDetailModule), scrolled to the section 'What appears on anything you print' with its toggles and the sentence 'Nothing here is ever public: this only decides what is on the page when you print.'",
+    "crop": "the section heading 'What appears on anything you print', its explanatory paragraph and the first few switches; 390 wide, dev badge hidden.",
+    "prop": "A closed notebook with a plum ribbon and a small brass padlock charm beside it (a prop only, no lock icon on the screen).",
+    "price": "$34, one time",
+    "proof": [
+      "It stores an age and never a date of birth.",
+      "The printed record is generated in your own browser",
+      "Children do not have accounts and cannot sign in.",
+      "A private, real account, not a shared demo"
+    ],
+    "proofFile": "src/shop/products/homeschooling-companion.ts",
+    "proofMore": [
+      {
+        "file": "src/products/homeschooling-companion/components/ChildDetailModule.tsx",
+        "proof": [
+          "What appears on anything you print",
+          "Nothing here is ever public: this only decides what is on the page when you print."
+        ]
+      }
+    ],
+    "query": "homeschool records privacy children data",
+    "board": "Homeschool Record Keeping",
+    "when": "evergreen",
+    "visual": "mockup-app. Privacy is a real, listed feature (privacyNotes). Do not write 'secure', 'encrypted' or 'GDPR/COPPA': none of that is in the source. 'No AI' is true per privacyNotes but kept out of this pin (it is not a headline reason to buy for this audience).",
+    "flags": [
+      "needs-capture: child page, 'What appears on anything you print' section"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Homeschool Schedule by Subject: Zero Days Is Allowed",
+    "sub": null,
+    "items": [
+      "How often each subject runs: This is the only thing that decides what turns up each day",
+      "Zero days is allowed: Nothing scheduled means nothing shown.",
+      "Where it came from: your curriculum, your plan, or a suggestion",
+      "Did not get to it: Mark something done in one tap."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "display": [
+      "Set How Often",
+      "Each Subject Runs.",
+      "Zero Days",
+      "Is Allowed"
+    ],
+    "highlight": [
+      "Each Subject",
+      "Zero Days"
+    ],
+    "appName": "Homeschooling Companion",
+    "appTagline": "keep track of what you actually taught",
+    "features": [
+      {
+        "icon": "sliders-horizontal",
+        "label": "How often each subject runs",
+        "text": "This is the only thing that decides what turns up each day"
+      },
+      {
+        "icon": "calendar-x",
+        "label": "Zero days is allowed",
+        "text": "Nothing scheduled means nothing shown."
+      },
+      {
+        "icon": "signpost",
+        "label": "Where it came from",
+        "text": "your curriculum, your plan, or a suggestion"
+      },
+      {
+        "icon": "circle",
+        "label": "Did not get to it",
+        "text": "Mark something done in one tap."
+      }
+    ],
+    "screen": "homeschooling-companion-workspace.png",
+    "crop": "the lower half: Ava's 'Reading' card with its 'Worth going over again.' note and 'Your plan' label, and Leo's 'Science / Earth Science Projects, Lesson 2: Reading a weather map' card; y 340-780. Tilt about 12 degrees, phone cut off at the bottom by the prop.",
+    "prop": "A weekly wall planner pad (blank) pinned to cork behind the phone, a drawing pin and a pencil at the foot.",
+    "price": "$34, one time",
+    "proof": [
+      "Set how often each subject runs. This is the only thing that decides what turns up each day, and zero days is allowed.",
+      "Nothing scheduled means nothing shown.",
+      "Mark something done in one tap."
+    ],
+    "proofFile": "src/shop/products/homeschooling-companion.ts",
+    "proofMore": [
+      {
+        "file": "src/shop/products/homeschooling-companion.ts",
+        "proof": [
+          "with where each thing came from: your curriculum, your plan, or a suggestion"
+        ]
+      }
+    ],
+    "query": "homeschool schedule by subject",
+    "board": "Homeschool Planner Printables",
+    "when": "evergreen; peaks Aug-Sep",
+    "visual": "mockup-app. Different crop of the same workspace screen as promo 1 (lower cards, not the top). Fourth row is an honest button label from the screen ('Did not get to it') paired with the real how-it-works line. Does not claim reminders or auto-scheduling: it says what the parent sets.",
+    "flags": [
+      "demo-data"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Homeschool Progress Without Comparison: Same Child, Weeks Earlier",
+    "sub": null,
+    "items": [
+      "Compare against a year group?: No, and it refuses to on purpose.",
+      "One comparison only: The only comparison it ever makes is the same child, on the same topic, a few weeks earlier.",
+      "No score: It never produces a score.",
+      "What has happened: It says what was done and makes no claim about how any of it went."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "display": [
+      "No Score.",
+      "No Comparing.",
+      "Same Child,",
+      "A Few Weeks Earlier"
+    ],
+    "highlight": [
+      "No Score.",
+      "Same Child,"
+    ],
+    "appName": "Homeschooling Companion",
+    "appTagline": "keep track of what you actually taught",
+    "features": [
+      {
+        "icon": "prohibit",
+        "label": "Compare against a year group?",
+        "text": "No, and it refuses to on purpose."
+      },
+      {
+        "icon": "equals",
+        "label": "One comparison only",
+        "text": "The only comparison it ever makes is the same child, on the same topic, a few weeks earlier."
+      },
+      {
+        "icon": "hash",
+        "label": "No score",
+        "text": "It never produces a score."
+      },
+      {
+        "icon": "book-open",
+        "label": "What has happened",
+        "text": "It says what was done and makes no claim about how any of it went."
+      }
+    ],
+    "screen": "homeschooling-companion-record.png",
+    "crop": "the top of the Record screen only: 'RECORD / What has happened.', the line '4 sessions across 3 subjects and 1 observation.', the Everyone / Ava / Leo chips and 'Note something'; y 60-290, enlarged to fill the phone. Phone upright with a slight 4 degree tilt.",
+    "prop": "Two identical pencil-marked height-chart cards of the same paper (a child measured twice), kept plain, at the foot.",
+    "price": "$34, one time",
+    "proof": [
+      "No, and it refuses to on purpose.",
+      "The only comparison it ever makes is the same child, on the same topic, a few weeks earlier.",
+      "It never produces a score."
+    ],
+    "proofFile": "src/shop/products/homeschooling-companion.ts",
+    "proofMore": [
+      {
+        "file": "src/products/homeschooling-companion/components/RecordModule.tsx",
+        "proof": [
+          "What has happened.",
+          "what was done and makes no claim about how any of it went."
+        ]
+      }
+    ],
+    "query": "homeschool progress tracking without grades",
+    "board": "Homeschool Assessment at Home",
+    "when": "evergreen; peaks Jan and May",
+    "visual": "mockup-app. Reassurance pin for the parent who dreads comparison. The 'It never produces a score.' line sits in the check answer in the listing, so the pin is about checks, not the record; the fourth row restates the record's own screen text (whole sentence on the pin: 'It says what was done and makes no claim about how any of it went.'). Never use the words behind, ahead, grade level. Counts on the screen are demo data.",
+    "flags": [
+      "demo-data"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Homeschool Planner: Paper Some Weeks, Screen on Others",
+    "sub": null,
+    "items": [
+      "The Homeschool Year: a 30 page printed book, yours to keep and print as often as you like",
+      "Undated working pages: year planner, weekly plan, daily log, subject record, reading log, and days schooled",
+      "Six check sheets: Six printable check sheets of eight questions each",
+      "And an app that remembers: An app that remembers"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "display": [
+      "Paper Some",
+      "Weeks, Screen",
+      "on Others"
+    ],
+    "highlight": [
+      "Paper",
+      "Screen"
+    ],
+    "appName": "Homeschooling Companion",
+    "appTagline": "keep track of what you actually taught",
+    "features": [
+      {
+        "icon": "book-open-text",
+        "label": "The Homeschool Year",
+        "text": "a 30 page printed book, yours to keep and print as often as you like"
+      },
+      {
+        "icon": "notebook",
+        "label": "Undated working pages",
+        "text": "year planner, weekly plan, daily log, subject record, reading log, and days schooled"
+      },
+      {
+        "icon": "clipboard-text",
+        "label": "Six check sheets",
+        "text": "Six printable check sheets of eight questions each"
+      },
+      {
+        "icon": "device-mobile",
+        "label": "And an app that remembers",
+        "text": "An app that remembers"
+      }
+    ],
+    "screen": "homeschooling-companion-workspace.png",
+    "crop": "top of the Today screen, y 60-560, phone tilted about 6 degrees at the right; at the left the real book cover page (book.pdf page 1) as a second object.",
+    "prop": "The printed book open beside the phone, pencil across the gutter.",
+    "price": "$34, one time",
+    "proof": [
+      "a 30 page printed book, yours to keep and print as often as you like",
+      "year planner, weekly plan, daily log, subject record, reading log, and days schooled",
+      "Six printable check sheets of eight questions each"
+    ],
+    "proofFile": "src/shop/products/homeschooling-companion.ts",
+    "proofMore": [
+      {
+        "file": "/tmp/claude-0/-home-user-draftpace/3601f45e-71e9-5dd0-a897-05358699fd6f/scratchpad/hsbook/book.txt",
+        "proof": [
+          "A week written on paper and typed up on Sunday is exactly",
+          "as good as a week entered live"
+        ]
+      },
+      {
+        "file": "src/shop/products/homeschooling-companion.ts",
+        "proof": [
+          "A printed handbook and an app that remembers."
+        ]
+      }
+    ],
+    "query": "homeschool planner printable and app",
+    "board": "Homeschool Planner Printables",
+    "when": "evergreen",
+    "visual": "mockup-app (book plus phone). Overlaps maple Pin-09 'Homeschool Planner That Works on Paper and on Screen', hence reserve. Fourth row reads 'An app that does the remembering' (cut of 'An app that does the remembering: ...' from the product line 'a printed handbook and an app that remembers'; if a stricter copy is wanted use the promise's 'an app that remembers').",
+    "flags": [
+      "overlaps existing maple pin 09"
+    ],
+    "reserve": true
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Printable Homeschool Handbook: 30 Pages You Keep and Print Again",
+    "sub": "A handbook and a set of working pages, for keeping track of what you actually do.",
+    "items": [
+      "The Homeschool Year",
+      "Undated, so it starts whenever you do.",
+      "The handbook",
+      "The working pages",
+      "The check sheets"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "price": "$34, one time",
+    "page": "book.pdf page 1 (cover, cream with the plum square on the grid), with page 4 or 11 (a full plum divider, 'The handbook') peeking from beneath it.",
+    "scene": "A small stack: the cover on top, tilted 7 degrees, a plum divider page under it and a corner of a working page; on a pale oak desk, a pencil and a paper clip. Warm side light.",
+    "proof": [
+      "A handbook and a set of working pages, for keeping track of",
+      "what you actually do.",
+      "Undated, so it starts whenever you do.",
+      "The handbook",
+      "The working pages",
+      "The check sheets"
+    ],
+    "proofFile": "/tmp/claude-0/-home-user-draftpace/3601f45e-71e9-5dd0-a897-05358699fd6f/scratchpad/hsbook/book.txt",
+    "proofMore": [
+      {
+        "file": "src/shop/products/homeschooling-companion.ts",
+        "proof": [
+          "The Homeschool Year: a 30 page printed book, yours to keep and print as often as you like"
+        ]
+      }
+    ],
+    "query": "homeschool handbook printable",
+    "board": "Homeschool Planner Printables",
+    "when": "evergreen; peaks Aug-Sep",
+    "visual": "mockup-printable. pdftoppm -r 200 -f 1 -l 1 and -f 4 -l 4 on hsbook/book.pdf. Reads as the 'what you get' pin: the plum is the brand colour so it ties to the app promos.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Homeschool Weekly Planner Printable With a Spare Day",
+    "sub": "The spare day is the point of this page. Leave it empty when you plan, and it will be there for the week that needs it.",
+    "items": [
+      "A week at a time",
+      "WEEK BEGINNING",
+      "WHO THIS IS FOR",
+      "MONDAY",
+      "TUESDAY",
+      "WEDNESDAY",
+      "THURSDAY",
+      "FRIDAY",
+      "SPARE DAY"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "price": "$34, one time",
+    "page": "book.pdf page 13, 'A week at a time' (the six day rows, Monday to Friday plus SPARE DAY).",
+    "scene": "The page punched and clipped into a white three-ring binder on a kitchen table, tilted about 6 degrees, the SPARE DAY row ringed once with a pencil circle (a drawn highlight only, nothing written in it); a mug at the edge.",
+    "proof": [
+      "A week at a time",
+      "WEEK BEGINNING",
+      "WHO THIS IS FOR",
+      "SPARE DAY",
+      "The spare day is the point of this page. Leave it empty when you plan, and it will be there for the week that needs it."
+    ],
+    "proofFile": "/tmp/claude-0/-home-user-draftpace/3601f45e-71e9-5dd0-a897-05358699fd6f/scratchpad/hsbook/book.txt",
+    "proofMore": [],
+    "query": "homeschool weekly planner printable",
+    "board": "Four Day Homeschool Week",
+    "when": "evergreen; peaks Aug-Sep",
+    "visual": "mockup-printable. pdftoppm -r 200 -f 13 -l 13. Crop slightly into the page so the six rows fill the frame. The empty SPARE DAY row is the story, so leave it blank.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Homeschool Daily Log Printable: Three Columns, Written the Same Day",
+    "sub": "What actually happened, written the same day. Three columns, because those are the three things worth having later: when, what, and how it went.",
+    "items": [
+      "The daily log",
+      "DATE",
+      "SUBJECT",
+      "WHAT WE DID",
+      "HOW IT WENT",
+      "easy, about right, or difficult"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "price": "$34, one time",
+    "page": "book.pdf page 14, 'The daily log' (the column header row DATE / SUBJECT / WHAT WE DID / HOW IT WENT over the ruled lines).",
+    "scene": "The page on a wooden clipboard laid on a kitchen table at a slight angle, a pencil lying in the 'HOW IT WENT' column; in that column write by hand only the three real words 'easy', 'about right', 'difficult' on three lines, nothing else filled in.",
+    "proof": [
+      "The daily log",
+      "What actually happened, written the same day. Three columns, because those are the three things worth having later:",
+      "when, what, and how it went.",
+      "For the last column, one word is enough: easy, about right, or difficult."
+    ],
+    "proofFile": "/tmp/claude-0/-home-user-draftpace/3601f45e-71e9-5dd0-a897-05358699fd6f/scratchpad/hsbook/book.txt",
+    "proofMore": [],
+    "query": "homeschool daily log printable",
+    "board": "Homeschool Record Keeping",
+    "when": "evergreen; peaks Aug-Sep",
+    "visual": "mockup-printable. pdftoppm -r 200 -f 14 -l 14. Column headings are small caps in the PDF (DATE, SUBJECT, WHAT WE DID, HOW IT WENT); set them in the same caps. Sub is two adjacent lines of the page joined; the proof strings are the two contiguous halves.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Homeschool Subject Record Printable: One Page for Each Subject",
+    "sub": "WORKING PAGE, ONE PER SUBJECT",
+    "items": [
+      "One subject, over a term",
+      "SUBJECT",
+      "WHAT WE ARE USING",
+      "WHERE WE STARTED",
+      "WHAT WE COVERED",
+      "WHAT WENT WELL",
+      "WHAT WE ARE COMING BACK TO",
+      "WORK KEPT, AND WHERE"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "price": "$34, one time",
+    "page": "book.pdf page 15, 'One subject, over a term' (labelled blocks stacked down the page).",
+    "scene": "The page in a kraft folder with a hand-lettered tab, tilted about 5 degrees on a desk, a child's pencil drawing sliding in from the corner and one sharpened pencil; the blocks are left empty.",
+    "proof": [
+      "One subject, over a term",
+      "WORKING PAGE, ONE PER SUBJECT",
+      "SUBJECT",
+      "WHAT WE ARE USING",
+      "WHERE WE STARTED",
+      "WHAT WE COVERED",
+      "WHAT WENT WELL",
+      "WHAT WE ARE COMING BACK TO",
+      "WORK KEPT, AND WHERE"
+    ],
+    "proofFile": "/tmp/claude-0/-home-user-draftpace/3601f45e-71e9-5dd0-a897-05358699fd6f/scratchpad/hsbook/book.txt",
+    "proofMore": [],
+    "query": "homeschool subject record sheet",
+    "board": "Homeschool Planner Printables",
+    "when": "evergreen; peaks Aug-Sep and Jan",
+    "visual": "mockup-printable. pdftoppm -r 200 -f 15 -l 15. Page 16 is its blank continuation: use page 15 only. The sub 'One page per subject, for a term.' is a paraphrase of the page's own tag 'WORKING PAGE, ONE PER SUBJECT' and title; to keep it verbatim, use 'WORKING PAGE, ONE PER SUBJECT' as the sub instead.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Homeschool Math Check Sheet Printable: Multiplication, Eight Questions",
+    "sub": "Answers are at the back, so this page can be handed over as it is.",
+    "items": [
+      "Multiplication",
+      "What is 6 times 7?",
+      "A box holds 12 pencils. How many pencils in 5 boxes?",
+      "Explain how you would work out 15 times 4 without writing it down.",
+      "Ask for the answer out loud where you can. It is faster and you hear the hesitation."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "price": "$34, one time",
+    "page": "book.pdf page 21, 'Multiplication' (WHO / DATE line, eight numbered questions, the plum 'READING THIS' box).",
+    "scene": "On a clipboard beside a sharpened pencil and a small stack of the other check sheets (fanned edges only), on a kitchen table; the page tilted 8 degrees; WHO and DATE lines left blank, the answer lines left blank.",
+    "proof": [
+      "Multiplication",
+      "What is 6 times 7?",
+      "A box holds 12 pencils. How many pencils in 5 boxes?",
+      "Explain how you would work out 15 times 4 without writing it down.",
+      "Ask for the answer out loud where you can. It is faster and you hear the hesitation.",
+      "Answers are at the back, so this page can be handed over as it is."
+    ],
+    "proofFile": "/tmp/claude-0/-home-user-draftpace/3601f45e-71e9-5dd0-a897-05358699fd6f/scratchpad/hsbook/book.txt",
+    "proofMore": [
+      {
+        "file": "src/shop/products/homeschooling-companion.ts",
+        "proof": [
+          "Six printable check sheets of eight questions each, answer key kept at the back where the child can't read it"
+        ]
+      }
+    ],
+    "query": "homeschool math check sheet",
+    "board": "Homeschool Assessment at Home",
+    "when": "evergreen; peaks Jan and May",
+    "visual": "mockup-printable. pdftoppm -r 200 -f 21 -l 21. The questions are the page's own wording; do not add answers. Different from existing pin 5.x (clipboard graphics): this is the real printed page photographed.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Equivalent Fractions Check Sheet for Homeschool, Answers at the Back",
+    "sub": "The last two matter most. A child can match fractions by rule without seeing why they are the same.",
+    "items": [
+      "Equivalent fractions",
+      "Is 2/4 the same as 1/2?",
+      "Draw two shapes that show 1/2 and 2/4 are the same amount.",
+      "Explain why 5/10 is the same as 1/2."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "price": "$34, one time",
+    "page": "book.pdf page 22, 'Equivalent fractions'.",
+    "scene": "The page on kraft paper with coloured pencils lined up along its edge; in the margin beside question 7 a child's pencil drawing of a halved and a quartered rectangle (a drawn prop, labelled nothing); tilted 5 degrees, top-down.",
+    "proof": [
+      "Equivalent fractions",
+      "The last two matter most. A child can match fractions by rule without seeing why they are the same.",
+      "Is 2/4 the same as 1/2?",
+      "Draw two shapes that show 1/2 and 2/4 are the same amount.",
+      "Explain why 5/10 is the same as 1/2."
+    ],
+    "proofFile": "/tmp/claude-0/-home-user-draftpace/3601f45e-71e9-5dd0-a897-05358699fd6f/scratchpad/hsbook/book.txt",
+    "proofMore": [],
+    "query": "equivalent fractions homeschool",
+    "board": "Homeschool Assessment at Home",
+    "when": "evergreen; peaks Jan and Feb",
+    "visual": "mockup-printable. pdftoppm -r 200 -f 22 -l 22. The child's drawing is an illustrated prop; the actual question 7 line stays unaltered. Do not add a 'grade' or age.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Homeschool Evaluation Prep: Print the Record for One Child",
+    "sub": "It contains only what you chose to include, and it says what is in it rather than how it is going.",
+    "items": [
+      "My Homeschool Record",
+      "What your state asks for.",
+      "The log",
+      "This is a record of what was done, kept by a parent. It is not an assessment, not a transcript, and it makes no claim about how any of it went."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "price": "$34, one time",
+    "page": "needs-capture: a real My Homeschool Record PDF generated from the demo household (Ava), pages: cover, 'What your state asks for.', 'The log'. Generated by the app's own printables/document.tsx, US Letter.",
+    "scene": "The three record pages fanned on a desk, the state page on top, tilted; a paperclip and a pen. Demo child names appear on them, so keep the page text small and soft-focused or flag as demo data.",
+    "proof": [
+      "It contains only what you chose to include, and it says what is in it rather than how it is going."
+    ],
+    "proofFile": "src/shop/products/homeschooling-companion.ts",
+    "proofMore": [
+      {
+        "file": "src/products/homeschooling-companion/printables/document.tsx",
+        "proof": [
+          "My Homeschool Record",
+          "What your state asks for.",
+          "The log"
+        ]
+      },
+      {
+        "file": "src/products/homeschooling-companion/book.ts",
+        "proof": [
+          "This is a record of what was done, kept by a parent. It is not an assessment, not a transcript, and it makes no claim about how any of it went."
+        ]
+      }
+    ],
+    "query": "homeschool evaluation preparation what to bring",
+    "board": "Homeschool Portfolio and Evaluation",
+    "when": "evergreen; peaks Apr-Jun",
+    "visual": "mockup-printable of the real printed record, not a book page. Needs a capture run (Save as PDF on the Record page with a demo child) and a rasterise. The headline's 'Evaluation Prep' follows the listing's searchedProblems ('I need to prepare for a homeschool evaluation'); do not say any state requires an evaluation.",
+    "flags": [
+      "needs-capture: My Homeschool Record PDF from demo child",
+      "demo-data"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Homeschool Year Planner Printable: One Line per Month",
+    "sub": "Fill in the months as you reach them rather than all at once in September.",
+    "items": [
+      "The year at a glance",
+      "One line per month. Write the shape of it: terms, breaks, anything already fixed."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "homeschooling-companion"
+    },
+    "price": "$34, one time",
+    "page": "book.pdf page 12, 'The year at a glance' (the long ruled month lines).",
+    "scene": "The page pinned with a red pushpin to a cork board, a few real blank index cards pinned beside it; tilted 4 degrees; a pencil on the ledge below.",
+    "proof": [
+      "The year at a glance",
+      "One line per month. Write the shape of it: terms, breaks, anything already fixed.",
+      "Fill in the months as you reach them",
+      "rather than all at once in September."
+    ],
+    "proofFile": "/tmp/claude-0/-home-user-draftpace/3601f45e-71e9-5dd0-a897-05358699fd6f/scratchpad/hsbook/book.txt",
+    "proofMore": [],
+    "query": "homeschool year planner printable",
+    "board": "Homeschool Planner Printables",
+    "when": "evergreen; peaks Jul-Sep",
+    "visual": "mockup-printable. pdftoppm -r 200 -f 12 -l 12. Reserve: the page is mostly empty lines, so it is the least photogenic of the pages.",
+    "flags": [],
+    "reserve": false
+  }
+]

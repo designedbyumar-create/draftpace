@@ -10,7 +10,10 @@
       "3. Go back one step",
       "4. Look at the material"
     ],
-    "link": { "kind": "guide", "slug": "homeschool-subject-not-working-what-to-change-first" },
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-subject-not-working-what-to-change-first"
+    },
     "proof": [
       "change it in this order: the time of day first, then how much you're asking for, then the step just before the one that's stuck",
       "Cheapest fix first.",
@@ -36,7 +39,10 @@
       "Monday, Tuesday, Thursday and Friday full, and Wednesday carries nothing at all",
       "Nothing about the subjects changed."
     ],
-    "link": { "kind": "guide", "slug": "homeschool-weekly-plan-with-a-spare-day" },
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-weekly-plan-with-a-spare-day"
+    },
     "proof": [
       "In the week the toddler gets a stomach bug on Tuesday night, Wednesday is where Tuesday's math lesson actually happens, and nothing else in the week has to move.",
       "Monday, Tuesday, Thursday and Friday full, and Wednesday carries nothing at all",
@@ -47,7 +53,9 @@
     "board": "Four Day Homeschool Week",
     "when": "mid-October to mid-November; again December and January",
     "visual": "Week-board archetype: a five-column week on cork or oak, Wednesday left as a visibly empty slot with a small arrow carrying Tuesday's math card into it. Warm, slightly worn kitchen-table feel. Free guide strip at the foot.",
-    "flags": ["example-tag"],
+    "flags": [
+      "example-tag"
+    ],
     "reserve": false
   },
   {
@@ -63,7 +71,10 @@
       "reading log",
       "days schooled"
     ],
-    "link": { "kind": "product", "slug": "homeschooling-companion" },
+    "link": {
+      "kind": "product",
+      "slug": "homeschooling-companion"
+    },
     "proof": [
       "Undated, so it starts whenever you do.",
       "Undated, so they start whenever you do.",
@@ -96,7 +107,10 @@
       "Minutes 60 to 75: Check what your state actually asks for.",
       "Minutes 75 to 90: Record today's session properly."
     ],
-    "link": { "kind": "guide", "slug": "how-to-catch-up-on-homeschool-records" },
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-catch-up-on-homeschool-records"
+    },
     "proof": [
       "Set a timer. Most of this takes under 90 minutes.",
       "Minutes 0 to 20",
@@ -129,7 +143,10 @@
       "Draw two fractions that look different but are equal.",
       "Why does multiplying the top and bottom of a fraction by the same number not change its value?"
     ],
-    "link": { "kind": "guide", "slug": "how-to-check-if-your-child-learned-something" },
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-check-if-your-child-learned-something"
+    },
     "proof": [
       "Covered is not learned. Ask four questions a week or more later, write the answers down",
       "What is one half the same as, written a different way?",
@@ -142,7 +159,9 @@
     "board": "Homeschool Assessment at Home",
     "when": "January, first weeks back from the break; also late December",
     "visual": "Check-clipboard archetype: a clipboard on a kitchen table with four ticked-box lines for the four questions, a pencil, a child's drawing of two equal fractions tucked under the clip. Label the fractions questions 'One example, in fractions' since they are the guide's own example. Free guide strip at the foot.",
-    "flags": ["example-tag"],
+    "flags": [
+      "example-tag"
+    ],
     "reserve": false
   },
   {
@@ -157,7 +176,10 @@
       "Friday: you know whether your state also wants a notice of intent.",
       "The following Monday: the first entry says nothing more than the date, the subject, and how it went."
     ],
-    "link": { "kind": "guide", "slug": "how-to-start-homeschooling-first-month-paperwork" },
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-start-homeschooling-first-month-paperwork"
+    },
     "proof": [
       "a withdrawal letter and a records request are not the same document",
       "you find your state's page and write down what it actually asks for",
@@ -171,7 +193,9 @@
     "board": "How to Start Homeschooling",
     "when": "late December to mid-January (pin from mid-November); any month a family switches mid-school-year",
     "visual": "Week-board archetype: a five-day paper calendar on a kitchen table with Tuesday to Friday each carrying a single index card in the guide's words and the next Monday marked as the first entry. Plain, unhurried, no school-building imagery. Free guide strip at the foot.",
-    "flags": ["example-tag"],
+    "flags": [
+      "example-tag"
+    ],
     "reserve": false
   },
   {
@@ -183,7 +207,10 @@
       "Withdrawal letter: Your child is leaving, as of a date you set. Goes to the school office, hand-delivered if you can.",
       "Records request: Send the cumulative file: transcripts, test results, health and any IEP records. Goes to the same office, as a separate letter."
     ],
-    "link": { "kind": "guide", "slug": "how-to-start-homeschooling-first-month-paperwork" },
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-start-homeschooling-first-month-paperwork"
+    },
     "proof": [
       "Most families withdrawing from a school need to send both.",
       "Your child is leaving, as of a date you set",
@@ -208,7 +235,10 @@
       "A highlight reel: A portfolio of nothing but finished, polished work tells an evaluator very little",
       "October and March: Include something from early in the term and something from later on the same subject."
     ],
-    "link": { "kind": "guide", "slug": "what-goes-in-a-homeschool-portfolio" },
+    "link": {
+      "kind": "guide",
+      "slug": "what-goes-in-a-homeschool-portfolio"
+    },
     "proof": [
       "why October and March samples say more than a highlight reel",
       "A portfolio of nothing but finished, polished work tells an evaluator very little",
@@ -231,7 +261,10 @@
     "items": [
       "Saying that math was difficult until January, that you changed curriculum, and that it improved afterward is a stronger position than implying everything went smoothly."
     ],
-    "link": { "kind": "guide", "slug": "preparing-for-a-homeschool-evaluation" },
+    "link": {
+      "kind": "guide",
+      "slug": "preparing-for-a-homeschool-evaluation"
+    },
     "proof": [
       "Saying that math was difficult until January, that you changed curriculum, and that it improved afterward is a stronger position than implying everything went smoothly.",
       "It shows you were paying attention and adjusting"
@@ -241,7 +274,9 @@
     "board": "Homeschool Portfolio and Evaluation",
     "when": "March to May (evaluation and review season; pin from February)",
     "visual": "Quote-card on the working-page archetype: the guide sentence set large in a serif on a ruled cream page, a single pencil underline beneath 'difficult until January', a corner of a manila folder at the foot. Attribute to the guide ('Free guide'), not to a person.",
-    "flags": ["example-tag"],
+    "flags": [
+      "example-tag"
+    ],
     "reserve": false
   },
   {
@@ -255,7 +290,10 @@
       "Keep: a handful that show progress, the photos, the test if your state asked for one",
       "The log stays no matter what your state requires"
     ],
-    "link": { "kind": "guide", "slug": "how-long-to-keep-homeschool-records" },
+    "link": {
+      "kind": "guide",
+      "slug": "how-long-to-keep-homeschool-records"
+    },
     "proof": [
       "check your state's own page before you recycle anything a rule might cover",
       "forty worksheets, two photos of a baking-soda volcano, a spelling test with a mark on it, and the notebook you used as a log all year",
@@ -269,7 +307,9 @@
     "board": "Homeschool Record Keeping",
     "when": "May to June (end-of-year wrap-up; pin from April)",
     "visual": "Home-scene archetype: a banker's box open on a kitchen table in warm early-summer light, a thin pile of worksheets pulled out beside a notebook, two phone photos propped against it. No finished-school-year imagery like diplomas. Free guide strip at the foot.",
-    "flags": ["example-tag"],
+    "flags": [
+      "example-tag"
+    ],
     "reserve": false
   },
   {
@@ -280,7 +320,10 @@
     "items": [
       "Write approximate dates as approximate: October to December, not a made-up Tuesday."
     ],
-    "link": { "kind": "guide", "slug": "how-to-catch-up-on-homeschool-records" },
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-catch-up-on-homeschool-records"
+    },
     "proof": [
       "Write approximate dates as approximate: October to December, not a made-up Tuesday.",
       "A record that says roughly when something happened is credible."
@@ -291,7 +334,7 @@
     "when": "mid-December to January",
     "visual": "Quote-card: the sentence set large over a ruled page, 'October to December' handwritten-style with a bracket over a calendar strip of the three months. Cream paper, a pencil. Free guide strip at the foot. Weakest of the slice: same guide as the winter-break timeline.",
     "flags": [],
-    "reserve": true
+    "reserve": false
   },
   {
     "slice": "seasonal",
@@ -302,7 +345,10 @@
       "Math might run all four days. Geography might run one.",
       "Run four days across a standard school year, the same roughly 36 weeks most curricula are built for, and the fifth day simply is not taught."
     ],
-    "link": { "kind": "guide", "slug": "four-day-homeschool-week" },
+    "link": {
+      "kind": "guide",
+      "slug": "four-day-homeschool-week"
+    },
     "proof": [
       "It can, if you spread the same total amount of work across the year",
       "Math might run all four days. Geography might run one.",

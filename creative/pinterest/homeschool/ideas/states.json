@@ -445,7 +445,7 @@
     "proofFile": "src/lib/homeschoolStateRequirements.ts",
     "when": "evergreen; peaks Jul-Sep",
     "flags": [],
-    "reserve": true,
+    "reserve": false,
     "sub": "Our summary puts California at Moderate.",
     "angle": "quote-card",
     "headline": "California Homeschool Requirements: What the Record Keeping Note Says",

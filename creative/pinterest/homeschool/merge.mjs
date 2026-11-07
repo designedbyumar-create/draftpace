@@ -23,7 +23,7 @@ const ROOT = path.resolve(HERE, "../../..");
 const IDEAS = path.join(HERE, "ideas");
 const TARGET = 101;
 const SLICES = ["rules", "records", "rhythm", "portfolio", "product", "states", "seasonal"];
-const WANT = { rules: 16, records: 18, rhythm: 18, portfolio: 8, product: 16, states: 11, seasonal: 10 };
+const WANT = { rules: 17, records: 18, rhythm: 18, portfolio: 8, product: 17, states: 12, seasonal: 11 };
 const check = process.argv.includes("--check");
 
 const norm = (t) => String(t).replace(/[‘’]/g, "'").replace(/[“”]/g, '"').replace(/\\n/g, " ").replace(/\\"/g, '"').replace(/["'`]/g, "").replace(/\s+/g, " ").trim().toLowerCase();
@@ -31,6 +31,13 @@ const cache = new Map();
 const source = (file) => { if (!cache.has(file)) cache.set(file, norm(fs.readFileSync(path.join(ROOT, file), "utf8"))); return cache.get(file); };
 const book = norm(fs.readFileSync("/tmp/claude-0/-home-user-draftpace/3601f45e-71e9-5dd0-a897-05358699fd6f/scratchpad/hsbook/book.txt", "utf8"));
 
+const guidesText = fs.readFileSync(path.join(ROOT, "src/content/guides.ts"), "utf8");
+/** One guide's own text: from its slug to the next guide's, so a pin cannot quote a different guide. */
+const guideBlocks = new Map();
+{
+  const marks = [...guidesText.matchAll(/\n    slug: "([^"]+)"/g)];
+  marks.forEach((m, i) => guideBlocks.set(m[1], norm(guidesText.slice(m.index, marks[i + 1]?.index ?? guidesText.length))));
+}
 const guides = new Set([...fs.readFileSync(path.join(ROOT, "src/content/guides.ts"), "utf8").matchAll(/\n    slug: "([^"]+)"/g)].map((m) => m[1]));
 const made = fs.readFileSync("/tmp/claude-0/-home-user-draftpace/3601f45e-71e9-5dd0-a897-05358699fd6f/scratchpad/existing.txt", "utf8").split("\n").map((l) => norm(l.replace(/^- \S+ \S+ \[[^\]]+\] /, "")));
 const problems = [];
@@ -41,7 +48,12 @@ for (const slice of SLICES) {
   const file = path.join(IDEAS, `${slice}.json`);
   if (!fs.existsSync(file)) { problems.push(`${slice}: no ${path.relative(ROOT, file)}`); continue; }
   const list = JSON.parse(fs.readFileSync(file, "utf8"));
-  list.forEach((idea, i) => all.push({ ...idea, slice, order: i }));
+  list.forEach((idea, i) => {
+    // Slices were written by different agents: normalise the two shapes they varied.
+    if (idea.link?.kind === "product") idea.link = { ...idea.link, kind: "shop" };
+    if (idea.proofExtra && !Array.isArray(idea.proofExtra)) idea.proofExtra = [idea.proofExtra];
+    all.push({ ...idea, slice, order: i });
+  });
 }
 
 for (const idea of all) {
@@ -50,9 +62,20 @@ for (const idea of all) {
   if (idea.link?.kind === "guide" && !guides.has(idea.link.slug)) bad(idea, `no guide "${idea.link.slug}"`);
   if (idea.link?.kind === "shop" && idea.link.slug !== "homeschooling-companion") bad(idea, `shop link must be homeschooling-companion`);
   if (idea.link && !["guide", "shop"].includes(idea.link.kind)) bad(idea, `link kind "${idea.link.kind}"`);
-  const src = idea.proofFile === "book" ? book : idea.proofFile ? (fs.existsSync(path.join(ROOT, idea.proofFile)) ? source(idea.proofFile) : null) : null;
+  const textOf = (file) => (file === "book" || /hsbook\/book\.txt$/.test(file ?? "") ? book : file && path.isAbsolute(file) && fs.existsSync(file) ? norm(fs.readFileSync(file, "utf8")) : file && fs.existsSync(path.join(ROOT, file)) ? source(file) : null);
+  let src = textOf(idea.proofFile);
   if (src === null) { bad(idea, `proofFile "${idea.proofFile}" not found`); continue; }
-  for (const p of idea.proof ?? []) if (!src.includes(norm(p))) bad(idea, `proof not in ${idea.proofFile}: "${String(p).slice(0, 80)}"`);
+  // A pin linked to a guide that quotes guides.ts must quote THAT guide.
+  if (idea.link?.kind === "guide" && idea.proofFile === "src/content/guides.ts") {
+    const own = guideBlocks.get(idea.link.slug);
+    if (own) src = own;
+  }
+  for (const p of idea.proof ?? []) if (!src.includes(norm(p))) bad(idea, `proof not in ${idea.link?.kind === "guide" && idea.proofFile === "src/content/guides.ts" ? `the guide ${idea.link.slug}` : idea.proofFile}: "${String(p).slice(0, 80)}"`);
+  for (const extra of idea.proofExtra ?? []) {
+    const t = textOf(extra.file);
+    if (t === null) { bad(idea, `proofExtra file "${extra.file}" not found`); continue; }
+    for (const p of extra.proof ?? []) if (!t.includes(norm(p))) bad(idea, `proofExtra not in ${extra.file}: "${String(p).slice(0, 80)}"`);
+  }
 }
 
 const seen = new Map();
