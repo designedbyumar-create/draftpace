@@ -9,7 +9,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import * as Ph from "@phosphor-icons/react/dist/ssr";
 
 /** "calendar-check" (the bank's spelling) and "CalendarCheck" both work. */
-const pascal = (n) => (n.includes("-") ? n.split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join("") : n);
+const pascal = (n) => n.split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join("");
 
 export function icon(name, { size = 40, color = "currentColor", weight = "duotone" } = {}) {
   const Icon = Ph[pascal(name)];
