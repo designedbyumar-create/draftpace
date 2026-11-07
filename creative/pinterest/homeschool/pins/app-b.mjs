@@ -128,14 +128,14 @@ export const pins = [
     wave: 1,
     display: ["Homeschool Schedule", "by Subject:", "Zero Days", "Is Allowed"],
     highlight: ["Zero Days", "Is Allowed"],
-    screen: { src: screen("workspace"), y0: 340, y1: 780, width: 470, tilt: 12 },
+    // y1 stops at 780: below it the real capture shows the tab bar and the Next.js dev badge.
+    phone: phone({ src: screen("workspace"), y0: 340, y1: 780, width: 500, tilt: 12, x: 478, y: 770 }),
     prop: pencilCup({ x: 770, y: 1105, size: 1.0, rot: 6 }),
   }),
 
   // #86  Progress without comparison. Top of the Record screen, enlarged, almost upright.
   (() => {
     const display = ["Progress Without", "Comparison:", "Same Child,", "Weeks Earlier"];
-    const top = topFor(display);
     return promo({
       n: 86,
       features: featuresOf(86),
@@ -143,7 +143,7 @@ export const pins = [
       wave: 2,
       display,
       highlight: ["Same Child,", "Weeks Earlier"],
-      phone: phone({ src: screen("record"), y0: 56, y1: 318, width: 500, tilt: 3, x: 466, y: top + 120, closed: true, appBg: APP_BG }),
+      phone: phone({ src: screen("record"), y0: 56, y1: 511, width: 500, tilt: 3, x: 470, y: 760 }),
       prop: ruler({ x: 430, y: 1286, len: 540, rot: -4 }),
     });
   })(),
@@ -156,6 +156,7 @@ export const pins = [
     display: ["Requirements", "by State:", "Name Yours Once", "See Your Level"],
     highlight: ["Name Yours Once", "See Your Level"],
     headSize: 96,
+    appTagline: "keep track of what you actually taught",
     features: [
       { icon: "MapPin", label: "Which state do you homeschool in?", text: "" },
       { icon: "Flag", label: "Oregon · Moderate regulation", text: "Notice on starting; testing at certain grades, results kept" },
@@ -163,7 +164,7 @@ export const pins = [
       { icon: "Warning", label: "Laws change.", text: "Confirm with your state before relying on this." },
     ],
     screen: { src: screen("kids"), y0: 130, y1: 560, width: 480, tilt: -7 },
-    prop: books({ x: 690, y: 1160, size: 1.15 }),
+    prop: books({ x: 700, y: 1215, size: 1.1 }),
   }),
 
   // #75  Check whether it landed. The whole real result screen in a closed phone, leaning left.
@@ -177,18 +178,18 @@ export const pins = [
       wave: 0,
       display,
       highlight: ["Honest Results,"],
-      phone: phone({ src: asset("screen-check-result.png"), y0: 0, y1: 520, width: 430, tilt: -5, x: 520, y: top + 12, closed: true, appBg: APP_BG }),
-      prop: plant({ x: 770, y: 1060, size: 1.0, rot: 4 }),
+      phone: phone({ src: asset("screen-check-result.png"), y0: 0, y1: 520, width: 470, tilt: -5, x: 505, y: top + 62, closed: true, appBg: APP_BG }),
+      prop: plant({ x: 780, y: 1085, size: 1.05, rot: 4 }),
     });
   })(),
 
   // #79  Private records printed on your own device. The real print section as a floating card, not a phone.
   (() => {
-    const w = 540, h = Math.round((w * 918) / 1170);
-    const cx = 452, cy = 700;
+    const w = 510, h = Math.round((w * 918) / 1170);
+    const cx = 482, cy = 705;
     const card = `
       <div style="${abs(cx, cy, w, h, "transform:rotate(-4deg);border-radius:26px;background:#f4f2ec;overflow:hidden;box-shadow:0 0 0 1px rgba(255,255,255,.5),0 0 110px 20px rgba(190,120,200,.5),0 40px 70px rgba(10,5,14,.55),0 8px 16px rgba(10,5,14,.35)")}"><img src="${asset("screen-print-section.png")}" style="width:${w}px;height:${h}px;display:block" alt=""></div>
-      ${tapeStrip({ x: cx - 30, y: cy + 14, w: 150, rot: -42 })}${tapeStrip({ x: cx + w - 120, y: cy + h - 44, w: 150, rot: -42 })}`;
+      ${tapeStrip({ x: cx + w - 100, y: cy - 6, w: 140, rot: 38 })}${tapeStrip({ x: cx - 52, y: cy + h - 46, w: 140, rot: 38 })}`;
     return promo({
       n: 79,
       tone: "berry",

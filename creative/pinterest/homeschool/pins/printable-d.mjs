@@ -160,7 +160,7 @@ function scene56() {
   const N = 120;
   for (let k = 0; k <= N; k++) {
     const t = k / N;
-    const ang = ((205 + t * 372) * Math.PI) / 180;
+    const ang = ((152 + t * 372) * Math.PI) / 180;
     const grow = 1 + 0.045 * t, n = 3.4;
     const c = Math.cos(ang), sn = Math.sin(ang);
     const wob = Math.sin(t * 17) * 1.6;

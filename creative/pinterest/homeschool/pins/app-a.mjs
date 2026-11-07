@@ -108,7 +108,7 @@ export const pins = [
       <div style="filter:drop-shadow(0 0 46px rgba(226,150,240,.85)) drop-shadow(0 0 120px rgba(200,120,230,.7))">
         ${phone({ src: screen("kids"), y0: 60, y1: 780, width: W_59, tilt: TILT_59, x: P59.x, y: P59.top })}
       </div>
-      <div style="${abs(570, 700, 425, 190, "border-radius:14px;transform:rotate(6deg);box-shadow:0 0 34px 12px rgba(226,140,245,.8),0 0 90px 30px rgba(200,110,235,.45);pointer-events:none")}"></div>`,
+      <div style="${abs(558, 693, 446, 196, "border-radius:14px;transform:rotate(6deg);box-shadow:0 0 34px 12px rgba(226,140,245,.8),0 0 90px 30px rgba(200,110,235,.45);pointer-events:none")}"></div>`,
     prop: folder({ x: 640, y: 1130, w: 330 }),
   }),
 
