@@ -129,8 +129,8 @@ export const pins = [
     display: ["Homeschool Schedule", "by Subject:", "Zero Days", "Is Allowed"],
     highlight: ["Zero Days", "Is Allowed"],
     // y1 stops at 780: below it the real capture shows the tab bar and the Next.js dev badge.
-    phone: phone({ src: screen("workspace"), y0: 340, y1: 780, width: 500, tilt: 12, x: 478, y: 770 }),
-    prop: pencilCup({ x: 770, y: 1105, size: 1.0, rot: 6 }),
+    phone: phone({ src: screen("workspace"), y0: 340, y1: 780, width: 500, tilt: 12, x: 428, y: 770 }),
+    prop: pencilCup({ x: 790, y: 1150, size: 0.92, rot: 6 }),
   }),
 
   // #86  Progress without comparison. Top of the Record screen, enlarged, almost upright.
@@ -185,11 +185,11 @@ export const pins = [
 
   // #79  Private records printed on your own device. The real print section as a floating card, not a phone.
   (() => {
-    const w = 510, h = Math.round((w * 918) / 1170);
-    const cx = 482, cy = 705;
+    const w = 500, h = Math.round((w * 918) / 1170);
+    const cx = 488, cy = 705;
     const card = `
       <div style="${abs(cx, cy, w, h, "transform:rotate(-4deg);border-radius:26px;background:#f4f2ec;overflow:hidden;box-shadow:0 0 0 1px rgba(255,255,255,.5),0 0 110px 20px rgba(190,120,200,.5),0 40px 70px rgba(10,5,14,.55),0 8px 16px rgba(10,5,14,.35)")}"><img src="${asset("screen-print-section.png")}" style="width:${w}px;height:${h}px;display:block" alt=""></div>
-      ${tapeStrip({ x: cx + w - 100, y: cy - 6, w: 140, rot: 38 })}${tapeStrip({ x: cx - 52, y: cy + h - 46, w: 140, rot: 38 })}`;
+      ${tapeStrip({ x: cx + w - 100, y: cy - 6, w: 140, rot: 38 })}${tapeStrip({ x: cx - 30, y: cy + h - 44, w: 110, rot: 38 })}`;
     return promo({
       n: 79,
       tone: "berry",

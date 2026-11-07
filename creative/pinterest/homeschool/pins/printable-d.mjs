@@ -155,7 +155,7 @@ function scene56() {
   const W = 640, H = Math.round(W * ASPECT);
   // SPARE DAY row of page 13: label at 0.797 of the height, two ruled lines to 0.875, footnote at 0.903.
   // The loop is a squared-off hand-drawn oval that wraps the row without touching the label or the footnote.
-  const cy = Math.round(H * 0.8335), ry = 42, cx = W / 2 + 2, rx = W / 2 - 16;
+  const cy = Math.round(H * 0.8285), ry = 45, cx = W / 2 + 2, rx = W / 2 - 16;
   const pts = [];
   const N = 120;
   for (let k = 0; k <= N; k++) {
