@@ -1,6 +1,6 @@
 /**
  * Batch 4, set D: four guide pins in four worlds.
- *   24 a green leather desk blotter on ash wood: the reading-log page in the book's own style,
+ *   24 a striped woollen picnic blanket on a lawn, seen from above: the reading-log page in the book's own style,
  *      two rows in a child's hand, the stopped one ringed in plum, a library book and a pencil
  *   28 a flight of stairs seen from the front: five painted risers, one step on each, a school bag at the foot
  *   34 a navy plaster wall: five kraft shipping tags tied on one twine, a pencil sketch of a clock and calendar
@@ -68,7 +68,7 @@ function pin24() {
   const rx0 = inner + colW[0] + colW[1] + 4;
   const ringBox = { w: 270, h: 70 };
   const stoppedRing = `<svg style="${abs(rx0 + 2, rowTop(1) + 14, ringBox.w + 40, ringBox.h + 30, "overflow:visible")}" viewBox="0 0 ${ringBox.w + 40} ${ringBox.h + 30}" aria-hidden="true"><path d="${ring(ringBox.w + 24, ringBox.h + 14, 4, 6)}" transform="translate(8 8)" fill="none" stroke="${C.plum}" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" opacity=".92"/></svg>`;
-  const page = `<div data-check="page" style="${abs(X, Y, PW, 1000, "background:#fbfaf7;transform:rotate(-2.2deg);transform-origin:50% 0;box-shadow:0 2px 3px rgba(20,35,25,.3),0 22px 38px rgba(10,25,15,.45),0 46px 70px -20px rgba(10,25,15,.5);z-index:2")}">
+  const page = `<div data-check="page" style="${abs(X, Y, PW, 1000, "background:#fbfaf7;transform:rotate(1.6deg);transform-origin:50% 0;box-shadow:0 2px 3px rgba(20,35,25,.3),0 22px 38px rgba(10,25,15,.45),0 46px 70px -20px rgba(10,25,15,.5);z-index:2")}">
     <div style="${abs(0, 0, PW, 10, `background:${C.plum}`)}"></div>
     <div style="${abs(inner, 52, 520, 90, "font:400 70px/1.15 'Newsreader',serif;color:#1d1d20;white-space:nowrap")}">The reading log</div>
     <div style="${abs(PW - inner - 150, 64, 150, 46, "z-index:3;transform:rotate(3deg)")}"><span class="example" style="display:inline-block;border:none">Example</span></div>
@@ -77,21 +77,28 @@ function pin24() {
     <div style="${abs(inner, ROW0 - 4, PW - inner * 2, 3, "background:#1d1d20")}"></div>
     ${dividers}${lines}${entries}${stoppedRing}
   </div>`;
-  // blotter: green leather on ash wood, tan corner pieces
-  const wood = desk({ top: SCENE_TOP, height: SH, base: "#dccdb2", dark: "#cdbb9a", planks: 5, seed: 8 });
-  const blotter = `<div style="${abs(-20, SCENE_TOP + 32, 1040, SH + 40, "background:linear-gradient(160deg,#41695a,#2d4d41);border-radius:14px;box-shadow:0 3px 4px rgba(10,25,15,.4),0 24px 40px rgba(10,25,15,.4)")}"></div>
-    <div style="${abs(-20, SCENE_TOP + 32, 1040, SH + 40, "background:radial-gradient(ellipse at 30% 10%,rgba(255,255,255,.14),rgba(0,0,0,.28));border-radius:14px")}"></div>
-    <svg style="${abs(0, SCENE_TOP + 32, 1000, 90)}" viewBox="0 0 1000 90" aria-hidden="true"><path d="M-10 0 H130 L-10 130 Z" fill="#c29a62"/><path d="M-10 0 H130 L-10 130 Z" fill="none" stroke="#8a6a3a" stroke-width="2" stroke-dasharray="7 5" transform="translate(-10 -4) scale(.92)"/><path d="M1010 0 H870 L1010 130 Z" fill="#c29a62"/></svg>`;
+  // a picnic: a striped woollen blanket laid on a lawn, seen from above
+  const g = seeded(14);
+  const blades = Array.from({ length: 900 }, () => {
+    const x = g() * 1000, y = g() * SH, h = 10 + g() * 22, lean = (g() - 0.5) * 12;
+    return `<path d="M${x.toFixed(0)} ${y.toFixed(0)} q${(lean / 2).toFixed(1)} ${(-h / 2).toFixed(0)} ${lean.toFixed(1)} ${-h.toFixed(0)}" stroke="${["#5f8a46", "#8fb560", "#4f7a3c", "#a3c46f"][Math.floor(g() * 4)]}" stroke-width="${(1.6 + g() * 1.6).toFixed(1)}" stroke-linecap="round" fill="none" opacity=".75"/>`;
+  }).join("");
+  const daisies = [[60, 150], [940, 560], [30, 1010], [960, 930], [900, 70]].map(([x, y]) => `<g transform="translate(${x} ${y})">${[0, 60, 120, 180, 240, 300].map((a2) => `<ellipse cx="0" cy="-13" rx="5" ry="11" fill="#fffdf4" transform="rotate(${a2})"/>`).join("")}<circle r="6" fill="#e9b94a"/></g>`).join("");
+  const lawn = `<div style="${abs(0, SCENE_TOP, 1000, SH, "background:linear-gradient(180deg,#78a257,#6a9a4e)")}"></div>
+    <svg style="${abs(0, SCENE_TOP, 1000, SH)}" viewBox="0 0 1000 ${SH}" aria-hidden="true">${blades}${daisies}</svg>`;
+  const blanket = `<div style="${abs(-60, SCENE_TOP + 34, 1120, SH + 120, "transform:rotate(2.2deg);transform-origin:50% 0;background:repeating-linear-gradient(90deg,#c9694b 0 70px,#f2e6cf 70px 84px,#c9694b 84px 154px,#e0b04f 154px 164px,#c9694b 164px 230px);box-shadow:0 3px 4px rgba(20,35,10,.35),0 22px 34px rgba(20,35,10,.4);z-index:1")}">
+      <div style="${abs(0, 0, 1120, SH + 120, "background:repeating-linear-gradient(0deg,rgba(0,0,0,.06) 0 2px,rgba(255,255,255,.05) 2px 5px),radial-gradient(ellipse at 30% 10%,rgba(255,255,255,.14),rgba(60,20,5,.3))")}"></div>
+      <div style="${abs(0, -16, 1120, 18, "background:repeating-linear-gradient(90deg,#e9dcc0 0 5px,transparent 5px 10px);opacity:.9")}"></div></div>`;
   // a library book lying half on the page, half on the blotter (seen from above, spine at the left)
   const book = `<svg style="${abs(716, 1010, 420, 300, "transform:rotate(11deg);filter:drop-shadow(0 4px 4px rgba(10,25,15,.4)) drop-shadow(0 20px 22px rgba(10,25,15,.45));z-index:4")}" viewBox="0 0 420 300" aria-hidden="true">
-    <rect x="14" y="14" width="396" height="282" rx="6" fill="#efe6d0"/><rect x="6" y="6" width="396" height="280" rx="8" fill="#7b2f3a"/>
-    <rect x="6" y="6" width="42" height="280" rx="8" fill="#5f2029"/><rect x="48" y="6" width="3" height="280" fill="#000" opacity=".2"/>
+    <rect x="14" y="14" width="396" height="282" rx="6" fill="#efe6d0"/><rect x="6" y="6" width="396" height="280" rx="8" fill="#2f6a73"/>
+    <rect x="6" y="6" width="42" height="280" rx="8" fill="#234f57"/><rect x="48" y="6" width="3" height="280" fill="#000" opacity=".2"/>
     <rect x="76" y="34" width="298" height="224" rx="4" fill="none" stroke="#d9b36a" stroke-width="3"/>
     <rect x="96" y="54" width="258" height="184" rx="3" fill="none" stroke="#d9b36a" stroke-width="1.5" opacity=".8"/>
     <circle cx="225" cy="146" r="46" fill="none" stroke="#d9b36a" stroke-width="3"/><circle cx="225" cy="146" r="30" fill="#d9b36a" opacity=".85"/>
     <rect x="6" y="6" width="396" height="280" rx="8" fill="url(#bk)" opacity=".5"/><defs><linearGradient id="bk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".25"/><stop offset="1" stop-color="#000" stop-opacity=".25"/></linearGradient></defs></svg>`;
   const pen = pencil({ x: 110, y: 1262, len: 460, rot: -5 }).replace("<svg style=\"", "<svg style=\"z-index:3;");
-  return printable({ n: 24, paper: "#e7ece3", extraCss: exampleCss, scene: `${wood}${blotter}${page}${book}${pen}` });
+  return printable({ n: 24, paper: "#f1e8d6", extraCss: exampleCss, scene: `${lawn}${blanket}${page}${book}${pen}` });
 }
 
 /* ------------------------------------------------------------------ #28 */
