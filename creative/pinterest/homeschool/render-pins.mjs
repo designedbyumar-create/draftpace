@@ -6,6 +6,7 @@
  *   node pinterest/homeschool/render-pins.mjs                  all
  *   node pinterest/homeschool/render-pins.mjs app              pins/app*.mjs
  *   node pinterest/homeschool/render-pins.mjs --only 55,4      those ideas
+ *   ... --scale 2 --out out/homeschool/hq                       2000 x 3000 into another folder
  *
  * A pin module exports `pins`: [{ n, id, html }] (n = the idea's number in
  * ideas-101.json). Writes out/homeschool/pins/<NN>-<id>.png at 1000 x 1500
@@ -21,19 +22,23 @@ import { chromium } from "playwright";
 const HERE = import.meta.dirname;
 const OUT = path.resolve(HERE, "../../out/homeschool/pins");
 const args = process.argv.slice(2);
-const only = args.includes("--only") ? args[args.indexOf("--only") + 1].split(",").map(Number) : null;
-const names = args.filter((a, k) => !a.startsWith("--") && args[k - 1] !== "--only");
-fs.mkdirSync(OUT, { recursive: true });
+const flag = (name) => (args.includes(name) ? args[args.indexOf(name) + 1] : null);
+const only = flag("--only") ? flag("--only").split(",").map(Number) : null;
+// --scale 2 renders at 2000 x 3000 (device pixel ratio 2); --out puts the files elsewhere.
+const scale = Number(flag("--scale") ?? 1);
+const OUTDIR = flag("--out") ? path.resolve(flag("--out")) : OUT;
+const names = args.filter((a, k) => !a.startsWith("--") && !["--only", "--scale", "--out"].includes(args[k - 1]));
+fs.mkdirSync(OUTDIR, { recursive: true });
 
 const files = fs.readdirSync(path.join(HERE, "pins")).filter((f) => f.endsWith(".mjs")).filter((f) => !names.length || names.some((x) => f.startsWith(x))).sort();
 const browser = await chromium.launch({ executablePath: process.env.CHROMIUM ?? "/opt/pw-browsers/chromium" });
-const pg = await browser.newPage({ viewport: { width: 1000, height: 1500 } });
+const pg = await browser.newPage({ viewport: { width: 1000, height: 1500 }, deviceScaleFactor: scale });
 const done = [];
 for (const f of files) {
   const { pins } = await import(path.join(HERE, "pins", f));
   for (const pin of pins) {
     if (only && !only.includes(pin.n)) continue;
-    const html = path.join(OUT, `${String(pin.n).padStart(3, "0")}.html`);
+    const html = path.join(OUTDIR, `${String(pin.n).padStart(3, "0")}.html`);
     fs.writeFileSync(html, pin.html);
     await pg.goto(`file://${html}`);
     await pg.evaluate(() => document.fonts.ready);
@@ -52,7 +57,7 @@ for (const f of files) {
       }
       return out;
     });
-    const png = path.join(OUT, `${String(pin.n).padStart(3, "0")}-${pin.id.replace(/^\d+-/, "")}.png`);
+    const png = path.join(OUTDIR, `${String(pin.n).padStart(3, "0")}-${pin.id.replace(/^\d+-/, "")}.png`);
     await pg.screenshot({ path: png });
     fs.rmSync(html);
     done.push(png);
@@ -64,5 +69,5 @@ if (done.length) {
   const scope = (only ?? names).length ? (only ?? names).join("-") : "all";
   const cols = Math.min(4, done.length);
   const py = `import sys\nfrom PIL import Image\nfs=sys.argv[2:];c=${cols};w,h=400,600\nrows=(len(fs)+c-1)//c\ns=Image.new('RGB',(w*c,h*rows),'white')\nfor i,f in enumerate(fs):s.paste(Image.open(f).convert('RGB').resize((w,h)),((i%c)*w,(i//c)*h))\ns.save(sys.argv[1])`;
-  execFileSync("python3", ["-c", py, path.join(OUT, `sheet-${scope}.png`), ...done]);
+  execFileSync("python3", ["-c", py, path.join(OUTDIR, `sheet-${scope}.png`), ...done]);
 }
