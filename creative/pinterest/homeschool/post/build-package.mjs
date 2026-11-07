@@ -19,7 +19,7 @@ const CREATIVE = path.resolve(HERE, "../../..");
 const [name, hqArg] = process.argv.slice(2);
 if (!name || !hqArg) throw new Error("usage: build-package.mjs <batch-name> <hq-folder>");
 const HQ = path.resolve(hqArg);
-const { PINS, NAME } = await import(path.join(HERE, `${name}.mjs`));
+const { PINS, NAME, NOTES } = await import(path.join(HERE, `${name}.mjs`));
 const bank = JSON.parse(fs.readFileSync(path.join(HERE, "../ideas-101.json"), "utf8"));
 const label = name.replace(/^batch-(\d+)$/, "Batch-$1");
 const PKG = path.join(CREATIVE, "out/homeschool", `package-${name}`);
@@ -61,10 +61,14 @@ out.push("6. Tagged topics: type each tag from the Tags line and pick the matchi
 out.push("7. Alt text: click 'Add alt text' and paste the Alt text.");
 out.push("8. Publish now, or schedule. Pace: 3 or 4 pins a day suits a new run of pins better than all at once.", "");
 out.push("READ THIS FIRST", thin);
-out.push("- Near-duplicate pairs: pins 05 and 21 both show the daily log, and 03 and 17 both show the weekly planner, with similar titles. Post each pair at least a week apart (the order below already does).");
-out.push("- The price on the pins comes from the product page. No description states a price. Check the price in Lemon Squeezy matches the product page before posting.");
-out.push("- Many pins show a demo family (Ava, Leo, Oregon) because the real app screens and printed record are shown exactly as the app makes them. None implies a real family.");
-out.push("- State pins carry 'Laws change. Confirm with your state before relying on this.' Keep that line if you edit anything.", "");
+const DEFAULT_NOTES = [
+  "Near-duplicate pairs: pins 05 and 21 both show the daily log, and 03 and 17 both show the weekly planner, with similar titles. Post each pair at least a week apart (the order below already does).",
+  "The price on the pins comes from the product page. No description states a price. Check the price in Lemon Squeezy matches the product page before posting.",
+  "Many pins show a demo family (Ava, Leo, Oregon) because the real app screens and printed record are shown exactly as the app makes them. None implies a real family.",
+  "State pins carry 'Laws change. Confirm with your state before relying on this.' Keep that line if you edit anything.",
+];
+for (const n of NOTES ?? DEFAULT_NOTES) out.push(`- ${n}`);
+out.push("");
 out.push("BOARDS USED", thin);
 for (const b of boards) out.push(`- ${b}${NEW_BOARDS[b] ? `   (NEW: create it. Suggested board description: ${NEW_BOARDS[b]})` : ""}`);
 out.push("", rule, "");
