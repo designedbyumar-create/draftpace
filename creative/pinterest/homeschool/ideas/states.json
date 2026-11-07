@@ -1,0 +1,609 @@
+[
+  {
+    "slice": "states",
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-requirements-by-state"
+    },
+    "proofFile": "src/lib/homeschoolStateRequirements.ts",
+    "when": "evergreen; peaks Jul-Sep (new school year)",
+    "flags": [],
+    "reserve": false,
+    "sub": "Nothing is filed with the state. Records are for your own use.",
+    "angle": "infographic",
+    "headline": "Homeschool Record Keeping: 8 States Where Nothing Is Filed With the State",
+    "items": [
+      "Alaska",
+      "Connecticut",
+      "Idaho",
+      "Illinois",
+      "Michigan",
+      "New Jersey",
+      "Oklahoma",
+      "Texas",
+      "Laws change. Confirm with your state before relying on this."
+    ],
+    "proof": [
+      "Nothing is filed with the state. Records are for your own use.",
+      "state: \"Alaska\", level: \"None\"",
+      "state: \"Connecticut\", level: \"None\"",
+      "state: \"Idaho\", level: \"None\"",
+      "state: \"Illinois\", level: \"None\"",
+      "state: \"Michigan\", level: \"None\"",
+      "state: \"New Jersey\", level: \"None\"",
+      "state: \"Oklahoma\", level: \"None\"",
+      "state: \"Texas\", level: \"None\""
+    ],
+    "proofExtra": [
+      {
+        "file": "src/content/guides.ts",
+        "proof": [
+          "None, 8 states:"
+        ]
+      },
+      {
+        "file": "src/content/guides.ts",
+        "proof": [
+          "Read None as low paperwork, not as no rules."
+        ]
+      }
+    ],
+    "query": "states with no homeschool requirements",
+    "board": "Homeschool Requirements by State",
+    "visual": "Tile map of the US, the 8 states tiled in plum with their names, the other 43 jurisdictions faded cream; big count '8' in the corner; state-tile-map archetype on cream paper. Optional footer line 'Read None as low paperwork, not as no rules.' (the guide's own sentence). Caution line small at the foot."
+  },
+  {
+    "slice": "states",
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-requirements-by-state"
+    },
+    "proofFile": "src/lib/homeschoolStateRequirements.ts",
+    "when": "evergreen; peaks Jul-Sep (new school year)",
+    "flags": [],
+    "reserve": false,
+    "sub": "A notice is typically filed, and basic records are kept, but there is no ongoing review.",
+    "angle": "question",
+    "headline": "Which States Ask for a Notice and Basic Homeschool Records? The 15 at Low",
+    "items": [
+      "Alabama",
+      "Arizona",
+      "Delaware",
+      "Indiana",
+      "Iowa",
+      "Kansas",
+      "Kentucky",
+      "Mississippi",
+      "Montana",
+      "Nevada",
+      "New Mexico",
+      "South Dakota",
+      "Utah",
+      "Wisconsin",
+      "Wyoming",
+      "Laws change. Confirm with your state before relying on this."
+    ],
+    "proof": [
+      "A notice is typically filed, and basic records are kept, but there is no ongoing review.",
+      "state: \"Alabama\", level: \"Low\"",
+      "state: \"Arizona\", level: \"Low\"",
+      "state: \"Delaware\", level: \"Low\"",
+      "state: \"Indiana\", level: \"Low\"",
+      "state: \"Iowa\", level: \"Low\"",
+      "state: \"Kansas\", level: \"Low\"",
+      "state: \"Kentucky\", level: \"Low\"",
+      "state: \"Mississippi\", level: \"Low\"",
+      "state: \"Montana\", level: \"Low\"",
+      "state: \"Nevada\", level: \"Low\"",
+      "state: \"New Mexico\", level: \"Low\"",
+      "state: \"South Dakota\", level: \"Low\"",
+      "state: \"Utah\", level: \"Low\"",
+      "state: \"Wisconsin\", level: \"Low\"",
+      "state: \"Wyoming\", level: \"Low\""
+    ],
+    "proofExtra": [
+      {
+        "file": "src/content/guides.ts",
+        "proof": [
+          "Low, 15 states:"
+        ]
+      }
+    ],
+    "query": "homeschool states with low regulation",
+    "board": "Homeschool Requirements by State",
+    "visual": "Question card on cream paper: the headline as the question, then the 15 state names set as a tidy three-column list under 'Low' with the level's one-line definition as the short answer. Index-card archetype, kraft backing. Caution at the foot."
+  },
+  {
+    "slice": "states",
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-requirements-by-state"
+    },
+    "proofFile": "src/lib/homeschoolStateRequirements.ts",
+    "when": "evergreen; peaks Jul-Sep (new school year)",
+    "flags": [],
+    "reserve": false,
+    "sub": "Notice and some form of annual reporting or testing is typically required.",
+    "angle": "infographic",
+    "headline": "Homeschool Record Keeping: The 19 States at the Moderate Level",
+    "items": [
+      "Arkansas",
+      "California",
+      "Colorado",
+      "Georgia",
+      "Hawaii",
+      "Louisiana",
+      "Maine",
+      "Minnesota",
+      "Missouri",
+      "Nebraska",
+      "New Hampshire",
+      "North Carolina",
+      "North Dakota",
+      "Oregon",
+      "Rhode Island",
+      "Tennessee",
+      "Virginia",
+      "Washington",
+      "West Virginia",
+      "Laws change. Confirm with your state before relying on this."
+    ],
+    "proof": [
+      "Notice and some form of annual reporting or testing is typically required.",
+      "state: \"Arkansas\", level: \"Moderate\"",
+      "state: \"California\", level: \"Moderate\"",
+      "state: \"Colorado\", level: \"Moderate\"",
+      "state: \"Georgia\", level: \"Moderate\"",
+      "state: \"Hawaii\", level: \"Moderate\"",
+      "state: \"Louisiana\", level: \"Moderate\"",
+      "state: \"Maine\", level: \"Moderate\"",
+      "state: \"Minnesota\", level: \"Moderate\"",
+      "state: \"Missouri\", level: \"Moderate\"",
+      "state: \"Nebraska\", level: \"Moderate\"",
+      "state: \"New Hampshire\", level: \"Moderate\"",
+      "state: \"North Carolina\", level: \"Moderate\"",
+      "state: \"North Dakota\", level: \"Moderate\"",
+      "state: \"Oregon\", level: \"Moderate\"",
+      "state: \"Rhode Island\", level: \"Moderate\"",
+      "state: \"Tennessee\", level: \"Moderate\"",
+      "state: \"Virginia\", level: \"Moderate\"",
+      "state: \"Washington\", level: \"Moderate\"",
+      "state: \"West Virginia\", level: \"Moderate\""
+    ],
+    "proofExtra": [
+      {
+        "file": "src/content/guides.ts",
+        "proof": [
+          "Moderate, 19 states:"
+        ]
+      }
+    ],
+    "query": "homeschool states with annual testing or reporting",
+    "board": "Homeschool Requirements by State",
+    "visual": "Two-column roster of the 19 state names on an oak-and-cream board, a large '19' numeral beside the level definition; each name on a small tag. Caution at the foot. Distinct from the None tile map: a list board, not a map."
+  },
+  {
+    "slice": "states",
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-requirements-by-state"
+    },
+    "proofFile": "src/lib/homeschoolStateRequirements.ts",
+    "when": "evergreen; peaks Aug-Sep (new school year) and Apr-May (portfolio and evaluation season)",
+    "flags": [],
+    "reserve": false,
+    "sub": "A portfolio or a formal annual assessment is typically part of the law, not just a good habit.",
+    "angle": "quote-card",
+    "headline": "Homeschool Record Keeping: The 9 States at the High Level",
+    "items": [
+      "District of Columbia",
+      "Florida",
+      "Maryland",
+      "Massachusetts",
+      "New York",
+      "Ohio",
+      "Pennsylvania",
+      "South Carolina",
+      "Vermont",
+      "Laws change. Confirm with your state before relying on this."
+    ],
+    "proof": [
+      "A portfolio or a formal annual assessment is typically part of the law, not just a good habit.",
+      "state: \"District of Columbia\", level: \"High\"",
+      "state: \"Florida\", level: \"High\"",
+      "state: \"Maryland\", level: \"High\"",
+      "state: \"Massachusetts\", level: \"High\"",
+      "state: \"New York\", level: \"High\"",
+      "state: \"Ohio\", level: \"High\"",
+      "state: \"Pennsylvania\", level: \"High\"",
+      "state: \"South Carolina\", level: \"High\"",
+      "state: \"Vermont\", level: \"High\""
+    ],
+    "proofExtra": [
+      {
+        "file": "src/content/guides.ts",
+        "proof": [
+          "High, 9 states:"
+        ]
+      }
+    ],
+    "query": "states that require homeschool portfolio",
+    "board": "Homeschool Requirements by State",
+    "visual": "Quote-card: the High definition sentence set large in a serif, in quotation marks, attributed 'Our summary of record keeping by state'; the 9 names listed in a row of small tiles beneath. Plum on soft plum (#f0eaf1). Caution at the foot."
+  },
+  {
+    "slice": "states",
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-requirements-by-state"
+    },
+    "proofFile": "src/lib/homeschoolStateRequirements.ts",
+    "when": "evergreen; peaks Jul-Sep",
+    "flags": [],
+    "reserve": false,
+    "sub": "Our summary puts Texas at None.",
+    "angle": "question",
+    "headline": "Homeschool Requirements in Texas: What the Record Keeping Note Says",
+    "items": [
+      "Texas - None",
+      "Nothing filed; keep curriculum evidence for your own use",
+      "Laws change. Confirm with your state before relying on this."
+    ],
+    "proof": [
+      "state: \"Texas\", level: \"None\", note: \"Nothing filed; keep curriculum evidence for your own use\""
+    ],
+    "proofExtra": [],
+    "query": "homeschool requirements in Texas",
+    "board": "Homeschool Requirements by State",
+    "visual": "Question card on cream paper: 'Texas' large with a plum 'None' badge, the note in a serif as the answer ('Nothing filed; keep curriculum evidence for your own use'), small caution below. No checklist exists for None, so none is drawn. Kitchen-table-and-pencil backdrop, working-page archetype."
+  },
+  {
+    "slice": "states",
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-requirements-by-state"
+    },
+    "proofFile": "src/lib/homeschoolStateRequirements.ts",
+    "when": "evergreen; peaks Jun-Aug (evaluation and notice season)",
+    "flags": [],
+    "reserve": false,
+    "sub": "Our summary puts Florida at High.",
+    "angle": "checklist",
+    "headline": "Homeschool Record Keeping in Florida: What the Note Asks You to Keep",
+    "items": [
+      "Florida - High",
+      "Notice; portfolio of work and log kept two years; annual evaluation",
+      "[x] A log or record of instruction",
+      "[ ] Attendance or hours",
+      "[x] Samples of work or a portfolio",
+      "[x] A test score or evaluation",
+      "Laws change. Confirm with your state before relying on this."
+    ],
+    "proof": [
+      "state: \"Florida\", level: \"High\", note: \"Notice; portfolio of work and log kept two years; annual evaluation\"",
+      "checklist: { log: true, attendanceOrHours: false, workSamples: true, testOrEvaluation: true, otherNotes: [] }"
+    ],
+    "proofExtra": [
+      {
+        "file": "src/products/homeschooling-companion/book.ts",
+        "proof": [
+          "A log or record of instruction",
+          "Attendance or hours",
+          "Samples of work or a portfolio",
+          "A test score or evaluation"
+        ]
+      }
+    ],
+    "query": "homeschool record keeping Florida",
+    "board": "Homeschool Requirements by State",
+    "visual": "Clipboard checklist (check-clipboard archetype): 'Florida, High' on the clip, the note above, then four rows with the first, third and fourth ticked in plum (log, samples of work or a portfolio, test score or evaluation) and 'Attendance or hours' left an empty box. Caution at the foot."
+  },
+  {
+    "slice": "states",
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-requirements-by-state"
+    },
+    "proofFile": "src/lib/homeschoolStateRequirements.ts",
+    "when": "evergreen; peaks Aug-Sep and Apr-Jun",
+    "flags": [
+      "needs-capture",
+      "demo-data"
+    ],
+    "reserve": false,
+    "sub": "Our summary puts Pennsylvania at High.",
+    "angle": "mockup-printable",
+    "headline": "Homeschool Record Keeping in Pennsylvania: What Your State Asks For",
+    "items": [
+      "Pennsylvania - High",
+      "Affidavit; log, portfolio, and annual evaluator review",
+      "[x] A log or record of instruction",
+      "[ ] Attendance or hours",
+      "[x] Samples of work or a portfolio",
+      "[x] A test score or evaluation",
+      "Laws change. Confirm with your state before relying on this."
+    ],
+    "proof": [
+      "state: \"Pennsylvania\", level: \"High\", note: \"Affidavit; log, portfolio, and annual evaluator review\"",
+      "checklist: { log: true, attendanceOrHours: false, workSamples: true, testOrEvaluation: true, otherNotes: [] }"
+    ],
+    "proofExtra": [
+      {
+        "file": "src/products/homeschooling-companion/book.ts",
+        "proof": [
+          "A log or record of instruction",
+          "Attendance or hours",
+          "Samples of work or a portfolio",
+          "A test score or evaluation"
+        ]
+      },
+      {
+        "file": "src/products/homeschooling-companion/printables/document.tsx",
+        "proof": [
+          "What your state asks for",
+          "regulation</Text>",
+          "Laws change. Confirm with your state before relying on this."
+        ]
+      }
+    ],
+    "query": "homeschool record keeping Pennsylvania",
+    "board": "Homeschool Requirements by State",
+    "visual": "Printable mockup on a desk beside a binder, tilted: the My Homeschool Record page 'What your state asks for.' with eyebrow 'Pennsylvania, High regulation', the note, three rows (a log or record of instruction; samples of work or a portfolio; a test score or evaluation) each with its recorded count generated by the product from the demo child, and the caution line. NEEDS-CAPTURE: render the real PDF page with a demo household set to Pennsylvania (printables/document.tsx, the state page), do not mock it up by hand. Counts must come from the app's own output, none invented."
+  },
+  {
+    "slice": "states",
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-requirements-by-state"
+    },
+    "proofFile": "src/lib/homeschoolStateRequirements.ts",
+    "when": "evergreen; peaks Jun-Sep",
+    "flags": [
+      "source-spelling"
+    ],
+    "reserve": false,
+    "sub": "Our summary puts New York at High.",
+    "angle": "checklist",
+    "headline": "New York Homeschool Requirements: What the Record Keeping Note Asks You to Keep",
+    "items": [
+      "New York - High",
+      "Notice; individualised plan; quarterly reports; annual assessment",
+      "[x] A log or record of instruction",
+      "[ ] Attendance or hours",
+      "[ ] Samples of work or a portfolio",
+      "[x] A test score or evaluation",
+      "Your plan is individualised and filed in advance.",
+      "Laws change. Confirm with your state before relying on this."
+    ],
+    "proof": [
+      "state: \"New York\", level: \"High\", note: \"Notice; individualised plan; quarterly reports; annual assessment\"",
+      "checklist: { log: true, attendanceOrHours: false, workSamples: false, testOrEvaluation: true, otherNotes: [\"Your plan is individualised and filed in advance.\"] }"
+    ],
+    "proofExtra": [
+      {
+        "file": "src/products/homeschooling-companion/book.ts",
+        "proof": [
+          "A log or record of instruction",
+          "Attendance or hours",
+          "Samples of work or a portfolio",
+          "A test score or evaluation"
+        ]
+      }
+    ],
+    "query": "New York homeschool requirements",
+    "board": "Homeschool Requirements by State",
+    "visual": "Check-clipboard on oak: 'New York, High' on the clip, the note ('Notice; individualised plan; quarterly reports; annual assessment' exactly as in the data), rows for a log or record of instruction and a test score or evaluation ticked, the other two empty, and the extra line 'Your plan is individualised and filed in advance.' set as a margin note. Caution at the foot."
+  },
+  {
+    "slice": "states",
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-requirements-by-state"
+    },
+    "proofFile": "src/lib/homeschoolStateRequirements.ts",
+    "when": "evergreen; peaks Aug-Sep and Apr-May",
+    "flags": [],
+    "reserve": false,
+    "sub": "Our summary puts Ohio at High.",
+    "angle": "question",
+    "headline": "Ohio Homeschool Requirements: Test or Portfolio Review, Which One?",
+    "items": [
+      "Ohio - High",
+      "Notice; annual academic assessment by test or portfolio review",
+      "[ ] A log or record of instruction",
+      "[ ] Attendance or hours",
+      "[x] Samples of work or a portfolio",
+      "[x] A test score or evaluation",
+      "Test and portfolio review are alternatives.",
+      "Laws change. Confirm with your state before relying on this."
+    ],
+    "proof": [
+      "state: \"Ohio\", level: \"High\", note: \"Notice; annual academic assessment by test or portfolio review\"",
+      "checklist: { log: false, attendanceOrHours: false, workSamples: true, testOrEvaluation: true, otherNotes: [\"Test and portfolio review are alternatives.\"] }"
+    ],
+    "proofExtra": [
+      {
+        "file": "src/products/homeschooling-companion/book.ts",
+        "proof": [
+          "A log or record of instruction",
+          "Attendance or hours",
+          "Samples of work or a portfolio",
+          "A test score or evaluation"
+        ]
+      }
+    ],
+    "query": "Ohio homeschool requirements test or portfolio",
+    "board": "Homeschool Requirements by State",
+    "visual": "Question card: 'Test or portfolio?' large; beneath it the note ('Notice; annual academic assessment by test or portfolio review'), two ticked rows (samples of work or a portfolio; a test score or evaluation) joined by a small 'or' bracket carrying the line 'Test and portfolio review are alternatives.' Plum on cream, index-card archetype. Caution at foot."
+  },
+  {
+    "slice": "states",
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-requirements-by-state"
+    },
+    "proofFile": "src/lib/homeschoolStateRequirements.ts",
+    "when": "evergreen; peaks Jul-Sep",
+    "flags": [],
+    "reserve": true,
+    "sub": "Our summary puts California at Moderate.",
+    "angle": "quote-card",
+    "headline": "California Homeschool Requirements: What the Record Keeping Note Says",
+    "items": [
+      "California - Moderate",
+      "Private school affidavit; attendance register and course list",
+      "[x] A log or record of instruction",
+      "[x] Attendance or hours",
+      "[ ] Samples of work or a portfolio",
+      "[ ] A test score or evaluation",
+      "Laws change. Confirm with your state before relying on this."
+    ],
+    "proof": [
+      "state: \"California\", level: \"Moderate\", note: \"Private school affidavit; attendance register and course list\"",
+      "checklist: { log: true, attendanceOrHours: true, workSamples: false, testOrEvaluation: false, otherNotes: [] }"
+    ],
+    "proofExtra": [
+      {
+        "file": "src/products/homeschooling-companion/book.ts",
+        "proof": [
+          "A log or record of instruction",
+          "Attendance or hours",
+          "Samples of work or a portfolio",
+          "A test score or evaluation"
+        ]
+      }
+    ],
+    "query": "California homeschool requirements",
+    "board": "Homeschool Requirements by State",
+    "visual": "Quote-card: the note set large in a serif inside quotation marks ('Private school affidavit; attendance register and course list'), 'California, Moderate' as the attribution, two ticked rows beneath (a log or record of instruction; attendance or hours). Cream paper, plum rule. Caution at foot."
+  },
+  {
+    "slice": "states",
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-requirements-by-state"
+    },
+    "proofFile": "src/lib/homeschoolStateRequirements.ts",
+    "when": "evergreen; peaks Jul-Sep",
+    "flags": [
+      "source-spelling"
+    ],
+    "reserve": true,
+    "sub": "Our summary puts North Carolina at Moderate.",
+    "angle": "infographic",
+    "headline": "North Carolina Homeschool Requirements: Attendance, Immunization, Annual Test",
+    "items": [
+      "North Carolina - Moderate",
+      "Notice; attendance and immunization; annual standardised test kept",
+      "[ ] A log or record of instruction",
+      "[x] Attendance or hours",
+      "[ ] Samples of work or a portfolio",
+      "[x] A test score or evaluation",
+      "Immunization records are kept too.",
+      "Laws change. Confirm with your state before relying on this."
+    ],
+    "proof": [
+      "state: \"North Carolina\", level: \"Moderate\", note: \"Notice; attendance and immunization; annual standardised test kept\"",
+      "checklist: { log: false, attendanceOrHours: true, workSamples: false, testOrEvaluation: true, otherNotes: [\"Immunization records are kept too.\"] }"
+    ],
+    "proofExtra": [
+      {
+        "file": "src/products/homeschooling-companion/book.ts",
+        "proof": [
+          "A log or record of instruction",
+          "Attendance or hours",
+          "Samples of work or a portfolio",
+          "A test score or evaluation"
+        ]
+      }
+    ],
+    "query": "North Carolina homeschool requirements",
+    "board": "Homeschool Requirements by State",
+    "visual": "State card infographic: 'North Carolina' with a Moderate badge, the note, then attendance or hours and a test score or evaluation ticked, the log and portfolio rows empty, and the extra line 'Immunization records are kept too.' Caution at foot. Tile-map archetype with the one state highlighted."
+  },
+  {
+    "slice": "states",
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-requirements-by-state"
+    },
+    "proofFile": "src/lib/homeschoolStateRequirements.ts",
+    "when": "evergreen",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "sub": "Only one of them has something to produce if anyone ever asks.",
+    "angle": "comparison",
+    "headline": "Homeschool Record Keeping Compared: Florida at High, Alaska at None",
+    "items": [
+      "Florida - High: Notice; portfolio of work and log kept two years; annual evaluation",
+      "Alaska - None: Nothing filed; records for your own use",
+      "Laws change. Confirm with your state before relying on this."
+    ],
+    "proof": [
+      "state: \"Florida\", level: \"High\", note: \"Notice; portfolio of work and log kept two years; annual evaluation\"",
+      "state: \"Alaska\", level: \"None\", note: \"Nothing filed; records for your own use\""
+    ],
+    "proofExtra": [
+      {
+        "file": "src/content/guides.ts",
+        "proof": [
+          "Only one of them has something to produce if anyone ever asks."
+        ]
+      }
+    ],
+    "query": "homeschool requirements strict vs relaxed states",
+    "board": "Homeschool Requirements by State",
+    "visual": "Two-column comparison on cream: left a heavy plum stack of paper (a binder) under 'Florida, High' with its note; right a bare kitchen table under 'Alaska, None' with its note. The guide's 'Reading one row' example, so it keeps the guide's pairing. Caution at foot."
+  },
+  {
+    "slice": "states",
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-requirements-by-state"
+    },
+    "proofFile": "src/lib/homeschoolStateRequirements.ts",
+    "when": "evergreen; peaks Jul-Sep",
+    "flags": [
+      "demo-data"
+    ],
+    "reserve": false,
+    "sub": "Your state's record keeping requirements, set line by line against what you've recorded",
+    "angle": "mockup-app",
+    "headline": "Homeschool Requirements by State: Name Yours Once and See Your Level",
+    "items": [
+      "Which state do you homeschool in?",
+      "Oregon · Moderate regulation",
+      "Notice on starting; testing at certain grades, results kept",
+      "Your state's record keeping requirements, set line by line against what you've recorded",
+      "Laws change. Confirm with your state before relying on this."
+    ],
+    "proof": [
+      "state: \"Oregon\", level: \"Moderate\", note: \"Notice on starting; testing at certain grades, results kept\""
+    ],
+    "proofExtra": [
+      {
+        "file": "src/products/homeschooling-companion/components/HouseholdState.tsx",
+        "proof": [
+          "Which state do you homeschool in?"
+        ]
+      },
+      {
+        "file": "src/content/guides.ts",
+        "proof": [
+          "Homeschooling Companion reads this same summary to run the state picker on the Kids tab. Pick your state once"
+        ]
+      },
+      {
+        "file": "src/shop/products/homeschooling-companion.ts",
+        "proof": [
+          "Your state's record keeping requirements, set line by line against what you've recorded"
+        ]
+      }
+    ],
+    "query": "homeschool requirements by state",
+    "board": "Homeschool Requirements by State",
+    "visual": "mockup-app per creative/pinterest/homeschool/reference-mockup.png: plum panel (#4a3350), app name 'Homeschooling Companion' at top, two-tone headline, three feature rows (the question 'Which state do you homeschool in?'; the state card line; the set-against-your-record line), large tilted phone on the right showing the REAL screen creative/public/screens/homeschooling-companion-kids.png cropped to remove the Next.js dev badge: it already shows the state card (Oregon, Moderate regulation, its note, the caution line) above the children rows (demo data: Ava and Leo). The open picker (the dropdown 'Choose a state', Save, Skip for now) is not in any captured screen; only capture it if the pin should show the picker itself. Oregon is simply the state the demo household carries. Foot prop: a pencil on cream paper."
+  }
+]

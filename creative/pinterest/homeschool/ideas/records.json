@@ -1,0 +1,580 @@
+[
+  {
+    "slice": "records",
+    "angle": "template-preview",
+    "headline": "Homeschool Record Keeping Template: Three Columns to Copy",
+    "sub": "Copy this into whatever you already open every day.",
+    "items": [
+      "Date",
+      "Subject and where you are",
+      "How it went",
+      "Math, Unit 3, Lesson 12",
+      "Difficult"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-template"
+    },
+    "proof": [
+      "Copy this into whatever you already open every day.",
+      "Subject and where you are",
+      "Math, Unit 3, Lesson 12",
+      "How it went"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool record keeping template",
+    "board": "Homeschool Record Keeping",
+    "when": "evergreen; peaks Aug-Sep and Jan",
+    "visual": "template-preview on cream ruled paper (working-page archetype): a three-column table with the column heads Date / Subject and where you are / How it went and one filled example row (Oct 14, Math, Unit 3, Lesson 12, Difficult), pencil laid across the foot. Free-guide tag.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "records",
+    "angle": "mockup-printable",
+    "headline": "Homeschool Daily Log Printable: When, What and How It Went",
+    "sub": "What actually happened, written the same day.",
+    "items": [
+      "Date",
+      "Subject",
+      "What we did",
+      "How it went"
+    ],
+    "link": {
+      "kind": "product",
+      "slug": "homeschooling-companion"
+    },
+    "proof": [
+      "What actually happened, written the same day.",
+      "Working page, print as many as you need",
+      "How it went"
+    ],
+    "proofFile": "src/products/homeschooling-companion/printables/handbook.tsx",
+    "query": "homeschool daily log printable",
+    "board": "Homeschool Planner Printables",
+    "when": "evergreen; peaks Aug-Sep",
+    "visual": "mockup-printable: the REAL daily log page of The Homeschool Year (book PDF page 14, 'The daily log', four column heads, ruled rows left empty) printed on a clipboard on an oak table, tilted about 6 degrees, a pencil and a mug beside it. Product line (with price) at the foot, no price in the headline.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "records",
+    "angle": "checklist",
+    "headline": "Homeschool Record Keeping: What to Leave Off the Page",
+    "sub": "A plain record you keep all year is worth more than a detailed one you keep for three.",
+    "items": [
+      "Hours, unless your state's note says otherwise.",
+      "Color coding.",
+      "A written paragraph per child, per day."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-template"
+    },
+    "proof": [
+      "a plain record you keep all year is worth more than a detailed one you keep for three.",
+      "Hours, unless your state's note says otherwise.",
+      "Color coding.",
+      "A written paragraph per child, per day."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to include in homeschool records",
+    "board": "Homeschool Record Keeping",
+    "when": "evergreen; Aug-Sep, Jan",
+    "visual": "checklist on a kraft index card pinned to cork: three items each with a hand-drawn strike-through box (crossed off, not ticked), headline above. Strike marks only, no icons per row. Free-guide tag.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "records",
+    "angle": "how-to-steps",
+    "headline": "How to Catch Up on Homeschool Records in One Evening",
+    "sub": "Set a timer. Most of this takes under 90 minutes.",
+    "items": [
+      "Minutes 0 to 20: Gather workbooks, receipts and your phone. Sort photos by date, newest first.",
+      "Minutes 20 to 40: Write one line per subject per week you can place: date range, subject, how far you got.",
+      "Minutes 40 to 60: Add library and calendar entries as reading and co-op days. Mark anything approximate as approximate.",
+      "Minutes 60 to 75: Check what your state actually asks for before doing any more than that.",
+      "Minutes 75 to 90: Record today's session properly, so tomorrow starts the habit instead of another gap."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-catch-up-on-homeschool-records"
+    },
+    "proof": [
+      "Set a timer. Most of this takes under 90 minutes.",
+      "Gather workbooks, receipts and your phone. Sort photos by date, newest first.",
+      "Write one line per subject per week you can place: date range, subject, how far you got.",
+      "Add library and calendar entries as reading and co-op days. Mark anything approximate as approximate.",
+      "Check what your state actually asks for before doing any more than that.",
+      "Record today's session properly, so tomorrow starts the habit instead of another gap."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to catch up on homeschool records",
+    "board": "Homeschool Mid-Year Reset (new board: for catching up and restarting after a gap)",
+    "when": "Jan, Feb, May-Jun (before reviews), evergreen",
+    "visual": "how-to-steps: five numbered index cards fanned on a kitchen table (index-cards archetype), a kitchen timer and a phone at the edge; each card carries its minute range in bold. Free-guide tag.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "records",
+    "angle": "myth-vs-truth",
+    "headline": "Why Homeschool Record Keeping Stalls: Habits to Stop",
+    "sub": "Every one of these feels reasonable in September.",
+    "items": [
+      "Writing it from memory at the end of the week, instead of right after the lesson.",
+      "Keeping it somewhere that isn't already open or already in your hand.",
+      "Letting one missed day turn into two, then a blank month.",
+      "Deciding you'll catch up on it later, which tends to become never.",
+      "Waiting for the day to go well before it seems worth writing down."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "simple-homeschool-record-keeping-system"
+    },
+    "proof": [
+      "Every one of these feels reasonable in September.",
+      "Writing it from memory at the end of the week, instead of right after the lesson.",
+      "Keeping it somewhere that isn't already open or already in your hand.",
+      "Letting one missed day turn into two, then a blank month.",
+      "Deciding you'll catch up on it later, which tends to become never.",
+      "Waiting for the day to go well before it seems worth writing down."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "why homeschool record keeping doesn't work",
+    "board": "Homeschool Record Keeping",
+    "when": "Oct-Nov (when systems die), Jan",
+    "visual": "stop-doing-this layout: five habits each stamped with a red-brown 'STOP' tick on a torn lined page, a small crossed-out 'later' note in the corner. Free-guide tag.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "records",
+    "angle": "comparison",
+    "headline": "Homeschool Records for Multiple Children: One Page or One Per Child?",
+    "sub": "Keep one record per child, never one record shared by two.",
+    "items": [
+      "One shared page: Splitting a shared page apart later means reading back through weeks of entries and guessing which line belonged to whom.",
+      "One record per child: Start one record per child from the first entry.",
+      "One record per child: Print one child at a time."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-for-multiple-children"
+    },
+    "proof": [
+      "Keep one record per child, never one record shared by two.",
+      "Splitting a shared page apart later means reading back through weeks of entries and guessing which line belonged to whom.",
+      "Start one record per child from the first entry.",
+      "Print one child at a time."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool record keeping multiple children",
+    "board": "Homeschool Record Keeping",
+    "when": "Aug-Sep, Jan; evergreen",
+    "visual": "comparison split: left a single page with two children's lines tangled together (strike marks), right two separate tidy folders each labelled with a child's name tab (portfolio-binder archetype). Free-guide tag.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "records",
+    "angle": "scenario",
+    "headline": "Homeschooling Two Kids: One Read-Aloud, Two Records",
+    "sub": "Two lines for the shared part, one apiece.",
+    "items": [
+      "Maya, age 10",
+      "History, chapter read-aloud",
+      "Easy. Asked to keep reading past the stop point.",
+      "Leo, age 7",
+      "History, chapter read-aloud",
+      "About right. Sat through the whole thing, which is new for him."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-for-multiple-children"
+    },
+    "proof": [
+      "Maya and Leo sat through the same read-aloud chapter, then split off for math. Two lines for the shared part, one apiece.",
+      "Easy. Asked to keep reading past the stop point.",
+      "About right. Sat through the whole thing, which is new for him."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to keep homeschool records for two kids",
+    "board": "Homeschool Record Keeping",
+    "when": "evergreen; Aug-Sep",
+    "visual": "scenario: a child's drawing of a chapter book at the top, below it two entry cards side by side, one headed Maya, age 10 and one Leo, age 7, each in its own handwriting. Home-scene warmth, oak table. The names are the guide's own made-up example; label it as an example on the pin. Free-guide tag.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "records",
+    "angle": "before-after",
+    "headline": "Simple Homeschool Record Keeping: From Memory to Right After the Lesson",
+    "sub": "Three things every time, written in under a minute.",
+    "items": [
+      "Before: Writing it from memory at the end of the week, instead of right after the lesson.",
+      "After: Write it in under a minute, right after the lesson.",
+      "The date, the subject and roughly where you are in it, and one word on how it went."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "simple-homeschool-record-keeping-system"
+    },
+    "proof": [
+      "Writing it from memory at the end of the week, instead of right after the lesson.",
+      "Write it in under a minute, right after the lesson, or you'll rebuild it from memory later and get it wrong.",
+      "the date, the subject and roughly where you are in it, and one word on how it went."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "simple homeschool record keeping system",
+    "board": "Homeschool Record Keeping",
+    "when": "Aug-Sep, Jan",
+    "visual": "before-after: left, a crumpled sheet of Friday-night memory scribbles; right, a clean three-line entry on a ruled page with a pencil still on it. Cream and oak, plum accent on the 'after' label. Free-guide tag.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "records",
+    "angle": "quote-card",
+    "headline": "Homeschool Records: A Plan Is Not a Record",
+    "sub": "The Homeschool Year, chapter 02: What to write down, and what to leave alone",
+    "items": [
+      "A plan is not a record. A record is what happened, and its whole value is that it is true."
+    ],
+    "link": {
+      "kind": "product",
+      "slug": "homeschooling-companion"
+    },
+    "proof": [
+      "Do not record what you meant to do. A plan is not a record. A record is what happened, and its whole value is that it is true.",
+      "What to write down, and what to leave alone"
+    ],
+    "proofFile": "src/products/homeschooling-companion/printables/handbookContent.ts",
+    "query": "homeschool record keeping tips",
+    "board": "Homeschool Record Keeping",
+    "when": "evergreen",
+    "visual": "quote-card: the sentence set large in a serif on cream paper, like a page of the printed book, plum rule above, the chapter label small below. Optional corner of the book page (PDF page 6) peeking in. Product line at the foot.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "records",
+    "angle": "question",
+    "headline": "How Long Should You Keep Homeschool Records?",
+    "sub": "A rolling window works: this year's samples plus the two years before them.",
+    "items": [
+      "Any state-required test or evaluation result",
+      "Any letter to or from a school official",
+      "Your own log"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-long-to-keep-homeschool-records"
+    },
+    "proof": [
+      "For most homeschool paperwork, a rolling window works: this year's samples plus the two years before them.",
+      "any state-required test or evaluation result, any letter to or from a school official, and your own log"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how long to keep homeschool records",
+    "board": "Homeschool Portfolio and Evaluation",
+    "when": "May-Jul (end of year clear-out)",
+    "visual": "question card: big question headline over a banker's box with a short stack of papers, a sticky note reading 'keep forever' beside three lines (test result, letter, log). Kraft box, cream background. Free-guide tag. Confirm at your state's own source line at the foot.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "records",
+    "angle": "comparison",
+    "headline": "What to Keep, Photograph or Recycle From a Homeschool Year",
+    "sub": "A dated photo proves what happened; the object doesn't have to survive to March.",
+    "items": [
+      "A representative sample of daily work: 2 to 3 years",
+      "Your own log of what you did: Permanently",
+      "Large projects, models, science builds: Photograph, then let go",
+      "Curriculum you're finished with: Sell, donate, or recycle"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-long-to-keep-homeschool-records"
+    },
+    "proof": [
+      "A dated photo proves what happened; the object doesn't have to survive to March",
+      "A representative sample of daily work",
+      "2 to 3 years",
+      "Your own log of what you did",
+      "Permanently",
+      "Large projects, models, science builds",
+      "Photograph, then let go",
+      "Curriculum you're finished with",
+      "Sell, donate, or recycle"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to keep from homeschool year",
+    "board": "Homeschool Portfolio and Evaluation",
+    "when": "May-Jul",
+    "visual": "comparison in three piles on an oak table: a labelled folder (Keep), a phone showing a volcano photo (Photograph), a recycling crate (Sell, donate, or recycle), each with its row from the guide's table. Free-guide tag.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "records",
+    "angle": "scenario",
+    "headline": "Homeschool Records in June: One Banker's Box From Third Grade",
+    "sub": "You don't need all forty worksheets.",
+    "items": [
+      "Forty worksheets",
+      "Two photos of a baking-soda volcano",
+      "A spelling test with a mark on it",
+      "The notebook you used as a log all year"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-long-to-keep-homeschool-records"
+    },
+    "proof": [
+      "You don't need all forty worksheets.",
+      "forty worksheets, two photos of a baking-soda volcano, a spelling test with a mark on it, and the notebook you used as a log all year"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to do with homeschool papers at end of year",
+    "board": "Homeschool Portfolio and Evaluation",
+    "when": "Jun-Jul",
+    "visual": "scenario: an open banker's box on a kitchen floor, a few papers lifted out and clipped, the notebook on top. Home-scene archetype. The third-grade box is the guide's own example; mark it as an example. Free-guide tag.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": true
+  },
+  {
+    "slice": "records",
+    "angle": "template-preview",
+    "headline": "Homeschool Reading Log Printable: Book, Started, Finished or Stopped",
+    "sub": "That is the whole list.",
+    "items": [
+      "Book",
+      "Started",
+      "Finished or stopped",
+      "Winn-Dixie",
+      "Sep 3",
+      "Sep 11, finished",
+      "Ancient Egypt",
+      "Sep 20",
+      "Sep 22, stopped"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-reading-log"
+    },
+    "proof": [
+      "A homeschool reading log needs three columns: the book, when it was started, and when it was finished or stopped. That is the whole list.",
+      "Winn-Dixie",
+      "Sep 11, finished",
+      "Ancient Egypt",
+      "Sep 22, stopped"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool reading log printable",
+    "board": "Homeschool Reading Log",
+    "when": "evergreen; peaks Aug-Sep and summer",
+    "visual": "template-preview: a ruled three-column log on cream paper with three filled rows in a child's handwriting; the 'Sep 22, stopped' row is ringed in plum. Pencil, a library book at the edge. The titles and dates are the guide's own made-up example. Free-guide tag.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "records",
+    "angle": "mockup-printable",
+    "headline": "Homeschool Reading Log: Every Book, Finished or Abandoned",
+    "sub": "A child who is allowed to stop is a child who keeps starting.",
+    "items": [
+      "Book",
+      "Started",
+      "Finished or stopped"
+    ],
+    "link": {
+      "kind": "product",
+      "slug": "homeschooling-companion"
+    },
+    "proof": [
+      "Every book, finished or abandoned.",
+      "Abandoned books belong on the list: a child who is allowed to stop is a",
+      "child who keeps starting.",
+      "Finished or stopped"
+    ],
+    "proofFile": "src/products/homeschooling-companion/printables/handbook.tsx",
+    "query": "reading log for homeschool kids",
+    "board": "Homeschool Reading Log",
+    "when": "evergreen; summer reading, Aug-Sep",
+    "visual": "mockup-printable: the REAL reading log page of The Homeschool Year (book PDF page 17, 'The reading log', three column heads) in a binder on a kitchen table, tilted, a stack of picture books and a pencil beside it. Product line (with price) at the foot, no price in the headline.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "records",
+    "angle": "myth-vs-truth",
+    "headline": "Homeschool Reading Log: Skip the Rating, Pages and Minutes",
+    "sub": "The finished-or-stopped column already carries the plain information.",
+    "items": [
+      "A column for a rating or a grade turns a ten-second entry into a decision your child has to weigh",
+      "Pages read or minutes spent do not need a column either, unless a specific evaluator has asked for one."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-reading-log"
+    },
+    "proof": [
+      "A column for a rating or a grade turns a ten-second entry into a decision your child has to weigh, and it adds a judgment where none is needed: the finished-or-stopped column already carries the plain information",
+      "Pages read or minutes spent do not need a column either, unless a specific evaluator has asked for one."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool reading log what to include",
+    "board": "Homeschool Reading Log",
+    "when": "evergreen",
+    "visual": "myth-vs-truth: a reading log with extra columns (rating stars, pages, minutes) crossed out in red-brown pencil beside the plain three-column version. Free-guide tag.",
+    "flags": [],
+    "reserve": true
+  },
+  {
+    "slice": "records",
+    "angle": "how-to-steps",
+    "headline": "Homeschool Record Keeping for Multiple Children: Five Steps",
+    "sub": "Set it up so it holds.",
+    "items": [
+      "Start one record per child from the first entry.",
+      "Log a shared lesson once for each child in the room, in that child's own words for how it went.",
+      "Let each child's pace and curriculum stay fully separate.",
+      "Keep a private note tied to the child it is about.",
+      "Print one child at a time."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-for-multiple-children"
+    },
+    "proof": [
+      "Set it up so it holds",
+      "Start one record per child from the first entry.",
+      "Log a shared lesson once for each child in the room, in that child's own words for how it went.",
+      "Let each child's pace and curriculum stay fully separate.",
+      "Keep a private note tied to the child it is about.",
+      "Print one child at a time."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "homeschool record keeping multiple children",
+    "board": "Homeschool Record Keeping",
+    "when": "Aug-Sep, Jan",
+    "visual": "how-to-steps: five numbered tabs down the side of a three-ring binder with different child-name tab dividers (portfolio-binder archetype); step text on the pages. Free-guide tag.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "records",
+    "angle": "before-after",
+    "headline": "How to Catch Up on Homeschool Records: Mark What You Reconstruct",
+    "sub": "October to December, not a made-up Tuesday.",
+    "items": [
+      "Before: a made-up Tuesday",
+      "After: October to December",
+      "A record that says roughly when something happened is credible."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-catch-up-on-homeschool-records"
+    },
+    "proof": [
+      "Write approximate dates as approximate: October to December, not a made-up Tuesday.",
+      "A record that says roughly when something happened is credible."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to reconstruct homeschool records",
+    "board": "Homeschool Mid-Year Reset (new board: for catching up and restarting after a gap)",
+    "when": "Jan, Feb, May-Jun",
+    "visual": "before-after: left a ruled line with an invented exact date crossed out; right the same line reading 'October to December' with a small 'reconstructed' stamp. Workbook and phone photos at the edge. Free-guide tag.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "records",
+    "angle": "mockup-printable",
+    "headline": "Homeschool Journal Page: Things Worth Remembering",
+    "sub": "Not what was taught: what happened.",
+    "items": [
+      "The page you will be glad of in three years.",
+      "Not what was taught: what happened.",
+      "Write these the day they happen."
+    ],
+    "link": {
+      "kind": "product",
+      "slug": "homeschooling-companion"
+    },
+    "proof": [
+      "The page you will be glad of in three years.",
+      "Not what was taught: what happened.",
+      "Write these the day they happen.",
+      "Things worth remembering"
+    ],
+    "proofFile": "src/products/homeschooling-companion/printables/handbook.tsx",
+    "query": "homeschool journal printable",
+    "board": "Homeschool Planner Printables",
+    "when": "evergreen; end of year, Dec",
+    "visual": "mockup-printable: the REAL 'Things worth remembering' page of The Homeschool Year (book PDF page 18) lying on a desk beside a cup of pencils and a child's drawing, tilted. Product line (with price) at the foot, no price in the headline.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "records",
+    "angle": "quote-card",
+    "headline": "Do Not Grade Your Own Child: A Homeschool Record Keeping Rule",
+    "sub": "The Homeschool Year, chapter 02: What not to record",
+    "items": [
+      "Do not grade your own child.",
+      "It is anxiety with a number attached."
+    ],
+    "link": {
+      "kind": "product",
+      "slug": "homeschooling-companion"
+    },
+    "proof": [
+      "Do not grade your own child. A percentage on a piece of work you set, marked by the person who taught it, measured against nothing, is not information. It is anxiety with a number attached.",
+      "What not to record"
+    ],
+    "proofFile": "src/products/homeschooling-companion/printables/handbookContent.ts",
+    "query": "should i grade my homeschooler",
+    "board": "Homeschool Assessment at Home",
+    "when": "evergreen",
+    "visual": "quote-card: the two sentences in large serif on cream paper with a thin plum rule, chapter label small below. Quiet, no props. Product line at the foot.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "records",
+    "angle": "question",
+    "headline": "Homeschool Record Keeping: Do You Need to Log Hours?",
+    "sub": "Only if your state's summary says it counts hours, and few do.",
+    "items": [
+      "Logging time turns a fast entry into a slow one, for information almost no state actually asks for."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "homeschool-record-keeping-template"
+    },
+    "proof": [
+      "Do I need to write down how many hours we spent on each subject?",
+      "Only if your state's summary says it counts hours, and few do.",
+      "Logging time turns a fast entry into a slow one, for information almost no state actually asks for."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "do i have to log homeschool hours",
+    "board": "Homeschool Attendance",
+    "when": "evergreen; Aug-Sep, Jan",
+    "visual": "question: a clock face drawn on cream paper, the question as headline, the short answer on a kraft tab beneath. Free-guide tag. Footer line: Laws change. Confirm with your state before relying on this.",
+    "flags": [],
+    "reserve": false
+  }
+]
