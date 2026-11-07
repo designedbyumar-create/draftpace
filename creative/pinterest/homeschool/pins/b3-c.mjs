@@ -75,14 +75,14 @@ function pin21() {
   const tick = `<svg viewBox="0 0 72 72" style="position:absolute;left:-6px;top:-14px;width:84px;height:84px;overflow:visible" aria-hidden="true"><path d="M12 38 L28 56 L66 6" fill="none" stroke="#27509c" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
   const rows = i.items.map((t) => `<div class="row"><div class="box">${tick}</div><div class="hand txt">${esc(t)}</div></div>`).join("");
   const scene = `${felt()}
-  <div style="${abs(40, 1060, 560, 300, "transform:rotate(-7deg)")}">${drawing({ x: 70, y: 110, w: 330, rot: 0 })}</div>
-  <div style="${abs(66, 436, 868, 800, "transform:rotate(-1.6deg);background:#303845;border-radius:14px;box-shadow:0 4px 6px rgba(0,0,0,.35),0 34px 50px rgba(0,0,0,.5)")}"></div>
-  <div class="nb" style="${abs(78, 428, 844, 790, "transform:rotate(-1.6deg)")}">
+  <div style="${abs(40, 1010, 560, 300, "transform:rotate(-7deg)")}">${drawing({ x: 70, y: 110, w: 330, rot: 0 })}</div>
+  <div style="${abs(66, 436, 868, 796, "transform:rotate(-1.6deg);background:#303845;border-radius:14px;box-shadow:0 4px 6px rgba(0,0,0,.35),0 34px 50px rgba(0,0,0,.5)")}"></div>
+  <div class="nb" style="${abs(78, 428, 844, 786, "transform:rotate(-1.6deg)")}">
     <div class="paper"></div>
     <svg style="${abs(0, -4, 844, 70, "z-index:3")}" viewBox="0 0 844 70" aria-hidden="true">${rings}</svg>
     <div class="rows">${rows}</div>
   </div>
-  ${pencil({ x: 440, y: 1262, len: 470, rot: -4 })}`;
+  ${pencil({ x: 480, y: 1284, len: 430, rot: -4 })}`;
   return printable({
     n: 21,
     scene,
@@ -116,21 +116,21 @@ function pin25() {
   const labelCard = (inner, extra = "") => `<div class="lcard" style="${extra}">${inner}</div>`;
   const f1 = folder({
     x: 62, y: 392, w: 876, h: 520, tabX: 36, color: "#7f9a78", dark: "#6a8563", rot: -0.5, label: "File", z: 1,
-    body: labelCard(`<div class="serif t1">${esc(strip(file, "File"))}</div>`, "left:46px;top:96px;width:784px"),
+    body: labelCard(`<div class="serif t1">${esc(strip(file, "File"))}</div>`, "left:46px;top:96px;width:700px"),
   });
   const f2 = folder({
     x: 74, y: 646, w: 856, h: 560, tabX: 330, color: "#e2b868", dark: "#cb9d4b", rot: 0.5, label: "Record", labelColor: "#3a2a0c", z: 2,
-    body: labelCard(`<div class="serif t1">${esc(strip(record, "Record"))}</div>`, "left:44px;top:94px;width:768px"),
+    body: labelCard(`<div class="serif t1">${esc(strip(record, "Record"))}</div>`, "left:44px;top:84px;width:768px"),
   });
-  const lightLine = (s) => `<div class="serif t2">${esc(cap(strip(s, "Can wait")))}</div>`;
+  const lightLine = (s) => `<div class="serif t2">${esc(strip(s, "Can wait"))}</div>`;
   const f3 = folder({
-    x: 60, y: 898, w: 880, h: 600, tabX: 596, tabW: 250, color: "#d3dde3", dark: "#c0cdd5", rot: -0.4, label: "Can wait", labelColor: "#34444f", z: 3,
+    x: 60, y: 906, w: 880, h: 600, tabX: 596, tabW: 250, color: "#d3dde3", dark: "#c0cdd5", rot: -0.4, label: "Can wait", labelColor: "#34444f", z: 3,
     body: labelCard(wait.map(lightLine).join(""), "left:46px;top:96px;width:788px;background:#fbfcfc"),
   });
   const scene = `${desk({ top: SCENE_TOP, height: 1500 - SCENE_TOP, base: "#ddd8ce", dark: "#cfc9bd", planks: 5, seed: 7 })}
   ${f1}${f2}${f3}
-  ${binderClip({ x: 770, y: 468, rot: 6, size: 100 })}
-  ${pencil({ x: 470, y: 1268, len: 440, rot: -4 }).replace("<svg", "<svg data-z")}`;
+  <div style="z-index:10;position:absolute;left:0;top:0">${binderClip({ x: 800, y: 470, rot: 6, size: 104 })}</div>
+  ${pencil({ x: 90, y: 962, len: 470, rot: -1.5 }).replace("<svg", "<svg data-z")}`;
   return printable({
     n: 25,
     scene: scene.replace(/(<svg data-z style=")/, "$1z-index:9;"),
@@ -194,19 +194,19 @@ function pin29() {
   ${crumpled({ x: 70, y: 428, w: 540, h: 250, rot: -3 })}
   ${mug({ x: 690, y: 436, size: 190, color: "#fbf5ea", drink: "#8a5a35" })}
   <div class="truth"><div class="cap">Rule of Thumb</div><div class="serif tt">${esc(truth)}</div></div>
-  ${calendarPage({ x: 70, y: 1010, w: 400, h: 330, rot: -2 })}
-  <div class="light serif">${esc(cap(lighter))}</div>
-  ${pencil({ x: 560, y: 1294, len: 340, rot: -3 })}`;
+  ${calendarPage({ x: 70, y: 1034, w: 400, h: 304, rot: -2 })}
+  <div class="light serif">${esc(lighter)}</div>
+  ${pencil({ x: 560, y: 1304, len: 340, rot: -3 })}`;
   return printable({
     n: 29,
     scene,
     paper: "#f4ece0",
     extraCss: `
     .top{top:56px}.top h1{font-size:60px}
-    .truth{position:absolute;left:70px;top:724px;width:860px;padding:26px 40px 30px;background:#fffdf8;border-radius:8px;transform:rotate(.6deg);box-shadow:${SHADOW}}
+    .truth{position:absolute;left:70px;top:704px;width:860px;padding:26px 40px 30px;background:#fffdf8;border-radius:8px;transform:rotate(.6deg);box-shadow:${SHADOW}}
     .truth .cap{font:600 24px 'Plex';letter-spacing:.16em;text-transform:uppercase;color:${C.plum}}
     .truth .tt{font-size:40px;line-height:1.22;margin-top:12px;color:#1d1b19}
-    .light{position:absolute;left:506px;top:1030px;width:430px;padding:26px 28px 26px;background:linear-gradient(180deg,#fbe7a8,#f6da8c);font-size:38px;line-height:1.2;color:#2a2318;transform:rotate(1.6deg);box-shadow:0 2px 3px rgba(60,25,10,.25),0 18px 24px rgba(60,25,10,.3)}`,
+    .light{position:absolute;left:506px;top:1056px;width:430px;padding:26px 28px 26px;background:linear-gradient(180deg,#fbe7a8,#f6da8c);font-size:38px;line-height:1.2;color:#2a2318;transform:rotate(1.6deg);box-shadow:0 2px 3px rgba(60,25,10,.25),0 18px 24px rgba(60,25,10,.3)}`,
   });
 }
 

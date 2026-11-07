@@ -2,7 +2,7 @@
  * Batch 3, module f: the portfolio and school-day guide pins #43, #49, #51, #48.
  * Four different worlds: a charcoal filing drawer of staggered pastel folders,
  * an open kraft folder on a teal table, a quote card pinned to a mustard wall
- * above a shelf with a pencil jar, and a French-door fridge with two halves.
+ * above a shelf with a pencil jar, and a two-halved chalkboard.
  * Every word is the idea bank's own (headline, sub, items).
  */
 import { printable, SCENE_TOP } from "../kit/printable.mjs";
@@ -177,35 +177,40 @@ function pin48() {
     return { label: m[1], text: m[2], note: m[3] ?? null };
   };
   const [a, b, c, d, e] = i.items.map(parse);
+  const r = seeded(21);
 
-  const wall = `<div style="${abs(0, SCENE_TOP, 1000, 1500 - SCENE_TOP, "background:linear-gradient(180deg,#e6d8bd,#d9c8a8)")}"></div>`;
-  const doorCss = "background:linear-gradient(120deg,#d6e7f1 0,#bcd6e6 45%,#a6c3d6 100%);border-radius:30px 30px 0 0;box-shadow:inset 0 0 0 3px rgba(255,255,255,.35),inset -10px 0 24px rgba(40,70,100,.18),0 14px 30px rgba(40,25,10,.45)";
-  const doors = `<div style="${abs(8, 386, 470, 1000, `${doorCss};z-index:1`)}"></div>
-    <div style="${abs(522, 386, 470, 1000, `${doorCss};z-index:1`)}"></div>
-    <div style="${abs(478, 400, 44, 1000, "background:#46586a;z-index:0")}"></div>
-    <div style="${abs(454, 560, 18, 470, "background:linear-gradient(90deg,#f2f4f6,#9aa2aa 55%,#c8cdd2);border-radius:9px;box-shadow:3px 4px 8px rgba(30,40,60,.4);z-index:2")}"></div>
-    <div style="${abs(528, 560, 18, 470, "background:linear-gradient(90deg,#c8cdd2,#9aa2aa 45%,#f2f4f6);border-radius:9px;box-shadow:-3px 4px 8px rgba(30,40,60,.4);z-index:2")}"></div>`;
+  // A school chalkboard in an oak frame, a chalk line down the middle, a chalk ledge below.
+  const dust = Array.from({ length: 70 }, () => `<ellipse cx="${(60 + r() * 880).toFixed(0)}" cy="${(30 + r() * 820).toFixed(0)}" rx="${(40 + r() * 110).toFixed(0)}" ry="${(6 + r() * 16).toFixed(0)}" fill="#e9efe6" opacity="${(0.02 + r() * 0.05).toFixed(3)}" transform="rotate(${(r() * 40 - 20).toFixed(0)} ${(60 + r() * 880).toFixed(0)} ${(30 + r() * 820).toFixed(0)})"/>`).join("");
+  const wall = `<div style="${abs(0, SCENE_TOP, 1000, 1500 - SCENE_TOP, "background:linear-gradient(180deg,#e7dcc8,#d8caae)")}"></div>`;
+  const board = `<div style="${abs(8, 386, 984, 892, "background:linear-gradient(135deg,#d6a86c,#a97a42);border-radius:14px;box-shadow:0 4px 6px rgba(40,25,10,.3),0 26px 44px rgba(40,25,10,.45);z-index:1")}"></div>
+    <div style="${abs(30, 408, 940, 848, "background:radial-gradient(ellipse at 30% 20%,#3b5a4c,#2b4439 75%);border-radius:6px;box-shadow:inset 0 6px 14px rgba(0,0,0,.55),inset 0 0 0 3px rgba(0,0,0,.2);z-index:1;overflow:hidden")}"><svg style="${abs(0, 0, 940, 848)}" viewBox="0 0 940 848" aria-hidden="true">${dust}</svg></div>
+    <svg style="${abs(0, 0, 1000, 1500, "z-index:2;pointer-events:none")}" viewBox="0 0 1000 1500" aria-hidden="true">
+      <path d="M500 440 L500 1236" stroke="#eef2ea" stroke-width="5" stroke-dasharray="26 14" stroke-linecap="round" opacity=".55"/>
+      <rect x="50" y="424" width="436" height="818" rx="16" fill="none" stroke="#cfa6e0" stroke-width="6" stroke-linejoin="round" opacity=".9"/>
+      <rect x="514" y="424" width="436" height="818" rx="16" fill="none" stroke="#e9efe6" stroke-width="4" stroke-dasharray="3 12" stroke-linecap="round" opacity=".6"/></svg>
+    <div style="${abs(0, 1262, 1000, 46, "background:linear-gradient(#c9985a,#8f6733);box-shadow:0 10px 16px rgba(40,25,10,.45);z-index:2")}"></div>
+    <div style="${abs(640, 1236, 120, 26, "background:linear-gradient(#f4f1e8,#cfc9b8);border-radius:5px;transform:rotate(-4deg);box-shadow:0 4px 5px rgba(0,0,0,.4);z-index:3")}"></div>
+    <div style="${abs(790, 1244, 150, 40, "background:linear-gradient(#6b7f8c 0 45%,#c85a46 45%);border-radius:5px 5px 4px 4px;transform:rotate(2deg);box-shadow:0 4px 6px rgba(0,0,0,.4);z-index:3")}"></div>`;
 
-  const card = (x, y, w, h, rot, inner, { plum = false, z = 4, mag = "#c4573e" } = {}) => `<div style="${abs(x, y, w, h, `transform:rotate(${rot}deg);z-index:${z}`)}">
-      <div data-check="card" style="${abs(0, 0, w, h, `background:${plum ? "#fffdf6" : "#f4f6f8"};border-radius:6px;filter:drop-shadow(0 2px 2px rgba(20,35,50,.28)) drop-shadow(0 9px 10px rgba(20,35,50,.3));${plum ? `border-left:10px solid ${C.plum};border-top:3px solid ${C.plum};border-right:3px solid ${C.plum};border-bottom:3px solid ${C.plum}` : "border:2px solid #aeb8c1"};padding:36px 22px 20px ${plum ? 22 : 24}px;overflow:hidden`)}">${inner}</div>
-      ${magnet(w / 2, 10, mag)}</div>`;
+  const card = (x, y, w, h, rot, inner, { plum = false, z = 4, tapeCol = "rgba(224,169,90,.85)" } = {}) => `<div style="${abs(x, y, w, h, `transform:rotate(${rot}deg);z-index:${z}`)}">
+      <div data-check="card" style="${abs(0, 0, w, h, `background:${plum ? "#fffdf6" : "#eef0f2"};border-radius:6px;filter:drop-shadow(0 2px 2px rgba(0,0,0,.35)) drop-shadow(0 9px 10px rgba(0,0,0,.35));${plum ? `border-left:10px solid ${C.plum};border-top:3px solid ${C.plum};border-right:3px solid ${C.plum};border-bottom:3px solid ${C.plum}` : "border:2px solid #aeb8c1"};padding:34px 22px 18px ${plum ? 22 : 24}px;overflow:hidden`)}">${inner}</div>
+      ${tape(w / 2, 6, 120, rot * 2 - 2, tapeCol)}</div>`;
   const body = (t) => `<div style="font:600 32px/1.2 Plex;color:${INK}">${esc(t)}</div>`;
-  const note = (t, plum) => `<div style="margin-top:12px;display:inline-block;padding:7px 15px;border-radius:999px;font:600 24px/1.2 Plex;${plum ? `background:${C.plumSoft};color:${C.plumDeep}` : "background:#e3e8ed;color:#46525e"}">${esc(t)}</div>`;
+  const note = (t, plum) => `<div style="margin-top:12px;display:inline-block;padding:7px 15px;border-radius:999px;font:600 24px/1.2 Plex;${plum ? `background:${C.plumSoft};color:${C.plumDeep}` : "background:#dde3e8;color:#3b4752"}">${esc(t)}</div>`;
+  const head = (x, y, text, col) => `<div data-check="head" style="${abs(x, y, 400, 96, `z-index:4;display:flex;align-items:center;justify-content:center;font:700 62px/1 Hand;white-space:nowrap;color:#f4f1e8;text-shadow:0 0 2px rgba(255,255,255,.35);border-bottom:6px solid ${col};letter-spacing:.01em`)}">${esc(text)}</div>`;
 
-  const head = (x, y, text, plum) => `<div data-check="head" style="${abs(x, y, 396, 92, `transform:rotate(${plum ? -0.8 : 0.8}deg);z-index:4;display:flex;align-items:center;justify-content:center;border-radius:8px;font:500 46px/1 Newsreader;letter-spacing:-.01em;filter:drop-shadow(0 8px 8px rgba(20,35,50,.3));${plum ? `background:${C.plum};color:#fff` : "background:#f4f6f8;color:#2f3943;border:3px solid #aeb8c1"}`)}">${esc(text)}</div>`;
+  const left = `${head(68, 436, a.label, "#cfa6e0")}
+    ${card(68, 552, 400, 172, -1.2, body(a.text), { plum: true, tapeCol: "rgba(122,75,138,.7)" })}
+    ${card(68, 742, 400, 232, 1, body(b.text) + note(b.note, true), { plum: true, tapeCol: "rgba(95,138,143,.8)" })}
+    ${card(68, 992, 400, 226, -.8, body(c.text) + note(c.note, true), { plum: true })}`;
 
-  const left = `${head(46, 414, a.label, true)}
-    ${card(46, 546, 396, 176, -1.2, body(a.text), { plum: true, mag: "#e0a95a" })}
-    ${card(46, 760, 396, 256, 1, body(b.text) + note(b.note, true), { plum: true, mag: "#5f8a8f" })}
-    ${card(46, 1050, 396, 256, -.8, body(c.text) + note(c.note, true), { plum: true, mag: "#c4573e" })}`;
+  const crayon = drawing({ x: 700, y: 1086, w: 180, rot: 5 }).replace("position:absolute", "z-index:4;position:absolute");
+  const right = `${head(532, 436, d.label, "#aab6bf")}
+    ${card(532, 560, 400, 270, .9, body(d.text) + note(d.note, false), { tapeCol: "rgba(138,161,130,.85)" })}
+    ${card(532, 860, 400, 200, -1, `<div style="display:inline-block;margin-bottom:10px;padding:4px 20px;border:3px solid #46525e;border-radius:8px;font:700 38px/1.1 Newsreader;color:#2f3943">${esc(e.label)}</div>${body(e.text)}`, { tapeCol: "rgba(196,87,62,.7)" })}
+    ${crayon}${tape(795, 1088, 100, -3, "rgba(224,169,90,.85)")}`;
 
-  const crayon = drawing({ x: 650, y: 1140, w: 240, rot: 5 }).replace("position:absolute", "z-index:4;position:absolute");
-  const right = `${head(558, 414, d.label, false)}
-    ${card(558, 546, 396, 280, .9, body(d.text) + note(d.note, false), { mag: "#7a4b8a" })}
-    ${card(558, 870, 396, 240, -1, `<div style="display:inline-block;margin-bottom:10px;padding:4px 20px;border:3px solid #46525e;border-radius:8px;font:700 38px/1.1 Newsreader;color:#2f3943">${esc(e.label)}</div>${body(e.text)}`, { mag: "#e0a95a" })}
-    ${crayon}${magnet(748, 1150, "#c4573e")}${magnet(832, 1150, "#5f8a8f")}`;
-
-  return printable({ n: 48, paper: "#f1e6d2", scene: `${wall}${doors}${left}${right}` });
+  return printable({ n: 48, paper: "#f1e6d2", scene: `${wall}${board}${left}${right}` });
 }
 
 export const pins = [pin43(), pin49(), pin51(), pin48()];

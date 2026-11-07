@@ -68,7 +68,7 @@ function pin8() {
     <rect x="884" y="470" width="14" height="40" fill="#8e949b"/><rect x="884" y="1010" width="14" height="40" fill="#8e949b"/></svg>`;
 
   const strikeBox = (x, y, s = 74) => `<svg style="${abs(x, y, s, s)}" viewBox="0 0 74 74" aria-hidden="true"><path d="M8 10 L66 8 L64 66 L10 64 Z" fill="#fffdf6" stroke="#2c2540" stroke-width="5" stroke-linejoin="round"/><path d="M14 16 L60 60 M60 14 L16 60" stroke="#b4472f" stroke-width="7" stroke-linecap="round"/></svg>`;
-  const txt = (t, size, w, extra = "") => `<div data-check="item" class="hand" style="position:absolute;left:150px;width:${w}px;top:50%;transform:translateY(-50%);font-size:${size}px;line-height:1.12;font-weight:700;color:#2c2540;text-decoration:line-through;text-decoration-color:#b4472f;text-decoration-thickness:6px;${extra}">${esc(t)}</div>`;
+  const txt = (t, size, w, extra = "") => `<div class="hand" style="position:absolute;left:150px;width:${w}px;top:50%;transform:translateY(-50%);font-size:${size}px;line-height:1.12;font-weight:700;color:#2c2540;text-decoration:line-through;text-decoration-color:#b4472f;text-decoration-thickness:6px;${extra}">${esc(t)}</div>`;
 
   const kraft = `<div style="${abs(70, 428, 770, 250, `transform:rotate(-1.6deg);filter:${SHADOW}`)}">
     <div style="${abs(0, 0, 770, 250, "background:#cda877;border-radius:6px")}"><div style="${abs(0, 0, 770, 250, "background:repeating-linear-gradient(180deg,transparent 0 56px,rgba(80,50,20,.18) 56px 58px);top:34px;height:216px")}"></div>
@@ -165,9 +165,10 @@ function bookDrawing(x, y, w = 330, rot = -3) {
   const h = w * 0.76;
   return `<svg style="${abs(x, y, w, h, `transform:rotate(${rot}deg);filter:drop-shadow(0 10px 8px rgba(40,20,5,.35))`)}" viewBox="0 0 330 250" aria-hidden="true"><rect width="330" height="250" fill="#fffdf6"/>
     <circle cx="58" cy="50" r="24" fill="#f2c14e"/>${[0, 45, 90, 135, 180, 225, 270, 315].map((a) => `<line x1="${58 + Math.cos((a * Math.PI) / 180) * 31}" y1="${50 + Math.sin((a * Math.PI) / 180) * 31}" x2="${58 + Math.cos((a * Math.PI) / 180) * 44}" y2="${50 + Math.sin((a * Math.PI) / 180) * 44}" stroke="#f2c14e" stroke-width="5" stroke-linecap="round"/>`).join("")}
-    <path d="M60 210 C 100 150, 150 150, 165 175 C 180 150, 230 150, 270 210 Z" fill="#d86a4f" stroke="#8a3a28" stroke-width="4" stroke-linejoin="round"/>
-    <path d="M165 175 V 214" stroke="#8a3a28" stroke-width="4"/>
-    <path d="M82 192 C 108 168, 135 168, 150 182 M180 182 C 196 168, 225 168, 250 192" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" opacity=".8"/>
+    <path d="M52 214 L52 128 Q 110 108 165 130 Q 220 108 278 128 L278 214 Q 220 194 165 216 Q 110 194 52 214 Z" fill="#3b7fb2" stroke="#1f4f78" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M62 202 L62 122 Q 112 106 165 126 L165 204 Q 112 188 62 202 Z" fill="#fff6dc" stroke="#8a7a58" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M268 202 L268 122 Q 218 106 165 126 L165 204 Q 218 188 268 202 Z" fill="#fff6dc" stroke="#8a7a58" stroke-width="3" stroke-linejoin="round"/>
+    <g stroke="#d86a4f" stroke-width="4" stroke-linecap="round" fill="none"><path d="M80 146 Q 112 134 148 146 M80 163 Q 112 151 148 163 M80 180 Q 112 168 148 180"/><path d="M182 146 Q 218 134 250 146 M182 163 Q 218 151 250 163 M182 180 Q 218 168 250 180"/></g>
     <g fill="#7a4b8a"><path d="M262 50 l6 14 15 1 -12 9 4 15 -13 -8 -13 8 4 -15 -12 -9 15 -1 z" transform="translate(0 -4)"/><path d="M215 40 l4 9 10 1 -8 6 3 10 -9 -5 -9 5 3 -10 -8 -6 10 -1 z"/></g>
     <g stroke="#3b7fb2" stroke-width="5" stroke-linecap="round" fill="none"><circle cx="294" cy="150" r="9"/><path d="M294 159 V 190 M294 168 L282 178 M294 168 L306 178"/></g>
     <path d="M0 232 H330" stroke="#6aa86a" stroke-width="12"/></svg>`;
@@ -247,7 +248,7 @@ function pin16() {
         <div data-check="entry" class="hand" style="${abs(124, 162, 724, 170, "font-size:50px;line-height:55px;font-weight:600;color:#25304a;overflow:hidden")}">${esc(entry)}</div>
       </div></div>
     <div style="${abs(86, 826, 160, 56, `background:${C.plum};border-radius:10px 10px 0 0;display:grid;place-items:center;font:600 28px Plex;color:#fff;letter-spacing:.06em;z-index:3`)}">After</div>`;
-  const pen = `<div style="z-index:4">${pencil({ x: 470, y: 1236, len: 440, rot: -5 })}</div>`;
+  const pen = `<div style="position:absolute;left:0;top:0;z-index:4">${pencil({ x: 470, y: 1236, len: 440, rot: -5 })}</div>`;
   return printable({ n: 16, paper: "#f1e9dc", scene: `${oak}${dusk}${sun}${ball}${beforeCard}${sheet}${pen}` });
 }
 
