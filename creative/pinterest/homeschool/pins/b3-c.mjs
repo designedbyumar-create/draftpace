@@ -221,25 +221,25 @@ function pin18() {
     radial-gradient(ellipse at 28% 8%,rgba(255,255,255,.12),transparent 55%),
     repeating-linear-gradient(90deg,rgba(255,255,255,.035) 0 2px,transparent 2px 6px),#2f2a36}
   .peek{position:absolute;left:150px;top:1088px;width:700px;height:210px;transform:rotate(2.4deg);overflow:hidden;background:#fbfaf7;border-radius:3px;box-shadow:0 4px 6px rgba(0,0,0,.4),0 24px 36px rgba(0,0,0,.45)}
-  .peek img{position:absolute;left:-60px;top:-34px;width:820px}
+  .peek img{position:absolute;left:-60px;top:-50px;width:820px}
   .card{position:absolute;left:78px;top:92px;width:844px;height:1012px;transform:rotate(-1deg);background:#fbfaf7;border-radius:6px;box-shadow:0 4px 8px rgba(0,0,0,.4),0 34px 56px rgba(0,0,0,.5)}
   .card::before{content:"";position:absolute;left:0;right:0;top:0;height:14px;background:${C.plum};border-radius:6px 6px 0 0}
   .card .in{position:absolute;left:68px;right:68px;top:70px;bottom:56px;display:flex;flex-direction:column}
   .card .eyebrow{font-size:26px;letter-spacing:.18em;color:${C.plum}}
   .card .rule{width:132px;height:6px;background:${C.plum};margin:30px 0 40px}
-  .card .big{font:500 118px/1.0 "Newsreader",Georgia,serif;letter-spacing:-.025em;color:#1d1d20}
-  .card .second{font:400 58px/1.2 "Newsreader",Georgia,serif;color:#34323a;margin-top:44px}
+  .card .big{font:500 120px/1.0 "Newsreader",Georgia,serif;letter-spacing:-.025em;color:#1d1d20}
+  .card .second{font:400 62px/1.2 "Newsreader",Georgia,serif;color:#34323a;margin-top:48px}
   .card .chap{margin-top:auto;border-top:2px solid #1d1d20;padding-top:22px;font:400 26px/1.4 "Plex",sans-serif;color:#55525c;letter-spacing:.01em}
   .footbar{position:absolute;left:0;right:0;bottom:0;height:146px;background:#f0e8d8;box-shadow:0 -8px 22px rgba(0,0,0,.4);z-index:5}
   .foot{z-index:7}`;
   const body = `<div class="bg"></div>
   <div class="peek" data-check="page"><img src="${bookPage(6)}" alt=""></div>
-  ${binderClip({ x: 760, y: 1060, rot: 3, size: 96 })}
   <div class="card" data-check="quote"><div class="in">
     <div class="eyebrow">${esc(eyebrow)}</div><div class="rule"></div>
     <div class="big">${esc(first)}</div>
     <div class="second">${esc(second)}</div>
     <div class="chap">${esc(i.sub)}</div></div></div>
+  ${binderClip({ x: 740, y: 1050, rot: 3, size: 100 })}
   <div class="footbar"></div>${footFor(i)}`;
   return { n: 18, id: `18-${i.headline.toLowerCase().replace(/[^a-z0-9]+/g, "-").slice(0, 40).replace(/-$/, "")}`, html: page(p, { body, css, paper: "#2f2a36" }) };
 }

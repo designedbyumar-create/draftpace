@@ -1,15 +1,15 @@
 /**
  * Batch 3, set D: the four-day-week guides (four-day-homeschool-week and
  * homeschool-weekly-plan-with-a-spare-day), four pins in four worlds:
- *   33 a fridge door: three magnetic week rows, label-maker tape, one open day each
+ *   33 a blush plaster wall in window light: three washi-taped paper week strips with kraft label tabs
  *   36 a slate-blue pegboard: six oak rails, a peg for each day a subject gets
  *   38 an open notebook on a mustard knit blanket: the ordinary week, then the sick-Tuesday week
- *   62 a teal breakfast table: two paper year ribbons and an index-card answer beside tea and toast
+ *   62 a garden trellis: two paper year ribbons and an index-card answer pegged on twine lines
  * Every word is the idea bank's own (headline, sub, items, proof).
  */
 import { printable, SCENE_TOP } from "../kit/printable.mjs";
 import { idea, C } from "../kit/bank.mjs";
-import { desk, pencil, mug } from "../kit/paper.mjs";
+import { pencil, mug } from "../kit/paper.mjs";
 import { esc } from "../../v3/kit.mjs";
 
 const abs = (x, y, w, h, extra = "") => `position:absolute;left:${x}px;top:${y}px;width:${w}px;height:${h}px;${extra}`;
@@ -39,31 +39,34 @@ function pin33() {
     const taught = DAYS.map((d) => daysSentence.includes(d));
     return { label, caption, taught };
   });
-  const tileW = 156, gap = 6, x0 = 112;
-  const fridge = `<div style="${abs(0, SCENE_TOP, 1000, BOTTOM - SCENE_TOP, "background:linear-gradient(90deg,#c3d2cd 0,#e4eeea 8%,#dbe7e3 60%,#cddbd6 100%)")}"></div>
-    <div style="${abs(0, SCENE_TOP, 1000, BOTTOM - SCENE_TOP, "background:radial-gradient(ellipse at 30% 10%,rgba(255,255,255,.55),rgba(60,90,85,.12) 70%)")}"></div>
-    <div style="${abs(22, SCENE_TOP + 40, 34, 820, "border-radius:17px;background:linear-gradient(90deg,#8e969b,#e9edef 40%,#aab1b6);box-shadow:8px 10px 14px rgba(30,50,45,.35)")}"></div>
-    <div style="${abs(50, SCENE_TOP + 70, 30, 14, "background:#9aa1a6;border-radius:4px;box-shadow:3px 4px 6px rgba(30,50,45,.3)")}"></div>
-    <div style="${abs(50, SCENE_TOP + 800, 30, 14, "background:#9aa1a6;border-radius:4px;box-shadow:3px 4px 6px rgba(30,50,45,.3)")}"></div>`;
+  // a blush plaster wall with window light falling across it
+  const r = seeded(5);
+  const speck = Array.from({ length: 260 }, () => `<circle cx="${(r() * 1000).toFixed(0)}" cy="${(r() * 982).toFixed(0)}" r="${(0.8 + r() * 2).toFixed(1)}" fill="${r() > 0.5 ? "#fff" : "#7a3b2c"}" opacity="${(0.05 + r() * 0.08).toFixed(2)}"/>`).join("");
+  const wall = `<div style="${abs(0, SCENE_TOP, 1000, BOTTOM - SCENE_TOP, "background:linear-gradient(180deg,#e4b3a2,#d79e8c)")}"></div>
+    <svg style="${abs(0, SCENE_TOP, 1000, BOTTOM - SCENE_TOP)}" viewBox="0 0 1000 982" aria-hidden="true">${speck}
+      <g fill="#fff3d6" opacity=".3"><polygon points="520,-20 770,-20 1060,330 810,330"/><polygon points="830,350 1080,350 1120,560 870,560"/><polygon points="440,10 490,10 700,330 650,330" opacity=".6"/></g>
+    </svg>
+    <div style="${abs(0, SCENE_TOP, 1000, BOTTOM - SCENE_TOP, "background:radial-gradient(ellipse at 80% 5%,rgba(255,244,220,.25),rgba(80,30,20,.3) 95%)")}"></div>`;
+  const x0 = 54, W = 892, cellW = W / 5;
   const rows = rowsData
-    .map((r, k) => {
-      const top = SCENE_TOP + 26 + k * 322;
-      const rot = [-0.6, 0.5, -0.4][k];
-      const label = `<div style="position:absolute;left:${x0 - 6}px;top:${top}px;height:52px;padding:0 24px;display:flex;align-items:center;background:#2c2a33;color:#fffdf6;font:600 30px 'Plex Mono';letter-spacing:.04em;border-radius:4px;transform:rotate(${rot}deg);box-shadow:0 3px 5px rgba(30,50,45,.35),inset 0 0 0 2px #46434f;z-index:3" data-check="label">${esc(r.label)}</div>`;
-      const tiles = DAYS.map((d, c) => {
-        const x = x0 + c * (tileW + gap);
-        const y = top + 66;
-        const tilt = ((c * 7 + k * 3) % 5 - 2) * 0.35;
-        if (r.taught[c]) {
-          return `<div data-check="tile" style="${abs(x, y, tileW, 124, `border-radius:14px;background:linear-gradient(160deg,#8d5aa0,${C.plum} 45%,${C.plumDeep});color:#fffdf6;display:grid;place-items:center;font:600 25px Plex;letter-spacing:-.01em;transform:rotate(${tilt}deg);box-shadow:0 2px 3px rgba(30,15,50,.35),0 12px 16px rgba(30,50,45,.3),inset 0 2px 0 rgba(255,255,255,.28);z-index:2`)}">${d}</div>`;
-        }
-        return `<div data-check="open" style="${abs(x, y, tileW, 124, "border-radius:14px;border:3px dashed #5f7d75;background:rgba(255,255,255,.4);color:#4a6a62;display:grid;place-items:center;font:600 25px Plex;letter-spacing:-.01em;box-shadow:inset 0 2px 5px rgba(50,80,75,.18)")}">${d}</div>`;
+    .map((rw, k) => {
+      const top = SCENE_TOP + 22 + k * 322;
+      const rot = [-0.7, 0.5, -0.4][k];
+      const cells = DAYS.map((d, c) => {
+        const on = rw.taught[c];
+        return `<div style="${abs(c * cellW, 0, cellW, 128, on ? `background:linear-gradient(180deg,${C.plumSoft},#dccbe6);border-right:2px solid rgba(60,30,80,.2)` : "border-right:2px solid rgba(60,30,80,.2)")}">
+          <div style="${abs(0, 0, cellW, 128, `display:grid;place-items:center;font:${on ? 600 : 500} ${on ? 27 : 26}px Newsreader;color:${on ? C.plumDeep : "#9a8d78"}`)}">${d}</div>
+          ${on ? `<div style="${abs(10, 112, cellW - 22, 7, `background:${C.plum};border-radius:4px`)}"></div>` : `<div style="${abs(8, 8, cellW - 20, 112, "border:3px dashed #b3a58c;border-radius:6px")}"></div>`}
+        </div>`;
       }).join("");
-      const note = `<div data-check="caption" style="${abs(x0 + 12, top + 206, 790, 84, `background:#fffefa;border-radius:4px;transform:rotate(${-rot * 0.7}deg);box-shadow:0 2px 3px rgba(30,50,45,.25),0 9px 14px rgba(30,50,45,.22);display:flex;align-items:center;padding:0 24px 0 56px;text-wrap:balance;font:500 26px/1.22 Plex;color:#2a2530;z-index:2`)}">${esc(r.caption)}</div>`;
-      return label + tiles + note + roundMagnet(x0 + 36, top + 248, ["#e0a95a", "#c4573e", "#5b7a9a"][k], 14);
+      const strip = `<div style="${abs(x0, top + 62, W, 128, `background:#fbf6ea;filter:${SHADOW};transform:rotate(${rot}deg);z-index:2`)}"><div style="${abs(0, 0, W, 128, "overflow:hidden;border-radius:3px")}">${cells}</div></div>`;
+      const label = `<div data-check="label" style="${abs(x0 + 8, top, 10, 56, `transform:rotate(${rot}deg);z-index:3`)}"></div><div style="position:absolute;left:${x0 + 8}px;top:${top + 2}px;height:56px;padding:0 24px 0 28px;display:flex;align-items:center;background:#c8a679;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,14px 50%);font:600 38px Newsreader;color:#2a1c0c;transform:rotate(${rot}deg);filter:${SHADOW};z-index:3" data-check="label2">${esc(rw.label)}</div>`;
+      const slip = `<div style="${abs(x0 + 40, top + 218, 800, 78, `transform:rotate(${-rot}deg);z-index:2;filter:${SHADOW}`)}"><div data-check="caption" style="${abs(0, 0, 800, 78, "background:#fffdf6;border-radius:4px;padding:0 24px;display:flex;align-items:center;text-wrap:balance;font:500 26px/1.22 Plex;color:#2a2530")}">${esc(rw.caption)}</div></div>`;
+      const tapes = tape(x0 + 14, top + 66, 96, -38 + rot * 4, "rgba(138,161,130,.88)") + tape(x0 + W - 14, top + 66, 96, 38 + rot * 4, "rgba(138,161,130,.88)") + tape(x0 + 140, top + 220, 90, 4, "rgba(224,169,90,.88)");
+      return strip + label.replace(/^<div data-check="label"[^>]*><\/div>/, "") + slip + tapes;
     })
     .join("");
-  return printable({ n: 33, paper: "#e7eeea", scene: `${fridge}${rows}`, extraCss: ".top h1{font-size:80px}" });
+  return printable({ n: 33, paper: "#f3e3dc", scene: `${wall}${rows}`, extraCss: ".top h1{font-size:80px}" });
 }
 
 /* ------------------------------------------------------------------ #36 */
@@ -177,11 +180,16 @@ function pin38() {
 
 /* ------------------------------------------------------------------ #62 */
 
-function ribbon({ y, label, pattern, color, cellH }) {
+function peg(x, y, rot = 0) {
+  return `<div style="${abs(x - 12, y - 8, 24, 62, `transform:rotate(${rot}deg);z-index:5;filter:drop-shadow(3px 5px 3px rgba(0,0,0,.4))`)}"><div style="${abs(0, 0, 24, 62, "background:linear-gradient(90deg,#d9ac76,#c49158 50%,#a97a44);border-radius:5px 5px 3px 3px")}"></div><div style="${abs(11, 24, 2, 38, "background:rgba(60,30,5,.45)")}"></div><div style="${abs(0, 20, 24, 5, "background:#8b8f94")}"></div></div>`;
+}
+
+function ribbon({ y, label, pattern, color }) {
   // pattern: array of [on(true)/off(false), count]; one column per week of the year
   const cols = [];
   for (const [on, n] of pattern) for (let k = 0; k < n; k++) cols.push(on);
-  const pitch = 17, x0 = 22, base = 142;
+  const cellH = color === C.plum ? 4 : 5;
+  const pitch = 17, x0 = 22, base = 150;
   const cells = cols
     .map((on, c) => {
       const x = x0 + c * pitch;
@@ -189,42 +197,50 @@ function ribbon({ y, label, pattern, color, cellH }) {
       return Array.from({ length: cellH }, (_, r) => `<div style="${abs(x, base - (r + 1) * pitch + 2, 13, 13, `background:${color};border-radius:3px`)}"></div>`).join("");
     })
     .join("");
-  return `<div style="${abs(30, y, 940, 190, "z-index:3;transform:rotate(" + (y < 600 ? -0.5 : 0.5) + "deg)")}">
-    <div style="${abs(0, 0, 940, 190, `background:#fbf6ea;border-radius:5px;filter:${SHADOW};box-shadow:inset 0 0 0 1px rgba(0,0,0,.05)`)}"></div>
-    <div data-check="rlabel" style="${abs(190, 16, 600, 36, `font:600 27px/1.2 Plex;color:${color === C.plum ? C.plumDeep : "#8f3a26"}`)}">${esc(label)}</div>
+  const rot = y < 600 ? -0.5 : 0.5;
+  return `<div style="${abs(30, y, 940, 192, `z-index:3;transform:rotate(${rot}deg)`)}">
+    <div style="${abs(0, 0, 940, 192, `background:#fbf6ea;border-radius:4px;filter:${SHADOW}`)}"></div>
+    <div data-check="rlabel" style="${abs(22, 14, 700, 36, `font:600 27px/1.2 Plex;color:${color === C.plum ? C.plumDeep : "#8f3a26"}`)}">${esc(label)}</div>
     ${cells}
-    <div style="${abs(22, 152, 896, 3, "background:#cfc3ac")}"></div>
-  </div>`;
+    <div style="${abs(22, 156, 896, 3, "background:#cfc3ac")}"></div>
+  </div>${peg(80, y - 6, rot * 3)}${peg(890, y - 6, rot * 3)}`;
 }
 
-function toast({ x, y }) {
-  return `<svg style="${abs(x, y, 240, 200, "filter:drop-shadow(0 12px 10px rgba(0,0,0,.4))")}" viewBox="0 0 240 200" aria-hidden="true">
-    <ellipse cx="120" cy="104" rx="116" ry="90" fill="#f6f1e7"/><ellipse cx="120" cy="104" rx="92" ry="70" fill="none" stroke="#d6cdbc" stroke-width="3"/>
-    <g transform="rotate(-8 120 100)"><path d="M62 130 V76 C 42 58 56 30 90 34 C 106 22 134 22 150 34 C 184 30 198 58 178 76 V130 Q 120 140 62 130 Z" fill="#c98d4a"/>
-    <path d="M72 124 V80 C 56 66 64 44 92 46 C 108 36 132 36 148 46 C 176 44 184 66 168 80 V124 Q 120 132 72 124 Z" fill="#f0cf94"/>
-    <path d="M86 76 Q 120 64 152 78 Q 150 106 118 108 Q 90 106 86 76 Z" fill="#f7e27a" opacity=".9"/></g></svg>`;
+/** A garden trellis: pale slats crossing at a diagonal over a deep green hedge, with a few ivy leaves. */
+function trellis() {
+  const r = seeded(14);
+  const leaves = Array.from({ length: 46 }, () => {
+    const x = r() * 1000, y = r() * 982, edge = r() > 0.5;
+    const cx = edge ? (r() > 0.5 ? r() * 90 : 910 + r() * 90) : x;
+    return `<ellipse cx="${cx.toFixed(0)}" cy="${y.toFixed(0)}" rx="${(13 + r() * 9).toFixed(0)}" ry="${(8 + r() * 6).toFixed(0)}" fill="${["#3f7a4a", "#2f6a40", "#58935a"][Math.floor(r() * 3)]}" transform="rotate(${(r() * 180).toFixed(0)} ${cx.toFixed(0)} ${y.toFixed(0)})" opacity="${edge ? 0.95 : 0.5}"/>`;
+  }).join("");
+  return `<svg style="${abs(0, SCENE_TOP, 1000, BOTTOM - SCENE_TOP)}" viewBox="0 0 1000 982" aria-hidden="true">
+    <defs><pattern id="lat" width="140" height="140" patternUnits="userSpaceOnUse" patternTransform="rotate(0)"><g stroke="#00000033" stroke-width="2"><path d="M-10 -10 L150 150 M150 -10 L-10 150" stroke-width="22" stroke="#00000030" transform="translate(4 6)"/></g><path d="M-10 -10 L150 150 M150 -10 L-10 150" stroke-width="20" stroke="#efe6cf"/><path d="M-10 -10 L150 150" stroke-width="20" stroke="#fff" opacity=".18"/></pattern>
+    <radialGradient id="lg" cx="30%" cy="5%" r="95%"><stop offset="0" stop-color="#fff" stop-opacity=".2"/><stop offset="1" stop-color="#05200f" stop-opacity=".45"/></radialGradient></defs>
+    <rect width="1000" height="982" fill="#2f5a3b"/><rect width="1000" height="982" fill="url(#lat)"/>${leaves}<rect width="1000" height="982" fill="url(#lg)"/>
+  </svg>`;
+}
+
+function twine(y0, y1) {
+  return `<svg style="position:absolute;left:0;top:0;width:1000px;height:1500px;z-index:4" viewBox="0 0 1000 1500" aria-hidden="true"><path d="M-10 ${y0} Q 500 ${y1} 1010 ${y0}" fill="none" stroke="#00000040" stroke-width="7" transform="translate(2 5)"/><path d="M-10 ${y0} Q 500 ${y1} 1010 ${y0}" fill="none" stroke="#e3cf9b" stroke-width="5"/></svg>`;
 }
 
 function pin62() {
   const i = idea(62);
-  const table = desk({ top: SCENE_TOP, height: BOTTOM - SCENE_TOP, base: "#2f6f70", dark: "#285f62", planks: 5, seed: 8 });
   const A = [[false, 3], [true, 16], [false, 2], [true, 20], [false, 11]];
-  // B: six-on blocks with a one-week break between them, then the last three
   const bPattern = [[true, 6], [false, 1], [true, 6], [false, 1], [true, 6], [false, 1], [true, 6], [false, 1], [true, 6], [false, 1], [true, 6], [false, 1], [true, 6], [false, 1], [true, 3]];
   const sum = (p, v) => p.filter(([o]) => o === v).reduce((a, [, n]) => a + n, 0);
   if (sum(bPattern, true) !== 45 || sum(bPattern, false) !== 7 || sum(A, true) !== 36 || sum(A, true) * 5 !== sum(bPattern, true) * 4) throw new Error("year strips must hold the same total work");
-  const rA = ribbon({ y: 404, label: "five days of content", pattern: A, color: "#c4573e", cellH: 5 });
-  const rB = ribbon({ y: 640, label: "four days year-round", pattern: bPattern, color: C.plum, cellH: 4 });
-  const tapes = tape(110, 408, 120, -3, "rgba(224,169,90,.85)") + tape(900, 410, 120, 3, "rgba(224,169,90,.85)") + tape(110, 644, 120, 3, "rgba(224,169,90,.85)") + tape(900, 646, 120, -3, "rgba(224,169,90,.85)");
-  const card = `<div style="${abs(56, 940, 640, 330, "transform:rotate(-1.6deg);z-index:3")}">
-    <div style="${abs(0, 0, 640, 330, `background:#fffdf6;border-radius:6px;filter:${SHADOW};overflow:hidden`)}">
-      <div style="${abs(0, 0, 640, 330, "background:repeating-linear-gradient(180deg,transparent 0 57px,#c4d3e3 57px 59px);top:30px;opacity:.85")}"></div>
-      <div style="${abs(0, 54, 640, 3, "background:#e08a8a")}"></div>
-      <div data-check="answer" style="${abs(34, 20, 580, 300, "font:700 46px/1.1 Hand;color:#2a2540;overflow:hidden;display:flex;align-items:center")}">${esc(i.items[0])}</div>
-    </div>${tape(320, 4, 140, -2, "rgba(138,161,130,.85)")}
-  </div>`;
-  const props = mug({ x: 726, y: 960, size: 190, color: "#f3ede4", drink: "#a86a2c" }) + toast({ x: 732, y: 1130 });
-  return printable({ n: 62, paper: "#e9f0ec", scene: `${table}${rA}${rB}${tapes}${card}${props}`, extraCss: ".top h1{font-size:58px}" });
+  const rA = ribbon({ y: 420, label: "five days of content", pattern: A, color: "#c4573e" });
+  const rB = ribbon({ y: 676, label: "four days year-round", pattern: bPattern, color: C.plum });
+  const card = `<div style="${abs(80, 950, 700, 336, "transform:rotate(1.2deg);z-index:3")}">
+    <div style="${abs(0, 0, 700, 336, `background:#fffdf6;border-radius:6px;filter:${SHADOW};overflow:hidden`)}">
+      <div style="${abs(0, 0, 700, 336, "background:repeating-linear-gradient(180deg,transparent 0 57px,#c4d3e3 57px 59px);top:30px;opacity:.85")}"></div>
+      <div style="${abs(0, 54, 700, 3, "background:#e08a8a")}"></div>
+      <div data-check="answer" style="${abs(36, 20, 628, 300, "font:700 47px/1.1 Hand;color:#2a2540;overflow:hidden;display:flex;align-items:center")}">${esc(i.items[0])}</div>
+    </div>
+  </div>${peg(210, 940, 4)}${peg(640, 940, -3)}`;
+  return printable({ n: 62, paper: "#e6efe4", scene: `${trellis()}${twine(402, 424)}${twine(658, 680)}${twine(930, 952)}${rA}${rB}${card}`, extraCss: ".top h1{font-size:58px}" });
 }
 
 export const pins = [pin33(), pin36(), pin38(), pin62()];
