@@ -172,7 +172,7 @@ function pin44() {
         <div data-check="sticky" style="${abs(0, 0, colW, 250, `background:linear-gradient(170deg,${tone[c].note},${tone[c].note} 82%,rgba(0,0,0,.08));clip-path:polygon(0 0,100% 0,100% 90%,92% 100%,0 100%);padding:30px 18px 16px;color:${tone[c].ink}`)}">
           <div style="font:700 23px/1.1 Plex;letter-spacing:.02em">${s.num}. ${esc(s.label)}</div>
           <div style="margin-top:10px;height:3px;background:${tone[c].ink};opacity:.35"></div>
-          <div class="hand" style="margin-top:10px;font-size:42px;font-weight:600;line-height:1">${esc(s.cells[c])}</div>
+          <div class="hand" style="margin-top:10px;font-size:39px;font-weight:600;line-height:1">${esc(s.cells[c])}</div>
         </div>
         <div style="${abs(colW - 28, 222, 28, 28, `background:linear-gradient(135deg,transparent 50%,rgba(0,0,0,.22) 50%);clip-path:polygon(100% 0,0 100%,100% 100%)`)}"></div>
         ${pushPin(colW / 2, 6, ["#c4573e", "#f6f1e6", "#2f2f35"][(r + c) % 3])}
