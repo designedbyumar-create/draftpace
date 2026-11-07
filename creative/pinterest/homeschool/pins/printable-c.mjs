@@ -123,8 +123,8 @@ function calendar({ x, y, w = 210, rot = 3 }) {
 const PW = 600;
 const scene52 = `${wall}
   ${sheet({ src: bookPage(19), x: 70, y: 440, w: PW, tilt: -2, id: "p-days" })}
-  ${tape({ x: -16, y: 420, w: 160, rot: -40, color: "#e4a9b8" })}
-  ${tape({ x: 606, y: 1178, w: 160, rot: -40, color: "#a9c4a0" })}
+  ${tape({ x: -6, y: 428, w: 170, rot: -40, color: "#e08ba2" })}
+  ${tape({ x: 590, y: 1172, w: 170, rot: -40, color: "#6fa77c" })}
   ${pin({ x: 628, y: 424, size: 70 })}
   ${calendar({ x: 745, y: 520, w: 210, rot: 3 })}
   ${shelf}

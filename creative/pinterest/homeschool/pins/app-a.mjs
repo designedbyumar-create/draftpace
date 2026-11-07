@@ -108,7 +108,7 @@ export const pins = [
       <div style="filter:drop-shadow(0 0 46px rgba(226,150,240,.85)) drop-shadow(0 0 120px rgba(200,120,230,.7))">
         ${phone({ src: screen("kids"), y0: 60, y1: 780, width: W_59, tilt: TILT_59, x: P59.x, y: P59.top })}
       </div>
-      <div style="${abs(P59.x + 8, P59.top + 120, 520, 330, "background:radial-gradient(closest-side,rgba(238,170,255,.55),rgba(220,150,245,.22) 62%,rgba(220,150,245,0));mix-blend-mode:screen;transform:rotate(6deg);pointer-events:none")}"></div>`,
+      <div style="${abs(570, 700, 425, 190, "border-radius:14px;transform:rotate(6deg);box-shadow:0 0 34px 12px rgba(226,140,245,.8),0 0 90px 30px rgba(200,110,235,.45);pointer-events:none")}"></div>`,
     prop: folder({ x: 640, y: 1130, w: 330 }),
   }),
 
@@ -119,9 +119,9 @@ export const pins = [
     wave: 2,
     features: feats(63, (f, k) => (k === 3 ? { ...f, text: "It says what was done and makes no claim about how any of it went." } : f)),
     phone: `
-      ${sheet({ src: asset("record-oregon-p1.png"), x: 590, y: 790, w: 430, tilt: -9 })}
+      ${sheet({ src: asset("record-oregon-p1.png"), x: 585, y: 845, w: 440, tilt: -9 })}
       ${phone({ src: screen("record"), y0: 302, y1: 748, width: W_63, tilt: TILT_63, x: 505, y: P63.top, closed: true })}`,
-    prop: `<div style="${abs(0, 0, 1000, 1500, "")}">${paperclip({ x: 905, y: 1150, rot: 14, size: 66 })}</div>`,
+    prop: `<div style="${abs(0, 0, 1000, 1500, "")}">${paperclip({ x: 928, y: 1150, rot: 14, size: 50 })}</div>`,
   }),
 
   // 67: the log only (day headings and entries), leaning left.
@@ -141,13 +141,13 @@ export const pins = [
     wave: 2,
     features: feats(71, (f, k) => (k === 0 ? { ...f, text: "Each with their own curriculum, subjects, plan and checks" } : f)),
     phone: (() => {
-      const base = { src: screen("kids"), y0: 292, y1: 650, width: W_71 };
+      const base = { src: screen("kids"), y0: 292, y1: 650, width: W_71, closed: true };
       const y = P71.top + 40;
       const dim = (h) => `<div style="filter:brightness(.78)">${h}</div>`;
       return `
-        ${dim(phone({ ...base, tilt: -3, x: P71.x - 40, y: y - 36, id: "ph2", shadow: false }))}
-        ${dim(phone({ ...base, tilt: 10, x: P71.x + 62, y: y - 74, id: "ph3", shadow: false }))}
-        ${phone({ ...base, tilt: 5, x: P71.x + 30, y, id: "ph" })}`;
+        ${dim(phone({ ...base, tilt: -3, x: P71.x - 85, y: y - 36, id: "ph2", shadow: false }))}
+        ${dim(phone({ ...base, tilt: 10, x: P71.x + 20, y: y - 74, id: "ph3", shadow: false }))}
+        ${phone({ ...base, tilt: 5, x: P71.x - 12, y, id: "ph" })}`;
     })(),
     prop: `${books({ x: 560, y: 1262, size: 0.7 })}${cup({ x: 790, y: 1040, w: 170 })}`,
   }),

@@ -153,12 +153,23 @@ function cork({ top, height }) {
 
 function scene56() {
   const W = 640, H = Math.round(W * ASPECT);
-  // SPARE DAY row of page 13: label at 0.797 of the height, two ruled lines to 0.875.
-  const cy = Math.round(H * 0.826), ry = 43, cx = W / 2 + 4, rx = W / 2 - 14;
+  // SPARE DAY row of page 13: label at 0.797 of the height, two ruled lines to 0.875, footnote at 0.903.
+  // The loop is a squared-off hand-drawn oval that wraps the row without touching the label or the footnote.
+  const cy = Math.round(H * 0.8335), ry = 42, cx = W / 2 + 2, rx = W / 2 - 16;
+  const pts = [];
+  const N = 120;
+  for (let k = 0; k <= N; k++) {
+    const t = k / N;
+    const ang = ((205 + t * 372) * Math.PI) / 180;
+    const grow = 1 + 0.045 * t, n = 3.4;
+    const c = Math.cos(ang), sn = Math.sin(ang);
+    const wob = Math.sin(t * 17) * 1.6;
+    pts.push([cx + rx * grow * Math.sign(c) * Math.abs(c) ** (2 / n) + wob, cy + ry * grow * Math.sign(sn) * Math.abs(sn) ** (2 / n) - t * 6 + wob]);
+  }
+  const d = pts.map((q, k) => `${k ? "L" : "M"}${q[0].toFixed(1)} ${q[1].toFixed(1)}`).join(" ");
   const pen = `<svg style="${abs(-20, 0, W + 40, H, "overflow:visible;filter:drop-shadow(1px 2px 1px rgba(60,30,80,.3))")}" viewBox="${-20} 0 ${W + 40} ${H}" aria-hidden="true">
-    <path d="M ${cx - rx * 0.55} ${cy - ry * 1.02} C ${cx - rx * 0.1} ${cy - ry * 1.12}, ${cx + rx * 0.7} ${cy - ry * 1.08}, ${cx + rx * 0.97} ${cy - ry * 0.4} C ${cx + rx * 1.06} ${cy + ry * 0.35}, ${cx + rx * 0.6} ${cy + ry * 1.12}, ${cx} ${cy + ry * 1.1} C ${cx - rx * 0.7} ${cy + ry * 1.12}, ${cx - rx * 1.06} ${cy + ry * 0.55}, ${cx - rx * 1.0} ${cy - ry * 0.1} C ${cx - rx * 0.96} ${cy - ry * 0.85}, ${cx - rx * 0.4} ${cy - ry * 1.18}, ${cx + rx * 0.1} ${cy - ry * 1.22}"
-      fill="none" stroke="${C.plum}" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M ${cx - rx * 0.55} ${cy - ry * 1.02} C ${cx - rx * 0.1} ${cy - ry * 1.12}, ${cx + rx * 0.7} ${cy - ry * 1.08}, ${cx + rx * 0.97} ${cy - ry * 0.4}" fill="none" stroke="${C.plum}" stroke-width="3" stroke-linecap="round" opacity=".55"/></svg>`;
+    <path d="${d}" fill="none" stroke="${C.plum}" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="${d}" fill="none" stroke="${C.plumDeep}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity=".5"/></svg>`;
   const clip = binderClip({ x: W - 190, y: H - 36, rot: 180, size: 100 });
   const page = holder({ x: 170, y: 426, w: W, h: H, tilt: -2.2, inner: pageIn(bookPage(13), 0, 0, W, "pg") + pen + clip + pushPin({ x: -2, y: -30, color: C.plum }) + pushPin({ x: W - 50, y: -28, color: "#e0a95a" }) });
   return `${cork({ top: SCENE_TOP, height: SCENE_H })}
