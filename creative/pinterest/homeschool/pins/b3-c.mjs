@@ -1,6 +1,6 @@
 /**
- * Batch 3, module c: #17 (a fridge door, the first two weeks), #21 (an open
- * spiral notebook on green felt, the first-week checklist), #25 (three
+ * Batch 3, module c: #17 (a sunny window with a clothesline of five pegged
+ * day cards), #21 (a sheet taped to a red front door, the first-week checklist), #25 (three
  * stacked file folders: file, record, can wait), #29 (a window-lit table:
  * the crumpled "research" slip beside the plain truth) and #18 (the quote
  * set large on a cream page, a real strip of the book peeking out).
@@ -17,85 +17,96 @@ const seeded = (seed) => { let s = seed; return () => ((s = (s * 9301 + 49297) %
 const SHADOW = "0 2px 3px rgba(40,20,5,.25),0 16px 28px rgba(40,20,5,.32)";
 const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 
-/** A round fridge magnet, centred on (x, y). */
-const magnet = (x, y, color, d = 56) =>
-  `<div style="${abs(x - d / 2, y - d / 2, d, d, `border-radius:50%;background:radial-gradient(circle at 34% 28%,rgba(255,255,255,.65),${color} 36%,${color});box-shadow:0 3px 3px rgba(20,30,40,.35),0 10px 10px rgba(20,30,40,.25);z-index:6`)}"></div>`;
-
 /* ---------------------------------------------------------------- #17 */
+
+/** A wooden clothes peg, centred on (x, y). */
+const peg = (x, y, rot = 0) =>
+  `<svg style="${abs(x - 13, y - 30, 26, 62, `transform:rotate(${rot}deg);filter:drop-shadow(2px 4px 3px rgba(40,25,5,.35));z-index:6`)}" viewBox="0 0 26 62" aria-hidden="true"><rect x="2" y="0" width="22" height="60" rx="5" fill="#d9b27a"/><rect x="2" y="0" width="9" height="60" rx="4" fill="#fff" opacity=".22"/><rect x="0" y="22" width="26" height="9" rx="3" fill="#8f98a3"/><path d="M13 36 V60" stroke="#8a6535" stroke-width="2.5"/></svg>`;
 
 function pin17() {
   const i = idea(17);
-  const offs = [0, 60, 10, 50, 0];
-  const widths = [740, 760, 640, 700, 560];
-  const rots = [-1.2, 1, -0.8, 1.3, -1];
-  const mags = ["#d9694f", "#e0a95a", "#7fa08a", "#7a4b8a", "#4f6c8c"];
-  const cards = i.items.map((t, k) => `<div class="icard serif" style="margin-left:${offs[k]}px;width:${widths[k]}px;transform:rotate(${rots[k]}deg)">
-      <span style="position:absolute;left:50%;top:-26px;margin-left:-28px;width:56px;height:56px;border-radius:50%;background:radial-gradient(circle at 34% 28%,rgba(255,255,255,.65),${mags[k]} 36%,${mags[k]});box-shadow:0 3px 3px rgba(20,30,40,.35),0 10px 10px rgba(20,30,40,.25)"></span>${esc(t)}</div>`).join("");
+  const bands = ["#e08a6c", "#e6b34f", "#8fae8a", "#9b7aa6", "#6f93b3"];
+  // [row line y, x, width, tilt] for the five cards: two on each of the first two lines, one on the third
+  const slots = [
+    { line: 430, x: 52, w: 436, rot: -1.2 }, { line: 430, x: 520, w: 436, rot: 1.0 },
+    { line: 765, x: 52, w: 436, rot: 0.9 }, { line: 765, x: 520, w: 436, rot: -1.1 },
+    { line: 1030, x: 52, w: 436, rot: -0.8 },
+  ];
+  const sag = (x, y) => y + 4 * 20 * (x / 1000) * (1 - x / 1000);
+  const lines = [430, 765, 1030].map((y) => `<path d="M26 ${y} Q 500 ${y + 40} 974 ${y}" fill="none" stroke="#f3ecdd" stroke-width="6" stroke-linecap="round"/><path d="M26 ${y + 3} Q 500 ${y + 43} 974 ${y + 3}" fill="none" stroke="#000" stroke-opacity=".12" stroke-width="3"/>`).join("");
+  const cards = i.items.map((t, k) => {
+    const s = slots[k], cx = s.x + s.w / 2, top = sag(cx, s.line) + 6;
+    return `<div class="tcard serif" style="left:${s.x}px;top:${top}px;width:${s.w}px;transform:rotate(${s.rot}deg);transform-origin:50% 0;--band:${bands[k]}">${esc(t)}</div>${peg(s.x + 70, sag(s.x + 70, s.line) + 14)}${peg(s.x + s.w - 70, sag(s.x + s.w - 70, s.line) + 14)}`;
+  }).join("");
+  const hills = `<svg style="${abs(0, 1000, 1000, 270)}" viewBox="0 0 1000 270" aria-hidden="true"><path d="M0 120 C 150 40 300 70 450 110 C 620 150 800 60 1000 100 V270 H0Z" fill="#a8c4a0"/><path d="M0 180 C 200 120 380 170 560 150 C 760 130 880 160 1000 140 V270 H0Z" fill="#87a97f"/><g fill="#6d9166"><circle cx="760" cy="120" r="42"/><rect x="753" y="140" width="14" height="50"/></g></svg>`;
+  const cloud = (x, y, s) => `<div style="${abs(x, y, 220 * s, 70 * s, "filter:blur(1px);opacity:.9")}"><div style="${abs(0, 28 * s, 220 * s, 42 * s, "background:#fff;border-radius:40px")}"></div><div style="${abs(34 * s, 4 * s, 90 * s, 60 * s, "background:#fff;border-radius:50%")}"></div><div style="${abs(100 * s, 12 * s, 80 * s, 52 * s, "background:#fff;border-radius:50%")}"></div></div>`;
   const scene = `
-  <div style="${abs(0, SCENE_TOP, 1000, 1500 - SCENE_TOP, "background:linear-gradient(90deg,#a9c4cf 0,#bcd5de 6%,#c9dfe6 36%,#bdd6df 64%,#aac5d0 100%)")}"></div>
-  <div style="${abs(0, SCENE_TOP, 22, 1500 - SCENE_TOP, "background:linear-gradient(90deg,#7e9aa6,#a5bfca);box-shadow:inset -3px 0 4px rgba(0,0,0,.12)")}"></div>
-  <div style="${abs(250, SCENE_TOP, 160, 1500 - SCENE_TOP, "background:linear-gradient(100deg,transparent,rgba(255,255,255,.28) 50%,transparent);transform:skewX(-8deg)")}"></div>
-  <div style="${abs(56, 480, 38, 760, "border-radius:19px;background:linear-gradient(90deg,#8f969c,#f1f3f5 40%,#c4c8cd 70%,#7a8087);box-shadow:8px 14px 18px rgba(30,45,55,.38)")}"></div>
-  <div style="${abs(94, 540, 38, 18, "background:#8d9399;border-radius:3px;box-shadow:4px 6px 6px rgba(30,45,55,.3)")}"></div>
-  <div style="${abs(94, 1160, 38, 18, "background:#8d9399;border-radius:3px;box-shadow:4px 6px 6px rgba(30,45,55,.3)")}"></div>
-  <div class="stack">${cards}</div>
-  ${drawing({ x: 710, y: 1150, w: 220, rot: 4 })}
-  ${magnet(826, 1154, "#e0a95a")}
-  <div style="${abs(742, 392, 218, 56, "background:#fffdf6;border-radius:6px;transform:rotate(2deg);box-shadow:0 2px 3px rgba(20,30,40,.25),0 12px 18px rgba(20,30,40,.3);display:grid;place-items:center;z-index:3")}"><span class="example" style="font-size:24px;padding:5px 12px;margin-left:22px;color:#4b4339">Example</span></div>
-  ${magnet(764, 396, "#d9694f", 40)}`;
+  <div style="${abs(0, SCENE_TOP, 1000, 1500 - SCENE_TOP, "background:linear-gradient(#a9d3ec 0,#cfe6f0 45%,#fbf0d4 78%,#f6e2b4 100%);overflow:hidden")}"></div>
+  <div style="${abs(560, 372, 520, 520, "background:radial-gradient(circle at 80% 8%,rgba(255,244,196,.95),rgba(255,244,196,0) 62%)")}"></div>
+  ${cloud(120, 400, 1)}${cloud(640, 560, 1.2)}${cloud(300, 920, .8)}
+  ${hills}
+  <div style="${abs(150, 372, 140, 980, "background:linear-gradient(100deg,transparent,rgba(255,255,255,.3) 50%,transparent);transform:skewX(-10deg)")}"></div>
+  <div style="${abs(640, 372, 100, 980, "background:linear-gradient(100deg,transparent,rgba(255,255,255,.22) 50%,transparent);transform:skewX(-10deg)")}"></div>
+  <svg style="${abs(0, 0, 1000, 1500)}" viewBox="0 0 1000 1500" aria-hidden="true">${lines}</svg>
+  ${cards}
+  <div style="${abs(536, 1046, 250, 58, "background:#fffdf6;border-radius:6px;transform:rotate(2deg);box-shadow:0 2px 3px rgba(40,25,5,.25),0 12px 18px rgba(40,25,5,.3);display:grid;place-items:center;z-index:3")}"><span class="example" style="font-size:24px;padding:5px 12px;color:#4b4339">Example</span></div>
+  ${peg(556, sag(556, 1030) + 14)}${peg(766, sag(766, 1030) + 14)}
+  <div style="${abs(0, 1262, 1000, 100, "background:linear-gradient(#e2bf8b,#c99b66 30%,#a9783f);box-shadow:0 -4px 14px rgba(40,25,5,.3);z-index:2")}"></div>
+  <div style="${abs(0, 1262, 1000, 8, "background:rgba(255,255,255,.35);z-index:2")}"></div>
+  <div style="z-index:3;position:absolute;left:0;top:0">${drawing({ x: 540, y: 1124, w: 190, rot: 3 })}</div>
+  <svg style="${abs(770, 1076, 200, 200, "z-index:3;filter:drop-shadow(0 12px 8px rgba(40,25,5,.4))")}" viewBox="0 0 200 200" aria-hidden="true"><path d="M62 96 H138 L128 190 H72 Z" fill="#c4724a"/><rect x="56" y="84" width="88" height="22" rx="5" fill="#d4825a"/><g fill="#5d8a56"><path d="M100 86 C 70 40 40 40 28 20 C 62 18 92 40 100 86Z"/><path d="M100 86 C 130 30 162 36 176 16 C 142 10 108 36 100 86Z"/><path d="M100 86 C 94 44 100 20 100 4 C 112 26 112 56 100 86Z"/></g></svg>`;
   return printable({
     n: 17,
     scene,
     paper: "#f4eee4",
     extraCss: `
     .top{top:52px}.top h1{font-size:78px}.top p{font-size:26px;margin-top:12px}
-    .stack{position:absolute;left:130px;top:468px;width:830px;display:flex;flex-direction:column;gap:22px;z-index:4}
-    .icard{position:relative;width:640px;padding:48px 30px 12px;background:
-      linear-gradient(#d2584a,#d2584a) 0 36px/100% 3px no-repeat,
-      repeating-linear-gradient(transparent 0 40px,#aac3d3 40px 42px) 0 48px/100% 100% no-repeat,#fffdf6;
-      font-size:34px;line-height:42px;color:#26221d;border-radius:6px;box-shadow:0 2px 3px rgba(20,30,40,.25),0 14px 22px rgba(20,30,40,.3)}`,
+    .tcard{position:absolute;padding:60px 28px 22px;background:linear-gradient(var(--band),var(--band)) 0 0/100% 34px no-repeat,#fffdf6;
+      font-size:33px;line-height:40px;text-wrap:balance;color:#26221d;border-radius:4px;box-shadow:0 2px 3px rgba(40,25,5,.25),0 16px 22px rgba(40,25,5,.3)}`,
   });
 }
 
 /* ---------------------------------------------------------------- #21 */
 
-function felt() {
+function door() {
+  const panel = (x, y, w, h) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="6" fill="#7c3029"/><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="6" fill="none" stroke="#5a1f1a" stroke-width="6"/><path d="M${x + 6} ${y + h - 4} V${y + 6} H${x + w - 6}" fill="none" stroke="#ad5b4f" stroke-opacity=".65" stroke-width="4"/><rect x="${x + 22}" y="${y + 22}" width="${w - 44}" height="${h - 44}" rx="3" fill="#873730" stroke="#5a1f1a" stroke-opacity=".5" stroke-width="3"/>`;
   return `<svg style="${abs(0, SCENE_TOP, 1000, 1500 - SCENE_TOP)}" viewBox="0 0 1000 ${1500 - SCENE_TOP}" aria-hidden="true"><defs>
-    <filter id="fz" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="4"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 .1  0 0 0 0 0  0 0 0 .55 -.12"/></filter>
-    <radialGradient id="fv" cx="30%" cy="10%" r="95%"><stop offset="0" stop-color="#fff" stop-opacity=".14"/><stop offset="1" stop-color="#0d1f15" stop-opacity=".4"/></radialGradient></defs>
-    <rect width="1000" height="${1500 - SCENE_TOP}" fill="#4a6b57"/><rect width="1000" height="${1500 - SCENE_TOP}" filter="url(#fz)"/><rect width="1000" height="${1500 - SCENE_TOP}" fill="url(#fv)"/></svg>`;
+    <linearGradient id="dd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a24438"/><stop offset="1" stop-color="#7a2e27"/></linearGradient>
+    <linearGradient id="br" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6e3a1"/><stop offset=".5" stop-color="#cfa044"/><stop offset="1" stop-color="#8b6414"/></linearGradient>
+    <radialGradient id="lt" cx="25%" cy="8%" r="90%"><stop offset="0" stop-color="#fff" stop-opacity=".16"/><stop offset="1" stop-color="#220806" stop-opacity=".35"/></radialGradient></defs>
+    <rect width="1000" height="${1500 - SCENE_TOP}" fill="#ebe1cf"/>
+    <g opacity=".5">${Array.from({ length: 13 }, (_, k) => `<rect x="0" y="${k * 80}" width="1000" height="2" fill="#c9bba3"/>`).join("")}</g>
+    <rect x="40" y="26" width="920" height="1200" fill="#f7f2e8"/><rect x="40" y="26" width="920" height="1200" fill="none" stroke="#cfc4b0" stroke-width="3"/>
+    <rect x="76" y="58" width="848" height="1200" fill="url(#dd)"/>
+    ${panel(112, 92, 360, 520)}${panel(528, 92, 360, 520)}${panel(112, 668, 360, 520)}${panel(528, 668, 360, 520)}
+    <rect x="76" y="58" width="848" height="1200" fill="url(#lt)"/>
+    <rect x="76" y="58" width="848" height="1200" fill="none" stroke="#4a1813" stroke-width="5"/>
+    <g transform="translate(790 870)"><rect x="-26" y="-60" width="52" height="150" rx="22" fill="url(#br)" stroke="#6b4a0c" stroke-width="3"/><circle cx="0" cy="-8" r="32" fill="url(#br)" stroke="#6b4a0c" stroke-width="3"/><circle cx="-10" cy="-18" r="9" fill="#fff" opacity=".5"/><circle cx="0" cy="62" r="9" fill="#3b2a08"/><rect x="-5" y="62" width="10" height="20" rx="3" fill="#3b2a08"/></g>
+    <path d="M110 10 Q500 -14 890 10" fill="none" stroke="#000" stroke-opacity=".0"/></svg>`;
 }
+
+const washi = (x, y, rot, color, w = 150) => `<div style="${abs(x - w / 2, y - 22, w, 44, `transform:rotate(${rot}deg);background:repeating-linear-gradient(90deg,${color} 0 14px,rgba(255,255,255,.32) 14px 22px);opacity:.92;box-shadow:0 2px 4px rgba(0,0,0,.25);z-index:5;clip-path:polygon(0 0,3% 12%,0 26%,3% 40%,0 54%,3% 70%,0 86%,2% 100%,100% 100%,97% 86%,100% 70%,97% 56%,100% 40%,97% 26%,100% 12%,98% 0)`)}"></div>`;
 
 function pin21() {
   const i = idea(21);
-  const rings = Array.from({ length: 15 }, (_, k) => {
-    const x = 36 + k * 53;
-    return `<ellipse cx="${x}" cy="40" rx="11" ry="8" fill="#2a2c30" opacity=".55"/><path d="M${x - 10} 52 C ${x - 8} 6, ${x + 20} 6, ${x + 18} 46" fill="none" stroke="#b9bdc4" stroke-width="7" stroke-linecap="round"/><path d="M${x - 8} 24 C ${x - 4} 8, ${x + 12} 8, ${x + 14} 24" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="2.5" stroke-linecap="round"/>`;
-  }).join("");
   const tick = `<svg viewBox="0 0 72 72" style="position:absolute;left:-6px;top:-14px;width:84px;height:84px;overflow:visible" aria-hidden="true"><path d="M12 38 L28 56 L66 6" fill="none" stroke="#27509c" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
   const rows = i.items.map((t) => `<div class="row"><div class="box">${tick}</div><div class="hand txt">${esc(t)}</div></div>`).join("");
-  const scene = `${felt()}
-  <div style="${abs(40, 1010, 560, 300, "transform:rotate(-7deg)")}">${drawing({ x: 70, y: 110, w: 330, rot: 0 })}</div>
-  <div style="${abs(66, 436, 868, 796, "transform:rotate(-1.6deg);background:#303845;border-radius:14px;box-shadow:0 4px 6px rgba(0,0,0,.35),0 34px 50px rgba(0,0,0,.5)")}"></div>
-  <div class="nb" style="${abs(78, 428, 844, 786, "transform:rotate(-1.6deg)")}">
-    <div class="paper"></div>
-    <svg style="${abs(0, -4, 844, 70, "z-index:3")}" viewBox="0 0 844 70" aria-hidden="true">${rings}</svg>
-    <div class="rows">${rows}</div>
-  </div>
-  ${pencil({ x: 480, y: 1284, len: 430, rot: -4 })}`;
+  const scene = `${door()}
+  <div class="sheet" style="${abs(112, 440, 756, 708, "transform:rotate(-1.2deg)")}"><div class="rows">${rows}</div></div>
+  ${washi(180, 444, -6, "#e0a95a")}${washi(830, 440, 5, "#8aa182")}${washi(150, 1136, 5, "#c9889a", 130)}${washi(826, 1140, -5, "#e0a95a", 130)}
+  <svg style="${abs(0, 0, 1000, 1500)}" viewBox="0 0 1000 1500" aria-hidden="true"><path d="M900 452 C 904 580 894 700 900 800" fill="none" stroke="#f3ecdd" stroke-width="4" stroke-linecap="round"/></svg>
+  ${pencil({ x: 750, y: 938, len: 300, rot: 90 })}`;
   return printable({
     n: 21,
     scene,
     paper: "#efe9dc",
     extraCss: `
-    .nb .paper{position:absolute;left:0;right:0;top:20px;bottom:0;background:
-      linear-gradient(90deg,transparent 100px,#d98279 100px 103px,transparent 103px),
-      repeating-linear-gradient(transparent 0 70px,#a9c0d6 70px 72px) 0 112px/100% 100% no-repeat,#fbf7ea;
-      border-radius:6px;box-shadow:inset 0 0 40px rgba(120,90,40,.12)}
-    .rows{position:absolute;left:0;right:30px;top:128px;z-index:2}
-    .row{position:relative;padding-left:214px;margin-bottom:72px}
-    .row .box{position:absolute;left:124px;top:6px;width:62px;height:62px;border:5px solid #3a3a44;border-radius:9px;background:#fffdf6}
-    .row .txt{font-weight:700;font-size:58px;line-height:72px;color:#2b2a33;margin-top:-2px}`,
+    .sheet{background:repeating-linear-gradient(transparent 0 64px,#a9c0d6 64px 66px) 0 88px/100% 100% no-repeat,linear-gradient(90deg,transparent 96px,#d98279 96px 99px,transparent 99px),#fbf7ea;
+      box-shadow:0 2px 3px rgba(20,5,3,.3),0 22px 34px rgba(20,5,3,.45);z-index:3}
+    .rows{position:absolute;left:0;right:20px;top:78px}
+    .row{position:relative;padding-left:196px;margin-bottom:66px}
+    .row .box{position:absolute;left:112px;top:4px;width:58px;height:58px;border:5px solid #3a3a44;border-radius:9px;background:#fffdf6}
+    .row .txt{font-weight:700;font-size:56px;line-height:66px;color:#2b2a33}`,
   });
 }
 
