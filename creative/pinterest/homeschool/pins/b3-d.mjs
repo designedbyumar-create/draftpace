@@ -23,11 +23,6 @@ function tape(x, y, w = 140, rot = -4, color = "rgba(224,169,90,.8)") {
   return `<div style="${abs(x - w / 2, y - 22, w, 44, `transform:rotate(${rot}deg);background:repeating-linear-gradient(90deg,${color} 0 14px,rgba(255,255,255,.3) 14px 22px);box-shadow:0 2px 4px rgba(0,0,0,.2);z-index:4;clip-path:polygon(0 8%,3% 0,6% 10%,9% 0,100% 0,97% 12%,100% 25%,97% 40%,100% 55%,97% 72%,100% 88%,98% 100%,6% 100%,3% 90%,0 100%,2% 60%,0 30%)`)}"></div>`;
 }
 
-/** A round fridge magnet centred on (x, y). */
-function roundMagnet(x, y, color = "#e0a95a", r = 17) {
-  return `<div style="${abs(x - r, y - r, r * 2, r * 2, `border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff8,${color} 45%,${color});box-shadow:0 3px 5px rgba(0,0,0,.35),inset 0 -3px 4px rgba(0,0,0,.2);z-index:4`)}"></div>`;
-}
-
 /* ------------------------------------------------------------------ #33 */
 
 function pin33() {
@@ -60,9 +55,9 @@ function pin33() {
         </div>`;
       }).join("");
       const strip = `<div style="${abs(x0, top + 62, W, 128, `background:#fbf6ea;filter:${SHADOW};transform:rotate(${rot}deg);z-index:2`)}"><div style="${abs(0, 0, W, 128, "overflow:hidden;border-radius:3px")}">${cells}</div></div>`;
-      const label = `<div data-check="label" style="${abs(x0 + 8, top, 10, 56, `transform:rotate(${rot}deg);z-index:3`)}"></div><div style="position:absolute;left:${x0 + 8}px;top:${top + 2}px;height:56px;padding:0 24px 0 28px;display:flex;align-items:center;background:#c8a679;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,14px 50%);font:600 38px Newsreader;color:#2a1c0c;transform:rotate(${rot}deg);filter:${SHADOW};z-index:3" data-check="label2">${esc(rw.label)}</div>`;
+      const label = `<div data-check="label" style="${abs(x0 + 8, top, 10, 56, `transform:rotate(${rot}deg);z-index:3`)}"></div><div style="position:absolute;left:${x0 + 84}px;top:${top + 2}px;height:56px;padding:0 24px 0 28px;display:flex;align-items:center;background:#c8a679;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,14px 50%);font:600 38px Newsreader;color:#2a1c0c;transform:rotate(${rot}deg);filter:${SHADOW};z-index:3" data-check="label2">${esc(rw.label)}</div>`;
       const slip = `<div style="${abs(x0 + 40, top + 218, 800, 78, `transform:rotate(${-rot}deg);z-index:2;filter:${SHADOW}`)}"><div data-check="caption" style="${abs(0, 0, 800, 78, "background:#fffdf6;border-radius:4px;padding:0 24px;display:flex;align-items:center;text-wrap:balance;font:500 26px/1.22 Plex;color:#2a2530")}">${esc(rw.caption)}</div></div>`;
-      const tapes = tape(x0 + 14, top + 66, 96, -38 + rot * 4, "rgba(138,161,130,.88)") + tape(x0 + W - 14, top + 66, 96, 38 + rot * 4, "rgba(138,161,130,.88)") + tape(x0 + 140, top + 220, 90, 4, "rgba(224,169,90,.88)");
+      const tapes = tape(x0 + 14, top + 66, 96, -38 + rot * 4, "rgba(138,161,130,.88)") + tape(x0 + W - 14, top + 66, 96, 38 + rot * 4, "rgba(138,161,130,.88)") + tape(x0 + 848, top + 224, 80, 4, "rgba(224,169,90,.88)");
       return strip + label.replace(/^<div data-check="label"[^>]*><\/div>/, "") + slip + tapes;
     })
     .join("");
@@ -200,7 +195,7 @@ function ribbon({ y, label, pattern, color }) {
   const rot = y < 600 ? -0.5 : 0.5;
   return `<div style="${abs(30, y, 940, 192, `z-index:3;transform:rotate(${rot}deg)`)}">
     <div style="${abs(0, 0, 940, 192, `background:#fbf6ea;border-radius:4px;filter:${SHADOW}`)}"></div>
-    <div data-check="rlabel" style="${abs(22, 14, 700, 36, `font:600 27px/1.2 Plex;color:${color === C.plum ? C.plumDeep : "#8f3a26"}`)}">${esc(label)}</div>
+    <div data-check="rlabel" style="${abs(96, 14, 700, 36, `font:600 27px/1.2 Plex;color:${color === C.plum ? C.plumDeep : "#8f3a26"}`)}">${esc(label)}</div>
     ${cells}
     <div style="${abs(22, 156, 896, 3, "background:#cfc3ac")}"></div>
   </div>${peg(80, y - 6, rot * 3)}${peg(890, y - 6, rot * 3)}`;

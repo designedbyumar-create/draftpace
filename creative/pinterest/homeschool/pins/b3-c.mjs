@@ -41,8 +41,8 @@ function pin17() {
   <div class="stack">${cards}</div>
   ${drawing({ x: 710, y: 1150, w: 220, rot: 4 })}
   ${magnet(826, 1154, "#e0a95a")}
-  <div style="${abs(770, 392, 190, 56, "background:#fffdf6;border-radius:6px;transform:rotate(2deg);box-shadow:0 2px 3px rgba(20,30,40,.25),0 12px 18px rgba(20,30,40,.3);display:grid;place-items:center;z-index:3")}"><span class="example" style="font-size:24px;padding:5px 12px;color:#4b4339">Example</span></div>
-  ${magnet(866, 394, "#d9694f", 46)}`;
+  <div style="${abs(742, 392, 218, 56, "background:#fffdf6;border-radius:6px;transform:rotate(2deg);box-shadow:0 2px 3px rgba(20,30,40,.25),0 12px 18px rgba(20,30,40,.3);display:grid;place-items:center;z-index:3")}"><span class="example" style="font-size:24px;padding:5px 12px;margin-left:22px;color:#4b4339">Example</span></div>
+  ${magnet(764, 396, "#d9694f", 40)}`;
   return printable({
     n: 17,
     scene,
@@ -116,7 +116,7 @@ function pin25() {
   const labelCard = (inner, extra = "") => `<div class="lcard" style="${extra}">${inner}</div>`;
   const f1 = folder({
     x: 62, y: 392, w: 876, h: 520, tabX: 36, color: "#7f9a78", dark: "#6a8563", rot: -0.5, label: "File", z: 1,
-    body: labelCard(`<div class="serif t1">${esc(strip(file, "File"))}</div>`, "left:46px;top:96px;width:700px"),
+    body: labelCard(`<div class="serif t1">${esc(strip(file, "File"))}</div>`, "left:46px;top:96px;width:762px"),
   });
   const f2 = folder({
     x: 74, y: 646, w: 856, h: 560, tabX: 330, color: "#e2b868", dark: "#cb9d4b", rot: 0.5, label: "Record", labelColor: "#3a2a0c", z: 2,
@@ -129,7 +129,7 @@ function pin25() {
   });
   const scene = `${desk({ top: SCENE_TOP, height: 1500 - SCENE_TOP, base: "#ddd8ce", dark: "#cfc9bd", planks: 5, seed: 7 })}
   ${f1}${f2}${f3}
-  <div style="z-index:10;position:absolute;left:0;top:0">${binderClip({ x: 800, y: 470, rot: 6, size: 104 })}</div>
+  <div style="z-index:10;position:absolute;left:0;top:0">${binderClip({ x: 832, y: 478, rot: 6, size: 100 })}</div>
   ${pencil({ x: 90, y: 962, len: 470, rot: -1.5 }).replace("<svg", "<svg data-z")}`;
   return printable({
     n: 25,

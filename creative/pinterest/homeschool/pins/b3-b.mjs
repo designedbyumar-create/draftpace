@@ -1,15 +1,15 @@
 /**
  * Batch 3, set B: #8, #10, #12, #14, #16 (guide pins). Five different worlds:
- *   8  what to leave off the page      a mint fridge door, three paper slips held by magnets, each crossed off
+ *   8  what to leave off the page      a kraft paper bag on a dusty-rose wall, three slips stapled on, each crossed off
  *   10 habits to stop                  a lined page torn from a spiral notebook, five STOP stamps, on slate linen
  *   12 one page or one per child       two halves: mustard with one tangled sheet, teal with two folders
- *   14 one read-aloud, two records     a powder-blue breakfast table: toast, tea, a child's drawing, two entry cards
+ *   14 one read-aloud, two records     a striped reading-nook rug: cushion, picture books, a child's drawing, two entry cards
  *   16 memory vs right after           a dusk-grey crumpled sheet above a sunlit ruled page with a pencil on it
  * Every word is the idea bank's own (items and sub, through idea(n)).
  */
 import { printable } from "../kit/printable.mjs";
 import { idea, C } from "../kit/bank.mjs";
-import { pencil } from "../kit/paper.mjs";
+import { pencil, books } from "../kit/paper.mjs";
 import { esc } from "../../v3/kit.mjs";
 
 const abs = (x, y, w, h, extra = "") => `position:absolute;left:${x}px;top:${y}px;width:${w}px;height:${h}px;${extra}`;
@@ -56,31 +56,31 @@ function planks({ top, height, base, dark, grain, n = 6, seed = 3, light = "#fff
 
 function pin8() {
   const i = idea(8);
-  const door = `<svg style="${abs(0, 372, 1000, 982)}" viewBox="0 372 1000 982" aria-hidden="true"><defs>
-      <linearGradient id="fd" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#bcd6c6"/><stop offset=".35" stop-color="#d4e8dc"/><stop offset=".7" stop-color="#c9e0d2"/><stop offset="1" stop-color="#b3cdbd"/></linearGradient>
-      <linearGradient id="hd" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8e949b"/><stop offset=".4" stop-color="#f2f4f6"/><stop offset="1" stop-color="#9aa0a8"/></linearGradient>
-      <linearGradient id="gl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset=".4" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
-    <rect y="372" width="1000" height="982" fill="url(#fd)"/>
-    <rect y="372" width="1000" height="982" fill="url(#gl)"/>
-    <rect x="0" y="1190" width="1000" height="6" fill="#000" opacity=".12"/><rect x="0" y="1196" width="1000" height="3" fill="#fff" opacity=".35"/>
-    <rect x="896" y="440" width="52" height="640" rx="26" fill="#000" opacity=".16" transform="translate(8 10)"/>
-    <rect x="896" y="440" width="52" height="640" rx="26" fill="url(#hd)"/>
-    <rect x="884" y="470" width="14" height="40" fill="#8e949b"/><rect x="884" y="1010" width="14" height="40" fill="#8e949b"/></svg>`;
+  const r = seeded(8);
+  const wall = `<svg style="${abs(0, 372, 1000, 982)}" viewBox="0 0 1000 982" aria-hidden="true"><defs><linearGradient id="wl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d9a099"/><stop offset="1" stop-color="#bf7f78"/></linearGradient><pattern id="wp" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="3" cy="4" r="1" fill="#fff" opacity=".12"/><circle cx="8" cy="9" r="1" fill="#000" opacity=".06"/></pattern></defs><rect width="1000" height="982" fill="url(#wl)"/><rect width="1000" height="982" fill="url(#wp)"/></svg>`;
+  // the bag: folded-over top, a body with creases
+  const wr = [];
+  for (let k = 0; k < 14; k++) { const x = 40 + r() * 780, y = 90 + r() * 800; wr.push(`<path d="M${x.toFixed(0)} ${y.toFixed(0)} l${(40 + r() * 90).toFixed(0)} ${((r() - 0.5) * 30).toFixed(0)}" stroke="#7a5528" stroke-opacity=".16" stroke-width="3" stroke-linecap="round"/>`); }
+  const bag = `<div style="${abs(60, 410, 880, 960, "filter:drop-shadow(0 4px 4px rgba(60,20,15,.3)) drop-shadow(0 24px 30px rgba(60,20,15,.4))")}">
+    <svg viewBox="0 0 880 960" style="${abs(0, 0, 880, 960)}" aria-hidden="true"><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#b98f5c"/><stop offset=".08" stop-color="#cfa774"/><stop offset=".5" stop-color="#d6b07c"/><stop offset=".92" stop-color="#c79f6b"/><stop offset="1" stop-color="#ad8350"/></linearGradient></defs>
+      <rect x="0" y="0" width="880" height="960" fill="url(#bg)"/>
+      <rect x="0" y="0" width="880" height="92" fill="#bd9460"/><rect x="0" y="86" width="880" height="14" fill="#7a5528" opacity=".28"/><rect x="0" y="0" width="880" height="6" fill="#fff" opacity=".22"/>
+      <path d="M0 100 H880" stroke="#fff" stroke-opacity=".25" stroke-width="2"/>
+      <path d="M88 100 V960 M792 100 V960" stroke="#7a5528" stroke-opacity=".18" stroke-width="3"/>
+      ${wr.join("")}</svg></div>`;
 
   const strikeBox = (x, y, s = 74) => `<svg style="${abs(x, y, s, s)}" viewBox="0 0 74 74" aria-hidden="true"><path d="M8 10 L66 8 L64 66 L10 64 Z" fill="#fffdf6" stroke="#2c2540" stroke-width="5" stroke-linejoin="round"/><path d="M14 16 L60 60 M60 14 L16 60" stroke="#b4472f" stroke-width="7" stroke-linecap="round"/></svg>`;
   const txt = (t, size, w, extra = "") => `<div class="hand" style="position:absolute;left:150px;width:${w}px;top:50%;transform:translateY(-50%);font-size:${size}px;line-height:1.12;font-weight:700;color:#2c2540;text-decoration:line-through;text-decoration-color:#b4472f;text-decoration-thickness:6px;${extra}">${esc(t)}</div>`;
+  const staple = (x, y, rot) => `<div style="${abs(x, y, 46, 12, `background:linear-gradient(#f4f6f8,#8e949b);border-radius:3px;transform:rotate(${rot}deg);box-shadow:2px 4px 3px rgba(0,0,0,.35);z-index:4`)}"></div>`;
 
-  const kraft = `<div style="${abs(70, 428, 770, 250, `transform:rotate(-1.6deg);filter:${SHADOW}`)}">
-    <div style="${abs(0, 0, 770, 250, "background:#cda877;border-radius:6px")}"><div style="${abs(0, 0, 770, 250, "background:repeating-linear-gradient(180deg,transparent 0 56px,rgba(80,50,20,.18) 56px 58px);top:34px;height:216px")}"></div>
-    ${strikeBox(48, 88)}${txt(i.items[0], 60, 580, "padding-top:10px")}</div></div>`;
-  const white = `<div style="${abs(120, 722, 700, 214, `transform:rotate(1.3deg);filter:${SHADOW}`)}">
-    <div style="${abs(0, 0, 700, 214, "background:#fffdf6;border-radius:4px;overflow:hidden")}"><div style="${abs(0, 40, 700, 174, "background:repeating-linear-gradient(180deg,transparent 0 60px,#b9cde0 60px 62px)")}"></div><div style="${abs(110, 0, 2, 214, "background:#e3a3a3;opacity:.7")}"></div>
-    ${strikeBox(24, 70)}${txt(i.items[1], 92, 520, "left:140px;padding-top:6px")}</div></div>`;
-  const yellow = `<div style="${abs(80, 976, 790, 270, `transform:rotate(-.9deg);filter:${SHADOW}`)}">
-    <div style="${abs(0, 0, 790, 270, "background:#f6dd7e;border-radius:4px;overflow:hidden")}"><div style="${abs(0, 0, 790, 40, "background:linear-gradient(#e6c658,#f6dd7e)")}"></div><div style="${abs(0, 40, 790, 230, "background:repeating-linear-gradient(180deg,transparent 0 62px,rgba(140,100,20,.2) 62px 64px)")}"></div>
-    ${strikeBox(40, 100)}${txt(i.items[2], 60, 600, "padding-top:14px")}</div></div>`;
-  const magnets = magnet(455, 436, "#c4573e") + magnet(470, 730, "#e0a95a") + magnet(475, 986, "#7a4b8a") + magnet(906, 1270, "#5f8a8f", 24) + magnet(120, 1290, "#e0a95a", 24);
-  return printable({ n: 8, paper: "#e7efe6", extraCss: ".top h1{font-size:70px}", scene: `${door}${kraft}${white}${yellow}${magnets}` });
+  const slip = ({ x, y, w, h, rot, bg, lines, rule, tint, n }) => `<div style="${abs(x, y, w, h, `transform:rotate(${rot}deg);filter:${SHADOW}`)}">
+    <div style="${abs(0, 0, w, h, `background:${bg};border-radius:4px;overflow:hidden`)}"><div style="${abs(0, 36, w, h - 36, `background:repeating-linear-gradient(180deg,transparent 0 ${lines - 2}px,${rule} ${lines - 2}px ${lines}px)`)}"></div>
+    ${tint ? `<div style="${abs(110, 0, 2, h, "background:#e3a3a3;opacity:.7")}"></div>` : ""}${strikeBox(40, h / 2 - 37)}${n}</div>
+    ${staple(w * 0.12, 8, -3)}${staple(w * 0.76, 10, 4)}</div>`;
+  const s1 = slip({ x: 120, y: 520, w: 760, h: 240, rot: -1.4, bg: "#fffdf6", lines: 60, rule: "#b9cde0", tint: false, n: txt(i.items[0], 60, 580, "padding-top:8px") });
+  const s2 = slip({ x: 150, y: 800, w: 700, h: 200, rot: 1.2, bg: "#f6dd7e", lines: 60, rule: "rgba(140,100,20,.22)", tint: false, n: txt(i.items[1], 90, 500, "padding-top:4px") });
+  const s3 = slip({ x: 110, y: 1040, w: 770, h: 250, rot: -.8, bg: "#d3e4ef", lines: 62, rule: "#9db8cc", tint: false, n: txt(i.items[2], 60, 600, "padding-top:10px") });
+  return printable({ n: 8, paper: "#f0e2de", extraCss: ".top h1{font-size:70px}", scene: `${wall}${bag}${s1}${s2}${s3}` });
 }
 
 /* ------------------------------------------------------------------ #10 */
@@ -176,29 +176,33 @@ function bookDrawing(x, y, w = 330, rot = -3) {
 
 function pin14() {
   const i = idea(14);
-  const table = planks({ top: 372, height: 982, base: "#a9c3d3", dark: "#94b2c5", grain: "#3d5a6e", n: 8, seed: 14, light: "#fff" });
-  const plate = `<svg style="${abs(32, 404, 250, 230, "filter:drop-shadow(0 12px 9px rgba(20,30,40,.4))")}" viewBox="0 0 250 230" aria-hidden="true"><circle cx="125" cy="115" r="108" fill="#fbfaf7"/><circle cx="125" cy="115" r="108" fill="none" stroke="#000" stroke-opacity=".08" stroke-width="3"/><circle cx="125" cy="115" r="82" fill="#eee9df"/>
-    <path d="M70 92 C 70 52, 180 52, 180 92 C 190 102, 182 112, 176 112 L 176 168 C 176 178, 74 178, 74 168 L 74 112 C 66 112, 60 100, 70 92 Z" fill="#d79a4a" stroke="#a96c25" stroke-width="5" stroke-linejoin="round"/>
-    <path d="M86 94 C 90 70, 160 70, 164 94 L 164 160 L 86 160 Z" fill="#f0c677"/><rect x="104" y="108" width="42" height="26" rx="5" fill="#f6e08e" transform="rotate(-6 125 120)"/></svg>`;
-  const cup = `<svg style="${abs(690, 400, 280, 230, "filter:drop-shadow(0 12px 9px rgba(20,30,40,.4))")}" viewBox="0 0 280 230" aria-hidden="true"><ellipse cx="130" cy="120" rx="118" ry="100" fill="#fbfaf7"/><ellipse cx="130" cy="120" rx="118" ry="100" fill="none" stroke="#000" stroke-opacity=".08" stroke-width="3"/>
-    <path d="M206 88 C 262 80 262 152 206 152" fill="none" stroke="#e9e3d6" stroke-width="22" stroke-linecap="round"/><circle cx="118" cy="116" r="76" fill="#e9e3d6"/><circle cx="118" cy="116" r="64" fill="#fbfaf7"/><circle cx="118" cy="118" r="56" fill="#a5642f"/><ellipse cx="98" cy="98" rx="24" ry="16" fill="#fff" opacity=".2"/></svg>`;
+  const r = seeded(14);
+  // a woven rug in a reading nook: horizontal bands, fringe top and bottom, on a pale floor
+  const bands = [["#2f6f73", 70], ["#f1e6cf", 26], ["#d9a63f", 60], ["#f1e6cf", 26], ["#b4472f", 90], ["#f1e6cf", 26], ["#2f6f73", 70], ["#f1e6cf", 26], ["#d9a63f", 60], ["#f1e6cf", 26], ["#b4472f", 90], ["#f1e6cf", 26], ["#2f6f73", 80], ["#f1e6cf", 26], ["#d9a63f", 60], ["#f1e6cf", 26], ["#b4472f", 90], ["#f1e6cf", 26], ["#2f6f73", 90], ["#f1e6cf", 26]];
+  let y = 0; const rug = [];
+  for (const [c, h] of bands) { rug.push(`<rect x="0" y="${y}" width="900" height="${h}" fill="${c}"/>`); y += h; }
+  for (let k = 0; k < 130; k++) { const yy = r() * 960; rug.push(`<path d="M0 ${yy.toFixed(0)} H900" stroke="#000" stroke-opacity="${(0.03 + r() * 0.05).toFixed(2)}" stroke-width="2"/>`); }
+  const fringe = Array.from({ length: 56 }, (_, k) => `<path d="M${k * 16 + 6} 0 v-24" stroke="#f1e6cf" stroke-width="5" stroke-linecap="round" transform="rotate(${((r() - 0.5) * 12).toFixed(1)} ${k * 16 + 6} 0)"/>`).join("");
+  const floor = planks({ top: 372, height: 982, base: "#dccab0", dark: "#cdb898", grain: "#6e5030", n: 9, seed: 21, light: "#fff" });
+  const rugEl = `<div style="${abs(50, 410, 900, 960, "filter:drop-shadow(0 3px 3px rgba(40,25,10,.35)) drop-shadow(0 18px 22px rgba(40,25,10,.4))")}"><svg viewBox="0 0 900 960" style="${abs(0, 0, 900, 960, "overflow:visible")}" aria-hidden="true"><g>${rug.join("")}</g><g transform="translate(0 0)">${fringe}</g></svg><div style="${abs(0, 0, 900, 960, "background:linear-gradient(120deg,rgba(255,255,255,.14),transparent 45%,rgba(0,0,0,.14))")}"></div></div>`;
+  const cushion = `<svg style="${abs(66, 418, 250, 250, "filter:drop-shadow(0 14px 12px rgba(30,15,5,.45));z-index:3")}" viewBox="0 0 250 250" aria-hidden="true"><defs><radialGradient id="cu" cx="38%" cy="30%" r="80%"><stop offset="0" stop-color="#a07ab0"/><stop offset="1" stop-color="#5e3a70"/></radialGradient></defs><rect x="14" y="14" width="222" height="222" rx="58" fill="url(#cu)" transform="rotate(-8 125 125)"/><rect x="14" y="14" width="222" height="222" rx="58" fill="none" stroke="#3b2248" stroke-opacity=".5" stroke-width="3" transform="rotate(-8 125 125)"/>${Array.from({ length: 12 }, (_, k) => { const a = (k / 12) * Math.PI * 2; return `<path d="M125 125 Q ${125 + Math.cos(a + 0.2) * 60} ${125 + Math.sin(a + 0.2) * 60} ${125 + Math.cos(a) * 100} ${125 + Math.sin(a) * 100}" stroke="#3b2248" stroke-opacity=".28" stroke-width="3" fill="none"/>`; }).join("")}<circle cx="125" cy="125" r="13" fill="#f1e6cf"/><circle cx="121" cy="121" r="5" fill="#fff" opacity=".6"/></svg>`;
+  const stack = `<div style="z-index:3">${books({ x: 664, y: 450, size: 1.15 })}</div>`;
 
-  const card = ({ x, y, rot, name, subject, note, ink, nameSize, weight, spacing, bg }) => `<div style="${abs(x, y, 440, 500, `transform:rotate(${rot}deg);filter:${SHADOW}`)}">
+  const card = ({ x, y, rot, name, subject, note, ink, nameSize, weight, bg }) => `<div style="${abs(x, y, 440, 500, `transform:rotate(${rot}deg);filter:${SHADOW}`)}">
       <div style="${abs(0, 0, 440, 500, `background:${bg};border-radius:6px;overflow:hidden`)}">
         <div style="${abs(0, 96, 440, 404, "background:repeating-linear-gradient(180deg,transparent 0 51px,#b9cde0 51px 53px);background-position:0 20px")}"></div>
         <div style="${abs(0, 94, 440, 3, "background:#d9776b")}"></div>
-        <div data-check="entry" class="hand" style="${abs(28, 18, 390, 470, `color:${ink};font-weight:${weight};letter-spacing:${spacing}em;overflow:hidden`)}">
+        <div data-check="entry" class="hand" style="${abs(28, 18, 390, 470, `color:${ink};font-weight:${weight};overflow:hidden`)}">
           <div style="font-size:${nameSize}px;line-height:70px;font-weight:700">${esc(name)}</div>
           <div style="font-size:40px;line-height:53px;margin-top:35px">${esc(subject)}</div>
           <div style="font-size:40px;line-height:53px;margin-top:53px">${esc(note)}</div>
         </div></div></div>`;
   const [n1, s1, t1, n2, s2, t2] = i.items;
-  const cards = card({ x: 46, y: 716, rot: -2, name: n1, subject: s1, note: t1, ink: "#23478a", nameSize: 60, weight: 600, spacing: 0, bg: "#fffdf6" })
-    + card({ x: 514, y: 732, rot: 2, name: n2, subject: s2, note: t2, ink: "#3a3a44", nameSize: 58, weight: 500, spacing: 0, bg: "#fcf6e4" })
-    + tape(266, 718, 120, 3, "rgba(224,169,90,.85)") + tape(734, 732, 120, -3, "rgba(122,75,138,.6)");
-  const drawing = `${bookDrawing(335, 404)}${tape(500, 408, 130, 2, "rgba(138,161,130,.85)")}`;
+  const cards = card({ x: 46, y: 716, rot: -2, name: n1, subject: s1, note: t1, ink: "#23478a", nameSize: 60, weight: 600, bg: "#fffdf6" })
+    + card({ x: 514, y: 732, rot: 2, name: n2, subject: s2, note: t2, ink: "#3a3a44", nameSize: 58, weight: 500, bg: "#fcf6e4" });
+  const drawing = bookDrawing(335, 420);
   const tag = `<span class="example" style="position:absolute;left:46px;top:1290px;transform:rotate(-2deg);z-index:4">Example</span>`;
-  return printable({ n: 14, paper: "#e8eff4", extraCss: exampleCss, scene: `${table}${plate}${cup}${drawing}${cards}${pencil({ x: 300, y: 1262, len: 440, rot: -3 })}${tag}` });
+  return printable({ n: 14, paper: "#efe6d6", extraCss: exampleCss, scene: `${floor}${rugEl}${cushion}${stack}${drawing}${cards}${tag}` });
 }
 
 /* ------------------------------------------------------------------ #16 */
