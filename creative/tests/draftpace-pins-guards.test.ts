@@ -11,8 +11,8 @@
 import { describe, expect, it } from "vitest";
 import fs from "node:fs";
 import path from "node:path";
-import { planDraftpacePins, rescheduledCsvs, parseCsv, mediaUrlOf, WAVES, START, FOLDER_PRODUCT, HOSTED } from "../pinterest/draftpace-pins";
-import { prayerSlots, csvTime } from "../pinterest/prayer-schedule";
+import { planDraftpacePins, rescheduledCsvs, waveSlots, parseCsv, mediaUrlOf, WAVES, WAVE_STARTS, FOLDER_PRODUCT, HOSTED, type Wave } from "../pinterest/draftpace-pins";
+import { csvTime, PER_DAY, PLAN, PRAYERS } from "../pinterest/prayer-schedule";
 import { MOTIFS } from "../src/visual/illustrations";
 import { BOARD_SEARCH, TITLE_LIMIT, DESCRIPTION_LIMIT, KEYWORD_LIMIT } from "../pinterest/draftpace-seo";
 
@@ -74,10 +74,19 @@ describe("Draftpace pins, waves 2 to 5", () => {
       expect(terms.length).toBeLessThanOrEqual(KEYWORD_LIMIT);
       for (const t of terms) expect(BOARD_SEARCH[r["Pinterest board"]].terms, `${r.Title}: keyword "${t}" is not one of its board's search phrases`).toContain(t);
     }
-    const queued = [...planned].sort((a, b) => a.row["Publish date"].localeCompare(b.row["Publish date"])).map((p) => mediaUrlOf(p.pin.file));
-    const slots = prayerSlots(START, 350).map((s) => csvTime(s.at));
+    // Each wave is posted from its own start day, in the order its pins were already queued, 17 a day around the prayers.
+    const ordered = [...planned].sort((a, b) => a.row["Publish date"].localeCompare(b.row["Publish date"]));
+    const inWave = (w: Wave) => ordered.filter((p) => p.pin.wave === w).map((p) => mediaUrlOf(p.pin.file));
+    const slots = waveSlots(Object.fromEntries(WAVES.map((w) => [w, inWave(w).length])) as Record<Wave, number>);
     const at = new Map(after.map((r) => [r["Media URL"], r["Publish date"]]));
-    queued.forEach((url, i) => expect(at.get(url), `${url} is not at its place in the schedule`).toBe(slots[i]));
+    for (const w of WAVES) inWave(w).forEach((url, i) => expect(at.get(url), `${w}: ${url} is not at its place in the schedule`).toBe(csvTime(slots[w][i].at)));
+    for (const [w, day] of Object.entries(WAVE_STARTS)) expect(slots[w as Wave][0].date, `${w} starts on ${day}`).toBe(day);
+    // A wave with no start day of its own follows the wave before it, and no wave overlaps another.
+    WAVES.slice(1).forEach((w, i) => expect(slots[w][0].at.getTime(), `${w} must start after ${WAVES[i]} ends`).toBeGreaterThan(slots[WAVES[i]].at(-1)!.at.getTime()));
+    // The day's shape: a full day has 2 at fajr, 4 dhuhr, 4 asr, 3 maghrib, 4 isha.
+    const day = slots.wave3.filter((s) => s.date === WAVE_STARTS.wave3);
+    expect(day.length).toBe(PER_DAY);
+    for (const p of PRAYERS) expect(day.filter((s) => s.prayer === p).length, `${p} on ${WAVE_STARTS.wave3}`).toBe(PLAN[p].length);
   });
 
   it("are on disk at their Media URL, a path that never served the old picture, and the old picture is gone", () => {

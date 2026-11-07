@@ -18,7 +18,7 @@
 import { rankMotifs, MIN_SCORE } from "../director/illustration";
 import { relevance, screenAbout } from "../director/direct";
 import { dossierFor } from "../director/run";
-import { prayerSlots, csvTime } from "./prayer-schedule";
+import { prayerSlots, csvTime, PER_DAY, type Slot } from "./prayer-schedule";
 import { BOARD_SEARCH, TITLE_LIMIT, DESCRIPTION_LIMIT, KEYWORD_LIMIT } from "./draftpace-seo";
 
 /** The CSV folder names the earlier pin builder used, and the product each one is. */
@@ -44,8 +44,34 @@ export const HOSTED = "store/pinterest-pins/illustrated";
 export const mediaUrlOf = (file: string) => `https://draftpace.com/${HOSTED}/${file}.jpg`;
 
 export const WAVES = ["wave2", "wave3", "wave4", "wave5"] as const;
-/** The first day (New York) of the schedule: 18 October, the first prayer slot after the waves were imported (1 PM PKT). */
-export const START = "2026-10-18";
+export type Wave = (typeof WAVES)[number];
+
+/**
+ * The first day (New York) each wave is posted. Wave 2 went up from 18
+ * October. Wave 3 starts on 8 November, the day it was re-planned: waves 1
+ * and 2 are posted, so everything after them restarts from there. A wave
+ * with no day of its own continues at the next slot after the wave before
+ * it, so nothing overlaps and nothing is left in the past.
+ */
+export const WAVE_STARTS: Partial<Record<Wave, string>> = { wave2: "2026-10-18", wave3: "2026-11-08" };
+export const START = WAVE_STARTS.wave2!;
+
+/** Every wave's posting slots: its own start day, or straight after the last slot of the wave before. */
+export function waveSlots(counts: Record<Wave, number>): Record<Wave, Slot[]> {
+  const out = {} as Record<Wave, Slot[]>;
+  let before: Slot | undefined;
+  for (const wave of WAVES) {
+    const own = WAVE_STARTS[wave];
+    if (own) out[wave] = prayerSlots(own, counts[wave]);
+    else {
+      if (!before) throw new Error(`${wave} has no start day and no wave before it`);
+      // The rest of the previous wave's last day, then the days after it.
+      out[wave] = prayerSlots(before.date, PER_DAY + counts[wave]).filter((slot) => slot.at.getTime() > before!.at.getTime()).slice(0, counts[wave]);
+    }
+    before = out[wave].at(-1);
+  }
+  return out;
+}
 
 export type SourceRow = { Title: string; "Media URL": string; "Pinterest board": string; Description: string; Link: string; "Publish date": string; Keywords: string };
 
@@ -186,22 +212,23 @@ export function searchable(row: SourceRow, leadsUsed: Map<string, Map<string, nu
   return { Title, Description: more.length <= DESCRIPTION_LIMIT ? more : row.Description, Keywords: seo.terms.slice(0, KEYWORD_LIMIT).join(", ") };
 }
 
-/** The four waves' CSVs: the Media URL at the redrawn pin, the Publish date on the prayer schedule in the order the pins were already queued, and the words made searchable. */
-export function rescheduledCsvs(sources: Record<(typeof WAVES)[number], string>, start = START): Record<(typeof WAVES)[number], string> {
+/** The four waves' CSVs: the Media URL at the redrawn pin, each wave's Publish dates on the prayer schedule from the wave's own start (WAVE_STARTS) in the order its pins were already queued, and the words made searchable. */
+export function rescheduledCsvs(sources: Record<Wave, string>): Record<Wave, string> {
   const planned = planDraftpacePins(sources);
   const order = [...planned].sort((a, b) => a.row["Publish date"].localeCompare(b.row["Publish date"]));
-  const slots = prayerSlots(start, order.length);
-  const when = new Map(order.map((p, i) => [p.pin.file, csvTime(slots[i].at)]));
+  const inWave = (wave: Wave) => order.filter((p) => p.pin.wave === wave);
+  const slots = waveSlots(Object.fromEntries(WAVES.map((w) => [w, inWave(w).length])) as Record<Wave, number>);
+  const when = new Map(WAVES.flatMap((w) => inWave(w).map((p, i) => [p.pin.file, csvTime(slots[w][i].at)] as const)));
   const leadsUsed = new Map<string, Map<string, number>>();
   const found = new Map(order.map((p) => [p.pin.file, searchable(p.row, leadsUsed)]));
   const field = (v: string) => (/[",\n\r]/.test(v) ? `"${v.replace(/"/g, '""')}"` : v);
   const header = ["Title", "Media URL", "Pinterest board", "Description", "Link", "Publish date", "Keywords"] as const;
   return Object.fromEntries(WAVES.map((wave) => {
-    const rows = planned.filter((p) => p.pin.wave === wave).sort((a, b) => when.get(a.pin.file)!.localeCompare(when.get(b.pin.file)!));
+    const rows = inWave(wave);
     const lines = [header.join(","), ...rows.map(({ row, pin }) => {
       const out: SourceRow = { ...row, ...found.get(pin.file)!, "Media URL": mediaUrlOf(pin.file), "Publish date": when.get(pin.file)! };
       return header.map((h) => field(out[h])).join(",");
     })];
     return [wave, lines.join("\r\n") + "\r\n"];
-  })) as Record<(typeof WAVES)[number], string>;
+  })) as Record<Wave, string>;
 }
