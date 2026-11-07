@@ -47,7 +47,7 @@ execFileSync("python3", ["-c", py], { input: JSON.stringify(jobs.map((j) => ({ s
 // 2. The text document.
 const rule = "=".repeat(78), thin = "-".repeat(78);
 const boards = [...new Set(PINS.map((p) => bank.find((x) => x.n === p.n).board))];
-const NEW_BOARDS = { "Homeschool Planner Printables": "Printable planners, logs and record pages for homeschool", "Homeschool Record Keeping": "Simple ways to keep a homeschool record you will actually keep", "Homeschool Mid-Year Reset": "Starting, restarting and resetting a homeschool year after a break" };
+const NEW_BOARDS = { "Homeschool Planner Printables": "Printable planners, logs and record pages for homeschool", "Homeschool Record Keeping": "Simple ways to keep a homeschool record you will actually keep", "Homeschool Mid-Year Reset": "Starting, restarting and resetting a homeschool year after a break", "Homeschool Reading Log": "Reading log printables and simple ways to keep a record of what your child reads" };
 const out = [];
 out.push(rule, `${NAME.toUpperCase()}`, "PIN DETAILS FOR POSTING BY HAND", rule, "");
 out.push(`${PINS.length} pins, listed in the order to post them. Each pin has its image file (in the images folder), then the fields to type into Pinterest.`, "");
