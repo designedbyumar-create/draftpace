@@ -5,8 +5,7 @@
  * each scene reads its words from the bank and throws if the record is not
  * the one it was drawn for.
  *
- *   #47  question      a sunny window: the card and a work-sample page with a clipped note taped to the glass, a plant and a jar of pencils on the sill
-
+ *   #47  question      an olive wall with a pine rail of three brass hooks: the card and the work-sample page hang from twine, the note clipped on
  *   #53  checklist     a canvas tote on terracotta hall tiles: the six-line list slid into a kraft folder in the tote, plum ticks
  *   #98  quote-card    a navy bookcase: the ruled page propped on a shelf, pencil underline, a manila folder corner
  *   #41  comparison    a grey-washed pallet-wood board: a September page and a May page clipped side by side
@@ -56,48 +55,43 @@ function question() {
   if (i.items.length !== 2 || !i.items[0].startsWith("Math: struggled with fractions")) throw new Error("#47: the bank's items are not the note and the credibility line");
   const [note, line] = i.items;
 
-  // A window: white frame, one big pane of pale sky with a sun glow, a cross-bar, a sill below with a plant and a jar.
-  const sky = `<div style="${at(0, SCENE_TOP, 1000, 1500 - SCENE_TOP, "background:#e9e4d6")}"></div>
-    <div style="${at(40, 404, 920, 790, "background:linear-gradient(180deg,#bcdcea,#e4f1ee 78%,#f4efdc);box-shadow:inset 0 6px 14px rgba(40,70,90,.35)")}"></div>
-    <div style="${at(40, 404, 920, 790, "background:radial-gradient(ellipse at 84% 8%,rgba(255,250,220,.95),rgba(255,250,220,0) 46%)")}"></div>
-    <svg style="${at(40, 404, 920, 790)}" viewBox="0 0 920 790" aria-hidden="true"><g fill="#fff" opacity=".65"><ellipse cx="170" cy="150" rx="120" ry="26"/><ellipse cx="250" cy="130" rx="80" ry="24"/><ellipse cx="700" cy="330" rx="130" ry="24"/><ellipse cx="770" cy="312" rx="70" ry="22"/></g><path d="M0 700 Q 120 640 240 690 T 480 680 T 720 690 T 920 650 V 790 H 0 Z" fill="#a6c39a" opacity=".55"/></svg>`;
-  const frame = `<div style="${at(16, 380, 968, 838, "border:34px solid #f6f3ea;border-radius:6px;box-shadow:0 4px 8px rgba(40,30,15,.35),inset 0 0 0 3px rgba(120,110,90,.3)")}"></div>
-    <div style="${at(40, 1020, 920, 26, "background:linear-gradient(#fbf9f2,#e4dfd0);box-shadow:0 3px 5px rgba(40,30,15,.3)")}"></div>`;
-  const sill = `<div style="${at(0, 1200, 1000, 60, "background:linear-gradient(#fbf9f2,#ddd7c6);box-shadow:0 10px 16px rgba(40,30,15,.4)")}"></div>
-    <div style="${at(0, 1260, 1000, 100, "background:linear-gradient(#d8d0bd,#cbc3ae)")}"></div>
-    <div style="${at(0, 1260, 1000, 40, "background:linear-gradient(rgba(60,45,20,.28),transparent)")}"></div>`;
+  // An olive-painted wall, a pine rail with three brass hooks, a pale skirting board at the foot.
+  const wall = `<div style="${at(0, SCENE_TOP, 1000, 1500 - SCENE_TOP, "background:repeating-linear-gradient(90deg,rgba(255,255,255,.035) 0 3px,transparent 3px 9px),linear-gradient(180deg,#76865a,#667649)")}"></div>
+    <div style="${at(0, SCENE_TOP, 1000, 1500 - SCENE_TOP, "background:radial-gradient(ellipse at 26% 14%,rgba(255,255,230,.2),rgba(20,30,5,.42))")}"></div>
+    <div style="${at(0, 1290, 1000, 70, "background:linear-gradient(#efe9d8,#d8d0b8);box-shadow:0 -4px 8px rgba(20,30,5,.35)")}"></div>`;
+  const grain = Array.from({ length: 7 }, (_, k) => `<path d="M0 ${12 + k * 7} C 300 ${8 + k * 7}, 600 ${16 + k * 7}, 1000 ${11 + k * 7}" fill="none" stroke="#8a6a3a" stroke-opacity=".22" stroke-width="1.6"/>`).join("");
+  const rail = `<div style="${at(20, 396, 960, 66, "z-index:2;border-radius:8px;overflow:hidden;background:linear-gradient(#e6c995,#d3ae77);box-shadow:0 4px 6px rgba(20,30,5,.4),0 18px 24px rgba(20,30,5,.4)")}"><svg width="960" height="66" viewBox="0 0 1000 66" preserveAspectRatio="none" style="position:absolute;inset:0" aria-hidden="true">${grain}</svg><div style="${at(0, 0, 960, 8, "background:rgba(255,255,255,.35)")}"></div></div>
+    ${[60, 940].map((x) => `<div style="${at(x - 8, 421, 16, 16, "z-index:3;border-radius:50%;background:radial-gradient(circle at 35% 30%,#f2dc9a,#8a6a25)")}"></div>`).join("")}`;
+  const hook = (x) => `<svg style="${at(x - 34, 418, 68, 100, "z-index:4;filter:drop-shadow(0 8px 5px rgba(20,30,5,.5))")}" viewBox="0 0 68 100" aria-hidden="true"><circle cx="34" cy="22" r="20" fill="#d9b25a"/><circle cx="34" cy="22" r="20" fill="none" stroke="#8a6a25" stroke-width="2.4"/><circle cx="28" cy="16" r="6" fill="#fff" opacity=".4"/><path d="M34 22 V 60 C 34 90 62 92 62 66 V 56" fill="none" stroke="#c9a04a" stroke-width="11" stroke-linecap="round"/><path d="M34 26 V 60 C 34 80 52 86 58 72" fill="none" stroke="#f3e0a0" stroke-width="3" stroke-linecap="round" opacity=".6"/></svg>`;
+  const hooks = `${hook(300)}${hook(580)}${hook(790)}`;
 
-  // The plant and the jar of pencils stand on the sill, in front of the lower pane.
-  const plant = `<svg style="${at(40, 1040, 280, 230, "z-index:6;filter:drop-shadow(0 8px 6px rgba(40,30,15,.35))")}" viewBox="0 0 280 230" aria-hidden="true">
-      <g fill="#5f9a62"><path d="M140 140 C 70 120 40 70 62 30 C 110 50 136 90 140 140 Z"/><path d="M140 140 C 210 120 244 70 218 30 C 170 50 144 90 140 140 Z"/><path d="M140 140 C 120 90 128 40 142 8 C 160 44 160 96 140 140 Z" fill="#74af72"/><path d="M140 140 C 60 150 20 120 16 92 C 70 92 118 108 140 140 Z" fill="#4f8a55"/></g>
-      <path d="M140 140 V 20 M140 140 L 60 40 M140 140 L 220 40" stroke="#3f7547" stroke-width="2.4" fill="none" opacity=".6"/>
-      <path d="M78 150 H 202 L 188 226 H 92 Z" fill="#c4673f"/><rect x="70" y="140" width="140" height="24" rx="5" fill="#d4784e"/><path d="M96 170 H 184" stroke="#fff" stroke-opacity=".2" stroke-width="5"/></svg>`;
-  const pencils = ["#e7b23f", "#c4573e", "#5f8a8f", "#7a4b8a", "#8aa182"].map((c, k) => `<div style="${at(808 + k * 17, 1058 - (k % 3) * 18, 12, 140, `background:linear-gradient(90deg,${c},#fff3 50%,${c});transform:rotate(${(k - 2) * 7}deg);transform-origin:bottom;border-radius:2px 2px 0 0;z-index:5`)}"></div>`).join("");
-  const jar = `<div style="${at(790, 1110, 120, 96, "z-index:6;background:linear-gradient(90deg,rgba(255,255,255,.55),rgba(200,225,230,.45) 40%,rgba(255,255,255,.5));border:3px solid rgba(255,255,255,.7);border-radius:6px 6px 14px 14px;box-shadow:0 8px 10px rgba(40,30,15,.3)")}"></div>`;
+  // Twine from each hook to the two top corners of what hangs from it.
+  const twine = (x0, y0, x1, y1, x2, y2) => `<svg style="${at(0, 0, 1000, 1500, "z-index:3;pointer-events:none")}" viewBox="0 0 1000 1500" aria-hidden="true"><path d="M${x1} ${y1} L ${x0} ${y0} L ${x2} ${y2}" fill="none" stroke="#e9dcc0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M${x1} ${y1} L ${x0} ${y0} L ${x2} ${y2}" fill="none" stroke="#8a7650" stroke-width="2" stroke-dasharray="6 5" opacity=".7"/></svg>`;
+  const strings = `${twine(304, 500, 120, 656, 500, 646)}${twine(792, 500, 640, 622, 920, 640)}
+    <svg style="${at(0, 0, 1000, 1500, "z-index:3")}" viewBox="0 0 1000 1500" aria-hidden="true"><path d="M582 506 C 560 560 604 590 584 620" fill="none" stroke="#e9dcc0" stroke-width="5" stroke-linecap="round"/></svg>`;
 
-  // The work-sample page taped to the glass, with a note clipped over it.
-  const page = `<div style="${at(600, 430, 340, 470, "transform:rotate(2.2deg);z-index:3")}">
-      <div style="${at(0, 0, 340, 470, `background:repeating-linear-gradient(180deg,transparent 0 37px,rgba(80,115,170,.3) 37px 39px),#fffdf5;box-shadow:0 2px 3px rgba(20,40,50,.22),0 14px 24px rgba(20,40,50,.28)`)}"></div>
-      <div style="${at(44, 0, 3, 470, "background:rgba(200,80,80,.45)")}"></div>
-      <div style="${at(60, 54, 250, 200)}">${scrib({ w: 250, rows: 5, gap: 38, seed: 4 })}</div>
-      <div style="${at(60, 300, 250, 120)}">${scrib({ w: 250, rows: 3, gap: 38, seed: 9 })}</div>
-    </div>
-    ${tape(718, 414, 120, -4, "rgba(138,161,130,.88)")}`;
-  const noteEl = `<div style="${at(620, 560, 312, 296, "transform:rotate(-2.4deg);z-index:5")}">
-      <div style="${at(0, 0, 312, 296, `background:linear-gradient(160deg,#fffae4,#f6eab8);box-shadow:0 2px 3px rgba(20,40,50,.25),0 14px 24px rgba(20,40,50,.3)`)}"></div>
+  // The card, ruled and hung on its string with a punched hole at each top corner.
+  const card = `<div style="${at(64, 640, 480, 560, "transform:rotate(-1.4deg);z-index:4")}">
+      <div style="${at(0, 0, 480, 560, `background:repeating-linear-gradient(180deg,transparent 0 71px,rgba(80,115,170,.26) 71px 73px),#fffdf3;box-shadow:0 3px 4px rgba(20,30,5,.35),0 22px 30px rgba(20,30,5,.45);border-radius:6px`)}"></div>
+      <div style="${at(0, 52, 480, 4, "background:#b3524a;opacity:.75")}"></div>
+      ${[[50, 12], [430, 12]].map(([x, y]) => `<div style="${at(x - 8, y, 16, 16, "border-radius:50%;background:#667649;box-shadow:inset 0 2px 3px rgba(0,0,0,.5)")}"></div>`).join("")}
+      <div data-check="line" class="serif" style="${at(36, 84, 410, 460, "font-size:41px;line-height:73px;font-weight:500;color:#1f1d26;overflow:hidden")}">${esc(line)}</div>
+    </div>`;
+
+  // The work-sample page on its string, with the note clipped over it.
+  const page = `<div style="${at(620, 624, 310, 470, "transform:rotate(1.8deg);z-index:4")}">
+      <div style="${at(0, 0, 310, 470, `background:repeating-linear-gradient(180deg,transparent 0 37px,rgba(80,115,170,.3) 37px 39px),#fffdf5;box-shadow:0 3px 4px rgba(20,30,5,.35),0 22px 30px rgba(20,30,5,.45)`)}"></div>
+      <div style="${at(42, 0, 3, 470, "background:rgba(200,80,80,.45)")}"></div>
+      <div style="${at(60, 52, 220, 160)}">${scrib({ w: 220, rows: 4, gap: 38, seed: 4 })}</div>
+      <div style="${at(60, 330, 220, 100)}">${scrib({ w: 220, rows: 2, gap: 38, seed: 9 })}</div>
+    </div>`;
+  const noteEl = `<div style="${at(636, 740, 312, 296, "transform:rotate(-2.4deg);z-index:5")}">
+      <div style="${at(0, 0, 312, 296, `background:linear-gradient(160deg,#fffae4,#f6eab8);box-shadow:0 3px 4px rgba(20,30,5,.3),0 18px 26px rgba(20,30,5,.4)`)}"></div>
       <div data-check="note" class="hand" style="${at(22, 44, 272, 240, "font-size:46px;line-height:1.02;font-weight:700;color:#2c2e5a;overflow:hidden")}">${esc(note)}</div>
     </div>
-    ${binderClip({ x: 722, y: 518, rot: 4, size: 96 }).replace("position:absolute", "position:absolute;z-index:6")}`;
-
-  // The standing card, taped to the glass too.
-  const card = `<div style="${at(64, 436, 500, 560, "transform:rotate(-1.6deg);z-index:4")}">
-      <div style="${at(0, 0, 500, 560, `background:repeating-linear-gradient(180deg,transparent 0 71px,rgba(80,115,170,.26) 71px 73px),#fffdf3;box-shadow:0 2px 3px rgba(20,40,50,.22),0 14px 24px rgba(20,40,50,.3);border-radius:6px`)}"></div>
-      <div style="${at(0, 52, 500, 4, "background:#b3524a;opacity:.75")}"></div>
-      <div data-check="line" class="serif" style="${at(36, 74, 440, 470, "font-size:43px;line-height:73px;font-weight:500;color:#1f1d26;overflow:hidden")}">${esc(line)}</div>
-    </div>
-    ${tape(240, 418, 130, 2, "rgba(214,186,128,.88)")}`;
-  const scene = `${sky}${page}${noteEl}${card}${frame}${sill}${plant}${jar}${pencils}${exampleTag(640, 904, 3)}`;
-  return printable({ n, paper: "#eef0ea", extraCss: EXAMPLE_CSS, scene });
+    ${binderClip({ x: 738, y: 698, rot: 4, size: 96 }).replace("position:absolute", "position:absolute;z-index:6")}`;
+  const scene = `${wall}${strings}${card}${page}${noteEl}${rail}${hooks}${exampleTag(660, 1110, 3)}`;
+  return printable({ n, paper: "#eef0e4", extraCss: EXAMPLE_CSS, scene });
 }
 
 /* ============================================================ #53 checklist */
