@@ -1,0 +1,521 @@
+[
+  {
+    "slice": "organize",
+    "angle": "how-to-steps",
+    "headline": "Organize Your Finances in Ten Minutes: What to Do Minute by Minute",
+    "sub": "A ten minute starting page you can fill in from memory, with the gaps marked.",
+    "items": [
+      "Minutes 0 to 2: List where your money information lives",
+      "Minutes 2 to 6: Fill in the six areas from memory",
+      "Minute 7: Circle the number you most want",
+      "Minutes 7 to 9: Close one gap",
+      "Minute 10: Pick a day to look at the page again"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "organize-your-finances-from-scratch"
+    },
+    "proof": [
+      "a ten minute starting page you can fill in from memory, with the gaps marked",
+      "Minutes 0 to 2",
+      "List where your money information lives",
+      "Minutes 2 to 6",
+      "Fill in the six areas from memory",
+      "Minute 7",
+      "Circle the number you most want",
+      "Minutes 7 to 9",
+      "Close one gap",
+      "Minute 10",
+      "Pick a day to look at the page again"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to organize your finances",
+    "board": "Organize Your Finances",
+    "when": "evergreen",
+    "visual": "Tracker-sheet layout: one ruled paper page tilted on a kitchen table with a vertical ten-step ruler down its left edge and five stops (0-2, 2-6, 7, 7-9, 10) each carrying its short line; a pencil across the corner, a coffee mug, the pop colour on the Minute 7 circle. No clock face or timer UI.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "organize",
+    "angle": "template-preview",
+    "headline": "Personal Finance Organizer Page: Six Areas, Filled In From Memory",
+    "sub": "The question marks are the useful part.",
+    "items": [
+      "Accounts: Checking at the credit union, about $1,900. Savings, about $4,000?",
+      "Income: Paycheck, about $2,600 every two weeks, next one Friday",
+      "Bills: Rent $1,450 on the 1st. Electric ?. Car insurance ?, date ?",
+      "Subscriptions: Streaming, phone backup, gym?",
+      "Debts: Visa about $2,600, rate ?. Student loan, payment about $120",
+      "Goals: Emergency fund, $5,000, by next summer"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "organize-your-finances-from-scratch"
+    },
+    "proof": [
+      "The question marks are the useful part.",
+      "Area",
+      "What you write",
+      "Gap to close",
+      "Accounts",
+      "Checking at the credit union, about $1,900. Savings, about $4,000?",
+      "Paycheck, about $2,600 every two weeks, next one Friday",
+      "Rent $1,450 on the 1st. Electric ?. Car insurance ?, date ?",
+      "Streaming, phone backup, gym?",
+      "Visa about $2,600, rate ?. Student loan, payment about $120",
+      "Emergency fund, $5,000, by next summer"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "personal finance organizer printable",
+    "board": "Organize Your Finances",
+    "when": "evergreen; January fresh start",
+    "visual": "Tracker-sheet: the guide's six-row example table as a fill-in register page (columns Area, What you write, Gap to close) with a small 'Example only' stamp. Each question mark is hand-circled in the pop colour; the Gap to close column is left half blank so the page reads as a template to copy. A pencil and a sticky note on the desk.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "organize",
+    "angle": "question",
+    "headline": "Which Number Do You Most Want to Know About Your Money? Circle It First",
+    "sub": "That decides which question mark you chase first.",
+    "items": [
+      "What's free to spend",
+      "When a debt ends"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "organize-your-finances-from-scratch"
+    },
+    "proof": [
+      "Circle the number you most want: either what's free to spend, or when a debt ends. That decides which question mark you chase first."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to get your finances in order",
+    "board": "Organize Your Finances",
+    "when": "evergreen",
+    "visual": "One-card layout: one large card on a faded wall of blank sticky notes, the card holding the headline question and two pencil-circled choices, What's free to spend and When a debt ends. No figures drawn on the card, only the two choices, so it does not become a big 'available' number pin.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "organize",
+    "angle": "before-after",
+    "headline": "Organize Your Finances: Why a Page With Question Marks Beats One With Guesses",
+    "sub": "A page that says where it's unsure is more use than one that fills the blanks with guesses.",
+    "items": [
+      "You skip the question marks and guess, so the page looks finished and is wrong.",
+      "It lives somewhere you won't open",
+      "You build it once and never set the day"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "organize-your-finances-from-scratch"
+    },
+    "proof": [
+      "A page that says where it's unsure is more use than one that fills the blanks with guesses",
+      "You skip the question marks and guess, so the page looks finished and is wrong.",
+      "It lives somewhere you won't open",
+      "you build it once and never set the day"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "organize finances when overwhelmed",
+    "board": "Organize Your Finances",
+    "when": "evergreen",
+    "visual": "Intake / side-by-side: two ruled pages on a desk. Left, neat and confident with tidy round numbers, stamped as wrong; right, the same page with question marks and a Gap to close column, stamped as useful. A short three-line list of the ways the page breaks sits under them. Uses the guide's own example rows only.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "organize",
+    "angle": "mockup-printable",
+    "headline": "Financial Binder Labels: Confirmed, Estimated, Unresolved, Missing, Stale",
+    "sub": "Write one of these labels next to every figure.",
+    "items": [
+      "Confirmed: Checked and believed accurate",
+      "Estimated: Reasonable, but may change",
+      "Unresolved: Exists, needs a decision",
+      "Missing: Not known yet",
+      "Stale: Once confirmed, may be old"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "financial-binder-what-to-include"
+    },
+    "proof": [
+      "Write one of these labels next to every figure.",
+      "Checked and believed accurate",
+      "Reasonable, but may change",
+      "Exists, needs a decision",
+      "Not known yet",
+      "Once confirmed, may be old",
+      "plus a page with the five labels"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "proofExtra": [
+      {
+        "file": "book",
+        "proof": [
+          "Information confidence key",
+          "Use these labels anywhere in the workbook."
+        ]
+      }
+    ],
+    "query": "financial binder labels",
+    "board": "Financial Binder and Printables",
+    "when": "evergreen; peaks January",
+    "visual": "Mockup-printable: the real workbook page 10, 'Information confidence key' (Label, Meaning, When to use it), printed US Letter, tilted on a desk next to an open three-ring binder with index tabs; five small tab flags carry the five label names. Page text is the workbook's own; the chips on the pin use the guide's short meanings.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "organize",
+    "angle": "checklist",
+    "headline": "How Often to Update a Financial Binder: A Five Step Monthly Check",
+    "sub": "Fifteen minutes on the same day each month is enough.",
+    "items": [
+      "Check each balance against a statement and update the Checked date.",
+      "Change any label that has aged from Confirmed to Stale.",
+      "Move anything new into the right section: a bill, a subscription, a debt.",
+      "Write one line about a decision you made and why.",
+      "Put the binder back somewhere private."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "financial-binder-what-to-include"
+    },
+    "proof": [
+      "Fifteen minutes on the same day each month is enough.",
+      "Check each balance against a statement and update the Checked date.",
+      "Change any label that has aged from Confirmed to Stale.",
+      "Move anything new into the right section: a bill, a subscription, a debt.",
+      "Write one line about a decision you made and why.",
+      "Put the binder back somewhere private."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "financial binder checklist",
+    "board": "Financial Binder and Printables",
+    "when": "evergreen; peaks January",
+    "visual": "Checklist on a clipboard: five ruled lines with empty tick boxes, one pencil tick half drawn, the clipboard resting on a closed forest-green binder with an index tab sticking out. Forest and paper only, one pop on the first tick.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "organize",
+    "angle": "comparison",
+    "headline": "What Goes in a Financial Binder, and What Stays Out of It",
+    "sub": "A binder lists every account you have, so adding logins makes it a key for anyone who finds it.",
+    "items": [
+      "In: the last four digits and where the full record lives",
+      "Out: passwords",
+      "Out: security answers"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "financial-binder-what-to-include"
+    },
+    "proof": [
+      "Two things stay out of it whatever you do: passwords and security answers.",
+      "For accounts, write the last four digits and where the full record lives, not the whole number.",
+      "A binder lists every account you have, so adding logins makes it a key for anyone who finds it."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to put in a financial binder",
+    "board": "Financial Binder and Printables",
+    "when": "evergreen; peaks January",
+    "visual": "Side-by-side: a split sheet. Left column 'In' shows one account row with only 'last four digits' and 'where the full record lives'; right column 'Out' shows two crossed-out strips reading passwords and security answers. A small padlock-free paper tab, binder rings at the left edge. No real-looking numbers.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "organize",
+    "angle": "mockup-printable",
+    "headline": "Missing Information List: Write Down What You Do Not Know Yet",
+    "sub": "Missing information is useful when it is visible.",
+    "items": [
+      "Missing item",
+      "Area",
+      "Where I will look",
+      "Priority",
+      "Ready to update?"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "financial-binder-what-to-include"
+    },
+    "proof": [
+      "Mark anything uncertain as Missing or Estimated.",
+      "plus a page with the five labels"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "proofExtra": [
+      {
+        "file": "book",
+        "proof": [
+          "Missing information is useful when it is visible.",
+          "Missing item Area Where I will look Priority Ready to update?"
+        ]
+      }
+    ],
+    "query": "financial organizer worksheet",
+    "board": "Financial Binder and Printables",
+    "when": "evergreen; peaks January",
+    "visual": "Mockup-printable: the real workbook page 11, 'Initial missing information list' (columns Missing item, Area, Where I will look, Priority, Ready to update?), printed US Letter, tilted on a desk beside a pencil and a mug; a few handwritten example rows ('rate?', 'renewal date') in pencil, one cell in the pop colour. The page is shown as printed, with only a light handwritten overlay.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "organize",
+    "angle": "checklist",
+    "headline": "Budget App Checklist: 5 Tests Before You Spend a Weekend on Setup",
+    "sub": "Each one you can't tick is a place where week six goes wrong.",
+    "items": [
+      "It answers one question you actually ask, such as what's safe to spend this month.",
+      "After two skipped weeks, its main number would still be roughly right.",
+      "It tells you when its number is old or built on missing information.",
+      "Nothing in it can put you behind: no day counters, no overdue categories.",
+      "You can restart from today's balance in minutes, without back-filling."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "why-budgeting-apps-stop-working-after-two-months"
+    },
+    "proof": [
+      "Each one you can't tick is a place where week six goes wrong.",
+      "It answers one question you actually ask, such as what's safe to spend this month.",
+      "After two skipped weeks, its main number would still be roughly right.",
+      "It tells you when its number is old or built on missing information.",
+      "Nothing in it can put you behind: no day counters, no overdue categories.",
+      "You can restart from today's balance in minutes, without back-filling."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "best budgeting method that actually works",
+    "board": "Safe to Spend and Budgeting",
+    "when": "evergreen; January, September",
+    "visual": "Checklist: five ruled lines with square tick boxes on a paper card, a phone lying face down beside it and a pencil; the fifth box left empty with a small dashed outline. Forest/paper palette, one pop on the pencil. No app UI drawn.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "organize",
+    "angle": "scenario",
+    "headline": "Why Budgeting Apps Stop Working: What Week Six Looks Like",
+    "sub": "The app was never wrong on purpose, and you didn't stop caring.",
+    "items": [
+      "You build 14 categories, each with a limit",
+      "In week three you miss six days",
+      "41 transactions waiting to be sorted",
+      "a dining category showing $86 left that you know is wrong",
+      "25 minutes you don't have"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "why-budgeting-apps-stop-working-after-two-months"
+    },
+    "proof": [
+      "The app was never wrong on purpose, and you didn't stop caring.",
+      "You build 14 categories, each with a limit",
+      "In week three you miss six days",
+      "41 transactions waiting to be sorted",
+      "a dining category showing $86 left that you know is wrong",
+      "25 minutes you don't have",
+      "This is an illustration, not a report of anyone's month"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "why budgeting apps fail",
+    "board": "Safe to Spend and Budgeting",
+    "when": "evergreen; January",
+    "visual": "Scenario strip of three small paper cards on a kitchen table, left to right: day 1 (14 tidy category tabs), week 3 (a stack of 41 slips), week 6 (a closed phone, a mug gone cold). Honest 'illustration' note in the corner. Drawn as paper props, not as an app screen.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "organize",
+    "angle": "quote-card",
+    "headline": "Why Budgets Fail: A Wrong Number Is Worse Than No Number",
+    "sub": "A figure built on gaps looks as sure of itself as one built on complete data.",
+    "items": [
+      "The first time you catch it being wrong, you discount all of it, including the parts that were right."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "why-budgeting-apps-stop-working-after-two-months"
+    },
+    "proof": [
+      "A figure built on gaps looks as sure of itself as one built on complete data.",
+      "The first time you catch it being wrong, you discount all of it, including the parts that were right."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "why do budgets fail",
+    "board": "Safe to Spend and Budgeting",
+    "when": "evergreen",
+    "visual": "Quote-card: the quoted sentence set large in Newsreader on a paper card with ruled lines, the words 'wrong' and 'right' underlined in the pop colour, a torn sticky note and a pencil at the edge. Quiet, text-led, no figures.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "organize",
+    "angle": "how-to-steps",
+    "headline": "How to Make a Monthly Budget for the First Time in About an Hour: 6 Steps",
+    "sub": "Open last month's bank and card statements first.",
+    "items": [
+      "Find your take-home pay.",
+      "List every bill with its due date.",
+      "Estimate the rest from real statements.",
+      "Put savings and debt payments in before the extras.",
+      "Subtract.",
+      "Pick one weekday for a check-in and put it in your calendar today."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-budget-for-beginners"
+    },
+    "proof": [
+      "Open last month's bank and card statements first.",
+      "How to build yours in about an hour",
+      "Find your take-home pay.",
+      "List every bill with its due date.",
+      "Estimate the rest from real statements.",
+      "Put savings and debt payments in before the extras.",
+      "Subtract.",
+      "Pick one weekday for a check-in and put it in your calendar today."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to make a monthly budget",
+    "board": "Safe to Spend and Budgeting",
+    "when": "evergreen; January, September",
+    "visual": "How-to-steps: six numbered steps on a ruled sheet, a calculator and a stack of paper statements beside it (kitchen-table prop), the step Subtract in the pop colour. No dollar figures on the pin.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "organize",
+    "angle": "scenario",
+    "headline": "Your Budget Is Below Zero: What to Check Before You Cut Anything",
+    "sub": "The same month adds up to $3,410 against $3,240 of pay. You're $170 short.",
+    "items": [
+      "Check the line you guessed",
+      "Change one bill first, because it repeats every month",
+      "Trim one flexible line after that, not all of them",
+      "If it's still short, the gap comes from income"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-budget-for-beginners"
+    },
+    "proof": [
+      "the same month adds up to $3,410 against $3,240 of pay. You're $170 short.",
+      "Before you cut anything, check the line you guessed.",
+      "Then change one bill first, because it repeats every month",
+      "Trim one flexible line after that, not all of them.",
+      "If it's still short, the gap comes from income"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "budget not enough money what to do",
+    "board": "Safe to Spend and Budgeting",
+    "when": "evergreen",
+    "visual": "Measure layout: two paper strips side by side on a desk, pay ($3,240) shorter than costs ($3,410) with the $170 gap in the pop colour, and four small numbered tags underneath for the four checks. A calculator corner prop. Figures are the guide's own example.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "organize",
+    "angle": "question",
+    "headline": "Should a Monthly Budget Come Out at Exactly Zero?",
+    "sub": "$97 is left over on purpose.",
+    "items": [
+      "A first budget that lands at exactly zero breaks the first time a grocery run comes in $30 high.",
+      "Savings sits above the extras, so it gets paid before the flexible money is spent."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-budget-for-beginners"
+    },
+    "proof": [
+      "$97 is left over on purpose: a first budget that lands at exactly zero breaks the first time a grocery run comes in $30 high.",
+      "Savings sits above the extras, so it gets paid before the flexible money is spent"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how much should be left over in a budget",
+    "board": "Safe to Spend and Budgeting",
+    "when": "evergreen",
+    "visual": "Measure layout: a small balance of paper strips, one pan holding a grocery receipt marked $30 high, the other a sheet with a thin cushion band labelled Left over; shown tipping on the zero-sheet side and steady on the cushion side. A receipt and pencil on the desk. Not a month-calendar and not a big single figure.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "organize",
+    "angle": "comparison",
+    "headline": "Budget Tracking You Can Keep Up: 4 Chores and a Lighter Version of Each",
+    "sub": "Every method has some upkeep. The aim is a weekly amount you can do on a bad week.",
+    "items": [
+      "Sort every transaction into a category / Type in a few numbers you can check against your bank",
+      "Keep a limit for each category / Watch one figure for the whole month",
+      "Keep the data complete / Show how old the figure is",
+      "Show progress with counters and badges / Show only what changed"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "why-budgeting-apps-stop-working-after-two-months"
+    },
+    "proof": [
+      "Every method has some upkeep. The aim is a weekly amount you can do on a bad week.",
+      "Sort every transaction into a category",
+      "Type in a few numbers you can check against your bank",
+      "Keep a limit for each category",
+      "Watch one figure for the whole month",
+      "Keep the data complete",
+      "Show how old the figure is",
+      "Show progress with counters and badges",
+      "Show only what changed"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to keep budgeting simple",
+    "board": "Safe to Spend and Budgeting",
+    "when": "evergreen",
+    "visual": "Comparison: a two-column ruled sheet, 'The tool asks you to' on the left and 'A lighter version' on the right, four rows joined by pencil arrows. Forest header, paper body, one pop on the lighter column. No app UI.",
+    "flags": [],
+    "reserve": true
+  },
+  {
+    "slice": "organize",
+    "angle": "checklist",
+    "headline": "Weekly Budget Check-In: Four Questions in Five Minutes",
+    "sub": "Update the line for any yes. If all four are no, you're finished for the week.",
+    "items": [
+      "Has any income come in or changed?",
+      "Has a bill changed or been paid?",
+      "Is there spending you haven't added?",
+      "Does your savings or cushion need adjusting?"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-budget-for-beginners"
+    },
+    "proof": [
+      "Update the line for any yes. If all four are no, you're finished for the week.",
+      "Has any income come in or changed?",
+      "Has a bill changed or been paid?",
+      "Is there spending you haven't added?",
+      "Does your savings or cushion need adjusting?",
+      "The five minute weekly check-in"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "weekly budget check in",
+    "board": "Safe to Spend and Budgeting",
+    "when": "evergreen",
+    "visual": "Checklist: four question lines each with a Yes/No pair of small boxes on an index card pinned to a calendar-free wall by one sticky tab; a pencil and a mug. Reads as a routine card, not a to-do wall.",
+    "flags": [],
+    "reserve": true
+  }
+]

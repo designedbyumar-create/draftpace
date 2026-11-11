@@ -1,0 +1,554 @@
+[
+  {
+    "slice": "partners",
+    "angle": "comparison",
+    "headline": "Equal, By Income or By Item: 3 Ways to Split Bills With a Partner",
+    "sub": "Each method assumes something different. Pick the one you can both live with.",
+    "items": [
+      "Equal: every shared bill is halved. Suits incomes that are close.",
+      "By income: each pays a percentage matching earnings. Needs both to share income figures.",
+      "By item: each person owns certain bills. Utilities swing while rent stays put, so the totals drift apart."
+    ],
+    "link": { "kind": "guide", "slug": "split-bills-with-a-partner-or-roommate" },
+    "proof": [
+      "Every shared bill is halved",
+      "Incomes that are close",
+      "The lower earner pays a bigger share of their pay",
+      "Each pays a percentage matching earnings",
+      "Needs both to share income figures",
+      "Each person owns certain bills",
+      "Utilities swing while rent stays put, so the totals drift apart"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to split bills with a partner",
+    "board": "Splitting Bills",
+    "when": "evergreen; peaks at moves and lease signings (May to September) and January",
+    "visual": "Side-by-side archetype: three tall paper columns on a desk (Equal, By income, By item), each headed by a small bar showing how the same rent is divided (a 50/50 bar, a two-thirds/one-third bar, two separate bill tags), the 'Watch for' line in small print at the foot of each. A pencil lies across the corner; one warm pop on the 'By income' column.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "partners",
+    "angle": "template-preview",
+    "headline": "Split Bills by Income: $1,800 Rent Becomes $1,200 and $600",
+    "sub": "Example only. Take-home pay is $4,200 a month for you and $2,100 for them, which is 67 and 33 percent.",
+    "items": [
+      "Rent $1,800: you $1,200.00, them $600.00",
+      "Electric $110: you $73.33, them $36.67",
+      "Internet $60: you $40.00, them $20.00",
+      "Renters insurance $22: you $14.67, them $7.33",
+      "Total $1,992: you $1,328.00, them $664.00"
+    ],
+    "link": { "kind": "guide", "slug": "split-bills-with-a-partner-or-roommate" },
+    "proof": [
+      "At $4,200 and $2,100 a month, that's two thirds and one third, so an $1,800 rent is $1,200 and $600.",
+      "Take-home pay is $4,200 a month for you and $2,100 for them, which is 67 and 33 percent.",
+      "$73.33",
+      "$36.67",
+      "$14.67",
+      "$7.33",
+      "$1,328.00",
+      "$664.00"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "split bills by income calculator",
+    "board": "Splitting Bills",
+    "when": "evergreen",
+    "visual": "Template-preview archetype: one register page tilted on a desk with real column headers (Bill, Total, You two thirds, Them one third), the four rows filled in pencil and the total row ruled off; the rent row's $1,200.00 and $600.00 carry the pop colour, 'Example only' stamped in the corner. A thin 67/33 bar sits above the table.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slice": "partners",
+    "angle": "how-to-steps",
+    "headline": "How to Split Bills Based on Income: 5 Steps With the Math",
+    "sub": "With three or more people, add all of them.",
+    "items": [
+      "Pick one basis for both people, take-home or gross.",
+      "Add the monthly incomes.",
+      "Divide each income by the total: $2,100 divided by $6,300 is 0.33.",
+      "Multiply each share by the total of the shared bills.",
+      "Round to percentages you can both remember, such as 67 and 33."
+    ],
+    "link": { "kind": "guide", "slug": "split-bills-with-a-partner-or-roommate" },
+    "proof": [
+      "Pick one basis for both people, take-home or gross.",
+      "Add the monthly incomes. With three or more people, add all of them.",
+      "Divide each income by the total: $2,100 divided by $6,300 is 0.33.",
+      "Multiply each share by the total of the shared bills.",
+      "Round to percentages you can both remember, such as 67 and 33"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to split bills based on income",
+    "board": "Splitting Bills",
+    "when": "evergreen",
+    "visual": "How-to-steps archetype: five numbered ruled-paper steps stacked down a notebook page, each step with a tiny hand-drawn calculator or percent mark; the 0.33 line is highlighted in the pop colour. A coffee mug and a calculator sit at the page edge.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slice": "partners",
+    "angle": "scenario",
+    "headline": "How to Split Rent by Room Size: A $2,700 Three Bedroom Example",
+    "sub": "The final number is whatever the group agrees to.",
+    "items": [
+      "Rooms of 200, 150 and 150 square feet, 500 in all",
+      "40, 30 and 30 percent",
+      "$1,080, $810 and $810",
+      "A private bathroom or a parking space is a reason to move one person's share up"
+    ],
+    "link": { "kind": "guide", "slug": "split-bills-with-a-partner-or-roommate" },
+    "proof": [
+      "Say a three bedroom rents for $2,700 and the rooms are 200, 150 and 150 square feet, 500 in all. Those are 40, 30 and 30 percent, so $1,080, $810 and $810.",
+      "A private bathroom or a parking space is a reason to move one person's share up, and the final number is whatever the group agrees to."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to split rent with roommates different room sizes",
+    "board": "Splitting Bills",
+    "when": "evergreen; peaks May to September (lease season)",
+    "visual": "Side-by-side archetype: a simple top-down floor plan drawn on paper in forest ink, three bedrooms sized to 200/150/150, each labelled with its share ($1,080, $810, $810) on a small tag; sticky notes with 'bathroom?' and 'parking?' beside the largest room. Pop colour on the 40 percent room.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slice": "partners",
+    "angle": "quote-card",
+    "headline": "How to Ask Your Partner to Split Bills: What to Say, Word for Word",
+    "sub": "Say it before the first bill is due.",
+    "items": [
+      "Can we agree how we split the shared bills? I'd like to write it down once so neither of us has to remember it.",
+      "Would a split by income work? We add up our take-home pay, and each of us pays that percentage of every shared bill.",
+      "We could split it equal, or each take certain bills. Which of those feels better to you?",
+      "Can we run the numbers again? My pay changed, so the percentages have."
+    ],
+    "link": { "kind": "guide", "slug": "split-bills-with-a-partner-or-roommate" },
+    "proof": [
+      "Can we agree how we split the shared bills? I'd like to write it down once so neither of us has to remember it.",
+      "Would a split by income work? We add up our take-home pay, and each of us pays that percentage of every shared bill.",
+      "We could split it equal, or each take certain bills. Which of those feels better to you?",
+      "Can we run the numbers again? My pay changed, so the percentages have.",
+      "Pick the line that fits, and say it before the first bill is due."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to talk to your partner about splitting bills",
+    "board": "Splitting Bills",
+    "when": "evergreen; peaks at moving in together (May to September) and January",
+    "visual": "Quote-card archetype: the opening line set large in Newsreader on a paper card as the hero quote, with the three other lines on small tabbed index cards fanned beneath it, each tab naming its situation (If incomes differ a lot, If they'd rather not share, If it stops feeling fair). Two coffee mugs at the corner.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "partners",
+    "angle": "before-after",
+    "headline": "50/50 vs By Income: What Each Split Takes From Each Paycheck",
+    "sub": "Example only: take-home pay of $4,200 and $2,100 a month, four shared bills.",
+    "items": [
+      "Under 50/50 each of you would pay $996.",
+      "That is 24 percent of the higher take-home pay and 47 percent of the lower one.",
+      "Under the income split, both pay about 32 percent of their own pay toward shared bills."
+    ],
+    "link": { "kind": "guide", "slug": "split-bills-with-a-partner-or-roommate" },
+    "proof": [
+      "Under 50/50 each of you would pay $996. That is 24 percent of the higher take-home pay and 47 percent of the lower one.",
+      "Under the income split, both pay about 32 percent of their own pay toward shared bills.",
+      "Take-home pay is $4,200 a month for you and $2,100 for them"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "50/50 vs income based bill split",
+    "board": "Splitting Bills",
+    "when": "evergreen",
+    "visual": "Before/after archetype: two panels divided by a ruled line. Left 'Equal': two paycheck strips of different lengths, each with the same $996 chunk cut out, the shorter strip nearly half gone (47 percent, in the pop colour). Right 'By income': the same two strips with chunks cut in proportion, both showing about 32 percent.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slice": "partners",
+    "angle": "checklist",
+    "headline": "Splitting Bills Checklist: 7 Things to Agree Before the First Payment",
+    "sub": null,
+    "items": [
+      "Which bills count as shared, written as a list.",
+      "Which method: equal, income or room size, and net or gross if by income.",
+      "Each person's share as a percentage.",
+      "The settling day and how.",
+      "What triggers a re-run: a raise, a job loss, a move.",
+      "How one-off costs work.",
+      "Where the record lives, and who can see it."
+    ],
+    "link": { "kind": "guide", "slug": "split-bills-with-a-partner-or-roommate" },
+    "proof": [
+      "Which bills count as shared, written as a list.",
+      "Which method: equal, income or room size, and net or gross if by income.",
+      "Each person's share as a percentage.",
+      "The settling day and how",
+      "What triggers a re-run: a raise, a job loss, a move.",
+      "How one-off costs work",
+      "Where the record lives, and who can see it."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "things to agree on before splitting bills with a partner",
+    "board": "Splitting Bills",
+    "when": "evergreen; peaks May to September and January",
+    "visual": "Checklist archetype: a clipboard on a kitchen table holding a ruled sheet with seven checkbox lines, three ticked in pencil and four open, a pen clipped to the top. Pop colour on one tick only.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "partners",
+    "angle": "scenario",
+    "headline": "Two Identical Grocery Rows in Your Bank CSV: Two Trips or One Double Download?",
+    "sub": "Only your bank's own activity page can tell you which.",
+    "items": [
+      "09/03/2026 | GROCERY MART 114 | -84.20",
+      "09/03/2026 | GROCERY MART 114 | -84.20",
+      "09/05/2026 | PAYROLL ACME INC | 1,612.40",
+      "09/13/2026 | TRANSFER TO SAVINGS | -200.00"
+    ],
+    "link": { "kind": "guide", "slug": "bank-statement-csv-to-budget" },
+    "proof": [
+      "The two grocery rows are identical, which is either two real trips or one charge downloaded twice, and only your bank's own activity page can tell you which.",
+      "GROCERY MART 114",
+      "PAYROLL ACME INC",
+      "TRANSFER TO SAVINGS",
+      "-84.20",
+      "1,612.40"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "bank statement csv duplicate transactions",
+    "board": "Organize Your Finances",
+    "when": "evergreen; peaks January and April",
+    "visual": "Intake archetype: the four CSV lines in monospace text-editor style on a paper strip, the two identical grocery rows bracketed together with an amber 'same row?' flag (amber is a real duplicate flag), a hand-drawn question mark; the transfer row has a faint 'not spending' note. A small laptop corner with a plain text editor window sits behind.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slice": "partners",
+    "angle": "question",
+    "headline": "Why Do Bank CSV Dates Look Wrong in Excel? And How to Fix It",
+    "sub": "Read the date order in a text editor first.",
+    "items": [
+      "Excel opens a CSV with its default formats",
+      "An account reference like 0042 becomes 42",
+      "03/05 can flip between March 5 and May 3",
+      "A date like 09/13 proves the order is month first",
+      "Import it with From Text/CSV and set the date column yourself"
+    ],
+    "link": { "kind": "guide", "slug": "bank-statement-csv-to-budget" },
+    "proof": [
+      "Excel opens a CSV with its default formats, so a column written month first can be read as day first or turned into a number.",
+      "An account reference like 0042 becomes 42, and 03/05 can flip between March 5 and May 3.",
+      "A date like 09/13 proves the order is month first.",
+      "Import it with From Text/CSV and set the date column yourself, or read the date order in a text editor first."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "excel csv dates wrong bank statement",
+    "board": "Organize Your Finances",
+    "when": "evergreen; peaks January and April",
+    "visual": "Question archetype: a large question headline over a split card. Left, a spreadsheet cell reading 03/05 with two arrows to 'March 5' and 'May 3'; right, the same file in a plain text editor showing 09/13/2026 with a tick. Pop colour on the text-editor tick.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slice": "partners",
+    "angle": "comparison",
+    "headline": "Bank CSV Columns: One Amount Column or Debit and Credit?",
+    "sub": "Banks pick one of these. Knowing which one you have is the whole mapping.",
+    "items": [
+      "One amount column: Groceries -84.20, paycheck 1612.40. Tell the importer: Spending is negative.",
+      "Debit and credit: Debit 84.20 and credit blank, then the reverse. Tell the importer: Map both columns."
+    ],
+    "link": { "kind": "guide", "slug": "bank-statement-csv-to-budget" },
+    "proof": [
+      "Banks pick one of these. Knowing which one you have is the whole mapping.",
+      "One amount column",
+      "Groceries -84.20, paycheck 1612.40",
+      "Spending is negative",
+      "Debit and credit",
+      "Debit 84.20 and credit blank, then the reverse",
+      "Map both columns"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "bank csv debit credit columns import",
+    "board": "Organize Your Finances",
+    "when": "evergreen; peaks January and April",
+    "visual": "Side-by-side archetype: two small table cards on a desk. Left card 'One amount column' (Date, Description, Amount with -84.20 and 1612.40); right card 'Debit and credit' (Date, Description, Debit, Credit with 84.20 under Debit and a blank Credit). A pencil arrow under each pointing to its one-line instruction.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slice": "partners",
+    "angle": "how-to-steps",
+    "headline": "How to Download a Bank Statement as a CSV File, Step by Step",
+    "sub": "Button names and columns differ by bank.",
+    "items": [
+      "Sign in to your bank's website and open the account's activity page",
+      "Look for a Download or Export button",
+      "Pick CSV and a date range",
+      "Download whole calendar months",
+      "Open a copy in a text editor, not a spreadsheet",
+      "Check four things: a header row, how spending is signed, one amount column or two, and which way the dates run"
+    ],
+    "link": { "kind": "guide", "slug": "bank-statement-csv-to-budget" },
+    "proof": [
+      "Sign in to your bank's website, open the account's activity page and look for a Download or Export button. Pick CSV and a date range.",
+      "Button names and columns differ by bank.",
+      "Download whole calendar months.",
+      "Open a copy in a text editor, not a spreadsheet.",
+      "check four things: a header row, how spending is signed, one amount column or two, and which way the dates run."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to download bank statement as csv",
+    "board": "Organize Your Finances",
+    "when": "evergreen; peaks January and April",
+    "visual": "How-to-steps archetype: six numbered steps down a ruled page with a small laptop sketch at the top showing a 'Download' button and a file icon labelled CSV; the step about the text editor carries the pop colour. Props: a mug and a sticky note reading a month name.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "partners",
+    "angle": "infographic",
+    "headline": "Bank Statement CSV: What a List of Past Transactions Cannot Tell You",
+    "sub": "A file can't tell you what's still due, because it only lists what has already cleared.",
+    "items": [
+      "A transaction list tells you what happened.",
+      "It doesn't tell you what's coming: the bill due Friday, the subscription renewing next week or the balance you need to keep."
+    ],
+    "link": { "kind": "guide", "slug": "bank-statement-csv-to-budget" },
+    "proof": [
+      "A transaction list tells you what happened. It doesn't tell you what's coming: the bill due Friday, the subscription renewing next week or the balance you need to keep.",
+      "A file can't tell you what's still due, because it only lists what has already cleared."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what a bank statement csv does not show",
+    "board": "Safe to Spend and Budgeting",
+    "when": "evergreen; peaks January",
+    "visual": "Measure archetype: a long strip of paper with a vertical ruled line labelled 'today'. Left of the line, solid CSV rows labelled 'What happened'; right of the line, three dashed empty outlines labelled 'The bill due Friday', 'The subscription renewing next week', 'The balance you need to keep'. Dashed outlines are honest gaps, no figures anywhere.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "partners",
+    "angle": "checklist",
+    "headline": "Importing a Bank CSV: 5 Ways a Clean File Still Goes Wrong",
+    "sub": null,
+    "items": [
+      "Overlap. Two downloads that share a few days put those rows in twice.",
+      "Transfers. The $200 to savings above is not spending.",
+      "Pending charges. Some banks list a pending charge and then list it again when it posts",
+      "Refunds. A refund is a positive row inside your spending.",
+      "Rows that break. A description with a stray comma or quote can shift the columns"
+    ],
+    "link": { "kind": "guide", "slug": "bank-statement-csv-to-budget" },
+    "proof": [
+      "Overlap. Two downloads that share a few days put those rows in twice.",
+      "Transfers. The $200 to savings above is not spending.",
+      "Pending charges. Some banks list a pending charge and then list it again when it posts",
+      "Refunds. A refund is a positive row inside your spending.",
+      "Rows that break. A description with a stray comma or quote can shift the columns"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "bank csv import problems duplicates transfers",
+    "board": "Organize Your Finances",
+    "when": "evergreen; peaks January and April",
+    "visual": "Checklist archetype: five small rows of CSV with a margin note beside each (a 'twice' bracket, a transfer arrow between two accounts, a pending clock, a plus-signed refund row, a row with a stray comma circled). Amber only on the overlap duplicate.",
+    "flags": [],
+    "reserve": true
+  },
+  {
+    "slice": "partners",
+    "angle": "scenario",
+    "headline": "Between Jobs: $2,150 in the Bank, $336 Left Before the First New Paycheck",
+    "sub": "Nothing here is a mistake. It's a normal month with a longer gap in it.",
+    "items": [
+      "Balance after your last paycheck, the 10th: $2,150",
+      "Car insurance - $118, Phone - $55, Electric - $96",
+      "Rent - $1,450, Internet - $60, Card minimum - $35",
+      "Left before the first new paycheck: $336, before groceries, fuel or health coverage"
+    ],
+    "link": { "kind": "guide", "slug": "sort-out-your-finances-after-a-life-change" },
+    "proof": [
+      "Your bank balance after the last paycheck is $2,150, and every autopay carries on as if nothing happened.",
+      "The balance looked like plenty on the 10th. By the time the new pay arrives it's $336",
+      "Nothing here is a mistake. It's a normal month with a longer gap in it",
+      "Before groceries, fuel or health coverage",
+      "Card minimum"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "finances between jobs gap in income",
+    "board": "Money After a Life Change",
+    "when": "evergreen; peaks January (new jobs) and September",
+    "visual": "Measure archetype: a vertical paper ledger strip running from the 10th down to the first new paycheck, starting at $2,150 and with each autopay (car insurance, phone, electric, rent, internet, card minimum) as a small tag that shaves the strip shorter, ending in a narrow $336 stub marked 'before groceries, fuel or health coverage'. Pop colour on the $336 stub only.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slice": "partners",
+    "angle": "how-to-steps",
+    "headline": "After a Job Change, Move or Divorce: 6 Steps to Sort Out Your Finances",
+    "sub": "The same order each time, written for the US. Not legal, tax or financial advice.",
+    "items": [
+      "Confirm the real dates for income.",
+      "List what leaves your accounts and from which one.",
+      "Fix whatever points at the wrong place.",
+      "Deal with what the old situation left behind",
+      "Update your tax withholding.",
+      "Redo your safe-to-spend number."
+    ],
+    "link": { "kind": "guide", "slug": "sort-out-your-finances-after-a-life-change" },
+    "proof": [
+      "do six things in order",
+      "Confirm the real dates for income.",
+      "List what leaves your accounts and from which one.",
+      "Fix whatever points at the wrong place.",
+      "Deal with what the old situation left behind",
+      "Update your tax withholding.",
+      "Redo your safe-to-spend number.",
+      "it isn't legal, tax or financial advice"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to do with your finances after a job change",
+    "board": "Money After a Life Change",
+    "when": "evergreen; peaks January",
+    "visual": "How-to-steps archetype: six numbered index tabs fanned down the edge of an open binder, each tab carrying its step in short form; the open page shows a cut of the step list in ruled lines. One pop-colour tab (step 6). Props: a sticky note and a pen.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "partners",
+    "angle": "comparison",
+    "headline": "New Job, Move or Separation: What Each One Touches in Your Money",
+    "sub": "A starting list, not a full one. Your own accounts decide what belongs here.",
+    "items": [
+      "New job: give HR your direct deposit details. Easy to miss: a first check later than you expected.",
+      "Move: send the address to your bank, card issuers, insurers, employer and the IRS. Easy to miss: annual statements and renewals that still go to the old address.",
+      "Separation: list every joint account, card and loan. Easy to miss: a joint card that stays open, because both holders remain responsible for the whole balance."
+    ],
+    "link": { "kind": "guide", "slug": "sort-out-your-finances-after-a-life-change" },
+    "proof": [
+      "A starting list, not a full one. Your own accounts decide what belongs here.",
+      "Give HR your direct deposit details.",
+      "A first check later than you expected, and health coverage that ends on a date you didn't note",
+      "Send the address to your bank, card issuers, insurers, employer and the IRS.",
+      "Annual statements and renewals that still go to the old address",
+      "List every joint account, card and loan.",
+      "A joint card that stays open, because both holders remain responsible for the whole balance"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "finances after moving or divorce checklist",
+    "board": "Money After a Life Change",
+    "when": "evergreen; peaks January and May to September",
+    "visual": "Side-by-side archetype: three paper columns (New job, Move, Separation) each with a short 'first week' line and a bottom strip headed 'Easy to miss' in the pop colour. A house key, a pen and a stack of envelopes sit on the desk edge.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "partners",
+    "angle": "mockup-printable",
+    "headline": "Monthly Money Review Page: Start the Year With the January Review",
+    "sub": "Start by checking your current Draftpace overview. Then note what changed this month, area by area.",
+    "items": [
+      "January: review",
+      "Accounts and income",
+      "Bills and subscriptions",
+      "Debt and savings",
+      "January: decisions and updates"
+    ],
+    "link": { "kind": "shop", "slug": "personal-finance-companion" },
+    "proof": [
+      "January: review",
+      "January: decisions and updates",
+      "Start by checking your current Draftpace overview. Then note what changed this month, area by area.",
+      "Accounts and income",
+      "Bills and subscriptions",
+      "Debt and savings"
+    ],
+    "proofFile": "book",
+    "proofExtra": [
+      { "file": "src/content/guides.ts", "proof": ["twelve monthly review spreads"] }
+    ],
+    "query": "monthly financial review printable january",
+    "board": "Financial Binder and Printables",
+    "when": "December to January (fresh start, budget binder season)",
+    "visual": "Mockup-printable archetype: the real workbook pages 'January: review' (page 54) and 'January: decisions and updates' (page 55) side by side as a spread, tilted on a desk next to an open three-ring binder, a pencil and a coffee mug; headline over the top and the product line (no price) at the foot. Pages are the real workbook pages from book.pdf, rendered as images.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "partners",
+    "angle": "infographic",
+    "headline": "Holiday Gift Fund: $450 in December Is $37.50 a Month",
+    "sub": "Take the cost, subtract what you've saved, and divide by the number of whole months until the date.",
+    "items": [
+      "Holiday gifts, $450",
+      "Lands in December",
+      "$37.50 a month"
+    ],
+    "link": { "kind": "guide", "slug": "sinking-funds-explained" },
+    "proof": [
+      "Holiday gifts, $450",
+      "December",
+      "$37.50",
+      "Take the cost, subtract what you've saved, and divide by the number of whole months until the date."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "holiday gift savings fund how much to save per month",
+    "board": "Savings and Sinking Funds",
+    "when": "August to November (peaks September to November), and again next year",
+    "visual": "Measure archetype: one glass jar on a kitchen table labelled 'Holiday gifts, $450', with a gift tag reading December tied to its neck and a small card beside it showing the $37.50 a month sum; a few wrapped-paper scraps and a ribbon as the prop. Pop colour on the tag only.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slice": "partners",
+    "angle": "checklist",
+    "headline": "Year-End Financial Check: 5 Binder Steps to Finish Before January",
+    "sub": "Fifteen minutes on the same day each month is enough.",
+    "items": [
+      "Check each balance against a statement and update the Checked date.",
+      "Change any label that has aged from Confirmed to Stale.",
+      "Move anything new into the right section: a bill, a subscription, a debt.",
+      "Write one line about a decision you made and why.",
+      "Put the binder back somewhere private."
+    ],
+    "link": { "kind": "guide", "slug": "financial-binder-what-to-include" },
+    "proof": [
+      "Fifteen minutes on the same day each month is enough.",
+      "Check each balance against a statement and update the Checked date.",
+      "Change any label that has aged from Confirmed to Stale.",
+      "Move anything new into the right section: a bill, a subscription, a debt.",
+      "Write one line about a decision you made and why.",
+      "Put the binder back somewhere private."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "year end financial review checklist",
+    "board": "Financial Binder and Printables",
+    "when": "November to January (year-end check, budget binder season)",
+    "visual": "Binder-tabs archetype: an open three-ring binder with seven numbered index tabs down the edge (01 Accounts through 07 A written summary) and the five-line checklist on the open page, two boxes ticked in pencil; Confirmed and Stale labels shown as small chips beside a sample accounts row. A pen and a coffee mug at the edge.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "partners",
+    "angle": "infographic",
+    "headline": "Holiday Card Balance: Where a $90 Payment Goes on $3,000 at 24 Percent",
+    "sub": "Example only: one card with a balance you're carrying, in US dollars.",
+    "items": [
+      "Balance $3,000 at 24 percent APR",
+      "First month adds $60 of interest",
+      "Of a $90 payment, $60 covers the interest and only $30 reduces what you owe"
+    ],
+    "link": { "kind": "guide", "slug": "credit-card-minimum-payments-how-long" },
+    "proof": [
+      "so the first month adds $60 of interest. If your payment is $90, then $60 of it covers that interest and only $30 reduces what you owe.",
+      "most of a small payment is spent standing still",
+      "Say the balance is $3,000 and the rate is 24 percent APR."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "credit card payment after holidays how much goes to interest",
+    "board": "Debt Payoff",
+    "when": "December to February (the January card bill)",
+    "visual": "Measure archetype: a single $90 bar on a paper statement strip split into a $60 'interest' block and a $30 'reduces what you owe' block, a card-statement fragment above it reading $3,000 and 24 percent APR; a receipt and a calculator at the edge. Pop colour on the $30 block.",
+    "flags": ["example-tag"],
+    "reserve": true
+  }
+]

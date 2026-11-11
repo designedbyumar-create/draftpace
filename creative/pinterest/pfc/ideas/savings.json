@@ -1,0 +1,615 @@
+[
+  {
+    "slice": "savings",
+    "angle": "how-to-steps",
+    "headline": "How to Start an Emergency Fund: Five Steps to Your First $1,000",
+    "sub": "A small amount you keep up beats a big one you drop after six weeks.",
+    "items": [
+      "Open a separate savings account at an FDIC-insured bank.",
+      "Choose an amount from the table.",
+      "Automate it.",
+      "Find the first chunk.",
+      "Check your tightest day before the first transfer"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-build-a-first-1000-emergency-fund"
+    },
+    "proof": [
+      "A small amount you keep up beats a big one you drop after six weeks.",
+      "Open a separate savings account at an FDIC-insured bank.",
+      "Choose an amount from the table.",
+      "Automate it.",
+      "Find the first chunk.",
+      "Check your tightest day before the first transfer"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to start an emergency fund",
+    "board": "Savings and Sinking Funds",
+    "when": "evergreen; peaks January and February to April (new year and tax refund season)",
+    "visual": "how-to-steps / one-card: five numbered index-tab cards fanned down a forest panel, each with the real step in short; the first card carries a small savings-account passbook prop and a pencil. Paper-on-wash desk, one butter-yellow pop on the step number 1.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "savings",
+    "angle": "infographic",
+    "headline": "Emergency Fund Tracker: How Long $1,000 Takes at Each Amount",
+    "sub": "How long $1,000 takes at different amounts",
+    "items": [
+      "$25",
+      "Every week",
+      "40 weeks",
+      "$50",
+      "20 weeks",
+      "$100",
+      "Every two weeks",
+      "20 weeks (10 paychecks)",
+      "$200",
+      "Every month",
+      "5 months"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-build-a-first-1000-emergency-fund"
+    },
+    "proof": [
+      "How long $1,000 takes at different amounts",
+      "Time to $1,000",
+      "40 weeks",
+      "20 weeks (10 paychecks)",
+      "Every two weeks",
+      "5 months"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "emergency fund tracker $1000",
+    "board": "Savings and Sinking Funds",
+    "when": "evergreen; peaks January and February to April (new year and tax refund season)",
+    "visual": "measure archetype: a ladder of four horizontal bars on ruled paper, longest for $25 every week (40 weeks) down to $200 every month (5 months), each with its amount and pace written at the left; the $50 every week bar (20 weeks) gets the one warm pop. A pencil lies across the corner.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "savings",
+    "angle": "scenario",
+    "headline": "Saving $1,000 Fast: A Tax Refund and One Sale Start You at $590",
+    "sub": "Same $1,000, about a quarter of a year, and most of it never came out of your monthly budget.",
+    "items": [
+      "$410 tax refund",
+      "sell a bike for $180",
+      "$590 on day one",
+      "At $35 a week, the last $410 takes 12 weeks"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-build-a-first-1000-emergency-fund"
+    },
+    "proof": [
+      "Say you get a $410 tax refund and sell a bike for $180. That's $590 on day one. At $35 a week, the last $410 takes 12 weeks. Same $1,000, about a quarter of a year, and most of it never came out of your monthly budget."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to save $1000 fast",
+    "board": "Savings and Sinking Funds",
+    "when": "evergreen; peaks January and February to April (new year and tax refund season)",
+    "visual": "scenario on a kitchen table: a tax-refund notice card and a bike price tag sit left, an arrow into a jar-style progress bar already at $590 of $1,000 with the last $410 shown as 12 small weekly ticks. Props: coffee mug, calculator.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "savings",
+    "angle": "question",
+    "headline": "Is $1,000 Enough for an Emergency Fund? What a First Cushion Covers",
+    "sub": "Treat $1,000 as the first step, then build toward one month of bills and then three.",
+    "items": [
+      "It covers small surprises such as a car repair, a vet visit or a broken phone.",
+      "It won't cover a job loss or a large medical bill"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-build-a-first-1000-emergency-fund"
+    },
+    "proof": [
+      "Is $1,000 enough for an emergency fund?",
+      "It covers small surprises such as a car repair, a vet visit or a broken phone.",
+      "It won't cover a job loss or a large medical bill",
+      "Treat $1,000 as the first step, then build toward one month of bills and then three."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "is $1000 enough for an emergency fund",
+    "board": "Savings and Sinking Funds",
+    "when": "evergreen; peaks January and February to April (new year and tax refund season)",
+    "visual": "question card: the question set large in serif on paper; below it a two-column ruled split, left 'covers' with a car repair, vet visit and broken phone as plain line drawings, right 'won't cover' with a job loss and a large medical bill, a dashed outline around the right side to show the limit.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "savings",
+    "angle": "comparison",
+    "headline": "Sinking Fund vs Emergency Fund: Which One Pays This Bill?",
+    "sub": "A bill you can see coming belongs in a sinking fund, so the cushion stays whole.",
+    "items": [
+      "A known cost you can name",
+      "An unplanned bill or lost pay",
+      "Known or roughly known",
+      "Unknown",
+      "Cost divided by months",
+      "A cushion you choose",
+      "When the bill lands, then it restarts",
+      "Only for surprises, then refill it"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "sinking-funds-explained"
+    },
+    "proof": [
+      "A bill you can see coming belongs in a sinking fund, so the cushion stays whole.",
+      "A known cost you can name",
+      "An unplanned bill or lost pay",
+      "Known or roughly known",
+      "Cost divided by months",
+      "A cushion you choose",
+      "When the bill lands, then it restarts",
+      "Only for surprises, then refill it"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "sinking fund vs emergency fund",
+    "board": "Savings and Sinking Funds",
+    "when": "evergreen",
+    "visual": "side-by-side: two labelled jars on a desk, 'Sinking fund' and 'Emergency fund', each with four ruled rows (Cost, Date, Size, When it is used) filled with the guide's own table cells; a sticky note between them. Forest and soft panels, one warm pop on the word 'Unknown'.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "savings",
+    "angle": "before-after",
+    "headline": "Sinking Fund Math: $1,566 of Yearly Costs Becomes $175.50 a Month",
+    "sub": "Add the column and you have a number to move each month.",
+    "items": [
+      "Car insurance, $540 per six months",
+      "Car registration, $120",
+      "Holiday gifts, $450",
+      "Annual subscription, $96",
+      "Dental and vision, $360 a year",
+      "$175.50",
+      "$1,566 over a year"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "sinking-funds-explained"
+    },
+    "proof": [
+      "Add the column and you have a number to move each month.",
+      "The five costs total $1,566 over a year, which is why they feel like ambushes when they land on one card in one month.",
+      "Car insurance, $540 per six months",
+      "Car registration, $120",
+      "Holiday gifts, $450",
+      "Annual subscription, $96",
+      "Dental and vision, $360 a year",
+      "$175.50"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "sinking funds categories examples",
+    "board": "Savings and Sinking Funds",
+    "when": "evergreen; peaks July to September (before holiday gifts)",
+    "visual": "before-after: top half five bill slips piling onto one card labelled $1,566 over a year; bottom half the same five costs as five small ruled rows ending in one total, $175.50. Receipts and a card as props, one warm pop on the total.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "savings",
+    "angle": "how-to-steps",
+    "headline": "Sinking Fund Calculator by Hand: $600 by December Is $112.50 a Month",
+    "sub": "Take the cost, subtract what you've saved, and divide by the number of whole months until the date.",
+    "items": [
+      "Need $600 by December",
+      "have $150",
+      "four months to go",
+      "$112.50 a month"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "sinking-funds-explained"
+    },
+    "proof": [
+      "Need $600 by December, have $150, four months to go: $112.50 a month.",
+      "Take the cost, subtract what you've saved, and divide by the number of whole months until the date.",
+      "subtract what you've already saved from the cost, then divide by the whole months left"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to calculate a sinking fund",
+    "board": "Savings and Sinking Funds",
+    "when": "evergreen; peaks September to November (saving toward December)",
+    "visual": "one-card: a large worksheet-style card showing the sum as four stacked ruled lines (cost $600, saved $150, four months, $112.50 a month), a calculator and pencil beside it, a small December calendar leaf tag. The $112.50 gets the one warm pop.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "savings",
+    "angle": "mockup-printable",
+    "headline": "Sinking Funds Worksheet: A Printable Page for Costs You Can See Coming",
+    "sub": "Use this for costs you can see coming, even if they are not monthly.",
+    "items": [
+      "Future cost",
+      "Due month or date",
+      "Target",
+      "Saved snapshot",
+      "Funding source",
+      "Next step"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "sinking-funds-explained"
+    },
+    "proof": [
+      "The printed workbook has a sinking funds worksheet with columns for the future cost, due date, target, saved so far, where it's funded from and next step."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "sinking funds worksheet printable",
+    "board": "Savings and Sinking Funds",
+    "when": "evergreen; peaks January and September to November",
+    "visual": "mockup-printable: the REAL workbook page 'Sinking funds worksheet' (page 42, section 07 Savings goals and sinking funds) tilted on a desk beside a closed binder and pencil, its real column headers visible; two pencilled example rows from the guide (Car registration, March, $120) flagged as example. Headline in a forest band above.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "proofExtra": [
+      {
+        "file": "book",
+        "proof": [
+          "Sinking funds worksheet",
+          "Use this for costs you can see coming, even if they are not monthly.",
+          "Future cost Due month or date Target Saved snapshot Funding source Next step"
+        ]
+      }
+    ]
+  },
+  {
+    "slice": "savings",
+    "angle": "mockup-app",
+    "headline": "Emergency Fund Tracker App: Set a Target, Type What You Have Saved",
+    "sub": "Progress is what you type: it doesn't connect to your bank or move money, and it flags a goal that has no target date.",
+    "items": [
+      "a savings goal type called Emergency fund",
+      "You type in the target, what you've saved so far and, if you want a monthly figure, a target date.",
+      "It then works out the monthly amount needed and shows progress on the Today screen."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-build-a-first-1000-emergency-fund"
+    },
+    "proof": [
+      "has a savings goal type called Emergency fund",
+      "You type in the target, what you've saved so far and, if you want a monthly figure, a target date.",
+      "It then works out the monthly amount needed and shows progress on the Today screen.",
+      "Progress is what you type: it doesn't connect to your bank or move money, and it flags a goal that has no target date."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "emergency fund tracker app",
+    "board": "Savings and Sinking Funds",
+    "when": "evergreen; peaks January and February to April (new year and tax refund season)",
+    "visual": "mockup-app in the homeschool reference style: dark forest panel, app icon and name, two-tone headline, three feature rows from the guide, a large tilted phone showing a CAPTURED screen of the Personal Finance Companion Emergency fund savings goal (stub data, new capture needed: no existing screen shows savings), a jar prop. Keep the limit line on the pin.",
+    "flags": [
+      "needs-capture"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "savings",
+    "angle": "checklist",
+    "headline": "How to Save $200 This Month: Seven Moves From One Example Month",
+    "sub": "Here is one month that adds up to exactly $200.",
+    "items": [
+      "Cancel a $15.99 streaming plan and a $9.99 app you've stopped using",
+      "Ask for a lower phone rate, from $85 to $55",
+      "Ask the internet provider for its lowest price for existing customers",
+      "Get two quotes and move car insurance",
+      "Drop a $12 monthly account fee, by changing account type or banks",
+      "One week of meals from the pantry and freezer",
+      "Sell one thing you no longer use"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-save-money-fast"
+    },
+    "proof": [
+      "Here is one month that adds up to exactly $200.",
+      "Cancel a $15.99 streaming plan and a $9.99 app you've stopped using",
+      "Ask for a lower phone rate, from $85 to $55",
+      "Ask the internet provider for its lowest price for existing customers",
+      "Get two quotes and move car insurance",
+      "Drop a $12 monthly account fee, by changing account type or banks",
+      "One week of meals from the pantry and freezer",
+      "Sell one thing you no longer use"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to save money this month",
+    "board": "Savings and Sinking Funds",
+    "when": "evergreen; peaks January and after the holidays",
+    "visual": "checklist: a seven-row ruled checklist on paper with empty tick boxes and the seven moves in short, a pencil ticking the first box; a small forest total tag '$200' at the foot. Desk with coffee mug.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "savings",
+    "angle": "quote-card",
+    "headline": "How to Lower Your Phone Bill: What to Say on the Call",
+    "sub": "If the first person can't help, ask for the retention or loyalty team.",
+    "items": [
+      "I've been with you a while and I'm paying $85 a month. I'd like to stay. What's the lowest rate you can give me on my current line?",
+      "Have your account number and your current monthly rate in front of you."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-save-money-fast"
+    },
+    "proof": [
+      "I've been with you a while and I'm paying $85 a month. I'd like to stay. What's the lowest rate you can give me on my current line?",
+      "Have your account number and your current monthly rate in front of you.",
+      "If the first person can't help, ask for the retention or loyalty team."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to lower your phone bill",
+    "board": "Monthly Bills and Due Dates",
+    "when": "evergreen",
+    "visual": "quote-card: the script set large in serif on a sticky-note-style card clipped to a binder tab, a phone bill page and a handset line drawing behind it; one warm pop on the $85.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "savings",
+    "angle": "comparison",
+    "headline": "50/30/20 Budget Example: A $3,500 Month vs a $2,400 Month With $1,300 Rent",
+    "sub": "Rent alone is 54 percent of your pay, so the needs bucket is over before you've bought food.",
+    "items": [
+      "$1,750",
+      "$1,050",
+      "$700",
+      "Rent",
+      "$1,300",
+      "54%",
+      "$2,075, or 86 percent",
+      "$325"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "50-30-20-rule-where-it-breaks"
+    },
+    "proof": [
+      "On $3,500 a month that's $1,750, $1,050 and $700.",
+      "Rent alone is 54 percent of your pay, so the needs bucket is over before you've bought food.",
+      "needs come to $2,075, or 86 percent. That leaves $325 for everything else."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "50/30/20 budget example",
+    "board": "Safe to Spend and Budgeting",
+    "when": "evergreen",
+    "visual": "side-by-side: two jar trios (measure archetype), left $3,500 with Needs $1,750, Wants $1,050, Savings and extra debt $700 filled to rule; right $2,400 where the Needs jar overflows at 86 percent, leaving $325. The overflow gets the one warm pop.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "savings",
+    "angle": "myth-vs-truth",
+    "headline": "50/30/20 Rule Questions: Minimums, High Rent and What It Really Is",
+    "sub": "It's a guideline, not a law.",
+    "items": [
+      "Where do minimum debt payments go in 50/30/20?",
+      "In needs, because you have to pay them. Only the amount you pay above the minimum counts toward the 20 percent bucket.",
+      "Does 50/30/20 work with high rent?",
+      "Often not as written. If rent alone is around half of your income, needs are over 50 percent before groceries.",
+      "What is the 50/30/20 rule?",
+      "It's a starting point for checking your month, not a rule you have to meet."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "50-30-20-rule-where-it-breaks"
+    },
+    "proof": [
+      "it's a guideline, not a law",
+      "Where do minimum debt payments go in 50/30/20?",
+      "In needs, because you have to pay them. Only the amount you pay above the minimum counts toward the 20 percent bucket.",
+      "Does 50/30/20 work with high rent?",
+      "Often not as written. If rent alone is around half of your income, needs are over 50 percent before groceries.",
+      "What is the 50/30/20 rule?",
+      "It's a starting point for checking your month, not a rule you have to meet."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "50/30/20 rule explained",
+    "board": "Safe to Spend and Budgeting",
+    "when": "evergreen",
+    "visual": "myth-vs-truth card: three question strips (the guide's own FAQ questions) each with its quoted answer beneath, on ruled paper with index tabs down the edge; the answer words get the forest ink, a thin amber underline only on 'Often not as written'.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "savings",
+    "angle": "scenario",
+    "headline": "Can I Afford It? A $42 Item vs a $480 Item Before Payday",
+    "sub": "A normal week of groceries, fuel and small things costs you about $110.",
+    "items": [
+      "$600",
+      "A $42 item",
+      "$558",
+      "$139.50",
+      "Fine",
+      "A $180 item",
+      "$105",
+      "A little short",
+      "A $480 item",
+      "$120",
+      "$30",
+      "No, not before payday"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "can-you-afford-it-before-you-buy-it"
+    },
+    "proof": [
+      "so your safe-to-spend figure is $600. Payday is four weeks away.",
+      "A normal week of groceries, fuel and small things costs you about $110.",
+      "A $42 item",
+      "$139.50",
+      "A $180 item",
+      "A little short",
+      "A $480 item",
+      "No, not before payday"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to know if i can afford something",
+    "board": "Safe to Spend and Budgeting",
+    "when": "evergreen",
+    "visual": "scenario: three price tags ($42, $180, $480) on a desk, each linked by a ruled line to its 'per week' result and verdict; the $480 tag stands slightly apart with a dashed outline. Calculator and receipt tape props. This is a purchase check, not a big balance banner.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "savings",
+    "angle": "before-after",
+    "headline": "How Much Money Is Safe to Spend? $2,340 in the Bank Is Really $1,411",
+    "sub": "The balance said $2,340. The number you can act on is $1,411, which is $929 less.",
+    "items": [
+      "Available balance",
+      "$2,340.00",
+      "Car insurance, the 15th",
+      "- $128.00",
+      "Phone, the 18th",
+      "- $62.00",
+      "Held back on purpose",
+      "- $300.00",
+      "Safe to spend",
+      "$1,411.00"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-much-of-your-money-is-actually-safe-to-spend"
+    },
+    "proof": [
+      "The balance said $2,340. The number you can act on is $1,411, which is $929 less.",
+      "Available balance",
+      "$2,340.00",
+      "Car insurance, the 15th",
+      "- $128.00",
+      "Phone, the 18th",
+      "- $62.00",
+      "Held back on purpose",
+      "- $300.00",
+      "Safe to spend",
+      "$1,411.00"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how much money is safe to spend",
+    "board": "Safe to Spend and Budgeting",
+    "when": "evergreen",
+    "visual": "before-after: left a bank balance slip, right the same sum written line by line on a long receipt tape beside a calculator (several lines visible, not one big figure), ending at the ruled-off $1,411.00; the subtraction lines are in pencil, the result gets the one warm pop.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "savings",
+    "angle": "scenario",
+    "headline": "Why Did My Available Balance Go Up? A Gas Pump Hold Explained",
+    "sub": "Nothing arrived. A hold was replaced by the smaller real charge.",
+    "items": [
+      "Gas pump places a hold: $100.00",
+      "$1,053.60",
+      "$42.15",
+      "$57.85",
+      "Current balance",
+      "Available balance"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "available-balance-vs-current-balance"
+    },
+    "proof": [
+      "when the pump finishes at $42.15, the $100.00 hold drops off and your available balance rises by $57.85, without you doing anything.",
+      "Nothing arrived. A hold was replaced by the smaller real charge.",
+      "Gas pump places a hold: $100.00",
+      "$1,053.60"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "why did my available balance go up",
+    "board": "Safe to Spend and Budgeting",
+    "when": "evergreen",
+    "visual": "scenario: a gas-pump receipt showing a $100.00 hold stamped over, then the final $42.15, beside two ruled columns (Current balance, Available balance) with the available figure stepping up by $57.85; tidy two-state before and after on one desk, no big banner figure.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "savings",
+    "angle": "infographic",
+    "headline": "Save Money Every Month: $105 of a $200 Month Repeats, $95 Does Not",
+    "sub": "That's why we'd start at the top of the table, not the bottom.",
+    "items": [
+      "Every month",
+      "This month only",
+      "Once",
+      "$1,260 over a year"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-save-money-fast"
+    },
+    "proof": [
+      "$105 of that repeats every month, which is $1,260 over a year. The other $95 is a boost for this month only.",
+      "That's why we'd start at the top of the table, not the bottom.",
+      "Every month",
+      "This month only"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "ways to save money every month",
+    "board": "Savings and Sinking Funds",
+    "when": "evergreen; peaks January",
+    "visual": "infographic: one tall stacked bar on ruled paper split into $105 repeating every month (forest, with twelve small month ticks beside it) and $95 this month only (soft, dashed edge); the repeating share gets the one warm pop.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": true
+  },
+  {
+    "slice": "savings",
+    "angle": "infographic",
+    "headline": "Buy Now Pay Later Math: A $180 Item Is Four $45 Payments Over Six Weeks",
+    "sub": "Test the full price against the whole schedule, not the first payment.",
+    "items": [
+      "$45 today and $45 at two, four and six weeks",
+      "Today's number falls by $45, and each of the next three paydays is $45 lower."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "can-you-afford-it-before-you-buy-it"
+    },
+    "proof": [
+      "Say a $180 item comes as $45 today and $45 at two, four and six weeks.",
+      "Test the full price against the whole schedule, not the first payment.",
+      "Today's number falls by $45, and each of the next three paydays is $45 lower."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "buy now pay later can i afford it",
+    "board": "Safe to Spend and Budgeting",
+    "when": "evergreen",
+    "visual": "infographic: a six-week strip like the 14-day strip, four markers (today, 2, 4, 6 weeks) each carrying $45, a $180 price tag at the left; one marker per payday with a small bill card.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": true
+  }
+]

@@ -1,0 +1,2 @@
+- Savings printables on Pinterest are dominated by $1,000 emergency fund trackers (including colour-in versions), 52-week challenges and multi-fund sinking fund trackers; many trackers cover both emergency and sinking funds, which supports the sinking fund vs emergency fund pin.
+- Sources: https://worldofprintables.com/sinking-funds-tracker/ , https://shop.thebudgetmom.com/products/sinking-funds-cash-envelopes-with-trackers-printable , https://www.gatheringbeauty.com/blog/free-printable-mason-jar-savings-tracker
