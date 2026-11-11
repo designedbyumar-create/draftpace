@@ -1,0 +1,449 @@
+[
+  {
+    "slice": "bills",
+    "angle": "infographic",
+    "headline": "Monthly Bills List: Turn Quarterly and Annual Bills Into a Monthly Amount",
+    "sub": "$612 every three months is $204 a month.",
+    "items": [
+      "Weekly: multiply by 52, divide by 12",
+      "Every two weeks: multiply by 26, divide by 12",
+      "Quarterly: divide by 3. $612 every three months is $204",
+      "Every six months: divide by 6. $300 twice a year is $50",
+      "Annual: divide by 12. $96 a year is $8"
+    ],
+    "link": { "kind": "guide", "slug": "monthly-bills-list" },
+    "proof": [
+      "Multiply by 52, divide by 12",
+      "Multiply by 26, divide by 12",
+      "Divide by 3",
+      "$612 every three months is $204",
+      "Divide by 6",
+      "$300 twice a year is $50",
+      "Divide by 12",
+      "$96 a year is $8"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "monthly bills list",
+    "board": "Monthly Bills and Due Dates",
+    "when": "evergreen",
+    "visual": "Infographic on paper, 'ladder' archetype: a ruled sheet with a vertical ladder of five rungs, one per frequency (weekly down to annual), each rung a forest-ink rule with the 'do this' on the left and the guide's own example on the right; $204 is the one warm-pop number. A pencil and a small desk calculator beside it. No phone, no screen.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slug": "bills",
+    "angle": "before-after",
+    "headline": "Monthly Bills List: The $223 a Normal Month Leaves Out",
+    "sub": "Add the five bills that land every month and you get $1,668. The real figure is $1,891.",
+    "items": [
+      "Before: the five bills that land every month, $1,668",
+      "After: the real figure, $1,891",
+      "Car insurance: $612 every three months is $204",
+      "Car registration: $132 a year, $11 a month",
+      "Gym membership: $96 a year is $8"
+    ],
+    "link": { "kind": "guide", "slug": "monthly-bills-list" },
+    "proof": [
+      "Add the five bills that land every month and you get $1,668. The real figure is $1,891. The $223 gap is car insurance, registration and the gym membership",
+      "$612 every three months is $204",
+      "$96 a year is $8",
+      "Car registration"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "monthly bills list with annual bills",
+    "board": "Monthly Bills and Due Dates",
+    "when": "evergreen",
+    "visual": "Before-after, 'side-by-side' archetype: two sticky-note-topped ruled sheets on a desk. Left sheet lists five monthly bills with $1,668 underlined in grey. Right sheet adds the three non-monthly bills in forest ink and ends at $1,891 with the $223 gap circled in the warm pop. A coffee mug at the corner.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slug": "bills",
+    "angle": "checklist",
+    "headline": "Monthly Bills List: 9 Bills That Are Easy to Leave Off",
+    "sub": "Tick the ones you pay. Each is easy to leave off because it doesn't land every month.",
+    "items": [
+      "Renters or home insurance, if it's billed once or twice a year",
+      "Car registration and inspection",
+      "Property tax, if it isn't paid through your mortgage",
+      "HOA or condo fees, if they're billed quarterly",
+      "Professional license or union dues",
+      "Annual memberships and domain renewals",
+      "Tax preparation fees or software",
+      "Dental, vision or pet insurance billed yearly",
+      "School or activity fees paid by term"
+    ],
+    "link": { "kind": "guide", "slug": "monthly-bills-list" },
+    "proof": [
+      "Tick the ones you pay. Each is easy to leave off because it doesn't land every month.",
+      "Renters or home insurance, if it's billed once or twice a year",
+      "Car registration and inspection",
+      "Property tax, if it isn't paid through your mortgage",
+      "HOA or condo fees, if they're billed quarterly",
+      "Professional license or union dues",
+      "Annual memberships and domain renewals",
+      "Tax preparation fees or software",
+      "Dental, vision or pet insurance billed yearly",
+      "School or activity fees paid by term"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "bills I forgot to budget for",
+    "board": "Organize Your Finances",
+    "when": "evergreen; January and October for the yearly ones",
+    "visual": "Checklist, 'intake' archetype: a paper checklist on a clipboard with nine hand-ticked boxes in forest ink, a few ticked and a few empty, on a kitchen table beside a stack of envelopes and a pen. Plain, no app screen.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slug": "bills",
+    "angle": "template-preview",
+    "headline": "Monthly Bills List Template: Six Columns, Eight Example Bills",
+    "sub": "A monthly bills list has six columns: name, amount, due day, how often, essential or not, and shared or not.",
+    "items": [
+      "Bill",
+      "Amount",
+      "Due",
+      "How often",
+      "Essential",
+      "Per month",
+      "Rent $1,450, Electric $70 to $120, Internet $45, Phone $38",
+      "Car insurance $612, quarterly, $204 a month"
+    ],
+    "link": { "kind": "guide", "slug": "monthly-bills-list" },
+    "proof": [
+      "A monthly bills list has six columns: name, amount, due day, how often, essential or not, and shared or not.",
+      "Example only, not real data.",
+      "Electric",
+      "$70 to $120",
+      "Jan, Apr, Jul, Oct 15"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "monthly bills list template",
+    "board": "Financial Binder and Printables",
+    "when": "evergreen",
+    "visual": "Template-preview, 'tracker-sheet' archetype: a ruled register page with real column headers (Bill, Amount, Due, How often, Essential, Per month) and the guide's example rows hand-filled, lying flat on a desk under a pencil, with a small 'Example only' label. Uses the guide's own example, not the workbook page.",
+    "flags": ["example-tag"],
+    "reserve": true
+  },
+  {
+    "slug": "bills",
+    "angle": "mockup-printable",
+    "headline": "Variable Bills Worksheet: Write the Low, the High and Why It Moved",
+    "sub": "Write the range you normally see, then choose the amount or range you want to enter after checking the latest statement.",
+    "items": [
+      "Bill name",
+      "Typical low amount",
+      "Typical high amount",
+      "What makes this bill change?",
+      "Recent examples: month or statement, amount, why it was higher or lower"
+    ],
+    "link": { "kind": "guide", "slug": "budget-for-variable-bills" },
+    "proof": [
+      "The printable workbook that comes with it has a variable bills worksheet with room for your twelve months."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "proofExtra": [
+      {
+        "file": "book",
+        "proof": [
+          "Variable bills worksheet",
+          "Write the range you normally see, then choose the amount or range you want to enter after checking the latest statement.",
+          "Typical low amount",
+          "Typical high amount",
+          "What makes this bill change?",
+          "Why it was higher or lower"
+        ]
+      }
+    ],
+    "query": "variable bills worksheet printable",
+    "board": "Financial Binder and Printables",
+    "when": "evergreen; peaks Oct to Jan and Jun to Aug as heating and cooling bills move",
+    "visual": "Mockup-printable: the REAL 'Variable bills worksheet' page of the 81-page workbook (printed page 22, the footer reads 'Bills 22'; render the page from creative/out/pfc/book.pdf), tilted on a desk with a binder ring edge, a pencil and one electric-bill envelope. Headline in forest ink above, 'Free guide' tag. The page is shown blank, as printed.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slug": "bills",
+    "angle": "comparison",
+    "headline": "Budget for Variable Bills: Plan to the Low, the Average or the High?",
+    "sub": "Example figures from the twelve months above.",
+    "items": [
+      "The low, $60: $720 a year. Short by $368; every month above $60 comes out of something else",
+      "The average, $91: $1,092 a year. Ends the year even, but you need a cushion of about $63 if you start in January",
+      "The high, $122: $1,464 a year. Never short; about $376 is left over, which is a cushion built for you"
+    ],
+    "link": { "kind": "guide", "slug": "budget-for-variable-bills" },
+    "proof": [
+      "Three ways to plan the same bill",
+      "The low, $60",
+      "Short by $368; every month above $60 comes out of something else",
+      "The average, $91",
+      "Ends the year even, but you need a cushion of about $63 if you start in January",
+      "The high, $122",
+      "Never short; about $376 is left over, which is a cushion built for you"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to budget for utility bills that change",
+    "board": "Safe to Spend and Budgeting",
+    "when": "evergreen; peaks Oct to Jan and Jun to Aug",
+    "visual": "Comparison, 'measure' archetype: three glass jars side by side, filled to different levels and labelled Low $60, Average $91, High $122 on paper tags, each with the guide's one-line result underneath in forest ink. The High jar carries the one warm-pop tag. Kitchen counter background, a folded electric bill behind them.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slug": "bills",
+    "angle": "how-to-steps",
+    "headline": "Utility Bills That Change Every Month: Six Steps to One Planning Figure",
+    "sub": "Pull your last twelve bills, add them up and divide by twelve.",
+    "items": [
+      "Pull twelve bills",
+      "Add and divide by twelve: a twelfth of the real yearly cost is your average month",
+      "Note the high and the low: the high month is the one to protect",
+      "Pick your planning figure: with no spare money, plan toward the high",
+      "Move the gap into a pot",
+      "Recheck each season"
+    ],
+    "link": { "kind": "guide", "slug": "budget-for-variable-bills" },
+    "proof": [
+      "Pull your last twelve bills, add them up and divide by twelve.",
+      "Pull twelve bills",
+      "Add and divide by twelve",
+      "a twelfth of it is your average month",
+      "Note the high and the low",
+      "The high month is the one to protect.",
+      "Pick your planning figure",
+      "With no spare money, plan toward the high.",
+      "Move the gap into a pot",
+      "Recheck each season"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to budget for utility bills that change",
+    "board": "Monthly Bills and Due Dates",
+    "when": "evergreen; peaks Oct to Jan and Jun to Aug",
+    "visual": "How-to-steps, 'binder-tabs' archetype: six index tabs down the edge of an open binder page, each tab one step with its short line, a twelve-slot row of bill statements clipped above. A coffee mug and a calculator on the desk. No phone.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slug": "bills",
+    "angle": "question",
+    "headline": "Utility Budget Billing: Does an Equal Payment Plan Save Money?",
+    "sub": "It doesn't lower the total. It moves the pain from the spike month to the settlement month.",
+    "items": [
+      "It doesn't save money, some plans charge a fee, and your usage still decides the yearly total.",
+      "Ask how often the amount is reviewed and what happens at the true-up."
+    ],
+    "link": { "kind": "guide", "slug": "budget-for-variable-bills" },
+    "proof": [
+      "It doesn't lower the total. It moves the pain from the spike month to the settlement month",
+      "It doesn't save money, some plans charge a fee, and your usage still decides the yearly total.",
+      "Ask how often the amount is reviewed and what happens at the true-up."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "is budget billing a good idea",
+    "board": "Monthly Bills and Due Dates",
+    "when": "evergreen; peaks Oct to Jan",
+    "visual": "Question card, 'one-card' archetype: a single large paper card with the question in forest ink, the guide's one-line answer below, and a small level line drawn flat across twelve tiny bars to suggest an even payment. A utility envelope tucked under the card.",
+    "flags": [],
+    "reserve": true
+  },
+  {
+    "slug": "bills",
+    "angle": "scenario",
+    "headline": "Before Bills Come Out: Why $1,940 Available Can Still Leave You $33 Short",
+    "sub": "Say it's the 29th and you're paid on the 5th. Your checking account shows $1,940 available.",
+    "items": [
+      "Rent, the 1st: $1,450",
+      "Car loan, the 1st: $312",
+      "Phone, the 1st: $55",
+      "Internet, the 2nd: $60",
+      "Electric, usually $96, the 3rd",
+      "Left on payday, the 5th: $33 short"
+    ],
+    "link": { "kind": "guide", "slug": "what-to-check-before-each-direct-debit-date" },
+    "proof": [
+      "Say it's the 29th and you're paid on the 5th. Your checking account shows $1,940 available.",
+      "Counted to payday it's $33 short, and it only shows up on the 3rd, when the electric bill leaves.",
+      "Electric, usually $96",
+      "Left on payday, the 5th"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "not enough money before payday bills",
+    "board": "Monthly Bills and Due Dates",
+    "when": "evergreen; the last week of any month",
+    "visual": "Scenario, 'tracker-sheet' archetype: a bank-statement style strip on a desk showing the 29th with $1,940 at the left and a row of bill chips (1st, 1st, 1st, 2nd, 3rd) stepping down to payday on the 5th, the final -$33 in the warm pop. Not a month grid, not an 'available' hero number. Phone face-down beside it.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slug": "bills",
+    "angle": "how-to-steps",
+    "headline": "Autopay Checklist: Six Things to Check Two Days Before Your Bills Leave",
+    "sub": "Two minutes on the 29th is cheaper than a returned payment on the 1st.",
+    "items": [
+      "Find your next payday, not the next bill.",
+      "Read the available balance in the account the bills leave from.",
+      "Check which account each bill pulls from.",
+      "Compare each amount that varies with last month's.",
+      "Subtract. If the result is negative, fix it that day: move money, move a date, or call the biller.",
+      "Pick one date each month, two or three days before the busiest one, and put it in your calendar."
+    ],
+    "link": { "kind": "guide", "slug": "what-to-check-before-each-direct-debit-date" },
+    "proof": [
+      "Two minutes on the 29th is cheaper than a returned payment on the 1st.",
+      "Find your next payday, not the next bill.",
+      "Read the available balance in the account the bills leave from.",
+      "Check which account each bill pulls from.",
+      "Compare each amount that varies with last month's.",
+      "Subtract. If the result is negative, fix it that day: move money, move a date, or call the biller.",
+      "Pick one date each month, two or three days before the busiest one, and put it in your calendar."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "autopay checklist",
+    "board": "Monthly Bills and Due Dates",
+    "when": "evergreen; the 27th to 29th of each month",
+    "visual": "How-to-steps, 'intake' archetype: a numbered clipboard checklist, six lines in forest ink with hand-drawn checkboxes, a wall-calendar corner behind it with one date circled in the warm pop. Pen on the clipboard.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slug": "bills",
+    "angle": "quote-card",
+    "headline": "How to Change a Bill Due Date: What to Say to the Biller",
+    "sub": "Most billers can move a due date once a month or so, and some can't, so ask.",
+    "items": [
+      "Move the due date: \"I get paid on the 5th. Can you move my due date from the 3rd to the 6th, and does the autopay follow it?\"",
+      "Amount went up: \"My autopay went from $96 to $148. Can you tell me what changed on this bill?\"",
+      "Pause an autopay: \"I'd like the autopay on the 3rd paused so I can pay by hand after the 5th. Will that trigger a late fee?\""
+    ],
+    "link": { "kind": "guide", "slug": "what-to-check-before-each-direct-debit-date" },
+    "proof": [
+      "Most billers can move a due date once a month or so, and some can't, so ask.",
+      "I get paid on the 5th. Can you move my due date from the 3rd to the 6th, and does the autopay follow it?",
+      "My autopay went from $96 to $148. Can you tell me what changed on this bill?",
+      "I'd like the autopay on the 3rd paused so I can pay by hand after the 5th. Will that trigger a late fee?"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to change bill due date",
+    "board": "Monthly Bills and Due Dates",
+    "when": "evergreen",
+    "visual": "Quote-card, 'one-card' archetype: three paper script cards fanned on a desk, each with a small situation label and the guide's line in large forest type, a phone handset silhouette in the warm pop on the top card only. No app screen.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slug": "bills",
+    "angle": "myth-vs-truth",
+    "headline": "Why Autopay Fails Even When Your Balance Looks Fine",
+    "sub": "The balance is fine and the payment still fails.",
+    "items": [
+      "A new card number, a closed account or an expired card on file can break an autopay.",
+      "The payment bounces. A bank can return it unpaid or cover it and charge an overdraft fee, depending on the account.",
+      "Card autopay is set to the minimum. It keeps the account current and leaves the rest owing.",
+      "Your payday moves. A holiday or a weekend can shift the deposit by a day or two."
+    ],
+    "link": { "kind": "guide", "slug": "what-to-check-before-each-direct-debit-date" },
+    "proof": [
+      "The balance is fine and the payment still fails.",
+      "A new card number, a closed account or an expired card on file can break an autopay.",
+      "The payment bounces. A bank can return it unpaid or cover it and charge an overdraft fee, depending on the account.",
+      "Card autopay is set to the minimum. It keeps the account current and leaves the rest owing.",
+      "Your payday moves. A holiday or a weekend can shift the deposit by a day or two."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "why did my autopay fail",
+    "board": "Monthly Bills and Due Dates",
+    "when": "evergreen",
+    "visual": "Myth-vs-truth, 'side-by-side' archetype: left half a debit card and a green-tick balance slip marked as the assumption; right half four short truth notes on index cards, one per cause, with a crossed-out expired card in the warm pop. Desk surface, no phone.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slug": "bills",
+    "angle": "infographic",
+    "headline": "Missed a Payment? What to Do in the First 48 Hours, in Order",
+    "sub": "Check that the payment actually failed, then pay the full amount today if you can.",
+    "items": [
+      "Right now: Confirm it failed.",
+      "Within the hour: If you have the money, pay the full past-due amount, plus the late fee if it has been added.",
+      "Same sitting: Look at every bill due before your next payday.",
+      "Day 1, if you can't pay: Call the lender.",
+      "Right after the call: Write down the date, the name or ID of the person, and exactly what was agreed.",
+      "Day 2: Log in again."
+    ],
+    "link": { "kind": "guide", "slug": "you-missed-a-payment-what-to-do-next" },
+    "proof": [
+      "Check that the payment actually failed, then pay the full amount today if you can.",
+      "Right now",
+      "Confirm it failed.",
+      "Within the hour",
+      "If you have the money, pay the full past-due amount, plus the late fee if it has been added.",
+      "Look at every bill due before your next payday",
+      "Day 1, if you can't pay",
+      "Call the lender.",
+      "Write down the date, the name or ID of the person, and exactly what was agreed.",
+      "Day 2",
+      "Log in again."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "missed a payment what to do",
+    "board": "Monthly Bills and Due Dates",
+    "when": "evergreen",
+    "visual": "Infographic, 'ladder' archetype: a vertical timeline down a ruled notebook page with six dated stops (Right now to Day 2), small sticky notes at each stop, the 'Call the lender' stop in the warm pop. A pen and a folded statement at the page edge.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slug": "bills",
+    "angle": "quote-card",
+    "headline": "What to Say When You Call a Lender About a Missed Payment",
+    "sub": "Use the number on your statement or the back of the card.",
+    "items": [
+      "Opening: \"Hi, I missed my payment that was due on the 12th. I'd like to make it now and see what I can do about the late fee.\"",
+      "Asking for the fee waiver: \"This is the first time I've missed a payment. Would you waive the late fee as a one-time courtesy?\"",
+      "Closing: \"Can you read back what we agreed, and can you send it to me in writing? Could I have your name or ID number?\""
+    ],
+    "link": { "kind": "guide", "slug": "you-missed-a-payment-what-to-do-next" },
+    "proof": [
+      "Use the number on your statement or the back of the card.",
+      "Hi, I missed my payment that was due on the 12th. I'd like to make it now and see what I can do about the late fee.",
+      "This is the first time I've missed a payment. Would you waive the late fee as a one-time courtesy?",
+      "Can you read back what we agreed, and can you send it to me in writing? Could I have your name or ID number?"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to say when you miss a payment",
+    "board": "Monthly Bills and Due Dates",
+    "when": "evergreen",
+    "visual": "Quote-card, 'one-card' archetype: a call script on a single large lined card propped against a phone, the three guide lines in forest type with their small labels (Opening, Asking for the fee waiver, Closing), a pen and a statement beside it. Differs from the biller-script pin: one big card, not three fanned.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slug": "bills",
+    "angle": "question",
+    "headline": "How Many Days Late Before a Missed Payment Hurts Your Credit?",
+    "sub": "For most accounts, a payment is reported to Equifax, Experian and TransUnion once it is 30 days past due.",
+    "items": [
+      "Day 1 to 29: a late fee can be added, and interest keeps running on the balance.",
+      "Day 30: the lender can report the payment as 30 days late.",
+      "Day 60 or more: some card agreements let the lender raise your rate on the existing balance.",
+      "Paying before day 30 is what keeps it off the report in the first place."
+    ],
+    "link": { "kind": "guide", "slug": "you-missed-a-payment-what-to-do-next" },
+    "proof": [
+      "How many days late before it hurts my credit?",
+      "For most accounts, a payment is reported to Equifax, Experian and TransUnion once it is 30 days past due.",
+      "Day 1 to 29: a late fee can be added, and interest keeps running on the balance.",
+      "Day 30: the lender can report the payment as 30 days late.",
+      "Day 60 or more: some card agreements let the lender raise your rate on the existing balance.",
+      "Paying before day 30 is what keeps it off the report in the first place."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how many days late before it affects credit",
+    "board": "Monthly Bills and Due Dates",
+    "when": "evergreen",
+    "visual": "Question, 'measure' archetype: a horizontal ruler drawn across a paper strip marked Day 1, Day 30 and Day 60, with the three guide lines as flags on it; the Day 30 flag is the one warm-pop mark. Pencil and a card statement at the edges. Not a month calendar grid.",
+    "flags": ["example-tag"],
+    "reserve": false
+  }
+]
