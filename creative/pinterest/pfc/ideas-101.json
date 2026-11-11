@@ -1,0 +1,3447 @@
+[
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Finance Tracker App: Accounts, Bills, Debt and Savings in One Place",
+    "sub": "One always-current picture of your accounts, income, bills, subscriptions, transactions, debt, and savings",
+    "items": [
+      "Accounts",
+      "Income",
+      "Bills",
+      "Subscriptions",
+      "Transactions",
+      "Debt",
+      "Savings"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "personal-finance-companion"
+    },
+    "proof": [
+      "One always-current picture of your accounts, income, bills, subscriptions, transactions, debt, and savings",
+      "All seven areas: accounts, income, bills, subscriptions, transactions, debt, and savings"
+    ],
+    "proofFile": "src/shop/products/personal-finance-companion.ts",
+    "query": "finance tracker app",
+    "board": "Organize Your Finances",
+    "when": "evergreen",
+    "visual": "Homeschool-reference promo layout: forest panel with app icon and name, two-tone headline, four feature rows taken from the seven areas, large tilted phone showing the REAL Records screen (creative/public/screens/personal-finance-companion-records.png, Next.js dev badge cropped, demo rows), a coffee mug and a closed binder as props. Seven area names run as small index tabs down the phone's edge.",
+    "flags": [
+      "demo-data"
+    ],
+    "reserve": false,
+    "n": 1
+  },
+  {
+    "slice": "subscriptions",
+    "angle": "template-preview",
+    "headline": "Subscription Tracker Template: The Six Columns Every Row Needs",
+    "sub": "Example only, not real data.",
+    "items": [
+      "Name | Charge | Cycle | Renews | Decision | Shared",
+      "Video streaming | $15.49 | Monthly | 5th | Keep | No",
+      "Fitness app | $79.99 | Annual | Nov 14 | Planned to cancel | No",
+      "Family music plan | $16.99 | Monthly | 12th | Keep | Yes, 50%"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "subscription-tracker-what-to-track"
+    },
+    "proof": [
+      "\"Name\", \"Charge\", \"Cycle\", \"Renews\", \"Decision\", \"Shared\"",
+      "\"Fitness app\", \"$79.99\", \"Annual\", \"Nov 14\", \"Planned to cancel\", \"No\"",
+      "\"Family music plan\", \"$16.99\", \"Monthly\", \"12th\", \"Keep\", \"Yes, 50%\"",
+      "\"Video streaming\", \"$15.49\", \"Monthly\", \"5th\", \"Keep\", \"No\"",
+      "Example only, not real data."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "subscription tracker template",
+    "board": "Subscriptions and Renewals",
+    "when": "evergreen; peaks January and after the holidays",
+    "visual": "tracker-sheet archetype: a ruled register page in forest and paper with the six column headers in a forest header band and three example rows hand-filled in pencil, the Fitness app row highlighted with one warm pop; sits on a desk beside a coffee mug and a pencil, slightly tilted. The 'Example only, not real data' line stays on the pin.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 2
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Account Inventory Printable: Mark Each Balance Available or Protected",
+    "sub": "Written here as a snapshot, not a live total.",
+    "items": [
+      "Account or cash location",
+      "Type",
+      "Balance",
+      "As of date",
+      "Available or protected",
+      "Notes"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "personal-finance-companion"
+    },
+    "proof": [
+      "Account or cash location Type Balance As of date Available or protected Notes",
+      "Write each account, cash reserve, or wallet you want represented in your financial picture.",
+      "Written here as a snapshot, not a live total."
+    ],
+    "proofFile": "book",
+    "query": "bank account list printable",
+    "board": "Financial Binder and Printables",
+    "when": "evergreen",
+    "visual": "Workbook page 13 (Account inventory, section 01 Accounts and Available Money) rendered from the real PDF, tilted on a wooden desk, a pen across it and a highlighter on the 'Available or protected' column header, a mug at the corner. The page's own title and column headers are legible; the rows are left blank.",
+    "flags": [],
+    "reserve": false,
+    "n": 3
+  },
+  {
+    "slice": "subscriptions",
+    "angle": "checklist",
+    "headline": "Monthly Subscription Review Checklist: 5 Minutes to Catch Every Renewal",
+    "sub": "A five minute monthly check",
+    "items": [
+      "Look at anything renewing in the next two weeks.",
+      "For each one, choose keep or planned to cancel.",
+      "Open anything marked still deciding and settle at least one.",
+      "Add any subscription you started this month, including trials.",
+      "Remove anything you've already canceled and check the charge stopped."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "subscription-tracker-what-to-track"
+    },
+    "proof": [
+      "A five minute monthly check",
+      "Look at anything renewing in the next two weeks.",
+      "For each one, choose keep or planned to cancel.",
+      "Open anything marked still deciding and settle at least one.",
+      "Add any subscription you started this month, including trials.",
+      "Remove anything you've already canceled and check the charge stopped."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "monthly subscription review checklist",
+    "board": "Subscriptions and Renewals",
+    "when": "evergreen; first week of each month",
+    "visual": "one-card archetype: a clipboard with a five-row tick-box checklist on paper, two boxes pencil-ticked, forest title band, a coffee mug and a sticky note at the corner. Plain checklist, no app screen.",
+    "flags": [],
+    "reserve": false,
+    "n": 4
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Monthly Bill Tracker App: Tick a Bill Paid for the Month",
+    "sub": "What is left to pay is worked out from what you ticked",
+    "items": [
+      "Tick a bill paid for the month",
+      "What is left to pay is worked out from what you ticked",
+      "A paid bill leaves the list of what is coming up",
+      "A note on any bill with no due date"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "personal-finance-companion"
+    },
+    "proof": [
+      "Tick a bill paid for the month. What is left to pay is worked out from what you ticked, and a paid bill leaves the list of what is coming up."
+    ],
+    "proofFile": "src/shop/products/personal-finance-companion.ts",
+    "proofExtra": [
+      {
+        "file": "src/content/guides.ts",
+        "proof": [
+          "a note on any bill with no due date"
+        ]
+      }
+    ],
+    "query": "bill tracker app",
+    "board": "Monthly Bills and Due Dates",
+    "when": "evergreen",
+    "visual": "App-promo mockup: forest panel, four feature rows, large tilted phone showing the REAL Bills screen (creative/public/screens/personal-finance-companion-bills.png: the ticked Rent row 'Paid 1 Oct', 'Left to pay this month', the Electricity row with its unticked circle; dev badge cropped, demo rows). Prop: a stack of paper bills with a sticky note and a pen.",
+    "flags": [
+      "demo-data"
+    ],
+    "reserve": false,
+    "n": 5
+  },
+  {
+    "slice": "subscriptions",
+    "angle": "myth-vs-truth",
+    "headline": "Find All Your Subscriptions: Why Three Months of Statements Miss the Annual Ones",
+    "sub": "Three months of statements would have missed both.",
+    "items": [
+      "Fitness app | Once a year | $79.99",
+      "Antivirus | Once a year | $59.99",
+      "you'd only see the two annual charges by looking back a full year"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-find-every-subscription-you-are-paying-for"
+    },
+    "proof": [
+      "Three months of statements would have missed both.",
+      "you'd only see the two annual charges by looking back a full year",
+      "\"Fitness app\", \"Once a year\", \"$79.99\", \"$79.99\"",
+      "\"Antivirus\", \"Once a year\", \"$59.99\", \"$59.99\""
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to find hidden subscriptions on bank statement",
+    "board": "Subscriptions and Renewals",
+    "when": "evergreen; January and tax-season clean-ups",
+    "visual": "side-by-side archetype: two statement sheets on a desk. Left, a short stack labelled with three months shows only the monthly charges; right, a full-year stack shows the two once-a-year rows (Fitness app $79.99, Antivirus $59.99) circled in the warm pop. Headline is the truth; the pin uses only the guide's own words and figures.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 6
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Subscription Decisions Printable: Keep, Review or Planned Cancellation",
+    "sub": "A decision here is a note for you; any actual cancellation happens outside Draftpace.",
+    "items": [
+      "Keep",
+      "Review",
+      "Planned cancellation"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "personal-finance-companion"
+    },
+    "proof": [
+      "Keep, review, or cancel decisions",
+      "A decision here is a note for you; any actual cancellation happens outside Draftpace."
+    ],
+    "proofFile": "book",
+    "query": "subscription audit printable",
+    "board": "Subscriptions and Renewals",
+    "when": "evergreen; peaks January",
+    "visual": "Workbook page 27 (Keep, review, or cancel decisions) rendered from the real PDF, three columns visible, tilted on a clipboard with a small stack of receipts beside it and a pen. Page 26 (Subscription inventory, with its Subscription, Amount, Frequency, Renewal date, Decision, Cancellation notes headers) peeks out underneath.",
+    "flags": [],
+    "reserve": false,
+    "n": 7
+  },
+  {
+    "slice": "subscriptions",
+    "angle": "comparison",
+    "headline": "Subscription Cost Per Year: What the Monthly Price Hides",
+    "sub": "The monthly figures look small. The yearly column is the one to decide on.",
+    "items": [
+      "Video streaming | Monthly | $15.49 | $185.88 a year",
+      "Music streaming | Monthly | $10.99 | $131.88 a year",
+      "Cloud storage | Monthly | $2.99 | $35.88 a year",
+      "Total | $553.50"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-find-every-subscription-you-are-paying-for"
+    },
+    "proof": [
+      "The monthly figures look small. The yearly column is the one to decide on.",
+      "\"Video streaming\", \"Monthly\", \"$15.49\", \"$185.88\"",
+      "\"Music streaming\", \"Monthly\", \"$10.99\", \"$131.88\"",
+      "\"Cloud storage\", \"Monthly\", \"$2.99\", \"$35.88\"",
+      "\"Total\", \"\", \"\", \"$553.50\"",
+      "Example only, not real data."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how much do my subscriptions cost per year",
+    "board": "Subscriptions and Renewals",
+    "when": "evergreen; January",
+    "visual": "side-by-side archetype: a two-column register page, 'What you see' (small monthly amounts in grey) against 'Cost per year' (larger forest figures), total $553.50 boxed at the foot; calculator and receipts as props. Labelled as an example.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 8
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Debt Payoff Planner App: Smallest Balance First or Highest Rate First",
+    "sub": "It's a model from your numbers and doesn't change what you pay.",
+    "items": [
+      "Extra each month",
+      "Smallest balance first",
+      "Highest rate first",
+      "A debt with no rate is named as left out, never guessed at"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "personal-finance-companion"
+    },
+    "proof": [
+      "smallest balance first or highest rate first, with an extra amount you choose",
+      "A debt with no rate is named as left out, never guessed at."
+    ],
+    "proofFile": "src/shop/products/personal-finance-companion.ts",
+    "proofExtra": [
+      {
+        "file": "src/content/guides.ts",
+        "proof": [
+          "It's a model from your numbers and doesn't change what you pay."
+        ]
+      }
+    ],
+    "query": "debt payoff planner",
+    "board": "Debt Payoff",
+    "when": "evergreen; peaks January and after the holiday card bill",
+    "visual": "App-promo mockup: forest panel with four feature rows, large tilted phone showing the REAL Debt screen (creative/public/screens/personal-finance-companion-debt.png: Payoff plan card, 'Extra each month' box, the Smallest balance first / Highest rate first switch, the 'Debt-free in' headline; dev badge cropped, demo credit card). Prop: a calculator and a credit card statement.",
+    "flags": [
+      "demo-data"
+    ],
+    "reserve": false,
+    "n": 9
+  },
+  {
+    "slice": "subscriptions",
+    "angle": "how-to-steps",
+    "headline": "How to Find All My Subscriptions: A One Hour Sweep, Step by Step",
+    "sub": "Set aside an hour.",
+    "items": [
+      "Download twelve months of statements for every credit card, debit card and checking account you've used.",
+      "Search or scan each statement for repeats.",
+      "Open your Apple subscription list.",
+      "Log in to PayPal on the website and go to Settings, then Payments, then Subscriptions and saved businesses",
+      "Search your email for the words receipt, invoice, renewal, subscription, trial",
+      "Add up the yearly cost of each one."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-find-every-subscription-you-are-paying-for"
+    },
+    "proof": [
+      "Set aside an hour.",
+      "Download twelve months of statements for every credit card, debit card and checking account you've used.",
+      "Search or scan each statement for repeats.",
+      "Open your Apple subscription list.",
+      "Log in to PayPal on the website and go to Settings, then Payments, then Subscriptions and saved businesses",
+      "Search your email for the words receipt, invoice, renewal, subscription, trial",
+      "Add up the yearly cost of each one."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to find all my subscriptions",
+    "board": "Subscriptions and Renewals",
+    "when": "evergreen; January and after the holidays",
+    "visual": "intake archetype: numbered steps 1 to 6 down a paper sheet with a forest number badge on each, a stack of printed statements and a mug at the edge. No phone screen.",
+    "flags": [],
+    "reserve": false,
+    "n": 10
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Debt Payoff Ladder Printable: Avalanche or Snowball, Pick the One You Keep",
+    "sub": "Choose the order you will actually keep to.",
+    "items": [
+      "Avalanche pays the highest interest rate first and usually costs the least.",
+      "Snowball clears the smallest balance first and gives quicker wins.",
+      "Shade each rung as it is cleared."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "personal-finance-companion"
+    },
+    "proof": [
+      "Avalanche pays the highest interest rate first and usually costs the least.",
+      "Snowball clears the smallest balance first and gives quicker wins.",
+      "Work your chosen order from the bottom rung up. Shade each rung as it is cleared.",
+      "choose the order you will actually keep to"
+    ],
+    "proofFile": "book",
+    "query": "debt snowball vs avalanche printable",
+    "board": "Debt Payoff",
+    "when": "evergreen; peaks January",
+    "visual": "Workbook page 38 (Debt payoff method comparison) rendered from the real PDF: the two numbered lists and the payoff ladder with its rungs, tilted flat on a desk, two rungs shaded in with a coloured pencil, a calculator at the edge. Only the page's own words; the debts are left blank.",
+    "flags": [],
+    "reserve": false,
+    "n": 11
+  },
+  {
+    "slice": "subscriptions",
+    "angle": "infographic",
+    "headline": "What That Statement Line Means: Apple.com/bill, PayPal, Google and Unknown Names",
+    "sub": "Statement wording varies by bank and merchant, so treat these as patterns to look for, not exact strings.",
+    "items": [
+      "Apple.com/bill | Apple billing for an App Store subscription, iCloud or Apple services",
+      "Google followed by a service name | A Google Play or Google service subscription",
+      "PayPal followed by a company name | A merchant billing you through PayPal",
+      "A name you don't recognize | Often the parent company or a payment processor",
+      "The same round amount every month | Almost always a subscription"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-find-every-subscription-you-are-paying-for"
+    },
+    "proof": [
+      "Statement wording varies by bank and merchant, so treat these as patterns to look for, not exact strings.",
+      "Apple.com/bill",
+      "Apple billing for an App Store subscription, iCloud or Apple services",
+      "A Google Play or Google service subscription",
+      "A merchant billing you through PayPal",
+      "Often the parent company or a payment processor",
+      "Almost always a subscription"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what does apple.com/bill charge mean",
+    "board": "Subscriptions and Renewals",
+    "when": "evergreen",
+    "visual": "side-by-side archetype: a decoder sheet; on the left, statement lines in a monospace strip as they appear on a bank printout, on the right the plain meaning, joined by thin forest rules; a highlighter and a receipt as props.",
+    "flags": [],
+    "reserve": false,
+    "n": 12
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Available Money App: One Figure, With the Working One Tap Away",
+    "sub": "A month-level estimate, not an until-payday number.",
+    "items": [
+      "One Available Money figure in a banner",
+      "Where the rest of your balance goes",
+      "Every figure's working one tap away",
+      "Preliminary while a bill has no due date"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "personal-finance-companion"
+    },
+    "proof": [
+      "One Available Money figure in a banner that shows where the rest of your balance goes, with every figure's working one tap away."
+    ],
+    "proofFile": "src/shop/products/personal-finance-companion.ts",
+    "proofExtra": [
+      {
+        "file": "src/content/guides.ts",
+        "proof": [
+          "It marks Available Money as Preliminary while a bill has no due date",
+          "That figure is a month-level estimate, not an until-payday number."
+        ]
+      }
+    ],
+    "query": "how much money do i have available",
+    "board": "Safe to Spend and Budgeting",
+    "when": "evergreen",
+    "visual": "App-promo mockup with a CAPTURED screen (to capture from the real component with stub data): the Available Money banner with its bar showing where the rest of the balance goes and the working opened underneath. Forest panel, four feature rows, tilted phone, a calculator and a sticky note as props. Keep it clearly different from Monthly Money Reset: the figure sits inside a multi-area app, not alone.",
+    "flags": [
+      "demo-data",
+      "capture-needed"
+    ],
+    "reserve": false,
+    "n": 13
+  },
+  {
+    "slice": "subscriptions",
+    "angle": "scenario",
+    "headline": "Annual Subscription Renewal: Act Two Weeks Before the $79.99 Charge",
+    "sub": "For the fitness app, the heads-up date is October 31, two weeks before it renews on November 14, which leaves time to decide and cancel.",
+    "items": [
+      "Fitness app | $79.99 | Annual | Nov 14 | Planned to cancel",
+      "Two of the five rows are annual, and they're the two with a decision waiting."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "subscription-tracker-what-to-track"
+    },
+    "proof": [
+      "For the fitness app, the heads-up date is October 31, two weeks before it renews on November 14, which leaves time to decide and cancel.",
+      "Two of the five rows are annual, and they're the two with a decision waiting.",
+      "\"Fitness app\", \"$79.99\", \"Annual\", \"Nov 14\", \"Planned to cancel\", \"No\""
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "annual subscription renewal",
+    "board": "Subscriptions and Renewals",
+    "when": "evergreen; peaks late October and January",
+    "visual": "measure archetype: a short timeline strip on paper with two marked dates, October 31 (heads-up) and November 14 (renews $79.99), a sticky note on the first. Example data, labelled.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 14
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Ten Minute Money Starting Path: A One-Page Reference Card to Print",
+    "sub": "Photograph it, or print it on its own, and keep it where you do your money review.",
+    "items": [
+      "List your accounts and rough balances.",
+      "Note income and when it next arrives.",
+      "Write down required bills and due rules.",
+      "List subscriptions and one decision each.",
+      "Mark anything uncertain as missing or estimated.",
+      "Enter what is confirmed into Draftpace."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "personal-finance-companion"
+    },
+    "proof": [
+      "A ten minute starting path",
+      "Photograph it, or print it on its own, and keep it where you do your money review.",
+      "List your accounts and rough balances.",
+      "Note income and when it next arrives.",
+      "Write down required bills and due rules.",
+      "List subscriptions and one decision each.",
+      "Mark anything uncertain as missing or estimated.",
+      "Enter what is confirmed into Draftpace."
+    ],
+    "proofFile": "book",
+    "query": "how to organize your finances printable",
+    "board": "Organize Your Finances",
+    "when": "evergreen; peaks January",
+    "visual": "Workbook page 79 (Quick reference card) rendered from the real PDF, pinned flat to a corkboard-style or desk surface with a magnet or washi tape, the six numbered steps and the confidence-label table legible; a phone beside it as if just photographed.",
+    "flags": [],
+    "reserve": false,
+    "n": 15
+  },
+  {
+    "slice": "subscriptions",
+    "angle": "quote-card",
+    "headline": "Subscription Renewal Date: The Last Day You Can Act Before You Pay Again",
+    "sub": "Track six things for every subscription",
+    "items": [
+      "The renewal date is the field to protect, because it is the last day you can act before you pay again."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "subscription-tracker-what-to-track"
+    },
+    "proof": [
+      "The renewal date is the field to protect, because it is the last day you can act before you pay again.",
+      "Track six things for every subscription"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "subscription renewal date",
+    "board": "Subscriptions and Renewals",
+    "when": "evergreen",
+    "visual": "one-card archetype: a single large index card in forest on a paper desk, the quote set in two-tone type with the words 'renewal date' in the warm pop, a pencil lying across it.",
+    "flags": [],
+    "reserve": false,
+    "n": 16
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Bill Due Date Tracker App: The Next 14 Days, Pay Days Included",
+    "sub": "Its Coming up list shows what's due in the next 14 days, including pay days",
+    "items": [
+      "What's due in the next 14 days, including pay days",
+      "It flags income that hasn't arrived by its expected date",
+      "It flags any bill with no due date"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "personal-finance-companion"
+    },
+    "proof": [
+      "Its Coming up list shows what's due in the next 14 days, including pay days, and it flags income that hasn't arrived by its expected date and any bill with no due date."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "bill due date tracker",
+    "board": "Monthly Bills and Due Dates",
+    "when": "evergreen",
+    "visual": "App-promo mockup with a CAPTURED screen (stub data): the Coming up list, a short run of dated rows with a pay day among the bills. A 14-day strip of small day boxes along the bottom of the panel, with the bill days and the pay day marked. Prop: a desk calendar page turned face-down and a pen (not a month grid).",
+    "flags": [
+      "demo-data",
+      "capture-needed"
+    ],
+    "reserve": false,
+    "n": 17
+  },
+  {
+    "slice": "subscriptions",
+    "angle": "infographic",
+    "headline": "Charged After Canceling a Subscription? Five Steps, Company First, Then Your Card Issuer",
+    "sub": "Work up the ladder one rung at a time, and keep every note and email.",
+    "items": [
+      "The day you see the charge | Contact the company again, referring to your confirmation.",
+      "Same week, if it isn't fixed | Call the number on the back of your card.",
+      "Within 60 days of the statement | Send the card issuer a written billing error notice.",
+      "Paying from a bank account | Tell the company in writing that you revoke permission to charge you",
+      "After all of that | Report it to the FTC at ReportFraud.ftc.gov or to your state attorney general's office."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-cancel-subscriptions"
+    },
+    "proof": [
+      "Work up the ladder one rung at a time, and keep every note and email.",
+      "The day you see the charge",
+      "Contact the company again, referring to your confirmation.",
+      "Same week, if it isn't fixed",
+      "Call the number on the back of your card.",
+      "Within 60 days of the statement",
+      "Send the card issuer a written billing error notice.",
+      "Paying from a bank account",
+      "Tell the company in writing that you revoke permission to charge you",
+      "After all of that",
+      "Report it to the FTC at ReportFraud.ftc.gov or to your state attorney general's office."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "charged after canceling subscription",
+    "board": "Subscriptions and Renewals",
+    "when": "evergreen",
+    "visual": "measure archetype: a five-rung ladder drawn on paper, each rung a forest bar with its 'when' label and the action in plain type beneath; a card and a pen as props. Not legal advice, so the pin carries the guide's 'keep every note' line.",
+    "flags": [],
+    "reserve": false,
+    "n": 18
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Shared Bill Statement PDF: The Other Person Needs No Account",
+    "sub": "It doesn't send money, request payment or track who paid.",
+    "items": [
+      "A one page PDF of what's still owed to you and what's already settled",
+      "Enter your share as a percentage from 1 to 99",
+      "Tick a bill settled once the money has moved"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "personal-finance-companion"
+    },
+    "proof": [
+      "download a one page PDF of what's still owed to you and what's already settled. The other person doesn't need an account or login.",
+      "You enter your share as a percentage from 1 to 99",
+      "Tick a bill settled once the money has moved",
+      "it doesn't send money, request payment or track who paid"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "bill splitting statement roommate",
+    "board": "Splitting Bills",
+    "when": "evergreen",
+    "visual": "The Shared Responsibility statement PDF, CAPTURED from the real component with stub data (one or two shared rows, a settled one and one still owed), printed on a desk and tilted, with a phone beside it showing the Printables screen's 'Download shared statement' button (creative/public/screens/personal-finance-companion-printables.png). Props: two coffee mugs, one sticky note. Keep this visibly different from the 'A Bill Splitting Statement You Can Send' pin already made: a PDF beside a phone, not a page in hand.",
+    "flags": [
+      "demo-data",
+      "capture-needed"
+    ],
+    "reserve": false,
+    "n": 19
+  },
+  {
+    "slice": "subscriptions",
+    "angle": "scenario",
+    "headline": "How to Cancel a Subscription When They Push Back: What to Say, Word for Word",
+    "sub": "Keep it short and polite, and say the same thing again if you need to. You don't owe a reason.",
+    "items": [
+      "They offer a discount: Thank you, but I'd like to cancel today. Please confirm the end date.",
+      "They say to call in: I'd like to cancel. What do you need from me to finish it today?",
+      "Only chat is available: Please cancel it now and send me written confirmation.",
+      "They keep stalling: I've asked to cancel three times. Please give me a reference number for this request and tell me the date it takes effect."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-cancel-subscriptions"
+    },
+    "proof": [
+      "Keep it short and polite, and say the same thing again if you need to. You don't owe a reason.",
+      "Thank you, but I'd like to cancel today. Please confirm the end date.",
+      "I'd like to cancel. What do you need from me to finish it today?",
+      "Please cancel it now and send me written confirmation.",
+      "I've asked to cancel three times. Please give me a reference number for this request and tell me the date it takes effect.",
+      "They offer a discount",
+      "They say to call in",
+      "Only chat is available",
+      "They keep stalling"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to say to cancel a subscription",
+    "board": "Subscriptions and Renewals",
+    "when": "evergreen",
+    "visual": "intake archetype: four chat-bubble pairs on a paper panel, the company's situation in grey and your line in forest, no brand logos and no phone frame; a mug and sticky note at the corner.",
+    "flags": [],
+    "reserve": false,
+    "n": 20
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Subscription Tracker App: Keep, Reviewing, Planned Cancellation, Cancelled",
+    "sub": "It tracks the decision. It doesn't cancel anything or read your bank.",
+    "items": [
+      "Amount, how often it bills, renewal date",
+      "A decision on every one",
+      "Annual charges divided by 12",
+      "You type them in"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "personal-finance-companion"
+    },
+    "proof": [
+      "mark a decision: Keep, Reviewing, Planned cancellation or Cancelled",
+      "with annual charges divided by 12",
+      "It doesn't cancel anything or read your bank, so you type them in."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "subscription tracker app",
+    "board": "Subscriptions and Renewals",
+    "when": "evergreen; peaks January and after free trials",
+    "visual": "App-promo mockup. Real data on the Records screen (creative/public/screens/personal-finance-companion-records.png) shows the Subscriptions card ('3 active', '1 still marked Review', '1 planned to cancel'); better, a CAPTURED Subscriptions screen with stub rows and the four decision badges. Tilted phone on a forest panel, a stack of receipts and a mug as props.",
+    "flags": [
+      "demo-data",
+      "capture-needed"
+    ],
+    "reserve": false,
+    "n": 21
+  },
+  {
+    "slice": "subscriptions",
+    "angle": "question",
+    "headline": "Does Deleting an App Cancel the Subscription? No, and the Charges Continue",
+    "sub": "Cancel through Apple, Google Play or the company that bills you.",
+    "items": [
+      "Google states that uninstalling an app won't cancel its subscription.",
+      "You have to cancel through Apple, Google Play or the company that bills you.",
+      "Deleting the app only removes it from your phone, and the charges continue."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-cancel-subscriptions"
+    },
+    "proof": [
+      "Google states that uninstalling an app won't cancel its subscription.",
+      "You have to cancel through Apple, Google Play or the company that bills you.",
+      "Deleting the app only removes it from your phone, and the charges continue."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "does deleting an app cancel the subscription",
+    "board": "Subscriptions and Renewals",
+    "when": "evergreen",
+    "visual": "one-card archetype: a large question on a forest card with a plain phone-shaped outline (no real screen) showing an app icon with a cross, the answer in two-tone type beneath; subscription receipt as prop.",
+    "flags": [],
+    "reserve": false,
+    "n": 22
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Monthly Money Review Printable: 12 Dated Spreads for the Year",
+    "sub": "Start each monthly review by checking your current Draftpace overview.",
+    "items": [
+      "Accounts and income",
+      "Bills and subscriptions",
+      "Debt and savings",
+      "Available money reviewed",
+      "Obligations reviewed"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "personal-finance-companion"
+    },
+    "proof": [
+      "Start each monthly review by checking your current Draftpace overview.",
+      "Accounts and income",
+      "Bills and subscriptions",
+      "Debt and savings",
+      "Available money reviewed"
+    ],
+    "proofFile": "book",
+    "proofExtra": [
+      {
+        "file": "src/content/guides.ts",
+        "proof": [
+          "twelve monthly review spreads"
+        ]
+      }
+    ],
+    "query": "monthly budget review printable",
+    "board": "Financial Binder and Printables",
+    "when": "evergreen; peaks December to January",
+    "visual": "Workbook pages 54 and 55 (January: review, January: decisions and updates) rendered from the real PDF as a two-page spread, slightly fanned over the next months' pages (February to December behind it, the month names on the tab edges), on a desk with a pen and a mug. Not a month calendar grid: these are review pages.",
+    "flags": [],
+    "reserve": false,
+    "n": 23
+  },
+  {
+    "slice": "bills",
+    "angle": "infographic",
+    "headline": "Monthly Bills List: Turn Quarterly and Annual Bills Into a Monthly Amount",
+    "sub": "$612 every three months is $204 a month.",
+    "items": [
+      "Weekly: multiply by 52, divide by 12",
+      "Every two weeks: multiply by 26, divide by 12",
+      "Quarterly: divide by 3. $612 every three months is $204",
+      "Every six months: divide by 6. $300 twice a year is $50",
+      "Annual: divide by 12. $96 a year is $8"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "monthly-bills-list"
+    },
+    "proof": [
+      "Multiply by 52, divide by 12",
+      "Multiply by 26, divide by 12",
+      "Divide by 3",
+      "$612 every three months is $204",
+      "Divide by 6",
+      "$300 twice a year is $50",
+      "Divide by 12",
+      "$96 a year is $8"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "monthly bills list",
+    "board": "Monthly Bills and Due Dates",
+    "when": "evergreen",
+    "visual": "Infographic on paper, 'ladder' archetype: a ruled sheet with a vertical ladder of five rungs, one per frequency (weekly down to annual), each rung a forest-ink rule with the 'do this' on the left and the guide's own example on the right; $204 is the one warm-pop number. A pencil and a small desk calculator beside it. No phone, no screen.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 24
+  },
+  {
+    "slice": "product",
+    "angle": "checklist",
+    "headline": "Money Checklist: 6 Things to Check About Every Account You List",
+    "sub": "Mark what is ready and what still needs to be checked.",
+    "items": [
+      "Balances are current enough for this review.",
+      "Availability is marked for each account.",
+      "Protected money is not treated as spendable.",
+      "Closed accounts are clearly separated.",
+      "Balance dates are visible.",
+      "Uncertain amounts are marked as estimates."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "personal-finance-companion"
+    },
+    "proof": [
+      "Mark what is ready and what still needs to be checked.",
+      "Balances are current enough for this review.",
+      "Availability is marked for each account.",
+      "Protected money is not treated as spendable.",
+      "Closed accounts are clearly separated.",
+      "Balance dates are visible.",
+      "Uncertain amounts are marked as estimates."
+    ],
+    "proofFile": "book",
+    "query": "financial organization checklist",
+    "board": "Organize Your Finances",
+    "when": "evergreen",
+    "visual": "Checklist on a clipboard: the six items from workbook page 15 (Account completeness check) typed large in the page's own wording, each with a hand-ticked box in forest ink, three ticked and three open. A small corner of the real page 15 shows under the clipboard. Pen and index tabs as props.",
+    "flags": [],
+    "reserve": false,
+    "n": 25
+  },
+  {
+    "slug": "bills",
+    "angle": "before-after",
+    "headline": "Monthly Bills List: The $223 a Normal Month Leaves Out",
+    "sub": "Add the five bills that land every month and you get $1,668. The real figure is $1,891.",
+    "items": [
+      "Before: the five bills that land every month, $1,668",
+      "After: the real figure, $1,891",
+      "Car insurance: $612 every three months is $204",
+      "Car registration: $132 a year, $11 a month",
+      "Gym membership: $96 a year is $8"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "monthly-bills-list"
+    },
+    "proof": [
+      "Add the five bills that land every month and you get $1,668. The real figure is $1,891. The $223 gap is car insurance, registration and the gym membership",
+      "$612 every three months is $204",
+      "$96 a year is $8",
+      "Car registration"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "monthly bills list with annual bills",
+    "board": "Monthly Bills and Due Dates",
+    "when": "evergreen",
+    "visual": "Before-after, 'side-by-side' archetype: two sticky-note-topped ruled sheets on a desk. Left sheet lists five monthly bills with $1,668 underlined in grey. Right sheet adds the three non-monthly bills in forest ink and ends at $1,891 with the $223 gap circled in the warm pop. A coffee mug at the corner.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "slice": "bills",
+    "n": 26
+  },
+  {
+    "slice": "product",
+    "angle": "infographic",
+    "headline": "Confirmed, Estimated, Unresolved, Missing, Stale: Label Every Number",
+    "sub": "They help separate facts from estimates without forcing you to guess.",
+    "items": [
+      "Confirmed: Checked and believed accurate.",
+      "Estimated: Reasonable, but may change.",
+      "Unresolved: Exists, needs a decision.",
+      "Missing: Not known yet.",
+      "Stale: Once confirmed, may be old."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "personal-finance-companion"
+    },
+    "proof": [
+      "They help separate facts from estimates without forcing you to guess.",
+      "Checked and believed accurate.",
+      "Reasonable, but may change.",
+      "Exists, needs a decision.",
+      "Not known yet.",
+      "Once confirmed, may be old."
+    ],
+    "proofFile": "book",
+    "query": "how to organize financial information",
+    "board": "Financial Binder and Printables",
+    "when": "evergreen",
+    "visual": "Five index tabs fanned from a binder edge, one per label (Confirmed, Estimated, Unresolved, Missing, Stale), each in a different tint of the forest and soft palette with its short meaning on the tab body; a corner of workbook page 10 (Information confidence key) visible beneath. Archetype: binder-tabs.",
+    "flags": [],
+    "reserve": false,
+    "n": 27
+  },
+  {
+    "slug": "bills",
+    "angle": "checklist",
+    "headline": "Monthly Bills List: 9 Bills That Are Easy to Leave Off",
+    "sub": "Tick the ones you pay. Each is easy to leave off because it doesn't land every month.",
+    "items": [
+      "Renters or home insurance, if it's billed once or twice a year",
+      "Car registration and inspection",
+      "Property tax, if it isn't paid through your mortgage",
+      "HOA or condo fees, if they're billed quarterly",
+      "Professional license or union dues",
+      "Annual memberships and domain renewals",
+      "Tax preparation fees or software",
+      "Dental, vision or pet insurance billed yearly",
+      "School or activity fees paid by term"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "monthly-bills-list"
+    },
+    "proof": [
+      "Tick the ones you pay. Each is easy to leave off because it doesn't land every month.",
+      "Renters or home insurance, if it's billed once or twice a year",
+      "Car registration and inspection",
+      "Property tax, if it isn't paid through your mortgage",
+      "HOA or condo fees, if they're billed quarterly",
+      "Professional license or union dues",
+      "Annual memberships and domain renewals",
+      "Tax preparation fees or software",
+      "Dental, vision or pet insurance billed yearly",
+      "School or activity fees paid by term"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "bills I forgot to budget for",
+    "board": "Organize Your Finances",
+    "when": "evergreen; January and October for the yearly ones",
+    "visual": "Checklist, 'intake' archetype: a paper checklist on a clipboard with nine hand-ticked boxes in forest ink, a few ticked and a few empty, on a kitchen table beside a stack of envelopes and a pen. Plain, no app screen.",
+    "flags": [],
+    "reserve": false,
+    "slice": "bills",
+    "n": 28
+  },
+  {
+    "slice": "product",
+    "angle": "template-preview",
+    "headline": "Sinking Fund Worksheet Printable: Costs You Can See Coming",
+    "sub": "Use this for costs you can see coming, even if they are not monthly.",
+    "items": [
+      "Future cost",
+      "Due month or date",
+      "Target",
+      "Saved snapshot",
+      "Funding source",
+      "Next step"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "personal-finance-companion"
+    },
+    "proof": [
+      "Use this for costs you can see coming, even if they are not monthly.",
+      "Future cost Due month or date Target Saved snapshot Funding source Next step"
+    ],
+    "proofFile": "book",
+    "query": "sinking funds worksheet printable",
+    "board": "Savings and Sinking Funds",
+    "when": "evergreen; peaks October to December",
+    "visual": "A close, flat crop of workbook page 42 (Sinking funds worksheet): the six column headers and empty ruled rows as a fill-in register, left blank on purpose, with a pencil and two small jars (not envelopes) at the edge. The printed row lines stay empty; no sample numbers.",
+    "flags": [],
+    "reserve": false,
+    "n": 29
+  },
+  {
+    "slug": "bills",
+    "angle": "mockup-printable",
+    "headline": "Variable Bills Worksheet: Write the Low, the High and Why It Moved",
+    "sub": "Write the range you normally see, then choose the amount or range you want to enter after checking the latest statement.",
+    "items": [
+      "Bill name",
+      "Typical low amount",
+      "Typical high amount",
+      "What makes this bill change?",
+      "Recent examples: month or statement, amount, why it was higher or lower"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "budget-for-variable-bills"
+    },
+    "proof": [
+      "The printable workbook that comes with it has a variable bills worksheet with room for your twelve months."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "proofExtra": [
+      {
+        "file": "book",
+        "proof": [
+          "Variable bills worksheet",
+          "Write the range you normally see, then choose the amount or range you want to enter after checking the latest statement.",
+          "Typical low amount",
+          "Typical high amount",
+          "What makes this bill change?",
+          "Why it was higher or lower"
+        ]
+      }
+    ],
+    "query": "variable bills worksheet printable",
+    "board": "Financial Binder and Printables",
+    "when": "evergreen; peaks Oct to Jan and Jun to Aug as heating and cooling bills move",
+    "visual": "Mockup-printable: the REAL 'Variable bills worksheet' page of the 81-page workbook (printed page 22, the footer reads 'Bills 22'; render the page from creative/out/pfc/book.pdf), tilted on a desk with a binder ring edge, a pencil and one electric-bill envelope. Headline in forest ink above, 'Free guide' tag. The page is shown blank, as printed.",
+    "flags": [],
+    "reserve": false,
+    "slice": "bills",
+    "n": 30
+  },
+  {
+    "slice": "product",
+    "angle": "myth-vs-truth",
+    "headline": "Money App Myth vs Truth: A Number You Cannot Check Is Just a Guess",
+    "sub": "Nothing here is a guess dressed up as a number.",
+    "items": [
+      "Myth: you have to take a budget number on trust",
+      "Truth: Every figure has a \"How Draftpace got this\" breakdown, line by line, from your own records."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "personal-finance-companion"
+    },
+    "proof": [
+      "Every figure has a \"How Draftpace got this\" breakdown, line by line, from your own records.",
+      "Nothing here is a guess dressed up as a number."
+    ],
+    "proofFile": "src/shop/products/personal-finance-companion.ts",
+    "query": "budgeting app",
+    "board": "Safe to Spend and Budgeting",
+    "when": "evergreen",
+    "visual": "Split card: left half in faded paper tone with the Myth line crossed lightly; right half in forest with the Truth line and a small phone showing a figure with its working line by line (captured Available Money working with stub data). Props: a receipt and a pen.",
+    "flags": [
+      "demo-data",
+      "capture-needed"
+    ],
+    "reserve": false,
+    "n": 31
+  },
+  {
+    "slug": "bills",
+    "angle": "comparison",
+    "headline": "Budget for Variable Bills: Plan to the Low, the Average or the High?",
+    "sub": "Example figures from the twelve months above.",
+    "items": [
+      "The low, $60: $720 a year. Short by $368; every month above $60 comes out of something else",
+      "The average, $91: $1,092 a year. Ends the year even, but you need a cushion of about $63 if you start in January",
+      "The high, $122: $1,464 a year. Never short; about $376 is left over, which is a cushion built for you"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "budget-for-variable-bills"
+    },
+    "proof": [
+      "Three ways to plan the same bill",
+      "The low, $60",
+      "Short by $368; every month above $60 comes out of something else",
+      "The average, $91",
+      "Ends the year even, but you need a cushion of about $63 if you start in January",
+      "The high, $122",
+      "Never short; about $376 is left over, which is a cushion built for you"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to budget for utility bills that change",
+    "board": "Safe to Spend and Budgeting",
+    "when": "evergreen; peaks Oct to Jan and Jun to Aug",
+    "visual": "Comparison, 'measure' archetype: three glass jars side by side, filled to different levels and labelled Low $60, Average $91, High $122 on paper tags, each with the guide's one-line result underneath in forest ink. The High jar carries the one warm-pop tag. Kitchen counter background, a folded electric bill behind them.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "slice": "bills",
+    "n": 32
+  },
+  {
+    "slice": "product",
+    "angle": "how-to-steps",
+    "headline": "How to Set Up a Personal Finance Tracker: 4 Steps, One Area at a Time",
+    "sub": "Skip anything you do not have yet.",
+    "items": [
+      "Add what you have across the seven areas.",
+      "The Companion asks about one area at a time",
+      "Attention surfaces only real gaps",
+      "Come back anytime. The Companion resumes exactly where you left off"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "personal-finance-companion"
+    },
+    "proof": [
+      "Add what you have across the seven areas: accounts, income, bills, subscriptions, transactions, debt, and savings. Skip anything you do not have yet.",
+      "The Companion asks about one area at a time and only continues once it has enough to be useful",
+      "Attention surfaces only real gaps",
+      "Come back anytime. The Companion resumes exactly where you left off"
+    ],
+    "proofFile": "src/shop/products/personal-finance-companion.ts",
+    "query": "how to set up a personal finance tracker",
+    "board": "Organize Your Finances",
+    "when": "evergreen; peaks January",
+    "visual": "Four numbered steps stacked as tabs down a binder, a small phone at the right showing the real Records screen (creative/public/screens/personal-finance-companion-records.png, badge cropped). Step 1 lists the seven area names as tiny tab labels. Props: binder rings and a pen.",
+    "flags": [
+      "demo-data"
+    ],
+    "reserve": false,
+    "n": 33
+  },
+  {
+    "slug": "bills",
+    "angle": "scenario",
+    "headline": "Before Bills Come Out: Why $1,940 Available Can Still Leave You $33 Short",
+    "sub": "Say it's the 29th and you're paid on the 5th. Your checking account shows $1,940 available.",
+    "items": [
+      "Rent, the 1st: $1,450",
+      "Car loan, the 1st: $312",
+      "Phone, the 1st: $55",
+      "Internet, the 2nd: $60",
+      "Electric, usually $96, the 3rd",
+      "Left on payday, the 5th: $33 short"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "what-to-check-before-each-direct-debit-date"
+    },
+    "proof": [
+      "Say it's the 29th and you're paid on the 5th. Your checking account shows $1,940 available.",
+      "Counted to payday it's $33 short, and it only shows up on the 3rd, when the electric bill leaves.",
+      "Electric, usually $96",
+      "Left on payday, the 5th"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "not enough money before payday bills",
+    "board": "Monthly Bills and Due Dates",
+    "when": "evergreen; the last week of any month",
+    "visual": "Scenario, 'tracker-sheet' archetype: a bank-statement style strip on a desk showing the 29th with $1,940 at the left and a row of bill chips (1st, 1st, 1st, 2nd, 3rd) stepping down to payday on the 5th, the final -$33 in the warm pop. Not a month grid, not an 'available' hero number. Phone face-down beside it.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "slice": "bills",
+    "n": 34
+  },
+  {
+    "slice": "product",
+    "angle": "quote-card",
+    "headline": "Financial Organization Quote: Small, Steady, Honest",
+    "sub": "You do not need to finish this workbook to benefit from it.",
+    "items": [
+      "Clarity does not arrive all at once. It comes from writing down what you know, being honest about what you do not, and returning gently, month after month."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "personal-finance-companion"
+    },
+    "proof": [
+      "Small, steady, honest.",
+      "Clarity does not arrive all at once. It comes from writing down what you know, being honest about what you do not, and returning gently, month after month.",
+      "You do not need to finish this workbook to benefit from it."
+    ],
+    "proofFile": "book",
+    "query": "financial organization quotes",
+    "board": "Organize Your Finances",
+    "when": "evergreen; peaks January",
+    "visual": "Quote card in the workbook's own voice: 'Small, steady, honest.' as a large serif line on paper, the Clarity sentence beneath, set on the closing workbook page 80 laid on a desk beside a coffee mug and a pen. Calm, no figures.",
+    "flags": [],
+    "reserve": false,
+    "n": 35
+  },
+  {
+    "slug": "bills",
+    "angle": "how-to-steps",
+    "headline": "Utility Bills That Change Every Month: Six Steps to One Planning Figure",
+    "sub": "Pull your last twelve bills, add them up and divide by twelve.",
+    "items": [
+      "Pull twelve bills",
+      "Add and divide by twelve: a twelfth of the real yearly cost is your average month",
+      "Note the high and the low: the high month is the one to protect",
+      "Pick your planning figure: with no spare money, plan toward the high",
+      "Move the gap into a pot",
+      "Recheck each season"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "budget-for-variable-bills"
+    },
+    "proof": [
+      "Pull your last twelve bills, add them up and divide by twelve.",
+      "Pull twelve bills",
+      "Add and divide by twelve",
+      "a twelfth of it is your average month",
+      "Note the high and the low",
+      "The high month is the one to protect.",
+      "Pick your planning figure",
+      "With no spare money, plan toward the high.",
+      "Move the gap into a pot",
+      "Recheck each season"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to budget for utility bills that change",
+    "board": "Monthly Bills and Due Dates",
+    "when": "evergreen; peaks Oct to Jan and Jun to Aug",
+    "visual": "How-to-steps, 'binder-tabs' archetype: six index tabs down the edge of an open binder page, each tab one step with its short line, a twelve-slot row of bill statements clipped above. A coffee mug and a calculator on the desk. No phone.",
+    "flags": [],
+    "reserve": false,
+    "slice": "bills",
+    "n": 36
+  },
+  {
+    "slice": "product",
+    "angle": "question",
+    "headline": "Where Does Your Money Information Live? 9 Places to Look First",
+    "sub": "You are not confirming anything on this page; you are making sources visible.",
+    "items": [
+      "Bank or card statements",
+      "Pay stubs or income notes",
+      "Bill emails or portals",
+      "Subscription receipts",
+      "Debt statements",
+      "Savings notes",
+      "Cash notes or envelopes",
+      "Existing spreadsheet or CSV",
+      "Messages, reminders, or paper lists"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "personal-finance-companion"
+    },
+    "proof": [
+      "List where your financial information currently lives.",
+      "You are not confirming anything on this page; you are making sources visible.",
+      "Bank or card statements",
+      "Pay stubs or income notes",
+      "Bill emails or portals",
+      "Subscription receipts",
+      "Debt statements",
+      "Savings notes",
+      "Cash notes or envelopes",
+      "Existing spreadsheet or CSV",
+      "Messages, reminders, or paper lists"
+    ],
+    "proofFile": "book",
+    "query": "how to gather financial documents",
+    "board": "Organize Your Finances",
+    "when": "evergreen; peaks January",
+    "visual": "Question pin: the nine source boxes of workbook page 8 (Gather first) as a tidy grid of ticked-or-open boxes, with a real page 8 tilted behind. Props: a folder, a loose statement and a spiral notebook. Archetype: intake.",
+    "flags": [],
+    "reserve": false,
+    "n": 37
+  },
+  {
+    "slug": "bills",
+    "angle": "quote-card",
+    "headline": "How to Change a Bill Due Date: What to Say to the Biller",
+    "sub": "Most billers can move a due date once a month or so, and some can't, so ask.",
+    "items": [
+      "Move the due date: \"I get paid on the 5th. Can you move my due date from the 3rd to the 6th, and does the autopay follow it?\"",
+      "Amount went up: \"My autopay went from $96 to $148. Can you tell me what changed on this bill?\"",
+      "Pause an autopay: \"I'd like the autopay on the 3rd paused so I can pay by hand after the 5th. Will that trigger a late fee?\""
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "what-to-check-before-each-direct-debit-date"
+    },
+    "proof": [
+      "Most billers can move a due date once a month or so, and some can't, so ask.",
+      "I get paid on the 5th. Can you move my due date from the 3rd to the 6th, and does the autopay follow it?",
+      "My autopay went from $96 to $148. Can you tell me what changed on this bill?",
+      "I'd like the autopay on the 3rd paused so I can pay by hand after the 5th. Will that trigger a late fee?"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to change bill due date",
+    "board": "Monthly Bills and Due Dates",
+    "when": "evergreen",
+    "visual": "Quote-card, 'one-card' archetype: three paper script cards fanned on a desk, each with a small situation label and the guide's line in large forest type, a phone handset silhouette in the warm pop on the top card only. No app screen.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "slice": "bills",
+    "n": 38
+  },
+  {
+    "slice": "debt",
+    "angle": "comparison",
+    "headline": "Debt Snowball vs Avalanche: Where Does Your Extra Money Go First?",
+    "sub": "Every debt still gets its minimum each month. The only question is where the extra money goes.",
+    "items": [
+      "Snowball: smallest balance first",
+      "Extra goes to the smallest balance",
+      "A debt disappears sooner, which is easy to feel",
+      "Can cost more interest",
+      "Avalanche: highest rate first",
+      "Extra goes to the highest interest rate",
+      "Usually the lowest interest total",
+      "The first debt can take a long time to clear"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "debt-snowball-vs-avalanche"
+    },
+    "proof": [
+      "Every debt still gets its minimum each month. The only question is where the extra money goes.",
+      "Snowball: smallest balance first",
+      "Extra goes to the smallest balance",
+      "A debt disappears sooner, which is easy to feel",
+      "Can cost more interest",
+      "Avalanche: highest rate first",
+      "Extra goes to the highest interest rate",
+      "Usually the lowest interest total",
+      "The first debt can take a long time to clear"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "debt snowball vs avalanche",
+    "board": "Debt Payoff",
+    "when": "evergreen",
+    "visual": "Side-by-side archetype: two paper cards split down the middle on a forest-and-wash desk, left headed Snowball with a small stack of coins and a short bar, right headed Avalanche with a tall stack and a long bar, a thin ruled divider between them, four short rows each, a sticky note and a coffee mug in the corner. Flat vector, no phone.",
+    "flags": [],
+    "reserve": false,
+    "n": 39
+  },
+  {
+    "slice": "product",
+    "angle": "question",
+    "headline": "What Should Not Count as Available Money? Separate It From What Is Protected",
+    "sub": "Separate money that can be spent from money that should stay protected.",
+    "items": [
+      "Money location",
+      "Available now?",
+      "Protected for",
+      "Amount snapshot"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "personal-finance-companion"
+    },
+    "proof": [
+      "What should not be counted as available money?",
+      "Separate money that can be spent from money that should stay protected.",
+      "Money location Available now? Protected for Amount snapshot"
+    ],
+    "proofFile": "book",
+    "proofExtra": [
+      {
+        "file": "src/content/guides.ts",
+        "proof": [
+          "mark which accounts are available for spending and which are protected"
+        ]
+      }
+    ],
+    "query": "how much money is available to spend",
+    "board": "Safe to Spend and Budgeting",
+    "when": "evergreen",
+    "visual": "The question set large in serif on a forest panel; beneath it workbook page 14 (Available money notes) tilted, the four column headers legible and rows blank, with two small jars labelled only by tape (one 'available', one 'protected' drawn from the page's own words). Archetype: measure.",
+    "flags": [],
+    "reserve": false,
+    "n": 40
+  },
+  {
+    "slug": "bills",
+    "angle": "how-to-steps",
+    "headline": "Autopay Checklist: Six Things to Check Two Days Before Your Bills Leave",
+    "sub": "Two minutes on the 29th is cheaper than a returned payment on the 1st.",
+    "items": [
+      "Find your next payday, not the next bill.",
+      "Read the available balance in the account the bills leave from.",
+      "Check which account each bill pulls from.",
+      "Compare each amount that varies with last month's.",
+      "Subtract. If the result is negative, fix it that day: move money, move a date, or call the biller.",
+      "Pick one date each month, two or three days before the busiest one, and put it in your calendar."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "what-to-check-before-each-direct-debit-date"
+    },
+    "proof": [
+      "Two minutes on the 29th is cheaper than a returned payment on the 1st.",
+      "Find your next payday, not the next bill.",
+      "Read the available balance in the account the bills leave from.",
+      "Check which account each bill pulls from.",
+      "Compare each amount that varies with last month's.",
+      "Subtract. If the result is negative, fix it that day: move money, move a date, or call the biller.",
+      "Pick one date each month, two or three days before the busiest one, and put it in your calendar."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "autopay checklist",
+    "board": "Monthly Bills and Due Dates",
+    "when": "evergreen; the 27th to 29th of each month",
+    "visual": "How-to-steps, 'intake' archetype: a numbered clipboard checklist, six lines in forest ink with hand-drawn checkboxes, a wall-calendar corner behind it with one date circled in the warm pop. Pen on the clipboard.",
+    "flags": [],
+    "reserve": false,
+    "slice": "bills",
+    "n": 41
+  },
+  {
+    "slug": "debt",
+    "angle": "scenario",
+    "headline": "Debt Payoff Order: When a $12,000 Card at 26% Changes the Answer",
+    "sub": "On these numbers, avalanche costs $438.76 less and finishes a month sooner.",
+    "items": [
+      "$12,000 card at 26% with a $360 minimum",
+      "$1,500 loan at 6% with a $50 minimum",
+      "$300 extra a month",
+      "Snowball: extra goes first to the $1,500 loan",
+      "Avalanche: extra goes first to the $12,000 card",
+      "Interest along the way: $3,978.60 vs $3,539.84"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "debt-snowball-vs-avalanche"
+    },
+    "proof": [
+      "Say you have a $12,000 card at 26% with a $360 minimum, a $1,500 loan at 6% with a $50 minimum, and $300 extra a month.",
+      "On these numbers, avalanche costs $438.76 less and finishes a month sooner.",
+      "The $1,500 loan",
+      "The $12,000 card",
+      "Interest along the way",
+      "$3,978.60",
+      "$3,539.84"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "should i pay off highest interest debt first",
+    "board": "Debt Payoff",
+    "when": "evergreen",
+    "visual": "Scenario on a kitchen table: a thick credit card statement marked $12,000 and a thin loan letter marked $1,500 side by side, two arrows from a $300 coin stack pointing at each, with a small two-row result strip (snowball vs avalanche interest) beneath. Intake archetype, paper and ruled lines, a calculator and a pen as props.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "slice": "debt",
+    "n": 42
+  },
+  {
+    "slug": "bills",
+    "angle": "myth-vs-truth",
+    "headline": "Why Autopay Fails Even When Your Balance Looks Fine",
+    "sub": "The balance is fine and the payment still fails.",
+    "items": [
+      "A new card number, a closed account or an expired card on file can break an autopay.",
+      "The payment bounces. A bank can return it unpaid or cover it and charge an overdraft fee, depending on the account.",
+      "Card autopay is set to the minimum. It keeps the account current and leaves the rest owing.",
+      "Your payday moves. A holiday or a weekend can shift the deposit by a day or two."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "what-to-check-before-each-direct-debit-date"
+    },
+    "proof": [
+      "The balance is fine and the payment still fails.",
+      "A new card number, a closed account or an expired card on file can break an autopay.",
+      "The payment bounces. A bank can return it unpaid or cover it and charge an overdraft fee, depending on the account.",
+      "Card autopay is set to the minimum. It keeps the account current and leaves the rest owing.",
+      "Your payday moves. A holiday or a weekend can shift the deposit by a day or two."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "why did my autopay fail",
+    "board": "Monthly Bills and Due Dates",
+    "when": "evergreen",
+    "visual": "Myth-vs-truth, 'side-by-side' archetype: left half a debit card and a green-tick balance slip marked as the assumption; right half four short truth notes on index cards, one per cause, with a crossed-out expired card in the warm pop. Desk surface, no phone.",
+    "flags": [],
+    "reserve": false,
+    "slice": "bills",
+    "n": 43
+  },
+  {
+    "slug": "debt",
+    "angle": "checklist",
+    "headline": "Debt Payoff Checklist: 5 Things to Write Down for Every Debt",
+    "sub": "Free guide",
+    "items": [
+      "The balance you owe today.",
+      "The interest rate. If you don't know it, it's on the statement or the lender can tell you.",
+      "The minimum payment.",
+      "The date the payment is due each month.",
+      "Whether the rate is promotional and the date it ends."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "debt-snowball-vs-avalanche"
+    },
+    "proof": [
+      "Write these down for each debt first",
+      "The balance you owe today.",
+      "The interest rate. If you don't know it, it's on the statement or the lender can tell you.",
+      "The minimum payment.",
+      "The date the payment is due each month.",
+      "Whether the rate is promotional and the date it ends."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "debt payoff checklist",
+    "board": "Debt Payoff",
+    "when": "evergreen",
+    "visual": "Intake archetype: a clipboard on a desk with a ruled sheet and five ticked checkbox rows in forest, a debt statement and a pen beside it, a paper clip as the one warm pop. No phone, no figures on the sheet.",
+    "flags": [],
+    "reserve": false,
+    "slice": "debt",
+    "n": 44
+  },
+  {
+    "slug": "bills",
+    "angle": "infographic",
+    "headline": "Missed a Payment? What to Do in the First 48 Hours, in Order",
+    "sub": "Check that the payment actually failed, then pay the full amount today if you can.",
+    "items": [
+      "Right now: Confirm it failed.",
+      "Within the hour: If you have the money, pay the full past-due amount, plus the late fee if it has been added.",
+      "Same sitting: Look at every bill due before your next payday.",
+      "Day 1, if you can't pay: Call the lender.",
+      "Right after the call: Write down the date, the name or ID of the person, and exactly what was agreed.",
+      "Day 2: Log in again."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "you-missed-a-payment-what-to-do-next"
+    },
+    "proof": [
+      "Check that the payment actually failed, then pay the full amount today if you can.",
+      "Right now",
+      "Confirm it failed.",
+      "Within the hour",
+      "If you have the money, pay the full past-due amount, plus the late fee if it has been added.",
+      "Look at every bill due before your next payday",
+      "Day 1, if you can't pay",
+      "Call the lender.",
+      "Write down the date, the name or ID of the person, and exactly what was agreed.",
+      "Day 2",
+      "Log in again."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "missed a payment what to do",
+    "board": "Monthly Bills and Due Dates",
+    "when": "evergreen",
+    "visual": "Infographic, 'ladder' archetype: a vertical timeline down a ruled notebook page with six dated stops (Right now to Day 2), small sticky notes at each stop, the 'Call the lender' stop in the warm pop. A pen and a folded statement at the page edge.",
+    "flags": [],
+    "reserve": false,
+    "slice": "bills",
+    "n": 45
+  },
+  {
+    "slug": "debt",
+    "angle": "how-to-steps",
+    "headline": "How to Pay Off Debt With Snowball or Avalanche in 5 Steps",
+    "sub": "When that debt is gone, its whole payment rolls to the next one. That rolling is what makes both methods speed up.",
+    "items": [
+      "Pay the minimum on every debt each month, on time.",
+      "Decide how much extra you can add each month, and keep it steady.",
+      "Point the extra at the target debt: the smallest balance for snowball, the highest rate for avalanche.",
+      "When that debt is gone, move its whole payment, minimum and extra, to the next target.",
+      "Every three months, update the balances and check that no rate has changed."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "debt-snowball-vs-avalanche"
+    },
+    "proof": [
+      "Pay the minimum on every debt each month, on time.",
+      "Decide how much extra you can add each month, and keep it steady.",
+      "Point the extra at the target debt: the smallest balance for snowball, the highest rate for avalanche.",
+      "When that debt is gone, move its whole payment, minimum and extra, to the next target.",
+      "That rolling is what makes both methods speed up.",
+      "Every three months, update the balances and check that no rate has changed."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to pay off multiple debts",
+    "board": "Debt Payoff",
+    "when": "evergreen",
+    "visual": "Measure archetype: a five-rung ladder drawn down the page, numbered 1 to 5 in forest circles with the step words beside each rung, the lower rungs shaded as cleared, a small rolled arrow from one rung to the next to show the payment moving up. Wash background, ruled lines, a sticky note prop.",
+    "flags": [],
+    "reserve": false,
+    "slice": "debt",
+    "n": 46
+  },
+  {
+    "slug": "bills",
+    "angle": "quote-card",
+    "headline": "What to Say When You Call a Lender About a Missed Payment",
+    "sub": "Use the number on your statement or the back of the card.",
+    "items": [
+      "Opening: \"Hi, I missed my payment that was due on the 12th. I'd like to make it now and see what I can do about the late fee.\"",
+      "Asking for the fee waiver: \"This is the first time I've missed a payment. Would you waive the late fee as a one-time courtesy?\"",
+      "Closing: \"Can you read back what we agreed, and can you send it to me in writing? Could I have your name or ID number?\""
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "you-missed-a-payment-what-to-do-next"
+    },
+    "proof": [
+      "Use the number on your statement or the back of the card.",
+      "Hi, I missed my payment that was due on the 12th. I'd like to make it now and see what I can do about the late fee.",
+      "This is the first time I've missed a payment. Would you waive the late fee as a one-time courtesy?",
+      "Can you read back what we agreed, and can you send it to me in writing? Could I have your name or ID number?"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to say when you miss a payment",
+    "board": "Monthly Bills and Due Dates",
+    "when": "evergreen",
+    "visual": "Quote-card, 'one-card' archetype: a call script on a single large lined card propped against a phone, the three guide lines in forest type with their small labels (Opening, Asking for the fee waiver, Closing), a pen and a statement beside it. Differs from the biller-script pin: one big card, not three fanned.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "slice": "bills",
+    "n": 47
+  },
+  {
+    "slug": "debt",
+    "angle": "infographic",
+    "headline": "Credit Card Minimum Payment: Where Your First $90 Actually Goes",
+    "sub": "That is the whole story of a minimum payment: most of a small payment is spent standing still.",
+    "items": [
+      "$3,000 balance at 24 percent APR",
+      "One twelfth of 24 percent is 2 percent, so the first month adds $60 of interest",
+      "$60 of it covers that interest and only $30 reduces what you owe"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "credit-card-minimum-payments-how-long"
+    },
+    "proof": [
+      "Say the balance is $3,000 and the rate is 24 percent APR.",
+      "One twelfth of 24 percent is 2 percent, so the first month adds $60 of interest",
+      "$60 of it covers that interest and only $30 reduces what you owe",
+      "That is the whole story of a minimum payment: most of a small payment is spent standing still."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how much of my credit card payment goes to interest",
+    "board": "Debt Payoff",
+    "when": "evergreen",
+    "visual": "Measure archetype: one wide $90 payment bar split into a long forest segment labelled $60 interest and a short wash segment labelled $30 off the balance, a $3,000 card icon on the left and a 2 percent annotation above, drawn on ruled paper with a calculator beside it.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "slice": "debt",
+    "n": 48
+  },
+  {
+    "slug": "bills",
+    "angle": "question",
+    "headline": "How Many Days Late Before a Missed Payment Hurts Your Credit?",
+    "sub": "For most accounts, a payment is reported to Equifax, Experian and TransUnion once it is 30 days past due.",
+    "items": [
+      "Day 1 to 29: a late fee can be added, and interest keeps running on the balance.",
+      "Day 30: the lender can report the payment as 30 days late.",
+      "Day 60 or more: some card agreements let the lender raise your rate on the existing balance.",
+      "Paying before day 30 is what keeps it off the report in the first place."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "you-missed-a-payment-what-to-do-next"
+    },
+    "proof": [
+      "How many days late before it hurts my credit?",
+      "For most accounts, a payment is reported to Equifax, Experian and TransUnion once it is 30 days past due.",
+      "Day 1 to 29: a late fee can be added, and interest keeps running on the balance.",
+      "Day 30: the lender can report the payment as 30 days late.",
+      "Day 60 or more: some card agreements let the lender raise your rate on the existing balance.",
+      "Paying before day 30 is what keeps it off the report in the first place."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how many days late before it affects credit",
+    "board": "Monthly Bills and Due Dates",
+    "when": "evergreen",
+    "visual": "Question, 'measure' archetype: a horizontal ruler drawn across a paper strip marked Day 1, Day 30 and Day 60, with the three guide lines as flags on it; the Day 30 flag is the one warm-pop mark. Pencil and a card statement at the edges. Not a month calendar grid.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "slice": "bills",
+    "n": 49
+  },
+  {
+    "slug": "debt",
+    "angle": "before-after",
+    "headline": "Pay Off a Credit Card Faster: What an Extra $50 or $200 a Month Changes",
+    "sub": "Small amounts, held steady, beat a large amount you can't keep up.",
+    "items": [
+      "$90 (the minimum, held level): 56 months, $1,993 interest",
+      "$140 ($50 extra): 29 months, $957 interest",
+      "$290 ($200 extra): 12 months, $395 interest"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "credit-card-minimum-payments-how-long"
+    },
+    "proof": [
+      "Small amounts, held steady, beat a large amount you can't keep up.",
+      "$90 (the minimum, held level)",
+      "56 months",
+      "$1,993",
+      "$140 ($50 extra)",
+      "29 months",
+      "$957",
+      "$290 ($200 extra)",
+      "12 months",
+      "$395",
+      "Example only: $3,000 at 24 percent APR, a fixed $90 payment, no new charges."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "pay off credit card faster",
+    "board": "Debt Payoff",
+    "when": "evergreen",
+    "visual": "Before-after: three stacked horizontal bars on a ruled sheet, a long grey 56 month bar for $90, a medium 29 month bar for $140, a short forest 12 month bar for $290, interest figure at the end of each. A card statement and a sticky note at the edge.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "slice": "debt",
+    "n": 50
+  },
+  {
+    "slice": "savings",
+    "angle": "how-to-steps",
+    "headline": "How to Start an Emergency Fund: Five Steps to Your First $1,000",
+    "sub": "A small amount you keep up beats a big one you drop after six weeks.",
+    "items": [
+      "Open a separate savings account at an FDIC-insured bank.",
+      "Choose an amount from the table.",
+      "Automate it.",
+      "Find the first chunk.",
+      "Check your tightest day before the first transfer"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-build-a-first-1000-emergency-fund"
+    },
+    "proof": [
+      "A small amount you keep up beats a big one you drop after six weeks.",
+      "Open a separate savings account at an FDIC-insured bank.",
+      "Choose an amount from the table.",
+      "Automate it.",
+      "Find the first chunk.",
+      "Check your tightest day before the first transfer"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to start an emergency fund",
+    "board": "Savings and Sinking Funds",
+    "when": "evergreen; peaks January and February to April (new year and tax refund season)",
+    "visual": "how-to-steps / one-card: five numbered index-tab cards fanned down a forest panel, each with the real step in short; the first card carries a small savings-account passbook prop and a pencil. Paper-on-wash desk, one butter-yellow pop on the step number 1.",
+    "flags": [],
+    "reserve": false,
+    "n": 51
+  },
+  {
+    "slug": "debt",
+    "angle": "question",
+    "headline": "What Does the 36 Month Box on Your Credit Card Statement Mean?",
+    "sub": "Issuers must show how much you would pay each month to clear the current balance in 36 months.",
+    "items": [
+      "You aren't required to pay that amount.",
+      "It covers only the balance on that statement",
+      "New purchases mean you won't be debt-free in three years."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "credit-card-minimum-payments-how-long"
+    },
+    "proof": [
+      "Issuers must show how much you would pay each month to clear the current balance in 36 months.",
+      "You aren't required to pay that amount.",
+      "It covers only the balance on that statement, so new purchases mean you won't be debt-free in three years."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "credit card statement 36 month payoff box",
+    "board": "Debt Payoff",
+    "when": "evergreen",
+    "visual": "Question archetype: a close crop of a paper card statement on a kitchen table with a boxed 36 month area circled in forest pen, a large question headline above, three short answer lines on a sticky note beside it. No real bank name, no real figures.",
+    "flags": [],
+    "reserve": false,
+    "slice": "debt",
+    "n": 52
+  },
+  {
+    "slice": "savings",
+    "angle": "infographic",
+    "headline": "Emergency Fund Tracker: How Long $1,000 Takes at Each Amount",
+    "sub": "How long $1,000 takes at different amounts",
+    "items": [
+      "$25",
+      "Every week",
+      "40 weeks",
+      "$50",
+      "20 weeks",
+      "$100",
+      "Every two weeks",
+      "20 weeks (10 paychecks)",
+      "$200",
+      "Every month",
+      "5 months"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-build-a-first-1000-emergency-fund"
+    },
+    "proof": [
+      "How long $1,000 takes at different amounts",
+      "Time to $1,000",
+      "40 weeks",
+      "20 weeks (10 paychecks)",
+      "Every two weeks",
+      "5 months"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "emergency fund tracker $1000",
+    "board": "Savings and Sinking Funds",
+    "when": "evergreen; peaks January and February to April (new year and tax refund season)",
+    "visual": "measure archetype: a ladder of four horizontal bars on ruled paper, longest for $25 every week (40 weeks) down to $200 every month (5 months), each with its amount and pace written at the left; the $50 every week bar (20 weeks) gets the one warm pop. A pencil lies across the corner.",
+    "flags": [],
+    "reserve": false,
+    "n": 53
+  },
+  {
+    "slug": "debt",
+    "angle": "mockup-app",
+    "headline": "Debt Payoff Plan App: Smallest Balance First or Highest Rate First",
+    "sub": null,
+    "items": [
+      "Type each debt's balance, rate and minimum",
+      "Smallest balance first or highest rate first",
+      "An extra amount you choose",
+      "The month you are debt-free, the order the debts clear",
+      "A debt with no rate is named as left out, never guessed at.",
+      "It doesn't connect to your lenders and it doesn't change what you pay"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "personal-finance-companion"
+    },
+    "proof": [
+      "A payoff plan from your own balances, rates and minimum payments: the month you are debt-free, the order the debts clear, and what the cheaper method saves.",
+      "A debt with no rate is named as left out, never guessed at.",
+      "smallest balance first or highest rate first, with an extra amount you choose"
+    ],
+    "proofFile": "src/shop/products/personal-finance-companion.ts",
+    "proofExtra": [
+      {
+        "file": "src/content/guides.ts",
+        "proof": [
+          "You type each debt's balance, rate and minimum, set an extra amount, and switch between smallest balance first and highest rate first.",
+          "It doesn't connect to your lenders and it doesn't change what you pay"
+        ]
+      }
+    ],
+    "query": "debt payoff planner app",
+    "board": "Debt Payoff",
+    "when": "evergreen",
+    "visual": "Homeschool-reference mockup-app: dark forest panel with the Personal Finance Companion app icon and name, a big two-tone headline, four feature rows from the items, a large tilted phone showing the real screen creative/public/screens/personal-finance-companion-debt.png (Payoff plan card with the Smallest balance first / Highest rate first toggle; crop the Next.js dev badge; the demo figures in the phone are not repeated in any overlay text), a calculator and a coffee mug as props. Product line with its price is set by the product pin template; no price in the headline.",
+    "flags": [],
+    "reserve": false,
+    "slice": "debt",
+    "n": 54
+  },
+  {
+    "slice": "savings",
+    "angle": "scenario",
+    "headline": "Saving $1,000 Fast: A Tax Refund and One Sale Start You at $590",
+    "sub": "Same $1,000, about a quarter of a year, and most of it never came out of your monthly budget.",
+    "items": [
+      "$410 tax refund",
+      "sell a bike for $180",
+      "$590 on day one",
+      "At $35 a week, the last $410 takes 12 weeks"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-build-a-first-1000-emergency-fund"
+    },
+    "proof": [
+      "Say you get a $410 tax refund and sell a bike for $180. That's $590 on day one. At $35 a week, the last $410 takes 12 weeks. Same $1,000, about a quarter of a year, and most of it never came out of your monthly budget."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to save $1000 fast",
+    "board": "Savings and Sinking Funds",
+    "when": "evergreen; peaks January and February to April (new year and tax refund season)",
+    "visual": "scenario on a kitchen table: a tax-refund notice card and a bike price tag sit left, an arrow into a jar-style progress bar already at $590 of $1,000 with the last $410 shown as 12 small weekly ticks. Props: coffee mug, calculator.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 55
+  },
+  {
+    "slug": "debt",
+    "angle": "mockup-printable",
+    "headline": "Debt Payoff Printable: List Your Debts Two Ways, Then Keep One Order",
+    "sub": "Work your chosen order from the bottom rung up. Shade each rung as it is cleared.",
+    "items": [
+      "Avalanche: highest rate first",
+      "Snowball: smallest balance first",
+      "Payoff ladder",
+      "Which method will I actually keep to, and why?"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "personal-finance-companion"
+    },
+    "proof": [
+      "Debt payoff method comparison",
+      "Avalanche pays the highest interest rate first and usually costs the least.",
+      "List your debts both ways, then choose the order you will actually keep to.",
+      "Payoff ladder",
+      "Work your chosen order from the bottom rung up. Shade each rung as it is cleared.",
+      "Which method will I actually keep to, and why?"
+    ],
+    "proofFile": "book",
+    "query": "debt snowball printable",
+    "board": "Debt Payoff",
+    "when": "evergreen",
+    "visual": "Mockup-printable: the real, blank workbook page titled Debt payoff method comparison (Debt section, printed page 38 of the 81-page Printable Finance Companion) lying tilted on a desk over an open binder with index tabs, the Avalanche and Snowball columns and the five-rung Payoff ladder visible, a pen and a sticky note as props. Nothing is filled in on the page.",
+    "flags": [],
+    "reserve": false,
+    "slice": "debt",
+    "n": 56
+  },
+  {
+    "slice": "savings",
+    "angle": "question",
+    "headline": "Is $1,000 Enough for an Emergency Fund? What a First Cushion Covers",
+    "sub": "Treat $1,000 as the first step, then build toward one month of bills and then three.",
+    "items": [
+      "It covers small surprises such as a car repair, a vet visit or a broken phone.",
+      "It won't cover a job loss or a large medical bill"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-build-a-first-1000-emergency-fund"
+    },
+    "proof": [
+      "Is $1,000 enough for an emergency fund?",
+      "It covers small surprises such as a car repair, a vet visit or a broken phone.",
+      "It won't cover a job loss or a large medical bill",
+      "Treat $1,000 as the first step, then build toward one month of bills and then three."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "is $1000 enough for an emergency fund",
+    "board": "Savings and Sinking Funds",
+    "when": "evergreen; peaks January and February to April (new year and tax refund season)",
+    "visual": "question card: the question set large in serif on paper; below it a two-column ruled split, left 'covers' with a car repair, vet visit and broken phone as plain line drawings, right 'won't cover' with a job loss and a large medical bill, a dashed outline around the right side to show the limit.",
+    "flags": [],
+    "reserve": false,
+    "n": 57
+  },
+  {
+    "slice": "organize",
+    "angle": "how-to-steps",
+    "headline": "Organize Your Finances in Ten Minutes: What to Do Minute by Minute",
+    "sub": "A ten minute starting page you can fill in from memory, with the gaps marked.",
+    "items": [
+      "Minutes 0 to 2: List where your money information lives",
+      "Minutes 2 to 6: Fill in the six areas from memory",
+      "Minute 7: Circle the number you most want",
+      "Minutes 7 to 9: Close one gap",
+      "Minute 10: Pick a day to look at the page again"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "organize-your-finances-from-scratch"
+    },
+    "proof": [
+      "a ten minute starting page you can fill in from memory, with the gaps marked",
+      "Minutes 0 to 2",
+      "List where your money information lives",
+      "Minutes 2 to 6",
+      "Fill in the six areas from memory",
+      "Minute 7",
+      "Circle the number you most want",
+      "Minutes 7 to 9",
+      "Close one gap",
+      "Minute 10",
+      "Pick a day to look at the page again"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to organize your finances",
+    "board": "Organize Your Finances",
+    "when": "evergreen",
+    "visual": "Tracker-sheet layout: one ruled paper page tilted on a kitchen table with a vertical ten-step ruler down its left edge and five stops (0-2, 2-6, 7, 7-9, 10) each carrying its short line; a pencil across the corner, a coffee mug, the pop colour on the Minute 7 circle. No clock face or timer UI.",
+    "flags": [],
+    "reserve": false,
+    "n": 58
+  },
+  {
+    "slice": "savings",
+    "angle": "comparison",
+    "headline": "Sinking Fund vs Emergency Fund: Which One Pays This Bill?",
+    "sub": "A bill you can see coming belongs in a sinking fund, so the cushion stays whole.",
+    "items": [
+      "A known cost you can name",
+      "An unplanned bill or lost pay",
+      "Known or roughly known",
+      "Unknown",
+      "Cost divided by months",
+      "A cushion you choose",
+      "When the bill lands, then it restarts",
+      "Only for surprises, then refill it"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "sinking-funds-explained"
+    },
+    "proof": [
+      "A bill you can see coming belongs in a sinking fund, so the cushion stays whole.",
+      "A known cost you can name",
+      "An unplanned bill or lost pay",
+      "Known or roughly known",
+      "Cost divided by months",
+      "A cushion you choose",
+      "When the bill lands, then it restarts",
+      "Only for surprises, then refill it"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "sinking fund vs emergency fund",
+    "board": "Savings and Sinking Funds",
+    "when": "evergreen",
+    "visual": "side-by-side: two labelled jars on a desk, 'Sinking fund' and 'Emergency fund', each with four ruled rows (Cost, Date, Size, When it is used) filled with the guide's own table cells; a sticky note between them. Forest and soft panels, one warm pop on the word 'Unknown'.",
+    "flags": [],
+    "reserve": false,
+    "n": 59
+  },
+  {
+    "slice": "organize",
+    "angle": "template-preview",
+    "headline": "Personal Finance Organizer Page: Six Areas, Filled In From Memory",
+    "sub": "The question marks are the useful part.",
+    "items": [
+      "Accounts: Checking at the credit union, about $1,900. Savings, about $4,000?",
+      "Income: Paycheck, about $2,600 every two weeks, next one Friday",
+      "Bills: Rent $1,450 on the 1st. Electric ?. Car insurance ?, date ?",
+      "Subscriptions: Streaming, phone backup, gym?",
+      "Debts: Visa about $2,600, rate ?. Student loan, payment about $120",
+      "Goals: Emergency fund, $5,000, by next summer"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "organize-your-finances-from-scratch"
+    },
+    "proof": [
+      "The question marks are the useful part.",
+      "Area",
+      "What you write",
+      "Gap to close",
+      "Accounts",
+      "Checking at the credit union, about $1,900. Savings, about $4,000?",
+      "Paycheck, about $2,600 every two weeks, next one Friday",
+      "Rent $1,450 on the 1st. Electric ?. Car insurance ?, date ?",
+      "Streaming, phone backup, gym?",
+      "Visa about $2,600, rate ?. Student loan, payment about $120",
+      "Emergency fund, $5,000, by next summer"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "personal finance organizer printable",
+    "board": "Organize Your Finances",
+    "when": "evergreen; January fresh start",
+    "visual": "Tracker-sheet: the guide's six-row example table as a fill-in register page (columns Area, What you write, Gap to close) with a small 'Example only' stamp. Each question mark is hand-circled in the pop colour; the Gap to close column is left half blank so the page reads as a template to copy. A pencil and a sticky note on the desk.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 60
+  },
+  {
+    "slice": "savings",
+    "angle": "before-after",
+    "headline": "Sinking Fund Math: $1,566 of Yearly Costs Becomes $175.50 a Month",
+    "sub": "Add the column and you have a number to move each month.",
+    "items": [
+      "Car insurance, $540 per six months",
+      "Car registration, $120",
+      "Holiday gifts, $450",
+      "Annual subscription, $96",
+      "Dental and vision, $360 a year",
+      "$175.50",
+      "$1,566 over a year"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "sinking-funds-explained"
+    },
+    "proof": [
+      "Add the column and you have a number to move each month.",
+      "The five costs total $1,566 over a year, which is why they feel like ambushes when they land on one card in one month.",
+      "Car insurance, $540 per six months",
+      "Car registration, $120",
+      "Holiday gifts, $450",
+      "Annual subscription, $96",
+      "Dental and vision, $360 a year",
+      "$175.50"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "sinking funds categories examples",
+    "board": "Savings and Sinking Funds",
+    "when": "evergreen; peaks July to September (before holiday gifts)",
+    "visual": "before-after: top half five bill slips piling onto one card labelled $1,566 over a year; bottom half the same five costs as five small ruled rows ending in one total, $175.50. Receipts and a card as props, one warm pop on the total.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 61
+  },
+  {
+    "slice": "organize",
+    "angle": "question",
+    "headline": "Which Number Do You Most Want to Know About Your Money? Circle It First",
+    "sub": "That decides which question mark you chase first.",
+    "items": [
+      "What's free to spend",
+      "When a debt ends"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "organize-your-finances-from-scratch"
+    },
+    "proof": [
+      "Circle the number you most want: either what's free to spend, or when a debt ends. That decides which question mark you chase first."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to get your finances in order",
+    "board": "Organize Your Finances",
+    "when": "evergreen",
+    "visual": "One-card layout: one large card on a faded wall of blank sticky notes, the card holding the headline question and two pencil-circled choices, What's free to spend and When a debt ends. No figures drawn on the card, only the two choices, so it does not become a big 'available' number pin.",
+    "flags": [],
+    "reserve": false,
+    "n": 62
+  },
+  {
+    "slice": "savings",
+    "angle": "how-to-steps",
+    "headline": "Sinking Fund Calculator by Hand: $600 by December Is $112.50 a Month",
+    "sub": "Take the cost, subtract what you've saved, and divide by the number of whole months until the date.",
+    "items": [
+      "Need $600 by December",
+      "have $150",
+      "four months to go",
+      "$112.50 a month"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "sinking-funds-explained"
+    },
+    "proof": [
+      "Need $600 by December, have $150, four months to go: $112.50 a month.",
+      "Take the cost, subtract what you've saved, and divide by the number of whole months until the date.",
+      "subtract what you've already saved from the cost, then divide by the whole months left"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to calculate a sinking fund",
+    "board": "Savings and Sinking Funds",
+    "when": "evergreen; peaks September to November (saving toward December)",
+    "visual": "one-card: a large worksheet-style card showing the sum as four stacked ruled lines (cost $600, saved $150, four months, $112.50 a month), a calculator and pencil beside it, a small December calendar leaf tag. The $112.50 gets the one warm pop.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 63
+  },
+  {
+    "slice": "organize",
+    "angle": "before-after",
+    "headline": "Organize Your Finances: Why a Page With Question Marks Beats One With Guesses",
+    "sub": "A page that says where it's unsure is more use than one that fills the blanks with guesses.",
+    "items": [
+      "You skip the question marks and guess, so the page looks finished and is wrong.",
+      "It lives somewhere you won't open",
+      "You build it once and never set the day"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "organize-your-finances-from-scratch"
+    },
+    "proof": [
+      "A page that says where it's unsure is more use than one that fills the blanks with guesses",
+      "You skip the question marks and guess, so the page looks finished and is wrong.",
+      "It lives somewhere you won't open",
+      "you build it once and never set the day"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "organize finances when overwhelmed",
+    "board": "Organize Your Finances",
+    "when": "evergreen",
+    "visual": "Intake / side-by-side: two ruled pages on a desk. Left, neat and confident with tidy round numbers, stamped as wrong; right, the same page with question marks and a Gap to close column, stamped as useful. A short three-line list of the ways the page breaks sits under them. Uses the guide's own example rows only.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 64
+  },
+  {
+    "slice": "savings",
+    "angle": "mockup-printable",
+    "headline": "Sinking Funds Worksheet: A Printable Page for Costs You Can See Coming",
+    "sub": "Use this for costs you can see coming, even if they are not monthly.",
+    "items": [
+      "Future cost",
+      "Due month or date",
+      "Target",
+      "Saved snapshot",
+      "Funding source",
+      "Next step"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "sinking-funds-explained"
+    },
+    "proof": [
+      "The printed workbook has a sinking funds worksheet with columns for the future cost, due date, target, saved so far, where it's funded from and next step."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "sinking funds worksheet printable",
+    "board": "Savings and Sinking Funds",
+    "when": "evergreen; peaks January and September to November",
+    "visual": "mockup-printable: the REAL workbook page 'Sinking funds worksheet' (page 42, section 07 Savings goals and sinking funds) tilted on a desk beside a closed binder and pencil, its real column headers visible; two pencilled example rows from the guide (Car registration, March, $120) flagged as example. Headline in a forest band above.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "proofExtra": [
+      {
+        "file": "book",
+        "proof": [
+          "Sinking funds worksheet",
+          "Use this for costs you can see coming, even if they are not monthly.",
+          "Future cost Due month or date Target Saved snapshot Funding source Next step"
+        ]
+      }
+    ],
+    "n": 65
+  },
+  {
+    "slice": "organize",
+    "angle": "checklist",
+    "headline": "How Often to Update a Financial Binder: A Five Step Monthly Check",
+    "sub": "Fifteen minutes on the same day each month is enough.",
+    "items": [
+      "Check each balance against a statement and update the Checked date.",
+      "Change any label that has aged from Confirmed to Stale.",
+      "Move anything new into the right section: a bill, a subscription, a debt.",
+      "Write one line about a decision you made and why.",
+      "Put the binder back somewhere private."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "financial-binder-what-to-include"
+    },
+    "proof": [
+      "Fifteen minutes on the same day each month is enough.",
+      "Check each balance against a statement and update the Checked date.",
+      "Change any label that has aged from Confirmed to Stale.",
+      "Move anything new into the right section: a bill, a subscription, a debt.",
+      "Write one line about a decision you made and why.",
+      "Put the binder back somewhere private."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "financial binder checklist",
+    "board": "Financial Binder and Printables",
+    "when": "evergreen; peaks January",
+    "visual": "Checklist on a clipboard: five ruled lines with empty tick boxes, one pencil tick half drawn, the clipboard resting on a closed forest-green binder with an index tab sticking out. Forest and paper only, one pop on the first tick.",
+    "flags": [],
+    "reserve": false,
+    "n": 66
+  },
+  {
+    "slice": "savings",
+    "angle": "mockup-app",
+    "headline": "Emergency Fund Tracker App: Set a Target, Type What You Have Saved",
+    "sub": "Progress is what you type: it doesn't connect to your bank or move money, and it flags a goal that has no target date.",
+    "items": [
+      "a savings goal type called Emergency fund",
+      "You type in the target, what you've saved so far and, if you want a monthly figure, a target date.",
+      "It then works out the monthly amount needed and shows progress on the Today screen."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-build-a-first-1000-emergency-fund"
+    },
+    "proof": [
+      "has a savings goal type called Emergency fund",
+      "You type in the target, what you've saved so far and, if you want a monthly figure, a target date.",
+      "It then works out the monthly amount needed and shows progress on the Today screen.",
+      "Progress is what you type: it doesn't connect to your bank or move money, and it flags a goal that has no target date."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "emergency fund tracker app",
+    "board": "Savings and Sinking Funds",
+    "when": "evergreen; peaks January and February to April (new year and tax refund season)",
+    "visual": "mockup-app in the homeschool reference style: dark forest panel, app icon and name, two-tone headline, three feature rows from the guide, a large tilted phone showing a CAPTURED screen of the Personal Finance Companion Emergency fund savings goal (stub data, new capture needed: no existing screen shows savings), a jar prop. Keep the limit line on the pin.",
+    "flags": [
+      "needs-capture"
+    ],
+    "reserve": false,
+    "n": 67
+  },
+  {
+    "slice": "organize",
+    "angle": "mockup-printable",
+    "headline": "Financial Binder Labels: Confirmed, Estimated, Unresolved, Missing, Stale",
+    "sub": "Write one of these labels next to every figure.",
+    "items": [
+      "Confirmed: Checked and believed accurate",
+      "Estimated: Reasonable, but may change",
+      "Unresolved: Exists, needs a decision",
+      "Missing: Not known yet",
+      "Stale: Once confirmed, may be old"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "financial-binder-what-to-include"
+    },
+    "proof": [
+      "Write one of these labels next to every figure.",
+      "Checked and believed accurate",
+      "Reasonable, but may change",
+      "Exists, needs a decision",
+      "Not known yet",
+      "Once confirmed, may be old",
+      "plus a page with the five labels"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "proofExtra": [
+      {
+        "file": "book",
+        "proof": [
+          "Information confidence key",
+          "Use these labels anywhere in the workbook."
+        ]
+      }
+    ],
+    "query": "financial binder labels",
+    "board": "Financial Binder and Printables",
+    "when": "evergreen; peaks January",
+    "visual": "Mockup-printable: the real workbook page 10, 'Information confidence key' (Label, Meaning, When to use it), printed US Letter, tilted on a desk next to an open three-ring binder with index tabs; five small tab flags carry the five label names. Page text is the workbook's own; the chips on the pin use the guide's short meanings.",
+    "flags": [],
+    "reserve": false,
+    "n": 68
+  },
+  {
+    "slice": "savings",
+    "angle": "checklist",
+    "headline": "How to Save $200 This Month: Seven Moves From One Example Month",
+    "sub": "Here is one month that adds up to exactly $200.",
+    "items": [
+      "Cancel a $15.99 streaming plan and a $9.99 app you've stopped using",
+      "Ask for a lower phone rate, from $85 to $55",
+      "Ask the internet provider for its lowest price for existing customers",
+      "Get two quotes and move car insurance",
+      "Drop a $12 monthly account fee, by changing account type or banks",
+      "One week of meals from the pantry and freezer",
+      "Sell one thing you no longer use"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-save-money-fast"
+    },
+    "proof": [
+      "Here is one month that adds up to exactly $200.",
+      "Cancel a $15.99 streaming plan and a $9.99 app you've stopped using",
+      "Ask for a lower phone rate, from $85 to $55",
+      "Ask the internet provider for its lowest price for existing customers",
+      "Get two quotes and move car insurance",
+      "Drop a $12 monthly account fee, by changing account type or banks",
+      "One week of meals from the pantry and freezer",
+      "Sell one thing you no longer use"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to save money this month",
+    "board": "Savings and Sinking Funds",
+    "when": "evergreen; peaks January and after the holidays",
+    "visual": "checklist: a seven-row ruled checklist on paper with empty tick boxes and the seven moves in short, a pencil ticking the first box; a small forest total tag '$200' at the foot. Desk with coffee mug.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 69
+  },
+  {
+    "slice": "organize",
+    "angle": "comparison",
+    "headline": "What Goes in a Financial Binder, and What Stays Out of It",
+    "sub": "A binder lists every account you have, so adding logins makes it a key for anyone who finds it.",
+    "items": [
+      "In: the last four digits and where the full record lives",
+      "Out: passwords",
+      "Out: security answers"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "financial-binder-what-to-include"
+    },
+    "proof": [
+      "Two things stay out of it whatever you do: passwords and security answers.",
+      "For accounts, write the last four digits and where the full record lives, not the whole number.",
+      "A binder lists every account you have, so adding logins makes it a key for anyone who finds it."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to put in a financial binder",
+    "board": "Financial Binder and Printables",
+    "when": "evergreen; peaks January",
+    "visual": "Side-by-side: a split sheet. Left column 'In' shows one account row with only 'last four digits' and 'where the full record lives'; right column 'Out' shows two crossed-out strips reading passwords and security answers. A small padlock-free paper tab, binder rings at the left edge. No real-looking numbers.",
+    "flags": [],
+    "reserve": false,
+    "n": 70
+  },
+  {
+    "slice": "savings",
+    "angle": "quote-card",
+    "headline": "How to Lower Your Phone Bill: What to Say on the Call",
+    "sub": "If the first person can't help, ask for the retention or loyalty team.",
+    "items": [
+      "I've been with you a while and I'm paying $85 a month. I'd like to stay. What's the lowest rate you can give me on my current line?",
+      "Have your account number and your current monthly rate in front of you."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-save-money-fast"
+    },
+    "proof": [
+      "I've been with you a while and I'm paying $85 a month. I'd like to stay. What's the lowest rate you can give me on my current line?",
+      "Have your account number and your current monthly rate in front of you.",
+      "If the first person can't help, ask for the retention or loyalty team."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to lower your phone bill",
+    "board": "Monthly Bills and Due Dates",
+    "when": "evergreen",
+    "visual": "quote-card: the script set large in serif on a sticky-note-style card clipped to a binder tab, a phone bill page and a handset line drawing behind it; one warm pop on the $85.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 71
+  },
+  {
+    "slice": "organize",
+    "angle": "mockup-printable",
+    "headline": "Missing Information List: Write Down What You Do Not Know Yet",
+    "sub": "Missing information is useful when it is visible.",
+    "items": [
+      "Missing item",
+      "Area",
+      "Where I will look",
+      "Priority",
+      "Ready to update?"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "financial-binder-what-to-include"
+    },
+    "proof": [
+      "Mark anything uncertain as Missing or Estimated.",
+      "plus a page with the five labels"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "proofExtra": [
+      {
+        "file": "book",
+        "proof": [
+          "Missing information is useful when it is visible.",
+          "Missing item Area Where I will look Priority Ready to update?"
+        ]
+      }
+    ],
+    "query": "financial organizer worksheet",
+    "board": "Financial Binder and Printables",
+    "when": "evergreen; peaks January",
+    "visual": "Mockup-printable: the real workbook page 11, 'Initial missing information list' (columns Missing item, Area, Where I will look, Priority, Ready to update?), printed US Letter, tilted on a desk beside a pencil and a mug; a few handwritten example rows ('rate?', 'renewal date') in pencil, one cell in the pop colour. The page is shown as printed, with only a light handwritten overlay.",
+    "flags": [],
+    "reserve": false,
+    "n": 72
+  },
+  {
+    "slice": "savings",
+    "angle": "comparison",
+    "headline": "50/30/20 Budget Example: A $3,500 Month vs a $2,400 Month With $1,300 Rent",
+    "sub": "Rent alone is 54 percent of your pay, so the needs bucket is over before you've bought food.",
+    "items": [
+      "$1,750",
+      "$1,050",
+      "$700",
+      "Rent",
+      "$1,300",
+      "54%",
+      "$2,075, or 86 percent",
+      "$325"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "50-30-20-rule-where-it-breaks"
+    },
+    "proof": [
+      "On $3,500 a month that's $1,750, $1,050 and $700.",
+      "Rent alone is 54 percent of your pay, so the needs bucket is over before you've bought food.",
+      "needs come to $2,075, or 86 percent. That leaves $325 for everything else."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "50/30/20 budget example",
+    "board": "Safe to Spend and Budgeting",
+    "when": "evergreen",
+    "visual": "side-by-side: two jar trios (measure archetype), left $3,500 with Needs $1,750, Wants $1,050, Savings and extra debt $700 filled to rule; right $2,400 where the Needs jar overflows at 86 percent, leaving $325. The overflow gets the one warm pop.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 73
+  },
+  {
+    "slice": "organize",
+    "angle": "checklist",
+    "headline": "Budget App Checklist: 5 Tests Before You Spend a Weekend on Setup",
+    "sub": "Each one you can't tick is a place where week six goes wrong.",
+    "items": [
+      "It answers one question you actually ask, such as what's safe to spend this month.",
+      "After two skipped weeks, its main number would still be roughly right.",
+      "It tells you when its number is old or built on missing information.",
+      "Nothing in it can put you behind: no day counters, no overdue categories.",
+      "You can restart from today's balance in minutes, without back-filling."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "why-budgeting-apps-stop-working-after-two-months"
+    },
+    "proof": [
+      "Each one you can't tick is a place where week six goes wrong.",
+      "It answers one question you actually ask, such as what's safe to spend this month.",
+      "After two skipped weeks, its main number would still be roughly right.",
+      "It tells you when its number is old or built on missing information.",
+      "Nothing in it can put you behind: no day counters, no overdue categories.",
+      "You can restart from today's balance in minutes, without back-filling."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "best budgeting method that actually works",
+    "board": "Safe to Spend and Budgeting",
+    "when": "evergreen; January, September",
+    "visual": "Checklist: five ruled lines with square tick boxes on a paper card, a phone lying face down beside it and a pencil; the fifth box left empty with a small dashed outline. Forest/paper palette, one pop on the pencil. No app UI drawn.",
+    "flags": [],
+    "reserve": false,
+    "n": 74
+  },
+  {
+    "slice": "savings",
+    "angle": "myth-vs-truth",
+    "headline": "50/30/20 Rule Questions: Minimums, High Rent and What It Really Is",
+    "sub": "It's a guideline, not a law.",
+    "items": [
+      "Where do minimum debt payments go in 50/30/20?",
+      "In needs, because you have to pay them. Only the amount you pay above the minimum counts toward the 20 percent bucket.",
+      "Does 50/30/20 work with high rent?",
+      "Often not as written. If rent alone is around half of your income, needs are over 50 percent before groceries.",
+      "What is the 50/30/20 rule?",
+      "It's a starting point for checking your month, not a rule you have to meet."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "50-30-20-rule-where-it-breaks"
+    },
+    "proof": [
+      "it's a guideline, not a law",
+      "Where do minimum debt payments go in 50/30/20?",
+      "In needs, because you have to pay them. Only the amount you pay above the minimum counts toward the 20 percent bucket.",
+      "Does 50/30/20 work with high rent?",
+      "Often not as written. If rent alone is around half of your income, needs are over 50 percent before groceries.",
+      "What is the 50/30/20 rule?",
+      "It's a starting point for checking your month, not a rule you have to meet."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "50/30/20 rule explained",
+    "board": "Safe to Spend and Budgeting",
+    "when": "evergreen",
+    "visual": "myth-vs-truth card: three question strips (the guide's own FAQ questions) each with its quoted answer beneath, on ruled paper with index tabs down the edge; the answer words get the forest ink, a thin amber underline only on 'Often not as written'.",
+    "flags": [],
+    "reserve": false,
+    "n": 75
+  },
+  {
+    "slice": "organize",
+    "angle": "scenario",
+    "headline": "Why Budgeting Apps Stop Working: What Week Six Looks Like",
+    "sub": "The app was never wrong on purpose, and you didn't stop caring.",
+    "items": [
+      "You build 14 categories, each with a limit",
+      "In week three you miss six days",
+      "41 transactions waiting to be sorted",
+      "a dining category showing $86 left that you know is wrong",
+      "25 minutes you don't have"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "why-budgeting-apps-stop-working-after-two-months"
+    },
+    "proof": [
+      "The app was never wrong on purpose, and you didn't stop caring.",
+      "You build 14 categories, each with a limit",
+      "In week three you miss six days",
+      "41 transactions waiting to be sorted",
+      "a dining category showing $86 left that you know is wrong",
+      "25 minutes you don't have",
+      "This is an illustration, not a report of anyone's month"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "why budgeting apps fail",
+    "board": "Safe to Spend and Budgeting",
+    "when": "evergreen; January",
+    "visual": "Scenario strip of three small paper cards on a kitchen table, left to right: day 1 (14 tidy category tabs), week 3 (a stack of 41 slips), week 6 (a closed phone, a mug gone cold). Honest 'illustration' note in the corner. Drawn as paper props, not as an app screen.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 76
+  },
+  {
+    "slice": "savings",
+    "angle": "before-after",
+    "headline": "How Much Money Is Safe to Spend? $2,340 in the Bank Is Really $1,411",
+    "sub": "The balance said $2,340. The number you can act on is $1,411, which is $929 less.",
+    "items": [
+      "Available balance",
+      "$2,340.00",
+      "Car insurance, the 15th",
+      "- $128.00",
+      "Phone, the 18th",
+      "- $62.00",
+      "Held back on purpose",
+      "- $300.00",
+      "Safe to spend",
+      "$1,411.00"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-much-of-your-money-is-actually-safe-to-spend"
+    },
+    "proof": [
+      "The balance said $2,340. The number you can act on is $1,411, which is $929 less.",
+      "Available balance",
+      "$2,340.00",
+      "Car insurance, the 15th",
+      "- $128.00",
+      "Phone, the 18th",
+      "- $62.00",
+      "Held back on purpose",
+      "- $300.00",
+      "Safe to spend",
+      "$1,411.00"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how much money is safe to spend",
+    "board": "Safe to Spend and Budgeting",
+    "when": "evergreen",
+    "visual": "before-after: left a bank balance slip, right the same sum written line by line on a long receipt tape beside a calculator (several lines visible, not one big figure), ending at the ruled-off $1,411.00; the subtraction lines are in pencil, the result gets the one warm pop.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 77
+  },
+  {
+    "slice": "organize",
+    "angle": "quote-card",
+    "headline": "Why Budgets Fail: A Wrong Number Is Worse Than No Number",
+    "sub": "A figure built on gaps looks as sure of itself as one built on complete data.",
+    "items": [
+      "The first time you catch it being wrong, you discount all of it, including the parts that were right."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "why-budgeting-apps-stop-working-after-two-months"
+    },
+    "proof": [
+      "A figure built on gaps looks as sure of itself as one built on complete data.",
+      "The first time you catch it being wrong, you discount all of it, including the parts that were right."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "why do budgets fail",
+    "board": "Safe to Spend and Budgeting",
+    "when": "evergreen",
+    "visual": "Quote-card: the quoted sentence set large in Newsreader on a paper card with ruled lines, the words 'wrong' and 'right' underlined in the pop colour, a torn sticky note and a pencil at the edge. Quiet, text-led, no figures.",
+    "flags": [],
+    "reserve": false,
+    "n": 78
+  },
+  {
+    "slice": "savings",
+    "angle": "scenario",
+    "headline": "Can I Afford It? A $42 Item vs a $480 Item Before Payday",
+    "sub": "A normal week of groceries, fuel and small things costs you about $110.",
+    "items": [
+      "$600",
+      "A $42 item",
+      "$558",
+      "$139.50",
+      "Fine",
+      "A $180 item",
+      "$105",
+      "A little short",
+      "A $480 item",
+      "$120",
+      "$30",
+      "No, not before payday"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "can-you-afford-it-before-you-buy-it"
+    },
+    "proof": [
+      "so your safe-to-spend figure is $600. Payday is four weeks away.",
+      "A normal week of groceries, fuel and small things costs you about $110.",
+      "A $42 item",
+      "$139.50",
+      "A $180 item",
+      "A little short",
+      "A $480 item",
+      "No, not before payday"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to know if i can afford something",
+    "board": "Safe to Spend and Budgeting",
+    "when": "evergreen",
+    "visual": "scenario: three price tags ($42, $180, $480) on a desk, each linked by a ruled line to its 'per week' result and verdict; the $480 tag stands slightly apart with a dashed outline. Calculator and receipt tape props. This is a purchase check, not a big balance banner.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 79
+  },
+  {
+    "slice": "organize",
+    "angle": "how-to-steps",
+    "headline": "How to Make a Monthly Budget for the First Time in About an Hour: 6 Steps",
+    "sub": "Open last month's bank and card statements first.",
+    "items": [
+      "Find your take-home pay.",
+      "List every bill with its due date.",
+      "Estimate the rest from real statements.",
+      "Put savings and debt payments in before the extras.",
+      "Subtract.",
+      "Pick one weekday for a check-in and put it in your calendar today."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-budget-for-beginners"
+    },
+    "proof": [
+      "Open last month's bank and card statements first.",
+      "How to build yours in about an hour",
+      "Find your take-home pay.",
+      "List every bill with its due date.",
+      "Estimate the rest from real statements.",
+      "Put savings and debt payments in before the extras.",
+      "Subtract.",
+      "Pick one weekday for a check-in and put it in your calendar today."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to make a monthly budget",
+    "board": "Safe to Spend and Budgeting",
+    "when": "evergreen; January, September",
+    "visual": "How-to-steps: six numbered steps on a ruled sheet, a calculator and a stack of paper statements beside it (kitchen-table prop), the step Subtract in the pop colour. No dollar figures on the pin.",
+    "flags": [],
+    "reserve": false,
+    "n": 80
+  },
+  {
+    "slice": "partners",
+    "angle": "comparison",
+    "headline": "Equal, By Income or By Item: 3 Ways to Split Bills With a Partner",
+    "sub": "Each method assumes something different. Pick the one you can both live with.",
+    "items": [
+      "Equal: every shared bill is halved. Suits incomes that are close.",
+      "By income: each pays a percentage matching earnings. Needs both to share income figures.",
+      "By item: each person owns certain bills. Utilities swing while rent stays put, so the totals drift apart."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "split-bills-with-a-partner-or-roommate"
+    },
+    "proof": [
+      "Every shared bill is halved",
+      "Incomes that are close",
+      "The lower earner pays a bigger share of their pay",
+      "Each pays a percentage matching earnings",
+      "Needs both to share income figures",
+      "Each person owns certain bills",
+      "Utilities swing while rent stays put, so the totals drift apart"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to split bills with a partner",
+    "board": "Splitting Bills",
+    "when": "evergreen; peaks at moves and lease signings (May to September) and January",
+    "visual": "Side-by-side archetype: three tall paper columns on a desk (Equal, By income, By item), each headed by a small bar showing how the same rent is divided (a 50/50 bar, a two-thirds/one-third bar, two separate bill tags), the 'Watch for' line in small print at the foot of each. A pencil lies across the corner; one warm pop on the 'By income' column.",
+    "flags": [],
+    "reserve": false,
+    "n": 81
+  },
+  {
+    "slice": "savings",
+    "angle": "scenario",
+    "headline": "Why Did My Available Balance Go Up? A Gas Pump Hold Explained",
+    "sub": "Nothing arrived. A hold was replaced by the smaller real charge.",
+    "items": [
+      "Gas pump places a hold: $100.00",
+      "$1,053.60",
+      "$42.15",
+      "$57.85",
+      "Current balance",
+      "Available balance"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "available-balance-vs-current-balance"
+    },
+    "proof": [
+      "when the pump finishes at $42.15, the $100.00 hold drops off and your available balance rises by $57.85, without you doing anything.",
+      "Nothing arrived. A hold was replaced by the smaller real charge.",
+      "Gas pump places a hold: $100.00",
+      "$1,053.60"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "why did my available balance go up",
+    "board": "Safe to Spend and Budgeting",
+    "when": "evergreen",
+    "visual": "scenario: a gas-pump receipt showing a $100.00 hold stamped over, then the final $42.15, beside two ruled columns (Current balance, Available balance) with the available figure stepping up by $57.85; tidy two-state before and after on one desk, no big banner figure.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 82
+  },
+  {
+    "slice": "organize",
+    "angle": "question",
+    "headline": "Should a Monthly Budget Come Out at Exactly Zero?",
+    "sub": "$97 is left over on purpose.",
+    "items": [
+      "A first budget that lands at exactly zero breaks the first time a grocery run comes in $30 high.",
+      "Savings sits above the extras, so it gets paid before the flexible money is spent."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-budget-for-beginners"
+    },
+    "proof": [
+      "$97 is left over on purpose: a first budget that lands at exactly zero breaks the first time a grocery run comes in $30 high.",
+      "Savings sits above the extras, so it gets paid before the flexible money is spent"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how much should be left over in a budget",
+    "board": "Safe to Spend and Budgeting",
+    "when": "evergreen",
+    "visual": "Measure layout: a small balance of paper strips, one pan holding a grocery receipt marked $30 high, the other a sheet with a thin cushion band labelled Left over; shown tipping on the zero-sheet side and steady on the cushion side. A receipt and pencil on the desk. Not a month-calendar and not a big single figure.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 83
+  },
+  {
+    "slice": "partners",
+    "angle": "template-preview",
+    "headline": "Split Bills by Income: $1,800 Rent Becomes $1,200 and $600",
+    "sub": "Example only. Take-home pay is $4,200 a month for you and $2,100 for them, which is 67 and 33 percent.",
+    "items": [
+      "Rent $1,800: you $1,200.00, them $600.00",
+      "Electric $110: you $73.33, them $36.67",
+      "Internet $60: you $40.00, them $20.00",
+      "Renters insurance $22: you $14.67, them $7.33",
+      "Total $1,992: you $1,328.00, them $664.00"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "split-bills-with-a-partner-or-roommate"
+    },
+    "proof": [
+      "At $4,200 and $2,100 a month, that's two thirds and one third, so an $1,800 rent is $1,200 and $600.",
+      "Take-home pay is $4,200 a month for you and $2,100 for them, which is 67 and 33 percent.",
+      "$73.33",
+      "$36.67",
+      "$14.67",
+      "$7.33",
+      "$1,328.00",
+      "$664.00"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "split bills by income calculator",
+    "board": "Splitting Bills",
+    "when": "evergreen",
+    "visual": "Template-preview archetype: one register page tilted on a desk with real column headers (Bill, Total, You two thirds, Them one third), the four rows filled in pencil and the total row ruled off; the rent row's $1,200.00 and $600.00 carry the pop colour, 'Example only' stamped in the corner. A thin 67/33 bar sits above the table.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 84
+  },
+  {
+    "slice": "organize",
+    "angle": "scenario",
+    "headline": "Your Budget Is Below Zero: What to Check Before You Cut Anything",
+    "sub": "The same month adds up to $3,410 against $3,240 of pay. You're $170 short.",
+    "items": [
+      "Check the line you guessed",
+      "Change one bill first, because it repeats every month",
+      "Trim one flexible line after that, not all of them",
+      "If it's still short, the gap comes from income"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-budget-for-beginners"
+    },
+    "proof": [
+      "the same month adds up to $3,410 against $3,240 of pay. You're $170 short.",
+      "Before you cut anything, check the line you guessed.",
+      "Then change one bill first, because it repeats every month",
+      "Trim one flexible line after that, not all of them.",
+      "If it's still short, the gap comes from income"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "budget not enough money what to do",
+    "board": "Safe to Spend and Budgeting",
+    "when": "evergreen",
+    "visual": "Measure layout: two paper strips side by side on a desk, pay ($3,240) shorter than costs ($3,410) with the $170 gap in the pop colour, and four small numbered tags underneath for the four checks. A calculator corner prop. Figures are the guide's own example.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 85
+  },
+  {
+    "slice": "partners",
+    "angle": "how-to-steps",
+    "headline": "How to Split Bills Based on Income: 5 Steps With the Math",
+    "sub": "With three or more people, add all of them.",
+    "items": [
+      "Pick one basis for both people, take-home or gross.",
+      "Add the monthly incomes.",
+      "Divide each income by the total: $2,100 divided by $6,300 is 0.33.",
+      "Multiply each share by the total of the shared bills.",
+      "Round to percentages you can both remember, such as 67 and 33."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "split-bills-with-a-partner-or-roommate"
+    },
+    "proof": [
+      "Pick one basis for both people, take-home or gross.",
+      "Add the monthly incomes. With three or more people, add all of them.",
+      "Divide each income by the total: $2,100 divided by $6,300 is 0.33.",
+      "Multiply each share by the total of the shared bills.",
+      "Round to percentages you can both remember, such as 67 and 33"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to split bills based on income",
+    "board": "Splitting Bills",
+    "when": "evergreen",
+    "visual": "How-to-steps archetype: five numbered ruled-paper steps stacked down a notebook page, each step with a tiny hand-drawn calculator or percent mark; the 0.33 line is highlighted in the pop colour. A coffee mug and a calculator sit at the page edge.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 86
+  },
+  {
+    "slice": "partners",
+    "angle": "scenario",
+    "headline": "How to Split Rent by Room Size: A $2,700 Three Bedroom Example",
+    "sub": "The final number is whatever the group agrees to.",
+    "items": [
+      "Rooms of 200, 150 and 150 square feet, 500 in all",
+      "40, 30 and 30 percent",
+      "$1,080, $810 and $810",
+      "A private bathroom or a parking space is a reason to move one person's share up"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "split-bills-with-a-partner-or-roommate"
+    },
+    "proof": [
+      "Say a three bedroom rents for $2,700 and the rooms are 200, 150 and 150 square feet, 500 in all. Those are 40, 30 and 30 percent, so $1,080, $810 and $810.",
+      "A private bathroom or a parking space is a reason to move one person's share up, and the final number is whatever the group agrees to."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to split rent with roommates different room sizes",
+    "board": "Splitting Bills",
+    "when": "evergreen; peaks May to September (lease season)",
+    "visual": "Side-by-side archetype: a simple top-down floor plan drawn on paper in forest ink, three bedrooms sized to 200/150/150, each labelled with its share ($1,080, $810, $810) on a small tag; sticky notes with 'bathroom?' and 'parking?' beside the largest room. Pop colour on the 40 percent room.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 87
+  },
+  {
+    "slice": "partners",
+    "angle": "quote-card",
+    "headline": "How to Ask Your Partner to Split Bills: What to Say, Word for Word",
+    "sub": "Say it before the first bill is due.",
+    "items": [
+      "Can we agree how we split the shared bills? I'd like to write it down once so neither of us has to remember it.",
+      "Would a split by income work? We add up our take-home pay, and each of us pays that percentage of every shared bill.",
+      "We could split it equal, or each take certain bills. Which of those feels better to you?",
+      "Can we run the numbers again? My pay changed, so the percentages have."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "split-bills-with-a-partner-or-roommate"
+    },
+    "proof": [
+      "Can we agree how we split the shared bills? I'd like to write it down once so neither of us has to remember it.",
+      "Would a split by income work? We add up our take-home pay, and each of us pays that percentage of every shared bill.",
+      "We could split it equal, or each take certain bills. Which of those feels better to you?",
+      "Can we run the numbers again? My pay changed, so the percentages have.",
+      "Pick the line that fits, and say it before the first bill is due."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to talk to your partner about splitting bills",
+    "board": "Splitting Bills",
+    "when": "evergreen; peaks at moving in together (May to September) and January",
+    "visual": "Quote-card archetype: the opening line set large in Newsreader on a paper card as the hero quote, with the three other lines on small tabbed index cards fanned beneath it, each tab naming its situation (If incomes differ a lot, If they'd rather not share, If it stops feeling fair). Two coffee mugs at the corner.",
+    "flags": [],
+    "reserve": false,
+    "n": 88
+  },
+  {
+    "slice": "partners",
+    "angle": "before-after",
+    "headline": "50/50 vs By Income: What Each Split Takes From Each Paycheck",
+    "sub": "Example only: take-home pay of $4,200 and $2,100 a month, four shared bills.",
+    "items": [
+      "Under 50/50 each of you would pay $996.",
+      "That is 24 percent of the higher take-home pay and 47 percent of the lower one.",
+      "Under the income split, both pay about 32 percent of their own pay toward shared bills."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "split-bills-with-a-partner-or-roommate"
+    },
+    "proof": [
+      "Under 50/50 each of you would pay $996. That is 24 percent of the higher take-home pay and 47 percent of the lower one.",
+      "Under the income split, both pay about 32 percent of their own pay toward shared bills.",
+      "Take-home pay is $4,200 a month for you and $2,100 for them"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "50/50 vs income based bill split",
+    "board": "Splitting Bills",
+    "when": "evergreen",
+    "visual": "Before/after archetype: two panels divided by a ruled line. Left 'Equal': two paycheck strips of different lengths, each with the same $996 chunk cut out, the shorter strip nearly half gone (47 percent, in the pop colour). Right 'By income': the same two strips with chunks cut in proportion, both showing about 32 percent.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 89
+  },
+  {
+    "slice": "partners",
+    "angle": "checklist",
+    "headline": "Splitting Bills Checklist: 7 Things to Agree Before the First Payment",
+    "sub": null,
+    "items": [
+      "Which bills count as shared, written as a list.",
+      "Which method: equal, income or room size, and net or gross if by income.",
+      "Each person's share as a percentage.",
+      "The settling day and how.",
+      "What triggers a re-run: a raise, a job loss, a move.",
+      "How one-off costs work.",
+      "Where the record lives, and who can see it."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "split-bills-with-a-partner-or-roommate"
+    },
+    "proof": [
+      "Which bills count as shared, written as a list.",
+      "Which method: equal, income or room size, and net or gross if by income.",
+      "Each person's share as a percentage.",
+      "The settling day and how",
+      "What triggers a re-run: a raise, a job loss, a move.",
+      "How one-off costs work",
+      "Where the record lives, and who can see it."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "things to agree on before splitting bills with a partner",
+    "board": "Splitting Bills",
+    "when": "evergreen; peaks May to September and January",
+    "visual": "Checklist archetype: a clipboard on a kitchen table holding a ruled sheet with seven checkbox lines, three ticked in pencil and four open, a pen clipped to the top. Pop colour on one tick only.",
+    "flags": [],
+    "reserve": false,
+    "n": 90
+  },
+  {
+    "slice": "partners",
+    "angle": "scenario",
+    "headline": "Two Identical Grocery Rows in Your Bank CSV: Two Trips or One Double Download?",
+    "sub": "Only your bank's own activity page can tell you which.",
+    "items": [
+      "09/03/2026 | GROCERY MART 114 | -84.20",
+      "09/03/2026 | GROCERY MART 114 | -84.20",
+      "09/05/2026 | PAYROLL ACME INC | 1,612.40",
+      "09/13/2026 | TRANSFER TO SAVINGS | -200.00"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "bank-statement-csv-to-budget"
+    },
+    "proof": [
+      "The two grocery rows are identical, which is either two real trips or one charge downloaded twice, and only your bank's own activity page can tell you which.",
+      "GROCERY MART 114",
+      "PAYROLL ACME INC",
+      "TRANSFER TO SAVINGS",
+      "-84.20",
+      "1,612.40"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "bank statement csv duplicate transactions",
+    "board": "Organize Your Finances",
+    "when": "evergreen; peaks January and April",
+    "visual": "Intake archetype: the four CSV lines in monospace text-editor style on a paper strip, the two identical grocery rows bracketed together with an amber 'same row?' flag (amber is a real duplicate flag), a hand-drawn question mark; the transfer row has a faint 'not spending' note. A small laptop corner with a plain text editor window sits behind.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 91
+  },
+  {
+    "slice": "partners",
+    "angle": "question",
+    "headline": "Why Do Bank CSV Dates Look Wrong in Excel? And How to Fix It",
+    "sub": "Read the date order in a text editor first.",
+    "items": [
+      "Excel opens a CSV with its default formats",
+      "An account reference like 0042 becomes 42",
+      "03/05 can flip between March 5 and May 3",
+      "A date like 09/13 proves the order is month first",
+      "Import it with From Text/CSV and set the date column yourself"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "bank-statement-csv-to-budget"
+    },
+    "proof": [
+      "Excel opens a CSV with its default formats, so a column written month first can be read as day first or turned into a number.",
+      "An account reference like 0042 becomes 42, and 03/05 can flip between March 5 and May 3.",
+      "A date like 09/13 proves the order is month first.",
+      "Import it with From Text/CSV and set the date column yourself, or read the date order in a text editor first."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "excel csv dates wrong bank statement",
+    "board": "Organize Your Finances",
+    "when": "evergreen; peaks January and April",
+    "visual": "Question archetype: a large question headline over a split card. Left, a spreadsheet cell reading 03/05 with two arrows to 'March 5' and 'May 3'; right, the same file in a plain text editor showing 09/13/2026 with a tick. Pop colour on the text-editor tick.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 92
+  },
+  {
+    "slice": "partners",
+    "angle": "comparison",
+    "headline": "Bank CSV Columns: One Amount Column or Debit and Credit?",
+    "sub": "Banks pick one of these. Knowing which one you have is the whole mapping.",
+    "items": [
+      "One amount column: Groceries -84.20, paycheck 1612.40. Tell the importer: Spending is negative.",
+      "Debit and credit: Debit 84.20 and credit blank, then the reverse. Tell the importer: Map both columns."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "bank-statement-csv-to-budget"
+    },
+    "proof": [
+      "Banks pick one of these. Knowing which one you have is the whole mapping.",
+      "One amount column",
+      "Groceries -84.20, paycheck 1612.40",
+      "Spending is negative",
+      "Debit and credit",
+      "Debit 84.20 and credit blank, then the reverse",
+      "Map both columns"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "bank csv debit credit columns import",
+    "board": "Organize Your Finances",
+    "when": "evergreen; peaks January and April",
+    "visual": "Side-by-side archetype: two small table cards on a desk. Left card 'One amount column' (Date, Description, Amount with -84.20 and 1612.40); right card 'Debit and credit' (Date, Description, Debit, Credit with 84.20 under Debit and a blank Credit). A pencil arrow under each pointing to its one-line instruction.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 93
+  },
+  {
+    "slice": "partners",
+    "angle": "how-to-steps",
+    "headline": "How to Download a Bank Statement as a CSV File, Step by Step",
+    "sub": "Button names and columns differ by bank.",
+    "items": [
+      "Sign in to your bank's website and open the account's activity page",
+      "Look for a Download or Export button",
+      "Pick CSV and a date range",
+      "Download whole calendar months",
+      "Open a copy in a text editor, not a spreadsheet",
+      "Check four things: a header row, how spending is signed, one amount column or two, and which way the dates run"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "bank-statement-csv-to-budget"
+    },
+    "proof": [
+      "Sign in to your bank's website, open the account's activity page and look for a Download or Export button. Pick CSV and a date range.",
+      "Button names and columns differ by bank.",
+      "Download whole calendar months.",
+      "Open a copy in a text editor, not a spreadsheet.",
+      "check four things: a header row, how spending is signed, one amount column or two, and which way the dates run."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to download bank statement as csv",
+    "board": "Organize Your Finances",
+    "when": "evergreen; peaks January and April",
+    "visual": "How-to-steps archetype: six numbered steps down a ruled page with a small laptop sketch at the top showing a 'Download' button and a file icon labelled CSV; the step about the text editor carries the pop colour. Props: a mug and a sticky note reading a month name.",
+    "flags": [],
+    "reserve": false,
+    "n": 94
+  },
+  {
+    "slice": "partners",
+    "angle": "infographic",
+    "headline": "Bank Statement CSV: What a List of Past Transactions Cannot Tell You",
+    "sub": "A file can't tell you what's still due, because it only lists what has already cleared.",
+    "items": [
+      "A transaction list tells you what happened.",
+      "It doesn't tell you what's coming: the bill due Friday, the subscription renewing next week or the balance you need to keep."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "bank-statement-csv-to-budget"
+    },
+    "proof": [
+      "A transaction list tells you what happened. It doesn't tell you what's coming: the bill due Friday, the subscription renewing next week or the balance you need to keep.",
+      "A file can't tell you what's still due, because it only lists what has already cleared."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what a bank statement csv does not show",
+    "board": "Safe to Spend and Budgeting",
+    "when": "evergreen; peaks January",
+    "visual": "Measure archetype: a long strip of paper with a vertical ruled line labelled 'today'. Left of the line, solid CSV rows labelled 'What happened'; right of the line, three dashed empty outlines labelled 'The bill due Friday', 'The subscription renewing next week', 'The balance you need to keep'. Dashed outlines are honest gaps, no figures anywhere.",
+    "flags": [],
+    "reserve": false,
+    "n": 95
+  },
+  {
+    "slice": "partners",
+    "angle": "scenario",
+    "headline": "Between Jobs: $2,150 in the Bank, $336 Left Before the First New Paycheck",
+    "sub": "Nothing here is a mistake. It's a normal month with a longer gap in it.",
+    "items": [
+      "Balance after your last paycheck, the 10th: $2,150",
+      "Car insurance - $118, Phone - $55, Electric - $96",
+      "Rent - $1,450, Internet - $60, Card minimum - $35",
+      "Left before the first new paycheck: $336, before groceries, fuel or health coverage"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "sort-out-your-finances-after-a-life-change"
+    },
+    "proof": [
+      "Your bank balance after the last paycheck is $2,150, and every autopay carries on as if nothing happened.",
+      "The balance looked like plenty on the 10th. By the time the new pay arrives it's $336",
+      "Nothing here is a mistake. It's a normal month with a longer gap in it",
+      "Before groceries, fuel or health coverage",
+      "Card minimum"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "finances between jobs gap in income",
+    "board": "Money After a Life Change",
+    "when": "evergreen; peaks January (new jobs) and September",
+    "visual": "Measure archetype: a vertical paper ledger strip running from the 10th down to the first new paycheck, starting at $2,150 and with each autopay (car insurance, phone, electric, rent, internet, card minimum) as a small tag that shaves the strip shorter, ending in a narrow $336 stub marked 'before groceries, fuel or health coverage'. Pop colour on the $336 stub only.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 96
+  },
+  {
+    "slice": "partners",
+    "angle": "how-to-steps",
+    "headline": "After a Job Change, Move or Divorce: 6 Steps to Sort Out Your Finances",
+    "sub": "The same order each time, written for the US. Not legal, tax or financial advice.",
+    "items": [
+      "Confirm the real dates for income.",
+      "List what leaves your accounts and from which one.",
+      "Fix whatever points at the wrong place.",
+      "Deal with what the old situation left behind",
+      "Update your tax withholding.",
+      "Redo your safe-to-spend number."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "sort-out-your-finances-after-a-life-change"
+    },
+    "proof": [
+      "do six things in order",
+      "Confirm the real dates for income.",
+      "List what leaves your accounts and from which one.",
+      "Fix whatever points at the wrong place.",
+      "Deal with what the old situation left behind",
+      "Update your tax withholding.",
+      "Redo your safe-to-spend number.",
+      "it isn't legal, tax or financial advice"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to do with your finances after a job change",
+    "board": "Money After a Life Change",
+    "when": "evergreen; peaks January",
+    "visual": "How-to-steps archetype: six numbered index tabs fanned down the edge of an open binder, each tab carrying its step in short form; the open page shows a cut of the step list in ruled lines. One pop-colour tab (step 6). Props: a sticky note and a pen.",
+    "flags": [],
+    "reserve": false,
+    "n": 97
+  },
+  {
+    "slice": "partners",
+    "angle": "comparison",
+    "headline": "New Job, Move or Separation: What Each One Touches in Your Money",
+    "sub": "A starting list, not a full one. Your own accounts decide what belongs here.",
+    "items": [
+      "New job: give HR your direct deposit details. Easy to miss: a first check later than you expected.",
+      "Move: send the address to your bank, card issuers, insurers, employer and the IRS. Easy to miss: annual statements and renewals that still go to the old address.",
+      "Separation: list every joint account, card and loan. Easy to miss: a joint card that stays open, because both holders remain responsible for the whole balance."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "sort-out-your-finances-after-a-life-change"
+    },
+    "proof": [
+      "A starting list, not a full one. Your own accounts decide what belongs here.",
+      "Give HR your direct deposit details.",
+      "A first check later than you expected, and health coverage that ends on a date you didn't note",
+      "Send the address to your bank, card issuers, insurers, employer and the IRS.",
+      "Annual statements and renewals that still go to the old address",
+      "List every joint account, card and loan.",
+      "A joint card that stays open, because both holders remain responsible for the whole balance"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "finances after moving or divorce checklist",
+    "board": "Money After a Life Change",
+    "when": "evergreen; peaks January and May to September",
+    "visual": "Side-by-side archetype: three paper columns (New job, Move, Separation) each with a short 'first week' line and a bottom strip headed 'Easy to miss' in the pop colour. A house key, a pen and a stack of envelopes sit on the desk edge.",
+    "flags": [],
+    "reserve": false,
+    "n": 98
+  },
+  {
+    "slice": "partners",
+    "angle": "mockup-printable",
+    "headline": "Monthly Money Review Page: Start the Year With the January Review",
+    "sub": "Start by checking your current Draftpace overview. Then note what changed this month, area by area.",
+    "items": [
+      "January: review",
+      "Accounts and income",
+      "Bills and subscriptions",
+      "Debt and savings",
+      "January: decisions and updates"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "personal-finance-companion"
+    },
+    "proof": [
+      "January: review",
+      "January: decisions and updates",
+      "Start by checking your current Draftpace overview. Then note what changed this month, area by area.",
+      "Accounts and income",
+      "Bills and subscriptions",
+      "Debt and savings"
+    ],
+    "proofFile": "book",
+    "proofExtra": [
+      {
+        "file": "src/content/guides.ts",
+        "proof": [
+          "twelve monthly review spreads"
+        ]
+      }
+    ],
+    "query": "monthly financial review printable january",
+    "board": "Financial Binder and Printables",
+    "when": "December to January (fresh start, budget binder season)",
+    "visual": "Mockup-printable archetype: the real workbook pages 'January: review' (page 54) and 'January: decisions and updates' (page 55) side by side as a spread, tilted on a desk next to an open three-ring binder, a pencil and a coffee mug; headline over the top and the product line (no price) at the foot. Pages are the real workbook pages from book.pdf, rendered as images.",
+    "flags": [],
+    "reserve": false,
+    "n": 99
+  },
+  {
+    "slice": "partners",
+    "angle": "infographic",
+    "headline": "Holiday Gift Fund: $450 in December Is $37.50 a Month",
+    "sub": "Take the cost, subtract what you've saved, and divide by the number of whole months until the date.",
+    "items": [
+      "Holiday gifts, $450",
+      "Lands in December",
+      "$37.50 a month"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "sinking-funds-explained"
+    },
+    "proof": [
+      "Holiday gifts, $450",
+      "December",
+      "$37.50",
+      "Take the cost, subtract what you've saved, and divide by the number of whole months until the date."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "holiday gift savings fund how much to save per month",
+    "board": "Savings and Sinking Funds",
+    "when": "August to November (peaks September to November), and again next year",
+    "visual": "Measure archetype: one glass jar on a kitchen table labelled 'Holiday gifts, $450', with a gift tag reading December tied to its neck and a small card beside it showing the $37.50 a month sum; a few wrapped-paper scraps and a ribbon as the prop. Pop colour on the tag only.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 100
+  },
+  {
+    "slice": "partners",
+    "angle": "checklist",
+    "headline": "Year-End Financial Check: 5 Binder Steps to Finish Before January",
+    "sub": "Fifteen minutes on the same day each month is enough.",
+    "items": [
+      "Check each balance against a statement and update the Checked date.",
+      "Change any label that has aged from Confirmed to Stale.",
+      "Move anything new into the right section: a bill, a subscription, a debt.",
+      "Write one line about a decision you made and why.",
+      "Put the binder back somewhere private."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "financial-binder-what-to-include"
+    },
+    "proof": [
+      "Fifteen minutes on the same day each month is enough.",
+      "Check each balance against a statement and update the Checked date.",
+      "Change any label that has aged from Confirmed to Stale.",
+      "Move anything new into the right section: a bill, a subscription, a debt.",
+      "Write one line about a decision you made and why.",
+      "Put the binder back somewhere private."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "year end financial review checklist",
+    "board": "Financial Binder and Printables",
+    "when": "November to January (year-end check, budget binder season)",
+    "visual": "Binder-tabs archetype: an open three-ring binder with seven numbered index tabs down the edge (01 Accounts through 07 A written summary) and the five-line checklist on the open page, two boxes ticked in pencil; Confirmed and Stale labels shown as small chips beside a sample accounts row. A pen and a coffee mug at the edge.",
+    "flags": [],
+    "reserve": false,
+    "n": 101
+  }
+]

@@ -1,0 +1,551 @@
+[
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Finance Tracker App: Accounts, Bills, Debt and Savings in One Place",
+    "sub": "One always-current picture of your accounts, income, bills, subscriptions, transactions, debt, and savings",
+    "items": ["Accounts", "Income", "Bills", "Subscriptions", "Transactions", "Debt", "Savings"],
+    "link": { "kind": "shop", "slug": "personal-finance-companion" },
+    "proof": [
+      "One always-current picture of your accounts, income, bills, subscriptions, transactions, debt, and savings",
+      "All seven areas: accounts, income, bills, subscriptions, transactions, debt, and savings"
+    ],
+    "proofFile": "src/shop/products/personal-finance-companion.ts",
+    "query": "finance tracker app",
+    "board": "Organize Your Finances",
+    "when": "evergreen",
+    "visual": "Homeschool-reference promo layout: forest panel with app icon and name, two-tone headline, four feature rows taken from the seven areas, large tilted phone showing the REAL Records screen (creative/public/screens/personal-finance-companion-records.png, Next.js dev badge cropped, demo rows), a coffee mug and a closed binder as props. Seven area names run as small index tabs down the phone's edge.",
+    "flags": ["demo-data"],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Monthly Bill Tracker App: Tick a Bill Paid for the Month",
+    "sub": "What is left to pay is worked out from what you ticked",
+    "items": [
+      "Tick a bill paid for the month",
+      "What is left to pay is worked out from what you ticked",
+      "A paid bill leaves the list of what is coming up",
+      "A note on any bill with no due date"
+    ],
+    "link": { "kind": "shop", "slug": "personal-finance-companion" },
+    "proof": [
+      "Tick a bill paid for the month. What is left to pay is worked out from what you ticked, and a paid bill leaves the list of what is coming up."
+    ],
+    "proofFile": "src/shop/products/personal-finance-companion.ts",
+    "proofExtra": [{ "file": "src/content/guides.ts", "proof": ["a note on any bill with no due date"] }],
+    "query": "bill tracker app",
+    "board": "Monthly Bills and Due Dates",
+    "when": "evergreen",
+    "visual": "App-promo mockup: forest panel, four feature rows, large tilted phone showing the REAL Bills screen (creative/public/screens/personal-finance-companion-bills.png: the ticked Rent row 'Paid 1 Oct', 'Left to pay this month', the Electricity row with its unticked circle; dev badge cropped, demo rows). Prop: a stack of paper bills with a sticky note and a pen.",
+    "flags": ["demo-data"],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Debt Payoff Planner App: Smallest Balance First or Highest Rate First",
+    "sub": "It's a model from your numbers and doesn't change what you pay.",
+    "items": [
+      "Extra each month",
+      "Smallest balance first",
+      "Highest rate first",
+      "A debt with no rate is named as left out, never guessed at"
+    ],
+    "link": { "kind": "shop", "slug": "personal-finance-companion" },
+    "proof": [
+      "smallest balance first or highest rate first, with an extra amount you choose",
+      "A debt with no rate is named as left out, never guessed at."
+    ],
+    "proofFile": "src/shop/products/personal-finance-companion.ts",
+    "proofExtra": [{ "file": "src/content/guides.ts", "proof": ["It's a model from your numbers and doesn't change what you pay."] }],
+    "query": "debt payoff planner",
+    "board": "Debt Payoff",
+    "when": "evergreen; peaks January and after the holiday card bill",
+    "visual": "App-promo mockup: forest panel with four feature rows, large tilted phone showing the REAL Debt screen (creative/public/screens/personal-finance-companion-debt.png: Payoff plan card, 'Extra each month' box, the Smallest balance first / Highest rate first switch, the 'Debt-free in' headline; dev badge cropped, demo credit card). Prop: a calculator and a credit card statement.",
+    "flags": ["demo-data"],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Available Money App: One Figure, With the Working One Tap Away",
+    "sub": "A month-level estimate, not an until-payday number.",
+    "items": [
+      "One Available Money figure in a banner",
+      "Where the rest of your balance goes",
+      "Every figure's working one tap away",
+      "Preliminary while a bill has no due date"
+    ],
+    "link": { "kind": "shop", "slug": "personal-finance-companion" },
+    "proof": [
+      "One Available Money figure in a banner that shows where the rest of your balance goes, with every figure's working one tap away."
+    ],
+    "proofFile": "src/shop/products/personal-finance-companion.ts",
+    "proofExtra": [
+      {
+        "file": "src/content/guides.ts",
+        "proof": [
+          "It marks Available Money as Preliminary while a bill has no due date",
+          "That figure is a month-level estimate, not an until-payday number."
+        ]
+      }
+    ],
+    "query": "how much money do i have available",
+    "board": "Safe to Spend and Budgeting",
+    "when": "evergreen",
+    "visual": "App-promo mockup with a CAPTURED screen (to capture from the real component with stub data): the Available Money banner with its bar showing where the rest of the balance goes and the working opened underneath. Forest panel, four feature rows, tilted phone, a calculator and a sticky note as props. Keep it clearly different from Monthly Money Reset: the figure sits inside a multi-area app, not alone.",
+    "flags": ["demo-data", "capture-needed"],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Bill Due Date Tracker App: The Next 14 Days, Pay Days Included",
+    "sub": "Its Coming up list shows what's due in the next 14 days, including pay days",
+    "items": [
+      "What's due in the next 14 days, including pay days",
+      "It flags income that hasn't arrived by its expected date",
+      "It flags any bill with no due date"
+    ],
+    "link": { "kind": "shop", "slug": "personal-finance-companion" },
+    "proof": [
+      "Its Coming up list shows what's due in the next 14 days, including pay days, and it flags income that hasn't arrived by its expected date and any bill with no due date."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "bill due date tracker",
+    "board": "Monthly Bills and Due Dates",
+    "when": "evergreen",
+    "visual": "App-promo mockup with a CAPTURED screen (stub data): the Coming up list, a short run of dated rows with a pay day among the bills. A 14-day strip of small day boxes along the bottom of the panel, with the bill days and the pay day marked. Prop: a desk calendar page turned face-down and a pen (not a month grid).",
+    "flags": ["demo-data", "capture-needed"],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Subscription Tracker App: Keep, Reviewing, Planned Cancellation, Cancelled",
+    "sub": "It tracks the decision. It doesn't cancel anything or read your bank.",
+    "items": [
+      "Amount, how often it bills, renewal date",
+      "A decision on every one",
+      "Annual charges divided by 12",
+      "You type them in"
+    ],
+    "link": { "kind": "shop", "slug": "personal-finance-companion" },
+    "proof": [
+      "mark a decision: Keep, Reviewing, Planned cancellation or Cancelled",
+      "with annual charges divided by 12",
+      "It doesn't cancel anything or read your bank, so you type them in."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "subscription tracker app",
+    "board": "Subscriptions and Renewals",
+    "when": "evergreen; peaks January and after free trials",
+    "visual": "App-promo mockup. Real data on the Records screen (creative/public/screens/personal-finance-companion-records.png) shows the Subscriptions card ('3 active', '1 still marked Review', '1 planned to cancel'); better, a CAPTURED Subscriptions screen with stub rows and the four decision badges. Tilted phone on a forest panel, a stack of receipts and a mug as props.",
+    "flags": ["demo-data", "capture-needed"],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Account Inventory Printable: Mark Each Balance Available or Protected",
+    "sub": "Written here as a snapshot, not a live total.",
+    "items": ["Account or cash location", "Type", "Balance", "As of date", "Available or protected", "Notes"],
+    "link": { "kind": "shop", "slug": "personal-finance-companion" },
+    "proof": [
+      "Account or cash location Type Balance As of date Available or protected Notes",
+      "Write each account, cash reserve, or wallet you want represented in your financial picture.",
+      "Written here as a snapshot, not a live total."
+    ],
+    "proofFile": "book",
+    "query": "bank account list printable",
+    "board": "Financial Binder and Printables",
+    "when": "evergreen",
+    "visual": "Workbook page 13 (Account inventory, section 01 Accounts and Available Money) rendered from the real PDF, tilted on a wooden desk, a pen across it and a highlighter on the 'Available or protected' column header, a mug at the corner. The page's own title and column headers are legible; the rows are left blank.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Subscription Decisions Printable: Keep, Review or Planned Cancellation",
+    "sub": "A decision here is a note for you; any actual cancellation happens outside Draftpace.",
+    "items": ["Keep", "Review", "Planned cancellation"],
+    "link": { "kind": "shop", "slug": "personal-finance-companion" },
+    "proof": [
+      "Keep, review, or cancel decisions",
+      "A decision here is a note for you; any actual cancellation happens outside Draftpace."
+    ],
+    "proofFile": "book",
+    "query": "subscription audit printable",
+    "board": "Subscriptions and Renewals",
+    "when": "evergreen; peaks January",
+    "visual": "Workbook page 27 (Keep, review, or cancel decisions) rendered from the real PDF, three columns visible, tilted on a clipboard with a small stack of receipts beside it and a pen. Page 26 (Subscription inventory, with its Subscription, Amount, Frequency, Renewal date, Decision, Cancellation notes headers) peeks out underneath.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Debt Payoff Ladder Printable: Avalanche or Snowball, Pick the One You Keep",
+    "sub": "Choose the order you will actually keep to.",
+    "items": [
+      "Avalanche pays the highest interest rate first and usually costs the least.",
+      "Snowball clears the smallest balance first and gives quicker wins.",
+      "Shade each rung as it is cleared."
+    ],
+    "link": { "kind": "shop", "slug": "personal-finance-companion" },
+    "proof": [
+      "Avalanche pays the highest interest rate first and usually costs the least.",
+      "Snowball clears the smallest balance first and gives quicker wins.",
+      "Work your chosen order from the bottom rung up. Shade each rung as it is cleared.",
+      "choose the order you will actually keep to"
+    ],
+    "proofFile": "book",
+    "query": "debt snowball vs avalanche printable",
+    "board": "Debt Payoff",
+    "when": "evergreen; peaks January",
+    "visual": "Workbook page 38 (Debt payoff method comparison) rendered from the real PDF: the two numbered lists and the payoff ladder with its rungs, tilted flat on a desk, two rungs shaded in with a coloured pencil, a calculator at the edge. Only the page's own words; the debts are left blank.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Ten Minute Money Starting Path: A One-Page Reference Card to Print",
+    "sub": "Photograph it, or print it on its own, and keep it where you do your money review.",
+    "items": [
+      "List your accounts and rough balances.",
+      "Note income and when it next arrives.",
+      "Write down required bills and due rules.",
+      "List subscriptions and one decision each.",
+      "Mark anything uncertain as missing or estimated.",
+      "Enter what is confirmed into Draftpace."
+    ],
+    "link": { "kind": "shop", "slug": "personal-finance-companion" },
+    "proof": [
+      "A ten minute starting path",
+      "Photograph it, or print it on its own, and keep it where you do your money review.",
+      "List your accounts and rough balances.",
+      "Note income and when it next arrives.",
+      "Write down required bills and due rules.",
+      "List subscriptions and one decision each.",
+      "Mark anything uncertain as missing or estimated.",
+      "Enter what is confirmed into Draftpace."
+    ],
+    "proofFile": "book",
+    "query": "how to organize your finances printable",
+    "board": "Organize Your Finances",
+    "when": "evergreen; peaks January",
+    "visual": "Workbook page 79 (Quick reference card) rendered from the real PDF, pinned flat to a corkboard-style or desk surface with a magnet or washi tape, the six numbered steps and the confidence-label table legible; a phone beside it as if just photographed.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Shared Bill Statement PDF: The Other Person Needs No Account",
+    "sub": "It doesn't send money, request payment or track who paid.",
+    "items": [
+      "A one page PDF of what's still owed to you and what's already settled",
+      "Enter your share as a percentage from 1 to 99",
+      "Tick a bill settled once the money has moved"
+    ],
+    "link": { "kind": "shop", "slug": "personal-finance-companion" },
+    "proof": [
+      "download a one page PDF of what's still owed to you and what's already settled. The other person doesn't need an account or login.",
+      "You enter your share as a percentage from 1 to 99",
+      "Tick a bill settled once the money has moved",
+      "it doesn't send money, request payment or track who paid"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "bill splitting statement roommate",
+    "board": "Splitting Bills",
+    "when": "evergreen",
+    "visual": "The Shared Responsibility statement PDF, CAPTURED from the real component with stub data (one or two shared rows, a settled one and one still owed), printed on a desk and tilted, with a phone beside it showing the Printables screen's 'Download shared statement' button (creative/public/screens/personal-finance-companion-printables.png). Props: two coffee mugs, one sticky note. Keep this visibly different from the 'A Bill Splitting Statement You Can Send' pin already made: a PDF beside a phone, not a page in hand.",
+    "flags": ["demo-data", "capture-needed"],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Monthly Money Review Printable: 12 Dated Spreads for the Year",
+    "sub": "Start each monthly review by checking your current Draftpace overview.",
+    "items": [
+      "Accounts and income",
+      "Bills and subscriptions",
+      "Debt and savings",
+      "Available money reviewed",
+      "Obligations reviewed"
+    ],
+    "link": { "kind": "shop", "slug": "personal-finance-companion" },
+    "proof": [
+      "Start each monthly review by checking your current Draftpace overview.",
+      "Accounts and income",
+      "Bills and subscriptions",
+      "Debt and savings",
+      "Available money reviewed"
+    ],
+    "proofFile": "book",
+    "proofExtra": [{ "file": "src/content/guides.ts", "proof": ["twelve monthly review spreads"] }],
+    "query": "monthly budget review printable",
+    "board": "Financial Binder and Printables",
+    "when": "evergreen; peaks December to January",
+    "visual": "Workbook pages 54 and 55 (January: review, January: decisions and updates) rendered from the real PDF as a two-page spread, slightly fanned over the next months' pages (February to December behind it, the month names on the tab edges), on a desk with a pen and a mug. Not a month calendar grid: these are review pages.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "checklist",
+    "headline": "Money Checklist: 6 Things to Check About Every Account You List",
+    "sub": "Mark what is ready and what still needs to be checked.",
+    "items": [
+      "Balances are current enough for this review.",
+      "Availability is marked for each account.",
+      "Protected money is not treated as spendable.",
+      "Closed accounts are clearly separated.",
+      "Balance dates are visible.",
+      "Uncertain amounts are marked as estimates."
+    ],
+    "link": { "kind": "shop", "slug": "personal-finance-companion" },
+    "proof": [
+      "Mark what is ready and what still needs to be checked.",
+      "Balances are current enough for this review.",
+      "Availability is marked for each account.",
+      "Protected money is not treated as spendable.",
+      "Closed accounts are clearly separated.",
+      "Balance dates are visible.",
+      "Uncertain amounts are marked as estimates."
+    ],
+    "proofFile": "book",
+    "query": "financial organization checklist",
+    "board": "Organize Your Finances",
+    "when": "evergreen",
+    "visual": "Checklist on a clipboard: the six items from workbook page 15 (Account completeness check) typed large in the page's own wording, each with a hand-ticked box in forest ink, three ticked and three open. A small corner of the real page 15 shows under the clipboard. Pen and index tabs as props.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "infographic",
+    "headline": "Confirmed, Estimated, Unresolved, Missing, Stale: Label Every Number",
+    "sub": "They help separate facts from estimates without forcing you to guess.",
+    "items": [
+      "Confirmed: Checked and believed accurate.",
+      "Estimated: Reasonable, but may change.",
+      "Unresolved: Exists, needs a decision.",
+      "Missing: Not known yet.",
+      "Stale: Once confirmed, may be old."
+    ],
+    "link": { "kind": "shop", "slug": "personal-finance-companion" },
+    "proof": [
+      "They help separate facts from estimates without forcing you to guess.",
+      "Checked and believed accurate.",
+      "Reasonable, but may change.",
+      "Exists, needs a decision.",
+      "Not known yet.",
+      "Once confirmed, may be old."
+    ],
+    "proofFile": "book",
+    "query": "how to organize financial information",
+    "board": "Financial Binder and Printables",
+    "when": "evergreen",
+    "visual": "Five index tabs fanned from a binder edge, one per label (Confirmed, Estimated, Unresolved, Missing, Stale), each in a different tint of the forest and soft palette with its short meaning on the tab body; a corner of workbook page 10 (Information confidence key) visible beneath. Archetype: binder-tabs.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "template-preview",
+    "headline": "Sinking Fund Worksheet Printable: Costs You Can See Coming",
+    "sub": "Use this for costs you can see coming, even if they are not monthly.",
+    "items": ["Future cost", "Due month or date", "Target", "Saved snapshot", "Funding source", "Next step"],
+    "link": { "kind": "shop", "slug": "personal-finance-companion" },
+    "proof": [
+      "Use this for costs you can see coming, even if they are not monthly.",
+      "Future cost Due month or date Target Saved snapshot Funding source Next step"
+    ],
+    "proofFile": "book",
+    "query": "sinking funds worksheet printable",
+    "board": "Savings and Sinking Funds",
+    "when": "evergreen; peaks October to December",
+    "visual": "A close, flat crop of workbook page 42 (Sinking funds worksheet): the six column headers and empty ruled rows as a fill-in register, left blank on purpose, with a pencil and two small jars (not envelopes) at the edge. The printed row lines stay empty; no sample numbers.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "myth-vs-truth",
+    "headline": "Money App Myth vs Truth: A Number You Cannot Check Is Just a Guess",
+    "sub": "Nothing here is a guess dressed up as a number.",
+    "items": [
+      "Myth: you have to take a budget number on trust",
+      "Truth: Every figure has a \"How Draftpace got this\" breakdown, line by line, from your own records."
+    ],
+    "link": { "kind": "shop", "slug": "personal-finance-companion" },
+    "proof": [
+      "Every figure has a \"How Draftpace got this\" breakdown, line by line, from your own records.",
+      "Nothing here is a guess dressed up as a number."
+    ],
+    "proofFile": "src/shop/products/personal-finance-companion.ts",
+    "query": "budgeting app",
+    "board": "Safe to Spend and Budgeting",
+    "when": "evergreen",
+    "visual": "Split card: left half in faded paper tone with the Myth line crossed lightly; right half in forest with the Truth line and a small phone showing a figure with its working line by line (captured Available Money working with stub data). Props: a receipt and a pen.",
+    "flags": ["demo-data", "capture-needed"],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "how-to-steps",
+    "headline": "How to Set Up a Personal Finance Tracker: 4 Steps, One Area at a Time",
+    "sub": "Skip anything you do not have yet.",
+    "items": [
+      "Add what you have across the seven areas.",
+      "The Companion asks about one area at a time",
+      "Attention surfaces only real gaps",
+      "Come back anytime. The Companion resumes exactly where you left off"
+    ],
+    "link": { "kind": "shop", "slug": "personal-finance-companion" },
+    "proof": [
+      "Add what you have across the seven areas: accounts, income, bills, subscriptions, transactions, debt, and savings. Skip anything you do not have yet.",
+      "The Companion asks about one area at a time and only continues once it has enough to be useful",
+      "Attention surfaces only real gaps",
+      "Come back anytime. The Companion resumes exactly where you left off"
+    ],
+    "proofFile": "src/shop/products/personal-finance-companion.ts",
+    "query": "how to set up a personal finance tracker",
+    "board": "Organize Your Finances",
+    "when": "evergreen; peaks January",
+    "visual": "Four numbered steps stacked as tabs down a binder, a small phone at the right showing the real Records screen (creative/public/screens/personal-finance-companion-records.png, badge cropped). Step 1 lists the seven area names as tiny tab labels. Props: binder rings and a pen.",
+    "flags": ["demo-data"],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "quote-card",
+    "headline": "Financial Organization Quote: Small, Steady, Honest",
+    "sub": "You do not need to finish this workbook to benefit from it.",
+    "items": [
+      "Clarity does not arrive all at once. It comes from writing down what you know, being honest about what you do not, and returning gently, month after month."
+    ],
+    "link": { "kind": "shop", "slug": "personal-finance-companion" },
+    "proof": [
+      "Small, steady, honest.",
+      "Clarity does not arrive all at once. It comes from writing down what you know, being honest about what you do not, and returning gently, month after month.",
+      "You do not need to finish this workbook to benefit from it."
+    ],
+    "proofFile": "book",
+    "query": "financial organization quotes",
+    "board": "Organize Your Finances",
+    "when": "evergreen; peaks January",
+    "visual": "Quote card in the workbook's own voice: 'Small, steady, honest.' as a large serif line on paper, the Clarity sentence beneath, set on the closing workbook page 80 laid on a desk beside a coffee mug and a pen. Calm, no figures.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "question",
+    "headline": "Where Does Your Money Information Live? 9 Places to Look First",
+    "sub": "You are not confirming anything on this page; you are making sources visible.",
+    "items": [
+      "Bank or card statements",
+      "Pay stubs or income notes",
+      "Bill emails or portals",
+      "Subscription receipts",
+      "Debt statements",
+      "Savings notes",
+      "Cash notes or envelopes",
+      "Existing spreadsheet or CSV",
+      "Messages, reminders, or paper lists"
+    ],
+    "link": { "kind": "shop", "slug": "personal-finance-companion" },
+    "proof": [
+      "List where your financial information currently lives.",
+      "You are not confirming anything on this page; you are making sources visible.",
+      "Bank or card statements",
+      "Pay stubs or income notes",
+      "Bill emails or portals",
+      "Subscription receipts",
+      "Debt statements",
+      "Savings notes",
+      "Cash notes or envelopes",
+      "Existing spreadsheet or CSV",
+      "Messages, reminders, or paper lists"
+    ],
+    "proofFile": "book",
+    "query": "how to gather financial documents",
+    "board": "Organize Your Finances",
+    "when": "evergreen; peaks January",
+    "visual": "Question pin: the nine source boxes of workbook page 8 (Gather first) as a tidy grid of ticked-or-open boxes, with a real page 8 tilted behind. Props: a folder, a loose statement and a spiral notebook. Archetype: intake.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "question",
+    "headline": "What Should Not Count as Available Money? Separate It From What Is Protected",
+    "sub": "Separate money that can be spent from money that should stay protected.",
+    "items": ["Money location", "Available now?", "Protected for", "Amount snapshot"],
+    "link": { "kind": "shop", "slug": "personal-finance-companion" },
+    "proof": [
+      "What should not be counted as available money?",
+      "Separate money that can be spent from money that should stay protected.",
+      "Money location Available now? Protected for Amount snapshot"
+    ],
+    "proofFile": "book",
+    "proofExtra": [{ "file": "src/content/guides.ts", "proof": ["mark which accounts are available for spending and which are protected"] }],
+    "query": "how much money is available to spend",
+    "board": "Safe to Spend and Budgeting",
+    "when": "evergreen",
+    "visual": "The question set large in serif on a forest panel; beneath it workbook page 14 (Available money notes) tilted, the four column headers legible and rows blank, with two small jars labelled only by tape (one 'available', one 'protected' drawn from the page's own words). Archetype: measure.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Money Management App That Shows Only the Gaps in Your Records",
+    "sub": "Never a fabricated task to make the list look useful.",
+    "items": [
+      "A bill missing a due date",
+      "A balance that has gone stale",
+      "Fix the record and the item clears itself"
+    ],
+    "link": { "kind": "shop", "slug": "personal-finance-companion" },
+    "proof": [
+      "Attention surfaces only real gaps: a bill missing a due date, a balance that has gone stale. Fix the record and the item clears itself.",
+      "never a fabricated task to make the list look useful."
+    ],
+    "proofFile": "src/shop/products/personal-finance-companion.ts",
+    "query": "money management app",
+    "board": "Organize Your Finances",
+    "when": "evergreen",
+    "visual": "App-promo mockup with a CAPTURED Attention screen (stub data: one bill with no due date, one stale balance). Forest panel, three feature rows, tilted phone, a single sticky note and a pen as props instead of a pile of notes. Weakest app idea: close to the 'never a to-do wall' pin already made.",
+    "flags": ["demo-data", "capture-needed"],
+    "reserve": true
+  },
+  {
+    "slice": "product",
+    "angle": "comparison",
+    "headline": "Paper Planner or Finance App: What Each One Is Good For",
+    "sub": "Paper gathers, clarifies, and prepares.",
+    "items": [
+      "Paper gathers, clarifies, and prepares.",
+      "Draftpace stores, validates, calculates, imports, tracks, and shows your current next action."
+    ],
+    "link": { "kind": "shop", "slug": "personal-finance-companion" },
+    "proof": [
+      "Paper gathers, clarifies, and prepares. Draftpace stores, validates, calculates, imports, tracks, and shows your current next action."
+    ],
+    "proofFile": "book",
+    "query": "paper vs digital budget planner",
+    "board": "Financial Binder and Printables",
+    "when": "evergreen",
+    "visual": "Side-by-side: a workbook page on the left of a desk, a phone showing the Records screen on the right, the two rule sentences as captions under each. Weakest idea: the same message as the 'Paper Gathers, an App Keeps It Current' pin already made, so use it only if a comparison is wanted.",
+    "flags": ["demo-data"],
+    "reserve": true
+  }
+]
