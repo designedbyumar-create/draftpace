@@ -1,0 +1,410 @@
+[
+  {
+    "slice": "subscriptions",
+    "angle": "template-preview",
+    "headline": "Subscription Tracker Template: The Six Columns Every Row Needs",
+    "sub": "Example only, not real data.",
+    "items": [
+      "Name | Charge | Cycle | Renews | Decision | Shared",
+      "Video streaming | $15.49 | Monthly | 5th | Keep | No",
+      "Fitness app | $79.99 | Annual | Nov 14 | Planned to cancel | No",
+      "Family music plan | $16.99 | Monthly | 12th | Keep | Yes, 50%"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "subscription-tracker-what-to-track"
+    },
+    "proof": [
+      "\"Name\", \"Charge\", \"Cycle\", \"Renews\", \"Decision\", \"Shared\"",
+      "\"Fitness app\", \"$79.99\", \"Annual\", \"Nov 14\", \"Planned to cancel\", \"No\"",
+      "\"Family music plan\", \"$16.99\", \"Monthly\", \"12th\", \"Keep\", \"Yes, 50%\"",
+      "\"Video streaming\", \"$15.49\", \"Monthly\", \"5th\", \"Keep\", \"No\"",
+      "Example only, not real data."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "subscription tracker template",
+    "board": "Subscriptions and Renewals",
+    "when": "evergreen; peaks January and after the holidays",
+    "visual": "tracker-sheet archetype: a ruled register page in forest and paper with the six column headers in a forest header band and three example rows hand-filled in pencil, the Fitness app row highlighted with one warm pop; sits on a desk beside a coffee mug and a pencil, slightly tilted. The 'Example only, not real data' line stays on the pin.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "subscriptions",
+    "angle": "checklist",
+    "headline": "Monthly Subscription Review Checklist: 5 Minutes to Catch Every Renewal",
+    "sub": "A five minute monthly check",
+    "items": [
+      "Look at anything renewing in the next two weeks.",
+      "For each one, choose keep or planned to cancel.",
+      "Open anything marked still deciding and settle at least one.",
+      "Add any subscription you started this month, including trials.",
+      "Remove anything you've already canceled and check the charge stopped."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "subscription-tracker-what-to-track"
+    },
+    "proof": [
+      "A five minute monthly check",
+      "Look at anything renewing in the next two weeks.",
+      "For each one, choose keep or planned to cancel.",
+      "Open anything marked still deciding and settle at least one.",
+      "Add any subscription you started this month, including trials.",
+      "Remove anything you've already canceled and check the charge stopped."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "monthly subscription review checklist",
+    "board": "Subscriptions and Renewals",
+    "when": "evergreen; first week of each month",
+    "visual": "one-card archetype: a clipboard with a five-row tick-box checklist on paper, two boxes pencil-ticked, forest title band, a coffee mug and a sticky note at the corner. Plain checklist, no app screen.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "subscriptions",
+    "angle": "myth-vs-truth",
+    "headline": "Find All Your Subscriptions: Why Three Months of Statements Miss the Annual Ones",
+    "sub": "Three months of statements would have missed both.",
+    "items": [
+      "Fitness app | Once a year | $79.99",
+      "Antivirus | Once a year | $59.99",
+      "you'd only see the two annual charges by looking back a full year"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-find-every-subscription-you-are-paying-for"
+    },
+    "proof": [
+      "Three months of statements would have missed both.",
+      "you'd only see the two annual charges by looking back a full year",
+      "\"Fitness app\", \"Once a year\", \"$79.99\", \"$79.99\"",
+      "\"Antivirus\", \"Once a year\", \"$59.99\", \"$59.99\""
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to find hidden subscriptions on bank statement",
+    "board": "Subscriptions and Renewals",
+    "when": "evergreen; January and tax-season clean-ups",
+    "visual": "side-by-side archetype: two statement sheets on a desk. Left, a short stack labelled with three months shows only the monthly charges; right, a full-year stack shows the two once-a-year rows (Fitness app $79.99, Antivirus $59.99) circled in the warm pop. Headline is the truth; the pin uses only the guide's own words and figures.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "subscriptions",
+    "angle": "comparison",
+    "headline": "Subscription Cost Per Year: What the Monthly Price Hides",
+    "sub": "The monthly figures look small. The yearly column is the one to decide on.",
+    "items": [
+      "Video streaming | Monthly | $15.49 | $185.88 a year",
+      "Music streaming | Monthly | $10.99 | $131.88 a year",
+      "Cloud storage | Monthly | $2.99 | $35.88 a year",
+      "Total | $553.50"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-find-every-subscription-you-are-paying-for"
+    },
+    "proof": [
+      "The monthly figures look small. The yearly column is the one to decide on.",
+      "\"Video streaming\", \"Monthly\", \"$15.49\", \"$185.88\"",
+      "\"Music streaming\", \"Monthly\", \"$10.99\", \"$131.88\"",
+      "\"Cloud storage\", \"Monthly\", \"$2.99\", \"$35.88\"",
+      "\"Total\", \"\", \"\", \"$553.50\"",
+      "Example only, not real data."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how much do my subscriptions cost per year",
+    "board": "Subscriptions and Renewals",
+    "when": "evergreen; January",
+    "visual": "side-by-side archetype: a two-column register page, 'What you see' (small monthly amounts in grey) against 'Cost per year' (larger forest figures), total $553.50 boxed at the foot; calculator and receipts as props. Labelled as an example.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "subscriptions",
+    "angle": "how-to-steps",
+    "headline": "How to Find All My Subscriptions: A One Hour Sweep, Step by Step",
+    "sub": "Set aside an hour.",
+    "items": [
+      "Download twelve months of statements for every credit card, debit card and checking account you've used.",
+      "Search or scan each statement for repeats.",
+      "Open your Apple subscription list.",
+      "Log in to PayPal on the website and go to Settings, then Payments, then Subscriptions and saved businesses",
+      "Search your email for the words receipt, invoice, renewal, subscription, trial",
+      "Add up the yearly cost of each one."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-find-every-subscription-you-are-paying-for"
+    },
+    "proof": [
+      "Set aside an hour.",
+      "Download twelve months of statements for every credit card, debit card and checking account you've used.",
+      "Search or scan each statement for repeats.",
+      "Open your Apple subscription list.",
+      "Log in to PayPal on the website and go to Settings, then Payments, then Subscriptions and saved businesses",
+      "Search your email for the words receipt, invoice, renewal, subscription, trial",
+      "Add up the yearly cost of each one."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to find all my subscriptions",
+    "board": "Subscriptions and Renewals",
+    "when": "evergreen; January and after the holidays",
+    "visual": "intake archetype: numbered steps 1 to 6 down a paper sheet with a forest number badge on each, a stack of printed statements and a mug at the edge. No phone screen.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "subscriptions",
+    "angle": "infographic",
+    "headline": "What That Statement Line Means: Apple.com/bill, PayPal, Google and Unknown Names",
+    "sub": "Statement wording varies by bank and merchant, so treat these as patterns to look for, not exact strings.",
+    "items": [
+      "Apple.com/bill | Apple billing for an App Store subscription, iCloud or Apple services",
+      "Google followed by a service name | A Google Play or Google service subscription",
+      "PayPal followed by a company name | A merchant billing you through PayPal",
+      "A name you don't recognize | Often the parent company or a payment processor",
+      "The same round amount every month | Almost always a subscription"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-find-every-subscription-you-are-paying-for"
+    },
+    "proof": [
+      "Statement wording varies by bank and merchant, so treat these as patterns to look for, not exact strings.",
+      "Apple.com/bill",
+      "Apple billing for an App Store subscription, iCloud or Apple services",
+      "A Google Play or Google service subscription",
+      "A merchant billing you through PayPal",
+      "Often the parent company or a payment processor",
+      "Almost always a subscription"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what does apple.com/bill charge mean",
+    "board": "Subscriptions and Renewals",
+    "when": "evergreen",
+    "visual": "side-by-side archetype: a decoder sheet; on the left, statement lines in a monospace strip as they appear on a bank printout, on the right the plain meaning, joined by thin forest rules; a highlighter and a receipt as props.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "subscriptions",
+    "angle": "scenario",
+    "headline": "Annual Subscription Renewal: Act Two Weeks Before the $79.99 Charge",
+    "sub": "For the fitness app, the heads-up date is October 31, two weeks before it renews on November 14, which leaves time to decide and cancel.",
+    "items": [
+      "Fitness app | $79.99 | Annual | Nov 14 | Planned to cancel",
+      "Two of the five rows are annual, and they're the two with a decision waiting."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "subscription-tracker-what-to-track"
+    },
+    "proof": [
+      "For the fitness app, the heads-up date is October 31, two weeks before it renews on November 14, which leaves time to decide and cancel.",
+      "Two of the five rows are annual, and they're the two with a decision waiting.",
+      "\"Fitness app\", \"$79.99\", \"Annual\", \"Nov 14\", \"Planned to cancel\", \"No\""
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "annual subscription renewal",
+    "board": "Subscriptions and Renewals",
+    "when": "evergreen; peaks late October and January",
+    "visual": "measure archetype: a short timeline strip on paper with two marked dates, October 31 (heads-up) and November 14 (renews $79.99), a sticky note on the first. Example data, labelled.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "subscriptions",
+    "angle": "quote-card",
+    "headline": "Subscription Renewal Date: The Last Day You Can Act Before You Pay Again",
+    "sub": "Track six things for every subscription",
+    "items": [
+      "The renewal date is the field to protect, because it is the last day you can act before you pay again."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "subscription-tracker-what-to-track"
+    },
+    "proof": [
+      "The renewal date is the field to protect, because it is the last day you can act before you pay again.",
+      "Track six things for every subscription"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "subscription renewal date",
+    "board": "Subscriptions and Renewals",
+    "when": "evergreen",
+    "visual": "one-card archetype: a single large index card in forest on a paper desk, the quote set in two-tone type with the words 'renewal date' in the warm pop, a pencil lying across it.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "subscriptions",
+    "angle": "infographic",
+    "headline": "Charged After Canceling a Subscription? Five Steps, Company First, Then Your Card Issuer",
+    "sub": "Work up the ladder one rung at a time, and keep every note and email.",
+    "items": [
+      "The day you see the charge | Contact the company again, referring to your confirmation.",
+      "Same week, if it isn't fixed | Call the number on the back of your card.",
+      "Within 60 days of the statement | Send the card issuer a written billing error notice.",
+      "Paying from a bank account | Tell the company in writing that you revoke permission to charge you",
+      "After all of that | Report it to the FTC at ReportFraud.ftc.gov or to your state attorney general's office."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-cancel-subscriptions"
+    },
+    "proof": [
+      "Work up the ladder one rung at a time, and keep every note and email.",
+      "The day you see the charge",
+      "Contact the company again, referring to your confirmation.",
+      "Same week, if it isn't fixed",
+      "Call the number on the back of your card.",
+      "Within 60 days of the statement",
+      "Send the card issuer a written billing error notice.",
+      "Paying from a bank account",
+      "Tell the company in writing that you revoke permission to charge you",
+      "After all of that",
+      "Report it to the FTC at ReportFraud.ftc.gov or to your state attorney general's office."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "charged after canceling subscription",
+    "board": "Subscriptions and Renewals",
+    "when": "evergreen",
+    "visual": "measure archetype: a five-rung ladder drawn on paper, each rung a forest bar with its 'when' label and the action in plain type beneath; a card and a pen as props. Not legal advice, so the pin carries the guide's 'keep every note' line.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "subscriptions",
+    "angle": "scenario",
+    "headline": "How to Cancel a Subscription When They Push Back: What to Say, Word for Word",
+    "sub": "Keep it short and polite, and say the same thing again if you need to. You don't owe a reason.",
+    "items": [
+      "They offer a discount: Thank you, but I'd like to cancel today. Please confirm the end date.",
+      "They say to call in: I'd like to cancel. What do you need from me to finish it today?",
+      "Only chat is available: Please cancel it now and send me written confirmation.",
+      "They keep stalling: I've asked to cancel three times. Please give me a reference number for this request and tell me the date it takes effect."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-cancel-subscriptions"
+    },
+    "proof": [
+      "Keep it short and polite, and say the same thing again if you need to. You don't owe a reason.",
+      "Thank you, but I'd like to cancel today. Please confirm the end date.",
+      "I'd like to cancel. What do you need from me to finish it today?",
+      "Please cancel it now and send me written confirmation.",
+      "I've asked to cancel three times. Please give me a reference number for this request and tell me the date it takes effect.",
+      "They offer a discount",
+      "They say to call in",
+      "Only chat is available",
+      "They keep stalling"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to say to cancel a subscription",
+    "board": "Subscriptions and Renewals",
+    "when": "evergreen",
+    "visual": "intake archetype: four chat-bubble pairs on a paper panel, the company's situation in grey and your line in forest, no brand logos and no phone frame; a mug and sticky note at the corner.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "subscriptions",
+    "angle": "question",
+    "headline": "Does Deleting an App Cancel the Subscription? No, and the Charges Continue",
+    "sub": "Cancel through Apple, Google Play or the company that bills you.",
+    "items": [
+      "Google states that uninstalling an app won't cancel its subscription.",
+      "You have to cancel through Apple, Google Play or the company that bills you.",
+      "Deleting the app only removes it from your phone, and the charges continue."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-cancel-subscriptions"
+    },
+    "proof": [
+      "Google states that uninstalling an app won't cancel its subscription.",
+      "You have to cancel through Apple, Google Play or the company that bills you.",
+      "Deleting the app only removes it from your phone, and the charges continue."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "does deleting an app cancel the subscription",
+    "board": "Subscriptions and Renewals",
+    "when": "evergreen",
+    "visual": "one-card archetype: a large question on a forest card with a plain phone-shaped outline (no real screen) showing an app icon with a cross, the answer in two-tone type beneath; subscription receipt as prop.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "subscriptions",
+    "angle": "template-preview",
+    "headline": "Subscription Cancellation Record: Six Facts to Keep After You Cancel",
+    "sub": "Keep these six facts somewhere you'll find them again, whether that's a notes app or an envelope.",
+    "items": [
+      "Service and amount | Streaming plan, $15.49 a month",
+      "When you cancelled | The 9th, 8:40 pm, on the website",
+      "Confirmation | Email with reference CX-48213, screenshot saved",
+      "When it ends | The 12th, the end of the paid period",
+      "Next charge you expect | None. It would have been the 12th",
+      "When you'll check | The statement that lists the 12th"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-cancel-subscriptions"
+    },
+    "proof": [
+      "Keep these six facts somewhere you'll find them again, whether that's a notes app or an envelope.",
+      "Streaming plan, $15.49 a month",
+      "The 9th, 8:40 pm, on the website",
+      "Email with reference CX-48213, screenshot saved",
+      "The 12th, the end of the paid period",
+      "None. It would have been the 12th",
+      "The statement that lists the 12th"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "subscription cancellation record template",
+    "board": "Subscriptions and Renewals",
+    "when": "evergreen",
+    "visual": "tracker-sheet archetype: a two-column fill-in card (Field, Example) with the six example rows in pencil, an envelope and a printed confirmation beside it. Labelled as an example. Reserve: second fill-in page after the tracker template.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": true
+  },
+  {
+    "slice": "subscriptions",
+    "angle": "before-after",
+    "headline": "After the Subscription Sweep: One List With Name, Amount, How Often, Where It's Billed",
+    "sub": "Add up the yearly cost of each one, then mark each as keep, unsure or cancel.",
+    "items": [
+      "name, amount, how often, where it's billed",
+      "Monthly charges times twelve, annual charges as they are.",
+      "Then mark each as keep, unsure or cancel."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-find-every-subscription-you-are-paying-for"
+    },
+    "proof": [
+      "name, amount, how often, where it's billed",
+      "Monthly charges times twelve, annual charges as they are.",
+      "Then mark each as keep, unsure or cancel.",
+      "your Apple or Google subscription list, PayPal automatic payments and your email receipts"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to list all my subscriptions",
+    "board": "Subscriptions and Renewals",
+    "when": "evergreen; January",
+    "visual": "before-after: left, a scatter of statements, a phone-less Apple/Google/PayPal/email label set as four torn slips; right, one tidy four-column sheet with a keep/unsure/cancel mark per row. Reserve: overlaps the how-to-steps pin.",
+    "flags": [],
+    "reserve": true
+  }
+]

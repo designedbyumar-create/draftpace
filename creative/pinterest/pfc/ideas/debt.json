@@ -1,0 +1,318 @@
+[
+  {
+    "slice": "debt",
+    "angle": "comparison",
+    "headline": "Debt Snowball vs Avalanche: Where Does Your Extra Money Go First?",
+    "sub": "Every debt still gets its minimum each month. The only question is where the extra money goes.",
+    "items": [
+      "Snowball: smallest balance first",
+      "Extra goes to the smallest balance",
+      "A debt disappears sooner, which is easy to feel",
+      "Can cost more interest",
+      "Avalanche: highest rate first",
+      "Extra goes to the highest interest rate",
+      "Usually the lowest interest total",
+      "The first debt can take a long time to clear"
+    ],
+    "link": { "kind": "guide", "slug": "debt-snowball-vs-avalanche" },
+    "proof": [
+      "Every debt still gets its minimum each month. The only question is where the extra money goes.",
+      "Snowball: smallest balance first",
+      "Extra goes to the smallest balance",
+      "A debt disappears sooner, which is easy to feel",
+      "Can cost more interest",
+      "Avalanche: highest rate first",
+      "Extra goes to the highest interest rate",
+      "Usually the lowest interest total",
+      "The first debt can take a long time to clear"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "debt snowball vs avalanche",
+    "board": "Debt Payoff",
+    "when": "evergreen",
+    "visual": "Side-by-side archetype: two paper cards split down the middle on a forest-and-wash desk, left headed Snowball with a small stack of coins and a short bar, right headed Avalanche with a tall stack and a long bar, a thin ruled divider between them, four short rows each, a sticky note and a coffee mug in the corner. Flat vector, no phone.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slug": "debt",
+    "angle": "scenario",
+    "headline": "Debt Payoff Order: When a $12,000 Card at 26% Changes the Answer",
+    "sub": "On these numbers, avalanche costs $438.76 less and finishes a month sooner.",
+    "items": [
+      "$12,000 card at 26% with a $360 minimum",
+      "$1,500 loan at 6% with a $50 minimum",
+      "$300 extra a month",
+      "Snowball: extra goes first to the $1,500 loan",
+      "Avalanche: extra goes first to the $12,000 card",
+      "Interest along the way: $3,978.60 vs $3,539.84"
+    ],
+    "link": { "kind": "guide", "slug": "debt-snowball-vs-avalanche" },
+    "proof": [
+      "Say you have a $12,000 card at 26% with a $360 minimum, a $1,500 loan at 6% with a $50 minimum, and $300 extra a month.",
+      "On these numbers, avalanche costs $438.76 less and finishes a month sooner.",
+      "The $1,500 loan",
+      "The $12,000 card",
+      "Interest along the way",
+      "$3,978.60",
+      "$3,539.84"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "should i pay off highest interest debt first",
+    "board": "Debt Payoff",
+    "when": "evergreen",
+    "visual": "Scenario on a kitchen table: a thick credit card statement marked $12,000 and a thin loan letter marked $1,500 side by side, two arrows from a $300 coin stack pointing at each, with a small two-row result strip (snowball vs avalanche interest) beneath. Intake archetype, paper and ruled lines, a calculator and a pen as props.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slug": "debt",
+    "angle": "checklist",
+    "headline": "Debt Payoff Checklist: 5 Things to Write Down for Every Debt",
+    "sub": "Free guide",
+    "items": [
+      "The balance you owe today.",
+      "The interest rate. If you don't know it, it's on the statement or the lender can tell you.",
+      "The minimum payment.",
+      "The date the payment is due each month.",
+      "Whether the rate is promotional and the date it ends."
+    ],
+    "link": { "kind": "guide", "slug": "debt-snowball-vs-avalanche" },
+    "proof": [
+      "Write these down for each debt first",
+      "The balance you owe today.",
+      "The interest rate. If you don't know it, it's on the statement or the lender can tell you.",
+      "The minimum payment.",
+      "The date the payment is due each month.",
+      "Whether the rate is promotional and the date it ends."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "debt payoff checklist",
+    "board": "Debt Payoff",
+    "when": "evergreen",
+    "visual": "Intake archetype: a clipboard on a desk with a ruled sheet and five ticked checkbox rows in forest, a debt statement and a pen beside it, a paper clip as the one warm pop. No phone, no figures on the sheet.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slug": "debt",
+    "angle": "how-to-steps",
+    "headline": "How to Pay Off Debt With Snowball or Avalanche in 5 Steps",
+    "sub": "When that debt is gone, its whole payment rolls to the next one. That rolling is what makes both methods speed up.",
+    "items": [
+      "Pay the minimum on every debt each month, on time.",
+      "Decide how much extra you can add each month, and keep it steady.",
+      "Point the extra at the target debt: the smallest balance for snowball, the highest rate for avalanche.",
+      "When that debt is gone, move its whole payment, minimum and extra, to the next target.",
+      "Every three months, update the balances and check that no rate has changed."
+    ],
+    "link": { "kind": "guide", "slug": "debt-snowball-vs-avalanche" },
+    "proof": [
+      "Pay the minimum on every debt each month, on time.",
+      "Decide how much extra you can add each month, and keep it steady.",
+      "Point the extra at the target debt: the smallest balance for snowball, the highest rate for avalanche.",
+      "When that debt is gone, move its whole payment, minimum and extra, to the next target.",
+      "That rolling is what makes both methods speed up.",
+      "Every three months, update the balances and check that no rate has changed."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to pay off multiple debts",
+    "board": "Debt Payoff",
+    "when": "evergreen",
+    "visual": "Measure archetype: a five-rung ladder drawn down the page, numbered 1 to 5 in forest circles with the step words beside each rung, the lower rungs shaded as cleared, a small rolled arrow from one rung to the next to show the payment moving up. Wash background, ruled lines, a sticky note prop.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slug": "debt",
+    "angle": "quote-card",
+    "headline": "Debt Payoff Method: The One You Keep Costs Less Than the One You Abandon",
+    "sub": "We'd choose snowball when the gap is small, as in the first example, because $114 over three years costs less than quitting in month eight.",
+    "items": [
+      "The method you keep costs less than the one you abandon."
+    ],
+    "link": { "kind": "guide", "slug": "debt-snowball-vs-avalanche" },
+    "proof": [
+      "The method you keep costs less than the one you abandon.",
+      "We'd choose snowball when the gap is small, as in the first example, because $114 over three years costs less than quitting in month eight."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "debt payoff motivation",
+    "board": "Debt Payoff",
+    "when": "evergreen",
+    "visual": "One-card archetype: a single large forest index card on a paper desk carrying the quoted sentence in a big serif, small ruled lines under it, a pencil lying across the corner and a coffee mug at the edge. Pure type card, no screen.",
+    "flags": ["example-tag"],
+    "reserve": true
+  },
+  {
+    "slug": "debt",
+    "angle": "infographic",
+    "headline": "Credit Card Minimum Payment: Where Your First $90 Actually Goes",
+    "sub": "That is the whole story of a minimum payment: most of a small payment is spent standing still.",
+    "items": [
+      "$3,000 balance at 24 percent APR",
+      "One twelfth of 24 percent is 2 percent, so the first month adds $60 of interest",
+      "$60 of it covers that interest and only $30 reduces what you owe"
+    ],
+    "link": { "kind": "guide", "slug": "credit-card-minimum-payments-how-long" },
+    "proof": [
+      "Say the balance is $3,000 and the rate is 24 percent APR.",
+      "One twelfth of 24 percent is 2 percent, so the first month adds $60 of interest",
+      "$60 of it covers that interest and only $30 reduces what you owe",
+      "That is the whole story of a minimum payment: most of a small payment is spent standing still."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how much of my credit card payment goes to interest",
+    "board": "Debt Payoff",
+    "when": "evergreen",
+    "visual": "Measure archetype: one wide $90 payment bar split into a long forest segment labelled $60 interest and a short wash segment labelled $30 off the balance, a $3,000 card icon on the left and a 2 percent annotation above, drawn on ruled paper with a calculator beside it.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slug": "debt",
+    "angle": "before-after",
+    "headline": "Pay Off a Credit Card Faster: What an Extra $50 or $200 a Month Changes",
+    "sub": "Small amounts, held steady, beat a large amount you can't keep up.",
+    "items": [
+      "$90 (the minimum, held level): 56 months, $1,993 interest",
+      "$140 ($50 extra): 29 months, $957 interest",
+      "$290 ($200 extra): 12 months, $395 interest"
+    ],
+    "link": { "kind": "guide", "slug": "credit-card-minimum-payments-how-long" },
+    "proof": [
+      "Small amounts, held steady, beat a large amount you can't keep up.",
+      "$90 (the minimum, held level)",
+      "56 months",
+      "$1,993",
+      "$140 ($50 extra)",
+      "29 months",
+      "$957",
+      "$290 ($200 extra)",
+      "12 months",
+      "$395",
+      "Example only: $3,000 at 24 percent APR, a fixed $90 payment, no new charges."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "pay off credit card faster",
+    "board": "Debt Payoff",
+    "when": "evergreen",
+    "visual": "Before-after: three stacked horizontal bars on a ruled sheet, a long grey 56 month bar for $90, a medium 29 month bar for $140, a short forest 12 month bar for $290, interest figure at the end of each. A card statement and a sticky note at the edge.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slug": "debt",
+    "angle": "question",
+    "headline": "What Does the 36 Month Box on Your Credit Card Statement Mean?",
+    "sub": "Issuers must show how much you would pay each month to clear the current balance in 36 months.",
+    "items": [
+      "You aren't required to pay that amount.",
+      "It covers only the balance on that statement",
+      "New purchases mean you won't be debt-free in three years."
+    ],
+    "link": { "kind": "guide", "slug": "credit-card-minimum-payments-how-long" },
+    "proof": [
+      "Issuers must show how much you would pay each month to clear the current balance in 36 months.",
+      "You aren't required to pay that amount.",
+      "It covers only the balance on that statement, so new purchases mean you won't be debt-free in three years."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "credit card statement 36 month payoff box",
+    "board": "Debt Payoff",
+    "when": "evergreen",
+    "visual": "Question archetype: a close crop of a paper card statement on a kitchen table with a boxed 36 month area circled in forest pen, a large question headline above, three short answer lines on a sticky note beside it. No real bank name, no real figures.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slug": "debt",
+    "angle": "template-preview",
+    "headline": "Credit Card Payoff Worksheet: Find Your Own Numbers in Four Steps",
+    "sub": "Free guide",
+    "items": [
+      "Find the balance, the APR and the minimum on your latest statement",
+      "Divide the APR by 12 and multiply by the balance. That is roughly one month of interest.",
+      "Subtract that from your payment. What is left is what actually reduced the balance.",
+      "Pick an extra amount you can keep up every month, even $25"
+    ],
+    "link": { "kind": "guide", "slug": "credit-card-minimum-payments-how-long" },
+    "proof": [
+      "Find the balance, the APR and the minimum on your latest statement",
+      "Divide the APR by 12 and multiply by the balance. That is roughly one month of interest.",
+      "Subtract that from your payment. What is left is what actually reduced the balance.",
+      "Pick an extra amount you can keep up every month, even $25"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "credit card payoff worksheet",
+    "board": "Debt Payoff",
+    "when": "evergreen",
+    "visual": "Template-preview: a blank fill-in sheet on a clipboard with four numbered lines, each with an empty ruled box (balance, APR, minimum, extra), the formula words beside each box, nothing filled in. Tracker-sheet archetype, forest header band, a pencil prop.",
+    "flags": ["example-tag"],
+    "reserve": true
+  },
+  {
+    "slug": "debt",
+    "angle": "mockup-app",
+    "headline": "Debt Payoff Plan App: Smallest Balance First or Highest Rate First",
+    "sub": null,
+    "items": [
+      "Type each debt's balance, rate and minimum",
+      "Smallest balance first or highest rate first",
+      "An extra amount you choose",
+      "The month you are debt-free, the order the debts clear",
+      "A debt with no rate is named as left out, never guessed at.",
+      "It doesn't connect to your lenders and it doesn't change what you pay"
+    ],
+    "link": { "kind": "shop", "slug": "personal-finance-companion" },
+    "proof": [
+      "A payoff plan from your own balances, rates and minimum payments: the month you are debt-free, the order the debts clear, and what the cheaper method saves.",
+      "A debt with no rate is named as left out, never guessed at.",
+      "smallest balance first or highest rate first, with an extra amount you choose"
+    ],
+    "proofFile": "src/shop/products/personal-finance-companion.ts",
+    "proofExtra": [
+      {
+        "file": "src/content/guides.ts",
+        "proof": [
+          "You type each debt's balance, rate and minimum, set an extra amount, and switch between smallest balance first and highest rate first.",
+          "It doesn't connect to your lenders and it doesn't change what you pay"
+        ]
+      }
+    ],
+    "query": "debt payoff planner app",
+    "board": "Debt Payoff",
+    "when": "evergreen",
+    "visual": "Homeschool-reference mockup-app: dark forest panel with the Personal Finance Companion app icon and name, a big two-tone headline, four feature rows from the items, a large tilted phone showing the real screen creative/public/screens/personal-finance-companion-debt.png (Payoff plan card with the Smallest balance first / Highest rate first toggle; crop the Next.js dev badge; the demo figures in the phone are not repeated in any overlay text), a calculator and a coffee mug as props. Product line with its price is set by the product pin template; no price in the headline.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slug": "debt",
+    "angle": "mockup-printable",
+    "headline": "Debt Payoff Printable: List Your Debts Two Ways, Then Keep One Order",
+    "sub": "Work your chosen order from the bottom rung up. Shade each rung as it is cleared.",
+    "items": [
+      "Avalanche: highest rate first",
+      "Snowball: smallest balance first",
+      "Payoff ladder",
+      "Which method will I actually keep to, and why?"
+    ],
+    "link": { "kind": "shop", "slug": "personal-finance-companion" },
+    "proof": [
+      "Debt payoff method comparison",
+      "Avalanche pays the highest interest rate first and usually costs the least.",
+      "List your debts both ways, then choose the order you will actually keep to.",
+      "Payoff ladder",
+      "Work your chosen order from the bottom rung up. Shade each rung as it is cleared.",
+      "Which method will I actually keep to, and why?"
+    ],
+    "proofFile": "book",
+    "query": "debt snowball printable",
+    "board": "Debt Payoff",
+    "when": "evergreen",
+    "visual": "Mockup-printable: the real, blank workbook page titled Debt payoff method comparison (Debt section, printed page 38 of the 81-page Printable Finance Companion) lying tilted on a desk over an open binder with index tabs, the Avalanche and Snowball columns and the five-rung Payoff ladder visible, a pen and a sticky note as props. Nothing is filled in on the page.",
+    "flags": [],
+    "reserve": false
+  }
+]
