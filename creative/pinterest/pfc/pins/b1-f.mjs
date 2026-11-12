@@ -196,7 +196,7 @@ function emergencyFund() {
   const panel = `<div style="${at(36, 400, 764, 980, "border-radius:30px;background:radial-gradient(circle at 25% 8%,#1f6049,#0d3b2e 55%,#082a20);box-shadow:0 8px 12px rgba(0,0,0,.25),0 30px 40px rgba(0,0,0,.3)")}"></div>`;
   const scene = `<div style="${at(0, SCENE_TOP, 1000, 982, "background:repeating-linear-gradient(0deg,rgba(255,255,255,.35) 0 2px,transparent 2px 7px),#d5e3db")}"></div>
     ${panel}${cards}${passbook}
-    ${pencil({ x: 640, y: 770, len: 360, rot: 62 })}
+    ${pencil({ x: 690, y: 780, len: 340, rot: 62 })}
     ${jar({ x: 800, y: 1040, w: 190, rot: -4, fill: 4, seed: 12 })}`;
   return printable({ n, scene, paper: C.wash });
 }

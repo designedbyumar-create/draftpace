@@ -248,7 +248,7 @@ function pin26() {
     <rect y="900" width="1000" height="90" fill="#7fa88c"/>
   </svg>
   ${before}${after}${note}
-  ${tape(240, 420, -4, "#2f6b57", 110)}${tape(350, 416, 5, "#d9b94c", 110)}${tape(700, 404, -3, "#d9b94c", 110)}${tape(850, 404, 5, "#2f6b57", 110)}
+  ${tape(190, 422, -4, "#2f6b57", 100)}${tape(690, 404, -3, "#d9b94c", 100)}
   <div style="${abs(0, 372, 1000, SCENE_H, "pointer-events:none")}">
     <div style="${abs(0, 0, 24, SCENE_H, "background:linear-gradient(90deg,#f7f4ec,#e5e1d6);box-shadow:3px 0 8px rgba(0,0,0,.18)")}"></div>
     <div style="${abs(976, 0, 24, SCENE_H, "background:linear-gradient(270deg,#f7f4ec,#e5e1d6);box-shadow:-3px 0 8px rgba(0,0,0,.18)")}"></div>
