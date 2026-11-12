@@ -83,8 +83,8 @@ function umbrella({ x, y, w = 80, color = "#22364f", crook = false, rot = 0, z =
 function umbrellaStand({ x, y, w = 220, z = 3 }) {
   const id = `us${++uid}`;
   const sc = w / 220;
-  return `${umbrella({ x: x + 36 * sc, y: y - 170 * sc, w: 62 * sc, color: "#22364f", rot: -4, z })}
-  ${umbrella({ x: x + 112 * sc, y: y - 150 * sc, w: 58 * sc, color: "#c58a22", crook: true, rot: 5, z })}
+  return `${umbrella({ x: x + 22 * sc, y: y + 50 * sc - 82 * sc * 4.125, w: 82 * sc, color: "#22364f", rot: -4, z })}
+  ${umbrella({ x: x + 104 * sc, y: y + 50 * sc - 76 * sc * 4.125, w: 76 * sc, color: "#c58a22", crook: true, rot: 5, z })}
   <svg style="${abs(x, y, w, 290 * sc, `z-index:${z + 1};filter:drop-shadow(0 18px 12px rgba(0,0,0,.45))`)}" viewBox="0 0 220 290" aria-hidden="true">
   <defs><linearGradient id="${id}" x1="0" x2="1"><stop offset="0" stop-color="#6c7378"/><stop offset=".3" stop-color="#b9c0c5"/><stop offset=".7" stop-color="#7b838a"/><stop offset="1" stop-color="#4b5258"/></linearGradient></defs>
   <path d="M14 24 H 206 L 196 270 Q 110 290 24 270 Z" fill="url(#${id})"/>
@@ -204,7 +204,7 @@ function pin76() {
   .cd{position:absolute;top:490px;width:288px;height:562px;transform-origin:50% -34px;background:#fbf8f0;border-radius:6px;padding:20px 20px 16px;display:flex;flex-direction:column;gap:10px;z-index:3;${shadow(0.9)}}
   .cd:before{content:"";position:absolute;left:0;right:0;top:0;height:12px;background:${FOREST};border-radius:6px 6px 0 0}
   .cd h3{font:500 50px/1 "Newsreader",Georgia,serif;letter-spacing:-.01em;color:${FOREST};margin-top:6px}
-  .cd p{font:500 25px/1.22 "Plex",sans-serif;color:#1d1d20}
+  .cd p{font:500 28px/1.22 "Plex",sans-serif;color:#1d1d20}
   .cd p .example{vertical-align:middle;margin-left:4px}
   .plac{position:absolute;left:44px;top:1062px;width:560px;padding:14px 22px 14px 26px;background:#fbf8f0;border-radius:5px;z-index:4;transform:rotate(-1deg);font:500 26px/1.28 "Plex",sans-serif;color:#1d1d20;${shadow(0.7)}}
   .plac:before{content:"";position:absolute;left:0;top:0;bottom:0;width:9px;background:${AMBER};border-radius:5px 0 0 5px}`;
@@ -221,7 +221,7 @@ function pin76() {
   ${bench({ yTop: 1160 })}
   <div class="plac" data-check="note">${esc("This is an illustration, not a report of anyone's month")}</div>
   ${bowl}
-  ${shoe({ x: 160, y: 1290, w: 220, color: "#e3d9c4", rot: 0, z: 1 })}${shoe({ x: 420, y: 1296, w: 200, color: "#c26a3d", sole: "#efe6d3", flip: true, z: 1 })}`;
+  ${shoe({ x: 150, y: 1248, w: 220, color: "#e3d9c4", rot: 0, z: 1 })}${shoe({ x: 410, y: 1252, w: 200, color: "#c26a3d", sole: "#efe6d3", flip: true, z: 1 })}`;
   return printable({ n: 76, scene, paper: "#e8e4da", extraCss: css });
 }
 
@@ -243,13 +243,13 @@ function pin78() {
     <rect width="1000" height="${SCENE_H}" fill="url(#pl78)"/></svg>`;
   })();
   const css = `
-  .qc{position:absolute;left:44px;top:440px;width:742px;height:640px;background:#fdfbf4;border-radius:5px;transform:rotate(-1.6deg);z-index:3;${shadow(1)}}
+  .qc{position:absolute;left:44px;top:440px;width:730px;height:620px;background:#fdfbf4;border-radius:5px;transform:rotate(-1.6deg);z-index:3;${shadow(1)}}
   .qc:before{content:"";position:absolute;left:62px;top:0;bottom:0;width:3px;background:#e9a9b4;opacity:.8}
   .qm{position:absolute;left:84px;top:18px;font:500 150px/1 "Newsreader",Georgia,serif;color:${FOREST};opacity:.9}
-  .qt{position:absolute;left:84px;top:112px;width:620px;font:500 52px/76px "Newsreader",Georgia,serif;letter-spacing:-.01em;color:#16201b;
-    background:repeating-linear-gradient(transparent 0 74px,#c8d6cd 74px 76px);padding-top:2px}
+  .qt{position:absolute;left:84px;top:112px;width:630px;font:500 58px/82px "Newsreader",Georgia,serif;letter-spacing:-.01em;color:#16201b;
+    background:repeating-linear-gradient(transparent 0 80px,#c8d6cd 80px 82px);padding-top:2px}
   .qt .u{text-decoration:none;background:linear-gradient(transparent 70%,${AMBER} 70% 90%,transparent 90%);font-style:italic;font-weight:600}`;
-  const sticky78 = `${sticky(588, 1006, 250, 170, 5, "#f7d98a", 6)}`;
+  const sticky78 = `${sticky(70, 986, 240, 160, -5, "#f7d98a", 6)}`;
   const scene = `
   ${plaster}
   ${hookRail({ y: 392, hooks: [880], z: 1 })}
@@ -257,9 +257,9 @@ function pin78() {
   <div class="qc" data-check="card"><div class="qm">“</div><div class="qt" data-check="quote">${marked}”</div></div>
   ${tape(80, 424, -4, "#2f6b57", 120, 7)}${tape(660, 436, 5, "#d9b94c", 120, 7)}
   ${sticky78}
-  ${pencil({ x: 470, y: 1286, len: 380, rot: -3 })}
-  ${umbrellaStand({ x: 50, y: 1096, w: 200 })}
-  ${shoe({ x: 300, y: 1290, w: 200, color: "#7a4a2a", sole: "#e6dcc8", z: 3 })}`;
+  ${pencil({ x: 330, y: 1290, len: 380, rot: -3 })}
+  ${umbrellaStand({ x: 780, y: 1082, w: 200 })}
+  ${shoe({ x: 70, y: 1246, w: 210, color: "#7a4a2a", sole: "#e6dcc8", z: 3 })}`;
   return printable({ n: 78, scene, paper: "#efe8d8", extraCss: css });
 }
 
@@ -298,17 +298,17 @@ function pin85() {
   .tg i{position:absolute;left:18px;top:50%;margin-top:-17px;width:34px;height:34px;border-radius:50%;background:#2a1a0e;box-shadow:inset 0 2px 3px rgba(0,0,0,.6)}
   .tg em{flex:none;display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:${FOREST};color:#fff;font:600 30px/1 "Plex",sans-serif;font-style:normal}
   .exw{position:absolute;left:${X0}px;top:412px;z-index:4}`;
-  const tags = i.items.map((t, k) => `<div class="tg" data-check="tag" style="top:${812 + k * 126}px;transform:rotate(${[-0.8, 0.6, -0.5, 0.7][k]}deg);left:${[50, 62, 52, 64][k]}px"><i></i><em>${k + 1}</em><span>${esc(t)}</span></div>`).join("");
+  const tags = i.items.map((t, k) => `<div class="tg" data-check="tag" style="top:${806 + k * 122}px;transform:rotate(${[-0.8, 0.6, -0.5, 0.7][k]}deg);left:${[50, 62, 52, 64][k]}px"><i></i><em>${k + 1}</em><span>${esc(t)}</span></div>`).join("");
   const scene = `
   ${walnut()}
-  <div class="exw">${EX()}</div>
+  <div class="exw"><span style="display:inline-block;background:#fbf8ef;border-radius:8px;padding:4px">${EX()}</span></div>
   <div class="st" data-check="strip" style="top:452px;width:${COST_W}px"><b>Costs</b><span>$3,410</span></div>
   <div class="st" data-check="strip" style="top:566px;width:${PAY_W}px"><b>Pay</b><span>$3,240</span></div>
   <div class="gap"></div>
   <div class="short" data-check="gap"><b>You're $170 short.</b></div>
   ${tags}
   ${calc({ x: 790, y: 1010, w: 180, rot: 8, z: 4 })}
-  ${pencil({ x: 120, y: 1300, len: 420, rot: -2 })}`;
+  ${pencil({ x: 120, y: 1314, len: 420, rot: -1 })}`;
   return printable({ n: 85, scene, paper: "#efe3d0", extraCss: css });
 }
 
@@ -340,7 +340,7 @@ function pin84() {
   const body = rows.slice(0, 4), tot = rows[4];
   const rowHtml = body.map((r, k) => `<div class="rw${k === 0 ? " hl" : ""}"><span class="b">${esc(r.bill)}</span><span class="n">${esc(r.total)}</span><span class="n y">${esc(r.you)}</span><span class="n t">${esc(r.them)}</span></div>`).join("");
   const css = `
-  .reg{position:absolute;left:62px;top:408px;width:840px;height:850px;background:#fefdf9;border-radius:4px;transform:rotate(-2deg);z-index:3;${shadow(1)};padding:30px 34px 0}
+  .reg{position:absolute;left:62px;top:448px;width:840px;height:748px;background:#fefdf9;border-radius:4px;transform:rotate(-2deg);z-index:3;${shadow(1)};padding:30px 34px 0}
   .reg:before{content:"";position:absolute;left:0;right:0;top:0;height:14px;background:${FOREST};border-radius:4px 4px 0 0}
   .bar{display:flex;height:66px;border-radius:10px;overflow:hidden;margin-top:12px;border:2px solid ${FOREST}}
   .bar div{display:flex;align-items:center;padding:0 20px;font:600 32px/1 "Plex",sans-serif}
@@ -361,7 +361,7 @@ function pin84() {
   .rw.tt .n{font-weight:600;font-size:30px}
   .stamp{position:absolute;right:-6px;top:-34px;transform:rotate(7deg);z-index:6}
   .stamp .example{font-size:26px;padding:8px 16px;color:#a23a2a;border-width:3px;background:#fefdf9}`;
-  const bag = `<svg style="${abs(30, 1190, 380, 150, "z-index:4;transform:rotate(-5deg);filter:drop-shadow(0 14px 10px rgba(50,40,20,.45))")}" viewBox="0 0 380 150" aria-hidden="true"><defs><pattern id="sc84" width="40" height="150" patternUnits="userSpaceOnUse"><rect width="40" height="150" fill="#2f5b4a"/><rect width="12" height="150" fill="#e7dec7"/></pattern></defs>
+  const bag = `<svg style="${abs(24, 1222, 330, 130, "z-index:4;transform:rotate(-5deg);filter:drop-shadow(0 14px 10px rgba(50,40,20,.45))")}" viewBox="0 0 380 150" aria-hidden="true"><defs><pattern id="sc84" width="40" height="150" patternUnits="userSpaceOnUse"><rect width="40" height="150" fill="#2f5b4a"/><rect width="12" height="150" fill="#e7dec7"/></pattern></defs>
     <rect x="6" y="14" width="360" height="124" rx="26" fill="url(#sc84)"/><rect x="6" y="14" width="360" height="40" rx="20" fill="#fff" opacity=".12"/>
     <path d="M360 24 C 392 36 392 120 360 132" fill="none" stroke="#e7dec7" stroke-width="3" stroke-dasharray="5 4"/>
     ${Array.from({ length: 9 }, (_, k) => `<path d="M${6 + k * 8} 138 v12 M${6 + k * 8} 14 v-10" stroke="#e7dec7" stroke-width="3" stroke-linecap="round"/>`).join("")}</svg>`;
@@ -373,9 +373,10 @@ function pin84() {
     <div class="rw tt"><span class="b">Total</span><span class="n">${esc(tot.total)}</span><span class="n">${esc(tot.you)}</span><span class="n">${esc(tot.them)}</span></div></div>`;
   const scene = `
   ${ash()}
-  ${keyTray({ x: 620, y: 1196, w: 340, rot: -4, z: 5 })}
+  ${bag}
+  ${keyTray({ x: 650, y: 1148, w: 300, rot: -4, z: 5 })}
   ${html}
-  ${pencil({ x: 440, y: 1300, len: 160, rot: -3 })}`;
+  ${pencil({ x: 380, y: 1296, len: 250, rot: -3 })}`;
   const out = printable({ n: 84, scene, paper: "#eeeae0", extraCss: css });
   return out;
 }
@@ -413,7 +414,7 @@ function pin86() {
     <rect x="-10" y="8" width="1020" height="52" rx="8" fill="url(#lg86)"/><rect x="-10" y="8" width="1020" height="9" rx="4" fill="#fff" opacity=".3"/><path d="M0 34 C 300 28 640 40 1000 32" stroke="#6b4421" stroke-opacity=".3" stroke-width="2.4" fill="none"/></svg>`;
   const rack = `<svg style="${abs(0, 1200, 1000, 154, "z-index:2")}" viewBox="0 0 1000 154" aria-hidden="true"><defs><linearGradient id="rk86" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7a5230"/><stop offset="1" stop-color="#4a2f18"/></linearGradient></defs>
     <rect width="1000" height="154" fill="url(#rk86)"/>${Array.from({ length: 6 }, (_, k) => `<rect x="0" y="${k * 28 + 2}" width="1000" height="10" fill="#d1a06a" opacity=".85"/><rect x="0" y="${k * 28 + 12}" width="1000" height="6" fill="#000" opacity=".3"/>`).join("")}</svg>`;
-  const coffee = mug({ x: 840, y: 1040, size: 124, color: "#f3ede4", drink: "#6b4226" });
+  const coffee = mug({ x: 806, y: 1040, size: 124, color: "#f3ede4", drink: "#6b4226" });
   const hook = hookRail({ y: 392, hooks: [880], z: 1 });
   const tote = `<svg style="${abs(826, 440, 200, 330, "z-index:2;filter:drop-shadow(0 18px 12px rgba(40,10,0,.45))")}" viewBox="0 0 200 330" aria-hidden="true"><defs><linearGradient id="tt86" x1="0" x2="1"><stop offset="0" stop-color="#efe3c6"/><stop offset="1" stop-color="#cdbf9d"/></linearGradient></defs>
     <path d="M54 60 C 54 -6 146 -6 146 60" fill="none" stroke="#a9885a" stroke-width="12" stroke-linecap="round"/><rect x="14" y="76" width="172" height="240" rx="6" fill="url(#tt86)"/>

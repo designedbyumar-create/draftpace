@@ -169,12 +169,11 @@ function pin33() {
     <div style="${abs(0, 372, 1000, 982, "background:linear-gradient(104deg,rgba(255,255,255,.28) 0 12%,rgba(90,70,30,.1) 24%,rgba(255,255,255,.2) 38%,rgba(90,70,30,.12) 56%,rgba(255,255,255,.18) 72%,rgba(90,70,30,.1) 88%,rgba(255,255,255,.2))")}"></div>
     ${splatter({ colors: [C.forest, "#d9962b", "#c4573e", "#4b7a9b", "#2c2a27"], n: 46, seed: 7, maxR: 10, opacity: 0.85 })}
     ${grain(0.25, 0.65, 9)}${light(0.25, 0.2, "70,50,20")}`;
-  const ph = phone({ src: screen("records"), y0: 60, y1: 745, width: 440, tilt: 2.5, x: 536, y: 424, closed: true });
+  const ph = phone({ src: screen("records"), y0: 60, y1: 745, width: 430, tilt: -2, x: 546, y: 424, closed: true });
   const scene = `${cloth}${cards}${ph}
     ${brush({ x: 44, y: 1262, len: 520, rot: -2.2, handle: "#2f6b57", tip: "#c4573e" })}
-    ${tube({ x: 600, y: 1272, len: 280, rot: 4, color: C.forest })}
-    ${tape(36, 420, 120, -38, "#e9a9b4")}`;
-  return printable({ n: 33, scene: wrap(scene), paper: "#f1ead9", sub: true });
+    ${tube({ x: 600, y: 1272, len: 280, rot: 4, color: C.forest })}`;
+  return printable({ n: 33, scene: wrap(scene), paper: "#f1ead9", sub: true, extraCss: ".top h1{font-size:72px}" });
 }
 
 /* ------------------------------------------------------------------ #35 */
@@ -184,12 +183,12 @@ function pin35() {
     ${planks({ base: "#a9bfb5", alt: "#9ab3a8", seam: "#2f4a3f44", n: 6, seed: 12 })}
     ${splatter({ colors: ["#f6f1e4", C.forest, "#d9962b", "#c4573e", "#2f4a3f"], n: 34, seed: 21, maxR: 9, opacity: 0.8 })}
     ${grain(0.22, 0.8, 5)}${light(0.3, 0.26, "20,45,38")}
-    ${sheet({ src: bookPage(80), x: 70, y: 418, w: 860, tilt: -1.8, crop: { x0: 0, y0: 0.16, x1: 1, y1: 0.7 }, id: "q35" })}
+    ${sheet({ src: bookPage(80), x: 70, y: 418, w: 860, tilt: -1.8, crop: { x0: 0.04, y0: 0.2, x1: 0.86, y1: 0.62 }, id: "q35" })}
     ${tape(150, 424, 130, -24, "#e9a9b4")}${tape(860, 440, 130, 22, "#d9962b", "#fff")}
-    ${palette({ x: 590, y: 1110, w: 360, rot: 10 })}
-    ${mug({ x: 74, y: 1138, size: 190 })}
-    ${brush({ x: 330, y: 1250, len: 500, rot: -4, handle: "#a9743c", tip: C.forest })}`;
-  return printable({ n: 35, scene: wrap(scene), paper: "#e8efe9", sub: false });
+    ${palette({ x: 590, y: 1090, w: 370, rot: 10 })}
+    ${mug({ x: 74, y: 1110, size: 200 })}
+    ${brush({ x: 330, y: 1240, len: 500, rot: -4, handle: "#a9743c", tip: C.forest })}`;
+  return printable({ n: 35, scene: wrap(scene), paper: "#e8efe9", sub: true });
 }
 
 /* ------------------------------------------------------------------ #37 */
@@ -228,20 +227,20 @@ function pin37() {
         <div data-check="source${k + 1}" style="${abs(82, 8, GW - 94, GH - 16, "display:flex;align-items:center;font:600 24px/1.18 'Plex',sans-serif;color:#1d1d20")}">${esc(t)}</div></div>`;
     })
     .join("");
-  const statement = `<div style="${abs(690, 372, 250, 300, "background:#fffdf8;transform:rotate(9deg);box-shadow:0 2px 3px rgba(60,40,10,.3),0 18px 26px rgba(60,40,10,.35);z-index:3")}">
+  const statement = `<div style="${abs(660, 360, 250, 300, "background:#fffdf8;transform:rotate(9deg);box-shadow:0 2px 3px rgba(60,40,10,.3),0 18px 26px rgba(60,40,10,.35);z-index:0")}">
     <div style="${abs(0, 0, 250, 46, `background:${C.forestSoft}`)}"></div><div style="${abs(20, 14, 96, 12, `background:${C.forest}`)}"></div>
     ${[70, 98, 126, 154, 182, 210, 238].map((yy, k) => `<div style="${abs(20, yy, 210 - (k % 3) * 50, 8, "background:#d9d4c4")}"></div>`).join("")}</div>`;
   const scene = `
     ${planks({ base: "#d9a843", alt: "#cd9a34", seam: "#5b3d0f55", vertical: true, n: 7, seed: 31 })}
     ${splatter({ colors: ["#f6f1e4", C.forest, "#c4573e", "#2f4a6a", "#2c2a27"], n: 40, seed: 17, maxR: 11, opacity: 0.85 })}
     ${grain(0.25, 0.7, 8)}${light(0.3, 0.3, "70,40,0")}
-    ${sketchbook({ x: -40, y: 470, w: 260, h: 380, rot: -9 })}
-    ${folder({ x: 800, y: 430, w: 320, h: 420, rot: 7 })}
+    ${sketchbook({ x: -150, y: 470, w: 260, h: 380, rot: -9, z: 0 })}
+    ${folder({ x: 890, y: 450, w: 320, h: 420, rot: 7, z: 0 })}
     ${statement}
-    ${sheet({ src: bookPage(8), x: 140, y: 412, w: 720, tilt: -2.4, crop: { x0: 0, y0: 0.03, x1: 1, y1: 0.58 }, id: "p37" })}
+    ${sheet({ src: bookPage(8), x: 120, y: 412, w: 760, tilt: -2.4, crop: { x0: 0, y0: 0.03, x1: 1, y1: 0.58 }, id: "p37" })}
     ${tape(168, 420, 120, -30, "#e9a9b4")}${tape(836, 450, 120, 32, "#f6f1e4", "#fff", "plain")}
     ${cards}
-    ${brush({ x: 36, y: 1334, len: 280, rot: 0, handle: "#2f6b57", tip: "#d9962b", z: 6 })}`;
+    ${tube({ x: 560, y: 830, len: 300, rot: -5, color: "#c4573e", z: 9 })}`;
   return printable({ n: 37, scene: wrap(scene), paper: "#f4ead2", sub: false });
 }
 
@@ -266,9 +265,9 @@ function pin40() {
     <div class="panel"></div>
     ${sheet({ src: bookPage(14), x: 50, y: 560, w: 900, tilt: -2.2, crop: { x0: 0, y0: 0.1, x1: 1, y1: 0.52 }, id: "p40" })}
     ${tape(120, 572, 130, -32, "#d9962b", "#fff")}${tape(880, 584, 130, 30, "#e9a9b4")}
-    ${jar({ x: 70, y: 1056, w: 210, kind: "brushes", label: "Available", rot: -3, check: "tape1" })}
-    ${jar({ x: 330, y: 1086, w: 190, kind: "lidded", label: "Protected", rot: 2, paint: C.forest, check: "tape2" })}
-    ${palette({ x: 590, y: 1090, w: 370, rot: -8 })}`;
+    ${jar({ x: 70, y: 1030, w: 210, kind: "brushes", label: "Available", rot: -3, check: "tape1" })}
+    ${jar({ x: 330, y: 1062, w: 190, kind: "lidded", label: "Protected", rot: 2, paint: C.forest, check: "tape2" })}
+    ${palette({ x: 590, y: 1070, w: 370, rot: -8 })}`;
   const body = `${wrap(scene)}
     <div class="q" data-check="headline" data-bottom-max="545"><h1>${esc(q)}?</h1><h2>${esc(rest)}</h2></div>
     <div class="footbar"></div>${footFor(i)}`;
