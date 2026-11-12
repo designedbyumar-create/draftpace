@@ -154,11 +154,11 @@ out.push("6. Tagged topics: type each tag from the Tags line and pick the matchi
 out.push("7. Alt text: click 'Add alt text' and paste the Alt text.");
 out.push("8. Publish now, or schedule. Pace: 3 or 4 pins a day suits a new run of pins better than all at once.", "");
 out.push("READ THIS FIRST", thin);
-out.push(`- Product pins: ${list(product)} link to the product page and show its price on the pin. Every other pin links to a free guide. No description states a price. Check the price in Lemon Squeezy matches the product page before posting.`);
+out.push(`- Product pins: ${list(product)} link to the product page and show its price on the pin. Every other pin links to a free guide. No description states a price. The pins show the listing price ($49 once). Check the price in Lemon Squeezy matches the product page before posting.`);
 out.push(`- Pins with a small 'Example' tag (${list(example)}) show a figure from a guide's own worked example, not real data.`);
-out.push(`- Pins that refer to your state's rules (${list(caution)}) carry a line telling readers to confirm with their state. Keep it if you edit anything. State pins summarise the guides; they are not legal advice.`);
+out.push("- Where a pin touches your own situation (debts, a missed payment, a split, a life change), its description keeps the guide's own caution, such as not legal, tax or financial advice, or that the figures are an example. Keep those lines if you edit anything.");
 out.push("- Product pins that show an app screen use the real screens with demo data (a made-up household), shown exactly as the app makes them. None implies a real person's money. The price on product pins is the listing's own.");
-out.push("- Look-alike pairs (the daily log, the weekly planner) are already a month apart in this order. Do not reorder them together.");
+out.push(`- Look-alike pairs are kept apart in this order: the two sinking fund worksheet pins (${pad(at(29))} and ${pad(at(65))}) and the two January review pins (${pad(at(23))} and ${pad(at(99))}). Do not reorder them together.`);
 out.push("- Tags are suggestions based on Pinterest-style search phrases. Pinterest search data was not available, so check the suggestions Pinterest offers as you type each tag.", "");
 out.push("BOARDS USED", thin);
 for (const b of boards) out.push(`- ${b}${NEW_BOARDS[b] ? `   (NEW if you have not made it: create it. Suggested board description: ${NEW_BOARDS[b]})` : ""}`);
