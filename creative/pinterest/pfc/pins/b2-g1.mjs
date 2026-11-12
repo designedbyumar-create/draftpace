@@ -287,7 +287,7 @@ function pin6() {
   // Right: a full year, a tall stack, the top sheet shows the two once-a-year rows circled.
   const RW = 540, RH = 600, RX = 424, RY = 486;
   const ROW0 = 96, RH_ = 56;
-  const cols = [46, 190, 360];
+  const cols = [42, 214, 376];
   const rows = ["bar", "bar", "bar", { real: r1 }, "bar", "bar", { real: r2 }, "bar", "bar"];
   let rightBody = `<div style="${at(0, 0, RW, 70, "background:#e6ebe6;border-bottom:2px solid #c8d6cd")}"></div>`;
   ["Charge", "How often", "What you see"].forEach((t, k) => { rightBody += `<div style="${at(cols[k], 22, 170, 30, "font:600 22px/1 'Plex',sans-serif;letter-spacing:.06em;color:#4b5a52;white-space:nowrap")}">${esc(t)}</div>`; });
@@ -296,7 +296,7 @@ function pin6() {
     if (row === "bar") rightBody += bar(cols[0], yy + 20, 100 + ((k * 41) % 60)) + bar(cols[1], yy + 20, 90) + bar(cols[2], yy + 20, 72) + `<div style="${at(14, yy + RH_ - 2, RW - 28, 1, "background:#e3e6e0")}"></div>`;
     else row.real.forEach((t, c) => { rightBody += `<div style="${at(cols[c], yy + 8, c === 0 ? 180 : 156, 40, `font:${c === 0 ? 600 : 500} 26px/40px 'Plex',sans-serif;color:#1d1d20;white-space:nowrap`)}">${esc(t)}</div>`; });
   });
-  const circles = [3, 6].map((k, m) => loop({ x: RX - 2, y: RY + ROW0 + k * RH_ - 6, w: RW + 4, h: RH_ + 12, flip: m === 1 })).join("");
+  const circles = [3, 6].map((k, m) => loop({ x: RX - 2, y: RY + ROW0 + k * RH_ - 14, w: RW + 4, h: RH_ + 26, flip: m === 1 })).join("");
   // sheet edges: a deep stack for twelve months
   let edges = "";
   for (let k = 7; k >= 1; k--) edges += sheetBase({ x: RX + k * 1.6, y: RY + k * 7, w: RW, h: RH, rot: 1, z: 1, shade: k === 7 });

@@ -248,35 +248,35 @@ function pin79() {
   void r1; void v1;
   const money = (t) => (t.match(/\$\d+/) ?? [""])[0];
   const css = `
-  .tg{position:absolute;width:262px;height:122px;z-index:4;filter:drop-shadow(0 10px 8px rgba(30,20,10,.4))}
-  .tg>div{position:absolute;inset:0;background:linear-gradient(135deg,#e2c796,#cfae78);clip-path:polygon(0 50%,17% 0,100% 0,100% 100%,17% 100%);display:flex;align-items:center;padding-left:58px;gap:8px}
-  .tg .hole{position:absolute;left:26px;top:49px;width:24px;height:24px;border-radius:50%;background:#7a5a30;box-shadow:inset 2px 2px 3px rgba(0,0,0,.5);z-index:2}
+  .tg{position:absolute;width:318px;height:122px;z-index:4;filter:drop-shadow(0 10px 8px rgba(30,20,10,.4))}
+  .tg>div{position:absolute;inset:0;background:linear-gradient(135deg,#e2c796,#cfae78);clip-path:polygon(0 50%,17% 0,100% 0,100% 100%,17% 100%);display:flex;align-items:center;padding-left:62px;gap:8px;white-space:nowrap}
+  .tg .hole{position:absolute;left:28px;top:49px;width:24px;height:24px;border-radius:50%;background:#7a5a30;box-shadow:inset 2px 2px 3px rgba(0,0,0,.5);z-index:2}
   .tg .sm{font:600 25px "Plex",sans-serif;color:#3a2c14}
   .tg .pp{font:600 70px/1 "Newsreader",Georgia,serif;color:#2a1d0a;letter-spacing:-.02em}
-  .sw{position:absolute;width:552px;height:152px;z-index:4;filter:drop-shadow(0 12px 9px rgba(30,20,10,.4))}
-  .sw>div{position:absolute;inset:0;background:linear-gradient(#fdf8ea,#f6efdc);clip-path:${zig(552, 152, 16, 8)};display:flex;align-items:center;justify-content:space-between;padding:0 34px 0 38px}
+  .sw{position:absolute;width:530px;height:152px;z-index:4;filter:drop-shadow(0 12px 9px rgba(30,20,10,.4))}
+  .sw>div{position:absolute;inset:0;background:linear-gradient(#fdf8ea,#f6efdc);clip-path:${zig(530, 152, 16, 8)};display:flex;align-items:center;justify-content:space-between;padding:0 34px 0 38px}
   .sw .fig{font:600 72px/1 "Newsreader",Georgia,serif;color:#17473a;letter-spacing:-.02em}
   .sw .pw{font:500 24px "Plex",sans-serif;color:#4b4339;margin-top:4px}
   .sw .vd{padding:12px 20px;border-radius:12px;font:600 28px/1.1 "Plex",sans-serif;white-space:nowrap;text-align:center;box-shadow:0 3px 5px rgba(0,0,0,.25)}
-  .note{position:absolute;left:44px;top:412px;width:330px;height:236px;background:linear-gradient(#f7de8e,#f0cf6c);transform:rotate(-3deg);box-shadow:0 2px 3px rgba(30,20,10,.3),0 16px 22px rgba(30,20,10,.4);padding:16px 22px;z-index:5}
+  .note{position:absolute;left:44px;top:412px;width:360px;height:236px;background:linear-gradient(#f7de8e,#f0cf6c);transform:rotate(-3deg);box-shadow:0 2px 3px rgba(30,20,10,.3),0 16px 22px rgba(30,20,10,.4);padding:16px 22px;z-index:5}
   .note .h{font:700 36px/1 "Hand",cursive;color:#5b3a07}
   .note .big{font:700 104px/1 "Hand",cursive;color:#2a1d06;margin-top:2px}
-  .note .p{font:600 32px/1.05 "Hand",cursive;color:#3a2c14;margin-top:4px}`;
+  .note .p{font:600 29px/1.05 "Hand",cursive;color:#3a2c14;margin-top:4px}`;
   const note = `<div class="note"><div class="h">safe-to-spend</div><div class="big">${esc(i.items[0])}</div><div class="p">Payday is four weeks away.</div></div>${pushpin(190, 400, "#c0392b")}`;
   const rowHtml = rows.map((r, k) => {
-    const cx = r.apart ? 40 : 0;
+    const cx = r.apart ? 18 : 0;
     const price = money(r.tag);
     const [a, , c] = r.tag.split(/(\$\d+)/);
-    const sw = `<div class="sw" style="left:${392 + cx}px;top:${r.y - 15}px;transform:rotate(${r.rot}deg)"><div style="${r.apart ? "outline:0" : ""}">
+    const sw = `<div class="sw" style="left:${428 + cx}px;top:${r.y - 15}px;transform:rotate(${r.rot}deg)"><div style="${r.apart ? "outline:0" : ""}">
       <div><div class="fig">${esc(r.res)}</div><div class="pw">per week</div></div>
       <div class="vd" style="background:${r.vc[0]};color:${r.vc[1]}">${esc(r.verdict)}</div></div></div>`;
-    const dash = r.apart ? `<div style="${abs(380 + cx, r.y - 28, 580, 178, "border:4px dashed #3a2c14;border-radius:14px;z-index:3;background:rgba(251,244,225,.0)")}"></div>` : "";
+    const dash = r.apart ? `<div style="${abs(416 + cx, r.y - 28, 556, 178, "border:4px dashed #3a2c14;border-radius:14px;z-index:3;background:rgba(251,244,225,.0)")}"></div>` : "";
     const tag = `<div class="tg" style="left:${44 + cx}px;top:${r.y}px;transform:rotate(${r.tagRot}deg)"><div class="hole"></div><div><span class="sm">${esc(a.trim())}</span><span class="pp">${esc(price)}</span><span class="sm">${esc(c.trim())}</span></div></div>`;
-    const stitch = `<svg style="${abs(0, r.y - 20, 1000, 180, "z-index:4")}" viewBox="0 ${r.y - 20} 1000 180" aria-hidden="true"><path d="M${312 + cx} ${r.y + 61} C ${340 + cx} ${r.y + 61 + (k - 1) * 14}, ${360 + cx} ${r.y + 61}, ${396 + cx} ${r.y + 61}" fill="none" stroke="#b3402f" stroke-width="6" stroke-linecap="round" stroke-dasharray="14 10"/></svg>`;
+    const stitch = `<svg style="${abs(0, r.y - 20, 1000, 180, "z-index:4")}" viewBox="0 ${r.y - 20} 1000 180" aria-hidden="true"><path d="M${356 + cx} ${r.y + 61} C ${380 + cx} ${r.y + 61 + (k - 1) * 12}, ${396 + cx} ${r.y + 61}, ${430 + cx} ${r.y + 61}" fill="none" stroke="#b3402f" stroke-width="6" stroke-linecap="round" stroke-dasharray="14 10"/></svg>`;
     return `${dash}${tag}${stitch}${sw}`;
   }).join("");
   const props = `
-  <div style="${abs(420, 410, 280, 260, `z-index:4;transform:rotate(8deg);background:repeating-linear-gradient(#fffefa 0 30px,#e4e1d6 30px 32px);clip-path:${zig(280, 260, 12, 6, "tb")};filter:drop-shadow(0 12px 8px rgba(30,20,10,.4))`)}"></div>
+  <div style="${abs(436, 410, 280, 260, `z-index:4;transform:rotate(8deg);background:#fffefa;clip-path:${zig(280, 260, 12, 6, "tb")};filter:drop-shadow(0 12px 8px rgba(30,20,10,.4))`)}">${Array.from({ length: 8 }, (_, k) => `<div style="${abs(24, 34 + k * 26, [200, 150, 220, 120, 180, 210, 140, 90][k], 10, "background:#cfcabb;border-radius:3px")}"></div>`).join("")}</div>
   ${calc({ x: 770, y: 398, w: 176, rot: 9, body: "#f0c2c8", key: "#7b4b55", accent: "#f2a33a", display: "600.00", z: 4 })}
   ${button({ x: 56, y: 1256, r: 30, color: "#e8c15a", holes: 4, rot: 12, z: 5 })}
   ${button({ x: 120, y: 1274, r: 24, color: "#f4ecdc", holes: 2, thread: "#2f6b57", rot: -20, z: 5 })}
@@ -296,19 +296,19 @@ function pin82() {
   const [, , final, step, curLabel, availLabel] = i.items;
   const hold = i.items[1]; // "$1,053.60"
   const css = `
-  .rcpt{position:absolute;left:44px;top:356px;width:430px;height:800px;transform:rotate(-2.2deg);z-index:3;filter:drop-shadow(0 18px 14px rgba(0,30,25,.5))}
-  .rcpt>div{position:absolute;inset:0;background:linear-gradient(90deg,#f4f2ea,#fdfcf7 40%,#f1efe6);clip-path:${zig(430, 800, 12, 6, "b")};padding:88px 30px 0}
-  .rcpt .t{font:500 26px/1.25 "Plex Mono",monospace;color:#2a2c31}
-  .rcpt .amt{position:relative;margin-top:10px;font:500 66px/1.1 "Plex Mono",monospace;color:#2a2c31;white-space:nowrap}
+  .rcpt{position:absolute;left:44px;top:356px;width:430px;height:760px;transform:rotate(-2.2deg);z-index:3;filter:drop-shadow(0 18px 14px rgba(0,30,25,.5))}
+  .rcpt>div{position:absolute;inset:0;background:linear-gradient(90deg,#f4f2ea,#fdfcf7 40%,#f1efe6);clip-path:${zig(430, 760, 12, 6, "b")};padding:88px 30px 0}
+  .rcpt .t{font:500 28px/1.25 "Plex Mono",monospace;color:#2a2c31}
+  .rcpt .amt{position:relative;margin-top:10px;font:500 68px/1.1 "Plex Mono",monospace;color:#2a2c31;white-space:nowrap}
   .rcpt .amt s{text-decoration:none;position:relative}
   .rcpt .amt s::after{content:"";position:absolute;left:-6px;right:-6px;top:52%;height:6px;background:#b33a2b;transform:rotate(-3deg);border-radius:3px}
-  .stamp{position:absolute;right:16px;top:150px;transform:rotate(-12deg);border:7px solid #b33a2b;border-radius:10px;padding:2px 20px;font:700 64px/1.1 "Plex",sans-serif;letter-spacing:.12em;color:#b33a2b;opacity:.88;text-transform:uppercase;mix-blend-mode:multiply}
-  .tear{margin:34px -10px 28px;border-top:4px dashed #9c988b}
+  .stamp{position:absolute;right:18px;top:238px;transform:rotate(-9deg);border:6px solid #b33a2b;border-radius:10px;padding:2px 18px;font:700 52px/1.1 "Plex",sans-serif;letter-spacing:.12em;color:#b33a2b;opacity:.88;text-transform:uppercase;mix-blend-mode:multiply}
+  .tear{margin:64px -10px 30px;border-top:4px dashed #9c988b}
   .rcpt .fin{font:600 104px/1 "Plex Mono",monospace;color:#1d1d20;margin-top:8px;letter-spacing:-.04em}
   .rcpt .cap{font:500 25px/1.2 "Plex",sans-serif;color:#4b4a44;margin-top:2px}
-  .bars{display:flex;gap:5px;margin-top:38px;height:84px;align-items:stretch}
+  .bars{display:flex;gap:5px;margin-top:56px;height:84px;align-items:stretch}
   .bars i{display:block;background:#2a2c31}
-  .led{position:absolute;left:502px;top:430px;width:462px;height:720px;transform:rotate(1.6deg);z-index:3;background:linear-gradient(90deg,transparent 0 229px,#d57a6e 229px 231px,transparent 231px),repeating-linear-gradient(#fcfbf5 0 62px,#c4d3ca 62px 64px);box-shadow:0 2px 3px rgba(0,30,25,.4),0 22px 34px rgba(0,30,25,.5);border-radius:4px}
+  .led{position:absolute;left:502px;top:430px;width:462px;height:660px;transform:rotate(1.6deg);z-index:3;background:linear-gradient(90deg,transparent 0 229px,#d57a6e 229px 231px,transparent 231px),repeating-linear-gradient(#fcfbf5 0 62px,#c4d3ca 62px 64px);box-shadow:0 2px 3px rgba(0,30,25,.4),0 22px 34px rgba(0,30,25,.5);border-radius:4px}
   .led .hd{position:absolute;left:0;right:0;top:0;height:110px;background:#17473a;display:grid;grid-template-columns:1fr 1fr;border-radius:4px 4px 0 0}
   .led .hd div{display:flex;align-items:center;padding:0 18px;font:600 25px/1.1 "Plex",sans-serif;color:#fff}
   .led .c{position:absolute;font:500 36px "Plex Mono",monospace;color:#1d1d20;white-space:nowrap}
@@ -380,14 +380,14 @@ function pin83() {
   const slipCss = `
   .cap{position:absolute;z-index:4;background:linear-gradient(#fffdf4,#f8f1dc);padding:18px 22px 20px;box-shadow:0 2px 3px rgba(60,20,10,.3),0 16px 22px rgba(60,20,10,.4);font:500 28px/1.24 "Newsreader",Georgia,serif;color:#17473a}`;
   const caps = `
-  <div class="cap" data-check="note" style="left:626px;top:454px;width:340px;transform:rotate(2deg)">${exTag("margin-bottom:12px")}<div>${esc(zeroNote)}</div></div>${pushpin(782, 442, "#17473a")}
-  <div class="cap" data-check="note" style="left:34px;top:918px;width:340px;transform:rotate(-2deg)">${exTag("margin-bottom:12px")}<div>${esc(cushionNote)}</div></div>${pushpin(190, 906, "#f2c14e")}`;
-  const A = balance({ cx: 320, shelf: 850, tilt: 9, left: zeroSheet, right: receipt });
+  <div class="cap" data-check="note" style="left:626px;top:430px;width:340px;transform:rotate(2deg)">${exTag("margin-bottom:12px")}<div>${esc(zeroNote)}</div></div>${pushpin(782, 418, "#17473a")}
+  <div class="cap" data-check="note" style="left:34px;top:890px;width:340px;transform:rotate(-2deg)">${exTag("margin-bottom:12px")}<div>${esc(cushionNote)}</div></div>${pushpin(190, 878, "#f2c14e")}`;
+  const A = balance({ cx: 320, shelf: 806, tilt: 9, left: zeroSheet, right: receipt });
   const B = balance({ cx: 680, shelf: 1292, tilt: 0, left: cushionSheet, right: receipt });
   const props = `
-  ${pencil({ x: 380, y: 1244, len: 340, rot: -2, body: "#d9962b" })}
+  ${pencil({ x: 160, y: 1250, len: 230, rot: -2, body: "#d9962b" })}
   <div style="${abs(50, 1236, 90, 52, "z-index:4;background:linear-gradient(#fffefa,#ece8da);border-radius:26px;box-shadow:0 8px 8px rgba(60,20,10,.35)")}"><div style="${abs(4, 10, 8, 32, "background:#2a2c31;opacity:.14;border-radius:4px")}"></div></div>`;
-  const scene = `${felt}${shelf(850)}${shelf(1292)}${caps}${A}${B}${props}`;
+  const scene = `${felt}${shelf(806)}${shelf(1292)}${caps}${A}${B}${props}`;
   return printable({ n: 83, scene, paper: "#f1e0da", extraCss: slipCss });
 }
 
