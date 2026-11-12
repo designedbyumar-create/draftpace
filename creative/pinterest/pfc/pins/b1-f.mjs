@@ -212,13 +212,13 @@ function firstBudget() {
     const sub = k === 4;
     return `<div style="display:flex;gap:18px;align-items:flex-start;margin-bottom:${LINE}px">
       <div class="hand" style="flex:none;width:${LINE - 6}px;height:${LINE - 6}px;margin-top:3px;border-radius:50%;border:3.5px solid ${sub ? POP : C.forest};display:grid;place-items:center;font-size:36px;font-weight:700;line-height:1;color:${sub ? POP : C.forest}">${k + 1}</div>
-      <div data-check="step ${k + 1}" class="hand" style="font-size:42px;line-height:${LINE}px;font-weight:600;color:${sub ? POP : "#26334a"}${sub ? `;background:linear-gradient(transparent 52%,rgba(244,217,140,.9) 52% 90%,transparent 90%);padding:0 10px;margin-left:-6px` : ""}">${esc(t)}</div></div>`;
+      <div data-check="step ${k + 1}" class="hand" style="font-size:40px;line-height:${LINE}px;font-weight:600;color:${sub ? POP : "#26334a"}${sub ? `;background:linear-gradient(transparent 52%,rgba(244,217,140,.9) 52% 90%,transparent 90%);padding:0 10px;margin-left:-6px` : ""}">${esc(t)}</div></div>`;
   }).join("");
   const sheetW = 628, sheetH = 930;
   const sheet = `<div style="${at(40, 388, sheetW, sheetH, `transform:rotate(-0.8deg);background:linear-gradient(#fffefa,#fbf8ee);border-radius:6px;box-shadow:${SHADOW},0 36px 46px -14px rgba(20,40,60,.45);overflow:hidden`)}">
     <div style="position:absolute;inset:0;background:repeating-linear-gradient(transparent 0 ${LINE - 2}px,#b9cde0 ${LINE - 2}px ${LINE}px);background-position:0 18px"></div>
     <div style="${at(92, 0, 3, sheetH, "background:#e29a9a;opacity:.8")}"></div>
-    <div style="position:absolute;left:112px;right:26px;top:44px">${steps}</div>
+    <div style="position:absolute;left:112px;right:34px;top:44px">${steps}</div>
     ${Array.from({ length: 3 }, (_, k) => `<div style="${at(22, 120 + k * 330, 26, 26, "border-radius:50%;background:#c4ccd2;box-shadow:inset 0 3px 4px rgba(0,0,0,.35)")}"></div>`).join("")}</div>`;
   const keys = ["C", "÷", "×", "−", "7", "8", "9", "+", "4", "5", "6", "=", "1", "2", "3", "0"];
   const calc = `<div style="${at(706, 404, 266, 400, `transform:rotate(6deg);border-radius:26px;background:linear-gradient(160deg,#2f3f44,#1c272b);box-shadow:0 4px 6px rgba(0,0,0,.3),0 26px 36px rgba(0,0,0,.4);padding:22px`)}">
@@ -255,9 +255,9 @@ function beforeBills() {
     <div style="${at(0, SCENE_TOP, 1000, 982, "background:repeating-linear-gradient(transparent 0 45px,#9fc5ad 45px 47px);background-position:0 10px")}"></div>
     ${[70, 90, 910, 930].map((x) => `<div style="${at(x, SCENE_TOP, 2, 982, "background:#d28080;opacity:.55")}"></div>`).join("")}
     <div style="${at(470, SCENE_TOP, 60, 982, "background:linear-gradient(90deg,transparent,rgba(30,50,30,.28) 50%,transparent)")}"></div>`;
-  const stripW = 716, stripX = 252, stripY = 398;
-  const chip = (t, k) => `<div style="${`margin-left:${k * 40}px;display:flex;align-items:center;gap:16px;padding:0 24px 0 18px;height:80px;border-radius:12px;background:#f1f3ee;box-shadow:inset 0 0 0 3px #dce3dc,0 3px 4px rgba(20,30,20,.15)`}">
-      ${icon("minus-circle", { size: 40, color: "#a44832", weight: "duotone" })}<span data-check="bill chip" style="font:500 27px/1.15 'Plex Mono',monospace;color:#23262a;white-space:nowrap">${esc(t)}</span></div>`;
+  const stripW = 730, stripX = 240, stripY = 398;
+  const chip = (t, k) => `<div style="${`margin-left:${k * 28}px;display:flex;align-items:center;gap:14px;padding:0 20px 0 16px;height:88px;border-radius:12px;background:#f1f3ee;box-shadow:inset 0 0 0 3px #dce3dc,0 3px 4px rgba(20,30,20,.15)`}">
+      ${icon("minus-circle", { size: 38, color: "#a44832", weight: "duotone" })}<span data-check="bill chip" style="font:500 24px/1.15 'Plex Mono',monospace;color:#23262a;white-space:nowrap">${esc(t)}</span></div>`;
   const pts = Array.from({ length: 36 }, (_, k) => `<circle cx="${14 + k * 20}" cy="0" r="7"/>`).join("");
   const strip = `<div style="${at(stripX, stripY, stripW, 900, `background:linear-gradient(#fffefa,#fbfaf3);border-radius:4px;box-shadow:${SHADOW},0 36px 44px -14px rgba(0,0,0,.4);padding:44px 34px 0`)}">
     <svg style="${at(0, -1, stripW, 14)}" viewBox="0 0 ${stripW} 14" aria-hidden="true"><g fill="#dbe8d6">${pts}</g></svg>
@@ -266,8 +266,8 @@ function beforeBills() {
       <div class="mono" style="margin-top:6px;font:500 64px/1 'Plex Mono',monospace;color:${C.forestDeep}">$1,940</div>
       <div style="margin-top:6px;font:400 27px 'Plex',sans-serif;color:#44504a">available</div></div>
       <div style="margin-bottom:46px">${EXAMPLE()}</div></div>
-    <div style="display:flex;flex-direction:column;gap:14px;border-top:3px dashed #c9cfc6;padding-top:26px">${bills.map(chip).join("")}
-      <div data-check="payday line" style="margin-left:200px;margin-top:12px;display:flex;align-items:center;gap:14px;padding:0 24px 0 20px;min-height:104px;border-radius:12px;background:${POP};color:#fff;box-shadow:0 6px 10px rgba(120,30,10,.4)">${icon("arrow-elbow-down-right", { size: 44, color: "#fff", weight: "bold" })}<span style="font:600 30px/1.2 'Plex',sans-serif">${esc(last)}</span></div></div></div>`;
+    <div style="display:flex;flex-direction:column;gap:18px;border-top:3px dashed #c9cfc6;padding-top:28px">${bills.map(chip).join("")}
+      <div data-check="payday line" style="margin-left:140px;margin-top:14px;display:flex;align-items:center;gap:14px;padding:0 24px 0 20px;min-height:104px;border-radius:12px;background:${POP};color:#fff;box-shadow:0 6px 10px rgba(120,30,10,.4)">${icon("arrow-elbow-down-right", { size: 44, color: "#fff", weight: "bold" })}<span style="font:600 32px/1.2 'Plex',sans-serif">${esc(last).replace("$33 short", "$33&nbsp;short")}</span></div></div></div>`;
   const cam = (x, y) => `<circle cx="${x}" cy="${y}" r="17" fill="#0f1215"/><circle cx="${x}" cy="${y}" r="10" fill="#1d2a3a"/><circle cx="${x - 3}" cy="${y - 3}" r="3" fill="#6f87a6"/>`;
   const phoneBack = `<svg style="${at(10, 790, 246, 500, "transform:rotate(-7deg);filter:drop-shadow(0 22px 20px rgba(0,0,0,.45))")}" viewBox="0 0 246 500" aria-hidden="true">
     <rect x="6" y="4" width="234" height="492" rx="40" fill="#2a2f35"/><rect x="6" y="4" width="234" height="492" rx="40" fill="none" stroke="#4b535c" stroke-width="3"/>
