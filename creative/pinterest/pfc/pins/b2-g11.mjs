@@ -236,7 +236,7 @@ function pin94() {
   const scene = `${nightDesk({ base: "#0c2a2d", hi: "rgba(50,130,125,.3)", look: "leather", pool: [900, 1230, 700], poolOp: 0.26, seed: 5 })}
   ${page}${note}${mug({ x: 728, y: 1128, size: 200, color: "#eae4d6", drink: "#7a4a24" })}`;
   const css2 = css + `.stk{height:100%}`;
-  return printable({ n: 94, scene, paper: "#e2eeeb", extraCss: css2 + ".top h1{font-size:58px}" });
+  return printable({ n: 94, scene, paper: "#e2eeeb", extraCss: css2 + ".top h1{font-size:58px;text-wrap:balance}" });
 }
 
 /* ------------------------------------------------------------------ #95 */
@@ -305,7 +305,7 @@ function pin96() {
   ${start}${rows}${stub}
   ${headphones({ x: 722, y: 1096, w: 250, rot: 9, cup: "#e8d9cd", band: "#c2ac9b", pad: "#6e5a4b" })}${pencil({ x: 330, y: 1298, len: 250, rot: -2, body: "#e7b23f" })}
   ${lamp({ x: 66, y: 1322, r: 60, armTo: [-40, 1262] })}`;
-  return printable({ n: 96, scene, paper: "#f1e6df", extraCss: css });
+  return printable({ n: 96, scene, paper: "#f1e6df", extraCss: css + ".top h1,.top p{text-wrap:balance}" });
 }
 
 export const pins = [pin92(), pin93(), pin94(), pin95(), pin96()];
