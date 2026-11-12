@@ -292,7 +292,7 @@ function pin45() {
       <path d="M40 40 C 120 6, 230 20, 320 8 L330 44 C 230 60, 130 52, 46 84 Z" fill="#d0493d"/>
       <path d="M120 24 C 150 70, 120 120, 170 150 M240 18 C 270 62, 244 100, 290 128" stroke="#7d1f19" stroke-opacity=".5" stroke-width="5" fill="none"/>
       <g fill="#f3d6cf" opacity=".5">${Array.from({ length: 22 }, (_, k) => `<circle cx="${70 + (k % 7) * 40}" cy="${50 + Math.floor(k / 7) * 34 + (k % 2) * 8}" r="3.4"/>`).join("")}</g></svg>`;
-  const props = pen({ x: 760, y: 396, len: 340, rot: 90, body: "#26282d", clip: "#d9962b", z: 6 }) +
+  const props = pen({ x: 760, y: 560, len: 340, rot: 90, body: "#26282d", clip: "#d9962b", z: 6 }) +
     nut({ x: 880, y: 1130, s: 46, rot: 20, z: 5 }) + nut({ x: 930, y: 1182, s: 36, rot: 50, z: 5 });
   return printable({ n: 45, scene: plate + statement + notebook + rag + props, paper: "#e6ecef" });
 }

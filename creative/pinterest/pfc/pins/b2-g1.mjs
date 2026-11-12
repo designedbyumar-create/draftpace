@@ -106,10 +106,14 @@ function burlap(seed = 21) {
   }
   const f = nid("bf"), g = nid("bg"), pt = nid("bp");
   return `<svg style="${at(0, SCENE_TOP, 1000, SCENE_H)}" viewBox="0 0 1000 ${SCENE_H}" aria-hidden="true"><defs>
-  <pattern id="${pt}" width="9" height="9" patternUnits="userSpaceOnUse"><rect width="9" height="9" fill="#c9a96f"/><rect y="0" width="9" height="3.4" fill="#a98652" opacity=".55"/><rect x="0" width="3.4" height="9" fill="#e2c691" opacity=".6"/><rect x="5" y="5" width="4" height="4" fill="#7c5c30" opacity=".18"/></pattern>
+  <pattern id="${pt}" width="16" height="16" patternUnits="userSpaceOnUse"><rect width="16" height="16" fill="#8f6c3c"/>
+  <rect x="0.5" y="0.5" width="7" height="7" rx="2" fill="#dcc08a"/><rect x="0.5" y="1.5" width="7" height="2" fill="#fff" opacity=".28"/>
+  <rect x="8.5" y="0.5" width="7" height="7" rx="2" fill="#c49d62"/><rect x="9.5" y="0.5" width="2" height="7" fill="#fff" opacity=".2"/>
+  <rect x="0.5" y="8.5" width="7" height="7" rx="2" fill="#c49d62"/><rect x="1.5" y="8.5" width="2" height="7" fill="#fff" opacity=".2"/>
+  <rect x="8.5" y="8.5" width="7" height="7" rx="2" fill="#d6b87e"/><rect x="8.5" y="9.5" width="7" height="2" fill="#fff" opacity=".25"/></pattern>
   <filter id="${f}" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".035 .5" numOctaves="3" seed="${seed}"/><feColorMatrix values="0 0 0 0 .35  0 0 0 0 .24  0 0 0 0 .1  0 0 0 .8 -.2"/></filter>
-  <radialGradient id="${g}" cx="25%" cy="8%" r="110%"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#2b1a08" stop-opacity=".42"/></radialGradient></defs>
-  <rect width="1000" height="${SCENE_H}" fill="url(#${pt})"/>${slubs.join("")}<rect width="1000" height="${SCENE_H}" filter="url(#${f})" opacity=".5"/>
+  <radialGradient id="${g}" cx="25%" cy="8%" r="110%"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#2b1a08" stop-opacity=".34"/></radialGradient></defs>
+  <rect width="1000" height="${SCENE_H}" fill="url(#${pt})"/>${slubs.join("")}<rect width="1000" height="${SCENE_H}" filter="url(#${f})" opacity=".32"/>
   <path d="M 118 0 V ${SCENE_H}" stroke="#4a3418" stroke-width="3" stroke-dasharray="14 9" opacity=".55" fill="none"/><path d="M 108 0 V ${SCENE_H}" stroke="#3a2810" stroke-opacity=".2" stroke-width="10" fill="none"/>
   <rect width="1000" height="${SCENE_H}" fill="url(#${g})"/></svg>`;
 }
@@ -129,7 +133,7 @@ function pot({ x, y, w = 200, rot = 0, plant = "leaf", tone = "#c9714b", seed = 
   } else if (plant === "sprout") {
     leaves = `<path d="M100 80 C 100 50, 98 36, 100 20" stroke="#4f8a45" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M100 28 C 76 8, 52 18, 50 34 C 72 40, 90 38, 100 28Z" fill="#6ba95a"/><path d="M100 24 C 124 4, 150 12, 152 30 C 130 36, 110 34, 100 24Z" fill="#5a9a4c"/>`;
   }
-  return `<svg style="${at(x, y, w, h, `transform:rotate(${rot}deg);filter:drop-shadow(0 14px 10px rgba(30,20,10,.4))`)}" viewBox="0 0 200 240" aria-hidden="true"><defs>
+  return `<svg style="${at(x, y, w, h, `transform:rotate(${rot}deg);z-index:5;overflow:visible;filter:drop-shadow(0 14px 10px rgba(30,20,10,.4))`)}" viewBox="0 0 200 240" aria-hidden="true"><defs>
   <linearGradient id="${g}" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".28"/><stop offset=".35" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#4a1d08" stop-opacity=".38"/></linearGradient>
   <linearGradient id="${lg}" x1="0" x2="1"><stop offset="0" stop-color="#5f9e55"/><stop offset="1" stop-color="#3d7a3f"/></linearGradient></defs>
   ${leaves}
@@ -143,7 +147,7 @@ function pot({ x, y, w = 200, rot = 0, plant = "leaf", tone = "#c9714b", seed = 
 function trowel({ x, y, len = 380, rot = 0, handle = "#2f6b57" }) {
   const h = len * 0.24, s = len / 380;
   const g = nid("tw"), hg = nid("th");
-  return `<svg style="${at(x, y, len, h, `transform:rotate(${rot}deg);filter:drop-shadow(0 12px 8px rgba(30,20,10,.4))`)}" viewBox="0 0 380 91" aria-hidden="true"><defs>
+  return `<svg style="${at(x, y, len, h, `transform:rotate(${rot}deg);z-index:5;filter:drop-shadow(0 12px 8px rgba(30,20,10,.4))`)}" viewBox="0 0 380 91" aria-hidden="true"><defs>
   <linearGradient id="${g}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eef0f2"/><stop offset=".5" stop-color="#b9bec4"/><stop offset="1" stop-color="#8d939b"/></linearGradient>
   <linearGradient id="${hg}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".3"/></linearGradient></defs>
   <rect x="6" y="28" width="134" height="36" rx="18" fill="${handle}"/><rect x="6" y="28" width="134" height="36" rx="18" fill="url(#${hg})"/><circle cx="26" cy="46" r="5" fill="#0c1f18" opacity=".6"/>
@@ -355,7 +359,7 @@ function pin8() {
   ${pot({ x: 196, y: 1104, w: 100, plant: "leaf", seed: 8, tone: "#bd6542" })}
   ${wateringCan({ x: 690, y: 1040, w: 285, rot: -2 })}
   ${twineBall({ x: 330, y: 1118, r: 40 })}`;
-  return printable({ n: 8, scene, paper: "#e2eeea" });
+  return printable({ n: 8, scene, paper: "#e2eeea", extraCss: ".top h1{font-size:72px}.top p{font-size:25px;max-width:900px}" });
 }
 
 /* ================================================================== #12 */

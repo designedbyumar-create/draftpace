@@ -315,7 +315,7 @@ function pin57() {
         ${icon(name, { size: 64, color: muted ? "#55534b" : C.forestDeep, weight: "regular" })}
         ${crack ? `<svg style="${abs(0, 0, 116, 116, "overflow:visible")}" viewBox="0 0 128 128" aria-hidden="true"><path d="M70 30 L58 52 L72 62 L56 86 L64 98" fill="none" stroke="#d9962b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>` : ""}
       </div>
-      <div data-check="label" style="font:600 31px/1.15 'Plex',sans-serif;color:#1d1d20;width:214px">${esc(label)}</div></div>`;
+      <div data-check="label" style="font:600 31px/38px 'Plex',sans-serif;color:#1d1d20;width:214px">${esc(label)}</div></div>`;
   const left = [draw("car", "Car repair"), draw("paw-print", "Vet visit"), draw("device-mobile", "Broken phone", { crack: true })];
   const right = [draw("briefcase", "Job loss", { muted: true }), draw("first-aid-kit", "Large medical bill", { muted: true })];
   const card = `<div data-check="page" style="${abs(CX, CY, CW, CH, "background:repeating-linear-gradient(#fffdf6 0 54px,#bcd3e0 54px 56px);background-position:0 30px;transform:rotate(-1deg);border-radius:10px;box-shadow:0 2px 3px rgba(80,30,40,.3),0 28px 44px rgba(80,30,40,.4);z-index:4")}">

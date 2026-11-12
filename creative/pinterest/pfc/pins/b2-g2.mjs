@@ -69,17 +69,21 @@ function calc({ x, y, w = 200, rot = 0, z = 4 }) {
   ${keys.join("")}</svg>`;
 }
 
-/** A flat digital kitchen scale, display left blank. */
+/** A flat digital kitchen scale seen from above with a little mound of flour on its plate, display left blank. */
 function kScale({ x, y, w = 340, rot = 0, z = 4 }) {
-  const h = Math.round(w * 0.42);
-  return `<svg style="${abs(x, y, w, h, `transform:rotate(${rot}deg);z-index:${z};filter:drop-shadow(0 18px 12px rgba(0,0,0,.55))`)}" viewBox="0 0 420 176" aria-hidden="true">
-  <defs><linearGradient id="ks${uid}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f1f3f4"/><stop offset="1" stop-color="#bcc3c6"/></linearGradient><linearGradient id="kf${uid}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d7dcde"/><stop offset="1" stop-color="#8f979b"/></linearGradient></defs>
-  <rect x="6" y="104" width="408" height="62" rx="16" fill="url(#kf${uid})"/>
-  <rect x="6" y="16" width="408" height="130" rx="22" fill="url(#ks${uid})"/><rect x="6" y="16" width="408" height="130" rx="22" fill="none" stroke="#00000022" stroke-width="2"/>
-  <rect x="26" y="30" width="368" height="86" rx="14" fill="#fff" opacity=".45"/><rect x="26" y="30" width="368" height="86" rx="14" fill="none" stroke="#9aa2a6" stroke-opacity=".6" stroke-width="2"/>
-  <rect x="146" y="124" width="128" height="26" rx="6" fill="#b9d6ad" stroke="#4a5a52" stroke-opacity=".5" stroke-width="2"/>
-  <circle cx="86" cy="138" r="9" fill="#6b747a"/><circle cx="334" cy="138" r="9" fill="#6b747a"/>
-  <rect x="40" y="38" width="120" height="8" rx="4" fill="#fff" opacity=".7"/></svg>`;
+  const h = Math.round(w * 0.48);
+  const id = `ks${++uid}`;
+  return `<svg style="${abs(x, y, w, h, `transform:rotate(${rot}deg);z-index:${z};filter:drop-shadow(0 18px 12px rgba(0,0,0,.55))`)}" viewBox="0 0 420 200" aria-hidden="true">
+  <defs><linearGradient id="${id}a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3f5f6"/><stop offset="1" stop-color="#b5bcc0"/></linearGradient>
+  <linearGradient id="${id}b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dfe3e5"/><stop offset="1" stop-color="#a3abaf"/></linearGradient>
+  <radialGradient id="${id}f" cx=".4" cy=".3" r=".8"><stop offset="0" stop-color="#fffefb"/><stop offset="1" stop-color="#e3dac6"/></radialGradient></defs>
+  <rect x="4" y="4" width="412" height="192" rx="26" fill="url(#${id}a)"/><rect x="4" y="4" width="412" height="192" rx="26" fill="none" stroke="#00000024" stroke-width="2"/>
+  <rect x="28" y="22" width="364" height="112" rx="16" fill="url(#${id}b)"/><rect x="28" y="22" width="364" height="112" rx="16" fill="none" stroke="#ffffffaa" stroke-width="3"/>
+  <ellipse cx="206" cy="92" rx="92" ry="34" fill="#00000026"/>
+  <path d="M120 100 C 130 52 170 40 206 40 C 246 40 284 54 294 100 C 260 118 160 118 120 100 Z" fill="url(#${id}f)"/>
+  <ellipse cx="190" cy="62" rx="34" ry="9" fill="#fff" opacity=".8"/>
+  <rect x="122" y="150" width="176" height="34" rx="8" fill="#b9d6ad" stroke="#4a5a52" stroke-opacity=".55" stroke-width="2.5"/><rect x="122" y="150" width="176" height="11" rx="6" fill="#fff" opacity=".3"/>
+  <circle cx="70" cy="168" r="14" fill="#7a838a"/><circle cx="70" cy="165" r="14" fill="#fff" opacity=".18"/><circle cx="350" cy="168" r="14" fill="#7a838a"/><circle cx="350" cy="165" r="14" fill="#fff" opacity=".18"/></svg>`;
 }
 
 /** A kraft-paper bread bag standing up, its top folded over twice. */
@@ -140,7 +144,8 @@ function pin20() {
   const pairs = i.items.map((t) => { const k = t.indexOf(": "); return [t.slice(0, k), t.slice(k + 2)]; });
   const html = pairs.map(([them, me]) => `<div class="pair"><div class="b them">${esc(them)}</div><div class="b me">“${esc(me)}”</div></div>`).join("");
   const css = `
-  .panel{position:absolute;left:48px;top:432px;width:820px;padding:62px 38px 34px;background:#fbf8f0;border-radius:6px;transform:rotate(-0.9deg);
+  .top h1{font-size:66px!important;white-space:nowrap}
+  .panel{position:absolute;left:36px;top:432px;width:800px;padding:62px 38px 34px;background:#fbf8f0;border-radius:6px;transform:rotate(-0.9deg);
     box-shadow:0 2px 3px rgba(40,20,5,.25),0 18px 34px rgba(40,20,5,.38),0 40px 60px -20px rgba(40,20,5,.4);display:flex;flex-direction:column;gap:20px;z-index:2}
   .panel:before{content:"";position:absolute;left:0;right:0;top:0;height:16px;background:${FOREST};border-radius:6px 6px 0 0}
   .pair{display:flex;flex-direction:column;gap:7px}
@@ -156,7 +161,7 @@ function pin20() {
   <div class="panel" data-check="chat panel">${html}</div>
   <div class="sticky">${esc("You don't owe a reason.")}</div>
   ${tape(742, 372, -3, "#2f6b57", 110, 7)}
-  ${mug({ x: 742, y: 1176, size: 158, color: "#f3ede4", drink: "#6b4226" })}
+  ${mug({ x: 828, y: 1212, size: 112, color: "#f3ede4", drink: "#6b4226" })}
   ${pencil({ x: 80, y: 1296, len: 400, rot: -3 })}`;
   return printable({ n: 20, scene, paper: "#efe2cc", extraCss: css });
 }
@@ -198,14 +203,14 @@ function pin22() {
     <rect x="0" y="12" width="932" height="58" rx="10" fill="url(#lg)"/><rect x="0" y="12" width="932" height="10" rx="5" fill="#fff" opacity=".3"/>
     <path d="M40 40 C 300 34 600 46 892 38 M30 56 C 320 52 640 62 900 54" stroke="#8a6234" stroke-opacity=".28" stroke-width="2" fill="none"/>
     <rect x="0" y="0" width="38" height="70" rx="10" fill="#c28f56"/><rect x="894" y="0" width="38" height="70" rx="10" fill="#c28f56"/></svg>`;
-  const receipt = `<div style="${abs(742, 1150, 168, 270, "transform:rotate(6deg);background:#fffdf7;z-index:3;box-shadow:0 2px 3px rgba(60,30,25,.25),0 14px 20px rgba(60,30,25,.32);clip-path:polygon(0 0,100% 0,100% 94%,92% 98%,84% 94%,76% 98%,68% 94%,60% 98%,52% 94%,44% 98%,36% 94%,28% 98%,20% 94%,12% 98%,4% 94%,0 98%)")}">
+  const receipt = `<div style="${abs(738, 1128, 168, 214, "transform:rotate(5deg);background:#fffdf7;z-index:3;box-shadow:0 2px 3px rgba(60,30,25,.25),0 14px 20px rgba(60,30,25,.32);clip-path:polygon(0 0,100% 0,100% 94%,92% 98%,84% 94%,76% 98%,68% 94%,60% 98%,52% 94%,44% 98%,36% 94%,28% 98%,20% 94%,12% 98%,4% 94%,0 98%)")}">
     <div style="${abs(20, 22, 128, 14, "background:#17473a;border-radius:3px")}"></div>
-    ${[0, 1, 2, 3, 4].map((k) => `<div style="${abs(20, 60 + k * 28, 128 - (k % 3) * 28, 8, "background:#c4c2ba;border-radius:3px")}"></div>`).join("")}
-    <div style="${abs(20, 218, 128, 3, "background:#9a968a")}"></div></div>`;
+    ${[0, 1, 2, 3].map((k) => `<div style="${abs(20, 60 + k * 28, 128 - (k % 3) * 28, 8, "background:#c4c2ba;border-radius:3px")}"></div>`).join("")}
+    <div style="${abs(20, 176, 128, 3, "background:#9a968a")}"></div></div>`;
   const body = `
   <div class="wall"></div>${flour({ x: 0, y: 0, w: 1000, h: 1086, seed: 9, n: 90, op: 0.28, drifts: 3 })}
   <div class="ctr"></div>
-  ${rack({ x: 700, y: 1146, w: 260, h: 214, rot: 5, gap: 28, z: 2 })}
+  ${rack({ x: 690, y: 1138, w: 262, h: 196, rot: 4, gap: 28, z: 2 })}
   ${receipt}
   <div class="card">
     <div class="q" data-check="headline" style="height:270px">${esc(q)}</div>
@@ -246,32 +251,32 @@ function pin24() {
   const rung = `<div class="rung"></div>`;
   const rowHtml = rows.map(([lab, doit, ex]) => `<div class="row"><div class="l"><b>${esc(lab)}</b><span>${esc(doit)}</span></div><div class="r">${ex ? `<div class="exw">${EX}<div class="et">${esc(ex[0])}<em class="${ex[2]}">${esc(ex[1])}</em></div></div>` : ""}</div></div>`).join(rung);
   const css = `
-  .lad{position:absolute;left:60px;top:402px;width:850px;height:810px;background:#fbf9f2;border-radius:5px;transform:rotate(-1.1deg);z-index:2;
+  .lad{position:absolute;left:60px;top:400px;width:850px;height:842px;background:#fbf9f2;border-radius:5px;transform:rotate(-1.1deg);z-index:2;
     box-shadow:0 2px 3px rgba(0,0,0,.35),0 20px 36px rgba(0,0,0,.5),0 44px 64px -20px rgba(0,0,0,.5);
     background-image:repeating-linear-gradient(transparent 0 33px,#cfdcd5 33px 34px)}
   .lad:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:#e9a9b4;opacity:.0}
   .rail{position:absolute;top:18px;bottom:18px;width:11px;background:${FOREST};border-radius:6px}
   .grid{position:absolute;left:56px;right:56px;top:34px}
   .rung{height:9px;background:${FOREST};border-radius:5px;margin:0 -34px}
-  .row{height:134px;display:grid;grid-template-columns:372px 1fr;align-items:center;background:rgba(251,249,242,.88)}
-  .l{display:flex;flex-direction:column;gap:6px;padding-left:2px}
+  .row{height:144px;display:grid;grid-template-columns:392px 1fr;align-items:center;background:rgba(251,249,242,.88)}
+  .l{display:flex;flex-direction:column;gap:6px;padding-left:30px}
   .l b{font:600 42px/1 "Newsreader",Georgia,serif;color:#0f2f27}
   .l span{font:500 28px/1.15 "Plex",sans-serif;color:#2c3a34}
   .r{padding-left:24px;border-left:3px solid #c8d6cd;height:100%;display:flex;align-items:center}
   .exw{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
   .et{font:500 28px/1.15 "Plex",sans-serif;color:#2c3a34}
   .et em{font:600 46px/1 "Newsreader",Georgia,serif;font-style:normal;color:${FOREST}}
-  .et em.pop{font-size:60px;color:#c2610f;background:linear-gradient(transparent 58%,#f6d77a 58% 92%,transparent 92%);padding:0 6px;margin-left:2px}`;
+  .et em.pop{font-size:54px;color:#c2610f;background:linear-gradient(transparent 58%,#f6d77a 58% 92%,transparent 92%);padding:0 6px;margin-left:2px}`;
   const scene = `
   ${slateSurface()}
   ${flour({ seed: 14, n: 260, op: 0.5, drifts: 7 })}
   <div class="lad" data-check="page"><div class="rail" style="left:40px"></div><div class="rail" style="right:40px"></div>
-    <div class="grid" data-check="ladder">${rung}${rowHtml}${rung}</div></div>
+    <div class="grid">${rung}${rowHtml}${rung}</div></div>
   ${flour({ x: 0, y: 1130, w: 1000, h: 224, seed: 77, n: 90, op: 0.45, drifts: 3 })}
-  ${kScale({ x: 36, y: 1206, w: 350, rot: -2 })}
+  ${kScale({ x: 36, y: 1194, w: 330, rot: -2 })}
   ${pencil({ x: 410, y: 1296, len: 360, rot: -4 })}
   ${calc({ x: 770, y: 1180, w: 170, rot: 7 })}`;
-  const tag = `<span class="example" style="position:absolute;z-index:9;left:640px;top:307px;font-size:24px;padding:4px 10px;background:#eef1ec">Example</span>`;
+  const tag = `<span class="example" style="position:absolute;z-index:9;left:604px;top:251px;font-size:24px;padding:4px 10px;background:#eef1ec">Example</span>`;
   const out = printable({ n: 24, scene, paper: "#ebe6da", extraCss: css });
   out.html = out.html.replace(/(<div class="foot)/, `${tag}$1`);
   return out;
@@ -353,9 +358,9 @@ function pin32() {
   const strings = `<svg style="${abs(0, 0, 1000, 1500, "z-index:6;pointer-events:none")}" viewBox="0 0 1000 1500" aria-hidden="true">${JX.map((jx, k) => `<path d="M${jx + 46} ${JY + 80} C ${jx + 40} ${JY + 98} ${jx + 36} ${JY + 114} ${jx + 36} ${JY + 128}" stroke="#7a5a33" stroke-width="3" fill="none"/><path d="M${jx + 46} ${JY + 76} Q ${jx + 135} ${JY + 94} ${jx + 224} ${JY + 76}" stroke="#7a5a33" stroke-width="3" fill="none"/>`).join("")}</svg>`;
   const cards = data.map(([, res], k) => `<div class="rc" style="left:${JX[k]}px;transform:rotate(${[-1.2, 0.8, -0.6][k]}deg)" data-check="result">${EX}<p>${esc(res)}</p></div>`).join("");
   const css = `
-  .tg{position:absolute;z-index:7;width:250px;height:64px;padding:0 14px 0 52px;display:flex;align-items:center;border-radius:6px 14px 14px 6px;font:700 27px/1.05 "Plex",sans-serif;color:#1d1d20;
+  .tg{position:absolute;z-index:7;width:266px;height:64px;padding:0 10px 0 46px;display:flex;align-items:center;border-radius:6px 14px 14px 6px;font:700 26px/1.05 "Plex",sans-serif;color:#1d1d20;
     box-shadow:0 2px 3px rgba(40,25,10,.3),0 10px 14px rgba(20,40,32,.3);white-space:nowrap}
-  .tg i{position:absolute;left:14px;top:50%;width:18px;height:18px;margin-top:-9px;border-radius:50%;background:#9bc0b2;box-shadow:inset 0 2px 3px rgba(0,0,0,.35)}
+  .tg i{position:absolute;left:12px;top:50%;width:18px;height:18px;margin-top:-9px;border-radius:50%;background:#9bc0b2;box-shadow:inset 0 2px 3px rgba(0,0,0,.35)}
   .rc{position:absolute;top:1030px;width:270px;height:300px;padding:22px 20px 14px;background:#f5ead2;border-radius:4px;z-index:4;
     box-shadow:0 2px 3px rgba(20,40,32,.3),0 14px 20px rgba(20,40,32,.32)}
   .rc p{font:500 26px/1.24 "Plex",sans-serif;color:#17473a;margin-top:12px}
@@ -365,7 +370,7 @@ function pin32() {
     <div style="${abs(110, 30, 220, 14, "background:#1d1d20;opacity:.75;border-radius:4px")}"></div><div style="${abs(110, 54, 140, 10, "background:#1d1d20;opacity:.4;border-radius:4px")}"></div>
     ${Array.from({ length: 9 }, (_, k) => `<div style="${abs(30, 130 + k * 34, 410 - (k % 4) * 60, 9, "background:#c4c8c0;border-radius:4px")}"></div>`).join("")}
     <div style="${abs(0, 258, 470, 2, "background:#00000014")}"></div></div>`;
-  const shelf = `<svg style="${abs(0, 868, 1000, 130, "z-index:5;filter:drop-shadow(0 18px 14px rgba(20,40,32,.5))")}" viewBox="0 0 1000 130" aria-hidden="true">
+  const shelf = `<svg style="${abs(0, 868, 1000, 130, "z-index:2;filter:drop-shadow(0 18px 14px rgba(20,40,32,.5))")}" viewBox="0 0 1000 130" aria-hidden="true">
     <defs><linearGradient id="sh1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8c493"/><stop offset="1" stop-color="#d1a06a"/></linearGradient><linearGradient id="sh2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c58f55"/><stop offset="1" stop-color="#946332"/></linearGradient></defs>
     <path d="M-10 18 H1010 L1030 62 H-30 Z" fill="url(#sh1)"/><rect x="-30" y="62" width="1060" height="62" fill="url(#sh2)"/><rect x="-30" y="62" width="1060" height="7" fill="#fff" opacity=".28"/>
     <path d="M0 84 C 300 78 640 92 1000 82 M0 104 C 340 100 660 110 1000 102" stroke="#6b4421" stroke-opacity=".3" stroke-width="2.5" fill="none"/>
@@ -374,10 +379,10 @@ function pin32() {
   ${beadboard()}
   ${bill}
   ${flourJar({ x: JX[0], y: JY, level: levels[0], seed: 2 })}${flourJar({ x: JX[1], y: JY, level: levels[1], seed: 5 })}${flourJar({ x: JX[2], y: JY, level: levels[2], seed: 9 })}
-  ${strings}${tags}${shelf}
+  ${shelf}${strings}${tags}
   ${flour({ x: 0, y: 880, w: 1000, h: 60, seed: 12, n: 80, op: 0.5, drifts: 3 })}
   ${cards}
-  ${tape(JX[0] + 135, 1032, -3, "#2f6b57", 100, 8)}${tape(JX[1] + 135, 1032, 2, "#d9b94c", 100, 8)}${tape(JX[2] + 135, 1032, -2, "#e9a9b4", 100, 8)}`;
+  ${tape(JX[0] + 172, 1030, -3, "#2f6b57", 100, 8)}${tape(JX[1] + 172, 1030, 2, "#d9b94c", 100, 8)}${tape(JX[2] + 172, 1030, -2, "#e9a9b4", 100, 8)}`;
   return printable({ n: 32, scene, paper: "#e6efe9", extraCss: css });
 }
 

@@ -54,6 +54,9 @@ for (const f of fs.readdirSync(OUT)) if (/^shared-statement-.*\.png$/.test(f)) f
 execFileSync("pdftoppm", ["-r", "200", "-png", "-f", "1", "-l", "1", pdf, path.join(OUT, "shared-statement-tmp")]);
 const tmp = fs.readdirSync(OUT).find((f) => f.startsWith("shared-statement-tmp") && f.endsWith(".png"));
 fs.renameSync(path.join(OUT, tmp), path.join(OUT, "shared-statement.png"));
+// The product's own title ("Shared Responsibility") is drawn over its "As of ..." line in the real PDF (also in the browser build);
+// a plain crop of the same render, below the title, for placements that need a clean page. Not redrawn, only cropped.
+execFileSync("pdftoppm", ["-r", "200", "-png", "-singlefile", "-f", "1", "-l", "1", "-x", "0", "-y", "380", "-W", "1654", "-H", "880", pdf, path.join(OUT, "shared-statement-body")]);
 console.log(execFileSync("pdfinfo", [pdf]).toString().split("\n").filter((l) => /Pages|Page size/.test(l)).join("\n"));
 console.log(execFileSync("pdftotext", ["-layout", pdf, "-"]).toString().trim());
 console.log("summary:", JSON.stringify(computeSharedResponsibilitySummary(items)));
