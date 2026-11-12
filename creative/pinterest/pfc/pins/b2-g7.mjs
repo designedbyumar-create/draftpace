@@ -248,11 +248,11 @@ function pin79() {
   void r1; void v1;
   const money = (t) => (t.match(/\$\d+/) ?? [""])[0];
   const css = `
-  .tg{position:absolute;width:318px;height:122px;z-index:4;filter:drop-shadow(0 10px 8px rgba(30,20,10,.4))}
+  .tg{position:absolute;width:340px;height:122px;z-index:4;filter:drop-shadow(0 10px 8px rgba(30,20,10,.4))}
   .tg>div{position:absolute;inset:0;background:linear-gradient(135deg,#e2c796,#cfae78);clip-path:polygon(0 50%,17% 0,100% 0,100% 100%,17% 100%);display:flex;align-items:center;padding-left:62px;gap:8px;white-space:nowrap}
   .tg .hole{position:absolute;left:28px;top:49px;width:24px;height:24px;border-radius:50%;background:#7a5a30;box-shadow:inset 2px 2px 3px rgba(0,0,0,.5);z-index:2}
   .tg .sm{font:600 25px "Plex",sans-serif;color:#3a2c14}
-  .tg .pp{font:600 70px/1 "Newsreader",Georgia,serif;color:#2a1d0a;letter-spacing:-.02em}
+  .tg .pp{font:600 64px/1 "Newsreader",Georgia,serif;color:#2a1d0a;letter-spacing:-.02em}
   .sw{position:absolute;width:530px;height:152px;z-index:4;filter:drop-shadow(0 12px 9px rgba(30,20,10,.4))}
   .sw>div{position:absolute;inset:0;background:linear-gradient(#fdf8ea,#f6efdc);clip-path:${zig(530, 152, 16, 8)};display:flex;align-items:center;justify-content:space-between;padding:0 34px 0 38px}
   .sw .fig{font:600 72px/1 "Newsreader",Georgia,serif;color:#17473a;letter-spacing:-.02em}
@@ -271,8 +271,8 @@ function pin79() {
       <div><div class="fig">${esc(r.res)}</div><div class="pw">per week</div></div>
       <div class="vd" style="background:${r.vc[0]};color:${r.vc[1]}">${esc(r.verdict)}</div></div></div>`;
     const dash = r.apart ? `<div style="${abs(416 + cx, r.y - 28, 556, 178, "border:4px dashed #3a2c14;border-radius:14px;z-index:3;background:rgba(251,244,225,.0)")}"></div>` : "";
-    const tag = `<div class="tg" style="left:${44 + cx}px;top:${r.y}px;transform:rotate(${r.tagRot}deg)"><div class="hole"></div><div><span class="sm">${esc(a.trim())}</span><span class="pp">${esc(price)}</span><span class="sm">${esc(c.trim())}</span></div></div>`;
-    const stitch = `<svg style="${abs(0, r.y - 20, 1000, 180, "z-index:4")}" viewBox="0 ${r.y - 20} 1000 180" aria-hidden="true"><path d="M${356 + cx} ${r.y + 61} C ${380 + cx} ${r.y + 61 + (k - 1) * 12}, ${396 + cx} ${r.y + 61}, ${430 + cx} ${r.y + 61}" fill="none" stroke="#b3402f" stroke-width="6" stroke-linecap="round" stroke-dasharray="14 10"/></svg>`;
+    const tag = `<div class="tg" style="left:${22 + cx}px;top:${r.y}px;transform:rotate(${r.tagRot}deg)"><div class="hole"></div><div><span class="sm">${esc(a.trim())}</span><span class="pp">${esc(price)}</span><span class="sm">${esc(c.trim())}</span></div></div>`;
+    const stitch = `<svg style="${abs(0, r.y - 20, 1000, 180, "z-index:4")}" viewBox="0 ${r.y - 20} 1000 180" aria-hidden="true"><path d="M${366 + cx} ${r.y + 61} C ${390 + cx} ${r.y + 61 + (k - 1) * 12}, ${396 + cx} ${r.y + 61}, ${430 + cx} ${r.y + 61}" fill="none" stroke="#b3402f" stroke-width="6" stroke-linecap="round" stroke-dasharray="14 10"/></svg>`;
     return `${dash}${tag}${stitch}${sw}`;
   }).join("");
   const props = `
@@ -308,7 +308,7 @@ function pin82() {
   .rcpt .cap{font:500 25px/1.2 "Plex",sans-serif;color:#4b4a44;margin-top:2px}
   .bars{display:flex;gap:5px;margin-top:56px;height:84px;align-items:stretch}
   .bars i{display:block;background:#2a2c31}
-  .led{position:absolute;left:502px;top:430px;width:462px;height:660px;transform:rotate(1.6deg);z-index:3;background:linear-gradient(90deg,transparent 0 229px,#d57a6e 229px 231px,transparent 231px),repeating-linear-gradient(#fcfbf5 0 62px,#c4d3ca 62px 64px);box-shadow:0 2px 3px rgba(0,30,25,.4),0 22px 34px rgba(0,30,25,.5);border-radius:4px}
+  .led{position:absolute;left:502px;top:430px;width:462px;height:600px;transform:rotate(1.6deg);z-index:3;background:linear-gradient(90deg,transparent 0 229px,#d57a6e 229px 231px,transparent 231px),repeating-linear-gradient(#fcfbf5 0 62px,#c4d3ca 62px 64px);box-shadow:0 2px 3px rgba(0,30,25,.4),0 22px 34px rgba(0,30,25,.5);border-radius:4px}
   .led .hd{position:absolute;left:0;right:0;top:0;height:110px;background:#17473a;display:grid;grid-template-columns:1fr 1fr;border-radius:4px 4px 0 0}
   .led .hd div{display:flex;align-items:center;padding:0 18px;font:600 25px/1.1 "Plex",sans-serif;color:#fff}
   .led .c{position:absolute;font:500 36px "Plex Mono",monospace;color:#1d1d20;white-space:nowrap}
