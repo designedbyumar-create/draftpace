@@ -184,7 +184,7 @@ function pin35() {
     ${splatter({ colors: ["#f6f1e4", C.forest, "#d9962b", "#c4573e", "#2f4a3f"], n: 34, seed: 21, maxR: 9, opacity: 0.8 })}
     ${grain(0.22, 0.8, 5)}${light(0.3, 0.26, "20,45,38")}
     ${sheet({ src: bookPage(80), x: 70, y: 418, w: 860, tilt: -1.8, crop: { x0: 0.04, y0: 0.2, x1: 0.86, y1: 0.62 }, id: "q35" })}
-    ${tape(150, 424, 130, -24, "#e9a9b4")}${tape(860, 440, 130, 22, "#d9962b", "#fff")}
+    ${tape(86, 422, 130, -40, "#e9a9b4")}${tape(860, 440, 130, 22, "#d9962b", "#ffffff")}
     ${palette({ x: 590, y: 1090, w: 370, rot: 10 })}
     ${mug({ x: 74, y: 1110, size: 200 })}
     ${brush({ x: 330, y: 1240, len: 500, rot: -4, handle: "#a9743c", tip: C.forest })}`;
@@ -238,7 +238,7 @@ function pin37() {
     ${folder({ x: 890, y: 450, w: 320, h: 420, rot: 7, z: 0 })}
     ${statement}
     ${sheet({ src: bookPage(8), x: 120, y: 412, w: 760, tilt: -2.4, crop: { x0: 0, y0: 0.03, x1: 1, y1: 0.58 }, id: "p37" })}
-    ${tape(168, 420, 120, -30, "#e9a9b4")}${tape(836, 450, 120, 32, "#f6f1e4", "#fff", "plain")}
+    ${tape(168, 420, 120, -30, "#e9a9b4")}${tape(878, 414, 120, 42, "#f6f1e4", "#ffffff", "plain")}
     ${cards}
     ${tube({ x: 560, y: 830, len: 300, rot: -5, color: "#c4573e", z: 9 })}`;
   return printable({ n: 37, scene: wrap(scene), paper: "#f4ead2", sub: false });
@@ -264,7 +264,7 @@ function pin40() {
   const scene = `${floor}
     <div class="panel"></div>
     ${sheet({ src: bookPage(14), x: 50, y: 560, w: 900, tilt: -2.2, crop: { x0: 0, y0: 0.1, x1: 1, y1: 0.52 }, id: "p40" })}
-    ${tape(120, 572, 130, -32, "#d9962b", "#fff")}${tape(880, 584, 130, 30, "#e9a9b4")}
+    ${tape(84, 566, 130, -40, "#d9962b", "#ffffff")}${tape(880, 584, 130, 30, "#e9a9b4")}
     ${jar({ x: 70, y: 1030, w: 210, kind: "brushes", label: "Available", rot: -3, check: "tape1" })}
     ${jar({ x: 330, y: 1062, w: 190, kind: "lidded", label: "Protected", rot: 2, paint: C.forest, check: "tape2" })}
     ${palette({ x: 590, y: 1070, w: 370, rot: -8 })}`;
