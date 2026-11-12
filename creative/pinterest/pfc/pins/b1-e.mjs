@@ -50,19 +50,19 @@ function pin101() {
   const tints = ["#f0d58a", "#e9a9b4", "#b8d4c0", "#b7cfe3", "#cdbfe0", "#efb98a", "#d8dfc2"];
   const tabHtml = tabs.map((t, k) => {
     const [num, ...rest] = t.split(" ");
-    return `<div style="${abs(722, 22 + k * 108, 232, 84, `background:${tints[k]};border-radius:6px 16px 16px 6px;box-shadow:0 5px 9px rgba(0,0,0,.4);display:flex;align-items:center;padding:0 16px 0 40px;gap:10px;z-index:1`)}">
+    return `<div style="${abs(722, 22 + k * 108, 246, 84, `background:${tints[k]};border-radius:6px 16px 16px 6px;box-shadow:0 5px 9px rgba(0,0,0,.4);display:flex;align-items:center;padding:0 12px 0 34px;gap:8px;z-index:1`)}">
       <span class="mono" style="font-weight:600;font-size:23px;color:#1d1d20">${num}</span><span data-check="tab-${k}" style="font-weight:600;font-size:22px;line-height:1.12;color:#1d1d20;flex:1;max-height:56px;overflow:hidden">${esc(rest.join(" "))}</span></div>`;
   }).join("");
 
   const chip = (label, kind) => `<span style="display:inline-block;font:600 22px 'Plex';padding:4px 14px;border-radius:999px;${kind === "ok" ? `background:#d3e6dc;color:${C.forestDeep}` : "background:#f6dfae;color:#6a4309"}">${esc(label)}</span>`;
   const bar = (w, c = "#d9d3c2") => `<div style="width:${w}px;height:16px;border-radius:8px;background:${c}"></div>`;
-  const rows = [["Confirmed", "ok", 150, 70], ["Confirmed", "ok", 118, 84], ["Stale", "stale", 160, 60], ["Confirmed", "ok", 132, 76], ["Stale", "stale", 108, 90]].map(([lab, kind, a, b]) => `
+  const rows = [["Confirmed", "ok", 130, 60], ["Confirmed", "ok", 104, 72], ["Stale", "stale", 140, 52], ["Confirmed", "ok", 116, 64], ["Stale", "stale", 96, 76]].map(([lab, kind, a, b]) => `
     <div style="padding:14px 0 16px;border-bottom:2px solid #e3dccb"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">${bar(a, "#cfc8b4")}${bar(b, "#d9d3c2")}</div>
     <div style="display:flex;justify-content:space-between;align-items:center">${chip(lab, kind)}${bar(66, "#e1dbc9")}</div></div>`).join("");
 
-  const items = i.items.map((t, k) => `<div style="display:flex;gap:16px;align-items:flex-start">${box({ size: 34, ticked: k < 2, edge: "#3a3f46" })}<div data-check="step-${k}" style="font-size:25px;line-height:1.2;font-weight:500;color:#26211c;padding-top:2px;width:262px">${esc(t)}</div></div>`).join("");
+  const items = i.items.map((t, k) => `<div style="display:flex;gap:16px;align-items:flex-start">${box({ size: 34, ticked: k < 2, edge: "#3a3f46" })}<div data-check="step-${k}" style="font-size:27px;line-height:1.2;font-weight:500;color:#26211c;padding-top:0;width:286px">${esc(t)}</div></div>`).join("");
 
-  const ringAt = (y) => `<svg style="${abs(332, y, 120, 70, "z-index:4;filter:drop-shadow(0 4px 3px rgba(0,0,0,.35))")}" viewBox="0 0 120 70" aria-hidden="true"><defs><linearGradient id="rg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4f5f7"/><stop offset=".5" stop-color="#aeb2b9"/><stop offset="1" stop-color="#e0e2e6"/></linearGradient></defs>
+  const ringAt = (y) => `<svg style="${abs(274, y, 88, 70, "z-index:4;filter:drop-shadow(0 4px 3px rgba(0,0,0,.35))")}" viewBox="0 0 120 70" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="rg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4f5f7"/><stop offset=".5" stop-color="#aeb2b9"/><stop offset="1" stop-color="#e0e2e6"/></linearGradient></defs>
     <rect x="46" y="28" width="28" height="30" rx="6" fill="#8d9097"/><path d="M12 38 C 12 4, 108 4, 108 38" fill="none" stroke="url(#rg)" stroke-width="11" stroke-linecap="round"/></svg>`;
 
   const binder = `<div style="${abs(14, 392, 966, 804, "transform:rotate(-1.1deg);transform-origin:50% 50%;z-index:3")}">
@@ -70,24 +70,24 @@ function pin101() {
     <div style="${abs(0, 0, 756, 804, `background:linear-gradient(150deg,${C.forest},${C.forestDeep});border-radius:22px;box-shadow:0 4px 7px rgba(0,0,0,.45),0 30px 50px rgba(0,0,0,.55);z-index:2`)}"></div>
     <div style="${abs(0, 0, 756, 804, "border-radius:22px;background:linear-gradient(90deg,rgba(255,255,255,.12),transparent 14%);z-index:2")}"></div>
     <div style="${abs(12, 22, 732, 764, "background:#d8d1bf;border-radius:8px;z-index:2")}"></div>
-    <div style="${abs(18, 14, 360, 772, "background:linear-gradient(90deg,#fffdf7 82%,#e7e0cd);border-radius:8px 0 0 8px;z-index:2;overflow:hidden")}">
-      <div style="${abs(0, 0, 360, 772, "background:repeating-linear-gradient(180deg,transparent 0 44px,rgba(120,150,170,.16) 44px 46px)")}"></div>
-      <div style="${abs(30, 28, 290, 60, "display:flex;align-items:flex-end;gap:12px")}"><div class="serif" style="font-size:46px;font-weight:500;line-height:1">Accounts</div></div>
-      <div style="${abs(30, 94, 290, 4, `background:${C.forest}`)}"></div>
-      <div style="${abs(30, 112, 290, 640)}">${rows}</div>
+    <div style="${abs(18, 14, 300, 772, "background:linear-gradient(90deg,#fffdf7 82%,#e7e0cd);border-radius:8px 0 0 8px;z-index:2;overflow:hidden")}">
+      <div style="${abs(0, 0, 300, 772, "background:repeating-linear-gradient(180deg,transparent 0 44px,rgba(120,150,170,.16) 44px 46px)")}"></div>
+      <div style="${abs(26, 28, 232, 60, "display:flex;align-items:flex-end;gap:12px")}"><div class="serif" style="font-size:46px;font-weight:500;line-height:1">Accounts</div></div>
+      <div style="${abs(26, 94, 232, 4, `background:${C.forest}`)}"></div>
+      <div style="${abs(26, 112, 232, 640)}">${rows}</div>
     </div>
-    <div style="${abs(378, 14, 360, 772, "background:linear-gradient(270deg,#fffdf7 82%,#e7e0cd);border-radius:0 8px 8px 0;z-index:2;overflow:hidden")}">
-      <div style="${abs(0, 0, 360, 772, "background:repeating-linear-gradient(180deg,transparent 0 44px,rgba(120,150,170,.16) 44px 46px)")}"></div>
-      <div style="${abs(34, 28, 300, 60, "display:flex;align-items:flex-end")}"><div class="serif" style="font-size:42px;font-weight:500;line-height:1">Keeping it current</div></div>
-      <div style="${abs(34, 94, 292, 4, `background:${C.forest}`)}"></div>
-      <div style="${abs(30, 122, 306, 640, "display:flex;flex-direction:column;gap:20px")}">${items}</div>
+    <div style="${abs(318, 14, 420, 772, "background:linear-gradient(270deg,#fffdf7 82%,#e7e0cd);border-radius:0 8px 8px 0;z-index:2;overflow:hidden")}">
+      <div style="${abs(0, 0, 420, 772, "background:repeating-linear-gradient(180deg,transparent 0 44px,rgba(120,150,170,.16) 44px 46px)")}"></div>
+      <div style="${abs(58, 28, 340, 60, "display:flex;align-items:flex-end")}"><div class="serif" style="font-size:40px;white-space:nowrap;font-weight:500;line-height:1">Keeping it current</div></div>
+      <div style="${abs(58, 94, 340, 4, `background:${C.forest}`)}"></div>
+      <div style="${abs(58, 120, 340, 640, "display:flex;flex-direction:column;gap:20px")}">${items}</div>
     </div>
-    <div style="${abs(366, 14, 24, 772, "background:linear-gradient(90deg,rgba(0,0,0,0),rgba(0,0,0,.2),rgba(0,0,0,0));z-index:3")}"></div>
-    ${[96, 376, 656].map((y) => `<div style="${abs(342, y + 24, 20, 20, "border-radius:50%;background:#26292f;opacity:.55;z-index:3")}"></div><div style="${abs(404, y + 24, 20, 20, "border-radius:50%;background:#26292f;opacity:.55;z-index:3")}"></div>${ringAt(y)}`).join("")}
+    <div style="${abs(306, 14, 24, 772, "background:linear-gradient(90deg,rgba(0,0,0,0),rgba(0,0,0,.2),rgba(0,0,0,0));z-index:3")}"></div>
+    ${[96, 376, 656].map((y) => `<div style="${abs(278, y + 24, 20, 20, "border-radius:50%;background:#26292f;opacity:.55;z-index:3")}"></div><div style="${abs(340, y + 24, 20, 20, "border-radius:50%;background:#26292f;opacity:.55;z-index:3")}"></div>${ringAt(y)}`).join("")}
   </div>`;
 
   const candle = `<div style="${abs(34, 1130, 160, 214, "z-index:4")}">
-    <div style="${abs(-70, -80, 300, 300, "background:radial-gradient(circle,rgba(255,200,110,.7),rgba(255,170,80,.25) 36%,transparent 66%)")}"></div>
+    <div style="${abs(-70, -80, 300, 300, "background:radial-gradient(circle,rgba(255,200,110,.5),rgba(255,170,80,.18) 36%,transparent 66%)")}"></div>
     <svg style="${abs(0, 0, 160, 214, "filter:drop-shadow(0 10px 8px rgba(0,0,0,.5))")}" viewBox="0 0 160 214" aria-hidden="true"><defs><linearGradient id="cw" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e9dfc9"/><stop offset=".45" stop-color="#fbf6e8"/><stop offset="1" stop-color="#cfc3a8"/></linearGradient><linearGradient id="br" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f1d77a"/><stop offset="1" stop-color="#9a7418"/></linearGradient></defs>
       <ellipse cx="80" cy="190" rx="70" ry="18" fill="url(#br)"/><ellipse cx="80" cy="184" rx="60" ry="13" fill="#e6c76a"/>
       <rect x="40" y="84" width="80" height="104" rx="6" fill="url(#cw)"/><ellipse cx="80" cy="84" rx="40" ry="9" fill="#f7f1df"/><path d="M52 90 q8 24 -2 40" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width="5" stroke-linecap="round"/>
