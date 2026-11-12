@@ -276,7 +276,7 @@ function pin79() {
     return `${dash}${tag}${stitch}${sw}`;
   }).join("");
   const props = `
-  <div style="${abs(420, 410, 280, 260, "z-index:4;transform:rotate(8deg);background:repeating-linear-gradient(#fffefa 0 30px,#e4e1d6 30px 32px);clip-path:${zig(280, 260, 12, 6, "tb")};filter:drop-shadow(0 12px 8px rgba(30,20,10,.4))")}"></div>
+  <div style="${abs(420, 410, 280, 260, `z-index:4;transform:rotate(8deg);background:repeating-linear-gradient(#fffefa 0 30px,#e4e1d6 30px 32px);clip-path:${zig(280, 260, 12, 6, "tb")};filter:drop-shadow(0 12px 8px rgba(30,20,10,.4))`)}"></div>
   ${calc({ x: 770, y: 398, w: 176, rot: 9, body: "#f0c2c8", key: "#7b4b55", accent: "#f2a33a", display: "600.00", z: 4 })}
   ${button({ x: 56, y: 1256, r: 30, color: "#e8c15a", holes: 4, rot: 12, z: 5 })}
   ${button({ x: 120, y: 1274, r: 24, color: "#f4ecdc", holes: 2, thread: "#2f6b57", rot: -20, z: 5 })}

@@ -144,7 +144,7 @@ function pin20() {
   const pairs = i.items.map((t) => { const k = t.indexOf(": "); return [t.slice(0, k), t.slice(k + 2)]; });
   const html = pairs.map(([them, me]) => `<div class="pair"><div class="b them">${esc(them)}</div><div class="b me">“${esc(me)}”</div></div>`).join("");
   const css = `
-  .top h1{font-size:66px!important;white-space:nowrap}
+  .top h1{font-size:70px!important;white-space:nowrap}
   .panel{position:absolute;left:36px;top:432px;width:800px;padding:62px 38px 34px;background:#fbf8f0;border-radius:6px;transform:rotate(-0.9deg);
     box-shadow:0 2px 3px rgba(40,20,5,.25),0 18px 34px rgba(40,20,5,.38),0 40px 60px -20px rgba(40,20,5,.4);display:flex;flex-direction:column;gap:20px;z-index:2}
   .panel:before{content:"";position:absolute;left:0;right:0;top:0;height:16px;background:${FOREST};border-radius:6px 6px 0 0}

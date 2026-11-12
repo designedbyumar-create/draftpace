@@ -344,7 +344,7 @@ function pin8() {
       <div style="${at(PX + PW / 2 - 14, y - 10, 28, 28, "border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff9d80,#b8371c);box-shadow:0 5px 6px rgba(0,0,0,.4);z-index:5")}"></div>`;
   });
   const colLabel = (x, t) => `<div data-check="label" style="${at(x, 398, 330, 52, "background:linear-gradient(#d9bd8d,#c8a874);border-radius:6px;box-shadow:0 8px 10px rgba(10,30,30,.4);font:600 28px/52px 'Plex',sans-serif;color:#2a2013;text-align:center;z-index:6;white-space:nowrap;overflow:hidden")}">${esc(t)}</div>`;
-  const plaque = `<div style="${at(50, 984, 520, 108, `transform:rotate(-0.6deg);background:linear-gradient(#c99b66,#b0834d);border-radius:8px;box-shadow:${PAPER_SHADOW};padding:10px;z-index:4`)}"><div data-check="total" style="width:100%;height:100%;background:#fffdf6;border:4px solid ${C.forest};border-radius:6px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;overflow:hidden"><span style="font:600 36px/1 'Plex',sans-serif;color:#1d1d20">Total</span><span style="font:600 70px/1 'Newsreader',Georgia,serif;color:${C.forest};letter-spacing:-.02em">${esc(total)}</span></div></div>`;
+  const plaque = `<div style="${at(50, 984, 520, 108, `transform:rotate(-0.6deg);background:linear-gradient(#c99b66,#b0834d);border-radius:8px;box-shadow:${PAPER_SHADOW};padding:10px;z-index:4`)}"><div data-check="total" style="width:100%;height:100%;background:#fffdf6;border:4px solid ${C.forest};border-radius:6px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;overflow:hidden"><span style="font:600 36px/1 'Plex',sans-serif;color:#1d1d20">Total</span><span style="font:600 62px/1 'Newsreader',Georgia,serif;color:${C.forest};letter-spacing:-.02em">${esc(total)}</span></div></div>`;
   const shelf = `<svg style="${at(0, 1196, 1000, 160)}" viewBox="0 0 1000 160" aria-hidden="true"><defs><linearGradient id="shf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e0b97f"/><stop offset="1" stop-color="#c99b66"/></linearGradient></defs>
     <rect width="1000" height="150" fill="#6d4f2c"/><rect width="1000" height="40" fill="url(#shf)"/><rect y="38" width="1000" height="5" fill="#fff" opacity=".3"/><rect y="43" width="1000" height="107" fill="#b98c55"/><path d="M0 70 C 300 62, 700 80, 1000 68 M0 108 C 300 100, 700 118, 1000 106" stroke="#7d5a30" stroke-opacity=".35" stroke-width="3" fill="none"/></svg>
     <div style="${at(0, 1190, 1000, 30, "background:linear-gradient(rgba(0,0,0,.35),transparent);z-index:2")}"></div>`;
@@ -385,11 +385,11 @@ function pin12() {
   const scene = `
   ${burlap()}
   ${sheetEl}
-  ${receipt({ x: 62, y: 1130, w: 190, h: 270, rot: 10, seed: 5 })}
-  ${highlighter({ x: 290, y: 1248, len: 400, rot: -7 })}
-  ${twineBall({ x: 520, y: 1160, r: 44, color: "#e0c892" })}
-  ${pot({ x: 760, y: 1110, w: 215, rot: 3, plant: "leaf", seed: 13 })}`;
-  return printable({ n: 12, scene, paper: "#efe5cf", sub: false, extraCss: ".top h1{font-size:68px}" });
+  ${receipt({ x: 62, y: 1200, w: 190, h: 270, rot: 8, seed: 5 })}
+  ${highlighter({ x: 290, y: 1252, len: 400, rot: -6 })}
+  ${packet({ x: 622, y: 1222, w: 110, rot: 16, hue: "#9fcfb0", art: "leaf", z: 4 })}
+  ${pot({ x: 770, y: 1196, w: 190, rot: 3, plant: "leaf", seed: 13 })}`;
+  return printable({ n: 12, scene, paper: "#efe5cf", extraCss: ".top h1{font-size:68px}.top p{font-size:26px}" });
 }
 
 /* ================================================================== #14 */
@@ -399,7 +399,7 @@ function pin14() {
   check(i.items[0] === "Fitness app | $79.99 | Annual | Nov 14 | Planned to cancel", "idea 14 is not the one this scene was drawn for");
   const [name, charge, cycle, renews, decision] = i.items[0].split(" | ");
   const line2 = i.items[1];
-  const SX = 40, SY = 428, SW = 920, SH = 330;
+  const SX = 40, SY = 428, SW = 920, SH = 336;
   const x0 = 82, x1 = SW - 82, base = 214;
   let ticks = "";
   for (let d = 0; d <= 14; d++) {
@@ -414,14 +414,14 @@ function pin14() {
     <div style="${at(x0, base - 2, x1 - x0, 4, "background:#1d1d20;border-radius:2px")}"></div>${ticks}
     <div style="${at(x0 - 18, base - 18, 36, 36, `border-radius:50%;background:${C.forest};box-shadow:0 0 0 5px #fdfcf8,0 0 0 8px ${C.forest}`)}"></div>
     <div style="${at(x1 - 18, base - 18, 36, 36, `border-radius:50%;background:${POP};box-shadow:0 0 0 5px #fdfcf8,0 0 0 8px ${POP}`)}"></div>
-    <svg style="${at(x0, base + 36, x1 - x0, 40)}" viewBox="0 0 ${x1 - x0} 40" aria-hidden="true"><path d="M2 4 C 2 30, ${(x1 - x0) / 2 - 20} 22, ${(x1 - x0) / 2} 36 C ${(x1 - x0) / 2 + 20} 22, ${x1 - x0 - 2} 30, ${x1 - x0 - 2} 4" fill="none" stroke="#1d1d20" stroke-width="3.5" stroke-linecap="round"/></svg>
-    <div style="${at(0, base + 80, SW, 44, "font:600 38px/44px 'Hand',cursive;color:#1d1d20;text-align:center")}">two weeks</div>
+    <svg style="${at(x0, base + 30, x1 - x0, 40)}" viewBox="0 0 ${x1 - x0} 40" aria-hidden="true"><path d="M2 4 C 2 30, ${(x1 - x0) / 2 - 20} 22, ${(x1 - x0) / 2} 36 C ${(x1 - x0) / 2 + 20} 22, ${x1 - x0 - 2} 30, ${x1 - x0 - 2} 4" fill="none" stroke="#1d1d20" stroke-width="3.5" stroke-linecap="round"/></svg>
+    <div style="${at(0, base + 70, SW, 44, "font:600 38px/44px 'Hand',cursive;color:#1d1d20;text-align:center")}">two weeks</div>
   </div>`;
   const sticky1 = sticky({ x: 58, y: 740, w: 300, h: 190, rot: -4, body: `<div>${esc(decision)}</div>`, size: 50 });
   const row = [["Name", name], ["Charge", charge], ["Cycle", cycle], ["Renews", renews]];
   const card = `<div style="${at(404, 806, 548, 262, `transform:rotate(1deg);background:linear-gradient(#fbf6e8,#f1ead6);border-radius:8px;box-shadow:0 2px 3px rgba(0,0,0,.35),0 18px 26px rgba(0,0,0,.5);overflow:hidden;z-index:4`)}">
     <div style="${at(0, 0, 548, 12, `background:${C.forest}`)}"></div>
-    ${row.map(([k, v], m) => `<div style="${at(30, 30 + m * 56, 490, 50, "display:flex;align-items:baseline;border-bottom:1.5px solid #ddd4bd;white-space:nowrap")}"><span style="font:600 22px/1 'Plex',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#6b6a5f;width:150px">${esc(k)}</span><span data-check="field" style="font:600 ${m === 0 ? 36 : 36}px/1 'Plex',sans-serif;color:#1d1d20">${esc(v)}</span></div>`).join("")}
+    ${row.map(([k, v], m) => `<div style="${at(30, 30 + m * 56, 490, 50, "display:flex;align-items:baseline;border-bottom:1.5px solid #ddd4bd;white-space:nowrap")}"><span style="font:600 22px/1 'Plex',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#6b6a5f;width:150px">${esc(k)}</span><span style="font:600 ${m === 0 ? 36 : 36}px/1 'Plex',sans-serif;color:#1d1d20">${esc(v)}</span></div>`).join("")}
   </div>`;
   const label = stake({ x: 56, y: 1110, w: 890, h: 122, rot: -0.8, body: `<div style="font:500 33px/1.22 'Plex',sans-serif;color:#2a2013">${esc(line2)}</div>` });
   const scene = `
@@ -434,7 +434,7 @@ function pin14() {
   ${trowel({ x: 70, y: 1262, len: 400, rot: -3 })}
   ${packet({ x: 560, y: 1222, w: 110, rot: -14, hue: "#e9a9b4", art: "tulip", z: 2 })}
   ${pot({ x: 830, y: 1222, w: 150, plant: "none", seed: 3, tone: "#b85f3c", rot: 4 })}`;
-  return printable({ n: 14, scene, paper: "#efe6dc" });
+  return printable({ n: 14, scene, paper: "#efe6dc", extraCss: ".top h1{font-size:70px}.top p{font-size:25px;line-height:1.3;max-width:900px}" });
 }
 
 /* ================================================================== #16 */
@@ -449,7 +449,7 @@ function pin16() {
   const card = `<div style="${at(CX, CY, CW, CH, `transform:rotate(-2deg);background:linear-gradient(135deg,${C.forest},${C.forestDeep});border-radius:10px;box-shadow:0 3px 4px rgba(40,20,5,.35),0 26px 42px rgba(40,20,5,.5);overflow:hidden;z-index:4`)}">
     <div style="${at(0, 62, CW, 4, "background:#ffb866;opacity:.9")}"></div>${ruled}
     <div style="${at(0, 0, CW, 8, "background:rgba(255,255,255,.14)")}"></div>
-    <div data-check="quote" style="${at(60, 96, CW - 120, CH - 130, "font:500 64px/1.2 'Newsreader',Georgia,serif;color:#f6f3ea;letter-spacing:-.01em;overflow:hidden;text-shadow:0 2px 0 rgba(0,0,0,.18)")}">${esc(a)}<span style="color:#ffb866;font-style:italic">renewal date</span>${esc(b)}</div>
+    <div data-check="quote" style="${at(60, 96, CW - 120, CH - 130, "font:500 72px/1.18 'Newsreader',Georgia,serif;color:#f6f3ea;letter-spacing:-.01em;overflow:hidden;text-shadow:0 2px 0 rgba(0,0,0,.18)")}">${esc(a)}<span style="color:#ffb866;font-style:italic;margin:0 .12em">renewal date</span>${esc(b)}</div>
   </div>`;
   const scene = `
   ${boards({ n: 8, alts: ["#d9ae72", "#cfa267", "#e0b87d", "#d3a86d"], gap: "#3a2713", gapW: 7, seed: 31, nails: true, knots: 6, grain: "#8a6234", grainOp: 0.3, light: 0.3, dark: 0.34 })}
