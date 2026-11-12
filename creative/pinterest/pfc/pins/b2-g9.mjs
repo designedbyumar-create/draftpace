@@ -83,7 +83,7 @@ function umbrella({ x, y, w = 80, color = "#22364f", crook = false, rot = 0, z =
 function umbrellaStand({ x, y, w = 220, z = 3 }) {
   const id = `us${++uid}`;
   const sc = w / 220;
-  return `${umbrella({ x: x + 22 * sc, y: y + 50 * sc - 82 * sc * 4.125, w: 82 * sc, color: "#22364f", rot: -4, z })}
+  return `${umbrella({ x: x + 22 * sc, y: y + 50 * sc - 82 * sc * 4.125, w: 82 * sc, color: "#5a82b4", rot: -4, z })}
   ${umbrella({ x: x + 104 * sc, y: y + 50 * sc - 76 * sc * 4.125, w: 76 * sc, color: "#c58a22", crook: true, rot: 5, z })}
   <svg style="${abs(x, y, w, 290 * sc, `z-index:${z + 1};filter:drop-shadow(0 18px 12px rgba(0,0,0,.45))`)}" viewBox="0 0 220 290" aria-hidden="true">
   <defs><linearGradient id="${id}" x1="0" x2="1"><stop offset="0" stop-color="#6c7378"/><stop offset=".3" stop-color="#b9c0c5"/><stop offset=".7" stop-color="#7b838a"/><stop offset="1" stop-color="#4b5258"/></linearGradient></defs>
@@ -201,12 +201,12 @@ function pin76() {
   <div class="cd" data-check="card" style="left:${CX[1]}px;transform:rotate(1deg)"><h3>Week 3</h3><p>${esc(i.items[1])}</p>${slips}<p>${esc(i.items[2])}</p></div>
   <div class="cd" data-check="card" style="left:${CX[2]}px;transform:rotate(-0.7deg)"><h3>Week 6</h3>${phoneMug}<p>${esc(i.items[3].replace(/^./, (c) => c))} ${EX()}</p><p>${esc(i.items[4])}</p></div>`;
   const css = `
-  .cd{position:absolute;top:490px;width:288px;height:562px;transform-origin:50% -34px;background:#fbf8f0;border-radius:6px;padding:20px 20px 16px;display:flex;flex-direction:column;gap:10px;z-index:3;${shadow(0.9)}}
+  .cd{position:absolute;top:490px;width:288px;height:534px;transform-origin:50% -34px;background:#fbf8f0;border-radius:6px;padding:20px 20px 16px;display:flex;flex-direction:column;gap:10px;z-index:3;${shadow(0.9)}}
   .cd:before{content:"";position:absolute;left:0;right:0;top:0;height:12px;background:${FOREST};border-radius:6px 6px 0 0}
   .cd h3{font:500 50px/1 "Newsreader",Georgia,serif;letter-spacing:-.01em;color:${FOREST};margin-top:6px}
   .cd p{font:500 28px/1.22 "Plex",sans-serif;color:#1d1d20}
   .cd p .example{vertical-align:middle;margin-left:4px}
-  .plac{position:absolute;left:44px;top:1062px;width:560px;padding:14px 22px 14px 26px;background:#fbf8f0;border-radius:5px;z-index:4;transform:rotate(-1deg);font:500 26px/1.28 "Plex",sans-serif;color:#1d1d20;${shadow(0.7)}}
+  .plac{position:absolute;left:44px;top:1046px;width:560px;padding:14px 22px 14px 26px;background:#fbf8f0;border-radius:5px;z-index:4;transform:rotate(-1deg);font:500 26px/1.28 "Plex",sans-serif;color:#1d1d20;${shadow(0.7)}}
   .plac:before{content:"";position:absolute;left:0;top:0;bottom:0;width:9px;background:${AMBER};border-radius:5px 0 0 5px}`;
   const bowl = `<svg style="${abs(716, 1086, 240, 90, "z-index:4;filter:drop-shadow(0 12px 8px rgba(0,0,0,.45))")}" viewBox="0 0 240 90" aria-hidden="true"><defs><linearGradient id="bw76" x1="0" x2="1"><stop offset="0" stop-color="#f1d58a"/><stop offset=".5" stop-color="#c79a3a"/><stop offset="1" stop-color="#8a6420"/></linearGradient></defs>
     <g transform="rotate(-24 70 40)"><circle cx="64" cy="20" r="13" fill="none" stroke="#c9ccd1" stroke-width="5"/><rect x="56" y="30" width="10" height="56" rx="3" fill="#cfa84a"/></g>
@@ -221,7 +221,7 @@ function pin76() {
   ${bench({ yTop: 1160 })}
   <div class="plac" data-check="note">${esc("This is an illustration, not a report of anyone's month")}</div>
   ${bowl}
-  ${shoe({ x: 150, y: 1248, w: 220, color: "#e3d9c4", rot: 0, z: 1 })}${shoe({ x: 410, y: 1252, w: 200, color: "#c26a3d", sole: "#efe6d3", flip: true, z: 1 })}`;
+  ${shoe({ x: 150, y: 1250, w: 220, color: "#e3d9c4", rot: 0, z: 3 })}${shoe({ x: 410, y: 1256, w: 200, color: "#c26a3d", sole: "#efe6d3", flip: true, z: 3 })}`;
   return printable({ n: 76, scene, paper: "#e8e4da", extraCss: css });
 }
 

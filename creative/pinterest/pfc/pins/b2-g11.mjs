@@ -64,7 +64,7 @@ function nightDesk({ base, hi, look = "fine", pool = [880, 470, 760], poolColor 
 }
 
 /** A banker's lamp seen from above: a green glass shade on a brass arm. `armTo` is where the arm reaches its base. */
-function lamp({ x, y, r = 80, armTo, z = 6 }) {
+function lamp({ x, y, r = 80, armTo, z = 3 }) {
   const g = `lg${++uid}`, b = `lb${uid}`;
   const [ax, ay] = armTo;
   const ang = Math.atan2(ay - y, ax - x);
@@ -136,6 +136,7 @@ function pin92() {
   .grid>div{border-right:1.5px solid #c8d6cd;border-bottom:1.5px solid #c8d6cd;display:flex;align-items:center;justify-content:center}
   .grid .gh,.grid .rn{background:#e6eee9;font:500 22px "Plex",sans-serif;color:#4b5b52}
   .grid .sel{outline:4px solid #17473a;outline-offset:-3px;font:600 40px "Plex Mono",monospace;color:#1d1d20;background:#f1f8f4}
+  .top h1,.top p{text-wrap:balance}
   .cap92{position:absolute;left:22px;right:22px;font:500 24px/1.3 "Plex",sans-serif;color:#2c3a33}
   .ed{background:#1a2230}.ed .bar{background:#2b3648}
   .ed .ln{display:flex;align-items:center;height:62px;padding:0 18px}
@@ -153,17 +154,17 @@ function pin92() {
       <path d="M150 8 C 170 56, 300 40, 306 94" fill="none" stroke="#17473a" stroke-width="5" stroke-linecap="round" marker-end="url(#ah92)"/></svg>
     <div style="${abs(26, 348, 160, 52, "border:3px solid #17473a;border-radius:12px;background:#e4ece8;display:flex;align-items:center;justify-content:center;font:600 30px 'Plex',sans-serif;color:#0f2f27")}">March 5</div>
     <div style="${abs(226, 348, 160, 52, "border:3px solid #17473a;border-radius:12px;background:#e4ece8;display:flex;align-items:center;justify-content:center;font:600 30px 'Plex',sans-serif;color:#0f2f27")}">May 3</div>
-    <div class="cap92" data-check="caption" style="top:416px;height:56px">${esc(flip)}.</div></div>`.replace(`${esc(flip)}.`, esc(flip));
+    <div class="cap92" data-check="caption" style="top:412px;height:64px">${esc(flip)}</div></div>`;
   const R = `<div class="c92 ed" style="left:524px;top:566px;transform:rotate(1.2deg)">
     <div class="bar"><i></i><i></i><i></i><b>Text editor</b></div>
     <div class="ln" style="margin-top:12px"><span class="gn">1</span>${exTag("color:#b8c4d6")}</div>
     <div class="ln"><span class="gn">2</span><span class="dt">09/13/2026</span><span class="tk">${icon("check", { size: 38, color: "#2b1d02", weight: "bold" })}</span></div>
     <div class="ln"><span class="gn">3</span></div><div class="ln"><span class="gn">4</span></div><div class="ln"><span class="gn">5</span></div>
-    <div class="cap92" data-check="caption" style="top:416px;height:56px">${esc(proves)}</div></div>`;
-  const pad = notepad({ x: 40, y: 1078, w: 590, h: 228, rot: -1.2, z: 4, inner: `${esc(importIt)}` });
+    <div class="cap92" data-check="caption" style="top:412px;height:64px">${esc(proves)}</div></div>`;
+  const pad = notepad({ x: 40, y: 1062, w: 590, h: 222, rot: -1.2, z: 4, inner: `${esc(importIt)}` });
   const scene = `${nightDesk({ base: "#0f1b30", hi: "rgba(60,90,140,.35)", look: "fine", pool: [880, 460, 780] })}
   ${L}${R}${laptopLip()}${pad}${headphones({ x: 668, y: 1074, w: 300, rot: 7 })}${lamp({ x: 884, y: 452, r: 78, armTo: [1040, 372] })}`;
-  return printable({ n: 92, scene, paper: "#e6ecf3", extraCss: css });
+  return printable({ n: 92, scene, paper: "#e6ecf3", extraCss: css + ".top h1{font-size:58px}" });
 }
 
 /* ------------------------------------------------------------------ #93 */
@@ -200,7 +201,7 @@ function pin93() {
   ${sticky({ x: 536, y: 948, w: 410, h: 196, rot: 1.4, color: "#cdeadb", inner: ni(drItem), pin: "#e0a43a" })}`;
   const scene = `${nightDesk({ base: "#20252c", hi: "rgba(120,140,170,.25)", look: "slate", pool: [140, 1250, 760], poolOp: 0.3, seed: 7 })}
   ${left}${right}${arrow(228, 824, -2)}${arrow(704, 840, 2)}${notes}
-  ${pencil({ x: 372, y: 1262, len: 210, rot: 4, body: "#5aa079" })}${headphones({ x: 650, y: 1114, w: 270, rot: -7, cup: "#d9d4c8", band: "#aaa493" })}
+  ${pencil({ x: 372, y: 1262, len: 210, rot: 4, body: "#5aa079" })}${headphones({ x: 650, y: 1090, w: 270, rot: -7, cup: "#d9d4c8", band: "#aaa493" })}
   ${lamp({ x: 118, y: 1272, r: 92, armTo: [330, 1196] })}`;
   return printable({ n: 93, scene, paper: "#e9eaea", extraCss: css });
 }
@@ -214,7 +215,7 @@ function pin94() {
   .pg94 .holes{position:absolute;left:22px;top:0;bottom:0;width:30px}
   .hole94{position:absolute;left:0;width:30px;height:30px;border-radius:50%;background:#0e2a2c;box-shadow:inset 2px 3px 4px rgba(0,0,0,.6)}
   .steps{position:absolute;left:104px;top:250px;width:644px;height:672px;overflow:hidden}
-  .stp{display:flex;gap:16px;margin-bottom:46px}
+  .stp{display:flex;gap:16px;margin-bottom:46px}.stp:last-child{margin-bottom:0}
   .stp .no{flex:none;width:38px;height:38px;margin-top:4px;border-radius:50%;background:#17473a;color:#fff;display:grid;place-items:center;font:600 24px "Plex",sans-serif}
   .stp .tx{font:500 30px/46px "Newsreader",Georgia,serif;color:#16231e}
   .stp.pop .no{background:${POP};color:#2b1d02}
@@ -233,9 +234,9 @@ function pin94() {
   const page = `<div class="pg94"><div class="holes">${holes}</div>${sk}<div class="steps" data-check="steps">${steps}</div></div>`;
   const note = sticky({ x: 806, y: 640, w: 178, h: 176, rot: 4, color: "#f7e27a", z: 5, inner: `<div class="stk"><div class="t">Whole calendar months</div></div>` });
   const scene = `${nightDesk({ base: "#0c2a2d", hi: "rgba(50,130,125,.3)", look: "leather", pool: [900, 1230, 700], poolOp: 0.26, seed: 5 })}
-  ${page}${note}${mug({ x: 756, y: 1128, size: 200, color: "#eae4d6", drink: "#7a4a24" })}`;
+  ${page}${note}${mug({ x: 728, y: 1128, size: 200, color: "#eae4d6", drink: "#7a4a24" })}`;
   const css2 = css + `.stk{height:100%}`;
-  return printable({ n: 94, scene, paper: "#e2eeeb", extraCss: css2 });
+  return printable({ n: 94, scene, paper: "#e2eeeb", extraCss: css2 + ".top h1{font-size:58px}" });
 }
 
 /* ------------------------------------------------------------------ #95 */
@@ -276,7 +277,7 @@ function pin96() {
   const S = 540 / 2150, X0 = 60;
   const css = `
   .bar96{position:absolute;left:${X0}px;height:80px;border-radius:6px;overflow:hidden;display:flex;z-index:3;box-shadow:0 3px 3px rgba(0,0,0,.4),0 14px 20px rgba(0,0,0,.45)}
-  .keep{background:linear-gradient(90deg,#fbf4de,#f3e9cc);height:100%;flex:none}
+  .keep{background:linear-gradient(90deg,#fbf4de,#f3e9cc);height:100%;flex:none;display:flex;align-items:center}
   .gone{height:100%;flex:none;background:repeating-linear-gradient(135deg,#d98782 0 7px,#bd5e5a 7px 14px);opacity:.92}
   .tag96{position:absolute;left:640px;height:58px;width:326px;z-index:3;display:flex;align-items:center;padding:0 14px 0 50px;font:600 24px "Plex",sans-serif;color:#2b1d1a;white-space:nowrap;background:linear-gradient(#fbf4de,#efe3c0);clip-path:polygon(26px 0,100% 0,100% 100%,26px 100%,0 50%);filter:drop-shadow(0 4px 4px rgba(0,0,0,.5))}
   .tag96:before{content:"";position:absolute;left:24px;top:22px;width:14px;height:14px;border-radius:50%;background:#2d1618;box-shadow:inset 1px 2px 2px rgba(0,0,0,.6)}
@@ -296,14 +297,14 @@ function pin96() {
   }).join("");
   const stubW = Math.round(bal[6] * S);
   const stub = `<div style="${abs(X0, 1112, stubW, 136, `background:linear-gradient(90deg,#ffd270,${POP});border-radius:5px;z-index:3;box-shadow:0 0 0 5px rgba(242,182,64,.22),0 0 40px rgba(242,182,64,.5),0 16px 22px rgba(0,0,0,.5)`)}"></div>
-    <div class="lbl96" data-check="stub-label" style="left:${X0 + stubW + 30}px;top:1100px;width:760px">
-      <div>Left before the first new paycheck</div>
+    <div class="lbl96" data-check="stub-label" style="left:${X0 + stubW + 30}px;top:1096px;width:760px">
+      <div style="margin-bottom:8px">Left before the first new paycheck</div>
       <div style="display:flex;align-items:center;gap:20px;margin:2px 0 4px"><span style="font:600 88px/1 'Newsreader',Georgia,serif;color:#fff">$336</span>${exTag("color:#e9e0c8")}</div>
       <div>before groceries, fuel or health coverage</div></div>`;
   const scene = `${nightDesk({ base: "#2d1618", hi: "rgba(170,70,70,.28)", look: "plank", pool: [880, 1250, 800], poolOp: 0.24, seed: 13 })}
   ${start}${rows}${stub}
   ${headphones({ x: 722, y: 1096, w: 250, rot: 9, cup: "#e8d9cd", band: "#c2ac9b", pad: "#6e5a4b" })}${pencil({ x: 330, y: 1298, len: 250, rot: -2, body: "#e7b23f" })}
-  ${lamp({ x: 70, y: 1368, r: 78, armTo: [-30, 1300] })}`;
+  ${lamp({ x: 66, y: 1322, r: 60, armTo: [-40, 1262] })}`;
   return printable({ n: 96, scene, paper: "#f1e6df", extraCss: css });
 }
 
