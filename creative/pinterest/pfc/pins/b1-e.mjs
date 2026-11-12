@@ -28,7 +28,7 @@ function tick({ size = 64, color = "#2f343b", sw = 6, half = false, x = 0, y = 0
 
 /** An empty tick box with an optional tick. */
 function box({ size = 40, ticked = false, half = false, tickColor = "#2f343b", edge = "#2a3350", dash = false }) {
-  return `<div style="flex:none;position:relative;width:${size}px;height:${size}px;border:4px ${dash ? "dashed" : "solid"} ${edge};border-radius:8px;background:rgba(255,255,255,.55)">${ticked || half ? tick({ size: size * 1.2, color: tickColor, half, x: -size * 0.12, y: -size * 0.3 }) : ""}</div>`;
+  return `<div style="flex:none;position:relative;width:${size}px;height:${size}px;border:4px ${dash ? "dashed" : "solid"} ${edge};border-radius:8px;background:rgba(255,255,255,.55)">${ticked || half ? tick({ size: size * 1.2, color: tickColor, half, sw: half ? 7 : 6, x: -size * 0.12, y: -size * 0.3 }) : ""}</div>`;
 }
 
 /** A slim ballpoint pen. */
@@ -50,8 +50,8 @@ function pin101() {
   const tints = ["#f0d58a", "#e9a9b4", "#b8d4c0", "#b7cfe3", "#cdbfe0", "#efb98a", "#d8dfc2"];
   const tabHtml = tabs.map((t, k) => {
     const [num, ...rest] = t.split(" ");
-    return `<div style="${abs(722, 22 + k * 108, 246, 84, `background:${tints[k]};border-radius:6px 16px 16px 6px;box-shadow:0 5px 9px rgba(0,0,0,.4);display:flex;align-items:center;padding:0 12px 0 34px;gap:8px;z-index:1`)}">
-      <span class="mono" style="font-weight:600;font-size:23px;color:#1d1d20">${num}</span><span data-check="tab-${k}" style="font-weight:600;font-size:22px;line-height:1.12;color:#1d1d20;flex:1;max-height:56px;overflow:hidden">${esc(rest.join(" "))}</span></div>`;
+    return `<div style="${abs(722, 22 + k * 108, 254, 84, `background:${tints[k]};border-radius:6px 16px 16px 6px;box-shadow:0 5px 9px rgba(0,0,0,.4);display:flex;align-items:center;padding:0 10px 0 48px;gap:8px;z-index:1`)}">
+      <span class="mono" style="font-weight:600;font-size:22px;color:#1d1d20">${num}</span><span data-check="tab-${k}" style="font-weight:600;font-size:22px;line-height:26px;color:#1d1d20;flex:1;min-width:0">${esc(rest.join(" "))}</span></div>`;
   }).join("");
 
   const chip = (label, kind) => `<span style="display:inline-block;font:600 22px 'Plex';padding:4px 14px;border-radius:999px;${kind === "ok" ? `background:#d3e6dc;color:${C.forestDeep}` : "background:#f6dfae;color:#6a4309"}">${esc(label)}</span>`;
@@ -128,15 +128,18 @@ function pin100() {
       <div style="${abs(8, 8, 280, 180, `border:2px solid ${C.forest};border-radius:6px;opacity:.5`)}"></div>
       <div class="serif" data-check="jar-label" style="font-size:44px;line-height:1.08;font-weight:600;color:${C.forestDeep};width:250px;height:136px;display:flex;align-items:center;justify-content:center">${esc(i.items[0])}</div></div>`;
 
-  // The gift tag tied to the neck: twine, then a coral tag reading December.
-  const tag = `<svg style="${abs(JX + 130, JY - 10, 460, 300, "z-index:5;overflow:visible")}" viewBox="0 0 460 300" aria-hidden="true">
-      <path d="M40 76 C 120 100 230 108 300 170" fill="none" stroke="#e9dcc0" stroke-width="5" stroke-linecap="round"/>
-      <g transform="translate(300 170) rotate(24)" style="filter:drop-shadow(0 8px 6px rgba(50,30,10,.4))"><path d="M0 0 L36 -48 H214 Q232 -48 232 -30 V30 Q232 48 214 48 H36 Z" fill="${POP}"/><path d="M0 0 L36 -48 H214 Q232 -48 232 -30 V30 Q232 48 214 48 H36 Z" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="3" transform="scale(.94) translate(6 0)"/><circle cx="34" cy="0" r="12" fill="#fff6e6"/><circle cx="34" cy="0" r="12" fill="none" stroke="#c34a35" stroke-width="3"/></g></svg>
-    <div class="serif" data-check="tag" style="${abs(JX + 130 + 340, JY - 10 + 170 - 36, 200, 70, "transform:rotate(24deg);transform-origin:0 36px;z-index:6;font-size:40px;font-weight:600;color:#fff;display:flex;align-items:center;width:196px")}">${esc(i.items[1].replace("Lands in ", ""))}</div>`;
+  // The gift tag tied to the neck: twine round the neck, then a coral tag reading December hanging over the shoulder.
+  const HX = 452, HY = 612;
+  const tag = `<svg style="${abs(0, 0, 1000, 1500, "z-index:5;overflow:visible;pointer-events:none")}" viewBox="0 0 1000 1500" aria-hidden="true">
+      <path d="M${JX + 66} ${JY + 98} C ${JX + 150} ${JY + 122}, ${JX + 290} ${JY + 122}, ${JX + 336} ${JY + 94}" fill="none" stroke="#efe3c6" stroke-width="6" stroke-linecap="round"/>
+      <path d="M${JX + 336} ${JY + 94} C ${JX + 372} ${JY + 120}, ${HX - 6} ${HY - 40}, ${HX} ${HY}" fill="none" stroke="#efe3c6" stroke-width="5" stroke-linecap="round"/></svg>
+    <div style="${abs(HX, HY, 0, 0, "transform:rotate(-14deg);transform-origin:0 0;z-index:6")}">
+      <svg style="${abs(-250, -52, 262, 104, "overflow:visible;filter:drop-shadow(0 8px 6px rgba(50,30,10,.4))")}" viewBox="0 0 262 104" aria-hidden="true"><path d="M250 52 L214 4 H34 Q14 4 14 24 V80 Q14 100 34 100 H214 Z" fill="${POP}"/><path d="M236 52 L206 14 H36 Q26 14 26 26 V78 Q26 90 36 90 H206 Z" fill="none" stroke="#fff" stroke-opacity=".3" stroke-width="3"/><circle cx="226" cy="52" r="12" fill="#fff6e6"/><circle cx="226" cy="52" r="12" fill="none" stroke="#c34a35" stroke-width="3"/></svg>
+      <div class="serif" data-check="tag" style="${abs(-232, -22, 176, 44, "font-size:38px;font-weight:600;color:#fff;display:flex;align-items:center;justify-content:center;white-space:nowrap")}">${esc(i.items[1].replace("Lands in ", ""))}</div></div>`;
 
   // The sum card.
   const [cost, , monthly] = i.items;
-  const card = `<div style="${abs(590, 470, 372, 500, `transform:rotate(1.4deg);background:#fffdf5;border-radius:8px;filter:${SHADOW};z-index:4`)}">
+  const card = `<div style="${abs(590, 470, 372, 456, `transform:rotate(1.4deg);background:#fffdf5;border-radius:8px;filter:${SHADOW};z-index:4`)}">
       <div style="${abs(0, 0, 372, 18, `background:${C.forest};border-radius:8px 8px 0 0`)}"></div>
       <div style="${abs(26, 40, 320, 440, "display:flex;flex-direction:column")}">
         <div><span class="example" style="font-size:24px;padding:4px 12px">Example</span></div>
@@ -156,7 +159,10 @@ function pin100() {
       <svg style="${abs(70, -12, 160, 80)}" viewBox="0 0 160 80" aria-hidden="true"><path d="M80 56 C 40 10, 6 18, 14 46 C 22 70, 64 66, 80 56 Z" fill="#f6ecd0"/><path d="M80 56 C 120 10, 154 18, 146 46 C 138 70, 96 66, 80 56 Z" fill="#efe2bf"/><circle cx="80" cy="54" r="14" fill="#f1e6c8"/></svg></div>`;
   const scrap = (x, y, w, h, rot, bg, pat) => `<div style="${abs(x, y, w, h, `transform:rotate(${rot}deg);background:${bg};box-shadow:0 8px 12px rgba(50,30,10,.35);z-index:3;overflow:hidden`)}"><div style="${abs(0, 0, w, h, pat)}"></div></div>`;
   const scraps = scrap(40, 1180, 280, 130, -6, "#f6efdc", `background:repeating-linear-gradient(45deg,transparent 0 16px,${C.forest} 16px 22px);opacity:.28`) + scrap(190, 1168, 250, 120, 8, "#dfeadf", "background:radial-gradient(circle,rgba(23,71,58,.4) 5px,transparent 6px) 0 0/30px 30px");
-  const curl = `<svg style="${abs(250, 1150, 400, 190, "z-index:5;filter:drop-shadow(0 6px 5px rgba(50,30,10,.35))")}" viewBox="0 0 400 190" aria-hidden="true"><path d="M10 160 C 80 60, 150 190, 200 110 S 290 30, 330 90 C 350 120, 316 150, 296 126 C 280 106, 308 90, 322 104" fill="none" stroke="${C.forest}" stroke-width="16" stroke-linecap="round"/><path d="M10 160 C 80 60, 150 190, 200 110 S 290 30, 330 90" fill="none" stroke="#fff" stroke-opacity=".25" stroke-width="4" stroke-linecap="round" transform="translate(0 -4)"/></svg>`;
+  const rings = [66, 56, 46, 36].map((rr, k) => `<circle cx="80" cy="80" r="${rr}" fill="none" stroke="${k % 2 ? "#2d6a56" : "#0f3a2e"}" stroke-width="9"/>`).join("");
+  const curl = `<svg style="${abs(300, 1150, 330, 180, "z-index:5;filter:drop-shadow(0 8px 6px rgba(50,30,10,.4))")}" viewBox="0 0 330 180" aria-hidden="true">
+      <path d="M96 140 C 140 168, 190 120, 236 150 S 300 170, 318 140" fill="none" stroke="${C.forest}" stroke-width="22" stroke-linecap="round"/><path d="M96 134 C 140 162, 190 114, 236 144 S 300 164, 318 134" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width="5" stroke-linecap="round"/>
+      <g transform="translate(0 10)"><circle cx="80" cy="80" r="76" fill="${C.forestDeep}"/>${rings}<circle cx="80" cy="80" r="24" fill="#c9a679"/><circle cx="80" cy="80" r="24" fill="none" stroke="#8a6234" stroke-width="3"/><path d="M20 50 A 66 66 0 0 1 64 16" fill="none" stroke="#fff" stroke-opacity=".3" stroke-width="6" stroke-linecap="round"/></g></svg>`;
 
   return printable({ n: 100, paper: "#efe3cf", scene: `${kraft}${wrap}${jar}${label}${card}${tag}${scraps}${curl}${box}` });
 }
@@ -188,7 +194,7 @@ function pin66() {
 
   // Five step strips.
   const strips = i.items.map((t, k) => {
-    const y = 748 + k * 100;
+    const y = 744 + k * 98;
     return `<div style="${abs(50, y, 900, 88, `background:#fffdf7;border-radius:8px;filter:${SHADOW};z-index:3`)}">
       <div style="${abs(0, 0, 14, 88, `background:${k === 0 ? POP : C.forest};border-radius:8px 0 0 8px;opacity:${k === 0 ? 1 : 0.85}`)}"></div>
       <div style="${abs(40, 21, 46, 46)}">${box({ size: 46, half: k === 0, tickColor: POP, edge: "#3a3f46" })}</div>
@@ -196,11 +202,11 @@ function pin66() {
   }).join("");
 
   // A closed binder lying on the shelf with an index tab, and a pencil.
-  const binder = `<div style="${abs(520, 1226, 430, 56, "z-index:3;filter:drop-shadow(0 12px 8px rgba(40,25,10,.4))")}">
-      <div style="${abs(0, 0, 430, 56, `background:linear-gradient(${C.forest},${C.forestDeep});border-radius:8px 6px 6px 8px`)}"></div>
-      <div style="${abs(0, 0, 430, 12, "background:rgba(255,255,255,.18);border-radius:8px 6px 0 0")}"></div>
-      <div style="${abs(420, 12, 66, 28, "background:#f0d58a;border-radius:0 8px 8px 0;box-shadow:0 3px 5px rgba(0,0,0,.35)")}"></div>
-      <div style="${abs(24, 17, 150, 22, "background:#f4efe0;border-radius:4px;opacity:.9")}"></div></div>`;
+  const binder = `<div style="${abs(500, 1230, 380, 50, "z-index:3;filter:drop-shadow(0 12px 8px rgba(40,25,10,.4))")}">
+      <div style="${abs(0, 0, 380, 50, `background:linear-gradient(${C.forest},${C.forestDeep});border-radius:8px 6px 6px 8px`)}"></div>
+      <div style="${abs(0, 0, 380, 11, "background:rgba(255,255,255,.18);border-radius:8px 6px 0 0")}"></div>
+      <div style="${abs(370, 10, 62, 26, "background:#f0d58a;border-radius:0 8px 8px 0;box-shadow:0 3px 5px rgba(0,0,0,.35)")}"></div>
+      <div style="${abs(24, 15, 140, 20, "background:#f4efe0;border-radius:4px;opacity:.9")}"></div></div>`;
   const scene = `${wall}${planner}${strips}${binder}${pencil({ x: 70, y: 1246, len: 380, rot: 1.5 })}`;
   return printable({ n: 66, paper: "#e5eee6", scene });
 }
@@ -216,7 +222,7 @@ function pin58() {
   const GX = 44, GY = 414, GW = 912, GH = 902;
   const snow = Array.from({ length: 150 }, () => { const rad = 2 + r() * 7; return `<circle cx="${(r() * GW).toFixed(0)}" cy="${(r() * GH).toFixed(0)}" r="${rad.toFixed(1)}" fill="#fff" opacity="${(0.4 + r() * 0.55).toFixed(2)}"/>`; }).join("");
   const pine = (x, h, c) => `<g transform="translate(${x} ${GH - 70})"><path d="M0 0 L${-h * 0.34} 0 L0 ${-h} L${h * 0.34} 0 Z" fill="${c}"/><path d="M0 ${-h * 0.35} L${-h * 0.28} ${-h * 0.05} L0 ${-h * 0.8} L${h * 0.28} ${-h * 0.05} Z" fill="${c}"/><path d="M${-h * 0.18} ${-h * 0.62} Q0 ${-h * 0.5} ${h * 0.18} ${-h * 0.62} L0 ${-h * 0.95} Z" fill="#fff" opacity=".85"/></g>`;
-  const pines = [[50, 150, "#6b8f84"], [130, 110, "#7b9b91"], [210, 170, "#628579"], [690, 120, "#7b9b91"], [770, 180, "#628579"], [850, 130, "#6b8f84"]].map(([x, h, c]) => pine(x, h, c)).join("");
+  const pines = [[110, 120, "#7b9b91"], [786, 330, "#628579"], [850, 250, "#6b8f84"], [896, 170, "#7b9b91"], [760, 190, "#7b9b91"]].map(([x, h, c]) => pine(x, h, c)).join("");
   const glass = `<svg style="${abs(GX, GY, GW, GH, "z-index:1")}" viewBox="0 0 ${GW} ${GH}" aria-hidden="true"><defs>
       <linearGradient id="sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c3d7e6"/><stop offset=".7" stop-color="#e4eef4"/><stop offset="1" stop-color="#f4f8fa"/></linearGradient>
       <radialGradient id="fr1" cx="0" cy="0" r="1"><stop offset="0" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient></defs>
@@ -236,7 +242,7 @@ function pin58() {
     ticks.push(`<path d="M80 ${yAt(m) - 414 + 0} h${major ? 46 : 26}" stroke="#7a5a30" stroke-width="${major ? 3 : 2}"/>`);
     if (major) ticks.push(`<text x="22" y="${yAt(m) - 414 + 9}" font-family="Plex" font-weight="600" font-size="26" fill="#5a3f1d" text-anchor="middle">${m}</text>`);
   }
-  const ruler = `<div style="${abs(RX, 424, 82, 884, "background:linear-gradient(90deg,#efd4a0,#e2bf86);border-radius:6px;box-shadow:0 3px 4px rgba(40,25,10,.35),0 14px 18px rgba(40,25,10,.3);z-index:3")}"><svg style="${abs(0, -10 + 0, 82, 884, "overflow:visible")}" viewBox="0 0 82 884" aria-hidden="true"><g transform="translate(0 0)">${ticks.join("").replace(/M80/g, "M34").replace(/x="22"/g, 'x="26"')}</g></svg></div>`;
+  const ruler = `<div style="${abs(RX, 424, 82, 884, "background:linear-gradient(90deg,#efd4a0,#e2bf86);border-radius:6px;box-shadow:0 3px 4px rgba(40,25,10,.35),0 14px 18px rgba(40,25,10,.3);z-index:3")}"><svg style="${abs(0, -10 + 0, 82, 884, "overflow:visible")}" viewBox="0 0 82 884" aria-hidden="true"><g transform="translate(0 0)">${ticks.join("").replace(/M80/g, "M46").replace(/h46/g, "h32").replace(/x="22"/g, 'x="24"').replace(/font-size="26"/g, 'font-size="24"')}</g></svg></div>`;
   const cols = [C.forest, "#3d7d68", POP, "#5f9a85", C.forest];
   const spans = [[0, 2], [2, 6], [7, 7], [7, 9], [10, 10]];
   const brackets = spans.map(([a, b], k) => {
@@ -250,11 +256,11 @@ function pin58() {
     const y = 430 + k * 170;
     const isSeven = k === 2;
     const tape = `<div style="${abs(330, -14, 120, 32, `transform:rotate(${k % 2 ? -3 : 2}deg);background:${["#f0d58a", "#cfe3da", "#f4cdbd", "#d8dfc2", "#cfe0ee"][k]};opacity:.9;box-shadow:0 2px 3px rgba(0,0,0,.2)`)}"></div>`;
-    return `<div style="${abs(196, y, 748, 150, `background:#fffefa;border-radius:8px;filter:${SHADOW};z-index:4`)}">${tape}
+    return `<div style="${abs(196, y, 590, 150, `background:#fffefa;border-radius:8px;filter:${SHADOW};z-index:4`)}">${tape}
       <div style="${abs(0, 0, 14, 150, `background:${cols[k]};border-radius:8px 0 0 8px`)}"></div>
-      <div style="${abs(40, 12, 680, 128, "display:flex;flex-direction:column;justify-content:center;gap:6px")}">
-        <div style="position:relative;align-self:flex-start"><span data-check="when-${k}" class="eyebrow" style="font-size:26px;letter-spacing:.1em;color:${isSeven ? "#b23f2a" : C.forest};white-space:nowrap">${esc(when)}</span>${isSeven ? `<svg style="${abs(-18, -14, 250, 56, "overflow:visible")}" viewBox="0 0 250 56" aria-hidden="true"><path d="M20 34 C 14 6, 120 -2, 205 8 C 258 16, 240 52, 120 52 C 40 52, -6 40, 26 14" fill="none" stroke="${POP}" stroke-width="5" stroke-linecap="round"/></svg>` : ""}</div>
-        <div class="serif" data-check="what-${k}" style="font-size:38px;line-height:1.08;font-weight:500;color:#26211c;width:690px;max-height:92px;overflow:hidden">${esc(what)}</div></div></div>`;
+      <div style="${abs(36, 12, 536, 128, "display:flex;flex-direction:column;justify-content:center;gap:12px")}">
+        <div style="position:relative;align-self:flex-start;padding:2px 0"><span data-check="when-${k}" class="eyebrow" style="font-size:26px;letter-spacing:.1em;color:${isSeven ? "#b23f2a" : C.forest};white-space:nowrap">${esc(when)}</span>${isSeven ? `<svg style="${abs(-24, -17, 0, 0, "overflow:visible;width:calc(100% + 48px);height:calc(100% + 28px)")}" viewBox="0 0 200 50" preserveAspectRatio="none" aria-hidden="true"><path d="M30 12 C 70 -2, 150 0, 184 14 C 204 26, 170 46, 100 46 C 40 46, -2 36, 10 20 C 18 8, 70 4, 120 4" fill="none" stroke="${POP}" stroke-width="5" stroke-linecap="round"/></svg>` : ""}</div>
+        <div class="serif" data-check="what-${k}" style="font-size:36px;line-height:1.08;font-weight:500;color:#26211c;width:536px;max-height:84px;overflow:hidden">${esc(what)}</div></div></div>`;
   }).join("");
 
   const scene = `${frame}${glass}${ruler}${brackets}${cards}${sill}${pencil({ x: 560, y: 1322, len: 360, rot: -2 })}`;
@@ -271,7 +277,7 @@ function pin4() {
     <rect width="1000" height="1500" fill="url(#pw)"/>${stripes}
     <rect x="470" y="1284" width="560" height="60" fill="url(#oakq)"/><rect x="470" y="1280" width="560" height="7" fill="#8a6234" opacity=".6"/></svg>`;
 
-  const LINES = [{ y0: 424, sag: 30 }, { y0: 742, sag: 30 }, { y0: 1054, sag: 30 }];
+  const LINES = [{ y0: 424, sag: 30 }, { y0: 726, sag: 30 }, { y0: 1028, sag: 30 }];
   const lineY = (ln, x) => { const t = (x + 10) / 1020; return ln.y0 + 4 * ln.sag * t * (1 - t); };
   const rope = LINES.map((ln) => `<path d="M-10 ${ln.y0} Q 500 ${ln.y0 + 2 * ln.sag} 1010 ${ln.y0}" fill="none" stroke="#a8824f" stroke-width="7" stroke-linecap="round"/><path d="M-10 ${ln.y0 - 2} Q 500 ${ln.y0 + 2 * ln.sag - 2} 1010 ${ln.y0 - 2}" fill="none" stroke="#e1c391" stroke-width="2.5" stroke-linecap="round"/><circle cx="14" cy="${ln.y0}" r="9" fill="#6f6a66"/><circle cx="986" cy="${ln.y0}" r="9" fill="#6f6a66"/>`).join("");
   const ropeSvg = `<svg style="${abs(0, 0, 1000, 1500, "z-index:1;filter:drop-shadow(0 6px 4px rgba(80,40,20,.3))")}" viewBox="0 0 1000 1500" aria-hidden="true">${rope}</svg>`;
@@ -281,19 +287,19 @@ function pin4() {
   const cards = i.items.map((t, k) => {
     const [li, x, rot] = placements[k];
     const ln = LINES[li];
-    const w = 440, h = 262, cy = lineY(ln, x + w / 2) + 14;
+    const w = 440, h = 244, cy = lineY(ln, x + w / 2) + 14;
     return `<div style="${abs(x, cy, w, h, `transform:rotate(${rot}deg);transform-origin:50% 0;background:#fffdf6;border-radius:6px;filter:${SHADOW};z-index:4`)}">
       <div style="${abs(0, 52, w, 3, "background:#d9695a;opacity:.85")}"></div>
-      <div style="${abs(0, 56, w, h - 56, "background:repeating-linear-gradient(180deg,transparent 0 38px,#cbd7e6 38px 40px);opacity:.5")}"></div>
+      <div style="${abs(0, 56, w, h - 56, "background:repeating-linear-gradient(180deg,transparent 0 39px,#cbd7e6 39px 41px);opacity:.5")}"></div>
       <div style="${abs(24, 8, 56, 42)}">${box({ size: 38, ticked: k < 2, edge: "#3a3f46" })}</div>
-      <div data-check="item-${k}" style="${abs(24, 66, w - 48, h - 80, "font-size:31px;line-height:1.19;font-weight:500;color:#26211c;overflow:hidden")}">${esc(t)}</div></div>
-      ${peg(x + 80, lineY(ln, x + 80) + 4, -4)}${peg(x + w - 80, lineY(ln, x + w - 80) + 4, 4)}`;
+      <div data-check="item-${k}" style="${abs(24, 66, w - 48, h - 80, "font-size:33px;line-height:41px;font-weight:500;color:#26211c;overflow:hidden")}">${esc(t)}</div></div>
+      ${peg(x + 150, lineY(ln, x + 150) + 4, -4)}${peg(x + w - 70, lineY(ln, x + w - 70) + 4, 4)}`;
   }).join("");
 
   // A sticky note on the third line, and a mug and pen on the shelf.
-  const sx = 580, sy = lineY(LINES[2], sx + 100) + 14;
-  const sticky = `<div style="${abs(sx, sy, 200, 200, "transform:rotate(4deg);transform-origin:50% 0;background:linear-gradient(160deg,#fbe38a,#f1cf62);box-shadow:0 10px 14px rgba(80,40,20,.35);z-index:4")}"><div style="${abs(0, 0, 200, 34, "background:rgba(255,255,255,.22)")}"></div></div>${peg(sx + 100, lineY(LINES[2], sx + 100) + 4, 3)}`;
-  const props = `${mug({ x: 760, y: 1160, size: 140, color: "#f3ede4", drink: "#6b4226" })}${pen({ x: 520, y: 1262, len: 330, rot: -2, body: C.forestDeep })}`;
+  const sx = 560, sy = lineY(LINES[2], sx + 85) + 14;
+  const sticky = `<div style="${abs(sx, sy, 170, 170, "transform:rotate(4deg);transform-origin:50% 0;background:linear-gradient(160deg,#fbe38a,#f1cf62);box-shadow:0 10px 14px rgba(80,40,20,.35);z-index:4")}"><div style="${abs(0, 0, 170, 30, "background:rgba(255,255,255,.22)")}"></div></div>${peg(sx + 85, lineY(LINES[2], sx + 85) + 4, 3)}`;
+  const props = `${mug({ x: 790, y: 1166, size: 140, color: "#f3ede4", drink: "#6b4226" })}${pen({ x: 560, y: 1264, len: 220, rot: -2, body: C.forestDeep })}`;
   return printable({ n: 4, paper: "#f4e3d4", scene: `${wall}${ropeSvg}${cards}${sticky}${props}` });
 }
 
