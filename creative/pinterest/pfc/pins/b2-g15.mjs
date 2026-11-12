@@ -214,4 +214,72 @@ const P67 = promo({
   extraCss: tint({ a: "#052a1f", b: "#0a4a38", c: "#1f7a5c", hi: "#c9f5a8", wave: "#e9f3ee", angle: 165 }),
 });
 
-export const pins = [P54, P13, P17, P21, P67];
+
+
+/* ----------------------------------------------------------------- #19 */
+// The real statement, below its title (shared-statement-body.png), as a printed half-page on slate-blue linen with two mugs,
+// a sticky note and a pencil. Two blank sheets lie under it. The title that overprints the "As of" line is never shown.
+const STAT_W = 840;
+const STAT_H = Math.round((STAT_W * 880) / 1654);
+function statementScene() {
+  const linen = `<div style="position:absolute;left:0;top:372px;width:1000px;height:982px;background:
+      repeating-linear-gradient(0deg,rgba(255,255,255,.045) 0 2px,transparent 2px 6px),
+      repeating-linear-gradient(90deg,rgba(0,0,0,.05) 0 2px,transparent 2px 6px),
+      radial-gradient(120% 90% at 30% 20%,#7f9bb0 0%,#587890 55%,#3f5c73 100%)"></div>`;
+  const blank = (x, y, w, h, rot, fill) => `<div style="${abs(x, y, w, h, `transform:rotate(${rot}deg);background:${fill};border-radius:3px;box-shadow:0 2px 3px rgba(10,25,40,.3),0 16px 30px rgba(10,25,40,.38)`)}"></div>`;
+  const px = 80, py = 712;
+  const page = `<div data-check="page" style="${abs(px, py, STAT_W, STAT_H, "transform:rotate(-3deg);background:#fffefb;border-radius:3px;overflow:hidden;box-shadow:0 2px 3px rgba(10,25,40,.3),0 22px 40px rgba(10,25,40,.45)")}"><img src="${asset("shared-statement-body.png")}" style="width:${STAT_W}px;height:${STAT_H}px;display:block" alt=""></div>`;
+  return `${linen}
+    ${blank(112, 668, 800, STAT_H + 90, 2.2, "#f3f1ea")}
+    ${blank(96, 690, 820, STAT_H + 70, -0.6, "#f9f8f3")}
+    ${page}
+    ${stickyPad({ x: 735, y: 430, w: 190, rot: 8, color: "#f4d56b" })}
+    ${mug({ x: 76, y: 424, size: 190, color: "#f3ede4", drink: "#4a2f1d" })}
+    ${mug({ x: 640, y: 1130, size: 170, color: "#cfe1dc", drink: "#2d1c12" })}
+    ${pencil({ x: 120, y: 1250, len: 400, rot: -5, body: "#3f7f8c" })}
+    ${binderClip({ x: 452, y: 672, rot: 0, size: 100 })}`;
+}
+const P19 = printable({
+  n: 19,
+  paper: "#e6edf1",
+  scene: statementScene(),
+  extraCss: `.top p{color:#3d4a55}`,
+});
+
+/* ----------------------------------------------------------------- #31 */
+const I31 = idea(31);
+const P31 = (() => {
+  const css = `
+  .pin{background:#ebe8dd}
+  .eye{position:absolute;left:64px;top:60px;font:600 26px/1 "Plex",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4b6358}
+  .big{position:absolute;left:64px;top:104px;width:880px;font:500 76px/1.04 "Newsreader",Georgia,serif;letter-spacing:-.02em;color:#17201b}
+  .left{position:absolute;left:0;top:350px;width:560px;height:1016px;background:#e1ddd0}
+  .right{position:absolute;left:0;top:350px;width:1000px;height:1016px;background:linear-gradient(160deg,#08281f 0%,#0d3b2e 50%,#1d5a47 100%);clip-path:polygon(500px 0,1000px 0,1000px 1016px,440px 1016px)}
+  .tag{position:absolute;display:flex;align-items:center;gap:12px;padding:10px 22px 10px 16px;border-radius:999px;font:700 30px/1 "Plex",sans-serif}
+  .myth-tag{left:64px;top:392px;background:#c9c4b3;color:#4a4639}
+  .truth-tag{left:560px;top:392px;background:#f2d98a;color:#0a2a20}
+  .myth{position:absolute;left:64px;top:480px;width:370px;font:500 42px/1.22 "Newsreader",Georgia,serif;color:#7d7a6c;text-decoration:line-through;text-decoration-color:rgba(150,50,45,.55);text-decoration-thickness:4px}
+  .truth{position:absolute;left:560px;top:480px;width:392px;font:600 31px/1.3 "Plex",sans-serif;color:#fff}
+  .truth q{quotes:none;color:#f2d98a}
+  .sub{position:absolute;left:560px;top:1252px;width:392px;font:500 28px/1.3 "Plex",sans-serif;color:#cfe3da}
+  .foot{z-index:9}
+  .footbar{position:absolute;left:0;right:0;bottom:0;height:134px;background:#ebe8dd;box-shadow:0 -8px 22px rgba(20,30,20,.18);z-index:8}
+  `;
+  const body = `
+  <div class="eye">Money App Myth vs Truth</div>
+  <div class="big" data-check="headline" data-bottom-max="345">A Number You Cannot Check Is Just a Guess</div>
+  <div class="left"></div><div class="right"></div>
+  <div class="tag myth-tag">${icon("x-circle", { size: 36, color: "#4a4639", weight: "fill" })}Myth</div>
+  <div class="myth" data-check="myth">You have to take a budget number on trust</div>
+  <div class="tag truth-tag">${icon("check-circle", { size: 36, color: "#0a2a20", weight: "fill" })}Truth</div>
+  <div class="truth" data-check="truth">Every figure has a <q>How Draftpace got this</q> breakdown, line by line, from your own records.</div>
+  ${phone({ src: asset("available-money-working-alt.png"), y0: 0, y1: 372, width: 440, tilt: 4, x: 520, y: 685, appBg: APP_BG, closed: true })}
+  <div class="sub" data-check="sub">Nothing here is a guess dressed up as a number.</div>
+  ${receiptPair({ x: 40, y: 760, w: 300, rot: -7 })}
+  ${pen({ x: 150, y: 1180, len: 330, rot: -14, body: "#a8452f", shadow: "rgba(20,10,5,.4)" })}
+  <div class="footbar"></div>
+  ${footFor(I31)}`;
+  return { n: 31, id: "31-money-app-myth-vs-truth", html: page(p, { body, css, paper: "#ebe8dd" }) };
+})();
+
+export const pins = [P54, P13, P17, P21, P67, P19, P31];

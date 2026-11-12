@@ -227,7 +227,7 @@ const pin30 = printable({
   ${box(122, 880, 900, 64, 86, steelRuler(900))}
   ${sheet({ src: bookPage(22), x: 200, y: 412, w: 620, tilt: -4, id: "p30" })}
   ${box(910, 520, 300, 300, 0, setSquare(300, { fill: "rgba(250,196,80,.6)", edge: "#a86a12" }), "transform:rotate(180deg) scaleX(-1)")}
-  ${envelope({ x: 40, y: 1130, w: 290, rot: -9 })}
+  ${envelope({ x: 0, y: 1172, w: 240, rot: -9 })}
   ${pencil({ x: 440, y: 1272, len: 440, rot: -5, body: "#d8892b" })}`,
 });
 

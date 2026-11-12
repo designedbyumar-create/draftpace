@@ -135,13 +135,13 @@ function pin60() {
   const i = idea(60);
   const rows = i.items.map((t) => { const k = t.indexOf(": "); return [t.slice(0, k), t.slice(k + 2)]; });
   const css = `
-  .org{position:absolute;left:34px;top:410px;width:790px;transform:rotate(-1.4deg);z-index:3;background:#fdfcf7;border-radius:3px;padding:20px 22px 18px;box-shadow:0 2px 3px rgba(20,8,0,.3),0 20px 34px rgba(20,8,0,.45),0 44px 70px -20px rgba(20,8,0,.5);
+  .org{position:absolute;left:30px;top:408px;width:840px;transform:rotate(-1.4deg);z-index:3;background:#fdfcf7;border-radius:3px;padding:20px 22px 18px;box-shadow:0 2px 3px rgba(20,8,0,.3),0 20px 34px rgba(20,8,0,.45),0 44px 70px -20px rgba(20,8,0,.5);
     background-image:linear-gradient(90deg,transparent 31px,#e5a0a0 31px 33px,transparent 33px)}
   .org .bar{display:flex;align-items:center;justify-content:flex-end;height:36px;margin:0 0 6px 0}
-  .org .grid{display:grid;grid-template-columns:152px 1fr 176px;border-top:3px solid ${C.forest};margin-left:30px}
-  .org .h{font:600 22px "Plex",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:${C.forest};padding:11px 10px 10px;border-bottom:2px solid ${C.forest}}
-  .org .a{font:600 25px "Plex",sans-serif;color:#1d1d20;padding:16px 10px;border-bottom:2px solid #c8d6cd;display:flex;align-items:flex-start}
-  .org .w{font:600 35px/1.12 "Hand",cursive;color:#17473a;padding:10px 12px 12px;border-bottom:2px solid #c8d6cd;letter-spacing:.01em}
+  .org .grid{display:grid;grid-template-columns:178px 1fr 168px;border-top:3px solid ${C.forest};margin-left:30px}
+  .org .h{font:600 22px "Plex",sans-serif;letter-spacing:.06em;text-transform:uppercase;color:${C.forest};padding:11px 10px 10px;border-bottom:2px solid ${C.forest}}
+  .org .a{font:600 23px "Plex",sans-serif;color:#1d1d20;padding:16px 6px 16px 10px;border-bottom:2px solid #c8d6cd;display:flex;align-items:flex-start}
+  .org .w{font:600 33px/1.1 "Hand",cursive;color:#17473a;padding:8px 12px 10px;border-bottom:2px solid #c8d6cd;letter-spacing:.01em}
   .org .g{border-bottom:2px dashed #c8d6cd;border-left:2px solid #c8d6cd}
   ${QM_CSS}`;
   const cells = rows.map(([a, w]) => `<div class="a">${esc(a)}</div><div class="w">${withQ(w)}</div><div class="g"></div>`).join("");
@@ -150,8 +150,8 @@ function pin60() {
     <div style="position:absolute;left:560px;top:-60px;width:760px;height:700px;background:radial-gradient(ellipse at 40% 40%,rgba(255,214,140,.55),rgba(255,190,100,.18) 45%,transparent 70%);mix-blend-mode:screen"></div>
     <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 60% 20%,transparent 40%,rgba(20,6,0,.5))"></div></div>`;
   const props = `${lamp({ x: 770, y: 396, w: 220, z: 2 })}
-  ${sticky({ x: 70, y: 1204, s: 128, rot: -6, color: "#f2d783", z: 4 })}
-  ${popPencil({ x: 200, y: 1236, len: 440, rot: -9 })}
+  ${sticky({ x: 60, y: 1190, s: 130, rot: -6, color: "#f2d783", z: 5 })}
+  <div style="position:absolute;inset:0;z-index:6;pointer-events:none">${popPencil({ x: 190, y: 1252, len: 440, rot: -7 })}</div>
   ${clothStack({ x: 660, y: 1118, w: 320, rot: -3, colors: ["#2f5d73", "#8f3a2a", "#c79a3b"], z: 4 })}
   ${bookmark({ x: 892, y: 940, len: 150, w: 38, rot: 14, color: "#c4572e", z: 5 })}`;
   const scene = `${table}${org}${props}`;
@@ -180,18 +180,19 @@ function pin62() {
   .card h1{font:500 86px/1.02 "Newsreader",Georgia,serif;letter-spacing:-.02em;margin-top:22px;color:#1d1d20}
   .card h2{font:italic 500 78px/1 "Newsreader",Georgia,serif;letter-spacing:-.02em;margin-top:16px;color:${C.forest}}
   .card .rule{height:3px;background:${C.rule};margin:40px 0 46px}
-  .ch{position:relative;display:inline-block;align-self:flex-start;margin:0 0 56px 20px;padding:30px 54px}
+  .ch{position:relative;display:inline-block;align-self:flex-start;margin:0 0 56px 14px;padding:34px 80px 34px 84px}
+  .foot{z-index:8}
   .ch .t{position:relative;z-index:1;font:500 62px/1.05 "Newsreader",Georgia,serif;color:#17473a;white-space:nowrap}
   .ring{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
   .card .sub{font:500 38px/1.25 "Newsreader",Georgia,serif;color:#4b4339;margin-top:auto;padding-bottom:84px;max-width:640px}`;
   const body = `<div class="wall">${notes.join("")}<div class="wash"></div></div>
-  ${ladder({ x: 892, y: -30, h: 1560, rot: 1.2, w: 98, z: 3 })}
+  ${ladder({ x: 900, y: -30, h: 1580, rot: 1.2, w: 98, z: 3 })}
   <div class="card"><div class="eyebrow">${esc(i.board)}</div>
     <div data-check="headline"><h1>${esc(lead)}</h1><h2>${esc(tail)}</h2></div>
     <div class="rule"></div>
     ${circle(i.items[0], -1.2)}${circle(i.items[1], 1)}
     <div class="sub">${esc(i.sub)}</div></div>
-  ${popPencil({ x: 520, y: 1262, len: 420, rot: -8 }).replace("z-index", "z-index")}
+  <div style="position:absolute;inset:0;z-index:7;pointer-events:none">${popPencil({ x: 470, y: 1236, len: 420, rot: -8 })}</div>
   ${footFor(i)}`;
   const html = page(p, { body, css, paper: "#cdd9c8" });
   return { n: 62, id: `62-${i.headline.toLowerCase().replace(/[^a-z0-9]+/g, "-").slice(0, 40).replace(/-$/, "")}`, html };
@@ -217,13 +218,13 @@ function pin64() {
     box-shadow:0 2px 3px rgba(5,10,25,.4),0 20px 34px rgba(5,10,25,.5)}
   .rp::before{content:"";position:absolute;left:38px;top:0;bottom:0;width:2px;background:#e49a9a}
   .rp .tg{display:grid}
-  .rp .eb{height:44px;display:flex;align-items:center}
+  .rp .eb{height:40px;display:flex;align-items:center}
   .rp .h{font:600 22px "Plex",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:${C.forest};padding:6px 6px 8px;border-bottom:2px solid ${C.forest}}
-  .rp .a{font:600 24px "Plex",sans-serif;color:#1d1d20;padding:14px 6px;display:flex;align-items:flex-start}
-  .rp .w{font:600 34px/1.1 "Hand",cursive;color:#17473a;padding:8px 8px 8px}
+  .rp .a{font:600 24px "Plex",sans-serif;color:#1d1d20;padding:10px 6px;display:flex;align-items:flex-start}
+  .rp .w{font:600 33px/1.08 "Hand",cursive;color:#17473a;padding:4px 8px 6px}
   .rp .g{border-left:2px solid #c8d6cd}
-  .stamp{position:absolute;z-index:6;font:600 40px "Plex",sans-serif;letter-spacing:.2em;text-transform:uppercase;padding:6px 20px 6px 26px;border:5px solid;border-radius:8px;mask:linear-gradient(#000,#000);opacity:.92}
-  .list{position:absolute;left:46px;top:1080px;width:900px;z-index:4;padding:24px 34px 22px;background:#f6f1e3;border-radius:4px;transform:rotate(-.6deg);box-shadow:0 2px 3px rgba(5,10,25,.4),0 18px 30px rgba(5,10,25,.5)}
+  .stamp{position:absolute;z-index:6;top:4px;right:36px;font:600 32px "Plex",sans-serif;letter-spacing:.2em;text-transform:uppercase;padding:2px 14px 2px 20px;border:4px solid;border-radius:8px;mask:linear-gradient(#000,#000);opacity:.92}
+  .list{position:absolute;left:46px;top:1066px;width:900px;z-index:4;padding:24px 34px 22px;background:#f6f1e3;border-radius:4px;transform:rotate(-.6deg);box-shadow:0 2px 3px rgba(5,10,25,.4),0 18px 30px rgba(5,10,25,.5)}
   .list li{list-style:none;position:relative;padding-left:40px;font:500 29px/1.28 "Plex",sans-serif;color:#2a2c31;margin:10px 0}
   .list li::before{content:"";position:absolute;left:4px;top:11px;width:16px;height:16px;border:3px solid ${C.forest};border-radius:3px}
   ${QM_CSS}`;
@@ -231,10 +232,10 @@ function pin64() {
   const cover = `<div style="${abs(0, SCENE_TOP, 1000, SCENE_H, "background:repeating-linear-gradient(0deg,rgba(255,255,255,.05) 0 1px,transparent 1px 4px),repeating-linear-gradient(90deg,rgba(0,0,0,.14) 0 1px,transparent 1px 4px),radial-gradient(ellipse at 24% 10%,rgba(255,255,255,.18),transparent 60%),#27395a;overflow:hidden")}">${grain(".7", .35, 6)}${lightGrain(".03 .5", .2, 4)}
     <div style="position:absolute;left:18px;right:18px;top:18px;bottom:18px;border:3px solid #cfae62;border-radius:6px;opacity:.55"></div>
     <div style="position:absolute;left:30px;right:30px;top:30px;bottom:30px;border:1.5px solid #cfae62;border-radius:4px;opacity:.5"></div></div>`;
-  const pageA = `<div class="rp" data-check="page" style="left:24px;top:402px;transform:rotate(-1.3deg)"><div class="eb">${exTag()}</div>${tg(tidy, "190px 1fr")}<div class="stamp" style="right:34px;top:22px;color:#b3261e;transform:rotate(7deg)">Wrong</div><div style="position:absolute;left:62px;top:-14px;display:none"></div></div>`;
-  const pageB = `<div class="rp" data-check="page" style="left:104px;top:716px;width:850px;transform:rotate(1deg)"><div class="eb">${exTag()}</div>${tg(real, "172px 1fr 150px")}<div class="stamp" style="right:30px;bottom:18px;color:#17473a;transform:rotate(-6deg);background:#fdfcf7cc">Useful</div></div>`;
+  const pageA = `<div class="rp" data-check="page" style="left:24px;top:402px;transform:rotate(-1.3deg)"><div class="eb">${exTag()}</div>${tg(tidy, "190px 1fr")}<div class="stamp" style="color:#b3261e;transform:rotate(4deg)">Wrong</div></div>`;
+  const pageB = `<div class="rp" data-check="page" style="left:104px;top:704px;width:850px;transform:rotate(1deg)"><div class="eb">${exTag()}</div>${tg(real, "172px 1fr 196px")}<div class="stamp" style="color:#17473a;transform:rotate(-3deg)">Useful</div></div>`;
   const list = `<ul class="list" data-check="list">${i.items.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>`;
-  const scene = `${cover}${pageA}${pageB}${list}${bookmark({ x: 910, y: 960, len: 130, w: 38, rot: 8, color: "#d9a53a", z: 7 })}`;
+  const scene = `${cover}${pageA}${pageB}${list}${bookmark({ x: 912, y: 1012, len: 120, w: 36, rot: 8, color: "#d9a53a", z: 7 })}`;
   return printable({ n: 64, scene, paper: "#e8ecf2", extraCss: css });
 }
 
@@ -243,21 +244,21 @@ function pin64() {
 function pin70() {
   const i = idea(70);
   const css = `
-  .sp{position:absolute;left:64px;top:408px;width:800px;height:920px;transform:rotate(-1.2deg);z-index:4}
+  .sp{position:absolute;left:70px;top:408px;width:800px;height:690px;transform:rotate(-1.2deg);z-index:4}
   .sp .pg{position:absolute;inset:0;background:#fdfcf7;border-radius:3px;box-shadow:0 2px 3px rgba(10,5,0,.35),0 22px 36px rgba(10,5,0,.5),0 50px 80px -20px rgba(10,5,0,.5);overflow:hidden}
-  .sp .ring{position:absolute;left:-30px;width:86px;height:46px;border:9px solid #b8bcc3;border-radius:46px;background:transparent;box-shadow:0 5px 6px rgba(0,0,0,.35),inset 0 2px 3px rgba(255,255,255,.7);clip-path:none}
-  .sp .hole{position:absolute;left:26px;width:30px;height:30px;border-radius:50%;background:#3a2a1a;box-shadow:inset 2px 3px 4px rgba(0,0,0,.6);opacity:.85}
+  .sp .ring{position:absolute;left:-14px;width:62px;height:62px;border:9px solid #c4c8cf;border-radius:50%;box-shadow:5px 7px 7px rgba(0,0,0,.35),inset 2px 3px 3px rgba(0,0,0,.25),inset 0 0 0 2px rgba(255,255,255,.55);z-index:3}
+  .sp .plate{position:absolute;left:-46px;width:44px;height:40px;border-radius:5px;background:linear-gradient(#5b6068,#2e3238);box-shadow:3px 5px 6px rgba(0,0,0,.4);z-index:2}
   .sp .col{position:absolute;top:0;bottom:0;padding:34px 30px 0}
   .sp .L{left:84px;width:342px;background:linear-gradient(#eef4f1,#f7faf8)}
   .sp .R{left:426px;width:374px;background:#fdf6f2;border-left:3px solid #d8c7bf}
-  .sp h3{font:500 92px/1 "Newsreader",Georgia,serif;letter-spacing:-.02em}
+  .sp h3{font:500 120px/1 "Newsreader",Georgia,serif;letter-spacing:-.02em}
   .sp .L h3{color:${C.forest}}.sp .R h3{color:#a8321f}
-  .fld{margin-top:26px;border:3px solid ${C.forest};border-radius:10px;background:#fff;padding:14px 16px 16px}
-  .fld .lb{font:600 25px/1.2 "Plex",sans-serif;color:#2a2c31}
+  .fld{margin-top:30px;border:3px solid ${C.forest};border-radius:10px;background:#fff;padding:14px 16px 16px}
+  .fld .lb{font:600 28px/1.2 "Plex",sans-serif;color:#2a2c31}
   .fld .bx{display:flex;gap:10px;margin-top:12px}
-  .fld .bx i{display:block;width:46px;height:56px;border:3px solid #9bb3a5;border-radius:6px;background:#fafcfb}
+  .fld .bx i{display:block;width:52px;height:64px;border:3px solid #9bb3a5;border-radius:6px;background:#fafcfb}
   .fld .ln{margin-top:14px;height:50px;border-bottom:3px solid #9bb3a5}
-  .strip{position:relative;margin-top:36px;padding:16px 18px;border-radius:6px;background:#fff;border:3px solid #cdb0a6;font:600 33px/1.15 "Plex",sans-serif;color:#2a2c31}
+  .strip{position:relative;margin-top:44px;padding:24px 16px;border-radius:6px;background:#fff;border:3px solid #cdb0a6;font:600 33px/1.15 "Plex",sans-serif;color:#2a2c31;white-space:nowrap}
   .strip::after{content:"";position:absolute;left:-12px;right:-12px;top:50%;height:7px;margin-top:-3px;background:#a8321f;border-radius:4px;transform:rotate(-2.5deg);opacity:.92}
   .tabl{position:absolute;right:-6px;top:68px;width:30px;height:120px}`;
   const shelf = (y, seed, palette) => `${spines({ x: 0, y, w: 1000, h: 296, seed, palette, z: 1 })}<div style="${abs(0, y + 296, 1000, 26, "background:linear-gradient(#a87a45,#7a5028);box-shadow:0 8px 14px rgba(0,0,0,.5);z-index:2")}"></div>`;
@@ -266,11 +267,11 @@ function pin70() {
     ${shelf(14, 3, pal)}${shelf(336, 8, pal.slice().reverse())}${shelf(658, 15, pal)}
     <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 40% 45%,rgba(255,210,150,.12),rgba(10,4,0,.5) 90%);z-index:3"></div></div>`;
   // spines() / shelf() positions are scene-relative: lift them by SCENE_TOP via the wrapper above
-  const rings = [120, 420, 720].map((t) => `<div class="ring" style="top:${t}px"></div><div class="hole" style="top:${t + 8}px"></div>`).join("");
+  const rings = [110, 330, 550].map((t) => `<div class="plate" style="top:${t + 11}px"></div><div class="ring" style="top:${t}px"></div>`).join("");
   const sheet = `<div class="sp" data-check="page"><div class="pg">
     <div class="col L"><h3>In</h3><div class="fld"><div class="lb">${esc("last four digits")}</div><div class="bx"><i></i><i></i><i></i><i></i></div><div class="lb" style="margin-top:20px">${esc("where the full record lives")}</div><div class="ln"></div></div></div>
     <div class="col R"><h3>Out</h3><div class="strip">${esc("passwords")}</div><div class="strip">${esc("security answers")}</div></div></div>${rings}</div>`;
-  const scene = `${wall}${ladder({ x: 892, y: 360, h: 1000, rot: 0, w: 96, z: 3 })}${sheet}`;
+  const scene = `${wall}${ladder({ x: 892, y: 360, h: 1000, rot: 0, w: 96, z: 3 })}${sheet}${clothStack({ x: 330, y: 1120, w: 350, rot: -3, colors: ["#8f3a2a", "#2f5d73", "#c79a3b"], z: 5, ribbon: "#d9a53a" })}`;
   return printable({ n: 70, scene, paper: "#efe6d6", extraCss: css });
 }
 
