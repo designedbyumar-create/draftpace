@@ -129,6 +129,20 @@ function pin29() {
 
 /* ------------------------------------------------------------------ #68 */
 
+/** A cream terrazzo counter: irregular chips of forest, terracotta, butter, grey and blush set in the mix. */
+function terrazzo(seed = 33) {
+  const r = lcg(seed);
+  const cols = ["#2f6b57", "#c9714b", "#e0b44c", "#8a8f98", "#d9a5a0", "#1f2a2e", "#5f8f7a", "#f4efe4"];
+  const out = [];
+  for (let k = 0; k < 520; k++) {
+    const cx = r() * 1000, cy = r() * SCENE_H, R = 5 + Math.pow(r(), 2.2) * 30;
+    const n = 5 + Math.floor(r() * 3);
+    const pts = Array.from({ length: n }, (_, m) => { const a = (m / n) * Math.PI * 2 + r() * 0.6, rr = R * (0.55 + r() * 0.6); return `${(cx + Math.cos(a) * rr).toFixed(1)},${(cy + Math.sin(a) * rr).toFixed(1)}`; });
+    out.push(`<polygon points="${pts.join(" ")}" fill="${cols[Math.floor(r() * cols.length)]}" opacity="${(0.82 + r() * 0.18).toFixed(2)}"/>`);
+  }
+  return `<svg style="${abs(0, SCENE_TOP, 1000, SCENE_H)}" viewBox="0 0 1000 ${SCENE_H}" aria-hidden="true"><defs><radialGradient id="tz" cx=".25" cy=".08" r="1.1"><stop offset="0" stop-color="#fff" stop-opacity=".25"/><stop offset="1" stop-color="#2b2418" stop-opacity=".3"/></radialGradient></defs><rect width="1000" height="${SCENE_H}" fill="#e9e2d3"/>${out.join("")}<rect width="1000" height="${SCENE_H}" fill="url(#tz)"/></svg>`;
+}
+
 function pin68() {
   const flags = [
     ["Confirmed", "Checked and believed accurate", "#bfe3c9"],
@@ -144,20 +158,19 @@ function pin68() {
     return `<div class="flag" style="top:${cy - 29}px;background:${col}"><i></i><b>${esc(name)}</b><span>${esc(meaning)}</span></div>`;
   }).join("");
   const scene = `
-  <div style="${abs(0, SCENE_TOP, 1000, SCENE_H, "background-color:#fbf1e6;background-image:linear-gradient(90deg,rgba(209,98,122,.34) 50%,transparent 50%),linear-gradient(rgba(209,98,122,.34) 50%,transparent 50%);background-size:100px 100px;background-position:-20px -40px")}"></div>
-  <div style="${abs(0, SCENE_TOP, 1000, SCENE_H, "background:radial-gradient(ellipse at 20% 8%,rgba(255,255,255,.28),rgba(60,20,20,.34) 100%)")}"></div>
+  ${terrazzo()}
   ${fruitBowl({ cx: 856, cy: 508, r: 104, fruits: [["#f7e25e", "#d8b72a"], ["#f9e670", "#d9bb30"], ["#f5dc4f", "#cfaa22"], ["#f8e46a", "#d6b52a"], ["#f4d84a", "#cba420"]], seed: 9, shade: "#e9f1ef" })}
   <div style="${abs(26, 408, PW, PH, "transform:rotate(-2deg)")}">
     ${sheet({ src: bookPage(10), x: 0, y: 0, w: PW, tilt: 0, id: "key" })}
     ${flagHtml}
   </div>
-  <div style="${abs(690, 1048, 270, 170, "border-radius:50%;background:#eee9df;box-shadow:0 14px 12px rgba(30,20,10,.35);border:3px solid rgba(0,0,0,.07)")}"></div>
-  ${mug({ x: 706, y: 1022, size: 192, color: "#f3ede4", drink: "#5a3a22" })}
+  <div style="${abs(690, 1048, 270, 170, "border-radius:50%;background:#dbe8ec;box-shadow:0 14px 12px rgba(30,20,10,.35);border:3px solid rgba(0,0,0,.07)")}"></div>
+  ${mug({ x: 706, y: 1022, size: 192, color: "#7fa9b8", drink: "#5a3a22" })}
   ${pencil({ x: 60, y: 1292, len: 400, rot: 1.5 })}`;
   const css = `.flag{position:absolute;left:592px;height:58px;width:max-content;padding:2px 18px 0 28px;display:flex;flex-direction:column;justify-content:center;border-radius:2px 7px 7px 2px;box-shadow:0 2px 3px rgba(40,20,5,.3),0 8px 14px rgba(40,20,5,.25);color:#1d1d20}
   .flag i{position:absolute;left:0;top:0;bottom:0;width:14px;background:rgba(0,0,0,.14);border-radius:2px 0 0 2px}
   .flag b{font:700 25px/1.02 "Plex",sans-serif}.flag span{font:500 22px/1.05 "Plex",sans-serif}`;
-  return printable({ n: 68, scene, paper: "#f7ece4", extraCss: css });
+  return printable({ n: 68, scene, paper: "#f1ede2", extraCss: css });
 }
 
 /* ------------------------------------------------------------------ #2 */
