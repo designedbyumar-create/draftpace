@@ -228,6 +228,11 @@ function hangTag({ x, y, w = 270, h = 76, rot = 0, text, size = 30, from = SCENE
   return tag + twine;
 }
 
+/** A kraft label lying flat (no twine), for a short note. */
+function hangTagFlat({ x, y, w = 240, text, size = 25 }) {
+  return `<div data-check="tag" style="${at(x, y, w, 56, `transform:rotate(-2deg);background:linear-gradient(#d9bd8d,#c8a874);border-radius:6px;box-shadow:0 8px 10px rgba(10,30,30,.4);display:flex;align-items:center;justify-content:center;font:600 ${size}px/1 'Plex',sans-serif;color:#2a2013;white-space:nowrap;z-index:6;overflow:hidden`)}">${esc(text)}</div>`;
+}
+
 /** A sticky note. */
 function sticky({ x, y, w, h, rot = 0, color = ["#f7de8e", "#f0d072"], body, size = 36 }) {
   return `<div data-check="note" style="${at(x, y, w, h, `transform:rotate(${rot}deg);background:linear-gradient(${color[0]},${color[1]});box-shadow:0 2px 3px rgba(0,0,0,.3),0 16px 20px rgba(0,0,0,.42);padding:18px 22px;display:flex;flex-direction:column;justify-content:center;font:600 ${size}px/1.12 'Hand',cursive;color:#2c2512;overflow:hidden;z-index:6`)}">${body}</div>`;
@@ -329,22 +334,31 @@ function pin8() {
   check(rows.every((r) => /^\$/.test(r.small) && /^\$/.test(r.year)), "idea 8 rows changed");
   const total = i.items[3].split(" | ")[1];
   const hues = ["#e8c15a", "#9fcfb0", "#e9a9b4"];
-  const PW = 900, PH = 156, PX = 50;
+  const PW = 900, PH = 128, PX = 50;
   let packets = "";
+  const pin = (x, y) => `<div style="${at(x, y, 26, 26, "border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff9d80,#b8371c);box-shadow:0 5px 6px rgba(0,0,0,.4);z-index:5")}"></div>`;
   rows.forEach((r, k) => {
-    const y = 470 + k * 172;
+    const y = 470 + k * 140;
     packets += `<div style="${at(PX, y, PW, PH, `transform:rotate(${[-0.7, 0.6, -0.4][k]}deg);background:linear-gradient(#fbf6e8,#f1ead6);border-radius:8px;box-shadow:0 2px 3px rgba(10,30,30,.3),0 16px 24px rgba(10,30,30,.4);overflow:hidden;z-index:3`)}">
       <div style="${at(0, 0, 26, PH, `background:${hues[k]}`)}"></div>
       <div style="${at(26, 0, 6, PH, "background:#fff;opacity:.5")}"></div>
-      <div data-check="name" style="${at(58, 22, 400, 44, "font:600 33px/44px 'Plex',sans-serif;color:#1d1d20;white-space:nowrap")}">${esc(r.name)}</div>
-      <div style="${at(58, 80, 400, 56, "display:flex;align-items:baseline;gap:18px;white-space:nowrap")}"><span style="font:500 40px/1 'Plex',sans-serif;color:#7b7e80">${esc(r.small)}</span><span style="font:500 26px/1 'Plex',sans-serif;color:#7b7e80">${esc(r.how)}</span></div>
-      <div style="${at(470, 20, 2, PH - 40, "background:repeating-linear-gradient(#b9c4bd 0 8px,transparent 8px 15px)")}"></div>
-      <div style="${at(510, 0, 370, PH, "display:flex;align-items:baseline;gap:12px;white-space:nowrap;padding-top:40px")}"><span style="font:600 68px/1 'Newsreader',Georgia,serif;color:${C.forest};letter-spacing:-.02em">${esc(r.year)}</span><span style="font:500 28px/1 'Plex',sans-serif;color:#2b4a3f">a year</span></div>
-      </div>
-      <div style="${at(PX + PW / 2 - 14, y - 10, 28, 28, "border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff9d80,#b8371c);box-shadow:0 5px 6px rgba(0,0,0,.4);z-index:5")}"></div>`;
+      <div data-check="name" style="${at(58, 14, 400, 42, "font:600 32px/42px 'Plex',sans-serif;color:#1d1d20;white-space:nowrap")}">${esc(r.name)}</div>
+      <div style="${at(58, 68, 400, 44, "display:flex;align-items:baseline;gap:18px;white-space:nowrap")}"><span style="font:500 38px/1 'Plex',sans-serif;color:#7b7e80">${esc(r.small)}</span><span style="font:500 26px/1 'Plex',sans-serif;color:#7b7e80">${esc(r.how)}</span></div>
+      <div style="${at(470, 16, 2, PH - 32, "background:repeating-linear-gradient(#b9c4bd 0 8px,transparent 8px 15px)")}"></div>
+      <div style="${at(510, 0, 370, PH, "display:flex;align-items:baseline;gap:12px;white-space:nowrap;padding-top:34px")}"><span style="font:600 66px/1 'Newsreader',Georgia,serif;color:${C.forest};letter-spacing:-.02em">${esc(r.year)}</span><span style="font:500 28px/1 'Plex',sans-serif;color:#2b4a3f">a year</span></div>
+      </div>${pin(PX + PW / 2 - 14, y - 10)}`;
   });
-  const colLabel = (x, t) => `<div data-check="label" style="${at(x, 398, 330, 52, "background:linear-gradient(#d9bd8d,#c8a874);border-radius:6px;box-shadow:0 8px 10px rgba(10,30,30,.4);font:600 28px/52px 'Plex',sans-serif;color:#2a2013;text-align:center;z-index:6;white-space:nowrap;overflow:hidden")}">${esc(t)}</div>`;
-  const plaque = `<div style="${at(50, 984, 520, 108, `transform:rotate(-0.6deg);background:linear-gradient(#c99b66,#b0834d);border-radius:8px;box-shadow:${PAPER_SHADOW};padding:10px;z-index:4`)}"><div data-check="total" style="width:100%;height:100%;background:#fffdf6;border:4px solid ${C.forest};border-radius:6px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;overflow:hidden"><span style="font:600 36px/1 'Plex',sans-serif;color:#1d1d20">Total</span><span style="font:600 62px/1 'Newsreader',Georgia,serif;color:${C.forest};letter-spacing:-.02em">${esc(total)}</span></div></div>`;
+  // The guide's total is for six charges: three more packets, faded and blank (no figures), so six are visible.
+  const hues2 = ["#d9c27a", "#a9c7b5", "#d6a9b2"];
+  [0, 1, 2].forEach((k) => {
+    const w = 276, x = PX + k * (w + 36), y = 902 + [0, 6, 1][k];
+    packets += `<div style="${at(x, y, w, 88, `transform:rotate(${[-0.8, 0.7, -0.5][k]}deg);background:linear-gradient(#f3efe2,#e8e3d2);border-radius:8px;box-shadow:0 2px 3px rgba(10,30,30,.25),0 12px 18px rgba(10,30,30,.3);overflow:hidden;opacity:.62;z-index:3`)}">
+      <div style="${at(0, 0, 20, 88, `background:${hues2[k]}`)}"></div>
+      ${bar(44, 18, 150 + k * 20, "#b9bdb6", 16)}${bar(44, 52, 70, "#c9ccc5", 14)}${bar(150, 52, 90, "#c9ccc5", 14)}
+      </div>${pin(x + w / 2 - 13, y - 10)}`;
+  });
+  const colLabel = (x, t) => `<div data-check="label" style="${at(x, 398, 270, 52, "background:linear-gradient(#d9bd8d,#c8a874);border-radius:6px;box-shadow:0 8px 10px rgba(10,30,30,.4);font:600 28px/52px 'Plex',sans-serif;color:#2a2013;text-align:center;z-index:6;white-space:nowrap;overflow:hidden")}">${esc(t)}</div>`;
+  const plaque = `<div style="${at(50, 1022, 440, 100, `transform:rotate(-0.6deg);background:linear-gradient(#c99b66,#b0834d);border-radius:8px;box-shadow:${PAPER_SHADOW};padding:10px;z-index:4`)}"><div data-check="total" style="width:100%;height:100%;background:#fffdf6;border:4px solid ${C.forest};border-radius:6px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;overflow:hidden"><span style="font:600 34px/1 'Plex',sans-serif;color:#1d1d20">Total</span><span style="font:600 62px/1 'Newsreader',Georgia,serif;color:${C.forest};letter-spacing:-.02em">${esc(total)}</span></div></div>`;
   const shelf = `<svg style="${at(0, 1196, 1000, 160)}" viewBox="0 0 1000 160" aria-hidden="true"><defs><linearGradient id="shf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e0b97f"/><stop offset="1" stop-color="#c99b66"/></linearGradient></defs>
     <rect width="1000" height="150" fill="#6d4f2c"/><rect width="1000" height="40" fill="url(#shf)"/><rect y="38" width="1000" height="5" fill="#fff" opacity=".3"/><rect y="43" width="1000" height="107" fill="#b98c55"/><path d="M0 70 C 300 62, 700 80, 1000 68 M0 108 C 300 100, 700 118, 1000 106" stroke="#7d5a30" stroke-opacity=".35" stroke-width="3" fill="none"/></svg>
     <div style="${at(0, 1190, 1000, 30, "background:linear-gradient(rgba(0,0,0,.35),transparent);z-index:2")}"></div>`;
@@ -353,12 +367,13 @@ function pin8() {
   ${colLabel(50, "What you see")}${colLabel(520, "Cost per year")}
   ${packets}
   ${plaque}
-  ${EXAMPLE(`position:absolute;left:592px;top:1020px;z-index:7;transform:rotate(1.5deg)`)}
+  ${EXAMPLE(`position:absolute;left:812px;top:402px;z-index:7;transform:rotate(2deg)`)}
   ${shelf}
-  ${pot({ x: 60, y: 1082, w: 118, plant: "sprout", seed: 2, tone: "#d0794f" })}
-  ${pot({ x: 196, y: 1104, w: 100, plant: "leaf", seed: 8, tone: "#bd6542" })}
-  ${wateringCan({ x: 690, y: 1040, w: 285, rot: -2 })}
-  ${twineBall({ x: 330, y: 1118, r: 40 })}`;
+  ${hangTagFlat({ x: 500, y: 1044, w: 246, text: "Six repeating charges", size: 24 })}
+  ${pot({ x: 64, y: 1146, w: 76, plant: "sprout", seed: 2, tone: "#d0794f" })}
+  ${pot({ x: 160, y: 1156, w: 66, plant: "leaf", seed: 8, tone: "#bd6542" })}
+  ${twineBall({ x: 262, y: 1148, r: 30 })}
+  ${wateringCan({ x: 735, y: 1076, w: 245, rot: -2 })}`;
   return printable({ n: 8, scene, paper: "#e2eeea", extraCss: ".top h1{font-size:72px}.top p{font-size:25px;max-width:900px}" });
 }
 
