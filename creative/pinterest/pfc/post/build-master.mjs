@@ -38,7 +38,7 @@ for (const f of fs.readdirSync(HERE).filter((f) => /^copy-.*\.mjs$/.test(f)).sor
 for (let n = 1; n <= 101; n++) if (!have.has(n)) throw new Error(`no copy or render for idea #${n}`);
 
 // 2. The priority tiers (by idea number, in the order they should be tried).
-const T1 = [100, 101, 29, 63, 61, 30, 32, 36, 14, 23, 99, 9];
+const T1 = [100, 101, 29, 63, 61, 30, 32, 36, 14, 23, 9];
 const T4 = [87];
 const meta0 = (n) => bank.find((i) => i.n === n);
 const rest = bank.map((i) => i.n).filter((n) => ![...T1, ...T4].includes(n));
