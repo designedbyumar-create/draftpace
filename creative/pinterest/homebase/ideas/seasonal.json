@@ -343,7 +343,7 @@
     },
     "proof": [
       "This page is the whole season in order.",
-      "The winterize checklist is the narrow slice of it that has a hard deadline set by the weather: outdoor water, irrigation, pipes and the dripping-faucet plan for a freeze.",
+      "is the narrow slice of it that has a hard deadline set by the weather: outdoor water, irrigation, pipes and the dripping-faucet plan for a freeze.",
       "If a cold snap is forecast this week, go there first and come back."
     ],
     "proofFile": "src/content/guides.ts",

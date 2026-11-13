@@ -1,0 +1,627 @@
+[
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Home Maintenance App That Says So When Nothing Needs You",
+    "sub": "Home shows what needs you now, what is coming up, and what has recently been handled.",
+    "items": [
+      "Wrong",
+      "To care for",
+      "Coming up",
+      "Handled",
+      "Everything else is under control."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "Home shows what needs you now, what is coming up, and what has recently been handled. When there is nothing, it says so."
+    ],
+    "proofFile": "src/shop/products/home-management-companion.ts",
+    "query": "home maintenance app",
+    "board": "Home Maintenance Checklists",
+    "when": "evergreen",
+    "visual": "App-store promo in the homeschool reference style, Home Base palette: dark sage panel, app icon and name, two-tone headline, 3 rows (needs you now / coming up / handled), large tilted phone showing the REAL workspace screen (home-management-companion-workspace.png, dev badge cropped) with the four tabs Wrong, To care for, Coming up, Handled; prop: a coffee mug on a kitchen counter edge. Rows on the screen are demo data.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Fall Home Maintenance Checklist App: Seasonal Jobs in the Month They Belong",
+    "sub": "Seasonal work raised in the month it actually belongs to.",
+    "items": [
+      "Spring",
+      "Summer",
+      "Fall",
+      "Winter",
+      "October",
+      "Annual boiler service",
+      "Test the smoke alarms"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "Seasonal work raised in the month it actually belongs to."
+    ],
+    "proofFile": "src/shop/products/home-management-companion.ts",
+    "query": "fall home maintenance checklist app",
+    "board": "Seasonal Home Maintenance",
+    "when": "September to November",
+    "visual": "Mockup-app pin: dark sage panel, headline in two tones, rows for the four seasons, tilted phone showing the REAL seasons screen (home-management-companion-seasons.png) with Fall selected and the October list (Annual boiler service, Test the smoke alarms); prop: a small pile of fall leaves and a kraft-tan filter at the phone's foot. Rows are demo data.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Home Repair History App: Who Did the Work, What They Did, What It Cost",
+    "sub": "History keeps the work, the person and the cost, so the question three years from now has an answer.",
+    "items": [
+      "The work",
+      "The person",
+      "The cost"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "History keeps the work, the person and the cost, so the question three years from now has an answer."
+    ],
+    "proofFile": "src/shop/products/home-management-companion.ts",
+    "query": "home repair history log",
+    "board": "Home Maintenance Log",
+    "when": "evergreen",
+    "visual": "Mockup-app pin: dark sage panel with three feature rows (work, person, cost), tilted phone showing the REAL history screen (home-management-companion-history.png, 'What's been done' with three entries, dev badge cropped); prop: a plumber's wrench and a paper receipt on a desk. Entries on the screen are demo data, so no figure is used in the headline.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Renter Home App: It Stops Asking About the Roof and Asks About the Deposit",
+    "sub": "The notice deadline, the deposit, and what you reported to the landlord and when.",
+    "items": [
+      "The notice deadline",
+      "The deposit",
+      "What you reported to the landlord and when"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "Say you rent and it stops asking about the roof and the gutters and starts asking about what costs a renter money: the notice deadline, the deposit, and what you reported to the landlord and when."
+    ],
+    "proofFile": "src/shop/products/home-management-companion.ts",
+    "query": "renter home maintenance tracker",
+    "board": "Renting and Move-In",
+    "when": "evergreen",
+    "visual": "Mockup-app pin with a keys-on-a-hook prop: dark sage panel, headline, three rows (notice deadline, deposit, reported to landlord), tilted phone showing a CAPTURED screen of the Renting area's care list from the real component with stub data (Lease, Security deposit, Maintenance requests rows); prop: two keys on a ring and a lease folder.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Home Care Schedule App: It Suggests the Care, You Untick What Does Not Apply",
+    "sub": "Nothing is created without you confirming it.",
+    "items": [
+      "Tell it whether you own or rent",
+      "Tap what your home has",
+      "Untick anything that does not apply"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "It suggests the care each one usually needs and you untick anything that does not apply. Nothing is created without you confirming it."
+    ],
+    "proofFile": "src/shop/products/home-management-companion.ts",
+    "query": "home maintenance schedule app",
+    "board": "Home Maintenance Checklists",
+    "when": "evergreen",
+    "visual": "Mockup-app pin: dark sage panel, three step rows, tilted phone showing a CAPTURED screen of the care list for one area (for example Heating, cooling and air) from the real setup component with stub data, some rows ticked and one unticked; prop: a furnace filter in kraft tan beside the phone.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Home Maintenance Log App: Act on a Job and It Records Who Did It and What It Cost",
+    "sub": "Acting records what actually happened: who did it, what it cost, and anything worth remembering next time.",
+    "items": [
+      "Act on a job or push it back",
+      "Who did it",
+      "What it cost",
+      "Anything worth remembering next time"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "Acting records what actually happened: who did it, what it cost, and anything worth remembering next time."
+    ],
+    "proofFile": "src/shop/products/home-management-companion.ts",
+    "query": "home maintenance log app",
+    "board": "Home Maintenance Log",
+    "when": "evergreen",
+    "visual": "Mockup-app pin: dark sage panel, four rows, tilted phone cropped tight on the REAL 'Clean the condenser coils' card from the workspace screen (Last done 6 months ago, usually every 6 months; Action and Snooze buttons) with a second captured screen of the act-on-a-job form (who, cost, note) overlapping it; prop: a pencil and a cloth.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Home Repair Tracker App: Say What Is Wrong in a Sentence, See Who You Used Before",
+    "sub": "If you have already used somebody for that kind of work, it says who.",
+    "items": [
+      "Say what is wrong in a sentence",
+      "It is treated as its own kind of problem",
+      "It says who you already used"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "Say what is wrong in a sentence and it works out what you mean and treats it as its own kind of problem. If you have already used somebody for that kind of work, it says who."
+    ],
+    "proofFile": "src/shop/products/home-management-companion.ts",
+    "query": "home repair tracker app",
+    "board": "Home Maintenance Log",
+    "when": "evergreen",
+    "visual": "Mockup-app pin: dark sage panel, three rows, tilted phone showing the REAL 'Something's wrong' header button and the two ochre 'Needs a look' cards (Fridge humming louder at night, Dripping tap in the kitchen) from the workspace screen, plus a captured screen of a typed problem sentence; ochre only on the 'needs a look' cards. Close to the earlier repair-tracker pins, so a reserve.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": true
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Paste In Your Home Notes: It Pulls Out What It Recognises for You to Confirm",
+    "sub": "Confirm line by line before anything is created.",
+    "items": [
+      "Paste in notes you already keep",
+      "It pulls out what it recognises",
+      "You confirm, line by line"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "Paste them in and it will pull out what it recognises for you to confirm, line by line."
+    ],
+    "proofFile": "src/shop/products/home-management-companion.ts",
+    "query": "home maintenance app import notes",
+    "board": "Home Maintenance Checklists",
+    "when": "evergreen",
+    "visual": "Mockup-app pin: dark sage panel, three rows, tilted phone showing a CAPTURED screen of the paste-in import with stub notes and the recognised lines awaiting a tick; prop: a crumpled sticky note and a notebook. Must not imply any camera scan or document upload.",
+    "flags": [],
+    "reserve": true
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Emergency Info Sheet for Your House: Print It and Leave It by the Door",
+    "sub": "This is the most useful page in the book. It takes ten minutes, and almost nobody does it.",
+    "items": [
+      "Main shutoff",
+      "Turns",
+      "Tool needed",
+      "Panel",
+      "Main breaker"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "This is the most useful page in the book. It takes ten minutes, and almost nobody does it."
+    ],
+    "proofFile": "book",
+    "query": "home emergency information sheet printable",
+    "board": "Home Safety and Shutoffs",
+    "when": "evergreen",
+    "visual": "Mockup-printable: the REAL Home Survey page 6 (Plate 01, If something goes wrong tonight, assets/book-p06.png) tilted on a clipboard hung by a front door beside a key hook, a small slate-blue water-valve icon as the only blue; headline top-left.",
+    "flags": [],
+    "reserve": false,
+    "proofExtra": [
+      {
+        "file": "src/shop/products/home-management-companion.ts",
+        "proof": [
+          "The facts that only matter in an emergency, written down once, on a page you can print and leave by the door."
+        ]
+      }
+    ]
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Kitchen Appliance Record Page: Make, Model, Installed, Notes and Warranty",
+    "sub": "Tick what is there, then write down whatever is worth the detail.",
+    "items": [
+      "Refrigerator",
+      "Dishwasher",
+      "Oven or range",
+      "Range hood",
+      "Make and model",
+      "Installed"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "Refrigerator Freezer Dishwasher",
+      "Notes, filter size, warranty",
+      "Tick what is there, then write down whatever is worth the detail."
+    ],
+    "proofFile": "book",
+    "query": "appliance record sheet printable",
+    "board": "Appliance Records and Warranties",
+    "when": "evergreen",
+    "visual": "Mockup-printable: the REAL Home Survey page 8 (Plate 02, Kitchen, assets/book-p08.png) lying on a kitchen worktop beside a pen, tilted, with a fridge door corner in the background; sage highlight on the 'What is here' tick boxes.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Home Maintenance Schedule Printable: Job, How Often, and Which Ones Matter Most",
+    "sub": "The same list Home Base works from.",
+    "items": [
+      "Replace the air filter: HVAC system, every 3 months",
+      "Clean the condenser coils: Refrigerator, every 6 months",
+      "Check the door seals: Refrigerator, yearly"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "The same list Home Base works from.",
+      "Replace the air filter HVAC system every 3 months",
+      "Clean the condenser coils Refrigerator every 6 months",
+      "Check the door seals Refrigerator yearly"
+    ],
+    "proofFile": "book",
+    "query": "home maintenance schedule printable",
+    "board": "Home Maintenance Checklists",
+    "when": "evergreen",
+    "visual": "Mockup-printable: the REAL Home Survey page 21 (Plate 14, The jobs, and how often, assets/book-p21.png) with the JOB / ON WHAT / HOW OFTEN columns legible, tilted on a binder with a kraft-tan tab; the COSTLY and SAFETY tags in the last column kept as printed (SAFETY in ochre).",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Print an Item Card: Make, Model and What to Buy, Ready for the Hardware Store Counter",
+    "sub": "The paper is enough on its own at the counter.",
+    "items": [
+      "The make",
+      "The model",
+      "The what-to-buy line"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "Print an Item Card for anything you are about to buy a part for. It carries the make, the model and the what-to-buy line, so the paper is enough on its own at the counter."
+    ],
+    "proofFile": "src/shop/products/home-management-companion.ts",
+    "query": "hardware store parts list what size filter",
+    "board": "Appliance Records and Warranties",
+    "when": "evergreen",
+    "visual": "Mockup-printable: the Item Card PDF captured from the real component with stub data (make, model, a what-to-buy line such as a filter size), held up at a hardware-store counter edge next to a furnace filter and a bulb; kraft tan card on sage panel. Stub values are example text.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Home Repair Contacts Page: The Four Trades You Will Need First",
+    "sub": "The plumber who was good, and the one who was not. Write down both.",
+    "items": [
+      "Plumber",
+      "Electrician",
+      "Heating and cooling",
+      "Roofer"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "The plumber who was good, and the one who was not. Write down both.",
+      "Plumber Electrician Heating and cooling Roofer",
+      "THE FOUR YOU WILL NEED FIRST"
+    ],
+    "proofFile": "book",
+    "query": "home repair contacts list printable",
+    "board": "Home Binder and Printables",
+    "when": "evergreen",
+    "visual": "Mockup-printable: the REAL Home Survey page 32 (Plate 17, Who to call, assets/book-p32.png) tilted on a desk next to a landline-style handset silhouette and a mug; the four named rows highlighted with a sage underline.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Home Safety Walkthrough Page: Smoke or CO Detector, Gas Shutoff, Fire Extinguisher",
+    "sub": "Tick what is there, then write down whatever is worth the detail.",
+    "items": [
+      "Smoke or CO detector",
+      "Fire extinguisher",
+      "Gas shutoff",
+      "Escape ladder",
+      "First aid kit"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "Smoke or CO detector Fire extinguisher Radon system",
+      "Gas shutoff Escape ladder Security system",
+      "Tick what is there, then write down whatever is worth the detail."
+    ],
+    "proofFile": "book",
+    "query": "home safety checklist printable",
+    "board": "Home Safety and Shutoffs",
+    "when": "evergreen",
+    "visual": "Mockup-printable: the REAL Home Survey page 13 (Plate 07, Safety and security, assets/book-p13.png) on a hallway console beside a smoke-alarm silhouette; ochre used only for a small 'safety' tag, no red, no alarm drama. A page to fill in, not safety advice.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "template-preview",
+    "headline": "Home Maintenance Log Printable: The Page You Will Be Glad of in Three Years",
+    "sub": "The home's memory.",
+    "items": [
+      "Date",
+      "What was done",
+      "On what",
+      "By whom",
+      "Cost"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "The home's memory.",
+      "This is the page you will be glad of in three years, when something fails and the questions are whether it is still under warranty and who touched it last."
+    ],
+    "proofFile": "book",
+    "query": "home maintenance log printable",
+    "board": "Home Maintenance Log",
+    "when": "evergreen",
+    "visual": "Template-preview: a clean flat view of the REAL Home Survey page 33 (Plate 18, What has been done, assets/book-p33.png) with the five column headers and two hand-written example rows in a pen font, sitting on a kraft-tan card; the rows are drawn as sample handwriting, not book content.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "template-preview",
+    "headline": "Home Quick Reference Sheet: Filter Sizes, Paint Codes, Bulb Types, Where Things Live",
+    "sub": "Not passwords, alarm codes, or anything that opens the house.",
+    "items": [
+      "Furnace",
+      "Fridge",
+      "Humidifier",
+      "Range hood",
+      "Bulb types",
+      "Bin day",
+      "Spare keys",
+      "Water meter"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "The numbers you look up every time.",
+      "Furnace Fridge Humidifier Range hood",
+      "Bulb types Bin day",
+      "Not passwords, alarm codes, or anything that opens the house."
+    ],
+    "proofFile": "book",
+    "query": "home quick reference sheet printable",
+    "board": "Home Binder and Printables",
+    "when": "evergreen",
+    "visual": "Template-preview: the REAL Home Survey page 30 (Plate 16, Quick reference, assets/book-p30.png) as a flat fridge-list: page held on a fridge door by two magnets, the Filter sizes, Paint, Odds and ends and Where things live blocks visible; a small note that it holds no passwords or alarm codes.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "infographic",
+    "headline": "Fall Home Maintenance by Month: 10 Jobs in September, 11 in October, 2 in November",
+    "sub": "Some jobs are not on a timer, they are on a season.",
+    "items": [
+      "September: 10 jobs, from furnace tune-up to rodent check",
+      "October: 11 jobs, from bleeding the radiators to draining the outdoor faucet",
+      "November: 2 jobs, outdoor faucet and gutters"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "September Book a professional tune-up (furnace) 10 JOBS Annual service (boiler)",
+      "October Book a professional tune-up (furnace) 11 JOBS Bleed the radiators (boiler)",
+      "November Shut off and drain before the freeze (outdoor faucet) 2 JOBS Clear the gutters (gutters)",
+      "Some jobs are not on a timer, they are on a season."
+    ],
+    "proofFile": "book",
+    "query": "fall home maintenance checklist by month",
+    "board": "Seasonal Home Maintenance",
+    "when": "September to November",
+    "visual": "Infographic, year-wheel archetype: a wheel or three-month strip with September, October and November segments sized by job count, three named jobs in each, the other nine months greyed out; data from Home Survey page 28 and 29 (Plate 15, The year). Sage segments, kraft tan labels.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "infographic",
+    "headline": "Home Survey Checklist: The 12 Areas of a House to Walk Through Once",
+    "sub": "Twelve areas of a home, in roughly the order you meet them.",
+    "items": [
+      "Kitchen",
+      "Laundry",
+      "Heating, cooling and air",
+      "Water and plumbing",
+      "Power and electrical",
+      "Safety and security",
+      "Structure and exterior",
+      "Grounds and garden",
+      "Pests and damp",
+      "Everyday things",
+      "Papers and facts",
+      "Renting"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "Kitchen Plate 02 Laundry Plate 03 Heating, cooling and air Plate 04 Water and plumbing Plate 05",
+      "Structure and exterior Plate 08 Grounds and garden Plate 09 Pests and damp Plate 10 Everyday things Plate 11 Papers and facts Plate 12 Renting Plate 13",
+      "Twelve areas of a home, in roughly the order you meet them."
+    ],
+    "proofFile": "book",
+    "query": "home survey checklist what to check in a house",
+    "board": "New Homeowner Checklists",
+    "when": "evergreen",
+    "visual": "Infographic, house-cutaway archetype: a cutaway house with the twelve areas as numbered tags (Plate 02 to Plate 13) placed where each lives (roof and gutters, boiler, laundry, garden, papers as a folder at the front door); contents list from Home Survey page 2. Muted slate blue only on the water tag.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "comparison",
+    "headline": "Home Binder vs App: What Paper Cannot Do and Home Base Does",
+    "sub": "It holds what you tell it and works out the timing.",
+    "items": [
+      "It does the arithmetic",
+      "It picks",
+      "It remembers"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "It does the arithmetic It picks It remembers",
+      "Home Base does not connect to your bank, your utilities, or your appliances. It holds what you tell it and works out the timing."
+    ],
+    "proofFile": "book",
+    "query": "home binder vs app",
+    "board": "Home Binder and Printables",
+    "when": "evergreen",
+    "visual": "Comparison pin: split pin, left a paper binder page (Home Survey page 36 closing panel 'What it does that paper cannot') and right the Home Base workspace screen, with three connecting rows: does the arithmetic, picks, remembers. Calm, no versus-fight styling.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "question",
+    "headline": "Furnace, Heat Pump, Mini Split or Boiler? Which Heating and Cooling Do You Have?",
+    "sub": "Tick what is there, then write down whatever is worth the detail.",
+    "items": [
+      "Furnace",
+      "Central air conditioning",
+      "Heat pump",
+      "Mini split",
+      "Boiler",
+      "Window air conditioner",
+      "Thermostat"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "Furnace Central air conditioning HVAC system",
+      "Heat pump Mini split Boiler",
+      "Tick what is there, then write down whatever is worth the detail."
+    ],
+    "proofFile": "book",
+    "query": "heating and cooling system types in my house",
+    "board": "New Homeowner Checklists",
+    "when": "evergreen",
+    "visual": "Question pin: a cutaway of a basement and utility cupboard with a furnace, a boiler and a heat pump outdoor unit each tagged with a question mark, headline over it; the REAL Home Survey page 10 (Plate 04, assets/book-p10.png) as a small tilted inset.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "before-after",
+    "headline": "One Water Heater With a Date Beats Forty Blank Rows in Your Home Binder",
+    "sub": "Fill in what you find, leave the rest.",
+    "items": [
+      "Forty blank rows",
+      "One water heater with a date on it"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "One water heater with a date on it is worth more than forty blank rows.",
+      "Fill in what you find, leave the rest"
+    ],
+    "proofFile": "book",
+    "query": "how to start a home binder",
+    "board": "Home Binder and Printables",
+    "when": "evergreen",
+    "visual": "Before-after: left a Home Survey table page (page 11, Water and plumbing, assets/book-p11.png) completely blank with many empty rows, right the same table with one row filled in by hand for the water heater with a date in it; tick mark in sage on the right.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "quote-card",
+    "headline": "Renting: The Notice Date Matters More Than the Renewal Date",
+    "sub": "Renting has a short list of its own, and most of it is deadlines.",
+    "items": [
+      "Started",
+      "Renews on",
+      "Notice by"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "The notice date matters more than the renewal date, because that is the one that passes quietly.",
+      "Renting has a short list of its own, and most of it is deadlines."
+    ],
+    "proofFile": "book",
+    "query": "rental lease notice date renewal",
+    "board": "Renting and Move-In",
+    "when": "evergreen",
+    "visual": "Quote-card: the sentence set large in serif on paper-cream, a small crop of the REAL Home Survey page 35 (Plate 19, If you rent, The lease block: Started, Renews on, Notice by) underneath with the 'Notice by' line circled in sage; keys on a ring as the prop.",
+    "flags": [],
+    "reserve": false
+  }
+]
