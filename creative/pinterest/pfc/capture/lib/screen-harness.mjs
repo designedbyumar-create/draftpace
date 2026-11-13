@@ -60,7 +60,9 @@ const dataLayerStubs = {
 
 /** Tailwind exactly as the app configures it, with content globs pointed at the files this bundle uses. */
 function tailwindConfig() {
-  const root = require(path.join(REPO, "tailwind.config.js"));
+  // tailwind.config.js is an ES module (export default): require() hands back { default: config }; unwrap it or the theme is dropped.
+  const mod = require(path.join(REPO, "tailwind.config.js"));
+  const root = mod.default ?? mod;
   return {
     ...root,
     content: [
