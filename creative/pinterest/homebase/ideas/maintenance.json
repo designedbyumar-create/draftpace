@@ -1,0 +1,510 @@
+[
+  {
+    "slice": "maintenance",
+    "angle": "infographic",
+    "headline": "Home Maintenance Schedule: How Often Each System Needs Service",
+    "sub": "Your own manual wins over any table.",
+    "items": [
+      "Replace the furnace or AC filter: Every 1 to 3 months",
+      "Book a heating tune-up: Annually, before the heating season",
+      "Flush the water heater tank: Annually",
+      "Clean the refrigerator condenser coils: Every 6 months",
+      "Clear the gutters: Twice a year, spring and fall",
+      "Test smoke and CO alarms: Monthly"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-often-home-systems-need-servicing"
+    },
+    "proof": [
+      "Your own manual wins over any table.",
+      "Replace the furnace or AC filter",
+      "Every 1 to 3 months",
+      "Book a heating tune-up",
+      "Annually, before the heating season",
+      "Flush the water heater tank",
+      "Clean the refrigerator condenser coils",
+      "Every 6 months",
+      "Clear the gutters",
+      "Twice a year, spring and fall",
+      "Test smoke and CO alarms",
+      "Monthly"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "home maintenance schedule how often",
+    "board": "Home Maintenance Checklists",
+    "when": "evergreen",
+    "visual": "House-cutaway archetype: a calm line drawing of a house in section on paper (#f4f2ec) with six sage callout tags pointing at the furnace, water heater, fridge, gutter, ceiling alarm and the filter slot, each tag carrying the job and its typical interval from the guide table. Kraft tan for the filter tag. No red.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "maintenance",
+    "angle": "scenario",
+    "headline": "Moved In Three Years Ago? The Home Maintenance That Is Probably Due",
+    "sub": "None of that is unusual, and none of it is expensive to fix once you know it's due.",
+    "items": [
+      "The furnace filter has never been changed, because no one mentioned it needed to be.",
+      "The water heater has never been flushed.",
+      "The smoke alarms are original to a house built in 2013, which puts them a year past the 10 year mark printed on the back of the unit."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-often-home-systems-need-servicing"
+    },
+    "proof": [
+      "None of that is unusual, and none of it is expensive to fix once you know it's due.",
+      "The furnace filter has never been changed, because no one mentioned it needed to be.",
+      "The water heater has never been flushed.",
+      "The smoke alarms are original to a house built in 2013, which puts them a year past the 10 year mark printed on the back of the unit."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what maintenance is due on my house new homeowner",
+    "board": "New Homeowner Checklists",
+    "when": "evergreen",
+    "visual": "Scenario card in the guide's own example: a house-in-section drawing with three ochre (#8a5a11) 'needs a look' dots on the furnace filter slot, the water heater and a ceiling alarm, and a small key-and-tag prop labelled 'three years ago'. Reassuring tone, sage and paper, no alarm imagery.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "maintenance",
+    "angle": "myth-vs-truth",
+    "headline": "When Is Home Maintenance Due? Count From the Last Time, Not Today",
+    "sub": "If you truly don't know, treat it as due.",
+    "items": [
+      "A common mistake is to start every interval from the day you happen to write the list",
+      "If you know roughly when something was last done, count from that date.",
+      "If you truly don't know, treat it as due."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-often-home-systems-need-servicing"
+    },
+    "proof": [
+      "If you truly don't know, treat it as due.",
+      "A common mistake is to start every interval from the day you happen to write the list",
+      "If you know roughly when something was last done, count from that date."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to know when home maintenance is due",
+    "board": "Home Maintenance Log",
+    "when": "evergreen",
+    "visual": "Two-panel split on paper: left panel 'Start from the day you wrote the list' with a plain calendar page and a muted strike-through arrow; right panel 'Count from the last time it was done' with a dated log line and a sage tick. A furnace and a pen as props. No red.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "maintenance",
+    "angle": "checklist",
+    "headline": "Kitchen and Laundry Appliance Maintenance: The Small Jobs Easy to Forget",
+    "sub": "Smaller jobs, easy to forget, real consequences when they're skipped.",
+    "items": [
+      "Clean the refrigerator condenser coils: Every 6 months",
+      "Clean the dryer vent: At least once a year",
+      "Replace the washing machine's supply hoses: Every 3 to 5 years, sooner if cracked or bulging",
+      "Degrease the range hood filter: Monthly"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-often-home-systems-need-servicing"
+    },
+    "proof": [
+      "Smaller jobs, easy to forget, real consequences when they're skipped.",
+      "Clean the refrigerator condenser coils",
+      "Every 6 months",
+      "Clean the dryer vent",
+      "At least once a year",
+      "Replace the washing machine's supply hoses",
+      "Every 3 to 5 years, sooner if cracked or bulging",
+      "Degrease the range hood filter",
+      "Monthly"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "appliance maintenance checklist",
+    "board": "Home Maintenance Checklists",
+    "when": "evergreen",
+    "visual": "Fridge-list archetype: a kraft-tan list card held on a fridge door with a magnet, four tick-box rows with the job and interval, a small fridge-coil, dryer and range-hood icon beside each (Phosphor-style line icons, sage).",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "maintenance",
+    "angle": "before-after",
+    "headline": "What Skipped Home Maintenance Turns Into, Three Jobs Side by Side",
+    "sub": "Each has a real interval, and pushing it past that interval is what turns a cheap job into a repair.",
+    "items": [
+      "Clear the gutters: Water pools at the roof edge, then soaks the fascia, then rots wood you cannot see from the ground",
+      "Flush the water heater: Sediment settles on the tank floor, which lowers efficiency and shortens the tank's life",
+      "Inspect the roof and flashing: A small gap at a flashing joint becomes a leak, then wet insulation, then a stained ceiling"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "home-maintenance-you-skip-that-costs-the-most"
+    },
+    "proof": [
+      "Each has a real interval, and pushing it past that interval is what turns a cheap job into a repair.",
+      "Clear the gutters",
+      "Water pools at the roof edge, then soaks the fascia, then rots wood you cannot see from the ground",
+      "Flush the water heater",
+      "Sediment settles on the tank floor, which lowers efficiency and shortens the tank's life",
+      "Inspect the roof and flashing",
+      "A small gap at a flashing joint becomes a leak, then wet insulation, then a stained ceiling"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what happens if you skip home maintenance",
+    "board": "Home Maintenance Checklists",
+    "when": "evergreen",
+    "visual": "Before-after rows: three horizontal strips, left tile 'the job' (sage tag with a gutter, a tank and a roof flashing joint) and right tile 'what skipping turns it into' as a calm labelled diagram, not a photo of damage. Ochre only on the right-hand 'needs a look' marker. No red, no disaster imagery.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "maintenance",
+    "angle": "infographic",
+    "headline": "What a Full Gutter Actually Costs: The Fascia Board Behind It",
+    "sub": "The labor is the same crew either way. Only the price changes.",
+    "items": [
+      "Water backs up at the roof edge instead of running to the downspout",
+      "so it soaks the fascia board behind the gutter every time it rains",
+      "it starts to rot from the inside, where you cannot see it from the ground",
+      "It is replacing fascia, and sometimes the sheathing behind it."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "home-maintenance-you-skip-that-costs-the-most"
+    },
+    "proof": [
+      "The labor is the same crew either way. Only the price changes.",
+      "Water backs up at the roof edge instead of running to the downspout",
+      "so it soaks the fascia board behind the gutter every time it rains",
+      "it starts to rot from the inside, where you cannot see it from the ground",
+      "It is replacing fascia, and sometimes the sheathing behind it."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "why clean gutters fascia rot",
+    "board": "Seasonal Home Maintenance",
+    "when": "October to November and March to April (gutters are a spring and fall job)",
+    "visual": "Gutter cross-section diagram: roof edge, gutter full of leaves, fascia board and downspout in sage line art, muted slate-blue (water only) arrows showing water backing up behind the gutter, four numbered captions from the guide. Calm technical drawing, not a damage photo.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "maintenance",
+    "angle": "question",
+    "headline": "What Is the Most Important Home Maintenance Task? Start With One",
+    "sub": "If you can only do one this weekend, start with the furnace or the water heater",
+    "items": [
+      "Service the furnace or heating system: Once a year, before the cold months",
+      "Flush the water heater: Once a year"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "home-maintenance-you-skip-that-costs-the-most"
+    },
+    "proof": [
+      "If you can only do one this weekend, start with the furnace or the water heater",
+      "both tend to fail in the season you need them most, and both take under an hour to check or book",
+      "Service the furnace or heating system",
+      "Once a year, before the cold months",
+      "Flush the water heater",
+      "Once a year"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "most important home maintenance tasks",
+    "board": "Home Maintenance Checklists",
+    "when": "evergreen",
+    "visual": "Question card: a big sage question headline over two large cut-out props, a furnace with its door open and a tank water heater, each with a small interval tag; kraft tan label 'under an hour to check or book'. Paper background, ink text.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "maintenance",
+    "angle": "quote-card",
+    "headline": "A Home Maintenance Check Costs an Hour; a Missed One Costs a Great Deal More",
+    "sub": null,
+    "items": [
+      "An unnecessary check costs an hour, and a missed one costs a great deal more."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "home-maintenance-you-skip-that-costs-the-most"
+    },
+    "proof": [
+      "an unnecessary check costs an hour, and a missed one costs a great deal more"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "home maintenance quotes preventive maintenance",
+    "board": "Home Maintenance Checklists",
+    "when": "evergreen",
+    "visual": "Quote card: the sentence set large in ink on paper (#fbfaf6) with a sage rule, a single kraft-tan clipboard and a pencil at the corner; small footer 'Free guide'. Typographic, minimal, no photo.",
+    "flags": [],
+    "reserve": true
+  },
+  {
+    "slice": "maintenance",
+    "angle": "template-preview",
+    "headline": "How to Read a Furnace Filter Size: What 16x25x1 Means",
+    "sub": "Buy by the number on the frame and not by a tape measure.",
+    "items": [
+      "The three numbers on the frame are length, width and depth in inches.",
+      "A filter marked 16x25x1 is about sixteen inches by twenty-five inches, and one inch thick.",
+      "Sizes are usually nominal, so the real dimensions run a little smaller than the printed number"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-often-change-furnace-filter"
+    },
+    "proof": [
+      "buy by the number on the frame and not by a tape measure",
+      "The three numbers on the frame are length, width and depth in inches.",
+      "A filter marked 16x25x1 is about sixteen inches by twenty-five inches, and one inch thick.",
+      "Sizes are usually nominal, so the real dimensions run a little smaller than the printed number"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to read furnace filter size",
+    "board": "Home Maintenance Checklists",
+    "when": "evergreen",
+    "visual": "Plate-closeup archetype: a large close-up of a cardboard filter frame with '16x25x1' printed on it, three sage callout arrows labelled length, width, depth. Kraft tan frame, paper background. 16x25x1 is the guide's own example.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "maintenance",
+    "angle": "comparison",
+    "headline": "1 Inch vs 4 Inch Furnace Filter: How Often to Change Each",
+    "sub": "A different schedule, not a longer version of the same one.",
+    "items": [
+      "A one inch filter: 30 to 90 days",
+      "A four inch media filter: 6 to 12 months",
+      "Your furnace's own manual has the final say over both."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-often-change-furnace-filter"
+    },
+    "proof": [
+      "a different schedule, not a longer version of the same one",
+      "a one inch filter at 30 to 90 days and a four inch media filter at 6 to 12 months",
+      "your furnace's own manual has the final say over both"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "1 inch vs 4 inch furnace filter how often to change",
+    "board": "Home Maintenance Checklists",
+    "when": "evergreen",
+    "visual": "Side-by-side comparison: a thin one-inch filter on the left and a deep four-inch media filter on the right drawn to scale in kraft tan, each with a sage interval tag from the guide. Paper background, small 'your manual wins' note.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "maintenance",
+    "angle": "how-to-steps",
+    "headline": "How to Tell a Furnace Filter Is Overdue: Hold It Up to a Light",
+    "sub": "Checking and changing are not the same task.",
+    "items": [
+      "Hold it up to a light.",
+      "If you cannot see light through it, or it looks grey and matted rather than white or lightly grey, change it regardless of the calendar.",
+      "A filter that still looks clean at the one month mark does not need replacing yet, just checking again next month."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-often-change-furnace-filter"
+    },
+    "proof": [
+      "Checking and changing are not the same task.",
+      "Hold it up to a light.",
+      "If you cannot see light through it, or it looks grey and matted rather than white or lightly grey, change it regardless of the calendar.",
+      "A filter that still looks clean at the one month mark does not need replacing yet, just checking again next month."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to tell if furnace filter needs changing",
+    "board": "Home Maintenance Checklists",
+    "when": "evergreen",
+    "visual": "Three-step strip: a hand holding a filter up to a window light (light visible through it), a grey matted filter beside a white one (kraft and paper tones, no red), and a calendar page with 'check again next month'. Sage step numbers.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "maintenance",
+    "angle": "myth-vs-truth",
+    "headline": "Furnace Filter MERV Rating: Why a Higher Number Is Not Always Better",
+    "sub": "Match it to what your manual recommends.",
+    "items": [
+      "MERV rates how well a filter catches small particles on a scale that runs from 1 to 16 in most residential filters, with a higher number trapping smaller particles.",
+      "A higher MERV is not automatically better for your system, because it can restrict airflow if your furnace was not built for it."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-often-change-furnace-filter"
+    },
+    "proof": [
+      "Match it to what your manual recommends.",
+      "MERV rates how well a filter catches small particles on a scale that runs from 1 to 16 in most residential filters, with a higher number trapping smaller particles.",
+      "A higher MERV is not automatically better for your system, because it can restrict airflow if your furnace was not built for it."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what does MERV rating mean furnace filter",
+    "board": "Home Maintenance Checklists",
+    "when": "evergreen",
+    "visual": "Myth-vs-truth split: left a shelf of filters with a '16' label and a question mark ('strongest on the shelf'), right a filter next to an open furnace manual with a sage tick. Scale 1 to 16 drawn as a simple bar. Paper, kraft tan, sage.",
+    "flags": [],
+    "reserve": true
+  },
+  {
+    "slice": "maintenance",
+    "angle": "template-preview",
+    "headline": "Home Maintenance Log Example: Three Entries, One Line Each",
+    "sub": "A made-up week, not a real one, to show how little each entry needs.",
+    "items": [
+      "Aug 14: Flushed the water heater tank, Ace Plumbing, $180.00. Anode rod is due next time",
+      "Oct 2: Cleaned the dryer vent, You, $0. More lint than expected, check every 6 months",
+      "Nov 20: Furnace tune-up, Reliable Heat & Air, $145.00. Said the blower belt is wearing"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "home-maintenance-log-template"
+    },
+    "proof": [
+      "A made-up week, not a real one, to show how little each entry needs.",
+      "Flushed the water heater tank",
+      "Ace Plumbing",
+      "$180.00",
+      "Anode rod is due next time",
+      "Cleaned the dryer vent",
+      "$0",
+      "More lint than expected, check every 6 months",
+      "Furnace tune-up",
+      "Reliable Heat & Air",
+      "$145.00",
+      "Said the blower belt is wearing"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "home maintenance log example",
+    "board": "Home Maintenance Log",
+    "when": "evergreen",
+    "visual": "Template-preview: a filled log page on a binder with five ruled columns (date, what was done, who did it, cost, note) and three handwritten-style rows from the guide, a pen and a paper clip as props. Tilted slightly, kraft tan binder, paper page, sage header row. Entries are the guide's own made-up example.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "maintenance",
+    "angle": "quote-card",
+    "headline": "The One Note to Write After a Service Visit That Saves the Next One",
+    "sub": "When a technician tells you what's coming next, write it down.",
+    "items": [
+      "Belt is wearing.",
+      "Other spring will go soon.",
+      "Filter size is different from what the old one said."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "home-maintenance-log-template"
+    },
+    "proof": [
+      "When a technician tells you what's coming next, write it down.",
+      "Belt is wearing. Other spring will go soon. Filter size is different from what the old one said.",
+      "The most valuable field is the last one."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to write in a home maintenance log",
+    "board": "Home Maintenance Log",
+    "when": "evergreen",
+    "visual": "Quote cards: three sticky-note style cards in kraft tan pinned to a furnace door, each carrying one of the guide's example notes in handwriting type, a pencil beside them. Paper background, sage headline. The notes are the guide's own examples.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "maintenance",
+    "angle": "scenario",
+    "headline": "Four Questions to Ask Before the Repair Technician Leaves",
+    "sub": "Four short questions, asked while the van is still in the driveway.",
+    "items": [
+      "What exactly was wrong with it, in plain words?",
+      "What's the part number, in case I need it again?",
+      "Is there anything else you'd keep an eye on?",
+      "Can you write that diagnosis on the invoice for me?"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "what-to-keep-after-a-home-repair"
+    },
+    "proof": [
+      "Four short questions, asked while the van is still in the driveway.",
+      "What exactly was wrong with it, in plain words?",
+      "What's the part number, in case I need it again?",
+      "Is there anything else you'd keep an eye on?",
+      "Can you write that diagnosis on the invoice for me?"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "questions to ask a repair technician",
+    "board": "Home Maintenance Log",
+    "when": "evergreen",
+    "visual": "Scenario card: a front door and a driveway in simple line art with a van at the kerb, four numbered speech-bubble questions in sage and paper stacked beside it, a clipboard prop. Calm, friendly, no alarm imagery.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "maintenance",
+    "angle": "how-to-steps",
+    "headline": "Technician Already Gone? How to Get the Repair Diagnosis Afterwards",
+    "sub": "Most keep their own service notes and will read them back to you over the phone.",
+    "items": [
+      "Technicians are often out the door before you've thought to ask anything.",
+      "call the company the same day and ask what they have on file",
+      "ask what's on their service ticket",
+      "Most keep their own service notes and will read them back to you over the phone."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "what-to-keep-after-a-home-repair"
+    },
+    "proof": [
+      "Technicians are often out the door before you've thought to ask anything.",
+      "call the company the same day and ask what they have on file",
+      "ask what's on their service ticket",
+      "Most keep their own service notes and will read them back to you over the phone."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to do after a home repair",
+    "board": "Home Maintenance Log",
+    "when": "evergreen",
+    "visual": "Three-step strip: a phone with a call bubble, a service ticket in kraft tan, a log page being filled in with a pen. Sage step numbers, paper background; the 'same day' label in ochre.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "maintenance",
+    "angle": "question",
+    "headline": "How Long Should You Keep Home Repair Records? As Long as You Own It",
+    "sub": "As long as you own the item or the house, in practice.",
+    "items": [
+      "A repair record for an appliance is useful until you replace it.",
+      "A record tied to the house, like a roof or a furnace, is worth keeping for as long as you live there, and worth handing to a buyer when you sell."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "what-to-keep-after-a-home-repair"
+    },
+    "proof": [
+      "As long as you own the item or the house, in practice.",
+      "A repair record for an appliance is useful until you replace it.",
+      "A record tied to the house, like a roof or a furnace, is worth keeping for as long as you live there, and worth handing to a buyer when you sell."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how long to keep home repair records",
+    "board": "Home Binder and Printables",
+    "when": "evergreen",
+    "visual": "Question card with two folder tabs in a home binder: one tab for an appliance (a washer drawn on it) and one for the house (a roofline and furnace), each with the guide's one-line answer. Binder in kraft tan, paper pages, sage tabs.",
+    "flags": [],
+    "reserve": false
+  }
+]
